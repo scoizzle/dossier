@@ -129,7 +129,7 @@ public sealed partial class DossierStore
         }
 
         // Tree order, display paths and slugs: all derived from subject content.
-        var (ordered, paths) = TreeOrder(subjects);
+        var (ordered, paths, depths) = TreeOrder(subjects);
         var slugs = AssignSlugs(ordered);
         var subjectById = ordered.ToDictionary(s => s.Id, StringComparer.Ordinal);
         var subjectOrder = ordered.Select((s, i) => (s.Id, i)).ToDictionary(t => t.Id, t => t.i, StringComparer.Ordinal);
@@ -222,7 +222,7 @@ public sealed partial class DossierStore
 
         files["conflicts.md"] = RenderConflictsFile(ordered, dossiers, slugs, id => FactRef(id, string.Empty));
         files["gaps.md"] = RenderGapsFile(ordered, dossiers, slugs);
-        files["INDEX.md"] = RenderIndexFile(ordered, paths, dossiers, slugs, factsBySubject, subjectTokens);
+        files["INDEX.md"] = RenderIndexFile(ordered, depths, dossiers, slugs, factsBySubject, subjectTokens);
         files["AGENTS.md"] = RenderAgentsFile(detail);
 
         var commandLine = options.CommandLine ?? SynthesizeCommandLine(options);
@@ -354,7 +354,7 @@ public sealed partial class DossierStore
 
     // ---- ordering, slugs, short ids --------------------------------------------------------
 
-    private static (List<PubSubject> Ordered, Dictionary<string, string> Paths) TreeOrder(List<PubSubject> subjects)
+    private static (List<PubSubject> Ordered, Dictionary<string, string> Paths, Dictionary<string, int> Depths) TreeOrder(List<PubSubject> subjects)
     {
         var ids = subjects.Select(s => s.Id).ToHashSet(StringComparer.Ordinal);
         IEnumerable<PubSubject> Sorted(IEnumerable<PubSubject> source) => source
@@ -371,9 +371,10 @@ public sealed partial class DossierStore
 
         var ordered = new List<PubSubject>();
         var paths = new Dictionary<string, string>(StringComparer.Ordinal);
+        var depths = new Dictionary<string, int>(StringComparer.Ordinal);
         var visited = new HashSet<string>(StringComparer.Ordinal);
 
-        void Visit(PubSubject subject, string? parentPath)
+        void Visit(PubSubject subject, string? parentPath, int depth)
         {
             if (!visited.Add(subject.Id))
             {
@@ -383,27 +384,28 @@ public sealed partial class DossierStore
             var path = parentPath is null ? Inline(subject.Name) : parentPath + " / " + Inline(subject.Name);
             ordered.Add(subject);
             paths[subject.Id] = path;
+            depths[subject.Id] = depth;
             if (children.TryGetValue(subject.Id, out var kids))
             {
                 foreach (var kid in kids)
                 {
-                    Visit(kid, path);
+                    Visit(kid, path, depth + 1);
                 }
             }
         }
 
         foreach (var root in Sorted(subjects.Where(s => s.ParentId is null || !ids.Contains(s.ParentId))))
         {
-            Visit(root, null);
+            Visit(root, null, 0);
         }
 
         // Anything left is part of a parent cycle; keep it, in content order.
         foreach (var rest in Sorted(subjects.Where(s => !visited.Contains(s.Id))))
         {
-            Visit(rest, null);
+            Visit(rest, null, 0);
         }
 
-        return (ordered, paths);
+        return (ordered, paths, depths);
     }
 
     public static string Slugify(string name)
@@ -810,7 +812,7 @@ public sealed partial class DossierStore
 
     private static string RenderIndexFile(
         List<PubSubject> ordered,
-        Dictionary<string, string> paths,
+        Dictionary<string, int> depths,
         Dictionary<string, CompiledDossier> dossiers,
         Dictionary<string, string> slugs,
         Dictionary<string, int> factsBySubject,
@@ -818,7 +820,9 @@ public sealed partial class DossierStore
     {
         var b = new StringBuilder();
         b.Append("# Index\n\n");
-        b.Append("One row per subject, parents before children. `tokens` is the estimated cost (chars/4, rounded up) of reading that subject's file. ")
+        b.Append("One row per subject, parents before children. The subject cell is the subject's own name; ")
+            .Append("a subject is indented two spaces per ancestor level, so its position shows its depth. ")
+            .Append("`tokens` is the estimated cost (chars/4, rounded up) of reading that subject's file. ")
             .Append("Pick the row you need and read only that file.\n\n");
         b.Append("| subject | kind | facts | conflicts | gaps | tokens | file |\n");
         b.Append("| --- | --- | ---: | ---: | ---: | ---: | --- |\n");
@@ -826,7 +830,8 @@ public sealed partial class DossierStore
         {
             var dossier = dossiers[subject.Id];
             var file = $"subjects/{slugs[subject.Id]}.md";
-            b.Append("| ").Append(Cell(paths[subject.Id]))
+            var indent = new string(' ', depths[subject.Id] * 2);
+            b.Append("| ").Append(indent).Append(Cell(subject.Name))
                 .Append(" | ").Append(Cell(subject.Kind))
                 .Append(" | ").Append(factsBySubject.GetValueOrDefault(subject.Id).ToString(CultureInfo.InvariantCulture))
                 .Append(" | ").Append(dossier.Conflicts.Count.ToString(CultureInfo.InvariantCulture))

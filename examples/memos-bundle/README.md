@@ -5,7 +5,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/memos-bundle`
-- Generated at: `2026-11-09T20:59:30Z`
+- Generated at: `2026-11-09T21:02:25Z`
 - Scope: every subject
 - Budget per subject: 1200 tokens, depth full
 - Fact files: one per fact under `facts/`

@@ -1,6 +1,6 @@
 # Memos/SignIn
 
-- Subject: Memos/SignIn (id `667d6466-b3a0-4b50-92eb-ae39cbac6fbd`)
+- Subject: Memos/SignIn (id `46bebf95-aadd-4df8-a51b-20d342cd689e`)
 - Kind: screen
 - Parent: [Memos](memos.md)
 - Budget: 1200 tokens
@@ -11,5 +11,5 @@
 
 ## Facts
 
-- Submitting valid credentials opens the home screen. [9449c90e-8fb8-4061-904d-f3261e59be15](../facts/9449c90e.md)
-- Sign in screen has a username field, a password field, and a submit button. [4d456e91-3594-4a35-954b-f7d7ff29b5a3](../facts/4d456e91.md)
+- Submitting valid credentials opens the home screen. [017f7626-7743-449b-ace0-c9510533566d](../facts/017f7626.md)
+- Sign in screen has a username field, a password field, and a submit button. [c610cfa7-f948-46af-b033-6459c4906201](../facts/c610cfa7.md)

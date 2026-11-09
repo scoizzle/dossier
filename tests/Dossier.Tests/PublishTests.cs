@@ -341,6 +341,61 @@ public sealed class PublishTests
     }
 
     [Test]
+    public async Task Publish_IndexShowsOwnNameAndIndentsByDepth()
+    {
+        using var db = new TempDb();
+        var root = db.Store.PostFacts(Fixtures.Post("Memos", Fixtures.Fact("Memos is a notes app.")));
+        var rootId = root.Response.Subject.Id;
+        db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "Memos/Archived", Kind = "screen", Parent = rootId },
+            Facts = { Fixtures.Fact("Archived memos live here.") },
+        });
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var index = files["INDEX.md"];
+
+        static string SubjectCell(string index, string slug)
+        {
+            var file = $"subjects/{slug}.md";
+            var row = index.Split('\n').Single(l => l.StartsWith("|", StringComparison.Ordinal) && l.Contains($"]({file})", StringComparison.Ordinal));
+            // Column 0 is the empty text before the leading '|'; column 1 is the subject cell.
+            // Drop exactly the single space that separates the cell from its '|'.
+            return row.Split('|')[1][1..];
+        }
+
+        var childCell = SubjectCell(index, "memos-archived");
+        var rootCell = SubjectCell(index, "memos");
+
+        // The child's own name is shown once, with no parent prefix.
+        await Assert.That(childCell.TrimEnd()).IsEqualTo("  Memos/Archived");
+        await Assert.That(Count(childCell, "Memos/Archived")).IsEqualTo(1);
+        await Assert.That(childCell.Contains("Memos / ", StringComparison.Ordinal)).IsFalse();
+
+        // A direct child of the root is indented two spaces; a root subject starts at column zero.
+        await Assert.That(childCell.StartsWith("  ", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(rootCell.TrimEnd()).IsEqualTo("Memos");
+        await Assert.That(rootCell.StartsWith("Memos", StringComparison.Ordinal)).IsTrue();
+
+        // The subject file's own H1 still shows the full subject name.
+        await Assert.That(files["subjects/memos-archived.md"]).Contains("# Memos/Archived");
+    }
+
+    private static int Count(string haystack, string needle)
+    {
+        var count = 0;
+        var at = 0;
+        while ((at = haystack.IndexOf(needle, at, StringComparison.Ordinal)) >= 0)
+        {
+            count++;
+            at += needle.Length;
+        }
+
+        return count;
+    }
+
+    [Test]
     public async Task Publish_SlugCollisionsGetDeterministicSuffixes()
     {
         using var db = new TempDb();

@@ -1,6 +1,6 @@
 # Memos
 
-- Subject: Memos (id `f464e782-8d2f-466e-8e73-8c0d345d7f60`)
+- Subject: Memos (id `8b8b4143-015b-4c03-9aaf-e804b5db2e04`)
 - Kind: app
 - Aliases: Memos App
 - Budget: 1200 tokens
@@ -11,8 +11,8 @@
 
 ## Facts
 
-- Memos is a self-hosted, open-source memo app with a web client and an HTTP API. [90f88270-d3fe-4963-a467-906696b3faee](../facts/90f88270.md)
-- The web client routes /, /explore, /archived, /settings, and /m/:id. [97f2178f-ae3d-47ed-b107-2561d86f5a76](../facts/97f2178f.md)
+- Memos is a self-hosted, open-source memo app with a web client and an HTTP API. [fd84afe7-6e80-4562-a7ff-9cb21c082658](../facts/fd84afe7.md)
+- The web client routes /, /explore, /archived, /settings, and /m/:id. [82afb2de-41df-4f7e-a8e5-172d38f774af](../facts/82afb2de.md)
 
 ## Child subjects
 

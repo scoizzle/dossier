@@ -129,3 +129,53 @@ Ranked:
 - Temporal validity beyond supersession.
 - Actor trust as static config.
 - When extractive compilation stops being enough.
+
+## End-to-end
+
+The seeded demo lives in `scripts/seed/` and the evaluation harness in
+`scripts/eval/`. Both scripts need only bash and the built DLL, and every command
+calls `src/Dossier/bin/Release/net10.0/Dossier.dll` rather than `dotnet run`.
+`DOSSIER_DB` selects the database; each script makes its own temp DB with
+`mktemp` and removes it on exit.
+
+`post_facts` carries exactly one subject, so the seed is five valid requests:
+`memos-root.json` plus `memos-signin.json`, `memos-memodetail.json` and
+`memos-archived.json`, and `memos.json` (the 24 Home facts the eval reads).
+`scripts/seed.sh` posts all five and prints the created counts.
+
+Reproduce the demo:
+
+```sh
+dotnet build -c Release src/Dossier/Dossier.csproj
+bash scripts/e2e.sh
+```
+
+Measured on a clean temp DB (macOS, .NET 10.0.403):
+
+- subjects created: 5 (Memos, Memos/SignIn, Memos/Home, Memos/MemoDetail, Memos/Archived)
+- facts created: 32 (24 of them on Memos/Home)
+- search total for `q=composer`: 9
+- Memos/Home at depth full: 11 facts emitted in the markdown
+- conflicts: `composerMaxRows` 6 vs 12, `headerHeight` 64 vs 72, `saveShortcut` Cmd+Enter vs Ctrl+Enter
+- gaps for `billing invoice` and `webhook signature`: both `no fact`
+- dump of `scripts/seed/notes.md`: first run created=4 deduped=0, second created=0 deduped=4
+- correlate proposals for Memos/Home: 6
+
+Reproduce the eval:
+
+```sh
+bash scripts/eval.sh
+```
+
+Measured on the same seed:
+
+- arm A (raw search, limit 100): 5902 chars, 1476 tokens (chars/4), 24 facts
+- arm B (compiled dossier, budget 1200, depth full, markdown): 1487 chars, 372 tokens (chars/4), 11 facts
+- ratio A/B (tokens): 3.97, so B is about 25% of A
+
+Ids are GUIDs, so arm B's exact bytes move by a few characters between fresh
+databases; the counts above come from one real run.
+
+`scripts/eval/questions.json` holds the 10-question set: 3 questions require a
+contradiction to be noticed and 2 are unanswerable from the seed. The harness
+writes `arm-a.json` and `arm-b.md` under `scripts/eval/artifacts/` (git-ignored).

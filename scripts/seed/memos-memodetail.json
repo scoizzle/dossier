@@ -1,0 +1,16 @@
+{
+  "subject": {
+    "name": "Memos/MemoDetail",
+    "kind": "screen"
+  },
+  "facts": [
+    {
+      "kind": "element",
+      "text": "Memo detail shows the full memo text, its timestamp, and its tags."
+    },
+    {
+      "kind": "action",
+      "text": "The delete action removes the memo after a confirmation."
+    }
+  ]
+}

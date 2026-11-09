@@ -1,0 +1,226 @@
+{
+  "subject": {
+    "name": "Memos/Home",
+    "kind": "screen",
+    "aliases": ["Home"]
+  },
+  "facts": [
+    {
+      "local_id": "hdr",
+      "kind": "element",
+      "text": "Home header is 64 pixels tall in the first audit and shows the workspace name.",
+      "data": {"headerHeight": 64},
+      "tags": ["section:header"],
+      "refs": [
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/components/AppHeader.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home header is 72 pixels tall in the second audit of the same build.",
+      "data": {"headerHeight": 72},
+      "tags": ["section:header-alt"]
+    },
+    {
+      "local_id": "cmp",
+      "kind": "element",
+      "text": "Home composer lets a user type a memo, attach media, and choose visibility.",
+      "items": [
+        {"key": "editor", "text": "Rich text area for the memo body"},
+        {"key": "attach", "text": "Attach media button"},
+        {"key": "visibility", "text": "Visibility selector"}
+      ],
+      "tags": ["section:composer"],
+      "refs": [
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/components/MemoEditor.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer grows to at most 6 rows before it scrolls.",
+      "data": {"composerMaxRows": 6},
+      "tags": ["section:composer-rows-a"]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer grows to at most 12 rows before it scrolls.",
+      "data": {"composerMaxRows": 12},
+      "tags": ["section:composer-rows-b"]
+    },
+    {
+      "kind": "action",
+      "text": "Home saves a memo with Cmd+Enter on macOS.",
+      "data": {"saveShortcut": "Cmd+Enter"},
+      "tags": ["section:shortcut-a"]
+    },
+    {
+      "kind": "action",
+      "text": "Home saves a memo with Ctrl+Enter on Windows and Linux.",
+      "data": {"saveShortcut": "Ctrl+Enter"},
+      "tags": ["section:shortcut-b"]
+    },
+    {
+      "local_id": "list",
+      "kind": "element",
+      "text": "Home memo list renders cards newest first in a single column.",
+      "items": [
+        {"key": "card", "text": "Memo card with text and timestamp"},
+        {"key": "pin", "text": "Pin badge on pinned cards"}
+      ],
+      "tags": ["section:list"],
+      "refs": [
+        {"rel": "contains", "kind": "fact", "target": "@hdr", "basis": "observed"},
+        {"rel": "contains", "kind": "fact", "target": "@cmp", "basis": "observed"},
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/components/MemoList.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "local_id": "open",
+      "kind": "action",
+      "text": "Clicking a memo card opens the memo detail screen.",
+      "tags": ["section:actions"],
+      "refs": [
+        {"rel": "leads_to", "kind": "subject", "target": "Memos/MemoDetail", "basis": "observed"},
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/pages/Home.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "kind": "action",
+      "text": "Clicking the archive button opens the archived memos screen.",
+      "tags": ["section:actions"],
+      "refs": [
+        {"rel": "leads_to", "kind": "subject", "target": "Memos/Archived", "basis": "observed"}
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home header contains a search field that filters memos as you type.",
+      "tags": ["section:header"],
+      "refs": [
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/components/AppHeader.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer offers a visibility selector for public, private, and protected memos.",
+      "tags": ["section:visibility"]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer shows tag chips for the tags on the current draft.",
+      "tags": ["section:tag-chips"]
+    },
+    {
+      "kind": "element",
+      "text": "Home memo cards offer a pin action that keeps a memo at the top.",
+      "tags": ["section:pin"]
+    },
+    {
+      "kind": "note",
+      "text": "Home shows an empty state when the workspace has no memos yet.",
+      "tags": ["section:empty"]
+    },
+    {
+      "kind": "element",
+      "text": "Home sidebar links to Explore, Archived, and Settings.",
+      "tags": ["section:sidebar"]
+    },
+    {
+      "kind": "note",
+      "text": "Home supports keyboard navigation between memo cards.",
+      "tags": ["section:keyboard"]
+    },
+    {
+      "kind": "element",
+      "text": "Home sidebar has a settings entry for workspace preferences.",
+      "tags": ["section:settings"]
+    },
+    {
+      "kind": "element",
+      "text": "Home header has a theme toggle between light and dark.",
+      "tags": ["section:theme"]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer previews an attached image before the memo is saved.",
+      "tags": ["section:attachment"],
+      "attachments": [
+        {
+          "sha256": "938cef59266aa6f120e5a8d896dce5b7b4bede6719bd464f7999e1edd548b3b5",
+          "filename": "scripts/seed/shot-1x1.png",
+          "mime": "image/png",
+          "bytes": 70,
+          "perceptual": {"algo": "sha256-prefix", "value": "938cef59"}
+        }
+      ]
+    },
+    {
+      "kind": "note",
+      "text": "Home composer auto-saves the draft while the user types.",
+      "tags": ["section:autosave"],
+      "refs": [
+        {"rel": "derived_from", "kind": "fact", "target": "@cmp", "basis": "observed"}
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home composer suggests @mentions as the user types a name.",
+      "tags": ["section:composer"],
+      "refs": [
+        {
+          "rel": "derived_from",
+          "kind": "git",
+          "target": "usememos/memos/web/src/components/MemoEditor.tsx",
+          "basis": "observed",
+          "rev": "e4f3fb2"
+        }
+      ]
+    },
+    {
+      "kind": "note",
+      "text": "Home keeps the draft in local storage after a reload.",
+      "tags": ["section:draft"],
+      "refs": [
+        {"rel": "derived_from", "kind": "fact", "target": "@cmp", "basis": "observed"}
+      ]
+    },
+    {
+      "kind": "element",
+      "text": "Home shows a floating action button that focuses the composer.",
+      "tags": ["section:fab"],
+      "refs": [
+        {"rel": "mentions", "kind": "fact", "target": "@cmp", "basis": "observed"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "subject": "Memos/Home",
+  "estimator": "chars/4 (ceil(length / 4))",
+  "questions": [
+    {
+      "id": "q-header-height",
+      "question": "How tall is the Home header, and do the sources agree?",
+      "expected_answer": "The sources conflict: one records 64 pixels and another records 72 pixels.",
+      "supporting_fragments": ["header", "64", "72"],
+      "requires_contradiction": true
+    },
+    {
+      "id": "q-composer-rows",
+      "question": "What is the maximum number of rows the Home composer grows to?",
+      "expected_answer": "The sources conflict: one records 6 rows and another records 12 rows.",
+      "supporting_fragments": ["composer", "6 rows", "12 rows"],
+      "requires_contradiction": true
+    },
+    {
+      "id": "q-save-shortcut",
+      "question": "Which keyboard shortcut saves a memo on Home?",
+      "expected_answer": "The sources conflict: Cmd+Enter on macOS versus Ctrl+Enter on Windows and Linux.",
+      "supporting_fragments": ["Cmd+Enter", "Ctrl+Enter"],
+      "requires_contradiction": true
+    },
+    {
+      "id": "q-composer-purpose",
+      "question": "What can a user do in the Home composer?",
+      "expected_answer": "Type a memo, attach media, and choose visibility.",
+      "supporting_fragments": ["composer", "memo", "visibility"],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-list-order",
+      "question": "In what order does the Home memo list render cards?",
+      "expected_answer": "Newest first, in a single column.",
+      "supporting_fragments": ["newest first", "single column"],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-open-detail",
+      "question": "What happens when a user clicks a memo card on Home?",
+      "expected_answer": "The memo detail screen opens.",
+      "supporting_fragments": ["memo card", "memo detail"],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-archive-route",
+      "question": "What does the archive button on Home open?",
+      "expected_answer": "The archived memos screen.",
+      "supporting_fragments": ["archive", "archived"],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-search-field",
+      "question": "Where is the search field on Home and what does it do?",
+      "expected_answer": "It sits in the header and filters memos as you type.",
+      "supporting_fragments": ["search field", "filters"],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-offline-sync",
+      "question": "How does Home sync memos while the client is offline?",
+      "expected_answer": "Unanswerable: the seed records no offline sync behaviour.",
+      "supporting_fragments": [],
+      "requires_contradiction": false
+    },
+    {
+      "id": "q-billing-invoice",
+      "question": "Where can a user download a billing invoice for a paid workspace?",
+      "expected_answer": "Unanswerable: the seed records no billing or invoice screen.",
+      "supporting_fragments": [],
+      "requires_contradiction": false
+    }
+  ]
+}

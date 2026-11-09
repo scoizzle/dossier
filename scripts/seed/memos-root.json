@@ -1,0 +1,17 @@
+{
+  "subject": {
+    "name": "Memos",
+    "kind": "app",
+    "aliases": ["Memos App"]
+  },
+  "facts": [
+    {
+      "kind": "overview",
+      "text": "Memos is a self-hosted, open-source memo app with a web client and an HTTP API."
+    },
+    {
+      "kind": "route",
+      "text": "The web client routes /, /explore, /archived, /settings, and /m/:id."
+    }
+  ]
+}

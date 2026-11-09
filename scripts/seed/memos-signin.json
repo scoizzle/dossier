@@ -1,0 +1,16 @@
+{
+  "subject": {
+    "name": "Memos/SignIn",
+    "kind": "screen"
+  },
+  "facts": [
+    {
+      "kind": "element",
+      "text": "Sign in screen has a username field, a password field, and a submit button."
+    },
+    {
+      "kind": "action",
+      "text": "Submitting valid credentials opens the home screen."
+    }
+  ]
+}

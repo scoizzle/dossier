@@ -1,0 +1,16 @@
+{
+  "subject": {
+    "name": "Memos/Archived",
+    "kind": "screen"
+  },
+  "facts": [
+    {
+      "kind": "element",
+      "text": "Archived screen lists archived memos with a restore action."
+    },
+    {
+      "kind": "action",
+      "text": "Restoring an archived memo sends it back to the home list."
+    }
+  ]
+}

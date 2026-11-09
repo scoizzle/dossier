@@ -70,6 +70,20 @@ Shapes in `contract/ops.schema.json`.
 - **search** `({ subject?, kind?, key?, tag?, actor?, status?, since?, q?, ref_target?, direction?: "in"|"out", limit?: 20, cursor? })` => `{ hits: [FactView], total, complete, refine?, next? }`
 - **compile_dossier** `({ subject, descendants?, needs?, budget?, depth?: "index"|"full", order?: "rank"|"seq", rank?: {recency: 0..1}, follow?: {rels?, hops?: 1|2}, format?: "json"|"markdown" })` => **Dossier** `{ subject, depth, needs[], budget_tokens, used_tokens, facts, linked, conflicts, gaps, dropped, degraded?, self_check }`. `linked` comes from follow with a separate budget slice (~25%). `conflicts[].resolution` is always null.
 
+### publish (CLI-only export, not a fourth verb)
+
+`dossier publish --out <dir> [--subject s] [--budget 1200] [--depth full|index] [--facts detail|none]` renders the store as a markdown bundle for agents with no tool access. It calls `compile_dossier` once per subject (markdown, no descendants) and `show`-equivalent reads per fact; it changes no semantics and calls no model or network. It is a one-shot file writer, independent of MCP and the web surface.
+
+Layout: `AGENTS.md` (entry point), `README.md`, `INDEX.md` (subject, kind, facts, conflicts, gaps, tokens, link; totals; conflicted subjects), `manifest.json`, `conflicts.md`, `gaps.md`, `subjects/<slug>.md`, and unless `--facts none`, `facts/<shortid>.md`. Drill-down: README -> INDEX -> subject -> fact. Every claim in a subject file ends in a bracketed fact id that is a link to its fact file.
+
+Invariants:
+
+- Output is a pure function of store content and options. Ordering uses content keys (subject name/kind/aliases, fact key/kind/text/content_hash); ids are last-resort tie-breaks. Fact ids themselves are random, so two stores built separately have the same structure but different fact file names.
+- `manifest.json` has sorted keys and no timestamps; it lists every generated file and a `bundle_hash`. README's `Generated at` is carried over from the previous run while that hash is unchanged, so republishing is byte-identical.
+- Republish removes only files the previous manifest listed; foreign files are preserved. A generated path occupied by a foreign file aborts before any write.
+- Fact text is never truncated in fact files. Slugs: lowercase, runs of non `a-z0-9` to one hyphen, trimmed, 80 max, deterministic `-2`, `-3` suffixes on collision.
+- `AGENTS.md` carries the untrusted-data warning and the staleness note (facts are pinned to the revisions in their files).
+
 ## Failure policy
 
 | Path | Policy | Behaviour |

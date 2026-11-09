@@ -1,0 +1,304 @@
+{
+  "bundle_hash": "f9fe29b6f0acae5a5e88d57c1e4471302fab192a3408af6e64e16456e1dc0073",
+  "facts": {
+    "099c2db2-6d03-4344-8d02-3373f751b310": {
+      "path": "facts/099c2db2.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 304
+    },
+    "0cffee8b-1842-40cf-9b59-802fb2d1bd90": {
+      "path": "facts/0cffee8b.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 197
+    },
+    "1079ef20-19a9-4ce3-b843-83954107f0ce": {
+      "path": "facts/1079ef20.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 111
+    },
+    "17dc80be-618a-4139-9c55-0b173938136e": {
+      "path": "facts/17dc80be.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 108
+    },
+    "194c94de-c61e-4942-ab1f-28d2e4f55c0d": {
+      "path": "facts/194c94de.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 110
+    },
+    "1fc32947-ff81-4555-918e-25b5e89f70d4": {
+      "path": "facts/1fc32947.md",
+      "subject": "aaeaa96e-5b06-42a1-b82d-7c3f33336e1f",
+      "tokens": 108
+    },
+    "2407be41-690d-4dd8-a0be-c49f553f6d58": {
+      "path": "facts/2407be41.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 283
+    },
+    "4d456e91-3594-4a35-954b-f7d7ff29b5a3": {
+      "path": "facts/4d456e91.md",
+      "subject": "667d6466-b3a0-4b50-92eb-ae39cbac6fbd",
+      "tokens": 111
+    },
+    "6e96c19d-d368-47dc-a1b9-aa8b028304b3": {
+      "path": "facts/6e96c19d.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 123
+    },
+    "78f91e3d-a1b0-4d73-99f6-a07c18f8791b": {
+      "path": "facts/78f91e3d.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 186
+    },
+    "7b4ce1eb-65b3-49b7-95cf-3eac9c358109": {
+      "path": "facts/7b4ce1eb.md",
+      "subject": "b5913331-1bd9-4cb7-ae98-6daaeba05edb",
+      "tokens": 108
+    },
+    "7fc4164c-7258-4aea-8b0a-d6f1977f256b": {
+      "path": "facts/7fc4164c.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 108
+    },
+    "84885f32-8cf9-4120-b0cb-9ac5146c78de": {
+      "path": "facts/84885f32.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 124
+    },
+    "84e61d41-dc4a-4683-b6fd-d2a38a2cfbb0": {
+      "path": "facts/84e61d41.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 163
+    },
+    "86e523c9-186d-4ecb-a1cb-af24cac799a8": {
+      "path": "facts/86e523c9.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 146
+    },
+    "8f4320da-561e-41d3-a3e6-f065b82748eb": {
+      "path": "facts/8f4320da.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 145
+    },
+    "90f88270-d3fe-4963-a467-906696b3faee": {
+      "path": "facts/90f88270.md",
+      "subject": "f464e782-8d2f-466e-8e73-8c0d345d7f60",
+      "tokens": 109
+    },
+    "9449c90e-8fb8-4061-904d-f3261e59be15": {
+      "path": "facts/9449c90e.md",
+      "subject": "667d6466-b3a0-4b50-92eb-ae39cbac6fbd",
+      "tokens": 105
+    },
+    "97f2178f-ae3d-47ed-b107-2561d86f5a76": {
+      "path": "facts/97f2178f.md",
+      "subject": "f464e782-8d2f-466e-8e73-8c0d345d7f60",
+      "tokens": 106
+    },
+    "9993a33a-eb02-4bd7-b447-e11e44279720": {
+      "path": "facts/9993a33a.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 139
+    },
+    "9c52c5e9-abc1-4e57-859d-db5246e9fda2": {
+      "path": "facts/9c52c5e9.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 165
+    },
+    "aaa2b5c7-bc99-4da5-983d-46e86cd58adb": {
+      "path": "facts/aaa2b5c7.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 124
+    },
+    "aaedcb9e-97ae-48ac-9304-85e6102e8f43": {
+      "path": "facts/aaedcb9e.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 109
+    },
+    "c1d58acf-9896-4469-917e-cd980c9fee47": {
+      "path": "facts/c1d58acf.md",
+      "subject": "b5913331-1bd9-4cb7-ae98-6daaeba05edb",
+      "tokens": 108
+    },
+    "c3fc23e4-61f7-4302-8850-d8d3cbe67736": {
+      "path": "facts/c3fc23e4.md",
+      "subject": "aaeaa96e-5b06-42a1-b82d-7c3f33336e1f",
+      "tokens": 111
+    },
+    "caec1c14-3e2f-4595-ad5d-4b6502a70aab": {
+      "path": "facts/caec1c14.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 110
+    },
+    "cb223831-a5c7-45e4-8e03-d1cdfd01ac9f": {
+      "path": "facts/cb223831.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 117
+    },
+    "ceb4a6cb-310d-42c9-bbab-80159f6d5c6f": {
+      "path": "facts/ceb4a6cb.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 108
+    },
+    "d91ff6f7-3b7d-45d5-b348-d4cd244e7481": {
+      "path": "facts/d91ff6f7.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 120
+    },
+    "e2c8994c-6ca3-4be9-b4f3-027618545071": {
+      "path": "facts/e2c8994c.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 148
+    },
+    "f0eacfb1-3f61-45fe-9417-be6d537713fd": {
+      "path": "facts/f0eacfb1.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 146
+    },
+    "f5138a26-dcd3-4ed2-b56a-0c1642d443cf": {
+      "path": "facts/f5138a26.md",
+      "subject": "eefd45f2-119b-4f45-a8e3-4bd8a5be2631",
+      "tokens": 123
+    }
+  },
+  "files": [
+    "AGENTS.md",
+    "INDEX.md",
+    "README.md",
+    "conflicts.md",
+    "facts/099c2db2.md",
+    "facts/0cffee8b.md",
+    "facts/1079ef20.md",
+    "facts/17dc80be.md",
+    "facts/194c94de.md",
+    "facts/1fc32947.md",
+    "facts/2407be41.md",
+    "facts/4d456e91.md",
+    "facts/6e96c19d.md",
+    "facts/78f91e3d.md",
+    "facts/7b4ce1eb.md",
+    "facts/7fc4164c.md",
+    "facts/84885f32.md",
+    "facts/84e61d41.md",
+    "facts/86e523c9.md",
+    "facts/8f4320da.md",
+    "facts/90f88270.md",
+    "facts/9449c90e.md",
+    "facts/97f2178f.md",
+    "facts/9993a33a.md",
+    "facts/9c52c5e9.md",
+    "facts/aaa2b5c7.md",
+    "facts/aaedcb9e.md",
+    "facts/c1d58acf.md",
+    "facts/c3fc23e4.md",
+    "facts/caec1c14.md",
+    "facts/cb223831.md",
+    "facts/ceb4a6cb.md",
+    "facts/d91ff6f7.md",
+    "facts/e2c8994c.md",
+    "facts/f0eacfb1.md",
+    "facts/f5138a26.md",
+    "gaps.md",
+    "manifest.json",
+    "subjects/memos-archived.md",
+    "subjects/memos-home.md",
+    "subjects/memos-memodetail.md",
+    "subjects/memos-signin.md",
+    "subjects/memos.md"
+  ],
+  "format": 1,
+  "options": {
+    "budget": 1200,
+    "depth": "full",
+    "facts": "detail",
+    "subject": null,
+    "subject_id": null
+  },
+  "subjects": {
+    "667d6466-b3a0-4b50-92eb-ae39cbac6fbd": {
+      "kind": "screen",
+      "name": "Memos/SignIn",
+      "path": "subjects/memos-signin.md",
+      "slug": "memos-signin",
+      "title": "Memos / Memos/SignIn",
+      "tokens": 120
+    },
+    "aaeaa96e-5b06-42a1-b82d-7c3f33336e1f": {
+      "kind": "screen",
+      "name": "Memos/MemoDetail",
+      "path": "subjects/memos-memodetail.md",
+      "slug": "memos-memodetail",
+      "title": "Memos / Memos/MemoDetail",
+      "tokens": 121
+    },
+    "b5913331-1bd9-4cb7-ae98-6daaeba05edb": {
+      "kind": "screen",
+      "name": "Memos/Archived",
+      "path": "subjects/memos-archived.md",
+      "slug": "memos-archived",
+      "title": "Memos / Memos/Archived",
+      "tokens": 119
+    },
+    "eefd45f2-119b-4f45-a8e3-4bd8a5be2631": {
+      "kind": "screen",
+      "name": "Memos/Home",
+      "path": "subjects/memos-home.md",
+      "slug": "memos-home",
+      "title": "Memos / Memos/Home",
+      "tokens": 929
+    },
+    "f464e782-8d2f-466e-8e73-8c0d345d7f60": {
+      "kind": "app",
+      "name": "Memos",
+      "path": "subjects/memos.md",
+      "slug": "memos",
+      "title": "Memos",
+      "tokens": 160
+    }
+  },
+  "tokens": {
+    "AGENTS.md": 298,
+    "INDEX.md": 248,
+    "README.md": 437,
+    "conflicts.md": 163,
+    "facts/099c2db2.md": 304,
+    "facts/0cffee8b.md": 197,
+    "facts/1079ef20.md": 111,
+    "facts/17dc80be.md": 108,
+    "facts/194c94de.md": 110,
+    "facts/1fc32947.md": 108,
+    "facts/2407be41.md": 283,
+    "facts/4d456e91.md": 111,
+    "facts/6e96c19d.md": 123,
+    "facts/78f91e3d.md": 186,
+    "facts/7b4ce1eb.md": 108,
+    "facts/7fc4164c.md": 108,
+    "facts/84885f32.md": 124,
+    "facts/84e61d41.md": 163,
+    "facts/86e523c9.md": 146,
+    "facts/8f4320da.md": 145,
+    "facts/90f88270.md": 109,
+    "facts/9449c90e.md": 105,
+    "facts/97f2178f.md": 106,
+    "facts/9993a33a.md": 139,
+    "facts/9c52c5e9.md": 165,
+    "facts/aaa2b5c7.md": 124,
+    "facts/aaedcb9e.md": 109,
+    "facts/c1d58acf.md": 108,
+    "facts/c3fc23e4.md": 111,
+    "facts/caec1c14.md": 110,
+    "facts/cb223831.md": 117,
+    "facts/ceb4a6cb.md": 108,
+    "facts/d91ff6f7.md": 120,
+    "facts/e2c8994c.md": 148,
+    "facts/f0eacfb1.md": 146,
+    "facts/f5138a26.md": 123,
+    "gaps.md": 25,
+    "subjects/memos-archived.md": 119,
+    "subjects/memos-home.md": 929,
+    "subjects/memos-memodetail.md": 121,
+    "subjects/memos-signin.md": 120,
+    "subjects/memos.md": 160
+  }
+}

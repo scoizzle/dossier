@@ -401,14 +401,15 @@ public sealed class CompileTests
         Post(db, "Widget", facts);
 
         var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget" });
-        var estimate = DossierStore.EstimateTokens(JsonSerializer.Serialize(dossier, JsonCodec.Options));
+        // The index cap bounds the fact content, not the serialized envelope.
+        var factTokens = dossier.Facts.Sum(f => DossierStore.EstimateIndexFactTokens(f, "json"));
 
         await Assert.That(dossier.Depth).IsEqualTo("index");
-        await Assert.That(estimate).IsLessThanOrEqualTo(300);
+        await Assert.That(factTokens).IsLessThanOrEqualTo(300);
         await Assert.That(dossier.Facts.Count).IsLessThanOrEqualTo(8);
-        await Assert.That(dossier.Facts.Count).IsGreaterThan(0);
+        await Assert.That(dossier.Facts.Count).IsGreaterThanOrEqualTo(3);
         await Assert.That(dossier.Facts.All(f => f.Text.Length <= 120)).IsTrue();
-            }
+    }
 
     [Test]
     public async Task Budget_IsMeasuredInRenderedForm()
@@ -486,6 +487,72 @@ public sealed class CompileTests
         await Assert.That(DossierStore.EstimateTokens(rendered)).IsLessThanOrEqualTo(300);
         await Assert.That(DossierStore.EstimateRenderedTokens(dossier, "markdown")).IsLessThanOrEqualTo(300);
         await Assert.That(dossier.Facts.Count).IsGreaterThan(0);
+    }
+
+    [Test]
+    public async Task Index_EmitsFactsEvenWhenConflictsFillTheEnvelope()
+    {
+        using var db = new TempDb();
+        Post(
+            db,
+            "Widget",
+            Fixtures.Fact("first config", data: Fixtures.Json("""{"a":1,"b":1,"c":1}""")),
+            Fixtures.Fact("second config", data: Fixtures.Json("""{"a":2,"b":2,"c":2}""")),
+            Fixtures.Fact("third config", data: Fixtures.Json("""{"a":3,"b":3,"c":3}""")),
+            Fixtures.Fact("ordinary alpha fact"),
+            Fixtures.Fact("ordinary bravo fact"),
+            Fixtures.Fact("ordinary charlie fact"),
+            Fixtures.Fact("ordinary delta fact"),
+            Fixtures.Fact("ordinary echo fact"));
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
+
+        await Assert.That(dossier.Conflicts.Count).IsEqualTo(3);
+        await Assert.That(dossier.Facts.Count).IsGreaterThanOrEqualTo(3);
+        await Assert.That(dossier.Facts.Count).IsLessThanOrEqualTo(8);
+    }
+
+    [Test]
+    public async Task Index_JsonAndMarkdownBothReturnFacts()
+    {
+        using var db = new TempDb();
+        Post(
+            db,
+            "Widget",
+            Fixtures.Fact("first config", data: Fixtures.Json("""{"a":1,"b":1,"c":1}""")),
+            Fixtures.Fact("second config", data: Fixtures.Json("""{"a":2,"b":2,"c":2}""")),
+            Fixtures.Fact("third config", data: Fixtures.Json("""{"a":3,"b":3,"c":3}""")),
+            Fixtures.Fact("ordinary alpha fact"),
+            Fixtures.Fact("ordinary bravo fact"),
+            Fixtures.Fact("ordinary charlie fact"),
+            Fixtures.Fact("ordinary delta fact"),
+            Fixtures.Fact("ordinary echo fact"));
+
+        var json = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
+        var markdown = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "markdown" });
+
+        await Assert.That(json.Facts.Count).IsGreaterThan(0);
+        await Assert.That(markdown.Facts.Count).IsGreaterThan(0);
+        await Assert.That(markdown.Facts.Count).IsGreaterThanOrEqualTo(json.Facts.Count);
+    }
+
+    [Test]
+    public async Task Index_HardCapOfEightStillHolds()
+    {
+        using var db = new TempDb();
+        var facts = Enumerable.Range(1, 20)
+            .Select(i => Fixtures.Fact($"ordinary fact {i} alpha{i}"))
+            .ToArray();
+        Post(db, "Widget", facts);
+
+        var json = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
+        var markdown = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "markdown" });
+
+        await Assert.That(json.Facts.Count).IsEqualTo(8);
+        await Assert.That(markdown.Facts.Count).IsEqualTo(8);
+        await Assert.That(json.Conflicts.Count).IsEqualTo(0);
+        await Assert.That(json.Facts.Sum(f => DossierStore.EstimateIndexFactTokens(f, "json"))).IsLessThanOrEqualTo(300);
+        await Assert.That(markdown.Facts.Sum(f => DossierStore.EstimateIndexFactTokens(f, "markdown"))).IsLessThanOrEqualTo(300);
     }
 
     [Test]

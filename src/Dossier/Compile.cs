@@ -92,6 +92,7 @@ public sealed partial class DossierStore
     public const double DefaultRecencyWeight = 0.2;
     private const int IndexTokenCap = 300;
     private const int IndexMaxFacts = 8;
+    private const int IndexMinFacts = 3;
     private const int IndexLineLength = 120;
     private const int MaxDescendantDepth = 3;
     private const double DedupeThreshold = 0.85;
@@ -118,6 +119,16 @@ public sealed partial class DossierStore
     public static int EstimateRenderedTokens(CompiledDossier dossier, string format) => format == "markdown"
         ? EstimateTokens(RenderMarkdown(dossier))
         : EstimateTokens(Serialize(dossier));
+
+    /// <summary>
+    /// What one index-depth fact spends against the index cap: its text payload for json, or the
+    /// rendered line (text plus citation id) for markdown. The serialized envelope, per-fact JSON
+    /// scaffolding, conflicts, and gaps are never charged to this cap, so a subject whose conflicts
+    /// alone fill 300 tokens still gets a facts section.
+    /// </summary>
+    public static int EstimateIndexFactTokens(FactView fact, string format) => format == "markdown"
+        ? EstimateFactTokens(fact, "markdown")
+        : EstimateTokens(fact.Text);
 
     private static int EstimateConflictTokens(DossierConflict conflict, string format) => format == "markdown"
         ? EstimateTokens("- " + conflict.Field + ": " + string.Join("; ", conflict.Values.Select(v => $"{v.Value.GetRawText()} [{v.Fact}]")) + "\n")
@@ -225,42 +236,29 @@ public sealed partial class DossierStore
                 views[candidate.Id].Text = OneLine(candidate.Text, IndexLineLength);
             }
 
+            // The index cap bounds the fact content itself, never the serialized envelope and never
+            // conflicts or gaps. Counting the envelope is what previously left the facts array empty:
+            // the JSON scaffolding plus any conflicts could exceed the cap before a fact was tried.
             var cap = Math.Min(budget, IndexTokenCap);
-            var fits = true;
+            var floor = Math.Min(IndexMinFacts, representatives.Count);
+            var factTokens = 0;
             foreach (var candidate in representatives)
             {
-                if (fits && emitted.Count < IndexMaxFacts)
-                {
-                    var trial = BuildDossier(subject, depth, needs, budget, emitted.Append(candidate).ToList(), views, conflicts, new List<DossierGap>(), representatives);
-                    if (EstimateRenderedTokens(trial, format) <= cap)
-                    {
-                        emitted.Add(candidate);
-                        continue;
-                    }
-                }
-
-                fits = false;
-            }
-        }
-
-        var gaps = FindGaps(needs, emitted);
-
-        if (depth == "index")
-        {
-            // Gaps are part of the index; shed facts from the tail if they push it over the cap.
-            var cap = Math.Min(budget, IndexTokenCap);
-            while (emitted.Count > 0)
-            {
-                var trial = BuildDossier(subject, depth, needs, budget, emitted, views, conflicts, gaps, representatives);
-                if (EstimateRenderedTokens(trial, format) <= cap)
+                if (emitted.Count >= IndexMaxFacts)
                 {
                     break;
                 }
 
-                emitted.RemoveAt(emitted.Count - 1);
-                gaps = FindGaps(needs, emitted);
+                var cost = EstimateIndexFactTokens(views[candidate.Id], format);
+                if (emitted.Count < floor || factTokens + cost <= cap)
+                {
+                    emitted.Add(candidate);
+                    factTokens += cost;
+                }
             }
         }
+
+        var gaps = FindGaps(needs, emitted);
 
         if (order == "seq")
         {

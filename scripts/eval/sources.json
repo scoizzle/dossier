@@ -1,11 +1,11 @@
 {
-  "_comment": "Primary artifacts an agent must read to answer the ten Memos/Home questions without Dossier. git_paths is generated from scripts/seed/*.json (kind=git refs); regenerate with the jq command in scripts/eval.sh. Screenshot dimensions are DECLARED, not measured: the seeded PNG is a 1x1 placeholder, so this stands in for the real Home screenshots the facts were captured from.",
+  "_comment": "Primary artifacts an agent must read to answer the ten Memos/Home questions without Dossier. git_paths is generated from scripts/seed/*.json (kind=git refs); check it with scripts/verify-refs.sh. Screenshot dimensions are DECLARED, not measured: the seeded PNG is a 1x1 placeholder, so this stands in for the real Home screenshots the facts were captured from.",
   "repo": "usememos/memos",
-  "rev": "e4f3fb2",
+  "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1",
   "git_paths": [
-    "web/src/components/AppHeader.tsx",
-    "web/src/components/MemoEditor.tsx",
-    "web/src/components/MemoList.tsx",
+    "web/src/components/AppSidebar/AppSidebar.tsx",
+    "web/src/components/MemoEditor/MemoEditor.tsx",
+    "web/src/components/PagedMemoList/PagedMemoList.tsx",
     "web/src/pages/Home.tsx"
   ],
   "screenshots": {

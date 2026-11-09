@@ -110,41 +110,45 @@ Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts), clean te
 DB, `bash scripts/eval.sh`. Arm C fetches from raw.githubusercontent.com (network
 only for this measurement; failures print SKIPPED and exit 0).
 
-**Arm C is incomplete and only a lower bound.** The pinned rev `e4f3fb2` does not
-exist in usememos/memos (404 on every path; the seed rev is a placeholder), and
-three of the four seeded paths (`AppHeader.tsx`, `MemoEditor.tsx`, `MemoList.tsx`)
-do not exist at `main` or at any tag checked (v0.19.0 to v0.31.0). Run with
-`EVAL_PRIMARY_REV=main`, only `web/src/pages/Home.tsx` could be fetched. The seed
-paths and the real repo disagree, so stage one cannot be fully measured until the
-seed cites real artifacts.
+Every seeded git ref now resolves. The pinned rev is the default-branch HEAD
+`e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1` (raw.githubusercontent.com does not
+accept the short `e4f3fb2`), and the four cited paths were corrected to the real
+components: `web/src/components/AppSidebar/AppSidebar.tsx` (header),
+`web/src/components/MemoEditor/MemoEditor.tsx` (composer),
+`web/src/components/PagedMemoList/PagedMemoList.tsx` (memo list) and
+`web/src/pages/Home.tsx`. `bash scripts/verify-refs.sh` fetches each distinct ref
+and fails unless every one is HTTP 200; the current run is 4 of 4 at 200.
 
 | Arm | Context | Chars | Tokens | Facts |
 | --- | --- | --- | --- | --- |
-| C | primary sources: 1 of 4 files (`Home.tsx` at `main`, 3945 chars, 987 tokens) + 3 declared screenshots at 1440x900 (5184 tokens) | 3945 + images | 6171 (lower bound) | n/a |
+| C | primary sources: 4 of 4 files at the pinned rev (47940 chars, 11987 tokens) + 3 declared screenshots at 1440x900 (5184 tokens) | 47940 + images | 17171 | n/a |
 | A | `search` JSON, limit 100 | 5902 | 1476 | 24 |
 | A2 | same facts as bare text | 1483 | 371 | 24 |
 | B | compiled dossier, budget 1200, full, markdown | 2830 | 708 | 24 |
 
-Ratios: B/C 0.11, B/A 0.48, B/A2 1.91. Arm C needs 7 distinct primary artifacts
+Per-file arm C tokens (chars/4): AppSidebar.tsx 19271/4818, MemoEditor.tsx
+9786/2447, PagedMemoList.tsx 14938/3735, Home.tsx 3945/987.
+
+Ratios: B/C 0.04, B/A 0.48, B/A2 1.91. Arm C needs 7 distinct primary artifacts
 (4 files + 3 screenshots), so an agent performs 7 read operations before answering;
 the Dossier arms need 1. The screenshot count and 1440x900 size are declared in
 `scripts/eval/sources.json`, not measured (the seeded PNG is a 1x1 placeholder),
-and they supply 84 percent of arm C's tokens. With the pinned rev, offline, or
-without the missing files, arm C is 5184 tokens (screenshots only) and the script
-prints a WARNING that B/C is not valid.
+and they supply 30 percent of arm C's tokens; the four source files supply the
+other 70 percent.
 
 Accuracy (unchanged): two agents given only arm A or only arm B scored 10/10 on
 the ten questions in `scripts/eval/questions.json`, including all three
 contradiction questions and both unanswerable ones. No agent has yet answered from
 arm C.
 
-Outcome: on tokens, B is smaller than C, at 0.11 of the lower bound, so B beats C
-by at least 8.7x. That is stage one at work, and it is driven by the declared
-screenshots, not by the source files. Stage two (A2 to B) is a net loss at 24
-facts. The honest reading is that capture carries the compression and compile
-currently adds cost, and C's accuracy is unmeasured. The hypothesis still needs a
-subject with real, resolvable citations and 200 or more facts, where a fixed token
-budget forces selection.
+Outcome: on tokens, B is smaller than C, at 0.04 of the measured total, so B beats
+C by about 24x. Both halves of the two-stage framing are now measured: stage one
+(primary sources to bare facts, C to A2) is 46x, and stage two (A2 to B) is a net
+loss at 24 facts. The honest reading is that capture carries the compression (most
+of it in the four source files, not only the declared screenshots) and compile
+currently adds cost, while C's accuracy is still unmeasured. The hypothesis still
+needs a subject with 200 or more facts, where a fixed token budget forces
+selection.
 
 ## Path to Poly
 

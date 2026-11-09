@@ -15,9 +15,9 @@
         {
           "rel": "derived_from",
           "kind": "git",
-          "target": "usememos/memos/web/src/components/AppHeader.tsx",
+          "target": "usememos/memos/web/src/components/AppSidebar/AppSidebar.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },
@@ -41,9 +41,9 @@
         {
           "rel": "derived_from",
           "kind": "git",
-          "target": "usememos/memos/web/src/components/MemoEditor.tsx",
+          "target": "usememos/memos/web/src/components/MemoEditor/MemoEditor.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },
@@ -86,9 +86,9 @@
         {
           "rel": "derived_from",
           "kind": "git",
-          "target": "usememos/memos/web/src/components/MemoList.tsx",
+          "target": "usememos/memos/web/src/components/PagedMemoList/PagedMemoList.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },
@@ -104,7 +104,7 @@
           "kind": "git",
           "target": "usememos/memos/web/src/pages/Home.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },
@@ -124,9 +124,9 @@
         {
           "rel": "derived_from",
           "kind": "git",
-          "target": "usememos/memos/web/src/components/AppHeader.tsx",
+          "target": "usememos/memos/web/src/components/AppSidebar/AppSidebar.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },
@@ -200,9 +200,9 @@
         {
           "rel": "derived_from",
           "kind": "git",
-          "target": "usememos/memos/web/src/components/MemoEditor.tsx",
+          "target": "usememos/memos/web/src/components/MemoEditor/MemoEditor.tsx",
           "basis": "observed",
-          "rev": "e4f3fb2"
+          "rev": "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
         }
       ]
     },

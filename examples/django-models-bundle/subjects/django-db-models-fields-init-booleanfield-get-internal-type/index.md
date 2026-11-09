@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BooleanField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::BooleanField.get_internal_type (id `ddc9ba98-7a7e-4773-8740-bfca15529909`)
+- Subject: django/db/models/fields/__init__::BooleanField.get_internal_type (id `b9438384-b121-46b0-bea3-af3c9a17165a`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

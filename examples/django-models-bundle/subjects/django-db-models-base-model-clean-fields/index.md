@@ -1,9 +1,9 @@
 # django/db/models/base::Model.clean_fields
 
-- Subject: django/db/models/base::Model.clean_fields (id `6d4046b8-141a-4876-9f91-3e69af400a0d`)
+- Subject: django/db/models/base::Model.clean_fields (id `f97664b8-5749-4055-b5fd-fd9eaee7ac78`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

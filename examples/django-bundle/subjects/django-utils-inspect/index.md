@@ -1,14 +1,14 @@
 # django/utils/inspect
 
-- Subject: django/utils/inspect (id `cdd9f594-6a73-4656-9f52-ff0c28a72486`)
+- Subject: django/utils/inspect (id `15c3fdbd-d596-4fe3-9fe9-1bd4a18d1c30`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 17 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1200 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - This context manager is not reentrant. """ if PY315 or not PY314: yield return with lock: original_helper = inspect._signature_from_callable inspect._signature_from_callable = safe_signature_from_callable try: yield finally: inspect._signature_from_callable = original_helper [40164182]
 - This private helper should only be used for Python 3.14, as https://github.com/python/cpython/issues/141560 was fixed in 3.15. [b1a0cb7a]
@@ -28,6 +28,9 @@
 - from django.utils.version import PY314, PY315 [2d1921d8]
 - if PY314: import annotationlib [819614d5]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [1e624da6] [5c78c5ed] [0bd4f256] [cfb2747e]
+- [1e624da6] def getfullargspec(*args, annotation_format=None, **kwargs): """ A wrapper around inspect.getfullargspec that leaves deferred annotations unevaluated on Python 3.14+, since they are not used in our case. """ if PY315: return inspect.getfullargspec( *args, **kwargs, annotation_format=annotationlib.Format.FORWARDREF ) if PY314: with lazy_annotations(): return inspect.getfullargspec(*args, **kwargs) else: return inspect.getfullargspec(*args, **kwargs)
+- [5c78c5ed] def method_has_no_args(meth): """Return True if a method only accepts 'self'.""" count = len([p for p in _get_callable_parameters(meth) if p.kind in ARG_KINDS]) return count == 0 if inspect.ismethod(meth) else count == 1
+- [0bd4f256] def signature(obj): """ A wrapper around inspect.signature that leaves deferred annotations unevaluated on Python 3.14+, since they are not used in our case. """ if PY314: return inspect.signature(obj, annotation_format=annotationlib.Format.FORWARDREF) else: return inspect.signature(obj)
+- [cfb2747e] import functools import inspect import threading from contextlib import contextmanager

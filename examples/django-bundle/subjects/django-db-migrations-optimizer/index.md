@@ -1,8 +1,8 @@
 # django/db/migrations/optimizer
 
-- Subject: django/db/migrations/optimizer (id `d2455ad1-8c45-4459-a5a4-0fb1a11d47dd`)
+- Subject: django/db/migrations/optimizer (id `64dd0551-7082-4aaa-b063-d4840010d6f5`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 681 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

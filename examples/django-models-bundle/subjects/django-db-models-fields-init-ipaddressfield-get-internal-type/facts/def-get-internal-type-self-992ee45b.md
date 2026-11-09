@@ -1,6 +1,6 @@
 # Fact 992ee45b
 
-Store id: 3f272ed7-eee3-4b6f-ab3f-b6654af411e6
+Store id: b98c3673-3491-41fc-b8bc-62cb70b34c47
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5693960+00:00`
+- posted_at: `2026-11-09T23:31:56.7282890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2292,
     "symbol": "IPAddressField.get_internal_type"
   },
-  "id": "3f272ed7-eee3-4b6f-ab3f-b6654af411e6",
+  "id": "b98c3673-3491-41fc-b8bc-62cb70b34c47",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5693960+00:00"
+    "posted_at": "2026-11-09T23:31:56.7282890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "95778e2f-7119-4138-b0b5-465767fc6dc1",
+  "subject_id": "8aed0119-7d59-4366-89aa-ff5af9c95a74",
   "subject_name": "django/db/models/fields/__init__::IPAddressField.get_internal_type",
   "tags": [
     "entity:method"

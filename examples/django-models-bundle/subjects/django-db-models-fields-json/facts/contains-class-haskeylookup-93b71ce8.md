@@ -1,6 +1,6 @@
 # Fact 93b71ce8
 
-Store id: 32cc27f0-fa89-408c-a04e-8d4d929de6dc
+Store id: a2db8fef-6c61-4a69-9f56-8d75b7df407b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class HasKeyLookup
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "32cc27f0-fa89-408c-a04e-8d4d929de6dc",
+  "id": "a2db8fef-6c61-4a69-9f56-8d75b7df407b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "HasKeyLookup"
       },
       "rel": "contains",
-      "target": "f1c7f20a-9977-4fb5-adc1-adb0fbd5b11a"
+      "target": "397dd665-22a4-4d45-8e58-5a08e3194b90"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

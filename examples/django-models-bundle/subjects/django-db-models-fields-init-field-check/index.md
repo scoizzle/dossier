@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.check
 
-- Subject: django/db/models/fields/__init__::Field.check (id `f971bf83-25d5-4ca5-9413-1b2be8f9fac0`)
+- Subject: django/db/models/fields/__init__::Field.check (id `5a07eaf8-5a03-4a36-a2de-bca6e1b215df`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

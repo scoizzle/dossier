@@ -1,6 +1,6 @@
 # Fact cfeddd50
 
-Store id: a20d3606-5dce-44ef-b5e5-8cb79d66508e
+Store id: 09e03272-a0bc-4925-b2f8-43c87047e890
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_condition_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7259740+00:00`
+- posted_at: `2026-11-09T23:31:54.2290050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 442,
     "symbol": "UniqueConstraint._get_condition_sql"
   },
-  "id": "a20d3606-5dce-44ef-b5e5-8cb79d66508e",
+  "id": "09e03272-a0bc-4925-b2f8-43c87047e890",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7259740+00:00"
+    "posted_at": "2026-11-09T23:31:54.2290050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "45e2bb99-5924-4f9f-b2a9-88ba6d456d5a",
+  "subject_id": "fe7cdf68-6979-4027-b958-60a241ff0661",
   "subject_name": "django/db/models/constraints::UniqueConstraint._get_condition_sql",
   "tags": [
     "entity:method"

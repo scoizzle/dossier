@@ -1,9 +1,9 @@
 # django/db/models/options::Options.can_migrate
 
-- Subject: django/db/models/options::Options.can_migrate (id `4598865a-d248-4599-9e7a-9abc369a0804`)
+- Subject: django/db/models/options::Options.can_migrate (id `ab66adb8-98a0-4294-8107-7946f1d61749`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # docs/faq/models
 
-- Subject: docs/faq/models (id `ae9b6247-696f-4436-ac6c-0fbf1730b587`)
+- Subject: docs/faq/models (id `e7316f36-e3ff-4dfb-b98b-7c00e09ed589`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 27 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1120 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> from django.db import connection >>> connection.queries [{'sql': 'SELECT polls_polls.id, polls_polls.question, polls_polls.pub_date FROM polls_polls', 'time': '0.002'}] [178c1a0f]
 - >>> from django.db import connections >>> connections["my_db_alias"].queries [1fd16d2c]
@@ -38,6 +38,9 @@
 - Take a look at Django's support for :mod:`schema migrations <django.db.migrations>`. [591375d0]
 - Yes. See :doc:`Integrating with a legacy database </howto/legacy-databases>`. [58dc5061]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [7f608e7d] [cd6f557f] [923ceb3a] [510ef2b7]
+- [7f608e7d] We try to avoid adding special cases in the Django code to accommodate all the database-specific options such as table type, etc. If you'd like to use any of these options, create a migration with a :class:`~django.db.migrations.operations.RunSQL` operation that contains ``ALTER TABLE`` statements that do what you want to do.
+- [cd6f557f] You can take a look on `the wiki page`_ which discusses some projects.
+- [923ceb3a] ``connection.queries`` includes all SQL statements -- INSERTs, UPDATES, SELECTs, etc. Each time your app hits the database, the query will be recorded.
+- [510ef2b7] ``connection.queries`` is only available if :setting:`DEBUG` is ``True``. It's a list of dictionaries in order of query execution. Each dictionary has the following:

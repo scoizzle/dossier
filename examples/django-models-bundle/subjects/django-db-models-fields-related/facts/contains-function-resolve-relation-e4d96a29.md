@@ -1,6 +1,6 @@
 # Fact e4d96a29
 
-Store id: dc553c14-04b6-4863-9277-e05431506d43
+Store id: 6c59db22-8ee1-439d-950f-b6cc5dfc64ac
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function resolve_relation
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.5223050+00:00`
+- posted_at: `2026-11-09T23:31:58.9119250+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "dc553c14-04b6-4863-9277-e05431506d43",
+  "id": "6c59db22-8ee1-439d-950f-b6cc5dfc64ac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.5223050+00:00"
+    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "resolve_relation"
       },
       "rel": "contains",
-      "target": "66640c92-895c-4626-b47e-9eefc6b3d6ca"
+      "target": "da644160-17e5-4365-8690-70389c43ca34"
     }
   ],
   "status": "live",
-  "subject_id": "4e7b69d4-8947-48ba-b9c1-385f0d6a435f",
+  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:function"

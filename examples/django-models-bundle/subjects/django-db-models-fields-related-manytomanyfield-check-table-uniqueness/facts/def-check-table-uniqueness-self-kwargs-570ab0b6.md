@@ -1,6 +1,6 @@
 # Fact 570ab0b6
 
-Store id: cf4950ed-f36e-483d-b145-073211665465
+Store id: 826906fc-9157-441f-bb32-af7a1da4074d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_table_uniqueness(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4575190+00:00`
+- posted_at: `2026-11-09T23:31:58.8408530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1853,
     "symbol": "ManyToManyField._check_table_uniqueness"
   },
-  "id": "cf4950ed-f36e-483d-b145-073211665465",
+  "id": "826906fc-9157-441f-bb32-af7a1da4074d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4575190+00:00"
+    "posted_at": "2026-11-09T23:31:58.8408530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8c9fa55e-90a0-4c06-9bb1-a8138027f421",
+  "subject_id": "b91c9a44-d07e-4adf-8b54-db2a85ec4b43",
   "subject_name": "django/db/models/fields/related::ManyToManyField._check_table_uniqueness",
   "tags": [
     "entity:method"

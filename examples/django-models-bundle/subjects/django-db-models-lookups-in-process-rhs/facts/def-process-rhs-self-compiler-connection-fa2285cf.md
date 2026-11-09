@@ -1,6 +1,6 @@
 # Fact fa2285cf
 
-Store id: 60078825-3d12-48c2-b689-9b143a4070b4
+Store id: b7adabeb-0808-4da9-be71-f0bc71f53344
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1542680+00:00`
+- posted_at: `2026-11-09T23:32:03.3258360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 522,
     "symbol": "In.process_rhs"
   },
-  "id": "60078825-3d12-48c2-b689-9b143a4070b4",
+  "id": "b7adabeb-0808-4da9-be71-f0bc71f53344",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1542680+00:00"
+    "posted_at": "2026-11-09T23:32:03.3258360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a72b6f7-3a69-4af0-91fb-71bb70a414e8",
+  "subject_id": "8d5046a3-b86f-4430-800b-20f7607cfc68",
   "subject_name": "django/db/models/lookups::In.process_rhs",
   "tags": [
     "entity:method"

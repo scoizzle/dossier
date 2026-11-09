@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.clone
 
-- Subject: django/db/models/fields/__init__::Field.clone (id `cd3d0ad8-abf1-4710-bd12-a8cd26c8a143`)
+- Subject: django/db/models/fields/__init__::Field.clone (id `5b593f65-d3b9-4dbf-897d-41ca940cc45e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

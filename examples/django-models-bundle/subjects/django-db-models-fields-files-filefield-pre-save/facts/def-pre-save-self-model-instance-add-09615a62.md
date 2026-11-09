@@ -1,6 +1,6 @@
 # Fact 09615a62
 
-Store id: 3131fac1-bc0b-4351-a018-27714ba4462e
+Store id: b3dd80e3-9904-4be8-9405-e90659bd0970
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_save(self, model_instance, add)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2432080+00:00`
+- posted_at: `2026-11-09T23:31:57.4040690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 328,
     "symbol": "FileField.pre_save"
   },
-  "id": "3131fac1-bc0b-4351-a018-27714ba4462e",
+  "id": "b3dd80e3-9904-4be8-9405-e90659bd0970",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2432080+00:00"
+    "posted_at": "2026-11-09T23:31:57.4040690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1c2c4404-0d67-42f3-8ada-fdb06a3d6f06",
+  "subject_id": "1bc58c37-48b2-432e-8e3a-3c0218a5925b",
   "subject_name": "django/db/models/fields/files::FileField.pre_save",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact cde2ad1e
 
-Store id: ccaabac1-0527-4764-9e63-cb6971c2d450
+Store id: ee291883-f135-4dff-a4fc-284b51ead5ac
 
 ## Text
 
@@ -20,7 +20,7 @@ def from_db_value(self, value, expression, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6075840+00:00`
+- posted_at: `2026-11-09T23:31:57.8430910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 86,
     "symbol": "JSONField.from_db_value"
   },
-  "id": "ccaabac1-0527-4764-9e63-cb6971c2d450",
+  "id": "ee291883-f135-4dff-a4fc-284b51ead5ac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6075840+00:00"
+    "posted_at": "2026-11-09T23:31:57.8430910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "75fe20b6-e0f4-4e42-82b3-e5c8b4effb98",
+  "subject_id": "ebf3c0dd-f0bf-4902-8bc8-6dabf329b7dc",
   "subject_name": "django/db/models/fields/json::JSONField.from_db_value",
   "tags": [
     "entity:method"

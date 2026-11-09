@@ -1,8 +1,8 @@
 # django/contrib/gis/forms/__init__
 
-- Subject: django/contrib/gis/forms/__init__ (id `c9e84634-83db-4d71-bd22-1d822e834eaa`)
+- Subject: django/contrib/gis/forms/__init__ (id `8516d6a9-56c1-4e29-8931-32ab9798326e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 92 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

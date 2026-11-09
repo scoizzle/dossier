@@ -1,6 +1,6 @@
 # Fact 829bc594
 
-Store id: 3bd4bdfd-9b0c-413b-86bc-cfedf0be3e50
+Store id: b90ccfd6-a9ff-4de8-b1fa-faed968e9d85
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RawModelIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "3bd4bdfd-9b0c-413b-86bc-cfedf0be3e50",
+  "id": "b90ccfd6-a9ff-4de8-b1fa-faed968e9d85",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RawModelIterable"
       },
       "rel": "contains",
-      "target": "3a68c07d-1cfb-496c-8b8c-b1d720ad0cba"
+      "target": "c19ea581-0dfe-46c0-b3bb-c6424abee89a"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

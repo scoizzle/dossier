@@ -1,6 +1,6 @@
 # Fact 8c2525bc
 
-Store id: 7f1a1c93-eec7-46e3-8501-8682bf633d55
+Store id: 40082dd2-612a-42d0-88ce-a487bb8beb41
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_children_from_q
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5840140+00:00`
+- posted_at: `2026-11-09T23:32:07.1866820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7f1a1c93-eec7-46e3-8501-8682bf633d55",
+  "id": "40082dd2-612a-42d0-88ce-a487bb8beb41",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5840140+00:00"
+    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_children_from_q"
       },
       "rel": "contains",
-      "target": "95245811-987a-461d-b1fb-4b571d17e9cf"
+      "target": "38e68cf6-6cdc-4b17-a83a-4981537e2607"
     }
   ],
   "status": "live",
-  "subject_id": "414527cc-92ff-4d99-a78e-04fa25656e92",
+  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

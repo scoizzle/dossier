@@ -1,14 +1,14 @@
 # docs/howto/custom-template-backend
 
-- Subject: docs/howto/custom-template-backend (id `a52d5c96-c963-44b9-8c7a-155180467914`)
+- Subject: docs/howto/custom-template-backend (id `2d2da847-03a4-440f-a8ae-6e58e1d254ad`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 22 of 45
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1816 tokens
+- Facts shown: 45 of 45
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - self.engine = foobar.Engine(**options) [d027913c]
 - def __init__(self, params): params = params.copy() options = params.pop("OPTIONS").copy() super().__init__(params) [a10f52d9]
@@ -33,6 +33,28 @@
 - * ``'template_name'``: The relative path to the template as passed into the template loading methods. [2c665292]
 - .. _template-debug-integration: [59f1fbb7]
 
-## Beyond the budget
+## All facts
 
-23 more facts did not fit in the budget: [0a30aecb] [2d383f6c] [83c200ce] [27149eb3] [a60c6519] [b8f57c26] [0b8caf27] [061f87cd] [72a6d2a2] [6bed4883] [4f80dae6] [a874da81] [1c516e10] [8bc9d748] [5757a7ec] [026729b3] [27ce9510] [e49f7d7b] [271b9c9e] [b86df535] [c45fe32b] [5c992142] [cad8ff41]
+- [0a30aecb] * ``'top'``: The line number where ``source_lines`` starts.
+- [2d383f6c] * ``'total'``: The number of lines in ``source_lines``.
+- [83c200ce] .. _DEP 182: https://github.com/django/deps/blob/main/final/0182-multiple-template-engines.rst
+- [27149eb3] .. _template-origin-api:
+- [a60c6519] .. _template-postmortem:
+- [b8f57c26] .. image:: _images/postmortem.png
+- [0b8caf27] .. image:: _images/template-lines.png
+- [061f87cd] ========================================== How to implement a custom template backend ==========================================
+- [72a6d2a2] Contextual line information ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [6bed4883] Custom backends ---------------
+- [4f80dae6] Custom engines can populate the postmortem by passing the ``backend`` and ``tried`` arguments when raising :exc:`~django.template.TemplateDoesNotExist`. Backends that use the postmortem :ref:`should specify an origin <template-origin-api>` on the template object.
+- [a874da81] Custom engines can populate this information by setting a ``template_debug`` attribute on exceptions raised during parsing and rendering. This attribute is a :class:`dict` with the following values:
+- [1c516e10] Custom engines can provide their own ``template.origin`` information by creating an object that specifies the following attributes:
+- [8bc9d748] Debug integration for custom engines ------------------------------------
+- [5757a7ec] Django templates have an :class:`~django.template.base.Origin` object available through the ``template.origin`` attribute. This enables debug information to be displayed in the :ref:`template postmortem <template-postmortem>`, as well as in 3rd-party libraries, like the :pypi:`Django Debug Toolbar <django-debug-toolbar>`.
+- [026729b3] Given the above template error, ``template_debug`` would look like::
+- [27ce9510] Here's how to implement a custom template backend in order to use another template system. A template backend is a class that inherits ``django.template.backends.base.BaseEngine``. It must implement ``get_template()`` and optionally ``from_string()``. Here's an example for a fictional ``foobar`` template library::
+- [e49f7d7b] If an error happens during template parsing or rendering, Django can display the line the error happened on. For example:
+- [271b9c9e] Origin API and 3rd-party integration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [b86df535] See `DEP 182`_ for more information.
+- [c45fe32b] Template postmortem ~~~~~~~~~~~~~~~~~~~
+- [5c992142] The Django debug page has hooks to provide detailed information when a template error arises. Custom template engines can use these hooks to enhance the traceback information that appears to users. The following hooks are available:
+- [cad8ff41] The postmortem appears when :exc:`~django.template.TemplateDoesNotExist` is raised. It lists the template engines and loaders that were used when trying to find a given template. For example, if two Django engines are configured, the postmortem will appear like:

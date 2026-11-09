@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/prototypes/coordseq
 
-- Subject: django/contrib/gis/geos/prototypes/coordseq (id `74d51c0e-0b31-44c1-93d7-7e32c29caf41`)
+- Subject: django/contrib/gis/geos/prototypes/coordseq (id `6fa4d6a8-16ae-4b36-9773-b7686f825531`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 20 of 22
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1007 tokens
+- Facts shown: 22 of 22
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if ordinate: # Get/Set ordinate routines have an extra uint parameter. argtypes = [CS_PTR, c_uint, c_uint, dbl_param] else: argtypes = [CS_PTR, c_uint, dbl_param] [220706d7]
 - super().__init__( *args, **{**kwargs, "errcheck": errcheck, "argtypes": argtypes} ) [90c2dfdf]
@@ -31,6 +31,7 @@
 - cs_is_ccw = GEOSFuncFactory( "GEOSCoordSeq_isCCW", restype=c_int, argtypes=[CS_PTR, POINTER(c_byte)] ) [81b4d809]
 - from ctypes import POINTER, c_byte, c_double, c_int, c_uint [71b080e9]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [350eebd7] [cd241c84]
+- [350eebd7] def check_cs_get(result, func, cargs): "Check the coordinate sequence retrieval." check_cs_op(result, func, cargs) # Object in by reference, return its value. return last_arg_byref(cargs)
+- [cd241c84] from django.contrib.gis.geos.libgeos import ( CS_PTR, GEOM_PTR, GEOSFuncFactory, ) from django.contrib.gis.geos.prototypes.errcheck import ( GEOSException, check_predicate, last_arg_byref, )

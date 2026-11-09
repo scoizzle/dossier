@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.aexplain
 
-- Subject: django/db/models/query::QuerySet.aexplain (id `a4e671e4-d4fb-4bbd-8e91-3b62787a09ee`)
+- Subject: django/db/models/query::QuerySet.aexplain (id `6c62c813-19fc-404c-8872-577708a501bb`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

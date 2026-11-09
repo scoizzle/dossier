@@ -1,8 +1,8 @@
 # django/core/files/utils
 
-- Subject: django/core/files/utils (id `c11c0201-7cb0-4996-a6b8-d639102c249f`)
+- Subject: django/core/files/utils (id `c6c32bbf-9fe3-43f8-b513-3af2786448b6`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 686 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

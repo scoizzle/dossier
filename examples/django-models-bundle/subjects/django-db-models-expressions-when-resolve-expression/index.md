@@ -1,9 +1,9 @@
 # django/db/models/expressions::When.resolve_expression
 
-- Subject: django/db/models/expressions::When.resolve_expression (id `368c0d09-ee62-4e1c-b534-efc55b91f2a5`)
+- Subject: django/db/models/expressions::When.resolve_expression (id `50143419-dbce-4982-a758-9ecc97ef69f6`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

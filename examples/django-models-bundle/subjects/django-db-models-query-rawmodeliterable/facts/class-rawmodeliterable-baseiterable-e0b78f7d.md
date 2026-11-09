@@ -1,6 +1,6 @@
 # Fact e0b78f7d
 
-Store id: 5b97ee83-2627-480c-b82a-da47adc778a7
+Store id: afbd5082-34cb-4c0a-954d-379d141a2db5
 
 ## Text
 
@@ -20,7 +20,7 @@ class RawModelIterable(BaseIterable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2014600+00:00`
+- posted_at: `2026-11-09T23:32:04.2452220+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 202,
     "symbol": "RawModelIterable"
   },
-  "id": "5b97ee83-2627-480c-b82a-da47adc778a7",
+  "id": "afbd5082-34cb-4c0a-954d-379d141a2db5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2014600+00:00"
+    "posted_at": "2026-11-09T23:32:04.2452220+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3a68c07d-1cfb-496c-8b8c-b1d720ad0cba",
+  "subject_id": "c19ea581-0dfe-46c0-b3bb-c6424abee89a",
   "subject_name": "django/db/models/query::RawModelIterable",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateField.contribute_to_class
 
-- Subject: django/db/models/fields/__init__::DateField.contribute_to_class (id `1f35fc44-c3a6-4ce3-82e0-7a06f0b0ca5e`)
+- Subject: django/db/models/fields/__init__::DateField.contribute_to_class (id `8adc06ba-31af-44a8-b8f1-963adbe6a922`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

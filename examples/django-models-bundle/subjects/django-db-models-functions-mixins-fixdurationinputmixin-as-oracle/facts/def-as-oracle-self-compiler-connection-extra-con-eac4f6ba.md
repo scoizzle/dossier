@@ -1,6 +1,6 @@
 # Fact eac4f6ba
 
-Store id: f3ec1cd6-3df2-4b1b-b785-7ee4b138cca8
+Store id: f9aef57c-9022-4203-acfc-2ca012529356
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.8728890+00:00`
+- posted_at: `2026-11-09T23:32:01.9505150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 35,
     "symbol": "FixDurationInputMixin.as_oracle"
   },
-  "id": "f3ec1cd6-3df2-4b1b-b785-7ee4b138cca8",
+  "id": "f9aef57c-9022-4203-acfc-2ca012529356",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.8728890+00:00"
+    "posted_at": "2026-11-09T23:32:01.9505150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "385b6f67-7c45-474f-80d3-ee696f57e50d",
+  "subject_id": "2fb26dae-4328-4682-bdb7-5f9dd3db723d",
   "subject_name": "django/db/models/functions/mixins::FixDurationInputMixin.as_oracle",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 7b58a6a7
 
-Store id: 7a172627-f5de-4679-bb17-dfb377e11d5e
+Store id: 86a2854c-f3f2-43aa-99cb-f0b0971bc2a1
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6231570+00:00`
+- posted_at: `2026-11-09T23:31:57.8606650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 142,
     "symbol": "JSONField.formfield"
   },
-  "id": "7a172627-f5de-4679-bb17-dfb377e11d5e",
+  "id": "86a2854c-f3f2-43aa-99cb-f0b0971bc2a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6231570+00:00"
+    "posted_at": "2026-11-09T23:31:57.8606650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e022332c-9c49-4b7a-8ad2-4c7b35ac34b7",
+  "subject_id": "0fe8a6b7-e5b4-4c90-9882-34dd38caa40a",
   "subject_name": "django/db/models/fields/json::JSONField.formfield",
   "tags": [
     "entity:method"

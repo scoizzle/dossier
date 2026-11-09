@@ -1,14 +1,14 @@
 # docs/ref/files/file
 
-- Subject: docs/ref/files/file (id `d5701397-16cd-4dde-8a66-6859e2f58dc4`)
+- Subject: docs/ref/files/file (id `b5139991-6df3-4158-87d5-4c3f57c1cb7b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 32 of 58
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1812 tokens
+- Facts shown: 57 of 58
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Some subclasses of :class:`File`, including :class:`~django.core.files.base.ContentFile` and :class:`~django.db.models.fields.files.FieldFile`, may replace this attribute with an object other than a Python :term:`file object`. In these cases, this attribute may itself be a :class:`File` subclass (and not necessarily the same subclass). Whenever possible, use the attributes and methods of the subclass itself rather than those of the subclass's ``file`` attribute. [3a7f4a1c]
 - .. admonition:: Be careful with this attribute in subclasses. [d8d8dba2]
@@ -43,6 +43,30 @@
 - .. method:: close() [4d5f685f]
 - .. method:: multiple_chunks(chunk_size=None) [09b5675e]
 
-## Beyond the budget
+## All facts
 
-25 more facts did not fit in the budget: [5cf06f62] [315f52d7] [2dff0e61] [998efc17] [30ca0bf2] [35b69558] [2c816712] [adf5ce36] [0a2b96cc] [974deb81] [380b6105] [1db74ab4] [a0a4af24] [22bd499994c75c8f] [1a221b1e] [6e009d74] [22bf3a91] [d627cb5e] [cbac843f] [b64de3af] [a35bc276] [cbbf8638] [9566dc9b] [5bd375cb] [ce7ba9c9]
+- [5cf06f62] .. method:: open(mode=None, *args, **kwargs)
+- [315f52d7] :class:`File` objects have the following attributes and methods:
+- [2dff0e61] Django provides a built-in class specifically for images. :class:`django.core.files.images.ImageFile` inherits all the attributes and methods of :class:`~django.core.files.File`, and additionally provides the following:
+- [998efc17] In addition to the listed methods, :class:`~django.core.files.File` exposes the following attributes and methods of its ``file`` object: ``encoding``, ``fileno``, ``flush``, ``isatty``, ``newlines``, ``read``, ``readinto``, ``readline``, ``readlines``, ``seek``, ``tell``, ``truncate``, ``write``, ``writelines``, ``readable()``, ``writable()``, and ``seekable()``.
+- [30ca0bf2] Note that the ``content`` argument must be an instance of either :class:`File` or of a subclass of :class:`File`, such as :class:`~django.core.files.base.ContentFile`.
+- [35b69558] Removes the file from the model instance and deletes the underlying file. If ``save`` is ``True``, the model's ``save()`` method will be called once the file is deleted.
+- [2c816712] Saves a new file with the file name and contents provided. This will not replace the existing file, but will create a new file and update the object to point to it. If ``save`` is ``True``, the model's ``save()`` method will be called once the file is saved. That is, these two lines:
+- [adf5ce36] The :class:`File` class is a thin wrapper around a Python :term:`file object` with some Django-specific additions. Internally, Django uses this class when it needs to represent a file.
+- [0a2b96cc] The ``ContentFile`` class inherits from :class:`~django.core.files.File`, but unlike :class:`~django.core.files.File` it operates on string content (bytes also supported), rather than an actual file. For example::
+- [974deb81] are equivalent to:
+- [380b6105] .. class:: ContentFile(content, name=None)
+- [1db74ab4] .. class:: File(file_object, name=None)
+- [a0a4af24] .. class:: ImageFile(file_object, name=None)
+- [22bd499994c75c8f] .. currentmodule:: django.core.files
+- [1a221b1e] .. currentmodule:: django.core.files.base
+- [6e009d74] .. currentmodule:: django.core.files.images
+- [22bf3a91] .. method:: File.delete(save=True)
+- [d627cb5e] .. method:: File.save(name, content, save=True)
+- [cbac843f] =================== The ``File`` object ===================
+- [b64de3af] Additional methods on files attached to objects ===============================================
+- [a35bc276] Any :class:`File` that is associated with an object (as with ``Car.photo``, below) will also have a couple of extra methods:
+- [cbbf8638] The :mod:`django.core.files` module and its submodules contain built-in classes for basic file handling in Django.
+- [9566dc9b] The ``ContentFile`` class =========================
+- [5bd375cb] The ``File`` class ==================
+- [ce7ba9c9] The ``ImageFile`` class =======================

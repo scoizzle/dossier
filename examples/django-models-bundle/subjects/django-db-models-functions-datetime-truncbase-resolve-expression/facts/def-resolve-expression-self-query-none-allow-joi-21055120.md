@@ -1,6 +1,6 @@
 # Fact 21055120
 
-Store id: 4da1264f-b2d6-4b04-9e71-34e57ea9af30
+Store id: 878d8aab-a8fe-41b8-93ea-e225dd8d9e21
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression( self, query=None, allow_joins=True, reuse=None, summariz
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1799930+00:00`
+- posted_at: `2026-11-09T23:32:01.2609740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 283,
     "symbol": "TruncBase.resolve_expression"
   },
-  "id": "4da1264f-b2d6-4b04-9e71-34e57ea9af30",
+  "id": "878d8aab-a8fe-41b8-93ea-e225dd8d9e21",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1799930+00:00"
+    "posted_at": "2026-11-09T23:32:01.2609740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0371d2ad-1a4a-45f7-9de7-063c3dd0b692",
+  "subject_id": "ef469e43-ac37-4fa1-bd9c-73f6a9942549",
   "subject_name": "django/db/models/functions/datetime::TruncBase.resolve_expression",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 5fc65c2f
 
-Store id: fdcc3322-4433-4f3d-bcd9-789aaeb7afef
+Store id: 5b763fbb-e94d-4058-b0b4-38da936c989f
 
 ## Text
 
@@ -20,7 +20,7 @@ def dates(self, field_name, kind, order="ASC")
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5853410+00:00`
+- posted_at: `2026-11-09T23:32:04.5256150+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1625,
     "symbol": "QuerySet.dates"
   },
-  "id": "fdcc3322-4433-4f3d-bcd9-789aaeb7afef",
+  "id": "5b763fbb-e94d-4058-b0b4-38da936c989f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5853410+00:00"
+    "posted_at": "2026-11-09T23:32:04.5256150+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a4bf438f-a84b-4769-a89c-a847f70acbb0",
+  "subject_id": "d2404b23-7f4d-4f41-a029-9747ffff6b1b",
   "subject_name": "django/db/models/query::QuerySet.dates",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 3cb8ce77
 
-Store id: e0dfc468-8261-4b48-831f-0a51d440498c
+Store id: 1c3627ac-375c-4725-a5fb-382bbc492e2d
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2369790+00:00`
+- posted_at: `2026-11-09T23:31:57.3975400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 307,
     "symbol": "FileField.deconstruct"
   },
-  "id": "e0dfc468-8261-4b48-831f-0a51d440498c",
+  "id": "1c3627ac-375c-4725-a5fb-382bbc492e2d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2369790+00:00"
+    "posted_at": "2026-11-09T23:31:57.3975400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7bc9dde6-47d3-42b3-912f-d6558351e5b3",
+  "subject_id": "6d0b1d04-25b3-4900-9d9c-ba3c53a3b380",
   "subject_name": "django/db/models/fields/files::FileField.deconstruct",
   "tags": [
     "entity:method"

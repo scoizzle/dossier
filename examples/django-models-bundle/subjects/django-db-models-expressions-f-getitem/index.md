@@ -1,9 +1,9 @@
 # django/db/models/expressions::F.__getitem__
 
-- Subject: django/db/models/expressions::F.__getitem__ (id `e6d9bd38-9415-424e-83ae-39999322d46d`)
+- Subject: django/db/models/expressions::F.__getitem__ (id `213e56ef-767b-479b-af55-8f21fe48fae4`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

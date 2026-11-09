@@ -1,6 +1,6 @@
 # Fact 50de67b3
 
-Store id: 7dcfe123-31b6-4e89-a253-45b6a0dfe7cf
+Store id: 640aecbe-2b5d-4652-95e4-e3ce0294af2d
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLCompiler
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5489070+00:00`
+- posted_at: `2026-11-09T23:32:05.6515970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 42,
     "symbol": "SQLCompiler"
   },
-  "id": "7dcfe123-31b6-4e89-a253-45b6a0dfe7cf",
+  "id": "640aecbe-2b5d-4652-95e4-e3ce0294af2d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5489070+00:00"
+    "posted_at": "2026-11-09T23:32:05.6515970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8117c84c-8233-40df-b06c-9a3f59c8adcb",
+  "subject_id": "364ed1da-3c95-47cb-bece-b6b90e73ee88",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler",
   "tags": [
     "entity:class"

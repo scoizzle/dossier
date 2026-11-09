@@ -1,8 +1,8 @@
 # django/contrib/staticfiles/checks
 
-- Subject: django/contrib/staticfiles/checks (id `5c7b83f7-7261-450e-9692-177c57521951`)
+- Subject: django/contrib/staticfiles/checks (id `ef0b480f-0dc7-4a7b-a168-09147c8f1241`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 224 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::AutoFieldMeta
 
-- Subject: django/db/models/fields/__init__::AutoFieldMeta (id `92276378-8000-4430-bff1-dae129bb95df`)
+- Subject: django/db/models/fields/__init__::AutoFieldMeta (id `9ea8ce3f-2c2c-425d-9c5d-02e52c5be606`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

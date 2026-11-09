@@ -1,14 +1,14 @@
 # docs/ref/urlresolvers
 
-- Subject: docs/ref/urlresolvers (id `15499a8e-0053-4ac4-82d0-d32db7f6213c`)
+- Subject: docs/ref/urlresolvers (id `a1e8e36d-2f07-4352-a1ca-dcaab0318f41`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 30 of 94
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3226 tokens
+- Facts shown: 92 of 94
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # modify the request and response as required, e.g. change locale # and set corresponding locale cookie [f294ff94]
 - >>> reverse("cities", args=["Orléans"]) '.../Orl%C3%A9ans/' [098fe4b7]
@@ -41,6 +41,67 @@
 - .. attribute:: ResolverMatch.kwargs [99f06f06]
 - .. attribute:: ResolverMatch.namespace [d5628f15]
 
-## Beyond the budget
+## All facts
 
-62 more facts did not fit in the budget: [1eaef438] [b8483f4e] [c63c8042] [f65831d1] [62030ef3] [eaf050be34acb41d-597] [3be1659cdc78684b-2] [cc3d5294] [1e3a0440] [eedee337] [efa10a6a] [49e4ff83] [95cc5d49] [61245ef7] [54518b9d] [cab390ceec62b73f-2] [fcbd3d8f] [c023001f] [7b4c7b71] [ef7091da] [cbcb2a76] [55a79875] [f422271a] [40c26b8c] [9967711c] [3742a300] [da9a5552] [eaf050be34acb41d-598] [eaf050be34acb41d-599] [be0e1f62] [b111270c] [37edbe05] [5a1fbe48] [942ae6c11625c81c-154] [c54b54cb0805732a-87] [28916b04] [7c0cb1ac] [74458a7b] [41072a5f] [bc295f9831206ba3-61] [6d37c01a] [5aee3ee1] [e87dc01d] [06ec6bdc] [8bcd90b3] [54f05751] [6a51a4a1] [a86cdc80] [23c5dde1] [f860555d] [72e8b394] [0f69e02e] [9406b8cf] [1919b7e3] [6d7e9268] [bcb0b933] [168c7f13] [9dad9b4f] [9e8a2a35] [d7d1b091] [a18c6f23] [7e1ae46c]
+- [1eaef438] .. attribute:: ResolverMatch.namespaces
+- [b8483f4e] .. attribute:: ResolverMatch.route
+- [c63c8042] .. attribute:: ResolverMatch.tried
+- [f65831d1] .. attribute:: ResolverMatch.url_name
+- [62030ef3] .. attribute:: ResolverMatch.view_name
+- [eaf050be34acb41d-597] .. code-block:: pycon
+- [3be1659cdc78684b-2] .. code-block:: python :caption: ``news/views.py``
+- [cc3d5294] >>> reverse("admin:app_list", kwargs={"app_label": "auth"}) '/admin/auth/'
+- [1e3a0440] Applying further encoding (such as :func:`urllib.parse.quote`) to the output of ``reverse()`` may produce undesirable results.
+- [eedee337] However, remember that namespaced views cannot be reversed by view object.
+- [efa10a6a] The string returned by ``reverse()`` is already :ref:`urlquoted <uri-and-iri-handling>`. For example:
+- [49e4ff83] The view object can also be the result of calling :meth:`~django.views.generic.base.View.as_view` if the same view object is used in the URLConf. Following the original example, the view object could be defined as:
+- [95cc5d49] This function **cannot** be used outside of the request-response cycle since it relies on values initialized during that cycle.
+- [61245ef7] def myview(request): next = request.META.get("HTTP_REFERER", None) or "/" response = HttpResponseRedirect(next)
+- [54518b9d] def myview(request): return HttpResponseRedirect(reverse("arch-summary", args=[1945]))
+- [cab390ceec62b73f-2] from django.urls import reverse
+- [fcbd3d8f] from news import views
+- [c023001f] from urllib.parse import urlsplit from django.urls import resolve from django.http import Http404, HttpResponseRedirect
+- [7b4c7b71] func, args, kwargs = resolve("/some/path/")
+- [ef7091da] path("archive/", views.archive, name="news-archive")
+- [cbcb2a76] reverse(views.archive)
+- [55a79875] >>> from django.urls import reverse >>> reverse("admin:index", query={"q": "biscuits", "page": 2}, fragment="results") '/admin/?q=biscuits&page=2#results' >>> reverse("admin:index", query=[("color", "blue"), ("color", 1), ("none", None)]) '/admin/?color=blue&color=1&none=None' >>> reverse("admin:index", query={"has empty spaces": "also has empty spaces!"}) '/admin/?has+empty+spaces=also+has+empty+spaces%21' >>> reverse("admin:index", fragment="no encoding is done") '/admin/#no encoding is done'
+- [f422271a] * providing a reversed URL as a default value for a parameter in a function's signature.
+- [40c26b8c] * providing a reversed URL as the ``url`` attribute of a generic class-based view.
+- [9967711c] * providing a reversed URL to a decorator (such as the ``login_url`` argument for the :func:`django.contrib.auth.decorators.permission_required` decorator).
+- [3742a300] .. admonition:: Reversing class-based views by view object
+- [da9a5552] .. class:: ResolverMatch
+- [eaf050be34acb41d-598] .. code-block:: pycon
+- [eaf050be34acb41d-599] .. code-block:: pycon
+- [be0e1f62] .. function:: get_script_prefix()
+- [b111270c] .. function:: resolve(path, urlconf=None)
+- [37edbe05] .. function:: reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None, *, query=None, fragment=None)
+- [5a1fbe48] .. module:: django.urls
+- [942ae6c11625c81c-154] .. note::
+- [c54b54cb0805732a-87] .. warning::
+- [28916b04] ================================= ``django.urls`` utility functions =================================
+- [7c0cb1ac] A :class:`ResolverMatch` object can also be assigned to a triple::
+- [74458a7b] A :class:`ResolverMatch` object can then be interrogated to provide information about the URL pattern that matches a URL::
+- [41072a5f] A lazily evaluated version of `reverse()`_.
+- [bc295f9831206ba3-61] For example:
+- [6d37c01a] If no match can be made, ``reverse()`` raises a :class:`~django.urls.NoReverseMatch` exception.
+- [5aee3ee1] If the URL accepts arguments, you may pass them in ``args``. For example::
+- [e87dc01d] If the URL does not resolve, the function raises a :exc:`~django.urls.Resolver404` exception (a subclass of :class:`~django.http.Http404`) .
+- [06ec6bdc] It is useful for when you need to use a URL reversal before your project's URLConf is loaded. Some common cases where this function is necessary are:
+- [8bcd90b3] Normally, you should always use :func:`~django.urls.reverse` to define URLs within your application. However, if your application constructs part of the URL hierarchy itself, you may occasionally need to generate URLs. In that case, you need to be able to find the base URL of the Django project within its web server (normally, :func:`~django.urls.reverse` takes care of this for you). In that case, you can call ``get_script_prefix()``, which will return the script prefix portion of the URL for your Django project. If your Django project is at the root of its web server, this is always ``"/"``.
+- [54f05751] One possible use of :func:`~django.urls.resolve` would be to test whether a view would raise a ``Http404`` error before redirecting to it::
+- [6a51a4a1] The ``current_app`` argument allows you to provide a hint to the resolver indicating the application to which the currently executing view belongs. This ``current_app`` argument is used as a hint to resolve application namespaces into URLs on specific application instances, according to the :ref:`namespaced URL resolution strategy <topics-http-reversing-url-namespaces>`.
+- [a86cdc80] The ``fragment`` keyword argument specifies a fragment identifier to be appended to the returned URL (that is, after the path and query string, preceded by a ``#``).
+- [23c5dde1] The ``query`` keyword argument specifies parameters to be added to the returned URL. It can accept an instance of :class:`~django.http.QueryDict` (such as ``request.GET``) or any value compatible with :func:`urllib.parse.urlencode`. The encoded query string is appended to the resolved URL, prefixed by a ``?``.
+- [f860555d] The ``resolve()`` function can be used for resolving URL paths to the corresponding view functions. It has the following signature:
+- [72e8b394] The ``reverse()`` function can be used to return an absolute path reference for a given view and optional parameters, similar to the :ttag:`url` tag:
+- [0f69e02e] The ``reverse()`` function can reverse a large variety of regular expression patterns for URLs, but not every possible one. The main restriction at the moment is that the pattern cannot contain alternative choices using the vertical bar (``"|"``) character. You can quite happily use such patterns for matching against incoming URLs and sending them off to views, but you cannot reverse such patterns.
+- [9406b8cf] The ``urlconf`` argument is the URLconf module containing the URL patterns to use for reversing. By default, the root URLconf for the current thread is used.
+- [1919b7e3] You can also pass ``kwargs`` instead of ``args``. For example:
+- [6d7e9268] ``args`` and ``kwargs`` cannot be passed to ``reverse()`` at the same time.
+- [bcb0b933] ``get_script_prefix()`` =======================
+- [168c7f13] ``path`` is the URL path you want to resolve. As with :func:`~django.urls.reverse`, you don't need to worry about the ``urlconf`` parameter. The function returns a :class:`ResolverMatch` object that allows you to access various metadata about the resolved URL.
+- [9dad9b4f] ``resolve()`` =============
+- [9e8a2a35] ``reverse()`` =============
+- [d7d1b091] ``reverse_lazy()`` ==================
+- [a18c6f23] ``viewname`` can be a :ref:`URL pattern name <naming-url-patterns>` or the callable view object used in the URLconf. For example, given the following ``url``::
+- [7e1ae46c] you can use any of the following to reverse the URL::

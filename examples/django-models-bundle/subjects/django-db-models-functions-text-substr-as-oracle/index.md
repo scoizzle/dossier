@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Substr.as_oracle
 
-- Subject: django/db/models/functions/text::Substr.as_oracle (id `706c16ac-fdc4-4c4b-8ff4-c002a6f8898c`)
+- Subject: django/db/models/functions/text::Substr.as_oracle (id `1597f273-c2c5-4aba-87f7-ca4409d88bd9`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

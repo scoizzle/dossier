@@ -1,10 +1,10 @@
 # Memos/Home
 
-- Subject: Memos/Home (id `bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5`)
+- Subject: Memos/Home (id `c1a56451-1df8-4cc1-b0d4-80c0e18682e3`)
 - Kind: screen
 - Parent: [Memos](../memos/index.md)
 - Aliases: Home
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 709 tokens
 - Facts shown: 24 of 24
 - Conflicts: 3

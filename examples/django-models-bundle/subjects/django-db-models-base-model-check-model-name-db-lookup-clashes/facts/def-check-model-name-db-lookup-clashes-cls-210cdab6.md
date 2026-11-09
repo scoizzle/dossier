@@ -1,6 +1,6 @@
 # Fact 210cdab6
 
-Store id: d268b1ef-934b-4ebb-8ef5-5ea53dce70fe
+Store id: fce39897-52a3-4b1b-8c99-d4712cc2de51
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_model_name_db_lookup_clashes(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3604970+00:00`
+- posted_at: `2026-11-09T23:31:53.7654660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2106,
     "symbol": "Model._check_model_name_db_lookup_clashes"
   },
-  "id": "d268b1ef-934b-4ebb-8ef5-5ea53dce70fe",
+  "id": "fce39897-52a3-4b1b-8c99-d4712cc2de51",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3604970+00:00"
+    "posted_at": "2026-11-09T23:31:53.7654660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4af035ee-fdc7-4039-a115-dd35dceba2f6",
+  "subject_id": "9e811642-0105-455d-a45c-092beaf17752",
   "subject_name": "django/db/models/base::Model._check_model_name_db_lookup_clashes",
   "tags": [
     "entity:class_method",

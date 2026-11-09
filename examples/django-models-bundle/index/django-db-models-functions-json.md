@@ -4,18 +4,18 @@ This file lists every subject under `django/db/models/functions/json/`, one row 
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/functions/json | subject | 2 | 0 | 0 | 462 | [subjects/django-db-models-functions-json/index.md](../subjects/django-db-models-functions-json/index.md) |
-|   django/db/models/functions/json::JSONArray | class | 1 | 0 | 0 | 105 | [subjects/django-db-models-functions-json-jsonarray/index.md](../subjects/django-db-models-functions-json-jsonarray/index.md) |
-|   django/db/models/functions/json::JSONArray.as_native | method | 1 | 0 | 0 | 130 | [subjects/django-db-models-functions-json-jsonarray-as-native/index.md](../subjects/django-db-models-functions-json-jsonarray-as-native/index.md) |
-|   django/db/models/functions/json::JSONArray.as_oracle | method | 1 | 0 | 0 | 127 | [subjects/django-db-models-functions-json-jsonarray-as-oracle/index.md](../subjects/django-db-models-functions-json-jsonarray-as-oracle/index.md) |
-|   django/db/models/functions/json::JSONArray.as_postgresql | method | 1 | 0 | 0 | 130 | [subjects/django-db-models-functions-json-jsonarray-as-postgresql/index.md](../subjects/django-db-models-functions-json-jsonarray-as-postgresql/index.md) |
-|   django/db/models/functions/json::JSONArray.as_sql | method | 1 | 0 | 0 | 125 | [subjects/django-db-models-functions-json-jsonarray-as-sql/index.md](../subjects/django-db-models-functions-json-jsonarray-as-sql/index.md) |
-|   django/db/models/functions/json::JSONObject | class | 1 | 0 | 0 | 106 | [subjects/django-db-models-functions-json-jsonobject/index.md](../subjects/django-db-models-functions-json-jsonobject/index.md) |
-|   django/db/models/functions/json::JSONObject.__init__ | method | 1 | 0 | 0 | 112 | [subjects/django-db-models-functions-json-jsonobject-init/index.md](../subjects/django-db-models-functions-json-jsonobject-init/index.md) |
-|   django/db/models/functions/json::JSONObject.as_native | method | 1 | 0 | 0 | 131 | [subjects/django-db-models-functions-json-jsonobject-as-native/index.md](../subjects/django-db-models-functions-json-jsonobject-as-native/index.md) |
-|   django/db/models/functions/json::JSONObject.as_oracle | method | 1 | 0 | 0 | 127 | [subjects/django-db-models-functions-json-jsonobject-as-oracle/index.md](../subjects/django-db-models-functions-json-jsonobject-as-oracle/index.md) |
-|   django/db/models/functions/json::JSONObject.as_postgresql | method | 1 | 0 | 0 | 130 | [subjects/django-db-models-functions-json-jsonobject-as-postgresql/index.md](../subjects/django-db-models-functions-json-jsonobject-as-postgresql/index.md) |
-|   django/db/models/functions/json::JSONObject.as_sql | method | 1 | 0 | 0 | 125 | [subjects/django-db-models-functions-json-jsonobject-as-sql/index.md](../subjects/django-db-models-functions-json-jsonobject-as-sql/index.md) |
-|   django/db/models/functions/json::JSONObject.join | method | 1 | 0 | 0 | 108 | [subjects/django-db-models-functions-json-jsonobject-join/index.md](../subjects/django-db-models-functions-json-jsonobject-join/index.md) |
+| django/db/models/functions/json | subject | 2 | 0 | 0 | 473 | [subjects/django-db-models-functions-json/index.md](../subjects/django-db-models-functions-json/index.md) |
+|   django/db/models/functions/json::JSONArray | class | 1 | 0 | 0 | 116 | [subjects/django-db-models-functions-json-jsonarray/index.md](../subjects/django-db-models-functions-json-jsonarray/index.md) |
+|   django/db/models/functions/json::JSONArray.as_native | method | 1 | 0 | 0 | 141 | [subjects/django-db-models-functions-json-jsonarray-as-native/index.md](../subjects/django-db-models-functions-json-jsonarray-as-native/index.md) |
+|   django/db/models/functions/json::JSONArray.as_oracle | method | 1 | 0 | 0 | 138 | [subjects/django-db-models-functions-json-jsonarray-as-oracle/index.md](../subjects/django-db-models-functions-json-jsonarray-as-oracle/index.md) |
+|   django/db/models/functions/json::JSONArray.as_postgresql | method | 1 | 0 | 0 | 141 | [subjects/django-db-models-functions-json-jsonarray-as-postgresql/index.md](../subjects/django-db-models-functions-json-jsonarray-as-postgresql/index.md) |
+|   django/db/models/functions/json::JSONArray.as_sql | method | 1 | 0 | 0 | 136 | [subjects/django-db-models-functions-json-jsonarray-as-sql/index.md](../subjects/django-db-models-functions-json-jsonarray-as-sql/index.md) |
+|   django/db/models/functions/json::JSONObject | class | 1 | 0 | 0 | 117 | [subjects/django-db-models-functions-json-jsonobject/index.md](../subjects/django-db-models-functions-json-jsonobject/index.md) |
+|   django/db/models/functions/json::JSONObject.__init__ | method | 1 | 0 | 0 | 123 | [subjects/django-db-models-functions-json-jsonobject-init/index.md](../subjects/django-db-models-functions-json-jsonobject-init/index.md) |
+|   django/db/models/functions/json::JSONObject.as_native | method | 1 | 0 | 0 | 142 | [subjects/django-db-models-functions-json-jsonobject-as-native/index.md](../subjects/django-db-models-functions-json-jsonobject-as-native/index.md) |
+|   django/db/models/functions/json::JSONObject.as_oracle | method | 1 | 0 | 0 | 138 | [subjects/django-db-models-functions-json-jsonobject-as-oracle/index.md](../subjects/django-db-models-functions-json-jsonobject-as-oracle/index.md) |
+|   django/db/models/functions/json::JSONObject.as_postgresql | method | 1 | 0 | 0 | 141 | [subjects/django-db-models-functions-json-jsonobject-as-postgresql/index.md](../subjects/django-db-models-functions-json-jsonobject-as-postgresql/index.md) |
+|   django/db/models/functions/json::JSONObject.as_sql | method | 1 | 0 | 0 | 136 | [subjects/django-db-models-functions-json-jsonobject-as-sql/index.md](../subjects/django-db-models-functions-json-jsonobject-as-sql/index.md) |
+|   django/db/models/functions/json::JSONObject.join | method | 1 | 0 | 0 | 119 | [subjects/django-db-models-functions-json-jsonobject-join/index.md](../subjects/django-db-models-functions-json-jsonobject-join/index.md) |
 
 Up: [index/django-db-models-functions.md](django-db-models-functions.md)

@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::CompositeAttribute.__get__
 
-- Subject: django/db/models/fields/composite::CompositeAttribute.__get__ (id `8ebd7bc8-bb9f-49df-87b1-93ed37b52a4c`)
+- Subject: django/db/models/fields/composite::CompositeAttribute.__get__ (id `d4015201-3e77-47e7-abb7-93e3da7b1292`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

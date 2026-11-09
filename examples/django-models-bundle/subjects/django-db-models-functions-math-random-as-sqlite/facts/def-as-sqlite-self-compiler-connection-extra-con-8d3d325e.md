@@ -1,6 +1,6 @@
 # Fact 8d3d325e
 
-Store id: 6b432d00-edc2-4769-b0c0-2b0e04904074
+Store id: 00ec6d1b-10f8-44d6-b450-faa09dfdd16f
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6620430+00:00`
+- posted_at: `2026-11-09T23:32:01.7522870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 171,
     "symbol": "Random.as_sqlite"
   },
-  "id": "6b432d00-edc2-4769-b0c0-2b0e04904074",
+  "id": "00ec6d1b-10f8-44d6-b450-faa09dfdd16f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6620430+00:00"
+    "posted_at": "2026-11-09T23:32:01.7522870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a78a51b6-ec6d-468b-9b5d-953663441a02",
+  "subject_id": "f69b58f5-1677-491f-aa53-db604c9b99ed",
   "subject_name": "django/db/models/functions/math::Random.as_sqlite",
   "tags": [
     "entity:method"

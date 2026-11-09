@@ -1,6 +1,6 @@
 # Fact 670a565f
 
-Store id: 77868320-24db-48ae-b49b-d01a8b9cccc1
+Store id: c48ff733-d6cb-49c4-a494-8da1a8cbca88
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_fallback_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5876020+00:00`
+- posted_at: `2026-11-09T23:32:00.5761440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 129,
     "symbol": "TupleLookupMixin.get_fallback_sql"
   },
-  "id": "77868320-24db-48ae-b49b-d01a8b9cccc1",
+  "id": "c48ff733-d6cb-49c4-a494-8da1a8cbca88",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5876020+00:00"
+    "posted_at": "2026-11-09T23:32:00.5761440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a1513348-5fc6-403f-8a6c-4156ad88fed8",
+  "subject_id": "f40ae415-21a8-47a3-ab70-09340e4edca1",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.get_fallback_sql",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/deletion::RestrictedError.__init__
 
-- Subject: django/db/models/deletion::RestrictedError.__init__ (id `48bbd256-da6a-4c9b-ad97-6ea2cd9f4fa0`)
+- Subject: django/db/models/deletion::RestrictedError.__init__ (id `ad0f0881-6a21-4fd8-8be7-278590957a55`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

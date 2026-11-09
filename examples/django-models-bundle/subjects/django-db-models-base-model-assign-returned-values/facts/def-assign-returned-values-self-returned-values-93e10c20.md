@@ -1,6 +1,6 @@
 # Fact 93e10c20
 
-Store id: 4c0956b4-70d2-4b2e-a8ea-5540fed52c94
+Store id: bcfd244a-9539-485f-8272-0bd879496c65
 
 ## Text
 
@@ -20,7 +20,7 @@ def _assign_returned_values(self, returned_values, returning_fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3429910+00:00`
+- posted_at: `2026-11-09T23:31:53.7469040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1261,
     "symbol": "Model._assign_returned_values"
   },
-  "id": "4c0956b4-70d2-4b2e-a8ea-5540fed52c94",
+  "id": "bcfd244a-9539-485f-8272-0bd879496c65",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3429910+00:00"
+    "posted_at": "2026-11-09T23:31:53.7469040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c3f0ddc6-514c-4025-8fe8-7cb14caa9274",
+  "subject_id": "bed0d65c-6f95-498a-94e0-287495be65a8",
   "subject_name": "django/db/models/base::Model._assign_returned_values",
   "tags": [
     "entity:method"

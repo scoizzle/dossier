@@ -1,14 +1,14 @@
 # docs/ref/models/indexes
 
-- Subject: docs/ref/models/indexes (id `b82bb773-e2ee-4df8-80b4-f5984ff32b84`)
+- Subject: docs/ref/models/indexes (id `6046f0d4-4042-44e3-a0d1-aeeb97b9fbfd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 16 of 72
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2621 tokens
+- Facts shown: 71 of 72
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Creates an index (B-Tree) in the database. [d4e2947e]
 - For a list of PostgreSQL-specific indexes, see :mod:`django.contrib.postgres.indexes`. [7cc39105]
@@ -27,6 +27,60 @@
 - You must always specify a unique name for an index. As such, you cannot normally specify a partial index on an abstract base class, since the :attr:`Meta.indexes <django.db.models.Options.indexes>` option is inherited by subclasses, with exactly the same values for the attributes (including ``name``) each time. To work around name collisions, part of the name may contain ``'%(app_label)s'`` and ``'%(class)s'``, which are replaced, respectively, by the lowercased app label and class name of the concrete model. For example ``Index(fields=['title'], name='%(app_label)s_%(class)s_title_index')``. [8cf5de25]
 - .. admonition:: Oracle [d78ad3ab25cd8d9c-5]
 
-## Beyond the budget
+## All facts
 
-55 more facts did not fit in the budget: [651b89d0] [ae2346d9] [46faa00f] [0cad0d88] [55b9cc69] [882bf015] [bebd87af] [6916dbe8e1a8cc8d] [819421d9] [0eccf1d3] [684ce5ec] [3371c411] [cdb4562c] [7d0c371c] [9ee9c155] [cdde396e] [1c8d974e] [3a368b18514a814b-11] [f8119871] [6b4a5e54e001d097-24] [1cfd44ac] [75cf84c4] [bdab2083] [00e237b9] [94d436d7] [232a8cde] [0ff6cac2] [879861e9] [7bec24fa] [3b0c540c] [6a808e30] [28edef836ab93f57-17] [28edef836ab93f57-18] [af38bc09] [8e0603cb] [c09985c6] [347f08a1] [9f963e5c] [c2cb0216] [2ec04bb7] [fe57da48] [0d170636] [53b7998a] [3ef04f700014c56a-4] [6aa45c0650f66404-2] [aa7d175f0fd55e69-3] [87254620a027401c-3] [dcc88c68300cfc76-3] [869d9cad] [e9982e75ca22a002-3] [43b70adcca41be01-2] [d0ed3cf94d763803-2] [bd7c0aa2] [f7f62925] [b4cde83f]
+- [651b89d0] .. _covering indexes: https://www.postgresql.org/docs/current/indexes-index-only-scans.html
+- [ae2346d9] .. admonition:: MariaDB
+- [46faa00f] .. admonition:: MySQL and MariaDB
+- [0cad0d88] .. admonition:: Partial indexes in abstract base classes
+- [55b9cc69] .. admonition:: PostgreSQL-specific indexes
+- [882bf015] .. admonition:: Referencing built-in indexes
+- [bebd87af] .. admonition:: Restrictions on Oracle
+- [6916dbe8e1a8cc8d] .. admonition:: Restrictions on PostgreSQL
+- [819421d9] .. admonition:: Restrictions on SQLite
+- [0eccf1d3] .. attribute:: Index.condition
+- [684ce5ec] .. attribute:: Index.db_tablespace
+- [3371c411] .. attribute:: Index.expressions
+- [cdb4562c] .. attribute:: Index.fields
+- [7d0c371c] .. attribute:: Index.include
+- [9ee9c155] .. attribute:: Index.name
+- [cdde396e] .. attribute:: Index.opclasses
+- [1c8d974e] .. class:: Index(*expressions, fields=(), name=None, db_tablespace=None, opclasses=(), condition=None, include=None)
+- [3a368b18514a814b-11] .. currentmodule:: django.db.models
+- [f8119871] .. module:: django.db.models.indexes
+- [6b4a5e54e001d097-24] .. seealso::
+- [1cfd44ac] :attr:`Index.name` is required when using ``*expressions``.
+- [75cf84c4] :attr:`Index.name` is required when using ``condition``.
+- [bdab2083] :attr:`Index.name` is required when using ``include``.
+- [00e237b9] :attr:`Index.name` is required when using ``opclasses``.
+- [94d436d7] ===================== Model index reference =====================
+- [232a8cde] A list or tuple of the name of the fields on which the index is desired.
+- [0ff6cac2] A list or tuple of the names of the fields to be included in the covering index as non-key columns. This allows index-only scans to be used for queries that select only included fields (:attr:`~Index.include`) and filter only by indexed fields (:attr:`~Index.fields`).
+- [879861e9] Another example::
+- [7bec24fa] By default, indexes are created with an ascending order for each column. To define an index with a descending order for a column, add a hyphen before the field's name.
+- [3b0c540c] For example ``Index(fields=['headline', '-pub_date'])`` would create SQL with ``(headline, pub_date DESC)``.
+- [6a808e30] For example, ``GinIndex(name='json_index', fields=['jsonfield'], opclasses=['jsonb_path_ops'])`` creates a gin index on ``jsonfield`` using ``jsonb_path_ops``.
+- [28edef836ab93f57-17] For example::
+- [28edef836ab93f57-18] For example::
+- [af38bc09] If :attr:`.Field.db_tablespace` isn't specified (or if the index uses multiple fields), the index is created in tablespace specified in the :attr:`~django.db.models.Options.db_tablespace` option inside the model's ``class Meta``. If neither of those tablespaces are set, the index is created in the same tablespace as the table.
+- [8e0603cb] If the table is very large and your queries mostly target a subset of rows, it may be useful to restrict an index to that subset. Specify a condition as a :class:`~django.db.models.Q`. For example, ``condition=Q(pages__gt=400)`` indexes records with more than 400 pages.
+- [c09985c6] Index classes ease creating database indexes. They can be added using the :attr:`Meta.indexes <django.db.models.Options.indexes>` option. This document explains the API references of :class:`Index` which includes the `index options`_.
+- [347f08a1] Positional argument ``*expressions`` allows creating functional indexes on expressions and database functions.
+- [9f963e5c] See the PostgreSQL documentation for more details about `covering indexes`_.
+- [c2cb0216] The name of the :doc:`database tablespace </topics/db/tablespaces>` to use for this index. For single field indexes, if ``db_tablespace`` isn't provided, the index is created in the ``db_tablespace`` of the field.
+- [2ec04bb7] The name of the index. If ``name`` isn't provided Django will auto-generate a name. For compatibility with different databases, index names cannot be longer than 30 characters and shouldn't start with a number (0-9) or underscore (_).
+- [fe57da48] The names of the `PostgreSQL operator classes <https://www.postgresql.org/docs/current/indexes-opclass.html>`_ to use for this index. If you require a custom operator class, you must provide one for each field in the index.
+- [0d170636] Using ``include`` will produce a smaller index than using a multiple column index but with the drawback that non-key columns can not be used for sorting or filtering.
+- [53b7998a] ``Index`` options =================
+- [3ef04f700014c56a-4] ``condition`` -------------
+- [6aa45c0650f66404-2] ``db_tablespace`` -----------------
+- [aa7d175f0fd55e69-3] ``expressions`` ---------------
+- [87254620a027401c-3] ``fields`` ----------
+- [dcc88c68300cfc76-3] ``include`` -----------
+- [869d9cad] ``include`` is ignored for databases besides PostgreSQL.
+- [e9982e75ca22a002-3] ``name`` --------
+- [43b70adcca41be01-2] ``opclasses`` -------------
+- [d0ed3cf94d763803-2] ``opclasses`` are ignored for databases besides PostgreSQL.
+- [bd7c0aa2] creates an index on the lowercased value of the ``title`` field in descending order and the ``pub_date`` field in the default ascending order.
+- [f7f62925] creates an index on the result of multiplying fields ``height`` and ``weight`` and the ``weight`` rounded to the nearest integer.
+- [b4cde83f] will allow filtering on ``headline``, also selecting ``pub_date``, while fetching data only from the index.

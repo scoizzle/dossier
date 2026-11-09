@@ -1,6 +1,6 @@
 # Fact 5bb6fbb4
 
-Store id: 8669a15f-3882-4afa-8516-34dbe26b4e13
+Store id: 67a115be-dcc0-4438-a935-c4a54973be01
 
 ## Text
 
@@ -20,7 +20,7 @@ def related_manager_cls(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7752310+00:00`
+- posted_at: `2026-11-09T23:31:59.2196780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 677,
     "symbol": "ReverseManyToOneDescriptor.related_manager_cls"
   },
-  "id": "8669a15f-3882-4afa-8516-34dbe26b4e13",
+  "id": "67a115be-dcc0-4438-a935-c4a54973be01",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7752310+00:00"
+    "posted_at": "2026-11-09T23:31:59.2196780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0f467101-9cd1-406c-9a4a-e9639bfdd4e6",
+  "subject_id": "69065b84-a2d0-4f1f-81aa-dafb89699d42",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor.related_manager_cls",
   "tags": [
     "entity:method",

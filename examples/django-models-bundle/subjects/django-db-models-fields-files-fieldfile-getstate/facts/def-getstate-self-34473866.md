@@ -1,6 +1,6 @@
 # Fact 34473866
 
-Store id: 9a0fede2-55d8-4933-9aa5-bda713e26352
+Store id: d1711f26-3fb9-487e-9d71-a67a545e4103
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getstate__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2150190+00:00`
+- posted_at: `2026-11-09T23:31:57.3747070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 141,
     "symbol": "FieldFile.__getstate__"
   },
-  "id": "9a0fede2-55d8-4933-9aa5-bda713e26352",
+  "id": "d1711f26-3fb9-487e-9d71-a67a545e4103",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2150190+00:00"
+    "posted_at": "2026-11-09T23:31:57.3747070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4ef543fb-2d54-4fe7-bbbe-5ee5156f7e40",
+  "subject_id": "2e81ab47-3a27-4c3b-bc67-030798687748",
   "subject_name": "django/db/models/fields/files::FieldFile.__getstate__",
   "tags": [
     "entity:method"

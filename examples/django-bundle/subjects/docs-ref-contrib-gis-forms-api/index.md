@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/forms-api
 
-- Subject: docs/ref/contrib/gis/forms-api (id `13152648-b0aa-490a-99aa-7159ccd92b09`)
+- Subject: docs/ref/contrib/gis/forms-api (id `c8d5a729-e05c-467f-8bcf-0ffeca44bdb5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 29 of 102
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3029 tokens
+- Facts shown: 100 of 102
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - SECURE_CSP = { "default-src": [CSP.SELF], "script-src": [CSP.SELF, "https://cdn.jsdelivr.net/npm/ol@x.y.z/dist/ol.js"], "style-src": [CSP.SELF, "https://cdn.jsdelivr.net/npm/ol@x.y.z/ol.css"], "img-src": [CSP.SELF, "https://*.earthdata.nasa.gov"], } [e3580fbe]
 - SECURE_CSP = { # other directives "img-src": [CSP.SELF, "https://tile.openstreetmap.org"], } [b8e2ceda]
@@ -40,6 +40,76 @@
 - A string that specifies the identifier for the default base map layer to be used by the corresponding JavaScript map widget. It is passed as part of the widget options when rendering, allowing the ``MapWidget`` to determine which map tile provider or base layer to initialize (default is ``None``). [444aa566]
 - Increase this value (or set to ``None``) only if you must accept legitimately deep geometries, since doing so reduces protection against fatal errors. [ffb8630a]
 
-## Beyond the budget
+## All facts
 
-71 more facts did not fit in the budget: [23eb1cec] [30d16d02] [ebc5a8f7] [af8cedbc] [9d35b6df] [ea61a4dc] [f61dc2d3] [a6d6d797] [8766e121] [f04b886b] [eef3d89f] [0a46f653] [de0af066] [4c752953] [5ca82209] [9101e0bd] [af8b9418] [72da92b1] [8a42c281] [ddb01c5d] [0291039e] [714f507f] [1486c93b] [51292336] [ade53835] [7f09b5f2] [94b8e583] [d2f1f379] [e0c31a39] [9a5fd27b] [4157ceb0] [160d780b6ce6fd6c] [3983ea1ab09d5868] [977fb9b7a523e42f] [bbf614d2ad7f98a6] [05cf772aa4fe68a8] [1365f1b7479fa4fc] [898be5ab] [768213fe] [1c408a7f583703aa] [28d5de5a729e7af3] [f1e4f19a] [bf478230] [a1eb26d754a3d60c-5] [72ce2834] [ecd3d075] [2ed09fd9] [ddc97a00] [fc9bde2e] [f3abdf93] [3a943ba7] [c88f96c0] [22382d1e] [d9fde206] [7aa26517] [e01318d5] [9ebf8216] [a23433c1] [3d1cd0ed68e7ef60] [6c06d2aefdf0cb8d] [442fee6fb28555e8] [9f19b9320977b49c] [0479ce898ba8a6e9] [2538f7a50bc0b974] [b2267739] [f7f640c1] [88b43530d52f6112] [f5cb4fc6fec3fdd7] [b2df608cab3f23a8] [f2a7c32a6ae7776e] [d57521a189731a2a]
+- [23eb1cec] Boolean value specifying if a textarea input showing the serialized representation of the current geometry is visible, mainly for debugging purposes (default is ``False``).
+- [30d16d02] Indicates if the widget supports edition of 3D data (default is ``False``).
+- [ebc5a8f7] MapWidget.layerBuilder.custom_layer_name = function () { // Return an OpenLayers layer instance. return new ol.layer.Tile({source: new ol.source.<ChosenSource>()}); };
+- [af8cedbc] SRID code used by the map (default is 4326).
+- [9d35b6df] The :class:`OpenLayersWidget` note about using external assets also applies here. See also this `FAQ answer`_ about ``https`` access to map tiles.
+- [ea61a4dc] The OpenGIS geometry type, generally set by the form field.
+- [f61dc2d3] The limit bounds the nesting depth for well-known text (WKT), well-known binary (WKB), and hex-encoded WKB. For GeoJSON, the limit is not applied at all, since GDAL parses that input type instead.
+- [a6d6d797] The maximum number of geometry collections the field accepts before refusing to parse the input and raising a :exc:`~django.core.exceptions.ValidationError`. This guards against crashes in the underlying GEOS library when parsing deeply nested ``GEOMETRYCOLLECTION`` input. It defaults to ``198``.
+- [8766e121] The template used to render the map widget.
+- [f04b886b] This is an abstract base widget containing the logic needed by subclasses. You cannot directly use this widget for a geometry field. Note that the rendering of GeoDjango widgets is based on a base layer name, identified by the :attr:`base_layer` class attribute.
+- [eef3d89f] This is the SRID code that the field value should be transformed to. For example, if the map widget SRID is different from the SRID more generally used by your application or database, the field will automatically convert input values into that SRID.
+- [0a46f653] This is the default widget used by all GeoDjango form fields. Attributes are:
+- [de0af066] This widget specialized :class:`OpenLayersWidget` and uses an OpenStreetMap base layer to display geographic objects on. Attributes are:
+- [4c752953] You generally shouldn't have to set or change that attribute which should be set up depending on the field class. It matches the OpenGIS standard geometry name.
+- [5ca82209] ``OpenLayersWidget`` and :class:`OSMWidget` include the ``ol.js`` and ``ol.css`` files hosted on the ``cdn.jsdelivr.net`` content-delivery network. These files can be overridden by subclassing the widget and setting the ``js`` and ``css`` properties of the inner ``Media`` class (see :ref:`assets-as-a-static-definition`).
+- [9101e0bd] class MyGeoForm(forms.Form): point = forms.PointField(widget=forms.OSMWidget(attrs={"display_raw": True}))
+- [af8b9418] class YourCustomWidget(OpenLayersWidget): base_layer = "custom_layer_name"
+- [72da92b1] from django.contrib.gis import forms
+- [8a42c281] from django.contrib.gis.forms.widgets import OpenLayersWidget
+- [ddb01c5d] .. _OpenLayers: https://openlayers.org/ .. _NASA: https://www.earthdata.nasa.gov/
+- [0291039e] .. _geometry-widgets-customization:
+- [714f507f] .. attribute:: BaseGeometryWidget.base_layer
+- [1486c93b] .. attribute:: BaseGeometryWidget.display_raw
+- [51292336] .. attribute:: BaseGeometryWidget.geom_type
+- [ade53835] .. attribute:: BaseGeometryWidget.map_srid
+- [7f09b5f2] .. attribute:: BaseGeometryWidget.supports_3d
+- [94b8e583] .. attribute:: BaseGeometryWidget.template_name
+- [d2f1f379] .. attribute:: Field.geom_type
+- [e0c31a39] .. attribute:: Field.max_geom_collections
+- [9a5fd27b] .. attribute:: Field.srid
+- [4157ceb0] .. class:: BaseGeometryWidget
+- [160d780b6ce6fd6c] .. class:: GeometryCollectionField
+- [3983ea1ab09d5868] .. class:: GeometryField
+- [977fb9b7a523e42f] .. class:: LineStringField
+- [bbf614d2ad7f98a6] .. class:: MultiLineStringField
+- [05cf772aa4fe68a8] .. class:: MultiPointField
+- [1365f1b7479fa4fc] .. class:: MultiPolygonField
+- [898be5ab] .. class:: OSMWidget
+- [768213fe] .. class:: OpenLayersWidget
+- [1c408a7f583703aa] .. class:: PointField
+- [28d5de5a729e7af3] .. class:: PolygonField
+- [f1e4f19a] .. code-block:: javascript :caption: ``path-to-file.js``
+- [bf478230] .. module:: django.contrib.gis.forms :synopsis: GeoDjango forms API.
+- [a1eb26d754a3d60c-5] .. versionadded:: 6.0
+- [72ce2834] =================== GeoDjango Forms API ===================
+- [ecd3d075] Customizing the base layer used in OpenLayers-based widgets -----------------------------------------------------------
+- [2ed09fd9] Field arguments =============== In addition to the regular :ref:`form field arguments <core-field-arguments>`, GeoDjango form fields take the following optional arguments.
+- [ddc97a00] Form field classes ==================
+- [fc9bde2e] Form widgets ============
+- [f3abdf93] GeoDjango form widgets allow you to display and edit geographic data on a visual map. Note that none of the currently available widgets supports 3D geometries, hence geometry fields will fallback using a ``Textarea`` widget for such data.
+- [3a943ba7] GeoDjango provides some specialized form fields and widgets in order to visually display and edit geolocalized data on a map. By default, they use `OpenLayers`_-powered maps, with a base WMS layer provided by `NASA`_.
+- [c88f96c0] GeoDjango widgets are template-based, so their attributes are mostly different from other Django widget attributes.
+- [22382d1e] Then, subclass a standard geometry widget and set the ``base_layer``::
+- [d9fde206] To customize the base layer displayed in OpenLayers-based geometry widgets, define a new layer builder in a custom JavaScript file. For example:
+- [7aa26517] Widget attributes -----------------
+- [e01318d5] Widget classes --------------
+- [9ebf8216] You can pass widget attributes in the same manner that for any other Django widget. For example::
+- [a23433c1] ``BaseGeometryWidget``
+- [3d1cd0ed68e7ef60] ``GeometryCollectionField`` ---------------------------
+- [6c06d2aefdf0cb8d] ``GeometryField`` -----------------
+- [442fee6fb28555e8] ``LineStringField`` -------------------
+- [9f19b9320977b49c] ``MultiLineStringField`` ------------------------
+- [0479ce898ba8a6e9] ``MultiPointField`` -------------------
+- [2538f7a50bc0b974] ``MultiPolygonField`` ---------------------
+- [b2267739] ``OSMWidget``
+- [f7f640c1] ``OpenLayersWidget``
+- [88b43530d52f6112] ``PointField`` --------------
+- [f5cb4fc6fec3fdd7] ``PolygonField`` ----------------
+- [b2df608cab3f23a8] ``geom_type`` -------------
+- [f2a7c32a6ae7776e] ``max_geom_collections`` ------------------------
+- [d57521a189731a2a] ``srid`` --------

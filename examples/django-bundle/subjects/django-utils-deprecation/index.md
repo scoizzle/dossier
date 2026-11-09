@@ -1,14 +1,14 @@
 # django/utils/deprecation
 
-- Subject: django/utils/deprecation (id `033dff22-8f47-4ee6-9c65-a52bec79d36f`)
+- Subject: django/utils/deprecation (id `4c2066af-1574-4a57-9eb5-49d0c0cd12d5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 16 of 82
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4412 tokens
+- Facts shown: 80 of 82
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Define the new method if missing and complain about it if not new_method and old_method: warnings.warn( "`%s.%s` method should be renamed `%s`." % (class_name, old_method_name, new_method_name), deprecation_warning, 2, ) setattr(base, new_method_name, old_method) setattr(base, old_method_name, wrapper(old_method)) [e6278146]
 - # Define the old method as a wrapped call to the new method. if not old_method and new_method: setattr(base, old_method_name, wrapper(new_method)) [69567d32]
@@ -27,6 +27,69 @@
 - if iscoroutinefunction(func): [9b3c6cee9ff9a8ff]
 - if num_by_kind[inspect.Parameter.VAR_POSITIONAL] > 0: raise TypeError( "@deprecate_posargs() cannot be used with variable positional `*args`." ) [7620b418]
 
-## Beyond the budget
+## All facts
 
-64 more facts did not fit in the budget: [cde67a7a] [501dcf8d] [5a1f36ae] [441b2934] [689e8a55] [0dd9ce79] [42da249d] [9ada69c78b7df1fa-4] [656124d6f08b58d6-4] [656124d6f08b58d6-5] [03dbddeb] [62d234e9] [905c1b4b] [8e0ad72c] [6534c83c] [593fde87] [1d67a7e6] [71ee18e1] [28e2fef1] [0180f9c4] [1b5dd02d] [73798212] [7a425fe4] [eb5ddf0a] [2aaf5bd6] [43ca0585] [ad6337cb] [ea871751] [52fb6bb7] [6dce0f54] [433074d7] [dc5eba0e] [5ad92513] [dbad2027] [5a1db595] [f2ca4667] [ec8f99f0] [fedb0f97] [74f5a5ab] [e73ff966] [c38b3b34] [3e711dd3] [4acc83a7] [11fb1b6d] [cca45ed2] [d99e278e] [021b5df2d691cbd2-5] [ace2e25a] [450d36e1] [da0dd61f] [8406ec55] [13ae2766] [99cc72c8] [9c9ece8e] [c8e0e5f2] [31d891ba] [bc5824e5] [2b1e9af6] [7ec37810] [e3c1f24f] [d03d59a9] [770890ad88958a4c-16] [01e5f7cd] [512f7821]
+- [cde67a7a] for base in inspect.getmro(new_class): class_name = base.__name__ for renamed_method in cls.renamed_methods: old_method_name = renamed_method[0] old_method = base.__dict__.get(old_method_name) new_method_name = renamed_method[1] new_method = base.__dict__.get(new_method_name) deprecation_warning = renamed_method[2] wrapper = warn_about_renamed_method(class_name, *renamed_method)
+- [501dcf8d] func_name = func.__name__ if func_name == "__init__": # In the warning, show "ClassName()" instead of "__init__()". # The class isn't defined yet, but its name is in __qualname__. # Some examples of __qualname__: # - ClassName.__init__ # - Nested.ClassName.__init__ # - MyTests.test_case.<locals>.ClassName.__init__ local_name = func.__qualname__.rsplit("<locals>.", 1)[-1] class_name = local_name.replace(".__init__", "") func_name = class_name
+- [5a1f36ae] if skip_name_prefixes is not None: while frame and get_fq_name(frame).startswith(skip_name_prefixes): frame, level = back(frame, level)
+- [441b2934] is_internal = frame and get_fq_name(frame).startswith(internal_prefixes) finally: del frame
+- [689e8a55] num_positional_params = ( num_by_kind[inspect.Parameter.POSITIONAL_ONLY] + num_by_kind[inspect.Parameter.POSITIONAL_OR_KEYWORD] ) num_keyword_only_params = num_by_kind[inspect.Parameter.KEYWORD_ONLY] if num_keyword_only_params < 1: raise TypeError( "@deprecate_posargs() requires at least one keyword-only parameter " "(after a `*` entry in the parameters list)." ) if any( name not in params or params[name].kind != inspect.Parameter.KEYWORD_ONLY for name in remappable_names ): raise TypeError( "@deprecate_posargs() requires all remappable_names to be " "keyword-only parameters." )
+- [0dd9ce79] num_remappable_args = len(remappable_names) max_positional_args = num_positional_params + num_remappable_args
+- [42da249d] params = signature(func).parameters num_by_kind = Counter(param.kind for param in params.values())
+- [9ada69c78b7df1fa-4] return new_class
+- [656124d6f08b58d6-4] return wrapper
+- [656124d6f08b58d6-5] return wrapper
+- [03dbddeb] warnings.warn(..., skip_file_prefixes=django_file_prefixes())
+- [62d234e9] # Find or create the module's warning registry so warning filters work. module = function.__module__ try: registry = sys.modules[module].__dict__.setdefault("__warningregistry__", {}) except (AttributeError, KeyError): registry = None
+- [905c1b4b] After the deprecation period, remove the decorator (but keep the ``*``)::
+- [8e0ad72c] Caution: during the deprecation period, do not add any new *positional* parameters or change the remaining ones. For example, this attempt to add a new param would break code using the deprecated posargs::
+- [6534c83c] Examine the stack to determine the "effective caller" (the code using the deprecated feature). By default, this is the third frame from the top (ignoring this helper plus the call site).
+- [593fde87] Example: to deprecate passing option1 or option2 as posargs, change::
+- [1d67a7e6] However, it's acceptable to add new *keyword-only* parameters and to re-order the existing ones, so long as the list passed to @deprecate_posargs is kept in the original posargs order. This change will work without breaking existing code::
+- [71ee18e1] It does the following: 1) Define the new method if missing and complain about it. 2) Define the old method if missing. 3) Complain whenever an old method is called.
+- [28e2fef1] Note: To unconditionally issue a warning identifying the first caller outside Django as its source, don't use this function. Instead, use::
+- [0180f9c4] Provide `internal_modules` (a tuple of names, defaulting to ("django",)) to customize what counts as "internal". A frame is internal when its fully qualified name starts with one of these names followed by a dot.
+- [1b5dd02d] Provide `skip_frames` (an integer) to skip a fixed number of additional frames (e.g., exactly one decorator or shared helper function). If both options are provided, `skip_name_prefixes` is applied first.
+- [73798212] Provide `skip_name_prefixes` (a string or tuple of strings) to skip additional frames by prefix-matching each frame's fully qualified name (dotted module path plus qualname). `skip_name_prefixes` can be used to skip specific functions, all methods in a class, or everything in a module. Skipping stops at the first non-matching frame. Useful when a shared helper is called through multiple paths of varying depth with a common prefix.
+- [7a425fe4] See #15363 for more details. """
+- [eb5ddf0a] Skip the warning when called from within Django, to avoid cascading warnings when one deprecated feature is implemented on top of another.
+- [2aaf5bd6] Supported usage: warn_about_implementation(message, category, some_function) warn_about_implementation(message, category, SomeClass) warn_about_implementation(message, category, SomeClass.method) warn_about_implementation(message, category, self.method) [a bound method]
+- [43ca0585] The @deprecate_posargs decorator adds a small amount of overhead. In most cases it won't be significant, but use with care in performance-critical code paths. """
+- [ad6337cb] The decorated function will map any positional arguments after the ``*`` to the corresponding keyword arguments and issue a deprecation warning.
+- [ea871751] The decorator takes two arguments: a RemovedInDjangoXXXXWarning warning category and a list of parameter names that have been changed from positional-or-keyword to keyword-only, in their original positional order.
+- [52fb6bb7] The warning is issued only if the effective caller (the first non-skipped frame) is outside Django, attributed to that frame. If all frames are skipped, it falls back to the base of the stack.
+- [6dce0f54] The warning will point to the source filename and line number where 'target' is _defined_ (not where it is being _called_ as with other warning helpers). Use this to warn about code that isn't currently on the call stack, e.g., deprecation based on the return value of a called method or inspecting a function's signature to see if it supports an updated API.
+- [433074d7] To warn about a property without invoking its descriptor, call with 'target' set to inspect.getattr_static(class_or_instance, "property_name"). """ if inspect.ismethod(target) or isinstance(target, (classmethod, staticmethod)): function = target.__func__ elif inspect.isfunction(target) or inspect.isclass(target): function = target elif isinstance(target, property): function = target.fget else: raise TypeError( "target must be a function, class, bound method, or unbound descriptor " "(classmethod, staticmethod, or property)." )
+- [dc5eba0e] Works on both functions and methods. To apply to a class constructor, decorate its __init__() method. To apply to a staticmethod or classmethod, use @deprecate_posargs after @staticmethod or @classmethod.
+- [5ad92513] async def __acall__(self, request): """ Async version of __call__ that is swapped in when an async request is running. """ response = None if hasattr(self, "process_request"): response = await sync_to_async( self.process_request, thread_sensitive=True, )(request) response = response or await self.get_response(request) if hasattr(self, "process_response"): response = await sync_to_async( self.process_response, thread_sensitive=True, )(request, response) return response
+- [dbad2027] def __call__(self, f): def wrapper(*args, **kwargs): warnings.warn( "`%s.%s` is deprecated, use `%s` instead." % (self.class_name, self.old_method_name, self.new_method_name), self.deprecation_warning, 2, ) return f(*args, **kwargs)
+- [5a1db595] def __call__(self, request): # Exit out to async mode, if needed if self.async_mode: return self.__acall__(request) response = None if hasattr(self, "process_request"): response = self.process_request(request) response = response or self.get_response(request) if hasattr(self, "process_response"): response = self.process_response(request, response) return response
+- [f2ca4667] def __init__(self, get_response): if get_response is None: raise ValueError("get_response must be provided.") self.get_response = get_response # If get_response is a coroutine function, turns us into async mode so # a thread is not consumed during a whole request. self.async_mode = iscoroutinefunction(self.get_response) if self.async_mode: # Mark the class as async-capable, but do the actual switch inside # __call__ to avoid swapping out dunder methods. markcoroutinefunction(self) super().__init__()
+- [ec8f99f0] def __new__(cls, name, bases, attrs): new_class = super().__new__(cls, name, bases, attrs)
+- [fedb0f97] def __repr__(self): return "<%s get_response=%s>" % ( self.__class__.__qualname__, getattr( self.get_response, "__qualname__", self.get_response.__class__.__name__, ), )
+- [74f5a5ab] def back(frame, level): if frame is not None: return frame.f_back, level + 1 return None, level
+- [e73ff966] def decorator(func): if isinstance(func, type): raise TypeError( "@deprecate_posargs cannot be applied to a class. (Apply it " "to the __init__ method.)" ) if isinstance(func, classmethod): raise TypeError("Apply @classmethod before @deprecate_posargs.") if isinstance(func, staticmethod): raise TypeError("Apply @staticmethod before @deprecate_posargs.")
+- [c38b3b34] def get_fq_name(frame): mod_name = frame.f_globals.get("__name__", "__main__") return f"{mod_name}.{frame.f_code.co_qualname}"
+- [3e711dd3] frame, level = inspect.currentframe(), 0 try: # Back two frames: ignore warn_about_external_use() and its caller. frame, level = back(*back(frame, level))
+- [4acc83a7] function = inspect.unwrap(function)
+- [11fb1b6d] if internal_modules is None: internal_modules = ("django",) if not isinstance(internal_modules, tuple): raise TypeError("internal_modules must be a tuple of module names") internal_prefixes = tuple(f"{mod}." for mod in internal_modules)
+- [cca45ed2] if not is_internal: warnings.warn(message, category=category, stacklevel=level + 1)
+- [d99e278e] renamed_methods = ()
+- [021b5df2d691cbd2-5] return decorator
+- [ace2e25a] to avoid unnecessary stack inspection overhead. """
+- [450d36e1] to::
+- [da0dd61f] try: filename = inspect.getsourcefile(function) _, lineno = inspect.getsourcelines(function) except (AttributeError, OSError, TypeError): # Can't identify the source. Issue the warning generically. warnings.warn(message, category, skip_file_prefixes=django_file_prefixes()) return
+- [8406ec55] warnings.warn_explicit( message, category, filename, lineno, module=module, registry=registry )
+- [13ae2766] @functools.cache def django_file_prefixes(): file = getattr(django, "__file__", None) if file is None: return () return (os.path.join(os.path.dirname(file), ""),)
+- [99cc72c8] RemovedAfterNextVersionWarning = RemovedInDjango2028Warning RemovedInDjango70Warning = RemovedInDjango2028Warning
+- [9c9ece8e] class MiddlewareMixin: sync_capable = True async_capable = True
+- [c8e0e5f2] class RemovedInDjango2028Warning(PendingDeprecationWarning): pass
+- [31d891ba] class RemovedInNextVersionWarning(DeprecationWarning): pass
+- [bc5824e5] class RenameMethodsBase(type): """ Handles the deprecation paths when renaming a method.
+- [2b1e9af6] class warn_about_renamed_method: def __init__( self, class_name, old_method_name, new_method_name, deprecation_warning ): self.class_name = class_name self.old_method_name = old_method_name self.new_method_name = new_method_name self.deprecation_warning = deprecation_warning
+- [7ec37810] def deprecate_posargs(deprecation_warning, remappable_names, /): """ Function/method decorator to deprecate some or all positional arguments.
+- [e3c1f24f] def warn_about_external_use( message, category, *, skip_name_prefixes=None, skip_frames=0, internal_modules=None, ): """Issue a warning when a deprecated feature is used outside of Django.
+- [d03d59a9] def warn_about_implementation(message, category, target): """Issue a warning about a specific function, class, or method definition.
+- [770890ad88958a4c-16] from asgiref.sync import sync_to_async
+- [01e5f7cd] import django from django.utils.inspect import signature
+- [512f7821] import functools import inspect import os import sys import warnings from collections import Counter from inspect import iscoroutinefunction, markcoroutinefunction

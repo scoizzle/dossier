@@ -1,6 +1,6 @@
 # Fact 0ff4f66f
 
-Store id: 38f88635-a040-4d54-8020-4f67a90520f5
+Store id: 5db27747-3feb-4682-898c-da99d754a4db
 
 ## Text
 
@@ -20,7 +20,7 @@ class StringAggDelimiter(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0462870+00:00`
+- posted_at: `2026-11-09T23:31:53.5437320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 352,
     "symbol": "StringAggDelimiter"
   },
-  "id": "38f88635-a040-4d54-8020-4f67a90520f5",
+  "id": "5db27747-3feb-4682-898c-da99d754a4db",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0462870+00:00"
+    "posted_at": "2026-11-09T23:31:53.5437320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d2ebb02c-5d18-44f0-88d5-d757448062b1",
+  "subject_id": "f842e3c3-4488-4483-b399-d11ff740215e",
   "subject_name": "django/db/models/aggregates::StringAggDelimiter",
   "tags": [
     "entity:class"

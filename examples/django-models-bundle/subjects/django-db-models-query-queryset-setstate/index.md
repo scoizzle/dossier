@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.__setstate__
 
-- Subject: django/db/models/query::QuerySet.__setstate__ (id `fbc45302-12ab-4a0e-8c19-34625c30dc6c`)
+- Subject: django/db/models/query::QuerySet.__setstate__ (id `e7b4aed5-6693-4270-9593-1875aa53300b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

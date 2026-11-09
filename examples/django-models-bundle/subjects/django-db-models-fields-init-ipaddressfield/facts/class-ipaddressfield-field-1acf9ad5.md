@@ -1,6 +1,6 @@
 # Fact 1acf9ad5
 
-Store id: 188a6563-46b0-40a1-a730-bc264eaa4abb
+Store id: 36f3fd88-69d9-478e-b7b5-34331043b085
 
 ## Text
 
@@ -20,7 +20,7 @@ class IPAddressField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5585510+00:00`
+- posted_at: `2026-11-09T23:31:56.7189100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2265,
     "symbol": "IPAddressField"
   },
-  "id": "188a6563-46b0-40a1-a730-bc264eaa4abb",
+  "id": "36f3fd88-69d9-478e-b7b5-34331043b085",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5585510+00:00"
+    "posted_at": "2026-11-09T23:31:56.7189100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9daf16cd-ee88-454b-9def-1971b5caf162",
+  "subject_id": "c27aad2b-4a67-4738-b41f-214012a0c688",
   "subject_name": "django/db/models/fields/__init__::IPAddressField",
   "tags": [
     "entity:class"

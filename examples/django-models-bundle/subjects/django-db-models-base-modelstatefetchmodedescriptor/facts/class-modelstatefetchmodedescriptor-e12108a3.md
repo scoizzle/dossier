@@ -1,6 +1,6 @@
 # Fact e12108a3
 
-Store id: deea2713-8bc3-4ea5-9e5d-ebc97c028482
+Store id: 519bb833-9516-40e3-9fcb-63943f540a03
 
 ## Text
 
@@ -20,7 +20,7 @@ class ModelStateFetchModeDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3289550+00:00`
+- posted_at: `2026-11-09T23:31:53.7290120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 470,
     "symbol": "ModelStateFetchModeDescriptor"
   },
-  "id": "deea2713-8bc3-4ea5-9e5d-ebc97c028482",
+  "id": "519bb833-9516-40e3-9fcb-63943f540a03",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3289550+00:00"
+    "posted_at": "2026-11-09T23:31:53.7290120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2d4817f6-0881-4180-9857-94dba37f7c77",
+  "subject_id": "5d9a19c7-356c-465e-baa5-4fb62fab509e",
   "subject_name": "django/db/models/base::ModelStateFetchModeDescriptor",
   "tags": [
     "entity:class"

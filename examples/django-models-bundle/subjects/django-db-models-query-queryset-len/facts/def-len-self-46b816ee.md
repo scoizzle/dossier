@@ -1,6 +1,6 @@
 # Fact 46b816ee
 
-Store id: 07889c1a-582d-4e46-b002-754af44ade39
+Store id: 16664a53-895d-4a38-aa19-802aac1b7ea7
 
 ## Text
 
@@ -20,7 +20,7 @@ def __len__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3198490+00:00`
+- posted_at: `2026-11-09T23:32:04.3290370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 454,
     "symbol": "QuerySet.__len__"
   },
-  "id": "07889c1a-582d-4e46-b002-754af44ade39",
+  "id": "16664a53-895d-4a38-aa19-802aac1b7ea7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3198490+00:00"
+    "posted_at": "2026-11-09T23:32:04.3290370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "89f162dd-4d7b-4663-884c-afdb53f5435a",
+  "subject_id": "4eda67c5-f932-4876-97ff-0e121cb85f00",
   "subject_name": "django/db/models/query::QuerySet.__len__",
   "tags": [
     "entity:method"

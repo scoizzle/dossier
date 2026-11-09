@@ -1,9 +1,9 @@
 # django/db/models/manager::ManagerDescriptor.__get__
 
-- Subject: django/db/models/manager::ManagerDescriptor.__get__ (id `1e92c836-dbbf-4b39-a41f-bdb3a6249f46`)
+- Subject: django/db/models/manager::ManagerDescriptor.__get__ (id `637677bd-07fe-4f4e-8a36-21067f10493d`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

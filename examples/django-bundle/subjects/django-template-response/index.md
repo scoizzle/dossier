@@ -1,14 +1,14 @@
 # django/template/response
 
-- Subject: django/template/response (id `9d76c5c9-e50b-4505-aaa1-3618bda3ac46`)
+- Subject: django/template/response (id `205a1af3-b02d-4c2d-869b-cde7cfb35e75`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 16 of 27
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1407 tokens
+- Facts shown: 27 of 27
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # _is_rendered tracks whether the template and context has been baked # into a final response. # Super __init__ doesn't know any better than to set self.content to # the empty string we just gave it, which wrongly sets _is_rendered # True, so we initialize it to False after the call to super __init__. self._is_rendered = False [83ff507c]
 - # _request stores the current request object in subclasses that know # about requests, like TemplateResponse. It's defined in the base class # to minimize code duplication. # It's called self._request because self.request gets overwritten by # django.test.client.Client. Unlike template_name and context_data, # _request should not be considered part of the public API. self._request = None [e21772dd]
@@ -27,6 +27,16 @@
 - def __getstate__(self): """ Raise an exception if trying to pickle an unrendered response. Pickle only rendered data, not the data used to construct the response. """ obj_dict = self.__dict__.copy() if not self._is_rendered: raise ContentNotRenderedError( "The response content must be rendered before it can be pickled." ) for attr in self.rendering_attrs: if attr in obj_dict: del obj_dict[attr] [e59523ad]
 - def add_post_render_callback(self, callback): """Add a new post-rendering callback. [e1738b43]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [3aead48e] [73c8ced1] [d4333fe7] [994a5aa8] [e17769b8] [21907eef] [30caee79] [b35166de] [d6590bde] [5c917ea4] [a4bde282]
+- [3aead48e] def __init__( self, request, template, context=None, content_type=None, status=None, charset=None, using=None, headers=None, ): super().__init__( template, context, content_type, status, charset, using, headers=headers ) self._request = request
+- [73c8ced1] def __init__( self, template, context=None, content_type=None, status=None, charset=None, using=None, headers=None, ): # It would seem obvious to call these next two members 'template' and # 'context', but those names are reserved as part of the test Client # API. To avoid the name collision, we use different names. self.template_name = template self.context_data = context
+- [d4333fe7] def __iter__(self): if not self._is_rendered: raise ContentNotRenderedError( "The response content must be rendered before it can be iterated over." ) return super().__iter__()
+- [994a5aa8] def render(self): """Render (thereby finalizing) the content of the response.
+- [e17769b8] def resolve_context(self, context): return context
+- [21907eef] def resolve_template(self, template): """Accept a template object, path-to-template, or list of paths.""" if isinstance(template, (list, tuple)): return select_template(template, using=self.using) elif isinstance(template, str): return get_template(template, using=self.using) else: return template
+- [30caee79] class ContentNotRenderedError(Exception): pass
+- [b35166de] class SimpleTemplateResponse(HttpResponse): rendering_attrs = ["template_name", "context_data", "_post_render_callbacks"]
+- [d6590bde] class TemplateResponse(SimpleTemplateResponse): rendering_attrs = [*SimpleTemplateResponse.rendering_attrs, "_request"]
+- [5c917ea4] from .loader import get_template, select_template
+- [a4bde282] from django.http import HttpResponse

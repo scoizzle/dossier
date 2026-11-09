@@ -1,6 +1,6 @@
 # Fact 99fe1645
 
-Store id: ee262f02-9083-45b9-a5b9-6cf555b9f2bf
+Store id: e942e166-5e7f-46a9-a549-12eb24fc9e51
 
 ## Text
 
@@ -20,7 +20,7 @@ def run_validators(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3133380+00:00`
+- posted_at: `2026-11-09T23:31:56.4679040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 822,
     "symbol": "Field.run_validators"
   },
-  "id": "ee262f02-9083-45b9-a5b9-6cf555b9f2bf",
+  "id": "e942e166-5e7f-46a9-a549-12eb24fc9e51",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3133380+00:00"
+    "posted_at": "2026-11-09T23:31:56.4679040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "09c304c9-81a8-4f56-9ad7-6d596e37e77c",
+  "subject_id": "97385059-7844-4a2b-8a66-f236deac506a",
   "subject_name": "django/db/models/fields/__init__::Field.run_validators",
   "tags": [
     "entity:method"

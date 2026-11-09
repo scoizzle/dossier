@@ -1,6 +1,6 @@
 # Fact 3e0bcff3
 
-Store id: 9cd69093-9320-460d-88b7-9929763a2e2b
+Store id: 13173161-e667-4516-a158-ab56f15d4302
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, alias, targets, sources, output_field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6380140+00:00`
+- posted_at: `2026-11-09T23:31:55.8988700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1391,
     "symbol": "ColPairs.__init__"
   },
-  "id": "9cd69093-9320-460d-88b7-9929763a2e2b",
+  "id": "13173161-e667-4516-a158-ab56f15d4302",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6380140+00:00"
+    "posted_at": "2026-11-09T23:31:55.8988700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c6a356c9-73ec-4f80-b745-ef3f17dd090d",
+  "subject_id": "cc74db25-2cd4-4571-b2ed-2a14384c2d6f",
   "subject_name": "django/db/models/expressions::ColPairs.__init__",
   "tags": [
     "entity:method"

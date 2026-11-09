@@ -1,6 +1,6 @@
 # Fact ead599e7
 
-Store id: 99896aa0-7bec-41cc-97ca-2e515c71f780
+Store id: 466e9b41-b609-462b-9e18-cb40cb173178
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerFieldOverflow
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1251280+00:00`
+- posted_at: `2026-11-09T23:32:03.2850900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 445,
     "symbol": "IntegerFieldOverflow"
   },
-  "id": "99896aa0-7bec-41cc-97ca-2e515c71f780",
+  "id": "466e9b41-b609-462b-9e18-cb40cb173178",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1251280+00:00"
+    "posted_at": "2026-11-09T23:32:03.2850900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e70211a8-51b7-4c58-8ce1-f17708cbf10d",
+  "subject_id": "7ba007af-5293-403f-85a6-44962dbb84e1",
   "subject_name": "django/db/models/lookups::IntegerFieldOverflow",
   "tags": [
     "entity:class"

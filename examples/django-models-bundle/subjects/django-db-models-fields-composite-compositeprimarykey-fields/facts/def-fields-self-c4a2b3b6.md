@@ -1,6 +1,6 @@
 # Fact c4a2b3b6
 
-Store id: 04dc0fbd-0b69-476c-b4c3-8ab7ab7bfbd4
+Store id: a42f75cd-c7ea-4036-b1ca-05f014cb764f
 
 ## Text
 
@@ -20,7 +20,7 @@ def fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.9969080+00:00`
+- posted_at: `2026-11-09T23:31:57.1238720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 83,
     "symbol": "CompositePrimaryKey.fields"
   },
-  "id": "04dc0fbd-0b69-476c-b4c3-8ab7ab7bfbd4",
+  "id": "a42f75cd-c7ea-4036-b1ca-05f014cb764f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.9969080+00:00"
+    "posted_at": "2026-11-09T23:31:57.1238720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6d3bd8f0-0a18-49e7-93c8-52526bba08a9",
+  "subject_id": "0f0e7128-1623-469a-9930-b33dd854ca89",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.fields",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact 66bb6ed4
 
-Store id: 4a7f6a2e-5e15-48d2-a94c-1759592092a8
+Store id: 82b53261-739a-4f39-b5b4-7ded46734176
 
 ## Text
 
@@ -20,7 +20,7 @@ def _del_file(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.1975200+00:00`
+- posted_at: `2026-11-09T23:31:57.3545200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 59,
     "symbol": "FieldFile._del_file"
   },
-  "id": "4a7f6a2e-5e15-48d2-a94c-1759592092a8",
+  "id": "82b53261-739a-4f39-b5b4-7ded46734176",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.1975200+00:00"
+    "posted_at": "2026-11-09T23:31:57.3545200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e64366d5-b797-4062-818b-8a4801d76a16",
+  "subject_id": "513943a1-90dd-494e-89af-9c8752fc48e4",
   "subject_name": "django/db/models/fields/files::FieldFile._del_file",
   "tags": [
     "entity:method"

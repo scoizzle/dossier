@@ -1,6 +1,6 @@
 # Fact ff5ea4df
 
-Store id: 965e3505-d687-40f1-986d-f9a0210793ee
+Store id: ef1a08d5-cab9-430c-81f0-cb971909c67f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ForeignObject
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.5223050+00:00`
+- posted_at: `2026-11-09T23:31:58.9119250+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "965e3505-d687-40f1-986d-f9a0210793ee",
+  "id": "ef1a08d5-cab9-430c-81f0-cb971909c67f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.5223050+00:00"
+    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ForeignObject"
       },
       "rel": "contains",
-      "target": "8a37ca3a-8a42-482e-b072-2a94df7d9a72"
+      "target": "50063628-5d9d-4993-beaa-5f54c89ac570"
     }
   ],
   "status": "live",
-  "subject_id": "4e7b69d4-8947-48ba-b9c1-385f0d6a435f",
+  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:class"

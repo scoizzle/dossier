@@ -1,6 +1,6 @@
 # Fact 5a02b434
 
-Store id: 3518f89f-fe6b-4c6a-857b-15c9682a4d68
+Store id: 99b924d2-36f5-46b8-81ae-e6b9509cebd5
 
 ## Text
 
@@ -20,7 +20,7 @@ class AutoFieldMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7226690+00:00`
+- posted_at: `2026-11-09T23:31:56.8897030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2874,
     "symbol": "AutoFieldMixin"
   },
-  "id": "3518f89f-fe6b-4c6a-857b-15c9682a4d68",
+  "id": "99b924d2-36f5-46b8-81ae-e6b9509cebd5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7226690+00:00"
+    "posted_at": "2026-11-09T23:31:56.8897030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "adc9e7db-fec9-4013-8c77-58df1bb98f53",
+  "subject_id": "ff7c914c-4cbb-4bfb-9a3c-432f11c59cd5",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin",
   "tags": [
     "entity:class"

@@ -1,14 +1,14 @@
 # django/utils/tree
 
-- Subject: django/utils/tree (id `4c55d0a2-6095-4a8e-a956-adfba862378f`)
+- Subject: django/utils/tree (id `772995fc-e102-47f3-91f5-a53e15dcdc1c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 15 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1114 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Return a node which can be used in place of data regardless if the node other got squashed or not. """ if self.connector != conn_type: obj = self.copy() self.connector = conn_type self.children = [obj, data] return data elif ( isinstance(data, Node) and not data.negated and (data.connector == conn_type or len(data) == 1) ): # We can squash the other node's children directly into this node. # We are just doing (AB)(CD) == (ABCD) here, with the addition that # if the length of the other node is 1 the connector doesn't # matter. However, for the len(self) == 1 case we don't want to do # the squashing, as it would alter self.connector. self.children.extend(data.children) return self else: # We could use perhaps additional logic here to see if some # children could be used for pushdown here. self.children.append(data) return data [d83389a2]
 - This tree (self) will never be pushed to a child node of the combined tree, nor will the connector or negated properties change. [9a56cf25]
@@ -26,6 +26,11 @@
 - def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self) [786242c26f533382-7]
 - def __str__(self): template = "(NOT (%s: %s))" if self.negated else "(%s: %s)" return template % (self.connector, ", ".join(str(c) for c in self.children)) [3c6c33a2]
 
-## Beyond the budget
+## All facts
 
-6 more facts did not fit in the budget: [e04c2255] [82376ed8] [0f39b6d1] [3971f629] [7c27c9fd099764a6-2] [f73b37390b76138d-2]
+- [e04c2255] def add(self, data, conn_type): """ Combine this tree and the data represented by data using the connector conn_type. The combine is done by squashing the node other away if possible.
+- [82376ed8] def negate(self): """Negate the sense of the root connector.""" self.negated = not self.negated
+- [0f39b6d1] """ A class for storing a tree graph. Primarily used for filter constructs in the ORM. """
+- [3971f629] class Node: """ A single internal node in the tree graph. A Node should be viewed as a connection (the root) with the children being either leaf nodes or other Node instances. """
+- [7c27c9fd099764a6-2] from django.utils.hashable import make_hashable
+- [f73b37390b76138d-2] import copy

@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLDeleteCompiler._as_sql
 
-- Subject: django/db/models/sql/compiler::SQLDeleteCompiler._as_sql (id `99100d1e-9ffd-4f5e-9dab-385e5eeb3714`)
+- Subject: django/db/models/sql/compiler::SQLDeleteCompiler._as_sql (id `93b2d7ad-2930-4155-9a95-e61f832e4385`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

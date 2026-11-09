@@ -1,6 +1,6 @@
 # Fact cbf4a907
 
-Store id: 5deaf4ee-2244-485d-873d-3f3009d3808d
+Store id: 5ab0791a-e4b3-48b2-b82e-32dc779e1f92
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Greatest
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9636910+00:00`
+- posted_at: `2026-11-09T23:32:01.0159390+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5deaf4ee-2244-485d-873d-3f3009d3808d",
+  "id": "5ab0791a-e4b3-48b2-b82e-32dc779e1f92",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9636910+00:00"
+    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Greatest"
       },
       "rel": "contains",
-      "target": "7155640f-70cf-4f0f-8f9b-106ffc575068"
+      "target": "634654b4-954d-45f9-ae1c-fef3196387fc"
     }
   ],
   "status": "live",
-  "subject_id": "49850189-241e-4880-b785-93bab786ac63",
+  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

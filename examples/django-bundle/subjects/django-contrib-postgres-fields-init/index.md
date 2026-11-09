@@ -1,8 +1,8 @@
 # django/contrib/postgres/fields/__init__
 
-- Subject: django/contrib/postgres/fields/__init__ (id `fe8088ea-3882-47dc-a6b4-9c70ff91c05f`)
+- Subject: django/contrib/postgres/fields/__init__ (id `4f38e6d9-ab34-4ae1-8d02-c7830b9050ec`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 46 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

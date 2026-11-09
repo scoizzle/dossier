@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/base/operations
 
-- Subject: django/contrib/gis/db/backends/base/operations (id `ecf1cc57-ef42-41df-82af-747e8b9c98aa`)
+- Subject: django/contrib/gis/db/backends/base/operations (id `dfb9d38c-5e09-4935-aeab-13852e688442`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 15 of 26
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1713 tokens
+- Facts shown: 26 of 26
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Aggregates disallowed_aggregates = () [653eb2cb]
 - # Constructors from_text = False [25030410]
@@ -26,6 +26,16 @@
 - def get_area_att_for_field(self, field): if field.geodetic(self.connection): if self.connection.features.supports_area_geodetic: return "sq_m" raise NotImplementedError( "Area on geodetic coordinate systems not supported." ) else: units_name = field.units_name(self.connection) if units_name: return AreaMeasure.unit_attname(units_name) [8a3fb6ef]
 - def get_db_converters(self, expression): converters = super().get_db_converters(expression) if isinstance(expression.output_field, GeometryField): converters.append(self.get_geometry_converter(expression)) return converters [d904b325]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [648aaf02] [9bc9d74f] [6070610e] [cd2b232d] [c90bc85b] [5ce3a9ae] [767ea9c7] [2430aee2] [a8a8d71e] [6713eefd] [8a0e488e]
+- [648aaf02] def get_distance(self, f, value, lookup_type): """ Return the distance parameters for the given geometry field, lookup value, and lookup type. """ raise NotImplementedError( "Distance operations not available on this spatial backend." )
+- [9bc9d74f] def get_distance_att_for_field(self, field): dist_att = None if field.geodetic(self.connection): if self.connection.features.supports_distance_geodetic: dist_att = "m" else: units = field.units_name(self.connection) if units: dist_att = DistanceMeasure.unit_attname(units) return dist_att
+- [6070610e] def get_geom_placeholder_sql(self, f, value, compiler): """ Return the placeholder for the given geometry field with the given value. Depending on the spatial backend, the placeholder may contain a stored procedure call to the transformation function of the spatial backend. """ if hasattr(value, "as_sql"): sql, params = compiler.compile(value) if self._must_transform_value(value.output_field, f): transform_func = self.spatial_function_name("Transform") sql = f"{transform_func}({sql}, %s)" params = (*params, f.srid) return sql, params elif self._must_transform_value(value, f): transform_func = self.spatial_function_name("Transform") sql = f"{transform_func}({self.from_text}(%s, %s), %s)" params = (value, value.srid, f.srid) return sql, params elif self.connection.features.has_spatialrefsys_table: return f"{self.from_text}(%s, %s)", (value, f.srid) else: # For backwards compatibility on MySQL (#27464). return f"{self.from_text}(%s)", (value,)
+- [cd2b232d] def get_geometry_converter(self, expression): raise NotImplementedError( "Subclasses of BaseSpatialOperations must provide a " "get_geometry_converter() method." )
+- [c90bc85b] def spatial_aggregate_name(self, agg_name): raise NotImplementedError( "Aggregate support not implemented for this spatial backend." )
+- [5ce3a9ae] def spatial_function_name(self, func_name): if func_name in self.unsupported_functions: raise NotSupportedError( "This backend doesn't support the %s function." % func_name ) return self.function_names.get(func_name, self.geom_func_prefix + func_name)
+- [767ea9c7] def spatial_ref_sys(self): raise NotImplementedError( "subclasses of BaseSpatialOperations must a provide spatial_ref_sys() " "method" )
+- [2430aee2] distance_expr_for_lookup = staticmethod(Distance)
+- [a8a8d71e] geom_func_prefix = ""
+- [6713eefd] class BaseSpatialOperations: # Quick booleans for the type of this spatial backend, and # an attribute for the spatial database version tuple (if applicable) postgis = False spatialite = False mariadb = False mysql = False oracle = False spatial_version = None
+- [8a0e488e] from django.contrib.gis.db.models import GeometryField from django.contrib.gis.db.models.functions import Distance from django.contrib.gis.measure import Area as AreaMeasure from django.contrib.gis.measure import Distance as DistanceMeasure from django.db import NotSupportedError from django.utils.functional import cached_property

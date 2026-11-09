@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_related_selections.get_related_klass_infos
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.get_related_klass_infos (id `27b54d10-6393-4c40-9cf1-2d1af13becf0`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.get_related_klass_infos (id `c261a054-63e0-48ec-9376-f963c5f5f397`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

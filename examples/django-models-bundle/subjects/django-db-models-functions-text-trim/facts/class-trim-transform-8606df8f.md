@@ -1,6 +1,6 @@
 # Fact 8606df8f
 
-Store id: 4985c428-7400-444f-a2c5-ac021b556d52
+Store id: 32f32711-44c2-48e9-a6c2-2aa07a8c2330
 
 ## Text
 
@@ -20,7 +20,7 @@ class Trim(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2169970+00:00`
+- posted_at: `2026-11-09T23:32:02.3183120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 370,
     "symbol": "Trim"
   },
-  "id": "4985c428-7400-444f-a2c5-ac021b556d52",
+  "id": "32f32711-44c2-48e9-a6c2-2aa07a8c2330",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2169970+00:00"
+    "posted_at": "2026-11-09T23:32:02.3183120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2d3532e6-f0ee-4bb5-84c6-c74ca10c892a",
+  "subject_id": "833f3597-4b41-468f-9a4a-2ce07fad0053",
   "subject_name": "django/db/models/functions/text::Trim",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact a401d938
 
-Store id: 8edfdb35-04e4-49cb-a07d-12900ffd279b
+Store id: 0f9196f0-e0f4-49d1-842b-35d593aa5f98
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OutputFieldIsNoneError
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8edfdb35-04e4-49cb-a07d-12900ffd279b",
+  "id": "0f9196f0-e0f4-49d1-842b-35d593aa5f98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OutputFieldIsNoneError"
       },
       "rel": "contains",
-      "target": "3ef98718-74fb-4a7d-b137-1f6a3a5191bd"
+      "target": "0b23cf0c-c438-4417-bf8f-3b464120954b"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

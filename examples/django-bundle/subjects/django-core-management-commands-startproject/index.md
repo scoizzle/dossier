@@ -1,8 +1,8 @@
 # django/core/management/commands/startproject
 
-- Subject: django/core/management/commands/startproject (id `4178d0a0-6e07-46d4-a322-eaadef348929`)
+- Subject: django/core/management/commands/startproject (id `d50fa724-6ad9-456a-818e-0c0845594de5`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 236 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

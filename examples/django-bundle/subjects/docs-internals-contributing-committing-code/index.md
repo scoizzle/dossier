@@ -1,14 +1,14 @@
 # docs/internals/contributing/committing-code
 
-- Subject: docs/internals/contributing/committing-code (id `c889a1b2-6a0c-4336-9b4a-f107ebdcecdb`)
+- Subject: docs/internals/contributing/committing-code (id `0e86b75b-3071-469f-ab8c-191b5868d1f4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 21 of 93
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4043 tokens
+- Facts shown: 93 of 93
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Fixed #18307 -- Added git workflow guidelines. [ad83b0ab]
 - Refactored the Django's documentation to remove mentions of SVN specific tasks. Added guidelines of how to use Git, GitHub, and how to use pull request together with Trac instead. [732e8968]
@@ -32,6 +32,77 @@
 - * A prefix ``[A.B.x]`` on the subject line, where ``A.B.x`` is the name of the ``stable/A.B.x`` branch being targeted. [0745e9c6]
 - .. _backports: [ea638b66]
 
-## Beyond the budget
+## All facts
 
-72 more facts did not fit in the budget: [2af5560c] [23167377] [3ac826c2] [0d55c03d] [2caa4106] [8195c98c] [a1b44455] [6ba380f1] [2a9e6f8b] [53ec741b] [231f9470] [caa8d45a] [2035128d] [f8560efc] [cd4fec9a] [094b8084] [0a950b32] [24623163] [abf7a992] [cf084a8e] [5f177cb6] [ba01f7c7] [ff4ed8fb] [85b91be5] [4490df0b] [83a9a773] [e7a76e68] [216515fb] [64b8dec1] [33cfc83c] [b34f7795] [ae459631] [ab16e0aa61fdec9d-3] [591022f6b117516e-4] [591022f6b117516e-5] [7d9b70c5] [8aa7203c166b13be-21] [8aa7203c166b13be-22] [7714e199aac2701e-6] [942ae6c11625c81c-12] [e7a510c0] [654ead81] [f4b52b94] [38f3a454] [b79f1958] [e0dd1b4f] [f808a7e9] [ac704ef2] [5bc6e869] [bc295f9831206ba3-2] [570bf117] [97a8a398] [24606ca0] [3b1dceb4] [0faeb68a] [cbb28c3a] [bea4baec] [7efa9637] [05702e3e] [fe442c97] [11862bfd] [eeba95d1] [87992cfb] [1d75a1c9] [782580ef] [1d52e98d] [85be23d3] [90de6130] [0ef1b1fc] [6892ca81] [fcdc8428] [7fc8a123]
+- [2af5560c] In the body of the commit message more detail is better than less, and should explain *why* the change was made, not *what* was changed or *how*. The code itself shows what changed; the commit message should provide the context and reasoning that the code cannot.
+- [23167377] The commit message should be in lines of 72 chars maximum. There should be a subject line, separated by a blank line and then paragraphs of 72 char lines. The limits are soft. For the subject line, shorter is better.
+- [3ac826c2] * A suffix ``Backport of <sha> from main.`` line in the commit body, pointing to the original commit hash.
+- [0d55c03d] * Beware of merges of upstream branches in the pull requests.
+- [2caa4106] * Don't revert another author's changes without permission from the original author.
+- [8195c98c] * For any medium-to-big changes, where "medium-to-big" is according to your judgment, please bring things up on the `Django Forum`_ before making the change.
+- [a1b44455] * If a patch contains back-and-forth commits, then rewrite those into one. For example, if a commit adds some code and a second commit fixes stylistic issues introduced in the first commit, those commits should be squashed before merging.
+- [6ba380f1] * If possible, have the original author revert their own commit.
+- [2a9e6f8b] * If the commit introduced a confirmed, disclosed security vulnerability then the commit may be reverted immediately without permission from anyone.
+- [53ec741b] * If the original author can't be reached (within a reasonable amount of time -- a day or so) and the problem is severe -- crashing bug, major test failures, etc. -- then ask for objections on the `Django Forum`_ then revert if there are none.
+- [231f9470] * If the problem is small (a feature commit after feature freeze, say), wait it out.
+- [caa8d45a] * If there's a disagreement between the merger and the reverter-to-be then try to work it out on the `Django Forum`_ . If an agreement can't be reached then it should be put to a vote.
+- [2035128d] * If you mistakenly push a topic branch to ``django/django``, delete it. For instance, if you did: ``git push upstream feature_antigravity``, do a reverse push: ``git push upstream :feature_antigravity``.
+- [f8560efc] * If your commit closes a ticket in the Django `ticket tracker`_, begin your commit message with the text "Fixed #xxxxx", where "xxxxx" is the number of the ticket your commit fixes. Example: "Fixed #123 -- Added whizbang feature.". We've rigged Trac so that any commit message in that format will automatically close the referenced ticket and post a comment to it with the full commit message.
+- [cd4fec9a] * If your commit references a ticket in the Django `ticket tracker`_ but does *not* close the ticket, include the phrase "Refs #xxxxx", where "xxxxx" is the number of the ticket your commit references. This will automatically post a comment to the appropriate ticket.
+- [094b8084] * Limit commits to the most granular change that makes sense. This means, use frequent small commits rather than infrequent large commits. For example, if implementing feature X requires a small change to library Y, first commit the change to library Y, then commit feature X in a separate commit. This goes a *long way* in helping everyone follow your changes.
+- [0a950b32] * Never change the published history of ``django/django`` branches by force pushing. If you absolutely must (for security reasons for example), first discuss the situation with the team.
+- [24623163] * Separate bug fixes from feature changes. Bugfixes may need to be :ref:`backported <backports>`.
+- [abf7a992] * Separate changes to different commits by logical grouping: if you do a stylistic cleanup at the same time as you do other changes to a file, separating the changes into two different commits will make reviewing history easier.
+- [cf084a8e] * Tests should pass and docs should build after each commit. Neither the tests nor the docs should emit warnings.
+- [5f177cb6] * The release branch maintainer may back out commits to the release branch without permission if the commit breaks the release branch.
+- [ba01f7c7] * Trivial and small patches usually are best done in one commit. Medium to large work may be split into multiple commits if it makes sense.
+- [ff4ed8fb] * Use git revert -- this will make a reverse commit, but the original commit will still be part of the commit history.
+- [85b91be5] * Write detailed commit messages in the past tense, not present tense, and end the subject line with a period.
+- [4490df0b] **Option 1: fully manual**
+- [83a9a773] **Option 2: using the helper script in the repo**
+- [e7a76e68] **Option 3: using the** ``prepare-commit-msg`` **git hook**
+- [216515fb] .. _CI wiki page: https://code.djangoproject.com/wiki/CI
+- [64b8dec1] .. _Trac plugin: https://github.com/trac-hacks/trac-github
+- [33cfc83c] .. _committing-guidelines:
+- [b34f7795] .. _handling-pull-requests:
+- [ae459631] .. _ticket tracker: https://code.djangoproject.com/ .. _Django Forum: https://forum.djangoproject.com/
+- [ab16e0aa61fdec9d-3] .. code-block:: ini
+- [591022f6b117516e-4] .. code-block:: none
+- [591022f6b117516e-5] .. code-block:: none
+- [7d9b70c5] .. code-block:: sh
+- [8aa7203c166b13be-21] .. code-block:: shell
+- [8aa7203c166b13be-22] .. code-block:: shell
+- [7714e199aac2701e-6] .. console::
+- [942ae6c11625c81c-12] .. note::
+- [e7a510c0] =============== Committing code ===============
+- [654ead81] A backport commit must include two things beyond the original commit message:
+- [f4b52b94] Add it to your ``~/.gitconfig``, and set ``upstream`` to be ``django/django``. Then you can run ``git pr ####`` to checkout the corresponding pull request.
+- [38f3a454] At this point, you can work on the code. Use ``git rebase -i`` and ``git commit --amend`` to make sure the commits have the expected level of quality. Once you're ready:
+- [b79f1958] Backports =========
+- [e0dd1b4f] Bug fix backports to stable branches are done exclusively by mergers, following the :ref:`supported-versions-policy`. A backport consists of cherry-picking a commit from ``main`` onto the target ``stable/A.B.x`` branch.
+- [f808a7e9] But try very hard to ensure that mistakes don't happen. Just because we have a reversion policy doesn't relax your responsibility to aim for the highest quality possible. Really: double-check your work, or have it checked by another merger **before** you commit it in the first place!
+- [ac704ef2] Cherry-pick the commit onto the stable branch, then amend the commit message to add the required prefix and backport note:
+- [5bc6e869] Committing guidelines =====================
+- [bc295f9831206ba3-2] For example:
+- [570bf117] Force push to the branch after rebasing on main but before merging and pushing to upstream. This allows the commit hashes on main and the branch to match which automatically closes the pull request.
+- [97a8a398] Handling pull requests ======================
+- [24606ca0] If a pull request doesn't need to be merged as multiple commits, you can use GitHub's "Squash and merge" button on the website. Edit the commit message as needed to conform to :ref:`the guidelines <committing-guidelines>` and remove the pull request number that's automatically appended to the message's first line.
+- [3b1dceb4] If the backport also fixes a regression, add a line identifying the commit that introduced it:
+- [0faeb68a] If the cherry-pick produces conflicts, resolve them, stage the changes, then run ``git cherry-pick --continue`` before amending. This option requires no setup but relies entirely on remembering to format the message correctly.
+- [cbb28c3a] If you find yourself checking out pull requests locally more often, this git alias will be helpful:
+- [bea4baec] If you're a community member who wants to contribute code to Django, look at :doc:`/internals/contributing/writing-code/working-with-git` instead.
+- [7efa9637] Nobody's perfect; mistakes will be committed.
+- [05702e3e] Once installed, a plain ``git cherry-pick <sha>`` on a stable branch is sufficient; the hook handles the message formatting in all cases.
+- [fe442c97] Practicality beats purity, so it is up to each merger to decide how much history mangling to do for a pull request. The main points are engaging the community, getting work done, and having a usable commit history.
+- [11862bfd] Reverting commits =================
+- [eeba95d1] Since Django is hosted on GitHub, patches are provided in the form of pull requests.
+- [87992cfb] The ``scripts/backport.sh`` Bash script automates the cherry-pick and rewrites the commit message with the correct prefix and backport note. Run it from the target stable branch:
+- [1d75a1c9] The ``scripts/prepare_commit_msg.py`` Python script can be installed as a ``prepare-commit-msg`` git hook. It automatically adds the ``[A.B.x]`` prefix to the subject line, appends ``Backport of <sha> from main.`` to the commit body, and ensures the subject line ends with a period, even when the cherry-pick produces conflicts. To install it, create an executable file ``.git/hooks/prepare-commit-msg`` containing:
+- [782580ef] There are three ways to do a backport, depending on your workflow:
+- [1d52e98d] These guidelines apply to all commits to Django's Git repository, whether submitted by a contributor via a pull request or landed directly by a merger:
+- [85be23d3] This is straightforward for clean cherry-picks, but if conflicts are produced, you will need to resolve them manually and add the prefix and backport note to the commit message yourself.
+- [90de6130] This section is addressed to the mergers and to anyone interested in knowing how code gets committed into Django. The :ref:`committing-guidelines` apply to all contributors, with or without commit rights.
+- [0ef1b1fc] When a mistaken commit is discovered, please follow these guidelines:
+- [6892ca81] When committing a pull request, make sure each individual commit matches the commit guidelines described below. Contributors are expected to provide the best pull requests possible. In practice mergers - who will likely be more familiar with the commit guidelines - may decide to bring a commit up to standard themselves.
+- [fcdc8428] When rewriting the commit history of a pull request, the goal is to make Django's commit history as usable as possible:
+- [7fc8a123] You may want to have Jenkins or GitHub actions test the pull request with one of the pull request builders that doesn't run automatically, such as Oracle or Selenium. See the `CI wiki page`_ for instructions.

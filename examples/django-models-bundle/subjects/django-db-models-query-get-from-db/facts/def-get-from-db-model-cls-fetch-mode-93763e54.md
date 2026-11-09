@@ -1,6 +1,6 @@
 # Fact 93763e54
 
-Store id: 52a5f829-42ea-4fdb-ada8-1860050889cf
+Store id: 7b58e516-6d0d-446e-a585-941174d00298
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_from_db(model_cls, fetch_mode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.1556380+00:00`
+- posted_at: `2026-11-09T23:32:04.1999940+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 60,
     "symbol": "_get_from_db"
   },
-  "id": "52a5f829-42ea-4fdb-ada8-1860050889cf",
+  "id": "7b58e516-6d0d-446e-a585-941174d00298",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.1556380+00:00"
+    "posted_at": "2026-11-09T23:32:04.1999940+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1aeb015d-47ed-43d7-883d-867baae16ce5",
+  "subject_id": "b98c0d64-be8b-4ea6-87a5-698b0196485e",
   "subject_name": "django/db/models/query::_get_from_db",
   "tags": [
     "entity:function"

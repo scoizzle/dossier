@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/datasource
 
-- Subject: django/contrib/gis/gdal/datasource (id `46905f7a-35e9-4d32-ab81-bb7622dde0a1`)
+- Subject: django/contrib/gis/gdal/datasource (id `85a5b2c6-dff4-4d00-a91b-f6d7121f6692`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 16 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1144 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Get the type (integer) of the field, e.g. 0 => OFTInteger t = field.type [fb871e0b]
 - # Returns the value the field; OFTIntegers return ints, # OFTReal returns floats, all else returns string. val = field.value """ [1c29efcf]
@@ -27,6 +27,10 @@
 - """ DataSource is a wrapper for the OGR Data Source object, which provides an interface for reading vector geometry data from many different file formats (including ESRI shapefiles). [b6f012d1]
 - The ds_driver keyword is used internally when a ctypes pointer is passed in directly. [68341570]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [6bc0b572] [a4d742ed] [c3e7bc9b] [f6031cd8] [8d8744708e7830c8]
+- [6bc0b572] # For more information, see the OGR C API documentation: # https://gdal.org/api/vector_c_api.html # # The OGR_DS_* routines are relevant here. class DataSource(GDALBase): "Wraps an OGR Data Source object."
+- [a4d742ed] Example: ds = DataSource('/home/foo/bar.shp') for layer in ds: for feature in layer: # Getting the geometry for the feature. g = feature.geom
+- [c3e7bc9b] When instantiating a DataSource object, use the filename of a GDAL-supported data source. For example, an SHP file.
+- [f6031cd8] from django.contrib.gis.gdal.base import GDALBase from django.contrib.gis.gdal.driver import Driver from django.contrib.gis.gdal.error import GDALException from django.contrib.gis.gdal.layer import Layer from django.contrib.gis.gdal.prototypes import ds as capi from django.utils.encoding import force_bytes, force_str
+- [8d8744708e7830c8] from pathlib import Path

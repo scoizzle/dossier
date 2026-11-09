@@ -1,6 +1,6 @@
 # Fact 93f4266d
 
-Store id: 079e9099-4c44-4d22-95c5-3b6e66891173
+Store id: a36e8f00-071a-45ed-9387-070f7734a696
 
 ## Text
 
@@ -20,7 +20,7 @@ class Regex(BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2075610+00:00`
+- posted_at: `2026-11-09T23:32:03.3968230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 691,
     "symbol": "Regex"
   },
-  "id": "079e9099-4c44-4d22-95c5-3b6e66891173",
+  "id": "a36e8f00-071a-45ed-9387-070f7734a696",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2075610+00:00"
+    "posted_at": "2026-11-09T23:32:03.3968230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c16794c3-7902-446b-bd5e-7ff620c081e5",
+  "subject_id": "28b6e423-5828-4cef-813c-7d0f1be1e214",
   "subject_name": "django/db/models/lookups::Regex",
   "tags": [
     "entity:class",

@@ -1,6 +1,6 @@
 # Fact 7c71a974
 
-Store id: 6d35cdf2-ff52-443a-9ed8-4e52587c3c31
+Store id: fe030c76-ac20-4ec4-beee-e1f7083ed974
 
 ## Text
 
@@ -20,7 +20,7 @@ class ACos(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.5667350+00:00`
+- posted_at: `2026-11-09T23:32:01.6638650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 18,
     "symbol": "ACos"
   },
-  "id": "6d35cdf2-ff52-443a-9ed8-4e52587c3c31",
+  "id": "fe030c76-ac20-4ec4-beee-e1f7083ed974",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.5667350+00:00"
+    "posted_at": "2026-11-09T23:32:01.6638650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fdbe6b60-fdda-4de3-b7de-a840b1349d7b",
+  "subject_id": "de36702a-e8ea-42fe-8d25-d3bf865a0813",
   "subject_name": "django/db/models/functions/math::ACos",
   "tags": [
     "entity:class"

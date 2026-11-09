@@ -1,6 +1,6 @@
 # Fact 37cfe795
 
-Store id: 77d9baed-a86a-476d-b3cf-0c0c93d9b272
+Store id: ba848930-c938-4ec3-b7d0-2d63a4f12e86
 
 ## Text
 
@@ -20,7 +20,7 @@ def SET_DEFAULT(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0174090+00:00`
+- posted_at: `2026-11-09T23:31:55.0741690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 76,
     "symbol": "SET_DEFAULT"
   },
-  "id": "77d9baed-a86a-476d-b3cf-0c0c93d9b272",
+  "id": "ba848930-c938-4ec3-b7d0-2d63a4f12e86",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0174090+00:00"
+    "posted_at": "2026-11-09T23:31:55.0741690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7620f2b2-ae94-4704-9feb-6a5fb67f8a71",
+  "subject_id": "ce13f4d2-ae51-4e3c-ab02-8ee813e6cc88",
   "subject_name": "django/db/models/deletion::SET_DEFAULT",
   "tags": [
     "entity:function"

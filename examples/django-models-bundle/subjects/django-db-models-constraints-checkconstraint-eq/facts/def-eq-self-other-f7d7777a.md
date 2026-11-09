@@ -1,6 +1,6 @@
 # Fact f7d7777a
 
-Store id: 4b5f2f14-b2e6-40bc-ad91-121a0b946acf
+Store id: dbde58ec-b342-484a-94cf-0498c8741e94
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7166640+00:00`
+- posted_at: `2026-11-09T23:31:54.2024520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 244,
     "symbol": "CheckConstraint.__eq__"
   },
-  "id": "4b5f2f14-b2e6-40bc-ad91-121a0b946acf",
+  "id": "dbde58ec-b342-484a-94cf-0498c8741e94",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7166640+00:00"
+    "posted_at": "2026-11-09T23:31:54.2024520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b5be7fce-47cb-43a7-812f-f2cfafea0b50",
+  "subject_id": "0412dd6e-5c7a-41f0-991c-af1dd3a68e1b",
   "subject_name": "django/db/models/constraints::CheckConstraint.__eq__",
   "tags": [
     "entity:method"

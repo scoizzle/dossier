@@ -1,6 +1,6 @@
 # Fact be99a069
 
-Store id: aedde758-4db8-458d-93ea-3125b4417d5c
+Store id: 86e5b57d-2471-4a34-9ec1-ee4e83c7627f
 
 ## Text
 
@@ -20,7 +20,7 @@ def build_lookup(self, lookups, lhs, rhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3659160+00:00`
+- posted_at: `2026-11-09T23:32:06.9274200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1414,
     "symbol": "Query.build_lookup"
   },
-  "id": "aedde758-4db8-458d-93ea-3125b4417d5c",
+  "id": "86e5b57d-2471-4a34-9ec1-ee4e83c7627f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3659160+00:00"
+    "posted_at": "2026-11-09T23:32:06.9274200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2da3c159-e9bd-4bbd-951d-59477ab052ed",
+  "subject_id": "86e0e90a-66df-4e81-a4ac-7e52d32bad58",
   "subject_name": "django/db/models/sql/query::Query.build_lookup",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.as_manager
 
-- Subject: django/db/models/query::QuerySet.as_manager (id `86c43339-b57a-44b1-8782-f4687f91b8a8`)
+- Subject: django/db/models/query::QuerySet.as_manager (id `1adc6b97-160e-4597-86d8-480cc2113abb`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

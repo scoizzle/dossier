@@ -1,9 +1,9 @@
 # django/db/models/fields/json::KeyTransform.__init__
 
-- Subject: django/db/models/fields/json::KeyTransform.__init__ (id `6aa64c49-3823-41e2-bb13-35dac686b1e3`)
+- Subject: django/db/models/fields/json::KeyTransform.__init__ (id `958b70d1-673d-4665-9cbd-c1d75f19d22f`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

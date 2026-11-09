@@ -1,6 +1,6 @@
 # Fact e774948d
 
-Store id: 607edfbd-c4df-4989-bf3b-442a3b208fcc
+Store id: 6ead0d45-631b-46ca-af07-db41945b8f78
 
 ## Text
 
@@ -20,7 +20,7 @@ def swappable_setting(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2755280+00:00`
+- posted_at: `2026-11-09T23:31:58.6309000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 452,
     "symbol": "RelatedField.swappable_setting"
   },
-  "id": "607edfbd-c4df-4989-bf3b-442a3b208fcc",
+  "id": "6ead0d45-631b-46ca-af07-db41945b8f78",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2755280+00:00"
+    "posted_at": "2026-11-09T23:31:58.6309000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5932ccfc-3b6d-4519-b698-0cbd9929ffff",
+  "subject_id": "da837757-0f11-4105-bf0f-6e67e7d5a691",
   "subject_name": "django/db/models/fields/related::RelatedField.swappable_setting",
   "tags": [
     "entity:method",

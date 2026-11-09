@@ -1,6 +1,6 @@
 # Fact bc13da9a
 
-Store id: 0caf7a36-4ed9-4a4a-8493-c0826707caea
+Store id: 3f62ec1e-d1c2-4475-942e-b220adf0a5ef
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_combinator_part_sql(self, compiler)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6091110+00:00`
+- posted_at: `2026-11-09T23:32:05.7466220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 653,
     "symbol": "SQLCompiler._get_combinator_part_sql"
   },
-  "id": "0caf7a36-4ed9-4a4a-8493-c0826707caea",
+  "id": "3f62ec1e-d1c2-4475-942e-b220adf0a5ef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6091110+00:00"
+    "posted_at": "2026-11-09T23:32:05.7466220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c255037-7867-4a36-9350-5b15cd458584",
+  "subject_id": "d947cfdf-23c9-49d7-94fb-b4ba2d94231e",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler._get_combinator_part_sql",
   "tags": [
     "entity:method"

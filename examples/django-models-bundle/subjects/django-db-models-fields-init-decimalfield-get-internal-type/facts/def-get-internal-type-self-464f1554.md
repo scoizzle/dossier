@@ -1,6 +1,6 @@
 # Fact 464f1554
 
-Store id: e67eb595-dbab-46e5-b8f0-575bb64ace14
+Store id: ef1c8ed5-c1ac-4191-bf21-2b5bfaf740e5
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4591750+00:00`
+- posted_at: `2026-11-09T23:31:56.6363570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1890,
     "symbol": "DecimalField.get_internal_type"
   },
-  "id": "e67eb595-dbab-46e5-b8f0-575bb64ace14",
+  "id": "ef1c8ed5-c1ac-4191-bf21-2b5bfaf740e5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4591750+00:00"
+    "posted_at": "2026-11-09T23:31:56.6363570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2243ae41-78a9-4a05-8682-684d65a83420",
+  "subject_id": "9968186e-5dd9-49d2-8649-05a021ad007c",
   "subject_name": "django/db/models/fields/__init__::DecimalField.get_internal_type",
   "tags": [
     "entity:method"

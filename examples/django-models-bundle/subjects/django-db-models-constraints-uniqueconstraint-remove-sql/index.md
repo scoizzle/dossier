@@ -1,9 +1,9 @@
 # django/db/models/constraints::UniqueConstraint.remove_sql
 
-- Subject: django/db/models/constraints::UniqueConstraint.remove_sql (id `92117275-7575-40f3-bd3f-660ca2933543`)
+- Subject: django/db/models/constraints::UniqueConstraint.remove_sql (id `447a4db2-5711-4105-91a9-da66af65aae2`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

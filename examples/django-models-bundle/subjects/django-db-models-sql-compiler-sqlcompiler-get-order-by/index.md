@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_order_by
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_order_by (id `12072be6-bb53-4892-a3aa-897ebed44d57`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_order_by (id `41224297-893e-496b-a493-e13094b41200`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

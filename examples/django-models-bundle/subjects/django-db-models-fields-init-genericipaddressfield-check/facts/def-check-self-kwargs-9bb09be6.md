@@ -1,6 +1,6 @@
 # Fact 9bb09be6
 
-Store id: 3e6396c8-c57b-49c9-b962-8eab98af690b
+Store id: 5a858dab-054d-42d9-82d9-223366758045
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5768890+00:00`
+- posted_at: `2026-11-09T23:31:56.7365260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2318,
     "symbol": "GenericIPAddressField.check"
   },
-  "id": "3e6396c8-c57b-49c9-b962-8eab98af690b",
+  "id": "5a858dab-054d-42d9-82d9-223366758045",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5768890+00:00"
+    "posted_at": "2026-11-09T23:31:56.7365260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8f08c05f-2f46-46e3-a93d-d186c3c53e95",
+  "subject_id": "4b6face7-ac9b-47ee-97b3-839856df97e9",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.check",
   "tags": [
     "entity:method"

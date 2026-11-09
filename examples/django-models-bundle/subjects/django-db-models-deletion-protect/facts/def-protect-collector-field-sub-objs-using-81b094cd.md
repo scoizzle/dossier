@@ -1,6 +1,6 @@
 # Fact 81b094cd
 
-Store id: f2911fc8-41ac-48cb-a21c-8bd3d089b0b1
+Store id: 57c2a8ea-a838-4a91-a582-2761caa02276
 
 ## Text
 
@@ -20,7 +20,7 @@ def PROTECT(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9943480+00:00`
+- posted_at: `2026-11-09T23:31:55.0276350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 34,
     "symbol": "PROTECT"
   },
-  "id": "f2911fc8-41ac-48cb-a21c-8bd3d089b0b1",
+  "id": "57c2a8ea-a838-4a91-a582-2761caa02276",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9943480+00:00"
+    "posted_at": "2026-11-09T23:31:55.0276350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7fa90b15-6241-4ee4-80ef-da858a05f1ea",
+  "subject_id": "54cfd144-7054-4a4d-8a0c-7c753803e4ed",
   "subject_name": "django/db/models/deletion::PROTECT",
   "tags": [
     "entity:function"

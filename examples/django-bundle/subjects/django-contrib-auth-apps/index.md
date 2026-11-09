@@ -1,8 +1,8 @@
 # django/contrib/auth/apps
 
-- Subject: django/contrib/auth/apps (id `2339be84-2d37-4793-951b-6cf9b6d4c6e1`)
+- Subject: django/contrib/auth/apps (id `42520747-9345-4204-a26d-fb68a347a387`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 383 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

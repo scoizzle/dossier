@@ -1,6 +1,6 @@
 # Fact a4d92886
 
-Store id: d77da97d-a0ed-4989-93de-98f398df4a07
+Store id: 3d0013c9-d93a-49c2-b25b-68c2adb1a685
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIExact( CaseInsensitiveMixin, KeyTransformTextLookupMixin, loo
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7385030+00:00`
+- posted_at: `2026-11-09T23:31:58.0063080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 666,
     "symbol": "KeyTransformIExact"
   },
-  "id": "d77da97d-a0ed-4989-93de-98f398df4a07",
+  "id": "3d0013c9-d93a-49c2-b25b-68c2adb1a685",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7385030+00:00"
+    "posted_at": "2026-11-09T23:31:58.0063080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "551b2bf2-ec96-44b8-98ab-75510eee714f",
+  "subject_id": "2fce0926-6987-4942-97e9-60d4115e5664",
   "subject_name": "django/db/models/fields/json::KeyTransformIExact",
   "tags": [
     "entity:class"

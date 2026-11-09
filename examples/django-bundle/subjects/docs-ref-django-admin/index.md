@@ -1,14 +1,14 @@
 # docs/ref/django-admin
 
-- Subject: docs/ref/django-admin (id `fc6be441-e732-4d74-9d59-14477cba7bb1`)
+- Subject: docs/ref/django-admin (id `5554eb4e-825d-46f9-a6fe-66796cf5f1a3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 25 of 758
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 25331 tokens
+- Facts shown: 706 of 758
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Named argument similar to the command line minus the initial dashes and # with internal dashes replaced by underscores management.call_command("dumpdata", natural_foreign=True) [3eda7a13]
 - # Similar to the command line management.call_command("dumpdata", "--natural-foreign") [d5a60211]
@@ -36,6 +36,686 @@
 - django-admin changepassword ringo [e820dc94]
 - .. console:: [7714e199aac2701e-107]
 
-## Beyond the budget
+## All facts
 
-681 more facts did not fit in the budget: [6aa72ffb] [101bdba8] [54326315] [641308dd] [56ec817f] [dc6752fd] [656fe31e172006d5-2] [bac4fc66] [fa54b51f] [aed34fc7] [b4e98f10] [c8c3f53d] [96448dae] [65a82bce] [98c03d68] [d498e0cc] [0fe00127] [7dded976] [77270e02] [a91039c8] [6324791e] [62d8ca5b] [6c0cc5fe] [37d7cb0a] [7fed265a] [7fa11939] [44347158] [cd4f48be] [e9389de0] [ff598d4d] [502a5cf6] [370e7fc1] [3e27f531] [5bfdb1e8] [7a91cbbe] [91d343c5] [2c616cf8] [67aa057a] [cab37971] [fe492599] [8e25499a] [35eb4361] [0065f3f6] [a70e4360] [df33d923] [bc27fe21] [9a0e66ad] [cdb9dca3] [29ed44da] [8427f9dd] [a615d87e] [cbc24b06] [f22cdf5b] [3b6be9ca] [82689471] [51a5eaf3] [f7690fe0] [e14049df] [1ae1926a] [423631a5927aaff7-12] [52655e25] [d76483bd] [301e6c58] [74c931a2] [60c028fa] [eebe0fe3] [762e1f02] [9b18e272] [56120246] [308f9b21] [829786dc] [e0d929ff] [069de5b8] [68762f56] [fa85e021] [c273e63d] [68739e67] [c8b041e4] [9632516a] [398a9c76] [02f2dd55] [dfbe53a4] [3e0d4324] [2719968f] [8ce2fc68] [764a7083] [f536a30b] [ff9e3ce0] [2b53dc1f] [82e1e227] [15ce77ed] [42f1b195] [69a371d1] [5ae3872b] [add97a1f] [698e1711] [74210f1d] [f59c4259] [d33a388a] [b5914bbf] [d4d9c3fa9eefb82e-2] [2fc6ab7f] [faf6f5a8efbd7831-15] [faf6f5a8efbd7831-16] [8aa7203c166b13be-110] [8aa7203c166b13be-111] [8aa7203c166b13be-112] [8aa7203c166b13be-113] [8aa7203c166b13be-114] [3a9340cd0d877339-25] [3a9340cd0d877339-26] [7714e199aac2701e-108] [7714e199aac2701e-109] [7714e199aac2701e-110] [7714e199aac2701e-111] [7714e199aac2701e-112] [7714e199aac2701e-113] [7714e199aac2701e-114] [7714e199aac2701e-115] [7714e199aac2701e-116] [7714e199aac2701e-117] [7714e199aac2701e-118] [7714e199aac2701e-119] [7714e199aac2701e-120] [7714e199aac2701e-121] [7714e199aac2701e-122] [7714e199aac2701e-123] [7714e199aac2701e-124] [7714e199aac2701e-125] [7714e199aac2701e-126] [7714e199aac2701e-127] [7714e199aac2701e-128] [7714e199aac2701e-129] [7714e199aac2701e-130] [7714e199aac2701e-131] [7714e199aac2701e-132] [7714e199aac2701e-133] [7714e199aac2701e-134] [7714e199aac2701e-135] [7714e199aac2701e-136] [7714e199aac2701e-137] [7714e199aac2701e-138] [7714e199aac2701e-139] [7714e199aac2701e-140] [7714e199aac2701e-141] [7714e199aac2701e-142] [7714e199aac2701e-143] [7714e199aac2701e-144] [7714e199aac2701e-145] [7714e199aac2701e-146] [7714e199aac2701e-147] [7714e199aac2701e-148] [7714e199aac2701e-149] [7714e199aac2701e-150] [7714e199aac2701e-151] [7714e199aac2701e-152] [3e65682e] [dfa9fc86] [ad63abf7] [d6b39487] [35f6a5f2] [71382197d214c27a] [92f39314] [dd47c662] [8a8f7e76] [df6ba124e9394eaf] [e35ef55d] [f4005e2fe4365029] [10ff39fe] [8b98f37f] [09e503bd] [71387f38] [f304196e] [008690f9ecddc108] [7f4f7325] [02ce8ccb] [808a373d40a605a0] [81facfcb04146423] [db521c9e6e450676] [59e69d5aa86eeb3f] [9cbbab49] [1b702664] [15904a12] [6e4692ad] [bc84a9fc] [c37cce9a7750e79b] [1b1211d14c815058-2] [6f510ec3] [43821246] [37fe31de] [9d030808] [871d40c7] [e56ed1ea] [8b94c385] [506b691a] [d31beaf7] [2c31ed8e] [c79c3804] [4a636ac1b25404ab] [a7865321] [3cc0e84e] [40383d1e62741b72] [51ecefbd] [c2491df7] [dc949244] [6a4a693b] [e298b5884c94dace-2] [62de80ee] [8677b2779d5513b2] [0c08422fcf6cb441-2] [33da65a3] [6c5bb18f] [0048744d] [fa049b5a] [dd5c7b49] [d24d32e6decd3db1-2] [1d7d3954] [2ef0cd12] [15cd41ed] [2a5ac862] [629378a1] [8c4166aa] [c8acd656] [bd55a191] [db5db9db] [06d35835] [eb221694] [7a6dabbb] [dff61d67] [a712a7af] [4e025f9b] [baee7947] [b7be73d2] [5faaf7cd] [801e9374] [33dd909e] [a1e6271e699a315b] [dde858a6] [79b85126] [1a4202265f812714-2] [25d94657] [0270e382] [b94f2ca6] [80f8e466] [230503b8] [84eebb3a] [81175770] [d602325a] [9042f5a2] [bb133a1b] [8fbc6f46] [9a7ec7fe] [f45e69b4] [a1724038] [bb6179fc] [a8f76a04] [4add7b00] [a7afc4e8] [633f56e6] [2c84e0a3] [2fc62936] [fe45a7a4] [26ccf474] [5ead7627] [93a7b7ad] [53940868] [13d400ae] [4a9b538e] [51a36c50] [75372c9c] [47007f13] [29f9132b] [d043c13d] [e6919659] [4a978ea9] [535da836] [2e77ed1e] [9c806fd4] [a15bee7f] [426f3c24] [762892ef] [4f517b11] [942ae6c11625c81c-91] [942ae6c11625c81c-92] [db7b32d2] [e11e51aa] [b6d9dff73fbccba3] [b6d9dff73fbccba3-2] [6b4a5e54e001d097-21] [6b4a5e54e001d097-22] [0cf180bcf4ecfab5-9] [57739e32d87f6c76-9] [57739e32d87f6c76-10] [57739e32d87f6c76-11] [c54b54cb0805732a-36] [c54b54cb0805732a-37] [c54b54cb0805732a-38] [c54b54cb0805732a-39] [c54b54cb0805732a-40] [5a0d4851] [c6081859] [394c8744] [e3410922] [872b49b1] [624a6b95] [14633721] [a8c2b0bd] [940405dc] [e11be02a] [cdc9ebbd] [8e04f325] [71bb749f] [9489ee40] [70569354] [ce9ed6f2] [ad6c7035] [46c67e7e] [9dc69108] [e79ac0c4] [11d2e1bd] [38df4259] [c10466e1] [e735b534] [d6122d66] [ab9c112d] [86fd1588] [cb1a203f] [0b37043a] [53cb53c3] [11a1797d] [2da3aee4] [4b10cf32] [8d7d61f5] [f2500af8] [b0e4ab76] [f518a87e] [cb3d3ae6] [49c652d3] [97972c61] [2889ebe8] [c44a0ca7] [f4c6ced7] [723474df] [6f534e3b] [8ba666c4] [b0de401c] [a71b2ffa] [b4ec5f58] [e6b7b297] [3df79438] [417e8940] [66df1d9e] [7cd115e3] [cb5d0024] [e4f7a0a6] [8ccf8117] [e3702216] [2c68d99a] [26f84a6d] [903add3d] [6021684e] [99e2c853] [5ca34b12] [f24d1ed6] [cba86fe8] [a60a68ff] [f546ff1f] [1c542dec] [b15c53bf] [8c25e4b1cdb1282e-3] [8c25e4b1cdb1282e-4] [8c25e4b1cdb1282e-5] [8c25e4b1cdb1282e-6] [8c25e4b1cdb1282e-7] [8c25e4b1cdb1282e-8] [8c25e4b1cdb1282e-9] [8c25e4b1cdb1282e-10] [8c25e4b1cdb1282e-11] [8c25e4b1cdb1282e-12] [8c25e4b1cdb1282e-13] [8c25e4b1cdb1282e-14] [8c25e4b1cdb1282e-15] [2ab3d97c] [12678636d153d030-5] [730c225c80dac295-4] [80218c41] [a72fa00f] [7dbd8ae3] [486f2ea3] [bc6a1ccd] [41248de9] [1b62943c] [56f3aff8] [2184442e] [2ba131b9] [bc295f9831206ba3-10] [bc295f9831206ba3-11] [ddde7d56] [b140ae9b] [dde347ee] [5a7113f1] [92d22d50] [fd5b4ae9] [44f38c7f] [7217a914] [e0a32046] [15b36648] [39d47f94] [bbb4801a] [8d58b485] [0534f2d9] [4f21bf94] [e6a0cc17] [44e081aa] [0b6aa664] [520a3968] [f80682bc] [e9220c13] [da08f80d] [e1866f4d] [50ce61e6] [c4f90b2f] [49af8caf] [20284d09] [725c96bf] [9b4620d9] [77e8004d] [b38ed7a4] [e87a740b] [ea393ebb] [227ae779] [2b7f7c15] [f7a59b52] [e248a2dc] [1b43e26c] [9311905e] [f0b74069] [04463e36] [7048330f] [3ee21724] [531ffdd9] [ad95c5c2] [4e1055c3] [bfb74e90] [f7cb7a74] [9f41aa67] [a9b9d2c4] [079084a9] [cd19eb8a] [c693ce89] [435e07de] [08eee51d] [a9ed74a6] [13872ed3] [dc6323e0] [d6b644a0] [d18fdad5] [41c0c2a4] [730d806c] [3fe16abb] [42a4eb20] [9516f24f] [daa00df9] [7ff71e45] [5bc46478] [6217c23c] [c8fc1b76] [10f90a9f] [5209ff42] [8df1f5e3] [da86fd85] [12472589] [afbbb208] [8ff02bbb] [445746fe] [255e00df] [0a16477f] [36388e3d] [96be42cb] [49296692] [813281b4] [b644a407] [893a572e] [5b20691e] [04dd5b17] [f9d30367] [1885d06b] [e5c31f9e] [5b4836d6] [5e6a82e8] [8759cddb] [20d4cb4d] [324d0e9f] [d35f2de5] [ea2e4177] [9e6665b7] [0da818a1] [3f52e11a] [a8346647] [b3215bcc] [457a42f9] [1b7a6475] [178d7342] [32578659] [57a19c70] [89641172] [5fd59de0] [327514ab] [565f4b69] [8daf1a53] [9d1978a9] [3fcd3f59] [3e0418fe] [8125ec16] [9588384d] [988d8d10] [cc6be680] [140f0d2f] [c63267b9] [28aaa7f1] [3df94678] [a0b88ac2] [d380bf1b] [5ecb88ed] [4ef2aab3] [8442bac8] [5546bbf1] [21a48116f13c8dfe] [2b99890d] [828595af] [cdd5186f] [d471ca2c] [989dce41] [8b116966] [67b0b30b] [cbb66020] [ea133246] [11a6bd4d] [418d8bb7] [d53b1b68] [f30fbc0b] [db85ecbb1401e897] [147ed1be] [b9d86f92] [6f97fdc2] [6457d38d] [5079e69e] [8ee9e841] [29152381] [16aa89e3] [ff58b948] [8c460cd9] [88976e06] [b1650713] [ac224d66] [142bd1ba] [c9c8c363] [73f10392074fb55c] [85204bb1a7e83f24] [95824f2f] [b14ad044] [cfe67046] [8b5c442d] [382e6307] [825f71f9] [e28fe259] [33685f8c] [1f13778e] [c53b71fe] [61d42343] [00d212f3] [ab528903] [f77b9180] [e25ccaeb] [1ae8c602] [1226938d] [00bb449b] [ac24aeb1] [2390c25e] [0685106c] [68ad5816] [84a6ad03] [0964a124] [319024a7] [1e2cdede] [6c91ecfc] [418a8f6d] [9d980768] [aa9ce2ae] [f1f96666] [61acc4f2] [2f417735b158d56e] [989b8fb4] [3070d80aa11120b0] [c681d071] [4eded95d] [1532cb9e] [6894bf9c] [7b19c23637506190] [f5038ccb] [4450178c] [81e79f28] [1d2dbec5] [b11c49e0] [8a4f6f66] [c7666ad9] [bf85939f] [e6c7da75] [714a65ff] [61f780eb] [4afac2e7] [1855e375] [2e1a1f60] [39ec6d42] [d90b26cb] [d783534a] [1a6f15c6] [6def6bf4] [c7debf0a] [65302316] [38f8dfc8] [6d22c042] [10200892] [a8c9ad34] [17a9f24f] [d0be4f0e] [a3931bc0] [e964c1f6] [e2c02521] [316bd20e] [63cefb81] [88061ea3] [9ba23e81] [7419a8d2] [59242e5e] [cb3df00e] [ca866b92] [5522f575] [d28c9ad3] [d03b45fd] [442f684f] [4b636584] [67743402] [a43bf34d] [38545068] [d1b525ab] [c81dbd67] [86639ff2] [e2388dcb] [3a62d944] [1cb50188] [106b9e6d] [2a169a69] [a7852737] [d439ead5] [ad73a3dc] [b6419df6] [8deb2ea7] [36b4b6e9] [00ee59fd] [aa918a1a] [f39f89b0] [fd1d3820] [2a1b5eed] [08434c7b] [155f463dc5cb26f1-2] [23ff4538] [df4f92a0] [3b7c11f2] [338216f9] [c2e50cc5] [0ed06d53] [8a92dff8] [a5ac9bec] [6d5baad1] [984f69d3] [82d6f578] [8346bc3e] [52786539] [ba281b10] [2641cf47]
+- [6aa72ffb] See :ref:`customizing-makemessages` for instructions on how to customize the keywords that :djadmin:`makemessages` passes to ``xgettext``.
+- [101bdba8] Templates provided via ``--template`` are used as is. Malicious or poorly constructed templates may introduce security weaknesses or unintended behavior. Compressed archives may also consume excessive resources during extraction, potentially causing crashes or hangs.
+- [54326315] The default timeout of ``Watchman`` client is 5 seconds. You can change it by setting the :envvar:`DJANGO_WATCHMAN_TIMEOUT` environment variable.
+- [641308dd] This is a known limitation. It arises from the need to serialize objects in order to exchange them between processes. See :ref:`python:pickle-picklable` for details.
+- [56ec817f] This lightweight development server has not gone through security audits or performance tests, hence is unsuitable for production. Making this server able to handle a production environment is outside the scope of Django.
+- [dc6752fd] To work around this problem, you can use the :ttag:`templatetag` template tag to "escape" the various parts of the template syntax.
+- [656fe31e172006d5-2] WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead. For more information on production servers see: https://docs.djangoproject.com/en/|version|/howto/deployment/
+- [bac4fc66] When test parallelization is enabled and a test fails, Django may be unable to display the exception traceback. This can make debugging difficult. If you encounter this problem, run the affected test without parallelization to see the traceback of the failure.
+- [fa54b51f] When the app template files are rendered with the Django template engine (by default all ``*.py`` files), Django will also replace all stray template variables contained. For example, if one of the Python files contains a docstring explaining a particular feature related to template rendering, it might result in an incorrect example.
+- [aed34fc7] When unapplying migrations, all dependent migrations will also be unapplied, regardless of ``<app_label>``. You can use ``--plan`` to check which migrations will be unapplied.
+- [b4e98f10] When using Watchman with a project that includes large non-Python directories like ``node_modules``, it's advisable to ignore this directory for optimal performance. See the `watchman documentation`_ for information on how to do this.
+- [c8c3f53d] django-admin check --database default --database other
+- [96448dae] django-admin check --deploy --settings=production_settings
+- [65a82bce] django-admin check --tag models --tag compatibility
+- [98c03d68] django-admin check auth admin myapp
+- [d498e0cc] django-admin compilemessages --ignore=node_modules --ignore=outdated/*/locale
+- [0fe00127] django-admin compilemessages --locale=pt_BR django-admin compilemessages --locale=pt_BR --locale=fr -f django-admin compilemessages -l pt_BR django-admin compilemessages -l pt_BR -l fr --use-fuzzy django-admin compilemessages --exclude=pt_BR django-admin compilemessages --exclude=pt_BR --exclude=fr django-admin compilemessages -x pt_BR django-admin compilemessages -x pt_BR -x fr
+- [7dded976] django-admin dumpdata --exclude=auth --exclude=contenttypes
+- [77270e02] django-admin dumpdata --format=json --database=test app_label.ModelName | django-admin loaddata --format=json --database=prod -
+- [a91039c8] django-admin dumpdata -o mydata.json.gz
+- [6324791e] django-admin inspectdb | black -
+- [62d8ca5b] django-admin loaddata --format=json -
+- [6c0cc5fe] django-admin makemessages --locale=de --extension xhtml
+- [37d7cb0a] django-admin makemessages --locale=de --extension=html,txt --extension xml
+- [7fed265a] django-admin makemessages --locale=de --symlinks
+- [7fa11939] django-admin makemessages --locale=en_US --ignore=apps/* --ignore=secret/*.html
+- [44347158] django-admin makemessages --locale=pt_BR django-admin makemessages --locale=pt_BR --locale=fr django-admin makemessages -l pt_BR django-admin makemessages -l pt_BR -l fr django-admin makemessages --exclude=pt_BR django-admin makemessages --exclude=pt_BR --exclude=fr django-admin makemessages -x pt_BR django-admin makemessages -x pt_BR -x fr
+- [cd4f48be] django-admin migrate --pythonpath='/home/djangoprojects/myproject'
+- [e9389de0] django-admin migrate --settings=mysite.settings
+- [ff598d4d] django-admin migrate --skip-checks
+- [502a5cf6] django-admin migrate --traceback
+- [370e7fc1] django-admin migrate --verbosity 2
+- [3e27f531] django-admin runserver
+- [5bfdb1e8] django-admin runserver --no-color
+- [7a91cbbe] django-admin runserver -6
+- [91d343c5] django-admin runserver -6 7000
+- [2c616cf8] django-admin runserver -6 localhost:8000
+- [67aa057a] django-admin runserver 1.2.3.4:7000
+- [cab37971] django-admin runserver 1.2.3.4:8000
+- [fe492599] django-admin runserver 7000
+- [8e25499a] django-admin runserver [2001:0db8:1234:5678::9]:7000
+- [35eb4361] django-admin runserver localhost:8000
+- [0065f3f6] django-admin sendtestemail foo@example.com bar@example.com
+- [a70e4360] django-admin shell --command="import django; print(django.__version__)"
+- [df33d923] django-admin shell -i bpython
+- [bc27fe21] django-admin shell -i ipython
+- [9a0e66ad] django-admin shell -i python
+- [cdb9dca3] django-admin startapp --template=/Users/jezdez/Code/my_app_template myapp
+- [29ed44da] django-admin startapp --template=https://github.com/githubuser/django-app-template/archive/main.zip myapp
+- [8427f9dd] django-admin startapp myapp /Users/jezdez/Code/myapp
+- [a615d87e] django-admin startproject myproject /Users/jezdez/Code/myproject_repo
+- [cbc24b06] django-admin testserver --addrport 1.2.3.4:7000 test
+- [f22cdf5b] django-admin testserver --addrport 7000 fixture1 fixture2 django-admin testserver fixture1 fixture2 --addrport 7000
+- [3b6be9ca] django-admin testserver mydata.json
+- [82689471] export DJANGO_COLORS="error=yellow/blue,blink;notice=magenta"
+- [51a5eaf3] export DJANGO_COLORS="light"
+- [f7690fe0] from django.db import connection, reset_queries, models from django.conf import settings from django.utils import timezone
+- [e14049df] with open("/path/to/command_output", "w") as f: management.call_command("dumpdata", stdout=f)
+- [1ae1926a] The contents of custom app (or project) templates should always be audited before use: Such templates define code that will become part of your project, and this means that such code will be trusted as much as any app you install, or code you write yourself. Further, even rendering the templates is, effectively, executing code that was provided as input to the management command. The Django template language may provide wide access into the system, so make sure any custom template you use is worthy of your trust.
+- [423631a5927aaff7-12] .. code-block:: doscon
+- [52655e25] #. Create a test database, as described in :ref:`the-test-database`. #. Populate the test database with fixture data from the given fixtures. (For more on fixtures, see the documentation for :djadmin:`loaddata` above.) #. Runs the Django development server (as in :djadmin:`runserver`), pointed at this newly created test database instead of your production database.
+- [d76483bd] (The above statements are equivalent. We include both of them to demonstrate that it doesn't matter whether the options come before or after the fixture arguments.)
+- [301e6c58] * Database defaults are not introspected and will be absent from the generated output.
+- [74c931a2] * For PostgreSQL, this runs the ``psql`` command-line client. * For MySQL, this runs the ``mysql`` command-line client. * For SQLite, this runs the ``sqlite3`` command-line client. * For Oracle, this runs the ``sqlplus`` command-line client.
+- [60c028fa] * Generated fields are mapped to their output field type.
+- [eebe0fe3] * If ``inspectdb`` cannot map a column's type to a model field type, it'll use ``TextField`` and will insert the Python comment ``'This field type is a guess.'`` next to the field in the generated model. The recognized fields may depend on apps listed in :setting:`INSTALLED_APPS`. For example, :mod:`django.contrib.postgres` adds recognition for several PostgreSQL-specific field types.
+- [762e1f02] * If models were managed by Django's migration framework, Python-level field options that have no database-level representation will not be included. In particular, ``Field.default`` will not be included, and Python variants for ``on_delete`` are always emitted as ``DO_NOTHING``.
+- [9b18e272] * If the database column name is a Python reserved word (such as ``'pass'``, ``'class'`` or ``'for'``), ``inspectdb`` will append ``'_field'`` to the attribute name. For example, if a table has a column ``'for'``, the generated model will have a field ``'for_field'``, with the ``db_column`` attribute set to ``'for'``. ``inspectdb`` will insert the Python comment ``'Field renamed because it was a Python reserved word.'`` next to the field.
+- [56120246] * Install :pypi:`colorama`, a Python package that translates ANSI color codes into Windows API calls. Django commands will detect its presence and will make use of its services to color output just like on Unix-based platforms. ``colorama`` can be installed via pip:
+- [308f9b21] * Install `ANSICON`_, a third-party tool that allows ``cmd.exe`` to process ANSI color codes. Django commands will detect its presence and will make use of its services to color output just like on Unix-based platforms.
+- [829786dc] * Let's say you're developing your Django application and have a "pristine" copy of a database that you'd like to interact with. You can dump your database to a :ref:`fixture <fixtures-explanation>` (using the :djadmin:`dumpdata` command, explained above), then use ``testserver`` to run your web application with that data. With this arrangement, you have the flexibility of messing up your data in any way, knowing that whatever data changes you're making are only being made to a test database.
+- [e0d929ff] * Models are created for foreign tables. * Models are created for materialized views if :option:`--include-views` is used. * Models are created for partition tables if :option:`--include-partitions` is used.
+- [069de5b8] * Models are created for materialized views if :option:`--include-views` is used.
+- [68762f56] * Models that reference each other may not be in the correct order.
+- [fa85e021] * No arguments: All apps have all of their migrations run. * ``<app_label>``: The specified app has its migrations run, up to the most recent migration. This may involve running other apps' migrations too, due to dependencies. * ``<app_label> <migrationname>``: Brings the database schema to a state where the named migration is applied, but no later migrations in the same app are applied. This may involve unapplying migrations if you have previously migrated past the named migration. You can use a prefix of the migration name, e.g. ``0001``, as long as it's unique for the given app name. Use the name ``zero`` to migrate all the way back i.e. to revert all applied migrations for an app.
+- [c273e63d] * Type ``django-admin``. * Press [TAB] to see all available options. * Type ``sql``, then [TAB], to see all available options whose names start with ``sql``.
+- [68739e67] * When you're writing :doc:`unit tests </topics/testing/overview>` of how your views act with certain fixture data, you can use ``testserver`` to interact with the views in a web browser, manually.
+- [c8b041e4] * ``0`` means no output. * ``1`` means normal output (default). * ``2`` means verbose output. * ``3`` means *very* verbose output.
+- [9632516a] * ``black`` * ``red`` * ``green`` * ``yellow`` * ``blue`` * ``magenta`` * ``cyan`` * ``white``
+- [398a9c76] * ``bold`` * ``underscore`` * ``blink`` * ``reverse`` * ``conceal``
+- [02f2dd55] * ``dark``, suited to terminals that show white text on a black background. This is the default palette.
+- [dfbe53a4] * ``django`` for all ``*.py``, ``*.html`` and ``*.txt`` files (default) * ``djangojs`` for ``*.js`` files
+- [3e0d4324] * ``error`` - A major error. * ``notice`` - A minor error. * ``success`` - A success. * ``warning`` - A warning. * ``sql_field`` - The name of a model field in SQL. * ``sql_coltype`` - The type of a model field in SQL. * ``sql_keyword`` - An SQL keyword. * ``sql_table`` - The name of a model in SQL. * ``http_info`` - A 1XX HTTP Informational server response. * ``http_success`` - A 2XX HTTP Success server response. * ``http_not_modified`` - A 304 HTTP Not Modified server response. * ``http_redirect`` - A 3XX HTTP Redirect server response other than 304. * ``http_not_found`` - A 404 HTTP Not Found server response. * ``http_bad_request`` - A 4XX HTTP Bad Request server response other than 404. * ``http_server_error`` - A 5XX HTTP Server Error response. * ``migrate_heading`` - A heading in a migrations management command. * ``migrate_label`` - A migration name.
+- [2719968f] * ``full`` (the default if not given): the lines include both file name and line number. * ``file``: the line number is omitted. * ``never``: the lines are suppressed (same as :option:`--no-location`).
+- [8ce2fc68] * ``light``, suited to terminals that show black text on a white background.
+- [764a7083] * ``nocolor``, which disables syntax highlighting.
+- [f536a30b] * ``role=fg`` * ``role=fg/bg`` * ``role=fg,option,option`` * ``role=fg/bg,option,option``
+- [ff9e3ce0] - Any option passed to the ``startapp`` command (among the command's supported options) - ``app_name`` -- the app name as passed to the command - ``app_directory`` -- the full path of the newly created app - ``camel_case_app_name`` -- the app name in camel case format - ``docs_version`` -- the version of the documentation: ``'dev'`` or ``'1.x'`` - ``django_version`` -- the version of Django, e.g. ``'2.0.3'``
+- [2b53dc1f] - Any option passed to the ``startproject`` command (among the command's supported options) - ``project_name`` -- the project name as passed to the command - ``project_directory`` -- the full path of the newly created project - ``secret_key`` -- a random key for the :setting:`SECRET_KEY` setting - ``docs_version`` -- the version of the documentation: ``'dev'`` or ``'1.x'`` - ``django_version`` -- the version of Django, e.g. ``'2.0.3'``
+- [82e1e227] .. _Community Ecosystem: https://www.djangoproject.com/community/ecosystem/#debugging-development-tools .. _Developer Tools grid: https://djangopackages.org/grids/g/developer-tools/
+- [15ce77ed] .. _IPython: https://ipython.org/ .. _bpython: https://bpython-interpreter.org/
+- [42f1b195] .. _Watchman: https://facebook.github.io/watchman/ .. _watchman documentation: https://facebook.github.io/watchman/docs/config#ignore_dirs
+- [69a371d1] .. _`Windows Terminal`: https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701 .. _`VS Code`: https://code.visualstudio.com .. _ANSICON: http://adoxa.altervista.org/ansicon/
+- [5ae3872b] .. _custom-app-and-project-templates:
+- [add97a1f] .. _fuzzy translations: https://www.gnu.org/software/gettext/manual/html_node/Fuzzy-Entries.html
+- [698e1711] .. _loading-fixtures-stdin:
+- [74210f1d] .. _render_warning:
+- [f59c4259] .. _syntax-coloring:
+- [d33a388a] .. _trusted_code_warning:
+- [b5914bbf] .. admonition:: Large directories with many files may cause performance issues
+- [d4d9c3fa9eefb82e-2] .. admonition:: There are community-maintained solutions!
+- [2fc6ab7f] .. admonition:: Watchman timeout
+- [faf6f5a8efbd7831-15] .. code-block:: console
+- [faf6f5a8efbd7831-16] .. code-block:: console
+- [8aa7203c166b13be-110] .. code-block:: shell
+- [8aa7203c166b13be-111] .. code-block:: shell
+- [8aa7203c166b13be-112] .. code-block:: shell
+- [8aa7203c166b13be-113] .. code-block:: shell
+- [8aa7203c166b13be-114] .. code-block:: shell
+- [3a9340cd0d877339-25] .. code-block:: text
+- [3a9340cd0d877339-26] .. code-block:: text
+- [7714e199aac2701e-108] .. console::
+- [7714e199aac2701e-109] .. console::
+- [7714e199aac2701e-110] .. console::
+- [7714e199aac2701e-111] .. console::
+- [7714e199aac2701e-112] .. console::
+- [7714e199aac2701e-113] .. console::
+- [7714e199aac2701e-114] .. console::
+- [7714e199aac2701e-115] .. console::
+- [7714e199aac2701e-116] .. console::
+- [7714e199aac2701e-117] .. console::
+- [7714e199aac2701e-118] .. console::
+- [7714e199aac2701e-119] .. console::
+- [7714e199aac2701e-120] .. console::
+- [7714e199aac2701e-121] .. console::
+- [7714e199aac2701e-122] .. console::
+- [7714e199aac2701e-123] .. console::
+- [7714e199aac2701e-124] .. console::
+- [7714e199aac2701e-125] .. console::
+- [7714e199aac2701e-126] .. console::
+- [7714e199aac2701e-127] .. console::
+- [7714e199aac2701e-128] .. console::
+- [7714e199aac2701e-129] .. console::
+- [7714e199aac2701e-130] .. console::
+- [7714e199aac2701e-131] .. console::
+- [7714e199aac2701e-132] .. console::
+- [7714e199aac2701e-133] .. console::
+- [7714e199aac2701e-134] .. console::
+- [7714e199aac2701e-135] .. console::
+- [7714e199aac2701e-136] .. console::
+- [7714e199aac2701e-137] .. console::
+- [7714e199aac2701e-138] .. console::
+- [7714e199aac2701e-139] .. console::
+- [7714e199aac2701e-140] .. console::
+- [7714e199aac2701e-141] .. console::
+- [7714e199aac2701e-142] .. console::
+- [7714e199aac2701e-143] .. console::
+- [7714e199aac2701e-144] .. console::
+- [7714e199aac2701e-145] .. console::
+- [7714e199aac2701e-146] .. console::
+- [7714e199aac2701e-147] .. console::
+- [7714e199aac2701e-148] .. console::
+- [7714e199aac2701e-149] .. console::
+- [7714e199aac2701e-150] .. console::
+- [7714e199aac2701e-151] .. console::
+- [7714e199aac2701e-152] .. console::
+- [3e65682e] .. django-admin-option:: -- ARGUMENTS
+- [dfa9fc86] .. django-admin-option:: --add-location [{full,file,never}]
+- [ad63abf7] .. django-admin-option:: --addrport ADDRPORT
+- [d6b39487] .. django-admin-option:: --admins
+- [35f6a5f2] .. django-admin-option:: --all
+- [71382197d214c27a] .. django-admin-option:: --all, -a
+- [92f39314] .. django-admin-option:: --app APP_LABEL
+- [dd47c662] .. django-admin-option:: --backwards
+- [8a8f7e76] .. django-admin-option:: --buffer, -b
+- [df6ba124e9394eaf] .. django-admin-option:: --check
+- [e35ef55d] .. django-admin-option:: --command COMMAND, -c COMMAND
+- [f4005e2fe4365029] .. django-admin-option:: --database DATABASE
+- [10ff39fe] .. django-admin-option:: --debug-mode
+- [8b98f37f] .. django-admin-option:: --debug-sql, -d
+- [09e503bd] .. django-admin-option:: --default MODULE
+- [71387f38] .. django-admin-option:: --deploy
+- [f304196e] .. django-admin-option:: --domain DOMAIN, -d DOMAIN
+- [008690f9ecddc108] .. django-admin-option:: --dry-run
+- [7f4f7325] .. django-admin-option:: --durations N
+- [02ce8ccb] .. django-admin-option:: --empty
+- [808a373d40a605a0] .. django-admin-option:: --exclude DIRECTORIES, -x DIRECTORIES
+- [81facfcb04146423] .. django-admin-option:: --exclude EXCLUDE, -e EXCLUDE
+- [db521c9e6e450676] .. django-admin-option:: --exclude EXCLUDE, -x EXCLUDE
+- [59e69d5aa86eeb3f] .. django-admin-option:: --extension EXTENSIONS, -e EXTENSIONS
+- [9cbbab49] .. django-admin-option:: --fail-level {CRITICAL,ERROR,WARNING,INFO,DEBUG}
+- [1b702664] .. django-admin-option:: --failfast
+- [15904a12] .. django-admin-option:: --fake
+- [6e4692ad] .. django-admin-option:: --fake-initial
+- [bc84a9fc] .. django-admin-option:: --force-color
+- [c37cce9a7750e79b] .. django-admin-option:: --format FORMAT
+- [1b1211d14c815058-2] .. django-admin-option:: --ignore PATTERN, -i PATTERN
+- [6f510ec3] .. django-admin-option:: --ignorenonexistent, -i
+- [43821246] .. django-admin-option:: --include-partitions
+- [37fe31de] .. django-admin-option:: --include-stale-apps
+- [9d030808] .. django-admin-option:: --include-views
+- [871d40c7] .. django-admin-option:: --indent INDENT
+- [e56ed1ea] .. django-admin-option:: --interface {ipython,bpython,python}, -i {ipython,bpython,python}
+- [8b94c385] .. django-admin-option:: --ipv6, -6
+- [506b691a] .. django-admin-option:: --keep-pot
+- [d31beaf7] .. django-admin-option:: --keepdb
+- [2c31ed8e] .. django-admin-option:: --list, -l
+- [c79c3804] .. django-admin-option:: --list-tags
+- [4a636ac1b25404ab] .. django-admin-option:: --locale LOCALE, -l LOCALE
+- [a7865321] .. django-admin-option:: --managers
+- [3cc0e84e] .. django-admin-option:: --merge
+- [40383d1e62741b72] .. django-admin-option:: --name FILES, -n FILES
+- [51ecefbd] .. django-admin-option:: --name NAME, -n NAME
+- [c2491df7] .. django-admin-option:: --natural-foreign
+- [dc949244] .. django-admin-option:: --natural-primary
+- [6a4a693b] .. django-admin-option:: --no-color
+- [e298b5884c94dace-2] .. django-admin-option:: --no-default-ignore
+- [62de80ee] .. django-admin-option:: --no-faulthandler
+- [8677b2779d5513b2] .. django-admin-option:: --no-header
+- [0c08422fcf6cb441-2] .. django-admin-option:: --no-imports
+- [33da65a3] .. django-admin-option:: --no-location
+- [6c5bb18f] .. django-admin-option:: --no-obsolete
+- [0048744d] .. django-admin-option:: --no-optimize
+- [fa049b5a] .. django-admin-option:: --no-startup
+- [dd5c7b49] .. django-admin-option:: --no-wrap
+- [d24d32e6decd3db1-2] .. django-admin-option:: --noinput, --no-input
+- [1d7d3954] .. django-admin-option:: --noreload
+- [2ef0cd12] .. django-admin-option:: --nothreading
+- [15cd41ed] .. django-admin-option:: --output OUTPUT, -o OUTPUT
+- [2a5ac862] .. django-admin-option:: --output {hash,unified}
+- [629378a1] .. django-admin-option:: --parallel [N]
+- [8c4166aa] .. django-admin-option:: --pdb
+- [c8acd656] .. django-admin-option:: --pks PRIMARY_KEYS
+- [bd55a191] .. django-admin-option:: --plan
+- [db5db9db] .. django-admin-option:: --plan, -p
+- [06d35835] .. django-admin-option:: --prune
+- [eb221694] .. django-admin-option:: --pythonpath PYTHONPATH
+- [7a6dabbb] .. django-admin-option:: --reverse, -r
+- [dff61d67] .. django-admin-option:: --run-syncdb
+- [a712a7af] .. django-admin-option:: --scriptable
+- [4e025f9b] .. django-admin-option:: --settings SETTINGS
+- [baee7947] .. django-admin-option:: --shuffle [SEED]
+- [b7be73d2] .. django-admin-option:: --skip-checks
+- [5faaf7cd] .. django-admin-option:: --squashed-name SQUASHED_NAME
+- [801e9374] .. django-admin-option:: --symlinks, -s
+- [33dd909e] .. django-admin-option:: --tag TAGS, -t TAGS
+- [a1e6271e699a315b] .. django-admin-option:: --template TEMPLATE
+- [dde858a6] .. django-admin-option:: --testrunner TESTRUNNER
+- [79b85126] .. django-admin-option:: --timing
+- [1a4202265f812714-2] .. django-admin-option:: --traceback
+- [25d94657] .. django-admin-option:: --update
+- [0270e382] .. django-admin-option:: --use-fuzzy, -f
+- [b94f2ca6] .. django-admin-option:: --username USERNAME .. django-admin-option:: --email EMAIL
+- [80f8e466] .. django-admin-option:: --using ALIAS
+- [230503b8] .. django-admin-option:: --verbosity {0,1,2,3}, -v {0,1,2,3}
+- [84eebb3a] .. django-admin-option:: -k TEST_NAME_PATTERNS
+- [81175770] .. django-admin:: changepassword [<username>]
+- [d602325a] .. django-admin:: check [app_label [app_label ...]]
+- [9042f5a2] .. django-admin:: clearsessions
+- [bb133a1b] .. django-admin:: compilemessages
+- [8fbc6f46] .. django-admin:: createcachetable
+- [9a7ec7fe] .. django-admin:: createsuperuser
+- [f45e69b4] .. django-admin:: dbshell
+- [a1724038] .. django-admin:: diffsettings
+- [bb6179fc] .. django-admin:: dumpdata [app_label[.ModelName] [app_label[.ModelName] ...]]
+- [a8f76a04] .. django-admin:: flush
+- [4add7b00] .. django-admin:: help
+- [a7afc4e8] .. django-admin:: inspectdb [table [table ...]]
+- [633f56e6] .. django-admin:: loaddata fixture [fixture ...]
+- [2c84e0a3] .. django-admin:: makemessages
+- [2fc62936] .. django-admin:: makemigrations [app_label [app_label ...]]
+- [fe45a7a4] .. django-admin:: migrate [app_label] [migration_name]
+- [26ccf474] .. django-admin:: optimizemigration app_label migration_name
+- [5ead7627] .. django-admin:: remove_stale_contenttypes
+- [93a7b7ad] .. django-admin:: runserver [addrport]
+- [53940868] .. django-admin:: sendtestemail [email [email ...]]
+- [13d400ae] .. django-admin:: shell
+- [4a9b538e] .. django-admin:: showmigrations [app_label [app_label ...]]
+- [51a36c50] .. django-admin:: sqlflush
+- [75372c9c] .. django-admin:: sqlmigrate app_label migration_name
+- [47007f13] .. django-admin:: sqlsequencereset app_label [app_label ...]
+- [29f9132b] .. django-admin:: squashmigrations app_label [start_migration_name] migration_name
+- [d043c13d] .. django-admin:: startapp name [directory]
+- [e6919659] .. django-admin:: startproject name [directory]
+- [4a978ea9] .. django-admin:: test [test_label [test_label ...]]
+- [535da836] .. django-admin:: testserver [fixture [fixture ...]]
+- [2e77ed1e] .. django-admin:: version
+- [9c806fd4] .. envvar:: DJANGO_COLORS
+- [a15bee7f] .. envvar:: DJANGO_RUNSERVER_HIDE_WARNING
+- [426f3c24] .. envvar:: DJANGO_SUPERUSER_PASSWORD
+- [762892ef] .. envvar:: DJANGO_TEST_PROCESSES
+- [4f517b11] .. function:: django.core.management.call_command(name, *args, **options)
+- [942ae6c11625c81c-91] .. note::
+- [942ae6c11625c81c-92] .. note::
+- [db7b32d2] .. option:: --exclude-tag EXCLUDE_TAGS
+- [e11e51aa] .. option:: --tag TAGS
+- [b6d9dff73fbccba3] .. program:: None
+- [b6d9dff73fbccba3-2] .. program:: None
+- [6b4a5e54e001d097-21] .. seealso::
+- [6b4a5e54e001d097-22] .. seealso::
+- [0cf180bcf4ecfab5-9] .. versionadded:: 6.1
+- [57739e32d87f6c76-9] .. versionchanged:: 6.0
+- [57739e32d87f6c76-10] .. versionchanged:: 6.0
+- [57739e32d87f6c76-11] .. versionchanged:: 6.0
+- [c54b54cb0805732a-36] .. warning::
+- [c54b54cb0805732a-37] .. warning::
+- [c54b54cb0805732a-38] .. warning::
+- [c54b54cb0805732a-39] .. warning::
+- [c54b54cb0805732a-40] .. warning::
+- [5a0d4851] .. warning:: DO NOT USE THIS SERVER IN A PRODUCTION SETTING.
+- [c6081859] ...would perform the following steps:
+- [394c8744] ================================== ``django-admin`` and ``manage.py`` ==================================
+- [e3410922] ========================================== Running management commands from your code ==========================================
+- [872b49b1] A color specification follows one of the following patterns:
+- [624a6b95] A hostname containing ASCII-only characters can also be used.
+- [14633721] Activates some additional checks that are only relevant in a deployment setting.
+- [a8c2b0bd] Adds the given filesystem path to the Python :data:`sys.path` module attribute. If this isn't provided, ``django-admin`` will use the :envvar:`PYTHONPATH` environment variable.
+- [940405dc] All models from installed apps are automatically imported into the shell environment. Models from apps listed earlier in :setting:`INSTALLED_APPS` take precedence. The following common utilities are also imported::
+- [e11be02a] Allows Django to skip an app's initial migration if all database tables with the names of all models created by all :class:`~django.db.migrations.operations.CreateModel` operations in that migration already exist. This option is intended for use when first running migrations against a database that preexisted the use of migrations. This option does not, however, check for matching database schema beyond matching table names and so is only safe to use if you are confident that your existing schema matches what is recorded in your initial migration.
+- [cdc9ebbd] Allows changing a user's password. It prompts you to enter a new password twice for the given user. If the entries are identical, this immediately becomes the new password. If you do not supply a user, the command will attempt to change the password whose username matches the current user.
+- [8e04f325] Allows creating tables for apps without migrations. While this isn't recommended, the migrations framework is sometimes too slow on large projects with hundreds of models.
+- [71bb749f] Allows naming the generated migration(s) instead of using a generated name. The name must be a valid Python :ref:`identifier <python:identifiers>`.
+- [9489ee40] Although some commands may allow their own custom options, every command allows for the following options by default:
+- [70569354] Any arguments following a ``--`` divider will be passed on to the underlying command-line client. For example, with PostgreSQL you can use the ``psql`` command's ``-c`` flag to execute a raw SQL query directly:
+- [ce9ed6f2] App names ---------
+- [ad6c7035] Apps without migrations are also listed, but have ``(no migrations)`` printed under them.
+- [46c67e7e] As such, after you run it, you'll want to look over the generated models yourself to make customizations. This feature is meant as a shortcut, not as definitive model generation.
+- [9dc69108] As you might expect, the created models will have an attribute for every field in the table. Note that ``inspectdb`` has a few special cases and limitations in its output:
+- [e79ac0c4] Available commands ==================
+- [11d2e1bd] Bash completion ---------------
+- [38df4259] Black formatting ----------------
+- [c10466e1] By default, :source:`the new directory <django/conf/app_template>` contains a ``models.py`` file and other app template files. If only the app name is given, the app directory will be created in the current working directory.
+- [e735b534] By default, :source:`the new directory <django/conf/project_template>` contains ``manage.py`` and a project package (containing a ``settings.py`` and other files).
+- [d6122d66] By default, ``inspectdb`` creates unmanaged models. That is, ``managed = False`` in the model's ``Meta`` class tells Django not to manage each table's creation, modification, and deletion. If you do want to allow Django to manage the table's lifecycle, you'll need to change the :attr:`~django.db.models.Options.managed` option to ``True`` (or remove it because ``True`` is its default value).
+- [ab9c112d] By default, a warning is printed to the console that ``runserver`` is not suitable for production:
+- [86fd1588] By default, all apps will be checked. You can check a subset of apps by providing a list of app labels as arguments:
+- [cb1a203f] By default, the development server doesn't serve any static files for your site (such as CSS files, images, things under :setting:`MEDIA_URL` and so forth). If you want to configure Django to serve static media, read :doc:`/howto/static-files/index`.
+- [0b37043a] By default, these checks will not be run.
+- [53cb53c3] Can be run as a cron job or directly to clean out expired sessions.
+- [11a1797d] Colors can also be specified by extending a base palette. If you put a palette name in a color specification, all the colors implied by that palette will be loaded. So:
+- [2da3aee4] Command options which take multiple options are passed a list::
+- [4b10cf32] Commands provided by applications =================================
+- [8d7d61f5] Compiles ``.po`` files created by :djadmin:`makemessages` to ``.mo`` files for use with the built-in gettext support. See :doc:`/topics/i18n/index`.
+- [f2500af8] Controls ``#: filename:line`` comment lines in language files. If the option is:
+- [b0e4ab76] Controls the test runner class that is used to execute tests. This value overrides the value provided by the :setting:`TEST_RUNNER` setting.
+- [f518a87e] Creates a Django app directory structure for the given app name in the current directory or the given destination.
+- [cb3d3ae6] Creates a superuser account (a user who has all permissions). This is useful if you need to create an initial superuser account or if you need to programmatically generate superuser accounts for your site(s).
+- [49c652d3] Creates new migrations based on the changes detected to your models. Migrations, their relationship with apps and more are covered in depth in :doc:`the migrations documentation</topics/migrations>`.
+- [97972c61] Creates the cache tables for use with the database cache backend using the information from your settings file. See :doc:`/topics/cache` for more information.
+- [2889ebe8] Custom colors ~~~~~~~~~~~~~
+- [c44a0ca7] Database-specific notes ~~~~~~~~~~~~~~~~~~~~~~~
+- [f4c6ced7] Default options ===============
+- [723474df] Deletes nonexistent migrations from the ``django_migrations`` table. This is useful when migration files replaced by a squashed migration have been removed. See :ref:`migration-squashing` for more details.
+- [6f534e3b] Deletes stale content types (from deleted models) in your database. Any objects that depend on the deleted content types will also be deleted. A list of deleted objects will be displayed before you confirm it's okay to proceed with the deletion.
+- [8ba666c4] Deletes stale content types including ones from previously installed apps that have been removed from :setting:`INSTALLED_APPS`. Defaults to ``False``.
+- [b0de401c] Determining the version -----------------------
+- [a71b2ffa] Disables breaking long message lines into several lines in language files.
+- [b4ec5f58] Disables colorized command output. Some commands format their output to be colorized. For example, errors will be printed to the console in red and SQL statements will be syntax highlighted.
+- [e6b7b297] Disables reading the startup script for the "plain" Python interpreter. By default, the script pointed to by the :envvar:`PYTHONSTARTUP` environment variable or the ``~/.pythonrc.py`` script is read.
+- [3df79438] Disables the auto-reloader. This means any Python code changes you make while the server is running will *not* take effect if the particular Python modules have already been loaded into memory.
+- [417e8940] Disables the automatic import of models from :setting:`INSTALLED_APPS`.
+- [66df1d9e] Disables the default values of ``--ignore``.
+- [7cd115e3] Disables the optimizer when generating a squashed migration. By default, Django will try to optimize the operations in your migrations to reduce the size of the resulting file. Use this option if this process is failing or creating incorrect migrations, though please also file a Django bug report about the behavior, as optimization is meant to be safe.
+- [cb5d0024] Disables use of threading in the development server. The server is multithreaded by default.
+- [e4f7a0a6] Discards output (``stdout`` and ``stderr``) for passing tests, in the same way as :option:`unittest's --buffer option<unittest.-b>`.
+- [8ccf8117] Displaying debug output -----------------------
+- [e3702216] Displays a full stack trace when a :exc:`~django.core.management.CommandError` is raised. By default, ``django-admin`` will show an error message when a ``CommandError`` occurs and a full stack trace for any other exception.
+- [2c68d99a] Displays all settings, even if they have Django's default value. Such settings are prefixed by ``"###"``.
+- [26f84a6d] Displays differences between the current settings file and Django's default settings (or another settings file specified by :option:`--default`).
+- [903add3d] Diverts log output and input prompts to ``stderr``, writing only paths of generated migration files to ``stdout``.
+- [6021684e] Django automatically calls :func:`faulthandler.enable` when starting the tests, which allows it to print a traceback if the interpreter crashes. Pass ``--no-faulthandler`` to disable this behavior.
+- [99e2c853] Django distributes test cases — :class:`unittest.TestCase` subclasses — to subprocesses. If there are fewer test case classes than configured processes, Django will reduce the number of processes accordingly.
+- [5ca34b12] Django will also accept URLs (``http``, ``https``, ``ftp``) to compressed archives with the app template files, downloading and extracting them on the fly.
+- [f24d1ed6] Django's ``runserver`` command provides a WSGI server. In order to run under ASGI you will need to use an :doc:`ASGI server </howto/deployment/asgi/index>`. The Django Daphne project provides :ref:`daphne-runserver` that you can use.
+- [cba86fe8] Each of these colors can then be modified by using the following display options:
+- [a60a68ff] Each of these roles can be assigned a specific foreground and background color, from the following list:
+- [f546ff1f] Each process gets its own database. You must ensure that different test case classes don't access the same resources. For instance, test case classes that touch the filesystem should create a temporary directory for their own use.
+- [1c542dec] Enables :ref:`SQL logging <django-db-logger>` for failing tests. If ``--verbosity`` is ``2``, then queries in passing tests are also output.
+- [b15c53bf] Enables fixing of migration conflicts.
+- [8c25e4b1cdb1282e-3] Example usage:
+- [8c25e4b1cdb1282e-4] Example usage:
+- [8c25e4b1cdb1282e-5] Example usage:
+- [8c25e4b1cdb1282e-6] Example usage:
+- [8c25e4b1cdb1282e-7] Example usage:
+- [8c25e4b1cdb1282e-8] Example usage:
+- [8c25e4b1cdb1282e-9] Example usage:
+- [8c25e4b1cdb1282e-10] Example usage:
+- [8c25e4b1cdb1282e-11] Example usage:
+- [8c25e4b1cdb1282e-12] Example usage:
+- [8c25e4b1cdb1282e-13] Example usage:
+- [8c25e4b1cdb1282e-14] Example usage:
+- [8c25e4b1cdb1282e-15] Example usage:
+- [2ab3d97c] Examples of using different ports and addresses ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [12678636d153d030-5] Examples:
+- [730c225c80dac295-4] Examples::
+- [80218c41] Excludes loading the fixtures from the given applications and/or models (in the form of ``app_label`` or ``app_label.ModelName``). Use the option multiple times to exclude more than one app or model.
+- [a72fa00f] Excludes tests :ref:`marked with the specified tags <topics-tagging-tests>`. May be specified multiple times and combined with :option:`test --tag`.
+- [7dbd8ae3] Extra niceties ==============
+- [486f2ea3] Fixtures compression ~~~~~~~~~~~~~~~~~~~~
+- [bc6a1ccd] Follows symlinks to directories when looking for new translation strings.
+- [41248de9] For a ``--verbosity`` of 2 or higher, the automatically imported objects will be listed. To disable automatic importing entirely, use the ``--no-imports`` flag.
+- [1b62943c] For commands using ``stdout`` you can pipe the output to ``black`` if needed:
+- [56f3aff8] For example, taking advantage of GitHub's feature to expose repositories as zip files, you can use a URL like:
+- [2184442e] For example, this command:
+- [2ba131b9] For example, this would look for an app template in the given directory when creating the ``myapp`` app:
+- [bc295f9831206ba3-10] For example:
+- [bc295f9831206ba3-11] For example:
+- [ddde7d56] Forces colorization of the command output if it would otherwise be disabled as discussed in :ref:`syntax-coloring`. For example, you may want to pipe colored output to another command.
+- [b140ae9b] Generally, when working on a single Django project, it's easier to use ``manage.py`` than ``django-admin``. If you need to switch between multiple Django settings files, use ``django-admin`` with :envvar:`DJANGO_SETTINGS_MODULE` or the :option:`--settings` command line option.
+- [dde347ee] Generate migration files without Django version and timestamp header.
+- [5a7113f1] Generate squashed migration file without Django version and timestamp header.
+- [92d22d50] Generates the SQL for unapplying the migration. By default, the SQL created is for running the migration in the forwards direction.
+- [fd5b4ae9] Getting runtime help --------------------
+- [44f38c7f] IPython:
+- [7217a914] If no application name is provided, all installed applications will be dumped.
+- [e0a32046] If only the project name is given, both the project directory and project package will be named ``<projectname>`` and the project directory will be created in the current working directory.
+- [15b36648] If the :doc:`staticfiles</ref/contrib/staticfiles>` contrib app is enabled (default in new projects) the :djadmin:`runserver` command will be overridden with its own :ref:`runserver<staticfiles-runserver>` command.
+- [39d47f94] If the optional destination is provided, Django will use that name as the project directory, and create ``manage.py`` and the project package within it. If the directory with the given name doesn't exist, it will be created. Use '.' to denote the current working directory.
+- [bbb4801a] If the optional destination is provided, Django will use that name instead. If the directory with the given name doesn't exist, it will be created. You can use '.' to denote the current working directory.
+- [8d58b485] If this option is provided, models are also created for database views.
+- [0534f2d9] If this option is provided, models are also created for partitions.
+- [4f21bf94] If you have ``black`` globally installed, but do not wish it used for the current project, you can set the ``PATH`` explicitly:
+- [e6a0cc17] If you have a "rich" shell installed but want to force use of the "plain" Python interpreter, use ``python`` as the interface name, like so:
+- [44e081aa] If you run this script as a user with normal privileges (recommended), you might not have access to start a port on a low port number. Low port numbers are reserved for the superuser (root).
+- [0b6aa664] If you use the Bash shell, consider installing the Django bash completion script, which lives in :source:`extras/django_bash_completion` in the Django source distribution. It enables tab-completion of ``django-admin`` and ``manage.py`` commands, so you can, for instance...
+- [520a3968] If you want to exclude multiple applications, pass ``--exclude`` more than once:
+- [f80682bc] If you want to use :mod:`pdb` while debugging tests, you must disable parallel execution (``--parallel=1``). You'll see something like ``bdb.BdbQuit`` if you don't.
+- [e9220c13] If you would rather start from an empty database and rerun all migrations, you should drop and recreate the database and then run :djadmin:`migrate` instead.
+- [da08f80d] If you're using Linux or MacOS and install both :pypi:`pywatchman` and the `Watchman`_ service, kernel signals will be used to autoreload the server (rather than polling file modification timestamps each second). This offers better performance on large projects, reduced response time after code changes, more robust change detection, and a reduction in power usage. Django supports ``pywatchman`` 1.2.0 and higher.
+- [e1866f4d] Ignores directories matching the given :mod:`glob`-style pattern. Use multiple times to ignore more.
+- [50ce61e6] Ignores fields and models that may have been removed since the fixture was originally generated.
+- [c4f90b2f] In addition, ``manage.py`` is automatically created in each Django project. It does the same thing as ``django-admin`` but also sets the :envvar:`DJANGO_SETTINGS_MODULE` environment variable so that it points to your project's ``settings.py`` file.
+- [49af8caf] In non-interactive mode, the :attr:`~django.contrib.auth.models.CustomUser.USERNAME_FIELD` and required fields (listed in :attr:`~django.contrib.auth.models.CustomUser.REQUIRED_FIELDS`) fall back to ``DJANGO_SUPERUSER_<uppercase_field_name>`` environment variables, unless they are overridden by a command line argument. For example, to provide an ``email`` field, you can use ``DJANGO_SUPERUSER_EMAIL`` environment variable.
+- [20284d09] Includes `fuzzy translations`_ into compiled files.
+- [725c96bf] Introspects the database tables in the database pointed-to by the :setting:`NAME` setting and outputs a Django model module (a ``models.py`` file) to standard output.
+- [9b4620d9] Lets you pass a command as a string to execute it as Django, like so:
+- [77e8004d] Lists all available tags.
+- [b38ed7a4] Lists all of the apps Django knows about, the migrations available for each app, and whether or not each migration is applied (marked by an ``[X]`` next to the migration name). For a ``--verbosity`` of 2 and above, the applied datetimes are also shown.
+- [e87a740b] Loading fixtures from ``stdin`` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [ea393ebb] Loading from ``stdin`` is useful with standard input and output redirections. For example:
+- [227ae779] Logging of each request and response of the server is sent to the :ref:`django-server-logger` logger.
+- [2b7f7c15] Mails the email addresses specified in :setting:`ADMINS` using :func:`~django.core.mail.mail_admins`.
+- [f7a59b52] Makes ``makemigrations`` exit with a non-zero status when model changes without migrations are detected. Implies ``--dry-run``.
+- [e248a2dc] Makes ``migrate`` exit with a non-zero status when unapplied migrations are detected.
+- [1b43e26c] Makes ``optimizemigration`` exit with a non-zero status when a migration can be optimized.
+- [9311905e] Many commands take a list of "app names." An "app name" is the basename of the package containing your models. For example, if your :setting:`INSTALLED_APPS` contains the string ``'mysite.blog'``, the app name is ``blog``.
+- [f0b74069] Marks the migrations up to the target one (following the rules above) as applied, but without actually running the SQL to change your database schema.
+- [04463e36] Merges model changes into the latest migration and optimize the resulting operations.
+- [7048330f] Named arguments can be passed by using either one of the following syntaxes::
+- [3ee21724] Note that ``dumpdata`` uses the default manager on the model for selecting the records to dump. If you're using a :ref:`custom manager <custom-managers>` as the default manager and it filters some of the available records, not all of the objects will be dumped.
+- [531ffdd9] Note that ``sqlmigrate`` doesn't colorize its output.
+- [ad95c5c2] Note that command options that take no arguments are passed as keywords with ``True`` or ``False``, as you can see with the ``interactive`` option above.
+- [4e1055c3] Note that the default IP address, ``127.0.0.1``, is not accessible from other machines on your network. To make your development server viewable to other machines on the network, use its own IP address (e.g. ``192.168.2.1``), ``0`` (shortcut for ``0.0.0.0``), ``0.0.0.0``, or ``::`` (with IPv6 enabled).
+- [bfb74e90] Note that this server does *not* automatically detect changes to your Python source code (as :djadmin:`runserver` does). It does, however, detect changes to templates.
+- [f7cb7a74] Note that you can redirect standard output and error streams as all commands support the ``stdout`` and ``stderr`` options. For example, you could write::
+- [9f41aa67] Omits the primary key in the serialized data of this object since it can be calculated during deserialization.
+- [a9b9d2c4] On MySQL/MariaDB, you can do this with the ``mysql`` command's ``-e`` flag:
+- [079084a9] On Windows 10, the `Windows Terminal`_ application, `VS Code`_, and PowerShell (where virtual terminal processing is enabled) allow colored output, and are supported by default.
+- [cd19eb8a] On Windows, the REPL is output due to implementation limits of :func:`select.select` on that platform.
+- [c693ce89] Only support for PostgreSQL is implemented.
+- [435e07de] Optimizes the operations for the named migration and overrides the existing file. If the migration contains functions that must be manually copied, the command creates a new migration file suffixed with ``_optimized`` that is meant to replace the named migration.
+- [08eee51d] Or you could run it directly on a production or staging deployment to verify that the correct settings are in use (omitting ``--settings``). You could even make it part of your integration test suite.
+- [a9ed74a6] Oracle ^^^^^^
+- [13872ed3] Other modern terminal environments on Windows, that support terminal colors, but which are not automatically detected as supported by Django, may "fake" the installation of ``ANSICON`` by setting the appropriate environmental variable, ``ANSICON="on"``.
+- [dc6323e0] Output redirection ==================
+- [d6b644a0] Outputs an empty migration for the specified apps, for manual editing. This is for advanced users and should not be used unless you are familiar with the migration format, migration operations, and the dependencies between your migrations.
+- [d18fdad5] Outputs only the objects specified by a comma separated list of primary keys. This is only available when dumping one model. By default, all the records of the model are output.
+- [41c0c2a4] Outputs timings, including database setup and total run time.
+- [730d806c] Outputs to standard output all data in the database associated with the named application(s).
+- [3fe16abb] Please also see the :ref:`rendering warning <render_warning>` and :ref:`trusted code warning <trusted_code_warning>` as mentioned for :djadmin:`startapp`.
+- [42a4eb20] Please refer to its :djadmin:`description <collectstatic>` in the :doc:`staticfiles </ref/contrib/staticfiles>` documentation.
+- [9516f24f] Please refer to its :djadmin:`description <ogrinspect>` in the GeoDjango documentation.
+- [daa00df9] Port 7000 on IP address ``1.2.3.4``:
+- [7ff71e45] Port 7000 on IP address ``127.0.0.1``:
+- [5bc46478] Port 7000 on IPv6 address ``2001:0db8:1234:5678::9``:
+- [6217c23c] Port 7000 on IPv6 address ``::1``:
+- [c8fc1b76] Port 8000 on IP address ``1.2.3.4``:
+- [10f90a9f] Port 8000 on IP address ``127.0.0.1``:
+- [5209ff42] Port 8000 on IPv4 address of host ``localhost``:
+- [8df1f5e3] Port 8000 on IPv6 address ``::1``:
+- [da86fd85] Port 8000 on IPv6 address of host ``localhost``:
+- [12472589] PostgreSQL ^^^^^^^^^^
+- [afbbb208] Preserves the test database between test runs. This has the advantage of skipping both the create and destroy actions which can greatly decrease the time to run tests, especially those in a large test suite. If the test database does not exist, it will be created on the first run and then preserved for each subsequent run. Unless the :setting:`MIGRATE <TEST_MIGRATE>` test setting is ``False``, any unapplied migrations will also be applied to the test database before running the test suite.
+- [8ff02bbb] Prevents deleting the temporary ``.pot`` files generated before creating the ``.po`` file. This is useful for debugging errors which may prevent the final language files from being created.
+- [445746fe] Prevents specific applications or models (specified in the form of ``app_label.ModelName``) from being dumped. If you specify a model name, then only that model will be excluded, rather than the entire application. You can also mix application names and model names.
+- [255e00df] Prints the SQL for the named migration. This requires an active database connection, which it will use to resolve constraint names; this means you must generate the SQL against a copy of the database you wish to later apply it on.
+- [0a16477f] Prints the SQL statements for resetting sequences for the given app name(s).
+- [36388e3d] Prints the SQL statements that would be executed for the :djadmin:`flush` command.
+- [96be42cb] Prints the SQL that would be run without actually running it, so you can customize it or use the migrations framework.
+- [49296692] Provides the path to a directory with a custom app template file, or a path to an uncompressed archive (``.tar``) or a compressed archive (``.tar.gz``, ``.tar.bz2``, ``.tar.xz``, ``.tar.lzma``, ``.tgz``, ``.tbz2``, ``.txz``, ``.tlz``, ``.zip``) containing the app template files.
+- [813281b4] Providing one or more app names as arguments will limit the migrations created to the app(s) specified and any dependencies needed (the table at the other end of a ``ForeignKey``, for example).
+- [b644a407] Randomizes the order of tests before running them. This can help detect tests that aren't properly isolated. The test order generated by this option is a deterministic function of the integer seed given. When no seed is passed, a seed is chosen randomly and printed to the console. To repeat a particular test order, pass a seed. The test orders generated by this option preserve Django's :ref:`guarantees on test order <order-of-tests>`. They also keep tests grouped by test case class.
+- [893a572e] Removes all data from the database and re-executes any post-synchronization handlers. The table of which migrations have been applied is not cleared.
+- [5b20691e] Removes obsolete message strings from the ``.po`` files.
+- [04dd5b17] Requires ``gettext`` 0.19 or newer.
+- [f9d30367] Run ``django-admin help --commands`` to display a list of all available commands.
+- [1885d06b] Run ``django-admin help <command>`` to display a description of the given command and a list of its available options.
+- [e5c31f9e] Run ``django-admin help`` to display usage information and a list of the commands provided by each application.
+- [5b4836d6] Run ``django-admin version`` to display the current Django version.
+- [5e6a82e8] Runs a Django development server (as in :djadmin:`runserver`) using data from the given fixture(s).
+- [8759cddb] Runs only tests :ref:`marked with the specified tags <topics-tagging-tests>`. May be specified multiple times and combined with :option:`test --exclude-tag`.
+- [20d4cb4d] Runs over the entire source tree of the current directory and pulls out all strings marked for translation. It creates (or updates) a message file in the conf/locale (in the Django tree) or locale (for project and application) directory. After making changes to the messages files you need to compile them with :djadmin:`compilemessages` for use with the builtin gettext support. See the :ref:`i18n documentation <how-to-create-language-files>` for details.
+- [324d0e9f] Runs test methods and classes matching test name patterns, in the same way as :option:`unittest's -k option<unittest.-k>`. Can be specified multiple times.
+- [d35f2de5] Runs tests for all installed apps. See :doc:`/topics/testing/index` for more information.
+- [ea2e4177] Runs tests in separate parallel processes. Since modern processors have multiple cores, this allows running tests significantly faster.
+- [9e6665b7] Runs the command-line client for the database engine specified in your :setting:`ENGINE <DATABASE-ENGINE>` setting, with the connection parameters specified in your :setting:`USER`, :setting:`PASSWORD`, etc., settings.
+- [0da818a1] Searches for and loads the contents of the named :ref:`fixture <fixtures-explanation>` into the database.
+- [3f52e11a] See :doc:`/howto/custom-management-commands` for how to add customized actions.
+- [a8346647] See the guide on :ref:`customizing this behavior <customizing-shell-auto-imports>` to add or remove automatic imports.
+- [b3215bcc] Sends a test email (to confirm email sending through Django is working) to the recipient(s) specified. For example:
+- [457a42f9] Separate multiple extensions with commas or use ``-e`` or ``--extension`` multiple times:
+- [1b7a6475] Sequences are indexes used by some database engines to track the next available number for automatically incremented fields.
+- [178d7342] Serving static files with the development server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [32578659] Serving with ASGI in development ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [57a19c70] Set this environment variable to ``"true"`` to hide this warning.
+- [89641172] Sets the :setting:`DEBUG` setting to ``True`` prior to running tests. This may help troubleshoot test failures.
+- [5fd59de0] Sets the name of the squashed migration. When omitted, the name is based on the first and last migration, with ``_squashed_`` in between.
+- [327514ab] Settings that don't appear in the defaults are followed by ``"###"``. For example, the default settings don't define :setting:`ROOT_URLCONF`, so :setting:`ROOT_URLCONF` is followed by ``"###"`` in the output of ``diffsettings``.
+- [565f4b69] Shows all migrations in a project. You can choose from one of two formats:
+- [8daf1a53] Shows the N slowest test cases (N=0 for all).
+- [9d1978a9] Shows the migration operations that will be performed for the given ``migrate`` command.
+- [3fcd3f59] Shows the migration plan Django will follow to apply migrations. Like ``--list``, applied migrations are marked by an ``[X]``. For a ``--verbosity`` of 2 and above, all dependencies of a migration will also be shown.
+- [3e0418fe] Shows what migrations would be made without actually writing any migrations files to disk. Using this option along with ``--verbosity 3`` will also show the complete migrations files that would be written.
+- [8125ec16] Skips running system checks prior to running the command. This option is only available if the :attr:`~django.core.management.BaseCommand.requires_system_checks` command attribute is not an empty list or tuple.
+- [9588384d] Some command options have different names when using ``call_command()`` instead of ``django-admin`` or ``manage.py``. For example, ``django-admin createsuperuser --no-input`` translates to ``call_command('createsuperuser', interactive=False)``. To find what keyword argument name to use for ``call_command()``, check the command's source code for the ``dest`` argument passed to ``parser.add_argument()``.
+- [988d8d10] Some commands are only available when the ``django.contrib`` application that :doc:`implements </howto/custom-management-commands>` them has been :setting:`enabled <INSTALLED_APPS>`. This section describes them grouped by their application.
+- [cc6be680] Sorts test cases in the opposite execution order. This may help in debugging the side effects of tests that aren't properly isolated. :ref:`Grouping by test class <order-of-tests>` is preserved when using this option. This can be used in conjunction with ``--shuffle`` to reverse the order for a particular seed.
+- [140f0d2f] Spawns a ``pdb`` debugger at each test error or failure. If you have it installed, ``ipdb`` is used instead.
+- [c63267b9] Specifies a different port, or IP address and port, from the default of ``127.0.0.1:8000``. This value follows exactly the same format and serves exactly the same function as the argument to the :djadmin:`runserver` command.
+- [28aaa7f1] Specifies a directory, file path, or URL of a custom project template. See the :option:`startapp --template` documentation for examples and usage. The same **security considerations** described for ``startapp`` templates apply here: malicious or poorly constructed templates may introduce weaknesses or consume excessive resources, and templates should be carefully inspected before use.
+- [3df94678] Specifies a file to write the serialized data to. By default, the data goes to standard output.
+- [a0b88ac2] Specifies a list of file extensions to examine (default: ``html``, ``txt``, ``py`` or ``js`` if :option:`--domain` is ``djangojs``).
+- [d380bf1b] Specifies a single app to look for fixtures in rather than looking in all apps.
+- [5ecb88ed] Specifies the :ref:`serialization format <serialization-formats>` (e.g., ``json`` or ``xml``) for fixtures :ref:`read from stdin <loading-fixtures-stdin>`.
+- [4ef2aab3] Specifies the :setting:`MAILERS` alias to use for sending the test email to the recipients given as arguments. Defaults to the ``"default"`` mailer.
+- [8442bac8] Specifies the amount of notification and debug information that a command should print to the console.
+- [5546bbf1] Specifies the database for which to generate the SQL. Defaults to ``default``.
+- [21a48116f13c8dfe] Specifies the database for which to print the SQL. Defaults to ``default``.
+- [2b99890d] Specifies the database from which data will be dumped. Defaults to ``default``.
+- [828595af] Specifies the database in which the cache table(s) will be created. Defaults to ``default``.
+- [cdd5186f] Specifies the database into which the data will be loaded. Defaults to ``default``.
+- [d471ca2c] Specifies the database into which the superuser object will be saved.
+- [989dce41] Specifies the database onto which to open a shell. Defaults to ``default``.
+- [8b116966] Specifies the database to examine. Defaults to ``default``.
+- [67b0b30b] Specifies the database to flush. Defaults to ``default``.
+- [cbb66020] Specifies the database to introspect. Defaults to ``default``.
+- [ea133246] Specifies the database to migrate. Defaults to ``default``.
+- [11a6bd4d] Specifies the database to query for the user. Defaults to ``default``.
+- [418d8bb7] Specifies the database to run checks requiring database access:
+- [d53b1b68] Specifies the database to use. Defaults to ``default``.
+- [f30fbc0b] Specifies the domain of the messages files. Supported options are:
+- [db85ecbb1401e897] Specifies the locale(s) to exclude from processing. If not provided, no locales are excluded.
+- [147ed1be] Specifies the locale(s) to process.
+- [b9d86f92] Specifies the locale(s) to process. If not provided, all locales are processed.
+- [6f97fdc2] Specifies the message level that will cause the command to exit with a non-zero status. Default is ``ERROR``.
+- [6457d38d] Specifies the number of indentation spaces to use in the output. Defaults to ``None`` which displays all data on single line.
+- [5079e69e] Specifies the output format. Available values are ``hash`` and ``unified``. ``hash`` is the default mode that displays the output that's described above. ``unified`` displays the output similar to ``diff -u``. Default settings are prefixed with a minus sign, followed by the changed setting prefixed with a plus sign.
+- [8ee9e841] Specifies the serialization format of the output. Defaults to JSON. Supported formats are listed in :ref:`serialization-formats`.
+- [29152381] Specifies the settings module to use. The settings module should be in Python package syntax, e.g. ``mysite.settings``. If this isn't provided, ``django-admin`` will use the :envvar:`DJANGO_SETTINGS_MODULE` environment variable.
+- [16aa89e3] Specifies the shell to use. By default, Django will use IPython_ or bpython_ if either is installed. If both are installed, specify which one you want like so:
+- [ff58b948] Specifies which directories in the app template should be excluded, in addition to ``.git`` and ``__pycache__``. If this option is not provided, directories named ``__pycache__`` or starting with ``.`` will be excluded.
+- [8c460cd9] Specifies which file extensions in the app template should be rendered with the template engine. Defaults to ``py``.
+- [88976e06] Specifies which files in the app template (in addition to those matching ``--extension``) should be rendered with the template engine. Defaults to an empty list.
+- [b1650713] Squashes the migrations for ``app_label`` up to and including ``migration_name`` down into fewer migrations, if possible. The resulting squashed migrations can live alongside the unsquashed ones safely. For more information, please read :ref:`migration-squashing`.
+- [ac224d66] Starts a lightweight development web server on the local machine. By default, the server runs on port 8000 on the IP address ``127.0.0.1``. You can pass in an IP address and port number explicitly.
+- [142bd1ba] Starts the Python interactive interpreter.
+- [c9c8c363] Stops running tests and reports the failure immediately after a test fails.
+- [73f10392074fb55c] Suppresses all user prompts.
+- [85204bb1a7e83f24] Suppresses all user prompts. A typical prompt is a warning about deleting an existing test database.
+- [95824f2f] Suppresses all user prompts. An example prompt is asking about removing stale content types.
+- [b14ad044] Suppresses all user prompts. If a suppressed prompt cannot be resolved automatically, the command will exit with error code 1.
+- [cfe67046] Suppresses writing '``#: filename:line``’ comment lines in language files. Using this option makes it harder for technically skilled translators to understand each message's context.
+- [8b5c442d] Synchronizes the database state with the current set of models and migrations. Migrations, their relationship with apps and more are covered in depth in :doc:`the migrations documentation</topics/migrations>`.
+- [382e6307] Syntax coloring ---------------
+- [825f71f9] Test runner options ~~~~~~~~~~~~~~~~~~~
+- [e28fe259] Tests that fail to load are always considered matching.
+- [33685f8c] The :djadmin:`dumpdata` command can be used to generate input for ``loaddata``.
+- [1f13778e] The Python files created by :djadmin:`startproject`, :djadmin:`startapp`, :djadmin:`optimizemigration`, :djadmin:`makemigrations`, and :djadmin:`squashmigrations` are formatted using the ``black`` command if it is present on your ``PATH``.
+- [c53b71fe] The ``django-admin`` / ``manage.py`` commands will use pretty color-coded output if your terminal supports ANSI-colored output. It won't use the color codes if you're piping the command's output to another program unless the :option:`--force-color` option is used.
+- [61d42343] The ``django-admin`` script should be on your system path if you installed Django via ``pip``. If it's not in your path, ensure you have your virtual environment activated.
+- [00d212f3] The ``test`` command receives options on behalf of the specified :option:`--testrunner`. These are the options of the default test runner: :class:`~django.test.runner.DiscoverRunner`.
+- [ab528903] The behavior of this command changes depending on the arguments provided:
+- [f77b9180] The colors used for syntax highlighting can be customized. Django ships with three color palettes:
+- [e25ccaeb] The command-line examples throughout this document use ``django-admin`` to be consistent, but any example can use ``manage.py`` or ``python -m django`` just as well.
+- [1ae8c602] The development server automatically reloads Python code for each request, as needed. You don't need to restart the server for code changes to take effect. However, some actions like adding files don't trigger a restart, so you'll have to restart the server in these cases.
+- [1226938d] The following options may be used in any combination with each other and with recipient email arguments.
+- [00bb449b] The output file can be compressed with one of the ``bz2``, ``gz``, ``lzma``, or ``xz`` formats by ending the filename with the corresponding extension. For example, to output the data as a compressed JSON file:
+- [ac24aeb1] The output follows the schema described in :pep:`440`:
+- [2390c25e] The output of ``dumpdata`` can be used as input for :djadmin:`loaddata`.
+- [0685106c] The return value of the ``call_command()`` function is the same as the return value of the ``handle()`` method of the command.
+- [68ad5816] The settings module to compare the current settings against. Leave empty to compare against Django's default settings.
+- [84a6ad03] The shuffled orderings also have a special consistency property useful when narrowing down isolation issues. Namely, for a given seed and when running a subset of tests, the new order will be the original shuffling restricted to the smaller set. Similarly, when adding tests while keeping the seed the same, the order of the original tests will be the same in the new order.
+- [0964a124] The system check framework performs many different types of checks that are :ref:`categorized with tags <system-check-builtin-tags>`. You can use these tags to restrict the checks performed to just those in a particular category. For example, to perform only models and compatibility checks, run:
+- [319024a7] The template context (see :class:`~django.template.Context`) used for all matching files is:
+- [1e2cdede] The template context (see :class:`~django.template.Context`) used is:
+- [6c91ecfc] The updated migration will have a generated name. In order to preserve the previous name, set it using ``--name``.
+- [418a8f6d] The username and email address for the new account can be supplied by using the ``--username`` and ``--email`` arguments on the command line. If either of those is not supplied, ``createsuperuser`` will prompt for it when running interactively.
+- [9d980768] These patterns are used by default: ``'CVS'``, ``'.*'``, ``'*~'``, ``'*.pyc'``.
+- [aa9ce2ae] This command assumes the programs are on your ``PATH`` so that a call to the program name (``psql``, ``mysql``, ``sqlite3``, ``sqlplus``) will find the program in the right place. There's no way to specify the location of the program manually.
+- [f1f96666] This command doesn't require configured settings. However, when settings aren't configured, the command can't ignore the :setting:`MEDIA_ROOT` and :setting:`STATIC_ROOT` directories or include :setting:`LOCALE_PATHS`.
+- [61acc4f2] This command is only available if :doc:`GeoDjango </ref/contrib/gis/index>` (``django.contrib.gis``) is installed.
+- [2f417735b158d56e] This command is only available if Django's :doc:`authentication system </topics/auth/index>` (``django.contrib.auth``) is installed.
+- [989b8fb4] This command is only available if Django's :doc:`contenttypes app </ref/contrib/contenttypes>` (:mod:`django.contrib.contenttypes`) is installed.
+- [3070d80aa11120b0] This command is only available if the :doc:`static files application </howto/static-files/index>` (``django.contrib.staticfiles``) is installed.
+- [c681d071] This feature isn't available on Windows. It doesn't work with the Oracle database backend either.
+- [4eded95d] This is intended for advanced users to manipulate the current migration state directly if they're manually applying changes; be warned that using ``--fake`` runs the risk of putting the migration state table into a state where manual recovery will be needed to make migrations run correctly.
+- [1532cb9e] This is the default output format.
+- [6894bf9c] This is useful in a number of ways:
+- [7b19c23637506190] This option is ignored by :djadmin:`runserver`.
+- [f5038ccb] This option is unnecessary in ``manage.py``, because it takes care of setting the Python path for you.
+- [4450178c] This option is unnecessary in ``manage.py``, because it uses ``settings.py`` from the current project by default.
+- [81e79f28] This option requires the third-party ``tblib`` package to display tracebacks correctly:
+- [1d2dbec5] This server uses the WSGI application object specified by the :setting:`WSGI_APPLICATION` setting.
+- [b11c49e0] To add migrations to an app that doesn't have a ``migrations`` directory, run ``makemigrations`` with the app's ``app_label``.
+- [8a4f6f66] To call a management command from code use ``call_command()``.
+- [c7666ad9] To run on 1.2.3.4:7000 with a ``test`` fixture:
+- [bf85939f] To run the test server on port 7000 with ``fixture1`` and ``fixture2``:
+- [e6c7da75] Under Windows, the legacy ``cmd.exe`` native console doesn't support ANSI escape sequences so by default there is no color output. In this case either of two third-party libraries are needed:
+- [714a65ff] Updates the message files for all available languages.
+- [61f780eb] Usage =====
+- [4afac2e7] Use :option:`--verbosity`, where it is supported, to specify the amount of notification and debug information that ``django-admin`` prints to the console.
+- [1855e375] Use this command to generate SQL which will fix cases where a sequence is out of sync with its automatically incremented field data.
+- [2e1a1f60] Use this if you have a legacy database with which you'd like to use Django. The script will inspect the database and create a model for each table within it.
+- [39ec6d42] Uses Django's base manager, dumping records which might otherwise be filtered or modified by a custom manager.
+- [d90b26cb] Uses IPv6 for the development server. This changes the default IP address from ``127.0.0.1`` to ``::1``.
+- [d783534a] Uses the :doc:`system check framework </ref/checks>` to inspect the entire Django project for common problems.
+- [1a6f15c6] Uses the ``natural_key()`` model method to serialize any foreign key and many-to-many relationship to objects of the type that defines the method. If you're dumping ``contrib.auth`` ``Permission`` objects or ``contrib.contenttypes`` ``ContentType`` objects, you should probably use this flag. See the :ref:`natural keys <topics-serialization-natural-keys>` documentation for more details on this and the next option.
+- [6def6bf4] Using ``--parallel`` without a value, or with the value ``auto``, runs one test process per core according to :func:`multiprocessing.cpu_count`. You can override this by passing the desired number of processes, e.g. ``--parallel 4``, or by setting the :envvar:`DJANGO_TEST_PROCESSES` environment variable.
+- [c7debf0a] When ``start_migration_name`` is given, Django will only include migrations starting from and including this migration. This helps to mitigate the squashing limitation of :class:`~django.db.migrations.operations.RunPython` and :class:`django.db.migrations.operations.RunSQL` migration operations.
+- [65302316] When reading from ``stdin``, the :option:`--format <loaddata --format>` option is required to specify the :ref:`serialization format <serialization-formats>` of the input (e.g., ``json`` or ``xml``).
+- [38f8dfc8] When result of ``dumpdata`` is saved as a file, it can serve as a :ref:`fixture <fixtures-explanation>` for :ref:`tests <topics-testing-fixtures>` or as an :ref:`initial data <initial-data-via-fixtures>`.
+- [6d22c042] When run interactively, this command will prompt for a password for the new superuser account. When run non-interactively, you can provide a password by setting the :envvar:`DJANGO_SUPERUSER_PASSWORD` environment variable. Otherwise, no password will be set, and the superuser account will not be able to log in until a password has been manually set for it.
+- [10200892] When this option is set and ``--verbosity`` is greater than 0 (the default), a progress bar is shown in the terminal.
+- [a8c9ad34] When you start the server, and each time you change Python code while the server is running, the system check framework will check your entire Django project for some common errors (see the :djadmin:`check` command). If any errors are found, they will be printed to standard output. You can use the ``--skip-checks`` option to skip running system checks.
+- [17a9f24f] Windows support ~~~~~~~~~~~~~~~
+- [d0be4f0e] You can also customize the colors that are used. Django specifies a number of roles in which color is used:
+- [a3931bc0] You can also pass code in on standard input to execute it. For example:
+- [e964c1f6] You can provide an IPv6 address surrounded by brackets (e.g. ``[200a::1]:8000``). This will automatically enable IPv6 support.
+- [e2c02521] You can run as many concurrent servers as you want, as long as they're on separate ports by executing ``django-admin runserver`` more than once.
+- [316bd20e] You can subclass the management command and override ``get_input_data()`` if you want to customize data input and validation. Consult the source code for details on the existing implementation and the method's parameters. For example, it could be useful if you have a ``ForeignKey`` in :attr:`~django.contrib.auth.models.CustomUser.REQUIRED_FIELDS` and want to allow creating an instance instead of entering the primary key of an existing instance.
+- [63cefb81] You can use a dash as the fixture name to load input from ``sys.stdin``. For example:
+- [88061ea3] You can use this option in your local development environment, but since your local development settings module may not have many of your production settings, you will probably want to point the ``check`` command at a different settings module, either by setting the :envvar:`DJANGO_SETTINGS_MODULE` environment variable, or by passing the ``--settings`` option:
+- [9ba23e81] You may choose what tables or views to inspect by passing their names as arguments. If no arguments are provided, models are created for views only if the :option:`--include-views` option is used. Models for partition tables are created on PostgreSQL if the :option:`--include-partitions` option is used.
+- [7419a8d2] You select a palette by setting a :envvar:`DJANGO_COLORS` environment variable to specify the palette you want to use. For example, to specify the ``light`` palette under a Unix or OS/X BASH shell, you would run the following at a command prompt:
+- [59242e5e] ``**options`` named options accepted on the command-line. Options are passed to the command without triggering the argument parser, which means you'll need to pass the correct type. For example, ``call_command('flush', verbosity=0)`` (zero must be an integer rather than a string).
+- [cb3df00e] ``*args`` a list of arguments accepted by the command. Arguments are passed to the argument parser, so you can use the same style as you would on the command line. For example, ``call_command('flush', '--verbosity=0')``.
+- [ca866b92] ``app_label``\s arguments limit the output, however, dependencies of provided apps may also be included.
+- [5522f575] ``changepassword`` ~~~~~~~~~~~~~~~~~~
+- [d28c9ad3] ``check`` ---------
+- [d03b45fd] ``clearsessions`` ~~~~~~~~~~~~~~~~~
+- [442f684f] ``collectstatic`` ~~~~~~~~~~~~~~~~~
+- [4b636584] ``command`` should be one of the commands listed in this document. ``options``, which is optional, should be zero or more of the options available for the given command.
+- [67743402] ``compilemessages`` -------------------
+- [a43bf34d] ``createcachetable`` --------------------
+- [38545068] ``createsuperuser`` ~~~~~~~~~~~~~~~~~~~
+- [d1b525ab] ``dbshell`` -----------
+- [c81dbd67] ``diffsettings`` ----------------
+- [86639ff2] ``django-admin`` is Django's command-line utility for administrative tasks. This document outlines all it can do.
+- [e2388dcb] ``django.contrib.auth`` -----------------------
+- [3a62d944] ``django.contrib.contenttypes`` -------------------------------
+- [1cb50188] ``django.contrib.gis`` ----------------------
+- [106b9e6d] ``django.contrib.sessions`` ---------------------------
+- [2a169a69] ``django.contrib.staticfiles`` ------------------------------
+- [a7852737] ``dumpdata`` ------------
+- [d439ead5] ``findstatic`` ~~~~~~~~~~~~~~
+- [ad73a3dc] ``flush`` ---------
+- [b6419df6] ``inspectdb`` -------------
+- [8deb2ea7] ``loaddata`` ------------
+- [36b4b6e9] ``makemessages`` ----------------
+- [00ee59fd] ``makemigrations`` ------------------
+- [aa918a1a] ``migrate`` -----------
+- [f39f89b0] ``name`` the name of the command to call or a command object. Passing the name is preferred unless the object is required for testing.
+- [fd1d3820] ``ogrinspect`` ~~~~~~~~~~~~~~
+- [2a1b5eed] ``optimizemigration`` ---------------------
+- [08434c7b] ``remove_stale_contenttypes`` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [155f463dc5cb26f1-2] ``runserver`` -------------
+- [23ff4538] ``sendtestemail`` -----------------
+- [df4f92a0] ``shell`` ---------
+- [3b7c11f2] ``showmigrations`` ------------------
+- [338216f9] ``sqlflush`` ------------
+- [c2e50cc5] ``sqlmigrate`` --------------
+- [0ed06d53] ``sqlsequencereset`` --------------------
+- [8a92dff8] ``squashmigrations`` --------------------
+- [a5ac9bec] ``startapp`` ------------
+- [6d5baad1] ``startproject`` ----------------
+- [984f69d3] ``test`` --------
+- [82d6f578] ``testserver`` --------------
+- [8346bc3e] bpython:
+- [52786539] where ``role`` is the name of a valid color role, ``fg`` is the foreground color, ``bg`` is the background color and each ``option`` is one of the color modifying options. Multiple color specifications are then separated by a semicolon. For example:
+- [ba281b10] would specify that errors be displayed using blinking yellow on blue, and notices displayed using magenta. All other color roles would be left uncolored.
+- [2641cf47] would specify the use of all the colors in the light color palette, *except* for the colors for errors and notices which would be overridden as specified.

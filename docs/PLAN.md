@@ -68,11 +68,11 @@ Shapes in `contract/ops.schema.json`.
 - **post_facts** `({ idempotency_key?, subject: {name,kind?,parent?,aliases?}|{id}, redact?: string[], facts: [{ key?, local_id?, kind, text, data?, items?, tags?, confidence?, refs?, attachments? }] })` => `{ subject: {id,name,created,parent?}, facts: [{id, status: "new"|"deduped"|"replaced"|"near_duplicate", replaced?, duplicate_of?}] }`
 - **correlate** `({ subject?, matchers?: ["same_ref","shared_tag"] })` => `{ proposed[] }`. Deterministic matchers only; emits PROPOSED refs with basis "derived", never asserted.
 - **search** `({ subject?, kind?, key?, tag?, actor?, status?, since?, q?, ref_target?, direction?: "in"|"out", limit?: 20, cursor? })` => `{ hits: [FactView], total, complete, refine?, next? }`
-- **compile_dossier** `({ subject, descendants?, needs?, budget?, depth?: "index"|"full", order?: "rank"|"seq", rank?: {recency: 0..1}, follow?: {rels?, hops?: 1|2}, format?: "json"|"markdown" })` => **Dossier** `{ subject, depth, needs[], budget_tokens, used_tokens, facts, linked, conflicts, gaps, dropped, degraded?, self_check }`. `linked` comes from follow with a separate budget slice (~25%). `conflicts[].resolution` is always null.
+- **compile_dossier** `({ subject, descendants?, needs?, budget?, budget_mode?: "complete"|"strict", depth?: "index"|"full", order?: "rank"|"seq", rank?: {recency: 0..1}, follow?: {rels?, hops?: 1|2}, format?: "json"|"markdown" })` => **Dossier** `{ subject, depth, needs[], budget_mode, budget_tokens, used_tokens, facts, linked, conflicts, gaps, dropped, degraded?, self_check }`. `linked` comes from follow with a separate budget slice (~25%). `conflicts[].resolution` is always null.
 
 ### publish (CLI-only export, not a fourth verb)
 
-`dossier publish --out <dir> [--subject s] [--budget 1200] [--depth full|index] [--facts detail|none]` renders the store as a markdown bundle for agents with no tool access. It calls `compile_dossier` once per subject (markdown, no descendants) and `show`-equivalent reads per fact; it changes no semantics and calls no model or network. It is a one-shot file writer, independent of MCP and the web surface.
+`dossier publish --out <dir> [--subject s] [--budget 1200] [--budget-mode complete|strict] [--depth full|index] [--facts detail|none]` renders the store as a markdown bundle for agents with no tool access. It calls `compile_dossier` once per subject (markdown, no descendants) and `show`-equivalent reads per fact; it changes no semantics and calls no model or network. It is a one-shot file writer, independent of MCP and the web surface.
 
 Layout: `AGENTS.md` (entry point), `README.md`, `INDEX.md` (subject, kind, facts, conflicts, gaps, tokens, link; totals; conflicted subjects), `manifest.json`, `conflicts.md`, `gaps.md`, `subjects/<slug>.md`, and unless `--facts none`, `facts/<shortid>.md`. Drill-down: README -> INDEX -> subject -> fact. Every claim in a subject file ends in a bracketed fact id that is a link to its fact file.
 
@@ -183,10 +183,14 @@ currently adds cost, while C's accuracy is still unmeasured. The hypothesis stil
 needs a subject with 200 or more facts, where a fixed token budget forces
 selection.
 
+### Budget modes
+
+`compile_dossier` and `publish` take `budget_mode: "complete" | "strict"`. **complete** is the default and drops nothing: `facts` is every candidate in rank order, `dropped` is empty, `used_tokens` is the true total and may exceed `budget_tokens`, which is only the highlight threshold. Markdown shows `## Highlights` (top facts that fit the budget) then `## All facts` (the rest, one compact line each) when the set exceeds the budget, else a single `## Facts`. Complete mode is not bounded. **strict** keeps the earlier behaviour: facts are cut to the budget and the remainder goes to `dropped`; it is the only mode that gives the bounded-cost guarantee below. The `Dossier` object gains `budget_mode`; nothing else changes. Motivation: strict-by-default silently lost 75 percent of the Django corpus (12,526 of 50,013 facts shown).
+
 ### Reproducibility
 
-For a given subject and budget, the dossier costs at most the budget regardless of corpus
-size. Selection is deterministic for a given logical fact set and independent of fact id
+In strict mode, for a given subject and budget, the dossier costs at most the budget regardless of corpus
+size (complete mode has no such bound). Selection is deterministic for a given logical fact set and independent of fact id
 assignment: ranking breaks score ties on content, never on the random fact id (score
 descending, then key when present, kind, text, and content_hash last; applied to selected
 facts, dropped, conflict values and `order: seq` ties). This boundedness, rather than any

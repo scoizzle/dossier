@@ -1,6 +1,6 @@
 # Fact 3aa758ba
 
-Store id: dcbed291-2f3f-40aa-b7c6-9e5423b5b51d
+Store id: 43fba60b-7bcd-4c19-8fa1-8d6ed03b39e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_lookup(self, lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5216300+00:00`
+- posted_at: `2026-11-09T23:31:55.7848510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 403,
     "symbol": "BaseExpression.get_lookup"
   },
-  "id": "dcbed291-2f3f-40aa-b7c6-9e5423b5b51d",
+  "id": "43fba60b-7bcd-4c19-8fa1-8d6ed03b39e8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5216300+00:00"
+    "posted_at": "2026-11-09T23:31:55.7848510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0b4bd458-15c7-4b4a-8731-959b9a2479f9",
+  "subject_id": "c543fc33-2e7c-43a4-9273-3aacdabf3b3c",
   "subject_name": "django/db/models/expressions::BaseExpression.get_lookup",
   "tags": [
     "entity:method"

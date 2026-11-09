@@ -1,6 +1,6 @@
 # Fact c9ebc5e1
 
-Store id: a44ea517-6b0b-4926-97f7-c7b735ed37b5
+Store id: 375dabcc-d899-4eaf-9fb7-6ad23e774d05
 
 ## Text
 
@@ -20,7 +20,7 @@ def make_model_tuple(model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1113640+00:00`
+- posted_at: `2026-11-09T23:32:07.8902200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 5,
     "symbol": "make_model_tuple"
   },
-  "id": "a44ea517-6b0b-4926-97f7-c7b735ed37b5",
+  "id": "375dabcc-d899-4eaf-9fb7-6ad23e774d05",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1113640+00:00"
+    "posted_at": "2026-11-09T23:32:07.8902200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eca21d29-683c-45aa-8316-6512f45c159f",
+  "subject_id": "487d0216-1d46-407a-9a0c-6a5d579493eb",
   "subject_name": "django/db/models/utils::make_model_tuple",
   "tags": [
     "entity:function"

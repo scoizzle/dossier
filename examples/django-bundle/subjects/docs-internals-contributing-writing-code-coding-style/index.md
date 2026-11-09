@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-code/coding-style
 
-- Subject: docs/internals/contributing/writing-code/coding-style (id `60b15f87-c81c-43ef-b2ba-d4738a25c774`)
+- Subject: docs/internals/contributing/writing-code/coding-style (id `4ece6383-18b9-4b42-b687-8398c0c3097a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 41 of 167
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4571 tokens
+- Facts shown: 139 of 167
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Meta: verbose_name_plural = "people" [d2fbaaca]
 - first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) [077c98ce]
@@ -52,6 +52,103 @@
 - # Allowed with local variable assignment user = get_user() f"hello {user}" user_days_old = user.age * 365.25 f"you are {user_days_old} days old" [15df7ec8]
 - # Disallowed f"hello {get_user()}" f"you are {user.age * 365.25} days old" [ad57c958]
 
-## Beyond the budget
+## All facts
 
-98 more facts did not fit in the budget: [2894405ebdfc4412-2] [c176e0ad] [5a0e447d] [413cfd8b] [06d1b3a4] [e0d111f1d44acb07] [176acd86] [81f95c79] [8aa52b95] [4b946cd6] [ecada48d] [685d15dfb6eb2285-27] [ef446009] [7714e199aac2701e-15] [1f3535c2] [fd04c2fa] [795f9a42b1ba8673] [795f9a42b1ba8673-2] [795f9a42b1ba8673-3] [795f9a42b1ba8673-4] [795f9a42b1ba8673-5] [795f9a42b1ba8673-6] [795f9a42b1ba8673-7] [572f3869fd620fc3] [572f3869fd620fc3-2] [572f3869fd620fc3-3] [44c358dc648f3d03] [cbd439cb] [5a5c7092] [a2fe3aed] [b9c33714] [bb93ff6c] [cecaea75] [0d67d811] [27f88c9b] [e7478738] [09660690] [e34e2b51] [3923dcea] [0f349f44] [9a8fb5bc] [40a35507] [0e9062a8] [0ef38758] [0571ff8f] [d7b840e1] [0c945701] [a5a221d8] [e28b1ed3] [78f606d0] [b64853a3] [c058dd6b] [fb4a2541] [ce480089] [aec197b8] [a79b1e57] [31d5f039] [7e3b0946] [cfc61cc1] [dbf2bb69] [5f67e1af] [b0223d90] [e00cee1c] [df1c2631] [f358ff30] [a49ea55b] [f3db5c8c] [9919fa74] [2d6ff2df] [8d4d1fa1] [fb951c92] [f6c61a69] [261ed26b] [eee5e97f] [63dc52ac] [7714e199aac2701e-16] [cf7a8fb4] [d8716531] [90a398d8] [dc88d6ae] [72b9bee7] [f243777d] [93566f29] [0ff9bdda] [5969ec76] [860302bc192c8ae4-2] [c001f1ef] [3b8013af] [b8db4c82] [7b1addf6] [f0b41751] [3e41d16b] [08231f7b] [5db669d9] [413da022] [d1f17a65] [82319f4e] [cc38fa12]
+- [2894405ebdfc4412-2] $ python -m pip install pre-commit $ pre-commit install
+- [c176e0ad] class MyModel(models.Model): DIRECTION_UP = "U" DIRECTION_DOWN = "D" DIRECTION_CHOICES = { DIRECTION_UP: "Up", DIRECTION_DOWN: "Down", }
+- [5a0e447d] class MyModel(models.Model): class Direction(models.TextChoices): UP = "U", "Up" DOWN = "D", "Down"
+- [413cfd8b] def test_foo(): """ A test docstring looks like this (#123456). """ ...
+- [06d1b3a4] default_foo_view = get_callable(settings.FOO_VIEW)
+- [e0d111f1d44acb07] from django.conf import settings
+- [176acd86] from django.conf import settings from django.urls import get_callable
+- [81f95c79] settings.configure({}, SOME_SETTING="foo")
+- [8aa52b95] {% if user . name | lower == "admin" %}
+- [4b946cd6] {{ user.name | upper }}
+- [ecada48d] * All database fields * Custom manager attributes * ``class Meta`` * ``def __str__()`` and other Python magic methods * ``def save()`` * ``def get_absolute_url()`` * Any custom methods
+- [685d15dfb6eb2285-27] .. code-block:: html+django
+- [ef446009] .. code-block:: python :caption: ``django/contrib/admin/example.py``
+- [7714e199aac2701e-15] .. console::
+- [1f3535c2] Alternatively, consider using :ref:`field-choices-enum-types`::
+- [fd04c2fa] An exception to :pep:`8` is our rules on line lengths. We allow up to 88 characters in code, as this is the line length used by ``black``. Documentation, comments, and docstrings should be wrapped at 79 characters. These limits are checked when ``flake8`` is run.
+- [795f9a42b1ba8673] Do this:
+- [795f9a42b1ba8673-2] Do this:
+- [795f9a42b1ba8673-3] Do this:
+- [795f9a42b1ba8673-4] Do this:
+- [795f9a42b1ba8673-5] Do this:
+- [795f9a42b1ba8673-6] Do this:
+- [795f9a42b1ba8673-7] Do this:
+- [572f3869fd620fc3] Do this::
+- [572f3869fd620fc3-2] Do this::
+- [572f3869fd620fc3-3] Do this::
+- [44c358dc648f3d03] Don't do this:
+- [cbd439cb] Don't waste time doing unrelated refactoring of existing code to adjust the formatting method.
+- [5a5c7092] Final judgments of readability are left to the Merger's discretion. As a guide, f-strings should use only plain variable and property access, with prior local variable assignment for more complex cases::
+- [a2fe3aed] For example (comments are for explanatory purposes only):
+- [b9c33714] Or this:
+- [bb93ff6c] Quick start:
+- [cecaea75] Reserve ticket references for obscure issues where the ticket has additional details that can't be easily described in docstrings or comments. Include the ticket number at the end of a sentence like this::
+- [0d67d811] This runs ``isort`` recursively from your current directory, modifying any files that don't conform to the guidelines. If you need to have imports out of order (to avoid a circular import, for example) use a comment like this::
+- [27f88c9b] Use :meth:`assertIs(…, True/False)<unittest.TestCase.assertIs>` for testing boolean values, rather than :meth:`~unittest.TestCase.assertTrue` and :meth:`~unittest.TestCase.assertFalse`, so you can check the actual boolean value, not the truthiness of the expression.
+- [e7478738] Use :pypi:`flake8` to check for problems in this area. Note that our ``.flake8`` file excludes some errors that we don't consider as gross violations. Remember that :pep:`8` is only a guide, so respect the style of the surrounding code as a primary goal.
+- [09660690] Use a single blank line between the last import and any module level code, and use two blank lines above the first function or class.
+- [e34e2b51] f-strings should not be used for any string that may require translation, including error and logging messages. In general ``format()`` is more verbose, so the other formatting methods are preferred.
+- [3923dcea] instead of::
+- [0f349f44] * All files should be formatted using the :pypi:`black` auto-formatter. This will be run by ``pre-commit`` if that is configured.
+- [9a8fb5bc] * Avoid use of "we" in comments, e.g. "Loop over" rather than "We loop over".
+- [40a35507] * Break long lines using parentheses and indent continuation lines by 4 spaces. Include a trailing comma after the last import and put the closing parenthesis on its own line.
+- [0e9062a8] * Field names should be all lowercase, using underscores instead of camelCase.
+- [0ef38758] * If ``choices`` is defined for a given model field, define each choice as a mapping, with an all-uppercase name as a class attribute on the model. Example::
+- [0571ff8f] * In Django views, the first parameter in a view function should be called ``request``.
+- [d7b840e1] * In ``{% load ... %}``, list libraries in alphabetical order.
+- [0c945701] * In docstrings, follow the style of existing docstrings and :pep:`257`.
+- [a5a221d8] * In test docstrings, state the expected behavior that each test demonstrates. Don't include preambles such as "Tests that" or "Ensures that".
+- [e28b1ed3] * In tests, use :meth:`~django.test.SimpleTestCase.assertRaisesMessage` and :meth:`~django.test.SimpleTestCase.assertWarnsMessage` instead of :meth:`~unittest.TestCase.assertRaises` and :meth:`~unittest.TestCase.assertWarns` so you can check the exception or warning message. Use :meth:`~unittest.TestCase.assertRaisesRegex` and :meth:`~unittest.TestCase.assertWarnsRegex` only if you need regular expression matching.
+- [78f606d0] * Inside curly braces, separate tokens by single spaces, except for around the ``.`` for attribute access and the ``|`` for a filter.
+- [b64853a3] * Mark all strings for internationalization; see the :doc:`i18n documentation </topics/i18n/index>` for details.
+- [c058dd6b] * On each line, alphabetize the items with the upper case items grouped before the lowercase items.
+- [fb4a2541] * Please don't put your name in the code you contribute. Our policy is to keep contributors' names in the ``AUTHORS`` file distributed with Django -- not scattered throughout the codebase itself. Feel free to include a change to the ``AUTHORS`` file in your patch if you make more than a single trivial change.
+- [ce480089] * Put exactly one space between ``{%``, tag contents, and ``%}``.
+- [aec197b8] * Put exactly one space between ``{{``, variable contents, and ``}}``.
+- [a79b1e57] * Put imports in these groups: future, standard library, third-party libraries, other Django components, local Django component, try/excepts. Sort lines in each group alphabetically by the full module name. Place all ``import module`` statements before ``from module import objects`` in each section. Use absolute imports for other Django components and a one-dot relative import (``from .foo import Bar``) for local components. Avoid multi-dot relative imports.
+- [31d5f039] * Put the ``{% block %}`` tag name in the ``{% endblock %}`` tag if it is not on the same line.
+- [7e3b0946] * Remove ``import`` statements that are no longer used when you change code. :pypi:`flake8` will identify these imports for you. If an unused import needs to remain for backwards-compatibility, mark the end of with ``# NOQA`` to silence the flake8 warning.
+- [cfc61cc1] * String variable interpolation may use :ref:`%-formatting <old-string-formatting>`, :ref:`f-strings <f-strings>`, or :meth:`str.format` as appropriate, with the goal of maximizing code readability.
+- [dbf2bb69] * Systematically remove all trailing whitespaces from your code as those add unnecessary bytes, add visual clutter to the patches and can also occasionally cause unnecessary merge conflicts. Some IDE's can be configured to automatically remove them and most VCS tools can be set to highlight them in diff outputs.
+- [5f67e1af] * The ``class Meta`` should appear *after* the fields are defined, with a single blank line separating the fields and the class definition.
+- [b0223d90] * The order of model inner classes and standard methods should be as follows (noting that these are not all required):
+- [e00cee1c] * The project repository includes an ``.editorconfig`` file. We recommend using a text editor with `EditorConfig`_ support to avoid indentation and whitespace issues. The Python files use 4 spaces for indentation and the HTML files use 2 spaces.
+- [df1c2631] * Unless otherwise specified, follow :pep:`8`.
+- [f358ff30] * Use :pypi:`isort` to automate import sorting using the guidelines below.
+- [a49ea55b] * Use ``InitialCaps`` for class names (or for factory functions that return classes).
+- [f3db5c8c] * Use convenience imports whenever available. For example, do this ::
+- [9919fa74] * Use underscores, not camelCase, for variable, function and method names (i.e. ``poll.get_unique_voters()``, not ``poll.getUniqueVoters()``).
+- [2d6ff2df] * Where applicable, use unpacking generalizations compliant with :pep:`448`, such as merging mappings (``{**x, **y}``) or sequences (``[*a, *b]``). This improves performance, readability, and maintainability while reducing errors.
+- [8d4d1fa1] * Within a template using ``{% extends %}``, avoid indenting top-level ``{% block %}`` tags.
+- [fb951c92] * ``{% extends %}`` should be the first non-comment line.
+- [f6c61a69] .. _coding-style-imports:
+- [261ed26b] .. _coding-style-pre-commit:
+- [eee5e97f] .. _coding-style-python:
+- [63dc52ac] .. _editorconfig: https://editorconfig.org/
+- [7714e199aac2701e-16] .. console::
+- [cf7a8fb4] ...then importing this module will cause the settings object to be configured. That means that the ability for third parties to import the module at the top level is incompatible with the ability to configure the settings object manually, or makes it very difficult in some circumstances.
+- [d8716531] ============ Coding style ============
+- [90a398d8] Follow the below rules in Django template code.
+- [dc88d6ae] For details about the JavaScript code style used by Django, see :doc:`/internals/contributing/writing-code/javascript`.
+- [72b9bee7] However, if any setting is accessed before the ``settings.configure`` line, this will not work. (Internally, ``settings`` is a ``LazyObject`` which configures itself automatically when the settings are accessed if it has not already been configured).
+- [f243777d] Imports =======
+- [93566f29] Instead of the above code, a level of laziness or indirection must be used, such as ``django.utils.functional.LazyObject``, ``django.utils.functional.lazy()`` or ``lambda``.
+- [0ff9bdda] JavaScript style ================
+- [5969ec76] Manual configuration of settings (i.e. not relying on the :envvar:`DJANGO_SETTINGS_MODULE` environment variable) is allowed and possible as follows::
+- [860302bc192c8ae4-2] Miscellaneous =============
+- [c001f1ef] Model style ===========
+- [3b8013af] Modules should not in general use settings stored in ``django.conf.settings`` at the top level (i.e. evaluated when the module is imported). The explanation for this is as follows:
+- [b8db4c82] On the first commit ``pre-commit`` will install the hooks, these are installed in their own environments and will take a short while to install on the first run. Subsequent checks will be significantly faster. If an error is found an appropriate error message will be displayed. If the error was with ``black`` or ``isort`` then the tool will go ahead and fix them for you. Review the changes and re-stage for commit if you are happy with them.
+- [7b1addf6] Please follow these coding standards when writing code for inclusion in Django.
+- [f0b41751] Pre-commit checks =================
+- [3e41d16b] Python style ============
+- [08231f7b] So, if there is a module containing some code as follows::
+- [5db669d9] Template style ==============
+- [413da022] To use the tool, first install ``pre-commit`` and then the git hooks:
+- [d1f17a65] Use of ``django.conf.settings`` ===============================
+- [82319f4e] View style ==========
+- [cc38fa12] `pre-commit <https://pre-commit.com>`_ is a framework for managing pre-commit hooks. These hooks help to identify simple issues before committing code for review. By checking for these issues before code review it allows the reviewer to focus on the change itself, and it can also help to reduce the number of CI runs.

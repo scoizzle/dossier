@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::AutoFieldMixin.__init__
 
-- Subject: django/db/models/fields/__init__::AutoFieldMixin.__init__ (id `5d2453cd-f725-4694-bb8d-a2fbcd367f03`)
+- Subject: django/db/models/fields/__init__::AutoFieldMixin.__init__ (id `0dcb679f-fce5-4784-a803-f49833597e49`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

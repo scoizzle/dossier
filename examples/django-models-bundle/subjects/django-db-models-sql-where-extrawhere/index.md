@@ -1,9 +1,9 @@
 # django/db/models/sql/where::ExtraWhere
 
-- Subject: django/db/models/sql/where::ExtraWhere (id `1ab0866a-973d-4283-b2ab-84c158e7edae`)
+- Subject: django/db/models/sql/where::ExtraWhere (id `f5e86fed-6c87-4434-8938-45f419171418`)
 - Kind: class
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateTimeCheckMixin
 
-- Subject: django/db/models/fields/__init__::DateTimeCheckMixin (id `a2661624-11aa-4d73-b0e1-b06405641a13`)
+- Subject: django/db/models/fields/__init__::DateTimeCheckMixin (id `0fd54ff3-d3fb-470f-ae1c-3b6bc238c669`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 96561bf3
 
-Store id: 94e1eabb-2b24-4675-b702-5aaf0c4b279d
+Store id: c0f34a79-a453-4669-9634-3edb4c50818b
 
 ## Text
 
@@ -20,7 +20,7 @@ class FilteredRelation
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1829520+00:00`
+- posted_at: `2026-11-09T23:32:05.2003060+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 520,
     "symbol": "FilteredRelation"
   },
-  "id": "94e1eabb-2b24-4675-b702-5aaf0c4b279d",
+  "id": "c0f34a79-a453-4669-9634-3edb4c50818b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1829520+00:00"
+    "posted_at": "2026-11-09T23:32:05.2003060+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "390b76e3-3d0f-49a8-ba96-6d3698463523",
+  "subject_id": "db5c187d-a941-4ad4-ab05-7016cf75652f",
   "subject_name": "django/db/models/query_utils::FilteredRelation",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 8a3ff15e
 
-Store id: 129b6159-0f9f-4094-a607-c827027113db
+Store id: c0e8c179-137d-44a8-b096-43f7ea6d9e7e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_field_names_from_opts(opts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1445130+00:00`
+- posted_at: `2026-11-09T23:32:06.6488410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 71,
     "symbol": "get_field_names_from_opts"
   },
-  "id": "129b6159-0f9f-4094-a607-c827027113db",
+  "id": "c0e8c179-137d-44a8-b096-43f7ea6d9e7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1445130+00:00"
+    "posted_at": "2026-11-09T23:32:06.6488410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dd4afd11-b87a-4281-a2b2-0c30ec7958e1",
+  "subject_id": "e58e599a-b26d-4882-8869-366d9770ef4b",
   "subject_name": "django/db/models/sql/query::get_field_names_from_opts",
   "tags": [
     "entity:function"

@@ -1,14 +1,14 @@
 # django/utils/crypto
 
-- Subject: django/utils/crypto (id `9cdea2d3-1288-4895-90c5-82264f6324d3`)
+- Subject: django/utils/crypto (id `6032b32d-dc7b-4427-b9f4-04aae1ae9fb7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 14 of 15
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 916 tokens
+- Facts shown: 15 of 15
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - A different key_salt should be passed in for every application of HMAC. """ if algorithm is None: warnings.warn( "The default argument for algorithm in salted_hmac() will change " "from 'sha1' to 'sha256' in Django 2028. Pass an explicit " "algorithm to silence this warning.", category=RemovedInDjango2028Warning, skip_file_prefixes=django_file_prefixes(), ) algorithm = "sha1" if secret is None: secret = settings.SECRET_KEY [4cfefb5b]
 - For example, with default `allowed_chars` (26+26+10), this gives: * length: 12, bit length =~ 71 bits * length: 22, bit length =~ 131 bits """ return "".join(secrets.choice(allowed_chars) for i in range(length)) [4e0f81a5]
@@ -25,6 +25,6 @@
 - def pbkdf2(password, salt, iterations, dklen=0, digest=None): """Return the hash of password using pbkdf2.""" if digest is None: digest = hashlib.sha256 dklen = dklen or None password = force_bytes(password) salt = force_bytes(salt) return hashlib.pbkdf2_hmac(digest().name, password, salt, iterations, dklen) [86fc0924]
 - from django.conf import settings from django.utils.deprecation import RemovedInDjango2028Warning, django_file_prefixes from django.utils.encoding import force_bytes [632cc514]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [4522aeff]
+- [4522aeff] import hashlib import hmac import secrets import warnings

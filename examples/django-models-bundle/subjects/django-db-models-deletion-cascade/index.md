@@ -1,9 +1,9 @@
 # django/db/models/deletion::CASCADE
 
-- Subject: django/db/models/deletion::CASCADE (id `19336626-b670-4418-9187-0ac3b40532d3`)
+- Subject: django/db/models/deletion::CASCADE (id `a863d2c8-c887-4375-b59c-472b35da8864`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

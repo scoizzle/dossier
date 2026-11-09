@@ -1,8 +1,8 @@
 # docs/ref/forms/formsets
 
-- Subject: docs/ref/forms/formsets (id `60227d7b-21e2-4ae6-bad2-b1c7193eeb64`)
+- Subject: docs/ref/forms/formsets (id `632e1654-0c33-48b2-b3b3-b34dd7b8ff94`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 236 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

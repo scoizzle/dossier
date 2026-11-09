@@ -1,8 +1,8 @@
 # django/contrib/gis/ptr
 
-- Subject: django/contrib/gis/ptr (id `a89eb480-59c3-4345-9514-3bce800be011`)
+- Subject: django/contrib/gis/ptr (id `0381a853-5457-4d20-a8b4-c3aa4f6d19ba`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 329 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # docs/howto/deployment/asgi/uvicorn
 
-- Subject: docs/howto/deployment/asgi/uvicorn (id `6c75aceb-56bb-4373-a08c-e5a4933e2ce4`)
+- Subject: docs/howto/deployment/asgi/uvicorn (id `24cf6156-56ec-4e78-a9e3-122887e6a61e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 683 tokens
 - Facts shown: 23 of 23
 - Conflicts: 0

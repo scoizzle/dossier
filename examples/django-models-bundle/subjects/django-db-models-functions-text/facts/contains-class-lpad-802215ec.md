@@ -1,6 +1,6 @@
 # Fact 802215ec
 
-Store id: 97c19893-3f49-4069-8cb3-6e7b5f20c8c4
+Store id: 3f1b3bc2-6571-4ba5-83a9-7d71d7c42280
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class LPad
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "97c19893-3f49-4069-8cb3-6e7b5f20c8c4",
+  "id": "3f1b3bc2-6571-4ba5-83a9-7d71d7c42280",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "LPad"
       },
       "rel": "contains",
-      "target": "65226962-418e-490c-b0e1-13b48af3545f"
+      "target": "0289256f-1789-470e-8da5-e017e8a76dbb"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

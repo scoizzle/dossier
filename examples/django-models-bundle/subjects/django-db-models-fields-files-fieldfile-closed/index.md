@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FieldFile.closed
 
-- Subject: django/db/models/fields/files::FieldFile.closed (id `038ef6f0-cb67-4124-8d10-da7545099050`)
+- Subject: django/db/models/fields/files::FieldFile.closed (id `d16db6aa-3e30-4fe7-96c9-107b7ece30e1`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

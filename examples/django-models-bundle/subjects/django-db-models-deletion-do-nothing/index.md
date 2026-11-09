@@ -1,9 +1,9 @@
 # django/db/models/deletion::DO_NOTHING
 
-- Subject: django/db/models/deletion::DO_NOTHING (id `0069c23d-287a-4a08-b84e-3a05742eb4fb`)
+- Subject: django/db/models/deletion::DO_NOTHING (id `2408caa4-d8c1-4841-a6d4-10cbb7363456`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

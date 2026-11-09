@@ -1,6 +1,6 @@
 # Fact 36d01a79
 
-Store id: 326f5f84-584f-4df1-9f6b-2c8395633a3f
+Store id: c98ea180-50b6-4d29-806e-bbd8df311858
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, klass_info, select, db, fetch_mode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9051440+00:00`
+- posted_at: `2026-11-09T23:32:04.8589660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 3000,
     "symbol": "RelatedPopulator.__init__"
   },
-  "id": "326f5f84-584f-4df1-9f6b-2c8395633a3f",
+  "id": "c98ea180-50b6-4d29-806e-bbd8df311858",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9051440+00:00"
+    "posted_at": "2026-11-09T23:32:04.8589660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e8625100-7b8e-48f2-966e-361aef7bedb3",
+  "subject_id": "2960bcb1-c1a0-4868-850c-808adba905b3",
   "subject_name": "django/db/models/query::RelatedPopulator.__init__",
   "tags": [
     "entity:method"

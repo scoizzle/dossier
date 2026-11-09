@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.distinct
 
-- Subject: django/db/models/query::QuerySet.distinct (id `675e3faf-0931-426c-aca7-dfa1f530dc55`)
+- Subject: django/db/models/query::QuerySet.distinct (id `13977335-d56e-4a01-8339-e9219219f4dd`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

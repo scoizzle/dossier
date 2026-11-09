@@ -1,14 +1,14 @@
 # django/core/paginator
 
-- Subject: django/core/paginator (id `5ceaade4-e8c0-4784-a285-3c7e9608cee4`)
+- Subject: django/core/paginator (id `be54f54e-9012-4fc2-9c9c-f472bc3578fa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 17 of 67
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3610 tokens
+- Facts shown: 66 of 67
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - 1, 2, …, 40, 41, 42, 43, 44, 45, 46, …, 49, 50. """ if num_pages <= (on_each_side + on_ends) * 2: yield from page_range return [9d6ad00b]
 - If the page range is larger than a given size, the whole range is not provided and a compact form is returned instead, e.g. for a paginator with 50 pages, if page 43 were the current page, the output, with the default arguments, would be: [115284f5]
@@ -28,6 +28,54 @@
 - async def acount(self): """See Paginator.count().""" if self._cache_acount is not None: return self._cache_acount c = getattr(self.object_list, "acount", None) if ( inspect.iscoroutinefunction(c) and not inspect.isbuiltin(c) and method_has_no_args(c) ): count = await c() else: count = len(self.object_list) [7dfaee9a]
 - async def aend_index(self): """See Page.end_index().""" num_pages = await self.paginator.anum_pages() if self.number == num_pages: return await self.paginator.acount() return self.number * self.paginator.per_page [92107b62]
 
-## Beyond the budget
+## All facts
 
-49 more facts did not fit in the budget: [e791c862] [4a5b3705] [b9fc6fc4] [a4951267] [a7446a66] [71a4bcc8] [05d38173] [b3d9cbc7] [7c9f7d9e] [8b715575] [f729acd3] [9be53c9f] [21540c21] [50ae2a36] [10990335] [41dae08c] [ad83a2a4] [cd3656b4] [399e47fb] [5e60f7cd] [808e93a3] [8a9030ea] [6757fbec] [cab38050] [7caa9409] [a982ae98] [6249d260] [940c4524] [0cba4a67] [da7205c6] [9c856d28] [1930b5c8] [196ca9f0] [0d00b7d9] [7a2f366f] [addb8f60] [d11364d8] [eb8c7744] [ab3865d4] [b58e2a51] [ee57357d] [8b2fb758] [f9b5dc75] [ec41ff87] [560c396d] [77d891a9] [770890ad88958a4c-10] [d40b5913] [d900c42d]
+- [e791c862] async def aget_elided_page_range(self, number=1, *, on_each_side=3, on_ends=2): number = await self.avalidate_number(number) num_pages = await self.anum_pages() page_range = await self.apage_range() for page in self._get_elided_page_range( number, num_pages, page_range, on_each_side, on_ends ): yield page
+- [4a5b3705] async def aget_object_list(self): """ Returns self.object_list as a list.
+- [b9fc6fc4] async def aget_page(self, number): """See Paginator.get_page().""" try: number = await self.avalidate_number(number) except PageNotAnInteger: number = 1 except EmptyPage: number = await self.anum_pages() return await self.apage(number)
+- [a4951267] async def ahas_next(self): num_pages = await self.paginator.anum_pages() return self.number < num_pages
+- [a7446a66] async def ahas_other_pages(self): has_previous = await self.ahas_previous() has_next = await self.ahas_next() return has_previous or has_next
+- [71a4bcc8] async def ahas_previous(self): return self.number > 1
+- [05d38173] async def anext_page_number(self): return await self.paginator.avalidate_number(self.number + 1)
+- [b3d9cbc7] async def anum_pages(self): """See Paginator.num_pages().""" if self._cache_anum_pages is not None: return self._cache_anum_pages count = await self.acount() if count == 0 and not self.allow_empty_first_page: self._cache_anum_pages = 0 return self._cache_anum_pages hits = max(1, count - self.orphans) num_pages = ceil(hits / self.per_page)
+- [7c9f7d9e] async def apage(self, number): """See Paginator.page().""" number = await self.avalidate_number(number) bottom = (number - 1) * self.per_page top = bottom + self.per_page count = await self.acount() if top + self.orphans >= count: top = count
+- [8b715575] async def apage_range(self): """See Paginator.page_range()""" num_pages = await self.anum_pages() return range(1, num_pages + 1)
+- [f729acd3] async def aprevious_page_number(self): return await self.paginator.avalidate_number(self.number - 1)
+- [9be53c9f] async def astart_index(self): """See Page.start_index().""" count = await self.paginator.acount() if count == 0: return 0 return (self.paginator.per_page * (self.number - 1)) + 1
+- [21540c21] async def avalidate_number(self, number): num_pages = await self.anum_pages() return self._validate_number(number, num_pages)
+- [50ae2a36] def __getitem__(self, index): if not isinstance(index, (int, slice)): raise TypeError( "AsyncPage indices must be integers or slices, not %s." % type(index).__name__ )
+- [10990335] def __getitem__(self, index): if not isinstance(index, (int, slice)): raise TypeError( "Page indices must be integers or slices, not %s." % type(index).__name__ ) # The object_list is converted to a list so that if it was a QuerySet # it won't be a database hit per __getitem__. if not isinstance(self.object_list, list): self.object_list = list(self.object_list) return self.object_list[index]
+- [41dae08c] def __init__( self, object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None, ): self.object_list = object_list self._check_object_list_is_ordered() self.per_page = int(per_page) self.orphans = int(orphans) self.allow_empty_first_page = allow_empty_first_page self.error_messages = ( self.default_error_messages if error_messages is None else self.default_error_messages | error_messages ) if self.per_page <= self.orphans: # RemovedInDjango2028Warning: When the deprecation ends, replace # with: # raise ValueError( # "The orphans argument cannot be larger than or equal to the " # "per_page argument." # ) msg = ( "Support for the orphans argument being larger than or equal to the " "per_page argument is deprecated. This will raise a ValueError in " "Django 2028." ) warnings.warn(msg, category=RemovedInDjango2028Warning, stacklevel=2)
+- [ad83a2a4] def __len__(self): if not isinstance(self.object_list, list): raise TypeError( "AsyncPage.aget_object_list() must be awaited before calling len()." ) return len(self.object_list)
+- [cd3656b4] def __len__(self): return len(self.object_list)
+- [399e47fb] def __repr__(self): return "<Async Page %s>" % self.number
+- [5e60f7cd] def __repr__(self): return "<Page %s of %s>" % (self.number, self.paginator.num_pages)
+- [808e93a3] def __reversed__(self): if not isinstance(self.object_list, list): raise TypeError( "AsyncPage.aget_object_list() " "must be awaited before calling reversed()." )
+- [8a9030ea] def _check_object_list_is_ordered(self): """ Warn if self.object_list is unordered (typically a QuerySet). """ ordered = getattr(self.object_list, "ordered", None) if ordered is not None and not ordered: obj_list_repr = ( "{} {}".format( self.object_list.model, self.object_list.__class__.__name__ ) if hasattr(self.object_list, "model") else "{!r}".format(self.object_list) ) warnings.warn( "Pagination may yield inconsistent results with an unordered " "object_list: {}.".format(obj_list_repr), UnorderedObjectListWarning, stacklevel=3, )
+- [6757fbec] def _get_elided_page_range( self, number, num_pages, page_range, on_each_side=3, on_ends=2 ): """ Return a 1-based range of pages with some values elided.
+- [cab38050] def _get_page(self, *args, **kwargs): """ Return an instance of a single page.
+- [7caa9409] def _get_page(self, *args, **kwargs): return AsyncPage(*args, **kwargs)
+- [a982ae98] def _validate_number(self, number, num_pages): """Validate the given 1-based page number.""" try: if isinstance(number, float) and not number.is_integer(): raise ValueError number = int(number) except (TypeError, ValueError): raise PageNotAnInteger(self.error_messages["invalid_page"]) if number < 1: raise EmptyPage(self.error_messages["min_page"]) if number > num_pages: raise EmptyPage(self.error_messages["no_results"]) return number
+- [6249d260] def end_index(self): """ Return the 1-based index of the last object on this page, relative to total objects found (hits). """ # Special case for the last page because there can be orphans. if self.number == self.paginator.num_pages: return self.paginator.count return self.number * self.paginator.per_page
+- [940c4524] def get_elided_page_range(self, number=1, *, on_each_side=3, on_ends=2): number = self.validate_number(number) yield from self._get_elided_page_range( number, self.num_pages, self.page_range, on_each_side, on_ends )
+- [0cba4a67] def get_page(self, number): """ Return a valid page, even if the page argument isn't a number or isn't in range. """ try: number = self.validate_number(number) except PageNotAnInteger: number = 1 except EmptyPage: number = self.num_pages return self.page(number)
+- [da7205c6] def has_next(self): return self.number < self.paginator.num_pages
+- [9c856d28] def has_other_pages(self): return self.has_previous() or self.has_next()
+- [1930b5c8] def has_previous(self): return self.number > 1
+- [196ca9f0] def next_page_number(self): return self.paginator.validate_number(self.number + 1)
+- [0d00b7d9] def page(self, number): """Return a Page object for the given 1-based page number.""" number = self.validate_number(number) bottom = (number - 1) * self.per_page top = bottom + self.per_page if top + self.orphans >= self.count: top = self.count return self._get_page(self.object_list[bottom:top], number, self)
+- [7a2f366f] def previous_page_number(self): return self.paginator.validate_number(self.number - 1)
+- [addb8f60] def start_index(self): """ Return the 1-based index of the first object on this page, relative to total objects in the paginator. """ # Special case, return zero if no items. if self.paginator.count == 0: return 0 return (self.paginator.per_page * (self.number - 1)) + 1
+- [d11364d8] def validate_number(self, number): return self._validate_number(number, self.num_pages)
+- [eb8c7744] class AsyncPage: def __init__(self, object_list, number, paginator): self.object_list = object_list self.number = number self.paginator = paginator
+- [ab3865d4] class AsyncPaginator(BasePaginator): def __init__( self, object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None, ): super().__init__( object_list, per_page, orphans, allow_empty_first_page, error_messages ) self._cache_acount = None self._cache_anum_pages = None
+- [b58e2a51] class BasePaginator: # Translators: String used to replace omitted page numbers in elided page # range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10]. ELLIPSIS = _("…") default_error_messages = { "invalid_page": _("That page number is not an integer"), "min_page": _("That page number is less than 1"), "no_results": _("That page contains no results"), }
+- [ee57357d] class EmptyPage(InvalidPage): pass
+- [8b2fb758] class InvalidPage(Exception): pass
+- [f9b5dc75] class Page(collections.abc.Sequence): def __init__(self, object_list, number, paginator): self.object_list = object_list self.number = number self.paginator = paginator
+- [ec41ff87] class PageNotAnInteger(InvalidPage): pass
+- [560c396d] class Paginator(BasePaginator): def __iter__(self): for page_number in self.page_range: yield self.page(page_number)
+- [77d891a9] class UnorderedObjectListWarning(RuntimeWarning): pass
+- [770890ad88958a4c-10] from asgiref.sync import sync_to_async
+- [d40b5913] from django.utils.deprecation import RemovedInDjango2028Warning from django.utils.functional import cached_property from django.utils.inspect import method_has_no_args from django.utils.translation import gettext_lazy as _
+- [d900c42d] import collections.abc import inspect import warnings from math import ceil

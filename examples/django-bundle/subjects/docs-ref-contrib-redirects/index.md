@@ -1,14 +1,14 @@
 # docs/ref/contrib/redirects
 
-- Subject: docs/ref/contrib/redirects (id `12e28d06-c524-47ef-8ac6-2644185389f9`)
+- Subject: docs/ref/contrib/redirects (id `b6441acf-6ee2-4015-a2fe-465e77813cef`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 18 of 30
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1383 tokens
+- Facts shown: 30 of 30
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> from django.conf import settings >>> from django.contrib.redirects.models import Redirect >>> # Add a new redirect. >>> redirect = Redirect.objects.create( ... site_id=1, ... old_path="/contact-us/", ... new_path="/contact/", ... ) >>> # Change a redirect. >>> redirect.new_path = "/contact-details/" >>> redirect.save() >>> redirect <Redirect: /contact-us/ ---> /contact-details/> >>> # Delete a redirect. >>> Redirect.objects.filter(site_id=1, old_path="/contact-us/").delete() (1, {'redirects.Redirect': 1}) [9b8b1b6c]
 - Defaults to :class:`~django.http.HttpResponseGone`. [462277eb]
@@ -29,6 +29,17 @@
 - For more on middleware, read the :doc:`middleware docs </topics/http/middleware>`. [8ab77384ea4cc532-2]
 - How it works ============ [0cef2b7e7679766a-2]
 
-## Beyond the budget
+## All facts
 
-12 more facts did not fit in the budget: [545d6e1e] [bd67740e] [3b0fd2d0] [8db4d8757db9fb63-4] [17e39a7d] [65465b93] [e053ebce] [b8d0e7548b192bff-2] [d3a10efe] [4d9c577be104c776-2] [2d26d25ee8ee8de6-2] [edf4ab72]
+- [545d6e1e] Django comes with an optional redirects application. It lets you store redirects in a database and handles the redirecting for you. It uses the HTTP response status code ``301 Moved Permanently`` by default.
+- [bd67740e] How to add, change and delete redirects =======================================
+- [3b0fd2d0] If you've activated the automatic Django admin interface, you should see a "Redirects" section on the admin index page. Edit redirects as you edit any other object in the system.
+- [8db4d8757db9fb63-4] Installation ============
+- [17e39a7d] Middleware ==========
+- [65465b93] Note that the order of :setting:`MIDDLEWARE` matters. Generally, you can put :class:`~django.contrib.redirects.middleware.RedirectFallbackMiddleware` at the end of the list, because it's a last resort.
+- [e053ebce] The :class:`~django.contrib.redirects.middleware.RedirectFallbackMiddleware` does all of the work. Each time any Django application raises a 404 error, this middleware checks the redirects database for the requested URL as a last resort. Specifically, it checks for a redirect with the given ``old_path`` with a site ID that corresponds to the :setting:`SITE_ID` setting.
+- [b8d0e7548b192bff-2] The middleware only gets activated for 404s -- not for 500s or responses of any other status code.
+- [d3a10efe] To install the redirects app, follow these steps:
+- [4d9c577be104c776-2] Via the Python API ------------------
+- [2d26d25ee8ee8de6-2] Via the admin interface -----------------------
+- [edf4ab72] ``manage.py migrate`` creates a ``django_redirect`` table in your database. This is a lookup table with ``site_id``, ``old_path`` and ``new_path`` fields.

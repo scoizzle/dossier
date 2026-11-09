@@ -1,9 +1,9 @@
 # django/db/models/expressions::Window.set_source_expressions
 
-- Subject: django/db/models/expressions::Window.set_source_expressions (id `f9910a5f-0987-42d7-b465-02d3df25c2fa`)
+- Subject: django/db/models/expressions::Window.set_source_expressions (id `6dc23a7e-1047-438e-8814-376ec4f2b85f`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

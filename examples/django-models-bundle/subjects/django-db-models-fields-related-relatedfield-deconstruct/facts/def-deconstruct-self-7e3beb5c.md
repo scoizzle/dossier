@@ -1,6 +1,6 @@
 # Fact 7e3beb5c
 
-Store id: 6598b5c9-567c-4632-a024-d0bf7b6ac800
+Store id: dfbaec4e-ef56-4e30-ab12-bfce05ed7d83
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2690370+00:00`
+- posted_at: `2026-11-09T23:31:58.6229350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 409,
     "symbol": "RelatedField.deconstruct"
   },
-  "id": "6598b5c9-567c-4632-a024-d0bf7b6ac800",
+  "id": "dfbaec4e-ef56-4e30-ab12-bfce05ed7d83",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2690370+00:00"
+    "posted_at": "2026-11-09T23:31:58.6229350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "57be50a8-046a-4c40-b11b-0f561029b95b",
+  "subject_id": "f3031bb0-ef28-4656-a9de-ff831083e315",
   "subject_name": "django/db/models/fields/related::RelatedField.deconstruct",
   "tags": [
     "entity:method"

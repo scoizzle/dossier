@@ -1,6 +1,6 @@
 # Fact 64e4ed2e
 
-Store id: 59e308db-035c-4054-8339-755dc8cc6f4f
+Store id: 6ac5ce3c-2fdc-4b93-8664-a7d24be70f74
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_first_selected_col_from_model(klass_info)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6600120+00:00`
+- posted_at: `2026-11-09T23:32:05.8439000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1451,
     "symbol": "SQLCompiler.get_select_for_update_of_arguments._get_first_selected_col_from_model"
   },
-  "id": "59e308db-035c-4054-8339-755dc8cc6f4f",
+  "id": "6ac5ce3c-2fdc-4b93-8664-a7d24be70f74",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6600120+00:00"
+    "posted_at": "2026-11-09T23:32:05.8439000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2182aa67-5a4a-41c2-ae63-ffc6a52419d0",
+  "subject_id": "5f1972d7-0fba-498d-9632-11523abc16da",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_first_selected_col_from_model",
   "tags": [
     "entity:function"

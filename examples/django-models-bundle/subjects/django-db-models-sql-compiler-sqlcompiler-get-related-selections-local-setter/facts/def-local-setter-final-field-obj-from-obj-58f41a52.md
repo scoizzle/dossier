@@ -1,6 +1,6 @@
 # Fact 58f41a52
 
-Store id: dbd762ea-6d2b-4e48-96f9-c97ab3a8a6bf
+Store id: 84d7417a-9523-4245-aee5-445d0744ade0
 
 ## Text
 
@@ -20,7 +20,7 @@ def local_setter(final_field, obj, from_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6446600+00:00`
+- posted_at: `2026-11-09T23:32:05.8123990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1352,
     "symbol": "SQLCompiler.get_related_selections.local_setter"
   },
-  "id": "dbd762ea-6d2b-4e48-96f9-c97ab3a8a6bf",
+  "id": "84d7417a-9523-4245-aee5-445d0744ade0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6446600+00:00"
+    "posted_at": "2026-11-09T23:32:05.8123990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6037bcfc-fdb8-4c64-85e5-39cf6be2f31d",
+  "subject_id": "df167ebd-33ff-4e09-a9a9-7f5c8afc3e7a",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter",
   "tags": [
     "entity:function"

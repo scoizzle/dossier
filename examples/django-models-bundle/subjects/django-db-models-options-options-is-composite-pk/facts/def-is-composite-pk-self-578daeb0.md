@@ -1,6 +1,6 @@
 # Fact 578daeb0
 
-Store id: 39d842eb-d5f9-469d-804c-1bdbcd6626ba
+Store id: a290d0a6-3a8e-4822-b1dc-e28d55cd1c71
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_composite_pk(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9692400+00:00`
+- posted_at: `2026-11-09T23:32:04.0436200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 996,
     "symbol": "Options.is_composite_pk"
   },
-  "id": "39d842eb-d5f9-469d-804c-1bdbcd6626ba",
+  "id": "a290d0a6-3a8e-4822-b1dc-e28d55cd1c71",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9692400+00:00"
+    "posted_at": "2026-11-09T23:32:04.0436200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1cbf1135-6d35-4bec-ad79-7b22c0afb312",
+  "subject_id": "b4b68e4b-6ec4-44ba-b10a-305099daba37",
   "subject_name": "django/db/models/options::Options.is_composite_pk",
   "tags": [
     "entity:method",

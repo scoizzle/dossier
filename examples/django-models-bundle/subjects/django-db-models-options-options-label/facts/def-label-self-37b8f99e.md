@@ -1,6 +1,6 @@
 # Fact 37b8f99e
 
-Store id: fb82c99b-8696-41d6-a779-85185123851e
+Store id: b7b432d9-f84c-4ed5-aee4-02b5ee7885e1
 
 ## Text
 
@@ -20,7 +20,7 @@ def label(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.7493190+00:00`
+- posted_at: `2026-11-09T23:32:03.8932360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 172,
     "symbol": "Options.label"
   },
-  "id": "fb82c99b-8696-41d6-a779-85185123851e",
+  "id": "b7b432d9-f84c-4ed5-aee4-02b5ee7885e1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.7493190+00:00"
+    "posted_at": "2026-11-09T23:32:03.8932360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d46517de-22bd-4c00-8a0e-85372e13653c",
+  "subject_id": "14385c1f-3613-494c-b39c-bdf128c5910c",
   "subject_name": "django/db/models/options::Options.label",
   "tags": [
     "entity:method",

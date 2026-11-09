@@ -1,6 +1,6 @@
 # Fact 4172c0fa
 
-Store id: 2bc31de4-4b7f-46ad-af52-4aab0278f1db
+Store id: cf380deb-222f-4b7c-bbb5-75f7ac70363f
 
 ## Text
 
@@ -20,7 +20,7 @@ def bitxor(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4806500+00:00`
+- posted_at: `2026-11-09T23:31:55.7378450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 120,
     "symbol": "Combinable.bitxor"
   },
-  "id": "2bc31de4-4b7f-46ad-af52-4aab0278f1db",
+  "id": "cf380deb-222f-4b7c-bbb5-75f7ac70363f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4806500+00:00"
+    "posted_at": "2026-11-09T23:31:55.7378450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4aec4fc8-ffc3-43ec-b119-bfcf85a516e2",
+  "subject_id": "cff75b80-e51f-4e3a-83dd-849f49c8faf9",
   "subject_name": "django/db/models/expressions::Combinable.bitxor",
   "tags": [
     "entity:method"

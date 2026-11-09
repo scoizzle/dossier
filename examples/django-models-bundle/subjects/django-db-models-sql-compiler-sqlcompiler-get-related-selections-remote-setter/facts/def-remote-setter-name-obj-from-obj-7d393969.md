@@ -1,6 +1,6 @@
 # Fact 7d393969
 
-Store id: 0b31fc96-97c5-4e67-9891-85fb7befe4b4
+Store id: 1efaaa35-46fa-455c-a862-e32ae16fa930
 
 ## Text
 
@@ -20,7 +20,7 @@ def remote_setter(name, obj, from_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6504800+00:00`
+- posted_at: `2026-11-09T23:32:05.8266890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1360,
     "symbol": "SQLCompiler.get_related_selections.remote_setter"
   },
-  "id": "0b31fc96-97c5-4e67-9891-85fb7befe4b4",
+  "id": "1efaaa35-46fa-455c-a862-e32ae16fa930",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6504800+00:00"
+    "posted_at": "2026-11-09T23:32:05.8266890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "26f1eee0-7ab8-4334-8ee5-02c42e16b785",
+  "subject_id": "06d6a3fa-e3dd-49ac-8c93-573f17f65459",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections.remote_setter",
   "tags": [
     "entity:function"

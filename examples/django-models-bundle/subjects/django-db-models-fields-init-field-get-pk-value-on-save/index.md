@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.get_pk_value_on_save
 
-- Subject: django/db/models/fields/__init__::Field.get_pk_value_on_save (id `b61c97d5-0072-4f45-a979-70e10293cb3f`)
+- Subject: django/db/models/fields/__init__::Field.get_pk_value_on_save (id `28716e52-c800-43d4-bf88-077cdece2b2e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

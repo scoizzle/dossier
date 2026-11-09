@@ -1,14 +1,14 @@
 # django/db/models/functions/math
 
-- Subject: django/db/models/functions/math (id `bf89c979-7f56-44bf-878d-7fdc81f4e6f4`)
+- Subject: django/db/models/functions/math (id `65b5b94a-68c0-4a17-947f-460b7ced314e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 15 of 39
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1618 tokens
+- Facts shown: 37 of 39
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __init__(self, expression, precision=0, **extra): super().__init__(expression, precision, **extra) [bfd1a48a]
 - def _resolve_output_field(self): source = self.get_source_expressions()[0] return source.output_field [66e3a0ac]
@@ -26,6 +26,27 @@
 - class ASin(NumericOutputFieldMixin, Transform): function = "ASIN" lookup_name = "asin" [302170c3]
 - class ATan(NumericOutputFieldMixin, Transform): function = "ATAN" lookup_name = "atan" [4795fe26]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [96ff2667] [d9bfd32c] [5e6f41ba] [bb98eec0] [85603439] [f043b48a] [ca0de923] [41abbba8] [2b2b8c0b] [96156613] [9c55ad7a] [acf2daa7] [3126d37e] [358f4b7f] [8ab194ce] [5e3530f4] [808203db] [803783e7] [653816af] [7d468dd6] [f8d43b2b] [b2f41a46]
+- [96ff2667] class ATan2(NumericOutputFieldMixin, Func): function = "ATAN2" arity = 2
+- [d9bfd32c] class Abs(Transform): function = "ABS" lookup_name = "abs"
+- [5e6f41ba] class Ceil(Transform): function = "CEILING" lookup_name = "ceil"
+- [bb98eec0] class Cos(NumericOutputFieldMixin, Transform): function = "COS" lookup_name = "cos"
+- [85603439] class Cot(NumericOutputFieldMixin, Transform): function = "COT" lookup_name = "cot"
+- [f043b48a] class Degrees(NumericOutputFieldMixin, Transform): function = "DEGREES" lookup_name = "degrees"
+- [ca0de923] class Exp(NumericOutputFieldMixin, Transform): function = "EXP" lookup_name = "exp"
+- [41abbba8] class Floor(Transform): function = "FLOOR" lookup_name = "floor"
+- [2b2b8c0b] class Ln(NumericOutputFieldMixin, Transform): function = "LN" lookup_name = "ln"
+- [96156613] class Log(FixDecimalInputMixin, NumericOutputFieldMixin, Func): function = "LOG" arity = 2
+- [9c55ad7a] class Mod(FixDecimalInputMixin, NumericOutputFieldMixin, Func): function = "MOD" arity = 2
+- [acf2daa7] class Pi(NumericOutputFieldMixin, Func): function = "PI" arity = 0
+- [3126d37e] class Power(NumericOutputFieldMixin, Func): function = "POWER" arity = 2
+- [358f4b7f] class Radians(NumericOutputFieldMixin, Transform): function = "RADIANS" lookup_name = "radians"
+- [8ab194ce] class Random(NumericOutputFieldMixin, Func): function = "RANDOM" arity = 0
+- [5e3530f4] class Round(FixDecimalInputMixin, Transform): function = "ROUND" lookup_name = "round" arity = None # Override Transform's arity=1 to enable passing precision.
+- [808203db] class Sign(Transform): function = "SIGN" lookup_name = "sign"
+- [803783e7] class Sin(NumericOutputFieldMixin, Transform): function = "SIN" lookup_name = "sin"
+- [653816af] class Sqrt(NumericOutputFieldMixin, Transform): function = "SQRT" lookup_name = "sqrt"
+- [7d468dd6] class Tan(NumericOutputFieldMixin, Transform): function = "TAN" lookup_name = "tan"
+- [f8d43b2b] from django.db.models.expressions import Func, Value from django.db.models.fields import FloatField, IntegerField from django.db.models.functions import Cast from django.db.models.functions.mixins import ( FixDecimalInputMixin, NumericOutputFieldMixin, ) from django.db.models.lookups import Transform
+- [b2f41a46] import math

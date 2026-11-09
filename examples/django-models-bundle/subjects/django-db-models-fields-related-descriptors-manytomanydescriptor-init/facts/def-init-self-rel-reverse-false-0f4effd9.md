@@ -1,6 +1,6 @@
 # Fact 0f4effd9
 
-Store id: 75651042-4612-4c67-9608-0432580a2208
+Store id: ceb439bb-f9ee-44e0-92bf-2830731306da
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, rel, reverse=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8414650+00:00`
+- posted_at: `2026-11-09T23:31:59.3108380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1045,
     "symbol": "ManyToManyDescriptor.__init__"
   },
-  "id": "75651042-4612-4c67-9608-0432580a2208",
+  "id": "ceb439bb-f9ee-44e0-92bf-2830731306da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8414650+00:00"
+    "posted_at": "2026-11-09T23:31:59.3108380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a4c8dcda-ea2e-4e1f-b487-cbf43773983f",
+  "subject_id": "619f7339-a994-4c2f-9203-c286d9919876",
   "subject_name": "django/db/models/fields/related_descriptors::ManyToManyDescriptor.__init__",
   "tags": [
     "entity:method"

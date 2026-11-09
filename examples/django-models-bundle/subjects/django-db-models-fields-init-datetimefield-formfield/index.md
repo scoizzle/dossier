@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateTimeField.formfield
 
-- Subject: django/db/models/fields/__init__::DateTimeField.formfield (id `1cadaae1-a87b-4f09-bab9-de9dbf49790c`)
+- Subject: django/db/models/fields/__init__::DateTimeField.formfield (id `e6c9940f-6564-4a72-9e33-88c62b4511be`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

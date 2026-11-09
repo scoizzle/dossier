@@ -1,6 +1,6 @@
 # Fact 9b8caac8
 
-Store id: 72fedac6-bedf-4504-a10c-6b1a98f1e263
+Store id: 12ed0c42-8598-40bf-985c-202fb6187655
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONNull
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "72fedac6-bedf-4504-a10c-6b1a98f1e263",
+  "id": "12ed0c42-8598-40bf-985c-202fb6187655",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONNull"
       },
       "rel": "contains",
-      "target": "f3c9bc7a-f822-42ec-be73-559558dd9922"
+      "target": "6154c3d7-5b7f-4ed0-9be3-220330774673"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

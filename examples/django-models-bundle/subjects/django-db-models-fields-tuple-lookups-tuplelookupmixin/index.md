@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleLookupMixin
 
-- Subject: django/db/models/fields/tuple_lookups::TupleLookupMixin (id `e99803a5-a203-4112-91b1-03eaaf821ed1`)
+- Subject: django/db/models/fields/tuple_lookups::TupleLookupMixin (id `968c4069-532b-4717-b70c-9c49d23380ec`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 03f2405e
 
-Store id: a9e4b004-1c90-4224-8457-69a242bb77fc
+Store id: 76ef48af-8de4-4296-87fd-6a3c08ccbf36
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_group_by(self, select, order_by)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5675070+00:00`
+- posted_at: `2026-11-09T23:32:05.6770850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 98,
     "symbol": "SQLCompiler.get_group_by"
   },
-  "id": "a9e4b004-1c90-4224-8457-69a242bb77fc",
+  "id": "76ef48af-8de4-4296-87fd-6a3c08ccbf36",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5675070+00:00"
+    "posted_at": "2026-11-09T23:32:05.6770850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7c88fd12-341e-42ff-83e4-5c5441f2440f",
+  "subject_id": "61665cbb-6083-401f-82a2-6bc24d0f47bd",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_group_by",
   "tags": [
     "entity:method"

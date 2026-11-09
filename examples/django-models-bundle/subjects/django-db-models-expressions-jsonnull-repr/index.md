@@ -1,9 +1,9 @@
 # django/db/models/expressions::JSONNull.__repr__
 
-- Subject: django/db/models/expressions::JSONNull.__repr__ (id `ab5a78d5-ab7d-4729-b26f-41d3ffb41f5c`)
+- Subject: django/db/models/expressions::JSONNull.__repr__ (id `adc3c980-c151-4106-a44e-b4de491918f2`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

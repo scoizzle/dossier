@@ -1,6 +1,6 @@
 # Fact 35de8e2e
 
-Store id: d952b2ba-8882-4594-a0e0-85c3b10fd3e0
+Store id: 44503a2d-2dc0-465c-bce0-a296752487ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1012770+00:00`
+- posted_at: `2026-11-09T23:31:59.9769330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 43,
     "symbol": "RelatedIn.get_prep_lookup"
   },
-  "id": "d952b2ba-8882-4594-a0e0-85c3b10fd3e0",
+  "id": "44503a2d-2dc0-465c-bce0-a296752487ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1012770+00:00"
+    "posted_at": "2026-11-09T23:31:59.9769330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a419e39d-cf34-4b00-a914-999316f70360",
+  "subject_id": "f5a8eedb-006f-4440-ab84-dab7932e8d76",
   "subject_name": "django/db/models/fields/related_lookups::RelatedIn.get_prep_lookup",
   "tags": [
     "entity:method"

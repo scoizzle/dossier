@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aset
 
-- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aset (id `264fcd80-3991-46d9-86af-09fb876f3004`)
+- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aset (id `bc9c8733-8ca9-4a4b-b9ab-ba36ff2aea8c`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

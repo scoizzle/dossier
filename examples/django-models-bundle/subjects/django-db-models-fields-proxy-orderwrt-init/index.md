@@ -1,9 +1,9 @@
 # django/db/models/fields/proxy::OrderWrt.__init__
 
-- Subject: django/db/models/fields/proxy::OrderWrt.__init__ (id `3c28fab4-ea5f-4933-bb9f-14c4930471d3`)
+- Subject: django/db/models/fields/proxy::OrderWrt.__init__ (id `296e28cc-13c4-416c-bd63-a0f3db751c5a`)
 - Kind: method
 - Parent: [django/db/models/fields/proxy](../django-db-models-fields-proxy/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 8d4dfdf7
 
-Store id: 5bdec740-64fa-49fd-aadd-ce5e346ca2af
+Store id: 20eafc91-cfcc-4e64-bc55-3a0bd6f44235
 
 ## Text
 
@@ -20,7 +20,7 @@ def managers(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8223800+00:00`
+- posted_at: `2026-11-09T23:32:03.9576500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 453,
     "symbol": "Options.managers"
   },
-  "id": "5bdec740-64fa-49fd-aadd-ce5e346ca2af",
+  "id": "20eafc91-cfcc-4e64-bc55-3a0bd6f44235",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8223800+00:00"
+    "posted_at": "2026-11-09T23:32:03.9576500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2fdf0be7-489e-44aa-9979-40a084a776ff",
+  "subject_id": "b31e290f-1e09-4c94-a00d-306401029483",
   "subject_name": "django/db/models/options::Options.managers",
   "tags": [
     "entity:method",

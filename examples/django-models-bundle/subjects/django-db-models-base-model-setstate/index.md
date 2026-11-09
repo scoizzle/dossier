@@ -1,9 +1,9 @@
 # django/db/models/base::Model.__setstate__
 
-- Subject: django/db/models/base::Model.__setstate__ (id `8aea39d0-48d7-4bc8-a164-26f469137156`)
+- Subject: django/db/models/base::Model.__setstate__ (id `ee0c9924-dba2-43f2-a2a1-716440e1b1a3`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

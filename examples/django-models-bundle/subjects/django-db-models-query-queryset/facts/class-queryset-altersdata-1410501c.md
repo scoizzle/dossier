@@ -1,6 +1,6 @@
 # Fact 1410501c
 
-Store id: e34521e0-b152-42c1-87c4-80fb299dbe2c
+Store id: 18c4d32f-f092-43c2-b979-51112848c194
 
 ## Text
 
@@ -20,7 +20,7 @@ class QuerySet(AltersData)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2835260+00:00`
+- posted_at: `2026-11-09T23:32:04.2997320+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 364,
     "symbol": "QuerySet"
   },
-  "id": "e34521e0-b152-42c1-87c4-80fb299dbe2c",
+  "id": "18c4d32f-f092-43c2-b979-51112848c194",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2835260+00:00"
+    "posted_at": "2026-11-09T23:32:04.2997320+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2644b5c2-4213-41b2-9f8d-bd393de7978b",
+  "subject_id": "b00ad65a-fa33-4333-803d-406a3ed70c02",
   "subject_name": "django/db/models/query::QuerySet",
   "tags": [
     "entity:class"

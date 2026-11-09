@@ -1,6 +1,6 @@
 # Fact b3d95b29
 
-Store id: 0fe79a53-d5d8-4df7-a03b-ac4cf17e0675
+Store id: dda26ab4-b883-4d19-a22a-3ec918c93e98
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Concat
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0fe79a53-d5d8-4df7-a03b-ac4cf17e0675",
+  "id": "dda26ab4-b883-4d19-a22a-3ec918c93e98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Concat"
       },
       "rel": "contains",
-      "target": "95158310-4683-4fee-b606-6ab0c124b04b"
+      "target": "10180892-fc28-4179-81d3-2e1882a16e70"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

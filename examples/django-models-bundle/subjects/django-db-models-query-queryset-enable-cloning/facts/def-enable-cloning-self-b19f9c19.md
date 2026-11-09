@@ -1,6 +1,6 @@
 # Fact b19f9c19
 
-Store id: 9e8db846-6a75-4578-b3ba-b25f0610f18d
+Store id: 7b78c496-4be3-48a7-8a3e-662a6a337185
 
 ## Text
 
@@ -20,7 +20,7 @@ def _enable_cloning(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7034010+00:00`
+- posted_at: `2026-11-09T23:32:04.6306280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2225,
     "symbol": "QuerySet._enable_cloning"
   },
-  "id": "9e8db846-6a75-4578-b3ba-b25f0610f18d",
+  "id": "7b78c496-4be3-48a7-8a3e-662a6a337185",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7034010+00:00"
+    "posted_at": "2026-11-09T23:32:04.6306280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bae27c92-25d0-49e0-bcbc-89ff2968645e",
+  "subject_id": "506c05c9-640c-4c54-a326-2775f1a075d3",
   "subject_name": "django/db/models/query::QuerySet._enable_cloning",
   "tags": [
     "entity:method"

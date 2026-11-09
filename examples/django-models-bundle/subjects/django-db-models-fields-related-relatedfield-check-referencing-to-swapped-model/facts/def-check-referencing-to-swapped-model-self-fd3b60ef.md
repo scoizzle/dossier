@@ -1,6 +1,6 @@
 # Fact fd3b60ef
 
-Store id: bd261490-40a8-4280-9e66-5fb24762c724
+Store id: 5928828a-6fd8-48a5-b8fa-cf7b570ed886
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_referencing_to_swapped_model(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2569670+00:00`
+- posted_at: `2026-11-09T23:31:58.6116030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 219,
     "symbol": "RelatedField._check_referencing_to_swapped_model"
   },
-  "id": "bd261490-40a8-4280-9e66-5fb24762c724",
+  "id": "5928828a-6fd8-48a5-b8fa-cf7b570ed886",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2569670+00:00"
+    "posted_at": "2026-11-09T23:31:58.6116030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ed316716-eb96-4c5b-a0a3-1dd5ec452fa3",
+  "subject_id": "631ffd00-1269-4dc4-98ee-5f4e7a469727",
   "subject_name": "django/db/models/fields/related::RelatedField._check_referencing_to_swapped_model",
   "tags": [
     "entity:method"

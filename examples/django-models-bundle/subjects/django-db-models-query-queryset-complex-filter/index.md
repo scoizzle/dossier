@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.complex_filter
 
-- Subject: django/db/models/query::QuerySet.complex_filter (id `29df4a28-5732-4717-b3f4-414bb49d5771`)
+- Subject: django/db/models/query::QuerySet.complex_filter (id `b57c8c00-fd20-4fcb-81e8-586f1a62e38f`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

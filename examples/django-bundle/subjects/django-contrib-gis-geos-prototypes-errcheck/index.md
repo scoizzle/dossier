@@ -1,8 +1,8 @@
 # django/contrib/gis/geos/prototypes/errcheck
 
-- Subject: django/contrib/gis/geos/prototypes/errcheck (id `1373329e-47fb-4196-ba0d-9417c969b5da`)
+- Subject: django/contrib/gis/geos/prototypes/errcheck (id `e622303c-a772-4e37-9145-7f95b3a61641`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 711 tokens
 - Facts shown: 12 of 13
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/db/models/fields/json
 
-- Subject: django/db/models/fields/json (id `e8033e5a-9cc0-487a-86e5-7f58586f9b90`)
+- Subject: django/db/models/fields/json (id `d7c21811-3589-45c9-bd5d-3d65ba6227de`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 612 tokens
 - Facts shown: 33 of 33
 - Conflicts: 0

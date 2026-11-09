@@ -1,6 +1,6 @@
 # Fact 9a70bfc2
 
-Store id: 3375a21a-0be5-470b-b8a8-b578429f61d6
+Store id: 3259d091-fe42-42a7-81f1-27be08db906d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5903280+00:00`
+- posted_at: `2026-11-09T23:32:00.5787290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 135,
     "symbol": "TupleLookupMixin.as_sql"
   },
-  "id": "3375a21a-0be5-470b-b8a8-b578429f61d6",
+  "id": "3259d091-fe42-42a7-81f1-27be08db906d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5903280+00:00"
+    "posted_at": "2026-11-09T23:32:00.5787290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79340b1e-e15b-4288-bbcc-4c16db940249",
+  "subject_id": "54a69f19-1c72-4627-9365-bd0ebd5efd81",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.as_sql",
   "tags": [
     "entity:method"

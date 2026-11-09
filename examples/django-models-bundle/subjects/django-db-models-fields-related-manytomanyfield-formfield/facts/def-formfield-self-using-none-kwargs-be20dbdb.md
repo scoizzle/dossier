@@ -1,6 +1,6 @@
 # Fact be20dbdb
 
-Store id: 2ca87227-51f8-4c80-8a18-50ccff4794d3
+Store id: 3a457d34-3744-40b0-b692-8065c2595921
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, *, using=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.5105800+00:00`
+- posted_at: `2026-11-09T23:31:58.9005700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2188,
     "symbol": "ManyToManyField.formfield"
   },
-  "id": "2ca87227-51f8-4c80-8a18-50ccff4794d3",
+  "id": "3a457d34-3744-40b0-b692-8065c2595921",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.5105800+00:00"
+    "posted_at": "2026-11-09T23:31:58.9005700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7adb1c4a-0c68-45f6-87f0-356a68ee319e",
+  "subject_id": "d9f221b7-30f9-48a3-8bb4-b85d5911334b",
   "subject_name": "django/db/models/fields/related::ManyToManyField.formfield",
   "tags": [
     "entity:method"

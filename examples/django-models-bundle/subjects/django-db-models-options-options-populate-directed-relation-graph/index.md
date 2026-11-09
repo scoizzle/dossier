@@ -1,9 +1,9 @@
 # django/db/models/options::Options._populate_directed_relation_graph
 
-- Subject: django/db/models/options::Options._populate_directed_relation_graph (id `f0d810c1-15ae-4576-9be3-a0837ad1685c`)
+- Subject: django/db/models/options::Options._populate_directed_relation_graph (id `912ae26e-a8bf-43cf-8dcb-55b4bf7df4f0`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/contrib/sessions/backends/cache
 
-- Subject: django/contrib/sessions/backends/cache (id `9aab8b64-6845-4740-a157-df7b72069591`)
+- Subject: django/contrib/sessions/backends/cache (id `4832c844-eba0-49f1-8aa3-50de96b4eebb`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 15 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1089 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @classmethod async def aclear_expired(cls): pass [d7a661a8dd775120]
 - @classmethod def clear_expired(cls): pass [e3bc65c33728b0b9]
@@ -26,6 +26,9 @@
 - def exists(self, session_key): return ( bool(session_key) and (self.cache_key_prefix + session_key) in self._cache ) [adb4186c]
 - def load(self): try: session_data = self._cache.get(self.cache_key) except Exception: # Some backends (e.g. memcache) raise an exception on invalid # cache keys. If this happens, reset the session. See #17810. session_data = None if session_data is not None: return session_data self._session_key = None return {} [751f3833]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [d77c3df5] [22ee6565] [0f4103ee] [0f7e983f]
+- [d77c3df5] def save(self, must_create=False): if self.session_key is None: return self.create() if must_create: func = self._cache.add elif self._cache.get(self.cache_key) is not None: func = self._cache.set else: raise UpdateError result = func( self.cache_key, self._get_session(no_load=must_create), self.get_expiry_age(), ) if must_create and not result: raise CreateError
+- [22ee6565] KEY_PREFIX = "django.contrib.sessions.cache"
+- [0f4103ee] class SessionStore(SessionBase): """ A cache-based session store. """
+- [0f7e983f] from django.conf import settings from django.contrib.sessions.backends.base import CreateError, SessionBase, UpdateError from django.core.cache import caches

@@ -1,6 +1,6 @@
 # Fact be712330
 
-Store id: 1c3d6dfd-fba6-4b74-8856-c87e2f24181e
+Store id: ddf38b0a-838b-4f7d-8be8-d9a3318e3768
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *, condition, name, violation_error_code=None, violation_err
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7090880+00:00`
+- posted_at: `2026-11-09T23:31:54.1636910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 136,
     "symbol": "CheckConstraint.__init__"
   },
-  "id": "1c3d6dfd-fba6-4b74-8856-c87e2f24181e",
+  "id": "ddf38b0a-838b-4f7d-8be8-d9a3318e3768",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7090880+00:00"
+    "posted_at": "2026-11-09T23:31:54.1636910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16789d27-5e44-4f5c-ac24-e99b75150c49",
+  "subject_id": "95da1586-73e7-4357-994c-52c9e203cc3f",
   "subject_name": "django/db/models/constraints::CheckConstraint.__init__",
   "tags": [
     "entity:method"

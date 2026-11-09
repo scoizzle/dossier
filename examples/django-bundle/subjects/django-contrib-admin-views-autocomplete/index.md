@@ -1,14 +1,14 @@
 # django/contrib/admin/views/autocomplete
 
-- Subject: django/contrib/admin/views/autocomplete (id `307d0e65-04d4-4858-8f9e-95ac4015c921`)
+- Subject: django/contrib/admin/views/autocomplete (id `db9e6610-f916-445f-8145-24fa1667b28d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 879 tokens
-- Facts shown: 15 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1051 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Retrieve objects from parameters. try: source_model = apps.get_model(app_label, model_name) except LookupError as e: raise PermissionDenied from e [e2557ea4]
 - # Validate suitability of objects. if not model_admin.get_search_fields(request): raise Http404( "%s must have search_fields for the autocomplete_view." % type(model_admin).__qualname__ ) [0d025f22]
@@ -26,6 +26,8 @@
 - def process_request(self, request): """ Validate request integrity, extract and return request parameters. [aa56d44d]
 - paginate_by = 20 admin_site = None [8ca22c52]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [a002ac4d] [59f1aef7] [3706117b]
+- [a002ac4d] def serialize_result(self, obj, to_field_name): """ Convert the provided model object to a dictionary that is added to the results list. """ return {"id": str(getattr(obj, to_field_name)), "text": str(obj)}
+- [59f1aef7] class AutocompleteJsonView(BaseListView): """Handle AutocompleteWidget's AJAX requests for data."""
+- [3706117b] from django.apps import apps from django.contrib.admin.exceptions import NotRegistered from django.core.exceptions import FieldDoesNotExist, PermissionDenied from django.http import Http404, JsonResponse from django.views.generic.list import BaseListView

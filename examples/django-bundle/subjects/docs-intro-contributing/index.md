@@ -1,14 +1,14 @@
 # docs/intro/contributing
 
-- Subject: docs/intro/contributing (id `aa698f5f-1aed-41ea-bb8a-9a7e6bd94fb8`)
+- Subject: docs/intro/contributing (id `ca951195-dd18-4a99-ad3c-721e1770d703`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 30 of 170
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 7461 tokens
+- Facts shown: 169 of 170
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Finally, fall back and assume it's a URL return to + + +def make_toast(): + return 'toast' diff --git a/docs/releases/6.2.txt b/docs/releases/6.2.txt index 7d85d30c4a..81518187b3 100644 --- a/docs/releases/6.2.txt +++ b/docs/releases/6.2.txt @@ -34,6 +34,11 @@ Minor features -------------- [3c34c7d6]
 - ...\> %HOMEPATH%\.virtualenvs\djangodev\Scripts\activate.bat [b56619a4]
@@ -41,6 +41,144 @@
 - ImportError: cannot import name 'make_toast' from 'django.shortcuts' [75189045]
 - .. console:: [7714e199aac2701e-52]
 
-## Beyond the budget
+## All facts
 
-139 more facts did not fit in the budget: [b51fe4b8] [89e776fa] [fe96e6a6] [9886d24e] [6c744a5b] [fae69b92] [3085bc47] [264f52b5] [5cf39a47] [ce581af1] [86ac1093] [db046982] [05b39be9] [957878c4] [fe532420] [28f76d0c] [79fee087] [2d9866bfadae9fc2] [10f252c6] [7b76700c] [dbb2ef17dd903b2b] [faf6f5a8efbd7831-10] [faf6f5a8efbd7831-11] [13c8b0f1] [fccd37de02dbdecc-3] [3871ddb3eff15a0e-19] [3871ddb3eff15a0e-20] [3a9340cd0d877339-8] [7714e199aac2701e-53] [7714e199aac2701e-54] [7714e199aac2701e-55] [7714e199aac2701e-56] [7714e199aac2701e-57] [7714e199aac2701e-58] [7714e199aac2701e-59] [7714e199aac2701e-60] [7714e199aac2701e-61] [7714e199aac2701e-62] [7714e199aac2701e-63] [7714e199aac2701e-64] [942ae6c11625c81c-19] [6b4a5e54e001d097-12] [c344bcc8] [b67186fd] [52de5f08] [82b09c52] [ccf8d6de] [5729f4cd] [e98c7f79] [d023719e] [25b0832d] [ca1ae645] [86e0112d] [a15410fa] [78a25c28] [b442d661] [93eb0fb1] [b22cacbf] [0b567d10] [bb2f2331] [12603d7a] [9f9fa42f] [eb33ede4] [54efb7e2] [ddfbfcac] [0bd91342] [704e0b30] [330435eb] [138c1c92] [c86efd61b4d2ef12-2] [96649b11] [1d0cb9eb] [4bc5cd74] [f5fe5c2a] [795287323bc9e2a3-2] [1f18460e] [2edcdce89eec848d-2] [e68baf5b] [9a6f67c0] [e0a5d525] [02b54e26] [88065c06] [6ea0b126] [41c8e069] [a12a24a3] [26156f79] [c7f3b09e] [b375a206] [a99db716] [c8449e5a] [2e1f030d] [8f5e6caf] [f4677f35] [f88f7eb5] [385b1ba9] [fc5a797e] [2c32e019] [844616c0] [87b70258] [38360c51] [66db7c43] [11f38224] [283e1c1b] [d8c75bdd] [2394612c] [9163a53f] [1bb94960] [2cccc903] [9d68ecd7] [409e2a95] [b90a25f8] [6ad6fdec] [12f005ad] [6adbe4b3] [6d6e2efe] [28cd4a14] [32413c28] [cab2aa20] [1afb3a8e] [1c20c8ec] [4b6f7fd2] [0ba5cd95] [aacc2321] [ce91b04a] [bbdbf489] [d421a1bf] [39241187] [14a29374] [5317f239] [d869c082] [810d541b] [f0dc9cdd] [e032bfa7] [11ec72c2] [3f79c521] [3913fe75] [8f2cdeb4fca1bdd2-2] [feb0bd11] [10b2fe62]
+- [b51fe4b8] If you're having trouble going through this tutorial, please post a message on the `Django Forum`_ or drop by the `Django Discord server`_ to chat with other Django users who might be able to help.
+- [89e776fa] If you've never had to deal with tests before, they can look a little hard to write at first glance. Fortunately, testing is a *very* big subject in computer programming, so there's lots of information out there:
+- [fe96e6a6] Returns ``'toast'``.
+- [9886d24e] See :ref:`install_python_windows` on Windows docs for additional guidance.
+- [6c744a5b] To activate your virtual environment on Windows, run:
+- [fae69b92] You can add the ``--depth 1`` argument to ``git clone`` to skip downloading all of Django's commit history, which reduces data transfer from ~250 MB to ~70 MB.
+- [3085bc47] ``make_toast()`` ================
+- [264f52b5] class MakeToastTests(SimpleTestCase): def test_make_toast(self): self.assertEqual(make_toast(), "toast")
+- [5cf39a47] def make_toast(): return "toast"
+- [ce581af1] diff --git a/django/shortcuts.py b/django/shortcuts.py index 7ab1df0e9d..8dde9e28d9 100644 --- a/django/shortcuts.py +++ b/django/shortcuts.py @@ -156,3 +156,7 @@ def resolve_url(to, *args, **kwargs):
+- [86ac1093] diff --git a/docs/topics/http/shortcuts.txt b/docs/topics/http/shortcuts.txt index 7b3a3a2c00..711bf6bb6d 100644 --- a/docs/topics/http/shortcuts.txt +++ b/docs/topics/http/shortcuts.txt @@ -271,3 +271,12 @@ This example is equivalent to:: my_objects = list(MyModel.objects.filter(published=True)) if not my_objects: raise Http404("No MyModel matches the given query.") + +``make_toast()`` +================ + +.. function:: make_toast() + +.. versionadded:: 6.2 + +Returns ``'toast'``. diff --git a/tests/shortcuts/test_make_toast.py b/tests/shortcuts/test_make_toast.py new file mode 100644 index 0000000000..6f4c627b6e --- /dev/null +++ b/tests/shortcuts/test_make_toast.py @@ -0,0 +1,7 @@ +from django.shortcuts import make_toast +from django.test import SimpleTestCase + + +class MakeToastTests(SimpleTestCase): + def test_make_toast(self): + self.assertEqual(make_toast(), 'toast')
+- [db046982] from django.shortcuts import make_toast from django.test import SimpleTestCase
+- [05b39be9] * Installing Git. * Downloading a copy of Django's development version. * Running Django's test suite. * Writing a test for your changes. * Writing the code for your changes. * Testing your changes. * Submitting a pull request. * Where to look for more information.
+- [957878c4] * You should make sure to read Django's documentation on :doc:`claiming tickets and submitting pull requests </internals/contributing/writing-code/submitting-patches>`. It covers Trac etiquette, how to claim tickets for yourself, expected coding style (both for code and docs), and many other important details. * First time contributors should also read Django's :doc:`documentation for first time contributors</internals/contributing/new-contributors/>`. It has lots of good advice for those of us who are new to helping out with Django. * After those, if you're still hungry for more information about contributing, you can always browse through the rest of :doc:`Django's documentation on contributing</internals/contributing/index>`. It contains a ton of useful information and should be your first source for answering any questions you might have.
+- [fe532420] .. _Dive Into Python: https://diveintopython3.net/ .. _Django Forum: https://forum.djangoproject.com/ .. _Django Discord server: https://chat.djangoproject.com
+- [28f76d0c] .. _intro-contributing-install-local-copy:
+- [79fee087] .. admonition:: But this testing thing looks kinda hard...
+- [2d9866bfadae9fc2] .. admonition:: For Windows users
+- [10f252c6] .. admonition:: Low bandwidth connection?
+- [7b76700c] .. admonition:: Ticket #99999 -- Allow making toast
+- [dbb2ef17dd903b2b] .. admonition:: Where to get help:
+- [faf6f5a8efbd7831-10] .. code-block:: console
+- [faf6f5a8efbd7831-11] .. code-block:: console
+- [13c8b0f1] .. code-block:: diff
+- [fccd37de02dbdecc-3] .. code-block:: pytb
+- [3871ddb3eff15a0e-19] .. code-block:: rst
+- [3871ddb3eff15a0e-20] .. code-block:: rst
+- [3a9340cd0d877339-8] .. code-block:: text
+- [7714e199aac2701e-53] .. console::
+- [7714e199aac2701e-54] .. console::
+- [7714e199aac2701e-55] .. console::
+- [7714e199aac2701e-56] .. console::
+- [7714e199aac2701e-57] .. console::
+- [7714e199aac2701e-58] .. console::
+- [7714e199aac2701e-59] .. console::
+- [7714e199aac2701e-60] .. console::
+- [7714e199aac2701e-61] .. console::
+- [7714e199aac2701e-62] .. console::
+- [7714e199aac2701e-63] .. console::
+- [7714e199aac2701e-64] .. console::
+- [942ae6c11625c81c-19] .. note::
+- [6b4a5e54e001d097-12] .. seealso::
+- [c344bcc8] ========================================== Writing your first contribution for Django ==========================================
+- [b67186fd] A good way to do this is to write your new tests first, before making any changes to the code. This style of development is called `test-driven development`__ and can be applied to both entire projects and single changes. After writing your tests, you then run them to make sure that they do indeed fail (since you haven't fixed that bug or added that feature yet). If your new tests don't fail, you'll need to fix them so that they do. After all, a regression test that passes regardless of whether a bug is present is not very helpful at preventing that bug from reoccurring down the road.
+- [52de5f08] After a ticket has a branch, it needs to be reviewed by a second set of eyes. After submitting a pull request, update the ticket metadata by setting the flags on the ticket to say "has patch", "doesn't need tests", etc, so others can find it for review. Contributing doesn't necessarily always mean writing code from scratch. Reviewing open pull requests is also a very helpful contribution. See :doc:`/internals/contributing/triaging-tickets` for details.
+- [82b09c52] After committing the changes, send it to your fork on GitHub (substitute "ticket_99999" with the name of your branch if it's different):
+- [ccf8d6de] As a contributor, you can help us keep the Django community open and inclusive. Please read and follow our `Code of Conduct <https://www.djangoproject.com/conduct/>`_.
+- [5729f4cd] Before making any changes, create a new branch for the ticket:
+- [e98c7f79] Before running the test suite, enter the Django ``tests/`` directory using the ``cd tests`` command, and install test dependencies by running:
+- [d023719e] Before you get too into contributing to Django, there's a little more information on contributing that you should probably take a look at:
+- [25b0832d] Code of Conduct ===============
+- [ca1ae645] Committing the changes ======================
+- [86e0112d] Congratulations, you've learned how to make a pull request to Django! Details of more advanced techniques you may need are in :doc:`/internals/contributing/writing-code/working-with-git`.
+- [a15410fa] Contributing back to Django itself is the best way to see your own concerns addressed. This may seem daunting at first, but it's a well-traveled path with documentation, tooling, and a community to support you. We'll walk you through the entire process, so you can learn by example.
+- [78a25c28] Create a new virtual environment by running:
+- [b442d661] Creating a branch =================
+- [93eb0fb1] Download the Django source code repository using the following command:
+- [b22cacbf] Everything should pass. If it doesn't, make sure you correctly added the function to the correct file.
+- [0b567d10] Finding your first real ticket ------------------------------
+- [bb2f2331] For more information on writing documentation, including an explanation of what the ``versionadded`` bit is all about, see :doc:`/internals/contributing/writing-documentation`. That page also includes an explanation of how to build a copy of the documentation locally, so you can preview the HTML that will be generated.
+- [12603d7a] For the most part though, this tutorial tries to explain as much as possible, so that it can be of use to the widest audience.
+- [9f9fa42f] For this tutorial, we expect that you have at least a basic understanding of how Django works. This means you should be comfortable going through the existing tutorials on :doc:`writing your first Django app</intro/tutorial01>`. In addition, you should have a good understanding of Python itself. But if you don't, `Dive Into Python`_ is a fantastic (and free) online book for beginning Python programmers.
+- [eb33ede4] For this tutorial, we'll work on a "fake accepted ticket" as a case study. Here are the imaginary details:
+- [54efb7e2] For this tutorial, you'll need Git installed to download the current development version of Django and to generate a branch for the changes you make.
+- [ddfbfcac] Getting a copy of Django's development version ==============================================
+- [0bd91342] Go ahead and install the previously cloned copy of Django:
+- [704e0b30] If all of the tests passed, then you'll want to make sure that you added the new test shown above to the appropriate folder and file name.
+- [330435eb] If the ``source`` command is not available, you can try using a dot instead:
+- [138c1c92] If the tests ran correctly, you should see one failure corresponding to the test method we added, with this error:
+- [c86efd61b4d2ef12-2] If you encounter an error during the installation, your system might be missing a dependency for one or more of the Python packages. Consult the failing package's documentation or search the web with the error message that you encounter.
+- [96649b11] If you just want to get started already (and nobody would blame you!), try taking a look at the list of `easy tickets without a branch`__ and the `easy tickets that have branches which need improvement`__. If you're familiar with writing tests, you can also look at the list of `easy tickets that need tests`__. Remember to follow the guidelines about claiming tickets that were mentioned in the link to Django's documentation on :doc:`claiming tickets and submitting branches </internals/contributing/writing-code/submitting-patches>`.
+- [1d0cb9eb] If you're not that familiar with Git, you can always find out more about its commands (once it's installed) by typing ``git help`` into the command line.
+- [4bc5cd74] In most cases, for a contribution to be accepted into Django it has to include tests. For bug fix contributions, this means writing a regression test to ensure that the bug is never reintroduced into Django later on. A regression test should be written in such a way that it will fail while the bug still exists and pass once the bug has been fixed. For contributions containing new features, you'll need to include tests which ensure that the new features are working correctly. They too should fail when the new feature is not present, and then pass once it has been implemented.
+- [f5fe5c2a] In order to resolve this ticket, we'll add a ``make_toast()`` function to the ``django.shortcuts`` module. First we are going to write a test that tries to use the function and check that its output looks correct.
+- [795287323bc9e2a3-2] Installing Git ==============
+- [1f18460e] Interested in giving back to the community a little? Maybe you've found a bug in Django that you'd like to see fixed, or maybe there's a small feature you want added (but remember that proposals for new features should follow the :ref:`process for suggesting new features <requesting-features>`).
+- [2edcdce89eec848d-2] Introduction ============
+- [e68baf5b] It's a good idea to keep all your virtual environments in one place, for example in ``.virtualenvs/`` in your home directory.
+- [9a6f67c0] More information for new contributors -------------------------------------
+- [e0a5d525] Navigate to Django's ``tests/shortcuts/`` folder and create a new file ``test_make_toast.py``. Add the following code::
+- [02b54e26] Navigate to the ``django/`` folder and open the ``shortcuts.py`` file. At the bottom, add::
+- [88065c06] Next steps ==========
+- [6ea0b126] Next we'll be adding the ``make_toast()`` function.
+- [41c8e069] Note that the latest Django "main" branch may not always be stable. When developing against "main", you can check `Django's continuous integration builds`__ to determine if the failures are specific to your machine or if they are also present in Django's official builds. If you click to view a particular build, you can view the "Configuration Matrix" which shows failures broken down by Python version and database backend.
+- [a12a24a3] Now for our hands-on example.
+- [26156f79] Now it's time to review the changes made in the branch. To stage all the changes ready for commit, run:
+- [c7f3b09e] Now sit back and relax. Django's entire test suite has thousands of tests, and it takes at least a few minutes to run, depending on the speed of your computer.
+- [b375a206] Now that you have a local copy of Django, you can install it just like you would install any package using ``pip``. The most convenient way to do so is by using a *virtual environment*, which is a feature built into Python that allows you to keep a separate directory of installed packages for each of your projects so that they don't interfere with each other.
+- [a99db716] Now we are ready to run the test suite:
+- [c8449e5a] Now we need to make sure that the test we wrote earlier passes, so we can see whether the code we added is working correctly. Again, navigate to the Django ``tests/`` directory and run:
+- [2e1f030d] Now you can put those skills to good use by helping to improve Django's codebase.
+- [8f5e6caf] Once the tests complete, you should be greeted with a message informing you whether the test suite passed or failed. Since you haven't yet made any changes to Django's code, the entire test suite **should** pass. If you get failures or errors make sure you've followed all of the previous steps properly. See :ref:`running-unit-tests` for more information.
+- [f4677f35] Once you're done with the tutorial, you can look through the rest of :doc:`Django's documentation on contributing</internals/contributing/index>`. It contains lots of great information and is a must-read for anyone who'd like to become a regular contributor to Django. If you've got questions, it's probably got the answers.
+- [f88f7eb5] Once you've looked through some of that information, you'll be ready to go out and find a ticket of your own to contribute to. Pay special attention to tickets with the "easy pickings" criterion. These tickets are often much simpler in nature and are great for first time contributors. Once you're familiar with contributing to Django, you can start working on more difficult and complicated tickets.
+- [385b1ba9] Once you've verified that your changes and test are working correctly, it's a good idea to run the entire Django test suite to verify that your change hasn't introduced any bugs into other areas of Django. While successfully passing the entire test suite doesn't guarantee your code is bug free, it does help identify many bugs and regressions that might otherwise go unnoticed.
+- [fc5a797e] Please don't do it for this tutorial, but on the next page that displays a preview of the changes, you would click "Create pull request".
+- [2c32e019] Previewing your changes =======================
+- [844616c0] Pushing the commit and making a pull request ============================================
+- [87b70258] Running Django's test suite for the first time ==============================================
+- [38360c51] Running Django's test suite for the second time ===============================================
+- [66db7c43] Running your new test ---------------------
+- [11f38224] Since this new feature will be in an upcoming release it is also added to the release notes for the next version of Django. Open the release notes for the latest version in ``docs/releases/``, which at time of writing is ``6.2.txt``. Add a note under the "Minor Features" header:
+- [283e1c1b] Since we haven't made any modifications to ``django.shortcuts`` yet, our test should fail. Let's run all the tests in the ``shortcuts`` folder to make sure that's really what happens. ``cd`` to the Django ``tests/`` directory and run:
+- [d8c75bdd] Skipped tests are typically due to missing external libraries required to run the test; see :ref:`running-unit-tests-dependencies` for a list of dependencies and be sure to install any for tests related to the changes you are making (we won't need any for this tutorial). Some tests are specific to a particular database backend and will be skipped if not testing with that backend. SQLite is the database backend for the default settings. To run the tests using a different backend, see :ref:`running-unit-tests-settings`.
+- [2394612c] The final step in setting up your virtual environment is to activate it:
+- [9163a53f] The first step to contributing to Django is to get a copy of the source code. First, `fork Django on GitHub <https://github.com/django/django/fork>`__. Then, from the command line, use the ``cd`` command to navigate to the directory where you'll want your local copy of Django to live.
+- [1bb94960] The installed version of Django is now pointing at your local copy by installing in editable mode. You will immediately see any changes you make to it, which is of great help when testing your first contribution.
+- [2cccc903] The name of the currently activated virtual environment is displayed on the command line to help you keep track of which one you are using. Anything you install through ``pip`` while this name is displayed will be installed in that virtual environment, isolated from other environments and system-wide packages.
+- [9d68ecd7] The path is where the new environment will be saved on your computer.
+- [409e2a95] Then display the differences between your current copy of Django (with your changes) and the revision that you initially checked out earlier in the tutorial with:
+- [b90a25f8] This is a new feature, so it should be documented. Open the file ``docs/topics/http/shortcuts.txt`` and add the following at the end of the file:
+- [6ad6fdec] This opens up a text editor to type the commit message. Follow the :ref:`commit message guidelines <committing-guidelines>` and write a message like:
+- [12f005ad] This test checks that the ``make_toast()`` returns ``'toast'``.
+- [6adbe4b3] Those of you who are unfamiliar with version control systems and Trac will find that this tutorial and its links include just enough information to get started. However, you'll probably want to read some more about these different tools if you plan on contributing to Django regularly.
+- [6d6e2efe] To check whether or not you have Git installed, enter ``git`` into the command line. If you get messages saying that this command could not be found, you'll have to download and install it, see `Git's download page`__.
+- [28cd4a14] To commit the changes:
+- [32413c28] To run the entire Django test suite, ``cd`` into the Django ``tests/`` directory and run:
+- [cab2aa20] Use the arrow keys to move up and down.
+- [1afb3a8e] We'll be walking you through contributing to Django for the first time. By the end of this tutorial, you should have a basic understanding of both the tools and the processes involved. Specifically, we'll be covering the following:
+- [1c20c8ec] We'll now implement this feature and associated tests.
+- [4b6f7fd2] What does this tutorial cover? ------------------------------
+- [0ba5cd95] What's next after creating a pull request? ------------------------------------------
+- [aacc2321] When contributing to Django it's very important that your code changes don't introduce bugs into other areas of Django. One way to check that Django still works after you make your changes is by running Django's test suite. If all the tests still pass, then you can be reasonably sure that your changes work and haven't broken other parts of Django. If you've never run Django's test suite before, it's a good idea to run it once beforehand to get familiar with its output.
+- [ce91b04a] When you're done previewing the changes, hit the ``q`` key to return to the command line. If the diff looked okay, it's time to commit the changes.
+- [bbdbf489] While Django's test suite is running, you'll see a stream of characters representing the status of each test as it completes. ``E`` indicates that an error was raised during a test, and ``F`` indicates that a test's assertions failed. Both of these are considered to be test failures. Meanwhile, ``x`` and ``s`` indicate expected failures and skipped tests, respectively. Dots indicate passing tests.
+- [d421a1bf] Who's this tutorial for? ------------------------
+- [39241187] Working on an approved new feature ==================================
+- [14a29374] Writing Documentation =====================
+- [5317f239] Writing a test for ticket #99999 --------------------------------
+- [d869c082] Writing some tests for your ticket ==================================
+- [810d541b] Writing the code for your ticket ================================
+- [f0dc9cdd] You can choose any name that you want for the branch, "ticket_99999" is an example. All changes made in this branch will be specific to the ticket and won't affect the main copy of the code that we cloned earlier.
+- [e032bfa7] You can create a pull request by visiting the `Django GitHub page <https://github.com/django/django/>`_. You'll see your branch under "Your recently pushed branches". Click "Compare & pull request" next to it.
+- [11ec72c2] You have to activate the virtual environment whenever you open a new terminal window.
+- [3f79c521] __ https://code.djangoproject.com/query?status=new&status=reopened&has_patch=0&easy=1&col=id&col=summary&col=status&col=owner&col=type&col=milestone&order=priority __ https://code.djangoproject.com/query?status=new&status=reopened&needs_better_patch=1&easy=1&col=id&col=summary&col=status&col=owner&col=type&col=milestone&order=priority __ https://code.djangoproject.com/query?status=new&status=reopened&needs_tests=1&easy=1&col=id&col=summary&col=status&col=owner&col=type&col=milestone&order=priority
+- [3913fe75] __ https://diveintopython3.net/unit-testing.html
+- [8f2cdeb4fca1bdd2-2] __ https://djangoci.com
+- [feb0bd11] __ https://en.wikipedia.org/wiki/Test-driven_development
+- [10b2fe62] __ https://git-scm.com/download

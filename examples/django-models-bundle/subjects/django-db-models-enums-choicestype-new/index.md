@@ -1,9 +1,9 @@
 # django/db/models/enums::ChoicesType.__new__
 
-- Subject: django/db/models/enums::ChoicesType.__new__ (id `a64d0c91-1772-4296-9dce-42bcd3f6ebd6`)
+- Subject: django/db/models/enums::ChoicesType.__new__ (id `ecde5b10-4c58-462c-81dc-982af9d12717`)
 - Kind: method
 - Parent: [django/db/models/enums](../django-db-models-enums/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

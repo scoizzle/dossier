@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_extra_select
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_extra_select (id `82ce5418-8d36-4bb1-9dd0-4f2364af2c91`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_extra_select (id `7104158f-073f-4883-94d1-245b1b8e8f92`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

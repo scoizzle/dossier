@@ -1,6 +1,6 @@
 # Fact 2ee227a8
 
-Store id: d31bc6fe-b687-4df7-9c34-302604ac0994
+Store id: 141aa41e-b390-4d01-934f-c7cb0e97b896
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_subquery(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5116580+00:00`
+- posted_at: `2026-11-09T23:31:55.7695680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 272,
     "symbol": "BaseExpression.contains_subquery"
   },
-  "id": "d31bc6fe-b687-4df7-9c34-302604ac0994",
+  "id": "141aa41e-b390-4d01-934f-c7cb0e97b896",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5116580+00:00"
+    "posted_at": "2026-11-09T23:31:55.7695680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15be7068-9032-4c8d-b7a7-e13c3a494b6a",
+  "subject_id": "75a7ce49-7a1c-418e-a413-90a4e5079156",
   "subject_name": "django/db/models/expressions::BaseExpression.contains_subquery",
   "tags": [
     "entity:method",

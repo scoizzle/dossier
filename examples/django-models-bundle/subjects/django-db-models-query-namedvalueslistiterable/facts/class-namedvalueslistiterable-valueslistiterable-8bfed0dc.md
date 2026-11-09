@@ -1,6 +1,6 @@
 # Fact 8bfed0dc
 
-Store id: 4aa14cd7-131c-4cae-9e33-9129f934c04b
+Store id: 2033161b-8790-4b65-9d30-da00882a661a
 
 ## Text
 
@@ -20,7 +20,7 @@ class NamedValuesListIterable(ValuesListIterable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2469090+00:00`
+- posted_at: `2026-11-09T23:32:04.2747850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 304,
     "symbol": "NamedValuesListIterable"
   },
-  "id": "4aa14cd7-131c-4cae-9e33-9129f934c04b",
+  "id": "2033161b-8790-4b65-9d30-da00882a661a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2469090+00:00"
+    "posted_at": "2026-11-09T23:32:04.2747850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c1d84687-849b-4084-a8c7-f0093c353a60",
+  "subject_id": "50b003ba-5d84-4b08-bde1-b48a86a8fc4c",
   "subject_name": "django/db/models/query::NamedValuesListIterable",
   "tags": [
     "entity:class"

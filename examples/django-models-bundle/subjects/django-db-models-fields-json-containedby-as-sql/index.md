@@ -1,9 +1,9 @@
 # django/db/models/fields/json::ContainedBy.as_sql
 
-- Subject: django/db/models/fields/json::ContainedBy.as_sql (id `b65530a5-bd5d-405b-b4c9-48d676254843`)
+- Subject: django/db/models/fields/json::ContainedBy.as_sql (id `1e762c58-dccc-4e33-8561-627a6fda1356`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

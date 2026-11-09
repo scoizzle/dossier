@@ -1,6 +1,6 @@
 # Fact 73cb0c9a
 
-Store id: 740f9f48-fcd5-4c4b-85cc-3bf858c3688b
+Store id: 92d51f9a-3d68-447c-8108-8f06bcebdffe
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ForeignKeyDeferredAttribute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9500290+00:00`
+- posted_at: `2026-11-09T23:31:59.5992420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "740f9f48-fcd5-4c4b-85cc-3bf858c3688b",
+  "id": "92d51f9a-3d68-447c-8108-8f06bcebdffe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9500290+00:00"
+    "posted_at": "2026-11-09T23:31:59.5992420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ForeignKeyDeferredAttribute"
       },
       "rel": "contains",
-      "target": "b5615a27-c528-44a8-89ec-bd8c99b8415f"
+      "target": "31428215-6b37-4931-84de-b634a12070f4"
     }
   ],
   "status": "live",
-  "subject_id": "ab7c02b3-8e61-4183-bee7-c417a3a67ad2",
+  "subject_id": "468ed079-81c3-4570-9307-d21a1d74776a",
   "subject_name": "django/db/models/fields/related_descriptors",
   "tags": [
     "entity:class"

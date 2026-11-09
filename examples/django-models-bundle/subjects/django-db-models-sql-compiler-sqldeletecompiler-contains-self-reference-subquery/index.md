@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLDeleteCompiler.contains_self_reference_subquery
 
-- Subject: django/db/models/sql/compiler::SQLDeleteCompiler.contains_self_reference_subquery (id `0286f532-9db0-455e-96a1-c2b35316173d`)
+- Subject: django/db/models/sql/compiler::SQLDeleteCompiler.contains_self_reference_subquery (id `3222b545-de37-4dfa-a51b-5670d1c23add`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

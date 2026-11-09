@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/libgdal
 
-- Subject: django/contrib/gis/gdal/libgdal (id `9e0d0650-e06f-4add-ab60-94b89498c661`)
+- Subject: django/contrib/gis/gdal/libgdal (id `5abeb0e3-b5aa-4a5f-a40a-48e66cd313c3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 866 tokens
-- Facts shown: 21 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1047 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - lib_path = settings.GDAL_LIBRARY_PATH except (AttributeError, ImportError, ImproperlyConfigured, OSError): lib_path = None [f52e7104]
 - lwingdal = WinDLL(lib_path) [57225b49]
@@ -32,6 +32,7 @@
 - import logging import os import re from ctypes import CDLL, CFUNCTYPE, c_char_p, c_int from ctypes.util import find_library [8ab9c7f1]
 - logger = logging.getLogger("django.contrib.gis") [e92fc94cc00bbb3c-3]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [4c0986f2] [4b8f5f01]
+- [4c0986f2] if lib_path: lib_names = None elif os.name == "nt": # Windows NT shared libraries lib_names = [ "gdal313", "gdal312", "gdal311", "gdal310", "gdal309", "gdal308", "gdal307", "gdal306", "gdal305", "gdal304", "gdal303", ] elif os.name == "posix": # *NIX library names. lib_names = [ "gdal", "GDAL", "gdal3.13.0", "gdal3.12.0", "gdal3.11.0", "gdal3.10.0", "gdal3.9.0", "gdal3.8.0", "gdal3.7.0", "gdal3.6.0", "gdal3.5.0", "gdal3.4.0", "gdal3.3.0", ] else: raise ImproperlyConfigured('GDAL is unsupported on OS "%s".' % os.name)
+- [4b8f5f01] set_error_handler = function("CPLSetErrorHandler", [CPLErrorHandler], CPLErrorHandler) set_error_handler(err_handler)

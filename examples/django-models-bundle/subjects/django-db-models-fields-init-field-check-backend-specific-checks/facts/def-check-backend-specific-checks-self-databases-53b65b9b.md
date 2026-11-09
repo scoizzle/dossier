@@ -1,6 +1,6 @@
 # Fact 53b65b9b
 
-Store id: 45bc1960-d2fa-48da-998b-0c3d390cf3f7
+Store id: 488bbee6-0b42-4206-a99b-9dc400c34916
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_backend_specific_checks(self, databases=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2840970+00:00`
+- posted_at: `2026-11-09T23:31:56.4366630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 518,
     "symbol": "Field._check_backend_specific_checks"
   },
-  "id": "45bc1960-d2fa-48da-998b-0c3d390cf3f7",
+  "id": "488bbee6-0b42-4206-a99b-9dc400c34916",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2840970+00:00"
+    "posted_at": "2026-11-09T23:31:56.4366630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e07ea67-0625-4e75-8283-17bfc0d04e36",
+  "subject_id": "e3cb3a59-1e0a-4465-94f2-1a14af228d14",
   "subject_name": "django/db/models/fields/__init__::Field._check_backend_specific_checks",
   "tags": [
     "entity:method"

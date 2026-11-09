@@ -1,9 +1,9 @@
 # django/db/models/signals::ModelSignal._lazy_method
 
-- Subject: django/db/models/signals::ModelSignal._lazy_method (id `4d064a78-803a-4086-b4fe-173dc2d4d23b`)
+- Subject: django/db/models/signals::ModelSignal._lazy_method (id `757c5fe2-9c0b-4865-97b4-d1f6e078fc77`)
 - Kind: method
 - Parent: [django/db/models/signals](../django-db-models-signals/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 5bc5fc1a
 
-Store id: 2d118de5-1f4a-4b07-a375-6ad612d07c3a
+Store id: 197e9da0-418b-420a-8d05-10bb56fe355c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_upload_to(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2353960+00:00`
+- posted_at: `2026-11-09T23:31:57.3957030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 293,
     "symbol": "FileField._check_upload_to"
   },
-  "id": "2d118de5-1f4a-4b07-a375-6ad612d07c3a",
+  "id": "197e9da0-418b-420a-8d05-10bb56fe355c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2353960+00:00"
+    "posted_at": "2026-11-09T23:31:57.3957030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9a99a8a8-73ce-47f2-bfa5-3eee3e0451f7",
+  "subject_id": "5236b992-8679-40ad-8ad0-12c1fd9723b7",
   "subject_name": "django/db/models/fields/files::FileField._check_upload_to",
   "tags": [
     "entity:method"

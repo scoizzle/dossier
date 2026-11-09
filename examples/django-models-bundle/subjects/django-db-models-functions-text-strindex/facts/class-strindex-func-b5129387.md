@@ -1,6 +1,6 @@
 # Fact b5129387
 
-Store id: e1c7b7ca-7368-471d-95c1-5c4539f7ad30
+Store id: b3015e9c-4b5e-4770-8279-7bad9346f3f1
 
 ## Text
 
@@ -20,7 +20,7 @@ class StrIndex(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1982020+00:00`
+- posted_at: `2026-11-09T23:32:02.2988840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 330,
     "symbol": "StrIndex"
   },
-  "id": "e1c7b7ca-7368-471d-95c1-5c4539f7ad30",
+  "id": "b3015e9c-4b5e-4770-8279-7bad9346f3f1",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1982020+00:00"
+    "posted_at": "2026-11-09T23:32:02.2988840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae141f1f-c104-4514-a906-d99406a7ce17",
+  "subject_id": "a76fe82e-da57-401b-98b0-31611e50a736",
   "subject_name": "django/db/models/functions/text::StrIndex",
   "tags": [
     "entity:class"

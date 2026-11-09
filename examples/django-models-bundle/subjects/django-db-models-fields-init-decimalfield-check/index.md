@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DecimalField.check
 
-- Subject: django/db/models/fields/__init__::DecimalField.check (id `b8decbc0-b0ea-4ade-a7b8-82ac8afac698`)
+- Subject: django/db/models/fields/__init__::DecimalField.check (id `33d77ae4-7b8d-49a5-b948-0e620dd84aef`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

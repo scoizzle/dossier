@@ -1,6 +1,6 @@
 # Fact c992bac2
 
-Store id: 676f98b2-7016-4ab0-a2fc-11d901a6550c
+Store id: 0f27b2c9-98b1-4280-a9eb-9261d149eed6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _parse_expressions(self, *expressions)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.3821440+00:00`
+- posted_at: `2026-11-09T23:32:02.4994830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 55,
     "symbol": "UUID7._parse_expressions"
   },
-  "id": "676f98b2-7016-4ab0-a2fc-11d901a6550c",
+  "id": "0f27b2c9-98b1-4280-a9eb-9261d149eed6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.3821440+00:00"
+    "posted_at": "2026-11-09T23:32:02.4994830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dfec22de-909b-4298-bc70-ac4b038da7f9",
+  "subject_id": "3d8ba75f-36ff-4f91-91bb-47002078067e",
   "subject_name": "django/db/models/functions/uuid::UUID7._parse_expressions",
   "tags": [
     "entity:method"

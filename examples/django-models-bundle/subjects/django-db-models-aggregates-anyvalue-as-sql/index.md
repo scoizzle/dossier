@@ -1,9 +1,9 @@
 # django/db/models/aggregates::AnyValue.as_sql
 
-- Subject: django/db/models/aggregates::AnyValue.as_sql (id `0bb7df4e-3743-4a25-9c5f-d314d72b3f7b`)
+- Subject: django/db/models/aggregates::AnyValue.as_sql (id `21c02609-2729-4adc-8297-36172c209b8f`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/db/models/fetch_modes
 
-- Subject: django/db/models/fetch_modes (id `230223ed-51fc-4c08-9739-30d82f27c3c1`)
+- Subject: django/db/models/fetch_modes (id `f8e0e3b5-43b0-4f06-860b-a7321ec7819a`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 68 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

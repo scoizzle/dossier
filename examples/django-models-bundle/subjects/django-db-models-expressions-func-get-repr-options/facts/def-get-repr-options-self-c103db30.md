@@ -1,6 +1,6 @@
 # Fact c103db30
 
-Store id: 1b360519-6071-4eda-a6ac-8e6c8c6c0e9d
+Store id: 5a8f7e60-38c0-44d7-8c66-10e27eb36e9c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_repr_options(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5783170+00:00`
+- posted_at: `2026-11-09T23:31:55.8533880+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1087,
     "symbol": "Func._get_repr_options"
   },
-  "id": "1b360519-6071-4eda-a6ac-8e6c8c6c0e9d",
+  "id": "5a8f7e60-38c0-44d7-8c66-10e27eb36e9c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5783170+00:00"
+    "posted_at": "2026-11-09T23:31:55.8533880+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "95c63d91-7ee6-47b6-8b4f-6c64d27cff88",
+  "subject_id": "1e8ba4ac-0651-45f8-a35f-d23d25356173",
   "subject_name": "django/db/models/expressions::Func._get_repr_options",
   "tags": [
     "entity:method"

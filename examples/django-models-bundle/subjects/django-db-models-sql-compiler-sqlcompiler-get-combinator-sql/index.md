@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_combinator_sql
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_combinator_sql (id `af7b8bb1-b1b9-4ef6-a54a-280aac01fd2e`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_combinator_sql (id `37724854-dd78-49d7-ac44-ad6d249dae2d`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

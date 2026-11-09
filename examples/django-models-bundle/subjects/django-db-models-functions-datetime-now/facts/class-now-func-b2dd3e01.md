@@ -1,6 +1,6 @@
 # Fact b2dd3e01
 
-Store id: b1e346d8-5854-4641-81a8-0be8f50dd558
+Store id: 45d47923-40d1-42f7-a0c6-739b272e7874
 
 ## Text
 
@@ -20,7 +20,7 @@ class Now(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1580710+00:00`
+- posted_at: `2026-11-09T23:32:01.2271160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 213,
     "symbol": "Now"
   },
-  "id": "b1e346d8-5854-4641-81a8-0be8f50dd558",
+  "id": "45d47923-40d1-42f7-a0c6-739b272e7874",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1580710+00:00"
+    "posted_at": "2026-11-09T23:32:01.2271160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79e1cae9-64cd-48c6-b9ab-8872936995c9",
+  "subject_id": "151d7bcc-3141-4539-87b6-821274cafde6",
   "subject_name": "django/db/models/functions/datetime::Now",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.unref_alias
 
-- Subject: django/db/models/sql/query::Query.unref_alias (id `891c01c8-ca49-41ce-92d5-cf1fbd22c1cd`)
+- Subject: django/db/models/sql/query::Query.unref_alias (id `8eaac3d0-763a-4381-9517-a2467b381ca7`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

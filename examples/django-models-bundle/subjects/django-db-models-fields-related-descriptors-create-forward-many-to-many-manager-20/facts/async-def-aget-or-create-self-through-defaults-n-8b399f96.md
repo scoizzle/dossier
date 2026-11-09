@@ -1,6 +1,6 @@
 # Fact 8b399f96
 
-Store id: 80e7445e-4a46-454e-84a1-852764e9878d
+Store id: 94890969-0e93-422e-89b8-3c78a506921f
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aget_or_create(self, *, through_defaults=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9289750+00:00`
+- posted_at: `2026-11-09T23:31:59.5296910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1471,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.aget_or_create"
   },
-  "id": "80e7445e-4a46-454e-84a1-852764e9878d",
+  "id": "94890969-0e93-422e-89b8-3c78a506921f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9289750+00:00"
+    "posted_at": "2026-11-09T23:31:59.5296910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d9ad5ece-bcdd-40ea-a22b-ef2a7575217e",
+  "subject_id": "dced2d16-91c3-42ed-93af-e7f1b7efacbd",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aget_or_create",
   "tags": [
     "entity:method",

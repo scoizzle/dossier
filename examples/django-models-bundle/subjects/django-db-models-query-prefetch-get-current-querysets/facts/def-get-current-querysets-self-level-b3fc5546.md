@@ -1,6 +1,6 @@
 # Fact b3fc5546
 
-Store id: eacc9993-d177-431a-bb3a-df7920666ca3
+Store id: 8cb777bb-88ac-4676-aa99-4edab2d3db36
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_current_querysets(self, level)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8576790+00:00`
+- posted_at: `2026-11-09T23:32:04.8059970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2617,
     "symbol": "Prefetch.get_current_querysets"
   },
-  "id": "eacc9993-d177-431a-bb3a-df7920666ca3",
+  "id": "8cb777bb-88ac-4676-aa99-4edab2d3db36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8576790+00:00"
+    "posted_at": "2026-11-09T23:32:04.8059970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e61e05e6-9db4-4c19-97a8-80743b6d882e",
+  "subject_id": "85c79610-8a45-4232-8803-e7c751d3d152",
   "subject_name": "django/db/models/query::Prefetch.get_current_querysets",
   "tags": [
     "entity:method"

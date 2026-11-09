@@ -1,6 +1,6 @@
 # Fact 027fcbea
 
-Store id: 3f53d209-f0d3-4862-9bf1-93500af9f2f2
+Store id: d56d6e16-7887-4b5c-883c-ad478fd3f27f
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManyToManyField(RelatedField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4407490+00:00`
+- posted_at: `2026-11-09T23:31:58.8253700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1458,
     "symbol": "ManyToManyField"
   },
-  "id": "3f53d209-f0d3-4862-9bf1-93500af9f2f2",
+  "id": "d56d6e16-7887-4b5c-883c-ad478fd3f27f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4407490+00:00"
+    "posted_at": "2026-11-09T23:31:58.8253700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7ee0be24-8273-4a13-840b-28c9ea537604",
+  "subject_id": "42ef2b96-d5fa-431c-82a6-55ba4fa22ede",
   "subject_name": "django/db/models/fields/related::ManyToManyField",
   "tags": [
     "entity:class"

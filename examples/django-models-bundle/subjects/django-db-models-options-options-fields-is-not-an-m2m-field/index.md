@@ -1,9 +1,9 @@
 # django/db/models/options::Options.fields.is_not_an_m2m_field
 
-- Subject: django/db/models/options::Options.fields.is_not_an_m2m_field (id `00c6b7ae-69c0-48a6-933a-921dbef3c2b7`)
+- Subject: django/db/models/options::Options.fields.is_not_an_m2m_field (id `5272a6a3-f658-4949-9e2b-c349df7eaba6`)
 - Kind: function
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

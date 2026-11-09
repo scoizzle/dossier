@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/postgis/base
 
-- Subject: django/contrib/gis/db/backends/postgis/base (id `b995416c-46c8-425a-a4b1-9a253f592578`)
+- Subject: django/contrib/gis/db/backends/postgis/base (id `45b591ee-0d0a-4dae-9732-7f2c9fe69913`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 23 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1453 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - cls.GeometryDumper = type( "GeometryDumper", (base_dumper,), {"oid": geo_oid} ) cls.GeographyDumper = type( "GeographyDumper", (base_dumper,), {"oid": geog_oid} ) cls.RasterDumper = type( "RasterDumper", (BaseTextDumper,), {"oid": raster_oid} ) [81246af1]
 - PostGISTextDumper, PostGISBinaryDumper = postgis_adapters( geo_oid, geog_oid, raster_oid ) pg_connection.adapters.register_dumper(PostGISAdapter, PostGISTextDumper) pg_connection.adapters.register_dumper(PostGISAdapter, PostGISBinaryDumper) [2dad9681]
@@ -34,6 +34,13 @@
 - class RasterType: pass [cfe4ae33]
 - def get_new_connection(self, conn_params): connection = super().get_new_connection(conn_params) if is_psycopg3: self.register_geometry_adapters(connection) return connection [ccb81859]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [df2cea5e] [0bd290f0] [d71a6fba044908db] [5544fafd] [589aa68e] [0ef97426] [e2007df7] [2ef6c341]
+- [df2cea5e] def __init__(self, *args, **kwargs): if kwargs.get("alias", "") == NO_DB_ALIAS: # Don't initialize PostGIS-specific stuff for non-db connections. self.features_class = PsycopgDatabaseFeatures self.ops_class = PsycopgDatabaseOperations self.introspection_class = PsycopgDatabaseIntrospection
+- [0bd290f0] def prepare_database(self): super().prepare_database() # Check that postgis extension is installed. with self.cursor() as cursor: cursor.execute("SELECT 1 FROM pg_extension WHERE extname = %s", ["postgis"]) if bool(cursor.fetchone()): return cursor.execute("CREATE EXTENSION IF NOT EXISTS postgis") if is_psycopg3: # Ensure adapters are registers if PostGIS is used within this # connection. self.register_geometry_adapters(self.connection, True)
+- [d71a6fba044908db] if is_psycopg3:
+- [5544fafd] class DatabaseWrapper(PsycopgDatabaseWrapper): SchemaEditorClass = PostGISSchemaEditor features_class = DatabaseFeatures ops_class = PostGISOperations introspection_class = PostGISIntrospection
+- [589aa68e] from .adapter import PostGISAdapter from .features import DatabaseFeatures from .introspection import PostGISIntrospection from .operations import PostGISOperations from .schema import PostGISSchemaEditor
+- [0ef97426] from django.db.backends.base.base import NO_DB_ALIAS from django.db.backends.postgresql.base import DatabaseWrapper as PsycopgDatabaseWrapper from django.db.backends.postgresql.features import ( DatabaseFeatures as PsycopgDatabaseFeatures, ) from django.db.backends.postgresql.introspection import ( DatabaseIntrospection as PsycopgDatabaseIntrospection, ) from django.db.backends.postgresql.operations import ( DatabaseOperations as PsycopgDatabaseOperations, ) from django.db.backends.postgresql.psycopg_any import is_psycopg3
+- [e2007df7] from functools import lru_cache
+- [2ef6c341] if is_psycopg3: from psycopg.adapt import Dumper from psycopg.pq import Format from psycopg.types import TypeInfo from psycopg.types.string import TextBinaryLoader, TextLoader

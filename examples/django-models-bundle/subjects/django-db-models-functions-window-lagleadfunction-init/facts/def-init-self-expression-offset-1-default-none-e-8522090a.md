@@ -1,6 +1,6 @@
 # Fact 8522090a
 
-Store id: e12d5d14-b7e9-44a1-9517-aaaa5ee1d561
+Store id: 3f1cfac7-231e-470d-9163-767b6a675703
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, offset=1, default=None, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5615560+00:00`
+- posted_at: `2026-11-09T23:32:02.6908330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 40,
     "symbol": "LagLeadFunction.__init__"
   },
-  "id": "e12d5d14-b7e9-44a1-9517-aaaa5ee1d561",
+  "id": "3f1cfac7-231e-470d-9163-767b6a675703",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5615560+00:00"
+    "posted_at": "2026-11-09T23:32:02.6908330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a36b110-df83-46c3-8511-60bd92bb64d9",
+  "subject_id": "fb116746-d65f-4e01-a837-a94f69bc49bc",
   "subject_name": "django/db/models/functions/window::LagLeadFunction.__init__",
   "tags": [
     "entity:method"

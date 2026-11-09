@@ -1,6 +1,6 @@
 # Fact ed8bf698
 
-Store id: 5a881ae0-17e5-4b64-8a75-f1d66948fc40
+Store id: 136109ca-ff4e-4c0a-a72a-718c3f86544a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_add_plan(self, db, source_field_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9420940+00:00`
+- posted_at: `2026-11-09T23:31:59.5775950+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1549,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._get_add_plan"
   },
-  "id": "5a881ae0-17e5-4b64-8a75-f1d66948fc40",
+  "id": "136109ca-ff4e-4c0a-a72a-718c3f86544a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9420940+00:00"
+    "posted_at": "2026-11-09T23:31:59.5775950+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cc3bc27b-291f-4691-96fc-4dc331892f67",
+  "subject_id": "e3b7ddeb-bb93-4259-999b-b389ed3505b7",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._get_add_plan",
   "tags": [
     "entity:method"

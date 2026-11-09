@@ -1,6 +1,6 @@
 # Fact 0e5f05dd
 
-Store id: 19a0424c-6009-4845-80cc-031f688bf508
+Store id: f797a6cb-3ffe-40b1-a47f-c2783ca4eaf1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RowRange
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "19a0424c-6009-4845-80cc-031f688bf508",
+  "id": "f797a6cb-3ffe-40b1-a47f-c2783ca4eaf1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RowRange"
       },
       "rel": "contains",
-      "target": "e157405e-536d-4c4f-a17a-6dbaa7a034c3"
+      "target": "75bdafa9-f8a5-42aa-9e35-26dd885ab8e5"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

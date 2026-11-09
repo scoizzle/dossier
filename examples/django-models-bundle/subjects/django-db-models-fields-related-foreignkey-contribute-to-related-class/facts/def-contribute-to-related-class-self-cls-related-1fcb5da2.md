@@ -1,6 +1,6 @@
 # Fact 1fcb5da2
 
-Store id: d25009b2-e29c-48b8-bc33-02c8e4d4dedd
+Store id: f232c0ca-21ab-4a2b-ba8d-07fe7cc4f44a
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_related_class(self, cls, related)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4054740+00:00`
+- posted_at: `2026-11-09T23:31:58.7754220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1291,
     "symbol": "ForeignKey.contribute_to_related_class"
   },
-  "id": "d25009b2-e29c-48b8-bc33-02c8e4d4dedd",
+  "id": "f232c0ca-21ab-4a2b-ba8d-07fe7cc4f44a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4054740+00:00"
+    "posted_at": "2026-11-09T23:31:58.7754220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "84fcd808-0e78-4b33-8e53-de98ce273389",
+  "subject_id": "06b3dc80-c98c-4e9c-9b3d-7ac1fb366b93",
   "subject_name": "django/db/models/fields/related::ForeignKey.contribute_to_related_class",
   "tags": [
     "entity:method"

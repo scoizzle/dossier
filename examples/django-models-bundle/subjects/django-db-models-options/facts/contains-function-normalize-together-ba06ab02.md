@@ -1,6 +1,6 @@
 # Fact ba06ab02
 
-Store id: b27ccd93-568d-4e07-9c9e-267f79dd8ee3
+Store id: 545bc758-db54-40f5-a3a9-0667095618f3
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function normalize_together
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9893150+00:00`
+- posted_at: `2026-11-09T23:32:04.0597530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b27ccd93-568d-4e07-9c9e-267f79dd8ee3",
+  "id": "545bc758-db54-40f5-a3a9-0667095618f3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9893150+00:00"
+    "posted_at": "2026-11-09T23:32:04.0597530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "normalize_together"
       },
       "rel": "contains",
-      "target": "e8c0332e-80d1-46c4-9a36-04da90d6f831"
+      "target": "2c6cdf64-8d9b-4971-bbb7-825909d6d681"
     }
   ],
   "status": "live",
-  "subject_id": "ec365036-d28a-49a0-bc90-1af41b0df7c4",
+  "subject_id": "5abd8127-25aa-41b5-b865-250ec14238cc",
   "subject_name": "django/db/models/options",
   "tags": [
     "entity:function"

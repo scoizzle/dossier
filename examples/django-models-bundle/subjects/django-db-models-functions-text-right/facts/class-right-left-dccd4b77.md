@@ -1,6 +1,6 @@
 # Fact dccd4b77
 
-Store id: 4db9b80d-eeae-4917-8625-ab76abfa5c3c
+Store id: 88c5c105-4799-4495-8b0a-c9bc1d53d3dd
 
 ## Text
 
@@ -20,7 +20,7 @@ class Right(Left)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1618270+00:00`
+- posted_at: `2026-11-09T23:32:02.2624040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 282,
     "symbol": "Right"
   },
-  "id": "4db9b80d-eeae-4917-8625-ab76abfa5c3c",
+  "id": "88c5c105-4799-4495-8b0a-c9bc1d53d3dd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1618270+00:00"
+    "posted_at": "2026-11-09T23:32:02.2624040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1f61c1af-e583-4895-ae5f-3487568d5138",
+  "subject_id": "792ad56c-1c0e-4909-ad88-1daab60a17c3",
   "subject_name": "django/db/models/functions/text::Right",
   "tags": [
     "entity:class"

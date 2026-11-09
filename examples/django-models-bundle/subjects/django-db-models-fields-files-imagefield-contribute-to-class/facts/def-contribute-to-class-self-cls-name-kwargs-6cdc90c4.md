@@ -1,6 +1,6 @@
 # Fact 6cdc90c4
 
-Store id: 7dfcc959-b034-4ea3-98a6-578c04e67f58
+Store id: 8dd5d64e-fd2a-4e7c-bc73-95f17a168de8
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2725240+00:00`
+- posted_at: `2026-11-09T23:31:57.4404390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 468,
     "symbol": "ImageField.contribute_to_class"
   },
-  "id": "7dfcc959-b034-4ea3-98a6-578c04e67f58",
+  "id": "8dd5d64e-fd2a-4e7c-bc73-95f17a168de8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2725240+00:00"
+    "posted_at": "2026-11-09T23:31:57.4404390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0a339e5a-f389-40c6-9366-44d42ede2b81",
+  "subject_id": "f7425896-041d-45d0-8de6-6b3696bac828",
   "subject_name": "django/db/models/fields/files::ImageField.contribute_to_class",
   "tags": [
     "entity:method"

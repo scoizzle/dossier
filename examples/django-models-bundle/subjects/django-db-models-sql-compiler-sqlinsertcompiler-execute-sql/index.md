@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLInsertCompiler.execute_sql
 
-- Subject: django/db/models/sql/compiler::SQLInsertCompiler.execute_sql (id `4b3e6b25-8494-4bf6-8f1d-9a98f1c70026`)
+- Subject: django/db/models/sql/compiler::SQLInsertCompiler.execute_sql (id `6e58068d-a2ca-41a1-a3a2-59f2319173a9`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

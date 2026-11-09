@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::CharField.cast_db_type
 
-- Subject: django/db/models/fields/__init__::CharField.cast_db_type (id `93007d80-35dd-4f9a-88ea-7beee751c08b`)
+- Subject: django/db/models/fields/__init__::CharField.cast_db_type (id `9b822ebe-0aa5-4328-a95e-4c2e9117da1e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

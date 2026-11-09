@@ -1,14 +1,14 @@
 # django/db/models/sql/subqueries
 
-- Subject: django/db/models/sql/subqueries (id `00fea9ce-43e4-44b2-b18d-cbd6c152daac`)
+- Subject: django/db/models/sql/subqueries (id `0148b5de-b994-4cac-8b5f-230be08b435f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 14 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1448 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - More than one physical query may be executed if there are a lot of values in pk_list. """ # number of objects deleted num_deleted = 0 field = self.get_meta().pk for offset in range(0, len(pk_list), GET_ITERATOR_CHUNK_SIZE): self.clear_where() self.add_filter( f"{field.attname}__in", pk_list[offset : offset + GET_ITERATOR_CHUNK_SIZE], ) num_deleted += self.do_query( self.get_meta().db_table, self.where, using=using ) return num_deleted [8a623e33]
 - Update are coalesced so that only one update query per ancestor is run. """ self.related_updates.setdefault(model, []).append((field, None, value)) [31dc0951]
@@ -25,6 +25,16 @@
 - def clone(self): obj = super().clone() obj.related_updates = self.related_updates.copy() return obj [946bbd6e]
 - """ Query subclasses which provide extra functionality beyond simple data retrieval. """ [f7453741]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [0e837a48] [737d3c8f] [6209c872] [318f17ff] [f88288d8] [49a6c20d] [512413f0] [17573ca5] [caa181c5] [6c8897f0] [0c31bef3]
+- [0e837a48] def delete_batch(self, pk_list, using): """ Set up and execute delete queries for all the objects in pk_list.
+- [737d3c8f] def do_query(self, table, where, using): self.alias_map = {table: self.alias_map[table]} self.where = where return self.get_compiler(using).execute_sql(ROW_COUNT)
+- [6209c872] def get_related_updates(self): """ Return a list of query objects: one for each update required to an ancestor model. Each query will have the same filtering conditions as the current query but will only update a single table. """ if not self.related_updates: return [] result = [] for model, values in self.related_updates.items(): query = UpdateQuery(model) query.values = values if self.related_ids is not None: query.add_filter("pk__in", self.related_ids[model]) result.append(query) return result
+- [318f17ff] def insert_values(self, fields, objs, raw=False): self.fields = fields self.objs = objs self.raw = raw
+- [f88288d8] def update_batch(self, pk_list, values, using): self.add_update_values(values) for offset in range(0, len(pk_list), GET_ITERATOR_CHUNK_SIZE): self.clear_where() self.add_filter( "pk__in", pk_list[offset : offset + GET_ITERATOR_CHUNK_SIZE] ) self.get_compiler(using).execute_sql(NO_RESULTS)
+- [49a6c20d] __all__ = ["DeleteQuery", "UpdateQuery", "InsertQuery", "AggregateQuery"]
+- [512413f0] class AggregateQuery(Query): """ Take another query as a parameter to the FROM clause and only select the elements in the provided list. """
+- [17573ca5] class DeleteQuery(Query): """A DELETE SQL query."""
+- [caa181c5] class InsertQuery(Query): compiler = "SQLInsertCompiler"
+- [6c8897f0] class UpdateQuery(Query): """An UPDATE SQL query."""
+- [0c31bef3] from django.core.exceptions import FieldError from django.db.models.sql.constants import ( GET_ITERATOR_CHUNK_SIZE, NO_RESULTS, ROW_COUNT, ) from django.db.models.sql.query import Query

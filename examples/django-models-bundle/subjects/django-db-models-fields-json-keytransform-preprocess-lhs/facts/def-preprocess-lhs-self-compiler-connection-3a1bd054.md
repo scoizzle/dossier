@@ -1,6 +1,6 @@
 # Fact 3a1bd054
 
-Store id: 1684dbca-fe89-48a6-87ba-7b3a18a87530
+Store id: ad9efa42-86e6-49dd-9338-4cc440176316
 
 ## Text
 
@@ -20,7 +20,7 @@ def preprocess_lhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7067980+00:00`
+- posted_at: `2026-11-09T23:31:57.9658960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 504,
     "symbol": "KeyTransform.preprocess_lhs"
   },
-  "id": "1684dbca-fe89-48a6-87ba-7b3a18a87530",
+  "id": "ad9efa42-86e6-49dd-9338-4cc440176316",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7067980+00:00"
+    "posted_at": "2026-11-09T23:31:57.9658960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a48d526a-3e77-4b19-84a5-3afb20901de4",
+  "subject_id": "30a13723-da21-498b-bd00-daea4bf784d9",
   "subject_name": "django/db/models/fields/json::KeyTransform.preprocess_lhs",
   "tags": [
     "entity:method"

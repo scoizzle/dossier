@@ -1,9 +1,9 @@
 # django/db/models/lookups::UUIDIExact
 
-- Subject: django/db/models/lookups::UUIDIExact (id `c4aba017-b2e4-4e8a-bd85-df5b034d19bf`)
+- Subject: django/db/models/lookups::UUIDIExact (id `3c198ab3-e8d9-4701-bf2a-d0bf6c5fdd78`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

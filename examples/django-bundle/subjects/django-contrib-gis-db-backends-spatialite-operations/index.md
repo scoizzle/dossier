@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/spatialite/operations
 
-- Subject: django/contrib/gis/db/backends/spatialite/operations (id `c58e5544-b66c-48da-96e9-84b7debafb48`)
+- Subject: django/contrib/gis/db/backends/spatialite/operations (id `3916a019-4fc7-46ab-89df-49276a87f0de`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 15 of 32
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2059 tokens
+- Facts shown: 31 of 32
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def converter(value, expression, connection): if value is not None: return GEOSGeometryBase( read(value, max_geom_collections=None), geom_class ) [65534eec]
 - return SpatialiteGeometryColumns [6be235db]
@@ -26,6 +26,21 @@
 - def geos_version(self): "Return the version of GEOS used by SpatiaLite as a string." return self._get_spatialite_func("geos_version()") [b059423d]
 - def get_distance(self, f, value, lookup_type): """ Return the distance parameters for the given geometry field, lookup value, and lookup type. """ if not value: return [] value = value[0] if isinstance(value, Distance): if f.geodetic(self.connection): if lookup_type == "dwithin": raise ValueError( "Only numeric values of degree units are allowed on " "geographic DWithin queries." ) dist_param = value.m else: dist_param = getattr( value, Distance.unit_attname(f.units_name(self.connection)) ) else: dist_param = value return [dist_param] [15f7f17b]
 
-## Beyond the budget
+## All facts
 
-16 more facts did not fit in the budget: [3e092ab9] [9842a32c] [054c8555] [c9be3c67] [56c74106] [d016ff22] [9fb04e05] [2fc097e2] [94561c64] [94d6c75d] [4b915308] [8c9a1e98] [cac84513] [e7c71b15] [bcbeac10] [1e7debdc]
+- [3e092ab9] def get_geometry_converter(self, expression): geom_class = expression.output_field.geom_class read = wkb_r().read
+- [9842a32c] def lwgeom_version(self): """Return the version of LWGEOM library used by SpatiaLite.""" return self._get_spatialite_func("lwgeom_version()")
+- [054c8555] def proj_version(self): """Return the version of the PROJ library used by SpatiaLite.""" return self._get_spatialite_func("proj4_version()")
+- [c9be3c67] def spatial_aggregate_name(self, agg_name): """ Return the spatial aggregate SQL template and function for the given Aggregate instance. """ agg_name = "unionagg" if agg_name.lower() == "union" else agg_name.lower() return getattr(self, agg_name)
+- [56c74106] def spatial_ref_sys(self): from django.contrib.gis.db.backends.spatialite.models import ( SpatialiteSpatialRefSys, )
+- [d016ff22] def spatialite_version(self): "Return the SpatiaLite library version as a string." return self._get_spatialite_func("spatialite_version()")
+- [9fb04e05] def spatialite_version_tuple(self): """ Return the SpatiaLite version as a tuple (version string, major, minor, subminor). """ version = self.spatialite_version() return (version, *get_version_tuple(version))
+- [2fc097e2] disallowed_aggregates = (models.Extent3D,)
+- [94561c64] from_text = "GeomFromText"
+- [94d6c75d] function_names = { "AsWKB": "St_AsBinary", "BoundingCircle": "GEOSMinimumBoundingCircle", "ForcePolygonCW": "ST_ForceLHR", "FromWKB": "ST_GeomFromWKB", "FromWKT": "ST_GeomFromText", "IsEmpty": "ST_IsEmpty", "Length": "ST_Length", "LineLocatePoint": "ST_Line_Locate_Point", "NumDimensions": "ST_NDims", "NumPoints": "ST_NPoints", "Reverse": "ST_Reverse", "Scale": "ScaleCoords", "Translate": "ST_Translate", "Union": "ST_Union", }
+- [4b915308] gis_operators = { # Binary predicates "equals": SpatialiteNullCheckOperator(func="Equals"), "disjoint": SpatialiteNullCheckOperator(func="Disjoint"), "touches": SpatialiteNullCheckOperator(func="Touches"), "crosses": SpatialiteNullCheckOperator(func="Crosses"), "within": SpatialiteNullCheckOperator(func="Within"), "overlaps": SpatialiteNullCheckOperator(func="Overlaps"), "contains": SpatialiteNullCheckOperator(func="Contains"), "intersects": SpatialiteNullCheckOperator(func="Intersects"), "relate": SpatialiteNullCheckOperator(func="Relate"), "coveredby": SpatialiteNullCheckOperator(func="CoveredBy"), "covers": SpatialiteNullCheckOperator(func="Covers"), # Returns true if B's bounding box completely contains A's bounding # box. "contained": SpatialOperator(func="MbrWithin"), # Returns true if A's bounding box completely contains B's bounding # box. "bbcontains": SpatialOperator(func="MbrContains"), # Returns true if A's bounding box overlaps B's bounding box. "bboverlaps": SpatialOperator(func="MbrOverlaps"), # These are implemented here as synonyms for Equals "same_as": SpatialiteNullCheckOperator(func="Equals"), "exact": SpatialiteNullCheckOperator(func="Equals"), # Distance predicates "dwithin": SpatialOperator(func="PtDistWithin"), }
+- [8c9a1e98] select = "CAST (AsEWKB(%s) AS BLOB)"
+- [cac84513] """ SQL functions reference lists: https://www.gaia-gis.it/gaia-sins/spatialite-sql-4.3.0.html """
+- [e7c71b15] class SpatiaLiteOperations(BaseSpatialOperations, DatabaseOperations): name = "spatialite" spatialite = True
+- [bcbeac10] class SpatialiteNullCheckOperator(SpatialOperator): def as_sql(self, connection, lookup, template_params, sql_params): sql, params = super().as_sql(connection, lookup, template_params, sql_params) return "%s > 0" % sql, params
+- [1e7debdc] from django.contrib.gis.db import models from django.contrib.gis.db.backends.base.operations import BaseSpatialOperations from django.contrib.gis.db.backends.spatialite.adapter import SpatiaLiteAdapter from django.contrib.gis.db.backends.utils import SpatialOperator from django.contrib.gis.geos.geometry import GEOSGeometry, GEOSGeometryBase from django.contrib.gis.geos.prototypes.io import wkb_r from django.contrib.gis.measure import Distance from django.core.exceptions import ImproperlyConfigured from django.db.backends.sqlite3.operations import DatabaseOperations from django.utils.functional import cached_property from django.utils.version import get_version_tuple

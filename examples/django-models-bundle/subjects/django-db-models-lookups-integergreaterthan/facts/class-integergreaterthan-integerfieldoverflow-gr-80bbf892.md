@@ -1,6 +1,6 @@
 # Fact 80bbf892
 
-Store id: 74ba8635-3696-4084-9478-b502c47c175d
+Store id: 1047c62a-836c-4a6e-8d9e-b81e0ea40669
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerGreaterThan(IntegerFieldOverflow, GreaterThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1397140+00:00`
+- posted_at: `2026-11-09T23:32:03.3036980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 480,
     "symbol": "IntegerGreaterThan"
   },
-  "id": "74ba8635-3696-4084-9478-b502c47c175d",
+  "id": "1047c62a-836c-4a6e-8d9e-b81e0ea40669",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1397140+00:00"
+    "posted_at": "2026-11-09T23:32:03.3036980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47accdfb-59be-42f7-833c-9d999d12edef",
+  "subject_id": "5e0f80d7-dc43-4723-9c99-2dcba9e5797d",
   "subject_name": "django/db/models/lookups::IntegerGreaterThan",
   "tags": [
     "entity:class",

@@ -1,6 +1,6 @@
 # Fact 33033648
 
-Store id: ba81c888-c627-43be-888f-a967076b77bc
+Store id: 82c1573d-ed34-47c9-91a2-b383337b504a
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_filtered_relation(self, filtered_relation, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3937580+00:00`
+- posted_at: `2026-11-09T23:32:06.9577730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1732,
     "symbol": "Query.add_filtered_relation"
   },
-  "id": "ba81c888-c627-43be-888f-a967076b77bc",
+  "id": "82c1573d-ed34-47c9-91a2-b383337b504a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3937580+00:00"
+    "posted_at": "2026-11-09T23:32:06.9577730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "537d3f97-69f4-4a3e-8b46-02986eac3838",
+  "subject_id": "4c58f030-c6ac-4e2f-b0a1-c62c083fdf5e",
   "subject_name": "django/db/models/sql/query::Query.add_filtered_relation",
   "tags": [
     "entity:method"

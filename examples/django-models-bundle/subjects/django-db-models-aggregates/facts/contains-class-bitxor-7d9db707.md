@@ -1,6 +1,6 @@
 # Fact 7d9db707
 
-Store id: 1ef1139c-fb34-4abe-b9cd-c5cb41c7dffd
+Store id: 85e318e5-95a4-4354-b17a-4bb1d385aa3c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BitXor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1ef1139c-fb34-4abe-b9cd-c5cb41c7dffd",
+  "id": "85e318e5-95a4-4354-b17a-4bb1d385aa3c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BitXor"
       },
       "rel": "contains",
-      "target": "ed80d922-3016-4135-a50d-8159dfb4b6dd"
+      "target": "c5556ffc-d813-4446-ae5f-9f85b192fe2a"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

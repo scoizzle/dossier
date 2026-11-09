@@ -1,6 +1,6 @@
 # Fact b948c82a
 
-Store id: 177811c2-01fa-43cf-8cf8-b1929c778976
+Store id: 7e5a7333-6c49-4ad0-81d3-7396d855ce15
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aprefetch_related_objects(model_instances, *related_lookups)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8759200+00:00`
+- posted_at: `2026-11-09T23:32:04.8271980+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2802,
     "symbol": "aprefetch_related_objects"
   },
-  "id": "177811c2-01fa-43cf-8cf8-b1929c778976",
+  "id": "7e5a7333-6c49-4ad0-81d3-7396d855ce15",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8759200+00:00"
+    "posted_at": "2026-11-09T23:32:04.8271980+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "12dc9d5b-cdc5-4d8f-afa7-49a0f329cb67",
+  "subject_id": "c48a67cc-07a6-45e5-b307-f2cca3c36d97",
   "subject_name": "django/db/models/query::aprefetch_related_objects",
   "tags": [
     "entity:async_function",

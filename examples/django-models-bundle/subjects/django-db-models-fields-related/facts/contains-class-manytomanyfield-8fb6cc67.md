@@ -1,6 +1,6 @@
 # Fact 8fb6cc67
 
-Store id: caaba178-78d5-4401-bd3d-9e4c874ff6d6
+Store id: 0dcd39ea-cafa-4b9c-a7a3-a86cdeff24cd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ManyToManyField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.5223050+00:00`
+- posted_at: `2026-11-09T23:31:58.9119250+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "caaba178-78d5-4401-bd3d-9e4c874ff6d6",
+  "id": "0dcd39ea-cafa-4b9c-a7a3-a86cdeff24cd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.5223050+00:00"
+    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ManyToManyField"
       },
       "rel": "contains",
-      "target": "7ee0be24-8273-4a13-840b-28c9ea537604"
+      "target": "42ef2b96-d5fa-431c-82a6-55ba4fa22ede"
     }
   ],
   "status": "live",
-  "subject_id": "4e7b69d4-8947-48ba-b9c1-385f0d6a435f",
+  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:class"

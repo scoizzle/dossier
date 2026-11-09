@@ -1,6 +1,6 @@
 # Fact e16baad1
 
-Store id: b2e1f2a5-baf6-4bbc-8f79-f702e0807b92
+Store id: 72fbbf93-877b-473a-9a92-2c5b08202e31
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_path_to_parent(self, parent)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8890940+00:00`
+- posted_at: `2026-11-09T23:32:04.0165820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 754,
     "symbol": "Options.get_path_to_parent"
   },
-  "id": "b2e1f2a5-baf6-4bbc-8f79-f702e0807b92",
+  "id": "72fbbf93-877b-473a-9a92-2c5b08202e31",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8890940+00:00"
+    "posted_at": "2026-11-09T23:32:04.0165820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be6c4d74-1159-4a25-aee1-80185267ab7f",
+  "subject_id": "d3edbcfe-ee3c-4787-b813-765c14407dc1",
   "subject_name": "django/db/models/options::Options.get_path_to_parent",
   "tags": [
     "entity:method"

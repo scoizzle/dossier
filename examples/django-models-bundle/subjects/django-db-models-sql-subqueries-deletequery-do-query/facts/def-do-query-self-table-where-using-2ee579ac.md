@@ -1,6 +1,6 @@
 # Fact 2ee579ac
 
-Store id: 16085e18-30ce-4a97-845a-5f6541f123f8
+Store id: 761d69e9-0ae3-485b-8031-bfe9664f006e
 
 ## Text
 
@@ -20,7 +20,7 @@ def do_query(self, table, where, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7106230+00:00`
+- posted_at: `2026-11-09T23:32:07.3444530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 22,
     "symbol": "DeleteQuery.do_query"
   },
-  "id": "16085e18-30ce-4a97-845a-5f6541f123f8",
+  "id": "761d69e9-0ae3-485b-8031-bfe9664f006e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7106230+00:00"
+    "posted_at": "2026-11-09T23:32:07.3444530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6da767af-d117-495d-81a1-7ae4c5e9e185",
+  "subject_id": "1e818c53-ae88-453a-8cd7-de50f1a1f37a",
   "subject_name": "django/db/models/sql/subqueries::DeleteQuery.do_query",
   "tags": [
     "entity:method"

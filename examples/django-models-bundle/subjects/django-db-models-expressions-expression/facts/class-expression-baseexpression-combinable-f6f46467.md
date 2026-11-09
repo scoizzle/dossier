@@ -1,6 +1,6 @@
 # Fact f6f46467
 
-Store id: 0114a72e-d8e3-4f4e-b16f-eb86ffd8b451
+Store id: 9ea6b0d7-87e1-4a98-927d-ff2e4246d0f5
 
 ## Text
 
@@ -20,7 +20,7 @@ class Expression(BaseExpression, Combinable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5354410+00:00`
+- posted_at: `2026-11-09T23:31:55.7971080+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 519,
     "symbol": "Expression"
   },
-  "id": "0114a72e-d8e3-4f4e-b16f-eb86ffd8b451",
+  "id": "9ea6b0d7-87e1-4a98-927d-ff2e4246d0f5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5354410+00:00"
+    "posted_at": "2026-11-09T23:31:55.7971080+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "846aa182-9506-47bb-8c2c-7d739f8dfe01",
+  "subject_id": "ba9b11a9-892f-47d5-96a1-dbbf82ab43be",
   "subject_name": "django/db/models/expressions::Expression",
   "tags": [
     "entity:class",

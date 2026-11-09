@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::unnest
 
-- Subject: django/db/models/fields/composite::unnest (id `9149dc15-2f26-410f-b6de-667708ca1215`)
+- Subject: django/db/models/fields/composite::unnest (id `4d8ccf57-2293-4b4d-82a9-fb5f5fcae52f`)
 - Kind: function
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

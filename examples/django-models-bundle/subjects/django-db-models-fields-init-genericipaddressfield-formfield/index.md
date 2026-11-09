@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::GenericIPAddressField.formfield
 
-- Subject: django/db/models/fields/__init__::GenericIPAddressField.formfield (id `8b2212d2-9372-462b-972a-f571b9a37a80`)
+- Subject: django/db/models/fields/__init__::GenericIPAddressField.formfield (id `56b8d136-680a-49ea-856c-9ad659df5cbd`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

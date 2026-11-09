@@ -1,8 +1,8 @@
 # django/contrib/auth/migrations/0010_alter_group_name_max_length
 
-- Subject: django/contrib/auth/migrations/0010_alter_group_name_max_length (id `71dfe207-a30a-4d35-97d4-9e65a23a48ba`)
+- Subject: django/contrib/auth/migrations/0010_alter_group_name_max_length (id `276b2719-d57f-4c3a-a397-9f596d8a500f`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 107 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

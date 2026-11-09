@@ -1,9 +1,9 @@
 # django/db/models/fields/related::OneToOneField.formfield
 
-- Subject: django/db/models/fields/related::OneToOneField.formfield (id `0b39b28d-6203-4fb5-ab70-382065808ad4`)
+- Subject: django/db/models/fields/related::OneToOneField.formfield (id `98cf212b-6545-482c-b2ff-09463b563e5e`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 05553b23
 
-Store id: 7f1345bd-cd96-4259-a454-ae2d31bf3423
+Store id: 687ad430-b52b-4a32-bd05-aed2af227bc7
 
 ## Text
 
@@ -20,7 +20,7 @@ class LessThan(FieldGetDbPrepValueMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1194970+00:00`
+- posted_at: `2026-11-09T23:32:03.2770940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 435,
     "symbol": "LessThan"
   },
-  "id": "7f1345bd-cd96-4259-a454-ae2d31bf3423",
+  "id": "687ad430-b52b-4a32-bd05-aed2af227bc7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1194970+00:00"
+    "posted_at": "2026-11-09T23:32:03.2770940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3d967008-40e4-4c89-a80b-f9abd2fe3f6a",
+  "subject_id": "e2d989f8-8e5d-4733-be52-a181e9b270b6",
   "subject_name": "django/db/models/lookups::LessThan",
   "tags": [
     "entity:class",

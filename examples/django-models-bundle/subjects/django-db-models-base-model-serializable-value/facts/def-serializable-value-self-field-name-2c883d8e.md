@@ -1,6 +1,6 @@
 # Fact 2c883d8e
 
-Store id: 51b88e40-d504-4a09-aa97-2de23db7a62a
+Store id: 97d8eeeb-11fd-4bed-96b5-a56e541ac75b
 
 ## Text
 
@@ -20,7 +20,7 @@ def serializable_value(self, field_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3377540+00:00`
+- posted_at: `2026-11-09T23:31:53.7395700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 824,
     "symbol": "Model.serializable_value"
   },
-  "id": "51b88e40-d504-4a09-aa97-2de23db7a62a",
+  "id": "97d8eeeb-11fd-4bed-96b5-a56e541ac75b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3377540+00:00"
+    "posted_at": "2026-11-09T23:31:53.7395700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0fb469ba-1034-4616-aa1a-11d94b8b2430",
+  "subject_id": "e35182b4-5269-4bd7-9094-05bea2a1c860",
   "subject_name": "django/db/models/base::Model.serializable_value",
   "tags": [
     "entity:method"

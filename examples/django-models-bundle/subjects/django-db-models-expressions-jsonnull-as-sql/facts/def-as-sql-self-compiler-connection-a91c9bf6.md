@@ -1,6 +1,6 @@
 # Fact a91c9bf6
 
-Store id: a85c763a-e533-42d1-a9e1-ba9292062739
+Store id: fc429ac4-e8ed-4af3-b5c6-66010538b787
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6048180+00:00`
+- posted_at: `2026-11-09T23:31:55.8688470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1256,
     "symbol": "JSONNull.as_sql"
   },
-  "id": "a85c763a-e533-42d1-a9e1-ba9292062739",
+  "id": "fc429ac4-e8ed-4af3-b5c6-66010538b787",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6048180+00:00"
+    "posted_at": "2026-11-09T23:31:55.8688470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7fd22698-f62c-4784-8450-6aa5353daaa8",
+  "subject_id": "be4fbc11-694d-4bca-82c5-101ae4a11332",
   "subject_name": "django/db/models/expressions::JSONNull.as_sql",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/expressions::Ref.get_refs
 
-- Subject: django/db/models/expressions::Ref.get_refs (id `d0f5435a-0aaf-4b23-af65-9c379e841503`)
+- Subject: django/db/models/expressions::Ref.get_refs (id `ff228803-d960-4605-b27b-6f48f129234b`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

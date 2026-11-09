@@ -1,6 +1,6 @@
 # Fact db7f0117
 
-Store id: 6643f483-582f-4b1f-8a48-55f6571af47f
+Store id: a8c7fbf2-1c5c-4dc9-8508-bb1c4d8a447b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_image_library_installed(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2684660+00:00`
+- posted_at: `2026-11-09T23:31:57.4364640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 442,
     "symbol": "ImageField._check_image_library_installed"
   },
-  "id": "6643f483-582f-4b1f-8a48-55f6571af47f",
+  "id": "a8c7fbf2-1c5c-4dc9-8508-bb1c4d8a447b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2684660+00:00"
+    "posted_at": "2026-11-09T23:31:57.4364640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e645d035-d950-4f94-b682-d554cc2b4fa2",
+  "subject_id": "873aa27e-afe5-4d2a-8179-896297395ed6",
   "subject_name": "django/db/models/fields/files::ImageField._check_image_library_installed",
   "tags": [
     "entity:method"

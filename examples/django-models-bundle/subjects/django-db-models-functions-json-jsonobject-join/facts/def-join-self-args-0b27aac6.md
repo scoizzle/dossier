@@ -1,6 +1,6 @@
 # Fact 0b27aac6
 
-Store id: 7eb887ee-c6fd-4b7d-9c93-799aab149a58
+Store id: 47da7004-8174-4c22-84be-4f9c68fbeea3
 
 ## Text
 
@@ -20,7 +20,7 @@ def join(self, args)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3888620+00:00`
+- posted_at: `2026-11-09T23:32:01.4919780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 85,
     "symbol": "JSONObject.join"
   },
-  "id": "7eb887ee-c6fd-4b7d-9c93-799aab149a58",
+  "id": "47da7004-8174-4c22-84be-4f9c68fbeea3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3888620+00:00"
+    "posted_at": "2026-11-09T23:32:01.4919780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9beddb21-d7da-4aab-bf2c-fb425e15872e",
+  "subject_id": "30c66d54-64ab-4367-a552-38fd1715e98e",
   "subject_name": "django/db/models/functions/json::JSONObject.join",
   "tags": [
     "entity:method"

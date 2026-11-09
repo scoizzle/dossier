@@ -1,6 +1,6 @@
 # Fact 620f6cd4
 
-Store id: c3c73eb5-6354-400d-8d72-cfb70d2dcc3a
+Store id: 98ba10c9-4fa3-4e52-b67e-88dfbadd7ac1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class StringAgg
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c3c73eb5-6354-400d-8d72-cfb70d2dcc3a",
+  "id": "98ba10c9-4fa3-4e52-b67e-88dfbadd7ac1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "StringAgg"
       },
       "rel": "contains",
-      "target": "1cb1fc0e-ee2d-46e2-9577-4cb7a0047f22"
+      "target": "bcaaf417-5b29-4378-a770-eecf68af8121"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

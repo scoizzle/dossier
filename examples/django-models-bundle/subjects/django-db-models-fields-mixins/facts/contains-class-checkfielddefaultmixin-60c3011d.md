@@ -1,6 +1,6 @@
 # Fact 60c3011d
 
-Store id: edfee73e-6768-40f8-9408-204bb5defa6d
+Store id: 90869bc0-fc9a-44ea-a6a0-3680e48d6701
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CheckFieldDefaultMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.9458660+00:00`
+- posted_at: `2026-11-09T23:31:58.2419470+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "edfee73e-6768-40f8-9408-204bb5defa6d",
+  "id": "90869bc0-fc9a-44ea-a6a0-3680e48d6701",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.9458660+00:00"
+    "posted_at": "2026-11-09T23:31:58.2419470+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CheckFieldDefaultMixin"
       },
       "rel": "contains",
-      "target": "b4adb9fa-c8b1-46c3-b147-7c16e641b8c1"
+      "target": "f40871a9-4be7-44ab-81aa-ed0e0189065f"
     }
   ],
   "status": "live",
-  "subject_id": "f217444f-cd9b-4e43-b7ea-301a8c96a000",
+  "subject_id": "545aae78-c545-4908-8b58-6187837cd02e",
   "subject_name": "django/db/models/fields/mixins",
   "tags": [
     "entity:class"

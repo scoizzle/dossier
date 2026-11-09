@@ -1,14 +1,14 @@
 # django/core/files/uploadhandler
 
-- Subject: django/core/files/uploadhandler (id `4c17b85d-2351-4ad6-90a8-33e9529ec2fc`)
+- Subject: django/core/files/uploadhandler (id `a552b17b-7136-410d-8df9-344814f5f20b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 17 of 40
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1968 tokens
+- Facts shown: 40 of 40
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - :input_data: An object that supports reading via .read(). :META: ``request.META``. :content_length: The (integer) value of the Content-Length header from the client. :boundary: The boundary from the Content-Type header. Be sure to prepend two '--'. """ pass [17573f61]
 - Parameters: [a2108a8b]
@@ -28,6 +28,28 @@
 - def receive_data_chunk(self, raw_data, start): self.file.write(raw_data) [056b7bb5]
 - pass [7655780f0d17b825-34]
 
-## Beyond the budget
+## All facts
 
-23 more facts did not fit in the budget: [e1e38f66] [8507544f] [d4836f28] [9298ffa0] [b602d2db] [558f82dc] [39f5fcad] [4c5be6f5] [b98348ed] [7655780f0d17b825-35] [7655780f0d17b825-36] [9869f90c] [10a5d6b2] [01563511] [db1cd839] [7bcc16a3] [0284473f] [7884cda8] [a5607ef6] [d6594aae] [995cabbd] [53640b7f] [d8c6fc5f]
+- [e1e38f66] def handle_raw_input( self, input_data, META, content_length, boundary, encoding=None ): """ Use the content_length to signal whether or not this handler should be used. """ # If the post is too large, we cannot use the Memory handler. # Content-Length can be absent or understated (for example # `Transfer-Encoding: chunked` on ASGI), so for seekable streams (such # as SpooledTemporaryFile on ASGI), check the actual size.
+- [8507544f] def new_file( self, field_name, file_name, content_type, content_length, charset=None, content_type_extra=None, ): """ Signal that a new file has been started.
+- [d4836f28] def new_file(self, *args, **kwargs): """ Create the file object to append to as data is coming in. """ super().new_file(*args, **kwargs) self.file = TemporaryUploadedFile( self.file_name, self.content_type, 0, self.charset, self.content_type_extra )
+- [9298ffa0] def new_file(self, *args, **kwargs): super().new_file(*args, **kwargs) if self.activated: self.file = BytesIO() raise StopFutureHandlers()
+- [b602d2db] def receive_data_chunk(self, raw_data, start): """ Receive data from the streamed upload parser. ``start`` is the position in the file of the chunk. """ raise NotImplementedError( "subclasses of FileUploadHandler must provide a receive_data_chunk() method" )
+- [558f82dc] def receive_data_chunk(self, raw_data, start): """Add the data to the BytesIO file.""" if self.activated: self.file.write(raw_data) else: return raw_data
+- [39f5fcad] def upload_complete(self): """ Signal that the upload is complete. Subclasses should perform cleanup that is necessary for this handler. """ pass
+- [4c5be6f5] def upload_interrupted(self): """ Signal that the upload was interrupted. Subclasses should perform cleanup that is necessary for this handler. """ pass
+- [b98348ed] def upload_interrupted(self): if hasattr(self, "file"): temp_location = self.file.temporary_file_path() try: self.file.close() os.remove(temp_location) except FileNotFoundError: pass
+- [7655780f0d17b825-35] pass
+- [7655780f0d17b825-36] pass
+- [9869f90c] """ Base file upload handler classes, and the built-in concrete subclasses """
+- [10a5d6b2] __all__ = [ "UploadFileException", "StopUpload", "SkipFile", "FileUploadHandler", "TemporaryFileUploadHandler", "MemoryFileUploadHandler", "load_handler", "StopFutureHandlers", ]
+- [01563511] class FileUploadHandler: """ Base class for streaming upload handlers. """
+- [db1cd839] class MemoryFileUploadHandler(FileUploadHandler): """ File upload handler to stream uploads into memory (used for small files). """
+- [7bcc16a3] class SkipFile(UploadFileException): """ This exception is raised by an upload handler that wants to skip a given file. """
+- [0284473f] class StopFutureHandlers(UploadFileException): """ Upload handlers that have handled a file and do not want future handlers to run should raise this exception instead of returning None. """
+- [7884cda8] class StopUpload(UploadFileException): """ This exception is raised when an upload must abort. """
+- [a5607ef6] class TemporaryFileUploadHandler(FileUploadHandler): """ Upload handler that streams data into a temporary file. """
+- [d6594aae] class UploadFileException(Exception): """ Any error having to do with uploading files. """
+- [995cabbd] def load_handler(path, *args, **kwargs): """ Given a path to a handler, return an instance of that handler.
+- [53640b7f] from django.conf import settings from django.core.files.uploadedfile import InMemoryUploadedFile, TemporaryUploadedFile from django.utils.module_loading import import_string
+- [d8c6fc5f] import os from io import BytesIO, UnsupportedOperation

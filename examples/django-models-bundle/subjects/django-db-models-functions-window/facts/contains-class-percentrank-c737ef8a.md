@@ -1,6 +1,6 @@
 # Fact c737ef8a
 
-Store id: 4593f605-6946-403f-b7e4-0df5063f2271
+Store id: ef10f713-bf9e-4865-a676-2e549286572a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PercentRank
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4593f605-6946-403f-b7e4-0df5063f2271",
+  "id": "ef10f713-bf9e-4865-a676-2e549286572a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PercentRank"
       },
       "rel": "contains",
-      "target": "e36f0f8f-0f0c-4192-b5f3-1d0ca0c4bcc1"
+      "target": "f651ef97-c095-4777-86a2-42dab8472206"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

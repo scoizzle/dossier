@@ -1,14 +1,14 @@
 # docs/intro/tutorial07
 
-- Subject: docs/intro/tutorial07 (id `08b0df05-34bb-40e9-b864-2e49ff3d884d`)
+- Subject: docs/intro/tutorial07 (id `d0b630dc-c991-429f-b192-3436c2762b6f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 24 of 117
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4824 tokens
+- Facts shown: 103 of 117
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ python -c "import django; print(django.__path__)" [5b004fb8]
 - # ... admin.site.register(Choice) [3ec0132b]
@@ -35,6 +35,84 @@
 - .. _ref-customizing-your-projects-templates: [037773a9]
 - .. admonition:: Organizing templates [15d0d005]
 
-## Beyond the budget
+## All facts
 
-79 more facts did not fit in the budget: [d20d6183] [bc5c887c] [dbb2ef17dd903b2b-8] [685d15dfb6eb2285-44] [bf67fa15468f979f-2] [20257edb57d397a8-2] [ce20b11c82955ef6-5] [9c127d039bb0d767-2] [6699141e] [ad974c0c] [bcc9c369] [b55c68fb] [ef6ccd53] [0482eb4b] [60dfb8e9] [641805dd] [6b4a5e54e001d097-14] [73e3efb0] [a8ca4443] [309a8951] [5f063fd2] [6e60517c] [67a49769] [ef002c98] [cd2f5235] [fa1834ea] [631154c1] [2fe3a5d5] [f0d5f759] [dffcdad3] [08b50a3c] [c9ae8445] [0da268e3] [4516d6ee] [fda8653d] [e29557c5] [fb938f36] [92284d45] [018c581c] [d4dfc1e6] [f474c8df] [88f32091] [0f514642] [1d382d81] [57843cf3] [52f8926f] [98031d91] [984aed3c] [4e752115] [761554ef] [e34a77e5] [3d103173] [fef8b8fb] [192a138e] [a54366a4] [2b739680] [510a75f5] [217e09b0] [0d5aff09] [cdeee7af] [34fe7beb] [9b062922] [63d67bf8] [db688598] [3e7b11f0] [144556be] [cac21871] [a7408945] [b44e0373] [52b0f939] [005086b5] [f208a6e2] [d51cd9d5] [34c388e3] [453fbc33] [c8c2870e] [a590c620] [2bf73b32] [945907f8]
+- [d20d6183] The following :class:`~django.contrib.admin.ModelAdmin` options allow further customization of change lists: :attr:`~django.contrib.admin.ModelAdmin.list_per_page`, :attr:`~django.contrib.admin.ModelAdmin.search_fields`, :attr:`~django.contrib.admin.ModelAdmin.date_hierarchy`, and :attr:`~django.contrib.admin.ModelAdmin.list_display`.
+- [bc5c887c] .. admonition:: Where are the Django source files?
+- [dbb2ef17dd903b2b-8] .. admonition:: Where to get help:
+- [685d15dfb6eb2285-44] .. code-block:: html+django
+- [bf67fa15468f979f-2] .. code-block:: python :caption: ``mysite/settings.py``
+- [20257edb57d397a8-2] .. code-block:: python :caption: ``polls/admin.py``
+- [ce20b11c82955ef6-5] .. code-block:: python :caption: ``polls/models.py``
+- [9c127d039bb0d767-2] .. image:: _images/admin04t.png :alt: Polls change list page
+- [6699141e] .. image:: _images/admin07.png :alt: Fields have been reordered
+- [ad974c0c] .. image:: _images/admin08t.png :alt: Form has fieldsets now
+- [bcc9c369] .. image:: _images/admin09.png :alt: Choice admin page
+- [b55c68fb] .. image:: _images/admin10t.png :alt: Add question page now has choices on it
+- [ef6ccd53] .. image:: _images/admin11t.png :alt: Add question page now has more compact choices
+- [0482eb4b] .. image:: _images/admin12t.png :alt: Polls change list page, updated
+- [60dfb8e9] .. image:: _images/admin13t.png :alt: Polls change list page, updated
+- [641805dd] .. image:: _images/admin14t.png :alt: Additional slot added dynamically
+- [6b4a5e54e001d097-14] .. seealso::
+- [73e3efb0] :setting:`DIRS <TEMPLATES-DIRS>` is a list of filesystem directories to check when loading Django templates; it's a search path.
+- [a8ca4443] ===================================== Writing your first Django app, part 7 =====================================
+- [309a8951] Adding related objects ======================
+- [5f063fd2] Also note the "Add another question" button (displayed as a plus sign) to the right of the "Question" field. Every ``ForeignKey`` relationship gets this button for free. When you click this button, you'll get a popup window with the "Add question" form. If you add a question in that window and click "Save", Django will save the question to the database and dynamically add it as the selected choice on the "Add choice" form you're looking at.
+- [6e60517c] And speaking of forms with dozens of fields, you might want to split the form up into fieldsets:
+- [67a49769] Astute readers will ask: But if :setting:`DIRS <TEMPLATES-DIRS>` was empty by default, how was Django finding the default admin templates? The answer is that, since :setting:`APP_DIRS <TEMPLATES-APP_DIRS>` is set to ``True``, Django automatically looks for a ``templates/`` subdirectory within each application package, for use as a fallback (don't forget that ``django.contrib.admin`` is an application).
+- [ef002c98] At the end of the three current slots you will find an "Add another Choice" link. If you click on it, a new slot will be added. If you want to remove the added slot, you can click on the X to the top right of the added slot. This image shows an added slot:
+- [cd2f5235] But, really, this is an inefficient way of adding ``Choice`` objects to the system. It'd be better if you could add a bunch of Choices directly when you create the ``Question`` object. Let's make that happen.
+- [fa1834ea] By default, Django displays the ``str()`` of each object. But sometimes it'd be more helpful if we could display individual fields. To do that, use the :attr:`~django.contrib.admin.ModelAdmin.list_display` admin option, which is a list of field names to display, as columns, on the change list page for the object:
+- [631154c1] By default, it displays all the apps in :setting:`INSTALLED_APPS` that have been registered with the admin application, in alphabetical order. You may want to make significant changes to the layout. After all, the index is probably the most important page of the admin, and it should be easy to use.
+- [2fe3a5d5] By registering the ``Question`` model with ``admin.site.register(Question)``, Django was able to construct a default form representation. Often, you'll want to customize how the admin form looks and works. You'll do this by telling Django the options you want when you register the object.
+- [f0d5f759] Clearly, having "Django administration" at the top of each admin page is ridiculous. It's just placeholder text.
+- [dffcdad3] Create a ``templates`` directory in your ``djangotutorial`` directory. Templates can live anywhere on your filesystem that Django can access. (Django runs as whatever user your server runs.) However, keeping your templates within the project is a good convention to follow.
+- [08b50a3c] Customize the admin change list ===============================
+- [c9ae8445] Customize the admin form ========================
+- [0da268e3] Customize the admin index page ==============================
+- [4516d6ee] Customize the admin look and feel =================================
+- [fda8653d] Customizing your *application's* templates ------------------------------------------
+- [e29557c5] Customizing your *project's* templates --------------------------------------
+- [fb938f36] Edit your :file:`polls/admin.py` file again and add an improvement to the ``Question`` change list page: filters using the :attr:`~django.contrib.admin.ModelAdmin.list_filter`. Add the following line to ``QuestionAdmin``::
+- [92284d45] For good measure, let's also include the ``was_published_recently()`` method from :doc:`Tutorial 2 </intro/tutorial02>`:
+- [018c581c] For more information on the properties configurable via the decorator, see :attr:`~django.contrib.admin.ModelAdmin.list_display`.
+- [d4dfc1e6] Here's what it looks like at this point:
+- [f474c8df] In that form, the "Question" field is a select box containing every question in the database. Django knows that a :class:`~django.db.models.ForeignKey` should be represented in the admin as a ``<select>`` box. In our case, only one question exists at this point.
+- [88f32091] It works like this: There are three slots for related Choices -- as specified by ``extra`` -- and each time you come back to the "Change" page for an already-created object, you get another three extra slots.
+- [0f514642] Let's see how this works by reordering the fields on the edit form. Replace the ``admin.site.register(Question)`` line with:
+- [1d382d81] Load the "Add question" page to see how that looks:
+- [57843cf3] Note that any of Django's default admin templates can be overridden. To override a template, do the same thing you did with ``base_site.html`` -- copy it from the default directory into your custom directory, and make changes.
+- [52f8926f] Note that there is an extra "Delete?" column that allows removing rows added using the "Add another Choice" button and rows that have already been saved.
+- [98031d91] Now "Choices" is an available option in the Django admin. The "Add choice" form looks like this:
+- [984aed3c] Now create a directory called ``admin`` inside ``templates``, and copy the template ``admin/base_site.html`` from within the default Django admin template directory in the source code of Django itself (:source:`django/contrib/admin/templates`) into that directory.
+- [4e752115] Now that the Question admin page is looking good, let's make some tweaks to the "change list" page -- the one that displays all the questions in the system.
+- [761554ef] Now the question change list page looks like this:
+- [e34a77e5] Now's also a good time to note that change lists give you free pagination. The default is to display 100 items per page.
+- [3d103173] OK, we have our Question admin page, but a ``Question`` has multiple ``Choice``\s, and the admin page doesn't display choices.
+- [fef8b8fb] On a similar note, you might want to customize the look and feel of the Django admin index page.
+- [192a138e] One small problem, though. It takes a lot of screen space to display all the fields for entering related ``Choice`` objects. For that reason, Django offers a tabular way of displaying inline related objects. To use it, change the ``ChoiceInline`` declaration to read:
+- [a54366a4] Open your settings file (:file:`mysite/settings.py`, remember) and add a :setting:`DIRS <TEMPLATES-DIRS>` option in the :setting:`TEMPLATES` setting:
+- [2b739680] Our poll application is not very complex and doesn't need custom admin templates. But if it grew more sophisticated and required modification of Django's standard admin templates for some of its functionality, it would be more sensible to modify the *application's* templates, rather than those in the *project*. That way, you could include the polls application in any new project and be assured that it would find the custom templates it needed.
+- [510a75f5] Remove the ``register()`` call for the ``Choice`` model. Then, edit the ``Question`` registration code to read:
+- [217e09b0] See the :ref:`template loading documentation <template-loading>` for more information about how Django finds its templates.
+- [0d5aff09] That adds a "Filter" sidebar that lets people filter the change list by the ``pub_date`` field:
+- [cdeee7af] That adds a search box at the top of the change list. When somebody enters search terms, Django will search the ``question_text`` field. You can use as many fields as you'd like -- although because it uses a ``LIKE`` query behind the scenes, limiting the number of search fields to a reasonable number will make it easier for your database to do the search.
+- [34fe7beb] The first element of each tuple in :attr:`~django.contrib.admin.ModelAdmin.fieldsets` is the title of the fieldset. Here's what our form looks like now:
+- [9b062922] The template to customize is ``admin/index.html``. (Do the same as with ``admin/base_site.html`` in the previous section -- copy it from the default directory to your custom template directory). Edit the file, and you'll see it uses a template variable called ``app_list``. That variable contains every installed Django app. Instead of using that, you can hardcode links to object-specific admin pages in whatever way you think is best.
+- [63d67bf8] The type of filter displayed depends on the type of field you're filtering on. Because ``pub_date`` is a :class:`~django.db.models.DateTimeField`, Django knows to give appropriate filter options: "Any date", "Today", "Past 7 days", "This month", "This year".
+- [db688598] Then, edit the file and replace ``{{ site_header|default:_('Django administration') }}`` (including the curly braces) with your own site's name as you see fit. You should end up with a section of code like:
+- [3e7b11f0] There are two ways to solve this problem. The first is to register ``Choice`` with the admin just as we did with ``Question``:
+- [144556be] This is shaping up well. Let's add some search capability::
+- [cac21871] This isn't impressive with only two fields, but for admin forms with dozens of fields, choosing an intuitive order is an important usability detail.
+- [a7408945] This particular change above makes the "Publication date" come before the "Question" field:
+- [b44e0373] This tells Django: "``Choice`` objects are edited on the ``Question`` admin page. By default, provide enough fields for 3 choices."
+- [52b0f939] This template file contains lots of text like ``{% block branding %}`` and ``{{ title }}``. The ``{%`` and ``{{`` tags are part of Django's template language. When Django renders ``admin/base_site.html``, this template language will be evaluated to produce the final HTML page, just like we saw in :doc:`Tutorial 3 </intro/tutorial03>`.
+- [005086b5] This tutorial begins where :doc:`Tutorial 6 </intro/tutorial06>` left off. We're continuing the web-poll application and will focus on customizing Django's automatically-generated admin site that we first explored in :doc:`Tutorial 2 </intro/tutorial02>`.
+- [f208a6e2] We use this approach to teach you how to override templates. In an actual project, you would probably use the :attr:`django.contrib.admin.AdminSite.site_header` attribute to more easily make this particular customization.
+- [d51cd9d5] When you're comfortable with the admin, read :doc:`part 8 of this tutorial </intro/tutorial08>` to learn how to use third-party packages.
+- [34c388e3] With that ``TabularInline`` (instead of ``StackedInline``), the related objects are displayed in a more compact, table-based format:
+- [453fbc33] Yet.
+- [c8c2870e] You can change it, though, using Django's template system. The Django admin is powered by Django itself, and its interfaces use Django's own template system.
+- [a590c620] You can click on the column headers to sort by those values -- except in the case of the ``was_published_recently`` header, because sorting by the output of an arbitrary method is not supported. Also note that the column header for ``was_published_recently`` is, by default, the name of the method (with underscores replaced with spaces), and that each line contains the string representation of the output.
+- [2bf73b32] You can improve that by using the :func:`~django.contrib.admin.display` decorator on that method (extending the :file:`polls/models.py` file that was created in :doc:`Tutorial 2 </intro/tutorial02>`), as follows:
+- [945907f8] You'll follow this pattern -- create a model admin class, then pass it as the second argument to ``admin.site.register()`` -- any time you need to change the admin options for a model.

@@ -1,6 +1,6 @@
 # Fact 75128c0b
 
-Store id: 49df7600-fb46-4a2a-932b-c95bfa3d1b88
+Store id: ca1fa19d-a4bb-4fc8-b51c-1a37da5179ca
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_transform(self, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3253170+00:00`
+- posted_at: `2026-11-09T23:32:00.2630150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 121,
     "symbol": "ForeignObjectRel.get_transform"
   },
-  "id": "49df7600-fb46-4a2a-932b-c95bfa3d1b88",
+  "id": "ca1fa19d-a4bb-4fc8-b51c-1a37da5179ca",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3253170+00:00"
+    "posted_at": "2026-11-09T23:32:00.2630150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be6534d3-6f11-4c3a-b50c-345968475603",
+  "subject_id": "aa8eff00-5f0e-444a-b598-8057fc1b33ec",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.get_transform",
   "tags": [
     "entity:method"

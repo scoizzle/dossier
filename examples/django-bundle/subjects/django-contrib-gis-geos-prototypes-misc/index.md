@@ -1,8 +1,8 @@
 # django/contrib/gis/geos/prototypes/misc
 
-- Subject: django/contrib/gis/geos/prototypes/misc (id `498f0753-4387-4b05-b411-743f28656938`)
+- Subject: django/contrib/gis/geos/prototypes/misc (id `d5bbcbb9-a42c-4e6c-bc60-f76ff34524da`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 366 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

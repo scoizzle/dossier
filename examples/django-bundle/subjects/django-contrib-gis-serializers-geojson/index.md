@@ -1,8 +1,8 @@
 # django/contrib/gis/serializers/geojson
 
-- Subject: django/contrib/gis/serializers/geojson (id `895c4d1c-ced8-48be-b88a-0fde34a065ea`)
+- Subject: django/contrib/gis/serializers/geojson (id `bb99e855-ce4a-48ce-92ab-4ee54b42dfa8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 668 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

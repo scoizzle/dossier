@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Ord.as_mysql
 
-- Subject: django/db/models/functions/text::Ord.as_mysql (id `dc009801-ae9a-4b97-9fe5-033d5571b461`)
+- Subject: django/db/models/functions/text::Ord.as_mysql (id `fe392f89-8e15-4c2c-bb95-3ef1283ea70f`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

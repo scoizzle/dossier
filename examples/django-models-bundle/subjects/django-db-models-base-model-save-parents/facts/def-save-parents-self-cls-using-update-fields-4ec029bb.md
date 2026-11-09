@@ -1,6 +1,6 @@
 # Fact 4ec029bb
 
-Store id: 5d9af755-c8ac-4c0c-90ef-ae3cfdeb3ac1
+Store id: 306f28a6-75c1-4d8f-b6e0-1a93c13c98ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def _save_parents( self, cls, using, update_fields, force_insert, updated_parent
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3400410+00:00`
+- posted_at: `2026-11-09T23:31:53.7429160+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1022,
     "symbol": "Model._save_parents"
   },
-  "id": "5d9af755-c8ac-4c0c-90ef-ae3cfdeb3ac1",
+  "id": "306f28a6-75c1-4d8f-b6e0-1a93c13c98ff",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3400410+00:00"
+    "posted_at": "2026-11-09T23:31:53.7429160+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a23b5eed-d666-48b7-ab06-2765b59112d2",
+  "subject_id": "ba72b385-3407-43d4-a45b-2c877c940772",
   "subject_name": "django/db/models/base::Model._save_parents",
   "tags": [
     "entity:method"

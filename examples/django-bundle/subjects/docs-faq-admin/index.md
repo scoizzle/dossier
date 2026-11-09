@@ -1,14 +1,14 @@
 # docs/faq/admin
 
-- Subject: docs/faq/admin (id `2f6a3234-d941-4985-8b9d-4c7bba97ed15`)
+- Subject: docs/faq/admin (id `1a3edef8-8528-4659-a0a3-217f0332cca4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 15 of 29
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1911 tokens
+- Facts shown: 29 of 29
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - .. _admin-browser-support: [037f79d5]
 - ============== FAQ: The admin ============== [78740fb7]
@@ -26,6 +26,19 @@
 - Inconsistent row counts may be caused by missing foreign key values or a foreign key field incorrectly set to :attr:`null=False <django.db.models.Field.null>`. If you have a record with a :class:`~django.db.models.ForeignKey` pointing to a nonexistent object and that foreign key is included is :attr:`~django.contrib.admin.ModelAdmin.list_display`, the record will not be shown in the admin changelist because the Django model is declaring an integrity constraint that is not implemented at the database level. [418e0f3a]
 - See :ref:`serving the admin files <serving-the-admin-files>` in the "How to use Django with mod_wsgi" documentation. [cd6df392]
 
-## Beyond the budget
+## All facts
 
-14 more facts did not fit in the budget: [0f143fef] [869487ff] [3fb680ba] [e7684c65] [b6f286c8] [299a8de3] [453c46ce] [d1a47f2a] [a2f2333f] [34275423] [cc8e9b6b] [5718643a] [a048d433] [ba760220]
+- [0f143fef] My "list_filter" contains a ManyToManyField, but the filter doesn't display. ============================================================================
+- [869487ff] My admin-site CSS and images showed up fine using the development server, but they're not displaying when using mod_wsgi. =========================================================================================================================
+- [3fb680ba] On mobile and tablet devices, the admin provides a responsive experience for web standards compliant browsers. This includes the major browsers on both Android and iOS.
+- [e7684c65] Some objects aren't appearing in the admin. ===========================================
+- [b6f286c8] The :class:`~django.contrib.admin.ModelAdmin` class also provides customization hooks that allow you to control the visibility and editability of objects in the admin. Using the same trick of extracting the user from the request, the :meth:`~django.contrib.admin.ModelAdmin.get_queryset` and :meth:`~django.contrib.admin.ModelAdmin.has_change_permission` can be used to control the visibility and editability of objects in the admin.
+- [299a8de3] The :class:`~django.contrib.admin.ModelAdmin` class provides customization hooks that allow you to transform an object as it saved, using details from the request. By extracting the current user from the request, and customizing the :meth:`~django.contrib.admin.ModelAdmin.save_model` hook, you can update an object to reflect the user that edited it. See :ref:`the documentation on ModelAdmin methods <model-admin-methods>` for an example.
+- [453c46ce] The admin is intended to be compatible with a wide range of assistive technologies, but there are currently many blockers. The support target is all latest versions of major assistive technologies, including Dragon, JAWS, NVDA, Orca, TalkBack, Voice Control, VoiceOver iOS, VoiceOver macOS, Windows Contrast Themes, ZoomText, and screen magnifiers.
+- [d1a47f2a] The admin provides a fully-functional experience to the recent versions of modern, web standards compliant browsers. On desktop this means Chrome, Edge, Firefox, Opera, Safari, and others.
+- [a2f2333f] The dynamically-generated admin site is ugly! How can I change it? ==================================================================
+- [34275423] The login cookie isn't being set correctly, because the domain of the cookie sent out by Django doesn't match the domain in your browser. Try setting the :setting:`SESSION_COOKIE_DOMAIN` setting to match your domain. For example, if you're going to "https://www.example.com/admin/" in your browser, set ``SESSION_COOKIE_DOMAIN = 'www.example.com'``.
+- [cc8e9b6b] We like it, but if you don't agree, you can modify the admin site's presentation by editing the CSS stylesheet and/or associated image files. The site is built using semantic HTML and plenty of CSS hooks, so any changes you'd like to make should be possible by editing the stylesheet.
+- [5718643a] What assistive technologies are supported for using the admin? ==============================================================
+- [a048d433] What browsers are supported for using the admin? ================================================
+- [ba760220] You've got several options. If you want to piggyback on top of an add/change form that Django automatically generates, you can attach arbitrary JavaScript modules to the page via the model's class Admin :ref:`js parameter <modeladmin-asset-definitions>`. That parameter is a list of URLs, as strings, pointing to JavaScript modules that will be included within the admin form via a ``<script>`` tag.

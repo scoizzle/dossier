@@ -1,6 +1,6 @@
 # Fact c7c82e86
 
-Store id: a090a5cc-24d9-4993-8226-0972ec880702
+Store id: da0baf3b-d01d-4c90-a2b5-56ad0a1a91a8
 
 ## Text
 
@@ -20,7 +20,7 @@ class ForeignObject(RelatedField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3051050+00:00`
+- posted_at: `2026-11-09T23:31:58.6596540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 544,
     "symbol": "ForeignObject"
   },
-  "id": "a090a5cc-24d9-4993-8226-0972ec880702",
+  "id": "da0baf3b-d01d-4c90-a2b5-56ad0a1a91a8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3051050+00:00"
+    "posted_at": "2026-11-09T23:31:58.6596540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8a37ca3a-8a42-482e-b072-2a94df7d9a72",
+  "subject_id": "50063628-5d9d-4993-beaa-5f54c89ac570",
   "subject_name": "django/db/models/fields/related::ForeignObject",
   "tags": [
     "entity:class"

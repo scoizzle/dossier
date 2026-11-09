@@ -1,6 +1,6 @@
 # Fact 886b048a
 
-Store id: 6273b8f6-03c5-4c6f-97b2-ded0e8ae3b41
+Store id: cbec2d06-804a-4b13-bf5b-4376a0707e73
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerFieldExact(IntegerFieldOverflow, Exact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1373130+00:00`
+- posted_at: `2026-11-09T23:32:03.3009130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 475,
     "symbol": "IntegerFieldExact"
   },
-  "id": "6273b8f6-03c5-4c6f-97b2-ded0e8ae3b41",
+  "id": "cbec2d06-804a-4b13-bf5b-4376a0707e73",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1373130+00:00"
+    "posted_at": "2026-11-09T23:32:03.3009130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06d4b457-6acd-4839-8bcc-3f4087965c92",
+  "subject_id": "156c74bb-9f73-4f5c-b2b8-9a7e559361d3",
   "subject_name": "django/db/models/lookups::IntegerFieldExact",
   "tags": [
     "entity:class",

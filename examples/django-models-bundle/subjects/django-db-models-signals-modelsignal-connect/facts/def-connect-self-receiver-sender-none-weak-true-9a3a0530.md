@@ -1,6 +1,6 @@
 # Fact 9a3a0530
 
-Store id: 48e935e6-8c99-4c9c-96d0-c3a863c40150
+Store id: b81b7d27-b365-4105-aada-4bb435fc16bc
 
 ## Text
 
@@ -20,7 +20,7 @@ def connect(self, receiver, sender=None, weak=True, dispatch_uid=None, apps=None
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.3354450+00:00`
+- posted_at: `2026-11-09T23:32:05.3803350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 26,
     "symbol": "ModelSignal.connect"
   },
-  "id": "48e935e6-8c99-4c9c-96d0-c3a863c40150",
+  "id": "b81b7d27-b365-4105-aada-4bb435fc16bc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.3354450+00:00"
+    "posted_at": "2026-11-09T23:32:05.3803350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "526664e9-51de-4255-8ccf-d8ff751ec4c7",
+  "subject_id": "a2610354-8e09-4fac-8e1d-692936a991da",
   "subject_name": "django/db/models/signals::ModelSignal.connect",
   "tags": [
     "entity:method"

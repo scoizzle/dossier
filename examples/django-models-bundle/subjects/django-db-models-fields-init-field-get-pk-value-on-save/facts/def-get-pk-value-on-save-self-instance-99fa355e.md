@@ -1,6 +1,6 @@
 # Fact 99fa355e
 
-Store id: 2c1d9ebe-b35e-4b46-8553-5d3841cd95bd
+Store id: 4d2081e7-6425-47a3-baa5-b71b48bf155b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_pk_value_on_save(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3071430+00:00`
+- posted_at: `2026-11-09T23:31:56.4619030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 787,
     "symbol": "Field.get_pk_value_on_save"
   },
-  "id": "2c1d9ebe-b35e-4b46-8553-5d3841cd95bd",
+  "id": "4d2081e7-6425-47a3-baa5-b71b48bf155b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3071430+00:00"
+    "posted_at": "2026-11-09T23:31:56.4619030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b61c97d5-0072-4f45-a979-70e10293cb3f",
+  "subject_id": "28716e52-c800-43d4-bf88-077cdece2b2e",
   "subject_name": "django/db/models/fields/__init__::Field.get_pk_value_on_save",
   "tags": [
     "entity:method"

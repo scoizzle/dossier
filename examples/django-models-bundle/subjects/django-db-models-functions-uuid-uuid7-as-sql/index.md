@@ -1,9 +1,9 @@
 # django/db/models/functions/uuid::UUID7.as_sql
 
-- Subject: django/db/models/functions/uuid::UUID7.as_sql (id `1a7e74d5-3303-4b0f-9f74-6459cf85e78c`)
+- Subject: django/db/models/functions/uuid::UUID7.as_sql (id `c16c993a-6b68-45bb-a717-9f75f9056277`)
 - Kind: method
 - Parent: [django/db/models/functions/uuid](../django-db-models-functions-uuid/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

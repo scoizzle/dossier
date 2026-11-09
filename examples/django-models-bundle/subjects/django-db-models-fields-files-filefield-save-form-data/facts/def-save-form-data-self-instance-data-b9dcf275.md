@@ -1,6 +1,6 @@
 # Fact b9dcf275
 
-Store id: 9af525a2-2e9d-4bc6-ab67-212d67d1315b
+Store id: 2685d732-12e3-4029-a04e-c146273466b0
 
 ## Text
 
@@ -20,7 +20,7 @@ def save_form_data(self, instance, data)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2496970+00:00`
+- posted_at: `2026-11-09T23:31:57.4106850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 363,
     "symbol": "FileField.save_form_data"
   },
-  "id": "9af525a2-2e9d-4bc6-ab67-212d67d1315b",
+  "id": "2685d732-12e3-4029-a04e-c146273466b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2496970+00:00"
+    "posted_at": "2026-11-09T23:31:57.4106850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7caf2cfe-19ea-4dea-951c-9df1e53566d4",
+  "subject_id": "2408775f-75e3-43e6-92da-e6c9c3963edb",
   "subject_name": "django/db/models/fields/files::FileField.save_form_data",
   "tags": [
     "entity:method"

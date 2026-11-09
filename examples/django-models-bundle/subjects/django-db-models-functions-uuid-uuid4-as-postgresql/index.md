@@ -1,9 +1,9 @@
 # django/db/models/functions/uuid::UUID4.as_postgresql
 
-- Subject: django/db/models/functions/uuid::UUID4.as_postgresql (id `221006d0-173b-40e5-827a-e7c591ff5319`)
+- Subject: django/db/models/functions/uuid::UUID4.as_postgresql (id `a84f7956-bebf-4c18-a70a-e8aa2fb59634`)
 - Kind: method
 - Parent: [django/db/models/functions/uuid](../django-db-models-functions-uuid/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

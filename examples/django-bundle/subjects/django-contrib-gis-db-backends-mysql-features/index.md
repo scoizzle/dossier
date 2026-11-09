@@ -1,8 +1,8 @@
 # django/contrib/gis/db/backends/mysql/features
 
-- Subject: django/contrib/gis/db/backends/mysql/features (id `553b35db-5c82-4f81-b23d-39ca6029ec92`)
+- Subject: django/contrib/gis/db/backends/mysql/features (id `bb3303b3-0d32-44c4-abbe-c7a506befb1f`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 361 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

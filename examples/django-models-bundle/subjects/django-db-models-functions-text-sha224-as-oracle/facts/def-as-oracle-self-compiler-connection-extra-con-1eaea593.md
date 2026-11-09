@@ -1,6 +1,6 @@
 # Fact 1eaea593
 
-Store id: c995bf92-7d60-4c11-b4bc-7e7802d526fc
+Store id: 7db68ee6-31be-4ee3-ba7d-26e8abcf13e6
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1814190+00:00`
+- posted_at: `2026-11-09T23:32:02.2843060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 311,
     "symbol": "SHA224.as_oracle"
   },
-  "id": "c995bf92-7d60-4c11-b4bc-7e7802d526fc",
+  "id": "7db68ee6-31be-4ee3-ba7d-26e8abcf13e6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1814190+00:00"
+    "posted_at": "2026-11-09T23:32:02.2843060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "55cae587-3dff-48dc-943e-2e9b0a45553d",
+  "subject_id": "52ca13a6-0499-4559-9618-dcc61b3912c1",
   "subject_name": "django/db/models/functions/text::SHA224.as_oracle",
   "tags": [
     "entity:method"

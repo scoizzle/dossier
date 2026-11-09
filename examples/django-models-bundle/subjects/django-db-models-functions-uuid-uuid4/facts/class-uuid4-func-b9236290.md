@@ -1,6 +1,6 @@
 # Fact b9236290
 
-Store id: b3a9cd11-7bc1-4b0b-8986-2d83b0a04ad1
+Store id: 9f0e72a7-c82b-4190-a54d-b43b04e54392
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUID4(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.3532650+00:00`
+- posted_at: `2026-11-09T23:32:02.4672240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 6,
     "symbol": "UUID4"
   },
-  "id": "b3a9cd11-7bc1-4b0b-8986-2d83b0a04ad1",
+  "id": "9f0e72a7-c82b-4190-a54d-b43b04e54392",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.3532650+00:00"
+    "posted_at": "2026-11-09T23:32:02.4672240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cf95216f-5fb1-4b7e-aa0e-7687c3cbdbe7",
+  "subject_id": "15ab0e04-a1de-4c66-9774-35bd753b35cf",
   "subject_name": "django/db/models/functions/uuid::UUID4",
   "tags": [
     "entity:class"

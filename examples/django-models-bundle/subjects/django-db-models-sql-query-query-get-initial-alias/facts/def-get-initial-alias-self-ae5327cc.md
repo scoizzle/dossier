@@ -1,6 +1,6 @@
 # Fact ae5327cc
 
-Store id: 49c3c4bc-7243-4447-b4df-4b7373efc42d
+Store id: 80f2a6d8-8109-4827-99b1-d91073cdd2e2
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_initial_alias(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3151790+00:00`
+- posted_at: `2026-11-09T23:32:06.8660260+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1112,
     "symbol": "Query.get_initial_alias"
   },
-  "id": "49c3c4bc-7243-4447-b4df-4b7373efc42d",
+  "id": "80f2a6d8-8109-4827-99b1-d91073cdd2e2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3151790+00:00"
+    "posted_at": "2026-11-09T23:32:06.8660260+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1d025bd8-f170-4557-9561-f8e346992cc6",
+  "subject_id": "b18c2330-8123-46fd-ad0c-dadf08762c21",
   "subject_name": "django/db/models/sql/query::Query.get_initial_alias",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/expressions::TemporalSubtraction.as_sql
 
-- Subject: django/db/models/expressions::TemporalSubtraction.as_sql (id `db743b5d-5234-4c95-9537-39528666f627`)
+- Subject: django/db/models/expressions::TemporalSubtraction.as_sql (id `332e788e-10f9-468a-a162-913b7e28c1ca`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

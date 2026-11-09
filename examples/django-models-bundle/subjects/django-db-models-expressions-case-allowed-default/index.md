@@ -1,9 +1,9 @@
 # django/db/models/expressions::Case.allowed_default
 
-- Subject: django/db/models/expressions::Case.allowed_default (id `2e60ea25-00c2-4aef-b163-01e962749e18`)
+- Subject: django/db/models/expressions::Case.allowed_default (id `3ddfc13f-1d59-4a4f-be12-eb87840412c9`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

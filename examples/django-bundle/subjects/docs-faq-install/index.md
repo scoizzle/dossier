@@ -1,14 +1,14 @@
 # docs/faq/install
 
-- Subject: docs/faq/install (id `37fb21b5-93d3-4cf8-87ba-3b2d18882c5e`)
+- Subject: docs/faq/install (id `bed1f220-f17e-49c9-9e07-e21131ba789c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 15 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1200 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - #. `Download the code`_. #. Install Django (read the :doc:`installation guide </intro/install>`). #. Walk through the :doc:`tutorial </intro/tutorial01>`. #. Check out the rest of the :doc:`documentation </index>`, and `ask questions`_ if you run into trouble. [9580a640]
 - .. _Python: https://www.python.org/ .. _PostgreSQL: https://www.postgresql.org/ .. _MariaDB: https://mariadb.org/ .. _MySQL: https://www.mysql.com/ .. _`SQLite`: https://www.sqlite.org/ .. _Oracle: https://www.oracle.com/ [d0594133]
@@ -26,6 +26,11 @@
 - Should I use the stable version or development version? ======================================================= [24b0e46d]
 - Since newer versions of Python are often faster, have more features, and are better supported, the latest version of Python 3 is recommended. [c3567684]
 
-## Beyond the budget
+## All facts
 
-6 more facts did not fit in the budget: [fe908596] [faa4b613] [67c20a0d] [ff6177cd] [043c6b2f] [d6786ab0]
+- [fe908596] We will support a Python version up to and including the first Django LTS release whose security support ends after security support for that version of Python ends. For example, Python 3.9 security support ends in October 2025 and Django 4.2 LTS security support ends in April 2026. Therefore Django 4.2 is the last version to support Python 3.9.
+- [faa4b613] What Python version can I use with Django? ==========================================
+- [67c20a0d] What Python version should I use with Django? =============================================
+- [ff6177cd] What are Django's prerequisites? ================================
+- [043c6b2f] You can find the latest supported micro version for each series on the `Python download page <https://www.python.org/downloads/>`_.
+- [d6786ab0] You don't lose anything in Django by using an older release, but you don't take advantage of the improvements and optimizations in newer Python releases. Third-party applications for use with Django are free to set their own version requirements.

@@ -1,14 +1,14 @@
 # docs/howto/custom-lookups
 
-- Subject: docs/howto/custom-lookups (id `dbdc9d63-4e04-440d-8b91-a00226fdbe67`)
+- Subject: docs/howto/custom-lookups (id `1ccb7673-cbb5-4662-a443-55fa4256e5e3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 27 of 91
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4290 tokens
+- Facts shown: 84 of 91
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @property def output_field(self): return FloatField() [6385f90b]
 - def as_sql(self, compiler, connection): lhs, lhs_params = compiler.compile(self.lhs.lhs) rhs, rhs_params = self.process_rhs(compiler, connection) params = lhs_params + rhs_params + lhs_params + rhs_params return "%s < %s AND %s > -%s" % (lhs, rhs, lhs, rhs), params [7b788422]
@@ -38,6 +38,62 @@
 - - ``.filter(myfield__mylookup)`` will call ``myfield.get_lookup('mylookup')``. - ``.filter(myfield__mytransform__mylookup)`` will call ``myfield.get_transform('mytransform')``, and then ``mytransform.get_lookup('mylookup')``. - ``.filter(myfield__mytransform)`` will first call ``myfield.get_lookup('mytransform')``, which will fail, so it will fall back to calling ``myfield.get_transform('mytransform')`` and then ``mytransform.get_lookup('exact')``. [97514652]
 - .. code-block:: sql [0ee73173f492412a-2]
 
-## Beyond the budget
+## All facts
 
-57 more facts did not fit in the budget: [0ee73173f492412a-3] [0ee73173f492412a-4] [0ee73173f492412a-5] [0ee73173f492412a-6] [0ee73173f492412a-7] [0ee73173f492412a-8] [3a368b18514a814b] [3746f028] [63d8ce70] [9b33dfca] [2012fe75] [41d0d2d0] [d22220df] [fe425b2c] [5d540da1] [03f7413e] [dd3dad22] [5d9a72c6] [ca1f3859] [344b7002] [5dbca7ea] [6b602622] [1c140b37] [350910a3] [63e30e37] [9345e80a] [eccc87b4] [d79d7803] [8c60409e] [3b0009ac] [bbfd7ea3] [13f587a0] [73b53753] [0b98f40e] [f4304712] [fe81a9a4] [ca448d92] [8379284e] [533cc3b3] [34be4cc3] [29217ba3] [d2608595] [0a779e79] [78f49cb1] [6c7b1115] [8e60b822] [b4308d31] [4f942c31] [c49b0df8] [f682b726] [21600dc4] [e8d2a6fe] [4a773061] [9fdacfdc] [cf03b2f6] [e3d29dc8] [fd329152]
+- [0ee73173f492412a-3] .. code-block:: sql
+- [0ee73173f492412a-4] .. code-block:: sql
+- [0ee73173f492412a-5] .. code-block:: sql
+- [0ee73173f492412a-6] .. code-block:: sql
+- [0ee73173f492412a-7] .. code-block:: sql
+- [0ee73173f492412a-8] .. code-block:: sql
+- [3a368b18514a814b] .. currentmodule:: django.db.models
+- [3746f028] .. note:: In fact, most lookups with ``__abs`` could be implemented as range queries like this, and on most database backends it is likely to be more sensible to do so as you can make use of the indexes. However with PostgreSQL you may want to add an index on ``abs(change)`` which would allow these queries to be very efficient.
+- [63d8ce70] .. note:: This example is somewhat contrived, but it nicely demonstrates the range of functionality which is possible in a database backend independent manner, and without duplicating functionality already in Django.
+- [9b33dfca] =========================== How to write custom lookups ===========================
+- [2012fe75] A ``Lookup`` works against two values, ``lhs`` and ``rhs``, standing for left-hand side and right-hand side. The left-hand side is usually a field reference, but it can be anything implementing the :ref:`query expression API <query-expression>`. The right-hand is the value given by the user. In the example ``Author.objects.filter(name__ne='Jack')``, the left-hand side is a reference to the ``name`` field of the ``Author`` model, and ``'Jack'`` is the right-hand side.
+- [41d0d2d0] A bilateral transformer example ===============================
+- [d22220df] A lookup example ================
+- [fe425b2c] A transformer example =====================
+- [5d540da1] And on databases that support distinct on fields (such as PostgreSQL), ``Experiment.objects.distinct('change__abs')`` generates:
+- [03f7413e] By using ``Transform`` instead of ``Lookup`` it means we are able to chain further lookups afterward. So ``Experiment.objects.filter(change__abs__lt=27)`` will generate the following SQL:
+- [dd3dad22] Django offers a wide variety of :ref:`built-in lookups <field-lookups>` for filtering (for example, ``exact`` and ``icontains``). This documentation explains how to write custom lookups and how to alter the working of existing lookups. For the API references of lookups, see the :doc:`/ref/models/lookups`.
+- [5d9a72c6] Finally we combine the parts into an SQL expression with ``<>``, and supply all the parameters for the query. We then return a tuple containing the generated SQL string and the parameters.
+- [ca1f3859] How Django determines the lookups and transforms which are used ===============================================================
+- [344b7002] In some cases you may wish to dynamically change which ``Transform`` or ``Lookup`` is returned based on the name passed in, rather than fixing it. As an example, you could have a field which stores coordinates or an arbitrary dimension, and wish to allow a syntax like ``.filter(coords__x7=4)`` to return the objects where the 7th coordinate has value 4. In order to do this, you would override ``get_lookup`` with something like::
+- [5dbca7ea] Let's examine case-insensitive transformations here. This transformation isn't very useful in practice as Django already comes with a bunch of built-in case-insensitive lookups, but it will be a nice demonstration of bilateral transformations in a database-agnostic way.
+- [6b602622] Let's start with a small custom lookup. We will write a custom lookup ``ne`` which works opposite to ``exact``. ``Author.objects.filter(name__ne='Jack')`` will translate to the SQL:
+- [1c140b37] Lookup registration can also be done using a decorator pattern::
+- [350910a3] Next, let's register it for ``IntegerField``::
+- [63e30e37] Next, let's register it::
+- [9345e80a] Note that in case there is no other lookup specified, Django interprets ``change__abs=27`` as ``change__abs__exact=27``.
+- [eccc87b4] Notice also that as both sides are used multiple times in the query the params need to contain ``lhs_params`` and ``rhs_params`` multiple times.
+- [d79d7803] Now, the queryset ``Author.objects.filter(name__upper="doe")`` will generate a case insensitive query like this:
+- [8c60409e] So we would like ``Experiment.objects.filter(change__abs__lt=27)`` to generate the following SQL:
+- [3b0009ac] Sometimes different database vendors require different SQL for the same operation. For this example we will rewrite a custom implementation for MySQL for the NotEqual operator. Instead of ``<>`` we will be using ``!=`` operator. (Note that in reality almost all databases support both, including all the official databases supported by Django).
+- [bbfd7ea3] Taking a closer look at the implementation, the first required attribute is ``lookup_name``. This allows the ORM to understand how to interpret ``name__ne`` and use ``NotEqual`` to generate the SQL. By convention, these names are always lowercase strings containing only letters, but the only hard requirement is that it must not contain the string ``__``.
+- [13f587a0] The ``AbsoluteValue`` example we discussed previously is a transformation which applies to the left-hand side of the lookup. There may be some cases where you want the transformation to be applied to both the left-hand side and the right-hand side. For instance, if you want to filter a queryset based on the equality of the left and right-hand side insensitively to some SQL function.
+- [73b53753] The custom lookup above is great, but in some cases you may want to be able to chain lookups together. For example, let's suppose we are building an application where we want to make use of the ``abs()`` operator. We have an ``Experiment`` model which records a start value, end value, and the change (start - end). We would like to find all experiments where the change was equal to a certain amount (``Experiment.objects.filter(change__abs=27)``), or where it did not exceed a certain amount (``Experiment.objects.filter(change__abs__lt=27)``).
+- [0b98f40e] The final query does the inversion (``27`` to ``-27``) directly in the database. The reason for doing this is that if the ``self.rhs`` is something else than a plain integer value (for example an ``F()`` reference) we can't do the transformations in Python.
+- [f4304712] The implementation is::
+- [fe81a9a4] There are a couple of notable things going on. First, ``AbsoluteValueLessThan`` isn't calling ``process_lhs()``. Instead it skips the transformation of the ``lhs`` done by ``AbsoluteValue`` and uses the original ``lhs``. That is, we want to get ``"experiments"."change"`` not ``ABS("experiments"."change")``. Referring directly to ``self.lhs.lhs`` is safe as ``AbsoluteValueLessThan`` can be accessed only from the ``AbsoluteValue`` lookup, that is the ``lhs`` is always an instance of ``AbsoluteValue``.
+- [ca448d92] There are two steps to making this work. Firstly we need to implement the lookup, then we need to tell Django about it::
+- [8379284e] There is a similarly named method called ``get_transform()``. ``get_lookup()`` should always return a ``Lookup`` subclass, and ``get_transform()`` a ``Transform`` subclass. It is important to remember that ``Transform`` objects can be further filtered on, and ``Lookup`` objects cannot.
+- [533cc3b3] This SQL is backend independent, so we don't need to worry about different databases.
+- [34be4cc3] This also allows the result to be used in ``ORDER BY`` and ``DISTINCT ON`` clauses. For example ``Experiment.objects.order_by('change__abs')`` generates:
+- [29217ba3] This ensures that further lookups like ``abs__lte`` behave as they would for a ``FloatField``.
+- [d2608595] To register the ``NotEqual`` lookup we will need to call ``register_lookup`` on the field class we want the lookup to be available for. In this case, the lookup makes sense on all ``Field`` subclasses, so we register it with ``Field`` directly::
+- [0a779e79] We call ``process_lhs`` and ``process_rhs`` to convert them into the values we need for SQL using the ``compiler`` object described before. These methods return tuples containing some SQL and the parameters to be interpolated into that SQL, just as we need to return from our ``as_sql`` method. In the above example, ``process_lhs`` returns ``('"author"."name"', [])`` and ``process_rhs`` returns ``('"%s"', ['Jack'])``. In this example there were no parameters for the left hand side, but this would depend on the object we have, so we still need to include them in the parameters we return.
+- [78f49cb1] We can change the behavior on a specific backend by creating a subclass of ``NotEqual`` with an ``as_mysql`` method::
+- [6c7b1115] We can now run the queries we had before. ``Experiment.objects.filter(change__abs=27)`` will generate the following SQL:
+- [8e60b822] We can now use ``foo__ne`` for any field ``foo``. You will need to ensure that this registration happens before you try to create any querysets using it. You could place the implementation in a ``models.py`` file, or register the lookup in the ``ready()`` method of an ``AppConfig``.
+- [b4308d31] We can then register it with ``Field``. It takes the place of the original ``NotEqual`` class as it has the same ``lookup_name``.
+- [4f942c31] We define an ``UpperCase`` transformer which uses the SQL function ``UPPER()`` to transform the values before comparison. We define :attr:`bilateral = True <django.db.models.Transform.bilateral>` to indicate that this transformation should apply to both ``lhs`` and ``rhs``::
+- [c49b0df8] We then need to define the ``as_sql`` method. This takes a ``SQLCompiler`` object, called ``compiler``, and the active database connection. ``SQLCompiler`` objects are not documented, but the only thing we need to know about them is that they have a ``compile()`` method which returns a tuple containing an SQL string, and the parameters to be interpolated into that string. In most cases, you don't need to use it directly and can pass it on to ``process_lhs()`` and ``process_rhs()``.
+- [f682b726] We will start by writing an ``AbsoluteValue`` transformer. This will use the SQL function ``ABS()`` to transform the value before comparison::
+- [21600dc4] When compiling a query, Django first looks for ``as_%s % connection.vendor`` methods, and then falls back to ``as_sql``. The vendor names for the in-built backends are ``sqlite``, ``postgresql``, ``oracle`` and ``mysql``.
+- [e8d2a6fe] When filtering, if there is only one lookup name remaining to be resolved, we will look for a ``Lookup``. If there are multiple names, it will look for a ``Transform``. In the situation where there is only one name and a ``Lookup`` is not found, we look for a ``Transform`` and then the ``exact`` lookup on that ``Transform``. All call sequences always end with a ``Lookup``. To clarify:
+- [4a773061] When looking for which lookups are allowable after the ``Transform`` has been applied, Django uses the ``output_field`` attribute. We didn't need to specify this here as it didn't change, but supposing we were applying ``AbsoluteValue`` to some field which represents a more complex type (for example a point relative to an origin, or a complex number) then we may have wanted to specify that the transform returns a ``FloatField`` type for further lookups. This can be done by adding an ``output_field`` attribute to the transform::
+- [9fdacfdc] When using the above written ``abs`` lookup, the SQL produced will not use indexes efficiently in some cases. In particular, when we use ``change__abs__lt=27``, this is equivalent to ``change__gt=-27`` AND ``change__lt=27``. (For the ``lte`` case we could use the SQL ``BETWEEN``).
+- [cf03b2f6] Writing alternative implementations for existing lookups ========================================================
+- [e3d29dc8] Writing an efficient ``abs__lt`` lookup =======================================
+- [fd329152] You would then define ``get_coordinate_lookup`` appropriately to return a ``Lookup`` subclass which handles the relevant value of ``dimension``.

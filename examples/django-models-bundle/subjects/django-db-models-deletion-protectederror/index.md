@@ -1,9 +1,9 @@
 # django/db/models/deletion::ProtectedError
 
-- Subject: django/db/models/deletion::ProtectedError (id `c925367e-c776-4a97-b3a7-9eafa45060e1`)
+- Subject: django/db/models/deletion::ProtectedError (id `68010fea-7d3f-467d-938b-d7b6801910c8`)
 - Kind: class
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

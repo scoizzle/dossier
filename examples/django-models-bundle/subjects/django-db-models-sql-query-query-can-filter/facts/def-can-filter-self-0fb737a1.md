@@ -1,6 +1,6 @@
 # Fact 0fb737a1
 
-Store id: e5b7a817-57fb-4223-950b-c2a5c48fdac4
+Store id: 71321104-f0d4-439d-9f46-b699daeaca91
 
 ## Text
 
@@ -20,7 +20,7 @@ def can_filter(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4604360+00:00`
+- posted_at: `2026-11-09T23:32:07.0349780+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2223,
     "symbol": "Query.can_filter"
   },
-  "id": "e5b7a817-57fb-4223-950b-c2a5c48fdac4",
+  "id": "71321104-f0d4-439d-9f46-b699daeaca91",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4604360+00:00"
+    "posted_at": "2026-11-09T23:32:07.0349780+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "76ce4611-3aa5-4cd7-9fd1-68a931999c52",
+  "subject_id": "38929923-4123-4a59-848d-5b2f2f135439",
   "subject_name": "django/db/models/sql/query::Query.can_filter",
   "tags": [
     "entity:method"

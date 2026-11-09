@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleIn.get_fallback_sql
 
-- Subject: django/db/models/fields/tuple_lookups::TupleIn.get_fallback_sql (id `8dbbc0b5-5175-48cb-90b3-a47db3b82c47`)
+- Subject: django/db/models/fields/tuple_lookups::TupleIn.get_fallback_sql (id `31e01e57-cb38-45c1-9cea-06e978cc37a1`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::NullBooleanField.__init__
 
-- Subject: django/db/models/fields/__init__::NullBooleanField.__init__ (id `1e59c58d-02d3-4f91-b25f-38fa7b830a80`)
+- Subject: django/db/models/fields/__init__::NullBooleanField.__init__ (id `c434731d-be59-4098-be62-dc51f805870d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

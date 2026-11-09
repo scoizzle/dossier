@@ -1,8 +1,8 @@
 # django/contrib/messages/views
 
-- Subject: django/contrib/messages/views (id `f76804b4-2e77-40ff-b749-0c05765309eb`)
+- Subject: django/contrib/messages/views (id `e3535bc3-1617-433c-854c-92e8b1cf5d6c`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 165 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

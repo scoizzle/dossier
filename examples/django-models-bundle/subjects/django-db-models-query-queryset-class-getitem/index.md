@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.__class_getitem__
 
-- Subject: django/db/models/query::QuerySet.__class_getitem__ (id `4ff2e4bf-b86f-4f72-9d43-e8fc5a7838b1`)
+- Subject: django/db/models/query::QuerySet.__class_getitem__ (id `f30c4b4b-c00f-44f4-a165-94c5454c4f77`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

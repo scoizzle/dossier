@@ -1,9 +1,9 @@
 # django/db/models/functions/window::LagLeadFunction._resolve_output_field
 
-- Subject: django/db/models/functions/window::LagLeadFunction._resolve_output_field (id `c8fb62dd-f765-4275-b731-83dc6a1d35e0`)
+- Subject: django/db/models/functions/window::LagLeadFunction._resolve_output_field (id `1aa7ddb2-e605-4e76-a36e-cf5fae4f9199`)
 - Kind: method
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

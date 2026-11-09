@@ -1,6 +1,6 @@
 # Fact a5653402
 
-Store id: 71271c0b-f2f5-46e7-b286-8913420e0bae
+Store id: 79037d14-ce84-4558-b6c8-2a4121012e65
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_transform(self, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6169560+00:00`
+- posted_at: `2026-11-09T23:31:57.8530360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 122,
     "symbol": "JSONField.get_transform"
   },
-  "id": "71271c0b-f2f5-46e7-b286-8913420e0bae",
+  "id": "79037d14-ce84-4558-b6c8-2a4121012e65",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6169560+00:00"
+    "posted_at": "2026-11-09T23:31:57.8530360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7616e0d8-d685-48f1-899d-15e266ac5c81",
+  "subject_id": "2e5b330e-675c-42fc-85e8-6857afe60a2f",
   "subject_name": "django/db/models/fields/json::JSONField.get_transform",
   "tags": [
     "entity:method"

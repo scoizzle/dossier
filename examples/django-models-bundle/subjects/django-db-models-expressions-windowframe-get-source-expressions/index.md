@@ -1,9 +1,9 @@
 # django/db/models/expressions::WindowFrame.get_source_expressions
 
-- Subject: django/db/models/expressions::WindowFrame.get_source_expressions (id `152ed2c6-8a1c-4830-bac4-8d5c86dae341`)
+- Subject: django/db/models/expressions::WindowFrame.get_source_expressions (id `71463fcc-0bfb-4c23-a2ae-2063fddd147e`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

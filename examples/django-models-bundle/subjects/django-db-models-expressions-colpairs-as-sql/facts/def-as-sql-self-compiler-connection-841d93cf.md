@@ -1,6 +1,6 @@
 # Fact 841d93cf
 
-Store id: d6152901-83ca-4631-ae38-7ffe3bf5753f
+Store id: e90aa37c-8489-49ac-9cb5-b3619c5066e5
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6456240+00:00`
+- posted_at: `2026-11-09T23:31:55.9059450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1423,
     "symbol": "ColPairs.as_sql"
   },
-  "id": "d6152901-83ca-4631-ae38-7ffe3bf5753f",
+  "id": "e90aa37c-8489-49ac-9cb5-b3619c5066e5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6456240+00:00"
+    "posted_at": "2026-11-09T23:31:55.9059450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "049859ae-0501-44de-96ad-d7cffb34c218",
+  "subject_id": "79d88ba0-7973-485f-b73d-b76dd3e2a8d8",
   "subject_name": "django/db/models/expressions::ColPairs.as_sql",
   "tags": [
     "entity:method"

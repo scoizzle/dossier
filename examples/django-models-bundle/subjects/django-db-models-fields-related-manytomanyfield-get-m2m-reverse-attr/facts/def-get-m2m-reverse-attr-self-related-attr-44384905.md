@@ -1,6 +1,6 @@
 # Fact 44384905
 
-Store id: 5475da20-fce8-4d1b-87a5-8d5391679e85
+Store id: b721e878-aea9-4866-bd4a-854c495efe18
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_m2m_reverse_attr(self, related, attr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4921010+00:00`
+- posted_at: `2026-11-09T23:31:58.8779080+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2074,
     "symbol": "ManyToManyField._get_m2m_reverse_attr"
   },
-  "id": "5475da20-fce8-4d1b-87a5-8d5391679e85",
+  "id": "b721e878-aea9-4866-bd4a-854c495efe18",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4921010+00:00"
+    "posted_at": "2026-11-09T23:31:58.8779080+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "593f6066-c32e-4739-999e-82d1922bcc37",
+  "subject_id": "043a5161-2b6c-4344-a336-6a368a787775",
   "subject_name": "django/db/models/fields/related::ManyToManyField._get_m2m_reverse_attr",
   "tags": [
     "entity:method"

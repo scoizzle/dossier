@@ -1,6 +1,6 @@
 # Fact 5d459fa4
 
-Store id: 126a1259-d405-4f03-ba41-f13d7edc9cf0
+Store id: e8f5cc42-ff71-4194-ac8a-dfbf289d7aee
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.8787670+00:00`
+- posted_at: `2026-11-09T23:32:01.9568990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 56,
     "symbol": "NumericOutputFieldMixin._resolve_output_field"
   },
-  "id": "126a1259-d405-4f03-ba41-f13d7edc9cf0",
+  "id": "e8f5cc42-ff71-4194-ac8a-dfbf289d7aee",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.8787670+00:00"
+    "posted_at": "2026-11-09T23:32:01.9568990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f97ecd04-3441-4449-bff2-f5a394e49128",
+  "subject_id": "cb9d7d0d-dbdd-42b7-8d5f-4639626e8969",
   "subject_name": "django/db/models/functions/mixins::NumericOutputFieldMixin._resolve_output_field",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 80df8136
 
-Store id: e25e7eac-5d90-42bc-aed4-4194e0accb9f
+Store id: d2b337af-6446-474e-9130-f734b72b97dd
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_prefix(self, prefix)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8476320+00:00`
+- posted_at: `2026-11-09T23:32:04.7943640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2604,
     "symbol": "Prefetch.add_prefix"
   },
-  "id": "e25e7eac-5d90-42bc-aed4-4194e0accb9f",
+  "id": "d2b337af-6446-474e-9130-f734b72b97dd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8476320+00:00"
+    "posted_at": "2026-11-09T23:32:04.7943640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fd8f4cef-3624-4bbd-818c-f6483e5d7a4d",
+  "subject_id": "8d4c8226-f3fd-483b-91c5-d19d41ea3061",
   "subject_name": "django/db/models/query::Prefetch.add_prefix",
   "tags": [
     "entity:method"

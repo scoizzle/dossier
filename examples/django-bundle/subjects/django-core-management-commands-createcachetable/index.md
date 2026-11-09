@@ -1,14 +1,14 @@
 # django/core/management/commands/createcachetable
 
-- Subject: django/core/management/commands/createcachetable (id `f9bb4d32-dd8c-4bf5-807e-428c5431e870`)
+- Subject: django/core/management/commands/createcachetable (id `261a419e-c75c-432d-bef7-b738118f8c93`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 864 tokens
-- Facts shown: 11 of 12
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 949 tokens
+- Facts shown: 12 of 12
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - fields = ( # "key" is a reserved word in MySQL, so use "cache_key" instead. models.CharField( name="cache_key", max_length=255, unique=True, primary_key=True ), models.TextField(name="value"), models.DateTimeField(name="expires", db_index=True), ) table_output = [] index_output = [] qn = connection.ops.quote_name for f in fields: field_output = [ qn(f.name), f.db_type(connection=connection), "%sNULL" % ("NOT " if not f.null else ""), ] if f.primary_key: field_output.append("PRIMARY KEY") elif f.unique: field_output.append("UNIQUE") if f.db_index: unique = "UNIQUE " if f.unique else "" index_output.append( "CREATE %sINDEX %s ON %s (%s);" % ( unique, qn("%s_%s" % (tablename, f.name)), qn(tablename), qn(f.name), ) ) table_output.append(" ".join(field_output)) full_statement = ["CREATE TABLE %s (" % qn(tablename)] for i, line in enumerate(table_output): full_statement.append( " %s%s" % (line, "," if i < len(table_output) - 1 else "") ) full_statement.append(");") [2a860be6]
 - full_statement = "\n".join(full_statement) [0d94c78d]
@@ -22,6 +22,6 @@
 - requires_system_checks = [] [72e6d136f77918ef-4]
 - class Command(BaseCommand): help = "Creates the tables needed to use the SQL cache backend." [b2efc8e5]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [6f6155e3]
+- [6f6155e3] from django.conf import settings from django.core.cache import caches from django.core.cache.backends.db import BaseDatabaseCache from django.core.management.base import BaseCommand, CommandError from django.db import ( DEFAULT_DB_ALIAS, DatabaseError, connections, models, router, transaction, )

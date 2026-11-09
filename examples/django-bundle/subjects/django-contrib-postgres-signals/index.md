@@ -1,8 +1,8 @@
 # django/contrib/postgres/signals
 
-- Subject: django/contrib/postgres/signals (id `6bcf87c0-41d2-43b8-9872-053689bd3d12`)
+- Subject: django/contrib/postgres/signals (id `0eaf05a6-673f-4a75-bb61-1ed9bdd47d7e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 646 tokens
 - Facts shown: 11 of 13
 - Conflicts: 0

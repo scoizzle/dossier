@@ -1,6 +1,6 @@
 # Fact 6d3a8a9a
 
-Store id: 623b067f-80cc-47bb-ba58-9f61a0f5d42c
+Store id: 85c8e76e-d66e-47c7-bb69-59817b96bcd5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class WindowFrame
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "623b067f-80cc-47bb-ba58-9f61a0f5d42c",
+  "id": "85c8e76e-d66e-47c7-bb69-59817b96bcd5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "WindowFrame"
       },
       "rel": "contains",
-      "target": "7769e624-d106-40eb-a7b6-47aa301483df"
+      "target": "66082c23-8f46-4411-8f50-149c011c58fc"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

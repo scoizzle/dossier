@@ -1,6 +1,6 @@
 # Fact c678f7e1
 
-Store id: ce38a216-7c1c-495a-9681-e3e1173b5936
+Store id: 4a5eba44-94a8-44cc-aab7-29d7906848d3
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4121120+00:00`
+- posted_at: `2026-11-09T23:31:58.7825260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1316,
     "symbol": "ForeignKey.db_type"
   },
-  "id": "ce38a216-7c1c-495a-9681-e3e1173b5936",
+  "id": "4a5eba44-94a8-44cc-aab7-29d7906848d3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4121120+00:00"
+    "posted_at": "2026-11-09T23:31:58.7825260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "839f812c-6f9d-4e68-b84d-04ed1eaae73f",
+  "subject_id": "94a3c0c4-ec94-486c-8915-5b2f3a1a4461",
   "subject_name": "django/db/models/fields/related::ForeignKey.db_type",
   "tags": [
     "entity:method"

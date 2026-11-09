@@ -1,6 +1,6 @@
 # Fact 503d3221
 
-Store id: 0014bd81-53db-4a5d-b0a7-73928a1fc91d
+Store id: ce05c5e9-c2d1-4cde-8d67-f0413820f336
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prepare_for_bulk_create(self, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4060210+00:00`
+- posted_at: `2026-11-09T23:32:04.3953060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 763,
     "symbol": "QuerySet._prepare_for_bulk_create"
   },
-  "id": "0014bd81-53db-4a5d-b0a7-73928a1fc91d",
+  "id": "ce05c5e9-c2d1-4cde-8d67-f0413820f336",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4060210+00:00"
+    "posted_at": "2026-11-09T23:32:04.3953060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6721091d-9de1-43f2-9112-b4653c097401",
+  "subject_id": "1cc2ebfe-5bdd-4e09-b8c8-07deb0374011",
   "subject_name": "django/db/models/query::QuerySet._prepare_for_bulk_create",
   "tags": [
     "entity:method"

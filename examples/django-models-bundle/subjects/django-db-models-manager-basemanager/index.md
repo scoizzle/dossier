@@ -1,9 +1,9 @@
 # django/db/models/manager::BaseManager
 
-- Subject: django/db/models/manager::BaseManager (id `aa3aa9ba-69e2-42f1-9dd7-99885c442e2d`)
+- Subject: django/db/models/manager::BaseManager (id `eec8cf94-8f7e-4c53-a088-afc3b719fa93`)
 - Kind: class
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

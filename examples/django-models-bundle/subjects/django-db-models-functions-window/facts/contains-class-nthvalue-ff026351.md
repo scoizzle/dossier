@@ -1,6 +1,6 @@
 # Fact ff026351
 
-Store id: 4eb412d5-c886-41c5-b630-76f324ef2bfe
+Store id: afdc8ecc-314e-4eef-b919-4898adc07d2e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NthValue
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4eb412d5-c886-41c5-b630-76f324ef2bfe",
+  "id": "afdc8ecc-314e-4eef-b919-4898adc07d2e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NthValue"
       },
       "rel": "contains",
-      "target": "27988954-b01a-4134-8405-4d2f77312a42"
+      "target": "cb4be3b7-b45d-42ef-a56d-9c3cbfbec561"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

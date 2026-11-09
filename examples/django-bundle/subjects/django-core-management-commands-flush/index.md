@@ -1,8 +1,8 @@
 # django/core/management/commands/flush
 
-- Subject: django/core/management/commands/flush (id `6034a707-f49b-4e2e-aefc-d0fbfabde71b`)
+- Subject: django/core/management/commands/flush (id `160a9110-ca08-4e9e-8077-a0d3075da5af`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 836 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

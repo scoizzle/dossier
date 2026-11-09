@@ -1,6 +1,6 @@
 # Fact 7711fce5
 
-Store id: abaa69fe-2eec-4030-ac70-9adc4f947244
+Store id: 9f041564-480f-491e-baa7-b6f902ddd321
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleIn
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6461850+00:00`
+- posted_at: `2026-11-09T23:32:00.6413340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "abaa69fe-2eec-4030-ac70-9adc4f947244",
+  "id": "9f041564-480f-491e-baa7-b6f902ddd321",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6461850+00:00"
+    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleIn"
       },
       "rel": "contains",
-      "target": "76f73f9c-68d0-4dc8-9d77-b5c4f3e3e17d"
+      "target": "48f5c3a4-f156-48c6-baed-614a5a228e88"
     }
   ],
   "status": "live",
-  "subject_id": "cee0b84a-5cfa-4b80-bfc8-675952a3b671",
+  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

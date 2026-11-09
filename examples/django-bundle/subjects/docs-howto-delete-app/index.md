@@ -1,8 +1,8 @@
 # docs/howto/delete-app
 
-- Subject: docs/howto/delete-app (id `34292d01-a986-4e20-9bdb-245dcccdfe4d`)
+- Subject: docs/howto/delete-app (id `3017357c-ec67-4d93-9f01-cf3487b2c1d3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 365 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

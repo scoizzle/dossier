@@ -1,6 +1,6 @@
 # Fact edd33c7b
 
-Store id: 8fbddf41-c15e-4958-b618-121dea32520d
+Store id: d09cdc52-bce7-4fbb-819d-c281643ba21a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, collation)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9364670+00:00`
+- posted_at: `2026-11-09T23:32:00.9878690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 112,
     "symbol": "Collate.__init__"
   },
-  "id": "8fbddf41-c15e-4958-b618-121dea32520d",
+  "id": "d09cdc52-bce7-4fbb-819d-c281643ba21a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9364670+00:00"
+    "posted_at": "2026-11-09T23:32:00.9878690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1100c53f-408a-4154-856d-63a597d0c103",
+  "subject_id": "546ab0fc-e753-4ba8-a95e-82ecae9d8ede",
   "subject_name": "django/db/models/functions/comparison::Collate.__init__",
   "tags": [
     "entity:method"

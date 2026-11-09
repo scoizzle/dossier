@@ -1,6 +1,6 @@
 # Fact ee1955b6
 
-Store id: 6fd1dad4-2697-46fd-a9b0-26e1f76358a1
+Store id: 55760f42-3f8d-4d4a-ae3a-d02bebd447d6
 
 ## Text
 
@@ -20,7 +20,7 @@ def remote_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.2923330+00:00`
+- posted_at: `2026-11-09T23:32:00.2243470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 73,
     "symbol": "ForeignObjectRel.remote_field"
   },
-  "id": "6fd1dad4-2697-46fd-a9b0-26e1f76358a1",
+  "id": "55760f42-3f8d-4d4a-ae3a-d02bebd447d6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.2923330+00:00"
+    "posted_at": "2026-11-09T23:32:00.2243470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2e3ce734-40f6-4156-9eeb-e61b009370c3",
+  "subject_id": "68f4c990-d630-4536-8bb4-74b09bed8aae",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.remote_field",
   "tags": [
     "entity:method",

@@ -1,14 +1,14 @@
 # docs/ref/models/constraints
 
-- Subject: docs/ref/models/constraints (id `4964f7aa-e114-47cf-a231-e73cd1c33f93`)
+- Subject: docs/ref/models/constraints (id `7e1f6934-4b52-432f-ad75-034f02e70e05`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 23 of 113
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3695 tokens
+- Facts shown: 110 of 113
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - CheckConstraint( condition=Q(age__gte=18) & Q(expensive_check=condition), name="age_gte_18_and_others", ) [1fbd0346]
 - CheckConstraint(condition=Q(age__gte=18) | Q(age__isnull=True), name="age_gte_18") [66797422]
@@ -34,6 +34,92 @@
 - from django.db.models import Deferrable, UniqueConstraint [9f925ba1]
 - .. warning:: [c54b54cb0805732a-46]
 
-## Beyond the budget
+## All facts
 
-87 more facts did not fit in the budget: [8eec3b0b] [619ec54c] [cfd4b574] [d373bb03] [0c176cf9] [703ed62f] [58ac6f74] [728a8f69] [d1083287] [e1e3e5eb] [81bde4e9] [e67743e2] [8d2c27e2] [ee4ad064] [f847f7c1] [fc6b5e8f] [c35f6d15] [c7e671b4] [c3023071] [68e627b4] [439f126a] [92236459] [ccafd2b1] [444327d1] [0306994e] [3a368b18514a814b-4] [b7853682] [ad2f3674] [cb1f9fec] [fb2b3ead] [013ad0dc] [8d5e21bd] [76443292] [6b79972f] [4582a05f3e793cbe-2] [967419e7] [28edef836ab93f57-8] [28edef836ab93f57-9] [28edef836ab93f57-10] [28edef836ab93f57-11] [28edef836ab93f57-12] [28edef836ab93f57-13] [28edef836ab93f57-14] [8a6db4fb] [5f607209] [0e33ae94] [afa824af] [ef19328f] [5c7881cc] [77fb32e9] [57e2bd85a3d0d59e-2] [2b930ffd] [8ecf537a] [cfc085d1] [e6e99c7e] [27a00d8b] [74a099be] [8934387a] [d0ed9073] [4d7bbc32] [f8ad0e87] [c10814a4] [81ac67b3] [03278196] [18ddc562] [3ef04f700014c56a-2] [3ef04f700014c56a-3] [e105880c3e1bde26-2] [aa7d175f0fd55e69-2] [87254620a027401c-2] [dcc88c68300cfc76-2] [e9982e75ca22a002-2] [85b80be9] [43b70adcca41be01] [d0ed3cf94d763803] [fa085906] [4afa7d9a8f7918c6-2] [4afa7d9a8f7918c6-3] [d4a3f1a246802851-2] [d4a3f1a246802851-3] [c5de1b7b] [ec5c9165] [590645af] [7e0a1e12] [cca54573] [f7d317ac] [7b394c45]
+- [8eec3b0b] You must always specify a unique name for the constraint. As such, you cannot normally specify a constraint on an abstract base class, since the :attr:`Meta.constraints <django.db.models.Options.constraints>` option is inherited by subclasses, with exactly the same values for the attributes (including ``name``) each time. To work around name collisions, part of the name may contain ``'%(app_label)s'`` and ``'%(class)s'``, which are replaced, respectively, by the lowercased app label and class name of the concrete model. For example::
+- [619ec54c] ``Q`` argument order is not necessarily preserved, however the order of ``Q`` expressions themselves are preserved. This may be important for databases that preserve check constraint expression order for performance reasons. For example, use the following format if order matters::
+- [cfd4b574] .. admonition:: Constraint vs. index implementation
+- [d373bb03] .. admonition:: Constraints in abstract base classes
+- [0c176cf9] .. admonition:: Expression order
+- [703ed62f] .. admonition:: MySQL, MariaDB, and SQLite.
+- [58ac6f74] .. admonition:: Oracle < 23c
+- [728a8f69] .. admonition:: Referencing built-in constraints
+- [d1083287] .. admonition:: Validation of Constraints
+- [e1e3e5eb] .. attribute:: BaseConstraint.name
+- [81bde4e9] .. attribute:: BaseConstraint.violation_error_code
+- [e67743e2] .. attribute:: BaseConstraint.violation_error_message
+- [8d2c27e2] .. attribute:: CheckConstraint.condition
+- [ee4ad064] .. attribute:: UniqueConstraint.condition
+- [f847f7c1] .. attribute:: UniqueConstraint.deferrable
+- [fc6b5e8f] .. attribute:: UniqueConstraint.expressions
+- [c35f6d15] .. attribute:: UniqueConstraint.fields
+- [c7e671b4] .. attribute:: UniqueConstraint.include
+- [c3023071] .. attribute:: UniqueConstraint.nulls_distinct
+- [68e627b4] .. attribute:: UniqueConstraint.opclasses
+- [439f126a] .. attribute:: UniqueConstraint.violation_error_code
+- [92236459] .. attribute:: UniqueConstraint.violation_error_message
+- [ccafd2b1] .. class:: BaseConstraint(* name, violation_error_code=None, violation_error_message=None)
+- [444327d1] .. class:: CheckConstraint(*, condition, name, violation_error_code=None, violation_error_message=None)
+- [0306994e] .. class:: UniqueConstraint(*expressions, fields=(), name, condition=None, deferrable=None, include=None, opclasses=(), nulls_distinct=None, violation_error_code=None, violation_error_message=None)
+- [3a368b18514a814b-4] .. currentmodule:: django.db.models
+- [b7853682] .. method:: BaseConstraint.validate(model, instance, exclude=None, using=DEFAULT_DB_ALIAS)
+- [ad2f3674] .. module:: django.db.models.constraints
+- [cb1f9fec] ===================== Constraints reference =====================
+- [fb2b3ead] A :class:`Q` object or boolean :class:`~django.db.models.Expression` that specifies the conditional check you want the constraint to enforce.
+- [013ad0dc] A :class:`Q` object that specifies the condition you want the constraint to enforce.
+- [8d5e21bd] A list of field names that specifies the unique set of columns you want the constraint to enforce.
+- [76443292] A list or tuple of the names of the fields to be included in the covering unique index as non-key columns. This allows index-only scans to be used for queries that select only included fields (:attr:`~UniqueConstraint.include`) and filter only by unique fields (:attr:`~UniqueConstraint.fields`).
+- [6b79972f] All constraints have the following parameters in common:
+- [4582a05f3e793cbe-2] By default constraints are not deferred. A deferred constraint will not be enforced until the end of the transaction. An immediate constraint will be enforced immediately after every command.
+- [967419e7] Defaults to :attr:`.BaseConstraint.violation_error_code`, when either :attr:`.UniqueConstraint.condition` is set or :attr:`.UniqueConstraint.fields` is not set.
+- [28edef836ab93f57-8] For example::
+- [28edef836ab93f57-9] For example::
+- [28edef836ab93f57-10] For example::
+- [28edef836ab93f57-11] For example::
+- [28edef836ab93f57-12] For example::
+- [28edef836ab93f57-13] For example::
+- [28edef836ab93f57-14] For example::
+- [8a6db4fb] Functional unique constraints have the same database restrictions as :attr:`Index.expressions`.
+- [5f607209] If :attr:`.UniqueConstraint.fields` is set without a :attr:`.UniqueConstraint.condition`, defaults to the :attr:`Meta.unique_together <django.db.models.Options.unique_together>` error code when there are multiple fields, and to the :attr:`.Field.unique` error code when there is a single field.
+- [0e33ae94] Non-key columns have the same database restrictions as :attr:`Index.include`.
+- [afa824af] Positional argument ``*expressions`` allows creating functional unique constraints on expressions and database functions.
+- [ef19328f] Raise a ``ValidationError`` if the constraint is violated.
+- [5c7881cc] Set this parameter to create a deferrable unique constraint. Accepted values are ``Deferrable.DEFERRED`` or ``Deferrable.IMMEDIATE``. For example::
+- [77fb32e9] The classes defined in this module create database constraints. They are added in the model :attr:`Meta.constraints <django.db.models.Options.constraints>` option.
+- [57e2bd85a3d0d59e-2] The error code used when ``ValidationError`` is raised during :ref:`model validation <validating-objects>`. Defaults to ``None``.
+- [2b930ffd] The error code used when a ``ValidationError`` is raised during :ref:`model validation <validating-objects>`.
+- [8ecf537a] The error message used when ``ValidationError`` is raised during :ref:`model validation <validating-objects>`. Defaults to ``"Constraint “%(name)s” is violated."``.
+- [cfc085d1] The name of the constraint. You must always specify a unique name for the constraint.
+- [e6e99c7e] The names of the `PostgreSQL operator classes <https://www.postgresql.org/docs/current/indexes-opclass.html>`_ to use for this unique index. If you require a custom operator class, you must provide one for each field in the index.
+- [27a00d8b] These conditions have the same database restrictions as :attr:`Index.condition`.
+- [74a099be] This method must be implemented by a subclass.
+- [8934387a] Unique constraints with :attr:`~UniqueConstraint.condition`, :attr:`~UniqueConstraint.include`, :attr:`~UniqueConstraint.opclasses`, or :attr:`~UniqueConstraint.expressions` may be implemented as unique indexes rather than unique constraints. In that case, ``deferrable`` cannot be set.
+- [d0ed9073] Unique constraints with ``nulls_distinct`` are ignored for databases besides PostgreSQL.
+- [4d7bbc32] Unique constraints with non-key columns are ignored for databases besides PostgreSQL.
+- [f8ad0e87] Validates that the constraint, defined on ``model``, is respected on the ``instance``. This will do a query on the database to ensure that the constraint is respected. If fields in the ``exclude`` list are needed to validate the constraint, the constraint is ignored.
+- [c10814a4] Whether rows containing ``NULL`` values covered by the unique constraint should be considered distinct from each other. The default value is ``None`` which uses the database default which is ``True`` on most backends.
+- [81ac67b3] ``BaseConstraint`` ==================
+- [03278196] ``CheckConstraint`` ===================
+- [18ddc562] ``UniqueConstraint`` ====================
+- [3ef04f700014c56a-2] ``condition`` -------------
+- [3ef04f700014c56a-3] ``condition`` -------------
+- [e105880c3e1bde26-2] ``deferrable`` --------------
+- [aa7d175f0fd55e69-2] ``expressions`` ---------------
+- [87254620a027401c-2] ``fields`` ----------
+- [dcc88c68300cfc76-2] ``include`` -----------
+- [e9982e75ca22a002-2] ``name`` --------
+- [85b80be9] ``nulls_distinct`` ------------------
+- [43b70adcca41be01] ``opclasses`` -------------
+- [d0ed3cf94d763803] ``opclasses`` are ignored for databases besides PostgreSQL.
+- [fa085906] ``validate()`` --------------
+- [4afa7d9a8f7918c6-2] ``violation_error_code`` ------------------------
+- [4afa7d9a8f7918c6-3] ``violation_error_code`` ------------------------
+- [d4a3f1a246802851-2] ``violation_error_message`` ---------------------------
+- [d4a3f1a246802851-3] ``violation_error_message`` ---------------------------
+- [c5de1b7b] creates a unique constraint on the lowercased value of the ``name`` field in descending order and the ``category`` field in the default ascending order.
+- [ec5c9165] creates a unique constraint that only allows one row to store a ``NULL`` value in the ``ordering`` column.
+- [590645af] creates a unique index on ``username`` using ``varchar_pattern_ops``.
+- [7e0a1e12] ensures each room can only be booked once for each date.
+- [cca54573] ensures that each user only has one draft.
+- [f7d317ac] ensures the age field is never less than 18.
+- [7b394c45] will allow filtering on ``room`` and ``date``, also selecting ``full_name``, while fetching data only from the index.

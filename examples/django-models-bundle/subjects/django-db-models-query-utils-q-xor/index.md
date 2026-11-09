@@ -1,9 +1,9 @@
 # django/db/models/query_utils::Q.__xor__
 
-- Subject: django/db/models/query_utils::Q.__xor__ (id `40417650-c737-4dd7-b66f-99d73a985167`)
+- Subject: django/db/models/query_utils::Q.__xor__ (id `1422058a-682e-4750-ac0b-4687a2558076`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FileField._check_primary_key
 
-- Subject: django/db/models/fields/files::FileField._check_primary_key (id `a4b7ab34-bffa-4c75-9985-592515a0479e`)
+- Subject: django/db/models/fields/files::FileField._check_primary_key (id `714535e2-490b-433c-aad2-d196a6c6a126`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

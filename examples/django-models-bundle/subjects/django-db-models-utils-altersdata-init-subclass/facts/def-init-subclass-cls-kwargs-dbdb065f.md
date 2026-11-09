@@ -1,6 +1,6 @@
 # Fact dbdb065f
 
-Store id: dca2b4b7-ca39-4994-8d7e-19d4e5ee6039
+Store id: 9c10ceac-0577-440b-8ed5-0e7798d815b2
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init_subclass__(cls, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1533980+00:00`
+- posted_at: `2026-11-09T23:32:07.9420140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 60,
     "symbol": "AltersData.__init_subclass__"
   },
-  "id": "dca2b4b7-ca39-4994-8d7e-19d4e5ee6039",
+  "id": "9c10ceac-0577-440b-8ed5-0e7798d815b2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1533980+00:00"
+    "posted_at": "2026-11-09T23:32:07.9420140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be0ce8fe-07cd-4984-afd3-bd6639c83782",
+  "subject_id": "703735c8-dd48-42c9-bbbd-a0320575bcf8",
   "subject_name": "django/db/models/utils::AltersData.__init_subclass__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 605463d5
 
-Store id: 8274fd8b-5772-4536-b53d-c9d2a908a61e
+Store id: 7c560ba4-35f9-4f3a-a80a-4e64ad7c1ab3
 
 ## Text
 
@@ -20,7 +20,7 @@ class WindowFrame(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7723400+00:00`
+- posted_at: `2026-11-09T23:31:56.0125540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2137,
     "symbol": "WindowFrame"
   },
-  "id": "8274fd8b-5772-4536-b53d-c9d2a908a61e",
+  "id": "7c560ba4-35f9-4f3a-a80a-4e64ad7c1ab3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7723400+00:00"
+    "posted_at": "2026-11-09T23:31:56.0125540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7769e624-d106-40eb-a7b6-47aa301483df",
+  "subject_id": "66082c23-8f46-4411-8f50-149c011c58fc",
   "subject_name": "django/db/models/expressions::WindowFrame",
   "tags": [
     "entity:class"

@@ -1,8 +1,8 @@
 # django/urls/utils
 
-- Subject: django/urls/utils (id `6b2a232a-2f1f-4912-a2b3-6351907f5e7c`)
+- Subject: django/urls/utils (id `d8415a72-f26d-46d0-855a-ce9aea785ede`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 506 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

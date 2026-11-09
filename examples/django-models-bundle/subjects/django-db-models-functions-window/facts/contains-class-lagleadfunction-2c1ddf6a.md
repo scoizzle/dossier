@@ -1,6 +1,6 @@
 # Fact 2c1ddf6a
 
-Store id: d74a93fc-714b-4c7d-b0c8-a60020ba55a0
+Store id: 8090505b-961a-4338-8952-316373a0be4c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class LagLeadFunction
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d74a93fc-714b-4c7d-b0c8-a60020ba55a0",
+  "id": "8090505b-961a-4338-8952-316373a0be4c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "LagLeadFunction"
       },
       "rel": "contains",
-      "target": "d69a6333-2b1d-4451-aa7a-db2fe71492f4"
+      "target": "46ea1e93-3a38-4e4f-9232-83bbbe933c3e"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

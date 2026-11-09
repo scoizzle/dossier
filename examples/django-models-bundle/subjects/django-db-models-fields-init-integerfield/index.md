@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::IntegerField
 
-- Subject: django/db/models/fields/__init__::IntegerField (id `5e061fe0-60a7-4714-a2cb-93881e9e2d7b`)
+- Subject: django/db/models/fields/__init__::IntegerField (id `09f77384-ab80-4f82-8675-c8ccff7e38d1`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

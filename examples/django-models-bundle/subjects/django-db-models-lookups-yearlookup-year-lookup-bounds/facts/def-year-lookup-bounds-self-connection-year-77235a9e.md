@@ -1,6 +1,6 @@
 # Fact 77235a9e
 
-Store id: 24b8f45e-4b09-43c6-baf4-5123ca9c5444
+Store id: dc234dd0-3611-4f8f-847f-d84209b62ce5
 
 ## Text
 
@@ -20,7 +20,7 @@ def year_lookup_bounds(self, connection, year)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2202580+00:00`
+- posted_at: `2026-11-09T23:32:03.4134200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 713,
     "symbol": "YearLookup.year_lookup_bounds"
   },
-  "id": "24b8f45e-4b09-43c6-baf4-5123ca9c5444",
+  "id": "dc234dd0-3611-4f8f-847f-d84209b62ce5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2202580+00:00"
+    "posted_at": "2026-11-09T23:32:03.4134200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d24d81c1-273d-48e0-962d-8bd9843044af",
+  "subject_id": "f9fe0861-9b28-42fb-bca7-68819d7f7e2d",
   "subject_name": "django/db/models/lookups::YearLookup.year_lookup_bounds",
   "tags": [
     "entity:method"

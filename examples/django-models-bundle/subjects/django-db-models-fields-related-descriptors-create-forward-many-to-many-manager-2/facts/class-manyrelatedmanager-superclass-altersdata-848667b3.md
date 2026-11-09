@@ -1,6 +1,6 @@
 # Fact 848667b3
 
-Store id: 7e2c5c79-54f0-46a2-8ada-9b90db95c4ab
+Store id: 903763de-23ab-45bd-be43-6735721342e4
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManyRelatedManager(superclass, AltersData)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8530250+00:00`
+- posted_at: `2026-11-09T23:31:59.3433530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1083,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager"
   },
-  "id": "7e2c5c79-54f0-46a2-8ada-9b90db95c4ab",
+  "id": "903763de-23ab-45bd-be43-6735721342e4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8530250+00:00"
+    "posted_at": "2026-11-09T23:31:59.3433530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "34aab76d-1bf1-428e-ad59-05c0792e5221",
+  "subject_id": "7764c707-42c7-4a70-bff5-24d7fa0c8851",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager",
   "tags": [
     "entity:class"

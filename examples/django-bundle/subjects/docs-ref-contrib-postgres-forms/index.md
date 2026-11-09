@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/forms
 
-- Subject: docs/ref/contrib/postgres/forms (id `ed75b7c2-fc4e-425c-bc8e-e2c8f92cc913`)
+- Subject: docs/ref/contrib/postgres/forms (id `68682638-7a75-417c-bf59-44c78118bb9e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 23 of 77
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2316 tokens
+- Facts shown: 71 of 77
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> class GridForm(forms.Form): ... places = SimpleArrayField(SimpleArrayField(IntegerField()), delimiter="|") ... [fd83cdbf]
 - >>> class NumberListForm(forms.Form): ... numbers = SimpleArrayField(forms.IntegerField()) ... [ba1d668a]
@@ -34,6 +34,53 @@
 - This is a required argument. [53b65ff014e563d9-2]
 - This is the fixed number of times the underlying field will be used. [497ed292]
 
-## Beyond the budget
+## All facts
 
-48 more facts did not fit in the budget: [23d76687] [27239e3c] [b38ce6bf] [79607f9b] [fc3123a6] [468dab28d53e1630] [a239bb8c6d3d6d84-4] [a239bb8c6d3d6d84-5] [c9108199] [540795b5b1824d0c-2] [97f6c5ac0309812d] [92b7388f] [ea2c11e5] [77c39c8db15001c7-2] [4e885956f001b283] [942ae6c11625c81c-84] [322e9667] [debd9f61] [0c15f05d] [a3ad4495] [922ccd56] [e966dcda] [8cf1dba5] [7f90829e] [57823667] [2d186d2e] [cd18cc82] [04e1cccd] [41617016] [9b3c8e0a] [18f85f31] [7f8415b7] [de407210] [d026f2a6] [3b1819fc] [83bc6e00] [3aa7b56d] [210a25ca] [af3b9b12] [93412fe3] [cf466576] [019efd96] [75847229] [0e2b396d] [a92d87dc] [2281c4a5] [a392e7fa] [49a90e73]
+- [23d76687] This is a required argument. It specifies the form field to be repeated.
+- [27239e3c] This is an optional argument which defaults to a comma: ``,``. This value is used to split the submitted data. It allows you to chain ``SimpleArrayField`` for multidimensional data:
+- [b38ce6bf] This is an optional argument which validates that the array does not exceed the stated length.
+- [79607f9b] This is an optional argument which validates that the array reaches at least the stated length.
+- [fc3123a6] ``HStoreField`` is not particularly user friendly in most cases, however it is a useful way to format data from a client-side widget for submission to the server.
+- [468dab28d53e1630] .. admonition:: User friendly forms
+- [a239bb8c6d3d6d84-4] .. attribute:: base_field
+- [a239bb8c6d3d6d84-5] .. attribute:: base_field
+- [c9108199] .. attribute:: base_widget
+- [540795b5b1824d0c-2] .. attribute:: delimiter
+- [97f6c5ac0309812d] .. attribute:: max_length
+- [92b7388f] .. attribute:: min_length
+- [ea2c11e5] .. attribute:: remove_trailing_nulls
+- [77c39c8db15001c7-2] .. attribute:: size
+- [4e885956f001b283] .. method:: decompress(value)
+- [942ae6c11625c81c-84] .. note::
+- [322e9667] :class:`~RangeWidget` has one required argument:
+- [debd9f61] A field which accepts JSON encoded data for an :class:`~django.contrib.postgres.fields.HStoreField`. It casts all values (except nulls) to strings. It is represented by an HTML ``<textarea>``.
+- [0c15f05d] A field which maps to an array. It is represented by an HTML ``<input>``.
+- [a3ad4495] Based on :class:`~django.forms.DateField` and translates its input into ``django.db.backends.postgresql.psycopg_any.DateRange``. Default for :class:`~django.contrib.postgres.fields.DateRangeField`.
+- [922ccd56] Based on :class:`~django.forms.DateTimeField` and translates its input into ``django.db.backends.postgresql.psycopg_any.DateTimeTZRange``. Default for :class:`~django.contrib.postgres.fields.DateTimeRangeField`.
+- [e966dcda] Based on :class:`~django.forms.DecimalField` and translates its input into ``django.db.backends.postgresql.psycopg_any.NumericRange``. Default for :class:`~django.contrib.postgres.fields.DecimalRangeField`.
+- [8cf1dba5] Based on :class:`~django.forms.IntegerField` and translates its input into ``django.db.backends.postgresql.psycopg_any.NumericRange``. Default for :class:`~django.contrib.postgres.fields.IntegerRangeField` and :class:`~django.contrib.postgres.fields.BigIntegerRangeField`.
+- [7f90829e] This field handles arrays by reproducing the underlying field a fixed number of times.
+- [57823667] Widget used by all of the range fields. Based on :class:`~django.forms.MultiWidget`.
+- [2d186d2e] .. class:: DateRangeField
+- [cd18cc82] .. class:: DateTimeRangeField
+- [04e1cccd] .. class:: DecimalRangeField
+- [41617016] .. class:: HStoreField
+- [9b3c8e0a] .. class:: IntegerRangeField
+- [18f85f31] .. class:: RangeWidget(base_widget, attrs=None)
+- [7f8415b7] .. class:: SimpleArrayField(base_field, delimiter=',', max_length=None, min_length=None)
+- [de407210] .. class:: SplitArrayField(base_field, size, remove_trailing_nulls=False)
+- [d026f2a6] .. currentmodule:: django.contrib.postgres.forms
+- [3b1819fc] =========================================== PostgreSQL specific form fields and widgets ===========================================
+- [83bc6e00] All of these fields and widgets are available from the ``django.contrib.postgres.forms`` module.
+- [3aa7b56d] Fields ======
+- [210a25ca] Range Fields ------------
+- [af3b9b12] This group of fields all share similar functionality for accepting range data. They are based on :class:`~django.forms.MultiValueField`. They treat one omitted value as an unbounded range. They also validate that the lower bound is not greater than the upper bound. All of these fields use :class:`~django.contrib.postgres.forms.RangeWidget`.
+- [93412fe3] Widgets =======
+- [cf466576] ``DateRangeField`` ~~~~~~~~~~~~~~~~~~
+- [019efd96] ``DateTimeRangeField`` ~~~~~~~~~~~~~~~~~~~~~~
+- [75847229] ``DecimalRangeField`` ~~~~~~~~~~~~~~~~~~~~~
+- [0e2b396d] ``HStoreField`` ---------------
+- [a92d87dc] ``IntegerRangeField`` ~~~~~~~~~~~~~~~~~~~~~
+- [2281c4a5] ``RangeWidget`` ---------------
+- [a392e7fa] ``SimpleArrayField`` --------------------
+- [49a90e73] ``SplitArrayField`` -------------------

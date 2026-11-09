@@ -1,6 +1,6 @@
 # Fact 8a123d15
 
-Store id: 5dde6395-64af-43ea-8367-efa436e67fcd
+Store id: f75fc9a1-82c9-46c3-b926-5ff3f4f7681c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_related_query_name_is_valid(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2512210+00:00`
+- posted_at: `2026-11-09T23:31:58.6081310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 163,
     "symbol": "RelatedField._check_related_query_name_is_valid"
   },
-  "id": "5dde6395-64af-43ea-8367-efa436e67fcd",
+  "id": "f75fc9a1-82c9-46c3-b926-5ff3f4f7681c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2512210+00:00"
+    "posted_at": "2026-11-09T23:31:58.6081310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "43fb0f71-7f18-4e35-b1ad-3175791751e4",
+  "subject_id": "c7b9ac13-9936-48c4-abe1-777dd37b5a7b",
   "subject_name": "django/db/models/fields/related::RelatedField._check_related_query_name_is_valid",
   "tags": [
     "entity:method"

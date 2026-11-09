@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.clear_where
 
-- Subject: django/db/models/sql/query::Query.clear_where (id `67aca735-ae24-4953-809f-7fa95cc7efa4`)
+- Subject: django/db/models/sql/query::Query.clear_where (id `06e27809-a7ae-4aaa-95d4-ab7ec2eb52f8`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

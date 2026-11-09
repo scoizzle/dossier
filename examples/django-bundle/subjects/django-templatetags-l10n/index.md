@@ -1,8 +1,8 @@
 # django/templatetags/l10n
 
-- Subject: django/templatetags/l10n (id `e4461d2d-cb5f-4bd1-85e4-6a6325b18c37`)
+- Subject: django/templatetags/l10n (id `15bc0ebb-d673-4557-aab9-504ebd481a53`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 389 tokens
 - Facts shown: 9 of 10
 - Conflicts: 0

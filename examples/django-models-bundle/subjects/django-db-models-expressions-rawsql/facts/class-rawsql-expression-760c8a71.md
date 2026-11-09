@@ -1,6 +1,6 @@
 # Fact 760c8a71
 
-Store id: 5bdce5b8-8ad5-4b59-8c18-19a8c1661372
+Store id: 4822f37b-2d0b-4ab5-8825-3bcb1d2e488a
 
 ## Text
 
@@ -20,7 +20,7 @@ class RawSQL(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6064610+00:00`
+- posted_at: `2026-11-09T23:31:55.8710260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1268,
     "symbol": "RawSQL"
   },
-  "id": "5bdce5b8-8ad5-4b59-8c18-19a8c1661372",
+  "id": "4822f37b-2d0b-4ab5-8825-3bcb1d2e488a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6064610+00:00"
+    "posted_at": "2026-11-09T23:31:55.8710260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7170ce6-7c60-4b64-827d-35107bfcf7fc",
+  "subject_id": "937d7151-b50a-4195-9390-8b919b7abc93",
   "subject_name": "django/db/models/expressions::RawSQL",
   "tags": [
     "entity:class"

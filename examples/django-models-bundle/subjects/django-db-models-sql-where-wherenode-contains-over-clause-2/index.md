@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode.contains_over_clause
 
-- Subject: django/db/models/sql/where::WhereNode.contains_over_clause (id `170daaad-7142-41d2-9c49-5e061587fcc8`)
+- Subject: django/db/models/sql/where::WhereNode.contains_over_clause (id `46503c96-2522-43dc-b002-7b03101ee462`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

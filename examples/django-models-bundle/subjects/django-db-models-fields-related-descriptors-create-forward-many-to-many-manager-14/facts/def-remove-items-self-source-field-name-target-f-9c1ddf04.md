@@ -1,6 +1,6 @@
 # Fact 9c1ddf04
 
-Store id: 0e639a49-0b6e-4fcc-baf5-8985971c9977
+Store id: 3aaca926-4cd3-4e66-9292-298e72dce090
 
 ## Text
 
@@ -20,7 +20,7 @@ def _remove_items( self, source_field_name, target_field_name, *objs, using=None
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9474360+00:00`
+- posted_at: `2026-11-09T23:31:59.5906080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1661,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._remove_items"
   },
-  "id": "0e639a49-0b6e-4fcc-baf5-8985971c9977",
+  "id": "3aaca926-4cd3-4e66-9292-298e72dce090",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9474360+00:00"
+    "posted_at": "2026-11-09T23:31:59.5906080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "abd218e4-d949-4449-8da5-0c5f27c6d396",
+  "subject_id": "129abc7a-b745-4d54-af0e-e11be52c6c6b",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._remove_items",
   "tags": [
     "entity:method"

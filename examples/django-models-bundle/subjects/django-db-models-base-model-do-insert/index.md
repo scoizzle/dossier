@@ -1,9 +1,9 @@
 # django/db/models/base::Model._do_insert
 
-- Subject: django/db/models/base::Model._do_insert (id `30b2af3f-abb5-43cc-b3ff-249759c03334`)
+- Subject: django/db/models/base::Model._do_insert (id `54c78652-eda2-412d-8352-0feedb85eb84`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

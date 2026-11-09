@@ -1,6 +1,6 @@
 # Fact d584befa
 
-Store id: 3aa39cd9-fd60-4c1e-836a-13a2e38c173b
+Store id: 39f630c6-6d69-4de4-8a08-258a58c9f694
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManyToOneRel(ForeignObjectRel)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3665740+00:00`
+- posted_at: `2026-11-09T23:32:00.3195660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 251,
     "symbol": "ManyToOneRel"
   },
-  "id": "3aa39cd9-fd60-4c1e-836a-13a2e38c173b",
+  "id": "39f630c6-6d69-4de4-8a08-258a58c9f694",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3665740+00:00"
+    "posted_at": "2026-11-09T23:32:00.3195660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ec10572-323a-4f87-8e5a-3048ca831beb",
+  "subject_id": "b69ae772-bb05-494a-bbc5-b570a8b6e4d0",
   "subject_name": "django/db/models/fields/reverse_related::ManyToOneRel",
   "tags": [
     "entity:class"

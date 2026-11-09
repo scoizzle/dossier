@@ -1,6 +1,6 @@
 # Fact a3e4b21a
 
-Store id: 74578628-57bb-4766-9d84-5c9c1d526d90
+Store id: 183a03c8-b030-4710-b81e-9cda3d8afef1
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_group_by_cols(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5963290+00:00`
+- posted_at: `2026-11-09T23:31:55.8628790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1212,
     "symbol": "Value.get_group_by_cols"
   },
-  "id": "74578628-57bb-4766-9d84-5c9c1d526d90",
+  "id": "183a03c8-b030-4710-b81e-9cda3d8afef1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5963290+00:00"
+    "posted_at": "2026-11-09T23:31:55.8628790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "44b3b057-528c-471d-9e1e-2200c045235c",
+  "subject_id": "a8d7d8c5-ce36-4d35-bc54-c20a52f4a6af",
   "subject_name": "django/db/models/expressions::Value.get_group_by_cols",
   "tags": [
     "entity:method"

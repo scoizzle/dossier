@@ -1,6 +1,6 @@
 # Fact 3cf09c4f
 
-Store id: 220e082d-e07d-4b76-a2f4-61beb36a3c7b
+Store id: 74f8b3ec-2cb0-4798-a53e-39ef41773338
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_blank_choice_label
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1602360+00:00`
+- posted_at: `2026-11-09T23:32:07.9512730+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "220e082d-e07d-4b76-a2f4-61beb36a3c7b",
+  "id": "74f8b3ec-2cb0-4798-a53e-39ef41773338",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1602360+00:00"
+    "posted_at": "2026-11-09T23:32:07.9512730+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_blank_choice_label"
       },
       "rel": "contains",
-      "target": "36c92579-0550-4f21-ae38-5b87f439d6f6"
+      "target": "eb54e3f6-7df3-4b9b-a5aa-d65a0329e347"
     }
   ],
   "status": "live",
-  "subject_id": "f5e83459-87b7-40dd-8dc8-0296e557a739",
+  "subject_id": "8d25c560-4eac-44c9-a77d-da20cef77164",
   "subject_name": "django/db/models/utils",
   "tags": [
     "entity:function"

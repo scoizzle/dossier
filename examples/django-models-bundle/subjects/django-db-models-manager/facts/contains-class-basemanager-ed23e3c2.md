@@ -1,6 +1,6 @@
 # Fact ed23e3c2
 
-Store id: 719cc4ee-e250-4fb6-addd-de3d7ec83729
+Store id: 0bd6f5fd-8dbe-49de-963c-0cf1f4d5b062
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BaseManager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5586340+00:00`
+- posted_at: `2026-11-09T23:32:03.7342610+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "719cc4ee-e250-4fb6-addd-de3d7ec83729",
+  "id": "0bd6f5fd-8dbe-49de-963c-0cf1f4d5b062",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5586340+00:00"
+    "posted_at": "2026-11-09T23:32:03.7342610+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BaseManager"
       },
       "rel": "contains",
-      "target": "aa3aa9ba-69e2-42f1-9dd7-99885c442e2d"
+      "target": "eec8cf94-8f7e-4c53-a088-afc3b719fa93"
     }
   ],
   "status": "live",
-  "subject_id": "db0c2f2d-3473-4386-8f36-4d861124f3a4",
+  "subject_id": "5e85a5f7-e460-4775-bcc8-e7045c95860f",
   "subject_name": "django/db/models/manager",
   "tags": [
     "entity:class"

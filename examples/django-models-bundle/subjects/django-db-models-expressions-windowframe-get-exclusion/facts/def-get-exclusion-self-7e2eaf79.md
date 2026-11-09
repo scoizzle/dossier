@@ -1,6 +1,6 @@
 # Fact 7e2eaf79
 
-Store id: 183bca48-3964-4425-af26-dd678c8f1d92
+Store id: ecbc1300-ebd3-4f1e-9b1c-8dfae040e25a
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_exclusion(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7793250+00:00`
+- posted_at: `2026-11-09T23:31:56.0226850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2164,
     "symbol": "WindowFrame.get_exclusion"
   },
-  "id": "183bca48-3964-4425-af26-dd678c8f1d92",
+  "id": "ecbc1300-ebd3-4f1e-9b1c-8dfae040e25a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7793250+00:00"
+    "posted_at": "2026-11-09T23:31:56.0226850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b7bbd383-bd82-4632-8b82-56f7ac25ade0",
+  "subject_id": "cd91fa85-0de4-4b42-9991-afa6933c5754",
   "subject_name": "django/db/models/expressions::WindowFrame.get_exclusion",
   "tags": [
     "entity:method"

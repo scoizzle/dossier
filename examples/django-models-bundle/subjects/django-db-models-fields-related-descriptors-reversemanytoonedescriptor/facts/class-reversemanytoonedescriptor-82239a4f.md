@@ -1,6 +1,6 @@
 # Fact 82239a4f
 
-Store id: fc1a2ad2-4df2-40e1-8ea6-cf4bdebd7cbd
+Store id: cc16ff94-372c-409f-a8f3-ac1743d83a23
 
 ## Text
 
@@ -20,7 +20,7 @@ class ReverseManyToOneDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7697040+00:00`
+- posted_at: `2026-11-09T23:31:59.2133250+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 657,
     "symbol": "ReverseManyToOneDescriptor"
   },
-  "id": "fc1a2ad2-4df2-40e1-8ea6-cf4bdebd7cbd",
+  "id": "cc16ff94-372c-409f-a8f3-ac1743d83a23",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7697040+00:00"
+    "posted_at": "2026-11-09T23:31:59.2133250+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ddbdfaf4-42b5-49e4-a08b-ca3ccd57e486",
+  "subject_id": "96e57659-d1c9-4b02-bc03-562624f68bb2",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor",
   "tags": [
     "entity:class"

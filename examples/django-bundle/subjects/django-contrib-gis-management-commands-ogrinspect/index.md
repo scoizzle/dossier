@@ -1,14 +1,14 @@
 # django/contrib/gis/management/commands/ogrinspect
 
-- Subject: django/contrib/gis/management/commands/ogrinspect (id `a8c96a3d-ee64-447f-98a7-b3e26f048faa`)
+- Subject: django/contrib/gis/management/commands/ogrinspect (id `8135de89-4286-47da-8161-098e4b0876b8`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 791 tokens
-- Facts shown: 13 of 14
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1288 tokens
+- Facts shown: 14 of 14
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Filter options to params accepted by `_ogrinspect` ogr_options = { k: v for k, v in options.items() if k in get_func_args(_ogrinspect) and v is not None } output = [s for s in _ogrinspect(ds, model_name, **ogr_options)] [8e083c4f]
 - # Getting the OGR DataSource from the string parameter. try: ds = gdal.DataSource(data_source) except gdal.GDALException as msg: raise CommandError(msg) [006babc4]
@@ -24,6 +24,6 @@
 - from django.contrib.gis import gdal from django.core.management.base import BaseCommand, CommandError from django.utils.inspect import get_func_args [1bb38542]
 - import argparse [b0b4b585]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [6557343d]
+- [6557343d] def add_arguments(self, parser): parser.add_argument("data_source", help="Path to the data source.") parser.add_argument("model_name", help="Name of the model to create.") parser.add_argument( "--blank", action=ListOptionAction, default=False, help="Use a comma separated list of OGR field names to add " "the `blank=True` option to the field definition. Set to `true` " "to apply to all applicable fields.", ) parser.add_argument( "--decimal", action=ListOptionAction, default=False, help="Use a comma separated list of OGR float fields to " "generate `DecimalField` instead of the default " "`FloatField`. Set to `true` to apply to all OGR float fields.", ) parser.add_argument( "--geom-name", default="geom", help="Specifies the model name for the Geometry Field (defaults to `geom`)", ) parser.add_argument( "--layer", dest="layer_key", action=LayerOptionAction, default=0, help="The key for specifying which layer in the OGR data " "source to use. Defaults to 0 (the first layer). May be " "an integer or a string identifier for the layer.", ) parser.add_argument( "--multi-geom", action="store_true", help="Treat the geometry in the data source as a geometry collection.", ) parser.add_argument( "--name-field", help="Specifies a field name to return for the __str__() method.", ) parser.add_argument( "--no-imports", action="store_false", dest="imports", help="Do not include `from django.contrib.gis.db import models` statement.", ) parser.add_argument( "--null", action=ListOptionAction, default=False, help="Use a comma separated list of OGR field names to add " "the `null=True` option to the field definition. Set to `true` " "to apply to all applicable fields.", ) parser.add_argument( "--srid", help="The SRID to use for the Geometry Field. If it can be " "determined, the SRID of the data source is used.", ) parser.add_argument( "--mapping", action="store_true", help="Generate mapping dictionary for use with `LayerMapping`.", )

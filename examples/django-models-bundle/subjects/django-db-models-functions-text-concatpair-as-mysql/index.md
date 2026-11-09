@@ -1,9 +1,9 @@
 # django/db/models/functions/text::ConcatPair.as_mysql
 
-- Subject: django/db/models/functions/text::ConcatPair.as_mysql (id `7d5a03d4-d129-4417-a009-d476424234e0`)
+- Subject: django/db/models/functions/text::ConcatPair.as_mysql (id `7d1a98fb-f4c1-4bab-801e-e5e01d020e2e`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/expressions::OrderByList.__init__
 
-- Subject: django/db/models/expressions::OrderByList.__init__ (id `2a09923f-c97d-4eb0-9db7-cdd3d921e09e`)
+- Subject: django/db/models/expressions::OrderByList.__init__ (id `b13e569c-d9b2-40a7-a817-bc16600dcca5`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/related::RelatedField._check_related_name_is_valid
 
-- Subject: django/db/models/fields/related::RelatedField._check_related_name_is_valid (id `be7a5586-c8d0-4701-9117-dc801315c267`)
+- Subject: django/db/models/fields/related::RelatedField._check_related_name_is_valid (id `4f58d688-8a31-47dc-8746-072deb5db97b`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

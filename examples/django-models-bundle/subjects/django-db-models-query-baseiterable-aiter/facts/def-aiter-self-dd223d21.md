@@ -1,6 +1,6 @@
 # Fact dd223d21
 
-Store id: 523b3cb0-1272-4787-b7c8-9c86b6b2a29d
+Store id: d9146843-26be-41a1-a06c-c4e0a2baab53
 
 ## Text
 
@@ -20,7 +20,7 @@ def __aiter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.1880420+00:00`
+- posted_at: `2026-11-09T23:32:04.2338840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "BaseIterable.__aiter__"
   },
-  "id": "523b3cb0-1272-4787-b7c8-9c86b6b2a29d",
+  "id": "d9146843-26be-41a1-a06c-c4e0a2baab53",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.1880420+00:00"
+    "posted_at": "2026-11-09T23:32:04.2338840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1d3656c6-67a7-4e74-a122-24779f9f7847",
+  "subject_id": "14fa2de7-b188-4939-a658-d0f6cb0470d2",
   "subject_name": "django/db/models/query::BaseIterable.__aiter__",
   "tags": [
     "entity:method"

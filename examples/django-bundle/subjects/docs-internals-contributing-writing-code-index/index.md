@@ -1,8 +1,8 @@
 # docs/internals/contributing/writing-code/index
 
-- Subject: docs/internals/contributing/writing-code/index (id `236fe676-51c1-4ae7-952d-75ec5661afe0`)
+- Subject: docs/internals/contributing/writing-code/index (id `7454e490-cf83-40a9-adf2-50d76d45d8f5`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 587 tokens
 - Facts shown: 16 of 16
 - Conflicts: 0

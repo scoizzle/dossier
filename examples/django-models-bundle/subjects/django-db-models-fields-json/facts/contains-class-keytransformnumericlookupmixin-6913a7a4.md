@@ -1,6 +1,6 @@
 # Fact 6913a7a4
 
-Store id: 0479183d-14b2-40fe-88dc-26c7a6c0e2b2
+Store id: 1d4b76dd-d244-4360-82d8-6e9aa02cf7b8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformNumericLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0479183d-14b2-40fe-88dc-26c7a6c0e2b2",
+  "id": "1d4b76dd-d244-4360-82d8-6e9aa02cf7b8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformNumericLookupMixin"
       },
       "rel": "contains",
-      "target": "5c066c81-8694-47ea-a4a4-6db617090c39"
+      "target": "b6e18691-c517-455d-96b2-3c679905c955"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

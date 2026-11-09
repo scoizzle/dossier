@@ -1,9 +1,9 @@
 # django/db/models/lookups::Lookup.__hash__
 
-- Subject: django/db/models/lookups::Lookup.__hash__ (id `a475be37-1827-4514-b4e5-dfb9ababdabb`)
+- Subject: django/db/models/lookups::Lookup.__hash__ (id `d1ce9836-cbbf-49ee-b831-7d5d31da1e6b`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

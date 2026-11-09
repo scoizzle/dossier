@@ -1,6 +1,6 @@
 # Fact ba0d62e9
 
-Store id: c31ae4a4-94ec-42b4-9cbc-7a5b978ba38b
+Store id: 2c025b9e-1744-4129-9f8e-7e53cdfbcbec
 
 ## Text
 
@@ -20,7 +20,7 @@ def generate_filename(self, instance, filename)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2472640+00:00`
+- posted_at: `2026-11-09T23:31:57.4080570+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 348,
     "symbol": "FileField.generate_filename"
   },
-  "id": "c31ae4a4-94ec-42b4-9cbc-7a5b978ba38b",
+  "id": "2c025b9e-1744-4129-9f8e-7e53cdfbcbec",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2472640+00:00"
+    "posted_at": "2026-11-09T23:31:57.4080570+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "93e989d7-3216-43dc-9b85-8cd64b21aa0a",
+  "subject_id": "d5b19139-1ccb-48c6-8dc8-f8984d879e6e",
   "subject_name": "django/db/models/fields/files::FileField.generate_filename",
   "tags": [
     "entity:method"

@@ -1,8 +1,8 @@
 # django/contrib/gis/admin/options
 
-- Subject: django/contrib/gis/admin/options (id `001dd11a-601d-40a9-8fd3-9044576595c9`)
+- Subject: django/contrib/gis/admin/options (id `e4d62848-e6e2-4c4f-be35-829b312068c3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 192 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

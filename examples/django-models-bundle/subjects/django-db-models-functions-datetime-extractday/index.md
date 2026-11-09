@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::ExtractDay
 
-- Subject: django/db/models/functions/datetime::ExtractDay (id `70d93f38-869e-4e45-9003-503cec4f4df8`)
+- Subject: django/db/models/functions/datetime::ExtractDay (id `f8b1d35e-8ae5-482b-a6be-79658003b736`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

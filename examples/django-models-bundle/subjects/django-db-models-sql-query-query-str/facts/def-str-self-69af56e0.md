@@ -1,6 +1,6 @@
 # Fact 69af56e0
 
-Store id: b7af3dba-00c1-45b9-b762-73277e5d4129
+Store id: fb40bae7-4d7d-410b-b311-4d4cc4a4bbae
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2292640+00:00`
+- posted_at: `2026-11-09T23:32:06.7584460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 345,
     "symbol": "Query.__str__"
   },
-  "id": "b7af3dba-00c1-45b9-b762-73277e5d4129",
+  "id": "fb40bae7-4d7d-410b-b311-4d4cc4a4bbae",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2292640+00:00"
+    "posted_at": "2026-11-09T23:32:06.7584460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "76de8243-4a42-4cbb-9971-885922c74f5c",
+  "subject_id": "7b5919eb-c6c9-4f62-8432-b69b60e03624",
   "subject_name": "django/db/models/sql/query::Query.__str__",
   "tags": [
     "entity:method"

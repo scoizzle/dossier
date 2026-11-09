@@ -1,6 +1,6 @@
 # Fact 0e2d0ae4
 
-Store id: bea06f43-c564-4ba8-ab46-2aa91fc430e4
+Store id: ffb119c9-922c-4636-9a6a-196c4d1199bf
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Min
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bea06f43-c564-4ba8-ab46-2aa91fc430e4",
+  "id": "ffb119c9-922c-4636-9a6a-196c4d1199bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Min"
       },
       "rel": "contains",
-      "target": "78a6f898-6545-4e1f-b10d-78618ec8767c"
+      "target": "d4fc95bd-0a73-4e7f-a7ee-a62f0034c910"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

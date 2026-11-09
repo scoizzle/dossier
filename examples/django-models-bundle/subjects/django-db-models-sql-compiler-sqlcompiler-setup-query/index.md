@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.setup_query
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.setup_query (id `a67f570e-758b-4566-aaed-f9d51ee15bfa`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.setup_query (id `f2075a66-26ad-431e-bc13-487c51b47b6c`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

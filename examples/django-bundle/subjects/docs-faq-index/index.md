@@ -1,8 +1,8 @@
 # docs/faq/index
 
-- Subject: docs/faq/index (id `69ad1e99-e148-4dc1-b249-947c398c0b39`)
+- Subject: docs/faq/index (id `e9090d63-9911-4dca-9f2c-3680941c0b77`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 64 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

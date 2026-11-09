@@ -1,9 +1,9 @@
 # django/db/models/expressions::ResolvedOuterRef.relabeled_clone
 
-- Subject: django/db/models/expressions::ResolvedOuterRef.relabeled_clone (id `8d487006-cc1f-4ce6-a17f-c4989254c53c`)
+- Subject: django/db/models/expressions::ResolvedOuterRef.relabeled_clone (id `924b855d-0d70-47aa-b775-18438b8e4602`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

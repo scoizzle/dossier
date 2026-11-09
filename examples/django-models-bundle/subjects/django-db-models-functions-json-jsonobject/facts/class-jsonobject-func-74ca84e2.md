@@ -1,6 +1,6 @@
 # Fact 74ca84e2
 
-Store id: 7fee0ed1-5c4f-42f9-96a2-951c5892b732
+Store id: 28f118e9-4a82-4469-9cf9-a66f9006e8d2
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONObject(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3782470+00:00`
+- posted_at: `2026-11-09T23:32:01.4735780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 68,
     "symbol": "JSONObject"
   },
-  "id": "7fee0ed1-5c4f-42f9-96a2-951c5892b732",
+  "id": "28f118e9-4a82-4469-9cf9-a66f9006e8d2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3782470+00:00"
+    "posted_at": "2026-11-09T23:32:01.4735780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9e827d32-8f1b-44a6-92c0-f21f7cd0bec2",
+  "subject_id": "90c9df14-9393-42d7-b096-7043dd702440",
   "subject_name": "django/db/models/functions/json::JSONObject",
   "tags": [
     "entity:class"

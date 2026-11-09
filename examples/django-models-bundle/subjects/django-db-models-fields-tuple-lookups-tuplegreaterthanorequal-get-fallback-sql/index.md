@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleGreaterThanOrEqual.get_fallback_sql
 
-- Subject: django/db/models/fields/tuple_lookups::TupleGreaterThanOrEqual.get_fallback_sql (id `d9f2f20c-0128-472a-b78c-3acdf3178889`)
+- Subject: django/db/models/fields/tuple_lookups::TupleGreaterThanOrEqual.get_fallback_sql (id `151e13c5-d3d6-4df4-a42b-2613fede79cb`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

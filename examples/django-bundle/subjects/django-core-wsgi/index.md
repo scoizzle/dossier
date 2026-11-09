@@ -1,8 +1,8 @@
 # django/core/wsgi
 
-- Subject: django/core/wsgi (id `4afde3dc-82ea-4222-ac54-13eeb00d972a`)
+- Subject: django/core/wsgi (id `f833a3f5-e6f2-4a1e-bd5f-1bd4d73d8530`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 121 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # docs/ref/paginator
 
-- Subject: docs/ref/paginator (id `7bba2453-fd03-432c-9c79-5b1bfa02f154`)
+- Subject: docs/ref/paginator (id `4b13b108-14b7-49e3-9a93-56be778a5756`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 23 of 101
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3491 tokens
+- Facts shown: 100 of 101
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> from django.core.paginator import Paginator >>> paginator = Paginator([1, 2, 3], 2) >>> paginator.page(5) Traceback (most recent call last): ... EmptyPage: That page contains no results [f8f4ada9]
 - >>> paginator = Paginator( ... [1, 2, 3], ... 2, ... error_messages={"no_results": "Page does not exist"}, ... ) >>> paginator.page(5) Traceback (most recent call last): ... EmptyPage: Page does not exist [4cd5c7b4]
@@ -34,6 +34,82 @@
 - For example, here is the default error message: [ff5f248d]
 - Raised when :meth:`~Paginator.page` is given a valid value but no objects exist on that page. [3af2ae8b]
 
-## Beyond the budget
+## All facts
 
-77 more facts did not fit in the budget: [56ffef36] [878e53c1] [54c914d2] [5848f8dd] [2bc67500] [d25b2890] [825fff42] [0c681418] [d3feeffe] [2053395d] [5897abc0] [e3f3158a] [6ba8557b] [ecb0c13d] [66484965] [d7600a3c] [d5e68cb1] [b13bbb15] [7d8c375d] [74ed4beb] [ae280882] [eb72d44c] [5f56807a] [f6079ec6] [ee173019] [7ff97efe] [08ec9751] [0a3b5c46] [bdc4722c] [f3f98e50] [ce6a68ac] [9c3395a0] [7fafc84b] [9ae9f283] [956f9cd2] [39050812] [bdfd975c] [6e031b25] [93e7b6cb] [36875daa] [058e181e] [7475732e] [f7031f8c] [ed57e436] [71a90290] [ead27381] [f770e73a] [13e861d5] [8e0d0f1d] [6353a428] [5ddca3d0] [d1469533] [32db6eef] [c6f4a790] [d8c8bef4] [7f3bfd58] [bfdcc7c4] [f799030c] [6608f895] [7b5440e6] [a1eb26d754a3d60c-28] [a1eb26d754a3d60c-29] [1b28a76e] [bb91fb20711fda29-3] [bb91fb20711fda29-4] [a730ec0f] [35c7ac83] [458050e52503f721-5] [b7c8b04a] [d5882157dc780592-6] [d5882157dc780592-7] [cbd39995] [8950cd65] [2fd88194] [153f1be3] [da8796b6] [15b0301c]
+- [56ffef36] For example, with the default values for ``on_each_side`` and ``on_ends``, if the current page is 10 and there are 50 pages, the page range will be ``[1, 2, '…', 7, 8, 9, 10, 11, 12, 13, '…', 49, 50]``. This will result in pages 7, 8, and 9 to the left of and 11, 12, and 13 to the right of the current page as well as pages 1 and 2 at the start and 49 and 50 at the end.
+- [878e53c1] If the page isn't a number, it returns the first page. If the page number is negative or greater than the number of pages, it returns the last page.
+- [54c914d2] Optional. Use this when you don't want to have a last page with very few items. If the last page would normally have a number of items less than or equal to ``orphans``, then those items will be added to the previous page (which becomes the last page) instead of leaving the items on a page by themselves. For example, with 23 items, ``per_page=10``, and ``orphans=3``, there will be two pages; the first page with 10 items and the second (and last) page with 13 items. ``orphans`` defaults to zero, which means pages are never combined and the last page may have one item. ``orphans`` should be less than the :attr:`~Paginator.per_page` value.
+- [5848f8dd] Optional. Whether or not the first page is allowed to be empty. If ``False`` and ``object_list`` is empty, then an ``EmptyPage`` error will be raised.
+- [2bc67500] Raised when :meth:`~Paginator.page` is given a value that isn't an integer.
+- [d25b2890] Raises :exc:`InvalidPage` if the given page number doesn't exist.
+- [825fff42] Raises an :exc:`EmptyPage` exception only if you specify ``Paginator(..., allow_empty_first_page=False)`` and the ``object_list`` is empty.
+- [0c681418] Required. A list, tuple, ``QuerySet``, or other sliceable object with a ``count()`` or ``__len__()`` method. For consistent pagination, ``QuerySet``\s should be ordered, e.g. with an :meth:`~django.db.models.query.QuerySet.order_by` clause or with a default :attr:`~django.db.models.Options.ordering` on the model.
+- [d3feeffe] Required. The maximum number of items to include on a page, not including orphans (see the :attr:`~Paginator.orphans` optional argument below).
+- [2053395d] Returns ``True`` if there's a next **or** previous page.
+- [5897abc0] Returns ``True`` if there's a next page.
+- [e3f3158a] Returns ``True`` if there's a previous page.
+- [6ba8557b] Returns a 1-based list of page numbers similar to :attr:`Paginator.page_range`, but may add an ellipsis to either or both sides of the current page number when :attr:`Paginator.num_pages` is large.
+- [ecb0c13d] Returns a :class:`Page` object with the given 1-based index, while also handling out of range and invalid page numbers.
+- [66484965] Returns a :class:`Page` object with the given 1-based index. Raises :exc:`PageNotAnInteger` if the ``number`` cannot be converted to an integer by calling ``int()``. Raises :exc:`EmptyPage` if the given page number doesn't exist.
+- [d7600a3c] Returns the 1-based index of the first object on the page, relative to all of the objects in the paginator's list. For example, when paginating a list of 5 objects with 2 objects per page, the second page's :meth:`~Page.start_index` would return ``3``.
+- [d5e68cb1] Returns the 1-based index of the last object on the page, relative to all of the objects in the paginator's list. For example, when paginating a list of 5 objects with 2 objects per page, the second page's :meth:`~Page.end_index` would return ``4``.
+- [b13bbb15] Returns the next page number. Raises :exc:`InvalidPage` if next page doesn't exist.
+- [7d8c375d] Returns the previous page number. Raises :exc:`InvalidPage` if previous page doesn't exist.
+- [74ed4beb] The 1-based page number for this page.
+- [ae280882] The ``error_messages`` argument lets you override the default messages that the paginator will raise. Pass in a dictionary with keys matching the error messages you want to override. Available error message keys are: ``invalid_page``, ``min_page``, and ``no_results``.
+- [eb72d44c] The associated :class:`Paginator` object.
+- [5f56807a] The list of objects on this page.
+- [f6079ec6] The number of pages to include at the beginning and end of page range is determined by the ``on_ends`` argument which defaults to 2.
+- [ee173019] The number of pages to include on each side of the current page number is determined by the ``on_each_side`` argument which defaults to 3.
+- [7ff97efe] The total number of objects, across all pages.
+- [08ec9751] The total number of pages.
+- [0a3b5c46] ``AsyncPage`` has the following additional method:
+- [bdc4722c] ``AsyncPage`` has the same attributes and signatures as :class:`Page`, as well as asynchronous versions of all the same methods, using an ``a`` prefix - for example, use ``await async_page.ahas_next()`` rather than ``page.has_next()``.
+- [f3f98e50] ``AsyncPaginator`` has asynchronous versions of the same methods as :class:`Paginator`, using an ``a`` prefix - for example, use ``await async_paginator.aget_page(number)`` rather than ``paginator.get_page(number)``.
+- [ce6a68ac] ``AsyncPaginator`` has the same attributes and signatures as :class:`Paginator`, with the following exceptions:
+- [9c3395a0] .. attribute:: Page.number
+- [7fafc84b] .. attribute:: Page.object_list
+- [9ae9f283] .. attribute:: Page.paginator
+- [956f9cd2] .. attribute:: Paginator.ELLIPSIS
+- [39050812] .. attribute:: Paginator.allow_empty_first_page
+- [bdfd975c] .. attribute:: Paginator.count
+- [6e031b25] .. attribute:: Paginator.error_messages
+- [93e7b6cb] .. attribute:: Paginator.num_pages
+- [36875daa] .. attribute:: Paginator.object_list
+- [058e181e] .. attribute:: Paginator.orphans
+- [7475732e] .. attribute:: Paginator.page_range
+- [f7031f8c] .. attribute:: Paginator.per_page
+- [ed57e436] .. class:: AsyncPage(object_list, number, paginator)
+- [71a90290] .. class:: AsyncPaginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
+- [ead27381] .. class:: Page(object_list, number, paginator)
+- [f770e73a] .. exception:: EmptyPage
+- [13e861d5] .. exception:: InvalidPage
+- [8e0d0f1d] .. exception:: PageNotAnInteger
+- [6353a428] .. method:: Page.end_index()
+- [5ddca3d0] .. method:: Page.has_next()
+- [d1469533] .. method:: Page.has_other_pages()
+- [32db6eef] .. method:: Page.has_previous()
+- [c6f4a790] .. method:: Page.next_page_number()
+- [d8c8bef4] .. method:: Page.previous_page_number()
+- [7f3bfd58] .. method:: Page.start_index()
+- [bfdcc7c4] .. method:: Paginator.get_elided_page_range(number, *, on_each_side=3, on_ends=2)
+- [f799030c] .. method:: Paginator.get_page(number)
+- [6608f895] .. method:: Paginator.page(number)
+- [7b5440e6] .. module:: django.core.paginator :synopsis: Classes to help you easily manage paginated data.
+- [a1eb26d754a3d60c-28] .. versionadded:: 6.0
+- [a1eb26d754a3d60c-29] .. versionadded:: 6.0
+- [1b28a76e] ========= Paginator =========
+- [bb91fb20711fda29-3] Attributes ----------
+- [bb91fb20711fda29-4] Attributes ----------
+- [a730ec0f] Both of the exceptions are subclasses of :exc:`InvalidPage`, so you can handle them both with ``except InvalidPage``.
+- [35c7ac83] Django provides a few classes that help you manage paginated data -- that is, data that's split across several pages, with "Previous/Next" links. These classes live in :source:`django/core/paginator.py`.
+- [458050e52503f721-5] Exceptions ==========
+- [b7c8b04a] For examples, see the :doc:`Pagination topic guide </topics/pagination>`.
+- [d5882157dc780592-6] Methods -------
+- [d5882157dc780592-7] Methods -------
+- [cbd39995] The :meth:`Paginator.page` method raises an exception if the requested page is invalid (i.e. not an integer) or contains no objects. Generally, it's enough to catch the ``InvalidPage`` exception, but if you'd like more granularity, you can catch either of the following exceptions:
+- [8950cd65] You usually won't construct ``Page`` objects by hand -- you'll get them by iterating :class:`Paginator`, or by using :meth:`Paginator.page`.
+- [2fd88194] ``AsyncPage`` class ===================
+- [153f1be3] ``AsyncPaginator`` class ========================
+- [da8796b6] ``Page`` class ==============
+- [15b0301c] ``Paginator`` class ===================

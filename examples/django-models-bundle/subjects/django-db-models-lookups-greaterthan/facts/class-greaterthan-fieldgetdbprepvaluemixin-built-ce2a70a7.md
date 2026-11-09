@@ -1,6 +1,6 @@
 # Fact ce2a70a7
 
-Store id: 0a713bc7-4380-402c-bb3f-3b4fb540b1fd
+Store id: d30f539a-f583-4884-a701-a217c6107b84
 
 ## Text
 
@@ -20,7 +20,7 @@ class GreaterThan(FieldGetDbPrepValueMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1146520+00:00`
+- posted_at: `2026-11-09T23:32:03.2655340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 425,
     "symbol": "GreaterThan"
   },
-  "id": "0a713bc7-4380-402c-bb3f-3b4fb540b1fd",
+  "id": "d30f539a-f583-4884-a701-a217c6107b84",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1146520+00:00"
+    "posted_at": "2026-11-09T23:32:03.2655340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da7f3222-99c6-4593-926d-12af3a5244e4",
+  "subject_id": "d0f6990b-ec66-478b-ab71-a75afeafb677",
   "subject_name": "django/db/models/lookups::GreaterThan",
   "tags": [
     "entity:class",

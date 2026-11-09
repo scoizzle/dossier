@@ -1,9 +1,9 @@
 # django/db/models/base::Model.date_error_message
 
-- Subject: django/db/models/base::Model.date_error_message (id `865de93b-9024-4f3c-92e4-c58dc28328ab`)
+- Subject: django/db/models/base::Model.date_error_message (id `29f2e0a8-7455-429e-9aa0-56fc5a99d9d6`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

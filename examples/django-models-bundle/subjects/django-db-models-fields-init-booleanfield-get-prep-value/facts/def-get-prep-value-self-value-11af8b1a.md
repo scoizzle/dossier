@@ -1,6 +1,6 @@
 # Fact 11af8b1a
 
-Store id: 00d32288-6c82-4803-8186-7adbdc06c5a0
+Store id: bfe2c454-85ed-4178-9ca8-e63d4640f903
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3689540+00:00`
+- posted_at: `2026-11-09T23:31:56.5416360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1227,
     "symbol": "BooleanField.get_prep_value"
   },
-  "id": "00d32288-6c82-4803-8186-7adbdc06c5a0",
+  "id": "bfe2c454-85ed-4178-9ca8-e63d4640f903",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3689540+00:00"
+    "posted_at": "2026-11-09T23:31:56.5416360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "25c35abe-f4db-418f-9b3f-0da869975962",
+  "subject_id": "67b25b3c-6e8d-466f-b7ec-04289abc0cc7",
   "subject_name": "django/db/models/fields/__init__::BooleanField.get_prep_value",
   "tags": [
     "entity:method"

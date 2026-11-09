@@ -1,6 +1,6 @@
 # Fact fd7559c0
 
-Store id: 0e96cdb3-2adc-44d7-ad8c-fc8bfae70539
+Store id: f78eace3-c76d-4ba6-952b-2c4b7807792d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncYear
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0e96cdb3-2adc-44d7-ad8c-fc8bfae70539",
+  "id": "f78eace3-c76d-4ba6-952b-2c4b7807792d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncYear"
       },
       "rel": "contains",
-      "target": "cdf4b9e6-7ebf-4def-ac59-cf7f0b59427b"
+      "target": "d8aabd1f-2de6-4cdb-a2be-11bc7e9ed90c"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

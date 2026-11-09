@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::Now.as_mysql
 
-- Subject: django/db/models/functions/datetime::Now.as_mysql (id `1c6b028f-db9a-4cad-814a-aa401462f634`)
+- Subject: django/db/models/functions/datetime::Now.as_mysql (id `842188df-0f20-4891-869a-1c1907288dab`)
 - Kind: method
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

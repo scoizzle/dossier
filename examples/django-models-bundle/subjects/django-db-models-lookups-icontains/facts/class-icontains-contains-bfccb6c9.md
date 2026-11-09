@@ -1,6 +1,6 @@
 # Fact bfccb6c9
 
-Store id: 02cc0506-af7a-4a36-b881-b095f87a3769
+Store id: ca4a5f73-5230-4365-9eae-bebdf0074379
 
 ## Text
 
@@ -20,7 +20,7 @@ class IContains(Contains)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1812720+00:00`
+- posted_at: `2026-11-09T23:32:03.3605520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 630,
     "symbol": "IContains"
   },
-  "id": "02cc0506-af7a-4a36-b881-b095f87a3769",
+  "id": "ca4a5f73-5230-4365-9eae-bebdf0074379",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1812720+00:00"
+    "posted_at": "2026-11-09T23:32:03.3605520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "21a7d083-462c-4c20-901f-88203a3dab18",
+  "subject_id": "4b35ee6b-0cc3-476a-8c41-c6dfb85e8fb7",
   "subject_name": "django/db/models/lookups::IContains",
   "tags": [
     "entity:class",

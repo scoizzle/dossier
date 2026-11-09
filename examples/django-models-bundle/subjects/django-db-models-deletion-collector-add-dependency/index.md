@@ -1,9 +1,9 @@
 # django/db/models/deletion::Collector.add_dependency
 
-- Subject: django/db/models/deletion::Collector.add_dependency (id `ae737045-ab8f-4bd1-bc0c-c901bbfeaef5`)
+- Subject: django/db/models/deletion::Collector.add_dependency (id `0f7ea5ff-6030-40a1-b8ba-3c4150a85304`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/query::BaseIterable._async_generator.next_slice
 
-- Subject: django/db/models/query::BaseIterable._async_generator.next_slice (id `57913618-0dc5-451b-a308-6122d2ebc96f`)
+- Subject: django/db/models/query::BaseIterable._async_generator.next_slice (id `ba733ca5-d3a7-45d3-b9a5-1c3d327297e3`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

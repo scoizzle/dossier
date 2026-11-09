@@ -1,14 +1,14 @@
 # docs/releases/1.10.3
 
-- Subject: docs/releases/1.10.3 (id `a82efe72-20fe-4469-ba1d-28a32821fbf4`)
+- Subject: docs/releases/1.10.3 (id `91a7a8a0-8793-475a-9dd6-915cfc4ebe6a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 875 tokens
-- Facts shown: 18 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 973 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * Added ``model_name`` to the ``allow_migrate()`` calls in ``makemigrations`` (:ticket:`27200`). [8ae382b0]
 - * Allowed ``User.is_authenticated`` and ``User.is_anonymous`` properties to be tested for ``set`` membership (:ticket:`27309`). [7836877f]
@@ -29,6 +29,6 @@
 - When running tests with an Oracle database, Django creates a temporary database user. In older versions, if a password isn't manually specified in the database settings ``TEST`` dictionary, a hardcoded password is used. This could allow an attacker with network access to the database server to connect. [4c677fd6]
 - While Django doesn't ship a module that allows remote code execution, this is at least a cross-site scripting vector, which could be quite serious if developers load a copy of the production database in development or connect to some production services for which there's no development instance, for example. If a project uses a package like the ``django-debug-toolbar``, then the attacker could execute arbitrary SQL, which could be especially bad if the developers connect to the database with a superuser account. [ee14f7e9]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [b9b9c5cd]
+- [b9b9c5cd] ``settings.ALLOWED_HOSTS`` is now validated regardless of ``DEBUG``. For convenience, if ``ALLOWED_HOSTS`` is empty and ``DEBUG=True``, the following variations of localhost are allowed ``['localhost', '127.0.0.1', '::1']``. If your local settings file has your production ``ALLOWED_HOSTS`` value, you must now omit it to get those fallback values.

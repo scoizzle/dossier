@@ -1,6 +1,6 @@
 # Fact b09a980f
 
-Store id: 1fd9bfc6-b950-455e-b415-0f639e91696b
+Store id: 80493655-645e-47ec-8165-acbce75d9074
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7269110+00:00`
+- posted_at: `2026-11-09T23:31:57.9932860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 596,
     "symbol": "KeyTransformIsNull.as_oracle"
   },
-  "id": "1fd9bfc6-b950-455e-b415-0f639e91696b",
+  "id": "80493655-645e-47ec-8165-acbce75d9074",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7269110+00:00"
+    "posted_at": "2026-11-09T23:31:57.9932860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d88020aa-0325-4cf5-9cfa-fd5a49b828ed",
+  "subject_id": "f88ae62e-1b34-455a-8fbf-56574edbf1ca",
   "subject_name": "django/db/models/fields/json::KeyTransformIsNull.as_oracle",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # django/utils/version
 
-- Subject: django/utils/version (id `723d891a-4000-45e6-bcff-6f2087f471ae`)
+- Subject: django/utils/version (id `64d0ea4d-a4f4-4ff5-9551-a83f8d155234`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 877 tokens
-- Facts shown: 16 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1001 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Now build the two parts of the version number: # main = X.Y[.Z] # sub = .devN - for pre-alpha releases # | {a|b|rc}N - for alpha, beta, and rc releases [e42e3663]
 - The result is the UTC timestamp of the changeset in YYYYMMDDHHMMSS format. This value isn't guaranteed to be unique, but collisions are very unlikely, so it's sufficient for generating the development version numbers. """ # Repository may not be found if __file__ is undefined, e.g. in a frozen # module. if "__file__" not in globals(): return None repo_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) git_log = subprocess.run( "git log --pretty=format:%ct --quiet -1 HEAD", capture_output=True, shell=True, cwd=repo_dir, text=True, ) timestamp = git_log.stdout tz = datetime.UTC try: timestamp = datetime.datetime.fromtimestamp(int(timestamp), tz=tz) except ValueError: return None return timestamp.strftime("%Y%m%d%H%M%S") [fa94fac5]
@@ -27,6 +27,7 @@
 - from django.utils.regex_helper import _lazy_re_compile [e384d60811aaeff5-2]
 - import datetime import functools import os import subprocess import sys [6f81ca69]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [8b85b832] [4bb8dfc3]
+- [8b85b832] def get_version_tuple(version): """ Return a tuple of version numbers (e.g. (1, 2, 3)) from the version string (e.g. '1.2.3'). """ version_numbers = [] for item in version_component_re.split(version): if item and item != ".": try: component = int(item) except ValueError: break else: version_numbers.append(component) return tuple(version_numbers)
+- [4bb8dfc3] version_component_re = _lazy_re_compile(r"(\d+|[a-z]+|\.)")

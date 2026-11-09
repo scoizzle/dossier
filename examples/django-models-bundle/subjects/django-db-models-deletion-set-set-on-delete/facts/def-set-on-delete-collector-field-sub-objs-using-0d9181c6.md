@@ -1,6 +1,6 @@
 # Fact 0d9181c6
 
-Store id: 57434fb5-742d-441a-9370-08d16c6f246e
+Store id: d5d19cc2-24b0-48e4-b6bf-2a8387359ce2
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_on_delete(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0015190+00:00`
+- posted_at: `2026-11-09T23:31:55.0461300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 55,
     "symbol": "SET.set_on_delete"
   },
-  "id": "57434fb5-742d-441a-9370-08d16c6f246e",
+  "id": "d5d19cc2-24b0-48e4-b6bf-2a8387359ce2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0015190+00:00"
+    "posted_at": "2026-11-09T23:31:55.0461300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "60c7b417-7d87-4771-b8b2-c206972a65d0",
+  "subject_id": "8d247ec6-00de-497c-80c7-a991b50ceaf5",
   "subject_name": "django/db/models/deletion::SET.set_on_delete",
   "tags": [
     "entity:function"

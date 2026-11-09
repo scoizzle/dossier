@@ -1,6 +1,6 @@
 # Fact c9d7927d
 
-Store id: fe185e80-d2da-4c4b-b26f-76d495470870
+Store id: 8d2cb3aa-fb64-4ff3-9b50-e5dbad2a269f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PositiveIntegerField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fe185e80-d2da-4c4b-b26f-76d495470870",
+  "id": "8d2cb3aa-fb64-4ff3-9b50-e5dbad2a269f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PositiveIntegerField"
       },
       "rel": "contains",
-      "target": "0e613b3a-0777-48b1-84b0-6f551fe45a2d"
+      "target": "856112ee-3f32-49e6-8c69-82a52640312e"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

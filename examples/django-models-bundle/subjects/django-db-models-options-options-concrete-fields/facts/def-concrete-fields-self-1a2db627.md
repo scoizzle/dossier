@@ -1,6 +1,6 @@
 # Fact 1a2db627
 
-Store id: a62b1958-1bf0-48f4-aad2-71fef4985eef
+Store id: ec78e27e-fbfa-486f-a04e-0ca2776f6553
 
 ## Text
 
@@ -20,7 +20,7 @@ def concrete_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8492760+00:00`
+- posted_at: `2026-11-09T23:32:03.9816520+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 573,
     "symbol": "Options.concrete_fields"
   },
-  "id": "a62b1958-1bf0-48f4-aad2-71fef4985eef",
+  "id": "ec78e27e-fbfa-486f-a04e-0ca2776f6553",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8492760+00:00"
+    "posted_at": "2026-11-09T23:32:03.9816520+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7625c6c0-8bcd-4246-851b-f6acc27f104a",
+  "subject_id": "878a942b-4306-428a-95ec-6d42b018e5b8",
   "subject_name": "django/db/models/options::Options.concrete_fields",
   "tags": [
     "entity:method",

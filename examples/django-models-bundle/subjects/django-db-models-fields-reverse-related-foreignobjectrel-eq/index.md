@@ -1,9 +1,9 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.__eq__
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.__eq__ (id `936354bd-5b7d-49ab-9bd1-82b9d1109595`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.__eq__ (id `d657b569-c80f-4c01-b689-5b89e7eb2eee`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

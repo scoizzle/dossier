@@ -1,9 +1,9 @@
 # django/db/models/constraints::BaseConstraint.clone
 
-- Subject: django/db/models/constraints::BaseConstraint.clone (id `653a47ed-a094-4ce0-b5b9-36af69f91af8`)
+- Subject: django/db/models/constraints::BaseConstraint.clone (id `88117118-e104-4b54-b2a1-f62fe3ceba07`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

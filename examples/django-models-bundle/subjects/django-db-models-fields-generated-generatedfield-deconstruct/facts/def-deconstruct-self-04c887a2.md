@@ -1,6 +1,6 @@
 # Fact 04c887a2
 
-Store id: edc4e702-11c6-423a-8f45-5f2b736a1488
+Store id: a23b7441-e544-4ec9-87ac-9a0289f2234a
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4410100+00:00`
+- posted_at: `2026-11-09T23:31:57.6410500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 191,
     "symbol": "GeneratedField.deconstruct"
   },
-  "id": "edc4e702-11c6-423a-8f45-5f2b736a1488",
+  "id": "a23b7441-e544-4ec9-87ac-9a0289f2234a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4410100+00:00"
+    "posted_at": "2026-11-09T23:31:57.6410500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e4ef4df-e904-4f65-89c6-a4da6c5f9684",
+  "subject_id": "f05d3f0f-0bde-433e-b094-923955cf217f",
   "subject_name": "django/db/models/fields/generated::GeneratedField.deconstruct",
   "tags": [
     "entity:method"

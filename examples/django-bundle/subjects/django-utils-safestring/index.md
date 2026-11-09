@@ -1,8 +1,8 @@
 # django/utils/safestring
 
-- Subject: django/utils/safestring (id `db719edd-7d3f-4af6-ba56-a2417a34abfc`)
+- Subject: django/utils/safestring (id `bd7dd196-dbe1-415c-81fd-934656cfa7a6`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 648 tokens
 - Facts shown: 17 of 17
 - Conflicts: 0

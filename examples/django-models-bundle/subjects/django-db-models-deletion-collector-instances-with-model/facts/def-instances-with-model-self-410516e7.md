@@ -1,6 +1,6 @@
 # Fact 410516e7
 
-Store id: a944f219-6ab8-4411-a6a9-5848106f5882
+Store id: ff8f88f1-48c3-40cc-8c7f-dfefa422d5bb
 
 ## Text
 
@@ -20,7 +20,7 @@ def instances_with_model(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0780350+00:00`
+- posted_at: `2026-11-09T23:31:55.1230510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 443,
     "symbol": "Collector.instances_with_model"
   },
-  "id": "a944f219-6ab8-4411-a6a9-5848106f5882",
+  "id": "ff8f88f1-48c3-40cc-8c7f-dfefa422d5bb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0780350+00:00"
+    "posted_at": "2026-11-09T23:31:55.1230510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "35cfec31-a6ee-4e3a-9668-39205eb98ff5",
+  "subject_id": "aa83fdb8-ea6b-4345-b117-7dce5bf8fce6",
   "subject_name": "django/db/models/deletion::Collector.instances_with_model",
   "tags": [
     "entity:method"

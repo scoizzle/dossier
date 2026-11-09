@@ -1,14 +1,14 @@
 # docs/howto/logging
 
-- Subject: docs/howto/logging (id `f641ab8f-5d7d-465c-b119-e3b41970c0e0`)
+- Subject: docs/howto/logging (id `713ba2ef-cd48-4b2d-88e6-ede6b08c3bef`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 26 of 90
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3416 tokens
+- Facts shown: 86 of 90
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - "handlers": { "file": { "class": "logging.FileHandler", "filename": "general.log", "formatter": "verbose", }, } [1ae84670]
 - "level": os.getenv("DJANGO_LOG_LEVEL", "WARNING") [9dfd0c02]
@@ -37,6 +37,65 @@
 - .. admonition:: Don't be tempted to use logging calls in ``settings.py``. [1d76b413]
 - .. code-block:: python :emphasize-lines: 3-12 [d95ba495]
 
-## Beyond the budget
+## All facts
 
-60 more facts did not fit in the budget: [bb65b26e7c242781] [0ddc325a84512bdf] [a5d95d79] [46fe41aa] [6b4a5e54e001d097-7] [334e3930] [23e1eed2] [21030f4f] [91d8ae11] [4e3c8841] [b1009f96] [61c8c7e2] [93970bab] [f268c91c] [4b41e271] [04d6b8bd] [502babc1] [0c2580e1] [99d25240] [52307cce] [e5ce9f8b] [d9b25098] [c2f8679d] [dc549582] [3182cbb8] [caba67f7] [6e62d1fc] [882f4b72] [35af9c5a] [21a8679f] [a766737e] [af0d1ad8] [5ffe2a91] [97364e8d] [37762658] [203e18cc] [69d6a5f7] [2ccb6832] [3d4277e2] [8fe51284] [914a5cd0] [ff2606c7] [51317790] [94e25352] [b477c078] [d450a320] [3b47cf58] [a6d5f1d8] [0e1778c4] [015478aa] [7cf5c026] [e3b854d6] [23b36c31] [81aa9448] [64995ad9] [d0bd259b] [3367ba92] [6db15d39] [38cac8be] [0396a086]
+- [bb65b26e7c242781] .. code-block:: python :emphasize-lines: 3-8
+- [0ddc325a84512bdf] .. code-block:: python :emphasize-lines: 4
+- [a5d95d79] .. code-block:: python :emphasize-lines: 5
+- [46fe41aa] .. important::
+- [6b4a5e54e001d097-7] .. seealso::
+- [334e3930] ================================ How to configure and use logging ================================
+- [23e1eed2] A logger mapping named ``my_app.views`` will capture records from this logger:
+- [21030f4f] A logger mapping named ``my_app`` will be more permissive, capturing records from loggers anywhere within the ``my_app`` namespace (including ``my_app.views``, ``my_app.utils``, and so on):
+- [91d8ae11] Although Django's logging configuration works out of the box, you can control exactly how your logs are sent to various destinations - to log files, external services, email and so on - with some additional configuration.
+- [4e3c8841] And then in a function, for example in a view, send a record to the logger::
+- [b1009f96] Basic logging configuration ---------------------------
+- [61c8c7e2] By default, the final log output contains the message part of each :class:`~logging.LogRecord` object. Use a formatter if you want to include additional data. First name and define your formatters - this example defines formatters named ``verbose`` and ``simple``:
+- [93970bab] Configure a formatter ~~~~~~~~~~~~~~~~~~~~~
+- [f268c91c] Configure a handler ~~~~~~~~~~~~~~~~~~~
+- [4b41e271] Configure a logger mapping ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [04d6b8bd] Configure responsive logging ----------------------------
+- [502babc1] Create a ``LOGGING`` dictionary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [0c2580e1] Customize logging configuration ===============================
+- [99d25240] Different handler classes take different configuration options. For more information on available handler classes, see the :class:`~django.utils.log.AdminEmailHandler` provided by Django and the various :mod:`handler classes <logging.handlers>` provided by Python.
+- [52307cce] Django provides a working :ref:`default logging configuration <default-logging-configuration>` that is readily extended.
+- [e5ce9f8b] First, import the Python logging library, and then obtain a logger instance with :func:`logging.getLogger`. Provide the ``getLogger()`` method with a name to identify it and the records it emits. A good option is to use ``__name__`` (see :ref:`naming-loggers` below for more on this) which will provide the name of the current Python module as a dotted path::
+- [d9b25098] For example, you could set an environment variable ``DJANGO_LOG_LEVEL`` appropriately in your development and staging environments, and make use of it in a logger mapping thus::
+- [c2f8679d] If you execute::
+- [dc549582] In your ``settings.py``::
+- [3182cbb8] It nearly always makes sense to retain and extend the default logging configuration by setting ``disable_existing_loggers`` to ``False``.
+- [caba67f7] It will forward messages of levels ``DEBUG`` and higher to the handler named ``file``.
+- [6e62d1fc] It's a good convention to perform this declaration at module level.
+- [882f4b72] Logger naming is *hierarchical*. ``my_app`` is the parent of ``my_app.views``, which is the parent of ``my_app.views.private``. Unless specified otherwise, logger mappings will propagate the records they process to their parents - a record from a logger in the ``my_app.views.private`` namespace will be handled by a mapping for both ``my_app`` and ``my_app.views``.
+- [35af9c5a] Logging is most useful when it contains as much information as possible, but not information that you don't need - and how much you need depends upon what you're doing. When you're debugging, you need a level of information that would be excessive and unhelpful if you had to deal with it in production.
+- [21a8679f] Logging levels can also be set on the handlers (by default, they accept log messages of all levels). Using the example above, adding:
+- [a766737e] Make a basic logging call =========================
+- [af0d1ad8] Note that a logger can forward messages to multiple handlers, so the relation between loggers and handlers is many-to-many.
+- [5ffe2a91] Other options in the configuration (such as the ``level`` or ``formatter`` option of handlers) can be similarly managed.
+- [97364e8d] See :ref:`configuring-logging` for an explanation of how your custom settings are merged with Django's defaults.
+- [37762658] See :ref:`logrecord-attributes` for the :class:`~logging.LogRecord` attributes you can include.
+- [203e18cc] See the :mod:`Python logging documentation <python:logging.config>` for details of other ways of configuring logging. For the sake of simplicity, this documentation will only consider configuration via the ``LOGGING`` setting.
+- [69d6a5f7] The ``WARNING`` level used in the example above is one of several :ref:`logging severity levels <topic-logging-parts-loggers>`: ``DEBUG``, ``INFO``, ``WARNING``, ``ERROR``, ``CRITICAL``. So, another example might be::
+- [2ccb6832] The ``style`` keyword allows you to specify ``{`` for :meth:`str.format` or ``$`` for :class:`string.Template` formatting; the default is ``$``.
+- [3d4277e2] The mapping's name determines which log records it will process. This configuration (``''``) is *unnamed*. That means that it will process records from *all* loggers (see :ref:`naming-loggers` below on how to use the mapping name to determine the loggers for which it will process records).
+- [8fe51284] The namespace of a logger instance is defined using :func:`~logging.getLogger`. For example in ``views.py`` of ``my_app``::
+- [914a5cd0] The unnamed logging configuration ``''`` captures logs from any Python application. A named logging configuration will capture logs only from loggers with matching names.
+- [ff2606c7] There are various ways of configuring logging. In Django, the :setting:`LOGGING` setting is most commonly used. The setting uses the :ref:`dictConfig format <logging-config-dictschema>`, and extends the :ref:`default logging configuration <default-logging-definition>`.
+- [51317790] This example configures a single handler named ``file``, that uses Python's :class:`~logging.FileHandler` to save logs of level ``DEBUG`` and higher to the file ``general.log`` (at the project root):
+- [94e25352] To apply a formatter to a handler, add a ``formatter`` entry to the handler's dictionary referring to the formatter by name, for example:
+- [b477c078] To manage this behavior, set the propagation key on the mappings you define::
+- [d450a320] To send a log message from within your code, you place a logging call into it.
+- [3b47cf58] To send records to this handler, configure a logger mapping to use it for example:
+- [a6d5f1d8] Use logger namespacing ~~~~~~~~~~~~~~~~~~~~~~
+- [0e1778c4] Using logger hierarchies and propagation ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- [015478aa] When configuring logging, it makes sense to
+- [7cf5c026] When this code is executed, a :class:`~logging.LogRecord` containing that message will be sent to the logger. If you're using Django's default logging configuration, the message will appear in the console.
+- [e3b854d6] You can also define logger namespacing explicitly::
+- [23b36c31] You can configure logging to provide you with the level of detail you need, when you need it. Rather than manually change configuration to achieve this, a better way is to apply configuration automatically according to the environment.
+- [81aa9448] You can configure:
+- [64995ad9] \- so that unless the environment specifies a lower log level, this configuration will only forward records of severity ``WARNING`` and above to its handler.
+- [d0bd259b] ``propagate`` defaults to ``True``. In this example, the logs from ``my_app.views.private`` will not be handled by the parent, but logs from ``my_app.views`` will.
+- [3367ba92] and set up logger mappings accordingly.
+- [6db15d39] in your code, you will find that message in the file ``general.log`` in the root of the project.
+- [38cac8be] will create a logger in the ``my_app.views`` namespace. ``__name__`` allows you to organize log messages according to their provenance within your project's applications automatically. It also ensures that you will not experience name collisions.
+- [0396a086] would define a handler configuration that only accepts records of level ``DEBUG`` and higher.

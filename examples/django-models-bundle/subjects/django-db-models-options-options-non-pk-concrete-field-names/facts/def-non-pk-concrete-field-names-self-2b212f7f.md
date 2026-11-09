@@ -1,6 +1,6 @@
 # Fact 2b212f7f
 
-Store id: 6eaa61a0-5895-458d-8cab-29b5e0a325ac
+Store id: bd24b58c-a3df-4e5e-a34a-5f4a3a1d2ff4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _non_pk_concrete_field_names(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9774240+00:00`
+- posted_at: `2026-11-09T23:32:04.0489730+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1014,
     "symbol": "Options._non_pk_concrete_field_names"
   },
-  "id": "6eaa61a0-5895-458d-8cab-29b5e0a325ac",
+  "id": "bd24b58c-a3df-4e5e-a34a-5f4a3a1d2ff4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9774240+00:00"
+    "posted_at": "2026-11-09T23:32:04.0489730+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f26ff6f9-4c34-482a-9b14-b3b0293919bc",
+  "subject_id": "0537806b-f0cc-4d2e-bd54-d1d77b358509",
   "subject_name": "django/db/models/options::Options._non_pk_concrete_field_names",
   "tags": [
     "entity:method",

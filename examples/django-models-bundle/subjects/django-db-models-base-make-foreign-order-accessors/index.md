@@ -1,9 +1,9 @@
 # django/db/models/base::make_foreign_order_accessors
 
-- Subject: django/db/models/base::make_foreign_order_accessors (id `e77cc1e0-ee8d-4252-beab-4b410e966096`)
+- Subject: django/db/models/base::make_foreign_order_accessors (id `76d8360b-0010-4bcd-9c64-acd6eb68cfe7`)
 - Kind: function
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

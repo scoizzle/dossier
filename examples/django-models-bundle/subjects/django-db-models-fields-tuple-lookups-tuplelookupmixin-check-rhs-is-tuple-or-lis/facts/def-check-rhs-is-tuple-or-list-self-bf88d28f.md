@@ -1,6 +1,6 @@
 # Fact bf88d28f
 
-Store id: 0d3b5dcc-9f86-4652-a735-bd5de6ab30d0
+Store id: 8b409902-a14b-4768-b56d-bb66230fdf58
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rhs_is_tuple_or_list(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5599990+00:00`
+- posted_at: `2026-11-09T23:32:00.5424560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 62,
     "symbol": "TupleLookupMixin.check_rhs_is_tuple_or_list"
   },
-  "id": "0d3b5dcc-9f86-4652-a735-bd5de6ab30d0",
+  "id": "8b409902-a14b-4768-b56d-bb66230fdf58",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5599990+00:00"
+    "posted_at": "2026-11-09T23:32:00.5424560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fad8168e-b633-436d-8864-cf47807b8893",
+  "subject_id": "e2227ce2-4b9a-45c8-8859-259dcd28aff7",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.check_rhs_is_tuple_or_list",
   "tags": [
     "entity:method"

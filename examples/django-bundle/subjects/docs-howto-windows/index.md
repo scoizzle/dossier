@@ -1,14 +1,14 @@
 # docs/howto/windows
 
-- Subject: docs/howto/windows (id `21e7eb93-de6a-4644-8ce4-a1def77e4142`)
+- Subject: docs/howto/windows (id `c43d2f68-4514-4e40-833f-21060477ad15`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 25 of 47
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1859 tokens
+- Facts shown: 47 of 47
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ...\> project-name\Scripts\activate.bat [990a3795]
 - ...\> py --version [43239ff5]
@@ -36,6 +36,27 @@
 - ================================ How to install Django on Windows ================================ [1809ba92]
 - A quality-of-life feature adds colored (rather than monochrome) output to the terminal. In modern terminals this should work for both CMD and PowerShell. If for some reason this needs to be disabled, set the environmental variable :envvar:`DJANGO_COLORS` to ``nocolor``. [599c74e2]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [3e92fc47] [720177ba] [0f8d7efb] [bdfdbb95] [a0cf6273] [8df366e4] [6ffbde30] [a926a9fe] [353315ce348b58ea] [4426f6e8c58b3926] [a967515c] [d301115c] [85977fdf] [5893f074] [31133dd9] [c39f597b] [32e0d629] [d55d14c1] [a1917200] [dbb46eaa] [cca6d521] [3d632d7a]
+- [3e92fc47] About ``pip`` =============
+- [720177ba] After installation, open the command prompt and check that the Python version matches the version you installed by executing:
+- [0f8d7efb] After the installation has completed, you can verify your Django installation by executing ``django-admin --version`` in the command prompt.
+- [bdfdbb95] Colored terminal output =======================
+- [a0cf6273] Common pitfalls ===============
+- [8df366e4] Django can be installed easily using ``pip`` within your virtual environment.
+- [6ffbde30] Django is a Python web framework, thus requiring Python to be installed on your machine. At the time of writing, Python 3.15 is the latest version.
+- [a926a9fe] In the command prompt, ensure your virtual environment is active, and execute the following command:
+- [353315ce348b58ea] Install Django ==============
+- [4426f6e8c58b3926] Install Python ==============
+- [a967515c] It is best practice to provide a dedicated environment for each Django project you create. There are many options to manage environments and packages within the Python ecosystem, some of which are recommended in the `Python documentation <https://packaging.python.org/guides/tool-recommendations/>`_. Python itself comes with :doc:`venv <python:tutorial/venv>` for managing environments which we will use for this guide.
+- [d301115c] On older Windows versions, or legacy terminals, :pypi:`colorama` 0.4.6+ must be installed to enable syntax coloring:
+- [85977fdf] See :ref:`database-installation` for information on database installation with Django.
+- [5893f074] See :ref:`syntax-coloring` for more information on color settings.
+- [31133dd9] Setting up a virtual environment ================================
+- [c39f597b] The steps in this guide have been tested with Windows 10. In other versions, the steps would be similar. You will need to be familiar with using the Windows command prompt.
+- [32e0d629] The virtual environment will be activated and you'll see "(project-name)" next to the command prompt to designate that. Each time you start a new command prompt, you'll need to activate the environment again.
+- [d55d14c1] This document will guide you through installing Python 3.15 and Django on Windows. It also provides instructions for setting up a virtual environment, which makes it easier to work on Python projects. This is meant as a beginner's guide for users working on Django projects and does not reflect how Django should be installed when developing changes for Django itself.
+- [a1917200] This will create a folder called 'project-name' if it does not already exist and set up the virtual environment. To activate the environment, run:
+- [dbb46eaa] This will download and install the latest Django release.
+- [cca6d521] To create a virtual environment for your project, open a new command prompt, navigate to the folder where you want to create your project and then enter the following:
+- [3d632d7a] To install Python on your machine go to https://www.python.org/downloads/. The website should offer you a download button for the latest Python version. Download the executable installer and run it. Check the boxes next to "Install launcher for all users (recommended)" then click "Install Now".

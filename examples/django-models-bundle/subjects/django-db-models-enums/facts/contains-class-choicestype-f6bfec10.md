@@ -1,6 +1,6 @@
 # Fact f6bfec10
 
-Store id: 0b2bf94c-5807-4ffe-8b2c-34ae671a5b63
+Store id: 6b696e8b-bdc3-484b-87a6-b14aefc4f470
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ChoicesType
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.3088770+00:00`
+- posted_at: `2026-11-09T23:31:55.5153950+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0b2bf94c-5807-4ffe-8b2c-34ae671a5b63",
+  "id": "6b696e8b-bdc3-484b-87a6-b14aefc4f470",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.3088770+00:00"
+    "posted_at": "2026-11-09T23:31:55.5153950+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ChoicesType"
       },
       "rel": "contains",
-      "target": "d5af66d6-095d-4202-a8a6-4d250774a046"
+      "target": "ed5d4360-159a-42e4-bb21-457482721b5f"
     }
   ],
   "status": "live",
-  "subject_id": "65b70403-c628-422a-a1b3-29ca91b3031b",
+  "subject_id": "54364be7-37e6-46d5-aa55-5d6eed226a31",
   "subject_name": "django/db/models/enums",
   "tags": [
     "entity:class"

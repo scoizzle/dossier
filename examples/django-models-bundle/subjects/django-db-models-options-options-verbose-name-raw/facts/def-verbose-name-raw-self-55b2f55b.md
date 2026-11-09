@@ -1,6 +1,6 @@
 # Fact 55b2f55b
 
-Store id: b9518d24-a79c-4bbf-a77f-096a89a7fadf
+Store id: 5c87ad11-2267-4aca-bd60-ee05bb5ff7fe
 
 ## Text
 
@@ -20,7 +20,7 @@ def verbose_name_raw(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8135830+00:00`
+- posted_at: `2026-11-09T23:32:03.9481910+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 413,
     "symbol": "Options.verbose_name_raw"
   },
-  "id": "b9518d24-a79c-4bbf-a77f-096a89a7fadf",
+  "id": "5c87ad11-2267-4aca-bd60-ee05bb5ff7fe",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8135830+00:00"
+    "posted_at": "2026-11-09T23:32:03.9481910+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9e69bc51-9bdc-4fec-8fc1-d3abd5e68916",
+  "subject_id": "5e25f173-629c-46a8-9941-eb1765accb6d",
   "subject_name": "django/db/models/options::Options.verbose_name_raw",
   "tags": [
     "entity:method",

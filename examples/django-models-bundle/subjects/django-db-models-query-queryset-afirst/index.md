@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.afirst
 
-- Subject: django/db/models/query::QuerySet.afirst (id `6a358f0f-7da4-4845-a040-bfa2ce42d795`)
+- Subject: django/db/models/query::QuerySet.afirst (id `ad828f93-7164-45bf-8ac0-ac143b0514fa`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

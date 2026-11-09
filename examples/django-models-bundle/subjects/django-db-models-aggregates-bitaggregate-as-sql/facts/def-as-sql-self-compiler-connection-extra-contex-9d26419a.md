@@ -1,6 +1,6 @@
 # Fact 9d26419a
 
-Store id: 8cc9f3cd-69c4-4c64-baaf-7e461d4a59a5
+Store id: 79d5e077-d4f8-4110-8094-7e13261858b0
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0416590+00:00`
+- posted_at: `2026-11-09T23:31:53.5371490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 256,
     "symbol": "BitAggregate.as_sql"
   },
-  "id": "8cc9f3cd-69c4-4c64-baaf-7e461d4a59a5",
+  "id": "79d5e077-d4f8-4110-8094-7e13261858b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0416590+00:00"
+    "posted_at": "2026-11-09T23:31:53.5371490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "80c1797b-1f46-428b-a8e4-11bc8a25066e",
+  "subject_id": "990f431d-bd54-4588-a7f0-b1221e112757",
   "subject_name": "django/db/models/aggregates::BitAggregate.as_sql",
   "tags": [
     "entity:method"

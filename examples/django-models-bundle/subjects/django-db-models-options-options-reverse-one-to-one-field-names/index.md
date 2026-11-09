@@ -1,9 +1,9 @@
 # django/db/models/options::Options._reverse_one_to_one_field_names
 
-- Subject: django/db/models/options::Options._reverse_one_to_one_field_names (id `ff316678-350d-473c-ac40-13ffa3d8860e`)
+- Subject: django/db/models/options::Options._reverse_one_to_one_field_names (id `5e4dc713-7bb3-469a-9daa-78755b8394a8`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

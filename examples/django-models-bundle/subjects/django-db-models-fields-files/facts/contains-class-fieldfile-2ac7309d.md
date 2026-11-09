@@ -1,6 +1,6 @@
 # Fact 2ac7309d
 
-Store id: fa00d5c3-4572-4f0c-9a5c-9ef2dece613e
+Store id: 7e1ab719-8adb-48d8-a660-6e3eb0230068
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FieldFile
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2793620+00:00`
+- posted_at: `2026-11-09T23:31:57.4465340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fa00d5c3-4572-4f0c-9a5c-9ef2dece613e",
+  "id": "7e1ab719-8adb-48d8-a660-6e3eb0230068",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2793620+00:00"
+    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FieldFile"
       },
       "rel": "contains",
-      "target": "d8c7c889-a81b-4129-8771-2ad2bc1635eb"
+      "target": "424daf60-dd30-4ec6-ab8f-44039d442085"
     }
   ],
   "status": "live",
-  "subject_id": "d37d0887-0dd5-4047-907f-028c6ee64afc",
+  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/indexes::Index.__init__
 
-- Subject: django/db/models/indexes::Index.__init__ (id `3765dba2-896b-4511-8247-8a8689dd0b98`)
+- Subject: django/db/models/indexes::Index.__init__ (id `854aa49b-6673-422a-98ba-65f163f50fbe`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 41 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

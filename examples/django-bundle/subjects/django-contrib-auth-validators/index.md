@@ -1,8 +1,8 @@
 # django/contrib/auth/validators
 
-- Subject: django/contrib/auth/validators (id `0c5782ff-297c-40fd-89a4-f3408e6d3362`)
+- Subject: django/contrib/auth/validators (id `b1cbbe09-6b05-4f9a-b3c6-af8485bc45f0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 205 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

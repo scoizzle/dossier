@@ -1,8 +1,8 @@
 # django/utils/copy
 
-- Subject: django/utils/copy (id `a25347ca-195a-458e-9732-fb4828a756f4`)
+- Subject: django/utils/copy (id `347f6d3b-9332-42f6-94f6-348c8ba4d9a4`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 155 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

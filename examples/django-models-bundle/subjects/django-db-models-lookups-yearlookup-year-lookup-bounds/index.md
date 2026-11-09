@@ -1,9 +1,9 @@
 # django/db/models/lookups::YearLookup.year_lookup_bounds
 
-- Subject: django/db/models/lookups::YearLookup.year_lookup_bounds (id `d24d81c1-273d-48e0-962d-8bd9843044af`)
+- Subject: django/db/models/lookups::YearLookup.year_lookup_bounds (id `f9fe0861-9b28-42fb-bca7-68819d7f7e2d`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

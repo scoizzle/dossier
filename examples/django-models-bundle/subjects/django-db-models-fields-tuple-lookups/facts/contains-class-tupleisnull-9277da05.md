@@ -1,6 +1,6 @@
 # Fact 9277da05
 
-Store id: ea964e67-15e6-4d51-b077-a54eb6f3cb99
+Store id: e7298e43-8e2b-4567-a949-d5b4ccde21a9
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleIsNull
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6461850+00:00`
+- posted_at: `2026-11-09T23:32:00.6413340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ea964e67-15e6-4d51-b077-a54eb6f3cb99",
+  "id": "e7298e43-8e2b-4567-a949-d5b4ccde21a9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6461850+00:00"
+    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleIsNull"
       },
       "rel": "contains",
-      "target": "5e5ebfe9-27c2-4638-83f9-c752c6f21638"
+      "target": "3d9484ae-4dcc-47ce-b5db-cd361f7f33b7"
     }
   ],
   "status": "live",
-  "subject_id": "cee0b84a-5cfa-4b80-bfc8-675952a3b671",
+  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

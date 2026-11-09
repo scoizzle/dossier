@@ -1,14 +1,14 @@
 # django/core/checks/registry
 
-- Subject: django/core/checks/registry (id `3fcd6444-f055-4ae1-b5d5-88c869e0eb52`)
+- Subject: django/core/checks/registry (id `205d5e4b-2e7c-425f-a44d-b7f65be59d21`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 17 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 935 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - registry = CheckRegistry() @registry.register('mytag', 'anothertag') def my_check(app_configs, **kwargs): # ... perform checks and collect `errors` ... return errors # or registry.register(my_check, 'mytag', 'anothertag') """ [5324991f]
 - Example:: [24ca13eabf54f502]
@@ -28,6 +28,6 @@
 - from collections.abc import Iterable from itertools import chain [061bb1c8]
 - from django.db import connections from django.utils.inspect import func_accepts_kwargs [0f8ccfa9]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [c3f766e2]
+- [c3f766e2] registry = CheckRegistry() register = registry.register run_checks = registry.run_checks tag_exists = registry.tag_exists

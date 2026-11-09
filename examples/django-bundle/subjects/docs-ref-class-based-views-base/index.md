@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/base
 
-- Subject: docs/ref/class-based-views/base (id `865b37a4-65d1-47a1-aee6-df1becdc6ae4`)
+- Subject: docs/ref/class-based-views/base (id `c294936c-e31a-495a-8cdb-cb1aefd67e43`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 22 of 98
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3286 tokens
+- Facts shown: 94 of 98
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ["get", "post", "put", "patch", "delete", "head", "options", "trace"] [581a13c3]
 - def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) context["latest_articles"] = Article.objects.all()[:5] return context [8dc90cbd]
@@ -33,6 +33,77 @@
 - The ``view`` part of the view -- the method that accepts a ``request`` argument plus arguments, and returns an HTTP response. [6305191a]
 - **Attributes** [37f612b97e1bc71b]
 
-## Beyond the budget
+## All facts
 
-72 more facts did not fit in the budget: [60ed48d7] [5596a997] [a85a3d04] [f6eaf024] [5d7f131c] [a5351651] [ecd5db31] [69f58cc5] [2542f458] [a862d9a1] [83f36ede] [c5e0a864] [cafee15d] [1d91c9c1] [69dbb3213d5b379f] [94f78459] [d46bb570] [c537d1941a7e3025-6] [b64869c9] [6a848170] [8054800a] [b643e9e3] [9a52e769] [06553aa8] [6aa16a3c] [8f278462] [347eab05] [d84fb157] [704e9dc2] [b7741a2ef07f59a9] [3ec736cc] [32590fb0e4b1f943] [32590fb0e4b1f943-2] [37f612b97e1bc71b-2] [ac0dd05fa9a91c22] [0bb9c224e2c5db9d] [0bb9c224e2c5db9d-2] [0bb9c224e2c5db9d-3] [1732ea16a7d09411] [1732ea16a7d09411-2] [1732ea16a7d09411-3] [9096df2856e2660f] [9096df2856e2660f-2] [9096df2856e2660f-3] [7407ef7dca9e98ce] [7407ef7dca9e98ce-2] [585bb9b7] [af3198bf] [b46bb1c9] [ad94400b] [3246d720] [f829ce117aa64776] [3b917f24] [6232ddf4] [856cc8e5] [5ea08ff0] [35f439e2] [39d839f8] [aaf21089] [ffa42a65] [2e5f4209] [47418807] [c3d4a605] [ac4b98ec] [8827e2af] [b88ee002] [7feafc49] [c517bc2b] [15e01f83] [28e4e4be] [c8f67616] [45581b4b]
+- [60ed48d7] The default implementation returns ``HttpResponseNotAllowed`` with the list of allowed methods in the ``Allow`` header, as required by :rfc:`RFC 7231 <7231#section-6.5.5>`. The response body is empty.
+- [5596a997] The default implementation uses :attr:`url` as a starting string and performs expansion of ``%`` named parameters in that string using the named groups captured in the URL.
+- [a85a3d04] The default implementation will inspect the HTTP method and attempt to delegate to a method that matches the HTTP method; a ``GET`` will be delegated to ``get()``, a ``POST`` to ``post()``, and so on.
+- [f6eaf024] The list of HTTP method names that this view will accept.
+- [5d7f131c] The name of the URL pattern to redirect to. Reversing will be done using the same args and kwargs as are passed in for this view.
+- [a5351651] The returned view has ``view_class`` and ``view_initkwargs`` attributes.
+- [ecd5db31] When the view is called during the request/response cycle, the :meth:`setup` method assigns the :class:`~django.http.HttpRequest` to the view's ``request`` attribute, and any positional and/or keyword arguments :ref:`captured from the URL pattern <how-django-processes-a-request>` to the ``args`` and ``kwargs`` attributes, respectively. Then :meth:`dispatch` is called.
+- [69f58cc5] Whether the redirect should be permanent. The only difference here is the HTTP status code returned. If ``True``, then the redirect will use status code 301. If ``False``, then the redirect will use status code 302. By default, ``permanent`` is ``False``.
+- [2542f458] Whether to pass along the GET query string to the new location. If ``True``, then the query string is appended to the URL. If ``False``, then the query string is discarded. By default, ``query_string`` is ``False``.
+- [a862d9a1] Whether to preserve the HTTP method and body during the redirect. If ``True``, then the redirect will use status code 307 instead of 302, or 308 instead of 301 when :attr:`permanent` is ``True``. By default, ``preserve_request`` is ``False``.
+- [83f36ede] class ArticleCounterRedirectView(RedirectView): permanent = False query_string = True pattern_name = "article-detail"
+- [c5e0a864] class HomePageView(TemplateView): template_name = "home.html"
+- [cafee15d] class MyView(View): def get(self, request, *args, **kwargs): return HttpResponse("Hello, World!")
+- [1d91c9c1] from article.views import ArticleCounterRedirectView, ArticleDetailView
+- [69dbb3213d5b379f] from articles.models import Article
+- [94f78459] from django.http import HttpResponse from django.views import View
+- [d46bb570] from django.shortcuts import get_object_or_404 from django.views.generic.base import RedirectView
+- [c537d1941a7e3025-6] from django.urls import path
+- [b64869c9] from django.urls import path from django.views.generic.base import RedirectView
+- [6a848170] from django.views.generic.base import TemplateView
+- [8054800a] from myapp.views import HomePageView
+- [b643e9e3] from myapp.views import MyView
+- [9a52e769] urlpatterns = [ path( "counter/<int:pk>/", ArticleCounterRedirectView.as_view(), name="article-counter", ), path("details/<int:pk>/", ArticleDetailView.as_view(), name="article-detail"), path( "go-to-django/", RedirectView.as_view(url="https://www.djangoproject.com/"), name="go-to-django", ), ]
+- [06553aa8] urlpatterns = [ path("", HomePageView.as_view(), name="home"), ]
+- [6aa16a3c] urlpatterns = [ path("mine/", MyView.as_view(), name="my-view"), ]
+- [8f278462] #. :meth:`setup` #. :meth:`dispatch` #. :meth:`http_method_not_allowed` #. :meth:`options`
+- [347eab05] #. :meth:`~django.views.generic.base.View.setup` #. :meth:`~django.views.generic.base.View.dispatch` #. :meth:`~django.views.generic.base.View.http_method_not_allowed` #. :meth:`get_redirect_url`
+- [d84fb157] #. :meth:`~django.views.generic.base.View.setup` #. :meth:`~django.views.generic.base.View.dispatch` #. :meth:`~django.views.generic.base.View.http_method_not_allowed` #. :meth:`~django.views.generic.base.ContextMixin.get_context_data`
+- [704e9dc2] * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.base.ContextMixin` * :class:`django.views.generic.base.View`
+- [b7741a2ef07f59a9] * :class:`django.views.generic.base.View`
+- [3ec736cc] * Populated (through :class:`~django.views.generic.base.ContextMixin`) with the keyword arguments captured from the URL pattern that served the view. * You can also add context using the :attr:`~django.views.generic.base.ContextMixin.extra_context` keyword argument for :meth:`~django.views.generic.base.View.as_view`.
+- [32590fb0e4b1f943] **Ancestors (MRO)**
+- [32590fb0e4b1f943-2] **Ancestors (MRO)**
+- [37f612b97e1bc71b-2] **Attributes**
+- [ac0dd05fa9a91c22] **Context**
+- [0bb9c224e2c5db9d] **Example urls.py**::
+- [0bb9c224e2c5db9d-2] **Example urls.py**::
+- [0bb9c224e2c5db9d-3] **Example urls.py**::
+- [1732ea16a7d09411] **Example views.py**::
+- [1732ea16a7d09411-2] **Example views.py**::
+- [1732ea16a7d09411-3] **Example views.py**::
+- [9096df2856e2660f] **Method Flowchart**
+- [9096df2856e2660f-2] **Method Flowchart**
+- [9096df2856e2660f-3] **Method Flowchart**
+- [7407ef7dca9e98ce] **Methods**
+- [7407ef7dca9e98ce-2] **Methods**
+- [585bb9b7] .. attribute:: http_method_names
+- [af3198bf] .. attribute:: pattern_name
+- [b46bb1c9] .. attribute:: permanent
+- [ad94400b] .. attribute:: preserve_request
+- [3246d720] .. attribute:: query_string
+- [f829ce117aa64776] .. attribute:: url
+- [3b917f24] .. classmethod:: as_view(**initkwargs)
+- [6232ddf4] .. method:: dispatch(request, *args, **kwargs)
+- [856cc8e5] .. method:: get_redirect_url(*args, **kwargs)
+- [5ea08ff0] .. method:: http_method_not_allowed(request, *args, **kwargs)
+- [35f439e2] .. method:: options(request, *args, **kwargs)
+- [39d839f8] .. method:: setup(request, *args, **kwargs)
+- [aaf21089] If the given URL is ``None``, Django will return an ``HttpResponseGone`` (410).
+- [ffa42a65] Redirects to a given URL.
+- [2e5f4209] Renders a given template, with the context containing parameters captured in the URL.
+- [47418807] The base view class. All other class-based views inherit from this base class. It isn't strictly a generic view and thus can also be imported from ``django.views``.
+- [c3d4a605] The given URL may contain dictionary-style string formatting, which will be interpolated against the parameters captured in the URL. Because keyword interpolation is *always* done (even if no arguments are passed in), any ``"%"`` characters in the URL must be written as ``"%%"`` so that Python will convert them to a single percent sign on output.
+- [ac4b98ec] This view inherits methods and attributes from the following view:
+- [8827e2af] .. class:: django.views.generic.base.RedirectView
+- [b88ee002] .. class:: django.views.generic.base.TemplateView
+- [7feafc49] ========== Base views ==========
+- [c517bc2b] Many of Django's built-in class-based views inherit from other class-based views or various mixins. Because this inheritance chain is very important, the ancestor classes are documented under the section title of **Ancestors (MRO)**. MRO is an acronym for Method Resolution Order.
+- [15e01f83] The following three classes provide much of the functionality needed to create Django views. You may think of them as *parent* views, which can be used by themselves or inherited from. They may not provide all the capabilities required for projects, in which case there are Mixins and Generic class-based views.
+- [28e4e4be] ``RedirectView`` ================
+- [c8f67616] ``TemplateView`` ================
+- [45581b4b] ``View`` ========

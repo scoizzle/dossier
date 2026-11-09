@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/prototypes/raster
 
-- Subject: django/contrib/gis/gdal/prototypes/raster (id `328371ae-223e-4df8-8fb0-835b7bada0db`)
+- Subject: django/contrib/gis/gdal/prototypes/raster (id `b3c0e7ef-b8c4-4308-a01e-811d109a4ea5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 827 tokens
-- Facts shown: 8 of 10
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1382 tokens
+- Facts shown: 10 of 10
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - """ This module houses the ctypes function prototypes for GDAL DataSource (raster) related data structures. """ [cce4d79f]
 - # Create VSI gdal raster files from in-memory buffers. # https://gdal.org/api/cpl.html#cpl-vsi-h create_vsi_file_from_mem_buffer = voidptr_output( std_call("VSIFileFromMemBuffer"), [c_char_p, c_void_p, c_int, c_int] ) get_mem_buffer_from_vsi_file = voidptr_output( std_call("VSIGetMemFileBuffer"), [c_char_p, POINTER(c_int), c_bool] ) unlink_vsi_file = int_output(std_call("VSIUnlink"), [c_char_p]) [b64779fd]
@@ -19,6 +19,7 @@
 - from ctypes import POINTER, c_bool, c_char_p, c_double, c_int, c_void_p from functools import partial [45c30e6d]
 - from django.contrib.gis.gdal.libgdal import std_call from django.contrib.gis.gdal.prototypes.generation import ( chararray_output, const_string_output, double_output, int_output, void_output, voidptr_output, ) [07fb1d27]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [13d6fe7e] [c33a3766]
+- [13d6fe7e] # Raster Data Source Routines create_ds = voidptr_output( std_call("GDALCreate"), [c_void_p, c_char_p, c_int, c_int, c_int, c_int, c_void_p] ) open_ds = voidptr_output(std_call("GDALOpen"), [c_char_p, c_int]) close_ds = void_output(std_call("GDALClose"), [c_void_p], errcheck=False) flush_ds = int_output(std_call("GDALFlushCache"), [c_void_p]) copy_ds = voidptr_output( std_call("GDALCreateCopy"), [c_void_p, c_char_p, c_void_p, c_int, POINTER(c_char_p), c_void_p, c_void_p], ) add_band_ds = void_output(std_call("GDALAddBand"), [c_void_p, c_int]) get_ds_description = const_string_output(std_call("GDALGetDescription"), [c_void_p]) get_ds_driver = voidptr_output(std_call("GDALGetDatasetDriver"), [c_void_p]) get_ds_info = const_string_output(std_call("GDALInfo"), [c_void_p, c_void_p]) get_ds_xsize = int_output(std_call("GDALGetRasterXSize"), [c_void_p]) get_ds_ysize = int_output(std_call("GDALGetRasterYSize"), [c_void_p]) get_ds_raster_count = int_output(std_call("GDALGetRasterCount"), [c_void_p]) get_ds_raster_band = voidptr_output(std_call("GDALGetRasterBand"), [c_void_p, c_int]) get_ds_projection_ref = const_string_output( std_call("GDALGetProjectionRef"), [c_void_p] ) set_ds_projection_ref = void_output(std_call("GDALSetProjection"), [c_void_p, c_char_p]) get_ds_geotransform = void_output( std_call("GDALGetGeoTransform"), [c_void_p, POINTER(c_double * 6)], errcheck=False ) set_ds_geotransform = void_output( std_call("GDALSetGeoTransform"), [c_void_p, POINTER(c_double * 6)] )
+- [c33a3766] get_ds_metadata = chararray_output( std_call("GDALGetMetadata"), [c_void_p, c_char_p], errcheck=False ) set_ds_metadata = void_output( std_call("GDALSetMetadata"), [c_void_p, POINTER(c_char_p), c_char_p] ) get_ds_metadata_domain_list = chararray_output( std_call("GDALGetMetadataDomainList"), [c_void_p], errcheck=False ) get_ds_metadata_item = const_string_output( std_call("GDALGetMetadataItem"), [c_void_p, c_char_p, c_char_p] ) set_ds_metadata_item = const_string_output( std_call("GDALSetMetadataItem"), [c_void_p, c_char_p, c_char_p, c_char_p] ) free_dsl = void_output(std_call("CSLDestroy"), [POINTER(c_char_p)], errcheck=False)

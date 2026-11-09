@@ -1,6 +1,6 @@
 # Fact bb4acf37
 
-Store id: f8e2ab5b-aece-4251-801a-6dd1985afc23
+Store id: 92c2fd3a-c20a-466d-983a-0a03a28211fd
 
 ## Text
 
@@ -20,7 +20,7 @@ class MultiJoin(Exception)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.9496040+00:00`
+- posted_at: `2026-11-09T23:32:06.4111740+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 10,
     "symbol": "MultiJoin"
   },
-  "id": "f8e2ab5b-aece-4251-801a-6dd1985afc23",
+  "id": "92c2fd3a-c20a-466d-983a-0a03a28211fd",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.9496040+00:00"
+    "posted_at": "2026-11-09T23:32:06.4111740+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "997366a3-57e3-4618-bc97-0ac3e4c20784",
+  "subject_id": "5fd8ab27-3e8d-4e30-9918-9d57542df189",
   "subject_name": "django/db/models/sql/datastructures::MultiJoin",
   "tags": [
     "entity:class"

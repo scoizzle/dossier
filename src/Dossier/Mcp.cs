@@ -211,7 +211,7 @@ public sealed class McpServer
         new("get_fact", "Fetch one fact with its refs, attachments and inbound referencing facts. " + Untrusted,
             """{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}"""),
         new("compile_dossier", "Compile a budgeted, ranked dossier for a subject. " + Untrusted,
-            """{"type":"object","properties":{"subject":{"type":"string"},"budget":{"type":"integer"},"depth":{"type":"string","enum":["index","full"]},"order":{"type":"string","enum":["rank","seq"]},"needs":{"type":"array","items":{"type":"string"}},"descendants":{"type":"boolean"},"rank":{"type":"object","properties":{"recency":{"type":"number"}}},"format":{"type":"string","enum":["json","markdown"]}},"required":["subject"]}"""),
+            """{"type":"object","properties":{"subject":{"type":"string"},"budget":{"type":"integer"},"depth":{"type":"string","enum":["index","full"]},"order":{"type":"string","enum":["rank","seq"]},"needs":{"type":"array","items":{"type":"string"}},"descendants":{"type":"boolean"},"rank":{"type":"object","properties":{"recency":{"type":"number"}}},"format":{"type":"string","enum":["json","markdown"]},"budget_mode":{"type":"string","enum":["complete","strict"]}},"required":["subject"]}"""),
     ];
 
     private static JsonArray Tools()

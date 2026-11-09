@@ -1,6 +1,6 @@
 # Fact 814956cd
 
-Store id: 3eddf864-2fb6-48ba-9a58-f539a4da856a
+Store id: 6b26e5fa-0cc3-4e20-b6ea-a280b3f7dcf3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, instance, field, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.1835040+00:00`
+- posted_at: `2026-11-09T23:31:57.3337820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 20,
     "symbol": "FieldFile.__init__"
   },
-  "id": "3eddf864-2fb6-48ba-9a58-f539a4da856a",
+  "id": "6b26e5fa-0cc3-4e20-b6ea-a280b3f7dcf3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.1835040+00:00"
+    "posted_at": "2026-11-09T23:31:57.3337820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "02816ead-880c-4e8c-8223-c8af03224d8e",
+  "subject_id": "0d4349d7-4edb-41f7-b6f3-edab62dd2353",
   "subject_name": "django/db/models/fields/files::FieldFile.__init__",
   "tags": [
     "entity:method"

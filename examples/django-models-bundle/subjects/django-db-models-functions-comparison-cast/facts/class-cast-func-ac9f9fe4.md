@@ -1,6 +1,6 @@
 # Fact ac9f9fe4
 
-Store id: f4a97474-d918-44d1-a628-6ed2f5adba14
+Store id: f874231f-897b-4010-a10f-56397c6c0cd6
 
 ## Text
 
@@ -20,7 +20,7 @@ class Cast(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.8813460+00:00`
+- posted_at: `2026-11-09T23:32:00.9296210+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 7,
     "symbol": "Cast"
   },
-  "id": "f4a97474-d918-44d1-a628-6ed2f5adba14",
+  "id": "f874231f-897b-4010-a10f-56397c6c0cd6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.8813460+00:00"
+    "posted_at": "2026-11-09T23:32:00.9296210+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a49eb3b-401b-4364-b32b-d9b8de12dee7",
+  "subject_id": "2552c40c-8ef9-428f-a591-3c47dfde6dbf",
   "subject_name": "django/db/models/functions/comparison::Cast",
   "tags": [
     "entity:class"

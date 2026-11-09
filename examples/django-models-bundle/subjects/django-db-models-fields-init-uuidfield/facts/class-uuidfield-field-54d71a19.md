@@ -1,6 +1,6 @@
 # Fact 54d71a19
 
-Store id: 13f3eef8-ab80-4e9f-8b81-57cc46d68e47
+Store id: 954a37b6-caa5-4721-b2cb-35a9d4e042f2
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7067440+00:00`
+- posted_at: `2026-11-09T23:31:56.8732880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2819,
     "symbol": "UUIDField"
   },
-  "id": "13f3eef8-ab80-4e9f-8b81-57cc46d68e47",
+  "id": "954a37b6-caa5-4721-b2cb-35a9d4e042f2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7067440+00:00"
+    "posted_at": "2026-11-09T23:31:56.8732880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0748c55c-7a2b-4b39-b0d8-a3525b58eb65",
+  "subject_id": "77a83a23-475c-4970-89ba-db99b0b4ed4d",
   "subject_name": "django/db/models/fields/__init__::UUIDField",
   "tags": [
     "entity:class"

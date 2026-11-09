@@ -1,6 +1,6 @@
 # Fact 11992a85
 
-Store id: 6695cd2d-8e2d-4e70-983a-e40e3a1fce55
+Store id: eeeba247-8d7c-49aa-bb68-d2e304f2dacb
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_group_by(self, allow_aliases=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4995040+00:00`
+- posted_at: `2026-11-09T23:32:07.0812700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2411,
     "symbol": "Query.set_group_by"
   },
-  "id": "6695cd2d-8e2d-4e70-983a-e40e3a1fce55",
+  "id": "eeeba247-8d7c-49aa-bb68-d2e304f2dacb",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4995040+00:00"
+    "posted_at": "2026-11-09T23:32:07.0812700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fccf5297-2fde-47da-9893-97742c0270eb",
+  "subject_id": "c1233311-44aa-43fa-945d-95a749c43b17",
   "subject_name": "django/db/models/sql/query::Query.set_group_by",
   "tags": [
     "entity:method"

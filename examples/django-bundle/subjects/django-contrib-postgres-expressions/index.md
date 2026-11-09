@@ -1,8 +1,8 @@
 # django/contrib/postgres/expressions
 
-- Subject: django/contrib/postgres/expressions (id `f1f4da47-880b-46db-a724-e656c9489115`)
+- Subject: django/contrib/postgres/expressions (id `388e95d3-16de-4ae3-a65d-64ec26a0c9f4`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 136 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

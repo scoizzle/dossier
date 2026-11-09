@@ -1,6 +1,6 @@
 # Fact aeba4b54
 
-Store id: ffff0276-f331-419a-a4e0-fa13b7bfbfa5
+Store id: feb7602f-323f-4349-99c6-5a35174311cc
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.5819970+00:00`
+- posted_at: `2026-11-09T23:32:01.6815180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 65,
     "symbol": "Ceil.as_oracle"
   },
-  "id": "ffff0276-f331-419a-a4e0-fa13b7bfbfa5",
+  "id": "feb7602f-323f-4349-99c6-5a35174311cc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.5819970+00:00"
+    "posted_at": "2026-11-09T23:32:01.6815180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c68db0f-27eb-4a75-85ce-ccd5d539624b",
+  "subject_id": "34d3b7c7-de1b-45c7-b845-b32f8edbb962",
   "subject_name": "django/db/models/functions/math::Ceil.as_oracle",
   "tags": [
     "entity:method"

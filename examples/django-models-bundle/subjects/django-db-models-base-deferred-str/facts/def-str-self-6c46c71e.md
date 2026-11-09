@@ -1,6 +1,6 @@
 # Fact 6c46c71e
 
-Store id: f71a1250-b643-41b0-b5bd-1378a8049cee
+Store id: b291bb46-eb98-4f58-b412-3435bc9c5e21
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3191580+00:00`
+- posted_at: `2026-11-09T23:31:53.7199390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 65,
     "symbol": "Deferred.__str__"
   },
-  "id": "f71a1250-b643-41b0-b5bd-1378a8049cee",
+  "id": "b291bb46-eb98-4f58-b412-3435bc9c5e21",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3191580+00:00"
+    "posted_at": "2026-11-09T23:31:53.7199390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a47590bf-aae0-43f2-96c3-b383008777ba",
+  "subject_id": "c69a5b6b-2311-496f-8463-85821c4f708a",
   "subject_name": "django/db/models/base::Deferred.__str__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 05c7f311
 
-Store id: 1e411f1a-3111-4b26-b1ba-ba9a0b871b5b
+Store id: 78bd6ff0-a2cd-4c7b-96f3-73bd89757db5
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_deferred_loading(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5120920+00:00`
+- posted_at: `2026-11-09T23:32:07.0965730+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2496,
     "symbol": "Query.clear_deferred_loading"
   },
-  "id": "1e411f1a-3111-4b26-b1ba-ba9a0b871b5b",
+  "id": "78bd6ff0-a2cd-4c7b-96f3-73bd89757db5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5120920+00:00"
+    "posted_at": "2026-11-09T23:32:07.0965730+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1c68422-26e3-4d57-a0c4-bcad698f719f",
+  "subject_id": "694ebf12-d5c0-4406-ade4-e5f9355b73fe",
   "subject_name": "django/db/models/sql/query::Query.clear_deferred_loading",
   "tags": [
     "entity:method"

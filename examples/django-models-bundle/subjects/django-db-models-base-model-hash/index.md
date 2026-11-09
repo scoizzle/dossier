@@ -1,9 +1,9 @@
 # django/db/models/base::Model.__hash__
 
-- Subject: django/db/models/base::Model.__hash__ (id `5f5ddce8-9c1e-4f89-9e04-33955ee8db90`)
+- Subject: django/db/models/base::Model.__hash__ (id `798d61fa-0de8-484e-a4a4-fdcc7c755cde`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

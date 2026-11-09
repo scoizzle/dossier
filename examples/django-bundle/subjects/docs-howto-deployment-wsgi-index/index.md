@@ -1,14 +1,14 @@
 # docs/howto/deployment/wsgi/index
 
-- Subject: docs/howto/deployment/wsgi/index (id `157daf8e-c942-46d3-8806-91481e7f8ad1`)
+- Subject: docs/howto/deployment/wsgi/index (id `eea2a2b4-b74b-4794-a891-f030b2f0e80c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 862 tokens
-- Facts shown: 22 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1027 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Since environment variables are process-wide, this doesn't work when you run multiple Django sites in the same process. This happens with mod_wsgi. [9a7408d9]
 - To avoid this problem, use mod_wsgi's daemon mode with each site in its own daemon process, or override the value from the environment by enforcing ``os.environ["DJANGO_SETTINGS_MODULE"] = "mysite.settings"`` in your :file:`wsgi.py`. [31d129b0]
@@ -33,6 +33,7 @@
 - To apply :pep:`WSGI middleware <3333#middleware-components-that-play-both-sides>` you can wrap the application object. For instance you could add these lines at the bottom of :file:`wsgi.py`:: [1055a78c]
 - When the WSGI server loads your application, Django needs to import the settings module — that's where your entire application is defined. [5d949fdf]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [9f0c4b59] [37163efd]
+- [9f0c4b59] WSGI servers obtain the path to the ``application`` callable from their configuration. Django's built-in server, namely the :djadmin:`runserver` command, reads it from the :setting:`WSGI_APPLICATION` setting. By default, it's set to ``<project_name>.wsgi.application``, which points to the ``application`` callable in :file:`<project_name>/wsgi.py`.
+- [37163efd] You could also replace the Django WSGI application with a custom WSGI application that later delegates to the Django WSGI application, if you want to combine a Django application with a WSGI application of another framework.

@@ -1,8 +1,8 @@
 # docs/ref/contrib/gis/sitemaps
 
-- Subject: docs/ref/contrib/gis/sitemaps (id `0e473a5c-ff65-462e-a029-f32a6de7b733`)
+- Subject: docs/ref/contrib/gis/sitemaps (id `04087764-fdda-468e-8bba-ff57b05a6fc6`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 178 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

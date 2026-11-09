@@ -1,9 +1,9 @@
 # django/db/models/expressions::DurationExpression.as_sql
 
-- Subject: django/db/models/expressions::DurationExpression.as_sql (id `685d7496-db09-4b61-9f83-d7b95615fe3d`)
+- Subject: django/db/models/expressions::DurationExpression.as_sql (id `40b8839b-8ea4-4b78-95e2-e02a4ebe09a2`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact cf0c8c72
 
-Store id: 9f589b5d-aae2-4e30-8992-cd7747955fba
+Store id: cb29f331-d87e-408f-8cfe-7cf8c80c5b26
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0665210+00:00`
+- posted_at: `2026-11-09T23:32:03.2147670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 243,
     "symbol": "BuiltinLookup.as_sql"
   },
-  "id": "9f589b5d-aae2-4e30-8992-cd7747955fba",
+  "id": "cb29f331-d87e-408f-8cfe-7cf8c80c5b26",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0665210+00:00"
+    "posted_at": "2026-11-09T23:32:03.2147670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2654d3a8-b2b6-4403-9fc3-cdde192df687",
+  "subject_id": "f63b7c8c-1fd2-43ad-a787-d5ddb891dce6",
   "subject_name": "django/db/models/lookups::BuiltinLookup.as_sql",
   "tags": [
     "entity:method"

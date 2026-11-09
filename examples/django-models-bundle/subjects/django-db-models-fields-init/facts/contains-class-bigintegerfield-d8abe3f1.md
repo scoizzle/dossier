@@ -1,6 +1,6 @@
 # Fact d8abe3f1
 
-Store id: f83a1c69-306e-4a9c-8470-c0fb217d35f0
+Store id: 5d6f551c-cf90-4d56-952c-4d9356dcd704
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BigIntegerField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f83a1c69-306e-4a9c-8470-c0fb217d35f0",
+  "id": "5d6f551c-cf90-4d56-952c-4d9356dcd704",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BigIntegerField"
       },
       "rel": "contains",
-      "target": "0188fa61-1737-436e-8b11-bae6b7fece1e"
+      "target": "3117325a-0c44-4df3-850c-0b995f22ae9d"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact fa33bb8c
 
-Store id: 438fe111-4cfc-4793-a6e0-204b88276313
+Store id: dd349f32-89bf-46b4-94a1-e1535d8a6f7b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_choices(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2746220+00:00`
+- posted_at: `2026-11-09T23:31:56.4286020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 350,
     "symbol": "Field._check_choices"
   },
-  "id": "438fe111-4cfc-4793-a6e0-204b88276313",
+  "id": "dd349f32-89bf-46b4-94a1-e1535d8a6f7b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2746220+00:00"
+    "posted_at": "2026-11-09T23:31:56.4286020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1055ab35-8c59-490c-a71b-62a7e9fe5a03",
+  "subject_id": "4fc4a96c-d999-45d1-a0a6-052fb1ae9c4e",
   "subject_name": "django/db/models/fields/__init__::Field._check_choices",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/aggregates::StringAgg.as_oracle
 
-- Subject: django/db/models/aggregates::StringAgg.as_oracle (id `aa227b7f-cb12-43f6-8270-ee6a92a32068`)
+- Subject: django/db/models/aggregates::StringAgg.as_oracle (id `fbdd0c26-bd55-43c6-92d8-b9b975dcbb29`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

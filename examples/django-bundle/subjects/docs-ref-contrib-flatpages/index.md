@@ -1,14 +1,14 @@
 # docs/ref/contrib/flatpages
 
-- Subject: docs/ref/contrib/flatpages (id `8feaef58-8ddc-441e-9d38-f9c47e85aa06`)
+- Subject: docs/ref/contrib/flatpages (id `a408144a-3844-473a-8f95-ed72f10576cf`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 25 of 121
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4536 tokens
+- Facts shown: 114 of 121
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Boolean. This field is not used by :mod:`~django.contrib.flatpages` by default and does not appear in the admin interface. Please see :ref:`flatpages admin interface section <flatpages-admin>` for a detailed explanation. [5d74ff28]
 - Boolean. When ``True``, restricts the page access to logged-in users only. [67eb7803]
@@ -36,6 +36,94 @@
 - If it doesn't find a match, the request continues to be processed as usual. [0f79992c]
 - If it finds a match, it follows this algorithm: [f81b1380]
 
-## Beyond the budget
+## All facts
 
-89 more facts did not fit in the budget: [c47fc40d] [ee4c020c] [049a8c12] [3e444928] [07d85f61] [b8d0e7548b192bff] [1cfc84be] [cd5c9082] [56bfdb07e34bb2a1] [bc4ae10a] [e54c142b] [9ad22ded] [2a61d97969e83c2a] [f5f0d954] [fd30cf3c] [9ca8f647] [a6d6ee15] [8e8122c4] [3aba9c37] [59dac90f] [0b1d7376] [60e6ddf4] [e1b82724] [473267ef] [75c8ea879f4a56ca] [685d15dfb6eb2285-63] [6a94ebf9] [51d68996] [3e146637] [d4e9bc65] [b272e86d] [abe2b4ce] [c54b54cb0805732a-19] [c54b54cb0805732a-20] [cc01e180] [d34e1585] [eeca4fe9] [fd77d5f2] [d3f95843] [e4c44fbd] [63845c03] [a2a969ed] [e54a9b90] [ad9e98f8] [ee9d50a8] [31bda36a] [a6bd17cd] [df91895f] [871edec7] [8c4ae3b9] [84675e43a58d58cc] [063271e57f785225-4] [de06ced4] [f305dae4] [8d6a4f57] [bc295f9831206ba3-3] [bc295f9831206ba3-4] [8ab77384ea4cc532] [063f72b1] [8fbb2760] [a4d11148] [0cef2b7e7679766a] [7a8638e4] [36255e61] [28135664] [8db4d8757db9fb63-2] [bde27b1f] [98f5bb64] [af9b1384] [d5882157dc780592-5] [c380a3ee] [0252226f] [9221c53d] [be15cd49] [84a798df] [b7e7821f] [00b96753] [8b366f03] [e387d0bd] [1392d2aa] [74ef3cbf] [c87ac88c] [13849c37] [4d9c577be104c776] [2d26d25ee8ee8de6] [dfa15974] [6e3c5f63] [fe28932d] [bd685ff5]
+- [c47fc40d] If you add or modify flatpages via your own code, you will likely want to check for duplicate flatpage URLs within the same site. The flatpage form used in the admin performs this validation check, and can be imported from ``django.contrib.flatpages.forms.FlatpageForm`` and used in your own views.
+- [ee4c020c] If you set :setting:`APPEND_SLASH` to ``False``, you must remove the slash in the catchall pattern or flatpages without a trailing slash will not be matched.
+- [049a8c12] Note that the :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware` only steps in once another view has successfully produced a 404 response. If another view or middleware class attempts to produce a 404 but ends up raising an exception instead, the response will become an HTTP 500 ("Internal Server Error") and the :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware` will not attempt to serve a flatpage.
+- [3e444928] Permissions to add or edit flatpages should be restricted to trusted users. Flatpages are defined by raw HTML and are **not sanitized** by Django. As a consequence, a malicious flatpage can lead to various security vulnerabilities, including permission escalation.
+- [07d85f61] The :class:`sitemaps.FlatPageSitemap <django.contrib.flatpages.sitemaps.FlatPageSitemap>` class looks at all publicly visible :mod:`~django.contrib.flatpages` defined for the current :setting:`SITE_ID` (see the :mod:`sites documentation <django.contrib.sites>`) and creates an entry in the sitemap. These entries include only the :attr:`~django.contrib.sitemaps.Sitemap.location` attribute -- not :attr:`~django.contrib.sitemaps.Sitemap.lastmod`, :attr:`~django.contrib.sitemaps.Sitemap.changefreq` or :attr:`~django.contrib.sitemaps.Sitemap.priority`.
+- [b8d0e7548b192bff] The middleware only gets activated for 404s -- not for 500s or responses of any other status code.
+- [1cfc84be] The middleware will only add a trailing slash and redirect (by looking at the :setting:`APPEND_SLASH` setting) if the resulting URL refers to a valid flatpage. Redirects are permanent (301 status code).
+- [cd5c9082] from django.contrib import admin from django.contrib.flatpages.admin import FlatPageAdmin from django.contrib.flatpages.models import FlatPage from django.utils.translation import gettext_lazy as _
+- [56bfdb07e34bb2a1] from django.contrib.flatpages import views
+- [bc4ae10a] from django.contrib.flatpages.sitemaps import FlatPageSitemap from django.contrib.sitemaps.views import sitemap from django.urls import path
+- [e54c142b] urlpatterns += [ path("about-us/", views.flatpage, kwargs={"url": "/about-us/"}, name="about"), path("license/", views.flatpage, kwargs={"url": "/license/"}, name="license"), ]
+- [9ad22ded] urlpatterns = [ # ... # the sitemap path( "sitemap.xml", sitemap, {"sitemaps": {"flatpages": FlatPageSitemap}}, name="django.contrib.sitemaps.views.sitemap", ), ]
+- [2a61d97969e83c2a] urlpatterns = [ path("pages/", include("django.contrib.flatpages.urls")), ]
+- [f5f0d954] {% get_flatpages '/about/' as about_pages %} {% get_flatpages about_prefix as about_pages %} {% get_flatpages '/about/' for someuser as about_pages %}
+- [fd30cf3c] {% load flatpages %} {% get_flatpages as flatpages %} <ul> {% for page in flatpages %} <li><a href="{{ page.url }}">{{ page.title }}</a></li> {% endfor %} </ul>
+- [9ca8f647] Also make sure you've correctly set :setting:`SITE_ID` to the ID of the site the settings file represents. This will usually be ``1`` (i.e. ``SITE_ID = 1``), but if you're using the sites framework to manage multiple sites, it could be the ID of a different site.
+- [a6d6ee15] Because the ``FlatpageFallbackMiddleware`` is applied only after URL resolution has failed and produced a 404, the response it returns will not apply any :ref:`view middleware <view-middleware>` methods. Only requests which are successfully routed to a view via normal URL resolution apply view middleware.
+- [8e8122c4] .. _flatpages-admin:
+- [3aba9c37] .. admonition:: Check for duplicate flatpage URLs.
+- [59dac90f] .. admonition:: Ensure that your 404 template works
+- [0b1d7376] .. admonition:: Flatpages will not apply view middleware
+- [60e6ddf4] .. class:: FlatPageSitemap
+- [e1b82724] .. class:: FlatpageFallbackMiddleware
+- [473267ef] .. class:: models.FlatPage
+- [75c8ea879f4a56ca] .. class:: models.FlatPage :noindex:
+- [685d15dfb6eb2285-63] .. code-block:: html+django
+- [6a94ebf9] .. currentmodule:: django.contrib.flatpages
+- [51d68996] .. currentmodule:: django.contrib.flatpages.middleware
+- [3e146637] .. currentmodule:: django.contrib.flatpages.models
+- [d4e9bc65] .. currentmodule:: django.contrib.flatpages.sitemaps
+- [b272e86d] .. module:: django.contrib.flatpages :synopsis: A framework for managing "flat" HTML content in a database.
+- [abe2b4ce] .. templatetag:: get_flatpages
+- [c54b54cb0805732a-19] .. warning::
+- [c54b54cb0805732a-20] .. warning::
+- [cc01e180] 1. Install the :mod:`sites framework <django.contrib.sites>` by adding ``'django.contrib.sites'`` to your :setting:`INSTALLED_APPS` setting, if it's not already in there.
+- [d34e1585] 2. Add ``'django.contrib.flatpages'`` to your :setting:`INSTALLED_APPS` setting.
+- [eeca4fe9] 3. Add ``'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware'`` to your :setting:`MIDDLEWARE` setting.
+- [fd77d5f2] 3. Add an entry in your URLconf. For example::
+- [d3f95843] 4. Run the command :djadmin:`manage.py migrate <migrate>`.
+- [e4c44fbd] :class:`~django.contrib.flatpages.models.FlatPage` objects have the following fields:
+- [63845c03] ================= The flatpages app =================
+- [a2a969ed] A flatpage can use a custom template or a default, systemwide flatpage template. It can be associated with one, or multiple, sites.
+- [e54a9b90] A flatpage is an object with a URL, title and content. Use it for one-off, special-case pages, such as "About" or "Privacy Policy" pages, that you want to store in a database but for which you don't want to develop a custom Django application.
+- [ad9e98f8] An optional argument, ``starts_with``, can be applied to limit the returned pages to those beginning with a particular base URL. This argument may be passed as a string, or as a variable to be resolved from the context.
+- [ee9d50a8] Another common setup is to use flatpages for a limited set of known pages and to hardcode their URLs in the :doc:`URLconf </topics/http/urls>`::
+- [31bda36a] By default, flatpages are rendered via the template :file:`flatpages/default.html`, but you can override that for a particular flatpage: in the admin, a collapsed fieldset titled "Advanced options" (clicking will expand it) contains a field for specifying a template name. If you're creating a flatpage via the Python API you can set the template name as the field ``template_name`` on the ``FlatPage`` object.
+- [a6bd17cd] By default, the :ttag:`get_flatpages` template tag will only show flatpages that are marked ``registration_required = False``. If you want to display registration-protected flatpages, you need to specify an authenticated user using a ``for`` clause.
+- [df91895f] Creating the :file:`flatpages/default.html` template is your responsibility; in your template directory, create a :file:`flatpages` directory containing a file :file:`default.html`.
+- [871edec7] Displaying ``registration_required`` flatpages ----------------------------------------------
+- [8c4ae3b9] Django comes with an optional "flatpages" application. It lets you store "flat" HTML content in a database and handles the management for you via Django's admin interface and a Python API.
+- [84675e43a58d58cc] Example -------
+- [063271e57f785225-4] Fields ------
+- [de06ced4] Flatpage templates ==================
+- [f305dae4] Flatpage templates are passed a single context variable, ``flatpage``, which is the flatpage object.
+- [8d6a4f57] Flatpages are represented by a standard :doc:`Django model </topics/db/models>`, :class:`.FlatPage`. You can access flatpage objects via the :doc:`Django database API </topics/db/queries>`.
+- [bc295f9831206ba3-3] For example:
+- [bc295f9831206ba3-4] For example:
+- [8ab77384ea4cc532] For more on middleware, read the :doc:`middleware docs </topics/http/middleware>`.
+- [063f72b1] Getting a list of :class:`~django.contrib.flatpages.models.FlatPage` objects in your templates ==============================================================================================
+- [8fbb2760] Here's a sample :file:`flatpages/default.html` template:
+- [a4d11148] Here's an example of a URLconf using :class:`FlatPageSitemap`::
+- [0cef2b7e7679766a] How it works ============
+- [7a8638e4] How to add, change and delete flatpages =======================================
+- [36255e61] If you provide an anonymous user, :ttag:`get_flatpages` will behave the same as if you hadn't provided a user -- i.e., it will only show you public flatpages.
+- [28135664] If you've activated the automatic Django admin interface, you should see a "Flatpages" section on the admin index page. Edit flatpages as you edit any other object in the system.
+- [8db4d8757db9fb63-2] Installation ============
+- [bde27b1f] Integrating with :mod:`django.contrib.sitemaps` ===============================================
+- [98f5bb64] Like all custom template tags, you'll need to :ref:`load its custom tag library <loading-custom-template-libraries>` before you can use it. After loading the library, you can retrieve all current flatpages via the :ttag:`get_flatpages` tag:
+- [af9b1384] Limiting flatpages by base URL ------------------------------
+- [d5882157dc780592-5] Methods -------
+- [c380a3ee] Note that the order of :setting:`MIDDLEWARE` matters. Generally, you can put :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware` at the end of the list. This means it will run first when processing the response, and ensures that any other response-processing middleware see the real flatpage response rather than the 404.
+- [0252226f] Since you're already entering raw HTML into the admin page for a flatpage, both ``flatpage.title`` and ``flatpage.content`` are marked as **not** requiring :ref:`automatic HTML escaping <automatic-html-escaping>` in the template.
+- [9221c53d] The :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware` can do all of the work.
+- [be15cd49] The ``FlatPage`` model has an ``enable_comments`` field that isn't used by ``contrib.flatpages``, but that could be useful for your project or third-party apps. It doesn't appear in the admin interface, but you can add it by registering a custom ``ModelAdmin`` for ``FlatPage``::
+- [84a798df] The ``kwargs`` argument sets the ``url`` value used for the ``FlatPage`` model lookup in the flatpage view.
+- [b7e7821f] The ``name`` argument allows the URL to be reversed in templates, for example using the :ttag:`url` template tag.
+- [00b96753] The content field may optionally be left blank if you prefer to put your content in a custom template.
+- [8b366f03] The flatpages app provides a template tag that allows you to iterate over all of the available flatpages on the :ref:`current site <hooking-into-current-site-from-views>`.
+- [e387d0bd] Then either:
+- [1392d2aa] There are several ways to include the flatpages in your URLconf. You can dedicate a particular path to flatpages::
+- [74ef3cbf] To install the flatpages app, follow these steps:
+- [c87ac88c] Using the URLconf -----------------
+- [13849c37] Using the middleware --------------------
+- [4d9c577be104c776] Via the Python API ------------------
+- [2d26d25ee8ee8de6] Via the admin interface -----------------------
+- [dfa15974] You can also set it up as a "catchall" pattern. In this case, it is important to place the pattern at the end of the other urlpatterns::
+- [6e3c5f63] ``FlatPage`` model ==================
+- [fe28932d] ``manage.py migrate`` creates two tables in your database: ``django_flatpage`` and ``django_flatpage_sites``. ``django_flatpage`` is a lookup table that maps a URL to a title and bunch of text content. ``django_flatpage_sites`` associates a flatpage with a site.
+- [bd685ff5] or:

@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/mysql/operations
 
-- Subject: django/contrib/gis/db/backends/mysql/operations (id `675e828a-d68d-4adf-8718-8fb0c95dc07e`)
+- Subject: django/contrib/gis/db/backends/mysql/operations (id `d2708a52-b114-4715-8b41-67fb989106e1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 13 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1154 tokens
+- Facts shown: 17 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def converter(value, expression, connection): if value is not None: geom = GEOSGeometryBase( read(memoryview(value), max_geom_collections=None), geom_class ) if srid: geom.srid = srid return geom [1af64a28]
 - return converter [2995b642af280a57]
@@ -24,6 +24,9 @@
 - def get_distance(self, f, value, lookup_type): value = value[0] if isinstance(value, Distance): if f.geodetic(self.connection): raise ValueError( "Only numeric values of degree units are allowed on " "geodetic distance queries." ) dist_param = getattr( value, Distance.unit_attname(f.units_name(self.connection)) ) else: dist_param = value return [dist_param] [2a9fec00]
 - def spatial_aggregate_name(self, agg_name): return getattr(self, agg_name.lower()) [93c8d9f0]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [65d28d30d056178b] [4541b879] [347dcdc6] [5e487577]
+- [65d28d30d056178b] def get_geometry_converter(self, expression): read = wkb_r().read srid = expression.output_field.srid if srid == -1: srid = None geom_class = expression.output_field.geom_class
+- [4541b879] function_names = { "FromWKB": "ST_GeomFromWKB", "FromWKT": "ST_GeomFromText", }
+- [347dcdc6] class MySQLOperations(BaseSpatialOperations, DatabaseOperations): name = "mysql" geom_func_prefix = "ST_"
+- [5e487577] from django.contrib.gis.db import models from django.contrib.gis.db.backends.base.adapter import WKTAdapter from django.contrib.gis.db.backends.base.operations import BaseSpatialOperations from django.contrib.gis.db.backends.utils import SpatialOperator from django.contrib.gis.geos.geometry import GEOSGeometryBase from django.contrib.gis.geos.prototypes.io import wkb_r from django.contrib.gis.measure import Distance from django.db.backends.mysql.operations import DatabaseOperations from django.utils.functional import cached_property

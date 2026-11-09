@@ -1,14 +1,14 @@
 # django/apps/config
 
-- Subject: django/apps/config (id `febd6e0a-417f-4bb1-838a-403845f73703`)
+- Subject: django/apps/config (id `b02ed89e-20a6-4352-822b-abbea9dd5110`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 10 of 35
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2542 tokens
+- Facts shown: 35 of 35
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Use the default app config class if we didn't find anything. if app_config_class is None: app_config_class = cls app_name = entry [8870d749]
 - # Check for obvious errors. (This check prevents duck typing, but # it could be removed if it became a problem in practice.) if not issubclass(app_config_class, AppConfig): raise ImproperlyConfigured("'%s' isn't a subclass of AppConfig." % entry) [b6252eed]
@@ -21,6 +21,30 @@
 - # Mapping of lowercase model names to model classes. Initially set to # None to prevent accidental access before import_models() runs. self.models = None [fdf60eba]
 - # Module containing models e.g. <module 'django.contrib.admin.models' # from 'django/contrib/admin/models.py'>. Set by import_models(). # None if the application doesn't have a models module. self.models_module = None [afc240c8]
 
-## Beyond the budget
+## All facts
 
-25 more facts did not fit in the budget: [740700a8] [543a90aa] [023bf069] [9c4c1445] [db875692] [d5df7040777fbcfe] [fbac367176154586] [9e7025b2] [5d5895bf] [0afa07e4] [a86ae0da] [735f0f6e] [c7456ea3] [2c8d281b] [157dfab5] [94616256] [be615ddb] [617b7ebf] [f609abbe] [7d29b276] [9a18cf32] [e83b7a85] [9eee9110] [358afed4] [73659330]
+- [740700a8] # If import_string succeeds, entry is an app config class. if app_config_class is None: try: app_config_class = import_string(entry) except Exception: pass # If both import_module and import_string failed, it means that entry # doesn't have a valid value. if app_module is None and app_config_class is None: # If the last component of entry starts with an uppercase letter, # then it was likely intended to be an app config class; if not, # an app module. Provide a nice error message in both cases. mod_path, _, cls_name = entry.rpartition(".") if mod_path and cls_name[0].isupper(): # We could simply re-trigger the string import exception, but # we're going the extra mile and providing a better error # message for typos in INSTALLED_APPS. # This may raise ImportError, which is the best exception # possible if the module at mod_path cannot be imported. mod = import_module(mod_path) candidates = [ repr(name) for name, candidate in inspect.getmembers(mod, inspect.isclass) if issubclass(candidate, cls) and candidate is not cls ] msg = "Module '%s' does not contain a '%s' class." % ( mod_path, cls_name, ) if candidates: msg += " Choices are: %s." % ", ".join(candidates) raise ImportError(msg) else: # Re-trigger the module import exception. import_module(entry)
+- [543a90aa] # Obtain app name here rather than in AppClass.__init__ to keep # all error checking for entries in INSTALLED_APPS in one place. if app_name is None: try: app_name = app_config_class.name except AttributeError: raise ImproperlyConfigured("'%s' must supply a name attribute." % entry)
+- [023bf069] # Reference to the Apps registry that holds this AppConfig. Set by the # registry when it registers the AppConfig instance. self.apps = None
+- [9c4c1445] # Root module for the application e.g. <module 'django.contrib.admin' # from 'django/contrib/admin/__init__.py'>. self.module = app_module
+- [db875692] # The following attributes could be defined at the class level in a # subclass, hence the test-and-set pattern.
+- [d5df7040777fbcfe] - auto-created models for many-to-many relations without an explicit intermediate table, - models that have been swapped out.
+- [fbac367176154586] By default, the following models aren't included:
+- [9e7025b2] Raise LookupError if no model exists with this name. """ if require_ready: self.apps.check_models_ready() else: self.apps.check_apps_ready() try: return self.models[model_name.lower()] except KeyError: raise LookupError( "App '%s' doesn't have a '%s' model." % (self.label, model_name) )
+- [5d5895bf] Set the corresponding keyword argument to True to include such models. Keyword arguments aren't documented; they're a private API. """ self.apps.check_models_ready() for model in self.models.values(): if model._meta.auto_created and not include_auto_created: continue if model._meta.swapped and not include_swapped: continue yield model
+- [0afa07e4] if module_has_submodule(self.module, MODELS_MODULE_NAME): models_module_name = "%s.%s" % (self.name, MODELS_MODULE_NAME) self.models_module = import_module(models_module_name)
+- [a86ae0da] return settings.DEFAULT_AUTO_FIELD
+- [735f0f6e] @cached_property def default_auto_field(self): from django.conf import settings
+- [c7456ea3] @classmethod def create(cls, entry): """ Factory that creates an app config from an entry in INSTALLED_APPS. """ # create() eventually returns app_config_class(app_name, app_module). app_config_class = None app_name = None app_module = None
+- [2c8d281b] @property def _is_default_auto_field_overridden(self): return self.__class__.default_auto_field is not AppConfig.default_auto_field
+- [157dfab5] def __init__(self, app_name, app_module): # Full Python path to the application e.g. 'django.contrib.admin'. self.name = app_name
+- [94616256] def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self.label)
+- [be615ddb] def _path_from_module(self, module): """Attempt to determine app's filesystem path from its module.""" # See #21874 for extended discussion of the behavior of this method in # various cases. # Convert to list because __path__ may not support indexing. paths = list(getattr(module, "__path__", [])) if len(paths) != 1: filename = getattr(module, "__file__", None) if filename is not None: paths = [os.path.dirname(filename)] else: # For unknown reasons, sometimes the list returned by __path__ # contains duplicates that must be removed (#25246). paths = list(set(paths)) if len(paths) > 1: raise ImproperlyConfigured( "The app module %r has multiple filesystem locations (%r); " "you must configure this app with an AppConfig subclass " "with a 'path' class attribute." % (module, paths) ) elif not paths: raise ImproperlyConfigured( "The app module %r has no filesystem location, " "you must configure this app with an AppConfig subclass " "with a 'path' class attribute." % module ) return paths[0]
+- [617b7ebf] def get_model(self, model_name, require_ready=True): """ Return the model with the given case-insensitive model_name.
+- [f609abbe] def get_models(self, include_auto_created=False, include_swapped=False): """ Return an iterable of models.
+- [7d29b276] def import_models(self): # Dictionary of models for this app, primarily maintained in the # 'all_models' attribute of the Apps this AppConfig is attached to. self.models = self.apps.all_models[self.label]
+- [9a18cf32] def ready(self): """ Override this method in subclasses to run code when Django starts. """
+- [e83b7a85] APPS_MODULE_NAME = "apps" MODELS_MODULE_NAME = "models"
+- [9eee9110] class AppConfig: """Class representing a Django application and its configuration."""
+- [358afed4] from django.core.exceptions import ImproperlyConfigured from django.utils.functional import cached_property from django.utils.module_loading import import_string, module_has_submodule
+- [73659330] import inspect import os from importlib import import_module

@@ -1,8 +1,8 @@
 # django/db/backends/postgresql/compiler
 
-- Subject: django/db/backends/postgresql/compiler (id `818d33c7-e352-41ba-b73c-6f45e14fb2bb`)
+- Subject: django/db/backends/postgresql/compiler (id `2491984a-42d3-4218-a319-9580226a12e2`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 564 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

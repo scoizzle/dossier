@@ -1,6 +1,6 @@
 # Fact d425660a
 
-Store id: 3a223ea5-1e69-4cc0-9172-046965f7aba9
+Store id: 84c72158-5e30-4a98-a0a5-ecd9074cc87f
 
 ## Text
 
@@ -20,7 +20,7 @@ def desc(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7524220+00:00`
+- posted_at: `2026-11-09T23:31:55.9974310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2016,
     "symbol": "OrderBy.desc"
   },
-  "id": "3a223ea5-1e69-4cc0-9172-046965f7aba9",
+  "id": "84c72158-5e30-4a98-a0a5-ecd9074cc87f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7524220+00:00"
+    "posted_at": "2026-11-09T23:31:55.9974310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b4a829a9-88ae-431c-a245-daa4b117b25b",
+  "subject_id": "4c329f90-143c-473b-9de2-484bdae2b5c0",
   "subject_name": "django/db/models/expressions::OrderBy.desc",
   "tags": [
     "entity:method"

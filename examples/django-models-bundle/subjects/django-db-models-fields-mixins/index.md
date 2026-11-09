@@ -1,8 +1,8 @@
 # django/db/models/fields/mixins
 
-- Subject: django/db/models/fields/mixins (id `f217444f-cd9b-4e43-b7ea-301a8c96a000`)
+- Subject: django/db/models/fields/mixins (id `545aae78-c545-4908-8b58-6187837cd02e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 38 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

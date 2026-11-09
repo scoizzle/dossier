@@ -1,8 +1,8 @@
 # django/core/management/commands/sqlmigrate
 
-- Subject: django/core/management/commands/sqlmigrate (id `2a2266a8-f9e7-4acb-b82b-149b1918490b`)
+- Subject: django/core/management/commands/sqlmigrate (id `2a67a60c-94d9-4b14-85a1-ea3418607fd3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 769 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

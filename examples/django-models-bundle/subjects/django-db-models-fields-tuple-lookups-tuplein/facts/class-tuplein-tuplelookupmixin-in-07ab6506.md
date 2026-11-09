@@ -1,6 +1,6 @@
 # Fact 07ab6506
 
-Store id: 1302ec65-2139-4b06-a375-ead80deab7f0
+Store id: 60e2933d-5a35-41d0-9c17-33e4eab14104
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleIn(TupleLookupMixin, In)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6292120+00:00`
+- posted_at: `2026-11-09T23:32:00.6211480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 303,
     "symbol": "TupleIn"
   },
-  "id": "1302ec65-2139-4b06-a375-ead80deab7f0",
+  "id": "60e2933d-5a35-41d0-9c17-33e4eab14104",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6292120+00:00"
+    "posted_at": "2026-11-09T23:32:00.6211480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "76f73f9c-68d0-4dc8-9d77-b5c4f3e3e17d",
+  "subject_id": "48f5c3a4-f156-48c6-baed-614a5a228e88",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIn",
   "tags": [
     "entity:class"

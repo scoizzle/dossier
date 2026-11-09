@@ -1,8 +1,8 @@
 # django/contrib/gis/db/models/proxy
 
-- Subject: django/contrib/gis/db/models/proxy (id `65dcf798-a954-4e02-9276-26a7969dbe1e`)
+- Subject: django/contrib/gis/db/models/proxy (id `f8160b32-43a3-43b7-968f-40bc30d71a33`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 789 tokens
 - Facts shown: 11 of 11
 - Conflicts: 0

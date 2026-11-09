@@ -1,6 +1,6 @@
 # Fact 6dad6c75
 
-Store id: e30760bd-153c-45ba-a6e6-3c7ba0272fb1
+Store id: 4f44f9c7-f795-425c-90d2-31f229617ebf
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, text, replacement=Value(""), **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1532610+00:00`
+- posted_at: `2026-11-09T23:32:02.2521170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 256,
     "symbol": "Replace.__init__"
   },
-  "id": "e30760bd-153c-45ba-a6e6-3c7ba0272fb1",
+  "id": "4f44f9c7-f795-425c-90d2-31f229617ebf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1532610+00:00"
+    "posted_at": "2026-11-09T23:32:02.2521170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "93524dea-b6f4-4524-908d-0a737916d09f",
+  "subject_id": "34918b13-340d-4db1-b284-564e06081bcf",
   "subject_name": "django/db/models/functions/text::Replace.__init__",
   "tags": [
     "entity:method"

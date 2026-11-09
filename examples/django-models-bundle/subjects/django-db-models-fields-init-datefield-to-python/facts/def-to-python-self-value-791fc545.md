@@ -1,6 +1,6 @@
 # Fact 791fc545
 
-Store id: d8e7b520-f5bc-4f37-8a52-428eecc6909a
+Store id: f994849d-3ff7-409c-af54-c35b32867e22
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4180790+00:00`
+- posted_at: `2026-11-09T23:31:56.5818440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1520,
     "symbol": "DateField.to_python"
   },
-  "id": "d8e7b520-f5bc-4f37-8a52-428eecc6909a",
+  "id": "f994849d-3ff7-409c-af54-c35b32867e22",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4180790+00:00"
+    "posted_at": "2026-11-09T23:31:56.5818440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "399e581e-3593-4f21-a80c-bf31014f4176",
+  "subject_id": "fe1d7a9b-1834-452a-93c3-df3758b966b4",
   "subject_name": "django/db/models/fields/__init__::DateField.to_python",
   "tags": [
     "entity:method"

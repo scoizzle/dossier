@@ -1,6 +1,6 @@
 # Fact bd9c2689
 
-Store id: f2337175-4177-4a30-89c7-12db87de5ac0
+Store id: 2f909d38-f79c-4817-af2b-f80e9f456177
 
 ## Text
 
@@ -20,7 +20,7 @@ def _generate_next_value_(name, start, count, last_values)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.3082080+00:00`
+- posted_at: `2026-11-09T23:31:55.5129160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 77,
     "symbol": "TextChoices._generate_next_value_"
   },
-  "id": "f2337175-4177-4a30-89c7-12db87de5ac0",
+  "id": "2f909d38-f79c-4817-af2b-f80e9f456177",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.3082080+00:00"
+    "posted_at": "2026-11-09T23:31:55.5129160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d3b32fb0-0d89-4b19-a542-a112ab569c8b",
+  "subject_id": "f2fe0c25-5128-4d48-af3a-ce8b7910c39d",
   "subject_name": "django/db/models/enums::TextChoices._generate_next_value_",
   "tags": [
     "entity:static_method",

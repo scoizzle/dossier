@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-code/unit-tests
 
-- Subject: docs/internals/contributing/writing-code/unit-tests (id `bf07ab0f-02d9-491b-a4a3-0dacba15c2ba`)
+- Subject: docs/internals/contributing/writing-code/unit-tests (id `18aae47d-e098-4487-a93d-198e5f2b3885`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 29 of 193
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 7429 tokens
+- Facts shown: 190 of 193
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ... [c059dbb7f93ef187]
 - class OtherAppModel(models.Model): class Meta: app_label = "other_app_label" [9193c383]
@@ -40,6 +40,166 @@
 - $ ./runtests.py --settings=path.to.settings generic_relations i18n [57e2a9f2]
 - $ ./runtests.py --start-after=wsgi [e7e4c59e]
 
-## Beyond the budget
+## All facts
 
-161 more facts did not fit in the budget: [78ec7507] [676b8f15] [aa35972b] [15652fe0] [b2bf88d8] [0d4e2d8a] [d6a7d415] [f116c5ee] [47aa4cba] [fef1c65a] [057eb191] [1ad84e90] [01287e6d] [93c6faed] [f27f3b5f] [568f39c7] [8041332b] [685f0802] [ee10ecc0] [c65f3a7e] [b9d9d9ff] [9da252fb] [1241d4d1] [94c85b53] [d51c3af3] [83d5fc62] [20ef8cdb] [039cc743] [e540035b] [b4b6ff3d] [2692e1ff] [dd5906c3] [15962a9a] [faf6f5a8efbd7831-5] [faf6f5a8efbd7831-6] [faf6f5a8efbd7831-7] [423631a5927aaff7-7] [fccd37de02dbdecc-2] [8aa7203c166b13be-28] [7714e199aac2701e-19] [7714e199aac2701e-20] [7714e199aac2701e-21] [7714e199aac2701e-22] [7714e199aac2701e-23] [7714e199aac2701e-24] [7714e199aac2701e-25] [7714e199aac2701e-26] [7714e199aac2701e-27] [7714e199aac2701e-28] [7714e199aac2701e-29] [7714e199aac2701e-30] [7714e199aac2701e-31] [7714e199aac2701e-32] [7714e199aac2701e-33] [7714e199aac2701e-34] [7714e199aac2701e-35] [7714e199aac2701e-36] [7714e199aac2701e-37] [7714e199aac2701e-38] [7714e199aac2701e-39] [82d93b9b] [833c88a7] [8e24b69a] [bc04d64f] [e7596b47] [bb4c706d] [2af19c22] [97b18f26] [a11a4641] [e0f4552e] [9f6bd7b9] [e9826596] [3d0bbce1] [724408d2] [4e796152] [5acbb376] [93fa3778] [27a52f39] [e69e41ce] [dc0dad33] [6dfe083f] [8ec07757] [c86efd61b4d2ef12] [39f9aa0c] [f6362d0e] [d88de21b] [41b69840] [9c0f4ae8] [7e3d5c99] [37074aa5] [ce9c2bbc] [900d357e] [e73903f1] [72e9b003] [545abc52] [170f7a4e] [79aa75f7] [607f9e8a] [2831de7a] [53eb2705] [3f136d84] [3f14bd4d] [669278d1] [556c5b56] [aad20fdf] [d86397b7] [c4b462d5] [7df7b2aa] [9ba4ef33] [87503232] [3a25640f] [27cadfc7] [7cea4523] [47463484] [8a07a8e1] [22bd1b64] [07306c67] [b68139a0] [ed0d1413] [b9b42252] [e21094aa] [783c56c0] [a21bec4e] [b2752760] [1ba245b1] [a075c2f1] [1512cdf8] [17cbd482] [43517ba4] [930f8ffd] [e2bf6f25] [044fa1e7] [1c29d5ad] [75893f76] [37186434] [ec262a55] [2f25acd4] [b7c4cce3] [984c9e9e] [2400fc96] [9bd7b303e940ce88] [45441029] [e2d58a9b] [8be560a7] [2e421668] [581cf3fc] [df4c96eb] [23326231] [83835780] [809ffa53] [a015dc50] [293d6a16] [25250ec8] [7909166a] [edbbba12] [7fe56fb9] [779d3aeb] [1cc5f916] [cd01bb90] [fc7fd8f2] [893fd7ac]
+- [78ec7507] $ ./runtests.py --settings=path.to.settings i18n.tests.TranslationTests
+- [676b8f15] $ ./runtests.py --settings=path.to.settings i18n.tests.TranslationTests.test_lazy_objects
+- [aa35972b] $ ./runtests.py --start-at=wsgi
+- [15652fe0] $ coverage combine
+- [b2bf88d8] $ coverage html
+- [0d4e2d8a] $ coverage run ./runtests.py --settings=test_sqlite
+- [d6a7d415] $ git clone https://github.com/YourGitHubName/django.git django-repo $ cd django-repo/tests $ python -m pip install -e .. $ python -m pip install -r requirements/py3.txt $ ./runtests.py
+- [f116c5ee] $ python -m pip install -r tests/requirements/py3.txt
+- [47aa4cba] * **Coverage doesn't equal quality:** A line being "covered" only means it was executed during tests. It doesn't guarantee the line is well-tested or that all edge cases are handled. During review, assess test quality beyond just coverage numbers.
+- [fef1c65a] * **Database-specific code:** The CI coverage job runs tests using PostgreSQL on Ubuntu. Code paths specific to other databases (SQLite, MySQL, Oracle) will appear as "not covered" even if database-specific tests exist. This is expected and acceptable.
+- [057eb191] * **Platform-specific code:** Similarly, code that only runs on certain operating systems (Windows, macOS) will appear as not covered when run on Ubuntu.
+- [1ad84e90] * :pypi:`aiosmtpd` 1.4.5+ * :pypi:`argon2-cffi` 23.1.0+ * :pypi:`asgiref` 3.9.1+ (required) * :pypi:`bcrypt` 4.1.1+ * :pypi:`colorama` 0.4.6+ * :pypi:`docutils` 0.22+ * :pypi:`geoip2` 4.8.0+ * :pypi:`Jinja2` 2.11+ * :pypi:`numpy` 1.26.0+ * :pypi:`Pillow` 10.1.0+ * :pypi:`PyYAML` 6.0.2+ * :pypi:`pywatchman` * :pypi:`redis` 5.1.0+ * :pypi:`pymemcache`, plus a `supported Python binding <https://memcached.org/>`_ * `gettext <https://www.gnu.org/software/gettext/manual/gettext.html>`_ (:ref:`gettext_on_windows`) * :pypi:`selenium` 4.23.0+ * :pypi:`sqlparse` 0.5.0+ (required) * :pypi:`tblib` 3.0.0+
+- [01287e6d] * A ``default`` database. This database should use the backend that you want to use for primary testing.
+- [93c6faed] * A database with the alias ``other``. The ``other`` database is used to test that queries can be directed to different databases. This database should use the same backend as the ``default``, and it must have a different name.
+- [f27f3b5f] * Lines that are covered by tests (✓) * Lines that are not covered by tests (✗) * Lines that cannot be covered (e.g., comments, blank lines)
+- [568f39c7] * The :setting:`PASSWORD` option needs to provide the password for the :setting:`USER` that has been specified.
+- [8041332b] * The :setting:`USER` option needs to specify an existing user account for the database. That user needs permission to execute ``CREATE DATABASE`` so that the test database can be created.
+- [685f0802] **Important limitations:**
+- [ee10ecc0] **What the coverage report shows:**
+- [c65f3a7e] .. _code-coverage-on-pull-requests:
+- [b9d9d9ff] .. _contrib-apps:
+- [9da252fb] .. _diff-cover: https://github.com/Bachmann1234/diff_cover
+- [1241d4d1] .. _django-docker-box: https://github.com/django/django-docker-box/
+- [94c85b53] .. _running-selenium-tests:
+- [d51c3af3] .. _running-tests-docker-box:
+- [83d5fc62] .. _running-unit-tests-dependencies:
+- [20ef8cdb] .. _running-unit-tests-settings:
+- [039cc743] .. _running-unit-tests:
+- [e540035b] .. _runtests-specifying-labels:
+- [b4b6ff3d] .. _screenshot-tests:
+- [2692e1ff] .. _selenium.webdriver: https://github.com/SeleniumHQ/selenium/tree/trunk/py/selenium/webdriver
+- [dd5906c3] .. _troubleshooting-unit-tests:
+- [15962a9a] .. admonition:: Setting ``app_label``
+- [faf6f5a8efbd7831-5] .. code-block:: console
+- [faf6f5a8efbd7831-6] .. code-block:: console
+- [faf6f5a8efbd7831-7] .. code-block:: console
+- [423631a5927aaff7-7] .. code-block:: doscon
+- [fccd37de02dbdecc-2] .. code-block:: pytb
+- [8aa7203c166b13be-28] .. code-block:: shell
+- [7714e199aac2701e-19] .. console::
+- [7714e199aac2701e-20] .. console::
+- [7714e199aac2701e-21] .. console::
+- [7714e199aac2701e-22] .. console::
+- [7714e199aac2701e-23] .. console::
+- [7714e199aac2701e-24] .. console::
+- [7714e199aac2701e-25] .. console::
+- [7714e199aac2701e-26] .. console::
+- [7714e199aac2701e-27] .. console::
+- [7714e199aac2701e-28] .. console::
+- [7714e199aac2701e-29] .. console::
+- [7714e199aac2701e-30] .. console::
+- [7714e199aac2701e-31] .. console::
+- [7714e199aac2701e-32] .. console::
+- [7714e199aac2701e-33] .. console::
+- [7714e199aac2701e-34] .. console::
+- [7714e199aac2701e-35] .. console::
+- [7714e199aac2701e-36] .. console::
+- [7714e199aac2701e-37] .. console::
+- [7714e199aac2701e-38] .. console::
+- [7714e199aac2701e-39] .. console::
+- [82d93b9b] ========== Unit tests ==========
+- [833c88a7] After running coverage, combine all coverage statistics by running:
+- [8e24b69a] After that generate the html report by running:
+- [bc04d64f] By default tests are run in parallel with one process per core. When the tests are run in parallel, however, you'll only see a truncated traceback for any test failures. You can adjust this behavior with the ``--parallel`` option:
+- [e7596b47] By default, ``tox`` runs the test suite with the bundled test settings file for SQLite, ``black``, ``blacken-docs``, ``flake8``, ``isort``, ``lint-docs``, ``zizmor``, and the documentation spelling checker. In addition to the system dependencies noted elsewhere in this documentation, the command ``python3`` must be on your path and linked to the appropriate version of Python. A list of default environments can be seen as follows:
+- [bb4c706d] Code coverage -------------
+- [2af19c22] Contrib apps ============
+- [97b18f26] Contributors are encouraged to run coverage on the test suite to identify areas that need additional tests. The coverage tool installation and use is described in :ref:`testing code coverage<topics-testing-code-coverage>`.
+- [a11a4641] Django comes with a test suite of its own, in the ``tests`` directory of the code base. It's our policy to make sure all tests pass at all times.
+- [e0f4552e] Django includes a set of :ref:`JavaScript unit tests <javascript-tests>` for functions in certain contrib apps. The JavaScript tests aren't run by default using ``tox`` because they require ``Node.js`` to be installed and aren't necessary for the majority of patches. To run the JavaScript tests using ``tox``:
+- [9f6bd7b9] Django's continuous integration (CI) system automatically runs code coverage analysis on pull requests and posts a comment with a diff coverage report. This helps reviewers see which lines in the changed code are covered by tests.
+- [e9826596] Django's entire test suite takes a while to run, and running every single test could be redundant if, say, you just added a test to Django that you want to run quickly without running everything else. You can run a subset of the unit tests by appending the names of the test modules to ``runtests.py`` on the command line.
+- [3d0bbce1] Each of these dependencies is optional. If you're missing any of them, the associated tests will be skipped.
+- [724408d2] Ensure you have the latest point release of a :ref:`supported Python version <faq-python-version-support>`, since there are often bugs in earlier versions that may cause the test suite to fail or hang.
+- [4e796152] First, `fork Django on GitHub <https://github.com/django/django/fork>`__.
+- [5acbb376] For example, if you'd like to run tests only for generic relations and internationalization, type:
+- [93fa3778] For example, suppose that the failing test that works on its own is ``ModelTest.test_eq``, then using:
+- [27a52f39] For testing changes to the admin UI, the selenium tests can be run with the ``--screenshots`` option enabled. Screenshots will be saved to the ``tests/screenshots/`` directory.
+- [e69e41ce] Going beyond that, you can specify an individual test method like this:
+- [dc0dad33] Having problems? See :ref:`troubleshooting-unit-tests` for some common issues.
+- [6dfe083f] How do you find out the names of individual tests? Look in ``tests/`` — each directory name there is the name of a test.
+- [8ec07757] If the ``locales`` package is not installed, some tests will fail with a ``UnicodeEncodeError``.
+- [c86efd61b4d2ef12] If you encounter an error during the installation, your system might be missing a dependency for one or more of the Python packages. Consult the failing package's documentation or search the web with the error message that you encounter.
+- [39f9aa0c] If you have trouble installing an optional test dependency, you can skip that dependency locally. For example, if installing ``pylibmc`` fails, comment out its line in ``requirements/py3.txt`` and continue with ``./runtests.py``. Tests that require ``pylibmc`` will be skipped automatically. See :ref:`running-unit-tests-dependencies` for details on installing the optional test dependencies.
+- [f6362d0e] If you want to run only a particular class of tests, you can specify a list of paths to individual test classes. For example, to run the ``TranslationTests`` of the ``i18n`` module, type:
+- [d88de21b] If you want to run the full suite of tests, you'll need to install a number of dependencies:
+- [41b69840] If you want to test the memcached or Redis cache backends, you'll also need to define a :setting:`CACHES` setting that points at your memcached or Redis instance respectively.
+- [9c0f4ae8] If you wish to examine the SQL being run in failing tests, you can turn on :ref:`SQL logging <django-db-logger>` using the ``--debug-sql`` option. If you combine this with ``--verbosity=2``, all SQL queries will be output:
+- [7e3d5c99] If you're using a backend that isn't SQLite, you will need to provide other details for each database:
+- [37074aa5] In addition to the default environments, ``tox`` supports running unit tests for other versions of Python and other database backends. Since Django's test suite doesn't bundle a settings file for database backends other than SQLite, however, you must :ref:`create and provide your own test settings <running-unit-tests-settings>`. For example, to run the tests on Python 3.12 using PostgreSQL:
+- [ce9c2bbc] In case a test passes when run in isolation but fails within the whole suite, we have some tools to help analyze the problem.
+- [900d357e] Installing the requirements will likely require some operating system packages that your computer doesn't have installed. You can usually figure out which package to install by doing a web search for the last line or so of the error message. Try adding your operating system to the search query if needed.
+- [e73903f1] Isolating model registration ----------------------------
+- [72e9b003] Many test failures with ``UnicodeEncodeError`` ----------------------------------------------
+- [545abc52] Missing coverage should be considered a warning rather than a blocker and should be evaluated in context.
+- [170f7a4e] Next, clone your fork, install some requirements, and run the tests:
+- [79aa75f7] Note that the ``--reverse`` option doesn't impact on ``--start-at`` or ``--start-after`` options. Moreover these options cannot be used with test labels.
+- [607f9e8a] On **macOS** (High Sierra and newer versions), you might see this message logged, after which the tests hang:
+- [2831de7a] Or add ``export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES`` to your shell's startup file (e.g. ``~/.profile``).
+- [53eb2705] Quickstart ----------
+- [3f136d84] Run the ``locale`` command to confirm the change. Optionally, add those export commands to your shell's startup file (e.g. ``~/.bashrc`` for Bash) to avoid having to retype them.
+- [3f14bd4d] Running all the tests ---------------------
+- [669278d1] Running only some of the tests ------------------------------
+- [556c5b56] Running tests using ``django-docker-box`` -----------------------------------------
+- [aad20fdf] Running tests using ``tox`` ---------------------------
+- [d86397b7] Running the JavaScript tests ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [c4b462d5] Running the Selenium tests --------------------------
+- [7df7b2aa] Running the tests requires a Django settings module that defines the databases to use. To help you get started, Django provides and uses a sample settings module that uses the SQLite database. See :ref:`running-unit-tests-settings` to learn how to use a different settings module to run the tests with a different database.
+- [9ba4ef33] Running the unit tests ======================
+- [87503232] Screenshot tests ~~~~~~~~~~~~~~~~
+- [3a25640f] Second, create and activate a virtual environment. If you're not familiar with how to do that, read our :doc:`contributing tutorial </intro/contributing>`.
+- [27cadfc7] See the `selenium.webdriver`_ package for the list of available browsers.
+- [7cea4523] Seeing the SQL queries run during a test ----------------------------------------
+- [47463484] Seeing the full traceback of a test failure -------------------------------------------
+- [8a07a8e1] Some browsers (e.g. Chrome or Firefox) support headless testing, which can be faster and more stable. Add the ``--headless`` option to enable this mode.
+- [22bd1b64] Some tests require Selenium and a web browser. To run these tests, you must install the :pypi:`selenium` package and run the tests with the ``--selenium=<BROWSERS>`` option. For example, if you have Firefox and Google Chrome installed:
+- [07306c67] Specifying ``--selenium`` automatically sets ``--tags=selenium`` to run only the tests that require selenium.
+- [b68139a0] Test databases get their names by prepending ``test_`` to the value of the :setting:`NAME` settings for the databases defined in :setting:`DATABASES`. These test databases are deleted when the tests are finished.
+- [ed0d1413] Test suite hangs or shows failures on ``main`` branch -----------------------------------------------------
+- [b9b42252] Testing other Python versions and database backends ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [e21094aa] Tests for contrib apps can be found in the :source:`tests/` directory, typically under ``<app_name>_tests``. For example, tests for ``contrib.auth`` are located in :source:`tests/auth_tests`.
+- [783c56c0] Tests that only fail in combination -----------------------------------
+- [a21bec4e] The :setting:`DATABASES` setting in any test settings module needs to define two databases:
+- [b2752760] The Django tests all use the testing infrastructure that ships with Django for testing applications. See :doc:`/topics/testing/overview` for an explanation of how to write new tests.
+- [1ba245b1] The ``--bisect`` option of ``runtests.py`` will run the failing test while halving the test set it is run together with on each iteration, often making it possible to identify a small number of tests that may be related to the failure.
+- [a075c2f1] The ``--pair`` option runs the given test alongside every other test from the suite, letting you check if another test has side-effects that cause the failure. So:
+- [1512cdf8] The coverage report posted on pull requests uses `diff-cover`_ to analyze only the lines that were changed or added in the PR. It shows:
+- [17cbd482] The included settings module (``tests/test_sqlite.py``) allows you to run the test suite using SQLite. If you want to run the tests using a different database, you'll need to define your own settings file. Some tests, such as those for ``contrib.postgres``, are specific to a particular database backend and will be skipped if run with a different backend. Some tests are skipped or expected failures on a particular database backend (see ``DatabaseFeatures.django_test_skips`` and ``DatabaseFeatures.django_test_expected_failures`` on each backend).
+- [43517ba4] The remainder of this documentation shows commands for running tests without ``tox``, however, any option passed to ``runtests.py`` can also be passed to ``tox`` by prefixing the argument list with ``--``, as above.
+- [930f8ffd] This command runs ``npm install`` to ensure test requirements are up to date and then runs ``npm test``.
+- [e2bf6f25] This command sets up a Python 3.12 virtual environment, installs Django's test suite dependencies (including those for PostgreSQL), and calls ``runtests.py`` with the supplied arguments (in this case, ``--settings=my_postgres_settings``).
+- [044fa1e7] This generates multiple screenshots of the login page - one for a desktop screen, one for a mobile screen, one for right-to-left languages on desktop, one for the dark mode on desktop, and one for high contrast mode on desktop when using chrome.
+- [1c29d5ad] Tips for writing tests ======================
+- [75893f76] To avoid polluting the global :attr:`~django.apps.apps` registry and prevent unnecessary table creation, models defined in a test method should be bound to a temporary ``Apps`` instance. To do this, use the :func:`~django.test.utils.isolate_apps` decorator::
+- [37186434] To avoid this set a ``OBJC_DISABLE_INITIALIZE_FORK_SAFETY`` environment variable, for example:
+- [ec262a55] To define when screenshots should be taken during a selenium test, the test class must use the ``@django.test.selenium.screenshot_cases`` decorator with a list of supported screenshot types (``"desktop_size"``, ``"mobile_size"``, ``"small_screen_size"``, ``"rtl"``, ``"dark"``, and ``"high_contrast"``). It can then call ``self.take_screenshot("unique-screenshot-name")`` at the desired point to generate the screenshots. For example::
+- [2f25acd4] To run coverage on the Django test suite using the standard test settings:
+- [b7c4cce3] To run some of the autoreload tests, you'll need to install the `Watchman <https://facebook.github.io/watchman/>`_ service.
+- [984c9e9e] To run the GeoDjango tests, you will need to :doc:`set up a spatial database and install the Geospatial libraries</ref/contrib/gis/install/index>`.
+- [2400fc96] To run the tests with different settings, ensure that the module is on your :envvar:`PYTHONPATH` and pass the module with ``--settings``.
+- [9bd7b303e940ce88] Troubleshooting ===============
+- [45441029] Using another ``settings`` module ---------------------------------
+- [e2d58a9b] We appreciate any and all contributions to the test suite!
+- [8be560a7] When reviewing coverage reports on pull requests, keep these limitations in mind:
+- [2e421668] When running coverage for the Django tests, the included ``.coveragerc`` settings file defines ``coverage_html`` as the output directory for the report and also excludes several directories not relevant to the results (test code or external code included in Django).
+- [581cf3fc] Windows users should use:
+- [df4c96eb] With both ``--bisect`` and ``--pair``, if you already suspect which cases might be responsible for the failure, you may limit tests to be cross-analyzed by :ref:`specifying further test labels <runtests-specifying-labels>` after the first one:
+- [23326231] You can also install the database adapter(s) of your choice using ``oracle.txt``, ``mysql.txt``, or ``postgres.txt``.
+- [83835780] You can also run tests starting after a specified top-level module with ``--start-after`` option. For example:
+- [809ffa53] You can also try running any set of tests in a random or reverse order using the ``--shuffle`` and ``--reverse`` options. This can help verify that executing tests in a different order does not cause any trouble:
+- [a015dc50] You can also use the :envvar:`DJANGO_TEST_PROCESSES` environment variable for this purpose.
+- [293d6a16] You can find these dependencies in `pip requirements files <https://pip.pypa.io/en/latest/user_guide/#requirements-files>`_ inside the ``tests/requirements`` directory of the Django source tree and install them like so:
+- [25250ec8] You can resolve this for macOS systems by configuring your shell's locale:
+- [7909166a] You can resolve this on Debian-based systems, for example, by running:
+- [edbbba12] You can run tests starting at a specified top-level module with ``--start-at`` option. For example:
+- [7fe56fb9] You will also need to ensure that your database uses UTF-8 as the default character set. If your database server doesn't use UTF-8 as a default charset, you will need to include a value for :setting:`CHARSET <TEST_CHARSET>` in the test settings dictionary for the applicable database.
+- [779d3aeb] `Tox <https://tox.wiki/>`_ is a tool for running tests in different virtual environments. Django includes a basic ``tox.ini`` that automates some checks that our build server performs on pull requests. To run the unit tests and other checks (such as :ref:`import sorting <coding-style-imports>`, the :ref:`documentation spelling checker <documentation-spelling-check>`, and :ref:`code formatting <coding-style-python>`), install and run the ``tox`` command from any place in the Django source tree:
+- [1cc5f916] ``Tox`` also respects the :envvar:`DJANGO_SETTINGS_MODULE` environment variable, if set. For example, the following is equivalent to the command above:
+- [cd01bb90] `django-docker-box`_ allows you to run the Django's test suite across all supported databases and python versions. See the `django-docker-box`_ project page for installation and usage instructions.
+- [fc7fd8f2] will pair ``test_eq`` with every test label.
+- [893fd7ac] will try to determine a test that interferes with the given one. First, the test is run with the first half of the test suite. If a failure occurs, the first half of the test suite is split in two groups and each group is then run with the specified test. If there is no failure with the first half of the test suite, the second half of the test suite is run with the specified test and split appropriately as described earlier. The process repeats until the set of failing tests is minimized.

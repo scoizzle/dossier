@@ -1,9 +1,9 @@
 # django/db/models/constraints::CheckConstraint.constraint_sql
 
-- Subject: django/db/models/constraints::CheckConstraint.constraint_sql (id `6c04e016-095f-4eee-8812-90a7c8e6e67b`)
+- Subject: django/db/models/constraints::CheckConstraint.constraint_sql (id `6f52a0e0-0bc6-4226-88af-8e79ac093353`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

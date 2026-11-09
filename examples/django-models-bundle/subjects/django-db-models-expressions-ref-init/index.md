@@ -1,9 +1,9 @@
 # django/db/models/expressions::Ref.__init__
 
-- Subject: django/db/models/expressions::Ref.__init__ (id `a87ef703-5bb3-498a-b1c3-900d3a19d2bf`)
+- Subject: django/db/models/expressions::Ref.__init__ (id `1bcdfd50-3246-43de-9bec-e3091b481509`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

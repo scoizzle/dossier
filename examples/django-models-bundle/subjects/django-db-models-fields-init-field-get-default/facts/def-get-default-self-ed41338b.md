@@ -1,6 +1,6 @@
 # Fact ed41338b
 
-Store id: 061e6d19-1b2b-412d-948b-88b9d187b353
+Store id: 70cc9e27-a9fb-42c5-8ae6-59ea2b6c08f6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_default(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3501060+00:00`
+- posted_at: `2026-11-09T23:31:56.5258150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1065,
     "symbol": "Field._get_default"
   },
-  "id": "061e6d19-1b2b-412d-948b-88b9d187b353",
+  "id": "70cc9e27-a9fb-42c5-8ae6-59ea2b6c08f6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3501060+00:00"
+    "posted_at": "2026-11-09T23:31:56.5258150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "13e8d6e0-5535-448c-82bb-7e2b23516222",
+  "subject_id": "3fb1e7e7-d417-4562-8604-f602454b1d83",
   "subject_name": "django/db/models/fields/__init__::Field._get_default",
   "tags": [
     "entity:method",

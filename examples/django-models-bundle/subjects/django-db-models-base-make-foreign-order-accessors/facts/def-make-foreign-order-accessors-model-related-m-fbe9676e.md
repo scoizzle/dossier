@@ -1,6 +1,6 @@
 # Fact fbe9676e
 
-Store id: 9164656a-1f90-4975-a7e7-ee4217a11138
+Store id: 1006d066-83c7-4a0a-9e22-eab9c4931f10
 
 ## Text
 
@@ -20,7 +20,7 @@ def make_foreign_order_accessors(model, related_model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3690320+00:00`
+- posted_at: `2026-11-09T23:31:53.7755820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2548,
     "symbol": "make_foreign_order_accessors"
   },
-  "id": "9164656a-1f90-4975-a7e7-ee4217a11138",
+  "id": "1006d066-83c7-4a0a-9e22-eab9c4931f10",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3690320+00:00"
+    "posted_at": "2026-11-09T23:31:53.7755820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e77cc1e0-ee8d-4252-beab-4b410e966096",
+  "subject_id": "76d8360b-0010-4bcd-9c64-acd6eb68cfe7",
   "subject_name": "django/db/models/base::make_foreign_order_accessors",
   "tags": [
     "entity:function"

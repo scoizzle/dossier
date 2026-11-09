@@ -1,6 +1,6 @@
 # Fact 7d63352b
 
-Store id: 80a5c748-06d5-42eb-9efb-227aef823682
+Store id: 66ba7eae-d3fb-4df5-b7a7-62a94d3bb8b1
 
 ## Text
 
@@ -20,7 +20,7 @@ class BaseIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.1741340+00:00`
+- posted_at: `2026-11-09T23:32:04.2187180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 85,
     "symbol": "BaseIterable"
   },
-  "id": "80a5c748-06d5-42eb-9efb-227aef823682",
+  "id": "66ba7eae-d3fb-4df5-b7a7-62a94d3bb8b1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.1741340+00:00"
+    "posted_at": "2026-11-09T23:32:04.2187180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3ae0307b-8a22-4905-9f76-2e3e7f4393f2",
+  "subject_id": "01baee77-525d-4eb7-a5d5-e9cfb667078a",
   "subject_name": "django/db/models/query::BaseIterable",
   "tags": [
     "entity:class"

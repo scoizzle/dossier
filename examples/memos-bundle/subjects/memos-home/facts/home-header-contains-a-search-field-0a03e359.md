@@ -1,6 +1,6 @@
 # Fact 0a03e359
 
-Store id: 9c42c9a5-86b1-40bf-84aa-e2180bb092de
+Store id: 7acf1bc3-9e3d-4bb4-9d3a-f719f514f716
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header contains a search field that filters memos as you type.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:20:04.9288170+00:00`
+- posted_at: `2026-11-09T23:31:46.5621970+00:00`
 
 ## Refs
 
@@ -46,13 +46,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9c42c9a5-86b1-40bf-84aa-e2180bb092de",
+  "id": "7acf1bc3-9e3d-4bb4-9d3a-f719f514f716",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
   },
   "refs": [
     {
@@ -64,7 +64,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
   "subject_name": "Memos/Home",
   "tags": [
     "section:header"

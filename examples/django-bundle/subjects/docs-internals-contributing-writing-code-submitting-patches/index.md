@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-code/submitting-patches
 
-- Subject: docs/internals/contributing/writing-code/submitting-patches (id `32ea870c-ad9b-442c-aba9-19ec9b5fc0d9`)
+- Subject: docs/internals/contributing/writing-code/submitting-patches (id `70736d53-d19c-458c-b370-7c4e9a1928fa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 21 of 138
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 6855 tokens
+- Facts shown: 137 of 138
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # RemovedInDjangoXXXXWarning. def old_private_helper(): # Helper function that is only used in foo(). pass [def15f05]
 - @ignore_warnings(category=RemovedInDjangoXXXXWarning) class MyDeprecatedTests(unittest.TestCase): ... [e3b1a047]
@@ -32,6 +32,121 @@
 - * Assist reviewers. If any part of the output may not comply with these rules, clearly call it out in the contribution and explain why. [cd99ac6b]
 - * Double-check the proposal against the :ref:`patch-review-checklist`. [eef62df6]
 
-## Beyond the budget
+## All facts
 
-116 more facts did not fit in the budget: [b88ff21a] [9a488059] [21df7ea1] [fbe59fbd] [cc3b27f2] [abffe55b] [6fe45f55] [4dcbf5c6] [4386aeda] [ce416daa] [f7c608a2] [aaae62e3] [cca41565] [1855a1ff] [f0fce612] [a201ba9b] [4d944bff] [4b94ca5a] [816146ef] [98ec0f5a] [dec493a0] [428077d2] [17bba24c] [eec4730a] [033e404c] [3ff236d1] [065058b0] [bc3a2d48] [f03d6e23] [7a0fb1c8] [c2181ede] [3a88be19] [8fbb925a] [76311ee7] [24d2da78] [ef7f905d] [bd34661b] [eb14d718] [7dd49914] [3be970ee] [9f8ee0ad] [7ade9dee] [8fc6dcd6] [6153b322] [a0c99917] [4e4e9cd6] [7a2fb46b] [3474330d] [d9f1f4f8] [9784552a] [6e01336d] [dbe7ea28] [523520cb] [3dd841d0] [4f8c5913] [595de508] [a4ab1b1c] [c20982a9] [e34df76c] [bcff98ea] [78ea00e9] [f17b4327] [85af067a] [ffb9f498] [4167a351] [ea349f70] [fdeb297d] [aab98740] [7e3870dc] [3cfb483d] [7d1864bd] [05d772da] [a428ab3c] [22850f14] [94ed148e] [6f6c6aaa] [7539486b] [f624f806] [bc5931f0] [6a42df69] [f2bed6c2a49a4853] [e48ba691] [e630ad3f] [1ddd4f31] [e2fbb6e9] [f536438c] [f4e46a8e] [ce92773e] [94068e28] [d719db8c] [7f4d8775] [e9c9ed67] [1bae1024] [3bf227c3] [e844c678] [212e66aa] [a87426af] [83eccb73] [9bcb162e] [96767ffd] [c17c7f5b] [07d2950b] [0fc0eb0c] [3375da76] [7c8b7fd7] [de9ef30a] [03b78cbc] [1dee909a] [2be127ed] [c96ee206] [891df95c] [a8f8a34d] [d6460d04] [9951d5fa] [bf776856] [72835029]
+- [b88ff21a] * Attach patches to a ticket in the `ticket tracker`_, using the "attach file" button. Please *don't* put the patch in the ticket description or comment unless it's a single line patch.
+- [9a488059] * Check the "Has patch" box on the ticket and make sure the "Needs documentation", "Needs tests", and "Patch needs improvement" boxes aren't checked. This makes the ticket appear in the "Patches needing review" queue on the `Development dashboard`_.
+- [21df7ea1] * Claim the ticket by clicking the "assign to" radio button in the "Action" section. Your username will be filled in the text box by default.
+- [fbe59fbd] * Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.
+- [cc3b27f2] * Does the :doc:`coding style </internals/contributing/writing-code/coding-style>` conform to our guidelines? Are there any ``black``, ``blacken-docs``, ``flake8``, ``isort``, or ``zizmor`` errors? You can install the :ref:`pre-commit <coding-style-pre-commit>` hooks to automatically catch these errors. * If the change is backwards incompatible in any way, is there a note in the release notes (``docs/releases/A.B.txt``)? * Is Django's test suite passing? * If there is a :ref:`code coverage report <code-coverage-on-pull-requests>` comment on the pull request, have you reviewed the missing coverage in context (considering database/platform-specific limitations)? * If the change affects the Django admin or rendered HTML output, has :ref:`accessibility testing <accessibility-testing-baseline>` been done?
+- [abffe55b] * Does the documentation build without any errors (``make html``, or ``make.bat html`` on Windows, from the ``docs`` directory)? * Does the documentation follow the writing style guidelines in :doc:`/internals/contributing/writing-documentation`? * Are there any :ref:`spelling errors <documentation-spelling-check>`?
+- [6fe45f55] * Ensure technical accuracy and avoid fabrication. Do not invent APIs, features, functions, or citations that do not exist. Placeholder or fictitious content will result in rejection.
+- [4dcbf5c6] * Finally, click the "Submit changes" button at the bottom to save.
+- [4386aeda] * Follow the GitHub pull request template. Ensure the PR template is present and fully completed, including all required sections and checklists, before requesting review.
+- [ce416daa] * If a feature has been improved or modified in a backwards-incompatible way, the old feature or behavior will be deprecated.
+- [f7c608a2] * If a ticket for this issue already exists and has been accepted, make sure nobody else has claimed it. To do this, look at the "Owned by" section of the ticket. If it's assigned to "nobody," then it's available to be claimed. Otherwise, somebody else may be working on this ticket. Either find another bug/feature to work on, or contact the developer working on the ticket to offer your help. If a ticket has been assigned for weeks or months without any activity, it's probably safe to reassign it to yourself. If a ticket hasn't been approved yet, join the conversation.
+- [aaae62e3] * If a ticket for this issue doesn't exist yet, create one in our `ticket tracker`_. Remember that proposals for new features should follow the :ref:`process for suggesting new features <requesting-features>`.
+- [cca41565] * If the code adds a new feature, or modifies the behavior of an existing feature, the change should also contain documentation.
+- [1855a1ff] * Is the pull request a single squashed commit with a message that follows our :ref:`commit message format <committing-guidelines>`? * Are you the patch author and a new contributor? Please add yourself to the :source:`AUTHORS` file. At your option, submit a `Contributor License Agreement`_. * Does this have an accepted ticket on Trac? All contributions require a ticket unless the :ref:`change is considered trivial <trivial-change>`.
+- [f0fce612] * Is there a proper regression test (the test should fail before the fix is applied)? * If it's a bug that :ref:`qualifies for a backport <supported-versions-policy>` to the stable version of Django, is there a release note in ``docs/releases/A.B.C.txt``? Bug fixes that will be applied only to the main branch don't need a release note.
+- [a201ba9b] * Log into your account, if you haven't already, by clicking "GitHub Login" or "DjangoProject Login" in the upper left of the ticket page. Once logged in, you can then click the "Modify Ticket" button near the bottom of the page.
+- [4d944bff] * Make sure your code fulfills the requirements in our :ref:`contribution checklist <patch-review-checklist>`.
+- [4b94ca5a] * Name the patch file with a ``.diff`` extension; this will let the ticket tracker apply correct syntax highlighting, which is quite helpful.
+- [816146ef] * Respect all contribution requirements. Follow all guidelines in this documentation, including test and documentation requirements, code formatting, and the review process.
+- [98ec0f5a] * Sometimes Django will include a backport of a Python library that's not included in a version of Python that Django currently supports. When Django no longer needs to support the older version of Python that doesn't include the library, the library will be deprecated in Django.
+- [dec493a0] * Specify the tool and usage. Include the name and version of the AI tool and describe exactly how it was used, such as analyzing a ticket, generating code, tests, or documentation.
+- [428077d2] * Submit patches in the format returned by the ``git diff`` command.
+- [17bba24c] * The code required to fix a problem or add a feature is an essential part of a solution, but it is not the only part. A good fix should also include a :doc:`regression test </internals/contributing/writing-code/unit-tests>` to validate the behavior that has been fixed and to prevent the problem from arising again.
+- [eec4730a] * `DEP 181: ORM Expressions <https://github.com/django/deps/blob/main/final/0181-orm-expressions.rst>`_ * `DEP 182: Multiple Template Engines <https://github.com/django/deps/blob/main/final/0182-multiple-template-engines.rst>`_ * `DEP 201: Simplified routing syntax <https://github.com/django/deps/blob/main/final/0201-simplified-routing-syntax.rst>`_
+- [033e404c] * `Log in using your GitHub account`_ or `create an account`_ in our ticket system. If you have an account but have forgotten your password, you can reset it using the `password reset page`_.
+- [3ff236d1] .. _Contributor License Agreement: https://www.djangoproject.com/foundation/cla/
+- [065058b0] .. _Django Forum: https://forum.djangoproject.com/ .. _Django Enhancement Proposals: https://github.com/django/deps
+- [bc3a2d48] .. _Log in using your GitHub account: https://code.djangoproject.com/github/login .. _Create an account: https://www.djangoproject.com/accounts/register/ .. _password reset page: https://www.djangoproject.com/accounts/password/reset/ .. _Contributor License Agreement: https://www.djangoproject.com/foundation/cla/
+- [f03d6e23] .. _claiming-tickets:
+- [7a0fb1c8] .. _deprecating-a-feature:
+- [c2181ede] .. _django-asv-benchmarks:
+- [3a88be19] .. _django-asv: https://github.com/django/django-asv/
+- [8fbb925a] .. _patch-review-checklist:
+- [76311ee7] .. _patch-style:
+- [24d2da78] .. _ticket tracker: https://code.djangoproject.com/ .. _Development dashboard: https://dashboard.djangoproject.com/
+- [ef7f905d] .. _trivial-change:
+- [bd34661b] .. note:: If your change is not :ref:`trivial <trivial-change>`, you have the option to sign and submit a `Contributor License Agreement`_ clarifying the status of your contribution. This ensures that the Django Software Foundation has clear license to your contribution.
+- [eb14d718] ======================== Submitting contributions ========================
+- [7dd49914] A wider community discussion is required when a patch introduces new Django functionality and makes some sort of design decision. This is especially important if the approach involves a :ref:`deprecation <deprecating-a-feature>` or introduces breaking changes.
+- [3be970ee] AI-Assisted Contributions -------------------------
+- [9f8ee0ad] All code changes ----------------
+- [7ade9dee] All tickets -----------
+- [8fc6dcd6] As always, more communication is better than less communication!
+- [6153b322] As the :ref:`deprecation policy<internal-release-deprecation-policy>` describes, the first release of Django that deprecates a feature (``A.B``) should raise a ``RemovedInDjangoXXXXWarning`` (where XXXX is the Django version where the feature will be removed) when the deprecated feature is invoked. Assuming we have good test coverage, these warnings are converted to errors when :ref:`running the test suite <running-unit-tests>` with warnings enabled: ``python -Wa runtests.py``. Thus, when adding a ``RemovedInDjangoXXXXWarning`` you need to eliminate or silence any warnings generated when running the tests.
+- [a0c99917] Automated AI Reviews ^^^^^^^^^^^^^^^^^^^^
+- [4e4e9cd6] Before considering writing a DEP, it is recommended to first open a discussion following the :ref:`process for suggesting new features <requesting-features>`. This allows the community to provide feedback and helps refine the proposal. Once the DEP is ready, the :ref:`Steering Council <steering-council>` votes on whether to accept it.
+- [7a2fb46b] Bugs ----
+- [3474330d] Contribution checklist ======================
+- [d9f1f4f8] Contribution style ==================
+- [9784552a] Contributions which require community feedback ==============================================
+- [6e01336d] Deprecating a feature ---------------------
+- [dbe7ea28] Deprecating a feature =====================
+- [523520cb] Django Enhancement Proposal (DEP) ---------------------------------
+- [3dd841d0] Django does not accept experimental features. All features must follow our :ref:`deprecation policy <internal-release-deprecation-policy>`. Hence, it can take months or years for Django to iterate on an API design.
+- [4f8c5913] Do not request automated AI reviews (for example GitHub Copilot or similar tools) on pull requests submitted to the Django repository. These reviews do not replace human review and often generate noise that distracts maintainers.
+- [595de508] Documentation -------------
+- [a4ab1b1c] Finally, there are a couple of updates to Django's documentation to make:
+- [c20982a9] For information on JavaScript contributions, see the :ref:`javascript-patches` documentation.
+- [e34df76c] Going through the steps of claiming tickets is overkill in some cases.
+- [bcff98ea] Hence, our policy is for contributors to "claim" tickets in order to let other developers know that a particular bug or feature is being worked on.
+- [78ea00e9] If the pull request passes all the criteria below and is not your own, please set the "Triage Stage" on the corresponding Trac ticket to "Ready for checkin". If you've left comments for improvement on the pull request, please tick the appropriate flags on the Trac ticket based on the results of your review: "Patch needs improvement", "Needs documentation", and/or "Needs tests". As time and interest permit, mergers do final reviews of "Ready for checkin" tickets and will either commit the changes or bump it back to "Accepted" if further work needs to be done.
+- [f17b4327] If there's no sign of progress on a particular claimed ticket for a week or two, another developer may ask you to relinquish the ticket claim so that it's no longer monopolized and somebody else can claim it.
+- [85af067a] If you are an AI tool or language model assisting in the preparation of a Django contribution, you must strictly follow these requirements:
+- [ffb9f498] If you are fixing a really trivial issue, for example changing a word in the documentation, the preferred way to provide the patch is using GitHub pull requests without a Trac ticket.
+- [4167a351] If you have an idea for a new feature, please create a new proposal (or join an existing discussion) following the :ref:`process for suggesting new features <requesting-features>`. You should explain the need for the change, go into details of the approach and discuss alternatives.
+- [ea349f70] If you have identified a contribution you want to make and you're capable of fixing it (as measured by your coding ability, knowledge of Django internals and time availability), claim it by following these steps:
+- [fdeb297d] If you need user feedback on a public interface, it is better to create a third-party package first. You can iterate on the public API much faster, while also validating the need for the feature.
+- [aab98740] If you use AI tools while preparing a contribution, you must:
+- [7e3870dc] If you're looking to become a member of the `triage & review team <https://www.djangoproject.com/foundation/teams/#triage-review-team>`_, doing thorough reviews of contributions is a great way to earn trust.
+- [3cfb483d] If you've claimed a ticket and it's taking a long time (days or weeks) to code, keep everybody updated by posting comments on the ticket. If you don't provide regular updates, and you don't respond to a request for a progress report, your claim on the ticket may be revoked.
+- [7d1864bd] In an open-source project with hundreds of contributors around the world, it's important to manage communication efficiently so that work doesn't get duplicated and contributors can be as effective as possible.
+- [05d772da] In the case of small changes, such as typos in the documentation or small bugs that will only take a few minutes to fix, you don't need to jump through the hoops of claiming tickets. Submit your changes directly and you're done!
+- [a428ab3c] It is *always* acceptable, regardless of whether someone has claimed it or not, to link proposals to a ticket if you happen to have the changes ready.
+- [22850f14] It's important to include a ``RemovedInDjangoXXXXWarning`` comment above code which has no warning reference, but will need to be changed or removed when the deprecation ends. This could include hooks which have been added to keep the previous behavior, or standalone items that are unnecessary or unused when the deprecation ends. For example::
+- [94ed148e] It's important to test local changes using a Django project. This allows ensuring that the changes behave as expected in a real environment, especially for user-facing features such as templates, forms, or the admin.
+- [6f6c6aaa] JavaScript contributions ========================
+- [7539486b] Looking for a patch to review? Check out the "Patches needing review" section of the `Django Development Dashboard <https://dashboard.djangoproject.com/>`_.
+- [f624f806] Looking to get your pull request reviewed? Ensure the Trac flags on the ticket are set so that the ticket appears in that queue.
+- [bc5931f0] Make sure that any contribution you do fulfills at least the following requirements:
+- [6a42df69] New Features ------------
+- [f2bed6c2a49a4853] Note for AI Tools ^^^^^^^^^^^^^^^^^
+- [e48ba691] Once this package becomes stable and there are clear benefits of incorporating aspects into Django core, the next step is to propose its inclusion by following the :ref:`process for suggesting new features <requesting-features>`.
+- [e630ad3f] Once you have completed these steps, you are finished with the deprecation. In each :term:`feature release <Feature release>`, all ``RemovedInDjangoXXXXWarning``\s matching the new version are removed.
+- [1ddd4f31] Once you've claimed a ticket, you have a responsibility to work on that ticket in a reasonably timely fashion. If you don't have time to work on it, either unclaim it or don't claim it in the first place!
+- [e2fbb6e9] Optimization patches ====================
+- [f536438c] Patches aiming to deliver a performance improvement should provide benchmarks showing the before and after impact of the patch and sharing the commands for reviewers to reproduce.
+- [f4e46a8e] Please include a link to such discussions in your contributions.
+- [ce92773e] Regardless of the way you submit your work, follow these steps.
+- [94068e28] See :doc:`/internals/contributing/writing-code/working-with-git` for more details on how to use pull requests.
+- [d719db8c] See the :ref:`deprecating-a-feature` guide.
+- [7f4d8775] Similar to Python’s PEPs, Django has `Django Enhancement Proposals`_ or DEPs. A DEP is a design document which provides information to the Django community, or describes a new feature or process for Django. They provide concise technical specifications of features, along with rationales. DEPs are also the primary mechanism for proposing and collecting community input on major new features.
+- [e9c9ed67] Some examples of DEPs that have been approved and fully implemented:
+- [1bae1024] Testing with a Django project =============================
+- [3bf227c3] The Django Forum ----------------
+- [e844c678] The ``django.utils.deprecation`` module provides some helpful deprecation utilities, such as a ``@deprecate_posargs`` decorator to assist with converting positional-or-keyword arguments to keyword-only. See the inline documentation in the module source.
+- [212e66aa] The first step is to remove any use of the deprecated behavior by Django itself. Next you can silence warnings in tests that actually test the deprecated behavior by using the ``ignore_warnings`` decorator, either at the test or class level:
+- [a87426af] The following are different approaches for gaining feedback from the community.
+- [83eccb73] The new feature ideas tracker -----------------------------
+- [9bcb162e] There are a couple of reasons that code in Django might be deprecated:
+- [96767ffd] Third party package -------------------
+- [c17c7f5b] Ticket claimers' responsibility -------------------------------
+- [07d2950b] To do this:
+- [0fc0eb0c] Typo fixes and trivial documentation changes ============================================
+- [3375da76] Unverified AI-generated contributions create unnecessary maintenance burden and slow down meaningful progress. Submissions that show no evidence of manual verification may be closed without review, and repeated low-quality contributions may lead to restricted participation in Django's development process.
+- [7c8b7fd7] Use this checklist to review a pull request. If this contribution would not be :ref:`considered trivial <trivial-change>`, first ensure it has an accepted ticket before proceeding with the review.
+- [de9ef30a] We align with similar policies adopted by other major open-source projects, which have identified unverified AI-generated contributions as disruptive, counterproductive, and a drain on limited maintainer time.
+- [03b78cbc] We're always grateful for contributions to Django's code. Indeed, bug reports with associated contributions will get fixed *far* more quickly than those without a solution.
+- [1dee909a] When you think your work is ready to be reviewed, send :doc:`a GitHub pull request </internals/contributing/writing-code/working-with-git>`. If you can't send a pull request for some reason, you can also use patches in Trac. When using this style, follow these guidelines.
+- [2be127ed] Which tickets should be claimed? --------------------------------
+- [c96ee206] With the widespread availability of large language models (LLMs), the Django Project has seen an increase in contributions generated partially or entirely using such tools. Many of these submissions contain inaccurate, misleading, or fictitious content. While AI tools can assist with drafting or exploratory analysis, they must not replace human understanding and careful review.
+- [891df95c] With this setup, any changes made to the Django checkout will take effect immediately in the test project, allowing manual testing of contributions against a new or existing app.
+- [a8f8a34d] You are free to use such tools in your own fork before submitting a pull request to the Django repository.
+- [d6460d04] You can propose a change (that is not a new feature idea) on the `Django Forum`_. You should explain the need for the change, go into details of the approach and discuss alternatives.
+- [9951d5fa] You should also add a test for the deprecation warning::
+- [bf776856] ``django-asv`` benchmarks -------------------------
+- [72835029] `django-asv`_ monitors the performance of Django code over time. These benchmarks can be run on a pull request by labeling the pull request with ``benchmark``. Adding to these benchmarks is highly encouraged.

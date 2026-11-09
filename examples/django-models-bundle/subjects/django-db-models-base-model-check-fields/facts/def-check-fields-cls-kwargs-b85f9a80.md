@@ -1,6 +1,6 @@
 # Fact b85f9a80
 
-Store id: 19c5a9ee-6aeb-4ae5-9e7e-76ba679b4618
+Store id: 36828afa-a509-4386-812e-ff3af8e2bfd1
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_fields(cls, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3581020+00:00`
+- posted_at: `2026-11-09T23:31:53.7633360+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1943,
     "symbol": "Model._check_fields"
   },
-  "id": "19c5a9ee-6aeb-4ae5-9e7e-76ba679b4618",
+  "id": "36828afa-a509-4386-812e-ff3af8e2bfd1",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3581020+00:00"
+    "posted_at": "2026-11-09T23:31:53.7633360+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "33f87f42-cba1-4419-b971-903ae60631d2",
+  "subject_id": "8f654f89-c8b2-4c35-8a71-2a0d43bb7879",
   "subject_name": "django/db/models/base::Model._check_fields",
   "tags": [
     "entity:class_method",

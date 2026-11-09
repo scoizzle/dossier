@@ -1,14 +1,14 @@
 # django/views/generic/dates
 
-- Subject: django/views/generic/dates (id `b1a4c6b7-3456-409d-878c-4be2ac1cd318`)
+- Subject: django/views/generic/dates (id `195e809f-1248-4167-8e3c-9ccd5bfea4d4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 14 of 144
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5641 tokens
+- Facts shown: 116 of 144
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Convert datetimes to dates in the current time zone. if generic_view.uses_datetime_field: if settings.USE_TZ: result = timezone.localtime(result) result = result.date() [db523cea]
 - # Filter down a queryset from self.queryset using the date from the # URL. This'll get passed as the queryset to DetailView.get_object, # which'll handle the 404 lookup_kwargs = self._make_single_date_lookup(date) qs = qs.filter(**lookup_kwargs) [c496639d]
@@ -25,6 +25,107 @@
 - The interval is defined by start date <= item date < next start date. """ if date.month == 12: try: return date.replace(year=date.year + 1, month=1, day=1) except ValueError: raise Http404(_("Date out of range")) else: return date.replace(month=date.month + 1, day=1) [ce7d536d]
 - if not date_list: qs = qs.none() [0f4f1083]
 
-## Beyond the budget
+## All facts
 
-102 more facts did not fit in the budget: [4679b277] [8eef0903] [c425e7c0] [8fcfa87f] [20d16e32] [0794bea3] [60f96f93] [32211246] [021f6c54] [51940ac6] [d0bb9967] [202d5daf] [33f4cbb9] [a6953ed3] [6f97693605250e35] [342aebda] [ccf0b360] [af214cd1] [7804895f] [ef676304] [e71a211c] [c62ca5b3] [e7730f95] [4c104852] [f7068da7] [a3136c10] [7cc8e174] [317617b2] [24167601] [09852496] [9a5f7294] [72fcfeb6] [d4655f33703909eb] [e00924a9] [5c5338b9] [c17e3779] [fee8756d] [27d95cc8] [9ae0b51b] [e016c07b] [562598f3] [04def20c] [20ac228a] [57a72176] [d1149c9e] [38835de1] [4c9ec6ff] [9481c4ec] [ec1d1271] [a38ad67d] [2efe5369] [0d45dcfc] [7f78584d] [fa197f12] [20d4b9cc] [f680c60a] [0aa581fa] [5e63a2ce] [621055d7] [7c078592] [ea03e9e3] [6fffa4d7] [f8db0d2f] [34d3cff2] [b138cb61] [6664c4d6] [0adccb32] [3a88bfe3] [b1179a27] [bd7e5648] [0b740a2ee9b891ef] [5abacf64] [9f3fae10] [aaca4d84] [c9c63d57] [0a8b63f2] [32287265] [06336cec] [1be0f230] [36000496] [849f0f23] [ac320c82] [1a344c5b] [d84a2c05] [d6334be4] [4a1a3588] [b073a293] [372ea16d] [2ba6254b] [6335d3cc] [48aad985] [0b63b299] [a50e69cc] [a3687444] [587cb09d] [c2e4a478] [f3d113a6] [d6e30fc9] [5dbb597c] [55f89470] [070a6739] [d152a5ac4c0db78d-6]
+- [4679b277] The interval is defined by start date <= item date < next start date. """ return date + datetime.timedelta(days=1)
+- [8eef0903] The interval is defined by start date <= item date < next start date. """ try: return date + datetime.timedelta(days=7 - self._get_weekday(date)) except OverflowError: raise Http404(_("Date out of range"))
+- [c425e7c0] When time zone support is enabled, `date` is assumed to be in the current time zone, so that displayed items are consistent with the URL. """ if self.uses_datetime_field: value = datetime.datetime.combine(value, datetime.time.min) if settings.USE_TZ: value = timezone.make_aware(value) return value
+- [8fcfa87f] date = _date_from_string( year, self.get_year_format(), month, self.get_month_format(), day, self.get_day_format(), )
+- [20d16e32] date_field = self.get_date_field() date = _date_from_string( year, self.get_year_format(), month, self.get_month_format() )
+- [0794bea3] date_field = self.get_date_field() week_format = self.get_week_format() week_choices = {"%W": "1", "%U": "0", "%V": "1"} try: week_start = week_choices[week_format] except KeyError: raise ValueError( "Unknown week format %r. Choices are: %s" % ( week_format, ", ".join(sorted(week_choices)), ) ) year_format = self.get_year_format() if week_format == "%V" and year_format != "%G": raise ValueError( "ISO week directive '%s' is incompatible with the year " "directive '%s'. Use the ISO year '%%G' instead." % ( week_format, year_format, ) ) date = _date_from_string(year, year_format, week_start, "%w", week, week_format) since = self._make_date_lookup_arg(date) until = self._make_date_lookup_arg(self._get_next_week(date)) lookup_kwargs = { "%s__gte" % date_field: since, "%s__lt" % date_field: until, }
+- [60f96f93] if allow_future or result <= timezone_today(): return result else: return None
+- [32211246] if not allow_empty: # When pagination is enabled, it's better to do a cheap query # than to load the unpaginated queryset in memory. is_empty = not qs if paginate_by is None else not qs.exists() if is_empty: raise Http404( _("No %(verbose_name_plural)s available") % { "verbose_name_plural": qs.model._meta.verbose_name_plural, } )
+- [021f6c54] if not allow_future: now = timezone.now() if self.uses_datetime_field else timezone_today() qs = qs.filter(**{"%s__lte" % date_field: now})
+- [51940ac6] if not self.get_allow_future() and date > datetime.date.today(): raise Http404( _( "Future %(verbose_name_plural)s not available because " "%(class_name)s.allow_future is False." ) % { "verbose_name_plural": qs.model._meta.verbose_name_plural, "class_name": self.__class__.__name__, } )
+- [d0bb9967] if not self.get_make_object_list(): # We need this to be a queryset since parent classes introspect it # to find information about the model. qs = qs.none()
+- [202d5daf] if self.uses_datetime_field: date_list = queryset.datetimes(date_field, date_type, ordering) else: date_list = queryset.dates(date_field, date_type, ordering) if date_list is not None and not date_list and not allow_empty: raise Http404( _("No %(verbose_name_plural)s available") % { "verbose_name_plural": queryset.model._meta.verbose_name_plural, } )
+- [33f4cbb9] qs = generic_view.get_queryset().filter(**lookup).order_by(ordering)
+- [a6953ed3] qs = self.get_dated_queryset(**lookup_kwargs)
+- [6f97693605250e35] qs = self.get_dated_queryset(**lookup_kwargs) date_list = self.get_date_list(qs)
+- [342aebda] return ( None, qs, { "day": date, "previous_day": self.get_previous_day(date), "next_day": self.get_next_day(date), "previous_month": self.get_previous_month(date), "next_month": self.get_next_month(date), }, )
+- [ccf0b360] return ( None, qs, { "week": date, "next_week": self.get_next_week(date), "previous_week": self.get_previous_week(date), }, )
+- [af214cd1] return ( date_list, qs, { "month": date, "next_month": self.get_next_month(date), "previous_month": self.get_previous_month(date), }, )
+- [7804895f] return ( date_list, qs, { "year": date, "next_year": self.get_next_year(date), "previous_year": self.get_previous_year(date), }, )
+- [ef676304] return (date_list, qs, {})
+- [e71a211c] return date_list
+- [c62ca5b3] return qs
+- [e7730f95] return self._get_dated_items(date)
+- [4c104852] return super().get_object(queryset=qs)
+- [f7068da7] since = self._make_date_lookup_arg(date) until = self._make_date_lookup_arg(self._get_next_month(date)) lookup_kwargs = { "%s__gte" % date_field: since, "%s__lt" % date_field: until, }
+- [a3136c10] # Bounds of the current interval start, end = get_current(date), get_next(date)
+- [7cc8e174] # If allow_empty is True, the naive result will be valid if allow_empty: if is_previous: result = get_current(start - datetime.timedelta(days=1)) else: result = end
+- [317617b2] # Note: the following three methods only work in subclasses that also # inherit SingleObjectMixin or MultipleObjectMixin.
+- [24167601] # Otherwise, we'll need to go to the database to look for an object # whose date_field is at least (greater than/less than) the given # naive result else: # Construct a lookup and an ordering depending on whether we're doing # a previous date or a next date lookup. if is_previous: lookup = {"%s__lt" % date_field: generic_view._make_date_lookup_arg(start)} ordering = "-%s" % date_field else: lookup = {"%s__gte" % date_field: generic_view._make_date_lookup_arg(end)} ordering = date_field
+- [09852496] @cached_property def uses_datetime_field(self): """ Return `True` if the date field is a `DateTimeField` and `False` if it's a `DateField`. """ model = self.get_queryset().model if self.model is None else self.model field = model._meta.get_field(self.get_date_field()) return isinstance(field, models.DateTimeField)
+- [9a5f7294] However in essence the logic comes down to:
+- [72fcfeb6] This is a bit complicated since it handles different intervals of time, hence the coupling to generic_view.
+- [d4655f33703909eb] This requires subclassing to provide a response mixin. """
+- [e00924a9] allow_empty = False date_list_period = "year"
+- [5c5338b9] context_object_name = "latest"
+- [c17e3779] date_field = None allow_future = False
+- [fee8756d] date_list_period = "day"
+- [27d95cc8] date_list_period = "month" make_object_list = False
+- [9ae0b51b] day_format = "%d" day = None
+- [e016c07b] def _get_current_day(self, date): """Return the start date of the current interval.""" return date
+- [562598f3] def _get_current_month(self, date): """Return the start date of the previous interval.""" return date.replace(day=1)
+- [04def20c] def _get_current_week(self, date): """Return the start date of the current interval.""" return date - datetime.timedelta(self._get_weekday(date))
+- [20ac228a] def _get_dated_items(self, date): """ Do the actual heavy lifting of getting the dated items; this accepts a date object so that TodayArchiveView can be trivial. """ lookup_kwargs = self._make_single_date_lookup(date) qs = self.get_dated_queryset(**lookup_kwargs)
+- [57a72176] def _get_next_day(self, date): """ Return the start date of the next interval.
+- [d1149c9e] def _get_next_month(self, date): """ Return the start date of the next interval.
+- [38835de1] def _get_next_week(self, date): """ Return the start date of the next interval.
+- [4c9ec6ff] def _get_next_year(self, date): """ Return the start date of the next interval.
+- [9481c4ec] def _get_weekday(self, date): """ Return the weekday for a given date.
+- [ec1d1271] def _make_date_lookup_arg(self, value): """ Convert a date into a datetime when the date field is a DateTimeField.
+- [a38ad67d] def _make_single_date_lookup(self, date): """ Get the lookup kwargs for filtering on a single date.
+- [2efe5369] def get(self, request, *args, **kwargs): self.date_list, self.object_list, extra_context = self.get_dated_items() context = self.get_context_data( object_list=self.object_list, date_list=self.date_list, **extra_context ) return self.render_to_response(context)
+- [0d45dcfc] def get_allow_future(self): """ Return `True` if the view should be allowed to display objects from the future. """ return self.allow_future
+- [7f78584d] def get_date_field(self): """Get the name of the date field to be used to filter by.""" if self.date_field is None: raise ImproperlyConfigured( "%s.date_field is required." % self.__class__.__name__ ) return self.date_field
+- [fa197f12] def get_date_list(self, queryset, date_type=None, ordering="ASC"): """ Get a date list by calling `queryset.dates/datetimes()`, checking along the way for empty lists that aren't allowed. """ date_field = self.get_date_field() allow_empty = self.get_allow_empty() if date_type is None: date_type = self.get_date_list_period()
+- [20d4b9cc] def get_date_list_period(self): """ Get the aggregation period for the list of dates: 'year', 'month', or 'day'. """ return self.date_list_period
+- [f680c60a] def get_dated_items(self): """Obtain the list of dates and items.""" raise NotImplementedError( "A DateView must provide an implementation of get_dated_items()" )
+- [0aa581fa] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" qs = self.get_dated_queryset() date_list = self.get_date_list(qs, ordering="DESC")
+- [5e63a2ce] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" return self._get_dated_items(datetime.date.today())
+- [621055d7] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" year = self.get_year()
+- [7c078592] def get_dated_queryset(self, **lookup): """ Get a queryset properly filtered according to `allow_future` and any extra lookup kwargs. """ qs = self.get_queryset().filter(**lookup) date_field = self.get_date_field() allow_future = self.get_allow_future() allow_empty = self.get_allow_empty() paginate_by = self.get_paginate_by(qs)
+- [ea03e9e3] def get_day(self): """Return the day for which this view should display data.""" day = self.day if day is None: try: day = self.kwargs["day"] except KeyError: try: day = self.request.GET["day"] except KeyError: raise Http404(_("No day specified")) return day
+- [6fffa4d7] def get_day_format(self): """ Get a day format string in strptime syntax to be used to parse the day from url variables. """ return self.day_format
+- [f8db0d2f] def get_make_object_list(self): """ Return `True` if this view should contain the full list of objects in the given year. """ return self.make_object_list
+- [34d3cff2] def get_next_day(self, date): """Get the next valid day.""" return _get_next_prev(self, date, is_previous=False, period="day")
+- [b138cb61] def get_object(self, queryset=None): """Get the object this request displays.""" year = self.get_year() month = self.get_month() day = self.get_day() date = _date_from_string( year, self.get_year_format(), month, self.get_month_format(), day, self.get_day_format(), )
+- [6664c4d6] def get_ordering(self): """ Return the field or fields to use for ordering the queryset; use the date field by default. """ return "-%s" % self.get_date_field() if self.ordering is None else self.ordering
+- [0adccb32] def get_previous_month(self, date): """Get the previous valid month.""" return _get_next_prev(self, date, is_previous=True, period="month")
+- [3a88bfe3] get_current = getattr(generic_view, "_get_current_%s" % period) get_next = getattr(generic_view, "_get_next_%s" % period)
+- [b1179a27] month_format = "%b" month = None
+- [bd7e5648] template_name_suffix = "_archive"
+- [0b740a2ee9b891ef] template_name_suffix = "_archive_day"
+- [5abacf64] template_name_suffix = "_archive_month"
+- [9f3fae10] template_name_suffix = "_archive_week"
+- [aaca4d84] template_name_suffix = "_archive_year"
+- [c9c63d57] template_name_suffix = "_detail"
+- [0a8b63f2] week_format = "%U" week = None
+- [32287265] year_format = "%Y" year = None
+- [06336cec] class ArchiveIndexView(MultipleObjectTemplateResponseMixin, BaseArchiveIndexView): """Top-level archive of date-based items."""
+- [1be0f230] class BaseArchiveIndexView(BaseDateListView): """ Base view for archives of date-based items.
+- [36000496] class BaseDateDetailView(YearMixin, MonthMixin, DayMixin, DateMixin, BaseDetailView): """ Base detail view for a single object on a single date; this differs from the standard DetailView by accepting a year/month/day in the URL.
+- [849f0f23] class BaseDateListView(MultipleObjectMixin, DateMixin, View): """ Base class for date-based views displaying a list of objects.
+- [ac320c82] class BaseDayArchiveView(YearMixin, MonthMixin, DayMixin, BaseDateListView): """ Base view for a list of objects published on a given day.
+- [1a344c5b] class BaseMonthArchiveView(YearMixin, MonthMixin, BaseDateListView): """ Base view for a list of objects published in a given month.
+- [d84a2c05] class BaseTodayArchiveView(BaseDayArchiveView): """ Base view for a list of objects published today.
+- [d6334be4] class BaseWeekArchiveView(YearMixin, WeekMixin, BaseDateListView): """ Base view for a list of objects published in a given week.
+- [4a1a3588] class BaseYearArchiveView(YearMixin, BaseDateListView): """ Base view for a list of objects published in a given year.
+- [b073a293] class DateDetailView(SingleObjectTemplateResponseMixin, BaseDateDetailView): """ Detail view of a single object on a single date; this differs from the standard DetailView by accepting a year/month/day in the URL. """
+- [372ea16d] class DateMixin: """Mixin class for views manipulating date-based data."""
+- [2ba6254b] class DayArchiveView(MultipleObjectTemplateResponseMixin, BaseDayArchiveView): """List of objects published on a given day."""
+- [6335d3cc] class DayMixin: """Mixin for views manipulating day-based data."""
+- [48aad985] class MonthArchiveView(MultipleObjectTemplateResponseMixin, BaseMonthArchiveView): """List of objects published in a given month."""
+- [0b63b299] class MonthMixin: """Mixin for views manipulating month-based data."""
+- [a50e69cc] class TodayArchiveView(MultipleObjectTemplateResponseMixin, BaseTodayArchiveView): """List of objects published today."""
+- [a3687444] class WeekArchiveView(MultipleObjectTemplateResponseMixin, BaseWeekArchiveView): """List of objects published in a given week."""
+- [587cb09d] class WeekMixin: """Mixin for views manipulating week-based data."""
+- [c2e4a478] class YearArchiveView(MultipleObjectTemplateResponseMixin, BaseYearArchiveView): """List of objects published in a given year."""
+- [f3d113a6] class YearMixin: """Mixin for views manipulating year-based data."""
+- [d6e30fc9] def _date_from_string( year, year_format, month="", month_format="", day="", day_format="", delim="__" ): """ Get a datetime.date object given a format string and a year, month, and day (only year is mandatory). Raise a 404 for an invalid date. """ format = year_format + delim + month_format + delim + day_format datestr = str(year) + delim + str(month) + delim + str(day) try: return datetime.datetime.strptime(datestr, format).date() except ValueError: raise Http404( _("Invalid date string “%(datestr)s” given format “%(format)s”") % { "datestr": datestr, "format": format, } )
+- [5dbb597c] def _get_next_prev(generic_view, date, is_previous, period): """ Get the next or the previous valid date. The idea is to allow links on month/day views to never be 404s by never providing a date that'll be invalid for the given view.
+- [55f89470] def timezone_today(): """Return the current date in the current time zone.""" if settings.USE_TZ: return timezone.localdate() else: return datetime.date.today()
+- [070a6739] from django.conf import settings from django.core.exceptions import ImproperlyConfigured from django.db import models from django.http import Http404 from django.utils import timezone from django.utils.functional import cached_property from django.utils.translation import gettext as _ from django.views.generic.base import View from django.views.generic.detail import ( BaseDetailView, SingleObjectTemplateResponseMixin, ) from django.views.generic.list import ( MultipleObjectMixin, MultipleObjectTemplateResponseMixin, )
+- [d152a5ac4c0db78d-6] import datetime

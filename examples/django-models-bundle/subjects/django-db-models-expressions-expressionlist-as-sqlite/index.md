@@ -1,9 +1,9 @@
 # django/db/models/expressions::ExpressionList.as_sqlite
 
-- Subject: django/db/models/expressions::ExpressionList.as_sqlite (id `24c24bbb-4014-4da5-a9d0-dcd533969cf6`)
+- Subject: django/db/models/expressions::ExpressionList.as_sqlite (id `c44f28d0-b492-481e-b4ee-afa0879fda4c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

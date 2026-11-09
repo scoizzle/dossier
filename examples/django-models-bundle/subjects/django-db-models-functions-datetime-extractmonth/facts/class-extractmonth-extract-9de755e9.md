@@ -1,6 +1,6 @@
 # Fact 9de755e9
 
-Store id: 0176a1e3-afbc-4e19-99fe-64e30e38a28b
+Store id: 4186a43f-9513-40a8-800c-f969fc5fe411
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractMonth(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1233080+00:00`
+- posted_at: `2026-11-09T23:32:01.1906820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 134,
     "symbol": "ExtractMonth"
   },
-  "id": "0176a1e3-afbc-4e19-99fe-64e30e38a28b",
+  "id": "4186a43f-9513-40a8-800c-f969fc5fe411",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1233080+00:00"
+    "posted_at": "2026-11-09T23:32:01.1906820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47aec1e0-c1f9-42db-b14c-c47d69fd4170",
+  "subject_id": "01258883-7973-4911-8953-bf64ff5e7698",
   "subject_name": "django/db/models/functions/datetime::ExtractMonth",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.__deepcopy__
 
-- Subject: django/db/models/query::QuerySet.__deepcopy__ (id `8940a604-2072-43a0-a0ed-eeeb93f5c097`)
+- Subject: django/db/models/query::QuerySet.__deepcopy__ (id `a42a5d6c-4610-457f-b336-259026a4c91d`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

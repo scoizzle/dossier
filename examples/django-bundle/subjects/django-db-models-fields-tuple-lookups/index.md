@@ -1,14 +1,14 @@
 # django/db/models/fields/tuple_lookups
 
-- Subject: django/db/models/fields/tuple_lookups (id `f4653e44-176b-4022-9b8d-79684a350fed`)
+- Subject: django/db/models/fields/tuple_lookups (id `75c511b2-946d-4e08-bcd7-f6c14078f8aa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 17 of 49
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2699 tokens
+- Facts shown: 39 of 49
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # e.g.: (a, b, c) in [(x1, y1, z1), (x2, y2, z2)] as SQL: # WHERE (a = x1 AND b = y1 AND c = z1) # OR (a = x2 AND b = y2 AND c = z2) root = WhereNode([], connector=OR) lhs = self.lhs [27a09884]
 - # e.g.: (a, b, c) in [(x1, y1, z1), (x2, y2, z2)] as SQL: # WHERE (a, b, c) IN ((x1, y1, z1), (x2, y2, z2)) result = [] lhs = self.lhs [eea6fca9]
@@ -28,6 +28,27 @@
 - def as_sqlite(self, compiler, connection): if connection.get_database_version() < (3, 37) and isinstance( first_expr := self.source_expressions[0], Tuple ): first_expr = first_expr.copy() first_expr.function = "VALUES" return Tuple(first_expr, *self.source_expressions[1:]).as_sql( compiler, connection ) return self.as_sql(compiler, connection) [182022c4]
 - def get_prep_lhs(self): if isinstance(self.lhs, (tuple, list)): return Tuple(*self.lhs) return super().get_prep_lhs() [6a895954]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [022b5a46] [06762cd0] [cb060ac0] [4ab7ad47] [817b733c] [853d1fc3] [517800f1] [072da646] [b2da4280] [e04f3b84] [54883654] [2afe6e21] [f3ee2bab] [d92f0556] [e85b9250] [befbfd0e] [fcd028d4] [d42a3f6a] [8baa3192] [52d0f712] [a8b14593] [5e8fce20]
+- [022b5a46] def check_rhs_elements_length_equals_lhs_length(self): len_lhs = len(self.lhs) if not all(len_lhs == len(vals) for vals in self.rhs): lhs_str = self.get_lhs_str() raise ValueError( f"{self.lookup_name!r} lookup of {lhs_str} " f"must have {len_lhs} elements each" )
+- [06762cd0] def check_rhs_is_collection_of_tuples_or_lists(self): if not all(isinstance(vals, (tuple, list)) for vals in self.rhs): lhs_str = self.get_lhs_str() raise ValueError( f"{self.lookup_name!r} lookup of {lhs_str} " "must be a collection of tuples or lists" )
+- [cb060ac0] def check_rhs_is_query(self): if not isinstance(self.rhs, (Query, Subquery)): lhs_str = self.get_lhs_str() rhs_cls = self.rhs.__class__.__name__ raise ValueError( f"{self.lookup_name!r} subquery lookup of {lhs_str} " f"must be a Query object (received {rhs_cls!r})" )
+- [4ab7ad47] def check_rhs_is_supported_expression(self): if not isinstance(self.rhs, (ResolvedOuterRef, Query)): lhs_str = self.get_lhs_str() rhs_cls = self.rhs.__class__.__name__ raise ValueError( f"{self.lookup_name!r} subquery lookup of {lhs_str} " f"only supports OuterRef and QuerySet objects (received {rhs_cls!r})" )
+- [817b733c] def check_rhs_is_tuple_or_list(self): if not isinstance(self.rhs, (tuple, list)): lhs_str = self.get_lhs_str() raise ValueError( f"{self.lookup_name!r} lookup of {lhs_str} must be a tuple or a list" )
+- [853d1fc3] def check_rhs_length_equals_lhs_length(self): len_lhs = len(self.lhs) if len_lhs != len(self.rhs): lhs_str = self.get_lhs_str() raise ValueError( f"{self.lookup_name!r} lookup of {lhs_str} must have {len_lhs} elements" )
+- [517800f1] def get_fallback_sql(self, compiler, connection): raise NotImplementedError( f"{self.__class__.__name__}.get_fallback_sql() must be implemented " f"for backends that don't have the supports_tuple_lookups feature enabled." )
+- [072da646] def get_fallback_sql(self, compiler, connection): rhs = self.rhs if not rhs: raise EmptyResultSet if isinstance(rhs, Query): rhs_exprs = itertools.chain.from_iterable( ( select_expr if isinstance((select_expr := select[0]), ColPairs) else [select_expr] ) for select in rhs.get_compiler(connection=connection).get_select()[0] ) rhs = rhs.clone() rhs.add_q( models.Q(*[Exact(col, val) for col, val in zip(self.lhs, rhs_exprs)]) ) return compiler.compile(Exists(rhs)) elif not self.rhs_is_direct_value(): return super(TupleLookupMixin, self).as_sql(compiler, connection)
+- [b2da4280] def get_lhs_str(self): if isinstance(self.lhs, ColPairs): return repr(self.lhs.field.name) elif isinstance(self.lhs, Iterable): names = ", ".join(repr(f.name) for f in self.lhs) return f"({names})" elif hasattr(self.lhs, "name"): return repr(self.lhs.name) return repr(self.lhs)
+- [e04f3b84] def get_prep_lookup(self): if self.rhs_is_direct_value(): self.check_rhs_is_tuple_or_list() self.check_rhs_length_equals_lhs_length() else: self.check_rhs_is_supported_expression() super().get_prep_lookup() return self.rhs
+- [54883654] def process_lhs(self, compiler, connection, lhs=None): sql, params = super().process_lhs(compiler, connection, lhs) if not isinstance(self.lhs, Tuple): sql = f"({sql})" return sql, params
+- [2afe6e21] def process_rhs(self, compiler, connection): if not self.rhs_is_direct_value(): return super(TupleLookupMixin, self).process_rhs(compiler, connection)
+- [f3ee2bab] def process_rhs(self, compiler, connection): if self.rhs_is_direct_value(): args = [ ( val if hasattr(val, "as_sql") else Value(val, output_field=col.output_field) ) for col, val in zip(self.lhs, self.rhs) ] return compiler.compile(Tuple(*args)) else: sql, params = compiler.compile(self.rhs) if isinstance(self.rhs, ColPairs): return "(%s)" % sql, params elif isinstance(self.rhs, Query): return super().process_rhs(compiler, connection) else: raise ValueError( "Composite field lookups only work with composite expressions." )
+- [d92f0556] class Tuple(Func): allows_composite_expressions = True function = "" output_field = models.Field()
+- [e85b9250] class TupleExact(TupleLookupMixin, Exact): def get_fallback_sql(self, compiler, connection): if isinstance(self.rhs, Query): return super(TupleLookupMixin, self).as_sql(compiler, connection) # Process right-hand-side to trigger sanitization. self.process_rhs(compiler, connection) # e.g.: (a, b, c) == (x, y, z) as SQL: # WHERE a = x AND b = y AND c = z lookups = [Exact(col, val) for col, val in zip(self.lhs, self.rhs)] root = WhereNode(lookups, connector=AND)
+- [befbfd0e] class TupleGreaterThan(TupleLookupMixin, GreaterThan): def get_fallback_sql(self, compiler, connection): # Process right-hand-side to trigger sanitization. self.process_rhs(compiler, connection) # e.g.: (a, b, c) > (x, y, z) as SQL: # WHERE a > x OR (a = x AND (b > y OR (b = y AND c > z))) lookups = itertools.cycle([GreaterThan, Exact]) connectors = itertools.cycle([OR, AND]) cols_list = [col for col in self.lhs for _ in range(2)] vals_list = [val for val in self.rhs for _ in range(2)] cols_iter = iter(cols_list[:-1]) vals_iter = iter(vals_list[:-1]) col = next(cols_iter) val = next(vals_iter) lookup = next(lookups) connector = next(connectors) root = node = WhereNode([lookup(col, val)], connector=connector)
+- [fcd028d4] class TupleIn(TupleLookupMixin, In): def get_prep_lookup(self): if self.rhs_is_direct_value(): self.check_rhs_is_tuple_or_list() self.check_rhs_is_collection_of_tuples_or_lists() self.check_rhs_elements_length_equals_lhs_length() else: self.check_rhs_is_query() super(TupleLookupMixin, self).get_prep_lookup()
+- [d42a3f6a] class TupleIsNull(TupleLookupMixin, IsNull): def get_prep_lookup(self): rhs = self.rhs if isinstance(rhs, (tuple, list)) and len(rhs) == 1: rhs = rhs[0] if isinstance(rhs, bool): return rhs raise ValueError( "The QuerySet value for an isnull lookup must be True or False." )
+- [8baa3192] class TupleLookupMixin: allows_composite_expressions = True
+- [52d0f712] from django.core.exceptions import EmptyResultSet from django.db import NotSupportedError, models from django.db.models.expressions import ( ColPairs, Exists, Func, ResolvedOuterRef, Subquery, Value, ) from django.db.models.lookups import ( Exact, GreaterThan, GreaterThanOrEqual, In, IsNull, LessThan, LessThanOrEqual, ) from django.db.models.sql import Query from django.db.models.sql.where import AND, OR, WhereNode
+- [a8b14593] import itertools from collections.abc import Iterable
+- [5e8fce20] tuple_lookups = { "exact": TupleExact, "gt": TupleGreaterThan, "gte": TupleGreaterThanOrEqual, "lt": TupleLessThan, "lte": TupleLessThanOrEqual, "in": TupleIn, "isnull": TupleIsNull, }

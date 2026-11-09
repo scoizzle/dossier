@@ -1,9 +1,9 @@
 # django/db/models/base::Model._do_update
 
-- Subject: django/db/models/base::Model._do_update (id `a2d2abea-d1a7-47e7-8f8a-04885415bc57`)
+- Subject: django/db/models/base::Model._do_update (id `5b54c104-a857-4b64-8458-9c006c3bc759`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

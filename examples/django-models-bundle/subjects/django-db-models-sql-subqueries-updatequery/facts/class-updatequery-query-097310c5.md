@@ -1,6 +1,6 @@
 # Fact 097310c5
 
-Store id: 98fd101c-ba6e-4eb2-93fb-2c4e66899a20
+Store id: 1778e443-2ee9-4910-b11c-293228eefb9b
 
 ## Text
 
@@ -20,7 +20,7 @@ class UpdateQuery(Query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7176140+00:00`
+- posted_at: `2026-11-09T23:32:07.3528030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 49,
     "symbol": "UpdateQuery"
   },
-  "id": "98fd101c-ba6e-4eb2-93fb-2c4e66899a20",
+  "id": "1778e443-2ee9-4910-b11c-293228eefb9b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7176140+00:00"
+    "posted_at": "2026-11-09T23:32:07.3528030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a1d3a754-5d94-4b92-a56a-a8f8f944d3fe",
+  "subject_id": "82c1c08c-7d7d-421f-b0aa-41254920e833",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery",
   "tags": [
     "entity:class"

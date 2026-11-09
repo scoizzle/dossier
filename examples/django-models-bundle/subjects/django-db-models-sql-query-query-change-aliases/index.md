@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.change_aliases
 
-- Subject: django/db/models/sql/query::Query.change_aliases (id `2ea83f75-7537-4b23-b7fe-9c1c290f3874`)
+- Subject: django/db/models/sql/query::Query.change_aliases (id `dcf3ca1c-b6f8-4eab-9b39-542992b55f20`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

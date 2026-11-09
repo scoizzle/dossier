@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._clone
 
-- Subject: django/db/models/query::QuerySet._clone (id `cf9398a7-d34b-48c5-b0b1-7b9c536f8aca`)
+- Subject: django/db/models/query::QuerySet._clone (id `1224d4d7-6786-43ed-83b7-6826d00f335b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

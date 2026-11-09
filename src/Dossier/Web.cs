@@ -131,6 +131,7 @@ public sealed class WebServer : IDisposable
                             ? new RankOptions { Recency = double.Parse(recency, System.Globalization.CultureInfo.InvariantCulture) }
                             : null,
                         Format = Q("format"),
+                        BudgetMode = Q("budget_mode"),
                     }));
                     break;
 

@@ -1,6 +1,6 @@
 # Fact 6bd8dc7f
 
-Store id: e8d440eb-81b7-4a5c-b8c8-ab41ad6da758
+Store id: e0699413-82a6-4bab-b330-a3fb3d6b619d
 
 ## Text
 
@@ -20,7 +20,7 @@ class Value(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5837550+00:00`
+- posted_at: `2026-11-09T23:31:55.8582620+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1147,
     "symbol": "Value"
   },
-  "id": "e8d440eb-81b7-4a5c-b8c8-ab41ad6da758",
+  "id": "e0699413-82a6-4bab-b330-a3fb3d6b619d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5837550+00:00"
+    "posted_at": "2026-11-09T23:31:55.8582620+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4ce052aa-d339-45db-8417-42ad4c7b597f",
+  "subject_id": "63b92ec8-f38e-42eb-8465-d9e5c50a6849",
   "subject_name": "django/db/models/expressions::Value",
   "tags": [
     "entity:class",

@@ -1,14 +1,14 @@
 # django/core/files/storage/filesystem
 
-- Subject: django/core/files/storage/filesystem (id `60dab3e3-6ebb-48ad-86e9-aa1d055f3a25`)
+- Subject: django/core/files/storage/filesystem (id `b039e5f9-a7c5-4aa3-a787-2ced040052e5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 11 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1878 tokens
+- Facts shown: 30 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # This is a normal uploadedfile that we can stream. else: # The combination of O_CREAT and O_EXCL makes os.open() # raises an OSError if the file already exists before it's # opened. open_flags = ( os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_BINARY", 0) ) if self._allow_overwrite: open_flags = open_flags & ~os.O_EXCL | os.O_TRUNC fd = os.open(full_path, open_flags, 0o666) _file = None try: locks.lock(fd, locks.LOCK_EX) for chunk in content.chunks(): if _file is None: mode = "wb" if isinstance(chunk, bytes) else "wt" _file = os.fdopen(fd, mode) _file.write(chunk) finally: locks.unlock(fd) if _file is not None: _file.close() else: os.close(fd) except FileExistsError: # A new name is needed if the file exists. name = self.get_available_name(name) full_path = self.path(name) else: # OK, the file save worked. Break out of the loop. break [dbef7366]
 - # Create any intermediate directories that do not exist. directory = os.path.dirname(full_path) try: if self.directory_permissions_mode is not None: # Workaround because os.makedirs() doesn't apply the "mode" # argument to intermediate-level directories. # https://github.com/python/cpython/issues/86533 safe_makedirs(directory, self.directory_permissions_mode, exist_ok=True) else: os.makedirs(directory, exist_ok=True) except FileExistsError: raise FileExistsError("%s exists and is not a directory." % directory) [58d17665]
@@ -22,6 +22,24 @@
 - @cached_property def location(self): return os.path.abspath(self.base_location) [09859160e487624d]
 - def _datetime_from_timestamp(self, ts): """ If timezone support is enabled, make an aware datetime object in UTC; otherwise make a naive one in the local timezone. """ tz = UTC if settings.USE_TZ else None return datetime.fromtimestamp(ts, tz=tz) [7c83ae20]
 
-## Beyond the budget
+## All facts
 
-19 more facts did not fit in the budget: [2e4e54cc] [9a83e9b4] [eb5a06b0] [03b72c37] [5628fb89] [09e8e104] [378031bb] [96dfd197] [b95d307d] [0c265f19] [5e945a37] [678694e9] [2fcfcf800996fb0e] [9e2d005b] [252d6834eaf0da2d] [86edc436] [423d3b0acaf4528f] [c116cfc5] [569bfca8]
+- [2e4e54cc] def __init__( self, location=None, base_url=None, file_permissions_mode=None, directory_permissions_mode=None, allow_overwrite=False, ): self._location = location self._base_url = base_url self._file_permissions_mode = file_permissions_mode self._directory_permissions_mode = directory_permissions_mode self._allow_overwrite = allow_overwrite setting_changed.connect(self._clear_cached_properties)
+- [9a83e9b4] def _ensure_location_group_id(self, full_path): if os.name == "posix": file_gid = os.stat(full_path).st_gid location_gid = os.stat(self.location).st_gid if file_gid != location_gid: try: os.chown(full_path, uid=-1, gid=location_gid) except PermissionError: pass
+- [eb5a06b0] def _open(self, name, mode="rb"): return File(open(self.path(name), mode))
+- [03b72c37] def _save(self, name, content): full_path = self.path(name)
+- [5628fb89] def delete(self, name): if not name: raise ValueError("The name must be given to delete().") name = self.path(name) # If the file or directory exists, delete it from the filesystem. try: if os.path.isdir(name): os.rmdir(name) else: os.remove(name) except FileNotFoundError: # FileNotFoundError is raised if the file or directory was removed # concurrently. pass
+- [09e8e104] def exists(self, name): return os.path.lexists(self.path(name))
+- [378031bb] def get_accessed_time(self, name): return self._datetime_from_timestamp(os.path.getatime(self.path(name)))
+- [96dfd197] def get_alternative_name(self, file_root, file_ext): if self._allow_overwrite: return f"{file_root}{file_ext}" return super().get_alternative_name(file_root, file_ext)
+- [b95d307d] def get_created_time(self, name): return self._datetime_from_timestamp(os.path.getctime(self.path(name)))
+- [0c265f19] def get_modified_time(self, name): return self._datetime_from_timestamp(os.path.getmtime(self.path(name)))
+- [5e945a37] def is_name_available(self, name, max_length=None): if self._allow_overwrite: return not (max_length and len(name) > max_length) return super().is_name_available(name, max_length=max_length)
+- [678694e9] def listdir(self, path): path = self.path(path) directories, files = [], [] with os.scandir(path) as entries: for entry in entries: if entry.is_dir(): directories.append(entry.name) else: files.append(entry.name) return directories, files
+- [2fcfcf800996fb0e] def path(self, name): return safe_join(self.location, name)
+- [9e2d005b] def size(self, name): return os.path.getsize(self.path(name))
+- [252d6834eaf0da2d] def url(self, name): if self.base_url is None: raise ValueError("This file is not accessible via a URL.") url = filepath_to_uri(name) if url is not None: url = url.lstrip("/") return urljoin(self.base_url, url)
+- [86edc436] @deconstructible(path="django.core.files.storage.FileSystemStorage") class FileSystemStorage(Storage, StorageSettingsMixin): """ Standard filesystem storage """
+- [423d3b0acaf4528f] from .base import Storage from .mixins import StorageSettingsMixin
+- [c116cfc5] from django.conf import settings from django.core.files import File, locks from django.core.files.move import file_move_safe from django.core.signals import setting_changed from django.utils._os import safe_join, safe_makedirs from django.utils.deconstruct import deconstructible from django.utils.encoding import filepath_to_uri from django.utils.functional import cached_property
+- [569bfca8] import os from datetime import UTC, datetime from urllib.parse import urljoin

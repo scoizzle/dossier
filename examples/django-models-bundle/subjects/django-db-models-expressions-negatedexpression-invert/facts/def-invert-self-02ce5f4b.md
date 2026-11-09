@@ -1,6 +1,6 @@
 # Fact 02ce5f4b
 
-Store id: 43405dc6-1e39-4e12-8ae3-fe71dae81d4e
+Store id: 70176b6a-2e3e-4916-9fd5-340f7393d131
 
 ## Text
 
@@ -20,7 +20,7 @@ def __invert__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6816840+00:00`
+- posted_at: `2026-11-09T23:31:55.9411270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1590,
     "symbol": "NegatedExpression.__invert__"
   },
-  "id": "43405dc6-1e39-4e12-8ae3-fe71dae81d4e",
+  "id": "70176b6a-2e3e-4916-9fd5-340f7393d131",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6816840+00:00"
+    "posted_at": "2026-11-09T23:31:55.9411270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fd89a321-a5c1-452c-b7f6-d1957a01c04a",
+  "subject_id": "0a9af661-ecde-4702-af5e-19322abcbaa1",
   "subject_name": "django/db/models/expressions::NegatedExpression.__invert__",
   "tags": [
     "entity:method"

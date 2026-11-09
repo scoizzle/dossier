@@ -1,8 +1,8 @@
 # django/conf/locale/tg/formats
 
-- Subject: django/conf/locale/tg/formats (id `d5791f6a-1fe9-49c8-8896-898397bfb30b`)
+- Subject: django/conf/locale/tg/formats (id `4132d991-8dfb-4b85-8ad3-de5d9df1c5ba`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 297 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

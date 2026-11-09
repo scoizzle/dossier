@@ -1,8 +1,8 @@
 # django/utils/deconstruct
 
-- Subject: django/utils/deconstruct (id `e23efad2-0bd3-4261-9079-a803f347f26c`)
+- Subject: django/utils/deconstruct (id `ceebf0a1-0b3a-416d-b004-b7fc69c20bfd`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 471 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

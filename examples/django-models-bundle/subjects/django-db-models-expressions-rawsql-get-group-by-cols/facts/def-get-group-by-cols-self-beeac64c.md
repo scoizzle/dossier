@@ -1,6 +1,6 @@
 # Fact beeac64c
 
-Store id: 8dbe050c-dadc-4c36-a8ba-d2d5fe7bd64f
+Store id: a1294f1f-c7c8-48b1-a63d-135f3dd212ae
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_group_by_cols(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6099280+00:00`
+- posted_at: `2026-11-09T23:31:55.8750840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1283,
     "symbol": "RawSQL.get_group_by_cols"
   },
-  "id": "8dbe050c-dadc-4c36-a8ba-d2d5fe7bd64f",
+  "id": "a1294f1f-c7c8-48b1-a63d-135f3dd212ae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6099280+00:00"
+    "posted_at": "2026-11-09T23:31:55.8750840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ab2fff53-3551-4524-a3fe-a4e3b8d24ede",
+  "subject_id": "4be118c0-d519-4379-a57b-5c4bf8624b8d",
   "subject_name": "django/db/models/expressions::RawSQL.get_group_by_cols",
   "tags": [
     "entity:method"

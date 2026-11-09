@@ -1,9 +1,9 @@
 # django/db/models/lookups::Regex.as_sql
 
-- Subject: django/db/models/lookups::Regex.as_sql (id `4b59d871-8372-4920-861f-9e857bdd1a4f`)
+- Subject: django/db/models/lookups::Regex.as_sql (id `e6830827-3a03-46f7-b9d5-d22a5b5fe96d`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

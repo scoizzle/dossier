@@ -1,6 +1,6 @@
 # Fact d08744a7
 
-Store id: 2cf5c8c6-953a-4f1a-8ee7-37259c48cca4
+Store id: 0338246a-60f0-471c-81b0-d175b68260a8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RestrictedError
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0946700+00:00`
+- posted_at: `2026-11-09T23:31:55.1285340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2cf5c8c6-953a-4f1a-8ee7-37259c48cca4",
+  "id": "0338246a-60f0-471c-81b0-d175b68260a8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0946700+00:00"
+    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RestrictedError"
       },
       "rel": "contains",
-      "target": "e2db58ad-d5ae-4476-aae7-5cc35a6c7e0c"
+      "target": "038549c6-3872-47c4-b9e8-c2e4c334a88f"
     }
   ],
   "status": "live",
-  "subject_id": "9dd01ff9-dc4a-434f-bc10-89b57d3d6bb3",
+  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:class"

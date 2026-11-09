@@ -1,6 +1,6 @@
 # Fact 949b4927
 
-Store id: 4af7d090-578e-4679-94d8-eec9986bba4d
+Store id: 5c60abf1-deba-44c4-b8bc-af43c33a7951
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Reverse
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4af7d090-578e-4679-94d8-eec9986bba4d",
+  "id": "5c60abf1-deba-44c4-b8bc-af43c33a7951",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Reverse"
       },
       "rel": "contains",
-      "target": "d5a60407-3523-45f9-8612-0773161cb751"
+      "target": "165ed61c-a426-45f7-a084-5cbc75ebe8b3"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

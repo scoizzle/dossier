@@ -1,6 +1,6 @@
 # Fact e98afc36
 
-Store id: 8312bf37-1bc2-49ef-a5ca-f68f9d61eb4c
+Store id: 9d68238d-f2fe-46d9-babb-e1bf559a1da0
 
 ## Text
 
@@ -20,7 +20,7 @@ class Min(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0449050+00:00`
+- posted_at: `2026-11-09T23:31:53.5406900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 334,
     "symbol": "Min"
   },
-  "id": "8312bf37-1bc2-49ef-a5ca-f68f9d61eb4c",
+  "id": "9d68238d-f2fe-46d9-babb-e1bf559a1da0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0449050+00:00"
+    "posted_at": "2026-11-09T23:31:53.5406900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78a6f898-6545-4e1f-b10d-78618ec8767c",
+  "subject_id": "d4fc95bd-0a73-4e7f-a7ee-a62f0034c910",
   "subject_name": "django/db/models/aggregates::Min",
   "tags": [
     "entity:class"

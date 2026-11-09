@@ -1,6 +1,6 @@
 # Fact b7f2b7ae
 
-Store id: 623988ac-295a-4fa9-ba4c-20cddad1c0f1
+Store id: 77b969b5-76ce-46ff-bd2d-32c380dc3234
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rhs_is_collection_of_tuples_or_lists(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6341560+00:00`
+- posted_at: `2026-11-09T23:32:00.6277190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 315,
     "symbol": "TupleIn.check_rhs_is_collection_of_tuples_or_lists"
   },
-  "id": "623988ac-295a-4fa9-ba4c-20cddad1c0f1",
+  "id": "77b969b5-76ce-46ff-bd2d-32c380dc3234",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6341560+00:00"
+    "posted_at": "2026-11-09T23:32:00.6277190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "033fc832-6df7-4fa6-98eb-edd94ebfd5b1",
+  "subject_id": "8f5f3a8e-5b70-4caf-a6d9-5b353eabb20a",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_collection_of_tuples_or_lists",
   "tags": [
     "entity:method"

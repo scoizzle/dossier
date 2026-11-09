@@ -1,14 +1,14 @@
 # django/core/cache/backends/locmem
 
-- Subject: django/core/cache/backends/locmem (id `f347de00-e46d-4bcf-be0c-0e5167e467ad`)
+- Subject: django/core/cache/backends/locmem (id `7e669686-19fa-46b2-9a62-049a24dd1566`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 15 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 983 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __init__(self, name, params): super().__init__(params) self._cache = _caches.setdefault(name, OrderedDict()) self._expire_info = _expire_info.setdefault(name, {}) self._lock = _locks.setdefault(name, Lock()) [183a578b]
 - def _cull(self): if self._cull_frequency == 0: self._cache.clear() self._expire_info.clear() else: count = len(self._cache) // self._cull_frequency for i in range(count): key, _ = self._cache.popitem() del self._expire_info[key] [f4d2d215]
@@ -26,6 +26,8 @@
 - "Thread-safe in-memory cache backend." [e4a8560c]
 - # Global in-memory store of cache data. Keyed by name, to provide # multiple named local memory caches. _caches = {} _expire_info = {} _locks = {} [1653510a]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [5471d938] [202de63835ade9f6-2] [95325076]
+- [5471d938] class LocMemCache(BaseCache): pickle_protocol = pickle.HIGHEST_PROTOCOL
+- [202de63835ade9f6-2] from django.core.cache.backends.base import DEFAULT_TIMEOUT, BaseCache
+- [95325076] import pickle import time from collections import OrderedDict from threading import Lock

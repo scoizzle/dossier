@@ -1,9 +1,9 @@
 # django/db/models/fields/json::JSONField.formfield
 
-- Subject: django/db/models/fields/json::JSONField.formfield (id `e022332c-9c49-4b7a-8ad2-4c7b35ac34b7`)
+- Subject: django/db/models/fields/json::JSONField.formfield (id `0fe8a6b7-e5b4-4c90-9882-34dd38caa40a`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

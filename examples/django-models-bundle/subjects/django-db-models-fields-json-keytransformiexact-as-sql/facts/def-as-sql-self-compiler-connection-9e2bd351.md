@@ -1,6 +1,6 @@
 # Fact 9e2bd351
 
-Store id: 5945fd2a-7a70-4b2d-9254-fa5fdcb8991b
+Store id: a36dfc1f-6f01-4e2c-bea8-779957375a11
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7404690+00:00`
+- posted_at: `2026-11-09T23:31:58.0085480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 671,
     "symbol": "KeyTransformIExact.as_sql"
   },
-  "id": "5945fd2a-7a70-4b2d-9254-fa5fdcb8991b",
+  "id": "a36dfc1f-6f01-4e2c-bea8-779957375a11",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7404690+00:00"
+    "posted_at": "2026-11-09T23:31:58.0085480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "73ebd0dd-d6d9-4cc7-a89f-6fa4e20513dc",
+  "subject_id": "1d645106-5f3b-43f5-ac62-c8a92ccd66d1",
   "subject_name": "django/db/models/fields/json::KeyTransformIExact.as_sql",
   "tags": [
     "entity:method"

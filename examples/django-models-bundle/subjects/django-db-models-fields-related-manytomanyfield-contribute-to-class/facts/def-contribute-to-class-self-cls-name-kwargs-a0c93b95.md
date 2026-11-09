@@ -1,6 +1,6 @@
 # Fact a0c93b95
 
-Store id: a38babbd-1dfa-4d04-be6e-25520f1643b9
+Store id: c4e66cfd-d0a5-4ab7-bba6-02595ddd48c9
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4945060+00:00`
+- posted_at: `2026-11-09T23:31:58.8806990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2104,
     "symbol": "ManyToManyField.contribute_to_class"
   },
-  "id": "a38babbd-1dfa-4d04-be6e-25520f1643b9",
+  "id": "c4e66cfd-d0a5-4ab7-bba6-02595ddd48c9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4945060+00:00"
+    "posted_at": "2026-11-09T23:31:58.8806990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8df014c7-4bc6-47c5-9bf4-b243c873c5c4",
+  "subject_id": "c93e1c3c-a358-41f3-8554-dd5b2a7b1ff2",
   "subject_name": "django/db/models/fields/related::ManyToManyField.contribute_to_class",
   "tags": [
     "entity:method"

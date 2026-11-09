@@ -1,6 +1,6 @@
 # Fact 35d61010
 
-Store id: dbb605d2-2b6e-4780-b981-707822724c7e
+Store id: 07f07921-7fc3-4b5f-9944-839e59e1c780
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Coalesce
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9636910+00:00`
+- posted_at: `2026-11-09T23:32:01.0159390+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "dbb605d2-2b6e-4780-b981-707822724c7e",
+  "id": "07f07921-7fc3-4b5f-9944-839e59e1c780",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9636910+00:00"
+    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Coalesce"
       },
       "rel": "contains",
-      "target": "b0bc4fba-dc75-4046-b6a6-8c8f91af21d4"
+      "target": "d3a9b65e-0bdc-466f-b2b0-d3eadae9671d"
     }
   ],
   "status": "live",
-  "subject_id": "49850189-241e-4880-b785-93bab786ac63",
+  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

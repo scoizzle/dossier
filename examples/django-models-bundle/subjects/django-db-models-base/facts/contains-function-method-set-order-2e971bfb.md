@@ -1,6 +1,6 @@
 # Fact 2e971bfb
 
-Store id: 471981de-4eb5-4cda-8a5e-27d896c81c2b
+Store id: 86e0e821-f8df-4671-87fa-acb5c600be45
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function method_set_order
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3699300+00:00`
+- posted_at: `2026-11-09T23:31:53.7768270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "471981de-4eb5-4cda-8a5e-27d896c81c2b",
+  "id": "86e0e821-f8df-4671-87fa-acb5c600be45",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3699300+00:00"
+    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "method_set_order"
       },
       "rel": "contains",
-      "target": "f59ff884-167b-423c-b085-2c13f147d4a0"
+      "target": "eae62a5d-1c92-48aa-a347-01c5d24e9738"
     }
   ],
   "status": "live",
-  "subject_id": "70b750e6-0b0a-43ce-80a5-3403f95c66e3",
+  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:function"

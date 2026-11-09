@@ -1,6 +1,6 @@
 # Fact 361d09de
 
-Store id: 779b5ee0-51df-4c87-b8b5-a3f6ebbd9e3d
+Store id: ece39231-b32a-4977-9057-81d5b636f17f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7239270+00:00`
+- posted_at: `2026-11-09T23:31:55.9705920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1841,
     "symbol": "Subquery._resolve_output_field"
   },
-  "id": "779b5ee0-51df-4c87-b8b5-a3f6ebbd9e3d",
+  "id": "ece39231-b32a-4977-9057-81d5b636f17f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7239270+00:00"
+    "posted_at": "2026-11-09T23:31:55.9705920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "513c4909-3847-4638-9e27-683706a5e457",
+  "subject_id": "20451c3b-653b-4be0-8f6c-08f8d37454fc",
   "subject_name": "django/db/models/expressions::Subquery._resolve_output_field",
   "tags": [
     "entity:method"

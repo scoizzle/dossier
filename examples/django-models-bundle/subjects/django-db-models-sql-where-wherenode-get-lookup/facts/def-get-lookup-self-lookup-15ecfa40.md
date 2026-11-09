@@ -1,6 +1,6 @@
 # Fact 15ecfa40
 
-Store id: ac92c5b2-ea6a-4301-804b-690c884fef0b
+Store id: 09d6d0e2-fb73-4bbc-a364-ec7fe9aedb38
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_lookup(self, lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9751040+00:00`
+- posted_at: `2026-11-09T23:32:07.6978620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 313,
     "symbol": "WhereNode.get_lookup"
   },
-  "id": "ac92c5b2-ea6a-4301-804b-690c884fef0b",
+  "id": "09d6d0e2-fb73-4bbc-a364-ec7fe9aedb38",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9751040+00:00"
+    "posted_at": "2026-11-09T23:32:07.6978620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c6933e4b-fc28-45e1-b9ae-d4505c39c2f3",
+  "subject_id": "8a935d04-4eaa-476b-9daa-09cabc5f0eef",
   "subject_name": "django/db/models/sql/where::WhereNode.get_lookup",
   "tags": [
     "entity:method"

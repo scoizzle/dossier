@@ -1,14 +1,14 @@
 # django/templatetags/static
 
-- Subject: django/templatetags/static (id `6c5ea0d6-2b44-4ac0-9066-55594631899c`)
+- Subject: django/templatetags/static (id `e9654ae4-9271-4b5e-9b03-44f1c27e51de`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 25 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1273 tokens
+- Facts shown: 35 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - return staticfiles_storage.url(path) else: return urljoin(PrefixNode.handle_simple("STATIC_URL"), quote(path)) [c17086c7]
 - if len(bits) < 2: raise template.TemplateSyntaxError( "'%s' takes at least one argument (path to file)" % bits[0] ) [8b062d07]
@@ -36,6 +36,15 @@
 - def __repr__(self): return ( f"{self.__class__.__name__}(varname={self.varname!r}, path={self.path!r})" ) [50e95221]
 - def url(self, context): path = self.path.resolve(context) return self.handle_simple(path) [c5213be6]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [4b61e4e2] [3e8b0074] [0b01265a] [628c9c66] [acfdc8be] [fe8d5d14] [0f86a162] [3fc1124f] [d0cfeba2] [8e0cd5cc07f83b92-7]
+- [4b61e4e2] def render(self, context): prefix = self.handle_simple(self.name) if self.varname is None: return prefix context[self.varname] = prefix return ""
+- [3e8b0074] def render(self, context): url = self.url(context) if context.autoescape: url = conditional_escape(url) if self.varname is None: return url context[self.varname] = url return ""
+- [0b01265a] @register.tag def get_media_prefix(parser, token): """ Populate a template variable with the media prefix, ``settings.MEDIA_URL``.
+- [628c9c66] @register.tag("static") def do_static(parser, token): """ Join the given path with the STATIC_URL setting.
+- [acfdc8be] class PrefixNode(template.Node): def __repr__(self): return "<PrefixNode for %r>" % self.name
+- [fe8d5d14] class StaticNode(template.Node): child_nodelists = ()
+- [0f86a162] def static(path): """ Given a relative path to a static asset, return the absolute path to the asset. """ return StaticNode.handle_simple(path)
+- [3fc1124f] from django import template from django.apps import apps from django.utils.encoding import iri_to_uri from django.utils.html import conditional_escape
+- [d0cfeba2] from urllib.parse import quote, urljoin
+- [8e0cd5cc07f83b92-7] register = template.Library()

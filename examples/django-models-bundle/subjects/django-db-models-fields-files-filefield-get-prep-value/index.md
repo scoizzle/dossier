@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FileField.get_prep_value
 
-- Subject: django/db/models/fields/files::FileField.get_prep_value (id `96605c6a-2f13-4ac4-9e2e-cb473bfefda0`)
+- Subject: django/db/models/fields/files::FileField.get_prep_value (id `352296e2-fdc8-4e9f-bd09-6b00e7ea7e68`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

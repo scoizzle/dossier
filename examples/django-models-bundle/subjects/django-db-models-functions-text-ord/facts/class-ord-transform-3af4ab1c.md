@@ -1,6 +1,6 @@
 # Fact 3af4ab1c
 
-Store id: 348a4404-50d5-4684-8d8e-afa9880ea3de
+Store id: caccfdf7-4918-4249-8f62-c3ba2f9f8191
 
 ## Text
 
@@ -20,7 +20,7 @@ class Ord(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1347150+00:00`
+- posted_at: `2026-11-09T23:32:02.2267050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 221,
     "symbol": "Ord"
   },
-  "id": "348a4404-50d5-4684-8d8e-afa9880ea3de",
+  "id": "caccfdf7-4918-4249-8f62-c3ba2f9f8191",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1347150+00:00"
+    "posted_at": "2026-11-09T23:32:02.2267050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4773bb10-58a6-4205-ae81-d5d89fe9d7af",
+  "subject_id": "74915aa5-fa60-47ce-9ed7-22b75e95e7b1",
   "subject_name": "django/db/models/functions/text::Ord",
   "tags": [
     "entity:class"

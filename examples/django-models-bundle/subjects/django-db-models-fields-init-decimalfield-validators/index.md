@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DecimalField.validators
 
-- Subject: django/db/models/fields/__init__::DecimalField.validators (id `2e4973d4-1965-4839-81e1-13b4ad73171c`)
+- Subject: django/db/models/fields/__init__::DecimalField.validators (id `8cc1af20-11e9-4542-934d-c5872f557a42`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

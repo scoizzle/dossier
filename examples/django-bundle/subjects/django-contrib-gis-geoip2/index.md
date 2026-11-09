@@ -1,14 +1,14 @@
 # django/contrib/gis/geoip2
 
-- Subject: django/contrib/gis/geoip2 (id `9e8e31bb-8822-4562-9b88-acf3892bf130`)
+- Subject: django/contrib/gis/geoip2 (id `7a6c47cb-062a-4aa7-aca3-59cbc189b412`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 20 of 38
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2139 tokens
+- Facts shown: 36 of 38
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Try the path first in case it is the full path to a database. for path in (path, path / city, path / country): if path.is_file(): self._path = path self._reader = geoip2.database.Reader(path, mode=cache) break else: raise GeoIP2Exception( "Path must be a valid database or directory containing databases." ) [64c4dd03]
 - * cache: The cache settings when opening up the GeoIP datasets. May be an integer in (0, 1, 2, 4, 8) corresponding to the MODE_AUTO, MODE_MMAP_EXT, MODE_MMAP, MODE_FILE, and MODE_MEMORY, `GeoIPOptions` C API settings, respectively. Defaults to 0, meaning MODE_AUTO. [8fa99492]
@@ -31,6 +31,21 @@
 - def __init__(self, path=None, cache=0, country=None, city=None): """ Initialize the GeoIP object. No parameters are required to use default settings. Keyword arguments may be passed in to customize the locations of the GeoIP datasets. [046f4d81]
 - __all__ = ["HAS_GEOIP2"] [97f17867]
 
-## Beyond the budget
+## All facts
 
-16 more facts did not fit in the budget: [1e252689] [47394f0b] [cbe41753] [25a05390] [16f8f77b] [90f44440] [104e2691] [05764be7] [826537bb] [2a2876ec] [7dc7b68c] [210e26d2] [646cc327] [3c6c1b4c] [59f62387] [2cfb4f6d]
+- [1e252689] def __repr__(self): m = self._metadata version = f"v{m.binary_format_major_version}.{m.binary_format_minor_version}" return f"<{self.__class__.__name__} [{version}] _path='{self._path}'>"
+- [47394f0b] def _query(self, query, *, require_city=False): if not isinstance(query, (str, ipaddress.IPv4Address, ipaddress.IPv6Address)): raise TypeError( "GeoIP query must be a string or instance of IPv4Address or " "IPv6Address, not type %s" % type(query).__name__, )
+- [cbe41753] def city(self, query): """ Return a dictionary of city information for the given IP address or Fully Qualified Domain Name (FQDN). Some information in the dictionary may be undefined (None). """ response = self._query(query, require_city=True) region = response.subdivisions[0] if response.subdivisions else None return { "accuracy_radius": response.location.accuracy_radius, "city": response.city.name, "continent_code": response.continent.code, "continent_name": response.continent.name, "country_code": response.country.iso_code, "country_name": response.country.name, "is_in_european_union": response.country.is_in_european_union, "latitude": response.location.latitude, "longitude": response.location.longitude, "metro_code": response.location.metro_code, "postal_code": response.postal.code, "region_code": region.iso_code if region else None, "region_name": region.name if region else None, "time_zone": response.location.time_zone, # Kept for backward compatibility. "dma_code": response.location.metro_code, "region": region.iso_code if region else None, }
+- [25a05390] def country(self, query): """ Return a dictionary with the country code and name when given an IP address or a Fully Qualified Domain Name (FQDN). For example, both '24.124.1.80' and 'djangoproject.com' are valid parameters. """ response = self._query(query, require_city=False) return { "continent_code": response.continent.code, "continent_name": response.continent.name, "country_code": response.country.iso_code, "country_name": response.country.name, "is_in_european_union": response.country.is_in_european_union, }
+- [16f8f77b] def country_code(self, query): "Return the country code for the given IP Address or FQDN." return self.country(query)["country_code"]
+- [90f44440] def geos(self, query): "Return a GEOS Point object for the given query." # Allows importing and using GeoIP2() when GEOS is not installed. from django.contrib.gis.geos import Point
+- [104e2691] def lat_lon(self, query): "Return a tuple of the (latitude, longitude) for the given query." data = self.city(query) return data["latitude"], data["longitude"]
+- [05764be7] """ This module houses the GeoIP2 object, a wrapper for the MaxMind GeoIP2(R) Python API (https://geoip2.readthedocs.io/). This is an alternative to the Python GeoIP2 interface provided by MaxMind.
+- [826537bb] # These are the values stored in the `database_type` field of the metadata. # See https://maxmind.github.io/MaxMind-DB/#database_type for details. SUPPORTED_DATABASE_TYPES = { "DBIP-City-Lite", "DBIP-Country-Lite", "GeoIP2-City", "GeoIP2-Country", "GeoLite2-City", "GeoLite2-Country", }
+- [2a2876ec] For IP-based geolocation, this module requires the GeoLite2 Country and City datasets, in binary format (CSV will not work!). The datasets may be downloaded from MaxMind at https://dev.maxmind.com/geoip/geoip2/geolite2/. Grab GeoLite2-Country.mmdb.gz and GeoLite2-City.mmdb.gz, and unzip them in the directory corresponding to settings.GEOIP_PATH. """
+- [7dc7b68c] GeoIP(R) is a registered trademark of MaxMind, Inc.
+- [210e26d2] class GeoIP2: # The flags for GeoIP memory caching. # Try MODE_MMAP_EXT, MODE_MMAP, MODE_FILE in that order. MODE_AUTO = 0 # Use the C extension with memory map. MODE_MMAP_EXT = 1 # Read from memory map. Pure Python. MODE_MMAP = 2 # Read database as standard file. Pure Python. MODE_FILE = 4 # Load database into memory. Pure Python. MODE_MEMORY = 8 cache_options = frozenset( (MODE_AUTO, MODE_MMAP_EXT, MODE_MMAP, MODE_FILE, MODE_MEMORY) )
+- [646cc327] class GeoIP2Exception(Exception): pass
+- [3c6c1b4c] from django.conf import settings from django.core.exceptions import ValidationError from django.core.validators import validate_ipv46_address from django.utils._os import to_path from django.utils.functional import cached_property
+- [59f62387] import ipaddress import socket
+- [2cfb4f6d] try: import geoip2.database except ImportError: # pragma: no cover HAS_GEOIP2 = False else: HAS_GEOIP2 = True __all__ += ["GeoIP2", "GeoIP2Exception"]

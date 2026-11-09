@@ -1,6 +1,6 @@
 # Fact 76d21bba
 
-Store id: 2606d1c1-f81d-4f05-9ce0-39a8bddd8d51
+Store id: b09fa799-1d01-4ba2-9f3a-0eda6ca07731
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_parent_chain(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1185190+00:00`
+- posted_at: `2026-11-09T23:32:05.1162870+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 289,
     "symbol": "DeferredAttribute._check_parent_chain"
   },
-  "id": "2606d1c1-f81d-4f05-9ce0-39a8bddd8d51",
+  "id": "b09fa799-1d01-4ba2-9f3a-0eda6ca07731",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1185190+00:00"
+    "posted_at": "2026-11-09T23:32:05.1162870+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "def5c9b4-a757-4ab0-b37a-c1d840a7e1bc",
+  "subject_id": "829d976c-d536-40c2-a521-918d34d38cb1",
   "subject_name": "django/db/models/query_utils::DeferredAttribute._check_parent_chain",
   "tags": [
     "entity:method"

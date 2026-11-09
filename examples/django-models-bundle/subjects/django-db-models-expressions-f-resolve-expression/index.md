@@ -1,9 +1,9 @@
 # django/db/models/expressions::F.resolve_expression
 
-- Subject: django/db/models/expressions::F.resolve_expression (id `0095439f-8ef6-40b2-9db5-a6c9e4387e6c`)
+- Subject: django/db/models/expressions::F.resolve_expression (id `ccba5a15-d341-4f69-9d8e-cf363cbb880c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

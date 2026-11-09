@@ -1,6 +1,6 @@
 # Fact fbb970af
 
-Store id: 15270311-4747-4be6-b99e-1698988da49c
+Store id: 931db168-d639-41b9-aefb-4bffbe9ce30c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncTime
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "15270311-4747-4be6-b99e-1698988da49c",
+  "id": "931db168-d639-41b9-aefb-4bffbe9ce30c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncTime"
       },
       "rel": "contains",
-      "target": "6759186e-d42e-48da-a03f-369791ce5317"
+      "target": "7941e2c8-20ce-400e-b25b-4f9467ba296a"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

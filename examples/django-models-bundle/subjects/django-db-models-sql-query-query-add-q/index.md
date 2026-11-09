@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query._add_q
 
-- Subject: django/db/models/sql/query::Query._add_q (id `60e3f417-6c7a-4672-9dc8-8632997b8790`)
+- Subject: django/db/models/sql/query::Query._add_q (id `5bbe7928-1cdf-4be6-ac28-6879e78b3c1e`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 58 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

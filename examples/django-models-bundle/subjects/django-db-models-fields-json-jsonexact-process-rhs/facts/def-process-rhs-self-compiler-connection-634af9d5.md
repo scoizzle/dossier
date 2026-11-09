@@ -1,6 +1,6 @@
 # Fact 634af9d5
 
-Store id: 47707437-5853-4793-87f5-7b2dcabca54e
+Store id: 36c23589-379b-48e3-b9d0-17670bd97b7b
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6789920+00:00`
+- posted_at: `2026-11-09T23:31:57.9281910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 320,
     "symbol": "JSONExact.process_rhs"
   },
-  "id": "47707437-5853-4793-87f5-7b2dcabca54e",
+  "id": "36c23589-379b-48e3-b9d0-17670bd97b7b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6789920+00:00"
+    "posted_at": "2026-11-09T23:31:57.9281910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "501a54ae-df7b-4d16-8fbe-779183650a50",
+  "subject_id": "921f2f2b-a3fb-4ca7-bf0e-4fd52b678f11",
   "subject_name": "django/db/models/fields/json::JSONExact.process_rhs",
   "tags": [
     "entity:method"

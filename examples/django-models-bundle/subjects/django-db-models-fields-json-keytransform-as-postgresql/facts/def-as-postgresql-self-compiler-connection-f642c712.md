@@ -1,6 +1,6 @@
 # Fact f642c712
 
-Store id: 8734a98a-7385-4ae9-a505-5e6e86d2785f
+Store id: cd30e07f-653a-40bc-a343-89d9243e442f
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7123430+00:00`
+- posted_at: `2026-11-09T23:31:57.9725070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 524,
     "symbol": "KeyTransform.as_postgresql"
   },
-  "id": "8734a98a-7385-4ae9-a505-5e6e86d2785f",
+  "id": "cd30e07f-653a-40bc-a343-89d9243e442f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7123430+00:00"
+    "posted_at": "2026-11-09T23:31:57.9725070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c585b911-3ad1-4cd1-a141-2d05adc5cca2",
+  "subject_id": "4cedc6f2-8fdb-47a7-a005-676a7c6247b7",
   "subject_name": "django/db/models/fields/json::KeyTransform.as_postgresql",
   "tags": [
     "entity:method"

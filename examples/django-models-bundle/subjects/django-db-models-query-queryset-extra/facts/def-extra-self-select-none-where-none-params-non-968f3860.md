@@ -1,6 +1,6 @@
 # Fact 968f3860
 
-Store id: 44464b94-cf19-4469-af26-76451e53c126
+Store id: d0c51fa7-602f-4f1a-ac28-ab69bef1b54f
 
 ## Text
 
@@ -20,7 +20,7 @@ def extra( self, select=None, where=None, params=None, tables=None, order_by=Non
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6649080+00:00`
+- posted_at: `2026-11-09T23:32:04.5903820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1956,
     "symbol": "QuerySet.extra"
   },
-  "id": "44464b94-cf19-4469-af26-76451e53c126",
+  "id": "d0c51fa7-602f-4f1a-ac28-ab69bef1b54f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6649080+00:00"
+    "posted_at": "2026-11-09T23:32:04.5903820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "56965b2b-5510-447e-a66e-db0295d7bf8a",
+  "subject_id": "dc962209-e09d-4802-adc6-a645ebbecc07",
   "subject_name": "django/db/models/query::QuerySet.extra",
   "tags": [
     "entity:method"

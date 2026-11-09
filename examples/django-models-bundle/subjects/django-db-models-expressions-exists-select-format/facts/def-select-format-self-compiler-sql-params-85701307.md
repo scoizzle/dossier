@@ -1,6 +1,6 @@
 # Fact 85701307
 
-Store id: c5ddd65f-b87c-4c04-b4b1-938b67c00145
+Store id: a0a6bb5d-1d06-40b7-a8cf-6510bccf127a
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7366290+00:00`
+- posted_at: `2026-11-09T23:31:55.9814620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1896,
     "symbol": "Exists.select_format"
   },
-  "id": "c5ddd65f-b87c-4c04-b4b1-938b67c00145",
+  "id": "a0a6bb5d-1d06-40b7-a8cf-6510bccf127a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7366290+00:00"
+    "posted_at": "2026-11-09T23:31:55.9814620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2885f8ac-be1f-4d88-a4fd-8b6d5e426a67",
+  "subject_id": "d7fd4757-acb1-4653-983e-5c08ccc371f2",
   "subject_name": "django/db/models/expressions::Exists.select_format",
   "tags": [
     "entity:method"

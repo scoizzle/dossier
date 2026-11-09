@@ -1,6 +1,6 @@
 # Fact 1cde9969
 
-Store id: 7c0574a1-d865-4257-9f03-5dba64a8e8c4
+Store id: 17bb8b2b-20c0-4870-85b7-b499eb2bf4e8
 
 ## Text
 
@@ -20,7 +20,7 @@ class ForwardOneToOneDescriptor(ForwardManyToOneDescriptor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7326620+00:00`
+- posted_at: `2026-11-09T23:31:59.1711680+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 379,
     "symbol": "ForwardOneToOneDescriptor"
   },
-  "id": "7c0574a1-d865-4257-9f03-5dba64a8e8c4",
+  "id": "17bb8b2b-20c0-4870-85b7-b499eb2bf4e8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7326620+00:00"
+    "posted_at": "2026-11-09T23:31:59.1711680+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "88af7c11-fe2a-4158-ac4d-aa0ff5b54270",
+  "subject_id": "1f3ddd53-934b-46ec-a6ff-e9b1ead8537e",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardOneToOneDescriptor",
   "tags": [
     "entity:class"

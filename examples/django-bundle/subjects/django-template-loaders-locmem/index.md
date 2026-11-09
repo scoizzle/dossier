@@ -1,8 +1,8 @@
 # django/template/loaders/locmem
 
-- Subject: django/template/loaders/locmem (id `36f7f3cc-4d1b-47e4-8846-3cd186900c17`)
+- Subject: django/template/loaders/locmem (id `ec2a5f78-d3d6-468d-b3e2-aaa1e6a35aad`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 201 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

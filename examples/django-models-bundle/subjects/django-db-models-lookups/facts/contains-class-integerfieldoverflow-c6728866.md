@@ -1,6 +1,6 @@
 # Fact c6728866
 
-Store id: 07d64903-3147-486d-9ccc-0700967a13a4
+Store id: 039f8a3e-c658-4dff-9f72-1572ef23f2e0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerFieldOverflow
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "07d64903-3147-486d-9ccc-0700967a13a4",
+  "id": "039f8a3e-c658-4dff-9f72-1572ef23f2e0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerFieldOverflow"
       },
       "rel": "contains",
-      "target": "e70211a8-51b7-4c58-8ce1-f17708cbf10d"
+      "target": "7ba007af-5293-403f-85a6-44962dbb84e1"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

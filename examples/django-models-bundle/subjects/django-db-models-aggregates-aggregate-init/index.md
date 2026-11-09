@@ -1,9 +1,9 @@
 # django/db/models/aggregates::Aggregate.__init__
 
-- Subject: django/db/models/aggregates::Aggregate.__init__ (id `320724c6-6732-4362-b487-a1ecab6e68a6`)
+- Subject: django/db/models/aggregates::Aggregate.__init__ (id `dc327e00-7626-4099-a612-fe28692974b7`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 36 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

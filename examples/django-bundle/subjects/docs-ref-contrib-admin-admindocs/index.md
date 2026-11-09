@@ -1,14 +1,14 @@
 # docs/ref/contrib/admin/admindocs
 
-- Subject: docs/ref/contrib/admin/admindocs (id `5a08523f-97cb-4bc4-af96-e01b06725d7e`)
+- Subject: docs/ref/contrib/admin/admindocs (id `bd36ace2-c240-4b5e-89c9-9bc8b7abcc67`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 23 of 40
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1684 tokens
+- Facts shown: 40 of 40
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - **Context** [ac0dd05fa9a91c22-9]
 - **Template:** [5c191242]
@@ -34,6 +34,22 @@
 - Documentation for this page Jumps you from any page to the documentation for the view that generates that page. [f9d4f919]
 - For example:: [28edef836ab93f57-6]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [9a45481f] [af630e54] [f80b896e] [51c841ec] [9a3ef7e9] [8bc02124] [90afb2e8] [75696e16fcbb84ec-3] [46ffe1a0] [056f3804] [4c442902] [213c2405] [373ceefb] [ced258e6] [fa2aa9b5] [bf576b9d] [1db8be9f]
+- [9a45481f] Documentation helpers =====================
+- [af630e54] Each URL in your site has a separate entry in the ``admindocs`` page, and clicking on a given URL will show you the corresponding view. Helpful things you can document in your view function docstrings include:
+- [f80b896e] Each of these support custom link text with the format ``:role:`link text <link>```. For example, ``:tag:`block <built_in-block>```.
+- [51c841ec] Included Bookmarklets =====================
+- [9a3ef7e9] Model reference ===============
+- [8bc02124] Once those steps are complete, you can start browsing the documentation by going to your admin interface and clicking the "Documentation" link in the upper right of the page.
+- [90afb2e8] One bookmarklet is available from the ``admindocs`` page:
+- [75696e16fcbb84ec-3] Overview ========
+- [46ffe1a0] Template reference ==================
+- [056f3804] Template tags and filters reference ===================================
+- [4c442902] The **models** section of the ``admindocs`` page describes each model that the user has access to along with all the fields, properties, and methods available on it. Relationships to other models appear as hyperlinks. Descriptions are pulled from ``help_text`` attributes on fields or from docstrings on model methods.
+- [213c2405] The **tags** and **filters** ``admindocs`` sections describe all the tags and filters that come with Django (in fact, the :ref:`built-in tag reference <ref-templates-builtins-tags>` and :ref:`built-in filter reference <ref-templates-builtins-filters>` documentation come directly from those pages). Any tags or filters that you create or are added by a third-party app will show up in these sections as well.
+- [373ceefb] The following special markup can be used in your docstrings to easily create hyperlinks to other components:
+- [ced258e6] To activate the :mod:`~django.contrib.admindocs`, you will need to do the following:
+- [fa2aa9b5] Using this bookmarklet requires that ``XViewMiddleware`` is installed and that you are logged into the :mod:`Django admin <django.contrib.admin>` as a :class:`~django.contrib.auth.models.User` with :attr:`~django.contrib.auth.models.User.is_staff` set to ``True``.
+- [bf576b9d] View reference ==============
+- [1db8be9f] While ``admindocs`` does not include a place to document templates by themselves, if you use the ``:template:`path/to/template.html``` syntax in a docstring the resulting page will verify the path of that template with Django's :ref:`template loaders <template-loaders>`. This can be a handy way to check if the specified template exists and to show where on the filesystem that template is stored.

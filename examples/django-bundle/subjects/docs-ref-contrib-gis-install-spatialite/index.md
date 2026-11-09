@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/install/spatialite
 
-- Subject: docs/ref/contrib/gis/install/spatialite (id `aa168079-7885-4355-8edc-435b4674b468`)
+- Subject: docs/ref/contrib/gis/install/spatialite (id `bc7e025d-b558-4406-9ab6-237b18745d98`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 33 of 46
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1319 tokens
+- Facts shown: 46 of 46
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ ./configure --target=macosx [662ae733]
 - $ CFLAGS="-DSQLITE_ENABLE_RTREE=1" ./configure $ make $ sudo make install $ cd .. [285e2f59]
@@ -44,6 +44,18 @@
 - If you obtain an error, you will have to recompile SQLite from source. Otherwise, skip this section. [cbac806c]
 - Installing from source ====================== [a97aa4e7]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [db5156b0] [5eb2ab30] [e8569145] [a643e7e1] [da015e7f] [4b952821] [20af7518] [2f631c59] [158dd8e6] [ac9e49aa] [c2ea94bb] [97ee2123] [4996c8fb]
+- [db5156b0] In any case, you should always be able to :ref:`install from source <spatialite_source>`.
+- [5eb2ab30] Next, run the ``configure`` script -- however the ``CFLAGS`` environment variable needs to be customized so that SQLite knows to build the R*Tree module:
+- [e8569145] SQLite ------
+- [a643e7e1] SpatiaLite library (``libspatialite``) --------------------------------------
+- [da015e7f] To install from sources, download the latest amalgamation source archive from the `SQLite download page`__, and extract:
+- [4b952821] To install the SpatiaLite library and tools, macOS users can use `Homebrew`_.
+- [20af7518] Using this brew install path, the full path can be constructed like this::
+- [2f631c59] __ https://www.gaia-gis.it/fossil/libspatialite/index __ https://www.gaia-gis.it/gaia-sins/
+- [158dd8e6] __ https://www.gaia-gis.it/gaia-sins/libspatialite-sources/
+- [ac9e49aa] __ https://www.sqlite.org/rtree.html __ https://www.sqlite.org/download.html
+- [c2ea94bb] `Homebrew`_ handles all the SpatiaLite related packages on your behalf, including SQLite, SpatiaLite, PROJ, and GEOS. Install them like this:
+- [97ee2123] `SpatiaLite`__ adds spatial support to SQLite, turning it into a full-featured spatial database.
+- [4996c8fb] macOS-specific instructions ==============================

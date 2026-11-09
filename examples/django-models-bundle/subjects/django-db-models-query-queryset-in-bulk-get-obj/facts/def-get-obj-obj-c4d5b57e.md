@@ -1,6 +1,6 @@
 # Fact c4d5b57e
 
-Store id: a6695ae5-c7d4-4de4-96d6-facf9a8f8ac1
+Store id: bf3e4c8d-f6c7-493c-859a-10abbd8b1533
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_obj(obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5050190+00:00`
+- posted_at: `2026-11-09T23:32:04.4669100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1295,
     "symbol": "QuerySet.in_bulk.get_obj"
   },
-  "id": "a6695ae5-c7d4-4de4-96d6-facf9a8f8ac1",
+  "id": "bf3e4c8d-f6c7-493c-859a-10abbd8b1533",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5050190+00:00"
+    "posted_at": "2026-11-09T23:32:04.4669100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b922cbc4-505f-44b2-82ec-366f802911f1",
+  "subject_id": "5bd04412-1786-47f1-a0bf-739a48ed102b",
   "subject_name": "django/db/models/query::QuerySet.in_bulk.get_obj",
   "tags": [
     "entity:function"

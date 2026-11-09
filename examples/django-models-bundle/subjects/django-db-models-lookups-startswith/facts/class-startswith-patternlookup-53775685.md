@@ -1,6 +1,6 @@
 # Fact 53775685
 
-Store id: f22056ec-a85c-4feb-8c0b-d87887fa9ff4
+Store id: 0b9030d0-e359-4776-9888-eb1fc22041b5
 
 ## Text
 
@@ -20,7 +20,7 @@ class StartsWith(PatternLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1846970+00:00`
+- posted_at: `2026-11-09T23:32:03.3642160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 635,
     "symbol": "StartsWith"
   },
-  "id": "f22056ec-a85c-4feb-8c0b-d87887fa9ff4",
+  "id": "0b9030d0-e359-4776-9888-eb1fc22041b5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1846970+00:00"
+    "posted_at": "2026-11-09T23:32:03.3642160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ad071f0-81e7-480c-84c6-7e6d09c1325b",
+  "subject_id": "2d8d61f6-11b1-4c46-b863-42777044c360",
   "subject_name": "django/db/models/lookups::StartsWith",
   "tags": [
     "entity:class",

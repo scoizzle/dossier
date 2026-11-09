@@ -1,9 +1,9 @@
 # django/db/models/expressions::BaseExpression.contains_subquery
 
-- Subject: django/db/models/expressions::BaseExpression.contains_subquery (id `15be7068-9032-4c8d-b7a7-e13c3a494b6a`)
+- Subject: django/db/models/expressions::BaseExpression.contains_subquery (id `75a7ce49-7a1c-418e-a413-90a4e5079156`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 74554cf5
 
-Store id: 8add4cf1-7fe3-47e6-b4fe-bf0714283421
+Store id: 179a2f03-9fcf-4920-9e21-4f423a3302b1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JoinPromoter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5840140+00:00`
+- posted_at: `2026-11-09T23:32:07.1866820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8add4cf1-7fe3-47e6-b4fe-bf0714283421",
+  "id": "179a2f03-9fcf-4920-9e21-4f423a3302b1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5840140+00:00"
+    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JoinPromoter"
       },
       "rel": "contains",
-      "target": "dd8e0b95-7764-471a-b8ff-4dca6eb27472"
+      "target": "0b96122d-adc6-405b-94f3-fbb1b5459c01"
     }
   ],
   "status": "live",
-  "subject_id": "414527cc-92ff-4d99-a78e-04fa25656e92",
+  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:class"

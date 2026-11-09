@@ -1,8 +1,8 @@
 # django/template/utils
 
-- Subject: django/template/utils (id `ddcf2db0-3fe5-4752-b6c5-c39e6872eb64`)
+- Subject: django/template/utils (id `ad1f15c8-f817-447f-b6fa-31bc57a64766`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 856 tokens
 - Facts shown: 17 of 17
 - Conflicts: 0

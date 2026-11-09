@@ -1,6 +1,6 @@
 # Fact 976f3a2e
 
-Store id: f7f74a1c-320a-45f6-a811-e98760a40935
+Store id: 3000f1ed-1151-449d-9e58-b6b3033a3f90
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedGreaterThan(RelatedLookupMixin, GreaterThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1294700+00:00`
+- posted_at: `2026-11-09T23:32:00.0146940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 139,
     "symbol": "RelatedGreaterThan"
   },
-  "id": "f7f74a1c-320a-45f6-a811-e98760a40935",
+  "id": "3000f1ed-1151-449d-9e58-b6b3033a3f90",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1294700+00:00"
+    "posted_at": "2026-11-09T23:32:00.0146940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6216b244-8392-4912-b220-3229434656bf",
+  "subject_id": "5486fc1a-09ee-4e46-a380-36777da5b627",
   "subject_name": "django/db/models/fields/related_lookups::RelatedGreaterThan",
   "tags": [
     "entity:class"

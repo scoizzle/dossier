@@ -1,6 +1,6 @@
 # Fact 9d9887cb
 
-Store id: 97cb50b8-87a4-4a87-8ae3-158c05b85dba
+Store id: 2ed15daf-7c5d-4169-9019-4cebfaf6afde
 
 ## Text
 
@@ -20,7 +20,7 @@ class Tan(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6873990+00:00`
+- posted_at: `2026-11-09T23:32:01.7789270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 212,
     "symbol": "Tan"
   },
-  "id": "97cb50b8-87a4-4a87-8ae3-158c05b85dba",
+  "id": "2ed15daf-7c5d-4169-9019-4cebfaf6afde",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6873990+00:00"
+    "posted_at": "2026-11-09T23:32:01.7789270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15b669d4-897d-4b73-ab7e-711fbed7ca98",
+  "subject_id": "d50834c1-f445-47fd-9ffb-da671b3d20f4",
   "subject_name": "django/db/models/functions/math::Tan",
   "tags": [
     "entity:class"

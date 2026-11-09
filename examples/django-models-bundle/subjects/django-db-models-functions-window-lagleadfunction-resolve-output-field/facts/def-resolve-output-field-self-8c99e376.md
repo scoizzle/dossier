@@ -1,6 +1,6 @@
 # Fact 8c99e376
 
-Store id: 23a784bf-87db-4119-bbb5-3d5a9f176d7d
+Store id: db26aea6-3a5d-4097-b336-6058561a33ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5643120+00:00`
+- posted_at: `2026-11-09T23:32:02.6941150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 55,
     "symbol": "LagLeadFunction._resolve_output_field"
   },
-  "id": "23a784bf-87db-4119-bbb5-3d5a9f176d7d",
+  "id": "db26aea6-3a5d-4097-b336-6058561a33ee",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5643120+00:00"
+    "posted_at": "2026-11-09T23:32:02.6941150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c8fb62dd-f765-4275-b731-83dc6a1d35e0",
+  "subject_id": "1aa7ddb2-e605-4e76-a36e-cf5fae4f9199",
   "subject_name": "django/db/models/functions/window::LagLeadFunction._resolve_output_field",
   "tags": [
     "entity:method"

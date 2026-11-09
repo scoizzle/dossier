@@ -1,6 +1,6 @@
 # Fact 5ab53e71
 
-Store id: cbbcd482-eb5c-4187-be40-7b87e6da2a03
+Store id: c299a6fb-b93a-434e-8770-9aad0a67bf98
 
 ## Text
 
@@ -20,7 +20,7 @@ class SHA224(MySQLSHA2Mixin, PostgreSQLSHAMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1778440+00:00`
+- posted_at: `2026-11-09T23:32:02.2803230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 307,
     "symbol": "SHA224"
   },
-  "id": "cbbcd482-eb5c-4187-be40-7b87e6da2a03",
+  "id": "c299a6fb-b93a-434e-8770-9aad0a67bf98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1778440+00:00"
+    "posted_at": "2026-11-09T23:32:02.2803230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "43dbc7cc-2598-468b-8d6e-baf2c4d40b6d",
+  "subject_id": "f663ac9a-1a4a-4482-a7f0-ffc0cf997051",
   "subject_name": "django/db/models/functions/text::SHA224",
   "tags": [
     "entity:class"

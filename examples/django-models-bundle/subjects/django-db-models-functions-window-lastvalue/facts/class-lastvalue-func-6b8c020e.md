@@ -1,6 +1,6 @@
 # Fact 6b8c020e
 
-Store id: e75fc248-7aca-4f31-b6ce-326d49324196
+Store id: 4310c49c-cc80-4ccb-bd53-4fc685d1270a
 
 ## Text
 
@@ -20,7 +20,7 @@ class LastValue(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5694890+00:00`
+- posted_at: `2026-11-09T23:32:02.6999120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 64,
     "symbol": "LastValue"
   },
-  "id": "e75fc248-7aca-4f31-b6ce-326d49324196",
+  "id": "4310c49c-cc80-4ccb-bd53-4fc685d1270a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5694890+00:00"
+    "posted_at": "2026-11-09T23:32:02.6999120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "db508156-0108-405c-a1c1-de8cf235225a",
+  "subject_id": "7ca460b0-669b-4c44-a6ae-eaa04bd0855d",
   "subject_name": "django/db/models/functions/window::LastValue",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact cfc46260
 
-Store id: cc6dc054-c212-420c-8d37-3cea88a678e5
+Store id: 6b4cf42f-1f5f-423a-a211-e56d645361f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_limit_choices_to(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2838040+00:00`
+- posted_at: `2026-11-09T23:31:58.6385260+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 481,
     "symbol": "RelatedField.get_limit_choices_to"
   },
-  "id": "cc6dc054-c212-420c-8d37-3cea88a678e5",
+  "id": "6b4cf42f-1f5f-423a-a211-e56d645361f0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2838040+00:00"
+    "posted_at": "2026-11-09T23:31:58.6385260+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9d02c33c-4ee6-480a-924f-0ba5114484df",
+  "subject_id": "87009584-c7ce-427f-9491-ffbb1537171d",
   "subject_name": "django/db/models/fields/related::RelatedField.get_limit_choices_to",
   "tags": [
     "entity:method"

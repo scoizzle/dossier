@@ -1,6 +1,6 @@
 # Fact 5ca8447f
 
-Store id: b6d1542f-7d6c-4a1f-ba64-b79406ffe167
+Store id: 799658b7-b013-4730-b548-a6b484aee044
 
 ## Text
 
@@ -20,7 +20,7 @@ class Window(SQLiteNumericMixin, Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7538370+00:00`
+- posted_at: `2026-11-09T23:31:55.9986160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2020,
     "symbol": "Window"
   },
-  "id": "b6d1542f-7d6c-4a1f-ba64-b79406ffe167",
+  "id": "799658b7-b013-4730-b548-a6b484aee044",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7538370+00:00"
+    "posted_at": "2026-11-09T23:31:55.9986160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c12ceee5-a41e-4a5b-963b-c9a021c88849",
+  "subject_id": "1b42dc56-2264-4f06-8a44-e4f0cc893996",
   "subject_name": "django/db/models/expressions::Window",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact ee83963e
 
-Store id: bcc8a27b-daa3-42c3-a71b-1c7c620ebe6c
+Store id: c9048326-969a-4968-bb28-1c5e1c4b8b8e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_bilateral_transforms(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0565860+00:00`
+- posted_at: `2026-11-09T23:32:03.2062780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 224,
     "symbol": "Transform.get_bilateral_transforms"
   },
-  "id": "bcc8a27b-daa3-42c3-a71b-1c7c620ebe6c",
+  "id": "c9048326-969a-4968-bb28-1c5e1c4b8b8e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0565860+00:00"
+    "posted_at": "2026-11-09T23:32:03.2062780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "950a9104-a508-4a12-9cdd-78acc4b7764b",
+  "subject_id": "0ed1164d-1772-4fd3-a581-bdede26d6597",
   "subject_name": "django/db/models/lookups::Transform.get_bilateral_transforms",
   "tags": [
     "entity:method"

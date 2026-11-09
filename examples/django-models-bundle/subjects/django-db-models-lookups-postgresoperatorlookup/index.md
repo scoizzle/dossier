@@ -1,9 +1,9 @@
 # django/db/models/lookups::PostgresOperatorLookup
 
-- Subject: django/db/models/lookups::PostgresOperatorLookup (id `f83f01fb-8908-4746-875e-caa2b54a6150`)
+- Subject: django/db/models/lookups::PostgresOperatorLookup (id `95ee4512-90d1-42d3-b960-8dd2bdf473af`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

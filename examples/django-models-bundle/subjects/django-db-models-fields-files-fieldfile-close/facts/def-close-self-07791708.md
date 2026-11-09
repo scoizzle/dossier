@@ -1,6 +1,6 @@
 # Fact 07791708
 
-Store id: 016a90ce-9562-418c-ab1f-2228cb9dccc1
+Store id: 23a23056-e6ec-447f-8ae6-8f74cef40f5c
 
 ## Text
 
@@ -20,7 +20,7 @@ def close(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2135620+00:00`
+- posted_at: `2026-11-09T23:31:57.3728980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 136,
     "symbol": "FieldFile.close"
   },
-  "id": "016a90ce-9562-418c-ab1f-2228cb9dccc1",
+  "id": "23a23056-e6ec-447f-8ae6-8f74cef40f5c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2135620+00:00"
+    "posted_at": "2026-11-09T23:31:57.3728980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "038378d0-4570-455c-8725-b9f7c6f10e88",
+  "subject_id": "d3826f0a-8224-449d-b610-92446850d984",
   "subject_name": "django/db/models/fields/files::FieldFile.close",
   "tags": [
     "entity:method"

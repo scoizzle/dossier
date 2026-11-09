@@ -1,6 +1,6 @@
 # Fact 1897bad3
 
-Store id: ff62ea70-588a-40b7-9b7d-a6246e765a5e
+Store id: a6d5541f-9ef6-439c-a66c-59035d735d77
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerChoices(Choices, IntEnum)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.3068570+00:00`
+- posted_at: `2026-11-09T23:31:55.5084880+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 68,
     "symbol": "IntegerChoices"
   },
-  "id": "ff62ea70-588a-40b7-9b7d-a6246e765a5e",
+  "id": "a6d5541f-9ef6-439c-a66c-59035d735d77",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.3068570+00:00"
+    "posted_at": "2026-11-09T23:31:55.5084880+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "225e5a9d-dbdc-4ba4-8304-5389d152a313",
+  "subject_id": "322ad7b4-0b16-4b13-a8bd-3481267b07b9",
   "subject_name": "django/db/models/enums::IntegerChoices",
   "tags": [
     "entity:class"

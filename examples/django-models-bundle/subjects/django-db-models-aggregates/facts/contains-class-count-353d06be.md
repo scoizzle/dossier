@@ -1,6 +1,6 @@
 # Fact 353d06be
 
-Store id: 2c9884f1-e91a-4edc-9f8e-2a72655cd1ac
+Store id: 3792f29f-8234-4242-9cd0-218d7e67607d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Count
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2c9884f1-e91a-4edc-9f8e-2a72655cd1ac",
+  "id": "3792f29f-8234-4242-9cd0-218d7e67607d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Count"
       },
       "rel": "contains",
-      "target": "9523552e-5bf3-41e9-9520-28b03320621b"
+      "target": "bcd3907f-cca0-4ee9-93a9-4ec8de62b68f"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

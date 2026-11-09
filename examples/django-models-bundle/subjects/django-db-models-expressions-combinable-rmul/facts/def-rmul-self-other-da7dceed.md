@@ -1,6 +1,6 @@
 # Fact da7dceed
 
-Store id: 0b9eec2c-c931-4ee1-92bd-553f6b29e7b6
+Store id: b2d3b256-bed5-4f6c-acb6-a644027a86ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rmul__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4865190+00:00`
+- posted_at: `2026-11-09T23:31:55.7453540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 139,
     "symbol": "Combinable.__rmul__"
   },
-  "id": "0b9eec2c-c931-4ee1-92bd-553f6b29e7b6",
+  "id": "b2d3b256-bed5-4f6c-acb6-a644027a86ee",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4865190+00:00"
+    "posted_at": "2026-11-09T23:31:55.7453540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2835b39-d6d7-46af-b000-b43dfb35ecc1",
+  "subject_id": "247f11f9-3e33-41a7-8a5d-43e7ee2914ce",
   "subject_name": "django/db/models/expressions::Combinable.__rmul__",
   "tags": [
     "entity:method"

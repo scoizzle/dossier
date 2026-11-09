@@ -1,6 +1,6 @@
 # Fact e3a3d724
 
-Store id: 5b9eb622-2f47-4d24-9247-180775f1c4de
+Store id: 127c4128-1218-481c-a6cf-08be5120cb94
 
 ## Text
 
@@ -20,7 +20,7 @@ def trim_start(self, names_with_path)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5521590+00:00`
+- posted_at: `2026-11-09T23:32:07.1458690+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2696,
     "symbol": "Query.trim_start"
   },
-  "id": "5b9eb622-2f47-4d24-9247-180775f1c4de",
+  "id": "127c4128-1218-481c-a6cf-08be5120cb94",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5521590+00:00"
+    "posted_at": "2026-11-09T23:32:07.1458690+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "23186133-b73b-4e76-a0a6-3f8740f245e3",
+  "subject_id": "a95eaddd-f933-46d5-be5c-d09988701e84",
   "subject_name": "django/db/models/sql/query::Query.trim_start",
   "tags": [
     "entity:method"

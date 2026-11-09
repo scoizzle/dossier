@@ -1,14 +1,14 @@
 # docs/internals/git
 
-- Subject: docs/internals/git (id `3910cf37-151b-4a98-aa4f-2bb25eee091e`)
+- Subject: docs/internals/git (id `446beafd-a097-4aa2-b1be-6249a2aba09c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 18 of 65
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2903 tokens
+- Facts shown: 64 of 65
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - For example, shortly after the release of Django 1.3 the branch ``stable/1.3.x`` was created. Official support for that release has expired, and so it no longer receives direct maintenance from the Django project. However, that and all other similarly named branches continue to exist, and interested community members have occasionally used them to provide unofficial support for old Django releases. [7476f3b9]
 - Previously, these branches weren't created until right after the releases and the stabilization work occurred on the main repository branch. Thus, no new feature development work for the next release of Django could be committed until the final release happened. [672e6880]
@@ -29,6 +29,51 @@
 - * ``newforms-admin``: The second refactoring of Django's bundled administrative application. This became part of Django as of the 1.0 release, and is the basis of the current incarnation of ``django.contrib.admin``. [4e528955]
 - * ``per-object-permissions`` [a0bafc65]
 
-## Beyond the budget
+## All facts
 
-46 more facts did not fit in the budget: [99017f37] [c6dd093e] [af962bc9] [3551f0c0] [06406a6f] [0aa18ef4] [3dd491fc] [cb2ccfc2] [9a10da1b] [73ab7b83] [af705cab] [2c9bd93051411b26] [2c9bd93051411b26-2] [942ae6c11625c81c-15] [ff11ea7b] [94138150] [391d347f] [54df0152] [91c09e8e] [e456f2d5] [420db252] [2dd4f5e7] [b6a570bd] [56285976] [7560448e] [da4ab83b] [2f47171f] [b9be394a] [205276b5] [984ce0d9] [99ac95f2] [6300b1af] [32cce9a4ed33af09] [94f4a2ce] [d6a325e9] [cef773a4] [111b7246] [ca6932ac] [8b3b834e] [0b221583] [b9446bae] [70c4ddc9] [365c83fb] [b9e2f579] [0dee0df2] [6462646c]
+- [99017f37] * ``queryset-refactor``: A refactoring of the internals of Django's object-relational mapper. This became part of Django as of the 1.0 release.
+- [c6dd093e] * ``schema-evolution-ng``
+- [af962bc9] * ``schema-evolution``
+- [3551f0c0] * ``search-api``
+- [06406a6f] * ``sqlalchemy``
+- [0aa18ef4] * ``stable/A.B.x`` are the branches where release preparation work happens. They are also used for bugfix and security releases which occur as necessary after the initial release of a feature version.
+- [3dd491fc] * ``unicode``: A refactoring of Django's internals to consistently use Unicode-based strings in most places within Django and Django applications. This became part of Django as of the 1.0 release.
+- [cb2ccfc2] .. _Git: https://git-scm.com/ .. _documentation: https://git-scm.com/doc .. _branches: https://github.com/django/django/branches .. _tags: https://github.com/django/django/tags
+- [9a10da1b] .. _an official packaged release of Django: https://www.djangoproject.com/download/
+- [73ab7b83] .. _archived-feature-development-work:
+- [af705cab] .. _tags: https://github.com/django/django/tags
+- [2c9bd93051411b26] .. admonition:: Historical information
+- [2c9bd93051411b26-2] .. admonition:: Historical information
+- [942ae6c11625c81c-15] .. note::
+- [ff11ea7b] ================================= The Django source code repository =================================
+- [94138150] A number of tags also exist under the ``archive/`` prefix for :ref:`archived work<archived-feature-development-work>`.
+- [391d347f] A number of tags exist under the ``archive/`` prefix to maintain a reference to this and other work of historical interest.
+- [54df0152] Additionally, the following tags under the ``archive/attic/`` prefix reference the tips of branches that were closed, but whose code was never merged into Django, and the features they aimed to implement were never finished:
+- [91c09e8e] Django used to be maintained with the Subversion revision control system, that has no standard way of indicating this. As a workaround, branches of Django which are closed and no longer maintained were moved into ``attic``.
+- [e456f2d5] Django uses branches to prepare for releases of Django. Each major release series has its own stable branch.
+- [420db252] Each Django release is tagged and signed by the releaser.
+- [2dd4f5e7] Feature-development branches tend by their nature to be temporary. Some produce successful features which are merged back into Django's main branch to become part of an official release, but others do not; in either case, there comes a time when the branch is no longer being actively worked on by any developer. At this point the branch is considered closed.
+- [b6a570bd] Finally, under the ``archive/`` prefix, the repository contains ``soc20XX/<project>`` tags referencing the tip of branches that were used by students who worked on Django during the 2009 and 2010 Google Summer of Code programs.
+- [56285976] For example, after the release of Django 1.5, the branch ``stable/1.5.x`` receives only fixes for security and critical stability bugs, which are eventually released as Django 1.5.1 and so on, ``stable/1.4.x`` receives only security and data loss fixes, and ``stable/1.3.x`` no longer receives any updates.
+- [7560448e] For example, immediately after *Django 1.5 alpha 1* was tagged, the branch ``stable/1.5.x`` was created and all further work on preparing the code for the final 1.5 release was done there.
+- [da4ab83b] Git's website offers downloads for various operating systems. The site also contains vast amounts of `documentation`_.
+- [2f47171f] High-level overview ===================
+- [b9be394a] However, if you'd like to try out in-development code from an upcoming release or contribute to the development of Django, you'll need to obtain a clone of Django's source code repository.
+- [205276b5] If you'd like to try out the in-development code for the next release of Django, or if you'd like to contribute to Django by fixing bugs or developing new features, you'll want to get the code from the main branch.
+- [984ce0d9] If you're going to be working on Django's code (say, to fix a bug or develop a new feature), you can probably stop reading here and move over to :doc:`the documentation for contributing to Django </internals/contributing/index>`, which covers things like the preferred coding style and how to generate and submit a patch.
+- [99ac95f2] Note that this will get *all* of Django: in addition to the top-level ``django`` module containing Python code, you'll also get a copy of Django's documentation, test suite, packaging scripts and other miscellaneous bits. Django's code will be present in your clone as a directory named ``django``.
+- [6300b1af] Stable branches ===============
+- [32cce9a4ed33af09] Tags ====
+- [94f4a2ce] The Django Git repository is located online at `github.com/django/django <https://github.com/django/django>`_. It contains the full source code for all Django releases, which you can browse online.
+- [d6a325e9] The Django source code repository uses `Git`_ to track changes to the code over time, so you'll need a copy of the Git client (a program called ``git``) on your computer, and you'll want to familiarize yourself with the basics of how Git works.
+- [cef773a4] The Git repository also contains `tags`_. These are the exact revisions from which packaged Django releases were produced, since version 1.0.
+- [111b7246] The Git repository includes several `branches`_:
+- [ca6932ac] The following tags under the ``archive/attic/`` prefix reference the tip of branches whose code eventually became part of Django itself:
+- [8b3b834e] The main branch ===============
+- [0b221583] The source code for the `Djangoproject.com <https://www.djangoproject.com/>`_ website can be found at `github.com/django/djangoproject.com <https://github.com/django/djangoproject.com>`_.
+- [b9446bae] The tags can be found on GitHub's `tags`_ page.
+- [70c4ddc9] These branches also provide bugfix and security support as described in :ref:`supported-versions-policy`.
+- [365c83fb] These branches can be found in the repository as ``stable/A.B.x`` branches and will be created right after the first alpha is tagged.
+- [b9e2f579] This document covers the way the code repository is laid out and how to work with and find things in it.
+- [0dee0df2] To try out the in-development code with your own applications, place the directory containing your clone on your Python import path. Then ``import`` statements which look for Django will find the ``django`` module within your clone.
+- [6462646c] When deploying a Django application into a real production environment, you will almost always want to use `an official packaged release of Django`_.

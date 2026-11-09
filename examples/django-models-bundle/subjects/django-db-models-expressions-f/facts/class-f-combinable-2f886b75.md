@@ -1,6 +1,6 @@
 # Fact 2f886b75
 
-Store id: b5d8e1e4-c186-4d05-9a84-ba3dc75c0fe7
+Store id: ecd1d14c-1fe6-4b98-ac50-8ddccb94764d
 
 ## Text
 
@@ -20,7 +20,7 @@ class F(Combinable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5561420+00:00`
+- posted_at: `2026-11-09T23:31:55.8294280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 881,
     "symbol": "F"
   },
-  "id": "b5d8e1e4-c186-4d05-9a84-ba3dc75c0fe7",
+  "id": "ecd1d14c-1fe6-4b98-ac50-8ddccb94764d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5561420+00:00"
+    "posted_at": "2026-11-09T23:31:55.8294280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "13ef72bf-e807-402b-8b17-622bf924fa39",
+  "subject_id": "10f6bc5c-933c-4aec-97af-26e60c07d04c",
   "subject_name": "django/db/models/expressions::F",
   "tags": [
     "entity:class",

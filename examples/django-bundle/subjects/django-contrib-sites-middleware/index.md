@@ -1,8 +1,8 @@
 # django/contrib/sites/middleware
 
-- Subject: django/contrib/sites/middleware (id `dc2c480b-77c1-4858-b100-49054ae9b2ed`)
+- Subject: django/contrib/sites/middleware (id `a4cbe2a2-53ef-4cde-95b9-899bc9804c78`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 113 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

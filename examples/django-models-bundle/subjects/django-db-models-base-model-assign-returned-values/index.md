@@ -1,9 +1,9 @@
 # django/db/models/base::Model._assign_returned_values
 
-- Subject: django/db/models/base::Model._assign_returned_values (id `c3f0ddc6-514c-4025-8fe8-7cb14caa9274`)
+- Subject: django/db/models/base::Model._assign_returned_values (id `bed0d65c-6f95-498a-94e0-287495be65a8`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

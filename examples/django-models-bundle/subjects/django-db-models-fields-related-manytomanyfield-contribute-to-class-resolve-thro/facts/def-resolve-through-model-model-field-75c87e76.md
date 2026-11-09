@@ -1,6 +1,6 @@
 # Fact 75c87e76
 
-Store id: 60e5de8d-dd11-46eb-a88b-d824556fa159
+Store id: f0ec5c90-00bb-490e-b129-b6ffede45572
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_through_model(_, model, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4970210+00:00`
+- posted_at: `2026-11-09T23:31:58.8839180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2136,
     "symbol": "ManyToManyField.contribute_to_class.resolve_through_model"
   },
-  "id": "60e5de8d-dd11-46eb-a88b-d824556fa159",
+  "id": "f0ec5c90-00bb-490e-b129-b6ffede45572",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4970210+00:00"
+    "posted_at": "2026-11-09T23:31:58.8839180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fdb7b8ee-a2d8-4149-9d39-11de89304385",
+  "subject_id": "1e0cf4bb-aefb-4de6-8172-53158eb6fe87",
   "subject_name": "django/db/models/fields/related::ManyToManyField.contribute_to_class.resolve_through_model",
   "tags": [
     "entity:function"

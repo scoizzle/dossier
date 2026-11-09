@@ -1,6 +1,6 @@
 # Fact dd3ace4f
 
-Store id: b2a8716b-860b-47fe-84d8-3eca059816e8
+Store id: 28107e20-ca8f-4418-87f3-76715d46f2bf
 
 ## Text
 
@@ -20,7 +20,7 @@ class Abs(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.5526210+00:00`
+- posted_at: `2026-11-09T23:32:01.6487950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 13,
     "symbol": "Abs"
   },
-  "id": "b2a8716b-860b-47fe-84d8-3eca059816e8",
+  "id": "28107e20-ca8f-4418-87f3-76715d46f2bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.5526210+00:00"
+    "posted_at": "2026-11-09T23:32:01.6487950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5ffb700b-449f-4cf9-9df3-4052223d37b7",
+  "subject_id": "40103c85-aa92-45a2-b8ed-e5ff265fc7cc",
   "subject_name": "django/db/models/functions/math::Abs",
   "tags": [
     "entity:class"

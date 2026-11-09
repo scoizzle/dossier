@@ -1,6 +1,6 @@
 # Fact c3197f67
 
-Store id: 426fb9dc-a0e1-4e98-b680-6a1ba32e2da7
+Store id: d5fa9bd6-dabf-4b72-bf5c-3eb38d0eb768
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_unique_target(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3190120+00:00`
+- posted_at: `2026-11-09T23:31:58.6763380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 673,
     "symbol": "ForeignObject._check_unique_target"
   },
-  "id": "426fb9dc-a0e1-4e98-b680-6a1ba32e2da7",
+  "id": "d5fa9bd6-dabf-4b72-bf5c-3eb38d0eb768",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3190120+00:00"
+    "posted_at": "2026-11-09T23:31:58.6763380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2402a215-0da1-42eb-a929-0ecb72b12905",
+  "subject_id": "a97955df-6310-4f62-872b-cc794822fdf2",
   "subject_name": "django/db/models/fields/related::ForeignObject._check_unique_target",
   "tags": [
     "entity:method"

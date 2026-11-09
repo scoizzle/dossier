@@ -1,6 +1,6 @@
 # Fact 74477576
 
-Store id: eccea7a8-bedd-4bad-9446-e8cbe9f9bf6d
+Store id: 2c246122-f534-4eef-9da9-ab8eb7dee1ba
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, queryset, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7354520+00:00`
+- posted_at: `2026-11-09T23:31:55.9786510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1892,
     "symbol": "Exists.__init__"
   },
-  "id": "eccea7a8-bedd-4bad-9446-e8cbe9f9bf6d",
+  "id": "2c246122-f534-4eef-9da9-ab8eb7dee1ba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7354520+00:00"
+    "posted_at": "2026-11-09T23:31:55.9786510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f05848f4-951e-4089-b77c-1804af7f662e",
+  "subject_id": "e53a1e2f-8caf-4755-b386-e925a57f99db",
   "subject_name": "django/db/models/expressions::Exists.__init__",
   "tags": [
     "entity:method"

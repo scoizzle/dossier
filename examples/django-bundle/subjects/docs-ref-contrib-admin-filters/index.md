@@ -1,14 +1,14 @@
 # docs/ref/contrib/admin/filters
 
-- Subject: docs/ref/contrib/admin/filters (id `d537143d-4239-437c-b86b-1a189df71375`)
+- Subject: docs/ref/contrib/admin/filters (id `3d78c28e-6a94-487f-8b0f-2e52e9de9018`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 16 of 52
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2304 tokens
+- Facts shown: 52 of 52
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def queryset(self, request, queryset): if request.user.is_superuser: return super().queryset(request, queryset) [9c41c79a]
 - # Parameter for the filter that will be used in the URL query. parameter_name = "decade" [b57c3710]
@@ -27,6 +27,41 @@
 - class FilterWithCustomSeparator(admin.FieldListFilter): # custom list separator that should be used to separate values. list_separator = "|" [fc996948]
 - class FilterWithCustomTemplate(admin.SimpleListFilter): template = "custom_template.html" [74515125]
 
-## Beyond the budget
+## All facts
 
-36 more facts did not fit in the budget: [db3c0265] [0f8359de] [939d9c38] [e40b77d4] [653c584f] [c6908fdc] [417d0796] [52d74332] [fd054efc] [ec0c550817dfd42f-2] [43209e2b] [942ae6c11625c81c-33] [942ae6c11625c81c-34] [cd5e8b84] [7aba7a4c] [5592bf58] [35351f21] [ee478069] [8ae98626] [2f320e3e] [87f8028a] [0cd3d05d] [f7fd3273] [79979982] [d660b119] [7c27ef60] [f6adce8a] [8e6c894d] [bd2f22a1] [8faf9b77] [fafb40b3] [67c28ec4] [28112a94] [210794d5] [ca5369d8] [17cc4f95]
+- [db3c0265] class PersonAdmin(admin.ModelAdmin): list_filter = [ ("is_staff", admin.BooleanFieldListFilter), ]
+- [0f8359de] class PersonAdmin(admin.ModelAdmin): list_filter = ["is_staff", "company"]
+- [939d9c38] class PersonAdmin(admin.ModelAdmin): list_filter = [DecadeBornListFilter]
+- [e40b77d4] class PersonAdmin(admin.UserAdmin): list_filter = ["company__name"]
+- [653c584f] from datetime import date
+- [c6908fdc] from django.contrib import admin from django.utils.translation import gettext_lazy as _
+- [417d0796] - A field name. - A subclass of ``django.contrib.admin.SimpleListFilter``. - A 2-tuple containing a field name and a subclass of ``django.contrib.admin.FieldListFilter``.
+- [52d74332] .. _facet-filters:
+- [fd054efc] .. _modeladmin-list-filters:
+- [ec0c550817dfd42f-2] .. currentmodule:: django.contrib.admin
+- [43209e2b] .. image:: _images/list_filter.png
+- [942ae6c11625c81c-33] .. note::
+- [942ae6c11625c81c-34] .. note::
+- [cd5e8b84] =========================== ``ModelAdmin`` List Filters ===========================
+- [7aba7a4c] Assuming ``author`` is a ``ForeignKey`` to a ``User`` model, this will limit the ``list_filter`` choices to the users who have written a book, instead of listing all users.
+- [5592bf58] By default, counts for each filter, known as facets, can be shown by toggling on via the admin UI. These counts will update according to the currently applied filters. See :attr:`ModelAdmin.show_facets` for more details.
+- [35351f21] By defining a filter using the ``__in`` lookup, it is possible to filter for any of a group of values. You need to override the ``expected_parameters`` method, and then specify the ``lookup_kwargs`` attribute with the appropriate field name. By default, multiple values in the query string will be separated with commas, but this can be customized via the ``list_separator`` attribute. The following example shows such a filter using the vertical-pipe character as the separator::
+- [ee478069] Each specified field should be either a ``BooleanField``, ``CharField``, ``DateField``, ``DateTimeField``, ``IntegerField``, ``ForeignKey`` or ``ManyToManyField``, for example::
+- [8ae98626] Facets ======
+- [2f320e3e] Field names in ``list_filter`` can also span relations using the ``__`` lookup, for example::
+- [87f8028a] Finally, if you wish to specify an explicit filter type to use with a field you may provide a ``list_filter`` item as a 2-tuple, where the first element is a field name and the second element is a class inheriting from ``django.contrib.admin.FieldListFilter``, for example::
+- [0cd3d05d] For custom filtering, you can define your own list filter by subclassing ``django.contrib.admin.SimpleListFilter``. You need to provide the ``title`` and ``parameter_name`` attributes, and override the ``lookups`` and ``queryset`` methods, e.g.::
+- [f7fd3273] Here the ``is_staff`` field will use the ``BooleanFieldListFilter``. Specifying only the field name, fields will automatically use the appropriate filter for most cases, but this format allows you to control the filter used.
+- [79979982] It is possible to specify a custom template for rendering a list filter::
+- [d660b119] List filters typically appear only if the filter has more than one choice. A filter's ``has_output()`` method controls whether or not it appears.
+- [7c27ef60] See the default template provided by Django (``admin/filter.html``) for a concrete example.
+- [f6adce8a] See the examples below for discussion of each of these options for defining ``list_filter``.
+- [8e6c894d] The following examples show available filter classes that you need to opt-in to use.
+- [bd2f22a1] The simplest option is to specify the required field names from your model.
+- [8faf9b77] To activate per-field filtering, set :attr:`ModelAdmin.list_filter` to a list or tuple of elements, where each element is one of the following types:
+- [fafb40b3] Using a ``SimpleListFilter`` ============================
+- [67c28ec4] Using a field name ==================
+- [28112a94] Using a field name and an explicit ``FieldListFilter`` ======================================================
+- [210794d5] You can filter empty values using ``EmptyFieldListFilter``, which can filter on both empty strings and nulls, depending on what the field allows to store::
+- [ca5369d8] You can limit the choices of a related model to the objects involved in that relation using ``RelatedOnlyFieldListFilter``::
+- [17cc4f95] ``ModelAdmin`` classes can define list filters that appear in the right sidebar of the change list page of the admin, as illustrated in the following screenshot:

@@ -1,14 +1,14 @@
 # django/templatetags/tz
 
-- Subject: django/templatetags/tz (id `b0c993a8-546d-4b93-af4d-aa2f6e854d92`)
+- Subject: django/templatetags/tz (id `c99550e6-784f-40ae-9977-07bfc9c50df5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 19 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1505 tokens
+- Facts shown: 36 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - {% get_current_timezone as TIME_ZONE %} [44d6b9a1]
 - {% localtime off %}{{ value_in_utc }}{% endlocaltime %} """ bits = token.split_contents() if len(bits) == 1: use_tz = True elif len(bits) > 2 or bits[1] not in ("on", "off"): raise TemplateSyntaxError("%r argument should be 'on' or 'off'" % bits[0]) else: use_tz = bits[1] == "on" nodelist = parser.parse(("endlocaltime",)) parser.delete_first_token() return LocalTimeNode(nodelist, use_tz) [1191360c]
@@ -30,6 +30,22 @@
 - def render(self, context): context[self.variable] = timezone.get_current_timezone_name() return "" [85b804d9]
 - # Template filters [9280c249]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [c435b328] [cca39d74] [92852089] [75d8b3b4] [3feed2be] [bf6cf77c] [85486dce] [ca88a96e] [85c6eae3] [6653228f] [d75bbe86] [35720d72] [6c2a8a10] [48d67217] [e0e6a270] [c2d965fc] [c8c0ccd629deb6b1-9]
+- [c435b328] def render(self, context): old_setting = context.use_tz context.use_tz = self.use_tz output = self.nodelist.render(context) context.use_tz = old_setting return output
+- [cca39d74] def render(self, context): with timezone.override(self.tz.resolve(context)): output = self.nodelist.render(context) return output
+- [92852089] result = timezone.localtime(value, tz)
+- [75d8b3b4] # HACK: datetime instances cannot be assigned new attributes. Define a subclass # in order to define new attributes in do_timezone(). class datetimeobject(datetime): pass
+- [3feed2be] # Template tags
+- [bf6cf77c] @register.filter def localtime(value): """ Convert a datetime to local time in the active time zone.
+- [85486dce] @register.filter def utc(value): """ Convert a datetime to UTC. """ return do_timezone(value, UTC)
+- [ca88a96e] @register.filter("timezone") def do_timezone(value, arg): """ Convert a datetime to local time in a given time zone.
+- [85c6eae3] @register.tag("get_current_timezone") def get_current_timezone_tag(parser, token): """ Store the name of the current time zone in the context.
+- [6653228f] @register.tag("localtime") def localtime_tag(parser, token): """ Force or prevent conversion of datetime objects to local time, regardless of the value of ``settings.USE_TZ``.
+- [d75bbe86] @register.tag("timezone") def timezone_tag(parser, token): """ Enable a given time zone just for this block.
+- [35720d72] class GetCurrentTimezoneNode(Node): """ Template node class used by ``get_current_timezone_tag``. """
+- [6c2a8a10] class LocalTimeNode(Node): """ Template node class used by ``localtime_tag``. """
+- [48d67217] class TimezoneNode(Node): """ Template node class used by ``timezone_tag``. """
+- [e0e6a270] from django.template import Library, Node, TemplateSyntaxError from django.utils import timezone
+- [c2d965fc] import zoneinfo from datetime import UTC, datetime, tzinfo
+- [c8c0ccd629deb6b1-9] register = Library()

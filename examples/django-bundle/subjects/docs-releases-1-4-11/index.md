@@ -1,14 +1,14 @@
 # docs/releases/1.4.11
 
-- Subject: docs/releases/1.4.11 (id `1ef4c90f-6278-4104-968b-8fbe775e7bc6`)
+- Subject: docs/releases/1.4.11 (id `a70f348f-1858-4701-b66a-7707f040a89b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 16 of 26
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1474 tokens
+- Facts shown: 26 of 26
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * :class:`~django.db.models.FilePathField` * :class:`~django.db.models.GenericIPAddressField` * ``IPAddressField`` [428ecd0f450d2530]
 - *April 21, 2014* [22172556c2fbf3e4]
@@ -27,6 +27,15 @@
 - Django's model field classes are aware of their own types and most such classes perform explicit conversion of query arguments to the correct database-level type before querying. However, three model field classes did not correctly convert their arguments: [73572540766df636]
 - MySQL typecasting ================= [f4763ce29a736800]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [2d1926c49ea81c08] [3c93379893fd2596] [42e85ce7bdf784f8] [5a75b830aa1b5602] [1ea9d9a0c480b6d6] [1801a900d754323c] [f74c05bdfbb3f866] [e1842ea5b5ce4e47] [5a2ca07f23bbe305] [a2f642b3c7e9f657]
+- [2d1926c49ea81c08] If a query is performed without first converting values to the appropriate type, this can produce unexpected results, similar to what would occur if the query itself had been manipulated.
+- [3c93379893fd2596] One argument signature for ``reverse()`` is to pass a dotted Python path to the desired view. In this situation, Django will import the module indicated by that dotted path as part of generating the resulting URL. If such a module has import-time side effects, those side effects will occur.
+- [42e85ce7bdf784f8] The MySQL database is known to "typecast" on certain queries; for example, when querying a table which contains string values, but using a query which filters based on an integer value, MySQL will first silently coerce the strings to integers and return a result based on that.
+- [5a75b830aa1b5602] The caching framework includes an option to cache responses to anonymous (i.e., unauthenticated) clients.
+- [1ea9d9a0c480b6d6] These three fields have been updated to convert their arguments to the correct types before querying.
+- [1801a900d754323c] Thus it is possible for an attacker to cause unexpected code execution, given the following conditions:
+- [f74c05bdfbb3f866] To remedy this, ``reverse()`` will now only accept and import dotted paths based on the view-containing modules listed in the project's :doc:`URL pattern configuration </topics/http/urls>`, so as to ensure that only modules the developer intended to be imported in this fashion can or will be imported.
+- [e1842ea5b5ce4e47] To remedy this, the caching framework will no longer cache such responses. The heuristic for this will be:
+- [5a2ca07f23bbe305] Unexpected code execution using ``reverse()`` =============================================
+- [a2f642b3c7e9f657] When the first anonymous request to a given page is by a client which did not have a CSRF cookie, the cache framework will also cache the CSRF cookie and serve the same nonce to other anonymous clients who do not have a CSRF cookie. This can allow an attacker to obtain a valid CSRF cookie value and perform attacks which bypass the check for the cookie.

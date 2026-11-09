@@ -1,8 +1,8 @@
 # django/contrib/auth/migrations/0008_alter_user_username_max_length
 
-- Subject: django/contrib/auth/migrations/0008_alter_user_username_max_length (id `4d231b4a-97bb-49f3-98e0-696516249a04`)
+- Subject: django/contrib/auth/migrations/0008_alter_user_username_max_length (id `fa697041-dd82-4926-b491-efe0c70d6a13`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 175 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

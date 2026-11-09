@@ -1,9 +1,9 @@
 # django/db/models/fields/related::RelatedField
 
-- Subject: django/db/models/fields/related::RelatedField (id `5e1644c7-1218-4c6b-91fa-0c3297ae6c25`)
+- Subject: django/db/models/fields/related::RelatedField (id `700936dc-c3aa-4d2f-be13-27d176d413ef`)
 - Kind: class
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

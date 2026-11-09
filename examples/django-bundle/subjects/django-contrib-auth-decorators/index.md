@@ -1,14 +1,14 @@
 # django/contrib/auth/decorators
 
-- Subject: django/contrib/auth/decorators (id `0b87f2e7-f674-40e7-8639-b2a8aaaa097f`)
+- Subject: django/contrib/auth/decorators (id `c5cc6607-e7bc-417c-9d83-3da3ecbb3647`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 19 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1079 tokens
+- Facts shown: 22 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if test_pass: return await view_func(request, *args, **kwargs) return _redirect_to_login(request) [6e239c89]
 - async def _view_wrapper(request, *args, **kwargs): auser = await request.auser() if iscoroutinefunction(test_func): test_pass = await test_func(auser) else: test_pass = await sync_to_async(test_func)(auser) [abdbfd5e]
@@ -30,6 +30,8 @@
 - def permission_required(perm, login_url=None, raise_exception=False): """ Decorator for views that checks whether a user has a particular permission enabled, redirecting to the log-in page if necessary. If the raise_exception parameter is given the PermissionDenied exception is raised. """ if isinstance(perm, str): perms = (perm,) else: perms = perm [9e5f6e07]
 - from asgiref.sync import async_to_sync, sync_to_async [cf6bbf2daef2deb8]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [773a1d04] [43a33608] [bac40041]
+- [773a1d04] def user_passes_test( test_func, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME ): """ Decorator for views that checks that the user passes the given test, redirecting to the log-in page if necessary. The test should be a callable that takes the user object and returns True if the user passes. """
+- [43a33608] from django.conf import settings from django.contrib.auth import REDIRECT_FIELD_NAME from django.core.exceptions import PermissionDenied from django.shortcuts import resolve_url
+- [bac40041] from functools import wraps from inspect import iscoroutinefunction from urllib.parse import urlsplit

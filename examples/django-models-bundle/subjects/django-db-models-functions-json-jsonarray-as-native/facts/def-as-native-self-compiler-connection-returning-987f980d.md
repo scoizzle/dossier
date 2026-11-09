@@ -1,6 +1,6 @@
 # Fact 987f980d
 
-Store id: e9f954a0-d745-46aa-a76c-4559a1e37bc8
+Store id: 3f04d8de-a4d9-46ce-8e34-9db7bbbea88d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_native(self, compiler, connection, *, returning, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3711020+00:00`
+- posted_at: `2026-11-09T23:32:01.4654340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "JSONArray.as_native"
   },
-  "id": "e9f954a0-d745-46aa-a76c-4559a1e37bc8",
+  "id": "3f04d8de-a4d9-46ce-8e34-9db7bbbea88d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3711020+00:00"
+    "posted_at": "2026-11-09T23:32:01.4654340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15d464b3-105c-4b9c-999e-337890f3693e",
+  "subject_id": "40a270bb-07c1-4e6d-aa24-7a302c89164f",
   "subject_name": "django/db/models/functions/json::JSONArray.as_native",
   "tags": [
     "entity:method"

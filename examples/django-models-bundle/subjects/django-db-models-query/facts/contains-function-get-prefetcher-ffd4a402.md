@@ -1,6 +1,6 @@
 # Fact ffd4a402
 
-Store id: ae4f81d9-326c-4e60-af84-d5e98e0db04b
+Store id: 2607d720-c726-4cc0-9ea8-e49f18790655
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_prefetcher
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ae4f81d9-326c-4e60-af84-d5e98e0db04b",
+  "id": "2607d720-c726-4cc0-9ea8-e49f18790655",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_prefetcher"
       },
       "rel": "contains",
-      "target": "b176ce71-15f0-41e4-a604-79c75b5397af"
+      "target": "a19762e1-80cd-47e7-b70e-c16b635fcb61"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:function"

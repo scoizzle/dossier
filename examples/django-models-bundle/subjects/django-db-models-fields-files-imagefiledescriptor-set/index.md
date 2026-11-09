@@ -1,9 +1,9 @@
 # django/db/models/fields/files::ImageFileDescriptor.__set__
 
-- Subject: django/db/models/fields/files::ImageFileDescriptor.__set__ (id `293812f6-f43e-4da7-bc15-0e09feacb4eb`)
+- Subject: django/db/models/fields/files::ImageFileDescriptor.__set__ (id `72de5f09-3642-4e42-a02e-28c2ff380627`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

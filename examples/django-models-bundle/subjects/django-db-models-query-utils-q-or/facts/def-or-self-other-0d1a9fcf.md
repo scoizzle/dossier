@@ -1,6 +1,6 @@
 # Fact 0d1a9fcf
 
-Store id: 248ae33a-3e72-46cf-9f37-867251edb079
+Store id: cd745e93-99eb-498a-81da-310e66218dfe
 
 ## Text
 
@@ -20,7 +20,7 @@ def __or__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0628390+00:00`
+- posted_at: `2026-11-09T23:32:05.0468200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 87,
     "symbol": "Q.__or__"
   },
-  "id": "248ae33a-3e72-46cf-9f37-867251edb079",
+  "id": "cd745e93-99eb-498a-81da-310e66218dfe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0628390+00:00"
+    "posted_at": "2026-11-09T23:32:05.0468200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae2c99fc-82d4-4f40-9dcb-e28b7a27719f",
+  "subject_id": "ffaf01f2-bb10-4312-abf8-c08d49df9edf",
   "subject_name": "django/db/models/query_utils::Q.__or__",
   "tags": [
     "entity:method"

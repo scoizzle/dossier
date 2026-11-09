@@ -1,9 +1,9 @@
 # django/db/models/sql/subqueries::InsertQuery.insert_values
 
-- Subject: django/db/models/sql/subqueries::InsertQuery.insert_values (id `2b344e9f-bff3-4815-ab33-50cdc12f4e36`)
+- Subject: django/db/models/sql/subqueries::InsertQuery.insert_values (id `77495ccb-be33-433b-8312-7bfca918c165`)
 - Kind: method
 - Parent: [django/db/models/sql/subqueries](../django-db-models-sql-subqueries/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

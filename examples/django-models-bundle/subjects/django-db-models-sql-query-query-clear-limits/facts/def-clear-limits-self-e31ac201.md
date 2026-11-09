@@ -1,6 +1,6 @@
 # Fact e31ac201
 
-Store id: a0ccb565-1aef-49fc-a83b-00a12a6388df
+Store id: 372d23ff-fd2f-4cac-ab19-36adca9640c3
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_limits(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4485540+00:00`
+- posted_at: `2026-11-09T23:32:07.0200270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2212,
     "symbol": "Query.clear_limits"
   },
-  "id": "a0ccb565-1aef-49fc-a83b-00a12a6388df",
+  "id": "372d23ff-fd2f-4cac-ab19-36adca9640c3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4485540+00:00"
+    "posted_at": "2026-11-09T23:32:07.0200270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "33af3e9b-e775-46e0-8a3b-8f4859e1d9cb",
+  "subject_id": "2c65716c-ecaa-4370-b0c8-7c371f3ef51b",
   "subject_name": "django/db/models/sql/query::Query.clear_limits",
   "tags": [
     "entity:method"

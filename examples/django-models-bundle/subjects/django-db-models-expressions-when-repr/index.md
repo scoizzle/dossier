@@ -1,9 +1,9 @@
 # django/db/models/expressions::When.__repr__
 
-- Subject: django/db/models/expressions::When.__repr__ (id `64f49755-31c1-492c-a582-7a61ce556dc0`)
+- Subject: django/db/models/expressions::When.__repr__ (id `35e9a245-6a32-491f-9632-13b1ba11654c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

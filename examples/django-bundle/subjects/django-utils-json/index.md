@@ -1,8 +1,8 @@
 # django/utils/json
 
-- Subject: django/utils/json (id `e0e0ff10-d17b-405b-beeb-f90670073f72`)
+- Subject: django/utils/json (id `d7509caa-6beb-48a1-955a-ac85a6c7edf2`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 174 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

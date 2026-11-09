@@ -1,6 +1,6 @@
 # Fact 40942199
 
-Store id: eb09d080-1d7c-4f62-aa98-f580f9aad401
+Store id: d5aae92a-abdc-4bb3-97cc-bd88241a4991
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getstate__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5011720+00:00`
+- posted_at: `2026-11-09T23:31:55.7589360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 197,
     "symbol": "BaseExpression.__getstate__"
   },
-  "id": "eb09d080-1d7c-4f62-aa98-f580f9aad401",
+  "id": "d5aae92a-abdc-4bb3-97cc-bd88241a4991",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5011720+00:00"
+    "posted_at": "2026-11-09T23:31:55.7589360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "84994c6d-27c4-4be9-b2e4-bfc74e429698",
+  "subject_id": "226f3499-f386-41cc-a0bd-bb0b00dfff72",
   "subject_name": "django/db/models/expressions::BaseExpression.__getstate__",
   "tags": [
     "entity:method"

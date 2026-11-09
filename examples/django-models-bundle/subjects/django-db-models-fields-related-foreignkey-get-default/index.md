@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignKey.get_default
 
-- Subject: django/db/models/fields/related::ForeignKey.get_default (id `a763b886-2872-427f-b60c-3355d56b9bc7`)
+- Subject: django/db/models/fields/related::ForeignKey.get_default (id `389d46a6-9888-413d-8450-218759baaf4b`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

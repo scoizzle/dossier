@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._prepare_for_bulk_create
 
-- Subject: django/db/models/query::QuerySet._prepare_for_bulk_create (id `6721091d-9de1-43f2-9112-b4653c097401`)
+- Subject: django/db/models/query::QuerySet._prepare_for_bulk_create (id `1cc2ebfe-5bdd-4e09-b8c8-07deb0374011`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

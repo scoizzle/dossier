@@ -1,6 +1,6 @@
 # Fact 11ceccf9
 
-Store id: ce288616-d86e-4950-b78c-9508b6d5ecfe
+Store id: f19b7463-d28c-4f1f-a5d8-18773c16ab9a
 
 ## Text
 
@@ -20,7 +20,7 @@ def first(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4815540+00:00`
+- posted_at: `2026-11-09T23:32:04.4497820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1221,
     "symbol": "QuerySet.first"
   },
-  "id": "ce288616-d86e-4950-b78c-9508b6d5ecfe",
+  "id": "f19b7463-d28c-4f1f-a5d8-18773c16ab9a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4815540+00:00"
+    "posted_at": "2026-11-09T23:32:04.4497820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f5891ac2-ad7d-4b74-aecf-dbc54fb37d14",
+  "subject_id": "47bd5790-aafb-4eb1-8faf-4cea64963509",
   "subject_name": "django/db/models/query::QuerySet.first",
   "tags": [
     "entity:method"

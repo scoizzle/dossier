@@ -1,6 +1,6 @@
 # Fact 1b76fef1
 
-Store id: 67884a11-2f75-4458-98a4-db768016d23a
+Store id: f505b1b0-6dca-4cb3-9b04-3798002f96a0
 
 ## Text
 
@@ -20,7 +20,7 @@ def unref_alias(self, alias, amount=1)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2929260+00:00`
+- posted_at: `2026-11-09T23:32:06.8391550+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 930,
     "symbol": "Query.unref_alias"
   },
-  "id": "67884a11-2f75-4458-98a4-db768016d23a",
+  "id": "f505b1b0-6dca-4cb3-9b04-3798002f96a0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2929260+00:00"
+    "posted_at": "2026-11-09T23:32:06.8391550+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "891c01c8-ca49-41ce-92d5-cf1fbd22c1cd",
+  "subject_id": "8eaac3d0-763a-4381-9517-a2467b381ca7",
   "subject_name": "django/db/models/sql/query::Query.unref_alias",
   "tags": [
     "entity:method"

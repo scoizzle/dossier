@@ -1,14 +1,14 @@
 # docs/misc/design-philosophies
 
-- Subject: docs/misc/design-philosophies (id `c09e72cf-ffd7-4346-8783-1ba6654fd301`)
+- Subject: docs/misc/design-philosophies (id `eb560598-7f17-49c1-937c-ca479eaf837f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 35 of 106
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3577 tokens
+- Facts shown: 104 of 106
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - The `discussion of DRY on the Portland Pattern Repository`__ [92b353cf]
 - __ https://wiki.c2.com/?DontRepeatYourself [7e7942e2]
@@ -46,6 +46,74 @@
 - Django apps should use as little code as possible; they should lack boilerplate. Django should take full advantage of Python's dynamic capabilities, such as introspection. [183f4df0]
 - Don't invent a programming language ----------------------------------- [dd847ed0]
 
-## Beyond the budget
+## All facts
 
-69 more facts did not fit in the budget: [7a97e653] [aaf7ca98] [930bb42f] [2d118164] [b2aa54db7fd8deb1] [b2aa54db7fd8deb1-2] [31ab1a81] [21a88ae5] [1eaefaed] [6ddf0c59] [4df9d061] [15b923f7] [e37efd0a] [58c7e991] [bbe9c0a85f49e82b] [bbe9c0a85f49e82b-2] [24063235a087e6d2] [24063235a087e6d2-2] [24063235a087e6d2-3] [0f8f215e610fb29a] [1b051880] [03db2fe9] [5f5c6a38] [2b9bc20b] [9538bd38] [079aed1b] [3fafb5dd] [1c213ac1] [7b969104] [b4b3cc7d] [a00925a5] [ab0cd24a] [fac7820c] [6c56d98d] [a63c45c1] [4b4d2e30] [983e18db] [1f1e45d5] [87cae760] [a13c753f] [70678c6c] [e69bee5c] [c8df7940] [13d05762] [d54f34dc] [a531eb5c] [2318c80a] [1c90caa8] [12db412f] [661986fa] [bf121743] [ad5db0b5] [04c6c615] [430ce597] [a0d47e99] [c146d297] [c7624f6f] [9aca98ad] [86a9edcd] [391913f9] [dcd8bcc2] [c8110958] [13d3157a] [4fcfa687] [44ce6a64] [b61fd224] [062a3d8e] [2a8aa9a5] [61deea5f]
+- [7a97e653] Don't repeat yourself (DRY) ---------------------------
+- [aaf7ca98] Encourage best practices ------------------------
+- [930bb42f] Every distinct concept and/or piece of data should live in one, and only one, place. Redundancy is bad. Normalization is good.
+- [2d118164] Every object should be able to access every related object, systemwide. This access should work both ways.
+- [b2aa54db7fd8deb1] Extensibility -------------
+- [b2aa54db7fd8deb1-2] Extensibility -------------
+- [31ab1a81] Fields shouldn't assume certain behaviors based solely on the name of the field. This requires too much knowledge of the system and is prone to errors. Instead, behaviors should be based on keyword arguments and, in some cases, on the type of the field.
+- [21a88ae5] File extensions in web-page URLs should be avoided.
+- [1eaefaed] For example, the template system knows nothing about web requests, the database layer knows nothing about data display and the view system doesn't care which template system a programmer uses.
+- [6ddf0c59] GET and POST are distinct; developers should explicitly use one or the other. The framework should make it easy to distinguish between GET and POST data.
+- [4df9d061] Include all relevant domain logic ---------------------------------
+- [15b923f7] Infinite flexibility --------------------
+- [e37efd0a] It should execute SQL statements as few times as possible, and it should optimize statements internally.
+- [58c7e991] Joins should be performed automatically, behind the scenes, when necessary.
+- [bbe9c0a85f49e82b] Less code ---------
+- [bbe9c0a85f49e82b-2] Less code ---------
+- [24063235a087e6d2] Loose coupling --------------
+- [24063235a087e6d2-2] Loose coupling --------------
+- [24063235a087e6d2-3] Loose coupling --------------
+- [0f8f215e610fb29a] Models ======
+- [1b051880] Models should encapsulate every aspect of an "object," following Martin Fowler's `Active Record`_ design pattern.
+- [03db2fe9] Option to drop into raw SQL easily, when needed -----------------------------------------------
+- [5f5c6a38] Overall =======
+- [2b9bc20b] Quick development -----------------
+- [9538bd38] SQL efficiency --------------
+- [079aed1b] Safety and security -------------------
+- [3fafb5dd] Separate logic from presentation --------------------------------
+- [1c213ac1] Simplicity ----------
+- [7b969104] Technically, ``foo.com/bar`` and ``foo.com/bar/`` are two different URLs, and search-engine robots (and some web traffic-analyzing tools) would treat them as separate pages. Django should make an effort to "normalize" URLs so that search-engine robots don't get confused.
+- [b4b3cc7d] Template system ===============
+- [a00925a5] Terse, powerful syntax ----------------------
+- [ab0cd24a] The cache API should be extensible at the application level based on the developer's needs (for example, see :ref:`cache_key_transformation`).
+- [fac7820c] The cache API should provide a consistent interface across the different cache backends.
+- [6c56d98d] The core goals of Django's :doc:`cache framework </topics/cache>` are:
+- [a63c45c1] The core goals of the database API are:
+- [4b4d2e30] The database API should allow rich, expressive statements in as little syntax as possible. It should not rely on importing other modules or helper objects.
+- [983e18db] The database API should realize it's a shortcut but not necessarily an end-all-be-all. The framework should make it easy to write custom SQL -- entire statements, or just custom ``WHERE`` clauses as custom parameters to API calls.
+- [1f1e45d5] The framework should be consistent at all levels. Consistency applies to everything from low-level (the Python coding style used) to high-level (the "experience" of using Django).
+- [87cae760] The framework should make it just as easy (or even easier) for a developer to design pretty URLs than ugly ones.
+- [a13c753f] The framework, within reason, should deduce as much as possible from as little as possible.
+- [70678c6c] The goal is not to invent a programming language. The goal is to offer just enough programming-esque functionality, such as branching and looping, that is essential for making presentation-related decisions. The :ref:`Django Template Language (DTL) <template-language-intro>` aims to avoid advanced logic.
+- [e69bee5c] The majority of dynamic websites use some sort of common sitewide design -- a common header, footer, navigation bar, etc. The Django template system should make it easy to store those elements in a single place, eliminating duplicate code.
+- [c8df7940] The point of a web framework in the 21st century is to make the tedious aspects of web development fast. Django should allow for incredibly quick web development.
+- [13d05762] The template system should recognize that advanced template authors may want to extend its technology.
+- [d54f34dc] The template system shouldn't be designed so that it only outputs HTML. It should be equally good at generating other text-based formats, or just plain text.
+- [a531eb5c] The template system shouldn't be designed so that templates necessarily are displayed nicely in WYSIWYG editors such as Dreamweaver. That is too severe of a limitation and wouldn't allow the syntax to be as nice as it is. Django expects template authors are comfortable editing HTML directly.
+- [2318c80a] The template system shouldn't do magic things with whitespace. If a template includes whitespace, the system should treat the whitespace as it treats text -- just display it. Any whitespace that's not in a template tag should be displayed.
+- [1c90caa8] The template system, out of the box, should forbid the inclusion of malicious code -- such as commands that delete database records.
+- [12db412f] This document explains some of the fundamental philosophies Django's developers have used in creating the framework. Its goal is to explain the past and guide the future.
+- [661986fa] This is a core Python principle listed in :pep:`20`, and it means Django shouldn't do too much "magic." Magic shouldn't happen unless there's a really good reason for it. Magic is worth using only if it creates a huge convenience unattainable in other ways, and it isn't implemented in a way that confuses developers who are trying to learn how to use the feature.
+- [bf121743] This is also why the ``FETCH_PEERS`` :doc:`fetch mode </topics/db/fetch-modes>` exists. It's an optional performance booster for the common case of selecting related objects for every peer in a ``QuerySet``.
+- [ad5db0b5] This is another reason the template system doesn't allow arbitrary Python code.
+- [04c6c615] This is the philosophy behind :ref:`template inheritance <template-inheritance>`.
+- [430ce597] This is the philosophy behind custom template tags and filters.
+- [a0d47e99] This is the reasoning behind the :setting:`APPEND_SLASH` setting.
+- [c146d297] This is why both the data represented by a model and information about it (its human-readable name, options like default ordering, etc.) are defined in the model class; all the information needed to understand a given model should be stored *in* the model.
+- [c7624f6f] This is why developers need to call ``save()`` explicitly, rather than the framework saving things behind the scenes silently.
+- [9aca98ad] Treat whitespace obviously --------------------------
+- [86a9edcd] URL design ==========
+- [391913f9] URLs in a Django app should not be coupled to the underlying Python code. Tying URLs to Python function names is a Bad And Ugly Thing.
+- [dcd8bcc2] URLs should be as flexible as possible. Any conceivable URL design should be allowed.
+- [c8110958] Use request objects -------------------
+- [13d3157a] Using an XML engine to parse templates introduces a whole new world of human error in editing templates -- and incurs an unacceptable level of overhead in template processing.
+- [4fcfa687] Views =====
+- [44ce6a64] Views should have access to a request object -- an object that stores metadata about the current request. The object should be passed directly to a view function, rather than the view function having to access the request data from a global variable. This makes it light, clean and easy to test views by passing in "fake" request objects.
+- [b61fd224] Vignette-style commas in URLs deserve severe punishment.
+- [062a3d8e] We see a template system as a tool that controls presentation and presentation-related logic -- and that's it. The template system shouldn't support functionality that goes beyond this basic goal.
+- [2a8aa9a5] Writing a view should be as simple as writing a Python function. Developers shouldn't have to instantiate a class when a function will do.
+- [61deea5f] XML should not be used for template languages ---------------------------------------------

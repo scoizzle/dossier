@@ -1,6 +1,6 @@
 # Fact 8bf55991
 
-Store id: 4eccf1ac-e959-426b-bc33-356b6f125a33
+Store id: bc6b40aa-3e50-48ee-992a-d42ea92eec4a
 
 ## Text
 
@@ -20,7 +20,7 @@ async def acontains(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5508330+00:00`
+- posted_at: `2026-11-09T23:32:04.5019460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1510,
     "symbol": "QuerySet.acontains"
   },
-  "id": "4eccf1ac-e959-426b-bc33-356b6f125a33",
+  "id": "bc6b40aa-3e50-48ee-992a-d42ea92eec4a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5508330+00:00"
+    "posted_at": "2026-11-09T23:32:04.5019460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7e375dd-c4ce-4651-b9e4-626488c6e274",
+  "subject_id": "5e20d358-5efb-4db7-860a-2e2272591817",
   "subject_name": "django/db/models/query::QuerySet.acontains",
   "tags": [
     "entity:method",

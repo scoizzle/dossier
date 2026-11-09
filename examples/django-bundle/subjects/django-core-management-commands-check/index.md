@@ -1,8 +1,8 @@
 # django/core/management/commands/check
 
-- Subject: django/core/management/commands/check (id `b43a4638-2f4f-40e1-8528-cd71b0d06396`)
+- Subject: django/core/management/commands/check (id `0354eb70-228d-408b-a3c9-5dacc2f3726f`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 576 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

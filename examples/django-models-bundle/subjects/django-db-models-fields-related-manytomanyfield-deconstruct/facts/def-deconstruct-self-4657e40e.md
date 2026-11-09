@@ -1,6 +1,6 @@
 # Fact 4657e40e
 
-Store id: f502eb0c-6930-403e-aff5-afe9236ce4ee
+Store id: a5e59363-207e-4430-a083-57360bfbf306
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4651710+00:00`
+- posted_at: `2026-11-09T23:31:58.8495910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1949,
     "symbol": "ManyToManyField.deconstruct"
   },
-  "id": "f502eb0c-6930-403e-aff5-afe9236ce4ee",
+  "id": "a5e59363-207e-4430-a083-57360bfbf306",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4651710+00:00"
+    "posted_at": "2026-11-09T23:31:58.8495910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "db31790f-e1f7-4354-86dd-2e74cea97e4d",
+  "subject_id": "70baa3ab-bccb-4643-9f96-cb41144a3bd4",
   "subject_name": "django/db/models/fields/related::ManyToManyField.deconstruct",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact df6ad907
 
-Store id: e3013603-aa5a-47fb-9dce-d7484860735a
+Store id: 79f92baa-70d5-4014-9977-2a0731c60c96
 
 ## Text
 
@@ -20,7 +20,7 @@ def lazy_related_operation(function, model, *related_models, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2363270+00:00`
+- posted_at: `2026-11-09T23:31:58.5937050+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 77,
     "symbol": "lazy_related_operation"
   },
-  "id": "e3013603-aa5a-47fb-9dce-d7484860735a",
+  "id": "79f92baa-70d5-4014-9977-2a0731c60c96",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2363270+00:00"
+    "posted_at": "2026-11-09T23:31:58.5937050+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ec71e233-d5a2-4763-966d-046f0450f288",
+  "subject_id": "52d2c36d-ee25-44b7-861e-005fae0b71e8",
   "subject_name": "django/db/models/fields/related::lazy_related_operation",
   "tags": [
     "entity:function"

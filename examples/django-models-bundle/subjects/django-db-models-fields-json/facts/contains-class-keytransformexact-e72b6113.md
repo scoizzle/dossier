@@ -1,6 +1,6 @@
 # Fact e72b6113
 
-Store id: fbc951a7-e8bb-4236-9b47-8d2ff2c3bd9c
+Store id: a9c9a856-8fad-4e43-bfff-8d30529720c1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fbc951a7-e8bb-4236-9b47-8d2ff2c3bd9c",
+  "id": "a9c9a856-8fad-4e43-bfff-8d30529720c1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformExact"
       },
       "rel": "contains",
-      "target": "27d88e24-7c2c-421f-91c0-f8f791227e10"
+      "target": "d3ecf5aa-e580-4e5a-b731-4e062b268e02"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

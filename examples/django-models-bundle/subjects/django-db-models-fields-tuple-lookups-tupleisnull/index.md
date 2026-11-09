@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleIsNull
 
-- Subject: django/db/models/fields/tuple_lookups::TupleIsNull (id `5e5ebfe9-27c2-4638-83f9-c752c6f21638`)
+- Subject: django/db/models/fields/tuple_lookups::TupleIsNull (id `3d9484ae-4dcc-47ce-b5db-cd361f7f33b7`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

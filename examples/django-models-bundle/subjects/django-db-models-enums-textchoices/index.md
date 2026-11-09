@@ -1,9 +1,9 @@
 # django/db/models/enums::TextChoices
 
-- Subject: django/db/models/enums::TextChoices (id `6324b7a1-03bb-4f1c-b504-74dee4187949`)
+- Subject: django/db/models/enums::TextChoices (id `a9317c21-8a9a-4b39-8b2e-ad93d6751756`)
 - Kind: class
 - Parent: [django/db/models/enums](../django-db-models-enums/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

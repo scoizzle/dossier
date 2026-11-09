@@ -1,8 +1,8 @@
 # django/utils/numberformat
 
-- Subject: django/utils/numberformat (id `8b19f6b2-0cba-4673-8eac-ffa862d87d3b`)
+- Subject: django/utils/numberformat (id `d5993586-9ceb-40d3-b4f9-4b3cdfdc39b0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 827 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

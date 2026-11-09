@@ -1,14 +1,14 @@
 # django/contrib/sessions/backends/cached_db
 
-- Subject: django/contrib/sessions/backends/cached_db (id `7b13b301-26e8-4fc8-b4cd-e36f547e2929`)
+- Subject: django/contrib/sessions/backends/cached_db (id `1e42f270-5279-4b1f-8ae6-c3ec99622ea6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 18 of 22
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1010 tokens
+- Facts shown: 22 of 22
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if data is None: s = await self._aget_session_from_db() if s: data = self.decode(s.session_data) await self._cache.aset( await self.acache_key(), data, await self.aget_expiry_age(expiry=s.expire_date), ) else: data = {} return data [49340990]
 - if data is None: s = self._get_session_from_db() if s: data = self.decode(s.session_data) self._cache.set( self.cache_key, data, self.get_expiry_age(expiry=s.expire_date) ) else: data = {} return data [299bcd91]
@@ -29,6 +29,9 @@
 - """ Cached, database-backed sessions. """ [c86d0356]
 - KEY_PREFIX = "django.contrib.sessions.cached_db" [aac7a56a]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [00749459] [4c4ba151] [47bc951ed6a0e3cc-3] [686ab19f]
+- [00749459] class SessionStore(DBStore): """ Implement cached, database backed sessions. """
+- [4c4ba151] from django.conf import settings from django.contrib.sessions.backends.db import SessionStore as DBStore from django.core.cache import caches
+- [47bc951ed6a0e3cc-3] import logging
+- [686ab19f] logger = logging.getLogger("django.contrib.sessions")

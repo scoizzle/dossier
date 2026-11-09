@@ -1,6 +1,6 @@
 # Fact 535d972a
 
-Store id: a6a43a42-87e3-48a4-9e91-150d033a065a
+Store id: 02a93855-f4fc-4d77-834f-f0bc3221a3a2
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3665510+00:00`
+- posted_at: `2026-11-09T23:31:56.5388290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1208,
     "symbol": "BooleanField.get_internal_type"
   },
-  "id": "a6a43a42-87e3-48a4-9e91-150d033a065a",
+  "id": "02a93855-f4fc-4d77-834f-f0bc3221a3a2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3665510+00:00"
+    "posted_at": "2026-11-09T23:31:56.5388290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ddc9ba98-7a7e-4773-8740-bfca15529909",
+  "subject_id": "b9438384-b121-46b0-bea3-af3c9a17165a",
   "subject_name": "django/db/models/fields/__init__::BooleanField.get_internal_type",
   "tags": [
     "entity:method"

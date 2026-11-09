@@ -1,6 +1,6 @@
 # Fact 107e52cf
 
-Store id: 831f243f-2c3e-48aa-9acf-5150a790e7f2
+Store id: 1479641b-3182-48c7-8cad-328cfaa3842a
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0900980+00:00`
+- posted_at: `2026-11-09T23:31:55.1268790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 466,
     "symbol": "Collector.delete"
   },
-  "id": "831f243f-2c3e-48aa-9acf-5150a790e7f2",
+  "id": "1479641b-3182-48c7-8cad-328cfaa3842a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0900980+00:00"
+    "posted_at": "2026-11-09T23:31:55.1268790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "65d648d4-d20e-4da0-8a23-77dce0c75df0",
+  "subject_id": "13977902-01ec-4d04-95cf-8135589ce06c",
   "subject_name": "django/db/models/deletion::Collector.delete",
   "tags": [
     "entity:method"

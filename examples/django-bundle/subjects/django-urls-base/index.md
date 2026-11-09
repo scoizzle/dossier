@@ -1,14 +1,14 @@
 # django/urls/base
 
-- Subject: django/urls/base (id `e9317bfb-19a9-4a9f-9af9-3df50e81d6d3`)
+- Subject: django/urls/base (id `2cad1180-eca3-48c4-ab2b-42e47268dc7e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 14 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1473 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if ns != current_ns: current_path = None [9088cd45]
 - try: extra, resolver = resolver.namespace_dict[ns] resolved_path.append(ns) ns_pattern += extra ns_converters.update(resolver.pattern.converters) except KeyError as key: if resolved_path: raise NoReverseMatch( "%s is not a registered namespace inside '%s'" % (key, ":".join(resolved_path)) ) else: raise NoReverseMatch("%s is not a registered namespace" % key) if ns_pattern: resolver = get_ns_resolver( ns_pattern, resolver, tuple(ns_converters.items()) ) [d51fac4f]
@@ -25,6 +25,15 @@
 - def get_urlconf(default=None): """ Return the root URLconf to use for the current thread or asyncio task if it has been changed from the default one. """ return getattr(_urlconfs, "value", default) [804fc035]
 - def is_valid_path(path, urlconf=None): """ Return the ResolverMatch if the given path resolves against the default URL resolver, False otherwise. This is a convenience method to make working with "is this a match?" cases easier, avoiding try...except blocks. """ try: return resolve(path, urlconf) except Resolver404: return False [0b0d7b76]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [3d0aae5a] [d05ce5eb] [20936246] [372cb55b] [fcbf94df] [14b57c6e] [6beab4e4549a99b7-3] [4f0a5fca] [86803c5e] [588f3d78]
+- [3d0aae5a] def resolve(path, urlconf=None): if urlconf is None: urlconf = get_urlconf() return get_resolver(urlconf).resolve(path)
+- [d05ce5eb] def reverse( viewname, urlconf=None, args=None, kwargs=None, current_app=None, *, query=None, fragment=None, ): if urlconf is None: urlconf = get_urlconf() resolver = get_resolver(urlconf) args = args or [] kwargs = kwargs or {}
+- [20936246] def set_script_prefix(prefix): """ Set the script prefix for the current thread. """ if not prefix.endswith("/"): prefix += "/" _prefixes.value = prefix
+- [372cb55b] def set_urlconf(urlconf_name): """ Set the URLconf for the current thread or asyncio task (overriding the default one in settings). If urlconf_name is None, revert back to the default. """ if urlconf_name: _urlconfs.value = urlconf_name else: if hasattr(_urlconfs, "value"): del _urlconfs.value
+- [fcbf94df] def translate_url(url, lang_code): """ Given a URL (absolute or relative), try to get its translated version in the `lang_code` language (either by i18n_patterns or by translated regex). Return the original URL if no translated version is found. """ parsed = urlsplit(url) try: # URL may be encoded. match = resolve(unquote(parsed.path)) except Resolver404: pass else: to_be_reversed = ( "%s:%s" % (match.namespace, match.url_name) if match.namespace else match.url_name ) with override(lang_code): try: url = reverse(to_be_reversed, args=match.args, kwargs=match.kwargs) except NoReverseMatch: pass else: url = urlunsplit( (parsed.scheme, parsed.netloc, url, parsed.query, parsed.fragment) ) return url
+- [14b57c6e] from .exceptions import NoReverseMatch, Resolver404 from .resolvers import _get_cached_resolver, get_ns_resolver, get_resolver from .utils import get_callable
+- [6beab4e4549a99b7-3] from asgiref.local import Local
+- [4f0a5fca] from django.http import QueryDict from django.utils.functional import lazy from django.utils.translation import override
+- [86803c5e] from urllib.parse import unquote, urlencode, urlsplit, urlunsplit
+- [588f3d78] reverse_lazy = lazy(reverse, str)

@@ -1,6 +1,6 @@
 # Fact f7a1619f
 
-Store id: ba7c6229-39e6-4220-b4a9-5970bb194024
+Store id: 54e3ca24-271d-43e6-9006-89442052bd8b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __bool__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3357460+00:00`
+- posted_at: `2026-11-09T23:32:04.3413280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 486,
     "symbol": "QuerySet.__bool__"
   },
-  "id": "ba7c6229-39e6-4220-b4a9-5970bb194024",
+  "id": "54e3ca24-271d-43e6-9006-89442052bd8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3357460+00:00"
+    "posted_at": "2026-11-09T23:32:04.3413280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6cd4b417-268c-4e79-aac0-3e0227acfeb8",
+  "subject_id": "00050fc1-1242-446d-aa2c-30fe19af1083",
   "subject_name": "django/db/models/query::QuerySet.__bool__",
   "tags": [
     "entity:method"

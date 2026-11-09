@@ -1,6 +1,6 @@
 # Fact 13d43cee
 
-Store id: ac12fdd1-9e83-4d4f-9211-beea0638b2d5
+Store id: b2d39379-5646-4bf3-a088-49ea54b8c7cb
 
 ## Text
 
@@ -20,7 +20,7 @@ def local_setter_noop(obj, from_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6474200+00:00`
+- posted_at: `2026-11-09T23:32:05.8200930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1357,
     "symbol": "SQLCompiler.get_related_selections.local_setter_noop"
   },
-  "id": "ac12fdd1-9e83-4d4f-9211-beea0638b2d5",
+  "id": "b2d39379-5646-4bf3-a088-49ea54b8c7cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6474200+00:00"
+    "posted_at": "2026-11-09T23:32:05.8200930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6321fbfa-ceaf-47ee-8b31-86b75e9f158b",
+  "subject_id": "abd23ad3-a75a-4f66-a417-7fa5ca719eca",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter_noop",
   "tags": [
     "entity:function"

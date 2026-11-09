@@ -1,6 +1,6 @@
 # Fact 5979b65e
 
-Store id: de7315bb-a32a-4195-b241-121e02809b71
+Store id: 9762a9e5-72ed-4c79-9964-5b51721797ea
 
 ## Text
 
@@ -20,7 +20,7 @@ def _gen_col_aliases(cls, exprs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4232000+00:00`
+- posted_at: `2026-11-09T23:32:06.9910580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2057,
     "symbol": "Query._gen_col_aliases"
   },
-  "id": "de7315bb-a32a-4195-b241-121e02809b71",
+  "id": "9762a9e5-72ed-4c79-9964-5b51721797ea",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4232000+00:00"
+    "posted_at": "2026-11-09T23:32:06.9910580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "20c35bea-7f29-4199-a60c-dbc04d62eec5",
+  "subject_id": "a71524ff-be5f-4e7e-9387-80ac9ef7300a",
   "subject_name": "django/db/models/sql/query::Query._gen_col_aliases",
   "tags": [
     "entity:class_method",

@@ -1,14 +1,14 @@
 # django/utils/formats
 
-- Subject: django/utils/formats (id `9a8a0bd9-0979-4bb4-a9bc-23f16b6f5ede`)
+- Subject: django/utils/formats (id `c6d15ebf-8bb7-4c82-a031-cad80e735f83`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 9 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2494 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # The requested format_type has not been cached yet. Try to find it in any # of the format_modules for the given lang if l10n is enabled. If it's not # there or if l10n is disabled, fall back to the project settings. val = None if use_l10n: for module in get_format_modules(lang): val = getattr(module, format_type, None) if val is not None: break if val is None: if format_type not in FORMAT_SETTINGS: return format_type val = getattr(settings, format_type) elif format_type in ISO_INPUT_FORMATS: # If a list of input formats from one of the format_modules was # retrieved, make sure the ISO_INPUT_FORMATS are in this list. val = list(val) for iso_input in ISO_INPUT_FORMATS.get(format_type, ()): if iso_input not in val: val.append(iso_input) _format_cache[cache_key] = val return val [673fce65]
 - - %C → %02C - %F → %010F - %G → %04G - %Y → %04Y [ec13b096]
@@ -20,6 +20,27 @@
 - If use_l10n is provided and is not None, it forces the value to be localized (or not), otherwise it's always localized. """ return dateformat.time_format( value, get_format(format or "TIME_FORMAT", use_l10n=use_l10n) ) [7051ae1c]
 - This function checks whether the %Y produces a correctly padded string and, if not, makes the following substitutions: [d78f131e]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [37609893] [60f151cb] [4f134b2c] [212e7f60] [87b1562f] [64bfafea] [88b13305] [ded2f11d] [bb100d2e] [25712ac4] [55d0beef] [bdd3fa97] [2cb2b699] [f483232e] [a6b5c3b6] [5ca170a1] [98d81092] [644d610c] [18eedf61] [2510f0f8] [def7b697] [863967bf]
+- [37609893] If use_l10n is provided and is not None, that will force the value to be localized (or not), otherwise it's always localized. """ return dateformat.format( value, get_format(format or "DATE_FORMAT", use_l10n=use_l10n) )
+- [60f151cb] See https://bugs.python.org/issue13305 for more details. """ if datetime.date(1, 1, 1).strftime("%Y") == "0001": return fmt mapping = {"C": 2, "F": 10, "G": 4, "Y": 4} return re.sub( r"((?:^|[^%])(?:%%)*)%([CFGY])", lambda m: r"%s%%0%s%s" % (m[1], mapping[m[2]], m[2]), fmt, )
+- [4f134b2c] This method is provided primarily for testing purposes, so that the effects of cached formats can be removed. """ global _format_cache, _format_modules_cache _format_cache = {} _format_modules_cache = {}
+- [212e7f60] format_locations = [] if format_module_path: if isinstance(format_module_path, str): format_module_path = [format_module_path] for path in format_module_path: format_locations.append(path + ".%s") format_locations.append("django.conf.locale.%s") locale = to_locale(lang) locales = [locale] if "_" in locale: locales.append(locale.split("_")[0]) for location in format_locations: for loc in locales: try: yield import_module("%s.formats" % (location % loc)) except ImportError: pass
+- [87b1562f] if format_module_path is None: format_module_path = settings.FORMAT_MODULE_PATH
+- [64bfafea] # format_cache is a mapping from (format_type, lang) to the format string. # By using the cache, it is possible to avoid running get_format_modules # repeatedly. _format_cache = {} _format_modules_cache = {}
+- [88b13305] @functools.lru_cache def sanitize_strftime_format(fmt): """ Ensure that certain specifiers are correctly padded with leading zeros.
+- [ded2f11d] FORMAT_SETTINGS = frozenset( [ "DECIMAL_SEPARATOR", "THOUSAND_SEPARATOR", "NUMBER_GROUPING", "FIRST_DAY_OF_WEEK", "MONTH_DAY_FORMAT", "TIME_FORMAT", "DATE_FORMAT", "DATETIME_FORMAT", "SHORT_DATE_FORMAT", "SHORT_DATETIME_FORMAT", "YEAR_MONTH_FORMAT", "DATE_INPUT_FORMATS", "TIME_INPUT_FORMATS", "DATETIME_INPUT_FORMATS", ] )
+- [bb100d2e] ISO_INPUT_FORMATS = { "DATE_INPUT_FORMATS": ["%Y-%m-%d"], "TIME_INPUT_FORMATS": ["%H:%M:%S", "%H:%M:%S.%f", "%H:%M"], "DATETIME_INPUT_FORMATS": [ "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M:%S.%f", "%Y-%m-%d %H:%M", "%Y-%m-%d", ], }
+- [25712ac4] def date_format(value, format=None, use_l10n=None): """ Format a datetime.date or datetime.datetime object using a localizable format.
+- [55d0beef] def get_format(format_type, lang=None, use_l10n=None): """ For a specific format type, return the format for the current language (locale). Default to the format in the settings. format_type is the name of the format, e.g. 'DATE_FORMAT'.
+- [bdd3fa97] def get_format_modules(lang=None): """Return a list of the format modules found.""" if lang is None: lang = get_language() if lang not in _format_modules_cache: _format_modules_cache[lang] = list( iter_format_modules(lang, settings.FORMAT_MODULE_PATH) ) return _format_modules_cache[lang]
+- [2cb2b699] def iter_format_modules(lang, format_module_path=None): """Find format modules.""" if not check_for_language(lang): return
+- [f483232e] def localize(value, use_l10n=None): """ Check if value is a localizable type (date, number...) and return it formatted as a string using current locale format.
+- [a6b5c3b6] def localize_input(value, default=None): """ Check if an input value is a localizable type and return it formatted with the appropriate formatting string of the current locale. """ if isinstance(value, str): # Handle strings first for performance reasons. return value elif isinstance(value, bool): # Don't treat booleans as numbers. return str(value) elif isinstance(value, (decimal.Decimal, float, int)): return number_format(value) elif isinstance(value, datetime.datetime): format = default or get_format("DATETIME_INPUT_FORMATS")[0] format = sanitize_strftime_format(format) return value.strftime(format) elif isinstance(value, datetime.date): format = default or get_format("DATE_INPUT_FORMATS")[0] format = sanitize_strftime_format(format) return value.strftime(format) elif isinstance(value, datetime.time): format = default or get_format("TIME_INPUT_FORMATS")[0] return value.strftime(format) return value
+- [5ca170a1] def number_format(value, decimal_pos=None, use_l10n=None, force_grouping=False): """ Format a numeric value using localization settings.
+- [98d81092] def reset_format_cache(): """Clear any cached formats.
+- [644d610c] def sanitize_separators(value): """ Sanitize a value according to the current decimal and thousand separator setting. Used with form field input. """ if isinstance(value, str): parts = [] decimal_separator = get_format("DECIMAL_SEPARATOR") if decimal_separator in value: value, decimals = value.split(decimal_separator, 1) parts.append(decimals) if settings.USE_THOUSAND_SEPARATOR: thousand_sep = get_format("THOUSAND_SEPARATOR") if ( thousand_sep == "." and value.count(".") == 1 and len(value.split(".")[-1]) != 3 ): # Special case where we suspect a dot meant decimal separator # (see #22171). pass else: for replacement in { thousand_sep, unicodedata.normalize("NFKD", thousand_sep), }: value = value.replace(replacement, "") parts.append(value) value = ".".join(reversed(parts)) return value
+- [18eedf61] def time_format(value, format=None, use_l10n=None): """ Format a datetime.time object using a localizable format.
+- [2510f0f8] from django.conf import settings from django.utils import dateformat, numberformat from django.utils.functional import lazy from django.utils.translation import check_for_language, get_language, to_locale
+- [def7b697] get_format_lazy = lazy(get_format, str, list, tuple)
+- [863967bf] import datetime import decimal import functools import re import unicodedata from importlib import import_module

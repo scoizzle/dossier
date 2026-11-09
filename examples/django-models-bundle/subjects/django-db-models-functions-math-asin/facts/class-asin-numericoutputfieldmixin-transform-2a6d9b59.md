@@ -1,6 +1,6 @@
 # Fact 2a6d9b59
 
-Store id: 58d1d80f-a38d-4593-80e3-b4828d16550b
+Store id: 28f11599-c042-417f-aada-92245507998d
 
 ## Text
 
@@ -20,7 +20,7 @@ class ASin(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.5691910+00:00`
+- posted_at: `2026-11-09T23:32:01.6662820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 23,
     "symbol": "ASin"
   },
-  "id": "58d1d80f-a38d-4593-80e3-b4828d16550b",
+  "id": "28f11599-c042-417f-aada-92245507998d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.5691910+00:00"
+    "posted_at": "2026-11-09T23:32:01.6662820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47b975c9-aa70-4c0e-b800-3f2e70e34fb6",
+  "subject_id": "98262b19-5a79-4115-877e-fa6a841f9747",
   "subject_name": "django/db/models/functions/math::ASin",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact db88c21f
 
-Store id: c418aaff-dcde-4834-adca-a780d71b7706
+Store id: 8e7cc6f2-49b9-4a4b-baf3-6ee0cce58ba5
 
 ## Text
 
@@ -20,7 +20,7 @@ class EndsWith(PatternLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1900170+00:00`
+- posted_at: `2026-11-09T23:32:03.3711000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 646,
     "symbol": "EndsWith"
   },
-  "id": "c418aaff-dcde-4834-adca-a780d71b7706",
+  "id": "8e7cc6f2-49b9-4a4b-baf3-6ee0cce58ba5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1900170+00:00"
+    "posted_at": "2026-11-09T23:32:03.3711000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0f7bb90-9c3a-42ec-a25b-bfd15ecfe4ea",
+  "subject_id": "9cae3b83-3ae4-4a4a-98f4-67b59bca28f5",
   "subject_name": "django/db/models/lookups::EndsWith",
   "tags": [
     "entity:class",

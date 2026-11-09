@@ -1,6 +1,6 @@
 # Fact fb2399c8
 
-Store id: c98660ea-75c8-4829-879f-13ed21ef8a55
+Store id: 724310b0-1109-4213-848c-08dbc0c2d7ef
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleLessThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6461850+00:00`
+- posted_at: `2026-11-09T23:32:00.6413340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c98660ea-75c8-4829-879f-13ed21ef8a55",
+  "id": "724310b0-1109-4213-848c-08dbc0c2d7ef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6461850+00:00"
+    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleLessThanOrEqual"
       },
       "rel": "contains",
-      "target": "9290fe3f-767c-4695-ae3b-d614ecc34631"
+      "target": "cab66d07-bb87-489c-a08b-442e730eb777"
     }
   ],
   "status": "live",
-  "subject_id": "cee0b84a-5cfa-4b80-bfc8-675952a3b671",
+  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

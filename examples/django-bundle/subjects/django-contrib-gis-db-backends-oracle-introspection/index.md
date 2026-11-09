@@ -1,8 +1,8 @@
 # django/contrib/gis/db/backends/oracle/introspection
 
-- Subject: django/contrib/gis/db/backends/oracle/introspection (id `ecdfbb33-34d9-4139-bdee-7b7b6c51148e`)
+- Subject: django/contrib/gis/db/backends/oracle/introspection (id `683ec957-5b59-480d-a336-4cfe05ba1c80`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 424 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

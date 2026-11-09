@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/indexes
 
-- Subject: docs/ref/contrib/postgres/indexes (id `2ac969d1-9073-4782-91f0-af6151b68fd0`)
+- Subject: docs/ref/contrib/postgres/indexes (id `7ba5976d-2a69-4c4c-ae7d-72f8e87c8099`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 21 of 57
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1913 tokens
+- Facts shown: 52 of 57
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ExclusionConstraint( name="exclude_overlapping_ops", expressions=[ (OpClass("circle", name="circle_ops"), RangeOperators.OVERLAPS), ], ) [dcf50c98]
 - Index( OpClass(Lower("username"), name="varchar_pattern_ops"), name="lower_username_idx", ) [054de906]
@@ -32,6 +32,36 @@
 - Provide a boolean value to the deduplicate_items_ parameter to control whether deduplication is enabled. PostgreSQL enables deduplication by default. [13206e46]
 - Provide an integer number of bits from 1 to 4096 to the ``length`` parameter to specify the length of each index entry. PostgreSQL's default is 80. [5c7e8b8c]
 
-## Beyond the budget
+## All facts
 
-31 more facts did not fit in the budget: [59232d2d] [caaed5f03bcc3b0c] [17984291] [e819eae4] [f75b8f09] [0d2cdfec] [cdcda76f] [b7fa0054] [cd4786cf] [aa92b4db] [1a13b10ced393a15-2] [6d632603] [40412d18] [d891019a] [5f3627dc] [bed06e20] [9c5f1de4] [a4dbccbf] [bccda25c] [fd39ca51] [86ebef80] [f519060f] [e91ec846] [a7117544] [23c64ec4] [98294df3] [214db592] [f82aeeb8] [ded581da] [0a03c73e] [b5e2a853]
+- [59232d2d] Provide an integer number of kilobytes to the gin_pending_list_limit_ parameter to tune the maximum size of the GIN pending list which is used when ``fastupdate`` is enabled.
+- [caaed5f03bcc3b0c] Provide an integer value from 10 to 100 to the fillfactor_ parameter to tune how packed the index pages will be. PostgreSQL's default is 90.
+- [17984291] Set the ``autosummarize`` parameter to ``True`` to enable `automatic summarization`_ to be performed by autovacuum.
+- [e819eae4] Set the ``buffering`` parameter to ``True`` or ``False`` to manually enable or disable `buffering build`_ of the index.
+- [f75b8f09] Set the ``fastupdate`` parameter to ``False`` to disable the `GIN Fast Update Technique`_ that's enabled by default in PostgreSQL.
+- [0d2cdfec] The ``columns`` argument takes a tuple or list of up to 32 values that are integer number of bits from 1 to 4095.
+- [cdcda76f] The ``pages_per_range`` argument takes a positive integer.
+- [b7fa0054] To use this index access you need to activate the bloom_ extension on PostgreSQL. You can install it using the :class:`~django.contrib.postgres.operations.BloomExtension` migration operation.
+- [cd4786cf] To use this index on data types not in the `built-in operator classes <https://www.postgresql.org/docs/current/gin.html#GIN-BUILTIN-OPCLASSES>`_, you need to activate the `btree_gin extension <https://www.postgresql.org/docs/current/btree-gin.html>`_ on PostgreSQL. You can install it using the :class:`~django.contrib.postgres.operations.BtreeGinExtension` migration operation.
+- [aa92b4db] creates a unique constraint on ``Upper('description')`` using ``text_pattern_ops``. ::
+- [1a13b10ced393a15-2] creates an exclusion constraint on ``circle`` using ``circle_ops``.
+- [6d632603] creates an index on ``Lower('username')`` using ``varchar_pattern_ops``. ::
+- [40412d18] .. class:: BTreeIndex(*expressions, fillfactor=None, deduplicate_items=None, **options)
+- [d891019a] .. class:: BloomIndex(*expressions, length=None, columns=(), **options)
+- [5f3627dc] .. class:: BrinIndex(*expressions, autosummarize=None, pages_per_range=None, **options)
+- [bed06e20] .. class:: GinIndex(*expressions, fastupdate=None, gin_pending_list_limit=None, **options)
+- [9c5f1de4] .. class:: GistIndex(*expressions, buffering=None, fillfactor=None, **options)
+- [a4dbccbf] .. class:: HashIndex(*expressions, fillfactor=None, **options)
+- [bccda25c] .. class:: OpClass(expression, name)
+- [fd39ca51] .. class:: SpGistIndex(*expressions, fillfactor=None, **options)
+- [86ebef80] .. module:: django.contrib.postgres.indexes
+- [f519060f] ================================= PostgreSQL specific model indexes =================================
+- [e91ec846] The following are PostgreSQL specific :doc:`indexes </ref/models/indexes>` available from the ``django.contrib.postgres.indexes`` module.
+- [a7117544] ``BTreeIndex`` ==============
+- [23c64ec4] ``BloomIndex`` ==============
+- [98294df3] ``BrinIndex`` =============
+- [214db592] ``GinIndex`` ============
+- [f82aeeb8] ``GistIndex`` =============
+- [ded581da] ``HashIndex`` =============
+- [0a03c73e] ``OpClass()`` expressions =========================
+- [b5e2a853] ``SpGistIndex`` ===============

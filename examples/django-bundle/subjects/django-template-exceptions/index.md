@@ -1,8 +1,8 @@
 # django/template/exceptions
 
-- Subject: django/template/exceptions (id `aea1febc-d836-42b7-8d24-d748f87946e7`)
+- Subject: django/template/exceptions (id `7d34991a-3eed-4c56-9134-b2cb06adfaea`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 374 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

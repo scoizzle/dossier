@@ -1,6 +1,6 @@
 # Fact ff60d111
 
-Store id: 6702aaa8-c2cb-43fd-945d-d7a7eae6c866
+Store id: bbc08bd7-2c42-4244-af2b-4ecfa0d33181
 
 ## Text
 
@@ -20,7 +20,7 @@ def batch_process_rhs(self, compiler, connection, rhs=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0904000+00:00`
+- posted_at: `2026-11-09T23:32:03.2415580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 344,
     "symbol": "FieldGetDbPrepValueIterableMixin.batch_process_rhs"
   },
-  "id": "6702aaa8-c2cb-43fd-945d-d7a7eae6c866",
+  "id": "bbc08bd7-2c42-4244-af2b-4ecfa0d33181",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0904000+00:00"
+    "posted_at": "2026-11-09T23:32:03.2415580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "49d950d7-2062-42ab-a15b-60ce05a47c15",
+  "subject_id": "f3ebe81b-f0cf-4e5f-94e4-c75a9344d5e2",
   "subject_name": "django/db/models/lookups::FieldGetDbPrepValueIterableMixin.batch_process_rhs",
   "tags": [
     "entity:method"

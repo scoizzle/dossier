@@ -1,6 +1,6 @@
 # Fact e3ddb7cf
 
-Store id: a64a4689-f254-4bf9-8cb5-7c00d8bf5e84
+Store id: ddf2a114-4e30-497f-8811-a65c1e5657e6
 
 ## Text
 
@@ -20,7 +20,7 @@ class ForeignObjectRel(FieldCacheMixin)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.2679190+00:00`
+- posted_at: `2026-11-09T23:32:00.1970390+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 20,
     "symbol": "ForeignObjectRel"
   },
-  "id": "a64a4689-f254-4bf9-8cb5-7c00d8bf5e84",
+  "id": "ddf2a114-4e30-497f-8811-a65c1e5657e6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.2679190+00:00"
+    "posted_at": "2026-11-09T23:32:00.1970390+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18d309ee-9e17-46e7-9390-61fe142ce67b",
+  "subject_id": "f1a0c4ff-5e7c-4637-b1b3-d7a9882a754b",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel",
   "tags": [
     "entity:class"

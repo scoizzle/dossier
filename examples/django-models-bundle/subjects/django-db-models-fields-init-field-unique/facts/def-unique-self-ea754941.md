@@ -1,6 +1,6 @@
 # Fact ea754941
 
-Store id: df62b4e7-47cc-4eec-b64d-c686e4fcd6c5
+Store id: 3c677f1c-8ce7-4971-9da3-45673d93daa4
 
 ## Text
 
@@ -20,7 +20,7 @@ def unique(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3310650+00:00`
+- posted_at: `2026-11-09T23:31:56.4895220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 964,
     "symbol": "Field.unique"
   },
-  "id": "df62b4e7-47cc-4eec-b64d-c686e4fcd6c5",
+  "id": "3c677f1c-8ce7-4971-9da3-45673d93daa4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3310650+00:00"
+    "posted_at": "2026-11-09T23:31:56.4895220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c71db7c3-d4a0-4112-8b4c-711d6329141d",
+  "subject_id": "ac8bb09d-73ae-46a8-bf56-17a7b151649e",
   "subject_name": "django/db/models/fields/__init__::Field.unique",
   "tags": [
     "entity:method",

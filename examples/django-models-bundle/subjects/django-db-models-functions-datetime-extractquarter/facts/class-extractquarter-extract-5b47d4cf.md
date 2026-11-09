@@ -1,6 +1,6 @@
 # Fact 5b47d4cf
 
-Store id: e8f23c09-e9a3-496b-8087-fd83c66dbfe8
+Store id: cd4bb139-01c0-4b74-8913-bf58b7de6ca4
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractQuarter(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1470580+00:00`
+- posted_at: `2026-11-09T23:32:01.2161580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 167,
     "symbol": "ExtractQuarter"
   },
-  "id": "e8f23c09-e9a3-496b-8087-fd83c66dbfe8",
+  "id": "cd4bb139-01c0-4b74-8913-bf58b7de6ca4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1470580+00:00"
+    "posted_at": "2026-11-09T23:32:01.2161580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b14f583-1a0b-4c3c-9526-99b4ec2282b9",
+  "subject_id": "393e7bf5-9512-4093-ac6e-0a1b13777d10",
   "subject_name": "django/db/models/functions/datetime::ExtractQuarter",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 2cc0d0c7
 
-Store id: dccdeefa-ec36-4480-a158-8331ea4f701c
+Store id: 4a572f0c-3a94-4ab6-9b95-167cca24a153
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3285810+00:00`
+- posted_at: `2026-11-09T23:31:53.7286200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 463,
     "symbol": "ModelStateFieldsCacheDescriptor.__get__"
   },
-  "id": "dccdeefa-ec36-4480-a158-8331ea4f701c",
+  "id": "4a572f0c-3a94-4ab6-9b95-167cca24a153",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3285810+00:00"
+    "posted_at": "2026-11-09T23:31:53.7286200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "654959a9-d74f-47a3-8748-dfe211c8baf4",
+  "subject_id": "a704329c-80a7-4579-bf7c-112d0ae148c9",
   "subject_name": "django/db/models/base::ModelStateFieldsCacheDescriptor.__get__",
   "tags": [
     "entity:method"

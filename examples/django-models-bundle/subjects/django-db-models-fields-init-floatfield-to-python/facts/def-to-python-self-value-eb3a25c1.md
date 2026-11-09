@@ -1,6 +1,6 @@
 # Fact eb3a25c1
 
-Store id: 8db51372-6355-4be5-aadb-16c1dbd843d8
+Store id: a154029c-5d8b-4371-9fbe-e1f9bdf8aadc
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5236290+00:00`
+- posted_at: `2026-11-09T23:31:56.6892600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2120,
     "symbol": "FloatField.to_python"
   },
-  "id": "8db51372-6355-4be5-aadb-16c1dbd843d8",
+  "id": "a154029c-5d8b-4371-9fbe-e1f9bdf8aadc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5236290+00:00"
+    "posted_at": "2026-11-09T23:31:56.6892600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e78d1ca6-2022-44b6-a99e-d5da5dd01936",
+  "subject_id": "a75bded3-1291-4c12-bfc3-7eeaad84c43d",
   "subject_name": "django/db/models/fields/__init__::FloatField.to_python",
   "tags": [
     "entity:method"

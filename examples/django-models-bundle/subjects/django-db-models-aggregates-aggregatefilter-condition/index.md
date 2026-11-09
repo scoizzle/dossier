@@ -1,9 +1,9 @@
 # django/db/models/aggregates::AggregateFilter.condition
 
-- Subject: django/db/models/aggregates::AggregateFilter.condition (id `dc2be3d1-d8a8-4461-80d3-eb565268c584`)
+- Subject: django/db/models/aggregates::AggregateFilter.condition (id `1b75d907-3de5-437b-9341-1ead3b3c86bf`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

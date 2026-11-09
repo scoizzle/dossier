@@ -1,6 +1,6 @@
 # Fact c7001ed1
 
-Store id: 7a0c1168-3899-41a4-9bb2-6a661eca2b59
+Store id: 532e96df-0288-4544-9fe0-5df1f8eec602
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Substr
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7a0c1168-3899-41a4-9bb2-6a661eca2b59",
+  "id": "532e96df-0288-4544-9fe0-5df1f8eec602",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Substr"
       },
       "rel": "contains",
-      "target": "5581a0ea-4c04-4835-bed3-1601ffcbae68"
+      "target": "b7f39a9c-f8c9-4a73-8ca0-17704e5c12a7"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

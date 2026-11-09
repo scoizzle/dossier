@@ -1,6 +1,6 @@
 # Fact 3a652f34
 
-Store id: 2fd0cdab-b99d-4132-8e61-ab674525b2b4
+Store id: 3a59622c-0fe0-45bf-9fd1-b052a0f23663
 
 ## Text
 
@@ -20,7 +20,7 @@ def _handle_order_with_respect_to(self, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4191750+00:00`
+- posted_at: `2026-11-09T23:32:04.4062310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 938,
     "symbol": "QuerySet._handle_order_with_respect_to"
   },
-  "id": "2fd0cdab-b99d-4132-8e61-ab674525b2b4",
+  "id": "3a59622c-0fe0-45bf-9fd1-b052a0f23663",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4191750+00:00"
+    "posted_at": "2026-11-09T23:32:04.4062310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c59c1c5-1b18-4810-826e-dba57164596a",
+  "subject_id": "3b82650b-bbe4-40f6-9c36-4f70bf0cdc1f",
   "subject_name": "django/db/models/query::QuerySet._handle_order_with_respect_to",
   "tags": [
     "entity:method"

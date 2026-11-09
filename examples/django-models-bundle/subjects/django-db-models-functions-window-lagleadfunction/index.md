@@ -1,9 +1,9 @@
 # django/db/models/functions/window::LagLeadFunction
 
-- Subject: django/db/models/functions/window::LagLeadFunction (id `d69a6333-2b1d-4451-aa7a-db2fe71492f4`)
+- Subject: django/db/models/functions/window::LagLeadFunction (id `46ea1e93-3a38-4e4f-9232-83bbbe933c3e`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

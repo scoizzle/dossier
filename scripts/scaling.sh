@@ -18,7 +18,7 @@ fi
 TMP="$(mktemp -d "${TMPDIR:-/tmp}/dossier-scaling.XXXXXX")"
 trap 'rm -rf "$TMP"' EXIT
 
-printf 'budget=%s depth=full format=markdown estimator=chars/4\n' "$BUDGET"
+printf 'budget=%s mode=strict depth=full format=markdown estimator=chars/4\n' "$BUDGET"
 printf '%-6s %-20s %-15s %-14s %s\n' "N" "plain-facts tokens" "dossier tokens" "facts emitted" "ratio plain/dossier"
 
 for n in 50 200 1000; do
@@ -31,7 +31,7 @@ for n in 50 200 1000; do
   dotnet "$DLL" post --file "$TMP/post$n.json" >/dev/null
 
   jq -r '.facts[].text' "$TMP/post$n.json" > "$TMP/plain$n.txt"
-  dotnet "$DLL" dossier compile --subject "$SUBJECT" --budget "$BUDGET" --depth full --format markdown \
+  dotnet "$DLL" dossier compile --subject "$SUBJECT" --budget "$BUDGET" --budget-mode strict --depth full --format markdown \
     > "$TMP/dossier$n.md" 2>/dev/null
 
   plain_chars="$(wc -c < "$TMP/plain$n.txt" | tr -d ' ')"

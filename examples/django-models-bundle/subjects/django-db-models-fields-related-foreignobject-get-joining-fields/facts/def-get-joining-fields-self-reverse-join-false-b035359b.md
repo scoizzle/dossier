@@ -1,6 +1,6 @@
 # Fact b035359b
 
-Store id: a2e69b90-235c-407d-a009-be281846d29a
+Store id: a5f7bda2-3980-4a49-afed-2a99004d00da
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_joining_fields(self, reverse_join=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3423610+00:00`
+- posted_at: `2026-11-09T23:31:58.7044160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 854,
     "symbol": "ForeignObject.get_joining_fields"
   },
-  "id": "a2e69b90-235c-407d-a009-be281846d29a",
+  "id": "a5f7bda2-3980-4a49-afed-2a99004d00da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3423610+00:00"
+    "posted_at": "2026-11-09T23:31:58.7044160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4e811021-74c8-438b-b1e7-a1604af0488f",
+  "subject_id": "bd3c4cb6-abe3-44f5-a31e-a1f07aa99b0d",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_joining_fields",
   "tags": [
     "entity:method"

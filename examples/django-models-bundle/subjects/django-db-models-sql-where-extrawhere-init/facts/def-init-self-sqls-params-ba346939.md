@@ -1,6 +1,6 @@
 # Fact ba346939
 
-Store id: acf008b9-9f40-470a-b0c0-2548b8da262f
+Store id: e579517d-8295-45dc-9c42-6e7da3fa6453
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, sqls, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9920160+00:00`
+- posted_at: `2026-11-09T23:32:07.7216750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 339,
     "symbol": "ExtraWhere.__init__"
   },
-  "id": "acf008b9-9f40-470a-b0c0-2548b8da262f",
+  "id": "e579517d-8295-45dc-9c42-6e7da3fa6453",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9920160+00:00"
+    "posted_at": "2026-11-09T23:32:07.7216750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a634d1c-2901-44c8-9044-c5e0d330b94d",
+  "subject_id": "9e824b53-1180-4b55-a40f-f1c53c12ecbf",
   "subject_name": "django/db/models/sql/where::ExtraWhere.__init__",
   "tags": [
     "entity:method"

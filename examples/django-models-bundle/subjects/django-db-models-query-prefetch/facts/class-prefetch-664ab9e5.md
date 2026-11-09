@@ -1,6 +1,6 @@
 # Fact 664ab9e5
 
-Store id: 6c4f4c70-0352-46e2-aac7-06ed88bcc6cf
+Store id: 44db889f-bf1d-417e-9c58-b5b2d6ff5dd1
 
 ## Text
 
@@ -20,7 +20,7 @@ class Prefetch
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8362560+00:00`
+- posted_at: `2026-11-09T23:32:04.7818110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2570,
     "symbol": "Prefetch"
   },
-  "id": "6c4f4c70-0352-46e2-aac7-06ed88bcc6cf",
+  "id": "44db889f-bf1d-417e-9c58-b5b2d6ff5dd1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8362560+00:00"
+    "posted_at": "2026-11-09T23:32:04.7818110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e0ac7d28-49f6-491d-8f7b-de77d0ade658",
+  "subject_id": "09748518-8783-4c23-ac00-1d73ba872f21",
   "subject_name": "django/db/models/query::Prefetch",
   "tags": [
     "entity:class"

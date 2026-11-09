@@ -1,6 +1,6 @@
 # Fact 25b5f671
 
-Store id: a5678fa1-1f05-46f5-994a-9045816f46c4
+Store id: 8258c1b6-5492-4429-9482-d97df3304107
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getstate__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3421560+00:00`
+- posted_at: `2026-11-09T23:32:00.2877290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 160,
     "symbol": "ForeignObjectRel.__getstate__"
   },
-  "id": "a5678fa1-1f05-46f5-994a-9045816f46c4",
+  "id": "8258c1b6-5492-4429-9482-d97df3304107",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3421560+00:00"
+    "posted_at": "2026-11-09T23:32:00.2877290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9a00d0bf-6c06-4db9-a105-93b69e1fd46d",
+  "subject_id": "9bed4128-4c3a-4f9c-92e1-4b66f3a9a137",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.__getstate__",
   "tags": [
     "entity:method"

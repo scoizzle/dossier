@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/spatialite/schema
 
-- Subject: django/contrib/gis/db/backends/spatialite/schema (id `89dae95c-34bd-4f41-a75f-1253ec8503b9`)
+- Subject: django/contrib/gis/db/backends/spatialite/schema (id `2165c9c4-7d82-400f-933d-45f7a8ec5fe6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 878 tokens
-- Facts shown: 8 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1468 tokens
+- Facts shown: 18 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Drop spatial metadata (dropping the table does not automatically # remove them) for field in model._meta.local_fields: if isinstance(field, GeometryField): self.remove_geometry_metadata(model, field) # Make sure all geom stuff is gone for geom_table in self.geometry_tables: try: self.execute( self.sql_discard_geometry_columns % { "geom_table": geom_table, "table": self.quote_name(model._meta.db_table), } ) except DatabaseError: pass super().delete_model(model, **kwargs) [9a401eab]
 - # Geometry columns are created by the `AddGeometryColumn` function self.geometry_sql.append( self.sql_add_geometry_column % { "table": self.geo_quote_name(model._meta.db_table), "column": self.geo_quote_name(field.column), "srid": field.srid, "geom_type": self.geo_quote_name(field.geom_type), "dim": field.dim, "null": int(not field.null), } ) [aadfee65]
@@ -19,6 +19,15 @@
 - if old_db_table == new_db_table or ( self.connection.features.ignores_table_name_case and old_db_table.lower() == new_db_table.lower() ): return # Remove geometry-ness from temp table for field in model._meta.local_fields: if isinstance(field, GeometryField): self.execute( self.sql_remove_geometry_metadata % { "table": self.quote_name(old_db_table), "column": self.quote_name(field.column), } ) # Alter table super().alter_db_table(model, old_db_table, new_db_table) # Repoint any straggler names for geom_table in self.geometry_tables: try: self.execute( self.sql_update_geometry_columns % { "geom_table": geom_table, "old_table": self.quote_name(old_db_table), "new_table": self.quote_name(new_db_table), } ) except DatabaseError: pass # Re-add geometry-ness and rename spatial index tables for field in model._meta.local_fields: if isinstance(field, GeometryField): self.execute( self.sql_recover_geometry_metadata % { "table": self.geo_quote_name(new_db_table), "column": self.geo_quote_name(field.column), "srid": field.srid, "geom_type": self.geo_quote_name(field.geom_type), "dim": field.dim, } ) if getattr(field, "spatial_index", False): self.execute( self.sql_rename_table % { "old_table": self.quote_name( "idx_%s_%s" % (old_db_table, field.column) ), "new_table": self.quote_name( "idx_%s_%s" % (new_db_table, field.column) ), } ) [bfd57fca]
 - def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) self.geometry_sql = [] [b31812f819c2e248-2]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [b8f0ffe0] [5aa444bf] [f2e2b3f6] [25a6f82c] [5cda69df] [97ded5e0e226ebb7-3] [70afff0d] [5413d18a] [51266fd7] [54cf97af]
+- [b8f0ffe0] def add_field(self, model, field): from django.contrib.gis.db.models import GeometryField
+- [5aa444bf] def alter_db_table(self, model, old_db_table, new_db_table): from django.contrib.gis.db.models import GeometryField
+- [f2e2b3f6] def column_sql(self, model, field, include_default=False): from django.contrib.gis.db.models import GeometryField
+- [25a6f82c] def create_model(self, model): super().create_model(model) # Create geometry columns for sql in self.geometry_sql: self.execute(sql) self.geometry_sql = []
+- [5cda69df] def delete_model(self, model, **kwargs): from django.contrib.gis.db.models import GeometryField
+- [97ded5e0e226ebb7-3] def geo_quote_name(self, name): return self.connection.ops.geo_quote_name(name)
+- [70afff0d] def remove_geometry_metadata(self, model, field): self.execute( self.sql_remove_geometry_metadata % { "table": self.quote_name(model._meta.db_table), "column": self.quote_name(field.column), } ) self.execute( self.sql_drop_spatial_index % { "table": model._meta.db_table, "column": field.column, } )
+- [5413d18a] geometry_tables = [ "geometry_columns", "geometry_columns_auth", "geometry_columns_time", "geometry_columns_statistics", ]
+- [51266fd7] class SpatialiteSchemaEditor(DatabaseSchemaEditor): sql_add_geometry_column = ( "SELECT AddGeometryColumn(%(table)s, %(column)s, %(srid)s, " "%(geom_type)s, %(dim)s, %(null)s)" ) sql_add_spatial_index = "SELECT CreateSpatialIndex(%(table)s, %(column)s)" sql_drop_spatial_index = "DROP TABLE idx_%(table)s_%(column)s" sql_recover_geometry_metadata = ( "SELECT RecoverGeometryColumn(%(table)s, %(column)s, %(srid)s, " "%(geom_type)s, %(dim)s)" ) sql_remove_geometry_metadata = "SELECT DiscardGeometryColumn(%(table)s, %(column)s)" sql_discard_geometry_columns = ( "DELETE FROM %(geom_table)s WHERE f_table_name = %(table)s" ) sql_update_geometry_columns = ( "UPDATE %(geom_table)s SET f_table_name = %(new_table)s " "WHERE f_table_name = %(old_table)s" )
+- [54cf97af] from django.db import DatabaseError from django.db.backends.sqlite3.schema import DatabaseSchemaEditor

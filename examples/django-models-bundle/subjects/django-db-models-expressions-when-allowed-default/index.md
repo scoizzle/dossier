@@ -1,9 +1,9 @@
 # django/db/models/expressions::When.allowed_default
 
-- Subject: django/db/models/expressions::When.allowed_default (id `fa1d9aec-0a2c-40cd-bdcc-f0541ded0a16`)
+- Subject: django/db/models/expressions::When.allowed_default (id `cb7a0405-1a62-4b57-bc19-d440619696a7`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

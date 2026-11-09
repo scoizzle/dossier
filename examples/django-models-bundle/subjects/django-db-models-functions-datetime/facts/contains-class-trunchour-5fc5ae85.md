@@ -1,6 +1,6 @@
 # Fact 5fc5ae85
 
-Store id: 944d2f0e-12e7-40f6-b116-436d286ee688
+Store id: f5e55bea-513b-4a49-9f09-655e71d9c276
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncHour
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "944d2f0e-12e7-40f6-b116-436d286ee688",
+  "id": "f5e55bea-513b-4a49-9f09-655e71d9c276",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncHour"
       },
       "rel": "contains",
-      "target": "6a54847c-edd7-4ae1-8219-77405c98d9c7"
+      "target": "7285adb2-658a-4312-81ca-c76e13dfef52"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

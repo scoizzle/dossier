@@ -1,6 +1,6 @@
 # Fact cc49a0c1
 
-Store id: 6af72845-a712-4a47-b010-9a7ff470aaca
+Store id: eeb179d0-17d6-4b20-835f-ec0372e41e4f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prefetch_related_objects(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7808140+00:00`
+- posted_at: `2026-11-09T23:32:04.7215860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2467,
     "symbol": "RawQuerySet._prefetch_related_objects"
   },
-  "id": "6af72845-a712-4a47-b010-9a7ff470aaca",
+  "id": "eeb179d0-17d6-4b20-835f-ec0372e41e4f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7808140+00:00"
+    "posted_at": "2026-11-09T23:32:04.7215860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba3a6d11-e6bb-4f7c-b8c2-0df2551e4bed",
+  "subject_id": "d46215ac-fc38-46a5-aa80-a75594dd7a17",
   "subject_name": "django/db/models/query::RawQuerySet._prefetch_related_objects",
   "tags": [
     "entity:method"

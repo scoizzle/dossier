@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::UUIDField.formfield
 
-- Subject: django/db/models/fields/__init__::UUIDField.formfield (id `3bd691c2-01f3-4219-9b43-cea6d3ab8f85`)
+- Subject: django/db/models/fields/__init__::UUIDField.formfield (id `ee0bfc46-e1c8-468c-b842-6c4751c3918c`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/db/migrations/operations/base
 
-- Subject: django/db/migrations/operations/base (id `64325fa3-eb2d-4a2b-b4c0-1a5fdab4d083`)
+- Subject: django/db/migrations/operations/base (id `0cb8f018-86a2-40a5-9cec-bef5e953e973`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 19 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1493 tokens
+- Facts shown: 30 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - This is a thin wrapper around router.allow_migrate_model() that preemptively rejects any proxy, swapped out, or unmanaged model. """ if not model._meta.can_migrate(connection_alias): return False [0637f716]
 - Used for optimization. If in doubt, return True. """ return self.references_model(model_name, app_label) [2f435873]
@@ -30,6 +30,16 @@
 - def database_backwards(self, app_label, schema_editor, from_state, to_state): """ Perform the mutation on the database schema in the reverse direction - e.g. if this were CreateModel, it would in fact drop the model's table. """ raise NotImplementedError( "subclasses of Operation must provide a database_backwards() method" ) [fa4201cf]
 - serialization_expand_args = [] [cd48e722]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [55e641fe] [b13b4159] [04ea80d7] [6d28e516] [dbb64c0c] [c8795a83] [2e9daf96] [0af88c83] [acbda3ea] [6e0458f0] [bd5b3e25]
+- [55e641fe] def database_forwards(self, app_label, schema_editor, from_state, to_state): """ Perform the mutation on the database schema in the normal (forwards) direction. """ raise NotImplementedError( "subclasses of Operation must provide a database_forwards() method" )
+- [b13b4159] def deconstruct(self): """ Return a 3-tuple of class import path (or just name if it lives under django.db.migrations), positional arguments, and keyword arguments. """ return ( self.__class__.__name__, self._constructor_args[0], self._constructor_args[1], )
+- [04ea80d7] def describe(self): """ Output a brief summary of what the action does. """ return "%s: %s" % (self.__class__.__name__, self._constructor_args)
+- [6d28e516] def formatted_description(self): """Output a description prefixed by a category symbol.""" description = self.describe() if self.category is None: return f"{OperationCategory.MIXED} {description}" return f"{self.category} {description}"
+- [dbb64c0c] def reduce(self, operation, app_label): """ Return either a list of operations the actual operation should be replaced with or a boolean that indicates whether or not the specified operation can be optimized across. """ if self.elidable: return [operation] elif operation.elidable: return [self] return False
+- [c8795a83] def references_field(self, model_name, name, app_label): """ Return True if there is a chance this operation references the given field name, with an app label for accuracy.
+- [2e9daf96] def state_forwards(self, app_label, state): """ Take the state from the previous migration, and mutate it so that it matches what this migration would perform. """ raise NotImplementedError( "subclasses of Operation must provide a state_forwards() method" )
+- [0af88c83] class Operation: """ Base class for migration operations.
+- [acbda3ea] class OperationCategory(StrEnum): ADDITION = "+" REMOVAL = "-" ALTERATION = "~" PYTHON = "p" SQL = "s" MIXED = "?"
+- [6e0458f0] from django.db import router from django.utils.inspect import get_func_args
+- [bd5b3e25] from enum import StrEnum

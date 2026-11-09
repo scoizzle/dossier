@@ -1,6 +1,6 @@
 # Fact 217aab78
 
-Store id: 6d7057af-00fa-404a-a4a6-22117d5a47f9
+Store id: c771edba-09a9-4442-af8a-56afe5fd6064
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_many(self, instances)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7630340+00:00`
+- posted_at: `2026-11-09T23:31:59.2031410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 571,
     "symbol": "ReverseOneToOneDescriptor.fetch_many"
   },
-  "id": "6d7057af-00fa-404a-a4a6-22117d5a47f9",
+  "id": "c771edba-09a9-4442-af8a-56afe5fd6064",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7630340+00:00"
+    "posted_at": "2026-11-09T23:31:59.2031410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a19d737c-27f7-4e9b-a405-9013524d11a3",
+  "subject_id": "7f8ce49a-4772-4ce3-b27a-3ffee78903f5",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.fetch_many",
   "tags": [
     "entity:method"

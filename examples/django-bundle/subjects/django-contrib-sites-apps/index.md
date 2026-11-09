@@ -1,8 +1,8 @@
 # django/contrib/sites/apps
 
-- Subject: django/contrib/sites/apps (id `21f57663-aaff-4930-a3f1-5da5041a88b9`)
+- Subject: django/contrib/sites/apps (id `415d7666-45d9-4972-bd45-0fb7cde40ed8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 175 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

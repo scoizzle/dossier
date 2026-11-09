@@ -1,6 +1,6 @@
 # Fact f5afee5e
 
-Store id: 5ee5aad6-2041-4877-9a3a-72404208596e
+Store id: 66aab760-72c3-4a0b-b226-12bd91b69fd4
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression( self, query=None, allow_joins=True, reuse=None, summariz
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5756010+00:00`
+- posted_at: `2026-11-09T23:31:55.8503530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1035,
     "symbol": "Sliced.resolve_expression"
   },
-  "id": "5ee5aad6-2041-4877-9a3a-72404208596e",
+  "id": "66aab760-72c3-4a0b-b226-12bd91b69fd4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5756010+00:00"
+    "posted_at": "2026-11-09T23:31:55.8503530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9d244948-a49d-495b-b46d-64ee59bea9dd",
+  "subject_id": "68816a36-cf88-41b5-ad88-065e2dfb7570",
   "subject_name": "django/db/models/expressions::Sliced.resolve_expression",
   "tags": [
     "entity:method"

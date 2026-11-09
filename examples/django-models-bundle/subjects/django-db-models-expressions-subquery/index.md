@@ -1,9 +1,9 @@
 # django/db/models/expressions::Subquery
 
-- Subject: django/db/models/expressions::Subquery (id `9cdad3a8-8a40-478d-a35b-9d3ff4b6aa64`)
+- Subject: django/db/models/expressions::Subquery (id `63d4e49d-e5ca-4c49-8162-f4530a9d9bf0`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

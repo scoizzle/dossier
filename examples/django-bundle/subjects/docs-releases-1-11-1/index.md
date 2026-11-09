@@ -1,14 +1,14 @@
 # docs/releases/1.11.1
 
-- Subject: docs/releases/1.11.1 (id `9d7375d4-bf27-48b6-8036-7d0b3c9bdf2e`)
+- Subject: docs/releases/1.11.1 (id `6dbbe70d-917c-47ee-b827-ef27928635e1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 22 of 37
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1467 tokens
+- Facts shown: 37 of 37
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * Allowed prefetch calls on managers with custom ``ModelIterable`` subclasses (:ticket:`28096`). [42da3a62]
 - * Corrected the return type of ``ArrayField(CITextField())`` values retrieved from the database (:ticket:`28161`). [4e3f1b05]
@@ -33,6 +33,20 @@
 - * Fixed layout of ``ReadOnlyPasswordHashWidget`` (used in the admin's user change page) (:ticket:`28097`). [e13f897e]
 - * Made migrations respect ``Index``’s ``name`` argument. If you created a named index with Django 1.11, ``makemigrations`` will create a migration to recreate the index with the correct name (:ticket:`28051`). [6e94fb64]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [cd84744f] [1b0d981a] [d1737c4b] [5e50a225] [bb607c03] [6c6d8edb] [d41ecbce] [1f964dbf] [56d124fd] [8cd50570] [e09a6810] [6c84539cac9c976c-8] [813df96d] [52d110a28852d7b2-2] [ecb929eb]
+- [cd84744f] * Prepared for ``cx_Oracle`` 6.0 support (:ticket:`28138`).
+- [1b0d981a] * Prevented ``AddIndex`` and ``RemoveIndex`` from mutating model state (:ticket:`28043`).
+- [d1737c4b] * Prevented ``SessionBase.cycle_key()`` from losing session data if ``_session_cache`` isn't populated (:ticket:`28066`).
+- [5e50a225] * Prevented hiding GDAL errors if it's not installed when using ``contrib.gis`` (:ticket:`28160`). (It's a required dependency as of Django 1.11.)
+- [bb607c03] * Prevented migrations from dropping database indexes from ``Meta.indexes`` when changing ``Field.db_index`` to ``False`` (:ticket:`28052`).
+- [6c6d8edb] * Restored ``BoundField``\s without any ``choices`` evaluating to ``True`` (:ticket:`28058`).
+- [d41ecbce] * Restored the output of the ``class`` attribute in the ``<ul>`` of widgets that use the ``multiple_input.html`` template. This fixes ``ModelAdmin.radio_fields`` with ``admin.HORIZONTAL`` (:ticket:`28059`).
+- [1f964dbf] * Updated the ``contrib.postgres`` ``SplitArrayWidget`` to use template-based widget rendering (:ticket:`28040`).
+- [56d124fd] *May 6, 2017*
+- [8cd50570] =========================== Django 1.11.1 release notes ===========================
+- [e09a6810] Allowed disabling server-side cursors on PostgreSQL ===================================================
+- [6c84539cac9c976c-8] Bugfixes ========
+- [813df96d] Django 1.11.1 adds a minor feature and fixes several bugs in 1.11.
+- [52d110a28852d7b2-2] See :ref:`transaction-pooling-server-side-cursors` for more discussion.
+- [ecb929eb] The change in Django 1.11 to make :meth:`.QuerySet.iterator` use server-side cursors on PostgreSQL prevents running Django with PgBouncer in transaction pooling mode. To reallow that, use the :setting:`DISABLE_SERVER_SIDE_CURSORS <DATABASE-DISABLE_SERVER_SIDE_CURSORS>` setting in :setting:`DATABASES`.

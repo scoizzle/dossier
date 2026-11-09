@@ -1,6 +1,6 @@
 # Fact f67c8a54
 
-Store id: c100bf04-fbd1-4bf9-89d3-3d87abf34ba9
+Store id: f552ffa3-2d4a-478b-9b70-1f7f7dc9788d
 
 ## Text
 
@@ -20,7 +20,7 @@ class Choices(enum.Enum, metaclass=ChoicesType)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.3042800+00:00`
+- posted_at: `2026-11-09T23:31:55.5048710+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 54,
     "symbol": "Choices"
   },
-  "id": "c100bf04-fbd1-4bf9-89d3-3d87abf34ba9",
+  "id": "f552ffa3-2d4a-478b-9b70-1f7f7dc9788d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.3042800+00:00"
+    "posted_at": "2026-11-09T23:31:55.5048710+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5ccdedd8-e730-4775-8995-ce1f32e84b1a",
+  "subject_id": "f45dcf14-e511-436e-add4-d9dfcfe57f0f",
   "subject_name": "django/db/models/enums::Choices",
   "tags": [
     "entity:class"

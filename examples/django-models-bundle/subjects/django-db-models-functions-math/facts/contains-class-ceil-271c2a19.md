@@ -1,6 +1,6 @@
 # Fact 271c2a19
 
-Store id: ee48029c-9193-49a2-8ec9-c377be506f3b
+Store id: 677cf43c-cd1c-4521-841e-356078639ab1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Ceil
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ee48029c-9193-49a2-8ec9-c377be506f3b",
+  "id": "677cf43c-cd1c-4521-841e-356078639ab1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Ceil"
       },
       "rel": "contains",
-      "target": "8d295589-5078-4597-a5c2-244a511df5cc"
+      "target": "69704df4-f1ce-4103-bc98-6c19c854a1aa"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

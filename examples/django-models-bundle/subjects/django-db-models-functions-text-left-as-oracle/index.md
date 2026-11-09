@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Left.as_oracle
 
-- Subject: django/db/models/functions/text::Left.as_oracle (id `531b1098-6593-435d-9479-bffc3a36e96f`)
+- Subject: django/db/models/functions/text::Left.as_oracle (id `cb8396f7-f5da-4b09-aa2a-47ac58ed0f72`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

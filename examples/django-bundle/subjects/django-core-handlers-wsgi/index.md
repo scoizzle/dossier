@@ -1,14 +1,14 @@
 # django/core/handlers/wsgi
 
-- Subject: django/core/handlers/wsgi (id `54888a6c-04d2-4969-973d-0e8b3bc87992`)
+- Subject: django/core/handlers/wsgi (id `c1c6ca09-6dd0-4aac-bee3-27ed84929a57`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 16 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1840 tokens
+- Facts shown: 30 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - response._handler_class = self.__class__ [7dcbe0e4]
 - status = "%d %s" % (response.status_code, response.reason_phrase) response_headers = [ *response.items(), *(("Set-Cookie", c.OutputString()) for c in response.cookies.values()), ] start_response(status, response_headers) if getattr(response, "file_to_stream", None) is not None and environ.get( "wsgi.file_wrapper" ): # If `wsgi.file_wrapper` is used the WSGI server does not call # .close on the response, but on the file wrapper. Patch it to use # response.close instead which takes care of closing all files. response.file_to_stream.close = response.close response = environ["wsgi.file_wrapper"]( response.file_to_stream, response.block_size ) return response [a0ea8057]
@@ -27,6 +27,19 @@
 - def read(self, size=-1, /): _pos = self._pos limit = self.limit if _pos >= limit: return b"" if size == -1 or size is None: size = limit - _pos else: size = min(size, limit - _pos) data = self._read(size) self._pos += len(data) return data [3ff1f2dd]
 - def readline(self, size=-1, /): _pos = self._pos limit = self.limit if _pos >= limit: return b"" if size == -1 or size is None: size = limit - _pos else: size = min(size, limit - _pos) line = self._readline(size) self._pos += len(line) return line [f395bc5a]
 
-## Beyond the budget
+## All facts
 
-14 more facts did not fit in the budget: [d5cfd7a3] [4202d9ae] [5bebb903] [fc37c9cb] [3e18016c] [3d58609b] [1c245b46] [9ff69772] [19fc12e9] [d9ad4dae] [70225bd6] [93dc7d9c] [08ac259c] [6fade208]
+- [d5cfd7a3] if script_url: if b"//" in script_url: # mod_wsgi squashes multiple successive slashes in PATH_INFO, # do the same with script_url before manipulating paths (#17133). script_url = _slashes_re.sub(b"/", script_url) path_info = get_bytes_from_wsgi(environ, "PATH_INFO", "") script_name = script_url.removesuffix(path_info) else: script_name = get_bytes_from_wsgi(environ, "SCRIPT_NAME", "")
+- [4202d9ae] key and default should be str objects. """ value = get_bytes_from_wsgi(environ, key, default) return value.decode(errors="replace")
+- [5bebb903] key and default should be strings. """ value = environ.get(key, default) # Non-ASCII values in the WSGI environ are arbitrarily decoded with # ISO-8859-1. This is wrong for Django websites where UTF-8 is the default. # Re-encode to recover the original bytestring. return value.encode("iso-8859-1")
+- [fc37c9cb] return repercent_broken_unicode(path_info).decode()
+- [3e18016c] return script_name.decode()
+- [3d58609b] _slashes_re = _lazy_re_compile(rb"/+")
+- [1c245b46] class LimitedStream(IOBase): """ Wrap another stream to disallow reading it past a number of bytes.
+- [9ff69772] class WSGIHandler(base.BaseHandler): request_class = WSGIRequest
+- [19fc12e9] class WSGIRequest(HttpRequest): def __init__(self, environ): script_name = get_script_name(environ) # If PATH_INFO is empty (e.g. accessing the SCRIPT_NAME URL without a # trailing slash), operate as if '/' was requested. path_info = get_path_info(environ) or "/" self.environ = environ self.path_info = path_info # be careful to only replace the first slash in the path because of # http://test/something and http://test//something being different as # stated in RFC 3986. self.path = "%s/%s" % (script_name.rstrip("/"), path_info.replace("/", "", 1)) self.META = environ self.META["PATH_INFO"] = path_info self.META["SCRIPT_NAME"] = script_name self.method = environ["REQUEST_METHOD"].upper() # Set content_type, content_params, and encoding. self._set_content_type_params(environ) try: content_length = int(environ.get("CONTENT_LENGTH")) except (ValueError, TypeError): content_length = 0 self._stream = LimitedStream(self.environ["wsgi.input"], content_length) self._read_started = False self.resolver_match = None
+- [d9ad4dae] def get_bytes_from_wsgi(environ, key, default): """ Get a value from the WSGI environ dictionary as bytes.
+- [70225bd6] def get_path_info(environ): """Return the HTTP request's PATH_INFO as a string.""" path_info = get_bytes_from_wsgi(environ, "PATH_INFO", "/")
+- [93dc7d9c] def get_script_name(environ): """ Return the equivalent of the HTTP request's SCRIPT_NAME environment variable. If Apache mod_rewrite is used, return what would have been the script name prior to any rewriting (so it's the script name as seen from the client's perspective), unless the FORCE_SCRIPT_NAME setting is set (to anything). """ if settings.FORCE_SCRIPT_NAME is not None: return settings.FORCE_SCRIPT_NAME
+- [08ac259c] from django.conf import settings from django.core import signals from django.core.handlers import base from django.http import HttpRequest, QueryDict, parse_cookie from django.urls import set_script_prefix from django.utils.encoding import repercent_broken_unicode from django.utils.functional import cached_property from django.utils.regex_helper import _lazy_re_compile
+- [6fade208] from io import IOBase

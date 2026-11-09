@@ -1,6 +1,6 @@
 # Fact 722eabd3
 
-Store id: 7fe19e5a-2b83-469c-8dde-9d75be24ec3f
+Store id: 0e9638be-2892-4dc4-8c62-97b28372bc00
 
 ## Text
 
@@ -20,7 +20,7 @@ def __len__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5470270+00:00`
+- posted_at: `2026-11-09T23:32:00.5277990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 32,
     "symbol": "Tuple.__len__"
   },
-  "id": "7fe19e5a-2b83-469c-8dde-9d75be24ec3f",
+  "id": "0e9638be-2892-4dc4-8c62-97b28372bc00",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5470270+00:00"
+    "posted_at": "2026-11-09T23:32:00.5277990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82fbf1a6-9bb9-49ae-be14-507315f4e2eb",
+  "subject_id": "39161bc6-314c-4ed7-b324-8c007e370610",
   "subject_name": "django/db/models/fields/tuple_lookups::Tuple.__len__",
   "tags": [
     "entity:method"

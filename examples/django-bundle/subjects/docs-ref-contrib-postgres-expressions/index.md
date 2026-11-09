@@ -1,8 +1,8 @@
 # docs/ref/contrib/postgres/expressions
 
-- Subject: docs/ref/contrib/postgres/expressions (id `bd341370-19bb-4efc-939a-974f2081a70b`)
+- Subject: docs/ref/contrib/postgres/expressions (id `22ee4c47-d84d-42e9-926a-49cc01b366f7`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 454 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

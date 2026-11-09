@@ -1,6 +1,6 @@
 # Fact ed9af643
 
-Store id: 6d8ad75d-3475-4959-a739-ad8bc012a0a6
+Store id: e31cbbdb-9a48-49db-8629-93f32f16ce8a
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1094540+00:00`
+- posted_at: `2026-11-09T23:32:01.1752580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 51,
     "symbol": "Extract.as_sql"
   },
-  "id": "6d8ad75d-3475-4959-a739-ad8bc012a0a6",
+  "id": "e31cbbdb-9a48-49db-8629-93f32f16ce8a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1094540+00:00"
+    "posted_at": "2026-11-09T23:32:01.1752580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "44f94dc3-b0e9-4c94-9f68-3f249100d241",
+  "subject_id": "1be3981e-f8cd-49a1-9e57-41e0944dc345",
   "subject_name": "django/db/models/functions/datetime::Extract.as_sql",
   "tags": [
     "entity:method"

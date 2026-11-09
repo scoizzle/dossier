@@ -1,6 +1,6 @@
 # Fact c6788b69
 
-Store id: 2eb78252-7746-44bc-b42b-60cbd9f16283
+Store id: 4f177ee5-9d82-4122-bab5-52a3a70c0179
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_bound_params(self, start, finish)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2418820+00:00`
+- posted_at: `2026-11-09T23:32:03.4343110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 757,
     "symbol": "YearExact.get_bound_params"
   },
-  "id": "2eb78252-7746-44bc-b42b-60cbd9f16283",
+  "id": "4f177ee5-9d82-4122-bab5-52a3a70c0179",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2418820+00:00"
+    "posted_at": "2026-11-09T23:32:03.4343110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b95fe704-5e51-46d4-8010-d3a6f01aefd5",
+  "subject_id": "0e08a35f-367c-4a81-b7f2-3a81e8a0b856",
   "subject_name": "django/db/models/lookups::YearExact.get_bound_params",
   "tags": [
     "entity:method"

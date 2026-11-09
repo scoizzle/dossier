@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::FilePathField.__init__
 
-- Subject: django/db/models/fields/__init__::FilePathField.__init__ (id `c65fd974-c8f5-4dd4-9bb9-47dd89e7a3a5`)
+- Subject: django/db/models/fields/__init__::FilePathField.__init__ (id `87002c96-002b-4d86-a020-0e2bfb825c3f`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 45 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

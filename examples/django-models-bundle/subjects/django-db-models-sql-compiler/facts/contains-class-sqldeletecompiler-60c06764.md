@@ -1,6 +1,6 @@
 # Fact 60c06764
 
-Store id: 0eda68d6-db5d-48ec-bc28-474c2242895b
+Store id: f90c5d80-3a6c-4f29-9e36-e9c2518064c4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SQLDeleteCompiler
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7517920+00:00`
+- posted_at: `2026-11-09T23:32:06.1168670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0eda68d6-db5d-48ec-bc28-474c2242895b",
+  "id": "f90c5d80-3a6c-4f29-9e36-e9c2518064c4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7517920+00:00"
+    "posted_at": "2026-11-09T23:32:06.1168670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SQLDeleteCompiler"
       },
       "rel": "contains",
-      "target": "4b45979a-58d3-4ea6-8c2b-67181c138139"
+      "target": "d395a30f-760b-4ddc-90a5-0b7d87622716"
     }
   ],
   "status": "live",
-  "subject_id": "a1b39a63-5894-4f24-9b98-7363166e586c",
+  "subject_id": "eec456aa-334a-4312-a193-ed044257811d",
   "subject_name": "django/db/models/sql/compiler",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 7a0ee389
 
-Store id: da0632af-f362-41cf-b6c2-e5d569ede8b8
+Store id: b233fcc1-24da-41e9-a89d-1e96112e081d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _register_combinable_fields()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5416060+00:00`
+- posted_at: `2026-11-09T23:31:55.8063360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 708,
     "symbol": "_register_combinable_fields"
   },
-  "id": "da0632af-f362-41cf-b6c2-e5d569ede8b8",
+  "id": "b233fcc1-24da-41e9-a89d-1e96112e081d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5416060+00:00"
+    "posted_at": "2026-11-09T23:31:55.8063360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cdb69da6-efac-45ff-bc70-f47e8edea265",
+  "subject_id": "e9c1431e-f395-4dce-9e44-4b6509a43f7c",
   "subject_name": "django/db/models/expressions::_register_combinable_fields",
   "tags": [
     "entity:function"

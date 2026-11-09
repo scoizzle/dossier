@@ -1,6 +1,6 @@
 # Fact fd62b3ef
 
-Store id: e11fb693-a1e5-4e00-9d22-e9e0b3c8ce47
+Store id: 4ec5c632-0342-4376-91f7-5ded44496835
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_attname_column(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4677740+00:00`
+- posted_at: `2026-11-09T23:31:58.8555950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1991,
     "symbol": "ManyToManyField.get_attname_column"
   },
-  "id": "e11fb693-a1e5-4e00-9d22-e9e0b3c8ce47",
+  "id": "4ec5c632-0342-4376-91f7-5ded44496835",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4677740+00:00"
+    "posted_at": "2026-11-09T23:31:58.8555950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "235ef129-f865-4c5b-895c-da8bac2ef34a",
+  "subject_id": "5a623aeb-d9ac-417e-b717-9f4ba085fb8e",
   "subject_name": "django/db/models/fields/related::ManyToManyField.get_attname_column",
   "tags": [
     "entity:method"

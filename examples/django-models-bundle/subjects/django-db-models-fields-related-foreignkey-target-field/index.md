@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignKey.target_field
 
-- Subject: django/db/models/fields/related::ForeignKey.target_field (id `b401f741-a65c-4525-9c74-496a51b1d2f1`)
+- Subject: django/db/models/fields/related::ForeignKey.target_field (id `f2358a76-8c57-4c4b-9a18-abcaa06dc91e`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

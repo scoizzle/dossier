@@ -1,8 +1,8 @@
 # django/db/models/functions/datetime
 
-- Subject: django/db/models/functions/datetime (id `6590f65d-0701-441c-adae-1cea47b0b755`)
+- Subject: django/db/models/functions/datetime (id `f1548d19-5365-487c-8902-8045f2b05c2e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 448 tokens
 - Facts shown: 26 of 26
 - Conflicts: 0

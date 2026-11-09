@@ -1,14 +1,14 @@
 # docs/ref/settings
 
-- Subject: docs/ref/settings (id `00383dad-2595-4bed-960b-bb46af1a0f1e`)
+- Subject: docs/ref/settings (id `acf5ff91-5503-462f-9dbc-112fcde1ad42`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 20 of 1331
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 43230 tokens
+- Facts shown: 1261 of 1331
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - MESSAGE_LEVEL = message_constants.DEBUG [c8ee2aa6]
 - MESSAGE_TAGS = {message_constants.INFO: ""} [f565d778]
@@ -31,6 +31,1246 @@
 - CACHES = { "default": { "BACKEND": "django.core.cache.backends.filebased.FileBasedCache", "LOCATION": "/var/tmp/django_cache", } } [3be70c90]
 - DATABASES = { "default": { "ENGINE": "django.db.backends.sqlite3", "NAME": "mydatabase", } } [bcea6474]
 
-## Beyond the budget
+## All facts
 
-1241 more facts did not fit in the budget: [aa10c489] [c59c326a] [1bb6e1ef] [38bcbee7] [d0284d1b] [b67035dc] [ab5420d5] [28588857] [66b6538e] [cc7158320b986592] [f692af80] [b4de810b] [3e5c2349] [f8ebd728] [1781f94c] [c7a32d1b] [76dbc4ac] [a996ca9c] [05c98d52] [52d24bf6] [9b2544f1] [70147078] [b1d1db53] [873addf0] [2282d3a3] [614d1111] [d124f099] [a79483bb] [d211fab3] [b75763df] [85165ce1] [4f235fe6] [45eb454d] [be88615b] [c5474af4] [24e12ea5] [ee26ceb4] [f2a95bcb] [0b9978c8] [d0fb0558] [33070325] [3fe64b87] [0b8526de] [159fa437] [02cafc1a] [634c0053] [0deec766] [7dd99cb6] [20a8916e] [2a390ca2] [2fb7386e] [fbf2d254] [aede04f7] [911a85ac] [2ce943a2] [ac6cbe5b3e28dda2-5] [c2cea957e5e2362f-2] [1ca7dd54] [a6263053] [969de436] [db60e936] [e8d6dcfa] [30cc85c4] [d1a3b1b4] [42a3b3f6] [d174a004c44097fd] [ac0294fb] [a9771bd5] [e89e6e05] [7e0ebbbd] [b26a745f] [e746aa5a] [878a0c8d] [402009b9] [dc13fd8f] [e5cd81d7] [7221e7ee] [43b6da4a] [3f4315ae] [19834f92] [09551e69] [98f39e86] [8689a104] [27acf138] [4be7c757] [51dcc754] [2d869fbe] [16944cf8] [ac1b8f23] [b33c52f2] [b8a32306] [4bcfc1c6] [7e5e0e30] [9c89b702] [f03029f7] [cbc3c024] [4f2baa69] [ea31a166] [c6890554] [8f27bad3] [c82f0776] [c8a0b00f] [c0f4c12d] [dc4d53de] [038b62e9] [84bf39a5] [fa04851a] [6b0a3db568b17cf8] [674a9dbe] [cc82be7c] [ea8f1be2] [b9eea131] [e09ed267] [9317af1e] [672bfac6] [e209f89f] [e92bd15c] [9d32f8c9] [5bce5fb0] [ec7e26a7] [f8ed92fc] [d23eb25c] [07b7a56d6b1a4254-2] [2c149d74] [f328d9d1] [46487cb7196e5ce3] [0b758f60] [4b48d36f] [6cd19c4c] [59b313c0] [080916f2] [685d15dfb6eb2285-83] [3a9340cd0d877339-28] [79ae44dc] [01aaf10861da6524-10] [01aaf10861da6524-11] [01aaf10861da6524-12] [01aaf10861da6524-13] [01aaf10861da6524-14] [01aaf10861da6524-15] [01aaf10861da6524-16] [01aaf10861da6524-17] [01aaf10861da6524-18] [01aaf10861da6524-19] [01aaf10861da6524-20] [01aaf10861da6524-21] [01aaf10861da6524-22] [01aaf10861da6524-23] [942ae6c11625c81c-135] [942ae6c11625c81c-136] [942ae6c11625c81c-137] [942ae6c11625c81c-138] [942ae6c11625c81c-139] [942ae6c11625c81c-140] [942ae6c11625c81c-141] [942ae6c11625c81c-142] [942ae6c11625c81c-143] [942ae6c11625c81c-144] [942ae6c11625c81c-145] [675e59e8] [b7c60e8a] [34e721c4] [00054b8f4c441f62-2] [1e27bcd6] [c50f61e7] [67bbb4c2] [b3815080] [4cd71d0e] [e4f0ba5f] [3a401f5a] [c0aad8ba] [4b39970e] [e510de7a] [99a6ca55] [60d7bc98] [651c489b] [65710755] [a1e2d278] [42fa9bb6] [65dc163b] [810ddddf] [4ae097dc] [ab4f146f] [ad0a8fc3] [22642de8] [e6faa97e] [48c21dec] [4a5dd923] [93900394] [6899fa16] [95b02365] [1960b5ea] [b139547b] [9249d54e] [958c2e32] [78d7eb0a] [f403e1bc] [eeb5c8f8] [669ea8b5] [7318a988] [dc47330a] [409f1bea] [c31d179a] [1cc45aa1] [262545bb] [1bf7dace] [25e6fa67] [5506a26c] [d4734544] [af7b74a0] [6e60ddc9] [919cf5dc] [2fc80be3] [c182de39] [b835cc00] [1f0d0d61] [03664e47] [b4f50b20] [41e3f5e8] [2881d1b9] [61aaf317] [b1dab01f] [a4a229ae] [b1b8da82] [d2f689ee] [d95f6f26] [d58357dd] [72ff47e8] [673f89be] [80875002] [cbac21f1] [6943d46d] [1f6a260e] [16fe990a] [cc228ea8] [790c0cdb] [9f88a0c1] [1fc5f21d] [b71e046f] [858a32ec] [2d97b44a] [09700f1b] [ac100d37] [ec0c9943] [b4c6a7c4] [219868de] [3eab604e] [013e800a] [31a5bf64] [7d3310fb] [cb172360] [e69697d84f33aaa9-2] [11e34e95] [7dea84f0] [fbdc1fad] [fa2c9351] [b37ff0c3] [75a1be5e] [62b1f503] [a5953858] [aebeaab5] [3a6ba704] [a5cadd43] [05cb9ce2] [1dffdffc] [28799b8d] [a1af243f] [3e827342] [d754c04c] [50e9a674] [53556a7f] [48019511] [512605c5] [0651a485] [3a044b23] [77fa2145] [65730713] [d6385a69] [26fe832d] [c5eb38fd] [db57cad1] [5850da67] [8968dee5] [76a8f836] [db44f648] [ad088a9d] [8d7af288] [ddf9e26b] [e898c779] [171a5f84] [03801a7f] [8f392345] [8eaad7c1] [94d7fecd] [77549b4f] [5bd2ce3a] [e4978742] [2a9b82ed] [29834838] [42630eed] [c99ab45c] [06adee4f] [cb7751ec] [13dc6798] [62f19372] [bf8f4f66] [eafae783] [1181c580] [fa8b70fa] [2dc20a63] [e6cdcadd] [ca59c26c] [16b96c78] [d57951c8] [d2cd8e35] [95c06880] [d33e4669] [66a6ccc3] [925be04d] [47112c03] [c1eac3a2] [b4db0ca1] [00d19a77] [9f213890] [0b60c9d9] [c0c8d0a5] [e2d6a7e5] [b1416a4f] [2f89284b] [f0c7baa5] [bf72fa88] [99fb0a7f] [5d01b412] [5fae0e76] [100069e5] [3b1ad88e] [9ce51281] [5c92da60] [53702aa0] [92ea8ad3] [3a5aba1f] [430492ad] [73443117] [c389389a] [4579ce87] [d1b62732] [ed893010] [7c489f98] [24405639] [5e98deed] [3fbff3b5] [6fea8cb6] [bd486068] [035d9b70] [2b2d8e0f] [61e132bb] [d7900e54] [bbbe9175] [f07f9fc3] [1d47f8e1] [e07e495d] [1863c54e] [cb358c4c] [a4e4096d] [1403c712] [678c706d] [87ab627d] [87682e86] [6cf7fa28] [8d2ddf63] [ccc001f5] [a1eb26d754a3d60c-30] [a1eb26d754a3d60c-31] [a1eb26d754a3d60c-32] [fe45b681] [0cf180bcf4ecfab5-24] [0cf180bcf4ecfab5-25] [57739e32d87f6c76-17] [57739e32d87f6c76-18] [57739e32d87f6c76-19] [2a966a198e13032b-25] [c54b54cb0805732a-70] [c54b54cb0805732a-71] [c54b54cb0805732a-72] [c54b54cb0805732a-73] [c54b54cb0805732a-74] [c54b54cb0805732a-75] [c54b54cb0805732a-76] [c54b54cb0805732a-77] [d5e34b14] [56c4a3fb] [b249d568] [c2fb1d23] [b473b690] [7d85c4df] [37c4e8d6f30a41e2-2] [986e174b] [9a319f26] [63923513] [64e1ca11] [132328ed] [12933510] [713a64d2] [a1f77950] [2f836bd4] [faed8036] [11532de7] [6611c69e] [8d9419d7] [e39bf576] [2d203d09] [946c9664] [62611a9c] [4ee51402] [8503ca06] [2ad167c0] [6e9e0cf9] [de7c6f5a] [807c46b5] [ebebf8c2] [8357c993] [3b957953] [b166e3b2] [55077e43] [44ca262a] [48584c56] [1c11b773] [6fbbff18] [ebc88c9d] [5f5c4afc] [ce3fdf5f] [a3f1a50c] [ff0571f5] [b5ddde1b] [d6b64ef2] [ea527558] [2c36e4f0] [367ebad4] [bea4765d] [f99d4bf9] [1f4c9e18] [b740e198] [794e21ff] [6c5d4fd8] [d216a0bb] [c33a50b4] [80cf3bd7] [cf42ebb4] [2d9cbce8] [df167c6e] [8eb896b1] [98eae285] [a8f5d97f] [c937904b] [c11f3582] [4d2cb95d] [e2efcee6] [6541f537] [ab91bffa] [555551c6] [32b6bdae] [c6dec664] [8fc44484] [7b4b22e0] [a1cc9a1c] [4a941c29] [e58b649b] [41603ad0] [c6e4523d] [95985dd6] [52a2d3ca] [d37426a3] [66974750] [8e336caa] [27c959a8890dab03] [27c959a8890dab03-2] [27c959a8890dab03-3] [27c959a8890dab03-4] [27c959a8890dab03-5] [27c959a8890dab03-6] [02aa52ac] [60c19817d776c231] [60c19817d776c231-2] [60c19817d776c231-3] [60c19817d776c231-4] [60c19817d776c231-5] [60c19817d776c231-6] [60c19817d776c231-7] [60c19817d776c231-8] [60c19817d776c231-9] [60c19817d776c231-10] [60c19817d776c231-11] [60c19817d776c231-12] [60c19817d776c231-13] [60c19817d776c231-14] [60c19817d776c231-15] [60c19817d776c231-16] [60c19817d776c231-17] [60c19817d776c231-18] [b815e0a1] [65f9a70d] [69015ede1faa715b] [69015ede1faa715b-2] [69015ede1faa715b-3] [ec2910b9] [50a5492f] [1e0d8e3c0f788670] [1e0d8e3c0f788670-2] [cc7b4ead8a981c26] [cc7b4ead8a981c26-2] [12693d748bb7cf42] [12693d748bb7cf42-2] [1e53e0b9] [7615647b] [5d593d22] [874935a6] [3feb3226] [acdb34b78a7ede1d] [acdb34b78a7ede1d-2] [e8f82e0b] [eff968d1] [c15e9533] [88658947] [a9d70c14] [1ea1e1fa] [3e088f3c] [da1b7e95] [3362fa7e] [b7b5f1a6] [d34985f1] [3f48b68d91a82a90] [3f48b68d91a82a90-2] [6dbc31e3] [6227221d] [b35f46ac] [c948874f] [617600e8] [7d4c6a12] [de801a4c] [f63561fc] [e69184f8] [ca5727a3] [1073c070] [0ffee5c8] [6c3f86ec] [59207e21594823d8] [59207e21594823d8-2] [c32f6920] [0638b9bb] [740d8b18] [0b430f7ed84d2ad0] [0b430f7ed84d2ad0-2] [0b430f7ed84d2ad0-3] [0ba374e1] [24164900] [adc26247] [f42a8e56] [a49b50ec] [b8c8f83e] [23fba42f] [262e5fce] [5963f9e8859ecc15] [a44ba2e1] [35647ea5] [d08e811a] [b0fe7b38c7fcf33d] [b0fe7b38c7fcf33d-2] [b0fe7b38c7fcf33d-3] [b0fe7b38c7fcf33d-4] [b0fe7b38c7fcf33d-5] [b0fe7b38c7fcf33d-6] [b0fe7b38c7fcf33d-7] [b0fe7b38c7fcf33d-8] [b0fe7b38c7fcf33d-9] [b0fe7b38c7fcf33d-10] [b0fe7b38c7fcf33d-11] [b0fe7b38c7fcf33d-12] [b0fe7b38c7fcf33d-13] [b0fe7b38c7fcf33d-14] [b0fe7b38c7fcf33d-15] [b0fe7b38c7fcf33d-16] [b0fe7b38c7fcf33d-17] [b0fe7b38c7fcf33d-18] [b0fe7b38c7fcf33d-19] [b0fe7b38c7fcf33d-20] [b0fe7b38c7fcf33d-21] [b0fe7b38c7fcf33d-22] [b0fe7b38c7fcf33d-23] [b0fe7b38c7fcf33d-24] [b0fe7b38c7fcf33d-25] [b0fe7b38c7fcf33d-26] [b0fe7b38c7fcf33d-27] [b0fe7b38c7fcf33d-28] [b38633e0a9febd74] [b38633e0a9febd74-2] [b38633e0a9febd74-3] [b38633e0a9febd74-4] [b38633e0a9febd74-5] [b38633e0a9febd74-6] [b38633e0a9febd74-7] [b38633e0a9febd74-8] [b38633e0a9febd74-9] [b38633e0a9febd74-10] [b38633e0a9febd74-11] [b38633e0a9febd74-12] [b38633e0a9febd74-13] [b38633e0a9febd74-14] [b38633e0a9febd74-15] [b38633e0a9febd74-16] [b38633e0a9febd74-17] [b38633e0a9febd74-18] [b38633e0a9febd74-19] [b38633e0a9febd74-20] [b38633e0a9febd74-21] [b38633e0a9febd74-22] [b38633e0a9febd74-23] [b38633e0a9febd74-24] [b38633e0a9febd74-25] [b38633e0a9febd74-26] [b38633e0a9febd74-27] [b38633e0a9febd74-28] [b38633e0a9febd74-29] [b38633e0a9febd74-30] [b38633e0a9febd74-31] [48513912] [692224f9320e79e0] [692224f9320e79e0-2] [692224f9320e79e0-3] [692224f9320e79e0-4] [692224f9320e79e0-5] [692224f9320e79e0-6] [692224f9320e79e0-7] [692224f9320e79e0-8] [692224f9320e79e0-9] [9ca0a4d4] [6faa4647] [f260d084] [58fbbf02] [4529d318c14d8f63-2] [4529d318c14d8f63-3] [4529d318c14d8f63-4] [4529d318c14d8f63-5] [4529d318c14d8f63-6] [4529d318c14d8f63-7] [4529d318c14d8f63-8] [4529d318c14d8f63-9] [4529d318c14d8f63-10] [4529d318c14d8f63-11] [4529d318c14d8f63-12] [4529d318c14d8f63-13] [4529d318c14d8f63-14] [4529d318c14d8f63-15] [4529d318c14d8f63-16] [4529d318c14d8f63-17] [4529d318c14d8f63-18] [4529d318c14d8f63-19] [bcd7a79d] [731475d462767b71] [731475d462767b71-2] [731475d462767b71-3] [731475d462767b71-4] [29384748] [a91e05b1c33959e7] [a91e05b1c33959e7-2] [a91e05b1c33959e7-3] [a91e05b1c33959e7-4] [a91e05b1c33959e7-5] [7bdef875] [ba513adf016e975e-2] [ba513adf016e975e-3] [ba513adf016e975e-4] [ba513adf016e975e-5] [ba513adf016e975e-6] [ba513adf016e975e-7] [ba513adf016e975e-8] [ba513adf016e975e-9] [ba513adf016e975e-10] [ba513adf016e975e-11] [ad19d2d8] [4fb84015] [e4712f37] [06522c85] [74442ea0] [81971629] [a58c0e4c] [4fa7a25d] [4e251aad] [142d80b9] [39aca998] [6825b5c1] [c6aa9c42] [acfcf117f82fd4c9-72] [acfcf117f82fd4c9-73] [acfcf117f82fd4c9-74] [d43ceb06] [cbffb91a] [c18edf72] [086b3d7b] [a451194c] [1664dd6e] [6c3ca4f1] [aef963c5] [a230dda8] [e5ddc096] [28a249ce] [285f9742] [328c64de] [ffbee96e] [7633c194] [5d010568] [68f3edfc] [2eeee181] [a8e1e5b3] [aa1e9869] [7f763579] [16666ae1] [bf20d6ce] [6357223c] [90c09c5f] [79a8397f] [b2d0a17e] [9273d0e3] [1c451803] [468f110b] [e7ea236e] [861eae00] [53db0056] [1a9ea45f] [180986cb] [61ac7a58] [75e848a9] [7f13891c] [ff3fcd26] [f818fbdf] [89287944] [eac6d943] [2ee2d35f] [2df8fa67] [06f028d8] [720b388c] [2e039535] [94d76d4b] [31f7195f] [b06d3f5c] [a21a0968] [7f5e99e6] [0da929b3] [2b7c9109] [9e2cf097] [788013ee] [f553ba12] [a340e0d5] [378b8f20] [f5e866e1] [8f5bf11d] [803d2fb7] [a63b8b11] [5493d066] [ef56f978] [8a68fe01] [ac2182e7] [5b63caac] [f8c94bf9] [be531a07] [c0e484a6] [b46d646a] [42d64e2a] [57d7ec33] [f33728c9] [1f919ce1] [f562ff52] [7a09f47f] [fa99437f] [b57328e0] [afc00ef0] [acc85302] [cdc6d57c] [63e7ea246fbd1fa1] [14dd81b3] [dd03e5a4] [f41745bb] [12b0198cec145720] [c59770d3] [4b193232] [67201afd] [3d8a3fa0] [aac6bc6a] [cfddbe34] [9d9f0df3] [2a0be979] [b4b51eb8] [13f6ce94] [69b87754] [e3b066c3] [f309e4b6fe2b8df7] [9d69ab8b] [e825040f] [c08fd1b3d2252300] [c0100f4c] [050cc6fc] [61f5f686] [8f63a16a] [4972d262] [05a237fe] [dc52bac2] [d5aca3fa1a6b0e93] [d4ae33bd08d0e1d7] [e6223c90] [04c5227a] [d9244458] [02c0e636] [a3bbe674] [401af000] [4dc4cec4] [abe59675] [0a9a33a0] [830d2892] [8d0ac4f3] [5453fe25] [9053c983] [a073fa83] [f502b9e6] [2e4ca573] [793cfa99] [24005707] [41e142bf] [6fe16a9c] [957b1ed1] [a57e0399] [5c418ab3] [d8a0c3ce] [735d52a2] [d7d983f5] [93b562f6] [150dad90] [2919cfcb] [37eaba69] [533e7ff6] [6d6cc022] [e5fe8135] [96fbc785] [fb3ef101] [94727d52] [7cc1c7cb] [bd864c5d] [0394ee90] [c7738dab] [894297dd] [44378bd7] [0e1b7ff8] [7b898130] [97948d7e] [4cafb6f2] [801fc674] [f989eec4] [7b617f96] [84c7c193] [e0ee8937] [471d6d86] [57f437bd] [0929621e] [6ffb2b89] [af8c5d43] [04f86df8] [bdf2edf9] [113036c4] [8676009d] [e5bb06fe] [76cbc184] [7421c916] [913e74a1] [ed549c05] [6cb4a67c] [e533b640] [9962b6dc] [5f4d2a85] [28ec0d5f] [d0b9b690] [8a758398] [7b91d839] [64070794] [e5f16e99] [8f14fc5b] [668bd0a0] [a3c80a8d] [5dd4992b] [ad595319] [a69595f8] [c7d3f18f] [4976db5d] [3fbf3bd0] [a91f6f41] [cebd320d] [005ca6fc] [45fbcc7c] [90eac7b3] [ea151861] [17df5f23] [1186495d] [9d8b0413] [b8549de8] [9736b1b5] [12e7646f] [37d2876b] [8a8cba23] [1cb29271] [5822eff6] [ab247d5e] [ab984356] [ed72315f] [10ff3462] [5d313a24] [0ce2ce36] [72088827] [e1fd7b20] [c08759fd] [22b1cd03] [c6499e820afe5cf1] [2b344f58] [fcf5f802] [e3875141] [5aa47358] [d724e8f1] [4c1b3e62] [d6be84c4] [2abaa2cb] [c08dc9ba] [c79b5d9a] [afe0f6ff] [2ecb0ccd] [df7cb0ea] [8665e96c] [61f0a3f0] [c61a0437] [06c53ed5] [1862afbe] [cde38bc1] [06611645] [4bccae7f] [ad1bbfa2] [6fee745f] [8b7ac8d9] [f8e8db49] [e52ec5bd] [87eeef11] [8c9c8ca7] [29a0d9ee] [22dbc375] [c1f5064a] [45f1f64e] [0c4d9a56] [ba24c22c] [98e57833] [624460de] [3d3c4e43] [31a47e89] [81126651] [d362fa5f] [0bb90e5d] [80f547c5] [df9fca37] [cc9601bfb8bb7394] [30a89f8498c5011d] [341c9287] [51ac1d26] [c57b769f] [1a495e48] [2432a8d9] [d9c87600] [04a22897] [fac4d5de] [fcdbc796] [a2892919] [283f8716] [ca042777] [95975a3a] [3b8428e7] [c17c2cd0] [6b3a822b] [1430a238] [71d2e06580a80d50] [6da3a2b0] [dd1fdc16] [1be79d76] [e49e94b6] [6d1abdcb] [cf15b33b] [86dc8e10] [724e8788] [eb0eed3a] [34953716] [7885fcde] [a81b06c1] [6e38d4af] [b1e6c13a] [a42cab57] [5b9f0aab] [73cad583] [046e3a12] [42bf6e9e] [0d116c8f] [95c0e8ce] [95dbae58] [a93e2865] [cdc2263b] [805adad4] [4d42b603] [9d665934] [eb42dd83] [d2d4b91f] [6b7502ed] [0247e1db] [ce10f821] [9725582b] [1545f2c7] [d641cb36] [f696c05f] [5641cb56] [93978118] [8ff209fe] [96a36f07] [4c9f4938] [a092d10d] [a46e12e6] [8d2d4560] [f7dddb56] [78607a80] [8ae9d2b7] [bbdf869a] [d1b6bc92] [15cfa859] [be2d0936] [bfe9e89d] [b23654aa] [ed8a7e52] [3cfd1ed1] [b82d5e7e] [63e44ac5dc313684] [63e44ac5dc313684-2] [63e44ac5dc313684-3] [63e44ac5dc313684-4] [d93e0db2] [5ed9a520] [53f8c0d4] [53ce7232] [72d665e1] [db93e98b] [e418f2ee] [fda07ec0] [a2162228] [6355b62f] [cd55b831] [37fc7ee0] [6349efb6] [9419081f] [690e1e69] [3e213fc7] [1b4c3c9d] [289cc010] [3416a964] [e8ebefd8] [ff53151a] [e75a5d3f] [3fa176fa] [e9209ecb] [c7d23149] [a856fef8] [64c00749] [825c24af] [9fb800f4] [132ccdbf] [069dc894] [710a7d9d] [abf0f8f5] [37ecb716] [9a3786fc] [05dc2021] [7fce9b63] [9d9a31af] [d87bd32e] [67913a38] [8ed63be4] [dd7cadf7] [ef65e5d1] [8d0371b6] [3ee4bf4c] [89b157c2] [77f6cf28] [b3dedd52] [d00c9ba3] [cb3b540c] [d1b7fbc0] [e4a591b1] [9670662c] [2ea0d2cb] [a77bbc33] [560681e7] [d0bc50e9] [87f5d1e2] [5c2140ad] [25ef7b24] [237b4ded] [7d1f9aad] [e897a703] [29635775] [6fd79284] [10544d6c] [128f4a1b] [279965cf] [3d6410dc] [a5341c1c] [4b966b98] [fd794604] [a836c323] [84fae760] [b44f7006] [942c8214] [b19330c9] [9aba2101] [264dea49] [81fa386c] [cf9ede5a] [b07e9949] [f2726486] [72d5945f] [f498baca] [40ba055e] [b7d33b65] [1f84dd29] [540367d4] [ec9a6541] [12ccaac4] [574e0205] [9f7976c9] [579e2f8d] [5f86b63b] [20d1cfcf] [da01d864] [ded87be8] [62ee6daf] [8d5d6ea3] [8738df0d] [54cafdee] [9aecea7a] [bfd15312] [69b42f81] [5a9f39ae] [8d585c6d] [8838b1e0] [8f804e20] [a9e560a8] [0ba4619f] [2ece2fda] [191f0cad] [96645a3bdcf2c3e9] [96645a3bdcf2c3e9-2] [eae8e74b] [2e89cc970947780b] [2e89cc970947780b-2] [2e89cc970947780b-3] [2e89cc970947780b-4] [2e89cc970947780b-5] [4d8688c8] [492e8270] [da4acfd2] [752f7866] [85f08ff3] [4b2dc899] [01f89183] [f89df1ba] [b9da0e4e] [614cec31] [ff40e40b] [11acca82] [9ab74c00] [01d69cc4] [86f98ac6] [51e34ca2] [eeceeea9] [85685d50] [b5afa886] [e3209105] [73cb3b36] [11a6f527] [51d10acb] [4c81d698] [bb614193] [3cdd8de1] [a6ccb80b] [507c9a39] [7c84af21] [307fb7fa] [1a9f0810] [787e70d4] [85d0c998] [19facd57] [d2c5190c] [e83d63df] [3ce8c354] [d1b505f0] [350f76b7] [6becb8b4] [8807e251] [4a49e411] [3070b675] [f334b245] [90b6c215] [73f7d9ab] [0a0569c2] [758d43a4] [3cf44af1] [c23af113] [d89c9cb2] [3efc4b2b] [d119f6b9] [099dc028] [fc543173] [52859359] [21eff7f7] [51e55385] [679f1479] [615b93b0] [24b02fcc] [0ff6022f] [6fd3c3d5] [80bdb0e2] [d3988496] [562b005b] [800fe3cd] [2282d881] [e348373a] [df53fe53] [9aee47f6] [e511db5f] [ca6d8670] [25a216e4] [b6b1a4ce] [9f56deb9] [67c28654] [afb619b4] [3c8401c4]
+- [aa10c489] DATABASES = { "default": { "ENGINE": "django.db.backends.postgresql", "NAME": "mydatabase", "USER": "mydatabaseuser", "PASSWORD": "mypassword", "HOST": "127.0.0.1", "PORT": "5432", } }
+- [c59c326a] DATABASES = { "default": { "ENGINE": "django.db.backends.postgresql", "USER": "mydatabaseuser", "NAME": "mydatabase", "TEST": { "NAME": "mytestdatabase", }, }, }
+- [1bb6e1ef] Defining this setting overrides the default value and is *not* merged with it.
+- [38bcbee7] Explicitly defined through models are already handled by the migrations system.
+- [d0284d1b] FORMAT_MODULE_PATH = [ "mysite.formats", "some_app.formats", ]
+- [b67035dc] If :setting:`MEDIA_URL` is a relative path, then it will be prefixed by the server-provided value of ``SCRIPT_NAME`` (or ``/`` if not set). This makes it easier to serve a Django application in a subpath without adding an extra configuration to the settings.
+- [ab5420d5] If any of those are not true, you should keep this setting set to ``None`` and find another way of determining HTTPS, perhaps via custom middleware.
+- [28588857] If you're not familiar with file modes, please note that the ``0o`` prefix is very important: it indicates an octal number, which is the way that modes must be specified. If you try to use ``644``, you'll get totally incorrect behavior.
+- [66b6538e] In Django 2028, the default value will change from "Not defined" to ``{}``. Until then, if ``MAILERS`` is not defined in the project's settings, Django will create a ``"default"`` mailer using the :setting:`EMAIL_BACKEND` setting. Projects can opt into the Django 2028 behavior at any time by adding ``MAILERS`` and removing ``EMAIL_BACKEND`` from their settings. See :ref:`migrating-to-mailers-settings`.
+- [cc7158320b986592] In older versions, required a list of (name, address) tuples.
+- [f692af80] In older versions, the default value is :class:`django.db.models.AutoField`.
+- [b4de810b] In older versions, the default was ``True``.
+- [3e5c2349] In order to address this, you should add a :class:`~django.db.migrations.operations.RunSQL` operation to your migrations to perform the required ``ALTER TABLE`` step. You can check the existing table name through ``sqlmigrate``, ``dbshell``, or with the field’s ``remote_field.through._meta.db_table`` property.
+- [f8ebd728] LANGUAGES = [ ("de", _("German")), ("en", _("English")), ]
+- [1781f94c] LOCALE_PATHS = [ "/home/www/project/common_files/locale", "/var/local/translations/locale", ]
+- [c7a32d1b] MAILERS = { "default": { "BACKEND": "django.core.mail.backends.smtp.EmailBackend", "OPTIONS": { "host": "smtp.example.net", }, }, "newsletters": { "BACKEND": "django.core.mail.backends.smtp.EmailBackend", "OPTIONS": { "host": "smtp.bulk-email-service.example.com", "username": os.environ["BULK_EMAIL_SERVICE_ACCOUNT_ID"], "password": os.environ["BULK_EMAIL_SERVICE_API_KEY"], "use_tls": True, }, }, }
+- [76dbc4ac] Make sure ALL of the following are true before setting this (assuming the values from the example above):
+- [a996ca9c] Modern browsers provide a more secure default policy for the ``SameSite`` flag and will assume ``Lax`` for cookies without an explicit value set.
+- [05c98d52] NUMBER_GROUPING = (3, 2, 0)
+- [52d24bf6] Running Django with a known :setting:`SECRET_KEY` defeats many of Django's security protections, and can lead to privilege escalation and remote code execution vulnerabilities.
+- [9b2544f1] SECURE_CSP = { "default-src": [CSP.SELF], "img-src": ["data:", CSP.SELF, "https://images.example.com"], "frame-src": [CSP.NONE], }
+- [70147078] SECURE_CSP_REPORT_ONLY = { "default-src": [CSP.SELF], "img-src": ["data:", CSP.SELF, "https://images.example.com"], "frame-src": [CSP.NONE], "report-uri": "/my-site/csp/reports/", }
+- [b1d1db53] SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+- [873addf0] SERIALIZATION_MODULES = {"yaml": "path.to.yaml_serializer"}
+- [2282d3a3] STATICFILES_DIRS = [ "/home/special.polls.com/polls/static", "/home/polls.com/polls/static", "/opt/webfiles/common", ]
+- [614d1111] STATICFILES_DIRS = [ # ... ("downloads", "/opt/webfiles/stats"), ]
+- [d124f099] STORAGES = { # ... "example": { "BACKEND": "django.core.files.storage.FileSystemStorage", "OPTIONS": { "location": "/example", "base_url": "/example/", }, }, }
+- [a79483bb] Signing operations are computationally expensive. Having multiple old key values in ``SECRET_KEY_FALLBACKS`` adds additional overhead to all checks that don't match an earlier key.
+- [d211fab3] TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "APP_DIRS": True, }, ]
+- [b75763df] The default :file:`settings.py` file created by :djadmin:`django-admin startproject <startproject>` creates a unique ``SECRET_KEY`` for convenience.
+- [85165ce1] The default :file:`settings.py` file created by :djadmin:`django-admin startproject <startproject>` includes ``USE_I18N = True`` for convenience.
+- [4f235fe6] The default :file:`settings.py` file created by :djadmin:`django-admin startproject <startproject>` sets ``'APP_DIRS': True``.
+- [45eb454d] The default :file:`settings.py` file created by :djadmin:`django-admin startproject <startproject>` sets ``DEBUG = True`` for convenience.
+- [be88615b] The value of ``DEFAULT_AUTO_FIELD`` will be respected when creating new auto-created through tables for many-to-many relationships.
+- [c5474af4] There are security risks if you are accepting uploaded content from untrusted users! See the security guide's topic on :ref:`user-uploaded-content-security` for mitigation details.
+- [24e12ea5] These rules apply regardless of whether :setting:`INSTALLED_APPS` references application configuration classes or application packages.
+- [ee26ceb4] This address is used only for error messages. It is *not* the address that regular email messages sent with :func:`~django.core.mail.send_mail` come from; for that, see :setting:`DEFAULT_FROM_EMAIL`.
+- [f2a95bcb] This means that if you switch the value of ``DEFAULT_AUTO_FIELD`` and then generate migrations, the primary keys of the related models will be updated, as will the foreign keys from the through table, but the primary key of the auto-created through table will not be migrated.
+- [0b9978c8] This setting is deprecated and will be removed in Django 2028. Its replacement is :setting:`BACKEND <MAILERS-BACKEND>` in the :setting:`MAILERS` ``"default"`` configuration. See :ref:`migrating-to-mailers`.
+- [d0fb0558] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"file_path"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the file email backend. See :ref:`migrating-to-mailers`.
+- [33070325] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"ssl_certfile"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [3fe64b87] This setting will be removed in Django 2028. To use a custom default blank choice label, override ``django.db.models.fields.BLANK_CHOICE_LABEL`` in the app's ``ready()`` method.
+- [0b8526de] This should be an initially empty destination directory for collecting your static files from their permanent locations into one directory for ease of deployment; it is **not** a place to store your static files permanently. You should do that in directories that will be found by :doc:`staticfiles</ref/contrib/staticfiles>`’s :setting:`finders<STATICFILES_FINDERS>`, which by default, are ``'static/'`` app sub-directories and any directories you include in :setting:`STATICFILES_DIRS`.
+- [159fa437] This transitional setting will be removed in Django 2028, when legacy signed cookies will no longer be accepted.
+- [02cafc1a] Unfortunately, the primary keys of existing auto-created through tables cannot currently be updated by the migrations framework.
+- [634c0053] When this setting has a numeric value (one you've set yourself, or the default ``0o644``), this value will be used as is, and a umask will not be applied to it. The umask will apply only if this setting is ``None``.
+- [0deec766] When using the ``AppDirectoriesFinder`` finder, make sure your apps can be found by staticfiles by adding the app to the :setting:`INSTALLED_APPS` setting of your site.
+- [7dd99cb6] Your code should never access :setting:`INSTALLED_APPS` directly. Use :attr:`django.apps.apps` instead.
+- [20a8916e] [ "%H:%M:%S", # '14:30:59' "%H:%M:%S.%f", # '14:30:59.000200' "%H:%M", # '14:30' ]
+- [2a390ca2] [ "%Y-%m-%d %H:%M:%S", # '2006-10-25 14:30:59' "%Y-%m-%d %H:%M:%S.%f", # '2006-10-25 14:30:59.000200' "%Y-%m-%d %H:%M", # '2006-10-25 14:30' "%m/%d/%Y %H:%M:%S", # '10/25/2006 14:30:59' "%m/%d/%Y %H:%M:%S.%f", # '10/25/2006 14:30:59.000200' "%m/%d/%Y %H:%M", # '10/25/2006 14:30' "%m/%d/%y %H:%M:%S", # '10/25/06 14:30:59' "%m/%d/%y %H:%M:%S.%f", # '10/25/06 14:30:59.000200' "%m/%d/%y %H:%M", # '10/25/06 14:30' ]
+- [2fb7386e] [ "%Y-%m-%d", # '2006-10-25' "%m/%d/%Y", # '10/25/2006' "%m/%d/%y", # '10/25/06' "%b %d %Y", # 'Oct 25 2006' "%b %d, %Y", # 'Oct 25, 2006' "%d %b %Y", # '25 Oct 2006' "%d %b, %Y", # '25 Oct, 2006' "%B %d %Y", # 'October 25 2006' "%B %d, %Y", # 'October 25, 2006' "%d %B %Y", # '25 October 2006' "%d %B, %Y", # '25 October, 2006' ]
+- [fbf2d254] [ "django.contrib.auth.hashers.PBKDF2PasswordHasher", "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher", "django.contrib.auth.hashers.Argon2PasswordHasher", "django.contrib.auth.hashers.BCryptSHA256PasswordHasher", "django.contrib.auth.hashers.ScryptPasswordHasher", ]
+- [aede04f7] [ "django.contrib.staticfiles.finders.FileSystemFinder", "django.contrib.staticfiles.finders.AppDirectoriesFinder", ]
+- [911a85ac] [ "django.core.files.uploadhandler.MemoryFileUploadHandler", "django.core.files.uploadhandler.TemporaryFileUploadHandler", ]
+- [2ce943a2] def csrf_failure(request, reason=""): ...
+- [ac6cbe5b3e28dda2-5] from django.utils.csp import CSP
+- [c2cea957e5e2362f-2] from django.utils.translation import gettext_lazy as _
+- [1ca7dd54] mysite/ formats/ __init__.py en/ __init__.py formats.py
+- [a6263053] { "default": { "BACKEND": "django.core.cache.backends.locmem.LocMemCache", } }
+- [969de436] { "default": { "BACKEND": "django.core.files.storage.FileSystemStorage", }, "staticfiles": { "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage", }, }
+- [db60e936] { "default": { "BACKEND": "django.tasks.backends.immediate.ImmediateBackend", } }
+- [e8d6dcfa] { messages.DEBUG: "debug", messages.INFO: "info", messages.SUCCESS: "success", messages.WARNING: "warning", messages.ERROR: "error", }
+- [30cc85c4] {"blog": "blog.db_migrations"}
+- [d1a3b1b4] Django's CSP middleware helps construct and send the appropriate header based on your settings, but it does **not validate** that the directives and values conform to the CSP specification. It is your responsibility to ensure that the configuration is syntactically and semantically correct. Use browser developer tools or external CSP validators during development.
+- [42a3b3f6] For a list of available directives and their values, refer to the `MDN documentation on CSP directives <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#directives>`_.
+- [d174a004c44097fd] If desired, you may specify the numeric values for the constants directly according to the values in the above :ref:`constants table <message-level-constants>`.
+- [ac0294fb] If turning this to ``True`` causes infinite redirects, it probably means your site is running behind a proxy and can't tell which requests are secure and which are not. Your proxy likely sets a header to indicate secure requests; you can correct the problem by finding out what that header is and configuring the :setting:`SECURE_PROXY_SSL_HEADER` setting accordingly.
+- [a9771bd5] If you override ``MESSAGE_LEVEL`` in your settings file and rely on any of the built-in constants, you must import the constants module directly to avoid the potential for circular imports, e.g.::
+- [e89e6e05] Reducing the value of this timeout doesn't make any difference to the ability of an attacker to brute-force a password reset token. Tokens are designed to be safe from brute-forcing without any timeout.
+- [7e0ebbbd] This timeout exists to protect against some unlikely attack scenarios, such as someone gaining access to email archives that may contain old, unused password reset tokens.
+- [b26a745f] * :setting:`CSRF_COOKIE_DOMAIN` * :setting:`CSRF_COOKIE_NAME` * :setting:`CSRF_COOKIE_PATH` * :setting:`CSRF_COOKIE_SAMESITE` * :setting:`CSRF_COOKIE_SECURE` * :setting:`CSRF_FAILURE_VIEW` * :setting:`CSRF_HEADER_NAME` * :setting:`CSRF_TRUSTED_ORIGINS` * :setting:`CSRF_USE_SESSIONS`
+- [e746aa5a] * :setting:`SECURE_CONTENT_TYPE_NOSNIFF` * :setting:`SECURE_CROSS_ORIGIN_OPENER_POLICY` * :setting:`SECURE_CSP` * :setting:`SECURE_CSP_REPORT_ONLY` * :setting:`SECURE_HSTS_INCLUDE_SUBDOMAINS` * :setting:`SECURE_HSTS_PRELOAD` * :setting:`SECURE_HSTS_SECONDS` * :setting:`SECURE_PROXY_SSL_HEADER` * :setting:`SECURE_REDIRECT_EXEMPT` * :setting:`SECURE_REFERRER_POLICY` * :setting:`SECURE_SSL_HOST` * :setting:`SECURE_SSL_REDIRECT` * :setting:`SIGNED_COOKIE_LEGACY_SALT_FALLBACK` * :setting:`SIGNING_BACKEND` * :setting:`USE_X_FORWARDED_HOST` * :setting:`USE_X_FORWARDED_PORT` * :setting:`WSGI_APPLICATION`
+- [878a0c8d] * If Django manages the database and you don't have a strong reason to do otherwise, you should leave this option unset. It's best to store datetimes in UTC because it avoids ambiguous or nonexistent datetimes during daylight saving time changes. Also, receiving datetimes in UTC keeps datetime arithmetic simple — there's no need to consider potential offset changes over a DST transition.
+- [402009b9] * If you're connecting to a third-party database that stores datetimes in a local time rather than UTC, then you must set this option to the appropriate time zone. Likewise, if Django manages the database but third-party systems connect to the same database and expect to find datetimes in local time, then you must set this option.
+- [dc13fd8f] Although setting the ``TIME_ZONE`` option is very rarely needed, there are situations where it becomes necessary. Specifically, it's recommended to match the general :setting:`TIME_ZONE` setting when dealing with raw queries involving date/time functions like PostgreSQL's ``date_trunc()`` or ``generate_series()``, especially when generating time-based series that transition daylight savings.
+- [e5cd81d7] Changing the connection time zone changes how datetimes are read from and written to the database.
+- [7221e7ee] Consider converting to local time explicitly with ``AT TIME ZONE`` in raw SQL queries instead of setting the ``TIME_ZONE`` option.
+- [43b6da4a] For example, for a GitHub-like website this would mean that if a logged-in user follows a link to a private GitHub project posted on a corporate discussion forum or email, GitHub will not receive the session cookie and the user won't be able to access the project. A bank website, however, most likely doesn't want to allow any transactional pages to be linked from external sites so the ``'Strict'`` flag would be appropriate.
+- [3f4315ae] However, this has a downside: receiving all datetimes in local time makes datetime arithmetic more tricky — you must account for possible offset changes over DST transitions.
+- [19834f92] In the GitHub scenario, the session cookie would be allowed when following a regular link from an external website and be blocked in CSRF-prone request methods (e.g. ``POST``).
+- [09551e69] This value can be changed at any time, the database will handle the conversion of datetimes to the configured time zone.
+- [98f39e86] * :setting:`DATE_FORMAT` * :setting:`DATE_INPUT_FORMATS` * :setting:`DATETIME_FORMAT` * :setting:`DATETIME_INPUT_FORMATS` * :setting:`DECIMAL_SEPARATOR` * :setting:`LANGUAGE_CODE` * :setting:`MONTH_DAY_FORMAT` * :setting:`NUMBER_GROUPING` * :setting:`SHORT_DATE_FORMAT` * :setting:`SHORT_DATETIME_FORMAT` * :setting:`THOUSAND_SEPARATOR` * :setting:`TIME_FORMAT` * :setting:`TIME_INPUT_FORMATS` * :setting:`USE_THOUSAND_SEPARATOR` * :setting:`YEAR_MONTH_FORMAT`
+- [8689a104] * :setting:`DATE_FORMAT` * :setting:`DATE_INPUT_FORMATS` * :setting:`DATETIME_FORMAT`, * :setting:`DATETIME_INPUT_FORMATS` * :setting:`DECIMAL_SEPARATOR` * :setting:`FIRST_DAY_OF_WEEK` * :setting:`MONTH_DAY_FORMAT` * :setting:`NUMBER_GROUPING` * :setting:`SHORT_DATE_FORMAT` * :setting:`SHORT_DATETIME_FORMAT` * :setting:`THOUSAND_SEPARATOR` * :setting:`TIME_FORMAT` * :setting:`TIME_INPUT_FORMATS` * :setting:`YEAR_MONTH_FORMAT`
+- [27acf138] * :setting:`FIRST_DAY_OF_WEEK` * :setting:`FORMAT_MODULE_PATH` * :setting:`LANGUAGE_COOKIE_AGE` * :setting:`LANGUAGE_COOKIE_DOMAIN` * :setting:`LANGUAGE_COOKIE_HTTPONLY` * :setting:`LANGUAGE_COOKIE_NAME` * :setting:`LANGUAGE_COOKIE_PATH` * :setting:`LANGUAGE_COOKIE_SAMESITE` * :setting:`LANGUAGE_COOKIE_SECURE` * :setting:`LANGUAGES` * :setting:`LANGUAGES_BIDI` * :setting:`LOCALE_PATHS` * :setting:`TIME_ZONE` * :setting:`USE_I18N` * :setting:`USE_TZ`
+- [4be7c757] * :setting:`SECRET_KEY` * :setting:`SECRET_KEY_FALLBACKS` * :setting:`URLIZE_ASSUME_HTTPS` * :setting:`X_FRAME_OPTIONS`
+- [51dcc754] * All :doc:`sessions </topics/http/sessions>` if you are using any other session backend than ``django.contrib.sessions.backends.cache``, or are using the default :meth:`~django.contrib.auth.models.AbstractBaseUser.get_session_auth_hash`. * All :doc:`messages </ref/contrib/messages>` if you are using :class:`~django.contrib.messages.storage.cookie.CookieStorage` or :class:`~django.contrib.messages.storage.fallback.FallbackStorage`. * All :class:`~django.contrib.auth.views.PasswordResetView` tokens. * Any usage of :doc:`cryptographic signing </topics/signing>`, unless a different key is provided.
+- [2d869fbe] * Allow the :func:`~django.template.context_processors.debug` context processor to add some variables to the template context. * Can use the :ref:`admindocs bookmarklets <admindocs-bookmarklets>` even if not logged in as a staff user. * Are marked as "internal" (as opposed to "EXTERNAL") in :class:`~django.utils.log.AdminEmailHandler` emails.
+- [16944cf8] * If the database backend doesn't support time zones (e.g. SQLite, MySQL, Oracle), Django reads and writes datetimes in local time according to this option if it is set and in UTC if it isn't.
+- [ac1b8f23] * If the database backend supports time zones (e.g., PostgreSQL), then the database connection's time zone is set to this value.
+- [b33c52f2] * If the locale middleware isn't in use, it decides which translation is served to all users. * If the locale middleware is active, it provides a fallback language in case the user's preferred language can't be determined or is not supported by the website. It also provides the fallback translation when a translation for a given literal doesn't exist for the user's preferred language. * If localization is explicitly disabled via the :tfilter:`unlocalize` filter or the :ttag:`{% localize off %}<localize>` tag, it provides fallback localization formats which will be applied instead. See :ref:`controlling localization in templates <topic-l10n-templates>` for details.
+- [b8a32306] * ``'API'`` * ``'KEY'`` * ``'PASS'`` * ``'SECRET'`` * ``'SIGNATURE'`` * ``'TOKEN'``
+- [4bcfc1c6] * ``'Lax'`` (default): provides a balance between security and usability for websites that want to maintain user's logged-in session after the user arrives from an external link.
+- [7e5e0e30] * ``'None'`` (string): the session cookie will be sent with all same-site and cross-site requests.
+- [9c89b702] * ``'Strict'``: prevents the cookie from being sent by the browser to the target site in all cross-site browsing context, even when following a regular link.
+- [f03029f7] * ``'``:class:`django.forms.renderers.DjangoTemplates`\ ``'`` * ``'``:class:`django.forms.renderers.Jinja2`\ ``'`` * ``'``:class:`django.forms.renderers.TemplatesSetting`\ ``'``
+- [cbc3c024] * ``'django.contrib.messages.storage.fallback.FallbackStorage'`` * ``'django.contrib.messages.storage.session.SessionStorage'`` * ``'django.contrib.messages.storage.cookie.CookieStorage'``
+- [4f2baa69] * ``'django.contrib.sessions.backends.db'`` * ``'django.contrib.sessions.backends.file'`` * ``'django.contrib.sessions.backends.cache'`` * ``'django.contrib.sessions.backends.cached_db'`` * ``'django.contrib.sessions.backends.signed_cookies'``
+- [ea31a166] * ``'django.contrib.sessions.serializers.JSONSerializer'``
+- [c6890554] * ``'django.core.cache.backends.db.DatabaseCache'`` * ``'django.core.cache.backends.dummy.DummyCache'`` * ``'django.core.cache.backends.filebased.FileBasedCache'`` * ``'django.core.cache.backends.locmem.LocMemCache'`` * ``'django.core.cache.backends.memcached.PyMemcacheCache'`` * ``'django.core.cache.backends.memcached.PyLibMCCache'`` * ``'django.core.cache.backends.redis.RedisCache'``
+- [8f27bad3] * ``'django.db.backends.postgresql'`` * ``'django.db.backends.mysql'`` * ``'django.db.backends.sqlite3'`` * ``'django.db.backends.oracle'``
+- [c82f0776] * ``'django.tasks.backends.dummy.DummyBackend'`` * ``'django.tasks.backends.immediate.ImmediateBackend'``
+- [c8a0b00f] * ``'django.template.backends.django.DjangoTemplates'`` * ``'django.template.backends.jinja2.Jinja2'``
+- [c0f4c12d] * ``False``: disables the flag.
+- [dc4d53de] * ``default`` for :doc:`managing files </topics/files>`. ``'``:class:`django.core.files.storage.FileSystemStorage`\ ``'`` is the default storage engine. * ``staticfiles`` for :doc:`managing static files </ref/contrib/staticfiles>`. ``'``:class:`django.contrib.staticfiles.storage.StaticFilesStorage`\ ``'`` is the default storage engine.
+- [038b62e9] * an application configuration class (preferred), or * a package containing an application.
+- [84bf39a5] * the header value is ``'https'``, or * its initial, leftmost value is ``'https'`` in the case of a comma-separated list of protocols (e.g. ``'https,http,http'``).
+- [fa04851a] .. RemovedInDjango2028Warning: Update the default value to be ``{}``.
+- [6b0a3db568b17cf8] .. _HttpOnly: https://owasp.org/www-community/HttpOnly
+- [674a9dbe] .. _MySQL manual: MySQL_
+- [cc82be7c] .. _PostgreSQL: https://www.postgresql.org/docs/current/multibyte.html .. _MySQL: https://dev.mysql.com/doc/refman/en/charset-charsets.html
+- [ea8f1be2] .. _SameSite: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#samesitesamesite-value
+- [b9eea131] .. _`fully qualified domain name (FQDN)`: https://en.wikipedia.org/wiki/Fully_qualified_domain_name
+- [e09ed267] .. _file-upload-settings:
+- [9317af1e] .. _list of language identifiers: http://www.i18nguy.com/unicode/language-identifiers.html
+- [672bfac6] .. _list of time zones: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+- [e209f89f] .. _settings-csrf:
+- [e92bd15c] .. _settings-i18n:
+- [9d32f8c9] .. _settings-l10n:
+- [5bce5fb0] .. _settings-messages:
+- [ec7e26a7] .. _settings-sessions:
+- [f8ed92fc] .. _settings-staticfiles:
+- [d23eb25c] .. _staticfiles-dirs-prefixes:
+- [07b7a56d6b1a4254-2] .. _template: https://www.postgresql.org/docs/current/sql-createdatabase.html
+- [2c149d74] .. admonition:: A numeric value trumps umask
+- [f328d9d1] .. admonition:: Application names and labels must be unique in :setting:`INSTALLED_APPS`
+- [46487cb7196e5ce3] .. admonition:: Avoiding circular imports
+- [0b758f60] .. admonition:: Directives validation
+- [4b48d36f] .. admonition:: Is my value merged with the default value?
+- [6cd19c4c] .. admonition:: Migrating auto-created through tables
+- [59b313c0] .. admonition:: Use the application registry for introspection
+- [080916f2] .. admonition:: Why are my emails sent from a different address?
+- [685d15dfb6eb2285-83] .. code-block:: html+django
+- [3a9340cd0d877339-28] .. code-block:: text
+- [79ae44dc] .. contents:: :local: :depth: 1
+- [01aaf10861da6524-10] .. deprecated:: 6.1
+- [01aaf10861da6524-11] .. deprecated:: 6.1
+- [01aaf10861da6524-12] .. deprecated:: 6.1
+- [01aaf10861da6524-13] .. deprecated:: 6.1
+- [01aaf10861da6524-14] .. deprecated:: 6.1
+- [01aaf10861da6524-15] .. deprecated:: 6.1
+- [01aaf10861da6524-16] .. deprecated:: 6.1
+- [01aaf10861da6524-17] .. deprecated:: 6.1
+- [01aaf10861da6524-18] .. deprecated:: 6.1
+- [01aaf10861da6524-19] .. deprecated:: 6.1
+- [01aaf10861da6524-20] .. deprecated:: 6.1
+- [01aaf10861da6524-21] .. deprecated:: 6.1
+- [01aaf10861da6524-22] .. deprecated:: 6.1
+- [01aaf10861da6524-23] .. deprecated:: 6.1
+- [942ae6c11625c81c-135] .. note::
+- [942ae6c11625c81c-136] .. note::
+- [942ae6c11625c81c-137] .. note::
+- [942ae6c11625c81c-138] .. note::
+- [942ae6c11625c81c-139] .. note::
+- [942ae6c11625c81c-140] .. note::
+- [942ae6c11625c81c-141] .. note::
+- [942ae6c11625c81c-142] .. note::
+- [942ae6c11625c81c-143] .. note::
+- [942ae6c11625c81c-144] .. note::
+- [942ae6c11625c81c-145] .. note::
+- [675e59e8] .. note:: Django cannot reliably use alternate time zones in a Windows environment. If you're running Django on Windows, :setting:`TIME_ZONE` must be set to match the system time zone.
+- [b7c60e8a] .. note:: Since Django was first released with the :setting:`TIME_ZONE` set to ``'America/Chicago'``, the global setting (used if nothing is defined in your project's ``settings.py``) remains ``'America/Chicago'`` for backwards compatibility. New project templates default to ``'UTC'``.
+- [34e721c4] .. setting:: ABSOLUTE_URL_OVERRIDES
+- [00054b8f4c441f62-2] .. setting:: ADMINS
+- [1e27bcd6] .. setting:: ALLOWED_HOSTS
+- [c50f61e7] .. setting:: APPEND_SLASH
+- [67bbb4c2] .. setting:: AUTHENTICATION_BACKENDS
+- [b3815080] .. setting:: AUTH_PASSWORD_VALIDATORS
+- [4cd71d0e] .. setting:: AUTH_USER_MODEL
+- [e4f0ba5f] .. setting:: CACHES
+- [3a401f5a] .. setting:: CACHES-BACKEND
+- [c0aad8ba] .. setting:: CACHES-KEY_FUNCTION
+- [4b39970e] .. setting:: CACHES-KEY_PREFIX
+- [e510de7a] .. setting:: CACHES-LOCATION
+- [99a6ca55] .. setting:: CACHES-OPTIONS
+- [60d7bc98] .. setting:: CACHES-TIMEOUT
+- [651c489b] .. setting:: CACHES-VERSION
+- [65710755] .. setting:: CACHE_MIDDLEWARE_ALIAS
+- [a1e2d278] .. setting:: CACHE_MIDDLEWARE_KEY_PREFIX
+- [42fa9bb6] .. setting:: CACHE_MIDDLEWARE_SECONDS
+- [65dc163b] .. setting:: CONN_HEALTH_CHECKS
+- [810ddddf] .. setting:: CONN_MAX_AGE
+- [4ae097dc] .. setting:: CSRF_COOKIE_AGE
+- [ab4f146f] .. setting:: CSRF_COOKIE_DOMAIN
+- [ad0a8fc3] .. setting:: CSRF_COOKIE_HTTPONLY
+- [22642de8] .. setting:: CSRF_COOKIE_NAME
+- [e6faa97e] .. setting:: CSRF_COOKIE_PATH
+- [48c21dec] .. setting:: CSRF_COOKIE_SAMESITE
+- [4a5dd923] .. setting:: CSRF_COOKIE_SECURE
+- [93900394] .. setting:: CSRF_FAILURE_VIEW
+- [6899fa16] .. setting:: CSRF_HEADER_NAME
+- [95b02365] .. setting:: CSRF_TRUSTED_ORIGINS
+- [1960b5ea] .. setting:: CSRF_USE_SESSIONS
+- [b139547b] .. setting:: DATABASE-ATOMIC_REQUESTS
+- [9249d54e] .. setting:: DATABASE-AUTOCOMMIT
+- [958c2e32] .. setting:: DATABASE-DISABLE_SERVER_SIDE_CURSORS
+- [78d7eb0a] .. setting:: DATABASE-ENGINE
+- [f403e1bc] .. setting:: DATABASE-TEST
+- [eeb5c8f8] .. setting:: DATABASE-TIME_ZONE
+- [669ea8b5] .. setting:: DATABASES
+- [7318a988] .. setting:: DATABASE_ROUTERS
+- [dc47330a] .. setting:: DATAFILE
+- [409f1bea] .. setting:: DATAFILE_EXTSIZE
+- [c31d179a] .. setting:: DATAFILE_MAXSIZE
+- [1cc45aa1] .. setting:: DATAFILE_SIZE
+- [262545bb] .. setting:: DATAFILE_TMP
+- [1bf7dace] .. setting:: DATAFILE_TMP_EXTSIZE
+- [25e6fa67] .. setting:: DATAFILE_TMP_MAXSIZE
+- [5506a26c] .. setting:: DATAFILE_TMP_SIZE
+- [d4734544] .. setting:: DATA_UPLOAD_MAX_MEMORY_SIZE
+- [af7b74a0] .. setting:: DATA_UPLOAD_MAX_NUMBER_FIELDS
+- [6e60ddc9] .. setting:: DATA_UPLOAD_MAX_NUMBER_FILES
+- [919cf5dc] .. setting:: DATETIME_FORMAT
+- [2fc80be3] .. setting:: DATETIME_INPUT_FORMATS
+- [c182de39] .. setting:: DATE_FORMAT
+- [b835cc00] .. setting:: DATE_INPUT_FORMATS
+- [1f0d0d61] .. setting:: DEBUG
+- [03664e47] .. setting:: DEBUG_PROPAGATE_EXCEPTIONS
+- [b4f50b20] .. setting:: DECIMAL_SEPARATOR
+- [41e3f5e8] .. setting:: DEFAULT_AUTO_FIELD
+- [2881d1b9] .. setting:: DEFAULT_CHARSET
+- [61aaf317] .. setting:: DEFAULT_EXCEPTION_REPORTER
+- [b1dab01f] .. setting:: DEFAULT_EXCEPTION_REPORTER_FILTER
+- [a4a229ae] .. setting:: DEFAULT_FROM_EMAIL
+- [b1b8da82] .. setting:: DEFAULT_INDEX_TABLESPACE
+- [d2f689ee] .. setting:: DEFAULT_TABLESPACE
+- [d95f6f26] .. setting:: DISALLOWED_USER_AGENTS
+- [d58357dd] .. setting:: EMAIL_BACKEND
+- [72ff47e8] .. setting:: EMAIL_FILE_PATH
+- [673f89be] .. setting:: EMAIL_HOST
+- [80875002] .. setting:: EMAIL_HOST_PASSWORD
+- [cbac21f1] .. setting:: EMAIL_HOST_USER
+- [6943d46d] .. setting:: EMAIL_PORT
+- [1f6a260e] .. setting:: EMAIL_SSL_CERTFILE
+- [16fe990a] .. setting:: EMAIL_SSL_KEYFILE
+- [cc228ea8] .. setting:: EMAIL_SUBJECT_PREFIX
+- [790c0cdb] .. setting:: EMAIL_TIMEOUT
+- [9f88a0c1] .. setting:: EMAIL_USE_LOCALTIME
+- [1fc5f21d] .. setting:: EMAIL_USE_SSL
+- [b71e046f] .. setting:: EMAIL_USE_TLS
+- [858a32ec] .. setting:: FILE_UPLOAD_DIRECTORY_PERMISSIONS
+- [2d97b44a] .. setting:: FILE_UPLOAD_HANDLERS
+- [09700f1b] .. setting:: FILE_UPLOAD_MAX_MEMORY_SIZE
+- [ac100d37] .. setting:: FILE_UPLOAD_PERMISSIONS
+- [ec0c9943] .. setting:: FILE_UPLOAD_TEMP_DIR
+- [b4c6a7c4] .. setting:: FIRST_DAY_OF_WEEK
+- [219868de] .. setting:: FIXTURE_DIRS
+- [3eab604e] .. setting:: FORCE_SCRIPT_NAME
+- [013e800a] .. setting:: FORMAT_MODULE_PATH
+- [31a5bf64] .. setting:: FORM_RENDERER
+- [7d3310fb] .. setting:: HOST
+- [cb172360] .. setting:: IGNORABLE_404_URLS
+- [e69697d84f33aaa9-2] .. setting:: INSTALLED_APPS
+- [11e34e95] .. setting:: INTERNAL_IPS
+- [7dea84f0] .. setting:: LANGUAGES
+- [fbdc1fad] .. setting:: LANGUAGES_BIDI
+- [fa2c9351] .. setting:: LANGUAGE_CODE
+- [b37ff0c3] .. setting:: LANGUAGE_COOKIE_AGE
+- [75a1be5e] .. setting:: LANGUAGE_COOKIE_DOMAIN
+- [62b1f503] .. setting:: LANGUAGE_COOKIE_HTTPONLY
+- [a5953858] .. setting:: LANGUAGE_COOKIE_NAME
+- [aebeaab5] .. setting:: LANGUAGE_COOKIE_PATH
+- [3a6ba704] .. setting:: LANGUAGE_COOKIE_SAMESITE
+- [a5cadd43] .. setting:: LANGUAGE_COOKIE_SECURE
+- [05cb9ce2] .. setting:: LOCALE_PATHS
+- [1dffdffc] .. setting:: LOGGING
+- [28799b8d] .. setting:: LOGGING_CONFIG
+- [a1af243f] .. setting:: LOGIN_REDIRECT_URL
+- [3e827342] .. setting:: LOGIN_URL
+- [d754c04c] .. setting:: LOGOUT_REDIRECT_URL
+- [50e9a674] .. setting:: MAILERS
+- [53556a7f] .. setting:: MAILERS-BACKEND
+- [48019511] .. setting:: MAILERS-OPTIONS
+- [512605c5] .. setting:: MANAGERS
+- [0651a485] .. setting:: MEDIA_ROOT
+- [3a044b23] .. setting:: MEDIA_URL
+- [77fa2145] .. setting:: MESSAGE_LEVEL
+- [65730713] .. setting:: MESSAGE_STORAGE
+- [d6385a69] .. setting:: MESSAGE_TAGS
+- [26fe832d] .. setting:: MIDDLEWARE
+- [c5eb38fd] .. setting:: MIGRATION_MODULES
+- [db57cad1] .. setting:: MONTH_DAY_FORMAT
+- [5850da67] .. setting:: NAME
+- [8968dee5] .. setting:: NUMBER_GROUPING
+- [76a8f836] .. setting:: OPTIONS
+- [db44f648] .. setting:: PASSWORD
+- [ad088a9d] .. setting:: PASSWORD_HASHERS
+- [8d7af288] .. setting:: PASSWORD_RESET_TIMEOUT
+- [ddf9e26b] .. setting:: PORT
+- [e898c779] .. setting:: PREPEND_WWW
+- [171a5f84] .. setting:: ROOT_URLCONF
+- [03801a7f] .. setting:: SECRET_KEY
+- [8f392345] .. setting:: SECRET_KEY_FALLBACKS
+- [8eaad7c1] .. setting:: SECURE_CONTENT_TYPE_NOSNIFF
+- [94d7fecd] .. setting:: SECURE_CROSS_ORIGIN_OPENER_POLICY
+- [77549b4f] .. setting:: SECURE_CSP
+- [5bd2ce3a] .. setting:: SECURE_CSP_REPORT_ONLY
+- [e4978742] .. setting:: SECURE_HSTS_INCLUDE_SUBDOMAINS
+- [2a9b82ed] .. setting:: SECURE_HSTS_PRELOAD
+- [29834838] .. setting:: SECURE_HSTS_SECONDS
+- [42630eed] .. setting:: SECURE_PROXY_SSL_HEADER
+- [c99ab45c] .. setting:: SECURE_REDIRECT_EXEMPT
+- [06adee4f] .. setting:: SECURE_REFERRER_POLICY
+- [cb7751ec] .. setting:: SECURE_SSL_HOST
+- [13dc6798] .. setting:: SECURE_SSL_REDIRECT
+- [62f19372] .. setting:: SERIALIZATION_MODULES
+- [bf8f4f66] .. setting:: SERVER_EMAIL
+- [eafae783] .. setting:: SESSION_CACHE_ALIAS
+- [1181c580] .. setting:: SESSION_COOKIE_AGE
+- [fa8b70fa] .. setting:: SESSION_COOKIE_DOMAIN
+- [2dc20a63] .. setting:: SESSION_COOKIE_HTTPONLY
+- [e6cdcadd] .. setting:: SESSION_COOKIE_NAME
+- [ca59c26c] .. setting:: SESSION_COOKIE_PATH
+- [16b96c78] .. setting:: SESSION_COOKIE_SAMESITE
+- [d57951c8] .. setting:: SESSION_COOKIE_SECURE
+- [d2cd8e35] .. setting:: SESSION_ENGINE
+- [95c06880] .. setting:: SESSION_EXPIRE_AT_BROWSER_CLOSE
+- [d33e4669] .. setting:: SESSION_FILE_PATH
+- [66a6ccc3] .. setting:: SESSION_SAVE_EVERY_REQUEST
+- [925be04d] .. setting:: SESSION_SERIALIZER
+- [47112c03] .. setting:: SHORT_DATETIME_FORMAT
+- [c1eac3a2] .. setting:: SHORT_DATE_FORMAT
+- [b4db0ca1] .. setting:: SIGNED_COOKIE_LEGACY_SALT_FALLBACK
+- [00d19a77] .. setting:: SIGNING_BACKEND
+- [9f213890] .. setting:: SILENCED_SYSTEM_CHECKS
+- [0b60c9d9] .. setting:: SITE_ID
+- [c0c8d0a5] .. setting:: STATICFILES_DIRS
+- [e2d6a7e5] .. setting:: STATICFILES_FINDERS
+- [b1416a4f] .. setting:: STATIC_ROOT
+- [2f89284b] .. setting:: STATIC_URL
+- [f0c7baa5] .. setting:: STORAGES
+- [bf72fa88] .. setting:: TASKS
+- [99fb0a7f] .. setting:: TASKS-BACKEND
+- [5d01b412] .. setting:: TASKS-OPTIONS
+- [5fae0e76] .. setting:: TASKS-QUEUES
+- [100069e5] .. setting:: TEMPLATES
+- [3b1ad88e] .. setting:: TEMPLATES-APP_DIRS
+- [9ce51281] .. setting:: TEMPLATES-BACKEND
+- [5c92da60] .. setting:: TEMPLATES-DIRS
+- [53702aa0] .. setting:: TEMPLATES-NAME
+- [92ea8ad3] .. setting:: TEMPLATES-OPTIONS
+- [3a5aba1f] .. setting:: TEST_CHARSET
+- [430492ad] .. setting:: TEST_COLLATION
+- [73443117] .. setting:: TEST_CREATE
+- [c389389a] .. setting:: TEST_DEPENDENCIES
+- [4579ce87] .. setting:: TEST_MIGRATE
+- [d1b62732] .. setting:: TEST_MIRROR
+- [ed893010] .. setting:: TEST_NAME
+- [7c489f98] .. setting:: TEST_NON_SERIALIZED_APPS
+- [24405639] .. setting:: TEST_ORACLE_MANAGED_FILES
+- [5e98deed] .. setting:: TEST_PASSWD
+- [3fbff3b5] .. setting:: TEST_RUNNER
+- [6fea8cb6] .. setting:: TEST_TBLSPACE
+- [bd486068] .. setting:: TEST_TBLSPACE_TMP
+- [035d9b70] .. setting:: TEST_TEMPLATE
+- [2b2d8e0f] .. setting:: TEST_USER
+- [61e132bb] .. setting:: TEST_USER_CREATE
+- [d7900e54] .. setting:: THOUSAND_SEPARATOR
+- [bbbe9175] .. setting:: TIME_FORMAT
+- [f07f9fc3] .. setting:: TIME_INPUT_FORMATS
+- [1d47f8e1] .. setting:: TIME_ZONE
+- [e07e495d] .. setting:: URLIZE_ASSUME_HTTPS
+- [1863c54e] .. setting:: USER
+- [cb358c4c] .. setting:: USE_BLANK_CHOICE_DASH
+- [a4e4096d] .. setting:: USE_I18N
+- [1403c712] .. setting:: USE_THOUSAND_SEPARATOR
+- [678c706d] .. setting:: USE_TZ
+- [87ab627d] .. setting:: USE_X_FORWARDED_HOST
+- [87682e86] .. setting:: USE_X_FORWARDED_PORT
+- [6cf7fa28] .. setting:: WSGI_APPLICATION
+- [8d2ddf63] .. setting:: X_FRAME_OPTIONS
+- [ccc001f5] .. setting:: YEAR_MONTH_FORMAT
+- [a1eb26d754a3d60c-30] .. versionadded:: 6.0
+- [a1eb26d754a3d60c-31] .. versionadded:: 6.0
+- [a1eb26d754a3d60c-32] .. versionadded:: 6.0
+- [fe45b681] .. versionadded:: 6.0 .. deprecated:: 6.0
+- [0cf180bcf4ecfab5-24] .. versionadded:: 6.1
+- [0cf180bcf4ecfab5-25] .. versionadded:: 6.1
+- [57739e32d87f6c76-17] .. versionchanged:: 6.0
+- [57739e32d87f6c76-18] .. versionchanged:: 6.0
+- [57739e32d87f6c76-19] .. versionchanged:: 6.0
+- [2a966a198e13032b-25] .. versionchanged:: 6.1
+- [c54b54cb0805732a-70] .. warning::
+- [c54b54cb0805732a-71] .. warning::
+- [c54b54cb0805732a-72] .. warning::
+- [c54b54cb0805732a-73] .. warning::
+- [c54b54cb0805732a-74] .. warning::
+- [c54b54cb0805732a-75] .. warning::
+- [c54b54cb0805732a-76] .. warning::
+- [c54b54cb0805732a-77] .. warning::
+- [d5e34b14] .. warning:: Setting this incorrectly can irreversibly (for some time) break your site. Read the :ref:`http-strict-transport-security` documentation first.
+- [56c4a3fb] .. warning:: Setting this incorrectly can irreversibly (for the value of :setting:`SECURE_HSTS_SECONDS`) break your site. Read the :ref:`http-strict-transport-security` documentation first.
+- [b249d568] .. warning:: You cannot change the AUTH_USER_MODEL setting during the lifetime of a project (i.e. once you have made and migrated models that depend on it) without serious effort. It is intended to be set at the project start, and the model it refers to must be available in the first migration of the app that it lives in. See :ref:`auth-custom-user` for more details.
+- [c2fb1d23] :djadmin:`django-admin startproject <startproject>` automatically adds a randomly-generated ``SECRET_KEY`` to each new project.
+- [b473b690] :doc:`Learn more about application configurations </ref/applications>`.
+- [7d85c4df] :setting:`USE_X_FORWARDED_HOST` takes priority over this setting.
+- [37c4e8d6f30a41e2-2] ======== Settings ========
+- [986e174b] A boolean that specifies if datetimes will be timezone-aware by default or not. If this is set to ``True``, Django will use timezone-aware datetimes internally.
+- [9a319f26] A boolean that specifies whether Django's translation system should be enabled. This provides a way to turn it off, for performance. If this is set to ``False``, Django will make some optimizations so as not to load the translation machinery.
+- [63923513] A boolean that specifies whether to display numbers using a thousand separator. When set to ``True``, Django will format numbers using the :setting:`NUMBER_GROUPING` and :setting:`THOUSAND_SEPARATOR` settings. The latter two settings may also be dictated by the locale, which takes precedence.
+- [64e1ca11] A boolean that specifies whether to use the ``X-Forwarded-Host`` header in preference to the ``Host`` header. This should only be enabled if a proxy which sets this header is in use.
+- [132328ed] A boolean that specifies whether to use the ``X-Forwarded-Port`` header in preference to the ``SERVER_PORT`` ``META`` variable. This should only be enabled if a proxy which sets this header is in use.
+- [12933510] A boolean that turns on/off debug mode.
+- [713a64d2] A data structure containing configuration information. When not-empty, the contents of this data structure will be passed as the argument to the configuration method described in :setting:`LOGGING_CONFIG`.
+- [a1f77950] A dictionary containing the settings for all Task backends to be used with Django. It is a nested dictionary whose contents maps backend aliases to a dictionary containing the options for each backend.
+- [2f836bd4] A dictionary containing the settings for all caches to be used with Django. It is a nested dictionary whose contents maps cache aliases to a dictionary containing the options for an individual cache.
+- [faed8036] A dictionary containing the settings for all databases to be used with Django. It is a nested dictionary whose contents map a database alias to a dictionary containing the options for an individual database.
+- [11532de7] A dictionary containing the settings for all email backends to be used with Django. It is a nested dictionary that maps backend aliases to dictionaries containing each mailer's backend import path and configuration options.
+- [6611c69e] A dictionary containing the settings for all storages to be used with Django. It is a nested dictionary whose contents map a storage alias to a dictionary containing the options for an individual storage.
+- [8d9419d7] A dictionary mapping ``"app_label.model_name"`` strings to functions that take a model object and return its URL. This is a way of inserting or overriding ``get_absolute_url()`` methods on a per-installation basis. Example::
+- [e39bf576] A dictionary of modules containing serializer definitions (provided as strings), keyed by a string identifier for that serialization type. For example, to define a YAML serializer, use::
+- [2d203d09] A dictionary of settings for test databases; for more details about the creation and use of test databases, see :ref:`the-test-database`.
+- [946c9664] A dictionary specifying the package where migration modules can be found on a per-app basis. The default value of this setting is an empty dictionary, but the default package name for migration modules is ``migrations``.
+- [62611a9c] A dotted path to the view function to be used when an incoming request is rejected by the :doc:`CSRF protection </ref/csrf>`. The function should have this signature::
+- [4ee51402] A full Python path to a Python package that contains custom format definitions for project locales. If not ``None``, Django will check for a ``formats.py`` file, under the directory named as the current locale, and will use the formats defined in this file.
+- [8503ca06] A list containing the settings for all template engines to be used with Django. Each item of the list is a dictionary containing the options for an individual engine.
+- [2ad167c0] A list in the same format as :setting:`ADMINS` that specifies who should get broken link notifications when :class:`~django.middleware.common.BrokenLinkEmailsMiddleware` is enabled.
+- [6e9e0cf9] A list of IP addresses, as strings, that:
+- [de7c6f5a] A list of all the people who get code error notifications. When :setting:`DEBUG=False <DEBUG>` and :class:`~django.utils.log.AdminEmailHandler` is configured in :setting:`LOGGING` (done by default), Django emails these people the details of exceptions raised in the request/response cycle.
+- [807c46b5] A list of authentication backend classes (as strings) to use when attempting to authenticate a user. See the :ref:`authentication backends documentation <authentication-backends>` for details.
+- [ebebf8c2] A list of directories where Django looks for translation files. See :ref:`how-django-discovers-translations`.
+- [8357c993] A list of fallback secret keys for a particular Django installation. These are used to allow rotation of the ``SECRET_KEY``.
+- [3b957953] A list of formats that will be accepted when inputting data on a date field. Formats will be tried in order, using the first valid one. Note that these format strings use Python's :ref:`datetime module syntax <strftime-strptime-behavior>`, not the format strings from the :tfilter:`date` template filter.
+- [b166e3b2] A list of formats that will be accepted when inputting data on a datetime field. Formats will be tried in order, using the first valid one. Note that these format strings use Python's :ref:`datetime module syntax <strftime-strptime-behavior>`, not the format strings from the :tfilter:`date` template filter. Date-only formats are not included as datetime fields will automatically try :setting:`DATE_INPUT_FORMATS` in last resort.
+- [55077e43] A list of handlers to use for uploading. Changing this setting allows complete customization -- even replacement -- of Django's upload process.
+- [44ca262a] A list of identifiers of messages generated by the system check framework (i.e. ``["models.W001"]``) that you wish to permanently acknowledge and ignore. Silenced checks will not be output to the console.
+- [48584c56] A list of middleware to use. See :doc:`/topics/http/middleware`.
+- [1c11b773] A list of strings designating all applications that are enabled in this Django installation. Each string should be a dotted Python path to:
+- [6fbbff18] A list of strings representing the host/domain names that this Django site can serve. This is a security measure to prevent :ref:`HTTP Host header attacks <host-headers-virtual-hosting>`, which are possible even under many seemingly-safe web server configurations.
+- [ebc88c9d] A list of trusted origins for unsafe requests (e.g. ``POST``).
+- [5f5c4afc] A number representing the first day of the week. This is especially useful when displaying a calendar. This value is only used when not using format internationalization, or when a format cannot be found for the current locale.
+- [ce3fdf5f] A path to a callable that will be used to configure logging in the Django project. Points at an instance of Python's :ref:`dictConfig <logging-config-dictschema>` configuration method by default.
+- [a3f1a50c] A ready-to-use instance of the storage backends can be retrieved from :data:`django.core.files.storage.storages`. Use a key corresponding to the backend definition in :setting:`STORAGES`.
+- [ff0571f5] A secret key for a particular Django installation. This is used to provide :doc:`cryptographic signing </topics/signing>`, and should be set to a unique, unpredictable value.
+- [b5ddde1b] A string containing a dotted path to a function (or any callable) that defines how to compose a key, prefix, and version into a final cache key. The default function converts the components to strings and joins them with colons, as shown in the :ref:`cache documentation <cache_key_transformation>`.
+- [d6b64ef2] A string representing the full Python import path to your root URLconf, for example ``"mydjangoapps.urls"``. Can be overridden on a per-request basis by setting the attribute ``urlconf`` on the incoming ``HttpRequest`` object. See :ref:`how-django-processes-a-request` for details.
+- [ea527558] A string representing the language code for this installation. This should be in standard :term:`language ID format <language code>`. For example, U.S. English is ``"en-us"``. See also the `list of language identifiers`_ and :doc:`/topics/i18n/index`.
+- [2c36e4f0] A string representing the time zone for this database connection or ``None``. This inner option of the :setting:`DATABASES` setting accepts the same values as the general :setting:`TIME_ZONE` setting.
+- [367ebad4] A string representing the time zone for this installation. See the `list of time zones`_.
+- [bea4765d] A string that will be automatically included (prepended by default) to all cache keys used by the Django server.
+- [f99d4bf9] A string which will be prefixed to the cache keys generated by the :ref:`cache middleware <the-per-site-cache>`. This prefix is combined with the :setting:`KEY_PREFIX <CACHES-KEY_PREFIX>` setting; it does not replace it.
+- [1f4c9e18] A tuple representing an HTTP header/value combination that signifies a request is secure. This controls the behavior of the request object's ``is_secure()`` method.
+- [b740e198] Absolute filesystem path to the directory that will hold :doc:`user-uploaded files </topics/files>`.
+- [794e21ff] Although the setting offers little practical benefit, it's sometimes required by security auditors.
+- [6c5d4fd8] Among other things, the default logging configuration passes HTTP 500 server errors to an email log handler when :setting:`DEBUG` is ``False``. See also :ref:`configuring-logging`.
+- [d216a0bb] An available formatting that can be used for displaying date fields on templates. Note that the corresponding locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
+- [c33a50b4] As a security measure, Django will *not* include settings that might be sensitive, such as :setting:`SECRET_KEY`. Specifically, it will exclude any setting whose name includes any of the following:
+- [80cf3bd7] As noted in the `MDN documentation on Content-Security-Policy-Report-Only <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only>`_, the ``report-uri`` directive must be specified for reports to be sent; otherwise, the header has no reporting effect (other than logging to the browser's developer tools console).
+- [cf42ebb4] As with other HTTP headers in ``request.META``, the header name received from the server is normalized by converting all characters to uppercase, replacing any hyphens with underscores, and adding an ``'HTTP_'`` prefix to the name. For example, if your client sends a ``'X-XSRF-TOKEN'`` header, the setting should be ``'HTTP_X_XSRF_TOKEN'``.
+- [2d9cbce8] Auth ====
+- [df167c6e] Available formats are:
+- [8eb896b1] Be cautious when updating this setting on a production site. If you update this setting to enable cross-domain cookies on a site that previously used standard domain cookies, existing user cookies that have the old domain will not be updated. This will result in site users being unable to switch the language as long as these cookies persist. The only safe and reliable option to perform the switch is to change the language cookie name permanently (via the :setting:`LANGUAGE_COOKIE_NAME` setting) and to add a middleware that copies the value from the old cookie to a new one and then deletes the old one.
+- [98eae285] Be cautious when updating this setting on a production site. If you update this setting to enable cross-domain cookies on a site that previously used standard domain cookies, existing user cookies will be set to the old domain. This may result in them being unable to log in as long as these cookies persist.
+- [a8f5d97f] By default, ``is_secure()`` determines if a request is secure by confirming that a requested URL uses ``https://``. This method is important for Django's CSRF protection, and it may be used by your own code or third-party apps.
+- [c937904b] Cache ----- * :setting:`CACHES` * :setting:`CACHE_MIDDLEWARE_ALIAS` * :setting:`CACHE_MIDDLEWARE_KEY_PREFIX` * :setting:`CACHE_MIDDLEWARE_SECONDS`
+- [c11f3582] Common use is to display a thousand separator. If this setting is ``0``, then no grouping will be applied to the number. If this setting is greater than ``0``, then :setting:`THOUSAND_SEPARATOR` will be used as the separator between those groups.
+- [4d2cb95d] Configuration parameters to pass to the email backend. The available and required options vary depending on the backend.
+- [e2efcee6] Controls where Django stores message data. Valid values are:
+- [6541f537] Controls where Django stores session data. Included engines are:
+- [ab91bffa] Controls whether :meth:`~django.http.HttpRequest.get_signed_cookie` accepts cookies signed with Django's historical signed-cookie salt derivation based on ``key + salt``.
+- [555551c6] Core Settings =============
+- [32b6bdae] Core Settings Topical Index ===========================
+- [c6dec664] Database -------- * :setting:`DATABASES` * :setting:`DATABASE_ROUTERS` * :setting:`DEFAULT_INDEX_TABLESPACE` * :setting:`DEFAULT_TABLESPACE`
+- [8fc44484] Debugging --------- * :setting:`DEBUG` * :setting:`DEBUG_PROPAGATE_EXCEPTIONS`
+- [7b4b22e0] Default charset to use for all ``HttpResponse`` objects, if a MIME type isn't manually specified. Used when constructing the ``Content-Type`` header.
+- [a1cc9a1c] Default decimal separator used when formatting decimal numbers.
+- [4a941c29] Default email address for automated correspondence from the site manager(s). This address is used in the ``From:`` header of outgoing emails and can take any format valid in the chosen email sending protocol.
+- [e58b649b] Default exception reporter class to be used if none has been assigned to the :class:`~django.http.HttpRequest` instance yet. See :ref:`custom-error-reports`.
+- [41603ad0] Default primary key field type to use for models that don't have a field with :attr:`primary_key=True <django.db.models.Field.primary_key>`.
+- [c6e4523d] Default tablespace to use for indexes on fields that don't specify one, if the backend supports it (see :doc:`/topics/db/tablespaces`).
+- [95985dd6] Default tablespace to use for models that don't specify one, if the backend supports it (see :doc:`/topics/db/tablespaces`).
+- [52a2d3ca] Default thousand separator used when formatting numbers. This setting is used only when :setting:`USE_THOUSAND_SEPARATOR` is ``True`` and :setting:`NUMBER_GROUPING` is greater than ``0``.
+- [d37426a3] Default: A list of all available languages. This list is continually growing and including a copy here would inevitably become rapidly out of date. You can see the current list of translated languages by looking in :source:`django/conf/global_settings.py`.
+- [66974750] Default: A list of all language codes that are written right-to-left. You can see the current list of these languages by looking in :source:`django/conf/global_settings.py`.
+- [8e336caa] Default: A logging configuration dictionary.
+- [27c959a8890dab03] Default: Not defined
+- [27c959a8890dab03-2] Default: Not defined
+- [27c959a8890dab03-3] Default: Not defined
+- [27c959a8890dab03-4] Default: Not defined
+- [27c959a8890dab03-5] Default: Not defined
+- [27c959a8890dab03-6] Default: Not defined
+- [02aa52ac] Default: ``"django.core.mail.backends.smtp.EmailBackend"``
+- [60c19817d776c231] Default: ``''`` (Empty string)
+- [60c19817d776c231-2] Default: ``''`` (Empty string)
+- [60c19817d776c231-3] Default: ``''`` (Empty string)
+- [60c19817d776c231-4] Default: ``''`` (Empty string)
+- [60c19817d776c231-5] Default: ``''`` (Empty string)
+- [60c19817d776c231-6] Default: ``''`` (Empty string)
+- [60c19817d776c231-7] Default: ``''`` (Empty string)
+- [60c19817d776c231-8] Default: ``''`` (Empty string)
+- [60c19817d776c231-9] Default: ``''`` (Empty string)
+- [60c19817d776c231-10] Default: ``''`` (Empty string)
+- [60c19817d776c231-11] Default: ``''`` (Empty string)
+- [60c19817d776c231-12] Default: ``''`` (Empty string)
+- [60c19817d776c231-13] Default: ``''`` (Empty string)
+- [60c19817d776c231-14] Default: ``''`` (Empty string)
+- [60c19817d776c231-15] Default: ``''`` (Empty string)
+- [60c19817d776c231-16] Default: ``''`` (Empty string)
+- [60c19817d776c231-17] Default: ``''`` (Empty string)
+- [60c19817d776c231-18] Default: ``''`` (Empty string)
+- [b815e0a1] Default: ``','`` (Comma)
+- [65f9a70d] Default: ``'.'`` (Dot)
+- [69015ede1faa715b] Default: ``'/'``
+- [69015ede1faa715b-2] Default: ``'/'``
+- [69015ede1faa715b-3] Default: ``'/'``
+- [ec2910b9] Default: ``'/accounts/login/'``
+- [50a5492f] Default: ``'/accounts/profile/'``
+- [1e0d8e3c0f788670] Default: ``'25M'``
+- [1e0d8e3c0f788670-2] Default: ``'25M'``
+- [cc7b4ead8a981c26] Default: ``'500M'``
+- [cc7b4ead8a981c26-2] Default: ``'500M'``
+- [12693d748bb7cf42] Default: ``'50M'``
+- [12693d748bb7cf42-2] Default: ``'50M'``
+- [1e53e0b9] Default: ``'America/Chicago'``
+- [7615647b] Default: ``'DENY'``
+- [5d593d22] Default: ``'F Y'``
+- [874935a6] Default: ``'F j'``
+- [3feb3226] Default: ``'HTTP_X_CSRFTOKEN'``
+- [acdb34b78a7ede1d] Default: ``'Lax'``
+- [acdb34b78a7ede1d-2] Default: ``'Lax'``
+- [e8f82e0b] Default: ``'N j, Y'`` (e.g. ``Feb. 4, 2003``)
+- [eff968d1] Default: ``'N j, Y, P'`` (e.g. ``Feb. 4, 2003, 4 p.m.``)
+- [c15e9533] Default: ``'P'`` (e.g. ``4 p.m.``)
+- [88658947] Default: ``'[Django] '``
+- [a9d70c14] Default: ``'``:class:`django.db.models.BigAutoField`\ ``'``
+- [1ea1e1fa] Default: ``'``:class:`django.forms.renderers.DjangoTemplates`\ ``'``
+- [3e088f3c] Default: ``'``:class:`django.views.debug.ExceptionReporter`\ ``'``
+- [da1b7e95] Default: ``'``:class:`django.views.debug.SafeExceptionReporterFilter`\ ``'``
+- [3362fa7e] Default: ``'``:ref:`django.core.mail.backends.smtp.EmailBackend <topic-email-smtp-backend>`\ ``'``
+- [b7b5f1a6] Default: ``'auth.User'``
+- [d34985f1] Default: ``'csrftoken'``
+- [3f48b68d91a82a90] Default: ``'default'``
+- [3f48b68d91a82a90-2] Default: ``'default'``
+- [6dbc31e3] Default: ``'django.contrib.messages.storage.fallback.FallbackStorage'``
+- [6227221d] Default: ``'django.contrib.sessions.backends.db'``
+- [b35f46ac] Default: ``'django.contrib.sessions.serializers.JSONSerializer'``
+- [c948874f] Default: ``'django.core.signing.TimestampSigner'``
+- [617600e8] Default: ``'django.test.runner.DiscoverRunner'``
+- [7d4c6a12] Default: ``'django.views.csrf.csrf_failure'``
+- [de801a4c] Default: ``'django_language'``
+- [f63561fc] Default: ``'en-us'``
+- [e69184f8] Default: ``'localhost'``
+- [ca5727a3] Default: ``'logging.config.dictConfig'``
+- [1073c070] Default: ``'m/d/Y P'`` (e.g. ``12/31/2003 4 p.m.``)
+- [0ffee5c8] Default: ``'m/d/Y'`` (e.g. ``12/31/2003``)
+- [6c3f86ec] Default: ``'root@localhost'``
+- [59207e21594823d8] Default: ``'same-origin'``
+- [59207e21594823d8-2] Default: ``'same-origin'``
+- [c32f6920] Default: ``'sessionid'``
+- [0638b9bb] Default: ``'utf-8'``
+- [740d8b18] Default: ``'webmaster@localhost'``
+- [0b430f7ed84d2ad0] Default: ``0``
+- [0b430f7ed84d2ad0-2] Default: ``0``
+- [0b430f7ed84d2ad0-3] Default: ``0``
+- [0ba374e1] Default: ``0`` (Sunday)
+- [24164900] Default: ``0o644``
+- [adc26247] Default: ``1000``
+- [f42a8e56] Default: ``100``
+- [a49b50ec] Default: ``1209600`` (2 weeks, in seconds)
+- [b8c8f83e] Default: ``1``
+- [23fba42f] Default: ``259200`` (3 days, in seconds)
+- [262e5fce] Default: ``25``
+- [5963f9e8859ecc15] Default: ``2621440`` (i.e. 2.5 MB).
+- [a44ba2e1] Default: ``300``
+- [35647ea5] Default: ``31449600`` (approximately 1 year, in seconds)
+- [d08e811a] Default: ``600``
+- [b0fe7b38c7fcf33d] Default: ``False``
+- [b0fe7b38c7fcf33d-2] Default: ``False``
+- [b0fe7b38c7fcf33d-3] Default: ``False``
+- [b0fe7b38c7fcf33d-4] Default: ``False``
+- [b0fe7b38c7fcf33d-5] Default: ``False``
+- [b0fe7b38c7fcf33d-6] Default: ``False``
+- [b0fe7b38c7fcf33d-7] Default: ``False``
+- [b0fe7b38c7fcf33d-8] Default: ``False``
+- [b0fe7b38c7fcf33d-9] Default: ``False``
+- [b0fe7b38c7fcf33d-10] Default: ``False``
+- [b0fe7b38c7fcf33d-11] Default: ``False``
+- [b0fe7b38c7fcf33d-12] Default: ``False``
+- [b0fe7b38c7fcf33d-13] Default: ``False``
+- [b0fe7b38c7fcf33d-14] Default: ``False``
+- [b0fe7b38c7fcf33d-15] Default: ``False``
+- [b0fe7b38c7fcf33d-16] Default: ``False``
+- [b0fe7b38c7fcf33d-17] Default: ``False``
+- [b0fe7b38c7fcf33d-18] Default: ``False``
+- [b0fe7b38c7fcf33d-19] Default: ``False``
+- [b0fe7b38c7fcf33d-20] Default: ``False``
+- [b0fe7b38c7fcf33d-21] Default: ``False``
+- [b0fe7b38c7fcf33d-22] Default: ``False``
+- [b0fe7b38c7fcf33d-23] Default: ``False``
+- [b0fe7b38c7fcf33d-24] Default: ``False``
+- [b0fe7b38c7fcf33d-25] Default: ``False``
+- [b0fe7b38c7fcf33d-26] Default: ``False``
+- [b0fe7b38c7fcf33d-27] Default: ``False``
+- [b0fe7b38c7fcf33d-28] Default: ``False``
+- [b38633e0a9febd74] Default: ``None``
+- [b38633e0a9febd74-2] Default: ``None``
+- [b38633e0a9febd74-3] Default: ``None``
+- [b38633e0a9febd74-4] Default: ``None``
+- [b38633e0a9febd74-5] Default: ``None``
+- [b38633e0a9febd74-6] Default: ``None``
+- [b38633e0a9febd74-7] Default: ``None``
+- [b38633e0a9febd74-8] Default: ``None``
+- [b38633e0a9febd74-9] Default: ``None``
+- [b38633e0a9febd74-10] Default: ``None``
+- [b38633e0a9febd74-11] Default: ``None``
+- [b38633e0a9febd74-12] Default: ``None``
+- [b38633e0a9febd74-13] Default: ``None``
+- [b38633e0a9febd74-14] Default: ``None``
+- [b38633e0a9febd74-15] Default: ``None``
+- [b38633e0a9febd74-16] Default: ``None``
+- [b38633e0a9febd74-17] Default: ``None``
+- [b38633e0a9febd74-18] Default: ``None``
+- [b38633e0a9febd74-19] Default: ``None``
+- [b38633e0a9febd74-20] Default: ``None``
+- [b38633e0a9febd74-21] Default: ``None``
+- [b38633e0a9febd74-22] Default: ``None``
+- [b38633e0a9febd74-23] Default: ``None``
+- [b38633e0a9febd74-24] Default: ``None``
+- [b38633e0a9febd74-25] Default: ``None``
+- [b38633e0a9febd74-26] Default: ``None``
+- [b38633e0a9febd74-27] Default: ``None``
+- [b38633e0a9febd74-28] Default: ``None``
+- [b38633e0a9febd74-29] Default: ``None``
+- [b38633e0a9febd74-30] Default: ``None``
+- [b38633e0a9febd74-31] Default: ``None``
+- [48513912] Default: ``None`` (expires at browser close)
+- [692224f9320e79e0] Default: ``True``
+- [692224f9320e79e0-2] Default: ``True``
+- [692224f9320e79e0-3] Default: ``True``
+- [692224f9320e79e0-4] Default: ``True``
+- [692224f9320e79e0-5] Default: ``True``
+- [692224f9320e79e0-6] Default: ``True``
+- [692224f9320e79e0-7] Default: ``True``
+- [692224f9320e79e0-8] Default: ``True``
+- [692224f9320e79e0-9] Default: ``True``
+- [9ca0a4d4] Default: ``["default"]``
+- [6faa4647] Default: ``['default']``, for all databases other than ``default``, which has no dependencies.
+- [f260d084] Default: ``['django.contrib.auth.backends.ModelBackend']``
+- [58fbbf02] Default: ``[]``
+- [4529d318c14d8f63-2] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-3] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-4] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-5] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-6] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-7] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-8] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-9] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-10] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-11] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-12] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-13] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-14] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-15] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-16] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-17] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-18] Default: ``[]`` (Empty list)
+- [4529d318c14d8f63-19] Default: ``[]`` (Empty list)
+- [bcd7a79d] Default: ``messages.INFO``
+- [731475d462767b71] Default: ``{}``
+- [731475d462767b71-2] Default: ``{}``
+- [731475d462767b71-3] Default: ``{}``
+- [731475d462767b71-4] Default: ``{}``
+- [29384748] Default: ``{}`` (Empty dict)
+- [a91e05b1c33959e7] Default: ``{}`` (Empty dictionary)
+- [a91e05b1c33959e7-2] Default: ``{}`` (Empty dictionary)
+- [a91e05b1c33959e7-3] Default: ``{}`` (Empty dictionary)
+- [a91e05b1c33959e7-4] Default: ``{}`` (Empty dictionary)
+- [a91e05b1c33959e7-5] Default: ``{}`` (Empty dictionary)
+- [7bdef875] Default: see below
+- [ba513adf016e975e-2] Default::
+- [ba513adf016e975e-3] Default::
+- [ba513adf016e975e-4] Default::
+- [ba513adf016e975e-5] Default::
+- [ba513adf016e975e-6] Default::
+- [ba513adf016e975e-7] Default::
+- [ba513adf016e975e-8] Default::
+- [ba513adf016e975e-9] Default::
+- [ba513adf016e975e-10] Default::
+- [ba513adf016e975e-11] Default::
+- [ad19d2d8] Designating the CSRF cookie as ``HttpOnly`` doesn't offer any practical protection because CSRF is only to protect against cross-domain attacks. If an attacker can read the cookie via JavaScript, they're already on the same domain as far as the browser knows, so they can do anything they like anyway. (XSS is a much bigger hole than CSRF.)
+- [4fb84015] Directories where the engine should look for template source files, in search order.
+- [e4712f37] Django also allows the `fully qualified domain name (FQDN)`_ of any entries. Some browsers include a trailing dot in the ``Host`` header which Django strips when performing host validation.
+- [06522c85] Django will look within each of these paths for the ``<locale_code>/LC_MESSAGES`` directories containing the actual translation files.
+- [74442ea0] Django will refuse to start if :setting:`SECRET_KEY` is not set.
+- [81971629] Each item in the list should be an email address string. Example::
+- [a58c0e4c] Email ----- * :setting:`ADMINS` * :setting:`DEFAULT_CHARSET` * :setting:`DEFAULT_FROM_EMAIL` * :setting:`EMAIL_BACKEND` * :setting:`EMAIL_FILE_PATH` * :setting:`EMAIL_HOST` * :setting:`EMAIL_HOST_PASSWORD` * :setting:`EMAIL_HOST_USER` * :setting:`EMAIL_PORT` * :setting:`EMAIL_SSL_CERTFILE` * :setting:`EMAIL_SSL_KEYFILE` * :setting:`EMAIL_SUBJECT_PREFIX` * :setting:`EMAIL_TIMEOUT` * :setting:`EMAIL_USE_LOCALTIME` * :setting:`EMAIL_USE_SSL` * :setting:`EMAIL_USE_TLS` * :setting:`MAILERS` * :setting:`MANAGERS` * :setting:`SERVER_EMAIL`
+- [4fa7a25d] Error reporting --------------- * :setting:`DEFAULT_EXCEPTION_REPORTER` * :setting:`DEFAULT_EXCEPTION_REPORTER_FILTER` * :setting:`IGNORABLE_404_URLS` * :setting:`MANAGERS` * :setting:`SILENCED_SYSTEM_CHECKS`
+- [4e251aad] Example tuple for ``en_IN``::
+- [142d80b9] Example: ``"/var/www/example.com/media/"``
+- [39aca998] Example: ``"/var/www/example.com/static/"``
+- [6825b5c1] Example: ``"https://media.example.com/"``
+- [c6aa9c42] Example: ``"static/"`` or ``"https://static.example.com/"``
+- [acfcf117f82fd4c9-72] Example::
+- [acfcf117f82fd4c9-73] Example::
+- [acfcf117f82fd4c9-74] Example::
+- [d43ceb06] Extra parameters to pass to the Task backend. Available parameters vary depending on the Task backend.
+- [cbffb91a] Extra parameters to pass to the cache backend. Available parameters vary depending on your cache backend.
+- [c18edf72] Extra parameters to pass to the template backend. Available parameters vary depending on the template backend. See :class:`~django.template.backends.django.DjangoTemplates` and :class:`~django.template.backends.jinja2.Jinja2` for the options of the built-in backends.
+- [086b3d7b] Extra parameters to use when connecting to the database. Available parameters vary depending on your database backend.
+- [a451194c] File uploads ------------ * :setting:`FILE_UPLOAD_HANDLERS` * :setting:`FILE_UPLOAD_MAX_MEMORY_SIZE` * :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS` * :setting:`FILE_UPLOAD_PERMISSIONS` * :setting:`FILE_UPLOAD_TEMP_DIR` * :setting:`MEDIA_ROOT` * :setting:`MEDIA_URL` * :setting:`STORAGES`
+- [1664dd6e] Finally, if :setting:`DEBUG` is ``False``, you also need to properly set the :setting:`ALLOWED_HOSTS` setting. Failing to do so will result in all requests being returned as "Bad Request (400)".
+- [6c3ca4f1] Following the example from the :setting:`SECURE_CSP` setting::
+- [aef963c5] For a secure (determined by :meth:`~django.http.HttpRequest.is_secure`) unsafe request that doesn't include the ``Origin`` header, the request must include a ``Referer`` header that matches the origin in the ``Host`` header.
+- [a230dda8] For example, assuming you have :setting:`STATIC_URL` set to ``'static/'``, the :djadmin:`collectstatic` management command would collect the "stats" files in a ``'downloads'`` subdirectory of :setting:`STATIC_ROOT`.
+- [e5ddc096] For example, if :setting:`FORMAT_MODULE_PATH` is set to ``mysite.formats``, and current language is ``en`` (English), Django will expect a directory tree like:
+- [28a249ce] For example, when a Django admin change-list page is being filtered by a date drilldown, the header for a given day displays the day and month. Different locales have different formats. For example, U.S. English would say "January 1," whereas Spanish might say "1 Enero."
+- [285f9742] For example, when a Django admin change-list page is being filtered by a date drilldown, the header for a given month displays the month and the year. Different locales have different formats. For example, U.S. English would say "January 2006," whereas another locale might say "2006/January."
+- [328c64de] For more complex scenarios, the :ref:`SMTP EmailBackend <topic-email-smtp-backend>` can be subclassed to add root certificates to its ``ssl_context`` using :meth:`python:ssl.SSLContext.load_verify_locations`.
+- [ffbee96e] For requests that include the ``Origin`` header, Django's CSRF protection requires that header match the origin present in the ``Host`` header.
+- [7633c194] For security reasons, these permissions aren't applied to the temporary files that are stored in :setting:`FILE_UPLOAD_TEMP_DIR`.
+- [5d010568] Forms ----- * :setting:`FORM_RENDERER` * :setting:`USE_BLANK_CHOICE_DASH`
+- [68f3edfc] Full import path of a serializer class to use for serializing session data. Included serializer is:
+- [2eeee181] Generally, the default value should suffice. Only set this setting if you want to restrict language selection to a subset of the Django-provided languages.
+- [a8e1e5b3] Generally, the default value should suffice. Only set this setting if you want to restrict language selection to a subset of the Django-provided languages. If you define a custom :setting:`LANGUAGES` setting, the list of bidirectional languages may contain language codes which are not enabled on a given site.
+- [aa1e9869] Globalization (``i18n``/``l10n``) ---------------------------------
+- [7f763579] HTTP ---- * :setting:`DATA_UPLOAD_MAX_MEMORY_SIZE` * :setting:`DATA_UPLOAD_MAX_NUMBER_FIELDS` * :setting:`DATA_UPLOAD_MAX_NUMBER_FILES` * :setting:`DEFAULT_CHARSET` * :setting:`DISALLOWED_USER_AGENTS` * :setting:`FORCE_SCRIPT_NAME` * :setting:`INTERNAL_IPS` * :setting:`MIDDLEWARE` * Security
+- [16666ae1] Here's a list of settings available in Django core and their default values. Settings provided by contrib apps are listed below, followed by a topical index of the core settings. For introductory material, see the :doc:`settings topic guide </topics/settings>`.
+- [bf20d6ce] Here's a sample settings file::
+- [6357223c] Here's a setup that tells the Django template engine to load templates from the ``templates`` subdirectory inside each installed application::
+- [90c09c5f] Here's an example with a test database configuration::
+- [79a8397f] HttpOnly_ is a flag included in a Set-Cookie HTTP response header. It's part of the :rfc:`6265#section-4.1.2.6` standard for cookies and can be a useful way to mitigate the risk of a client-side script accessing the protected cookie data.
+- [b2d0a17e] If :setting:`EMAIL_USE_SSL` or :setting:`EMAIL_USE_TLS` is ``True`` and the secure connection to the SMTP server requires client authentication, use this setting to specify the path to a PEM-formatted certificate chain file, which must be used in conjunction with :setting:`EMAIL_SSL_KEYFILE`.
+- [9273d0e3] If :setting:`EMAIL_USE_SSL` or :setting:`EMAIL_USE_TLS` is ``True``, you can optionally specify the path to a PEM-formatted private key file for client authentication of the SSL connection along with :setting:`EMAIL_SSL_CERTFILE`.
+- [1c451803] If ``None``, no redirect will be performed and the logout view will be rendered.
+- [468f110b] If ``None``, you'll get operating-system dependent behavior. On most platforms, temporary files will have a mode of ``0o600``, and files saved from memory will be saved using the system's standard umask.
+- [e7ea236e] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` :ref:`redirects <ssl-redirect>` all non-HTTPS requests to HTTPS (except for those URLs matching a regular expression listed in :setting:`SECURE_REDIRECT_EXEMPT`).
+- [861eae00] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`x-content-type-options` header on all responses that do not already have it.
+- [53db0056] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` adds the ``includeSubDomains`` directive to the :ref:`http-strict-transport-security` header. It has no effect unless :setting:`SECURE_HSTS_SECONDS` is set to a non-zero value.
+- [1a9ea45f] If a URL path matches a regular expression in this list, the request will not be redirected to HTTPS. The :class:`~django.middleware.security.SecurityMiddleware` strips leading slashes from URL paths, so patterns shouldn't include them, e.g. ``SECURE_REDIRECT_EXEMPT = [r'^no-ssl/$', …]``. If :setting:`SECURE_SSL_REDIRECT` is ``False``, this setting has no effect.
+- [180986cb] If a string (e.g. ``secure.example.com``), all SSL redirects will be directed to this host rather than the originally-requested host (e.g. ``www.example.com``). If :setting:`SECURE_SSL_REDIRECT` is ``False``, this setting has no effect.
+- [61ac7a58] If configured, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`referrer-policy` header on all responses that do not already have it to the value provided.
+- [75e848a9] If it is set to ``False``, the test tablespaces won't be automatically created at the beginning of the tests or dropped at the end.
+- [7f13891c] If it is set to ``False``, the test user won't be automatically created at the beginning of the tests and dropped at the end.
+- [ff3fcd26] If not ``None``, this will be used as the base path for :ref:`asset definitions<form-asset-paths>` (the ``Media`` class) and the :doc:`staticfiles app</ref/contrib/staticfiles>`.
+- [f818fbdf] If not ``None``, this will be used as the value of the ``SCRIPT_NAME`` environment variable in any HTTP request. This setting can be used to override the server-provided value of ``SCRIPT_NAME``, which may be a rewritten version of the preferred value or not supplied at all. It is also used by :func:`django.setup` to set the URL resolver script prefix outside of the request/response cycle (e.g. in management commands and standalone scripts) to generate correct URLs when ``FORCE_SCRIPT_NAME`` is provided.
+- [89287944] If not set, the return value of ``django.core.wsgi.get_wsgi_application()`` will be used. In this case, the behavior of :djadmin:`runserver` will be identical to previous Django versions.
+- [eac6d943] If set to ``True``, Django's exception handling of view functions (:data:`~django.conf.urls.handler500`, or the debug view if :setting:`DEBUG` is ``True``) and logging of 500 responses (:ref:`django-request-logger`) is skipped and exceptions propagate upward.
+- [2ee2d35f] If set to ``True``, Oracle Managed Files (OMF) tablespaces will be used. :setting:`DATAFILE` and :setting:`DATAFILE_TMP` will be ignored.
+- [2df8fa67] If set to ``True``, existing :ref:`persistent database connections <persistent-database-connections>` will be health checked before they are reused in each request performing database access. If the health check fails, the connection will be reestablished without failing the request when the connection is no longer usable but the database server is ready to accept and serve new connections (e.g. after database server restart closing existing connections).
+- [06f028d8] If set to a non-zero integer value, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`http-strict-transport-security` header on all responses that do not already have it.
+- [720b388c] If the :doc:`staticfiles</ref/contrib/staticfiles>` contrib app is enabled (as in the default project template), the :djadmin:`collectstatic` management command will collect static files into this directory. See the how-to on :doc:`managing static files</howto/static-files/index>` for more details about usage.
+- [2e039535] If the ``Host`` header (or ``X-Forwarded-Host`` if :setting:`USE_X_FORWARDED_HOST` is enabled) does not match any value in this list, the :meth:`django.http.HttpRequest.get_host` method will raise :exc:`~django.core.exceptions.SuspiciousOperation`.
+- [94d76d4b] If the default value (``None``) is used with the SQLite database engine, the tests will use a memory resident database. For all other database engines the test database will use the name ``'test_' + DATABASE_NAME``.
+- [31f7195f] If this value starts with a forward slash (``'/'``) and you're using MySQL, MySQL will connect via a Unix socket to the specified socket. For example::
+- [b06d3f5c] If you define a custom :setting:`LANGUAGES` setting, you can mark the language names as translation strings using the :func:`~django.utils.translation.gettext_lazy` function.
+- [a21a0968] If you enable this and need to send the value of the CSRF token with an AJAX request, your JavaScript must pull the value :ref:`from a hidden CSRF token form input <acquiring-csrf-token-from-html>` instead of :ref:`from the cookie <acquiring-csrf-token-from-cookie>`.
+- [7f5e99e6] If you plan to send email through Django, configuring at least a ``"default"`` mailer is recommended. Any number of additional mailers may also be specified. Depending on which backend is used, other options may be required.
+- [0da929b3] If you provide the ``app_label`` argument, :djadmin:`makemigrations` will automatically create the package if it doesn't already exist.
+- [2b7c9109] If you set :setting:`LOGGING_CONFIG` to ``None``, the logging configuration process will be skipped.
+- [9e2cf097] If you want to use ``{{ MEDIA_URL }}`` in your templates, add ``'django.template.context_processors.media'`` in the ``'context_processors'`` option of :setting:`TEMPLATES`.
+- [788013ee] If you're using :ref:`cache-based session storage <cached-sessions-backend>`, this selects the cache to use.
+- [f553ba12] If you're using MySQL and this value *doesn't* start with a forward slash, then this value is assumed to be the host.
+- [a340e0d5] If you're using PostgreSQL, by default (empty :setting:`HOST`), the connection to the database is done through UNIX domain sockets ('local' lines in ``pg_hba.conf``). If your UNIX domain socket is not in the standard location, use the same value of ``unix_socket_directory`` from ``postgresql.conf``. If you want to connect through TCP sockets, set :setting:`HOST` to 'localhost' or '127.0.0.1' ('host' lines in ``pg_hba.conf``). On Windows, you should always define :setting:`HOST`, as UNIX domain sockets are not available.
+- [378b8f20] If you're using file-based session storage, this sets the directory in which Django will store session data. When the default value (``None``) is used, Django will use the standard temporary directory for the system.
+- [f5e866e1] If your Django app is behind a proxy, though, the proxy may be "swallowing" whether the original request uses HTTPS or not. If there is a non-HTTPS connection between the proxy and Django then ``is_secure()`` would always return ``False`` -- even for requests that were made via HTTPS by the end user. In contrast, if there is an HTTPS connection between the proxy and Django then ``is_secure()`` would always return ``True`` -- even for requests that were made originally via HTTP.
+- [8f5bf11d] In case you want to refer to files in one of the locations with an additional namespace, you can **optionally** provide a prefix as ``(prefix, path)`` tuples, e.g.::
+- [803d2fb7] In order to restore the database state between tests for ``TransactionTestCase``\s and database backends without transactions, Django will :ref:`serialize the contents of all apps <test-case-serialized-rollback>` when it starts the test run so it can then reload from that copy before running tests that need it.
+- [a63b8b11] In order to rotate your secret keys, set a new ``SECRET_KEY`` and move the previous value to the beginning of ``SECRET_KEY_FALLBACKS``. Then remove the old values from the end of the ``SECRET_KEY_FALLBACKS`` when you are ready to expire the sessions, password reset tokens, and so on, that make use of them.
+- [5493d066] In this case, migrations pertaining to the ``blog`` app will be contained in the ``blog.db_migrations`` package.
+- [ef56f978] In this situation, configure your proxy to set a custom HTTP header that tells Django whether the request came in via HTTPS, and set ``SECURE_PROXY_SSL_HEADER`` so that Django knows what header to look for.
+- [8a68fe01] Internationalization (``i18n``) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [ac2182e7] It defaults to the name of the module defining the engine class, i.e. the next to last piece of :setting:`BACKEND <TEMPLATES-BACKEND>`, when it isn't provided. For example if the backend is ``'mypackage.whatever.Backend'`` then its default name is ``'whatever'``.
+- [5b63caac] It is also important to remember that when running with :setting:`DEBUG` turned on, Django will remember every SQL query it executes. This is useful when you're debugging, but it'll rapidly consume memory on a production server.
+- [f8c94bf9] It must end in a slash if set to a non-empty value.
+- [be531a07] It serves three purposes:
+- [c0e484a6] Leaving this setting off isn't a good idea because an attacker could capture an unencrypted session cookie with a packet sniffer and use the cookie to hijack the user's session.
+- [b46d646a] List of compiled regular expression objects describing URLs that should be ignored when reporting HTTP 404 errors via email (see :doc:`/howto/error-reporting`). Regular expressions are matched against request's full paths, as returned by :meth:`~django.http.HttpRequest.get_full_path` (including any query strings). Use this if your site does not provide a commonly requested file such as ``favicon.ico`` or ``robots.txt``.
+- [42d64e2a] List of compiled regular expression objects representing User-Agent strings that are not allowed to visit any page, systemwide. Use this for bots/crawlers. This is only used if ``CommonMiddleware`` is installed (see :doc:`/topics/http/middleware`).
+- [57d7ec33] List of directories searched for :ref:`fixture <fixtures-explanation>` files, in addition to the ``fixtures`` directory of each application, in search order.
+- [f33728c9] Localization (``l10n``) ~~~~~~~~~~~~~~~~~~~~~~~
+- [1f919ce1] Logging ------- * :setting:`LOGGING` * :setting:`LOGGING_CONFIG`
+- [f562ff52] Messages ========
+- [7a09f47f] Models ------ * :setting:`ABSOLUTE_URL_OVERRIDES` * :setting:`FIXTURE_DIRS` * :setting:`INSTALLED_APPS`
+- [fa99437f] Most browsers log CSP violations to the developer console and can optionally send them to a reporting endpoint. To collect these reports, the ``report-uri`` directive must be defined (see :ref:`csp-reports` for more details).
+- [b57328e0] Never deploy a site into production with :setting:`DEBUG` turned on.
+- [afc00ef0] Note that :setting:`EMAIL_USE_TLS`/:setting:`EMAIL_USE_SSL` are mutually exclusive, so only set one of those settings to ``True``.
+- [acc85302] Note that changing this setting affects all forms using the default renderer, including those in :doc:`the admin site </ref/contrib/admin/index>` or third-party packages.
+- [cdc6d57c] Note that setting :setting:`EMAIL_SSL_CERTFILE` and :setting:`EMAIL_SSL_KEYFILE` doesn't result in any certificate checking. They're passed to the underlying SSL connection. Please refer to the documentation of Python's :meth:`python:ssl.SSLContext.wrap_socket` function for details on how the certificate chain file and private key file are handled.
+- [63e7ea246fbd1fa1] Note that the corresponding locale-dictated format has higher precedence and will be applied instead.
+- [14dd81b3] Note that the header needs to be in the format as used by ``request.META`` -- all caps and likely starting with ``HTTP_``. (Remember, Django automatically adds ``'HTTP_'`` to the start of x-header names before making the header available in ``request.META``.)
+- [dd03e5a4] Note that these are *partial* matches. ``'PASS'`` will also match PASSWORD, just as ``'TOKEN'`` will also match TOKENIZED and so on.
+- [f41745bb] Note that these paths should use Unix-style forward slashes, even on Windows (e.g. ``"C:/Users/user/mysite/extra_static_content"``).
+- [12b0198cec145720] Note that these paths should use Unix-style forward slashes, even on Windows.
+- [c59770d3] Note that this isn't necessarily the time zone of the server. For example, one server may serve multiple Django-powered sites, each with a separate time zone setting.
+- [4b193232] Number of digits grouped together on the integer part of a number.
+- [67201afd] On Unix environments (where :func:`time.tzset` is implemented), Django sets the ``os.environ['TZ']`` variable to the time zone you specify in the :setting:`TIME_ZONE` setting. Thus, all your views and models will automatically operate in this time zone. However, Django won't set the ``TZ`` environment variable if you're using the manual configuration option as described in :ref:`manually configuring settings <settings-without-django-settings-module>`. If Django doesn't set the ``TZ`` environment variable, it's up to you to ensure your processes are running in the correct environment.
+- [3d8a3fa0] One finder is disabled by default: ``django.contrib.staticfiles.finders.DefaultStorageFinder``. If added to your :setting:`STATICFILES_FINDERS` setting, it will look for static files in the default file storage as defined by the ``default`` key in the :setting:`STORAGES` setting.
+- [aac6bc6a] One of the main features of debug mode is the display of detailed error pages. If your app raises an exception when :setting:`DEBUG` is ``True``, Django will display a detailed traceback, including a lot of metadata about your environment, such as all the currently defined Django settings (from ``settings.py``).
+- [cfddbe34] Only supported for the ``mysql`` backend (see the `MySQL manual`_ for details).
+- [9d9f0df3] Password to use for the SMTP server defined in :setting:`EMAIL_HOST`. This setting is used in conjunction with :setting:`EMAIL_HOST_USER` when authenticating to the SMTP server. If either of these settings is empty, Django won't attempt authentication.
+- [2a0be979] Please note that the presence of this setting does not imply that Django's CSRF protection is safe from cross-subdomain attacks by default - please see the :ref:`CSRF limitations <csrf-limitations>` section.
+- [b4b51eb8] Port to use for the SMTP server defined in :setting:`EMAIL_HOST`.
+- [13f6ce94] Possible values for the setting are:
+- [69b87754] Prefixes (optional) ~~~~~~~~~~~~~~~~~~~
+- [e3b066c3] Security -------- * Cross Site Request Forgery Protection
+- [f309e4b6fe2b8df7] See :doc:`/topics/cache`.
+- [9d69ab8b] See :ref:`auth_password_storage`.
+- [e825040f] See :ref:`configuring-sessions` for more details.
+- [c08fd1b3d2252300] See :ref:`file-upload-handlers` for details.
+- [c0100f4c] See :ref:`how-django-discovers-language-preference` for more details.
+- [050cc6fc] See :ref:`initial-data-via-fixtures` and :ref:`topics-testing-fixtures`.
+- [61f5f686] See :ref:`message storage backends <message-storage-backends>` for more details.
+- [8f63a16a] See :ref:`session_serialization` for details.
+- [4972d262] See :ref:`the-test-database`.
+- [05a237fe] See :ref:`topic-email-backends` for a list of Django's built-in backends and pointers to community-maintained options.
+- [dc52bac2] See :ref:`topic-email-configuration` for more information.
+- [d5aca3fa1a6b0e93] See :setting:`SESSION_COOKIE_HTTPONLY` for details on ``HttpOnly``.
+- [d4ae33bd08d0e1d7] See :setting:`SESSION_COOKIE_SAMESITE` for details about ``SameSite``.
+- [e6223c90] See :tfilter:`allowed date format strings <date>`. See also :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`TIME_FORMAT` and :setting:`YEAR_MONTH_FORMAT`.
+- [04c5227a] See also :setting:`DATA_UPLOAD_MAX_MEMORY_SIZE`.
+- [d9244458] See also :setting:`DATETIME_FORMAT`, :setting:`TIME_FORMAT` and :setting:`SHORT_DATE_FORMAT`.
+- [02c0e636] See also :setting:`DATETIME_INPUT_FORMATS` and :setting:`TIME_INPUT_FORMATS`.
+- [a3bbe674] See also :setting:`DATE_FORMAT` and :setting:`DATETIME_FORMAT`.
+- [401af000] See also :setting:`DATE_FORMAT` and :setting:`SHORT_DATE_FORMAT`.
+- [4dc4cec4] See also :setting:`DATE_INPUT_FORMATS` and :setting:`DATETIME_INPUT_FORMATS`.
+- [abe59675] See also :setting:`DATE_INPUT_FORMATS` and :setting:`TIME_INPUT_FORMATS`.
+- [0a9a33a0] See also :setting:`DECIMAL_SEPARATOR`, :setting:`NUMBER_GROUPING` and :setting:`THOUSAND_SEPARATOR`.
+- [830d2892] See also :setting:`DECIMAL_SEPARATOR`, :setting:`THOUSAND_SEPARATOR` and :setting:`USE_THOUSAND_SEPARATOR`.
+- [8d0ac4f3] See also :setting:`EMAIL_HOST_PASSWORD`.
+- [5453fe25] See also :setting:`EMAIL_HOST_USER`.
+- [9053c983] See also :setting:`EMAIL_PORT`.
+- [a073fa83] See also :setting:`FILE_UPLOAD_MAX_MEMORY_SIZE`.
+- [f502b9e6] See also :setting:`LANGUAGE_CODE` and :setting:`USE_TZ`.
+- [2e4ca573] See also :setting:`MEDIA_URL`.
+- [793cfa99] See also :setting:`NUMBER_GROUPING`, :setting:`THOUSAND_SEPARATOR` and :setting:`USE_THOUSAND_SEPARATOR`.
+- [24005707] See also :setting:`TIME_ZONE` and :setting:`USE_I18N`.
+- [41e142bf] See also the :doc:`/ref/checks` documentation.
+- [6fe16a9c] See also the :doc:`/topics/signing` documentation.
+- [957b1ed1] See the :ref:`cache documentation <cache_key_prefixing>` for more information.
+- [a57e0399] See the :ref:`cache documentation <cache_versioning>` for more information.
+- [5c418ab3] See the documentation on :ref:`automatic database routing in multi database configurations <topics-db-multi-db-routing>`.
+- [d8a0c3ce] Serialization ------------- * :setting:`DEFAULT_CHARSET` * :setting:`SERIALIZATION_MODULES`
+- [735d52a2] Sessions ========
+- [d7d983f5] Set a tuple with two elements -- the name of the header to look for and the required value. For example::
+- [93b562f6] Set this to ``False`` if you want to :ref:`disable Django's transaction management <deactivate-transaction-management>` and implement your own.
+- [150dad90] Set this to ``True`` if you want to disable the use of server-side cursors with :meth:`.QuerySet.iterator`. :ref:`transaction-pooling-server-side-cursors` describes the use case.
+- [2919cfcb] Set this to ``True`` to accept those legacy signed cookies in addition to cookies signed with Django's current unambiguous signed-cookie salt derivation.
+- [37eaba69] Set this to ``True`` to wrap each view in a transaction on this database. See :ref:`tying-transactions-to-http-requests`.
+- [533e7ff6] Set this transitional setting to ``True`` to opt into using HTTPS as the default protocol when none is provided in URLs processed by the :tfilter:`urlize` and :tfilter:`urlizetrunc` template filters during the Django 6.x release cycle.
+- [6d6cc022] Sets the minimum message level that will be recorded by the messages framework. See :ref:`message levels <message-level>` for more details.
+- [e5fe8135] Setting ``MAILERS`` to an empty dictionary (``{}``) disables email sending and any attempt to send mail will raise ``MailerDoesNotExist``.
+- [96fbc785] Settings for :mod:`django.contrib.auth`.
+- [fb3ef101] Settings for :mod:`django.contrib.messages`.
+- [94727d52] Settings for :mod:`django.contrib.sessions`.
+- [7cc1c7cb] Settings for :mod:`django.contrib.sites`.
+- [bd864c5d] Settings for :mod:`django.contrib.staticfiles`.
+- [0394ee90] Since the :ref:`default error views <error-views>` require the CSRF token, :class:`~django.contrib.sessions.middleware.SessionMiddleware` must appear in :setting:`MIDDLEWARE` before any middleware that may raise an exception to trigger an error view (such as :exc:`~django.core.exceptions.PermissionDenied`) if you're using ``CSRF_USE_SESSIONS``. See :ref:`middleware-ordering`.
+- [c7738dab] Sites =====
+- [894297dd] Some browsers (specifically Internet Explorer) can disallow the use of persistent cookies or can have the indexes to the cookie jar corrupted on disk, thereby causing CSRF protection checks to (sometimes intermittently) fail. Change this setting to ``None`` to use session-based CSRF cookies, which keep the cookies in-memory instead of on persistent storage.
+- [44378bd7] Some information on available parameters can be found in the :doc:`Database Backends </ref/databases>` documentation. For more information, consult your backend module's own documentation.
+- [0e1b7ff8] Some information on available parameters can be found in the :ref:`cache arguments <cache_arguments>` documentation. For more information, consult your backend module's own documentation.
+- [7b898130] Some locales use non-uniform digit grouping, e.g. ``10,00,00,000`` in ``en_IN``. For this case, you can provide a sequence with the number of digit group sizes to be applied. The first number defines the size of the group preceding the decimal delimiter, and each number that follows defines the size of preceding groups. If the sequence is terminated with ``-1``, no further grouping is performed. If the sequence terminates with a ``0``, the last group size is used for the remainder of the number.
+- [97948d7e] Specifies a timeout in seconds for blocking operations like the connection attempt.
+- [4cafb6f2] Specify the queue names supported by the backend. This can be used to ensure Tasks aren't enqueued to queues which do not exist.
+- [801fc674] Static Files ============
+- [f989eec4] Static file finders are currently considered a private interface, and this interface is thus undocumented.
+- [7b617f96] Still, note that there are always going to be sections of your debug output that are inappropriate for public consumption. File paths, configuration options and the like all give attackers extra information about your server.
+- [84c7c193] Storages can have any alias you choose. However, there are two aliases with special significance:
+- [e0ee8937] Storing the CSRF token in a cookie (Django's default) is safe, but storing it in the session is common practice in other web frameworks and therefore sometimes demanded by security auditors.
+- [471d6d86] Subject-line prefix for email messages sent with ``django.core.mail.mail_admins`` or ``django.core.mail.mail_managers``. You'll probably want to include the trailing space.
+- [57f437bd] Supported by the PostgreSQL_ (``postgresql``) and MySQL_ (``mysql``) backends.
+- [0929621e] Templates --------- * :setting:`TEMPLATES`
+- [6ffb2b89] Testing ------- * Database: :setting:`TEST <DATABASE-TEST>` * :setting:`TEST_NON_SERIALIZED_APPS` * :setting:`TEST_RUNNER`
+- [af8c5d43] The :setting:`APPEND_SLASH` setting is only used if :class:`~django.middleware.common.CommonMiddleware` is installed (see :doc:`/topics/http/middleware`). See also :setting:`PREPEND_WWW`.
+- [04f86df8] The :setting:`CACHES` setting must configure a ``default`` cache; any number of additional caches may also be specified. If you are using a cache backend other than the local memory cache, or you need to define multiple caches, other options will be required. The following cache options are available.
+- [bdf2edf9] The :setting:`DATABASES` setting must configure a ``default`` database; any number of additional databases may also be specified.
+- [113036c4] The :setting:`TASKS` setting must configure a ``default`` backend; any number of additional backends may also be specified. Depending on which backend is used, other options may be required. The following options are available as standard.
+- [8676009d] The ID, as an integer, of the current site in the ``django_site`` database table. This is used so that application data can hook into specific sites and a single database can manage content for multiple sites.
+- [e5bb06fe] The Python import path to the email backend class. If ``"BACKEND"`` is omitted, Django's :ref:`topic-email-smtp-backend` is used.
+- [76cbc184] The Tasks backend to use. The built-in backends are:
+- [7421c916] The URL or :ref:`named URL pattern <naming-url-patterns>` where requests are redirected after login when the :class:`~django.contrib.auth.views.LoginView` doesn't get a ``next`` GET parameter.
+- [913e74a1] The URL or :ref:`named URL pattern <naming-url-patterns>` where requests are redirected after logout if :class:`~django.contrib.auth.views.LogoutView` doesn't have a ``next_page`` attribute.
+- [ed549c05] The URL or :ref:`named URL pattern <naming-url-patterns>` where requests are redirected for login when using the :func:`~django.contrib.auth.decorators.login_required` decorator, :class:`~django.contrib.auth.mixins.LoginRequiredMixin`, :class:`~django.contrib.auth.mixins.AccessMixin`, or when :class:`~django.contrib.auth.middleware.LoginRequiredMiddleware` is installed.
+- [6cb4a67c] The ``Content-Security-Policy`` header instructs browsers to restrict which resources a page is allowed to load. A properly configured CSP can block content that violates defined rules, helping prevent cross-site scripting (XSS) and other content injection attacks by explicitly declaring trusted sources for content such as scripts, styles, images, fonts, and more.
+- [e533b640] The absolute path to the directory where :djadmin:`collectstatic` will collect static files for deployment.
+- [9962b6dc] The age of CSRF cookies, in seconds.
+- [5f4d2a85] The age of session cookies, in seconds.
+- [28ec0d5f] The age of the language cookie, in seconds.
+- [d0b9b690] The alias for this particular template engine. It's an identifier that allows selecting an engine for rendering. Aliases must be unique across all configured template engines.
+- [8a758398] The alias of the database that this database should mirror during testing. It depends on transactions and therefore must be used within :class:`~django.test.TransactionTestCase` instead of :class:`~django.test.TestCase`.
+- [7b91d839] The amount by which the DATAFILE is extended when more space is required.
+- [64070794] The amount of request data is correlated to the amount of memory or storage needed to process the request and populate the GET and POST dictionaries. Large requests could be used as a denial-of-service attack vector if left unchecked. Since web servers don't typically perform deep request inspection, it's not possible to perform a similar check at that level.
+- [e5f16e99] The backend to use for sending emails. For the list of available backends see :ref:`topic-email-backends`.
+- [8f14fc5b] The backend used for signing cookies and other data.
+- [668bd0a0] The backends that use cookies -- :class:`~django.contrib.messages.storage.cookie.CookieStorage` and :class:`~django.contrib.messages.storage.fallback.FallbackStorage` -- use the value of :setting:`SESSION_COOKIE_DOMAIN`, :setting:`SESSION_COOKIE_SECURE` and :setting:`SESSION_COOKIE_HTTPONLY` when setting their cookies.
+- [a3c80a8d] The cache backend to use. The built-in cache backends are:
+- [5dd4992b] The cache connection to use for the :ref:`cache middleware <the-per-site-cache>`.
+- [ad595319] The character set encoding used to create the test database. The value of this string is passed directly through to the database, so its format is backend-specific.
+- [a69595f8] The collation order to use when creating the test database. This value is passed directly to the backend, so its format is backend-specific.
+- [c7d3f18f] The creation-order dependencies of the database. See the documentation on :ref:`controlling the creation order of test databases <topics-testing-creation-dependencies>` for details.
+- [4976db5d] The database backend to use. The built-in database backends are:
+- [3fbf3bd0] The default blank choice label in ``Select`` widgets was changed from ``"---------"`` to ``django.db.models.fields.BLANK_CHOICE_LABEL``. Set this transitional setting to ``True`` to revert to the previous label.
+- [a91f6f41] The default class that renders forms and form widgets. It must implement :ref:`the low-level render API <low-level-widget-render-api>`. Included form renderers are:
+- [cebd320d] The default formatting to use for date fields on Django admin change-list pages -- and, possibly, by other parts of the system -- in cases when only the month and day are displayed.
+- [005ca6fc] The default formatting to use for displaying date fields in any part of the system. Note that the locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
+- [45fbcc7c] The default integer number of seconds to cache a page for the :ref:`cache middleware <the-per-site-cache>`.
+- [90eac7b3] The default value for the X-Frame-Options header used by :class:`~django.middleware.clickjacking.XFrameOptionsMiddleware`. See the :doc:`clickjacking protection </ref/clickjacking/>` documentation.
+- [ea151861] The default version number for cache keys generated by the Django server.
+- [17df5f23] The default will find files stored in the :setting:`STATICFILES_DIRS` setting (using ``django.contrib.staticfiles.finders.FileSystemFinder``) and in a ``static`` subdirectory of each app (using ``django.contrib.staticfiles.finders.AppDirectoriesFinder``). If multiple files with the same name are present, the first file that is found will be used.
+- [1186495d] The directory to store data to (typically files larger than :setting:`FILE_UPLOAD_MAX_MEMORY_SIZE`) temporarily while uploading files. If ``None``, Django will use the standard temporary directory for the operating system. For example, this will default to ``/tmp`` on \*nix-style operating systems.
+- [9d8b0413] The directory used by the :ref:`file email backend <topic-email-file-backend>` to store output files.
+- [b8549de8] The domain to be used when setting the CSRF cookie. This can be useful for easily allowing cross-subdomain requests to be excluded from the normal cross site request forgery protection. It should be set to a string such as ``".example.com"`` to allow a POST request from a form on one subdomain to be accepted by a view served from another subdomain.
+- [9736b1b5] The domain to use for session cookies. Set this to a string such as ``"example.com"`` for cross-domain cookies, or use ``None`` for a standard domain cookie.
+- [12e7646f] The email address that error messages come from, such as those sent to :setting:`ADMINS` and :setting:`MANAGERS`. This address is used in the ``From:`` header and can take any format valid in the chosen email sending protocol.
+- [37d2876b] The following inner options that may be required for more complex configurations are available:
+- [8a8cba23] The following is an example ``settings.py`` snippet defining a custom file storage called ``example``::
+- [1cb29271] The following keys in the ``TEST`` dictionary are available:
+- [5822eff6] The following options are available for all backends.
+- [ab247d5e] The full Python path of the WSGI application object that Django's built-in servers (e.g. :djadmin:`runserver`) will use. The :djadmin:`django-admin startproject <startproject>` management command will create a standard ``wsgi.py`` file with an ``application`` callable in it, and point this setting to that ``application``.
+- [ab984356] The host to use for sending email.
+- [ed72315f] The initial size of the DATAFILE.
+- [10ff3462] The initial size of the DATAFILE_TMP.
+- [5d313a24] The lifetime of a database connection, as an integer of seconds. Use ``0`` to close database connections at the end of each request — Django's historical behavior — and ``None`` for unlimited :ref:`persistent database connections <persistent-database-connections>`.
+- [0ce2ce36] The list contains :term:`language codes<language code>` for languages that are written right-to-left.
+- [72088827] The list is a list of 2-tuples in the format (:term:`language code<language code>`, ``language name``) -- for example, ``('ja', 'Japanese')``. This specifies which languages are available for language selection. See :doc:`/topics/i18n/index`.
+- [e1fd7b20] The list of finder backends that know how to find static files in various locations.
+- [c08759fd] The list of routers that will be used to determine which database to use when performing a database query.
+- [22b1cd03] The list of validators that are used to check the strength of user's passwords. See :ref:`password-validation` for more details. By default, no validation is performed and all passwords are accepted.
+- [c6499e820afe5cf1] The locale-dictated format has higher precedence and will be applied instead.
+- [2b344f58] The location of the cache to use. This might be the directory for a file system cache, a host and port for a memcache server, or an identifying name for a local memory cache. e.g.::
+- [fcf5f802] The maximum number of files that may be received via POST in a ``multipart/form-data`` encoded request before a :exc:`~django.core.exceptions.SuspiciousOperation` (``TooManyFiles``) is raised. You can set this to ``None`` to disable the check. Applications that are expected to receive an unusually large number of file fields should tune this setting.
+- [e3875141] The maximum number of parameters that may be received via GET or POST before a :exc:`~django.core.exceptions.SuspiciousOperation` (``TooManyFields``) is raised. You can set this to ``None`` to disable the check. Applications that are expected to receive an unusually large number of form fields should tune this setting.
+- [5aa47358] The maximum size (in bytes) that an upload will be before it gets streamed to the file system. See :ref:`file-upload-handlers` for details.
+- [d724e8f1] The maximum size in bytes that a request body may be before a :exc:`~django.core.exceptions.SuspiciousOperation` (``RequestDataTooBig``) is raised. The size check occurs when you access ``request.body`` or ``request.POST``. For ``request.POST``, the size check uses the total request size without the file upload data (``request.FILES``). For ``request.body``, the size check uses the total raw request payload. The payload includes the file upload data. You can set this to ``None`` to disable the check. Applications that are expected to receive unusually large form posts should tune this setting.
+- [4c1b3e62] The maximum size that the DATAFILE is allowed to grow to.
+- [d6be84c4] The model name used in this setting should be all lowercase, regardless of the case of the actual model class name.
+- [2abaa2cb] The model to use to represent a User. See :ref:`auth-custom-user`.
+- [c08dc9ba] The name of a `template`_ (e.g. ``'template0'``) from which to create the test database.
+- [c79b5d9a] The name of database to use when running the test suite.
+- [afe0f6ff] The name of the class to use for starting the test suite. See :ref:`other-testing-frameworks`.
+- [2ecb0ccd] The name of the cookie to use for sessions. This can be whatever you want (as long as it's different from the other cookie names in your application).
+- [df7cb0ea] The name of the cookie to use for the CSRF authentication token. This can be whatever you want (as long as it's different from the other cookie names in your application). See :doc:`/ref/csrf`.
+- [8665e96c] The name of the cookie to use for the language cookie. This can be whatever you want (as long as it's different from the other cookie names in your application). See :doc:`/topics/i18n/index`.
+- [61f0a3f0] The name of the database to use. For SQLite, it's the full path to the database file. When specifying the path, always use forward slashes, even on Windows (e.g. ``C:/homes/user/mysite/sqlite3.db``).
+- [c61a0437] The name of the datafile to use for the TBLSPACE. If not provided, Django will use ``TBLSPACE + '.dbf'``.
+- [06c53ed5] The name of the directory containing the format definitions is expected to be named using :term:`locale name` notation, for example ``de``, ``pt_BR``, ``en_US``, etc.
+- [1862afbe] The name of the request header used for CSRF authentication.
+- [cde38bc1] The name of the tablespace that will be used when running tests. If not provided, Django will use ``'test_' + USER``.
+- [06611645] The number of accepted files is correlated to the amount of time and memory needed to process the request. Large requests could be used as a denial-of-service attack vector if left unchecked. Since web servers don't typically perform deep request inspection, it's not possible to perform a similar check at that level.
+- [4bccae7f] The number of seconds a password reset link is valid for.
+- [ad1bbfa2] The number of seconds before a cache entry is considered stale. If the value of this setting is ``None``, cache entries will not expire. A value of ``0`` causes keys to immediately expire (effectively "don't cache").
+- [6fee745f] The numeric mode (i.e. ``0o644``) to set newly uploaded files to. For more information about what these modes mean, see the documentation for :func:`os.chmod`.
+- [8b7ac8d9] The numeric mode to apply to directories created in the process of uploading files.
+- [f8e8db49] The password to use when connecting to the Oracle database that will be used when running tests. If not provided, Django will generate a random password.
+- [e52ec5bd] The password to use when connecting to the database. Not used with SQLite.
+- [87eeef11] The path set on the CSRF cookie. This should either match the URL path of your Django installation or be a parent of that path.
+- [8c9c8ca7] The port to use when connecting to the database. An empty string means the default port. Not used with SQLite.
+- [29a0d9ee] The reason for setting a long-lived expiration time is to avoid problems in the case of a user closing a browser or bookmarking a page and then loading that page from a browser cache. Without persistent cookies, the form submission would fail in this case.
+- [22dbc375] The secret key is used for:
+- [c1f5064a] The setting also supports subdomains, so you could add ``'https://*.example.com'``, for example, to allow access from all subdomains of ``example.com``.
+- [45f1f64e] The setting must be a mapping (typically a dictionary) of directive names to their values. Each key should be a valid CSP directive such as ``default-src`` or ``script-src``. The corresponding value can be a list, tuple, or set of source expressions or URLs to allow for that directive. If a set is used, it will be automatically sorted to ensure consistent output in the generated headers.
+- [0c4d9a56] The simplest possible settings file is for a single-database setup using SQLite. This can be configured using the following::
+- [ba24c22c] The template backend to use. The built-in template backends are:
+- [98e57833] The username to use when connecting to the Oracle database that will be used when running tests. If not provided, Django will use ``'test_' + USER``.
+- [624460de] The username to use when connecting to the database. Not used with SQLite.
+- [3d3c4e43] The value must be an integer from 0 to 6, where 0 means Sunday, 1 means Monday and so on.
+- [31a47e89] The value of the `SameSite`_ flag on the CSRF cookie. This flag prevents the cookie from being sent in cross-site requests.
+- [81126651] The value of the `SameSite`_ flag on the session cookie. This flag prevents the cookie from being sent in cross-site requests thus preventing CSRF attacks and making some methods of stealing session cookie impossible.
+- [d362fa5f] These checks prevent, for example, a ``POST`` request from ``subdomain.example.com`` from succeeding against ``api.example.com``. If you need cross-origin unsafe requests, continuing the example, add ``'https://subdomain.example.com'`` to this list (and/or ``http://...`` if requests originate from an insecure page).
+- [0bb90e5d] This can be useful for some test setups. It shouldn't be used on a live site unless you want your web server (instead of Django) to generate "Internal Server Error" responses. In that case, make sure your server doesn't show the stack trace or other sensitive information in the response.
+- [80f547c5] This doesn't affect error messages sent to :setting:`ADMINS` and :setting:`MANAGERS`. See :setting:`SERVER_EMAIL` for that.
+- [df9fca37] This example illustrates the expected structure, using the constants defined in :ref:`csp-constants`::
+- [cc9601bfb8bb7394] This is a PostgreSQL-specific setting.
+- [30a89f8498c5011d] This is an Oracle-specific setting.
+- [341c9287] This is only used if :class:`~django.middleware.common.BrokenLinkEmailsMiddleware` is enabled (see :doc:`/topics/http/middleware`).
+- [51ac1d26] This is useful if you have multiple Django instances running under the same hostname. They can use different cookie paths and each instance will only see its own language cookie.
+- [c57b769f] This makes it less trivial for an attacker to escalate a cross-site scripting vulnerability into full hijacking of a user's session. There aren't many good reasons for turning this off. Your code shouldn't read session cookies from JavaScript.
+- [1a495e48] This sets the mapping of message level to message tag, which is typically rendered as a CSS class in HTML. If you specify a value, it will extend the default. This means you only have to specify those values which you need to override. See :ref:`message-displaying` above for more details.
+- [2432a8d9] This setting also affects cookies set by :mod:`django.contrib.messages`.
+- [d9c87600] This setting also determines the default permissions for collected static directories when using the :djadmin:`collectstatic` management command. See :djadmin:`collectstatic` for details on overriding it.
+- [04a22897] This setting defines the additional locations the staticfiles app will traverse if the ``FileSystemFinder`` finder is enabled, e.g. if you use the :djadmin:`collectstatic` or :djadmin:`findstatic` management command or use the static file serving view.
+- [fac4d5de] This setting defines the directives used by the :class:`~django.middleware.csp.ContentSecurityPolicyMiddleware`, which generates and adds a :ref:`Content-Security-Policy <csp-overview>` (CSP) header to all responses that do not already include one.
+- [fcdbc796] This setting exists to allow for testing of primary/replica (referred to as master/slave by some databases) configurations of multiple databases. See the documentation on :ref:`testing primary/replica configurations <topics-testing-primaryreplica>` for details.
+- [a2892919] This setting is just like :setting:`SECURE_CSP`, but instead of enforcing the policy, it instructs the :class:`~django.middleware.csp.ContentSecurityPolicyMiddleware` to apply a ``Content-Security-Policy-Report-Only`` header to responses, which allows browsers to monitor and report policy violations without blocking content. This is useful for testing and refining a policy before enforcement.
+- [283f8716] This setting takes priority over :setting:`USE_X_FORWARDED_PORT`. Per :rfc:`7239#section-5.3`, the ``X-Forwarded-Host`` header can include the port number, in which case you shouldn't use :setting:`USE_X_FORWARDED_PORT`.
+- [ca042777] This should be set to a list of strings that contain full paths to your additional files directory(ies) e.g.::
+- [95975a3a] This slows down the startup time of the test runner; if you have apps that you know don't need this feature, you can add their full names in here (e.g. ``'django.contrib.contenttypes'``) to exclude them from this serialization process.
+- [3b8428e7] This tells Django to trust the ``X-Forwarded-Proto`` header that comes from our proxy and that the request is guaranteed to be secure (i.e., it originally came in via HTTPS) when:
+- [c17c2cd0] This validation only applies via :meth:`~django.http.HttpRequest.get_host`; if your code accesses the ``Host`` header directly from ``request.META`` you are bypassing this security protection.
+- [6b3a822b] This value mirrors the functionality and caveats of the :setting:`FILE_UPLOAD_PERMISSIONS` setting.
+- [1430a238] This would allow you to refer to the local file ``'/opt/webfiles/stats/polls_20101022.tar.gz'`` with ``'/static/downloads/polls_20101022.tar.gz'`` in your templates, e.g.:
+- [71d2e06580a80d50] To build an address with a display name from variable content, see :ref:`formatting-addresses`.
+- [6da3a2b0] To disable queue name validation, set to an empty list (``[]``).
+- [dd1fdc16] To safely build an address with a display name from variable content, see :ref:`formatting-addresses`, which recommends using :class:`~email.headerregistry.Address` over string formatting, but since this setting requires a list of strings, wrap each ``Address`` in ``str(...)``.
+- [1be79d76] To use cross-domain cookies with :setting:`CSRF_USE_SESSIONS`, you must include a leading dot (e.g. ``".example.com"``) to accommodate the CSRF middleware's referer checking.
+- [e49e94b6] URL that handles the media served from :setting:`MEDIA_ROOT`, used for :doc:`managing stored files </topics/files>`. It must end in a slash if set to a non-empty value. You will need to :ref:`configure these files to be served <serving-uploaded-files-in-development>` in both development and production environments.
+- [6d1abdcb] URL to use when referring to static files located in :setting:`STATIC_ROOT`.
+- [cf15b33b] URLs ---- * :setting:`APPEND_SLASH` * :setting:`PREPEND_WWW` * :setting:`ROOT_URLCONF`
+- [86dc8e10] Under ASGI, the entire request may be spooled to disk before this limit is enforced. Therefore, it is strongly recommended to place additional protections in front of Django which limit the entire request payload.
+- [724e8788] Unless set to ``None``, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`cross-origin-opener-policy` header on all responses that do not already have it to the value provided.
+- [eb0eed3a] Used by the :class:`~django.contrib.auth.views.PasswordResetConfirmView`.
+- [34953716] Username to use for the SMTP server defined in :setting:`EMAIL_HOST`. If empty, Django won't attempt authentication.
+- [7885fcde] Uses of the key shouldn't assume that it's text or bytes. Every use should go through :func:`~django.utils.encoding.force_str` or :func:`~django.utils.encoding.force_bytes` to convert it to the desired type.
+- [a81b06c1] Uses of the secret key values shouldn't assume that they are text or bytes. Every use should go through :func:`~django.utils.encoding.force_str` or :func:`~django.utils.encoding.force_bytes` to convert it to the desired type.
+- [6e38d4af] Values in this list can be fully qualified names (e.g. ``'www.example.com'``), in which case they will be matched against the request's ``Host`` header exactly (case-insensitive, not including port). A value beginning with a period can be used as a subdomain wildcard: ``'.example.com'`` will match ``example.com``, ``www.example.com``, and any other subdomain of ``example.com``. A value of ``'*'`` will match anything; in this case you are responsible to provide your own validation of the ``Host`` header (perhaps in a middleware; if so this middleware must be listed first in :setting:`MIDDLEWARE`).
+- [b1e6c13a] When :setting:`DEBUG` is ``True`` and ``ALLOWED_HOSTS`` is empty, the host is validated against ``['.localhost', '127.0.0.1', '[::1]']``.
+- [a42cab57] When :setting:`USE_TZ` is ``False``, it is an error to set this option.
+- [5b9f0aab] When :setting:`USE_TZ` is ``False``, this is the time zone in which Django will store all datetimes. When :setting:`USE_TZ` is ``True``, this is the default time zone that Django will use to display datetimes in templates and to interpret datetimes entered in forms.
+- [73cad583] When :setting:`USE_TZ` is ``True``, reading datetimes from the database returns aware datetimes with the timezone set to this option's value if not ``None``, or to UTC otherwise.
+- [046e3a12] When Django searches for a certain format, it will go through all given Python paths until it finds a module that actually defines the given format. This means that formats defined in packages farther up in the list will take precedence over the same formats in packages farther down.
+- [42bf6e9e] When ``USE_TZ`` is False, Django will use naive datetimes in local time, except when parsing ISO 8601 formatted strings, where timezone information will always be retained if present.
+- [0d116c8f] When a secret key is no longer set as :setting:`SECRET_KEY` or contained within :setting:`SECRET_KEY_FALLBACKS` all of the above will be invalidated. When rotating your secret key, you should move the old key to :setting:`SECRET_KEY_FALLBACKS` temporarily. Secret keys are not used for passwords of users and key rotation will not affect them.
+- [95c0e8ce] When connecting to other database backends, such as MariaDB, MySQL, Oracle, or PostgreSQL, additional connection parameters will be required. See the :setting:`ENGINE <DATABASE-ENGINE>` setting below on how to specify other database types. This example is for PostgreSQL::
+- [95dbae58] When set to ``False``, migrations won't run when creating the test database. This is similar to setting ``None`` as a value in :setting:`MIGRATION_MODULES`, but for all apps.
+- [a93e2865] When set to ``True``, if the request URL does not match any of the patterns in the URLconf and it doesn't end in a slash, an HTTP redirect is issued to the same URL with a slash appended. Note that the redirect may cause any data submitted in a POST request to be lost.
+- [cdc2263b] When several applications provide different versions of the same resource (template, static file, management command, translation), the application listed first in :setting:`INSTALLED_APPS` has precedence.
+- [805adad4] When you supply ``None`` as a value for an app, Django will consider the app as an app without migrations regardless of an existing ``migrations`` submodule. This can be used, for example, in a test settings file to skip migrations while testing (tables will still be created for the apps' models). To disable migrations for all apps during tests, you can set the :setting:`MIGRATE <TEST_MIGRATE>` to ``False`` instead. If ``MIGRATION_MODULES`` is used in your general project settings, remember to use the :option:`migrate --run-syncdb` option if you want to create tables for the app.
+- [4d42b603] Whether the engine should look for template source files inside installed applications.
+- [9d665934] Whether to expire the session when the user closes their browser. See :ref:`browser-length-vs-persistent-sessions`.
+- [eb42dd83] Whether to prepend the "www." subdomain to URLs that don't have it. This is only used if :class:`~django.middleware.common.CommonMiddleware` is installed (see :doc:`/topics/http/middleware`). See also :setting:`APPEND_SLASH`.
+- [d2d4b91f] Whether to save the session data on every request. If this is ``False`` (default), then the session data will only be saved if it has been modified -- that is, if any of its dictionary values have been assigned or deleted. Empty sessions won't be created, even if this setting is active.
+- [6b7502ed] Whether to send the SMTP ``Date`` header of email messages in the local time zone (``True``) or in UTC (``False``).
+- [0247e1db] Whether to store the CSRF token in the user's session instead of in a cookie. It requires the use of :mod:`django.contrib.sessions`.
+- [ce10f821] Whether to use ``HttpOnly`` flag on the CSRF cookie. If this is set to ``True``, client-side JavaScript will not be able to access the CSRF cookie.
+- [9725582b] Whether to use a TLS (secure) connection when talking to the SMTP server. This is used for explicit TLS connections, generally on port 587. If you are experiencing hanging connections, see the implicit TLS setting :setting:`EMAIL_USE_SSL`.
+- [1545f2c7] Whether to use a secure cookie for the CSRF cookie. If this is set to ``True``, the cookie will be marked as "secure", which means browsers may ensure that the cookie is only sent with an HTTPS connection.
+- [d641cb36] Whether to use an implicit TLS (secure) connection when talking to the SMTP server. In most email documentation this type of TLS connection is referred to as SSL. It is generally used on port 465. If you are experiencing problems, see the explicit TLS setting :setting:`EMAIL_USE_TLS`.
+- [f696c05f] Which host to use when connecting to the database. An empty string means localhost. Not used with SQLite.
+- [5641cb56] You can also set this setting to a list of Python paths, for example::
+- [93978118] You can see the default logging configuration by looking in :source:`django/utils/log.py`.
+- [8ff209fe] You can use a backend that doesn't ship with Django by setting :setting:`BACKEND <TASKS-BACKEND>` to a fully-qualified path of a backend class (i.e. ``mypackage.backends.whatever.WhateverBackend``).
+- [96a36f07] You can use a cache backend that doesn't ship with Django by setting :setting:`BACKEND <CACHES-BACKEND>` to a fully-qualified path of a cache backend class (i.e. ``mypackage.backends.whatever.WhateverCache``).
+- [4c9f4938] You can use a database backend that doesn't ship with Django by setting ``ENGINE`` to a fully-qualified path (i.e. ``mypackage.backends.whatever``).
+- [a092d10d] You can use a template backend that doesn't ship with Django by setting ``BACKEND`` to a fully-qualified path (i.e. ``'mypackage.whatever.Backend'``).
+- [a46e12e6] You may need to :ref:`configure these files to be served in development <serving-static-files-in-development>` and will definitely need to do so :doc:`in production </howto/static-files/deployment>`.
+- [8d2d4560] You may use any key function you want, as long as it has the same argument signature.
+- [f7dddb56] You should *only* set this setting if you control your proxy or have some other guarantee that it sets/strips this header appropriately.
+- [78607a80] ``ABSOLUTE_URL_OVERRIDES`` --------------------------
+- [8ae9d2b7] ``ADMINS`` ----------
+- [bbdf869a] ``ALLOWED_HOSTS`` -----------------
+- [d1b6bc92] ``ALLOWED_HOSTS`` is also :ref:`checked when running tests <topics-testing-advanced-multiple-hosts>`.
+- [15cfa859] ``APPEND_SLASH`` ----------------
+- [be2d0936] ``APP_DIRS`` ~~~~~~~~~~~~
+- [bfe9e89d] ``ATOMIC_REQUESTS`` ~~~~~~~~~~~~~~~~~~~
+- [b23654aa] ``AUTHENTICATION_BACKENDS`` ---------------------------
+- [ed8a7e52] ``AUTH_PASSWORD_VALIDATORS`` ----------------------------
+- [3cfd1ed1] ``AUTH_USER_MODEL`` -------------------
+- [b82d5e7e] ``AUTOCOMMIT`` ~~~~~~~~~~~~~~
+- [63e44ac5dc313684] ``BACKEND`` ~~~~~~~~~~~
+- [63e44ac5dc313684-2] ``BACKEND`` ~~~~~~~~~~~
+- [63e44ac5dc313684-3] ``BACKEND`` ~~~~~~~~~~~
+- [63e44ac5dc313684-4] ``BACKEND`` ~~~~~~~~~~~
+- [d93e0db2] ``CACHES`` ----------
+- [5ed9a520] ``CACHE_MIDDLEWARE_ALIAS`` --------------------------
+- [53f8c0d4] ``CACHE_MIDDLEWARE_KEY_PREFIX`` -------------------------------
+- [53ce7232] ``CACHE_MIDDLEWARE_SECONDS`` ----------------------------
+- [72d665e1] ``CHARSET`` ^^^^^^^^^^^
+- [db93e98b] ``COLLATION`` ^^^^^^^^^^^^^
+- [e418f2ee] ``CONN_HEALTH_CHECKS`` ~~~~~~~~~~~~~~~~~~~~~~
+- [fda07ec0] ``CONN_MAX_AGE`` ~~~~~~~~~~~~~~~~
+- [a2162228] ``CREATE_DB`` ^^^^^^^^^^^^^
+- [6355b62f] ``CREATE_USER`` ^^^^^^^^^^^^^^^
+- [cd55b831] ``CSRF_COOKIE_AGE`` -------------------
+- [37fc7ee0] ``CSRF_COOKIE_DOMAIN`` ----------------------
+- [6349efb6] ``CSRF_COOKIE_HTTPONLY`` ------------------------
+- [9419081f] ``CSRF_COOKIE_NAME`` --------------------
+- [690e1e69] ``CSRF_COOKIE_PATH`` --------------------
+- [3e213fc7] ``CSRF_COOKIE_SAMESITE`` ------------------------
+- [1b4c3c9d] ``CSRF_COOKIE_SECURE`` ----------------------
+- [289cc010] ``CSRF_FAILURE_VIEW`` ---------------------
+- [3416a964] ``CSRF_HEADER_NAME`` --------------------
+- [e8ebefd8] ``CSRF_TRUSTED_ORIGINS`` ------------------------
+- [ff53151a] ``CSRF_USE_SESSIONS`` ---------------------
+- [e75a5d3f] ``DATABASES`` -------------
+- [3fa176fa] ``DATABASE_ROUTERS`` --------------------
+- [e9209ecb] ``DATAFILE_EXTSIZE`` ^^^^^^^^^^^^^^^^^^^^
+- [c7d23149] ``DATAFILE_MAXSIZE`` ^^^^^^^^^^^^^^^^^^^^
+- [a856fef8] ``DATAFILE_SIZE`` ^^^^^^^^^^^^^^^^^
+- [64c00749] ``DATAFILE_TMP_EXTSIZE`` ^^^^^^^^^^^^^^^^^^^^^^^^
+- [825c24af] ``DATAFILE_TMP_MAXSIZE`` ^^^^^^^^^^^^^^^^^^^^^^^^
+- [9fb800f4] ``DATAFILE_TMP_SIZE`` ^^^^^^^^^^^^^^^^^^^^^
+- [132ccdbf] ``DATAFILE_TMP`` ^^^^^^^^^^^^^^^^
+- [069dc894] ``DATAFILE`` ^^^^^^^^^^^^
+- [710a7d9d] ``DATA_UPLOAD_MAX_MEMORY_SIZE`` -------------------------------
+- [abf0f8f5] ``DATA_UPLOAD_MAX_NUMBER_FIELDS`` ---------------------------------
+- [37ecb716] ``DATA_UPLOAD_MAX_NUMBER_FILES`` --------------------------------
+- [9a3786fc] ``DATETIME_FORMAT`` -------------------
+- [05dc2021] ``DATETIME_INPUT_FORMATS`` --------------------------
+- [7fce9b63] ``DATE_FORMAT`` ---------------
+- [9d9a31af] ``DATE_INPUT_FORMATS`` ----------------------
+- [d87bd32e] ``DEBUG_PROPAGATE_EXCEPTIONS`` ------------------------------
+- [67913a38] ``DEBUG`` ---------
+- [8ed63be4] ``DECIMAL_SEPARATOR`` ---------------------
+- [dd7cadf7] ``DEFAULT_AUTO_FIELD`` ----------------------
+- [ef65e5d1] ``DEFAULT_CHARSET`` -------------------
+- [8d0371b6] ``DEFAULT_EXCEPTION_REPORTER_FILTER`` -------------------------------------
+- [3ee4bf4c] ``DEFAULT_EXCEPTION_REPORTER`` ------------------------------
+- [89b157c2] ``DEFAULT_FROM_EMAIL`` ----------------------
+- [77f6cf28] ``DEFAULT_INDEX_TABLESPACE`` ----------------------------
+- [b3dedd52] ``DEFAULT_TABLESPACE`` ----------------------
+- [d00c9ba3] ``DEPENDENCIES`` ^^^^^^^^^^^^^^^^
+- [cb3b540c] ``DIRS`` ~~~~~~~~
+- [d1b7fbc0] ``DISABLE_SERVER_SIDE_CURSORS`` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [e4a591b1] ``DISALLOWED_USER_AGENTS`` --------------------------
+- [9670662c] ``EMAIL_BACKEND`` -----------------
+- [2ea0d2cb] ``EMAIL_FILE_PATH`` -------------------
+- [a77bbc33] ``EMAIL_HOST_PASSWORD`` -----------------------
+- [560681e7] ``EMAIL_HOST_USER`` -------------------
+- [d0bc50e9] ``EMAIL_HOST`` --------------
+- [87f5d1e2] ``EMAIL_PORT`` --------------
+- [5c2140ad] ``EMAIL_SSL_CERTFILE`` ----------------------
+- [25ef7b24] ``EMAIL_SSL_CERTFILE`` should not be used with a self-signed server certificate or a certificate from a private certificate authority (CA). In such cases, the server's certificate (or the root certificate of the private CA) should be installed into the system's CA bundle. This can be done by following platform-specific instructions for installing a root CA certificate, or by using OpenSSL's ``SSL_CERT_FILE`` or ``SSL_CERT_DIR`` environment variables to specify a custom certificate bundle (if modifying the system bundle is not possible or desired).
+- [237b4ded] ``EMAIL_SSL_KEYFILE`` ---------------------
+- [7d1f9aad] ``EMAIL_SUBJECT_PREFIX`` ------------------------
+- [e897a703] ``EMAIL_TIMEOUT`` -----------------
+- [29635775] ``EMAIL_USE_LOCALTIME`` -----------------------
+- [6fd79284] ``EMAIL_USE_SSL`` -----------------
+- [10544d6c] ``EMAIL_USE_TLS`` -----------------
+- [128f4a1b] ``ENGINE`` ~~~~~~~~~~
+- [279965cf] ``FILE_UPLOAD_DIRECTORY_PERMISSIONS`` -------------------------------------
+- [3d6410dc] ``FILE_UPLOAD_HANDLERS`` ------------------------
+- [a5341c1c] ``FILE_UPLOAD_MAX_MEMORY_SIZE`` -------------------------------
+- [4b966b98] ``FILE_UPLOAD_PERMISSIONS`` ---------------------------
+- [fd794604] ``FILE_UPLOAD_TEMP_DIR`` ------------------------
+- [a836c323] ``FIRST_DAY_OF_WEEK`` ---------------------
+- [84fae760] ``FIXTURE_DIRS`` ----------------
+- [b44f7006] ``FORCE_SCRIPT_NAME`` ---------------------
+- [942c8214] ``FORMAT_MODULE_PATH`` ----------------------
+- [b19330c9] ``FORM_RENDERER`` -----------------
+- [9aba2101] ``HOST`` ~~~~~~~~
+- [264dea49] ``IGNORABLE_404_URLS`` ----------------------
+- [81fa386c] ``INSTALLED_APPS`` ------------------
+- [cf9ede5a] ``INTERNAL_IPS`` ----------------
+- [b07e9949] ``KEY_FUNCTION`` ~~~~~~~~~~~~~~~~
+- [f2726486] ``KEY_PREFIX`` ~~~~~~~~~~~~~~
+- [72d5945f] ``LANGUAGES_BIDI`` ------------------
+- [f498baca] ``LANGUAGES`` -------------
+- [40ba055e] ``LANGUAGE_CODE`` -----------------
+- [b7d33b65] ``LANGUAGE_COOKIE_AGE`` -----------------------
+- [1f84dd29] ``LANGUAGE_COOKIE_DOMAIN`` --------------------------
+- [540367d4] ``LANGUAGE_COOKIE_HTTPONLY`` ----------------------------
+- [ec9a6541] ``LANGUAGE_COOKIE_NAME`` ------------------------
+- [12ccaac4] ``LANGUAGE_COOKIE_PATH`` ------------------------
+- [574e0205] ``LANGUAGE_COOKIE_SAMESITE`` ----------------------------
+- [9f7976c9] ``LANGUAGE_COOKIE_SECURE`` --------------------------
+- [579e2f8d] ``LOCALE_PATHS`` ----------------
+- [5f86b63b] ``LOCATION`` ~~~~~~~~~~~~
+- [20d1cfcf] ``LOGGING_CONFIG`` ------------------
+- [da01d864] ``LOGGING`` -----------
+- [ded87be8] ``LOGIN_REDIRECT_URL`` ----------------------
+- [62ee6daf] ``LOGIN_URL`` -------------
+- [8d5d6ea3] ``LOGOUT_REDIRECT_URL`` -----------------------
+- [8738df0d] ``MAILERS`` -----------
+- [54cafdee] ``MANAGERS`` ------------
+- [9aecea7a] ``MEDIA_ROOT`` --------------
+- [bfd15312] ``MEDIA_URL`` -------------
+- [69b42f81] ``MESSAGE_LEVEL`` -----------------
+- [5a9f39ae] ``MESSAGE_STORAGE`` -------------------
+- [8d585c6d] ``MESSAGE_TAGS`` ----------------
+- [8838b1e0] ``MIDDLEWARE`` --------------
+- [8f804e20] ``MIGRATE`` ^^^^^^^^^^^
+- [a9e560a8] ``MIGRATION_MODULES`` ---------------------
+- [0ba4619f] ``MIRROR`` ^^^^^^^^^^
+- [2ece2fda] ``MONTH_DAY_FORMAT`` --------------------
+- [191f0cad] ``NAME`` ^^^^^^^^
+- [96645a3bdcf2c3e9] ``NAME`` ~~~~~~~~
+- [96645a3bdcf2c3e9-2] ``NAME`` ~~~~~~~~
+- [eae8e74b] ``NUMBER_GROUPING`` -------------------
+- [2e89cc970947780b] ``OPTIONS`` ~~~~~~~~~~~
+- [2e89cc970947780b-2] ``OPTIONS`` ~~~~~~~~~~~
+- [2e89cc970947780b-3] ``OPTIONS`` ~~~~~~~~~~~
+- [2e89cc970947780b-4] ``OPTIONS`` ~~~~~~~~~~~
+- [2e89cc970947780b-5] ``OPTIONS`` ~~~~~~~~~~~
+- [4d8688c8] ``OPTIONS`` are passed to the ``BACKEND`` on initialization in ``**kwargs``.
+- [492e8270] ``ORACLE_MANAGED_FILES`` ^^^^^^^^^^^^^^^^^^^^^^^^
+- [da4acfd2] ``PASSWORD_HASHERS`` --------------------
+- [752f7866] ``PASSWORD_RESET_TIMEOUT`` --------------------------
+- [85f08ff3] ``PASSWORD`` ^^^^^^^^^^^^
+- [4b2dc899] ``PASSWORD`` ~~~~~~~~~~~~
+- [01f89183] ``PORT`` ~~~~~~~~
+- [f89df1ba] ``PREPEND_WWW`` ---------------
+- [b9da0e4e] ``QUEUES`` ~~~~~~~~~~
+- [614cec31] ``ROOT_URLCONF`` ----------------
+- [ff40e40b] ``SECRET_KEY_FALLBACKS`` ------------------------
+- [11acca82] ``SECRET_KEY`` --------------
+- [9ab74c00] ``SECURE_CONTENT_TYPE_NOSNIFF`` -------------------------------
+- [01d69cc4] ``SECURE_CROSS_ORIGIN_OPENER_POLICY`` -------------------------------------
+- [86f98ac6] ``SECURE_CSP_REPORT_ONLY`` --------------------------
+- [51e34ca2] ``SECURE_CSP`` --------------
+- [eeceeea9] ``SECURE_HSTS_INCLUDE_SUBDOMAINS`` ----------------------------------
+- [85685d50] ``SECURE_HSTS_PRELOAD`` -----------------------
+- [b5afa886] ``SECURE_HSTS_SECONDS`` -----------------------
+- [e3209105] ``SECURE_PROXY_SSL_HEADER`` ---------------------------
+- [73cb3b36] ``SECURE_REDIRECT_EXEMPT`` --------------------------
+- [11a6f527] ``SECURE_REFERRER_POLICY`` --------------------------
+- [51d10acb] ``SECURE_SSL_HOST`` -------------------
+- [4c81d698] ``SECURE_SSL_REDIRECT`` -----------------------
+- [bb614193] ``SERIALIZATION_MODULES`` -------------------------
+- [3cdd8de1] ``SERVER_EMAIL`` ----------------
+- [a6ccb80b] ``SESSION_CACHE_ALIAS`` -----------------------
+- [507c9a39] ``SESSION_COOKIE_AGE`` ----------------------
+- [7c84af21] ``SESSION_COOKIE_DOMAIN`` -------------------------
+- [307fb7fa] ``SESSION_COOKIE_HTTPONLY`` ---------------------------
+- [1a9f0810] ``SESSION_COOKIE_NAME`` -----------------------
+- [787e70d4] ``SESSION_COOKIE_PATH`` -----------------------
+- [85d0c998] ``SESSION_COOKIE_SAMESITE`` ---------------------------
+- [19facd57] ``SESSION_COOKIE_SECURE`` -------------------------
+- [d2c5190c] ``SESSION_ENGINE`` ------------------
+- [e83d63df] ``SESSION_EXPIRE_AT_BROWSER_CLOSE`` -----------------------------------
+- [3ce8c354] ``SESSION_FILE_PATH`` ---------------------
+- [d1b505f0] ``SESSION_SAVE_EVERY_REQUEST`` ------------------------------
+- [350f76b7] ``SESSION_SERIALIZER`` ----------------------
+- [6becb8b4] ``SHORT_DATETIME_FORMAT`` -------------------------
+- [8807e251] ``SHORT_DATE_FORMAT`` ---------------------
+- [4a49e411] ``SIGNED_COOKIE_LEGACY_SALT_FALLBACK`` ---------------------------------------
+- [3070b675] ``SIGNING_BACKEND`` -------------------
+- [f334b245] ``SILENCED_SYSTEM_CHECKS`` --------------------------
+- [90b6c215] ``SITE_ID`` -----------
+- [73f7d9ab] ``STATICFILES_DIRS`` --------------------
+- [0a0569c2] ``STATICFILES_FINDERS`` -----------------------
+- [758d43a4] ``STATIC_ROOT`` ---------------
+- [3cf44af1] ``STATIC_URL`` --------------
+- [c23af113] ``STORAGES`` ------------
+- [d89c9cb2] ``TASKS`` ---------
+- [3efc4b2b] ``TBLSPACE_TMP`` ^^^^^^^^^^^^^^^^
+- [d119f6b9] ``TBLSPACE`` ^^^^^^^^^^^^
+- [099dc028] ``TEMPLATES`` -------------
+- [fc543173] ``TEMPLATE`` ^^^^^^^^^^^^
+- [52859359] ``TEST_NON_SERIALIZED_APPS`` ----------------------------
+- [21eff7f7] ``TEST_RUNNER`` ---------------
+- [51e55385] ``TEST`` ~~~~~~~~
+- [679f1479] ``THOUSAND_SEPARATOR`` ----------------------
+- [615b93b0] ``TIMEOUT`` ~~~~~~~~~~~
+- [24b02fcc] ``TIME_FORMAT`` ---------------
+- [0ff6022f] ``TIME_INPUT_FORMATS`` ----------------------
+- [6fd3c3d5] ``TIME_ZONE`` -------------
+- [80bdb0e2] ``TIME_ZONE`` ~~~~~~~~~~~~~
+- [d3988496] ``URLIZE_ASSUME_HTTPS`` -----------------------
+- [562b005b] ``USER`` ^^^^^^^^
+- [800fe3cd] ``USER`` ~~~~~~~~
+- [2282d881] ``USE_BLANK_CHOICE_DASH`` ------------------------------------
+- [e348373a] ``USE_I18N`` ------------
+- [df53fe53] ``USE_THOUSAND_SEPARATOR`` --------------------------
+- [9aee47f6] ``USE_TZ`` ----------
+- [e511db5f] ``USE_X_FORWARDED_HOST`` ------------------------
+- [ca6d8670] ``USE_X_FORWARDED_PORT`` ------------------------
+- [25a216e4] ``VERSION`` ~~~~~~~~~~~
+- [b6b1a4ce] ``WSGI_APPLICATION`` --------------------
+- [9f56deb9] ``X_FRAME_OPTIONS`` -------------------
+- [67c28654] ``YEAR_MONTH_FORMAT`` ---------------------
+- [afb619b4] ``django.views.csrf.csrf_failure()`` accepts an additional ``template_name`` parameter that defaults to ``'403_csrf.html'``. If a template with that name exists, it will be used to render the page.
+- [3c8401c4] where ``reason`` is a short message (intended for developers or logging, not for end users) indicating the reason the request was rejected. It should return an :class:`~django.http.HttpResponseForbidden`.

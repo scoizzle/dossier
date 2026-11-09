@@ -1,6 +1,6 @@
 # Fact d7f17d34
 
-Store id: 4d597c51-e260-40cb-a04a-641f8450af22
+Store id: 42589f6f-7aaf-4658-bf40-476f178e48b3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __exit__(self, exc_type, exc_value, traceback)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2789880+00:00`
+- posted_at: `2026-11-09T23:32:04.2960650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 360,
     "symbol": "PreventQuerySetCloning.__exit__"
   },
-  "id": "4d597c51-e260-40cb-a04a-641f8450af22",
+  "id": "42589f6f-7aaf-4658-bf40-476f178e48b3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2789880+00:00"
+    "posted_at": "2026-11-09T23:32:04.2960650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8fe82764-95e9-42ae-a732-0a97d5b62d66",
+  "subject_id": "b4ae8160-d5fb-45d5-82fc-599c5bb21bb6",
   "subject_name": "django/db/models/query::PreventQuerySetCloning.__exit__",
   "tags": [
     "entity:method"

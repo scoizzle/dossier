@@ -1,14 +1,14 @@
 # docs/howto/deployment/wsgi/modwsgi
 
-- Subject: docs/howto/deployment/wsgi/modwsgi (id `2194fa7c-9b6c-412a-b0c9-38dcbdf5e659`)
+- Subject: docs/howto/deployment/wsgi/modwsgi (id `92208721-20de-47cc-ab68-cd7766df05a2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 24 of 71
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2765 tokens
+- Facts shown: 68 of 71
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - WSGIDaemonProcess example.com lang='en_US.UTF-8' locale='en_US.UTF-8' [d5c170e0]
 - export LANG='en_US.UTF-8' export LC_ALL='en_US.UTF-8' [6ac6d180]
@@ -35,6 +35,49 @@
 - * Nginx_ * A stripped-down version of Apache_ [ac3f6c4228e684da]
 - .. More details on configuring a mod_wsgi site to serve static files can be found .. in the mod_wsgi documentation on `hosting static files`_. [78cb1b3c]
 
-## Beyond the budget
+## All facts
 
-44 more facts did not fit in the budget: [3fb9ff93] [7334fd784939ff19] [54be1072bdafdbaa-2] [1f50f65c] [1399f262] [4051c526] [0d7c5567] [3bae6125] [4545541a] [103eec0e] [e8935729] [4f3c18d50a4df529] [1e18959e4cc41bff-4] [1e18959e4cc41bff-5] [1e18959e4cc41bff-6] [1e18959e4cc41bff-7] [c54b54cb0805732a-5] [7493f727] [26308161] [57198abc] [c31de609] [aed2091d] [8baab1d1] [94fe3268] [fc3d7116] [4dc57bdb] [891596de] [e158382f] [d06907da] [bca76ee6] [83e3aec8] [fde2c20c] [42fef4dc] [d8ed003f] [1b54b36a] [c4f2903f] [002dd209] [03982f10] [558da8bb] [3df37499] [690da821] [d976d27d] [5e237043] [7ec8f149]
+- [3fb9ff93] .. _Apache: https://httpd.apache.org/ .. _mod_wsgi: https://modwsgi.readthedocs.io/en/develop/
+- [7334fd784939ff19] .. _Nginx: https://nginx.org/en/ .. _Apache: https://httpd.apache.org/
+- [54be1072bdafdbaa-2] .. _WSGI: https://wsgi.readthedocs.io/en/latest/
+- [1f50f65c] .. _daemon-mode:
+- [1399f262] .. _details on setting up daemon mode: https://modwsgi.readthedocs.io/en/develop/user-guides/quick-configuration-guide.html#delegation-to-daemon-process
+- [4051c526] .. _hosting static files: https://modwsgi.readthedocs.io/en/develop/user-guides/configuration-guidelines.html#hosting-of-static-files
+- [0d7c5567] .. _httpd.conf: https://cwiki.apache.org/confluence/display/httpd/DistrosDefaultLayout
+- [3bae6125] .. _mod_wsgi virtual environment guide: https://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html
+- [4545541a] .. _official mod_wsgi documentation: https://modwsgi.readthedocs.io/ .. _installation and configuration documentation: https://modwsgi.readthedocs.io/en/develop/installation.html
+- [103eec0e] .. _serving-files:
+- [e8935729] .. _serving-the-admin-files:
+- [4f3c18d50a4df529] .. admonition:: Fixing ``UnicodeEncodeError`` for file uploads
+- [1e18959e4cc41bff-4] .. code-block:: apache
+- [1e18959e4cc41bff-5] .. code-block:: apache
+- [1e18959e4cc41bff-6] .. code-block:: apache
+- [1e18959e4cc41bff-7] .. code-block:: apache
+- [c54b54cb0805732a-5] .. warning::
+- [7493f727] 1. Create a symbolic link to the admin static files from within your document root (this may require ``+FollowSymLinks`` in your Apache configuration).
+- [26308161] 2. Use an ``Alias`` directive, as demonstrated above, to alias the appropriate URL (probably :setting:`STATIC_URL` + ``admin/``) to the actual location of the admin files.
+- [57198abc] 3. Copy the admin static files so that they live within your Apache document root.
+- [c31de609] ============================================== How to use Django with Apache and ``mod_wsgi`` ==============================================
+- [aed2091d] Authenticating against Django's user database from Apache =========================================================
+- [8baab1d1] Basic configuration ===================
+- [94fe3268] Deploying Django with Apache_ and `mod_wsgi`_ is a tried and tested way to get Django into production.
+- [fc3d7116] Django doesn't serve files itself; it leaves that job to whichever web server you choose.
+- [4dc57bdb] Django provides a handler to allow Apache to authenticate users directly against Django's authentication backends. See the :doc:`mod_wsgi authentication documentation </howto/deployment/wsgi/apache-auth>`.
+- [891596de] If you install your project's Python dependencies inside a :mod:`virtual environment <venv>`, add the path using ``WSGIPythonHome``. See the `mod_wsgi virtual environment guide`_ for more details.
+- [e158382f] If you want to serve your project in a subdirectory (``https://example.com/mysite`` in this example), you can add ``WSGIScriptAlias`` to the configuration above:
+- [d06907da] If, however, you have no option but to serve media files on the same Apache ``VirtualHost`` as Django, you can set up Apache to serve some URLs as static media, and others using the mod_wsgi interface to Django.
+- [bca76ee6] Next we'll need to ensure this :file:`wsgi.py` with a WSGI application object exists. As of Django version 1.4, :djadmin:`startproject` will have created one for you; otherwise, you'll need to create it. See the :doc:`WSGI overview documentation</howto/deployment/wsgi/index>` for the default contents you should put in this file, and what else you can add to it.
+- [83e3aec8] Once you've got mod_wsgi installed and activated, edit your Apache server's `httpd.conf`_ file and add the following.
+- [fde2c20c] See the official mod_wsgi documentation for `details on setting up daemon mode`_.
+- [42fef4dc] Serving files =============
+- [d8ed003f] The ``<Directory>`` piece ensures that Apache can access your :file:`wsgi.py` file.
+- [1b54b36a] The ``WSGIPythonPath`` line ensures that your project package is available for import on the Python path; in other words, that ``import mysite`` works.
+- [c4f2903f] The `official mod_wsgi documentation`_ is your source for all the details about how to use mod_wsgi. You'll probably want to start with the `installation and configuration documentation`_.
+- [002dd209] The admin files live in (:source:`django/contrib/admin/static/admin`) of the Django distribution.
+- [03982f10] The first bit in the ``WSGIScriptAlias`` line is the base URL path you want to serve your application at (``/`` indicates the root url), and the second is the location of a "WSGI file" -- see below -- on your system, usually inside of your project package (``mysite`` in this example). This tells Apache to serve any request below the given URL using the WSGI application defined in that file.
+- [558da8bb] This example sets up Django at the site root, but serves ``robots.txt``, ``favicon.ico``, and anything in the ``/static/`` and ``/media/`` URL space as a static file. All other URLs will be served using mod_wsgi:
+- [3df37499] Using ``mod_wsgi`` daemon mode ==============================
+- [690da821] We **strongly** recommend using :mod:`django.contrib.staticfiles` to handle the admin files (along with a web server as outlined in the previous section; this means using the :djadmin:`collectstatic` management command to collect the static files in :setting:`STATIC_ROOT`, and then configuring your web server to serve :setting:`STATIC_ROOT` at :setting:`STATIC_URL`), but here are three other approaches:
+- [d976d27d] We recommend using a separate web server -- i.e., one that's not also running Django -- for serving media. Here are some good choices:
+- [5e237043] When :mod:`django.contrib.staticfiles` is in :setting:`INSTALLED_APPS`, the Django development server automatically serves the static files of the admin app (and any other installed apps). This is however not the case when you use any other server arrangement. You're responsible for setting up Apache, or whichever web server you're using, to serve the admin files.
+- [7ec8f149] mod_wsgi is an Apache module which can host any Python WSGI_ application, including Django. Django will work with any version of Apache which supports mod_wsgi.

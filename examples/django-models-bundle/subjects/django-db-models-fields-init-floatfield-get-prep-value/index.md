@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::FloatField.get_prep_value
 
-- Subject: django/db/models/fields/__init__::FloatField.get_prep_value (id `8cd2079f-587d-49ee-b912-72988261d83b`)
+- Subject: django/db/models/fields/__init__::FloatField.get_prep_value (id `5507533a-f762-405a-8bc6-6831ebc15fda`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

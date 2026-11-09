@@ -1,14 +1,14 @@
 # docs/ref/files/storage
 
-- Subject: docs/ref/files/storage (id `be92177e-7063-4b5f-b108-17b1e0fd51aa`)
+- Subject: docs/ref/files/storage (id `70259aa8-25d8-4694-af8f-cbe27a1e52aa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 18 of 88
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2992 tokens
+- Facts shown: 79 of 88
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> from django.core.files.storage import storages >>> storages.backends {'default': {'BACKEND': 'django.core.files.storage.FileSystemStorage'}, 'staticfiles': {'BACKEND': 'django.contrib.staticfiles.storage.StaticFilesStorage'}, 'custom': {'BACKEND': 'package.storage.CustomStorage'}} >>> storage_instance = storages.create_storage({"BACKEND": "package.storage.CustomStorage"}) [4dcc073f]
 - Absolute path to the directory name assigned to files. Defaults to the value of your :setting:`MEDIA_ROOT` setting. [e5a1132a]
@@ -29,6 +29,66 @@
 - The ``FileSystemStorage.delete()`` method will not raise an exception if the given file name does not exist. [22a9dc4b]
 - .. note:: [942ae6c11625c81c-93]
 
-## Beyond the budget
+## All facts
 
-61 more facts did not fit in the budget: [1655a9a8] [965a7e34] [c65d6726] [01064c2f] [a6067ed4] [8fa6bb60] [e65799e7] [0707ad73] [89649391] [0def82e8] [9c0bf2ca] [4ad3eef3148e184b] [503b4e84] [80540a40] [6ea6ed78119e1f0b] [6ea6ed78119e1f0b-2] [7cc9f774c57cbf78] [58eb84c4517fcc57] [e7aefde6f7263b24] [e7aefde6f7263b24-2] [eaf050be34acb41d-271] [e07f8f14] [a5105793] [03e4a52f] [afcb9b1e] [bd797ff1393b1f3b-2] [11fedd4125163ab9-2] [5d770e3b662b3467] [b3818c5f] [cd2ce08a59414809-2] [908d2944] [f994c1b5] [6376882f] [2a8936ed] [548cc3ea] [14e20c01] [a22ed217] [76abb848] [bc647458] [d600b035] [b540b1c2] [c32843ea] [2e488acc] [3949e7be] [0627d663] [3d6e6899] [b19aa22a] [8736580b] [bbcccc1b] [d52953a6] [c0b7fcb2] [491fc94d] [63d99489] [6b8dfbe3] [3f69bc34] [25ea4f6c] [72596f2b] [d602aa0a] [03dac9cc] [8fa07e5b] [7959433b]
+- [1655a9a8] Returns the total size, in bytes, of the file referenced by ``name``. For storage systems that aren't able to return the file size this will raise ``NotImplementedError`` instead.
+- [965a7e34] Saves a new file using the storage system, preferably with the name specified. If there already exists a file with this name ``name``, the storage system may modify the filename as necessary to get a unique name. The actual name of the stored file will be returned.
+- [c65d6726] The ``content`` argument must be an instance of :class:`django.core.files.File` or a file-like object that can be wrapped in ``File``.
+- [01064c2f] The ``filename`` argument may include a path as returned by :attr:`FileField.upload_to <django.db.models.FileField.upload_to>`. In that case, the path won't be passed to :attr:`get_valid_name` but will be prepended back to the resulting name.
+- [a6067ed4] The ``max_length`` argument is passed along to :meth:`get_available_name`.
+- [8fa6bb60] The default implementation uses :mod:`os.path` operations. Override this method if that's not appropriate for your storage.
+- [e65799e7] The file system permissions assigned to directories, provided for compatibility with ``FileSystemStorage``. Defaults to :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS`.
+- [0707ad73] The file system permissions assigned to files, provided for compatibility with ``FileSystemStorage``. Defaults to :setting:`FILE_UPLOAD_PERMISSIONS`.
+- [89649391] The file system permissions that the directory will receive when it is saved. Defaults to :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS`.
+- [0def82e8] The length of the filename will not exceed ``max_length``, if provided. If a free unique filename cannot be found, a :exc:`SuspiciousFileOperation <django.core.exceptions.SuspiciousOperation>` exception will be raised.
+- [9c0bf2ca] The local filesystem path where the file can be opened using Python's standard ``open()``. For storage systems that aren't accessible from the local filesystem, this will raise ``NotImplementedError`` instead.
+- [4ad3eef3148e184b] URL that serves the files stored at this location. Defaults to the value of your :setting:`MEDIA_URL` setting.
+- [503b4e84] Validates the ``filename`` by calling :attr:`get_valid_name` and returns a filename to be passed to the :meth:`save` method.
+- [80540a40] .. attribute:: allow_overwrite
+- [6ea6ed78119e1f0b] .. attribute:: base_url
+- [6ea6ed78119e1f0b-2] .. attribute:: base_url
+- [7cc9f774c57cbf78] .. attribute:: directory_permissions_mode
+- [58eb84c4517fcc57] .. attribute:: file_permissions_mode
+- [e7aefde6f7263b24] .. attribute:: location
+- [e7aefde6f7263b24-2] .. attribute:: location
+- [eaf050be34acb41d-271] .. code-block:: pycon
+- [e07f8f14] .. method:: delete(name)
+- [a5105793] .. method:: exists(name)
+- [03e4a52f] .. method:: generate_filename(filename)
+- [afcb9b1e] .. method:: get_accessed_time(name)
+- [bd797ff1393b1f3b-2] .. method:: get_alternative_name(file_root, file_ext)
+- [11fedd4125163ab9-2] .. method:: get_available_name(name, max_length=None)
+- [5d770e3b662b3467] .. method:: get_created_time(name)
+- [b3818c5f] .. method:: get_modified_time(name)
+- [cd2ce08a59414809-2] .. method:: get_valid_name(name)
+- [908d2944] .. method:: listdir(path)
+- [f994c1b5] .. method:: open(name, mode='rb')
+- [6376882f] .. method:: path(name)
+- [2a8936ed] .. method:: save(name, content, max_length=None)
+- [548cc3ea] .. method:: size(name)
+- [14e20c01] .. method:: url(name)
+- [a22ed217] .. note:: When methods return naive ``datetime`` objects, the effective timezone used will be the current value of ``os.environ['TZ']``; note that this is usually set from Django's :setting:`TIME_ZONE`.
+- [76abb848] :class:`~django.core.files.storage.DefaultStorage` provides lazy access to the default storage system as defined by ``default`` key in :setting:`STORAGES`. :class:`DefaultStorage` uses :data:`~django.core.files.storage.storages` internally.
+- [bc647458] :data:`~django.core.files.storage.default_storage` is an instance of the :class:`~django.core.files.storage.DefaultStorage`.
+- [d600b035] A dictionary-like object that allows retrieving a storage instance using its alias as defined by :setting:`STORAGES`.
+- [b540b1c2] Additionally, ``storages`` provides a ``create_storage()`` method that accepts the dictionary used in :setting:`STORAGES` for a backend, and returns a storage instance based on that backend definition. This may be useful for third-party packages needing to instantiate storages in tests:
+- [c32843ea] Django has a vibrant ecosystem. There are storage backends highlighted on the `Community Ecosystem`_ page. The Django Packages `Storage Backends grid`_ has even more options for you!
+- [2e488acc] The :class:`~django.core.files.storage.FileSystemStorage` class implements basic file storage on a local filesystem. It inherits from :class:`~django.core.files.storage.Storage` and provides implementations for all the public methods thereof.
+- [3949e7be] The :class:`~django.core.files.storage.InMemoryStorage` class implements a memory-based file storage. It has no persistence, but can be useful for speeding up tests by avoiding disk access.
+- [0627d663] The :class:`~django.core.files.storage.Storage` class provides a standardized API for storing files, along with a set of default behaviors that all other storage systems can inherit or override as necessary.
+- [3d6e6899] ``storages`` has an attribute ``backends``, which defaults to the raw value provided in :setting:`STORAGES`.
+- [b19aa22a] .. _Community Ecosystem: https://www.djangoproject.com/community/ecosystem/#storage-and-static-files .. _Storage Backends grid: https://djangopackages.org/grids/g/storage-backends/
+- [8736580b] .. admonition:: There are community-maintained solutions too!
+- [bbcccc1b] .. class:: DefaultStorage
+- [d52953a6] .. class:: FileSystemStorage(location=None, base_url=None, file_permissions_mode=None, directory_permissions_mode=None, allow_overwrite=False)
+- [c0b7fcb2] .. class:: InMemoryStorage(location=None, base_url=None, file_permissions_mode=None, directory_permissions_mode=None)
+- [491fc94d] .. class:: Storage
+- [63d99489] .. data:: default_storage
+- [6b8dfbe3] .. data:: storages
+- [3f69bc34] .. module:: django.core.files.storage
+- [25ea4f6c] ================ File storage API ================
+- [72596f2b] Django provides convenient ways to access the default storage class:
+- [d602aa0a] Getting the default storage class =================================
+- [03dac9cc] The ``FileSystemStorage`` class ===============================
+- [8fa07e5b] The ``InMemoryStorage`` class =============================
+- [7959433b] The ``Storage`` class =====================

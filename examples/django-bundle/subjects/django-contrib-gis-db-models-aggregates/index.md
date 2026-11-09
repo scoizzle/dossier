@@ -1,8 +1,8 @@
 # django/contrib/gis/db/models/aggregates
 
-- Subject: django/contrib/gis/db/models/aggregates (id `d27e907e-4ae5-4cf5-a011-710bd2fea557`)
+- Subject: django/contrib/gis/db/models/aggregates (id `9ad962ee-273e-4fa2-a891-5a410e5c8f7c`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 777 tokens
 - Facts shown: 15 of 16
 - Conflicts: 0

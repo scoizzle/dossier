@@ -1,6 +1,6 @@
 # Fact d5b763b6
 
-Store id: 6d4811df-02c0-4a1f-a23d-db24c6df112c
+Store id: 2ee1f853-f0c9-4a47-8b7c-335d160c87c3
 
 ## Text
 
@@ -20,7 +20,7 @@ class Max(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0445740+00:00`
+- posted_at: `2026-11-09T23:31:53.5403220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 328,
     "symbol": "Max"
   },
-  "id": "6d4811df-02c0-4a1f-a23d-db24c6df112c",
+  "id": "2ee1f853-f0c9-4a47-8b7c-335d160c87c3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0445740+00:00"
+    "posted_at": "2026-11-09T23:31:53.5403220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "104e390d-2d88-480c-b66f-fe42134704fe",
+  "subject_id": "b53a19bd-8a66-4a2c-8402-92bb3749ef9b",
   "subject_name": "django/db/models/aggregates::Max",
   "tags": [
     "entity:class"

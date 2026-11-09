@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field._description
 
-- Subject: django/db/models/fields/__init__::Field._description (id `424950f7-f906-4b75-8512-5cfe85849ff5`)
+- Subject: django/db/models/fields/__init__::Field._description (id `087d8935-8232-484d-bc5b-6bd82600bd34`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

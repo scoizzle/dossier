@@ -1,6 +1,6 @@
 # Fact e2e95a61
 
-Store id: 6f35d0fe-6797-4b5b-83c7-1a3442662a42
+Store id: 0dc5feeb-cb97-48d4-ba95-ef9d6f88d148
 
 ## Text
 
@@ -20,7 +20,7 @@ def conditional(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5137600+00:00`
+- posted_at: `2026-11-09T23:31:55.7742580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 317,
     "symbol": "BaseExpression.conditional"
   },
-  "id": "6f35d0fe-6797-4b5b-83c7-1a3442662a42",
+  "id": "0dc5feeb-cb97-48d4-ba95-ef9d6f88d148",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5137600+00:00"
+    "posted_at": "2026-11-09T23:31:55.7742580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ac2d60c5-250a-4df2-af12-e90bdcd312ce",
+  "subject_id": "d74f61dc-fa60-4405-92f3-0c346212bc74",
   "subject_name": "django/db/models/expressions::BaseExpression.conditional",
   "tags": [
     "entity:method",

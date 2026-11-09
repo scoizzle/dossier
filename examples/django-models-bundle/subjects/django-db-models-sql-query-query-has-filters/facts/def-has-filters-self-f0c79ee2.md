@@ -1,6 +1,6 @@
 # Fact f0c79ee2
 
-Store id: b8f6d1d2-758a-48d5-8c75-047b5e90d768
+Store id: 65550bf5-59fe-4489-a48e-2af65162003e
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_filters(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2622510+00:00`
+- posted_at: `2026-11-09T23:32:06.8004200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 658,
     "symbol": "Query.has_filters"
   },
-  "id": "b8f6d1d2-758a-48d5-8c75-047b5e90d768",
+  "id": "65550bf5-59fe-4489-a48e-2af65162003e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2622510+00:00"
+    "posted_at": "2026-11-09T23:32:06.8004200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fc9982b2-fc6c-4268-8dbb-3455d895bf90",
+  "subject_id": "090e423e-552d-480f-81e2-ee5e13d67b89",
   "subject_name": "django/db/models/sql/query::Query.has_filters",
   "tags": [
     "entity:method"

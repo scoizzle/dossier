@@ -1,6 +1,6 @@
 # Fact 7799b99d
 
-Store id: 70b5bd4e-28e8-4bbf-a6f3-6485b72c136e
+Store id: 61ac87b6-fe62-4291-b23f-3425d4c6af14
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0948630+00:00`
+- posted_at: `2026-11-09T23:32:05.0871870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 203,
     "symbol": "Q.deconstruct"
   },
-  "id": "70b5bd4e-28e8-4bbf-a6f3-6485b72c136e",
+  "id": "61ac87b6-fe62-4291-b23f-3425d4c6af14",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0948630+00:00"
+    "posted_at": "2026-11-09T23:32:05.0871870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ec41b1f9-a7bd-4e29-a00c-55c0ac732b1d",
+  "subject_id": "7f5e6bb4-7584-4948-b958-df68e0466c28",
   "subject_name": "django/db/models/query_utils::Q.deconstruct",
   "tags": [
     "entity:method"

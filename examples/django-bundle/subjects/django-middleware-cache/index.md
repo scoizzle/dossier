@@ -1,14 +1,14 @@
 # django/middleware/cache
 
-- Subject: django/middleware/cache (id `8bb5f93d-4482-4ecc-b4ce-f4ba5a96f70f`)
+- Subject: django/middleware/cache (id `4f0c5616-0dc9-49dc-b0fa-918c2814f9b0`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 10 of 39
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2396 tokens
+- Facts shown: 38 of 39
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Derive the age estimation of the cached response. if (max_age_seconds := get_max_age(response)) is not None and ( expires_timestamp := parse_http_date_safe(response["Expires"]) ) is not None: now_timestamp = int(time.time()) remaining_seconds = expires_timestamp - now_timestamp # Use Age: 0 if local clock got turned back. response["Age"] = max(0, max_age_seconds - remaining_seconds) [d1e4df3e]
 - # Don't cache responses that set a user-specific (and maybe security # sensitive) cookie while varying on Cookie. if response.cookies and has_vary_header(response, "Cookie"): return response [c4c415a4]
@@ -21,6 +21,33 @@
 - if response is None: request._cache_update_cache = True return None # No cache information available, need to rebuild. [7248c55a]
 - if response.streaming or response.status_code not in (200, 304): return response [38de4b9b]
 
-## Beyond the budget
+## All facts
 
-28 more facts did not fit in the budget: [75d4a9bb] [0b2463de0782a8a0] [33fbc2bb] [bbe3b265] [4e91819d] [761a6eac] [da1f6267] [982e6b6a] [796d6a26] [119486fc] [d87313b5] [e4ca573f] [92964e45] [b7770531] [b73e0e01] [daecc6da] [d84dc992] [b60d598b] [47a9ed19] [a27d651b] [1d0145cf] [b7781190] [576b175c] [34db66b5] [efe39b8a] [11282d3f] [6c0f9ada] [4e1c949b]
+- [75d4a9bb] try: key_prefix = kwargs["key_prefix"] if key_prefix is None: key_prefix = "" self.key_prefix = key_prefix except KeyError: pass try: cache_alias = kwargs["cache_alias"] if cache_alias is None: cache_alias = DEFAULT_CACHE_ALIAS self.cache_alias = cache_alias except KeyError: pass
+- [0b2463de0782a8a0] @property def cache(self): return caches[self.cache_alias]
+- [33fbc2bb] Also used as the hook point for the cache decorator, which is generated using the decorator-from-middleware utility. """
+- [bbe3b265] MIDDLEWARE = [ 'django.middleware.cache.UpdateCacheMiddleware', ... 'django.middleware.cache.FetchFromCacheMiddleware' ]
+- [4e91819d] Must be used as part of the two-part update/fetch cache middleware. FetchFromCacheMiddleware must be the last piece of middleware in MIDDLEWARE so that it'll get called last during the request phase. """
+- [761a6eac] Must be used as part of the two-part update/fetch cache middleware. UpdateCacheMiddleware must be the first piece of middleware in MIDDLEWARE so that it'll get called last during the response phase. """
+- [da1f6267] def __init__(self, get_response): super().__init__(get_response) self.cache_timeout = settings.CACHE_MIDDLEWARE_SECONDS self.page_timeout = None self.key_prefix = settings.CACHE_MIDDLEWARE_KEY_PREFIX self.cache_alias = settings.CACHE_MIDDLEWARE_ALIAS
+- [982e6b6a] def __init__(self, get_response): super().__init__(get_response) self.key_prefix = settings.CACHE_MIDDLEWARE_KEY_PREFIX self.cache_alias = settings.CACHE_MIDDLEWARE_ALIAS
+- [796d6a26] def __init__(self, get_response, cache_timeout=None, page_timeout=None, **kwargs): super().__init__(get_response) # We need to differentiate between "provided, but using default value", # and "not provided". If the value is provided using a default, then # we fall back to system defaults. If it is not provided at all, # we need to use middleware defaults.
+- [119486fc] def _should_update_cache(self, request, response): return hasattr(request, "_cache_update_cache") and request._cache_update_cache
+- [d87313b5] def process_request(self, request): """ Check whether the page is already cached and return the cached version if available. """ if request.method not in ("GET", "HEAD"): request._cache_update_cache = False return None # Don't bother checking the cache.
+- [e4ca573f] def process_response(self, request, response): """Set the cache, if needed.""" if not self._should_update_cache(request, response): # We don't need to update the cache, just return. return response
+- [92964e45] """ Cache middleware. If enabled, each Django-powered page will be cached based on URL. The canonical way to enable cache middleware is to set ``UpdateCacheMiddleware`` as your first piece of middleware, and ``FetchFromCacheMiddleware`` as the last::
+- [b7770531] * If the request had an Authorization header and the response was not marked "Cache-Control: public", the response will vary on Authorization. """
+- [b73e0e01] * Only GET or HEAD-requests with status code 200 are cached.
+- [daecc6da] * Pages will be cached based on the contents of the request headers listed in the response's "Vary" header.
+- [d84dc992] * The number of seconds each page is stored for is set by the "max-age" section of the response's "Cache-Control" header, falling back to the CACHE_MIDDLEWARE_SECONDS setting if the section was not found.
+- [b60d598b] * This middleware also sets ETag, Last-Modified, Expires and Cache-Control headers on the response object.
+- [47a9ed19] * This middleware expects that a HEAD request is answered with the same response headers exactly like the corresponding GET request.
+- [a27d651b] * When a hit occurs, a shallow copy of the original response object is returned from process_request.
+- [1d0145cf] More details about how the caching works:
+- [b7781190] The single-class ``CacheMiddleware`` can be used for some simple sites. However, if any other piece of middleware needs to affect the cache key, you'll need to use the two-part ``UpdateCacheMiddleware`` and ``FetchFromCacheMiddleware``. This'll most often happen when you're using Django's ``LocaleMiddleware``.
+- [576b175c] This is counterintuitive, but correct: ``UpdateCacheMiddleware`` needs to run last during the response phase, which processes middleware bottom-up; ``FetchFromCacheMiddleware`` needs to run last during the request phase, which processes middleware top-down.
+- [34db66b5] class CacheMiddleware(UpdateCacheMiddleware, FetchFromCacheMiddleware): """ Cache middleware that provides basic behavior for many simple sites.
+- [efe39b8a] class FetchFromCacheMiddleware(MiddlewareMixin): """ Request-phase cache middleware that fetches a page from the cache.
+- [11282d3f] class UpdateCacheMiddleware(MiddlewareMixin): """ Response-phase cache middleware that updates the cache if the response is cacheable.
+- [6c0f9ada] from django.conf import settings from django.core.cache import DEFAULT_CACHE_ALIAS, caches from django.utils.cache import ( get_cache_key, get_max_age, has_vary_header, learn_cache_key, patch_response_headers, patch_vary_headers, ) from django.utils.deprecation import MiddlewareMixin from django.utils.http import parse_http_date_safe, split_directive_names
+- [4e1c949b] import time

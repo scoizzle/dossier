@@ -1,14 +1,14 @@
 # docs/ref/models/lookups
 
-- Subject: docs/ref/models/lookups (id `6e3bc690-d40d-4169-99a6-f20ecd29935e`)
+- Subject: docs/ref/models/lookups (id `83163891-aad6-4816-a220-7ff9df1150dd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 20 of 73
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2934 tokens
+- Facts shown: 70 of 73
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - DateField.register_lookup(YearExact) User._meta.get_field("date_joined").register_lookup(MonthExact) [ec0eac15]
 - Book.objects.annotate(is_short_story=LessThan(F("word_count"), 7500)) [fb599212]
@@ -31,6 +31,55 @@
 - .. attribute:: lhs [b0dbed4dff4b1a81]
 - .. attribute:: lhs [b0dbed4dff4b1a81-2]
 
-## Beyond the budget
+## All facts
 
-50 more facts did not fit in the budget: [4d249a15] [3c0bd6df] [b6b4932b390b03d7] [b6b4932b390b03d7-2] [170db39ad8c0049c] [45aed56b] [376be338] [50583464] [f72035e4291ffb79] [1662497f] [82933397ffb0dabb] [3815ced2] [e4bd0c88] [36123c10] [a5c37dcb] [2c9d7f65] [efa06f92] [70d4ef35] [f57e1331] [0ebd1f9d] [c37dbc3c] [7c104639] [5298b900] [68a70f84] [7471d23a] [657d6366] [8a05e3c1] [519f3dcf] [6adb5443] [f3aad5f7] [170db39ad8c0049c-2] [26bff5b7] [ccb6bd44] [2e16d855] [3a368b18514a814b-13] [9f5adfe6] [2b68146c] [a7f0b73e] [89c74e3e] [a844ce35] [43cd2805] [8f88eca5] [94cca115] [f43e6b6d] [a253579e] [79b24ae5] [3f574045] [17a30752] [33a5cf70] [b1a68e86]
+- [4d249a15] ``compiler`` is an ``SQLCompiler`` object, to be used like ``compiler.compile(lhs)`` for compiling ``lhs``. The ``connection`` can be used for compiling vendor specific SQL. If ``lhs`` is not ``None``, use it as the processed ``lhs`` instead of ``self.lhs``.
+- [3c0bd6df] will register ``YearExact`` lookup on ``DateField`` and ``MonthExact`` lookup on the ``User.date_joined`` (you can use :ref:`Field Access API <model-meta-field-api>` to retrieve a single field instance). It overrides a lookup that already exists with the same name. Lookups registered on field instances take precedence over the lookups registered on classes. ``lookup_name`` will be used for this lookup if provided, otherwise ``lookup.lookup_name`` will be used.
+- [b6b4932b390b03d7] .. attribute:: lookup_name
+- [b6b4932b390b03d7-2] .. attribute:: lookup_name
+- [170db39ad8c0049c] .. attribute:: output_field
+- [45aed56b] .. attribute:: prepare_rhs
+- [376be338] .. attribute:: rhs
+- [50583464] .. classmethod:: register_lookup(lookup, lookup_name=None)
+- [f72035e4291ffb79] .. method:: get_lookup(lookup_name)
+- [1662497f] .. method:: get_lookups()
+- [82933397ffb0dabb] .. method:: get_transform(transform_name)
+- [3815ced2] .. method:: process_lhs(compiler, connection, lhs=None)
+- [e4bd0c88] .. method:: process_rhs(compiler, connection)
+- [36123c10] A ``Lookup`` is a generic class to implement lookups. A lookup is a query expression with a left-hand side, :attr:`lhs`; a right-hand side, :attr:`rhs`; and a ``lookup_name`` that is used to produce a boolean comparison between ``lhs`` and ``rhs`` such as ``lhs in rhs`` or ``lhs > rhs``.
+- [a5c37dcb] A ``Transform`` is a generic class to implement field transformations. A prominent example is ``__year`` that transforms a ``DateField`` into a ``IntegerField``.
+- [2c9d7f65] A mixin that implements the lookup API on a class.
+- [efa06f92] Calling ``expression.as_sql()`` is usually incorrect - instead ``compiler.compile(expression)`` should be used. The ``compiler.compile()`` method will take care of calling vendor-specific methods of the expression.
+- [70d4ef35] Custom keyword arguments may be defined on this method if it's likely that ``as_vendorname()`` methods or subclasses will need to supply data to override the generation of the SQL string. See :meth:`Func.as_sql` for example usage.
+- [f57e1331] Defines the type of class returned by the ``get_lookup()`` method. It must be a :class:`~django.db.models.Field` instance.
+- [0ebd1f9d] Generates the SQL fragment for the expression. Returns a tuple ``(sql, params)``, where ``sql`` is the SQL string, and ``params`` is the list or tuple of query parameters. The ``compiler`` is an ``SQLCompiler`` object, which has a ``compile()`` method that can be used to compile other expressions. The ``connection`` is the connection used to execute the query.
+- [c37dbc3c] Must return the lookup named ``lookup_name``. For instance, by returning ``self.output_field.get_lookup(lookup_name)``.
+- [7c104639] The notation to use a ``Transform`` in a lookup expression is ``<expression>__<transformation>`` (e.g. ``date__year``).
+- [5298b900] The primary notation to use a lookup in an expression is ``<lhs>__<lookup_name>=<rhs>``. Lookups can also be used directly in ``QuerySet`` filters::
+- [68a70f84] This class follows the :ref:`Query Expression API <query-expression>`, which implies that you can use ``<expression>__<transform1>__<transform2>``. It's a specialized :ref:`Func() expression <func-expressions>` that only accepts one argument. It can also be used on the right hand side of a filter or directly as an annotation.
+- [7471d23a] Works like ``as_sql()`` method. When an expression is compiled by ``compiler.compile()``, Django will first try to call ``as_vendorname()``, where ``vendorname`` is the vendor name of the backend used for executing the query. The ``vendorname`` is one of ``postgresql``, ``oracle``, ``sqlite``, or ``mysql`` for Django's built-in backends.
+- [657d6366] …or annotations::
+- [8a05e3c1] * :class:`Lookup`: to lookup a field (e.g. the ``exact`` of ``field_name__exact``) * :class:`Transform`: to transform a field
+- [519f3dcf] * Fields part, e.g. ``Book.objects.filter(author__best_friends__first_name...``); * Transforms part (may be omitted) (e.g. ``__lower__first3chars__reversed``); * A lookup (e.g. ``__icontains``) that, if omitted, defaults to ``__exact``.
+- [6adb5443] .. _lookup-registration-api:
+- [f3aad5f7] .. _query-expression:
+- [170db39ad8c0049c-2] .. attribute:: output_field
+- [26bff5b7] .. class:: Lookup
+- [ccb6bd44] .. class:: Transform
+- [2e16d855] .. class:: lookups.RegisterLookupMixin
+- [3a368b18514a814b-13] .. currentmodule:: django.db.models
+- [9f5adfe6] .. method:: as_sql(compiler, connection)
+- [2b68146c] .. method:: as_vendorname(compiler, connection)
+- [a7f0b73e] .. module:: django.db.models.lookups :synopsis: Lookups API
+- [89c74e3e] ==================== Lookup API reference ====================
+- [a844ce35] A lookup expression consists of three parts:
+- [43cd2805] Django has two base classes that follow the query expression API and from where all Django builtin lookups are derived:
+- [8f88eca5] Django uses :class:`~lookups.RegisterLookupMixin` to give a class the interface to register lookups on itself or its instances. The two prominent examples are :class:`~django.db.models.Field`, the base class of all model fields, and :class:`Transform`, the base class of all Django transforms.
+- [94cca115] For a class to be a lookup, it must follow the :ref:`Query Expression API <query-expression>`. :class:`~Lookup` and :class:`~Transform` naturally follow this API.
+- [f43e6b6d] Registration API ================
+- [a253579e] The Query Expression API ========================
+- [79b24ae5] The lookup API has two components: a :class:`~lookups.RegisterLookupMixin` class that registers lookups, and the :ref:`Query Expression API <query-expression>`, a set of methods that a class has to implement to be registrable as a lookup.
+- [3f574045] The query expression API is a common set of methods that classes define to be usable in query expressions to translate themselves into SQL expressions. Direct field references, aggregates, and ``Transform`` are examples that follow this API. A class is said to follow the query expression API when it implements the following methods:
+- [17a30752] This document has the API references of lookups, the Django API for building the ``WHERE`` clause of a database query. To learn how to *use* lookups, see :doc:`/topics/db/queries`; to learn how to *create* new lookups, see :doc:`/howto/custom-lookups`.
+- [33a5cf70] ``Lookup`` reference ====================
+- [b1a68e86] ``Transform`` reference =======================

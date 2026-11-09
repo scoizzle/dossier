@@ -1,6 +1,6 @@
 # Fact ae5c071c
 
-Store id: a3475855-eb11-4393-bf7b-041e16096d61
+Store id: b0e23008-a42e-4da6-82a6-3ca04125aa44
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RelatedGreaterThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1401250+00:00`
+- posted_at: `2026-11-09T23:32:00.0364670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a3475855-eb11-4393-bf7b-041e16096d61",
+  "id": "b0e23008-a42e-4da6-82a6-3ca04125aa44",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1401250+00:00"
+    "posted_at": "2026-11-09T23:32:00.0364670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RelatedGreaterThanOrEqual"
       },
       "rel": "contains",
-      "target": "7f618e17-abf7-4568-b4d6-73202963dc7b"
+      "target": "8894b4be-d14d-41d5-a2a0-ee383aeaaa4c"
     }
   ],
   "status": "live",
-  "subject_id": "70a7dfd2-e82a-4d95-871a-306ceb34fbd0",
+  "subject_id": "d5f2171b-837e-44b2-b714-ab9ab8435437",
   "subject_name": "django/db/models/fields/related_lookups",
   "tags": [
     "entity:class"

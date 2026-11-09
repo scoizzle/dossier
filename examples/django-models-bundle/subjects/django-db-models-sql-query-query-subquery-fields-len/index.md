@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query._subquery_fields_len
 
-- Subject: django/db/models/sql/query::Query._subquery_fields_len (id `c6a348eb-5828-47aa-bf60-eee656ac41b3`)
+- Subject: django/db/models/sql/query::Query._subquery_fields_len (id `b6b8ed53-b377-4c36-922e-d1a2a3a1d782`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

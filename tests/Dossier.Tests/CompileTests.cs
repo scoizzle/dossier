@@ -29,7 +29,7 @@ public sealed class CompileTests
         Exec(db, "UPDATE facts SET created_at = $c WHERE id = $id", ("$c", At(minutes)), ("$id", id));
 
     private static CompileRequest Full(string subject = "Widget", int? budget = null) =>
-        new() { Subject = subject, Depth = "full", Budget = budget };
+        new() { Subject = subject, Depth = "full", Budget = budget, BudgetMode = "strict" };
 
     private static List<string> Post(TempDb db, string subject, params FactInput[] facts) =>
         db.Store.PostFacts(Fixtures.Post(subject, facts)).Response.Facts.Select(f => f.Id).ToList();
@@ -400,7 +400,7 @@ public sealed class CompileTests
             .ToArray();
         Post(db, "Widget", facts);
 
-        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget" });
+        var dossier = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget" });
         // The index cap bounds the fact content, not the serialized envelope.
         var factTokens = dossier.Facts.Sum(f => DossierStore.EstimateIndexFactTokens(f, "json"));
 
@@ -480,7 +480,7 @@ public sealed class CompileTests
             .ToArray();
         Post(db, "Widget", facts);
 
-        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Format = "markdown" });
+        var dossier = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Format = "markdown" });
         var rendered = DossierStore.RenderMarkdown(dossier);
 
         await Assert.That(dossier.Depth).IsEqualTo("index");
@@ -505,7 +505,7 @@ public sealed class CompileTests
             Fixtures.Fact("ordinary delta fact"),
             Fixtures.Fact("ordinary echo fact"));
 
-        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
+        var dossier = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Depth = "index", Format = "json" });
 
         await Assert.That(dossier.Conflicts.Count).IsEqualTo(3);
         await Assert.That(dossier.Facts.Count).IsGreaterThanOrEqualTo(3);
@@ -528,8 +528,8 @@ public sealed class CompileTests
             Fixtures.Fact("ordinary delta fact"),
             Fixtures.Fact("ordinary echo fact"));
 
-        var json = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
-        var markdown = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "markdown" });
+        var json = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Depth = "index", Format = "json" });
+        var markdown = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Depth = "index", Format = "markdown" });
 
         await Assert.That(json.Facts.Count).IsGreaterThan(0);
         await Assert.That(markdown.Facts.Count).IsGreaterThan(0);
@@ -545,8 +545,8 @@ public sealed class CompileTests
             .ToArray();
         Post(db, "Widget", facts);
 
-        var json = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "json" });
-        var markdown = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "index", Format = "markdown" });
+        var json = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Depth = "index", Format = "json" });
+        var markdown = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Widget", Depth = "index", Format = "markdown" });
 
         await Assert.That(json.Facts.Count).IsEqualTo(8);
         await Assert.That(markdown.Facts.Count).IsEqualTo(8);
@@ -765,6 +765,7 @@ public sealed class CompileTests
     private static CompileRequest ReproRequest() => new()
     {
         Subject = "Widget",
+        BudgetMode = "strict",
         Depth = "full",
         Format = "json",
         Needs = new List<string> { "aspect7", "detail12" },
@@ -868,7 +869,7 @@ public sealed class CompileTests
                 .ToArray();
             db.Store.PostFacts(Fixtures.Post("Corpus", facts));
 
-            var dossier = db.Store.Compile(new CompileRequest { Subject = "Corpus", Depth = "full", Budget = 1200, Format = "markdown" });
+            var dossier = db.Store.Compile(new CompileRequest { BudgetMode = "strict", Subject = "Corpus", Depth = "full", Budget = 1200, Format = "markdown" });
 
             await Assert.That(dossier.UsedTokens).IsLessThanOrEqualTo(1200);
             await Assert.That(dossier.Facts.Count).IsLessThanOrEqualTo(n);
@@ -877,5 +878,95 @@ public sealed class CompileTests
 
         await Assert.That(emittedCounts[1]).IsGreaterThanOrEqualTo(emittedCounts[0]);
         await Assert.That(emittedCounts[2]).IsGreaterThanOrEqualTo(emittedCounts[1]);
+    }
+
+    private static FactInput[] Corpus200() => Enumerable.Range(0, 200)
+        .Select(i => Fixtures.Fact($"entry {i:D4} alpha{i:D4} beta{i:D4} gamma{i:D4} delta{i:D4}"))
+        .ToArray();
+
+    [Test]
+    public async Task Compile_CompleteModeEmitsEveryFact()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Corpus200());
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full", Budget = 300, Format = "markdown" });
+
+        await Assert.That(dossier.BudgetMode).IsEqualTo("complete");
+        await Assert.That(dossier.Facts.Count).IsEqualTo(200);
+        await Assert.That(dossier.Dropped.Count).IsEqualTo(0);
+        await Assert.That(dossier.UsedTokens).IsGreaterThan(300);
+    }
+
+    [Test]
+    public async Task Compile_StrictModeStillDrops()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Corpus200());
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full", Budget = 300, Format = "markdown", BudgetMode = "strict" });
+
+        await Assert.That(dossier.BudgetMode).IsEqualTo("strict");
+        await Assert.That(dossier.Facts.Count).IsLessThan(200);
+        await Assert.That(dossier.Dropped.Count).IsGreaterThan(0);
+        await Assert.That(dossier.Facts.Count + dossier.Dropped.Count).IsEqualTo(200);
+    }
+
+    [Test]
+    public async Task Compile_CompleteMarkdownHasHighlightsThenAllFacts()
+    {
+        using var db = new TempDb();
+        var ids = Post(db, "Widget", Corpus200());
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full", Budget = 300, Format = "markdown" });
+        var markdown = DossierStore.RenderMarkdown(dossier);
+
+        var highlights = markdown.IndexOf("## Highlights", StringComparison.Ordinal);
+        var all = markdown.IndexOf("## All facts", StringComparison.Ordinal);
+        await Assert.That(highlights).IsGreaterThan(-1);
+        await Assert.That(all).IsGreaterThan(highlights);
+        foreach (var id in ids)
+        {
+            var count = markdown.Split("[" + id + "]").Length - 1;
+            await Assert.That(count).IsEqualTo(1);
+        }
+    }
+
+    [Test]
+    public async Task Compile_CompleteMarkdownWithinBudgetIsOneFactsList()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Fixtures.Fact("only one fact here"));
+
+        var markdown = DossierStore.RenderMarkdown(db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full", Format = "markdown" }));
+
+        await Assert.That(markdown).DoesNotContain("## Highlights");
+        await Assert.That(markdown).DoesNotContain("## All facts");
+        await Assert.That(markdown).Contains("only one fact here");
+    }
+
+    [Test]
+    public async Task Compile_CompleteModeIsStillDeterministic()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Corpus200());
+        var request = new CompileRequest { Subject = "Widget", Depth = "full", Budget = 300, Format = "markdown" };
+
+        var first = DossierStore.RenderMarkdown(db.Store.Compile(request)) + JsonSerializer.Serialize(db.Store.Compile(request), JsonCodec.Options);
+        var second = DossierStore.RenderMarkdown(db.Store.Compile(request)) + JsonSerializer.Serialize(db.Store.Compile(request), JsonCodec.Options);
+
+        await Assert.That(second).IsEqualTo(first);
+    }
+
+    [Test]
+    public async Task Compile_InvalidBudgetModeRejected()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Fixtures.Fact("a fact"));
+
+        var ex = Assert.Throws<DossierRequestException>(() => db.Store.Compile(new CompileRequest { Subject = "Widget", BudgetMode = "bogus" }));
+
+        await Assert.That(ex.Message).Contains("complete");
+        await Assert.That(ex.Message).Contains("strict");
     }
 }

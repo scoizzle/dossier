@@ -1,9 +1,9 @@
 # django/db/models/functions/mixins::FixDecimalInputMixin
 
-- Subject: django/db/models/functions/mixins::FixDecimalInputMixin (id `184e584f-440e-4708-a920-1bd063792912`)
+- Subject: django/db/models/functions/mixins::FixDecimalInputMixin (id `8157d196-1fe6-40a8-aff5-c3a3cd843e97`)
 - Kind: class
 - Parent: [django/db/models/functions/mixins](../django-db-models-functions-mixins/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

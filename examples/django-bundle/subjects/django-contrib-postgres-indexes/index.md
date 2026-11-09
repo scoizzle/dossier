@@ -1,14 +1,14 @@
 # django/contrib/postgres/indexes
 
-- Subject: django/contrib/postgres/indexes (id `187f1a90-0fd4-4df0-9bff-6de1baf97f9a`)
+- Subject: django/contrib/postgres/indexes (id `594ef476-4355-4410-8282-e0127e5f44c1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 13 of 37
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1757 tokens
+- Facts shown: 31 of 37
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __init__( self, *expressions, autosummarize=None, pages_per_range=None, **kwargs ): if pages_per_range is not None and pages_per_range <= 0: raise ValueError("pages_per_range must be None or a positive integer") self.autosummarize = autosummarize self.pages_per_range = pages_per_range super().__init__(*expressions, **kwargs) [317048f5]
 - def __init__( self, *expressions, fastupdate=None, gin_pending_list_limit=None, **kwargs ): self.fastupdate = fastupdate self.gin_pending_list_limit = gin_pending_list_limit super().__init__(*expressions, **kwargs) [4da4f7a6]
@@ -24,6 +24,23 @@
 - def get_with_params(self): return [] [895fc3c5]
 - __all__ = [ "BloomIndex", "BrinIndex", "BTreeIndex", "GinIndex", "GistIndex", "HashIndex", "SpGistIndex", ] [e4f3adc4]
 
-## Beyond the budget
+## All facts
 
-18 more facts did not fit in the budget: [b1a36e43] [0fc09ab7] [e07899ac] [ee3381b2] [33efcc1d63e52517] [9c09baaa] [9ada9d58] [92527b76] [e328aa25] [0006c8a6] [3b66c5aa] [d37d181b] [3af2890a] [b7a4925d] [8695d2e1] [83f8ecc3] [ab2bac21886a7863] [25666096]
+- [b1a36e43] def deconstruct(self): path, args, kwargs = super().deconstruct() if self.fillfactor is not None: kwargs["fillfactor"] = self.fillfactor if self.deduplicate_items is not None: kwargs["deduplicate_items"] = self.deduplicate_items return path, args, kwargs
+- [0fc09ab7] def deconstruct(self): path, args, kwargs = super().deconstruct() if self.length is not None: kwargs["length"] = self.length if self.columns: kwargs["columns"] = self.columns return path, args, kwargs
+- [e07899ac] def get_with_params(self): with_params = [] if self.autosummarize is not None: with_params.append( "autosummarize = %s" % ("on" if self.autosummarize else "off") ) if self.pages_per_range is not None: with_params.append("pages_per_range = %d" % self.pages_per_range) return with_params
+- [ee3381b2] def get_with_params(self): with_params = [] if self.buffering is not None: with_params.append("buffering = %s" % ("on" if self.buffering else "off")) if self.fillfactor is not None: with_params.append("fillfactor = %d" % self.fillfactor) return with_params
+- [33efcc1d63e52517] def get_with_params(self): with_params = [] if self.fillfactor is not None: with_params.append("fillfactor = %d" % self.fillfactor) return with_params
+- [9c09baaa] def get_with_params(self): with_params = [] if self.gin_pending_list_limit is not None: with_params.append( "gin_pending_list_limit = %d" % self.gin_pending_list_limit ) if self.fastupdate is not None: with_params.append("fastupdate = %s" % ("on" if self.fastupdate else "off")) return with_params
+- [9ada9d58] def get_with_params(self): with_params = [] if self.length is not None: with_params.append("length = %d" % self.length) if self.columns: with_params.extend( "col%d = %d" % (i, v) for i, v in enumerate(self.columns, start=1) ) return with_params
+- [92527b76] class BTreeIndex(PostgresIndex): suffix = "btree"
+- [e328aa25] class BloomIndex(PostgresIndex): suffix = "bloom"
+- [0006c8a6] class BrinIndex(PostgresIndex): suffix = "brin"
+- [3b66c5aa] class GinIndex(PostgresIndex): suffix = "gin"
+- [d37d181b] class GistIndex(PostgresIndex): suffix = "gist"
+- [3af2890a] class HashIndex(PostgresIndex): suffix = "hash"
+- [b7a4925d] class OpClass(Func): template = "%(expressions)s %(name)s" constraint_validation_compatible = False
+- [8695d2e1] class PostgresIndex(CheckPostgresInstalledMixin, Index): @cached_property def max_name_length(self): # Allow an index name longer than 30 characters when the suffix is # longer than the usual 3 character limit. The 30 character limit for # cross-database compatibility isn't applicable to PostgreSQL-specific # indexes. return Index.max_name_length - len(Index.suffix) + len(self.suffix)
+- [83f8ecc3] class SpGistIndex(PostgresIndex): suffix = "spgist"
+- [ab2bac21886a7863] from .utils import CheckPostgresInstalledMixin
+- [25666096] from django.db.models import Func, Index from django.utils.functional import cached_property

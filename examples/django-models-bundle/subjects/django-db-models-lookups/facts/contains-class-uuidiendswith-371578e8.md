@@ -1,6 +1,6 @@
 # Fact 371578e8
 
-Store id: 5c37fe5c-8a24-4d60-b2a1-cfeaf8c81352
+Store id: a154ea12-1199-4ce3-b143-b00194110905
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDIEndsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5c37fe5c-8a24-4d60-b2a1-cfeaf8c81352",
+  "id": "a154ea12-1199-4ce3-b143-b00194110905",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDIEndsWith"
       },
       "rel": "contains",
-      "target": "c321d838-0663-40b6-ad47-4c21f17bb479"
+      "target": "beb39e70-6aa0-4ae1-ac44-c2ba284fcfea"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

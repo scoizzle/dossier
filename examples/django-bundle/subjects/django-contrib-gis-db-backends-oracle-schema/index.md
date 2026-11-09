@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/oracle/schema
 
-- Subject: django/contrib/gis/db/backends/oracle/schema (id `3a43aaee-23f4-43a4-bc69-5222794835cb`)
+- Subject: django/contrib/gis/db/backends/oracle/schema (id `d7e1a0ee-a356-4cda-ac48-6448603ab49d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 864 tokens
-- Facts shown: 14 of 17
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1211 tokens
+- Facts shown: 17 of 17
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - old_field_spatial_index = ( isinstance(old_field, GeometryField) and old_field.spatial_index ) new_field_spatial_index = ( isinstance(new_field, GeometryField) and new_field.spatial_index ) if not old_field_spatial_index and new_field_spatial_index: self.execute(self._create_spatial_index_sql(model, new_field)) elif old_field_spatial_index and not new_field_spatial_index: self.execute(self._delete_spatial_index_sql(model, old_field)) [862d666ad92a57c8]
 - def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) self.geometry_sql = [] [b31812f819c2e248]
@@ -25,6 +25,8 @@
 - def quote_value(self, value): if isinstance(value, self.connection.ops.Adapter): return super().quote_value(str(value)) return super().quote_value(value) [8fbcaa3b12036b9f-2]
 - def run_geometry_sql(self): for sql in self.geometry_sql: self.execute(sql) self.geometry_sql = [] [bbba3c02]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [19902b2e] [30674805] [3c93f775]
+- [19902b2e] def remove_field(self, model, field): if isinstance(field, GeometryField): self.execute( self.sql_clear_geometry_field_metadata % { "table": self.geo_quote_name(model._meta.db_table), "column": self.geo_quote_name(field.column), } ) if field.spatial_index: self.execute(self._delete_spatial_index_sql(model, field)) super().remove_field(model, field)
+- [30674805] class OracleGISSchemaEditor(DatabaseSchemaEditor): sql_add_geometry_metadata = """ INSERT INTO USER_SDO_GEOM_METADATA ("TABLE_NAME", "COLUMN_NAME", "DIMINFO", "SRID") VALUES ( %(table)s, %(column)s, MDSYS.SDO_DIM_ARRAY( MDSYS.SDO_DIM_ELEMENT('LONG', %(dim0)s, %(dim2)s, %(tolerance)s), MDSYS.SDO_DIM_ELEMENT('LAT', %(dim1)s, %(dim3)s, %(tolerance)s) ), %(srid)s )""" sql_add_spatial_index = ( "CREATE INDEX %(index)s ON %(table)s(%(column)s) " "INDEXTYPE IS MDSYS.SPATIAL_INDEX" ) sql_clear_geometry_table_metadata = ( "DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = %(table)s" ) sql_clear_geometry_field_metadata = ( "DELETE FROM USER_SDO_GEOM_METADATA WHERE TABLE_NAME = %(table)s " "AND COLUMN_NAME = %(column)s" )
+- [3c93f775] from django.contrib.gis.db.models import GeometryField from django.db.backends.oracle.schema import DatabaseSchemaEditor from django.db.backends.utils import strip_quotes, truncate_name

@@ -1,9 +1,9 @@
 # django/db/models/base::ModelState.__del__
 
-- Subject: django/db/models/base::ModelState.__del__ (id `5973a882-2a3e-4fa5-ad78-3f0a61122d63`)
+- Subject: django/db/models/base::ModelState.__del__ (id `4d54bc21-d84e-40c6-b7ab-243a50dc84ba`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

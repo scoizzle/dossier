@@ -1,6 +1,6 @@
 # Fact 67735688
 
-Store id: 6cca0e0e-d943-460e-9c3f-17bc8b93aa95
+Store id: 029ada72-48f7-4529-ac5b-286d5103dd4a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformEndsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6cca0e0e-d943-460e-9c3f-17bc8b93aa95",
+  "id": "029ada72-48f7-4529-ac5b-286d5103dd4a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformEndsWith"
       },
       "rel": "contains",
-      "target": "938dd105-e73e-463f-8ea7-b025ca8e0d89"
+      "target": "c3ea5c1b-c4eb-4f79-9f55-ef41a99a84f6"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

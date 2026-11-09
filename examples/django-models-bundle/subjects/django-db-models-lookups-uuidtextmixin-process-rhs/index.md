@@ -1,9 +1,9 @@
 # django/db/models/lookups::UUIDTextMixin.process_rhs
 
-- Subject: django/db/models/lookups::UUIDTextMixin.process_rhs (id `739e3177-786e-457e-a57b-1dfc567a0a6c`)
+- Subject: django/db/models/lookups::UUIDTextMixin.process_rhs (id `ba993fd6-65d7-4417-97e5-56fe13e7977b`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

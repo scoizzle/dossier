@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode.split_having_qualify
 
-- Subject: django/db/models/sql/where::WhereNode.split_having_qualify (id `cc897902-b264-494a-b240-d120d228e36f`)
+- Subject: django/db/models/sql/where::WhereNode.split_having_qualify (id `77edf1b7-8c24-45b9-b2d0-ec0bfda89b90`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 74263ac5
 
-Store id: 58a4974e-8d94-460d-a97b-45217fec4751
+Store id: a0dca88c-7b56-4d09-82b7-76e66b5fe8f5
 
 ## Text
 
@@ -20,7 +20,7 @@ def __mod__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4756330+00:00`
+- posted_at: `2026-11-09T23:31:55.7294150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 91,
     "symbol": "Combinable.__mod__"
   },
-  "id": "58a4974e-8d94-460d-a97b-45217fec4751",
+  "id": "a0dca88c-7b56-4d09-82b7-76e66b5fe8f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4756330+00:00"
+    "posted_at": "2026-11-09T23:31:55.7294150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5a2f5b95-5a70-4fe2-9684-87cfc5986336",
+  "subject_id": "b388f5f0-7845-458a-a697-9da3e7ec2336",
   "subject_name": "django/db/models/expressions::Combinable.__mod__",
   "tags": [
     "entity:method"

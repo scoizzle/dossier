@@ -1,6 +1,6 @@
 # Fact d7dc311e
 
-Store id: cc334292-93e8-4da6-b1d2-36af1cb22223
+Store id: 3bdb2fb6-4583-49c6-a953-12690fc8467c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6589550+00:00`
+- posted_at: `2026-11-09T23:31:55.9256320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1497,
     "symbol": "ExpressionList.__str__"
   },
-  "id": "cc334292-93e8-4da6-b1d2-36af1cb22223",
+  "id": "3bdb2fb6-4583-49c6-a953-12690fc8467c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6589550+00:00"
+    "posted_at": "2026-11-09T23:31:55.9256320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9308edd3-d2c4-4a55-b36b-47f2990a328e",
+  "subject_id": "62ef7a69-5927-4aa6-ab04-b72eeb003b16",
   "subject_name": "django/db/models/expressions::ExpressionList.__str__",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # django/core/management/commands/squashmigrations
 
-- Subject: django/core/management/commands/squashmigrations (id `cfcd575b-24c1-4ac8-916b-6d8d9026e580`)
+- Subject: django/core/management/commands/squashmigrations (id `7a47deba-dd9e-41c6-b74c-23806308320e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 11 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2003 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if self.interactive: answer = None while not answer or answer not in "yn": answer = input("Do you wish to proceed? [y/N] ") if not answer: answer = "n" break else: answer = answer[0].lower() if answer != "y": return [e4255c61]
 - if self.verbosity > 0: if len(new_operations) == len(operations): self.stdout.write(" No optimizations possible.") else: self.stdout.write( " Optimized from %s operations to %s operations." % (len(operations), len(new_operations)) ) [9174f4df]
@@ -22,6 +22,13 @@
 - migration = self.find_migration(loader, app_label, migration_name) [10373607]
 - import os import shutil [f3ff1053]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [591053b2] [7c85e980] [44c3f311] [6a055d5d] [a931d245] [a783835a] [0074a476] [401a482a]
+- [591053b2] if self.verbosity > 0: self.stdout.write( self.style.MIGRATE_HEADING( "Created new squashed migration %s" % writer.path ) + "\n" " You should commit this migration but leave the old ones in place;\n" " the new migration will be used for new installs. Once you are sure\n" " all instances of the codebase have applied the migrations you " "squashed,\n" " you can delete them." ) if writer.needs_manual_porting: self.stdout.write( self.style.MIGRATE_HEADING("Manual porting required") + "\n" " Your migrations contained functions that must be manually " "copied over,\n" " as we could not safely copy their implementation.\n" " See the comment at the top of the squashed migration for " "details." ) if shutil.which("black"): self.stdout.write( self.style.WARNING( "Squashed migration couldn't be formatted using the " '"black" command. You can call it manually.' ) )
+- [7c85e980] if start_migration_name: start_migration = self.find_migration( loader, app_label, start_migration_name ) start = loader.get_migration( start_migration.app_label, start_migration.name ) try: start_index = migrations_to_squash.index(start) migrations_to_squash = migrations_to_squash[start_index:] except ValueError: raise CommandError( "The migration '%s' cannot be found. Maybe it comes after " "the migration '%s'?\n" "Have a look at:\n" " python manage.py showmigrations %s\n" "to debug this issue." % (start_migration, migration, app_label) )
+- [44c3f311] replaces = [(m.app_label, m.name) for m in migrations_to_squash]
+- [6a055d5d] def add_arguments(self, parser): parser.add_argument( "app_label", help="App label of the application to squash migrations for.", ) parser.add_argument( "start_migration_name", nargs="?", help=( "Migrations will be squashed starting from and including this " "migration." ), ) parser.add_argument( "migration_name", help="Migrations will be squashed until and including this migration.", ) parser.add_argument( "--no-optimize", action="store_true", help="Do not try to optimize the squashed operations.", ) parser.add_argument( "--noinput", "--no-input", action="store_false", dest="interactive", help="Tells Django to NOT prompt the user for input of any kind.", ) parser.add_argument( "--squashed-name", help="Sets the name of the new squashed migration.", ) parser.add_argument( "--no-header", action="store_false", dest="include_header", help="Do not add a header comment to the new squashed migration.", )
+- [a931d245] def find_migration(self, loader, app_label, name): try: return loader.get_migration_by_prefix(app_label, name) except AmbiguityError: raise CommandError( "More than one migration matches '%s' in app '%s'. Please be " "more specific." % (name, app_label) ) except KeyError: raise CommandError( "Cannot find a migration matching '%s' from app '%s'." % (name, app_label) )
+- [a783835a] def handle(self, **options): self.verbosity = options["verbosity"] self.interactive = options["interactive"] app_label = options["app_label"] start_migration_name = options["start_migration_name"] migration_name = options["migration_name"] no_optimize = options["no_optimize"] squashed_name = options["squashed_name"] include_header = options["include_header"] # Validate app_label. try: apps.get_app_config(app_label) except LookupError as err: raise CommandError(str(err)) # Load the current graph state, check the app and migration they asked # for exists. loader = MigrationLoader(None) if app_label not in loader.migrated_apps: raise CommandError( "App '%s' does not have migrations (so squashmigrations on " "it makes no sense)" % app_label )
+- [0074a476] class Command(BaseCommand): help = ( "Squashes an existing set of migrations (from first until specified) into a " "single new one." )
+- [401a482a] from django.apps import apps from django.conf import settings from django.core.management.base import BaseCommand, CommandError from django.core.management.utils import run_formatters from django.db import migrations from django.db.migrations.loader import AmbiguityError, MigrationLoader from django.db.migrations.migration import SwappableTuple from django.db.migrations.optimizer import MigrationOptimizer from django.db.migrations.writer import MigrationWriter

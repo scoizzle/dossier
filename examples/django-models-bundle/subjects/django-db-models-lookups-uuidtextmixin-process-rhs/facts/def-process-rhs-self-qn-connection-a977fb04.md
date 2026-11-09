@@ -1,6 +1,6 @@
 # Fact a977fb04
 
-Store id: 2fcf89dd-e6b4-4de7-a262-b7b4a8bfb2f9
+Store id: 534db5e5-a83d-4e64-b3d2-dc232fd31828
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, qn, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2751650+00:00`
+- posted_at: `2026-11-09T23:32:03.4688040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 787,
     "symbol": "UUIDTextMixin.process_rhs"
   },
-  "id": "2fcf89dd-e6b4-4de7-a262-b7b4a8bfb2f9",
+  "id": "534db5e5-a83d-4e64-b3d2-dc232fd31828",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2751650+00:00"
+    "posted_at": "2026-11-09T23:32:03.4688040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "739e3177-786e-457e-a57b-1dfc567a0a6c",
+  "subject_id": "ba993fd6-65d7-4417-97e5-56fe13e7977b",
   "subject_name": "django/db/models/lookups::UUIDTextMixin.process_rhs",
   "tags": [
     "entity:method"

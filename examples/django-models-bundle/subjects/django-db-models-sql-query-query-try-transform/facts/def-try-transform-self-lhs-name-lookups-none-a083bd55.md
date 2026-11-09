@@ -1,6 +1,6 @@
 # Fact a083bd55
 
-Store id: 8e2cde78-7f9d-48ca-befa-b9c35a44b078
+Store id: 1a12f7b6-8141-4367-9087-dfa4132b246c
 
 ## Text
 
@@ -20,7 +20,7 @@ def try_transform(self, lhs, name, lookups=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3694830+00:00`
+- posted_at: `2026-11-09T23:32:06.9312000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1460,
     "symbol": "Query.try_transform"
   },
-  "id": "8e2cde78-7f9d-48ca-befa-b9c35a44b078",
+  "id": "1a12f7b6-8141-4367-9087-dfa4132b246c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3694830+00:00"
+    "posted_at": "2026-11-09T23:32:06.9312000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cfab62e5-a204-4c64-9f33-0d448d71dd23",
+  "subject_id": "5b14c7a1-77f6-4a75-85ae-17737e139437",
   "subject_name": "django/db/models/sql/query::Query.try_transform",
   "tags": [
     "entity:method"

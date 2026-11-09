@@ -1,6 +1,6 @@
 # Fact 1e97be68
 
-Store id: 6aa41b67-85fc-4734-8377-852eca5f9bef
+Store id: bd4d2191-dd98-48a5-906f-796dd7004cbf
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, model, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7099440+00:00`
+- posted_at: `2026-11-09T23:31:54.1658320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 155,
     "symbol": "CheckConstraint.check"
   },
-  "id": "6aa41b67-85fc-4734-8377-852eca5f9bef",
+  "id": "bd4d2191-dd98-48a5-906f-796dd7004cbf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7099440+00:00"
+    "posted_at": "2026-11-09T23:31:54.1658320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82fb6acb-7d59-46fd-8f83-e95e27f807a8",
+  "subject_id": "d1ef9396-a5b5-4bc0-8cb8-651fce281de7",
   "subject_name": "django/db/models/constraints::CheckConstraint.check",
   "tags": [
     "entity:method"

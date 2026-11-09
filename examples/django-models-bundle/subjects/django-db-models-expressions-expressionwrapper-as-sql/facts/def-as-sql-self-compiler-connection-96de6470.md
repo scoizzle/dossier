@@ -1,6 +1,6 @@
 # Fact 96de6470
 
-Store id: dbc5082e-629e-4b60-99c5-e363fe84c465
+Store id: 78e66f5c-0a10-47fa-8a77-79dba0fd6db3
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6742260+00:00`
+- posted_at: `2026-11-09T23:31:55.9369880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1573,
     "symbol": "ExpressionWrapper.as_sql"
   },
-  "id": "dbc5082e-629e-4b60-99c5-e363fe84c465",
+  "id": "78e66f5c-0a10-47fa-8a77-79dba0fd6db3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6742260+00:00"
+    "posted_at": "2026-11-09T23:31:55.9369880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "51eeba24-3d43-4ae2-ba2d-f3eb3549de86",
+  "subject_id": "c1dad547-9128-44c6-8906-6b59d6b85fe9",
   "subject_name": "django/db/models/expressions::ExpressionWrapper.as_sql",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-documentation
 
-- Subject: docs/internals/contributing/writing-documentation (id `08c6567c-2269-4801-847c-ebcb5f6f746b`)
+- Subject: docs/internals/contributing/writing-documentation (id `7c97e2f3-3954-413c-bcc6-7cb844b14e53`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 47 of 278
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 8782 tokens
+- Facts shown: 275 of 278
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - :param arg1: Description of the first parameter :param arg2: Description of the second parameter [3de0dd45]
 - Attribute description. [c2b64f17]
@@ -58,6 +58,233 @@
 - .. code-block:: console [faf6f5a8efbd7831-8]
 - .. console:: [7714e199aac2701e-40]
 
-## Beyond the budget
+## All facts
 
-228 more facts did not fit in the budget: [00054b8f4c441f62] [c059dbb7f93ef187-4] [c059dbb7f93ef187-5] [c059dbb7f93ef187-6] [5dec30ec] [ea270123] [37c4e8d6f30a41e2] [704c3a8a] [e47593b1] [ee7fabf6] [b90ff62c] [4529d318c14d8f63] [a9c1d0e3] [4cc610dc] [6efaacf4] [e00821e1] [b864dd33] [0a7c53f9] [20b80420] [031cc535] [f052e5fe778f916c] [f052e5fe778f916c-2] [aee9a20e] [78c588f4] [46ca9ebe] [1334b701] [7714e199aac2701e-41] [7714e199aac2701e-42] [d710c509] [4ab33952] [3871ddb3eff15a0e] [3871ddb3eff15a0e-2] [3871ddb3eff15a0e-3] [3871ddb3eff15a0e-4] [3871ddb3eff15a0e-5] [3871ddb3eff15a0e-6] [3871ddb3eff15a0e-7] [3871ddb3eff15a0e-8] [3871ddb3eff15a0e-9] [3871ddb3eff15a0e-10] [3871ddb3eff15a0e-11] [3871ddb3eff15a0e-12] [3871ddb3eff15a0e-13] [3871ddb3eff15a0e-14] [20ed93bf2591ccc0] [07bd63af] [17b1b45c] [b0f9968e] [fdb85cab] [6b446b89] [f0d9ab12] [a6ebeaec] [30d12b08] [c862c614] [9aedc46d] [b58813ab] [cb50ba82] [1f5653c1] [849f7e86] [a7abe21e] [7c301e7c] [1b36482f] [7cd7e5c5] [463f8a0e] [24cc0d2e] [2c180512] [634acb3c] [9d269e37] [3932badf] [288a7a50] [abbaf7f4] [d9bc4063] [e200503e] [d4aff276] [ea7e0414] [165d6cb9] [df490f5d] [06dcfe30] [b61aff23] [f1b18d57] [ee0b7b08] [e0971267] [13d383ff] [e1af05dc] [51aa78cb] [1eb4d233] [baf81dcb] [f4f9ab15] [755fa4ad] [86bd8187] [51e70e48] [4c6a5a7f] [70295e1d] [e737a953] [20680c2d] [bcba985b] [8edb4288] [7ebdefc8] [5f637ab5] [6efa9ff2] [e31beec7] [cb019011] [db543705] [038a9169] [5a30089f] [4350d084] [3c773ac0] [a1f89c43] [4e992c3c] [edbe45ed] [5974cde9] [22b60b74] [76b91320] [897e8036] [7443bc6f] [fd356caf] [009adba6] [5770341f] [01085df5] [0becf246] [89ccf19e] [faf6f5a8efbd7831-9] [423631a5927aaff7-9] [3871ddb3eff15a0e-15] [3871ddb3eff15a0e-16] [3871ddb3eff15a0e-17] [3871ddb3eff15a0e-18] [8aa7203c166b13be-50] [7714e199aac2701e-43] [7714e199aac2701e-44] [7714e199aac2701e-45] [7714e199aac2701e-46] [7714e199aac2701e-47] [7714e199aac2701e-48] [7714e199aac2701e-49] [7714e199aac2701e-50] [7714e199aac2701e-51] [c54b54cb0805732a-7] [cd67f120] [9e2987b4] [759edcc4] [69b1d3c7] [0b8980d7] [d55864f9] [c28f79d4831681bc] [88076e00] [45ad989a] [702975fc] [6a52db95] [656e3c32] [a424d592] [381a603d] [ade95f4d] [8cb5d89f] [199fbbfb] [f6d5806c] [1496409b] [48a71f14] [a41e535c] [147a4105] [9360997f] [72b49420] [4024557c] [d02befd5] [e0770de5] [c7d8dc89] [ee1e3370] [7db3bcef] [f9c3c298] [141c4e5ec809f575-2] [4018ead2] [13ecd41f] [a4644f94] [0b0ae4a8] [87ce9675] [171b3867] [ca5aca9c] [1952e2be] [210213ff] [4316dbbb] [43c69dca] [a88e415b] [55cd5d2c] [ac73be2d] [e7a5fd16] [f3d94083] [c5ae7641] [8c7b7bd3] [945f6564] [5816140c] [688a8728] [373629b9] [a188250e] [039394d8] [d6f23e25] [4c85a7a8] [6bbc250d] [c349a2e5] [4c4bb980] [d659ea98] [9a512b38] [2c0adccb] [c846d85b] [08b83601] [cbafa754] [27c4f53c] [87c8a53c] [f669204f] [c4ddf23a] [6f678c12] [8b5b85bf] [5cd78309] [6b154c56] [a11e464f] [e61f96af] [1a7db1de] [2d32a9f0] [8376c4ee] [31f85443] [a45eafe6] [85011246] [26abda73] [737ca632] [a7e89515] [a26edb33] [9bf6e550] [ec8b3d34] [5f4a3ee3]
+- [00054b8f4c441f62] .. setting:: ADMINS
+- [c059dbb7f93ef187-4] ...
+- [c059dbb7f93ef187-5] ...
+- [c059dbb7f93ef187-6] ...
+- [5dec30ec] ...\> py manage.py shell
+- [ea270123] === One ===
+- [37c4e8d6f30a41e2] ======== Settings ========
+- [704c3a8a] A list of all the people who get code error notifications...
+- [e47593b1] ADMINS ======
+- [ee7fabf6] All documentation of new features should be written in a way that clearly designates the features that are only available in the Django development version. Assume documentation readers are using the latest release, not the development version.
+- [b90ff62c] Available settings ==================
+- [4529d318c14d8f63] Default: ``[]`` (Empty list)
+- [a9c1d0e3] Deprecated settings ===================
+- [4cc610dc] Five ^^^^
+- [6efaacf4] Four ~~~~
+- [e00821e1] The execution of the command requires an internet connection and takes several minutes to complete, because the command tests all the links that are found in the documentation.
+- [b864dd33] Three -----
+- [0a7c53f9] Two ===
+- [20b80420] You can access a :ref:`listing of all available settings <available-settings>`. For a list of deprecated settings see :ref:`deprecated-settings`.
+- [031cc535] You can find both in the :doc:`settings reference document </ref/settings>`.
+- [f052e5fe778f916c] use this command:
+- [f052e5fe778f916c-2] use this command:
+- [aee9a20e] $ cd docs $ optipng -o7 -zm1-9 -i0 -strip all `find . -type f -not -path "./_build/*" -name "*.png"` $ advpng -z4 `find . -type f -not -path "./_build/*" -name "*.png"`
+- [78c588f4] * On Linux and macOS:
+- [46ca9ebe] * On Windows (Command Prompt):
+- [1334b701] * On Windows (PowerShell):
+- [7714e199aac2701e-41] .. console::
+- [7714e199aac2701e-42] .. console::
+- [d710c509] Alternatively, ``sphinx-autobuild`` can be invoked directly:
+- [4ab33952] * The directive itself remains flush with the left margin (no indentation). * All descriptive text under the directive must be indented by 4 spaces. * Multi-line descriptions must keep the same indentation level. * Nested directives (for example, methods inside a class) require an additional 4 spaces of indentation to maintain hierarchy. * Field lists (such as ``:param:``, ``:returns:``, etc.) must align with the directive's content level.
+- [3871ddb3eff15a0e] .. code-block:: rst
+- [3871ddb3eff15a0e-2] .. code-block:: rst
+- [3871ddb3eff15a0e-3] .. code-block:: rst
+- [3871ddb3eff15a0e-4] .. code-block:: rst
+- [3871ddb3eff15a0e-5] .. code-block:: rst
+- [3871ddb3eff15a0e-6] .. code-block:: rst
+- [3871ddb3eff15a0e-7] .. code-block:: rst
+- [3871ddb3eff15a0e-8] .. code-block:: rst
+- [3871ddb3eff15a0e-9] .. code-block:: rst
+- [3871ddb3eff15a0e-10] .. code-block:: rst
+- [3871ddb3eff15a0e-11] .. code-block:: rst
+- [3871ddb3eff15a0e-12] .. code-block:: rst
+- [3871ddb3eff15a0e-13] .. code-block:: rst
+- [3871ddb3eff15a0e-14] .. code-block:: rst
+- [20ed93bf2591ccc0] Example:
+- [07bd63af] Explain the nature of the problem we're solving, so that the reader understands what we're trying to achieve. Don't feel that you need to begin with explanations of how things work - what matters is what the reader does, not what you explain. It can be helpful to refer back to what you've done and explain afterward.
+- [17b1b45c] Follow these rules:
+- [b0f9968e] Isn't nearly as helpful as:
+- [fdb85cab] Keep reference material tightly focused on the subject. Assume that the reader already understands the basic concepts involved but needs to know or be reminded of how Django does it.
+- [6b446b89] Link to reference material rather than repeat it. Use examples and don't be reluctant to explain things that seem very basic to you - it might be the explanation someone else needs.
+- [f0d9ab12] Providing background context helps a newcomer connect the topic to things that they already know.
+- [a6ebeaec] Reference guides aren't the place for general explanation. If you find yourself explaining basic concepts, you may want to move that material to a topic guide.
+- [30d12b08] The important thing in a tutorial is to help the reader achieve something useful, preferably as early as possible, in order to give them confidence.
+- [c862c614] These guides are more advanced than tutorials and assume some knowledge about how Django works. Assume that the reader has followed the tutorials and don't hesitate to refer the reader back to the appropriate tutorial rather than repeat the same material.
+- [9aedc46d] This is because Sphinx will generate proper links for the latter, which greatly helps readers.
+- [b58813ab] This marks up the following header as the "canonical" target for the setting ``ADMINS``. This means any time I talk about ``ADMINS``, I can reference it using ``:setting:`ADMINS```.
+- [cb50ba82] To link to a setting, use ``:setting:`INSTALLED_APPS```.
+- [1f5653c1] To link, use ``:djadmin:`migrate```.
+- [849f7e86] To link, use ``:lookup:`exact```.
+- [a7abe21e] To link, use ``:option:`command_name --traceback``` (or omit ``command_name`` for the options shared by all commands like ``--verbosity``).
+- [7c301e7c] To link, use ``:tfilter:`linebreaksbr```.
+- [1b36482f] To link, use ``:ttag:`regroup```.
+- [7cd7e5c5] We use the Sphinx :rst:role:`doc` cross-reference element when we want to link to another document as a whole and the :rst:role:`ref` element when we want to link to an arbitrary location in a document.
+- [463f8a0e] What matters most in a how-to guide is what a user wants to achieve. A how-to should always be result-oriented rather than focused on internal details of how Django implements whatever is being discussed.
+- [24cc0d2e] You can prefix the target with a ``~`` (that's a tilde) to get only the "last bit" of that path. So ``:mod:`~django.contrib.auth``` will display a link with the title "auth".
+- [2c180512] (No changes from what ``.. code-block:: console`` would have rendered).
+- [634acb3c] * **Django** -- when referring to the framework, capitalize Django. It is lowercase only in Python code and in the djangoproject.com logo.
+- [9d269e37] * **HTTP** -- the expected pronunciation is "Aitch Tee Tee Pee" and therefore should be preceded by "an" and not "a".
+- [3932badf] * **MySQL**, **PostgreSQL**, **SQLite**
+- [288a7a50] * **Python** -- when referring to the language, capitalize Python.
+- [abbaf7f4] * **SQL** -- when referring to SQL, the expected pronunciation should be "Ess Queue Ell" and not "sequel". Thus in a phrase like "Returns an SQL expression", "SQL" should be preceded by "an" and not "a".
+- [d9bc4063] * **URLconf** -- use three capitalized letters, with no space before "conf."
+- [e200503e] * **email** -- no hyphen.
+- [d4aff276] * **model** -- it's not capitalized.
+- [ea7e0414] * **realize**, **customize**, **initialize**, etc. -- use the American "ize" suffix, not "ise."
+- [165d6cb9] * **subclass** -- it's a single word without a hyphen, both as a verb ("subclass that model") and as a noun ("create a subclass").
+- [df490f5d] * **template** -- it's not capitalized.
+- [06dcfe30] * **the web**, **web framework** -- it's not capitalized.
+- [b61aff23] * **view** -- it's not capitalized.
+- [f1b18d57] * **website** -- use one word, without capitalization.
+- [ee0b7b08] * :doc:`How-to guides </howto/index>` are recipes that take the reader through steps in key subjects.
+- [e0971267] * :doc:`Reference guides </ref/index>` contain technical references for APIs. They describe the functioning of Django's internal machinery and instruct in its use.
+- [13d383ff] * :doc:`Topic guides </topics/index>` aim to explain a concept or subject at a fairly high level.
+- [e1af05dc] * :doc:`Tutorials </intro/index>` take the reader by the hand through a series of steps to create something.
+- [51aa78cb] * Add ``.. code-block:: <lang>`` to literal blocks so that they get highlighted. Prefer relying on automatic highlighting using ``::`` (two colons). This has the benefit that if the code contains some invalid syntax, it won't be highlighted. Adding ``.. code-block:: python``, for example, will force highlighting despite invalid syntax.
+- [1eb4d233] * Field lookups (i.e. ``Foo.objects.filter(bar__exact=whatever)``):
+- [baf81dcb] * First, the ``ref/settings.txt`` document could have an overall layout like this:
+- [f4f9ab15] * General improvements: typo corrections, error fixes and better explanations through clearer writing and more examples.
+- [755fa4ad] * In section titles, capitalize only initial words and proper nouns.
+- [86bd8187] * Links to Trac tickets (typically reserved for patch release notes):
+- [51e70e48] * New features: documentation of features that have been added to the framework since the last release.
+- [4c6a5a7f] * Next, notice how the settings are annotated:
+- [70295e1d] * Next, the ``topics/settings.txt`` document could contain something like this:
+- [e737a953] * Read the message and fix the indicated issue (for example, remove trailing whitespace, adjust backticks, or replace tabs with spaces). * For long lines consider wrapping text onto new lines or breaking long inline links into named references. The custom line length check should already skip common false positives such as headings, tables and long links.
+- [20680c2d] * Settings:
+- [bcba985b] * Surround inline code or brand/technology names with double grave accents (\`\`) * Find synonyms that the spell checker recognizes. * If, and only if, you are sure the word you are using is correct - add it to ``docs/spelling_wordlist`` (please keep the list in alphabetical order).
+- [8edb4288] * Template filters:
+- [7ebdefc8] * Template tags:
+- [5f637ab5] * The main thing to keep in mind as you write and edit docs is that the more semantic markup you can add the better. So:
+- [6efa9ff2] * To improve readability, use ``.. admonition:: Descriptive title`` rather than ``.. note::``. Use these boxes sparingly.
+- [e31beec7] * Use :mod:`~sphinx.ext.intersphinx` to reference Python's and Sphinx' documentation.
+- [cb019011] * Use :rst:role:`:cve:<cve>` to reference a Common Vulnerabilities and Exposures (CVE) identifier. For example, use ``:cve:`2019-14232```.
+- [db543705] * Use :rst:role:`:envvar:<envvar>` to refer to an environment variable. You may also need to define a reference to the documentation for that environment variable using :rst:dir:`.. envvar:: <envvar>`.
+- [038a9169] * Use :rst:role:`:mimetype:<mimetype>` to refer to a MIME Type unless the value is quoted for a code example.
+- [5a30089f] * Use :rst:role:`:pep:<pep>` to reference a Python Enhancement Proposal (PEP) and try to link to the relevant section if possible. For example, use ``:pep:`20#easter-egg``` or ``:pep:`Easter Egg <20#easter-egg>```.
+- [4350d084] * Use :rst:role:`:rfc:<rfc>` to reference a Request for Comments (RFC) and try to link to the relevant section if possible. For example, use ``:rfc:`2324#section-2.3.2``` or ``:rfc:`Custom link text <2324#section-2.3.2>```.
+- [3c773ac0] * Use these heading styles:
+- [a1f89c43] * When documenting Python objects (classes, methods, attributes, etc.) using `Sphinx directives`__ such as ``.. class::``, ``.. method::``, and ``.. attribute::``, all content must be properly indented to ensure correct rendering and to support features like automatic table of contents generation.
+- [4e992c3c] * Wrap the documentation at 80 characters wide, unless a code example is significantly less readable when split over two lines, or for another good reason.
+- [edbe45ed] * You usually will replace occurrences of the ``.. code-block:: console`` directive. * You don't need to change the actual content of the code example. You still write it assuming a Unix-y environment (i.e. a ``'$'`` prompt symbol, ``'/'`` as filesystem path components separator, etc.)
+- [5974cde9] * ``django-admin`` command-line options:
+- [22b60b74] * ``django-admin`` commands:
+- [76b91320] * he or she... use they. * him or her... use them. * his or her... use their. * his or hers... use theirs. * himself or herself... use themselves.
+- [897e8036] .. _build-documentation-locally:
+- [7443bc6f] .. _django-admin-manpage:
+- [fd356caf] .. _documentation-checks:
+- [009adba6] .. _documentation-code-block-format-check:
+- [5770341f] .. _documentation-link-check:
+- [01085df5] .. _documentation-lint-check:
+- [0becf246] .. _documentation-spelling-check:
+- [89ccf19e] .. _documenting-new-features:
+- [faf6f5a8efbd7831-9] .. code-block:: console
+- [423631a5927aaff7-9] .. code-block:: doscon
+- [3871ddb3eff15a0e-15] .. code-block:: rst
+- [3871ddb3eff15a0e-16] .. code-block:: rst
+- [3871ddb3eff15a0e-17] .. code-block:: rst
+- [3871ddb3eff15a0e-18] .. code-block:: rst
+- [8aa7203c166b13be-50] .. code-block:: shell
+- [7714e199aac2701e-43] .. console::
+- [7714e199aac2701e-44] .. console::
+- [7714e199aac2701e-45] .. console::
+- [7714e199aac2701e-46] .. console::
+- [7714e199aac2701e-47] .. console::
+- [7714e199aac2701e-48] .. console::
+- [7714e199aac2701e-49] .. console::
+- [7714e199aac2701e-50] .. console::
+- [7714e199aac2701e-51] .. console::
+- [c54b54cb0805732a-7] .. warning::
+- [cd67f120] 1. Install the package:
+- [9e2987b4] 2. From the ``docs`` directory, run one of the following commands:
+- [759edcc4] :pypi:`sphinx-autobuild` can be used to automatically rebuild the documentation and reload the documentation page in the browser whenever a file changes. To enable auto-reloading:
+- [69b1d3c7] ===================== Writing documentation =====================
+- [0b8980d7] All Python code blocks should be formatted using the :pypi:`blacken-docs` auto-formatter. This is automatically run by the :ref:`pre-commit hook <coding-style-pre-commit>` if configured.
+- [d55864f9] Also, avoid referring to a specific version of Django outside a ``versionadded`` or ``versionchanged`` block. Even inside a block, it's often redundant to do so as these annotations render as "New in Django A.B:" and "Changed in Django A.B", respectively.
+- [c28f79d4831681bc] An example ==========
+- [88076e00] Automating documentation rebuilds ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [45ad989a] Before you commit your docs, it's a good idea to run the spelling checker. You'll need to install :pypi:`sphinxcontrib-spelling` first. The spell checker also requires a system-level spell checking backend such as `Aspell <http://aspell.net/>`__. Then from the ``docs`` directory, run:
+- [702975fc] Besides :ref:`Sphinx's built-in markup <sphinx:rst-index>`, Django's docs define some extra description units:
+- [6a52db95] Build the documentation locally -------------------------------
+- [656e3c32] Clone the Django repository to your local machine -------------------------------------------------
+- [a424d592] Code block format check ~~~~~~~~~~~~~~~~~~~~~~~
+- [381a603d] Commonly used terms ===================
+- [ade95f4d] Create and activate a virtual environment, then install the dependencies:
+- [8cb5d89f] Django's documentation is checked for reStructuredText style and formal issues using :pypi:`sphinx-lint`. This helps catch problems like stray tabs, trailing whitespace, excessive line length, and similar formatting problems.
+- [199fbbfb] Django's documentation uses a custom ``console`` directive for documenting command-line examples involving ``django-admin``, ``manage.py``, ``python``, etc. In the HTML documentation, it renders a two-tab UI, with one tab showing a Unix-style command prompt and a second tab showing a Windows prompt.
+- [f6d5806c] Django's documentation uses the Sphinx__ documentation system, which in turn is based on docutils__. The basic idea is that lightly-formatted plain-text documentation is transformed into HTML, PDF, and any other output format.
+- [1496409b] Django-specific markup ======================
+- [48a71f14] Django-specific terminology ===========================
+- [a41e535c] Documentation changes generally come in two forms:
+- [147a4105] Documentation lint check ~~~~~~~~~~~~~~~~~~~~~~~~
+- [9360997f] Documentation quality checks ----------------------------
+- [72b49420] Documenting new features ========================
+- [4024557c] Entries that have a status of "broken" need to be fixed. Those that have a status of "redirected" may need to be updated to point to the canonical location, e.g. the scheme has changed ``http://`` → ``https://``. In certain cases, we do not want to update a "redirected" link, e.g. a rewrite to always point to the latest or stable version of the documentation, e.g. ``/en/stable/`` → ``/en/3.2/``.
+- [d02befd5] Entries that have a status of "working" are fine, those that are "unchecked" or "ignored" have been skipped because they either cannot be checked or have matched ignore rules in the configuration.
+- [e0770de5] For a quick example of how it all fits together, consider this hypothetical example:
+- [c7d8dc89] For example, you can replace this fragment:
+- [ee1e3370] General improvements or other changes to the APIs that should be emphasized should use the "``.. versionchanged:: X.Y``" directive (with the same format as the ``versionadded`` mentioned above).
+- [7db3bcef] Guidelines for reStructuredText files =====================================
+- [f9c3c298] Here are some style guidelines on commonly used terms throughout the documentation:
+- [141c4e5ec809f575-2] How the documentation is organized ==================================
+- [4018ead2] How to start contributing documentation =======================================
+- [13ecd41f] If a function, attribute, etc. is added, it's also okay to use a ``versionadded`` annotation like this:
+- [a4644f94] If you encounter false-positives (error output that actually is correct), do one of the following:
+- [0b0ae4a8] If you'd like to start contributing to our docs, get the development version of Django from the source code repository (see :ref:`installing-development-version`):
+- [87ce9675] If you're planning to submit these changes, you might find it useful to make a fork of the Django repository and clone this fork instead.
+- [171b3867] Link check ----------
+- [ca5aca9c] Links in documentation can become broken or changed such that they are no longer the canonical link. Sphinx provides a builder that can check whether the links in the documentation are working. From the ``docs`` directory, run:
+- [1952e2be] Making edits to the documentation ---------------------------------
+- [210213ff] Minimizing images =================
+- [4316dbbb] Notice two things:
+- [43c69dca] Once ``sphinx-lint`` is installed, the check can be run with the following command from the ``docs`` directory:
+- [a88e415b] Optimize image compression where possible. For PNG files, use OptiPNG and AdvanceCOMP's ``advpng``:
+- [55cd5d2c] Our policy for new features is:
+- [ac73be2d] Our preferred way for marking new features is by prefacing the features' documentation with: "``.. versionadded:: X.Y``", followed by a mandatory blank line and an optional description (indented).
+- [e7a5fd16] Output is printed to the terminal, but can also be found in ``_build/linkcheck/output.txt`` and ``_build/linkcheck/output.json``.
+- [f3d94083] Put the changed annotation notes at the bottom of a section, not the top.
+- [c5ae7641] See :ref:`Localizing the Django documentation <translating-documentation>` if you'd like to help translate the documentation into another language.
+- [8c7b7bd3] Set up a virtual environment and install dependencies -----------------------------------------------------
+- [945f6564] Several checks help maintain Django's documentation quality, including :ref:`spelling <documentation-spelling-check>`, :ref:`code block formatting <documentation-code-block-format-check>`, and :ref:`documentation style <documentation-lint-check>`.
+- [5816140c] Spelling check ~~~~~~~~~~~~~~
+- [688a8728] Sphinx can generate a manual page for the :doc:`django-admin </ref/django-admin>` command. This is configured in ``docs/conf.py``. Unlike other documentation output, this man page should be included in the Django repository and the releases as ``docs/man/django-admin.1``. There isn't a need to update this file when updating the documentation, as it's updated once as part of the release process.
+- [373629b9] Sphinx includes a ``sphinx-build`` command for turning reStructuredText into other formats, e.g., HTML and PDF. This command is configurable, but the Django documentation includes a ``Makefile`` that provides a shorter ``make html`` command.
+- [a188250e] That's basically how everything fits together.
+- [039394d8] The Django documentation process ================================
+- [d6f23e25] The auto-reloader can be stopped with ``Ctrl+C``.
+- [4c85a7a8] The check can also be run manually: provided that ``blacken-docs`` is installed, run the following command from the ``docs`` directory:
+- [6bbc250d] The command prints any violations to the terminal in the form ``path:line: message``. If problems are encountered:
+- [c349a2e5] The documentation is organized into several categories:
+- [4c4bb980] The example above will render a code example block with two tabs. The first one will show:
+- [d659ea98] The formatter will report any issues by printing them to the terminal and will reformat code blocks where possible.
+- [9a512b38] The new man page will be written in ``docs/_build/man/django-admin.1``.
+- [2c0adccb] The second one will show:
+- [c846d85b] The source files are ``.txt`` files located in the ``docs/`` directory.
+- [08b83601] These ``versionadded`` and ``versionchanged`` blocks should be "self-contained." In other words, since we only keep these annotations around for two releases, it's nice to be able to remove the annotation and its contents without having to reflow, reindent, or edit the surrounding text. For example, instead of putting the entire description of a new or changed feature in a block, do something like this:
+- [cbafa754] These checks are run automatically in CI and must pass before documentation changes can be merged. They can also be run locally with a single command:
+- [27c4f53c] These files are written in the reStructuredText markup language. To learn the markup, see the :ref:`reStructuredText reference <sphinx:rst-index>`.
+- [87c8a53c] These guidelines regulate the format of our reST (reStructuredText) documentation:
+- [f669204f] This command runs all current checks and will include any new checks added in the future.
+- [c4ddf23a] This is based on OptiPNG version 0.7.5. Older versions may complain about the ``-strip all`` option being lossy.
+- [6f678c12] This section explains how writers can craft their documentation changes in the most useful and least error-prone ways.
+- [8b5b85bf] Though Django's documentation is intended to be read as HTML at https://docs.djangoproject.com/, we edit it as a collection of plain text files written in the reStructuredText markup language for maximum flexibility.
+- [5cd78309] To edit this page, for example, we would edit the file :source:`docs/internals/contributing/writing-documentation.txt` and rebuild the HTML with ``make html``.
+- [6b154c56] To generate an updated version of the man page, in the ``docs`` directory, run:
+- [a11e464f] Translating documentation =========================
+- [e61f96af] Try to avoid using words that minimize the difficulty involved in a task or operation, such as "easily", "simply", "just", "merely", "straightforward", and so on. People's experience may not match your expectations, and they may become frustrated when they do not find a step as "straightforward" or "simple" as it is implied to be.
+- [1a7db1de] We also backport documentation fixes and improvements, at the discretion of the merger, to the last release branch. This is because it's advantageous to have the docs for the last release be up-to-date and correct (see :ref:`differences-between-doc-versions`).
+- [2d32a9f0] We can build HTML output from the ``docs`` directory:
+- [8376c4ee] We can remove the ``.. versionadded:: A.B`` annotation without any indentation changes when the time comes.
+- [31f85443] We place high importance on the consistency and readability of documentation. After all, Django was created in a journalism environment! So we treat our documentation like we treat our code: we aim to improve it as often as possible.
+- [a45eafe6] We work from the development version of the repository because it has the latest-and-greatest documentation, just as it has the latest-and-greatest code.
+- [85011246] When using pronouns in reference to a hypothetical person, such as "a user with a session cookie", gender-neutral pronouns (they/their/them) should be used. Instead of:
+- [26abda73] Writing style =============
+- [737ca632] Wrong words (if any) along with the file and line number where they occur will be saved to ``_build/spelling/output.txt``.
+- [a7e89515] Your locally-built documentation will be accessible at ``_build/html/index.html`` and it can be viewed in any web browser, though it will be themed differently than the documentation at `docs.djangoproject.com <https://docs.djangoproject.com/>`_. This is OK! If your changes look good on your local machine, they'll look good on the website.
+- [a26edb33] __ https://www.sphinx-doc.org/ __ https://docutils.sourceforge.io/
+- [9bf6e550] __ https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+- [ec8b3d34] ``django-admin`` man page =========================
+- [5f4a3ee3] with this one:

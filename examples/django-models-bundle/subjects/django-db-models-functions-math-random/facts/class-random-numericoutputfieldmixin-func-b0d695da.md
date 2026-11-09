@@ -1,6 +1,6 @@
 # Fact b0d695da
 
-Store id: f7bdaf05-48a0-45e1-ac10-fdf20e43e0e5
+Store id: de32ad60-e032-454a-b38f-92099202ba6b
 
 ## Text
 
@@ -20,7 +20,7 @@ class Random(NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6495920+00:00`
+- posted_at: `2026-11-09T23:32:01.7415480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 159,
     "symbol": "Random"
   },
-  "id": "f7bdaf05-48a0-45e1-ac10-fdf20e43e0e5",
+  "id": "de32ad60-e032-454a-b38f-92099202ba6b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6495920+00:00"
+    "posted_at": "2026-11-09T23:32:01.7415480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36f85c59-f7e2-4bae-90df-d584de4bc8db",
+  "subject_id": "c3435621-df9d-462e-bf07-3e5dc5c8d9c1",
   "subject_name": "django/db/models/functions/math::Random",
   "tags": [
     "entity:class"

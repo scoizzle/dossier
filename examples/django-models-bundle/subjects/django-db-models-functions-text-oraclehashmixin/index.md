@@ -1,9 +1,9 @@
 # django/db/models/functions/text::OracleHashMixin
 
-- Subject: django/db/models/functions/text::OracleHashMixin (id `c47d7cbe-7a4d-40e8-a1e5-ba1fc755d520`)
+- Subject: django/db/models/functions/text::OracleHashMixin (id `01dae5cb-5216-4d57-943b-32dffd15eb91`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

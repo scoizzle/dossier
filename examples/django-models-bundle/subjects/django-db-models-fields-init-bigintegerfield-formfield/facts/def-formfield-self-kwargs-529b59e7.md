@@ -1,6 +1,6 @@
 # Fact 529b59e7
 
-Store id: da14e89f-18c9-4b21-aa16-7a43b2ca0a0a
+Store id: df78fbeb-ec27-4dd0-908c-933a307a0192
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5510300+00:00`
+- posted_at: `2026-11-09T23:31:56.7121780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2248,
     "symbol": "BigIntegerField.formfield"
   },
-  "id": "da14e89f-18c9-4b21-aa16-7a43b2ca0a0a",
+  "id": "df78fbeb-ec27-4dd0-908c-933a307a0192",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5510300+00:00"
+    "posted_at": "2026-11-09T23:31:56.7121780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82285f45-0bc0-499c-a0a4-040f97c1f2de",
+  "subject_id": "5d5db045-7301-4fa7-a880-f3650282302d",
   "subject_name": "django/db/models/fields/__init__::BigIntegerField.formfield",
   "tags": [
     "entity:method"

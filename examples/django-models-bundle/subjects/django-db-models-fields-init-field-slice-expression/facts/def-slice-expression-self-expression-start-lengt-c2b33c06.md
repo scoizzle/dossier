@@ -1,6 +1,6 @@
 # Fact c2b33c06
 
-Store id: 7ae215e6-487d-4b56-9ac2-faeeb681ff46
+Store id: 2580bdaa-399e-413d-a32a-1293b7363a11
 
 ## Text
 
@@ -20,7 +20,7 @@ def slice_expression(self, expression, start, length)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3634610+00:00`
+- posted_at: `2026-11-09T23:31:56.5354830+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1195,
     "symbol": "Field.slice_expression"
   },
-  "id": "7ae215e6-487d-4b56-9ac2-faeeb681ff46",
+  "id": "2580bdaa-399e-413d-a32a-1293b7363a11",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3634610+00:00"
+    "posted_at": "2026-11-09T23:31:56.5354830+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4f2e9493-5a38-422d-aaf1-fac83fc983b0",
+  "subject_id": "c9323e54-fb3c-44c6-80aa-4c27496e41b0",
   "subject_name": "django/db/models/fields/__init__::Field.slice_expression",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 50892e28
 
-Store id: 932cca43-9768-410a-b5c2-7fe543399620
+Store id: b77ab3dd-1831-4bb2-ac16-6bfecc18e29f
 
 ## Text
 
@@ -20,7 +20,7 @@ def error_messages(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3104350+00:00`
+- posted_at: `2026-11-09T23:31:56.4651440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 806,
     "symbol": "Field.error_messages"
   },
-  "id": "932cca43-9768-410a-b5c2-7fe543399620",
+  "id": "b77ab3dd-1831-4bb2-ac16-6bfecc18e29f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3104350+00:00"
+    "posted_at": "2026-11-09T23:31:56.4651440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fb75614e-7c18-4c98-a019-406ce53ef989",
+  "subject_id": "a7814118-a442-4096-b88a-aad6784173da",
   "subject_name": "django/db/models/fields/__init__::Field.error_messages",
   "tags": [
     "entity:method",

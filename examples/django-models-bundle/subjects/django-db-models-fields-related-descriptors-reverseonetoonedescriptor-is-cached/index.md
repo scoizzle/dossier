@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.is_cached
 
-- Subject: django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.is_cached (id `cc92ab60-ef53-4856-9186-b669a50d30d3`)
+- Subject: django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.is_cached (id `0b229226-5d91-4d88-9aa5-3b4ffb6ad594`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

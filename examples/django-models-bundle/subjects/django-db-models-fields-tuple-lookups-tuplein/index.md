@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleIn
 
-- Subject: django/db/models/fields/tuple_lookups::TupleIn (id `76f73f9c-68d0-4dc8-9d77-b5c4f3e3e17d`)
+- Subject: django/db/models/fields/tuple_lookups::TupleIn (id `48f5c3a4-f156-48c6-baed-614a5a228e88`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

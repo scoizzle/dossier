@@ -1,14 +1,14 @@
 # docs/ref/migration-operations
 
-- Subject: docs/ref/migration-operations (id `817b8d45-6a0e-4c76-937a-afe9a2691a86`)
+- Subject: docs/ref/migration-operations (id `2230f75c-8b00-4540-bab1-7b043c51f091`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 28 of 183
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 7580 tokens
+- Facts shown: 178 of 183
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # If this is False, Django will refuse to reverse past this operation. reversible = False [8a55c079]
 - # This categorizes the operation. The corresponding symbol will be # displayed by the makemigrations command. category = OperationCategory.ADDITION [e5294d39]
@@ -39,6 +39,155 @@
 - .. attribute:: PYTHON [2b8197f2]
 - .. attribute:: SQL [87b91edb]
 
-## Beyond the budget
+## All facts
 
-150 more facts did not fit in the budget: [a31c832e] [591c8071] [03948fb8] [16bd5471] [901ee284] [d109c6bd] [0e30012a] [ae3db184] [275d1e40] [f3dd7c9d] [198441fb] [b524db95] [5dbd7696] [5041c755] [5dc39efb] [7d76bf5d] [5602f214839c9ad3-5] [d9b321265979488b] [54f1856d] [8007df53] [a4619044] [7da1779d] [77106d55] [cf223e94] [9cf72cb9] [8097a12b] [7d125b40] [ab1a09b2] [f92db2d8] [cce1b024] [4cca827b] [f92cb25e] [80e557c1] [80183f76] [17a75f64] [7a20a3ce] [9a67df01] [88eea868] [b9179947] [fc475a5e] [086aaa78] [28e00cad] [1fec632c] [2d1f18c6] [4a94bd67] [428df1c8] [05c7d9e4] [31821a78] [5852cdae] [fe19c691] [d8a7d0ab] [b6626724] [5f4004d7] [752460c2] [a34aba5b] [57739e32d87f6c76-12] [c54b54cb0805732a-41] [c54b54cb0805732a-42] [c54b54cb0805732a-43] [c54b54cb0805732a-44] [c54b54cb0805732a-45] [9de543ee] [0f2a5684] [6c0e57d0] [56c44f98] [37b1932e] [2a1918e7] [c9d6b38b] [11c03e06] [a8062f75] [a2304d91] [0f649a65] [1fa066f8] [2c8150c4] [1f16bede] [3900977b] [baed0e1b] [829646fe] [a8051a8f] [097fd7cc] [89570f94] [a6714199] [e8f0edbe] [9a273b9b] [ca1ffcad] [421d3154] [f0cfc602] [1ea4078d] [06529131] [43515141] [b74aa8cd] [4c1591d3] [7cc6c5f2] [8f0683f1] [744995eb] [8870af81] [edb71060] [a7354037] [456ff8a0] [0fac9447] [bb444d75] [129dce80] [1dc894b5] [7df4ba46] [0e566b36] [76d79dac] [536edc51] [ee3cdad2] [e94cb19e] [47487c20] [8436c64d] [0551d71b] [684cdffae40374da] [b49285e2] [9fa86356] [110ac9f9] [0272992c] [c144ef19] [fd4b9ccf] [f6c77428] [d6e3c396] [2df2bef6] [962c51df] [48fdd699] [ea351cd4] [9523e1ca] [bcb78b66] [5346ad6d] [b65adf0c] [899cba88] [614321da] [84aef530] [e7422bb0] [fd2a427a] [c6bbe029] [8655636b] [868c9e26] [6cc83a1c] [8be62668] [2724e27b] [6e6f9f85] [5a2f994f] [2ead21f0] [6501f50f] [38499ecb] [bb18bd0d] [46e12eb3] [18a71610] [1f66dd8a] [c0885fca]
+- [a31c832e] .. attribute:: REMOVAL
+- [591c8071] :class:`~django.db.backends.base.schema.BaseDatabaseSchemaEditor` and PostgreSQL backends no longer use ``CASCADE`` to delete dependent related database objects, such as views. Any dependent objects that are not managed by Django may need to be removed manually before running ``RemoveField``.
+- [03948fb8] Categories of migration operation used by the :djadmin:`makemigrations` command to display meaningful symbols.
+- [16bd5471] For performance reasons, the :class:`~django.db.models.Field` instances in ``ModelState.fields`` are reused across migrations. You must never change the attributes on these instances. If you need to mutate a field in ``state_forwards()``, you must remove the old instance from ``ModelState.fields`` and add a new instance in its place. The same is true for the :class:`~django.db.models.Manager` instances in ``ModelState.managers``.
+- [901ee284] On PostgreSQL and SQLite, only use ``BEGIN`` or ``COMMIT`` in your SQL in :ref:`non-atomic migrations <non-atomic-migrations>`, to avoid breaking Django's transaction state.
+- [d109c6bd] On older databases, adding a field with a default value may cause a full rewrite of the table. This happens even for nullable fields and may have a negative performance impact. To avoid that, the following steps should be taken.
+- [0e30012a] Pass the ``RunPython.noop`` method to ``code`` or ``reverse_code`` when you want the operation not to do anything in the given direction. This is especially useful in making the operation reversible.
+- [ae3db184] Pass the ``RunSQL.noop`` attribute to ``sql`` or ``reverse_sql`` when you want the operation not to do anything in the given direction. This is especially useful in making the operation reversible.
+- [275d1e40] ``AlterIndexTogether`` is officially supported only for pre-Django 4.2 migration files. For backward compatibility reasons, it's still part of the public API, and there's no plan to deprecate or remove it, but it should not be used for new migrations. Use :class:`~django.db.migrations.operations.AddIndex` and :class:`~django.db.migrations.operations.RemoveIndex` operations instead.
+- [f3dd7c9d] ``RunPython`` does not magically alter the connection of the models for you; any model methods you call will go to the default database unless you give them the current database alias (available from ``schema_editor.connection.alias``, where ``schema_editor`` is the second argument to your function).
+- [198441fb] class LoadExtension(Operation): reversible = True
+- [b524db95] class Migration(migrations.Migration): dependencies = []
+- [5dbd7696] class MyCustomOperation(Operation): # If this is False, it means that this operation will be ignored by # sqlmigrate; if true, it will be run and the SQL collected for its output. reduces_to_sql = False
+- [5041c755] def database_forwards(self, app_label, schema_editor, from_state, to_state): # This operation should have access to all models. Ensure that all models are # reloaded in case any are delayed. from_state.clear_delayed_apps_cache() ...
+- [5dc39efb] def forwards_func(apps, schema_editor): # We get the model from the versioned app registry; # if we directly import it, it'll be the wrong version Country = apps.get_model("myapp", "Country") db_alias = schema_editor.connection.alias Country.objects.using(db_alias).bulk_create( [ Country(name="USA", code="us"), Country(name="France", code="fr"), ] )
+- [7d76bf5d] def reverse_func(apps, schema_editor): # forwards_func() creates two Country instances, # so reverse_func() should delete them. Country = apps.get_model("myapp", "Country") db_alias = schema_editor.connection.alias Country.objects.using(db_alias).filter(name="USA", code="us").delete() Country.objects.using(db_alias).filter(name="France", code="fr").delete()
+- [5602f214839c9ad3-5] from django.db import migrations
+- [d9b321265979488b] from django.db.migrations.operations.base import Operation
+- [54f1856d] migrations.RunSQL( "ALTER TABLE musician ADD COLUMN name varchar(255) NOT NULL;", state_operations=[ migrations.AddField( "musician", "name", models.CharField(max_length=255), ), ], )
+- [8007df53] migrations.RunSQL( sql=[("INSERT INTO musician (name) VALUES (%s);", ["Reinhardt"])], reverse_sql=[("DELETE FROM musician where name=%s;", ["Reinhardt"])], )
+- [a4619044] migrations.RunSQL("INSERT INTO musician (name) VALUES ('Reinhardt');") migrations.RunSQL([("INSERT INTO musician (name) VALUES ('Reinhardt');", None)]) migrations.RunSQL([("INSERT INTO musician (name) VALUES (%s);", ["Reinhardt"])])
+- [7da1779d] * If you want to work with model classes or model instances from the ``from_state`` argument in ``database_forwards()`` or ``database_backwards()``, you must render model states using the ``clear_delayed_apps_cache()`` method to make related models available::
+- [77106d55] * You don't need to learn too much about ``ProjectState`` to write migrations; just know that it has an ``apps`` property that gives access to an app registry (which you can then call ``get_model`` on).
+- [cf223e94] * You might see implementations of ``references_model`` on the built-in operations; this is part of the autodetection code and does not matter for custom operations.
+- [9cf72cb9] * ``database_forwards`` and ``database_backwards`` both get two states passed to them; these represent the difference the ``state_forwards`` method would have applied, but are given to you for convenience and speed reasons.
+- [8097a12b] * ``to_state`` in the database_backwards method is the *older* state; that is, the one that will be the current state once the migration has finished reversing.
+- [7d125b40] .. _writing-your-own-migration-operation:
+- [ab1a09b2] .. attribute:: RunSQL.noop
+- [f92db2d8] .. class:: AddConstraint(model_name, constraint)
+- [cce1b024] .. class:: AddField(model_name, name, field, preserve_default=True)
+- [4cca827b] .. class:: AddIndex(model_name, index)
+- [f92cb25e] .. class:: AlterConstraint(model_name, name, constraint)
+- [80e557c1] .. class:: AlterField(model_name, name, field, preserve_default=True)
+- [80183f76] .. class:: AlterIndexTogether(name, index_together)
+- [17a75f64] .. class:: AlterModelManagers(name, managers)
+- [7a20a3ce] .. class:: AlterModelOptions(name, options)
+- [9a67df01] .. class:: AlterModelTable(name, table)
+- [88eea868] .. class:: AlterModelTableComment(name, table_comment)
+- [b9179947] .. class:: AlterOrderWithRespectTo(name, order_with_respect_to)
+- [fc475a5e] .. class:: AlterUniqueTogether(name, unique_together)
+- [086aaa78] .. class:: CreateModel(name, fields, options=None, bases=None, managers=None)
+- [28e00cad] .. class:: DeleteModel(name)
+- [1fec632c] .. class:: OperationCategory
+- [2d1f18c6] .. class:: RemoveConstraint(model_name, name)
+- [4a94bd67] .. class:: RemoveField(model_name, name)
+- [428df1c8] .. class:: RemoveIndex(model_name, name)
+- [05c7d9e4] .. class:: RenameField(model_name, old_name, new_name)
+- [31821a78] .. class:: RenameIndex(model_name, new_name, old_name=None, old_fields=None)
+- [5852cdae] .. class:: RenameModel(old_name, new_name)
+- [fe19c691] .. class:: RunPython(code, reverse_code=None, atomic=None, hints=None, elidable=False)
+- [d8a7d0ab] .. class:: RunSQL(sql, reverse_sql=None, state_operations=None, hints=None, elidable=False)
+- [b6626724] .. class:: SeparateDatabaseAndState(database_operations=None, state_operations=None)
+- [5f4004d7] .. currentmodule:: django.db.migrations.operations.base
+- [752460c2] .. module:: django.db.migrations.operations
+- [a34aba5b] .. staticmethod:: RunPython.noop
+- [57739e32d87f6c76-12] .. versionchanged:: 6.0
+- [c54b54cb0805732a-41] .. warning::
+- [c54b54cb0805732a-42] .. warning::
+- [c54b54cb0805732a-43] .. warning::
+- [c54b54cb0805732a-44] .. warning::
+- [c54b54cb0805732a-45] .. warning::
+- [9de543ee] ==================== Migration Operations ====================
+- [0f2a5684] A highly specialized operation that lets you mix and match the database (schema-changing) and state (autodetector-powering) aspects of operations.
+- [6c0e57d0] Adds a field to a model. ``model_name`` is the model's name, ``name`` is the field's name, and ``field`` is an unbound Field instance (the thing you would put in the field declaration in ``models.py`` - for example, ``models.IntegerField(null=True)``).
+- [56c44f98] All of the core Django operations are available from the ``django.db.migrations.operations`` module.
+- [37b1932e] Allows running of arbitrary SQL on the database - useful for more advanced features of database backends that Django doesn't support directly.
+- [2a1918e7] Alters a field's definition, including changes to its type, :attr:`~django.db.models.Field.null`, :attr:`~django.db.models.Field.unique`, :attr:`~django.db.models.Field.db_column` and other field attributes.
+- [c9d6b38b] Alters the constraint named ``name`` of the model with ``model_name`` with the new ``constraint`` without affecting the database.
+- [11c03e06] Alters the managers that are available during migrations.
+- [a8062f75] As an example, let's make an operation that loads PostgreSQL extensions (which contain some of PostgreSQL's more exciting features). Since there's no model state changes, all it does is run one command::
+- [a2304d91] Bear in mind that when reversed, this is actually adding a field to a model. The operation is reversible (apart from any data loss, which is irreversible) if the field is nullable or if it has a default value that can be used to populate the recreated column. If the field is not nullable and does not have a default value, the operation is irreversible.
+- [0f649a65] By default, ``RunPython`` will run its contents inside a transaction on databases that do not support DDL transactions (for example, MySQL and Oracle). This should be safe, but may cause a crash if you attempt to use the ``schema_editor`` provided on these backends; in this case, pass ``atomic=False`` to the ``RunPython`` operation.
+- [1fa066f8] Changes a field's name (and, unless :attr:`~django.db.models.Field.db_column` is set, its column name).
+- [2c8150c4] Changes the model's set of custom indexes (the ``index_together`` option on the ``Meta`` subclass).
+- [1f16bede] Changes the model's set of unique constraints (the :attr:`~django.db.models.Options.unique_together` option on the ``Meta`` subclass).
+- [3900977b] Changes the model's table comment (the :attr:`~django.db.models.Options.db_table_comment` option on the ``Meta`` subclass).
+- [baed0e1b] Creates a :doc:`constraint </ref/models/constraints>` in the database table for the model with ``model_name``.
+- [829646fe] Creates a new model in the project history and a corresponding table in the database to match it.
+- [a8051a8f] Creates an index in the database table for the model with ``model_name``. ``index`` is an instance of the :class:`~django.db.models.Index` class.
+- [097fd7cc] Deletes the model from the project history and its table from the database.
+- [89570f94] Django also uses these ``Operation`` objects to work out what your models looked like historically, and to calculate what changes you've made to your models since the last migration so it can automatically write your migrations; that's why they're declarative, as it means Django can easily load them all into memory and run through them without touching the database to work out what your project should look like.
+- [a6714199] For an example using ``SeparateDatabaseAndState``, see :ref:`changing-a-manytomanyfield-to-use-a-through-model`.
+- [e8f0edbe] For introductory material, see the :doc:`migrations topic guide </topics/migrations>`.
+- [9a273b9b] If ``reverse_sql`` is ``None`` (the default), the ``RunSQL`` operation is irreversible.
+- [ca1ffcad] If the ``RunPython`` operation is part of a :ref:`non-atomic migration <non-atomic-migrations>`, the operation will only be executed in a transaction if ``atomic=True`` is passed to the ``RunPython`` operation.
+- [421d3154] If the actual state of the database and Django's view of the state get out of sync, this can break the migration framework, even leading to data loss. It's worth exercising caution and checking your database and state operations carefully. You can use :djadmin:`sqlmigrate` and :djadmin:`dbshell` to check your database operations. You can use :djadmin:`makemigrations`, especially with :option:`--dry-run<makemigrations --dry-run>`, to check your state operations.
+- [f0cfc602] If you have a different database and aren't sure if it supports DDL transactions, check the ``django.db.connection.features.can_rollback_ddl`` attribute.
+- [1ea4078d] If you need an empty migration file to write your own ``Operation`` objects into, use ``python manage.py makemigrations --empty yourappname``, but be aware that manually adding schema-altering operations can confuse the migration autodetector and make resulting runs of :djadmin:`makemigrations` output incorrect code.
+- [06529131] If you want to include literal percent signs in the query, you have to double them if you are passing parameters.
+- [43515141] It accepts two lists of operations. When asked to apply state, it will use the ``state_operations`` list (this is a generalized version of :class:`RunSQL`'s ``state_operations`` argument). When asked to apply changes to the database, it will use the ``database_operations`` list.
+- [b74aa8cd] Makes or deletes the ``_order`` column needed for the :attr:`~django.db.models.Options.order_with_respect_to` option on the ``Meta`` subclass.
+- [4c1591d3] Migration files are composed of one or more ``Operation``\s, objects that declaratively record what the migration should do to your database.
+- [7cc6c5f2] Much like :class:`RunSQL`, ensure that if you change schema inside here you're either doing it outside the scope of the Django model system (e.g. triggers) or that you use :class:`SeparateDatabaseAndState` to add in operations that will reflect your changes to the model state - otherwise, the versioned ORM and the autodetector will stop working correctly.
+- [8f0683f1] Note that not all changes are possible on all databases - for example, you cannot change a text-type field like ``models.TextField()`` into a number-type field like ``models.IntegerField()`` on most databases.
+- [744995eb] On databases that do support DDL transactions (SQLite and PostgreSQL), ``RunPython`` operations do not have any transactions automatically added besides the transactions created for each migration. Thus, on PostgreSQL, for example, you should avoid combining schema changes and ``RunPython`` operations in the same migration or you may hit errors like ``OperationalError: cannot ALTER TABLE "mytable" because it has pending trigger events``.
+- [8870af81] On databases that don't support an index renaming statement (SQLite), the operation will drop and recreate the index, which can be expensive.
+- [edb71060] Operation category ==================
+- [a7354037] Operations have a relatively simple API, and they're designed so that you can easily write your own to supplement the built-in Django ones. The basic structure of an ``Operation`` looks like this::
+- [456ff8a0] Removes a field from a model.
+- [0fac9447] Removes the constraint named ``name`` from the model with ``model_name``.
+- [bb444d75] Removes the index named ``name`` from the model with ``model_name``.
+- [129dce80] Renames an index in the database table for the model with ``model_name``. Exactly one of ``old_name`` and ``old_fields`` can be provided. ``old_fields`` is an iterable of the strings, often corresponding to fields of ``index_together`` (pre-Django 5.1 option).
+- [1dc894b5] Renames the model from an old name to a new one.
+- [7df4ba46] Runs custom Python code in a historical context. ``code`` (and ``reverse_code`` if supplied) should be callable objects that accept two arguments; the first is an instance of ``django.apps.registry.Apps`` containing historical models that match the operation's place in the project history, and the second is an instance of :class:`SchemaEditor <django.db.backends.base.schema.BaseDatabaseSchemaEditor>`.
+- [0e566b36] Schema Operations =================
+- [76d79dac] Some things to note:
+- [536edc51] Special Operations ==================
+- [ee3cdad2] Stores changes to miscellaneous model options (settings on a model's ``Meta``) like ``permissions`` and ``verbose_name``. Does not affect the database, but persists these changes for :class:`RunPython` instances to use. ``options`` should be a dictionary mapping option names to values.
+- [e94cb19e] The ``preserve_default`` argument indicates whether the field's default value is permanent and should be baked into the project state (``True``), or if it is temporary and just for this migration (``False``) - usually because the migration is adding a non-nullable field to a table and needs a default value to put into existing rows. It does not affect the behavior of setting defaults in the database directly.
+- [47487c20] The ``reverse_code`` argument is called when unapplying migrations. This callable should undo what is done in the ``code`` callable so that the migration is reversible. If ``reverse_code`` is ``None`` (the default), the ``RunPython`` operation is irreversible.
+- [8436c64d] The ``reverse_sql`` queries are executed when the migration is unapplied. They should undo what is done by the ``sql`` queries. For example, to undo the above insertion with a deletion::
+- [0551d71b] The ``state_operations`` argument allows you to supply operations that are equivalent to the SQL in terms of project state. For example, if you are manually creating a column, you should pass in a list containing an ``AddField`` operation here so that the autodetector still has an up-to-date state of the model. If you don't, when you next run ``makemigrations``, it won't see any operation that adds that field and so will try to run it again. For example::
+- [684cdffae40374da] The optional ``elidable`` argument determines whether or not the operation will be removed (elided) when :ref:`squashing migrations <migration-squashing>`.
+- [b49285e2] The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in making routing decisions. See :ref:`topics-db-multi-db-hints` for more details on database hints.
+- [9fa86356] There are also more specialized ``Operation`` objects which are for things like :ref:`data migrations <data-migrations>` and for advanced manual database manipulation. You can also write your own ``Operation`` classes if you want to encapsulate a custom change you commonly make.
+- [110ac9f9] This is generally the operation you would use to create :ref:`data migrations <data-migrations>`, run custom data updates and alterations, and anything else you need access to an ORM and/or Python code for.
+- [0272992c] Writing your own ================
+- [c144ef19] You are advised to write the code as a separate function above the ``Migration`` class in the migration file, and pass it to ``RunPython``. Here's an example of using ``RunPython`` to create some initial objects on a ``Country`` model::
+- [fd4b9ccf] You can also pass a list of strings or 2-tuples. The latter is used for passing queries and parameters in the same way as :ref:`cursor.execute() <executing-custom-sql>`. These three operations are equivalent::
+- [f6c77428] You can take this template and work from it, though we suggest looking at the built-in Django operations in ``django.db.migrations.operations`` - they cover a lot of the example usage of semi-internal aspects of the migration framework like ``ProjectState`` and the patterns used to get historical models, as well as ``ModelState`` and the patterns used to mutate historical models in ``state_forwards()``.
+- [d6e3c396] You may have to manually add this if you change the model's name and quite a few of its fields at once; to the autodetector, this will look like you deleted a model with the old name and added a new one with a different name, and the migration it creates will lose any data in the old table.
+- [2df2bef6] ``AddConstraint`` -----------------
+- [962c51df] ``AddField`` ------------
+- [48fdd699] ``AddIndex`` ------------
+- [ea351cd4] ``AlterConstraint`` -------------------
+- [9523e1ca] ``AlterField`` --------------
+- [bcb78b66] ``AlterIndexTogether`` ----------------------
+- [5346ad6d] ``AlterModelManagers`` ----------------------
+- [b65adf0c] ``AlterModelOptions`` ---------------------
+- [899cba88] ``AlterModelTableComment`` --------------------------
+- [614321da] ``AlterModelTable`` -------------------
+- [84aef530] ``AlterOrderWithRespectTo`` ---------------------------
+- [e7422bb0] ``AlterUniqueTogether`` -----------------------
+- [fd2a427a] ``CreateModel`` ---------------
+- [c6bbe029] ``DeleteModel`` ---------------
+- [8655636b] ``RemoveConstraint`` --------------------
+- [868c9e26] ``RemoveField`` ---------------
+- [6cc83a1c] ``RemoveIndex`` ---------------
+- [8be62668] ``RenameField`` ---------------
+- [2724e27b] ``RenameIndex`` ---------------
+- [6e6f9f85] ``RenameModel`` ---------------
+- [5a2f994f] ``RunPython`` -------------
+- [2ead21f0] ``RunSQL`` ----------
+- [6501f50f] ``SeparateDatabaseAndState`` ----------------------------
+- [38499ecb] ``bases`` is an optional list of other classes to have this model inherit from; it can contain both class objects as well as strings in the format ``"appname.ModelName"`` if you want to depend on another model (so you inherit from the historical version). If it's not supplied, it defaults to inheriting from the standard ``models.Model``.
+- [bb18bd0d] ``fields`` is a list of 2-tuples of ``(field_name, field_instance)``. The field instance should be an unbound field (so just ``models.CharField(...)``, rather than a field taken from another model).
+- [46e12eb3] ``managers`` takes a list of 2-tuples of ``(manager_name, manager_instance)``. The first manager in the list will be the default manager for this model during migrations.
+- [18a71610] ``name`` is the model name, as would be written in the ``models.py`` file.
+- [1f66dd8a] ``options`` is an optional dictionary of values from the model's ``Meta`` class.
+- [c0885fca] ``sql``, and ``reverse_sql`` if provided, should be strings of SQL to run on the database. On most database backends (all but PostgreSQL), Django will split the SQL into individual statements prior to executing them.

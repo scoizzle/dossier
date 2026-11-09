@@ -1,6 +1,6 @@
 # Fact eefec6ae
 
-Store id: b02852bb-ae51-4e0f-9d82-b503e90276f5
+Store id: 4a58555f-9c97-4247-a056-7da8d021e733
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class GreaterThan
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b02852bb-ae51-4e0f-9d82-b503e90276f5",
+  "id": "4a58555f-9c97-4247-a056-7da8d021e733",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "GreaterThan"
       },
       "rel": "contains",
-      "target": "da7f3222-99c6-4593-926d-12af3a5244e4"
+      "target": "d0f6990b-ec66-478b-ab71-a75afeafb677"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

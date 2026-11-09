@@ -1,14 +1,14 @@
 # django/contrib/auth/tokens
 
-- Subject: django/contrib/auth/tokens (id `9d712e39-1163-478d-8b25-69f655d5102e`)
+- Subject: django/contrib/auth/tokens (id `0396079c-f93f-42ea-b887-658061d19418`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 16 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1111 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Check that the timestamp/uid has not been tampered with for secret in [self.secret, *self.secret_fallbacks]: if constant_time_compare( self._make_token_with_timestamp(user, ts, secret), token, ): break else: return False [936b1c77]
 - # Check the timestamp is within limit. if (self._num_seconds(self._now()) - ts) > settings.PASSWORD_RESET_TIMEOUT: return False [31a1f269]
@@ -27,6 +27,12 @@
 - def check_token(self, user, token): """ Check that a password reset token is correct for a given user. """ if not (user and token): return False # Parse the token try: ts_b36, _ = token.split("-") except ValueError: return False [e2ac5866]
 - def make_token(self, user): """ Return a token that can be used once to do a password reset for the given user. """ return self._make_token_with_timestamp( user, self._num_seconds(self._now()), self.secret, ) [32443b0d]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [ae05b802] [58ce58bc] [28f19fdd] [c8aed348] [459f47f4] [28da148d] [e5e9624c]
+- [ae05b802] key_salt = "django.contrib.auth.tokens.PasswordResetTokenGenerator" algorithm = None _secret = None _secret_fallbacks = None
+- [58ce58bc] secret = property(_get_secret, _set_secret)
+- [28f19fdd] secret_fallbacks = property(_get_fallbacks, _set_fallbacks)
+- [c8aed348] class PasswordResetTokenGenerator: """ Strategy object used to generate and check tokens for the password reset mechanism. """
+- [459f47f4] default_token_generator = PasswordResetTokenGenerator()
+- [28da148d] from datetime import datetime
+- [e5e9624c] from django.conf import settings from django.utils.crypto import constant_time_compare, salted_hmac from django.utils.http import base36_to_int, int_to_base36

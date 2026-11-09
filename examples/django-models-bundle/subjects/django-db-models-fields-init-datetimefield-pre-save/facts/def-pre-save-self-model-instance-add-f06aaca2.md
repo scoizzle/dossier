@@ -1,6 +1,6 @@
 # Fact f06aaca2
 
-Store id: 2d43d99b-e681-4798-aa7b-7b62a6a28ce4
+Store id: 00f90ecb-8e54-48c8-be84-99c947a9894a
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_save(self, model_instance, add)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4338430+00:00`
+- posted_at: `2026-11-09T23:31:56.5981030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1690,
     "symbol": "DateTimeField.pre_save"
   },
-  "id": "2d43d99b-e681-4798-aa7b-7b62a6a28ce4",
+  "id": "00f90ecb-8e54-48c8-be84-99c947a9894a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4338430+00:00"
+    "posted_at": "2026-11-09T23:31:56.5981030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e2255347-9f2c-40bf-a82c-01e41ffd3253",
+  "subject_id": "9a8d1059-d44f-46ce-b349-14777c67ef05",
   "subject_name": "django/db/models/fields/__init__::DateTimeField.pre_save",
   "tags": [
     "entity:method"

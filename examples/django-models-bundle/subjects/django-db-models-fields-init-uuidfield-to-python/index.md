@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::UUIDField.to_python
 
-- Subject: django/db/models/fields/__init__::UUIDField.to_python (id `fa804efc-48dc-4f99-b42f-89ef979044c4`)
+- Subject: django/db/models/fields/__init__::UUIDField.to_python (id `1e640ef4-beea-4ded-9861-b4dbd8a9af88`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

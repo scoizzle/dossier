@@ -1,14 +1,14 @@
 # django/views/generic/base
 
-- Subject: django/views/generic/base (id `e0feb424-9f0d-4b2b-84bf-4ff896dbbbf6`)
+- Subject: django/views/generic/base (id `5dcc068a-e67f-40a1-8016-5532eed66a5f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 16 of 45
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2294 tokens
+- Facts shown: 42 of 45
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - async def func(): return response [2862628cb49f7cae]
 - return func() else: return response [b1a0bda6827dbd27]
@@ -27,6 +27,31 @@
 - def delete(self, request, *args, **kwargs): return self.get(request, *args, **kwargs) [9fdff961]
 - def get(self, request, *args, **kwargs): context = self.get_context_data(**kwargs) return self.render_to_response(context) [3d77e1b0]
 
-## Beyond the budget
+## All facts
 
-26 more facts did not fit in the budget: [ca6796b2] [2c70017e] [dc19a141] [e4cac88d] [e41d8d56] [04f75311] [352a1005] [a428a7b8] [81911099] [b5309839] [7c23142a] [b57940f9] [0efbe757] [79c59a32] [eaf62ffe] [6d2d9f93] [e7728b99] [d9f385f0] [010cf8c8] [a4c8a383] [80998189] [f67a1742] [c080a787] [5b65050b] [908e9049] [a783acd9b0048dcc-3]
+- [ca6796b2] def dispatch(self, request, *args, **kwargs): # Try to dispatch to the right method; if a method doesn't exist, # defer to the error handler. Also defer to the error handler if the # request method isn't on the approved list. method = request.method.lower() if method in self.http_method_names: handler = getattr(self, method, self.http_method_not_allowed) else: handler = self.http_method_not_allowed return handler(request, *args, **kwargs)
+- [2c70017e] def get(self, request, *args, **kwargs): url = self.get_redirect_url(*args, **kwargs) if url: if self.permanent: return HttpResponsePermanentRedirect( url, preserve_request=self.preserve_request ) else: return HttpResponseRedirect(url, preserve_request=self.preserve_request) else: response = HttpResponseGone() log_response("Gone: %s", request.path, response=response, request=request) return response
+- [dc19a141] def get_context_data(self, **kwargs): kwargs.setdefault("view", self) if self.extra_context is not None: kwargs.update(self.extra_context) return kwargs
+- [e4cac88d] def get_redirect_url(self, *args, **kwargs): """ Return the URL redirect to. Keyword arguments from the URL pattern match generating the redirect request are provided as kwargs to this method. """ if self.url: url = self.url % kwargs elif self.pattern_name: url = reverse(self.pattern_name, args=args, kwargs=kwargs) else: return None
+- [e41d8d56] def get_template_names(self): """ Return a list of template names to be used for the request. Must return a list. May not be called if render_to_response() is overridden. """ if self.template_name is None: raise ImproperlyConfigured( "TemplateResponseMixin requires either a definition of " "'template_name' or an implementation of 'get_template_names()'" ) else: return [self.template_name]
+- [04f75311] def head(self, request, *args, **kwargs): return self.get(request, *args, **kwargs)
+- [352a1005] def http_method_not_allowed(self, request, *args, **kwargs): response = HttpResponseNotAllowed(self._allowed_methods()) log_response( "Method Not Allowed (%s): %s", request.method, request.path, response=response, request=request, )
+- [a428a7b8] def options(self, request, *args, **kwargs): """Handle responding to requests for the OPTIONS HTTP verb.""" response = HttpResponse() response.headers["Allow"] = ", ".join(self._allowed_methods()) response.headers["Content-Length"] = "0"
+- [81911099] def options(self, request, *args, **kwargs): return self.get(request, *args, **kwargs)
+- [b5309839] def patch(self, request, *args, **kwargs): return self.get(request, *args, **kwargs)
+- [7c23142a] def post(self, request, *args, **kwargs): return self.get(request, *args, **kwargs)
+- [b57940f9] def put(self, request, *args, **kwargs): return self.get(request, *args, **kwargs)
+- [0efbe757] def render_to_response(self, context, **response_kwargs): """ Return a response, using the `response_class` for this view, with a template rendered with the given context.
+- [79c59a32] def setup(self, request, *args, **kwargs): """Initialize attributes shared by all view methods.""" if hasattr(self, "get") and not hasattr(self, "head"): self.head = self.get self.request = request self.args = args self.kwargs = kwargs
+- [eaf62ffe] extra_context = None
+- [6d2d9f93] http_method_names = [ "get", "post", "put", "patch", "delete", "head", "options", "trace", ]
+- [e7728b99] permanent = False url = None pattern_name = None query_string = False preserve_request = False
+- [d9f385f0] template_name = None template_engine = None response_class = TemplateResponse content_type = None
+- [010cf8c8] class ContextMixin: """ A default context mixin that passes the keyword arguments received by get_context_data() as the template context. """
+- [a4c8a383] class RedirectView(View): """Provide a redirect on any GET request."""
+- [80998189] class TemplateResponseMixin: """A mixin that can be used to render a template."""
+- [f67a1742] class TemplateView(TemplateResponseMixin, ContextMixin, View): """ Render a template. Pass keyword arguments from the URLconf to the context. """
+- [c080a787] class View: """ Intentionally simple parent class for all views. Only implements dispatch-by-method and simple sanity checking. """
+- [5b65050b] from django.core.exceptions import ImproperlyConfigured from django.http import ( HttpResponse, HttpResponseGone, HttpResponseNotAllowed, HttpResponsePermanentRedirect, HttpResponseRedirect, ) from django.template.response import TemplateResponse from django.urls import reverse from django.utils.decorators import classonlymethod from django.utils.functional import classproperty from django.utils.log import log_response
+- [908e9049] import logging from inspect import iscoroutinefunction, markcoroutinefunction from urllib.parse import urlparse
+- [a783acd9b0048dcc-3] logger = logging.getLogger("django.request")

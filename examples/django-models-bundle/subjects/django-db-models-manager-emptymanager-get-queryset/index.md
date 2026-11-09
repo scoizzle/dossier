@@ -1,9 +1,9 @@
 # django/db/models/manager::EmptyManager.get_queryset
 
-- Subject: django/db/models/manager::EmptyManager.get_queryset (id `d2b51427-f872-47f2-8f78-707bc35aadef`)
+- Subject: django/db/models/manager::EmptyManager.get_queryset (id `81c36474-3794-44d2-977b-0a5018195f72`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

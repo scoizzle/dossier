@@ -1,8 +1,8 @@
 # django/contrib/staticfiles/management/commands/runserver
 
-- Subject: django/contrib/staticfiles/management/commands/runserver (id `d723cd2a-599f-4184-a932-f60b0437cf9f`)
+- Subject: django/contrib/staticfiles/management/commands/runserver (id `d7376861-1d6a-470b-90c7-8beec9df338d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 324 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

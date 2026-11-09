@@ -1,6 +1,6 @@
 # Fact 5c1f3dba
 
-Store id: da530672-a585-4536-b899-e311e5053d5e
+Store id: 8a8b7f8c-5a65-44db-9aa8-e6ba0d1790da
 
 ## Text
 
@@ -20,7 +20,7 @@ class WindowFrameExclusion(Enum)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7691060+00:00`
+- posted_at: `2026-11-09T23:31:56.0101790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2127,
     "symbol": "WindowFrameExclusion"
   },
-  "id": "da530672-a585-4536-b899-e311e5053d5e",
+  "id": "8a8b7f8c-5a65-44db-9aa8-e6ba0d1790da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7691060+00:00"
+    "posted_at": "2026-11-09T23:31:56.0101790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "971613cf-87a5-45e8-9e24-5bf0e764def4",
+  "subject_id": "7be0d075-7268-4b93-9fda-fe6d29000ca5",
   "subject_name": "django/db/models/expressions::WindowFrameExclusion",
   "tags": [
     "entity:class"

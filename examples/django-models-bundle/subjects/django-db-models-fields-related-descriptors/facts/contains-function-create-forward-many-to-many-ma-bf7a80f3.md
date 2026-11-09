@@ -1,6 +1,6 @@
 # Fact bf7a80f3
 
-Store id: e157708a-dda7-41e2-a10b-331b10b6f1e7
+Store id: 978e0d9c-4259-4791-898b-e431171ac6da
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function create_forward_many_to_many_manager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9500290+00:00`
+- posted_at: `2026-11-09T23:31:59.5992420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e157708a-dda7-41e2-a10b-331b10b6f1e7",
+  "id": "978e0d9c-4259-4791-898b-e431171ac6da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9500290+00:00"
+    "posted_at": "2026-11-09T23:31:59.5992420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "create_forward_many_to_many_manager"
       },
       "rel": "contains",
-      "target": "f2a5952d-cd1f-470c-afee-e5e776292e55"
+      "target": "b7cfffd0-e556-4717-bf9e-15d435ef0f30"
     }
   ],
   "status": "live",
-  "subject_id": "ab7c02b3-8e61-4183-bee7-c417a3a67ad2",
+  "subject_id": "468ed079-81c3-4570-9307-d21a1d74776a",
   "subject_name": "django/db/models/fields/related_descriptors",
   "tags": [
     "entity:function"

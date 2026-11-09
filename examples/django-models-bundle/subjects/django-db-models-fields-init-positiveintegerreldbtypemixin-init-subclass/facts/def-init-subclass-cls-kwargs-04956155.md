@@ -1,6 +1,6 @@
 # Fact 04956155
 
-Store id: d453e755-9249-4b56-a097-fe8fefed7e54
+Store id: 88724e41-e31f-4c8e-a6e0-0b4198bec96b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init_subclass__(cls, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6006760+00:00`
+- posted_at: `2026-11-09T23:31:56.7616800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2415,
     "symbol": "PositiveIntegerRelDbTypeMixin.__init_subclass__"
   },
-  "id": "d453e755-9249-4b56-a097-fe8fefed7e54",
+  "id": "88724e41-e31f-4c8e-a6e0-0b4198bec96b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6006760+00:00"
+    "posted_at": "2026-11-09T23:31:56.7616800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0affad5-c077-48d4-8f33-81370dc6d3e8",
+  "subject_id": "fae92a2f-5a2c-4408-a9b2-1395a0d931fb",
   "subject_name": "django/db/models/fields/__init__::PositiveIntegerRelDbTypeMixin.__init_subclass__",
   "tags": [
     "entity:method"

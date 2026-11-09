@@ -4,9 +4,9 @@ This file lists every subject under `django/db/models/fields/__init__/` as folde
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/fields/__init__ | subject | 40 | 0 | 0 | 9837 | [subjects/django-db-models-fields-init/index.md](../subjects/django-db-models-fields-init/index.md) |
+| django/db/models/fields/__init__ | subject | 40 | 0 | 0 | 9848 | [subjects/django-db-models-fields-init/index.md](../subjects/django-db-models-fields-init/index.md) |
 | part-1/ | group | 96 | 0 | 0 | 5965 | [index/django-db-models-fields-init-part-1.md](django-db-models-fields-init-part-1.md) |
-| part-2/ | group | 101 | 2 | 0 | 5950 | [index/django-db-models-fields-init-part-2.md](django-db-models-fields-init-part-2.md) |
+| part-2/ | group | 101 | 2 | 0 | 5951 | [index/django-db-models-fields-init-part-2.md](django-db-models-fields-init-part-2.md) |
 | part-3/ | group | 82 | 0 | 0 | 5134 | [index/django-db-models-fields-init-part-3.md](django-db-models-fields-init-part-3.md) |
 
 Up: [index/django-db-models-fields.md](django-db-models-fields.md)

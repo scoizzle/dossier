@@ -1,8 +1,8 @@
 # django/db/models/fields/composite
 
-- Subject: django/db/models/fields/composite (id `bc7d2f02-df5f-4f9e-a0c3-51945dbf8415`)
+- Subject: django/db/models/fields/composite (id `491ed372-374e-4a6d-8e01-91b4c3f9a27f`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 73 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

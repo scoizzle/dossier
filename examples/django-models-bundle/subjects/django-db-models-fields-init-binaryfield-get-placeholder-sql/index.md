@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BinaryField.get_placeholder_sql
 
-- Subject: django/db/models/fields/__init__::BinaryField.get_placeholder_sql (id `21c73c24-8950-477b-815f-39a11967999f`)
+- Subject: django/db/models/fields/__init__::BinaryField.get_placeholder_sql (id `3c5f512b-d00f-40ce-a798-db11e88630f0`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

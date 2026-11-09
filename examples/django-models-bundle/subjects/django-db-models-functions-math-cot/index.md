@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Cot
 
-- Subject: django/db/models/functions/math::Cot (id `524443fe-d151-450a-b3cc-572cb8a5876a`)
+- Subject: django/db/models/functions/math::Cot (id `74fb9943-e366-43bf-97e0-662923bba7aa`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/contrib/sessions/base_session
 
-- Subject: django/contrib/sessions/base_session (id `f61e9855-b6c6-4611-b2ab-d68a627a2859`)
+- Subject: django/contrib/sessions/base_session (id `274ccd91-877e-48ea-893f-948fef2ddcf2`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 426 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

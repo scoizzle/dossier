@@ -1,6 +1,6 @@
 # Fact cfdcb3ca
 
-Store id: 4c055dc4-4c1e-40c7-9b6b-f45fe9670912
+Store id: 8141870e-7a43-4ba5-8fc7-a83f851631f5
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_field_choices()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6629820+00:00`
+- posted_at: `2026-11-09T23:32:05.8541700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1464,
     "symbol": "SQLCompiler.get_select_for_update_of_arguments._get_field_choices"
   },
-  "id": "4c055dc4-4c1e-40c7-9b6b-f45fe9670912",
+  "id": "8141870e-7a43-4ba5-8fc7-a83f851631f5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6629820+00:00"
+    "posted_at": "2026-11-09T23:32:05.8541700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "af9fc537-8022-4d4a-bda5-30b0245b44d8",
+  "subject_id": "1d1eb445-b133-427b-a3a5-7649d2674cdc",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_field_choices",
   "tags": [
     "entity:function"

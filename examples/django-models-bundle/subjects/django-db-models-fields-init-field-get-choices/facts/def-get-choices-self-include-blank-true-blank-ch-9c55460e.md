@@ -1,6 +1,6 @@
 # Fact 9c55460e
 
-Store id: fc022d37-5de1-4bfb-b9d8-5acb78feb9e4
+Store id: 2fbea748-5573-4854-91d4-c8d2bc59b5df
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_choices( self, include_blank=True, blank_choice=None, limit_choices_to=N
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3530970+00:00`
+- posted_at: `2026-11-09T23:31:56.5280750+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1096,
     "symbol": "Field.get_choices"
   },
-  "id": "fc022d37-5de1-4bfb-b9d8-5acb78feb9e4",
+  "id": "2fbea748-5573-4854-91d4-c8d2bc59b5df",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3530970+00:00"
+    "posted_at": "2026-11-09T23:31:56.5280750+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b3bd35a7-c308-4cd9-819d-871dabbb7dfc",
+  "subject_id": "18e5dead-abe6-44c7-8595-7a2de5ae13dc",
   "subject_name": "django/db/models/fields/__init__::Field.get_choices",
   "tags": [
     "entity:method"

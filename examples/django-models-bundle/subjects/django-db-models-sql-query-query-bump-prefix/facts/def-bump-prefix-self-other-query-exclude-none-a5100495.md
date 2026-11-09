@@ -1,6 +1,6 @@
 # Fact a5100495
 
-Store id: 49d32fa6-f4ac-4dec-bdc0-d421399bbd9b
+Store id: c8ce04aa-2b0c-409b-b690-6b73720f90b9
 
 ## Text
 
@@ -20,7 +20,7 @@ def bump_prefix(self, other_query, exclude=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3088600+00:00`
+- posted_at: `2026-11-09T23:32:06.8588300+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1057,
     "symbol": "Query.bump_prefix"
   },
-  "id": "49d32fa6-f4ac-4dec-bdc0-d421399bbd9b",
+  "id": "c8ce04aa-2b0c-409b-b690-6b73720f90b9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3088600+00:00"
+    "posted_at": "2026-11-09T23:32:06.8588300+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "469d9860-a149-43c7-9b01-85d9e5521c29",
+  "subject_id": "fe52eb6f-b44a-4182-b190-f453a11d8117",
   "subject_name": "django/db/models/sql/query::Query.bump_prefix",
   "tags": [
     "entity:method"

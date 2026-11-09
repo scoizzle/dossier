@@ -1,6 +1,6 @@
 # Fact 94b7ce81
 
-Store id: 587cb610-6890-43c6-9ca4-ceb027883041
+Store id: eaa7078e-0898-447d-985a-4c24f70b4ab7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PostgresOperatorLookup
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "587cb610-6890-43c6-9ca4-ceb027883041",
+  "id": "eaa7078e-0898-447d-985a-4c24f70b4ab7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PostgresOperatorLookup"
       },
       "rel": "contains",
-      "target": "f83f01fb-8908-4746-875e-caa2b54a6150"
+      "target": "95ee4512-90d1-42d3-b960-8dd2bdf473af"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

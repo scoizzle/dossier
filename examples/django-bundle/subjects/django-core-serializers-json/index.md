@@ -1,14 +1,14 @@
 # django/core/serializers/json
 
-- Subject: django/core/serializers/json (id `0ddfab0c-34ec-416e-a8f8-a932eed45b7a`)
+- Subject: django/core/serializers/json (id `294f6a44-2317-4268-b459-6acc60cb6806`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 879 tokens
-- Facts shown: 14 of 15
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 903 tokens
+- Facts shown: 15 of 15
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __init__(self, stream_or_string, **options): if not isinstance(stream_or_string, (bytes, str)): stream_or_string = stream_or_string.read() if isinstance(stream_or_string, bytes): stream_or_string = stream_or_string.decode() try: objects = json.loads(stream_or_string) except Exception as exc: raise DeserializationError() from exc super().__init__(objects, **options) [28a4bf77]
 - def _handle_object(self, obj): try: yield from super()._handle_object(obj) except (GeneratorExit, DeserializationError): raise except Exception as exc: raise DeserializationError(f"Error deserializing object: {exc}") from exc [f825e824de238a63]
@@ -25,6 +25,6 @@
 - class Serializer(PythonSerializer): """Convert a queryset to JSON.""" [6e90f67b]
 - from django.core.serializers.base import DeserializationError from django.core.serializers.python import Deserializer as PythonDeserializer from django.core.serializers.python import Serializer as PythonSerializer from django.utils.duration import duration_iso_string from django.utils.functional import Promise from django.utils.timezone import is_aware [14962e72]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [bc567afe]
+- [bc567afe] import datetime import decimal import json import uuid

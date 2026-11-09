@@ -1,6 +1,6 @@
 # Fact 16d7ddcc
 
-Store id: e438c6a4-bb67-479b-8136-0bc8e39ca641
+Store id: 7b9a0790-b361-444b-9e91-e0e878c81b78
 
 ## Text
 
@@ -20,7 +20,7 @@ def __setstate__(self, state)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2164320+00:00`
+- posted_at: `2026-11-09T23:31:57.3762500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 154,
     "symbol": "FieldFile.__setstate__"
   },
-  "id": "e438c6a4-bb67-479b-8136-0bc8e39ca641",
+  "id": "7b9a0790-b361-444b-9e91-e0e878c81b78",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2164320+00:00"
+    "posted_at": "2026-11-09T23:31:57.3762500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8709ec5-c9c3-414d-b332-47d720af898e",
+  "subject_id": "f1142406-ff03-49ec-a52f-8ac36f128e04",
   "subject_name": "django/db/models/fields/files::FieldFile.__setstate__",
   "tags": [
     "entity:method"

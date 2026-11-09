@@ -1,8 +1,8 @@
 # django/core/files/temp
 
-- Subject: django/core/files/temp (id `09cc5ff2-461f-406e-ae76-49510194856b`)
+- Subject: django/core/files/temp (id `c12b555b-e1c1-4f6e-9c51-30e7ff0bf422`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 708 tokens
 - Facts shown: 18 of 18
 - Conflicts: 0

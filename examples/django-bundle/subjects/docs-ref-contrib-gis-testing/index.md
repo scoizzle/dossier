@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/testing
 
-- Subject: docs/ref/contrib/gis/testing (id `44fb048a-f860-4e86-8d0e-35eb41d53e18`)
+- Subject: docs/ref/contrib/gis/testing (id `64cf8abd-a004-4bc9-ada4-bcf0db30d0bb`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 32 of 44
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1334 tokens
+- Facts shown: 43 of 44
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ ./runtests.py --settings=postgis [766d89cd]
 - $ ./runtests.py --settings=postgis gis_tests [24eaa8b6]
@@ -43,6 +43,16 @@
 - Obtaining sufficient privileges ------------------------------- [71558b41]
 - On Windows platforms you can use the pgAdmin III utility to add superuser privileges to your database user. [01bef848]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [444f0888] [6f4876d9cd2b3e11] [c3d53385] [a45f7b68] [8d2b0fc7] [adfe4cd2] [bbbb7c74] [8855af9b] [1b95aa83] [d2adc5915dce89b8-2] [1c3ec0cb]
+- [444f0888] PostGIS =======
+- [6f4876d9cd2b3e11] Settings --------
+- [c3d53385] The ``-R -S`` flags indicate that we do not want the user to have the ability to create additional users (roles) or to be a superuser, respectively.
+- [a45f7b68] The following is an example bare-bones settings file with spatial backends that can be used to run the entire Django test suite, including those in :mod:`django.contrib.gis`::
+- [8d2b0fc7] This may be done at the time the user is created, for example:
+- [adfe4cd2] To have the GeoDjango tests executed when :ref:`running the Django test suite <running-unit-tests>` with ``runtests.py`` all of the databases in the settings file must be using one of the :ref:`spatial database backends <spatial-backends>`.
+- [bbbb7c74] To make a database user with the ability to create databases, use the following command:
+- [8855af9b] To run only the GeoDjango test suite, specify ``gis_tests``:
+- [1b95aa83] When GeoDjango's spatial backend initializes on PostGIS, it has to perform an SQL query to determine the version in order to figure out what features are available. Advanced users wishing to prevent this additional query may set the version manually using a 3-tuple of integers specifying the major, minor, and micro version numbers for PostGIS. For example, to configure for PostGIS X.Y.Z you would use::
+- [d2adc5915dce89b8-2] Windows -------
+- [1c3ec0cb] ``POSTGIS_VERSION`` ~~~~~~~~~~~~~~~~~~~

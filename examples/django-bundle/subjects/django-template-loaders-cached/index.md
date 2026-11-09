@@ -1,14 +1,14 @@
 # django/template/loaders/cached
 
-- Subject: django/template/loaders/cached (id `d370f749-98b0-440d-9cb8-f54a4f7396cf`)
+- Subject: django/template/loaders/cached (id `ed13c627-797b-469f-861f-ff9410a571b1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 885 tokens
-- Facts shown: 18 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 976 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - x -> a -> a y -> a -> a z -> a -> a """ skip_prefix = "" [3521013a]
 - If skip is provided, only origins that match template_name are included in the cache key. This ensures each template is only parsed and cached once if contained in different extend chains like: [1f9ebddf]
@@ -29,6 +29,7 @@
 - from .base import Loader as BaseLoader [ce213ae266df5867]
 - import hashlib [60ac2b4f]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [2611c3ef] [d87bfbfe]
+- [2611c3ef] class Loader(BaseLoader): def __init__(self, engine, loaders): self.get_template_cache = {} self.loaders = engine.get_template_loaders(loaders) super().__init__(engine)
+- [d87bfbfe] from django.template import TemplateDoesNotExist from django.template.backends.django import copy_exception

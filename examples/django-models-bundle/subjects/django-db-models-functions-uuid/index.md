@@ -1,8 +1,8 @@
 # django/db/models/functions/uuid
 
-- Subject: django/db/models/functions/uuid (id `2f49c011-fa56-48e7-9842-ae8bb83f7168`)
+- Subject: django/db/models/functions/uuid (id `00f211ce-583d-46e5-b7d4-661eb6f15b68`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 32 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

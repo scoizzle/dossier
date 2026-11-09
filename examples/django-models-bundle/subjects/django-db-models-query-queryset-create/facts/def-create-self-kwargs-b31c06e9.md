@@ -1,6 +1,6 @@
 # Fact b31c06e9
 
-Store id: b9848ab7-5c1f-431c-97e8-fa5f57c4d16d
+Store id: ee2733da-12a0-4bc7-9827-77df0c40f1a8
 
 ## Text
 
@@ -20,7 +20,7 @@ def create(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3948160+00:00`
+- posted_at: `2026-11-09T23:32:04.3891660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 736,
     "symbol": "QuerySet.create"
   },
-  "id": "b9848ab7-5c1f-431c-97e8-fa5f57c4d16d",
+  "id": "ee2733da-12a0-4bc7-9827-77df0c40f1a8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3948160+00:00"
+    "posted_at": "2026-11-09T23:32:04.3891660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e0c52941-e2c3-4ce4-9517-61b81c812fc0",
+  "subject_id": "f685809e-9e60-4210-ba11-a2a6d8715c64",
   "subject_name": "django/db/models/query::QuerySet.create",
   "tags": [
     "entity:method"

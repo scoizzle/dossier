@@ -1,6 +1,6 @@
 # Fact c37678b7
 
-Store id: 58f813d4-65fd-4d3a-8f76-5d052035d1c4
+Store id: 0c1b0d35-0197-4be9-b6cc-8fa5da39f12a
 
 ## Text
 
@@ -20,7 +20,7 @@ class Count(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0436040+00:00`
+- posted_at: `2026-11-09T23:31:53.5391420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 295,
     "symbol": "Count"
   },
-  "id": "58f813d4-65fd-4d3a-8f76-5d052035d1c4",
+  "id": "0c1b0d35-0197-4be9-b6cc-8fa5da39f12a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0436040+00:00"
+    "posted_at": "2026-11-09T23:31:53.5391420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9523552e-5bf3-41e9-9520-28b03320621b",
+  "subject_id": "bcd3907f-cca0-4ee9-93a9-4ec8de62b68f",
   "subject_name": "django/db/models/aggregates::Count",
   "tags": [
     "entity:class"

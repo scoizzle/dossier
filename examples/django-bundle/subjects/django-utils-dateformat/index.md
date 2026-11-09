@@ -1,14 +1,14 @@
 # django/utils/dateformat
 
-- Subject: django/utils/dateformat (id `8e545d83-f0dc-457c-8d6a-d02ea5a05b56`)
+- Subject: django/utils/dateformat (id `f0842643-b8a4-4a86-9240-90dd2bde8c05`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 19 of 58
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2539 tokens
+- Facts shown: 55 of 58
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # `offset` is a datetime.timedelta. For negative values (to the west of # UTC) only days can be negative (days=-1) and seconds are always # positive. # e.g.: UTC-1 -> timedelta(days=-1, seconds=82800, microseconds=0) # Positive offsets have days=0 return offset.days * 86400 + offset.seconds [f3f034f3]
 - If timezone information is not available, return an empty string. """ if not self.timezone: return "" [c354b8c3]
@@ -30,6 +30,41 @@
 - def O(self): # NOQA: E743, E741 """ Difference to Greenwich time in hours; e.g. '+0200', '-0430'. [a2043cc5]
 - def P(self): """ Time, in 12-hour hours, minutes and 'a.m.'/'p.m.', with minutes left off if they're zero and the strings 'midnight' and 'noon' if appropriate. Examples: '1 a.m.', '1:30 p.m.', 'midnight', 'noon', '12:30 p.m.' Proprietary extension. """ if self.data.minute == 0 and self.data.hour == 0: return _("midnight") if self.data.minute == 0 and self.data.hour == 12: return _("noon") return "%s %s" % (self.f(), self.a()) [41571ad5]
 
-## Beyond the budget
+## All facts
 
-36 more facts did not fit in the budget: [a3cd9bbd] [e8912055] [26847da2] [cfd01c7e] [aeb53353] [b0727815] [ad801f7a] [57e87522] [e8f72d59] [8a75cb60] [3cb1d0b8] [c66ae224] [86e108b7] [cbda17a6] [6dc90882] [2b3862c9] [2767cb13] [4956b6c1] [3e5e0a0c] [2e3dfc70] [96d0e255] [99031f29] [53ae1ed2] [6011e5a5] [c70f7511] [87681504] [f53183f4] [b0e327d0] [e81ad0dd] [9c72eae9] [474c17dc] [1f1c7ebd] [cbc7cfdc] [7bb756c9] [0aada4c4] [685e7494]
+- [a3cd9bbd] def S(self): """ English ordinal suffix for the day of the month, 2 characters; i.e. 'st', 'nd', 'rd' or 'th'. """ if self.data.day in (11, 12, 13): # Special case return "th" last = self.data.day % 10 if last == 1: return "st" if last == 2: return "nd" if last == 3: return "rd" return "th"
+- [e8912055] def T(self): """ Time zone of this machine; e.g. 'EST' or 'MDT'.
+- [26847da2] def U(self): "Seconds since the Unix epoch (January 1 1970 00:00:00 GMT)" value = self.data if not isinstance(value, datetime): value = datetime.combine(value, time.min) return int(value.timestamp())
+- [cfd01c7e] def W(self): "ISO-8601 week number of year, weeks starting on Monday" return self.data.isocalendar().week
+- [aeb53353] def Y(self): """Year, 4 digits with leading zeros; e.g. '1999'.""" return "%04d" % self.data.year
+- [b0727815] def Z(self): """ Time zone offset in seconds (i.e. '-43200' to '43200'). The offset for timezones west of UTC is always negative, and for those east of UTC is always positive.
+- [ad801f7a] def a(self): "'a.m.' or 'p.m.'" if self.data.hour > 11: return _("p.m.") return _("a.m.")
+- [57e87522] def c(self): """ ISO 8601 Format Example : '2008-01-02T10:30:00.000123' """ return self.data.isoformat()
+- [e8f72d59] def d(self): "Day of the month, 2 digits with leading zeros; i.e. '01' to '31'" return "%02d" % self.data.day
+- [8a75cb60] def e(self): """ Timezone name.
+- [3cb1d0b8] def f(self): """ Time, in 12-hour hours and minutes, with minutes left off if they're zero. Examples: '1', '1:30', '2:05', '2' Proprietary extension. """ hour = self.data.hour % 12 or 12 minute = self.data.minute return "%d:%02d" % (hour, minute) if minute else hour
+- [c66ae224] def g(self): "Hour, 12-hour format without leading zeros; i.e. '1' to '12'" return self.data.hour % 12 or 12
+- [86e108b7] def h(self): "Hour, 12-hour format; i.e. '01' to '12'" return "%02d" % (self.data.hour % 12 or 12)
+- [cbda17a6] def i(self): "Minutes; i.e. '00' to '59'" return "%02d" % self.data.minute
+- [6dc90882] def j(self): "Day of the month without leading zeros; i.e. '1' to '31'" return self.data.day
+- [2b3862c9] def l(self): # NOQA: E743, E741 "Day of the week, textual, long; e.g. 'Friday'" return WEEKDAYS[self.data.weekday()]
+- [2767cb13] def m(self): "Month; i.e. '01' to '12'" return "%02d" % self.data.month
+- [4956b6c1] def n(self): "Month without leading zeros; i.e. '1' to '12'" return self.data.month
+- [3e5e0a0c] def o(self): "ISO 8601 year number matching the ISO week number (W)" return self.data.isocalendar().year
+- [2e3dfc70] def r(self): "RFC 5322 formatted date; e.g. 'Thu, 21 Dec 2000 16:01:07 +0200'" value = self.data if not isinstance(value, datetime): # Assume midnight in default timezone if datetime.date provided. default_timezone = get_default_timezone() value = datetime.combine(value, time.min).replace(tzinfo=default_timezone) elif is_naive(value): value = make_aware(value, timezone=self.timezone) return format_datetime_rfc5322(value)
+- [96d0e255] def s(self): "Seconds; i.e. '00' to '59'" return "%02d" % self.data.second
+- [99031f29] def t(self): "Number of days in the given month; i.e. '28' to '31'" return calendar.monthrange(self.data.year, self.data.month)[1]
+- [53ae1ed2] def u(self): "Microseconds; i.e. '000000' to '999999'" return "%06d" % self.data.microsecond
+- [6011e5a5] def w(self): "Day of the week, numeric, i.e. '0' (Sunday) to '6' (Saturday)" return (self.data.weekday() + 1) % 7
+- [c70f7511] def y(self): """Year, 2 digits with leading zeros; e.g. '99'.""" return "%02d" % (self.data.year % 100)
+- [87681504] def z(self): """Day of the year, i.e. 1 to 366.""" return self.data.timetuple().tm_yday
+- [f53183f4] """ PHP date() style date formatting See https://www.php.net/date for format strings
+- [b0e327d0] Usage: >>> from datetime import datetime >>> d = datetime.now() >>> df = DateFormat(d) >>> print(df.format('jS F Y H:i')) 7th October 2003 11:39 >>> """
+- [e81ad0dd] class DateFormat(TimeFormat): def b(self): "Month, textual, 3 letters, lowercase; e.g. 'jan'" return MONTHS_3[self.data.month]
+- [9c72eae9] class Formatter: def format(self, formatstr): pieces = [] for i, piece in enumerate(re_formatchars.split(str(formatstr))): if i % 2: if type(self.data) is date and hasattr(TimeFormat, piece): raise TypeError( "The format for date objects may not contain " "time-related format specifiers (found '%s')." % piece ) pieces.append(str(getattr(self, piece)())) elif piece: pieces.append(re_escaped.sub(r"\1", piece)) return "".join(pieces)
+- [474c17dc] class TimeFormat(Formatter): def __init__(self, obj): self.data = obj self.timezone = None
+- [1f1c7ebd] def format(value, format_string): "Convenience function" df = DateFormat(value) return df.format(format_string)
+- [cbc7cfdc] def time_format(value, format_string): "Convenience function" tf = TimeFormat(value) return tf.format(format_string)
+- [7bb756c9] from django.utils.dates import ( MONTHS, MONTHS_3, MONTHS_ALT, MONTHS_AP, WEEKDAYS, WEEKDAYS_ABBR, ) from django.utils.regex_helper import _lazy_re_compile from django.utils.timezone import ( _datetime_ambiguous_or_imaginary, get_default_timezone, is_naive, make_aware, ) from django.utils.translation import gettext as _
+- [0aada4c4] import calendar from datetime import date, datetime, time from email.utils import format_datetime as format_datetime_rfc5322
+- [685e7494] re_formatchars = _lazy_re_compile(r"(?<!\\)([aAbcdDeEfFgGhHiIjlLmMnNoOPrsStTUuwWyYzZ])") re_escaped = _lazy_re_compile(r"\\(.)")

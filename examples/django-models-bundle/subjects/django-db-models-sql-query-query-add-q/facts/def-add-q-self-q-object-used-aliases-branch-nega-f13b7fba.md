@@ -1,6 +1,6 @@
 # Fact f13b7fba
 
-Store id: 09ab2182-f94d-45dd-abae-211e4c751cc6
+Store id: 4aa4f6fa-bdc2-4988-8db6-97698e2e7bb4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _add_q( self, q_object, used_aliases, branch_negated=False, current_negated=
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3900890+00:00`
+- posted_at: `2026-11-09T23:32:06.9542720+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1691,
     "symbol": "Query._add_q"
   },
-  "id": "09ab2182-f94d-45dd-abae-211e4c751cc6",
+  "id": "4aa4f6fa-bdc2-4988-8db6-97698e2e7bb4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3900890+00:00"
+    "posted_at": "2026-11-09T23:32:06.9542720+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "60e3f417-6c7a-4672-9dc8-8632997b8790",
+  "subject_id": "5bbe7928-1cdf-4be6-ac28-6879e78b3c1e",
   "subject_name": "django/db/models/sql/query::Query._add_q",
   "tags": [
     "entity:method"

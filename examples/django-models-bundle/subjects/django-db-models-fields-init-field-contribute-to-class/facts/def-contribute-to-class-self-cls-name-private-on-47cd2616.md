@@ -1,6 +1,6 @@
 # Fact 47cd2616
 
-Store id: 918d852f-70d6-492b-be79-513e56eb147b
+Store id: cec2ee16-76fd-4492-8f12-71f59661f132
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, private_only=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3353190+00:00`
+- posted_at: `2026-11-09T23:31:56.4995150+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 984,
     "symbol": "Field.contribute_to_class"
   },
-  "id": "918d852f-70d6-492b-be79-513e56eb147b",
+  "id": "cec2ee16-76fd-4492-8f12-71f59661f132",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3353190+00:00"
+    "posted_at": "2026-11-09T23:31:56.4995150+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4eb83202-4e2d-441f-847f-f8de9bf628d6",
+  "subject_id": "2867de73-cbfd-4e93-9971-221568298dcc",
   "subject_name": "django/db/models/fields/__init__::Field.contribute_to_class",
   "tags": [
     "entity:method"

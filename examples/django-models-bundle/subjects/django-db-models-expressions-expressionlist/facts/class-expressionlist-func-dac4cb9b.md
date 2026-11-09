@@ -1,6 +1,6 @@
 # Fact dac4cb9b
 
-Store id: b14d985b-1615-46db-88a0-e05856d76892
+Store id: 89785fdd-94d0-43b3-acbe-2ec3c762c7e0
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExpressionList(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6581260+00:00`
+- posted_at: `2026-11-09T23:31:55.9245440+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1488,
     "symbol": "ExpressionList"
   },
-  "id": "b14d985b-1615-46db-88a0-e05856d76892",
+  "id": "89785fdd-94d0-43b3-acbe-2ec3c762c7e0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6581260+00:00"
+    "posted_at": "2026-11-09T23:31:55.9245440+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1974fc9e-a23c-4498-be4f-939239e35ec4",
+  "subject_id": "45255c16-2e59-4265-90aa-01fa463833ca",
   "subject_name": "django/db/models/expressions::ExpressionList",
   "tags": [
     "entity:class"

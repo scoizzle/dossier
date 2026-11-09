@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.order_by
 
-- Subject: django/db/models/query::QuerySet.order_by (id `1926cb67-d00d-4f4a-90f5-23c5b0bc9a97`)
+- Subject: django/db/models/query::QuerySet.order_by (id `4c1db588-f18e-4716-8688-499f3a9e645f`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact fd16b25d
 
-Store id: d23b2a06-0108-452b-9037-7c0b4a8c36d0
+Store id: dad8eb2e-f14f-4468-8f62-81eb7ffdcf4f
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractYear(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1143600+00:00`
+- posted_at: `2026-11-09T23:32:01.1802450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 124,
     "symbol": "ExtractYear"
   },
-  "id": "d23b2a06-0108-452b-9037-7c0b4a8c36d0",
+  "id": "dad8eb2e-f14f-4468-8f62-81eb7ffdcf4f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1143600+00:00"
+    "posted_at": "2026-11-09T23:32:01.1802450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2efbdf0e-b3be-469a-8587-3d210281e059",
+  "subject_id": "49101521-6a10-4850-acd7-d7dd4f793a91",
   "subject_name": "django/db/models/functions/datetime::ExtractYear",
   "tags": [
     "entity:class"

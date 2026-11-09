@@ -1,8 +1,8 @@
 # docs/ref/contrib/gis/admin
 
-- Subject: docs/ref/contrib/gis/admin (id `de2eb43c-8ea8-4d36-9bef-4ced4a37d2e0`)
+- Subject: docs/ref/contrib/gis/admin (id `8b0cbea8-b8c0-46fe-865b-1081ce00ffdb`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 219 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

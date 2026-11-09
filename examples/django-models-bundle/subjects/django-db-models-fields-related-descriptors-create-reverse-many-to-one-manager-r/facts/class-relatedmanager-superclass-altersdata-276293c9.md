@@ -1,6 +1,6 @@
 # Fact 276293c9
 
-Store id: 47877a88-ffcf-4813-b974-00635d27b47b
+Store id: 0b135a1a-d34a-4739-9fdc-a4b1927efc36
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedManager(superclass, AltersData)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7857710+00:00`
+- posted_at: `2026-11-09T23:31:59.2315560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 722,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager"
   },
-  "id": "47877a88-ffcf-4813-b974-00635d27b47b",
+  "id": "0b135a1a-d34a-4739-9fdc-a4b1927efc36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7857710+00:00"
+    "posted_at": "2026-11-09T23:31:59.2315560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "248ebe8b-fd88-4500-901d-29501dc117a1",
+  "subject_id": "2c7c2a5f-cc8e-4cf8-af7a-d33061e33b6d",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager",
   "tags": [
     "entity:class"

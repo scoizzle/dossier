@@ -1,6 +1,6 @@
 # Fact d42acf7c
 
-Store id: c09a6976-674f-4df0-a7c8-09c7afb32053
+Store id: ad3c14dc-d6a2-483d-8605-c19b8613d1e9
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CheckConstraint
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7335660+00:00`
+- posted_at: `2026-11-09T23:31:54.3332080+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c09a6976-674f-4df0-a7c8-09c7afb32053",
+  "id": "ad3c14dc-d6a2-483d-8605-c19b8613d1e9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7335660+00:00"
+    "posted_at": "2026-11-09T23:31:54.3332080+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CheckConstraint"
       },
       "rel": "contains",
-      "target": "de8b4e21-53be-43ad-b810-a1448d88ff1d"
+      "target": "cdd9473b-97b6-48d4-b9b0-4493fa358521"
     }
   ],
   "status": "live",
-  "subject_id": "b0b09a84-2c50-431b-bcae-db67e92caf42",
+  "subject_id": "4329b994-d768-4016-b0c5-b696dac271e3",
   "subject_name": "django/db/models/constraints",
   "tags": [
     "entity:class"

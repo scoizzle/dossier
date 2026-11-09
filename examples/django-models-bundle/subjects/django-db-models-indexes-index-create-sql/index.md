@@ -1,9 +1,9 @@
 # django/db/models/indexes::Index.create_sql
 
-- Subject: django/db/models/indexes::Index.create_sql (id `12956150-6fba-4e7c-ad20-616c4d9f732a`)
+- Subject: django/db/models/indexes::Index.create_sql (id `89095fd8-e215-4427-bfe6-c271e00e0fd2`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

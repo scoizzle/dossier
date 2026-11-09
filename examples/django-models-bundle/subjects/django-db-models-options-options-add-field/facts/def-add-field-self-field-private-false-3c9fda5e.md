@@ -1,6 +1,6 @@
 # Fact 3c9fda5e
 
-Store id: 8e47cd9c-eadb-4f9b-812e-20ffe26e2938
+Store id: fa90d234-2301-4f84-91a8-ef6d144f4a83
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_field(self, field, private=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.7927770+00:00`
+- posted_at: `2026-11-09T23:32:03.9288470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 340,
     "symbol": "Options.add_field"
   },
-  "id": "8e47cd9c-eadb-4f9b-812e-20ffe26e2938",
+  "id": "fa90d234-2301-4f84-91a8-ef6d144f4a83",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.7927770+00:00"
+    "posted_at": "2026-11-09T23:32:03.9288470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b6f07794-7f45-4540-aa3d-26470d76427d",
+  "subject_id": "f1a52439-8861-4455-acee-8f416d1fc7fa",
   "subject_name": "django/db/models/options::Options.add_field",
   "tags": [
     "entity:method"

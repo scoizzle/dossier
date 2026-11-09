@@ -1,8 +1,8 @@
 # django/core/checks/mail
 
-- Subject: django/core/checks/mail (id `a7b8bc91-940f-4f0b-bb36-366b2f6c562f`)
+- Subject: django/core/checks/mail (id `b154cf55-304b-4510-8388-58eaec6b3784`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 504 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

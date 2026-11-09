@@ -1,6 +1,6 @@
 # Fact cc46ebf8
 
-Store id: e0aa5a67-85f9-4eb9-92a8-32880dfc452f
+Store id: 9cc3ca50-3dee-4cff-8067-f9e2b035eda4
 
 ## Text
 
@@ -20,7 +20,7 @@ def columns(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8287350+00:00`
+- posted_at: `2026-11-09T23:32:04.7743460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2539,
     "symbol": "RawQuerySet.columns"
   },
-  "id": "e0aa5a67-85f9-4eb9-92a8-32880dfc452f",
+  "id": "9cc3ca50-3dee-4cff-8067-f9e2b035eda4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8287350+00:00"
+    "posted_at": "2026-11-09T23:32:04.7743460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "62c5fb2c-7241-42e4-b4b8-e21a08f23aae",
+  "subject_id": "e320ed60-f259-432d-8ae3-e9a0d6fb397a",
   "subject_name": "django/db/models/query::RawQuerySet.columns",
   "tags": [
     "entity:method",

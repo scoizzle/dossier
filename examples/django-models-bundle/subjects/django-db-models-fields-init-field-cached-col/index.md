@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.cached_col
 
-- Subject: django/db/models/fields/__init__::Field.cached_col (id `18ee9500-ef89-4e71-85ab-d427a7d3ef71`)
+- Subject: django/db/models/fields/__init__::Field.cached_col (id `6bed5634-e100-40c5-93c2-7431250d7afc`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

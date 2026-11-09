@@ -1,8 +1,8 @@
 # django/contrib/gis/db/backends/spatialite/introspection
 
-- Subject: django/contrib/gis/db/backends/spatialite/introspection (id `279781f5-40ed-4544-90d6-cf3727d91a79`)
+- Subject: django/contrib/gis/db/backends/spatialite/introspection (id `759b46d3-2075-449d-b5dd-66a27986be8c`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 674 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

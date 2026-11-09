@@ -1,6 +1,6 @@
 # Fact dc301a2d
 
-Store id: a8b2b4c2-95fc-4aa1-aade-3da1850deeb6
+Store id: bda53771-fe35-4b09-8567-2a6ce98ce350
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_normalized_value(value, lhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.0858640+00:00`
+- posted_at: `2026-11-09T23:31:59.9612140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 15,
     "symbol": "get_normalized_value"
   },
-  "id": "a8b2b4c2-95fc-4aa1-aade-3da1850deeb6",
+  "id": "bda53771-fe35-4b09-8567-2a6ce98ce350",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.0858640+00:00"
+    "posted_at": "2026-11-09T23:31:59.9612140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6b5c5003-fb84-4fd1-860f-dd2f5f16b5a4",
+  "subject_id": "9ed5cc3b-3c3e-4c7c-ba18-0de299538b1d",
   "subject_name": "django/db/models/fields/related_lookups::get_normalized_value",
   "tags": [
     "entity:function"

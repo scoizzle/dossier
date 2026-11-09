@@ -1,6 +1,6 @@
 # Fact b5da134e
 
-Store id: fa0677e0-316e-4a8b-80a5-d5eb091bba24
+Store id: ba329a84-523f-4091-98b9-b22b8ef177af
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_unique(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3799040+00:00`
+- posted_at: `2026-11-09T23:31:58.7510400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1170,
     "symbol": "ForeignKey._check_unique"
   },
-  "id": "fa0677e0-316e-4a8b-80a5-d5eb091bba24",
+  "id": "ba329a84-523f-4091-98b9-b22b8ef177af",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3799040+00:00"
+    "posted_at": "2026-11-09T23:31:58.7510400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c876e23d-370e-4f75-a7d8-cc7d448f8ed4",
+  "subject_id": "2ced025e-a350-4cf7-b04c-2d9b6a9252ef",
   "subject_name": "django/db/models/fields/related::ForeignKey._check_unique",
   "tags": [
     "entity:method"

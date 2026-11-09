@@ -1,6 +1,6 @@
 # Fact 8a951891
 
-Store id: ba1272d2-34b7-478c-812d-fdef28ba2f7c
+Store id: e5cfaf5b-f23c-476d-83c8-44e7eee42810
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncMinute(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2164120+00:00`
+- posted_at: `2026-11-09T23:32:01.3028140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 411,
     "symbol": "TruncMinute"
   },
-  "id": "ba1272d2-34b7-478c-812d-fdef28ba2f7c",
+  "id": "e5cfaf5b-f23c-476d-83c8-44e7eee42810",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2164120+00:00"
+    "posted_at": "2026-11-09T23:32:01.3028140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5d61f2b0-f22e-4033-ad7e-39ec129daa06",
+  "subject_id": "1ee4f9c0-3fdc-41e9-a62c-cff2f1e06e7c",
   "subject_name": "django/db/models/functions/datetime::TruncMinute",
   "tags": [
     "entity:class"

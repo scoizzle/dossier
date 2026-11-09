@@ -1,6 +1,6 @@
 # Fact 7ba7bd1d
 
-Store id: b75dc110-44db-480d-a2ad-a050fad2e91e
+Store id: df583df8-a05f-4d27-a8d6-6bca0916e3d1
 
 ## Text
 
@@ -20,7 +20,7 @@ def remove_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7128230+00:00`
+- posted_at: `2026-11-09T23:31:54.1909100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 209,
     "symbol": "CheckConstraint.remove_sql"
   },
-  "id": "b75dc110-44db-480d-a2ad-a050fad2e91e",
+  "id": "df583df8-a05f-4d27-a8d6-6bca0916e3d1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7128230+00:00"
+    "posted_at": "2026-11-09T23:31:54.1909100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "371f7154-003a-497b-9f1d-dfd690ac2260",
+  "subject_id": "a5ae139a-56c4-4e02-bc21-60f3c0b72258",
   "subject_name": "django/db/models/constraints::CheckConstraint.remove_sql",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 51b03333
 
-Store id: fcc74a80-a71f-448b-b117-c0db59255156
+Store id: 841a8433-0f14-4ddb-bef0-d523e261986b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Left
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fcc74a80-a71f-448b-b117-c0db59255156",
+  "id": "841a8433-0f14-4ddb-bef0-d523e261986b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Left"
       },
       "rel": "contains",
-      "target": "454e8f67-2358-4593-a4c0-eb6eead87005"
+      "target": "cd44fbff-86cc-4952-8b7b-f78779eb2e34"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

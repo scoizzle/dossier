@@ -1,6 +1,6 @@
 # Fact 0477f6d6
 
-Store id: a81c0c52-3f93-4510-af64-e40f79c90522
+Store id: 0b918374-856f-430d-b424-7d1739723149
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_distinct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6241330+00:00`
+- posted_at: `2026-11-09T23:32:05.7732420+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1053,
     "symbol": "SQLCompiler.get_distinct"
   },
-  "id": "a81c0c52-3f93-4510-af64-e40f79c90522",
+  "id": "0b918374-856f-430d-b424-7d1739723149",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6241330+00:00"
+    "posted_at": "2026-11-09T23:32:05.7732420+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b5880318-5d97-481b-9dc4-e90ebc930e85",
+  "subject_id": "2edc3b9f-165e-4cdf-835d-e442b0988eba",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_distinct",
   "tags": [
     "entity:method"

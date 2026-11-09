@@ -1,6 +1,6 @@
 # Fact 7d4bd23f
 
-Store id: 84368422-0dc5-48e9-baee-5c5c0c92c9f4
+Store id: 383526f1-3e14-4f8d-9ad1-45c26ad041c5
 
 ## Text
 
@@ -20,7 +20,7 @@ class ForeignKey(ForeignObject)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3675510+00:00`
+- posted_at: `2026-11-09T23:31:58.7385000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 970,
     "symbol": "ForeignKey"
   },
-  "id": "84368422-0dc5-48e9-baee-5c5c0c92c9f4",
+  "id": "383526f1-3e14-4f8d-9ad1-45c26ad041c5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3675510+00:00"
+    "posted_at": "2026-11-09T23:31:58.7385000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1046cdf0-0d3d-447a-bf51-03a24254f3aa",
+  "subject_id": "9490d863-d07c-4a45-8d2d-299f799f141f",
   "subject_name": "django/db/models/fields/related::ForeignKey",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Chr.as_mysql
 
-- Subject: django/db/models/functions/text::Chr.as_mysql (id `5deefe1c-9541-4ec3-aff2-6fd5ff4d6f82`)
+- Subject: django/db/models/functions/text::Chr.as_mysql (id `673746ff-9f32-4a86-919c-7f5487cf88e0`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

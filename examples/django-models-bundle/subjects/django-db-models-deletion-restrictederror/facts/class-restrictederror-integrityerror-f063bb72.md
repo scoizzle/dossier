@@ -1,6 +1,6 @@
 # Fact f063bb72
 
-Store id: 199d67f2-9877-4e86-90e5-6383a1cd5680
+Store id: b4a3c917-1dd1-4abd-8f35-f6efc8c23b18
 
 ## Text
 
@@ -20,7 +20,7 @@ class RestrictedError(IntegrityError)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9807090+00:00`
+- posted_at: `2026-11-09T23:31:55.0217580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 16,
     "symbol": "RestrictedError"
   },
-  "id": "199d67f2-9877-4e86-90e5-6383a1cd5680",
+  "id": "b4a3c917-1dd1-4abd-8f35-f6efc8c23b18",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9807090+00:00"
+    "posted_at": "2026-11-09T23:31:55.0217580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e2db58ad-d5ae-4476-aae7-5cc35a6c7e0c",
+  "subject_id": "038549c6-3872-47c4-b9e8-c2e4c334a88f",
   "subject_name": "django/db/models/deletion::RestrictedError",
   "tags": [
     "entity:class"

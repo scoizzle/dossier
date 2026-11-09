@@ -1,6 +1,6 @@
 # Fact afaf89a6
 
-Store id: 29c4b5aa-1bf1-41c2-8421-4db41099d5af
+Store id: ea6333b0-12b3-4533-9fd6-83834c5fdb13
 
 ## Text
 
@@ -20,7 +20,7 @@ class Sliced(F)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5734580+00:00`
+- posted_at: `2026-11-09T23:31:55.8478200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 996,
     "symbol": "Sliced"
   },
-  "id": "29c4b5aa-1bf1-41c2-8421-4db41099d5af",
+  "id": "ea6333b0-12b3-4533-9fd6-83834c5fdb13",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5734580+00:00"
+    "posted_at": "2026-11-09T23:31:55.8478200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "09b45656-c689-4cff-a4d8-a0d27f83defd",
+  "subject_id": "49e6800a-ad67-4a20-a553-d6c677271c76",
   "subject_name": "django/db/models/expressions::Sliced",
   "tags": [
     "entity:class"

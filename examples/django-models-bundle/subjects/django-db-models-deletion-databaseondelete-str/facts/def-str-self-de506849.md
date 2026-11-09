@@ -1,6 +1,6 @@
 # Fact de506849
 
-Store id: b0912d0f-d1c6-4673-b9cc-fb5935beba94
+Store id: 1abd2ad9-36cd-4c7b-9d90-f8912a00dae1
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0359820+00:00`
+- posted_at: `2026-11-09T23:31:55.0904060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 95,
     "symbol": "DatabaseOnDelete.__str__"
   },
-  "id": "b0912d0f-d1c6-4673-b9cc-fb5935beba94",
+  "id": "1abd2ad9-36cd-4c7b-9d90-f8912a00dae1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0359820+00:00"
+    "posted_at": "2026-11-09T23:31:55.0904060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5260269c-bc96-476a-9b33-b89f1185cbaa",
+  "subject_id": "963b0e3a-43f9-4182-b633-3e7fd2202971",
   "subject_name": "django/db/models/deletion::DatabaseOnDelete.__str__",
   "tags": [
     "entity:method"

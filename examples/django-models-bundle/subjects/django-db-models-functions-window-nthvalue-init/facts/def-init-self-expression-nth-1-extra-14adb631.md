@@ -1,6 +1,6 @@
 # Fact 14adb631
 
-Store id: db72c98e-226a-49e5-b37f-01ba6d9386c0
+Store id: ef3e0728-a53d-42ee-ab09-2d9ea43f5930
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, nth=1, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5890420+00:00`
+- posted_at: `2026-11-09T23:32:02.7197070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 78,
     "symbol": "NthValue.__init__"
   },
-  "id": "db72c98e-226a-49e5-b37f-01ba6d9386c0",
+  "id": "ef3e0728-a53d-42ee-ab09-2d9ea43f5930",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5890420+00:00"
+    "posted_at": "2026-11-09T23:32:02.7197070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b7f1e1db-32ac-4879-be47-3bf0f92af09c",
+  "subject_id": "89acf5c3-4b94-4217-a9bb-721fd464c1f0",
   "subject_name": "django/db/models/functions/window::NthValue.__init__",
   "tags": [
     "entity:method"

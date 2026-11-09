@@ -1,14 +1,14 @@
 # docs/releases/1.6.6
 
-- Subject: docs/releases/1.6.6 (id `e5149b66-485e-4da0-9dec-9a1eca69531a`)
+- Subject: docs/releases/1.6.6 (id `c237a32b-2f97-43f2-b176-bc8ef3ab41cd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 20 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1354 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * Corrected email and URL validation to reject a trailing dash (:ticket:`22579`). [1d350032]
 - * Fixed JavaScript errors while editing multi-geometry objects in the OpenLayers widget (:ticket:`23137`, :ticket:`23293`). [19766778]
@@ -31,6 +31,10 @@
 - To address the issue, an exception will now be raised if a ``to_field`` value that isn't a related field to a model that has been registered with the admin is specified. [8727b7c0bf9c5d71-3]
 - ``RemoteUserMiddleware`` session hijacking ========================================== [c2867c7f0bbb8bfe-3]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [0127e30c] [5f960b0236750da3-3] [627fccaa] [db22dd1bb3d126ab-3] [64b3e342b8c4c494-3]
+- [0127e30c] In older versions of Django it was possible to reveal any field's data by modifying the "popup" and "to_field" parameters of the query string on an admin change form page. For example, requesting a URL like ``/admin/auth/user/?_popup=1&t=password`` and viewing the page's HTML allowed viewing the password hash of each user. While the admin requires users to have permissions to view the change form pages in the first place, this could leak data if you rely on users having access to view only certain fields on a model.
+- [5f960b0236750da3-3] To remedy this, URL reversing now ensures that no URL starts with two slashes (//), replacing the second slash with its URL encoded counterpart (%2F). This approach ensures that semantics stay the same, while making the URL relative to the domain and not to the scheme.
+- [627fccaa] We've remedied the issue by changing the algorithm for generating file names if a file with the uploaded name already exists. :meth:`Storage.get_available_name() <django.core.files.storage.Storage.get_available_name>` now appends an underscore plus a random 7 character alphanumeric string (e.g. ``"_x3a1gho"``), rather than iterating through an underscore followed by a number (e.g. ``"_1"``, ``"_2"``, etc.).
+- [db22dd1bb3d126ab-3] When using the :class:`~django.contrib.auth.middleware.RemoteUserMiddleware` and the ``RemoteUserBackend``, a change to the ``REMOTE_USER`` header between requests without an intervening logout could result in the prior user's session being co-opted by the subsequent user. The middleware now logs the user out on a failed login attempt.
+- [64b3e342b8c4c494-3] ``reverse()`` could generate URLs pointing to other hosts =========================================================

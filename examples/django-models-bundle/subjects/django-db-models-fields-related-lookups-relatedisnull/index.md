@@ -1,9 +1,9 @@
 # django/db/models/fields/related_lookups::RelatedIsNull
 
-- Subject: django/db/models/fields/related_lookups::RelatedIsNull (id `2a48e5b8-8aa3-490f-9a5c-8d198c22a6ae`)
+- Subject: django/db/models/fields/related_lookups::RelatedIsNull (id `0a3b82b1-4898-4b81-96fc-cccac2857419`)
 - Kind: class
 - Parent: [django/db/models/fields/related_lookups](../django-db-models-fields-related-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

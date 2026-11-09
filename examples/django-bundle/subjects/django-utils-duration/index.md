@@ -1,8 +1,8 @@
 # django/utils/duration
 
-- Subject: django/utils/duration (id `b91bec06-5428-4497-870e-95812d688796`)
+- Subject: django/utils/duration (id `8efb214e-8986-4ee5-8ef0-af02aa48a6a9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 388 tokens
 - Facts shown: 11 of 11
 - Conflicts: 0

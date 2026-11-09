@@ -1,6 +1,6 @@
 # Fact a36bb7af
 
-Store id: 05a46b18-8eeb-4658-a45a-629c7903f0c9
+Store id: 1b464287-4460-4af6-8270-eb0bf08e964f
 
 ## Text
 
@@ -20,7 +20,7 @@ def rel_db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7560100+00:00`
+- posted_at: `2026-11-09T23:31:56.9233740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2967,
     "symbol": "AutoField.rel_db_type"
   },
-  "id": "05a46b18-8eeb-4658-a45a-629c7903f0c9",
+  "id": "1b464287-4460-4af6-8270-eb0bf08e964f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7560100+00:00"
+    "posted_at": "2026-11-09T23:31:56.9233740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5f6ce468-8264-41ae-b1ea-9beaeaaa666b",
+  "subject_id": "55409afe-e30c-473d-b960-2adbbcef8d93",
   "subject_name": "django/db/models/fields/__init__::AutoField.rel_db_type",
   "tags": [
     "entity:method"

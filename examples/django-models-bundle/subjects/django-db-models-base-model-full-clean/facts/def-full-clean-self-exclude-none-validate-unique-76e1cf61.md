@@ -1,6 +1,6 @@
 # Fact 76e1cf61
 
-Store id: 760729a5-c2ca-4ec5-ab5e-c3a28ab76305
+Store id: cdc0c6e5-f676-4511-a23f-ed8131cc6f26
 
 ## Text
 
@@ -20,7 +20,7 @@ def full_clean(self, exclude=None, validate_unique=True, validate_constraints=Tr
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3526790+00:00`
+- posted_at: `2026-11-09T23:31:53.7589520+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1700,
     "symbol": "Model.full_clean"
   },
-  "id": "760729a5-c2ca-4ec5-ab5e-c3a28ab76305",
+  "id": "cdc0c6e5-f676-4511-a23f-ed8131cc6f26",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3526790+00:00"
+    "posted_at": "2026-11-09T23:31:53.7589520+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aa4d76e6-2637-4cf9-93ae-749c43c6b57a",
+  "subject_id": "2844b69d-fcac-4753-99d8-16dd408b5630",
   "subject_name": "django/db/models/base::Model.full_clean",
   "tags": [
     "entity:method"

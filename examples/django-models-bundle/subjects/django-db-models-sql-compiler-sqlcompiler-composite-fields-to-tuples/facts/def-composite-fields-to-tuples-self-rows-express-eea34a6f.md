@@ -1,6 +1,6 @@
 # Fact eea34a6f
 
-Store id: 05fc9ac9-4708-4b65-93ac-a79298e9fa24
+Store id: e7934f7f-336f-4f0c-abbe-64492dd5460f
 
 ## Text
 
@@ -20,7 +20,7 @@ def composite_fields_to_tuples(self, rows, expressions)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6740230+00:00`
+- posted_at: `2026-11-09T23:32:05.8888450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1570,
     "symbol": "SQLCompiler.composite_fields_to_tuples"
   },
-  "id": "05fc9ac9-4708-4b65-93ac-a79298e9fa24",
+  "id": "e7934f7f-336f-4f0c-abbe-64492dd5460f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6740230+00:00"
+    "posted_at": "2026-11-09T23:32:05.8888450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e14a15b-0aaf-4f62-a58f-d2ac25cbc895",
+  "subject_id": "a7fe2347-5409-4c8d-bbf7-6cd23082f152",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.composite_fields_to_tuples",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/query::_get_from_db
 
-- Subject: django/db/models/query::_get_from_db (id `1aeb015d-47ed-43d7-883d-867baae16ce5`)
+- Subject: django/db/models/query::_get_from_db (id `b98c0d64-be8b-4ea6-87a5-698b0196485e`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

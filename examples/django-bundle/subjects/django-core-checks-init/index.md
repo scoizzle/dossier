@@ -1,8 +1,8 @@
 # django/core/checks/__init__
 
-- Subject: django/core/checks/__init__ (id `a2bb095a-3fac-435f-98fd-cd00ca7f335a`)
+- Subject: django/core/checks/__init__ (id `91fa2922-4499-43c1-a509-418312fc2401`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 326 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

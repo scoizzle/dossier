@@ -1,6 +1,6 @@
 # Fact 943214d2
 
-Store id: 6bbdbe08-0086-4e34-9eef-3e4e573202c5
+Store id: 66746ad7-8974-4361-84d0-8438a4ae5f98
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler=None, connection=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9956690+00:00`
+- posted_at: `2026-11-09T23:32:07.7258620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 343,
     "symbol": "ExtraWhere.as_sql"
   },
-  "id": "6bbdbe08-0086-4e34-9eef-3e4e573202c5",
+  "id": "66746ad7-8974-4361-84d0-8438a4ae5f98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9956690+00:00"
+    "posted_at": "2026-11-09T23:32:07.7258620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c0596ff8-181b-40a8-a5cf-b345d83e9ab1",
+  "subject_id": "e43885bc-2f08-4593-a019-964440da7105",
   "subject_name": "django/db/models/sql/where::ExtraWhere.as_sql",
   "tags": [
     "entity:method"

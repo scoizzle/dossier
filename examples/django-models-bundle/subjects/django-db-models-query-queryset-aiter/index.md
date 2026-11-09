@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.__aiter__
 
-- Subject: django/db/models/query::QuerySet.__aiter__ (id `f45a9482-c343-43c5-b32b-cd7777ba6aa3`)
+- Subject: django/db/models/query::QuerySet.__aiter__ (id `5ae37c12-5022-4bb8-bc53-ff7e90a3278f`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact f016be4e
 
-Store id: 3f463f1f-57e1-48e1-bb37-67ac06178782
+Store id: e4a5e1da-d9c1-4428-9c44-7a5da6f15173
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5428690+00:00`
+- posted_at: `2026-11-09T23:31:56.7046900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2220,
     "symbol": "IntegerField.to_python"
   },
-  "id": "3f463f1f-57e1-48e1-bb37-67ac06178782",
+  "id": "e4a5e1da-d9c1-4428-9c44-7a5da6f15173",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5428690+00:00"
+    "posted_at": "2026-11-09T23:31:56.7046900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a60745fb-6de5-4c75-89c9-620982b9b009",
+  "subject_id": "37e33ccf-9387-460c-9a37-a97406520503",
   "subject_name": "django/db/models/fields/__init__::IntegerField.to_python",
   "tags": [
     "entity:method"

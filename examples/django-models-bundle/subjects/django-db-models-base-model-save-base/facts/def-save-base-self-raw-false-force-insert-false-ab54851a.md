@@ -1,6 +1,6 @@
 # Fact ab54851a
 
-Store id: 87e0e5b7-4978-42a7-aaf5-07e248ecdf59
+Store id: 1d9a7388-35bf-46c0-a3f5-eff46b4d9983
 
 ## Text
 
@@ -20,7 +20,7 @@ def save_base( self, raw=False, force_insert=False, force_update=False, using=No
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3394910+00:00`
+- posted_at: `2026-11-09T23:31:53.7419110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 950,
     "symbol": "Model.save_base"
   },
-  "id": "87e0e5b7-4978-42a7-aaf5-07e248ecdf59",
+  "id": "1d9a7388-35bf-46c0-a3f5-eff46b4d9983",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3394910+00:00"
+    "posted_at": "2026-11-09T23:31:53.7419110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aac672f6-aaca-4163-9b4f-059c8b7781ff",
+  "subject_id": "8e0b5c77-e343-4a2f-a1a8-89a58b7487b2",
   "subject_name": "django/db/models/base::Model.save_base",
   "tags": [
     "entity:method"

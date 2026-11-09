@@ -1,14 +1,14 @@
 # django/contrib/contenttypes/admin
 
-- Subject: django/contrib/contenttypes/admin (id `37fd8105-a7de-4884-8eab-3ae223c6df3c`)
+- Subject: django/contrib/contenttypes/admin (id `60a1230e-c1a0-4a0a-9edf-3ad849bdb0ed`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 833 tokens
-- Facts shown: 16 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1236 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # There's one or more GenericForeignKeys; make sure that one of # them uses the right ct_field and ct_fk_field. for gfk in gfks: if gfk.ct_field == obj.ct_field and gfk.fk_field == obj.ct_fk_field: return [] [b2171fd9]
 - return [ checks.Error( "'%s' has no GenericForeignKey using content type field '%s' and " "object ID field '%s'." % ( obj.model._meta.label, obj.ct_field, obj.ct_fk_field, ), obj=obj.__class__, id="admin.E304", ) ] [497dd818]
@@ -27,6 +27,7 @@
 - class GenericTabularInline(GenericInlineModelAdmin): template = "admin/edit_inline/tabular.html" [0091b1ea]
 - from functools import partial [200ae996befcd23a]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [5194dc2d] [c9028f49]
+- [5194dc2d] def get_formset(self, request, obj=None, **kwargs): if "fields" in kwargs: fields = kwargs.pop("fields") else: fields = flatten_fieldsets(self.get_fieldsets(request, obj)) excluded = self.get_exclude(request, obj) exclude = [ *(excluded or []), *self.get_readonly_fields(request, obj), ] if excluded is None and hasattr(self.form, "_meta") and self.form._meta.exclude: # Take the custom ModelForm's Meta.exclude into account only if the # GenericInlineModelAdmin doesn't define its own. exclude.extend(self.form._meta.exclude) exclude = exclude or None can_delete = self.can_delete and self.has_delete_permission(request, obj) defaults = { "ct_field": self.ct_field, "fk_field": self.ct_fk_field, "form": self.form, "formfield_callback": partial(self.formfield_for_dbfield, request=request), "formset": self.formset, "extra": self.get_extra(request, obj), "can_delete": can_delete, "can_order": False, "fields": fields, "min_num": self.get_min_num(request, obj), "max_num": self.get_max_num(request, obj), "exclude": exclude, **kwargs, }
+- [c9028f49] from django.contrib.admin.checks import InlineModelAdminChecks from django.contrib.admin.options import InlineModelAdmin, flatten_fieldsets from django.contrib.contenttypes.fields import GenericForeignKey from django.contrib.contenttypes.forms import ( BaseGenericInlineFormSet, generic_inlineformset_factory, ) from django.core import checks from django.core.exceptions import FieldDoesNotExist from django.forms import ALL_FIELDS from django.forms.models import modelform_defines_fields

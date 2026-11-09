@@ -1,6 +1,6 @@
 # Fact 69c75f4e
 
-Store id: 2d2cd710-ab06-434a-9436-c9d49057bbaf
+Store id: b93c3b58-93d2-4160-b146-c0181fd8488c
 
 ## Text
 
@@ -20,7 +20,7 @@ def url(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2013850+00:00`
+- posted_at: `2026-11-09T23:31:57.3585300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 69,
     "symbol": "FieldFile.url"
   },
-  "id": "2d2cd710-ab06-434a-9436-c9d49057bbaf",
+  "id": "b93c3b58-93d2-4160-b146-c0181fd8488c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2013850+00:00"
+    "posted_at": "2026-11-09T23:31:57.3585300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7585ea1c-9466-49c1-96f3-3d4e4e382c6e",
+  "subject_id": "4f5e9398-ecec-4b21-8a59-dc8bfd30ba4a",
   "subject_name": "django/db/models/fields/files::FieldFile.url",
   "tags": [
     "entity:method",

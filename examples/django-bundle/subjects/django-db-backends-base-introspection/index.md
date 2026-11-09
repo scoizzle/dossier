@@ -1,14 +1,14 @@
 # django/db/backends/base/introspection
 
-- Subject: django/db/backends/base/introspection (id `fa9b7572-d5e9-45ea-a601-71ebabce42f4`)
+- Subject: django/db/backends/base/introspection (id `6ca47b32-bb90-4cbb-9d7e-bc47f1f2a4d9`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 16 of 30
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1923 tokens
+- Facts shown: 30 of 30
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - For Oracle, the column data_type on its own is insufficient to distinguish between a FloatField and IntegerField, for example. """ return self.data_types_reverse[data_type] [366826a0]
 - If only_existing is True, include only the tables in the database. """ tables = set() for model in self.get_migratable_models(): if not model._meta.managed: continue tables.add(model._meta.db_table) tables.update( f.m2m_db_table() for f in model._meta.local_many_to_many if f.remote_field.through._meta.managed ) tables = list(tables) if only_existing: existing_tables = set(self.table_names(include_views=include_views)) tables = [ t for t in tables if self.identifier_converter(t) in existing_tables ] return tables [30ec353a]
@@ -27,6 +27,19 @@
 - def get_migratable_models(self): from django.apps import apps from django.db import router [a140153f]
 - def identifier_converter(self, name): """ Apply a conversion to the identifier for the purposes of comparison. [66e85f57]
 
-## Beyond the budget
+## All facts
 
-14 more facts did not fit in the budget: [7be13823] [f1e1a31a] [07cfca64] [006b54fa] [f239dd1d] [922054d7] [8652e62b] [40aea63b] [e73e310f] [3cec3035] [28e97e7c] [a90d2965] [b946acd58351fb6c] [2bf4e6e3]
+- [7be13823] def get_primary_key_column(self, cursor, table_name): """ Return the name of the primary key column for the given table. """ columns = self.get_primary_key_columns(cursor, table_name) return columns[0] if columns else None
+- [f1e1a31a] def get_primary_key_columns(self, cursor, table_name): """Return a list of primary key columns for the given table.""" for constraint in self.get_constraints(cursor, table_name).values(): if constraint["primary_key"]: return constraint["columns"] return None
+- [07cfca64] def get_relations(self, cursor, table_name): """ Return a dictionary of { field_name: (field_name_other_table, other_table, db_on_delete) } representing all foreign keys in the given table. """ raise NotImplementedError( "subclasses of BaseDatabaseIntrospection may require a " "get_relations() method." )
+- [006b54fa] def get_sequences(self, cursor, table_name, table_fields=()): """ Return a list of introspected sequences for table_name. Each sequence is a dict: {'table': <table_name>, 'column': <column_name>}. An optional 'name' key can be added if the backend supports named sequences. """ raise NotImplementedError( "subclasses of BaseDatabaseIntrospection may require a get_sequences() " "method" )
+- [f239dd1d] def get_table_description(self, cursor, table_name): """ Return a description of the table with the DB-API cursor.description interface. """ raise NotImplementedError( "subclasses of BaseDatabaseIntrospection may require a " "get_table_description() method." )
+- [922054d7] def get_table_list(self, cursor): """ Return an unsorted list of TableInfo named tuples of all tables and views that exist in the database. """ raise NotImplementedError( "subclasses of BaseDatabaseIntrospection may require a get_table_list() " "method" )
+- [8652e62b] def installed_models(self, tables): """ Return a set of all models represented by the provided list of table names. """ tables = set(map(self.identifier_converter, tables)) return { m for m in self.get_migratable_models() if self.identifier_converter(m._meta.db_table) in tables }
+- [40aea63b] def sequence_list(self): """ Return a list of information about all DB sequences for all models in all apps. """ sequence_list = [] with self.connection.cursor() as cursor: for model in self.get_migratable_models(): if not model._meta.managed: continue if model._meta.swapped: continue sequence_list.extend( self.get_sequences( cursor, model._meta.db_table, model._meta.local_fields ) ) for f in model._meta.local_many_to_many: # If this is an m2m using an intermediate table, # we don't need to reset the sequence. if f.remote_field.through._meta.auto_created: sequence = self.get_sequences(cursor, f.m2m_db_table()) sequence_list.extend( sequence or [{"table": f.m2m_db_table(), "column": None}] ) return sequence_list
+- [e73e310f] def table_names(self, cursor=None, include_views=False): """ Return a list of names of all tables that exist in the database. Sort the returned table list by Python's default sorting. Do NOT use the database's ORDER BY here to avoid subtle differences in sorting order between databases. """
+- [3cec3035] # Structure returned by DatabaseIntrospection.get_table_list() TableInfo = namedtuple("TableInfo", ["name", "type"])
+- [28e97e7c] # Structure returned by the DB-API cursor.description interface (PEP 249) FieldInfo = namedtuple( "FieldInfo", "name type_code display_size internal_size precision scale null_ok " "default collation", )
+- [a90d2965] class BaseDatabaseIntrospection: """Encapsulate backend-specific introspection utilities."""
+- [b946acd58351fb6c] from collections import namedtuple
+- [2bf4e6e3] from django.db.models import DB_CASCADE, DB_SET_DEFAULT, DB_SET_NULL, DO_NOTHING

@@ -1,14 +1,14 @@
 # django/utils/module_loading
 
-- Subject: django/utils/module_loading (id `3d32249a-366f-4ea9-8b76-485446c00309`)
+- Subject: django/utils/module_loading (id `ff1de8a1-7163-41f3-9959-ef36a89fe6d4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 12 of 13
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 930 tokens
+- Facts shown: 13 of 13
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Decide whether to bubble up this error. If the app just # doesn't have the module in question, we can ignore the error # attempting to import it, otherwise we want it to bubble up. if module_has_submodule(app_config.module, module_to_search): raise [5474b1ac]
 - import_module("%s.%s" % (app_config.name, module_to_search)) except Exception: # Reset the registry to the state before the last import # as this import will have to reoccur on the next request and # this could raise NotRegistered and AlreadyRegistered # exceptions (see #8245). if register_to: register_to._registry = before_import_registry [c414e1f7]
@@ -23,6 +23,6 @@
 - def module_dir(module): """ Find the name of the directory that contains a module, if possible. [bf3d2c56]
 - def module_has_submodule(package, module_name): """See if 'module' is in 'package'.""" try: package_name = package.__name__ package_path = package.__path__ except AttributeError: # package isn't a package. return False [c4da4f11]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [334afe73]
+- [334afe73] import copy import os import sys from importlib import import_module from importlib.util import find_spec as importlib_find

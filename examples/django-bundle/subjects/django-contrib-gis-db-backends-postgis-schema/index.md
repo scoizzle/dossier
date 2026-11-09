@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/postgis/schema
 
-- Subject: django/contrib/gis/db/backends/postgis/schema (id `c8280a41-33c2-4afc-92bb-36e33099cc9a`)
+- Subject: django/contrib/gis/db/backends/postgis/schema (id `32567cb5-0f7f-48dd-b01f-4df66df4af63`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 854 tokens
-- Facts shown: 12 of 15
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1028 tokens
+- Facts shown: 15 of 15
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if old_field.dim == 2 and new_field.dim == 3: sql_alter = self.sql_alter_column_to_3d elif old_field.dim == 3 and new_field.dim == 2: sql_alter = self.sql_alter_column_to_2d else: sql_alter = self.sql_alter_column_type return ( ( sql_alter % { "column": self.quote_name(new_field.column), "type": new_type, "collation": "", }, [], ), [], ) [d76d6a14]
 - old_field_spatial_index = ( isinstance(old_field, GeometryField) and old_field.spatial_index ) new_field_spatial_index = ( isinstance(new_field, GeometryField) and new_field.spatial_index ) if not old_field_spatial_index and new_field_spatial_index: self.execute(self._create_spatial_index_sql(model, new_field)) elif old_field_spatial_index and not new_field_spatial_index: self.execute(self._delete_spatial_index_sql(model, old_field)) [862d666ad92a57c8-2]
@@ -23,6 +23,8 @@
 - def _field_should_be_indexed(self, model, field): if getattr(field, "spatial_index", False): return True return super()._field_should_be_indexed(model, field) [d1ff1806]
 - def geo_quote_name(self, name): return self.connection.ops.geo_quote_name(name) [97ded5e0e226ebb7-2]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [546ac042] [ccf14cb9] [adda0383]
+- [546ac042] sql_alter_column_to_3d = ( "ALTER COLUMN %(column)s TYPE %(type)s USING ST_Force3D(%(column)s)::%(type)s" ) sql_alter_column_to_2d = ( "ALTER COLUMN %(column)s TYPE %(type)s USING ST_Force2D(%(column)s)::%(type)s" )
+- [ccf14cb9] class PostGISSchemaEditor(DatabaseSchemaEditor): geom_index_type = "GIST" geom_index_ops_nd = "GIST_GEOMETRY_OPS_ND" rast_index_template = "ST_ConvexHull(%(expressions)s)"
+- [adda0383] from django.contrib.gis.db.models import GeometryField from django.db.backends.postgresql.schema import DatabaseSchemaEditor from django.db.models.expressions import Col, Func

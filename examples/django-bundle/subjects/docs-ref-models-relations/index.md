@@ -1,14 +1,14 @@
 # docs/ref/models/relations
 
-- Subject: docs/ref/models/relations (id `0b7c3343-b989-4340-9ffc-63a73a952df1`)
+- Subject: docs/ref/models/relations (id `84b79c9c-141c-4bc7-a345-4579ad5759f9`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 31 of 68
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2579 tokens
+- Facts shown: 64 of 68
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # No need to call e.save() at this point -- it's already been saved. [104a51f6]
 - >>> b = Blog.objects.get(id=1) >>> b.entry_set.clear() [81b08433]
@@ -42,6 +42,38 @@
 - For many-to-many relationships, the ``bulk`` keyword argument doesn't exist. [cb95ecd41e9850cb]
 - .. note:: [942ae6c11625c81c-130]
 
-## Beyond the budget
+## All facts
 
-33 more facts did not fit in the budget: [c0864313] [fa4c3026] [c6a6b170] [07e27966] [8338898c] [242a34b4] [a5484014] [86fc389e] [6d7e2518] [642c6ce7] [be59b5bd] [7dcaeccc] [4bd58941] [958a78aec9e70475] [8e7ce208] [a37f7ff6] [8ba2151d] [aa4d726b] [2c883292] [3ccd74f3] [d01520a2] [a0205a8f] [01ac8ce9] [980fb500] [71d26b72] [bb6ad7fc] [c9482ea0] [4861948b] [171fe48c] [c90ca7f0] [dece027f] [9b68b6f0] [3e966cf9]
+- [c0864313] For :class:`~django.db.models.ForeignKey` objects, this method only exists if ``null=True``. If the related field can't be set to ``None`` (``NULL``), then an object can't be removed from a relation without being added to another. In the above example, removing ``e`` from ``b.entry_set()`` is equivalent to doing ``e.blog = None``, and because the ``blog`` :class:`~django.db.models.ForeignKey` doesn't have ``null=True``, this is invalid.
+- [fa4c3026] For many-to-many relationships ``set()`` accepts a list of either model instances or field values, normally primary keys, as the ``objs`` argument.
+- [c6a6b170] In the example above, in the case of a :class:`~django.db.models.ForeignKey` relationship, :meth:`QuerySet.update() <django.db.models.query.QuerySet.update>` is used to perform the update. This requires the objects to already be saved.
+- [07e27966] Just like ``remove()``, ``clear()`` is only available on :class:`~django.db.models.ForeignKey`\s where ``null=True`` and it also accepts the ``bulk`` keyword argument.
+- [8338898c] Note that since ``set()`` is a compound operation, it is subject to race conditions. For instance, new objects may be added to the database in between the call to ``clear()`` and the call to ``add()``.
+- [242a34b4] Note that there's no need to specify the keyword argument of the model that defines the relationship. In the above example, we don't pass the parameter ``blog`` to ``create()``. Django figures out that the new ``Entry`` object's ``blog`` field should be set to ``b``.
+- [a5484014] Note this doesn't delete the related objects -- it just disassociates them.
+- [86fc389e] Removes all objects from the related object set:
+- [6d7e2518] Removes the specified model objects from the related object set:
+- [642c6ce7] Replace the set of related objects:
+- [be59b5bd] Similar to :meth:`add`, ``e.save()`` is called in the example above to perform the update. Using ``remove()`` with a many-to-many relationship, however, will delete the relationships using :meth:`QuerySet.delete()<django.db.models.query.QuerySet.delete>` which means no model ``save()`` methods are called; listen to the :data:`~django.db.models.signals.m2m_changed` signal if you wish to execute custom code when a relationship is deleted.
+- [7dcaeccc] This is equivalent to (but simpler than):
+- [4bd58941] This method accepts a ``clear`` argument to control how to perform the operation. If ``False`` (the default), the elements missing from the new set are removed using ``remove()`` and only the new ones are added. If ``clear=True``, the ``clear()`` method is called instead and the whole set is added at once.
+- [958a78aec9e70475] Use the ``through_defaults`` argument to specify values for the new :ref:`intermediate model <intermediary-manytomany>` instance(s), if needed. You can use callables as values in the ``through_defaults`` dictionary and they will be evaluated once before creating any intermediate instance(s).
+- [8e7ce208] Use the ``through_defaults`` argument to specify values for the new :ref:`intermediate model <intermediary-manytomany>` instance, if needed. You can use callables as values in the ``through_defaults`` dictionary.
+- [a37f7ff6] Using ``add()`` on a relation that already exists won't duplicate the relation, but it will still trigger signals.
+- [8ba2151d] Using ``add()`` with a many-to-many relationship, however, will not call any ``save()`` methods (the ``bulk`` argument doesn't exist), but rather create the relationships using :meth:`QuerySet.bulk_create() <django.db.models.query.QuerySet.bulk_create>`. If you need to execute some custom logic when a relationship is created, listen to the :data:`~django.db.models.signals.m2m_changed` signal, which will trigger ``pre_add`` and ``post_add`` actions.
+- [aa4d726b] You can use the ``bulk=False`` argument to instead have the related manager perform the update by calling ``e.save()``.
+- [2c883292] If you use :meth:`~django.db.models.query.QuerySet.prefetch_related`, the ``add()``, ``aadd()``, ``remove()``, ``aremove()``, ``clear()``, ``aclear()``, ``set()``, and ``aset()`` methods clear the prefetched cache.
+- [3ccd74f3] Note that ``add()``, ``aadd()``, ``create()``, ``acreate()``, ``remove()``, ``aremove()``, ``clear()``, ``aclear()``, ``set()``, and ``aset()`` all apply database changes immediately for all types of related fields. In other words, there is no need to call ``save()``/``asave()`` on either end of the relationship.
+- [d01520a2] In the above example, the methods below will be available on the manager ``blog.entry_set``.
+- [a0205a8f] In this example, the methods below will be available both on ``topping.pizza_set`` and on ``pizza.toppings``.
+- [01ac8ce9] * Both sides of a :class:`~django.db.models.ManyToManyField` relation ::
+- [980fb500] * The "other side" of a :class:`~django.db.models.ForeignKey` relation. That is::
+- [71d26b72] .. method:: add(*objs, bulk=True, through_defaults=None) .. method:: aadd(*objs, bulk=True, through_defaults=None)
+- [bb6ad7fc] .. method:: clear(bulk=True) .. method:: aclear(bulk=True)
+- [c9482ea0] .. method:: create(through_defaults=None, **kwargs) .. method:: acreate(through_defaults=None, **kwargs)
+- [4861948b] .. method:: remove(*objs, bulk=True) .. method:: aremove(*objs, bulk=True)
+- [171fe48c] .. method:: set(objs, bulk=True, clear=False, through_defaults=None) .. method:: aset(objs, bulk=True, clear=False, through_defaults=None)
+- [c90ca7f0] A "related manager" is a manager used in a one-to-many or many-to-many related context. This happens in two cases:
+- [dece027f] .. class:: RelatedManager
+- [9b68b6f0] .. currentmodule:: django.db.models.fields.related
+- [3e966cf9] ========================= Related objects reference =========================

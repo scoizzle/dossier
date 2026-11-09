@@ -1,6 +1,6 @@
 # Fact df94810c
 
-Store id: 0e9b17b2-c76c-4ee3-be11-fab467a257f1
+Store id: 02457fda-5475-4ae6-be20-6caf2345f7c9
 
 ## Text
 
@@ -20,7 +20,7 @@ class EmptyQuerySet(metaclass=InstanceCheckMeta)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7615590+00:00`
+- posted_at: `2026-11-09T23:32:04.6979850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2400,
     "symbol": "EmptyQuerySet"
   },
-  "id": "0e9b17b2-c76c-4ee3-be11-fab467a257f1",
+  "id": "02457fda-5475-4ae6-be20-6caf2345f7c9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7615590+00:00"
+    "posted_at": "2026-11-09T23:32:04.6979850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9184f5a0-d0f2-4f9f-8274-7b08643a55a8",
+  "subject_id": "a7a5e963-fe31-4d35-9f2e-0f6f819923bf",
   "subject_name": "django/db/models/query::EmptyQuerySet",
   "tags": [
     "entity:class"

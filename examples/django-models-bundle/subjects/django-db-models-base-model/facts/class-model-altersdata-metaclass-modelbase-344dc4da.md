@@ -1,6 +1,6 @@
 # Fact 344dc4da
 
-Store id: 747812f9-4be1-4943-a6ee-41a64849c196
+Store id: 95b1adcd-4749-4bf6-8cfc-7c0e385b8ffb
 
 ## Text
 
@@ -20,7 +20,7 @@ class Model(AltersData, metaclass=ModelBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3310430+00:00`
+- posted_at: `2026-11-09T23:31:53.7314920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 501,
     "symbol": "Model"
   },
-  "id": "747812f9-4be1-4943-a6ee-41a64849c196",
+  "id": "95b1adcd-4749-4bf6-8cfc-7c0e385b8ffb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3310430+00:00"
+    "posted_at": "2026-11-09T23:31:53.7314920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10f9de65-89a8-43be-a914-51ae4cf587ad",
+  "subject_id": "0cc632ae-9a4f-44b4-8d9e-e793efefc1ed",
   "subject_name": "django/db/models/base::Model",
   "tags": [
     "entity:class"

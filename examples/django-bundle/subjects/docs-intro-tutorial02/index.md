@@ -1,14 +1,14 @@
 # docs/intro/tutorial02
 
-- Subject: docs/intro/tutorial02 (id `2a33e63f-f11f-417b-ad55-ae295de2d2a8`)
+- Subject: docs/intro/tutorial02 (id `018307f4-639d-44d4-9622-d8e3babc310a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 17 of 171
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 7387 tokens
+- Facts shown: 168 of 171
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Access model field values via Python attributes. >>> q.question_text "What's new?" >>> q.pub_date datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=datetime.UTC) [4ef2867a]
 - # And vice versa: Question objects get access to Choice objects. >>> q.choice_set.all() <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]> >>> q.choice_set.count() 3 [b2a18ce9]
@@ -28,6 +28,156 @@
 - # Now it has an ID. >>> q.id 1 [a8cbed8e]
 - $ python manage.py createsuperuser [8302498608e60ebc]
 
-## Beyond the budget
+## All facts
 
-151 more facts did not fit in the budget: [07694718] [027f747b] [73fb2877] [59b8e6a2] [877585f1] [bdbd2b79172db241-2] [4896611d] [46c9a5006c713d0c-3] [dc0da2cbf091829d-4] [b379af71] [0ab0f38a] [d96ac3c9] [8e1b8972] [c6961d8f] [eff105796d7d4d6a-2] [7f202ca1] [dd48ceff] [6942b39a] [2b5bb7eb] [ce2aeee2] [c13596e9] [54704ccb] [2039e8a0] [368af50a] [14161146] [524baa14] [df692aec3f5cbbed] [13fbe7fc2a5a9c75-2] [4af926756c29efa6-7] [11a0b287] [b75c8d9ca5df7aa8] [e97cba14] [cd8b4256] [5cc969b9] [997084a2] [c986763d] [f551ee92] [4b305cf9] [a1e90b0d] [24db99a0] [c42f124a] [3946df0f] [2695cc20] [cb065274] [32da7e4e] [4593f3a6] [3d394907] [8e6204a7] [d1b50c2e] [8967f1e2] [27072d7c] [e18944c4] [50bed6e0d454902f] [50bed6e0d454902f-2] [50bed6e0d454902f-3] [dbb2ef17dd903b2b-3] [eaf050be34acb41d-7] [eaf050be34acb41d-8] [bf67fa15468f979f] [20257edb57d397a8] [ce20b11c82955ef6] [3a9340cd0d877339-13] [3a9340cd0d877339-14] [3a9340cd0d877339-15] [3a9340cd0d877339-16] [7714e199aac2701e-71] [7714e199aac2701e-72] [7714e199aac2701e-73] [7714e199aac2701e-74] [7714e199aac2701e-75] [7714e199aac2701e-76] [47ea25fc] [7575044a] [fd12fc9f] [9c127d039bb0d767] [63e9f1a2] [607c7e73] [b134712f] [34736392] [bbedd779] [e2a0588d] [3f5fa925] [31d7baa8] [09874d83] [8527badb] [4781169b] [04bf2659] [f153308b] [254281c9] [814c5b0b] [9b215853] [bcc5eee7] [59e74758] [a4fb02eb] [94052251] [1f52b52e] [5b234653] [173599bc] [1c84c1d4] [2d82d25d] [09afb45f] [0cde77cb] [55e0cf46] [c3046f92] [9dadade2] [478a13f3] [b714f8c1] [7d664cda] [22d85bab] [d31372ca] [23d34020] [55554208] [05749667] [5ded7b59] [dc4f98c9] [860f6d43] [1b535cb3] [00470e16] [c41ec076] [60cd1c68] [452a28bf] [b0d5100a] [422d9e2d] [21bf0e25] [0d266b91] [6598e22a] [fe1dd67c] [15dcbf8d] [44f41db9] [767d7d4a] [e3e6d871] [e1b88d65] [5a36e43d] [eb2b0726] [dbee1375] [f72c2bfa] [1fec4ff2] [0e48e4b7] [be59050a] [2460df54] [d9b0bcb5] [9744809b] [c24acd2e] [5cb3aeda] [924ed805] [6662cfec] [0d390413] [64ad63cf] [6e8036b1] [331fd909] [1230493b]
+- [07694718] # Request an ID that doesn't exist, this will raise an exception. >>> Question.objects.get(id=2) Traceback (most recent call last): ... DoesNotExist: Question matching query does not exist.
+- [027f747b] # Save the object into the database. You have to call save() explicitly. >>> q.save()
+- [73fb2877] # The API automatically follows relationships as far as you need. # Use double underscores to separate relationships. # This works as many levels deep as you want; there's no limit. # Find all Choices for any question whose pub_date is in this year # (reusing the 'current_year' variable we created above). >>> Choice.objects.filter(question__pub_date__year=current_year) <QuerySet [<Choice: Not much>, <Choice: The sky>, <Choice: Just hacking again>]>
+- [59b8e6a2] # objects.all() displays all the questions in the database. >>> Question.objects.all() <QuerySet [<Question: Question object (1)>]>
+- [877585f1] $ python manage.py makemigrations polls
+- [bdbd2b79172db241-2] $ python manage.py migrate
+- [4896611d] $ python manage.py migrate Operations to perform: Apply all migrations: admin, auth, contenttypes, polls, sessions Running migrations: Applying polls.0001_initial... OK
+- [46c9a5006c713d0c-3] $ python manage.py runserver
+- [dc0da2cbf091829d-4] $ python manage.py shell
+- [b379af71] Django apps are "pluggable": You can use an app in multiple projects, and you can distribute apps, because they don't have to be tied to a given Django installation.
+- [0ab0f38a] Django was written in a newsroom environment, with a very clear separation between "content publishers" and the "public" site. Site managers use the system to add news stories, events, sports scores, etc., and that content is displayed on the public site. Django solves the problem of creating a unified interface for site administrators to edit content.
+- [d96ac3c9] Email address: admin@example.com
+- [8e1b8972] Generating admin sites for your staff or clients to add, change, and delete content is tedious work that doesn't require much creativity. For that reason, Django entirely automates creation of admin interfaces for models.
+- [c6961d8f] INSTALLED_APPS = [ "polls.apps.PollsConfig", "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions", "django.contrib.messages", "django.contrib.staticfiles", ]
+- [eff105796d7d4d6a-2] If you're having trouble going through this tutorial, please head over to the :doc:`Getting Help</faq/help>` section of the FAQ.
+- [7f202ca1] Like we said above, the default applications are included for the common case, but not everybody needs them. If you don't need any or all of them, feel free to comment-out or delete the appropriate line(s) from :setting:`INSTALLED_APPS` before running :djadmin:`migrate`. The :djadmin:`migrate` command will only run migrations for apps in :setting:`INSTALLED_APPS`.
+- [dd48ceff] Migrations for 'polls': polls/migrations/0001_initial.py + Create model Question + Create model Choice
+- [6942b39a] Password: ********** Password (again): ********* Superuser created successfully.
+- [2b5bb7eb] The admin isn't intended to be used by site visitors. It's for site managers.
+- [ce2aeee2] Username: admin
+- [c13596e9] admin.site.register(Question)
+- [54704ccb] class Choice(models.Model): # ... def __str__(self): return self.choice_text
+- [2039e8a0] class Choice(models.Model): question = models.ForeignKey(Question, on_delete=models.CASCADE) choice_text = models.CharField(max_length=200) votes = models.IntegerField(default=0)
+- [368af50a] class Question(models.Model): # ... def __str__(self): return self.question_text
+- [14161146] class Question(models.Model): # ... def was_published_recently(self): return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+- [524baa14] class Question(models.Model): question_text = models.CharField(max_length=200) pub_date = models.DateTimeField("date published")
+- [df692aec3f5cbbed] from .models import Question
+- [13fbe7fc2a5a9c75-2] from django.contrib import admin
+- [4af926756c29efa6-7] from django.db import models
+- [11a0b287] from django.db import models from django.utils import timezone
+- [b75c8d9ca5df7aa8] import datetime
+- [e97cba14] A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you're storing. Django follows the :ref:`DRY Principle <dry>`. The goal is to define your data model in one place and automatically derive things from it.
+- [cd8b4256] This includes the migrations, which are derived from your models file. They form a history that Django uses to update your database schema to match your current models.
+- [5cc969b9] * :mod:`django.contrib.admin` -- The admin site. You'll use it shortly.
+- [997084a2] * :mod:`django.contrib.auth` -- An authentication system.
+- [c986763d] * :mod:`django.contrib.contenttypes` -- A framework for content types.
+- [f551ee92] * :mod:`django.contrib.messages` -- A messaging framework.
+- [4b305cf9] * :mod:`django.contrib.sessions` -- A session framework.
+- [a1e90b0d] * :mod:`django.contrib.staticfiles` -- A framework for managing static files.
+- [24db99a0] * Change your models (in ``models.py``). * Run :djadmin:`python manage.py makemigrations <makemigrations>` to create migrations for those changes. * Run :djadmin:`python manage.py migrate <migrate>` to apply those changes to the database.
+- [c42f124a] * Create a database schema (``CREATE TABLE`` statements) for this app. * Create a Python database-access API for accessing ``Question`` and ``Choice`` objects.
+- [3946df0f] * Delete -- Displays a delete confirmation page.
+- [2695cc20] * Each :class:`~django.db.models.DateTimeField` gets free JavaScript shortcuts. Dates get a "Today" shortcut and calendar popup, and times get a "Now" shortcut and a convenient popup that lists commonly entered times.
+- [cb065274] * Save -- Saves changes and returns to the change-list page for this type of object.
+- [32da7e4e] * Save and add another -- Saves changes and loads a new, blank form for this type of object.
+- [4593f3a6] * Save and continue editing -- Saves changes and reloads the admin page for this object.
+- [3d394907] * The different model field types (:class:`~django.db.models.DateTimeField`, :class:`~django.db.models.CharField`) correspond to the appropriate HTML input widget. Each type of field knows how to display itself in the Django admin.
+- [8e6204a7] * The form is automatically generated from the ``Question`` model.
+- [d1b50c2e] .. RemovedInDjango2028Warning: When Python 3.12 is no longer supported, ``exit()`` can be replaced with ``exit``.
+- [8967f1e2] .. _creating-models:
+- [27072d7c] .. _tutorial02-import-timezone:
+- [e18944c4] .. admonition:: For the minimalists
+- [50bed6e0d454902f] .. admonition:: Philosophy
+- [50bed6e0d454902f-2] .. admonition:: Philosophy
+- [50bed6e0d454902f-3] .. admonition:: Philosophy
+- [dbb2ef17dd903b2b-3] .. admonition:: Where to get help:
+- [eaf050be34acb41d-7] .. code-block:: pycon
+- [eaf050be34acb41d-8] .. code-block:: pycon
+- [bf67fa15468f979f] .. code-block:: python :caption: ``mysite/settings.py``
+- [20257edb57d397a8] .. code-block:: python :caption: ``polls/admin.py``
+- [ce20b11c82955ef6] .. code-block:: python :caption: ``polls/models.py``
+- [3a9340cd0d877339-13] .. code-block:: text
+- [3a9340cd0d877339-14] .. code-block:: text
+- [3a9340cd0d877339-15] .. code-block:: text
+- [3a9340cd0d877339-16] .. code-block:: text
+- [7714e199aac2701e-71] .. console::
+- [7714e199aac2701e-72] .. console::
+- [7714e199aac2701e-73] .. console::
+- [7714e199aac2701e-74] .. console::
+- [7714e199aac2701e-75] .. console::
+- [7714e199aac2701e-76] .. console::
+- [47ea25fc] .. image:: _images/admin01.png :alt: Django admin login screen
+- [7575044a] .. image:: _images/admin02.png :alt: Django admin index page
+- [fd12fc9f] .. image:: _images/admin03t.png :alt: Django admin index page, now with polls displayed
+- [9c127d039bb0d767] .. image:: _images/admin04t.png :alt: Polls change list page
+- [63e9f1a2] .. image:: _images/admin05t.png :alt: Editing form for question object
+- [607c7e73] .. image:: _images/admin06t.png :alt: History page for question object
+- [b134712f] ===================================== Writing your first Django app, part 2 =====================================
+- [34736392] A :class:`~django.db.models.Field` can also have various optional arguments; in this case, we've set the :attr:`~django.db.models.Field.default` value of ``votes`` to 0.
+- [bbedd779] Activating models =================
+- [e2a0588d] Also, note the :setting:`INSTALLED_APPS` setting at the top of the file. That holds the names of all Django applications that are activated in this Django instance. Apps can be used in multiple projects, and you can package and distribute them for use by others in their projects.
+- [3f5fa925] But first we need to tell our project that the ``polls`` app is installed.
+- [31d7baa8] But where's our poll app? It's not displayed on the admin index page.
+- [09874d83] By default, :setting:`INSTALLED_APPS` contains the following apps, all of which come with Django:
+- [8527badb] By default, the :setting:`DATABASES` configuration uses SQLite. If you're new to databases, or you're just interested in trying Django, this is the easiest choice. SQLite is included in Python, so you won't need to install anything else to support your database. When starting your first real project, however, you may want to use a more scalable database like PostgreSQL, to avoid database-switching headaches down the road.
+- [4781169b] By running ``makemigrations``, you're telling Django that you've made some changes to your models (in this case, you've made new ones) and that you'd like the changes to be stored as a *migration*.
+- [04bf2659] Change the "Date published" by clicking the "Today" and "Now" shortcuts. Then click "Save and continue editing." Then click "History" in the upper right. You'll see a page listing all changes made to this object via the Django admin, with the timestamp and username of the person who made the change:
+- [f153308b] Click "Questions". Now you're at the "change list" page for questions. This page displays all the questions in the database and lets you choose one to change it. There's the "What's up?" question we created earlier:
+- [254281c9] Click the "What's up?" question to edit it:
+- [814c5b0b] Creating an admin user ----------------------
+- [9b215853] Creating models ===============
+- [bcc5eee7] Database setup ==============
+- [59e74758] Each field is represented by an instance of a :class:`~django.db.models.Field` class -- e.g., :class:`~django.db.models.CharField` for character fields and :class:`~django.db.models.DateTimeField` for datetimes. This tells Django what type of data each field holds.
+- [a4fb02eb] Enter the admin site --------------------
+- [94052251] Enter your desired username and press enter.
+- [1f52b52e] Explore the free admin functionality ------------------------------------
+- [5b234653] Finally, note a relationship is defined, using :class:`~django.db.models.ForeignKey`. That tells Django each ``Choice`` is related to a single ``Question``. Django supports all the common database relationships: many-to-one, many-to-many, and one-to-one.
+- [173599bc] First we'll need to create a user who can login to the admin site. Run the following command:
+- [1c84c1d4] For more information on model relations, see :doc:`Accessing related objects </ref/models/relations>`. For more on how to use double underscores to perform field lookups via the API, see :ref:`Field lookups <field-lookups-intro>`. For full details on the database API, see our :doc:`Database API reference </topics/db/queries>`.
+- [2d82d25d] Here, each model is represented by a class that subclasses :class:`django.db.models.Model`. Each model has a number of class variables, each of which represents a database field in the model.
+- [09afb45f] If the server is not running start it like so:
+- [0cde77cb] If the value of "Date published" doesn't match the time when you created the question in :doc:`Tutorial 1</intro/tutorial01>`, it probably means you forgot to set the correct value for the :setting:`TIME_ZONE` setting. Change it, reload the page and check that the correct value appears.
+- [55e0cf46] If you wish to use another database, see :ref:`details to customize and get your database running <database-installation>`.
+- [c3046f92] If you're interested, you can also run :djadmin:`python manage.py check <check>`; this checks for any problems in your project without making migrations or touching the database.
+- [9dadade2] In our poll app, we'll create two models: ``Question`` and ``Choice``. A ``Question`` has a question and a publication date. A ``Choice`` has two fields: the text of the choice and a vote tally. Each ``Choice`` is associated with a ``Question``.
+- [478a13f3] Introducing the Django Admin ============================
+- [b714f8c1] It's important to add :meth:`~django.db.models.Model.__str__` methods to your models, not only for your own convenience when dealing with the interactive prompt, but also because objects' representations are used throughout Django's automatically-generated admin.
+- [7d664cda] Let's also add a custom method to this model:
+- [22d85bab] Make the poll app modifiable in the admin -----------------------------------------
+- [d31372ca] Migrations are how Django stores changes to your models (and thus your database schema) - they're files on disk. You can read the migration for your new model if you like; it's the file ``polls/migrations/0001_initial.py``. Don't worry, you're not expected to read them every time Django makes one, but they're designed to be human-editable in case you want to manually tweak how Django changes things.
+- [23d34020] Migrations are very powerful and let you change your models over time, as you develop your project, without the need to delete your database or tables and make new ones - it specializes in upgrading your database live, without losing data. We'll cover them in more depth in a later part of the tutorial, but for now, remember the three-step guide to making model changes:
+- [55554208] Note the addition of ``import datetime`` and ``from django.utils import timezone``, to reference Python's standard :mod:`datetime` module and Django's time-zone-related utilities in :mod:`django.utils.timezone`, respectively. If you aren't familiar with time zone handling in Python, you can learn more in the :doc:`time zone support docs </topics/i18n/timezones>`.
+- [05749667] Now Django knows to include the ``polls`` app. Let's run another command:
+- [5ded7b59] Now that we've registered ``Question``, Django knows that it should be displayed on the admin index page:
+- [dc4f98c9] Now we'll define your models -- essentially, your database layout, with additional metadata.
+- [860f6d43] Now, let's hop into the interactive Python shell and play around with the free API Django gives you. To invoke the Python shell, use this command:
+- [1b535cb3] Now, open a web browser and go to "/admin/" on your local domain -- e.g., http://127.0.0.1:8000/admin/. You should see the admin's login screen:
+- [00470e16] Now, open up :file:`mysite/settings.py`. It's a normal Python module with module-level variables representing Django settings.
+- [c41ec076] Now, run :djadmin:`migrate` again to create those model tables in your database:
+- [60cd1c68] Now, try logging in with the superuser account you created in the previous step. You should see the Django admin index page:
+- [452a28bf] Once you're in the shell, explore the :doc:`database API </topics/db/queries>`:
+- [b0d5100a] Only one more thing to do: we need to tell the admin that ``Question`` objects have an admin interface. To do this, open the :file:`polls/admin.py` file, and edit it to look like this:
+- [422d9e2d] Playing with the API ====================
+- [21bf0e25] Read the :doc:`django-admin documentation </ref/django-admin>` for full information on what the ``manage.py`` utility can do.
+- [0d266b91] Save these changes and start a new Python interactive shell. (If a three-chevron prompt (>>>) indicates you are still in the shell, you need to exit first using ``exit()``). Run ``python manage.py shell`` again to reload the models.
+- [6598e22a] See :doc:`/topics/migrations` for the full details, including how to inspect the SQL a migration will run with :djadmin:`sqlmigrate` (see :ref:`executing-sqlmigrate`).
+- [fe1dd67c] Since :doc:`translation </topics/i18n/translation>` is turned on by default, if you set :setting:`LANGUAGE_CODE`, the login screen will be displayed in the given language (if Django has appropriate translations).
+- [15dcbf8d] Some :class:`~django.db.models.Field` classes have required arguments. :class:`~django.db.models.CharField`, for example, requires that you give it a :attr:`~django.db.models.CharField.max_length`. That's used not only in the database schema, but in validation, as we'll soon see.
+- [44f41db9] Some of these applications make use of at least one database table, though, so we need to create the tables in the database before we can use them. To do that, run the following command:
+- [767d7d4a] Start the development server ----------------------------
+- [e3e6d871] That small bit of model code gives Django a lot of information. With it, Django is able to:
+- [e1b88d65] The :djadmin:`migrate` command looks at the :setting:`INSTALLED_APPS` setting and creates any necessary database tables according to the database settings in your :file:`mysite/settings.py` file and the database migrations shipped with the app (we'll cover those later). You'll see a message for each migration it applies. If you're interested, run the command-line client for your database and type ``\dt`` (PostgreSQL), ``SHOW TABLES;`` (MariaDB, MySQL), ``.tables`` (SQLite), or ``SELECT TABLE_NAME FROM USER_TABLES;`` (Oracle) to display the tables Django created.
+- [5a36e43d] The :djadmin:`migrate` command takes all the migrations that haven't been applied (Django tracks which ones are applied using a special table in your database called ``django_migrations``) and runs them against your database - essentially, synchronizing the changes you made to your models with the schema in the database.
+- [eb2b0726] The Django admin site is activated by default. Let's start the development server and explore it.
+- [dbee1375] The bottom part of the page gives you a couple of options:
+- [f72c2bfa] The final step is to enter your password. You will be asked to enter your password twice, the second time as a confirmation of the first.
+- [1fec4ff2] The name of each :class:`~django.db.models.Field` instance (e.g. ``question_text`` or ``pub_date``) is the field's name, in machine-friendly format. You'll use this value in your Python code, and your database will use it as the column name.
+- [0e48e4b7] The reason that there are separate commands to make and apply migrations is because you'll commit migrations to your version control system and ship them with your app; they not only make your development easier, they're also usable by other developers and in production.
+- [be59050a] These applications are included by default as a convenience for the common case.
+- [2460df54] These concepts are represented by Python classes. Edit the :file:`polls/models.py` file so it looks like this:
+- [d9b0bcb5] Things to note here:
+- [9744809b] This tutorial begins where :doc:`Tutorial 1 </intro/tutorial01>` left off. We'll set up the database, create your first model, and get a quick introduction to Django's automatically-generated admin site.
+- [c24acd2e] To include the app in our project, we need to add a reference to its configuration class in the :setting:`INSTALLED_APPS` setting. The ``PollsConfig`` class is in the :file:`polls/apps.py` file, so its dotted path is ``'polls.apps.PollsConfig'``. Edit the :file:`mysite/settings.py` file and add that dotted path to the :setting:`INSTALLED_APPS` setting. It'll look like this:
+- [5cb3aeda] Wait a minute. ``<Question: Question object (1)>`` isn't a helpful representation of this object. Let's fix that by editing the ``Question`` model (in the ``polls/models.py`` file) and adding a :meth:`~django.db.models.Model.__str__` method to both ``Question`` and ``Choice``:
+- [924ed805] We're using this instead of simply typing "python", because :file:`manage.py` sets the :envvar:`DJANGO_SETTINGS_MODULE` environment variable, which gives Django the Python import path to your :file:`mysite/settings.py` file. By default, the :djadmin:`shell` command automatically imports the models from your :setting:`INSTALLED_APPS`.
+- [6662cfec] When you're comfortable with the models API and have familiarized yourself with the admin site, read :doc:`part 3 of this tutorial</intro/tutorial03>` to learn about how to add more views to our polls app.
+- [0d390413] While you're editing :file:`mysite/settings.py`, set :setting:`TIME_ZONE` to your time zone.
+- [64ad63cf] You can use an optional first positional argument to a :class:`~django.db.models.Field` to designate a human-readable name. That's used in a couple of introspective parts of Django, and it doubles as documentation. If this field isn't provided, Django will use the machine-readable name. In this example, we've only defined a human-readable name for ``Question.pub_date``. For all other fields in this model, the field's machine-readable name will suffice as its human-readable name.
+- [6e8036b1] You should see a few types of editable content: groups and users. They are provided by :mod:`django.contrib.auth`, the authentication framework shipped by Django.
+- [331fd909] You should see something similar to the following:
+- [1230493b] You will then be prompted for your desired email address:

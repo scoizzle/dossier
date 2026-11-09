@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::Extract.__init__
 
-- Subject: django/db/models/functions/datetime::Extract.__init__ (id `549e82f4-e3c6-4eea-8603-72a38ec5e880`)
+- Subject: django/db/models/functions/datetime::Extract.__init__ (id `a444dbcd-a4f1-4cdc-ab03-7de3d0e20d37`)
 - Kind: method
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

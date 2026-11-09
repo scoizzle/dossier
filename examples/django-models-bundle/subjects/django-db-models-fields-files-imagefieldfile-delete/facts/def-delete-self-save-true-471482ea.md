@@ -1,6 +1,6 @@
 # Fact 471482ea
 
-Store id: dc2e8f9d-f1e8-44ee-9d35-961a08488d17
+Store id: d943a4cc-4272-4f32-bfc2-2c0f4150aad4
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete(self, save=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2619370+00:00`
+- posted_at: `2026-11-09T23:31:57.4296980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 413,
     "symbol": "ImageFieldFile.delete"
   },
-  "id": "dc2e8f9d-f1e8-44ee-9d35-961a08488d17",
+  "id": "d943a4cc-4272-4f32-bfc2-2c0f4150aad4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2619370+00:00"
+    "posted_at": "2026-11-09T23:31:57.4296980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4354d4d-d449-4571-b085-bfdb8b20e8c7",
+  "subject_id": "9cdba483-75a9-42c5-a5d0-855530324f20",
   "subject_name": "django/db/models/fields/files::ImageFieldFile.delete",
   "tags": [
     "entity:method"

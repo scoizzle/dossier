@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/lookups
 
-- Subject: docs/ref/contrib/postgres/lookups (id `bad19db2-8bf6-4124-9f0a-cdb76af6114e`)
+- Subject: docs/ref/contrib/postgres/lookups (id `8310b7a0-424b-4a63-9e8a-c39eb875279d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 25 of 33
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1131 tokens
+- Facts shown: 29 of 33
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> City.objects.filter(name__trigram_similar="Middlesborough") <QuerySet [<City: Middlesbrough>]> [dc3c4f84]
 - >>> City.objects.filter(name__unaccent="México") <QuerySet [<City: Mexico>]> [b1345f99]
@@ -36,6 +36,9 @@
 - ``Unaccent`` ============ [edf962c1]
 - ``trigram_similar`` ------------------- [2a46a5ce]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [e1f9e305] [5db16fcc1bbcfb35] [684ac06a] [26282979]
+- [e1f9e305] This lookup is implemented using :class:`~django.db.models.Transform`, so it can be chained with other lookup functions. To use it, you need to add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `unaccent extension on PostgreSQL`_. The :class:`~django.contrib.postgres.operations.UnaccentExtension` migration operation is available if you want to perform this activation using migrations.
+- [5db16fcc1bbcfb35] To use it, add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `pg_trgm extension`_ on PostgreSQL. You can install the extension using the :class:`~django.contrib.postgres.operations.TrigramExtension` migration operation.
+- [684ac06a] ``trigram_strict_word_similar`` -------------------------------
+- [26282979] ``trigram_word_similar`` ------------------------

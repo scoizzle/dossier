@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/mixins-simple
 
-- Subject: docs/ref/class-based-views/mixins-simple (id `74305f14-3fed-4f25-b2b7-cc2082b0fb00`)
+- Subject: docs/ref/class-based-views/mixins-simple (id `a24504e5-a635-4680-8070-665fc0cd959e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 21 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1232 tokens
+- Facts shown: 36 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Note that having the view instance in the template context may expose potentially hazardous methods to template authors. To prevent methods like this from being called in the template, set ``alters_data=True`` on those methods. For more information, read the documentation on :ref:`rendering a template context <alters-data-description>`. [9658d96b]
 - TemplateView.as_view(extra_context={"title": "Custom Title"}) [0f2fc964]
@@ -32,6 +32,20 @@
 - **Attributes** [37f612b97e1bc71b-7]
 - **Methods** [7407ef7dca9e98ce-23]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [7407ef7dca9e98ce-24] [6e5bab06425e4544] [c14425e2] [e56dd2bb] [82d228a6] [47ff310de933b083] [0e06ba1d6d133a88-3] [68e197214557455a-2] [168b9fd3] [9ff2c543] [da506e49] [6833ddd2] [d4b6f97e] [7ebe4ced] [a639e331]
+- [7407ef7dca9e98ce-24] **Methods**
+- [6e5bab06425e4544] .. attribute:: content_type
+- [c14425e2] .. attribute:: extra_context
+- [e56dd2bb] .. attribute:: response_class
+- [82d228a6] .. attribute:: template_engine
+- [47ff310de933b083] .. attribute:: template_name
+- [0e06ba1d6d133a88-3] .. method:: get_context_data(**kwargs)
+- [68e197214557455a-2] .. method:: get_template_names()
+- [168b9fd3] .. method:: render_to_response(context, **response_kwargs)
+- [9ff2c543] Provides a mechanism to construct a :class:`~django.template.response.TemplateResponse`, given suitable context. The template to use is configurable and can be further customized by subclasses.
+- [da506e49] .. class:: django.views.generic.base.ContextMixin
+- [6833ddd2] .. class:: django.views.generic.base.TemplateResponseMixin
+- [d4b6f97e] ============= Simple mixins =============
+- [7ebe4ced] ``ContextMixin`` ================
+- [a639e331] ``TemplateResponseMixin`` =========================

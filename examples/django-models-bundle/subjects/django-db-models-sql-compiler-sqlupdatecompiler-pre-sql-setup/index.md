@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLUpdateCompiler.pre_sql_setup
 
-- Subject: django/db/models/sql/compiler::SQLUpdateCompiler.pre_sql_setup (id `ffeee175-a4b0-4dfc-b127-d5d0cd21b485`)
+- Subject: django/db/models/sql/compiler::SQLUpdateCompiler.pre_sql_setup (id `43ab3735-7a71-444b-bb2c-cde650eb70e9`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

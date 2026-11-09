@@ -1,14 +1,14 @@
 # docs/ref/contrib/humanize
 
-- Subject: docs/ref/contrib/humanize (id `ae660dfe-2ec8-4d4d-9cc1-424db04964d0`)
+- Subject: docs/ref/contrib/humanize (id `12658a3f-227f-4e16-93c8-a32db6ae7a64`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 20 of 42
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1544 tokens
+- Facts shown: 41 of 42
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * ``1000000`` becomes ``'1,0 Million'``. * ``1200000`` becomes ``'1,2 Millionen'``. * ``1200000000`` becomes ``'1,2 Milliarden'``. * ``-1200000000`` becomes ``'-1,2 Milliarden'``. [ccb4cfea]
 - * ``1000000`` becomes ``1.0 million``. * ``1200000`` becomes ``1.2 million``. * ``1200000000`` becomes ``1.2 billion``. * ``-1200000000`` becomes ``-1.2 billion``. [e1fcb2a6]
@@ -31,6 +31,26 @@
 - A set of Django template filters useful for adding a "human touch" to data. [dde959badf9b03bb]
 - Converts an integer to its ordinal as a string. [cc7ac622]
 
-## Beyond the budget
+## All facts
 
-21 more facts did not fit in the budget: [fe6a8a3f] [77aa403c] [87c8ee5a] [fc0f7135] [12678636d153d030] [12678636d153d030-2] [12678636d153d030-3] [12678636d153d030-4] [a44db05b] [1ec9ddff] [7a795a6a] [f175d9cf] [60fba40c] [ead1ec1f] [332b5964] [67ce23ad] [fc111c88] [17c66613] [7304e082] [81b213df] [b2694f0f]
+- [fe6a8a3f] Converts a large integer (or a string representation of an integer) to a friendly text representation. Translates ``1.0`` as a singular phrase and all other numeric values as plural, this may be incorrect for some languages. Works best for numbers over 1 million.
+- [77aa403c] Converts an integer or float (or a string representation of either) to a string containing commas every three digits.
+- [87c8ee5a] Examples (when 'now' is 17 Feb 2007 16:30:00):
+- [fc0f7135] Examples (when 'today' is 17 Feb 2007):
+- [12678636d153d030] Examples:
+- [12678636d153d030-2] Examples:
+- [12678636d153d030-3] Examples:
+- [12678636d153d030-4] Examples:
+- [a44db05b] For dates that are the current day or within one day, return "today", "tomorrow" or "yesterday", as appropriate. Otherwise, format the date using the passed in format string.
+- [1ec9ddff] For datetime values, returns a string representing how many seconds, minutes or hours ago it was -- falling back to the :tfilter:`timesince` format if the value is more than a day old. In case the datetime value is in the future the return value will automatically use an appropriate phrase.
+- [7a795a6a] For numbers 1-9, returns the number spelled out. Otherwise, returns the number. This follows Associated Press style.
+- [f175d9cf] To activate these filters, add ``'django.contrib.humanize'`` to your :setting:`INSTALLED_APPS` setting. Once you've done that, use ``{% load humanize %}`` in a template, and you'll have access to the following filters.
+- [60fba40c] Values up to 10^100 (Googol) are supported.
+- [ead1ec1f] You can pass in either an integer or a string representation of an integer.
+- [332b5964] You can pass in either an integer or a string representation of an integer. Negative integers are returned unchanged.
+- [67ce23ad] ``apnumber`` ============
+- [fc111c88] ``intcomma`` ============
+- [17c66613] ``intword`` ===========
+- [7304e082] ``naturalday`` ==============
+- [81b213df] ``naturaltime`` ===============
+- [b2694f0f] ``ordinal`` ===========

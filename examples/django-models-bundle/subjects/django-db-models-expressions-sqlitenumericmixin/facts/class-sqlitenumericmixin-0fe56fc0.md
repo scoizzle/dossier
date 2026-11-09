@@ -1,6 +1,6 @@
 # Fact 0fe56fc0
 
-Store id: 0a29ede5-30bb-4bfc-9a8b-4ce89a0e6f07
+Store id: a3fd9877-420e-4fa2-826e-500261887952
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLiteNumericMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4555750+00:00`
+- posted_at: `2026-11-09T23:31:55.6924230+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 22,
     "symbol": "SQLiteNumericMixin"
   },
-  "id": "0a29ede5-30bb-4bfc-9a8b-4ce89a0e6f07",
+  "id": "a3fd9877-420e-4fa2-826e-500261887952",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4555750+00:00"
+    "posted_at": "2026-11-09T23:31:55.6924230+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39d5b24b-cf32-4b33-9df7-0b405ab0df16",
+  "subject_id": "9b643254-7bd9-457c-b79b-a5c80b366b55",
   "subject_name": "django/db/models/expressions::SQLiteNumericMixin",
   "tags": [
     "entity:class"

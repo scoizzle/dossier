@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/postgis/pgraster
 
-- Subject: django/contrib/gis/db/backends/postgis/pgraster (id `1136f5c8-d566-41a6-99f5-baa720e573e5`)
+- Subject: django/contrib/gis/db/backends/postgis/pgraster (id `d5872390-89b8-4c26-ab78-e66f543f13f8`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 18 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1223 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Add packed header and band data to result result += bandheader + band.data(as_memoryview=True) [dcac7578]
 - # Append band data to band list bands.append(band_result) [27384396]
@@ -29,6 +29,12 @@
 - return { "srid": int(header[9]), "width": header[10], "height": header[11], "datatype": pixeltypes[0], "origin": (header[5], header[6]), "scale": (header[3], header[4]), "skew": (header[7], header[8]), "bands": bands, } [3e02cfb8]
 - def chunk(data, index): """ Split a string into two parts at the input index. """ return data[:index], data[index:] [3ac01ce5]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [7f0c82cf] [e720ec5c] [ab5758fc] [45077564] [0e5503d8] [bec8a79d] [a774c3d9]
+- [7f0c82cf] def from_pgraster(data): """ Convert a PostGIS HEX String into a dictionary. """ if data is None: return
+- [e720ec5c] def pack(structure, data): """ Pack data into hex string with little endian format. """ return struct.pack("<" + structure, *data)
+- [ab5758fc] def to_pgraster(rast): """ Convert a GDALRaster into PostGIS Raster format. """ # Prepare the raster header data as a tuple. The first two numbers are # the endianness and the PostGIS Raster Version, both are fixed by # PostGIS at the moment. rasterheader = ( 1, 0, len(rast.bands), rast.scale.x, rast.scale.y, rast.origin.x, rast.origin.y, rast.skew.x, rast.skew.y, rast.srs.srid, rast.width, rast.height, )
+- [45077564] def unpack(structure, data): """ Unpack little endian hexlified binary string into a list. """ return struct.unpack("<" + structure, bytes.fromhex(data))
+- [0e5503d8] from .const import ( BANDTYPE_FLAG_HASNODATA, BANDTYPE_PIXTYPE_MASK, GDAL_TO_POSTGIS, GDAL_TO_STRUCT, POSTGIS_HEADER_STRUCTURE, POSTGIS_TO_GDAL, STRUCT_SIZE, )
+- [bec8a79d] from django.core.exceptions import ValidationError
+- [a774c3d9] import struct

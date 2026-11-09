@@ -1,6 +1,6 @@
 # Fact 6c2a6b99
 
-Store id: d1d7e230-59d2-4aaa-b35c-a65a774bb897
+Store id: 72a7a638-c289-45f0-be7a-880c611b0598
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0978450+00:00`
+- posted_at: `2026-11-09T23:32:05.0906170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 215,
     "symbol": "Q.identity"
   },
-  "id": "d1d7e230-59d2-4aaa-b35c-a65a774bb897",
+  "id": "72a7a638-c289-45f0-be7a-880c611b0598",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0978450+00:00"
+    "posted_at": "2026-11-09T23:32:05.0906170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "86ff4109-5efd-49b9-a7bb-351a71886452",
+  "subject_id": "7cf816d6-f833-4b4c-81ba-9235c3667b75",
   "subject_name": "django/db/models/query_utils::Q.identity",
   "tags": [
     "entity:method",

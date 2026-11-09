@@ -1,6 +1,6 @@
 # Fact 95af722d
 
-Store id: f2e3f315-9ba4-4291-b8cd-1886f8e2edbd
+Store id: 6c960b6d-1c12-4a57-aa48-e2174641db1c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _process_as_mysql(self, sql, params, connection, key_transforms=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6925370+00:00`
+- posted_at: `2026-11-09T23:31:57.9430710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 398,
     "symbol": "ProcessJSONLHSMixin._process_as_mysql"
   },
-  "id": "f2e3f315-9ba4-4291-b8cd-1886f8e2edbd",
+  "id": "6c960b6d-1c12-4a57-aa48-e2174641db1c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6925370+00:00"
+    "posted_at": "2026-11-09T23:31:57.9430710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "369254ac-0c84-43d6-9766-f06b7869aab7",
+  "subject_id": "a367ce80-a031-43ae-88cc-bbe17363370f",
   "subject_name": "django/db/models/fields/json::ProcessJSONLHSMixin._process_as_mysql",
   "tags": [
     "entity:method"

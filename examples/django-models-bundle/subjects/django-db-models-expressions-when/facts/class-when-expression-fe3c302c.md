@@ -1,6 +1,6 @@
 # Fact fe3c302c
 
-Store id: 84bb9687-0730-446d-8409-7c66b4c0b7a9
+Store id: 60dc3c3e-f7b3-475f-9a56-1b142b093c45
 
 ## Text
 
@@ -20,7 +20,7 @@ class When(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6884210+00:00`
+- posted_at: `2026-11-09T23:31:55.9446930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1635,
     "symbol": "When"
   },
-  "id": "84bb9687-0730-446d-8409-7c66b4c0b7a9",
+  "id": "60dc3c3e-f7b3-475f-9a56-1b142b093c45",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6884210+00:00"
+    "posted_at": "2026-11-09T23:31:55.9446930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16e5a540-bc35-4ace-8815-abd783b9ac7a",
+  "subject_id": "e0ccb91a-0951-4b1a-8664-dd5e3e24538b",
   "subject_name": "django/db/models/expressions::When",
   "tags": [
     "entity:class",

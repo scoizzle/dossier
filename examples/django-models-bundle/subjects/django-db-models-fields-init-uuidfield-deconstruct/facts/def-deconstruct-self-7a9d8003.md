@@ -1,6 +1,6 @@
 # Fact 7a9d8003
 
-Store id: 60cc4814-27c8-498c-9fe9-71c377a87d11
+Store id: 5db4d159-4891-43f0-90de-cd6387ddd796
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7108230+00:00`
+- posted_at: `2026-11-09T23:31:56.8781410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2830,
     "symbol": "UUIDField.deconstruct"
   },
-  "id": "60cc4814-27c8-498c-9fe9-71c377a87d11",
+  "id": "5db4d159-4891-43f0-90de-cd6387ddd796",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7108230+00:00"
+    "posted_at": "2026-11-09T23:31:56.8781410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bf392244-868c-4bea-bb84-7c19b717db4c",
+  "subject_id": "1c00b67f-dd0e-4de8-9632-544df7f2fa40",
   "subject_name": "django/db/models/fields/__init__::UUIDField.deconstruct",
   "tags": [
     "entity:method"

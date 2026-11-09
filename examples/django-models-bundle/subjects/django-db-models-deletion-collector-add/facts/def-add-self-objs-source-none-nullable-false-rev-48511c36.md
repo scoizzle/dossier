@@ -1,6 +1,6 @@
 # Fact 48511c36
 
-Store id: 18eedca0-c325-4fd4-a2ef-6ba29912a6b9
+Store id: ad001c9b-1cee-49fa-b7bd-ebdbbd3b507a
 
 ## Text
 
@@ -20,7 +20,7 @@ def add(self, objs, source=None, nullable=False, reverse_dependency=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0399250+00:00`
+- posted_at: `2026-11-09T23:31:55.0964060+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 141,
     "symbol": "Collector.add"
   },
-  "id": "18eedca0-c325-4fd4-a2ef-6ba29912a6b9",
+  "id": "ad001c9b-1cee-49fa-b7bd-ebdbbd3b507a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0399250+00:00"
+    "posted_at": "2026-11-09T23:31:55.0964060+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1887e08-a068-48c9-91c2-c990436f5d92",
+  "subject_id": "dbc2d630-2b10-43e9-9349-9e4e750781b1",
   "subject_name": "django/db/models/deletion::Collector.add",
   "tags": [
     "entity:method"

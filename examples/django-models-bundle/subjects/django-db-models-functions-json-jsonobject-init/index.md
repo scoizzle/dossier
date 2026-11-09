@@ -1,9 +1,9 @@
 # django/db/models/functions/json::JSONObject.__init__
 
-- Subject: django/db/models/functions/json::JSONObject.__init__ (id `acba2f25-055f-4d49-b97f-994be0f2f8a3`)
+- Subject: django/db/models/functions/json::JSONObject.__init__ (id `ccb3813c-5952-4078-a998-ca5ffbb1174d`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

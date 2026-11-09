@@ -1,6 +1,6 @@
 # Fact 210340c1
 
-Store id: fa82cf74-09dc-4031-90fc-1b02bd96b08a
+Store id: c7548200-c6ab-4bee-b879-8f99d5a965ed
 
 ## Text
 
@@ -20,7 +20,7 @@ class HasAnyKeys(HasKeys)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6603330+00:00`
+- posted_at: `2026-11-09T23:31:57.9071300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 283,
     "symbol": "HasAnyKeys"
   },
-  "id": "fa82cf74-09dc-4031-90fc-1b02bd96b08a",
+  "id": "c7548200-c6ab-4bee-b879-8f99d5a965ed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6603330+00:00"
+    "posted_at": "2026-11-09T23:31:57.9071300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9355a184-5006-4089-834c-4cc02f9f7112",
+  "subject_id": "d3912e20-8af3-4797-ba9f-04f04330edaf",
   "subject_name": "django/db/models/fields/json::HasAnyKeys",
   "tags": [
     "entity:class"

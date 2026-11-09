@@ -1,6 +1,6 @@
 # Fact ec606817
 
-Store id: bb5045e7-489d-46c6-b873-2eaca2f92e02
+Store id: aefadd5b-4e05-4e83-8e61-4196348b5bf3
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_default(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3464130+00:00`
+- posted_at: `2026-11-09T23:31:56.5217030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1053,
     "symbol": "Field.has_default"
   },
-  "id": "bb5045e7-489d-46c6-b873-2eaca2f92e02",
+  "id": "aefadd5b-4e05-4e83-8e61-4196348b5bf3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3464130+00:00"
+    "posted_at": "2026-11-09T23:31:56.5217030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0c31bd4c-5873-45a8-babd-746ee1cf4811",
+  "subject_id": "f9de01da-fa8a-40a0-b57c-1ac49aa3aa36",
   "subject_name": "django/db/models/fields/__init__::Field.has_default",
   "tags": [
     "entity:method"

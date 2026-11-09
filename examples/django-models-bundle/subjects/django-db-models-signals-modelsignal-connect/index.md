@@ -1,9 +1,9 @@
 # django/db/models/signals::ModelSignal.connect
 
-- Subject: django/db/models/signals::ModelSignal.connect (id `526664e9-51de-4255-8ccf-d8ff751ec4c7`)
+- Subject: django/db/models/signals::ModelSignal.connect (id `a2610354-8e09-4fac-8e1d-692936a991da`)
 - Kind: method
 - Parent: [django/db/models/signals](../django-db-models-signals/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 31 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::get_children_from_q
 
-- Subject: django/db/models/sql/query::get_children_from_q (id `95245811-987a-461d-b1fb-4b571d17e9cf`)
+- Subject: django/db/models/sql/query::get_children_from_q (id `38e68cf6-6cdc-4b17-a83a-4981537e2607`)
 - Kind: function
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

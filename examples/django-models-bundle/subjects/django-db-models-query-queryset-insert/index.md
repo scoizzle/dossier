@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._insert
 
-- Subject: django/db/models/query::QuerySet._insert (id `21a4e28f-2c7b-49b9-99c6-59630b7e276f`)
+- Subject: django/db/models/query::QuerySet._insert (id `be939b4c-eca2-4987-bd55-ef279886ccde`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 45 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

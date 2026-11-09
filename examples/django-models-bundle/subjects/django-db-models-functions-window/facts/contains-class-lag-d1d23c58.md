@@ -1,6 +1,6 @@
 # Fact d1d23c58
 
-Store id: a8d52b05-f04f-46fd-888f-460cd28663fa
+Store id: fb64b58b-1d3c-4a78-8229-31ea6a7a7cc8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Lag
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a8d52b05-f04f-46fd-888f-460cd28663fa",
+  "id": "fb64b58b-1d3c-4a78-8229-31ea6a7a7cc8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Lag"
       },
       "rel": "contains",
-      "target": "102c351a-faca-4ead-b2d3-a7a3bfc8cace"
+      "target": "e4c37dcf-880b-4e34-9e78-482d2c354ec9"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/deletion::Collector.instances_with_model
 
-- Subject: django/db/models/deletion::Collector.instances_with_model (id `35cfec31-a6ee-4e3a-9668-39205eb98ff5`)
+- Subject: django/db/models/deletion::Collector.instances_with_model (id `aa83fdb8-ea6b-4345-b117-7dce5bf8fce6`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

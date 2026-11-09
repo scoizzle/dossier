@@ -1,6 +1,6 @@
 # Fact 47696b14
 
-Store id: 036f3ab1-7ddc-4888-8cf1-8be266a7779c
+Store id: fe177f9b-7a07-401b-8ac7-ff84e20d6f3f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _convert_value_noop(value, expression, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5191080+00:00`
+- posted_at: `2026-11-09T23:31:55.7821280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 376,
     "symbol": "BaseExpression._convert_value_noop"
   },
-  "id": "036f3ab1-7ddc-4888-8cf1-8be266a7779c",
+  "id": "fe177f9b-7a07-401b-8ac7-ff84e20d6f3f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5191080+00:00"
+    "posted_at": "2026-11-09T23:31:55.7821280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3cc1d2f6-b9a0-4692-b738-6361093aa136",
+  "subject_id": "ffa2f8db-e1b6-4a24-ace4-8ccb0cd229fd",
   "subject_name": "django/db/models/expressions::BaseExpression._convert_value_noop",
   "tags": [
     "entity:static_method",

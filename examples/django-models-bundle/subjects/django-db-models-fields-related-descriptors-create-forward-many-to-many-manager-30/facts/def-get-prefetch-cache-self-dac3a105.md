@@ -1,6 +1,6 @@
 # Fact dac3a105
 
-Store id: c4f109bd-6158-405c-95a3-6e07eb7dd8b1
+Store id: cbaa133a-4c28-44ae-a17c-8f238c5eec3d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prefetch_cache(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8643020+00:00`
+- posted_at: `2026-11-09T23:31:59.3718940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1175,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.get_prefetch_cache"
   },
-  "id": "c4f109bd-6158-405c-95a3-6e07eb7dd8b1",
+  "id": "cbaa133a-4c28-44ae-a17c-8f238c5eec3d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8643020+00:00"
+    "posted_at": "2026-11-09T23:31:59.3718940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "353790a5-7b73-41e9-b69e-eb15ca0b2dec",
+  "subject_id": "396cefa9-ac0b-476c-af7c-c5893c4eb67f",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.get_prefetch_cache",
   "tags": [
     "entity:method"

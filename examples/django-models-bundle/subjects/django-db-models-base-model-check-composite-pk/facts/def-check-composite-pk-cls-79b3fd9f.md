@@ -1,6 +1,6 @@
 # Fact 79b3fd9f
 
-Store id: 3af00649-2557-4ecd-aced-f9436ddf2915
+Store id: 36f441d1-3dcd-423b-bc8e-6b34ea90a82a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_composite_pk(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3545870+00:00`
+- posted_at: `2026-11-09T23:31:53.7609770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1813,
     "symbol": "Model._check_composite_pk"
   },
-  "id": "3af00649-2557-4ecd-aced-f9436ddf2915",
+  "id": "36f441d1-3dcd-423b-bc8e-6b34ea90a82a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3545870+00:00"
+    "posted_at": "2026-11-09T23:31:53.7609770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be38d477-1ad7-46c2-bb99-6ada1b0d3b8e",
+  "subject_id": "f2f3e17a-9b74-4b89-83b5-bfe0dd3aa7bd",
   "subject_name": "django/db/models/base::Model._check_composite_pk",
   "tags": [
     "entity:class_method",

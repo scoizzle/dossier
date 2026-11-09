@@ -1,6 +1,6 @@
 # Fact e53dcb5a
 
-Store id: cb483790-37f4-420d-bcf5-600efb3ffff3
+Store id: abed9791-4680-43db-8e86-2c15da88d099
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class YearGt
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cb483790-37f4-420d-bcf5-600efb3ffff3",
+  "id": "abed9791-4680-43db-8e86-2c15da88d099",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "YearGt"
       },
       "rel": "contains",
-      "target": "e029f38c-ebfc-49d4-901a-6aace97d90c1"
+      "target": "4e54fc69-eb4c-47e2-9eec-a06a781de544"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

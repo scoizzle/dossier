@@ -1,6 +1,6 @@
 # Fact 6fe338e2
 
-Store id: 579898f7-eaca-4a22-88a1-57ec5e3ec76c
+Store id: 78e2bcb6-4cd3-4442-9073-e4fee85ecc6a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_condition_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.7773160+00:00`
+- posted_at: `2026-11-09T23:32:02.9114060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 177,
     "symbol": "Index._get_condition_sql"
   },
-  "id": "579898f7-eaca-4a22-88a1-57ec5e3ec76c",
+  "id": "78e2bcb6-4cd3-4442-9073-e4fee85ecc6a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.7773160+00:00"
+    "posted_at": "2026-11-09T23:32:02.9114060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cc6ad318-3ca4-43b6-a019-2ba4ae74d5cc",
+  "subject_id": "8f869c10-d546-47c7-88ed-db71d5f15965",
   "subject_name": "django/db/models/indexes::Index._get_condition_sql",
   "tags": [
     "entity:method"

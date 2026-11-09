@@ -1,9 +1,9 @@
 # django/db/models/lookups::Range.get_rhs_op
 
-- Subject: django/db/models/lookups::Range.get_rhs_op (id `caa3990e-e249-4047-a221-73b8dab0a4f3`)
+- Subject: django/db/models/lookups::Range.get_rhs_op (id `cc38b2ce-8cec-4a65-88f0-262f0f3f5bf6`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

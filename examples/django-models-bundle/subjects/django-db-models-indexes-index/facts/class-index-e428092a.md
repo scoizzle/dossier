@@ -1,6 +1,6 @@
 # Fact e428092a
 
-Store id: 3518b450-77ce-4999-86b4-eb4e445664f9
+Store id: cca204a9-a592-4dbf-9991-804d99ffe381
 
 ## Text
 
@@ -20,7 +20,7 @@ class Index
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.7490250+00:00`
+- posted_at: `2026-11-09T23:32:02.8862640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 14,
     "symbol": "Index"
   },
-  "id": "3518b450-77ce-4999-86b4-eb4e445664f9",
+  "id": "cca204a9-a592-4dbf-9991-804d99ffe381",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.7490250+00:00"
+    "posted_at": "2026-11-09T23:32:02.8862640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "63b81bce-73eb-42b3-8692-7d60d19a98bf",
+  "subject_id": "0dc7cfe8-099e-4230-bb9e-5c4397cc8c39",
   "subject_name": "django/db/models/indexes::Index",
   "tags": [
     "entity:class"

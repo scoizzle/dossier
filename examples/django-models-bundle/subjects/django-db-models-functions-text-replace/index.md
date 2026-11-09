@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Replace
 
-- Subject: django/db/models/functions/text::Replace (id `a0dc1d66-41bc-4010-a1c7-fef698eee71a`)
+- Subject: django/db/models/functions/text::Replace (id `305f11d6-f633-45df-9337-ec53f1f4521f`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

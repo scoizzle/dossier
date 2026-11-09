@@ -1,6 +1,6 @@
 # Fact c220bc33
 
-Store id: e3f91607-bcfc-44c2-b378-4ca9af2adb01
+Store id: 9d562475-ce10-47dd-836a-4c2257b23c6b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FieldGetDbPrepValueIterableMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e3f91607-bcfc-44c2-b378-4ca9af2adb01",
+  "id": "9d562475-ce10-47dd-836a-4c2257b23c6b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FieldGetDbPrepValueIterableMixin"
       },
       "rel": "contains",
-      "target": "3f93c8a1-0899-45c4-838b-1cb36d1fe39b"
+      "target": "2a44b005-2811-4959-b1ce-970f2d70453b"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

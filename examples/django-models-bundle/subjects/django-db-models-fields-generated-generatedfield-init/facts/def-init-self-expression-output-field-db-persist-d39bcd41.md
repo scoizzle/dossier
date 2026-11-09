@@ -1,6 +1,6 @@
 # Fact d39bcd41
 
-Store id: 78fc5121-b308-4750-9af7-40dc798b7b98
+Store id: aca9c42e-60df-4d23-aaf0-3276fafd059b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *, expression, output_field, db_persist, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4252220+00:00`
+- posted_at: `2026-11-09T23:31:57.6153860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 18,
     "symbol": "GeneratedField.__init__"
   },
-  "id": "78fc5121-b308-4750-9af7-40dc798b7b98",
+  "id": "aca9c42e-60df-4d23-aaf0-3276fafd059b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4252220+00:00"
+    "posted_at": "2026-11-09T23:31:57.6153860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "64ea503f-ed0a-43aa-bc91-f311f961e140",
+  "subject_id": "f727098d-01d7-4e49-9310-b1bf40d79569",
   "subject_name": "django/db/models/fields/generated::GeneratedField.__init__",
   "tags": [
     "entity:method"

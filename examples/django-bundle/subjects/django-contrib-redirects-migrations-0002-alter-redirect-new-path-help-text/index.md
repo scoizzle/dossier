@@ -1,8 +1,8 @@
 # django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text
 
-- Subject: django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text (id `d64d1270-a51c-4018-87cb-d9ef5d8c52d3`)
+- Subject: django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text (id `34d73709-8a85-4c1b-87fd-93b95fa3b766`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 137 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

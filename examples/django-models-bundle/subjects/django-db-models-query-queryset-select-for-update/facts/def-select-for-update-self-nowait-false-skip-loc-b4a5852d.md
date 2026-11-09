@@ -1,6 +1,6 @@
 # Fact b4a5852d
 
-Store id: fd303406-eadf-4468-8aa5-8c7a0c773e63
+Store id: 56458d92-b53a-457b-a5fd-08d912b36262
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_for_update(self, nowait=False, skip_locked=False, of=(), no_key=False
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6384480+00:00`
+- posted_at: `2026-11-09T23:32:04.5676500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1788,
     "symbol": "QuerySet.select_for_update"
   },
-  "id": "fd303406-eadf-4468-8aa5-8c7a0c773e63",
+  "id": "56458d92-b53a-457b-a5fd-08d912b36262",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6384480+00:00"
+    "posted_at": "2026-11-09T23:32:04.5676500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3e10e628-d4c2-497f-b63f-132308a17597",
+  "subject_id": "029b65d8-807b-49e9-9600-276471a04ec8",
   "subject_name": "django/db/models/query::QuerySet.select_for_update",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 04eb9df5
 
-Store id: 01be3fb5-f246-49ce-ab74-e37310b0b6cc
+Store id: 4d0eeac9-d0e6-407d-8552-6d2a25cde3dc
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ATan
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "01be3fb5-f246-49ce-ab74-e37310b0b6cc",
+  "id": "4d0eeac9-d0e6-407d-8552-6d2a25cde3dc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ATan"
       },
       "rel": "contains",
-      "target": "e42f517e-99c7-4edb-8bb6-1f2875362ea2"
+      "target": "cb7a0dce-aa3d-43a4-a9f4-f9a776f83b30"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

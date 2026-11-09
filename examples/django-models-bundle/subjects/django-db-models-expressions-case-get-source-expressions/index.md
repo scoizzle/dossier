@@ -1,9 +1,9 @@
 # django/db/models/expressions::Case.get_source_expressions
 
-- Subject: django/db/models/expressions::Case.get_source_expressions (id `8845fee5-4ce2-41f0-8beb-175bace6e00a`)
+- Subject: django/db/models/expressions::Case.get_source_expressions (id `ef7790c1-2caa-49ae-825c-e52c38311ff7`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

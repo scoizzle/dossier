@@ -1,14 +1,14 @@
 # django/db/migrations/recorder
 
-- Subject: django/db/migrations/recorder (id `620aadc2-e7a7-4abe-ac74-db9d6438f2b2`)
+- Subject: django/db/migrations/recorder (id `a5b363c2-0560-4a50-91d0-75fc3f36d594`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 18 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 972 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Meta: apps = Apps() app_label = "migrations" db_table = "django_migrations" [63e7c435]
 - def __str__(self): return "Migration %s for %s" % (self.name, self.app) [30e614a2]
@@ -29,6 +29,7 @@
 - def record_unapplied(self, app, name): """Record that a migration was unapplied.""" self.ensure_schema() self.migration_qs.filter(app=app, name=name).delete() [a48f5eb0]
 - class MigrationRecorder: """ Deal with storing migration records in the database. [e1f4c174]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [1c212820] [097bb444]
+- [1c212820] from .exceptions import MigrationSchemaMissing
+- [097bb444] from django.apps.registry import Apps from django.db import DatabaseError, models from django.utils.functional import classproperty from django.utils.timezone import now

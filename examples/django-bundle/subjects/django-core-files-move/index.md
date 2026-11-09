@@ -1,8 +1,8 @@
 # django/core/files/move
 
-- Subject: django/core/files/move (id `76d053f7-9963-4455-91ad-409a566c9ce6`)
+- Subject: django/core/files/move (id `342d91c9-1385-41c3-bfa7-998c525888fd`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 731 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

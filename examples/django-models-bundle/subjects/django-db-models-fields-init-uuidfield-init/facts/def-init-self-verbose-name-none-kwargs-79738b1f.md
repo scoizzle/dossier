@@ -1,6 +1,6 @@
 # Fact 79738b1f
 
-Store id: 70db542e-7672-453d-bf72-5afce1370935
+Store id: 2643e949-0f94-4d63-8327-91f3db8814ef
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, verbose_name=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7083190+00:00`
+- posted_at: `2026-11-09T23:31:56.8752150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2826,
     "symbol": "UUIDField.__init__"
   },
-  "id": "70db542e-7672-453d-bf72-5afce1370935",
+  "id": "2643e949-0f94-4d63-8327-91f3db8814ef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7083190+00:00"
+    "posted_at": "2026-11-09T23:31:56.8752150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "866abe93-7a8d-4f6f-97b1-5f3bf87c97b7",
+  "subject_id": "6b2458d6-96ff-4e73-926f-a3312023e6a8",
   "subject_name": "django/db/models/fields/__init__::UUIDField.__init__",
   "tags": [
     "entity:method"

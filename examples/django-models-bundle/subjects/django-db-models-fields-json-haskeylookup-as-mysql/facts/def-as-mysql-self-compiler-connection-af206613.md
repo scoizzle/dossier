@@ -1,6 +1,6 @@
 # Fact af206613
 
-Store id: e88aa71d-fcee-43bb-a727-c380dfbe5f59
+Store id: 41cf7f9a-9274-42de-b767-b0e148c7e6db
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6447870+00:00`
+- posted_at: `2026-11-09T23:31:57.8877380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 232,
     "symbol": "HasKeyLookup.as_mysql"
   },
-  "id": "e88aa71d-fcee-43bb-a727-c380dfbe5f59",
+  "id": "41cf7f9a-9274-42de-b767-b0e148c7e6db",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6447870+00:00"
+    "posted_at": "2026-11-09T23:31:57.8877380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "80f6b1ee-54a1-4092-89d5-2d1207bb8b90",
+  "subject_id": "d0c40a73-56f8-432c-aa14-f78fdbb250a9",
   "subject_name": "django/db/models/fields/json::HasKeyLookup.as_mysql",
   "tags": [
     "entity:method"

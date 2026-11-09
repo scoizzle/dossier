@@ -1,6 +1,6 @@
 # Fact 7618bacb
 
-Store id: 3254309a-c8aa-4338-a354-564f4210bebe
+Store id: 3032181b-6b94-41e4-945b-59da7150c04c
 
 ## Text
 
@@ -20,7 +20,7 @@ class Upper(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2195270+00:00`
+- posted_at: `2026-11-09T23:32:02.3209970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 375,
     "symbol": "Upper"
   },
-  "id": "3254309a-c8aa-4338-a354-564f4210bebe",
+  "id": "3032181b-6b94-41e4-945b-59da7150c04c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2195270+00:00"
+    "posted_at": "2026-11-09T23:32:02.3209970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "34cadb8a-f46e-4be0-aaf5-05b91c3383ca",
+  "subject_id": "9e3b84d1-5b04-44e7-a15d-e7691991400a",
   "subject_name": "django/db/models/functions/text::Upper",
   "tags": [
     "entity:class"

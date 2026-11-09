@@ -1,8 +1,8 @@
 # django/contrib/gis/db/backends/mysql/schema
 
-- Subject: django/contrib/gis/db/backends/mysql/schema (id `478d3568-027c-47c0-a278-4865e0ba0346`)
+- Subject: django/contrib/gis/db/backends/mysql/schema (id `c594c61b-7476-4df1-b863-5ba87b2d7b40`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 809 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

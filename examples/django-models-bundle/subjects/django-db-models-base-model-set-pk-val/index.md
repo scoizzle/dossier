@@ -1,9 +1,9 @@
 # django/db/models/base::Model._set_pk_val
 
-- Subject: django/db/models/base::Model._set_pk_val (id `778131b7-9ae9-438d-a869-519cd6c0280a`)
+- Subject: django/db/models/base::Model._set_pk_val (id `1c7bf1f7-29ef-4b77-afe9-744cec7b1d0d`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

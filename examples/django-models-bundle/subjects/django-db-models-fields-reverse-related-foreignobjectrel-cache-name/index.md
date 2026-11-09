@@ -1,9 +1,9 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.cache_name
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.cache_name (id `f6a7ad47-a284-4444-aa6f-08b6a6b8217c`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.cache_name (id `db1b3612-7adc-4b13-b093-f2a26e292e50`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

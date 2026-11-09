@@ -1,6 +1,6 @@
 # Fact 85495762
 
-Store id: 2a8a0d6c-4016-4f38-a2e4-645ba427deec
+Store id: 7c6bb630-3c80-4a2b-92a7-b1910f0b50a1
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7706520+00:00`
+- posted_at: `2026-11-09T23:31:56.0111940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2133,
     "symbol": "WindowFrameExclusion.__repr__"
   },
-  "id": "2a8a0d6c-4016-4f38-a2e4-645ba427deec",
+  "id": "7c6bb630-3c80-4a2b-92a7-b1910f0b50a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7706520+00:00"
+    "posted_at": "2026-11-09T23:31:56.0111940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37774233-3c35-480c-9092-643f2d7f6bf7",
+  "subject_id": "30c4c5aa-cee4-4cd4-8552-1dcf54ff5c95",
   "subject_name": "django/db/models/expressions::WindowFrameExclusion.__repr__",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.exclude
 
-- Subject: django/db/models/query::QuerySet.exclude (id `f5019374-2f63-43cd-9f92-660ea3e3b7da`)
+- Subject: django/db/models/query::QuerySet.exclude (id `5dd3dcf6-8efa-4cd6-82ca-45a441b14e53`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

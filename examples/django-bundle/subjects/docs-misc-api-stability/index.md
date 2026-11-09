@@ -1,14 +1,14 @@
 # docs/misc/api-stability
 
-- Subject: docs/misc/api-stability (id `91963825-d724-48c3-92e2-a68bfa1259af`)
+- Subject: docs/misc/api-stability (id `b3acefac-a913-4efc-aae6-f91b9e441e82`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 17 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 966 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - See :ref:`official-releases` for more details on how Django's version numbering scheme works, and how features will be deprecated. [a1e03c43]
 - - All the public APIs (everything in this documentation) will not be moved or renamed without providing backwards-compatible aliases. [33b36633]
@@ -28,6 +28,8 @@
 - In this context, stable means: [58d16324]
 - Security fixes -------------- [c0b242e8]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [79739585] [93ffafe7] [d7835228]
+- [79739585] Stable APIs ===========
+- [93ffafe7] There are a few exceptions to this stability and backwards-compatibility promise.
+- [d7835228] What "stable" means ===================

@@ -1,9 +1,9 @@
 # django/db/models/signals::ModelSignal
 
-- Subject: django/db/models/signals::ModelSignal (id `27fda132-14d3-4adb-a78a-c710992669d6`)
+- Subject: django/db/models/signals::ModelSignal (id `098fa414-9903-4fee-9dff-d89f5f7dc39f`)
 - Kind: class
 - Parent: [django/db/models/signals](../django-db-models-signals/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

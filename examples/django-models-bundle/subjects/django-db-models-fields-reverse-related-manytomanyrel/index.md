@@ -1,9 +1,9 @@
 # django/db/models/fields/reverse_related::ManyToManyRel
 
-- Subject: django/db/models/fields/reverse_related::ManyToManyRel (id `78b044fe-d5c4-434c-8711-e02b50135218`)
+- Subject: django/db/models/fields/reverse_related::ManyToManyRel (id `91f9047a-9e61-4235-b93a-ff5e751c8a14`)
 - Kind: class
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 9c5d3885
 
-Store id: c0b8857b-90ce-4b1f-8a35-a0aad4ac5ae2
+Store id: 5eab6a27-ec67-4dfd-91ab-cfc6cfa86013
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BuiltinLookup
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c0b8857b-90ce-4b1f-8a35-a0aad4ac5ae2",
+  "id": "5eab6a27-ec67-4dfd-91ab-cfc6cfa86013",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BuiltinLookup"
       },
       "rel": "contains",
-      "target": "429da47e-dcca-4b8b-affb-1dd60438d1cd"
+      "target": "60ecaf8e-1e62-46ff-9273-77e602e18552"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

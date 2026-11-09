@@ -1,6 +1,6 @@
 # Fact a0dce115
 
-Store id: c7ca5abc-ff4c-4873-b78a-6e260f166b95
+Store id: b6e7979f-acab-4fd0-83c4-94be9a1db4f8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4382830+00:00`
+- posted_at: `2026-11-09T23:31:56.6007410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1721,
     "symbol": "DateTimeField.get_db_prep_value"
   },
-  "id": "c7ca5abc-ff4c-4873-b78a-6e260f166b95",
+  "id": "b6e7979f-acab-4fd0-83c4-94be9a1db4f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4382830+00:00"
+    "posted_at": "2026-11-09T23:31:56.6007410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "085c83d1-c921-40e0-9ad2-785245aa2add",
+  "subject_id": "1ffad754-157e-42bc-afb4-67ebe99afe2d",
   "subject_name": "django/db/models/fields/__init__::DateTimeField.get_db_prep_value",
   "tags": [
     "entity:method"

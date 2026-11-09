@@ -1,9 +1,9 @@
 # django/db/models/constraints::UniqueConstraint._get_index_expressions
 
-- Subject: django/db/models/constraints::UniqueConstraint._get_index_expressions (id `8d57edc4-33c1-4944-9a15-1a4e7e838514`)
+- Subject: django/db/models/constraints::UniqueConstraint._get_index_expressions (id `bf9fcecd-fce0-4a55-9511-cf26471b9882`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

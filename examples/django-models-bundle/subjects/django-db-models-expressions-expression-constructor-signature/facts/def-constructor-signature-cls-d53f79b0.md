@@ -1,6 +1,6 @@
 # Fact d53f79b0
 
-Store id: 1944a79d-c47f-498b-b9a2-107c910e7d04
+Store id: 2ec73875-09c6-46c4-b1ce-36a53bdc9955
 
 ## Text
 
@@ -20,7 +20,7 @@ def _constructor_signature(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5362220+00:00`
+- posted_at: `2026-11-09T23:31:55.7984700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 523,
     "symbol": "Expression._constructor_signature"
   },
-  "id": "1944a79d-c47f-498b-b9a2-107c910e7d04",
+  "id": "2ec73875-09c6-46c4-b1ce-36a53bdc9955",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5362220+00:00"
+    "posted_at": "2026-11-09T23:31:55.7984700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "382be666-c1fb-450e-b2a5-155db5b3bb29",
+  "subject_id": "6da05734-e623-420f-9cd4-e6b5b3dd26ff",
   "subject_name": "django/db/models/expressions::Expression._constructor_signature",
   "tags": [
     "entity:method",

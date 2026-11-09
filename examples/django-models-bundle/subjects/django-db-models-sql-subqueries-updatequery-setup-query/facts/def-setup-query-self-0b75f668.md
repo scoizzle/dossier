@@ -1,6 +1,6 @@
 # Fact 0b75f668
 
-Store id: 1fe9b2a9-1811-4f2a-a433-736af836e1ad
+Store id: a45bafa5-9241-4286-8059-4e8e1451d18b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _setup_query(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7342520+00:00`
+- posted_at: `2026-11-09T23:32:07.3742400+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 58,
     "symbol": "UpdateQuery._setup_query"
   },
-  "id": "1fe9b2a9-1811-4f2a-a433-736af836e1ad",
+  "id": "a45bafa5-9241-4286-8059-4e8e1451d18b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7342520+00:00"
+    "posted_at": "2026-11-09T23:32:07.3742400+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "becb2e45-cd09-4a96-9bb0-544d30f477a4",
+  "subject_id": "3331a7d0-2671-4899-bdc1-31c3ab8e6959",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery._setup_query",
   "tags": [
     "entity:method"

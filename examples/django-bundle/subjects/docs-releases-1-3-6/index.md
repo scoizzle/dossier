@@ -1,14 +1,14 @@
 # docs/releases/1.3.6
 
-- Subject: docs/releases/1.3.6 (id `9c316ed1-0e74-45ce-9d7f-90803b1fb917`)
+- Subject: docs/releases/1.3.6 (id `3c3dd6a2-4512-40da-a52a-be80d33d32fa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 15 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1052 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - *February 19, 2013* [2dc7ca58ee5f13d5]
 - .. _from the Python security team: https://blog.python.org/2013/02/announcing-defusedxml-fixes-for-xml.html [9fbeea7844186435]
@@ -26,6 +26,9 @@
 - The XML parser in the Python standard library is vulnerable to a number of attacks via external entities and entity expansion. Django uses this parser for deserializing XML-formatted database fixtures. The fixture deserializer is not intended for use with untrusted data, but in order to err on the side of safety in Django 1.3.6 the XML deserializer refuses to parse an XML document with a DTD (DOCTYPE definition), which closes off these attack avenues. [fb262052]
 - This is the sixth bugfix/security release in the Django 1.3 series. [e79be6d5]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [27e3521d] [996b6fe372a466bc] [d0878cb6f504b7d6] [30a1cc760b9a67c3]
+- [27e3521d] The default value for this setting in Django 1.3.6 is ``['*']`` (matching any host), for backwards-compatibility, but we strongly encourage all sites to set a more restrictive value.
+- [996b6fe372a466bc] These issues in the Python standard library are CVE-2013-1664 and CVE-2013-1665. More information available `from the Python security team`_.
+- [d0878cb6f504b7d6] This host validation is disabled when ``DEBUG`` is ``True`` or when running tests.
+- [30a1cc760b9a67c3] XML deserialization ===================

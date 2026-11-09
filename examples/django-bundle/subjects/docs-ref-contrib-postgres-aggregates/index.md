@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/aggregates
 
-- Subject: docs/ref/contrib/postgres/aggregates (id `a8fc5832-6cb6-4e93-9003-d0a34f669f8c`)
+- Subject: docs/ref/contrib/postgres/aggregates (id `eb39bebf-17ea-4647-b37c-8c0cfe521ba3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 19 of 133
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3630 tokens
+- Facts shown: 119 of 133
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ArrayAgg("a_field", order_by="-some_field") ArrayAgg("a_field", order_by=F("some_field").desc()) [c76cb1d7]
 - Support for providing a ``Value`` or expression rather than a string was added. [536e3feb]
@@ -30,6 +30,105 @@
 - The PostgreSQL ``StringAgg`` class is deprecated in favor of the generally available :class:`~django.db.models.StringAgg` class. [7cb6a7a6]
 - .. attribute:: sample [c04d4b5d5f04da1d]
 
-## Beyond the budget
+## All facts
 
-100 more facts did not fit in the budget: [cfacf19a790917ae] [00c173d6] [98c870b3] [7bb2dd9650992b2c] [dc519cfe] [3ced8730] [82f17d4b] [540795b5b1824d0c] [2ff14360ba3f8de3] [2ff14360ba3f8de3-2] [2ff14360ba3f8de3-3] [f8ed1fbe338e5d59] [f8ed1fbe338e5d59-2] [f8ed1fbe338e5d59-3] [eaf050be34acb41d-212] [eaf050be34acb41d-213] [eaf050be34acb41d-214] [eaf050be34acb41d-215] [eaf050be34acb41d-216] [7904e6f98dc4b6fe-2] [01aaf10861da6524-4] [01aaf10861da6524-5] [01aaf10861da6524-6] [942ae6c11625c81c-76] [ccdd8046] [b7017403] [239863f4] [0b21e591] [860edc73] [c633d263] [4e60dbd6] [509b72f8] [1d656a14] [87f330e8] [a30aeda9dc9e9627] [620b2f87] [b624cfa3] [45ad2962] [e129263dd012440b] [2f77c8f2] [23ec4a92] [a2032f1b06c0a2ba] [a2032f1b06c0a2ba-2] [a2032f1b06c0a2ba-3] [a2032f1b06c0a2ba-4] [9a3e212f] [b9a82b14] [20e12d38] [217c882cd1c0a0f1] [08f36d069ea3ce18] [d7c492ad95a6f4d8] [73b92522] [e8bcff2f] [3326c1b1] [24d4faf4] [3a629c52] [05bb80c2] [50d3f8db] [17137e80] [9089f039] [90678c15] [503d0aff] [edbfd08e] [cc3c3e70] [0ec3b24e] [be2e972c] [eaf050be34acb41d-217] [eaf050be34acb41d-218] [3a9340cd0d877339-23] [f4ef547d] [942ae6c11625c81c-77] [100846b9] [078f4b00] [8e02d0d6] [411be7c8] [01fb24cc] [07f43225] [e31dc74c] [303bea20] [19e3e28a] [9ff736a2] [fbd14360] [1a09203c] [ef354a33] [521c7b33] [d62a5806] [296b8643] [352bef9e] [647485e0] [a6c928cd] [e9c877bf] [8982486c] [b1384832] [18467453] [acaefa5e] [9fca51dd] [c9dc2f70] [261dacf4] [0fa78803] [9bb12280]
+- [cfacf19a790917ae] The ``default`` argument is not supported.
+- [00c173d6] This class is deprecated in favor of the generally available :class:`~django.db.models.BitAnd` class.
+- [98c870b3] class Article(models.Model): headline = models.CharField(max_length=100) publications = models.ManyToManyField(Publication)
+- [7bb2dd9650992b2c] class Comment(models.Model): body = models.TextField() published = models.BooleanField() rank = models.IntegerField()
+- [dc519cfe] class HotelReservation(models.Model): room = models.ForeignKey("Room", on_delete=models.CASCADE) start = models.DateTimeField() end = models.DateTimeField() requirements = models.JSONField(blank=True, null=True)
+- [3ced8730] class Publication(models.Model): title = models.CharField(max_length=30)
+- [82f17d4b] class Room(models.Model): number = models.IntegerField(unique=True)
+- [540795b5b1824d0c] .. attribute:: delimiter
+- [2ff14360ba3f8de3] .. attribute:: distinct
+- [2ff14360ba3f8de3-2] .. attribute:: distinct
+- [2ff14360ba3f8de3-3] .. attribute:: distinct
+- [f8ed1fbe338e5d59] .. attribute:: order_by
+- [f8ed1fbe338e5d59-2] .. attribute:: order_by
+- [f8ed1fbe338e5d59-3] .. attribute:: order_by
+- [eaf050be34acb41d-212] .. code-block:: pycon
+- [eaf050be34acb41d-213] .. code-block:: pycon
+- [eaf050be34acb41d-214] .. code-block:: pycon
+- [eaf050be34acb41d-215] .. code-block:: pycon
+- [eaf050be34acb41d-216] .. code-block:: pycon
+- [7904e6f98dc4b6fe-2] .. deprecated:: 6.0
+- [01aaf10861da6524-4] .. deprecated:: 6.1
+- [01aaf10861da6524-5] .. deprecated:: 6.1
+- [01aaf10861da6524-6] .. deprecated:: 6.1
+- [942ae6c11625c81c-76] .. note::
+- [ccdd8046] >>> TestModel.objects.aggregate(count=RegrCount(y="field3", x="field2")) {'count': 2} >>> TestModel.objects.aggregate( ... avgx=RegrAvgX(y="field3", x="field2"), avgy=RegrAvgY(y="field3", x="field2") ... ) {'avgx': 2, 'avgy': 13}
+- [b7017403] >>> TestModel.objects.aggregate(result=StringAgg("field1", delimiter=";")) {'result': 'foo;bar;test'} >>> TestModel.objects.aggregate(result=ArrayAgg("field2")) {'result': [1, 2, 3]} >>> TestModel.objects.aggregate(result=ArrayAgg("field1")) {'result': ['foo', 'bar', 'test']}
+- [239863f4] All aggregates have the :ref:`filter <aggregate-filter>` keyword argument and most also have the :ref:`default <aggregate-default>` keyword argument.
+- [0b21e591] All functions come without default aliases, so you must explicitly provide one. For example:
+- [860edc73] Returns ``True`` if at least one input value is true, ``default`` if all values are null or if there are no values, otherwise ``False``.
+- [c633d263] Returns ``True``, if all input values are true, ``default`` if all values are null or if there are no values, otherwise ``False``.
+- [4e60dbd6] Returns ``sum(x*y) - sum(x) * sum(y)/N`` ("sum of products" of independent times dependent variable) as a ``float``, or ``default`` if there aren't any matching rows.
+- [509b72f8] Returns ``sum(x^2) - sum(x)^2/N`` ("sum of squares" of the independent variable) as a ``float``, or ``default`` if there aren't any matching rows.
+- [1d656a14] Returns ``sum(y^2) - sum(y)^2/N`` ("sum of squares" of the dependent variable) as a ``float``, or ``default`` if there aren't any matching rows.
+- [87f330e8] Returns a list of values, including nulls, concatenated into an array, or ``default`` if there are no values.
+- [a30aeda9dc9e9627] Returns an ``int`` of the bitwise ``AND`` of all non-null input values, or ``default`` if all values are null.
+- [620b2f87] Returns an ``int`` of the number of input rows in which both expressions are not null.
+- [b624cfa3] Returns the correlation coefficient as a ``float``, or ``default`` if there aren't any matching rows.
+- [45ad2962] Returns the input values as a ``JSON`` array, or ``default`` if there are no values. You can query the result using :lookup:`key and index lookups <jsonfield.key>`.
+- [e129263dd012440b] Returns the input values concatenated into a string, separated by the ``delimiter`` string, or ``default`` if there are no values.
+- [2f77c8f2] Returns the population covariance as a ``float``, or ``default`` if there aren't any matching rows.
+- [23ec4a92] Returns the slope of the least-squares-fit linear equation determined by the ``(x, y)`` pairs as a ``float``, or ``default`` if there aren't any matching rows.
+- [a2032f1b06c0a2ba] Usage example::
+- [a2032f1b06c0a2ba-2] Usage example::
+- [a2032f1b06c0a2ba-3] Usage example::
+- [a2032f1b06c0a2ba-4] Usage example::
+- [9a3e212f] | FIELD1 | FIELD2 | FIELD3 | |--------|--------|--------| | foo | 1 | 13 | | bar | 2 | (null) | | test | 3 | 13 |
+- [b9a82b14] .. admonition:: Common aggregate options
+- [20e12d38] .. class:: ArrayAgg(expression, distinct=False, filter=None, default=None, order_by=(), **extra)
+- [217c882cd1c0a0f1] .. class:: BitAnd(expression, filter=None, default=None, **extra)
+- [08f36d069ea3ce18] .. class:: BitOr(expression, filter=None, default=None, **extra)
+- [d7c492ad95a6f4d8] .. class:: BitXor(expression, filter=None, default=None, **extra)
+- [73b92522] .. class:: BoolAnd(expression, filter=None, default=None, **extra)
+- [e8bcff2f] .. class:: BoolOr(expression, filter=None, default=None, **extra)
+- [3326c1b1] .. class:: Corr(y, x, filter=None, default=None)
+- [24d4faf4] .. class:: CovarPop(y, x, sample=False, filter=None, default=None)
+- [3a629c52] .. class:: JSONBAgg(expressions, distinct=False, filter=None, default=None, order_by=(), **extra)
+- [05bb80c2] .. class:: RegrAvgX(y, x, filter=None, default=None)
+- [50d3f8db] .. class:: RegrAvgY(y, x, filter=None, default=None)
+- [17137e80] .. class:: RegrCount(y, x, filter=None)
+- [9089f039] .. class:: RegrIntercept(y, x, filter=None, default=None)
+- [90678c15] .. class:: RegrR2(y, x, filter=None, default=None)
+- [503d0aff] .. class:: RegrSXX(y, x, filter=None, default=None)
+- [edbfd08e] .. class:: RegrSXY(y, x, filter=None, default=None)
+- [cc3c3e70] .. class:: RegrSYY(y, x, filter=None, default=None)
+- [0ec3b24e] .. class:: RegrSlope(y, x, filter=None, default=None)
+- [be2e972c] .. class:: StringAgg(expression, delimiter, distinct=False, filter=None, default=None, order_by=())
+- [eaf050be34acb41d-217] .. code-block:: pycon
+- [eaf050be34acb41d-218] .. code-block:: pycon
+- [3a9340cd0d877339-23] .. code-block:: text
+- [f4ef547d] .. module:: django.contrib.postgres.aggregates :synopsis: PostgreSQL specific aggregation functions
+- [942ae6c11625c81c-77] .. note::
+- [100846b9] ========================================= PostgreSQL specific aggregation functions =========================================
+- [078f4b00] Aggregate functions for statistics ==================================
+- [8e02d0d6] General-purpose aggregation functions =====================================
+- [411be7c8] Here's some examples of some of the general-purpose aggregation functions:
+- [01fb24cc] The arguments ``y`` and ``x`` for all these functions can be the name of a field or an expression returning a numeric data. Both are required.
+- [07f43225] The next example shows the usage of statistical aggregate functions. The underlying math will be not described (you can read about this, for example, at `wikipedia <https://en.wikipedia.org/wiki/Regression_analysis>`_):
+- [e31dc74c] These functions are available from the ``django.contrib.postgres.aggregates`` module. They are described in more detail in the `PostgreSQL docs <https://www.postgresql.org/docs/current/functions-aggregate.html>`_.
+- [303bea20] Usage examples ==============
+- [19e3e28a] We will use this example table:
+- [9ff736a2] ``ArrayAgg`` ------------
+- [fbd14360] ``BitAnd`` ----------
+- [1a09203c] ``BitOr`` ---------
+- [ef354a33] ``BitXor`` ----------
+- [521c7b33] ``BoolAnd`` -----------
+- [d62a5806] ``BoolOr`` ----------
+- [296b8643] ``Corr`` --------
+- [352bef9e] ``CovarPop`` ------------
+- [647485e0] ``JSONBAgg`` ------------
+- [a6c928cd] ``RegrAvgX`` ------------
+- [e9c877bf] ``RegrAvgY`` ------------
+- [8982486c] ``RegrCount`` -------------
+- [b1384832] ``RegrIntercept`` -----------------
+- [18467453] ``RegrR2`` ----------
+- [acaefa5e] ``RegrSXX`` -----------
+- [9fca51dd] ``RegrSXY`` -----------
+- [c9dc2f70] ``RegrSYY`` -----------
+- [261dacf4] ``RegrSlope`` -------------
+- [0fa78803] ``StringAgg`` -------------
+- [9bb12280] ``y`` and ``x`` ---------------

@@ -1,8 +1,8 @@
 # django/db/models/sql/where
 
-- Subject: django/db/models/sql/where (id `bfe254f8-8b12-4be9-bdee-4043373d6994`)
+- Subject: django/db/models/sql/where (id `054a8784-2f6d-4aca-bf87-0be8a185e83b`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 51 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/functions/json::JSONArray.as_oracle
 
-- Subject: django/db/models/functions/json::JSONArray.as_oracle (id `da979c81-4dcb-4e92-bd88-e7b650cf9c19`)
+- Subject: django/db/models/functions/json::JSONArray.as_oracle (id `cabcd7d9-b515-4440-bba2-15898b064fcc`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

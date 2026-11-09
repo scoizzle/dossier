@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Least.as_sqlite
 
-- Subject: django/db/models/functions/comparison::Least.as_sqlite (id `fcb35616-ad83-4e4e-9a63-e6cfe5f0610f`)
+- Subject: django/db/models/functions/comparison::Least.as_sqlite (id `94af726d-5fd0-4418-b2cb-6930109df04b`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

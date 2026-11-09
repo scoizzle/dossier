@@ -1,14 +1,14 @@
 # docs/ref/models/options
 
-- Subject: docs/ref/models/options (id `63a8ef3d-351a-4304-b540-5dbe0393db02`)
+- Subject: docs/ref/models/options (id `987cb75d-0baf-462d-bca5-1f07c0f1c231`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 31 of 164
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5782 tokens
+- Facts shown: 159 of 164
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Meta: constraints = [ models.CheckConstraint(condition=models.Q(age__gte=18), name="age_gte_18"), ] [64f1beba]
 - class Meta: indexes = [ models.Index(fields=["last_name", "first_name"]), models.Index(fields=["first_name"], name="first_name_idx"), ] [409a9f61]
@@ -42,6 +42,133 @@
 - #. Adding an automatic primary key field to the model if you don't declare it. To avoid confusion for later code readers, it's recommended to specify all the columns from the database table you are modeling when using unmanaged models. [29171453]
 - .. admonition:: Use :class:`.UniqueConstraint` with the :attr:`~Options.constraints` option instead. [ca4fedf5]
 
-## Beyond the budget
+## All facts
 
-128 more facts did not fit in the budget: [e19c2753] [eaf050be34acb41d-469] [eaf050be34acb41d-470] [eaf050be34acb41d-471] [088c309e] [f07e155e] [7f617abe] [e4ef1453] [bdddea1a] [e9fec9c1] [87d81d34] [399a2d2a] [acfcf117f82fd4c9-41] [e77ce44e] [fa63f6bb] [1bd7f678] [9f28a6f7] [4bbc4faa] [3122b184] [eabfb533] [b2745da2] [cd71dc2554c2863a] [8fb268a8] [c336a3d7] [2fb15b33] [612926a5] [4800561e] [b34f8acc] [e189287a] [1e32165d] [ea219dd4] [6fcc4011] [61a1a7af9c628685] [4343ee67] [5904ec80] [f475203a] [b725b95b] [746a3e48] [b39f7609] [a35b9de4] [c2928ace] [5613d11b] [57f7ef13] [2dabddd1] [2c232ab4] [bd44beba] [1f2dde83] [09847501] [1c03e3ac] [f3a4b5ee] [d91c3c28] [176a4836] [f49d8c30] [73d76281] [cd12dc9b] [0f290df9] [00011aa1] [43de47fd] [8aea328a] [03bbd140] [6044f01a] [10e08bd1] [6ceb0db4] [1c01e87d] [7f8d5b9a] [24fe5076] [bf126973] [0f20d743] [12701bbc] [e93db5fc] [a792423e] [5cd35ff6] [e0c499a3] [aaeb9659] [c152fbd7] [97b9410f] [0d4a9e7d] [8f69d9a3] [ac8824de] [a9b56077] [629296d3] [1ed60603] [fdb9e5fb] [aecac69e] [a33d6a7c] [bc0e92f4] [e303221c] [99bbdb6c] [f3b1f461] [6e9c3c4c] [119aa8d6] [3a368b18514a814b-14] [c54b54cb0805732a-56] [124a2ab1] [0887494c] [263f2ba3] [fb4396ad] [6c06efc9] [6c9405c9] [4cea4b27] [31e3d8cd] [fbb6e5bb] [c62b0e8c] [9fa0d5a4] [ed89917d] [12210084] [b63affaa] [22051bff] [ef83b707] [6aa45c0650f66404-3] [9f31baf2] [587554db] [aa6205a8] [19e822d3] [36fa2245] [b798d56c] [78b4b4b8375d4b6d-2] [4981119f] [79d3a505] [9a1c86c4] [4aee2da4] [3151dc5e] [99566e56] [9f6553a6] [d0b0de05] [8b5f6dc3] [b4170f59] [9e1a9078c61c7dcd-2]
+- [e19c2753] #. If a model with ``managed=False`` contains a :class:`~django.db.models.ManyToManyField` that points to another unmanaged model, then the intermediate table for the many-to-many join will also not be created. However, the intermediary table between one managed and one unmanaged model *will* be created.
+- [eaf050be34acb41d-469] .. code-block:: pycon
+- [eaf050be34acb41d-470] .. code-block:: pycon
+- [eaf050be34acb41d-471] .. code-block:: pycon
+- [088c309e] A :class:`~django.db.models.ManyToManyField` cannot be included in ``unique_together``. (It's not clear what that would even mean!) If you need to validate uniqueness related to a :class:`~django.db.models.ManyToManyField`, try using a signal or an explicit :attr:`through <ManyToManyField.through>` model.
+- [f07e155e] A human-readable name for the object, singular::
+- [7f617abe] A list of :doc:`constraints </ref/models/constraints>` that you want to define on the model::
+- [e4ef1453] As the reverse name for a field should be unique, be careful if you intend to subclass your model. To work around name collisions, part of the name should contain ``'%(app_label)s'`` and ``'%(model_name)s'``, which are replaced respectively by the name of the application the model is in, and the name of the model, both lowercased. See the paragraph on :ref:`related names for abstract models <abstract-related-name>`.
+- [bdddea1a] Because ``order_with_respect_to`` adds a new database column, be sure to make and apply the appropriate migrations if you add or change ``order_with_respect_to`` after your initial :djadmin:`migrate`.
+- [e9fec9c1] Defaults to ``('add', 'change', 'delete', 'view')``. You may customize this list, for example, by setting this to an empty list if your app doesn't require any of the default permissions. It must be specified on the model before the model is created by :djadmin:`migrate` in order to prevent any omitted permissions from being created.
+- [87d81d34] Defaults to ``True``, meaning Django will create the appropriate database tables in :djadmin:`migrate` or as part of migrations and remove them as part of a :djadmin:`flush` management command. That is, Django *manages* the database tables' lifecycles.
+- [399a2d2a] Determines if Django will use the pre-1.6 :meth:`django.db.models.Model.save` algorithm. The old algorithm uses ``SELECT`` to determine if there is an existing row to be updated. The new algorithm tries an ``UPDATE`` directly. In some rare cases the ``UPDATE`` of an existing row isn't visible to Django. An example is the PostgreSQL ``ON UPDATE`` trigger which returns ``NULL``. In such cases the new algorithm will end up doing an ``INSERT`` even when a row exists in the database.
+- [acfcf117f82fd4c9-41] Example::
+- [e77ce44e] Extra permissions to enter into the permissions table when creating this object. Add, change, delete, and view permissions are automatically created for each model. This example specifies an extra permission, ``can_deliver_pizzas``::
+- [fa63f6bb] For convenience, ``unique_together`` can be a single list when dealing with a single set of fields::
+- [1bd7f678] For example, to order by a ``pub_date`` field ascending, use this::
+- [9f28a6f7] For tests involving models with ``managed=False``, it's up to you to ensure the correct tables are created as part of the test setup.
+- [4bbc4faa] If ``False``, no database table creation, modification, or deletion operations will be performed for this model. This is useful if the model represents an existing table or a database view that has been created by some other means. This is the *only* difference when ``managed=False``. All other aspects of model handling are exactly the same as normal. This includes
+- [3122b184] If ``abstract = True``, this model will be an :ref:`abstract base class <abstract-base-classes>`.
+- [eabfb533] If ``proxy = True``, a model which subclasses another model will be treated as a :ref:`proxy model <proxy-models>`.
+- [b2745da2] If a model is defined outside of an application in :setting:`INSTALLED_APPS`, it must declare which app it belongs to::
+- [cd71dc2554c2863a] If a query doesn't have an ordering specified, results are returned from the database in an unspecified order. A particular ordering is guaranteed only when ordering by a set of fields that uniquely identify each object in the results. For example, if a ``name`` field isn't unique, ordering by it won't guarantee objects with the same name always appear in the same order.
+- [8fb268a8] If this isn't given, Django will use :attr:`~Options.verbose_name` + ``"s"``.
+- [c336a3d7] If this isn't given, Django will use a munged version of the class name: ``CamelCase`` becomes ``camel case``.
+- [2fb15b33] If you want to represent a model with the format ``app_label.object_name`` or ``app_label.model_name`` you can use ``model._meta.label`` or ``model._meta.label_lower`` respectively.
+- [612926a5] If you're interested in changing the Python-level behavior of a model class, you *could* use ``managed=False`` and create a copy of an existing model. However, there's a better approach for that situation: :ref:`proxy-models`.
+- [4800561e] In :ref:`GROUP BY queries <aggregation-ordering-interaction>` (for example, those using :meth:`~.QuerySet.values` and :meth:`~.QuerySet.annotate`), the default ordering is not applied.
+- [b34f8acc] Internally, ``order_with_respect_to`` adds an additional field/database column named ``_order`` and sets the model's :attr:`~Options.ordering` option to this field. Consequently, ``order_with_respect_to`` and ``ordering`` cannot be used together, and the ordering added by ``order_with_respect_to`` will apply whenever you obtain a list of objects of this model.
+- [e189287a] It is strongly advised that you use lowercase table names when you override the table name via ``db_table``, particularly if you are using the MySQL backend. See the :ref:`MySQL notes <mysql-notes>` for more details.
+- [1e32165d] List of database features that the current connection should have so that the model is considered during the migration phase. For example, if you set this list to ``['gis_enabled']``, the model will only be synchronized on GIS-enabled databases. It's also useful to skip some models when testing with several database backends. Avoid relations between models that may or may not be created as the ORM doesn't handle this.
+- [ea219dd4] Makes this object orderable with respect to the given field, usually a ``ForeignKey``. This can be used to make related objects orderable with respect to a parent object. For example, if an ``Answer`` relates to a ``Question`` object, and a question has more than one answer, and the order of answers matters, you'd do this::
+- [6fcc4011] Name of a supported database vendor that this model is specific to. Current built-in vendor names are: ``sqlite``, ``postgresql``, ``mysql``, ``oracle``. If this attribute is not empty and the current connection vendor doesn't match it, the model will not be synchronized.
+- [61a1a7af9c628685] Ordering is not a free operation. Each field you add to the ordering incurs a cost to your database. Each foreign key you add will implicitly include all of its default orderings as well.
+- [4343ee67] Representation of the model, returns ``app_label.model_name``, e.g. ``'polls.question'``.
+- [5904ec80] Representation of the object, returns ``app_label.object_name``, e.g. ``'polls.Question'``.
+- [f475203a] See :meth:`django.db.models.Model.save` for more about the old and new saving algorithm.
+- [b725b95b] See the :meth:`~django.db.models.query.QuerySet.latest` docs for more.
+- [746a3e48] Sets of field names that, taken together, must be unique::
+- [b39f7609] The ``ValidationError`` raised during model validation when the constraint is violated has the ``unique_together`` error code.
+- [a35b9de4] The attribute name of the manager, for example, ``'objects'``, to use for the model's :attr:`~django.db.models.Model._base_manager`.
+- [c2928ace] The default ordering for the object, for use when obtaining lists of objects::
+- [5613d11b] The name of a field or a list of field names in the model, typically :class:`DateField`, :class:`DateTimeField`, or :class:`IntegerField`. This specifies the default field(s) to use in your model :class:`Manager`’s :meth:`~django.db.models.query.QuerySet.latest` and :meth:`~django.db.models.query.QuerySet.earliest` methods.
+- [57f7ef13] The name of the :doc:`database tablespace </topics/db/tablespaces>` to use for this model. The default is the project's :setting:`DEFAULT_TABLESPACE` setting, if set. If the backend doesn't support tablespaces, this option is ignored.
+- [2dabddd1] The name of the database table to use for the model::
+- [2c232ab4] The name of the manager to use for the model's :attr:`~django.db.models.Model._default_manager`.
+- [bd44beba] The name that will be used by default for the relation from a related object back to this one. The default is ``<model_name>_set``.
+- [1f2dde83] The order of a ``Question`` object's related ``Answer`` objects can be set by passing in a list of ``Answer`` primary keys:
+- [09847501] The plural name for the object::
+- [1c03e3ac] The related objects also get two methods, ``get_next_in_order()`` and ``get_previous_in_order()``, which can be used to access those objects in their proper order. Assuming the ``Answer`` objects are ordered by ``id``:
+- [f3a4b5ee] This is a list of lists that must be unique when considered together. It's used in the Django admin and is enforced at the database level (i.e., the appropriate ``UNIQUE`` statements are included in the ``CREATE TABLE`` statement).
+- [d91c3c28] This is a list or tuple of 2-tuples in the format ``(permission_code, human_readable_permission_name)``.
+- [176a4836] This is a tuple or list of strings and/or query expressions. Each string is a field name with an optional "-" prefix, which indicates descending order. Fields without a leading "-" will be ordered ascending. Use the string "?" to order randomly.
+- [f49d8c30] This option also sets :attr:`~ForeignKey.related_query_name`.
+- [73d76281] To order by ``pub_date`` descending, then by ``author`` ascending, use this::
+- [cd12dc9b] To order by ``pub_date`` descending, use this::
+- [0f290df9] Usually there is no need to set this attribute. The default is ``False``.
+- [00011aa1] When ``order_with_respect_to`` is set, two additional methods are provided to retrieve and to set the order of the related objects: ``get_RELATED_order()`` and ``set_RELATED_order()``, where ``RELATED`` is the lowercased model name. For example, assuming that a ``Question`` object has multiple related ``Answer`` objects, the list returned contains the primary keys of the related ``Answer`` objects:
+- [43de47fd] You can also use :doc:`query expressions </ref/models/expressions>`. To order by ``author`` ascending and make null values sort last, use this::
+- [8aea328a] In order to meet the 30-char limitation Oracle has on table names, and match the usual conventions for Oracle databases, Django may shorten table names and turn them all-uppercase. To prevent such transformations, use a quoted name as the value for ``db_table``::
+- [03bbd140] Such quoted names can also be used with Django's other supported database backends; except for Oracle, however, the quotes have no effect. See the :ref:`Oracle notes <oracle-notes>` for more details.
+- [6044f01a] .. _table-names:
+- [10e08bd1] .. admonition:: Changing ``order_with_respect_to``
+- [6ceb0db4] .. admonition:: Default ordering and GROUP BY
+- [1c01e87d] .. admonition:: Table name quoting for Oracle
+- [7f8d5b9a] .. admonition:: Use lowercase table names for MariaDB and MySQL
+- [24fe5076] .. admonition:: ``order_with_respect_to`` implicitly sets the ``ordering`` option
+- [bf126973] .. attribute:: Options.abstract
+- [0f20d743] .. attribute:: Options.app_label
+- [12701bbc] .. attribute:: Options.base_manager_name
+- [e93db5fc] .. attribute:: Options.constraints
+- [a792423e] .. attribute:: Options.db_table
+- [5cd35ff6] .. attribute:: Options.db_table_comment
+- [e0c499a3] .. attribute:: Options.db_tablespace
+- [aaeb9659] .. attribute:: Options.default_manager_name
+- [c152fbd7] .. attribute:: Options.default_permissions
+- [97b9410f] .. attribute:: Options.default_related_name
+- [0d4a9e7d] .. attribute:: Options.get_latest_by
+- [8f69d9a3] .. attribute:: Options.indexes
+- [ac8824de] .. attribute:: Options.label
+- [a9b56077] .. attribute:: Options.label_lower
+- [629296d3] .. attribute:: Options.managed
+- [1ed60603] .. attribute:: Options.order_with_respect_to
+- [fdb9e5fb] .. attribute:: Options.ordering
+- [aecac69e] .. attribute:: Options.permissions
+- [a33d6a7c] .. attribute:: Options.proxy
+- [bc0e92f4] .. attribute:: Options.required_db_features
+- [e303221c] .. attribute:: Options.required_db_vendor
+- [99bbdb6c] .. attribute:: Options.select_on_save
+- [f3b1f461] .. attribute:: Options.unique_together
+- [6e9c3c4c] .. attribute:: Options.verbose_name
+- [119aa8d6] .. attribute:: Options.verbose_name_plural
+- [3a368b18514a814b-14] .. currentmodule:: django.db.models
+- [c54b54cb0805732a-56] .. warning::
+- [124a2ab1] ====================== Model ``Meta`` options ======================
+- [0887494c] Available ``Meta`` options ==========================
+- [263f2ba3] For example, if you have an app ``bookstore`` (as created by ``manage.py startapp bookstore``), a model defined as ``class Book`` will have a database table named ``bookstore_book``.
+- [fb4396ad] If your database table name is an SQL reserved word, or contains characters that aren't allowed in Python variable names -- notably, the hyphen -- that's OK. Django quotes column and table names behind the scenes.
+- [6c06efc9] Read-only ``Meta`` attributes =============================
+- [6c9405c9] Table names ~~~~~~~~~~~
+- [4cea4b27] The comment on the database table to use for this model. It is useful for documenting database tables for individuals with direct database access who may not be looking at your Django code. For example::
+- [31e3d8cd] This document explains all the possible :ref:`metadata options <meta-options>` that you can give your model in its internal ``class Meta``.
+- [fbb6e5bb] To override the database table name, use the ``db_table`` parameter in ``class Meta``.
+- [c62b0e8c] To save you time, Django automatically derives the name of the database table from the name of your model class and the app that contains it. A model's database table name is constructed by joining the model's "app label" -- the name you used in :djadmin:`manage.py startapp <startapp>` -- to the model's class name, with an underscore between them.
+- [9fa0d5a4] ``abstract`` ------------
+- [ed89917d] ``app_label`` -------------
+- [12210084] ``base_manager_name`` ---------------------
+- [b63affaa] ``constraints`` ---------------
+- [22051bff] ``db_table_comment`` --------------------
+- [ef83b707] ``db_table`` ------------
+- [6aa45c0650f66404-3] ``db_tablespace`` -----------------
+- [9f31baf2] ``default_manager_name`` ------------------------
+- [587554db] ``default_permissions`` -----------------------
+- [aa6205a8] ``default_related_name`` ------------------------
+- [19e822d3] ``get_latest_by`` -----------------
+- [36fa2245] ``indexes`` -----------
+- [b798d56c] ``label_lower`` ---------------
+- [78b4b4b8375d4b6d-2] ``label`` ---------
+- [4981119f] ``managed`` -----------
+- [79d3a505] ``order_with_respect_to`` -------------------------
+- [9a1c86c4] ``ordering`` ------------
+- [4aee2da4] ``permissions`` ---------------
+- [3151dc5e] ``proxy`` ---------
+- [99566e56] ``required_db_features`` ------------------------
+- [9f6553a6] ``required_db_vendor`` ----------------------
+- [d0b0de05] ``select_on_save`` ------------------
+- [8b5f6dc3] ``unique_together`` -------------------
+- [b4170f59] ``verbose_name_plural`` -----------------------
+- [9e1a9078c61c7dcd-2] ``verbose_name`` ----------------

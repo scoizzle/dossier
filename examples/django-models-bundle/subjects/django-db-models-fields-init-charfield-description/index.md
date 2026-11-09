@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::CharField.description
 
-- Subject: django/db/models/fields/__init__::CharField.description (id `674ec085-7590-4334-937c-25981f54d70a`)
+- Subject: django/db/models/fields/__init__::CharField.description (id `c6006692-615c-45d4-8f08-ffffbcdddf1c`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

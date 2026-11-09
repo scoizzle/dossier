@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/operations
 
-- Subject: docs/ref/contrib/postgres/operations (id `b41efc79-5bc7-47d6-8996-dfd446b647e4`)
+- Subject: docs/ref/contrib/postgres/operations (id `7a9e20b4-a0c8-4be1-a04c-48566071ed8b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 37 of 99
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2785 tokens
+- Facts shown: 91 of 99
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-11]
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-12]
@@ -48,6 +48,59 @@
 - Removes the collations named ``name``. [e74e95bb]
 - Scans through the table and validates the given check constraint on existing rows. [c7c871e8]
 
-## Beyond the budget
+## All facts
 
-54 more facts did not fit in the budget: [6563f699] [47b54514] [a117bb62] [ff061728] [5a491eba] [c8e61e6abe4f0fc0-2] [c8e61e6abe4f0fc0-3] [6793599c] [f1d0d303] [270431c5] [9cbf3cef] [d3d1111b] [fb384344] [8ca13461] [769097e4] [fbd97694] [a461ca4d] [fc909b0d] [a12da9e0] [c08027a1] [a1cf7266] [384eb543] [8c3f8a7d] [88c1c9d6] [ebb41f0d] [49b6d6b2] [9f26dd28] [942ae6c11625c81c-85] [942ae6c11625c81c-86] [80c7b11d] [71d286cf] [3d321021] [f961f2bf] [7a006268] [8eff6b14] [4b21c63b] [b86b270b] [0cfaed26] [21a87979] [9402c282] [0d49df97] [45c79552] [33069776] [ec7c9399] [27548945] [cbfd00bf] [4e579881] [8fa641dc] [d7b86d6c] [ea7d7565] [4d9c13e9] [997a30a0] [81196898] [3b1c8683]
+- [6563f699] Like :class:`~django.db.migrations.operations.RemoveIndex`, but removes the index with the ``CONCURRENTLY`` option. This has a few caveats to be aware of when using this option, see `the PostgreSQL documentation <https://www.postgresql.org/docs/current/sql-dropindex.html>`_.
+- [47b54514] Set the ``deterministic`` parameter to ``False`` to create a non-deterministic collation, such as for case-insensitive filtering.
+- [a117bb62] The ``CONCURRENTLY`` option is not supported inside a transaction (see :ref:`non-atomic migration <non-atomic-migrations>`).
+- [ff061728] When reversed this is creating a collation with the provided ``locale``, ``provider``, and ``deterministic`` arguments. Therefore, ``locale`` is required to make this operation reversible.
+- [5a491eba] ``AddConstraintNotValid`` and ``ValidateConstraint`` operations should be performed in two separate migrations. Performing both operations in the same atomic migration has the same effect as :class:`~django.db.migrations.operations.AddConstraint`, whereas performing them in a single non-atomic migration, may leave your database in an inconsistent state if the ``ValidateConstraint`` operation fails.
+- [c8e61e6abe4f0fc0-2] class Migration(migrations.Migration): ...
+- [c8e61e6abe4f0fc0-3] class Migration(migrations.Migration): ...
+- [6793599c] from django.contrib.postgres.operations import CreateCollation
+- [f1d0d303] from django.contrib.postgres.operations import HStoreExtension
+- [270431c5] .. _create-postgresql-extensions:
+- [9cbf3cef] .. _manage-postgresql-collations:
+- [d3d1111b] .. class:: AddConstraintNotValid(model_name, constraint)
+- [fb384344] .. class:: AddIndexConcurrently(model_name, index)
+- [8ca13461] .. class:: BloomExtension(hints=None)
+- [769097e4] .. class:: BtreeGinExtension(hints=None)
+- [fbd97694] .. class:: BtreeGistExtension(hints=None)
+- [a461ca4d] .. class:: CITextExtension(hints=None)
+- [fc909b0d] .. class:: CreateCollation(name, locale, *, provider='libc', deterministic=True)
+- [a12da9e0] .. class:: CreateExtension(name, hints=None)
+- [c08027a1] .. class:: CryptoExtension(hints=None)
+- [a1cf7266] .. class:: HStoreExtension(hints=None)
+- [384eb543] .. class:: RemoveCollation(name, locale, *, provider='libc', deterministic=True)
+- [8c3f8a7d] .. class:: RemoveIndexConcurrently(model_name, name)
+- [88c1c9d6] .. class:: TrigramExtension(hints=None)
+- [ebb41f0d] .. class:: UnaccentExtension(hints=None)
+- [49b6d6b2] .. class:: ValidateConstraint(model_name, name)
+- [9f26dd28] .. currentmodule:: django.contrib.postgres.operations
+- [942ae6c11625c81c-85] .. note::
+- [942ae6c11625c81c-86] .. note::
+- [80c7b11d] ============================= Database migration operations =============================
+- [71d286cf] Adding constraints without enforcing validation ===============================================
+- [3d321021] All of these :doc:`operations </ref/migration-operations>` are available from the ``django.contrib.postgres.operations`` module.
+- [f961f2bf] Concurrent index operations ===========================
+- [7a006268] Creating extension using migrations ===================================
+- [8eff6b14] For example, to create a collation for German phone book ordering::
+- [4b21c63b] For most extensions, this requires a database user with superuser privileges. If the Django database user doesn't have the appropriate privileges, you'll have to create the extension outside of Django migrations with a user that has them. In that case, connect to your Django database and run the query ``CREATE EXTENSION IF NOT EXISTS hstore;``.
+- [b86b270b] If you need to filter or order a column using a particular collation that your operating system provides but PostgreSQL does not, you can manage collations in your database using a migration file. These collations can then be used with the ``db_collation`` parameter on :class:`~django.db.models.CharField`, :class:`~django.db.models.TextField`, and their subclasses.
+- [0cfaed26] Managing collations using migrations ====================================
+- [21a87979] PostgreSQL supports the ``CONCURRENTLY`` option to ``CREATE INDEX`` and ``DROP INDEX`` statements to add and remove indexes without locking out writes. This option is useful for adding or removing an index in a live production database.
+- [9402c282] PostgreSQL supports the ``NOT VALID`` option with the ``ADD CONSTRAINT`` statement to add check constraints without enforcing validation on existing rows. This option is useful if you want to skip the potentially lengthy scan of the table to verify that all existing rows satisfy the constraint.
+- [0d49df97] See `the PostgreSQL documentation <https://www.postgresql.org/docs/current/ sql-altertable.html#SQL-ALTERTABLE-NOTES>`__ for more details.
+- [45c79552] Set up the hstore extension in PostgreSQL before the first ``CreateModel`` or ``AddField`` operation that involves :class:`~django.contrib.postgres.fields.HStoreField` by adding a migration with the :class:`~django.contrib.postgres.operations.HStoreExtension` operation. For example::
+- [33069776] The operation skips adding the extension if it already exists.
+- [ec7c9399] To validate check constraints created with the ``NOT VALID`` option at a later point of time, use the :class:`~django.contrib.postgres.operations.ValidateConstraint` operation.
+- [27548945] You can create a PostgreSQL extension in your database using a migration file. This example creates an hstore extension, but the same principles apply for other extensions.
+- [cbfd00bf] ``BloomExtension`` ==================
+- [4e579881] ``BtreeGinExtension`` =====================
+- [8fa641dc] ``BtreeGistExtension`` ======================
+- [d7b86d6c] ``CITextExtension`` ===================
+- [ea7d7565] ``CreateExtension`` ===================
+- [4d9c13e9] ``CryptoExtension`` ===================
+- [997a30a0] ``HStoreExtension`` ===================
+- [81196898] ``TrigramExtension`` ====================
+- [3b1c8683] ``UnaccentExtension`` =====================

@@ -1,6 +1,6 @@
 # Fact 81e403d1
 
-Store id: 4b8de8fd-39ea-44f9-b37d-efc11e709115
+Store id: eee8b5e6-969c-4a22-aa99-09b3ff61557f
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2514560+00:00`
+- posted_at: `2026-11-09T23:31:57.4126320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 373,
     "symbol": "FileField.formfield"
   },
-  "id": "4b8de8fd-39ea-44f9-b37d-efc11e709115",
+  "id": "eee8b5e6-969c-4a22-aa99-09b3ff61557f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2514560+00:00"
+    "posted_at": "2026-11-09T23:31:57.4126320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee008e2b-8a54-4e0b-878c-54760afc46f5",
+  "subject_id": "e41668bd-c5ef-4642-965d-181ff6e75b5a",
   "subject_name": "django/db/models/fields/files::FileField.formfield",
   "tags": [
     "entity:method"

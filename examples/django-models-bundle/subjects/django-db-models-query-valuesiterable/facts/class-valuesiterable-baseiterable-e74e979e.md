@@ -1,6 +1,6 @@
 # Fact e74e979e
 
-Store id: a6b5c2b7-8400-436b-988a-0313c6da8db5
+Store id: ba8811ae-d566-4043-890d-a6bca56df03b
 
 ## Text
 
@@ -20,7 +20,7 @@ class ValuesIterable(BaseIterable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2196430+00:00`
+- posted_at: `2026-11-09T23:32:04.2610500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 261,
     "symbol": "ValuesIterable"
   },
-  "id": "a6b5c2b7-8400-436b-988a-0313c6da8db5",
+  "id": "ba8811ae-d566-4043-890d-a6bca56df03b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2196430+00:00"
+    "posted_at": "2026-11-09T23:32:04.2610500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "941b04dd-aba3-4cfd-b8a3-e2fdd0c15e2b",
+  "subject_id": "1610d974-80c6-472f-a10b-4c36ea0093ef",
   "subject_name": "django/db/models/query::ValuesIterable",
   "tags": [
     "entity:class"

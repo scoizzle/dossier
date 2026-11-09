@@ -1,14 +1,14 @@
 # django/contrib/auth/base_user
 
-- Subject: django/contrib/auth/base_user (id `8a259f24-496f-4b18-971c-d9b4e3802484`)
+- Subject: django/contrib/auth/base_user (id `bf8a77c2-178c-47a2-a21b-6d670f5c1e4f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 23 of 32
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1334 tokens
+- Facts shown: 32 of 32
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - async def setter(raw_password): self.set_password(raw_password) # Password hash upgrades shouldn't be considered password changes. self._password = None await self.asave(update_fields=["password"]) [8ec889fd]
 - def setter(raw_password): self.set_password(raw_password) # Password hash upgrades shouldn't be considered password changes. self._password = None self.save(update_fields=["password"]) [7b2e53c5]
@@ -34,6 +34,14 @@
 - def has_usable_password(self): """ Return False if set_unusable_password() has been called for this user. """ return is_password_usable(self.password) [3fe8768c]
 - def natural_key(self): return (self.get_username(),) [7b155530]
 
-## Beyond the budget
+## All facts
 
-9 more facts did not fit in the budget: [4821da86] [75edf484] [69b08d4a] [0f463c4c] [fc75cc24] [1f02633c] [c41b1ba8] [d9abb209] [b4033712]
+- [4821da86] def save(self, **kwargs): super().save(**kwargs) if self._password is not None: password_validation.password_changed(self._password, self) self._password = None
+- [75edf484] def set_password(self, raw_password): self.password = make_password(raw_password) self._password = raw_password
+- [69b08d4a] def set_unusable_password(self): # Set a value that will never be a valid hash self.password = make_password(None)
+- [0f463c4c] is_active = True
+- [fc75cc24] """ This module allows importing AbstractBaseUser even when django.contrib.auth is not in INSTALLED_APPS. """
+- [1f02633c] class AbstractBaseUser(models.Model): password = models.CharField(_("password"), max_length=128) last_login = models.DateTimeField(_("last login"), blank=True, null=True)
+- [c41b1ba8] class BaseUserManager(models.Manager): @classmethod def normalize_email(cls, email): """ Normalize the email address by lowercasing the domain part of it. """ email = email or "" try: email_name, domain_part = email.strip().rsplit("@", 1) except ValueError: pass else: email = email_name + "@" + domain_part.lower() return email
+- [d9abb209] from django.conf import settings from django.contrib.auth import password_validation from django.contrib.auth.hashers import ( acheck_password, check_password, is_password_usable, make_password, ) from django.db import models from django.utils.crypto import salted_hmac from django.utils.translation import gettext_lazy as _
+- [b4033712] import unicodedata

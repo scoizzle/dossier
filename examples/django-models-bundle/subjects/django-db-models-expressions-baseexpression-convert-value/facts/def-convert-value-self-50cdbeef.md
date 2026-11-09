@@ -1,6 +1,6 @@
 # Fact 50cdbeef
 
-Store id: d3fc3ee5-661f-47cf-abc8-fbb3de48cb0f
+Store id: 094b81ab-b1c4-45ec-89c0-697e67b304bb
 
 ## Text
 
@@ -20,7 +20,7 @@ def convert_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5206400+00:00`
+- posted_at: `2026-11-09T23:31:55.7832800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 380,
     "symbol": "BaseExpression.convert_value"
   },
-  "id": "d3fc3ee5-661f-47cf-abc8-fbb3de48cb0f",
+  "id": "094b81ab-b1c4-45ec-89c0-697e67b304bb",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5206400+00:00"
+    "posted_at": "2026-11-09T23:31:55.7832800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6cd6c344-3633-4078-9fd3-446f88217caa",
+  "subject_id": "17a3ca11-265d-44f0-a6db-ce67daf8d244",
   "subject_name": "django/db/models/expressions::BaseExpression.convert_value",
   "tags": [
     "entity:method",

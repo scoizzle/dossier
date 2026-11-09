@@ -1,8 +1,8 @@
 # django/__init__
 
-- Subject: django/__init__ (id `f1564155-26b7-45f4-83cb-fcd16d1bc6c3`)
+- Subject: django/__init__ (id `3c95267e-2150-4a7f-bbb4-65aa1cd39449`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 233 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.difference
 
-- Subject: django/db/models/query::QuerySet.difference (id `468b4a3e-826f-4dfc-bf42-49cfc48bbebf`)
+- Subject: django/db/models/query::QuerySet.difference (id `de26b8c4-4523-40f7-8d88-400a87c945f0`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 2003bb8d
 
-Store id: 8f584418-be62-445e-809f-a6b41bd43b25
+Store id: 5429e5a7-3577-42bb-acaa-af20ec4425c8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_select(self, with_col_aliases=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5842160+00:00`
+- posted_at: `2026-11-09T23:32:05.7020290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 240,
     "symbol": "SQLCompiler.get_select"
   },
-  "id": "8f584418-be62-445e-809f-a6b41bd43b25",
+  "id": "5429e5a7-3577-42bb-acaa-af20ec4425c8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5842160+00:00"
+    "posted_at": "2026-11-09T23:32:05.7020290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bcb30bdd-908d-4a1c-a364-9c4a855bd6b3",
+  "subject_id": "3613bdf4-524f-4080-9078-25315bb8d9e5",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select",
   "tags": [
     "entity:method"

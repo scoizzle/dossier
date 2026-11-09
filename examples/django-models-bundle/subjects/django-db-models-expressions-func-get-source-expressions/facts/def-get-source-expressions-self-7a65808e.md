@@ -1,6 +1,6 @@
 # Fact 7a65808e
 
-Store id: 4fc3758c-5187-4ece-9368-bc1fe2fbc0ea
+Store id: 5690cd81-c9d0-4260-b039-0659d74946e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_expressions(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5794640+00:00`
+- posted_at: `2026-11-09T23:31:55.8544800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1091,
     "symbol": "Func.get_source_expressions"
   },
-  "id": "4fc3758c-5187-4ece-9368-bc1fe2fbc0ea",
+  "id": "5690cd81-c9d0-4260-b039-0659d74946e8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5794640+00:00"
+    "posted_at": "2026-11-09T23:31:55.8544800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "022d1d87-93e4-406a-9934-3e5ae6788bf0",
+  "subject_id": "db2b2c95-7732-4167-aa69-c4eb33fd2569",
   "subject_name": "django/db/models/expressions::Func.get_source_expressions",
   "tags": [
     "entity:method"

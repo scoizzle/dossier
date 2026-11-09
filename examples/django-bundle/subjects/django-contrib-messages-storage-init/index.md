@@ -1,8 +1,8 @@
 # django/contrib/messages/storage/__init__
 
-- Subject: django/contrib/messages/storage/__init__ (id `86350c65-8b28-43fb-94fc-b8170114b1e2`)
+- Subject: django/contrib/messages/storage/__init__ (id `67749210-bf92-43c5-9c53-cdc9c0b67031`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 122 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact cc03f60e
 
-Store id: e5b3725d-513c-4696-b7cb-dc504b6c29de
+Store id: c993188e-e5ad-46b3-a926-a22bbb3c8dd5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IRegex
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e5b3725d-513c-4696-b7cb-dc504b6c29de",
+  "id": "c993188e-e5ad-46b3-a926-a22bbb3c8dd5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IRegex"
       },
       "rel": "contains",
-      "target": "4122d1ae-1091-4f91-bb78-b5cec30b7e14"
+      "target": "aa571be8-3e60-4a2f-8543-a27928cf6e78"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

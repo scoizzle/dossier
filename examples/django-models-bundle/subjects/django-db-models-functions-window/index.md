@@ -1,8 +1,8 @@
 # django/db/models/functions/window
 
-- Subject: django/db/models/functions/window (id `c53215d3-8848-4654-aadd-1dac3d5d72de`)
+- Subject: django/db/models/functions/window (id `dbb59911-85bd-4c94-870c-c24e475e86fd`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 200 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

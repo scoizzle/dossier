@@ -1,6 +1,6 @@
 # Fact a80188c8
 
-Store id: 744b8d86-b17a-4a20-bbaf-71d1eed1f4a4
+Store id: fbcac01d-41c3-4f31-ba99-34af58cd7f20
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_annotation_mask(self, names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5243980+00:00`
+- posted_at: `2026-11-09T23:32:07.1130830+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2549,
     "symbol": "Query.set_annotation_mask"
   },
-  "id": "744b8d86-b17a-4a20-bbaf-71d1eed1f4a4",
+  "id": "fbcac01d-41c3-4f31-ba99-34af58cd7f20",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5243980+00:00"
+    "posted_at": "2026-11-09T23:32:07.1130830+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5e5a6c8f-92e4-4304-8f54-0b02fe80b538",
+  "subject_id": "5fefedbc-320b-4cfa-b46c-c92e2829cff6",
   "subject_name": "django/db/models/sql/query::Query.set_annotation_mask",
   "tags": [
     "entity:method"

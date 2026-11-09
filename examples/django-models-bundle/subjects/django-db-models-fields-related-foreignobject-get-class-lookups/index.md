@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.get_class_lookups
 
-- Subject: django/db/models/fields/related::ForeignObject.get_class_lookups (id `3bf9ad8b-c608-41a8-ac11-12be305a7141`)
+- Subject: django/db/models/fields/related::ForeignObject.get_class_lookups (id `5823577b-1f38-4afd-a5ce-af8c3825d850`)
 - Kind: class_method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

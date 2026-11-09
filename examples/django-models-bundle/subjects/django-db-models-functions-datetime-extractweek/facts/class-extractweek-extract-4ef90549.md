@@ -1,6 +1,6 @@
 # Fact 4ef90549
 
-Store id: 53d63bef-f4ca-42d7-9f56-5f4b5854011c
+Store id: ac949862-08ee-4889-b90a-5a05651c6b5c
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractWeek(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1396690+00:00`
+- posted_at: `2026-11-09T23:32:01.2085800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 142,
     "symbol": "ExtractWeek"
   },
-  "id": "53d63bef-f4ca-42d7-9f56-5f4b5854011c",
+  "id": "ac949862-08ee-4889-b90a-5a05651c6b5c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1396690+00:00"
+    "posted_at": "2026-11-09T23:32:01.2085800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a68f8c3-c2d9-4419-bfd8-9ed58875ffe6",
+  "subject_id": "1026ff57-84f2-4720-b9e4-a7a3e2230a18",
   "subject_name": "django/db/models/functions/datetime::ExtractWeek",
   "tags": [
     "entity:class"

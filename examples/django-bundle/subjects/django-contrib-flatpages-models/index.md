@@ -1,8 +1,8 @@
 # django/contrib/flatpages/models
 
-- Subject: django/contrib/flatpages/models (id `78f62010-a0d1-4027-bc2b-7d5ff043f99a`)
+- Subject: django/contrib/flatpages/models (id `bfa9383f-5069-4f1d-8125-b5d9e985039d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 430 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

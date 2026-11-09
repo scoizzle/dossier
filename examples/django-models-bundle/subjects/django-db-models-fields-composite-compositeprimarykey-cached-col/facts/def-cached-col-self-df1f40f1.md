@@ -1,6 +1,6 @@
 # Fact df1f40f1
 
-Store id: e3d114fb-b023-443a-a7cf-2750dd515bd8
+Store id: 9ae8cd8c-dd73-4b06-aeb7-ca7ed575ef64
 
 ## Text
 
@@ -20,7 +20,7 @@ def cached_col(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0118210+00:00`
+- posted_at: `2026-11-09T23:31:57.1367130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 106,
     "symbol": "CompositePrimaryKey.cached_col"
   },
-  "id": "e3d114fb-b023-443a-a7cf-2750dd515bd8",
+  "id": "9ae8cd8c-dd73-4b06-aeb7-ca7ed575ef64",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0118210+00:00"
+    "posted_at": "2026-11-09T23:31:57.1367130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "99e1d5c3-cb4a-4ca3-a770-1ce36c45d843",
+  "subject_id": "a5da1ebc-8505-436a-908e-e03531529ad6",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.cached_col",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact 7119ce9e
 
-Store id: 0cbf3098-ace2-40ed-8344-98c50b7ac4c6
+Store id: eb227599-4120-4885-a071-f8af5e55afba
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_column_name_clashes(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3600380+00:00`
+- posted_at: `2026-11-09T23:31:53.7650690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2080,
     "symbol": "Model._check_column_name_clashes"
   },
-  "id": "0cbf3098-ace2-40ed-8344-98c50b7ac4c6",
+  "id": "eb227599-4120-4885-a071-f8af5e55afba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3600380+00:00"
+    "posted_at": "2026-11-09T23:31:53.7650690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "31daeeb0-02c1-4510-b211-1857f5ad0205",
+  "subject_id": "7cd11782-7359-4e7a-87a8-b7ade28e8d87",
   "subject_name": "django/db/models/base::Model._check_column_name_clashes",
   "tags": [
     "entity:class_method",

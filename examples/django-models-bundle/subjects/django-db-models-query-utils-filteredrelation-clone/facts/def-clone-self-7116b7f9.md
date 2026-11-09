@@ -1,6 +1,6 @@
 # Fact 7116b7f9
 
-Store id: 1c105159-9b6e-40ac-8281-9a4afbc191ea
+Store id: 57774afe-907d-4488-9825-faa0942e1f0a
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1912430+00:00`
+- posted_at: `2026-11-09T23:32:05.2105140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 545,
     "symbol": "FilteredRelation.clone"
   },
-  "id": "1c105159-9b6e-40ac-8281-9a4afbc191ea",
+  "id": "57774afe-907d-4488-9825-faa0942e1f0a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1912430+00:00"
+    "posted_at": "2026-11-09T23:32:05.2105140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36375397-faf2-4a41-a96e-e3d218397a3a",
+  "subject_id": "5fa6e40a-9d09-4976-8324-415de33c1ce5",
   "subject_name": "django/db/models/query_utils::FilteredRelation.clone",
   "tags": [
     "entity:method"

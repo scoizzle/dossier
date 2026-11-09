@@ -1,6 +1,6 @@
 # Fact f4174589
 
-Store id: 23ec4118-eda7-442e-b917-4c0abebf7c15
+Store id: 05a931d8-8e7f-493e-a79f-31dd89dc5cf8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_aggregation(self, using, aggregate_exprs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2557550+00:00`
+- posted_at: `2026-11-09T23:32:06.7928040+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 457,
     "symbol": "Query.get_aggregation"
   },
-  "id": "23ec4118-eda7-442e-b917-4c0abebf7c15",
+  "id": "05a931d8-8e7f-493e-a79f-31dd89dc5cf8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2557550+00:00"
+    "posted_at": "2026-11-09T23:32:06.7928040+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8f39f1c0-aa0b-4c6a-9a5b-df4cbf402de3",
+  "subject_id": "eac801dd-5053-41bd-bd13-1a996a5db480",
   "subject_name": "django/db/models/sql/query::Query.get_aggregation",
   "tags": [
     "entity:method"

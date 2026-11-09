@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/base/features
 
-- Subject: django/contrib/gis/db/backends/base/features (id `0521c48b-ea13-4be7-9e34-894e52174d0f`)
+- Subject: django/contrib/gis/db/backends/base/features (id `03a61787-1f7c-48ad-8868-04f59c209251`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 20 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1020 tokens
+- Facts shown: 22 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Can SchemaEditor alter geometry fields? can_alter_geometry_field = True [92b65a48]
 - # Do the database functions/aggregates support the tolerance parameter? supports_tolerance_parameter = False [01f86394]
@@ -31,6 +31,7 @@
 - from .operations import BaseSpatialOperations [5a3da30f]
 - from django.contrib.gis.db import models [bf251de1]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [18ae6101] [dae3b101b4aa9562-3]
+- [18ae6101] def __getattr__(self, name): m = re.match(r"has_(\w*)_function$", name) if m: func_name = m[1] if func_name not in BaseSpatialOperations.unsupported_functions: raise ValueError( f"DatabaseFeatures.has_{func_name}_function isn't valid. " f'Is "{func_name}" missing from ' "BaseSpatialOperations.unsupported_functions?" ) return func_name not in self.connection.ops.unsupported_functions raise AttributeError
+- [dae3b101b4aa9562-3] import re

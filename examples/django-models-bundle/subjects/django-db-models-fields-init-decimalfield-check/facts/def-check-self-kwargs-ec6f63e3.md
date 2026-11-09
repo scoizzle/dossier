@@ -1,6 +1,6 @@
 # Fact ec6f63e3
 
-Store id: 323c9f7b-b52a-4adf-a076-116a5e23cfe4
+Store id: 748f8403-eda8-41fd-81b9-8efe00ddb782
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4459280+00:00`
+- posted_at: `2026-11-09T23:31:56.6177000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1758,
     "symbol": "DecimalField.check"
   },
-  "id": "323c9f7b-b52a-4adf-a076-116a5e23cfe4",
+  "id": "748f8403-eda8-41fd-81b9-8efe00ddb782",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4459280+00:00"
+    "posted_at": "2026-11-09T23:31:56.6177000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8decbc0-b0ea-4ade-a7b8-82ac8afac698",
+  "subject_id": "33d77ae4-7b8d-49a5-b948-0e620dd84aef",
   "subject_name": "django/db/models/fields/__init__::DecimalField.check",
   "tags": [
     "entity:method"

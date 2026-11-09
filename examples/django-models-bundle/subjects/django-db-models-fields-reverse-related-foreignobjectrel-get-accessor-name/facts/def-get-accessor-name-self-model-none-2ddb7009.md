@@ -1,6 +1,6 @@
 # Fact 2ddb7009
 
-Store id: 9f1bd8fa-2829-4ef0-ba46-916b205deb74
+Store id: 969cf805-9cbb-4042-8ab8-717e21d50680
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_accessor_name(self, model=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3570710+00:00`
+- posted_at: `2026-11-09T23:32:00.3069490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 214,
     "symbol": "ForeignObjectRel.get_accessor_name"
   },
-  "id": "9f1bd8fa-2829-4ef0-ba46-916b205deb74",
+  "id": "969cf805-9cbb-4042-8ab8-717e21d50680",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3570710+00:00"
+    "posted_at": "2026-11-09T23:32:00.3069490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6c0f1fab-dc9b-4a4d-90ff-5d1b84cc6659",
+  "subject_id": "82737110-8a46-4c98-b1c5-8943dffe58df",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.get_accessor_name",
   "tags": [
     "entity:method"

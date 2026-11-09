@@ -1,6 +1,6 @@
 # Fact 07c8e9d8
 
-Store id: a2e0b789-77ce-4449-b1c0-d7114bcb965b
+Store id: f57f4d56-a2e3-48ac-9a9c-5b69a99a5d12
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5293320+00:00`
+- posted_at: `2026-11-09T23:31:55.7914780+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 468,
     "symbol": "BaseExpression.get_source_fields"
   },
-  "id": "a2e0b789-77ce-4449-b1c0-d7114bcb965b",
+  "id": "f57f4d56-a2e3-48ac-9a9c-5b69a99a5d12",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5293320+00:00"
+    "posted_at": "2026-11-09T23:31:55.7914780+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "28b94d76-d2f6-497c-b2ab-3485016be166",
+  "subject_id": "cc1eb118-a3fb-469a-916c-23ed222d9802",
   "subject_name": "django/db/models/expressions::BaseExpression.get_source_fields",
   "tags": [
     "entity:method"

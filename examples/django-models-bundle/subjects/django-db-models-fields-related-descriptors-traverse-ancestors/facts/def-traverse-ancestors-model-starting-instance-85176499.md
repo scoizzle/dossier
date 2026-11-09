@@ -1,6 +1,6 @@
 # Fact 85176499
 
-Store id: dbb2a3a0-3272-476f-8870-aeba7a8275dd
+Store id: 9f096e7b-00b2-4c58-8334-834c2e8c55ed
 
 ## Text
 
@@ -20,7 +20,7 @@ def _traverse_ancestors(model, starting_instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.6892120+00:00`
+- posted_at: `2026-11-09T23:31:59.1237230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 120,
     "symbol": "_traverse_ancestors"
   },
-  "id": "dbb2a3a0-3272-476f-8870-aeba7a8275dd",
+  "id": "9f096e7b-00b2-4c58-8334-834c2e8c55ed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.6892120+00:00"
+    "posted_at": "2026-11-09T23:31:59.1237230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b456456-875f-40b9-a4de-602ca120c177",
+  "subject_id": "51cfeea1-233f-4d08-9e04-a2f9e17db305",
   "subject_name": "django/db/models/fields/related_descriptors::_traverse_ancestors",
   "tags": [
     "entity:function"

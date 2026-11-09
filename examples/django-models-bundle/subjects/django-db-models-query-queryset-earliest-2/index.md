@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.earliest
 
-- Subject: django/db/models/query::QuerySet.earliest (id `1fa9db4e-2d2e-4ed5-a32a-dba635f65f4a`)
+- Subject: django/db/models/query::QuerySet.earliest (id `c137f2f2-9a20-4ca1-96c9-6812c463fd2f`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

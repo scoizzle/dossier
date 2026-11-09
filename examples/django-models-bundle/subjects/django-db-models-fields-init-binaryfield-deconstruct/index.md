@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BinaryField.deconstruct
 
-- Subject: django/db/models/fields/__init__::BinaryField.deconstruct (id `0475eb6c-2712-4d28-836d-1818a20cadc7`)
+- Subject: django/db/models/fields/__init__::BinaryField.deconstruct (id `ddeac3da-c473-48b0-9371-8026ad4fa70d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

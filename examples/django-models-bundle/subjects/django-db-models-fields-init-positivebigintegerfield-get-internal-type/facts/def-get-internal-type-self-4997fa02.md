@@ -1,6 +1,6 @@
 # Fact 4997fa02
 
-Store id: dd8392ae-22c7-49c5-b229-609b7c4e6b25
+Store id: 3bb06d68-da5d-4a4f-9fe2-76db4a17b38d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6068560+00:00`
+- posted_at: `2026-11-09T23:31:56.7680920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2445,
     "symbol": "PositiveBigIntegerField.get_internal_type"
   },
-  "id": "dd8392ae-22c7-49c5-b229-609b7c4e6b25",
+  "id": "3bb06d68-da5d-4a4f-9fe2-76db4a17b38d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6068560+00:00"
+    "posted_at": "2026-11-09T23:31:56.7680920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a82d8b25-64e4-48fb-b3a0-3e508e162036",
+  "subject_id": "7fb8fe43-2a6c-4964-b031-57b6c90888d0",
   "subject_name": "django/db/models/fields/__init__::PositiveBigIntegerField.get_internal_type",
   "tags": [
     "entity:method"

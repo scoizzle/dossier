@@ -1,6 +1,6 @@
 # Fact cbd20973
 
-Store id: 7d891e98-785e-4911-b8c5-e26709ce5a7b
+Store id: 25c3b294-15c6-48bd-b378-1f45b5594053
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch(self, fetcher, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.9938020+00:00`
+- posted_at: `2026-11-09T23:31:56.2174870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 16,
     "symbol": "FetchOne.fetch"
   },
-  "id": "7d891e98-785e-4911-b8c5-e26709ce5a7b",
+  "id": "25c3b294-15c6-48bd-b378-1f45b5594053",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.9938020+00:00"
+    "posted_at": "2026-11-09T23:31:56.2174870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee2ccf21-814e-40f2-b050-42c964ac4baa",
+  "subject_id": "14ab281b-f802-40e0-b2c3-c47a2d97e926",
   "subject_name": "django/db/models/fetch_modes::FetchOne.fetch",
   "tags": [
     "entity:method"

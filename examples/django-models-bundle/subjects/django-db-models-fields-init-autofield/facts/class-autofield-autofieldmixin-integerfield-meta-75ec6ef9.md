@@ -1,6 +1,6 @@
 # Fact 75ec6ef9
 
-Store id: b1bf6dbf-1bae-417b-955b-f1dde8585fef
+Store id: 1972004d-d37c-4943-a95c-c5f63933d710
 
 ## Text
 
@@ -20,7 +20,7 @@ class AutoField(AutoFieldMixin, IntegerField, metaclass=AutoFieldMeta)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7509700+00:00`
+- posted_at: `2026-11-09T23:31:56.9198630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2963,
     "symbol": "AutoField"
   },
-  "id": "b1bf6dbf-1bae-417b-955b-f1dde8585fef",
+  "id": "1972004d-d37c-4943-a95c-c5f63933d710",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7509700+00:00"
+    "posted_at": "2026-11-09T23:31:56.9198630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8908ccbf-fd13-4a7c-875b-18d27776b03d",
+  "subject_id": "19e541bf-dc87-4f2a-b6dd-2f3af49f56df",
   "subject_name": "django/db/models/fields/__init__::AutoField",
   "tags": [
     "entity:class"

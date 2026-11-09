@@ -1,6 +1,6 @@
 # Fact c7529d92
 
-Store id: 0c828d43-2859-4a69-b8a8-5a6cc3a2748a
+Store id: b23ab002-7ead-4c66-9a5b-24c5b4de89ed
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3958430+00:00`
+- posted_at: `2026-11-09T23:32:00.3556840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 394,
     "symbol": "ManyToManyRel.get_related_field"
   },
-  "id": "0c828d43-2859-4a69-b8a8-5a6cc3a2748a",
+  "id": "b23ab002-7ead-4c66-9a5b-24c5b4de89ed",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3958430+00:00"
+    "posted_at": "2026-11-09T23:32:00.3556840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7c15fa9e-d0c4-4a88-89eb-b9e0e12fbbeb",
+  "subject_id": "4f4af0c7-69a5-4c1d-946c-227756cc2350",
   "subject_name": "django/db/models/fields/reverse_related::ManyToManyRel.get_related_field",
   "tags": [
     "entity:method"

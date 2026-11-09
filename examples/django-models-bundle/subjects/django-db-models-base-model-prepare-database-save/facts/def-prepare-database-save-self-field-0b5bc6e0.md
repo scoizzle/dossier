@@ -1,6 +1,6 @@
 # Fact 0b5bc6e0
 
-Store id: 5363fefa-d647-4b99-bba3-404aa3a3a829
+Store id: 66712558-f994-47fe-bb33-c3100b096d60
 
 ## Text
 
@@ -20,7 +20,7 @@ def prepare_database_save(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3470250+00:00`
+- posted_at: `2026-11-09T23:31:53.7535370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1443,
     "symbol": "Model.prepare_database_save"
   },
-  "id": "5363fefa-d647-4b99-bba3-404aa3a3a829",
+  "id": "66712558-f994-47fe-bb33-c3100b096d60",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3470250+00:00"
+    "posted_at": "2026-11-09T23:31:53.7535370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ff38863d-297a-4c02-8c91-ffcd565f2513",
+  "subject_id": "50347feb-83c8-4098-9498-8401524c42de",
   "subject_name": "django/db/models/base::Model.prepare_database_save",
   "tags": [
     "entity:method"

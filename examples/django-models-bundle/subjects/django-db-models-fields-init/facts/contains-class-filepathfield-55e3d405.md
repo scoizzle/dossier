@@ -1,6 +1,6 @@
 # Fact 55e3d405
 
-Store id: 49edf70a-e6b5-4669-9cb6-3f70837f3de1
+Store id: 23c0eae9-d686-46cc-800e-1b0a242d5114
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FilePathField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "49edf70a-e6b5-4669-9cb6-3f70837f3de1",
+  "id": "23c0eae9-d686-46cc-800e-1b0a242d5114",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FilePathField"
       },
       "rel": "contains",
-      "target": "1309dad2-d570-435a-bf32-4ae2441e521f"
+      "target": "0e66669d-f7ba-49bc-933a-5951b9f1096f"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

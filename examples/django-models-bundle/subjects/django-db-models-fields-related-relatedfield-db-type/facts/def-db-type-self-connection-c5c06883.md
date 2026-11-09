@@ -1,6 +1,6 @@
 # Fact c5c06883
 
-Store id: 397ceae3-1c4e-4f01-a18b-04b1869633b8
+Store id: 63b95c93-14c1-4e6d-8927-a37f84c76ec7
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2622230+00:00`
+- posted_at: `2026-11-09T23:31:58.6167340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 371,
     "symbol": "RelatedField.db_type"
   },
-  "id": "397ceae3-1c4e-4f01-a18b-04b1869633b8",
+  "id": "63b95c93-14c1-4e6d-8927-a37f84c76ec7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2622230+00:00"
+    "posted_at": "2026-11-09T23:31:58.6167340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "393dd373-9a72-4d1a-94d5-5f89c8be0854",
+  "subject_id": "1973e1f2-38dc-48f2-9af6-bb36ee6ce4d9",
   "subject_name": "django/db/models/fields/related::RelatedField.db_type",
   "tags": [
     "entity:method"

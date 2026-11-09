@@ -1,6 +1,6 @@
 # Fact 111f49c5
 
-Store id: fd3472e5-15d7-4bba-aa71-a22eeee98ab6
+Store id: 0a560918-c586-4601-9981-e1e7986ae1dd
 
 ## Text
 
@@ -20,7 +20,7 @@ def flatten(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5330020+00:00`
+- posted_at: `2026-11-09T23:31:55.7947030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 481,
     "symbol": "BaseExpression.flatten"
   },
-  "id": "fd3472e5-15d7-4bba-aa71-a22eeee98ab6",
+  "id": "0a560918-c586-4601-9981-e1e7986ae1dd",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5330020+00:00"
+    "posted_at": "2026-11-09T23:31:55.7947030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18a696f7-345d-4468-acbf-0a0a9f515e16",
+  "subject_id": "f98c13f2-5bfb-4498-85a0-ae1920d55f67",
   "subject_name": "django/db/models/expressions::BaseExpression.flatten",
   "tags": [
     "entity:method"

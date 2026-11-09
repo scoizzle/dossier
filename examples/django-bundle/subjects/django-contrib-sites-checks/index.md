@@ -1,8 +1,8 @@
 # django/contrib/sites/checks
 
-- Subject: django/contrib/sites/checks (id `3b87724b-c8c2-4d8c-9377-3551ab003c8c`)
+- Subject: django/contrib/sites/checks (id `3e1cf746-ccc9-4222-ad9e-64f0e35f84b8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 219 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

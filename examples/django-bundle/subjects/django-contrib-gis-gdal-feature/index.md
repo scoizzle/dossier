@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/feature
 
-- Subject: django/contrib/gis/gdal/feature (id `bcbfbba7-61b2-404a-aea1-6fde080f2e9e`)
+- Subject: django/contrib/gis/gdal/feature (id `56902da8-2d53-497a-becf-975a054d6351`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 16 of 17
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1009 tokens
+- Facts shown: 17 of 17
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # #### Feature Methods #### def get(self, field): """ Return the value of the field, instead of an instance of the Field object. May take a string of the field name or a Field object as parameters. """ field_name = getattr(field, "name", field) return self[field_name].value [dac9b04c]
 - # #### Feature Properties #### @property def encoding(self): return self._layer._ds.encoding [627fab18]
@@ -27,6 +27,6 @@
 - destructor = capi.destroy_feature [efd0907b]
 - # For more information, see the OGR C API source code: # https://gdal.org/api/vector_c_api.html # # The OGR_F_* routines are relevant here. class Feature(GDALBase): """ This class that wraps an OGR Feature, needs to be instantiated from a Layer object. """ [0a3a0f21]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [02d972f3]
+- [02d972f3] from django.contrib.gis.gdal.base import GDALBase from django.contrib.gis.gdal.error import GDALException from django.contrib.gis.gdal.field import Field from django.contrib.gis.gdal.geometries import OGRGeometry, OGRGeomType from django.contrib.gis.gdal.prototypes import ds as capi from django.contrib.gis.gdal.prototypes import geom as geom_api from django.utils.encoding import force_bytes, force_str

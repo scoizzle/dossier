@@ -1,9 +1,9 @@
 # django/db/models/expressions::Combinable.bitxor
 
-- Subject: django/db/models/expressions::Combinable.bitxor (id `4aec4fc8-ffc3-43ec-b119-bfcf85a516e2`)
+- Subject: django/db/models/expressions::Combinable.bitxor (id `cff75b80-e51f-4e3a-83dd-849f49c8faf9`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

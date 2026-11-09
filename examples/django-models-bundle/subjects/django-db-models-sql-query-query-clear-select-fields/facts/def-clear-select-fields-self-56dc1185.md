@@ -1,6 +1,6 @@
 # Fact 56dc1185
 
-Store id: 8da8d68c-82ce-4c8b-8e2d-15f24bc1bf15
+Store id: 240564a9-c3e0-4cf5-97d1-38637deccd61
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_select_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4679730+00:00`
+- posted_at: `2026-11-09T23:32:07.0442610+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2241,
     "symbol": "Query.clear_select_fields"
   },
-  "id": "8da8d68c-82ce-4c8b-8e2d-15f24bc1bf15",
+  "id": "240564a9-c3e0-4cf5-97d1-38637deccd61",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4679730+00:00"
+    "posted_at": "2026-11-09T23:32:07.0442610+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6dc5fd15-2b40-4108-9f9b-af678d17057e",
+  "subject_id": "558099b2-3c3e-4615-a0e1-4338d3fa6a75",
   "subject_name": "django/db/models/sql/query::Query.clear_select_fields",
   "tags": [
     "entity:method"

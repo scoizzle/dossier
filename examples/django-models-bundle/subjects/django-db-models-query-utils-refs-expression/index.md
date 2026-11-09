@@ -1,9 +1,9 @@
 # django/db/models/query_utils::refs_expression
 
-- Subject: django/db/models/query_utils::refs_expression (id `fae1e27e-aa4b-4a75-a3fc-be46c035d116`)
+- Subject: django/db/models/query_utils::refs_expression (id `e1513c7a-ad8f-4ee2-ab0f-3c351367bc88`)
 - Kind: function
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

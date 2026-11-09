@@ -1,6 +1,6 @@
 # Fact c69531e9
 
-Store id: d01d1bb1-2500-4c40-a424-90c7cd4ce795
+Store id: 83402251-21f4-4ab4-803f-8d88b51e63f7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Cot
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d01d1bb1-2500-4c40-a424-90c7cd4ce795",
+  "id": "83402251-21f4-4ab4-803f-8d88b51e63f7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Cot"
       },
       "rel": "contains",
-      "target": "524443fe-d151-450a-b3cc-572cb8a5876a"
+      "target": "74fb9943-e366-43bf-97e0-662923bba7aa"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

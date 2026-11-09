@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Power
 
-- Subject: django/db/models/functions/math::Power (id `1544e142-c697-496e-883d-55d7a3e28abf`)
+- Subject: django/db/models/functions/math::Power (id `01bcbd09-5b52-46e4-917f-a222bd3e668a`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

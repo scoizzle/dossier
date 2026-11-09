@@ -1,6 +1,6 @@
 # Fact cddb8573
 
-Store id: 5ee5a5a0-6153-4e37-aa79-7ce93f83336d
+Store id: 44cd1cdd-d8cd-4aef-b09c-a74f406c4219
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_to_attr_fetched(model, to_attr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8829380+00:00`
+- posted_at: `2026-11-09T23:32:04.8346280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2821,
     "symbol": "get_prefetcher.is_to_attr_fetched"
   },
-  "id": "5ee5a5a0-6153-4e37-aa79-7ce93f83336d",
+  "id": "44cd1cdd-d8cd-4aef-b09c-a74f406c4219",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8829380+00:00"
+    "posted_at": "2026-11-09T23:32:04.8346280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "35849573-2610-4c13-b916-f934fd3c1264",
+  "subject_id": "b96f3e93-0a91-4e25-b411-463f6d4f426e",
   "subject_name": "django/db/models/query::get_prefetcher.is_to_attr_fetched",
   "tags": [
     "entity:function"

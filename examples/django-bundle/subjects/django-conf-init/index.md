@@ -1,14 +1,14 @@
 # django/conf/__init__
 
-- Subject: django/conf/__init__ (id `d7257d34-33c5-482a-ab1d-da16bf397c66`)
+- Subject: django/conf/__init__ (id `4e744822-70b6-4893-a7f9-7e7e1bb6cf65`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 885 tokens
-- Facts shown: 10 of 53
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3648 tokens
+- Facts shown: 52 of 53
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if setting in tuple_settings and not isinstance( setting_value, (list, tuple) ): raise ImproperlyConfigured( "The %s setting must be a list or a tuple." % setting ) setattr(self, setting, setting_value) self._explicit_settings.add(setting) [ba6e9d22]
 - # RemovedInDjango2028Warning. _check_email_settings_conflicts(options.keys()) [fcb0e8d6]
@@ -21,6 +21,47 @@
 - holder = UserSettingsHolder(default_settings) for name, value in options.items(): if not name.isupper(): raise TypeError("Setting %r must be uppercase." % name) setattr(holder, name, value) self._wrapped = holder [87ea097e]
 - mod = importlib.import_module(self.SETTINGS_MODULE) [9e93a77b]
 
-## Beyond the budget
+## All facts
 
-42 more facts did not fit in the budget: [0150bb47] [208cc084] [cb62a951] [9374cbb6] [58642ac69aabc72b] [d8fc83bb] [4fd4e1e7] [af83b407] [86facf7a] [7abc2d1b] [bef064f3] [80cc558d] [27bc938e] [b3254a82] [52523370] [dd6e312e] [a64e479d] [c8977bdd] [0f0d55c4] [3fb52cea] [80e20a52] [8ea79681] [8464a5c1] [dee47676] [68ae2e49] [ab632cf4] [c5a740e4] [c25af64c] [315287de] [c68cc6ce] [7a01fcc1] [2ad3c7d2] [57376737] [1bc55b01] [678960b9] [187c065f] [a6eff721] [e3866edf] [05af385e] [c2b86f1f] [23796caf] [8cb74e11]
+- [0150bb47] if hasattr(time, "tzset") and self.TIME_ZONE: # When we can, attempt to validate the timezone. If we can't find # this file, no check happens and it's harmless. zoneinfo_root = Path("/usr/share/zoneinfo") zone_info_file = zoneinfo_root.joinpath(*self.TIME_ZONE.split("/")) if zoneinfo_root.exists() and not zone_info_file.exists(): raise ValueError("Incorrect timezone setting: %s" % self.TIME_ZONE) # Move the time zone info into os.environ. See ticket #2315 for why # we don't do this unconditionally (breaks Windows). os.environ["TZ"] = self.TIME_ZONE time.tzset()
+- [208cc084] return "%s%s" % (get_script_prefix(), value)
+- [cb62a951] self.__dict__[name] = val return val
+- [9374cbb6] self._wrapped = Settings(settings_module)
+- [58642ac69aabc72b] super().__setattr__(name, value)
+- [d8fc83bb] tuple_settings = ( "ALLOWED_HOSTS", "INSTALLED_APPS", "TEMPLATE_DIRS", "LOCALE_PATHS", "SECRET_KEY_FALLBACKS", ) self._explicit_settings = set() for setting in dir(mod): if setting.isupper(): setting_value = getattr(mod, setting)
+- [4fd4e1e7] # RemovedInDjango2028Warning. def __dir__(self): attrs = super().__dir__() if hasattr(self._wrapped, "MAILERS"): # When MAILERS is defined, filter out deprecated email # settings that are from the global_settings defaults. attrs = [ name for name in attrs if name not in DEPRECATED_EMAIL_SETTINGS or self._wrapped.is_overridden(name) ] return attrs
+- [af83b407] # SETTINGS_MODULE doesn't make much sense in the manually configured # (standalone) case. SETTINGS_MODULE = None
+- [86facf7a] @property def configured(self): """Return True if the settings have already been configured.""" return self._wrapped is not empty
+- [7abc2d1b] @staticmethod def _add_script_prefix(value): """ Add SCRIPT_NAME prefix to relative paths.
+- [bef064f3] Allow Django's own code to use the setting without emitting the warning. This function should only be called from within settings-related code. """ warn_about_external_use( message, category, skip_name_prefixes=( # Include all settings-related code here. (Do not include all of # "django.conf", which would incorrectly identify any deprecated # settings usage inside django.conf.urls as external.) "django.conf.LazySettings", "django.conf.Settings", "django.conf.UserSettingsHolder", "django.utils.functional.LazyObject", # LazySettings superclass. # override_settings() and similar test utils must be treated as # settings-related code, else deprecated settings usage in tests # would be incorrectly identified as internal. "django.test.utils.override_settings", "django.test.utils.modify_settings", "django.test.utils.TestContextDecorator", "django.test.testcases.SimpleTestCase.settings", "django.test.testcases.SimpleTestCase.modify_settings", ), )
+- [80cc558d] def __delattr__(self, name): """Delete a setting and clear it from cache if needed.""" super().__delattr__(name) self.__dict__.pop(name, None)
+- [27bc938e] def __delattr__(self, name): self._deleted.add(name) if hasattr(self, name): super().__delattr__(name)
+- [b3254a82] def __dir__(self): return sorted( s for s in [*self.__dict__, *dir(self.default_settings)] if s not in self._deleted )
+- [52523370] def __getattr__(self, name): """Return the value of a setting and cache it in self.__dict__.""" if (_wrapped := self._wrapped) is empty: self._setup(name) _wrapped = self._wrapped val = getattr(_wrapped, name)
+- [dd6e312e] def __getattr__(self, name): if not name.isupper() or name in self._deleted: raise AttributeError return getattr(self.default_settings, name)
+- [a64e479d] def __init__(self, default_settings): """ Requests for configuration variables not in this class are satisfied from the module specified in default_settings (if possible). """ self.__dict__["_deleted"] = set() self.default_settings = default_settings
+- [c8977bdd] def __init__(self, value, setting_name): self.setting_name = setting_name
+- [0f0d55c4] def __new__(self, value, setting_name): return str.__new__(self, value)
+- [3fb52cea] def __repr__(self): # Hardcode the class name as otherwise it yields 'Settings'. if self._wrapped is empty: return "<LazySettings [Unevaluated]>" return '<LazySettings "%(settings_module)s">' % { "settings_module": self._wrapped.SETTINGS_MODULE, }
+- [80e20a52] def __repr__(self): return "<%(cls)s>" % { "cls": self.__class__.__name__, }
+- [8ea79681] def __repr__(self): return '<%(cls)s "%(settings_module)s">' % { "cls": self.__class__.__name__, "settings_module": self.SETTINGS_MODULE, }
+- [8464a5c1] def __setattr__(self, name, value): """ Set the value of setting. Clear all cached values if _wrapped changes (@override_settings does this) or clear single values when set. """ if name == "_wrapped": self.__dict__.clear() else: self.__dict__.pop(name, None)
+- [dee47676] def __setattr__(self, name, value): self._deleted.discard(name) # RemovedInDjango2028Warning. if name == "SIGNED_COOKIE_LEGACY_SALT_FALLBACK": _show_settings_deprecation_warning( SIGNED_COOKIE_LEGACY_SALT_DEPRECATED_MSG, RemovedInDjango2028Warning, ) # RemovedInDjango2028Warning. if name == "USE_BLANK_CHOICE_DASH": _show_settings_deprecation_warning( USE_BLANK_CHOICE_DASH_DEPRECATED_MSG, RemovedInDjango2028Warning ) # RemovedInDjango2028Warning. if name in DEPRECATED_EMAIL_SETTINGS: _show_settings_deprecation_warning( EMAIL_SETTING_DEPRECATED_MSG.format(name=name), RemovedInDjango2028Warning, )
+- [68ae2e49] def _setup(self, name=None): """ Load the settings module pointed to by the environment variable. This is used the first time settings are needed, if the user hasn't configured settings manually. """ settings_module = os.environ.get(ENVIRONMENT_VARIABLE) if not settings_module: desc = ("setting %s" % name) if name else "settings" raise ImproperlyConfigured( "Requested %s, but settings are not configured. " "You must either define the environment variable %s " "or call settings.configure() before accessing settings." % (desc, ENVIRONMENT_VARIABLE) )
+- [ab632cf4] def configure(self, default_settings=global_settings, **options): """ Called to manually configure the settings. The 'default_settings' parameter sets where to retrieve any unspecified values from (its argument must support attribute access (__getattr__)). """ if self._wrapped is not empty: raise RuntimeError("Settings already configured.")
+- [c5a740e4] def is_overridden(self, setting): deleted = setting in self._deleted set_locally = setting in self.__dict__ set_on_default = getattr( self.default_settings, "is_overridden", lambda s: False )(setting) return deleted or set_locally or set_on_default
+- [c25af64c] def is_overridden(self, setting): return setting in self._explicit_settings
+- [315287de] """ Settings and configuration for Django.
+- [c68cc6ce] # RemovedInDjango2028Warning. # Must be called with the complete set of user-defined setting names (but no # default settings). def _check_email_settings_conflicts(explicit_settings): deprecated = DEPRECATED_EMAIL_SETTINGS.intersection(explicit_settings) if deprecated and "MAILERS" in explicit_settings: deprecated_str = ", ".join(sorted(deprecated)) raise ImproperlyConfigured( "Deprecated email settings are not allowed when MAILERS is " f"defined: {deprecated_str}." )
+- [7a01fcc1] # RemovedInDjango2028Warning. DEPRECATED_EMAIL_SETTINGS = { "EMAIL_BACKEND", "EMAIL_FILE_PATH", "EMAIL_HOST", "EMAIL_HOST_PASSWORD", "EMAIL_HOST_USER", "EMAIL_PORT", "EMAIL_SSL_CERTFILE", "EMAIL_SSL_KEYFILE", "EMAIL_TIMEOUT", "EMAIL_USE_SSL", "EMAIL_USE_TLS", } EMAIL_SETTING_DEPRECATED_MSG = ( "The {name} setting is deprecated. Migrate to MAILERS before Django 2028." )
+- [2ad3c7d2] # RemovedInDjango2028Warning. SIGNED_COOKIE_LEGACY_SALT_DEPRECATED_MSG = ( "The SIGNED_COOKIE_LEGACY_SALT_FALLBACK transitional setting is " "deprecated. Remove it from your settings once legacy signed cookies " "have expired. They will not be accepted in Django 2028." ) # RemovedInDjango2028Warning. USE_BLANK_CHOICE_DASH_DEPRECATED_MSG = ( "The USE_BLANK_CHOICE_DASH setting is deprecated. If you wish to define " "your own default blank choice label, override " "django.db.models.fields.BLANK_CHOICE_LABEL in your app's ready() method." )
+- [57376737] ENVIRONMENT_VARIABLE = "DJANGO_SETTINGS_MODULE" DEFAULT_STORAGE_ALIAS = "default" STATICFILES_STORAGE_ALIAS = "staticfiles"
+- [1bc55b01] Read values from the module specified by the DJANGO_SETTINGS_MODULE environment variable, and then from django.conf.global_settings; see the global_settings.py for a list of all possible variables. """
+- [678960b9] class LazySettings(LazyObject): """ A lazy proxy for either global Django settings or a custom settings object. The user can manually configure settings prior to using them. Otherwise, Django uses the settings module pointed to by DJANGO_SETTINGS_MODULE. """
+- [187c065f] class Settings: def __init__(self, settings_module): # update this dict from global settings (but only for ALL_CAPS # settings) for setting in dir(global_settings): if setting.isupper(): setattr(self, setting, getattr(global_settings, setting))
+- [a6eff721] class SettingsReference(str): """ String subclass which references a current settings value. It's treated as the value in memory but serializes to a settings.NAME attribute reference. """
+- [e3866edf] class UserSettingsHolder: """Holder for user configured settings."""
+- [05af385e] def _show_settings_deprecation_warning(message, category): """Issue a warning when external code uses a deprecated setting.
+- [c2b86f1f] from django.conf import global_settings from django.core.exceptions import ImproperlyConfigured from django.utils.deprecation import ( RemovedInDjango2028Warning, django_file_prefixes, warn_about_external_use, ) from django.utils.functional import LazyObject, empty
+- [23796caf] import importlib import os import time import warnings from pathlib import Path
+- [8cb74e11] settings = LazySettings()

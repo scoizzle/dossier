@@ -1,6 +1,6 @@
 # Fact 3c70840f
 
-Store id: 90133beb-7563-4382-a09f-9343c21d83f2
+Store id: d39c549f-8aa7-4384-8791-c01a08fdf658
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5833030+00:00`
+- posted_at: `2026-11-09T23:31:56.7442180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2349,
     "symbol": "GenericIPAddressField.to_python"
   },
-  "id": "90133beb-7563-4382-a09f-9343c21d83f2",
+  "id": "d39c549f-8aa7-4384-8791-c01a08fdf658",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5833030+00:00"
+    "posted_at": "2026-11-09T23:31:56.7442180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4592bdac-0bb6-4649-a1a5-9df584bd58a1",
+  "subject_id": "1218952b-a12a-4107-bb4d-f634b925bb3d",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.to_python",
   "tags": [
     "entity:method"

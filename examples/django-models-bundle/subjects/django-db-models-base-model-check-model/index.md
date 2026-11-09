@@ -1,9 +1,9 @@
 # django/db/models/base::Model._check_model
 
-- Subject: django/db/models/base::Model._check_model (id `b9a734e2-40cf-49fb-88d5-7fe16a7576c0`)
+- Subject: django/db/models/base::Model._check_model (id `733e64ee-a2d5-471f-9fc3-078ca465d8a6`)
 - Kind: class_method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

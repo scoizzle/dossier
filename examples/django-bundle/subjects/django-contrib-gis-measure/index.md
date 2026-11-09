@@ -1,14 +1,14 @@
 # django/contrib/gis/measure
 
-- Subject: django/contrib/gis/measure (id `262723d0-4ab5-4aed-9d97-162df39933ba`)
+- Subject: django/contrib/gis/measure (id `3f8b37de-1331-4c71-8cde-f44f5e2a3834`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 13 of 39
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2752 tokens
+- Facts shown: 38 of 39
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # **** Comparison methods **** [e4ae93ab]
 - # **** Operators methods **** [ec84f88f]
@@ -24,6 +24,30 @@
 - def __imul__(self, other): if isinstance(other, NUMERIC_TYPES): self.standard *= float(other) return self else: raise TypeError( "%(class)s must be multiplied with number" % {"class": pretty_name(self)} ) [cd0832fd]
 - def __init__(self, default_unit=None, **kwargs): value, self._default_unit = self.default_units(kwargs) setattr(self, self.STANDARD_UNIT, value) if default_unit and isinstance(default_unit, str): self._default_unit = default_unit [752e2e4b]
 
-## Beyond the budget
+## All facts
 
-25 more facts did not fit in the budget: [4d32588f] [23cf1235] [271933d6] [dec833e3] [0408e6ff] [18e933c1] [d748d7c9] [b84a233c] [3bacd03e] [21c5301d] [140a8dfe] [d52bedba] [6f2f22ba] [1b1441e0] [65165d30] [425dae5c] [70edb172] [204139ec] [7f9ac9d1] [e4f18c80] [1a5a8460] [af82479c] [bc3e4893] [6fd5935a] [a317a289]
+- [4d32588f] def __isub__(self, other): if isinstance(other, self.__class__): self.standard -= other.standard return self else: raise TypeError( "%(class)s must be subtracted from %(class)s" % {"class": pretty_name(self)} )
+- [23cf1235] def __itruediv__(self, other): if isinstance(other, NUMERIC_TYPES): self.standard /= float(other) return self else: raise TypeError( "%(class)s must be divided with number" % {"class": pretty_name(self)} )
+- [271933d6] def __lt__(self, other): if isinstance(other, self.__class__): return self.standard < other.standard else: return NotImplemented
+- [dec833e3] def __mul__(self, other): if isinstance(other, NUMERIC_TYPES): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard * other)}, ) else: raise TypeError( "%(class)s must be multiplied with number" % {"class": pretty_name(self)} )
+- [0408e6ff] def __mul__(self, other): if isinstance(other, self.__class__): return Area( default_unit=AREA_PREFIX + self._default_unit, **{AREA_PREFIX + self.STANDARD_UNIT: (self.standard * other.standard)}, ) elif isinstance(other, NUMERIC_TYPES): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard * other)}, ) else: raise TypeError( "%(distance)s must be multiplied with number or %(distance)s" % { "distance": pretty_name(self.__class__), } )
+- [18e933c1] def __repr__(self): return "%s(%s=%s)" % ( pretty_name(self), self._default_unit, getattr(self, self._default_unit), )
+- [d748d7c9] def __rmul__(self, other): return self * other
+- [b84a233c] def __str__(self): return "%s %s" % (getattr(self, self._default_unit), self._default_unit)
+- [3bacd03e] def __sub__(self, other): if isinstance(other, self.__class__): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard - other.standard)}, ) else: raise TypeError( "%(class)s must be subtracted from %(class)s" % {"class": pretty_name(self)} )
+- [21c5301d] def __truediv__(self, other): if isinstance(other, NUMERIC_TYPES): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard / other)}, ) else: raise TypeError( "%(class)s must be divided by a number" % {"class": pretty_name(self)} )
+- [140a8dfe] def _get_standard(self): return getattr(self, self.STANDARD_UNIT)
+- [d52bedba] def _set_standard(self, value): setattr(self, self.STANDARD_UNIT, value)
+- [6f2f22ba] def default_units(self, kwargs): """ Return the unit value and the default units specified from the given keyword arguments dictionary. """ val = 0.0 default_unit = self.STANDARD_UNIT for unit, value in kwargs.items(): if not isinstance(value, float): value = float(value) if unit in self.UNITS: val += self.UNITS[unit] * value default_unit = unit elif unit in self.ALIAS: u = self.ALIAS[unit] val += self.UNITS[u] * value default_unit = u else: lower = unit.lower() if lower in self.UNITS: val += self.UNITS[lower] * value default_unit = lower elif lower in self.LALIAS: u = self.LALIAS[lower] val += self.UNITS[u] * value default_unit = u else: raise AttributeError("Unknown unit type: %s" % unit) return val, default_unit
+- [1b1441e0] standard = property(_get_standard, _set_standard)
+- [65165d30] # Copyright (c) 2007, Robert Coup <robert.coup@onetrackmind.co.nz> # All rights reserved. # # Redistribution and use in source and binary forms, with or without # modification, are permitted provided that the following conditions are met: # # 1. Redistributions of source code must retain the above copyright notice, # this list of conditions and the following disclaimer. # # 2. Redistributions in binary form must reproduce the above copyright # notice, this list of conditions and the following disclaimer in the # documentation and/or other materials provided with the distribution. # # 3. Neither the name of Distance nor the names of its contributors may be # used to endorse or promote products derived from this software without # specific prior written permission. # # THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" # AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE # IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE # ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE # LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR # CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF # SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS # INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE # POSSIBILITY OF SUCH DAMAGE. # """ Distance and Area objects to allow for sensible and convenient calculation and conversions.
+- [425dae5c] # Shortcuts D = Distance A = Area
+- [70edb172] @total_ordering class MeasureBase: STANDARD_UNIT = None ALIAS = {} UNITS = {} LALIAS = {}
+- [204139ec] Authors: Robert Coup, Justin Bronn, Riccardo Di Virgilio
+- [7f9ac9d1] Inspired by GeoPy (https://github.com/geopy/geopy) and Geoff Biggs' PhD work on dimensioned units for robotics. """
+- [e4f18c80] NUMERIC_TYPES = (int, float, Decimal) AREA_PREFIX = "sq_"
+- [1a5a8460] __all__ = ["A", "Area", "D", "Distance"]
+- [af82479c] class Area(MeasureBase): STANDARD_UNIT = AREA_PREFIX + Distance.STANDARD_UNIT # Getting the square units values and the alias dictionary. UNITS = {"%s%s" % (AREA_PREFIX, k): v**2 for k, v in Distance.UNITS.items()} | { "ha": 10000, } ALIAS = {k: "%s%s" % (AREA_PREFIX, v) for k, v in Distance.ALIAS.items()} | { "hectare": "ha", }
+- [bc3e4893] class Distance(MeasureBase): STANDARD_UNIT = "m" UNITS = { "chain": 20.1168, "chain_benoit": 20.116782, "chain_sears": 20.1167645, "british_chain_benoit": 20.1167824944, "british_chain_sears": 20.1167651216, "british_chain_sears_truncated": 20.116756, "cm": 0.01, "british_ft": 0.304799471539, "british_yd": 0.914398414616, "clarke_ft": 0.3047972654, "clarke_link": 0.201166195164, "fathom": 1.8288, "ft": 0.3048, "furlong": 201.168, "german_m": 1.0000135965, "gold_coast_ft": 0.304799710181508, "indian_yd": 0.914398530744, "inch": 0.0254, "km": 1000.0, "link": 0.201168, "link_benoit": 0.20116782, "link_sears": 0.20116765, "m": 1.0, "mi": 1609.344, "mm": 0.001, "nm": 1852.0, "nm_uk": 1853.184, "rod": 5.0292, "sears_yd": 0.91439841, "survey_ft": 0.304800609601, "um": 0.000001, "yd": 0.9144, }
+- [6fd5935a] def pretty_name(obj): return obj.__name__ if obj.__class__ == type else obj.__class__.__name__
+- [a317a289] from decimal import Decimal from functools import total_ordering

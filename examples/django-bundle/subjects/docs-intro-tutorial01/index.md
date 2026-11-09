@@ -1,14 +1,14 @@
 # docs/intro/tutorial01
 
-- Subject: docs/intro/tutorial01 (id `ddfa37bc-ec7d-4b7f-bf51-a6d42de6f3b4`)
+- Subject: docs/intro/tutorial01 (id `1c24b172-6df0-4376-accc-ce108fd9fcbb`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 23 of 91
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3435 tokens
+- Facts shown: 88 of 91
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ python -m django --version [c0d0c013]
 - $ python manage.py startapp polls [88dbfd94]
@@ -34,6 +34,70 @@
 - |today| - 15:50:53 Django version |version|, using settings 'mysite.settings' Starting development server at http://127.0.0.1:8000/ Quit the server with CONTROL-C. [7feace5d]
 - $ django-admin startproject mysite djangotutorial [67dfad41]
 
-## Beyond the budget
+## All facts
 
-65 more facts did not fit in the budget: [46c9a5006c713d0c] [12abaf36] [48701711] [c04d39ba] [0fdc81d7] [55d04ee7] [46cf4fb8] [88259420] [04fbb5eb] [57c8129f] [81543381] [b8950d77] [1d1154a6] [dbb2ef17dd903b2b-2] [dfc99ccd] [5c9a4d2d821e33d5] [d59bf1960628576c] [3a9340cd0d877339-10] [3a9340cd0d877339-11] [3a9340cd0d877339-12] [7714e199aac2701e-66] [7714e199aac2701e-67] [7714e199aac2701e-68] [7714e199aac2701e-69] [7714e199aac2701e-70] [942ae6c11625c81c-20] [d17c070d] [3cb0eef97def623a-3] [fab0712f] [27c825fe] [8d6c7e85] [da0c17d5] [a837fdee] [604e1187] [f8fc7262] [3e99c22c] [96b70aad] [94abd339] [1194b4f6] [470761fc] [da8d9ff3] [96bb12cb] [bf978955] [a22a6654] [884c830d] [fe1d8fe7] [92beda0c] [40ea635d] [d37fc7ce] [819c964e] [9ff4a3c2] [270ba926] [e18eb4a9] [588588d0] [d8ac6556] [ad1f40a1] [bb7fdbdb] [515f9a1d] [cad8bad1] [2acdc022] [fbc6644f] [f9946af4] [b538b363] [6a39483c] [0e96e64d]
+- [46c9a5006c713d0c] $ python manage.py runserver
+- [12abaf36] (To serve the site on a different port, see the :djadmin:`runserver` reference.)
+- [48701711] * :file:`manage.py`: A command-line utility that lets you interact with this Django project in various ways. You can read all the details about :file:`manage.py` in :doc:`/ref/django-admin`.
+- [c04d39ba] * :file:`mysite/__init__.py`: An empty file that tells Python that this directory should be considered a Python package. If you're a Python beginner, read :ref:`more about packages <tut-packages>` in the official Python docs.
+- [0fdc81d7] * :file:`mysite/`: A directory that is the actual Python package for your project. Its name is the Python package name you'll need to use to import anything inside it (e.g. ``mysite.urls``).
+- [55d04ee7] * :file:`mysite/asgi.py`: An entry-point for ASGI-compatible web servers to serve your project. See :doc:`/howto/deployment/asgi/index` for more details.
+- [46cf4fb8] * :file:`mysite/settings.py`: Settings/configuration for this Django project. :doc:`/topics/settings` will tell you all about how settings work.
+- [88259420] * :file:`mysite/urls.py`: The URL declarations for this Django project; a "table of contents" of your Django-powered site. You can read more about URLs in :doc:`/topics/http/urls`.
+- [04fbb5eb] * A public site that lets people view polls and vote in them. * An admin site that lets you add, change, and delete polls.
+- [57c8129f] .. admonition:: Automatic reloading of :djadmin:`runserver`
+- [81543381] .. admonition:: Page not found?
+- [b8950d77] .. admonition:: Projects vs. apps
+- [1d1154a6] .. admonition:: When to use :func:`~django.urls.include`
+- [dbb2ef17dd903b2b-2] .. admonition:: Where to get help:
+- [dfc99ccd] .. code-block:: python :caption: ``mysite/urls.py``
+- [5c9a4d2d821e33d5] .. code-block:: python :caption: ``polls/urls.py``
+- [d59bf1960628576c] .. code-block:: python :caption: ``polls/views.py``
+- [3a9340cd0d877339-10] .. code-block:: text
+- [3a9340cd0d877339-11] .. code-block:: text
+- [3a9340cd0d877339-12] .. code-block:: text
+- [7714e199aac2701e-66] .. console::
+- [7714e199aac2701e-67] .. console::
+- [7714e199aac2701e-68] .. console::
+- [7714e199aac2701e-69] .. console::
+- [7714e199aac2701e-70] .. console::
+- [942ae6c11625c81c-20] .. note::
+- [d17c070d] .. note:: Ignore the warning about unapplied database migrations for now; we'll deal with the database shortly.
+- [3cb0eef97def623a-3] .. parsed-literal::
+- [fab0712f] ===================================== Writing your first Django app, part 1 =====================================
+- [27c825fe] Creating a project ==================
+- [8d6c7e85] Creating the Polls app ======================
+- [da0c17d5] Each application you write in Django consists of a Python package that follows a certain convention. Django comes with a utility that automatically generates the basic directory structure of an app, so you can focus on writing code rather than creating directories.
+- [a837fdee] From the command line, ``cd`` into a directory where you'd like to store your code and run the following command to bootstrap a new Django project:
+- [604e1187] Go to http://localhost:8000/polls/ in your browser, and you should see the text "*Hello, world. You're at the polls index.*", which you defined in the ``index`` view.
+- [f8fc7262] If Django is installed, you should see the version of your installation. If it isn't, you'll get an error telling "No module named django".
+- [3e99c22c] If this is your first time using Django, you'll have to take care of some initial setup. Namely, you'll need to auto-generate some code that establishes a Django :term:`project` -- a collection of settings for an instance of Django, including database configuration, Django-specific options and application-specific settings.
+- [96b70aad] It'll consist of two parts:
+- [94abd339] Let's learn by example.
+- [1194b4f6] Let's look at what :djadmin:`startproject` created:
+- [470761fc] Let's verify your Django project works. Change into the :file:`djangotutorial` directory, if you haven't already, and run the following commands:
+- [da8d9ff3] Let's write the first view. Open the file ``polls/views.py`` and put the following Python code in it:
+- [96bb12cb] Now that the server's running, visit http://127.0.0.1:8000/ with your web browser. You'll see a "Congratulations!" page, with a rocket taking off. It worked!
+- [bf978955] Now that your environment -- a "project" -- is set up, you're set to start doing work.
+- [a22a6654] Now's a good time to note: **don't** use this server in anything resembling a production environment. It's intended only for use while developing. (We're in the business of making web frameworks, not web servers.)
+- [884c830d] That'll create a directory :file:`polls`, which is laid out like this:
+- [fe1d8fe7] The :func:`~django.urls.path` function expects at least two arguments: ``route`` and ``view``. The :func:`~django.urls.include` function allows referencing other URLconfs. Whenever Django encounters :func:`~django.urls.include`, it chops off whatever part of the URL matched up to that point and sends the remaining string to the included URLconf for further processing.
+- [92beda0c] The development server ======================
+- [40ea635d] The idea behind :func:`~django.urls.include` is to make it easy to plug-and-play URLs. Since polls are in their own URLconf (``polls/urls.py``), they can be placed under "/polls/", or under "/fun_polls/", or under "/content/polls/", or any other path root, and the app will still work.
+- [d37fc7ce] The next step is to configure the root URLconf in the ``mysite`` project to include the URLconf defined in ``polls.urls``. To do this, add an import for ``django.urls.include`` in ``mysite/urls.py`` and insert an :func:`~django.urls.include` in the ``urlpatterns`` list, so you have:
+- [819c964e] These files are:
+- [9ff4a3c2] This directory structure will house the poll application.
+- [270ba926] This is the most basic view possible in Django. To access it in a browser, we need to map it to a URL - and for this we need to define a URL configuration, or "URLconf" for short. These URL configurations are defined inside each Django app, and they are Python files named ``urls.py``.
+- [e18eb4a9] This tutorial is written for Django |version|, which supports Python 3.12 and later. If the Django version doesn't match, you can refer to the tutorial for your version of Django by using the version switcher at the bottom right corner of this page, or update Django to the newest version. If you're using an older version of Python, check :ref:`faq-python-version-support` to find a compatible version of Django.
+- [588588d0] This will create a directory ``djangotutorial`` with a project called ``mysite`` inside. The directory name doesn't matter to Django; you can rename it to anything you like. If it didn't work, see :ref:`troubleshooting-django-admin`.
+- [d8ac6556] Throughout this tutorial, we'll walk you through the creation of a basic poll application.
+- [ad1f40a1] To create your app, make sure you're in the same directory as :file:`manage.py` and type this command:
+- [bb7fdbdb] To define a URLconf for the ``polls`` app, create a file ``polls/urls.py`` with the following content:
+- [515f9a1d] We'll assume you have :doc:`Django installed </intro/install>` already. You can tell Django is installed and which version by running the following command in a shell prompt (indicated by the $ prefix):
+- [cad8bad1] When you're comfortable with the basic request and response flow, read :doc:`part 2 of this tutorial </intro/tutorial02>` to start working with the database.
+- [2acdc022] Write your first view =====================
+- [fbc6644f] You have now wired an ``index`` view into the URLconf. Verify it's working with the following command:
+- [f9946af4] You'll see the following output on the command line:
+- [b538b363] You've started the Django development server, a lightweight web server written purely in Python. We've included this with Django so you can develop things rapidly, without having to deal with configuring a production server -- such as Apache -- until you're ready for production.
+- [6a39483c] Your app directory should now look like:
+- [0e96e64d] Your apps can live anywhere in your :ref:`Python path <tut-searchpath>`. In this tutorial, we'll create our poll app inside the ``djangotutorial`` folder.

@@ -1,6 +1,6 @@
 # Fact 10a22518
 
-Store id: b8b19aa9-ce7c-4d2a-8011-97caa77e58f4
+Store id: 33dd1bf4-d8e7-468d-94ea-cbe65ad1b9f8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7672770+00:00`
+- posted_at: `2026-11-09T23:31:59.2105420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 652,
     "symbol": "ReverseOneToOneDescriptor.__reduce__"
   },
-  "id": "b8b19aa9-ce7c-4d2a-8011-97caa77e58f4",
+  "id": "33dd1bf4-d8e7-468d-94ea-cbe65ad1b9f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7672770+00:00"
+    "posted_at": "2026-11-09T23:31:59.2105420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3bec3e44-190c-4915-82e3-d871a113ac49",
+  "subject_id": "1fa7fbcd-b81f-4a6f-ae99-2040aae2344c",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__reduce__",
   "tags": [
     "entity:method"

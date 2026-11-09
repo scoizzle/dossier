@@ -1,14 +1,14 @@
 # django/db/backends/mysql/features
 
-- Subject: django/db/backends/mysql/features (id `f7db469e-7817-4937-b367-918ffb43f97f`)
+- Subject: django/db/backends/mysql/features (id `45cc375d-c34a-4992-9973-e9c2d125eaf6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 13 of 33
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2011 tokens
+- Facts shown: 32 of 33
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @cached_property def _mysql_storage_engine(self): """ Internal method used in Django tests. Don't rely on this from your code """ return self.connection.mysql_server_data["default_storage_engine"] [8c5d7633]
 - @cached_property def allows_auto_pk_0(self): """ Autoincrement primary key can be set to 0 if it doesn't generate new autoincrement values. """ return "NO_AUTO_VALUE_ON_ZERO" in self.connection.sql_mode [f83d3240]
@@ -24,6 +24,24 @@
 - @cached_property def introspected_field_types(self): return { **super().introspected_field_types, "BinaryField": "TextField", "BooleanField": "IntegerField", "DurationField": "BigIntegerField", "GenericIPAddressField": "CharField", } [c7a97761]
 - @cached_property def is_sql_auto_is_null_enabled(self): return self.connection.mysql_server_data["sql_auto_is_null"] [54e90c4e]
 
-## Beyond the budget
+## All facts
 
-19 more facts did not fit in the budget: [0a2d7abf] [a52150fa] [431cb1fb] [0b18d3db] [e9d30903] [fb35db97] [f3ce925a] [7cae6242] [fb3b9985] [f51c14a9] [62ad7748] [f3041cfc] [90541967] [520b9a8c] [9166ad7e] [007506b8] [2c17b784] [5ed40cd5] [375f25d0b2ee635c-2]
+- [0a2d7abf] @cached_property def minimum_database_version(self): if self.connection.mysql_is_mariadb: return (10, 11) else: return (8, 4)
+- [a52150fa] @cached_property def supported_explain_formats(self): # Alias MySQL's TRADITIONAL to TEXT for consistency with other # backends. formats = {"JSON", "TEXT", "TRADITIONAL"} if not self.connection.mysql_is_mariadb: formats.add("TREE") return formats
+- [431cb1fb] @cached_property def supports_any_value(self): return not self.connection.mysql_is_mariadb
+- [0b18d3db] @cached_property def supports_default_in_lead_lag(self): # To be added in https://jira.mariadb.org/browse/MDEV-12981. return not self.connection.mysql_is_mariadb
+- [e9d30903] @cached_property def supports_expression_indexes(self): return ( not self.connection.mysql_is_mariadb and self._mysql_storage_engine != "MyISAM" )
+- [fb35db97] @cached_property def supports_index_column_ordering(self): if self._mysql_storage_engine != "InnoDB": return False return True
+- [f3ce925a] @cached_property def supports_transactions(self): """ All storage engines except MyISAM support transactions. """ return self._mysql_storage_engine != "MyISAM"
+- [7cae6242] @cached_property def supports_uuid4_function(self): if self.connection.mysql_is_mariadb: return self.connection.mysql_version >= (11, 7) return False
+- [fb3b9985] @cached_property def test_collations(self): return { "ci": "utf8mb4_general_ci", "non_default": "utf8mb4_esperanto_ci", "swedish_ci": "utf8mb4_swedish_ci", "virtual": "utf8mb4_esperanto_ci", }
+- [f51c14a9] @cached_property def update_can_self_select(self): return self.connection.mysql_is_mariadb
+- [62ad7748] can_return_rows_from_bulk_insert = property( operator.attrgetter("can_return_columns_from_insert") )
+- [f3041cfc] supports_json_negative_indexing = False
+- [90541967] supports_order_by_nulls_modifier = False order_by_nulls_first = True supports_logical_xor = True
+- [520b9a8c] supports_stored_generated_columns = True supports_virtual_generated_columns = True
+- [9166ad7e] supports_uuid4_function_in_default = property( operator.attrgetter("supports_uuid4_function") )
+- [007506b8] test_now_utc_template = "UTC_TIMESTAMP(6)"
+- [2c17b784] class DatabaseFeatures(BaseDatabaseFeatures): empty_fetchmany_value = () related_fields_match_type = True # MySQL doesn't support sliced subqueries with IN/ALL/ANY/SOME. allow_sliced_subqueries_with_in = False has_select_for_update = True has_select_for_update_nowait = True has_select_for_update_skip_locked = True supports_forward_references = False supports_regex_backreferencing = False supports_date_lookup_using_string = False supports_timezones = False requires_explicit_null_ordering_when_grouping = True atomic_transactions = False can_clone_databases = True supports_aggregate_order_by_clause = True supports_comments = True supports_comments_inline = True supports_temporal_subtraction = True supports_slicing_ordering_in_compound = True supports_index_on_text_field = False supports_over_clause = True supports_frame_range_fixed_distance = True supports_update_conflicts = True supports_default_in_bit_aggregations = False can_rename_index = True delete_can_self_reference_subquery = False create_test_procedure_without_params_sql = """ CREATE PROCEDURE test_procedure () BEGIN DECLARE V_I INTEGER; SET V_I = 1; END; """ create_test_procedure_with_int_param_sql = """ CREATE PROCEDURE test_procedure (P_I INTEGER) BEGIN DECLARE V_I INTEGER; SET V_I = P_I; END; """ supports_on_delete_db_default = False # Neither MySQL nor MariaDB support partial indexes. supports_partial_indexes = False # COLLATE must be wrapped in parentheses because MySQL treats COLLATE as an # indexed expression. collate_as_index_expression = True insert_test_table_with_defaults = "INSERT INTO {} () VALUES ()"
+- [5ed40cd5] from django.db.backends.base.features import BaseDatabaseFeatures from django.utils.functional import cached_property
+- [375f25d0b2ee635c-2] import operator

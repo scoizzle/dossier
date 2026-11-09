@@ -1,6 +1,6 @@
 # Fact ea52a3d6
 
-Store id: 6c7ded77-7b62-42cc-b6dc-be86a32b4137
+Store id: b151d17e-a5e6-4ca0-b603-2937cdb0c2d3
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.7900660+00:00`
+- posted_at: `2026-11-09T23:32:02.9236900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 229,
     "symbol": "Index.deconstruct"
   },
-  "id": "6c7ded77-7b62-42cc-b6dc-be86a32b4137",
+  "id": "b151d17e-a5e6-4ca0-b603-2937cdb0c2d3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.7900660+00:00"
+    "posted_at": "2026-11-09T23:32:02.9236900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2993a668-534c-4afb-abfc-475881b1bf04",
+  "subject_id": "3222f869-125d-441e-a897-34c9dcffcef9",
   "subject_name": "django/db/models/indexes::Index.deconstruct",
   "tags": [
     "entity:method"

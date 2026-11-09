@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::AutoFieldMeta.__subclasscheck__
 
-- Subject: django/db/models/fields/__init__::AutoFieldMeta.__subclasscheck__ (id `af2ca235-1b7c-4ac4-8fd8-5cccce3652ad`)
+- Subject: django/db/models/fields/__init__::AutoFieldMeta.__subclasscheck__ (id `cb6b27e9-c7ea-44ad-96f1-1b3fadd955b8`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

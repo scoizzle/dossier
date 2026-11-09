@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__init__
 
-- Subject: django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__init__ (id `19dca816-7067-4228-b8d0-a169aa1601d5`)
+- Subject: django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__init__ (id `ed5c3828-b165-49fd-bd65-95e51ecf02aa`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

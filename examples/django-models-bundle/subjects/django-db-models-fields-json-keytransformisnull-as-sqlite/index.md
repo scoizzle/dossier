@@ -1,9 +1,9 @@
 # django/db/models/fields/json::KeyTransformIsNull.as_sqlite
 
-- Subject: django/db/models/fields/json::KeyTransformIsNull.as_sqlite (id `670de3ad-1d47-44a6-a131-6b46a4933cfe`)
+- Subject: django/db/models/fields/json::KeyTransformIsNull.as_sqlite (id `8096b6de-76a7-483a-b464-13e0be238af8`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 3355e2c6
 
-Store id: f58122e4-8efc-4f67-94a9-b383f73ca9a5
+Store id: f80dcfc7-4557-49ea-bcaa-0a108b804f77
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedPopulator
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9016760+00:00`
+- posted_at: `2026-11-09T23:32:04.8555310+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2984,
     "symbol": "RelatedPopulator"
   },
-  "id": "f58122e4-8efc-4f67-94a9-b383f73ca9a5",
+  "id": "f80dcfc7-4557-49ea-bcaa-0a108b804f77",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9016760+00:00"
+    "posted_at": "2026-11-09T23:32:04.8555310+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8975b2c7-1536-42ea-9eec-83801619877d",
+  "subject_id": "f1226f55-9700-4f24-977e-417360800dc2",
   "subject_name": "django/db/models/query::RelatedPopulator",
   "tags": [
     "entity:class"

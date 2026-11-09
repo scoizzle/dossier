@@ -1,9 +1,9 @@
 # django/db/models/aggregates::StringAgg.as_sqlite
 
-- Subject: django/db/models/aggregates::StringAgg.as_sqlite (id `b2c21b93-e99b-4e90-a84a-5cebf651c1b5`)
+- Subject: django/db/models/aggregates::StringAgg.as_sqlite (id `c79203e4-dc26-4940-aff0-1d5334ee8eca`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

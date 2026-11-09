@@ -1,9 +1,9 @@
 # django/db/models/fields/related_lookups::RelatedLessThan
 
-- Subject: django/db/models/fields/related_lookups::RelatedLessThan (id `916824f8-910a-4259-a82e-098889770355`)
+- Subject: django/db/models/fields/related_lookups::RelatedLessThan (id `1ad56147-dac9-4ad4-80ac-1848d0b52352`)
 - Kind: class
 - Parent: [django/db/models/fields/related_lookups](../django-db-models-fields-related-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

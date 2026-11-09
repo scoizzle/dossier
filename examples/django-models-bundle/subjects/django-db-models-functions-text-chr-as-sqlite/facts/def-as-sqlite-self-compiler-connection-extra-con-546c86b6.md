@@ -1,6 +1,6 @@
 # Fact 546c86b6
 
-Store id: 0845b8e9-af5f-4524-b02a-3c250a8b9025
+Store id: 82e48741-9cdd-4cf0-9927-a11810cfc324
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.0713210+00:00`
+- posted_at: `2026-11-09T23:32:02.1568240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 64,
     "symbol": "Chr.as_sqlite"
   },
-  "id": "0845b8e9-af5f-4524-b02a-3c250a8b9025",
+  "id": "82e48741-9cdd-4cf0-9927-a11810cfc324",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.0713210+00:00"
+    "posted_at": "2026-11-09T23:32:02.1568240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b41d788b-bbc9-455e-858a-904bfb7564ab",
+  "subject_id": "128f4245-9275-4618-af3e-f248cb2b83e9",
   "subject_name": "django/db/models/functions/text::Chr.as_sqlite",
   "tags": [
     "entity:method"

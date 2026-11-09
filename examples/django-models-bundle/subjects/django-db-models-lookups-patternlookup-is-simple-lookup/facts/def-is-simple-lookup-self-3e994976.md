@@ -1,6 +1,6 @@
 # Fact 3e994976
 
-Store id: eabcec2d-f938-4880-bc82-8695e64e030f
+Store id: fd243751-9b0d-4c6d-a27e-1b03282b0199
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_simple_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1743810+00:00`
+- posted_at: `2026-11-09T23:32:03.3520300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 618,
     "symbol": "PatternLookup.is_simple_lookup"
   },
-  "id": "eabcec2d-f938-4880-bc82-8695e64e030f",
+  "id": "fd243751-9b0d-4c6d-a27e-1b03282b0199",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1743810+00:00"
+    "posted_at": "2026-11-09T23:32:03.3520300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "40448fbb-57ca-4aef-a030-d988affde222",
+  "subject_id": "27b5a0bb-91c2-46ab-9aee-9611c09dd52f",
   "subject_name": "django/db/models/lookups::PatternLookup.is_simple_lookup",
   "tags": [
     "entity:method",

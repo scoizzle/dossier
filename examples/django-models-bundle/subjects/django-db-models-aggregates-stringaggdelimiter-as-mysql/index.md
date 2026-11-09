@@ -1,9 +1,9 @@
 # django/db/models/aggregates::StringAggDelimiter.as_mysql
 
-- Subject: django/db/models/aggregates::StringAggDelimiter.as_mysql (id `19b49195-7cf5-4ffd-9501-60c18f83b2bf`)
+- Subject: django/db/models/aggregates::StringAggDelimiter.as_mysql (id `96596e84-3889-49c2-8b44-0c30fa237b54`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

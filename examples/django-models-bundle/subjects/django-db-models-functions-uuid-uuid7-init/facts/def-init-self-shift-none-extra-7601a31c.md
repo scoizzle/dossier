@@ -1,6 +1,6 @@
 # Fact 7601a31c
 
-Store id: ecb420d2-0b84-4819-8668-7e0662c5d691
+Store id: 6cf532a5-1c4f-44dd-a923-b6117b25a382
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, shift=None, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.3792880+00:00`
+- posted_at: `2026-11-09T23:32:02.4967740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 52,
     "symbol": "UUID7.__init__"
   },
-  "id": "ecb420d2-0b84-4819-8668-7e0662c5d691",
+  "id": "6cf532a5-1c4f-44dd-a923-b6117b25a382",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.3792880+00:00"
+    "posted_at": "2026-11-09T23:32:02.4967740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2627d1b-8457-43b1-ae46-02a3d881a48b",
+  "subject_id": "ba49f757-cc5b-436e-a049-5a011b606e04",
   "subject_name": "django/db/models/functions/uuid::UUID7.__init__",
   "tags": [
     "entity:method"

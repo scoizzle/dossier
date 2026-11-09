@@ -1,6 +1,6 @@
 # Fact d6534e54
 
-Store id: 2a8f547b-e30e-4467-9b64-9f25ae56be19
+Store id: 6caa1479-7dd0-4599-8ce7-ffefddfa17aa
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_related(self, *fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6415670+00:00`
+- posted_at: `2026-11-09T23:32:04.5703250+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1804,
     "symbol": "QuerySet.select_related"
   },
-  "id": "2a8f547b-e30e-4467-9b64-9f25ae56be19",
+  "id": "6caa1479-7dd0-4599-8ce7-ffefddfa17aa",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6415670+00:00"
+    "posted_at": "2026-11-09T23:32:04.5703250+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c1d15498-ab8e-439e-943b-037f866bab58",
+  "subject_id": "aec3d4a6-11a1-4e97-a927-8a0a593b86a2",
   "subject_name": "django/db/models/query::QuerySet.select_related",
   "tags": [
     "entity:method"

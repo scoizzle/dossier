@@ -1,9 +1,9 @@
 # django/db/models/options::Options.all_parents
 
-- Subject: django/db/models/options::Options.all_parents (id `a84a9889-a9e5-4bd5-aed3-1eb6b67be77e`)
+- Subject: django/db/models/options::Options.all_parents (id `0e53c959-7640-41b6-84f3-738249cac694`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

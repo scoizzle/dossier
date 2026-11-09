@@ -1,6 +1,6 @@
 # Fact 7fec7700
 
-Store id: 888294c6-bd5a-493c-b340-2ce91ed391e5
+Store id: 4fbc3cb7-0d22-4d9d-b470-426335c3271f
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3759090+00:00`
+- posted_at: `2026-11-09T23:32:01.4711640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 64,
     "symbol": "JSONArray.as_oracle"
   },
-  "id": "888294c6-bd5a-493c-b340-2ce91ed391e5",
+  "id": "4fbc3cb7-0d22-4d9d-b470-426335c3271f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3759090+00:00"
+    "posted_at": "2026-11-09T23:32:01.4711640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da979c81-4dcb-4e92-bd88-e7b650cf9c19",
+  "subject_id": "cabcd7d9-b515-4440-bba2-15898b064fcc",
   "subject_name": "django/db/models/functions/json::JSONArray.as_oracle",
   "tags": [
     "entity:method"

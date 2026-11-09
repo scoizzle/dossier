@@ -1,8 +1,8 @@
 # django/contrib/postgres/lookups
 
-- Subject: django/contrib/postgres/lookups (id `919ead29-aebe-4141-be13-402a77964088`)
+- Subject: django/contrib/postgres/lookups (id `1052b64b-0629-42e4-9e7c-4c3ca0fd7fe9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 622 tokens
 - Facts shown: 17 of 17
 - Conflicts: 0

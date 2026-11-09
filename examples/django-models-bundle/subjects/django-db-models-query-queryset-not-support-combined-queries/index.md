@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._not_support_combined_queries
 
-- Subject: django/db/models/query::QuerySet._not_support_combined_queries (id `bf09a2b1-b62f-4930-8e7f-28f15f372468`)
+- Subject: django/db/models/query::QuerySet._not_support_combined_queries (id `989a49cb-2419-48fc-8913-b9331d5e0dec`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

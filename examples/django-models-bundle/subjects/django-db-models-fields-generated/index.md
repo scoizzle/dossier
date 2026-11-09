@@ -1,8 +1,8 @@
 # django/db/models/fields/generated
 
-- Subject: django/db/models/fields/generated (id `256e9779-6221-43ce-890f-82cf2a950e71`)
+- Subject: django/db/models/fields/generated (id `8f8b2ea4-0b58-4c6e-8a1b-85152d41e0da`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

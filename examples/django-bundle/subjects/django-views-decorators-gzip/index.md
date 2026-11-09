@@ -1,8 +1,8 @@
 # django/views/decorators/gzip
 
-- Subject: django/views/decorators/gzip (id `3a63c6c5-2789-44c1-bf9d-704f75baf55c`)
+- Subject: django/views/decorators/gzip (id `bff576e5-c884-491b-9d47-3fbb01da5f12`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 85 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

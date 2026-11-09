@@ -1,6 +1,6 @@
 # Fact 3e190bb3
 
-Store id: 16d59fe5-7a51-40ff-af36-6e799938a603
+Store id: f8af14f8-cb3f-49ec-8e44-189d0ac36cd5
 
 ## Text
 
@@ -20,7 +20,7 @@ class In(FieldGetDbPrepValueIterableMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1495070+00:00`
+- posted_at: `2026-11-09T23:32:03.3176050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 502,
     "symbol": "In"
   },
-  "id": "16d59fe5-7a51-40ff-af36-6e799938a603",
+  "id": "f8af14f8-cb3f-49ec-8e44-189d0ac36cd5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1495070+00:00"
+    "posted_at": "2026-11-09T23:32:03.3176050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4dd50858-2623-4c5d-8b24-ccff9aa26476",
+  "subject_id": "ceac0181-8ac9-4ec6-87fb-e7a3b851f91b",
   "subject_name": "django/db/models/lookups::In",
   "tags": [
     "entity:class",

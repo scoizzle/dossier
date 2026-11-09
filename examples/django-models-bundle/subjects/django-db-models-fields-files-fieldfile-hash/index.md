@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FieldFile.__hash__
 
-- Subject: django/db/models/fields/files::FieldFile.__hash__ (id `0ffbb96d-773b-4cf4-b4e2-a61b5757f0b4`)
+- Subject: django/db/models/fields/files::FieldFile.__hash__ (id `a7b06d6e-703d-4d09-ab64-1cbb3dc2080a`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

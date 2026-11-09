@@ -1,6 +1,6 @@
 # Fact 8bfb8b48
 
-Store id: 8ce80491-b7fa-43f8-bc67-007bcf6bb8a5
+Store id: b7c3dd22-a6c8-48b9-b400-00fa05549c0b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2517440+00:00`
+- posted_at: `2026-11-09T23:32:04.2778720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 310,
     "symbol": "NamedValuesListIterable.__iter__"
   },
-  "id": "8ce80491-b7fa-43f8-bc67-007bcf6bb8a5",
+  "id": "b7c3dd22-a6c8-48b9-b400-00fa05549c0b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2517440+00:00"
+    "posted_at": "2026-11-09T23:32:04.2778720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2dbf7500-d7d7-4add-92f6-15247087ae58",
+  "subject_id": "72cb0d30-26ea-41a5-ac51-2a005b853d7d",
   "subject_name": "django/db/models/query::NamedValuesListIterable.__iter__",
   "tags": [
     "entity:method"

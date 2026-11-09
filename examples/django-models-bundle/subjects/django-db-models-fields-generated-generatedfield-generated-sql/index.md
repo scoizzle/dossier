@@ -1,9 +1,9 @@
 # django/db/models/fields/generated::GeneratedField.generated_sql
 
-- Subject: django/db/models/fields/generated::GeneratedField.generated_sql (id `05b0efbd-123b-4361-9275-50b10fa043ed`)
+- Subject: django/db/models/fields/generated::GeneratedField.generated_sql (id `90acf01e-9f4e-4619-b89f-13e436469928`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

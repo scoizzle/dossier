@@ -1,6 +1,6 @@
 # Fact 67b4cd7c
 
-Store id: 911136d3-2464-49f7-aad0-b56aacd78fd7
+Store id: 20f020ba-978a-4938-a184-e9b2e5e1408a
 
 ## Text
 
@@ -20,7 +20,7 @@ def SET(value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9995710+00:00`
+- posted_at: `2026-11-09T23:31:55.0400310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 52,
     "symbol": "SET"
   },
-  "id": "911136d3-2464-49f7-aad0-b56aacd78fd7",
+  "id": "20f020ba-978a-4938-a184-e9b2e5e1408a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9995710+00:00"
+    "posted_at": "2026-11-09T23:31:55.0400310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "27e1f571-8295-4537-90c0-3f20a3e31adb",
+  "subject_id": "77558e27-5992-4943-8dc1-71ff8c9bbf9e",
   "subject_name": "django/db/models/deletion::SET",
   "tags": [
     "entity:function"

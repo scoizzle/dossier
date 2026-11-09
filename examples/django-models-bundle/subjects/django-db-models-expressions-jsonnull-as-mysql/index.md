@@ -1,9 +1,9 @@
 # django/db/models/expressions::JSONNull.as_mysql
 
-- Subject: django/db/models/expressions::JSONNull.as_mysql (id `5c9662b4-c231-4213-9edc-b400948da263`)
+- Subject: django/db/models/expressions::JSONNull.as_mysql (id `9dd6da34-26c2-4561-b36c-73dc3ce1d133`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

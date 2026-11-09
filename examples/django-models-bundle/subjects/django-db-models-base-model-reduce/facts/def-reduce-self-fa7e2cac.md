@@ -1,6 +1,6 @@
 # Fact fa7e2cac
 
-Store id: 2cd6d75a-98e5-46b8-a733-e953baf70514
+Store id: 3e16e8d3-2f5c-43d7-a2c3-082394bf790a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3337970+00:00`
+- posted_at: `2026-11-09T23:31:53.7344000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 653,
     "symbol": "Model.__reduce__"
   },
-  "id": "2cd6d75a-98e5-46b8-a733-e953baf70514",
+  "id": "3e16e8d3-2f5c-43d7-a2c3-082394bf790a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3337970+00:00"
+    "posted_at": "2026-11-09T23:31:53.7344000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1d31147b-8a1d-430d-a2dd-1e5291c202fe",
+  "subject_id": "6ac72722-ef44-4941-a641-d4ad456bd6eb",
   "subject_name": "django/db/models/base::Model.__reduce__",
   "tags": [
     "entity:method"

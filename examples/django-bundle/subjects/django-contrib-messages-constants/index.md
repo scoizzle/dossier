@@ -1,8 +1,8 @@
 # django/contrib/messages/constants
 
-- Subject: django/contrib/messages/constants (id `a0ae2109-d772-464e-8a34-7bdec8c10d58`)
+- Subject: django/contrib/messages/constants (id `fd6145a4-d033-402e-b0ed-45b689441c63`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 99 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

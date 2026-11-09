@@ -1,6 +1,6 @@
 # Fact 2ca93469
 
-Store id: d1ea6616-7f83-4104-b582-72ce12bad5f8
+Store id: 95daaeae-c42b-4407-a678-942b072afdb0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, pos, length=None, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2084990+00:00`
+- posted_at: `2026-11-09T23:32:02.3080300+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 349,
     "symbol": "Substr.__init__"
   },
-  "id": "d1ea6616-7f83-4104-b582-72ce12bad5f8",
+  "id": "95daaeae-c42b-4407-a678-942b072afdb0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2084990+00:00"
+    "posted_at": "2026-11-09T23:32:02.3080300+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "58dff103-fc54-48d2-aaea-a3b9646337c0",
+  "subject_id": "adc5609f-3a08-4279-bb74-ab691186eea6",
   "subject_name": "django/db/models/functions/text::Substr.__init__",
   "tags": [
     "entity:method"

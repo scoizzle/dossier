@@ -1,6 +1,6 @@
 # Fact ede7c36d
 
-Store id: b2c1bc26-44a2-40e7-8c01-17bdfdf8db40
+Store id: 864f9d82-1144-4ba4-8078-403370995bd1
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_queryset(self, *, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7508200+00:00`
+- posted_at: `2026-11-09T23:31:59.1917780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 470,
     "symbol": "ReverseOneToOneDescriptor.get_queryset"
   },
-  "id": "b2c1bc26-44a2-40e7-8c01-17bdfdf8db40",
+  "id": "864f9d82-1144-4ba4-8078-403370995bd1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7508200+00:00"
+    "posted_at": "2026-11-09T23:31:59.1917780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b43a054-b254-4245-8da0-07b81e993673",
+  "subject_id": "6e95aaee-e67c-48c3-9ae3-0505bc69bf58",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.get_queryset",
   "tags": [
     "entity:method"

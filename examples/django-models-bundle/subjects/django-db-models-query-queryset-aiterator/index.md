@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.aiterator
 
-- Subject: django/db/models/query::QuerySet.aiterator (id `d0ccfe17-e2fc-4663-b853-e14353c1e951`)
+- Subject: django/db/models/query::QuerySet.aiterator (id `70d5886e-cbbc-454d-9c30-6b013047e55b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

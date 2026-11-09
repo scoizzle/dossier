@@ -1,9 +1,9 @@
 # django/db/models/functions/json::JSONArray.as_native
 
-- Subject: django/db/models/functions/json::JSONArray.as_native (id `15d464b3-105c-4b9c-999e-337890f3693e`)
+- Subject: django/db/models/functions/json::JSONArray.as_native (id `40a270bb-07c1-4e6d-aa24-7a302c89164f`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

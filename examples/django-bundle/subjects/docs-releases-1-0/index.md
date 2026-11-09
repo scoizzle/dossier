@@ -1,14 +1,14 @@
 # docs/releases/1.0
 
-- Subject: docs/releases/1.0 (id `459093f6-f900-4abb-ace4-d6f44fc9a9b8`)
+- Subject: docs/releases/1.0 (id `cbcc42f4-9b69-4111-b0e7-99530ac7a62f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 19 of 66
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3214 tokens
+- Facts shown: 66 of 66
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Child(Parent): father = models.OneToOneField( Parent, primary_key=True, to_field="other_value", parent_link=True ) value = models.IntegerField() [b03071a2]
 - class Parent(models.Model): name = models.CharField(max_length=10) other_value = models.IntegerField(unique=True) [4e090b5a]
@@ -30,6 +30,52 @@
 - An interesting historical note: when Django was first released in July 2005, the initial released version of Django came from an internal repository at revision number 8825. Django 1.0 represents revision 8961 of our public repository. It seems fitting that our 1.0 release comes at the moment where community contributions overtake those made privately. [62742788]
 - As part of a Google Summer of Code project, Thejaswi Puthraya carried out a major rewrite and refactoring of Django's bundled comment system, greatly increasing its flexibility and customizability. [3f0f63dd]
 
-## Beyond the budget
+## All facts
 
-47 more facts did not fit in the budget: [3ee7ae5b] [463b3b5f48db2249-2] [438668a9] [57b15d40] [4d2849af] [72afa85f] [5ed0e707] [3772d803] [3539eab7] [6cb33942] [9d7ec7c9] [3253eee4] [ab7165d1] [501e2904] [3a4a979f] [4252a9cb] [d12a7df8] [1b41c03e] [40672f31] [724e0a54] [0ea86c3b] [3d5ed3d2] [29d8bc0a] [306e6239] [62706306] [791501b2] [87b2445b] [0f63727b] [a00a3daa] [907cdc34] [6bae78b5] [96e00993] [7a061b5f] [813f1129] [d68a9a7f] [2e139b8c] [ed3d0cbd] [6246540f] [cf8e1a9f] [121a4932] [d88754b1] [b23e151c] [483b9d8c] [425b15ad] [4243657e] [2f5a8663] [00d53c09]
+- [3ee7ae5b] Automatic escaping of template variables ----------------------------------------
+- [463b3b5f48db2249-2] Backwards-incompatible changes ==============================
+- [438668a9] Caveats with support of certain databases -----------------------------------------
+- [57b15d40] Classes are now included in ``django.contrib.contenttypes`` which can be used to support generic relations in both the admin interface and in end-user forms. See :ref:`the documentation for generic relations <generic-relations>` for details.
+- [4d2849af] Django 1.0 has a number of backwards-incompatible changes from Django 0.96. If you have apps written against Django 0.96 that you need to port, see our detailed porting guide:
+- [72afa85f] Django 1.0 represents over three years of community development as an Open Source project. Django's received contributions from hundreds of developers, been translated into fifty languages, and today is used by developers on every continent and in every kind of job.
+- [5ed0e707] Django attempts to support as many features as possible on all database backends. However, not all database backends are alike, and in particular many of the supported database differ greatly from version to version. It's a good idea to checkout our :doc:`notes on supported database </ref/databases>`:
+- [3772d803] Django's ``CacheMiddleware`` has been split into three classes: ``CacheMiddleware`` itself still exists and retains all of its previous functionality, but it is now built from two separate middleware classes which handle the two parts of caching (inserting into and reading from the cache) separately, offering additional flexibility for situations where combining these functions into a single middleware posed problems.
+- [3539eab7] Django's built-in ``FileField`` and ``ImageField`` now can take advantage of pluggable file-storage backends, allowing extensive customization of where and how uploaded files get stored by Django. For details, see :doc:`the files documentation </topics/files>`; big thanks go to Marty Alchin for putting in the hard work to get this completed.
+- [6cb33942] Django's internals have been refactored to use Unicode throughout; this drastically simplifies the task of dealing with non-Western-European content and data in Django. Additionally, utility functions have been provided to ease interoperability with third-party libraries and systems which may or may not handle Unicode gracefully. Details are available in Django's Unicode-handling documentation.
+- [9d7ec7c9] Django's object-relational mapper -- the component which provides the mapping between Django model classes and your database, and which mediates your database queries -- has been dramatically improved by a massive refactoring. For most users of Django this is backwards-compatible; the public-facing API for database querying underwent a few minor changes, but most of the updates took place in the ORM's internals. A guide to the changes, including backwards-incompatible modifications and mentions of new features opened up by this refactoring, is `available on the Django wiki`__.
+- [3253eee4] Full details, including updated notes on appropriate use, are in :doc:`the caching documentation </topics/cache>`.
+- [ab7165d1] Generic relations in forms and admin ------------------------------------
+- [501e2904] If you're using :ref:`multiple table model inheritance <multi-table-inheritance>`, be aware of this caveat: child models using a custom ``parent_link`` and ``to_field`` will cause database integrity errors. A set of models like the following are **not valid**::
+- [3a4a979f] Improved Unicode handling -------------------------
+- [4252a9cb] In fact, new documentation is one of our favorite features of Django 1.0, so we might as well start there. First, there's a new documentation site:
+- [d12a7df8] Jython compatibility --------------------
+- [1b41c03e] Known issues ============
+- [40672f31] Multi-table model inheritance with ``to_field`` -----------------------------------------------
+- [724e0a54] Pluggable file storage ----------------------
+- [0ea86c3b] Refactored ``django.contrib.comments`` --------------------------------------
+- [3d5ed3d2] Refactored admin application ----------------------------
+- [29d8bc0a] Removal of deprecated features ------------------------------
+- [306e6239] See :doc:`/ref/unicode`.
+- [62706306] See :doc:`GeoDjango </ref/contrib/gis/index>` for details.
+- [791501b2] See :ref:`ref-models-force-insert` for details.
+- [87b2445b] See the :doc:`API stability guide </misc/api-stability>` for full details.
+- [0f63727b] See the :doc:`admin reference </ref/contrib/admin/index>` for details
+- [a00a3daa] Since Django 0.96, we've made over 4,000 code commits, fixed more than 2,000 bugs, and edited, added, or removed around 350,000 lines of code. We've also added 40,000 lines of new documentation, and greatly improved what was already there.
+- [907cdc34] Split ``CacheMiddleware`` -------------------------
+- [6bae78b5] Stability and forwards-compatibility ====================================
+- [96e00993] Thanks to a lot of work from Leo Soto during a Google Summer of Code project, Django's codebase has been refactored to remove incompatibilities with `Jython`_, an implementation of Python written in Java, which runs Python code on the Java Virtual Machine. Django is now compatible with the forthcoming Jython 2.5 release.
+- [7a061b5f] The Django administrative interface (``django.contrib.admin``) has been completely refactored; admin definitions are now completely decoupled from model definitions (no more ``class Admin`` declaration in models!), rewritten to use Django's new form-handling library (introduced in the 0.96 release as ``django.newforms``, and now available as simply ``django.forms``) and redesigned with extensibility and customization in mind. Full documentation for the admin application is available online in the official Django documentation:
+- [813f1129] The documentation has been greatly improved, cleaned up, and generally made awesome. There's now dedicated search, indexes, and more.
+- [d68a9a7f] The other major highlights of Django 1.0 are:
+- [2e139b8c] The release of Django 1.0 comes with a promise of API stability and forwards-compatibility. In a nutshell, this means that code you develop against Django 1.0 will continue to work against 1.1 unchanged, and you should need to make only minor changes for any 1.X release.
+- [ed3d0cbd] This bug will be fixed in the next release of Django.
+- [6246540f] To provide improved security against cross-site scripting (XSS) vulnerabilities, Django's template system now automatically escapes the output of variables. This behavior is configurable, and allows both variables and larger template constructs to be marked as safe (requiring no escaping) or unsafe (requiring escaping). A full guide to this feature is in the documentation for the :ttag:`autoescape` tag.
+- [cf8e1a9f] We can't possibly document everything that's new in 1.0, but the documentation will be your definitive guide. Anywhere you see something like:
+- [121a4932] We've been looking forward to this moment for over three years, and it's finally here. Django 1.0 represents the largest milestone in Django's development to date: a web framework that a group of perfectionists can truly be proud of.
+- [d88754b1] We've done our best to make Django 1.0 as solid as possible, but unfortunately there are a couple of issues that we know about in the release.
+- [b23e151c] Welcome to Django 1.0!
+- [483b9d8c] What's new in Django 1.0 ========================
+- [425b15ad] You'll know that you're looking at something new or changed.
+- [4243657e] __ https://code.djangoproject.com/wiki/QuerysetRefactorBranch
+- [2f5a8663] ``INSERT``/``UPDATE`` distinction ---------------------------------
+- [00d53c09] ``django.contrib.gis`` (GeoDjango) ----------------------------------

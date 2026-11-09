@@ -1,6 +1,6 @@
 # Fact 6166c9db
 
-Store id: cad0c04d-0adf-43b6-b555-e01be846fc3e
+Store id: fe8ba873-2865-4f84-b671-3c66965da166
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6091280+00:00`
+- posted_at: `2026-11-09T23:31:55.8742310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1280,
     "symbol": "RawSQL.as_sql"
   },
-  "id": "cad0c04d-0adf-43b6-b555-e01be846fc3e",
+  "id": "fe8ba873-2865-4f84-b671-3c66965da166",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6091280+00:00"
+    "posted_at": "2026-11-09T23:31:55.8742310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "68cab7de-5310-4126-bed3-82f18ad96e3a",
+  "subject_id": "97e4b68f-b722-44ff-a97f-8ecdf7913d72",
   "subject_name": "django/db/models/expressions::RawSQL.as_sql",
   "tags": [
     "entity:method"

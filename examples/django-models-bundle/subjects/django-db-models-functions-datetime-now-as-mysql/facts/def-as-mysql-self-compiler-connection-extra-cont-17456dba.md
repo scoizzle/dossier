@@ -1,6 +1,6 @@
 # Fact 17456dba
 
-Store id: 669b8a0e-0a9c-466a-8710-e5377fb06421
+Store id: 3743f2ea-9c00-475b-8eba-58f4c363a0b1
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1654010+00:00`
+- posted_at: `2026-11-09T23:32:01.2358200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 225,
     "symbol": "Now.as_mysql"
   },
-  "id": "669b8a0e-0a9c-466a-8710-e5377fb06421",
+  "id": "3743f2ea-9c00-475b-8eba-58f4c363a0b1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1654010+00:00"
+    "posted_at": "2026-11-09T23:32:01.2358200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1c6b028f-db9a-4cad-814a-aa401462f634",
+  "subject_id": "842188df-0f20-4891-869a-1c1907288dab",
   "subject_name": "django/db/models/functions/datetime::Now.as_mysql",
   "tags": [
     "entity:method"

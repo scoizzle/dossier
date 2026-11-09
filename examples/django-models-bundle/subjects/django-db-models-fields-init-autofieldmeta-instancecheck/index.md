@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::AutoFieldMeta.__instancecheck__
 
-- Subject: django/db/models/fields/__init__::AutoFieldMeta.__instancecheck__ (id `cf1cd688-b5d9-43e2-961a-aae17aa6b5c5`)
+- Subject: django/db/models/fields/__init__::AutoFieldMeta.__instancecheck__ (id `8ae471ce-b151-423f-abd5-6d7fe066418a`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

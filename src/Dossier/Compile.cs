@@ -18,6 +18,9 @@ public sealed class CompileRequest
     public RankOptions? Rank { get; set; }
     public JsonElement? Follow { get; set; }
     public string? Format { get; set; }
+
+    /// <summary>"complete" (default) emits every fact; "strict" cuts to the budget and lists the rest in dropped.</summary>
+    public string? BudgetMode { get; set; }
 }
 
 public sealed class RankOptions
@@ -31,6 +34,7 @@ public sealed class CompiledDossier
     public DossierSubject Subject { get; set; } = new();
     public string Depth { get; set; } = "index";
     public List<string> Needs { get; set; } = new();
+    public string BudgetMode { get; set; } = "complete";
     public int BudgetTokens { get; set; }
     public int UsedTokens { get; set; }
     public List<FactView> Facts { get; set; } = new();
@@ -89,6 +93,20 @@ public sealed class DossierSelfCheck
 public sealed partial class DossierStore
 {
     public const int DefaultBudgetTokens = 1200;
+    public const string BudgetModeComplete = "complete";
+    public const string BudgetModeStrict = "strict";
+
+    /// <summary>Validates a budget mode, defaulting to complete.</summary>
+    public static string ResolveBudgetMode(string? value)
+    {
+        var mode = value ?? BudgetModeComplete;
+        if (mode is not (BudgetModeComplete or BudgetModeStrict))
+        {
+            throw new DossierRequestException("invalid_budget_mode", $"budget mode must be \"complete\" or \"strict\", got \"{mode}\"");
+        }
+
+        return mode;
+    }
     public const double DefaultRecencyWeight = 0.2;
     private const int IndexTokenCap = 300;
     private const int IndexMaxFacts = 8;
@@ -219,6 +237,7 @@ public sealed partial class DossierStore
             throw new DossierRequestException("invalid_order", $"order must be \"rank\" or \"seq\", got \"{order}\"");
         }
 
+        var budgetMode = ResolveBudgetMode(request.BudgetMode);
         var budget = request.Budget ?? DefaultBudgetTokens;
         if (budget < 0)
         {
@@ -253,49 +272,24 @@ public sealed partial class DossierStore
         var views = representatives.ToDictionary(c => c.Id, ToDossierView, StringComparer.Ordinal);
         var emitted = new List<Candidate>();
 
-        if (depth == "full")
-        {
-            // Greedy fill: a candidate that does not fit is skipped, not fatal, so a later smaller
-            // fact can still use the remaining slice. Everything not emitted lands in Dropped below.
-            var factSlice = (int)Math.Floor(budget * 0.75);
-            var running = 0;
-            foreach (var candidate in representatives)
-            {
-                var cost = EstimateFactTokens(views[candidate.Id], format);
-                if (running + cost <= factSlice)
-                {
-                    running += cost;
-                    emitted.Add(candidate);
-                }
-            }
-        }
-        else
+        if (depth == "index")
         {
             foreach (var candidate in representatives)
             {
                 views[candidate.Id].Text = OneLine(candidate.Text, IndexLineLength);
             }
+        }
 
-            // The index cap bounds the fact content itself, never the serialized envelope and never
-            // conflicts or gaps. Counting the envelope is what previously left the facts array empty:
-            // the JSON scaffolding plus any conflicts could exceed the cap before a fact was tried.
-            var cap = Math.Min(budget, IndexTokenCap);
-            var floor = Math.Min(IndexMinFacts, representatives.Count);
-            var factTokens = 0;
-            foreach (var candidate in representatives)
-            {
-                if (emitted.Count >= IndexMaxFacts)
-                {
-                    break;
-                }
-
-                var cost = EstimateIndexFactTokens(views[candidate.Id], format);
-                if (emitted.Count < floor || factTokens + cost <= cap)
-                {
-                    emitted.Add(candidate);
-                    factTokens += cost;
-                }
-            }
+        if (budgetMode == BudgetModeComplete)
+        {
+            // Complete mode: every representative, in rank order. The budget is only the highlight threshold.
+            emitted.AddRange(representatives);
+        }
+        else
+        {
+            var chosen = SelectWithinBudget(
+                representatives.Select(c => views[c.Id]).ToList(), depth, budget, f => EstimateFactTokens(f, format), f => EstimateIndexFactTokens(f, format));
+            emitted.AddRange(chosen.Select(i => representatives[i]));
         }
 
         var gaps = FindGaps(needs, emitted);
@@ -308,7 +302,7 @@ public sealed partial class DossierStore
                 .ToList();
         }
 
-        var dossier = BuildDossier(subject, depth, needs, budget, emitted, views, conflicts, gaps, representatives);
+        var dossier = BuildDossier(subject, depth, needs, budgetMode, budget, emitted, views, conflicts, gaps, representatives);
         dossier.UsedTokens =
             dossier.Facts.Sum(f => EstimateFactTokens(f, format))
             + dossier.Conflicts.Sum(c => EstimateConflictTokens(c, format))
@@ -316,10 +310,60 @@ public sealed partial class DossierStore
         return dossier;
     }
 
+    /// <summary>
+    /// The budget fill, shared by strict compile and the complete-mode highlights. Returns the indexes of
+    /// the items that fit, in input order. full: greedy 75 percent slice, a fact that does not fit is skipped.
+    /// index: cap min(budget, 300) on fact content, at most 8 facts, at least 3.
+    /// </summary>
+    private static List<int> SelectWithinBudget(
+        IReadOnlyList<FactView> items, string depth, int budget, Func<FactView, int> fullCost, Func<FactView, int> indexCost)
+    {
+        var chosen = new List<int>();
+        if (depth == "full")
+        {
+            var factSlice = (int)Math.Floor(budget * 0.75);
+            var running = 0;
+            for (var i = 0; i < items.Count; i++)
+            {
+                var cost = fullCost(items[i]);
+                if (running + cost <= factSlice)
+                {
+                    running += cost;
+                    chosen.Add(i);
+                }
+            }
+
+            return chosen;
+        }
+
+        // The index cap bounds the fact content itself, never the serialized envelope and never
+        // conflicts or gaps.
+        var cap = Math.Min(budget, IndexTokenCap);
+        var floor = Math.Min(IndexMinFacts, items.Count);
+        var factTokens = 0;
+        for (var i = 0; i < items.Count; i++)
+        {
+            if (chosen.Count >= IndexMaxFacts)
+            {
+                break;
+            }
+
+            var cost = indexCost(items[i]);
+            if (chosen.Count < floor || factTokens + cost <= cap)
+            {
+                chosen.Add(i);
+                factTokens += cost;
+            }
+        }
+
+        return chosen;
+    }
+
     private static CompiledDossier BuildDossier(
         DossierSubject subject,
         string depth,
         List<string> needs,
+        string budgetMode,
         int budget,
         List<Candidate> emitted,
         Dictionary<string, FactView> views,
@@ -328,20 +372,22 @@ public sealed partial class DossierStore
         List<Candidate> ranked)
     {
         var facts = emitted.Select(c => views[c.Id]).ToList();
+        var emittedSet = emitted.ToHashSet();
         return new CompiledDossier
         {
             Subject = subject,
             Depth = depth,
             Needs = needs,
+            BudgetMode = budgetMode,
             BudgetTokens = budget,
             UsedTokens = 0,
             Facts = facts,
             Linked = new List<FactView>(),
             Conflicts = conflicts,
             Gaps = gaps,
-            Dropped = depth == "index"
+            Dropped = depth == "index" || budgetMode == BudgetModeComplete
                 ? new List<string>()
-                : ranked.Where(c => !emitted.Contains(c)).Select(c => c.Id).ToList(),
+                : ranked.Where(c => !emittedSet.Contains(c)).Select(c => c.Id).ToList(),
             SelfCheck = new DossierSelfCheck
             {
                 UncitedClaims = facts.Count(f => f.Cites is null || f.Cites.Count == 0),
@@ -750,15 +796,59 @@ public sealed partial class DossierStore
         return line.Length <= max ? line : line[..(max - 3)] + "...";
     }
 
+    /// <summary>
+    /// In complete mode, when the facts exceed the budget: the indexes (into Facts) of the highlights, the
+    /// top facts that fit the budget. Null when everything fits or the mode is strict, meaning one flat list.
+    /// </summary>
+    public static HashSet<int>? HighlightIndexes(CompiledDossier dossier)
+    {
+        if (dossier.BudgetMode != BudgetModeComplete || dossier.Facts.Count == 0)
+        {
+            return null;
+        }
+
+        var chosen = SelectWithinBudget(
+            dossier.Facts, dossier.Depth, dossier.BudgetTokens, f => EstimateFactTokens(f, "markdown"), f => EstimateIndexFactTokens(f, "markdown"));
+        return chosen.Count == dossier.Facts.Count ? null : chosen.ToHashSet();
+    }
+
     /// <summary>Markdown rendering of a compiled dossier; every emitted fact id appears in brackets.</summary>
     public static string RenderMarkdown(CompiledDossier dossier)
     {
         var builder = new StringBuilder();
         builder.Append("# ").Append(dossier.Subject.Name).Append('\n');
         builder.Append('\n');
-        foreach (var fact in dossier.Facts)
+        var highlights = HighlightIndexes(dossier);
+        if (highlights is null)
         {
-            builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append("]\n");
+            foreach (var fact in dossier.Facts)
+            {
+                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append("]\n");
+            }
+        }
+        else
+        {
+            builder.Append("## Highlights\n\n");
+            if (highlights.Count == 0)
+            {
+                builder.Append("None fit the budget.\n");
+            }
+
+            foreach (var index in highlights)
+            {
+                var fact = dossier.Facts[index];
+                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append("]\n");
+            }
+
+            builder.Append("\n## All facts\n\n");
+            for (var i = 0; i < dossier.Facts.Count; i++)
+            {
+                if (!highlights.Contains(i))
+                {
+                    var fact = dossier.Facts[i];
+                    builder.Append("- [").Append(fact.Id).Append("] ").Append(OneLine(fact.Text, int.MaxValue)).Append('\n');
+                }
+            }
         }
 
         if (dossier.Conflicts.Count > 0)

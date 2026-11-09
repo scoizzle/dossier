@@ -1,6 +1,6 @@
 # Fact c6579d48
 
-Store id: 6349f670-4756-4c2c-9a2b-40ffee001ad0
+Store id: 1190f250-3f58-4210-86e8-b2b060449677
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.0239810+00:00`
+- posted_at: `2026-11-09T23:32:06.4965330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 212,
     "symbol": "BaseTable.identity"
   },
-  "id": "6349f670-4756-4c2c-9a2b-40ffee001ad0",
+  "id": "1190f250-3f58-4210-86e8-b2b060449677",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.0239810+00:00"
+    "posted_at": "2026-11-09T23:32:06.4965330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7ac6040b-aec9-43c7-8c42-19c2aa752704",
+  "subject_id": "b0bee04b-7756-4f31-9a64-9f511ef8f446",
   "subject_name": "django/db/models/sql/datastructures::BaseTable.identity",
   "tags": [
     "entity:method",

@@ -1,9 +1,9 @@
 # django/db/models/options::Options._prepare
 
-- Subject: django/db/models/options::Options._prepare (id `41c36375-1fa7-49aa-8868-7bd02505ef0c`)
+- Subject: django/db/models/options::Options._prepare (id `16ab8d27-0801-4c44-baea-e15072bd6952`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/expressions::Subquery.get_source_expressions
 
-- Subject: django/db/models/expressions::Subquery.get_source_expressions (id `b5087091-b48a-4abd-82af-dff719b8d4f8`)
+- Subject: django/db/models/expressions::Subquery.get_source_expressions (id `5a890d2f-05c6-43fb-b271-86d35476dd50`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

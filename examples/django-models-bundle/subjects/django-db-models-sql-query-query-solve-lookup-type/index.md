@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.solve_lookup_type
 
-- Subject: django/db/models/sql/query::Query.solve_lookup_type (id `eb2a1669-96b8-4ad3-934f-cf0f75d92a44`)
+- Subject: django/db/models/sql/query::Query.solve_lookup_type (id `fbead622-6546-4e90-8dfa-8f7d7d07c0e6`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

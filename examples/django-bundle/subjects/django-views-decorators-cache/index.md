@@ -1,8 +1,8 @@
 # django/views/decorators/cache
 
-- Subject: django/views/decorators/cache (id `a7e5d9fb-8c54-4c8a-a7d9-e2093c90b7b0`)
+- Subject: django/views/decorators/cache (id `c65609df-9212-4c06-83b7-ab3344a68734`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 668 tokens
 - Facts shown: 16 of 18
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact df3e8451
 
-Store id: 3f548bf6-3120-4158-8068-bdeb91bb6fe0
+Store id: fa9571cf-89e3-4cb2-9e55-e7c85b6e5432
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_primary_key(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2329750+00:00`
+- posted_at: `2026-11-09T23:31:57.3923680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 280,
     "symbol": "FileField._check_primary_key"
   },
-  "id": "3f548bf6-3120-4158-8068-bdeb91bb6fe0",
+  "id": "fa9571cf-89e3-4cb2-9e55-e7c85b6e5432",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2329750+00:00"
+    "posted_at": "2026-11-09T23:31:57.3923680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a4b7ab34-bffa-4c75-9985-592515a0479e",
+  "subject_id": "714535e2-490b-433c-aad2-d196a6c6a126",
   "subject_name": "django/db/models/fields/files::FileField._check_primary_key",
   "tags": [
     "entity:method"

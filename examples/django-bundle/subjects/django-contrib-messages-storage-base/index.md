@@ -1,14 +1,14 @@
 # django/contrib/messages/storage/base
 
-- Subject: django/contrib/messages/storage/base (id `92634255-7439-4283-a95e-de059a3e685e`)
+- Subject: django/contrib/messages/storage/base (id `1d6ff17c-899f-4581-9fd0-af956043b83e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 17 of 34
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1606 tokens
+- Facts shown: 34 of 34
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - **This method must be implemented by a subclass.** [b76f10f5]
 - **This method must be implemented by a subclass.** """ raise NotImplementedError( "subclasses of BaseStorage must provide a _store() method" ) [61f71eba]
@@ -28,6 +28,22 @@
 - def __init__(self, request, *args, **kwargs): self.request = request self._queued_messages = [] self.used = False self.added_new = False super().__init__(*args, **kwargs) [ab28c51e]
 - def __str__(self): return str(self.message) [287ba134]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [7e9de70c] [df753d03] [5e0a32e7] [3491638f] [7a3e8008] [e1ea7d2b] [3cea4511] [cd65932d] [49d25f66] [8a5d3204] [8ba8f1bd] [40d2f2f4] [081e0272] [01b73348] [467d0f29] [b473f106] [f0a8ce4d]
+- [7e9de70c] def __iter__(self): self.used = True if self._queued_messages: self._loaded_messages.extend(self._queued_messages) self._queued_messages = [] return iter(self._loaded_messages)
+- [df753d03] def __len__(self): return len(self._loaded_messages) + len(self._queued_messages)
+- [5e0a32e7] def __repr__(self): extra_tags = f", extra_tags={self.extra_tags!r}" if self.extra_tags else "" return f"Message(level={self.level}, message={self.message!r}{extra_tags})"
+- [3491638f] def __repr__(self): return f"<{self.__class__.__qualname__}: request={self.request!r}>"
+- [7a3e8008] def _get(self, *args, **kwargs): """ Retrieve a list of stored messages. Return a tuple of the messages and a flag indicating whether or not all the messages originally intended to be stored in this storage were, in fact, stored and retrieved; e.g., ``(messages, all_retrieved)``.
+- [e1ea7d2b] def _get_level(self): """ Return the minimum recorded level.
+- [3cea4511] def _prepare(self): """ Prepare the message for serialization by forcing the ``message`` and ``extra_tags`` to str in case they are lazy translations. """ self.message = str(self.message) self.extra_tags = str(self.extra_tags) if self.extra_tags is not None else None
+- [cd65932d] def _prepare_messages(self, messages): """ Prepare a list of messages for storage. """ for message in messages: message._prepare()
+- [49d25f66] def _set_level(self, value=None): """ Set a custom minimum recorded level.
+- [8a5d3204] def _store(self, messages, response, *args, **kwargs): """ Store a list of messages and return a list of any messages which could not be stored.
+- [8ba8f1bd] def add(self, level, message, extra_tags=""): """ Queue a message to be stored.
+- [40d2f2f4] def update(self, response): """ Store all unread messages.
+- [081e0272] level = property(_get_level, _set_level, _set_level)
+- [01b73348] LEVEL_TAGS = SimpleLazyObject(utils.get_level_tags)
+- [467d0f29] class BaseStorage: """ This is the base backend for temporary message storage.
+- [b473f106] class Message: """ Represent an actual message that can be stored in any of the supported storage classes (typically session- or cookie-based) and rendered in a view or template. """
+- [f0a8ce4d] from django.conf import settings from django.contrib.messages import constants, utils from django.utils.functional import SimpleLazyObject

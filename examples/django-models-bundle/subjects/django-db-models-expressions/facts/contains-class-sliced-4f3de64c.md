@@ -1,6 +1,6 @@
 # Fact 4f3de64c
 
-Store id: 2c8badd3-0bcd-489a-a076-12da718ef522
+Store id: 92d880de-d8c9-48cb-b47e-7b64758d2aa7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Sliced
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2c8badd3-0bcd-489a-a076-12da718ef522",
+  "id": "92d880de-d8c9-48cb-b47e-7b64758d2aa7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Sliced"
       },
       "rel": "contains",
-      "target": "09b45656-c689-4cff-a4d8-a0d27f83defd"
+      "target": "49e6800a-ad67-4a20-a553-d6c677271c76"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

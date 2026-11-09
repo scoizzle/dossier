@@ -1,6 +1,6 @@
 # Fact f25d7ee9
 
-Store id: e95221c3-ab47-4dc4-b6a2-f6e3aaeeb61e
+Store id: 92fb3b0c-3a03-44f7-a646-335b81b3259a
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4310800+00:00`
+- posted_at: `2026-11-09T23:31:58.8104370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1381,
     "symbol": "OneToOneField.formfield"
   },
-  "id": "e95221c3-ab47-4dc4-b6a2-f6e3aaeeb61e",
+  "id": "92fb3b0c-3a03-44f7-a646-335b81b3259a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4310800+00:00"
+    "posted_at": "2026-11-09T23:31:58.8104370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0b39b28d-6203-4fb5-ab70-382065808ad4",
+  "subject_id": "98cf212b-6545-482c-b2ff-09463b563e5e",
   "subject_name": "django/db/models/fields/related::OneToOneField.formfield",
   "tags": [
     "entity:method"

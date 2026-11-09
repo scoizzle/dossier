@@ -1,6 +1,6 @@
 # Fact 8c910015
 
-Store id: ec292080-317a-48a3-8312-6107cb28a190
+Store id: 6fa3d9bc-792d-45bc-ad52-109eb08e279d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.9818030+00:00`
+- posted_at: `2026-11-09T23:31:57.1083150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 24,
     "symbol": "CompositeAttribute.__init__"
   },
-  "id": "ec292080-317a-48a3-8312-6107cb28a190",
+  "id": "6fa3d9bc-792d-45bc-ad52-109eb08e279d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.9818030+00:00"
+    "posted_at": "2026-11-09T23:31:57.1083150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c0f79113-8b0c-4289-aa1e-9e9971c93092",
+  "subject_id": "9197b744-6b83-43c3-97fa-71d8765607e9",
   "subject_name": "django/db/models/fields/composite::CompositeAttribute.__init__",
   "tags": [
     "entity:method"

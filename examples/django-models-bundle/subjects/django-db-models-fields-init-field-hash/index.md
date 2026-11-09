@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.__hash__
 
-- Subject: django/db/models/fields/__init__::Field.__hash__ (id `59b52aeb-babf-463c-948a-27efa0a006d7`)
+- Subject: django/db/models/fields/__init__::Field.__hash__ (id `d510c31b-7eab-4fea-9697-830a656a5f70`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

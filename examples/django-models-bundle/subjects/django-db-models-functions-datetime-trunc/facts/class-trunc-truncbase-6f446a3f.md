@@ -1,6 +1,6 @@
 # Fact 6f446a3f
 
-Store id: da743090-d921-4230-a431-01cbdd7adf12
+Store id: 8af93910-66bb-41ee-b479-4a50a8722b21
 
 ## Text
 
@@ -20,7 +20,7 @@ class Trunc(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1849460+00:00`
+- posted_at: `2026-11-09T23:32:01.2659930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 348,
     "symbol": "Trunc"
   },
-  "id": "da743090-d921-4230-a431-01cbdd7adf12",
+  "id": "8af93910-66bb-41ee-b479-4a50a8722b21",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1849460+00:00"
+    "posted_at": "2026-11-09T23:32:01.2659930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b91e21ec-55e6-4c91-ace2-d4f4023495ab",
+  "subject_id": "f1377718-d97e-45bd-923d-680a1a212e0f",
   "subject_name": "django/db/models/functions/datetime::Trunc",
   "tags": [
     "entity:class"

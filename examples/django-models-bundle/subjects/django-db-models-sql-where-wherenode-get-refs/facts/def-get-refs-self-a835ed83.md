@@ -1,6 +1,6 @@
 # Fact a835ed83
 
-Store id: 2d61ff36-c428-49e2-b914-6a47043e4271
+Store id: 0e485f48-4a09-48f2-97df-e13e600fc7e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_refs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9331940+00:00`
+- posted_at: `2026-11-09T23:32:07.6353400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 240,
     "symbol": "WhereNode.get_refs"
   },
-  "id": "2d61ff36-c428-49e2-b914-6a47043e4271",
+  "id": "0e485f48-4a09-48f2-97df-e13e600fc7e8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9331940+00:00"
+    "posted_at": "2026-11-09T23:32:07.6353400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b5fb5bc-7333-4ca5-9c65-7604064b9be8",
+  "subject_id": "1b8eee92-3f83-44fb-8e2d-35d5af01535f",
   "subject_name": "django/db/models/sql/where::WhereNode.get_refs",
   "tags": [
     "entity:method"

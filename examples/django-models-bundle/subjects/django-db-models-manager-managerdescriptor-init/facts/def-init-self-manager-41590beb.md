@@ -1,6 +1,6 @@
 # Fact 41590beb
 
-Store id: c80a292f-273e-46f6-9f38-4b947679288e
+Store id: d399d1b6-4da8-4d0c-bf1c-3ade4565c484
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, manager)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5423350+00:00`
+- posted_at: `2026-11-09T23:32:03.7192940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 181,
     "symbol": "ManagerDescriptor.__init__"
   },
-  "id": "c80a292f-273e-46f6-9f38-4b947679288e",
+  "id": "d399d1b6-4da8-4d0c-bf1c-3ade4565c484",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5423350+00:00"
+    "posted_at": "2026-11-09T23:32:03.7192940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e29709aa-cf60-40c9-94c2-ff61744ea0fc",
+  "subject_id": "bf18f164-10c2-4ad5-8b0e-b4582a835c72",
   "subject_name": "django/db/models/manager::ManagerDescriptor.__init__",
   "tags": [
     "entity:method"

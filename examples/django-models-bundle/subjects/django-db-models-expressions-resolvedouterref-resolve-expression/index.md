@@ -1,9 +1,9 @@
 # django/db/models/expressions::ResolvedOuterRef.resolve_expression
 
-- Subject: django/db/models/expressions::ResolvedOuterRef.resolve_expression (id `06065a52-5efd-4ff0-8a25-de803cdea0b9`)
+- Subject: django/db/models/expressions::ResolvedOuterRef.resolve_expression (id `036df5f1-3986-4da3-8151-45554f54a6b7`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

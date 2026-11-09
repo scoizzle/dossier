@@ -15,7 +15,11 @@ public sealed class PublishOptions
     /// <summary>Optional subject (name, alias or id); the bundle then covers its whole subtree.</summary>
     public string? Subject { get; set; }
 
+    /// <summary>In complete mode (default) the highlight threshold; in strict mode a hard cutoff.</summary>
     public int Budget { get; set; } = DossierStore.DefaultBudgetTokens;
+
+    /// <summary>"complete" (default) renders every fact; "strict" cuts each subject page to the budget.</summary>
+    public string BudgetMode { get; set; } = DossierStore.BudgetModeComplete;
 
     /// <summary>"index" or "full" (default).</summary>
     public string Depth { get; set; } = "full";
@@ -149,6 +153,8 @@ public sealed partial class DossierStore
         {
             throw new DossierRequestException("invalid_depth", $"depth must be \"index\" or \"full\", got \"{options.Depth}\"");
         }
+
+        options.BudgetMode = ResolveBudgetMode(options.BudgetMode);
 
         if (options.Facts is not ("detail" or "none"))
         {
@@ -424,6 +430,7 @@ public sealed partial class DossierStore
                 Subject = subject.Id,
                 Budget = options.Budget,
                 Depth = options.Depth,
+                BudgetMode = options.BudgetMode,
                 Format = "markdown",
             });
             if (!sharded)
@@ -1077,22 +1084,51 @@ public sealed partial class DossierStore
             b.Append("- Pinned to: ").Append(CodeSpan(pin.Repo)).Append(" @ ").Append(CodeSpan(pin.Rev)).Append('\n');
         }
 
-        b.Append("- Budget: ").Append(dossier.BudgetTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens\n");
+        b.Append("- Budget: ").Append(dossier.BudgetTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens")
+            .Append(dossier.BudgetMode == DossierStore.BudgetModeComplete ? " (highlight threshold; every fact is listed)" : " (strict cutoff)").Append('\n');
         b.Append("- Used: ").Append(dossier.UsedTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens\n");
         b.Append("- Facts shown: ").Append(dossier.Facts.Count.ToString(CultureInfo.InvariantCulture))
             .Append(" of ").Append(liveFacts.ToString(CultureInfo.InvariantCulture)).Append('\n');
         b.Append("- Conflicts: ").Append(dossier.Conflicts.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
         b.Append("- Gaps: ").Append(dossier.Gaps.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
 
-        b.Append("\n## Facts\n\n");
-        if (dossier.Facts.Count == 0)
+        var highlights = HighlightIndexes(dossier);
+        if (highlights is null)
         {
-            b.Append("No facts.\n");
-        }
+            b.Append("\n## Facts\n\n");
+            if (dossier.Facts.Count == 0)
+            {
+                b.Append("No facts.\n");
+            }
 
-        foreach (var fact in dossier.Facts)
+            foreach (var fact in dossier.Facts)
+            {
+                b.Append("- ").Append(Inline(fact.Text)).Append(' ').Append(factRef(fact.Id)).Append('\n');
+            }
+        }
+        else
         {
-            b.Append("- ").Append(Inline(fact.Text)).Append(' ').Append(factRef(fact.Id)).Append('\n');
+            b.Append("\n## Highlights\n\n");
+            if (highlights.Count == 0)
+            {
+                b.Append("None fit the budget.\n");
+            }
+
+            foreach (var index in highlights.OrderBy(i => i))
+            {
+                var fact = dossier.Facts[index];
+                b.Append("- ").Append(Inline(fact.Text)).Append(' ').Append(factRef(fact.Id)).Append('\n');
+            }
+
+            b.Append("\n## All facts\n\n");
+            for (var i = 0; i < dossier.Facts.Count; i++)
+            {
+                if (!highlights.Contains(i))
+                {
+                    var fact = dossier.Facts[i];
+                    b.Append("- ").Append(factRef(fact.Id)).Append(' ').Append(Inline(fact.Text)).Append('\n');
+                }
+            }
         }
 
         if (dossier.Conflicts.Count > 0)
@@ -2188,7 +2224,7 @@ public sealed partial class DossierStore
         b.Append("- Command: ").Append(CodeSpan(commandLine)).Append('\n');
         b.Append("- Generated at: `").Append(generatedAt).Append("`\n");
         b.Append("- Scope: ").Append(scopeName is null ? "every subject" : "subject " + CodeSpan(Inline(scopeName)) + " and its descendants").Append('\n');
-        b.Append("- Budget per subject: ").Append(options.Budget.ToString(CultureInfo.InvariantCulture)).Append(" tokens, depth ").Append(options.Depth).Append('\n');
+        b.Append("- Budget per subject: ").Append(options.Budget.ToString(CultureInfo.InvariantCulture)).Append(" tokens (").Append(options.BudgetMode == DossierStore.BudgetModeComplete ? "complete mode: the highlight threshold, every fact is listed" : "strict mode: a hard cutoff").Append("), depth ").Append(options.Depth).Append('\n');
         if (shardCount is { } shards)
         {
             b.Append("- Layout: shard mode (`--respect-limits`), ").Append(shards.ToString(CultureInfo.InvariantCulture)).Append(" documents under `shards/<n>.md`; subjects are anchors inside them\n");
@@ -2257,7 +2293,7 @@ public sealed partial class DossierStore
             line += " --subject " + options.Subject;
         }
 
-        line += " --budget " + options.Budget.ToString(CultureInfo.InvariantCulture) + " --depth " + options.Depth + " --facts " + options.Facts + " --assets " + options.Assets + " --index-max-tokens " + options.IndexMaxTokens.ToString(CultureInfo.InvariantCulture);
+        line += " --budget " + options.Budget.ToString(CultureInfo.InvariantCulture) + " --budget-mode " + options.BudgetMode + " --depth " + options.Depth + " --facts " + options.Facts + " --assets " + options.Assets + " --index-max-tokens " + options.IndexMaxTokens.ToString(CultureInfo.InvariantCulture);
         if (options.ProfilePath is not null)
         {
             line += " --profile " + options.ProfilePath;
@@ -2368,6 +2404,7 @@ public sealed partial class DossierStore
             {
                 ["assets"] = options.Assets,
                 ["budget"] = options.Budget,
+                ["budget_mode"] = options.BudgetMode,
                 ["depth"] = options.Depth,
                 ["facts"] = options.Facts,
                 ["index_max_tokens"] = options.IndexMaxTokens,

@@ -1,6 +1,6 @@
 # Fact 60707335
 
-Store id: 8958cede-4623-4b61-a28e-ae66b426603a
+Store id: a15615f8-0bd9-4482-aa82-ff5c4e5a4c66
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_update_values(self, values)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7439010+00:00`
+- posted_at: `2026-11-09T23:32:07.3851350+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 81,
     "symbol": "UpdateQuery.add_update_values"
   },
-  "id": "8958cede-4623-4b61-a28e-ae66b426603a",
+  "id": "a15615f8-0bd9-4482-aa82-ff5c4e5a4c66",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7439010+00:00"
+    "posted_at": "2026-11-09T23:32:07.3851350+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b1d2b23-4d10-4a79-81fb-1b4d75eb9ba7",
+  "subject_id": "03d0a3f6-d6b9-409d-86c0-948efdaffacc",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery.add_update_values",
   "tags": [
     "entity:method"

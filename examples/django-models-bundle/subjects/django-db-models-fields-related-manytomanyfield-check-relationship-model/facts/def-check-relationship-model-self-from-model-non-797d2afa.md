@@ -1,6 +1,6 @@
 # Fact 797d2afa
 
-Store id: 1aa22c7e-8101-4d3d-9915-281484a9bff1
+Store id: d50022e5-b586-45be-a131-e56e1dfffb1d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_relationship_model(self, from_model=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4545910+00:00`
+- posted_at: `2026-11-09T23:31:58.8378730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1598,
     "symbol": "ManyToManyField._check_relationship_model"
   },
-  "id": "1aa22c7e-8101-4d3d-9915-281484a9bff1",
+  "id": "d50022e5-b586-45be-a131-e56e1dfffb1d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4545910+00:00"
+    "posted_at": "2026-11-09T23:31:58.8378730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be9f7762-d976-4711-a720-3e7f1da736b3",
+  "subject_id": "8299cc6c-5f9d-4ea9-8351-6908445aadfa",
   "subject_name": "django/db/models/fields/related::ManyToManyField._check_relationship_model",
   "tags": [
     "entity:method"

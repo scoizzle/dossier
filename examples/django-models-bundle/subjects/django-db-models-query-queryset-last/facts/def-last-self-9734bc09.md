@@ -1,6 +1,6 @@
 # Fact 9734bc09
 
-Store id: f7550622-671f-4009-ab44-68e1d77b38ab
+Store id: 6805b358-b546-4eec-a2fc-3f2434ed7382
 
 ## Text
 
@@ -20,7 +20,7 @@ def last(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4892820+00:00`
+- posted_at: `2026-11-09T23:32:04.4559970+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1234,
     "symbol": "QuerySet.last"
   },
-  "id": "f7550622-671f-4009-ab44-68e1d77b38ab",
+  "id": "6805b358-b546-4eec-a2fc-3f2434ed7382",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4892820+00:00"
+    "posted_at": "2026-11-09T23:32:04.4559970+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f4be1fd8-25dd-4722-a2f4-5fee6cef8d93",
+  "subject_id": "4a0df17f-9a0d-4059-9746-9d938fd18258",
   "subject_name": "django/db/models/query::QuerySet.last",
   "tags": [
     "entity:method"

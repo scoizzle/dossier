@@ -1,6 +1,6 @@
 # Fact 32896f91
 
-Store id: 7ec63be6-3c99-471d-8ef6-7828fc6a5589
+Store id: 3721170f-ff6d-417d-96f3-ac115974f782
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SmallIntegerField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7ec63be6-3c99-471d-8ef6-7828fc6a5589",
+  "id": "3721170f-ff6d-417d-96f3-ac115974f782",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SmallIntegerField"
       },
       "rel": "contains",
-      "target": "60eb3a75-f1ad-49b3-a4b4-3c854be8cf94"
+      "target": "3dc85d1d-eb71-41a5-96e2-983154787c2e"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 396c477f
 
-Store id: aed3176a-17d5-4368-b856-eea023aa4d01
+Store id: 622e3864-8a76-4ec2-99e6-b20911903c04
 
 ## Text
 
@@ -20,7 +20,7 @@ def label_lower(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.7538740+00:00`
+- posted_at: `2026-11-09T23:32:03.8963910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 176,
     "symbol": "Options.label_lower"
   },
-  "id": "aed3176a-17d5-4368-b856-eea023aa4d01",
+  "id": "622e3864-8a76-4ec2-99e6-b20911903c04",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.7538740+00:00"
+    "posted_at": "2026-11-09T23:32:03.8963910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4378cd8-06b4-46c1-a8df-50dd4cff2765",
+  "subject_id": "c3fd9ac7-ff56-4026-8886-342f118b15ff",
   "subject_name": "django/db/models/options::Options.label_lower",
   "tags": [
     "entity:method",

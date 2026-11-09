@@ -95,7 +95,7 @@ awk -v seed="$SEED" 'BEGIN{srand(seed)} {print rand() "\t" $1}' "$WORK/subjects.
 : > "$WORK/compile_ms.txt"
 while IFS= read -r s; do
   t0="$(now)"
-  dos dossier compile --subject "$s" --depth full --budget 1200 --format json >/dev/null 2>&1
+  dos dossier compile --subject "$s" --depth full --budget 1200 --budget-mode strict --format json >/dev/null 2>&1
   t1="$(now)"
   awk -v a="$t0" -v b="$t1" 'BEGIN{printf "%.0f\n", (b-a)*1000}' >> "$WORK/compile_ms.txt"
 done < "$WORK/sample.txt"
@@ -106,7 +106,7 @@ sort -n "$WORK/compile_ms.txt" | awk -v n="$SAMPLE" '{v[NR]=$1} END{
 # 7. Corpus totals: compile every subject and sum conflicts.
 conflicts=0
 while IFS=$'\t' read -r s _; do
-  c="$(dos dossier compile --subject "$s" --depth full --budget 1200 --format json 2>/dev/null | tail -1 | jq '.conflicts | length')"
+  c="$(dos dossier compile --subject "$s" --depth full --budget 1200 --budget-mode strict --format json 2>/dev/null | tail -1 | jq '.conflicts | length')"
   conflicts=$((conflicts + c))
 done < "$WORK/subjects.tsv"
 echo "conflicts_total=$conflicts"

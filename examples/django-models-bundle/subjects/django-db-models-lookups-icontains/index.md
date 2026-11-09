@@ -1,9 +1,9 @@
 # django/db/models/lookups::IContains
 
-- Subject: django/db/models/lookups::IContains (id `21a7d083-462c-4c20-901f-88203a3dab18`)
+- Subject: django/db/models/lookups::IContains (id `4b35ee6b-0cc3-476a-8c41-c6dfb85e8fb7`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

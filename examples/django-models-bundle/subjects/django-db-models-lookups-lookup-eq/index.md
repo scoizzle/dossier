@@ -1,9 +1,9 @@
 # django/db/models/lookups::Lookup.__eq__
 
-- Subject: django/db/models/lookups::Lookup.__eq__ (id `dd9778cb-fb7f-4738-9532-9f20c5515feb`)
+- Subject: django/db/models/lookups::Lookup.__eq__ (id `d0854ca6-6eba-4bf3-838b-6d5dac48e1ca`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

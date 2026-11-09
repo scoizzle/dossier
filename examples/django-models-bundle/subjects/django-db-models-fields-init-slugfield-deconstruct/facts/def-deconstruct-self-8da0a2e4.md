@@ -1,6 +1,6 @@
 # Fact 8da0a2e4
 
-Store id: 12d2ca08-9ee1-48f6-9a13-8ae6c98cb9e5
+Store id: 2eebbbf8-0f07-4337-bac4-8bb6cb5be502
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6259440+00:00`
+- posted_at: `2026-11-09T23:31:56.7862430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2499,
     "symbol": "SlugField.deconstruct"
   },
-  "id": "12d2ca08-9ee1-48f6-9a13-8ae6c98cb9e5",
+  "id": "2eebbbf8-0f07-4337-bac4-8bb6cb5be502",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6259440+00:00"
+    "posted_at": "2026-11-09T23:31:56.7862430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "465e7e72-39ff-4ea1-ab5d-59b08e5eac56",
+  "subject_id": "ca258350-3b1c-4c59-97c2-13395b489c26",
   "subject_name": "django/db/models/fields/__init__::SlugField.deconstruct",
   "tags": [
     "entity:method"

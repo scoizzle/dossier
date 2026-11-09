@@ -1,6 +1,6 @@
 # Fact ddece699
 
-Store id: 0d7cdd2c-763b-4e0d-9027-fcd91ac102eb
+Store id: 30af5381-9e29-4d31-a978-3195de6c8c2b
 
 ## Text
 
@@ -20,7 +20,7 @@ class OrderWrt(fields.IntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.0692850+00:00`
+- posted_at: `2026-11-09T23:31:58.4082470+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 9,
     "symbol": "OrderWrt"
   },
-  "id": "0d7cdd2c-763b-4e0d-9027-fcd91ac102eb",
+  "id": "30af5381-9e29-4d31-a978-3195de6c8c2b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.0692850+00:00"
+    "posted_at": "2026-11-09T23:31:58.4082470+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fd67010c-c9b1-4995-bcb4-87d0031f9e1b",
+  "subject_id": "8ca693d8-6edd-4a39-a800-a5a03b1a32d3",
   "subject_name": "django/db/models/fields/proxy::OrderWrt",
   "tags": [
     "entity:class"

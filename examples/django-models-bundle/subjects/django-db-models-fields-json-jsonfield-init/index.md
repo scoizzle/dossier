@@ -1,9 +1,9 @@
 # django/db/models/fields/json::JSONField.__init__
 
-- Subject: django/db/models/fields/json::JSONField.__init__ (id `e3b86261-f038-4ce0-b26a-c771b8ce8ee4`)
+- Subject: django/db/models/fields/json::JSONField.__init__ (id `4706b3a6-c25e-4f88-adec-73cf61f121a7`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 33 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

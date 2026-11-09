@@ -1668,4 +1668,72 @@ public sealed class PublishTests
         // No fact file links survive: citations are plain keys.
         await Assert.That(shard).DoesNotContain("/facts/");
     }
+
+    private static void SeedOneSubject(TempDb db, int count)
+    {
+        db.Store.PostFacts(Fixtures.Post(
+            "Big Subject",
+            Enumerable.Range(0, count)
+                .Select(i => Fixtures.Fact($"entry {i:D4} alpha{i:D4} beta{i:D4} gamma{i:D4} delta{i:D4}"))
+                .ToArray()));
+    }
+
+    [Test]
+    public async Task Publish_DefaultsToComplete()
+    {
+        using var db = new TempDb();
+        SeedOneSubject(db, 200);
+        db.Store.Publish(Options(db, o => o.Budget = 300));
+        var page = ReadAll(Out(db))["subjects/big-subject/index.md"];
+
+        await Assert.That(page).Contains("- Facts shown: 200 of 200");
+        await Assert.That(page).Contains("## Highlights");
+        await Assert.That(page).Contains("## All facts");
+        await Assert.That(page).DoesNotContain("Beyond the budget");
+        for (var i = 0; i < 200; i++)
+        {
+            await Assert.That(page).Contains($"entry {i:D4} ");
+        }
+
+        var manifest = JsonDocument.Parse(ReadAll(Out(db))["manifest.json"]).RootElement.GetProperty("options");
+        await Assert.That(manifest.GetProperty("budget_mode").GetString()).IsEqualTo("complete");
+    }
+
+    [Test]
+    public async Task Publish_StrictModeCutsToBudget()
+    {
+        using var db = new TempDb();
+        SeedOneSubject(db, 200);
+        db.Store.Publish(Options(db, o => { o.Budget = 300; o.BudgetMode = "strict"; }));
+        var page = ReadAll(Out(db))["subjects/big-subject/index.md"];
+
+        await Assert.That(page).DoesNotContain("- Facts shown: 200 of 200");
+        await Assert.That(page).Contains("Beyond the budget");
+    }
+
+    [Test]
+    public async Task Publish_IndexTokenEstimateCoversCompletePage()
+    {
+        using var db = new TempDb();
+        SeedOneSubject(db, 200);
+        db.Store.Publish(Options(db, o => o.Budget = 300));
+        var files = ReadAll(Out(db));
+        var page = files["subjects/big-subject/index.md"];
+        var row = files["INDEX.md"].Split('\n').Single(l => l.Contains("subjects/big-subject/index.md"));
+        var cells = row.Split('|').Select(c => c.Trim()).ToList();
+
+        await Assert.That(DossierStore.EstimateTokens(page)).IsGreaterThan(300);
+        await Assert.That(cells[6]).IsEqualTo(DossierStore.EstimateTokens(page).ToString());
+    }
+
+    [Test]
+    public async Task Publish_InvalidBudgetModeRejected()
+    {
+        using var db = new TempDb();
+        SeedOneSubject(db, 3);
+
+        var ex = Assert.Throws<DossierRequestException>(() => db.Store.Publish(Options(db, o => o.BudgetMode = "nope")));
+
+        await Assert.That(ex.Message).Contains("strict");
+    }
 }

@@ -1,6 +1,6 @@
 # Fact da04b813
 
-Store id: 42c855ca-d371-4c24-ac28-627aabb17405
+Store id: c7c843b1-9d1e-416c-a8b6-c47ddd188a63
 
 ## Text
 
@@ -20,7 +20,7 @@ def reset_refcounts(self, to_counts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3025630+00:00`
+- posted_at: `2026-11-09T23:32:06.8495820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 991,
     "symbol": "Query.reset_refcounts"
   },
-  "id": "42c855ca-d371-4c24-ac28-627aabb17405",
+  "id": "c7c843b1-9d1e-416c-a8b6-c47ddd188a63",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3025630+00:00"
+    "posted_at": "2026-11-09T23:32:06.8495820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2230ab1c-4246-4358-9005-44ad59fd0946",
+  "subject_id": "44c02478-f5e0-43a5-99ac-29816b6425dc",
   "subject_name": "django/db/models/sql/query::Query.reset_refcounts",
   "tags": [
     "entity:method"

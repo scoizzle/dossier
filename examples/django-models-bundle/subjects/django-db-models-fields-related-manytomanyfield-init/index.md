@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ManyToManyField.__init__
 
-- Subject: django/db/models/fields/related::ManyToManyField.__init__ (id `f6d0b705-6142-4d29-a238-ad4b32cfd461`)
+- Subject: django/db/models/fields/related::ManyToManyField.__init__ (id `26c38470-7aaf-4107-a2a0-fed6c04474ae`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 62 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

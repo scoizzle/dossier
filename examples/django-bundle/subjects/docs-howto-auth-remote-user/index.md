@@ -1,14 +1,14 @@
 # docs/howto/auth-remote-user
 
-- Subject: docs/howto/auth-remote-user (id `4838e118-c829-447c-821a-5cab19149618`)
+- Subject: docs/howto/auth-remote-user (id `586d0ec2-547b-4ee4-b556-87224f636e5f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 18 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1912 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - AUTHENTICATION_BACKENDS = [ "django.contrib.auth.backends.RemoteUserBackend", ] [4c587731]
 - MIDDLEWARE = [ "...", "django.contrib.auth.middleware.AuthenticationMiddleware", "django.contrib.auth.middleware.RemoteUserMiddleware", "...", ] [e49462f7]
@@ -29,6 +29,18 @@
 - :class:`~django.contrib.auth.middleware.PersistentRemoteUserMiddleware` provides support for this use case. It will maintain the authenticated session until explicit logout by the user. The class can be used as a drop-in replacement of :class:`~django.contrib.auth.middleware.RemoteUserMiddleware` in the documentation above. [b330b2ed]
 - ========================================= How to authenticate using ``REMOTE_USER`` ========================================= [3b1a6e11]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [f770b5dd] [d310c4a5] [6bf893a8] [70092e33] [83f8e215] [86bfd2fb] [8fda4168] [c147c6d6] [0274d6be] [a200776d] [9cf94450] [bd743e76] [85af357f]
+- [f770b5dd] Be aware that this particular setup disables authentication with the default ``ModelBackend``. This means that if the ``REMOTE_USER`` value is not set then the user is unable to log in, even using Django's admin interface. Adding ``'django.contrib.auth.backends.ModelBackend'`` to the ``AUTHENTICATION_BACKENDS`` list will use ``ModelBackend`` as a fallback if ``REMOTE_USER`` is absent, which will solve these issues.
+- [d310c4a5] Configuration =============
+- [6bf893a8] Django's user management, such as the views in ``contrib.admin`` and the :djadmin:`createsuperuser` management command, doesn't integrate with remote users. These interfaces work with users stored in the database regardless of ``AUTHENTICATION_BACKENDS``.
+- [70092e33] First, you must add the :class:`django.contrib.auth.middleware.RemoteUserMiddleware` to the :setting:`MIDDLEWARE` setting **after** the :class:`django.contrib.auth.middleware.AuthenticationMiddleware`::
+- [83f8e215] If you need more control, you can create your own authentication backend that inherits from :class:`~django.contrib.auth.backends.RemoteUserBackend` and override one or more of its attributes and methods.
+- [86bfd2fb] If your authentication mechanism uses a custom HTTP header and not ``REMOTE_USER``, you can subclass ``RemoteUserMiddleware`` and set the ``header`` attribute to the desired ``request.META`` key. For example:
+- [8fda4168] Next, you must replace the :class:`~django.contrib.auth.backends.ModelBackend` with :class:`~django.contrib.auth.backends.RemoteUserBackend` in the :setting:`AUTHENTICATION_BACKENDS` setting::
+- [c147c6d6] The ``RemoteUserMiddleware`` authentication middleware assumes that the HTTP request header ``REMOTE_USER`` is present with all authenticated requests. That might be expected and practical when Basic HTTP Auth with ``htpasswd`` or similar mechanisms are used, but with Negotiate (GSSAPI/Kerberos) or other resource intensive authentication methods, the authentication in the front-end HTTP server is usually only set up for one or a few login URLs, and after successful authentication, the application is supposed to maintain the authenticated session itself.
+- [0274d6be] This custom middleware is then used in the :setting:`MIDDLEWARE` setting instead of :class:`django.contrib.auth.middleware.RemoteUserMiddleware`::
+- [a200776d] This document describes how to make use of external authentication sources in your Django applications. This type of authentication solution is typically seen on intranet sites, with single sign-on solutions such as IIS and Integrated Windows Authentication or Apache and `mod_authnz_ldap`_, `CAS`_, `WebAuth`_, `mod_auth_sspi`_, etc.
+- [9cf94450] Using ``REMOTE_USER`` on login pages only =========================================
+- [bd743e76] When the web server takes care of authentication it typically provides the authenticated user as ``REMOTE_USER``. In Django, this value is made available in :attr:`request.META <django.http.HttpRequest.META>` (as ``REMOTE_USER`` when supplied as an environment variable, as in WSGI, or ``HTTP_REMOTE_USER`` when supplied via an HTTP header, as in ASGI). Django can be configured to make use of the ``REMOTE_USER`` value using the ``RemoteUserMiddleware`` or ``PersistentRemoteUserMiddleware``, and :class:`~django.contrib.auth.backends.RemoteUserBackend` classes found in :mod:`django.contrib.auth`.
+- [85af357f] With this setup, ``RemoteUserMiddleware`` will detect the username in ``request.META['REMOTE_USER']`` (or ``request.META['HTTP_REMOTE_USER']`` under ASGI) and will authenticate and auto-login that user using the :class:`~django.contrib.auth.backends.RemoteUserBackend`.

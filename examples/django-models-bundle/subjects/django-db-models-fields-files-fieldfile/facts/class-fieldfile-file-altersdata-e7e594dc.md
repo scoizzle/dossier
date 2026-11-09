@@ -1,6 +1,6 @@
 # Fact e7e594dc
 
-Store id: 3a7e1829-fc7a-47df-815c-ff1547d36d4f
+Store id: dc51f36a-0eb6-4630-b59a-19728f319a0a
 
 ## Text
 
@@ -20,7 +20,7 @@ class FieldFile(File, AltersData)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.1687090+00:00`
+- posted_at: `2026-11-09T23:31:57.3108620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "FieldFile"
   },
-  "id": "3a7e1829-fc7a-47df-815c-ff1547d36d4f",
+  "id": "dc51f36a-0eb6-4630-b59a-19728f319a0a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.1687090+00:00"
+    "posted_at": "2026-11-09T23:31:57.3108620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d8c7c889-a81b-4129-8771-2ad2bc1635eb",
+  "subject_id": "424daf60-dd30-4ec6-ab8f-44039d442085",
   "subject_name": "django/db/models/fields/files::FieldFile",
   "tags": [
     "entity:class"

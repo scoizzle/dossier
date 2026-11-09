@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.save_form_data
 
-- Subject: django/db/models/fields/__init__::Field.save_form_data (id `6be02c21-01e3-46c9-8280-536b47dfe0b4`)
+- Subject: django/db/models/fields/__init__::Field.save_form_data (id `87f3eaaa-843f-4f72-a9e3-df32d7f030e1`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

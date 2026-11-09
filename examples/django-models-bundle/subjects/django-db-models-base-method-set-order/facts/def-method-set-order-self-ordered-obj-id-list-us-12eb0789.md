@@ -1,6 +1,6 @@
 # Fact 12eb0789
 
-Store id: e96a5857-c0c9-4eeb-a018-7da039bc9ed2
+Store id: b3295ea2-060e-4d8b-a3e2-b93c91c6df66
 
 ## Text
 
@@ -20,7 +20,7 @@ def method_set_order(self, ordered_obj, id_list, using=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3682290+00:00`
+- posted_at: `2026-11-09T23:31:53.7742790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2532,
     "symbol": "method_set_order"
   },
-  "id": "e96a5857-c0c9-4eeb-a018-7da039bc9ed2",
+  "id": "b3295ea2-060e-4d8b-a3e2-b93c91c6df66",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3682290+00:00"
+    "posted_at": "2026-11-09T23:31:53.7742790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f59ff884-167b-423c-b085-2c13f147d4a0",
+  "subject_id": "eae62a5d-1c92-48aa-a347-01c5d24e9738",
   "subject_name": "django/db/models/base::method_set_order",
   "tags": [
     "entity:function"

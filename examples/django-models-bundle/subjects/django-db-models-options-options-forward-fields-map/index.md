@@ -1,9 +1,9 @@
 # django/db/models/options::Options._forward_fields_map
 
-- Subject: django/db/models/options::Options._forward_fields_map (id `69ce69be-975a-4a14-a775-aaf1ea02ffc2`)
+- Subject: django/db/models/options::Options._forward_fields_map (id `68b8c91e-47f7-4d5f-bd89-4c6a6e858ffc`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

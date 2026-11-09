@@ -1,6 +1,6 @@
 # Fact 0c0b2559
 
-Store id: 7839fdba-58e9-4930-9410-3a7a1ddd2ad0
+Store id: 2c9e2f20-79c0-41c4-83a5-e0f9e9b1aa05
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_restricted_objects_from_set(self, model, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0608000+00:00`
+- posted_at: `2026-11-09T23:31:55.1082570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 185,
     "symbol": "Collector.clear_restricted_objects_from_set"
   },
-  "id": "7839fdba-58e9-4930-9410-3a7a1ddd2ad0",
+  "id": "2c9e2f20-79c0-41c4-83a5-e0f9e9b1aa05",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0608000+00:00"
+    "posted_at": "2026-11-09T23:31:55.1082570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bcde97b8-b6aa-4ed2-ba60-d357de0da353",
+  "subject_id": "df547c10-928e-4d24-86e5-425bb4bf55c0",
   "subject_name": "django/db/models/deletion::Collector.clear_restricted_objects_from_set",
   "tags": [
     "entity:method"

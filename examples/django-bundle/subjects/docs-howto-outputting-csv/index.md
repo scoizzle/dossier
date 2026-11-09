@@ -1,14 +1,14 @@
 # docs/howto/outputting-csv
 
-- Subject: docs/howto/outputting-csv (id `04e16d24-0379-4934-a77b-e07aa019c952`)
+- Subject: docs/howto/outputting-csv (id `3ca89a04-5e14-47ec-b161-53bde70076e7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 20 of 41
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1834 tokens
+- Facts shown: 40 of 41
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # The data is hardcoded here, but you could load it from a database or # some other source. csv_data = ( ("First row", "Foo", "Bar", "Baz"), ("Second row", "A", "B", "C", '"Testing"', "Here's a quote"), ) [42a825bf]
 - def stream_batched_rows(): for batch in batched(rows, 100): yield "".join(writer.writerow(row) for row in batch) [94d2f2bb]
@@ -31,6 +31,25 @@
 - * The response gets an additional ``Content-Disposition`` header, which contains the name of the CSV file. This filename is arbitrary; call it whatever you want. It'll be used by browsers in the "Save as..." dialog, etc. [b576e668]
 - .. _streaming-csv-files: [0e730dc1]
 
-## Beyond the budget
+## All facts
 
-20 more facts did not fit in the budget: [b622cda7] [685d15dfb6eb2285-25] [4d87b590] [1534060a] [64de33af] [bb6f7064] [7901c2c5] [7adf12eb] [13eda258] [99f75db5] [950ee090] [4c495e5e27892286] [3f48cea5] [8248378a] [cdc0c043] [c180da35] [3158f67d] [9f04ad8b] [f69586a4] [f35c0ace]
+- [b622cda7] * You can hook into the CSV-generation API by passing ``response`` as the first argument to ``csv.writer``. The ``csv.writer`` function expects a file-like object, and :class:`~django.http.HttpResponse` objects fit the bill.
+- [685d15dfb6eb2285-25] .. code-block:: html+django
+- [4d87b590] ======================== How to create CSV output ========================
+- [1534060a] Alternatively, you can use the :doc:`Django template system </topics/templates>` to generate CSV. This is lower-level than using the convenient Python :mod:`csv` module, but the solution is presented here for completeness.
+- [64de33af] Here's an example, which generates the same CSV file as above::
+- [bb6f7064] Here's an example::
+- [7901c2c5] In this example, we make full use of Python generators to efficiently handle the assembly and transmission of a large CSV file. Rows are batched together to reduce HTTP overhead and improve compression efficiency when used with :class:`~django.middleware.gzip.GZipMiddleware`::
+- [7adf12eb] Notice that there isn't very much specific to CSV here -- just the specific output format. You can use either of these techniques to output any text-based format you can dream of. You can also use a similar technique to generate arbitrary binary data; see :doc:`/howto/outputting-pdf` for an example.
+- [13eda258] Other text-based formats ========================
+- [99f75db5] Python comes with a CSV library, :mod:`csv`. The key to using it with Django is that the :mod:`csv` module's CSV-creation capability acts on file-like objects, and Django's :class:`~django.http.HttpResponse` objects are file-like objects.
+- [950ee090] Streaming large CSV files -------------------------
+- [4c495e5e27892286] The code and comments should be self-explanatory, but a few things deserve a mention:
+- [3f48cea5] The idea here is to pass a list of items to your template, and have the template output the commas in a :ttag:`for` loop.
+- [8248378a] The only difference between this example and the previous example is that this one uses template loading instead of the CSV module. The rest of the code -- such as the ``content_type='text/csv'`` -- is the same.
+- [cdc0c043] Then, create the template ``my_template_name.txt``, with this template code:
+- [c180da35] This document explains how to output CSV (Comma Separated Values) dynamically using Django views. To do this, you can either use the Python CSV library or the Django template system.
+- [3158f67d] This short template iterates over the given data and displays a line of CSV for each row. It uses the :tfilter:`addslashes` template filter to ensure there aren't any problems with quotes.
+- [9f04ad8b] Using the Python CSV library ============================
+- [f69586a4] Using the template system =========================
+- [f35c0ace] When dealing with views that generate very large responses, you might want to consider using Django's :class:`~django.http.StreamingHttpResponse` instead. For example, by streaming a file that takes a long time to generate you can avoid a load balancer dropping a connection that might have otherwise timed out while the server was generating the response.

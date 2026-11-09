@@ -1,6 +1,6 @@
 # Fact a45f11e2
 
-Store id: 7f13fc04-b6dd-4ffc-b726-b1fa34b02937
+Store id: 35f23127-8437-426b-a089-c780a390691d
 
 ## Text
 
@@ -20,7 +20,7 @@ def refresh_from_db(self, using=None, fields=None, from_queryset=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3370000+00:00`
+- posted_at: `2026-11-09T23:31:53.7384820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 735,
     "symbol": "Model.refresh_from_db"
   },
-  "id": "7f13fc04-b6dd-4ffc-b726-b1fa34b02937",
+  "id": "35f23127-8437-426b-a089-c780a390691d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3370000+00:00"
+    "posted_at": "2026-11-09T23:31:53.7384820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "12a42b83-fd41-4970-b794-ec28fedf8d61",
+  "subject_id": "52514a79-95d3-4e99-8d85-933f9a732b84",
   "subject_name": "django/db/models/base::Model.refresh_from_db",
   "tags": [
     "entity:method"

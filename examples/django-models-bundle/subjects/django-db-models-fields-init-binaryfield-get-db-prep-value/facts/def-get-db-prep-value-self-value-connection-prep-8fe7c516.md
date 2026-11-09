@@ -1,6 +1,6 @@
 # Fact 8fe7c516
 
-Store id: 697760ae-ae87-404d-8dfe-a8180e5f9262
+Store id: 8e30261a-097f-4bda-9866-a58ff6488761
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7015230+00:00`
+- posted_at: `2026-11-09T23:31:56.8634720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2794,
     "symbol": "BinaryField.get_db_prep_value"
   },
-  "id": "697760ae-ae87-404d-8dfe-a8180e5f9262",
+  "id": "8e30261a-097f-4bda-9866-a58ff6488761",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7015230+00:00"
+    "posted_at": "2026-11-09T23:31:56.8634720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "305b927a-2cc2-40dd-bd44-a389ca7c7122",
+  "subject_id": "2c9b237a-cd32-482d-8f91-af8e7c7eeb5e",
   "subject_name": "django/db/models/fields/__init__::BinaryField.get_db_prep_value",
   "tags": [
     "entity:method"

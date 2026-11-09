@@ -1,8 +1,8 @@
 # django/contrib/gis/db/backends/utils
 
-- Subject: django/contrib/gis/db/backends/utils (id `39576fd0-80db-463b-a8de-4fafbc4e80be`)
+- Subject: django/contrib/gis/db/backends/utils (id `38c2e163-9927-4e10-9890-42ff67c054b1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 230 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

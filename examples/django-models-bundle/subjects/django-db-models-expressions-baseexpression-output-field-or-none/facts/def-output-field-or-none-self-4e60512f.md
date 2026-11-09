@@ -1,6 +1,6 @@
 # Fact 4e60512f
 
-Store id: de6ce708-2474-4198-9c06-6a74e2b354ef
+Store id: d11de603-ce13-4574-b0b9-67a0621f3da6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _output_field_or_none(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5163860+00:00`
+- posted_at: `2026-11-09T23:31:55.7799030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 335,
     "symbol": "BaseExpression._output_field_or_none"
   },
-  "id": "de6ce708-2474-4198-9c06-6a74e2b354ef",
+  "id": "d11de603-ce13-4574-b0b9-67a0621f3da6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5163860+00:00"
+    "posted_at": "2026-11-09T23:31:55.7799030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10012669-e285-4f25-b11e-ec4137e52f47",
+  "subject_id": "6f617f71-4fa1-4691-904a-926a3f630058",
   "subject_name": "django/db/models/expressions::BaseExpression._output_field_or_none",
   "tags": [
     "entity:method",

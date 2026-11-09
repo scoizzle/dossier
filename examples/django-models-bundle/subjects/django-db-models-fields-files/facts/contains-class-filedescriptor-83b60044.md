@@ -1,6 +1,6 @@
 # Fact 83b60044
 
-Store id: 1f9a6b5c-475e-4d1f-b522-55a7a5acff56
+Store id: 62b81307-a19e-4da6-ad70-0284621b744e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FileDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2793620+00:00`
+- posted_at: `2026-11-09T23:31:57.4465340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1f9a6b5c-475e-4d1f-b522-55a7a5acff56",
+  "id": "62b81307-a19e-4da6-ad70-0284621b744e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2793620+00:00"
+    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FileDescriptor"
       },
       "rel": "contains",
-      "target": "8e88057f-89d3-449f-8872-a311864803a9"
+      "target": "adb6e22a-d982-4b8b-b543-44b57129f21a"
     }
   ],
   "status": "live",
-  "subject_id": "d37d0887-0dd5-4047-907f-028c6ee64afc",
+  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

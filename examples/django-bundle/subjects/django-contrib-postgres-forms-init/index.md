@@ -1,8 +1,8 @@
 # django/contrib/postgres/forms/__init__
 
-- Subject: django/contrib/postgres/forms/__init__ (id `4f87faa5-b7c7-436e-8c40-7a1d076a5619`)
+- Subject: django/contrib/postgres/forms/__init__ (id `805985ef-0546-4bc1-8510-498006f1e9cc`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 32 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.get_reverse_joining_fields
 
-- Subject: django/db/models/fields/related::ForeignObject.get_reverse_joining_fields (id `6bba0bc2-6767-4c41-8e2c-eb042b2f6505`)
+- Subject: django/db/models/fields/related::ForeignObject.get_reverse_joining_fields (id `bc3df6a0-69c0-427a-a495-20114f742bb9`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

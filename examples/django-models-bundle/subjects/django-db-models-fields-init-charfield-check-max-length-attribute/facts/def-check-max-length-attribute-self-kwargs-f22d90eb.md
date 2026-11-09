@@ -1,6 +1,6 @@
 # Fact f22d90eb
 
-Store id: 700310d2-5fdd-4172-a10f-84faf3396fd9
+Store id: 4431cfc7-cd71-4cf4-b639-a01e9ceec808
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_max_length_attribute(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3773100+00:00`
+- posted_at: `2026-11-09T23:31:56.5503090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1268,
     "symbol": "CharField._check_max_length_attribute"
   },
-  "id": "700310d2-5fdd-4172-a10f-84faf3396fd9",
+  "id": "4431cfc7-cd71-4cf4-b639-a01e9ceec808",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3773100+00:00"
+    "posted_at": "2026-11-09T23:31:56.5503090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "df8245fc-d853-4cfa-9731-4bf0bc3a93fb",
+  "subject_id": "fc47355c-4b7d-47fe-b419-3ad6abe85e88",
   "subject_name": "django/db/models/fields/__init__::CharField._check_max_length_attribute",
   "tags": [
     "entity:method"

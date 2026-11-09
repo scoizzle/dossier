@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._enable_cloning
 
-- Subject: django/db/models/query::QuerySet._enable_cloning (id `bae27c92-25d0-49e0-bcbc-89ff2968645e`)
+- Subject: django/db/models/query::QuerySet._enable_cloning (id `506c05c9-640c-4c54-a326-2775f1a075d3`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

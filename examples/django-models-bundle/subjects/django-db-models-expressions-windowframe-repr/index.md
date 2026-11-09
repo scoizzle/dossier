@@ -1,9 +1,9 @@
 # django/db/models/expressions::WindowFrame.__repr__
 
-- Subject: django/db/models/expressions::WindowFrame.__repr__ (id `91753e8e-0685-45e0-9f5a-0c4996b91e77`)
+- Subject: django/db/models/expressions::WindowFrame.__repr__ (id `15454337-17e3-4a05-84ff-e2773976ad7d`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

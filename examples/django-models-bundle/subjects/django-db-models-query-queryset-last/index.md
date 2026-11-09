@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.last
 
-- Subject: django/db/models/query::QuerySet.last (id `f4be1fd8-25dd-4722-a2f4-5fee6cef8d93`)
+- Subject: django/db/models/query::QuerySet.last (id `4a0df17f-9a0d-4059-9746-9d938fd18258`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

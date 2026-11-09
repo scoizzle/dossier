@@ -1,9 +1,9 @@
 # django/db/models/options::Options.pk_fields
 
-- Subject: django/db/models/options::Options.pk_fields (id `b2421fdf-10fa-49f3-ac1c-35bf1319045c`)
+- Subject: django/db/models/options::Options.pk_fields (id `cd3572ed-a230-4808-82a1-586b4b4402a6`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

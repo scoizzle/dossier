@@ -1,14 +1,14 @@
 # django/core/cache/backends/base
 
-- Subject: django/core/cache/backends/base (id `c8138626-3278-4bb2-8285-a40810e36e24`)
+- Subject: django/core/cache/backends/base (id `d1527ebe-1d2b-46e6-92e5-ffd506fe6355`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 17 of 67
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3890 tokens
+- Facts shown: 66 of 67
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If timeout is given, use that timeout for the key; otherwise use the default cache timeout. [d7fc2efb]
 - On backends that support it, return a list of keys that failed insertion, or an empty list if all keys were inserted successfully. """ for key, value in data.items(): self.set(key, value, timeout=timeout, version=version) return [] [14c172ef]
@@ -28,6 +28,54 @@
 - async def aadd(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): return await sync_to_async(self.add, thread_sensitive=True)( key, value, timeout, version ) [f924b766]
 - async def aclear(self): return await sync_to_async(self.clear, thread_sensitive=True)() [6ed7ffaa]
 
-## Beyond the budget
+## All facts
 
-49 more facts did not fit in the budget: [1551d2ab] [7b8ccbdc] [118fc4f0] [05349bfd] [4f84d02c] [e4c96dc4] [d47cf720] [94b0a0a8] [aefbdf0b] [1fe8ee0f] [a538693b] [21859a87] [f126c8f3] [45b4f00c] [96fdef8c] [6b4abe0a] [c60b587d] [53a840af] [a4380efb] [b49663f8] [d874332c] [9cf9df7a] [e7a86584] [bec2076e] [db28139b] [dc0848fb] [f84613d8] [35afd210] [08bf6425] [fe077274] [867d4220] [893cfe16] [2619c7b5] [ceec9a8f] [c80df34b] [22631de0] [70ecae0c] [0c20bdb5] [b247c078] [7095757b] [9248dd68] [ed977118] [a8b9f5fe] [ee79d0cc] [e55d9508] [770890ad88958a4c-8] [1125e2a4] [62c426f1] [106367d9]
+- [1551d2ab] async def aclose(self, **kwargs): return await sync_to_async(self.close, thread_sensitive=True)(**kwargs)
+- [7b8ccbdc] async def adecr(self, key, delta=1, version=None): return await self.aincr(key, -delta, version=version)
+- [118fc4f0] async def adelete(self, key, version=None): return await sync_to_async(self.delete, thread_sensitive=True)(key, version)
+- [05349bfd] async def adelete_many(self, keys, version=None): if self.delete_many.__func__ is not BaseCache.delete_many: return await sync_to_async(self.delete_many, thread_sensitive=True)( keys, version=version ) for key in keys: await self.adelete(key, version=version)
+- [4f84d02c] async def aget(self, key, default=None, version=None): return await sync_to_async(self.get, thread_sensitive=True)( key, default, version )
+- [e4c96dc4] async def aget_many(self, keys, version=None): """See get_many().""" if self.get_many.__func__ is not BaseCache.get_many: return await sync_to_async(self.get_many, thread_sensitive=True)( keys, version=version ) d = {} for k in keys: val = await self.aget(k, self._missing_key, version=version) if val is not self._missing_key: d[k] = val return d
+- [d47cf720] async def aget_or_set(self, key, default, timeout=DEFAULT_TIMEOUT, version=None): """See get_or_set().""" if self.get_or_set.__func__ is not BaseCache.get_or_set: return await sync_to_async(self.get_or_set, thread_sensitive=True)( key, default, timeout=timeout, version=version ) val = await self.aget(key, self._missing_key, version=version) if val is self._missing_key: if callable(default): default = default() await self.aadd(key, default, timeout=timeout, version=version) # Fetch the value again to avoid a race condition if another caller # added a value between the first aget() and the aadd() above. return await self.aget(key, default, version=version) return val
+- [94b0a0a8] async def ahas_key(self, key, version=None): if self.has_key.__func__ is not BaseCache.has_key: return await sync_to_async(self.has_key, thread_sensitive=True)( key, version=version ) return ( await self.aget(key, self._missing_key, version=version) is not self._missing_key )
+- [aefbdf0b] async def aincr(self, key, delta=1, version=None): """See incr().""" if self.incr.__func__ is not BaseCache.incr: return await sync_to_async(self.incr, thread_sensitive=True)( key, delta=delta, version=version ) value = await self.aget(key, self._missing_key, version=version) if value is self._missing_key: raise ValueError("Key '%s' not found" % key) new_value = value + delta await self.aset(key, new_value, version=version) return new_value
+- [1fe8ee0f] async def aincr_version(self, key, delta=1, version=None): """See incr_version().""" if self.incr_version.__func__ is not BaseCache.incr_version: return await sync_to_async(self.incr_version, thread_sensitive=True)( key, delta=delta, version=version ) if version is None: version = self.version
+- [a538693b] async def aset(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): return await sync_to_async(self.set, thread_sensitive=True)( key, value, timeout, version )
+- [21859a87] async def aset_many(self, data, timeout=DEFAULT_TIMEOUT, version=None): if self.set_many.__func__ is not BaseCache.set_many: return await sync_to_async(self.set_many, thread_sensitive=True)( data, timeout=timeout, version=version ) for key, value in data.items(): await self.aset(key, value, timeout=timeout, version=version) return []
+- [f126c8f3] async def atouch(self, key, timeout=DEFAULT_TIMEOUT, version=None): return await sync_to_async(self.touch, thread_sensitive=True)( key, timeout, version )
+- [45b4f00c] def __contains__(self, key): """ Return True if the key is in the cache and has not expired. """ # This is a separate method, rather than just a copy of has_key(), # so that it always has the same functionality as has_key(), even # if a subclass overrides it. return self.has_key(key)
+- [96fdef8c] def __init__(self, params): timeout = params.get("timeout", params.get("TIMEOUT", 300)) if timeout is not None: try: timeout = int(timeout) except (ValueError, TypeError): timeout = 300 self.default_timeout = timeout
+- [6b4abe0a] def add(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): """ Set a value in the cache if the key does not already exist. If timeout is given, use that timeout for the key; otherwise use the default cache timeout.
+- [c60b587d] def clear(self): """Remove *all* values from the cache at once.""" raise NotImplementedError( "subclasses of BaseCache must provide a clear() method" )
+- [53a840af] def close(self, **kwargs): """Close the cache connection""" pass
+- [a4380efb] def decr(self, key, delta=1, version=None): """ Subtract delta from value in the cache. If the key does not exist, raise a ValueError exception. """ return self.incr(key, -delta, version=version)
+- [b49663f8] def decr_version(self, key, delta=1, version=None): """ Subtract delta from the cache version for the supplied key. Return the new version. """ return self.incr_version(key, -delta, version)
+- [d874332c] def delete(self, key, version=None): """ Delete a key from the cache and return whether it succeeded, failing silently. """ raise NotImplementedError( "subclasses of BaseCache must provide a delete() method" )
+- [9cf9df7a] def delete_many(self, keys, version=None): """ Delete a bunch of values in the cache at once. For certain backends (memcached), this is much more efficient than calling delete() multiple times. """ for key in keys: self.delete(key, version=version)
+- [e7a86584] def get(self, key, default=None, version=None): """ Fetch a given key from the cache. If the key does not exist, return default, which itself defaults to None. """ raise NotImplementedError("subclasses of BaseCache must provide a get() method")
+- [bec2076e] def get_backend_timeout(self, timeout=DEFAULT_TIMEOUT): """ Return the timeout value usable by this backend based upon the provided timeout. """ if timeout == DEFAULT_TIMEOUT: timeout = self.default_timeout elif timeout == 0: # ticket 21147 - avoid time.time() related precision issues timeout = -1 return None if timeout is None else time.time() + timeout
+- [db28139b] def get_many(self, keys, version=None): """ Fetch a bunch of keys from the cache. For certain backends (memcached, pgsql) this can be *much* faster when fetching multiple values.
+- [dc0848fb] def get_or_set(self, key, default, timeout=DEFAULT_TIMEOUT, version=None): """ Fetch a given key from the cache. If the key does not exist, add the key and set it to the default value. The default value can also be any callable. If timeout is given, use that timeout for the key; otherwise use the default cache timeout.
+- [f84613d8] def has_key(self, key, version=None): """ Return True if the key is in the cache and has not expired. """ return ( self.get(key, self._missing_key, version=version) is not self._missing_key )
+- [35afd210] def incr(self, key, delta=1, version=None): """ Add delta to value in the cache. If the key does not exist, raise a ValueError exception. """ value = self.get(key, self._missing_key, version=version) if value is self._missing_key: raise ValueError("Key '%s' not found" % key) new_value = value + delta self.set(key, new_value, version=version) return new_value
+- [08bf6425] def incr_version(self, key, delta=1, version=None): """ Add delta to the cache version for the supplied key. Return the new version. """ if version is None: version = self.version
+- [fe077274] def make_and_validate_key(self, key, version=None): """Helper to make and validate keys.""" key = self.make_key(key, version=version) self.validate_key(key) return key
+- [867d4220] def make_key(self, key, version=None): """ Construct the key used by all other methods. By default, use the key_func to generate a key (which, by default, prepends the `key_prefix' and 'version'). A different key function can be provided at the time of cache construction; alternatively, you can subclass the cache backend to provide custom key making behavior. """ if version is None: version = self.version
+- [893cfe16] def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): """ Set a value in the cache. If timeout is given, use that timeout for the key; otherwise use the default cache timeout. """ raise NotImplementedError("subclasses of BaseCache must provide a set() method")
+- [2619c7b5] def set_many(self, data, timeout=DEFAULT_TIMEOUT, version=None): """ Set a bunch of values in the cache at once from a dict of key/value pairs. For certain backends (memcached), this is much more efficient than calling set() multiple times.
+- [ceec9a8f] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): """ Update the key's expiry time using timeout. Return True if successful or False if the key does not exist. """ raise NotImplementedError( "subclasses of BaseCache must provide a touch() method" )
+- [c80df34b] def validate_key(self, key): """ Warn about keys that would not be portable to the memcached backend. This encourages (but does not force) writing backend-portable cache code. """ for warning in memcache_key_warnings(key): warnings.warn(warning, CacheKeyWarning)
+- [22631de0] "Base Cache class."
+- [70ecae0c] # Memcached does not accept keys longer than this. MEMCACHE_MAX_KEY_LENGTH = 250
+- [0c20bdb5] # Stub class to ensure not passing in a `timeout` argument results in # the default timeout DEFAULT_TIMEOUT = object()
+- [b247c078] class BaseCache: _missing_key = object()
+- [7095757b] class CacheKeyWarning(RuntimeWarning): pass
+- [9248dd68] class InvalidCacheBackendError(ImproperlyConfigured): pass
+- [ed977118] class InvalidCacheKey(ValueError): pass
+- [a8b9f5fe] def default_key_func(key, key_prefix, version): """ Default function to generate keys.
+- [ee79d0cc] def get_key_func(key_func): """ Function to decide which key function to use.
+- [e55d9508] def memcache_key_warnings(key): if len(key) > MEMCACHE_MAX_KEY_LENGTH: yield ( "Cache key will cause errors if used with memcached: %r " "(longer than %s)" % (key, MEMCACHE_MAX_KEY_LENGTH) ) if memcached_error_chars_re.search(key): yield ( "Cache key contains characters that will cause errors if used with " f"memcached: {key!r}" )
+- [770890ad88958a4c-8] from asgiref.sync import sync_to_async
+- [1125e2a4] from django.core.exceptions import ImproperlyConfigured from django.utils.module_loading import import_string from django.utils.regex_helper import _lazy_re_compile
+- [62c426f1] import time import warnings
+- [106367d9] memcached_error_chars_re = _lazy_re_compile(r"[\x00-\x20\x7f]")

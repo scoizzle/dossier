@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.trim_start
 
-- Subject: django/db/models/sql/query::Query.trim_start (id `23186133-b73b-4e76-a0a6-3f8740f245e3`)
+- Subject: django/db/models/sql/query::Query.trim_start (id `a95eaddd-f933-46d5-be5c-d09988701e84`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

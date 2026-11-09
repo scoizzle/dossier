@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::GenericIPAddressField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::GenericIPAddressField.get_internal_type (id `72b50188-acce-44bb-8e82-c3bcc72d3734`)
+- Subject: django/db/models/fields/__init__::GenericIPAddressField.get_internal_type (id `01902a09-08ba-4966-a41f-b18b49690d84`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/related::RelatedField.get_forward_related_filter
 
-- Subject: django/db/models/fields/related::RelatedField.get_forward_related_filter (id `1f600276-49ac-483c-9664-c6429d10ad0b`)
+- Subject: django/db/models/fields/related::RelatedField.get_forward_related_filter (id `19dc55fe-2c59-46b1-bfcb-3472f6ab2e3a`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

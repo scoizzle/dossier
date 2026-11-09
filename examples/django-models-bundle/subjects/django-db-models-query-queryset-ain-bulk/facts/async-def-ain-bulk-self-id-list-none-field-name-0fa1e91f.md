@@ -1,6 +1,6 @@
 # Fact 0fa1e91f
 
-Store id: 747b3ea4-3bee-42bc-a784-a695a3f475c9
+Store id: a00af17f-b9a8-4b97-8478-5aea19d3810e
 
 ## Text
 
@@ -20,7 +20,7 @@ async def ain_bulk(self, id_list=None, *, field_name="pk")
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5110690+00:00`
+- posted_at: `2026-11-09T23:32:04.4710030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1352,
     "symbol": "QuerySet.ain_bulk"
   },
-  "id": "747b3ea4-3bee-42bc-a784-a695a3f475c9",
+  "id": "a00af17f-b9a8-4b97-8478-5aea19d3810e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5110690+00:00"
+    "posted_at": "2026-11-09T23:32:04.4710030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4f0bc477-e6b1-4837-8787-4cf210b6f226",
+  "subject_id": "efedba42-0340-4b09-b2e3-e73c190a403a",
   "subject_name": "django/db/models/query::QuerySet.ain_bulk",
   "tags": [
     "entity:method",

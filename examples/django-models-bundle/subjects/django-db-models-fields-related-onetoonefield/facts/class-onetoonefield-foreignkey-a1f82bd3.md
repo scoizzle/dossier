@@ -1,6 +1,6 @@
 # Fact a1f82bd3
 
-Store id: 69385e00-48c0-4610-8cdf-4ef894cfe2e4
+Store id: 601a8ade-dd0a-4e8e-98cc-5116d910eca4
 
 ## Text
 
@@ -20,7 +20,7 @@ class OneToOneField(ForeignKey)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4252040+00:00`
+- posted_at: `2026-11-09T23:31:58.8001800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1351,
     "symbol": "OneToOneField"
   },
-  "id": "69385e00-48c0-4610-8cdf-4ef894cfe2e4",
+  "id": "601a8ade-dd0a-4e8e-98cc-5116d910eca4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4252040+00:00"
+    "posted_at": "2026-11-09T23:31:58.8001800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b2cad620-6b88-4b64-9d46-adb5d25094c9",
+  "subject_id": "4c1565a5-e2f3-4fc2-b4f0-ffaa30e720a4",
   "subject_name": "django/db/models/fields/related::OneToOneField",
   "tags": [
     "entity:class"

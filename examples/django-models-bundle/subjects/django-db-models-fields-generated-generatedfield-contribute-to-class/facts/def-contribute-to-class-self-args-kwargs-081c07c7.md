@@ -1,6 +1,6 @@
 # Fact 081c07c7
 
-Store id: f9415faf-b3b0-42c2-9406-7a98fba0fd03
+Store id: 5b04a268-4151-4b8d-b514-025ac463ef10
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4309310+00:00`
+- posted_at: `2026-11-09T23:31:57.6243080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 46,
     "symbol": "GeneratedField.contribute_to_class"
   },
-  "id": "f9415faf-b3b0-42c2-9406-7a98fba0fd03",
+  "id": "5b04a268-4151-4b8d-b514-025ac463ef10",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4309310+00:00"
+    "posted_at": "2026-11-09T23:31:57.6243080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "375c4dfb-bd9d-4f01-948a-2f120085283c",
+  "subject_id": "3411e85c-a7df-4936-ac04-1570fa8588bd",
   "subject_name": "django/db/models/fields/generated::GeneratedField.contribute_to_class",
   "tags": [
     "entity:method"

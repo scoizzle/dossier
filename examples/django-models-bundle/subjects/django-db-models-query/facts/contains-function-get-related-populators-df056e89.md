@@ -1,6 +1,6 @@
 # Fact df056e89
 
-Store id: c22e18e0-2240-4e78-ae66-5b6c8cc86777
+Store id: fab79727-c122-433b-971e-356f9d766ab9
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_related_populators
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c22e18e0-2240-4e78-ae66-5b6c8cc86777",
+  "id": "fab79727-c122-433b-971e-356f9d766ab9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_related_populators"
       },
       "rel": "contains",
-      "target": "a5fff49c-0bfb-4516-afd7-c689946e9fbf"
+      "target": "404ebbf6-af06-4968-bb41-de001a42cf11"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:function"

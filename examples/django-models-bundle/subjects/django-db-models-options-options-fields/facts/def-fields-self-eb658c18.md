@@ -1,6 +1,6 @@
 # Fact eb658c18
 
-Store id: 33b41272-aacf-4df7-899d-68580903686d
+Store id: bff0c8e7-2e8f-44b6-bc8b-df19bb618523
 
 ## Text
 
@@ -20,7 +20,7 @@ def fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8371380+00:00`
+- posted_at: `2026-11-09T23:32:03.9694100+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 531,
     "symbol": "Options.fields"
   },
-  "id": "33b41272-aacf-4df7-899d-68580903686d",
+  "id": "bff0c8e7-2e8f-44b6-bc8b-df19bb618523",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8371380+00:00"
+    "posted_at": "2026-11-09T23:32:03.9694100+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e1bb0b4c-f7cb-401a-9b9d-57a6f5c431d2",
+  "subject_id": "b80c94ad-5d15-44db-a9b2-a8988bbe63fe",
   "subject_name": "django/db/models/options::Options.fields",
   "tags": [
     "entity:method",

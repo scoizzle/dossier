@@ -1,8 +1,8 @@
 # django/contrib/gis/geos/prototypes/prepared
 
-- Subject: django/contrib/gis/geos/prototypes/prepared (id `03a00785-872a-44ad-8256-0b54f1e6ceca`)
+- Subject: django/contrib/gis/geos/prototypes/prepared (id `68ccde75-5887-4fa6-972e-05657804e3b6`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 342 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

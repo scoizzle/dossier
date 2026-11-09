@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::ExtractMinute
 
-- Subject: django/db/models/functions/datetime::ExtractMinute (id `b61a29ef-e7bb-405a-89e8-0563cc40cb68`)
+- Subject: django/db/models/functions/datetime::ExtractMinute (id `b073442f-a0af-4bd8-96cb-98ad31fb9db4`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

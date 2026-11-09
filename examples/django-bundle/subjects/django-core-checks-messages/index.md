@@ -1,8 +1,8 @@
 # django/core/checks/messages
 
-- Subject: django/core/checks/messages (id `d0992c55-3d7d-46d6-8ba9-dc1e97a99657`)
+- Subject: django/core/checks/messages (id `1a509cb1-8aa3-4c2a-8faf-1a37808aae0d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 601 tokens
 - Facts shown: 14 of 14
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 2db75c52
 
-Store id: 5a145fcc-1f2d-4c47-8e3c-a3561e094da3
+Store id: b8424877-9da9-4846-bb9d-3c5268f12f47
 
 ## Text
 
@@ -20,7 +20,7 @@ def manager_method(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.4995080+00:00`
+- posted_at: `2026-11-09T23:32:03.6835510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 85,
     "symbol": "BaseManager._get_queryset_methods.create_method.manager_method"
   },
-  "id": "5a145fcc-1f2d-4c47-8e3c-a3561e094da3",
+  "id": "b8424877-9da9-4846-bb9d-3c5268f12f47",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.4995080+00:00"
+    "posted_at": "2026-11-09T23:32:03.6835510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36f193ae-b51c-4d9f-b1a0-eb32a4d577da",
+  "subject_id": "88682eb4-e905-4b4a-8aee-83695548cf4d",
   "subject_name": "django/db/models/manager::BaseManager._get_queryset_methods.create_method.manager_method",
   "tags": [
     "entity:function",

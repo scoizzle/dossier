@@ -1,6 +1,6 @@
 # Fact 246553a6
 
-Store id: 53b88579-f9fa-4574-b360-b322dddced61
+Store id: 7bc34c09-3494-4dd5-b85c-595c3abad31c
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9606470+00:00`
+- posted_at: `2026-11-09T23:32:01.0132360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 169,
     "symbol": "NullIf.as_oracle"
   },
-  "id": "53b88579-f9fa-4574-b360-b322dddced61",
+  "id": "7bc34c09-3494-4dd5-b85c-595c3abad31c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9606470+00:00"
+    "posted_at": "2026-11-09T23:32:01.0132360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1633cdb4-10ad-4901-983c-e56b19383930",
+  "subject_id": "92c75e6b-1cc9-4684-8e8a-14bd1d3e67e4",
   "subject_name": "django/db/models/functions/comparison::NullIf.as_oracle",
   "tags": [
     "entity:method"

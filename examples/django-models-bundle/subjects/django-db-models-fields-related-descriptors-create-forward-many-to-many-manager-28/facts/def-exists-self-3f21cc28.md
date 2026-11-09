@@ -1,6 +1,6 @@
 # Fact 3f21cc28
 
-Store id: d2a31ee9-6453-4982-9a95-ecdfd37e7755
+Store id: 4621c512-72bc-47bd-9437-5068d70db9ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def exists(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8751740+00:00`
+- posted_at: `2026-11-09T23:31:59.4100090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1280,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.exists"
   },
-  "id": "d2a31ee9-6453-4982-9a95-ecdfd37e7755",
+  "id": "4621c512-72bc-47bd-9437-5068d70db9ee",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8751740+00:00"
+    "posted_at": "2026-11-09T23:31:59.4100090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c0d3885e-a896-43fa-a274-a77f77a72d1f",
+  "subject_id": "68b49c82-bb5e-44b9-8472-43b864e6c561",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.exists",
   "tags": [
     "entity:method"

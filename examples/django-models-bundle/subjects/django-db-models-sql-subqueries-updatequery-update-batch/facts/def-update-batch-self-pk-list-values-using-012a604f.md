@@ -1,6 +1,6 @@
 # Fact 012a604f
 
-Store id: 43eddeb7-d352-45d0-8205-ff018f6ce751
+Store id: ae4e6b2a-2643-43b1-9a2e-7ad647c887e3
 
 ## Text
 
@@ -20,7 +20,7 @@ def update_batch(self, pk_list, values, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7406500+00:00`
+- posted_at: `2026-11-09T23:32:07.3813250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 72,
     "symbol": "UpdateQuery.update_batch"
   },
-  "id": "43eddeb7-d352-45d0-8205-ff018f6ce751",
+  "id": "ae4e6b2a-2643-43b1-9a2e-7ad647c887e3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7406500+00:00"
+    "posted_at": "2026-11-09T23:32:07.3813250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0ba14052-4a7d-4a64-93b3-599914b04baf",
+  "subject_id": "35c93f97-ac9c-4514-994a-714fe04a4fe9",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery.update_batch",
   "tags": [
     "entity:method"

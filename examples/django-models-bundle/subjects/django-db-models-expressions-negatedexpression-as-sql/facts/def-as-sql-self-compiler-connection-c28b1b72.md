@@ -1,6 +1,6 @@
 # Fact c28b1b72
 
-Store id: 7c0ac100-ac93-440f-8cfd-0ce6f4eafd9b
+Store id: 012181a7-bec9-447a-b5c0-0717b0ebea17
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6833860+00:00`
+- posted_at: `2026-11-09T23:31:55.9421000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1593,
     "symbol": "NegatedExpression.as_sql"
   },
-  "id": "7c0ac100-ac93-440f-8cfd-0ce6f4eafd9b",
+  "id": "012181a7-bec9-447a-b5c0-0717b0ebea17",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6833860+00:00"
+    "posted_at": "2026-11-09T23:31:55.9421000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "920ef8b2-52ff-43c6-be95-2fd421b7d9b9",
+  "subject_id": "b8cc6127-3cae-402c-bb1e-441cbacdbcdf",
   "subject_name": "django/db/models/expressions::NegatedExpression.as_sql",
   "tags": [
     "entity:method"

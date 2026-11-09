@@ -1,6 +1,6 @@
 # Fact 4c905d2d
 
-Store id: 3da1d0de-72ea-4cd6-8736-6ac0a400495c
+Store id: ec940bbf-353f-4a17-926c-0b83bf421ed9
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearLt(YearLookup, LessThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2572590+00:00`
+- posted_at: `2026-11-09T23:32:03.4517330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 771,
     "symbol": "YearLt"
   },
-  "id": "3da1d0de-72ea-4cd6-8736-6ac0a400495c",
+  "id": "ec940bbf-353f-4a17-926c-0b83bf421ed9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2572590+00:00"
+    "posted_at": "2026-11-09T23:32:03.4517330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9fec7bda-4ee2-4f7d-9ec8-a659d22807b2",
+  "subject_id": "0b851b6d-a017-4988-b252-95f5aeb90ea2",
   "subject_name": "django/db/models/lookups::YearLt",
   "tags": [
     "entity:class"

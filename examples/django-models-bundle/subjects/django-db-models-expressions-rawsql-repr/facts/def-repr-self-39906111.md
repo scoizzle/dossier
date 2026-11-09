@@ -1,6 +1,6 @@
 # Fact 39906111
 
-Store id: 54dcf649-416b-48e4-987b-bcb55251c870
+Store id: c9e53918-e828-4063-bc4b-fbb3e0e0264d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6081790+00:00`
+- posted_at: `2026-11-09T23:31:55.8733670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1277,
     "symbol": "RawSQL.__repr__"
   },
-  "id": "54dcf649-416b-48e4-987b-bcb55251c870",
+  "id": "c9e53918-e828-4063-bc4b-fbb3e0e0264d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6081790+00:00"
+    "posted_at": "2026-11-09T23:31:55.8733670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37d82b54-34b4-4137-b393-05677f0aa6f4",
+  "subject_id": "effa8310-d9f5-4ea4-a8ef-f87f44463b17",
   "subject_name": "django/db/models/expressions::RawSQL.__repr__",
   "tags": [
     "entity:method"

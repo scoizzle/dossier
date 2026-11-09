@@ -1,6 +1,6 @@
 # Fact 2cca913c
 
-Store id: 82749abb-b805-42bb-b9d4-cb5c30afc794
+Store id: 9d6ce8d0-25ac-4dc9-9a91-162c9a618d7b
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5687970+00:00`
+- posted_at: `2026-11-09T23:31:55.8426910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 963,
     "symbol": "ResolvedOuterRef.resolve_expression"
   },
-  "id": "82749abb-b805-42bb-b9d4-cb5c30afc794",
+  "id": "9d6ce8d0-25ac-4dc9-9a91-162c9a618d7b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5687970+00:00"
+    "posted_at": "2026-11-09T23:31:55.8426910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06065a52-5efd-4ff0-8a25-de803cdea0b9",
+  "subject_id": "036df5f1-3986-4da3-8151-45554f54a6b7",
   "subject_name": "django/db/models/expressions::ResolvedOuterRef.resolve_expression",
   "tags": [
     "entity:method"

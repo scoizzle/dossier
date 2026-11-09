@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/geomtype
 
-- Subject: django/contrib/gis/gdal/geomtype (id `c2d670f5-b9cf-4a46-b177-bec1a5230df4`)
+- Subject: django/contrib/gis/gdal/geomtype (id `ef43ca20-dd0a-45a9-9b8d-86ba077e6cd0`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 9 of 12
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 999 tokens
+- Facts shown: 12 of 12
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Setting the OGR geometry type number. self.num = num [cd878ec8]
 - # Dictionary of acceptable OGRwkbGeometryType s and their string names. _types = { 0: "Unknown", 1: "Point", 2: "LineString", 3: "Polygon", 4: "MultiPoint", 5: "MultiLineString", 6: "MultiPolygon", 7: "GeometryCollection", 8: "CircularString", 9: "CompoundCurve", 10: "CurvePolygon", 11: "MultiCurve", 12: "MultiSurface", 15: "PolyhedralSurface", 16: "TIN", 17: "Triangle", 100: "None", 101: "LinearRing", 102: "PointZ", 1008: "CircularStringZ", 1009: "CompoundCurveZ", 1010: "CurvePolygonZ", 1011: "MultiCurveZ", 1012: "MultiSurfaceZ", 1013: "CurveZ", 1014: "SurfaceZ", 1015: "PolyhedralSurfaceZ", 1016: "TINZ", 1017: "TriangleZ", 2001: "PointM", 2002: "LineStringM", 2003: "PolygonM", 2004: "MultiPointM", 2005: "MultiLineStringM", 2006: "MultiPolygonM", 2007: "GeometryCollectionM", 2008: "CircularStringM", 2009: "CompoundCurveM", 2010: "CurvePolygonM", 2011: "MultiCurveM", 2012: "MultiSurfaceM", 2015: "PolyhedralSurfaceM", 2016: "TINM", 2017: "TriangleM", 3001: "PointZM", 3002: "LineStringZM", 3003: "PolygonZM", 3004: "MultiPointZM", 3005: "MultiLineStringZM", 3006: "MultiPolygonZM", 3007: "GeometryCollectionZM", 3008: "CircularStringZM", 3009: "CompoundCurveZM", 3010: "CurvePolygonZM", 3011: "MultiCurveZM", 3012: "MultiSurfaceZM", 3015: "PolyhedralSurfaceZM", 3016: "TINZM", 3017: "TriangleZM", 1 + wkb25bit: "Point25D", 2 + wkb25bit: "LineString25D", 3 + wkb25bit: "Polygon25D", 4 + wkb25bit: "MultiPoint25D", 5 + wkb25bit: "MultiLineString25D", 6 + wkb25bit: "MultiPolygon25D", 7 + wkb25bit: "GeometryCollection25D", } # Reverse type dictionary, keyed by lowercase of the name. _str_types = {v.lower(): k for k, v in _types.items()} [36e77b77]
@@ -20,6 +20,8 @@
 - def __str__(self): "Return the value of the name property." return self.name [a3843055]
 - wkb25bit = -2147483648 [ff39acc3]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [201f2c9a] [38b9676c] [05db624975f27ad7-2]
+- [201f2c9a] def to_multi(self): """ Transform Point, LineString, Polygon, and their 25D equivalents to their Multi... counterpart. """ if self.name.startswith(("Point", "LineString", "Polygon")): self.num += 3
+- [38b9676c] class OGRGeomType: "Encapsulate OGR Geometry Types."
+- [05db624975f27ad7-2] from django.contrib.gis.gdal.error import GDALException

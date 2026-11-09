@@ -1,6 +1,6 @@
 # Fact 96bcc1c4
 
-Store id: ecc8a32c-058e-4c10-8b78-b0368cc82736
+Store id: 0a175844-1b95-4c05-8974-b8ce09dc7483
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_fk_val(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7922480+00:00`
+- posted_at: `2026-11-09T23:31:59.2380230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 739,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager._check_fk_val"
   },
-  "id": "ecc8a32c-058e-4c10-8b78-b0368cc82736",
+  "id": "0a175844-1b95-4c05-8974-b8ce09dc7483",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7922480+00:00"
+    "posted_at": "2026-11-09T23:31:59.2380230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d20c42e9-08a4-49ef-a21e-79403b1d3298",
+  "subject_id": "db2e2414-682f-4469-84c2-2d03a53436c6",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._check_fk_val",
   "tags": [
     "entity:method"

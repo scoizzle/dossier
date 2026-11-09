@@ -1,9 +1,9 @@
 # django/db/models/fields/json::CaseInsensitiveMixin
 
-- Subject: django/db/models/fields/json::CaseInsensitiveMixin (id `055cdcad-3c33-4c79-bea1-b75c87a48d1e`)
+- Subject: django/db/models/fields/json::CaseInsensitiveMixin (id `8dd8f51c-617b-4b41-bea8-7ea6c31229f6`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

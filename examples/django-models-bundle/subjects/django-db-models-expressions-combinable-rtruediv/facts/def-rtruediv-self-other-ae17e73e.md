@@ -1,6 +1,6 @@
 # Fact ae17e73e
 
-Store id: 5518e025-943d-4390-b8f0-e357866ad12e
+Store id: a85636c8-a337-4acd-8b98-cf58d441ffc9
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rtruediv__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4876610+00:00`
+- posted_at: `2026-11-09T23:31:55.7475610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 142,
     "symbol": "Combinable.__rtruediv__"
   },
-  "id": "5518e025-943d-4390-b8f0-e357866ad12e",
+  "id": "a85636c8-a337-4acd-8b98-cf58d441ffc9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4876610+00:00"
+    "posted_at": "2026-11-09T23:31:55.7475610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0c0dc306-e675-4a76-a18c-f9b72ad92468",
+  "subject_id": "729412c4-07bb-4303-b960-63b3605b50c6",
   "subject_name": "django/db/models/expressions::Combinable.__rtruediv__",
   "tags": [
     "entity:method"

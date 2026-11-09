@@ -1,6 +1,6 @@
 # Fact 54a64f2d
 
-Store id: e5c35584-bbfe-40b0-bc2c-6ca48e14a62e
+Store id: 3721e3f9-db4b-4281-81f3-ebe218185cf9
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDTextMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2724660+00:00`
+- posted_at: `2026-11-09T23:32:03.4652070+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 781,
     "symbol": "UUIDTextMixin"
   },
-  "id": "e5c35584-bbfe-40b0-bc2c-6ca48e14a62e",
+  "id": "3721e3f9-db4b-4281-81f3-ebe218185cf9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2724660+00:00"
+    "posted_at": "2026-11-09T23:32:03.4652070+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37b5136d-f4c8-4d77-bd9b-08c726c44083",
+  "subject_id": "660e3158-cf72-4101-b09b-d6e484078016",
   "subject_name": "django/db/models/lookups::UUIDTextMixin",
   "tags": [
     "entity:class"

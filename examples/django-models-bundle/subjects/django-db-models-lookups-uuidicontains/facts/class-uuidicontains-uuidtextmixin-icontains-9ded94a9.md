@@ -1,6 +1,6 @@
 # Fact 9ded94a9
 
-Store id: 5c478285-0d47-4d44-b120-fdacf158029e
+Store id: c979bc73-9bbd-4450-b682-55c93c82db0b
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDIContains(UUIDTextMixin, IContains)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2840790+00:00`
+- posted_at: `2026-11-09T23:32:03.4787470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 810,
     "symbol": "UUIDIContains"
   },
-  "id": "5c478285-0d47-4d44-b120-fdacf158029e",
+  "id": "c979bc73-9bbd-4450-b682-55c93c82db0b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2840790+00:00"
+    "posted_at": "2026-11-09T23:32:03.4787470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2c1b6464-3816-49f6-a229-25265bd7d0f1",
+  "subject_id": "b93fc582-0529-4192-ae39-52d3cc184a6c",
   "subject_name": "django/db/models/lookups::UUIDIContains",
   "tags": [
     "entity:class",

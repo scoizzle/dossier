@@ -1,6 +1,6 @@
 # Fact 225e5520
 
-Store id: c29b7a70-b699-4a3c-a4f6-83e9f055b8b5
+Store id: fee46453-0c7c-4986-b4d4-31d02395cfdc
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformExact(JSONExact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7325040+00:00`
+- posted_at: `2026-11-09T23:31:57.9991900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 622,
     "symbol": "KeyTransformExact"
   },
-  "id": "c29b7a70-b699-4a3c-a4f6-83e9f055b8b5",
+  "id": "fee46453-0c7c-4986-b4d4-31d02395cfdc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7325040+00:00"
+    "posted_at": "2026-11-09T23:31:57.9991900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "27d88e24-7c2c-421f-91c0-f8f791227e10",
+  "subject_id": "d3ecf5aa-e580-4e5a-b731-4e062b268e02",
   "subject_name": "django/db/models/fields/json::KeyTransformExact",
   "tags": [
     "entity:class"

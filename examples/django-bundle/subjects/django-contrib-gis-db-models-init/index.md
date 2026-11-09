@@ -1,8 +1,8 @@
 # django/contrib/gis/db/models/__init__
 
-- Subject: django/contrib/gis/db/models/__init__ (id `13aa5f3b-953a-4698-b0d6-172eccd25d92`)
+- Subject: django/contrib/gis/db/models/__init__ (id `eb290013-32f5-4ed2-af9e-82905115fa09`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 218 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

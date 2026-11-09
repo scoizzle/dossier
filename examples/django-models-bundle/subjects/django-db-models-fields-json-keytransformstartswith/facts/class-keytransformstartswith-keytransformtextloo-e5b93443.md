@@ -1,6 +1,6 @@
 # Fact e5b93443
 
-Store id: e6fc4b66-246f-4375-aa88-128839f30969
+Store id: 7d50d153-9486-4774-acdb-278e63eb06df
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformStartsWith(KeyTransformTextLookupMixin, lookups.StartsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7444010+00:00`
+- posted_at: `2026-11-09T23:31:58.0144860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 690,
     "symbol": "KeyTransformStartsWith"
   },
-  "id": "e6fc4b66-246f-4375-aa88-128839f30969",
+  "id": "7d50d153-9486-4774-acdb-278e63eb06df",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7444010+00:00"
+    "posted_at": "2026-11-09T23:31:58.0144860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9bd0701f-74da-4728-9849-9bad8a470b6a",
+  "subject_id": "2af1d424-e02b-479a-932c-fe2a130890b4",
   "subject_name": "django/db/models/fields/json::KeyTransformStartsWith",
   "tags": [
     "entity:class"

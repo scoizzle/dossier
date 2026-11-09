@@ -1,6 +1,6 @@
 # Fact c98fcec9
 
-Store id: b69bc42d-b7db-46bd-b473-b200f239630b
+Store id: eb162ac3-b6e5-4c55-b797-28e1b501faa2
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer lets a user type a memo, attach media, and choose visibility.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:20:04.9288170+00:00`
+- posted_at: `2026-11-09T23:31:46.5621970+00:00`
 
 ## Refs
 
@@ -68,7 +68,7 @@ Home composer lets a user type a memo, attach media, and choose visibility.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b69bc42d-b7db-46bd-b473-b200f239630b",
+  "id": "eb162ac3-b6e5-4c55-b797-28e1b501faa2",
   "items": [
     {
       "key": "editor",
@@ -88,7 +88,7 @@ Home composer lets a user type a memo, attach media, and choose visibility.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
   },
   "refs": [
     {
@@ -100,7 +100,7 @@ Home composer lets a user type a memo, attach media, and choose visibility.
     }
   ],
   "status": "live",
-  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
   "subject_name": "Memos/Home",
   "tags": [
     "section:composer"

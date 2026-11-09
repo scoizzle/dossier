@@ -1,6 +1,6 @@
 # Fact 8a723004
 
-Store id: a522e20e-7cc1-4dd9-9678-0298528d5462
+Store id: 403031e8-f5c4-42b8-aa93-56824b59ea1e
 
 ## Text
 
@@ -20,7 +20,7 @@ def convert_value(self, value, expression, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1824700+00:00`
+- posted_at: `2026-11-09T23:32:01.2634770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 344,
     "symbol": "TruncBase.convert_value"
   },
-  "id": "a522e20e-7cc1-4dd9-9678-0298528d5462",
+  "id": "403031e8-f5c4-42b8-aa93-56824b59ea1e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1824700+00:00"
+    "posted_at": "2026-11-09T23:32:01.2634770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7fd533c4-b130-450b-973d-04eab428e6d0",
+  "subject_id": "e38a36c6-981f-4d6b-94ba-280d02b052fd",
   "subject_name": "django/db/models/functions/datetime::TruncBase.convert_value",
   "tags": [
     "entity:method"

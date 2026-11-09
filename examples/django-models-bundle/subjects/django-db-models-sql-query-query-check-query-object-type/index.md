@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.check_query_object_type
 
-- Subject: django/db/models/sql/query::Query.check_query_object_type (id `5a099149-68de-446f-a023-d87c70d1aa6d`)
+- Subject: django/db/models/sql/query::Query.check_query_object_type (id `4b7257e1-87b9-4d15-990d-7d2ac37e7b8f`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

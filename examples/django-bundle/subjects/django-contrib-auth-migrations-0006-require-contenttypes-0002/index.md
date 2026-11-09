@@ -1,8 +1,8 @@
 # django/contrib/auth/migrations/0006_require_contenttypes_0002
 
-- Subject: django/contrib/auth/migrations/0006_require_contenttypes_0002 (id `c8830712-ab56-40dd-aebd-c4a424cd3948`)
+- Subject: django/contrib/auth/migrations/0006_require_contenttypes_0002 (id `05c9d28f-6a7c-4271-ae75-65bbd3de5dd1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 111 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

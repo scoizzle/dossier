@@ -1,6 +1,6 @@
 # Fact 4f9d0207
 
-Store id: 71755c78-edb8-4954-8b63-1c623b82ace4
+Store id: 50f9364e-5a03-4d9c-b152-0c5fa1b99d2b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_field_expression_map(self, meta, exclude=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3465260+00:00`
+- posted_at: `2026-11-09T23:31:53.7530680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1397,
     "symbol": "Model._get_field_expression_map"
   },
-  "id": "71755c78-edb8-4954-8b63-1c623b82ace4",
+  "id": "50f9364e-5a03-4d9c-b152-0c5fa1b99d2b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3465260+00:00"
+    "posted_at": "2026-11-09T23:31:53.7530680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b2db4410-c938-4ead-bd21-9fca5f957dfb",
+  "subject_id": "fbc7ce2d-0d96-491f-9ba2-8ac421eef14e",
   "subject_name": "django/db/models/base::Model._get_field_expression_map",
   "tags": [
     "entity:method"

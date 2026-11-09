@@ -1,6 +1,6 @@
 # Fact 10be4ee6
 
-Store id: 1f9d2970-5610-48db-9e5d-aa2464b0f005
+Store id: 45007162-52e0-4862-aaf8-3a3867e3cba7
 
 ## Text
 
@@ -20,7 +20,7 @@ def __len__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7927990+00:00`
+- posted_at: `2026-11-09T23:32:04.7331120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2491,
     "symbol": "RawQuerySet.__len__"
   },
-  "id": "1f9d2970-5610-48db-9e5d-aa2464b0f005",
+  "id": "45007162-52e0-4862-aaf8-3a3867e3cba7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7927990+00:00"
+    "posted_at": "2026-11-09T23:32:04.7331120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "644bf113-d772-4586-b3ce-8ba303605f2a",
+  "subject_id": "7309cc7d-a86a-4218-838e-28e378d11b57",
   "subject_name": "django/db/models/query::RawQuerySet.__len__",
   "tags": [
     "entity:method"

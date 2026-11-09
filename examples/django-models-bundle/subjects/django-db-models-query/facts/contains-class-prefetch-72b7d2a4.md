@@ -1,6 +1,6 @@
 # Fact 72b7d2a4
 
-Store id: 799e7f03-0b94-4c86-bafb-17072510a5c6
+Store id: 6b27f8d6-b149-408d-9579-139ffd476bed
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Prefetch
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "799e7f03-0b94-4c86-bafb-17072510a5c6",
+  "id": "6b27f8d6-b149-408d-9579-139ffd476bed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Prefetch"
       },
       "rel": "contains",
-      "target": "e0ac7d28-49f6-491d-8f7b-de77d0ade658"
+      "target": "09748518-8783-4c23-ac00-1d73ba872f21"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

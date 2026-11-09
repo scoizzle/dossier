@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Replace.__init__
 
-- Subject: django/db/models/functions/text::Replace.__init__ (id `93524dea-b6f4-4524-908d-0a737916d09f`)
+- Subject: django/db/models/functions/text::Replace.__init__ (id `34918b13-340d-4db1-b284-564e06081bcf`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

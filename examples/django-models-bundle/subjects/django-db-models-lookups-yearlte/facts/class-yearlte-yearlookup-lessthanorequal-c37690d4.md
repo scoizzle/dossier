@@ -1,6 +1,6 @@
 # Fact c37690d4
 
-Store id: c71354b8-f400-4831-9337-947c128e47f4
+Store id: e72165f4-cdfa-465b-b89b-b5765f2a3394
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearLte(YearLookup, LessThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2651820+00:00`
+- posted_at: `2026-11-09T23:32:03.4588590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 776,
     "symbol": "YearLte"
   },
-  "id": "c71354b8-f400-4831-9337-947c128e47f4",
+  "id": "e72165f4-cdfa-465b-b89b-b5765f2a3394",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2651820+00:00"
+    "posted_at": "2026-11-09T23:32:03.4588590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8c9e31b-e38f-43a2-814b-3ab575eaf5a5",
+  "subject_id": "dc2593b3-944d-4c29-929e-7cc29d683f8c",
   "subject_name": "django/db/models/lookups::YearLte",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 6945b3e1
 
-Store id: bea3d524-bc45-4810-9522-c8360a7ee770
+Store id: 99bea6ec-0cc0-4547-b48a-68bb0c060f15
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7298900+00:00`
+- posted_at: `2026-11-09T23:31:59.1682790+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 370,
     "symbol": "ForwardManyToOneDescriptor.__reduce__"
   },
-  "id": "bea3d524-bc45-4810-9522-c8360a7ee770",
+  "id": "99bea6ec-0cc0-4547-b48a-68bb0c060f15",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7298900+00:00"
+    "posted_at": "2026-11-09T23:31:59.1682790+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ef4cdbb8-c878-4e9d-bed1-226a45f526c2",
+  "subject_id": "2ae8b41e-b665-479e-b1ec-3b4165dab622",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__reduce__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact e8fa89f8
 
-Store id: fc48815b-b435-4011-8cf2-e28cf38c1ab2
+Store id: db05e279-de2d-43b7-bd56-ba14eeacf68c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Replace
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fc48815b-b435-4011-8cf2-e28cf38c1ab2",
+  "id": "db05e279-de2d-43b7-bd56-ba14eeacf68c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Replace"
       },
       "rel": "contains",
-      "target": "a0dc1d66-41bc-4010-a1c7-fef698eee71a"
+      "target": "305f11d6-f633-45df-9337-ec53f1f4521f"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

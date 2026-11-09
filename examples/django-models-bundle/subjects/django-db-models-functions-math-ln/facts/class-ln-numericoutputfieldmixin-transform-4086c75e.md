@@ -1,6 +1,6 @@
 # Fact 4086c75e
 
-Store id: 855af2af-ed2b-47b5-8860-0b80df8adf19
+Store id: 829d67fe-4802-4ed0-8ebf-602cccebdff6
 
 ## Text
 
@@ -20,7 +20,7 @@ class Ln(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6194360+00:00`
+- posted_at: `2026-11-09T23:32:01.7138110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 107,
     "symbol": "Ln"
   },
-  "id": "855af2af-ed2b-47b5-8860-0b80df8adf19",
+  "id": "829d67fe-4802-4ed0-8ebf-602cccebdff6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6194360+00:00"
+    "posted_at": "2026-11-09T23:32:01.7138110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "04d93e38-b387-4bf9-ae1d-bad5fd02448b",
+  "subject_id": "f77e8244-80f2-40bb-b445-0032159a24bc",
   "subject_name": "django/db/models/functions/math::Ln",
   "tags": [
     "entity:class"

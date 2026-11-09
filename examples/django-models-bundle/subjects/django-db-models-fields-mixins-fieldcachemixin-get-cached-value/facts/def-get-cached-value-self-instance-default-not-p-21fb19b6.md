@@ -1,6 +1,6 @@
 # Fact 21fb19b6
 
-Store id: 8e47305f-d966-4a99-8a0e-fcf9c0959604
+Store id: fa4d54bc-2dd0-4010-b4f3-31cc2498369a
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_cached_value(self, instance, default=NOT_PROVIDED)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.9317060+00:00`
+- posted_at: `2026-11-09T23:31:58.2239360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "FieldCacheMixin.get_cached_value"
   },
-  "id": "8e47305f-d966-4a99-8a0e-fcf9c0959604",
+  "id": "fa4d54bc-2dd0-4010-b4f3-31cc2498369a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.9317060+00:00"
+    "posted_at": "2026-11-09T23:31:58.2239360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba2fadd2-ecb5-481f-aa91-93a19de60b62",
+  "subject_id": "cc3569c5-868a-4882-9aef-aa1340717123",
   "subject_name": "django/db/models/fields/mixins::FieldCacheMixin.get_cached_value",
   "tags": [
     "entity:method"

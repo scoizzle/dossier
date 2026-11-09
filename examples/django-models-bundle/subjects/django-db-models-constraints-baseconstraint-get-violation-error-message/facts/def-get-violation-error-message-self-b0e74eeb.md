@@ -1,6 +1,6 @@
 # Fact b0e74eeb
 
-Store id: ef9ebcae-da61-49a2-a836-29ca586f6ad8
+Store id: 02300680-0ed1-488e-a525-12a82ff7094f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_violation_error_message(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7023180+00:00`
+- posted_at: `2026-11-09T23:31:54.1533150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 71,
     "symbol": "BaseConstraint.get_violation_error_message"
   },
-  "id": "ef9ebcae-da61-49a2-a836-29ca586f6ad8",
+  "id": "02300680-0ed1-488e-a525-12a82ff7094f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7023180+00:00"
+    "posted_at": "2026-11-09T23:31:54.1533150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a6ac91f9-bf77-448a-8507-5eae5049e7df",
+  "subject_id": "4c72c8cc-aa0b-4caa-8f84-c3522149c631",
   "subject_name": "django/db/models/constraints::BaseConstraint.get_violation_error_message",
   "tags": [
     "entity:method"

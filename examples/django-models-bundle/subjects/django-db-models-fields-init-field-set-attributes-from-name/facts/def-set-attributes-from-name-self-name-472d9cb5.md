@@ -1,6 +1,6 @@
 # Fact 472d9cb5
 
-Store id: 7d00125f-5302-404e-829f-0c750df1effa
+Store id: cf488257-6d12-46a4-a650-c8741c3b43b3
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_attributes_from_name(self, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3342100+00:00`
+- posted_at: `2026-11-09T23:31:56.4974540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 977,
     "symbol": "Field.set_attributes_from_name"
   },
-  "id": "7d00125f-5302-404e-829f-0c750df1effa",
+  "id": "cf488257-6d12-46a4-a650-c8741c3b43b3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3342100+00:00"
+    "posted_at": "2026-11-09T23:31:56.4974540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "330dec41-fed8-475d-b28c-2675255a93f5",
+  "subject_id": "35cd6b25-60d7-4ff6-9503-f42ce9bb09fb",
   "subject_name": "django/db/models/fields/__init__::Field.set_attributes_from_name",
   "tags": [
     "entity:method"

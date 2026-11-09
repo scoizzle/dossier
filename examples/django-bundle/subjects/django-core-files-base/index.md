@@ -1,14 +1,14 @@
 # django/core/files/base
 
-- Subject: django/core/files/base (id `686aaab1-1e1e-4592-936d-6f84be3d5d53`)
+- Subject: django/core/files/base (id `1fe53c64-0167-401d-a73f-d72e69b8b753`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 21 of 29
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1240 tokens
+- Facts shown: 29 of 29
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if not buffer_: # If this is the end of a \n or \r\n line, yield. if endswith_lf(line): yield line else: buffer_.append(line) elif endswith_lf(line): yield type(buffer_[0])().join(buffer_) buffer_ = [] [66d88145]
 - NB: If a particular file representation is in memory, subclasses should always return ``False`` -- there's no good reason to read from memory in chunks. """ return self.size > (chunk_size or self.DEFAULT_CHUNK_SIZE) [08dffdee]
@@ -32,6 +32,13 @@
 - def open(self, mode=None): self.seek(0) return self [9e5c0138]
 - def write(self, data): self.__dict__.pop("size", None) # Clear the computed size. return self.file.write(data) [c67a8a3c]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [4e8c0f4c] [f227321c] [ab9349c4] [e3299203] [7139138f] [75a73392] [ffde5616] [f9a6b5df]
+- [4e8c0f4c] def open(self, mode=None, *args, **kwargs): if not self.closed: self.seek(0) elif self.name and os.path.exists(self.name): self.file = open(self.name, mode or self.mode, *args, **kwargs) else: raise ValueError("The file cannot be reopened.") return self
+- [f227321c] class ContentFile(File): """ A File-like object that takes just raw content, rather than an actual file. """
+- [ab9349c4] class File(FileProxyMixin): DEFAULT_CHUNK_SIZE = 64 * 2**10
+- [e3299203] def endswith_cr(line): """Return True if line (a text or bytestring) ends with '\r'.""" return line.endswith("\r" if isinstance(line, str) else b"\r")
+- [7139138f] def endswith_lf(line): """Return True if line (a text or bytestring) ends with '\n'.""" return line.endswith("\n" if isinstance(line, str) else b"\n")
+- [75a73392] def equals_lf(line): """Return True if line (a text or bytestring) equals '\n'.""" return line == ("\n" if isinstance(line, str) else b"\n")
+- [ffde5616] from django.core.files.utils import FileProxyMixin from django.utils.functional import cached_property
+- [f9a6b5df] import os from io import BytesIO, StringIO, UnsupportedOperation

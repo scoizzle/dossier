@@ -1,14 +1,14 @@
 # django/core/exceptions
 
-- Subject: django/core/exceptions (id `aae8a5a2-bc23-4e43-9617-da12f06f18bb`)
+- Subject: django/core/exceptions (id `aa234d8a-86ef-487f-93a4-73d05f13e9bb`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 18 of 65
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2020 tokens
+- Facts shown: 64 of 65
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - elif isinstance(message, list): self.error_list = [] for message in message: # Normalize plain strings to instances of ValidationError. if not isinstance(message, ValidationError): message = ValidationError(message) if hasattr(message, "error_dict"): self.error_list.extend(sum(message.error_dict.values(), [])) else: self.error_list.extend(message.error_list) [87b9ebc8]
 - else: self.message = message self.code = code self.params = params self.error_list = [self] [2af34621]
@@ -29,6 +29,51 @@
 - pass [7655780f0d17b825-15]
 - pass [7655780f0d17b825-16]
 
-## Beyond the budget
+## All facts
 
-46 more facts did not fit in the budget: [7655780f0d17b825-17] [7655780f0d17b825-18] [7655780f0d17b825-19] [7655780f0d17b825-20] [7655780f0d17b825-21] [7655780f0d17b825-22] [7655780f0d17b825-23] [7655780f0d17b825-24] [7655780f0d17b825-25] [7655780f0d17b825-26] [7655780f0d17b825-27] [7655780f0d17b825-28] [7655780f0d17b825-29] [7655780f0d17b825-30] [7655780f0d17b825-31] [7655780f0d17b825-32] [7655780f0d17b825-33] [8b4936c0] [eb15b3b9] [c4a54f36] [5506f086] [4b5b1647] [dfb620cf] [e6daee66] [b0a0551f] [ca72cb2a] [768b2f0d] [110c4989] [0271b22d] [39f6ccc0] [066e478a] [beae1dd1] [424f2732] [e7274cf0] [943e8f5b] [b243d2d6] [8d68b19c] [3609bf68] [e320117d] [718e47bf] [8877a324] [16900f64] [0de287c6] [348102ad] [7c27c9fd099764a6] [375f25d0b2ee635c]
+- [7655780f0d17b825-17] pass
+- [7655780f0d17b825-18] pass
+- [7655780f0d17b825-19] pass
+- [7655780f0d17b825-20] pass
+- [7655780f0d17b825-21] pass
+- [7655780f0d17b825-22] pass
+- [7655780f0d17b825-23] pass
+- [7655780f0d17b825-24] pass
+- [7655780f0d17b825-25] pass
+- [7655780f0d17b825-26] pass
+- [7655780f0d17b825-27] pass
+- [7655780f0d17b825-28] pass
+- [7655780f0d17b825-29] pass
+- [7655780f0d17b825-30] pass
+- [7655780f0d17b825-31] pass
+- [7655780f0d17b825-32] pass
+- [7655780f0d17b825-33] pass
+- [8b4936c0] silent_variable_failure = True
+- [eb15b3b9] """ Global Django exception classes. """
+- [c4a54f36] NON_FIELD_ERRORS = "__all__"
+- [5506f086] class AppRegistryNotReady(Exception): """The django.apps registry is not populated yet"""
+- [4b5b1647] class BadRequest(Exception): """The request is malformed and cannot be processed."""
+- [dfb620cf] class DisallowedHost(SuspiciousOperation): """HTTP_HOST header contains invalid value"""
+- [e6daee66] class DisallowedRedirect(SuspiciousOperation): """Redirect was too long or scheme was not in allowed list."""
+- [b0a0551f] class EmptyResultSet(Exception): """A database query predicate is impossible."""
+- [ca72cb2a] class FieldDoesNotExist(Exception): """The requested model field does not exist"""
+- [768b2f0d] class FieldError(Exception): """Some kind of problem with a model field."""
+- [110c4989] class FieldFetchBlocked(FieldError): """On-demand fetching of a model field blocked."""
+- [0271b22d] class FullResultSet(Exception): """A database query predicate that matches everything."""
+- [39f6ccc0] class ImproperlyConfigured(Exception): """Django is somehow improperly configured"""
+- [066e478a] class MiddlewareNotUsed(Exception): """This middleware is not used in this server configuration"""
+- [beae1dd1] class MultipleObjectsReturned(Exception): """The query returned multiple objects when only one was expected."""
+- [424f2732] class ObjectDoesNotExist(Exception): """The requested object does not exist"""
+- [e7274cf0] class ObjectNotUpdated(Exception): """The updated object no longer exists."""
+- [943e8f5b] class PermissionDenied(Exception): """The user did not have permission to do that"""
+- [b243d2d6] class RequestAborted(Exception): """The request was closed before it was completed, or timed out."""
+- [8d68b19c] class RequestDataTooBig(SuspiciousOperation): """ The size of the request (excluding any file uploads) exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE. """
+- [3609bf68] class SuspiciousFileOperation(SuspiciousOperation): """A Suspicious filesystem operation was attempted"""
+- [e320117d] class SuspiciousMultipartForm(SuspiciousOperation): """Suspect MIME request in multipart form data"""
+- [718e47bf] class SuspiciousOperation(Exception): """The user did something suspicious"""
+- [8877a324] class SynchronousOnlyOperation(Exception): """The user tried to call a sync-only function from an async context."""
+- [16900f64] class TooManyFieldsSent(SuspiciousOperation): """ The number of fields in a GET or POST request exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS. """
+- [0de287c6] class ValidationError(Exception): """An error while validating data."""
+- [348102ad] class ViewDoesNotExist(Exception): """The requested view does not exist"""
+- [7c27c9fd099764a6] from django.utils.hashable import make_hashable
+- [375f25d0b2ee635c] import operator

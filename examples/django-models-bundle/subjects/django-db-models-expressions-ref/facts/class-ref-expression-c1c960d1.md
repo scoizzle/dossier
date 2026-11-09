@@ -1,6 +1,6 @@
 # Fact c1c960d1
 
-Store id: 475d81c9-6627-477f-88ff-65477ca44f5d
+Store id: 18e85f28-2983-43ee-923e-b1192b5aae9a
 
 ## Text
 
@@ -20,7 +20,7 @@ class Ref(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6491180+00:00`
+- posted_at: `2026-11-09T23:31:55.9098180+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1447,
     "symbol": "Ref"
   },
-  "id": "475d81c9-6627-477f-88ff-65477ca44f5d",
+  "id": "18e85f28-2983-43ee-923e-b1192b5aae9a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6491180+00:00"
+    "posted_at": "2026-11-09T23:31:55.9098180+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9be5e3e9-57ac-4bbf-bf5d-b6fce6a3d119",
+  "subject_id": "bd5c4c3c-4c58-4b69-a61c-23ff424bbaae",
   "subject_name": "django/db/models/expressions::Ref",
   "tags": [
     "entity:class"

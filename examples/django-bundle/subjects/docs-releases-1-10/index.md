@@ -1,14 +1,14 @@
 # docs/releases/1.10
 
-- Subject: docs/releases/1.10 (id `598c7333-1787-4493-a213-ef8235be9812`)
+- Subject: docs/releases/1.10 (id `67f84dad-a306-4cb1-b8a2-e84f9ffeec78`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 24 of 371
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 17375 tokens
+- Facts shown: 368 of 371
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> e.related_set.set([obj1, obj2, obj3]) [88f82b53]
 - class Meta: default_related_name = "bars" [ca89ad8e]
@@ -35,6 +35,349 @@
 - from django.contrib.auth import get_user_model [d7cd6e7b]
 - from django.contrib.auth.admin import UserAdmin as BaseUserAdmin from django.contrib.auth.models import User [743ad40a]
 
-## Beyond the budget
+## All facts
 
-344 more facts did not fit in the budget: [debca5a7] [d7c117e5] [4af926756c29efa6-39] [ee1bc7ce] [7c49ba95] [7df81ca3] [4b79b6173f2ab5cf-2] [ca4d27e5] [aed4c088] [b2016dd76d16652a-2] [c5035934054b63e9-2] [b5518fa8266a666d-2] [8b9d03b6ddeb8c95-2] [b083168edd9bdd51-2] [54332501d2707298-2] [305e6540] [e863eb01] [df5ed215] [4618f139] [df06b632] [ee7da26d] [66f4c027] [a309e804] [2d3a182e] [9eb1d26b] [7e74d5c7] [4403af6d] [24812a7c] [ab66b67d] [4f01a75f] [d4072a14] [d8d4e90b] [64c84e25] [d0611b4f] [252da9b2] [abc705fe] [379be0ee] [ea6cebcd] [8a0c5b11] [6b1d6a5f] [683c7be9] [454501e9] [3c97a7cd] [53dcee66] [2c164eb1] [efd1e91c] [b659e60c] [1c71420a] [dd0fec92] [2e899122] [7ecb7b24] [bb40f3e5] [25403292] [ad3b83aa] [02ede617] [136a3969] [9fa5b6a9] [c997c59c] [9cecf374] [2a11926a] [c64dfe00] [9cd33a69] [d24f412f] [d9c09520] [151e0704] [0c0698c3] [0c8d1bb9] [ec253257] [341b739c] [383e422a] [42034346] [f4b8c908] [2ec78f53] [222c88e5] [a222348c] [b5eeaf64] [f9601055] [53a8ad1d] [f8cc6803] [0b2a5bd2] [01752b6c] [4fccdd79] [4b58efcb] [36492b58] [7facc766] [1bffdf38] [f44d89f9] [5fec7054] [5beaa39a] [e3bbc114] [afa17aa8] [e86b51a1] [79012170] [e6e2df1e] [fc73e43d] [5f511d93] [1040946a] [487cdf04] [bee31fdb] [b1512cfd] [db4009e2] [b7c14e7e] [026924f7] [ed80ebb0] [7212f6c4] [1ce650d6] [d7d51133] [73e42490] [c80c756f] [9a49f3c0] [32585fbd] [9c608bdf] [726d51e2] [49fc258a] [2ee22470] [572704af] [688e912d] [e4762e67] [dcbcfffd] [4cb0cb81] [2c0da412] [4881a3ac] [37f11755] [8f5c5da5] [502e216e] [c236c92e] [2ca171f6] [31fef45f] [805fe819] [ac238283] [3b138133] [207cf3e4] [382db17c] [b2ad7aad] [73839a33] [d383213e] [c172505a] [23a7eb38] [adfea0cf] [27fd70c5] [96a6824d] [9457b530] [064762d0] [c4111a87] [e30a62da] [ad5300d9] [69e7dc8f] [cabb65dc] [fe3eb7ee] [fe133ee3] [39262c76] [611979f0] [2fa85a9a] [334717e2] [f54ffccd] [fcaa7ff7] [7a648a75] [11ea632f] [8edff7ab] [2c4f5d37] [ec872b65] [700f5b8a] [ebf5880a] [2ed4b074] [d43b3690] [d1f9e4dd] [87cb02ef] [eaec37c1] [b8ff0ba8] [f98d364c] [453cf25e] [b658a66d] [ad35f60e] [6623dd80] [1333d250] [3bddbfba] [9f455d4f] [c4d82ad9] [1c123df3] [8662d7f4] [a8e41df4] [0581b583] [651ee37a] [6d49d5c0] [e260f289] [b55e2d7e] [4f77439e] [41e53d6e] [f2e81451] [185be927] [a2b867a1] [d70f71a8] [66d5654f] [de3b9479] [9d411392] [33e9baf9] [11cbcfdc] [dd25c307] [a87e277b] [45ec9d73] [a77475e3] [af34c298] [d37369dc] [b8a10fcf] [a38cce19] [68c7381e] [beebe53f] [3797cb2e] [aebe783f] [739c86bd] [6332c4a4] [48b19945] [5e9480e1] [1e54a998] [17e27b6e] [1e11ea3f] [be38a24a] [68f85f73] [ecba374e] [4b0c3c03d427622c-2] [4b8b8da5] [d5492beb] [fa90bf9c] [a1797ab6] [073c0f01] [3fdd31e3] [eaf050be34acb41d-605] [eaf050be34acb41d-606] [eaf050be34acb41d-607] [eaf050be34acb41d-608] [eaf050be34acb41d-609] [eaf050be34acb41d-610] [c54b54cb0805732a-91] [d479d386] [a9f4c876] [2bd5af6ca1e8da6e] [9208af79aedaac2a] [0d7f305806da573d] [796fd654b8a44e4f] [92df77a9] [d562ea7e] [097c2f5a] [b262ce27] [3e41ca3e] [1fcc1e48] [f7a772dc] [0eabaf8d] [6ca43053] [9e4d7502] [40907bc2] [7a6cb469] [4755786d40c065cc] [4027f94d73d6defd] [750d176f] [2dffac79] [031c6647] [80c94c9939092225] [81d18ad396e1bfe0] [34a01019] [02bcacd7] [50bbec75] [93b61a67] [215a338e] [513211ea] [f93c4be2] [146ddd77] [db0e4e6ac0dada48] [c7dcc4c5] [123098bdb4f38b7b] [c4dd37f6] [dfaeb06a] [f9c38ca2] [ce9019d9] [ea9319ca] [f3a70b44] [522c19ce] [665d83bc] [80b17716] [39fea0b8] [54b069d2] [34301cf1] [632d9888fdac6ff8] [97088df6] [a803fc84] [3e0f4a6cb3ed25ec] [ed7f4c43] [81a1cd28cbb21208] [32cecf2752c82bab] [7e0dde20fe81851d] [7e0dde20fe81851d-2] [8b84e8a4] [357763c49cce3029] [2859e996] [bb2d13f9] [c1a52e66] [ae34cf4ae6f76a23] [5346149d] [75de9609] [31c96b5b] [c1b0723dfb7860d4] [29b64ef38af97ab3] [0dd2c0a470c7b7f4] [d91f508a] [980094e5817f4bed] [5b32493384882077] [01cc28d6] [87126a2d] [baad014b] [c92e1657] [9206ee6c] [2ee8bc49] [4f060c80] [1e3437da] [5ed44953] [b116053f] [7b2bfb76] [c19c4113] [acee33bb] [87ddf82f] [df7e22ad] [ad2a4f69] [e3bf17ab] [aff5ee5f] [9938b590] [b126d0c4] [08dca043] [d27a2f4cf2a5e2ef] [e2cd39f3] [78bebdb2] [e74f1d40] [e65c097c] [107e9312] [6794c359] [49aa3e42] [060e9b02] [4ae73b18] [6ee9708e] [742d08b4] [8363e64a] [78b3245d] [318aa83a] [90e6891d] [c8177948] [fd75ee6d]
+- [debca5a7] from django.contrib.auth.forms import UserCreationForm
+- [d7c117e5] from django.core.validators import validate_comma_separated_integer_list from django.db import models
+- [4af926756c29efa6-39] from django.db import models
+- [ee1bc7ce] from django.db.models import CharField from django.db.models.functions import Length
+- [7c49ba95] from django.db.models import Field from django.db.models.lookups import Exact
+- [7df81ca3] if request.user.is_authenticated is True: ...
+- [4b79b6173f2ab5cf-2] if request.user.is_authenticated: ... # Do something for logged-in users. else: ... # Do something for anonymous users.
+- [ca4d27e5] if request.user.is_authenticated: return sensitive_information
+- [aed4c088] models.CharField.register_lookup(Search) models.TextField.register_lookup(Search)
+- [b2016dd76d16652a-2] * Properties: ``aggregates`` and ``aggregate_select`` * Methods: ``add_aggregate``, ``set_aggregate_mask``, and ``append_aggregate_mask``.
+- [c5035934054b63e9-2] * ``ALLOWED_INCLUDE_ROOTS`` * ``TEMPLATE_CONTEXT_PROCESSORS`` * ``TEMPLATE_DEBUG`` * ``TEMPLATE_DIRS`` * ``TEMPLATE_LOADERS`` * ``TEMPLATE_STRING_IF_INVALID``
+- [b5518fa8266a666d-2] * ``django.shortcuts.render()`` * ``django.shortcuts.render_to_response()`` * ``django.template.loader.render_to_string()``
+- [8b9d03b6ddeb8c95-2] * ``django.shortcuts.render()`` * ``django.template.Context()`` * ``django.template.RequestContext()`` * ``django.template.response.TemplateResponse()``
+- [b083168edd9bdd51-2] * ``django.template.loader.get_template()`` * ``django.template.loader.select_template()`` * ``django.shortcuts.render()`` * ``django.shortcuts.render_to_response()``
+- [54332501d2707298-2] * ``get_field_by_name()`` * ``get_all_field_names()`` * ``get_fields_with_model()`` * ``get_concrete_fields_with_model()`` * ``get_m2m_with_model()`` * ``get_all_related_objects()`` * ``get_all_related_objects_with_model()`` * ``get_all_related_many_to_many_objects()`` * ``get_all_related_m2m_objects_with_model()``
+- [305e6540] LOGGING = { # ... "formatters": { "django.server": { "()": "django.utils.log.ServerFormatter", "format": "[%(server_time)s] %(message)s", } }, "handlers": { "django.server": { "level": "INFO", "class": "logging.StreamHandler", "formatter": "django.server", }, }, "loggers": { "django.server": { "handlers": ["django.server"], "level": "INFO", "propagate": False, } }, }
+- [e863eb01] * :attr:`~django.db.models.ForeignKey.related_query_name` now supports app label and class interpolation using the ``'%(app_label)s'`` and ``'%(class)s'`` strings.
+- [df5ed215] * :class:`~django.contrib.auth.backends.ModelBackend` and :class:`~django.contrib.auth.backends.RemoteUserBackend` now reject inactive users. This means that inactive users can't login and will be logged out if they are switched from ``is_active=True`` to ``False``. If you need the previous behavior, use the new :class:`~django.contrib.auth.backends.AllowAllUsersModelBackend` or :class:`~django.contrib.auth.backends.AllowAllUsersRemoteUserBackend` in :setting:`AUTHENTICATION_BACKENDS` instead.
+- [4618f139] * :class:`~django.core.validators.URLValidator` now limits the length of domain name labels to 63 characters and the total length of domain names to 253 characters per :rfc:`1034`.
+- [df06b632] * :djadmin:`loaddata` now raises a ``CommandError`` instead of showing a warning when the specified fixture file is not found.
+- [ee7da26d] * :djadmin:`makemigrations` now displays the path to the migration files that it generates.
+- [66f4c027] * :doc:`Template response APIs </ref/template-response>` enforce the use of :class:`dict` and backend-dependent template objects instead of :class:`~django.template.Context` and :class:`~django.template.Template` respectively.
+- [a309e804] * :func:`django.views.i18n.set_language` may now return a 204 status code for AJAX requests.
+- [2d3a182e] * :func:`~django.core.management.call_command` now returns the value returned from the ``command.handle()`` method.
+- [9eb1d26b] * :func:`~django.core.validators.int_list_validator` now accepts an optional ``allow_negative`` boolean parameter, defaulting to ``False``, to allow negative integers.
+- [7e74d5c7] * :func:`~django.views.i18n.set_language` now returns a 204 status code (No Content) for AJAX requests when there is no ``next`` parameter in ``POST`` or ``GET``.
+- [4403af6d] * :meth:`QuerySet.bulk_create() <django.db.models.query.QuerySet.bulk_create>` sets the primary key on objects when using PostgreSQL.
+- [24812a7c] * :meth:`QuerySet.in_bulk() <django.db.models.query.QuerySet.in_bulk>` may be called without any arguments to return all objects in the queryset.
+- [ab66b67d] * :meth:`Storage.save() <django.core.files.storage.Storage.save>` no longer replaces ``'\'`` with ``'/'``. This behavior is moved to :class:`~django.core.files.storage.FileSystemStorage` since this is a storage specific implementation detail. Any Windows user with a custom storage implementation that relies on this behavior will need to implement it in the custom storage's ``save()`` method.
+- [4f01a75f] * :ref:`Distance lookups <distance-lookups>` now accept expressions as the distance value parameter.
+- [d4072a14] * :setting:`DATA_UPLOAD_MAX_MEMORY_SIZE` limits the size that a request body may be. File uploads don't count toward this limit. * :setting:`DATA_UPLOAD_MAX_NUMBER_FIELDS` limits the number of GET/POST parameters that are parsed.
+- [d8d4e90b] * A proxy model may now inherit multiple proxy models that share a common non-abstract parent class.
+- [64c84e25] * A redundant ``transaction.atomic()`` call in ``QuerySet.update_or_create()`` is removed. This may affect query counts tested by ``TransactionTestCase.assertNumQueries()``.
+- [d0611b4f] * Accessing a deleted field on a model instance, e.g. after ``del obj.field``, reloads the field's value instead of raising ``AttributeError``.
+- [252da9b2] * Added "No date" and "Has date" choices for ``DateFieldListFilter`` if the field is nullable.
+- [abc705fe] * Added :class:`~django.db.models.BigAutoField` which acts much like an :class:`~django.db.models.AutoField` except that it is guaranteed to fit numbers from ``1`` to ``9223372036854775807``.
+- [379be0ee] * Added :class:`~django.db.models.functions.Extract` functions to extract datetime components as integers, such as year and hour.
+- [ea6cebcd] * Added :class:`~django.db.models.functions.Trunc` functions to truncate a date or datetime to a significant component. They enable queries like sales-per-day or sales-per-hour.
+- [8a0c5b11] * Added :class:`~django.http.HttpResponse` methods :meth:`~django.http.HttpResponse.readable` and :meth:`~django.http.HttpResponse.seekable` to make an instance a stream-like object and allow wrapping it with :class:`io.TextIOWrapper`.
+- [6b1d6a5f] * Added ``request.user`` to the debug view.
+- [683c7be9] * Added a warning to :djadmin:`dumpdata` if a proxy model is specified (which results in no output) without its concrete parent.
+- [454501e9] * Added database functions :class:`~django.contrib.gis.db.models.functions.IsValid` and :class:`~django.contrib.gis.db.models.functions.MakeValid`, as well as the :lookup:`isvalid` lookup, all for PostGIS. This allows filtering and repairing invalid geometries on the database side.
+- [3c97a7cd] * Added keyword arguments to the ``as_sql()`` methods of various expressions (``Func``, ``When``, ``Case``, and ``OrderBy``) to allow database backends to customize them without mutating ``self``, which isn't safe when using different database backends. See the ``arg_joiner`` and ``**extra_context`` parameters of :meth:`Func.as_sql() <django.db.models.Func.as_sql>` for an example.
+- [53dcee66] * Added raster support for all :doc:`spatial lookups </ref/contrib/gis/geoquerysets>`.
+- [2c164eb1] * Added relative path support for string arguments of the :ttag:`extends` and :ttag:`include` template tags.
+- [efd1e91c] * Added support for :ref:`non-atomic migrations <non-atomic-migrations>` by setting the ``atomic`` attribute on a ``Migration``.
+- [b659e60c] * Added support for instantiating empty GEOS geometries.
+- [1c71420a] * Added support for serialization of ``enum.Enum`` objects.
+- [dd0fec92] * Added support for the :class:`~django.contrib.gis.db.models.functions.Difference`, :class:`~django.contrib.gis.db.models.functions.Intersection`, and :class:`~django.contrib.gis.db.models.functions.SymDifference` functions on MySQL.
+- [2e899122] * Added support for the :class:`~django.contrib.gis.db.models.MakeLine` aggregate and :class:`~django.contrib.gis.db.models.functions.GeoHash` function on SpatiaLite.
+- [7ecb7b24] * Added support for the :ref:`Argon2 password hash <argon2_usage>`. It's recommended over PBKDF2, however, it's not the default as it requires a third-party library.
+- [bb40f3e5] * Added the :attr:`HttpRequest.content_type <django.http.HttpRequest.content_type>` and :attr:`~django.http.HttpRequest.content_params` attributes which are parsed from the ``CONTENT_TYPE`` header.
+- [25403292] * Added the :attr:`LineString.closed <django.contrib.gis.geos.LineString.closed>` and :attr:`MultiLineString.closed <django.contrib.gis.geos.MultiLineString.closed>` properties.
+- [ad3b83aa] * Added the :class:`~django.db.models.functions.Cast` database function.
+- [02ede617] * Added the :meth:`GDALBand.statistics() <django.contrib.gis.gdal.GDALBand.statistics>` method and :attr:`~django.contrib.gis.gdal.GDALBand.mean` and :attr:`~django.contrib.gis.gdal.GDALBand.std` attributes.
+- [136a3969] * Added the :meth:`GEOSGeometry.covers() <django.contrib.gis.geos.GEOSGeometry.covers>` binary predicate.
+- [9fa5b6a9] * Added the ``autoescape`` option to the :class:`~django.template.backends.django.DjangoTemplates` backend and the :class:`~django.template.Engine` class.
+- [c997c59c] * Added the ``elidable`` argument to the :class:`~django.db.migrations.operations.RunSQL` and :class:`~django.db.migrations.operations.RunPython` operations to allow them to be removed when squashing migrations.
+- [9cecf374] * Added the ``is`` and ``is not`` comparison operators to the :ttag:`if` tag.
+- [2a11926a] * Added the optional ``backend`` argument to :func:`django.contrib.auth.login` to allow using it without credentials.
+- [c64dfe00] * All inline JavaScript is removed so you can enable the ``Content-Security-Policy`` HTTP header if you wish.
+- [9cd33a69] * Allowed :tfilter:`dictsort` to order a list of lists by an element at a specified index.
+- [d24f412f] * Allowed overriding model fields inherited from abstract base classes.
+- [d9c09520] * An addition in :func:`django.setup` allows URL resolving that happens outside of the request/response cycle (e.g. in management commands and standalone scripts) to take :setting:`FORCE_SCRIPT_NAME` into account when it is set.
+- [151e0704] * Built-in management commands now use indexing of keys in ``options``, e.g. ``options['verbosity']``, instead of ``options.get()`` and no longer perform any type coercion. This could be a problem if you're calling commands using ``Command.execute()`` (which bypasses the argument parser that sets a default value) instead of :func:`~django.core.management.call_command`. Instead of calling ``Command.execute()``, pass the command object as the first argument to ``call_command()``.
+- [0c0698c3] * By setting the new ``prefix_default_language`` parameter for :func:`~django.conf.urls.i18n.i18n_patterns` to ``False``, you can allow accessing the default language without a URL prefix.
+- [0c8d1bb9] * CSRF token values are now required to be strings of 64 alphanumerics; values of 32 alphanumerics, as set by older versions of Django by default, are automatically replaced by strings of 64 characters. Other values are considered invalid. This should only affect developers or users who replace these tokens.
+- [ec253257] * Django template objects returned by :func:`~django.template.loader.get_template` and :func:`~django.template.loader.select_template` no longer accept a :class:`~django.template.Context` in their :meth:`~django.template.backends.base.Template.render` method.
+- [341b739c] * For convenience, :class:`~django.contrib.postgres.fields.HStoreField` now casts its keys and values to strings.
+- [383e422a] * For sites running on a subpath, the default :attr:`URL for the "View site" link <django.contrib.admin.AdminSite.site_url>` at the top of each admin page will now point to ``request.META['SCRIPT_NAME']`` if set, instead of ``/``.
+- [42034346] * Form and widget ``Media`` is now served using :mod:`django.contrib.staticfiles` if installed.
+- [f4b8c908] * GIS's ``AreaField`` uses an unspecified underlying numeric type that could in practice be any numeric Python type. ``decimal.Decimal`` values retrieved from the database are now converted to ``float`` to make it easier to combine them with values used by the GIS libraries.
+- [2ec78f53] * If ``django.contrib.staticfiles`` is installed, the :ttag:`static` template tag uses the ``staticfiles`` storage to construct the URL rather than simply joining the value with ``STATIC_ROOT``. The new approach encodes the URL, which could be backwards-incompatible in cases such as including a fragment in a path, e.g. ``{% static 'img.svg#fragment' %}``, since the ``#`` is encoded as ``%23``. To adapt, move the fragment outside the template tag: ``{% static 'img.svg' %}#fragment``.
+- [222c88e5] * If a user doesn't have the add permission, the ``object-tools`` block on a model's changelist will now be rendered (without the add button). This makes it easier to add custom tools in this case.
+- [a222348c] * If the database supports it, backends can set ``DatabaseFeatures.can_return_ids_from_bulk_insert=True`` and implement ``DatabaseOperations.fetch_returned_insert_ids()`` to set primary keys on objects created using ``QuerySet.bulk_create()``.
+- [b5eeaf64] * If you override ``is_authenticated()`` or ``is_anonymous()`` in a custom user model, you must convert them to attributes or properties as described in :ref:`the deprecation note <user-is-auth-anon-deprecation>`.
+- [f9601055] * If you subclass ``AbstractBaseUser`` and override ``clean()``, be sure it calls ``super()``. :meth:`.AbstractBaseUser.normalize_username` is called in a new :meth:`.AbstractBaseUser.clean` method.
+- [53a8ad1d] * Importing from the ``django.core.urlresolvers`` module is deprecated in favor of its new location, :mod:`django.urls`.
+- [f8cc6803] * In light of the previous change, the test client's :meth:`~django.test.Client.login` method no longer always rejects inactive users but instead delegates this decision to the authentication backend. :meth:`~django.test.Client.force_login` also delegates the decision to the authentication backend, so if you're using the default backends, you need to use an active user.
+- [0b2a5bd2] * In multi-table inheritance, implicit promotion of a ``OneToOneField`` to a ``parent_link`` is deprecated. Add ``parent_link=True`` to such fields.
+- [01752b6c] * In order to enable temporal subtraction you must set the ``supports_temporal_subtraction`` database feature flag to ``True`` and implement the ``DatabaseOperations.subtract_temporals()`` method. This method should return the SQL and parameters required to compute the difference in microseconds between the ``lhs`` and ``rhs`` arguments in the datatype used to store :class:`~django.db.models.DurationField`.
+- [4fccdd79] * Instead of directly accessing the ``LogEntry.change_message`` attribute, it's now better to call the ``LogEntry.get_change_message()`` method which will provide the message in the current language.
+- [4b58efcb] * Middleware classes are now initialized when the server starts rather than during the first request.
+- [36492b58] * Objects with a ``close()`` method such as files and generators passed to :class:`~django.http.HttpResponse` are now closed immediately instead of when the WSGI server calls ``close()`` on the response.
+- [7facc766] * Old-style middleware that uses ``settings.MIDDLEWARE_CLASSES`` are deprecated. :ref:`Adapt old, custom middleware <upgrading-middleware>` and use the new :setting:`MIDDLEWARE` setting.
+- [1bffdf38] * On Oracle/GIS, the :class:`~django.contrib.gis.db.models.functions.Area` aggregate function now returns a ``float`` instead of ``decimal.Decimal``. (It's still wrapped in a measure of square meters.)
+- [f44d89f9] * Private :class:`~django.db.models.FileField` methods ``get_directory_name()`` and ``get_filename()`` are no longer called (and are now deprecated) which is a backwards incompatible change for users overriding those methods on custom fields. To adapt such code, override ``FileField.generate_filename()`` or :meth:`Storage.generate_filename() <django.core.files.storage.Storage.generate_filename>` instead. It might be possible to use :attr:`~django.db.models.FileField.upload_to` also.
+- [5fec7054] * Private API ``django.forms.models.model_to_dict()`` returns a queryset rather than a list of primary keys for ``ManyToManyField``\s.
+- [5beaa39a] * Private ``FileField`` methods ``get_directory_name()`` and ``get_filename()`` are deprecated in favor of performing this work in :meth:`Storage.generate_filename() <django.core.files.storage.Storage.generate_filename>`.
+- [e3bbc114] * Private attribute ``django.db.models.Field.related`` is removed.
+- [afa17aa8] * Private expressions ``django.db.models.expressions.Date`` and ``DateTime`` are removed. The new :class:`~django.db.models.functions.Trunc` expressions provide the same functionality.
+- [e86b51a1] * Required form fields now have the ``required`` HTML attribute. Set the :attr:`Form.use_required_attribute <django.forms.Form.use_required_attribute>` attribute to ``False`` to disable it. You could also add the ``novalidate`` attribute to ``<form>`` if you don't want browser validation. To disable the ``required`` attribute on custom widgets, override the :meth:`Widget.use_required_attribute() <django.forms.Widget.use_required_attribute>` method.
+- [79012170] * Required form fields now have the ``required`` HTML attribute. Set the new :attr:`Form.use_required_attribute <django.forms.Form.use_required_attribute>` attribute to ``False`` to disable it. The ``required`` attribute isn't included on forms of formsets because the browser validation may not be correct when adding and deleting formsets.
+- [e6e2df1e] * Reverse foreign keys from proxy models are now propagated to their concrete class. The reverse relation attached by a :class:`~django.db.models.ForeignKey` pointing to a proxy model is now accessible as a descriptor on the proxied model class and may be referenced in queryset filtering.
+- [fc73e43d] * Selected objects for fields in ``ModelAdmin.raw_id_fields`` now have a link to object's change form.
+- [5f511d93] * Session verification is enabled regardless of whether or not ``'django.contrib.auth.middleware.SessionAuthenticationMiddleware'`` is in ``MIDDLEWARE_CLASSES``. ``SessionAuthenticationMiddleware`` no longer has any purpose and can be removed from ``MIDDLEWARE_CLASSES``. It's kept as a stub until Django 2.0 as a courtesy for users who don't read this note.
+- [1040946a] * Storage backends now present a timezone-aware API with new methods :meth:`~django.core.files.storage.Storage.get_accessed_time`, :meth:`~django.core.files.storage.Storage.get_created_time`, and :meth:`~django.core.files.storage.Storage.get_modified_time`. They return a timezone-aware ``datetime`` if :setting:`USE_TZ` is ``True`` and a naive ``datetime`` in the local timezone otherwise.
+- [487cdf04] * Support for SpatiaLite < 3.0 and GEOS < 3.3 is dropped.
+- [bee31fdb] * Support for ``optparse`` is dropped for custom management commands.
+- [b1512cfd] * Support for ``skip_validation`` in ``BaseCommand.execute(**options)`` is removed. Use ``skip_checks`` (added in Django 1.7) instead.
+- [db4009e2] * Support for calling a ``SQLCompiler`` directly as an alias for calling its ``quote_name_unless_alias`` method is removed.
+- [b7c14e7e] * Support for string ``view`` arguments to ``url()`` is removed.
+- [026924f7] * Support for the ``=`` comparison operator in the ``if`` template tag is removed.
+- [ed80ebb0] * Support for the ``prefix`` argument to ``django.conf.urls.i18n.i18n_patterns()`` is removed.
+- [7212f6c4] * Support for the legacy ``%(<foo>)s`` syntax in ``ModelFormMixin.success_url`` is removed.
+- [1ce650d6] * Support for the old signature of ``allow_migrate`` is removed.
+- [d7d51133] * Support for the syntax of ``{% cycle %}`` that uses comma-separated arguments is removed.
+- [73e42490] * Temporal data subtraction was unified on all backends.
+- [c80c756f] * Tests and test cases can be :ref:`marked with tags <topics-tagging-tests>` and run selectively with the new :option:`test --tag` and :option:`test --exclude-tag` options.
+- [9a49f3c0] * Tests that violate deferrable database constraints will now error when run on a database that supports deferrable constraints.
+- [32585fbd] * The :attr:`~django.db.models.Func.arity` class attribute is added to :class:`~django.db.models.Func`. This attribute can be used to set the number of arguments the function accepts.
+- [9c608bdf] * The :class:`~django.contrib.admin.models.LogEntry` model now stores change messages in a JSON structure so that the message can be dynamically translated using the current active language. A new ``LogEntry.get_change_message()`` method is now the preferred way of retrieving the change message.
+- [726d51e2] * The :class:`~django.contrib.sites.models.Site` model now supports :ref:`natural keys <topics-serialization-natural-keys>`.
+- [49fc258a] * The :class:`~django.views.generic.base.View` class can now be imported from ``django.views``.
+- [2ee22470] * The :class:`~django.views.i18n.JavaScriptCatalog` and :class:`~django.views.i18n.JSONCatalog` class-based views supersede the deprecated ``javascript_catalog()`` and ``json_catalog()`` function-based views. The new views are almost equivalent to the old ones except that by default the new views collect all JavaScript strings in the ``djangojs`` translation domain from all installed apps rather than only the JavaScript strings from :setting:`LOCALE_PATHS`.
+- [572704af] * The :djadmin:`clearsessions` management command now removes file-based sessions.
+- [688e912d] * The :djadmin:`inspectdb` command lets you choose what tables should be inspected by specifying their names as arguments.
+- [e4762e67] * The :djadmin:`shell` command supports tab completion on systems using ``libedit``, e.g. macOS.
+- [dcbcfffd] * The :doc:`GeoJSON serializer </ref/contrib/gis/serializers>` now outputs the primary key of objects in the ``properties`` dictionary if specific fields aren't specified.
+- [4cb0cb81] * The :func:`~django.conf.urls.i18n.i18n_patterns` helper function can now be used in a root URLConf specified using :attr:`request.urlconf <django.http.HttpRequest.urlconf>`.
+- [2c0da412] * The :func:`~django.db.models.prefetch_related_objects` function is now a public API.
+- [4881a3ac] * The :func:`~django.db.models.signals.pre_migrate` and :func:`~django.db.models.signals.post_migrate` signals now dispatch their migration ``plan`` and ``apps``.
+- [37f11755] * The :func:`~django.template.context_processors.debug` context processor contains queries for all database aliases instead of only the default alias.
+- [8f5c5da5] * The :option:`shell --interface` option now accepts ``python`` to force use of the "plain" Python interpreter.
+- [502e216e] * The :ttag:`static` template tag now uses ``django.contrib.staticfiles`` if it's in ``INSTALLED_APPS``. This is especially useful for third-party apps which can now always use ``{% load static %}`` (instead of ``{% load staticfiles %}`` or ``{% load static from staticfiles %}``) and not worry about whether or not the ``staticfiles`` app is installed.
+- [c236c92e] * The WSGI handler no longer removes content of responses from ``HEAD`` requests or responses with a ``status_code`` of 100-199, 204, or 304. Most web servers already implement this behavior. Responses retrieved using the Django test client continue to have these "response fixes" applied.
+- [2ca171f6] * The ``--list`` option of the ``migrate`` management command is removed.
+- [31fef45f] * The ``<input>`` tag rendered by :class:`~django.forms.CharField` now includes a ``minlength`` attribute if the field has a ``min_length``.
+- [805fe819] * The ``LOGOUT_URL`` setting is removed as Django hasn't made use of it since pre-1.0. If you use it in your project, you can add it to your project's settings. The default value was ``'/accounts/logout/'``.
+- [ac238283] * The ``Model._deferred`` attribute is removed as dynamic model classes when using ``QuerySet.defer()`` and ``only()`` is removed.
+- [3b138133] * The ``_base_manager`` and ``_default_manager`` attributes are removed from model instances. They remain accessible on the model class.
+- [207cf3e4] * The ``add_postgis_srs()`` backwards compatibility alias for ``django.contrib.gis.utils.add_srs_entry()`` is removed.
+- [382db17c] * The ``base_field`` attribute of :class:`~django.contrib.postgres.fields.RangeField` is now a type of field, not an instance of a field. If you have created a custom subclass of :class:`~django.contrib.postgres.fields.RangeField`, you should change the ``base_field`` attribute.
+- [b2ad7aad] * The ``cascaded_union`` property of :class:`~django.contrib.gis.geos.MultiPolygon` is deprecated in favor of the :attr:`~django.contrib.gis.geos.GEOSGeometry.unary_union` property.
+- [73839a33] * The ``current_app`` parameter for the following function and classes is removed:
+- [d383213e] * The ``cycle`` and ``firstof`` template tags are removed from the ``future`` template tag library.
+- [c172505a] * The ``dictionary`` and ``context_instance`` parameters for the following functions are removed:
+- [23a7eb38] * The ``dirs`` parameter for the following functions is removed:
+- [adfea0cf] * The ``django.contrib.auth.views.logout()`` view sends "no-cache" headers to prevent an issue where Safari caches redirects and prevents a user from being able to log out.
+- [27fd70c5] * The ``django.contrib.gis.utils.precision_wkt()`` function is deprecated in favor of :class:`~django.contrib.gis.geos.WKTWriter`.
+- [96a6824d] * The ``django.core.serializers.json.DjangoJSONEncoder`` now knows how to serialize lazy strings, typically used for translatable content.
+- [9457b530] * The ``error_message`` argument of ``django.forms.RegexField`` is removed.
+- [064762d0] * The ``get_coords()`` and ``set_coords()`` methods of :class:`~django.contrib.gis.geos.Point` are deprecated in favor of the ``tuple`` property.
+- [c4111a87] * The ``get_srid()`` and ``set_srid()`` methods of :class:`~django.contrib.gis.geos.GEOSGeometry` are deprecated in favor of the :attr:`~django.contrib.gis.geos.GEOSGeometry.srid` property.
+- [e30a62da] * The ``get_x()``, ``set_x()``, ``get_y()``, ``set_y()``, ``get_z()``, and ``set_z()`` methods of :class:`~django.contrib.gis.geos.Point` are deprecated in favor of the ``x``, ``y``, and ``z`` properties.
+- [ad5300d9] * The ``is_admin_site`` argument to ``django.contrib.auth.views.password_reset()`` is removed.
+- [69e7dc8f] * The ``javascript_catalog()`` and ``json_catalog()`` views are deprecated in favor of class-based views :class:`~django.views.i18n.JavaScriptCatalog` and :class:`~django.views.i18n.JSONCatalog`.
+- [cabb65dc] * The ``makemigrations --exit`` option is deprecated in favor of the :option:`makemigrations --check` option.
+- [fe3eb7ee] * The ``migrate`` and ``makemigrations`` commands now :ref:`check for a consistent migration history <migration-history-consistency>`. If they find some unapplied dependencies of an applied migration, ``InconsistentMigrationHistory`` is raised.
+- [fe133ee3] * The ``original_content_type_id`` attribute on ``django.contrib.admin.helpers.InlineAdminForm`` is removed.
+- [39262c76] * The ``remove_tags()`` and ``strip_entities()`` functions in ``django.utils.html`` is removed.
+- [611979f0] * The ``removetags`` template filter is removed.
+- [2fa85a9a] * The ``repr()`` of a ``QuerySet`` is wrapped in ``<QuerySet >`` to disambiguate it from a plain list when debugging.
+- [334717e2] * The ``shell --plain`` option is deprecated in favor of ``-i python`` or ``--interface python``.
+- [f54ffccd] * The ``ssi`` template tag is removed.
+- [fcaa7ff7] * The ``unordered_list`` filter no longer supports old style lists.
+- [7a648a75] * The ability to :func:`~django.urls.reverse` URLs using a dotted Python path is removed.
+- [11ea632f] * The ability to replicate input data on the :meth:`GDALBand.data() <django.contrib.gis.gdal.GDALBand.data>` method was added. Band data can now be updated with repeated values efficiently.
+- [8edff7ab] * The ability to specify ``ContentType.name`` when creating a content type instance is removed.
+- [2c4f5d37] * The ability to use a dotted Python path for the ``LOGIN_URL`` and ``LOGIN_REDIRECT_URL`` settings is removed.
+- [ec872b65] * The backward compatible shim to rename ``django.forms.Form._has_changed()`` to ``has_changed()`` is removed.
+- [700f5b8a] * The backwards compatibility alias ``django.template.loader.BaseLoader`` is removed.
+- [ebf5880a] * The backwards compatibility shim to allow ``FormMixin.get_form()`` to be defined with no default value for its ``form_class`` argument is removed.
+- [2ed4b074] * The backwards compatibility shims to allow ``Storage.get_available_name()`` and ``Storage.save()`` to be defined without a ``max_length`` argument are removed.
+- [d43b3690] * The class ``django.core.management.NoArgsCommand`` is removed.
+- [d1f9e4dd] * The default :class:`~django.contrib.gis.geos.GEOSGeometry` representation (WKT output) is trimmed by default. That is, instead of ``POINT (23.0000000000000000 5.5000000000000000)``, you'll get ``POINT (23 5.5)``.
+- [87cb02ef] * The default :setting:`CSRF_FAILURE_VIEW`, ``views.csrf.csrf_failure()`` now accepts an optional ``template_name`` parameter, defaulting to ``'403_csrf.html'``, to control the template used to render the page.
+- [eaec37c1] * The default error views now raise ``TemplateDoesNotExist`` if a nonexistent ``template_name`` is specified.
+- [b8ff0ba8] * The default iteration count for the PBKDF2 password hasher has been increased by 25%. This backwards compatible change will not affect users who have subclassed ``django.contrib.auth.hashers.PBKDF2PasswordHasher`` to change the default value.
+- [f98d364c] * The file-based cache backend now uses the highest pickling protocol.
+- [453cf25e] * The following methods and properties of ``django.db.sql.query.Query`` are removed:
+- [b658a66d] * The following private APIs are removed from :class:`django.db.models.options.Options` (``Model._meta``):
+- [ad35f60e] * The following settings are removed, and you must upgrade to the :setting:`TEMPLATES` setting:
+- [6623dd80] * The jQuery library embedded in the admin is upgraded from version 2.1.4 to 2.2.3.
+- [1333d250] * The new :attr:`BaseCommand.requires_migrations_checks <django.core.management.BaseCommand.requires_migrations_checks>` attribute may be set to ``True`` if you want your command to print a warning, like :djadmin:`runserver` does, if the set of migrations on disk don't match the migrations in the database.
+- [3bddbfba] * The new :attr:`GEOSGeometry.unary_union <django.contrib.gis.geos.GEOSGeometry.unary_union>` property computes the union of all the elements of this geometry.
+- [9f455d4f] * The new :attr:`InlineModelAdmin.classes <django.contrib.admin.InlineModelAdmin.classes>` attribute allows specifying classes on inline fieldsets. Inlines with a ``collapse`` class will be initially collapsed and their header will have a small "show" link.
+- [c4d82ad9] * The new :attr:`Meta.base_manager_name <django.db.models.Options.base_manager_name>` and :attr:`Meta.default_manager_name <django.db.models.Options.default_manager_name>` options allow controlling the :attr:`~django.db.models.Model._base_manager` and :attr:`~django.db.models.Model._default_manager`, respectively.
+- [1c123df3] * The new :attr:`~django.contrib.gis.geos.WKTWriter.trim` and :attr:`~django.contrib.gis.geos.WKTWriter.precision` properties of :class:`~django.contrib.gis.geos.WKTWriter` allow controlling output of the fractional part of the coordinates in WKT.
+- [8662d7f4] * The new :class:`~django.contrib.auth.backends.AllowAllUsersModelBackend` and :class:`~django.contrib.auth.backends.AllowAllUsersRemoteUserBackend` ignore the value of ``User.is_active``, while :class:`~django.contrib.auth.backends.ModelBackend` and :class:`~django.contrib.auth.backends.RemoteUserBackend` now reject inactive users.
+- [a8e41df4] * The new :meth:`Field.rel_db_type() <django.db.models.Field.rel_db_type>` method returns the database column data type for fields such as ``ForeignKey`` and ``OneToOneField`` that point to another field.
+- [0581b583] * The new :meth:`Storage.generate_filename() <django.core.files.storage.Storage.generate_filename>` method makes it easier to implement custom storages that don't use the ``os.path`` calls previously in :class:`~django.db.models.FileField`.
+- [651ee37a] * The new :option:`check --fail-level` option allows specifying the message level that will cause the command to exit with a non-zero status.
+- [6d49d5c0] * The new :option:`makemigrations --check` option makes the command exit with a non-zero status when model changes without migrations are detected.
+- [e260f289] * The new :option:`shell --command` option lets you run a command as Django and exit, instead of opening the interactive shell.
+- [b55e2d7e] * The new :setting:`LOGOUT_REDIRECT_URL` setting controls the redirect of the ``django.contrib.auth.views.logout()`` view, if the view doesn't get a ``next_page`` argument.
+- [4f77439e] * The new ``redirect_authenticated_user`` parameter for the ``django.contrib.auth.views.login()`` view allows redirecting authenticated users visiting the login page.
+- [41e53d6e] * The parser for ``request.COOKIES`` is simplified to better match the behavior of browsers. ``request.COOKIES`` may now contain cookies that are invalid according to :rfc:`6265` but are possible to set via ``document.cookie``.
+- [f2e81451] * The private API ``Widget._format_value()`` is made public and renamed to :meth:`~django.forms.Widget.format_value`. The old name will work through a deprecation period.
+- [185be927] * The private attribute ``virtual_fields`` of ``Model._meta`` is deprecated in favor of ``private_fields``.
+- [a2b867a1] * The private keyword arguments ``virtual_only`` in ``Field.contribute_to_class()`` and ``virtual`` in ``Model._meta.add_field()`` are deprecated in favor of ``private_only`` and ``private``, respectively.
+- [d70f71a8] * The subject of mail sent by ``AdminEmailHandler`` is no longer truncated at 989 characters. If you were counting on a limited length, truncate the subject yourself.
+- [66d5654f] * The success message that appears after adding or editing an object now contains a link to the object's change form.
+- [de3b9479] * The template ``Context.has_key()`` method is deprecated in favor of ``in``.
+- [9d411392] * The unused ``choices`` keyword argument of the ``Select`` and ``SelectMultiple`` widgets' ``render()`` method is removed. The ``choices`` argument of the ``render_options()`` method is also removed, making ``selected_choices`` the first argument.
+- [33e9baf9] * The warning that :class:`~django.core.signing.Signer` issued when given an invalid separator is now a ``ValueError``.
+- [11cbcfdc] * To assist with testing, :func:`~django.core.management.call_command` now accepts a command object as the first argument.
+- [dd25c307] * To better catch bugs, :class:`~django.test.TestCase` now checks deferrable database constraints at the end of each test.
+- [a87e277b] * To protect against `BREACH`_ attacks, the CSRF protection mechanism now changes the form token value on every request (while keeping an invariant secret which can be used to validate the different tokens).
+- [45ec9d73] * Using an incorrect count of unpacked values in the ``for`` template tag raises an exception rather than failing silently.
+- [a77475e3] * When ``USE_L10N`` is ``True``, localization is now applied for the :tfilter:`date` and :tfilter:`time` filters when no format string is specified. The ``DATE_FORMAT`` and ``TIME_FORMAT`` specifiers from the active locale are used instead of the settings of the same name.
+- [af34c298] * When using :attr:`ModelAdmin.save_as=True <django.contrib.admin.ModelAdmin.save_as>`, the "Save as new" button now redirects to the change view for the new object instead of to the model's changelist. If you need the previous behavior, set the new :attr:`ModelAdmin.save_as_continue <django.contrib.admin.ModelAdmin.save_as_continue>` attribute to ``False``.
+- [d37369dc] * You can :ref:`more easily customize <customize-staticfiles-ignore-patterns>` the ``collectstatic --ignore`` option with a custom ``AppConfig``.
+- [b8a10fcf] * You can now login and use sessions with the test client even if :mod:`django.contrib.sessions` is not in :setting:`INSTALLED_APPS`.
+- [a38cce19] * ``"django.contrib.auth.hashers.SHA1PasswordHasher"`` * ``"django.contrib.auth.hashers.MD5PasswordHasher"`` * ``"django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher"`` * ``"django.contrib.auth.hashers.UnsaltedMD5PasswordHasher"`` * ``"django.contrib.auth.hashers.CryptPasswordHasher"``
+- [68c7381e] * ``GeoQuerySet`` aggregate methods ``collect()``, ``extent()``, ``extent3d()``, ``make_line()``, and ``unionagg()`` are removed.
+- [beebe53f] * ``Model.__init__()`` now receives ``django.db.models.DEFERRED`` as the value of deferred fields.
+- [3797cb2e] * ``Model.__init__()`` now sets values of virtual fields from its keyword arguments.
+- [aebe783f] * ``SimpleTestCase.urls`` is removed.
+- [739c86bd] * ``django.conf.urls.patterns()`` is removed.
+- [6332c4a4] * ``django.contrib.gis.db.models.sql.aggregates`` module is removed.
+- [48b19945] * ``django.core.context_processors`` module is removed.
+- [5e9480e1] * ``django.db.models.field.subclassing.SubfieldBase`` is removed.
+- [1e54a998] * ``django.db.models.sql.aggregates`` module is removed.
+- [17e27b6e] * ``django.template.resolve_variable`` is removed.
+- [1e11ea3f] * ``django.utils.checksums`` is removed.
+- [be38a24a] * ``django.utils.functional.allow_lazy()`` is deprecated in favor of the new :func:`~django.utils.functional.keep_lazy` function which can be used with a more natural decorator syntax.
+- [68f85f73] * ``utils.version.get_version()`` returns :pep:`440` compliant release candidate versions (e.g. '1.10rc1' instead of '1.10c1').
+- [ecba374e] *August 1, 2016*
+- [4b0c3c03d427622c-2] .. _BREACH: https://www.breachattack.com/
+- [4b8b8da5] .. _backwards-incompatible-1.10:
+- [d5492beb] .. _deprecated-features-1.10:
+- [fa90bf9c] .. _removed-features-1.10:
+- [a1797ab6] .. _search-lookup-replacement:
+- [073c0f01] .. _user-is-auth-anon-deprecation:
+- [3fdd31e3] .. _whats-new-1.10:
+- [eaf050be34acb41d-605] .. code-block:: pycon
+- [eaf050be34acb41d-606] .. code-block:: pycon
+- [eaf050be34acb41d-607] .. code-block:: pycon
+- [eaf050be34acb41d-608] .. code-block:: pycon
+- [eaf050be34acb41d-609] .. code-block:: pycon
+- [eaf050be34acb41d-610] .. code-block:: pycon
+- [c54b54cb0805732a-91] .. warning::
+- [d479d386] :attr:`AbstractUser.username <django.contrib.auth.models.User.username>` ``max_length`` increased to 150 --------------------------------------------------------------------------------------------------------
+- [a9f4c876] :doc:`A new style of middleware is introduced </topics/http/middleware>` to solve the lack of strict request/response layering of the old-style of middleware described in `DEP 0005 <https://github.com/django/deps/blob/main/final/0005-improved-middleware.rst>`_. You'll need to :ref:`adapt old, custom middleware <upgrading-middleware>` and switch from the ``MIDDLEWARE_CLASSES`` setting to the new :setting:`MIDDLEWARE` setting to take advantage of the improvements.
+- [2bd5af6ca1e8da6e] :mod:`django.contrib.admin` ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [9208af79aedaac2a] :mod:`django.contrib.auth` ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [0d7f305806da573d] :mod:`django.contrib.gis` -------------------------
+- [796fd654b8a44e4f] :mod:`django.contrib.postgres` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [92df77a9] :mod:`django.contrib.sessions` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [d562ea7e] :mod:`django.contrib.sites` ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [097c2f5a] :mod:`django.contrib.staticfiles` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [b262ce27] ========================= Django 1.10 release notes =========================
+- [3e41ca3e] A migration for :attr:`django.contrib.auth.models.User.username` is included. If you have a custom user model inheriting from ``AbstractUser``, you'll need to generate and apply a database migration for your user model.
+- [1fcc1e48] Applications that receive unusually large form posts may need to tune these settings.
+- [f7a772dc] Apps registry is no longer auto-populated when unpickling models outside of Django ----------------------------------------------------------------------------------
+- [0eabaf8d] As a result, the "lazy" behavior of the ``escape`` filter (where it would always be applied as the last filter no matter where in the filter chain it appeared) is deprecated. The filter will change to immediately apply :func:`~django.utils.html.conditional_escape` in Django 2.0.
+- [6ca43053] Assume the following models::
+- [9e4d7502] Backwards incompatible changes in 1.10 ======================================
+- [40907bc2] Before Django 1.10, the :meth:`~django.db.models.options.Options.get_fields` method returned different reverse fields when called on a proxy model compared to its proxied concrete class. This inconsistency was fixed by returning the full set of fields pointing to a concrete class or one of its proxies in both cases.
+- [7a6cb469] But it didn't prohibit nested non-relation fields as it does now:
+- [4755786d40c065cc] CSRF ~~~~
+- [4027f94d73d6defd] Cache ~~~~~
+- [750d176f] Consider using a :ref:`wrapped password hasher <wrapping-password-hashers>` to strengthen the hashes in your database. If that's not feasible, add the :setting:`PASSWORD_HASHERS` setting to your project and add back any hashers that you need.
+- [2dffac79] Custom manager classes available through ``prefetch_related`` must define a ``_apply_rel_filters()`` method -----------------------------------------------------------------------------------------------------------
+- [031c6647] Custom user models may use the new :class:`~django.contrib.auth.validators.ASCIIUsernameValidator` or :class:`~django.contrib.auth.validators.UnicodeUsernameValidator`.
+- [80c94c9939092225] Database backend API --------------------
+- [81d18ad396e1bfe0] Database backends ~~~~~~~~~~~~~~~~~
+- [34a01019] Direct assignment to a reverse foreign key or many-to-many relation -------------------------------------------------------------------
+- [02bcacd7] Django 0.90 stored passwords as unsalted MD5. Django 0.91 added support for salted SHA1 with automatic upgrade of passwords when a user logs in. Django 1.4 added PBKDF2 as the default password hasher.
+- [50bbec75] Django 1.8 added validation for non-relational fields in ``select_related()``:
+- [93b61a67] Django uses a ``CallableBool`` object to allow these attributes to work as both a property and a method. Thus, until the deprecation period ends, you cannot compare these properties using the ``is`` operator. That is, the following won't work::
+- [215a338e] Dropped support for PostgreSQL 9.1 ----------------------------------
+- [513211ea] During the deprecation period, ``use_for_related_fields`` will be honored and raise a warning, even if a ``base_manager_name`` is set. This allows third-party code to preserve legacy behavior while transitioning to the new API. The warning can be silenced by setting ``silence_use_for_related_fields_deprecation=True`` on the manager.
+- [f93c4be2] Features deprecated in 1.10 ===========================
+- [146ddd77] Features removed in 1.10 ========================
+- [db0e4e6ac0dada48] File Storage ~~~~~~~~~~~~
+- [c7dcc4c5] For example, if you use :class:`~django.contrib.auth.middleware.AuthenticationMiddleware` and want to know whether the user is currently logged-in you would use::
+- [123098bdb4f38b7b] Forms ~~~~~
+- [c4dd37f6] Full text search for PostgreSQL -------------------------------
+- [dfaeb06a] Generic Views ~~~~~~~~~~~~~
+- [f9c38ca2] If you defined a custom manager class available through :meth:`~django.db.models.query.QuerySet.prefetch_related` you must make sure it defines a ``_apply_rel_filters()`` method.
+- [ce9019d9] If you have a custom field that implements either of these methods, register a custom lookup for it. For example::
+- [ea9319ca] If you have an old Django project with MD5 or SHA1 (even salted) encoded passwords, be aware that these can be cracked fairly easily with today's hardware. To make Django users acknowledge continued use of weak hashers, the following hashers are removed from the default :setting:`PASSWORD_HASHERS` setting:
+- [f3a70b44] If you override these methods in a custom user model, you must change them to properties or attributes.
+- [522c19ce] If you want to preserve the 30 character limit for usernames, use a custom form when creating a user or changing usernames::
+- [665d83bc] If you wish to keep this restriction in the admin, set ``UserAdmin.add_form`` to use this form::
+- [80b17716] If you're using Oracle, ``CharField`` uses a different database field type (``NVARCHAR2``) than ``CommaSeparatedIntegerField`` (``VARCHAR2``). Depending on your database settings, this might imply a different encoding, and thus a different length (in bytes) for the same contents. If your stored values are longer than the 4000 byte limit of ``NVARCHAR2``, you should use ``TextField`` (``NCLOB``) instead. In this case, if you have any queries that group by the field (e.g. annotating the model with an aggregation or using ``distinct()``) you'll need to change them (to defer the field).
+- [39fea0b8] In older versions, :attr:`~django.db.models.Options.default_related_name` couldn't be used as a query lookup. This is fixed and support for the old lookup name is deprecated. For example, since ``default_related_name`` is set in model ``Bar``, instead of using the model name ``bar`` as the lookup:
+- [54b069d2] In older versions, assigning ``None`` to a non-nullable ``ForeignKey`` or ``OneToOneField`` raised ``ValueError('Cannot assign None: "model.field" does not allow null values.')``. For consistency with other model fields which don't have a similar check, this check is removed.
+- [34301cf1] Instead of assigning related objects using direct assignment:
+- [632d9888fdac6ff8] Internationalization ~~~~~~~~~~~~~~~~~~~~
+- [97088df6] It also now includes trigram support, using the :lookup:`trigram_similar` lookup, and the :class:`~django.contrib.postgres.search.TrigramSimilarity` and :class:`~django.contrib.postgres.search.TrigramDistance` expressions.
+- [a803fc84] Like Django 1.9, Django 1.10 requires Python 2.7, 3.4, or 3.5. We **highly recommend** and only officially support the latest release of each series.
+- [3e0f4a6cb3ed25ec] Management Commands ~~~~~~~~~~~~~~~~~~~
+- [ed7f4c43] Maximum size of a request body and the number of GET/POST parameters is limited -------------------------------------------------------------------------------
+- [81a1cd28cbb21208] Migrations ~~~~~~~~~~
+- [32cecf2752c82bab] Minor features --------------
+- [7e0dde20fe81851d] Miscellaneous -------------
+- [7e0dde20fe81851d-2] Miscellaneous -------------
+- [8b84e8a4] Model ``Manager`` inheritance will follow MRO inheritance rules in Django 2.0, changing the current behavior where managers defined on non-abstract base classes aren't inherited by child classes. A deprecating warning with instructions on how to adapt your code is raised if you have any affected managers. You'll either redeclare a manager from an abstract model on the child class to override the manager from the concrete model, or you'll set the model's ``Meta.manager_inheritance_from_future=True`` option to opt-in to the new inheritance behavior.
+- [357763c49cce3029] Models ~~~~~~
+- [2859e996] New-style middleware --------------------
+- [bb2d13f9] Non-timezone-aware :class:`~django.core.files.storage.Storage` API ------------------------------------------------------------------
+- [c1a52e66] Official support for Unicode usernames --------------------------------------
+- [ae34cf4ae6f76a23] Python compatibility ====================
+- [5346149d] Removed null assignment check for non-null foreign key fields -------------------------------------------------------------
+- [75de9609] Removed weak password hashers from the default ``PASSWORD_HASHERS`` setting ---------------------------------------------------------------------------
+- [31c96b5b] Request and response handling of the ``runserver`` command is sent to the :ref:`django-server-logger` logger instead of to ``sys.stderr``. If you disable Django's logging configuration or override it with your own, you'll need to add the appropriate logging configuration if you want to see that output::
+- [c1b0723dfb7860d4] Requests and Responses ~~~~~~~~~~~~~~~~~~~~~~
+- [29b64ef38af97ab3] See the :doc:`/howto/upgrade-version` guide if you're updating an existing project.
+- [0dd2c0a470c7b7f4] Serialization ~~~~~~~~~~~~~
+- [d91f508a] Since the introduction of migrations for the contrib apps in Django 1.8, the tables of these custom user test models were not created anymore making them unusable in a testing context.
+- [980094e5817f4bed] Templates ~~~~~~~~~
+- [5b32493384882077] Tests ~~~~~
+- [01cc28d6] The "escape" half of ``django.utils.safestring`` ------------------------------------------------
+- [87126a2d] The :class:`~django.contrib.auth.models.User` model in ``django.contrib.auth`` originally only accepted ASCII letters and numbers in usernames. Although it wasn't a deliberate choice, Unicode characters have always been accepted when using Python 3.
+- [baad014b] The ``is_authenticated()`` and ``is_anonymous()`` methods of :class:`~django.contrib.auth.models.AbstractBaseUser` and :class:`~django.contrib.auth.models.AnonymousUser` classes are now properties. They will still work as methods until Django 2.0, but all usage in Django now uses attribute access.
+- [c92e1657] The ``mark_for_escaping()`` function and the classes it uses: ``EscapeData``, ``EscapeBytes``, ``EscapeText``, ``EscapeString``, and ``EscapeUnicode`` are deprecated.
+- [9206ee6c] The ``search`` lookup, which supports MySQL only and is extremely limited in features, is deprecated. Replace it with a custom lookup::
+- [2ee8bc49] The apps registry is no longer auto-populated when unpickling models. This was added in Django 1.7.2 as an attempt to allow unpickling models outside of Django, such as in an RQ worker, without calling ``django.setup()``, but it creates the possibility of a deadlock. To adapt your code in the case of RQ, you can `provide your own worker script <https://python-rq.org/docs/workers/>`_ that calls ``django.setup()``.
+- [4f060c80] The old, non-timezone-aware methods ``accessed_time()``, ``created_time()``, and ``modified_time()`` are deprecated in favor of the new ``get_*_time()`` methods.
+- [1e3437da] The username validator now explicitly accepts Unicode characters by default on Python 3 only.
+- [5ed44953] These features have reached the end of their deprecation cycle and are removed in Django 1.10. See :ref:`deprecated-features-1.8` for details, including how to remove usage of these features.
+- [b116053f] These release notes cover the :ref:`new features <whats-new-1.10>`, as well as some :ref:`backwards incompatible changes <backwards-incompatible-1.10>` you'll want to be aware of when upgrading from Django 1.9 or older versions. We've :ref:`dropped some features <removed-features-1.10>` that have reached the end of their deprecation cycle, and we've :ref:`begun the deprecation process for some features <deprecated-features-1.10>`.
+- [7b2bfb76] Third-party storage backends may retain the old methods as long as they wish to support earlier versions of Django.
+- [c19c4113] Third-party storage backends should implement the new methods and mark the old ones as deprecated. Until then, the new ``get_*_time()`` methods on the base :class:`~django.core.files.storage.Storage` class convert ``datetime``\s from the old methods as required and emit a deprecation warning as they do so.
+- [acee33bb] This change avoids accidental information leakage if you forget to call the method, e.g.::
+- [87ddf82f] This method must accept a :class:`~django.db.models.query.QuerySet` instance as its single argument and return a filtered version of the queryset for the model instance the manager is bound to.
+- [df7e22ad] This prevents confusion about an assignment resulting in an implicit save.
+- [ad2a4f69] Two new settings help mitigate denial-of-service attacks via large requests:
+- [e3bf17ab] URLs ~~~~
+- [aff5ee5f] Upstream support for PostgreSQL 9.1 ends in September 2016. As a consequence, Django 1.10 sets PostgreSQL 9.2 as the minimum version it officially supports.
+- [9938b590] Use the :meth:`~django.db.models.fields.related.RelatedManager.set` method added in Django 1.9:
+- [b126d0c4] Using ``User.is_authenticated()`` and ``User.is_anonymous()`` as methods ------------------------------------------------------------------------
+- [08dca043] Using a model name as a query lookup when ``default_related_name`` is set -------------------------------------------------------------------------
+- [d27a2f4cf2a5e2ef] Validators ~~~~~~~~~~
+- [e2cd39f3] We considered an increase to 254 characters to more easily allow the use of email addresses (which are limited to 254 characters) as usernames but rejected it due to a MySQL limitation. When using the ``utf8mb4`` encoding (recommended for proper Unicode support), MySQL can only create unique indexes with 191 characters by default. Therefore, if you need a longer length, please use a custom user model.
+- [78bebdb2] Welcome to Django 1.10!
+- [e74f1d40] What's new in Django 1.10 =========================
+- [e65c097c] You can check if your database has any of the removed hashers like this::
+- [107e9312] ``CommaSeparatedIntegerField`` is deprecated in favor of :class:`~django.db.models.CharField` with the :func:`~django.core.validators.validate_comma_separated_integer_list` validator::
+- [6794c359] ``CommaSeparatedIntegerField`` model field ------------------------------------------
+- [49aa3e42] ``Field.get_prep_lookup()`` and ``Field.get_db_prep_lookup()`` methods are removed ----------------------------------------------------------------------------------
+- [060e9b02] ``Manager.use_for_related_fields`` and inheritance changes ----------------------------------------------------------
+- [4ae73b18] ``Manager.use_for_related_fields`` is deprecated in favor of setting :attr:`Meta.base_manager_name <django.db.models.Options.base_manager_name>` on the model.
+- [6ee9708e] ``__search`` query lookup -------------------------
+- [742d08b4] ``_meta.get_fields()`` returns consistent reverse fields for proxy models -------------------------------------------------------------------------
+- [8363e64a] ``auth.CustomUser`` and ``auth.ExtensionUser`` test models were removed -----------------------------------------------------------------------
+- [78b3245d] ``django.contrib.postgres`` now includes a :doc:`collection of database functions </ref/contrib/postgres/search>` to allow the use of the full text search engine. You can search across multiple fields in your relational database, combine the searches with other lookups, use different language configurations and weightings, and rank the results by relevance.
+- [318aa83a] ``runserver`` output goes through logging -----------------------------------------
+- [90e6891d] ``select_related()`` prohibits non-relational fields for nested relations -------------------------------------------------------------------------
+- [c8177948] instead of ``request.user.is_authenticated()``.
+- [fd75ee6d] use the default_related_name ``bars``:

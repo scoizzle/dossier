@@ -1,6 +1,6 @@
 # Fact 3ad3985d
 
-Store id: 807b2f23-a91f-412f-b216-10bd652efb86
+Store id: 443a1ad9-fb62-4d03-9ace-032598e3f269
 
 ## Text
 
@@ -20,7 +20,7 @@ def disconnect(self, receiver=None, sender=None, dispatch_uid=None, apps=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.3386540+00:00`
+- posted_at: `2026-11-09T23:32:05.3846260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 36,
     "symbol": "ModelSignal.disconnect"
   },
-  "id": "807b2f23-a91f-412f-b216-10bd652efb86",
+  "id": "443a1ad9-fb62-4d03-9ace-032598e3f269",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.3386540+00:00"
+    "posted_at": "2026-11-09T23:32:05.3846260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4bc271f0-1b3c-416a-9029-df47af57d9bb",
+  "subject_id": "9ca47f7e-3def-46ab-9cd5-603dad44af43",
   "subject_name": "django/db/models/signals::ModelSignal.disconnect",
   "tags": [
     "entity:method"

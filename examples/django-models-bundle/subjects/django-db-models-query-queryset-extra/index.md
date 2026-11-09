@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.extra
 
-- Subject: django/db/models/query::QuerySet.extra (id `56965b2b-5510-447e-a66e-db0295d7bf8a`)
+- Subject: django/db/models/query::QuerySet.extra (id `dc962209-e09d-4802-adc6-a645ebbecc07`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

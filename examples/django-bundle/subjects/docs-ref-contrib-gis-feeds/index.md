@@ -1,8 +1,8 @@
 # docs/ref/contrib/gis/feeds
 
-- Subject: docs/ref/contrib/gis/feeds (id `83afa1d2-1d55-4964-a97f-94a44b784403`)
+- Subject: docs/ref/contrib/gis/feeds (id `a4040a1a-e7a9-48db-b003-8e9593113a1d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 852 tokens
 - Facts shown: 28 of 29
 - Conflicts: 0

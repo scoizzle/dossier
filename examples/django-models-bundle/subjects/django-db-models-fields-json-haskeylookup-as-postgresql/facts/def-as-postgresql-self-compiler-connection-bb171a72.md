@@ -1,6 +1,6 @@
 # Fact bb171a72
 
-Store id: df348e68-fa66-4aec-b579-c5a51d002f7f
+Store id: 04802ced-f3e8-4337-b644-5752be5bf6f4
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6484020+00:00`
+- posted_at: `2026-11-09T23:31:57.8930230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 254,
     "symbol": "HasKeyLookup.as_postgresql"
   },
-  "id": "df348e68-fa66-4aec-b579-c5a51d002f7f",
+  "id": "04802ced-f3e8-4337-b644-5752be5bf6f4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6484020+00:00"
+    "posted_at": "2026-11-09T23:31:57.8930230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "755cdb2e-7745-45a2-ba69-1222d6e25b6f",
+  "subject_id": "e6b69825-31e6-4084-9040-6197c1b72934",
   "subject_name": "django/db/models/fields/json::HasKeyLookup.as_postgresql",
   "tags": [
     "entity:method"

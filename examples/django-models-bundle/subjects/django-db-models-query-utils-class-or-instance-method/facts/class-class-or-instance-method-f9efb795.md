@@ -1,6 +1,6 @@
 # Fact f9efb795
 
-Store id: f8031ea6-c858-4f01-8c6e-c7dc6b9e8173
+Store id: 71200daa-c560-4d45-b455-c4922b2c524b
 
 ## Text
 
@@ -20,7 +20,7 @@ class class_or_instance_method
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1275280+00:00`
+- posted_at: `2026-11-09T23:32:05.1270570+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 320,
     "symbol": "class_or_instance_method"
   },
-  "id": "f8031ea6-c858-4f01-8c6e-c7dc6b9e8173",
+  "id": "71200daa-c560-4d45-b455-c4922b2c524b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1275280+00:00"
+    "posted_at": "2026-11-09T23:32:05.1270570+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6ce4560d-e072-4ea0-a708-f30861597ce5",
+  "subject_id": "34b28c00-b0ac-4dfa-8424-56b99d2c5b71",
   "subject_name": "django/db/models/query_utils::class_or_instance_method",
   "tags": [
     "entity:class"

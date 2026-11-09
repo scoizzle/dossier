@@ -1,6 +1,6 @@
 # Fact 6f1f6724
 
-Store id: 72b4a4e9-2d79-4d5b-85b4-8bead92993b4
+Store id: 4039836b-27b8-4458-8a13-7226d5422595
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *expressions, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.0945460+00:00`
+- posted_at: `2026-11-09T23:32:02.1787490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 135,
     "symbol": "Concat.__init__"
   },
-  "id": "72b4a4e9-2d79-4d5b-85b4-8bead92993b4",
+  "id": "4039836b-27b8-4458-8a13-7226d5422595",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.0945460+00:00"
+    "posted_at": "2026-11-09T23:32:02.1787490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "df2d059f-f676-4d71-8203-5329e31be9fd",
+  "subject_id": "9dd8178a-9829-4f09-8775-b3e7311685ec",
   "subject_name": "django/db/models/functions/text::Concat.__init__",
   "tags": [
     "entity:method"

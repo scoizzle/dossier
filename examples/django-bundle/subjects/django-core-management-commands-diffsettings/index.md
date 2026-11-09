@@ -1,8 +1,8 @@
 # django/core/management/commands/diffsettings
 
-- Subject: django/core/management/commands/diffsettings (id `ab0216ce-f9ec-49ea-95f5-20727d148ad7`)
+- Subject: django/core/management/commands/diffsettings (id `af1f3cdc-3739-4eb7-b0fe-a0cb37934020`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 778 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

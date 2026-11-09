@@ -1,6 +1,6 @@
 # Fact 08039755
 
-Store id: 7a53325d-cc5f-4c09-b62c-09977e34f0ce
+Store id: f1856398-457b-4126-bc0f-b3522e893cc3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __contains__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5600840+00:00`
+- posted_at: `2026-11-09T23:31:55.8333610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 900,
     "symbol": "F.__contains__"
   },
-  "id": "7a53325d-cc5f-4c09-b62c-09977e34f0ce",
+  "id": "f1856398-457b-4126-bc0f-b3522e893cc3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5600840+00:00"
+    "posted_at": "2026-11-09T23:31:55.8333610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4aab8e17-ee7d-47d9-9d4e-198c09a5cacf",
+  "subject_id": "6ddeacbe-51b7-4dd7-ab5c-5a76df6663a4",
   "subject_name": "django/db/models/expressions::F.__contains__",
   "tags": [
     "entity:method"

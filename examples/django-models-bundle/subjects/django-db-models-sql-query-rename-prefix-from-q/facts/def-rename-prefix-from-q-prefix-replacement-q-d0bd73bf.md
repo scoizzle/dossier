@@ -1,6 +1,6 @@
 # Fact d0bd73bf
 
-Store id: fc57fae3-2a06-4d82-9e7a-808fd8226ae9
+Store id: d9da04cd-dd1d-480e-8e2f-6d717e73d4af
 
 ## Text
 
@@ -20,7 +20,7 @@ def rename_prefix_from_q(prefix, replacement, q)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1761540+00:00`
+- posted_at: `2026-11-09T23:32:06.6911180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 141,
     "symbol": "rename_prefix_from_q"
   },
-  "id": "fc57fae3-2a06-4d82-9e7a-808fd8226ae9",
+  "id": "d9da04cd-dd1d-480e-8e2f-6d717e73d4af",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1761540+00:00"
+    "posted_at": "2026-11-09T23:32:06.6911180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d7affc98-9582-4a9a-85fc-9e2fd5e0aabf",
+  "subject_id": "65433d24-6ed9-47c0-914b-f58d60a723cc",
   "subject_name": "django/db/models/sql/query::rename_prefix_from_q",
   "tags": [
     "entity:function"

@@ -1,6 +1,6 @@
 # Fact fc10dd3a
 
-Store id: a9268bbb-a283-482e-b05d-aab2b1396f3d
+Store id: e6b76431-db08-4bbf-ad12-f8c63ff42cda
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearGte(YearLookup, GreaterThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2502460+00:00`
+- posted_at: `2026-11-09T23:32:03.4456010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 766,
     "symbol": "YearGte"
   },
-  "id": "a9268bbb-a283-482e-b05d-aab2b1396f3d",
+  "id": "e6b76431-db08-4bbf-ad12-f8c63ff42cda",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2502460+00:00"
+    "posted_at": "2026-11-09T23:32:03.4456010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18f74cc3-7965-40cd-9c3e-99127d031c6d",
+  "subject_id": "40534b1d-689d-4e46-9c59-a5291479e974",
   "subject_name": "django/db/models/lookups::YearGte",
   "tags": [
     "entity:class"

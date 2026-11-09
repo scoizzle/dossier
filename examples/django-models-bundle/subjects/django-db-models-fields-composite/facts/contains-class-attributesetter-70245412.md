@@ -1,6 +1,6 @@
 # Fact 70245412
 
-Store id: 937ad857-539c-40f9-bf52-5a34fa9259e6
+Store id: c4ec84ca-9572-4868-9172-c93043b2dc7e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class AttributeSetter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0254600+00:00`
+- posted_at: `2026-11-09T23:31:57.1501670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "937ad857-539c-40f9-bf52-5a34fa9259e6",
+  "id": "c4ec84ca-9572-4868-9172-c93043b2dc7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0254600+00:00"
+    "posted_at": "2026-11-09T23:31:57.1501670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "AttributeSetter"
       },
       "rel": "contains",
-      "target": "f114eae3-edaa-4754-a8d0-42497e5b82f1"
+      "target": "e9797aa3-be50-4ca7-87fc-d72772ac4a4a"
     }
   ],
   "status": "live",
-  "subject_id": "bc7d2f02-df5f-4f9e-a0c3-51945dbf8415",
+  "subject_id": "491ed372-374e-4a6d-8e01-91b4c3f9a27f",
   "subject_name": "django/db/models/fields/composite",
   "tags": [
     "entity:class"

@@ -1,8 +1,8 @@
 # django/db/models/query
 
-- Subject: django/db/models/query (id `8760e773-b477-4dc2-a0d3-b24b429fa7ec`)
+- Subject: django/db/models/query (id `668f5055-eb85-405a-857a-aabb695bad53`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 403 tokens
 - Facts shown: 21 of 21
 - Conflicts: 0

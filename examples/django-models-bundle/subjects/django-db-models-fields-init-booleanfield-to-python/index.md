@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BooleanField.to_python
 
-- Subject: django/db/models/fields/__init__::BooleanField.to_python (id `a66fb357-2ff4-4eec-97b8-bef2aa9abdef`)
+- Subject: django/db/models/fields/__init__::BooleanField.to_python (id `3bac1d77-8ab8-41ee-bbf6-c86ad6cb2a61`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

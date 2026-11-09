@@ -1,9 +1,9 @@
 # django/db/models/query_utils::RegisterLookupMixin._get_lookup
 
-- Subject: django/db/models/query_utils::RegisterLookupMixin._get_lookup (id `dd738090-bd93-4f60-9e91-5b58df9827f8`)
+- Subject: django/db/models/query_utils::RegisterLookupMixin._get_lookup (id `e5e500c3-ca81-44a5-9c27-9ed0c3d178e7`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

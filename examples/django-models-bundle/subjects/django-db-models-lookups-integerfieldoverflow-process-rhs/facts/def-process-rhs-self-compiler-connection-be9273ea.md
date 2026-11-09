@@ -1,6 +1,6 @@
 # Fact be9273ea
 
-Store id: 0e90916f-e8c3-4589-8478-bc3e6017e4aa
+Store id: 57d7f5f2-959a-40d2-a613-bdd8f5e55139
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1276140+00:00`
+- posted_at: `2026-11-09T23:32:03.2878980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 449,
     "symbol": "IntegerFieldOverflow.process_rhs"
   },
-  "id": "0e90916f-e8c3-4589-8478-bc3e6017e4aa",
+  "id": "57d7f5f2-959a-40d2-a613-bdd8f5e55139",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1276140+00:00"
+    "posted_at": "2026-11-09T23:32:03.2878980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f010de25-3557-476d-8a2a-d342730dd97d",
+  "subject_id": "cc318db2-ac1f-41fb-9b8c-b1dd1f0644a2",
   "subject_name": "django/db/models/lookups::IntegerFieldOverflow.process_rhs",
   "tags": [
     "entity:method"

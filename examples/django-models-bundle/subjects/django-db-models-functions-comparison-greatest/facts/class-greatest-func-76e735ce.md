@@ -1,6 +1,6 @@
 # Fact 76e735ce
 
-Store id: b7714866-8d22-4651-b515-f9cd6831b7fd
+Store id: 240477e6-9420-4ed1-ba4d-c96794b06c3e
 
 ## Text
 
@@ -20,7 +20,7 @@ class Greatest(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9414040+00:00`
+- posted_at: `2026-11-09T23:32:00.9927080+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 123,
     "symbol": "Greatest"
   },
-  "id": "b7714866-8d22-4651-b515-f9cd6831b7fd",
+  "id": "240477e6-9420-4ed1-ba4d-c96794b06c3e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9414040+00:00"
+    "posted_at": "2026-11-09T23:32:00.9927080+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7155640f-70cf-4f0f-8f9b-106ffc575068",
+  "subject_id": "634654b4-954d-45f9-ae1c-fef3196387fc",
   "subject_name": "django/db/models/functions/comparison::Greatest",
   "tags": [
     "entity:class"

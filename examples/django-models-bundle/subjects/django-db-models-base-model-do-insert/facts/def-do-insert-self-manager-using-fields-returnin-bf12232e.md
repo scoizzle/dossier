@@ -1,6 +1,6 @@
 # Fact bf12232e
 
-Store id: 038be281-26e7-4f4e-b09e-aef807582767
+Store id: 5becf782-c57d-4ef6-9094-5a961cc484ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def _do_insert(self, manager, using, fields, returning_fields, raw)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3422020+00:00`
+- posted_at: `2026-11-09T23:31:53.7455390+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1248,
     "symbol": "Model._do_insert"
   },
-  "id": "038be281-26e7-4f4e-b09e-aef807582767",
+  "id": "5becf782-c57d-4ef6-9094-5a961cc484ff",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3422020+00:00"
+    "posted_at": "2026-11-09T23:31:53.7455390+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "30b2af3f-abb5-43cc-b3ff-249759c03334",
+  "subject_id": "54c78652-eda2-412d-8352-0feedb85eb84",
   "subject_name": "django/db/models/base::Model._do_insert",
   "tags": [
     "entity:method"

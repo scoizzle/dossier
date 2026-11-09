@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.resolve_expression
 
-- Subject: django/db/models/sql/query::Query.resolve_expression (id `c9aebcac-6af2-496f-a52a-c3c9e84d3122`)
+- Subject: django/db/models/sql/query::Query.resolve_expression (id `3450b62f-014b-43f9-bb8d-f75976268bf0`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 25dc4e70
 
-Store id: a61d89b8-0856-4a86-b6ea-b1b7dcaa624b
+Store id: 275fed6a-26c9-4a7f-93f1-0897e0a493ad
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class YearLookup
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a61d89b8-0856-4a86-b6ea-b1b7dcaa624b",
+  "id": "275fed6a-26c9-4a7f-93f1-0897e0a493ad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "YearLookup"
       },
       "rel": "contains",
-      "target": "77747acd-1453-46d1-b39f-77350738bbca"
+      "target": "b8b8b462-abca-4e11-86b2-1ea37bc3c410"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

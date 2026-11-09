@@ -1,6 +1,6 @@
 # Fact 6950b510
 
-Store id: d4fd3799-91d8-4822-8999-94763b73adb3
+Store id: 669083d6-d199-4817-9af3-81500a227349
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_instance_value_for_fields(instance, fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3381440+00:00`
+- posted_at: `2026-11-09T23:31:58.6994690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 830,
     "symbol": "ForeignObject.get_instance_value_for_fields"
   },
-  "id": "d4fd3799-91d8-4822-8999-94763b73adb3",
+  "id": "669083d6-d199-4817-9af3-81500a227349",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3381440+00:00"
+    "posted_at": "2026-11-09T23:31:58.6994690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "807e0c40-93bf-4e11-b041-9c60ae72c39c",
+  "subject_id": "10858d6e-a8b3-4235-9fbd-e77e9f7cd8be",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_instance_value_for_fields",
   "tags": [
     "entity:static_method",

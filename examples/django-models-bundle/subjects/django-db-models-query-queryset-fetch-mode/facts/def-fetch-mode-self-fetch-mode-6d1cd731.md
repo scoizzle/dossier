@@ -1,6 +1,6 @@
 # Fact 6d1cd731
 
-Store id: ad5063c7-fcab-4113-a3fb-e75ffd5e67b8
+Store id: 32709224-b8f7-4876-8991-de06d79faa39
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_mode(self, fetch_mode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6803980+00:00`
+- posted_at: `2026-11-09T23:32:04.6046630+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2025,
     "symbol": "QuerySet.fetch_mode"
   },
-  "id": "ad5063c7-fcab-4113-a3fb-e75ffd5e67b8",
+  "id": "32709224-b8f7-4876-8991-de06d79faa39",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6803980+00:00"
+    "posted_at": "2026-11-09T23:32:04.6046630+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0281147-fdbf-4a46-b45b-19434e44de6f",
+  "subject_id": "a177c657-47aa-49fb-8ef2-178f1676c86a",
   "subject_name": "django/db/models/query::QuerySet.fetch_mode",
   "tags": [
     "entity:method"

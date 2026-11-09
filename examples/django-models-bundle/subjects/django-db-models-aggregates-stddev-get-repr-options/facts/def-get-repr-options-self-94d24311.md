@@ -1,6 +1,6 @@
 # Fact 94d24311
 
-Store id: b7d77d27-3310-4bec-8ea4-1e2f75fe0ae7
+Store id: 5184975b-3ce5-415c-a9b3-737400c6d9de
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_repr_options(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0458970+00:00`
+- posted_at: `2026-11-09T23:31:53.5427830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 348,
     "symbol": "StdDev._get_repr_options"
   },
-  "id": "b7d77d27-3310-4bec-8ea4-1e2f75fe0ae7",
+  "id": "5184975b-3ce5-415c-a9b3-737400c6d9de",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0458970+00:00"
+    "posted_at": "2026-11-09T23:31:53.5427830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ac2a46d2-982a-45c1-900a-cca81a6f2c7e",
+  "subject_id": "394208de-56d5-404e-83e2-d3306dafcfc0",
   "subject_name": "django/db/models/aggregates::StdDev._get_repr_options",
   "tags": [
     "entity:method"

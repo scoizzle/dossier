@@ -1,8 +1,8 @@
 # django/tasks/exceptions
 
-- Subject: django/tasks/exceptions (id `b57dd1fb-7a09-4fdf-ae7c-b566f28cb9a1`)
+- Subject: django/tasks/exceptions (id `172d9fe0-d165-44f4-9a7a-e85c09c4fcad`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 189 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

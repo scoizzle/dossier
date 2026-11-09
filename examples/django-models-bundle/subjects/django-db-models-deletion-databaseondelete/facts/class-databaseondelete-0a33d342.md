@@ -1,6 +1,6 @@
 # Fact 0a33d342
 
-Store id: e560a9b6-8b78-4fe6-a027-5830f95702a8
+Store id: b173b94d-37c5-4e2b-90d2-28d9dc746a2d
 
 ## Text
 
@@ -20,7 +20,7 @@ class DatabaseOnDelete
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0281740+00:00`
+- posted_at: `2026-11-09T23:31:55.0844270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 84,
     "symbol": "DatabaseOnDelete"
   },
-  "id": "e560a9b6-8b78-4fe6-a027-5830f95702a8",
+  "id": "b173b94d-37c5-4e2b-90d2-28d9dc746a2d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0281740+00:00"
+    "posted_at": "2026-11-09T23:31:55.0844270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "beb0446a-c2e5-4a43-a708-1cc69624c171",
+  "subject_id": "4b1d0377-ae61-4a39-87e7-9897bb1faa63",
   "subject_name": "django/db/models/deletion::DatabaseOnDelete",
   "tags": [
     "entity:class"

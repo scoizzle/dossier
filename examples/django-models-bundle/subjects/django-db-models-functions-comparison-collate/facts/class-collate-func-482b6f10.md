@@ -1,6 +1,6 @@
 # Fact 482b6f10
 
-Store id: 7755dceb-2785-45a0-83fb-8a39b0594093
+Store id: dffae489-043a-4f71-b86d-d76fc038a1ae
 
 ## Text
 
@@ -20,7 +20,7 @@ class Collate(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9340860+00:00`
+- posted_at: `2026-11-09T23:32:00.9854820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 104,
     "symbol": "Collate"
   },
-  "id": "7755dceb-2785-45a0-83fb-8a39b0594093",
+  "id": "dffae489-043a-4f71-b86d-d76fc038a1ae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9340860+00:00"
+    "posted_at": "2026-11-09T23:32:00.9854820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b3b3341d-60f3-4ba2-88f9-ef71a9a6fb4e",
+  "subject_id": "f7b7ad14-a5b6-4a97-8427-1bfd9e27c8ba",
   "subject_name": "django/db/models/functions/comparison::Collate",
   "tags": [
     "entity:class"

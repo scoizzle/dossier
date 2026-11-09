@@ -1,6 +1,6 @@
 # Fact 8277214d
 
-Store id: 474eeb4f-400a-4f5d-9739-c8ce615518b5
+Store id: cb610973-078e-40a4-b9b5-5037f61df70a
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTextTransform(KeyTransform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7159210+00:00`
+- posted_at: `2026-11-09T23:31:57.9775630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 540,
     "symbol": "KeyTextTransform"
   },
-  "id": "474eeb4f-400a-4f5d-9739-c8ce615518b5",
+  "id": "cb610973-078e-40a4-b9b5-5037f61df70a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7159210+00:00"
+    "posted_at": "2026-11-09T23:31:57.9775630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "05d2c823-1aaf-4fa2-97ea-a98914ed4165",
+  "subject_id": "0664eb1a-156b-45e8-902f-686290a98d2f",
   "subject_name": "django/db/models/fields/json::KeyTextTransform",
   "tags": [
     "entity:class"

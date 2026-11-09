@@ -1,8 +1,8 @@
 # django/contrib/admindocs/middleware
 
-- Subject: django/contrib/admindocs/middleware (id `9ba68a99-932b-494b-905c-d9d3f90da0eb`)
+- Subject: django/contrib/admindocs/middleware (id `bdb43a96-b302-4574-8787-2371c7cbe9bc`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 319 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 2ee99a0e
 
-Store id: 96317fd6-0a5a-4ef7-b100-316b4139aaba
+Store id: aed7829f-e94e-4e4d-ac26-9dafbd41a044
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5059000+00:00`
+- posted_at: `2026-11-09T23:31:56.6721610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2042,
     "symbol": "FilePathField.check"
   },
-  "id": "96317fd6-0a5a-4ef7-b100-316b4139aaba",
+  "id": "aed7829f-e94e-4e4d-ac26-9dafbd41a044",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5059000+00:00"
+    "posted_at": "2026-11-09T23:31:56.6721610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2fc753c6-9cc7-4604-9862-a1ec7466f30c",
+  "subject_id": "6d3a0fa2-eba5-447e-8cfe-4b9b48d30c6a",
   "subject_name": "django/db/models/fields/__init__::FilePathField.check",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/index
 
-- Subject: docs/index (id `62758c2f-a9ab-46d6-b34f-00da630abc21`)
+- Subject: docs/index (id `b25a6e6c-0adc-4486-b4bc-b9c39c1c93aa`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 11 of 81
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3947 tokens
+- Facts shown: 81 of 81
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * **Advanced Tutorials:** :doc:`How to write reusable apps </intro/reusable-apps>` | :doc:`Writing your first contribution to Django </intro/contributing>` [d94026c4]
 - * **Advanced:** :doc:`Forms for models </topics/forms/modelforms>` | :doc:`Integrating media </topics/forms/media>` | :doc:`Formsets </topics/forms/formsets>` | :doc:`Customizing validation </ref/forms/validation>` [23d952ab]
@@ -22,6 +22,75 @@
 - * **Design philosophies:** :doc:`Overview </misc/design-philosophies>` [74b7616f]
 - .. _index-first-steps: [a7463b14]
 
-## Beyond the budget
+## All facts
 
-70 more facts did not fit in the budget: [c7660b1c] [60f9eb05] [4e517b8e] [aa1e6683] [9010a47a] [908c17b0] [87715656] [c7c18e61] [415bf92f] [d5f038b0] [275291a4] [0e11fee3] [ef333336] [df8b1e77] [3ef63286] [7dbf18f1] [ca3c41d2] [d2bf6c25] [400e94f0] [86b39ea6] [535c879e] [42e75081] [d7d5df7f] [d32f174a] [484463c6] [2c280237] [f36cce7e] [d7aac3b6] [abea9820] [fb7bdfef] [e8078f65] [50ef966c] [b8cab802] [b8bab2d4] [839de4b8] [198c4ea3] [06d1c769] [a665706e] [d8b18d11] [f3f5c677] [c7cb8399] [3db07657] [0b7c56c1] [72085899] [cd820760] [3f771c24] [f5700db3] [a5853097] [fbe83770e3b6538d] [2e492cb6] [3a978111] [54014160] [249942b9] [141c4e5ec809f575] [e3d3b3e0] [85175788] [fcefbeb6] [147566fa] [92f71d61] [5e303f64] [7f116050] [86029446] [37499d43] [4fe89a15] [7d1df7db] [5340c582] [600702df] [23e4714a] [718871a2] [877f14c2]
+- [c7660b1c] * **Django over time:** :doc:`API stability </misc/api-stability>` | :doc:`Release notes and upgrading instructions </releases/index>` | :doc:`Deprecation Timeline </internals/deprecation>`
+- [60f9eb05] * **Documentation:** :doc:`About this documentation </internals/contributing/writing-documentation>`
+- [4e517b8e] * **Exceptions:** :doc:`Overview </ref/exceptions>`
+- [aa1e6683] * **File uploads:** :doc:`Overview </topics/http/file-uploads>` | :doc:`File objects </ref/files/file>` | :doc:`Storage API </ref/files/storage>` | :doc:`Managing files </topics/files>` | :doc:`Custom storage </howto/custom-file-storage>`
+- [9010a47a] * **For designers:** :doc:`Language overview </ref/templates/language>` | :doc:`Built-in tags and filters </ref/templates/builtins>` | :doc:`Humanization </ref/contrib/humanize>`
+- [908c17b0] * **For programmers:** :doc:`Template API </ref/templates/api>` | :doc:`Custom tags and filters </howto/custom-template-tags>` | :doc:`Custom template backend </howto/custom-template-backend>`
+- [87715656] * **From scratch:** :doc:`Overview </intro/overview>` | :doc:`Installation </intro/install>`
+- [c7c18e61] * **Middleware:** :doc:`Overview </topics/http/middleware>` | :doc:`Built-in middleware classes </ref/middleware>`
+- [415bf92f] * **Migrations:** :doc:`Introduction to Migrations</topics/migrations>` | :doc:`Operations reference </ref/migration-operations>` | :doc:`SchemaEditor </ref/schema-editor>` | :doc:`Writing migrations </howto/writing-migrations>`
+- [d5f038b0] * **Model instances:** :doc:`Instance methods </ref/models/instances>` | :doc:`Accessing related objects </ref/models/relations>`
+- [275291a4] * **Models:** :doc:`Introduction to models </topics/db/models>` | :doc:`Field types </ref/models/fields>` | :doc:`Indexes </ref/models/indexes>` | :doc:`Meta options </ref/models/options>` | :doc:`Model class </ref/models/class>`
+- [0e11fee3] * **Other:** :doc:`Supported databases </ref/databases>` | :doc:`Legacy databases </howto/legacy-databases>` | :doc:`Providing initial data </howto/initial-data>` | :doc:`Optimize database access </topics/db/optimization>` | :doc:`PostgreSQL specific features </ref/contrib/postgres/index>`
+- [ef333336] * **QuerySets:** :doc:`Making queries </topics/db/queries>` | :doc:`QuerySet method reference </ref/models/querysets>` | :doc:`Lookup expressions </ref/models/lookups>`
+- [df8b1e77] * **Reference:** :doc:`Built-in Views </ref/views>` | :doc:`Request/response objects </ref/request-response>` | :doc:`TemplateResponse objects </ref/template-response>`
+- [3ef63286] * **Settings:** :doc:`Overview </topics/settings>` | :doc:`Full list of settings </ref/settings>`
+- [7dbf18f1] * **Testing:** :doc:`Introduction </topics/testing/index>` | :doc:`Writing and running tests </topics/testing/overview>` | :doc:`Included testing tools </topics/testing/tools>` | :doc:`Advanced topics </topics/testing/advanced>`
+- [ca3c41d2] * **The basics:** :doc:`Overview </topics/forms/index>` | :doc:`Form API </ref/forms/api>` | :doc:`Built-in fields </ref/forms/fields>` | :doc:`Built-in widgets </ref/forms/widgets>`
+- [d2bf6c25] * **The basics:** :doc:`Overview </topics/templates>`
+- [400e94f0] * **The basics:** :doc:`URLconfs </topics/http/urls>` | :doc:`View functions </topics/http/views>` | :doc:`Shortcuts </topics/http/shortcuts>` | :doc:`Decorators </topics/http/decorators>` | :doc:`Asynchronous Support </topics/async>`
+- [86b39ea6] * **Third-party distributions:** :doc:`Overview </misc/distributions>`
+- [535c879e] * **Tutorial:** :doc:`Part 1: Requests and responses </intro/tutorial01>` | :doc:`Part 2: Models and the admin site </intro/tutorial02>` | :doc:`Part 3: Views and templates </intro/tutorial03>` | :doc:`Part 4: Forms and generic views </intro/tutorial04>` | :doc:`Part 5: Testing </intro/tutorial05>` | :doc:`Part 6: Static files </intro/tutorial06>` | :doc:`Part 7: Customizing the admin site </intro/tutorial07>` | :doc:`Part 8: Adding third-party packages </intro/tutorial08>`
+- [42e75081] * **django-admin and manage.py:** :doc:`Overview </ref/django-admin>` | :doc:`Adding custom commands </howto/custom-management-commands>`
+- [d7d5df7f] * :doc:`Admin site </ref/contrib/admin/index>` * :doc:`Admin actions </ref/contrib/admin/actions>` * :doc:`Admin documentation generator </ref/contrib/admin/admindocs>`
+- [d32f174a] * :doc:`Conditional content processing </topics/conditional-view-processing>` * :doc:`Content types and generic relations </ref/contrib/contenttypes>` * :doc:`Flatpages </ref/contrib/flatpages>` * :doc:`Redirects </ref/contrib/redirects>` * :doc:`Signals </topics/signals>` * :doc:`System check framework </topics/checks>` * :doc:`The sites framework </ref/contrib/sites>` * :doc:`Unicode in Django </ref/unicode>`
+- [484463c6] * :doc:`How-to guides </howto/index>` are recipes. They guide you through the steps involved in addressing key problems and use-cases. They are more advanced than tutorials and assume some knowledge of how Django works.
+- [2c280237] * :doc:`Overview </topics/i18n/index>` | :doc:`Internationalization </topics/i18n/translation>` | :ref:`Localization <how-to-create-language-files>` | :doc:`Localized web UI formatting and form input </topics/i18n/formatting>` * :doc:`Time zones </topics/i18n/timezones>`
+- [f36cce7e] * :doc:`Performance and optimization overview </topics/performance>`
+- [d7aac3b6] * :doc:`Reference guides </ref/index>` contain technical reference for APIs and other aspects of Django's machinery. They describe how it works and how to use it but assume that you have a basic understanding of key concepts.
+- [abea9820] * :doc:`Security overview </topics/security>` * :doc:`Disclosed security issues in Django </releases/security>` * :doc:`Clickjacking protection </ref/clickjacking>` * :doc:`Cross Site Request Forgery protection </ref/csrf>` * :doc:`Cryptographic signing </topics/signing>` * :ref:`Security Middleware <security-middleware>` * :doc:`Content Security Policy </ref/csp>`
+- [fb7bdfef] * :doc:`Topic guides </topics/index>` discuss key topics and concepts at a fairly high level and provide useful background information and explanation.
+- [e8078f65] * :doc:`Tutorials </intro/index>` take you by the hand through a series of steps to create a web application. Start here if you're new to Django or web application development. Also look at the ":ref:`index-first-steps`".
+- [50ef966c] * Looking for specific information? Try the :ref:`genindex`, :ref:`modindex` or the :doc:`detailed table of contents </contents>`.
+- [b8cab802] * Not found anything? See :doc:`/faq/help` for information on getting support and asking questions to the community.
+- [b8bab2d4] * Report bugs with Django in our `ticket tracker`_.
+- [839de4b8] * Try the :doc:`FAQ </faq/index>` -- it's got answers to many common questions.
+- [198c4ea3] .. _ticket tracker: https://code.djangoproject.com/
+- [06d1c769] .. rubric:: Everything you need to know about Django.
+- [a665706e] :doc:`GeoDjango </ref/contrib/gis/index>` intends to be a world-class geographic web framework. Its goal is to make it as easy as possible to build GIS web applications and harness the power of spatially enabled data.
+- [d8b18d11] ==================== Django documentation ====================
+- [f3f5c677] Are you new to Django or to programming? This is the place to start!
+- [c7cb8399] Common web application tools ============================
+- [3db07657] Django has a lot of documentation. A high-level overview of how it's organized will help you know where to look for certain things:
+- [0b7c56c1] Django has the concept of "views" to encapsulate the logic responsible for processing a user's request and for returning the response. Find all you need to know about views via the links below:
+- [72085899] Django offers a robust internationalization and localization framework to assist you in the development of applications for multiple languages and world regions:
+- [cd820760] Django offers multiple tools commonly needed in the development of web applications:
+- [3f771c24] Django provides a rich framework to facilitate the creation of forms and the manipulation of form data.
+- [f5700db3] Django provides an abstraction layer (the "models") for structuring and manipulating the data of your web application. Learn more about it below:
+- [a5853097] Find all you need to know about the automated admin interface, one of Django's most popular features:
+- [fbe83770e3b6538d] First steps ===========
+- [2e492cb6] Forms =====
+- [3a978111] Geographic framework ====================
+- [54014160] Getting help ============
+- [249942b9] Having trouble? We'd like to help!
+- [141c4e5ec809f575] How the documentation is organized ==================================
+- [e3d3b3e0] Internationalization and localization =====================================
+- [85175788] Learn about some other core functionalities of the Django framework:
+- [fcefbeb6] Learn about the development process for the Django project itself and about how you can contribute:
+- [147566fa] Learn about the various components and tools to help you in the development and testing of Django applications:
+- [92f71d61] Other core functionalities ==========================
+- [5e303f64] Performance and optimization ============================
+- [7f116050] Security ========
+- [86029446] Security is a topic of paramount importance in the development of web applications and Django provides multiple protection tools and mechanisms:
+- [37499d43] The Django open-source project ==============================
+- [4fe89a15] The admin =========
+- [7d1df7db] The development process =======================
+- [5340c582] The model layer ===============
+- [600702df] The template layer ==================
+- [23e4714a] The template layer provides a designer-friendly syntax for rendering the information to be presented to the user. Learn how this syntax can be used by designers and how it can be extended by programmers:
+- [718871a2] The view layer ==============
+- [877f14c2] There are a variety of techniques and tools that can help get your code running more efficiently - faster, and using fewer system resources.

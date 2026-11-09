@@ -1,6 +1,6 @@
 # Fact 4fd7846b
 
-Store id: 1fbf6270-11c8-4146-b35f-aa25e8560bbc
+Store id: e68cf914-68b4-4cde-a3ce-4d7365e65df1
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncMonth(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1954410+00:00`
+- posted_at: `2026-11-09T23:32:01.2785720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 369,
     "symbol": "TruncMonth"
   },
-  "id": "1fbf6270-11c8-4146-b35f-aa25e8560bbc",
+  "id": "e68cf914-68b4-4cde-a3ce-4d7365e65df1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1954410+00:00"
+    "posted_at": "2026-11-09T23:32:01.2785720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c79a2958-92ec-4711-ba4f-f3196bd3d1bc",
+  "subject_id": "a5e08da6-46c3-4987-a73f-fb1aa46d7acc",
   "subject_name": "django/db/models/functions/datetime::TruncMonth",
   "tags": [
     "entity:class"

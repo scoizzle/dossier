@@ -1,14 +1,14 @@
 # docs/internals/contributing/sprint-quickstart
 
-- Subject: docs/internals/contributing/sprint-quickstart (id `01c5135c-b919-4dc6-9d9a-92e29b73a3c6`)
+- Subject: docs/internals/contributing/sprint-quickstart (id `be6f049c-6fb0-471c-9027-1bd93cdcf314`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 27 of 59
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2449 tokens
+- Facts shown: 59 of 59
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ # This needs to be >= 3.12 $ python -V $ python -m venv ~/.virtualenvs/djangodev $ source ~/.virtualenvs/djangodev/bin/activate [e1d1a978]
 - $ ./tests/runtests.py [d4a85a14]
@@ -38,6 +38,37 @@
 - * Look at the `easy pickings`_. * Use the `vulture method`_. [36b8a205]
 - .. console:: [7714e199aac2701e-12]
 
-## Beyond the budget
+## All facts
 
-32 more facts did not fit in the budget: [8c64cebd] [80a376eb] [ff1cc30e] [76d3e26a] [7714e199aac2701e-13] [7714e199aac2701e-14] [05533c1a] [696f4fe4] [04fb87b4] [ffb5c140] [2f8f72e3] [74b2f755] [97c81d7f] [38f66f6e] [4307e1eb] [ee90dbef] [9edf3911] [f23595b8] [c4e2d7fa] [fad94972] [8826c6c1] [b805cb1d] [e60017d7] [d7c6c492] [1ba995e0] [4d0bc10f] [9444169a] [06b49a94] [a67c8152] [719df574] [3fb81b93] [501efd79]
+- [8c64cebd] * Git (see :doc:`/internals/contributing/writing-code/working-with-git`) * Managing multiple versions of Python * Python dependency management, including virtual environments * The concept of running tests and building documentation
+- [80a376eb] * Triage stage = Accepted * Patch needs improvement = Yes * Created = between ``5 years ago`` and ``today`` * Modified = between ``5 years ago`` and ``6 months ago``
+- [ff1cc30e] .. _accepted tickets created in the last five years: https://code.djangoproject.com/query?stage=Accepted&status=assigned&status=new&time=5+years+ago..today&order=id&desc=1&col=id&col=summary&col=owner&col=type&col=component&col=time&col=changetime .. _tickets for the documentation component: https://code.djangoproject.com/query?component=Documentation&stage=Accepted&status=assigned&status=new&time=5+years+ago..today&order=id&desc=1&col=id&col=summary&col=owner&col=type&col=component&col=time&col=changetime
+- [76d3e26a] .. _easy pickings: https://code.djangoproject.com/query?easy=1&stage=Accepted&status=assigned&status=new&time=5+years+ago..today&order=id&desc=1&col=id&col=summary&col=owner&col=type&col=component&col=time&col=changetime .. _vulture method: https://youtube.com/shorts/D6QHet5U82U?si=j5M6sy0ufpeGy_iZ .. _possibly vulture-able tickets here: https://code.djangoproject.com/query?stage=Accepted&changetime=5+years+ago..6+months+ago&needs_better_patch=1&status=assigned&status=new&time=5+years+ago..today&order=id&desc=1&col=id&col=summary&col=time&col=changetime&col=needs_better_patch&col=owner&col=type&col=component
+- [7714e199aac2701e-13] .. console::
+- [7714e199aac2701e-14] .. console::
+- [05533c1a] ======================= Sprint quickstart guide =======================
+- [696f4fe4] Assessing tickets -----------------
+- [04fb87b4] Claiming a ticket -----------------
+- [ffb5c140] Consider using the component filter option in Trac to limit your search to areas you have used before. If you've used forms in a few Django apps, consider filtering down to the forms component. Similarly, if you've never worked with geospatial projects, it's probably wise to avoid ``django.contrib.gis``. For example, here are the `tickets for the documentation component`_.
+- [2f8f72e3] Continuing someone else's work ------------------------------
+- [74b2f755] Creating a branch for the ticket ================================
+- [97c81d7f] Finding a ticket to work on ===========================
+- [38f66f6e] Finding a workable ticket is a challenging task. It's important to read this section before attempting to do so.
+- [4307e1eb] For example, to continue PR 8000 for ticket 123, run:
+- [ee90dbef] How you create your branch depends on whether the ticket already has work attached to it.
+- [9edf3911] If any of these are unfamiliar, see :doc:`/intro/contributing` for a longer, step-by-step tutorial.
+- [f23595b8] If you're continuing the work from someone else's pull request on GitHub, things can be tricky. You need to pull their branch, but then push it to your GitHub repository fork.
+- [c4e2d7fa] Methods to find tickets -----------------------
+- [fad94972] Run the following, replacing ``PRNumber`` and ``TicketNumber`` with the actual pull request and Trac ticket numbers:
+- [8826c6c1] Set up ======
+- [b805cb1d] Starting fresh --------------
+- [e60017d7] The vulture method is the process of looking for accepted tickets that haven't been touched in six months or longer. The ideal ticket has a PR linked to it that has a code review with explicit requests for changes and the author has not responded in at least six months on the PR and on the ticket. Before taking one over, leave a comment on both the ticket and the PR letting the author know that you are continuing their work.
+- [d7c6c492] There are two recommended ways to find a ticket:
+- [1ba995e0] This document explains how to prepare to contribute to Django. It is intended for use during sprints, or by people who are already familiar with contributing to Python open source projects.
+- [4d0bc10f] This guide assumes you're familiar with:
+- [9444169a] When looking over tickets, it's a good idea to keep your search to `accepted tickets created in the last five years`_. Older tickets are old for a reason: they are usually still open because they are hard, contentious, or both. You're welcome to try one, but expect it to require a high degree of perseverance.
+- [06b49a94] When preparing your commit, please review our :ref:`committing guidelines <committing-guidelines>`, specifically how to credit co-authors.
+- [a67c8152] When you find a ticket, make yourself the owner by clicking the "Modify Ticket" button near the bottom of the page, selecting the "assign to" radio button in the "Action" section, and clicking "Submit changes". Your username will be filled in the text box by default. See :ref:`claiming-tickets` for the full documentation.
+- [719df574] When your work is ready, push the branch to your fork and open a pull request. See :doc:`/internals/contributing/writing-code/submitting-patches` for the full process.
+- [3fb81b93] With the ticket claimed, create a branch for your work, replacing ``TicketNumber`` with the actual Trac ticket number:
+- [501efd79] You can view the list of `possibly vulture-able tickets here`_. The filters that are applied are:

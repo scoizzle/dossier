@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::CompositePrimaryKey.value_to_string
 
-- Subject: django/db/models/fields/composite::CompositePrimaryKey.value_to_string (id `14c8bd13-7349-4551-a516-257ca4c4ca9c`)
+- Subject: django/db/models/fields/composite::CompositePrimaryKey.value_to_string (id `1a510ef0-0f31-4013-91e8-1bfe4f99575b`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

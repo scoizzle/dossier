@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/generic-editing
 
-- Subject: docs/ref/class-based-views/generic-editing (id `abc0842d-eaf6-4180-b082-97f1aca0d193`)
+- Subject: docs/ref/class-based-views/generic-editing (id `7b136a0d-58a2-40b6-9d1b-e2082efa8e27`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 20 of 109
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3046 tokens
+- Facts shown: 88 of 109
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def form_valid(self, form): # This method is called when valid form data has been POSTed. # It should return an HttpResponse. form.send_email() return super().form_valid(form) [fe25abab]
 - def get_absolute_url(self): return reverse("author-detail", kwargs={"pk": self.pk}) [68a8f952]
@@ -31,6 +31,73 @@
 - class AuthorDeleteView(DeleteView): model = Author success_url = reverse_lazy("author-list") [d91baf12]
 - from django import forms [9ee3a9405e27875c]
 
-## Beyond the budget
+## All facts
 
-68 more facts did not fit in the budget: [9275317c] [907e999a] [f2bc257f] [80b3b4640d5882cf-2] [3e32f49c] [698c78ea] [b69c2f45] [253dd0dd] [7c63e540] [5e5a87ad] [a67a0521] [364e31d7] [010055a8] [5a10f1dfc09c4903] [32590fb0e4b1f943-14] [32590fb0e4b1f943-15] [32590fb0e4b1f943-16] [32590fb0e4b1f943-17] [32590fb0e4b1f943-18] [32590fb0e4b1f943-19] [32590fb0e4b1f943-20] [32590fb0e4b1f943-21] [37f612b97e1bc71b-3] [37f612b97e1bc71b-4] [37f612b97e1bc71b-5] [ca7afe11] [391a4b6d] [bc858a29] [d500e7d3] [05e908cc] [c53bd2bbe44e70a1-7] [7407ef7dca9e98ce-21] [7407ef7dca9e98ce-22] [c1c3dd7a88acbfd9] [566bf7cac451caf9] [566bf7cac451caf9-2] [d458942f800a329c] [685d15dfb6eb2285-53] [3c13e900595e87cf-3] [cc72feb621724713] [ba77f847] [301ecc09] [76abfde2] [630da269] [097cbac6] [a515f714] [61abb517] [8bd87de9] [f7e0fe71] [4d2547a9] [470bc2847d96bfb8-6] [e6ab992d] [501914db] [24ddaf32] [31acfd5e] [4279c236] [73acc436] [383114bf] [02b6654b] [4124dc4d] [942ae6c11625c81c-26] [6b4a5e54e001d097-17] [e4d84589] [97a7ac89] [6d0ef329] [29e53225] [5010a877] [825cccef]
+- [9275317c] class AuthorUpdateView(UpdateView): model = Author fields = ["name"] template_name_suffix = "_update_form"
+- [907e999a] class ContactForm(forms.Form): name = forms.CharField() message = forms.CharField(widget=forms.Textarea)
+- [f2bc257f] class ContactFormView(FormView): template_name = "contact.html" form_class = ContactForm success_url = "/thanks/"
+- [80b3b4640d5882cf-2] from django.db import models from django.urls import reverse
+- [3e32f49c] from django.urls import reverse_lazy from django.views.generic.edit import DeleteView from myapp.models import Author
+- [698c78ea] from django.views.generic.edit import CreateView from myapp.models import Author
+- [b69c2f45] from django.views.generic.edit import UpdateView from myapp.models import Author
+- [253dd0dd] from myapp.forms import ContactForm from django.views.generic.edit import FormView
+- [7c63e540] * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.edit.BaseFormView` * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.edit.ProcessFormView` * :class:`django.views.generic.base.View`
+- [5e5a87ad] * :class:`django.views.generic.detail.SingleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.edit.BaseCreateView` * :class:`django.views.generic.edit.ModelFormMixin` * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.detail.SingleObjectMixin` * :class:`django.views.generic.edit.ProcessFormView` * :class:`django.views.generic.base.View`
+- [a67a0521] * :class:`django.views.generic.detail.SingleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.edit.BaseDeleteView` * :class:`django.views.generic.edit.DeletionMixin` * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.base.ContextMixin` * :class:`django.views.generic.detail.BaseDetailView` * :class:`django.views.generic.detail.SingleObjectMixin` * :class:`django.views.generic.base.View`
+- [364e31d7] * :class:`django.views.generic.edit.DeletionMixin` * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.detail.BaseDetailView`
+- [010055a8] * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.edit.ProcessFormView`
+- [5a10f1dfc09c4903] * :class:`django.views.generic.edit.ModelFormMixin` * :class:`django.views.generic.edit.ProcessFormView`
+- [32590fb0e4b1f943-14] **Ancestors (MRO)**
+- [32590fb0e4b1f943-15] **Ancestors (MRO)**
+- [32590fb0e4b1f943-16] **Ancestors (MRO)**
+- [32590fb0e4b1f943-17] **Ancestors (MRO)**
+- [32590fb0e4b1f943-18] **Ancestors (MRO)**
+- [32590fb0e4b1f943-19] **Ancestors (MRO)**
+- [32590fb0e4b1f943-20] **Ancestors (MRO)**
+- [32590fb0e4b1f943-21] **Ancestors (MRO)**
+- [37f612b97e1bc71b-3] **Attributes**
+- [37f612b97e1bc71b-4] **Attributes**
+- [37f612b97e1bc71b-5] **Attributes**
+- [ca7afe11] **Example myapp/author_confirm_delete.html**:
+- [391a4b6d] **Example myapp/author_form.html**:
+- [bc858a29] **Example myapp/author_update_form.html**:
+- [d500e7d3] **Example myapp/contact.html**:
+- [05e908cc] **Example myapp/forms.py**::
+- [c53bd2bbe44e70a1-7] **Example myapp/views.py**::
+- [7407ef7dca9e98ce-21] **Methods**
+- [7407ef7dca9e98ce-22] **Methods**
+- [c1c3dd7a88acbfd9] .. attribute:: form_class
+- [566bf7cac451caf9] .. attribute:: object
+- [566bf7cac451caf9-2] .. attribute:: object
+- [d458942f800a329c] .. attribute:: template_name_suffix
+- [685d15dfb6eb2285-53] .. code-block:: html+django
+- [3c13e900595e87cf-3] .. method:: get(request, *args, **kwargs)
+- [cc72feb621724713] .. method:: post(request, *args, **kwargs)
+- [ba77f847] A base view for creating a new object instance. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.edit.CreateView`.
+- [301ecc09] A base view for deleting an object instance. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.edit.DeleteView`.
+- [76abfde2] A base view for displaying a form. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.edit.FormView` or other views displaying a form.
+- [630da269] A base view for updating an existing object instance. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.edit.UpdateView`.
+- [097cbac6] A view that displays a confirmation page and deletes an existing object. The given object will only be deleted if the request method is ``POST``. If this view is fetched via ``GET``, it will display a confirmation page that should contain a form that POSTs to the same URL.
+- [a515f714] A view that displays a form for creating an object, redisplaying the form with validation errors (if there are any) and saving the object.
+- [61abb517] A view that displays a form for editing an existing object, redisplaying the form with validation errors (if there are any) and saving changes to the object. This uses a form automatically generated from the object's model class (unless a form class is manually specified).
+- [8bd87de9] A view that displays a form. On error, redisplays the form with validation errors; on success, redirects to a new URL.
+- [f7e0fe71] Some of the examples on this page assume that an ``Author`` model has been defined as follows in ``myapp/models.py``::
+- [4d2547a9] The :doc:`messages framework </ref/contrib/messages>` contains :class:`~django.contrib.messages.views.SuccessMessageMixin`, which facilitates presenting messages about successful form submissions.
+- [470bc2847d96bfb8-6] This view inherits methods and attributes from the following views:
+- [e6ab992d] * :class:`django.views.generic.edit.FormView` * :class:`django.views.generic.edit.CreateView` * :class:`django.views.generic.edit.UpdateView` * :class:`django.views.generic.edit.DeleteView`
+- [501914db] .. class:: django.views.generic.edit.BaseCreateView
+- [24ddaf32] .. class:: django.views.generic.edit.BaseDeleteView
+- [31acfd5e] .. class:: django.views.generic.edit.BaseFormView
+- [4279c236] .. class:: django.views.generic.edit.BaseUpdateView
+- [73acc436] .. class:: django.views.generic.edit.CreateView
+- [383114bf] .. class:: django.views.generic.edit.DeleteView
+- [02b6654b] .. class:: django.views.generic.edit.FormView
+- [4124dc4d] .. class:: django.views.generic.edit.UpdateView
+- [942ae6c11625c81c-26] .. note::
+- [6b4a5e54e001d097-17] .. seealso::
+- [e4d84589] ===================== Generic editing views =====================
+- [97a7ac89] The following views are described on this page and provide a foundation for editing content:
+- [6d0ef329] ``CreateView`` ==============
+- [29e53225] ``DeleteView`` ==============
+- [5010a877] ``FormView`` ============
+- [825cccef] ``UpdateView`` ==============

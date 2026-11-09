@@ -1,14 +1,14 @@
 # docs/howto/custom-file-storage
 
-- Subject: docs/howto/custom-file-storage (id `521b031e-e3e6-47f7-89b3-31c992e67ec4`)
+- Subject: docs/howto/custom-file-storage (id `0a8c04f8-19b1-4b55-b7ce-74669807256b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 879 tokens
-- Facts shown: 24 of 40
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1764 tokens
+- Facts shown: 39 of 40
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class MyStorage(Storage): def __init__(self, option=None): if not option: option = settings.CUSTOM_STORAGE_OPTIONS ... [0a5aa218]
 - class MyStorage(Storage): ... [1c5bb757]
@@ -35,6 +35,20 @@
 - By way of example, if listing the contents of certain storage backends turns out to be expensive, you might decide not to implement ``Storage.listdir()``. [815d7a37]
 - Called by ``Storage.open()``, this is the actual mechanism the storage class uses to open the file. This must return a ``File`` object, though in most cases, you'll want to return some subclass here that implements logic specific to the backend storage system. The :exc:`FileNotFoundError` exception should be raised when a file doesn't exist. [3b385453]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [6bb34b85] [3140bfe5] [7d37d8b7] [0755c483] [1696aec2] [d1cb8c6e] [cc90f635] [808a213e] [01ca55f3] [9d73afc5] [00d6a9b4] [62b56fe4] [8a9a348c] [20e8e719] [2ab8463a]
+- [6bb34b85] Called by ``Storage.save()``. The ``name`` will already have gone through ``get_valid_name()`` and ``get_available_name()``, and the ``content`` will be a ``File`` object itself.
+- [3140bfe5] If a file with ``name`` already exists, ``get_alternative_name()`` is called to obtain an alternative name.
+- [7d37d8b7] If you need to provide custom file storage -- a common example is storing files on some remote system -- you can do so by defining a custom storage class. You'll need to follow these steps:
+- [0755c483] Note however that not all these methods are required and may be deliberately omitted. As it happens, it is possible to leave each method unimplemented and still have a working Storage.
+- [1696aec2] Returns a filename suitable for use with the underlying storage system. The ``name`` argument passed to this method is either the original filename sent to the server or, if ``upload_to`` is a callable, the filename returned by that method after any path information is removed. Override this to customize how non-standard characters are converted to safe filenames.
+- [d1cb8c6e] Returns a filename that is available in the storage mechanism, possibly taking the provided filename into account. The ``name`` argument passed to this method will have already cleaned to a filename valid for the storage system, according to the ``get_valid_name()`` method described above.
+- [cc90f635] Returns an alternative filename based on the ``file_root`` and ``file_ext`` parameters. By default, an underscore plus a random 7 character alphanumeric string is appended to the filename before the extension.
+- [808a213e] Should return the actual name of the file saved (usually the ``name`` passed in, but if the storage needs to change the file name return the new name instead).
+- [01ca55f3] Storages are then accessed by alias from the :data:`django.core.files.storage.storages` dictionary::
+- [9d73afc5] The code provided on ``Storage`` retains only alpha-numeric characters, periods and underscores from the original filename, removing everything else.
+- [00d6a9b4] The first step to using your custom storage with Django is to tell Django about the file storage backend you'll be using. This is done using the :setting:`STORAGES` setting. This setting maps storage aliases, which are a way to refer to a specific storage throughout Django, to a dictionary of settings for that specific storage backend. The settings in the inner dictionaries are described fully in the :setting:`STORAGES` documentation.
+- [62b56fe4] The length of the filename will not exceed ``max_length``, if provided. If a free unique filename cannot be found, a :exc:`SuspiciousFileOperation <django.core.exceptions.SuspiciousOperation>` exception is raised.
+- [8a9a348c] Ultimately, which of these methods are implemented is up to you. Leaving some methods unimplemented will result in a partial (possibly broken) interface.
+- [20e8e719] Use your custom storage engine ==============================
+- [2ab8463a] You'll also usually want to use hooks specifically designed for custom storage objects. These are:

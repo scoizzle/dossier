@@ -1,6 +1,6 @@
 # Fact 93fae2b8
 
-Store id: 88af67e4-2050-4494-a817-0eacf16a5b5e
+Store id: 81c3bfcd-6389-4d81-a195-4aa07c23a5dd
 
 ## Text
 
@@ -20,7 +20,7 @@ def _combine_sql_parts(self, parts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6398780+00:00`
+- posted_at: `2026-11-09T23:31:57.8833360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 216,
     "symbol": "HasKeyLookup._combine_sql_parts"
   },
-  "id": "88af67e4-2050-4494-a817-0eacf16a5b5e",
+  "id": "81c3bfcd-6389-4d81-a195-4aa07c23a5dd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6398780+00:00"
+    "posted_at": "2026-11-09T23:31:57.8833360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c2398fe3-19a8-46f1-a0e0-755e865f2a3b",
+  "subject_id": "7705daa5-0322-4225-a446-4c044098b0d2",
   "subject_name": "django/db/models/fields/json::HasKeyLookup._combine_sql_parts",
   "tags": [
     "entity:method"

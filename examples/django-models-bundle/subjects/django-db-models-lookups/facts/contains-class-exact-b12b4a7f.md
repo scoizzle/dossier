@@ -1,6 +1,6 @@
 # Fact b12b4a7f
 
-Store id: e08402e0-b63a-496f-a16d-cbee9f4b3b26
+Store id: 8660f014-451d-4b41-886f-975eb5cdd59b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Exact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e08402e0-b63a-496f-a16d-cbee9f4b3b26",
+  "id": "8660f014-451d-4b41-886f-975eb5cdd59b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Exact"
       },
       "rel": "contains",
-      "target": "0a2f9eb6-42cc-4c45-a3a1-fe532cd3bacd"
+      "target": "07a86a88-c8a3-48fa-a8fe-319d121d41be"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 58592ab0
 
-Store id: 17233882-0389-493d-a898-54c76688a2dc
+Store id: 303a7c6c-e816-42a0-ab60-87101216b7ad
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2625520+00:00`
+- posted_at: `2026-11-09T23:32:04.2836740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 333,
     "symbol": "FlatValuesListIterable.__iter__"
   },
-  "id": "17233882-0389-493d-a898-54c76688a2dc",
+  "id": "303a7c6c-e816-42a0-ab60-87101216b7ad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2625520+00:00"
+    "posted_at": "2026-11-09T23:32:04.2836740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c3f4d356-9f8d-468c-a1ea-d77ebf661401",
+  "subject_id": "843cac48-80fb-4478-8f5a-f16ebe953bb5",
   "subject_name": "django/db/models/query::FlatValuesListIterable.__iter__",
   "tags": [
     "entity:method"

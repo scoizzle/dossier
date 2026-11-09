@@ -1,14 +1,14 @@
 # docs/ref/validators
 
-- Subject: docs/ref/validators (id `4b79556d-0142-4565-859a-408eb48c93b4`)
+- Subject: docs/ref/validators (id `97863b57-6143-4f03-8bed-aa86eadd7ca1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 22 of 122
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4172 tokens
+- Facts shown: 114 of 122
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Values starting with ``file:///`` will not pass validation even when the ``file`` scheme is provided. Valid values must contain a host. [b72e9be5]
 - .. _valid URI schemes: https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml [c59fba79]
@@ -33,6 +33,97 @@
 - .. attribute:: flags [c13db343]
 - .. warning:: [c54b54cb0805732a-89]
 
-## Beyond the budget
+## All facts
 
-92 more facts did not fit in the budget: [dca5ac95] [97f6c5ac0309812d-3] [a2ccad91f7facea1] [a2ccad91f7facea1-2] [a2ccad91f7facea1-3] [37a52266edd51262-2] [68f24f00] [9f1966ce] [591e0ac7] [a386c7db] [ebe86162] [08eafab8] [86cab147] [ce28ad23] [87de617d] [b232721a] [41408d37] [d148c1ab] [e0878073] [20e32da4] [e1e99b01] [5570b1fb] [e053ea63] [5b6e4a84] [a4284729] [19bfcfbb] [f9d658ba] [5058d80a] [b8c671ff] [b2ed702c] [c9abab84] [c498259c] [3c9ff8c3] [9ee3a9405e27875c-10] [92d2d276] [4af926756c29efa6-38] [b6ed703b] [89f96840] [4181df80] [271fcc05] [bd7a2a99] [fe67f6c9] [25d9ccd1] [6abab4af] [75b5b9d4] [2b34a5c7] [851f9666] [1069b32e] [de6fd191] [26b67ab3] [005ba330] [ce6a3346] [2459f293] [ad01567c] [31966975] [6f72dcac] [8d62d027] [4b5ed9d0] [cbdc64b2] [fa3715790913edf5-2] [3158bd1b] [4b2a1f02] [39ad0ba6] [ccae5b26] [c05f9046] [c66478a0] [6b3316de] [c73f986b] [4281788e] [c1fc4cf4] [49603ee8] [0d102573] [d8d2c3ff] [3ce1f78b] [03cf1e37] [448f93ad] [e0e3f941] [c1ea9a65] [86c2859f] [7bdcae33] [ea41647b] [875aea33] [81545b71] [54c78848] [8d46fbd5] [de8c4d83] [0aacf31a] [9c06eaa6] [459d5b4a] [78aa0e5c] [69505c6c] [54298227]
+- [dca5ac95] .. attribute:: inverse_match
+- [97f6c5ac0309812d-3] .. attribute:: max_length
+- [a2ccad91f7facea1] .. attribute:: message
+- [a2ccad91f7facea1-2] .. attribute:: message
+- [a2ccad91f7facea1-3] .. attribute:: message
+- [37a52266edd51262-2] .. attribute:: regex
+- [68f24f00] .. attribute:: schemes
+- [9f1966ce] :param message: If not ``None``, overrides :attr:`.message`. :param code: If not ``None``, overrides :attr:`code`.
+- [591e0ac7] :param regex: If not ``None``, overrides :attr:`regex`. Can be a regular expression string or a pre-compiled regular expression. :param message: If not ``None``, overrides :attr:`.message`. :param code: If not ``None``, overrides :attr:`code`. :param inverse_match: If not ``None``, overrides :attr:`inverse_match`. :param flags: If not ``None``, overrides :attr:`flags`. In that case, :attr:`regex` must be a regular expression string, or :exc:`TypeError` is raised.
+- [a386c7db] A :class:`DomainNameValidator` instance without any customizations.
+- [ebe86162] A :class:`RegexValidator` instance that ensures a value consists of only Unicode letters, numbers, underscores, or hyphens.
+- [08eafab8] A :class:`RegexValidator` instance that ensures a value is a comma-separated list of integers.
+- [86cab147] A :class:`RegexValidator` instance that ensures a value looks like an IPv4 address.
+- [ce28ad23] A :class:`RegexValidator` searches the provided ``value`` for a given regular expression with :func:`re.search`. By default, raises a :exc:`~django.core.exceptions.ValidationError` with :attr:`message` and :attr:`code` if a match **is not** found. Its behavior can be inverted by setting :attr:`inverse_match` to ``True``, in which case the :exc:`~django.core.exceptions.ValidationError` is raised when a match **is** found.
+- [87de617d] A :class:`RegexValidator` subclass that ensures a value looks like a URL, and raises an error code of ``'invalid'`` if it doesn't. Values longer than :attr:`max_length` characters are always considered invalid.
+- [b232721a] A :class:`RegexValidator` subclass that ensures a value looks like a domain name. Values longer than 255 characters are always considered invalid. IP addresses are not accepted as valid domain names.
+- [41408d37] An :class:`EmailValidator` ensures that a value looks like an email address, and raises a :exc:`~django.core.exceptions.ValidationError` with :attr:`message` and :attr:`code` if it doesn't. Values longer than 320 characters are always considered invalid.
+- [d148c1ab] An :class:`EmailValidator` instance without any customizations.
+- [e0878073] In addition to the optional arguments of its parent :class:`RegexValidator` class, ``DomainNameValidator`` accepts an extra optional attribute:
+- [20e32da4] Loopback addresses and reserved IP spaces are considered valid. Literal IPv6 addresses (:rfc:`3986#section-3.2.2`) and Unicode domains are both supported.
+- [e1e99b01] Raises :exc:`~django.core.exceptions.ValidationError` with the following codes:
+- [5570b1fb] Raises a :exc:`~django.core.exceptions.ValidationError` if ``str(value)`` contains one or more null characters (``'\x00'``).
+- [e053ea63] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'invalid_extension'`` if the extension of ``value.name`` (``value`` is a :class:`~django.core.files.File`) isn't found in ``allowed_extensions``. The extension is compared case-insensitively with ``allowed_extensions``.
+- [5b6e4a84] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'max_length'`` if the length of ``value`` is greater than ``limit_value``, which may be a callable.
+- [a4284729] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'min_length'`` if the length of ``value`` is less than ``limit_value``, which may be a callable.
+- [19bfcfbb] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'step_size'`` if ``value`` is not an integral multiple of ``limit_value``, which can be a float, integer or decimal value or a callable. When ``offset`` is set, the validation occurs against ``limit_value`` plus ``offset``. For example, for ``StepValueValidator(3, offset=1.4)`` valid values include ``1.4``, ``4.4``, ``7.4``, ``10.4``, and so on.
+- [f9d658ba] Returns a :class:`RegexValidator` instance that ensures a string consists of integers separated by ``sep``. It allows negative integers when ``allow_negative`` is ``True``.
+- [5058d80a] Uses Pillow to ensure that ``value.name`` (``value`` is a :class:`~django.core.files.File`) has `a valid image extension <https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html>`__.
+- [b8c671ff] Uses ``django.utils.ipv6`` to check the validity of an IPv6 address.
+- [b2ed702c] Uses both ``validate_ipv4_address`` and ``validate_ipv6_address`` to ensure a value is either a valid IPv4 or IPv6 address.
+- [c9abab84] class MyForm(forms.Form): even_field = forms.IntegerField(validators=[validate_even])
+- [c498259c] class MyModel(models.Model): even_field = models.IntegerField(validators=[validate_even])
+- [3c9ff8c3] def validate_even(value): if value % 2 != 0: raise ValidationError( _("%(value)s is not an even number"), params={"value": value}, )
+- [9ee3a9405e27875c-10] from django import forms
+- [92d2d276] from django.core.exceptions import ValidationError from django.utils.translation import gettext_lazy as _
+- [4af926756c29efa6-38] from django.db import models
+- [b6ed703b] .. class:: DecimalValidator(max_digits, decimal_places)
+- [89f96840] .. class:: DomainNameValidator(accept_idna=True, message=None, code=None)
+- [4181df80] .. class:: EmailValidator(message=None, code=None, allowlist=None)
+- [271fcc05] .. class:: FileExtensionValidator(allowed_extensions, message, code)
+- [bd7a2a99] .. class:: MaxLengthValidator(limit_value, message=None)
+- [fe67f6c9] .. class:: MaxValueValidator(limit_value, message=None)
+- [25d9ccd1] .. class:: MinLengthValidator(limit_value, message=None)
+- [6abab4af] .. class:: MinValueValidator(limit_value, message=None)
+- [75b5b9d4] .. class:: ProhibitNullCharactersValidator(message=None, code=None)
+- [2b34a5c7] .. class:: RegexValidator(regex=None, message=None, code=None, inverse_match=None, flags=0)
+- [851f9666] .. class:: StepValueValidator(limit_value, message=None, offset=None)
+- [1069b32e] .. class:: URLValidator(schemes=None, regex=None, message=None, code=None)
+- [de6fd191] .. data:: validate_comma_separated_integer_list
+- [26b67ab3] .. data:: validate_domain_name
+- [005ba330] .. data:: validate_email
+- [ce6a3346] .. data:: validate_image_file_extension
+- [2459f293] .. data:: validate_ipv46_address
+- [ad01567c] .. data:: validate_ipv4_address
+- [31966975] .. data:: validate_ipv6_address
+- [6f72dcac] .. data:: validate_slug
+- [8d62d027] .. data:: validate_unicode_slug
+- [4b5ed9d0] .. function:: int_list_validator(sep=',', message=None, code='invalid', allow_negative=False)
+- [cbdc64b2] .. module:: django.core.validators :synopsis: Validation utilities and base classes
+- [fa3715790913edf5-2] ========== Validators ==========
+- [3158bd1b] A validator is a callable that takes a value and raises a :exc:`~django.core.exceptions.ValidationError` if it doesn't meet some criteria. Validators can be useful for reusing validation logic between different types of fields.
+- [4b2a1f02] Because values are converted to Python before validators are run, you can even use the same validator with forms::
+- [39ad0ba6] Built-in validators ===================
+- [ccae5b26] For example, here's a validator that only allows even numbers::
+- [c05f9046] How validators are run ======================
+- [c66478a0] See the :doc:`form validation </ref/forms/validation>` for more information on how validators are run in forms, and :ref:`Validating objects <validating-objects>` for how they're run in models. Note that validators will not be run automatically when you save a model, but if you are using a :class:`~django.forms.ModelForm`, it will run your validators on any fields that are included in your form. See the :doc:`ModelForm documentation </topics/forms/modelforms>` for information on how model validation interacts with forms.
+- [6b3316de] The :mod:`django.core.validators` module contains a collection of callable validators for use with model and form fields. They're used internally but are available for use with your own fields, too. They can be used in addition to, or in lieu of custom ``field.clean()`` methods.
+- [c73f986b] Writing validators ==================
+- [4281788e] You can add this to a model field via the field's :attr:`~django.db.models.Field.validators` argument::
+- [c1fc4cf4] You can also use a class with a ``__call__()`` method for more complex or configurable validators. :class:`RegexValidator`, for example, uses this technique. If a class-based validator is used in the :attr:`~django.db.models.Field.validators` model field option, you should make sure it is :ref:`serializable by the migration framework <migration-serializing>` by adding :ref:`deconstruct() <custom-deconstruct-method>` and ``__eq__()`` methods.
+- [49603ee8] ``DecimalValidator`` --------------------
+- [0d102573] ``DomainNameValidator`` -----------------------
+- [d8d2c3ff] ``EmailValidator`` ------------------
+- [3ce1f78b] ``FileExtensionValidator`` --------------------------
+- [03cf1e37] ``MaxLengthValidator`` ----------------------
+- [448f93ad] ``MaxValueValidator`` ---------------------
+- [e0e3f941] ``MinLengthValidator`` ----------------------
+- [c1ea9a65] ``MinValueValidator`` ---------------------
+- [86c2859f] ``ProhibitNullCharactersValidator`` -----------------------------------
+- [7bdcae33] ``RegexValidator`` ------------------
+- [ea41647b] ``StepValueValidator`` ----------------------
+- [875aea33] ``URLValidator`` ----------------
+- [81545b71] ``int_list_validator`` ----------------------
+- [54c78848] ``validate_comma_separated_integer_list`` -----------------------------------------
+- [8d46fbd5] ``validate_domain_name`` ------------------------
+- [de8c4d83] ``validate_email`` ------------------
+- [0aacf31a] ``validate_image_file_extension`` ---------------------------------
+- [9c06eaa6] ``validate_ipv46_address`` --------------------------
+- [459d5b4a] ``validate_ipv4_address`` -------------------------
+- [78aa0e5c] ``validate_ipv6_address`` -------------------------
+- [69505c6c] ``validate_slug`` -----------------
+- [54298227] ``validate_unicode_slug`` -------------------------

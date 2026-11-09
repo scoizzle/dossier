@@ -1,8 +1,8 @@
 # django/core/checks/translation
 
-- Subject: django/core/checks/translation (id `d1b0e858-6948-4049-9121-7ee15cfb73a0`)
+- Subject: django/core/checks/translation (id `80fb9f2a-1e0c-4481-9512-1f5cc7861aa8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 476 tokens
 - Facts shown: 9 of 10
 - Conflicts: 0

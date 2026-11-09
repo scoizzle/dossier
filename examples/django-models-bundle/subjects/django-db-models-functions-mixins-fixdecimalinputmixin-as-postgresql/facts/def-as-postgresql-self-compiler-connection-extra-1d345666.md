@@ -1,6 +1,6 @@
 # Fact 1d345666
 
-Store id: be1b9c5f-7158-4140-a42c-efb28c1ba77d
+Store id: a71485ef-30c6-48c2-b236-d768d6ee5d63
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.8647190+00:00`
+- posted_at: `2026-11-09T23:32:01.9395310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 8,
     "symbol": "FixDecimalInputMixin.as_postgresql"
   },
-  "id": "be1b9c5f-7158-4140-a42c-efb28c1ba77d",
+  "id": "a71485ef-30c6-48c2-b236-d768d6ee5d63",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.8647190+00:00"
+    "posted_at": "2026-11-09T23:32:01.9395310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b63f8f0-d298-4dc1-bb2a-f86883318f17",
+  "subject_id": "87c453d2-5fbd-4272-8374-84be69a7453e",
   "subject_name": "django/db/models/functions/mixins::FixDecimalInputMixin.as_postgresql",
   "tags": [
     "entity:method"

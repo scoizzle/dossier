@@ -1,6 +1,6 @@
 # Fact 06bf5b5a
 
-Store id: f7286130-858f-4593-96f0-8683d7e351c5
+Store id: 89dad5f7-33d4-47c0-aa10-ec339b30918f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5571580+00:00`
+- posted_at: `2026-11-09T23:32:00.5400130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 53,
     "symbol": "TupleLookupMixin.get_prep_lookup"
   },
-  "id": "f7286130-858f-4593-96f0-8683d7e351c5",
+  "id": "89dad5f7-33d4-47c0-aa10-ec339b30918f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5571580+00:00"
+    "posted_at": "2026-11-09T23:32:00.5400130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c4ef8f3e-eddd-4764-9c76-435c61ab7d37",
+  "subject_id": "8fad06e2-abcf-4ab3-bf55-d943356e7d60",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.get_prep_lookup",
   "tags": [
     "entity:method"

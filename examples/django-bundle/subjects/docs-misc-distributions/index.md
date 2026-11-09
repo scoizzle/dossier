@@ -1,8 +1,8 @@
 # docs/misc/distributions
 
-- Subject: docs/misc/distributions (id `2010b7c2-bab0-45b4-b0f9-b5cc59e840b1`)
+- Subject: docs/misc/distributions (id `c688e9dc-c92e-4a79-aa04-dc229b013537`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 474 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

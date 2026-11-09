@@ -1,6 +1,6 @@
 # Fact 1cac3ec4
 
-Store id: 9c4bddac-5a4e-4fe7-ac13-67a462c09fc7
+Store id: dc8f5326-36ca-492f-af37-b06a213bb3a0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, model=None, query=None, using=None, hints=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2866250+00:00`
+- posted_at: `2026-11-09T23:32:04.3028800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 367,
     "symbol": "QuerySet.__init__"
   },
-  "id": "9c4bddac-5a4e-4fe7-ac13-67a462c09fc7",
+  "id": "dc8f5326-36ca-492f-af37-b06a213bb3a0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2866250+00:00"
+    "posted_at": "2026-11-09T23:32:04.3028800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "989d3220-a6ef-4f54-94b5-3c0cf15648cc",
+  "subject_id": "d4a8726a-abc1-4f1d-8fbd-add1d9b0937b",
   "subject_name": "django/db/models/query::QuerySet.__init__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 6c2b38c2
 
-Store id: b77f4826-03c7-4db5-93b2-317d60962a72
+Store id: 426fb2e0-608d-44f2-b658-c1bf9977d076
 
 ## Text
 
@@ -20,7 +20,7 @@ class BitOr(BitAggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0428450+00:00`
+- posted_at: `2026-11-09T23:31:53.5383210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 285,
     "symbol": "BitOr"
   },
-  "id": "b77f4826-03c7-4db5-93b2-317d60962a72",
+  "id": "426fb2e0-608d-44f2-b658-c1bf9977d076",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0428450+00:00"
+    "posted_at": "2026-11-09T23:31:53.5383210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b39e10e9-db51-4ed6-b24a-9ffbbba0e3ab",
+  "subject_id": "007d735b-2fc3-4474-9e0d-c6802aa33cc8",
   "subject_name": "django/db/models/aggregates::BitOr",
   "tags": [
     "entity:class"

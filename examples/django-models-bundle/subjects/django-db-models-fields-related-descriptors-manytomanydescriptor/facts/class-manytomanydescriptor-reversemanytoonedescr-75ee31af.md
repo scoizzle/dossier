@@ -1,6 +1,6 @@
 # Fact 75ee31af
 
-Store id: 6326a04e-bca2-4e6b-a714-8709ca5b9dc0
+Store id: e1e8aac4-6976-410d-8d56-2654191b947f
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManyToManyDescriptor(ReverseManyToOneDescriptor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8394820+00:00`
+- posted_at: `2026-11-09T23:31:59.3051300+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1028,
     "symbol": "ManyToManyDescriptor"
   },
-  "id": "6326a04e-bca2-4e6b-a714-8709ca5b9dc0",
+  "id": "e1e8aac4-6976-410d-8d56-2654191b947f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8394820+00:00"
+    "posted_at": "2026-11-09T23:31:59.3051300+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5294cea7-0ab8-45b6-a81f-6dc5783ff329",
+  "subject_id": "5a4bb1e9-9147-4efc-9ff0-c42a013b4cac",
   "subject_name": "django/db/models/fields/related_descriptors::ManyToManyDescriptor",
   "tags": [
     "entity:class"

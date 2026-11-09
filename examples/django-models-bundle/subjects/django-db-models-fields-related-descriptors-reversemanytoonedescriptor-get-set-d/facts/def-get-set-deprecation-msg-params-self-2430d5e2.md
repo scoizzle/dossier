@@ -1,6 +1,6 @@
 # Fact 2430d5e2
 
-Store id: 48aed379-b729-49f4-902b-cb7939c6c343
+Store id: 8bdb0a28-bbfd-439c-9aaf-ecd9808e54c2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_set_deprecation_msg_params(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7796010+00:00`
+- posted_at: `2026-11-09T23:31:59.2252180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 701,
     "symbol": "ReverseManyToOneDescriptor._get_set_deprecation_msg_params"
   },
-  "id": "48aed379-b729-49f4-902b-cb7939c6c343",
+  "id": "8bdb0a28-bbfd-439c-9aaf-ecd9808e54c2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7796010+00:00"
+    "posted_at": "2026-11-09T23:31:59.2252180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4193129-f39d-4b16-a4c2-df34afea82a3",
+  "subject_id": "0b9521e0-607b-4c4a-be9a-8777c4b9ca77",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor._get_set_deprecation_msg_params",
   "tags": [
     "entity:method"

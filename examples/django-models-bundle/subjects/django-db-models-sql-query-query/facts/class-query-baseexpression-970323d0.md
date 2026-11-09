@@ -1,6 +1,6 @@
 # Fact 970323d0
 
-Store id: 51c4b4c1-3c1c-4527-980a-275c83a02cf6
+Store id: 3915df0c-90d4-453c-9a42-92644d881e4d
 
 ## Text
 
@@ -20,7 +20,7 @@ class Query(BaseExpression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2164780+00:00`
+- posted_at: `2026-11-09T23:32:06.7427540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 231,
     "symbol": "Query"
   },
-  "id": "51c4b4c1-3c1c-4527-980a-275c83a02cf6",
+  "id": "3915df0c-90d4-453c-9a42-92644d881e4d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2164780+00:00"
+    "posted_at": "2026-11-09T23:32:06.7427540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "865536af-be51-49fa-80ee-b755315244e0",
+  "subject_id": "40be6ccc-9594-40c0-8331-28bddced1662",
   "subject_name": "django/db/models/sql/query::Query",
   "tags": [
     "entity:class"

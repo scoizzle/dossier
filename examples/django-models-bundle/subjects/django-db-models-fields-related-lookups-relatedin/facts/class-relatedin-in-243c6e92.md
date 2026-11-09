@@ -1,6 +1,6 @@
 # Fact 243c6e92
 
-Store id: 885772f3-ba5f-41ad-ad89-5107e2c719ec
+Store id: f17eb7ee-9b11-4e9c-b758-a8d98ea2eff5
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedIn(In)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.0985780+00:00`
+- posted_at: `2026-11-09T23:31:59.9741190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 42,
     "symbol": "RelatedIn"
   },
-  "id": "885772f3-ba5f-41ad-ad89-5107e2c719ec",
+  "id": "f17eb7ee-9b11-4e9c-b758-a8d98ea2eff5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.0985780+00:00"
+    "posted_at": "2026-11-09T23:31:59.9741190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2bae8be9-43a0-47f8-827d-2c44deca62bd",
+  "subject_id": "d5adbd9c-969e-41db-af24-ca4d73c45051",
   "subject_name": "django/db/models/fields/related_lookups::RelatedIn",
   "tags": [
     "entity:class"

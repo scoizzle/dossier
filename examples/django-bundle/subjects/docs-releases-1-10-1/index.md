@@ -1,14 +1,14 @@
 # docs/releases/1.10.1
 
-- Subject: docs/releases/1.10.1 (id `372c2f76-896e-4af4-beeb-7b73feb50ce9`)
+- Subject: docs/releases/1.10.1 (id `2ca35f6b-b568-4bf5-a75b-f812960b1572`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 19 of 27
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1152 tokens
+- Facts shown: 27 of 27
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * Added the database alias to the ``InconsistentMigrationHistory`` message raised by ``makemigrations`` and ``migrate`` (:ticket:`27089`). [bb6f280b]
 - * Allowed ``User.is_authenticated`` and ``User.is_anonymous`` properties to be compared using ``==``, ``!=``, and ``|`` (:ticket:`26988`, :ticket:`27154`). [86f2021a]
@@ -30,6 +30,13 @@
 - * Prevented the ``migrate`` command from raising ``InconsistentMigrationHistory`` in the presence of unapplied squashed migrations (:ticket:`27004`). [b42f76b7]
 - * Reallowed the ``{% for %}`` tag to unpack any iterable (:ticket:`27058`). [d2b66b5d]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [85ecfb83] [60d8402e] [4d77d743] [823104d2] [656cce6b] [e0fdf200] [6c84539cac9c976c] [fcf8e854]
+- [85ecfb83] * Reallowed subclassing ``UserCreationForm`` without ``USERNAME_FIELD`` in ``Meta.fields`` (:ticket:`27111`).
+- [60d8402e] * Removed duplicated managers in ``Model._meta.managers`` (:ticket:`27073`).
+- [4d77d743] * Removed the broken ``BaseCommand.usage()`` method which was for ``optparse`` support (:ticket:`27000`).
+- [823104d2] * Reverted a few admin checks that checked ``field.many_to_many`` back to ``isinstance(field, models.ManyToManyField)`` since it turned out the checks weren't suitable to be generalized like that (:ticket:`26998`).
+- [656cce6b] *September 1, 2016*
+- [e0fdf200] =========================== Django 1.10.1 release notes ===========================
+- [6c84539cac9c976c] Bugfixes ========
+- [fcf8e854] Django 1.10.1 fixes several bugs in 1.10.

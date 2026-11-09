@@ -1,6 +1,6 @@
 # Fact 1d5915b0
 
-Store id: 5a28f873-5420-4640-a3ed-1c8e9ebd6c1b
+Store id: d89cc145-b35d-4472-8772-48296346499c
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2982080+00:00`
+- posted_at: `2026-11-09T23:31:56.4520310+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 706,
     "symbol": "Field.clone"
   },
-  "id": "5a28f873-5420-4640-a3ed-1c8e9ebd6c1b",
+  "id": "d89cc145-b35d-4472-8772-48296346499c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2982080+00:00"
+    "posted_at": "2026-11-09T23:31:56.4520310+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd3d0ad8-abf1-4710-bd12-a8cd26c8a143",
+  "subject_id": "5b593f65-d3b9-4dbf-897d-41ca940cc45e",
   "subject_name": "django/db/models/fields/__init__::Field.clone",
   "tags": [
     "entity:method"

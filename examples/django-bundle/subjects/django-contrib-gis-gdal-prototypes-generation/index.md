@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/prototypes/generation
 
-- Subject: django/contrib/gis/gdal/prototypes/generation (id `6aa6016b-81f9-41fa-9819-2bbebc657656`)
+- Subject: django/contrib/gis/gdal/prototypes/generation (id `8b7ce8a4-4a9f-4259-b166-dfcc79b8a985`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 20 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1321 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def geomerrcheck(result, func, cargs): return check_geom_offset(result, func, cargs, offset) [4b26886b]
 - func.errcheck = geomerrcheck [2f247ec1]
@@ -31,6 +31,10 @@
 - def int_output(func, argtypes, errcheck=None): "Generate a ctypes function that returns an integer value." func.argtypes = argtypes func.restype = c_int if errcheck: func.errcheck = errcheck return func [4041f4b0]
 - def srs_output(func, argtypes): """ Generate a ctypes prototype for the given function with the given C arguments that returns a pointer to an OGR Spatial Reference System. """ func.argtypes = argtypes func.restype = c_void_p func.errcheck = check_srs return func [592c0058]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [6205b66a] [7ce9e37e] [d831ebb9] [b4fcda0b] [83554635]
+- [6205b66a] def string_output(func, argtypes, offset=-1, str_result=False, decoding=None): """ Generate a ctypes prototype for the given function with the given argument types that returns a string from a GDAL pointer. The `const` flag indicates whether the allocated pointer should be freed via the GDAL library routine VSIFree -- but only applies only when `str_result` is True. """ func.argtypes = argtypes if str_result: # Use subclass of c_char_p so the error checking routine # can free the memory at the pointer's address. func.restype = gdal_char_p else: # Error code is returned func.restype = c_int
+- [7ce9e37e] def void_output(func, argtypes, errcheck=True, cpl=False): """ For functions that don't only return an error code that needs to be examined. """ if argtypes: func.argtypes = argtypes if errcheck: # `errcheck` keyword may be set to False for routines that # return void, rather than a status code. func.restype = c_int func.errcheck = partial(check_errcode, cpl=cpl) else: func.restype = None
+- [d831ebb9] def voidptr_output(func, argtypes, errcheck=True): "For functions that return c_void_p." func.argtypes = argtypes func.restype = c_void_p if errcheck: func.errcheck = check_pointer return func
+- [b4fcda0b] from ctypes import POINTER, c_bool, c_char_p, c_double, c_int, c_int64, c_void_p from functools import partial
+- [83554635] from django.contrib.gis.gdal.prototypes.errcheck import ( check_arg_errcode, check_const_string, check_errcode, check_geom, check_geom_offset, check_pointer, check_srs, check_str_arg, check_string, )

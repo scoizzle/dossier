@@ -1,9 +1,9 @@
 # django/db/models/query::RawQuerySet._clone
 
-- Subject: django/db/models/query::RawQuerySet._clone (id `689b3ce6-5886-4009-bce8-a842c2c54bfd`)
+- Subject: django/db/models/query::RawQuerySet._clone (id `d775c36b-b98e-48b9-8a7e-de726e307f2b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

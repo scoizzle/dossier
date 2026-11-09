@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FieldFile
 
-- Subject: django/db/models/fields/files::FieldFile (id `d8c7c889-a81b-4129-8771-2ad2bc1635eb`)
+- Subject: django/db/models/fields/files::FieldFile (id `424daf60-dd30-4ec6-ab8f-44039d442085`)
 - Kind: class
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

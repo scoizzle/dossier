@@ -1,14 +1,14 @@
 # docs/faq/usage
 
-- Subject: docs/faq/usage (id `e2cfdcd5-3eec-4bc5-8157-7b06d41bb699`)
+- Subject: docs/faq/usage (id `80b9befa-c04b-49a7-afe5-21ca1fd98857`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 884 tokens
-- Facts shown: 18 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 931 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - #. Add the :class:`~django.db.models.FileField` or :class:`~django.db.models.ImageField` to your model, defining the :attr:`~django.db.models.FileField.upload_to` option to specify a subdirectory of :setting:`MEDIA_ROOT` to use for uploaded files. [ef876104]
 - #. All that will be stored in your database is a path to the file (relative to :setting:`MEDIA_ROOT`). You'll most likely want to use the convenience :attr:`~django.db.models.fields.files.FieldFile.url` attribute provided by Django. For example, if your :class:`~django.db.models.ImageField` is called ``mug_shot``, you can get the absolute path to your image in a template with ``{{ object.mug_shot.url }}``. [eace47c0]
@@ -29,6 +29,6 @@
 - Using a :class:`~django.db.models.FileField` or an :class:`~django.db.models.ImageField` in a model takes a few steps: [2270824e]
 - We happen to think our template engine is the best thing since chunky bacon, but we recognize that choosing a template language runs close to religion. There's nothing about Django that requires using the template language, so if you're attached to Jinja2, Mako, or whatever, feel free to use those. [35713bf0]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [11a82584]
+- [11a82584] Why do I get an error about importing :envvar:`DJANGO_SETTINGS_MODULE`? =======================================================================

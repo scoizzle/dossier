@@ -1,6 +1,6 @@
 # Fact 248f22d8
 
-Store id: aad2df52-f50d-4f4f-a61e-dbdbbd174c6f
+Store id: 3412989a-38ed-4405-a6dc-0578340ba430
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2437760+00:00`
+- posted_at: `2026-11-09T23:32:06.7774170+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 387,
     "symbol": "Query.clone"
   },
-  "id": "aad2df52-f50d-4f4f-a61e-dbdbbd174c6f",
+  "id": "3412989a-38ed-4405-a6dc-0578340ba430",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2437760+00:00"
+    "posted_at": "2026-11-09T23:32:06.7774170+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0d6c3ec-62aa-42ad-81d7-448960acddd5",
+  "subject_id": "37b0b1b1-1460-4f99-ab6e-a907bf1a831c",
   "subject_name": "django/db/models/sql/query::Query.clone",
   "tags": [
     "entity:method"

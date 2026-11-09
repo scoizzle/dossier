@@ -1,6 +1,6 @@
 # Fact 63d705a8
 
-Store id: 4cf30262-d9ab-4999-ae3a-252f121b2c49
+Store id: 7146abe9-d6da-4ec8-b968-67868e2bce12
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1617340+00:00`
+- posted_at: `2026-11-09T23:32:01.2307070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 217,
     "symbol": "Now.as_postgresql"
   },
-  "id": "4cf30262-d9ab-4999-ae3a-252f121b2c49",
+  "id": "7146abe9-d6da-4ec8-b968-67868e2bce12",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1617340+00:00"
+    "posted_at": "2026-11-09T23:32:01.2307070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d7062cc4-601e-4ee7-8d1b-b4356f647257",
+  "subject_id": "42979e7f-3ede-4948-ae81-63f45771f24c",
   "subject_name": "django/db/models/functions/datetime::Now.as_postgresql",
   "tags": [
     "entity:method"

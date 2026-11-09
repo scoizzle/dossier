@@ -1,6 +1,6 @@
 # Fact 5cb7a548
 
-Store id: dd5ed810-b910-4fa6-8b79-a608e49c2dd4
+Store id: 1f025aa3-c08e-43e1-8dbe-664afaa01497
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, path="", match=None, recursive
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5015530+00:00`
+- posted_at: `2026-11-09T23:31:56.6700970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2026,
     "symbol": "FilePathField.__init__"
   },
-  "id": "dd5ed810-b910-4fa6-8b79-a608e49c2dd4",
+  "id": "1f025aa3-c08e-43e1-8dbe-664afaa01497",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5015530+00:00"
+    "posted_at": "2026-11-09T23:31:56.6700970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c65fd974-c8f5-4dd4-9bb9-47dd89e7a3a5",
+  "subject_id": "87002c96-002b-4d86-a020-0e2bfb825c3f",
   "subject_name": "django/db/models/fields/__init__::FilePathField.__init__",
   "tags": [
     "entity:method"

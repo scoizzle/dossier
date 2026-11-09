@@ -1,6 +1,6 @@
 # Fact 84c3703f
 
-Store id: 77620d32-37b4-451c-a75c-0771f9ded5c0
+Store id: cf3aff55-01cf-46fc-9b12-3e2625851ffb
 
 ## Text
 
@@ -20,7 +20,7 @@ def split_parameter_list_as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1637880+00:00`
+- posted_at: `2026-11-09T23:32:03.3373380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 561,
     "symbol": "In.split_parameter_list_as_sql"
   },
-  "id": "77620d32-37b4-451c-a75c-0771f9ded5c0",
+  "id": "cf3aff55-01cf-46fc-9b12-3e2625851ffb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1637880+00:00"
+    "posted_at": "2026-11-09T23:32:03.3373380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "543d9692-f71e-4a25-b47b-566d7047a612",
+  "subject_id": "6719fc8b-7926-491b-81c1-fea0c57bba00",
   "subject_name": "django/db/models/lookups::In.split_parameter_list_as_sql",
   "tags": [
     "entity:method"

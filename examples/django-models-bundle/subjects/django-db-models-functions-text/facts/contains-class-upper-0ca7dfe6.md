@@ -1,6 +1,6 @@
 # Fact 0ca7dfe6
 
-Store id: 74c010be-86d1-4154-8869-b587048aaa88
+Store id: 131a1d06-9992-4895-86f5-d94503454c32
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Upper
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "74c010be-86d1-4154-8869-b587048aaa88",
+  "id": "131a1d06-9992-4895-86f5-d94503454c32",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Upper"
       },
       "rel": "contains",
-      "target": "34cadb8a-f46e-4be0-aaf5-05b91c3383ca"
+      "target": "9e3b84d1-5b04-44e7-a15d-e7691991400a"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

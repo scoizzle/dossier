@@ -1,6 +1,6 @@
 # Fact 1961ef67
 
-Store id: 632b4fc4-b66f-4160-8c74-835156324599
+Store id: ca311a66-5dc0-45fb-8283-4cd1b5776da4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_db_default(self, databases=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2766700+00:00`
+- posted_at: `2026-11-09T23:31:56.4298670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 425,
     "symbol": "Field._check_db_default"
   },
-  "id": "632b4fc4-b66f-4160-8c74-835156324599",
+  "id": "ca311a66-5dc0-45fb-8283-4cd1b5776da4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2766700+00:00"
+    "posted_at": "2026-11-09T23:31:56.4298670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ce6a986-f579-4728-be0e-21e64fc34e1b",
+  "subject_id": "65b7d0bc-da87-4061-8fc7-9cf83139f1f8",
   "subject_name": "django/db/models/fields/__init__::Field._check_db_default",
   "tags": [
     "entity:method"

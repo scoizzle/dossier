@@ -1,8 +1,8 @@
 # django/views/decorators/common
 
-- Subject: django/views/decorators/common (id `74e22d4c-fd2a-4b9b-8a46-28346f0e4f5f`)
+- Subject: django/views/decorators/common (id `b5a35223-b8f3-4bb5-bdf4-d0ed468f18e9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 256 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

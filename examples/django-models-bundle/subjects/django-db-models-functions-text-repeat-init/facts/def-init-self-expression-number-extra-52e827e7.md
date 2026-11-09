@@ -1,6 +1,6 @@
 # Fact 52e827e7
 
-Store id: 97ce7223-719f-48cc-bb31-ecec5ba38662
+Store id: d26546b2-dd79-4613-9d41-22a9dd539bb3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, number, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1453160+00:00`
+- posted_at: `2026-11-09T23:32:02.2396540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 237,
     "symbol": "Repeat.__init__"
   },
-  "id": "97ce7223-719f-48cc-bb31-ecec5ba38662",
+  "id": "d26546b2-dd79-4613-9d41-22a9dd539bb3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1453160+00:00"
+    "posted_at": "2026-11-09T23:32:02.2396540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d08783b1-dee3-4de0-95f7-72d0d64947eb",
+  "subject_id": "3627e725-ab0f-428b-bfee-5db6a489f4b7",
   "subject_name": "django/db/models/functions/text::Repeat.__init__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact b09a98a2
 
-Store id: c6683881-15f7-4879-a144-f9676c3015c7
+Store id: 0a39fc77-6a97-4a7c-b131-5fc3321a1619
 
 ## Text
 
@@ -20,7 +20,7 @@ def results_iter( self, results=None, tuple_expected=False, chunked_fetch=False,
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6766990+00:00`
+- posted_at: `2026-11-09T23:32:05.8983240+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1583,
     "symbol": "SQLCompiler.results_iter"
   },
-  "id": "c6683881-15f7-4879-a144-f9676c3015c7",
+  "id": "0a39fc77-6a97-4a7c-b131-5fc3321a1619",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6766990+00:00"
+    "posted_at": "2026-11-09T23:32:05.8983240+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f6900ca8-c89f-4edd-98e1-56ad41be09b0",
+  "subject_id": "56f50f83-dd3b-4895-a0ba-09c8aa90e878",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.results_iter",
   "tags": [
     "entity:method"

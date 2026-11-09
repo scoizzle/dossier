@@ -1,14 +1,14 @@
 # docs/internals/contributing/new-contributors
 
-- Subject: docs/internals/contributing/new-contributors (id `0cdcc940-4863-4fb0-a9bd-9819b92e7714`)
+- Subject: docs/internals/contributing/new-contributors (id `7a5e5e64-658f-473f-829c-3e7c33beed1b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 24 of 47
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2202 tokens
+- Facts shown: 47 of 47
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If you are new to contributing to Django, the :doc:`/intro/contributing` tutorial will give you an introduction to the tools and the workflow. [a8971bdb]
 - .. _reports page: https://code.djangoproject.com/wiki/Reports [238f4a20]
@@ -35,6 +35,28 @@
 - If you are looking for a reference on the details of making code contributions, see the :doc:`/internals/contributing/writing-code/index` documentation. [d2178d675b9bdfd7]
 - Start small ----------- [02a04ccd]
 
-## Beyond the budget
+## All facts
 
-23 more facts did not fit in the budget: [573ea13b] [0a3468aa] [efa457b4] [ab2ce4f7] [1c8eb8e9] [99283b51] [bd144d7b] [da5bb71a] [936a4e66] [9632f0ec] [36e5c077] [b0848f9a] [24d417b9] [52ca0971] [470a2737] [b52e1257] [8f56839b] [cdd30266] [62d0e6e3] [e3a3940d] [8e095603] [817574b3] [f5d0f588]
+- [573ea13b] If you're really not certain if a ticket is ready, don't mark it as such. Leave a comment instead, letting others know your thoughts. If you're mostly certain, but not completely certain, you might also try asking on the ``#contributing-getting-started`` channel in the `Django Discord server`_ to see if someone else can confirm your suspicions.
+- [0a3468aa] It's easier to get feedback on a little issue than on a big one. See the `easy pickings`_.
+- [efa457b4] It's not always easy for your ticket or your patch to be reviewed quickly. This isn't personal. There are a lot of tickets and pull requests to get through.
+- [ab2ce4f7] Keep old patches up-to-date ---------------------------
+- [1c8eb8e9] Keeping your patch up to date is important. Review the ticket on Trac to ensure that the *Needs tests*, *Needs documentation*, and *Patch needs improvement* flags are unchecked once you've addressed all review comments.
+- [99283b51] New contributor and not sure what to do? Want to help but just don't know how to get started? This is the section for you.
+- [bd144d7b] Oftentimes the codebase will change between a patch being submitted and the time it gets reviewed. Make sure it still applies cleanly and functions as expected. Updating a patch is both useful and important! See more on :ref:`patch-review-checklist`.
+- [da5bb71a] Pick a subject area -------------------
+- [936a4e66] Remember that Django has an eight-month release cycle, so there's plenty of time for your patch to be reviewed.
+- [9632f0ec] Review patches of accepted tickets ----------------------------------
+- [36e5c077] Sign the Contributor License Agreement --------------------------------------
+- [b0848f9a] Sometimes it can be scary to put your opinion out to the world and say "this ticket is correct" or "this patch needs work", but it's the only way the project moves forward. The contributions of the broad Django community ultimately have a much greater impact than that of any one person. We can't do it without **you**!
+- [24d417b9] Start with these steps to discover Django's development process.
+- [52ca0971] The code that you write belongs to you or your employer. If your contribution is more than one or two lines of code, you have the option to sign the `CLA`_. See the `Contributor License Agreement FAQ`_ for a more thorough explanation.
+- [470a2737] This means getting someone else to confirm that a bug is real before you fix the issue, and ensuring that there's consensus on a proposed feature before you go implementing it.
+- [b52e1257] This page contains more general advice on ways you can contribute to Django, and how to approach that.
+- [8f56839b] This should be something that you care about, that you are familiar with or that you want to learn about. You don't already have to be an expert on the area you want to work on; you become an expert through your ongoing contributions to the code.
+- [cdd30266] This will help you build familiarity with the codebase and processes. Mark the appropriate flags if a patch needs docs or tests. Look through the changes a patch makes, and keep an eye out for syntax that is incompatible with older but still supported versions of Python. :doc:`Run the tests </internals/contributing/writing-code/unit-tests>` and make sure they pass. Where possible and relevant, try them out on a database other than SQLite. Leave comments and feedback!
+- [62d0e6e3] Trac isn't an absolute; the context is just as important as the words. When reading Trac, you need to take into account who says things, and when they were said. Support for an idea two years ago doesn't necessarily mean that the idea will still have support. You also need to pay attention to who *hasn't* spoken -- for example, if an experienced contributor hasn't been recently involved in a discussion, then a ticket may not have the support required to get into Django.
+- [e3a3940d] Triage tickets --------------
+- [8e095603] Wait for feedback, and respond to feedback that you receive -----------------------------------------------------------
+- [817574b3] When we say ":pep:`8`, and must have docs and tests", we mean it. If a patch doesn't have docs and tests, there had better be a good reason. Arguments like "I couldn't find any existing tests of this feature" don't carry much weight. While it may be true, that means you have the extra-important job of writing the very first tests for that feature, not that you get a pass from writing tests altogether.
+- [f5d0f588] Write some documentation ------------------------

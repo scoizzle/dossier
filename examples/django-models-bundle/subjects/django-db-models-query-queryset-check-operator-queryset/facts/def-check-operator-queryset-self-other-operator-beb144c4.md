@@ -1,6 +1,6 @@
 # Fact beb144c4
 
-Store id: 413684fd-714f-4a0b-8196-e3821eb38816
+Store id: 564e4cce-abdc-407b-a7f5-51465cd8744b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_operator_queryset(self, other, operator_)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7452250+00:00`
+- posted_at: `2026-11-09T23:32:04.6795660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2367,
     "symbol": "QuerySet._check_operator_queryset"
   },
-  "id": "413684fd-714f-4a0b-8196-e3821eb38816",
+  "id": "564e4cce-abdc-407b-a7f5-51465cd8744b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7452250+00:00"
+    "posted_at": "2026-11-09T23:32:04.6795660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4cb49a2c-0cf2-4816-9b46-545449a6ebb6",
+  "subject_id": "fa945986-debe-4563-8609-ad9a43a43da1",
   "subject_name": "django/db/models/query::QuerySet._check_operator_queryset",
   "tags": [
     "entity:method"

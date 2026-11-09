@@ -1,6 +1,6 @@
 # Fact b76a6c7e
 
-Store id: 57659274-dcea-43cf-8e47-99399a93dd7d
+Store id: 671d7a0a-3415-4811-9b59-acdd90664367
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UpdateQuery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7753110+00:00`
+- posted_at: `2026-11-09T23:32:07.4245420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "57659274-dcea-43cf-8e47-99399a93dd7d",
+  "id": "671d7a0a-3415-4811-9b59-acdd90664367",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7753110+00:00"
+    "posted_at": "2026-11-09T23:32:07.4245420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UpdateQuery"
       },
       "rel": "contains",
-      "target": "a1d3a754-5d94-4b92-a56a-a8f8f944d3fe"
+      "target": "82c1c08c-7d7d-421f-b0aa-41254920e833"
     }
   ],
   "status": "live",
-  "subject_id": "24cbca74-a8b7-42cb-88b4-6cec59dfe7c6",
+  "subject_id": "8b880d6f-4c88-470e-b44a-994f5797b94a",
   "subject_name": "django/db/models/sql/subqueries",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 7c8ae58b
 
-Store id: 45a24caa-cb6d-4d53-b468-944b58d50099
+Store id: 6a1302b8-beec-43be-8eda-4994b80fa97d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Repeat
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "45a24caa-cb6d-4d53-b468-944b58d50099",
+  "id": "6a1302b8-beec-43be-8eda-4994b80fa97d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Repeat"
       },
       "rel": "contains",
-      "target": "ba416ab0-9e01-40ff-b308-ff9b8d4759b0"
+      "target": "10b0c4e7-691a-441e-93c3-e7cb53e84205"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

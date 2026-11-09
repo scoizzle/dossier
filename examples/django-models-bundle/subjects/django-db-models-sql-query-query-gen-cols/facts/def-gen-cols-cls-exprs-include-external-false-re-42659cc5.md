@@ -1,6 +1,6 @@
 # Fact 42659cc5
 
-Store id: 0585c128-d945-4884-8557-2dd4a62a881f
+Store id: 1378ca9f-bcf7-41f6-abae-7ded13b9a6bd
 
 ## Text
 
@@ -20,7 +20,7 @@ def _gen_cols(cls, exprs, include_external=False, resolve_refs=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4193630+00:00`
+- posted_at: `2026-11-09T23:32:06.9864180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2039,
     "symbol": "Query._gen_cols"
   },
-  "id": "0585c128-d945-4884-8557-2dd4a62a881f",
+  "id": "1378ca9f-bcf7-41f6-abae-7ded13b9a6bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4193630+00:00"
+    "posted_at": "2026-11-09T23:32:06.9864180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3377f698-e9a6-487f-8b54-8597f74c230b",
+  "subject_id": "e3e0b4d1-fed8-4e1a-b294-ab0d713ae8ec",
   "subject_name": "django/db/models/sql/query::Query._gen_cols",
   "tags": [
     "entity:class_method",

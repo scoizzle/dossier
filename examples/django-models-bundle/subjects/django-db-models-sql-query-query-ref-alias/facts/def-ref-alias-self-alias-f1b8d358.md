@@ -1,6 +1,6 @@
 # Fact f1b8d358
 
-Store id: 339d430c-317a-400e-9497-f44d34d55c97
+Store id: bda0f644-8978-4f6e-bab2-4830a8bee6e9
 
 ## Text
 
@@ -20,7 +20,7 @@ def ref_alias(self, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2899760+00:00`
+- posted_at: `2026-11-09T23:32:06.8358030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 926,
     "symbol": "Query.ref_alias"
   },
-  "id": "339d430c-317a-400e-9497-f44d34d55c97",
+  "id": "bda0f644-8978-4f6e-bab2-4830a8bee6e9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2899760+00:00"
+    "posted_at": "2026-11-09T23:32:06.8358030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f5cd54c4-1e2c-4e16-bf0b-4496b0d155b4",
+  "subject_id": "b6fa6fdb-1716-4420-946d-c4c9fba8c0c3",
   "subject_name": "django/db/models/sql/query::Query.ref_alias",
   "tags": [
     "entity:method"

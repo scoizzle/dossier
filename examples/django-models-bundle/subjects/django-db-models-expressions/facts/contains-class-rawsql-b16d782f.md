@@ -1,6 +1,6 @@
 # Fact b16d782f
 
-Store id: bad770a4-f574-49be-85fd-39fac0abd049
+Store id: cfc72cb6-8d32-442e-a85a-43711ad057df
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RawSQL
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bad770a4-f574-49be-85fd-39fac0abd049",
+  "id": "cfc72cb6-8d32-442e-a85a-43711ad057df",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RawSQL"
       },
       "rel": "contains",
-      "target": "a7170ce6-7c60-4b64-827d-35107bfcf7fc"
+      "target": "937d7151-b50a-4195-9390-8b919b7abc93"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

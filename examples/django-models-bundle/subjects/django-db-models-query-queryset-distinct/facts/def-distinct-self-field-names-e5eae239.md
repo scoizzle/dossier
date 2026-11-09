@@ -1,6 +1,6 @@
 # Fact e5eae239
 
-Store id: f417ebbb-a2f2-4b35-9a96-acabe2b5d404
+Store id: 5b9bab7f-f44d-45bd-b3c0-3dc322fb1f09
 
 ## Text
 
@@ -20,7 +20,7 @@ def distinct(self, *field_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6615340+00:00`
+- posted_at: `2026-11-09T23:32:04.5870050+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1943,
     "symbol": "QuerySet.distinct"
   },
-  "id": "f417ebbb-a2f2-4b35-9a96-acabe2b5d404",
+  "id": "5b9bab7f-f44d-45bd-b3c0-3dc322fb1f09",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6615340+00:00"
+    "posted_at": "2026-11-09T23:32:04.5870050+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "675e3faf-0931-426c-aca7-dfa1f530dc55",
+  "subject_id": "13977335-d56e-4a01-8339-e9219219f4dd",
   "subject_name": "django/db/models/query::QuerySet.distinct",
   "tags": [
     "entity:method"

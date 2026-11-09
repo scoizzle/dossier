@@ -1,9 +1,9 @@
 # django/db/models/utils::create_namedtuple_class.__reduce__
 
-- Subject: django/db/models/utils::create_namedtuple_class.__reduce__ (id `813f3e79-77d9-4b6f-b93e-2a13f12bc02b`)
+- Subject: django/db/models/utils::create_namedtuple_class.__reduce__ (id `6ce91142-da3a-4992-9267-53e10966f89e`)
 - Kind: function
 - Parent: [django/db/models/utils](../django-db-models-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

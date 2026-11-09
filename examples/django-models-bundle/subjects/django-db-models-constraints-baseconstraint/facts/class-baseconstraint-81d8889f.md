@@ -1,6 +1,6 @@
 # Fact 81d8889f
 
-Store id: 32b9f504-fac8-429e-8f19-6cc538d40309
+Store id: 60f324ee-a1c9-47d7-b23e-370d73f604f0
 
 ## Text
 
@@ -20,7 +20,7 @@ class BaseConstraint
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.6860780+00:00`
+- posted_at: `2026-11-09T23:31:54.1022250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 21,
     "symbol": "BaseConstraint"
   },
-  "id": "32b9f504-fac8-429e-8f19-6cc538d40309",
+  "id": "60f324ee-a1c9-47d7-b23e-370d73f604f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.6860780+00:00"
+    "posted_at": "2026-11-09T23:31:54.1022250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "55b67712-493f-4e5b-b187-c7804ec699d2",
+  "subject_id": "92fbf9bf-4573-42c3-8be9-d5a65afec29a",
   "subject_name": "django/db/models/constraints::BaseConstraint",
   "tags": [
     "entity:class"

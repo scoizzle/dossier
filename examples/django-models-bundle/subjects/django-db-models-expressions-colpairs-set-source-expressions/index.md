@@ -1,9 +1,9 @@
 # django/db/models/expressions::ColPairs.set_source_expressions
 
-- Subject: django/db/models/expressions::ColPairs.set_source_expressions (id `01122ed5-cc8c-48e7-9668-84651651dd84`)
+- Subject: django/db/models/expressions::ColPairs.set_source_expressions (id `3a022815-1970-4eaa-a2c5-1436b653c68c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

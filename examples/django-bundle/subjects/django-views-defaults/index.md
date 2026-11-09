@@ -1,14 +1,14 @@
 # django/views/defaults
 
-- Subject: django/views/defaults (id `44629105-176c-4f54-add9-251d3380b439`)
+- Subject: django/views/defaults (id `4fdbec5a-b600-4d3a-8473-8753350d4948`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 9 of 13
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1133 tokens
+- Facts shown: 13 of 13
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If the template does not exist, an Http403 response containing the text "403 Forbidden" (as per RFC 9110 Section 15.5.4) will be returned. """ try: template = loader.get_template(template_name) except TemplateDoesNotExist: if template_name != ERROR_403_TEMPLATE_NAME: # Reraise if it's a missing custom template. raise return HttpResponseForbidden( ERROR_PAGE_TEMPLATE % {"title": "403 Forbidden", "details": ""}, ) return HttpResponseForbidden( template.render(request=request, context={"exception": str(exception)}) ) [e112f7e1]
 - Templates: :template:`400.html` Context: None """ try: template = loader.get_template(template_name) body = template.render(request=request) except TemplateDoesNotExist: if template_name != ERROR_400_TEMPLATE_NAME: # Reraise if it's a missing custom template. raise return HttpResponseBadRequest( ERROR_PAGE_TEMPLATE % {"title": "Bad Request (400)", "details": ""}, ) # No exception content is passed to the template, to not disclose any # sensitive information. return HttpResponseBadRequest(body) [bd9f1983]
@@ -20,6 +20,9 @@
 - @requires_csrf_token def page_not_found(request, exception, template_name=ERROR_404_TEMPLATE_NAME): """ Default 404 handler. [a5c3272a]
 - from urllib.parse import quote [f2476fe7]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [2bb1d34d] [be619da7] [912cd6f7] [cf4e9b63]
+- [2bb1d34d] @requires_csrf_token def permission_denied(request, exception, template_name=ERROR_403_TEMPLATE_NAME): """ Permission denied (403) handler.
+- [be619da7] @requires_csrf_token def server_error(request, template_name=ERROR_500_TEMPLATE_NAME): """ 500 error handler.
+- [912cd6f7] ERROR_404_TEMPLATE_NAME = "404.html" ERROR_403_TEMPLATE_NAME = "403.html" ERROR_400_TEMPLATE_NAME = "400.html" ERROR_500_TEMPLATE_NAME = "500.html" ERROR_PAGE_TEMPLATE = """ <!doctype html> <html lang="en"> <head> <title>%(title)s</title> </head> <body> <h1>%(title)s</h1><p>%(details)s</p> </body> </html> """
+- [cf4e9b63] from django.http import ( HttpResponseBadRequest, HttpResponseForbidden, HttpResponseNotFound, HttpResponseServerError, ) from django.template import Context, Engine, TemplateDoesNotExist, loader from django.views.decorators.csrf import requires_csrf_token

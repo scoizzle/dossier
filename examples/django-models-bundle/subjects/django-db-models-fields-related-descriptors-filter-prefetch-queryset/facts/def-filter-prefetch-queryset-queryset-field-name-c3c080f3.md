@@ -1,6 +1,6 @@
 # Fact c3c080f3
 
-Store id: 5e13d8c6-0c13-4183-9951-8d5f9abe88c7
+Store id: b485f4cf-5acd-4e26-be69-b877cf7c9658
 
 ## Text
 
@@ -20,7 +20,7 @@ def _filter_prefetch_queryset(queryset, field_name, instances)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.6871010+00:00`
+- posted_at: `2026-11-09T23:31:59.1215210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 96,
     "symbol": "_filter_prefetch_queryset"
   },
-  "id": "5e13d8c6-0c13-4183-9951-8d5f9abe88c7",
+  "id": "b485f4cf-5acd-4e26-be69-b877cf7c9658",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.6871010+00:00"
+    "posted_at": "2026-11-09T23:31:59.1215210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b1664099-2dd5-4838-8f95-ed343dfee2f4",
+  "subject_id": "bba6c039-d2f3-42e6-8365-18b67bdea874",
   "subject_name": "django/db/models/fields/related_descriptors::_filter_prefetch_queryset",
   "tags": [
     "entity:function"

@@ -1,9 +1,9 @@
 # django/db/models/deletion::Collector._has_signal_listeners
 
-- Subject: django/db/models/deletion::Collector._has_signal_listeners (id `5d96f863-739e-4da7-b084-0ef7f7ac5c0b`)
+- Subject: django/db/models/deletion::Collector._has_signal_listeners (id `7a42003b-7f7c-4bc3-8784-feac1e164978`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

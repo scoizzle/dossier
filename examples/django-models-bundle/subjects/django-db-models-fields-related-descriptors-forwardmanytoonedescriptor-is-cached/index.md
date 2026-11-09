@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.is_cached
 
-- Subject: django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.is_cached (id `bc9dd842-25f3-4279-af81-24f5d81beae0`)
+- Subject: django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.is_cached (id `02c60c03-c6d8-4490-90a1-30a659d683e6`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

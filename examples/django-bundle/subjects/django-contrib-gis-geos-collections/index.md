@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/collections
 
-- Subject: django/contrib/gis/geos/collections (id `ea5c4cd3-3e11-4b6e-8691-9b5f15cdf4a1`)
+- Subject: django/contrib/gis/geos/collections (id `5873bfac-f63a-4014-9b5c-29bac513b6da`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 877 tokens
-- Facts shown: 17 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1044 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Creating the geometry pointer array. collection = self._create_collection(len(init_geoms), init_geoms) super().__init__(collection, **kwargs) [542a2e19]
 - # Ensuring that only the permitted geometries are allowed in this # collection this is moved to list mixin super class self._check_allowed(init_geoms) [8fe5e4be]
@@ -28,6 +28,8 @@
 - # Setting the allowed types here since GeometryCollection is defined before # its subclasses. GeometryCollection._allowed = ( Point, LineString, LinearRing, Polygon, MultiPoint, MultiLineString, MultiPolygon, ) [a5c6b234]
 - class GeometryCollection(GEOSGeometry): _typeid = 7 [e28000ec]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [3c489c50] [3d284c7c] [1deed241]
+- [3c489c50] class MultiLineString(LinearGeometryMixin, GeometryCollection): _allowed = (LineString, LinearRing) _typeid = 5
+- [3d284c7c] class MultiPolygon(GeometryCollection): _allowed = Polygon _typeid = 6
+- [1deed241] from django.contrib.gis.geos import prototypes as capi from django.contrib.gis.geos.geometry import GEOSGeometry, LinearGeometryMixin from django.contrib.gis.geos.libgeos import GEOM_PTR from django.contrib.gis.geos.linestring import LinearRing, LineString from django.contrib.gis.geos.point import Point from django.contrib.gis.geos.polygon import Polygon

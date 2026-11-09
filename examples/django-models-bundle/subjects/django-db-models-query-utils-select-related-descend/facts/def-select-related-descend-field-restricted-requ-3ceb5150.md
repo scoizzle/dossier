@@ -1,6 +1,6 @@
 # Fact 3ceb5150
 
-Store id: 5b9daaa9-148e-4079-b914-cb69868a5067
+Store id: 938a2d7c-ec95-45da-a31e-eb7dd58e008f
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_related_descend(field, restricted, requested, select_mask)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1706410+00:00`
+- posted_at: `2026-11-09T23:32:05.1858960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 440,
     "symbol": "select_related_descend"
   },
-  "id": "5b9daaa9-148e-4079-b914-cb69868a5067",
+  "id": "938a2d7c-ec95-45da-a31e-eb7dd58e008f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1706410+00:00"
+    "posted_at": "2026-11-09T23:32:05.1858960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7e64db42-7713-4bf0-bd98-88d662c4f947",
+  "subject_id": "3b80e70a-cbe0-4f35-966d-fcf02e30a787",
   "subject_name": "django/db/models/query_utils::select_related_descend",
   "tags": [
     "entity:function"

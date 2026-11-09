@@ -1,6 +1,6 @@
 # Fact 5994652e
 
-Store id: af52bdcc-8a61-45cc-91f3-2eb2e1112177
+Store id: d19df190-6df7-4ced-a3a4-cc8e613ba01d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7170780+00:00`
+- posted_at: `2026-11-09T23:31:56.8847610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2842,
     "symbol": "UUIDField.get_db_prep_value"
   },
-  "id": "af52bdcc-8a61-45cc-91f3-2eb2e1112177",
+  "id": "d19df190-6df7-4ced-a3a4-cc8e613ba01d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7170780+00:00"
+    "posted_at": "2026-11-09T23:31:56.8847610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4e3c0e28-291a-4ef5-835d-a7289338a1f0",
+  "subject_id": "4f04764d-d4b2-414f-9246-4b323a12eecf",
   "subject_name": "django/db/models/fields/__init__::UUIDField.get_db_prep_value",
   "tags": [
     "entity:method"

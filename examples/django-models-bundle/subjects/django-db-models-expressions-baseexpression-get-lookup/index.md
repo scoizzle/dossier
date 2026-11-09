@@ -1,9 +1,9 @@
 # django/db/models/expressions::BaseExpression.get_lookup
 
-- Subject: django/db/models/expressions::BaseExpression.get_lookup (id `0b4bd458-15c7-4b4a-8731-959b9a2479f9`)
+- Subject: django/db/models/expressions::BaseExpression.get_lookup (id `c543fc33-2e7c-43a4-9273-3aacdabf3b3c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

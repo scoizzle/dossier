@@ -1,6 +1,6 @@
 # Fact 964aedee
 
-Store id: 840537a8-716e-4fa6-ab26-c8c06d408695
+Store id: 1c5cee77-5391-49a5-8c38-32910c7e3880
 
 ## Text
 
@@ -20,7 +20,7 @@ def join_parent_model(self, opts, model, alias, seen)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3257820+00:00`
+- posted_at: `2026-11-09T23:32:06.8764060+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1188,
     "symbol": "Query.join_parent_model"
   },
-  "id": "840537a8-716e-4fa6-ab26-c8c06d408695",
+  "id": "1c5cee77-5391-49a5-8c38-32910c7e3880",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3257820+00:00"
+    "posted_at": "2026-11-09T23:32:06.8764060+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "08f62f0b-b303-4589-b6f7-93a96806fa69",
+  "subject_id": "2737c3a2-0fd9-445c-9b07-1f5f982ef9d8",
   "subject_name": "django/db/models/sql/query::Query.join_parent_model",
   "tags": [
     "entity:method"

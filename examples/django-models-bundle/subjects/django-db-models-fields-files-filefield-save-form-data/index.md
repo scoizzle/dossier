@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FileField.save_form_data
 
-- Subject: django/db/models/fields/files::FileField.save_form_data (id `7caf2cfe-19ea-4dea-951c-9df1e53566d4`)
+- Subject: django/db/models/fields/files::FileField.save_form_data (id `2408775f-75e3-43e6-92da-e6c9c3963edb`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

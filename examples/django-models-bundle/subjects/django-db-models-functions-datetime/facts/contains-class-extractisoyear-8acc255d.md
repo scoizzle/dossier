@@ -1,6 +1,6 @@
 # Fact 8acc255d
 
-Store id: 8d49875d-b20d-485e-8a3b-407906d89443
+Store id: 83b8f398-732d-4385-9dc6-55e8e5fca933
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractIsoYear
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8d49875d-b20d-485e-8a3b-407906d89443",
+  "id": "83b8f398-732d-4385-9dc6-55e8e5fca933",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractIsoYear"
       },
       "rel": "contains",
-      "target": "028500fb-2b3d-4b7a-a530-560ae71c2338"
+      "target": "40b71435-29d2-4c0e-94d1-b5ba46388e31"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

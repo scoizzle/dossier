@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.filter
 
-- Subject: django/db/models/query::QuerySet.filter (id `67eb85b0-f641-45e8-940a-f4c6f0d275ff`)
+- Subject: django/db/models/query::QuerySet.filter (id `8b11ab23-8178-47c3-b246-c39f45cf661c`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

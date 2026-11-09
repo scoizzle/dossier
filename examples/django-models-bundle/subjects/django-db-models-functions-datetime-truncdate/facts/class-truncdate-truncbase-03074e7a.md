@@ -1,6 +1,6 @@
 # Fact 03074e7a
 
-Store id: e423ed87-f6f7-4bcb-8b00-42c3f7bcecca
+Store id: 7871dd69-50e2-4351-8823-50f8375aee90
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncDate(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2025600+00:00`
+- posted_at: `2026-11-09T23:32:01.2877980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 383,
     "symbol": "TruncDate"
   },
-  "id": "e423ed87-f6f7-4bcb-8b00-42c3f7bcecca",
+  "id": "7871dd69-50e2-4351-8823-50f8375aee90",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2025600+00:00"
+    "posted_at": "2026-11-09T23:32:01.2877980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "df16cc89-1a00-46b7-9693-3317e10b8171",
+  "subject_id": "a04b4d93-965c-4be3-9018-690e85c8e654",
   "subject_name": "django/db/models/functions/datetime::TruncDate",
   "tags": [
     "entity:class"

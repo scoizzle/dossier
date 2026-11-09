@@ -1,8 +1,8 @@
 # django/contrib/messages/api
 
-- Subject: django/contrib/messages/api (id `a937cae6-2310-45ac-be9c-d61f4b5d604f`)
+- Subject: django/contrib/messages/api (id `42f0c40f-da8d-4256-b8fb-59e031033360`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 559 tokens
 - Facts shown: 10 of 14
 - Conflicts: 0

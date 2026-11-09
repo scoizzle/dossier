@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::UUIDField.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::UUIDField.get_db_prep_value (id `4e3c0e28-291a-4ef5-835d-a7289338a1f0`)
+- Subject: django/db/models/fields/__init__::UUIDField.get_db_prep_value (id `4f04764d-d4b2-414f-9246-4b323a12eecf`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

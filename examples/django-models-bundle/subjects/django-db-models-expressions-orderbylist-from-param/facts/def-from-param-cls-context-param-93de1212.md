@@ -1,6 +1,6 @@
 # Fact 93de1212
 
-Store id: 0aa3a7fa-1f2d-4b63-9874-a4cdc14dac35
+Store id: b813993e-94ed-4f20-b899-902331591af2
 
 ## Text
 
@@ -20,7 +20,7 @@ def from_param(cls, context, param)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6665130+00:00`
+- posted_at: `2026-11-09T23:31:55.9320120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1531,
     "symbol": "OrderByList.from_param"
   },
-  "id": "0aa3a7fa-1f2d-4b63-9874-a4cdc14dac35",
+  "id": "b813993e-94ed-4f20-b899-902331591af2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6665130+00:00"
+    "posted_at": "2026-11-09T23:31:55.9320120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "478be555-fa3c-44b3-98ee-054654b4704e",
+  "subject_id": "f900b75d-2213-437b-9f7a-261aaeea3819",
   "subject_name": "django/db/models/expressions::OrderByList.from_param",
   "tags": [
     "entity:class_method",

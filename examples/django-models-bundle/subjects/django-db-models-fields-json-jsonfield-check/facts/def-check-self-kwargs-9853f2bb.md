@@ -1,6 +1,6 @@
 # Fact 9853f2bb
 
-Store id: 592d0d1c-057b-4cbc-8d0d-b9ee74d84202
+Store id: b3e71f03-9f1b-4dba-8d25-908f99b9b391
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6014650+00:00`
+- posted_at: `2026-11-09T23:31:57.8339590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 48,
     "symbol": "JSONField.check"
   },
-  "id": "592d0d1c-057b-4cbc-8d0d-b9ee74d84202",
+  "id": "b3e71f03-9f1b-4dba-8d25-908f99b9b391",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6014650+00:00"
+    "posted_at": "2026-11-09T23:31:57.8339590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d055e1a4-acc1-41da-bb7c-8bc9bf0b20a0",
+  "subject_id": "d56ba146-0487-4a00-b370-0c353a2686b7",
   "subject_name": "django/db/models/fields/json::JSONField.check",
   "tags": [
     "entity:method"

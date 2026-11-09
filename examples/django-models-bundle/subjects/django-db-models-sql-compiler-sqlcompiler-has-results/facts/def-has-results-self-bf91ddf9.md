@@ -1,6 +1,6 @@
 # Fact bf91ddf9
 
-Store id: 9e23098c-3186-44c3-b5a2-c6eda3514645
+Store id: f47f4054-b6d5-4b65-a6ca-6ee8a790065e
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_results(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6795220+00:00`
+- posted_at: `2026-11-09T23:32:05.9077870+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1606,
     "symbol": "SQLCompiler.has_results"
   },
-  "id": "9e23098c-3186-44c3-b5a2-c6eda3514645",
+  "id": "f47f4054-b6d5-4b65-a6ca-6ee8a790065e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6795220+00:00"
+    "posted_at": "2026-11-09T23:32:05.9077870+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5b9aaf43-03d3-4541-88fb-5496c464696e",
+  "subject_id": "f29b1025-b106-4c8f-a79d-6c04ac2765b1",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.has_results",
   "tags": [
     "entity:method"

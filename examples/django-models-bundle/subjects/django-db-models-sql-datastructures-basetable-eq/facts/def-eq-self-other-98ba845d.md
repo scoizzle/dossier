@@ -1,6 +1,6 @@
 # Fact 98ba845d
 
-Store id: cc95c98a-7a49-46ee-baa2-b8474d03f097
+Store id: 746bd46c-7a6c-4c95-9c9f-398e14ee826f
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.0271870+00:00`
+- posted_at: `2026-11-09T23:32:06.4998760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 216,
     "symbol": "BaseTable.__eq__"
   },
-  "id": "cc95c98a-7a49-46ee-baa2-b8474d03f097",
+  "id": "746bd46c-7a6c-4c95-9c9f-398e14ee826f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.0271870+00:00"
+    "posted_at": "2026-11-09T23:32:06.4998760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b7cbbf40-f3e4-4afd-b988-20bd9b24063c",
+  "subject_id": "a0df49bc-dc08-4ac7-a6af-00ab45801eb4",
   "subject_name": "django/db/models/sql/datastructures::BaseTable.__eq__",
   "tags": [
     "entity:method"

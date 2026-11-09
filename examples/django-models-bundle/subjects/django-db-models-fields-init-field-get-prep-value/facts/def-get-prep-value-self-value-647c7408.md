@@ -1,6 +1,6 @@
 # Fact 647c7408
 
-Store id: e389551b-7e56-4332-bcf4-7e72270de9b2
+Store id: 05be36a4-7438-4e50-8654-598a95a25b0d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3421610+00:00`
+- posted_at: `2026-11-09T23:31:56.5153650+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1030,
     "symbol": "Field.get_prep_value"
   },
-  "id": "e389551b-7e56-4332-bcf4-7e72270de9b2",
+  "id": "05be36a4-7438-4e50-8654-598a95a25b0d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3421610+00:00"
+    "posted_at": "2026-11-09T23:31:56.5153650+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "02cc8039-a5b1-4ec6-a172-64376d0cddb7",
+  "subject_id": "b2668e83-6188-4513-b4ab-bd5f72ac84b4",
   "subject_name": "django/db/models/fields/__init__::Field.get_prep_value",
   "tags": [
     "entity:method"

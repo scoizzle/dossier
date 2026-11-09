@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::Tuple.as_sqlite
 
-- Subject: django/db/models/fields/tuple_lookups::Tuple.as_sqlite (id `1fe7367e-a120-42d1-9740-d19a62f65d6d`)
+- Subject: django/db/models/fields/tuple_lookups::Tuple.as_sqlite (id `4efe86c8-a5c7-4d76-910f-f351350e2257`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

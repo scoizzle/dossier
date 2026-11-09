@@ -1,6 +1,6 @@
 # Fact 00a970c0
 
-Store id: 7528a879-9cf9-499e-a23c-184be84c6637
+Store id: 05e8d50d-f0d0-487c-a833-b5cef22153e1
 
 ## Text
 
@@ -20,7 +20,7 @@ def copy(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5816040+00:00`
+- posted_at: `2026-11-09T23:31:55.8567010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1136,
     "symbol": "Func.copy"
   },
-  "id": "7528a879-9cf9-499e-a23c-184be84c6637",
+  "id": "05e8d50d-f0d0-487c-a833-b5cef22153e1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5816040+00:00"
+    "posted_at": "2026-11-09T23:31:55.8567010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aba418dd-0013-4ac0-ad85-461557db6ed6",
+  "subject_id": "cdb453ac-8ad5-4f55-bcd8-1df979cf0b5c",
   "subject_name": "django/db/models/expressions::Func.copy",
   "tags": [
     "entity:method"

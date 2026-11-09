@@ -1,6 +1,6 @@
 # Fact 6e326161
 
-Store id: be4808cb-f7f7-4b41-96f1-93e1e8eb76de
+Store id: b1a6d840-a0ae-40f7-ab37-dfce071bd290
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDTextMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "be4808cb-f7f7-4b41-96f1-93e1e8eb76de",
+  "id": "b1a6d840-a0ae-40f7-ab37-dfce071bd290",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDTextMixin"
       },
       "rel": "contains",
-      "target": "37b5136d-f4c8-4d77-bd9b-08c726c44083"
+      "target": "660e3158-cf72-4101-b09b-d6e484078016"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 2d39baf5
 
-Store id: 3e10f130-51f1-424c-bb60-96fab2a9e1c3
+Store id: e77643fe-8564-4022-83bc-ad191a2df915
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4672900+00:00`
+- posted_at: `2026-11-09T23:31:56.6434160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1925,
     "symbol": "DecimalField.formfield"
   },
-  "id": "3e10f130-51f1-424c-bb60-96fab2a9e1c3",
+  "id": "e77643fe-8564-4022-83bc-ad191a2df915",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4672900+00:00"
+    "posted_at": "2026-11-09T23:31:56.6434160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "21c4b01d-a34d-4a04-a7ff-c633ffc2071e",
+  "subject_id": "01f5a7e3-9ce2-4c2c-839e-fd4f3c74a0c9",
   "subject_name": "django/db/models/fields/__init__::DecimalField.formfield",
   "tags": [
     "entity:method"

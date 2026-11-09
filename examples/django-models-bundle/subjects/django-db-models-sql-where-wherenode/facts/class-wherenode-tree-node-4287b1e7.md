@@ -1,6 +1,6 @@
 # Fact 4287b1e7
 
-Store id: 8bcc5b16-4b4f-4fa9-adb8-426e25a24d1d
+Store id: 001739e5-be9f-4e72-a515-33a3fc481b9e
 
 ## Text
 
@@ -20,7 +20,7 @@ class WhereNode(tree.Node)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.8815920+00:00`
+- posted_at: `2026-11-09T23:32:07.5603120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 21,
     "symbol": "WhereNode"
   },
-  "id": "8bcc5b16-4b4f-4fa9-adb8-426e25a24d1d",
+  "id": "001739e5-be9f-4e72-a515-33a3fc481b9e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.8815920+00:00"
+    "posted_at": "2026-11-09T23:32:07.5603120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b090df3a-5ff1-4b6d-91d5-f36cc575cdca",
+  "subject_id": "ea288970-4ff6-472d-bb88-cb5179ab8bf4",
   "subject_name": "django/db/models/sql/where::WhereNode",
   "tags": [
     "entity:class"

@@ -1,14 +1,14 @@
 # django/core/servers/basehttp
 
-- Subject: django/core/servers/basehttp (id `9939a38e-cbd6-4a50-861d-9db8d2ef8528`)
+- Subject: django/core/servers/basehttp (id `4d5e688c-a806-4478-9508-585c6695552d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 18 of 39
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2417 tokens
+- Facts shown: 39 of 39
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - handler = ServerHandler( self.rfile, self.wfile, self.get_stderr(), self.get_environ() ) handler.request_handler = self # backpointer for logging & connection closing handler.run(self.server.get_app()) [8a610bbe]
 - if not self.parse_request(): # An error code has been sent, just exit return [2115e79d]
@@ -29,6 +29,26 @@
 - def handle(self): self.close_connection = True self.handle_one_request() while not self.close_connection: self.handle_one_request() try: self.connection.shutdown(socket.SHUT_WR) except (AttributeError, OSError): pass [ee08565e]
 - request_queue_size = 10 [1ae3d3b5]
 
-## Beyond the budget
+## All facts
 
-21 more facts did not fit in the budget: [1a3e2204] [740cdc34] [20545396] [117280d3] [e30b90d6] [9ad02d69] [63086266] [a6c29d50] [ddf8a2b2] [f26f6806] [ed59c54f] [0a35b87d] [a1e14f45] [1c9122be] [3f54cd23] [cd665939] [cd2bf5af] [bdcdfd89] [3eef7d6e] [83481ee6] [f3bfc816]
+- [1a3e2204] def cleanup_headers(self): super().cleanup_headers() if ( self.environ["REQUEST_METHOD"] == "HEAD" and "Content-Length" in self.headers and str(self.headers["Content-Length"]) == "0" ): del self.headers["Content-Length"] # HTTP/1.1 requires support for persistent connections. Send 'close' if # the content length is unknown to prevent clients from reusing the # connection. if ( self.environ["REQUEST_METHOD"] != "HEAD" and "Content-Length" not in self.headers ): self.headers["Connection"] = "close" # Persistent connections require threading server. elif not isinstance(self.request_handler.server, socketserver.ThreadingMixIn): self.headers["Connection"] = "close" # Mark the connection for closing if it's set as such above or if the # application sent the header. if self.headers.get("Connection") == "close": self.request_handler.close_connection = True
+- [740cdc34] def finish_response(self): if self.environ["REQUEST_METHOD"] == "HEAD": try: deque(self.result, maxlen=0) # Consume iterator. # Don't call self.finish_content() as, if the headers have not # been sent and Content-Length isn't set, it'll default to "0" # which will prevent omission of the Content-Length header with # HEAD requests as permitted by RFC 9110 Section 9.3.2. # Instead, send the headers, if not sent yet. if not self.headers_sent: self.send_headers() finally: self.close() else: super().finish_response()
+- [20545396] def get_environ(self): # Strip all headers with underscores in the name before constructing # the WSGI environ. This prevents header-spoofing based on ambiguity # between underscores and dashes both normalized to underscores in WSGI # env vars. Nginx and Apache 2.4+ both do this as well. for k in self.headers: if "_" in k: del self.headers[k]
+- [117280d3] def handle_error(self, request, client_address): if is_broken_pipe_error(): logger.info("- Broken pipe from %s", client_address) else: super().handle_error(request, client_address)
+- [e30b90d6] def handle_one_request(self): """ Copy of WSGIRequestHandler.handle() but with different ServerHandler """ self.raw_requestline = self.rfile.readline(65537) if len(self.raw_requestline) > 65536: self.requestline = "" self.request_version = "" self.command = "" self.send_error(414) return
+- [9ad02d69] def log_message(self, format, *args): if args[1][0] == "4" and args[0].startswith("\x16\x03"): # 0x16 = Handshake, 0x03 = SSL 3.0 or TLS 1.x format = ( "You're accessing the development server over HTTPS, but it only " "supports HTTP." ) status_code = 500 args = () elif args[1].isdigit() and len(args[1]) == 3: status_code = int(args[1]) else: status_code = None
+- [63086266] try: return import_string(app_path) except ImportError as err: raise ImproperlyConfigured( "WSGI application '%s' could not be loaded; " "Error importing module." % app_path ) from err
+- [a6c29d50] """ HTTP server that implements the Python WSGI protocol (PEP 333, rev 1.21).
+- [ddf8a2b2] Based on wsgiref.simple_server which is part of the standard library since 2.5.
+- [f26f6806] This is a simple server for use in testing or debugging Django apps. It hasn't been reviewed for security issues. DON'T USE IT FOR PRODUCTION USE! """
+- [ed59c54f] __all__ = ("WSGIServer", "WSGIRequestHandler")
+- [0a35b87d] class ServerHandler(simple_server.ServerHandler): http_version = "1.1"
+- [a1e14f45] class ThreadedWSGIServer(socketserver.ThreadingMixIn, WSGIServer): """A threaded version of the WSGIServer"""
+- [1c9122be] class WSGIRequestHandler(simple_server.WSGIRequestHandler): protocol_version = "HTTP/1.1"
+- [3f54cd23] class WSGIServer(simple_server.WSGIServer): """BaseHTTPServer that implements the Python WSGI protocol"""
+- [cd665939] def get_internal_wsgi_application(): """ Load and return the WSGI application as configured by the user in ``settings.WSGI_APPLICATION``. With the default ``startproject`` layout, this will be the ``application`` object in ``projectname/wsgi.py``.
+- [cd2bf5af] def is_broken_pipe_error(): exc_type, _, _ = sys.exc_info() return issubclass( exc_type, ( BrokenPipeError, ConnectionAbortedError, ConnectionResetError, ), )
+- [bdcdfd89] def run( addr, port, wsgi_handler, ipv6=False, threading=False, on_bind=None, server_cls=WSGIServer, ): server_address = (addr, port) if threading: httpd_cls = type("WSGIServer", (socketserver.ThreadingMixIn, server_cls), {}) else: httpd_cls = server_cls httpd = httpd_cls(server_address, WSGIRequestHandler, ipv6=ipv6) if on_bind is not None: on_bind(getattr(httpd, "server_port", port)) if threading: # ThreadingMixIn.daemon_threads indicates how threads will behave on an # abrupt shutdown; like quitting the server by the user or restarting # by the auto-reloader. True means the server will not wait for thread # termination before it quits. This will make auto-reloader faster # and will prevent the need to kill the server manually if a thread # isn't terminating correctly. httpd.daemon_threads = True httpd.set_app(wsgi_handler) httpd.serve_forever()
+- [3eef7d6e] from django.core.exceptions import ImproperlyConfigured from django.core.handlers.wsgi import LimitedStream from django.core.wsgi import get_wsgi_application from django.db import connections from django.utils.log import log_message from django.utils.module_loading import import_string
+- [83481ee6] import logging import socket import socketserver import sys from collections import deque from wsgiref import simple_server
+- [f3bfc816] logger = logging.getLogger("django.server")

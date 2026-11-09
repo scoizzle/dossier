@@ -1,6 +1,6 @@
 # Fact 0ff0e8b0
 
-Store id: 2ec7e47d-091a-49d8-a9da-466e659f01cc
+Store id: fe3f7dd4-e9cf-4c9d-a58b-a0718d68a74a
 
 ## Text
 
@@ -20,7 +20,7 @@ class RowNumber(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6066130+00:00`
+- posted_at: `2026-11-09T23:32:02.7362020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "RowNumber"
   },
-  "id": "2ec7e47d-091a-49d8-a9da-466e659f01cc",
+  "id": "fe3f7dd4-e9cf-4c9d-a58b-a0718d68a74a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6066130+00:00"
+    "posted_at": "2026-11-09T23:32:02.7362020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "84762bcc-d9c0-472d-ae26-5b7d8a54f0a9",
+  "subject_id": "3110707d-1792-4eb7-a722-e156e7403a7f",
   "subject_name": "django/db/models/functions/window::RowNumber",
   "tags": [
     "entity:class"

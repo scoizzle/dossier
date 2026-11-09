@@ -1,8 +1,8 @@
 # django/contrib/postgres/validators
 
-- Subject: django/contrib/postgres/validators (id `483d4549-0dad-453a-8200-572a943bb864`)
+- Subject: django/contrib/postgres/validators (id `4d89b057-8313-43cd-9454-0f0678789087`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 690 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

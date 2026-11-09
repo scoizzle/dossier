@@ -1,6 +1,6 @@
 # Fact 971f51a4
 
-Store id: 46434a57-0700-4714-b571-ed8dad8c743d
+Store id: be1cbd9b-f38f-46aa-89ab-0fad5e42fb52
 
 ## Text
 
@@ -20,7 +20,7 @@ def build_where(self, filter_expr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3812490+00:00`
+- posted_at: `2026-11-09T23:32:06.9457240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1685,
     "symbol": "Query.build_where"
   },
-  "id": "46434a57-0700-4714-b571-ed8dad8c743d",
+  "id": "be1cbd9b-f38f-46aa-89ab-0fad5e42fb52",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3812490+00:00"
+    "posted_at": "2026-11-09T23:32:06.9457240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0b813a5a-8e57-4fe8-a92d-028bb1861f83",
+  "subject_id": "14e66dcf-ce26-4518-a0b4-02056fa9601e",
   "subject_name": "django/db/models/sql/query::Query.build_where",
   "tags": [
     "entity:method"

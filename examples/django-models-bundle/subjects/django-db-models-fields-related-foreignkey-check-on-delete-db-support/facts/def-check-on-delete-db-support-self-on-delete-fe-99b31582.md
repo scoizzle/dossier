@@ -1,6 +1,6 @@
 # Fact 99b31582
 
-Store id: 6806abb6-6239-4996-94d3-2b9c9a753faa
+Store id: b23021e8-0c7c-46ea-8bae-d2656d79c9d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_on_delete_db_support(self, on_delete, feature_flag, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3759650+00:00`
+- posted_at: `2026-11-09T23:31:58.7467920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1064,
     "symbol": "ForeignKey._check_on_delete_db_support"
   },
-  "id": "6806abb6-6239-4996-94d3-2b9c9a753faa",
+  "id": "b23021e8-0c7c-46ea-8bae-d2656d79c9d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3759650+00:00"
+    "posted_at": "2026-11-09T23:31:58.7467920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba1d5174-5b20-4238-9a2a-632e2f816280",
+  "subject_id": "25a09a20-e4fb-4d21-98e3-002bb589739e",
   "subject_name": "django/db/models/fields/related::ForeignKey._check_on_delete_db_support",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 552ced2c
 
-Store id: fb9c7c84-2daa-4a1e-8b5d-5e1817d03066
+Store id: 1ad086f8-92fc-49f9-98e9-dce73e675ab6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _base_manager(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3266840+00:00`
+- posted_at: `2026-11-09T23:31:53.7275140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 453,
     "symbol": "ModelBase._base_manager"
   },
-  "id": "fb9c7c84-2daa-4a1e-8b5d-5e1817d03066",
+  "id": "1ad086f8-92fc-49f9-98e9-dce73e675ab6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3266840+00:00"
+    "posted_at": "2026-11-09T23:31:53.7275140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be62594d-5cbd-4a6e-aa3f-f26eb4d76e0a",
+  "subject_id": "8a981570-a076-44d8-afaf-a9e2986858a8",
   "subject_name": "django/db/models/base::ModelBase._base_manager",
   "tags": [
     "entity:method",

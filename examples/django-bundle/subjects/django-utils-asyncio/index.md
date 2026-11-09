@@ -1,8 +1,8 @@
 # django/utils/asyncio
 
-- Subject: django/utils/asyncio (id `bad4d63a-1709-4b77-be54-7280972e7d3c`)
+- Subject: django/utils/asyncio (id `eec782d4-47a5-433b-a72a-7d201a182a51`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 282 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/contrib/sessions/backends/base
 
-- Subject: django/contrib/sessions/backends/base (id `f3bb403e-249f-4fd1-9f86-edc4218749d3`)
+- Subject: django/contrib/sessions/backends/base (id `9f1c9d24-0cdc-4d1d-97ed-3c7d459a1b96`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 17 of 92
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4152 tokens
+- Facts shown: 89 of 92
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If ``value`` is ``None``, the session uses the global session expiry policy. """ if value is None: # Remove any custom expiration for this session. try: del self["_session_expiry"] except KeyError: pass return if isinstance(value, timedelta): value = timezone.now() + value if isinstance(value, datetime): value = value.isoformat() self["_session_expiry"] = value [a26308a0]
 - If ``value`` is a ``datetime`` or ``timedelta`` object, the session will expire at that specific future time. [f1631642]
@@ -28,6 +28,77 @@
 - async def _aget_new_session_key(self): while True: session_key = get_random_string(32, VALID_KEY_CHARS) if not await self.aexists(session_key): return session_key [0ad82628]
 - pass [7655780f0d17b825-7]
 
-## Beyond the budget
+## All facts
 
-72 more facts did not fit in the budget: [3734b65a] [abb2fa8a] [d22c2288] [f3ba925f] [1bd58cfa] [7e08cff4] [573f9405] [9c2a62e8] [41d7babe] [b57c357d] [ebaf9d5a] [2a06c53d] [1384ae19] [a3f94d55] [64da46fb] [898021f0] [f57c2cf8] [96958725] [c0b40903] [08133930] [ece72514] [47117fcb] [3f08e75e] [568f97c0] [2f0399e3] [89f1480b] [27bef12b] [2a75a192] [cc22995d] [efa33d92] [62a34bf4] [90125c5b] [2208a19a] [068eedf9] [95ad7b7e] [b9dbefe1] [f3f657be] [d893a8b2] [ba30d3ae] [3512e4fe] [6c21fa34] [0ff7a256] [791b4c17] [3852fc28] [2c10ee41] [5bc19f76] [ea0011f1] [03b263f3] [51fe2057] [fd998569] [cd767483] [bdc25a56] [3933f25d] [30338abc] [de4b4330] [20c053ff] [d06e258c] [626e4b7e] [88ba7f15] [51d7e3d6] [c4c86457] [8b642d22] [82ffc6e3] [7655780f0d17b825-8] [8a194b3d] [0906189e] [e120fffd] [49954475] [59e09243] [770890ad88958a4c-5] [2dc9630f] [f8bcf779]
+- [3734b65a] async def _aget_or_create_session_key(self): if self._session_key is None: self._session_key = await self._aget_new_session_key() return self._session_key
+- [abb2fa8a] async def _aget_session(self, no_load=False): self.accessed = True try: return self._session_cache except AttributeError: if self.session_key is None or no_load: self._session_cache = {} else: self._session_cache = await self.aload() return self._session_cache
+- [d22c2288] async def acreate(self): return await sync_to_async(self.create)()
+- [f3ba925f] async def acycle_key(self): """ Create a new session key, while retaining the current session data. """ data = await self._aget_session() key = self.session_key await self.acreate() self._session_cache = data if key: await self.adelete(key)
+- [1bd58cfa] async def adelete(self, session_key=None): return await sync_to_async(self.delete)(session_key)
+- [7e08cff4] async def adelete_test_cookie(self): del (await self._aget_session())[self.TEST_COOKIE_NAME]
+- [573f9405] async def aexists(self, session_key): return await sync_to_async(self.exists)(session_key)
+- [9c2a62e8] async def aflush(self): self.clear() await self.adelete() self._session_key = None
+- [41d7babe] async def aget(self, key, default=None): return (await self._aget_session()).get(key, default)
+- [b57c357d] async def aget_expire_at_browser_close(self): if (expiry := await self.aget("_session_expiry")) is None: return settings.SESSION_EXPIRE_AT_BROWSER_CLOSE return expiry == 0
+- [ebaf9d5a] async def aget_expiry_age(self, **kwargs): try: modification = kwargs["modification"] except KeyError: modification = timezone.now() try: expiry = kwargs["expiry"] except KeyError: expiry = await self.aget("_session_expiry")
+- [2a06c53d] async def ahas_key(self, key): return key in (await self._aget_session())
+- [1384ae19] async def aitems(self): return (await self._aget_session()).items()
+- [a3f94d55] async def akeys(self): return (await self._aget_session()).keys()
+- [64da46fb] async def aload(self): return await sync_to_async(self.load)()
+- [898021f0] async def apop(self, key, default=__not_given): self.modified = self.modified or key in (await self._aget_session()) args = () if default is self.__not_given else (default,) return (await self._aget_session()).pop(key, *args)
+- [f57c2cf8] async def asave(self, must_create=False): return await sync_to_async(self.save)(must_create)
+- [96958725] async def aset(self, key, value): (await self._aget_session())[key] = value self.modified = True
+- [c0b40903] async def aset_expiry(self, value): if value is None: # Remove any custom expiration for this session. try: await self.apop("_session_expiry") except KeyError: pass return if isinstance(value, timedelta): value = timezone.now() + value if isinstance(value, datetime): value = value.isoformat() await self.aset("_session_expiry", value)
+- [08133930] async def aset_test_cookie(self): await self.aset(self.TEST_COOKIE_NAME, self.TEST_COOKIE_VALUE)
+- [ece72514] async def asetdefault(self, key, value): session = await self._aget_session() if key in session: return session[key] else: await self.aset(key, value) return value
+- [47117fcb] async def atest_cookie_worked(self): return (await self.aget(self.TEST_COOKIE_NAME)) == self.TEST_COOKIE_VALUE
+- [3f08e75e] async def aupdate(self, dict_): (await self._aget_session()).update(dict_) self.modified = True
+- [568f97c0] async def avalues(self): return (await self._aget_session()).values()
+- [2f0399e3] def __bool__(self): return not self.is_empty()
+- [89f1480b] def __contains__(self, key): return key in self._session
+- [27bef12b] def __delitem__(self, key): del self._session[key] self.modified = True
+- [2a75a192] def __getitem__(self, key): return self._session[key]
+- [cc22995d] def __init__(self, session_key=None): self._session_key = session_key self.accessed = False self.modified = False self.serializer = import_string(settings.SESSION_SERIALIZER)
+- [efa33d92] def __setitem__(self, key, value): self._session[key] = value self.modified = True
+- [62a34bf4] def _get_new_session_key(self): "Return session key that isn't being used." while True: session_key = get_random_string(32, VALID_KEY_CHARS) if not self.exists(session_key): return session_key
+- [90125c5b] def _get_or_create_session_key(self): if self._session_key is None: self._session_key = self._get_new_session_key() return self._session_key
+- [2208a19a] def _get_session(self, no_load=False): """ Lazily load session from storage (unless "no_load" is True, when only an empty dict is stored) and store it in the current instance. """ self.accessed = True try: return self._session_cache except AttributeError: if self.session_key is None or no_load: self._session_cache = {} else: self._session_cache = self.load() return self._session_cache
+- [068eedf9] def _get_session_key(self): return self.__session_key
+- [95ad7b7e] def _set_session_key(self, value): """ Validate session key on assignment. Invalid values will set to None. """ if self._validate_session_key(value): self.__session_key = value else: self.__session_key = None
+- [b9dbefe1] def _validate_session_key(self, key): """ Key must be truthy and at least 8 characters long. 8 characters is an arbitrary lower bound for some minimal key security. """ return key and len(key) >= 8
+- [f3f657be] def clear(self): # To avoid unnecessary persistent storage accesses, we set up the # internals directly (loading data wastes time, since we are going to # set it to an empty dict anyway). self._session_cache = {} self.accessed = True self.modified = True
+- [d893a8b2] def create(self): """ Create a new session instance. Guaranteed to create a new object with a unique key and will have saved the result once (with empty data) before the method returns. """ raise NotImplementedError( "subclasses of SessionBase must provide a create() method" )
+- [ba30d3ae] def cycle_key(self): """ Create a new session key, while retaining the current session data. """ data = self._session key = self.session_key self.create() self._session_cache = data if key: self.delete(key)
+- [3512e4fe] def decode(self, session_data): try: return signing.loads( session_data, salt=self.key_salt, serializer=self.serializer ) except signing.BadSignature: logger = logging.getLogger("django.security.SuspiciousSession") logger.warning("Session data corrupted") except Exception: # ValueError, unpickling exceptions. If any of these happen, just # return an empty dictionary (an empty session). pass return {}
+- [6c21fa34] def delete(self, session_key=None): """ Delete the session data under this key. If the key is None, use the current session key value. """ raise NotImplementedError( "subclasses of SessionBase must provide a delete() method" )
+- [0ff7a256] def delete_test_cookie(self): del self[self.TEST_COOKIE_NAME]
+- [791b4c17] def encode(self, session_dict): """ Return the given session dictionary serialized and encoded as a string. """ return signing.dumps( session_dict, salt=self.key_salt, serializer=self.serializer, compress=True, )
+- [3852fc28] def exists(self, session_key): """ Return True if the given session_key already exists. """ raise NotImplementedError( "subclasses of SessionBase must provide an exists() method" )
+- [2c10ee41] def flush(self): """ Remove the current session data from the database and regenerate the key. """ self.clear() self.delete() self._session_key = None
+- [5bc19f76] def get(self, key, default=None): return self._session.get(key, default)
+- [ea0011f1] def get_expire_at_browser_close(self): """ Return ``True`` if the session is set to expire when the browser closes, and ``False`` if there's an expiry date. Use ``get_expiry_date()`` or ``get_expiry_age()`` to find the actual expiry date/age, if there is one. """ if (expiry := self.get("_session_expiry")) is None: return settings.SESSION_EXPIRE_AT_BROWSER_CLOSE return expiry == 0
+- [03b263f3] def get_expiry_age(self, **kwargs): """Get the number of seconds until the session expires.
+- [51fe2057] def get_expiry_date(self, **kwargs): """Get session the expiry date (as a datetime object).
+- [fd998569] def get_session_cookie_age(self): return settings.SESSION_COOKIE_AGE
+- [cd767483] def has_key(self, key): return key in self._session
+- [bdc25a56] def is_empty(self): "Return True when there is no session_key and the session is empty." try: return not self._session_key and not self._session_cache except AttributeError: return True
+- [3933f25d] def items(self): return self._session.items()
+- [30338abc] def keys(self): return self._session.keys()
+- [de4b4330] def load(self): """ Load the session data and return a dictionary. """ raise NotImplementedError( "subclasses of SessionBase must provide a load() method" )
+- [20c053ff] def pop(self, key, default=__not_given): self.modified = self.modified or key in self._session args = () if default is self.__not_given else (default,) return self._session.pop(key, *args)
+- [d06e258c] def save(self, must_create=False): """ Save the session data. If 'must_create' is True, create a new session object (or raise CreateError). Otherwise, only update an existing object and don't create one (raise UpdateError if needed). """ raise NotImplementedError( "subclasses of SessionBase must provide a save() method" )
+- [626e4b7e] def set_expiry(self, value): """ Set a custom expiration for the session. ``value`` can be an integer, a Python ``datetime`` or ``timedelta`` object or ``None``.
+- [88ba7f15] def set_test_cookie(self): self[self.TEST_COOKIE_NAME] = self.TEST_COOKIE_VALUE
+- [51d7e3d6] def setdefault(self, key, value): if key in self._session: return self._session[key] else: self[key] = value return value
+- [c4c86457] def test_cookie_worked(self): return self.get(self.TEST_COOKIE_NAME) == self.TEST_COOKIE_VALUE
+- [8b642d22] def update(self, dict_): self._session.update(dict_) self.modified = True
+- [82ffc6e3] def values(self): return self._session.values()
+- [7655780f0d17b825-8] pass
+- [8a194b3d] session_key = property(_get_session_key) _session_key = property(_get_session_key, _set_session_key)
+- [0906189e] # session_key should not be case sensitive because some backends can store it # on case insensitive file systems. VALID_KEY_CHARS = string.ascii_lowercase + string.digits
+- [e120fffd] class CreateError(Exception): """ Used internally as a consistent exception type to catch from save (see the docstring for SessionBase.save() for details). """
+- [49954475] class SessionBase: """ Base class for all Session classes. """
+- [59e09243] class UpdateError(Exception): """ Occurs if Django tries to update a session that was deleted. """
+- [770890ad88958a4c-5] from asgiref.sync import sync_to_async
+- [2dc9630f] from django.conf import settings from django.core import signing from django.utils import timezone from django.utils.crypto import get_random_string from django.utils.module_loading import import_string
+- [f8bcf779] import logging import string from datetime import datetime, timedelta

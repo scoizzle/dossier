@@ -1,6 +1,6 @@
 # Fact d029ef3b
 
-Store id: f6b05cec-1019-4511-8622-8c6bb082ee23
+Store id: 98bbeaf7-b84f-40c3-920b-825c1ada6e49
 
 ## Text
 
@@ -20,7 +20,7 @@ class Degrees(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6075750+00:00`
+- posted_at: `2026-11-09T23:32:01.7039640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 84,
     "symbol": "Degrees"
   },
-  "id": "f6b05cec-1019-4511-8622-8c6bb082ee23",
+  "id": "98bbeaf7-b84f-40c3-920b-825c1ada6e49",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6075750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7039640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4f4d019-313c-4d89-aff1-344047896bfb",
+  "subject_id": "edef03f0-9a3b-451b-b6d3-ac3a1cd33720",
   "subject_name": "django/db/models/functions/math::Degrees",
   "tags": [
     "entity:class"

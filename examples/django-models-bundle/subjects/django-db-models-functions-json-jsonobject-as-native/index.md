@@ -1,9 +1,9 @@
 # django/db/models/functions/json::JSONObject.as_native
 
-- Subject: django/db/models/functions/json::JSONObject.as_native (id `b2356948-fc32-4775-8e55-bac466057410`)
+- Subject: django/db/models/functions/json::JSONObject.as_native (id `7d593c19-0fad-40cf-b822-8d66fd149bcf`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact afbc1dbd
 
-Store id: 3fb6cad7-9401-4482-8a1f-a60effc9b9d4
+Store id: 712dfb37-89b0-4feb-91a1-cdb51c3b47a3
 
 ## Text
 
@@ -20,7 +20,7 @@ class FetchRaise(FetchMode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.0085120+00:00`
+- posted_at: `2026-11-09T23:31:56.2270820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 49,
     "symbol": "FetchRaise"
   },
-  "id": "3fb6cad7-9401-4482-8a1f-a60effc9b9d4",
+  "id": "712dfb37-89b0-4feb-91a1-cdb51c3b47a3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.0085120+00:00"
+    "posted_at": "2026-11-09T23:31:56.2270820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "68408bf3-30fe-4629-b342-95a16ad2f3c1",
+  "subject_id": "f715fece-43b8-414f-8295-94e6b3379c7f",
   "subject_name": "django/db/models/fetch_modes::FetchRaise",
   "tags": [
     "entity:class"

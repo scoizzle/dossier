@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode._resolve_node
 
-- Subject: django/db/models/sql/where::WhereNode._resolve_node (id `a0420fb2-c91c-41ca-b047-12c73e6cfcbc`)
+- Subject: django/db/models/sql/where::WhereNode._resolve_node (id `f18ddb66-1418-41ea-814a-6699c4d0c94e`)
 - Kind: class_method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

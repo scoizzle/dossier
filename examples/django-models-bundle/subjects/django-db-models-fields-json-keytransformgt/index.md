@@ -1,9 +1,9 @@
 # django/db/models/fields/json::KeyTransformGt
 
-- Subject: django/db/models/fields/json::KeyTransformGt (id `8d46b66f-b309-4720-af2d-658db668cdc8`)
+- Subject: django/db/models/fields/json::KeyTransformGt (id `a7885cab-8a71-4846-9202-7b2649aa6e90`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

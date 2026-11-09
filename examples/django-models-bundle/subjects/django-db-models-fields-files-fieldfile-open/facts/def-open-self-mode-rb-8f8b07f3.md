@@ -1,6 +1,6 @@
 # Fact 8f8b07f3
 
-Store id: c68832f5-2c7f-417e-b0a4-c624fd40c44f
+Store id: a06040d2-a3c3-4cb6-9f38-0146caa0ed0b
 
 ## Text
 
@@ -20,7 +20,7 @@ def open(self, mode="rb")
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2044210+00:00`
+- posted_at: `2026-11-09T23:31:57.3624510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 81,
     "symbol": "FieldFile.open"
   },
-  "id": "c68832f5-2c7f-417e-b0a4-c624fd40c44f",
+  "id": "a06040d2-a3c3-4cb6-9f38-0146caa0ed0b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2044210+00:00"
+    "posted_at": "2026-11-09T23:31:57.3624510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "117d4d3c-11b7-49e9-874d-c1afe6eb76d1",
+  "subject_id": "b1a91e06-5c03-4c16-b34b-aeb61d48af1b",
   "subject_name": "django/db/models/fields/files::FieldFile.open",
   "tags": [
     "entity:method"

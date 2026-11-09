@@ -1,6 +1,6 @@
 # Fact 18163aa1
 
-Store id: f6559e56-4cf0-4dfb-9eee-aedf08952847
+Store id: 5318d94b-c1df-4cf0-b762-27a6a1654172
 
 ## Text
 
@@ -20,7 +20,7 @@ class Deferrable(Enum)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7190220+00:00`
+- posted_at: `2026-11-09T23:31:54.2078090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 260,
     "symbol": "Deferrable"
   },
-  "id": "f6559e56-4cf0-4dfb-9eee-aedf08952847",
+  "id": "5318d94b-c1df-4cf0-b762-27a6a1654172",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7190220+00:00"
+    "posted_at": "2026-11-09T23:31:54.2078090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "073d3e6e-f98f-4894-9f3c-c3a9c7838561",
+  "subject_id": "bc8e6bd9-d6be-424c-a276-c106106a203b",
   "subject_name": "django/db/models/constraints::Deferrable",
   "tags": [
     "entity:class"

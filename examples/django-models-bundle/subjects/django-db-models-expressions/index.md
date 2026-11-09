@@ -1,8 +1,8 @@
 # django/db/models/expressions
 
-- Subject: django/db/models/expressions (id `c73c9fb4-2e38-469b-adb6-39bb26aff37e`)
+- Subject: django/db/models/expressions (id `191e4ce1-7784-4937-a266-0e0cfc932363`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 645 tokens
 - Facts shown: 37 of 38
 - Conflicts: 0

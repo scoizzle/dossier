@@ -1,6 +1,6 @@
 # Fact 127cf932
 
-Store id: a30e216f-c093-4952-b670-05f991d3a38a
+Store id: be0dd1f3-746d-4ee8-9b9c-857d281452ae
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_persistence(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4390900+00:00`
+- posted_at: `2026-11-09T23:31:57.6386790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 150,
     "symbol": "GeneratedField._check_persistence"
   },
-  "id": "a30e216f-c093-4952-b670-05f991d3a38a",
+  "id": "be0dd1f3-746d-4ee8-9b9c-857d281452ae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4390900+00:00"
+    "posted_at": "2026-11-09T23:31:57.6386790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9cb6d6af-4857-41ed-806c-e349a6836e73",
+  "subject_id": "584d4399-1c00-470a-af72-febff108ce96",
   "subject_name": "django/db/models/fields/generated::GeneratedField._check_persistence",
   "tags": [
     "entity:method"

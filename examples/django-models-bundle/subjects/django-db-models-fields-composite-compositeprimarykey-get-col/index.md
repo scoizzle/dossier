@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::CompositePrimaryKey.get_col
 
-- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_col (id `c3f3062c-6efa-49aa-8396-4dd1d3d3f786`)
+- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_col (id `3c88f03c-ccbd-4985-ae4d-9db27355c8c7`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

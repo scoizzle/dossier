@@ -1,6 +1,6 @@
 # Fact 39a3c5ab
 
-Store id: 0f007f4e-2552-4db7-855a-b25976588301
+Store id: 5d54facc-c754-47c3-9098-8a92fa10b260
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6873230+00:00`
+- posted_at: `2026-11-09T23:31:55.9438250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1619,
     "symbol": "NegatedExpression.select_format"
   },
-  "id": "0f007f4e-2552-4db7-855a-b25976588301",
+  "id": "5d54facc-c754-47c3-9098-8a92fa10b260",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6873230+00:00"
+    "posted_at": "2026-11-09T23:31:55.9438250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f94688df-f9a9-45fe-a7b7-cc33a3a0f2f3",
+  "subject_id": "05ea8b59-812c-4977-a262-142e1b359dd1",
   "subject_name": "django/db/models/expressions::NegatedExpression.select_format",
   "tags": [
     "entity:method"

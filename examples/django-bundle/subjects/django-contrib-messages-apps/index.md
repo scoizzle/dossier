@@ -1,8 +1,8 @@
 # django/contrib/messages/apps
 
-- Subject: django/contrib/messages/apps (id `1ed93759-2cc2-4c1f-9373-6e6362f6bd14`)
+- Subject: django/contrib/messages/apps (id `ff5685b1-7042-4a24-b2a0-7a9124fe3f4c`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 186 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

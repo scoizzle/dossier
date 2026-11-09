@@ -1,6 +1,6 @@
 # Fact 1712348e
 
-Store id: 9e127737-f1fe-49fe-9a63-09f8814b9351
+Store id: 283f2132-2d76-4928-81ca-b19617cad8dd
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_db_index(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2781120+00:00`
+- posted_at: `2026-11-09T23:31:56.4310990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 461,
     "symbol": "Field._check_db_index"
   },
-  "id": "9e127737-f1fe-49fe-9a63-09f8814b9351",
+  "id": "283f2132-2d76-4928-81ca-b19617cad8dd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2781120+00:00"
+    "posted_at": "2026-11-09T23:31:56.4310990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "158acf50-2030-42fa-ae52-61ca79145dbb",
+  "subject_id": "52860786-dbc4-448c-bf92-9982528777ff",
   "subject_name": "django/db/models/fields/__init__::Field._check_db_index",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 34758cf1
 
-Store id: 8b1dcecb-7164-4bd5-bf0c-e942f89ef154
+Store id: 73803208-508b-40d1-a3af-4489fb937ae6
 
 ## Text
 
@@ -20,7 +20,7 @@ class Floor(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6165370+00:00`
+- posted_at: `2026-11-09T23:32:01.7113220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 102,
     "symbol": "Floor"
   },
-  "id": "8b1dcecb-7164-4bd5-bf0c-e942f89ef154",
+  "id": "73803208-508b-40d1-a3af-4489fb937ae6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6165370+00:00"
+    "posted_at": "2026-11-09T23:32:01.7113220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9334dbc9-67d3-4b07-813b-366dd4def7e9",
+  "subject_id": "40e5f6f8-1bad-426e-8896-138e0461b00e",
   "subject_name": "django/db/models/functions/math::Floor",
   "tags": [
     "entity:class"

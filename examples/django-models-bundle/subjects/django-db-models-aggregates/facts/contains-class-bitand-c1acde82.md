@@ -1,6 +1,6 @@
 # Fact c1acde82
 
-Store id: 8ac586bc-5030-416b-904f-8bf8e6f0b176
+Store id: c509e142-79ac-4ffb-a325-992f323a7f59
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BitAnd
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8ac586bc-5030-416b-904f-8bf8e6f0b176",
+  "id": "c509e142-79ac-4ffb-a325-992f323a7f59",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BitAnd"
       },
       "rel": "contains",
-      "target": "39414f5e-0627-4ff4-b3c1-7da7c8d05b4e"
+      "target": "59034b6b-e582-4e87-962b-95a20fb03f2f"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

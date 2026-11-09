@@ -1,9 +1,9 @@
 # django/db/models/fields/generated::GeneratedField.check
 
-- Subject: django/db/models/fields/generated::GeneratedField.check (id `5e1a9b45-2ffd-4758-b2d9-715960c37759`)
+- Subject: django/db/models/fields/generated::GeneratedField.check (id `3f427a66-2e11-48ca-9879-817455c411b6`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

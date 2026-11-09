@@ -1,6 +1,6 @@
 # Fact aaee018c
 
-Store id: 8bf2288e-88a4-4ec7-8a05-bc41db347de2
+Store id: fb9205e4-2c0d-4881-9e17-d390eb2d2113
 
 ## Text
 
@@ -20,7 +20,7 @@ async def acreate(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8130600+00:00`
+- posted_at: `2026-11-09T23:31:59.2602700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 900,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.acreate"
   },
-  "id": "8bf2288e-88a4-4ec7-8a05-bc41db347de2",
+  "id": "fb9205e4-2c0d-4881-9e17-d390eb2d2113",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8130600+00:00"
+    "posted_at": "2026-11-09T23:31:59.2602700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "38243038-86be-49c8-b2df-4116e4758e7f",
+  "subject_id": "7f0de9bd-2f33-4e03-a139-dee18e972e22",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.acreate",
   "tags": [
     "entity:method",

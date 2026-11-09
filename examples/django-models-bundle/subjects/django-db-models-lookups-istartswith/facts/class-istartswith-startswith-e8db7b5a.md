@@ -1,6 +1,6 @@
 # Fact e8db7b5a
 
-Store id: cac24145-3cb4-4eee-86d0-c0a7ddafae42
+Store id: fd2985af-be12-46c4-9a8f-0285e299aed9
 
 ## Text
 
@@ -20,7 +20,7 @@ class IStartsWith(StartsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1873880+00:00`
+- posted_at: `2026-11-09T23:32:03.3674910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 641,
     "symbol": "IStartsWith"
   },
-  "id": "cac24145-3cb4-4eee-86d0-c0a7ddafae42",
+  "id": "fd2985af-be12-46c4-9a8f-0285e299aed9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1873880+00:00"
+    "posted_at": "2026-11-09T23:32:03.3674910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "77a7fcc7-95f3-4c45-b8ba-08b35375b637",
+  "subject_id": "f383b6d8-672c-49de-9472-632f7ec61740",
   "subject_name": "django/db/models/lookups::IStartsWith",
   "tags": [
     "entity:class",

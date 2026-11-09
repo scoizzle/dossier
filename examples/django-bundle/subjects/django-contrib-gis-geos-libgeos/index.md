@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/libgeos
 
-- Subject: django/contrib/gis/geos/libgeos (id `609d8dc1-1b73-432f-b7c6-26daf52397d4`)
+- Subject: django/contrib/gis/geos/libgeos (id `1cfb5c71-3dfc-43de-87ce-c8e5bf70af79`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 14 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1475 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - func = GEOSFunc(self.func_name) func.argtypes = self.argtypes or [] func.restype = self.restype if self.errcheck: func.errcheck = self.errcheck return func [39af6bfd]
 - lib_path = settings.GEOS_LIBRARY_PATH except (AttributeError, ImportError, ImproperlyConfigured, OSError): lib_path = None [bfe35eb4]
@@ -25,6 +25,22 @@
 - # Pointers to opaque GEOS geometry structures. GEOM_PTR = POINTER(GEOSGeom_t) PREPGEOM_PTR = POINTER(GEOSPrepGeom_t) CS_PTR = POINTER(GEOSCoordSeq_t) CONTEXT_PTR = POINTER(GEOSContextHandle_t) [2ffb3c61]
 - ERRORFUNC = CFUNCTYPE(None, c_char_p, c_char_p) [29936937]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [12c1169b] [f344a72a] [968ab02e] [6a218f20] [c6b5289d] [c4e64dbd] [33665927] [b15fa571] [ceb9ce70] [d79abff3] [d9d1e644] [b21462d5] [9b257647] [630143bd] [03f5a946] [e92fc94cc00bbb3c-4] [d0af8805]
+- [12c1169b] # The notice and error handler C function callback definitions. # Supposed to mimic the GEOS message handler (C below): # typedef void (*GEOSMessageHandler)(const char *fmt, ...); NOTICEFUNC = CFUNCTYPE(None, c_char_p, c_char_p)
+- [f344a72a] This module also houses GEOS Pointer utilities, including get_pointer_arr(), and GEOM_PTR. """
+- [968ab02e] class GEOSContextHandle_t(Structure): pass
+- [6a218f20] class GEOSCoordSeq_t(Structure): pass
+- [c6b5289d] class GEOSFuncFactory: """ Lazy loading of GEOS functions. """
+- [c4e64dbd] class GEOSPrepGeom_t(Structure): pass
+- [33665927] def error_h(fmt, lst): fmt, lst = fmt.decode(), lst.decode() try: err_msg = fmt % lst except TypeError: err_msg = fmt logger.error("GEOS_ERROR: %s\n", err_msg)
+- [b15fa571] def geos_version(): """Return the string version of the GEOS library.""" return lgeos.GEOSversion()
+- [ceb9ce70] def geos_version_tuple(): """Return the GEOS version as a tuple (major, minor, subminor).""" return get_version_tuple(geos_version().decode())
+- [d79abff3] def load_geos(): # Custom library path set? try: from django.conf import settings
+- [d9d1e644] def notice_h(fmt, lst): fmt, lst = fmt.decode(), lst.decode() try: warn_msg = fmt % lst except TypeError: warn_msg = fmt logger.warning("GEOS_NOTICE: %s\n", warn_msg)
+- [b21462d5] error_h = ERRORFUNC(error_h)
+- [9b257647] from django.core.exceptions import ImproperlyConfigured from django.utils.functional import SimpleLazyObject, cached_property from django.utils.version import get_version_tuple
+- [630143bd] import logging import os from ctypes import CDLL, CFUNCTYPE, POINTER, Structure, c_char_p from ctypes.util import find_library
+- [03f5a946] lgeos = SimpleLazyObject(load_geos)
+- [e92fc94cc00bbb3c-4] logger = logging.getLogger("django.contrib.gis")
+- [d0af8805] notice_h = NOTICEFUNC(notice_h)

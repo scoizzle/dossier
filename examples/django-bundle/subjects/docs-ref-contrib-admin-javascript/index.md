@@ -1,8 +1,8 @@
 # docs/ref/contrib/admin/javascript
 
-- Subject: docs/ref/contrib/admin/javascript (id `48655f9f-cc31-4cf6-bfa6-713cf98df69f`)
+- Subject: docs/ref/contrib/admin/javascript (id `e37bfeea-4014-4de3-8bcb-fd1ac5debd3b`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 766 tokens
 - Facts shown: 18 of 18
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact e29c09fa
 
-Store id: a0177072-df0a-4109-a07c-1ca39d9a362a
+Store id: dd62c229-0893-4974-8353-9a1bd5400dd8
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractHour(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1500170+00:00`
+- posted_at: `2026-11-09T23:32:01.2186570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 171,
     "symbol": "ExtractHour"
   },
-  "id": "a0177072-df0a-4109-a07c-1ca39d9a362a",
+  "id": "dd62c229-0893-4974-8353-9a1bd5400dd8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1500170+00:00"
+    "posted_at": "2026-11-09T23:32:01.2186570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "92f16d1a-e964-4efe-b381-a117d0decead",
+  "subject_id": "6e5af903-f9ee-4439-a6a1-fa6fa1b16ee9",
   "subject_name": "django/db/models/functions/datetime::ExtractHour",
   "tags": [
     "entity:class"

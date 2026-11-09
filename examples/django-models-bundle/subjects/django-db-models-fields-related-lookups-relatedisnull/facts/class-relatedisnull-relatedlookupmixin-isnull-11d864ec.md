@@ -1,6 +1,6 @@
 # Fact 11d864ec
 
-Store id: 51389743-819a-41b6-971f-9b4ff860782f
+Store id: b97f35b5-7498-4f15-a6a8-9bded2ccf978
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedIsNull(RelatedLookupMixin, IsNull)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1372430+00:00`
+- posted_at: `2026-11-09T23:32:00.0316370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 151,
     "symbol": "RelatedIsNull"
   },
-  "id": "51389743-819a-41b6-971f-9b4ff860782f",
+  "id": "b97f35b5-7498-4f15-a6a8-9bded2ccf978",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1372430+00:00"
+    "posted_at": "2026-11-09T23:32:00.0316370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a48e5b8-8aa3-490f-9a5c-8d198c22a6ae",
+  "subject_id": "0a3b82b1-4898-4b81-96fc-cccac2857419",
   "subject_name": "django/db/models/fields/related_lookups::RelatedIsNull",
   "tags": [
     "entity:class"

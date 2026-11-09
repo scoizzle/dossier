@@ -1,14 +1,14 @@
 # docs/ref/middleware
 
-- Subject: docs/ref/middleware (id `4853d8e2-34b2-4997-b0cb-63bb5d3d5150`)
+- Subject: docs/ref/middleware (id `d1cf7d78-b223-44e1-a097-37ff466cd1e7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 22 of 220
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 8884 tokens
+- Facts shown: 215 of 220
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Defaults to 100. Subclass ``GZipMiddleware`` and override the attribute to change the maximum number of random bytes that is included with compressed responses. [8b8eb645]
 - Defaults to :class:`~django.http.HttpResponsePermanentRedirect`. Subclass ``CommonMiddleware`` and override the attribute to customize the redirects issued by the middleware. [6bb7a700]
@@ -33,6 +33,198 @@
 - Adds the ``user`` attribute, representing the currently-logged-in user, to every incoming ``HttpRequest`` object. See :ref:`Authentication in web requests <auth-web-requests>`. [9106c004]
 - .. note:: [942ae6c11625c81c-98]
 
-## Beyond the budget
+## All facts
 
-193 more facts did not fit in the budget: [2caa4123] [b0d7fd78] [691d42ff] [5f2b007a] [b6b44dbc] [3049114b] [b2ff8d0e] [05e063a7] [1dd8b268] [5e5734f1] [4f0d59ce] [12164b41] [78e7a3f9] [169b39b9] [916ae661] [3acf5277] [3e152d4f] [e3e3323c] [5df82d00] [0ca3044a] [d18abc64] [ea5fc8ce] [f1d89d85] [bb9752ff] [456b779d820a6878] [5b4370e4] [793d5420] [64a890f830b130f4] [9577ebd5] [ce78c248] [3e5f4e16] [9115a016] [1aa20b70] [da600c3f] [3449d0e4] [899e9359] [b795d950] [a623ad01] [765611f9] [0df7570a] [37eb178977f07107] [4e334a79] [a8a3ec01] [a7b1fc0b] [cdd1a223] [b84cde97] [0ec277dd] [92dfb72e] [46883ab1] [f426ca2e] [d08df0d4] [01ddd54a] [20a79d07] [0f9d96cf] [d265d35c] [28561bdc] [bd3591c6] [a25b9143] [bb774e06] [9f84c7d9] [ce12560e] [a4bf56b4] [60131ba5] [262af2a8] [fc2338ff] [f93fb1da] [14e3dfb8] [88ea926e] [9caf9087] [934ba42d] [1d746dcc] [bff36c35] [fbc9d097] [7a801698] [6435c53c] [928ad60d] [f3067fde] [3f4d90c7] [d58f4d6e] [a6f2829c] [f55b59d2] [88ce1efb] [185044a9] [ff4fe28e] [7c5d3ca6] [b8ebaed9] [1182b12a] [b4370382] [0f0da54f] [4dbda408] [ce4488a3] [152548f7] [99697b76] [78e4e02e] [4722934e] [04e18d22] [43afb917] [97e26bd3] [31dc73dc] [61a90e54] [1b5610f2] [8ab8d301] [a3b51480] [f29b5ea8] [afcc6ec9] [6986d554] [7b08bbfa] [e75524ba] [93c28f6d] [87d6d169] [9a2bd67f] [5fbc1cf5] [5db9b77d] [f092f720] [16b86f76] [a4517d70] [ec0ab113] [695cdf9c] [942ae6c11625c81c-99] [bd38c65d] [121ca6bd] [a1eb26d754a3d60c-23] [c6217ecb] [8af7ea3f] [721995fb] [ecaf743a] [0ddaa6c0] [99fd0a37] [8a6f08da] [ebba9770] [0827dd22] [629c55c0] [b59a455c] [7ae085a2] [6fb50550] [8d74ab31] [59693e87] [186ab046] [32225487] [a60638eb] [468ec4a5] [7b1694fa] [579d0de3] [bdedf02f] [6401ffaa] [47937590] [6776f059] [e67f51be] [88bac804] [77d64747] [76bc96af] [7f763c51] [0ec31932] [3dab500e] [7ceef0ca] [66dfedde] [6f598c83] [74017f20] [86d6168e] [fcc52b8b] [bcbd9015] [b315f589] [a8d6ef85] [90fa3f3f] [f1710398] [27b97a44] [05864eca] [7e7da7d1] [c43c02cd] [7452afec] [a4b9ea77] [050ab909] [74a309dc] [b1cc5a22] [bb5b0200] [e373ade5] [cc1b02a0] [cca4a76b] [5fd73b9b] [34e520f9] [19647582] [ef943a9c] [6dd17c19] [8f5ae69f] [6fe7fcb7] [ecbaced1] [402049ec] [b5ee4364] [88b2c845] [37099dc6] [9a1dd047] [26bbab61] [1157b6a3]
+- [2caa4123] Browsers properly respecting the HSTS header will refuse to allow users to bypass warnings and connect to a site with an expired, self-signed, or otherwise invalid SSL certificate. If you use HSTS, make sure your certificates are in good shape and stay that way!
+- [b0d7fd78] Enables cookie- and session-based message support. See the :doc:`messages documentation </ref/contrib/messages>`.
+- [691d42ff] Enables language selection based on data from the request. It customizes content for each user. See the :doc:`internationalization documentation </topics/i18n/translation>`.
+- [5f2b007a] Enables session support. See the :doc:`session documentation </topics/http/sessions>`.
+- [b6b44dbc] For more details, see the `BREACH paper (PDF)`_, `breachattack.com`_, and the `Heal The Breach (HTB) paper`_.
+- [3049114b] For performance reasons, it's preferable to do these redirects outside of Django, in a front-end load balancer or reverse-proxy server such as `nginx`_. :setting:`SECURE_SSL_REDIRECT` is intended for the deployment situations where this isn't an option.
+- [b2ff8d0e] Handles conditional GET operations. If the response doesn't have an ``ETag`` header, the middleware adds one if needed. If the response has an ``ETag`` or ``Last-Modified`` header, and the request has ``If-None-Match`` or ``If-Modified-Since``, the response is replaced by an :class:`~django.http.HttpResponseNotModified`.
+- [05e063a7] MIDDLEWARE = [ "...", "django.contrib.auth.middleware.AuthenticationMiddleware", "django.contrib.auth.middleware.LoginRequiredMiddleware", "...", ]
+- [1dd8b268] Middleware for utilizing web server provided authentication when enabled only on the login page. See :ref:`persistent-remote-user-middleware-howto` for usage details, including security considerations.
+- [5e5734f1] Middleware for utilizing web server provided authentication. See :doc:`/howto/auth-remote-user` for usage details, including security considerations.
+- [4f0d59ce] Security researchers revealed that when compression techniques (including ``GZipMiddleware``) are used on a website, the site may become exposed to a number of possible attacks.
+- [12164b41] Simple :doc:`clickjacking protection via the X-Frame-Options header </ref/clickjacking/>`.
+- [78e7a3f9] Subclass the middleware and override the following attributes and methods to customize behavior for unauthenticated requests.
+- [169b39b9] To mitigate attacks, Django implements a technique called *Heal The Breach (HTB)*. It adds up to 100 bytes (see :attr:`.max_random_bytes`) of random bytes to each response to make the attacks less effective.
+- [916ae661] To prevent infinite redirects, ensure you have :ref:`enabled unauthenticated requests <disable-login-required-middleware-for-views>` to your login view.
+- [3acf5277] Where a policy value is `unknown`__ by a user agent, it is possible to specify multiple policy values to provide a fallback. The last specified value that is understood takes precedence. To support this, an iterable or comma-separated string can be used with :setting:`SECURE_REFERRER_POLICY`.
+- [3e152d4f] You can add Cross Site Request Forgery protection to individual views using the :func:`~django.views.decorators.csrf.csrf_protect` decorator.
+- [e3e3323c] You can handle conditional GET operations with individual views using the :func:`~django.views.decorators.http.conditional_page` decorator.
+- [5df82d00] __ https://w3c.github.io/webappsec-referrer-policy/#unknown-policy-values
+- [0ca3044a] from django.contrib.auth.decorators import login_required from django.utils.decorators import method_decorator from django.views.generic import View
+- [d18abc64] from django.views.decorators.common import no_append_slash
+- [ea5fc8ce] * :setting:`SECURE_CONTENT_TYPE_NOSNIFF` * :setting:`SECURE_CROSS_ORIGIN_OPENER_POLICY` * :setting:`SECURE_HSTS_INCLUDE_SUBDOMAINS` * :setting:`SECURE_HSTS_PRELOAD` * :setting:`SECURE_HSTS_SECONDS` * :setting:`SECURE_REDIRECT_EXEMPT` * :setting:`SECURE_REFERRER_POLICY` * :setting:`SECURE_SSL_HOST` * :setting:`SECURE_SSL_REDIRECT`
+- [f1d89d85] After ``AuthenticationMiddleware``: uses user object.
+- [bb9752ff] After ``GZipMiddleware`` so it won't calculate an ``ETag`` header on gzipped contents.
+- [456b779d820a6878] After ``SessionMiddleware`` if you're using :setting:`CSRF_USE_SESSIONS`.
+- [5b4370e4] After ``SessionMiddleware``: can use session-based storage.
+- [793d5420] After ``SessionMiddleware``: uses session storage.
+- [64a890f830b130f4] After ``UpdateCacheMiddleware``: Modifies ``Vary`` header.
+- [9577ebd5] After any middleware that modifies the ``Vary`` header: that header is used to pick a value for the cache hash-key.
+- [ce78c248] Before :class:`~django.contrib.auth.middleware.RemoteUserMiddleware`, or any other authentication middleware that may perform a login, and hence rotate the CSRF token, before calling down the middleware chain.
+- [3e5f4e16] Before any middleware that may change or use the response body.
+- [9115a016] Before any middleware that may change the response (it sets the ``Content-Length`` header). A middleware that appears before ``CommonMiddleware`` and changes the response must reset ``Content-Length``.
+- [1aa20b70] Before any middleware that may change the response (it sets the ``ETag`` header).
+- [da600c3f] Before any middleware that may raise an exception to trigger an error view (such as :exc:`~django.core.exceptions.PermissionDenied`) if you're using :setting:`CSRF_USE_SESSIONS`.
+- [3449d0e4] Before any view middleware that assumes that CSRF attacks have been dealt with.
+- [899e9359] Before those that modify the ``Vary`` header (``SessionMiddleware``, ``GZipMiddleware``, ``LocaleMiddleware``).
+- [b795d950] Can be placed near the bottom, but since the :ref:`csp_nonce <csp-nonce>` is lazy, ensure any middleware that accesses it is positioned after, so the nonce is generated before this middleware builds the response header.
+- [a623ad01] Close to the top: it redirects when :setting:`APPEND_SLASH` or :setting:`PREPEND_WWW` are set to ``True``.
+- [765611f9] It should go near the top of the list if you're going to turn on the SSL redirect as that avoids running through a bunch of other unnecessary middleware.
+- [0df7570a] One of the topmost, after ``SessionMiddleware`` (uses session data) and ``UpdateCacheMiddleware`` (modifies ``Vary`` header).
+- [37eb178977f07107] Should be near the bottom as it's a last-resort type of middleware.
+- [4e334a79] The ``django.middleware.security.SecurityMiddleware`` provides several security enhancements to the request/response cycle. Each one can be independently enabled or disabled with a setting.
+- [a8a3ec01] Both of these options are meant to normalize URLs. The philosophy is that each URL should exist in one, and only one, place. Technically a URL ``foo.com/bar`` is distinct from ``foo.com/bar/`` -- a search-engine indexer would treat them as separate URLs -- so it's best practice to normalize URLs.
+- [a7b1fc0b] For example, ``foo.com/bar`` will be redirected to ``foo.com/bar/`` if you don't have a valid URL pattern for ``foo.com/bar`` but *do* have a valid pattern for ``foo.com/bar/``.
+- [cdd1a223] If :setting:`APPEND_SLASH` is ``True`` and the initial URL doesn't end with a slash, and it is not found in the URLconf, then a new URL is formed by appending a slash at the end. If this new URL is found in the URLconf, then Django redirects the request to this new URL. Otherwise, the initial URL is processed as usual.
+- [b84cde97] If :setting:`PREPEND_WWW` is ``True``, URLs that lack a leading "www." will be redirected to the same URL with a leading "www."
+- [0ec277dd] If necessary, individual views may be excluded from the ``APPEND_SLASH`` behavior using the :func:`~django.views.decorators.common.no_append_slash` decorator::
+- [92dfb72e] "Common" middleware -------------------
+- [46883ab1] #. :class:`~django.contrib.auth.middleware.AuthenticationMiddleware`
+- [f426ca2e] #. :class:`~django.contrib.auth.middleware.LoginRequiredMiddleware`
+- [d08df0d4] #. :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware`
+- [01ddd54a] #. :class:`~django.contrib.messages.middleware.MessageMiddleware`
+- [20a79d07] #. :class:`~django.contrib.redirects.middleware.RedirectFallbackMiddleware`
+- [0f9d96cf] #. :class:`~django.contrib.sessions.middleware.SessionMiddleware`
+- [d265d35c] #. :class:`~django.middleware.cache.FetchFromCacheMiddleware`
+- [28561bdc] #. :class:`~django.middleware.cache.UpdateCacheMiddleware`
+- [bd3591c6] #. :class:`~django.middleware.common.CommonMiddleware`
+- [a25b9143] #. :class:`~django.middleware.csp.ContentSecurityPolicyMiddleware`
+- [bb774e06] #. :class:`~django.middleware.csrf.CsrfViewMiddleware`
+- [9f84c7d9] #. :class:`~django.middleware.gzip.GZipMiddleware`
+- [ce12560e] #. :class:`~django.middleware.http.ConditionalGetMiddleware`
+- [a4bf56b4] #. :class:`~django.middleware.locale.LocaleMiddleware`
+- [60131ba5] #. :class:`~django.middleware.security.SecurityMiddleware`
+- [262af2a8] * Forbids access to user agents in the :setting:`DISALLOWED_USER_AGENTS` setting, which should be a list of compiled regular expression objects.
+- [fc2338ff] * Full URL: send the entire URL in the ``Referer`` header. For example, if the user is visiting ``https://example.com/page.html``, the ``Referer`` header would contain ``"https://example.com/page.html"``.
+- [f93fb1da] * No referrer: do not send a ``Referer`` header at all.
+- [14e3dfb8] * Origin only: send only the "origin" in the referrer. The origin consists of the scheme, host and (optionally) port number. For example, if the user is visiting ``https://example.com/page.html``, the origin would be ``https://example.com/``.
+- [88ea926e] * Performs URL rewriting based on the :setting:`APPEND_SLASH` and :setting:`PREPEND_WWW` settings.
+- [9caf9087] * Protocol downgrade: a downgrade occurs if the page containing the link is served via HTTPS, but the page being linked to is not served via HTTPS.
+- [934ba42d] * Same-origin versus cross-origin: a link from ``https://example.com/1.html`` to ``https://example.com/2.html`` is same-origin. A link from ``https://example.com/page.html`` to ``https://not.example.com/page.html`` is cross-origin.
+- [1d746dcc] * Sends broken link notification emails to :setting:`MANAGERS` (see :doc:`/howto/error-reporting`).
+- [bff36c35] * Sets the ``Content-Length`` header for non-streaming responses.
+- [fbc9d097] * The content body is less than 200 bytes long.
+- [7a801698] * The request (the browser) hasn't sent an ``Accept-Encoding`` header containing ``gzip``.
+- [6435c53c] * The response has already set the ``Content-Encoding`` header.
+- [928ad60d] * ``Content-Security-Policy``, based on :setting:`SECURE_CSP`. * ``Content-Security-Policy-Report-Only``, based on :setting:`SECURE_CSP_REPORT_ONLY`.
+- [f3067fde] .. _cross-origin-opener-policy:
+- [3f4d90c7] .. _http-strict-transport-security:
+- [d58f4d6e] .. _middleware-ordering:
+- [a6f2829c] .. _nginx: https://nginx.org/
+- [f55b59d2] .. _referrer-policy:
+- [88ce1efb] .. _security-middleware:
+- [185044a9] .. _ssl-redirect:
+- [ff4fe28e] .. _x-content-type-options:
+- [7c5d3ca6] .. admonition:: Ensure that your login view does not require a login.
+- [b8ebaed9] .. admonition:: Unknown Policy Values
+- [1182b12a] .. class:: AuthenticationMiddleware
+- [b4370382] .. class:: BrokenLinkEmailsMiddleware
+- [0f0da54f] .. class:: CommonMiddleware
+- [4dbda408] .. class:: ConditionalGetMiddleware
+- [ce4488a3] .. class:: ContentSecurityPolicyMiddleware
+- [152548f7] .. class:: CsrfViewMiddleware
+- [99697b76] .. class:: CurrentSiteMiddleware
+- [78e4e02e] .. class:: FetchFromCacheMiddleware
+- [4722934e] .. class:: GZipMiddleware
+- [04e18d22] .. class:: LocaleMiddleware
+- [43afb917] .. class:: LoginRequiredMiddleware
+- [97e26bd3] .. class:: MessageMiddleware
+- [31dc73dc] .. class:: PersistentRemoteUserMiddleware
+- [61a90e54] .. class:: RemoteUserMiddleware
+- [1b5610f2] .. class:: SecurityMiddleware
+- [8ab8d301] .. class:: SessionMiddleware
+- [a3b51480] .. class:: UpdateCacheMiddleware
+- [f29b5ea8] .. class:: XFrameOptionsMiddleware
+- [afcc6ec9] .. currentmodule:: django.middleware.clickjacking
+- [6986d554] .. currentmodule:: django.middleware.csp
+- [7b08bbfa] .. currentmodule:: django.middleware.csrf
+- [e75524ba] .. module:: django.contrib.auth.middleware :synopsis: Authentication middleware.
+- [93c28f6d] .. module:: django.contrib.messages.middleware :synopsis: Message middleware.
+- [87d6d169] .. module:: django.contrib.sessions.middleware :synopsis: Session middleware.
+- [9a2bd67f] .. module:: django.contrib.sites.middleware :synopsis: Site middleware.
+- [5fbc1cf5] .. module:: django.middleware :synopsis: Django's built-in middleware classes.
+- [5db9b77d] .. module:: django.middleware.cache :synopsis: Middleware for the site-wide cache.
+- [f092f720] .. module:: django.middleware.common :synopsis: Middleware adding "common" conveniences for perfectionists.
+- [16b86f76] .. module:: django.middleware.gzip :synopsis: Middleware to serve GZipped content for performance.
+- [a4517d70] .. module:: django.middleware.http :synopsis: Middleware handling advanced HTTP features.
+- [ec0ab113] .. module:: django.middleware.locale :synopsis: Middleware to enable language selection based on the request.
+- [695cdf9c] .. module:: django.middleware.security :synopsis: Security middleware.
+- [942ae6c11625c81c-99] .. note::
+- [bd38c65d] .. note:: If you are deployed behind a load-balancer or reverse-proxy server and Django can't seem to tell when a request actually is already secure, you may need to set the :setting:`SECURE_PROXY_SSL_HEADER` setting.
+- [121ca6bd] .. note:: If you are deployed behind a load-balancer or reverse-proxy server, and the ``Strict-Transport-Security`` header is not being added to your responses, it may be because Django doesn't realize that it's on a secure connection; you may need to set the :setting:`SECURE_PROXY_SSL_HEADER` setting.
+- [a1eb26d754a3d60c-23] .. versionadded:: 6.0
+- [c6217ecb] .. warning:: If your deployment situation allows, it's usually a good idea to have your front-end web server perform the functionality provided by the ``SecurityMiddleware``. That way, if there are requests that aren't served by Django (such as static media or user-uploaded files), they will have the same protections as requests to your Django application.
+- [8af7ea3f] .. warning:: The HSTS policy applies to your entire domain, not just the URL of the response that you set the header on. Therefore, you should only use it if your entire domain is served via HTTPS only.
+- [721995fb] .. warning:: When your site is served via HTTPS, :ref:`Django's CSRF protection system <how-csrf-works>` requires the ``Referer`` header to be present, so completely disabling the ``Referer`` header will interfere with CSRF protection. To gain most of the benefits of disabling ``Referer`` headers while also keeping CSRF protection, consider enabling only same-origin referrers.
+- [ecaf743a] ========== Middleware ==========
+- [0ddaa6c0] Additionally, if you set the :setting:`SECURE_HSTS_INCLUDE_SUBDOMAINS` setting to ``True``, ``SecurityMiddleware`` will add the ``includeSubDomains`` directive to the ``Strict-Transport-Security`` header. This is recommended (assuming all subdomains are served exclusively using HTTPS), otherwise your site may still be vulnerable via an insecure connection to a subdomain.
+- [99fd0a37] Adds a few conveniences for perfectionists:
+- [8a6f08da] Adds support for Content Security Policy (CSP), which helps mitigate risks such as Cross-Site Scripting (XSS) and data injection attacks by controlling the sources of content that can be loaded in the browser. See the :ref:`csp-overview` documentation for details on configuring policies.
+- [ebba9770] Authentication middleware -------------------------
+- [0827dd22] Available middleware ====================
+- [629c55c0] Browsers use `the Referer header`__ as a way to send information to a site about how users got there. When a user clicks a link, the browser will send the full URL of the linking page as the referrer. While this can be useful for some purposes -- like figuring out who's linking to your site -- it also can cause privacy concerns by informing one site that a user was visiting another site.
+- [b59a455c] CSRF protection middleware --------------------------
+- [7ae085a2] Cache middleware ----------------
+- [6fb50550] Conditional GET middleware --------------------------
+- [8d74ab31] Content Security Policy middleware ----------------------------------
+- [59693e87] Customize the login URL or field name for authenticated views with the :func:`~.django.contrib.auth.decorators.login_required` decorator to set ``login_url`` or ``redirect_field_name`` respectively. For example::
+- [186ab046] Enable the site-wide cache. If these are enabled, each Django-powered page will be cached for as long as the :setting:`CACHE_MIDDLEWARE_SECONDS` setting defines. See the :doc:`cache documentation </topics/cache>`.
+- [32225487] Enable this middleware by adding it to the :setting:`MIDDLEWARE` setting **after** :class:`~django.contrib.auth.middleware.AuthenticationMiddleware`::
+- [a60638eb] For sites that should only be accessed over HTTPS, you can instruct modern browsers to refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the `"Strict-Transport-Security" header`__. This reduces your exposure to some SSL-stripping man-in-the-middle (MITM) attacks.
+- [468ec4a5] GZip middleware ---------------
+- [7b1694fa] Here are some hints about the ordering of various Django middleware classes:
+- [579d0de3] If the :setting:`SECURE_SSL_HOST` setting has a value, all redirects will be sent to that host instead of the originally-requested host.
+- [bdedf02f] If the response has an ``ETag`` header, the ETag is made weak to comply with :rfc:`9110#section-8.8.1`.
+- [6401ffaa] If there are a few pages on your site that should be available over HTTP, and not redirected to HTTPS, you can list regular expressions to match those URLs in the :setting:`SECURE_REDIRECT_EXEMPT` setting.
+- [47937590] If you set the :setting:`SECURE_SSL_REDIRECT` setting to True, ``SecurityMiddleware`` will permanently (HTTP 301) redirect all HTTP connections to HTTPS.
+- [6776f059] If you wish to submit your site to the `browser preload list`_, set the :setting:`SECURE_HSTS_PRELOAD` setting to ``True``. That appends the ``preload`` directive to the ``Strict-Transport-Security`` header.
+- [e67f51be] If your site offers both HTTP and HTTPS connections, most users will end up with an unsecured connection by default. For best security, you should redirect all HTTP connections to HTTPS.
+- [88bac804] If your site serves user-uploaded files, a malicious user could upload a specially-crafted file that would be interpreted as HTML or JavaScript by the browser when you expected it to be something harmless.
+- [77d64747] It will NOT compress content if any of the following are true:
+- [76bc96af] Locale middleware -----------------
+- [7f763c51] Make a view public, allowing unauthenticated requests, with :func:`~.django.contrib.auth.decorators.login_not_required`. For example::
+- [0ec31932] Message middleware ------------------
+- [3dab500e] Middleware ordering ===================
+- [7ceef0ca] Note that in most deployment situations where Django isn't involved in serving user-uploaded files, this setting won't help you. For example, if your :setting:`MEDIA_URL` is served directly by your front-end web server (nginx, Apache, etc.) then you'd want to set this header there. On the other hand, if you are using Django to do something like require authorization in order to download files and you cannot set the header using your web server, this setting will be useful.
+- [66dfedde] Redirects all unauthenticated requests to a login page, except for views excluded with :func:`~.django.contrib.auth.decorators.login_not_required`. The login page defaults to :setting:`settings.LOGIN_URL <LOGIN_URL>`, but can be customized.
+- [6f598c83] Referrer Policy ~~~~~~~~~~~~~~~
+- [74017f20] SSL Redirect ~~~~~~~~~~~~
+- [86d6168e] Security middleware -------------------
+- [fcc52b8b] Session middleware ------------------
+- [bcbd9015] Site middleware ---------------
+- [b315f589] Some browsers have the ability to accept hints about whether they should send the HTTP ``Referer`` header when a user clicks a link; this hint is provided via `the Referrer-Policy header`__. This header can suggest any of three behaviors to browsers:
+- [a8d6ef85] Some browsers have the ability to isolate top-level windows from other documents by putting them in a separate browsing context group based on the value of the `Cross-Origin Opener Policy`__ (COOP) header. If a document that is isolated in this way opens a cross-origin popup window, the popup’s ``window.opener`` property will be ``null``. Isolating windows using COOP is a defense-in-depth protection against cross-origin attacks, especially those like Spectre which allowed exfiltration of data loaded into a shared browsing context.
+- [90fa3f3f] Some browsers will try to guess the content types of the assets that they fetch, overriding the ``Content-Type`` header. While this can help display sites with improperly configured servers, it can also pose a security risk.
+- [f1710398] The ``django.middleware.gzip.GZipMiddleware`` compresses content for browsers that understand GZip compression (all modern browsers).
+- [27b97a44] There are two types of conditions this header can tell a browser to watch out for:
+- [05864eca] This document explains all middleware components that come with Django. For information on how to use them and how to write your own middleware, see the :doc:`middleware usage guide </topics/http/middleware>`.
+- [7e7da7d1] This middleware sets the following headers on the response depending on the available settings:
+- [c43c02cd] This middleware should be placed before any other middleware that need to read or write the response body so that compression happens afterward.
+- [7452afec] To prevent the browser from guessing the content type and force it to always use the type provided in the ``Content-Type`` header, you can pass the `X-Content-Type-Options: nosniff`__ header. ``SecurityMiddleware`` will do this for all responses if the :setting:`SECURE_CONTENT_TYPE_NOSNIFF` setting is ``True``.
+- [a4b9ea77] When enabling HSTS, it's a good idea to first use a small value for testing, for example, :setting:`SECURE_HSTS_SECONDS = 3600<SECURE_HSTS_SECONDS>` for one hour. Each time a web browser sees the HSTS header from your site, it will refuse to communicate non-securely (using HTTP) with your domain for the given period of time. Once you confirm that all assets are served securely on your site (i.e. HSTS didn't break anything), it's a good idea to increase this value so that infrequent visitors will be protected (31536000 seconds, i.e. 1 year, is common).
+- [050ab909] You can apply GZip compression to individual views using the :func:`~django.views.decorators.gzip.gzip_page` decorator.
+- [74a309dc] __ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy
+- [b1cc5a22] __ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer
+- [bb5b0200] __ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+- [e373ade5] __ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security .. _browser preload list: https://hstspreload.org/
+- [cc1b02a0] __ https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+- [cca4a76b] ``SecurityMiddleware`` can set the ``Cross-Origin-Opener-Policy`` header for you, based on the :setting:`SECURE_CROSS_ORIGIN_OPENER_POLICY` setting. The valid values for this setting are:
+- [5fd73b9b] ``SecurityMiddleware`` can set the ``Referrer-Policy`` header for you, based on the :setting:`SECURE_REFERRER_POLICY` setting (note spelling: browsers send a ``Referer`` header when a user clicks a link, but the header instructing a browser whether to do so is spelled ``Referrer-Policy``). The valid values for this setting are:
+- [34e520f9] ``SecurityMiddleware`` will set this header for you on all HTTPS responses if you set the :setting:`SECURE_HSTS_SECONDS` setting to a non-zero integer value.
+- [19647582] ``X-Content-Type-Options: nosniff`` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [ef943a9c] ``X-Frame-Options`` middleware ------------------------------
+- [6dd17c19] ``no-referrer-when-downgrade`` Instructs the browser to send a full URL as the referrer, but only when no protocol downgrade occurs.
+- [8f5ae69f] ``no-referrer`` Instructs the browser to send no referrer for links clicked on this site.
+- [6fe7fcb7] ``origin-when-cross-origin`` Instructs the browser to send the full URL as the referrer for same-origin links, and only the origin for cross-origin links.
+- [ecbaced1] ``origin`` Instructs the browser to send only the origin, not the full URL, as the referrer.
+- [402049ec] ``same-origin-allow-popups`` Isolates the browsing context to same-origin documents or those which either don't set COOP or which opt out of isolation by setting a COOP of ``unsafe-none``.
+- [b5ee4364] ``same-origin`` Instructs the browser to send a full URL, but only for same-origin links. No referrer will be sent for cross-origin links.
+- [88b2c845] ``same-origin`` Isolates the browsing context exclusively to same-origin documents. Cross-origin documents are not loaded in the same browsing context. This is the default and most secure option.
+- [37099dc6] ``strict-origin-when-cross-origin`` Instructs the browser to send the full URL when the link is same-origin and no protocol downgrade occurs; send only the origin when the link is cross-origin and no protocol downgrade occurs; and no referrer when a protocol downgrade occurs.
+- [9a1dd047] ``strict-origin`` Instructs the browser to send only the origin, not the full URL, and to send no referrer when a protocol downgrade occurs.
+- [26bbab61] ``unsafe-none`` Allows the document to be added to its opener's browsing context group unless the opener itself has a COOP of ``same-origin`` or ``same-origin-allow-popups``.
+- [1157b6a3] ``unsafe-url`` Instructs the browser to always send the full URL as the referrer.

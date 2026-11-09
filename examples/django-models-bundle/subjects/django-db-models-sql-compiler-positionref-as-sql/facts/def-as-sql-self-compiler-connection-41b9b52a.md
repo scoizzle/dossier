@@ -1,6 +1,6 @@
 # Fact 41b9b52a
 
-Store id: 75240e52-3859-49db-9719-8ba2647e505f
+Store id: eb399083-7b67-41c4-b199-f11c32284ef8
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5457450+00:00`
+- posted_at: `2026-11-09T23:32:05.6477570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 38,
     "symbol": "PositionRef.as_sql"
   },
-  "id": "75240e52-3859-49db-9719-8ba2647e505f",
+  "id": "eb399083-7b67-41c4-b199-f11c32284ef8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5457450+00:00"
+    "posted_at": "2026-11-09T23:32:05.6477570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1eda70b1-2382-4234-a913-e0d910aac847",
+  "subject_id": "97544a62-0bde-4498-92d9-b0d89f656ea7",
   "subject_name": "django/db/models/sql/compiler::PositionRef.as_sql",
   "tags": [
     "entity:method"

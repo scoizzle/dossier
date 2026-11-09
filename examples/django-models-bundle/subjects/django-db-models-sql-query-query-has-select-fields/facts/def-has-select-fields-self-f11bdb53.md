@@ -1,6 +1,6 @@
 # Fact f11bdb53
 
-Store id: 4f2be011-9ac1-48d1-ace4-c336ca8b09d4
+Store id: 5e944841-5920-4a11-9892-71d6799e39d2
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_select_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5363680+00:00`
+- posted_at: `2026-11-09T23:32:07.1280840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2583,
     "symbol": "Query.has_select_fields"
   },
-  "id": "4f2be011-9ac1-48d1-ace4-c336ca8b09d4",
+  "id": "5e944841-5920-4a11-9892-71d6799e39d2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5363680+00:00"
+    "posted_at": "2026-11-09T23:32:07.1280840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d390c782-dd78-41e2-9a36-00693e341f9a",
+  "subject_id": "26c39799-4df5-4540-ab0b-4697240864ff",
   "subject_name": "django/db/models/sql/query::Query.has_select_fields",
   "tags": [
     "entity:method",

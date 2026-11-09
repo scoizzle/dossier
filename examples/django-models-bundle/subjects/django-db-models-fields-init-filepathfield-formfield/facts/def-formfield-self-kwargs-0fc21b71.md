@@ -1,6 +1,6 @@
 # Fact 0fc21b71
 
-Store id: 3e490635-7ee3-458d-829a-281f56aa87f4
+Store id: a8e25371-fadf-41c1-9e25-f97593c939c5
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5147660+00:00`
+- posted_at: `2026-11-09T23:31:56.6804020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2082,
     "symbol": "FilePathField.formfield"
   },
-  "id": "3e490635-7ee3-458d-829a-281f56aa87f4",
+  "id": "a8e25371-fadf-41c1-9e25-f97593c939c5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5147660+00:00"
+    "posted_at": "2026-11-09T23:31:56.6804020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c41842d-6478-492b-9cbb-7b3ab93539b6",
+  "subject_id": "cbd72654-772d-46db-80e2-da3eb8972e2f",
   "subject_name": "django/db/models/fields/__init__::FilePathField.formfield",
   "tags": [
     "entity:method"

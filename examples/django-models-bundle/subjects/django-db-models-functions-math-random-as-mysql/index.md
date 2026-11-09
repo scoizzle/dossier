@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Random.as_mysql
 
-- Subject: django/db/models/functions/math::Random.as_mysql (id `002d7861-79c5-40bf-94ef-cbdde4d872f3`)
+- Subject: django/db/models/functions/math::Random.as_mysql (id `fbb36fa1-6a7b-49f1-b916-13f1432d4404`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

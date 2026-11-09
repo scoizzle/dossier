@@ -1,6 +1,6 @@
 # Fact 9082055e
 
-Store id: 7353f522-829b-4e68-8069-68653d1bcb10
+Store id: f7f4077c-a01d-4969-9713-bfbbe4efd3a3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, msg, protected_objects)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9750010+00:00`
+- posted_at: `2026-11-09T23:31:55.0170450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 11,
     "symbol": "ProtectedError.__init__"
   },
-  "id": "7353f522-829b-4e68-8069-68653d1bcb10",
+  "id": "f7f4077c-a01d-4969-9713-bfbbe4efd3a3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9750010+00:00"
+    "posted_at": "2026-11-09T23:31:55.0170450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8af477f0-c202-46e9-82a0-c8f6f25d8160",
+  "subject_id": "7ea4f703-3046-4925-8078-b22a4aceb283",
   "subject_name": "django/db/models/deletion::ProtectedError.__init__",
   "tags": [
     "entity:method"

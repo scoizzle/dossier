@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments (id `be95ddb1-e8fa-4a50-8218-0e286c58f3c2`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments (id `3fde7788-6e62-4e21-a73f-31f64915f47a`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

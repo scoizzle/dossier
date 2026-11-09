@@ -1,6 +1,6 @@
 # Fact a8433eb8
 
-Store id: cc8b0048-6cb6-40dd-bc18-65e94c1f41cf
+Store id: d8a68f0c-159e-4581-b06f-3005ef4b0302
 
 ## Text
 
@@ -20,7 +20,7 @@ class BitAggregate(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0405470+00:00`
+- posted_at: `2026-11-09T23:31:53.5365280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 247,
     "symbol": "BitAggregate"
   },
-  "id": "cc8b0048-6cb6-40dd-bc18-65e94c1f41cf",
+  "id": "d8a68f0c-159e-4581-b06f-3005ef4b0302",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0405470+00:00"
+    "posted_at": "2026-11-09T23:31:53.5365280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b5e3edd8-05d5-4fc9-932a-79b9cd2c3887",
+  "subject_id": "4e528ec1-f9c7-48ce-98bf-e417f016620c",
   "subject_name": "django/db/models/aggregates::BitAggregate",
   "tags": [
     "entity:class"

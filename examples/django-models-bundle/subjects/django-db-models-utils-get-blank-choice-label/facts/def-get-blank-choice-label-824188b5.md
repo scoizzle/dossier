@@ -1,6 +1,6 @@
 # Fact 824188b5
 
-Store id: cf7f2b5c-30d5-47ee-ad2f-cefdccbe779f
+Store id: 190f4858-198a-4e73-986e-facac65b1966
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_blank_choice_label()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1566370+00:00`
+- posted_at: `2026-11-09T23:32:07.9460590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "get_blank_choice_label"
   },
-  "id": "cf7f2b5c-30d5-47ee-ad2f-cefdccbe779f",
+  "id": "190f4858-198a-4e73-986e-facac65b1966",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1566370+00:00"
+    "posted_at": "2026-11-09T23:32:07.9460590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36c92579-0550-4f21-ae38-5b87f439d6f6",
+  "subject_id": "eb54e3f6-7df3-4b9b-a5aa-d65a0329e347",
   "subject_name": "django/db/models/utils::get_blank_choice_label",
   "tags": [
     "entity:function"

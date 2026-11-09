@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Collate.__init__
 
-- Subject: django/db/models/functions/comparison::Collate.__init__ (id `1100c53f-408a-4154-856d-63a597d0c103`)
+- Subject: django/db/models/functions/comparison::Collate.__init__ (id `546ab0fc-e753-4ba8-a95e-82ecae9d8ede`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

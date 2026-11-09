@@ -1,6 +1,6 @@
 # Fact 19233a05
 
-Store id: 563c4df5-dd7c-4baf-93fd-c3d0559a9c79
+Store id: b789c104-45f8-4ef8-8d9f-a523edf9edd3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, lhs, connector, rhs, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5441320+00:00`
+- posted_at: `2026-11-09T23:31:55.8098680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 729,
     "symbol": "CombinedExpression.__init__"
   },
-  "id": "563c4df5-dd7c-4baf-93fd-c3d0559a9c79",
+  "id": "b789c104-45f8-4ef8-8d9f-a523edf9edd3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5441320+00:00"
+    "posted_at": "2026-11-09T23:31:55.8098680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "94a1f7a9-41b5-4393-bb0b-019d58f242df",
+  "subject_id": "b80065aa-559f-4dbc-8a6d-6dab1ea2ab05",
   "subject_name": "django/db/models/expressions::CombinedExpression.__init__",
   "tags": [
     "entity:method"

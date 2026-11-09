@@ -1,6 +1,6 @@
 # Fact 93728479
 
-Store id: 48d455c3-3ec3-4696-be73-cb7244e88e7d
+Store id: 92458a6b-ab2f-4db1-812f-4eefdec35fb8
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2704450+00:00`
+- posted_at: `2026-11-09T23:31:57.4382250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 460,
     "symbol": "ImageField.deconstruct"
   },
-  "id": "48d455c3-3ec3-4696-be73-cb7244e88e7d",
+  "id": "92458a6b-ab2f-4db1-812f-4eefdec35fb8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2704450+00:00"
+    "posted_at": "2026-11-09T23:31:57.4382250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "34185c38-f1d1-464b-ba9a-2ceed227e6d1",
+  "subject_id": "9ed5a051-e5ac-4185-a0fc-268b1e1b09fa",
   "subject_name": "django/db/models/fields/files::ImageField.deconstruct",
   "tags": [
     "entity:method"

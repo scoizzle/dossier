@@ -1,6 +1,6 @@
 # Fact 2173b92d
 
-Store id: 9566ae57-c29a-4cf6-a0cd-f7d1d1fd3efb
+Store id: e9cfd03c-b289-46de-b44b-1f878d04844a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __set__(self, instance, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2561250+00:00`
+- posted_at: `2026-11-09T23:31:57.4189110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 389,
     "symbol": "ImageFileDescriptor.__set__"
   },
-  "id": "9566ae57-c29a-4cf6-a0cd-f7d1d1fd3efb",
+  "id": "e9cfd03c-b289-46de-b44b-1f878d04844a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2561250+00:00"
+    "posted_at": "2026-11-09T23:31:57.4189110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "293812f6-f43e-4da7-bc15-0e09feacb4eb",
+  "subject_id": "72de5f09-3642-4e42-a02e-28c2ff380627",
   "subject_name": "django/db/models/fields/files::ImageFileDescriptor.__set__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 5a23ae6b
 
-Store id: 7007fabe-2d02-429f-a886-8a300734804f
+Store id: 26f459f3-c487-407e-8eb9-e9f0e9583f08
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3389360+00:00`
+- posted_at: `2026-11-09T23:32:00.2845400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 157,
     "symbol": "ForeignObjectRel.__hash__"
   },
-  "id": "7007fabe-2d02-429f-a886-8a300734804f",
+  "id": "26f459f3-c487-407e-8eb9-e9f0e9583f08",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3389360+00:00"
+    "posted_at": "2026-11-09T23:32:00.2845400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b9a220ab-361f-4863-bb88-4c308ff4dd54",
+  "subject_id": "38092c22-0ef2-43cf-9f8e-856f7571b877",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.__hash__",
   "tags": [
     "entity:method"

@@ -1,8 +1,8 @@
 # django/contrib/sites/admin
 
-- Subject: django/contrib/sites/admin (id `07baf649-7a3a-4186-ad4c-4a949b90fbe4`)
+- Subject: django/contrib/sites/admin (id `ffc43107-1270-4f8f-b957-a4562c0346ee`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 72 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

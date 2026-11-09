@@ -1,6 +1,6 @@
 # Fact bd1b6f50
 
-Store id: 60fd1046-1f66-4115-83fb-04da7b0feb50
+Store id: 86b7f0ba-1095-4a5e-bec3-062c0360b392
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class GenericIPAddressField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "60fd1046-1f66-4115-83fb-04da7b0feb50",
+  "id": "86b7f0ba-1095-4a5e-bec3-062c0360b392",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "GenericIPAddressField"
       },
       "rel": "contains",
-      "target": "75733c98-e09c-4bc5-8eb7-07f0734e7133"
+      "target": "c62d5ba8-b30e-4da1-a118-b79a8ef4325e"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

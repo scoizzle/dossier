@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.adelete
 
-- Subject: django/db/models/query::QuerySet.adelete (id `d08b6426-da89-4361-9ed5-6f1a1df1c8b7`)
+- Subject: django/db/models/query::QuerySet.adelete (id `506bd23f-a936-46b3-ad03-8a7ae7e9afa6`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

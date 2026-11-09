@@ -1,6 +1,6 @@
 # Fact 095f53b9
 
-Store id: f11ad02d-dbe8-432e-8624-a54c5348a2ef
+Store id: 96761b9f-acc3-4945-9827-114b864d532d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NOT_PROVIDED
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f11ad02d-dbe8-432e-8624-a54c5348a2ef",
+  "id": "96761b9f-acc3-4945-9827-114b864d532d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NOT_PROVIDED"
       },
       "rel": "contains",
-      "target": "fc7c4826-9d1c-4178-b03a-ddaa3a5418fe"
+      "target": "622e1b3a-064b-4cb7-bce9-5a354c2e3dda"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

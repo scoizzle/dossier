@@ -1,6 +1,6 @@
 # Fact c284b97d
 
-Store id: c39f93d6-7940-44a0-b588-be259fa77538
+Store id: e2449609-e69a-4b19-bbf4-187a8fdd8c70
 
 ## Text
 
@@ -20,7 +20,7 @@ def totally_ordered(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6872860+00:00`
+- posted_at: `2026-11-09T23:32:04.6112970+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2056,
     "symbol": "QuerySet.totally_ordered"
   },
-  "id": "c39f93d6-7940-44a0-b588-be259fa77538",
+  "id": "e2449609-e69a-4b19-bbf4-187a8fdd8c70",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6872860+00:00"
+    "posted_at": "2026-11-09T23:32:04.6112970+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3538f2aa-dc5f-4bfb-adfa-2ee20e45b673",
+  "subject_id": "9d38e75d-2072-4f3d-99e4-3482c334610e",
   "subject_name": "django/db/models/query::QuerySet.totally_ordered",
   "tags": [
     "entity:method",

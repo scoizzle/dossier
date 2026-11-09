@@ -1,14 +1,14 @@
 # django/core/handlers/exception
 
-- Subject: django/core/handlers/exception (id `b7083f38-a07b-4416-93d9-de7e37c39e61`)
+- Subject: django/core/handlers/exception (id `8eca0e63-7668-4a9f-b01f-ccd8c036be1e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 15 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1411 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @wraps(get_response) async def inner(request): try: response = await get_response(request) except Exception as exc: response = await sync_to_async( response_for_exception, thread_sensitive=False )(request, exc) return response [2da6c6df]
 - @wraps(get_response) def inner(request): try: response = get_response(request) except Exception as exc: response = response_for_exception(request, exc) return response [c72f5b4e]
@@ -26,6 +26,13 @@
 - return response [8034aacd88b9c7ae-2]
 - return response [8034aacd88b9c7ae-3]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [46d5580f] [3be4901f] [4e4f687c] [8eccd44d] [c41c95a1] [770890ad88958a4c-9] [763b9a56] [6289e363]
+- [46d5580f] else: signals.got_request_exception.send(sender=None, request=request) response = handle_uncaught_exception( request, get_resolver(get_urlconf()), sys.exc_info() ) log_response( "%s: %s", response.reason_phrase, request.path, response=response, request=request, exception=exc, )
+- [3be4901f] def convert_exception_to_response(get_response): """ Wrap the given get_response callable in exception-to-response conversion.
+- [4e4f687c] def get_exception_response(request, resolver, status_code, exception): try: callback = resolver.resolve_error_handler(status_code) response = callback(request, exception=exception) except Exception: signals.got_request_exception.send(sender=None, request=request) response = handle_uncaught_exception(request, resolver, sys.exc_info())
+- [8eccd44d] def handle_uncaught_exception(request, resolver, exc_info): """ Processing for any otherwise uncaught exceptions (those that will generate HTTP 500 responses). """ if settings.DEBUG_PROPAGATE_EXCEPTIONS: raise
+- [c41c95a1] def response_for_exception(request, exc): if isinstance(exc, Http404): if settings.DEBUG: response = debug.technical_404_response(request, exc) else: response = get_exception_response( request, get_resolver(get_urlconf()), 404, exc )
+- [770890ad88958a4c-9] from asgiref.sync import sync_to_async
+- [763b9a56] from django.conf import settings from django.core import signals from django.core.exceptions import ( BadRequest, PermissionDenied, RequestDataTooBig, SuspiciousOperation, TooManyFieldsSent, TooManyFilesSent, ) from django.http import Http404 from django.http.multipartparser import MultiPartParserError from django.urls import get_resolver, get_urlconf from django.utils.log import log_response from django.views import debug
+- [6289e363] import logging import sys from functools import wraps from inspect import iscoroutinefunction

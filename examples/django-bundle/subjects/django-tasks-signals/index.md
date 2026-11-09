@@ -1,8 +1,8 @@
 # django/tasks/signals
 
-- Subject: django/tasks/signals (id `4270be56-0d29-41ca-9707-164626469806`)
+- Subject: django/tasks/signals (id `c174360a-6ee2-409c-a069-6a708e1239d1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 475 tokens
 - Facts shown: 11 of 11
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # docs/howto/outputting-pdf
 
-- Subject: docs/howto/outputting-pdf (id `bee4ae97-3f42-47d8-8137-82c37fd78412`)
+- Subject: docs/howto/outputting-pdf (id `95307cf6-11f8-4dcb-975d-070903620697`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 884 tokens
-- Facts shown: 24 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1400 tokens
+- Facts shown: 36 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Close the PDF object cleanly, and we're done. p.showPage() p.save() [5ce8bcba]
 - # Create the PDF object, using the buffer as its "file." p = canvas.Canvas(buffer) [a7c6fb8e]
@@ -35,6 +35,17 @@
 - ======================= How to create PDF files ======================= [2ec4cec2]
 - Here's a "Hello World" example:: [530b18fc]
 
-## Beyond the budget
+## All facts
 
-12 more facts did not fit in the budget: [b3482119] [3728ac72] [a0187063] [d8421756] [b230f199] [741dae16] [6c52a4b3] [3e82c2e7] [4c495e5e27892286-2] [804a7590] [87a38389] [3b1d4e72]
+- [b3482119] For example, Django was used at kusports.com_ to generate customized, printer-friendly NCAA tournament brackets, as PDF files, for people participating in a March Madness contest.
+- [3728ac72] If that command doesn't raise any errors, the installation worked.
+- [a0187063] Install ReportLab =================
+- [d8421756] Notice that there isn't a lot in these examples that's PDF-specific -- just the bits using ``reportlab``. You can use a similar technique to generate any arbitrary format that you can find a Python library for. Also see :doc:`/howto/outputting-csv` for another example and some techniques you can use when generated text-based formats.
+- [b230f199] Other formats =============
+- [741dae16] Test your installation by importing it in the Python interactive interpreter:
+- [6c52a4b3] The ReportLab library is :pypi:`available on PyPI <reportlab>`. A `user guide`_ (not coincidentally, a PDF file) is also available for download. You can install ReportLab with ``pip``:
+- [3e82c2e7] The advantage of generating PDF files dynamically is that you can create customized PDFs for different purposes -- say, for different users or different pieces of content.
+- [4c495e5e27892286-2] The code and comments should be self-explanatory, but a few things deserve a mention:
+- [804a7590] The key to generating PDFs dynamically with Django is that the ReportLab API acts on file-like objects, and Django's :class:`~django.http.FileResponse` objects accept file-like objects.
+- [87a38389] This document explains how to output PDF files dynamically using Django views. This is made possible by the excellent, open-source ReportLab_ Python PDF library.
+- [3b1d4e72] Write your view ===============

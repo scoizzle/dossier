@@ -1,6 +1,6 @@
 # Fact 45e565eb
 
-Store id: 70e2b251-bd47-47b4-9950-b5501c87ad3e
+Store id: 8cf63196-c4d2-4ff0-baa0-55f6c59d0c41
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2161950+00:00`
+- posted_at: `2026-11-09T23:32:04.2580660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 207,
     "symbol": "RawModelIterable.__iter__"
   },
-  "id": "70e2b251-bd47-47b4-9950-b5501c87ad3e",
+  "id": "8cf63196-c4d2-4ff0-baa0-55f6c59d0c41",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2161950+00:00"
+    "posted_at": "2026-11-09T23:32:04.2580660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07ccdfd4-bc8a-449b-a467-0b8066be9875",
+  "subject_id": "2ea66683-211f-42f4-9387-e0fb8feb66bb",
   "subject_name": "django/db/models/query::RawModelIterable.__iter__",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/indexes::IndexExpression
 
-- Subject: django/db/models/indexes::IndexExpression (id `359f5a6a-c25f-4e68-8942-70bb4f1647e0`)
+- Subject: django/db/models/indexes::IndexExpression (id `615f1c50-8901-4967-8865-79a3b719618b`)
 - Kind: class
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

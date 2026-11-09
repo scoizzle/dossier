@@ -1,6 +1,6 @@
 # Fact 00eca569
 
-Store id: 335afb4d-dbef-4eb9-8055-64cb6ac4a024
+Store id: a4bc32d4-255d-4830-ba34-6c8f66ba0ba1
 
 ## Text
 
@@ -20,7 +20,7 @@ class DateField(DateTimeCheckMixin, Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4107580+00:00`
+- posted_at: `2026-11-09T23:31:56.5745000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1464,
     "symbol": "DateField"
   },
-  "id": "335afb4d-dbef-4eb9-8055-64cb6ac4a024",
+  "id": "a4bc32d4-255d-4830-ba34-6c8f66ba0ba1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4107580+00:00"
+    "posted_at": "2026-11-09T23:31:56.5745000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c7355d6-1b0d-4e5f-99f8-4e2ffddc9f92",
+  "subject_id": "9dd8f5fe-3091-4c29-8fb5-0853fc83e1ce",
   "subject_name": "django/db/models/fields/__init__::DateField",
   "tags": [
     "entity:class"

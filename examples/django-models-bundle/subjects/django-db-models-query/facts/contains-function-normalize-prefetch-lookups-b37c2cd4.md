@@ -1,6 +1,6 @@
 # Fact b37c2cd4
 
-Store id: 89293058-b774-4a10-8db4-14c637f19d6d
+Store id: 99d02942-cffa-4a7c-a3ff-6a50b64dced1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function normalize_prefetch_lookups
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "89293058-b774-4a10-8db4-14c637f19d6d",
+  "id": "99d02942-cffa-4a7c-a3ff-6a50b64dced1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "normalize_prefetch_lookups"
       },
       "rel": "contains",
-      "target": "132b182a-ffb5-4a22-8708-be4222e3eaad"
+      "target": "a2bdfef4-4beb-49dd-93e4-97e9093e8100"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:function"

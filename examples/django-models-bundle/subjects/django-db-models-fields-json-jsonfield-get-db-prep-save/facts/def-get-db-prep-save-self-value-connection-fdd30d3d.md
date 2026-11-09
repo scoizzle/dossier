@@ -1,6 +1,6 @@
 # Fact fdd30d3d
 
-Store id: 7911507a-7ea0-40d9-a82f-c5aceab4490e
+Store id: 406b2d7b-2c92-452c-b2ff-f363040162c2
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_save(self, value, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6144120+00:00`
+- posted_at: `2026-11-09T23:31:57.8491160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 106,
     "symbol": "JSONField.get_db_prep_save"
   },
-  "id": "7911507a-7ea0-40d9-a82f-c5aceab4490e",
+  "id": "406b2d7b-2c92-452c-b2ff-f363040162c2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6144120+00:00"
+    "posted_at": "2026-11-09T23:31:57.8491160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "abeb4a46-0fdd-4fb9-9464-b11490c84faf",
+  "subject_id": "ed1ed26b-3f42-40ba-9333-2c98d3c6d0d0",
   "subject_name": "django/db/models/fields/json::JSONField.get_db_prep_save",
   "tags": [
     "entity:method"

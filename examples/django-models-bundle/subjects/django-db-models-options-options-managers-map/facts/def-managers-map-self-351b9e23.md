@@ -1,6 +1,6 @@
 # Fact 351b9e23
 
-Store id: 9aa5a2cc-738f-428b-8f63-005ec72948d2
+Store id: d596ade5-eb3e-43df-bad7-fb5435bb13b0
 
 ## Text
 
@@ -20,7 +20,7 @@ def managers_map(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8263110+00:00`
+- posted_at: `2026-11-09T23:32:03.9604150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 473,
     "symbol": "Options.managers_map"
   },
-  "id": "9aa5a2cc-738f-428b-8f63-005ec72948d2",
+  "id": "d596ade5-eb3e-43df-bad7-fb5435bb13b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8263110+00:00"
+    "posted_at": "2026-11-09T23:32:03.9604150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8113b96b-b223-4c26-b693-aaf02d8d14ce",
+  "subject_id": "787ece27-d87e-4be1-b50b-53cc6a02a43c",
   "subject_name": "django/db/models/options::Options.managers_map",
   "tags": [
     "entity:method",

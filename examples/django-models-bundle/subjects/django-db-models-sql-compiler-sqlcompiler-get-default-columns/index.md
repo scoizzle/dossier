@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_default_columns
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_default_columns (id `46073560-089f-4682-9b94-89c17a5ff06b`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_default_columns (id `01e45370-9b4e-4393-8967-4605bf5163e5`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 34 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

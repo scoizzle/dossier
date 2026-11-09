@@ -1,6 +1,6 @@
 # Fact b288ad25
 
-Store id: 9e4b5677-1de4-43f1-87c8-ff563a628d5b
+Store id: 3ecc7546-90f3-489b-b507-a2acb7b0ed44
 
 ## Text
 
@@ -20,7 +20,7 @@ class FieldGetDbPrepValueMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0727050+00:00`
+- posted_at: `2026-11-09T23:32:03.2209290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 254,
     "symbol": "FieldGetDbPrepValueMixin"
   },
-  "id": "9e4b5677-1de4-43f1-87c8-ff563a628d5b",
+  "id": "3ecc7546-90f3-489b-b507-a2acb7b0ed44",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0727050+00:00"
+    "posted_at": "2026-11-09T23:32:03.2209290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "99f0f998-527d-49fc-a1d0-7ad2429b4f80",
+  "subject_id": "360259b2-315e-405c-800f-8da910cb259d",
   "subject_name": "django/db/models/lookups::FieldGetDbPrepValueMixin",
   "tags": [
     "entity:class"

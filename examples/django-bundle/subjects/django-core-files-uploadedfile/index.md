@@ -1,14 +1,14 @@
 # django/core/files/uploadedfile
 
-- Subject: django/core/files/uploadedfile (id `e0d17eaf-1374-4a91-bb51-8246e1352c78`)
+- Subject: django/core/files/uploadedfile (id `79edb21c-14d3-4361-99bc-467805c75819`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 22 of 27
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1062 tokens
+- Facts shown: 26 of 27
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # File names longer than 255 characters can cause problems on older # OSes. if len(name) > 255: name, ext = os.path.splitext(name) ext = ext[:255] name = name[: 255 - len(ext)] + ext [b0203cc5]
 - name = validate_file_name(name) [7a15a7da]
@@ -33,6 +33,9 @@
 - class InMemoryUploadedFile(UploadedFile): """ A file uploaded into memory (i.e. stream-to-memory). """ [ae72011c]
 - class TemporaryUploadedFile(UploadedFile): """ A file uploaded to a temporary location (i.e. stream-to-disk). """ [d0510456]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [a905089f] [df0b4398] [40afc2b4] [47f8f16b]
+- [a905089f] class SimpleUploadedFile(InMemoryUploadedFile): """ A simple representation of a file, which just has content, size, and a name. """
+- [df0b4398] class UploadedFile(File): """ An abstract uploaded file (``TemporaryUploadedFile`` and ``InMemoryUploadedFile`` are the built-in concrete subclasses).
+- [40afc2b4] from django.conf import settings from django.core.files import temp as tempfile from django.core.files.base import File from django.core.files.utils import validate_file_name
+- [47f8f16b] import os from io import BytesIO

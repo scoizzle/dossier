@@ -1,14 +1,14 @@
 # docs/ref/contrib/staticfiles
 
-- Subject: docs/ref/contrib/staticfiles (id `643a8248-9588-4694-a10f-24ec1691258f`)
+- Subject: docs/ref/contrib/staticfiles (id `256c33ed-3a49-40e0-b94d-166988d91875`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 19 of 162
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 6885 tokens
+- Facts shown: 161 of 162
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ django-admin runserver --insecure [5c843c8e]
 - $ django-admin runserver --nostatic [0d83d7c1]
@@ -30,6 +30,147 @@
 - class MyManifestStaticFilesStorage(ManifestStaticFilesStorage): def __init__(self, *args, **kwargs): manifest_storage = StaticFilesStorage(location=settings.BASE_DIR) super().__init__(*args, manifest_storage=manifest_storage, **kwargs) [8ff8116e]
 - class MyStaticFilesConfig(StaticFilesConfig): ignore_patterns = [...] # your custom ignore list [ca5da922]
 
-## Beyond the budget
+## All facts
 
-142 more facts did not fit in the budget: [a3facc85] [6c6b4ede] [a818098c] [dc843de4] [f9181c8d] [779fa30d] [50211fdc] [cc70f814] [d4eb4d27] [c39f377c] [6e2f07b3] [c3bbd304] [864d5eba] [518118d7] [7095fb33] [ea411bc3] [04149c63] [7fa23621] [f10d8c56] [f04acef9] [eda98dc7] [90d91384] [f4813e79] [077939a0] [5eda9a48] [73c2e5a1] [85755511] [bf743be1] [f71acf01] [d928d808] [376ffa95] [97d773b7] [54664957] [9a718130] [b644afdc] [37798991] [05314729] [480e6c7c] [56d98941] [c9dc84bbc3679963] [c9dc84bbc3679963-2] [7714e199aac2701e-100] [7714e199aac2701e-101] [7714e199aac2701e-102] [7714e199aac2701e-103] [7714e199aac2701e-104] [7714e199aac2701e-105] [7714e199aac2701e-106] [1fd512d0] [1c3e0d65] [3ea1159f] [1b1211d14c815058] [12ba4001] [2c9ed33f] [e298b5884c94dace] [0a04f021] [d24d32e6decd3db1] [79497040] [ada3ca76] [3906b139] [6e0b8b24] [e5198761] [a1eb6c3a] [e5e4de75] [46e2dc35] [d96d93ae] [f39ad630] [942ae6c11625c81c-87] [6b4a5e54e001d097-20] [c54b54cb0805732a-29] [c54b54cb0805732a-30] [da5e576f] [853dd05b] [601273ee] [76532eeb] [d7ca6985] [a04d71d6] [40341089] [ed99a15a] [52863399] [c53169f7] [4d31efe1] [4f4db575] [8c25e4b1cdb1282e] [8c25e4b1cdb1282e-2] [a7d83b09] [e18b72b6] [b5b5a714] [6981fbcb] [bc295f9831206ba3-9] [684cd768] [1de261d6] [bb16d8da] [1b3da331] [37893a63] [1b035ea5] [9090f28d] [75226f10] [644bff6e] [feac9070] [ef726707] [94005583b32250b8-5] [7d042663] [a4f21e28] [e2723c87] [165aa3c3] [533c22e9] [ae88b53b] [859d6cf7] [ebf5ae30] [84d6d25b] [fb2b3fe8] [81937830] [4d8c6deb] [5124d797] [37586c67] [928749a0] [5ef6dc07] [73ca5759] [d8e06ab1] [1fad38a0] [24d718c2] [5d5ed060] [a96aeac2] [6098cbba] [47bb7bb1] [68e99e7d] [4e42b6f3] [18fd072d] [364758cf] [e9033a9b] [a1f1772e] [7a320dcb] [b6fcc593] [954f211e] [49345f72] [f8b99260] [2d2d59e7] [ef476719] [d14a2ae6] [155f463dc5cb26f1] [70563b99]
+- [a3facc85] class MyStaticFilesStorage(storage.StaticFilesStorage): def __init__(self, *args, **kwargs): kwargs["file_permissions_mode"] = 0o640 kwargs["directory_permissions_mode"] = 0o760 super().__init__(*args, **kwargs)
+- [6c6b4ede] from django.conf import settings from django.contrib.staticfiles.storage import ( ManifestStaticFilesStorage, StaticFilesStorage, )
+- [a818098c] from django.contrib.staticfiles import finders
+- [dc843de4] from django.contrib.staticfiles import storage
+- [f9181c8d] from django.contrib.staticfiles.apps import StaticFilesConfig
+- [779fa30d] result = finders.find("css/base.css") searched_locations = finders.searched_locations
+- [50211fdc] # ... the rest of your URLconf here ...
+- [cc70f814] $ python manage.py collectstatic --help
+- [d4eb4d27] $ python manage.py findstatic css/base.css --first Found 'css/base.css' here: /home/special.polls.com/core/static/css/base.css
+- [c39f377c] $ python manage.py findstatic css/base.css --verbosity 0 /home/special.polls.com/core/static/css/base.css /home/polls.com/core/static/css/base.css
+- [6e2f07b3] $ python manage.py findstatic css/base.css --verbosity 2 Found 'css/base.css' here: /home/special.polls.com/core/static/css/base.css /home/polls.com/core/static/css/base.css Looking in the following locations: /home/special.polls.com/core/static /home/polls.com/core/static /some/other/path/static
+- [c3bbd304] $ python manage.py findstatic css/base.css admin/js/core.js Found 'css/base.css' here: /home/special.polls.com/core/static/css/base.css /home/polls.com/core/static/css/base.css Found 'admin/js/core.js' here: /home/polls.com/src/django/contrib/admin/media/js/core.js
+- [864d5eba] from django.conf import settings from django.contrib.staticfiles import views from django.urls import re_path
+- [518118d7] from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+- [7095fb33] if settings.DEBUG: urlpatterns += [ re_path(r"^static/(?P<path>.*)$", views.serve), ]
+- [ea411bc3] urlpatterns += staticfiles_urlpatterns()
+- [04149c63] * :setting:`STORAGES` * :setting:`STATIC_ROOT` * :setting:`STATIC_URL` * :setting:`STATICFILES_DIRS` * :setting:`STATICFILES_FINDERS`
+- [7fa23621] * The `@import`_ rule and `url()`_ statement of `Cascading Style Sheets`_. * `Source map`_ comments in CSS and JavaScript files.
+- [f10d8c56] * The `modules import`_ in JavaScript. * The `modules aggregation`_ in JavaScript.
+- [f04acef9] * the ``staticfiles`` storage backend in :setting:`STORAGES` setting is set to ``'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'`` * the :setting:`DEBUG` setting is set to ``False`` * you've collected all your static files by using the :djadmin:`collectstatic` management command
+- [eda98dc7] - The :func:`django.template.context_processors.static` context processor which adds :setting:`STATIC_URL` to every template context rendered with :class:`~django.template.RequestContext` contexts.
+- [90d91384] - The ``staticfiles`` key in :data:`django.core.files.storage.storages` contains a ready-to-use instance of the staticfiles storage backend.
+- [f4813e79] - The builtin template tag :ttag:`get_static_prefix` which populates a template variable with the static prefix :setting:`STATIC_URL` to be used as a variable or directly.
+- [077939a0] - The builtin template tag :ttag:`static` which takes a path and urljoins it with the static prefix :setting:`STATIC_URL`. If ``django.contrib.staticfiles`` is installed, the tag uses the ``url()`` method of the ``staticfiles`` storage backend from :setting:`STORAGES` instead.
+- [5eda9a48] - The similar template tag :ttag:`get_media_prefix` which works like :ttag:`get_static_prefix` but uses :setting:`MEDIA_URL`.
+- [73c2e5a1] .. _`far future Expires headers`: https://developer.yahoo.com/performance/rules.html#expires .. _`@import`: https://www.w3.org/TR/CSS2/cascade.html#at-import .. _`url()`: https://www.w3.org/TR/CSS2/syndata.html#uri .. _`Cascading Style Sheets`: https://www.w3.org/Style/CSS/ .. _`source map`: https://firefox-source-docs.mozilla.org/devtools-user/debugger/how_to/use_a_source_map/ .. _`modules import`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#importing_features_into_your_script .. _`modules aggregation`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#aggregating_modules
+- [85755511] .. _customize-staticfiles-ignore-patterns:
+- [bf743be1] .. _staticfiles-development-view:
+- [f71acf01] .. _staticfiles-runserver:
+- [d928d808] .. _staticfiles-settings:
+- [376ffa95] .. _staticfiles-storages:
+- [97d773b7] .. admonition:: Usage of the ``integrity`` HTML attribute with local files
+- [54664957] .. attribute:: storage.ManifestStaticFilesStorage.manifest_hash
+- [9a718130] .. attribute:: storage.ManifestStaticFilesStorage.manifest_strict
+- [b644afdc] .. attribute:: storage.ManifestStaticFilesStorage.max_post_process_passes
+- [37798991] .. class:: storage.ManifestFilesMixin
+- [05314729] .. class:: storage.ManifestStaticFilesStorage
+- [480e6c7c] .. class:: storage.StaticFilesStorage
+- [56d98941] .. class:: testing.StaticLiveServerTestCase
+- [c9dc84bbc3679963] .. code-block:: css
+- [c9dc84bbc3679963-2] .. code-block:: css
+- [7714e199aac2701e-100] .. console::
+- [7714e199aac2701e-101] .. console::
+- [7714e199aac2701e-102] .. console::
+- [7714e199aac2701e-103] .. console::
+- [7714e199aac2701e-104] .. console::
+- [7714e199aac2701e-105] .. console::
+- [7714e199aac2701e-106] .. console::
+- [1fd512d0] .. currentmodule:: django.contrib.staticfiles
+- [1c3e0d65] .. django-admin-option:: --clear, -c
+- [3ea1159f] .. django-admin-option:: --dry-run, -n
+- [1b1211d14c815058] .. django-admin-option:: --ignore PATTERN, -i PATTERN
+- [12ba4001] .. django-admin-option:: --insecure
+- [2c9ed33f] .. django-admin-option:: --link, -l
+- [e298b5884c94dace] .. django-admin-option:: --no-default-ignore
+- [0a04f021] .. django-admin-option:: --no-post-process
+- [d24d32e6decd3db1] .. django-admin-option:: --noinput, --no-input
+- [79497040] .. django-admin-option:: --nostatic
+- [ada3ca76] .. django-admin-option:: findstatic --first
+- [3906b139] .. django-admin:: collectstatic
+- [6e0b8b24] .. django-admin:: findstatic staticfile [staticfile ...]
+- [e5198761] .. django-admin:: runserver [addrport] :noindex:
+- [a1eb6c3a] .. function:: urls.staticfiles_urlpatterns()
+- [e5e4de75] .. function:: views.serve(request, path)
+- [46e2dc35] .. method:: storage.ManifestStaticFilesStorage.file_hash(name, content=None)
+- [d96d93ae] .. method:: storage.StaticFilesStorage.post_process(paths, **options)
+- [f39ad630] .. module:: django.contrib.staticfiles :synopsis: An app for handling static files.
+- [942ae6c11625c81c-87] .. note::
+- [6b4a5e54e001d097-20] .. seealso::
+- [c54b54cb0805732a-29] .. warning::
+- [c54b54cb0805732a-30] .. warning::
+- [da5e576f] ...would be replaced by calling the :meth:`~django.core.files.storage.Storage.url` method of the ``ManifestStaticFilesStorage`` storage backend, ultimately saving a ``'css/styles.55e7cbb9ba48.css'`` file with the following content:
+- [853dd05b] ======================= The ``staticfiles`` app =======================
+- [601273ee] A subclass of the :class:`~django.contrib.staticfiles.storage.StaticFilesStorage` storage backend which stores the file names it handles by appending the MD5 hash of the file's content to the filename. For example, the file ``css/styles.css`` would also be saved as ``css/styles.55e7cbb9ba48.css``.
+- [76532eeb] A subclass of the :class:`~django.core.files.storage.FileSystemStorage` storage backend that uses the :setting:`STATIC_ROOT` setting as the base file system location and the :setting:`STATIC_URL` setting respectively as the base URL.
+- [d7ca6985] But given the fact that it makes use of the :func:`django.contrib.staticfiles.views.serve` view described above, it can transparently overlay at test execution-time the assets provided by the ``staticfiles`` finders. This means you don't need to run :djadmin:`collectstatic` before or as a part of your tests setup.
+- [a04d71d6] By default, all matching locations are found. To only return the first match for each relative path, use the ``--first`` option:
+- [40341089] By default, collected files receive permissions from :setting:`FILE_UPLOAD_PERMISSIONS` and collected directories receive permissions from :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS`. If you would like different permissions for these files and/or directories, you can subclass either of the :ref:`static files storage classes <staticfiles-storages>` and specify the ``file_permissions_mode`` and/or ``directory_permissions_mode`` parameters, respectively. For example::
+- [ed99a15a] By setting the ``--verbosity`` flag to 0, you can suppress the extra output and just get the path names:
+- [52863399] Collects the static files into :setting:`STATIC_ROOT`.
+- [c53169f7] Customizing the ignored pattern list ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [4d31efe1] Due to the requirement of running :djadmin:`collectstatic`, this storage typically shouldn't be used when running tests as ``collectstatic`` isn't run as part of the normal test setup. During testing, ensure that ``staticfiles`` storage backend in the :setting:`STORAGES` setting is set to something else like ``'django.contrib.staticfiles.storage.StaticFilesStorage'`` (the default).
+- [4f4db575] Duplicate file names are by default resolved in a similar way to how template resolution works: the file that is first found in one of the specified locations will be used. If you're confused, the :djadmin:`findstatic` command can help show you which files are found.
+- [8c25e4b1cdb1282e] Example usage:
+- [8c25e4b1cdb1282e-2] Example usage:
+- [a7d83b09] Files are searched by using the :setting:`enabled finders <STATICFILES_FINDERS>`. The default is to look in all locations defined in :setting:`STATICFILES_DIRS` and in the ``'static'`` directory of apps specified by the :setting:`INSTALLED_APPS` setting.
+- [e18b72b6] Finders Module ==============
+- [b5b5a714] For a full list of options, refer to the commands own help by running:
+- [6981fbcb] For example, the ``'css/styles.css'`` file with this content:
+- [bc295f9831206ba3-9] For example:
+- [684cd768] If a file isn't found in the ``staticfiles.json`` manifest at runtime, a ``ValueError`` is raised. This behavior can be disabled by subclassing ``ManifestStaticFilesStorage`` and setting the ``manifest_strict`` attribute to ``False`` -- nonexistent paths will remain unchanged.
+- [1de261d6] If this method is defined on a storage, it's called by the :djadmin:`collectstatic` management command after each run and gets passed the local storages and paths of found files as a dictionary, as well as the command line options. It yields tuples of three values: ``original_path, processed_path, processed``. The path values are strings and ``processed`` is a boolean indicating whether or not the value was post-processed, or an exception if post-processing failed.
+- [bb16d8da] Just like its parent, you can use it to write tests that involve running the code under test and consuming it with testing tools through HTTP (e.g. Selenium, PhantomJS, etc.), because of which it's needed that the static assets are also published.
+- [1b3da331] Management Commands ===================
+- [37893a63] Note, the beginning of the pattern (``r'^static/'``) should be your :setting:`STATIC_URL` setting.
+- [1b035ea5] On subsequent ``collectstatic`` runs (if ``STATIC_ROOT`` isn't empty), files are copied only if they have a modified timestamp greater than the timestamp of the file in ``STATIC_ROOT``. Therefore if you remove an application from :setting:`INSTALLED_APPS`, it's a good idea to use the :option:`collectstatic --clear` option in order to remove stale static files.
+- [9090f28d] On the other hand, by setting the ``--verbosity`` flag to 2, you can get all the directories which were searched:
+- [75226f10] Other Helpers =============
+- [644bff6e] Overrides the core :djadmin:`runserver` command if the ``staticfiles`` app is :setting:`installed<INSTALLED_APPS>` and adds automatic serving of static files. File serving doesn't run through :setting:`MIDDLEWARE`.
+- [feac9070] Searches for one or more relative paths with the enabled finders.
+- [ef726707] See :ref:`staticfiles settings <settings-staticfiles>` for details on the following settings:
+- [94005583b32250b8-5] Settings ========
+- [7d042663] Since creating the MD5 hash can be a performance burden to your website during runtime, ``staticfiles`` will automatically store the mapping with hashed names for all processed files in a file called ``staticfiles.json``. This happens once when you run the :djadmin:`collectstatic` management command.
+- [a4f21e28] Since static files might reference other static files that need to have their paths replaced, multiple passes of replacing paths may be needed until the file hashes converge. To prevent an infinite loop due to hashes not converging (for example, if ``'foo.css'`` references ``'bar.css'`` which references ``'foo.css'``) there is a maximum number of passes before post-processing is abandoned. In cases with a large number of references, a higher number of passes might be needed. Increase the maximum number of passes by subclassing ``ManifestStaticFilesStorage`` and setting the ``max_post_process_passes`` attribute. It defaults to 5.
+- [e2723c87] Since this is a bit finicky, there's also a helper function that'll do this for you:
+- [165aa3c3] Some commonly used options are:
+- [533c22e9] Specialized test case to support 'live testing' -----------------------------------------------
+- [ae88b53b] Static file development view ----------------------------
+- [859d6cf7] Storages ========
+- [ebf5ae30] Subclass ``ManifestStaticFilesStorage`` and set the ``support_js_module_import_aggregation`` attribute to ``True``, if you want to use the experimental regular expressions to cover:
+- [84d6d25b] The :class:`~django.contrib.staticfiles.storage.ManifestStaticFilesStorage` uses this behind the scenes to replace the paths with their hashed counterparts and update the cache appropriately.
+- [fb2b3fe8] The :djadmin:`collectstatic` management command calls the :meth:`~django.contrib.staticfiles.storage.StaticFilesStorage.post_process` method of the ``staticfiles`` storage backend from :setting:`STORAGES` after each run and passes a list of paths that have been found by the management command. It also receives all command line options of :djadmin:`collectstatic`. This is used by the :class:`~django.contrib.staticfiles.storage.ManifestStaticFilesStorage` by default.
+- [81937830] The command adds these options:
+- [4d8c6deb] The default ignored pattern list, ``['CVS', '.*', '*~']``, can be customized in a more persistent way than providing the ``--ignore`` command option at each ``collectstatic`` invocation. Provide a custom :class:`~django.apps.AppConfig` class, override the ``ignore_patterns`` attribute of this class and replace ``'django.contrib.staticfiles'`` with that class path in your :setting:`INSTALLED_APPS` setting::
+- [5124d797] The method that is used when creating the hashed name of a file. Needs to return a hash for the given file name and content. By default it calculates a MD5 hash from the content's chunks as mentioned above. Feel free to override this method to use your own hashing algorithm.
+- [37586c67] The purpose of this storage is to keep serving the old files in case some pages still refer to those files, e.g. because they are cached by you or a 3rd party proxy server. Additionally, it's very helpful if you want to apply `far future Expires headers`_ to the deployed files to speed up the load time for subsequent page visits.
+- [928749a0] The static files tools are mostly designed to help with getting static files successfully deployed into production. This usually means a separate, dedicated static file server, which is a lot of overhead to mess with when developing locally. Thus, the ``staticfiles`` app ships with a **quick and dirty helper view** that you can use to serve files locally in development.
+- [5ef6dc07] The storage backend automatically replaces the paths found in the saved files matching other saved files with the path of the cached copy (using the :meth:`~django.contrib.staticfiles.storage.StaticFilesStorage.post_process` method). The regular expressions used to find those paths (``django.contrib.staticfiles.storage.HashedFilesMixin.patterns``) cover:
+- [73ca5759] Then set the ``staticfiles`` storage backend in :setting:`STORAGES` setting to ``'path.to.MyStaticFilesStorage'``.
+- [d8e06ab1] There are a few other helpers outside of the :mod:`staticfiles <django.contrib.staticfiles>` app to work with static files:
+- [1fad38a0] This attribute provides a single hash that changes whenever a file in the manifest changes. This can be useful to communicate to SPAs that the assets on the server have changed (due to a new deployment).
+- [24d718c2] This is a debugging aid; it'll show you exactly which static file will be collected for a given path.
+- [5d5ed060] This unittest TestCase subclass extends :class:`django.test.LiveServerTestCase`.
+- [a96aeac2] This view function serves static files in development.
+- [6098cbba] This view is automatically enabled by :djadmin:`runserver` (with a :setting:`DEBUG` setting set to ``True``). To use the view with a different local development server, add the following snippet to the end of your primary URL configuration::
+- [47bb7bb1] This will inspect your :setting:`STATIC_URL` setting and wire up the view to serve static files accordingly. Don't forget to set the :setting:`STATICFILES_DIRS` setting appropriately to let ``django.contrib.staticfiles`` know where to look for files in addition to files in app directories.
+- [68e99e7d] This will return the proper URL pattern for serving static files to your already defined pattern list. Use it like this::
+- [4e42b6f3] To enable the ``ManifestStaticFilesStorage`` you have to make sure the following requirements are met:
+- [18fd072d] Use the ``--insecure`` option to force serving of static files with the :doc:`staticfiles </ref/contrib/staticfiles>` app even if the :setting:`DEBUG` setting is ``False``. By using this you acknowledge the fact that it's **grossly inefficient** and probably **insecure**. This is only intended for local development, should **never be used in production** and is only available if the :doc:`staticfiles </ref/contrib/staticfiles>` app is in your project's :setting:`INSTALLED_APPS` setting.
+- [364758cf] Use the ``--nostatic`` option to disable serving of static files with the :doc:`staticfiles </ref/contrib/staticfiles>` app entirely. This option is only available if the :doc:`staticfiles </ref/contrib/staticfiles>` app is in your project's :setting:`INSTALLED_APPS` setting.
+- [e9033a9b] Use this mixin with a custom storage to append the MD5 hash of the file's content to the filename as :class:`~storage.ManifestStaticFilesStorage` does.
+- [a1f1772e] You can change the location of the manifest file by using a custom ``ManifestStaticFilesStorage`` subclass that sets the ``manifest_storage`` argument. For example::
+- [7a320dcb] ``--insecure`` doesn't work with :class:`~.storage.ManifestStaticFilesStorage`.
+- [b6fcc593] ``ManifestFilesMixin`` ----------------------
+- [954f211e] ``ManifestStaticFilesStorage`` ------------------------------
+- [49345f72] ``StaticFilesStorage`` ----------------------
+- [f8b99260] ``collectstatic`` -----------------
+- [2d2d59e7] ``django.contrib.staticfiles`` collects static files from each of your applications (and any other places you specify) into a single location that can easily be served in production.
+- [ef476719] ``django.contrib.staticfiles`` exposes three management commands.
+- [d14a2ae6] ``findstatic`` --------------
+- [155f463dc5cb26f1] ``runserver`` -------------
+- [70563b99] ``staticfiles`` finders has a ``searched_locations`` attribute which is a list of directory paths in which the finders searched. Example usage::

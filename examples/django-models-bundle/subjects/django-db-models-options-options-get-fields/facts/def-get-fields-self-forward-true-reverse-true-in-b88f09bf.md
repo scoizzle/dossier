@@ -1,6 +1,6 @@
 # Fact b88f09bf
 
-Store id: 53279055-42b7-4bc2-85da-559f976ee38b
+Store id: a454ddde-5cfd-47b6-bb0c-b201a7e5236c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_fields( self, forward=True, reverse=True, include_parents=True, include
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9506230+00:00`
+- posted_at: `2026-11-09T23:32:04.0345840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 881,
     "symbol": "Options._get_fields"
   },
-  "id": "53279055-42b7-4bc2-85da-559f976ee38b",
+  "id": "a454ddde-5cfd-47b6-bb0c-b201a7e5236c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9506230+00:00"
+    "posted_at": "2026-11-09T23:32:04.0345840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f19d0d4a-4c68-4188-a30f-5a21538126c5",
+  "subject_id": "abb5f5ba-4b3d-45da-8b64-1c876a6c0844",
   "subject_name": "django/db/models/options::Options._get_fields",
   "tags": [
     "entity:method"

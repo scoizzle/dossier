@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ManyToManyField.formfield
 
-- Subject: django/db/models/fields/related::ManyToManyField.formfield (id `7adb1c4a-0c68-45f6-87f0-356a68ee319e`)
+- Subject: django/db/models/fields/related::ManyToManyField.formfield (id `d9f221b7-30f9-48a3-8bb4-b85d5911334b`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 2f6d6761
 
-Store id: cf4f7d98-f432-45a9-a714-17d7067ce9ce
+Store id: e8ff8fa1-c4a7-48a1-8786-3f3eb944dc06
 
 ## Text
 
@@ -20,7 +20,7 @@ def return_None()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2484560+00:00`
+- posted_at: `2026-11-09T23:31:56.4101620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 123,
     "symbol": "return_None"
   },
-  "id": "cf4f7d98-f432-45a9-a714-17d7067ce9ce",
+  "id": "e8ff8fa1-c4a7-48a1-8786-3f3eb944dc06",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2484560+00:00"
+    "posted_at": "2026-11-09T23:31:56.4101620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "02bffb46-5e45-46ed-9998-e5c9c5410b42",
+  "subject_id": "20a8667a-0c3e-41af-b36a-1f633bdced87",
   "subject_name": "django/db/models/fields/__init__::return_None",
   "tags": [
     "entity:function"

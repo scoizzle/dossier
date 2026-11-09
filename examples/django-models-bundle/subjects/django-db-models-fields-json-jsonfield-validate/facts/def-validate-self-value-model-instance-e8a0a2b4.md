@@ -1,6 +1,6 @@
 # Fact e8a0a2b4
 
-Store id: 1f01794c-2e24-4086-9a3a-652c18171319
+Store id: 65d15134-4753-4137-b1aa-8de872ce098d
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate(self, value, model_instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6189040+00:00`
+- posted_at: `2026-11-09T23:31:57.8556260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 128,
     "symbol": "JSONField.validate"
   },
-  "id": "1f01794c-2e24-4086-9a3a-652c18171319",
+  "id": "65d15134-4753-4137-b1aa-8de872ce098d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6189040+00:00"
+    "posted_at": "2026-11-09T23:31:57.8556260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2dd62607-3b93-49c3-8545-f67663980f7b",
+  "subject_id": "16854058-9110-4de4-8c3d-1f2dc98a1fce",
   "subject_name": "django/db/models/fields/json::JSONField.validate",
   "tags": [
     "entity:method"

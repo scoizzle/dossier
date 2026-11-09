@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/polygon
 
-- Subject: django/contrib/gis/geos/polygon (id `7f654849-66fb-4411-8017-442798b1683e`)
+- Subject: django/contrib/gis/geos/polygon (id `c66bf81f-1f38-4567-a8ae-058fde47bd3a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 15 of 30
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1658 tokens
+- Facts shown: 30 of 30
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Getting the ext_ring and init_holes parameters from the argument list ext_ring, *init_holes = args n_holes = len(init_holes) [ca2fbbe7]
 - # If initialized as Polygon(shell, (LinearRing, LinearRing)) # [for backward-compatibility] if n_holes == 1 and isinstance(init_holes[0], (tuple, list)): if not init_holes[0]: init_holes = () n_holes = 0 elif isinstance(init_holes[0][0], LinearRing): init_holes = init_holes[0] n_holes = len(init_holes) [1ed363ad]
@@ -26,6 +26,20 @@
 - @classmethod def from_bbox(cls, bbox): "Construct a Polygon from a bounding box (4-tuple)." x0, y0, x1, y1 = bbox for z in bbox: if not isinstance(z, (float, int)): return GEOSGeometry( "POLYGON((%s %s, %s %s, %s %s, %s %s, %s %s))" % (x0, y0, x0, y1, x1, y1, x1, y0, x0, y0) ) return Polygon(((x0, y0), (x0, y1), (x1, y1), (x1, y0), (x0, y0))) [ef8cd14a]
 - @property def tuple(self): "Get the tuple for each ring in this Polygon." return tuple(self[i].tuple for i in range(len(self))) [ad49c311]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [02dafaf5] [9271859696c6c292-2] [7cf2067ea4ba94b9-7] [87d15d40] [d469180c] [f42f024e] [95152d18] [c4da6de4] [c10f84d6] [75b2c5ad] [6fde385c] [ddc78c62] [687a3715] [5bcfa5b8] [7144a5a7]
+- [02dafaf5] @property def kml(self): "Return the KML representation of this Polygon." inner_kml = "".join( "<innerBoundaryIs>%s</innerBoundaryIs>" % self[i + 1].kml for i in range(self.num_interior_rings) ) return "<Polygon><outerBoundaryIs>%s</outerBoundaryIs>%s</Polygon>" % ( self[0].kml, inner_kml, )
+- [9271859696c6c292-2] _set_single = GEOSGeometry._set_single_rebuild _assign_extended_slice = GEOSGeometry._assign_extended_slice_rebuild
+- [7cf2067ea4ba94b9-7] coords = tuple
+- [87d15d40] def __init__(self, *args, **kwargs): """ Initialize on an exterior ring and a sequence of holes (both instances may be either LinearRing instances, or a tuple/list that may be constructed into a LinearRing).
+- [d469180c] def __iter__(self): "Iterate over each ring in the polygon." for i in range(len(self)): yield self[i]
+- [f42f024e] def __len__(self): "Return the number of rings in this Polygon." return self.num_interior_rings + 1
+- [95152d18] def _clone(self, g): if isinstance(g, GEOM_PTR): return capi.geom_clone(g) else: return capi.geom_clone(g.ptr)
+- [c4da6de4] def _construct_ring( self, param, msg=( "Parameter must be a sequence of LinearRings or objects that can " "initialize to LinearRings." ), ): "Try to construct a ring from the given parameter." if isinstance(param, LinearRing): return param try: return LinearRing(param) except TypeError: raise TypeError(msg)
+- [c10f84d6] def _get_ext_ring(self): "Get the exterior ring of the Polygon." return self[0]
+- [75b2c5ad] def _get_single_external(self, index): return GEOSGeometry( capi.geom_clone(self._get_single_internal(index)), srid=self.srid )
+- [6fde385c] def _get_single_internal(self, index): """ Return the ring at the specified index. The first index, 0, will always return the exterior ring. Indices > 0 will return the interior ring at the given index (e.g., poly[1] and poly[2] would return the first and second interior ring, respectively).
+- [ddc78c62] def _set_ext_ring(self, ring): "Set the exterior ring of the Polygon." self[0] = ring
+- [687a3715] def _set_list(self, length, items): # Getting the current pointer, replacing with the newly constructed # geometry, and destroying the old geometry. prev_ptr = self.ptr srid = self.srid self.ptr = self._create_polygon(length, items) if srid: self.srid = srid capi.destroy_geom(prev_ptr)
+- [5bcfa5b8] class Polygon(GEOSGeometry): _minlength = 1
+- [7144a5a7] from django.contrib.gis.geos import prototypes as capi from django.contrib.gis.geos.geometry import GEOSGeometry from django.contrib.gis.geos.libgeos import GEOM_PTR from django.contrib.gis.geos.linestring import LinearRing

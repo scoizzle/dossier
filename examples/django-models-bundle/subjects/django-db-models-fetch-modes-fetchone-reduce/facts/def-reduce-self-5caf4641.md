@@ -1,6 +1,6 @@
 # Fact 5caf4641
 
-Store id: 7025d889-6920-49f9-b8c1-7d3b6529c79b
+Store id: b1313fdf-e24c-43e2-b2a3-079186e4e49e
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.9952050+00:00`
+- posted_at: `2026-11-09T23:31:56.2191370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "FetchOne.__reduce__"
   },
-  "id": "7025d889-6920-49f9-b8c1-7d3b6529c79b",
+  "id": "b1313fdf-e24c-43e2-b2a3-079186e4e49e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.9952050+00:00"
+    "posted_at": "2026-11-09T23:31:56.2191370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "af590b7a-da4b-41f2-9a65-cb665a0c4d34",
+  "subject_id": "21961650-1281-45b4-b798-62f8d32bb1fc",
   "subject_name": "django/db/models/fetch_modes::FetchOne.__reduce__",
   "tags": [
     "entity:method"

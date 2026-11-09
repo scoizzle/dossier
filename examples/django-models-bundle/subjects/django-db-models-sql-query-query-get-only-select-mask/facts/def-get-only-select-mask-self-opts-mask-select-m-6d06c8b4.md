@@ -1,6 +1,6 @@
 # Fact 6d06c8b4
 
-Store id: ab207366-c8ca-423e-92dc-9a7e4415b3f0
+Store id: 95a4fd4b-71dc-49be-8bd9-fafa986751bf
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_only_select_mask(self, opts, mask, select_mask=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2807340+00:00`
+- posted_at: `2026-11-09T23:32:06.8222270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 860,
     "symbol": "Query._get_only_select_mask"
   },
-  "id": "ab207366-c8ca-423e-92dc-9a7e4415b3f0",
+  "id": "95a4fd4b-71dc-49be-8bd9-fafa986751bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2807340+00:00"
+    "posted_at": "2026-11-09T23:32:06.8222270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "017437bc-f93c-45bd-9cda-eae46f3d69dd",
+  "subject_id": "05f76c7c-cd10-4d9c-9fe6-c3ef47bcbd49",
   "subject_name": "django/db/models/sql/query::Query._get_only_select_mask",
   "tags": [
     "entity:method"

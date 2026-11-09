@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.__deepcopy__
 
-- Subject: django/db/models/fields/__init__::Field.__deepcopy__ (id `cad6afbf-40c4-43f3-9eb8-99f9b236857d`)
+- Subject: django/db/models/fields/__init__::Field.__deepcopy__ (id `75afca72-6eff-48df-8896-ee988f7bca06`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

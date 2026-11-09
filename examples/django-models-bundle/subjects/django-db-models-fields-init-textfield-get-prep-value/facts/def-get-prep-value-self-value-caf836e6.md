@@ -1,6 +1,6 @@
 # Fact caf836e6
 
-Store id: 7cec9bfd-76fc-4e36-ae34-5bd9c5420828
+Store id: e7106b41-1560-48e1-b4ca-083553a3eb4b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6437180+00:00`
+- posted_at: `2026-11-09T23:31:56.8041090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2573,
     "symbol": "TextField.get_prep_value"
   },
-  "id": "7cec9bfd-76fc-4e36-ae34-5bd9c5420828",
+  "id": "e7106b41-1560-48e1-b4ca-083553a3eb4b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6437180+00:00"
+    "posted_at": "2026-11-09T23:31:56.8041090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b85a3e3-a7d9-4a49-8bec-4d18a2df2945",
+  "subject_id": "601700cc-1893-4b00-b8c4-23eac6755e6e",
   "subject_name": "django/db/models/fields/__init__::TextField.get_prep_value",
   "tags": [
     "entity:method"

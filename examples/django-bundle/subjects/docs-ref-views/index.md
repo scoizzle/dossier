@@ -1,14 +1,14 @@
 # docs/ref/views
 
-- Subject: docs/ref/views (id `a9c44597-618c-4ca8-876e-b8338ba95b54`)
+- Subject: docs/ref/views (id `49f4730e-d705-4e5e-bbbb-3745c432b691`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 27 of 45
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2100 tokens
+- Facts shown: 45 of 45
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # ... the rest of your URLconf goes here ... [746eaecc]
 - def edit(request, pk): if not request.user.is_staff: raise PermissionDenied # ... [aadf5fac]
@@ -38,6 +38,23 @@
 - Serving files in development ============================ [6624129f]
 - Similarly, Django has a view to handle 400 Bad Request errors. [2b345e25]
 
-## Beyond the budget
+## All facts
 
-18 more facts did not fit in the budget: [ea9b56ad] [20403a74] [9584c0ce] [8da92b25] [b693fb6d] [58a50e01] [b858ae22] [18da7362] [08390241] [d7a8a332] [98c86272] [7edb434b] [54f04407] [fed47cda] [2c0282b5] [eb890a98] [5f0f9c2d] [706771cc]
+- [ea9b56ad] Several of Django's built-in views are documented in :doc:`/topics/http/views` as well as elsewhere in the documentation.
+- [20403a74] Similarly, Django executes special-case behavior in the case of runtime errors in view code. If a view results in an exception, Django will, by default, call the view ``django.views.defaults.server_error``, which either produces a "Server Error" message or loads and renders the template ``500.html`` if you created it in your root template directory.
+- [9584c0ce] Since it can become a bit cumbersome to define this URL pattern, Django ships with a small URL helper function :func:`~django.conf.urls.static.static` that takes as parameters the prefix such as :setting:`MEDIA_URL` and a dotted path to a view, such as ``'django.views.static.serve'``. Any other function parameter will be transparently passed to the view.
+- [8da92b25] The 400 (bad request) view --------------------------
+- [b693fb6d] The 403 (HTTP Forbidden) view -----------------------------
+- [58a50e01] The 404 (page not found) view -----------------------------
+- [b858ae22] The 500 (server error) view ---------------------------
+- [18da7362] The default 404 view will pass two variables to the template: ``request_path``, which is the URL that resulted in the error, and ``exception``, which is a useful representation of the exception that triggered the view (e.g. containing any message passed to a specific ``Http404`` instance).
+- [08390241] The default 500 view passes no variables to the ``500.html`` template and is rendered with an empty ``Context`` to lessen the chance of additional errors.
+- [d7a8a332] The most likely example is user-uploaded content in :setting:`MEDIA_ROOT`. ``django.contrib.staticfiles`` is intended for static assets and has no built-in handling for user-uploaded files, but you can have Django serve your :setting:`MEDIA_ROOT` by appending something like this to your URLconf::
+- [98c86272] There may be files other than your project's static assets that, for convenience, you'd like to have Django serve for you in local development. The :func:`~django.views.static.serve` view can be used to serve any directory you give it. (This view is **not** hardened for production use and should be used only as a development aid; you should serve these files in production using a real front-end web server).
+- [7edb434b] This view either produces a "Bad Request" message or loads and renders the template ``400.html`` if you created it in your root template directory. It returns with status code 400 indicating that the error condition was the result of a client operation. By default, nothing related to the exception that triggered the view is passed to the template context, as the exception message might contain sensitive information like filesystem paths.
+- [54f04407] This view loads and renders the template ``403.html`` in your root template directory, or if this file does not exist, instead serves the text "403 Forbidden", as per :rfc:`9110#section-15.5.4` (the HTTP 1.1 Specification). The template context contains ``exception``, which is the string representation of the exception that triggered the view.
+- [fed47cda] Three things to note about 404 views:
+- [2c0282b5] When you raise :exc:`~django.http.Http404` from within a view, Django loads a special view devoted to handling 404 errors. By default, it's the view :func:`django.views.defaults.page_not_found`, which either produces a "Not Found" message or loads and renders the template ``404.html`` if you created it in your root template directory.
+- [eb890a98] ``bad_request`` views are also only used when :setting:`DEBUG` is ``False``.
+- [5f0f9c2d] ``django.views.defaults.bad_request`` is triggered by a :exc:`~django.core.exceptions.BadRequest` exception. Also, when a :exc:`~django.core.exceptions.SuspiciousOperation` is raised in Django, it may be handled by a component of Django (for example resetting the session data). If not specifically handled, Django will consider the current request a 'bad request' instead of a server error, and handle it with ``bad_request``.
+- [706771cc] ``django.views.defaults.permission_denied`` is triggered by a :exc:`~django.core.exceptions.PermissionDenied` exception. To deny access in a view you can use code like this::

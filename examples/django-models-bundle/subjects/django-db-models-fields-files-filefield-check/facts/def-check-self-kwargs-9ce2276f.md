@@ -1,6 +1,6 @@
 # Fact 9ce2276f
 
-Store id: bafc49fe-baad-4028-b10b-fe493fa5fe50
+Store id: 2eda1ba6-e7b4-43f5-932e-940201de37ca
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2305900+00:00`
+- posted_at: `2026-11-09T23:31:57.3907450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 273,
     "symbol": "FileField.check"
   },
-  "id": "bafc49fe-baad-4028-b10b-fe493fa5fe50",
+  "id": "2eda1ba6-e7b4-43f5-932e-940201de37ca",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2305900+00:00"
+    "posted_at": "2026-11-09T23:31:57.3907450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5970819b-cd2d-40a1-89fc-a2e5b3304388",
+  "subject_id": "a487031d-af23-48b9-8ba9-25485433af7c",
   "subject_name": "django/db/models/fields/files::FileField.check",
   "tags": [
     "entity:method"

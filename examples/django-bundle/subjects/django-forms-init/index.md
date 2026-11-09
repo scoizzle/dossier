@@ -1,8 +1,8 @@
 # django/forms/__init__
 
-- Subject: django/forms/__init__ (id `e880863a-0eab-4c3a-b351-82daa9a07536`)
+- Subject: django/forms/__init__ (id `46c9b18b-af7f-40ca-b7ab-4d608cfe2fea`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 111 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.get_compiler
 
-- Subject: django/db/models/sql/query::Query.get_compiler (id `a8bc349f-783c-4af5-930b-078103097197`)
+- Subject: django/db/models/sql/query::Query.get_compiler (id `621ad298-6beb-47b0-8b73-1819c45f6964`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

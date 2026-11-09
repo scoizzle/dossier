@@ -1,9 +1,9 @@
 # django/db/models/query_utils::Q.identity
 
-- Subject: django/db/models/query_utils::Q.identity (id `86ff4109-5efd-49b9-a7bb-351a71886452`)
+- Subject: django/db/models/query_utils::Q.identity (id `7cf816d6-f833-4b4c-81ba-9235c3667b75`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

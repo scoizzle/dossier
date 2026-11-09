@@ -1,9 +1,9 @@
 # django/db/models/query::EmptyQuerySet
 
-- Subject: django/db/models/query::EmptyQuerySet (id `9184f5a0-d0f2-4f9f-8274-7b08643a55a8`)
+- Subject: django/db/models/query::EmptyQuerySet (id `a7a5e963-fe31-4d35-9f2e-0f6f819923bf`)
 - Kind: class
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

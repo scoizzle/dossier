@@ -1,6 +1,6 @@
 # Fact b468cb68
 
-Store id: 80e8dbb0-91f4-481d-8758-9a4a76816dc0
+Store id: a74592cb-ac03-4f76-a4bf-52c0f9333733
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate_constraints(self, exclude=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3521000+00:00`
+- posted_at: `2026-11-09T23:31:53.7582800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1680,
     "symbol": "Model.validate_constraints"
   },
-  "id": "80e8dbb0-91f4-481d-8758-9a4a76816dc0",
+  "id": "a74592cb-ac03-4f76-a4bf-52c0f9333733",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3521000+00:00"
+    "posted_at": "2026-11-09T23:31:53.7582800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c3c48c67-4414-4861-9a8a-ff8ff7d8450f",
+  "subject_id": "1a008d57-8a99-4c9a-93f1-8a4dd4fdd234",
   "subject_name": "django/db/models/base::Model.validate_constraints",
   "tags": [
     "entity:method"

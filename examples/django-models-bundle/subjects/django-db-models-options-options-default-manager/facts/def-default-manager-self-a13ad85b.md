@@ -1,6 +1,6 @@
 # Fact a13ad85b
 
-Store id: 7d6e2d74-3233-49b5-a251-f83c3fab1004
+Store id: aa98aed4-664d-4cf4-92c6-a3b6586af659
 
 ## Text
 
@@ -20,7 +20,7 @@ def default_manager(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8341130+00:00`
+- posted_at: `2026-11-09T23:32:03.9666340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 506,
     "symbol": "Options.default_manager"
   },
-  "id": "7d6e2d74-3233-49b5-a251-f83c3fab1004",
+  "id": "aa98aed4-664d-4cf4-92c6-a3b6586af659",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8341130+00:00"
+    "posted_at": "2026-11-09T23:32:03.9666340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0463165c-1f8d-476c-8a8f-91ba39c9b9dc",
+  "subject_id": "5a8c640a-2f39-4c63-b8d4-ac2b53c471df",
   "subject_name": "django/db/models/options::Options.default_manager",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact 457b1e7d
 
-Store id: b2b49d19-3136-4282-bc3e-1add0a47fb61
+Store id: 5962b227-4b18-47bd-a482-36b9a4c031a1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Sin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b2b49d19-3136-4282-bc3e-1add0a47fb61",
+  "id": "5962b227-4b18-47bd-a482-36b9a4c031a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Sin"
       },
       "rel": "contains",
-      "target": "82a46dee-2a80-46cf-9abd-9709e610f96a"
+      "target": "cd667c30-404d-4691-a67f-284e4c3a5b6d"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

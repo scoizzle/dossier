@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DurationField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::DurationField.get_internal_type (id `d21e2ce7-1fee-4eac-bacb-cb328bf3444b`)
+- Subject: django/db/models/fields/__init__::DurationField.get_internal_type (id `22136bba-e7be-4adf-9c1e-6c9d962f60a3`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

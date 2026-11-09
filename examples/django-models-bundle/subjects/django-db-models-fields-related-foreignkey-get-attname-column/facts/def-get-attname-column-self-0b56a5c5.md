@@ -1,6 +1,6 @@
 # Fact 0b56a5c5
 
-Store id: 86db245c-1934-4d94-96b4-df27ddaa4447
+Store id: 0accfc99-207d-47c7-b673-0385559bffaf
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_attname_column(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3955130+00:00`
+- posted_at: `2026-11-09T23:31:58.7648090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1261,
     "symbol": "ForeignKey.get_attname_column"
   },
-  "id": "86db245c-1934-4d94-96b4-df27ddaa4447",
+  "id": "0accfc99-207d-47c7-b673-0385559bffaf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3955130+00:00"
+    "posted_at": "2026-11-09T23:31:58.7648090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a8962094-cc1a-4d4f-8072-ca5c95eb1ea7",
+  "subject_id": "a8068c2f-a8c0-4ae4-96cf-bd50b13c5538",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_attname_column",
   "tags": [
     "entity:method"

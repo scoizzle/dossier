@@ -1,6 +1,6 @@
 # Fact 769d1dcf
 
-Store id: 8284eab5-5ccc-498c-9b22-98c0793ae801
+Store id: 42b4dc64-3e48-4db0-b797-41635b03c298
 
 ## Text
 
@@ -20,7 +20,7 @@ class Combinable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4703390+00:00`
+- posted_at: `2026-11-09T23:31:55.7232110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 38,
     "symbol": "Combinable"
   },
-  "id": "8284eab5-5ccc-498c-9b22-98c0793ae801",
+  "id": "42b4dc64-3e48-4db0-b797-41635b03c298",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4703390+00:00"
+    "posted_at": "2026-11-09T23:31:55.7232110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1b08241a-3e74-4fd8-a82c-4d85a1981a0f",
+  "subject_id": "2d6a5fe9-56d1-4d3b-983b-e087dc58eea2",
   "subject_name": "django/db/models/expressions::Combinable",
   "tags": [
     "entity:class"

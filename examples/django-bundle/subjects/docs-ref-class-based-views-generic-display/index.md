@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/generic-display
 
-- Subject: docs/ref/class-based-views/generic-display (id `4e150e11-6178-4a5a-a69a-4e5ba554860e`)
+- Subject: docs/ref/class-based-views/generic-display (id `9e82f0ce-c6de-4376-a4f2-c5c99543e903`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 19 of 60
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1863 tokens
+- Facts shown: 51 of 60
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) context["now"] = timezone.now() return context [fafb9092cb31dbfa]
 - <h1>Articles</h1> <ul> {% for article in object_list %} <li>{{ article.pub_date|date }} - {{ article.headline }}</li> {% empty %} <li>No articles yet.</li> {% endfor %} </ul> [cd76d85d]
@@ -30,6 +30,37 @@
 - **Ancestors (MRO)** [32590fb0e4b1f943-10]
 - **Methods** [7407ef7dca9e98ce-19]
 
-## Beyond the budget
+## All facts
 
-32 more facts did not fit in the budget: [b9c1be4d] [a0333e90] [3cc560fe] [03d41b39] [32590fb0e4b1f943-11] [32590fb0e4b1f943-12] [32590fb0e4b1f943-13] [d816c9df9fe3d4e9-2] [c4258540] [f72889f98a2ac701-8] [c53bd2bbe44e70a1-6] [1732ea16a7d09411-4] [9096df2856e2660f-4] [9096df2856e2660f-5] [7407ef7dca9e98ce-20] [685d15dfb6eb2285-51] [3c13e900595e87cf] [3009c843] [5224ea7e] [f3fb461f] [947b5601] [470bc2847d96bfb8-2] [292a192a] [bdaf81c2] [2c6bbb76] [e7be0586] [779552ef] [266bb841] [a4487c6f] [645dac98] [f7b1be85] [c552f6af]
+- [b9c1be4d] * :class:`django.views.generic.detail.SingleObjectMixin` * :class:`django.views.generic.base.View`
+- [a0333e90] * :class:`django.views.generic.detail.SingleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.detail.BaseDetailView` * :class:`django.views.generic.detail.SingleObjectMixin` * :class:`django.views.generic.base.View`
+- [3cc560fe] * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.base.View`
+- [03d41b39] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.list.BaseListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.base.View`
+- [32590fb0e4b1f943-11] **Ancestors (MRO)**
+- [32590fb0e4b1f943-12] **Ancestors (MRO)**
+- [32590fb0e4b1f943-13] **Ancestors (MRO)**
+- [d816c9df9fe3d4e9-2] **Example myapp/article_detail.html**:
+- [c4258540] **Example myapp/article_list.html**:
+- [f72889f98a2ac701-8] **Example myapp/urls.py**::
+- [c53bd2bbe44e70a1-6] **Example myapp/views.py**::
+- [1732ea16a7d09411-4] **Example views.py**::
+- [9096df2856e2660f-4] **Method Flowchart**
+- [9096df2856e2660f-5] **Method Flowchart**
+- [7407ef7dca9e98ce-20] **Methods**
+- [685d15dfb6eb2285-51] .. code-block:: html+django
+- [3c13e900595e87cf] .. method:: get(request, *args, **kwargs)
+- [3009c843] A base view for displaying a list of objects. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.list.ListView` or other views representing lists of objects.
+- [5224ea7e] A base view for displaying a single object. It is not intended to be used directly, but rather as a parent class of the :class:`django.views.generic.detail.DetailView` or other views representing details of a single object.
+- [f3fb461f] A page representing a list of objects.
+- [947b5601] If you're using pagination, you can adapt the :ref:`example template from the pagination docs <paginating-a-list-view>`.
+- [470bc2847d96bfb8-2] This view inherits methods and attributes from the following views:
+- [292a192a] While this view is executing, ``self.object_list`` will contain the list of objects (usually, but not necessarily a queryset) that the view is operating upon.
+- [bdaf81c2] While this view is executing, ``self.object`` will contain the object that the view is operating upon.
+- [2c6bbb76] .. class:: django.views.generic.detail.BaseDetailView
+- [e7be0586] .. class:: django.views.generic.detail.DetailView
+- [779552ef] .. class:: django.views.generic.list.BaseListView
+- [266bb841] .. class:: django.views.generic.list.ListView
+- [a4487c6f] ===================== Generic display views =====================
+- [645dac98] The two following generic class-based views are designed to display data. On many projects they are typically the most commonly used views.
+- [f7b1be85] ``DetailView`` ==============
+- [c552f6af] ``ListView`` ============

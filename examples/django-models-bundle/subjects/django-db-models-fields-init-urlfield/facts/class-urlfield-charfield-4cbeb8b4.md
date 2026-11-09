@@ -1,6 +1,6 @@
 # Fact 4cbeb8b4
 
-Store id: df284377-baf3-41e7-b875-944eebca522b
+Store id: 5f7207fe-cbba-461d-9ae5-74c8ad45c42e
 
 ## Text
 
@@ -20,7 +20,7 @@ class URLField(CharField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6796010+00:00`
+- posted_at: `2026-11-09T23:31:56.8319850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2719,
     "symbol": "URLField"
   },
-  "id": "df284377-baf3-41e7-b875-944eebca522b",
+  "id": "5f7207fe-cbba-461d-9ae5-74c8ad45c42e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6796010+00:00"
+    "posted_at": "2026-11-09T23:31:56.8319850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "92219de1-b0f8-4018-a780-b1f829ad800d",
+  "subject_id": "e58bdd34-ecd1-47fa-b3b3-b6b96ffc801d",
   "subject_name": "django/db/models/fields/__init__::URLField",
   "tags": [
     "entity:class"

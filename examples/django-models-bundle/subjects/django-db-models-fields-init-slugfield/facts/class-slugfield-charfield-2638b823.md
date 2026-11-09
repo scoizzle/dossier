@@ -1,6 +1,6 @@
 # Fact 2638b823
 
-Store id: 48efb2b4-12df-4fd6-9e29-4ebc710afdf1
+Store id: 28a45812-88d2-4a2b-b8ad-7b80cec3c750
 
 ## Text
 
@@ -20,7 +20,7 @@ class SlugField(CharField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6216930+00:00`
+- posted_at: `2026-11-09T23:31:56.7821910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2487,
     "symbol": "SlugField"
   },
-  "id": "48efb2b4-12df-4fd6-9e29-4ebc710afdf1",
+  "id": "28a45812-88d2-4a2b-b8ad-7b80cec3c750",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6216930+00:00"
+    "posted_at": "2026-11-09T23:31:56.7821910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7b17bbaa-7940-47f5-b45a-81e6d46d0695",
+  "subject_id": "73eba36e-8ec4-4539-a90f-2850d39e7a64",
   "subject_name": "django/db/models/fields/__init__::SlugField",
   "tags": [
     "entity:class"

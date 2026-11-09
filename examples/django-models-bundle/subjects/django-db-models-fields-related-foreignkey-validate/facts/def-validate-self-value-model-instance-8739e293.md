@@ -1,6 +1,6 @@
 # Fact 8739e293
 
-Store id: f48a72d3-2ec7-4426-aa9b-d6712ac39b3c
+Store id: 2ef60207-9e1d-4223-a703-0ac1abc984f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate(self, value, model_instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3885690+00:00`
+- posted_at: `2026-11-09T23:31:58.7589620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1215,
     "symbol": "ForeignKey.validate"
   },
-  "id": "f48a72d3-2ec7-4426-aa9b-d6712ac39b3c",
+  "id": "2ef60207-9e1d-4223-a703-0ac1abc984f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3885690+00:00"
+    "posted_at": "2026-11-09T23:31:58.7589620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e31c4ab0-f7ee-4e94-8367-ce9384861044",
+  "subject_id": "f2448d1d-0050-4c0e-89d0-7c5ff63d93ce",
   "subject_name": "django/db/models/fields/related::ForeignKey.validate",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/expressions::Value.as_sql
 
-- Subject: django/db/models/expressions::Value.as_sql (id `182b17e5-5e81-4180-b6c5-eb1eff9bb813`)
+- Subject: django/db/models/expressions::Value.as_sql (id `839a053a-89f7-4584-8b0a-6c76bff043c2`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

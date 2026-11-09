@@ -1,6 +1,6 @@
 # Fact 0f8897c6
 
-Store id: c636daf8-1c71-4479-a294-3a4cdcf0a481
+Store id: f25070d7-3c5c-415c-bf7d-0f2612bcdbfe
 
 ## Text
 
@@ -20,7 +20,7 @@ def local_concrete_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8520090+00:00`
+- posted_at: `2026-11-09T23:32:03.9855640+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 586,
     "symbol": "Options.local_concrete_fields"
   },
-  "id": "c636daf8-1c71-4479-a294-3a4cdcf0a481",
+  "id": "f25070d7-3c5c-415c-bf7d-0f2612bcdbfe",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8520090+00:00"
+    "posted_at": "2026-11-09T23:32:03.9855640+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "77b662ef-c8da-4927-9057-76f17b2e4f00",
+  "subject_id": "6447dd56-174e-486e-a014-a55a88c4bf36",
   "subject_name": "django/db/models/options::Options.local_concrete_fields",
   "tags": [
     "entity:method",

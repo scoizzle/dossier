@@ -1,6 +1,6 @@
 # Fact caf82d24
 
-Store id: f2db9f2d-b568-439e-a7d6-f1cabe5fb7a6
+Store id: 1be003ae-ed5f-4eb4-93d2-2b6d8ea6054d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.0304720+00:00`
+- posted_at: `2026-11-09T23:32:06.5033730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 221,
     "symbol": "BaseTable.__hash__"
   },
-  "id": "f2db9f2d-b568-439e-a7d6-f1cabe5fb7a6",
+  "id": "1be003ae-ed5f-4eb4-93d2-2b6d8ea6054d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.0304720+00:00"
+    "posted_at": "2026-11-09T23:32:06.5033730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "05351dd8-ff06-425a-a9ee-8629243334da",
+  "subject_id": "d0958fc4-7564-490e-aa39-e523542e1a2d",
   "subject_name": "django/db/models/sql/datastructures::BaseTable.__hash__",
   "tags": [
     "entity:method"

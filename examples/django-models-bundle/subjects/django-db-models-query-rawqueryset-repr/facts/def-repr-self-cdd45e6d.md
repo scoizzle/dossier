@@ -1,6 +1,6 @@
 # Fact cdd45e6d
 
-Store id: c6867007-19a9-4b75-85c1-987176de5551
+Store id: 33985db8-dc00-4b68-bb5b-2933d42b7d57
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8144680+00:00`
+- posted_at: `2026-11-09T23:32:04.7582510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2516,
     "symbol": "RawQuerySet.__repr__"
   },
-  "id": "c6867007-19a9-4b75-85c1-987176de5551",
+  "id": "33985db8-dc00-4b68-bb5b-2933d42b7d57",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8144680+00:00"
+    "posted_at": "2026-11-09T23:32:04.7582510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b46b5a18-4f0c-4b07-badc-fc3029e2b802",
+  "subject_id": "0ae18553-e898-46a6-ba8c-9bafee307197",
   "subject_name": "django/db/models/query::RawQuerySet.__repr__",
   "tags": [
     "entity:method"

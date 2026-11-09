@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.__init__
 
-- Subject: django/db/models/fields/__init__::Field.__init__ (id `4ed22f82-df26-45c0-ba2e-e7b05fbcd267`)
+- Subject: django/db/models/fields/__init__::Field.__init__ (id `2ceaba6b-b4c5-43fb-882d-af97e4afe336`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 67 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

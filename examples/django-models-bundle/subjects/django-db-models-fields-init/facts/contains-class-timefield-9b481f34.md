@@ -1,6 +1,6 @@
 # Fact 9b481f34
 
-Store id: 8cbf8d41-ab0b-4ccb-8fea-5ade9de69cde
+Store id: 4167abcc-c585-4ed9-ba59-916454148f59
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TimeField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8cbf8d41-ab0b-4ccb-8fea-5ade9de69cde",
+  "id": "4167abcc-c585-4ed9-ba59-916454148f59",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TimeField"
       },
       "rel": "contains",
-      "target": "b16787ae-9e08-4c43-b8b6-1e829a6c73db"
+      "target": "04094d40-68bc-4a5c-b9e9-f07f85999a50"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

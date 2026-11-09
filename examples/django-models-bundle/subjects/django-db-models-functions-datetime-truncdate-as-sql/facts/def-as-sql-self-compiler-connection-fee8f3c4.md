@@ -1,6 +1,6 @@
 # Fact fee8f3c4
 
-Store id: 037719b0-7f96-4fa5-a23c-a23f0de89fd4
+Store id: 62a78b08-92b9-4eb8-8b86-b00e7644b3d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2053080+00:00`
+- posted_at: `2026-11-09T23:32:01.2908190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 388,
     "symbol": "TruncDate.as_sql"
   },
-  "id": "037719b0-7f96-4fa5-a23c-a23f0de89fd4",
+  "id": "62a78b08-92b9-4eb8-8b86-b00e7644b3d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2053080+00:00"
+    "posted_at": "2026-11-09T23:32:01.2908190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "87f5019c-7860-4f22-9e34-8f31e22c695b",
+  "subject_id": "4a5f4851-eacd-4e6a-b5ba-377e9d5548cf",
   "subject_name": "django/db/models/functions/datetime::TruncDate.as_sql",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.__copy__
 
-- Subject: django/db/models/fields/related::ForeignObject.__copy__ (id `074b3e76-544b-437b-b96a-fb7505545f42`)
+- Subject: django/db/models/fields/related::ForeignObject.__copy__ (id `832e981a-68e8-4810-89c9-e5aa56534bef`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

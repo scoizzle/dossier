@@ -1,8 +1,8 @@
 # django/contrib/gis/apps
 
-- Subject: django/contrib/gis/apps (id `75607a51-187c-4d99-8be9-29c082f21245`)
+- Subject: django/contrib/gis/apps (id `27dbc32b-3164-4f3a-9c11-961b23390bac`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 163 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

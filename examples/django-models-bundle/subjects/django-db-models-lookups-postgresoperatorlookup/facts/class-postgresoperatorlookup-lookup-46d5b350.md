@@ -1,6 +1,6 @@
 # Fact 46d5b350
 
-Store id: 485c5ee3-efc3-414e-9b70-435545e829ff
+Store id: 6311b24f-e0c1-486a-81a2-e8e1b84fee5c
 
 ## Text
 
@@ -20,7 +20,7 @@ class PostgresOperatorLookup(Lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0935070+00:00`
+- posted_at: `2026-11-09T23:32:03.2444540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 360,
     "symbol": "PostgresOperatorLookup"
   },
-  "id": "485c5ee3-efc3-414e-9b70-435545e829ff",
+  "id": "6311b24f-e0c1-486a-81a2-e8e1b84fee5c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0935070+00:00"
+    "posted_at": "2026-11-09T23:32:03.2444540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f83f01fb-8908-4746-875e-caa2b54a6150",
+  "subject_id": "95ee4512-90d1-42d3-b960-8dd2bdf473af",
   "subject_name": "django/db/models/lookups::PostgresOperatorLookup",
   "tags": [
     "entity:class"

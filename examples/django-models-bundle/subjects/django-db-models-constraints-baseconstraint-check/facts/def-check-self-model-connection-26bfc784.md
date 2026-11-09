@@ -1,6 +1,6 @@
 # Fact 26bfc784
 
-Store id: 72502656-23c9-416c-b613-ff28a15cd889
+Store id: e95a07cc-cfff-4dd1-a78f-660cc1b22153
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, model, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7028260+00:00`
+- posted_at: `2026-11-09T23:31:54.1552370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "BaseConstraint.check"
   },
-  "id": "72502656-23c9-416c-b613-ff28a15cd889",
+  "id": "e95a07cc-cfff-4dd1-a78f-660cc1b22153",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7028260+00:00"
+    "posted_at": "2026-11-09T23:31:54.1552370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78759347-ed4e-4cb6-9094-55f50ec7fd36",
+  "subject_id": "57b40e2b-34d5-49e4-9191-eb7137bfecce",
   "subject_name": "django/db/models/constraints::BaseConstraint.check",
   "tags": [
     "entity:method"

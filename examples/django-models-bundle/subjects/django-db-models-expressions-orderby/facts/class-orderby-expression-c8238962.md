@@ -1,6 +1,6 @@
 # Fact c8238962
 
-Store id: 97d87018-2f5d-436d-ae4c-fa33ff389f36
+Store id: 572c8808-9193-45a7-afc5-d253800f0f41
 
 ## Text
 
@@ -20,7 +20,7 @@ class OrderBy(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7397560+00:00`
+- posted_at: `2026-11-09T23:31:55.9853260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1914,
     "symbol": "OrderBy"
   },
-  "id": "97d87018-2f5d-436d-ae4c-fa33ff389f36",
+  "id": "572c8808-9193-45a7-afc5-d253800f0f41",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7397560+00:00"
+    "posted_at": "2026-11-09T23:31:55.9853260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4377326d-8761-4135-be90-a76fec34a13c",
+  "subject_id": "2fb09b0b-6902-48bb-8c8c-889d57f0a2ab",
   "subject_name": "django/db/models/expressions::OrderBy",
   "tags": [
     "entity:class",

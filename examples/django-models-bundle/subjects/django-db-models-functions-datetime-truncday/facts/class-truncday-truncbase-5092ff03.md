@@ -1,6 +1,6 @@
 # Fact 5092ff03
 
-Store id: 38d0bb6d-ed4c-4a1f-982f-53d9145f2f56
+Store id: eb15bcf4-7832-4149-989d-94886063b9ac
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncDay(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2002490+00:00`
+- posted_at: `2026-11-09T23:32:01.2850420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 379,
     "symbol": "TruncDay"
   },
-  "id": "38d0bb6d-ed4c-4a1f-982f-53d9145f2f56",
+  "id": "eb15bcf4-7832-4149-989d-94886063b9ac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2002490+00:00"
+    "posted_at": "2026-11-09T23:32:01.2850420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f4421ae1-7bca-43a2-a3d9-0b3baae48279",
+  "subject_id": "1ca0086e-5bfd-400a-a5b3-e516634f35e4",
   "subject_name": "django/db/models/functions/datetime::TruncDay",
   "tags": [
     "entity:class"

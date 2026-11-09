@@ -1,6 +1,6 @@
 # Fact 904ce167
 
-Store id: e431c934-e496-43b6-84c5-3fa4e89f8e43
+Store id: 264eb0a1-7aef-483c-9ed6-8a52956311c3
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch(self, fetcher, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.0003170+00:00`
+- posted_at: `2026-11-09T23:31:56.2227610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 31,
     "symbol": "FetchPeers.fetch"
   },
-  "id": "e431c934-e496-43b6-84c5-3fa4e89f8e43",
+  "id": "264eb0a1-7aef-483c-9ed6-8a52956311c3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.0003170+00:00"
+    "posted_at": "2026-11-09T23:31:56.2227610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fb0446d7-7903-454f-8000-985f40bad494",
+  "subject_id": "cae2d6d2-4c64-4f75-acef-78c306ff4dbd",
   "subject_name": "django/db/models/fetch_modes::FetchPeers.fetch",
   "tags": [
     "entity:method"

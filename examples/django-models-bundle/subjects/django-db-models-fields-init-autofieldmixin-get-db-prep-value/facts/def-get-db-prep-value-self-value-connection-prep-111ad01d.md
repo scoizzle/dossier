@@ -1,6 +1,6 @@
 # Fact 111ad01d
 
-Store id: e5b9b660-28e1-4cc4-8df9-a7ea90074d5c
+Store id: 6caec15a-3da1-49d9-8c06-632059e0e5bd
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7334840+00:00`
+- posted_at: `2026-11-09T23:31:56.9015340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2908,
     "symbol": "AutoFieldMixin.get_db_prep_value"
   },
-  "id": "e5b9b660-28e1-4cc4-8df9-a7ea90074d5c",
+  "id": "6caec15a-3da1-49d9-8c06-632059e0e5bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7334840+00:00"
+    "posted_at": "2026-11-09T23:31:56.9015340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "31f59f88-f47e-4bd2-9aef-3c7e2ac91a0a",
+  "subject_id": "62afe0c3-1b48-48f5-9b13-f38fb27341db",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.get_db_prep_value",
   "tags": [
     "entity:method"

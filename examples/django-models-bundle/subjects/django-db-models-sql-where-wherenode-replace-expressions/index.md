@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode.replace_expressions
 
-- Subject: django/db/models/sql/where::WhereNode.replace_expressions (id `97a08b92-95a5-4858-a1ea-e62dd7220ce8`)
+- Subject: django/db/models/sql/where::WhereNode.replace_expressions (id `556976cb-7aba-4e2b-8fd4-1b3b9e826589`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

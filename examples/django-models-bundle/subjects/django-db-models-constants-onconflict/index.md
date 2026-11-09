@@ -1,9 +1,9 @@
 # django/db/models/constants::OnConflict
 
-- Subject: django/db/models/constants::OnConflict (id `5c6f9db6-d889-4d97-bccb-5bcf6aac26e9`)
+- Subject: django/db/models/constants::OnConflict (id `8feca834-240c-45d4-9179-7272c877f6f7`)
 - Kind: class
 - Parent: [django/db/models/constants](../django-db-models-constants/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

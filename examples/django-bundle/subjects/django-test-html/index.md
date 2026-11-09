@@ -1,14 +1,14 @@
 # django/test/html
 
-- Subject: django/test/html (id `1d6b03ca-4ede-4b9c-9e62-345b8273d090`)
+- Subject: django/test/html (id `2d985932-8e03-473f-a39b-4bd000455dc4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 13 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2001 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - rstrip_last_element(self.children) for i, child in enumerate(self.children): if isinstance(child, str): self.children[i] = child.strip() elif hasattr(child, "finalize"): child.finalize() [92dfa723]
 - @property def current(self): if self.open_tags: return self.open_tags[-1] else: return self.root [f1208049]
@@ -24,6 +24,23 @@
 - def count(self, element): return self._count(element, count=True) [35cff9f5]
 - def error(self, msg): raise HTMLParseError(msg, self.getpos()) [d6bf1a42]
 
-## Beyond the budget
+## All facts
 
-18 more facts did not fit in the budget: [e3ee872b] [207a8084] [93554c1e] [d6761194] [d01dd8cb] [4e8139b8] [aded0701] [c7a41005] [842131e0] [d696858a] [d2df2575] [3562f3e6] [101be2fc] [f9f4d6d3] [4dddfb57] [70c36eaf] [f5d68c82] [3811423b]
+- [e3ee872b] def finalize(self): def rstrip_last_element(children): if children and isinstance(children[-1], str): children[-1] = children[-1].rstrip() if not children[-1]: children.pop() children = rstrip_last_element(children) return children
+- [207a8084] def format_position(self, position=None, element=None): if not position and element: position = self.element_positions[element] if position is None: position = self.getpos() if hasattr(position, "lineno"): position = position.lineno, position.offset return "Line %d, Column %d" % position
+- [93554c1e] def handle_data(self, data): self.current.append(data)
+- [d6761194] def handle_endtag(self, tag): if not self.open_tags: self.error("Unexpected end tag `%s` (%s)" % (tag, self.format_position())) element = self.open_tags.pop() while element.name != tag: if not self.open_tags: self.error( "Unexpected end tag `%s` (%s)" % (tag, self.format_position()) ) element = self.open_tags.pop()
+- [d01dd8cb] def handle_startendtag(self, tag, attrs): self.handle_starttag(tag, attrs) if tag not in VOID_ELEMENTS: self.handle_endtag(tag)
+- [4e8139b8] def handle_starttag(self, tag, attrs): attrs = normalize_attributes(attrs) element = Element(tag, attrs) self.current.append(element) if tag not in VOID_ELEMENTS: self.open_tags.append(element) self.element_positions[element] = self.getpos()
+- [aded0701] """Compare two HTML documents."""
+- [c7a41005] # ASCII whitespace is U+0009 TAB, U+000A LF, U+000C FF, U+000D CR, or U+0020 # SPACE. # https://infra.spec.whatwg.org/#ascii-whitespace ASCII_WHITESPACE = _lazy_re_compile(r"[\t\n\f\r ]+")
+- [842131e0] # https://html.spec.whatwg.org/#attributes-3 BOOLEAN_ATTRIBUTES = { "allowfullscreen", "async", "autofocus", "autoplay", "checked", "controls", "default", "defer ", "disabled", "formnovalidate", "hidden", "ismap", "itemscope", "loop", "multiple", "muted", "nomodule", "novalidate", "open", "playsinline", "readonly", "required", "reversed", "selected", # Attributes for deprecated tags. "truespeed", }
+- [d696858a] class Element: def __init__(self, name, attributes): self.name = name self.attributes = sorted(attributes) self.children = []
+- [d2df2575] class HTMLParseError(Exception): pass
+- [3562f3e6] class Parser(HTMLParser): def __init__(self): super().__init__() self.root = RootElement() self.open_tags = [] self.element_positions = {}
+- [101be2fc] class RootElement(Element): def __init__(self): super().__init__(None, ())
+- [f9f4d6d3] def normalize_attributes(attributes): normalized = [] for name, value in attributes: if name == "class" and value: # Special case handling of 'class' attribute, so that comparisons # of DOM instances are not sensitive to ordering of classes. value = " ".join( sorted(value for value in ASCII_WHITESPACE.split(value) if value) ) # Boolean attributes without a value is same as attribute with value # that equals the attributes name. For example: # <input checked> == <input checked="checked"> if name in BOOLEAN_ATTRIBUTES: if not value or value == name: value = None elif value is None: value = "" normalized.append((name, value)) return normalized
+- [4dddfb57] def normalize_whitespace(string): return ASCII_WHITESPACE.sub(" ", string)
+- [70c36eaf] def parse_html(html): """ Take a string that contains HTML and turn it into a Python object structure that can be easily compared against other HTML on semantic equivalence. Syntactical differences like which quotation is used on arguments will be ignored. """ parser = Parser() parser.feed(html) parser.close() document = parser.root document.finalize() # Removing ROOT element if it's not necessary if len(document.children) == 1 and not isinstance(document.children[0], str): document = document.children[0] return document
+- [f5d68c82] from django.utils.html import VOID_ELEMENTS from django.utils.regex_helper import _lazy_re_compile
+- [3811423b] import html from html.parser import HTMLParser

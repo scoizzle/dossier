@@ -1,9 +1,9 @@
 # django/db/models/aggregates::BitOr
 
-- Subject: django/db/models/aggregates::BitOr (id `b39e10e9-db51-4ed6-b24a-9ffbbba0e3ab`)
+- Subject: django/db/models/aggregates::BitOr (id `007d735b-2fc3-4474-9e0d-c6802aa33cc8`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

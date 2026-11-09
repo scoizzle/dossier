@@ -1,6 +1,6 @@
 # Fact 00f09d0d
 
-Store id: 63912f63-fd7b-4d9a-88e3-94067e9452d7
+Store id: e0b6ce7e-8a15-4290-a188-76353edfb631
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_deferred_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3365650+00:00`
+- posted_at: `2026-11-09T23:31:53.7379920+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 725,
     "symbol": "Model.get_deferred_fields"
   },
-  "id": "63912f63-fd7b-4d9a-88e3-94067e9452d7",
+  "id": "e0b6ce7e-8a15-4290-a188-76353edfb631",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3365650+00:00"
+    "posted_at": "2026-11-09T23:31:53.7379920+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "549be597-7035-4898-af55-ca9606e8c647",
+  "subject_id": "cc453aa1-9e83-4eff-8004-98f37361d4d5",
   "subject_name": "django/db/models/base::Model.get_deferred_fields",
   "tags": [
     "entity:method"

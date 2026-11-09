@@ -1,8 +1,8 @@
 # django/contrib/gis/views
 
-- Subject: django/contrib/gis/views (id `cb6d908e-36cf-4c1b-b0a3-a95f494cab3e`)
+- Subject: django/contrib/gis/views (id `706332a7-3900-446c-8c78-d74306cfd14d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 200 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact ad2111c1
 
-Store id: 203e2bd0-ad90-4e8c-8382-c3320b08f4f0
+Store id: bbee3217-de57-44d3-b847-0809a8e15045
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5647790+00:00`
+- posted_at: `2026-11-09T23:31:55.8376770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 936,
     "symbol": "F.__eq__"
   },
-  "id": "203e2bd0-ad90-4e8c-8382-c3320b08f4f0",
+  "id": "bbee3217-de57-44d3-b847-0809a8e15045",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5647790+00:00"
+    "posted_at": "2026-11-09T23:31:55.8376770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7c67231e-8683-4790-9435-d0ef5f054876",
+  "subject_id": "ec89ec71-7a99-4f8b-9eda-f911672b189d",
   "subject_name": "django/db/models/expressions::F.__eq__",
   "tags": [
     "entity:method"

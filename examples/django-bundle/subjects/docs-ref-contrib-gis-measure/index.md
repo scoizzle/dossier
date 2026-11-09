@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/measure
 
-- Subject: docs/ref/contrib/gis/measure (id `18202e16-4daa-4e7b-9724-9bdfb5b70f9d`)
+- Subject: docs/ref/contrib/gis/measure (id `075390ec-59cd-4705-b8bb-e03b5253952b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 37 of 58
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1850 tokens
+- Facts shown: 54 of 58
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> Area.unit_attname("Kilometer") 'sq_km' [881141e6]
 - >>> Distance.unit_attname("Mile") 'mi' [2aec5760]
@@ -48,6 +48,22 @@
 - .. code-block:: pycon [eaf050be34acb41d-190]
 - .. note:: [942ae6c11625c81c-67]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [0ddb1ce0] [a61db341] [c5a6cace] [50faf2ea] [f26c1131] [71004870] [cf1461d9a1a7899c-4] [aac72aa3] [43caa976] [7751429d] [4c6af0be] [31bea3fc] [f8d8eb61] [03a424f2] [bfbb5db8] [e2ef116ba2a404b8-2] [4d4bf744e1be7be5-2]
+- [0ddb1ce0] .. module:: django.contrib.gis.measure :synopsis: GeoDjango's distance and area measurement objects.
+- [a61db341] .. rubric:: Footnotes .. [#] `Robert Coup <https://koordinates.com/>`_ is the initial author of the measure objects, and was inspired by Brian Beck's work in `geopy <https://github.com/geopy/geopy/>`_ and Geoff Biggs' PhD work on dimensioned units for robotics.
+- [c5a6cace] :class:`Distance` objects may be instantiated using a keyword argument indicating the context of the units. In the example below, two different distance objects are instantiated in units of kilometers (``km``) and miles (``mi``):
+- [50faf2ea] =================== Measurement Objects ===================
+- [f26c1131] ================================= ======================================== Unit Attribute Full name or alias(es) ================================= ======================================== ``ha`` Hectare ================================= ========================================
+- [71004870] ================================= ======================================== Unit Attribute Full name or alias(es) ================================= ======================================== ``km`` Kilometre, Kilometer ``mi`` Mile ``m`` Meter, Metre ``yd`` Yard ``ft`` Foot, Foot (International) ``survey_ft`` U.S. Foot, US survey foot ``inch`` Inches ``cm`` Centimeter ``mm`` Millimetre, Millimeter ``um`` Micrometer, Micrometre ``british_ft`` British foot (Sears 1922) ``british_yd`` British yard (Sears 1922) ``british_chain_sears`` British chain (Sears 1922) ``indian_yd`` Indian yard, Yard (Indian) ``sears_yd`` Yard (Sears) ``clarke_ft`` Clarke's Foot ``chain`` Chain ``chain_benoit`` Chain (Benoit) ``chain_sears`` Chain (Sears) ``british_chain_benoit`` British chain (Benoit 1895 B) ``british_chain_sears_truncated`` British chain (Sears 1922 truncated) ``gold_coast_ft`` Gold Coast foot ``link`` Link ``link_benoit`` Link (Benoit) ``link_sears`` Link (Sears) ``clarke_link`` Clarke's link ``fathom`` Fathom ``rod`` Rod ``furlong`` Furlong, Furrow Long ``nm`` Nautical Mile ``nm_uk`` Nautical Mile (UK) ``german_m`` German legal metre ================================= ========================================
+- [cf1461d9a1a7899c-4] Example =======
+- [aac72aa3] For conversions, access the preferred unit attribute to get a converted distance quantity:
+- [43caa976] In addition to unit with the ``sq_`` prefix, the following units are also supported on :class:`Area`:
+- [7751429d] Measurement API ===============
+- [4c6af0be] Moreover, arithmetic operations may be performed between the distance objects:
+- [31bea3fc] Supported units ===============
+- [f8d8eb61] The :mod:`django.contrib.gis.measure` module contains objects that allow for convenient representation of distance and area units of measure. [#]_ Specifically, it implements two objects, :class:`Distance` and :class:`Area` -- both of which may be accessed via the :class:`D` and :class:`A` convenience aliases, respectively.
+- [03a424f2] To determine what the attribute abbreviation of a unit is, the ``unit_attname`` class method may be used:
+- [bfbb5db8] Two :class:`Distance` objects multiplied together will yield an :class:`Area` object, which uses squared units of measure:
+- [e2ef116ba2a404b8-2] ``Area`` --------
+- [4d4bf744e1be7be5-2] ``Distance`` ------------

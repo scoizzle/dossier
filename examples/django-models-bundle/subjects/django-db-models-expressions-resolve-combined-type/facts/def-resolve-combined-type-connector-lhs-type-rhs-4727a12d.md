@@ -1,6 +1,6 @@
 # Fact 4727a12d
 
-Store id: dab71ff7-5c03-4e00-b9f5-7a3fecbd6f9a
+Store id: 41df11c4-edad-42a3-97f2-fcd4d50a1583
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_combined_type(connector, lhs_type, rhs_type)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5424770+00:00`
+- posted_at: `2026-11-09T23:31:55.8077980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 718,
     "symbol": "_resolve_combined_type"
   },
-  "id": "dab71ff7-5c03-4e00-b9f5-7a3fecbd6f9a",
+  "id": "41df11c4-edad-42a3-97f2-fcd4d50a1583",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5424770+00:00"
+    "posted_at": "2026-11-09T23:31:55.8077980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06e0c899-618d-43d5-959f-d3555deec2bc",
+  "subject_id": "bd79456f-d7bb-49dd-8783-e3c6bd27ecd5",
   "subject_name": "django/db/models/expressions::_resolve_combined_type",
   "tags": [
     "entity:function",

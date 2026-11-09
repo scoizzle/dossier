@@ -1,6 +1,6 @@
 # Fact d4589eef
 
-Store id: 1d195b40-f842-4473-af07-6589697c3302
+Store id: 15685661-7373-4b99-9e19-257216067277
 
 ## Text
 
@@ -20,7 +20,7 @@ class OneToOneRel(ManyToOneRel)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3817270+00:00`
+- posted_at: `2026-11-09T23:32:00.3410070+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 313,
     "symbol": "OneToOneRel"
   },
-  "id": "1d195b40-f842-4473-af07-6589697c3302",
+  "id": "15685661-7373-4b99-9e19-257216067277",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3817270+00:00"
+    "posted_at": "2026-11-09T23:32:00.3410070+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "03965b94-8706-4ce1-ad1d-2537d3df9160",
+  "subject_id": "200cf0f5-e28e-4024-86f4-d8fb8a364cea",
   "subject_name": "django/db/models/fields/reverse_related::OneToOneRel",
   "tags": [
     "entity:class"

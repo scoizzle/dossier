@@ -1,6 +1,6 @@
 # Fact fa758bcd
 
-Store id: 2ec13a17-a4e6-414b-a7d4-c3fa1f723492
+Store id: 61dd9930-9fd1-440e-a6dc-f52608ac6c90
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_path_info(self, filtered_relation=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4731740+00:00`
+- posted_at: `2026-11-09T23:31:58.8604730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2026,
     "symbol": "ManyToManyField.get_path_info"
   },
-  "id": "2ec13a17-a4e6-414b-a7d4-c3fa1f723492",
+  "id": "61dd9930-9fd1-440e-a6dc-f52608ac6c90",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4731740+00:00"
+    "posted_at": "2026-11-09T23:31:58.8604730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4e054568-1f90-4e65-8909-5eb0d3f5a459",
+  "subject_id": "6603ea4b-349b-4327-be2d-89f463a49578",
   "subject_name": "django/db/models/fields/related::ManyToManyField.get_path_info",
   "tags": [
     "entity:method"

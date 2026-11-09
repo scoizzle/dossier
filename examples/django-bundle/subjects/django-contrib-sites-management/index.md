@@ -1,8 +1,8 @@
 # django/contrib/sites/management
 
-- Subject: django/contrib/sites/management (id `0cad13f9-fb70-443c-8186-6c5ff82170a4`)
+- Subject: django/contrib/sites/management (id `cf507aea-b969-4c7f-9710-825805c4e8c9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 408 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

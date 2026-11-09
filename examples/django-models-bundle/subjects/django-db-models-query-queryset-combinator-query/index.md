@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._combinator_query
 
-- Subject: django/db/models/query::QuerySet._combinator_query (id `a5d1b308-45ac-4615-b722-875f55949dd8`)
+- Subject: django/db/models/query::QuerySet._combinator_query (id `65b77133-2bc2-440f-be91-b8a819e17899`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

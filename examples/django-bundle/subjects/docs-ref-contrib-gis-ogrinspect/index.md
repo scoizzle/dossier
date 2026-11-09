@@ -1,8 +1,8 @@
 # docs/ref/contrib/gis/ogrinspect
 
-- Subject: docs/ref/contrib/gis/ogrinspect (id `1473bfb0-de3e-4480-9a22-27379c9c167c`)
+- Subject: docs/ref/contrib/gis/ogrinspect (id `4ca869a2-d4b3-4528-83e7-ae1520816951`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 175 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

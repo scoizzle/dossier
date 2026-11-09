@@ -1,8 +1,8 @@
 # docs/ref/models/index
 
-- Subject: docs/ref/models/index (id `dff91c95-7deb-4ec8-8555-8ebd0303e38c`)
+- Subject: docs/ref/models/index (id `f56495df-ab2c-416a-a84b-2b007276d175`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 108 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

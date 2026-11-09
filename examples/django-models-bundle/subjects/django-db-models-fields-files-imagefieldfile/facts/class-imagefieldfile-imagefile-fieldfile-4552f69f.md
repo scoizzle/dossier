@@ -1,6 +1,6 @@
 # Fact 4552f69f
 
-Store id: 6e5f33e3-709a-49ed-a540-56f3854f9f0b
+Store id: 48705f91-583a-4912-8079-e28a466055c6
 
 ## Text
 
@@ -20,7 +20,7 @@ class ImageFieldFile(ImageFile, FieldFile)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2582080+00:00`
+- posted_at: `2026-11-09T23:31:57.4228370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 406,
     "symbol": "ImageFieldFile"
   },
-  "id": "6e5f33e3-709a-49ed-a540-56f3854f9f0b",
+  "id": "48705f91-583a-4912-8079-e28a466055c6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2582080+00:00"
+    "posted_at": "2026-11-09T23:31:57.4228370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "64555d58-d3a9-446e-9c85-813885747bff",
+  "subject_id": "8fa7fffd-b1d6-4784-a1d6-0d4e9cadf82f",
   "subject_name": "django/db/models/fields/files::ImageFieldFile",
   "tags": [
     "entity:class"

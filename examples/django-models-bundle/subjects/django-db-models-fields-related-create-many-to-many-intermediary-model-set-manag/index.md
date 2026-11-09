@@ -1,9 +1,9 @@
 # django/db/models/fields/related::create_many_to_many_intermediary_model.set_managed
 
-- Subject: django/db/models/fields/related::create_many_to_many_intermediary_model.set_managed (id `fcb543ac-3e73-4b2e-b693-b9a4dce82baf`)
+- Subject: django/db/models/fields/related::create_many_to_many_intermediary_model.set_managed (id `e93b65cc-a611-485c-90d5-67dbd4d3e589`)
 - Kind: function
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

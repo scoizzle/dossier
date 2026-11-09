@@ -1,6 +1,6 @@
 # Fact c828d21a
 
-Store id: 2c55c433-ad01-4b17-9afc-0fba253b6dfa
+Store id: 17c4159f-25f4-4321-869c-28e8b1a3f520
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_lookup_value(self, value, can_reuse, allow_joins, summarize=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3510160+00:00`
+- posted_at: `2026-11-09T23:32:06.9095810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1322,
     "symbol": "Query.resolve_lookup_value"
   },
-  "id": "2c55c433-ad01-4b17-9afc-0fba253b6dfa",
+  "id": "17c4159f-25f4-4321-869c-28e8b1a3f520",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3510160+00:00"
+    "posted_at": "2026-11-09T23:32:06.9095810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8bfaca5-1ca5-4b8a-8ad9-ff7536aa0fcc",
+  "subject_id": "640078fe-4eee-41a8-a82f-d663852457a6",
   "subject_name": "django/db/models/sql/query::Query.resolve_lookup_value",
   "tags": [
     "entity:method"

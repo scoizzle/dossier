@@ -1,8 +1,8 @@
 # django/db/models/functions/__init__
 
-- Subject: django/db/models/functions/__init__ (id `7e7ea76d-18c9-43f2-bffb-afd379301678`)
+- Subject: django/db/models/functions/__init__ (id `abd82712-33b3-4e9a-92bd-38db6263c2c3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 282 tokens
 - Facts shown: 1 of 2
 - Conflicts: 0

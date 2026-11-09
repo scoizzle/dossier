@@ -1,6 +1,6 @@
 # Fact c0651895
 
-Store id: 19c8dd68-41f3-4ae3-af47-398571b4d13d
+Store id: d4487229-491a-4d41-96ab-9b7eb0309fc0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5749030+00:00`
+- posted_at: `2026-11-09T23:31:55.8496190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1029,
     "symbol": "Sliced.__repr__"
   },
-  "id": "19c8dd68-41f3-4ae3-af47-398571b4d13d",
+  "id": "d4487229-491a-4d41-96ab-9b7eb0309fc0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5749030+00:00"
+    "posted_at": "2026-11-09T23:31:55.8496190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d27eb883-585c-4853-8c2e-b310e00448bd",
+  "subject_id": "ea791fcb-dd43-43ab-a3c9-b3fdd7a14787",
   "subject_name": "django/db/models/expressions::Sliced.__repr__",
   "tags": [
     "entity:method"

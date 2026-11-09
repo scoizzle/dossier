@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Coalesce.__init__
 
-- Subject: django/db/models/functions/comparison::Coalesce.__init__ (id `18cecbd7-2e02-4ff3-bab8-abb8c3fbc535`)
+- Subject: django/db/models/functions/comparison::Coalesce.__init__ (id `f03ceedd-c9df-4244-9d99-e0fe15aa33c6`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

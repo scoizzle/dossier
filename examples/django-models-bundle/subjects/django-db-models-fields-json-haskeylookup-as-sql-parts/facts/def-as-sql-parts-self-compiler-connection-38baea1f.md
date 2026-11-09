@@ -1,6 +1,6 @@
 # Fact 38baea1f
 
-Store id: ae4be9f0-5a7e-4ff3-b33a-063adfbd2e6c
+Store id: d87d6cd3-b6d1-4052-884f-287df37f22ae
 
 ## Text
 
@@ -20,7 +20,7 @@ def _as_sql_parts(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6380640+00:00`
+- posted_at: `2026-11-09T23:31:57.8815200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 190,
     "symbol": "HasKeyLookup._as_sql_parts"
   },
-  "id": "ae4be9f0-5a7e-4ff3-b33a-063adfbd2e6c",
+  "id": "d87d6cd3-b6d1-4052-884f-287df37f22ae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6380640+00:00"
+    "posted_at": "2026-11-09T23:31:57.8815200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ad8372ec-0778-47d3-a2db-4c1d2eb8f3e6",
+  "subject_id": "1c37dd1a-3203-43df-8f69-601f0c8f45a1",
   "subject_name": "django/db/models/fields/json::HasKeyLookup._as_sql_parts",
   "tags": [
     "entity:method"

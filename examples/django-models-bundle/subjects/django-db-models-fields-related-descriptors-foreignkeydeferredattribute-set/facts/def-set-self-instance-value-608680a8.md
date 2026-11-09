@@ -1,6 +1,6 @@
 # Fact 608680a8
 
-Store id: a5852a87-4ab4-4fe2-9c65-74661a7a83d0
+Store id: e7597e35-0b7f-4981-9a8c-9a197297ee11
 
 ## Text
 
@@ -20,7 +20,7 @@ def __set__(self, instance, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.6848050+00:00`
+- posted_at: `2026-11-09T23:31:59.1185000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 88,
     "symbol": "ForeignKeyDeferredAttribute.__set__"
   },
-  "id": "a5852a87-4ab4-4fe2-9c65-74661a7a83d0",
+  "id": "e7597e35-0b7f-4981-9a8c-9a197297ee11",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.6848050+00:00"
+    "posted_at": "2026-11-09T23:31:59.1185000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bc507cf0-db46-458e-86cc-0f90b9778695",
+  "subject_id": "1103284e-4cb6-4728-9415-0fc64bfd5e80",
   "subject_name": "django/db/models/fields/related_descriptors::ForeignKeyDeferredAttribute.__set__",
   "tags": [
     "entity:method"

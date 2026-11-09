@@ -1,6 +1,6 @@
 # Fact aa027e38
 
-Store id: f3a21956-206e-4550-8257-7b20caac13ae
+Store id: 1933e7fe-eba7-437b-a3c1-33ba50f24a82
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLDeleteCompiler(SQLCompiler)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7100500+00:00`
+- posted_at: `2026-11-09T23:32:05.9987470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1991,
     "symbol": "SQLDeleteCompiler"
   },
-  "id": "f3a21956-206e-4550-8257-7b20caac13ae",
+  "id": "1933e7fe-eba7-437b-a3c1-33ba50f24a82",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7100500+00:00"
+    "posted_at": "2026-11-09T23:32:05.9987470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4b45979a-58d3-4ea6-8c2b-67181c138139",
+  "subject_id": "d395a30f-760b-4ddc-90a5-0b7d87622716",
   "subject_name": "django/db/models/sql/compiler::SQLDeleteCompiler",
   "tags": [
     "entity:class"

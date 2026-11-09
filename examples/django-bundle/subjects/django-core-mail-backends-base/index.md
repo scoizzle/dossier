@@ -1,14 +1,14 @@
 # django/core/mail/backends/base
 
-- Subject: django/core/mail/backends/base (id `ff0b9279-e731-4a50-9d4c-3ef5eb29df48`)
+- Subject: django/core/mail/backends/base (id `de7c7a45-868f-4f69-97ae-6c88b55dd7ea`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 18 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1074 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # RemovedInDjango2028Warning. if alias is None: # Not being initialized from mail.mailers. Unknown kwargs are # ignored -- with a deprecation warning if they originated from # outside Django (either direct construction of a built-in # backend or a super.__init__() call from a custom subclass). # Use something more precise than self.__class__.__name__, # which is often just "EmailBackend". class_name = f"{type(self).__module__}.{type(self).__qualname__}" warn_about_external_use( f"{class_name}.__init__() does not support {kwarg_names}. " "In Django 2028, BaseEmailBackend will raise a TypeError " "for unknown keyword arguments.", RemovedInDjango2028Warning, skip_name_prefixes="django.core.mail.backends", ) return [53c4e09d]
 - raise InvalidMailer(f"Unknown options {kwarg_names}.", alias=alias) [6270fce6]
@@ -29,6 +29,10 @@
 - def open(self): """ Open a network connection. [cbc74a03]
 - open() and close() can be called indirectly by using a backend object as a context manager: [dea57c03]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [8b416640] [4ef2aa9f] [b5c3e1d6] [db9c0911] [2709de08]
+- [8b416640] def send_messages(self, email_messages): """ Send one or more EmailMessage objects and return the number of email messages sent. """ raise NotImplementedError( "subclasses of BaseEmailBackend must override send_messages() method" )
+- [4ef2aa9f] """Base email backend class."""
+- [b5c3e1d6] # RemovedInDjango2028Warning. _NOT_PROVIDED = object()
+- [db9c0911] class BaseEmailBackend: """ Base class for email backend implementations.
+- [2709de08] from django.core.mail import InvalidMailer from django.utils.deprecation import RemovedInDjango2028Warning, warn_about_external_use

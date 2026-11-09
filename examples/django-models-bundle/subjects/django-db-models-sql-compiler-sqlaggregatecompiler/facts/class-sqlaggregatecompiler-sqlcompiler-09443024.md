@@ -1,6 +1,6 @@
 # Fact 09443024
 
-Store id: e192cfde-44f5-4eed-b362-0537f9cd960a
+Store id: cbb69420-425f-48b5-a3bf-1a56a11d1854
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLAggregateCompiler(SQLCompiler)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7433240+00:00`
+- posted_at: `2026-11-09T23:32:06.1027630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2251,
     "symbol": "SQLAggregateCompiler"
   },
-  "id": "e192cfde-44f5-4eed-b362-0537f9cd960a",
+  "id": "cbb69420-425f-48b5-a3bf-1a56a11d1854",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7433240+00:00"
+    "posted_at": "2026-11-09T23:32:06.1027630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e5466d8a-2829-4339-87f6-1b9c81ba212a",
+  "subject_id": "43275326-bdf5-4150-aada-1086d206fcaf",
   "subject_name": "django/db/models/sql/compiler::SQLAggregateCompiler",
   "tags": [
     "entity:class"

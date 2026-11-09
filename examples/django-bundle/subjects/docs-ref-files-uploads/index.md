@@ -1,14 +1,14 @@
 # docs/ref/files/uploads
 
-- Subject: docs/ref/files/uploads (id `a7e34cdc-e451-42e3-bbb8-187c21dfbf2f`)
+- Subject: docs/ref/files/uploads (id `43b1a29c-e017-4a3b-bf30-36848322f1ee`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 20 of 84
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2960 tokens
+- Facts shown: 83 of 84
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - for line in uploadedfile: do_something_with(line) [7d444311]
 - A dictionary containing extra parameters passed to the ``content-type`` header. This is typically provided by services, such as Google App Engine, that intercept and handle file uploads on your behalf. As a result your handler may not receive the uploaded file content, but instead a URL or other pointer to the file (see :rfc:`RFC 2388 <2388#section-5.3>`). [57cfbc7f]
@@ -31,6 +31,68 @@
 - Returns the full path to the temporary uploaded file. [4e133c43]
 - .. note:: [942ae6c11625c81c-94]
 
-## Beyond the budget
+## All facts
 
-63 more facts did not fit in the budget: [c207d368] [70753c90] [b5b19f6f] [3bf8f6a9] [c192e07c] [be688325] [3e7cb9ef] [5b4812cd] [c8611838] [f8b44ee7] [b500f5c0] [1f9ffa72] [2b04b89e] [005a6350] [e3bfa5ad] [7f30e27a] [f522e9f3] [15e3731c] [ad734d1e] [3d4dc460] [ed3ef404] [a8e5bc9d] [b48e46a9] [9ed8f603] [2deb2a36] [02575bab] [5663b27e] [6205cb09] [d4b07198] [22895241] [ab664219] [f3d9364c] [9c8dee33] [cf9df614] [aa356a9d] [05048217] [7f507de5] [a3aaf0f8] [11330ed2] [3f2305cf] [db862a31] [3e10c15a] [d214b87d] [316cc367] [9cdfcb07] [50d0f5dd] [0ba5d612] [150d1e65] [0c318b6f] [75c2a59a] [ee5d80d7] [15fd9d73] [85aae550] [19475c6a] [41d389ae] [68188d7f] [0cca9d80] [b8d21c78] [d82539f8] [fa03716f] [918bb994] [542d382a] [d5815c48]
+- [c207d368] Return ``None`` from ``receive_data_chunk`` to short-circuit remaining upload handlers from getting this chunk. This is useful if you're storing the uploaded data yourself and don't want future handlers to store a copy of the data.
+- [70753c90] Return ``None`` if you want upload handling to continue, or a tuple of ``(POST, FILES)`` if you want to return the new data structures suitable for the request directly.
+- [b5b19f6f] Returns ``True`` if the uploaded file is big enough to require reading in multiple chunks. By default this will be any file larger than 2.5 megabytes, but that's configurable; see below.
+- [3bf8f6a9] Size, in bytes, of the "chunks" Django should store into memory and feed into the handler. That is, this attribute controls the size of chunks fed into ``FileUploadHandler.receive_data_chunk``.
+- [c192e07c] The content-type header uploaded with the file (e.g. :mimetype:`text/plain` or :mimetype:`application/pdf`). Like any data supplied by the user, you shouldn't trust that the uploaded file is actually this type. You'll still need to validate that the file contains the content that the content-type header claims -- "trust but verify."
+- [be688325] The data you return will get fed into the subsequent upload handlers' ``receive_data_chunk`` methods. In this way, one handler can be a "filter" for other handlers.
+- [3e7cb9ef] The default is 64*2\ :sup:`10` bytes, or 64 KB.
+- [5b4812cd] The handler should return an ``UploadedFile`` object that will be stored in ``request.FILES``. Handlers may also return ``None`` to indicate that the ``UploadedFile`` object should come from subsequent upload handlers.
+- [c8611838] The name of the uploaded file (e.g. ``my_file.txt``).
+- [f8b44ee7] The size, in bytes, of the uploaded file.
+- [b500f5c0] This method may raise a ``StopFutureHandlers`` exception to prevent future handlers from handling this file.
+- [1f9ffa72] ``META`` is the same object as ``request.META``.
+- [2b04b89e] ``boundary`` is the MIME boundary for this request.
+- [005a6350] ``charset`` is the character set (i.e. ``utf8``) given by the browser. Like ``content_length``, this sometimes won't be provided.
+- [e3bfa5ad] ``content_length`` is the length of the data in ``input_data``. Don't read more than ``content_length`` bytes from ``input_data``.
+- [7f30e27a] ``content_length`` is the length of the image given by the browser. Sometimes this won't be provided and will be ``None``.
+- [f522e9f3] ``content_type_extra`` is extra information about the file from the ``content-type`` header. See :attr:`UploadedFile.content_type_extra <django.core.files.uploadedfile.UploadedFile.content_type_extra>`.
+- [15e3731c] ``content_type`` is the MIME type provided by the browser -- E.g. ``'image/jpeg'``.
+- [ad734d1e] ``encoding`` is the encoding of the request.
+- [3d4dc460] ``field_name`` is a string name of the file ``<input>`` field.
+- [ed3ef404] ``file_name`` is the filename provided by the browser.
+- [a8e5bc9d] ``input_data`` is a file-like object that supports ``read()``-ing.
+- [b48e46a9] ``raw_data`` is a bytestring containing the uploaded data.
+- [9ed8f603] ``start`` is the position in the file where this ``raw_data`` chunk begins.
+- [2deb2a36] .. _custom_upload_handlers:
+- [02575bab] .. attribute:: FileUploadHandler.chunk_size
+- [5663b27e] .. attribute:: UploadedFile.charset
+- [6205cb09] .. attribute:: UploadedFile.content_type
+- [d4b07198] .. attribute:: UploadedFile.content_type_extra
+- [22895241] .. attribute:: UploadedFile.name
+- [ab664219] .. attribute:: UploadedFile.size
+- [f3d9364c] .. class:: FileUploadHandler
+- [9c8dee33] .. class:: InMemoryUploadedFile
+- [cf9df614] .. class:: MemoryFileUploadHandler
+- [aa356a9d] .. class:: TemporaryFileUploadHandler
+- [05048217] .. class:: TemporaryUploadedFile
+- [7f507de5] .. class:: UploadedFile
+- [a3aaf0f8] .. method:: FileUploadHandler.file_complete(file_size)
+- [11330ed2] .. method:: FileUploadHandler.handle_raw_input(input_data, META, content_length, boundary, encoding)
+- [3f2305cf] .. method:: FileUploadHandler.new_file(field_name, file_name, content_type, content_length, charset, content_type_extra)
+- [db862a31] .. method:: FileUploadHandler.receive_data_chunk(raw_data, start)
+- [3e10c15a] .. method:: FileUploadHandler.upload_complete()
+- [d214b87d] .. method:: FileUploadHandler.upload_interrupted()
+- [316cc367] .. method:: TemporaryUploadedFile.temporary_file_path()
+- [9cdfcb07] .. method:: UploadedFile.chunks(chunk_size=None)
+- [50d0f5dd] .. method:: UploadedFile.read()
+- [0ba5d612] .. module:: django.core.files.uploadedfile :synopsis: Classes representing uploaded files.
+- [150d1e65] .. module:: django.core.files.uploadhandler :synopsis: Django's handlers for file uploads.
+- [0c318b6f] ================================== Uploaded Files and Upload Handlers ==================================
+- [75c2a59a] All file upload handlers should be subclasses of ``django.core.files.uploadhandler.FileUploadHandler``. You can define upload handlers wherever you wish.
+- [ee5d80d7] Built-in upload handlers ========================
+- [15fd9d73] Custom file upload handlers **must** define the following methods:
+- [85aae550] Custom upload handlers may also define any of the following optional methods or attributes:
+- [19475c6a] During file uploads, the actual file data is stored in :attr:`request.FILES <django.http.HttpRequest.FILES>`. Each entry in this dictionary is an ``UploadedFile`` object (or a subclass) -- a wrapper around an uploaded file. You'll usually use one of these methods to access the uploaded content:
+- [41d389ae] File upload handler to stream uploads into memory (used for small files).
+- [68188d7f] Here are some useful attributes of ``UploadedFile``:
+- [0cca9d80] Optional methods ----------------
+- [b8d21c78] Required methods ----------------
+- [d82539f8] Subclasses of ``UploadedFile`` include:
+- [fa03716f] Together the :class:`MemoryFileUploadHandler` and :class:`TemporaryFileUploadHandler` provide Django's default file upload behavior of reading small files into memory and large ones onto disk. They are located in ``django.core.files.uploadhandler``.
+- [918bb994] Upload handler that streams data into a temporary file using :class:`~django.core.files.uploadedfile.TemporaryUploadedFile`.
+- [542d382a] Uploaded files ==============
+- [d5815c48] Writing custom upload handlers ==============================

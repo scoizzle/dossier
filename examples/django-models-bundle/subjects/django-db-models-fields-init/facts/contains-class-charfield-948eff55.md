@@ -1,6 +1,6 @@
 # Fact 948eff55
 
-Store id: 5de46d28-c174-4839-84cc-7f1848021c69
+Store id: d189fc4a-404e-49b4-a73c-b8a027fe3fdd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CharField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5de46d28-c174-4839-84cc-7f1848021c69",
+  "id": "d189fc4a-404e-49b4-a73c-b8a027fe3fdd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CharField"
       },
       "rel": "contains",
-      "target": "6e4fa724-7ad2-4b16-a555-2487fe0c72c6"
+      "target": "528759d7-69dd-4c50-ab76-6c5f9e088b54"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

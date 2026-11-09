@@ -1,6 +1,6 @@
 # Fact 5534b694
 
-Store id: 57ea53d3-28d8-4510-ab56-9064291e55d5
+Store id: 33a864ad-4f71-4f3d-8431-064bf870e204
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelStateFetchModeDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3699300+00:00`
+- posted_at: `2026-11-09T23:31:53.7768270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "57ea53d3-28d8-4510-ab56-9064291e55d5",
+  "id": "33a864ad-4f71-4f3d-8431-064bf870e204",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3699300+00:00"
+    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelStateFetchModeDescriptor"
       },
       "rel": "contains",
-      "target": "2d4817f6-0881-4180-9857-94dba37f7c77"
+      "target": "5d9a19c7-356c-465e-baa5-4fb62fab509e"
     }
   ],
   "status": "live",
-  "subject_id": "70b750e6-0b0a-43ce-80a5-3403f95c66e3",
+  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:class"

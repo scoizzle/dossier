@@ -1,6 +1,6 @@
 # Fact 61cc226b
 
-Store id: 8ac9c243-2779-487b-a706-3988dc0749ff
+Store id: 577fcf4e-442d-4f36-b6bc-eb293a0f8013
 
 ## Text
 
@@ -20,7 +20,7 @@ def _not_support_combined_queries(self, operation_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7421370+00:00`
+- posted_at: `2026-11-09T23:32:04.6762570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2360,
     "symbol": "QuerySet._not_support_combined_queries"
   },
-  "id": "8ac9c243-2779-487b-a706-3988dc0749ff",
+  "id": "577fcf4e-442d-4f36-b6bc-eb293a0f8013",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7421370+00:00"
+    "posted_at": "2026-11-09T23:32:04.6762570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bf09a2b1-b62f-4930-8e7f-28f15f372468",
+  "subject_id": "989a49cb-2419-48fc-8913-b9331d5e0dec",
   "subject_name": "django/db/models/query::QuerySet._not_support_combined_queries",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 1a6e3b19
 
-Store id: c7b50fcc-bbef-4478-998d-c4ea85757bd2
+Store id: 5c8d570a-aed4-48b1-9d27-4df92116dd03
 
 ## Text
 
@@ -20,7 +20,7 @@ def __mul__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4740900+00:00`
+- posted_at: `2026-11-09T23:31:55.7279320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 85,
     "symbol": "Combinable.__mul__"
   },
-  "id": "c7b50fcc-bbef-4478-998d-c4ea85757bd2",
+  "id": "5c8d570a-aed4-48b1-9d27-4df92116dd03",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4740900+00:00"
+    "posted_at": "2026-11-09T23:31:55.7279320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "859838f1-e260-4dd3-b57a-ef7f57aab7e9",
+  "subject_id": "820cb880-d0ca-4d23-ac8e-1e037f73c6fe",
   "subject_name": "django/db/models/expressions::Combinable.__mul__",
   "tags": [
     "entity:method"

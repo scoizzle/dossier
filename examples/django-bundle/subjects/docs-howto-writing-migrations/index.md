@@ -1,14 +1,14 @@
 # docs/howto/writing-migrations
 
-- Subject: docs/howto/writing-migrations (id `423f7ca7-f630-43e8-b1f6-8e5046a006ad`)
+- Subject: docs/howto/writing-migrations (id `482aa003-2999-423c-8e5d-3aaed9d481cd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 19 of 87
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3845 tokens
+- Facts shown: 78 of 87
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - NewModel = apps.get_model("new_app", "NewModel") NewModel.objects.bulk_create( NewModel(new_attribute=old_object.old_attribute) for old_object in OldModel.objects.all() ) [f462403a]
 - if global_apps.is_installed("old_app"): dependencies.append(("old_app", "0001_initial")) [c8d4f90f]
@@ -30,6 +30,64 @@
 - class Migration(migrations.Migration): dependencies = [ ("myapp", "0123_the_previous_migration"), ] [4037d7f1]
 - class MyRouter: def allow_migrate(self, db, app_label, model_name=None, **hints): if "target_db" in hints: return db == hints["target_db"] return True [4537baf4]
 
-## Beyond the budget
+## All facts
 
-59 more facts did not fit in the budget: [35aace51] [900cab88] [a2f4cabb] [e698a8a0] [b3ce301b] [1aa52ade] [d8705a0e] [5602f214839c9ad3] [9db21212] [851f3c4d] [9605ab6d] [67a48432] [9269a92e] [1f327cda] [7c440f11] [892af0b8] [6889a918] [f9a87427] [ff483d4d] [2d153259] [775669f8] [d6884ce9] [c775b37d] [d79f847e] [23fa051a] [307ab2e2] [2bf4c307] [f8b68960] [7e6ac189] [85c8a274] [87f0dc70] [48735371] [3dc03943] [b3c96187] [28a48816] [665a604d] [cd81e484] [9f3e0a12] [72984b36] [25556e4f] [89a416d6] [b481f03f] [2d6741b5] [4007c528] [cadfd64c] [13491ecb] [41455ec9] [cd9b7775] [fd8a7a05] [55779c3e] [9a353b0a] [a794c312] [7cdd56b2] [fef618b0] [a087796a] [6ff63f87] [fce8df1d] [471fce9a] [57cecf03]
+- [35aace51] class Migration(migrations.Migration): operations = [ migrations.RunPython(forwards, migrations.RunPython.noop), ] dependencies = [ ("myapp", "0123_the_previous_migration"), ("new_app", "0001_initial"), ]
+- [900cab88] def forwards(apps, schema_editor): # Your migration code goes here ...
+- [a2f4cabb] def forwards(apps, schema_editor): if schema_editor.connection.alias != "default": return # Your migration code goes here
+- [e698a8a0] def forwards(apps, schema_editor): try: OldModel = apps.get_model("old_app", "OldModel") except LookupError: # The old app isn't installed. return
+- [b3ce301b] def gen_uuid(apps, schema_editor): MyModel = apps.get_model("myapp", "MyModel") for row in MyModel.objects.all(): row.uuid = uuid.uuid4() row.save(update_fields=["uuid"])
+- [1aa52ade] def gen_uuid(apps, schema_editor): MyModel = apps.get_model("myapp", "MyModel") while MyModel.objects.filter(uuid__isnull=True).exists(): with transaction.atomic(): for row in MyModel.objects.filter(uuid__isnull=True)[:1000]: row.uuid = uuid.uuid4() row.save()
+- [d8705a0e] from django.apps import apps as global_apps from django.db import migrations
+- [5602f214839c9ad3] from django.db import migrations
+- [9db21212] from django.db import migrations, models import django.db.models.deletion
+- [851f3c4d] from django.db import migrations, transaction
+- [9605ab6d] import uuid
+- [67a48432] .. code-block:: python :caption: ``0004_add_uuid_field.py``
+- [9269a92e] .. code-block:: python :caption: ``0005_populate_uuid_values.py``
+- [1f327cda] .. code-block:: python :caption: ``0006_remove_uuid_null.py``
+- [7c440f11] Change ``unique=True`` to ``null=True`` -- this will create the intermediary null field and defer creating the unique constraint until we've populated unique values on all the rows.
+- [892af0b8] Note there is a race condition if you allow objects to be created while this migration is running. Objects created after the ``AddField`` and before ``RunPython`` will have their original ``uuid``’s overwritten.
+- [6889a918] * Add the field on your model with ``default=uuid.uuid4`` and ``unique=True`` arguments (choose an appropriate default for the type of the field you're adding).
+- [f9a87427] * Copy the ``AddField`` operation from the auto-generated migration (the first of the three new files) to the last migration, change ``AddField`` to ``AlterField``, and add imports of ``uuid`` and ``models``. For example:
+- [ff483d4d] * Edit the first migration file. The generated migration class should look similar to this:
+- [2d153259] * Generate two empty migration files for the same app by running ``makemigrations myapp --empty`` twice. We've renamed the migration files to give them meaningful names in the examples below.
+- [775669f8] * In the first empty migration file, add a :class:`~django.db.migrations.operations.RunPython` or :class:`~django.db.migrations.operations.RunSQL` operation to generate a unique value (UUID in the example) for each existing row. Also add an import of ``uuid``. For example:
+- [d6884ce9] * Now you can apply the migrations as usual with the :djadmin:`migrate` command.
+- [c775b37d] * Run the :djadmin:`makemigrations` command. This should generate a migration with an ``AddField`` operation.
+- [d79f847e] .. _changing-a-manytomanyfield-to-use-a-through-model:
+- [23fa051a] .. _data-migrations-and-multiple-databases:
+- [307ab2e2] .. _non-atomic-migrations:
+- [2bf4c307] .. code-block:: python :caption: ``myapp/dbrouters.py``
+- [f8b68960] .. code-block:: python :caption: ``myapp/migrations/0124_move_old_app_to_new_app.py``
+- [7e6ac189] ================================= How to create database migrations =================================
+- [85c8a274] Also consider what you want to happen when the migration is unapplied. You could either do nothing (as in the example above) or remove some or all of the data from the new application. Adjust the second argument of the :mod:`~django.db.migrations.operations.RunPython` operation accordingly.
+- [87f0dc70] Applying a "plain" migration that adds a unique non-nullable field to a table with existing rows will raise an error because the value used to populate existing rows is generated only once, thus breaking the unique constraint.
+- [48735371] Changing an unmanaged model to managed ======================================
+- [3dc03943] Controlling the order of migrations ===================================
+- [b3c96187] Django determines the order in which migrations should be applied not by the filename of each migration, but by building a graph using two properties on the ``Migration`` class: ``dependencies`` and ``run_before``.
+- [28a48816] For example, if we had a ``Book`` model with a ``ManyToManyField`` linking to ``Author``, we could add a through model ``AuthorBook`` with a new field ``is_primary``, like so::
+- [665a604d] Here's a sample migration:
+- [cd81e484] Here's an example of a non-atomic data migration that updates a large table in smaller batches::
+- [9f3e0a12] If you change a :class:`~django.db.models.ManyToManyField` to use a ``through`` model, the default migration will delete the existing table and create a new one, losing the existing relations. To avoid this, you can use :class:`.SeparateDatabaseAndState` to rename the existing table to the new table name while telling the migration autodetector that the new model has been created. You can check the existing table name and constraint name through :djadmin:`sqlmigrate` or :djadmin:`dbshell`. You can check the new table name with the through model's ``_meta.db_table`` property. Your new ``through`` model should use the same names for the ``ForeignKey``\s as Django did. Also if it needs any extra fields, they should be added in operations after :class:`.SeparateDatabaseAndState`.
+- [72984b36] If you plan to remove the old app later, you'll need to set the ``dependencies`` property based on whether or not the old app is installed. Otherwise, you'll have missing dependencies once you uninstall the old app. Similarly, you'll need to catch :exc:`LookupError` in the ``apps.get_model()`` call that retrieves models from the old app. This approach allows you to deploy your project anywhere without first installing and then uninstalling the old app.
+- [25556e4f] If you want to change an unmanaged model (:attr:`managed=False <django.db.models.Options.managed>`) to managed, you must remove ``managed=False`` and generate a migration before making other schema-related changes to the model, since schema changes that appear in the migration that contains the operation to change ``Meta.managed`` may not be applied.
+- [89a416d6] If you've used the :djadmin:`makemigrations` command you've probably already seen ``dependencies`` in action because auto-created migrations have this defined as part of their creation process.
+- [b481f03f] If your ``RunPython`` or ``RunSQL`` operation only affects one model, it's good practice to pass ``model_name`` as a hint to make it as transparent as possible to the router. This is especially important for reusable and third-party apps.
+- [2d6741b5] In order to do that you can check the database connection's alias inside a ``RunPython`` operation by looking at the ``schema_editor.connection.alias`` attribute::
+- [4007c528] Migrating data between third-party apps =======================================
+- [cadfd64c] Migrations that add unique fields =================================
+- [13491ecb] Non-atomic migrations ~~~~~~~~~~~~~~~~~~~~~
+- [41455ec9] On databases that support DDL transactions (SQLite and PostgreSQL), migrations will run inside a transaction by default. For use cases such as performing data migrations on large tables, you may want to prevent a migration from running in a transaction by setting the ``atomic`` attribute to ``False``::
+- [cd9b7775] Prefer using ``dependencies`` over ``run_before`` when possible. You should only use ``run_before`` if it is undesirable or impractical to specify ``dependencies`` in the migration which you want to run after the one you are writing.
+- [fd8a7a05] The ``atomic`` attribute doesn't have an effect on databases that don't support DDL transactions (e.g. MySQL, Oracle). (MySQL's `atomic DDL statement support <https://dev.mysql.com/doc/refman/en/atomic-ddl.html>`_ refers to individual statements rather than multiple statements wrapped in a transaction that can be rolled back.)
+- [55779c3e] The ``dependencies`` property is declared like this::
+- [9a353b0a] Then, to leverage this in your migrations, do the following::
+- [a794c312] Therefore, the following steps should be taken. In this example, we'll add a non-nullable :class:`~django.db.models.UUIDField` with a default value. Modify the respective field according to your needs.
+- [7cdd56b2] This document explains how to structure and write database migrations for different scenarios you might encounter. For introductory material on migrations, see :doc:`the topic guide </topics/migrations>`.
+- [fef618b0] To achieve this, place all migrations that should depend on yours in the ``run_before`` attribute on your ``Migration`` class::
+- [a087796a] Usually this will be enough, but from time to time you may need to ensure that your migration runs *before* other migrations. This is useful, for example, to make third-party apps' migrations run *after* your :setting:`AUTH_USER_MODEL` replacement.
+- [6ff63f87] When using multiple databases, you may need to figure out whether or not to run a migration against a particular database. For example, you may want to **only** run a migration on a particular database.
+- [fce8df1d] Within such a migration, all operations are run without a transaction. It's possible to execute parts of the migration inside a transaction using :func:`~django.db.transaction.atomic` or by passing ``atomic=True`` to ``RunPython``.
+- [471fce9a] You can also provide hints that will be passed to the :meth:`allow_migrate` method of database routers as ``**hints``:
+- [57cecf03] You can use a data migration to move data from one third-party application to another.

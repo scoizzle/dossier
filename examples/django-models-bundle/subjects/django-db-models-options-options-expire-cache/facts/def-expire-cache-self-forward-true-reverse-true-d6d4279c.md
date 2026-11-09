@@ -1,6 +1,6 @@
 # Fact d6d4279c
 
-Store id: 1486d006-d917-4fd0-a725-a6e8d1d49111
+Store id: 64ec8be4-3efc-4e1e-bb6d-82564858d8a2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _expire_cache(self, forward=True, reverse=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9376810+00:00`
+- posted_at: `2026-11-09T23:32:04.0286200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 852,
     "symbol": "Options._expire_cache"
   },
-  "id": "1486d006-d917-4fd0-a725-a6e8d1d49111",
+  "id": "64ec8be4-3efc-4e1e-bb6d-82564858d8a2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9376810+00:00"
+    "posted_at": "2026-11-09T23:32:04.0286200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0dcfd9a2-2af8-4c97-adf7-681eb4b81344",
+  "subject_id": "97d1d49a-7c8e-4328-8081-d3df527f5e90",
   "subject_name": "django/db/models/options::Options._expire_cache",
   "tags": [
     "entity:method"

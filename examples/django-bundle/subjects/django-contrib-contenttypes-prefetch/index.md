@@ -1,8 +1,8 @@
 # django/contrib/contenttypes/prefetch
 
-- Subject: django/contrib/contenttypes/prefetch (id `c0608cab-703b-44bb-a2a0-9d05f2223b40`)
+- Subject: django/contrib/contenttypes/prefetch (id `201d3afb-4d10-465b-8e65-6b8f2cd81f67`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 293 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/core/mail/backends/locmem
 
-- Subject: django/core/mail/backends/locmem (id `d33a83a3-9b73-4e6e-999a-624750cbf66e`)
+- Subject: django/core/mail/backends/locmem (id `c7f6c1b9-c23b-482e-8513-0e6c2b27bed6`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 320 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

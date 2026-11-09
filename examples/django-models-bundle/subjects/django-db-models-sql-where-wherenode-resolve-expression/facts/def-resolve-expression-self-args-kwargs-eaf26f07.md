@@ -1,6 +1,6 @@
 # Fact eaf26f07
 
-Store id: 1a1b593b-cd0f-45c7-9d7e-30c822710982
+Store id: b25c556b-66ce-4a9b-88f3-658608399817
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9591320+00:00`
+- posted_at: `2026-11-09T23:32:07.6754160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 286,
     "symbol": "WhereNode.resolve_expression"
   },
-  "id": "1a1b593b-cd0f-45c7-9d7e-30c822710982",
+  "id": "b25c556b-66ce-4a9b-88f3-658608399817",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9591320+00:00"
+    "posted_at": "2026-11-09T23:32:07.6754160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cbae3abc-26f0-439c-804f-48452545daa4",
+  "subject_id": "38d17e6c-8338-4aed-89dc-bdc86e10e402",
   "subject_name": "django/db/models/sql/where::WhereNode.resolve_expression",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact ceb86571
 
-Store id: 3ecb2149-2c13-410c-b94f-a04c816cbedb
+Store id: 8bb54761-3beb-4d16-8419-11a60466a447
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prefetch_related_objects(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5544450+00:00`
+- posted_at: `2026-11-09T23:32:04.5049690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1513,
     "symbol": "QuerySet._prefetch_related_objects"
   },
-  "id": "3ecb2149-2c13-410c-b94f-a04c816cbedb",
+  "id": "8bb54761-3beb-4d16-8419-11a60466a447",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5544450+00:00"
+    "posted_at": "2026-11-09T23:32:04.5049690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "567c1677-2338-4ddf-9076-b12602a40128",
+  "subject_id": "84055ad5-800f-463d-b4c4-d923051cdb8d",
   "subject_name": "django/db/models/query::QuerySet._prefetch_related_objects",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact e6ec478f
 
-Store id: ea22a4ce-274e-4c2a-a7bc-d044c819fd89
+Store id: 86346a5b-e476-4a79-b5a2-bb10032a57e3
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_model(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3563150+00:00`
+- posted_at: `2026-11-09T23:31:53.7624730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1922,
     "symbol": "Model._check_model"
   },
-  "id": "ea22a4ce-274e-4c2a-a7bc-d044c819fd89",
+  "id": "86346a5b-e476-4a79-b5a2-bb10032a57e3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3563150+00:00"
+    "posted_at": "2026-11-09T23:31:53.7624730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b9a734e2-40cf-49fb-88d5-7fe16a7576c0",
+  "subject_id": "733e64ee-a2d5-471f-9fc3-078ca465d8a6",
   "subject_name": "django/db/models/base::Model._check_model",
   "tags": [
     "entity:class_method",

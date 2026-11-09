@@ -1,6 +1,6 @@
 # Fact 1b92033a
 
-Store id: 229af3c3-6d88-49c8-9b3f-97d6dc8051d8
+Store id: dd177be9-a080-42b0-8da0-a790fffb1f3e
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete(self, save=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2104590+00:00`
+- posted_at: `2026-11-09T23:31:57.3689340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 111,
     "symbol": "FieldFile.delete"
   },
-  "id": "229af3c3-6d88-49c8-9b3f-97d6dc8051d8",
+  "id": "dd177be9-a080-42b0-8da0-a790fffb1f3e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2104590+00:00"
+    "posted_at": "2026-11-09T23:31:57.3689340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c9b66d94-1053-4557-9451-ba214ed88979",
+  "subject_id": "c6a85c3a-d1ba-4e80-ae8e-09ba132b8902",
   "subject_name": "django/db/models/fields/files::FieldFile.delete",
   "tags": [
     "entity:method"

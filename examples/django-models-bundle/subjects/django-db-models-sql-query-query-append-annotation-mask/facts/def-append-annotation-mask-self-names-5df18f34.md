@@ -1,6 +1,6 @@
 # Fact 5df18f34
 
-Store id: 8d17cd53-c0ca-4ebf-a17e-82d0cd328cc1
+Store id: 9435ed89-06e3-4c1f-b850-9e14d9575b90
 
 ## Text
 
@@ -20,7 +20,7 @@ def append_annotation_mask(self, names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5283600+00:00`
+- posted_at: `2026-11-09T23:32:07.1181290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2568,
     "symbol": "Query.append_annotation_mask"
   },
-  "id": "8d17cd53-c0ca-4ebf-a17e-82d0cd328cc1",
+  "id": "9435ed89-06e3-4c1f-b850-9e14d9575b90",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5283600+00:00"
+    "posted_at": "2026-11-09T23:32:07.1181290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "adcc9f3f-5e2a-4eb0-a2b5-c592df16fb6b",
+  "subject_id": "e617652e-637d-44b6-a71a-3ce0b0fe96e0",
   "subject_name": "django/db/models/sql/query::Query.append_annotation_mask",
   "tags": [
     "entity:method"

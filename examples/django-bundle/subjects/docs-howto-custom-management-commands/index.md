@@ -1,14 +1,14 @@
 # docs/howto/custom-management-commands
 
-- Subject: docs/howto/custom-management-commands (id `b2dd7732-c304-4737-be57-085c8376c758`)
+- Subject: docs/howto/custom-management-commands (id `c41c976f-d55b-4ef4-9682-64b3e78662e1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 20 of 116
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4701 tokens
+- Facts shown: 115 of 116
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - poll.opened = False poll.save() [6b53af87]
 - self.stdout.write( self.style.SUCCESS('Successfully closed poll "%s"' % poll_id) ) [7c9b74e9]
@@ -31,6 +31,100 @@
 - Entry point to add parser arguments to handle command line arguments passed to the command. Custom commands should override this method to add both positional and optional arguments accepted by the command. Calling ``super()`` is not needed when directly subclassing ``BaseCommand``. [d69f16a6]
 - If you implement ``__init__`` in your subclass of :class:`BaseCommand`, you must call :class:`BaseCommand`’s ``__init__``:: [eb91add2]
 
-## Beyond the budget
+## All facts
 
-95 more facts did not fit in the budget: [28b7dc93] [917dd412] [1ba0160b] [d881abde] [b242fa17] [091d6e3d] [424738ec] [fcb7b0ab] [b1988be3] [f57155b4] [a60da509] [7531d187] [ac21212e] [4f61d193] [2f8a15d6] [8a5f987e] [5d7e19b4] [e6891a34] [a13b5c66] [580840f3] [faea555b] [599cae7d] [7c8e02be] [d9db3ca3] [f970fedb] [903b71f2] [a519a974] [d1c1a176] [3799d7cc] [d644051d] [e5afc565] [a4123769] [75efcc67] [f7cc0c26] [6fb1b697] [69c3afb7] [912df12d] [9662a1d6] [82a17df8] [fdd558af] [5063901b] [aaf0eea7] [4e230af1] [3a9340cd0d877339-2] [ae8f5ba9] [5256352b] [c7fa06f2] [6fcdba99] [f0879eb8] [e9aa7758] [c53ea39c] [0f67f80d] [4358bbd4] [51cd3658] [dda9c8be] [55a36081] [7cfa64ae] [dcd2168f] [14c9e3d0] [9d273a80] [43c71c60] [4a661b75] [6a6afc26] [bb91fb20711fda29] [1eb3105e] [59a3c035] [572a9146] [a0033136] [9cde4913] [f16def0d] [4e0e04c9] [9c9d49e0] [91bbea73] [9ea00dc5] [6d8e9208] [d1bd9d0b] [52de68c2] [d5882157dc780592] [3c80bde9] [26948de8] [7112719f] [77b9525b] [81bec9f6] [2a042191630e69fa] [071de544] [bd908a20] [96461863] [bb459a53] [d403b3ab] [b4ab9c90] [79922f8a] [2687a5da] [70c1e577] [248c277e] [72cc687f]
+- [28b7dc93] If ``app_configs`` and ``tags`` are both ``None``, all system checks are performed except deployment and database related checks. ``tags`` can be a list of check tags, like ``compatibility`` or ``models``.
+- [917dd412] If you pass the :option:`--no-color` option when running your command, all ``self.style()`` calls will return the original string uncolored.
+- [1ba0160b] If your command defines mandatory positional arguments, you can customize the message error returned in the case of missing arguments. The default is output by :mod:`argparse` ("too few arguments").
+- [d881abde] It may return a string which will be printed to ``stdout`` (wrapped by ``BEGIN;`` and ``COMMIT;`` if :attr:`output_transaction` is ``True``).
+- [b242fa17] Override this method to change the values supplied to :meth:`check`. For example, to opt into database related checks you can override ``get_check_kwargs()`` as follows::
+- [091d6e3d] Perform the command's actions for ``app_config``, which will be an :class:`~django.apps.AppConfig` instance corresponding to an application label given on the command line.
+- [424738ec] Perform the command's actions for ``label``, which will be the string as given on the command line.
+- [fcb7b0ab] Returns a ``CommandParser`` instance, which is an :class:`~argparse.ArgumentParser` subclass with a few customizations for Django.
+- [b1988be3] Returns the Django version, which should be correct for all built-in Django commands. User-supplied commands can override this method to return their own version.
+- [f57155b4] See :ref:`syntax-coloring` to learn how to modify the color palette and to see the available styles (use uppercased versions of the "roles" described in that section).
+- [a60da509] Supplies kwargs for the call to :meth:`check`, including transforming the value of :attr:`requires_system_checks` to the ``tag`` kwarg.
+- [7531d187] The actual logic of the command. Subclasses must implement this method.
+- [ac21212e] The default command options to suppress in the help output. This should be a set of option names (e.g. ``'--verbosity'``). The default values for the suppressed options are still passed.
+- [4f61d193] Tries to execute this command, performing system checks if needed (as controlled by the :attr:`requires_system_checks` attribute). If the command raises a :exc:`CommandError`, it's intercepted and printed to ``stderr``.
+- [2f8a15d6] Uses the system check framework to inspect the entire Django project for potential problems. Serious problems are raised as a :exc:`CommandError`; warnings are output to ``stderr``; minor notifications are output to ``stdout``.
+- [8a5f987e] You can customize the instance by overriding this method and calling ``super()`` with ``kwargs`` of :class:`~argparse.ArgumentParser` parameters.
+- [5d7e19b4] You can pass ``include_deployment_checks=True`` to also perform deployment checks, and list of database aliases in the ``databases`` to run database related checks against them.
+- [e6891a34] ``execute()`` should not be called directly from your code to execute a command. Use :func:`~django.core.management.call_command` instead.
+- [a13b5c66] class Command(BaseCommand): ...
+- [580840f3] class Command(BaseCommand): def add_arguments(self, parser): # Positional arguments parser.add_argument("poll_ids", nargs="+", type=int)
+- [faea555b] class Command(BaseCommand): help = "Closes the specified poll for voting"
+- [599cae7d] from django.core.management.base import BaseCommand, CommandError from polls.models import Question as Poll
+- [7c8e02be] from django.core.management.base import BaseCommand, no_translations
+- [d9db3ca3] polls/ __init__.py models.py management/ __init__.py commands/ __init__.py _private.py closepoll.py tests.py views.py
+- [f970fedb] .. _custom-commands-options:
+- [903b71f2] .. _management-commands-and-locales:
+- [a519a974] .. _management-commands-output:
+- [d1c1a176] .. _overriding-commands:
+- [3799d7cc] .. _ref-basecommand-subclasses:
+- [d644051d] .. admonition:: Calling a management command in your code
+- [e5afc565] .. admonition:: Implementing a constructor in a subclass
+- [a4123769] .. admonition:: Standalone scripts
+- [75efcc67] .. attribute:: BaseCommand.help
+- [f7cc0c26] .. attribute:: BaseCommand.missing_args_message
+- [6fb1b697] .. attribute:: BaseCommand.output_transaction
+- [69c3afb7] .. attribute:: BaseCommand.requires_migrations_checks
+- [912df12d] .. attribute:: BaseCommand.requires_system_checks
+- [9662a1d6] .. attribute:: BaseCommand.style
+- [82a17df8] .. attribute:: BaseCommand.suppressed_base_arguments
+- [fdd558af] .. attribute:: LabelCommand.label
+- [5063901b] .. class:: AppCommand
+- [aaf0eea7] .. class:: BaseCommand
+- [4e230af1] .. class:: LabelCommand
+- [3a9340cd0d877339-2] .. code-block:: text
+- [ae8f5ba9] .. exception:: CommandError(returncode=1)
+- [5256352b] .. method:: AppCommand.handle_app_config(app_config, **options)
+- [c7fa06f2] .. method:: BaseCommand.add_arguments(parser)
+- [6fcdba99] .. method:: BaseCommand.check(app_configs=None, tags=None,display_num_errors=False, include_deployment_checks=False, fail_level=checks.ERROR, databases=None)
+- [f0879eb8] .. method:: BaseCommand.create_parser(prog_name, subcommand, **kwargs)
+- [e9aa7758] .. method:: BaseCommand.execute(*args, **options)
+- [c53ea39c] .. method:: BaseCommand.get_check_kwargs(options)
+- [0f67f80d] .. method:: BaseCommand.get_version()
+- [4358bbd4] .. method:: BaseCommand.handle(*args, **options)
+- [51cd3658] .. method:: LabelCommand.handle_label(label, **options)
+- [dda9c8be] .. module:: django.core.management
+- [55a36081] .. note:: When you are using management commands and wish to provide console output, you should write to ``self.stdout`` and ``self.stderr``, instead of printing to ``stdout`` and ``stderr`` directly. By using these proxies, it becomes much easier to test your custom command. Note also that you don't need to end messages with a newline character, it will be added automatically, unless you specify the ``ending`` parameter::
+- [7cfa64ae] :class:`BaseCommand` has a few methods that can be overridden but only the :meth:`~BaseCommand.handle` method must be implemented.
+- [dcd2168f] ============================================== How to create custom ``django-admin`` commands ==============================================
+- [14c9e3d0] A management command which takes one or more arbitrary arguments (labels) on the command line, and does something with each of them.
+- [9d273a80] A management command which takes one or more installed application labels as arguments, and does something with each of them.
+- [43c71c60] Accepting optional arguments ============================
+- [4a661b75] All attributes can be set in your derived class and can be used in :class:`BaseCommand`’s :ref:`subclasses<ref-basecommand-subclasses>`.
+- [6a6afc26] Applications can register their own actions with ``manage.py``. For example, you might want to add a ``manage.py`` action for a Django app that you're distributing. In this document, we will be building a custom ``closepoll`` command for the ``polls`` application from the :doc:`tutorial</intro/tutorial01>`.
+- [bb91fb20711fda29] Attributes ----------
+- [1eb3105e] By default, management commands are executed with the current active locale.
+- [59a3c035] Command exceptions ------------------
+- [572a9146] Command objects ===============
+- [a0033136] Django registers the built-in commands and then searches for commands in :setting:`INSTALLED_APPS` in reverse. During the search, if a command name duplicates an already registered command, the newly discovered command overrides the first.
+- [9cde4913] Exception class indicating a problem while executing a management command.
+- [f16def0d] If a management command is called from code through :func:`~django.core.management.call_command`, it's up to you to catch the exception when needed.
+- [4e0e04c9] If this exception is raised during the execution of a management command from a command line console, it will be caught and turned into a nicely-printed error message to the appropriate output stream (i.e., ``stderr``); as a result, raising this exception (with a sensible description of the error) is the preferred way to indicate that something has gone wrong in the execution of a command. It accepts the optional ``returncode`` argument to customize the exit status for the management command to exit with, using :func:`sys.exit`.
+- [9c9d49e0] If, for some reason, your custom management command must run without an active locale (for example, to prevent translated content from being inserted into the database), deactivate translations using the ``@no_translations`` decorator on your :meth:`~BaseCommand.handle` method::
+- [91bbea73] In addition to being able to add custom command line options, all :doc:`management commands</ref/django-admin>` can accept some default options such as :option:`--verbosity` and :option:`--traceback`.
+- [9ea00dc5] In other words, to override a command, the new command must have the same name and its app must be before the overridden command's app in :setting:`INSTALLED_APPS`.
+- [6d8e9208] In this example, the ``closepoll`` command will be made available to any project that includes the ``polls`` application in :setting:`INSTALLED_APPS`.
+- [d1bd9d0b] Information on how to test custom management commands can be found in the :ref:`testing docs <topics-testing-management-commands>`.
+- [52de68c2] Management commands from third-party apps that have been unintentionally overridden can be made available under a new name by creating a new command in one of your project's apps (ordered before the third-party app in :setting:`INSTALLED_APPS`) which imports the ``Command`` of the overridden command.
+- [d5882157dc780592] Methods -------
+- [3c80bde9] Overriding commands ===================
+- [26948de8] Rather than implementing :meth:`~BaseCommand.handle`, subclasses must implement :meth:`~AppCommand.handle_app_config`, which will be called once for each application.
+- [7112719f] Rather than implementing :meth:`~BaseCommand.handle`, subclasses must implement :meth:`~LabelCommand.handle_label`, which will be called once for each label.
+- [77b9525b] Since translation deactivation requires access to configured settings, the decorator can't be used for commands that work without configured settings.
+- [81bec9f6] Subclassing the :class:`BaseCommand` class requires that you implement the :meth:`~BaseCommand.handle` method.
+- [2a042191630e69fa] Testing =======
+- [071de544] The ``_private.py`` module will not be available as a management command.
+- [bd908a20] The ``closepoll.py`` module has only one requirement -- it must define a class ``Command`` that extends :class:`BaseCommand` or one of its :ref:`subclasses<ref-basecommand-subclasses>`.
+- [96461863] The ``handle()`` method takes one or more ``poll_ids`` and sets ``poll.opened`` to ``False`` for each one. If the user referenced any nonexistent polls, a :exc:`CommandError` is raised. The ``poll.opened`` attribute does not exist in the :doc:`tutorial</intro/tutorial02>` and was added to ``polls.models.Question`` for this example.
+- [bb459a53] The base class from which all management commands ultimately derive.
+- [d403b3ab] The new custom command can be called using ``python manage.py closepoll <poll_ids>``.
+- [b4ab9c90] The option (``delete`` in our example) is available in the options dict parameter of the handle method. See the :mod:`argparse` Python documentation for more about ``add_argument`` usage.
+- [79922f8a] The same ``closepoll`` could be easily modified to delete a given poll instead of closing it by accepting additional command line options. These custom options can be added in the :meth:`~BaseCommand.add_arguments` method like this::
+- [2687a5da] To do this, add a ``management/commands`` directory to the application. Django will register a ``manage.py`` command for each Python module in that directory whose name doesn't begin with an underscore. For example:
+- [70c1e577] To implement the command, edit ``polls/management/commands/closepoll.py`` to look like this::
+- [248c277e] Use this class if you want access to all of the mechanisms which parse the command-line arguments and work out what code to call in response; if you don't need to change any of that behavior, consider using one of its :ref:`subclasses<ref-basecommand-subclasses>`.
+- [72cc687f] ``BaseCommand`` subclasses --------------------------

@@ -1,9 +1,9 @@
 # django/db/models/fields/files::ImageFieldFile._set_instance_attribute
 
-- Subject: django/db/models/fields/files::ImageFieldFile._set_instance_attribute (id `3b77d49e-9ddb-4015-aa67-5d68e33cab5d`)
+- Subject: django/db/models/fields/files::ImageFieldFile._set_instance_attribute (id `d0f66fd4-5a6d-4eca-9f5b-05fdc20dc7b8`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

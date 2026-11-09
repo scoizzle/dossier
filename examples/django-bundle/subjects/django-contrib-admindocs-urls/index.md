@@ -1,8 +1,8 @@
 # django/contrib/admindocs/urls
 
-- Subject: django/contrib/admindocs/urls (id `29bdaee2-9d9f-470a-bda8-91405c83c5d3`)
+- Subject: django/contrib/admindocs/urls (id `9b38caa1-6f33-4a8e-ae90-af715c85c0aa`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 276 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

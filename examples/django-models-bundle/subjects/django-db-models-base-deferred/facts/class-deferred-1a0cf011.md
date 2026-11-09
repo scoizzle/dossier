@@ -1,6 +1,6 @@
 # Fact 1a0cf011
 
-Store id: 1f415c40-a4e0-4b7b-997a-9b84a5d9cb07
+Store id: 775d9017-5d87-48fd-8dee-95f997622bb1
 
 ## Text
 
@@ -20,7 +20,7 @@ class Deferred
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3077830+00:00`
+- posted_at: `2026-11-09T23:31:53.7041140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 61,
     "symbol": "Deferred"
   },
-  "id": "1f415c40-a4e0-4b7b-997a-9b84a5d9cb07",
+  "id": "775d9017-5d87-48fd-8dee-95f997622bb1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3077830+00:00"
+    "posted_at": "2026-11-09T23:31:53.7041140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ca04099e-02db-4912-bacf-5f70a11e835d",
+  "subject_id": "430df230-56ea-4c57-bf91-0dd944479b26",
   "subject_name": "django/db/models/base::Deferred",
   "tags": [
     "entity:class"

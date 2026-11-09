@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::URLField
 
-- Subject: django/db/models/fields/__init__::URLField (id `92219de1-b0f8-4018-a780-b1f829ad800d`)
+- Subject: django/db/models/fields/__init__::URLField (id `e58bdd34-ecd1-47fa-b3b3-b6b96ffc801d`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

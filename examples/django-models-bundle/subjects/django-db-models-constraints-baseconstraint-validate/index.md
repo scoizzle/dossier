@@ -1,9 +1,9 @@
 # django/db/models/constraints::BaseConstraint.validate
 
-- Subject: django/db/models/constraints::BaseConstraint.validate (id `193d83f2-1a6d-4828-901a-08de5093c33d`)
+- Subject: django/db/models/constraints::BaseConstraint.validate (id `6559806e-4f56-46cb-b683-bcd5e235128e`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

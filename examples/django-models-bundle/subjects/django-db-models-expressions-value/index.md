@@ -1,9 +1,9 @@
 # django/db/models/expressions::Value
 
-- Subject: django/db/models/expressions::Value (id `4ce052aa-d339-45db-8417-42ad4c7b597f`)
+- Subject: django/db/models/expressions::Value (id `63b92ec8-f38e-42eb-8465-d9e5c50a6849`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

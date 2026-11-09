@@ -1,14 +1,14 @@
 # django/template/backends/jinja2
 
-- Subject: django/template/backends/jinja2 (id `e22dbedd-e1d3-4e7e-8dfc-2ec72da224b3`)
+- Subject: django/template/backends/jinja2 (id `e62621e5-d71e-47d3-95c5-21d9e414b314`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 14 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1017 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - environment = options.pop("environment", "jinja2.Environment") environment_cls = import_string(environment) [82822e9e]
 - if "loader" not in options: options["loader"] = jinja2.FileSystemLoader(self.template_dirs) options.setdefault("autoescape", True) options.setdefault("auto_reload", settings.DEBUG) options.setdefault( "undefined", jinja2.DebugUndefined if settings.DEBUG else jinja2.Undefined ) [2de19644]
@@ -25,6 +25,9 @@
 - class Template: def __init__(self, template, backend): self.template = template self.backend = backend self.origin = Origin( name=template.filename, template_name=template.name, ) [5b656f63]
 - def get_exception_info(exception): """ Format exception information for display on the debug page using the structure described in the template API documentation. """ context_lines = 10 lineno = exception.lineno source = exception.source if source is None: exception_file = Path(exception.filename) if exception_file.exists(): source = exception_file.read_text() if source is not None: lines = list(enumerate(source.strip().split("\n"), start=1)) during = lines[lineno - 1][1] total = len(lines) top = max(0, lineno - context_lines - 1) bottom = min(total, lineno + context_lines) else: during = "" lines = [] total = top = bottom = 0 return { "name": exception.filename, "message": exception.message, "source_lines": lines[top:bottom], "line": lineno, "before": "", "during": during, "after": "", "total": total, "top": top, "bottom": bottom, } [1d8285ea]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [6dc76df570a737ae-2] [cc536303] [8d8744708e7830c8-4] [1cd3526d]
+- [6dc76df570a737ae-2] from .base import BaseEngine from .utils import csrf_input_lazy, csrf_token_lazy
+- [cc536303] from django.conf import settings from django.template import TemplateDoesNotExist, TemplateSyntaxError from django.utils.functional import cached_property from django.utils.module_loading import import_string
+- [8d8744708e7830c8-4] from pathlib import Path
+- [1cd3526d] import jinja2

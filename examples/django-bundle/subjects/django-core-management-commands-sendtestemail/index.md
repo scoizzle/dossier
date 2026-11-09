@@ -1,8 +1,8 @@
 # django/core/management/commands/sendtestemail
 
-- Subject: django/core/management/commands/sendtestemail (id `2e041fad-0688-4442-a64e-43edde4026e1`)
+- Subject: django/core/management/commands/sendtestemail (id `1c0e5ecb-29c6-4159-85ab-32dacbec6c25`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 399 tokens
 - Facts shown: 7 of 8
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 5a09d084
 
-Store id: f3787cdb-3213-4484-8751-9f373de38349
+Store id: 701b16e4-4ade-43ce-8d04-a04a1963ccf4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_child_with_renamed_prefix
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5840140+00:00`
+- posted_at: `2026-11-09T23:32:07.1866820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f3787cdb-3213-4484-8751-9f373de38349",
+  "id": "701b16e4-4ade-43ce-8d04-a04a1963ccf4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5840140+00:00"
+    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_child_with_renamed_prefix"
       },
       "rel": "contains",
-      "target": "6d27e888-767d-4b15-a6bd-84aa224328f2"
+      "target": "844225ec-6ae1-44c1-a507-3e47b204b4d5"
     }
   ],
   "status": "live",
-  "subject_id": "414527cc-92ff-4d99-a78e-04fa25656e92",
+  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

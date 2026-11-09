@@ -1,6 +1,6 @@
 # Fact f03884ba
 
-Store id: f209fefc-6da1-4a05-a53b-bb6b81d6f923
+Store id: 4cca32bb-4ab3-41a0-a35d-46e16449c7c0
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aclear(self, *, bulk=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8315240+00:00`
+- posted_at: `2026-11-09T23:31:59.2901150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 972,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.aclear"
   },
-  "id": "f209fefc-6da1-4a05-a53b-bb6b81d6f923",
+  "id": "4cca32bb-4ab3-41a0-a35d-46e16449c7c0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8315240+00:00"
+    "posted_at": "2026-11-09T23:31:59.2901150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c398ed6-dbcc-4877-b558-76123d70e798",
+  "subject_id": "6588cf6f-bacd-4318-8229-5bccb3276d19",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aclear",
   "tags": [
     "entity:method",

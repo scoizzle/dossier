@@ -1,6 +1,6 @@
 # Fact 2dbc1610
 
-Store id: eebce957-f435-4289-8be3-923566c2012e
+Store id: 619cb3f6-65ff-47f7-884c-aca28eee080d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ACos
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "eebce957-f435-4289-8be3-923566c2012e",
+  "id": "619cb3f6-65ff-47f7-884c-aca28eee080d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ACos"
       },
       "rel": "contains",
-      "target": "fdbe6b60-fdda-4de3-b7de-a840b1349d7b"
+      "target": "de36702a-e8ea-42fe-8d25-d3bf865a0813"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

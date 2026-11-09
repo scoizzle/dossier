@@ -1,8 +1,8 @@
 # django/core/serializers/jsonl
 
-- Subject: django/core/serializers/jsonl (id `c914eb0b-f3c7-4ea7-b12f-af0044e747cf`)
+- Subject: django/core/serializers/jsonl (id `5c0a9fca-5107-43d4-aa7b-4dcef3c4c717`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 609 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 498d91e4
 
-Store id: 0b206d07-68b1-4c79-8052-4e6683b230eb
+Store id: 98c373d7-5612-4ee2-bb88-f6878d210e92
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_bulk_create_options( self, ignore_conflicts, update_conflicts, update
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4115750+00:00`
+- posted_at: `2026-11-09T23:32:04.4004690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 779,
     "symbol": "QuerySet._check_bulk_create_options"
   },
-  "id": "0b206d07-68b1-4c79-8052-4e6683b230eb",
+  "id": "98c373d7-5612-4ee2-bb88-f6878d210e92",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4115750+00:00"
+    "posted_at": "2026-11-09T23:32:04.4004690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fd387ce3-f48d-44ba-9872-62ac7a22d982",
+  "subject_id": "197a5f6b-5eeb-4da0-a627-7801a6b39a64",
   "subject_name": "django/db/models/query::QuerySet._check_bulk_create_options",
   "tags": [
     "entity:method"

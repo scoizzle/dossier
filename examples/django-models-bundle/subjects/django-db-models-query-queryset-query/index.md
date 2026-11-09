@@ -1,10 +1,10 @@
 # django/db/models/query::QuerySet.query
 
-- Subject: django/db/models/query::QuerySet.query (id `c2c1e427-4d28-4d21-95f3-4bc57a14f5be`)
+- Subject: django/db/models/query::QuerySet.query (id `bc6d165a-d894-4bd6-9d8a-c9740fe6f072`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Aliases: django/db/models/query::QuerySet.query
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 82 tokens
 - Facts shown: 2 of 2
 - Conflicts: 2

@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._check_bulk_create_options
 
-- Subject: django/db/models/query::QuerySet._check_bulk_create_options (id `fd387ce3-f48d-44ba-9872-62ac7a22d982`)
+- Subject: django/db/models/query::QuerySet._check_bulk_create_options (id `197a5f6b-5eeb-4da0-a627-7801a6b39a64`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

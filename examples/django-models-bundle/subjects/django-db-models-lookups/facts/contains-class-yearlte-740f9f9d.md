@@ -1,6 +1,6 @@
 # Fact 740f9f9d
 
-Store id: 6c2fe58b-9422-4b41-b310-2d3918a08932
+Store id: fe5bc2d9-dd19-4511-9c42-1a646e71817a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class YearLte
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6c2fe58b-9422-4b41-b310-2d3918a08932",
+  "id": "fe5bc2d9-dd19-4511-9c42-1a646e71817a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "YearLte"
       },
       "rel": "contains",
-      "target": "b8c9e31b-e38f-43a2-814b-3ab575eaf5a5"
+      "target": "dc2593b3-944d-4c29-929e-7cc29d683f8c"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

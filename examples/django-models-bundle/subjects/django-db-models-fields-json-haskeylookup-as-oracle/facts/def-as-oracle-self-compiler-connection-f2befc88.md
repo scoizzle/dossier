@@ -1,6 +1,6 @@
 # Fact f2befc88
 
-Store id: 0b30ee6d-17d3-4a23-9fe9-01a83c550449
+Store id: ef554c07-23cf-4fed-9ca5-82bfe547a743
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6465530+00:00`
+- posted_at: `2026-11-09T23:31:57.8895150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 237,
     "symbol": "HasKeyLookup.as_oracle"
   },
-  "id": "0b30ee6d-17d3-4a23-9fe9-01a83c550449",
+  "id": "ef554c07-23cf-4fed-9ca5-82bfe547a743",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6465530+00:00"
+    "posted_at": "2026-11-09T23:31:57.8895150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fa715e09-e187-4e39-a532-c3b560ff1fc2",
+  "subject_id": "171c6cf5-fd52-4696-8452-1a5bc429288a",
   "subject_name": "django/db/models/fields/json::HasKeyLookup.as_oracle",
   "tags": [
     "entity:method"

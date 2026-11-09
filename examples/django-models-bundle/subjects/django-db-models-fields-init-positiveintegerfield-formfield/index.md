@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::PositiveIntegerField.formfield
 
-- Subject: django/db/models/fields/__init__::PositiveIntegerField.formfield (id `89f6f4ea-7afa-414f-9556-a76268dd7171`)
+- Subject: django/db/models/fields/__init__::PositiveIntegerField.formfield (id `b2ef0785-6e79-4c01-9b53-cbe5b9823909`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

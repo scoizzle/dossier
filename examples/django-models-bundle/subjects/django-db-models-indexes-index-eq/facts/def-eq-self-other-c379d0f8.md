@@ -1,6 +1,6 @@
 # Fact c379d0f8
 
-Store id: 537cbade-7ae4-4b94-90d8-7249d8198c16
+Store id: 832aa249-1b1d-4d63-b6b4-04be79f0f8c6
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.8090770+00:00`
+- posted_at: `2026-11-09T23:32:02.9454860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 301,
     "symbol": "Index.__eq__"
   },
-  "id": "537cbade-7ae4-4b94-90d8-7249d8198c16",
+  "id": "832aa249-1b1d-4d63-b6b4-04be79f0f8c6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.8090770+00:00"
+    "posted_at": "2026-11-09T23:32:02.9454860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ef8bab63-c05c-4929-8d8c-8f362b720d2e",
+  "subject_id": "375894b6-66a6-4dec-a48d-1bb2d4e94a26",
   "subject_name": "django/db/models/indexes::Index.__eq__",
   "tags": [
     "entity:method"

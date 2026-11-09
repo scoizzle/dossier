@@ -1,6 +1,6 @@
 # Fact b8c530e5
 
-Store id: 0c484a86-d299-4c3e-8d93-5f3e41492fa2
+Store id: a1537a8c-fc4d-4beb-901f-057ce49a115d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ColPairs
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0c484a86-d299-4c3e-8d93-5f3e41492fa2",
+  "id": "a1537a8c-fc4d-4beb-901f-057ce49a115d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ColPairs"
       },
       "rel": "contains",
-      "target": "b384036e-bc95-4c69-94a7-476a070b2d27"
+      "target": "5e988d55-8960-4295-85b5-ac5aa46b0575"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

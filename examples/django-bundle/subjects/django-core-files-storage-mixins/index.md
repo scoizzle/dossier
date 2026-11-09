@@ -1,8 +1,8 @@
 # django/core/files/storage/mixins
 
-- Subject: django/core/files/storage/mixins (id `c1027f4d-1208-442d-a731-501e57c4d4d5`)
+- Subject: django/core/files/storage/mixins (id `cee588e2-d178-4dfc-9a8c-ae7fb85648e4`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 167 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

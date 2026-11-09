@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query._get_defer_select_mask
 
-- Subject: django/db/models/sql/query::Query._get_defer_select_mask (id `b729e14f-a1d8-4337-96af-63dfaf9f2f94`)
+- Subject: django/db/models/sql/query::Query._get_defer_select_mask (id `0e000b5d-3c28-446d-8f70-aeb6db4f19b1`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

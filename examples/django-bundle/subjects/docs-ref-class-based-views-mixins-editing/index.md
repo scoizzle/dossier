@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/mixins-editing
 
-- Subject: docs/ref/class-based-views/mixins-editing (id `9cd1709d-0eaf-4489-867e-79a5b00d3281`)
+- Subject: docs/ref/class-based-views/mixins-editing (id `e2bcc045-40a5-46dd-a2b8-0f498730ecf7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 21 of 89
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2494 tokens
+- Facts shown: 82 of 89
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - A dictionary containing initial data for the form. [367b9adf]
 - A list of names of fields. This is interpreted the same way as the ``Meta.fields`` attribute of :class:`~django.forms.ModelForm`. [12dcf2c7]
@@ -32,6 +32,66 @@
 - Saves the form instance, sets the current object for the view, and redirects to :meth:`~django.views.generic.edit.FormMixin.get_success_url`. [be64dfdf]
 - **Extends** [f3c346391998d9e9]
 
-## Beyond the budget
+## All facts
 
-61 more facts did not fit in the budget: [42e9e7f4] [a04ae0aec67217fe] [a3b1e058] [2d8fdae1] [fbc0cda8] [77ac1e34] [19af86eb] [83b55070] [e230f903] [f9349e9ad1d5a49b] [b7741a2ef07f59a9-2] [4b3897c8] [83eda2cf63eef8ea-7] [83eda2cf63eef8ea-8] [83eda2cf63eef8ea-9] [83eda2cf63eef8ea-10] [77f7bed952734363-2] [77f7bed952734363-3] [4594547e83cf579d] [c1c3dd7a88acbfd9-2] [efc99b2f] [a598e6014e379321] [c8555890] [d948684d623396b8] [d948684d623396b8-2] [d948684d623396b8-3] [5b217977] [70328cbf1afacfb2] [70328cbf1afacfb2-2] [a8aff823457fbc46] [a8aff823457fbc46-2] [3c13e900595e87cf-5] [0e06ba1d6d133a88] [e62d2bac] [49f66c59b0adc462] [ece6b9e38d9cdfad] [8eb92c30] [1d04127c] [f18c4be0de7a5b22] [cc72feb621724713-3] [099bc8a8] [942ae6c11625c81c-28] [a292278a] [7ff2678e] [36b0f6b4] [ade185f8] [79f1a1e5] [15fbb44b] [e6126e42] [8620ca8f] [7c720ba4] [84c731b2] [498c5f59] [c0ece66d] [942ae6c11625c81c-29] [e3c97d2c] [9cf4e64e] [5d8af19e] [25f815d4] [bf61bfec] [8a19b7ee]
+- [42e9e7f4] The :attr:`~django.forms.Form.prefix` for the generated form.
+- [a04ae0aec67217fe] The URL to redirect to when the form is successfully processed.
+- [a3b1e058] The ``PUT`` action is also handled and passes all parameters through to :meth:`post`.
+- [2d8fdae1] The ``initial`` argument is set to :meth:`.get_initial`. If the request is a ``POST`` or ``PUT``, the request data (``request.POST`` and ``request.FILES``) will also be provided.
+- [fbc0cda8] The form class to instantiate.
+- [77ac1e34] The url to redirect to when the nominated object has been successfully deleted.
+- [19af86eb] This is a required attribute if you are generating the form class automatically (e.g. using ``model``). Omitting this attribute will result in an :exc:`~django.core.exceptions.ImproperlyConfigured` exception.
+- [83b55070] This is named 'ProcessFormView' and inherits directly from :class:`django.views.generic.base.View`, but breaks if used independently, so it is more of a mixin.
+- [e230f903] ``success_url`` may contain dictionary string formatting, which will be interpolated against the object's field attributes. For example, you could use ``success_url="/polls/{slug}/"`` to redirect to a URL composed out of the ``slug`` field on a model.
+- [f9349e9ad1d5a49b] * :class:`django.views.generic.base.ContextMixin`
+- [b7741a2ef07f59a9-2] * :class:`django.views.generic.base.View`
+- [4b3897c8] * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.detail.SingleObjectMixin`
+- [83eda2cf63eef8ea-7] **Methods and Attributes**
+- [83eda2cf63eef8ea-8] **Methods and Attributes**
+- [83eda2cf63eef8ea-9] **Methods and Attributes**
+- [83eda2cf63eef8ea-10] **Methods and Attributes**
+- [77f7bed952734363-2] **Mixins**
+- [77f7bed952734363-3] **Mixins**
+- [4594547e83cf579d] .. attribute:: fields
+- [c1c3dd7a88acbfd9-2] .. attribute:: form_class
+- [efc99b2f] .. attribute:: initial
+- [a598e6014e379321] .. attribute:: model
+- [c8555890] .. attribute:: prefix
+- [d948684d623396b8] .. attribute:: success_url
+- [d948684d623396b8-2] .. attribute:: success_url
+- [d948684d623396b8-3] .. attribute:: success_url
+- [5b217977] .. method:: delete(request, *args, **kwargs)
+- [70328cbf1afacfb2] .. method:: form_invalid(form)
+- [70328cbf1afacfb2-2] .. method:: form_invalid(form)
+- [a8aff823457fbc46] .. method:: form_valid(form)
+- [a8aff823457fbc46-2] .. method:: form_valid(form)
+- [3c13e900595e87cf-5] .. method:: get(request, *args, **kwargs)
+- [0e06ba1d6d133a88] .. method:: get_context_data(**kwargs)
+- [e62d2bac] .. method:: get_form(form_class=None)
+- [49f66c59b0adc462] .. method:: get_form_class()
+- [ece6b9e38d9cdfad] .. method:: get_form_kwargs()
+- [8eb92c30] .. method:: get_initial()
+- [1d04127c] .. method:: get_prefix()
+- [f18c4be0de7a5b22] .. method:: get_success_url()
+- [cc72feb621724713-3] .. method:: post(request, *args, **kwargs)
+- [099bc8a8] .. method:: put(*args, **kwargs)
+- [942ae6c11625c81c-28] .. note::
+- [a292278a] A form mixin that provides facilities for working with a ``ModelForm``, rather than a standalone form.
+- [7ff2678e] A mixin class that provides facilities for creating and displaying forms.
+- [36b0f6b4] A mixin that provides basic HTTP GET and POST workflow.
+- [ade185f8] Enables handling of the ``DELETE`` HTTP action.
+- [79f1a1e5] Examples of how these are combined into editing views can be found at the documentation on :doc:`/ref/class-based-views/generic-editing`.
+- [15fbb44b] If you specify both the :attr:`~django.views.generic.edit.ModelFormMixin.fields` and :attr:`~django.views.generic.edit.FormMixin.form_class` attributes, an :exc:`~django.core.exceptions.ImproperlyConfigured` exception will be raised.
+- [e6126e42] Since this is a subclass of :class:`~django.views.generic.detail.SingleObjectMixin`, instances of this mixin have access to the :attr:`~django.views.generic.detail.SingleObjectMixin.model` and :attr:`~django.views.generic.detail.SingleObjectMixin.queryset` attributes, describing the type of object that the ``ModelForm`` is manipulating.
+- [8620ca8f] * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.edit.ModelFormMixin` * :class:`django.views.generic.edit.ProcessFormView` * :class:`django.views.generic.edit.DeletionMixin`
+- [7c720ba4] .. class:: django.views.generic.edit.DeletionMixin
+- [84c731b2] .. class:: django.views.generic.edit.FormMixin
+- [498c5f59] .. class:: django.views.generic.edit.ModelFormMixin
+- [c0ece66d] .. class:: django.views.generic.edit.ProcessFormView
+- [942ae6c11625c81c-29] .. note::
+- [e3c97d2c] ============== Editing mixins ==============
+- [9cf4e64e] The following mixins are used to construct Django's editing views:
+- [5d8af19e] ``DeletionMixin`` =================
+- [25f815d4] ``FormMixin`` =============
+- [bf61bfec] ``ModelFormMixin`` ==================
+- [8a19b7ee] ``ProcessFormView`` ===================

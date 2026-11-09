@@ -1,14 +1,14 @@
 # django/core/cache/backends/memcached
 
-- Subject: django/core/cache/backends/memcached (id `dc192038-2e81-422a-b6f4-7575744dd167`)
+- Subject: django/core/cache/backends/memcached (id `d92525e2-efcc-4cf8-8478-f3876133b7a4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 885 tokens
-- Facts shown: 19 of 32
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1726 tokens
+- Facts shown: 32 of 32
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Exception type raised by the underlying client library for a # nonexistent key. self.LibraryValueNotFoundException = value_not_found_exception [ab366fe5]
 - if timeout > 2592000: # 60*60*24*30, 30 days # See: # https://github.com/memcached/memcached/wiki/Programming#expiration # "Expiration times can be set from 0, meaning "never expire", to # 30 days. Any time higher than 30 days is interpreted as a Unix # timestamp date. If you want to expire an object on January 1st of # next year, this is how you do that." # # This means that we have to switch to absolute timestamps. timeout += int(time.time()) return int(timeout) [03a9d7a7]
@@ -30,6 +30,18 @@
 - def get(self, key, default=None, version=None): key = self.make_and_validate_key(key, version=version) return self._cache.get(key, default) [1b1c3e7ac0a1ff09]
 - "Memcached cache backend" [49aebb6e]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [2c46c9f6] [e4f6182c] [31410d3a] [054dfe4c] [231e333c] [9bd4c743] [d020544d] [7c623e91] [1fc1f611] [8bb402a4] [2d83c8e2] [b03976dd] [858b9d72]
+- [2c46c9f6] def get_backend_timeout(self, timeout=DEFAULT_TIMEOUT): """ Memcached deals with long (> 30 days) timeouts in a special way. Call this function to obtain a safe value for your timeout. """ if timeout == DEFAULT_TIMEOUT: timeout = self.default_timeout
+- [e4f6182c] def get_many(self, keys, version=None): key_map = { self.make_and_validate_key(key, version=version): key for key in keys } ret = self._cache.get_multi(key_map.keys()) return {key_map[k]: v for k, v in ret.items()}
+- [31410d3a] def incr(self, key, delta=1, version=None): key = self.make_and_validate_key(key, version=version) try: # Memcached doesn't support negative delta. if delta < 0: val = self._cache.decr(key, -delta) else: val = self._cache.incr(key, delta) # Normalize an exception raised by the underlying client library to # ValueError in the event of a nonexistent key when calling # incr()/decr(). except self.LibraryValueNotFoundException: val = None if val is None: raise ValueError("Key '%s' not found" % key) return val
+- [054dfe4c] def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) if not self._cache.set(key, value, self.get_backend_timeout(timeout)): # Make sure the key doesn't keep its old value in case of failure # to set (memcached's 1MB limit). self._cache.delete(key)
+- [231e333c] def set_many(self, data, timeout=DEFAULT_TIMEOUT, version=None): safe_data = {} original_keys = {} for key, value in data.items(): safe_key = self.make_and_validate_key(key, version=version) safe_data[safe_key] = value original_keys[safe_key] = key failed_keys = self._cache.set_multi( safe_data, self.get_backend_timeout(timeout) ) return [original_keys[k] for k in failed_keys]
+- [9bd4c743] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) if timeout == 0: return self._cache.delete(key) return self._cache.touch(key, self.get_backend_timeout(timeout))
+- [d020544d] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) return bool(self._cache.touch(key, self.get_backend_timeout(timeout)))
+- [7c623e91] def validate_key(self, key): for warning in memcache_key_warnings(key): raise InvalidCacheKey(warning)
+- [1fc1f611] class BaseMemcachedCache(BaseCache): def __init__(self, server, params, library, value_not_found_exception): super().__init__(params) if isinstance(server, str): self._servers = re.split("[;,]", server) else: self._servers = server
+- [8bb402a4] class PyLibMCCache(BaseMemcachedCache): "An implementation of a cache binding using pylibmc"
+- [2d83c8e2] class PyMemcacheCache(BaseMemcachedCache): """An implementation of a cache binding using pymemcache."""
+- [b03976dd] from django.core.cache.backends.base import ( DEFAULT_TIMEOUT, BaseCache, InvalidCacheKey, memcache_key_warnings, ) from django.utils.functional import cached_property
+- [858b9d72] import re import time

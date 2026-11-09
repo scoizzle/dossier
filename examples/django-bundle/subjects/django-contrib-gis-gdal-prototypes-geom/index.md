@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/prototypes/geom
 
-- Subject: django/contrib/gis/gdal/prototypes/geom (id `8d949d15-ab0a-43dc-a146-ebcf56d36769`)
+- Subject: django/contrib/gis/gdal/prototypes/geom (id `315e9f39-eadd-4619-a10f-3608e75cddeb`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 9 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1612 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # ### Generation routines specific to this module ### def env_func(f, argtypes): "For getting OGREnvelopes." f.argtypes = argtypes f.restype = None f.errcheck = check_envelope return f [99af82ff]
 - # ### OGR_G ctypes function prototypes ### [5551d05a]
@@ -20,6 +20,14 @@
 - # Geometry modification routines. add_geom = void_output(lgdal.OGR_G_AddGeometry, [c_void_p, c_void_p]) import_wkt = void_output(lgdal.OGR_G_ImportFromWkt, [c_void_p, POINTER(c_char_p)]) [1e063a50]
 - # Geometry spatial-reference related routines. assign_srs = void_output( lgdal.OGR_G_AssignSpatialReference, [c_void_p, c_void_p], errcheck=False ) get_geom_srs = srs_output(lgdal.OGR_G_GetSpatialReference, [c_void_p]) [61e139c2]
 
-## Beyond the budget
+## All facts
 
-9 more facts did not fit in the budget: [2122ba1c] [62631d2a] [8bd1bc9b] [525555f8] [42fa70bf] [2d6495c7] [91fcca29] [abe8d3bd] [d296613f]
+- [2122ba1c] # Geometry properties get_area = double_output(lgdal.OGR_G_GetArea, [c_void_p]) get_centroid = void_output(lgdal.OGR_G_Centroid, [c_void_p, c_void_p]) get_dims = int_output(lgdal.OGR_G_GetDimension, [c_void_p]) get_coord_dim = int_output(lgdal.OGR_G_CoordinateDimension, [c_void_p]) set_coord_dim = void_output( lgdal.OGR_G_SetCoordinateDimension, [c_void_p, c_int], errcheck=False ) is_empty = int_output( lgdal.OGR_G_IsEmpty, [c_void_p], errcheck=lambda result, func, cargs: bool(result) )
+- [62631d2a] # GetX, GetY, GetZ all return doubles. getx = pnt_func(lgdal.OGR_G_GetX) gety = pnt_func(lgdal.OGR_G_GetY) getz = pnt_func(lgdal.OGR_G_GetZ) getm = pnt_func(lgdal.OGR_G_GetM)
+- [8bd1bc9b] # Topology routines. ogr_contains = topology_func(lgdal.OGR_G_Contains) ogr_crosses = topology_func(lgdal.OGR_G_Crosses) ogr_disjoint = topology_func(lgdal.OGR_G_Disjoint) ogr_equals = topology_func(lgdal.OGR_G_Equals) ogr_intersects = topology_func(lgdal.OGR_G_Intersects) ogr_overlaps = topology_func(lgdal.OGR_G_Overlaps) ogr_touches = topology_func(lgdal.OGR_G_Touches) ogr_within = topology_func(lgdal.OGR_G_Within)
+- [525555f8] # Transformation routines. geom_transform = void_output(lgdal.OGR_G_Transform, [c_void_p, c_void_p]) geom_transform_to = void_output(lgdal.OGR_G_TransformTo, [c_void_p, c_void_p])
+- [42fa70bf] def pnt_func(f): "For accessing point information." return double_output(f, [c_void_p, c_int])
+- [2d6495c7] def topology_func(f): f.argtypes = [c_void_p, c_void_p] f.restype = c_int f.errcheck = lambda result, func, cargs: bool(result) return f
+- [91fcca29] from ctypes import POINTER, c_char_p, c_double, c_int, c_void_p
+- [abe8d3bd] from django.contrib.gis.gdal.envelope import OGREnvelope from django.contrib.gis.gdal.libgdal import lgdal from django.contrib.gis.gdal.prototypes.errcheck import check_envelope from django.contrib.gis.gdal.prototypes.generation import ( bool_output, const_string_output, double_output, geom_output, int_output, srs_output, string_output, void_output, )
+- [d296613f] get_geom_count = int_output(lgdal.OGR_G_GetGeometryCount, [c_void_p]) get_geom_name = const_string_output( lgdal.OGR_G_GetGeometryName, [c_void_p], decoding="ascii" ) get_geom_type = int_output(lgdal.OGR_G_GetGeometryType, [c_void_p]) get_point_count = int_output(lgdal.OGR_G_GetPointCount, [c_void_p]) get_point = void_output( lgdal.OGR_G_GetPointZM, [ c_void_p, c_int, POINTER(c_double), POINTER(c_double), POINTER(c_double), POINTER(c_double), ], errcheck=False, ) geom_close_rings = void_output(lgdal.OGR_G_CloseRings, [c_void_p], errcheck=False)

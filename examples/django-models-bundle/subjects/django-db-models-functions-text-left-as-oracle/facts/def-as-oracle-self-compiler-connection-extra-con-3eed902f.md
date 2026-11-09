@@ -1,6 +1,6 @@
 # Fact 3eed902f
 
-Store id: f023b9ba-e70a-4c2d-815c-2937bbb23dcf
+Store id: eb45a671-1967-488f-b9cf-5c386cbff129
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1103300+00:00`
+- posted_at: `2026-11-09T23:32:02.1934000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 172,
     "symbol": "Left.as_oracle"
   },
-  "id": "f023b9ba-e70a-4c2d-815c-2937bbb23dcf",
+  "id": "eb45a671-1967-488f-b9cf-5c386cbff129",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1103300+00:00"
+    "posted_at": "2026-11-09T23:32:02.1934000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "531b1098-6593-435d-9479-bffc3a36e96f",
+  "subject_id": "cb8396f7-f5da-4b09-aa2a-47ac58ed0f72",
   "subject_name": "django/db/models/functions/text::Left.as_oracle",
   "tags": [
     "entity:method"

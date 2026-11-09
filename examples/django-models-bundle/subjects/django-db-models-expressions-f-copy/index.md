@@ -1,9 +1,9 @@
 # django/db/models/expressions::F.copy
 
-- Subject: django/db/models/expressions::F.copy (id `f5d176c2-a3f8-4821-b0b1-7dda9c5cc297`)
+- Subject: django/db/models/expressions::F.copy (id `6e44b83b-7b87-4bee-b8ee-f126b5fc2aa8`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

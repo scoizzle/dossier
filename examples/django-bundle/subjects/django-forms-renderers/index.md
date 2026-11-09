@@ -1,8 +1,8 @@
 # django/forms/renderers
 
-- Subject: django/forms/renderers (id `5aa2fcff-2d25-43fe-aaa8-abb86c55aa33`)
+- Subject: django/forms/renderers (id `8b4d2990-8d56-4b07-a1e9-385446c34cd3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 580 tokens
 - Facts shown: 15 of 16
 - Conflicts: 0

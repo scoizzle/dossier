@@ -1,6 +1,6 @@
 # Fact 79cf7b6c
 
-Store id: dc302e6f-639e-4cd2-846c-4fdcdc4df35e
+Store id: 7b90becf-299c-4b5c-a965-881e5f844af5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Length
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "dc302e6f-639e-4cd2-846c-4fdcdc4df35e",
+  "id": "7b90becf-299c-4b5c-a965-881e5f844af5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Length"
       },
       "rel": "contains",
-      "target": "6eba96ea-871e-4f8d-b9b6-28e70a9c47cc"
+      "target": "52d98ca3-eba5-4804-990d-a4d6f15fb6ba"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

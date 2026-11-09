@@ -1,6 +1,6 @@
 # Fact ad29cd34
 
-Store id: 205d1b67-58f0-4960-9d8f-277f154cfe4f
+Store id: 77545a80-c5c3-44fb-9f53-ce312fe0eadc
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_sliced(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4524650+00:00`
+- posted_at: `2026-11-09T23:32:07.0259020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2216,
     "symbol": "Query.is_sliced"
   },
-  "id": "205d1b67-58f0-4960-9d8f-277f154cfe4f",
+  "id": "77545a80-c5c3-44fb-9f53-ce312fe0eadc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4524650+00:00"
+    "posted_at": "2026-11-09T23:32:07.0259020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "768332d7-748b-4a6e-9975-d5232f034584",
+  "subject_id": "52fcbb74-f3f1-4e30-8be1-6c49b98cd161",
   "subject_name": "django/db/models/sql/query::Query.is_sliced",
   "tags": [
     "entity:method",

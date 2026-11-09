@@ -1,8 +1,8 @@
 # django/contrib/contenttypes/forms
 
-- Subject: django/contrib/contenttypes/forms (id `09477360-8e4d-47cc-9c59-bc10dec3e5de`)
+- Subject: django/contrib/contenttypes/forms (id `2bfda728-e5a2-47c6-a2de-f216ee2c243e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 841 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact a9db9282
 
-Store id: ffd1134c-b78f-4621-9807-7615c3a62701
+Store id: 5a95dc20-779b-4fc8-8101-af566427dab5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformLte
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ffd1134c-b78f-4621-9807-7615c3a62701",
+  "id": "5a95dc20-779b-4fc8-8101-af566427dab5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformLte"
       },
       "rel": "contains",
-      "target": "4b173c03-1bf2-45db-9ebc-4d3819a5a751"
+      "target": "faae200e-8e6a-4385-8fcb-ed36f59b8f1f"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

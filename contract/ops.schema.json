@@ -265,7 +265,8 @@
         "subject": { "type": "string", "minLength": 1 },
         "descendants": { "type": "boolean" },
         "needs": { "type": "array", "items": { "type": "string" } },
-        "budget": { "type": "integer", "minimum": 0 },
+        "budget": { "type": "integer", "minimum": 0, "description": "Complete mode: the highlight threshold. Strict mode: a hard cutoff." },
+        "budget_mode": { "type": "string", "enum": ["complete", "strict"], "default": "complete", "description": "complete emits every fact; strict cuts to the budget and lists the rest in dropped." },
         "depth": { "type": "string", "enum": ["index", "full"] },
         "order": { "type": "string", "enum": ["rank", "seq"] },
         "rank": {

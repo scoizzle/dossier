@@ -1,6 +1,6 @@
 # Fact c421ab06
 
-Store id: 7bcc3378-156b-4b81-9b57-671362dfaedc
+Store id: f15ed3df-4dbb-4d9a-a20c-6246b175f6b9
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_not_a_generic_foreign_key(f)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8460340+00:00`
+- posted_at: `2026-11-09T23:32:03.9786080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 555,
     "symbol": "Options.fields.is_not_a_generic_foreign_key"
   },
-  "id": "7bcc3378-156b-4b81-9b57-671362dfaedc",
+  "id": "f15ed3df-4dbb-4d9a-a20c-6246b175f6b9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8460340+00:00"
+    "posted_at": "2026-11-09T23:32:03.9786080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f3363e22-f1ca-44b8-88d2-c61d64399a74",
+  "subject_id": "ed005688-a322-4c04-a4aa-a34aba3cf35d",
   "subject_name": "django/db/models/options::Options.fields.is_not_a_generic_foreign_key",
   "tags": [
     "entity:function"

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.exists
 
-- Subject: django/db/models/sql/query::Query.exists (id `783b1460-4db8-4f2d-8634-8e1d0584f43f`)
+- Subject: django/db/models/sql/query::Query.exists (id `b8b62173-aad1-42c5-99cd-8fe5de3d613e`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

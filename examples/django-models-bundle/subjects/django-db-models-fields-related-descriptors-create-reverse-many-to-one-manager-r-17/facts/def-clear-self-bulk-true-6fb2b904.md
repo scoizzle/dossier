@@ -1,6 +1,6 @@
 # Fact 6fb2b904
 
-Store id: 0221f473-5f3d-4abd-a9e0-f3463a2f4a68
+Store id: 630bf915-b97a-49d2-b242-0b43abdbb567
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear(self, *, bulk=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8293590+00:00`
+- posted_at: `2026-11-09T23:31:59.2856580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 966,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.clear"
   },
-  "id": "0221f473-5f3d-4abd-a9e0-f3463a2f4a68",
+  "id": "630bf915-b97a-49d2-b242-0b43abdbb567",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8293590+00:00"
+    "posted_at": "2026-11-09T23:31:59.2856580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "216ffca2-50d7-4f50-a3c2-6eb7ed01f4ae",
+  "subject_id": "91329091-30fb-4269-a31d-db4634f6fb25",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.clear",
   "tags": [
     "entity:method"

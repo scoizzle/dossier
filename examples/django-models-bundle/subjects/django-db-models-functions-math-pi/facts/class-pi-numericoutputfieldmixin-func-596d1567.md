@@ -1,6 +1,6 @@
 # Fact 596d1567
 
-Store id: b33f8bf1-e58b-4431-a234-840f70eb41e3
+Store id: a5c31987-2b53-4139-a57d-687665c1100b
 
 ## Text
 
@@ -20,7 +20,7 @@ class Pi(NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6332320+00:00`
+- posted_at: `2026-11-09T23:32:01.7269790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 131,
     "symbol": "Pi"
   },
-  "id": "b33f8bf1-e58b-4431-a234-840f70eb41e3",
+  "id": "a5c31987-2b53-4139-a57d-687665c1100b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6332320+00:00"
+    "posted_at": "2026-11-09T23:32:01.7269790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9e81c826-3c37-44e1-b01c-c63875a2579b",
+  "subject_id": "4acd53c0-e952-4768-9733-fdfd9f67fff3",
   "subject_name": "django/db/models/functions/math::Pi",
   "tags": [
     "entity:class"

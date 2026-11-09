@@ -1,6 +1,6 @@
 # Fact 772a3507
 
-Store id: b421ea72-6c79-4593-9c52-d764cbde3de3
+Store id: 1d749348-d007-4d2b-8814-0b854668be23
 
 ## Text
 
@@ -20,7 +20,7 @@ def reverse_ordering(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5322250+00:00`
+- posted_at: `2026-11-09T23:31:55.7939430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 478,
     "symbol": "BaseExpression.reverse_ordering"
   },
-  "id": "b421ea72-6c79-4593-9c52-d764cbde3de3",
+  "id": "1d749348-d007-4d2b-8814-0b854668be23",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5322250+00:00"
+    "posted_at": "2026-11-09T23:31:55.7939430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a36c729d-2a8e-49f6-a3cb-e090d254a5c9",
+  "subject_id": "7b183e73-09bf-48ae-9b39-e46263233a49",
   "subject_name": "django/db/models/expressions::BaseExpression.reverse_ordering",
   "tags": [
     "entity:method"

@@ -1,8 +1,8 @@
 # django/db/backends/base/validation
 
-- Subject: django/db/backends/base/validation (id `a631686e-bbd2-4ae6-bc19-9e03c871bc1f`)
+- Subject: django/db/backends/base/validation (id `a65d42f6-bed9-4761-8e5c-13d0445fc069`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 262 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

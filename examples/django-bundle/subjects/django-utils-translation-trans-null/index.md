@@ -1,8 +1,8 @@
 # django/utils/translation/trans_null
 
-- Subject: django/utils/translation/trans_null (id `b9680f83-87ef-414a-b0be-0b0e1113636e`)
+- Subject: django/utils/translation/trans_null (id `2fa5f9a3-3899-4b3a-aa86-429a136d9df1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 475 tokens
 - Facts shown: 17 of 17
 - Conflicts: 0

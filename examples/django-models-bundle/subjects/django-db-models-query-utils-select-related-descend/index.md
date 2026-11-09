@@ -1,9 +1,9 @@
 # django/db/models/query_utils::select_related_descend
 
-- Subject: django/db/models/query_utils::select_related_descend (id `7e64db42-7713-4bf0-bd98-88d662c4f947`)
+- Subject: django/db/models/query_utils::select_related_descend (id `3b80e70a-cbe0-4f35-966d-fcf02e30a787`)
 - Kind: function
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

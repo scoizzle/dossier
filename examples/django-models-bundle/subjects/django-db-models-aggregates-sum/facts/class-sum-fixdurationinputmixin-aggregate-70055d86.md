@@ -1,6 +1,6 @@
 # Fact 70055d86
 
-Store id: 75f0b6d5-c70a-4319-9852-69c1205fb9ef
+Store id: 05846b0d-3b50-42f3-a6da-32cf5a160c32
 
 ## Text
 
@@ -20,7 +20,7 @@ class Sum(FixDurationInputMixin, Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0488280+00:00`
+- posted_at: `2026-11-09T23:31:53.5486820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 452,
     "symbol": "Sum"
   },
-  "id": "75f0b6d5-c70a-4319-9852-69c1205fb9ef",
+  "id": "05846b0d-3b50-42f3-a6da-32cf5a160c32",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0488280+00:00"
+    "posted_at": "2026-11-09T23:31:53.5486820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d9972ebd-e19c-4cd8-942b-cddda683692f",
+  "subject_id": "255ec33d-8ce7-4614-8821-abd8cae44bb6",
   "subject_name": "django/db/models/aggregates::Sum",
   "tags": [
     "entity:class"

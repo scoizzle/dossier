@@ -1,6 +1,6 @@
 # Fact 8feed315
 
-Store id: fb74c461-dbdb-4c56-99a4-9e31d31eed65
+Store id: 607febb2-09c3-4689-ac47-f57a0a7cdd2a
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_select_related(self, fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5030140+00:00`
+- posted_at: `2026-11-09T23:32:07.0861180+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2447,
     "symbol": "Query.add_select_related"
   },
-  "id": "fb74c461-dbdb-4c56-99a4-9e31d31eed65",
+  "id": "607febb2-09c3-4689-ac47-f57a0a7cdd2a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5030140+00:00"
+    "posted_at": "2026-11-09T23:32:07.0861180+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2c97fffe-04fd-4322-a195-dcc1a7a55578",
+  "subject_id": "5e6f67e8-e810-44b8-a908-b9c1a0d0edd2",
   "subject_name": "django/db/models/sql/query::Query.add_select_related",
   "tags": [
     "entity:method"

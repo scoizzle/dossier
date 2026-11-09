@@ -1,6 +1,6 @@
 # Fact 52bb49b2
 
-Store id: 19ea2a3e-46b3-4e58-a0ef-f0a5364c59e7
+Store id: ebf587db-6515-41fa-b168-8467450646c5
 
 ## Text
 
@@ -20,7 +20,7 @@ def through(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8435020+00:00`
+- posted_at: `2026-11-09T23:31:59.3167390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1050,
     "symbol": "ManyToManyDescriptor.through"
   },
-  "id": "19ea2a3e-46b3-4e58-a0ef-f0a5364c59e7",
+  "id": "ebf587db-6515-41fa-b168-8467450646c5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8435020+00:00"
+    "posted_at": "2026-11-09T23:31:59.3167390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "92a38840-7668-4b81-b833-e5835fb2082b",
+  "subject_id": "60c57af0-c2a6-4714-9810-34d78038ea9d",
   "subject_name": "django/db/models/fields/related_descriptors::ManyToManyDescriptor.through",
   "tags": [
     "entity:method",

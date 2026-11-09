@@ -1,6 +1,6 @@
 # Fact b72f38b2
 
-Store id: 4d960714-5abd-4dac-bbcc-56414b0a8919
+Store id: 734c4893-5847-45a3-9229-b12b9c7c3280
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_count(self, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2589810+00:00`
+- posted_at: `2026-11-09T23:32:06.7965590+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 651,
     "symbol": "Query.get_count"
   },
-  "id": "4d960714-5abd-4dac-bbcc-56414b0a8919",
+  "id": "734c4893-5847-45a3-9229-b12b9c7c3280",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2589810+00:00"
+    "posted_at": "2026-11-09T23:32:06.7965590+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "73d3673c-2756-4ced-9186-987b1b1de8ee",
+  "subject_id": "079d3fa9-e978-496b-b907-dce0f349e270",
   "subject_name": "django/db/models/sql/query::Query.get_count",
   "tags": [
     "entity:method"

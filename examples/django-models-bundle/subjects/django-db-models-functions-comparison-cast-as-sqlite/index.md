@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Cast.as_sqlite
 
-- Subject: django/db/models/functions/comparison::Cast.as_sqlite (id `8e94e262-890d-4b7d-ad9f-c256ce2aa9fc`)
+- Subject: django/db/models/functions/comparison::Cast.as_sqlite (id `82465024-dc7f-4c63-8981-5d26d7a42916`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

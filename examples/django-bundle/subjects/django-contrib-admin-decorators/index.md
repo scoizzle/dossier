@@ -1,14 +1,14 @@
 # django/contrib/admin/decorators
 
-- Subject: django/contrib/admin/decorators (id `799a2309-9163-4cdc-936e-46ba21da9742`)
+- Subject: django/contrib/admin/decorators (id `9cc3e427-215c-4f0f-af12-aaf216041d4a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 19 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 969 tokens
+- Facts shown: 21 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @admin.action( permissions=['publish'], description='Mark selected stories as published', ) def make_published(self, request, queryset): queryset.update(status='p') [48531224]
 - @admin.display( boolean=True, ordering='-publish_date', description='Is Published?', ) def is_published(self, obj): return obj.publish_date is not None [dbf380ec]
@@ -30,6 +30,7 @@
 - def action( function=None, *, permissions=None, description=None, description_plural=None, location=ActionLocation.CHANGE_LIST, ): """ Conveniently add attributes to an action function:: [884f1c7e]
 - def register(*models, site=None): """ Register the given model(s) classes and wrapped ModelAdmin class with admin site: [0831e4e9]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [e91988b6] [42acd4a4]
+- [e91988b6] def display( function=None, *, boolean=None, ordering=None, description=None, empty_value=None ): """ Conveniently add attributes to a display function::
+- [42acd4a4] from django.contrib.admin.options import ActionLocation

@@ -1,6 +1,6 @@
 # Fact 92a755a0
 
-Store id: 9b08223a-3081-4ec1-8a98-ce372f844343
+Store id: 19543f66-792b-472c-b2a1-6423fbb3cdcc
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class WindowFrameExclusion
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9b08223a-3081-4ec1-8a98-ce372f844343",
+  "id": "19543f66-792b-472c-b2a1-6423fbb3cdcc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "WindowFrameExclusion"
       },
       "rel": "contains",
-      "target": "971613cf-87a5-45e8-9e24-5bf0e764def4"
+      "target": "7be0d075-7268-4b93-9fda-fe6d29000ca5"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

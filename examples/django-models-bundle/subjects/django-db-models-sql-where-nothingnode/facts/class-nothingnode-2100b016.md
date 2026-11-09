@@ -1,6 +1,6 @@
 # Fact 2100b016
 
-Store id: 977d9f27-a402-46b6-b628-ba9171df263b
+Store id: feca6255-67b2-4380-b14e-527c970ec204
 
 ## Text
 
@@ -20,7 +20,7 @@ class NothingNode
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9822640+00:00`
+- posted_at: `2026-11-09T23:32:07.7065890+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 324,
     "symbol": "NothingNode"
   },
-  "id": "977d9f27-a402-46b6-b628-ba9171df263b",
+  "id": "feca6255-67b2-4380-b14e-527c970ec204",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9822640+00:00"
+    "posted_at": "2026-11-09T23:32:07.7065890+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4aa66c3-be3e-4ba9-8fb2-a2b83005d779",
+  "subject_id": "02840afb-11ac-4678-b656-d3869909fb51",
   "subject_name": "django/db/models/sql/where::NothingNode",
   "tags": [
     "entity:class"

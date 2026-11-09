@@ -1,6 +1,6 @@
 # Fact 31617fd0
 
-Store id: 22f7d240-41e2-456f-a20e-9928a150c33c
+Store id: d41ee995-60bd-4e47-8fce-6f65b18c11b1
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.3987830+00:00`
+- posted_at: `2026-11-09T23:32:02.5162480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "UUID7.as_postgresql"
   },
-  "id": "22f7d240-41e2-456f-a20e-9928a150c33c",
+  "id": "d41ee995-60bd-4e47-8fce-6f65b18c11b1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.3987830+00:00"
+    "posted_at": "2026-11-09T23:32:02.5162480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5adb11f7-95de-44a4-9fe7-9f83e263c3dd",
+  "subject_id": "0484c8cc-da77-49ea-92c0-bc06870ae89e",
   "subject_name": "django/db/models/functions/uuid::UUID7.as_postgresql",
   "tags": [
     "entity:method"

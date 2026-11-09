@@ -1,6 +1,6 @@
 # Fact 76785b72
 
-Store id: f980242b-ca24-4b20-a5c1-394e6f3846b3
+Store id: 5ff5a3ee-1ed7-4bf0-bca5-c8facfb1c8ae
 
 ## Text
 
@@ -20,7 +20,7 @@ class PatternLookup(BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1665420+00:00`
+- posted_at: `2026-11-09T23:32:03.3413690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 584,
     "symbol": "PatternLookup"
   },
-  "id": "f980242b-ca24-4b20-a5c1-394e6f3846b3",
+  "id": "5ff5a3ee-1ed7-4bf0-bca5-c8facfb1c8ae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1665420+00:00"
+    "posted_at": "2026-11-09T23:32:03.3413690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7b52c3da-1779-4f85-9939-936112429810",
+  "subject_id": "4418826c-473d-4a84-99a9-4ac35f7ce7ab",
   "subject_name": "django/db/models/lookups::PatternLookup",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 5925753e
 
-Store id: d53f1d58-f4c9-4dd2-a5d1-2b560babbd7e
+Store id: 4a17ff12-8d21-476b-9a08-d7f41fd6e9f8
 
 ## Text
 
@@ -20,7 +20,7 @@ class IExact(BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1079850+00:00`
+- posted_at: `2026-11-09T23:32:03.2596290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 413,
     "symbol": "IExact"
   },
-  "id": "d53f1d58-f4c9-4dd2-a5d1-2b560babbd7e",
+  "id": "4a17ff12-8d21-476b-9a08-d7f41fd6e9f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1079850+00:00"
+    "posted_at": "2026-11-09T23:32:03.2596290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "24dc7bb5-afdf-46a4-9221-ef5621be3624",
+  "subject_id": "4c5d3344-4056-42ea-b04a-b240cfb8a370",
   "subject_name": "django/db/models/lookups::IExact",
   "tags": [
     "entity:class",

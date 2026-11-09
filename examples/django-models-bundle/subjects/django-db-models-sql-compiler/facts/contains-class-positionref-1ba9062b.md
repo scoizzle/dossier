@@ -1,6 +1,6 @@
 # Fact 1ba9062b
 
-Store id: 4b97df26-428d-4741-9261-040823fe1b6b
+Store id: 4396341c-7259-413f-a7e8-e10d0506d069
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PositionRef
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7517920+00:00`
+- posted_at: `2026-11-09T23:32:06.1168670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4b97df26-428d-4741-9261-040823fe1b6b",
+  "id": "4396341c-7259-413f-a7e8-e10d0506d069",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7517920+00:00"
+    "posted_at": "2026-11-09T23:32:06.1168670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PositionRef"
       },
       "rel": "contains",
-      "target": "de69a1e2-bdd4-422b-b35d-6119b6592ee8"
+      "target": "5585daa6-dd6d-4327-af26-3594037ecc96"
     }
   ],
   "status": "live",
-  "subject_id": "a1b39a63-5894-4f24-9b98-7363166e586c",
+  "subject_id": "eec456aa-334a-4312-a193-ed044257811d",
   "subject_name": "django/db/models/sql/compiler",
   "tags": [
     "entity:class"

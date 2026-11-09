@@ -1,6 +1,6 @@
 # Fact 7690537a
 
-Store id: a7996966-58ea-4291-ab9f-a2c8231ca3cf
+Store id: e343d62f-3e63-47ac-a29e-f1722e68482c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_tzname(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1018420+00:00`
+- posted_at: `2026-11-09T23:32:01.1678940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 25,
     "symbol": "TimezoneMixin.get_tzname"
   },
-  "id": "a7996966-58ea-4291-ab9f-a2c8231ca3cf",
+  "id": "e343d62f-3e63-47ac-a29e-f1722e68482c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1018420+00:00"
+    "posted_at": "2026-11-09T23:32:01.1678940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "31ff00e1-632a-4b83-a788-65c6936b2794",
+  "subject_id": "4e6a9f0f-8194-4266-b437-3fb7bef0512f",
   "subject_name": "django/db/models/functions/datetime::TimezoneMixin.get_tzname",
   "tags": [
     "entity:method"

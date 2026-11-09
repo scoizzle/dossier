@@ -4,8 +4,8 @@ This file lists every subject under `django/db/models/fields/proxy/`, one row pe
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/fields/proxy | subject | 1 | 0 | 0 | 135 | [subjects/django-db-models-fields-proxy/index.md](../subjects/django-db-models-fields-proxy/index.md) |
-|   django/db/models/fields/proxy::OrderWrt | class | 1 | 0 | 0 | 110 | [subjects/django-db-models-fields-proxy-orderwrt/index.md](../subjects/django-db-models-fields-proxy-orderwrt/index.md) |
-|   django/db/models/fields/proxy::OrderWrt.__init__ | method | 1 | 0 | 0 | 112 | [subjects/django-db-models-fields-proxy-orderwrt-init/index.md](../subjects/django-db-models-fields-proxy-orderwrt-init/index.md) |
+| django/db/models/fields/proxy | subject | 1 | 0 | 0 | 146 | [subjects/django-db-models-fields-proxy/index.md](../subjects/django-db-models-fields-proxy/index.md) |
+|   django/db/models/fields/proxy::OrderWrt | class | 1 | 0 | 0 | 121 | [subjects/django-db-models-fields-proxy-orderwrt/index.md](../subjects/django-db-models-fields-proxy-orderwrt/index.md) |
+|   django/db/models/fields/proxy::OrderWrt.__init__ | method | 1 | 0 | 0 | 123 | [subjects/django-db-models-fields-proxy-orderwrt-init/index.md](../subjects/django-db-models-fields-proxy-orderwrt-init/index.md) |
 
 Up: [index/django-db-models-fields.md](django-db-models-fields.md)

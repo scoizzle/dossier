@@ -1,9 +1,9 @@
 # django/db/models/expressions::WindowFrameExclusion.__repr__
 
-- Subject: django/db/models/expressions::WindowFrameExclusion.__repr__ (id `37774233-3c35-480c-9092-643f2d7f6bf7`)
+- Subject: django/db/models/expressions::WindowFrameExclusion.__repr__ (id `30c4c5aa-cee4-4cd4-8552-1dcf54ff5c95`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

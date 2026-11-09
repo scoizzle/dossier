@@ -1,6 +1,6 @@
 # Fact 02f0cc4e
 
-Store id: 845b2f3f-9c28-4507-b843-c05f3fbad986
+Store id: e9a11387-6448-48fa-a5ea-74baf87a3804
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class EmptyManager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5586340+00:00`
+- posted_at: `2026-11-09T23:32:03.7342610+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "845b2f3f-9c28-4507-b843-c05f3fbad986",
+  "id": "e9a11387-6448-48fa-a5ea-74baf87a3804",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5586340+00:00"
+    "posted_at": "2026-11-09T23:32:03.7342610+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "EmptyManager"
       },
       "rel": "contains",
-      "target": "7cbbc2fa-e7b1-4e01-9800-9001b2de69aa"
+      "target": "bdecd72c-d0ee-4845-a253-b31ffff78b1c"
     }
   ],
   "status": "live",
-  "subject_id": "db0c2f2d-3473-4386-8f36-4d861124f3a4",
+  "subject_id": "5e85a5f7-e460-4775-bcc8-e7045c95860f",
   "subject_name": "django/db/models/manager",
   "tags": [
     "entity:class"

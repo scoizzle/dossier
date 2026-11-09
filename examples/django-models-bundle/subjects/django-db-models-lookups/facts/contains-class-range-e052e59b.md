@@ -1,6 +1,6 @@
 # Fact e052e59b
 
-Store id: b8f416c4-b28f-4ee2-9178-73b09f3ca193
+Store id: dde9cd18-95fe-4cc2-87c2-657c82025dd7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Range
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b8f416c4-b28f-4ee2-9178-73b09f3ca193",
+  "id": "dde9cd18-95fe-4cc2-87c2-657c82025dd7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Range"
       },
       "rel": "contains",
-      "target": "44012269-d6ee-446e-b2ed-b62ada2deb4d"
+      "target": "a486284c-ca40-47ba-89d5-abf9701a79c8"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

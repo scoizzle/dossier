@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-code/javascript
 
-- Subject: docs/internals/contributing/writing-code/javascript (id `93189fd1-fa1a-4f70-acaf-7a993157c5dd`)
+- Subject: docs/internals/contributing/writing-code/javascript (id `0fff3e59-8ad7-4ad6-856c-e6f8fc0af059`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 24 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1290 tokens
+- Facts shown: 36 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ npm install [550501b8]
 - $ npm test [bf2e2853]
@@ -35,6 +35,17 @@
 - JavaScript tests ================ [4217f621]
 - Running tests ------------- [0e1dadb93d50ca4b]
 
-## Beyond the budget
+## All facts
 
-12 more facts did not fit in the budget: [f6d20bfb] [3991ee29] [6222061e] [cb2069d6] [56ac0378] [cb076667] [d06caf47] [c227b434] [0173b61d] [b3bf0de4] [87b5b548] [a60d61ac]
+- [f6d20bfb] Django's admin system leverages the jQuery framework to increase the capabilities of the admin interface. In conjunction, there is an emphasis on admin JavaScript performance and minimizing overall admin media file size.
+- [3991ee29] Please consult the ``QUnit`` documentation for information on the types of `assertions supported by QUnit <https://api.qunitjs.com/assert/>`_.
+- [6222061e] Please follow these coding standards when writing JavaScript code for inclusion in Django.
+- [cb2069d6] Testing from a web browser ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [56ac0378] Testing from the command line ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [cb076667] The JavaScript tests may be run from a web browser or from the command line.
+- [d06caf47] Then run the tests with:
+- [c227b434] To measure code coverage when running the tests, you need to view that file over HTTP. To view code coverage:
+- [0173b61d] To run the tests from a web browser, open up :source:`js_tests/tests.html` in your browser.
+- [b3bf0de4] To run the tests from the command line, you need to have `Node.js`_ installed.
+- [87b5b548] While most of Django core is Python, the ``admin`` and ``gis`` contrib apps contain JavaScript code.
+- [a60d61ac] Writing tests -------------

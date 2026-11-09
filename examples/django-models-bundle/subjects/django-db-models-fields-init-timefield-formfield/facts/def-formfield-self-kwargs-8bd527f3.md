@@ -1,6 +1,6 @@
 # Fact 8bd527f3
 
-Store id: 5225e645-dfd3-408a-b886-399d6b099a78
+Store id: a92932cb-184a-4db1-b47a-6a02d5111e80
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6775070+00:00`
+- posted_at: `2026-11-09T23:31:56.8299800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2710,
     "symbol": "TimeField.formfield"
   },
-  "id": "5225e645-dfd3-408a-b886-399d6b099a78",
+  "id": "a92932cb-184a-4db1-b47a-6a02d5111e80",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6775070+00:00"
+    "posted_at": "2026-11-09T23:31:56.8299800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0c6a3805-96c3-4a14-af63-d85d1891fd44",
+  "subject_id": "6156cf78-756e-4090-9e2d-073879aeb14a",
   "subject_name": "django/db/models/fields/__init__::TimeField.formfield",
   "tags": [
     "entity:method"

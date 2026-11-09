@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateTimeField._check_fix_default_value
 
-- Subject: django/db/models/fields/__init__::DateTimeField._check_fix_default_value (id `0f690f5b-12b9-4ab5-8d2d-6a5c02e9df87`)
+- Subject: django/db/models/fields/__init__::DateTimeField._check_fix_default_value (id `0c4631f9-b443-46ac-a8b4-e3dd933fbfea`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

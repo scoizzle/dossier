@@ -1,6 +1,6 @@
 # Fact 0cc9b6b7
 
-Store id: 94447b87-b54e-4578-9758-0691fe1435d1
+Store id: dc4165e5-f982-4b83-9351-78847459b6cd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractMonth
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "94447b87-b54e-4578-9758-0691fe1435d1",
+  "id": "dc4165e5-f982-4b83-9351-78847459b6cd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractMonth"
       },
       "rel": "contains",
-      "target": "47aec1e0-c1f9-42db-b14c-c47d69fd4170"
+      "target": "01258883-7973-4911-8953-bf64ff5e7698"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

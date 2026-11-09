@@ -1,9 +1,9 @@
 # django/db/models/query_utils::Q.__or__
 
-- Subject: django/db/models/query_utils::Q.__or__ (id `ae2c99fc-82d4-4f40-9dcb-e28b7a27719f`)
+- Subject: django/db/models/query_utils::Q.__or__ (id `ffaf01f2-bb10-4312-abf8-c08d49df9edf`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

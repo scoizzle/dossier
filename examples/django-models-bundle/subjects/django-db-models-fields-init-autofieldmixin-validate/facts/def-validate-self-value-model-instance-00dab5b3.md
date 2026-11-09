@@ -1,6 +1,6 @@
 # Fact 00dab5b3
 
-Store id: d68a85cd-b8de-452c-a02e-e5524995dade
+Store id: c7e8355d-62a1-4ee5-b513-e5660f5ef80c
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate(self, value, model_instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7316250+00:00`
+- posted_at: `2026-11-09T23:31:56.8995920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2905,
     "symbol": "AutoFieldMixin.validate"
   },
-  "id": "d68a85cd-b8de-452c-a02e-e5524995dade",
+  "id": "c7e8355d-62a1-4ee5-b513-e5660f5ef80c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7316250+00:00"
+    "posted_at": "2026-11-09T23:31:56.8995920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9904419c-a397-408d-8f00-ec9f1151adc9",
+  "subject_id": "f4c11c45-9081-4cb7-96c8-7c4aa41d3b89",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.validate",
   "tags": [
     "entity:method"

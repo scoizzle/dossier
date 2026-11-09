@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Random.as_oracle
 
-- Subject: django/db/models/functions/math::Random.as_oracle (id `aa394ca4-c9b8-4d96-883d-570b27bd3030`)
+- Subject: django/db/models/functions/math::Random.as_oracle (id `3398d792-d938-44eb-973c-8cf2f9cfafb5`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

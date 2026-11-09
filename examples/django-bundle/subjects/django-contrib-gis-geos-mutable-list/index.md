@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/mutable_list
 
-- Subject: django/contrib/gis/geos/mutable_list (id `8dd67841-0711-4257-9d5c-049d9b601196`)
+- Subject: django/contrib/gis/geos/mutable_list (id `d628de84-fac0-4991-8461-debaa0f30948`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 23 of 61
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2584 tokens
+- Facts shown: 59 of 61
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if i < origLen: if i < start or i >= stop: yield self._get_single_internal(i) [b5a3ae86]
 - # CAREFUL: index.step and step are not the same! # step will never be None if index.step is None: self._assign_simple_slice(start, stop, valueList) else: self._assign_extended_slice(start, stop, step, valueList) [f90bd29b]
@@ -34,6 +34,41 @@
 - def __delitem__(self, index): "Delete the item(s) at the specified index/slice." if not isinstance(index, (int, slice)): raise TypeError("%s is not a legal index" % index) [9b5028ed]
 - def __iadd__(self, other): "add another list-like object to self" self.extend(other) return self [51725cf4]
 
-## Beyond the budget
+## All facts
 
-36 more facts did not fit in the budget: [27b6be0c] [5d766a8c] [093c4a47] [1ab5dd2c] [df0b6565] [2c68f101] [80a3aa4e] [6ebf080c] [b39e2006] [8369c826] [64bd7411] [fcaba495] [3601f7bf] [2e0684fb] [af6449ec] [884a7b3f] [e3872208] [60e8f7d4] [50f84872] [91df77f1] [dd155ed5] [51ccd99d] [57e65f80] [cfce8765] [d7c43d82] [4b956a5f] [550296f5] [49b5068e] [0faa5ab5] [a4bed630] [4c556bbd] [93280271] [349d3f4b] [9fc76a7f] [336ddf6d] [363dc81b4a0151df]
+- [27b6be0c] def __eq__(self, other): olen = len(other) for i in range(olen): try: c = self[i] == other[i] except IndexError: # self must be shorter return False if not c: return False return len(self) == olen
+- [5d766a8c] def __getitem__(self, index): "Get the item(s) at the specified index/slice." if isinstance(index, slice): return [ self._get_single_external(i) for i in range(*index.indices(len(self))) ] else: index = self._checkindex(index) return self._get_single_external(index)
+- [093c4a47] def __imul__(self, n): "multiply" if n <= 0: del self[:] else: cache = list(self) for i in range(n - 1): self.extend(cache) return self
+- [1ab5dd2c] def __init__(self, *args, **kwargs): if not hasattr(self, "_get_single_internal"): self._get_single_internal = self._get_single_external
+- [df0b6565] def __lt__(self, other): olen = len(other) for i in range(olen): try: c = self[i] < other[i] except IndexError: # self must be shorter return True if c: return c elif other[i] < self[i]: return False return len(self) < olen
+- [2c68f101] def __mul__(self, n): "multiply" return self.__class__(list(self) * n)
+- [80a3aa4e] def __radd__(self, other): "add to another list-like object" return other.__class__([*other, *self])
+- [6ebf080c] def __rmul__(self, n): "multiply" return self.__class__(list(self) * n)
+- [b39e2006] def __setitem__(self, index, val): "Set the item(s) at the specified index/slice." if isinstance(index, slice): self._set_slice(index, val) else: index = self._checkindex(index) self._check_allowed((val,)) self._set_single(index, val)
+- [8369c826] def _assign_extended_slice(self, start, stop, step, valueList): "Assign an extended slice by re-assigning individual items" indexList = range(start, stop, step) # extended slice, only allow assigning slice of same size if len(valueList) != len(indexList): raise ValueError( "attempt to assign sequence of size %d " "to extended slice of size %d" % (len(valueList), len(indexList)) )
+- [64bd7411] def _assign_extended_slice_rebuild(self, start, stop, step, valueList): "Assign an extended slice by rebuilding entire list" indexList = range(start, stop, step) # extended slice, only allow assigning slice of same size if len(valueList) != len(indexList): raise ValueError( "attempt to assign sequence of size %d " "to extended slice of size %d" % (len(valueList), len(indexList)) )
+- [fcaba495] def _assign_simple_slice(self, start, stop, valueList): "Assign a simple slice; Can assign slice of any length" origLen = len(self) stop = max(start, stop) newLen = origLen - stop + start + len(valueList)
+- [3601f7bf] def _check_allowed(self, items): if hasattr(self, "_allowed"): if False in [isinstance(val, self._allowed) for val in items]: raise TypeError("Invalid type encountered in the arguments.")
+- [2e0684fb] def _checkindex(self, index): length = len(self) if 0 <= index < length: return index if -length <= index < 0: return index + length raise IndexError("invalid index: %s" % index)
+- [af6449ec] def _set_single_rebuild(self, index, value): self._set_slice(slice(index, index + 1, 1), [value])
+- [884a7b3f] def _set_slice(self, index, values): "Assign values to a slice of the object" try: valueList = list(values) except TypeError: raise TypeError("can only assign an iterable to a slice")
+- [e3872208] def extend(self, vals): "Standard list extend method" self[len(self) :] = vals
+- [60e8f7d4] def index(self, val): "Standard list index method" for i in range(0, len(self)): if self[i] == val: return i raise ValueError("%s not found in object" % val)
+- [50f84872] def insert(self, index, val): "Standard list insert method" if not isinstance(index, int): raise TypeError("%s is not a legal index" % index) self[index:index] = [val]
+- [91df77f1] def pop(self, index=-1): "Standard list pop method" result = self[index] del self[index] return result
+- [dd155ed5] def remove(self, val): "Standard list remove method" del self[self.index(val)]
+- [51ccd99d] def reverse(self): "Standard list reverse method" self[:] = self[-1::-1]
+- [57e65f80] def sort(self, key=None, reverse=False): "Standard list sort method" self[:] = sorted(self, key=key, reverse=reverse)
+- [cfce8765] function __len__(self): Return the length
+- [d7c43d82] function _get_single_external(self, i): Return single item with index i for general use. The index i will always satisfy 0 <= i < len(self).
+- [4b956a5f] function _get_single_internal(self, i): Same as above, but for use within the class [Optional] Note that if _get_single_internal and _get_single_internal return different types of objects, _set_list must distinguish between the two and handle each appropriately.
+- [550296f5] function _set_list(self, length, items): Recreate the entire object.
+- [49b5068e] function _set_single(self, i, value): Set the single item at index i to value [Optional] If left undefined, all mutations will result in rebuilding the object using _set_list.
+- [0faa5ab5] int _maxlength: The maximum legal length [Optional]
+- [a4bed630] int _minlength: The minimum legal length [Optional]
+- [4c556bbd] type or tuple _allowed: A type or tuple of allowed item types [Optional] """
+- [93280271] # Copyright (c) 2008-2009 Aryeh Leib Taurog, all rights reserved. # Released under the New BSD license. """ This module contains a base type which provides list-style mutations without specific data storage methods.
+- [349d3f4b] @total_ordering class ListMixin: """ A base class which provides complete list interface. Derived classes must call ListMixin's __init__() function and implement the following:
+- [9fc76a7f] Author: Aryeh Leib Taurog. """
+- [336ddf6d] See also http://static.aryehleib.com/oldsite/MutableLists.html
+- [363dc81b4a0151df] from functools import total_ordering

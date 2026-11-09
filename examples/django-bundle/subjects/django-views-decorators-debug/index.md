@@ -1,14 +1,14 @@
 # django/views/decorators/debug
 
-- Subject: django/views/decorators/debug (id `6e0cc7e3-6296-4100-90c4-9ea01870ddcb`)
+- Subject: django/views/decorators/debug (id `6aea38b7-9339-4f6b-8a5a-8024f624ff88`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 20 of 29
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1166 tokens
+- Facts shown: 28 of 29
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @wraps(func) def sensitive_variables_wrapper(*func_args, **func_kwargs): if variables: sensitive_variables_wrapper.sensitive_variables = variables else: sensitive_variables_wrapper.sensitive_variables = "__ALL__" return func(*func_args, **func_kwargs) [aba582d1]
 - @wraps(view) async def sensitive_post_parameters_wrapper(request, *args, **kwargs): if not isinstance(request, HttpRequest): raise TypeError( "sensitive_post_parameters didn't receive an HttpRequest " "object. If you are decorating a classmethod, make sure to use " "@method_decorator." ) if parameters: request.sensitive_post_parameters = parameters else: request.sensitive_post_parameters = "__ALL__" return await view(request, *args, **kwargs) [c7acb046]
@@ -31,6 +31,13 @@
 - Accept two forms: [2d30c255dc8877c5-2]
 - def decorator(func): if iscoroutinefunction(func): sensitive_variables_wrapper = func [a5902558]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [b5b049da] [021b5df2d691cbd2-8] [021b5df2d691cbd2-9] [c694de7d] [9abcb1a0] [121c2d9a] [65f270f6] [adc94a07]
+- [b5b049da] def decorator(view): if iscoroutinefunction(view):
+- [021b5df2d691cbd2-8] return decorator
+- [021b5df2d691cbd2-9] return decorator
+- [c694de7d] coroutine_functions_to_sensitive_variables = {}
+- [9abcb1a0] def sensitive_post_parameters(*parameters): """ Indicate which POST parameters used in the decorated view are sensitive, so that those parameters can later be treated in a special way, for example by hiding them when logging unhandled exceptions.
+- [121c2d9a] def sensitive_variables(*variables): """ Indicate which variables used in the decorated function are sensitive so that those variables can later be treated in a special way, for example by hiding them when logging unhandled exceptions.
+- [65f270f6] from django.http import HttpRequest
+- [adc94a07] import inspect from functools import wraps from inspect import iscoroutinefunction

@@ -1,6 +1,6 @@
 # Fact ddb4fa20
 
-Store id: 7dd33d8f-ae31-40b8-b5f3-75c1a1738f57
+Store id: 362d80bb-983d-4ff0-a2f1-4d21a55ac8bd
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManyToManyRel(ForeignObjectRel)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3862400+00:00`
+- posted_at: `2026-11-09T23:32:00.3471680+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 346,
     "symbol": "ManyToManyRel"
   },
-  "id": "7dd33d8f-ae31-40b8-b5f3-75c1a1738f57",
+  "id": "362d80bb-983d-4ff0-a2f1-4d21a55ac8bd",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3862400+00:00"
+    "posted_at": "2026-11-09T23:32:00.3471680+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78b044fe-d5c4-434c-8711-e02b50135218",
+  "subject_id": "91f9047a-9e61-4235-b93a-ff5e751c8a14",
   "subject_name": "django/db/models/fields/reverse_related::ManyToManyRel",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact dccb17a6
 
-Store id: 89304f66-a1a1-4217-ae67-90f75d8c0406
+Store id: d95f8693-9772-4056-ab8c-4d0cf31bae97
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7550130+00:00`
+- posted_at: `2026-11-09T23:31:59.1958340+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 515,
     "symbol": "ReverseOneToOneDescriptor.__get__"
   },
-  "id": "89304f66-a1a1-4217-ae67-90f75d8c0406",
+  "id": "d95f8693-9772-4056-ab8c-4d0cf31bae97",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7550130+00:00"
+    "posted_at": "2026-11-09T23:31:59.1958340+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2e4add5a-ffb7-4479-83f4-7d0cb8e75629",
+  "subject_id": "4f4aceca-f390-45f6-b579-739a9bfb2d93",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__get__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact c5ad94e7
 
-Store id: 3bbe69e8-e1ac-46d2-8dd8-6e3c30a9c41b
+Store id: 992e5e3f-3e3c-4f46-af9c-d2680bd8416c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _remove_prefetched_objects(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8665710+00:00`
+- posted_at: `2026-11-09T23:31:59.3775010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1185,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._remove_prefetched_objects"
   },
-  "id": "3bbe69e8-e1ac-46d2-8dd8-6e3c30a9c41b",
+  "id": "992e5e3f-3e3c-4f46-af9c-d2680bd8416c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8665710+00:00"
+    "posted_at": "2026-11-09T23:31:59.3775010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e5519a02-27b6-4741-9306-b043f78b2814",
+  "subject_id": "e9138aaa-2844-4c2f-bb78-5c67f35a6998",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._remove_prefetched_objects",
   "tags": [
     "entity:method"

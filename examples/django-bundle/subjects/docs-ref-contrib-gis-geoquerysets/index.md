@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/geoquerysets
 
-- Subject: docs/ref/contrib/gis/geoquerysets (id `9da800d3-7989-4896-8e05-33d8acd12ec6`)
+- Subject: docs/ref/contrib/gis/geoquerysets (id `1965b417-fe47-4287-a414-36e243aac82d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 29 of 336
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 9627 tokens
+- Facts shown: 305 of 336
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # A tuple lookup parameter is used to specify the geometry and # the intersection pattern (the pattern here is for 'contains'). Zipcode.objects.filter(poly__relate=(geom, "T*T***FF*")) [cdcedd92]
 - <field>__<distance lookup>=(<geometry/raster>, <distance value>[, "spheroid"]) <field>__<distance lookup>=(<raster>, <band_index>, <distance value>[, "spheroid"]) <field>__<band_index>__<distance lookup>=(<raster>, <band_index>, <distance value>[, "spheroid"]) [c3ff6f78]
@@ -40,6 +40,281 @@
 - Zipcode.objects.filter(poly__dwithin=(geom, D(m=5))) [60b884c7]
 - .. _distance-lookups: [192946c5]
 
-## Beyond the budget
+## All facts
 
-276 more facts did not fit in the budget: [5970bae1] [dc10bbc1] [011e6842] [7dd4d15e] [275c27ba] [930694e8] [be38ed36] [4490f85e] [b5aaea49] [8fcb2d78] [c22477df] [8e993577] [5a9589cb] [b2c52108] [16ced104] [07cf3370] [59a5d665] [8e6d147f] [b06ffbc9] [3b5bc6ba] [3fc3c117] [b491599d] [42aac224] [ada33b87bf6f9b34-2] [8bbc02c0] [9fa7b243] [b650b32f] [2a461464] [d6673b84] [cd633601] [1ed35819] [6271f9c3] [11978827] [250805bc] [7e33cded] [9804582d] [e87f377f582676fb-2] [262fa4b5] [4648db9f5c6194ab-2] [010682de] [e5fe3ca8] [7240d7f5] [a6f4e454] [e635ebb2] [532e8b0c] [ab09ee01] [bf0d934a] [6eddb01b] [9a8aec7c] [366fe11b] [f36fcf39] [8d1555e3] [fc837c44] [eaf050be34acb41d-134] [eaf050be34acb41d-135] [eaf050be34acb41d-136] [eaf050be34acb41d-137] [eaf050be34acb41d-138] [0ee73173f492412a-11] [0ee73173f492412a-12] [0ee73173f492412a-13] [0ee73173f492412a-14] [0ee73173f492412a-15] [0ee73173f492412a-16] [0ee73173f492412a-17] [0ee73173f492412a-18] [0ee73173f492412a-19] [0ee73173f492412a-20] [0ee73173f492412a-21] [0ee73173f492412a-22] [3a9340cd0d877339-21] [98670c268fdc55ed-2] [30ee50aa] [5bb7ce29] [221b0f43] [2946da6e] [e8b89143] [a40ef178] [9f13c36f] [1b0f0784] [0e081486] [26bd6d66] [e7231cf4] [26882e05] [facdcc23] [f1869401] [ee298f53] [b46c8343] [8880f2ac] [533ffd3a] [13c5c1f4] [cd9671d6] [1f739c4c] [e6e7a71f] [5f16e976] [172bd9a0] [4cea74f0] [757179f0] [6d1b6249] [6465c8f0] [a340456b] [94b7df61] [5c92297a] [b6d986af] [d8ca4db9] [942ae6c11625c81c-49] [d1442067] [a1eb26d754a3d60c-8] [0cf180bcf4ecfab5-8] [57739e32d87f6c76-5] [57739e32d87f6c76-6] [57739e32d87f6c76-7] [2a966a198e13032b-7] [a38cc1a2] [3ba8aee7] [d1b02a4c] [ba41c245] [6df0898d] [1ed65890] [973db1c9] [af4a2637] [ba03bc0e] [ff75b720] [9ff2a33f] [ddab360a] [e4b1d423] [e8e56928] [b5de19ce] [e240981b] [1cb533c8] [8fc16734] [02408a5c] [59e68140] [a866c082] [f69af85ebbe61095-2] [28c5a500] [8eaec449] [b806016e] [d187c940] [20ed93bf2591ccc0-9] [20ed93bf2591ccc0-10] [20ed93bf2591ccc0-11] [20ed93bf2591ccc0-12] [20ed93bf2591ccc0-13] [acfcf117f82fd4c9-6] [acfcf117f82fd4c9-7] [acfcf117f82fd4c9-8] [acfcf117f82fd4c9-9] [acfcf117f82fd4c9-10] [acfcf117f82fd4c9-11] [acfcf117f82fd4c9-12] [acfcf117f82fd4c9-13] [acfcf117f82fd4c9-14] [acfcf117f82fd4c9-15] [acfcf117f82fd4c9-16] [acfcf117f82fd4c9-17] [acfcf117f82fd4c9-18] [acfcf117f82fd4c9-19] [acfcf117f82fd4c9-20] [acfcf117f82fd4c9-21] [acfcf117f82fd4c9-22] [acfcf117f82fd4c9-23] [acfcf117f82fd4c9-24] [acfcf117f82fd4c9-25] [acfcf117f82fd4c9-26] [acfcf117f82fd4c9-27] [acfcf117f82fd4c9-28] [acfcf117f82fd4c9-29] [acfcf117f82fd4c9-30] [acfcf117f82fd4c9-31] [acfcf117f82fd4c9-32] [acfcf117f82fd4c9-33] [acfcf117f82fd4c9-34] [acfcf117f82fd4c9-35] [acfcf117f82fd4c9-36] [acfcf117f82fd4c9-37] [bba4dad7] [24129c33] [cbc2e105] [a657f6d9] [bb779b64] [6eec7732] [00c2ab46] [43da3752] [ca1ae56f] [f0e8e82b] [c2132971] [0800a73e] [b0fa6eec] [177c83f91bdd1df5] [177c83f91bdd1df5-2] [177c83f91bdd1df5-3] [177c83f91bdd1df5-4] [177c83f91bdd1df5-5] [177c83f91bdd1df5-6] [177c83f91bdd1df5-7] [177c83f91bdd1df5-8] [1d9ec715] [95abfddb] [f0861ca3] [0de86c19] [c30780be] [af4236e7] [947614e3] [fd733cad] [5c6436fa] [f81c508c] [fe1b7970] [ccc62d7e] [4ea76185fa1bf24a-2] [fd34be91] [a900b756] [1ca3549e] [e39e0926] [2dd1acb8] [332da061] [7da0be27] [2e337a6d] [306c51f9] [79de5bb5] [44f7cf7a] [8e2c3b1e] [721c2b06] [7391d99f] [123cc1d2] [c40035e5] [0715a289] [c3a03e85] [23aeeaa1] [791ddd0e] [7985c22d] [d76cf94e] [dd63feb4] [fb72172f] [bcf78ed8] [9b2ebf42] [d19a4d00] [c70e6452] [67da449c] [d81dd7a7] [ad612b89] [5b29ed04] [1ea03ab9] [1b8775d9] [dd82bc68] [7450ab55] [543cb79c] [5b342a9c] [d581d636] [e01c1f09] [7c91e57d] [1255d592] [238666b9] [765f8e3d] [ef1eecfe] [b93b922c] [05be4f9a] [5c1d5360] [f2b0bc25] [b2df608cab3f23a8-2] [b8770bb7] [df153c8b] [7a683743] [de39a66e] [29d06a16] [4f2bd913] [b7301f74] [74f63c6d] [e8c80ab5] [aa233de3] [be7553ec] [3b1a216b] [47ed8a09] [cc6af2b9] [76254388] [84ad6283]
+- [5970bae1] Zipcode.objects.filter(poly__equals=geom)
+- [dc10bbc1] Zipcode.objects.filter(poly__geom_type="POLYGON")
+- [011e6842] Zipcode.objects.filter(poly__intersects=geom)
+- [7dd4d15e] Zipcode.objects.filter(poly__isempty=True)
+- [275c27ba] Zipcode.objects.filter(poly__isvalid=True)
+- [930694e8] Zipcode.objects.filter(poly__left=geom)
+- [be38ed36] Zipcode.objects.filter(poly__overlaps_above=geom)
+- [4490f85e] Zipcode.objects.filter(poly__overlaps_below=geom)
+- [b5aaea49] Zipcode.objects.filter(poly__overlaps_right=geom)
+- [8fcb2d78] Zipcode.objects.filter(poly__relate=(geom, "anyinteract"))
+- [c22477df] Zipcode.objects.filter(poly__relate=(rast, 1, "T*T***FF*")) Zipcode.objects.filter(rast__2__relate=(rast, 1, "T*T***FF*"))
+- [8e993577] Zipcode.objects.filter(poly__strictly_above=geom)
+- [5a9589cb] Zipcode.objects.filter(poly__strictly_below=geom)
+- [b2c52108] Zipcode.objects.filter(poly__touches=geom)
+- [16ced104] Zipcode.objects.filter(poly__within=geom)
+- [07cf3370] *Availability*: MariaDB, MySQL, `PostGIS <https://postgis.net/docs/ST_IsValid.html>`__, Oracle, SpatiaLite
+- [59a5d665] *Availability*: PostGIS, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
+- [8e6d147f] *Availability*: `PostGIS <https://postgis.net/docs/ST_ContainsProperly.html>`__, PGRaster (Bilateral)
+- [b06ffbc9] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Contain.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
+- [3b5bc6ba] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overabove.html>`__, PGRaster (Conversion)
+- [3fc3c117] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overbelow.html>`__, PGRaster (Conversion)
+- [b491599d] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overleft.html>`__, PGRaster (Bilateral)
+- [42aac224] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overright.html>`__, PGRaster (Bilateral)
+- [ada33b87bf6f9b34-2] *Availability*: `PostGIS <https://postgis.net/docs/GeometryType.html>`__, Oracle 23c+, MariaDB, MySQL, SpatiaLite
+- [8bbc02c0] *Availability*: `PostGIS <https://postgis.net/docs/ST_3DExtent.html>`__
+- [9fa7b243] *Availability*: `PostGIS <https://postgis.net/docs/ST_Collect.html>`__, MariaDB, MySQL, SpatiaLite
+- [b650b32f] *Availability*: `PostGIS <https://postgis.net/docs/ST_Contains.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
+- [2a461464] *Availability*: `PostGIS <https://postgis.net/docs/ST_Covers.html>`__, Oracle, MySQL, PGRaster (Bilateral), SpatiaLite
+- [d6673b84] *Availability*: `PostGIS <https://postgis.net/docs/ST_Crosses.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Conversion)
+- [cd633601] *Availability*: `PostGIS <https://postgis.net/docs/ST_Equals.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Conversion)
+- [1ed35819] *Availability*: `PostGIS <https://postgis.net/docs/ST_Extent.html>`__, Oracle, SpatiaLite
+- [6271f9c3] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Above.html>`__, PGRaster (Conversion)
+- [11978827] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Below.html>`__, PGRaster (Conversion)
+- [250805bc] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Left.html>`__, PGRaster (Conversion)
+- [7e33cded] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Right.html>`__, PGRaster (Conversion)
+- [9804582d] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Same.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
+- [e87f377f582676fb-2] *Availability*: `PostGIS <https://postgis.net/docs/ST_IsEmpty.html>`__, SpatiaLite
+- [262fa4b5] *Availability*: `PostGIS <https://postgis.net/docs/ST_MakeLine.html>`__, SpatiaLite
+- [4648db9f5c6194ab-2] *Availability*: `PostGIS <https://postgis.net/docs/ST_NDims.html>`__, SpatiaLite
+- [010682de] *Availability*: `PostGIS <https://postgis.net/docs/ST_Relate.html>`__, MariaDB, Oracle, SpatiaLite, PGRaster (Conversion)
+- [e5fe3ca8] *Availability*: `PostGIS <https://postgis.net/docs/ST_Touches.html>`__, Oracle, MariaDB, MySQL, SpatiaLite
+- [7240d7f5] *Availability*: `PostGIS <https://postgis.net/docs/ST_Union.html>`__, Oracle, SpatiaLite
+- [a6f4e454] *Availability*: `PostGIS <https://postgis.net/docs/geometry_overlaps.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
+- [e635ebb2] - Bilateral raster support ``B``: the operator supports rasters only if both sides of the lookup receive raster inputs. Raster data is automatically converted to geometries for mixed lookups.
+- [532e8b0c] - Geometry conversion support ``C``. The lookup does not have native raster support, all raster data is automatically converted to geometries.
+- [ab09ee01] - Native raster support ``N``: the operator accepts rasters natively on both sides of the lookup, and raster input can be mixed with geometry inputs.
+- [bf0d934a] .. _gis-aggregation-functions:
+- [6eddb01b] .. _spatial-lookups:
+- [9a8aec7c] .. class:: Collect(geo_field, filter=None)
+- [366fe11b] .. class:: Extent(geo_field, filter=None)
+- [f36fcf39] .. class:: Extent3D(geo_field, filter=None)
+- [8d1555e3] .. class:: MakeLine(geo_field, filter=None)
+- [fc837c44] .. class:: Union(geo_field, filter=None)
+- [eaf050be34acb41d-134] .. code-block:: pycon
+- [eaf050be34acb41d-135] .. code-block:: pycon
+- [eaf050be34acb41d-136] .. code-block:: pycon
+- [eaf050be34acb41d-137] .. code-block:: pycon
+- [eaf050be34acb41d-138] .. code-block:: pycon
+- [0ee73173f492412a-11] .. code-block:: sql
+- [0ee73173f492412a-12] .. code-block:: sql
+- [0ee73173f492412a-13] .. code-block:: sql
+- [0ee73173f492412a-14] .. code-block:: sql
+- [0ee73173f492412a-15] .. code-block:: sql
+- [0ee73173f492412a-16] .. code-block:: sql
+- [0ee73173f492412a-17] .. code-block:: sql
+- [0ee73173f492412a-18] .. code-block:: sql
+- [0ee73173f492412a-19] .. code-block:: sql
+- [0ee73173f492412a-20] .. code-block:: sql
+- [0ee73173f492412a-21] .. code-block:: sql
+- [0ee73173f492412a-22] .. code-block:: sql
+- [3a9340cd0d877339-21] .. code-block:: text
+- [98670c268fdc55ed-2] .. currentmodule:: django.contrib.gis.db.models
+- [30ee50aa] .. fieldlookup:: bbcontains
+- [5bb7ce29] .. fieldlookup:: bboverlaps
+- [221b0f43] .. fieldlookup:: contained
+- [2946da6e] .. fieldlookup:: contains_properly
+- [e8b89143] .. fieldlookup:: coveredby
+- [a40ef178] .. fieldlookup:: covers
+- [9f13c36f] .. fieldlookup:: crosses
+- [1b0f0784] .. fieldlookup:: disjoint
+- [0e081486] .. fieldlookup:: distance_gt
+- [26bd6d66] .. fieldlookup:: distance_gte
+- [e7231cf4] .. fieldlookup:: distance_lt
+- [26882e05] .. fieldlookup:: distance_lte
+- [facdcc23] .. fieldlookup:: dwithin
+- [f1869401] .. fieldlookup:: equals
+- [ee298f53] .. fieldlookup:: exact :noindex: .. fieldlookup:: same_as
+- [b46c8343] .. fieldlookup:: geom_type
+- [8880f2ac] .. fieldlookup:: gis-contains
+- [533ffd3a] .. fieldlookup:: intersects
+- [13c5c1f4] .. fieldlookup:: isempty
+- [cd9671d6] .. fieldlookup:: isvalid
+- [1f739c4c] .. fieldlookup:: left
+- [e6e7a71f] .. fieldlookup:: num_dimensions
+- [5f16e976] .. fieldlookup:: overlaps
+- [172bd9a0] .. fieldlookup:: overlaps_above
+- [4cea74f0] .. fieldlookup:: overlaps_below
+- [757179f0] .. fieldlookup:: overlaps_left
+- [6d1b6249] .. fieldlookup:: overlaps_right
+- [6465c8f0] .. fieldlookup:: relate
+- [a340456b] .. fieldlookup:: right
+- [94b7df61] .. fieldlookup:: strictly_above
+- [5c92297a] .. fieldlookup:: strictly_below
+- [b6d986af] .. fieldlookup:: touches
+- [d8ca4db9] .. fieldlookup:: within
+- [942ae6c11625c81c-49] .. note::
+- [d1442067] .. rubric:: Footnotes .. [#fnde9im] *See* `OpenGIS Simple Feature Specification For SQL <https://portal.ogc.org/files/?artifact_id=829>`_, at Ch. 2.1.13.2, p. 2-13 (The Dimensionally Extended Nine-Intersection Model). .. [#fnsdorelate] *See* `SDO_RELATE documentation <https://docs.oracle.com/en/ database/oracle/oracle-database/18/spatl/spatial-operators-reference.html# GUID-97C17C18-F05E-49B4-BE11-E89B972E2A02>`_, from the Oracle Spatial and Graph Developer's Guide. .. [#fncovers] For an explanation of this routine, read `Quirks of the "Contains" Spatial Predicate <https://lin-ear-th-inking.blogspot.com/2007/06/subtleties-of-ogc-covers-spatial.html>`_ by Martin Davis (a PostGIS developer).
+- [a1eb26d754a3d60c-8] .. versionadded:: 6.0
+- [0cf180bcf4ecfab5-8] .. versionadded:: 6.1
+- [57739e32d87f6c76-5] .. versionchanged:: 6.0
+- [57739e32d87f6c76-6] .. versionchanged:: 6.0
+- [57739e32d87f6c76-7] .. versionchanged:: 6.0
+- [2a966a198e13032b-7] .. versionchanged:: 6.1
+- [a38cc1a2] ==== ============================== ======================================================= Case Lookup SQL Equivalent ==== ============================== ======================================================= N, B ``rast__contains=rst`` ``ST_Contains(rast, rst)`` N, B ``rast__1__contains=(rst, 2)`` ``ST_Contains(rast, 1, rst, 2)`` B, C ``rast__contains=geom`` ``ST_Contains(ST_Polygon(rast), geom)`` B, C ``rast__1__contains=geom`` ``ST_Contains(ST_Polygon(rast, 1), geom)`` B, C ``poly__contains=rst`` ``ST_Contains(poly, ST_Polygon(rst))`` B, C ``poly__contains=(rst, 1)`` ``ST_Contains(poly, ST_Polygon(rst, 1))`` C ``rast__crosses=rst`` ``ST_Crosses(ST_Polygon(rast), ST_Polygon(rst))`` C ``rast__1__crosses=(rst, 2)`` ``ST_Crosses(ST_Polygon(rast, 1), ST_Polygon(rst, 2))`` C ``rast__crosses=geom`` ``ST_Crosses(ST_Polygon(rast), geom)`` C ``poly__crosses=rst`` ``ST_Crosses(poly, ST_Polygon(rst))`` ==== ============================== =======================================================
+- [3ba8aee7] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``GeometryType(geom)`` MariaDB ``ST_GeometryType(geom)`` MySQL ``ST_GeometryType(geom)`` Oracle ``SDO_GEOMETRY.GET_GTYPE(geom)`` SpatiaLite ``GeometryType(geom)`` ========== ==========================
+- [d1b02a4c] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``ST_Covers(poly, geom)`` Oracle ``SDO_COVERS(poly, geom)`` MySQL ``MBRCovers(poly, geom)`` SpatiaLite ``Covers(poly, geom)`` ========== ==========================
+- [ba41c245] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``ST_Crosses(poly, geom)`` MariaDB ``ST_Crosses(poly, geom)`` MySQL ``ST_Crosses(poly, geom)`` SpatiaLite ``Crosses(poly, geom)`` ========== ==========================
+- [6df0898d] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``ST_Touches(poly, geom)`` MariaDB ``ST_Touches(poly, geom)`` MySQL ``ST_Touches(poly, geom)`` Oracle ``SDO_TOUCH(poly, geom)`` SpatiaLite ``Touches(poly, geom)`` ========== ==========================
+- [1ed65890] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``ST_Within(poly, geom)`` MariaDB ``ST_Within(poly, geom)`` MySQL ``ST_Within(poly, geom)`` Oracle ``SDO_INSIDE(poly, geom)`` SpatiaLite ``Within(poly, geom)`` ========== ==========================
+- [973db1c9] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``poly && geom`` MariaDB ``MBROverlaps(poly, geom)`` MySQL ``MBROverlaps(poly, geom)`` SpatiaLite ``MbrOverlaps(poly, geom)`` ========== ==========================
+- [af4a2637] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``poly @ geom`` MariaDB ``MBRWithin(poly, geom)`` MySQL ``MBRWithin(poly, geom)`` SpatiaLite ``MbrWithin(poly, geom)`` ========== ==========================
+- [ba03bc0e] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``poly ~ geom`` MariaDB ``MBRContains(poly, geom)`` MySQL ``MBRContains(poly, geom)`` SpatiaLite ``MbrContains(poly, geom)`` ========== ==========================
+- [ff75b720] ========== ============================ Backend SQL Equivalent ========== ============================ PostGIS ``ST_Contains(poly, geom)`` Oracle ``SDO_CONTAINS(poly, geom)`` MariaDB ``ST_Contains(poly, geom)`` MySQL ``ST_Contains(poly, geom)`` SpatiaLite ``Contains(poly, geom)`` ========== ============================
+- [9ff2a33f] ========== ============================= Backend SQL Equivalent ========== ============================= PostGIS ``ST_CoveredBy(poly, geom)`` Oracle ``SDO_COVEREDBY(poly, geom)`` MariaDB ``MBRCoveredBy(poly, geom)`` MySQL ``MBRCoveredBy(poly, geom)`` SpatiaLite ``CoveredBy(poly, geom)`` ========== =============================
+- [ddab360a] ========== =================================== Backend SQL Equivalent ========== =================================== PostGIS ``ST_ContainsProperly(poly, geom)`` ========== ===================================
+- [e4b1d423] ========== ====================================== Backend SQL Equivalent ========== ====================================== PostGIS ``ST_DWithin(poly, geom, 5)`` Oracle ``SDO_WITHIN_DISTANCE(poly, geom, 5)`` SpatiaLite ``PtDistWithin(poly, geom, 5)`` ========== ======================================
+- [e8e56928] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Disjoint(poly, geom)`` Oracle ``SDO_GEOM.RELATE(poly, 'DISJOINT', geom, 0.05)`` MariaDB ``ST_Disjoint(poly, geom)`` MySQL ``ST_Disjoint(poly, geom)`` SpatiaLite ``Disjoint(poly, geom)`` ========== =================================================
+- [b5de19ce] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Equals(poly, geom)`` Oracle ``SDO_EQUAL(poly, geom)`` MariaDB ``ST_Equals(poly, geom)`` MySQL ``ST_Equals(poly, geom)`` SpatiaLite ``Equals(poly, geom)`` ========== =================================================
+- [e240981b] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Intersects(poly, geom)`` Oracle ``SDO_OVERLAPBDYINTERSECT(poly, geom)`` MariaDB ``ST_Intersects(poly, geom)`` MySQL ``ST_Intersects(poly, geom)`` SpatiaLite ``Intersects(poly, geom)`` ========== =================================================
+- [1cb533c8] ========== ================================================== Backend SQL Equivalent ========== ================================================== PostGIS ``ST_Distance/ST_Distance_Sphere(poly, geom) < 5`` MariaDB ``ST_Distance(poly, geom) < 5`` MySQL ``ST_Distance(poly, geom) < 5`` Oracle ``SDO_GEOM.SDO_DISTANCE(poly, geom, 0.05) < 5`` SpatiaLite ``Distance(poly, geom) < 5`` ========== ==================================================
+- [8fc16734] =================== ================== Backend SQL Equivalent =================== ================== PostGIS, SpatiaLite ``ST_NDims(geom)`` =================== ==================
+- [02408a5c] ===================== ===================================================== Keyword Argument Description ===================== ===================================================== ``tolerance`` This keyword is for Oracle only. It is for the tolerance value used by the ``SDOAGGRTYPE`` procedure; the `Oracle documentation`__ has more details. ===================== =====================================================
+- [59e68140] ========================== GIS QuerySet API Reference ==========================
+- [a866c082] =================================== ================================================================ Backend SQL Equivalent =================================== ================================================================ MariaDB, MySQL, PostGIS, SpatiaLite ``ST_IsValid(poly)`` Oracle ``SDO_GEOM.VALIDATE_GEOMETRY_WITH_CONTEXT(poly, 0.05) = 'TRUE'`` =================================== ================================================================
+- [f69af85ebbe61095-2] Aggregate Functions -------------------
+- [28c5a500] All examples in the reference below are given for geometry fields and inputs, but the lookups can be used the same way with rasters on both sides. Whenever a lookup doesn't support raster input, the input is automatically converted to a geometry where necessary using the `ST_Polygon <https://postgis.net/docs/RT_ST_Polygon.html>`_ function. See also the :ref:`introduction to raster lookups <spatial-lookup-raster>`.
+- [8eaec449] Distance Lookups ================
+- [b806016e] Distance lookups take the following form:
+- [d187c940] Django provides some GIS-specific aggregate functions. For details on how to use these aggregate functions, see :doc:`the topic guide on aggregation </topics/db/aggregation>`.
+- [20ed93bf2591ccc0-9] Example:
+- [20ed93bf2591ccc0-10] Example:
+- [20ed93bf2591ccc0-11] Example:
+- [20ed93bf2591ccc0-12] Example:
+- [20ed93bf2591ccc0-13] Example:
+- [acfcf117f82fd4c9-6] Example::
+- [acfcf117f82fd4c9-7] Example::
+- [acfcf117f82fd4c9-8] Example::
+- [acfcf117f82fd4c9-9] Example::
+- [acfcf117f82fd4c9-10] Example::
+- [acfcf117f82fd4c9-11] Example::
+- [acfcf117f82fd4c9-12] Example::
+- [acfcf117f82fd4c9-13] Example::
+- [acfcf117f82fd4c9-14] Example::
+- [acfcf117f82fd4c9-15] Example::
+- [acfcf117f82fd4c9-16] Example::
+- [acfcf117f82fd4c9-17] Example::
+- [acfcf117f82fd4c9-18] Example::
+- [acfcf117f82fd4c9-19] Example::
+- [acfcf117f82fd4c9-20] Example::
+- [acfcf117f82fd4c9-21] Example::
+- [acfcf117f82fd4c9-22] Example::
+- [acfcf117f82fd4c9-23] Example::
+- [acfcf117f82fd4c9-24] Example::
+- [acfcf117f82fd4c9-25] Example::
+- [acfcf117f82fd4c9-26] Example::
+- [acfcf117f82fd4c9-27] Example::
+- [acfcf117f82fd4c9-28] Example::
+- [acfcf117f82fd4c9-29] Example::
+- [acfcf117f82fd4c9-30] Example::
+- [acfcf117f82fd4c9-31] Example::
+- [acfcf117f82fd4c9-32] Example::
+- [acfcf117f82fd4c9-33] Example::
+- [acfcf117f82fd4c9-34] Example::
+- [acfcf117f82fd4c9-35] Example::
+- [acfcf117f82fd4c9-36] Example::
+- [acfcf117f82fd4c9-37] Example::
+- [bba4dad7] For an introduction, see the :ref:`spatial lookups introduction <spatial-lookups-intro>`. For an overview of what lookups are compatible with a particular spatial backend, refer to the :ref:`spatial lookup compatibility table <spatial-lookup-compatibility>`.
+- [24129c33] For an overview on performing distance queries, please refer to the :ref:`distance queries introduction <distance-queries>`.
+- [cbc2e105] Geometry example::
+- [a657f6d9] Here the relation pattern is comprised of at least one of the nine relation strings: ``TOUCH``, ``OVERLAPBDYDISJOINT``, ``OVERLAPBDYINTERSECT``, ``EQUAL``, ``INSIDE``, ``COVEREDBY``, ``CONTAINS``, ``COVERS``, ``ON``, and ``ANYINTERACT``. Multiple strings may be combined with the logical Boolean operator OR, for example, ``'inside+touch'``. [#fnsdorelate]_ The relation strings are case-insensitive.
+- [bb779b64] Lookups with rasters --------------------
+- [6eec7732] MariaDB, PostGIS, and SpatiaLite ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [00c2ab46] On PostgreSQL, the ``'spheroid'`` option uses `ST_DistanceSpheroid <https://postgis.net/docs/ST_Distance_Spheroid.html>`__ instead of `ST_DistanceSphere <https://postgis.net/docs/ST_DistanceSphere.html>`__. The simpler `ST_Distance <https://postgis.net/docs/ST_Distance.html>`__ function is used with projected coordinate systems. Rasters are converted to geometries for spheroid based lookups.
+- [43da3752] On every distance lookup except :lookup:`dwithin`, an optional element, ``'spheroid'``, may be included to use the more accurate spheroid distance calculation functions on fields with a geodetic coordinate system.
+- [ca1ae56f] On these spatial backends the intersection pattern is a string comprising nine characters, which define intersections between the interior, boundary, and exterior of the geometry field and the lookup geometry. The intersection pattern matrix may only use the following characters: ``1``, ``2``, ``T``, ``F``, or ``*``. This lookup type allows users to "fine tune" a specific geometric relationship consistent with the DE-9IM model. [#fnde9im]_
+- [f0e8e82b] Oracle ~~~~~~
+- [c2132971] Oracle SQL equivalent:
+- [0800a73e] PostGIS SQL equivalent:
+- [b0fa6eec] PostGIS and MariaDB SQL equivalent:
+- [177c83f91bdd1df5] PostGIS equivalent:
+- [177c83f91bdd1df5-2] PostGIS equivalent:
+- [177c83f91bdd1df5-3] PostGIS equivalent:
+- [177c83f91bdd1df5-4] PostGIS equivalent:
+- [177c83f91bdd1df5-5] PostGIS equivalent:
+- [177c83f91bdd1df5-6] PostGIS equivalent:
+- [177c83f91bdd1df5-7] PostGIS equivalent:
+- [177c83f91bdd1df5-8] PostGIS equivalent:
+- [1d9ec715] Raster example::
+- [95abfddb] Returns a ``GEOMETRYCOLLECTION`` or a ``MULTI`` geometry object from the geometry column. This is analogous to a simplified version of the :class:`Union` aggregate, except it can be several orders of magnitude faster than performing a union because it rolls up geometries into a collection or multi object, not caring about dissolving boundaries.
+- [f0861ca3] Returns a ``LineString`` constructed from the point field geometries in the ``QuerySet``. Currently, ordering the queryset has no effect.
+- [0de86c19] Returns models where the distance to the geometry field from the lookup geometry are within the given distance from one another. Note that you can only provide :class:`~django.contrib.gis.measure.Distance` objects if the targeted geometries are in a projected system. For geographic geometries, you should use units of the geometry field (e.g. degrees for ``WGS84``) .
+- [c30780be] Returns models where the distance to the geometry field from the lookup geometry is greater than or equal to the given distance value.
+- [af4236e7] Returns models where the distance to the geometry field from the lookup geometry is less than the given distance value.
+- [947614e3] Returns the 3D extent of all ``geo_field`` in the ``QuerySet`` as a 6-tuple, comprising the lower left coordinate and upper right coordinate (each with x, y, and z coordinates).
+- [fd733cad] Returns the extent of all ``geo_field`` in the ``QuerySet`` as a 4-tuple, comprising the lower left coordinate and the upper right coordinate.
+- [5c6436fa] Returns the geometry type of the geometry field.
+- [f81c508c] Returns the number of dimensions used by the geometry.
+- [fe1b7970] Returns true if the lookup geometry intersects the interior of the geometry field, but not the boundary (or exterior).
+- [ccc62d7e] SpatiaLite SQL equivalent:
+- [4ea76185fa1bf24a-2] Spatial Lookups ===============
+- [fd34be91] Spatial lookups with rasters are only supported for PostGIS backends (denominated as PGRaster in this section).
+- [a900b756] Tests if no point in the geometry field is outside the lookup geometry. [#fncovers]_
+- [1ca3549e] Tests if the geometry field is "equal" to the lookup geometry. On Oracle, MySQL, and SpatiaLite, it tests spatial equality, while on PostGIS it tests equality of bounding boxes.
+- [e39e0926] Tests if the geometry field is spatially disjoint from the lookup geometry.
+- [2dd1acb8] Tests if the geometry field is spatially equal to the lookup geometry.
+- [332da061] Tests if the geometry field is spatially related to the lookup geometry by the values given in the given pattern. This lookup requires a tuple parameter, ``(geom, pattern)``; the form of ``pattern`` will depend on the spatial backend:
+- [7da0be27] Tests if the geometry field is spatially within the lookup geometry.
+- [2e337a6d] Tests if the geometry field spatially contains the lookup geometry.
+- [306c51f9] Tests if the geometry field spatially crosses the lookup geometry.
+- [79de5bb5] Tests if the geometry field spatially intersects the lookup geometry.
+- [44f7cf7a] Tests if the geometry field spatially overlaps the lookup geometry.
+- [8e2c3b1e] Tests if the geometry field spatially touches the lookup geometry.
+- [721c2b06] Tests if the geometry field's bounding box is completely contained by the lookup geometry's bounding box.
+- [7391d99f] Tests if the geometry field's bounding box is strictly above the lookup geometry's bounding box.
+- [123cc1d2] Tests if the geometry field's bounding box is strictly below the lookup geometry's bounding box.
+- [c40035e5] Tests if the geometry field's bounding box is strictly to the left of the lookup geometry's bounding box.
+- [0715a289] Tests if the geometry field's bounding box overlaps or is above the lookup geometry's bounding box.
+- [c3a03e85] Tests if the geometry field's bounding box overlaps or is to the left of the lookup geometry's bounding box.
+- [23aeeaa1] Tests if the geometry field's bounding box overlaps the lookup geometry's bounding box.
+- [791ddd0e] Tests if the geometry is empty.
+- [7985c22d] Tests if the geometry is valid.
+- [d76cf94e] Tests if the geometry or raster field's bounding box completely contains the lookup geometry's bounding box.
+- [dd63feb4] The database operators used by the lookups can be divided into three categories:
+- [fb72172f] The examples below show the SQL equivalent for the lookups in the different types of raster support. The same pattern applies to all spatial lookups.
+- [bcf78ed8] The spatial lookups in this section are available for :class:`GeometryField` and :class:`RasterField`.
+- [9b2ebf42] The value passed into a distance lookup is a tuple; the first two values are mandatory, and are the geometry to calculate distances to, and a distance value (either a number in units of the field, a :class:`~django.contrib.gis.measure.Distance` object, or a :doc:`query expression </ref/models/expressions>`). To pass a band index to the lookup, use a 3-tuple where the second entry is the band index.
+- [d19a4d00] This method returns a :class:`~django.contrib.gis.geos.GEOSGeometry` object comprising the union of every geometry in the queryset. Please note that use of ``Union`` is processor intensive and may take a significant amount of time on large querysets.
+- [c70e6452] __ https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/ spatial-concepts.html#GUID-CE10AB14-D5EA-43BA-A647-DAC9EEF41EE6
+- [67da449c] ``Collect`` ~~~~~~~~~~~
+- [d81dd7a7] ``Extent3D`` ~~~~~~~~~~~~
+- [ad612b89] ``Extent`` ~~~~~~~~~~
+- [5b29ed04] ``MakeLine`` ~~~~~~~~~~~~
+- [1ea03ab9] ``Union`` ~~~~~~~~~
+- [1b8775d9] ``bbcontains`` --------------
+- [dd82bc68] ``bboverlaps`` --------------
+- [7450ab55] ``contained`` -------------
+- [543cb79c] ``contains_properly`` ---------------------
+- [5b342a9c] ``contains`` ------------
+- [d581d636] ``coveredby`` -------------
+- [e01c1f09] ``covers`` ----------
+- [7c91e57d] ``crosses`` -----------
+- [1255d592] ``disjoint`` ------------
+- [238666b9] ``distance_gt`` ---------------
+- [765f8e3d] ``distance_gte`` ----------------
+- [ef1eecfe] ``distance_lt`` ---------------
+- [b93b922c] ``distance_lte`` ----------------
+- [05be4f9a] ``dwithin`` -----------
+- [5c1d5360] ``equals`` ----------
+- [f2b0bc25] ``exact``, ``same_as`` ----------------------
+- [b2df608cab3f23a8-2] ``geom_type`` -------------
+- [b8770bb7] ``intersects`` --------------
+- [df153c8b] ``isempty`` -----------
+- [7a683743] ``isvalid`` -----------
+- [de39a66e] ``left`` --------
+- [29d06a16] ``num_dimensions`` ------------------
+- [4f2bd913] ``overlaps_above`` ------------------
+- [b7301f74] ``overlaps_below`` ------------------
+- [74f63c6d] ``overlaps_left`` -----------------
+- [e8c80ab5] ``overlaps_right`` ------------------
+- [aa233de3] ``overlaps`` ------------
+- [be7553ec] ``relate`` ----------
+- [3b1a216b] ``right`` ---------
+- [47ed8a09] ``strictly_above`` ------------------
+- [cc6af2b9] ``strictly_below`` ------------------
+- [76254388] ``touches`` -----------
+- [84ad6283] ``within`` ----------

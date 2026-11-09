@@ -1,6 +1,6 @@
 # Fact 7aa6c4fe
 
-Store id: ff84554a-31be-400a-a2a1-62019f2bf162
+Store id: 123ce6ea-208b-4175-90c9-e083af0e9935
 
 ## Text
 
@@ -20,7 +20,7 @@ def _clear_cached_class_lookups(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1566330+00:00`
+- posted_at: `2026-11-09T23:32:05.1687880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 388,
     "symbol": "RegisterLookupMixin._clear_cached_class_lookups"
   },
-  "id": "ff84554a-31be-400a-a2a1-62019f2bf162",
+  "id": "123ce6ea-208b-4175-90c9-e083af0e9935",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1566330+00:00"
+    "posted_at": "2026-11-09T23:32:05.1687880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a0199f3e-8977-4403-9e2b-a5519955c747",
+  "subject_id": "c8424158-9b8f-4960-bb1f-036d8d498e63",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin._clear_cached_class_lookups",
   "tags": [
     "entity:class_method",

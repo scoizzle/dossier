@@ -1,6 +1,6 @@
 # Fact bcac2f0f
 
-Store id: 518d1109-7b4e-4c1b-b5be-811de64f49b6
+Store id: 6448fb4b-6dfc-4d53-91c1-fc5841304bdb
 
 ## Text
 
@@ -20,7 +20,7 @@ class PositiveBigIntegerField(PositiveIntegerRelDbTypeMixin, BigIntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6041980+00:00`
+- posted_at: `2026-11-09T23:31:56.7663300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2442,
     "symbol": "PositiveBigIntegerField"
   },
-  "id": "518d1109-7b4e-4c1b-b5be-811de64f49b6",
+  "id": "6448fb4b-6dfc-4d53-91c1-fc5841304bdb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6041980+00:00"
+    "posted_at": "2026-11-09T23:31:56.7663300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "105ae3bb-e941-47ec-8336-ed933e75f833",
+  "subject_id": "87a7f915-4880-439b-a37f-a4580047d00c",
   "subject_name": "django/db/models/fields/__init__::PositiveBigIntegerField",
   "tags": [
     "entity:class"

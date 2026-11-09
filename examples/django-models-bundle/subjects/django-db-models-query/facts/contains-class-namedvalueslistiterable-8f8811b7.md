@@ -1,6 +1,6 @@
 # Fact 8f8811b7
 
-Store id: 01416856-a8b6-40dc-99bb-008b3d1d7868
+Store id: 029f7ed0-af82-4a6b-a798-e941ca99213d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NamedValuesListIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "01416856-a8b6-40dc-99bb-008b3d1d7868",
+  "id": "029f7ed0-af82-4a6b-a798-e941ca99213d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NamedValuesListIterable"
       },
       "rel": "contains",
-      "target": "c1d84687-849b-4084-a8c7-f0093c353a60"
+      "target": "50b003ba-5d84-4b08-bde1-b48a86a8fc4c"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 1b96e177
 
-Store id: 98340ae9-dd8d-48cb-8e7d-42a8a130c7a3
+Store id: 611e1def-a9e7-4336-adb1-798a1c2ea543
 
 ## Text
 
@@ -20,7 +20,7 @@ class GeneratedField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4128560+00:00`
+- posted_at: `2026-11-09T23:31:57.6004430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 11,
     "symbol": "GeneratedField"
   },
-  "id": "98340ae9-dd8d-48cb-8e7d-42a8a130c7a3",
+  "id": "611e1def-a9e7-4336-adb1-798a1c2ea543",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4128560+00:00"
+    "posted_at": "2026-11-09T23:31:57.6004430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a5762a83-a9f6-4c06-856f-82e4f1a334f3",
+  "subject_id": "18a4f0e4-51f7-4435-bd91-57ee1af9b705",
   "subject_name": "django/db/models/fields/generated::GeneratedField",
   "tags": [
     "entity:class"

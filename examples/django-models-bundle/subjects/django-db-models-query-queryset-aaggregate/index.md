@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.aaggregate
 
-- Subject: django/db/models/query::QuerySet.aaggregate (id `d03aa02b-05e2-417e-b5a3-207bea170c96`)
+- Subject: django/db/models/query::QuerySet.aaggregate (id `1775ede2-89a5-4294-9684-bdb66aa440a8`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 1e9d1e94
 
-Store id: b2322f18-cef3-415d-887d-3fa75161f18b
+Store id: 109ba279-c14e-402a-8ed8-fd1b593bc1be
 
 ## Text
 
@@ -20,7 +20,7 @@ def register_wrappers(cls, *wrapper_classes)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.8172500+00:00`
+- posted_at: `2026-11-09T23:32:02.9553290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 324,
     "symbol": "IndexExpression.register_wrappers"
   },
-  "id": "b2322f18-cef3-415d-887d-3fa75161f18b",
+  "id": "109ba279-c14e-402a-8ed8-fd1b593bc1be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.8172500+00:00"
+    "posted_at": "2026-11-09T23:32:02.9553290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a62a2a21-f043-46c2-b103-1349278ecd1b",
+  "subject_id": "20c76ca3-2873-4830-8b7a-292218ed046a",
   "subject_name": "django/db/models/indexes::IndexExpression.register_wrappers",
   "tags": [
     "entity:class_method",

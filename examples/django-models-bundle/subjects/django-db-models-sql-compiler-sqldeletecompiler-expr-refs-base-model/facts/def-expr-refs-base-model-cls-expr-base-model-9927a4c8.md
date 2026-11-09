@@ -1,6 +1,6 @@
 # Fact 9927a4c8
 
-Store id: c9434308-9ccb-4d80-8562-2652c747b5fc
+Store id: bcbcd363-8288-4526-86fd-633eb18f386b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _expr_refs_base_model(cls, expr, base_model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7165220+00:00`
+- posted_at: `2026-11-09T23:32:06.0179670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1998,
     "symbol": "SQLDeleteCompiler._expr_refs_base_model"
   },
-  "id": "c9434308-9ccb-4d80-8562-2652c747b5fc",
+  "id": "bcbcd363-8288-4526-86fd-633eb18f386b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7165220+00:00"
+    "posted_at": "2026-11-09T23:32:06.0179670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b67f544b-e019-461f-bc98-9debe27f9e07",
+  "subject_id": "07269d52-4d54-4b53-a5a5-11b6c865a3a9",
   "subject_name": "django/db/models/sql/compiler::SQLDeleteCompiler._expr_refs_base_model",
   "tags": [
     "entity:class_method",

@@ -1,8 +1,8 @@
 # django/contrib/gis/gdal/raster/base
 
-- Subject: django/contrib/gis/gdal/raster/base (id `335cb742-b5be-498b-9238-0714cf42ea79`)
+- Subject: django/contrib/gis/gdal/raster/base (id `f2fe920f-1b93-414e-9470-6a7a12eabce0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 609 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

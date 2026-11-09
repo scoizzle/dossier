@@ -1,8 +1,8 @@
 # django/contrib/auth/migrations/0007_alter_validators_add_error_messages
 
-- Subject: django/contrib/auth/migrations/0007_alter_validators_add_error_messages (id `819631c5-2a36-4ff3-bd30-07c567e5a313`)
+- Subject: django/contrib/auth/migrations/0007_alter_validators_add_error_messages (id `9265fc13-9c01-4d25-b805-b6bef3f8dee7`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 172 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/oracle/operations
 
-- Subject: django/contrib/gis/db/backends/oracle/operations (id `b037c6f0-55f2-4ded-bd8e-3d0bb91d595d`)
+- Subject: django/contrib/gis/db/backends/oracle/operations (id `88bd1b6b-65cc-4bd7-ae76-d466c4823bc1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 16 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2243 tokens
+- Facts shown: 36 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # dwithin lookups on Oracle require a special string parameter # that starts with "distance=". if lookup_type == "dwithin": dist_param = "distance=%s" % dist_param [57471447]
 - def converter(value, expression, connection): if value is not None: geom = GEOSGeometryBase( read(memoryview(value.read()), max_geom_collections=None), geom_class, ) if srid: geom.srid = srid return geom [75e91821]
@@ -27,6 +27,25 @@
 - def geo_quote_name(self, name): return super().geo_quote_name(name).upper() [3a3719c4]
 - def get_area_att_for_field(self, field): return "sq_m" [20726c2c42b92ea4]
 
-## Beyond the budget
+## All facts
 
-20 more facts did not fit in the budget: [fa7ab7f1] [c34c662c] [65d28d30d056178b-2] [1b332f3a] [1c07c71f] [9ce65ebe] [cd053499] [936ec9d0] [fcd75098] [a91a3ade] [5b0ef17c] [22d414d5] [89cb30bf] [4879b302] [a463b855] [b9d317f0] [9f9f40db] [a201b115] [6b5e0d6c] [dae3b101b4aa9562-4]
+- [fa7ab7f1] def get_distance(self, f, value, lookup_type): """ Return the distance parameters given the value and the lookup type. On Oracle, geometry columns with a geodetic coordinate system behave implicitly like a geography column, and thus meters will be used as the distance parameter on them. """ if not value: return [] value = value[0] if isinstance(value, Distance): if f.geodetic(self.connection): dist_param = value.m else: dist_param = getattr( value, Distance.unit_attname(f.units_name(self.connection)) ) else: dist_param = value
+- [c34c662c] def get_geom_placeholder_sql(self, f, value, compiler): if value is None: return "NULL", () return super().get_geom_placeholder_sql(f, value, compiler)
+- [65d28d30d056178b-2] def get_geometry_converter(self, expression): read = wkb_r().read srid = expression.output_field.srid if srid == -1: srid = None geom_class = expression.output_field.geom_class
+- [1b332f3a] def modify_insert_params(self, placeholder, params): """Drop out insert parameters for NULL placeholder. Needed for Oracle Spatial backend due to #10888. """ if placeholder == "NULL": return [] return super().modify_insert_params(placeholder, params)
+- [1c07c71f] def spatial_aggregate_name(self, agg_name): """ Return the spatial aggregate SQL name. """ agg_name = "unionagg" if agg_name.lower() == "union" else agg_name.lower() return getattr(self, agg_name)
+- [9ce65ebe] def spatial_ref_sys(self): from django.contrib.gis.db.backends.oracle.models import OracleSpatialRefSys
+- [cd053499] extent = "SDO_AGGR_MBR" unionagg = "SDO_AGGR_UNION"
+- [936ec9d0] from_text = "SDO_GEOMETRY"
+- [fcd75098] function_names = { "Area": "SDO_GEOM.SDO_AREA", "AsGeoJSON": "SDO_UTIL.TO_GEOJSON", "AsWKB": "SDO_UTIL.TO_WKBGEOMETRY", "AsWKT": "SDO_UTIL.TO_WKTGEOMETRY", "BoundingCircle": "SDO_GEOM.SDO_MBC", "Centroid": "SDO_GEOM.SDO_CENTROID", "Difference": "SDO_GEOM.SDO_DIFFERENCE", "Distance": "SDO_GEOM.SDO_DISTANCE", "Envelope": "SDO_GEOM_MBR", "FromWKB": "SDO_UTIL.FROM_WKBGEOMETRY", "FromWKT": "SDO_UTIL.FROM_WKTGEOMETRY", "Intersection": "SDO_GEOM.SDO_INTERSECTION", "IsValid": "SDO_GEOM.VALIDATE_GEOMETRY_WITH_CONTEXT", "Length": "SDO_GEOM.SDO_LENGTH", "NumGeometries": "SDO_UTIL.GETNUMELEM", "NumPoints": "SDO_UTIL.GETNUMVERTICES", "Perimeter": "SDO_GEOM.SDO_LENGTH", "PointOnSurface": "SDO_GEOM.SDO_POINTONSURFACE", "Reverse": "SDO_UTIL.REVERSE_LINESTRING", "SymDifference": "SDO_GEOM.SDO_XOR", "Transform": "SDO_CS.TRANSFORM", "Union": "SDO_GEOM.SDO_UNION", }
+- [a91a3ade] gis_operators = { "contains": SDOOperator(func="SDO_CONTAINS"), "coveredby": SDOOperator(func="SDO_COVEREDBY"), "covers": SDOOperator(func="SDO_COVERS"), "disjoint": SDODisjoint(), "intersects": SDOOperator( func="SDO_OVERLAPBDYINTERSECT" ), # TODO: Is this really the same as ST_Intersects()? "equals": SDOOperator(func="SDO_EQUAL"), "exact": SDOOperator(func="SDO_EQUAL"), "overlaps": SDOOperator(func="SDO_OVERLAPS"), "same_as": SDOOperator(func="SDO_EQUAL"), # Oracle uses a different syntax, e.g., 'mask=inside+touch' "relate": SDORelate(), "touches": SDOOperator(func="SDO_TOUCH"), "within": SDOOperator(func="SDO_INSIDE"), "dwithin": SDODWithin(), }
+- [5b0ef17c] """ This module contains the spatial lookup types, and the `get_geo_where_clause` routine for Oracle Spatial.
+- [22d414d5] DEFAULT_TOLERANCE = "0.05"
+- [89cb30bf] Please note that WKT support is broken on the XE version, and thus this backend will not work on such platforms. Specifically, XE lacks support for an internal JVM, and Java libraries are required to use the WKT constructors. """
+- [4879b302] class OracleOperations(BaseSpatialOperations, DatabaseOperations): name = "oracle" oracle = True disallowed_aggregates = (models.Collect, models.Extent3D, models.MakeLine)
+- [a463b855] class SDODWithin(SpatialOperator): sql_template = "SDO_WITHIN_DISTANCE(%(lhs)s, %(rhs)s, %%s) = 'TRUE'"
+- [b9d317f0] class SDODisjoint(SpatialOperator): sql_template = ( "SDO_GEOM.RELATE(%%(lhs)s, 'DISJOINT', %%(rhs)s, %s) = 'DISJOINT'" % DEFAULT_TOLERANCE )
+- [9f9f40db] class SDOOperator(SpatialOperator): sql_template = "%(func)s(%(lhs)s, %(rhs)s) = 'TRUE'"
+- [a201b115] class SDORelate(SpatialOperator): sql_template = "SDO_RELATE(%(lhs)s, %(rhs)s, 'mask=%(mask)s') = 'TRUE'"
+- [6b5e0d6c] from django.contrib.gis.db import models from django.contrib.gis.db.backends.base.operations import BaseSpatialOperations from django.contrib.gis.db.backends.oracle.adapter import OracleSpatialAdapter from django.contrib.gis.db.backends.utils import SpatialOperator from django.contrib.gis.geos.geometry import GEOSGeometry, GEOSGeometryBase from django.contrib.gis.geos.prototypes.io import wkb_r from django.contrib.gis.measure import Distance from django.db.backends.oracle.operations import DatabaseOperations from django.utils.functional import cached_property
+- [dae3b101b4aa9562-4] import re

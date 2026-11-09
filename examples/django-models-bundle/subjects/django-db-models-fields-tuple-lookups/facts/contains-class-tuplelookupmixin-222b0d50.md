@@ -1,6 +1,6 @@
 # Fact 222b0d50
 
-Store id: cc869cee-a850-4046-8667-31875c4e9590
+Store id: d027afb8-8260-45d5-9a90-2ef46836eb9b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6461850+00:00`
+- posted_at: `2026-11-09T23:32:00.6413340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cc869cee-a850-4046-8667-31875c4e9590",
+  "id": "d027afb8-8260-45d5-9a90-2ef46836eb9b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6461850+00:00"
+    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleLookupMixin"
       },
       "rel": "contains",
-      "target": "e99803a5-a203-4112-91b1-03eaaf821ed1"
+      "target": "968c4069-532b-4717-b70c-9c49d23380ec"
     }
   ],
   "status": "live",
-  "subject_id": "cee0b84a-5cfa-4b80-bfc8-675952a3b671",
+  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

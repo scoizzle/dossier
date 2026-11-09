@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Cot.as_oracle
 
-- Subject: django/db/models/functions/math::Cot.as_oracle (id `b14e373b-390d-4dbb-b2bf-c8952842172a`)
+- Subject: django/db/models/functions/math::Cot.as_oracle (id `8a5cfdb6-6739-4aa3-89dc-a50e2696d954`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

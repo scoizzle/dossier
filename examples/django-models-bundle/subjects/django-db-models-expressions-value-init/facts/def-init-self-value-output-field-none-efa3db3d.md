@@ -1,6 +1,6 @@
 # Fact efa3db3d
 
-Store id: cc16f3d0-deb2-483c-aaaa-ee6907d06b87
+Store id: 71da3371-f940-4f0e-b99c-9e3e0cb3b78a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, value, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5881210+00:00`
+- posted_at: `2026-11-09T23:31:55.8589770+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1156,
     "symbol": "Value.__init__"
   },
-  "id": "cc16f3d0-deb2-483c-aaaa-ee6907d06b87",
+  "id": "71da3371-f940-4f0e-b99c-9e3e0cb3b78a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5881210+00:00"
+    "posted_at": "2026-11-09T23:31:55.8589770+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "00a740ed-86bd-4a71-8bf0-b20a718f7476",
+  "subject_id": "dfc66f89-415c-4a93-8eb2-2249c9fb3e11",
   "subject_name": "django/db/models/expressions::Value.__init__",
   "tags": [
     "entity:method"

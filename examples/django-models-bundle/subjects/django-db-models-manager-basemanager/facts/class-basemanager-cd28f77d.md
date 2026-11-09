@@ -1,6 +1,6 @@
 # Fact cd28f77d
 
-Store id: 475dc2e5-3d8a-4fce-a854-9bf01ebde8ab
+Store id: 9db8c66d-beeb-4dd9-a15a-79d10c4e5b91
 
 ## Text
 
@@ -20,7 +20,7 @@ class BaseManager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.4390940+00:00`
+- posted_at: `2026-11-09T23:32:03.6337410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 10,
     "symbol": "BaseManager"
   },
-  "id": "475dc2e5-3d8a-4fce-a854-9bf01ebde8ab",
+  "id": "9db8c66d-beeb-4dd9-a15a-79d10c4e5b91",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.4390940+00:00"
+    "posted_at": "2026-11-09T23:32:03.6337410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aa3aa9ba-69e2-42f1-9dd7-99885c442e2d",
+  "subject_id": "eec8cf94-8f7e-4c53-a088-afc3b719fa93",
   "subject_name": "django/db/models/manager::BaseManager",
   "tags": [
     "entity:class"

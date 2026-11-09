@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::TimeField.pre_save
 
-- Subject: django/db/models/fields/__init__::TimeField.pre_save (id `131efc06-5888-4687-af76-550ba2d31a9d`)
+- Subject: django/db/models/fields/__init__::TimeField.pre_save (id `3549d256-0376-46ec-bade-1a74f3a3638b`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

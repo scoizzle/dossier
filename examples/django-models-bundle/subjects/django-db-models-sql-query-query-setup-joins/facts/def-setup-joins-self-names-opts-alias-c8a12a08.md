@@ -1,6 +1,6 @@
 # Fact c8a12a08
 
-Store id: 68287640-f1ec-44b9-a79b-cc7f3a71fb3e
+Store id: 22063337-ace6-413a-8d6d-9fe433978ce4
 
 ## Text
 
@@ -20,7 +20,7 @@ def setup_joins( self, names, opts, alias, can_reuse=None, allow_many=True, )
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4021860+00:00`
+- posted_at: `2026-11-09T23:32:06.9650450+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1890,
     "symbol": "Query.setup_joins"
   },
-  "id": "68287640-f1ec-44b9-a79b-cc7f3a71fb3e",
+  "id": "22063337-ace6-413a-8d6d-9fe433978ce4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4021860+00:00"
+    "posted_at": "2026-11-09T23:32:06.9650450+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f410c25d-7603-45fd-8fa1-d4cc410effe9",
+  "subject_id": "ec09454e-bf5f-4ace-9dfe-1fd314032498",
   "subject_name": "django/db/models/sql/query::Query.setup_joins",
   "tags": [
     "entity:method"

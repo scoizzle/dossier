@@ -1,6 +1,6 @@
 # Fact f874dd10
 
-Store id: 8d3b82a5-9e56-4163-b186-2fa3083542d8
+Store id: e278d89e-b4e3-4cc9-a8c1-448b3b6a138a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function SET
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0946700+00:00`
+- posted_at: `2026-11-09T23:31:55.1285340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8d3b82a5-9e56-4163-b186-2fa3083542d8",
+  "id": "e278d89e-b4e3-4cc9-a8c1-448b3b6a138a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0946700+00:00"
+    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SET"
       },
       "rel": "contains",
-      "target": "27e1f571-8295-4537-90c0-3f20a3e31adb"
+      "target": "77558e27-5992-4943-8dc1-71ff8c9bbf9e"
     }
   ],
   "status": "live",
-  "subject_id": "9dd01ff9-dc4a-434f-bc10-89b57d3d6bb3",
+  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

@@ -1,6 +1,6 @@
 # Fact f49ac62b
 
-Store id: 3127536a-ecb3-4c2f-be0f-2fe25b75ebf4
+Store id: cdcc257b-ddda-42a7-938a-f76427a7234e
 
 ## Text
 
@@ -20,7 +20,7 @@ def copy(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7263300+00:00`
+- posted_at: `2026-11-09T23:31:55.9723920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1861,
     "symbol": "Subquery.copy"
   },
-  "id": "3127536a-ecb3-4c2f-be0f-2fe25b75ebf4",
+  "id": "cdcc257b-ddda-42a7-938a-f76427a7234e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7263300+00:00"
+    "posted_at": "2026-11-09T23:31:55.9723920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d50838bb-3518-4843-9ad1-bccf0441cc9e",
+  "subject_id": "94f46782-6e42-4125-8753-f82e4a5e24cc",
   "subject_name": "django/db/models/expressions::Subquery.copy",
   "tags": [
     "entity:method"

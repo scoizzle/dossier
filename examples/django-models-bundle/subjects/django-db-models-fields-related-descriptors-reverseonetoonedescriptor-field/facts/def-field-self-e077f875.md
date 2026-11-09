@@ -1,6 +1,6 @@
 # Fact e077f875
 
-Store id: 024f28c7-ba83-4ccb-9150-2f6a6a107810
+Store id: 27a1ad7a-c383-4c0b-840b-34808ad5b488
 
 ## Text
 
@@ -20,7 +20,7 @@ def field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7581830+00:00`
+- posted_at: `2026-11-09T23:31:59.1981120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 551,
     "symbol": "ReverseOneToOneDescriptor.field"
   },
-  "id": "024f28c7-ba83-4ccb-9150-2f6a6a107810",
+  "id": "27a1ad7a-c383-4c0b-840b-34808ad5b488",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7581830+00:00"
+    "posted_at": "2026-11-09T23:31:59.1981120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eaec2ab7-d5ef-4a99-8f2b-2c51cc1150f9",
+  "subject_id": "4cdc44f6-de8a-45c5-8947-62828081932f",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.field",
   "tags": [
     "entity:method",

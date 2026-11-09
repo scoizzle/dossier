@@ -1,6 +1,6 @@
 # Fact 3e34c902
 
-Store id: 549164eb-7b38-481b-9d46-b244cee111fd
+Store id: 6fb0244c-184a-4990-9262-1e18f24bd06c
 
 ## Text
 
@@ -20,7 +20,7 @@ def subclasses(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0339440+00:00`
+- posted_at: `2026-11-09T23:32:05.0130060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 35,
     "symbol": "subclasses"
   },
-  "id": "549164eb-7b38-481b-9d46-b244cee111fd",
+  "id": "6fb0244c-184a-4990-9262-1e18f24bd06c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0339440+00:00"
+    "posted_at": "2026-11-09T23:32:05.0130060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "923966b2-be18-4b6e-af6a-d0e74d7072e1",
+  "subject_id": "cc6fbe6b-1af0-4f95-b273-5f0fbc37b665",
   "subject_name": "django/db/models/query_utils::subclasses",
   "tags": [
     "entity:function"

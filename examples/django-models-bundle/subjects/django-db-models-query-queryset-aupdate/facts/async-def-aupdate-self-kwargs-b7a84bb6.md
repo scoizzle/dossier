@@ -1,6 +1,6 @@
 # Fact b7a84bb6
 
-Store id: c2c21677-5255-4d81-8518-abefa6d548e9
+Store id: b55fbeb5-374c-4e3b-9186-9f1b7a11397e
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aupdate(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5313250+00:00`
+- posted_at: `2026-11-09T23:32:04.4862400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1452,
     "symbol": "QuerySet.aupdate"
   },
-  "id": "c2c21677-5255-4d81-8518-abefa6d548e9",
+  "id": "b55fbeb5-374c-4e3b-9186-9f1b7a11397e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5313250+00:00"
+    "posted_at": "2026-11-09T23:32:04.4862400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e025a7d6-694b-4043-9a0e-4a6fcbc8ac99",
+  "subject_id": "0d37d6dd-e1cf-4f96-9024-c866f92a5550",
   "subject_name": "django/db/models/query::QuerySet.aupdate",
   "tags": [
     "entity:method",

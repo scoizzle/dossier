@@ -1,6 +1,6 @@
 # Fact 3a002ad5
 
-Store id: faed4b79-9fe6-4299-a341-c3bf0170ef0e
+Store id: f0f74b69-5af9-40ff-beb4-a9c314cec165
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.5767480+00:00`
+- posted_at: `2026-11-09T23:32:01.6755710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 37,
     "symbol": "ATan2.as_sqlite"
   },
-  "id": "faed4b79-9fe6-4299-a341-c3bf0170ef0e",
+  "id": "f0f74b69-5af9-40ff-beb4-a9c314cec165",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.5767480+00:00"
+    "posted_at": "2026-11-09T23:32:01.6755710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0d8a9bc0-078d-4eb4-aa18-aca2a21ead98",
+  "subject_id": "f1705cdb-5472-40c6-82c9-61fccb38aea8",
   "subject_name": "django/db/models/functions/math::ATan2.as_sqlite",
   "tags": [
     "entity:method"

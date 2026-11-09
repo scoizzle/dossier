@@ -1,9 +1,9 @@
 # django/db/models/functions/text::ConcatPair.pipes_concat_sql
 
-- Subject: django/db/models/functions/text::ConcatPair.pipes_concat_sql (id `c07241c1-5c3d-4396-bcbb-a3a8394b8ac3`)
+- Subject: django/db/models/functions/text::ConcatPair.pipes_concat_sql (id `572e2239-cfed-4267-805d-c219fb0e5b16`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

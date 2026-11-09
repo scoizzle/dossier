@@ -1,9 +1,9 @@
 # django/db/models/sql/query::RawQuery.chain
 
-- Subject: django/db/models/sql/query::RawQuery.chain (id `8b9541e5-49d3-4610-bb34-bc8e54316b77`)
+- Subject: django/db/models/sql/query::RawQuery.chain (id `5c10914f-b1e7-4c96-95bf-b09170786430`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact e5ac1547
 
-Store id: 387a9d61-fe02-4f7c-8314-41a909ca30ae
+Store id: 0e6058e7-7df0-4c01-8aa0-49a973429324
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncSecond(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2185290+00:00`
+- posted_at: `2026-11-09T23:32:01.3067040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 415,
     "symbol": "TruncSecond"
   },
-  "id": "387a9d61-fe02-4f7c-8314-41a909ca30ae",
+  "id": "0e6058e7-7df0-4c01-8aa0-49a973429324",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2185290+00:00"
+    "posted_at": "2026-11-09T23:32:01.3067040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1087e2f2-8f1d-455a-93a0-6dc7f542898a",
+  "subject_id": "fba22b0c-7b38-4f45-9a68-610a75291c8d",
   "subject_name": "django/db/models/functions/datetime::TruncSecond",
   "tags": [
     "entity:class"

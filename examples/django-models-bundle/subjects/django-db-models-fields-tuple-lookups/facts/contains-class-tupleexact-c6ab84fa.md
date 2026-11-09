@@ -1,6 +1,6 @@
 # Fact c6ab84fa
 
-Store id: 551bd541-c91d-4801-9549-95aaf9b23a5f
+Store id: 68861367-9461-47cc-8f34-2ea4647d8b92
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6461850+00:00`
+- posted_at: `2026-11-09T23:32:00.6413340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "551bd541-c91d-4801-9549-95aaf9b23a5f",
+  "id": "68861367-9461-47cc-8f34-2ea4647d8b92",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6461850+00:00"
+    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleExact"
       },
       "rel": "contains",
-      "target": "cd6db5d2-893a-4aa3-8d2c-35ed7d083785"
+      "target": "8ce62923-29cd-4002-9e49-9bfbda6f5ee3"
     }
   ],
   "status": "live",
-  "subject_id": "cee0b84a-5cfa-4b80-bfc8-675952a3b671",
+  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

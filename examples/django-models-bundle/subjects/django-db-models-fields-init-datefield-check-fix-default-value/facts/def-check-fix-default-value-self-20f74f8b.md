@@ -1,6 +1,6 @@
 # Fact 20f74f8b
 
-Store id: e33391e4-7008-4de5-8545-39e555247e67
+Store id: 000cda66-dcc4-4704-a118-0c3fbf7f4d26
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_fix_default_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4137930+00:00`
+- posted_at: `2026-11-09T23:31:56.5772130+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1487,
     "symbol": "DateField._check_fix_default_value"
   },
-  "id": "e33391e4-7008-4de5-8545-39e555247e67",
+  "id": "000cda66-dcc4-4704-a118-0c3fbf7f4d26",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4137930+00:00"
+    "posted_at": "2026-11-09T23:31:56.5772130+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a1ca3370-e30c-4bcc-805c-ca4855a694e1",
+  "subject_id": "a9aab6ef-a30a-47ee-accd-0a4c330ea478",
   "subject_name": "django/db/models/fields/__init__::DateField._check_fix_default_value",
   "tags": [
     "entity:method"

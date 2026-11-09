@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.get_extra_descriptor_filter
 
-- Subject: django/db/models/fields/related::ForeignObject.get_extra_descriptor_filter (id `93731d9a-5c18-433c-8ed9-ccfd9e745fa6`)
+- Subject: django/db/models/fields/related::ForeignObject.get_extra_descriptor_filter (id `8089198b-1239-4879-8cea-92ef8ce8d443`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

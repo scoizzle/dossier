@@ -1,6 +1,6 @@
 # Fact b580d606
 
-Store id: df2d5b07-b91f-49e4-8f7d-8183f50cd9f0
+Store id: fad317f1-69f9-4f48-94b1-45e251370ead
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0426580+00:00`
+- posted_at: `2026-11-09T23:32:03.1909280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 198,
     "symbol": "Lookup.select_format"
   },
-  "id": "df2d5b07-b91f-49e4-8f7d-8183f50cd9f0",
+  "id": "fad317f1-69f9-4f48-94b1-45e251370ead",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0426580+00:00"
+    "posted_at": "2026-11-09T23:32:03.1909280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5a16686a-997a-41f6-924a-13abf322c4fa",
+  "subject_id": "44516410-f1e8-450d-aa48-47809a9189aa",
   "subject_name": "django/db/models/lookups::Lookup.select_format",
   "tags": [
     "entity:method"

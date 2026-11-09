@@ -1,6 +1,6 @@
 # Fact 41d5a7f3
 
-Store id: ddf727bd-15e5-40e1-b227-64c8dbe0673e
+Store id: 780aea89-a28a-47d4-ad11-a1e25b86eca0
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_not_an_m2m_field(f)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8400730+00:00`
+- posted_at: `2026-11-09T23:32:03.9723470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 549,
     "symbol": "Options.fields.is_not_an_m2m_field"
   },
-  "id": "ddf727bd-15e5-40e1-b227-64c8dbe0673e",
+  "id": "780aea89-a28a-47d4-ad11-a1e25b86eca0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8400730+00:00"
+    "posted_at": "2026-11-09T23:32:03.9723470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "00c6b7ae-69c0-48a6-933a-921dbef3c2b7",
+  "subject_id": "5272a6a3-f658-4949-9e2b-c349df7eaba6",
   "subject_name": "django/db/models/options::Options.fields.is_not_an_m2m_field",
   "tags": [
     "entity:function"

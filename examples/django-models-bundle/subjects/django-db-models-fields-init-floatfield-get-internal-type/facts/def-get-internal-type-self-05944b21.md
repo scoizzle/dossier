@@ -1,6 +1,6 @@
 # Fact 05944b21
 
-Store id: 1e721edf-e347-45aa-ba18-31626cb8929b
+Store id: 7df542ca-e066-4543-8b4e-0966d6ae1973
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5219940+00:00`
+- posted_at: `2026-11-09T23:31:56.6877760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2117,
     "symbol": "FloatField.get_internal_type"
   },
-  "id": "1e721edf-e347-45aa-ba18-31626cb8929b",
+  "id": "7df542ca-e066-4543-8b4e-0966d6ae1973",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5219940+00:00"
+    "posted_at": "2026-11-09T23:31:56.6877760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "af5fa3c0-7da0-4534-bd86-a224e7de8c50",
+  "subject_id": "e4bdfd6a-22c3-4571-97cd-f1c30396f94b",
   "subject_name": "django/db/models/fields/__init__::FloatField.get_internal_type",
   "tags": [
     "entity:method"

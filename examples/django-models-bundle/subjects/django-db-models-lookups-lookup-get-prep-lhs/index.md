@@ -1,9 +1,9 @@
 # django/db/models/lookups::Lookup.get_prep_lhs
 
-- Subject: django/db/models/lookups::Lookup.get_prep_lhs (id `ce5cdd73-03d6-4315-8f4e-f38340d9dfa0`)
+- Subject: django/db/models/lookups::Lookup.get_prep_lhs (id `7dd76c28-c60a-483c-94d6-cb751db9c3be`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

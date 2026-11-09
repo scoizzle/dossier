@@ -1,9 +1,9 @@
 # django/db/models/manager::EmptyManager.__init__
 
-- Subject: django/db/models/manager::EmptyManager.__init__ (id `11509bd5-d69b-4c48-b2e6-b481ab3bec9e`)
+- Subject: django/db/models/manager::EmptyManager.__init__ (id `9344ec48-f543-4250-9320-6205fee78f03`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

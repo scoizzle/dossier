@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::TextField._check_db_collation
 
-- Subject: django/db/models/fields/__init__::TextField._check_db_collation (id `942107d0-662c-450a-960b-4d3896711273`)
+- Subject: django/db/models/fields/__init__::TextField._check_db_collation (id `c5825199-1fcc-443c-b1c1-0e426f58edda`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 55164df5
 
-Store id: 434e914d-84b6-4573-a28b-bbc887961eaa
+Store id: e421fb3a-e3f8-4e90-b9c8-5babcd892048
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DeleteQuery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7753110+00:00`
+- posted_at: `2026-11-09T23:32:07.4245420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "434e914d-84b6-4573-a28b-bbc887961eaa",
+  "id": "e421fb3a-e3f8-4e90-b9c8-5babcd892048",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7753110+00:00"
+    "posted_at": "2026-11-09T23:32:07.4245420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DeleteQuery"
       },
       "rel": "contains",
-      "target": "360a8628-67d1-43b3-8878-3dd7dfd2ddb7"
+      "target": "1bc2033c-5c1b-4477-a3df-1f59b15daa0c"
     }
   ],
   "status": "live",
-  "subject_id": "24cbca74-a8b7-42cb-88b4-6cec59dfe7c6",
+  "subject_id": "8b880d6f-4c88-470e-b44a-994f5797b94a",
   "subject_name": "django/db/models/sql/subqueries",
   "tags": [
     "entity:class"

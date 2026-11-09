@@ -1,9 +1,9 @@
 # django/db/models/fields/json::JSONIContains
 
-- Subject: django/db/models/fields/json::JSONIContains (id `f93349f3-858b-4584-ac47-b51ed9f92df4`)
+- Subject: django/db/models/fields/json::JSONIContains (id `dbb0f910-44ee-4fe2-a152-cbecabf5a597`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

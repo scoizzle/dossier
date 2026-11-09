@@ -1,6 +1,6 @@
 # Fact 76782e65
 
-Store id: 84eba6c2-3f79-4eec-98d1-15aa968eecb6
+Store id: f99565a2-dfff-471a-aa27-0fe3bb11ca2c
 
 ## Text
 
@@ -20,7 +20,7 @@ class LTrim(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1295110+00:00`
+- posted_at: `2026-11-09T23:32:02.2187100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 211,
     "symbol": "LTrim"
   },
-  "id": "84eba6c2-3f79-4eec-98d1-15aa968eecb6",
+  "id": "f99565a2-dfff-471a-aa27-0fe3bb11ca2c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1295110+00:00"
+    "posted_at": "2026-11-09T23:32:02.2187100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2f66e89f-1948-4a6f-a27c-b4ff25c21dba",
+  "subject_id": "2f9ac18e-b4da-4d9f-9d9b-ef96264e92d2",
   "subject_name": "django/db/models/functions/text::LTrim",
   "tags": [
     "entity:class"

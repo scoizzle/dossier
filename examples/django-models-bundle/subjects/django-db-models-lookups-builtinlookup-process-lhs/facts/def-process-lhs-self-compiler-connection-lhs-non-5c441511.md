@@ -1,6 +1,6 @@
 # Fact 5c441511
 
-Store id: 3b628777-328b-4ff4-8340-38d3c905a205
+Store id: e8764fba-7aa9-4465-9a8c-ec277a2e4260
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_lhs(self, compiler, connection, lhs=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0639320+00:00`
+- posted_at: `2026-11-09T23:32:03.2121110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 235,
     "symbol": "BuiltinLookup.process_lhs"
   },
-  "id": "3b628777-328b-4ff4-8340-38d3c905a205",
+  "id": "e8764fba-7aa9-4465-9a8c-ec277a2e4260",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0639320+00:00"
+    "posted_at": "2026-11-09T23:32:03.2121110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "802d8117-83bb-4fd3-8da8-e4cc80602a29",
+  "subject_id": "f8e95652-8195-4a94-9ffd-920dcd13af47",
   "subject_name": "django/db/models/lookups::BuiltinLookup.process_lhs",
   "tags": [
     "entity:method"

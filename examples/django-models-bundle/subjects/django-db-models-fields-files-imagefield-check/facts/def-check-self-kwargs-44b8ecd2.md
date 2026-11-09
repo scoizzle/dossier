@@ -1,6 +1,6 @@
 # Fact 44b8ecd2
 
-Store id: fb613c57-1601-40c2-b35f-bbf0bc269406
+Store id: 49d14590-b2da-4b26-b53a-d46f3d634bdc
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2666180+00:00`
+- posted_at: `2026-11-09T23:31:57.4348280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 436,
     "symbol": "ImageField.check"
   },
-  "id": "fb613c57-1601-40c2-b35f-bbf0bc269406",
+  "id": "49d14590-b2da-4b26-b53a-d46f3d634bdc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2666180+00:00"
+    "posted_at": "2026-11-09T23:31:57.4348280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "324f60f9-e7f1-41f8-b2c7-5684608e11f1",
+  "subject_id": "4c156d2e-a573-49a3-b20e-a10a75d5aa35",
   "subject_name": "django/db/models/fields/files::ImageField.check",
   "tags": [
     "entity:method"

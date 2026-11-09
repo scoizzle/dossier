@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet._update
 
-- Subject: django/db/models/query::QuerySet._update (id `b51c3b51-5d8f-4665-baae-b7d6cd78653c`)
+- Subject: django/db/models/query::QuerySet._update (id `95333a03-ec7f-48af-85c7-bee5d3b72bc4`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # docs/internals/index
 
-- Subject: docs/internals/index (id `a2ddc17d-3850-4adb-9919-84249d0c7104`)
+- Subject: docs/internals/index (id `8c755742-48db-4928-9156-649dd24cc21e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 126 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

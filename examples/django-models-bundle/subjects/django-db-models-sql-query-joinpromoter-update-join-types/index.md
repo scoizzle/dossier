@@ -1,9 +1,9 @@
 # django/db/models/sql/query::JoinPromoter.update_join_types
 
-- Subject: django/db/models/sql/query::JoinPromoter.update_join_types (id `202ff68b-6395-49c2-8698-bc0c30c33e3f`)
+- Subject: django/db/models/sql/query::JoinPromoter.update_join_types (id `7354a3d9-9057-4369-8714-96d73ab02297`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/contrib/sites/models
 
-- Subject: django/contrib/sites/models (id `1d4c3883-b689-49a6-a562-2fa70b5d40a6`)
+- Subject: django/contrib/sites/models (id `6edf3309-bb54-4e5b-b7bc-0a393c7ab1ed`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 884 tokens
-- Facts shown: 18 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 961 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if getattr(settings, "SITE_ID", ""): site_id = settings.SITE_ID return self._get_site_by_id(site_id) elif request: return self._get_site_by_request(request) [24e0cf00]
 - raise ImproperlyConfigured( 'You\'re using the Django "sites framework" without having ' "set the SITE_ID setting. Create a site in your database and " "set the SITE_ID setting or pass a request to " "Site.objects.get_current() to fix this error." ) [40a5b8aa]
@@ -29,6 +29,6 @@
 - import string [bd9eab00941d6afe]
 - pre_save.connect(clear_site_cache, sender=Site) pre_delete.connect(clear_site_cache, sender=Site) [674ad4b7]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [d949e335]
+- [d949e335] from django.core.exceptions import ImproperlyConfigured, ValidationError from django.db import models from django.db.models.signals import pre_delete, pre_save from django.http.request import split_domain_port from django.utils.translation import gettext_lazy as _

@@ -1,6 +1,6 @@
 # Fact c4df396e
 
-Store id: 2df578e7-7680-4c98-8828-5c98a1b3cc43
+Store id: 5418e3ba-6bfc-493a-b619-cd91b074f145
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_constraints(cls, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3677970+00:00`
+- posted_at: `2026-11-09T23:31:53.7737440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2513,
     "symbol": "Model._check_constraints"
   },
-  "id": "2df578e7-7680-4c98-8828-5c98a1b3cc43",
+  "id": "5418e3ba-6bfc-493a-b619-cd91b074f145",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3677970+00:00"
+    "posted_at": "2026-11-09T23:31:53.7737440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f197b5eb-a4b4-48fe-8366-1b8c0c44dbb1",
+  "subject_id": "ea0bd41c-b902-44b7-8b94-a0879b6cb9ff",
   "subject_name": "django/db/models/base::Model._check_constraints",
   "tags": [
     "entity:class_method",

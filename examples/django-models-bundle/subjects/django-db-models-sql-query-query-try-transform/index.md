@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.try_transform
 
-- Subject: django/db/models/sql/query::Query.try_transform (id `cfab62e5-a204-4c64-9f33-0d448d71dd23`)
+- Subject: django/db/models/sql/query::Query.try_transform (id `5b14c7a1-77f6-4a75-85ae-17737e139437`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

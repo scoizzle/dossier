@@ -1,9 +1,9 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.get_extra_restriction
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_extra_restriction (id `43d0b828-ed1a-48ad-a42b-112dda749f30`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_extra_restriction (id `066916e1-2c8d-4ec3-8daa-c454f8be24af`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

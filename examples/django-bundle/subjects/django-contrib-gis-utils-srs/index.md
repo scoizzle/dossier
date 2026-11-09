@@ -1,8 +1,8 @@
 # django/contrib/gis/utils/srs
 
-- Subject: django/contrib/gis/utils/srs (id `07389bea-c5fa-4f21-8cc8-a61edccf577b`)
+- Subject: django/contrib/gis/utils/srs (id `248571b0-17af-4caf-a6ae-4035232a3aa9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 776 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

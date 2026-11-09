@@ -1,6 +1,6 @@
 # Fact b6fb5119
 
-Store id: 4e3957d0-805b-49d6-81be-f3e8d164e4de
+Store id: e5e9b519-5566-4c79-bab8-1820cbc5983d
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIStartsWith( CaseInsensitiveMixin, KeyTransformTextLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7460820+00:00`
+- posted_at: `2026-11-09T23:31:58.0174390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 694,
     "symbol": "KeyTransformIStartsWith"
   },
-  "id": "4e3957d0-805b-49d6-81be-f3e8d164e4de",
+  "id": "e5e9b519-5566-4c79-bab8-1820cbc5983d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7460820+00:00"
+    "posted_at": "2026-11-09T23:31:58.0174390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e830806e-b02d-43c0-b3e5-c10b614814e6",
+  "subject_id": "3820c146-4205-467b-a8ce-da6f989028de",
   "subject_name": "django/db/models/fields/json::KeyTransformIStartsWith",
   "tags": [
     "entity:class"

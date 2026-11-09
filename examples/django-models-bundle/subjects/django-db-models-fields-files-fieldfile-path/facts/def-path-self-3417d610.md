@@ -1,6 +1,6 @@
 # Fact 3417d610
 
-Store id: 5fe6a99f-8869-438a-a3c3-cf575aaa63ca
+Store id: 4fa690de-0662-4a1e-9aad-8bb00f10f879
 
 ## Text
 
@@ -20,7 +20,7 @@ def path(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.1997580+00:00`
+- posted_at: `2026-11-09T23:31:57.3565890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 64,
     "symbol": "FieldFile.path"
   },
-  "id": "5fe6a99f-8869-438a-a3c3-cf575aaa63ca",
+  "id": "4fa690de-0662-4a1e-9aad-8bb00f10f879",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.1997580+00:00"
+    "posted_at": "2026-11-09T23:31:57.3565890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7afea274-4f6f-4ebb-8229-e32f8085c890",
+  "subject_id": "bad36673-c91a-44dc-b5dd-adce2dfa6c18",
   "subject_name": "django/db/models/fields/files::FieldFile.path",
   "tags": [
     "entity:method",

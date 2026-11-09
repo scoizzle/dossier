@@ -1,6 +1,6 @@
 # Fact 0501d8e4
 
-Store id: 6cce6864-8cc1-4166-8b0f-a9297e8f0bbe
+Store id: ace94e6a-252f-401a-bfb7-5d1587a2d11e
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_lhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6986060+00:00`
+- posted_at: `2026-11-09T23:31:57.9522580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 445,
     "symbol": "JSONIn.process_lhs"
   },
-  "id": "6cce6864-8cc1-4166-8b0f-a9297e8f0bbe",
+  "id": "ace94e6a-252f-401a-bfb7-5d1587a2d11e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6986060+00:00"
+    "posted_at": "2026-11-09T23:31:57.9522580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "691641a3-e3f3-45e3-949c-8de4f75aaca5",
+  "subject_id": "c82eb7b7-eb00-4067-aeb0-7bb512bac6e2",
   "subject_name": "django/db/models/fields/json::JSONIn.process_lhs",
   "tags": [
     "entity:method"

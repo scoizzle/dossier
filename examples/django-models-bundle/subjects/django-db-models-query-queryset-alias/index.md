@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.alias
 
-- Subject: django/db/models/query::QuerySet.alias (id `2f6c2006-f126-4f22-af03-2154d6508c79`)
+- Subject: django/db/models/query::QuerySet.alias (id `0fe97a6f-3648-4ad8-b95f-5e11ed3f54fd`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

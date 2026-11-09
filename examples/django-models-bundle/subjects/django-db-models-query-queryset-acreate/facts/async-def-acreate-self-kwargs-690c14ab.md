@@ -1,6 +1,6 @@
 # Fact 690c14ab
 
-Store id: 7c46e331-e7da-465b-b579-46d97bbc36b2
+Store id: c6b56c83-8d9e-4cb7-b339-09be7b7efdb0
 
 ## Text
 
@@ -20,7 +20,7 @@ async def acreate(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3994460+00:00`
+- posted_at: `2026-11-09T23:32:04.3922930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 758,
     "symbol": "QuerySet.acreate"
   },
-  "id": "7c46e331-e7da-465b-b579-46d97bbc36b2",
+  "id": "c6b56c83-8d9e-4cb7-b339-09be7b7efdb0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3994460+00:00"
+    "posted_at": "2026-11-09T23:32:04.3922930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d1ca936b-d8b5-454a-8772-1be464ea36e9",
+  "subject_id": "984e2e29-36b5-4d62-b437-a7a510c7c51c",
   "subject_name": "django/db/models/query::QuerySet.acreate",
   "tags": [
     "entity:method",

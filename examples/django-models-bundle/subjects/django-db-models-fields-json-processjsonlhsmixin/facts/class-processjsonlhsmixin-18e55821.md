@@ -1,6 +1,6 @@
 # Fact 18e55821
 
-Store id: 76b443bb-4d42-4494-8609-236d93a5b2fb
+Store id: ca85a42a-0014-4182-8eb7-411d00fe0cea
 
 ## Text
 
@@ -20,7 +20,7 @@ class ProcessJSONLHSMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6848150+00:00`
+- posted_at: `2026-11-09T23:31:57.9338380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 357,
     "symbol": "ProcessJSONLHSMixin"
   },
-  "id": "76b443bb-4d42-4494-8609-236d93a5b2fb",
+  "id": "ca85a42a-0014-4182-8eb7-411d00fe0cea",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6848150+00:00"
+    "posted_at": "2026-11-09T23:31:57.9338380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7bf30e4d-2974-4a53-9ca5-a91b8f32b94e",
+  "subject_id": "c3794923-75db-486e-b5f9-f2aef805f003",
   "subject_name": "django/db/models/fields/json::ProcessJSONLHSMixin",
   "tags": [
     "entity:class"

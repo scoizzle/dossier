@@ -1,6 +1,6 @@
 # Fact ea1cbbca
 
-Store id: 33ceabc1-5533-454b-972d-6e21fb4f0b57
+Store id: 9fc8be7d-2d81-4a89-bda0-823a1957b1d8
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_long_column_names(cls, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3641570+00:00`
+- posted_at: `2026-11-09T23:31:53.7687610+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2394,
     "symbol": "Model._check_long_column_names"
   },
-  "id": "33ceabc1-5533-454b-972d-6e21fb4f0b57",
+  "id": "9fc8be7d-2d81-4a89-bda0-823a1957b1d8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3641570+00:00"
+    "posted_at": "2026-11-09T23:31:53.7687610+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "22940827-c7ec-43c3-bb39-6d283b4ae385",
+  "subject_id": "410ffebb-4936-44ce-bf9c-98582daca7ac",
   "subject_name": "django/db/models/base::Model._check_long_column_names",
   "tags": [
     "entity:class_method",

@@ -1,14 +1,14 @@
 # docs/ref/forms/models
 
-- Subject: docs/ref/forms/models (id `5afca492-d3ae-49e2-b86a-fc02a13256f9`)
+- Subject: docs/ref/forms/models (id `c50a6a59-e06d-4e2c-88a1-794fc67351e9`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 18 of 83
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3195 tokens
+- Facts shown: 83 of 83
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - A dictionary that maps a model field name to a :class:`django.forms.Widget`. [75ddb897]
 - A dictionary that maps a model field name to a :class:`~django.forms.Field` class, which overrides the ``form_class`` used in the model field's :meth:`.Field.formfield` method. [32bb7359]
@@ -29,6 +29,70 @@
 - Invalid or excluded field names in an optional dictionary attribute have no effect, since fields that are not included are not accessed. [18f0fd3f]
 - ``exclude`` ----------- [54aaa88b]
 
-## Beyond the budget
+## All facts
 
-65 more facts did not fit in the budget: [c44fded5] [e0b93c4d] [9ea7a5e8] [9eced123] [058fed15] [2b23aeab] [e2fa752c] [93a375a9] [8d029e7a] [4c2defad] [be10a9a3] [ea0a70c6] [7aec7606] [0893828b] [42077f99] [961dc894] [0cfe62c1] [a90a4e44] [a2f7ef58] [3c2b9180] [2f8a62da] [947efab8] [6fd74b90] [e488385a] [16dcf93d] [f41c126c] [620ab3e9] [b014ca44] [b32a416a] [e452d22f] [e8bb4756] [d4cbed64] [de20252c] [69482211] [5e1ed4b9] [380e80a4] [9bfcda43] [f20608a1] [0a79d47e] [23954fefb31ab08f-2] [8fdcae86] [2de434fb] [647e250b] [be633c3a] [013f9cf1] [213243f9] [803a79ca] [c0de3c8a] [76abfead] [7e7d5190] [eade2efe] [431054d3] [271731d9] [c0dce41f4f2e4c59-2] [bd06f4da] [87254620a027401c] [d7cc13a1] [cfb1cae8] [cf120e61] [b36e25c8] [328eb32a] [c26554f6] [49f79d1b] [3b8c6ed3] [93d8e8ea]
+- [c44fded5] Required. The :class:`django.db.models.Model` to be used for the :class:`~django.forms.ModelForm`.
+- [e0b93c4d] Returns a :class:`~django.forms.ModelForm` class for the given ``model``. You can optionally pass a ``form`` argument to use as a starting point for constructing the ``ModelForm``.
+- [9ea7a5e8] Returns a ``FormSet`` class for the given ``model`` class.
+- [9eced123] Returns an ``InlineFormSet`` using :func:`modelformset_factory` with defaults of ``formset=``:class:`~django.forms.models.BaseInlineFormSet`, ``can_delete=True``, and ``extra=3``.
+- [058fed15] See :ref:`inline-formsets` for example usage.
+- [2b23aeab] See :ref:`model-formsets` for example usage.
+- [e2fa752c] See :ref:`modelforms-factory` for example usage.
+- [93a375a9] The ``edit_only`` argument allows :ref:`preventing new objects creation <model-formsets-edit-only>`.
+- [8d029e7a] When a field is not specified, Django will fall back on that model field's :attr:`~django.db.models.Field.help_text`.
+- [4c2defad] When a field is not specified, Django will fall back on that model field's :attr:`~django.db.models.Field.verbose_name` and then the field's attribute name.
+- [be10a9a3] When a field is not specified, Django will fall back on the default widget for that particular type of :class:`django.db.models.Field`.
+- [ea0a70c6] When a field is not specified, Django will fall back on the error messages defined in that model field's :attr:`django.db.models.Field.error_messages` and then finally on the default error messages for that field type.
+- [7aec7606] When a field is not specified, Django will fall back on the model field's :ref:`default field class <model-form-field-types>`.
+- [0893828b] You may define any attribute on a ``Meta`` class. Typos or incorrect attribute names do not raise an error.
+- [42077f99] You must provide the list of fields explicitly, either via keyword arguments ``fields`` or ``exclude``, or the corresponding attributes on the form's inner ``Meta`` class. See :ref:`modelforms-selecting-fields` for more information. Omitting any definition of the fields to use will result in an :exc:`~django.core.exceptions.ImproperlyConfigured` exception.
+- [961dc894] ``error_messages`` is a dictionary of model field names mapped to a dictionary of error messages.
+- [0cfe62c1] ``exclude`` is an optional list of field names. If provided, the named fields will be excluded from the returned fields, even if they are listed in the ``fields`` argument.
+- [a90a4e44] ``field_classes`` is a dictionary of model field names mapped to a form field class.
+- [a2f7ef58] ``fields`` is an optional list of field names. If provided, only the named fields will be included in the returned fields.
+- [3c2b9180] ``formfield_callback`` is a callable that takes a model field and returns a form field.
+- [2f8a62da] ``help_texts`` is a dictionary of model field names mapped to a help text.
+- [947efab8] ``labels`` is a dictionary of model field names mapped to a label.
+- [6fd74b90] ``localized_fields`` is a list of names of fields which should be localized.
+- [e488385a] ``widgets`` is a dictionary of model field names mapped to a widget.
+- [16dcf93d] class BookForm(ModelForm): class Meta: model = Book fields = ["title", "author"] help_texts = { "title": "The title of the book", "author": "The author of the book", } # ... other attributes
+- [f41c126c] from django.forms import ModelForm from myapp.models import Book
+- [620ab3e9] .. admonition:: Invalid Meta class attributes
+- [b014ca44] .. admonition:: Invalid field names
+- [b32a416a] .. attribute:: ModelFormOptions.error_messages
+- [e452d22f] .. attribute:: ModelFormOptions.exclude
+- [e8bb4756] .. attribute:: ModelFormOptions.field_classes
+- [d4cbed64] .. attribute:: ModelFormOptions.fields
+- [de20252c] .. attribute:: ModelFormOptions.formfield_callback
+- [69482211] .. attribute:: ModelFormOptions.help_texts
+- [5e1ed4b9] .. attribute:: ModelFormOptions.labels
+- [380e80a4] .. attribute:: ModelFormOptions.localized_fields
+- [9bfcda43] .. attribute:: ModelFormOptions.model
+- [f20608a1] .. attribute:: ModelFormOptions.widgets
+- [0a79d47e] .. class:: ModelFormOptions
+- [23954fefb31ab08f-2] .. currentmodule:: django.forms
+- [8fdcae86] .. currentmodule:: django.forms.models
+- [2de434fb] .. function:: inlineformset_factory(parent_model, model, form=ModelForm, formset=BaseInlineFormSet, fk_name=None, fields=None, exclude=None, extra=3, can_order=False, can_delete=True, max_num=None, formfield_callback=None, widgets=None, validate_max=False, localized_fields=None, labels=None, help_texts=None, error_messages=None, min_num=None, validate_min=False, field_classes=None, absolute_max=None, can_delete_extra=True, renderer=None, edit_only=False)
+- [647e250b] .. function:: modelform_factory(model, form=ModelForm, fields=None, exclude=None, formfield_callback=None, widgets=None, localized_fields=None, labels=None, help_texts=None, error_messages=None, field_classes=None)
+- [be633c3a] .. function:: modelformset_factory(model, form=ModelForm, formfield_callback=None, formset=BaseModelFormSet, extra=1, can_delete=False, can_order=False, max_num=None, fields=None, exclude=None, widgets=None, validate_max=False, localized_fields=None, labels=None, help_texts=None, error_messages=None, min_num=None, validate_min=False, field_classes=None, absolute_max=None, can_delete_extra=True, renderer=None, edit_only=False)
+- [013f9cf1] .. module:: django.forms.models :synopsis: ModelForm API reference for inner ``Meta`` class and factory functions
+- [213243f9] =========== Model forms ===========
+- [803a79ca] Model form ``Meta`` API =======================
+- [c0de3c8a] Model form factory functions ============================
+- [76abfead] Optional attributes, other than :attr:`~ModelFormOptions.localized_fields` and :attr:`~ModelFormOptions.formfield_callback`, expect a dictionary that maps a model field name to a value. Any field that is not defined in the dictionary falls back to the field's default value.
+- [7e7d5190] Required attributes are :attr:`~ModelFormOptions.model`, and either :attr:`~ModelFormOptions.fields` or :attr:`~ModelFormOptions.exclude`. All other ``Meta`` attributes are optional.
+- [eade2efe] The ``_meta`` API is used to build forms that reflect a Django model. It is accessible through the ``_meta`` attribute of each model form, and is a ``django.forms.models.ModelFormOptions`` instance.
+- [431054d3] The structure of the generated form can be customized by defining metadata options as attributes of an inner ``Meta`` class. For example::
+- [271731d9] ``ModelForm`` API reference. For introductory material about using a ``ModelForm``, see the :doc:`/topics/forms/modelforms` topic guide.
+- [c0dce41f4f2e4c59-2] ``error_messages`` ------------------
+- [bd06f4da] ``field_classes`` -----------------
+- [87254620a027401c] ``fields`` ----------
+- [d7cc13a1] ``formfield_callback`` ----------------------
+- [cfb1cae8] ``help_texts`` --------------
+- [cf120e61] ``inlineformset_factory`` -------------------------
+- [b36e25c8] ``labels`` ----------
+- [328eb32a] ``localized_fields`` --------------------
+- [c26554f6] ``model`` ---------
+- [49f79d1b] ``modelform_factory`` ---------------------
+- [3b8c6ed3] ``modelformset_factory`` ------------------------
+- [93d8e8ea] ``widgets`` -----------

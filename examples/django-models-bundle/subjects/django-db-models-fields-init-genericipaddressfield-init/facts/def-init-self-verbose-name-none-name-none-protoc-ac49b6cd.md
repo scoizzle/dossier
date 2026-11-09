@@ -1,6 +1,6 @@
 # Fact ac49b6cd
 
-Store id: fe533369-b115-40ac-a90e-f186d7326cf4
+Store id: 3ebc2a0e-bfcb-4495-ab5b-1c97a2b04b27
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, protocol="both", unpack_ipv4=F
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5747860+00:00`
+- posted_at: `2026-11-09T23:31:56.7329680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2301,
     "symbol": "GenericIPAddressField.__init__"
   },
-  "id": "fe533369-b115-40ac-a90e-f186d7326cf4",
+  "id": "3ebc2a0e-bfcb-4495-ab5b-1c97a2b04b27",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5747860+00:00"
+    "posted_at": "2026-11-09T23:31:56.7329680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ccdbd320-0c6d-4566-9983-0c0630dc6172",
+  "subject_id": "9f4a698c-6d78-42d2-bca4-2c7b64f5710b",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.__init__",
   "tags": [
     "entity:method"

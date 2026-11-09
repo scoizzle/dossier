@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Random.as_sqlite
 
-- Subject: django/db/models/functions/math::Random.as_sqlite (id `a78a51b6-ec6d-468b-9b5d-953663441a02`)
+- Subject: django/db/models/functions/math::Random.as_sqlite (id `f69b58f5-1677-491f-aa53-db604c9b99ed`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 5575d66b
 
-Store id: 5b721844-2d41-4b56-a472-d4cc59e2c022
+Store id: fdcd8b2c-e9d1-44fd-b691-e8904c615585
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearExact(YearLookup, Exact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2335660+00:00`
+- posted_at: `2026-11-09T23:32:03.4266750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 753,
     "symbol": "YearExact"
   },
-  "id": "5b721844-2d41-4b56-a472-d4cc59e2c022",
+  "id": "fdcd8b2c-e9d1-44fd-b691-e8904c615585",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2335660+00:00"
+    "posted_at": "2026-11-09T23:32:03.4266750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5da197e2-937d-428c-aa20-4edc5bd69162",
+  "subject_id": "7889d6f0-037e-4527-a47c-0d04ebcedc39",
   "subject_name": "django/db/models/lookups::YearExact",
   "tags": [
     "entity:class"

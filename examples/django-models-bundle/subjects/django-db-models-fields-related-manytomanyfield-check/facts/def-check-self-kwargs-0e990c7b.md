@@ -1,6 +1,6 @@
 # Fact 0e990c7b
 
-Store id: 7f06edb7-896f-4928-965a-dd7039c58799
+Store id: 2237f4a8-6797-41ca-a5bf-e81b77cc30f2
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4470830+00:00`
+- posted_at: `2026-11-09T23:31:58.8302100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1537,
     "symbol": "ManyToManyField.check"
   },
-  "id": "7f06edb7-896f-4928-965a-dd7039c58799",
+  "id": "2237f4a8-6797-41ca-a5bf-e81b77cc30f2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4470830+00:00"
+    "posted_at": "2026-11-09T23:31:58.8302100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5ecd6126-6f67-46a8-899f-b46d77373d49",
+  "subject_id": "aab0e056-2900-48e2-9431-2a1fd3075dbf",
   "subject_name": "django/db/models/fields/related::ManyToManyField.check",
   "tags": [
     "entity:method"

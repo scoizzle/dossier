@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DurationField.value_to_string
 
-- Subject: django/db/models/fields/__init__::DurationField.value_to_string (id `e901c789-0d08-4c5d-8bb0-9aa01475b0eb`)
+- Subject: django/db/models/fields/__init__::DurationField.value_to_string (id `69d7045c-26fc-4704-a8d4-6192197cf086`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

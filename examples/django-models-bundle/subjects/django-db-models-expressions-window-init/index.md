@@ -1,9 +1,9 @@
 # django/db/models/expressions::Window.__init__
 
-- Subject: django/db/models/expressions::Window.__init__ (id `c190a581-a947-46c6-aa4d-f8d74b5bc13c`)
+- Subject: django/db/models/expressions::Window.__init__ (id `42bbe2f8-ed16-442b-9358-01f497dea27d`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 35 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

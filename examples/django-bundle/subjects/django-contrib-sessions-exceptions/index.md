@@ -1,8 +1,8 @@
 # django/contrib/sessions/exceptions
 
-- Subject: django/contrib/sessions/exceptions (id `e32394cc-2a35-4997-a264-804d087e6707`)
+- Subject: django/contrib/sessions/exceptions (id `495ef5bd-a286-4a87-8d45-3f0a17dab6a8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 156 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

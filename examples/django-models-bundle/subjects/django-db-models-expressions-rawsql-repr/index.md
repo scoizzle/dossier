@@ -1,9 +1,9 @@
 # django/db/models/expressions::RawSQL.__repr__
 
-- Subject: django/db/models/expressions::RawSQL.__repr__ (id `37d82b54-34b4-4137-b393-05677f0aa6f4`)
+- Subject: django/db/models/expressions::RawSQL.__repr__ (id `effa8310-d9f5-4ea4-a8ef-f87f44463b17`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

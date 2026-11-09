@@ -1,8 +1,8 @@
 # django/contrib/auth/signals
 
-- Subject: django/contrib/auth/signals (id `1c863d56-0805-4626-b42c-3a3a2f821fbd`)
+- Subject: django/contrib/auth/signals (id `93ed4d72-7faf-4d1a-b106-0ede97dfbc69`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 50 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

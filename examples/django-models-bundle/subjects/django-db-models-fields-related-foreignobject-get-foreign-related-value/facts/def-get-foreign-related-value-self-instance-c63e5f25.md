@@ -1,6 +1,6 @@
 # Fact c63e5f25
 
-Store id: 55650a19-dba0-4403-84e5-22d954d7089f
+Store id: 7f7d8783-d122-4aa8-a866-8c52b40b0851
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_foreign_related_value(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3357680+00:00`
+- posted_at: `2026-11-09T23:31:58.6961220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 827,
     "symbol": "ForeignObject.get_foreign_related_value"
   },
-  "id": "55650a19-dba0-4403-84e5-22d954d7089f",
+  "id": "7f7d8783-d122-4aa8-a866-8c52b40b0851",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3357680+00:00"
+    "posted_at": "2026-11-09T23:31:58.6961220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be6361aa-09f6-451a-8d0b-29dd0f83921d",
+  "subject_id": "6468d167-b7f2-4c4a-9c66-f155792ca7e6",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_foreign_related_value",
   "tags": [
     "entity:method"

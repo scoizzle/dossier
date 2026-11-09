@@ -1,6 +1,6 @@
 # Fact d3599e01
 
-Store id: 53ea2a22-365b-4b1b-9924-3995326d1488
+Store id: b5d03058-36b9-420f-9558-90b03ab428a2
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aset(self, objs, *, clear=False, through_defaults=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9161680+00:00`
+- posted_at: `2026-11-09T23:31:59.4930110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1436,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.aset"
   },
-  "id": "53ea2a22-365b-4b1b-9924-3995326d1488",
+  "id": "b5d03058-36b9-420f-9558-90b03ab428a2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9161680+00:00"
+    "posted_at": "2026-11-09T23:31:59.4930110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "264fcd80-3991-46d9-86af-09fb876f3004",
+  "subject_id": "bc9c8733-8ca9-4a4b-b9ab-ba36ff2aea8c",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aset",
   "tags": [
     "entity:method",

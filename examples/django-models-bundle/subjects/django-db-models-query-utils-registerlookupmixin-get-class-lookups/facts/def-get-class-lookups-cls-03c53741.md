@@ -1,6 +1,6 @@
 # Fact 03c53741
 
-Store id: 3c90aac7-a597-4e85-b678-7f852ec3250c
+Store id: 0111c510-b490-495c-b602-a66d0613c844
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_class_lookups(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1422840+00:00`
+- posted_at: `2026-11-09T23:32:05.1476100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 340,
     "symbol": "RegisterLookupMixin.get_class_lookups"
   },
-  "id": "3c90aac7-a597-4e85-b678-7f852ec3250c",
+  "id": "0111c510-b490-495c-b602-a66d0613c844",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1422840+00:00"
+    "posted_at": "2026-11-09T23:32:05.1476100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "843ce679-1101-4dc4-a9b8-ff029a67731b",
+  "subject_id": "32238927-3d04-4540-b300-9353ad02b959",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin.get_class_lookups",
   "tags": [
     "entity:method",

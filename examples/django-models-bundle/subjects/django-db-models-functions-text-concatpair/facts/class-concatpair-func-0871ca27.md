@@ -1,6 +1,6 @@
 # Fact 0871ca27
 
-Store id: 0f0c08c0-91da-43dc-995b-b11522e7eb4d
+Store id: 6e8af1ea-0eaf-40fb-82c5-ed908e1b0def
 
 ## Text
 
@@ -20,7 +20,7 @@ class ConcatPair(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.0742310+00:00`
+- posted_at: `2026-11-09T23:32:02.1597460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 68,
     "symbol": "ConcatPair"
   },
-  "id": "0f0c08c0-91da-43dc-995b-b11522e7eb4d",
+  "id": "6e8af1ea-0eaf-40fb-82c5-ed908e1b0def",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.0742310+00:00"
+    "posted_at": "2026-11-09T23:32:02.1597460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "66a2ae94-1530-4fd8-810b-d50ed4f28277",
+  "subject_id": "df6facfb-ff43-4b1a-9d4f-82b22ed3eaba",
   "subject_name": "django/db/models/functions/text::ConcatPair",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/options::normalize_together
 
-- Subject: django/db/models/options::normalize_together (id `e8c0332e-80d1-46c4-9a36-04da90d6f831`)
+- Subject: django/db/models/options::normalize_together (id `2c6cdf64-8d9b-4971-bbb7-825909d6d681`)
 - Kind: function
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

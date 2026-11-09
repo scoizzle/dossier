@@ -1,6 +1,6 @@
 # Fact 603db0d9
 
-Store id: b520324a-2848-4dbe-810b-164ad3155fb9
+Store id: 1746b11c-620f-4f4c-ae43-2b627085fea5
 
 ## Text
 
@@ -20,7 +20,7 @@ class Reverse(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1565530+00:00`
+- posted_at: `2026-11-09T23:32:02.2552020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 260,
     "symbol": "Reverse"
   },
-  "id": "b520324a-2848-4dbe-810b-164ad3155fb9",
+  "id": "1746b11c-620f-4f4c-ae43-2b627085fea5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1565530+00:00"
+    "posted_at": "2026-11-09T23:32:02.2552020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d5a60407-3523-45f9-8612-0773161cb751",
+  "subject_id": "165ed61c-a426-45f7-a084-5cbc75ebe8b3",
   "subject_name": "django/db/models/functions/text::Reverse",
   "tags": [
     "entity:class"

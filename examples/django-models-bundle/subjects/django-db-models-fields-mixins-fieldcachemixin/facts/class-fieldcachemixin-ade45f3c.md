@@ -1,6 +1,6 @@
 # Fact ade45f3c
 
-Store id: 9f7f8f0a-cd84-408d-a7b5-3c8de143a3e5
+Store id: 31f8e3b0-3f4a-41b0-8ec0-52553795e8b6
 
 ## Text
 
@@ -20,7 +20,7 @@ class FieldCacheMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.9135180+00:00`
+- posted_at: `2026-11-09T23:31:58.1986180+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 7,
     "symbol": "FieldCacheMixin"
   },
-  "id": "9f7f8f0a-cd84-408d-a7b5-3c8de143a3e5",
+  "id": "31f8e3b0-3f4a-41b0-8ec0-52553795e8b6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.9135180+00:00"
+    "posted_at": "2026-11-09T23:31:58.1986180+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a64d1a39-242e-45e3-88ef-7326058460b1",
+  "subject_id": "c84f4da3-6a8a-4fbc-9235-59bcbf50ad73",
   "subject_name": "django/db/models/fields/mixins::FieldCacheMixin",
   "tags": [
     "entity:class"

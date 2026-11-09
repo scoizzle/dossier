@@ -1,6 +1,6 @@
 # Fact 57084b8b
 
-Store id: c93ebc06-e2c1-4482-9ab3-3bc5973902f7
+Store id: 5e73c087-ac60-4e2b-b132-a2d705958c0c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function DO_NOTHING
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0946700+00:00`
+- posted_at: `2026-11-09T23:31:55.1285340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c93ebc06-e2c1-4482-9ab3-3bc5973902f7",
+  "id": "5e73c087-ac60-4e2b-b132-a2d705958c0c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0946700+00:00"
+    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DO_NOTHING"
       },
       "rel": "contains",
-      "target": "0069c23d-287a-4a08-b84e-3a05742eb4fb"
+      "target": "2408caa4-d8c1-4841-a6d4-10cbb7363456"
     }
   ],
   "status": "live",
-  "subject_id": "9dd01ff9-dc4a-434f-bc10-89b57d3d6bb3",
+  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

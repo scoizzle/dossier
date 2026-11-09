@@ -1,8 +1,8 @@
 # django/template/backends/utils
 
-- Subject: django/template/backends/utils (id `b9d40aa4-2409-485a-a6d2-93d44e904464`)
+- Subject: django/template/backends/utils (id `47fe60aa-53ff-4625-abf0-5e370088a4e9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 130 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 86c395f9
 
-Store id: 30a739d5-d3ba-4eac-8fee-f9648cab2d0e
+Store id: 82d31d3f-f05a-4b2d-80d8-7d173e4698bb
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Regex
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "30a739d5-d3ba-4eac-8fee-f9648cab2d0e",
+  "id": "82d31d3f-f05a-4b2d-80d8-7d173e4698bb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Regex"
       },
       "rel": "contains",
-      "target": "c16794c3-7902-446b-bd5e-7ff620c081e5"
+      "target": "28b6e423-5828-4cef-813c-7d0f1be1e214"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

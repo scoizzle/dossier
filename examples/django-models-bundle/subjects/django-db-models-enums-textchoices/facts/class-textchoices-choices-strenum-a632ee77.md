@@ -1,6 +1,6 @@
 # Fact a632ee77
 
-Store id: 5874edfe-4dba-4cfa-b625-6e06ecdbe26b
+Store id: 2c21016e-a10c-4b3f-9419-7b6d3ad51b61
 
 ## Text
 
@@ -20,7 +20,7 @@ class TextChoices(Choices, StrEnum)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.3074920+00:00`
+- posted_at: `2026-11-09T23:31:55.5108490+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 74,
     "symbol": "TextChoices"
   },
-  "id": "5874edfe-4dba-4cfa-b625-6e06ecdbe26b",
+  "id": "2c21016e-a10c-4b3f-9419-7b6d3ad51b61",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.3074920+00:00"
+    "posted_at": "2026-11-09T23:31:55.5108490+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6324b7a1-03bb-4f1c-b504-74dee4187949",
+  "subject_id": "a9317c21-8a9a-4b39-8b2e-ad93d6751756",
   "subject_name": "django/db/models/enums::TextChoices",
   "tags": [
     "entity:class"

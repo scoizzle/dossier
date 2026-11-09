@@ -1,6 +1,6 @@
 # Fact d5d2157f
 
-Store id: 579efa44-8cd9-40b8-b478-af4d53bbcd4c
+Store id: ad8ffa67-388f-4afe-866b-aaa98a4f7777
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedLessThanOrEqual(RelatedLookupMixin, LessThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1348530+00:00`
+- posted_at: `2026-11-09T23:32:00.0270090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 147,
     "symbol": "RelatedLessThanOrEqual"
   },
-  "id": "579efa44-8cd9-40b8-b478-af4d53bbcd4c",
+  "id": "ad8ffa67-388f-4afe-866b-aaa98a4f7777",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1348530+00:00"
+    "posted_at": "2026-11-09T23:32:00.0270090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7e35b11a-70a0-4688-915f-2905e7946b48",
+  "subject_id": "9124114d-abb7-4481-8465-10257d90399a",
   "subject_name": "django/db/models/fields/related_lookups::RelatedLessThanOrEqual",
   "tags": [
     "entity:class"

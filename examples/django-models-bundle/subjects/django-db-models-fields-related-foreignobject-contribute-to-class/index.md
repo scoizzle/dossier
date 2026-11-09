@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.contribute_to_class
 
-- Subject: django/db/models/fields/related::ForeignObject.contribute_to_class (id `5b2aec41-2c22-4576-b2c1-cf3d1478da53`)
+- Subject: django/db/models/fields/related::ForeignObject.contribute_to_class (id `b035025c-2d90-4ce4-bda1-0dd61678596b`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

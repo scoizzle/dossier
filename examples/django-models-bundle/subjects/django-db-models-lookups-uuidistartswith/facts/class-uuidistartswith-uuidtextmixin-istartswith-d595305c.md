@@ -1,6 +1,6 @@
 # Fact d595305c
 
-Store id: 753fb027-9dfd-440f-ae83-88c8c0c8a79d
+Store id: beddf8a8-1c77-4008-aac3-0faeaf9c8eb5
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDIStartsWith(UUIDTextMixin, IStartsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2895920+00:00`
+- posted_at: `2026-11-09T23:32:03.4877080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 820,
     "symbol": "UUIDIStartsWith"
   },
-  "id": "753fb027-9dfd-440f-ae83-88c8c0c8a79d",
+  "id": "beddf8a8-1c77-4008-aac3-0faeaf9c8eb5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2895920+00:00"
+    "posted_at": "2026-11-09T23:32:03.4877080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "17740ecd-d8d1-49de-95d7-7a419f46ff6b",
+  "subject_id": "656a0a72-7f55-4a68-9fd2-515e9e416694",
   "subject_name": "django/db/models/lookups::UUIDIStartsWith",
   "tags": [
     "entity:class",

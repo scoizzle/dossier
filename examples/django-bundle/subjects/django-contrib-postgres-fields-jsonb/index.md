@@ -1,8 +1,8 @@
 # django/contrib/postgres/fields/jsonb
 
-- Subject: django/contrib/postgres/fields/jsonb (id `7e2b6cdf-e47b-42b8-8130-97844d03f5e0`)
+- Subject: django/contrib/postgres/fields/jsonb (id `4f09175f-21e6-4c25-bd3b-ebb471a31b61`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 117 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

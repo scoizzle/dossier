@@ -1,6 +1,6 @@
 # Fact 3686fa20
 
-Store id: b12acff2-85b8-477a-933a-654db46c2a83
+Store id: ccb7bc37-a0fe-4080-a9bb-d60aea4b3c46
 
 ## Text
 
@@ -20,7 +20,7 @@ def flatchoices(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3583110+00:00`
+- posted_at: `2026-11-09T23:31:56.5302500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1134,
     "symbol": "Field.flatchoices"
   },
-  "id": "b12acff2-85b8-477a-933a-654db46c2a83",
+  "id": "ccb7bc37-a0fe-4080-a9bb-d60aea4b3c46",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3583110+00:00"
+    "posted_at": "2026-11-09T23:31:56.5302500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8b2bf6bc-c872-4770-895a-b29726a90a4c",
+  "subject_id": "128a1088-1604-4b0e-a895-ea0608e3056c",
   "subject_name": "django/db/models/fields/__init__::Field.flatchoices",
   "tags": [
     "entity:method",

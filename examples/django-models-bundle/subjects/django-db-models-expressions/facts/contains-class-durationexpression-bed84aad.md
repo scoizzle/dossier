@@ -1,6 +1,6 @@
 # Fact bed84aad
 
-Store id: 71e0e820-50fc-49a7-82c8-a621228c4168
+Store id: 1c0e61dc-57b6-4b63-ad23-6941bd10d08d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DurationExpression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "71e0e820-50fc-49a7-82c8-a621228c4168",
+  "id": "1c0e61dc-57b6-4b63-ad23-6941bd10d08d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DurationExpression"
       },
       "rel": "contains",
-      "target": "d2079e24-0502-41e9-bd72-484a8f544c01"
+      "target": "3d9d6d5c-4241-4517-b9f3-da11d9791830"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

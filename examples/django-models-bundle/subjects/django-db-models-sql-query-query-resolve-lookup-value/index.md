@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.resolve_lookup_value
 
-- Subject: django/db/models/sql/query::Query.resolve_lookup_value (id `b8bfaca5-1ca5-4b8a-8ad9-ff7536aa0fcc`)
+- Subject: django/db/models/sql/query::Query.resolve_lookup_value (id `640078fe-4eee-41a8-a82f-d663852457a6`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact e595e38d
 
-Store id: caf7d39a-59fc-4125-9b1a-1f6a959ae8e2
+Store id: fc7a9c68-a958-4b26-a2f9-67f5d4e3c203
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1929000+00:00`
+- posted_at: `2026-11-09T23:32:06.7099110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 173,
     "symbol": "RawQuery.clone"
   },
-  "id": "caf7d39a-59fc-4125-9b1a-1f6a959ae8e2",
+  "id": "fc7a9c68-a958-4b26-a2f9-67f5d4e3c203",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1929000+00:00"
+    "posted_at": "2026-11-09T23:32:06.7099110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "54b65a0b-be73-41f5-b6ac-3ce4cb2896f8",
+  "subject_id": "68be750d-74aa-4577-b174-fd2a3ab908f0",
   "subject_name": "django/db/models/sql/query::RawQuery.clone",
   "tags": [
     "entity:method"

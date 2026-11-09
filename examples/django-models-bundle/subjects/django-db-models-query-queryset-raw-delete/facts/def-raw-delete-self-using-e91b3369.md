@@ -1,6 +1,6 @@
 # Fact e91b3369
 
-Store id: 63bf51f2-9513-4869-8c99-6fff40158caf
+Store id: 07b408f3-05c1-4566-890e-9dee694243ed
 
 ## Text
 
@@ -20,7 +20,7 @@ def _raw_delete(self, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5223490+00:00`
+- posted_at: `2026-11-09T23:32:04.4800150+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1397,
     "symbol": "QuerySet._raw_delete"
   },
-  "id": "63bf51f2-9513-4869-8c99-6fff40158caf",
+  "id": "07b408f3-05c1-4566-890e-9dee694243ed",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5223490+00:00"
+    "posted_at": "2026-11-09T23:32:04.4800150+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e428c7ce-9beb-4eed-811c-989c214bf81e",
+  "subject_id": "bc5c0a04-ac9f-4bf4-a401-31b232e95b2a",
   "subject_name": "django/db/models/query::QuerySet._raw_delete",
   "tags": [
     "entity:method"

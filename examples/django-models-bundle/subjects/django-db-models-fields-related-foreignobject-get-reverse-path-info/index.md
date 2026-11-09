@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject.get_reverse_path_info
 
-- Subject: django/db/models/fields/related::ForeignObject.get_reverse_path_info (id `e71622e8-b065-4594-bb32-7d8d080d980b`)
+- Subject: django/db/models/fields/related::ForeignObject.get_reverse_path_info (id `17093f64-1975-4ca1-a956-ba90ac1c8d28`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

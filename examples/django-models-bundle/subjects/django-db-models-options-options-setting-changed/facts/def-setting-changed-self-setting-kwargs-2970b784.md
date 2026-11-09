@@ -1,6 +1,6 @@
 # Fact 2970b784
 
-Store id: ca4ed438-b9ee-4b88-84da-fada413adcd3
+Store id: fcb2035a-d6a4-4a9c-b5f7-87d24929fd50
 
 ## Text
 
@@ -20,7 +20,7 @@ def setting_changed(self, *, setting, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8191730+00:00`
+- posted_at: `2026-11-09T23:32:03.9547020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 449,
     "symbol": "Options.setting_changed"
   },
-  "id": "ca4ed438-b9ee-4b88-84da-fada413adcd3",
+  "id": "fcb2035a-d6a4-4a9c-b5f7-87d24929fd50",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8191730+00:00"
+    "posted_at": "2026-11-09T23:32:03.9547020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da8a4672-d7f3-46ff-b30a-3361ed6192c3",
+  "subject_id": "5caa996a-963e-459f-9838-b88c3e2633a5",
   "subject_name": "django/db/models/options::Options.setting_changed",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/howto/static-files/deployment
 
-- Subject: docs/howto/static-files/deployment (id `44155104-228e-4f81-af94-dd9ff0b70bd7`)
+- Subject: docs/howto/static-files/deployment (id `7bf9dacc-0fc3-48ff-a625-35b7e40319a1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 875 tokens
-- Facts shown: 20 of 33
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1689 tokens
+- Facts shown: 33 of 33
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - For an introduction to the use of :mod:`django.contrib.staticfiles`, see :doc:`/howto/static-files/index`. [606a193c]
 - STORAGES = { # ... "staticfiles": {"BACKEND": "myproject.storage.S3Storage"} } [ab9940ed]
@@ -31,6 +31,18 @@
 - Having your Django application serve static files ------------------------------------------------- [890eb0a9]
 - Learn more ========== [e4869dfb213f62a5]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [746cccbe] [7952cabd] [bc2d89fd] [9a5d36da] [d38ef976] [11e207df] [9ade9c6d] [3ad433a0] [1874bfbf] [12de101d] [32aa3a10] [ced7041b] [dec40e52]
+- [746cccbe] If you want to serve your static files from the same server that's already serving your site, the process may look something like:
+- [7952cabd] Most larger Django sites use a separate web server -- i.e., one that's not also running Django -- for serving static files. This server often runs a different type of web server -- faster but less full-featured. Some common choices are:
+- [bc2d89fd] Once that's done, all you have to do is run :djadmin:`collectstatic` and your static files would be pushed through your storage package up to S3. If you later needed to switch to a different storage provider, you may only have to change ``staticfiles`` in the :setting:`STORAGES` setting.
+- [9a5d36da] Serving static files from a cloud service or CDN ------------------------------------------------
+- [d38ef976] Serving static files from a dedicated server --------------------------------------------
+- [11e207df] Serving static files in production ==================================
+- [9ade9c6d] Serving the site and your static files from the same server -----------------------------------------------------------
+- [3ad433a0] Since your static file server won't be running Django, you'll need to modify the deployment strategy to look something like:
+- [1874bfbf] The basic outline of putting static files into production consists of two steps: run the :djadmin:`collectstatic` command when static files change, then arrange for the collected static files directory (:setting:`STATIC_ROOT`) to be moved to the static file server and served. Depending on the ``staticfiles`` :setting:`STORAGES` alias, files may need to be moved to a new location manually or the :func:`post_process <django.contrib.staticfiles.storage.StaticFilesStorage.post_process>` method of the ``Storage`` class might take care of that.
+- [12de101d] There's any number of ways you might do this, but if the provider has an API, you can use a :doc:`custom file storage backend </howto/custom-file-storage>` to integrate the CDN with your Django project. If you've written or are using a 3rd party custom storage backend, you can tell :djadmin:`collectstatic` to use it by setting ``staticfiles`` in :setting:`STORAGES`.
+- [32aa3a10] When using these services, the basic workflow would look a bit like the above, except that instead of using ``rsync`` to transfer your static files to the server you'd need to transfer the static files to the storage provider or CDN.
+- [ced7041b] While web servers are much better and faster at serving static files, it is possible to have Django serve them using community-maintained packages. There are static file packages highlighted on the `Community Ecosystem`_ page. The Django Packages `Static Builders grid`_ has even more options for you!
+- [dec40e52] You'll probably want to automate this process, especially if you've got multiple web servers.

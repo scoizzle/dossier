@@ -1,14 +1,14 @@
 # docs/howto/legacy-databases
 
-- Subject: docs/howto/legacy-databases (id `1c403423-d721-4d20-8576-ad1a773f2c11`)
+- Subject: docs/howto/legacy-databases (id `a96e3e43-b94c-4df2-94ff-39fcf4f839f9`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 854 tokens
-- Facts shown: 24 of 26
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 987 tokens
+- Facts shown: 26 of 26
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Meta: managed = False db_table = "CENSUS_PERSONS" [7c1285b0]
 - $ python manage.py inspectdb [03576847]
@@ -35,6 +35,7 @@
 - This feature is meant as a shortcut, not as definitive model generation. See the :djadmin:`documentation of inspectdb <inspectdb>` for more information. [fc4f2ebb]
 - Those are the basic steps -- from here you'll want to tweak the models Django generated until they work the way you'd like. Try accessing your data via the Django database API, and try editing objects via Django's admin site, and edit the models file accordingly. [7048f91a]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [d8afd87c] [fa0b7c39]
+- [d8afd87c] While Django is best suited for developing new applications, it's quite possible to integrate it into legacy databases. Django includes a couple of utilities to automate as much of this process as possible.
+- [fa0b7c39] You'll need to tell Django what your database connection parameters are, and what the name of the database is. Do that by editing the :setting:`DATABASES` setting and assigning values to the following keys for the ``'default'`` connection:

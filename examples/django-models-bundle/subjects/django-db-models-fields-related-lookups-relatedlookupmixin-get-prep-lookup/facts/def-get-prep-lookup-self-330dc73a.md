@@ -1,6 +1,6 @@
 # Fact 330dc73a
 
-Store id: 5a80652b-83a5-42a8-9952-c5eaa3ef79a1
+Store id: ebe8a6c8-92fe-43db-bd97-30e648131517
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1084560+00:00`
+- posted_at: `2026-11-09T23:31:59.9870060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "RelatedLookupMixin.get_prep_lookup"
   },
-  "id": "5a80652b-83a5-42a8-9952-c5eaa3ef79a1",
+  "id": "ebe8a6c8-92fe-43db-bd97-30e648131517",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1084560+00:00"
+    "posted_at": "2026-11-09T23:31:59.9870060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b4b07c2c-3154-43f5-bde3-dab3c5888407",
+  "subject_id": "1913fb61-d56f-4192-905f-dc8bfddb209c",
   "subject_name": "django/db/models/fields/related_lookups::RelatedLookupMixin.get_prep_lookup",
   "tags": [
     "entity:method"

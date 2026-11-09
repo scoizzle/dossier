@@ -1,6 +1,6 @@
 # Fact 12c9f725
 
-Store id: f1779e29-a449-4d4e-b467-fe23063e7a2e
+Store id: 4a235f59-d6c8-4be5-8a74-5ad158b391d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _forward_fields_map(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8619700+00:00`
+- posted_at: `2026-11-09T23:32:03.9958250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 640,
     "symbol": "Options._forward_fields_map"
   },
-  "id": "f1779e29-a449-4d4e-b467-fe23063e7a2e",
+  "id": "4a235f59-d6c8-4be5-8a74-5ad158b391d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8619700+00:00"
+    "posted_at": "2026-11-09T23:32:03.9958250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "69ce69be-975a-4a14-a775-aaf1ea02ffc2",
+  "subject_id": "68b8c91e-47f7-4d5f-bd89-4c6a6e858ffc",
   "subject_name": "django/db/models/options::Options._forward_fields_map",
   "tags": [
     "entity:method",

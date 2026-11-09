@@ -1,6 +1,6 @@
 # Fact 9eea4bcd
 
-Store id: baa93ef5-e25b-48ca-8355-126078df8ecd
+Store id: 61852acc-1341-4148-be8b-58b5b5ff50c2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_null_allowed_for_primary_keys(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2826410+00:00`
+- posted_at: `2026-11-09T23:31:56.4348170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 495,
     "symbol": "Field._check_null_allowed_for_primary_keys"
   },
-  "id": "baa93ef5-e25b-48ca-8355-126078df8ecd",
+  "id": "61852acc-1341-4148-be8b-58b5b5ff50c2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2826410+00:00"
+    "posted_at": "2026-11-09T23:31:56.4348170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "59724c63-add4-4066-ae9d-997248b63e10",
+  "subject_id": "ebbf8ded-e3ca-44ef-ae88-8256fdda2d0e",
   "subject_name": "django/db/models/fields/__init__::Field._check_null_allowed_for_primary_keys",
   "tags": [
     "entity:method"

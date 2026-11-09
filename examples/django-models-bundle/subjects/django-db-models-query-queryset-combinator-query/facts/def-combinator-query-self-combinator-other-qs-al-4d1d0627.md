@@ -1,6 +1,6 @@
 # Fact 4d1d0627
 
-Store id: 965863d9-434b-4778-8c47-e543b9df5f44
+Store id: 6324a7d2-9337-4095-9c82-72f9816279e1
 
 ## Text
 
@@ -20,7 +20,7 @@ def _combinator_query(self, combinator, *other_qs, all=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6217910+00:00`
+- posted_at: `2026-11-09T23:32:04.5557720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1748,
     "symbol": "QuerySet._combinator_query"
   },
-  "id": "965863d9-434b-4778-8c47-e543b9df5f44",
+  "id": "6324a7d2-9337-4095-9c82-72f9816279e1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6217910+00:00"
+    "posted_at": "2026-11-09T23:32:04.5557720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a5d1b308-45ac-4615-b722-875f55949dd8",
+  "subject_id": "65b77133-2bc2-440f-be91-b8a819e17899",
   "subject_name": "django/db/models/query::QuerySet._combinator_query",
   "tags": [
     "entity:method"

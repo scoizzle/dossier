@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.clear_limits
 
-- Subject: django/db/models/sql/query::Query.clear_limits (id `33af3e9b-e775-46e0-8a3b-8f4859e1d9cb`)
+- Subject: django/db/models/sql/query::Query.clear_limits (id `2c65716c-ecaa-4370-b0c8-7c371f3ef51b`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

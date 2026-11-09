@@ -1,6 +1,6 @@
 # Fact 8d59cd5e
 
-Store id: 88e83145-2cef-4f74-994f-0d8018d823d6
+Store id: 5a4f4230-b195-48e5-89ad-66c7ad561d7a
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression( self, query=None, allow_joins=True, reuse=None, summariz
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6848730+00:00`
+- posted_at: `2026-11-09T23:31:55.9429100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1609,
     "symbol": "NegatedExpression.resolve_expression"
   },
-  "id": "88e83145-2cef-4f74-994f-0d8018d823d6",
+  "id": "5a4f4230-b195-48e5-89ad-66c7ad561d7a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6848730+00:00"
+    "posted_at": "2026-11-09T23:31:55.9429100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a01975b9-ce93-4cc2-8edc-e1f735b03f2a",
+  "subject_id": "5cdc1027-77c3-4101-be60-d5921a5f7fc3",
   "subject_name": "django/db/models/expressions::NegatedExpression.resolve_expression",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/ref/models/database-functions
 
-- Subject: docs/ref/models/database-functions (id `884c0eb8-6c6c-4641-a397-a2e4113d51bc`)
+- Subject: docs/ref/models/database-functions (id `1fbbbc5a-73c2-44ab-a8f0-eb458fe3e215`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 29 of 596
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 19536 tokens
+- Facts shown: 554 of 596
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> from datetime import datetime >>> dt = datetime(2015, 6, 15) >>> (dt.isoweekday() % 7) + 1 2 [a842baf4]
 - >>> from django.db.models import DateTimeField >>> from django.db.models.functions import Cast, Coalesce >>> from django.utils import timezone >>> now = timezone.now() >>> Coalesce("updated", Cast(now, DateTimeField())) [cecce31d]
@@ -40,6 +40,530 @@
 - .. attribute:: lookup_name = 'week' [c0f4029d]
 - .. attribute:: lookup_name = 'week_day' [bc25e80f]
 
-## Beyond the budget
+## All facts
 
-525 more facts did not fit in the budget: [fada5f26] [eaf050be34acb41d-358] [eaf050be34acb41d-359] [eaf050be34acb41d-360] [eaf050be34acb41d-361] [65b94a30] [16ffc07f] [1a1a9779] [4131c430] [df8d365f] [4ba34ad1] [9ec5ff2c] [b7103ee1] [d6ecc22a] [dec3c1e6] [998f9fc6] [7d4eb12c] [3d8c6119] [1f2342b6] [8a69e019] [9976ddbd] [bf6008be] [efe304f8] [e4e7f978] [87d79cab] [11496fcc] [3aab6801] [8713b802] [0d3a8aa3] [62f176c1] [ef16b81d] [006bcfd8] [b9c5f6a0] [35727ed1] [dfd4f37f] [2deb248b] [e8a19945] [30a6e21b] [e3bd9a8f] [1a1f9b24] [c3ab90b5] [b4b8f9b1] [95910438] [5fa9fced] [84c5177e] [f348a096] [4b89643c] [c09d3eb6] [12c6cd15] [2a16c672] [e2b7db88] [c82049d9] [af7323a0] [cf761ed5] [bb5d5a81] [0c9d94c5] [79d293e1] [ed78532f] [b19945f4] [2f0ffe6d] [7fe69222] [43e8633a] [5ad87989] [6b3d5703] [8d459187] [c8d06aaa] [be7cf092] [04c4c7a2] [6bf43652] [45b0e2b2] [470fa3a0] [ac66c9ab] [7a3163b8] [3e63c3cd] [33287590] [a3b4e7ab] [2cfe814b] [1f40f025] [b77411bf] [eb170853] [807f2448a61ddd47] [5ea0965d] [6e124244] [2652548a] [f848fe94] [6e73c3ad] [042ff557] [c1e13b60] [12d92d74] [d10d158b] [842814ce] [b48e488f] [3e1fe829] [8be50e39] [7057b934] [ab33048d] [a8d30017] [2d93625c] [1671a26c] [7cf2e33a] [6f24a7bf] [58f419f7] [26ca44dc] [4c23a16c] [019b7db1] [70a69214] [59933a50] [11aa833e] [1683cc0d] [0a956f3b] [61da3921] [c1baf2c74443708b] [c1baf2c74443708b-2] [d56c2b96] [0255f273c1fc1ac6] [d78ad3ab25cd8d9c] [d78ad3ab25cd8d9c-2] [0a7dd373] [f612bc9e] [622dc985] [792540be] [054065a3] [97b0cbc9] [7f87e71f] [e5a5c9d1] [3af4deb8] [67d736f0] [5edd68a6] [291591a5] [a3664947] [c5a304d3] [fb7fb675] [aedac46d] [601b18a6] [466218c0] [076d17b2] [48dde155] [71da7800] [5b806e4f] [d56b7e67] [b0a6d9a2] [e23409d7] [cbf218c8] [b68be9e2] [df864107] [62cf10d8] [c52474c5] [d66e7cf3] [b5ee96f3] [991f2da9] [abc5582e] [1f10ae46] [79e99171] [1fc16fdb] [ff732508] [bd544979] [09a8b70a] [99518b11] [3d3b87f2] [1694d13f] [04a159e9] [c7a0cd3d] [007e961f] [2c8b7ff8] [fd181057] [d436b394] [4031a27b] [494f5730] [a64942bf] [27f8a045] [97a85701] [9cb8e368] [66d8af73] [232412f1] [d87d8d50] [c0f9e7d8] [3189505f] [4abe738c] [5b1a0790] [f2dfe9cb] [b7f3c46e] [d36e3faa] [f0ad306e] [56b94592] [4e80e172] [c0a56897] [0889dda691e14c07-2] [e4380d00] [19e6b6f6] [cec9a5a3] [28f2a185] [185d40a5] [1c47e511] [b1281c83] [ba7cf59b] [c5e029de] [ec0ce6d5] [898ea8ec] [05bb7851] [a9fd712e] [eea23959] [bc7f9a68] [9c736815] [f477cbf2] [0b899749] [fdbfc730] [5be79912] [b1995e2c] [c20d3b16] [78f696af] [f111c271] [e381f1e5] [eaf050be34acb41d-362] [eaf050be34acb41d-363] [eaf050be34acb41d-364] [eaf050be34acb41d-365] [eaf050be34acb41d-366] [eaf050be34acb41d-367] [eaf050be34acb41d-368] [eaf050be34acb41d-369] [eaf050be34acb41d-370] [eaf050be34acb41d-371] [eaf050be34acb41d-372] [eaf050be34acb41d-373] [eaf050be34acb41d-374] [eaf050be34acb41d-375] [eaf050be34acb41d-376] [eaf050be34acb41d-377] [eaf050be34acb41d-378] [eaf050be34acb41d-379] [eaf050be34acb41d-380] [eaf050be34acb41d-381] [eaf050be34acb41d-382] [eaf050be34acb41d-383] [eaf050be34acb41d-384] [eaf050be34acb41d-385] [eaf050be34acb41d-386] [eaf050be34acb41d-387] [eaf050be34acb41d-388] [eaf050be34acb41d-389] [eaf050be34acb41d-390] [eaf050be34acb41d-391] [eaf050be34acb41d-392] [eaf050be34acb41d-393] [eaf050be34acb41d-394] [eaf050be34acb41d-395] [eaf050be34acb41d-396] [eaf050be34acb41d-397] [eaf050be34acb41d-398] [eaf050be34acb41d-399] [eaf050be34acb41d-400] [eaf050be34acb41d-401] [eaf050be34acb41d-402] [eaf050be34acb41d-403] [eaf050be34acb41d-404] [eaf050be34acb41d-405] [eaf050be34acb41d-406] [eaf050be34acb41d-407] [eaf050be34acb41d-408] [eaf050be34acb41d-409] [eaf050be34acb41d-410] [eaf050be34acb41d-411] [eaf050be34acb41d-412] [eaf050be34acb41d-413] [eaf050be34acb41d-414] [eaf050be34acb41d-415] [eaf050be34acb41d-416] [eaf050be34acb41d-417] [eaf050be34acb41d-418] [eaf050be34acb41d-419] [eaf050be34acb41d-420] [eaf050be34acb41d-421] [eaf050be34acb41d-422] [eaf050be34acb41d-423] [eaf050be34acb41d-424] [eaf050be34acb41d-425] [eaf050be34acb41d-426] [eaf050be34acb41d-427] [eaf050be34acb41d-428] [eaf050be34acb41d-429] [eaf050be34acb41d-430] [eaf050be34acb41d-431] [eaf050be34acb41d-432] [eaf050be34acb41d-433] [eaf050be34acb41d-434] [3a9340cd0d877339-27] [8555fa12] [0cf180bcf4ecfab5-12] [0cf180bcf4ecfab5-13] [c54b54cb0805732a-47] [c54b54cb0805732a-48] [c54b54cb0805732a-49] [c54b54cb0805732a-50] [e73d5a8e] [b208c395] [d5640d01] [5a985d8a] [b97e7cad] [c8489711] [64c1b586] [0c9f5101] [00cd1613] [b3ce98d1] [efe693e4] [ba24e6ec] [3cc679b3] [718a5254] [87dfd508] [48d9a9ee] [c1725b98] [33be7d0c] [32bda3e0] [3cbc0cf2] [848c14e7] [33b3b23c] [7a5f6527] [88321a8e] [5cdd787f] [6ee060cc] [c14c61d1] [777aa403] [21859861] [659d1b27] [4aee5ac8] [0a5509d3] [7b773876] [ed58ac6a] [02412931] [890ed06c] [28568cef] [a5a92fb2] [e7e1421a] [e4d9ba34] [1dec5a9e] [74bfdd05] [c3419c8c] [886f30f88ca101db] [3607914e] [701ec15f98eeae6c] [40b32785] [1a1612b5] [c668f7d2] [1de08f0d] [f3420a8c] [f9f0ba93] [b07384e0] [1ef36399] [20097a2f] [270eef40] [876d4e2d] [097b5e52] [9ba8ea9b] [68d66110] [5db75493] [70075187] [4c01a6b5] [3153a607] [bdcbd2d4] [fb2e53c0] [6d68796c] [29e8194a] [94c889f8] [2b94bd0b] [664d3c17] [4f8f66aa] [eb39befa] [ea1ba98b] [e9e41d2b] [66ea556e] [960d9493] [e0666df3] [abc6e792] [836d113f] [939e45b3] [e9131d25] [cc489de6] [af921e3e] [67a87076] [afe40ea1] [98614dcd] [126dc88b] [96e90f0f] [4afec6bf] [9914d56a] [74334dba] [392f92c5] [29fb19db] [d8ab91a4] [ff066bf9] [dd833d96] [b9e8c5fe] [d16c436c] [525744c8] [ced44d25] [3ecdcd2d485c92ad-8] [3ecdcd2d485c92ad-9] [3ecdcd2d485c92ad-10] [3ecdcd2d485c92ad-11] [3ecdcd2d485c92ad-12] [3ecdcd2d485c92ad-13] [3ecdcd2d485c92ad-14] [3ecdcd2d485c92ad-15] [3ecdcd2d485c92ad-16] [3ecdcd2d485c92ad-17] [3ecdcd2d485c92ad-18] [3ecdcd2d485c92ad-19] [3ecdcd2d485c92ad-20] [3ecdcd2d485c92ad-21] [3ecdcd2d485c92ad-22] [3ecdcd2d485c92ad-23] [3ecdcd2d485c92ad-24] [3ecdcd2d485c92ad-25] [3ecdcd2d485c92ad-26] [3ecdcd2d485c92ad-27] [3ecdcd2d485c92ad-28] [3ecdcd2d485c92ad-29] [3ecdcd2d485c92ad-30] [3ecdcd2d485c92ad-31] [3ecdcd2d485c92ad-32] [3ecdcd2d485c92ad-33] [3ecdcd2d485c92ad-34] [3ecdcd2d485c92ad-35] [3ecdcd2d485c92ad-36] [3ecdcd2d485c92ad-37] [3ecdcd2d485c92ad-38] [3ecdcd2d485c92ad-39] [3ecdcd2d485c92ad-40] [3ecdcd2d485c92ad-41] [3ecdcd2d485c92ad-42] [3ecdcd2d485c92ad-43] [3ecdcd2d485c92ad-44] [3ecdcd2d485c92ad-45] [3ecdcd2d485c92ad-46] [3ecdcd2d485c92ad-47] [3ecdcd2d485c92ad-48] [3ecdcd2d485c92ad-49] [3ecdcd2d485c92ad-50] [3ecdcd2d485c92ad-51] [3ecdcd2d485c92ad-52] [a2032f1b06c0a2ba-5] [15fbcd9b] [4b55c0b2] [06aa970b7bdc06e7] [f121e93a] [90bc1636] [65094cfb] [d28bad3d] [c93b2983] [88105690] [3cf8f384] [465633c9] [528eb54e] [e8b598c8] [69609d96] [7407fd73] [97d5bda7] [c00f2989] [38b1c57f] [1737fe1f] [98f21299] [dad8d790] [e7571dce] [78ebb5b9] [17d656fa] [a47583b2] [06e8fdca] [6e4e1c2c] [be6ddc79] [4ea8efed] [d87101f2] [0121222b] [0e775cdc] [d752c5ce] [38a3a840] [7336e086] [0f2c75a1] [bdcc26d5] [aa2d0f9b] [ccd6cab3] [e59b541e] [520978b6] [a56486c8] [c208ea1173525f96-2] [0051a7ac] [ef72b747] [74aedf6a] [d90faf1b] [36112baa] [fe1b560c] [35966250] [fc2327b5] [74f826da] [980a2ee9] [496ee1e1] [7dc160b2] [cc1e36ac] [ce83798c] [7d371c76] [9ffd8e07] [fbba7ab4] [f4300205] [321c5450] [c9fea8e1] [dc1c28abb0884360-2] [b55d7112] [85265098] [2d8589f1] [51245c5b] [d0744af4] [9ffde209] [1048f74e] [b38fd7b1] [17ee2087] [15c6c97a] [04b10272] [d47e6d21] [692fad03] [1ccfde93] [7b959202] [aa68b8fb] [68a303ed] [dd6408e6] [49b4bd78] [96919d78] [86cf48d59935e94d]
+- [fada5f26] .. attribute:: lookup_name = 'year'
+- [eaf050be34acb41d-358] .. code-block:: pycon
+- [eaf050be34acb41d-359] .. code-block:: pycon
+- [eaf050be34acb41d-360] .. code-block:: pycon
+- [eaf050be34acb41d-361] .. code-block:: pycon
+- [65b94a30] >>> # Get a screen name from least to most public >>> from django.db.models import Sum >>> from django.db.models.functions import Coalesce >>> Author.objects.create(name="Margaret Smith", goes_by="Maggie") >>> author = Author.objects.annotate(screen_name=Coalesce("alias", "goes_by", "name")).get() >>> print(author.screen_name) Maggie
+- [16ffc07f] >>> # Get the display name as "name (goes_by)" >>> from django.db.models import CharField, Value as V >>> from django.db.models.functions import Concat >>> Author.objects.create(name="Margaret Smith", goes_by="Maggie") >>> author = Author.objects.annotate( ... screen_name=Concat("name", V(" ("), "goes_by", V(")"), output_field=CharField()) ... ).get() >>> print(author.screen_name) Margaret Smith (Maggie)
+- [1a1a9779] >>> # Get the length of the name and goes_by fields >>> from django.db.models.functions import Length >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate( ... name_length=Length("name"), goes_by_length=Length("goes_by") ... ).get() >>> print(author.name_length, author.goes_by_length) (14, None)
+- [4131c430] >>> # Prevent an aggregate Sum() from returning None >>> # The aggregate default argument uses Coalesce() under the hood. >>> aggregated = Author.objects.aggregate( ... combined_age=Sum("age"), ... combined_age_default=Sum("age", default=0), ... combined_age_coalesce=Coalesce(Sum("age"), 0), ... ) >>> print(aggregated["combined_age"]) None >>> print(aggregated["combined_age_default"]) 0 >>> print(aggregated["combined_age_coalesce"]) 0
+- [df8d365f] >>> # Set the alias to the first 5 characters of the name as lowercase >>> from django.db.models.functions import Lower, Substr >>> Author.objects.create(name="Margaret Smith") >>> Author.objects.update(alias=Lower(Substr("name", 1, 5))) 1 >>> print(Author.objects.get(name="Margaret Smith").alias) marga
+- [4ba34ad1] >>> Author.objects.filter(name=Collate(Value("john"), "nocase")) <QuerySet [<Author: John>, <Author: john>]>
+- [9ec5ff2c] >>> Author.objects.order_by(Collate("name", "et-x-icu")) <QuerySet [<Author: Ursula>, <Author: Veronika>, <Author: Ülle>]>
+- [b7103ee1] >>> from datetime import UTC, date, datetime >>> from django.db.models import Count >>> from django.db.models.functions import ( ... TruncDate, ... TruncDay, ... TruncHour, ... TruncMinute, ... TruncSecond, ... ) >>> import zoneinfo >>> start1 = datetime(2014, 6, 15, 14, 30, 50, 321, tzinfo=UTC) >>> Experiment.objects.create(start_datetime=start1, start_date=start1.date()) >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> Experiment.objects.annotate( ... date=TruncDate("start_datetime"), ... day=TruncDay("start_datetime", tzinfo=melb), ... hour=TruncHour("start_datetime", tzinfo=melb), ... minute=TruncMinute("start_datetime"), ... second=TruncSecond("start_datetime"), ... ).values("date", "day", "hour", "minute", "second").get() {'date': datetime.date(2014, 6, 15), 'day': datetime.datetime(2014, 6, 16, 0, 0, tzinfo=zoneinfo.ZoneInfo('Australia/Melbourne')), 'hour': datetime.datetime(2014, 6, 16, 0, 0, tzinfo=zoneinfo.ZoneInfo('Australia/Melbourne')), 'minute': 'minute': datetime.datetime(2014, 6, 15, 14, 30, tzinfo=UTC), 'second': datetime.datetime(2014, 6, 15, 14, 30, 50, tzinfo=UTC) }
+- [d6ecc22a] >>> from datetime import UTC, datetime >>> from django.db.models import Count >>> from django.db.models.functions import TruncMonth, TruncYear >>> start1 = datetime(2014, 6, 15, 14, 30, 50, 321, tzinfo=UTC) >>> start2 = datetime(2015, 6, 15, 14, 40, 2, 123, tzinfo=UTC) >>> start3 = datetime(2015, 12, 31, 17, 5, 27, 999, tzinfo=UTC) >>> Experiment.objects.create(start_datetime=start1, start_date=start1.date()) >>> Experiment.objects.create(start_datetime=start2, start_date=start2.date()) >>> Experiment.objects.create(start_datetime=start3, start_date=start3.date()) >>> experiments_per_year = ( ... Experiment.objects.annotate(year=TruncYear("start_date")) ... .values("year") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_year: ... print(exp["year"], exp["experiments"]) ... 2014-01-01 1 2015-01-01 2
+- [dec3c1e6] >>> from datetime import UTC, datetime >>> from django.db.models import Count, TimeField >>> from django.db.models.functions import TruncHour >>> start1 = datetime(2014, 6, 15, 14, 30, 50, 321, tzinfo=UTC) >>> start2 = datetime(2014, 6, 15, 14, 40, 2, 123, tzinfo=UTC) >>> start3 = datetime(2015, 12, 31, 17, 5, 27, 999, tzinfo=UTC) >>> Experiment.objects.create(start_datetime=start1, start_time=start1.time()) >>> Experiment.objects.create(start_datetime=start2, start_time=start2.time()) >>> Experiment.objects.create(start_datetime=start3, start_time=start3.time()) >>> experiments_per_hour = ( ... Experiment.objects.annotate( ... hour=TruncHour("start_datetime", output_field=TimeField()), ... ) ... .values("hour") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_hour: ... print(exp["hour"], exp["experiments"]) ... 14:00:00 2 17:00:00 1
+- [998f9fc6] >>> from datetime import UTC, datetime >>> from django.db.models.functions import ( ... ExtractDay, ... ExtractHour, ... ExtractMinute, ... ExtractMonth, ... ExtractQuarter, ... ExtractSecond, ... ExtractWeek, ... ExtractIsoWeekDay, ... ExtractWeekDay, ... ExtractIsoYear, ... ExtractYear, ... ) >>> start_2015 = datetime(2015, 6, 15, 23, 30, 1, tzinfo=UTC) >>> end_2015 = datetime(2015, 6, 16, 13, 11, 27, tzinfo=UTC) >>> Experiment.objects.create( ... start_datetime=start_2015, ... start_date=start_2015.date(), ... end_datetime=end_2015, ... end_date=end_2015.date(), ... ) >>> Experiment.objects.annotate( ... year=ExtractYear("start_datetime"), ... isoyear=ExtractIsoYear("start_datetime"), ... quarter=ExtractQuarter("start_datetime"), ... month=ExtractMonth("start_datetime"), ... week=ExtractWeek("start_datetime"), ... day=ExtractDay("start_datetime"), ... weekday=ExtractWeekDay("start_datetime"), ... isoweekday=ExtractIsoWeekDay("start_datetime"), ... hour=ExtractHour("start_datetime"), ... minute=ExtractMinute("start_datetime"), ... second=ExtractSecond("start_datetime"), ... ).values( ... "year", ... "isoyear", ... "month", ... "week", ... "day", ... "weekday", ... "isoweekday", ... "hour", ... "minute", ... "second", ... ).get( ... end_datetime__year=ExtractYear("start_datetime") ... ) {'year': 2015, 'isoyear': 2015, 'quarter': 2, 'month': 6, 'week': 25, 'day': 15, 'weekday': 2, 'isoweekday': 1, 'hour': 23, 'minute': 30, 'second': 1}
+- [7d4eb12c] >>> from datetime import datetime >>> from django.db.models import Count, DateTimeField >>> from django.db.models.functions import Trunc >>> Experiment.objects.create(start_datetime=datetime(2015, 6, 15, 14, 30, 50, 321)) >>> Experiment.objects.create(start_datetime=datetime(2015, 6, 15, 14, 40, 2, 123)) >>> Experiment.objects.create(start_datetime=datetime(2015, 12, 25, 10, 5, 27, 999)) >>> experiments_per_day = ( ... Experiment.objects.annotate( ... start_day=Trunc("start_datetime", "day", output_field=DateTimeField()) ... ) ... .values("start_day") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_day: ... print(exp["start_day"], exp["experiments"]) ... 2015-06-15 00:00:00 2 2015-12-25 00:00:00 1 >>> experiments = Experiment.objects.annotate( ... start_day=Trunc("start_datetime", "day", output_field=DateTimeField()) ... ).filter(start_day=datetime(2015, 6, 15)) >>> for exp in experiments: ... print(exp.start_datetime) ... 2015-06-15 14:30:50.000321 2015-06-15 14:40:02.000123
+- [3d8c6119] >>> from datetime import datetime >>> from django.db.models.functions import Extract >>> start = datetime(2015, 6, 15) >>> end = datetime(2015, 7, 2) >>> Experiment.objects.create( ... start_datetime=start, start_date=start.date(), end_datetime=end, end_date=end.date() ... ) >>> # Add the experiment start year as a field in the QuerySet. >>> experiment = Experiment.objects.annotate( ... start_year=Extract("start_datetime", "year") ... ).get() >>> experiment.start_year 2015 >>> # How many experiments completed in the same year in which they started? >>> Experiment.objects.filter(start_datetime__year=Extract("end_datetime", "year")).count() 1
+- [1f2342b6] >>> from django.db.models import CharField >>> from django.db.models.functions import Length >>> CharField.register_lookup(Length) >>> # Get authors whose name is longer than 7 characters >>> authors = Author.objects.filter(name__length__gt=7)
+- [8a69e019] >>> from django.db.models import F >>> from django.db.models.functions import JSONArray, Lower >>> Author.objects.create(name="Margaret Smith", alias="msmith", age=25) >>> author = Author.objects.annotate( ... json_array=JSONArray( ... Lower("name"), ... "alias", ... F("age") * 2, ... ) ... ).get() >>> author.json_array ['margaret smith', 'msmith', 50]
+- [9976ddbd] >>> from django.db.models import FloatField >>> from django.db.models.functions import ACos >>> FloatField.register_lookup(ACos) >>> # Get vectors whose arccosine is less than 1 >>> vectors = Vector.objects.filter(x__acos__lt=1, y__acos__lt=1)
+- [bf6008be] >>> from django.db.models import FloatField >>> from django.db.models.functions import ASin >>> FloatField.register_lookup(ASin) >>> # Get vectors whose arcsine is less than 1 >>> vectors = Vector.objects.filter(x__asin__lt=1, y__asin__lt=1)
+- [efe304f8] >>> from django.db.models import FloatField >>> from django.db.models.functions import ATan >>> FloatField.register_lookup(ATan) >>> # Get vectors whose arctangent is less than 2 >>> vectors = Vector.objects.filter(x__atan__lt=2, y__atan__lt=2)
+- [e4e7f978] >>> from django.db.models import FloatField >>> from django.db.models.functions import Abs >>> FloatField.register_lookup(Abs) >>> # Get vectors inside the unit cube >>> vectors = Vector.objects.filter(x__abs__lt=1, y__abs__lt=1)
+- [87d79cab] >>> from django.db.models import FloatField >>> from django.db.models.functions import Cast >>> Author.objects.create(age=25, name="Margaret Smith") >>> author = Author.objects.annotate( ... age_as_float=Cast("age", output_field=FloatField()), ... ).get() >>> print(author.age_as_float) 25.0
+- [11496fcc] >>> from django.db.models import FloatField >>> from django.db.models.functions import Ceil >>> FloatField.register_lookup(Ceil) >>> # Get vectors whose ceil is less than 10 >>> vectors = Vector.objects.filter(x__ceil__lt=10, y__ceil__lt=10)
+- [3aab6801] >>> from django.db.models import FloatField >>> from django.db.models.functions import Cos >>> FloatField.register_lookup(Cos) >>> # Get vectors whose cosine is less than 0.5 >>> vectors = Vector.objects.filter(x__cos__lt=0.5, y__cos__lt=0.5)
+- [8713b802] >>> from django.db.models import FloatField >>> from django.db.models.functions import Cot >>> FloatField.register_lookup(Cot) >>> # Get vectors whose cotangent is less than 1 >>> vectors = Vector.objects.filter(x__cot__lt=1, y__cot__lt=1)
+- [0d3a8aa3] >>> from django.db.models import FloatField >>> from django.db.models.functions import Degrees >>> FloatField.register_lookup(Degrees) >>> # Get vectors whose degrees are less than 360 >>> vectors = Vector.objects.filter(x__degrees__lt=360, y__degrees__lt=360)
+- [62f176c1] >>> from django.db.models import FloatField >>> from django.db.models.functions import Exp >>> FloatField.register_lookup(Exp) >>> # Get vectors whose exp() is greater than 10 >>> vectors = Vector.objects.filter(x__exp__gt=10, y__exp__gt=10)
+- [ef16b81d] >>> from django.db.models import FloatField >>> from django.db.models.functions import Ln >>> FloatField.register_lookup(Ln) >>> # Get vectors whose value greater than e >>> vectors = Vector.objects.filter(x__ln__gt=1, y__ln__gt=1)
+- [006bcfd8] >>> from django.db.models import FloatField >>> from django.db.models.functions import Radians >>> FloatField.register_lookup(Radians) >>> # Get vectors whose radians are less than 1 >>> vectors = Vector.objects.filter(x__radians__lt=1, y__radians__lt=1)
+- [b9c5f6a0] >>> from django.db.models import FloatField >>> from django.db.models.functions import Round >>> FloatField.register_lookup(Round) >>> # Get vectors whose round() is less than 20 >>> vectors = Vector.objects.filter(x__round__lt=20, y__round__lt=20)
+- [35727ed1] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sign >>> FloatField.register_lookup(Sign) >>> # Get vectors whose signs of components are less than 0. >>> vectors = Vector.objects.filter(x__sign__lt=0, y__sign__lt=0)
+- [dfd4f37f] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sin >>> FloatField.register_lookup(Sin) >>> # Get vectors whose sin() is less than 0 >>> vectors = Vector.objects.filter(x__sin__lt=0, y__sin__lt=0)
+- [2deb248b] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sqrt >>> FloatField.register_lookup(Sqrt) >>> # Get vectors whose sqrt() is less than 5 >>> vectors = Vector.objects.filter(x__sqrt__lt=5, y__sqrt__lt=5)
+- [e8a19945] >>> from django.db.models import Value >>> from django.db.models.functions import LPad >>> Author.objects.create(name="John", alias="j") >>> Author.objects.update(name=LPad("name", 8, Value("abc"))) 1 >>> print(Author.objects.get(alias="j").name) abcaJohn
+- [30a6e21b] >>> from django.db.models import Value >>> from django.db.models.functions import Replace >>> Author.objects.create(name="Margaret Johnson") >>> Author.objects.create(name="Margaret Smith") >>> Author.objects.update(name=Replace("name", Value("Margaret"), Value("Margareth"))) 2 >>> Author.objects.values("name") <QuerySet [{'name': 'Margareth Johnson'}, {'name': 'Margareth Smith'}]>
+- [e3bd9a8f] >>> from django.db.models import Value as V >>> from django.db.models.functions import StrIndex >>> Author.objects.create(name="Margaret Smith") >>> Author.objects.create(name="Smith, Margaret") >>> Author.objects.create(name="Margaret Jackson") >>> Author.objects.filter(name="Margaret Jackson").annotate( ... smith_index=StrIndex("name", V("Smith")) ... ).get().smith_index 0 >>> authors = Author.objects.annotate(smith_index=StrIndex("name", V("Smith"))).filter( ... smith_index__gt=0 ... ) <QuerySet [<Author: Margaret Smith>, <Author: Smith, Margaret>]>
+- [1a1f9b24] >>> from django.db.models.functions import ACos >>> Vector.objects.create(x=0.5, y=-0.9) >>> vector = Vector.objects.annotate(x_acos=ACos("x"), y_acos=ACos("y")).get() >>> vector.x_acos, vector.y_acos (1.0471975511965979, 2.6905658417935308)
+- [c3ab90b5] >>> from django.db.models.functions import ASin >>> Vector.objects.create(x=0, y=1) >>> vector = Vector.objects.annotate(x_asin=ASin("x"), y_asin=ASin("y")).get() >>> vector.x_asin, vector.y_asin (0.0, 1.5707963267948966)
+- [b4b8f9b1] >>> from django.db.models.functions import ATan >>> Vector.objects.create(x=3.12, y=6.987) >>> vector = Vector.objects.annotate(x_atan=ATan("x"), y_atan=ATan("y")).get() >>> vector.x_atan, vector.y_atan (1.2606282660069106, 1.428638798133829)
+- [95910438] >>> from django.db.models.functions import ATan2 >>> Vector.objects.create(x=2.5, y=1.9) >>> vector = Vector.objects.annotate(atan2=ATan2("x", "y")).get() >>> vector.atan2 0.9209258773829491
+- [5fa9fced] >>> from django.db.models.functions import Abs >>> Vector.objects.create(x=-0.5, y=1.1) >>> vector = Vector.objects.annotate(x_abs=Abs("x"), y_abs=Abs("y")).get() >>> vector.x_abs, vector.y_abs (0.5, 1.1)
+- [84c5177e] >>> from django.db.models.functions import Ceil >>> Vector.objects.create(x=3.12, y=7.0) >>> vector = Vector.objects.annotate(x_ceil=Ceil("x"), y_ceil=Ceil("y")).get() >>> vector.x_ceil, vector.y_ceil (4.0, 7.0)
+- [f348a096] >>> from django.db.models.functions import Chr >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.filter(name__startswith=Chr(ord("M"))).get() >>> print(author.name) Margaret Smith
+- [4b89643c] >>> from django.db.models.functions import Cos >>> Vector.objects.create(x=-8.0, y=3.1415926) >>> vector = Vector.objects.annotate(x_cos=Cos("x"), y_cos=Cos("y")).get() >>> vector.x_cos, vector.y_cos (-0.14550003380861354, -0.9999999999999986)
+- [c09d3eb6] >>> from django.db.models.functions import Cot >>> Vector.objects.create(x=12.0, y=1.0) >>> vector = Vector.objects.annotate(x_cot=Cot("x"), y_cot=Cot("y")).get() >>> vector.x_cot, vector.y_cot (-1.5726734063976826, 0.642092615934331)
+- [12c6cd15] >>> from django.db.models.functions import Degrees >>> Vector.objects.create(x=-1.57, y=3.14) >>> vector = Vector.objects.annotate(x_d=Degrees("x"), y_d=Degrees("y")).get() >>> vector.x_d, vector.y_d (-89.95437383553924, 179.9087476710785)
+- [2a16c672] >>> from django.db.models.functions import Exp >>> Vector.objects.create(x=5.4, y=-2.0) >>> vector = Vector.objects.annotate(x_exp=Exp("x"), y_exp=Exp("y")).get() >>> vector.x_exp, vector.y_exp (221.40641620418717, 0.1353352832366127)
+- [e2b7db88] >>> from django.db.models.functions import Floor >>> Vector.objects.create(x=5.4, y=-2.3) >>> vector = Vector.objects.annotate(x_floor=Floor("x"), y_floor=Floor("y")).get() >>> vector.x_floor, vector.y_floor (5.0, -3.0)
+- [c82049d9] >>> from django.db.models.functions import Greatest >>> blog = Blog.objects.create(body="Greatest is the best.") >>> comment = Comment.objects.create(body="No, Least is better.", blog=blog) >>> comments = Comment.objects.annotate(last_updated=Greatest("modified", "blog__modified")) >>> annotated_comment = comments.get()
+- [af7323a0] >>> from django.db.models.functions import Left >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(first_initial=Left("name", 1)).get() >>> print(author.first_initial) M
+- [cf761ed5] >>> from django.db.models.functions import Ln >>> Vector.objects.create(x=5.4, y=233.0) >>> vector = Vector.objects.annotate(x_ln=Ln("x"), y_ln=Ln("y")).get() >>> vector.x_ln, vector.y_ln (1.6863989535702288, 5.4510384535657)
+- [bb5d5a81] >>> from django.db.models.functions import Log >>> Vector.objects.create(x=2.0, y=4.0) >>> vector = Vector.objects.annotate(log=Log("x", "y")).get() >>> vector.log 2.0
+- [0c9d94c5] >>> from django.db.models.functions import Lower >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_lower=Lower("name")).get() >>> print(author.name_lower) margaret smith
+- [79d293e1] >>> from django.db.models.functions import MD5 >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_md5=MD5("name")).get() >>> print(author.name_md5) 749fb689816b2db85f5b169c2055b247
+- [ed78532f] >>> from django.db.models.functions import Now >>> Article.objects.filter(published__lte=Now()) <QuerySet [<Article: How to Django>]>
+- [b19945f4] >>> from django.db.models.functions import Ord >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_code_point=Ord("name")).get() >>> print(author.name_code_point) 77
+- [2f0ffe6d] >>> from django.db.models.functions import Power >>> Vector.objects.create(x=2, y=-2) >>> vector = Vector.objects.annotate(power=Power("x", "y")).get() >>> vector.power 0.25
+- [7fe69222] >>> from django.db.models.functions import Radians >>> Vector.objects.create(x=-90, y=180) >>> vector = Vector.objects.annotate(x_r=Radians("x"), y_r=Radians("y")).get() >>> vector.x_r, vector.y_r (-1.5707963267948966, 3.141592653589793)
+- [43e8633a] >>> from django.db.models.functions import Repeat >>> Author.objects.create(name="John", alias="j") >>> Author.objects.update(name=Repeat("name", 3)) 1 >>> print(Author.objects.get(alias="j").name) JohnJohnJohn
+- [5ad87989] >>> from django.db.models.functions import Reverse >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(backward=Reverse("name")).get() >>> print(author.backward) htimS teragraM
+- [6b3d5703] >>> from django.db.models.functions import Right >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(last_letter=Right("name", 1)).get() >>> print(author.last_letter) h
+- [8d459187] >>> from django.db.models.functions import Round >>> Vector.objects.create(x=5.4, y=-2.37) >>> vector = Vector.objects.annotate(x_r=Round("x"), y_r=Round("y", precision=1)).get() >>> vector.x_r, vector.y_r (5.0, -2.4)
+- [c8d06aaa] >>> from django.db.models.functions import SHA1 >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_sha1=SHA1("name")).get() >>> print(author.name_sha1) b87efd8a6c991c390be5a68e8a7945a7851c7e5c
+- [be7cf092] >>> from django.db.models.functions import Sign >>> Vector.objects.create(x=5.4, y=-2.3) >>> vector = Vector.objects.annotate(x_sign=Sign("x"), y_sign=Sign("y")).get() >>> vector.x_sign, vector.y_sign (1, -1)
+- [04c4c7a2] >>> from django.db.models.functions import Sin >>> Vector.objects.create(x=5.4, y=-2.3) >>> vector = Vector.objects.annotate(x_sin=Sin("x"), y_sin=Sin("y")).get() >>> vector.x_sin, vector.y_sin (-0.7727644875559871, -0.7457052121767203)
+- [6bf43652] >>> from django.db.models.functions import Sqrt >>> Vector.objects.create(x=4.0, y=12.0) >>> vector = Vector.objects.annotate(x_sqrt=Sqrt("x"), y_sqrt=Sqrt("y")).get() >>> vector.x_sqrt, vector.y_sqrt (2.0, 3.46410)
+- [45b0e2b2] >>> from django.db.models.functions import Tan >>> Vector.objects.create(x=0, y=12) >>> vector = Vector.objects.annotate(x_tan=Tan("x"), y_tan=Tan("y")).get() >>> vector.x_tan, vector.y_tan (0.0, -0.6358599286615808)
+- [470fa3a0] >>> from django.db.models.functions import Trim >>> Author.objects.create(name=" John ", alias="j") >>> Author.objects.update(name=Trim("name")) 1 >>> print(Author.objects.get(alias="j").name) John
+- [ac66c9ab] >>> from django.utils import timezone >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") # UTC+10:00 >>> with timezone.override(melb): ... Experiment.objects.annotate( ... day=ExtractDay("start_datetime"), ... weekday=ExtractWeekDay("start_datetime"), ... isoweekday=ExtractIsoWeekDay("start_datetime"), ... hour=ExtractHour("start_datetime"), ... ).values("day", "weekday", "isoweekday", "hour").get( ... end_datetime__year=ExtractYear("start_datetime"), ... ) ... {'day': 16, 'weekday': 3, 'isoweekday': 2, 'hour': 9}
+- [7a3163b8] >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> Experiment.objects.annotate( ... day=ExtractDay("start_datetime", tzinfo=melb), ... weekday=ExtractWeekDay("start_datetime", tzinfo=melb), ... isoweekday=ExtractIsoWeekDay("start_datetime", tzinfo=melb), ... hour=ExtractHour("start_datetime", tzinfo=melb), ... ).values("day", "weekday", "isoweekday", "hour").get( ... end_datetime__year=ExtractYear("start_datetime"), ... ) {'day': 16, 'weekday': 3, 'isoweekday': 2, 'hour': 9}
+- [3e63c3cd] >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> experiments_per_hour = ( ... Experiment.objects.annotate( ... hour=TruncHour("start_datetime", tzinfo=melb), ... ) ... .values("hour") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_hour: ... print(exp["hour"], exp["experiments"]) ... 2014-06-16 00:00:00+10:00 2 2016-01-01 04:00:00+11:00 1
+- [33287590] >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> experiments_per_month = ( ... Experiment.objects.annotate(month=TruncMonth("start_datetime", tzinfo=melb)) ... .values("month") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_month: ... print(exp["month"], exp["experiments"]) ... 2015-06-01 00:00:00+10:00 1 2016-01-01 00:00:00+11:00 1 2014-06-01 00:00:00+10:00 1
+- [a3b4e7ab] A Python value passed to ``Coalesce`` on MySQL may be converted to an incorrect type unless explicitly cast to the correct database type:
+- [2cfe814b] Available on PostgreSQL version 18 or later, MariaDB version 11.7 or later, and SQLite on Python version 3.14 or later.
+- [1f40f025] Available on PostgreSQL, SQLite, MariaDB version 11.7 or later, and Oracle 23ai/26ai (23.9) or later.
+- [b77411bf] Due to an :ref:`Oracle convention<oracle-null-empty-strings>`, this function returns the empty string instead of ``None`` when the expressions are of type :class:`~django.db.models.CharField`.
+- [eb170853] In MySQL, a database table's :ref:`collation<mysql-collation>` determines whether string comparisons (such as the ``expression`` and ``substring`` of this function) are case-sensitive. Comparisons are case-insensitive by default.
+- [807f2448a61ddd47] MariaDB `doesn't support <https://jira.mariadb.org/browse/MDEV-12981>`_ the ``default`` parameter.
+- [5ea0965d] On Oracle, the SQL ``LOCALTIMESTAMP`` is used to avoid issues with casting ``CURRENT_TIMESTAMP`` to ``DateTimeField``.
+- [6e124244] On PostgreSQL, ``UUID7`` also supports an optional ``shift`` value, which can be used to offset the timestamp of the generated UUID. This should be a :class:`datetime.timedelta` or an expression with an ``output_field`` of :class:`~django.db.models.DurationField`. A positive value will shift the timestamp into the future and a negative value into the past.
+- [2652548a] On PostgreSQL, the SQL ``CURRENT_TIMESTAMP`` returns the time that the current transaction started. Therefore for cross-database compatibility, ``Now()`` uses ``STATEMENT_TIMESTAMP`` instead. If you need the transaction timestamp, use :class:`django.contrib.postgres.functions.TransactionNow`.
+- [f848fe94] Oracle doesn't support the ``SHA224`` function.
+- [6e73c3ad] Passing ``Value(None)`` to ``expression1`` is prohibited on Oracle since Oracle doesn't accept ``NULL`` as the first argument.
+- [042ff557] Returns the ISO-8601 week day with day 1 being Monday and day 7 being Sunday.
+- [c1e13b60] Returns the ISO-8601 week-numbering year.
+- [12d92d74] The PostgreSQL behavior can be emulated using ``Coalesce`` if you know a sensible maximum value to provide as a default.
+- [d10d158b] The ``week_day`` ``lookup_type`` is calculated differently from most databases and from Python's standard functions. This function will return ``1`` for Sunday, ``2`` for Monday, through ``7`` for Saturday.
+- [842814ce] The ``week`` ``lookup_type`` is calculated based on `ISO-8601 <https://en.wikipedia.org/wiki/ISO-8601>`_, i.e., a week starts on a Monday. The first week of a year is the one that contains the year's first Thursday, i.e. the first week has the majority (four or more) of its days in the year. The value returned is in the range 1 to 52 or 53.
+- [b48e488f] The `pgcrypto extension <https://www.postgresql.org/docs/current/ pgcrypto.html>`_ must be installed. You can use the :class:`~django.contrib.postgres.operations.CryptoExtension` migration operation to install it.
+- [3e1fe829] The behavior of ``Greatest`` when one or more expression may be ``null`` varies between databases:
+- [8be50e39] The equivalent calculation in Python is:
+- [7057b934] Truncates to midnight on the Monday of the week.
+- [ab33048d] When :setting:`USE_TZ` is ``True``, Django saves values in ``UTC`` (or the connection's configured timezone). Since ``tzinfo`` defaults to :setting:`TIME_ZONE` when not provided, you may need to provide an explicit ``tzinfo`` to compare extracted values. The following example demonstrates what happens when "Europe/Berlin" is active and how to adjust for this:
+- [a8d30017] class Author(models.Model): name = models.CharField(max_length=50) age = models.PositiveIntegerField(null=True, blank=True) alias = models.CharField(max_length=50, null=True, blank=True) goes_by = models.CharField(max_length=50, null=True, blank=True)
+- [2d93625c] class Blog(models.Model): body = models.TextField() modified = models.DateTimeField(auto_now=True)
+- [1671a26c] class Comment(models.Model): body = models.TextField() modified = models.DateTimeField(auto_now=True) blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+- [7cf2e33a] class Experiment(models.Model): start_datetime = models.DateTimeField() start_date = models.DateField(null=True, blank=True) start_time = models.TimeField(null=True, blank=True) end_datetime = models.DateTimeField(null=True, blank=True) end_date = models.DateField(null=True, blank=True) end_time = models.TimeField(null=True, blank=True)
+- [6f24a7bf] class Vector(models.Model): x = models.FloatField() y = models.FloatField()
+- [58f419f7] * "day": 16 * "week_day": 3 * "iso_week_day": 2 * "hour": 9
+- [26ca44dc] * "year": 2015 * "iso_year": 2015 * "quarter": 2 * "month": 6 * "day": 15 * "week": 25 * "week_day": 2 * "iso_week_day": 1 * "hour": 23 * "minute": 30 * "second": 1
+- [4c23a16c] * "year": 2015-01-01 00:00:00+00:00 * "quarter": 2015-04-01 00:00:00+00:00 * "month": 2015-06-01 00:00:00+00:00 * "week": 2015-06-15 00:00:00+00:00 * "day": 2015-06-15 00:00:00+00:00 * "hour": 2015-06-15 14:00:00+00:00 * "minute": 2015-06-15 14:30:00+00:00 * "second": 2015-06-15 14:30:50+00:00
+- [019b7db1] * "year": 2015-01-01 00:00:00+11:00 * "quarter": 2015-04-01 00:00:00+11:00 * "month": 2015-06-01 00:00:00+10:00 * "week": 2015-06-15 00:00:00+10:00 * "day": 2015-06-16 00:00:00+10:00 * "hour": 2015-06-16 00:00:00+10:00 * "minute": 2015-06-16 00:30:00+10:00 * "second": 2015-06-16 00:30:50+10:00
+- [70a69214] .. _comparison-functions:
+- [59933a50] .. _date-functions:
+- [11aa833e] .. _json-functions:
+- [1683cc0d] .. _math-functions:
+- [0a956f3b] .. _text-functions:
+- [61da3921] .. _window-functions:
+- [c1baf2c74443708b] .. admonition:: Availability
+- [c1baf2c74443708b-2] .. admonition:: Availability
+- [d56c2b96] .. admonition:: Caveats on Oracle
+- [0255f273c1fc1ac6] .. admonition:: MariaDB and ``default``
+- [d78ad3ab25cd8d9c] .. admonition:: Oracle
+- [d78ad3ab25cd8d9c-2] .. admonition:: Oracle
+- [0a7dd373] .. admonition:: PostgreSQL
+- [f612bc9e] .. admonition:: PostgreSQL considerations
+- [622dc985] .. admonition:: ``Extract()`` uses the active timezone
+- [792540be] .. admonition:: ``Trunc()`` produces naive datetimes
+- [054065a3] .. admonition:: ``shift``
+- [97b0cbc9] .. admonition:: ``week_day`` values
+- [7f87e71f] .. admonition:: ``week`` values
+- [e5a5c9d1] .. class:: ACos(expression, **extra)
+- [3af4deb8] .. class:: ASin(expression, **extra)
+- [67d736f0] .. class:: ATan(expression, **extra)
+- [5edd68a6] .. class:: ATan2(expression1, expression2, **extra)
+- [291591a5] .. class:: Abs(expression, **extra)
+- [a3664947] .. class:: Cast(expression, output_field)
+- [c5a304d3] .. class:: Ceil(expression, **extra)
+- [fb7fb675] .. class:: Chr(expression, **extra)
+- [aedac46d] .. class:: Coalesce(*expressions, **extra)
+- [601b18a6] .. class:: Collate(expression, collation)
+- [466218c0] .. class:: Concat(*expressions, **extra)
+- [076d17b2] .. class:: Cos(expression, **extra)
+- [48dde155] .. class:: Cot(expression, **extra)
+- [71da7800] .. class:: CumeDist(*expressions, **extra)
+- [5b806e4f] .. class:: Degrees(expression, **extra)
+- [d56b7e67] .. class:: DenseRank(*expressions, **extra)
+- [b0a6d9a2] .. class:: Exp(expression, **extra)
+- [e23409d7] .. class:: Extract(expression, lookup_name=None, tzinfo=None, **extra)
+- [cbf218c8] .. class:: ExtractDay(expression, tzinfo=None, **extra)
+- [b68be9e2] .. class:: ExtractHour(expression, tzinfo=None, **extra)
+- [df864107] .. class:: ExtractIsoWeekDay(expression, tzinfo=None, **extra)
+- [62cf10d8] .. class:: ExtractIsoYear(expression, tzinfo=None, **extra)
+- [c52474c5] .. class:: ExtractMinute(expression, tzinfo=None, **extra)
+- [d66e7cf3] .. class:: ExtractMonth(expression, tzinfo=None, **extra)
+- [b5ee96f3] .. class:: ExtractQuarter(expression, tzinfo=None, **extra)
+- [991f2da9] .. class:: ExtractSecond(expression, tzinfo=None, **extra)
+- [abc5582e] .. class:: ExtractWeek(expression, tzinfo=None, **extra)
+- [1f10ae46] .. class:: ExtractWeekDay(expression, tzinfo=None, **extra)
+- [79e99171] .. class:: ExtractYear(expression, tzinfo=None, **extra)
+- [1fc16fdb] .. class:: FirstValue(expression, **extra)
+- [ff732508] .. class:: Floor(expression, **extra)
+- [bd544979] .. class:: Greatest(*expressions, **extra)
+- [09a8b70a] .. class:: JSONArray(*expressions)
+- [99518b11] .. class:: JSONObject(**fields)
+- [3d3b87f2] .. class:: LPad(expression, length, fill_text=Value(' '), **extra)
+- [1694d13f] .. class:: LTrim(expression, **extra)
+- [04a159e9] .. class:: Lag(expression, offset=1, default=None, **extra)
+- [c7a0cd3d] .. class:: LastValue(expression, **extra)
+- [007e961f] .. class:: Lead(expression, offset=1, default=None, **extra)
+- [2c8b7ff8] .. class:: Least(*expressions, **extra)
+- [fd181057] .. class:: Left(expression, length, **extra)
+- [d436b394] .. class:: Length(expression, **extra)
+- [4031a27b] .. class:: Ln(expression, **extra)
+- [494f5730] .. class:: Log(expression1, expression2, **extra)
+- [a64942bf] .. class:: Lower(expression, **extra)
+- [27f8a045] .. class:: MD5(expression, **extra)
+- [97a85701] .. class:: Mod(expression1, expression2, **extra)
+- [9cb8e368] .. class:: Now()
+- [66d8af73] .. class:: NthValue(expression, nth=1, **extra)
+- [232412f1] .. class:: Ntile(num_buckets=1, **extra)
+- [d87d8d50] .. class:: NullIf(expression1, expression2)
+- [c0f9e7d8] .. class:: Ord(expression, **extra)
+- [3189505f] .. class:: PercentRank(*expressions, **extra)
+- [4abe738c] .. class:: Pi(**extra)
+- [5b1a0790] .. class:: Power(expression1, expression2, **extra)
+- [f2dfe9cb] .. class:: RPad(expression, length, fill_text=Value(' '), **extra)
+- [b7f3c46e] .. class:: RTrim(expression, **extra)
+- [d36e3faa] .. class:: Radians(expression, **extra)
+- [f0ad306e] .. class:: Random(**extra)
+- [56b94592] .. class:: Rank(*expressions, **extra)
+- [4e80e172] .. class:: Repeat(expression, number, **extra)
+- [c0a56897] .. class:: Replace(expression, text, replacement=Value(''), **extra)
+- [0889dda691e14c07-2] .. class:: Reverse(expression, **extra)
+- [e4380d00] .. class:: Right(expression, length, **extra)
+- [19e6b6f6] .. class:: Round(expression, precision=0, **extra)
+- [cec9a5a3] .. class:: RowNumber(*expressions, **extra)
+- [28f2a185] .. class:: SHA1(expression, **extra) .. class:: SHA224(expression, **extra) .. class:: SHA256(expression, **extra) .. class:: SHA384(expression, **extra) .. class:: SHA512(expression, **extra)
+- [185d40a5] .. class:: Sign(expression, **extra)
+- [1c47e511] .. class:: Sin(expression, **extra)
+- [b1281c83] .. class:: Sqrt(expression, **extra)
+- [ba7cf59b] .. class:: StrIndex(expression, substring, **extra)
+- [c5e029de] .. class:: Substr(expression, pos, length=None, **extra)
+- [ec0ce6d5] .. class:: Tan(expression, **extra)
+- [898ea8ec] .. class:: Trim(expression, **extra)
+- [05bb7851] .. class:: Trunc(expression, kind, output_field=None, tzinfo=None, **extra)
+- [a9fd712e] .. class:: TruncDate(expression, tzinfo=None, **extra)
+- [eea23959] .. class:: TruncDay(expression, output_field=None, tzinfo=None, **extra)
+- [bc7f9a68] .. class:: TruncHour(expression, output_field=None, tzinfo=None, **extra)
+- [9c736815] .. class:: TruncMinute(expression, output_field=None, tzinfo=None, **extra)
+- [f477cbf2] .. class:: TruncMonth(expression, output_field=None, tzinfo=None, **extra)
+- [0b899749] .. class:: TruncQuarter(expression, output_field=None, tzinfo=None, **extra)
+- [fdbfc730] .. class:: TruncSecond(expression, output_field=None, tzinfo=None, **extra)
+- [5be79912] .. class:: TruncTime(expression, tzinfo=None, **extra)
+- [b1995e2c] .. class:: TruncWeek(expression, output_field=None, tzinfo=None, **extra)
+- [c20d3b16] .. class:: TruncYear(expression, output_field=None, tzinfo=None, **extra)
+- [78f696af] .. class:: UUID4()
+- [f111c271] .. class:: UUID7(shift=None)
+- [e381f1e5] .. class:: Upper(expression, **extra)
+- [eaf050be34acb41d-362] .. code-block:: pycon
+- [eaf050be34acb41d-363] .. code-block:: pycon
+- [eaf050be34acb41d-364] .. code-block:: pycon
+- [eaf050be34acb41d-365] .. code-block:: pycon
+- [eaf050be34acb41d-366] .. code-block:: pycon
+- [eaf050be34acb41d-367] .. code-block:: pycon
+- [eaf050be34acb41d-368] .. code-block:: pycon
+- [eaf050be34acb41d-369] .. code-block:: pycon
+- [eaf050be34acb41d-370] .. code-block:: pycon
+- [eaf050be34acb41d-371] .. code-block:: pycon
+- [eaf050be34acb41d-372] .. code-block:: pycon
+- [eaf050be34acb41d-373] .. code-block:: pycon
+- [eaf050be34acb41d-374] .. code-block:: pycon
+- [eaf050be34acb41d-375] .. code-block:: pycon
+- [eaf050be34acb41d-376] .. code-block:: pycon
+- [eaf050be34acb41d-377] .. code-block:: pycon
+- [eaf050be34acb41d-378] .. code-block:: pycon
+- [eaf050be34acb41d-379] .. code-block:: pycon
+- [eaf050be34acb41d-380] .. code-block:: pycon
+- [eaf050be34acb41d-381] .. code-block:: pycon
+- [eaf050be34acb41d-382] .. code-block:: pycon
+- [eaf050be34acb41d-383] .. code-block:: pycon
+- [eaf050be34acb41d-384] .. code-block:: pycon
+- [eaf050be34acb41d-385] .. code-block:: pycon
+- [eaf050be34acb41d-386] .. code-block:: pycon
+- [eaf050be34acb41d-387] .. code-block:: pycon
+- [eaf050be34acb41d-388] .. code-block:: pycon
+- [eaf050be34acb41d-389] .. code-block:: pycon
+- [eaf050be34acb41d-390] .. code-block:: pycon
+- [eaf050be34acb41d-391] .. code-block:: pycon
+- [eaf050be34acb41d-392] .. code-block:: pycon
+- [eaf050be34acb41d-393] .. code-block:: pycon
+- [eaf050be34acb41d-394] .. code-block:: pycon
+- [eaf050be34acb41d-395] .. code-block:: pycon
+- [eaf050be34acb41d-396] .. code-block:: pycon
+- [eaf050be34acb41d-397] .. code-block:: pycon
+- [eaf050be34acb41d-398] .. code-block:: pycon
+- [eaf050be34acb41d-399] .. code-block:: pycon
+- [eaf050be34acb41d-400] .. code-block:: pycon
+- [eaf050be34acb41d-401] .. code-block:: pycon
+- [eaf050be34acb41d-402] .. code-block:: pycon
+- [eaf050be34acb41d-403] .. code-block:: pycon
+- [eaf050be34acb41d-404] .. code-block:: pycon
+- [eaf050be34acb41d-405] .. code-block:: pycon
+- [eaf050be34acb41d-406] .. code-block:: pycon
+- [eaf050be34acb41d-407] .. code-block:: pycon
+- [eaf050be34acb41d-408] .. code-block:: pycon
+- [eaf050be34acb41d-409] .. code-block:: pycon
+- [eaf050be34acb41d-410] .. code-block:: pycon
+- [eaf050be34acb41d-411] .. code-block:: pycon
+- [eaf050be34acb41d-412] .. code-block:: pycon
+- [eaf050be34acb41d-413] .. code-block:: pycon
+- [eaf050be34acb41d-414] .. code-block:: pycon
+- [eaf050be34acb41d-415] .. code-block:: pycon
+- [eaf050be34acb41d-416] .. code-block:: pycon
+- [eaf050be34acb41d-417] .. code-block:: pycon
+- [eaf050be34acb41d-418] .. code-block:: pycon
+- [eaf050be34acb41d-419] .. code-block:: pycon
+- [eaf050be34acb41d-420] .. code-block:: pycon
+- [eaf050be34acb41d-421] .. code-block:: pycon
+- [eaf050be34acb41d-422] .. code-block:: pycon
+- [eaf050be34acb41d-423] .. code-block:: pycon
+- [eaf050be34acb41d-424] .. code-block:: pycon
+- [eaf050be34acb41d-425] .. code-block:: pycon
+- [eaf050be34acb41d-426] .. code-block:: pycon
+- [eaf050be34acb41d-427] .. code-block:: pycon
+- [eaf050be34acb41d-428] .. code-block:: pycon
+- [eaf050be34acb41d-429] .. code-block:: pycon
+- [eaf050be34acb41d-430] .. code-block:: pycon
+- [eaf050be34acb41d-431] .. code-block:: pycon
+- [eaf050be34acb41d-432] .. code-block:: pycon
+- [eaf050be34acb41d-433] .. code-block:: pycon
+- [eaf050be34acb41d-434] .. code-block:: pycon
+- [3a9340cd0d877339-27] .. code-block:: text
+- [8555fa12] .. module:: django.db.models.functions :synopsis: Database Functions
+- [0cf180bcf4ecfab5-12] .. versionadded:: 6.1
+- [0cf180bcf4ecfab5-13] .. versionadded:: 6.1
+- [c54b54cb0805732a-47] .. warning::
+- [c54b54cb0805732a-48] .. warning::
+- [c54b54cb0805732a-49] .. warning::
+- [c54b54cb0805732a-50] .. warning::
+- [e73d5a8e] ===== ===== ==== ============ ============= Row # Value Rank Calculation Relative Rank ===== ===== ==== ============ ============= 1 15 1 (1-1)/(7-1) 0.0000 2 20 2 (2-1)/(7-1) 0.1666 3 20 2 (2-1)/(7-1) 0.1666 4 20 2 (2-1)/(7-1) 0.1666 5 30 5 (5-1)/(7-1) 0.6666 6 30 5 (5-1)/(7-1) 0.6666 7 40 7 (7-1)/(7-1) 1.0000 ===== ===== ==== ============ =============
+- [b208c395] ================== Database Functions ==================
+- [d5640d01] Accepts a list of at least two field names or expressions and returns the first non-null value (note that an empty string is not considered a null value). Each argument must be of a similar type, so mixing text and numbers will result in a database error.
+- [5a985d8a] Accepts a list of at least two field names or expressions and returns the greatest value. Each argument must be of a similar type, so mixing text and numbers will result in a database error.
+- [b97e7cad] Accepts a list of at least two text fields or expressions and returns the concatenated text. Each argument must be of a text or char type. If you want to concatenate a ``TextField()`` with a ``CharField()``, then be sure to tell Django that the ``output_field`` should be a ``TextField()``. Specifying an ``output_field`` is also required when concatenating a ``Value`` as in the example below.
+- [c8489711] Accepts a list of field names or expressions and returns a JSON array containing those values.
+- [64c1b586] Accepts a numeric field or expression and returns the text representation of the expression as a single character. It works the same as Python's :func:`chr` function.
+- [0c9f5101] Accepts a single text field or expression and returns the MD5 hash of the string.
+- [00cd1613] Accepts a single text field or expression and returns the Unicode code point value for the first character of that expression. It works similar to Python's :func:`ord` function, but an exception isn't raised if the expression is more than one character long.
+- [b3ce98d1] Accepts a single text field or expression and returns the characters of that expression in reverse order.
+- [efe693e4] Accepts a single text field or expression and returns the lowercase representation.
+- [ba24e6ec] Accepts a single text field or expression and returns the number of characters the value has. If the expression is null, then the length will also be null.
+- [3cc679b3] Accepts a single text field or expression and returns the uppercase representation.
+- [718a5254] Accepts two expressions and returns ``None`` if they are equal, otherwise returns ``expression1``.
+- [87dfd508] Accepts two numeric fields or expressions and returns the logarithm of the second to base of the first.
+- [48d9a9ee] Accepts two numeric fields or expressions and returns the remainder of the first divided by the second (modulo operation).
+- [c1725b98] Accepts two numeric fields or expressions and returns the value of the first raised to the power of the second.
+- [33be7d0c] Calculates a partition for each of the rows in the frame clause, distributing numbers as evenly as possible between 1 and ``num_buckets``. If the rows don't divide evenly into a number of buckets, one or more buckets will be represented more frequently.
+- [32bda3e0] Calculates the cumulative distribution of a value within a window or partition. The cumulative distribution is defined as the number of rows preceding or peered with the current row divided by the total number of rows in the frame.
+- [3cbc0cf2] Calculates the leading value in a given :ref:`frame <window-frames>`. Both ``offset`` and ``default`` are evaluated with respect to the current row.
+- [848c14e7] Calculates the value offset by ``offset``, and if no row exists there, returns ``default``.
+- [33b3b23c] Comparable to :class:`FirstValue`, it calculates the last value in a given frame clause.
+- [7a5f6527] Comparable to :class:`RowNumber`, this function ranks rows in the window. The computed rank contains gaps. Use :class:`DenseRank` to compute rank without gaps.
+- [88321a8e] Comparison and conversion functions ===================================
+- [5cdd787f] Computes the relative rank of the rows in the frame clause. This computation is equivalent to evaluating:
+- [6ee060cc] Computes the row number according to the ordering of either the frame clause or the ordering of the whole query if there is no partitioning of the :ref:`window frame <window-frames>`.
+- [c14c61d1] Computes the row relative to the offset ``nth`` (must be a positive value) within the window. Returns ``None`` if no row exists.
+- [777aa403] Converts a numeric field or expression from degrees to radians.
+- [21859861] Date functions ==============
+- [659d1b27] Each ``kind`` above has a corresponding ``Trunc`` subclass (listed below) that should typically be used instead of the more verbose equivalent, e.g. use ``TruncYear(...)`` rather than ``Trunc(..., kind='year')``.
+- [4aee5ac8] Each ``lookup_name`` above has a corresponding ``Extract`` subclass (listed below) that should typically be used instead of the more verbose equivalent, e.g. use ``ExtractYear(...)`` rather than ``Extract(..., lookup_name='year')``.
+- [0a5509d3] Equivalent to :class:`Rank` but does not have gaps.
+- [7b773876] Explicitly passing the timezone to the ``Extract`` function behaves in the same way, and takes priority over an active timezone:
+- [ed58ac6a] Extracts a component of a date as a number.
+- [02412931] For example, to filter case-insensitively in SQLite:
+- [890ed06c] Forces the result type of ``expression`` to be the one from ``output_field``.
+- [28568cef] Generates a :rfc:`version 4 UUID <9562#section-5.4>`, which is random and is generated using a cryptographically secure method.
+- [a5a92fb2] Generates a :rfc:`version 7 UUID <9562#section-5.7>`, which starts with a time-based component.
+- [e7e1421a] Given the datetime ``2015-06-15 14:30:50.000321+00:00``, the built-in ``kind``\s return:
+- [e4d9ba34] Given the datetime ``2015-06-15 23:30:01.000321+00:00``, the built-in ``lookup_name``\s return:
+- [1dec5a9e] If a different timezone like ``Australia/Melbourne`` is active in Django, then the datetime is converted to the new timezone before the value is truncated. The timezone offset for Melbourne in the example date above is +10:00. The values returned when this timezone is active will be:
+- [74bfdd05] If a different timezone like ``Australia/Melbourne`` is active in Django, then the datetime is converted to the timezone before the value is extracted. The timezone offset for Melbourne in the example date above is +10:00. The values returned when this timezone is active will be the same as above except for:
+- [c3419c8c] In addition to the following, all extracts for ``DateField`` listed above may also be used on ``DateTimeField``\s .
+- [886f30f88ca101db] It can also be registered as a transform as described in :class:`Length`.
+- [3607914e] It can also be registered as a transform as described in :class:`Length`. The default lookup name is ``ord``.
+- [701ec15f98eeae6c] It can also be registered as a transform. For example:
+- [40b32785] It can also be used when ordering, for example with PostgreSQL:
+- [1a1612b5] JSON Functions ==============
+- [c668f7d2] Like :class:`Length`, it can be registered as a transform on ``IntegerField``. The default lookup name is ``chr``.
+- [1de08f0d] Math Functions ==============
+- [f3420a8c] Replaces all occurrences of ``text`` with ``replacement`` in ``expression``. The default replacement text is the empty string. The arguments to the function are case-sensitive.
+- [f9f0ba93] Returns a positive integer corresponding to the 1-indexed position of the first occurrence of ``substring`` inside ``expression``, or 0 if ``substring`` is not found.
+- [b07384e0] Returns a random value in the range ``0.0 ≤ x < 1.0``.
+- [1ef36399] Returns a substring of length ``length`` from the field or expression starting at position ``pos``. The position is 1-indexed, so the position must be greater than 0. If ``length`` is ``None``, then the rest of the string will be returned.
+- [20097a2f] Returns the absolute value of a numeric field or expression.
+- [270eef40] Returns the arccosine of a numeric field or expression. The expression value must be within the range -1 to 1.
+- [876d4e2d] Returns the arcsine of a numeric field or expression. The expression value must be in the range -1 to 1.
+- [097b5e52] Returns the arctangent of ``expression1 / expression2``.
+- [9ba8ea9b] Returns the arctangent of a numeric field or expression.
+- [68d66110] Returns the cosine of a numeric field or expression.
+- [5db75493] Returns the cotangent of a numeric field or expression.
+- [70075187] Returns the database server's current date and time when the query is executed, typically using the SQL ``CURRENT_TIMESTAMP``.
+- [4c01a6b5] Returns the first ``length`` characters of the given text field or expression.
+- [3153a607] Returns the largest integer value not greater than a numeric field or expression.
+- [bdcbd2d4] Returns the last ``length`` characters of the given text field or expression.
+- [fb2e53c0] Returns the natural logarithm a numeric field or expression.
+- [6d68796c] Returns the sign (-1, 0, 1) of a numeric field or expression.
+- [29e8194a] Returns the sine of a numeric field or expression.
+- [94c889f8] Returns the smallest integer greater than or equal to a numeric field or expression.
+- [2b94bd0b] Returns the square root of a nonnegative numeric field or expression.
+- [664d3c17] Returns the tangent of a numeric field or expression.
+- [4f8f66aa] Returns the value evaluated at the row that's the first row of the window frame, or ``None`` if no such value exists.
+- [eb39befa] Returns the value of ``e`` (the natural logarithm base) raised to the power of a numeric field or expression.
+- [ea1ba98b] Returns the value of the given text field or expression padded on the left side with ``fill_text`` so that the resulting value is ``length`` characters long. The default ``fill_text`` is a space.
+- [e9e41d2b] Returns the value of the given text field or expression repeated ``number`` times.
+- [66ea556e] Returns the value of the given text field or expression with leading and trailing spaces removed.
+- [960d9493] Returns the value of the mathematical constant ``π``.
+- [e0666df3] Rounds a numeric field or expression to ``precision`` (must be an integer) decimal places. By default, it rounds to the nearest integer. Whether half values are rounded up or down depends on the database.
+- [abc6e792] Similar to :class:`~django.db.models.functions.LPad`, but pads on the right side.
+- [836d113f] Similar to :class:`~django.db.models.functions.Trim`, but removes only leading spaces.
+- [939e45b3] Since ``DateField``\s don't have a time component, only ``Extract`` subclasses that deal with date-parts can be used with ``DateField``:
+- [e9131d25] Since ``TimeField``\s don't have a date component, only ``Trunc`` subclasses that deal with time-parts can be used with ``TimeField``:
+- [cc489de6] Some databases may handle a nonexistent nth-value differently. For example, Oracle returns an empty string rather than ``None`` for character-based expressions. Django doesn't do any conversions in these cases.
+- [af921e3e] Takes a list of key-value pairs and returns a JSON object containing those pairs.
+- [67a87076] Takes an ``expression`` representing a ``DateField``, ``DateTimeField``, ``TimeField``, or ``DurationField`` and a ``lookup_name``, and returns the part of the date referenced by ``lookup_name`` as an ``IntegerField``. Django usually uses the databases' extract function, so you may use any ``lookup_name`` that your database supports. A ``tzinfo`` subclass, usually provided by :mod:`zoneinfo`, can be passed to extract a value in a specific timezone.
+- [afe40ea1] Takes an expression and a collation name to query against.
+- [98614dcd] Text functions ==============
+- [126dc88b] The classes documented below provide a way for users to use functions provided by the underlying database as annotations, aggregations, or filters in Django. Functions are also :doc:`expressions </ref/models/expressions>`, so they can be used and combined with other expressions like :ref:`aggregate functions <aggregation-functions>`. See the :class:`~django.db.models.Func` documentation for security considerations.
+- [96e90f0f] The following table explains the calculation for the relative rank of a row:
+- [4afec6bf] The subclasses are all defined as transforms, but they aren't registered with any fields, because the lookup names are already reserved by the ``Extract`` subclasses.
+- [9914d56a] The year and quarter have an offset of +11:00 because each result falls before the daylight saving time transition.
+- [74334dba] There are a number of functions to use in a :class:`~django.db.models.expressions.Window` expression for computing the rank of elements or the :class:`Ntile` of some rows.
+- [392f92c5] These are logically equivalent to ``Extract('date_field', lookup_name)``. Each class is also a ``Transform`` registered on ``DateField`` and ``DateTimeField`` as ``__(lookup_name)``, e.g. ``__year``.
+- [29fb19db] These are logically equivalent to ``Extract('datetime_field', lookup_name)``. Each class is also a ``Transform`` registered on ``DateTimeField`` as ``__(lookup_name)``, e.g. ``__minute``.
+- [d8ab91a4] These are logically equivalent to ``Trunc('date_field', kind)``. They truncate all parts of the date up to ``kind`` which allows grouping or filtering dates with less precision. ``expression`` can have an ``output_field`` of either ``DateField`` or ``DateTimeField``.
+- [ff066bf9] These are logically equivalent to ``Trunc('datetime_field', kind)``. They truncate all parts of the date up to ``kind`` and allow grouping or filtering datetimes with less precision. ``expression`` must have an ``output_field`` of ``DateTimeField``.
+- [dd833d96] These are logically equivalent to ``Trunc('time_field', kind)``. They truncate all parts of the time up to ``kind`` which allows grouping or filtering times with less precision. ``expression`` can have an ``output_field`` of either ``TimeField`` or ``DateTimeField``.
+- [b9e8c5fe] They can also be registered as transforms as described in :class:`Length`.
+- [d16c436c] This function will never have a null result. On backends where a null argument results in the entire expression being null, Django will ensure that each null part is converted to an empty string first.
+- [525744c8] Truncates a date up to a significant component.
+- [ced44d25] UUID functions ==============
+- [3ecdcd2d485c92ad-8] Usage example:
+- [3ecdcd2d485c92ad-9] Usage example:
+- [3ecdcd2d485c92ad-10] Usage example:
+- [3ecdcd2d485c92ad-11] Usage example:
+- [3ecdcd2d485c92ad-12] Usage example:
+- [3ecdcd2d485c92ad-13] Usage example:
+- [3ecdcd2d485c92ad-14] Usage example:
+- [3ecdcd2d485c92ad-15] Usage example:
+- [3ecdcd2d485c92ad-16] Usage example:
+- [3ecdcd2d485c92ad-17] Usage example:
+- [3ecdcd2d485c92ad-18] Usage example:
+- [3ecdcd2d485c92ad-19] Usage example:
+- [3ecdcd2d485c92ad-20] Usage example:
+- [3ecdcd2d485c92ad-21] Usage example:
+- [3ecdcd2d485c92ad-22] Usage example:
+- [3ecdcd2d485c92ad-23] Usage example:
+- [3ecdcd2d485c92ad-24] Usage example:
+- [3ecdcd2d485c92ad-25] Usage example:
+- [3ecdcd2d485c92ad-26] Usage example:
+- [3ecdcd2d485c92ad-27] Usage example:
+- [3ecdcd2d485c92ad-28] Usage example:
+- [3ecdcd2d485c92ad-29] Usage example:
+- [3ecdcd2d485c92ad-30] Usage example:
+- [3ecdcd2d485c92ad-31] Usage example:
+- [3ecdcd2d485c92ad-32] Usage example:
+- [3ecdcd2d485c92ad-33] Usage example:
+- [3ecdcd2d485c92ad-34] Usage example:
+- [3ecdcd2d485c92ad-35] Usage example:
+- [3ecdcd2d485c92ad-36] Usage example:
+- [3ecdcd2d485c92ad-37] Usage example:
+- [3ecdcd2d485c92ad-38] Usage example:
+- [3ecdcd2d485c92ad-39] Usage example:
+- [3ecdcd2d485c92ad-40] Usage example:
+- [3ecdcd2d485c92ad-41] Usage example:
+- [3ecdcd2d485c92ad-42] Usage example:
+- [3ecdcd2d485c92ad-43] Usage example:
+- [3ecdcd2d485c92ad-44] Usage example:
+- [3ecdcd2d485c92ad-45] Usage example:
+- [3ecdcd2d485c92ad-46] Usage example:
+- [3ecdcd2d485c92ad-47] Usage example:
+- [3ecdcd2d485c92ad-48] Usage example:
+- [3ecdcd2d485c92ad-49] Usage example:
+- [3ecdcd2d485c92ad-50] Usage example:
+- [3ecdcd2d485c92ad-51] Usage example:
+- [3ecdcd2d485c92ad-52] Usage example:
+- [a2032f1b06c0a2ba-5] Usage example::
+- [15fbcd9b] Usage examples:
+- [4b55c0b2] We don't usually recommend allowing ``null=True`` for ``CharField`` since this allows the field to have two "empty values", but it's important for the ``Coalesce`` example below.
+- [06aa970b7bdc06e7] We'll be using the following model in examples of each function::
+- [f121e93a] We'll be using the following model in math function examples::
+- [90bc1636] When :setting:`USE_TZ` is ``True`` then datetimes are stored in the database in UTC. If a different timezone is active in Django, the datetime is converted to that timezone before the value is extracted. The example below converts to the Melbourne timezone (UTC +10:00), which changes the day, weekday, and hour values that are returned:
+- [65094cfb] When you only care if something happened in a particular year, hour, or day, but not the exact second, then ``Trunc`` (and its subclasses) can be useful to filter or aggregate your data. For example, you can use ``Trunc`` to calculate the number of sales per day.
+- [d28bad3d] Window functions ================
+- [c93b2983] ``ACos`` --------
+- [88105690] ``ASin`` --------
+- [3cf8f384] ``ATan2`` ---------
+- [465633c9] ``ATan`` --------
+- [528eb54e] ``Abs`` -------
+- [e8b598c8] ``Cast`` --------
+- [69609d96] ``Ceil`` --------
+- [7407fd73] ``Chr`` -------
+- [97d5bda7] ``Coalesce`` ------------
+- [c00f2989] ``Collate`` -----------
+- [38b1c57f] ``Concat`` ----------
+- [1737fe1f] ``Cos`` -------
+- [98f21299] ``Cot`` -------
+- [dad8d790] ``CumeDist`` ------------
+- [e7571dce] ``DateField`` extracts ~~~~~~~~~~~~~~~~~~~~~~
+- [78ebb5b9] ``DateField`` truncation ~~~~~~~~~~~~~~~~~~~~~~~~
+- [17d656fa] ``DateTimeField`` examples:
+- [a47583b2] ``DateTimeField`` extracts ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [06e8fdca] ``DateTimeField`` truncation ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [6e4e1c2c] ``Degrees`` -----------
+- [be6ddc79] ``DenseRank`` -------------
+- [4ea8efed] ``Exp`` -------
+- [d87101f2] ``Extract`` -----------
+- [0121222b] ``FirstValue`` --------------
+- [0e775cdc] ``Floor`` ---------
+- [d752c5ce] ``Greatest`` ------------
+- [38a3a840] ``JSONArray`` -------------
+- [7336e086] ``JSONObject`` --------------
+- [0f2c75a1] ``LPad`` --------
+- [bdcc26d5] ``LTrim`` ---------
+- [aa2d0f9b] ``Lag`` -------
+- [ccd6cab3] ``LastValue`` -------------
+- [e59b541e] ``Lead`` --------
+- [520978b6] ``Least`` ---------
+- [a56486c8] ``Left`` --------
+- [c208ea1173525f96-2] ``Length`` ----------
+- [0051a7ac] ``Ln`` ------
+- [ef72b747] ``Log`` -------
+- [74aedf6a] ``Lower`` ---------
+- [d90faf1b] ``MD5`` -------
+- [36112baa] ``Mod`` -------
+- [fe1b560c] ``Now`` -------
+- [35966250] ``NthValue`` ------------
+- [fc2327b5] ``Ntile`` ---------
+- [74f826da] ``NullIf`` ----------
+- [980a2ee9] ``Ord`` -------
+- [496ee1e1] ``PercentRank`` ---------------
+- [7dc160b2] ``Pi`` ------
+- [cc1e36ac] ``Power`` ---------
+- [ce83798c] ``RPad`` --------
+- [7d371c76] ``RTrim`` ---------
+- [9ffd8e07] ``Radians`` -----------
+- [fbba7ab4] ``Random`` ----------
+- [f4300205] ``Rank`` --------
+- [321c5450] ``Repeat`` ----------
+- [c9fea8e1] ``Replace`` -----------
+- [dc1c28abb0884360-2] ``Reverse`` -----------
+- [b55d7112] ``Right`` ---------
+- [85265098] ``Round`` ---------
+- [2d8589f1] ``RowNumber`` -------------
+- [51245c5b] ``SHA1``, ``SHA224``, ``SHA256``, ``SHA384``, and ``SHA512`` ------------------------------------------------------------
+- [d0744af4] ``Sign`` --------
+- [9ffde209] ``Sin`` -------
+- [1048f74e] ``Sqrt`` --------
+- [b38fd7b1] ``StrIndex`` ------------
+- [17ee2087] ``Substr`` ----------
+- [15c6c97a] ``Tan`` -------
+- [04b10272] ``TimeField`` truncation ~~~~~~~~~~~~~~~~~~~~~~~~
+- [d47e6d21] ``Trim`` --------
+- [692fad03] ``TruncDate`` casts ``expression`` to a date rather than using the built-in SQL truncate function. It's also registered as a transform on ``DateTimeField`` as ``__date``.
+- [1ccfde93] ``TruncTime`` casts ``expression`` to a time rather than using the built-in SQL truncate function. It's also registered as a transform on ``DateTimeField`` as ``__time``.
+- [7b959202] ``Trunc`` ---------
+- [aa68b8fb] ``Trunc`` takes a single ``expression``, representing a ``DateField``, ``TimeField``, or ``DateTimeField``, a ``kind`` representing a date or time part, and an ``output_field`` that's either ``DateTimeField()``, ``TimeField()``, or ``DateField()``. It returns a datetime, date, or time depending on ``output_field``, with fields up to ``kind`` set to their minimum value. If ``output_field`` is omitted, it will default to the ``output_field`` of ``expression``. A ``tzinfo`` subclass, usually provided by :mod:`zoneinfo`, can be passed to truncate a value in a specific timezone.
+- [68a303ed] ``UUID4`` ---------
+- [dd6408e6] ``UUID7`` ---------
+- [49b4bd78] ``Upper`` ---------
+- [96919d78] ``annotated_comment.last_updated`` will be the most recent of ``blog.modified`` and ``comment.modified``.
+- [86cf48d59935e94d] ``default`` must have the same type as the ``expression``, however, this is only validated by the database and not in Python.

@@ -1,6 +1,6 @@
 # Fact abd8c538
 
-Store id: 07b638a9-4afb-416b-abee-fd9527f93431
+Store id: 37565bb0-3a57-4d61-aa09-33048405e723
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4757580+00:00`
+- posted_at: `2026-11-09T23:31:56.6517670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1975,
     "symbol": "DurationField.get_db_prep_value"
   },
-  "id": "07b638a9-4afb-416b-abee-fd9527f93431",
+  "id": "37565bb0-3a57-4d61-aa09-33048405e723",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4757580+00:00"
+    "posted_at": "2026-11-09T23:31:56.6517670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3b08d544-2cbc-4e80-b242-8dab8ffd7195",
+  "subject_id": "79f4c3b8-9e16-47ec-9b9a-5c208f411298",
   "subject_name": "django/db/models/fields/__init__::DurationField.get_db_prep_value",
   "tags": [
     "entity:method"

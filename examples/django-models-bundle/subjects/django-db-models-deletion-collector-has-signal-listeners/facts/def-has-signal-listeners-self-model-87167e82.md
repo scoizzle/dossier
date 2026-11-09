@@ -1,6 +1,6 @@
 # Fact 87167e82
 
-Store id: 6f1d27a5-e87d-4e51-a359-56c31b63aa7a
+Store id: 684c7569-2817-43f7-9fe1-b6ce130d9af6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _has_signal_listeners(self, model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0623370+00:00`
+- posted_at: `2026-11-09T23:31:55.1101970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 205,
     "symbol": "Collector._has_signal_listeners"
   },
-  "id": "6f1d27a5-e87d-4e51-a359-56c31b63aa7a",
+  "id": "684c7569-2817-43f7-9fe1-b6ce130d9af6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0623370+00:00"
+    "posted_at": "2026-11-09T23:31:55.1101970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5d96f863-739e-4da7-b084-0ef7f7ac5c0b",
+  "subject_id": "7a42003b-7f7c-4bc3-8784-feac1e164978",
   "subject_name": "django/db/models/deletion::Collector._has_signal_listeners",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact b367513e
 
-Store id: 79fdf7f3-2d62-4c93-b877-1132b09c6aa9
+Store id: f673588a-95aa-4977-8203-84783ab2ca28
 
 ## Text
 
@@ -20,7 +20,7 @@ class Func(SQLiteNumericMixin, Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5762810+00:00`
+- posted_at: `2026-11-09T23:31:55.8511520+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1053,
     "symbol": "Func"
   },
-  "id": "79fdf7f3-2d62-4c93-b877-1132b09c6aa9",
+  "id": "f673588a-95aa-4977-8203-84783ab2ca28",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5762810+00:00"
+    "posted_at": "2026-11-09T23:31:55.8511520+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1b863fe-c5ee-4da0-96b7-b1c83f735360",
+  "subject_id": "71b3224b-299c-4220-b834-bc6b53449511",
   "subject_name": "django/db/models/expressions::Func",
   "tags": [
     "entity:class",

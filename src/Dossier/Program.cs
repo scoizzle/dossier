@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]>";
 
 if (args.Length == 0)
 {
@@ -151,7 +151,7 @@ try
         {
             if (args.Length < 2 || args[1] != "compile")
             {
-                Console.Error.WriteLine("usage: dossier dossier compile --subject <s> [--budget n] [--depth index|full] [--format json|markdown] [--need text]... [--descendants] [--order rank|seq] [--recency 0..1]");
+                Console.Error.WriteLine("usage: dossier dossier compile --subject <s> [--budget n] [--budget-mode complete|strict] [--depth index|full] [--format json|markdown] [--need text]... [--descendants] [--order rank|seq] [--recency 0..1]");
                 return 1;
             }
 
@@ -174,6 +174,7 @@ try
                 Subject = subject,
                 Budget = ParseInt(ValueAfter(args, "--budget"), "--budget"),
                 Depth = ValueAfter(args, "--depth"),
+                BudgetMode = ValueAfter(args, "--budget-mode"),
                 Format = format,
                 Order = ValueAfter(args, "--order"),
                 Needs = ValuesAfter(args, "--need"),
@@ -197,7 +198,7 @@ try
             var outDir = ValueAfter(args, "--out");
             if (outDir is null)
             {
-                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--depth index|full] [--facts detail|none] [--assets detail|none] [--index-max-tokens n] [--profile <path>] [--respect-limits]");
+                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--budget-mode complete|strict] [--depth index|full] [--facts detail|none] [--assets detail|none] [--index-max-tokens n] [--profile <path>] [--respect-limits]");
                 return 1;
             }
 
@@ -207,6 +208,7 @@ try
                 Subject = ValueAfter(args, "--subject"),
                 Budget = ParseInt(ValueAfter(args, "--budget"), "--budget") ?? DossierStore.DefaultBudgetTokens,
                 Depth = ValueAfter(args, "--depth") ?? "full",
+                BudgetMode = ValueAfter(args, "--budget-mode") ?? DossierStore.BudgetModeComplete,
                 Facts = ValueAfter(args, "--facts") ?? "detail",
                 Assets = ValueAfter(args, "--assets") ?? "detail",
                 IndexMaxTokens = ParseInt(ValueAfter(args, "--index-max-tokens"), "--index-max-tokens") ?? DossierStore.DefaultIndexMaxTokens,

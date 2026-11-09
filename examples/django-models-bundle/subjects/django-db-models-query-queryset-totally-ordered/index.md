@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.totally_ordered
 
-- Subject: django/db/models/query::QuerySet.totally_ordered (id `3538f2aa-dc5f-4bfb-adfa-2ee20e45b673`)
+- Subject: django/db/models/query::QuerySet.totally_ordered (id `9d38e75d-2072-4f3d-99e4-3482c334610e`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/core/checks/caches
 
-- Subject: django/core/checks/caches (id `44c8c762-af99-4af6-ae29-b610be83330d`)
+- Subject: django/core/checks/caches (id `cf4e5a97-f575-49e0-825e-d78e7aaeed90`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 573 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

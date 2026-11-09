@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.get_filter_kwargs_for_object
 
-- Subject: django/db/models/fields/__init__::Field.get_filter_kwargs_for_object (id `a672f9de-e223-4e82-b083-5fe2732249bc`)
+- Subject: django/db/models/fields/__init__::Field.get_filter_kwargs_for_object (id `6fc2eeab-f3f2-49af-9bc4-a68ac50a4906`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

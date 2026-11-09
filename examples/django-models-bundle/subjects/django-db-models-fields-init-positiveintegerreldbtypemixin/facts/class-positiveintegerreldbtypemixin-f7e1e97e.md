@@ -1,6 +1,6 @@
 # Fact f7e1e97e
 
-Store id: f2e85574-6b66-4afa-a10d-ae23338027a9
+Store id: 1267e3f2-5a76-4365-b239-58adcfbd15f0
 
 ## Text
 
@@ -20,7 +20,7 @@ class PositiveIntegerRelDbTypeMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5987740+00:00`
+- posted_at: `2026-11-09T23:31:56.7597770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2414,
     "symbol": "PositiveIntegerRelDbTypeMixin"
   },
-  "id": "f2e85574-6b66-4afa-a10d-ae23338027a9",
+  "id": "1267e3f2-5a76-4365-b239-58adcfbd15f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5987740+00:00"
+    "posted_at": "2026-11-09T23:31:56.7597770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9fe441d2-93c2-4aab-a5dc-7aa7aaf96218",
+  "subject_id": "ff7dcab8-d730-47d8-92f6-1f2f655129ac",
   "subject_name": "django/db/models/fields/__init__::PositiveIntegerRelDbTypeMixin",
   "tags": [
     "entity:class"

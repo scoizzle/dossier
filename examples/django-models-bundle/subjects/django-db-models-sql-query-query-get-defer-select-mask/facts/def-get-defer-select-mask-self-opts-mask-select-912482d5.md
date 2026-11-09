@@ -1,6 +1,6 @@
 # Fact 912482d5
 
-Store id: a6fa6733-92a4-4240-a361-74aca2489a3d
+Store id: 53ba2639-2936-4d03-8920-7820e2861132
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_defer_select_mask(self, opts, mask, select_mask=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2777660+00:00`
+- posted_at: `2026-11-09T23:32:06.8186390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 816,
     "symbol": "Query._get_defer_select_mask"
   },
-  "id": "a6fa6733-92a4-4240-a361-74aca2489a3d",
+  "id": "53ba2639-2936-4d03-8920-7820e2861132",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2777660+00:00"
+    "posted_at": "2026-11-09T23:32:06.8186390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b729e14f-a1d8-4337-96af-63dfaf9f2f94",
+  "subject_id": "0e000b5d-3c28-446d-8f70-aeb6db4f19b1",
   "subject_name": "django/db/models/sql/query::Query._get_defer_select_mask",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact b5912499
 
-Store id: effabdb8-a8a5-4d1f-a3b6-387f94a4798b
+Store id: 5a6cf022-59b0-4306-9e27-ac1f664ecceb
 
 ## Text
 
@@ -20,7 +20,7 @@ def related_manager_cls(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8456930+00:00`
+- posted_at: `2026-11-09T23:31:59.3209990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1057,
     "symbol": "ManyToManyDescriptor.related_manager_cls"
   },
-  "id": "effabdb8-a8a5-4d1f-a3b6-387f94a4798b",
+  "id": "5a6cf022-59b0-4306-9e27-ac1f664ecceb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8456930+00:00"
+    "posted_at": "2026-11-09T23:31:59.3209990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dd164e55-7dd1-431c-8141-6f0017c4e258",
+  "subject_id": "bd55d26e-236b-4dc7-bc5b-d5b7b6a39574",
   "subject_name": "django/db/models/fields/related_descriptors::ManyToManyDescriptor.related_manager_cls",
   "tags": [
     "entity:method",

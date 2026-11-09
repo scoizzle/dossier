@@ -1,6 +1,6 @@
 # Fact 5cbfdd44
 
-Store id: 1f0a4bef-1555-4711-9048-f0afb5839ead
+Store id: 14ba1e4c-bddd-4262-aae7-e12eb6bbfd2c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OnConflict
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.5174670+00:00`
+- posted_at: `2026-11-09T23:31:53.9396120+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1f0a4bef-1555-4711-9048-f0afb5839ead",
+  "id": "14ba1e4c-bddd-4262-aae7-e12eb6bbfd2c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.5174670+00:00"
+    "posted_at": "2026-11-09T23:31:53.9396120+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OnConflict"
       },
       "rel": "contains",
-      "target": "5c6f9db6-d889-4d97-bccb-5bcf6aac26e9"
+      "target": "8feca834-240c-45d4-9179-7272c877f6f7"
     }
   ],
   "status": "live",
-  "subject_id": "497bc7c7-55a8-496f-86ef-5a573e678558",
+  "subject_id": "e09e24e8-7b6c-4d57-aa4e-1c80b7e360ba",
   "subject_name": "django/db/models/constants",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 5282e7cd
 
-Store id: 13d6ab00-1946-4982-83c8-8f2b69a38c68
+Store id: f0d16dfb-fd4c-4bf5-b850-ddbbb372aa9f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_db_collation(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6362030+00:00`
+- posted_at: `2026-11-09T23:31:56.7972820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2538,
     "symbol": "TextField._check_db_collation"
   },
-  "id": "13d6ab00-1946-4982-83c8-8f2b69a38c68",
+  "id": "f0d16dfb-fd4c-4bf5-b850-ddbbb372aa9f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6362030+00:00"
+    "posted_at": "2026-11-09T23:31:56.7972820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "942107d0-662c-450a-960b-4d3896711273",
+  "subject_id": "c5825199-1fcc-443c-b1c1-0e426f58edda",
   "subject_name": "django/db/models/fields/__init__::TextField._check_db_collation",
   "tags": [
     "entity:method"

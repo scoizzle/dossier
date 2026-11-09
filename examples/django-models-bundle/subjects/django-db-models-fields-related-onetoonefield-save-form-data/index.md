@@ -1,9 +1,9 @@
 # django/db/models/fields/related::OneToOneField.save_form_data
 
-- Subject: django/db/models/fields/related::OneToOneField.save_form_data (id `d6d1b8e1-fd62-4804-adb5-89001c478850`)
+- Subject: django/db/models/fields/related::OneToOneField.save_form_data (id `f2740ae3-d94a-4c76-a9cb-bbe6b7743359`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

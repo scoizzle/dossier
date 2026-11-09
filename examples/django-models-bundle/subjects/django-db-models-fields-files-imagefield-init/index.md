@@ -1,9 +1,9 @@
 # django/db/models/fields/files::ImageField.__init__
 
-- Subject: django/db/models/fields/files::ImageField.__init__ (id `b656de9e-1b9a-44e5-b11c-7369ebea6ddc`)
+- Subject: django/db/models/fields/files::ImageField.__init__ (id `6b9243e6-1455-43f0-b267-160be1894bfb`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 35 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

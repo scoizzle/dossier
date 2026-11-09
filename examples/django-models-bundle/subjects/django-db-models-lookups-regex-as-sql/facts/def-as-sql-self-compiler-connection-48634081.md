@@ -1,6 +1,6 @@
 # Fact 48634081
 
-Store id: f794c930-f53f-4645-be42-655e6e1e9722
+Store id: affc70b7-501e-4abf-a6fc-aa36f37ebbd4
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2102680+00:00`
+- posted_at: `2026-11-09T23:32:03.4018620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 696,
     "symbol": "Regex.as_sql"
   },
-  "id": "f794c930-f53f-4645-be42-655e6e1e9722",
+  "id": "affc70b7-501e-4abf-a6fc-aa36f37ebbd4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2102680+00:00"
+    "posted_at": "2026-11-09T23:32:03.4018620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4b59d871-8372-4920-861f-9e857bdd1a4f",
+  "subject_id": "e6830827-3a03-46f7-b9d5-d22a5b5fe96d",
   "subject_name": "django/db/models/lookups::Regex.as_sql",
   "tags": [
     "entity:method"

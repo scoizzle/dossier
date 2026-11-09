@@ -1,6 +1,6 @@
 # Fact aa1f567a
 
-Store id: d56fd613-dcd9-4a90-8a2d-b68f9b98c3b5
+Store id: 0c8c3559-7ba6-4e90-a35f-a585c2fc4750
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, db_collation=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6330750+00:00`
+- posted_at: `2026-11-09T23:31:56.7939090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2527,
     "symbol": "TextField.__init__"
   },
-  "id": "d56fd613-dcd9-4a90-8a2d-b68f9b98c3b5",
+  "id": "0c8c3559-7ba6-4e90-a35f-a585c2fc4750",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6330750+00:00"
+    "posted_at": "2026-11-09T23:31:56.7939090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4cd29ab-4b8a-400a-82de-3525e8d5a307",
+  "subject_id": "93901b96-9e2a-4d37-9efe-1e2a919fff5a",
   "subject_name": "django/db/models/fields/__init__::TextField.__init__",
   "tags": [
     "entity:method"

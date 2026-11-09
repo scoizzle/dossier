@@ -1,8 +1,8 @@
 # django/db/migrations/operations/__init__
 
-- Subject: django/db/migrations/operations/__init__ (id `d8f854f4-a7f4-4ebd-b882-4b80e2701cc9`)
+- Subject: django/db/migrations/operations/__init__ (id `d586b40b-332d-4f83-a551-b92ca2e7ebb0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 234 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

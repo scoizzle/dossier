@@ -1,6 +1,6 @@
 # Fact bc36af78
 
-Store id: e484fb92-d54f-4a8b-96d8-85f8bb9d88b2
+Store id: d18937e2-0250-4fcc-bb29-03299334ab2f
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, names_pos, path_with_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.9641010+00:00`
+- posted_at: `2026-11-09T23:32:06.4285510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 17,
     "symbol": "MultiJoin.__init__"
   },
-  "id": "e484fb92-d54f-4a8b-96d8-85f8bb9d88b2",
+  "id": "d18937e2-0250-4fcc-bb29-03299334ab2f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.9641010+00:00"
+    "posted_at": "2026-11-09T23:32:06.4285510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c2361f5f-6f26-48d2-a4b9-10b00a6f1e12",
+  "subject_id": "55117c5b-cf51-4a9e-8d25-24a59b1aac6f",
   "subject_name": "django/db/models/sql/datastructures::MultiJoin.__init__",
   "tags": [
     "entity:method"

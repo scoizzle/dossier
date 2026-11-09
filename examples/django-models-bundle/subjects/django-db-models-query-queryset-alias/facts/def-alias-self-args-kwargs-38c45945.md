@@ -1,6 +1,6 @@
 # Fact 38c45945
 
-Store id: 19a08aab-5137-494b-9280-9615dcf3a57b
+Store id: 315a6b60-9f17-4944-8c2c-6fb613d9550f
 
 ## Text
 
@@ -20,7 +20,7 @@ def alias(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6515520+00:00`
+- posted_at: `2026-11-09T23:32:04.5785170+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1869,
     "symbol": "QuerySet.alias"
   },
-  "id": "19a08aab-5137-494b-9280-9615dcf3a57b",
+  "id": "315a6b60-9f17-4944-8c2c-6fb613d9550f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6515520+00:00"
+    "posted_at": "2026-11-09T23:32:04.5785170+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2f6c2006-f126-4f22-af03-2154d6508c79",
+  "subject_id": "0fe97a6f-3648-4ad8-b95f-5e11ed3f54fd",
   "subject_name": "django/db/models/query::QuerySet.alias",
   "tags": [
     "entity:method"

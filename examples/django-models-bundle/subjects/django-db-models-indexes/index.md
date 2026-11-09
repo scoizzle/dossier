@@ -1,8 +1,8 @@
 # django/db/models/indexes
 
-- Subject: django/db/models/indexes (id `7b06f769-3963-4866-9665-b1b87d2eb0ec`)
+- Subject: django/db/models/indexes (id `98a02a58-fa22-414b-b079-a86d651a7525`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 34 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

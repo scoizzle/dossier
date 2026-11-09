@@ -1,6 +1,6 @@
 # Fact 53b22c36
 
-Store id: 3d397870-39cf-4c6b-b1e5-dfc1cce9b2b6
+Store id: 54aec6df-bc0d-46c5-bf65-f523b21d3365
 
 ## Text
 
@@ -20,7 +20,7 @@ class Substr(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2061580+00:00`
+- posted_at: `2026-11-09T23:32:02.3056780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 345,
     "symbol": "Substr"
   },
-  "id": "3d397870-39cf-4c6b-b1e5-dfc1cce9b2b6",
+  "id": "54aec6df-bc0d-46c5-bf65-f523b21d3365",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2061580+00:00"
+    "posted_at": "2026-11-09T23:32:02.3056780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5581a0ea-4c04-4835-bed3-1601ffcbae68",
+  "subject_id": "b7f39a9c-f8c9-4a73-8ca0-17704e5c12a7",
   "subject_name": "django/db/models/functions/text::Substr",
   "tags": [
     "entity:class"

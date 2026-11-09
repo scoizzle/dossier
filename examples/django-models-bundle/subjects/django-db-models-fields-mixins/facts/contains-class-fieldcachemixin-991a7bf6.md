@@ -1,6 +1,6 @@
 # Fact 991a7bf6
 
-Store id: 09d31da3-5d85-4d07-a35c-878ab5c94ba9
+Store id: 6b871af2-b023-4c87-8d1f-49f4e649c89e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FieldCacheMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.9458660+00:00`
+- posted_at: `2026-11-09T23:31:58.2419470+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "09d31da3-5d85-4d07-a35c-878ab5c94ba9",
+  "id": "6b871af2-b023-4c87-8d1f-49f4e649c89e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.9458660+00:00"
+    "posted_at": "2026-11-09T23:31:58.2419470+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FieldCacheMixin"
       },
       "rel": "contains",
-      "target": "a64d1a39-242e-45e3-88ef-7326058460b1"
+      "target": "c84f4da3-6a8a-4fbc-9235-59bcbf50ad73"
     }
   ],
   "status": "live",
-  "subject_id": "f217444f-cd9b-4e43-b7ea-301a8c96a000",
+  "subject_id": "545aae78-c545-4908-8b58-6187837cd02e",
   "subject_name": "django/db/models/fields/mixins",
   "tags": [
     "entity:class"

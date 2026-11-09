@@ -1,6 +1,6 @@
 # Fact 535d261c
 
-Store id: e553b077-fd66-4b87-82cf-5da5ea93505e
+Store id: e7e6619a-4f44-44a8-b067-08dc97ba9610
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RPad
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e553b077-fd66-4b87-82cf-5da5ea93505e",
+  "id": "e7e6619a-4f44-44a8-b067-08dc97ba9610",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RPad"
       },
       "rel": "contains",
-      "target": "f58dfd62-7da1-4770-b612-a7b078904dd4"
+      "target": "00010e17-fe4e-4a1a-8ec5-7dc73f57ff19"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

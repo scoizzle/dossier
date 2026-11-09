@@ -1,14 +1,14 @@
 # django/utils/lorem_ipsum
 
-- Subject: django/utils/lorem_ipsum (id `3e709b79-620b-4878-8bf4-16a6a15e162f`)
+- Subject: django/utils/lorem_ipsum (id `3b2d135d-a25e-418b-92de-4be4197509cd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 741 tokens
-- Facts shown: 12 of 13
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1229 tokens
+- Facts shown: 13 of 13
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If `common` is True, then the first 19 words will be the standard 'lorem ipsum' words. Otherwise, all words will be selected randomly. """ word_list = list(COMMON_WORDS) if common else [] c = len(word_list) if count > c: count -= c while count > 0: c = min(count, len(WORDS)) count -= c word_list += random.sample(WORDS, c) else: word_list = word_list[:count] return " ".join(word_list) [6d91332b]
 - If `common` is True, then the first paragraph will be the standard 'lorem ipsum' paragraph. Otherwise, the first paragraph will be random Latin text. Either way, subsequent paragraphs will be random Latin text. """ paras = [] for i in range(count): if common and i == 0: paras.append(COMMON_P) else: paras.append(paragraph()) return paras [7f6a16d2]
@@ -23,6 +23,6 @@
 - def words(count, common=True): """ Return a string of `count` lorem ipsum words separated by a single space. [65cb0d3a]
 - import random [1a6568a9]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [0ef57924]
+- [0ef57924] WORDS = ( "exercitationem", "perferendis", "perspiciatis", "laborum", "eveniet", "sunt", "iure", "nam", "nobis", "eum", "cum", "officiis", "excepturi", "odio", "consectetur", "quasi", "aut", "quisquam", "vel", "eligendi", "itaque", "non", "odit", "tempore", "quaerat", "dignissimos", "facilis", "neque", "nihil", "expedita", "vitae", "vero", "ipsum", "nisi", "animi", "cumque", "pariatur", "velit", "modi", "natus", "iusto", "eaque", "sequi", "illo", "sed", "ex", "et", "voluptatibus", "tempora", "veritatis", "ratione", "assumenda", "incidunt", "nostrum", "placeat", "aliquid", "fuga", "provident", "praesentium", "rem", "necessitatibus", "suscipit", "adipisci", "quidem", "possimus", "voluptas", "debitis", "sint", "accusantium", "unde", "sapiente", "voluptate", "qui", "aspernatur", "laudantium", "soluta", "amet", "quo", "aliquam", "saepe", "culpa", "libero", "ipsa", "dicta", "reiciendis", "nesciunt", "doloribus", "autem", "impedit", "minima", "maiores", "repudiandae", "ipsam", "obcaecati", "ullam", "enim", "totam", "delectus", "ducimus", "quis", "voluptates", "dolores", "molestiae", "harum", "dolorem", "quia", "voluptatem", "molestias", "magni", "distinctio", "omnis", "illum", "dolorum", "voluptatum", "ea", "quas", "quam", "corporis", "quae", "blanditiis", "atque", "deserunt", "laboriosam", "earum", "consequuntur", "hic", "cupiditate", "quibusdam", "accusamus", "ut", "rerum", "error", "minus", "eius", "ab", "ad", "nemo", "fugit", "officia", "at", "in", "id", "quos", "reprehenderit", "numquam", "iste", "fugiat", "sit", "inventore", "beatae", "repellendus", "magnam", "recusandae", "quod", "explicabo", "doloremque", "aperiam", "consequatur", "asperiores", "commodi", "optio", "dolor", "labore", "temporibus", "repellat", "veniam", "architecto", "est", "esse", "mollitia", "nulla", "a", "similique", "eos", "alias", "dolore", "tenetur", "deleniti", "porro", "facere", "maxime", "corrupti", )

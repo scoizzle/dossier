@@ -1,8 +1,8 @@
 # django/core/management/commands/sqlflush
 
-- Subject: django/core/management/commands/sqlflush (id `0edcc86c-a102-40e7-becf-a127560992c2`)
+- Subject: django/core/management/commands/sqlflush (id `b369feaa-4218-4881-9bf5-b93652e44514`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 263 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

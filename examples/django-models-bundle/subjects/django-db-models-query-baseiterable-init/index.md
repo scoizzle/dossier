@@ -1,9 +1,9 @@
 # django/db/models/query::BaseIterable.__init__
 
-- Subject: django/db/models/query::BaseIterable.__init__ (id `99352803-24b4-42fc-b0f4-8f27cee31f0b`)
+- Subject: django/db/models/query::BaseIterable.__init__ (id `774f1594-509a-4667-9e7e-6a658638f860`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 33 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

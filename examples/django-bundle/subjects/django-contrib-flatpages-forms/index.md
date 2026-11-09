@@ -1,8 +1,8 @@
 # django/contrib/flatpages/forms
 
-- Subject: django/contrib/flatpages/forms (id `9e7490ea-205d-432a-8c33-eabadf2c9c60`)
+- Subject: django/contrib/flatpages/forms (id `93016b7c-8472-4b2e-bfe4-fe99461ead72`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 569 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

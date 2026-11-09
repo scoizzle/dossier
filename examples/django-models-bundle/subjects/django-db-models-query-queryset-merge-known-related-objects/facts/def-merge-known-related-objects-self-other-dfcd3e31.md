@@ -1,6 +1,6 @@
 # Fact dfcd3e31
 
-Store id: 3568c810-0041-4bda-b1c2-20c6b9ece6df
+Store id: 68010652-d93b-4c76-9928-0928c03d253b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _merge_known_related_objects(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7259640+00:00`
+- posted_at: `2026-11-09T23:32:04.6568590+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2317,
     "symbol": "QuerySet._merge_known_related_objects"
   },
-  "id": "3568c810-0041-4bda-b1c2-20c6b9ece6df",
+  "id": "68010652-d93b-4c76-9928-0928c03d253b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7259640+00:00"
+    "posted_at": "2026-11-09T23:32:04.6568590+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d55c9ba6-8343-4075-b253-35a9ce6717fa",
+  "subject_id": "cf8858b8-0dba-4a75-a6f4-647738544af4",
   "subject_name": "django/db/models/query::QuerySet._merge_known_related_objects",
   "tags": [
     "entity:method"

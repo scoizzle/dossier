@@ -1,6 +1,6 @@
 # Fact 99a3985f
 
-Store id: f45e9d60-fc61-42ea-962e-d846276352f7
+Store id: e6d110e7-1062-4cf7-aa07-071ba002487e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0813370+00:00`
+- posted_at: `2026-11-09T23:32:03.2300110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 293,
     "symbol": "FieldGetDbPrepValueIterableMixin.get_prep_lookup"
   },
-  "id": "f45e9d60-fc61-42ea-962e-d846276352f7",
+  "id": "e6d110e7-1062-4cf7-aa07-071ba002487e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0813370+00:00"
+    "posted_at": "2026-11-09T23:32:03.2300110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8a85027e-e7ba-451b-9635-b9f557a4ec23",
+  "subject_id": "fb11f39e-eeef-4f2e-a20a-884aa96803e5",
   "subject_name": "django/db/models/lookups::FieldGetDbPrepValueIterableMixin.get_prep_lookup",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/ref/contrib/index
 
-- Subject: docs/ref/contrib/index (id `66faa204-7d67-4126-b6f1-56ed7de9c844`)
+- Subject: docs/ref/contrib/index (id `b1d1b6f6-03b9-47fa-81e9-d651efdcfc00`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 29 of 47
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1306 tokens
+- Facts shown: 47 of 47
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - For most of these add-ons -- specifically, the add-ons that include either models or template tags -- you'll need to add the package name (e.g., ``'django.contrib.redirects'``) to your :setting:`INSTALLED_APPS` setting and rerun ``manage.py migrate``. [ef4e939f]
 - admin/index auth contenttypes flatpages gis/index humanize messages postgres/index redirects sitemaps sites staticfiles syndication [eb98fee2]
@@ -40,6 +40,23 @@
 - See the :doc:`redirects documentation </ref/contrib/redirects>`. [720d8e01]
 - See the :doc:`sessions documentation </topics/http/sessions>`. [9f7060a2]
 
-## Beyond the budget
+## All facts
 
-18 more facts did not fit in the budget: [55a4c2bf] [fdd0aa91] [823f3ac2] [e6410439] [7d0c87b0] [8e565b1c] [248f5acf] [c8691f43] [a43bc626] [63c1bf5d] [217d1586] [1faeb4a5] [2e16bca5] [85f1d5ba] [36e635e7] [13a86ed2] [d34f5ccf] [bb68b0b5]
+- [55a4c2bf] See the :doc:`sitemaps documentation </ref/contrib/sitemaps>`.
+- [fdd0aa91] See the :doc:`sites documentation </ref/contrib/sites>`.
+- [823f3ac2] See the :doc:`syndication documentation </ref/contrib/syndication>`.
+- [e6410439] The automatic Django administrative interface. For more information, see :doc:`Tutorial 2 </intro/tutorial02>` and the :doc:`admin documentation </ref/contrib/admin/index>`.
+- [7d0c87b0] This code lives in :source:`django/contrib` in the Django distribution. This document gives a rundown of the packages in ``contrib``, along with any dependencies those packages have.
+- [8e565b1c] ``admin`` =========
+- [248f5acf] ``auth`` ========
+- [c8691f43] ``contenttypes`` ================
+- [a43bc626] ``flatpages`` =============
+- [63c1bf5d] ``gis`` =======
+- [217d1586] ``humanize`` ============
+- [1faeb4a5] ``messages`` ============
+- [2e16bca5] ``postgres`` ============
+- [85f1d5ba] ``redirects`` =============
+- [36e635e7] ``sessions`` ============
+- [13a86ed2] ``sitemaps`` ============
+- [d34f5ccf] ``sites`` =========
+- [bb68b0b5] ``syndication`` ===============

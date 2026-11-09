@@ -1,6 +1,6 @@
 # Fact a63748b8
 
-Store id: 4f57b25a-c9a0-4ee5-92b8-4a2112d90c2f
+Store id: 91b21922-95e3-4fad-93d5-82b7490eddbc
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_decimal_places_and_max_digits(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4515680+00:00`
+- posted_at: `2026-11-09T23:31:56.6258940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1858,
     "symbol": "DecimalField._check_decimal_places_and_max_digits"
   },
-  "id": "4f57b25a-c9a0-4ee5-92b8-4a2112d90c2f",
+  "id": "91b21922-95e3-4fad-93d5-82b7490eddbc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4515680+00:00"
+    "posted_at": "2026-11-09T23:31:56.6258940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d2d47737-3931-4f85-bb6d-7d208691ab6a",
+  "subject_id": "6c43fe2c-293a-47b2-9fc1-bd9e5802450c",
   "subject_name": "django/db/models/fields/__init__::DecimalField._check_decimal_places_and_max_digits",
   "tags": [
     "entity:method"

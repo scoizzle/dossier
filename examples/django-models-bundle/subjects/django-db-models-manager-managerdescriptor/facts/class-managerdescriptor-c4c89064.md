@@ -1,6 +1,6 @@
 # Fact c4c89064
 
-Store id: a5a29324-2f00-4112-83d6-5757a42d7812
+Store id: ec4fa4fb-ac55-4d0c-8f51-c8fc8a699266
 
 ## Text
 
@@ -20,7 +20,7 @@ class ManagerDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5393770+00:00`
+- posted_at: `2026-11-09T23:32:03.7160450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 180,
     "symbol": "ManagerDescriptor"
   },
-  "id": "a5a29324-2f00-4112-83d6-5757a42d7812",
+  "id": "ec4fa4fb-ac55-4d0c-8f51-c8fc8a699266",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5393770+00:00"
+    "posted_at": "2026-11-09T23:32:03.7160450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f8e8f773-e646-4ed8-a269-4b91a36f753c",
+  "subject_id": "f8d228dd-7cf9-4501-a26a-ca3219644fb4",
   "subject_name": "django/db/models/manager::ManagerDescriptor",
   "tags": [
     "entity:class"

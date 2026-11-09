@@ -1,6 +1,6 @@
 # Fact e3ec2a1b
 
-Store id: a03dfeef-2091-4b93-b74b-0d2a5a9aa330
+Store id: 5a72c173-241e-4b70-9da3-eed16b3e939c
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_tablespace(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3321320+00:00`
+- posted_at: `2026-11-09T23:31:56.4922540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 968,
     "symbol": "Field.db_tablespace"
   },
-  "id": "a03dfeef-2091-4b93-b74b-0d2a5a9aa330",
+  "id": "5a72c173-241e-4b70-9da3-eed16b3e939c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3321320+00:00"
+    "posted_at": "2026-11-09T23:31:56.4922540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "772f2047-ae60-4bc3-9423-bbb05f2ee6a0",
+  "subject_id": "e6fa5556-3082-488f-bf81-506f94651076",
   "subject_name": "django/db/models/fields/__init__::Field.db_tablespace",
   "tags": [
     "entity:method",

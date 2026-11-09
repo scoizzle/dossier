@@ -1,6 +1,6 @@
 # Fact 09954859
 
-Store id: 9140bed2-7028-4676-afbc-30b97e76e10f
+Store id: 69c3e56f-52fe-46f7-b049-9032c3a11f77
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9140bed2-7028-4676-afbc-30b97e76e10f",
+  "id": "69c3e56f-52fe-46f7-b049-9032c3a11f77",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IExact"
       },
       "rel": "contains",
-      "target": "24dc7bb5-afdf-46a4-9221-ef5621be3624"
+      "target": "4c5d3344-4056-42ea-b04a-b240cfb8a370"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

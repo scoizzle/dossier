@@ -1,6 +1,6 @@
 # Fact 7779cbc7
 
-Store id: 90251675-0779-490a-8562-cf06706d2dfc
+Store id: 9f69360f-5c65-4e16-924a-eb1f25f41924
 
 ## Text
 
@@ -20,7 +20,7 @@ class Ntile(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5948830+00:00`
+- posted_at: `2026-11-09T23:32:02.7250770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 94,
     "symbol": "Ntile"
   },
-  "id": "90251675-0779-490a-8562-cf06706d2dfc",
+  "id": "9f69360f-5c65-4e16-924a-eb1f25f41924",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5948830+00:00"
+    "posted_at": "2026-11-09T23:32:02.7250770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3f1502c7-f8b1-488a-993f-fc0a2ef5e438",
+  "subject_id": "774184e5-0ada-48df-b112-4a0787803dac",
   "subject_name": "django/db/models/functions/window::Ntile",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact d006a5b1
 
-Store id: a2450db9-fcfc-4f9e-898d-f279e6917bbc
+Store id: 33794f87-1e48-4b57-b1fc-37c780ea4281
 
 ## Text
 
@@ -20,7 +20,7 @@ def __and__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4771210+00:00`
+- posted_at: `2026-11-09T23:31:55.7315030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 97,
     "symbol": "Combinable.__and__"
   },
-  "id": "a2450db9-fcfc-4f9e-898d-f279e6917bbc",
+  "id": "33794f87-1e48-4b57-b1fc-37c780ea4281",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4771210+00:00"
+    "posted_at": "2026-11-09T23:31:55.7315030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "43ebae24-9a5e-4549-b6d4-7bd5c20c5c21",
+  "subject_id": "6840a1d5-8710-48f3-820d-7eec188a18d7",
   "subject_name": "django/db/models/expressions::Combinable.__and__",
   "tags": [
     "entity:method"

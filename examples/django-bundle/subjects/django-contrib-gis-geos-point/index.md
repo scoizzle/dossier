@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/point
 
-- Subject: django/contrib/gis/geos/point (id `7ffd81f9-9d11-489f-b08e-0302ff976cfc`)
+- Subject: django/contrib/gis/geos/point (id `a7274132-65ae-417d-8197-6a608fee0e42`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 885 tokens
-- Facts shown: 21 of 30
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1256 tokens
+- Facts shown: 30 of 30
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Initializing using the address returned from the GEOS # createPoint factory. super().__init__(point, srid=srid) [75761794]
 - For example: >>> p = Point((5, 23)) # 2D point, passed in as a tuple >>> p = Point(5, 23, 8) # 3D point, passed as individual parameters """ if x is None: coords = [] elif isinstance(x, (tuple, list)): # Here a tuple or list was passed in under the `x` parameter. coords = x elif isinstance(x, (float, int)) and isinstance(y, (float, int)): # Here X, Y, and (optionally) Z were passed in individually, as # parameters. if isinstance(z, (float, int)): coords = [x, y, z] else: coords = [x, y] else: raise TypeError("Invalid parameters given for Point initialization.") [0914d617]
@@ -32,6 +32,14 @@
 - def __iter__(self): "Iterate over coordinates of this Point." for i in range(len(self)): yield self[i] [6f2e0e73]
 - def __len__(self): "Return the number of dimensions for this Point (either 0, 2 or 3)." if self.empty: return 0 if self.hasz: return 3 else: return 2 [9f23575f]
 
-## Beyond the budget
+## All facts
 
-9 more facts did not fit in the budget: [fc9bf9fc] [b4fb1388] [16a7581a] [30e33a9b] [c68f2efe] [d20e02a8] [678cc730] [bba9bff2] [aa7700c4]
+- [fc9bf9fc] def _from_pickle_wkb(self, wkb): return self._create_empty() if wkb is None else super()._from_pickle_wkb(wkb)
+- [b4fb1388] def _get_single_external(self, index): if index == 0: return self.x elif index == 1: return self.y elif index == 2: return self.z
+- [16a7581a] def _ogr_ptr(self): return ( gdal.geometries.Point._create_empty() if self.empty else super()._ogr_ptr() )
+- [30e33a9b] def _set_list(self, length, items): ptr = self._create_point(length, items) if ptr: srid = self.srid capi.destroy_geom(self.ptr) self._ptr = ptr if srid is not None: self.srid = srid self._post_init() else: # can this happen? raise GEOSException("Geometry resulting from slice deletion was invalid.")
+- [c68f2efe] def _set_single(self, index, value): self._cs.setOrdinate(index, 0, value)
+- [d20e02a8] def _to_pickle_wkb(self): return None if self.empty else super()._to_pickle_wkb()
+- [678cc730] class Point(GEOSGeometry): _minlength = 2 _maxlength = 3 has_cs = True
+- [bba9bff2] from ctypes import c_uint
+- [aa7700c4] from django.contrib.gis import gdal from django.contrib.gis.geos import prototypes as capi from django.contrib.gis.geos.error import GEOSException from django.contrib.gis.geos.geometry import GEOSGeometry

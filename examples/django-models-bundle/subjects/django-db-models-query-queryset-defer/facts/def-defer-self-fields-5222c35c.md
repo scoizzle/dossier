@@ -1,6 +1,6 @@
 # Fact 5222c35c
 
-Store id: 59aea8d4-9d7a-429e-b012-7b8ca724e247
+Store id: 4196c585-cec9-4987-bade-4c2a2759a224
 
 ## Text
 
@@ -20,7 +20,7 @@ def defer(self, *fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6709450+00:00`
+- posted_at: `2026-11-09T23:32:04.5963610+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1981,
     "symbol": "QuerySet.defer"
   },
-  "id": "59aea8d4-9d7a-429e-b012-7b8ca724e247",
+  "id": "4196c585-cec9-4987-bade-4c2a2759a224",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6709450+00:00"
+    "posted_at": "2026-11-09T23:32:04.5963610+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1714f035-6d34-4d2d-88d2-129d56ab9558",
+  "subject_id": "69b5ba28-6205-4c5e-8656-8eac789ba1cd",
   "subject_name": "django/db/models/query::QuerySet.defer",
   "tags": [
     "entity:method"

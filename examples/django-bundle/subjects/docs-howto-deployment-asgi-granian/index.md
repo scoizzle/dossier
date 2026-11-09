@@ -1,8 +1,8 @@
 # docs/howto/deployment/asgi/granian
 
-- Subject: docs/howto/deployment/asgi/granian (id `70ce0c02-cf39-45cd-80e9-82fd7d0655d1`)
+- Subject: docs/howto/deployment/asgi/granian (id `c9e51a77-3c39-4c61-9993-deca8c0e9569`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 438 tokens
 - Facts shown: 14 of 14
 - Conflicts: 0

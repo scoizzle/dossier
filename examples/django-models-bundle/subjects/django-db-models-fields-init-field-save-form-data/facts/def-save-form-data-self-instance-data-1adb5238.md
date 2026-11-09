@@ -1,6 +1,6 @@
 # Fact 1adb5238
 
-Store id: 3258c4fd-82a5-42a7-a8c7-a50e0c72d117
+Store id: aebe707a-e001-429f-baac-03a10899f81c
 
 ## Text
 
@@ -20,7 +20,7 @@ def save_form_data(self, instance, data)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3597190+00:00`
+- posted_at: `2026-11-09T23:31:56.5314340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1139,
     "symbol": "Field.save_form_data"
   },
-  "id": "3258c4fd-82a5-42a7-a8c7-a50e0c72d117",
+  "id": "aebe707a-e001-429f-baac-03a10899f81c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3597190+00:00"
+    "posted_at": "2026-11-09T23:31:56.5314340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6be02c21-01e3-46c9-8280-536b47dfe0b4",
+  "subject_id": "87f3eaaa-843f-4f72-a9e3-df32d7f030e1",
   "subject_name": "django/db/models/fields/__init__::Field.save_form_data",
   "tags": [
     "entity:method"

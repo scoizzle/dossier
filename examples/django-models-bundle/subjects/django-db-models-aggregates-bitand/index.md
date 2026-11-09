@@ -1,9 +1,9 @@
 # django/db/models/aggregates::BitAnd
 
-- Subject: django/db/models/aggregates::BitAnd (id `39414f5e-0627-4ff4-b3c1-7da7c8d05b4e`)
+- Subject: django/db/models/aggregates::BitAnd (id `59034b6b-e582-4e87-962b-95a20fb03f2f`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

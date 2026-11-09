@@ -1,14 +1,14 @@
 # django/contrib/admin/tests
 
-- Subject: django/contrib/admin/tests (id `e7964c6f-9d9f-4edf-bcdb-b427e5f561fd`)
+- Subject: django/contrib/admin/tests (id `02dce00e-4607-455d-b679-03e4ba84cf2f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 17 of 38
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2018 tokens
+- Facts shown: 33 of 38
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - WebDriverWait(self.selenium, timeout).until(callback) [69bb4cac]
 - `root_element` allow restriction to a pre-selected node. """ from selenium.webdriver.common.by import By [4a090968]
@@ -28,6 +28,21 @@
 - def admin_login(self, username, password, login_url="/admin/"): """ Log in to the admin. """ from selenium.webdriver.common.by import By [784787a0]
 - def assertCountSeleniumElements(self, selector, count, root_element=None): """ Assert number of matches for a CSS selector. [4171abff]
 
-## Beyond the budget
+## All facts
 
-16 more facts did not fit in the budget: [120c20b2] [5ac080bb] [4a8e4867] [9050ebbb] [f03cf946] [afe8ebac] [4d14e576] [a4c6c553] [72f0a45c] [03f013bc] [87c1048d] [5d8b07bb] [a66b34ca8afbcd43] [f82d938e] [710f9c6e] [e04bc6d6]
+- [120c20b2] def assertSelectOptions(self, selector, values): """ Assert that the <SELECT> widget identified by `selector` has the options with the given `values`. """ self._assertOptionsValues("%s > option" % selector, values)
+- [5ac080bb] def assertSelectedOptions(self, selector, values): """ Assert that the <SELECT> widget identified by `selector` has the selected options with the given `values`. """ self._assertOptionsValues("%s > option:checked" % selector, values)
+- [4a8e4867] def deselect_option(self, selector, value): """ Deselect the <OPTION> with the value `value` inside the <SELECT> widget identified by the CSS selector `selector`. """ from selenium.webdriver.common.by import By from selenium.webdriver.support.ui import Select
+- [9050ebbb] def is_disabled(self, selector): """ Return True if the element identified by `selector` has the `disabled` attribute. """ from selenium.webdriver.common.by import By
+- [f03cf946] def tearDown(self): # Ensure that no CSP violations were logged in the browser. self.assertEqual(self.get_browser_logs(source="security"), []) super().tearDown()
+- [afe8ebac] def trigger_resize(self): width = self.selenium.get_window_size()["width"] height = self.selenium.get_window_size()["height"] self.selenium.set_window_size(width + 1, height) self.wait_page_ready() self.selenium.set_window_size(width, height) self.wait_page_ready()
+- [4d14e576] def wait_for(self, css_selector, timeout=10): """ Block until a CSS selector is found on the page. """ from selenium.webdriver.common.by import By from selenium.webdriver.support import expected_conditions as ec
+- [a4c6c553] def wait_for_and_switch_to_popup(self, num_windows=2, timeout=10): """ Block until `num_windows` are present and are ready (usually 2, but can be overridden in the case of pop-ups opening other pop-ups). Switch the current window to the new pop-up. """ self.wait_until(lambda d: len(d.window_handles) == num_windows, timeout) self.selenium.switch_to.window(self.selenium.window_handles[-1]) self.wait_page_ready()
+- [72f0a45c] def wait_for_text(self, css_selector, text, timeout=10): """ Block until the text is found in the CSS selector. """ from selenium.webdriver.common.by import By from selenium.webdriver.support import expected_conditions as ec
+- [03f013bc] def wait_page_ready(self, timeout=10): """ Block until the page is ready. """ self.wait_until( lambda driver: driver.execute_script("return document.readyState;") == "complete", timeout, )
+- [87c1048d] def wait_until(self, callback, timeout=10): """ Block the execution of the tests until the specified callback returns a value that is not falsy. This method can be called, for example, after clicking a link or submitting a form. See the other public methods that call this function for more details. """ from selenium.webdriver.support.wait import WebDriverWait
+- [5d8b07bb] def wait_until_invisible(self, css_selector, timeout=10): """ Block until the element described by the CSS selector is invisible. """ from selenium.webdriver.common.by import By from selenium.webdriver.support import expected_conditions as ec
+- [a66b34ca8afbcd43] # Make unittest ignore frames in this module when reporting failures. __unittest = True
+- [f82d938e] @modify_settings( MIDDLEWARE={"append": "django.middleware.csp.ContentSecurityPolicyMiddleware"} ) @override_settings( SECURE_CSP={ "default-src": [CSP.NONE], "connect-src": [CSP.SELF], "img-src": [CSP.SELF], "script-src": [CSP.SELF], "style-src": [CSP.SELF], }, ) class AdminSeleniumTestCase(SeleniumTestCase, StaticLiveServerTestCase): available_apps = [ "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes", "django.contrib.sessions", "django.contrib.sites", ]
+- [710f9c6e] from contextlib import contextmanager
+- [e04bc6d6] from django.contrib.staticfiles.testing import StaticLiveServerTestCase from django.test import modify_settings, override_settings from django.test.selenium import SeleniumTestCase from django.utils.csp import CSP from django.utils.translation import gettext as _

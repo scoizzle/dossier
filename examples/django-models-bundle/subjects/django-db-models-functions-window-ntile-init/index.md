@@ -1,9 +1,9 @@
 # django/db/models/functions/window::Ntile.__init__
 
-- Subject: django/db/models/functions/window::Ntile.__init__ (id `a0cdf2d0-6956-4754-8522-18fcb38ecc5e`)
+- Subject: django/db/models/functions/window::Ntile.__init__ (id `f560fb58-6ebc-4c18-9eb1-64432e9f41c5`)
 - Kind: method
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 68b8efb4
 
-Store id: 5315012f-812c-4283-b42d-717faab8f0a4
+Store id: 9766a943-5c97-435e-9ad3-4388dfaca52c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Manager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5586340+00:00`
+- posted_at: `2026-11-09T23:32:03.7342610+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5315012f-812c-4283-b42d-717faab8f0a4",
+  "id": "9766a943-5c97-435e-9ad3-4388dfaca52c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5586340+00:00"
+    "posted_at": "2026-11-09T23:32:03.7342610+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Manager"
       },
       "rel": "contains",
-      "target": "fdec2446-31cb-4287-9cb2-0d0d76537d56"
+      "target": "7d9971a0-d774-4be1-b3e6-19765fc0dc84"
     }
   ],
   "status": "live",
-  "subject_id": "db0c2f2d-3473-4386-8f36-4d861124f3a4",
+  "subject_id": "5e85a5f7-e460-4775-bcc8-e7045c95860f",
   "subject_name": "django/db/models/manager",
   "tags": [
     "entity:class"

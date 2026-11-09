@@ -1,14 +1,14 @@
 # django/contrib/gis/forms/fields
 
-- Subject: django/contrib/gis/forms/fields (id `3776036e-fd31-4067-98c1-a9576757a26f`)
+- Subject: django/contrib/gis/forms/fields (id `5060fe8b-43f7-445d-a1ff-25f88f1031b1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 14 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1298 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Ensuring that the geometry is of the correct type (indicated # using the OGC string label). if ( str(geom.geom_type).upper() != self.geom_type and self.geom_type != "GEOMETRY" ): raise ValidationError( self.error_messages["invalid_geom_type"], code="invalid_geom_type" ) [99d4ed63]
 - # Only do a geographic comparison if both values are available if initial and data: data.transform(initial.srid) # If the initial value was not added by the browser, the geometry # provided may be slightly different, the first time it is saved. # The comparison is done with a very low tolerance. return not initial.equals_exact(data, tolerance=0.000001) else: # Check for change of state of existence return bool(initial) != bool(data) [a4f31ee2]
@@ -25,6 +25,15 @@
 - widget = OpenLayersWidget geom_type = "GEOMETRY" max_geom_collections = MAX_GEOM_COLLECTIONS [845cfe38]
 - class GeometryCollectionField(GeometryField): geom_type = "GEOMETRYCOLLECTION" [a9ff1542]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [d795c3d5] [9b905f3b] [2f3bc0d9] [dcf83446] [d3210c32] [310b509e] [385b20b1] [2c2273b5] [193bc16b] [985e762d]
+- [d795c3d5] default_error_messages = { "required": _("No geometry value provided."), "invalid_geom": _("Invalid geometry value."), "invalid_geom_type": _("Invalid geometry type."), "transform_error": _( "An error occurred when transforming the geometry " "to the SRID of the geometry form field." ), }
+- [9b905f3b] class GeometryField(forms.Field): """ This is the basic form field for a Geometry. Any textual input that is accepted by GEOSGeometry is accepted by this form. By default, this includes WKT, HEXEWKB, WKB (in a buffer), and GeoJSON.
+- [2f3bc0d9] class LineStringField(GeometryField): geom_type = "LINESTRING"
+- [dcf83446] class MultiLineStringField(GeometryField): geom_type = "MULTILINESTRING"
+- [d3210c32] class MultiPointField(GeometryField): geom_type = "MULTIPOINT"
+- [310b509e] class MultiPolygonField(GeometryField): geom_type = "MULTIPOLYGON"
+- [385b20b1] class PointField(GeometryField): geom_type = "POINT"
+- [2c2273b5] class PolygonField(GeometryField): geom_type = "POLYGON"
+- [193bc16b] from .widgets import OpenLayersWidget
+- [985e762d] from django import forms from django.contrib.gis.geos import GEOSException, GEOSGeometry from django.contrib.gis.geos.prototypes.io import MAX_GEOM_COLLECTIONS from django.core.exceptions import ValidationError from django.utils.translation import gettext_lazy as _

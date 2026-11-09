@@ -1,14 +1,14 @@
 # django/core/mail/backends/smtp
 
-- Subject: django/core/mail/backends/smtp (id `dc685914-7e11-47f4-9680-ea9ded4f1d25`)
+- Subject: django/core/mail/backends/smtp (id `05edae64-49de-4159-b1c0-2545e55e6641`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 9 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2133 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Don't set connection until it's fully configured. self.connection = self._partial_connection self._partial_connection = None [f05fca14]
 - # TLS/SSL are mutually exclusive, so only attempt TLS over # non-secure connections. if not self.use_ssl and self.use_tls: self._partial_connection.starttls(context=self.ssl_context) if self.username and self.password: self._partial_connection.login(self.username, self.password) [4b093cd7]
@@ -20,6 +20,20 @@
 - mailbox = mailboxes[0] if force_ascii and mailbox.domain and not mailbox.domain.isascii(): # Re-compose an addr-spec with the IDNA encoded domain. domain = punycode(mailbox.domain) return str(Address(username=mailbox.local_part, domain=domain)) else: return mailbox.addr_spec [8d3c352c]
 - @property def connection_class(self): return smtplib.SMTP_SSL if self.use_ssl else smtplib.SMTP [dba81be0]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [6543d7e7] [04113604] [babcc13d] [4a57748b] [6ccb3926] [8b324f96] [512aa2fc] [c05def09] [b4be8f0a] [9f99b205] [0577243a] [e67ad5c5] [4509b9f1] [1a820206] [2144e37b]
+- [6543d7e7] mailboxes = parsed.all_mailboxes if len(mailboxes) != 1: raise ValueError(f"Invalid address {address!r}: must be a single address")
+- [04113604] self.host = host self.port = port self.username = username self.password = password self.use_tls = use_tls if use_tls is not None else False self.use_ssl = use_ssl if use_ssl is not None else False self.timeout = timeout self.ssl_keyfile = ssl_keyfile self.ssl_certfile = ssl_certfile if self.host is None: raise InvalidMailer("OPTIONS must define 'host'.", alias=self.alias) if self.use_ssl and self.use_tls: raise InvalidMailer( "The 'use_ssl' and 'use_tls' OPTIONS are incompatible. " "Set at most one of them to True.", alias=self.alias, ) if self.port is None: if self.use_ssl: self.port = 465 elif self.use_tls: self.port = 587 else: self.port = 25
+- [babcc13d] super().__init__(**kwargs) self.fail_silently = fail_silently self.connection = None self._partial_connection = None self._lock = threading.RLock()
+- [4a57748b] @cached_property def ssl_context(self): if self.ssl_certfile or self.ssl_keyfile: ssl_context = ssl.SSLContext(protocol=ssl.PROTOCOL_TLS_CLIENT) ssl_context.load_cert_chain(self.ssl_certfile, self.ssl_keyfile) return ssl_context else: return ssl.create_default_context()
+- [6ccb3926] def __init__( self, host=None, port=None, username=None, password=None, use_tls=None, fail_silently=False, use_ssl=None, timeout=None, ssl_keyfile=None, ssl_certfile=None, **kwargs, ): # RemovedInDjango2028Warning. if "alias" not in kwargs: msg = ( "Directly creating EmailBackend instances is deprecated. " "Use mail.mailers instead." ) warn_about_external_use(msg, RemovedInDjango2028Warning)
+- [8b324f96] def _close_connection(self, connection): try: connection.quit() except (ssl.SSLError, smtplib.SMTPServerDisconnected): # This happens when calling quit() on a TLS connection # sometimes, or when the connection was already disconnected # by the server. connection.close() except smtplib.SMTPException: if self.fail_silently: return raise
+- [512aa2fc] def _send(self, email_message): """A helper method that does the actual sending.""" if not email_message.recipients(): return False from_email = self.prep_address(email_message.from_email) recipients = [self.prep_address(addr) for addr in email_message.recipients()] message = email_message.message(policy=email.policy.SMTP) try: self.connection.sendmail(from_email, recipients, message.as_bytes()) except smtplib.SMTPException: if not self.fail_silently: raise return False return True
+- [c05def09] def close(self): """Close the connection to the email server.""" if self._partial_connection is not None: try: self._close_connection(self._partial_connection) finally: self._partial_connection = None if self.connection is not None: try: self._close_connection(self.connection) finally: self.connection = None
+- [b4be8f0a] def open(self): """ Ensure an open connection to the email server. Return whether or not a new connection was required (True or False) or None if an exception passed silently. """ if self.connection: # Nothing to do if the connection is already open. return False
+- [9f99b205] def prep_address(self, address, force_ascii=True): """ Return the addr-spec portion of an email address. Raises ValueError for invalid addresses, including CR/NL injection.
+- [0577243a] def send_messages(self, email_messages): """ Send one or more EmailMessage objects and return the number of email messages sent. """ if not email_messages: return 0 with self._lock: new_conn_created = self.open() if not self.connection or new_conn_created is None: # We failed silently on open(). # Trying to send would be pointless. return 0 num_sent = 0 try: for message in email_messages: sent = self._send(message) if sent: num_sent += 1 finally: if new_conn_created: self.close() return num_sent
+- [e67ad5c5] """SMTP email backend class."""
+- [4509b9f1] class EmailBackend(BaseEmailBackend): """ A wrapper that manages the SMTP network connection. """
+- [1a820206] from django.conf import settings from django.core.mail import InvalidMailer from django.core.mail.backends.base import BaseEmailBackend from django.core.mail.utils import DNS_NAME from django.utils.deprecation import RemovedInDjango2028Warning, warn_about_external_use from django.utils.encoding import force_str, punycode from django.utils.functional import cached_property
+- [2144e37b] import email.policy import smtplib import ssl import threading from email.headerregistry import Address, AddressHeader

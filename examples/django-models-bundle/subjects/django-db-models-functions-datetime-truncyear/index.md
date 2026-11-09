@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::TruncYear
 
-- Subject: django/db/models/functions/datetime::TruncYear (id `cdf4b9e6-7ebf-4def-ac59-cf7f0b59427b`)
+- Subject: django/db/models/functions/datetime::TruncYear (id `d8aabd1f-2de6-4cdb-a2be-11bc7e9ed90c`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

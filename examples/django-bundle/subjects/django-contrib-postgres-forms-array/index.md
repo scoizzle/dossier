@@ -1,14 +1,14 @@
 # django/contrib/postgres/forms/array
 
-- Subject: django/contrib/postgres/forms/array (id `bba9e815-936c-4c80-80b7-2d949ae5e490`)
+- Subject: django/contrib/postgres/forms/array (id `efa44ed4-b919-4b02-81fe-f169b7229be1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 12 of 26
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1695 tokens
+- Facts shown: 25 of 26
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @property def is_hidden(self): return self.widget.is_hidden [e151b4126b88bc16-2]
 - @property def media(self): return self.widget.media [dc077395698011df-2]
@@ -23,6 +23,18 @@
 - def get_context(self, name, value, attrs=None): attrs = {} if attrs is None else attrs context = super().get_context(name, value, attrs) if self.is_localized: self.widget.is_localized = self.is_localized value = value or [] context["widget"]["subwidgets"] = [] final_attrs = self.build_attrs(attrs) id_ = final_attrs.get("id") for i in range(max(len(value), self.size)): try: widget_value = value[i] except IndexError: widget_value = None if id_: final_attrs = {**final_attrs, "id": "%s_%s" % (id_, i)} context["widget"]["subwidgets"].append( self.widget.get_context(name + "_%s" % i, widget_value, final_attrs)[ "widget" ] ) return context [8e42e90b]
 - def id_for_label(self, id_): # See the comment for RadioSelect.id_for_label() if id_: id_ += "_0" return id_ [09f5a8c3]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [7e82ddb9] [a932828d] [4b4d501c] [cd75d472] [6fd28d47] [dbcee69e] [96e89215] [0c6dc7be] [6fdd7a81] [367bac30] [c072f89b] [aa18ab2d] [e749c48e]
+- [7e82ddb9] def has_changed(self, initial, data): try: data = self.to_python(data) except ValidationError: pass else: data, _ = self._remove_trailing_nulls(data) if initial in self.empty_values and data in self.empty_values: return False return super().has_changed(initial, data)
+- [a932828d] def has_changed(self, initial, data): try: value = self.to_python(data) except ValidationError: pass else: if initial in self.empty_values and value in self.empty_values: return False return super().has_changed(initial, data)
+- [4b4d501c] def prepare_value(self, value): if isinstance(value, list): return self.delimiter.join( str(self.base_field.prepare_value(v)) for v in value ) return value
+- [cd75d472] def run_validators(self, value): super().run_validators(value) errors = [] for index, item in enumerate(value): try: self.base_field.run_validators(item) except ValidationError as error: errors.append( prefix_validation_error( error, prefix=self.error_messages["item_invalid"], code="item_invalid", params={"nth": index + 1}, ) ) if errors: raise ValidationError(errors)
+- [6fd28d47] def to_python(self, value): if isinstance(value, list): items = value elif value: items = value.split(self.delimiter) else: items = [] errors = [] values = [] for index, item in enumerate(items): try: values.append(self.base_field.to_python(item)) except ValidationError as error: errors.append( prefix_validation_error( error, prefix=self.error_messages["item_invalid"], code="item_invalid", params={"nth": index + 1}, ) ) if errors: raise ValidationError(errors) return values
+- [dbcee69e] def to_python(self, value): value = super().to_python(value) return [self.base_field.to_python(item) for item in value]
+- [96e89215] def value_from_datadict(self, data, files, name): return [ self.widget.value_from_datadict(data, files, "%s_%s" % (name, index)) for index in range(self.size) ]
+- [0c6dc7be] def value_omitted_from_data(self, data, files, name): return all( self.widget.value_omitted_from_data(data, files, "%s_%s" % (name, index)) for index in range(self.size) )
+- [6fdd7a81] class SimpleArrayField(forms.CharField): default_error_messages = { "item_invalid": _("Item %(nth)s in the array did not validate:"), }
+- [367bac30] class SplitArrayField(forms.Field): default_error_messages = { "item_invalid": _("Item %(nth)s in the array did not validate:"), }
+- [c072f89b] class SplitArrayWidget(forms.Widget): template_name = "postgres/widgets/split_array.html"
+- [aa18ab2d] from django import forms from django.contrib.postgres.utils import prefix_validation_error from django.contrib.postgres.validators import ( ArrayMaxLengthValidator, ArrayMinLengthValidator, ) from django.core.exceptions import ValidationError from django.utils.translation import gettext_lazy as _
+- [e749c48e] import copy from itertools import chain

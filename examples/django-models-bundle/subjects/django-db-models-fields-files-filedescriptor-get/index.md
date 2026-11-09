@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FileDescriptor.__get__
 
-- Subject: django/db/models/fields/files::FileDescriptor.__get__ (id `92c41803-27ad-428e-b5a8-220d0534ed76`)
+- Subject: django/db/models/fields/files::FileDescriptor.__get__ (id `acc2a418-4eb2-4862-9760-f4a2ea9cd423`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

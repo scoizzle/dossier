@@ -1,14 +1,14 @@
 # django/contrib/auth/checks
 
-- Subject: django/contrib/auth/checks (id `61627256-4c10-4d05-ac96-622f3f9c6726`)
+- Subject: django/contrib/auth/checks (id `dc3d2265-74ab-4858-951d-6d1ead28727e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 10 of 17
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1818 tokens
+- Facts shown: 17 of 17
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Check that REQUIRED_FIELDS is a list if not isinstance(cls.REQUIRED_FIELDS, (list, tuple)): errors.append( checks.Error( "'REQUIRED_FIELDS' must be a list or tuple.", obj=cls, id="auth.E001", ) ) [4f6f7a00]
 - # Check that the USERNAME FIELD isn't included in REQUIRED_FIELDS. if cls.USERNAME_FIELD in cls.REQUIRED_FIELDS: errors.append( checks.Error( "The field named as the 'USERNAME_FIELD' " "for a custom user model must not be included in 'REQUIRED_FIELDS'.", hint=( "The 'USERNAME_FIELD' is currently set to '%s', you " "should remove '%s' from the 'REQUIRED_FIELDS'." % (cls.USERNAME_FIELD, cls.USERNAME_FIELD) ), obj=cls, id="auth.E002", ) ) [a74e8abc]
@@ -21,6 +21,12 @@
 - return errors [b2c21f6739c80fd1]
 - def _subclass_index(class_path, candidate_paths): """ Return the index of dotted class path (or a subclass of that class) in a list of candidate paths. If it does not exist, return -1. """ cls = import_string(class_path) for index, path in enumerate(candidate_paths): try: candidate_cls = import_string(path) if issubclass(candidate_cls, cls): return index except (ImportError, TypeError): continue return -1 [cafaea2e]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [e8257c80] [e21d5d3d] [8d6841f8] [d8e84ac8] [fbad6d1d] [63396db3] [a79448688635df7c]
+- [e8257c80] for model in models: opts = model._meta builtin_permissions = dict(_get_builtin_permissions(opts)) # Check builtin permission name length. max_builtin_permission_name_length = ( max(len(name) for name in builtin_permissions.values()) if builtin_permissions else 0 ) if max_builtin_permission_name_length > permission_name_max_length: verbose_name_max_length = permission_name_max_length - ( max_builtin_permission_name_length - len(opts.verbose_name_raw) ) errors.append( checks.Error( "The verbose_name of model '%s' must be at most %d " "characters for its builtin permission names to be at " "most %d characters." % (opts.label, verbose_name_max_length, permission_name_max_length), obj=model, id="auth.E007", ) ) # Check builtin permission codename length. max_builtin_permission_codename_length = ( max(len(codename) for codename in builtin_permissions.keys()) if builtin_permissions else 0 ) if max_builtin_permission_codename_length > permission_codename_max_length: model_name_max_length = permission_codename_max_length - ( max_builtin_permission_codename_length - len(opts.model_name) ) errors.append( checks.Error( "The name of model '%s' must be at most %d characters " "for its builtin permission codenames to be at most %d " "characters." % ( opts.label, model_name_max_length, permission_codename_max_length, ), obj=model, id="auth.E011", ) ) codenames = set() for codename, name in opts.permissions: # Check custom permission name length. if len(name) > permission_name_max_length: errors.append( checks.Error( "The permission named '%s' of model '%s' is longer " "than %d characters." % ( name, opts.label, permission_name_max_length, ), obj=model, id="auth.E008", ) ) # Check custom permission codename length. if len(codename) > permission_codename_max_length: errors.append( checks.Error( "The permission codenamed '%s' of model '%s' is " "longer than %d characters." % ( codename, opts.label, permission_codename_max_length, ), obj=model, id="auth.E012", ) ) # Check custom permissions codename clashing. if codename in builtin_permissions: errors.append( checks.Error( "The permission codenamed '%s' clashes with a builtin " "permission for model '%s'." % (codename, opts.label), obj=model, id="auth.E005", ) ) elif codename in codenames: errors.append( checks.Error( "The permission codenamed '%s' is duplicated for " "model '%s'." % (codename, opts.label), obj=model, id="auth.E006", ) ) codenames.add(codename)
+- [e21d5d3d] def check_middleware(app_configs, **kwargs): errors = []
+- [8d6841f8] def check_models_permissions(app_configs, **kwargs): if app_configs is None: models = apps.get_models() else: models = chain.from_iterable( app_config.get_models() for app_config in app_configs )
+- [d8e84ac8] def check_user_model(app_configs, **kwargs): if app_configs is None: cls = apps.get_model(settings.AUTH_USER_MODEL) else: app_label, model_name = settings.AUTH_USER_MODEL.split(".") for app_config in app_configs: if app_config.label == app_label: cls = app_config.get_model(model_name) break else: # Checks might be run against a set of app configs that don't # include the specified user model. In this case we simply don't # perform the checks defined below. return []
+- [fbad6d1d] from .management import _get_builtin_permissions
+- [63396db3] from django.apps import apps from django.conf import settings from django.core import checks from django.utils.module_loading import import_string
+- [a79448688635df7c] from itertools import chain

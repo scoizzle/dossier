@@ -1,6 +1,6 @@
 # Fact b8e756bb
 
-Store id: 8e26cc1c-b623-4de1-a7c6-8237dadc0615
+Store id: 0f47af0b-ce02-4731-999a-e1efd00a1de7
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_forward_many_to_many_manager(superclass, rel, reverse)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8502050+00:00`
+- posted_at: `2026-11-09T23:31:59.3367110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1075,
     "symbol": "create_forward_many_to_many_manager"
   },
-  "id": "8e26cc1c-b623-4de1-a7c6-8237dadc0615",
+  "id": "0f47af0b-ce02-4731-999a-e1efd00a1de7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8502050+00:00"
+    "posted_at": "2026-11-09T23:31:59.3367110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2a5952d-cd1f-470c-afee-e5e776292e55",
+  "subject_id": "b7cfffd0-e556-4717-bf9e-15d435ef0f30",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager",
   "tags": [
     "entity:function"

@@ -1,6 +1,6 @@
 # Fact 79f65729
 
-Store id: dc94464b-e43d-4343-ac72-fd4bb26e6519
+Store id: 4a87c7e5-1c39-483b-8149-2eafa3d41d26
 
 ## Text
 
@@ -20,7 +20,7 @@ def _subclasses(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7441770+00:00`
+- posted_at: `2026-11-09T23:31:56.9116250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2948,
     "symbol": "AutoFieldMeta._subclasses"
   },
-  "id": "dc94464b-e43d-4343-ac72-fd4bb26e6519",
+  "id": "4a87c7e5-1c39-483b-8149-2eafa3d41d26",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7441770+00:00"
+    "posted_at": "2026-11-09T23:31:56.9116250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "abdcfe2e-89f8-4809-b10e-adafe61491bc",
+  "subject_id": "fc99b140-9ac6-4844-b464-3f593364a809",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMeta._subclasses",
   "tags": [
     "entity:method",

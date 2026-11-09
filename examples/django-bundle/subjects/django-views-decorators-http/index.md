@@ -1,14 +1,14 @@
 # django/views/decorators/http
 
-- Subject: django/views/decorators/http (id `70d04ccb-8270-4efd-904c-0fb1d8794ea7`)
+- Subject: django/views/decorators/http (id `4aa5e23d-3287-4f45-9e7c-a3e618d65505`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 14 of 30
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1382 tokens
+- Facts shown: 27 of 30
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @wraps(func) async def inner(request, *args, **kwargs): if request.method not in request_method_list: response = HttpResponseNotAllowed(request_method_list) log_response( "Method Not Allowed (%s): %s", request.method, request.path, response=response, request=request, ) return response return await func(request, *args, **kwargs) [76753044]
 - @wraps(func) async def inner(request, *args, **kwargs): response, res_etag, res_last_modified = _pre_process_request( request, *args, **kwargs ) if response is None: response = await func(request, *args, **kwargs) _post_process_request(request, response, res_etag, res_last_modified) return response [64ed0dc6]
@@ -25,6 +25,18 @@
 - This decorator will either pass control to the wrapped view function or return an HTTP 304 response (unmodified) or 412 response (precondition failed), depending upon the request method. In either case, the decorator will add the generated ETag and Last-Modified headers to the response if the headers aren't already set and if the request's method is safe. """ [d7395ce4]
 - def decorator(func): def _pre_process_request(request, *args, **kwargs): # Compute values (if any) for the requested resource. res_last_modified = None if last_modified_func: if dt := last_modified_func(request, *args, **kwargs): if not timezone.is_aware(dt): dt = timezone.make_aware(dt, datetime.UTC) res_last_modified = int(dt.timestamp()) # The value from etag_func() could be quoted or unquoted. res_etag = etag_func(request, *args, **kwargs) if etag_func else None res_etag = quote_etag(res_etag) if res_etag is not None else None response = get_conditional_response( request, etag=res_etag, last_modified=res_last_modified, ) return response, res_etag, res_last_modified [294c2a35]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [b9afc59d556f7366] [021b5df2d691cbd2-10] [021b5df2d691cbd2-11] [dc03318e] [da646f98] [c151a1e0] [430379cf] [0ed1ec6e] [47f95029] [0b764db1] [6ec31215] [736b18ee] [ac05727b]
+- [b9afc59d556f7366] def decorator(func): if iscoroutinefunction(func):
+- [021b5df2d691cbd2-10] return decorator
+- [021b5df2d691cbd2-11] return decorator
+- [dc03318e] """ Decorators for views based on HTTP headers. """
+- [da646f98] # Shortcut decorators for common cases based on ETag or Last-Modified only def etag(etag_func): return condition(etag_func=etag_func)
+- [c151a1e0] conditional_page = decorator_from_middleware(ConditionalGetMiddleware)
+- [430379cf] def condition(etag_func=None, last_modified_func=None): """ Decorator to support conditional retrieval (or change) for a view function.
+- [0ed1ec6e] def last_modified(last_modified_func): return condition(last_modified_func=last_modified_func)
+- [47f95029] def require_http_methods(request_method_list): """ Decorator to make a view only accept particular request methods. Usage::
+- [0b764db1] from django.http import HttpResponseNotAllowed from django.middleware.http import ConditionalGetMiddleware from django.utils import timezone from django.utils.cache import get_conditional_response from django.utils.decorators import decorator_from_middleware from django.utils.http import http_date, quote_etag from django.utils.log import log_response
+- [6ec31215] import datetime from functools import wraps from inspect import iscoroutinefunction
+- [736b18ee] require_GET = require_http_methods(["GET"]) require_GET.__doc__ = "Decorator to require that a view only accepts the GET method."
+- [ac05727b] require_safe = require_http_methods(["GET", "HEAD"]) require_safe.__doc__ = ( "Decorator to require that a view only accepts safe methods: GET and HEAD." )

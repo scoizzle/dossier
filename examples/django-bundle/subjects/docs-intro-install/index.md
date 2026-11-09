@@ -1,14 +1,14 @@
 # docs/intro/install
 
-- Subject: docs/intro/install (id `c823011a-1b75-4efb-9158-b1145c2d1b3d`)
+- Subject: docs/intro/install (id `d18e4582-b344-441e-98d1-85cd2b7ab54a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 23 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 946 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> import django >>> print(django.get_version()) |version| [0cadd575]
 - If you do either of the first two steps, keep an eye out for parts of the documentation marked **new in development version**. That phrase flags features that are only available in development versions of Django, and they likely won't work with an official release. [1aef9584]
@@ -34,6 +34,7 @@
 - Verifying ========= [9d4faa78]
 - You may have another version of Django installed. [7ecfd7ff]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [ba87971d] [ec76bd4b]
+- [ba87971d] You can verify that Python is installed by typing ``python`` from your shell; you should see something like:
+- [ec76bd4b] You've got three options to install Django:

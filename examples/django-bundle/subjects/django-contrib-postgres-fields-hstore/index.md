@@ -1,14 +1,14 @@
 # django/contrib/postgres/fields/hstore
 
-- Subject: django/contrib/postgres/fields/hstore (id `47ede360-97a8-4729-9905-e9a240c7e6e9`)
+- Subject: django/contrib/postgres/fields/hstore (id `f8f66362-98fd-4f53-9cdf-d5fff0209b0c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 821 tokens
-- Facts shown: 21 of 22
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 930 tokens
+- Facts shown: 22 of 22
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if isinstance(value, dict): prep_value = {} for key, val in value.items(): key = str(key) if val is not None: val = str(val) prep_value[key] = val value = prep_value [a5ac71ee]
 - if isinstance(value, list): value = [str(item) for item in value] [f54c6aee]
@@ -32,6 +32,6 @@
 - class KeyTransformFactory: def __init__(self, key_name): self.key_name = key_name [f81964eaee3a6789]
 - import json [5766bf5bad9de4d2-8]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [f112f388]
+- [f112f388] from django.contrib.postgres import forms, lookups from django.contrib.postgres.fields.array import ArrayField from django.contrib.postgres.utils import CheckPostgresInstalledMixin from django.core import exceptions from django.db.models import Field, TextField, Transform from django.db.models.fields.mixins import CheckFieldDefaultMixin from django.utils.translation import gettext_lazy as _

@@ -1,8 +1,8 @@
 # django/contrib/sitemaps/apps
 
-- Subject: django/contrib/sitemaps/apps (id `3fb2b442-3b76-44f7-b997-f7baa3634d3b`)
+- Subject: django/contrib/sitemaps/apps (id `a8de6459-132d-46a4-8c9d-78609b470734`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 80 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

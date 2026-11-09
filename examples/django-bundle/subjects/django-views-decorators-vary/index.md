@@ -1,8 +1,8 @@
 # django/views/decorators/vary
 
-- Subject: django/views/decorators/vary (id `8348679c-2edc-49a5-aeb5-3f8ba3bfee1a`)
+- Subject: django/views/decorators/vary (id `51212e32-7b52-41a6-a243-cc5310465a57`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 325 tokens
 - Facts shown: 11 of 12
 - Conflicts: 0

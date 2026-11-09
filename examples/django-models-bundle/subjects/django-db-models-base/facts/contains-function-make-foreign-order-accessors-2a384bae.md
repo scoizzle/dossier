@@ -1,6 +1,6 @@
 # Fact 2a384bae
 
-Store id: 9cd58d02-3c7e-452f-978c-9e3d9f6e7377
+Store id: efa54b56-670d-4fb3-8558-7ee7bfab0046
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function make_foreign_order_accessors
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3699300+00:00`
+- posted_at: `2026-11-09T23:31:53.7768270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9cd58d02-3c7e-452f-978c-9e3d9f6e7377",
+  "id": "efa54b56-670d-4fb3-8558-7ee7bfab0046",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3699300+00:00"
+    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "make_foreign_order_accessors"
       },
       "rel": "contains",
-      "target": "e77cc1e0-ee8d-4252-beab-4b410e966096"
+      "target": "76d8360b-0010-4bcd-9c64-acd6eb68cfe7"
     }
   ],
   "status": "live",
-  "subject_id": "70b750e6-0b0a-43ce-80a5-3403f95c66e3",
+  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:function"

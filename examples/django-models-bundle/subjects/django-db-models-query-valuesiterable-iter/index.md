@@ -1,9 +1,9 @@
 # django/db/models/query::ValuesIterable.__iter__
 
-- Subject: django/db/models/query::ValuesIterable.__iter__ (id `f7e1a277-73db-4ac9-9444-2b36a2a7f385`)
+- Subject: django/db/models/query::ValuesIterable.__iter__ (id `135f2986-099a-4b96-bc17-f88733773675`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

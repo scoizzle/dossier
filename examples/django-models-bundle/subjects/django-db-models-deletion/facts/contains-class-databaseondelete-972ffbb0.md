@@ -1,6 +1,6 @@
 # Fact 972ffbb0
 
-Store id: 685bd617-abfe-4e37-8ff4-716c61e46925
+Store id: 2a22a4e0-8a3d-42f5-b15a-584b066b3423
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DatabaseOnDelete
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0946700+00:00`
+- posted_at: `2026-11-09T23:31:55.1285340+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "685bd617-abfe-4e37-8ff4-716c61e46925",
+  "id": "2a22a4e0-8a3d-42f5-b15a-584b066b3423",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0946700+00:00"
+    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DatabaseOnDelete"
       },
       "rel": "contains",
-      "target": "beb0446a-c2e5-4a43-a708-1cc69624c171"
+      "target": "4b1d0377-ae61-4a39-87e7-9897bb1faa63"
     }
   ],
   "status": "live",
-  "subject_id": "9dd01ff9-dc4a-434f-bc10-89b57d3d6bb3",
+  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:class"

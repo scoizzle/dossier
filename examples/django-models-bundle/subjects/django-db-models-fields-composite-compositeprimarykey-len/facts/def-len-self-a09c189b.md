@@ -1,6 +1,6 @@
 # Fact a09c189b
 
-Store id: 7adbf0cc-6966-4d3a-b625-1b595d8eea55
+Store id: 81e1cad7-e3b8-4338-a62e-1b44b6d435a6
 
 ## Text
 
@@ -20,7 +20,7 @@ def __len__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0078170+00:00`
+- posted_at: `2026-11-09T23:31:57.1343430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 103,
     "symbol": "CompositePrimaryKey.__len__"
   },
-  "id": "7adbf0cc-6966-4d3a-b625-1b595d8eea55",
+  "id": "81e1cad7-e3b8-4338-a62e-1b44b6d435a6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0078170+00:00"
+    "posted_at": "2026-11-09T23:31:57.1343430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "785b8113-4fdf-479e-a67d-bf9f66bd03b2",
+  "subject_id": "7ce8dd8b-2d86-4115-ba9a-a0370c8530a7",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.__len__",
   "tags": [
     "entity:method"

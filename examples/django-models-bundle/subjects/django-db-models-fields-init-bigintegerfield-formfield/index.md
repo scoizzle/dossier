@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BigIntegerField.formfield
 
-- Subject: django/db/models/fields/__init__::BigIntegerField.formfield (id `82285f45-0bc0-499c-a0a4-040f97c1f2de`)
+- Subject: django/db/models/fields/__init__::BigIntegerField.formfield (id `5d5db045-7301-4fa7-a880-f3650282302d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

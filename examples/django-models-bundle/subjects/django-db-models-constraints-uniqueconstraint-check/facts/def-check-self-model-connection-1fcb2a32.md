@@ -1,6 +1,6 @@
 # Fact 1fcb2a32
 
-Store id: 1b65a28d-757b-4a2e-9895-5853c2d711a8
+Store id: 2184954c-a9c1-4fa7-bc1b-26825a67eedb
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, model, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7254290+00:00`
+- posted_at: `2026-11-09T23:31:54.2260580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 344,
     "symbol": "UniqueConstraint.check"
   },
-  "id": "1b65a28d-757b-4a2e-9895-5853c2d711a8",
+  "id": "2184954c-a9c1-4fa7-bc1b-26825a67eedb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7254290+00:00"
+    "posted_at": "2026-11-09T23:31:54.2260580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b6959c1-faac-433b-8569-c0aa5d1eec79",
+  "subject_id": "6112b979-abaf-4a4d-a054-6890456b7109",
   "subject_name": "django/db/models/constraints::UniqueConstraint.check",
   "tags": [
     "entity:method"

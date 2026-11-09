@@ -1,6 +1,6 @@
 # Fact 9be9992a
 
-Store id: 3d6cc739-9472-420c-91da-70b6b58f39ad
+Store id: ea78dd48-c443-492e-b05e-0821c77e65a1
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4940630+00:00`
+- posted_at: `2026-11-09T23:31:56.6641380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2006,
     "symbol": "EmailField.deconstruct"
   },
-  "id": "3d6cc739-9472-420c-91da-70b6b58f39ad",
+  "id": "ea78dd48-c443-492e-b05e-0821c77e65a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4940630+00:00"
+    "posted_at": "2026-11-09T23:31:56.6641380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "41491c99-b331-4410-a5b5-d8fd662898cf",
+  "subject_id": "5e869b77-1ba8-4d27-aa80-e272f0ae6a00",
   "subject_name": "django/db/models/fields/__init__::EmailField.deconstruct",
   "tags": [
     "entity:method"

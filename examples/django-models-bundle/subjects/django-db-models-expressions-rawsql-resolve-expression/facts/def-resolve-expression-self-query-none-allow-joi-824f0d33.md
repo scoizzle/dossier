@@ -1,6 +1,6 @@
 # Fact 824f0d33
 
-Store id: 36baec3d-2a45-4ed0-b798-53a5f3cbe2ae
+Store id: cdd6823f-9c8f-4d72-b698-7d18fb8e069a
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression( self, query=None, allow_joins=True, reuse=None, summariz
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6106920+00:00`
+- posted_at: `2026-11-09T23:31:55.8758880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1286,
     "symbol": "RawSQL.resolve_expression"
   },
-  "id": "36baec3d-2a45-4ed0-b798-53a5f3cbe2ae",
+  "id": "cdd6823f-9c8f-4d72-b698-7d18fb8e069a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6106920+00:00"
+    "posted_at": "2026-11-09T23:31:55.8758880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5d7fe3f4-0922-49bd-8f10-26ee8f8435fc",
+  "subject_id": "30b636dd-666e-4baa-9ecc-65c638ac322d",
   "subject_name": "django/db/models/expressions::RawSQL.resolve_expression",
   "tags": [
     "entity:method"

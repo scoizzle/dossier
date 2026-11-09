@@ -1,6 +1,6 @@
 # Fact be376d35
 
-Store id: 33751f58-3e74-4ec9-933f-ef85ae59d58d
+Store id: 62dfd4a1-d02f-451b-b32a-aab0713625be
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5724670+00:00`
+- posted_at: `2026-11-09T23:32:07.1719770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2829,
     "symbol": "JoinPromoter.__repr__"
   },
-  "id": "33751f58-3e74-4ec9-933f-ef85ae59d58d",
+  "id": "62dfd4a1-d02f-451b-b32a-aab0713625be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5724670+00:00"
+    "posted_at": "2026-11-09T23:32:07.1719770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be94cff9-a4e9-4816-b23f-9c33fa052ae6",
+  "subject_id": "eeebc5fb-499c-45a4-b0f7-8842836ec1bc",
   "subject_name": "django/db/models/sql/query::JoinPromoter.__repr__",
   "tags": [
     "entity:method"

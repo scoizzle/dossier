@@ -1,6 +1,6 @@
 # Fact 5a89f860
 
-Store id: 5d064070-e505-4342-bbe8-9b4c09746322
+Store id: f2494007-b327-4bfc-91ea-9dc42ac01bf0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_property_name_related_field_accessor_clashes(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3609590+00:00`
+- posted_at: `2026-11-09T23:31:53.7658740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2130,
     "symbol": "Model._check_property_name_related_field_accessor_clashes"
   },
-  "id": "5d064070-e505-4342-bbe8-9b4c09746322",
+  "id": "f2494007-b327-4bfc-91ea-9dc42ac01bf0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3609590+00:00"
+    "posted_at": "2026-11-09T23:31:53.7658740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2e6182c3-53ef-42e3-a092-7c3a435754ba",
+  "subject_id": "36b066df-f4ee-4c11-a481-ebede2f59e2f",
   "subject_name": "django/db/models/base::Model._check_property_name_related_field_accessor_clashes",
   "tags": [
     "entity:class_method",

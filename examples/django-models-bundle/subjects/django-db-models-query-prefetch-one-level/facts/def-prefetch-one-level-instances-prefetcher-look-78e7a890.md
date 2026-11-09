@@ -1,6 +1,6 @@
 # Fact 78e7a890
 
-Store id: 03aad24a-6772-4023-86aa-4a195ba5c7e3
+Store id: cccc8085-4c8b-482b-b6ec-143360f550e1
 
 ## Text
 
@@ -20,7 +20,7 @@ def prefetch_one_level(instances, prefetcher, lookup, level)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8979680+00:00`
+- posted_at: `2026-11-09T23:32:04.8517320+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2874,
     "symbol": "prefetch_one_level"
   },
-  "id": "03aad24a-6772-4023-86aa-4a195ba5c7e3",
+  "id": "cccc8085-4c8b-482b-b6ec-143360f550e1",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8979680+00:00"
+    "posted_at": "2026-11-09T23:32:04.8517320+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c82ffeb5-c890-4bba-8e64-a318d0a6c034",
+  "subject_id": "137dd2a0-b608-4611-8eec-2ff4e49adfd5",
   "subject_name": "django/db/models/query::prefetch_one_level",
   "tags": [
     "entity:function"

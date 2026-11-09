@@ -1,14 +1,14 @@
 # django/contrib/contenttypes/management/__init__
 
-- Subject: django/contrib/contenttypes/management/__init__ (id `59a0f9b9-0711-45c4-ba70-781681b94873`)
+- Subject: django/contrib/contenttypes/management/__init__ (id `b30fa5e9-3fbd-4972-a721-e785ef81482e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 877 tokens
-- Facts shown: 13 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1171 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - try: content_type = ContentType.objects.db_manager(db).get_by_natural_key( self.app_label, old_model ) except ContentType.DoesNotExist: pass else: content_type.model = new_model try: with transaction.atomic(using=db): content_type.save(using=db, update_fields={"model"}) except IntegrityError: # Gracefully fallback if a stale content type causes a # conflict. Warn the user so they can run the # remove_stale_contenttypes management command. warnings.warn( f"Could not rename content type '{self.app_label}.{old_model}' " f"to '{new_model}' due to an existing conflicting content type. " "Run 'remove_stale_contenttypes' to clean up stale entries.", RuntimeWarning, ) content_type.model = old_model else: # Clear the cache as the `get_by_natural_key()` call will cache # the renamed ContentType instance by its old model name. ContentType.objects.clear_cache() [4161609b]
 - # Determine whether or not the ContentType model is available. try: ContentType = apps.get_model("contenttypes", "ContentType") except LookupError: available = False else: if not router.allow_migrate_model(using, ContentType): return available = True [c3a6019a]
@@ -24,6 +24,10 @@
 - if not router.allow_migrate_model(using, ContentType): return [695ce3cc]
 - import warnings [a7aa58d143dc3945]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [7d58cfd1] [88cab374] [d1705e25] [9a90f8ed] [abeebce0]
+- [7d58cfd1] try: app_config = apps.get_app_config(app_config.label) ContentType = apps.get_model("contenttypes", "ContentType") except LookupError: return
+- [88cab374] class RenameContentType(migrations.RunPython): def __init__(self, app_label, old_model, new_model): self.app_label = app_label self.old_model = old_model self.new_model = new_model super().__init__(self.rename_forward, self.rename_backward)
+- [d1705e25] def create_contenttypes( app_config, verbosity=2, interactive=True, using=DEFAULT_DB_ALIAS, apps=global_apps, **kwargs, ): """ Create content types for models in the given app. """ if not app_config.models_module: return
+- [9a90f8ed] def inject_rename_contenttypes_operations( plan=None, apps=global_apps, using=DEFAULT_DB_ALIAS, **kwargs ): """ Insert a `RenameContentType` operation after every planned `RenameModel` operation. """ if plan is None: return
+- [abeebce0] from django.apps import apps as global_apps from django.db import DEFAULT_DB_ALIAS, IntegrityError, migrations, router, transaction

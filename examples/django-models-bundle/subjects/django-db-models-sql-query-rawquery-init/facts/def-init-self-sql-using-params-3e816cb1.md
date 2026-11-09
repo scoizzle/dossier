@@ -1,6 +1,6 @@
 # Fact 3e816cb1
 
-Store id: 00ac63f7-36ff-4705-9532-e6b3b3711c61
+Store id: 6f41a91a-c61d-4a57-9de0-a714d53098a4
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, sql, using, params=())
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1860130+00:00`
+- posted_at: `2026-11-09T23:32:06.7027230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 158,
     "symbol": "RawQuery.__init__"
   },
-  "id": "00ac63f7-36ff-4705-9532-e6b3b3711c61",
+  "id": "6f41a91a-c61d-4a57-9de0-a714d53098a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1860130+00:00"
+    "posted_at": "2026-11-09T23:32:06.7027230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15267ce6-a51b-489a-8818-33ef13f758d7",
+  "subject_id": "b8396cfc-6d2e-49b7-b607-b3801126cabe",
   "subject_name": "django/db/models/sql/query::RawQuery.__init__",
   "tags": [
     "entity:method"

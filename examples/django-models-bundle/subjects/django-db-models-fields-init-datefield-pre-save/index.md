@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateField.pre_save
 
-- Subject: django/db/models/fields/__init__::DateField.pre_save (id `e4e93d7f-9e71-44db-acea-13121ee4e141`)
+- Subject: django/db/models/fields/__init__::DateField.pre_save (id `5d7852fb-7480-4e52-be9b-be5cfdf221f0`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

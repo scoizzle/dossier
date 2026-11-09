@@ -1,6 +1,6 @@
 # Fact b9e749d6
 
-Store id: f9bf8865-f2b1-4a1a-a373-ddaf3329240d
+Store id: 5de561b9-d64e-4f43-a972-a19586fd7fa9
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_filterable(self, expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3629610+00:00`
+- posted_at: `2026-11-09T23:32:06.9241860+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1401,
     "symbol": "Query.check_filterable"
   },
-  "id": "f9bf8865-f2b1-4a1a-a373-ddaf3329240d",
+  "id": "5de561b9-d64e-4f43-a972-a19586fd7fa9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3629610+00:00"
+    "posted_at": "2026-11-09T23:32:06.9241860+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1f9d75f4-d41f-40cf-a4fc-55158457a7c3",
+  "subject_id": "94709d93-c1a5-4c17-ad20-675bcd2ddf3f",
   "subject_name": "django/db/models/sql/query::Query.check_filterable",
   "tags": [
     "entity:method"

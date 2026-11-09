@@ -1,9 +1,9 @@
 # django/db/models/functions/text::LPad.__init__
 
-- Subject: django/db/models/functions/text::LPad.__init__ (id `01738607-0a85-4f2d-92ef-42ac5404b66a`)
+- Subject: django/db/models/functions/text::LPad.__init__ (id `a8cc5e08-2988-4345-b068-711d29ba6f1b`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

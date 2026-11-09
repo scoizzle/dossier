@@ -1,6 +1,6 @@
 # Fact 94b508f2
 
-Store id: 06bf6cf1-4ef3-4d3a-b13e-0fc3cb6a1b92
+Store id: 8043e483-6930-4bab-ade8-7836665a5d94
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, **fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3807200+00:00`
+- posted_at: `2026-11-09T23:32:01.4785200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 72,
     "symbol": "JSONObject.__init__"
   },
-  "id": "06bf6cf1-4ef3-4d3a-b13e-0fc3cb6a1b92",
+  "id": "8043e483-6930-4bab-ade8-7836665a5d94",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3807200+00:00"
+    "posted_at": "2026-11-09T23:32:01.4785200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "acba2f25-055f-4d49-b97f-994be0f2f8a3",
+  "subject_id": "ccb3813c-5952-4078-a998-ca5ffbb1174d",
   "subject_name": "django/db/models/functions/json::JSONObject.__init__",
   "tags": [
     "entity:method"

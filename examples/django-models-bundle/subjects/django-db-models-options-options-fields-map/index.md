@@ -1,9 +1,9 @@
 # django/db/models/options::Options.fields_map
 
-- Subject: django/db/models/options::Options.fields_map (id `9f917f01-8e52-4d5f-abc6-c7883653d8ea`)
+- Subject: django/db/models/options::Options.fields_map (id `698d79d4-80da-4f3b-8e20-da127b64eb3a`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

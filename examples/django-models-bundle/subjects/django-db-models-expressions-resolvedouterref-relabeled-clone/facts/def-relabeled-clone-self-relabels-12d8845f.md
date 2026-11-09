@@ -1,6 +1,6 @@
 # Fact 12d8845f
 
-Store id: d98217d5-3c2e-4685-b8c1-4571b2c02ead
+Store id: 49df05f2-58df-4914-8a76-c898ec2ae84a
 
 ## Text
 
@@ -20,7 +20,7 @@ def relabeled_clone(self, relabels)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5694720+00:00`
+- posted_at: `2026-11-09T23:31:55.8436670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 976,
     "symbol": "ResolvedOuterRef.relabeled_clone"
   },
-  "id": "d98217d5-3c2e-4685-b8c1-4571b2c02ead",
+  "id": "49df05f2-58df-4914-8a76-c898ec2ae84a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5694720+00:00"
+    "posted_at": "2026-11-09T23:31:55.8436670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8d487006-cc1f-4ce6-a17f-c4989254c53c",
+  "subject_id": "924b855d-0d70-47aa-b775-18438b8e4602",
   "subject_name": "django/db/models/expressions::ResolvedOuterRef.relabeled_clone",
   "tags": [
     "entity:method"

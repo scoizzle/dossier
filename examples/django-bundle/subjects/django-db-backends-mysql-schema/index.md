@@ -1,14 +1,14 @@
 # django/db/backends/mysql/schema
 
-- Subject: django/db/backends/mysql/schema (id `77b6e4db-2ea6-4a74-a216-f68d7167bdf0`)
+- Subject: django/db/backends/mysql/schema (id `fd1de600-d599-49be-b338-fea8450d454f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 11 of 34
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2343 tokens
+- Facts shown: 34 of 34
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Simulate the effect of a one-off default. # field.default may be unhashable, so a set isn't used for "in" check. if self.skip_default(field) and field.default not in (None, NOT_PROVIDED): effective_default = self.effective_default(field) self.execute( "UPDATE %(table)s SET %(column)s = %%s" % { "table": self.quote_name(model._meta.db_table), "column": self.quote_name(field.column), }, [effective_default], ) [0161564a]
 - Manually create an implicit FK index to make it possible to remove the composed index. """ first_field_name = None if fields: first_field_name = fields[0] elif ( expressions and self.connection.features.supports_expression_indexes and isinstance(expressions[0], F) and LOOKUP_SEP not in expressions[0].name ): first_field_name = expressions[0].name [f4897980]
@@ -22,6 +22,28 @@
 - def _alter_column_type_sql( self, model, old_field, new_field, new_type, old_collation, new_collation ): new_type = self._set_field_new_type(old_field, new_type) return super()._alter_column_type_sql( model, old_field, new_field, new_type, old_collation, new_collation ) [1ef00a70]
 - def add_field(self, model, field): super().add_field(model, field) [33a18311]
 
-## Beyond the budget
+## All facts
 
-23 more facts did not fit in the budget: [78c96078] [942b37df] [a227e448] [98b56b87] [2bbfe444] [8bed8558] [397f65e2] [38be6119] [a5e1d98e] [798b5c34] [513d204d] [498a5b41] [4b2f9d27] [e62c245f] [21203c99] [0f36d7d0] [b40ef03e] [b6da9c9c] [67b2253a] [ac53dde2] [0e432c1a] [992b074e] [08b49d02]
+- [78c96078] def _column_default_sql(self, field): if not self.connection.mysql_is_mariadb and self._is_limited_data_type(field): # MySQL supports defaults for BLOB and TEXT columns only if the # default value is written as an expression i.e. in parentheses. return "(%s)" return super()._column_default_sql(field)
+- [942b37df] def _comment_sql(self, comment): comment_sql = super()._comment_sql(comment) return f" COMMENT {comment_sql}"
+- [a227e448] def _create_missing_fk_index( self, model, *, fields, expressions=None, ): """ MySQL can remove an implicit FK index on a field when that field is covered by another index like a unique_together. "covered" here means that the more complex index has the FK field as its first field (see https://bugs.mysql.com/bug.php?id=37910).
+- [98b56b87] def _delete_composed_index(self, model, fields, *args): self._create_missing_fk_index(model, fields=fields) return super()._delete_composed_index(model, fields, *args)
+- [2bbfe444] def _field_db_check(self, field, field_db_params): if self.connection.mysql_is_mariadb: return super()._field_db_check(field, field_db_params) # On MySQL, check constraints with the column name as it requires # explicit recreation when the column is renamed. return field_db_params["check"]
+- [8bed8558] def _field_should_be_indexed(self, model, field): if not super()._field_should_be_indexed(model, field): return False
+- [397f65e2] def _is_limited_data_type(self, field): db_type = field.db_type(self.connection) return ( db_type is not None and db_type.lower() in self.connection._limited_data_types )
+- [38be6119] def _is_text_or_blob(self, field): db_type = field.db_type(self.connection) return db_type and db_type.lower().endswith(("blob", "text"))
+- [a5e1d98e] def _rename_field_sql(self, table, old_field, new_field, new_type): new_type = self._set_field_new_type(old_field, new_type) return super()._rename_field_sql(table, old_field, new_field, new_type)
+- [798b5c34] def _set_field_new_type(self, field, new_type): """ Keep the NULL and DEFAULT properties of the old field. If it has changed, it will be handled separately. """ if field.has_db_default(): default_sql, params = self.db_default_sql(field) default_sql %= tuple(self.quote_value(p) for p in params) new_type += f" DEFAULT {default_sql}" if field.null: new_type += " NULL" else: new_type += " NOT NULL" return new_type
+- [513d204d] def quote_value(self, value): self.connection.ensure_connection() # MySQLdb escapes to string, PyMySQL to bytes. quoted = self.connection.connection.escape( value, self.connection.connection.encoders ) if isinstance(value, str) and isinstance(quoted, bytes): quoted = quoted.decode() return quoted
+- [498a5b41] def remove_constraint(self, model, constraint): if ( isinstance(constraint, UniqueConstraint) and constraint.create_sql(model, self) is not None ): self._create_missing_fk_index( model, fields=constraint.fields, expressions=constraint.expressions, ) super().remove_constraint(model, constraint)
+- [4b2f9d27] def remove_index(self, model, index): self._create_missing_fk_index( model, fields=[field_name for field_name, _ in index.fields_orders], expressions=index.expressions, ) super().remove_index(model, index)
+- [e62c245f] def skip_default(self, field): default_is_empty = self.effective_default(field) in ("", b"") if default_is_empty and self._is_text_or_blob(field): return True return False
+- [21203c99] def skip_default_on_alter(self, field): if self.skip_default(field): return True if self._is_limited_data_type(field) and not self.connection.mysql_is_mariadb: # MySQL doesn't support defaults for BLOB and TEXT in the # ALTER COLUMN statement. return True return False
+- [0f36d7d0] sql_alter_column_null = "MODIFY %(column)s %(type)s NULL" sql_alter_column_not_null = "MODIFY %(column)s %(type)s NOT NULL" sql_alter_column_type = "MODIFY %(column)s %(type)s%(collation)s%(comment)s" sql_alter_column_no_default_null = "ALTER COLUMN %(column)s SET DEFAULT NULL"
+- [b40ef03e] sql_alter_table_comment = "ALTER TABLE %(table)s COMMENT = %(comment)s" sql_alter_column_comment = None
+- [b6da9c9c] sql_create_index = "CREATE INDEX %(name)s ON %(table)s (%(columns)s)%(extra)s"
+- [67b2253a] sql_create_pk = ( "ALTER TABLE %(table)s ADD CONSTRAINT %(name)s PRIMARY KEY (%(columns)s)" ) sql_delete_pk = "ALTER TABLE %(table)s DROP PRIMARY KEY"
+- [ac53dde2] sql_delete_index = "DROP INDEX %(name)s ON %(table)s" sql_rename_index = "ALTER TABLE %(table)s RENAME INDEX %(old_name)s TO %(new_name)s"
+- [0e432c1a] sql_delete_unique = "ALTER TABLE %(table)s DROP INDEX %(name)s" sql_create_column_inline_fk = ( ", ADD CONSTRAINT %(name)s FOREIGN KEY (%(column)s) " "REFERENCES %(to_table)s(%(to_column)s)%(on_delete_db)s" ) sql_delete_fk = "ALTER TABLE %(table)s DROP FOREIGN KEY %(name)s"
+- [992b074e] class DatabaseSchemaEditor(BaseDatabaseSchemaEditor): sql_rename_table = "RENAME TABLE %(old_table)s TO %(new_table)s"
+- [08b49d02] from django.db.backends.base.schema import BaseDatabaseSchemaEditor from django.db.models import NOT_PROVIDED, F, UniqueConstraint from django.db.models.constants import LOOKUP_SEP

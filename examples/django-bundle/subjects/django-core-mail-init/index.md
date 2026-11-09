@@ -1,14 +1,14 @@
 # django/core/mail/__init__
 
-- Subject: django/core/mail/__init__ (id `14558fef-34f9-40dd-a0b9-0add0caf36d2`)
+- Subject: django/core/mail/__init__ (id `0959813f-cc16-4402-9de1-9e3319807d5f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 12 of 33
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2797 tokens
+- Facts shown: 31 of 33
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - warnings.warn(msg, category=RemovedInDjango2028Warning) return getattr(message, name) [a406b441]
 - # RemovedInDjango2028Warning. if all(isinstance(a, (list, tuple)) and len(a) == 2 for a in recipients): warnings.warn( f"Using (name, address) pairs in the {setting_name} setting is deprecated." " Replace with a list of email address strings.", RemovedInDjango2028Warning, stacklevel=2, ) recipients = [a[1] for a in recipients] [21c9050a]
@@ -23,6 +23,24 @@
 - klass = import_string(backend or settings.EMAIL_BACKEND) return klass(**kwds) [5f318bef]
 - recipients = getattr(settings, setting_name) if not recipients: return [d64ca831]
 
-## Beyond the budget
+## All facts
 
-19 more facts did not fit in the budget: [391e7552] [cbf705ab] [2d99f763] [b9e7cdde] [444be62b] [8f7f837f] [745484ae] [e702868d] [0c6ddb30] [cb25ea1f] [8dbd56ed] [792aebfd] [16b29d7b] [42c23708] [2db5062b] [abcf3be0] [97f956df] [a7aa58d143dc3945-3] [11e4fefb]
+- [391e7552] if using is not None: report_using_incompatibility( connection, fail_silently, auth_user, auth_password ) connection = mailers[using] elif connection is None: options = {"fail_silently": fail_silently} if auth_user is not None: options["username"] = auth_user if auth_password is not None: options["password"] = auth_password connection = get_connection(**options) else: if fail_silently: raise TypeError( "fail_silently cannot be used with a connection. " "Pass fail_silently to get_connection() instead." ) if auth_user is not None or auth_password is not None: raise TypeError( "auth_user and auth_password cannot be used with a connection. " "Pass auth_user and auth_password to get_connection() instead." ) messages = [ EmailMessage(subject, message, sender, recipient, connection=connection) for subject, message, sender, recipient in datatuple ] return connection.send_messages(messages)
+- [cbf705ab] if using is not None: report_using_incompatibility( connection, fail_silently, auth_user, auth_password ) elif connection is None: options = {"fail_silently": fail_silently} if auth_user is not None: options["username"] = auth_user if auth_password is not None: options["password"] = auth_password connection = get_connection(**options) else: if fail_silently: raise TypeError( "fail_silently cannot be used with a connection. " "Pass fail_silently to get_connection() instead." ) if auth_user is not None or auth_password is not None: raise TypeError( "auth_user and auth_password cannot be used with a connection. " "Pass auth_user and auth_password to get_connection() instead." ) mail = EmailMultiAlternatives( subject, message, from_email, recipient_list, connection=connection ) if html_message: mail.attach_alternative(html_message, "text/html")
+- [2d99f763] if using is not None: report_using_incompatibility(connection, fail_silently) elif connection is not None and fail_silently: raise TypeError( "fail_silently cannot be used with a connection. " "Pass fail_silently to get_connection() instead." ) # ... end of RemovedInDjango2028Warning.
+- [b9e7cdde] mail = EmailMultiAlternatives( subject="%s%s" % (settings.EMAIL_SUBJECT_PREFIX, subject), body=message, from_email=settings.SERVER_EMAIL, to=recipients, connection=connection, ) if html_message: mail.attach_alternative(html_message, "text/html") mail.send(using=using, fail_silently=fail_silently)
+- [444be62b] return mail.send(using=using)
+- [8f7f837f] """ Tools for sending email. """
+- [745484ae] # Imported for backwards compatibility and for the sake # of a cleaner namespace. These symbols used to be in # django/core/mail.py before the introduction of email # backends and the subsequent reorganization (See #10355) from django.core.mail.message import ( DEFAULT_ATTACHMENT_MIME_TYPE, EmailAlternative, EmailAttachment, EmailMessage, EmailMultiAlternatives, forbid_multi_line_headers, make_msgid, ) from django.core.mail.utils import DNS_NAME, CachedDnsName from django.utils.deprecation import ( RemovedInDjango2028Warning, deprecate_posargs, warn_about_external_use, ) from django.utils.functional import Promise from django.utils.module_loading import import_string
+- [e702868d] # RemovedInDjango2028Warning. @deprecate_posargs(RemovedInDjango2028Warning, ["fail_silently"]) def get_connection(backend=None, *, fail_silently=False, **kwds): """Load an email backend and return an instance of it.
+- [0c6ddb30] # RemovedInDjango2028Warning. _deprecate_on_import = { "BadHeaderError": "BadHeaderError is deprecated. Replace with ValueError.", "SafeMIMEText": ( "SafeMIMEText is deprecated. The return value" " of EmailMessage.message() is an email.message.EmailMessage." ), "SafeMIMEMultipart": ( "SafeMIMEMultipart is deprecated. The return value" " of EmailMessage.message() is an email.message.EmailMessage." ), }
+- [cb25ea1f] # RemovedInDjango2028Warning. def __getattr__(name): try: msg = _deprecate_on_import[name] except KeyError: raise AttributeError(f"module {__name__!r} has no attribute {name!r}") from None else: # Issue deprecation warnings at time of import. from django.core.mail import message
+- [8dbd56ed] # RemovedInDjango2028Warning: fail_silently and connection args. @deprecate_posargs( RemovedInDjango2028Warning, ["fail_silently", "connection", "html_message"] ) def mail_admins( subject, message, *, fail_silently=False, connection=None, html_message=None, using=None, ): """Send a message to the admins, as defined by the ADMINS setting.""" _send_server_message( setting_name="ADMINS", subject=subject, message=message, html_message=html_message, fail_silently=fail_silently, connection=connection, using=using, )
+- [792aebfd] # RemovedInDjango2028Warning: fail_silently and connection args. def _send_server_message( *, setting_name, subject, message, html_message=None, fail_silently=False, connection=None, using=None, ): # RemovedInDjango2028Warning: everything before `recipients = # getattr(...)`. skip_frames=2: this helper's caller + its # @deprecate_posargs decorator. if fail_silently: warn_about_external_use( FAIL_SILENTLY_ARG_WARNING, RemovedInDjango2028Warning, skip_frames=2 ) if connection is not None: warn_about_external_use( CONNECTION_ARG_WARNING, RemovedInDjango2028Warning, skip_frames=2 )
+- [16b29d7b] @deprecate_posargs( RemovedInDjango2028Warning, [ "fail_silently", "auth_user", "auth_password", "connection", "html_message", ], ) def send_mail( subject, message, from_email, recipient_list, *, fail_silently=False, auth_user=None, auth_password=None, connection=None, html_message=None, using=None, ): """ Easy wrapper for sending a single message to a recipient list. All members of the recipient list will see the other recipients in the 'To' field.
+- [42c23708] @deprecate_posargs( RemovedInDjango2028Warning, [ "fail_silently", "auth_user", "auth_password", "connection", ], ) def send_mass_mail( datatuple, *, fail_silently=False, auth_user=None, auth_password=None, connection=None, using=None, ): """ Given a datatuple of (subject, message, from_email, recipient_list), send each message to each recipient list. Return the number of emails sent.
+- [2db5062b] __all__ = [ "InvalidMailer", "MailerDoesNotExist", "CachedDnsName", "DNS_NAME", "EmailMessage", "EmailMultiAlternatives", "DEFAULT_ATTACHMENT_MIME_TYPE", "make_msgid", "mailers", "get_connection", "send_mail", "send_mass_mail", "mail_admins", "mail_managers", "EmailAlternative", "EmailAttachment", # RemovedInDjango2028Warning: When the deprecation ends, remove the last # entries. "BadHeaderError", "SafeMIMEText", "SafeMIMEMultipart", "forbid_multi_line_headers", ]
+- [abcf3be0] from .deprecation import ( AUTH_ARGS_WARNING, CONNECTION_ARG_WARNING, FAIL_SILENTLY_ARG_WARNING, report_using_incompatibility, warn_about_default_mailers_if_needed, )
+- [97f956df] from django.conf import settings from django.core.exceptions import ImproperlyConfigured from django.core.mail.exceptions import InvalidMailer, MailerDoesNotExist from django.core.mail.handler import DEFAULT_MAILER_ALIAS, MailersHandler
+- [a7aa58d143dc3945-3] import warnings
+- [11e4fefb] mailers = MailersHandler()

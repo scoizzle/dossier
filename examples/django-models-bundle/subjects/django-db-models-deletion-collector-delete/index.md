@@ -1,9 +1,9 @@
 # django/db/models/deletion::Collector.delete
 
-- Subject: django/db/models/deletion::Collector.delete (id `65d648d4-d20e-4da0-8a23-77dce0c75df0`)
+- Subject: django/db/models/deletion::Collector.delete (id `13977902-01ec-4d04-95cf-8135589ce06c`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

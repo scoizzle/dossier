@@ -1,14 +1,14 @@
 # django/views/generic/list
 
-- Subject: django/views/generic/list (id `a820ad68-91b0-4b58-9f72-72939f13f862`)
+- Subject: django/views/generic/list (id `3324bd3f-7d01-412b-b85b-4f6b3bf6945b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 10 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1766 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # If the list is a queryset, we'll invent a template name based on the # app and model name. This name gets put at the end of the template # name list so that user-supplied names override the automatically- # generated ones. if hasattr(self.object_list, "model"): opts = self.object_list.model._meta names.append( "%s/%s%s.html" % (opts.app_label, opts.model_name, self.template_name_suffix) ) elif not names: raise ImproperlyConfigured( "%(cls)s requires either a 'template_name' attribute " "or a get_queryset() method that returns a QuerySet." % { "cls": self.__class__.__name__, } ) return names [f810ba4f]
 - The return value must be an iterable and may be an instance of `QuerySet` in which case `QuerySet` specific behavior will be enabled. """ if self.queryset is not None: queryset = self.queryset if isinstance(queryset, QuerySet): queryset = queryset.all() elif self.model is not None: queryset = self.model._default_manager.all() else: raise ImproperlyConfigured( "%(cls)s is missing a QuerySet. Define " "%(cls)s.model, %(cls)s.queryset, or override " "%(cls)s.get_queryset()." % {"cls": self.__class__.__name__} ) ordering = self.get_ordering() if ordering: if isinstance(ordering, str): ordering = (ordering,) queryset = queryset.order_by(*ordering) [dfbcc98f]
@@ -21,6 +21,18 @@
 - def get_context_data(self, *, object_list=None, **kwargs): """Get the context for this view.""" queryset = object_list if object_list is not None else self.object_list page_size = self.get_paginate_by(queryset) context_object_name = self.get_context_object_name(queryset) if page_size: paginator, page, queryset, is_paginated = self.paginate_queryset( queryset, page_size ) context = { "paginator": paginator, "page_obj": page, "is_paginated": is_paginated, "object_list": queryset, } else: context = { "paginator": None, "page_obj": None, "is_paginated": False, "object_list": queryset, } if context_object_name is not None: context[context_object_name] = queryset context.update(kwargs) return super().get_context_data(**context) [05a79357]
 - def get_queryset(self): """ Return the list of items for this view. [90f05136]
 
-## Beyond the budget
+## All facts
 
-13 more facts did not fit in the budget: [c875a666] [5bdfb970] [daee0793] [0faef5ff] [dbf6cf9e] [1c778e64] [42fb2f13] [1fc0463d] [93f520d5] [045f04a9] [78ff2904] [dfb1368b] [7028aa01]
+- [c875a666] def get_context_object_name(self, object_list): """Get the name of the item to be used in the context.""" if self.context_object_name: return self.context_object_name elif hasattr(object_list, "model"): return "%s_list" % object_list.model._meta.model_name else: return None
+- [5bdfb970] def get_ordering(self): """Return the field or fields to use for ordering the queryset.""" return self.ordering
+- [daee0793] def get_paginate_by(self, queryset): """ Get the number of items to paginate by, or ``None`` for no pagination. """ return self.paginate_by
+- [0faef5ff] def get_paginate_orphans(self): """ Return the maximum number of orphans extend the last page by when paginating. """ return self.paginate_orphans
+- [dbf6cf9e] def get_paginator( self, queryset, per_page, orphans=0, allow_empty_first_page=True, **kwargs ): """Return an instance of the paginator for this view.""" return self.paginator_class( queryset, per_page, orphans=orphans, allow_empty_first_page=allow_empty_first_page, **kwargs, )
+- [1c778e64] def get_template_names(self): """ Return a list of template names to be used for the request. Must return a list. May not be called if render_to_response is overridden. """ try: names = super().get_template_names() except ImproperlyConfigured: # If template_name isn't specified, it's not a problem -- # we just start with an empty list. names = []
+- [42fb2f13] def paginate_queryset(self, queryset, page_size): """Paginate the queryset, if needed.""" paginator = self.get_paginator( queryset, page_size, orphans=self.get_paginate_orphans(), allow_empty_first_page=self.get_allow_empty(), ) page_kwarg = self.page_kwarg page = self.kwargs.get(page_kwarg) or self.request.GET.get(page_kwarg) or 1 try: page_number = int(page) except ValueError: if page == "last": page_number = paginator.num_pages else: raise Http404( _("Page is not “last”, nor can it be converted to an int.") ) try: page = paginator.page(page_number) return (paginator, page, page.object_list, page.has_other_pages()) except InvalidPage as e: raise Http404( _("Invalid page (%(page_number)s): %(message)s") % {"page_number": page_number, "message": str(e)} )
+- [1fc0463d] template_name_suffix = "_list"
+- [93f520d5] class BaseListView(MultipleObjectMixin, View): """ Base view for displaying a list of objects.
+- [045f04a9] class ListView(MultipleObjectTemplateResponseMixin, BaseListView): """ Render some list of objects, set by `self.model` or `self.queryset`. `self.queryset` can actually be any iterable of items, not just a queryset. """
+- [78ff2904] class MultipleObjectMixin(ContextMixin): """A mixin for views manipulating multiple objects."""
+- [dfb1368b] class MultipleObjectTemplateResponseMixin(TemplateResponseMixin): """Mixin for responding with a template and list of objects."""
+- [7028aa01] from django.core.exceptions import ImproperlyConfigured from django.core.paginator import InvalidPage, Paginator from django.db.models import QuerySet from django.http import Http404 from django.utils.translation import gettext as _ from django.views.generic.base import ContextMixin, TemplateResponseMixin, View

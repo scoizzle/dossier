@@ -1,6 +1,6 @@
 # Fact 3ad13a54
 
-Store id: 793a5120-b4a0-4166-97cb-a142e56bb406
+Store id: d9118073-31da-4910-8535-7b9123859af8
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_save_val(self, field, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6971810+00:00`
+- posted_at: `2026-11-09T23:32:05.9641330+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1767,
     "symbol": "SQLInsertCompiler.pre_save_val"
   },
-  "id": "793a5120-b4a0-4166-97cb-a142e56bb406",
+  "id": "d9118073-31da-4910-8535-7b9123859af8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6971810+00:00"
+    "posted_at": "2026-11-09T23:32:05.9641330+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "935787c7-16d4-4a27-8793-6db9dc98adf0",
+  "subject_id": "79438d7a-0d48-439b-932a-c671bb08eb4e",
   "subject_name": "django/db/models/sql/compiler::SQLInsertCompiler.pre_save_val",
   "tags": [
     "entity:method"

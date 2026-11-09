@@ -1,6 +1,6 @@
 # Fact 7989ba9c
 
-Store id: c8f7af39-124e-48ce-be6f-42b2ef6fcf2c
+Store id: 715d8570-c993-45a3-ae26-68cbddaa5994
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_from_object(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.5048710+00:00`
+- posted_at: `2026-11-09T23:31:58.8935970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2182,
     "symbol": "ManyToManyField.value_from_object"
   },
-  "id": "c8f7af39-124e-48ce-be6f-42b2ef6fcf2c",
+  "id": "715d8570-c993-45a3-ae26-68cbddaa5994",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.5048710+00:00"
+    "posted_at": "2026-11-09T23:31:58.8935970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f8169dc3-f883-4c75-adfe-b291e8bb00b1",
+  "subject_id": "215ee99a-c4ff-45c9-af8d-8a600778b8ec",
   "subject_name": "django/db/models/fields/related::ManyToManyField.value_from_object",
   "tags": [
     "entity:method"

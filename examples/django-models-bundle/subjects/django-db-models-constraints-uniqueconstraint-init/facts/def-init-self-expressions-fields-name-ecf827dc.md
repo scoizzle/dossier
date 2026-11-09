@@ -1,6 +1,6 @@
 # Fact ecf827dc
 
-Store id: 8e3657da-e4f0-4bc7-baa0-6507d1a1ffec
+Store id: 1292eb75-ff90-47b3-bbc7-f32df9d61e32
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *expressions, fields=(), name, condition=None, deferrable=No
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7214580+00:00`
+- posted_at: `2026-11-09T23:31:54.2213080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 270,
     "symbol": "UniqueConstraint.__init__"
   },
-  "id": "8e3657da-e4f0-4bc7-baa0-6507d1a1ffec",
+  "id": "1292eb75-ff90-47b3-bbc7-f32df9d61e32",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7214580+00:00"
+    "posted_at": "2026-11-09T23:31:54.2213080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "84074f89-5bc6-43cc-af63-3ec9b15612d2",
+  "subject_id": "550f86bd-b4f6-42f1-8d84-fb0af830abc0",
   "subject_name": "django/db/models/constraints::UniqueConstraint.__init__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 3ad7c4be
 
-Store id: d8f0624f-baec-4424-a6b9-bef64a53adb0
+Store id: 820c22a1-f315-44ac-b21d-924d45280627
 
 ## Text
 
@@ -20,7 +20,7 @@ class Avg(FixDurationInputMixin, NumericOutputFieldMixin, Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0401330+00:00`
+- posted_at: `2026-11-09T23:31:53.5361770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 240,
     "symbol": "Avg"
   },
-  "id": "d8f0624f-baec-4424-a6b9-bef64a53adb0",
+  "id": "820c22a1-f315-44ac-b21d-924d45280627",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0401330+00:00"
+    "posted_at": "2026-11-09T23:31:53.5361770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7b9df69e-a931-4cf5-9501-c776fbbfbf64",
+  "subject_id": "b32d4796-2352-4db5-ae43-37815fdf85b0",
   "subject_name": "django/db/models/aggregates::Avg",
   "tags": [
     "entity:class"

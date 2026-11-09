@@ -1,8 +1,8 @@
 # docs/howto/index
 
-- Subject: docs/howto/index (id `1f524f15-7c49-4f61-9c0a-1b367dd08843`)
+- Subject: docs/howto/index (id `724c7e66-498c-4d71-a9dd-444a1b0ae153`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 500 tokens
 - Facts shown: 20 of 20
 - Conflicts: 0

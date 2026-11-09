@@ -1,14 +1,14 @@
 # docs/howto/deployment/checklist
 
-- Subject: docs/howto/deployment/checklist (id `b0be86ff-3e57-4fc7-819d-8ee2aa9faac9`)
+- Subject: docs/howto/deployment/checklist (id `a0a8fc00-c64f-47ee-aa31-4ce6bb37b3f4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 31 of 85
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3385 tokens
+- Facts shown: 85 of 85
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - .. _Sentry: https://docs.sentry.io/ [ae7d87bc]
 - Consider using an error monitoring system such as Sentry_ before your inbox is flooded by reports. Sentry can also aggregate logs. [4a7ff611]
@@ -42,6 +42,59 @@
 - ==================== Deployment checklist ==================== [58473edf]
 - Any website which allows users to log in should enforce site-wide HTTPS to avoid transmitting access tokens in clear. In Django, access tokens include the login/password, the session cookie, and password reset tokens. (You can't do much to protect password reset tokens if you're sending them by email.) [6ef56572]
 
-## Beyond the budget
+## All facts
 
-54 more facts did not fit in the budget: [a0a47705] [eff23551] [bc1aad52] [ef7ae524] [139c83d5] [ebc5cd75] [a8d3e6cf] [f285e736] [32bce52a] [b7a99be7] [a3af3d65] [4e475576] [b7b6992b] [fac26bef] [e1ff40a6] [1cd4e6e7] [df084dac] [7e79c07b] [45bf8f0a] [a3034523] [e625b0a1] [f7fc5b67] [aaad018d] [42616a0e] [350d740c] [520a80e6] [978348fa] [8ec29c73] [07600616] [b367183f] [bf2ad430] [d6c055ad] [2627845b] [3df158ce] [4636e28c] [686f1a37] [c9d8eee2] [9312e6a6] [4664c7e23c0209b4] [e76772aa] [d623b452] [00fd1b6b] [c591c6ab] [395cd665] [ef19e7eb] [ef67f8a8] [aa41aeb3] [4de6ca9b] [06036851] [7ad24c5b] [708680dd] [fe796baf] [efcaef78] [4c716c59]
+- [a0a47705] By default, Django sends email from ``webmaster@localhost`` and ``root@localhost``. However, many mail providers reject email from these addresses. To use different sender addresses, modify the :setting:`DEFAULT_FROM_EMAIL` and :setting:`SERVER_EMAIL` settings.
+- [eff23551] By the time you push your code to production, it's hopefully robust, but you can't rule out unexpected errors. Thankfully, Django can capture errors and notify you accordingly.
+- [bc1aad52] Cache servers often have weak authentication. Make sure they only accept connections from your application servers.
+- [ef7ae524] Consider using :ref:`cached sessions <cached-sessions-backend>` to improve performance.
+- [139c83d5] Critical settings =================
+- [ebc5cd75] Customize the default error views ---------------------------------
+- [a8d3e6cf] Database connection parameters are probably different in development and in production.
+- [f285e736] Database passwords are very sensitive. You should protect them exactly like :setting:`SECRET_KEY`.
+- [32bce52a] Django includes default views and templates for several HTTP error codes. You may want to override the default templates by creating the following templates in your root template directory: ``404.html``, ``500.html``, ``403.html``, and ``400.html``. The :ref:`default error views <error-views>` that use these templates should suffice for 99% of web applications, but you can :ref:`customize them <customizing-error-views>` as well.
+- [b7a99be7] Django includes many :doc:`security features </topics/security>`. Some are built-in and always enabled. Others are optional because they aren't always appropriate, or because they're inconvenient for development. For example, forcing HTTPS may not be suitable for all websites, and it's impractical for local development.
+- [a3af3d65] Enabling :ref:`persistent database connections <persistent-database-connections>` can result in a nice speed-up when connecting to the database accounts for a significant part of the request processing time.
+- [4e475576] Enabling the cached template loader often improves performance drastically, as it avoids compiling each template every time it needs to be rendered. When :setting:`DEBUG = False <DEBUG>`, the cached template loader is enabled automatically. See :class:`django.template.loaders.cached.Loader` for more information.
+- [b7b6992b] Ensure that old secret keys are removed from ``SECRET_KEY_FALLBACKS`` in a timely manner.
+- [fac26bef] Environment-specific settings =============================
+- [e1ff40a6] Error reporting ===============
+- [1cd4e6e7] For a production environment, though, this is a really bad idea, because it leaks lots of information about your project: excerpts of your source code, local variables, settings, libraries used, etc.
+- [df084dac] For maximum security, make sure database servers only accept connections from your application servers.
+- [7e79c07b] HTTPS =====
+- [45bf8f0a] If rotating secret keys, you may use :setting:`SECRET_KEY_FALLBACKS`::
+- [a3034523] If using database-backed sessions, regularly :ref:`clear old sessions <clearing-the-session-store>` to avoid storing unnecessary data.
+- [e625b0a1] If you haven't set up backups for your database, do it right now!
+- [f7fc5b67] If you're using a cache, connection parameters may be different in development and in production. Django defaults to per-process :ref:`local-memory caching <local-memory-caching>` which may not be desirable.
+- [aaad018d] If your site sends emails, these values need to be set correctly.
+- [42616a0e] In development, email is often configured to be printed to the console or stored in a local file. For production, you probably want to send real email messages. :ref:`topic-email-configuration` has more information about setting :setting:`MAILERS` to use production email servers.
+- [350d740c] Instead of hardcoding the secret key in your settings module, consider loading it from an environment variable::
+- [520a80e6] Make sure that the key used in production isn't used anywhere else and avoid committing it to source control. This reduces the number of vectors from which an attacker may acquire the key.
+- [978348fa] Many of these settings are sensitive and should be treated as confidential. If you're releasing the source code for your project, a common practice is to publish suitable settings for development, and to use a private settings module for production.
+- [8ec29c73] Media files are uploaded by your users. They're untrusted! Make sure your web server never attempts to interpret them. For instance, if a user uploads a ``.php`` file, the web server shouldn't execute it.
+- [07600616] Now is a good time to check your backup strategy for these files.
+- [b367183f] Once you've set up HTTPS, enable the following settings.
+- [bf2ad430] Performance optimizations =========================
+- [d6c055ad] Performance optimizations are another category of trade-offs with convenience. For instance, caching is useful in production, less so for local development. Error reporting needs are also widely different.
+- [2627845b] Protecting sensitive areas such as the user account or the admin isn't sufficient, because the same session cookie is used for HTTP and HTTPS. Your web server must redirect all HTTP traffic to HTTPS, and only transmit HTTPS requests to Django.
+- [3df158ce] Review your logging configuration before putting your website in production, and check that it works as expected as soon as you have received some traffic.
+- [4636e28c] Run ``manage.py check --deploy`` ================================
+- [686f1a37] See :doc:`/howto/error-reporting` for details on error reporting by email.
+- [c9d8eee2] See :doc:`/howto/static-files/index` for more information.
+- [9312e6a6] See :doc:`/topics/logging` for details on logging.
+- [4664c7e23c0209b4] Sessions --------
+- [e76772aa] Set this to ``True`` to avoid transmitting the CSRF cookie over HTTP accidentally.
+- [d623b452] Set this to ``True`` to avoid transmitting the session cookie over HTTP accidentally.
+- [00fd1b6b] Setting :setting:`DEBUG = False <DEBUG>` disables several features that are only useful in development. In addition, you can tune the following settings.
+- [c591c6ab] Some of the checks described below can be automated using the :option:`check --deploy` option. Be sure to run it against your production settings file as described in the option's documentation.
+- [395cd665] Static files are automatically served by the development server. In production, you must define a :setting:`STATIC_ROOT` directory where :djadmin:`collectstatic` will copy them.
+- [ef19e7eb] Switch away from ``manage.py runserver`` ========================================
+- [ef67f8a8] The :djadmin:`runserver` command is not designed for a production setting. Be sure to switch to a production-ready WSGI or ASGI server. For a few common options, see :doc:`WSGI servers </howto/deployment/wsgi/index>` or :doc:`ASGI servers </howto/deployment/asgi/index>`.
+- [aa41aeb3] The following checklist includes settings that:
+- [4de6ca9b] The internet is a hostile environment. Before deploying your Django project, you should take some time to review your settings, with security, performance, and operations in mind.
+- [06036851] This helps a lot on virtualized hosts with limited network performance.
+- [7ad24c5b] This setting is required to protect your site against some CSRF attacks. If you use a wildcard, you must perform your own validation of the ``Host`` HTTP header, or otherwise ensure that you aren't vulnerable to this category of attacks.
+- [708680dd] When :setting:`DEBUG = False <DEBUG>`, Django doesn't work at all without a suitable value for :setting:`ALLOWED_HOSTS`.
+- [fe796baf] You should also configure the web server that sits in front of Django to validate the host. It should respond with a static error page or ignore requests for incorrect hosts instead of forwarding the request to Django. This way you'll avoid spurious errors in your Django logs (or emails if you have error reporting configured that way). For example, on nginx you might set up a default server to return "444 No Response" on an unrecognized host:
+- [efcaef78] You're certainly developing your project with :setting:`DEBUG = True <DEBUG>`, since this enables handy features like full tracebacks in your browser.
+- [4c716c59] or from a file::

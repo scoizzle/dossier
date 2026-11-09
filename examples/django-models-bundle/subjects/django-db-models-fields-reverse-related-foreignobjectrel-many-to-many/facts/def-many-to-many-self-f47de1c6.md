@@ -1,6 +1,6 @@
 # Fact f47de1c6
 
-Store id: ad6d0734-77e5-4ad7-bf02-8b50cdf55b7f
+Store id: 1c8cbae1-7b0d-4387-99cb-64ad955032ba
 
 ## Text
 
@@ -20,7 +20,7 @@ def many_to_many(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.2991630+00:00`
+- posted_at: `2026-11-09T23:32:00.2325960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "ForeignObjectRel.many_to_many"
   },
-  "id": "ad6d0734-77e5-4ad7-bf02-8b50cdf55b7f",
+  "id": "1c8cbae1-7b0d-4387-99cb-64ad955032ba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.2991630+00:00"
+    "posted_at": "2026-11-09T23:32:00.2325960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fbe8a4b5-050d-4ffe-8648-61b834bc917a",
+  "subject_id": "cf452209-a7ec-49a9-bc4e-71545deacee6",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.many_to_many",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact fdba8de1
 
-Store id: f66662bd-0974-4781-89e7-c7a638effa45
+Store id: 875b8522-4d29-4b4e-8fc4-b67a28247f3f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncMonth
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f66662bd-0974-4781-89e7-c7a638effa45",
+  "id": "875b8522-4d29-4b4e-8fc4-b67a28247f3f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncMonth"
       },
       "rel": "contains",
-      "target": "c79a2958-92ec-4711-ba4f-f3196bd3d1bc"
+      "target": "a5e08da6-46c3-4987-a73f-fb1aa46d7acc"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

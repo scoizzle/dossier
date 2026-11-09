@@ -1,6 +1,6 @@
 # Fact 0b5ebb17
 
-Store id: f55c84e1-b432-40b5-865a-e48a78f243cf
+Store id: 975d5292-c236-4081-82b9-64423071cafd
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformLt(KeyTransformNumericLookupMixin, lookups.LessThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7602650+00:00`
+- posted_at: `2026-11-09T23:31:58.0335060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 728,
     "symbol": "KeyTransformLt"
   },
-  "id": "f55c84e1-b432-40b5-865a-e48a78f243cf",
+  "id": "975d5292-c236-4081-82b9-64423071cafd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7602650+00:00"
+    "posted_at": "2026-11-09T23:31:58.0335060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "069ff750-ddce-48ca-9a99-528f9d32adf2",
+  "subject_id": "d1c99caa-a36b-4d2e-85a3-461bbea7c207",
   "subject_name": "django/db/models/fields/json::KeyTransformLt",
   "tags": [
     "entity:class"

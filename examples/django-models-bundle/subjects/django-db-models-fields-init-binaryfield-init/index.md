@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BinaryField.__init__
 
-- Subject: django/db/models/fields/__init__::BinaryField.__init__ (id `d1a322d3-494c-4565-884a-6102690b7534`)
+- Subject: django/db/models/fields/__init__::BinaryField.__init__ (id `567500a5-9272-4cd9-93af-7529d01792aa`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

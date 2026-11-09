@@ -1,6 +1,6 @@
 # Fact 0e68d633
 
-Store id: c1396917-b6c8-480a-bd8b-8d5e9527815d
+Store id: 536c6cd6-fe9b-4d23-9f19-bfa3d606fbb2
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4693100+00:00`
+- posted_at: `2026-11-09T23:31:55.7220840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 28,
     "symbol": "SQLiteNumericMixin.as_sqlite"
   },
-  "id": "c1396917-b6c8-480a-bd8b-8d5e9527815d",
+  "id": "536c6cd6-fe9b-4d23-9f19-bfa3d606fbb2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4693100+00:00"
+    "posted_at": "2026-11-09T23:31:55.7220840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f9751779-9a75-4e90-bfa8-c78eb47e17d7",
+  "subject_id": "9dc82526-08cd-40cf-aa1e-c6bc3374966c",
   "subject_name": "django/db/models/expressions::SQLiteNumericMixin.as_sqlite",
   "tags": [
     "entity:method"

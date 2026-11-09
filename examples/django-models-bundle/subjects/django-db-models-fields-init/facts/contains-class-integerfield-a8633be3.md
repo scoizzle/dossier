@@ -1,6 +1,6 @@
 # Fact a8633be3
 
-Store id: 8d7e9ce9-c06c-49e1-be29-547dc4910923
+Store id: 11f5b814-8084-4013-8205-9a142353656d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8d7e9ce9-c06c-49e1-be29-547dc4910923",
+  "id": "11f5b814-8084-4013-8205-9a142353656d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerField"
       },
       "rel": "contains",
-      "target": "5e061fe0-60a7-4714-a2cb-93881e9e2d7b"
+      "target": "09f77384-ab80-4f82-8675-c8ccff7e38d1"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact f1a12679
 
-Store id: b7a6a01c-889e-4e3c-b233-1bc91d34b691
+Store id: 2f987243-4d12-4e27-80d6-c3868848836a
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7190290+00:00`
+- posted_at: `2026-11-09T23:31:56.8863590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2852,
     "symbol": "UUIDField.to_python"
   },
-  "id": "b7a6a01c-889e-4e3c-b233-1bc91d34b691",
+  "id": "2f987243-4d12-4e27-80d6-c3868848836a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7190290+00:00"
+    "posted_at": "2026-11-09T23:31:56.8863590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fa804efc-48dc-4f99-b42f-89ef979044c4",
+  "subject_id": "1e640ef4-beea-4ded-9861-b4dbd8a9af88",
   "subject_name": "django/db/models/fields/__init__::UUIDField.to_python",
   "tags": [
     "entity:method"

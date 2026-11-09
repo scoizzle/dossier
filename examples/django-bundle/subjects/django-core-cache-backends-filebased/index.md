@@ -1,14 +1,14 @@
 # django/core/cache/backends/filebased
 
-- Subject: django/core/cache/backends/filebased (id `3f30198f-200c-4d31-8e9f-5c0684c9fdad`)
+- Subject: django/core/cache/backends/filebased (id `98908eb4-13a4-4d29-bf16-e2635cb53f44`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 879 tokens
-- Facts shown: 13 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1303 tokens
+- Facts shown: 19 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __init__(self, dir, params): super().__init__(params) self._dir = os.path.abspath(dir) self._createdir() [53704b70]
 - def _createdir(self): # Workaround because os.makedirs() doesn't apply the "mode" argument # to intermediate-level directories. # https://github.com/python/cpython/issues/86533 safe_makedirs(self._dir, mode=0o700, exist_ok=True) [2338b257]
@@ -24,6 +24,11 @@
 - def get(self, key, default=None, version=None): fname = self._key_to_file(key, version) try: with open(fname, "rb") as f: if not self._is_expired(f): return pickle.loads(zlib.decompress(f.read())) except FileNotFoundError: pass return default [08b86eab]
 - "File-based cache backend" [ffde634a]
 
-## Beyond the budget
+## All facts
 
-6 more facts did not fit in the budget: [88443e59] [4761919e] [9aff78d1] [098a2170] [1694d9cc] [c1edcbf7]
+- [88443e59] def has_key(self, key, version=None): fname = self._key_to_file(key, version) try: with open(fname, "rb") as f: return not self._is_expired(f) except FileNotFoundError: return False
+- [4761919e] def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): self._createdir() # Cache dir can be deleted at any time. fname = self._key_to_file(key, version) self._cull() # make some room if necessary fd, tmp_path = tempfile.mkstemp(dir=self._dir) renamed = False try: with open(fd, "wb") as f: self._write_content(f, timeout, value) file_move_safe(tmp_path, fname, allow_overwrite=True) renamed = True finally: if not renamed: os.remove(tmp_path)
+- [9aff78d1] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): try: with open(self._key_to_file(key, version), "r+b") as f: try: locks.lock(f, locks.LOCK_EX) if self._is_expired(f): return False else: previous_value = pickle.loads(zlib.decompress(f.read())) f.seek(0) self._write_content(f, timeout, previous_value) return True finally: locks.unlock(f) except FileNotFoundError: return False
+- [098a2170] class FileBasedCache(BaseCache): cache_suffix = ".djcache" pickle_protocol = pickle.HIGHEST_PROTOCOL
+- [1694d9cc] from django.core.cache.backends.base import DEFAULT_TIMEOUT, BaseCache from django.core.files import locks from django.core.files.move import file_move_safe from django.utils._os import safe_makedirs
+- [c1edcbf7] import glob import os import pickle import random import tempfile import time import zlib from hashlib import md5

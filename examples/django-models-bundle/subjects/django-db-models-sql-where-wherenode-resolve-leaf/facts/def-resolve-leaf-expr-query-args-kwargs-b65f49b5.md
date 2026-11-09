@@ -1,6 +1,6 @@
 # Fact b65f49b5
 
-Store id: c0890622-8f59-455e-81d8-7b006978ba3c
+Store id: 0b30913c-f9f1-434e-a6d3-3e55fc5499a0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_leaf(expr, query, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9523560+00:00`
+- posted_at: `2026-11-09T23:32:07.6641840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 270,
     "symbol": "WhereNode._resolve_leaf"
   },
-  "id": "c0890622-8f59-455e-81d8-7b006978ba3c",
+  "id": "0b30913c-f9f1-434e-a6d3-3e55fc5499a0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9523560+00:00"
+    "posted_at": "2026-11-09T23:32:07.6641840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3cfd943a-fa04-4bd7-ba4f-5b84c79aaaa0",
+  "subject_id": "bf31df1b-c8c7-4062-83b3-ac42c38a74da",
   "subject_name": "django/db/models/sql/where::WhereNode._resolve_leaf",
   "tags": [
     "entity:static_method",

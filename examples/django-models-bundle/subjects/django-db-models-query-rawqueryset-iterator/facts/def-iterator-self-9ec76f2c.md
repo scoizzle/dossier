@@ -1,6 +1,6 @@
 # Fact 9ec76f2c
 
-Store id: 6b946d75-f589-4662-8b76-a137a4082719
+Store id: 5d6288e6-74c1-4186-882b-cb21906b3bd3
 
 ## Text
 
@@ -20,7 +20,7 @@ def iterator(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8105120+00:00`
+- posted_at: `2026-11-09T23:32:04.7535160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2513,
     "symbol": "RawQuerySet.iterator"
   },
-  "id": "6b946d75-f589-4662-8b76-a137a4082719",
+  "id": "5d6288e6-74c1-4186-882b-cb21906b3bd3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8105120+00:00"
+    "posted_at": "2026-11-09T23:32:04.7535160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79dad45a-b5a7-4e61-b801-2b76cb5efa9f",
+  "subject_id": "331ac834-daf5-4f34-bbde-20f5fc84796b",
   "subject_name": "django/db/models/query::RawQuerySet.iterator",
   "tags": [
     "entity:method"

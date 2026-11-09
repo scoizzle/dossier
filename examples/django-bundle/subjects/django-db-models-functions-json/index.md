@@ -1,14 +1,14 @@
 # django/db/models/functions/json
 
-- Subject: django/db/models/functions/json (id `b5f33e2a-07c4-46f0-a3ef-9637db26d2d6`)
+- Subject: django/db/models/functions/json (id `bf16aec9-4dc4-42aa-b468-28bdd8c0e340`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 874 tokens
-- Facts shown: 13 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1063 tokens
+- Facts shown: 17 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if connection.features.is_postgresql_16: return casted_obj.as_native( compiler, connection, returning="JSONB", **extra_context ) [38e0df72]
 - if connection.features.is_postgresql_16: return copy.as_native( compiler, connection, returning="JSONB", **extra_context ) [f8ba0b9d]
@@ -24,6 +24,9 @@
 - def as_sql(self, compiler, connection, **extra_context): if not connection.features.has_json_object_function: raise NotSupportedError( "JSONObject() is not supported on this database backend." ) return super().as_sql(compiler, connection, **extra_context) [0df22af8]
 - def as_sql(self, compiler, connection, **extra_context): if not connection.features.supports_json_field: raise NotSupportedError( "JSONFields are not supported on this database backend." ) return super().as_sql(compiler, connection, **extra_context) [d365bd3a]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [2b29c57b] [b9170ae1] [3a7683d4] [aded3981]
+- [2b29c57b] def join(self, args): pairs = zip(args[::2], args[1::2], strict=True) # Wrap 'key' in parentheses in case of postgres cast :: syntax. return ", ".join([f"({key}) VALUE {value}" for key, value in pairs])
+- [b9170ae1] class JSONArray(Func): function = "JSON_ARRAY" output_field = JSONField()
+- [3a7683d4] class JSONObject(Func): function = "JSON_OBJECT" output_field = JSONField()
+- [aded3981] from django.db import NotSupportedError from django.db.models.expressions import Func, Value from django.db.models.fields import TextField from django.db.models.fields.json import JSONField from django.db.models.functions import Cast

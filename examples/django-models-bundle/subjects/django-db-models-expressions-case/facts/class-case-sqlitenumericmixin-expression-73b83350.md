@@ -1,6 +1,6 @@
 # Fact 73b83350
 
-Store id: a939cf69-851b-491f-8bba-3c0d59a6a2da
+Store id: 4a7e150e-6798-489a-a834-db90d6b6100c
 
 ## Text
 
@@ -20,7 +20,7 @@ class Case(SQLiteNumericMixin, Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7033300+00:00`
+- posted_at: `2026-11-09T23:31:55.9568960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1716,
     "symbol": "Case"
   },
-  "id": "a939cf69-851b-491f-8bba-3c0d59a6a2da",
+  "id": "4a7e150e-6798-489a-a834-db90d6b6100c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7033300+00:00"
+    "posted_at": "2026-11-09T23:31:55.9568960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2824962e-13ab-4fe3-92fd-854da159eed6",
+  "subject_id": "8004b512-7c0f-40bb-9e25-b1096df3a553",
   "subject_name": "django/db/models/expressions::Case",
   "tags": [
     "entity:class",

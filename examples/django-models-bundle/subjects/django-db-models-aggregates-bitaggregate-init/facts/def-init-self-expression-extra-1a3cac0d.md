@@ -1,6 +1,6 @@
 # Fact 1a3cac0d
 
-Store id: 1d84671b-705b-451a-bed7-4e90075a9a71
+Store id: 8981b839-f870-4d41-95d1-13cfe31c7f3d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0412680+00:00`
+- posted_at: `2026-11-09T23:31:53.5368370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 250,
     "symbol": "BitAggregate.__init__"
   },
-  "id": "1d84671b-705b-451a-bed7-4e90075a9a71",
+  "id": "8981b839-f870-4d41-95d1-13cfe31c7f3d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0412680+00:00"
+    "posted_at": "2026-11-09T23:31:53.5368370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "80ef23b6-64e7-426f-be5a-11766f0984cb",
+  "subject_id": "51edaaf4-6ee3-437d-86ea-aab157a30e18",
   "subject_name": "django/db/models/aggregates::BitAggregate.__init__",
   "tags": [
     "entity:method"

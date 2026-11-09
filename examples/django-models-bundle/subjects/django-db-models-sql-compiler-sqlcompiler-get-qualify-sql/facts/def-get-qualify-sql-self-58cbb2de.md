@@ -1,6 +1,6 @@
 # Fact 58cbb2de
 
-Store id: ea93c8e7-cc18-419e-9bc0-54630f4f2afb
+Store id: 3841c3b8-2591-43ec-8e45-9a6b4c066298
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_qualify_sql(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6122330+00:00`
+- posted_at: `2026-11-09T23:32:05.7506720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 679,
     "symbol": "SQLCompiler.get_qualify_sql"
   },
-  "id": "ea93c8e7-cc18-419e-9bc0-54630f4f2afb",
+  "id": "3841c3b8-2591-43ec-8e45-9a6b4c066298",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6122330+00:00"
+    "posted_at": "2026-11-09T23:32:05.7506720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aaedae84-29a5-4dce-a1fc-9745d002f8d2",
+  "subject_id": "8cb6b237-f7bb-46b7-a264-141187e24933",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_qualify_sql",
   "tags": [
     "entity:method"

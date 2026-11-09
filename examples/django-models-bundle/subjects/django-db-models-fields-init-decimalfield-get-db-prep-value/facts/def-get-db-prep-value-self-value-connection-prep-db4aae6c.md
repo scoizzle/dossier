@@ -1,6 +1,6 @@
 # Fact db4aae6c
 
-Store id: 783bf1b1-73b9-42da-8bc0-81607bfc9ac8
+Store id: 1a461575-d955-4012-bc33-6087150dd48a
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4634100+00:00`
+- posted_at: `2026-11-09T23:31:56.6398720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1915,
     "symbol": "DecimalField.get_db_prep_value"
   },
-  "id": "783bf1b1-73b9-42da-8bc0-81607bfc9ac8",
+  "id": "1a461575-d955-4012-bc33-6087150dd48a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4634100+00:00"
+    "posted_at": "2026-11-09T23:31:56.6398720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bbf58260-e1ab-4b31-a0cc-3854c695b4c1",
+  "subject_id": "1c3269ce-b458-491a-b48a-f7aafcb418ed",
   "subject_name": "django/db/models/fields/__init__::DecimalField.get_db_prep_value",
   "tags": [
     "entity:method"

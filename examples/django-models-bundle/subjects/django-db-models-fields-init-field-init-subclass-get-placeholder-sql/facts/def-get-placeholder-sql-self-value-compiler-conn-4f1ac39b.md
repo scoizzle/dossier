@@ -1,6 +1,6 @@
 # Fact 4f1ac39b
 
-Store id: fc178e48-af8c-4f34-a6f4-3c1828064d3b
+Store id: d2144826-b901-410d-9246-15156205da06
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_placeholder_sql(self, value, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2594570+00:00`
+- posted_at: `2026-11-09T23:31:56.4197800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 209,
     "symbol": "Field.__init_subclass__.get_placeholder_sql"
   },
-  "id": "fc178e48-af8c-4f34-a6f4-3c1828064d3b",
+  "id": "d2144826-b901-410d-9246-15156205da06",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2594570+00:00"
+    "posted_at": "2026-11-09T23:31:56.4197800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ffc59dc6-5b09-4e27-96d8-158dcead8f4f",
+  "subject_id": "3da13ef0-6da3-4ed8-b7cb-ff3695f5a956",
   "subject_name": "django/db/models/fields/__init__::Field.__init_subclass__.get_placeholder_sql",
   "tags": [
     "entity:function"

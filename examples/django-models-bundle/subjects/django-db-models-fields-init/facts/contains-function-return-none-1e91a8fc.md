@@ -1,6 +1,6 @@
 # Fact 1e91a8fc
 
-Store id: d02e299f-4f19-4f02-b208-bcfff619a22e
+Store id: 8707354b-8e93-4350-b3ae-c8a5601e89f6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function return_None
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d02e299f-4f19-4f02-b208-bcfff619a22e",
+  "id": "8707354b-8e93-4350-b3ae-c8a5601e89f6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "return_None"
       },
       "rel": "contains",
-      "target": "02bffb46-5e45-46ed-9998-e5c9c5410b42"
+      "target": "20a8667a-0c3e-41af-b36a-1f633bdced87"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:function"

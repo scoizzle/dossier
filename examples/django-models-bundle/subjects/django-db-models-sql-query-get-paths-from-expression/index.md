@@ -1,9 +1,9 @@
 # django/db/models/sql/query::get_paths_from_expression
 
-- Subject: django/db/models/sql/query::get_paths_from_expression (id `e04e5037-81fb-41fa-bb1c-c39b6177c6ce`)
+- Subject: django/db/models/sql/query::get_paths_from_expression (id `81e1a0fc-f452-4e72-9f06-f77cd8b0bda6`)
 - Kind: function
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

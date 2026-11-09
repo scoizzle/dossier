@@ -1,14 +1,14 @@
 # docs/releases/1.6.10
 
-- Subject: docs/releases/1.6.10 (id `a54f0935-9ff8-4e0a-b914-ac2e2558a458`)
+- Subject: docs/releases/1.6.10 (id `dc84b40c-6570-44cb-a592-1e907e93a307`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 13 of 14
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1038 tokens
+- Facts shown: 14 of 14
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - *January 13, 2015* [388fbb2cbb8cb1d7-2]
 - =========================== Django 1.6.10 release notes =========================== [2a9693a6]
@@ -24,6 +24,6 @@
 - WSGI header spoofing via underscore/dash conflation =================================================== [07908c11312a74a1-2]
 - When HTTP headers are placed into the WSGI environ, they are normalized by converting to uppercase, converting all dashes to underscores, and prepending ``HTTP_``. For instance, a header ``X-Auth-User`` would become ``HTTP_X_AUTH_USER`` in the WSGI environ (and thus also in Django's ``request.META`` dictionary). [4dc4c57eb359d1d7-2]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [e1be48d382b77261-2]
+- [e1be48d382b77261-2] Unfortunately, this means that the WSGI environ cannot distinguish between headers containing dashes and headers containing underscores: ``X-Auth-User`` and ``X-Auth_User`` both become ``HTTP_X_AUTH_USER``. This means that if a header is used in a security-sensitive way (for instance, passing authentication information along from a front-end proxy), even if the proxy carefully strips any incoming value for ``X-Auth-User``, an attacker may be able to provide an ``X-Auth_User`` header (with underscore) and bypass this protection.

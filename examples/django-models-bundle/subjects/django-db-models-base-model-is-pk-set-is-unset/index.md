@@ -1,9 +1,9 @@
 # django/db/models/base::Model._is_pk_set._is_unset
 
-- Subject: django/db/models/base::Model._is_pk_set._is_unset (id `53022431-ad23-45b1-b803-921c1bfb9d86`)
+- Subject: django/db/models/base::Model._is_pk_set._is_unset (id `2a3c2efe-cb21-4046-81e5-9dfc625015a0`)
 - Kind: function
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

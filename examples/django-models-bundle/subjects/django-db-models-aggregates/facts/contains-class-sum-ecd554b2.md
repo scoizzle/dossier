@@ -1,6 +1,6 @@
 # Fact ecd554b2
 
-Store id: 14dde06b-6c0d-4170-8033-4ebc5d515484
+Store id: 5aeb0d23-ee14-489e-a9d7-5822ac471d42
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Sum
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0505810+00:00`
+- posted_at: `2026-11-09T23:31:53.5507770+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "14dde06b-6c0d-4170-8033-4ebc5d515484",
+  "id": "5aeb0d23-ee14-489e-a9d7-5822ac471d42",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0505810+00:00"
+    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Sum"
       },
       "rel": "contains",
-      "target": "d9972ebd-e19c-4cd8-942b-cddda683692f"
+      "target": "255ec33d-8ce7-4614-8821-abd8cae44bb6"
     }
   ],
   "status": "live",
-  "subject_id": "d72d5420-abde-4439-aadc-c9ebfdcfd755",
+  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

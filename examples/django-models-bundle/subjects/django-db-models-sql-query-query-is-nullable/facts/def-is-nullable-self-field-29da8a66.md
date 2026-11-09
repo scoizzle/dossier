@@ -1,6 +1,6 @@
 # Fact 29da8a66
 
-Store id: bd88a6a3-ca11-4479-99c0-626fb2b18080
+Store id: a7d99777-ab39-4d07-ad8b-da1569b52d74
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_nullable(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5560740+00:00`
+- posted_at: `2026-11-09T23:32:07.1511410+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2775,
     "symbol": "Query.is_nullable"
   },
-  "id": "bd88a6a3-ca11-4479-99c0-626fb2b18080",
+  "id": "a7d99777-ab39-4d07-ad8b-da1569b52d74",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5560740+00:00"
+    "posted_at": "2026-11-09T23:32:07.1511410+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "098fe1e8-092b-4999-ad60-cad5166a75fc",
+  "subject_id": "8d7b90e2-69db-4fa3-b500-c683f7f0560c",
   "subject_name": "django/db/models/sql/query::Query.is_nullable",
   "tags": [
     "entity:method"

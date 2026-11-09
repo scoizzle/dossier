@@ -1,6 +1,6 @@
 # Fact daf9f08f
 
-Store id: 697f3040-8ffc-423c-bbee-59a2e674a1aa
+Store id: 64ab347f-3145-4181-856e-e128b73f0d3a
 
 ## Text
 
@@ -20,7 +20,7 @@ class CommaSeparatedIntegerField(CharField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3954710+00:00`
+- posted_at: `2026-11-09T23:31:56.5637090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1365,
     "symbol": "CommaSeparatedIntegerField"
   },
-  "id": "697f3040-8ffc-423c-bbee-59a2e674a1aa",
+  "id": "64ab347f-3145-4181-856e-e128b73f0d3a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3954710+00:00"
+    "posted_at": "2026-11-09T23:31:56.5637090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a967ef76-c435-4bbf-9fce-51847b67f8b4",
+  "subject_id": "fde3c40e-b60c-4e2e-b071-2e0ac74dac2a",
   "subject_name": "django/db/models/fields/__init__::CommaSeparatedIntegerField",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact d1bbb8c4
 
-Store id: 9928cb36-a926-4053-9edd-3e3c6b80d19e
+Store id: 59227dff-75ee-4d0c-ac17-769b5c62070e
 
 ## Text
 
@@ -20,7 +20,7 @@ class AnyValue(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0389510+00:00`
+- posted_at: `2026-11-09T23:31:53.5354070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 226,
     "symbol": "AnyValue"
   },
-  "id": "9928cb36-a926-4053-9edd-3e3c6b80d19e",
+  "id": "59227dff-75ee-4d0c-ac17-769b5c62070e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0389510+00:00"
+    "posted_at": "2026-11-09T23:31:53.5354070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d2691440-7a5f-4c71-8b0d-6228efd1a80f",
+  "subject_id": "d9555aaf-330b-47e4-8a78-ea7a9499b9b0",
   "subject_name": "django/db/models/aggregates::AnyValue",
   "tags": [
     "entity:class"

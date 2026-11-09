@@ -1,6 +1,6 @@
 # Fact 2ae64787
 
-Store id: 47dbef8d-ab9f-4036-970c-440da06421ce
+Store id: 092dd492-ad0b-427b-b276-4ac48b696043
 
 ## Text
 
@@ -20,7 +20,7 @@ def combine(self, rhs, connector)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2747960+00:00`
+- posted_at: `2026-11-09T23:32:06.8152540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 700,
     "symbol": "Query.combine"
   },
-  "id": "47dbef8d-ab9f-4036-970c-440da06421ce",
+  "id": "092dd492-ad0b-427b-b276-4ac48b696043",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2747960+00:00"
+    "posted_at": "2026-11-09T23:32:06.8152540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e3de7b7c-a160-4ac6-84aa-3acc8e371910",
+  "subject_id": "bee3b28a-f749-4530-b4d4-5f9e9e63e389",
   "subject_name": "django/db/models/sql/query::Query.combine",
   "tags": [
     "entity:method"

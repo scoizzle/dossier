@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DurationField
 
-- Subject: django/db/models/fields/__init__::DurationField (id `706a64b7-e4ba-47fb-b3bc-87fe4da945ea`)
+- Subject: django/db/models/fields/__init__::DurationField (id `4aa473b5-a84c-40dd-b33e-b9584200a499`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

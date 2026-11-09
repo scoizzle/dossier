@@ -1,6 +1,6 @@
 # Fact bdad16a2
 
-Store id: f6b7754f-c1f6-4dfd-ba50-146fd3850c98
+Store id: a865382a-6b89-475a-857c-9ccfbab3412e
 
 ## Text
 
@@ -20,7 +20,7 @@ async def adelete(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.5181930+00:00`
+- posted_at: `2026-11-09T23:32:04.4769870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1391,
     "symbol": "QuerySet.adelete"
   },
-  "id": "f6b7754f-c1f6-4dfd-ba50-146fd3850c98",
+  "id": "a865382a-6b89-475a-857c-9ccfbab3412e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.5181930+00:00"
+    "posted_at": "2026-11-09T23:32:04.4769870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d08b6426-da89-4361-9ed5-6f1a1df1c8b7",
+  "subject_id": "506bd23f-a936-46b3-ad03-8a7ae7e9afa6",
   "subject_name": "django/db/models/query::QuerySet.adelete",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact 8797ec96
 
-Store id: 1f63f2bf-7bf6-4a08-ad60-50c9b7ddf373
+Store id: cc3d2387-51d8-4d0f-974c-d343fe6dd2fd
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2956330+00:00`
+- posted_at: `2026-11-09T23:31:56.4491800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 597,
     "symbol": "Field.select_format"
   },
-  "id": "1f63f2bf-7bf6-4a08-ad60-50c9b7ddf373",
+  "id": "cc3d2387-51d8-4d0f-974c-d343fe6dd2fd",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2956330+00:00"
+    "posted_at": "2026-11-09T23:31:56.4491800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e433ff19-84f7-4e02-aeb9-fe24d3a038f8",
+  "subject_id": "d27434d6-a448-49b0-846c-57ef94266b7d",
   "subject_name": "django/db/models/fields/__init__::Field.select_format",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 1607ad04
 
-Store id: a6fe7194-5633-49af-94eb-01193380c2d1
+Store id: 65999726-f6e8-4c83-bc66-2c62c8ff2ef2
 
 ## Text
 
@@ -20,7 +20,7 @@ def on_delete_sql(self, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0343280+00:00`
+- posted_at: `2026-11-09T23:31:55.0894070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 92,
     "symbol": "DatabaseOnDelete.on_delete_sql"
   },
-  "id": "a6fe7194-5633-49af-94eb-01193380c2d1",
+  "id": "65999726-f6e8-4c83-bc66-2c62c8ff2ef2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0343280+00:00"
+    "posted_at": "2026-11-09T23:31:55.0894070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c6c4a5fd-a1f6-429a-8961-5da3b10ab2fa",
+  "subject_id": "a445600c-efb6-4521-b9d4-7edace1774a1",
   "subject_name": "django/db/models/deletion::DatabaseOnDelete.on_delete_sql",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/ref/databases
 
-- Subject: docs/ref/databases (id `20c9b613-203a-4422-9093-b6f72c495bf8`)
+- Subject: docs/ref/databases (id `c10be0f7-25cc-4ca6-8479-879fbb0d0016`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 24 of 340
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 15177 tokens
+- Facts shown: 338 of 340
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - "OPTIONS": { "init_command": "SET default_storage_engine=INNODB", } [a8b77ba9]
 - "OPTIONS": { # ... "timeout": 20, # ... } [11f9971a]
@@ -35,6 +35,319 @@
 - GRANT EXECUTE ON SYS.DBMS_LOB TO user; GRANT EXECUTE ON SYS.DBMS_RANDOM TO user; [5e8f221f]
 - The JSON1 extension is enabled by default on SQLite 3.38+. [d1a8cdd6]
 
-## Beyond the budget
+## All facts
 
-314 more facts did not fit in the budget: [989743d1] [8ba84bb6] [8df7a250] [7c010b6a] [a618486b] [22ab4fb1] [e0eb16b9] [5d90beac] [79edd630] [aac5cc2e] [2f11eb36] [cfbc5fdd] [2620b42c] [09358b3e] [0ee73173f492412a-24] [36214a76] [25fb3f5a] [6820be3d] [15ee2b7e] [61cdfde3] [c5d99c45] [59fbd419] [9732c6fd] [874814ea] [73eaa51d] [f323f2e0] [4a79ac40] [e6f3f79e] [53360ce9] [e319a948] [89735dd6] [2c901371] [d2679b90] [1a7b79f4] [5e9039f2] [19b95267] [8bd3e817] [2628f3d2] [0fb70e96] [67a3e996] [47aa71ba] [9c054d78] [dd702abe] [1b535d14] [2e91162f] [000d644c] [afabbfde] [f9e0bc6f] [b0a7d249] [569c8b69] [11bbc724] [418bced2] [f89b1df7] [1a167082] [08f6d912] [169a5ff8] [b2e8220e] [86210525] [3384be3e] [05cd1aef] [5cbafcd8] [d26c6d45] [72a423bc] [16c236a3] [13e1dba7] [35cbc412] [8ab5a9b1] [c467b2c7] [5c17976a] [dcfec81e] [66d91bee] [255d7cb2] [d31297a2] [1f48875e] [623da77b] [eeb1ac19] [e807011e] [8d4b34cb] [c84b5994] [bd21db5b] [9b76df8a] [414f9d24] [a195d3a1] [7b322374] [0d4dcb40] [ad6da854] [d16ccb3d] [015070c8] [b352480b] [bac9f312] [d0941a63] [70bf09d0] [4eefac24] [07b7a56d6b1a4254] [034e9de8] [21b0a21f] [6cfd7660] [492926bd] [ab16e0aa61fdec9d-5] [eaf050be34acb41d-268] [2de00068] [05bdbc1e8a85c4aa] [0ee73173f492412a-25] [0ee73173f492412a-26] [0ee73173f492412a-27] [3a9340cd0d877339-24] [5f312d12] [2c392a7d] [942ae6c11625c81c-88] [942ae6c11625c81c-89] [942ae6c11625c81c-90] [c54b54cb0805732a-33] [c54b54cb0805732a-34] [c54b54cb0805732a-35] [af6d62b9] [75caad7f] [1e80fffa] [be47385a] [9a831b78] [6372b461] [244d5fa9] [a1d1dbdf] [3bcdd1de] [4445a0fb] [297f2ad7] [59b55bdb] [2b46d3a4] [47b77bf4] [3cc2a6a2] [ba2762da] [f4a0ab4c] [383dce08da8f0e33] [98300953] [e3d6bc02a013fdc6] [e3d6bc02a013fdc6-2] [6b8aaf35] [fd2e7cba] [4d299cc7] [956aad5e] [f8b36f08] [5d6b2a19] [78c66140] [367c9164] [27c0e5de] [243d4a28] [102fa89f] [11bf0922] [f1f69564] [8e1dd1c7] [9bd1f1af] [979e0a25] [9aa13487] [76a3cc35] [652eb9a6] [d9c7017e] [b8490798] [2580d1eb] [fc6fcf02] [3bb32189] [8ab6cf15] [f3de4196] [f34a5a75] [f703018d] [ee51d1be] [9b4e8c12] [cfbd7cf0] [0135362c] [7ac25b73] [0cef10c5] [41f7255d] [f1a0988d] [918a2bb3] [ee2ab6c4] [a6d22ed3] [f1a835a2] [a1bb3935] [80cd19cb] [c7ef1140] [4d7e167d] [182292c9] [34bbf76e] [b6267daa] [987b1e72] [73d86357] [4fbcc6cd] [124b5625] [33a0aaf3] [bcb54e6c] [403f61bc] [5f6452d4] [e9f1338f] [18f77b17] [2551c11d] [2ebb8775] [dda5b7f0] [bed7c90c] [ad5a5289] [562ab8c8] [ce80bbac] [a8c939a1] [76bf7af3] [43504e63] [7094a7d6] [23acd031] [27d3f505] [95bd904f] [5c95ceee] [8b3b935c] [a882ea11] [c0392409] [aa2a3a8c] [77584c57] [a75b584d] [8c74cf2c] [eb330552] [25d26478] [e595be90] [cf626145] [d3c6d5b5] [702649e3] [1f52c8af] [f80134e0] [3c67e5d0] [5c7874f8] [2e17bc4dc6a60e7d-4] [1cfb1f5f] [a28d3657] [75bf6b09] [8de4417c] [ab167913] [2b26f78a] [4baa12db] [d5cdb5ce] [3c85cf1f] [1756ec9d] [c6263029] [2166a45f] [6db5a8f2] [eeb69fe5] [bc85d604] [af0a7351] [155e29f9] [f717e4a2] [dbde8ff1] [732d0131] [8ce514b1] [9eff6ba4] [ce57b458] [b4fdea4d] [509332b6] [895c9733] [c8bce83b] [d6d7d075] [fe6cf694] [0a77cba5] [05fae169] [2b0ac19a] [136a5aaa] [db2f8af1] [060a34de] [3ba2fd4e] [3352883b] [23f29256] [5b6ded5e] [239d3b8e] [a7170b2b] [c2ff6983] [d584fe11] [b6038530] [d3442d0a] [b17e427d] [bffa7996] [6580de27] [18177b57] [a7fb46ab] [6b6fef5c] [c8f50a9f] [223c8887] [80119a91] [6150b794] [d74f51a2] [34ec9f72] [d949ef58] [08bcba3d] [8aff048f] [6f166122] [15b5f310] [4305e662] [cc080962] [2e553e20] [33adf472] [133002ab] [c4dbfb90] [227d588a] [6ef6bb2c] [2a5ee4c9] [5bf36738] [123f0149] [e2344d97] [bfaa77d4] [5bd969c8] [06da61af] [d9996a56] [c07d2a9a] [1a1a7ea5] [099fb63e] [56da5e4e] [fff7a791] [f64d24c6] [c21214f3] [53f93667] [c4b4a240] [aede0191] [d558ec0a]
+- [989743d1] Model formsets validate unique fields in a case-sensitive manner. Thus when using a case-insensitive collation, a formset with unique field values that differ only by case will pass validation, but upon calling ``save()``, an ``IntegrityError`` will be raised.
+- [8ba84bb6] Support for ``psycopg2`` is likely to be deprecated and removed at some point in the future.
+- [8df7a250] This is dangerous: it will make your database more susceptible to data loss or corruption in the case of a server crash or power loss. Only use this on a development machine where you can easily restore the entire contents of all databases in the cluster.
+- [7c010b6a] Under higher isolation levels, your application should be prepared to handle exceptions raised on serialization failures. This option is designed for advanced uses.
+- [a618486b] Using a service name for testing purposes is not supported. This :ticket:`may be implemented later <33685>`.
+- [22ab4fb1] [my_service] host=localhost user=USER dbname=NAME port=5432
+- [e0eb16b9] class DatabaseFeatures(features.DatabaseFeatures): def allows_group_by_selected_pks_on_model(self, model): return True
+- [5d90beac] class DatabaseWrapper(base.DatabaseWrapper): features_class = DatabaseFeatures
+- [79edd630] class ForeignModel(models.Model): class Meta: db_table = '"OTHER_USER"."NAME_ONLY_SEEMS_OVER_30"'
+- [aac5cc2e] class LegacyModel(models.Model): class Meta: db_table = '"name_left_in_lowercase"'
+- [2f11eb36] from django.db.backends.postgresql import base, features
+- [cfbc5fdd] from django.db.backends.postgresql.psycopg_any import IsolationLevel
+- [2620b42c] localhost:5432:NAME:USER:PASSWORD
+- [09358b3e] mysite/ ... mydbengine/ __init__.py base.py
+- [0ee73173f492412a-24] .. code-block:: sql
+- [36214a76] CREATE DATABASE <dbname> CHARACTER SET utf8mb4;
+- [25fb3f5a] This can be tedious if you have a lot of tables.
+- [6820be3d] This sets the default storage engine upon connecting to the database. After your tables have been created, you should remove this option as it adds a query that is only needed during table creation to each database connection.
+- [15ee2b7e] This will make SQLite wait a bit longer before throwing "database is locked" errors; it won't really do anything to solve them.
+- [61cdfde3] "Database is locked" errors ---------------------------
+- [c5d99c45] #. :setting:`OPTIONS`. #. :setting:`NAME`, :setting:`USER`, :setting:`PASSWORD`, :setting:`HOST`, :setting:`PORT` #. MySQL option files.
+- [59fbd419] * :pypi:`CockroachDB <django-cockroachdb>` * :pypi:`Firebird <django-firebird>` * :pypi:`Google Cloud Spanner <django-google-spanner>` * :pypi:`Microsoft SQL Server <mssql-django>` * :pypi:`MongoDB <django-mongodb-backend>` * :pypi:`Snowflake <django-snowflake>` * :pypi:`TiDB <django-tidb>` * :pypi:`YugabyteDB <django-yugabytedb>`
+- [9732c6fd] * :ref:`PostgreSQL <postgresql-notes>` * :ref:`MariaDB <mariadb-notes>` * :ref:`MySQL <mysql-notes>` * :ref:`Oracle <oracle-notes>` * :ref:`SQLite <sqlite-notes>`
+- [874814ea] * After the tables are created, execute an ``ALTER TABLE`` statement to convert a table to a new storage engine (such as InnoDB):
+- [73eaa51d] * Another option is to use the ``init_command`` option for MySQLdb prior to creating your tables::
+- [f323f2e0] * CREATE TABLE * CREATE SEQUENCE * CREATE PROCEDURE * CREATE TRIGGER
+- [4a79ac40] * CREATE USER * ALTER USER * DROP USER * CREATE TABLESPACE * DROP TABLESPACE * CREATE SESSION WITH ADMIN OPTION * CREATE TABLE WITH ADMIN OPTION * CREATE SEQUENCE WITH ADMIN OPTION * CREATE PROCEDURE WITH ADMIN OPTION * CREATE TRIGGER WITH ADMIN OPTION
+- [e6f3f79e] * Increase the default timeout value by setting the ``timeout`` database option::
+- [53360ce9] * LOB columns may not be used as primary keys.
+- [e319a948] * LOB columns may not be used in a ``SELECT DISTINCT`` list. This means that attempting to use the ``QuerySet.distinct`` method on a model that includes ``TextField`` columns will result in an ``ORA-00932`` error when run against Oracle. As a workaround, use the ``QuerySet.defer`` method in conjunction with ``distinct()`` to prevent ``TextField`` columns from being included in the ``SELECT DISTINCT`` list.
+- [89735dd6] * LOB columns may not be used in indexes.
+- [2c901371] * Rewriting your code to reduce concurrency and ensure that database transactions are short-lived.
+- [d2679b90] * Switching to another database backend. At a certain point SQLite becomes too "lite" for real-world applications, and these sorts of concurrency errors indicate you've reached that point.
+- [1a7b79f4] * ``'read uncommitted'`` * ``'read committed'`` * ``'repeatable read'`` * ``'serializable'``
+- [5e9039f2] - :pypi:`mysqlclient` is a native driver. It's **the recommended choice**. - `MySQL Connector/Python`_ is a pure Python driver from Oracle that does not require the MySQL client library or any Python modules outside the standard library.
+- [19b95267] - ``client_encoding``: ``'UTF8'``, - ``default_transaction_isolation``: ``'read committed'`` by default, or the value set in the connection options (see below), - ``timezone``: - when :setting:`USE_TZ` is ``True``, ``'UTC'`` by default, or the :setting:`TIME_ZONE <DATABASE-TIME_ZONE>` value set for the connection, - when :setting:`USE_TZ` is ``False``, the value of the global :setting:`TIME_ZONE` setting.
+- [8bd3e817] .. _ALTER ROLE: https://www.postgresql.org/docs/current/sql-alterrole.html
+- [2628f3d2] .. _JSON1 extension: https://www.sqlite.org/json1.html .. _the wiki page: https://code.djangoproject.com/wiki/JSON1Extension
+- [0fb70e96] .. _MySQL Connector/Python: https://dev.mysql.com/downloads/connector/python/
+- [67a3e996] .. _MySQL Unicode Character Sets: https://dev.mysql.com/doc/refman/en/charset-unicode-sets.html
+- [47aa71ba] .. _MySQL option file: https://dev.mysql.com/doc/refman/en/option-files.html .. _MySQLdb connection options: https://mysqlclient.readthedocs.io/user_guide.html#functions-and-attributes
+- [9c054d78] .. _PgBouncer: https://www.pgbouncer.org/
+- [dd702abe] .. _PostgreSQL operator class: https://www.postgresql.org/docs/current/indexes-opclass.html
+- [1b535d14] .. _Pragma options: https://www.sqlite.org/pragma.html
+- [2e91162f] .. _SQLite: https://www.sqlite.org/
+- [000d644c] .. _`Isolation in SQLite`: https://www.sqlite.org/isolation.html
+- [afabbfde] .. _`Oracle Database Server`: https://www.oracle.com/ .. _`oracledb`: https://oracle.github.io/python-oracledb/
+- [f9e0bc6f] .. _`Transactions in SQLite`: https://www.sqlite.org/lang_transaction.html#deferred_immediate_and_exclusive_transactions
+- [b0a7d249] .. _`create_pool()`: https://python-oracledb.readthedocs.io/en/latest/user_guide/connection_handling.html#connection-pooling
+- [569c8b69] .. _connection service file: https://www.postgresql.org/docs/current/libpq-pgservice.html .. _password file: https://www.postgresql.org/docs/current/libpq-pgpass.html .. _parameters: https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-PARAMKEYWORDS
+- [11bbc724] .. _create your database: https://dev.mysql.com/doc/refman/en/create-database.html
+- [418bced2] .. _cursor_tuple_fraction: https://www.postgresql.org/docs/current/runtime-config-query.html#GUC-CURSOR-TUPLE-FRACTION
+- [f89b1df7] .. _database-isolation-level:
+- [1a167082] .. _database-role:
+- [08f6d912] .. _database-server-side-parameters-binding:
+- [169a5ff8] .. _documented at sqlite.org: https://www.sqlite.org/faq.html#q18
+- [b2e8220e] .. _documented thoroughly: https://dev.mysql.com/doc/refman/en/charset.html
+- [86210525] .. _download page: https://dev.mysql.com/downloads/connector/python/
+- [3384be3e] .. _isolation level: https://www.postgresql.org/docs/current/transaction-iso.html
+- [05cd1aef] .. _its own: https://dev.mysql.com/doc/connector-python/en/connector-python-django-backend.html
+- [5cbafcd8] .. _known issues: https://bugs.mysql.com/bug.php?id=48875
+- [d26c6d45] .. _manually-specified-autoincrement-pk:
+- [72a423bc] .. _mariadb-notes:
+- [16c236a3] .. _mysql-character-fields:
+- [13e1dba7] .. _mysql-collation:
+- [35cbc412] .. _mysql-db-api-drivers:
+- [8ab5a9b1] .. _mysql-fractional-seconds:
+- [c467b2c7] .. _mysql-isolation-level:
+- [5c17976a] .. _mysql-notes:
+- [dcfec81e] .. _mysql-sql-mode:
+- [66d91bee] .. _mysql-storage-engines:
+- [255d7cb2] .. _mysql-time-zone-definitions:
+- [d31297a2] .. _mysql_tzinfo_to_sql: https://dev.mysql.com/doc/refman/en/mysql-tzinfo-to-sql.html
+- [1f48875e] .. _oracle-notes:
+- [623da77b] .. _oracle-null-empty-strings:
+- [eeb1ac19] .. _oracle-pool:
+- [e807011e] .. _persistent-database-connections:
+- [8d4b34cb] .. _postgresql-connection-settings:
+- [c84b5994] .. _postgresql-notes:
+- [bd21db5b] .. _postgresql-pool:
+- [9b76df8a] .. _postgresql-server-side-cursors:
+- [414f9d24] .. _psycopg: https://www.psycopg.org/psycopg3/ .. _psycopg2: https://www.psycopg.org/
+- [a195d3a1] .. _sequence: https://www.postgresql.org/docs/current/sql-createsequence.html
+- [7b322374] .. _sqlite-decimal-handling:
+- [0d4dcb40] .. _sqlite-init-command:
+- [ad6da854] .. _sqlite-isolation:
+- [d16ccb3d] .. _sqlite-json1:
+- [015070c8] .. _sqlite-notes:
+- [b352480b] .. _sqlite-string-matching:
+- [bac9f312] .. _sqlite-transaction-behavior:
+- [d0941a63] .. _storage engines: https://dev.mysql.com/doc/refman/en/storage-engines.html .. _MyISAM: https://dev.mysql.com/doc/refman/en/myisam-storage-engine.html .. _InnoDB: https://dev.mysql.com/doc/refman/en/innodb-storage-engine.html
+- [70bf09d0] .. _strict mode: https://dev.mysql.com/doc/refman/en/sql-mode.html#sql-mode-strict
+- [4eefac24] .. _subclassing-database-backends:
+- [07b7a56d6b1a4254] .. _template: https://www.postgresql.org/docs/current/sql-createdatabase.html
+- [034e9de8] .. _the MySQL documentation: https://dev.mysql.com/doc/refman/en/create-index.html#create-index-column-prefixes
+- [21b0a21f] .. _third-party-notes:
+- [6cfd7660] .. _transaction isolation level: https://dev.mysql.com/doc/refman/en/innodb-transaction-isolation-levels.html
+- [492926bd] .. _transaction-pooling-server-side-cursors:
+- [ab16e0aa61fdec9d-5] .. code-block:: ini
+- [eaf050be34acb41d-268] .. code-block:: pycon
+- [2de00068] .. code-block:: python :caption: ``mysite/mydbengine/base.py``
+- [05bdbc1e8a85c4aa] .. code-block:: python :caption: ``settings.py``
+- [0ee73173f492412a-25] .. code-block:: sql
+- [0ee73173f492412a-26] .. code-block:: sql
+- [0ee73173f492412a-27] .. code-block:: sql
+- [3a9340cd0d877339-24] .. code-block:: text
+- [5f312d12] .. code-block:: text :caption: ``.my_pgpass``
+- [2c392a7d] .. code-block:: text :caption: ``.pg_service.conf``
+- [942ae6c11625c81c-88] .. note::
+- [942ae6c11625c81c-89] .. note::
+- [942ae6c11625c81c-90] .. note::
+- [c54b54cb0805732a-33] .. warning::
+- [c54b54cb0805732a-34] .. warning::
+- [c54b54cb0805732a-35] .. warning::
+- [af6d62b9] 1. For substring matching, all matches are done case-insensitively. That is a filter such as ``filter(name__contains="aa")`` will match a name of ``"Aabb"``.
+- [75caad7f] 2. For strings containing characters outside the ASCII range, all exact string matches are performed case-sensitively, even when the case-insensitive options are passed into the query. So the :lookup:`iexact` filter will behave exactly the same as the :lookup:`exact` filter in these cases.
+- [1e80fffa] ========= Databases =========
+- [be47385a] =============== ========= ===== Option MariaDB MySQL =============== ========= ===== ``SKIP LOCKED`` X X ``NOWAIT`` X X ``OF`` X ``NO KEY`` =============== ========= =====
+- [9a831b78] A Full DSN or Easy Connect string can be used in :setting:`NAME` if both :setting:`HOST` and :setting:`PORT` are empty. This format is required when using RAC or pluggable databases without ``tnsnames.ora``, for example.
+- [6372b461] All of these privileges are included in the DBA role, which is appropriate for use on a private developer's database.
+- [244d5fa9] Another option is to wrap each ``QuerySet`` using server-side cursors in an :func:`~django.db.transaction.atomic` block, because it disables ``autocommit`` for the duration of the transaction. This way, the server-side cursor will only live for the duration of the transaction.
+- [a1d1dbdf] Any fields that are stored with ``VARCHAR`` column types may have their ``max_length`` restricted to 255 characters if you are using ``unique=True`` for the field. This affects :class:`~django.db.models.CharField`, :class:`~django.db.models.SlugField`. See `the MySQL documentation`_ for more details.
+- [3bcdd1de] At the beginning of each request, Django closes the connection if it has reached its maximum age. If your database terminates idle connections after some time, you should set :setting:`CONN_MAX_AGE` to a lower value, so that Django doesn't attempt to use a connection that has been terminated by the database server. (This problem may only affect very low traffic sites.)
+- [4445a0fb] At the end of each request, Django closes the connection if it has reached its maximum age or if it is in an unrecoverable error state. If any database errors have occurred while processing the requests, Django checks whether the connection still works, and closes it if it doesn't. Thus, database errors affect at most one request per each application's worker thread; if the connection becomes unusable, the next request gets a fresh connection.
+- [297f2ad7] Automatic typecasting can cause unexpected results --------------------------------------------------
+- [59b55bdb] Both the Django ORM and MySQL (when using the InnoDB :ref:`storage engine <mysql-storage-engines>`) support database :ref:`savepoints <topics-db-transactions-savepoints>`.
+- [2b46d3a4] By default, the Oracle backend uses a ``RETURNING INTO`` clause to efficiently retrieve the value of an ``AutoField`` when inserting new rows. This behavior may result in a ``DatabaseError`` in certain unusual setups, such as when inserting into a remote table, or into a view with an ``INSTEAD OF`` trigger. The ``RETURNING INTO`` clause can be disabled by setting the ``use_returning_into`` option of the database configuration to ``False``::
+- [47b77bf4] By default, with a UTF-8 database, MySQL will use the ``utf8mb4_0900_ai_ci`` collation. This results in all string equality comparisons being done in a *case-insensitive* manner. That is, ``"Fred"`` and ``"freD"`` are considered equal at the database level. If you have a unique constraint on a field, it would be illegal to try to insert both ``"aa"`` and ``"AA"`` into the same column, since they compare as equal (and, hence, non-unique) with the default collation. If you want case-sensitive comparisons on a particular column or table, change the column or table to use the ``utf8mb4_0900_as_cs`` collation.
+- [3cc2a6a2] Caveats ~~~~~~~
+- [ba2762da] Character fields ~~~~~~~~~~~~~~~~
+- [f4a0ab4c] Collation settings ~~~~~~~~~~~~~~~~~~
+- [383dce08da8f0e33] Connecting to the database --------------------------
+- [98300953] Connection management ~~~~~~~~~~~~~~~~~~~~~
+- [e3d6bc02a013fdc6] Connection pool ---------------
+- [e3d6bc02a013fdc6-2] Connection pool ---------------
+- [6b8aaf35] Connection pooling allows connections to be reused across threads, reducing connection setup overhead. When enabled, Django maintains a separate pool for each database alias in each process. Closing a Django database connection returns it to the pool for reuse.
+- [fd2e7cba] Connection pooling is supported only with `psycopg`_ and requires ``psycopg[pool]`` (which installs :pypi:`psycopg-pool`).
+- [4d299cc7] Connection settings are used in this order:
+- [956aad5e] Consider, for example, that you need to change a single database feature. First, you have to create a new directory with a ``base`` module in it. For example:
+- [f8b36f08] Creating your database ----------------------
+- [5d6b2a19] Creating your tables --------------------
+- [78c66140] Decimal handling ----------------
+- [367c9164] Django assumes that all databases use UTF-8 encoding. Using other encodings may result in unexpected behavior such as "value too long" errors from your database for data that is valid in Django. See the database specific notes below for information on how to set up your database correctly.
+- [27c0e5de] Django attempts to support as many features as possible on all database backends. However, not all database backends are alike, and we've had to make design decisions on which features to support and which assumptions we can make safely.
+- [243d4a28] Django comes with built-in database backends. You may subclass an existing database backend to modify its behavior, features, or configuration.
+- [102fa89f] Django expects the database to support Unicode (UTF-8 encoding) and delegates to it the task of enforcing transactions and referential integrity. It is important to be aware of the fact that the two latter ones aren't actually enforced by MySQL when using the MyISAM storage engine, see the next section.
+- [11bf0922] Django generally prefers to use the empty string (``''``) rather than ``NULL``, but Oracle treats both identically. To get around this, the Oracle backend ignores an explicit ``null`` option on fields that have the empty string as a possible value and generates DDL as if ``null=True``. When fetching from the database, it is assumed that a ``NULL`` value in one of these fields really means the empty string, and the data is silently converted to reflect this assumption.
+- [f1f69564] Django needs the following parameters for its database connections:
+- [8e1dd1c7] Django officially supports the following databases:
+- [9bd1f1af] Django opens a connection to the database when it first makes a database query. It keeps this connection open and reuses it in subsequent requests. Django closes the connection once it exceeds the maximum age defined by :setting:`CONN_MAX_AGE` or when it isn't usable any longer.
+- [979e0a25] Django requires `mysqlclient`_ 2.2.1 or later.
+- [9aa13487] Django supports MariaDB 10.11 and higher.
+- [76a3cc35] Django supports MySQL 8.4 and higher.
+- [652eb9a6] Django supports PostgreSQL 15 and higher. `psycopg`_ 3.1.12+ or `psycopg2`_ 2.9.9+ is required, though the latest `psycopg`_ 3.1.12+ is recommended.
+- [d9c7017e] Django supports SQLite 3.37.0 and later.
+- [b8490798] Django supports `Oracle Database Server`_ versions 19c and higher. Version 2.3.0 or higher of the `oracledb`_ Python driver is required.
+- [2580d1eb] Django uses PostgreSQL's identity columns to store auto-incrementing primary keys. An identity column is populated with values from a `sequence`_ that keeps track of the next available value. Manually assigning a value to an auto-incrementing field doesn't update the field's sequence, which might later cause a conflict. For example:
+- [fc6fcf02] Django will not upgrade existing columns to include fractional seconds if the database server supports it. If you want to enable them on an existing database, it's up to you to either manually update the column on the target database, by executing a command like:
+- [3bb32189] Django will work just fine without this optimization, but each new connection will do some additional queries to set these parameters.
+- [8ab6cf15] Django's ``inspectdb`` feature uses the ``information_schema`` database, which contains detailed data on all database schemas.
+- [f3de4196] Enabling JSON1 extension on SQLite ----------------------------------
+- [f34a5a75] Encoding --------
+- [f703018d] Example of a full DSN string::
+- [ee51d1be] Example of an Easy Connect string::
+- [9b4e8c12] Finally, you must specify a :setting:`DATABASE-ENGINE` in your ``settings.py`` file::
+- [cfbd7cf0] For all SQLite versions, there is some slightly counterintuitive behavior when attempting to match some types of strings. These are triggered when using the :lookup:`iexact` or :lookup:`contains` filters in querysets. The behavior splits into two cases:
+- [0135362c] For more information see `Transactions in SQLite`_.
+- [7ac25b73] For the best performance with ``IMMEDIATE`` and ``EXCLUSIVE``, transactions should be as short as possible. This might be hard to guarantee for all of your views so the usage of :setting:`ATOMIC_REQUESTS <DATABASE-ATOMIC_REQUESTS>` is discouraged in this case.
+- [0cef10c5] Fractional seconds support for Time and DateTime fields ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [41f7255d] Full DSN and Easy Connect ~~~~~~~~~~~~~~~~~~~~~~~~~
+- [f1a0988d] General notes =============
+- [918a2bb3] Here's a sample configuration which uses a MySQL option file::
+- [ee2ab6c4] INSERT ... RETURNING INTO -------------------------
+- [a6d22ed3] If a connection is created in a long-running process, outside of Django’s request-response cycle, the connection will remain open until explicitly closed, or timeout occurs. You can use ``django.db.close_old_connections()`` to close all old or unusable connections.
+- [f1a835a2] If these parameters already have the correct values, Django won't set them for every new connection, which improves performance slightly. You can configure them directly in :file:`postgresql.conf` or more conveniently per database user with `ALTER ROLE`_.
+- [a1bb3935] If you are using a legacy database that contains ``TIMESTAMP`` columns, you must set :setting:`USE_TZ = False <USE_TZ>` to avoid data corruption. :djadmin:`inspectdb` maps these columns to :class:`~django.db.models.DateTimeField` and if you enable timezone support, both MySQL and Django will attempt to convert the values from UTC to local time.
+- [80cd19cb] If you implement custom model fields that inherit from :class:`~django.db.models.Field` directly, are overriding :meth:`~django.db.models.Field.get_prep_value`, or use :class:`~django.db.models.expressions.RawSQL`, :meth:`~django.db.models.query.QuerySet.extra`, or :meth:`~django.db.models.Manager.raw`, you should ensure that you perform appropriate typecasting.
+- [c7ef1140] If you need to add a PostgreSQL extension (like ``hstore``, ``postgis``, etc.) using a migration, use the :class:`~django.contrib.postgres.operations.CreateExtension` operation.
+- [4d7e167d] If you need to customize the SQL mode, you can set the ``sql_mode`` variable like other MySQL options: either in a config file or with the entry ``'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"`` in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`.
+- [182292c9] If you need to specify such values, reset the sequence afterward to avoid reusing a value that's already in the table. The :djadmin:`sqlsequencereset` management command generates the SQL statements to do that.
+- [34bbf76e] If you need to use a different role for database connections than the role used to establish the connection, set it in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`::
+- [b6267daa] If you plan on using Django's :doc:`timezone support </topics/i18n/timezones>`, use `mysql_tzinfo_to_sql`_ to load time zone tables into the MySQL database. This needs to be done just once for your MySQL server, not per database.
+- [987b1e72] If you use the MyISAM storage engine please be aware of the fact that you will receive database-generated errors if you try to use the :ref:`savepoint-related methods of the transactions API <topics-db-transactions-savepoints>`. The reason for this is that detecting the storage engine of a MySQL database/table is an expensive operation so it was decided it isn't worth to dynamically convert these methods in no-op's based in the results of such detection.
+- [73d86357] If you're getting this error, you can solve it by:
+- [4fbcc6cd] If you're using a hosting service and can't change your server's default storage engine, you have a couple of options.
+- [124b5625] In addition to a DB API driver, Django needs an adapter to access the database drivers from its ORM. Django provides an adapter for mysqlclient while MySQL Connector/Python includes `its own`_.
+- [33a0aaf3] In addition to the officially supported databases, there are backends provided by 3rd parties that allow you to use other databases with Django:
+- [bcb54e6c] In detail, Django automatically opens a connection to the database whenever it needs one and doesn't have one already — either because this is the first connection, or because the previous connection was closed.
+- [403f61bc] In order for the ``python manage.py migrate`` command to work, your Oracle database user must have privileges to run the following commands:
+- [5f6452d4] In other words, if you set the name of the database in :setting:`OPTIONS`, this will take precedence over :setting:`NAME`, which would override anything in a `MySQL option file`_.
+- [e9f1338f] In this case, the Oracle backend will use a separate ``SELECT`` query to retrieve ``AutoField`` values.
+- [18f77b17] In this case, you should leave both :setting:`HOST` and :setting:`PORT` empty. However, if you don't use a ``tnsnames.ora`` file or a similar naming method and want to connect using the SID ("xe" in this example), then fill in both :setting:`HOST` and :setting:`PORT` like so::
+- [2551c11d] Indexes for ``varchar`` and ``text`` columns --------------------------------------------
+- [2ebb8775] Isolation level ---------------
+- [dda5b7f0] Isolation level ~~~~~~~~~~~~~~~
+- [bed7c90c] Isolation when using ``QuerySet.iterator()`` --------------------------------------------
+- [ad5a5289] Like PostgreSQL itself, Django defaults to the ``READ COMMITTED`` `isolation level`_. If you need a higher isolation level such as ``REPEATABLE READ`` or ``SERIALIZABLE``, set it in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`::
+- [562ab8c8] Manually-specifying values of auto-incrementing primary keys ------------------------------------------------------------
+- [ce80bbac] MariaDB notes =============
+- [a8c939a1] Migration operation for adding extensions -----------------------------------------
+- [76bf7af3] MySQL Connector/Python ~~~~~~~~~~~~~~~~~~~~~~
+- [43504e63] MySQL Connector/Python is available from the `download page`_. The Django adapter is available in versions 1.1.X and later. It may not support the most recent releases of Django.
+- [7094a7d6] MySQL and MariaDB do not support some options to the ``SELECT ... FOR UPDATE`` statement. If ``select_for_update()`` is used with an unsupported option, then a :exc:`~django.db.NotSupportedError` is raised.
+- [23acd031] MySQL can index only the first N chars of a ``BLOB`` or ``TEXT`` column. Since ``TextField`` doesn't have a defined length, you can't mark it as ``unique=True``. MySQL will report: "BLOB/TEXT column '<db_column>' used in key specification without a key length".
+- [27d3f505] MySQL can store fractional seconds, provided that the column definition includes a fractional indication (e.g. ``DATETIME(6)``).
+- [95bd904f] MySQL has a couple drivers that implement the Python Database API described in :pep:`249`:
+- [5c95ceee] MySQL has several `storage engines`_. You can change the default storage engine in the server configuration.
+- [8b3b935c] MySQL notes ===========
+- [a882ea11] MySQL's default storage engine is InnoDB_. This engine is fully transactional and supports foreign key references. It's the recommended choice. However, the InnoDB autoincrement counter is lost on a MySQL restart because it does not remember the ``AUTO_INCREMENT`` value, instead recreating it as "max(id)+1". This may result in an inadvertent reuse of :class:`~django.db.models.AutoField` values.
+- [c0392409] NULL and empty strings ----------------------
+- [aa2a3a8c] Naming issues -------------
+- [77584c57] Notes on specific fields ------------------------
+- [a75b584d] One solution is to disable server-side cursors for a connection in :setting:`DATABASES` by setting :setting:`DISABLE_SERVER_SIDE_CURSORS <DATABASE-DISABLE_SERVER_SIDE_CURSORS>` to ``True``.
+- [8c74cf2c] Optimizing PostgreSQL's configuration -------------------------------------
+- [eb330552] Oracle imposes a name length limit of 30 characters. To accommodate this, the backend truncates database identifiers to fit, replacing the final four characters of the truncated name with a repeatable MD5 hash value. Additionally, the backend turns database identifiers to all-uppercase.
+- [25d26478] Oracle notes ============
+- [e595be90] Persistent connections ----------------------
+- [cf626145] Persistent connections avoid the overhead of reestablishing a connection to the database in each HTTP request. They're controlled by the :setting:`CONN_MAX_AGE` parameter which defines the maximum lifetime of a connection. It can be set independently for each database.
+- [d3c6d5b5] Please note that according to `MySQL Unicode Character Sets`_, comparisons for the ``utf8mb4_general_ci`` collation are faster, but slightly less correct, than comparisons for ``utf8mb4_unicode_ci``. If this is acceptable for your application, you should use ``utf8mb4_general_ci`` because it is faster. If this is not acceptable (for example, if you require German dictionary order), use ``utf8mb4_unicode_ci`` because it is more accurate.
+- [702649e3] PostgreSQL connection settings -------------------------------
+- [1f52c8af] PostgreSQL notes ================
+- [f80134e0] Python's SQLite wrapper has a default timeout value that determines how long the second thread is allowed to wait on the lock before it times out and raises the ``OperationalError: database is locked`` error.
+- [3c67e5d0] Quoted names can also be used with Django's other supported database backends; except for Oracle, however, the quotes have no effect.
+- [5c7874f8] Refer to the :doc:`settings documentation </ref/settings>`.
+- [2e17bc4dc6a60e7d-4] Role ----
+- [1cfb1f5f] Row locking with ``QuerySet.select_for_update()`` -------------------------------------------------
+- [a28d3657] SQLite does not support the ``SELECT ... FOR UPDATE`` syntax. Calling it will have no effect.
+- [75bf6b09] SQLite has no real decimal internal type. Decimal values are internally converted to the ``REAL`` data type (8-byte IEEE floating point number), as explained in the `SQLite datatypes documentation`__, so they don't support correctly-rounded decimal floating point arithmetic.
+- [8de4417c] SQLite is meant to be a lightweight database, and thus can't support a high level of concurrency. ``OperationalError: database is locked`` errors indicate that your application is experiencing more concurrency than ``sqlite`` can handle in default configuration. This error means that one thread or process has an exclusive lock on the database connection and another thread timed out waiting for the lock the be released.
+- [ab167913] SQLite notes ============
+- [2b26f78a] SQLite supports three transaction modes: ``DEFERRED``, ``IMMEDIATE``, and ``EXCLUSIVE``.
+- [4baa12db] SQLite_ provides an excellent development alternative for applications that are predominantly read-only or require a smaller installation footprint. As with all database servers, though, there are some differences that are specific to SQLite that you should be aware of.
+- [d5cdb5ce] Savepoints ----------
+- [3c85cf1f] See :setting:`HOST` for details.
+- [1756ec9d] Server-side cursors -------------------
+- [c6263029] Server-side cursors are local to a connection and remain open at the end of a transaction when :setting:`AUTOCOMMIT <DATABASE-AUTOCOMMIT>` is ``True``. A subsequent transaction may attempt to fetch more results from a server-side cursor. In transaction pooling mode, there's no guarantee that subsequent transactions will use the same connection. If a different connection is used, an error is raised when the transaction references the server-side cursor, because server-side cursors are only accessible in the connection in which they were created.
+- [2166a45f] Server-side parameters binding ------------------------------
+- [6db5a8f2] Setting :setting:`CONN_HEALTH_CHECKS` to ``True`` can be used to improve the robustness of connection reuse and prevent errors when a connection has been closed by the database server which is now ready to accept and serve new connections, e.g. after database server restart. The health check is performed only once per request and only if the database is being accessed during the handling of the request.
+- [eeb69fe5] Setting ``sql_mode`` ~~~~~~~~~~~~~~~~~~~~
+- [bc85d604] Setting pragma options ----------------------
+- [af0a7351] Several other `MySQLdb connection options`_ may be useful, such as ``ssl``, ``init_command``, and ``sql_mode``.
+- [155e29f9] Since each thread maintains its own connection, your database must support at least as many simultaneous connections as you have worker threads.
+- [f717e4a2] Some possible workarounds for this are `documented at sqlite.org`_, but they aren't utilized by the default SQLite backend in Django, as incorporating them would be fairly difficult to do robustly. Thus, Django exposes the default SQLite behavior and you should be aware of this when doing case-insensitive or substring filtering.
+- [dbde8ff1] Some test suites also create views or materialized views; to run these, the user also needs ``CREATE VIEW WITH ADMIN OPTION`` and ``CREATE MATERIALIZED VIEW WITH ADMIN OPTION`` privileges. In particular, this is needed for Django's own test suite.
+- [732d0131] Sometimes a database won't be accessed by the majority of your views, for example because it's the database of an external system, or thanks to caching. In such cases, you should set :setting:`CONN_MAX_AGE` to a low value or even ``0``, because it doesn't make sense to maintain a connection that's unlikely to be reused. This will help keep the number of simultaneous connections to this database small.
+- [8ce514b1] Speeding up test execution with non-durable settings ----------------------------------------------------
+- [9eff6ba4] Storage engines ---------------
+- [ce57b458] Subclassing the built-in database backends ==========================================
+- [b4fdea4d] Substring matching and case sensitivity ---------------------------------------
+- [509332b6] Table names -----------
+- [895c9733] Test database templates -----------------------
+- [c8bce83b] The :setting:`CONN_MAX_AGE` setting must be ``0`` when connection pooling is enabled. Configure connection lifetime with the ``max_lifetime`` pool option instead.
+- [d6d7d075] The Django versions and ORM features supported by these unofficial backends vary considerably. Queries regarding the specific capabilities of these unofficial backends, along with any support queries, should be directed to the support channels provided by each 3rd party project.
+- [fe6cf694] The Oracle backend stores each ``TextField`` as an ``NCLOB`` column. Oracle imposes some limitations on the usage of such LOB columns in general:
+- [0a77cba5] The Oracle database backend uses the ``SYS.DBMS_LOB`` and ``SYS.DBMS_RANDOM`` packages, so your user will require execute permissions on it. It's normally accessible to all users by default, but in case it is not, you'll need to grant permissions like so:
+- [05fae169] The PostgreSQL backend passes the content of :setting:`OPTIONS` as keyword arguments to the connection constructor, allowing for more advanced control of driver behavior. All available `parameters`_ are described in detail in the PostgreSQL documentation.
+- [2b0ac19a] The ``base.py`` module must contain a class named ``DatabaseWrapper`` that subclasses an existing engine from the ``django.db.backends`` module. Here's an example of subclassing the PostgreSQL engine to change a feature class ``allows_group_by_selected_pks_on_model``:
+- [136a5aaa] The collation can also be set on a database-wide level and per-table. This is `documented thoroughly`_ in the MySQL documentation. In such cases, you must set the collation by directly manipulating the database settings or tables. Django doesn't provide an API to change them.
+- [db2f8af1] The collation setting for a column controls the order in which data is sorted as well as what strings compare as equal. You can specify the ``db_collation`` parameter to set the collation name of the column for :attr:`CharField <django.db.models.CharField.db_collation>` and :attr:`TextField <django.db.models.TextField.db_collation>`.
+- [060a34de] The default is ``DEFERRED``. If you need to use a different mode, set it in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`, for example::
+- [3ba2fd4e] The default value is ``0``, preserving the historical behavior of closing the database connection at the end of each request. To enable persistent connections, set :setting:`CONN_MAX_AGE` to a positive integer of seconds. For unlimited persistent connections, set it to ``None``.
+- [3352883b] The default value of the ``sql_mode`` option contains ``STRICT_TRANS_TABLES``. That option escalates warnings into errors when data are truncated upon insertion, so Django highly recommends activating a `strict mode`_ for MySQL to prevent data loss (either ``STRICT_TRANS_TABLES`` or ``STRICT_ALL_TABLES``).
+- [23f29256] The development server creates a new thread for each request it handles, negating the effect of persistent connections. Don't enable them during development.
+- [5b6ded5e] The main drawbacks of MyISAM_ are that it doesn't support transactions or enforce foreign-key constraints.
+- [239d3b8e] There are `known issues`_ in even the latest versions of MySQL that can cause the case of a table name to be altered when certain SQL statements are executed under certain conditions. It is recommended that you use lowercase table names, if possible, to avoid any problems that might arise from this behavior. Django uses lowercase table names when it auto-generates table names from models, so this is mainly a consideration if you are overriding the table name via the :class:`~django.db.models.Options.db_table` parameter.
+- [a7170b2b] There are also a number of :ref:`database backends provided by third parties <third-party-notes>`.
+- [c2ff6983] There are special considerations described in `Isolation In SQLite`_ when modifying a table while iterating over it using :meth:`.QuerySet.iterator`. If a row is added, changed, or deleted within the loop, then that row may or may not appear, or may appear twice, in subsequent results fetched from the iterator. Your code must handle this.
+- [d584fe11] This ensures all tables and columns will use UTF-8 by default.
+- [b6038530] This file describes some of the features that might be relevant to Django usage. It is not intended as a replacement for server-specific documentation or reference manuals.
+- [d3442d0a] This option is ignored with ``psycopg2``.
+- [b17e427d] Time zone definitions ---------------------
+- [bffa7996] To benefit from server-side cursors in transaction pooling mode, you could set up :doc:`another connection to the database </topics/db/multi-db>` in order to perform queries that use server-side cursors. This connection needs to either be directly to the database or to a connection pooler in session pooling mode.
+- [6580de27] To connect using a service name from the `connection service file`_ and a password from the `password file`_, you must specify them in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`:
+- [18177b57] To connect using the service name of your Oracle database, your ``settings.py`` file should look something like this::
+- [a7fb46ab] To enable connection pooling, set ``"pool"`` in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES` to a dictionary of options to pass to :class:`~psycopg:psycopg_pool.ConnectionPool`, or to ``True`` to use the :class:`~psycopg:psycopg_pool.ConnectionPool` defaults::
+- [6b6fef5c] To enable the JSON1 extension you can follow the instruction on `the wiki page`_.
+- [c8f50a9f] To make sure your transactions wait until ``timeout`` before raising "Database is Locked", change the transaction mode to ``IMMEDIATE``.
+- [223c8887] To pass custom parameters to the driver's `create_pool()`_ function, you can alternatively set ``"pool"`` to be a dict::
+- [80119a91] To prevent these transformations (this is usually required only when dealing with legacy databases or accessing tables which belong to other users), use a quoted name as the value for ``db_table``::
+- [6150b794] To run a project's test suite, the user usually needs these *additional* privileges:
+- [d74f51a2] To use :class:`~django.db.models.JSONField` on SQLite, you need to enable the `JSON1 extension`_ on Python's :mod:`sqlite3` library. If the extension is not enabled on your installation, a system error (``fields.E180``) will be raised.
+- [34ec9f72] To use MariaDB, use the MySQL backend, which is shared between the two. See the :ref:`MySQL notes <mysql-notes>` for more details.
+- [d949ef58] To use a connection pool with `oracledb`_, set ``"pool"`` to ``True`` in the :setting:`OPTIONS` part of your database configuration. This uses the driver's `create_pool()`_ default values::
+- [08bcba3d] Transaction pooling and server-side cursors ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [8aff048f] Transactions behavior ~~~~~~~~~~~~~~~~~~~~~
+- [6f166122] Unless a ``check`` callback is provided in the pool options, :setting:`CONN_HEALTH_CHECKS` determines whether connections are checked when retrieved from the pool.
+- [15b5f310] Using a 3rd-party database backend ==================================
+- [4305e662] Using a connection pooler in transaction pooling mode (e.g. `PgBouncer`_) requires disabling server-side cursors for that connection.
+- [cc080962] Version support ---------------
+- [2e553e20] When Django establishes a connection to the database, it sets up appropriate parameters, depending on the backend being used. If you enable persistent connections, this setup is no longer repeated every request. If you modify parameters such as the connection's isolation level or time zone, you should either restore Django's defaults at the end of each request, force an appropriate value at the beginning of each request, or disable persistent connections.
+- [33adf472] When Django generates the schema, it doesn't specify a storage engine, so tables will be created with whatever default storage engine your database server is configured for. The easiest solution is to set your database server's default storage engine to the desired engine.
+- [133002ab] When performing a query on a string type, but with an integer value, MySQL will coerce the types of all values in the table to an integer before performing the comparison. If your table contains the values ``'abc'``, ``'def'`` and you query for ``WHERE mycolumn=0``, both rows will match. Similarly, ``WHERE mycolumn=1`` will match the value ``'abc1'``. Therefore, string type fields included in Django will always cast the value to a string before using it in a query.
+- [c4dbfb90] When running ``migrate``, an ``ORA-06552`` error may be encountered if certain Oracle keywords are used as the name of a model field or the value of a ``db_column`` option. Django quotes all identifiers used in queries to prevent most such problems, but this error can still occur when an Oracle datatype is used as a column name. In particular, take care to avoid using the names ``date``, ``timestamp``, ``number`` or ``float`` as a field name.
+- [227d588a] When running concurrent loads, database transactions from different sessions (say, separate threads handling different requests) may interact with each other. These interactions are affected by each session's `transaction isolation level`_. You can set a connection's isolation level with an ``'isolation_level'`` entry in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`. Valid values for this entry are the four standard isolation levels:
+- [6ef6bb2c] When specifying ``db_index=True`` on your model fields, Django typically outputs a single ``CREATE INDEX`` statement. However, if the database type for the field is either ``varchar`` or ``text`` (e.g., used by ``CharField``, ``FileField``, and ``TextField``), then Django will create an additional index that uses an appropriate `PostgreSQL operator class`_ for the column. The extra index is necessary to correctly perform lookups that use the ``LIKE`` operator in their SQL, as is done with the ``contains`` and ``startswith`` lookup types.
+- [2a5ee4c9] When using :meth:`QuerySet.iterator() <django.db.models.query.QuerySet.iterator>`, Django opens a :ref:`server-side cursor <psycopg:server-side-cursors>`. By default, PostgreSQL assumes that only the first 10% of the results of cursor queries will be fetched. The query planner spends less time planning the query and starts returning results faster, but this could diminish performance if more than 10% of the results are retrieved. PostgreSQL's assumptions on the number of rows retrieved for a cursor query is controlled with the `cursor_tuple_fraction`_ option.
+- [5bf36738] When using ASGI, persistent connections should be disabled. Instead, use your database backend's built-in connection pooling if available, or investigate a third-party connection pooling option if required.
+- [123f0149] When using ``select_for_update()`` on MySQL, make sure you filter a queryset against at least a set of fields contained in unique constraints or only against fields covered by indexes. Otherwise, an exclusive write lock will be acquired over the full table for the duration of the transaction.
+- [e2344d97] While the ``RESOURCE`` role has the required ``CREATE TABLE``, ``CREATE SEQUENCE``, ``CREATE PROCEDURE``, and ``CREATE TRIGGER`` privileges, and a user granted ``RESOURCE WITH ADMIN OPTION`` can grant ``RESOURCE``, such a user cannot grant the individual privileges (e.g. ``CREATE TABLE``), and thus ``RESOURCE WITH ADMIN OPTION`` is not usually sufficient for running tests.
+- [bfaa77d4] With `psycopg`_ 3.1.8+, Django defaults to the :ref:`client-side binding cursors <psycopg:client-side-binding-cursors>`. If you want to use the :ref:`server-side binding <psycopg:server-side-binding>` set it in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`::
+- [5bd969c8] You can `create your database`_ using the command-line tools and this SQL:
+- [06da61af] You can see the current list of database engines by looking in :source:`django/db/backends`.
+- [d9996a56] You can speed up test execution times by `configuring PostgreSQL to be non-durable <https://www.postgresql.org/docs/current/non-durability.html>`_.
+- [c07d2a9a] You can use the :setting:`TEST['TEMPLATE'] <TEST_TEMPLATE>` setting to specify a `template`_ (e.g. ``'template0'``) from which to create a test database.
+- [1a1a7ea5] You should either supply both :setting:`HOST` and :setting:`PORT`, or leave both as empty strings. Django will use a different connect descriptor depending on that choice.
+- [099fb63e] __ https://www.sqlite.org/datatype3.html#storage_classes_and_datatypes
+- [56da5e4e] `Pragma options`_ can be set upon connection by using the ``init_command`` in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES`. The example below shows how to enable extra durability of synchronous writes and change the ``cache_size``::
+- [fff7a791] ``QuerySet.select_for_update()`` not supported ----------------------------------------------
+- [f64d24c6] ``TIMESTAMP`` columns ~~~~~~~~~~~~~~~~~~~~~
+- [c21214f3] ``TextField`` limitations -------------------------
+- [53f93667] ``TextField`` limitations ~~~~~~~~~~~~~~~~~~~~~~~~~
+- [c4b4a240] mysqlclient ~~~~~~~~~~~
+- [aede0191] or ``None`` to use the server's configured isolation level. However, Django works best with and defaults to read committed rather than MySQL's default, repeatable read. Data loss is possible with repeatable read. In particular, you may see cases where :meth:`~django.db.models.query.QuerySet.get_or_create` will raise an :exc:`~django.db.IntegrityError` but the object won't appear in a subsequent :meth:`~django.db.models.query.QuerySet.get` call.
+- [d558ec0a] or using a :class:`~django.db.migrations.operations.RunSQL` operation in a :ref:`data migration <data-migrations>`.

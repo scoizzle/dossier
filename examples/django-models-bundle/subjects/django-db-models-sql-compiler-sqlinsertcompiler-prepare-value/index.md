@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLInsertCompiler.prepare_value
 
-- Subject: django/db/models/sql/compiler::SQLInsertCompiler.prepare_value (id `5022fdb6-a498-47a0-b5a3-4e4a324ab20c`)
+- Subject: django/db/models/sql/compiler::SQLInsertCompiler.prepare_value (id `b151b471-06f8-4c56-8d5b-3caa3acbc204`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

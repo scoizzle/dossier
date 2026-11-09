@@ -1,6 +1,6 @@
 # Fact b5d0c8b2
 
-Store id: e85da42a-339d-4253-806a-b48c7d4a74b9
+Store id: 2b92309a-d593-4ceb-9fa3-fabef90c0d7e
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, expression, kind, output_field=None, tzinfo=None, **extra, )
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1881000+00:00`
+- posted_at: `2026-11-09T23:32:01.2694560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 349,
     "symbol": "Trunc.__init__"
   },
-  "id": "e85da42a-339d-4253-806a-b48c7d4a74b9",
+  "id": "2b92309a-d593-4ceb-9fa3-fabef90c0d7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1881000+00:00"
+    "posted_at": "2026-11-09T23:32:01.2694560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6d78fc40-0f37-449c-b20f-78d59ce184a2",
+  "subject_id": "ebfafca4-0a1c-4035-85c9-9d2dac8eafb3",
   "subject_name": "django/db/models/functions/datetime::Trunc.__init__",
   "tags": [
     "entity:method"

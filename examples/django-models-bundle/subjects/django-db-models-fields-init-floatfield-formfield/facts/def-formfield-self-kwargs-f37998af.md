@@ -1,6 +1,6 @@
 # Fact f37998af
 
-Store id: 10e9d961-2d19-42ec-9e40-d42b418bd265
+Store id: d602ba8f-b4ce-429c-be69-5dbdd4ac453f
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5261280+00:00`
+- posted_at: `2026-11-09T23:31:56.6906930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2132,
     "symbol": "FloatField.formfield"
   },
-  "id": "10e9d961-2d19-42ec-9e40-d42b418bd265",
+  "id": "d602ba8f-b4ce-429c-be69-5dbdd4ac453f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5261280+00:00"
+    "posted_at": "2026-11-09T23:31:56.6906930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cb7b9859-a569-4321-a7d3-6bd69fd3eec9",
+  "subject_id": "2d3079fa-f93c-4602-b87a-2e0a9f83afae",
   "subject_name": "django/db/models/fields/__init__::FloatField.formfield",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/lookups::BuiltinLookup.as_sql
 
-- Subject: django/db/models/lookups::BuiltinLookup.as_sql (id `2654d3a8-b2b6-4403-9fc3-cdde192df687`)
+- Subject: django/db/models/lookups::BuiltinLookup.as_sql (id `f63b7c8c-1fd2-43ad-a787-d5ddb891dce6`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

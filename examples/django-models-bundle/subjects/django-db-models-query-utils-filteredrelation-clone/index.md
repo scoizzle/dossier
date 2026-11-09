@@ -1,9 +1,9 @@
 # django/db/models/query_utils::FilteredRelation.clone
 
-- Subject: django/db/models/query_utils::FilteredRelation.clone (id `36375397-faf2-4a41-a96e-e3d218397a3a`)
+- Subject: django/db/models/query_utils::FilteredRelation.clone (id `5fa6e40a-9d09-4976-8324-415de33c1ce5`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

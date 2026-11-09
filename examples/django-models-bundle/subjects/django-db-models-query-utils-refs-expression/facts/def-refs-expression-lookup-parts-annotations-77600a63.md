@@ -1,6 +1,6 @@
 # Fact 77600a63
 
-Store id: 8cf6aaa1-885b-469b-b2a7-51d263cb7e66
+Store id: 7f534ca8-2833-4b51-9edf-fc65faa4f815
 
 ## Text
 
@@ -20,7 +20,7 @@ def refs_expression(lookup_parts, annotations)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1734710+00:00`
+- posted_at: `2026-11-09T23:32:05.1902200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 478,
     "symbol": "refs_expression"
   },
-  "id": "8cf6aaa1-885b-469b-b2a7-51d263cb7e66",
+  "id": "7f534ca8-2833-4b51-9edf-fc65faa4f815",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1734710+00:00"
+    "posted_at": "2026-11-09T23:32:05.1902200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fae1e27e-aa4b-4a75-a3fc-be46c035d116",
+  "subject_id": "e1513c7a-ad8f-4ee2-ab0f-3c351367bc88",
   "subject_name": "django/db/models/query_utils::refs_expression",
   "tags": [
     "entity:function"

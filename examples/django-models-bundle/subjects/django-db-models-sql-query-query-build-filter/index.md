@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.build_filter
 
-- Subject: django/db/models/sql/query::Query.build_filter (id `a9391c14-5513-4986-9e23-a86b3b8421e0`)
+- Subject: django/db/models/sql/query::Query.build_filter (id `9805cbbc-ced6-45e1-8496-c96816c33a7a`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 60 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

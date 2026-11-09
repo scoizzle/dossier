@@ -1,6 +1,6 @@
 # Fact 6a3c6079
 
-Store id: db6e309d-0188-4654-a383-ce4b49de05cc
+Store id: c06435c5-faf4-4d6b-9550-bbe806fa1aa5
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.1062210+00:00`
+- posted_at: `2026-11-09T23:31:59.9833330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 98,
     "symbol": "RelatedLookupMixin"
   },
-  "id": "db6e309d-0188-4654-a383-ce4b49de05cc",
+  "id": "c06435c5-faf4-4d6b-9550-bbe806fa1aa5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.1062210+00:00"
+    "posted_at": "2026-11-09T23:31:59.9833330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "977b49e5-1c91-4ed5-9ab5-ac8f744fee6f",
+  "subject_id": "6f26c6f7-c3fa-4bc5-a4db-0b40006e3f8b",
   "subject_name": "django/db/models/fields/related_lookups::RelatedLookupMixin",
   "tags": [
     "entity:class"

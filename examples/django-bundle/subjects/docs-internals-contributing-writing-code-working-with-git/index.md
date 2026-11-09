@@ -1,14 +1,14 @@
 # docs/internals/contributing/writing-code/working-with-git
 
-- Subject: docs/internals/contributing/writing-code/working-with-git (id `c8288c14-340c-4f09-bbb2-da41847e10d7`)
+- Subject: docs/internals/contributing/writing-code/working-with-git (id `7b024ebf-8be7-4abe-86df-3ad635d5d13e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 31 of 116
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4095 tokens
+- Facts shown: 113 of 116
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - - Fixed whitespace errors in foobar. - Reworded the docstring of bar(). [d17fbbfa]
 - Made changes asked in review by <reviewer>. [c8f7ecd5]
@@ -42,6 +42,87 @@
 - .. code-block:: shell [8aa7203c166b13be-33]
 - .. code-block:: shell [8aa7203c166b13be-34]
 
-## Beyond the budget
+## All facts
 
-82 more facts did not fit in the budget: [8aa7203c166b13be-35] [8aa7203c166b13be-36] [8aa7203c166b13be-37] [8aa7203c166b13be-38] [8aa7203c166b13be-39] [8aa7203c166b13be-40] [8aa7203c166b13be-41] [8aa7203c166b13be-42] [8aa7203c166b13be-43] [8aa7203c166b13be-44] [8aa7203c166b13be-45] [8aa7203c166b13be-46] [8aa7203c166b13be-47] [8aa7203c166b13be-48] [3a9340cd0d877339-5] [f1db0171] [87e490f8] [8d4ed5ca] [9ed60b61] [79f7de98] [2399830a] [d20fbd19] [2f8ed668] [675f651f] [6e2080b0] [188f496b] [e0e1a151] [d5cd262f] [cdabf4e3] [d9b6c789] [0fe16d52] [31c8a94d] [1c282a3a] [bda9cc95] [fd8e41ae] [795287323bc9e2a3] [3f9c6c9f] [21669715] [737f8d98] [9a6ec1ce] [229a5e85] [d576c147] [73c22133] [c47cdd12] [d4f4988e] [c54d7925] [b73fbdd6] [a204562d] [087eb78b] [3f1d52fa] [5ceceba5] [d1725def] [dfca28c4] [83c9fc39] [6ecc5891] [9ceabe04] [d96a4647] [a85db11f] [2271680e] [a050bd58] [df86e9d2] [d3c1882b] [292b93dc] [fcf9b92f] [2a4a2194] [bc851018] [d69e569d] [3fc7a901] [feec9e59] [9ac735fb] [33e17089] [cb95859f] [d6e3ff33] [c36beb1d] [ba4328ed] [546c6273] [13d474ec] [f1f30fb0] [8b5187ad] [15af31fb] [4e923b6c] [9c77d0ae]
+- [8aa7203c166b13be-35] .. code-block:: shell
+- [8aa7203c166b13be-36] .. code-block:: shell
+- [8aa7203c166b13be-37] .. code-block:: shell
+- [8aa7203c166b13be-38] .. code-block:: shell
+- [8aa7203c166b13be-39] .. code-block:: shell
+- [8aa7203c166b13be-40] .. code-block:: shell
+- [8aa7203c166b13be-41] .. code-block:: shell
+- [8aa7203c166b13be-42] .. code-block:: shell
+- [8aa7203c166b13be-43] .. code-block:: shell
+- [8aa7203c166b13be-44] .. code-block:: shell
+- [8aa7203c166b13be-45] .. code-block:: shell
+- [8aa7203c166b13be-46] .. code-block:: shell
+- [8aa7203c166b13be-47] .. code-block:: shell
+- [8aa7203c166b13be-48] .. code-block:: shell
+- [3a9340cd0d877339-5] .. code-block:: text
+- [f1db0171] =========================== Working with Git and GitHub ===========================
+- [87e490f8] After installing Git, the first thing you should do is set up your name and email:
+- [8d4ed5ca] After review ------------
+- [9ed60b61] After rewriting a commit that has already been pushed to GitHub, you will need to force-push your branch:
+- [79f7de98] After upstream has changed --------------------------
+- [2399830a] Assume the work is carried on the ticket_xxxxx branch. Make some changes and commit them:
+- [d20fbd19] Below, we are going to show how to create a GitHub pull request containing the changes for Trac ticket #xxxxx. By creating a fully-ready pull request, you will make the reviewer's job easier, meaning that your work is more likely to be merged into Django.
+- [2f8ed668] Change "pick" on the second line to "squash" instead. This will keep the first commit, and squash the second commit into the first one. Save and quit the editor. A second editor window should open, so you can reword the commit message for the commit now that it includes both your steps.
+- [675f651f] Django uses `Git`_ for its source control. You can `download <https://git-scm.com/download>`_ Git, but it's often easier to install with your operating system's package manager.
+- [6e2080b0] Django's `Git repository`_ is hosted on `GitHub`_, and it is recommended that you also work using GitHub.
+- [188f496b] Editing commit messages -----------------------
+- [e0e1a151] Finally, push your work back to your GitHub repository. Since you didn't touch the public commits during the rebase, you should not need to force-push:
+- [d5cd262f] For more detail on working with pull requests see the :ref:`guidelines for mergers <handling-pull-requests>`.
+- [cdabf4e3] If instead you were working for a fix on the 1.4 branch, you would do:
+- [d9b6c789] If there are merge conflicts, you will need to resolve them and then use ``git rebase --continue``. At any point you can use ``git rebase --abort`` to return to the original state.
+- [0fe16d52] If you are working on a Trac ticket, you should mention in the ticket that your work is available from branch ticket_xxxxx of your GitHub repo. Include a link to your branch.
+- [31c8a94d] If you need to do additional work on your branch, commit as often as necessary:
+- [1c282a3a] If your topic branch is already published at GitHub, for example if you're making minor changes to take into account a review, you will need to force-push the changes:
+- [bda9cc95] In the example above, you created two commits, the "Fixed #xxxxx -- ..." commit and the "Added two more tests ..." commit.
+- [fd8e41ae] In this case, do the changes required by the reviewer. Commit as often as necessary. Before publishing the changes, rebase your work. If you added two commits, you would run:
+- [795287323bc9e2a3] Installing Git ==============
+- [3f9c6c9f] It is unusual to get any non-trivial amount of code into core without changes requested by reviewers. In this case, it is often a good idea to add the changes as one incremental commit to your work. This allows the reviewer to easily check what changes you have done.
+- [21669715] Note that ``user.name`` should be your real name, not your GitHub nick. GitHub should know the email you use in the ``user.email`` field, as this will be used to associate your commits with your GitHub account.
+- [737f8d98] Note that the above branch is called a "topic branch" in Git parlance. You are free to rewrite the history of this branch, by using ``git rebase`` for example. Other people shouldn't base their work on such a branch, because their clone would become corrupt when you edit commits.
+- [9a6ec1ce] Note that the merger is likely to squash the review commit into the previous commit when committing the code.
+- [229a5e85] Note that this will rewrite history of ticket_xxxxx - if you check the commit hashes before and after the operation at GitHub you will notice that the commit hashes do not match anymore. This is acceptable, as the branch is a topic branch, and nobody should be basing their work on it.
+- [d576c147] Note that you want to *rebase* on upstream, not *merge* the upstream.
+- [73c22133] Once you have created your pull request, you should add a comment in the related Trac ticket explaining what you've done. In particular, you should note the environment in which you ran the tests, for instance: "all tests pass under SQLite and MySQL".
+- [c47cdd12] One of the ways that developers can contribute to Django is by reviewing patches. Those patches will typically exist as pull requests on GitHub and can be easily integrated into your local repository:
+- [d4f4988e] Publishing work ---------------
+- [c54d7925] Pull requests at GitHub have only two states: open and closed. The merger who will deal with your pull request has only two options: merge it or close it. For this reason, it isn't useful to make a pull request until the code is ready for merging -- or sufficiently close that a merger will finish it themselves.
+- [b73fbdd6] Rebasing branches -----------------
+- [a204562d] See :ref:`committing-guidelines` for the required commit message format.
+- [087eb78b] Setting up local repository ===========================
+- [3f1d52fa] Squash the second commit into the first. Write a commit message along the lines of:
+- [5ceceba5] Summary =======
+- [d1725def] The -b flag creates a new branch for you locally. Don't hesitate to create new branches even for the smallest things - that's what they are there for.
+- [dfca28c4] The HEAD~2 above is shorthand for two latest commits. The above command will open an editor showing the two commits, prefixed with the word "pick".
+- [83c9fc39] The reason for this is that by rebasing, your commits will always be *on top of* the upstream's work, not *mixed in with* the changes in the upstream. This way your branch will contain only commits related to its topic, which makes squashing easier.
+- [6ecc5891] The rebase command removes all your local commits temporarily, applies the upstream commits, and then applies your local commits again on the work.
+- [9ceabe04] The test suite must pass and the documentation must build without warnings.
+- [d96a4647] The work is automatically rebased using the branch you forked on, in the example case using ``upstream/main``.
+- [a85db11f] There are also "public branches". These are branches other people are supposed to fork, so the history of these branches should never change. Good examples of public branches are the ``main`` and ``stable/A.B.x`` branches in the ``django/django`` repository.
+- [2271680e] This opens an editor listing the three commits, each prefixed with the word "pick". Change "pick" to "reword" (or "r") on the line of the commit you want to change, then save and close. A new editor will open for each commit marked as "reword", allowing you to update the message.
+- [a050bd58] This opens an editor with the current commit message. Edit it, save, and close to update the commit.
+- [df86e9d2] This section explains how the community can contribute code to Django via pull requests. If you're interested in how :ref:`mergers <mergers-team>` handle them, see :ref:`handling-pull-requests`.
+- [d3c1882b] This will create a new branch and then apply the changes from the pull request to it. At this point you can run the tests or do anything else you need to do to investigate the quality of the patch.
+- [292b93dc] This will create a new directory "django", containing a clone of your GitHub repository. The rest of the git commands on this page need to be run within the cloned directory, so switch to it now:
+- [fcf9b92f] To change the message of an earlier commit, use the "reword" option in interactive rebase. For example, to reword one of the last three commits:
+- [2a4a2194] To change the message of the most recent commit, run:
+- [bc851018] To rework the history of your branch you can squash the commits into one by using interactive rebase:
+- [d69e569d] We do not want to have the entire history of your working process in your repository. Your commit "Added two more tests" would be unhelpful noise. Instead, we would rather only have one commit containing all your work.
+- [3fc7a901] When upstream (``django/django``) has changed, you should rebase your work. To do this, use:
+- [feec9e59] When working on a ticket, create a new branch for the work, and base that work on ``upstream/main``:
+- [9ac735fb] When writing the commit message, follow the :ref:`commit message guidelines <committing-guidelines>` to ease the work of the merger. If you're uncomfortable with English, try at least to describe precisely what the commit does.
+- [33e17089] When you go to your GitHub page, you will notice a new branch has been created.
+- [cb95859f] When you have created your GitHub account, with the nick "GitHub_nick", and `forked Django's repository <https://github.com/django/django/fork>`__, create a local copy of your fork:
+- [d6e3ff33] When you think your work is ready to be pulled into Django, you should create a pull request at GitHub. A good pull request means:
+- [c36beb1d] Working on a patch ==================
+- [ba4328ed] Working on a ticket ===================
+- [546c6273] You can add other remotes similarly, for example:
+- [13d474ec] You can also use the "edit" option in rebase. This way you can change a single commit, for example to fix a typo in a docstring:
+- [f1f30fb0] You can publish your work on GitHub by running:
+- [8b5187ad] You could also upload a traditional patch to Trac, but it's less practical for reviews.
+- [15af31fb] You should also set up ``django/django`` as an "upstream" remote (that is, tell git that the reference Django repository was the source of your fork of it):
+- [4e923b6c] Your GitHub repository will be called "origin" in Git.
+- [9c77d0ae] Your pull request should now contain the new commit too.

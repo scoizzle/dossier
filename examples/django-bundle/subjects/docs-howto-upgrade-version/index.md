@@ -1,14 +1,14 @@
 # docs/howto/upgrade-version
 
-- Subject: docs/howto/upgrade-version (id `daf5e74d-3fdb-4bba-984b-386ffdad5366`)
+- Subject: docs/howto/upgrade-version (id `68886ea3-1698-411c-b0b7-f519dffea90a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 22 of 40
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1777 tokens
+- Facts shown: 39 of 40
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ PYTHONWARNINGS=always pytest tests --capture=no [ff5fae6e]
 - $ python -Wa manage.py test [101af2650c64d744]
@@ -33,6 +33,22 @@
 - If you are upgrading to an alpha, beta, or release candidate, please see our guide on :ref:`testing-pre-releases` for more specific tips about catching regressions and reporting bugs. [a2a66d1f]
 - If you are using caching provided by Django, you should consider clearing your cache after upgrading. Otherwise you may run into problems, for example, if you are caching pickled objects as these objects are not guaranteed to be pickle-compatible across Django versions. A past instance of incompatibility was caching pickled :class:`~django.http.HttpResponse` objects, either directly or indirectly via the :func:`~django.views.decorators.cache.cache_page` decorator. [5393bd59]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [7ca1bdbd] [73a7ab8c] [ef09e4f7] [04541292] [5a092ee1] [8db4d8757db9fb63] [a253679d] [7b9596b0] [456faf51] [8ea7c3d7] [2656a42e] [2a042191630e69fa-3] [358536b6] [7174e978] [9e94b806] [7fb17849] [03f024ad]
+- [7ca1bdbd] If you installed Django with pip_, you can use the ``--upgrade`` or ``-U`` flag:
+- [73a7ab8c] If you're not using the Django test runner, you may need to also ensure that any console output is not captured which would hide deprecation warnings. For example, if you use `pytest <https://docs.pytest.org/>`__:
+- [ef09e4f7] If you're upgrading through more than one feature version (e.g. 2.0 to 2.2), it's usually easier to upgrade through each feature release incrementally (2.0 to 2.1 to 2.2) rather than to make all the changes for each feature release at once. For each feature release, use the latest patch release (e.g. for 2.1, use 2.1.15).
+- [04541292] In Python, deprecation warnings are silenced by default. You must turn them on using the ``-Wa`` Python command line option or the :envvar:`PYTHONWARNINGS` environment variable. For example, to show warnings while running tests:
+- [5a092ee1] In most cases it will be necessary to upgrade to the latest version of your Django-related dependencies as well. If the Django version was recently released or if some of your dependencies are not well-maintained, some of your dependencies may not yet support the new Django version. In these cases you may have to wait until new versions of your dependencies are released.
+- [8db4d8757db9fb63] Installation ============
+- [a253679d] Once you're ready, it is time to :doc:`install the new Django version </topics/install>`. If you are using a :mod:`virtual environment <venv>` and it is a major upgrade, you might want to set up a new environment with all the dependencies first.
+- [7b9596b0] Pay particular attention to backwards incompatible changes to get a clear idea of what will be needed for a successful upgrade.
+- [456faf51] Required Reading ================
+- [8ea7c3d7] Resolve any deprecation warnings with your current version of Django before continuing the upgrade process.
+- [2656a42e] Resolving deprecation warnings ==============================
+- [2a042191630e69fa-3] Testing =======
+- [358536b6] The same incremental upgrade approach is recommended when upgrading from one LTS to the next.
+- [7174e978] Third party applications might use deprecated APIs in order to support multiple versions of Django, so deprecation warnings in packages you've installed don't necessarily indicate a problem. If a package doesn't support the latest version of Django, consider raising an issue or sending a pull request for it.
+- [9e94b806] Upgrading Django to the latest version offers several benefits:
+- [7fb17849] When the new environment is set up, :doc:`run the full test suite </topics/testing/overview>` for your application. Again, it's useful to turn on deprecation warnings on so they're shown in the test output (you can also use the flag if you test your app manually using ``manage.py runserver``):
+- [03f024ad] When you are sufficiently confident your app works with the new version of Django, you're ready to go ahead and :doc:`deploy </howto/deployment/index>` your upgraded Django project.

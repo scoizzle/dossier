@@ -1,6 +1,6 @@
 # Fact fe91bf83
 
-Store id: 7f4968fc-88de-4a8d-8286-35c4b318a875
+Store id: 693c9949-d723-46b8-b32f-5722c05d2a4f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Chr
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7f4968fc-88de-4a8d-8286-35c4b318a875",
+  "id": "693c9949-d723-46b8-b32f-5722c05d2a4f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Chr"
       },
       "rel": "contains",
-      "target": "9a407b95-fc35-4923-96b3-ec3aebff17fe"
+      "target": "161034f5-87da-4e5e-9098-6310aec2b040"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

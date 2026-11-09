@@ -1,6 +1,6 @@
 # Fact 0ccf037d
 
-Store id: 517a7379-901a-4dc8-b434-64efa1a1cc92
+Store id: a0775cb2-b603-4da8-a98e-9fe90614a0ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_if_value_fixed(self, value, now=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4090380+00:00`
+- posted_at: `2026-11-09T23:31:56.5730200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1429,
     "symbol": "DateTimeCheckMixin._check_if_value_fixed"
   },
-  "id": "517a7379-901a-4dc8-b434-64efa1a1cc92",
+  "id": "a0775cb2-b603-4da8-a98e-9fe90614a0ee",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4090380+00:00"
+    "posted_at": "2026-11-09T23:31:56.5730200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39cca0de-b0b5-47e0-9845-0be3ca8f4ec7",
+  "subject_id": "1836a9ab-e2ce-45d1-9538-a3af97c4f0a6",
   "subject_name": "django/db/models/fields/__init__::DateTimeCheckMixin._check_if_value_fixed",
   "tags": [
     "entity:method"

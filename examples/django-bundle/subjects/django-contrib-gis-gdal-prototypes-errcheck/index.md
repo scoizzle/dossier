@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/prototypes/errcheck
 
-- Subject: django/contrib/gis/gdal/prototypes/errcheck (id `dcfec2dd-9c87-4933-b05d-4ea5020df84c`)
+- Subject: django/contrib/gis/gdal/prototypes/errcheck (id `c0417a0e-e11d-4427-b120-a99055314f6c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 874 tokens
-- Facts shown: 15 of 16
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1085 tokens
+- Facts shown: 16 of 16
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - """ This module houses the error-checking routines used by the GDAL ctypes prototypes. """ [bfe4727c]
 - # ### DataSource, Layer error-checking ### [497ed6b4]
@@ -26,6 +26,6 @@
 - from ctypes import c_void_p, string_at [40e1cf854b4083dd]
 - from django.contrib.gis.gdal.error import GDALException, SRSException, check_err from django.contrib.gis.gdal.libgdal import lgdal [9c10b272]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [8228e8f6]
+- [8228e8f6] def check_string(result, func, cargs, offset=-1, str_result=False): """ Check the string output returned from the given function, and free the string pointer allocated by OGR. The `str_result` keyword may be used when the result is the string pointer, otherwise the OGR error code is assumed. The `offset` keyword may be used to extract the string pointer passed in by-reference at the given slice offset in the function arguments. """ if str_result: # For routines that return a string. ptr = result if not ptr: s = None else: s = string_at(result) else: # Error-code return specified. check_err(result) ptr = ptr_byref(cargs, offset) # Getting the string value s = ptr.value # Correctly freeing the allocated memory behind GDAL pointer # with the VSIFree routine. if ptr: lgdal.VSIFree(ptr) return s

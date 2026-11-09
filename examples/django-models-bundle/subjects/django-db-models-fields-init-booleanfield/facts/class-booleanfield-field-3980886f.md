@@ -1,6 +1,6 @@
 # Fact 3980886f
 
-Store id: cb29eb7c-53f0-4d1a-89d5-7c24d65b90c0
+Store id: b686afcf-635a-41b6-81e2-5479bd2a217f
 
 ## Text
 
@@ -20,7 +20,7 @@ class BooleanField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3649210+00:00`
+- posted_at: `2026-11-09T23:31:56.5372170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1200,
     "symbol": "BooleanField"
   },
-  "id": "cb29eb7c-53f0-4d1a-89d5-7c24d65b90c0",
+  "id": "b686afcf-635a-41b6-81e2-5479bd2a217f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3649210+00:00"
+    "posted_at": "2026-11-09T23:31:56.5372170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "95e67432-77b2-4dcc-ac82-a68c274fddfb",
+  "subject_id": "1c691d9d-153d-4fc8-83c6-ad8b6ecd08b7",
   "subject_name": "django/db/models/fields/__init__::BooleanField",
   "tags": [
     "entity:class"

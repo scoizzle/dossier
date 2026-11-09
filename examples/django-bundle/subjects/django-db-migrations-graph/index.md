@@ -1,14 +1,14 @@
 # django/db/migrations/graph
 
-- Subject: django/db/migrations/graph (id `95fe4d4a-7add-47e0-8e5b-f31489ed036a`)
+- Subject: django/db/migrations/graph (id `2ba2a991-e073-4aa0-84c9-e2a5ac77cd31`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 21 of 40
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2985 tokens
+- Facts shown: 40 of 40
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - A node should be a tuple: (app_path, migration_name). The tree special-cases things within an app - namely, root nodes and leaf nodes ignore dependencies to other apps. """ [09ec5132]
 - After the migration graph is processed, all dummy nodes should be removed. If there are any left, a nonexistent dependency error is raised. """ [cb924cc3]
@@ -32,6 +32,24 @@
 - def add_dummy_node(self, key, origin, error_message): node = DummyNode(key, origin, error_message) self.node_map[key] = node self.nodes[key] = None [7d284c89]
 - def add_node(self, key, migration): assert key not in self.node_map node = Node(key) self.node_map[key] = node self.nodes[key] = migration [62849d23]
 
-## Beyond the budget
+## All facts
 
-19 more facts did not fit in the budget: [62c969b0] [28823373] [4535eb54] [f88e4568] [80952e61] [cc70e191] [3615ff35] [9f81b8b3] [90c0aafd] [54b7fd69] [72e2b55a] [9844feb9] [4e7d2a3d] [8273f57f] [60c3c5ed] [41099d9e] [feb70751] [604dae4b] [363dc81b4a0151df-2]
+- [62c969b0] def add_dependency(self, migration, child, parent, skip_validation=False): """ This may create dummy nodes if they don't yet exist. If `skip_validation=True`, validate_consistency() should be called afterward. """ if child not in self.nodes: error_message = ( "Migration %s dependencies reference nonexistent" " child node %r" % (migration, child) ) self.add_dummy_node(child, migration, error_message) if parent not in self.nodes: error_message = ( "Migration %s dependencies reference nonexistent" " parent node %r" % (migration, parent) ) self.add_dummy_node(parent, migration, error_message) self.node_map[child].add_parent(self.node_map[parent]) self.node_map[parent].add_child(self.node_map[child]) if not skip_validation: self.validate_consistency()
+- [28823373] def add_parent(self, parent): self.parents.add(parent)
+- [4535eb54] def backwards_plan(self, target): """ Given a node, return a list of which dependent nodes (dependencies) must be unapplied, ending with the node itself. This is the list you would follow if removing the migrations from a database. """ if target not in self.nodes: raise NodeNotFoundError("Node %r not a valid node" % (target,), target) return self.iterative_dfs(self.node_map[target], forwards=False)
+- [f88e4568] def ensure_not_cyclic(self): # Algo from GvR: # https://neopythonic.blogspot.com/2009/01/detecting-cycles-in-directed-graph.html todo = set(self.nodes) while todo: node = todo.pop() stack = [node] while stack: top = stack[-1] for child in self.node_map[top].children: # Use child.key instead of child to speed up the frequent # hashing. node = child.key if node in stack: cycle = stack[stack.index(node) :] raise CircularDependencyError( ", ".join("%s.%s" % n for n in cycle) ) if node in todo: stack.append(node) todo.remove(node) break else: node = stack.pop()
+- [80952e61] def forwards_plan(self, target): """ Given a node, return a list of which previous nodes (dependencies) must be applied, ending with the node itself. This is the list you would follow if applying the migrations to a database. """ if target not in self.nodes: raise NodeNotFoundError("Node %r not a valid node" % (target,), target) return self.iterative_dfs(self.node_map[target])
+- [cc70e191] def iterative_dfs(self, start, forwards=True): """Iterative depth-first search for finding dependencies.""" visited = [] visited_set = set() stack = [(start, False)] while stack: node, processed = stack.pop() if node in visited_set: pass elif processed: visited_set.add(node) visited.append(node.key) else: stack.append((node, True)) stack += [ (n, False) for n in sorted(node.parents if forwards else node.children) ] return visited
+- [3615ff35] def leaf_nodes(self, app=None): """ Return all leaf nodes - that is, nodes with no dependents in their app. These are the "most current" version of an app's schema. Having more than one per app is technically an error, but one that gets handled further up, in the interactive command - it's usually the result of a VCS merge and needs some user input. """ leaves = set() for node in self.nodes: if all(key[0] != node[0] for key in self.node_map[node].children) and ( not app or app == node[0] ): leaves.add(node) return sorted(leaves)
+- [9f81b8b3] def make_state(self, nodes=None, at_end=True, real_apps=None): """ Given a migration node or nodes, return a complete ProjectState for it. If at_end is False, return the state before the migration has run. If nodes is not provided, return the overall most current project state. """ if nodes is None: nodes = list(self.leaf_nodes()) if not nodes: return ProjectState() if not isinstance(nodes[0], tuple): nodes = [nodes] plan = self._generate_plan(nodes, at_end) project_state = ProjectState(real_apps=real_apps) for node in plan: project_state = self.nodes[node].mutate_state(project_state, preserve=False) return project_state
+- [90c0aafd] def raise_error(self): raise NodeNotFoundError(self.error_message, self.key, origin=self.origin)
+- [54b7fd69] def remove_replaced_nodes(self, replacement, replaced): """ Remove each of the `replaced` nodes (when they exist). Any dependencies that were referencing them are changed to reference the `replacement` node instead. """ # Cast list of replaced keys to set to speed up lookup later. replaced = set(replaced) try: replacement_node = self.node_map[replacement] except KeyError as err: raise NodeNotFoundError( "Unable to find replacement node %r. It was either never added" " to the migration graph, or has been removed." % (replacement,), replacement, ) from err for replaced_key in replaced: self.nodes.pop(replaced_key, None) replaced_node = self.node_map.pop(replaced_key, None) if replaced_node: for child in replaced_node.children: child.parents.remove(replaced_node) # We don't want to create dependencies between the replaced # node and the replacement node as this would lead to # self-referencing on the replacement node at a later # iteration. if child.key not in replaced: replacement_node.add_child(child) child.add_parent(replacement_node) for parent in replaced_node.parents: parent.children.remove(replaced_node) # Again, to avoid self-referencing. if parent.key not in replaced: replacement_node.add_parent(parent) parent.add_child(replacement_node)
+- [72e2b55a] def remove_replacement_node(self, replacement, replaced): """ The inverse operation to `remove_replaced_nodes`. Almost. Remove the replacement node `replacement` and remap its child nodes to `replaced` - the list of nodes it would have replaced. Don't remap its parent nodes as they are expected to be correct already. """ self.nodes.pop(replacement, None) try: replacement_node = self.node_map.pop(replacement) except KeyError as err: raise NodeNotFoundError( "Unable to remove replacement node %r. It was either never added" " to the migration graph, or has been removed already." % (replacement,), replacement, ) from err replaced_nodes = set() replaced_nodes_parents = set() for key in replaced: replaced_node = self.node_map.get(key) if replaced_node: replaced_nodes.add(replaced_node) replaced_nodes_parents |= replaced_node.parents # We're only interested in the latest replaced node, so filter out # replaced nodes that are parents of other replaced nodes. replaced_nodes -= replaced_nodes_parents for child in replacement_node.children: child.parents.remove(replacement_node) for replaced_node in replaced_nodes: replaced_node.add_child(child) child.add_parent(replaced_node) for parent in replacement_node.parents: parent.children.remove(replacement_node) # NOTE: There is no need to remap parent dependencies as we can # assume the replaced nodes already have the correct ancestry.
+- [9844feb9] def root_nodes(self, app=None): """ Return all root nodes - that is, nodes with no dependencies inside their app. These are the starting point for an app. """ roots = set() for node in self.nodes: if all(key[0] != node[0] for key in self.node_map[node].parents) and ( not app or app == node[0] ): roots.add(node) return sorted(roots)
+- [4e7d2a3d] def validate_consistency(self): """Ensure there are no dummy nodes remaining in the graph.""" [n.raise_error() for n in self.node_map.values() if isinstance(n, DummyNode)]
+- [8273f57f] @total_ordering class Node: """ A single node in the migration graph. Contains direct links to adjacent nodes in either direction. """
+- [60c3c5ed] class DummyNode(Node): """ A node that doesn't correspond to a migration file on disk. (A squashed migration that was removed, for example.)
+- [41099d9e] class MigrationGraph: """ Represent the digraph of all migrations in a project.
+- [feb70751] from .exceptions import CircularDependencyError, NodeNotFoundError
+- [604dae4b] from django.db.migrations.state import ProjectState from django.utils.datastructures import OrderedSet
+- [363dc81b4a0151df-2] from functools import total_ordering

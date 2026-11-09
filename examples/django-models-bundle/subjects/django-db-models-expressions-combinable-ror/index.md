@@ -1,9 +1,9 @@
 # django/db/models/expressions::Combinable.__ror__
 
-- Subject: django/db/models/expressions::Combinable.__ror__ (id `3e167c6a-955d-4d5c-b22e-8074872d143e`)
+- Subject: django/db/models/expressions::Combinable.__ror__ (id `d918e02a-b56e-4059-9c3f-a854529956ef`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

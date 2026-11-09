@@ -1,6 +1,6 @@
 # Fact 370808ac
 
-Store id: bf2ebf62-b0af-4e01-8017-e9227d9f17c1
+Store id: 2ef83be8-b209-4413-81d7-4e6156b55e83
 
 ## Text
 
@@ -20,7 +20,7 @@ def split_exclude(self, filter_expr, can_reuse, names_with_path)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4310470+00:00`
+- posted_at: `2026-11-09T23:32:07.0006330+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2112,
     "symbol": "Query.split_exclude"
   },
-  "id": "bf2ebf62-b0af-4e01-8017-e9227d9f17c1",
+  "id": "2ef83be8-b209-4413-81d7-4e6156b55e83",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4310470+00:00"
+    "posted_at": "2026-11-09T23:32:07.0006330+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3d638591-6b09-4855-b48f-bd4f8ccbcb6d",
+  "subject_id": "71cd7a92-3415-4846-b104-b78523ea3b3d",
   "subject_name": "django/db/models/sql/query::Query.split_exclude",
   "tags": [
     "entity:method"

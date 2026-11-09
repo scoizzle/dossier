@@ -1,14 +1,14 @@
 # docs/releases/1.5.9
 
-- Subject: docs/releases/1.5.9 (id `a2b9cc39-788b-44c2-917e-7675089fadb5`)
+- Subject: docs/releases/1.5.9 (id `420732f9-ab41-47f9-9051-ef53a9290b74`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 871 tokens
-- Facts shown: 12 of 14
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 943 tokens
+- Facts shown: 14 of 14
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - *August 20, 2014* [82ab06a2c0d215a2-2]
 - ========================== Django 1.5.9 release notes ========================== [c258338d]
@@ -23,6 +23,7 @@
 - We've remedied the issue by changing the algorithm for generating file names if a file with the uploaded name already exists. :meth:`Storage.get_available_name <django.core.files.storage.Storage.get_available_name>` now appends an underscore plus a random 7 character alphanumeric string (e.g. ``"_x3a1gho"``), rather than iterating through an underscore followed by a number (e.g. ``"_1"``, ``"_2"``, etc.). [d968df823a30e77f-2]
 - When using the :class:`~django.contrib.auth.middleware.RemoteUserMiddleware` and the ``RemoteUserBackend``, a change to the ``REMOTE_USER`` header between requests without an intervening logout could result in the prior user's session being co-opted by the subsequent user. The middleware now logs the user out on a failed login attempt. [db22dd1bb3d126ab-2]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [c2867c7f0bbb8bfe-2] [64b3e342b8c4c494-2]
+- [c2867c7f0bbb8bfe-2] ``RemoteUserMiddleware`` session hijacking ==========================================
+- [64b3e342b8c4c494-2] ``reverse()`` could generate URLs pointing to other hosts =========================================================

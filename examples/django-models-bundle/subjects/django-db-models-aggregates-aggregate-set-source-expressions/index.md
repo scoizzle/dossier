@@ -1,9 +1,9 @@
 # django/db/models/aggregates::Aggregate.set_source_expressions
 
-- Subject: django/db/models/aggregates::Aggregate.set_source_expressions (id `fe61a7ae-8f0e-4d59-8305-3f52bc10a6ba`)
+- Subject: django/db/models/aggregates::Aggregate.set_source_expressions (id `8ab7c289-00c2-4928-9c76-64ae50f2a565`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

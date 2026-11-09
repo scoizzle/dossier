@@ -1,6 +1,6 @@
 # Fact 80fb6737
 
-Store id: 115f8b6a-3c6f-4695-af19-4d7d6fe31224
+Store id: 0d918eb0-cfaa-443c-b2b8-8c9069c8abea
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_queryset(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.5228750+00:00`
+- posted_at: `2026-11-09T23:32:03.7021360+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 150,
     "symbol": "BaseManager.get_queryset"
   },
-  "id": "115f8b6a-3c6f-4695-af19-4d7d6fe31224",
+  "id": "0d918eb0-cfaa-443c-b2b8-8c9069c8abea",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.5228750+00:00"
+    "posted_at": "2026-11-09T23:32:03.7021360+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e22fff8-16ee-460c-9d6a-4cd67648fb23",
+  "subject_id": "86cfcbae-8464-4252-a945-4aeb2089e19e",
   "subject_name": "django/db/models/manager::BaseManager.get_queryset",
   "tags": [
     "entity:method"

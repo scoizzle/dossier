@@ -1,9 +1,9 @@
 # django/db/models/aggregates::Min
 
-- Subject: django/db/models/aggregates::Min (id `78a6f898-6545-4e1f-b10d-78618ec8767c`)
+- Subject: django/db/models/aggregates::Min (id `d4fc95bd-0a73-4e7f-a7ee-a62f0034c910`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

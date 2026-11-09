@@ -1,6 +1,6 @@
 # Fact 57bc626e
 
-Store id: 1bfded01-6bb7-4650-ac10-ce95b46440b2
+Store id: cc2e82d1-76d7-4c83-80fc-772c7306b190
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONIn
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1bfded01-6bb7-4650-ac10-ce95b46440b2",
+  "id": "cc2e82d1-76d7-4c83-80fc-772c7306b190",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONIn"
       },
       "rel": "contains",
-      "target": "bff56f6e-310c-4ff6-8137-f7e44d63cd0a"
+      "target": "ba4c511b-2e95-488c-9124-3aa732a94870"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

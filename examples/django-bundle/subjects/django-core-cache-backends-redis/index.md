@@ -1,14 +1,14 @@
 # django/core/cache/backends/redis
 
-- Subject: django/core/cache/backends/redis (id `f99a1504-48ac-44bc-b37f-5ea725f55164`)
+- Subject: django/core/cache/backends/redis (id `85701b77-717f-4827-8083-0902241c7b9a`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 21 of 45
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2200 tokens
+- Facts shown: 45 of 45
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if isinstance(parser_class, str): parser_class = import_string(parser_class) parser_class = parser_class or self._lib.connection.DefaultParser [186faa58]
 - if isinstance(pool_class, str): pool_class = import_string(pool_class) self._pool_class = pool_class or self._lib.ConnectionPool [8bc18b75]
@@ -32,6 +32,29 @@
 - def delete_many(self, keys): client = self.get_client(None, write=True) client.delete(*keys) [8e3af3df]
 - """Redis cache backend.""" [3f7d1fa6]
 
-## Beyond the budget
+## All facts
 
-24 more facts did not fit in the budget: [7d21be91] [3b40c6ba] [409bb004] [1b1c3e7ac0a1ff09-2] [a96508bc] [617827f1] [09d8ec03] [1ac0dba6] [5c0ca265] [ac2f009e] [60b2cfd4] [b9000864] [d38dfd71] [97e56cbf] [8ea419b0] [21a6b81d] [20c4b068] [2b41113f] [16d63d07] [ce608f96] [b424d88b] [9b3f1cdd] [3cd39e8d] [f73c4ac7]
+- [7d21be91] def delete_many(self, keys, version=None): if not keys: return safe_keys = [self.make_and_validate_key(key, version=version) for key in keys] self._cache.delete_many(safe_keys)
+- [3b40c6ba] def dumps(self, obj): # For better incr() and decr() atomicity, don't pickle integers. # Using type() rather than isinstance() matches only integers and not # subclasses like bool. if type(obj) is int: return obj return pickle.dumps(obj, self.protocol)
+- [409bb004] def get(self, key, default): client = self.get_client(key) value = client.get(key) return default if value is None else self._serializer.loads(value)
+- [1b1c3e7ac0a1ff09-2] def get(self, key, default=None, version=None): key = self.make_and_validate_key(key, version=version) return self._cache.get(key, default)
+- [a96508bc] def get_backend_timeout(self, timeout=DEFAULT_TIMEOUT): if timeout == DEFAULT_TIMEOUT: timeout = self.default_timeout # The key will be made persistent if None used as a timeout. # Non-positive values will cause the key to be deleted. return None if timeout is None else max(0, int(timeout))
+- [617827f1] def get_client(self, key=None, *, write=False): # key is used so that the method signature remains the same and custom # cache client can be implemented which might require the key to select # the server, e.g. sharding. pool = self._get_connection_pool(write) return self._client(connection_pool=pool)
+- [09d8ec03] def get_many(self, keys): client = self.get_client(None) ret = client.mget(keys) return { k: self._serializer.loads(v) for k, v in zip(keys, ret) if v is not None }
+- [1ac0dba6] def get_many(self, keys, version=None): key_map = { self.make_and_validate_key(key, version=version): key for key in keys } ret = self._cache.get_many(key_map.keys()) return {key_map[k]: v for k, v in ret.items()}
+- [5c0ca265] def has_key(self, key): client = self.get_client(key) return bool(client.exists(key))
+- [ac2f009e] def has_key(self, key, version=None): key = self.make_and_validate_key(key, version=version) return self._cache.has_key(key)
+- [60b2cfd4] def incr(self, key, delta): client = self.get_client(key, write=True) if not client.exists(key): raise ValueError("Key '%s' not found." % key) return client.incr(key, delta)
+- [b9000864] def incr(self, key, delta=1, version=None): key = self.make_and_validate_key(key, version=version) return self._cache.incr(key, delta)
+- [d38dfd71] def loads(self, data): try: return int(data) except ValueError: return pickle.loads(data)
+- [97e56cbf] def set(self, key, value, timeout): client = self.get_client(key, write=True) value = self._serializer.dumps(value) if timeout == 0: client.delete(key) else: client.set(key, value, ex=timeout)
+- [8ea419b0] def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) self._cache.set(key, value, self.get_backend_timeout(timeout))
+- [21a6b81d] def set_many(self, data, timeout): client = self.get_client(None, write=True) pipeline = client.pipeline() pipeline.mset({k: self._serializer.dumps(v) for k, v in data.items()})
+- [20c4b068] def set_many(self, data, timeout=DEFAULT_TIMEOUT, version=None): if not data: return [] safe_data = {} for key, value in data.items(): key = self.make_and_validate_key(key, version=version) safe_data[key] = value self._cache.set_many(safe_data, self.get_backend_timeout(timeout)) return []
+- [2b41113f] def touch(self, key, timeout): client = self.get_client(key, write=True) if timeout is None: return bool(client.persist(key)) else: return bool(client.expire(key, timeout))
+- [16d63d07] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) return self._cache.touch(key, self.get_backend_timeout(timeout))
+- [ce608f96] class RedisCache(BaseCache): def __init__(self, server, params): super().__init__(params) if isinstance(server, str): self._servers = re.split("[;,]", server) else: self._servers = server
+- [b424d88b] class RedisCacheClient: def __init__( self, servers, serializer=None, pool_class=None, parser_class=None, **options, ): import redis
+- [9b3f1cdd] class RedisSerializer: def __init__(self, protocol=None): self.protocol = pickle.HIGHEST_PROTOCOL if protocol is None else protocol
+- [3cd39e8d] import django from django.core.cache.backends.base import DEFAULT_TIMEOUT, BaseCache from django.utils.functional import cached_property from django.utils.module_loading import import_string
+- [f73c4ac7] import pickle import random import re

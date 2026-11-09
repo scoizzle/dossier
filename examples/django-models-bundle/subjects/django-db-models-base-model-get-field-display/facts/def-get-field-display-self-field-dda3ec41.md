@@ -1,6 +1,6 @@
 # Fact dda3ec41
 
-Store id: 41405762-465c-40a1-82d9-77f46ee673f9
+Store id: b087c3f9-19a9-469b-9afd-a1e4d8d14e03
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_FIELD_display(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3448950+00:00`
+- posted_at: `2026-11-09T23:31:53.7510950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1345,
     "symbol": "Model._get_FIELD_display"
   },
-  "id": "41405762-465c-40a1-82d9-77f46ee673f9",
+  "id": "b087c3f9-19a9-469b-9afd-a1e4d8d14e03",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3448950+00:00"
+    "posted_at": "2026-11-09T23:31:53.7510950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bead0ef1-c324-4256-898d-e9ff6e777e03",
+  "subject_id": "dcde9175-c42e-447b-93f9-c742fb507829",
   "subject_name": "django/db/models/base::Model._get_FIELD_display",
   "tags": [
     "entity:method"

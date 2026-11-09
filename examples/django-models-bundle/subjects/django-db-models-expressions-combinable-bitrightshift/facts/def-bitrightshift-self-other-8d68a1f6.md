@@ -1,6 +1,6 @@
 # Fact 8d68a1f6
 
-Store id: 3417026e-d33e-4e11-83f3-f9c8acdf220d
+Store id: eaf9d4d9-af15-483d-b86e-19bbc5022d66
 
 ## Text
 
@@ -20,7 +20,7 @@ def bitrightshift(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4791780+00:00`
+- posted_at: `2026-11-09T23:31:55.7346250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 110,
     "symbol": "Combinable.bitrightshift"
   },
-  "id": "3417026e-d33e-4e11-83f3-f9c8acdf220d",
+  "id": "eaf9d4d9-af15-483d-b86e-19bbc5022d66",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4791780+00:00"
+    "posted_at": "2026-11-09T23:31:55.7346250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07cc75f0-3ba9-4fd8-894c-685d7bb8cbb4",
+  "subject_id": "3f7ac6c2-19c8-4e34-aa3f-84fc782ec690",
   "subject_name": "django/db/models/expressions::Combinable.bitrightshift",
   "tags": [
     "entity:method"

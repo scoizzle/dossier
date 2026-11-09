@@ -1,9 +1,9 @@
 # django/db/models/fields/related_lookups::RelatedIn.get_prep_lookup
 
-- Subject: django/db/models/fields/related_lookups::RelatedIn.get_prep_lookup (id `a419e39d-cf34-4b00-a914-999316f70360`)
+- Subject: django/db/models/fields/related_lookups::RelatedIn.get_prep_lookup (id `f5a8eedb-006f-4440-ab84-dab7932e8d76`)
 - Kind: method
 - Parent: [django/db/models/fields/related_lookups](../django-db-models-fields-related-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

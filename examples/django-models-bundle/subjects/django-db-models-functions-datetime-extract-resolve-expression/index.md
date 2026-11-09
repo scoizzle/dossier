@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::Extract.resolve_expression
 
-- Subject: django/db/models/functions/datetime::Extract.resolve_expression (id `363124a3-bde5-40c2-ae1b-a63dc6b932c4`)
+- Subject: django/db/models/functions/datetime::Extract.resolve_expression (id `47a93fbb-e413-49f3-8c1b-77e1627a4e07`)
 - Kind: method
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

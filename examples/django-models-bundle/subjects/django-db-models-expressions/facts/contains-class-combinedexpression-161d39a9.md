@@ -1,6 +1,6 @@
 # Fact 161d39a9
 
-Store id: 83178dba-0767-4e12-af2d-8acaecaa862a
+Store id: bb1eb290-c95a-4a74-8663-02b5e80925d4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CombinedExpression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "83178dba-0767-4e12-af2d-8acaecaa862a",
+  "id": "bb1eb290-c95a-4a74-8663-02b5e80925d4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CombinedExpression"
       },
       "rel": "contains",
-      "target": "a5a944ce-8602-443c-95e1-1363c78884de"
+      "target": "475b9494-1f66-4297-9815-e3b77e26fc91"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

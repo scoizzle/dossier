@@ -1,6 +1,6 @@
 # Fact d95bb1e8
 
-Store id: 8df403a2-adc7-4ace-a79e-40af2540d310
+Store id: d12cf989-d213-490e-96b2-ff9b07a98756
 
 ## Text
 
@@ -20,7 +20,7 @@ class ProtectedError(IntegrityError)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9472640+00:00`
+- posted_at: `2026-11-09T23:31:54.9883690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 10,
     "symbol": "ProtectedError"
   },
-  "id": "8df403a2-adc7-4ace-a79e-40af2540d310",
+  "id": "d12cf989-d213-490e-96b2-ff9b07a98756",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9472640+00:00"
+    "posted_at": "2026-11-09T23:31:54.9883690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c925367e-c776-4a97-b3a7-9eafa45060e1",
+  "subject_id": "68010fea-7d3f-467d-938b-d7b6801910c8",
   "subject_name": "django/db/models/deletion::ProtectedError",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact cd14ff6a
 
-Store id: 56fffd47-78e9-48ee-994a-105b839adebc
+Store id: c6875dad-5b77-45a5-85bd-ee71313a43ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.1872470+00:00`
+- posted_at: `2026-11-09T23:31:57.3404620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 34,
     "symbol": "FieldFile.__hash__"
   },
-  "id": "56fffd47-78e9-48ee-994a-105b839adebc",
+  "id": "c6875dad-5b77-45a5-85bd-ee71313a43ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.1872470+00:00"
+    "posted_at": "2026-11-09T23:31:57.3404620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0ffbb96d-773b-4cf4-b4e2-a61b5757f0b4",
+  "subject_id": "a7b06d6e-703d-4d09-ab64-1cbb3dc2080a",
   "subject_name": "django/db/models/fields/files::FieldFile.__hash__",
   "tags": [
     "entity:method"

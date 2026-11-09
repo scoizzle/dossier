@@ -1,6 +1,6 @@
 # Fact e921863c
 
-Store id: 4d9d3edc-abbc-4db5-a5ef-3d607419b023
+Store id: ae816e52-2b62-4b43-ac15-63e2b6dd978e
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_to_fields_composite_pk(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3169340+00:00`
+- posted_at: `2026-11-09T23:31:58.6722320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 642,
     "symbol": "ForeignObject._check_to_fields_composite_pk"
   },
-  "id": "4d9d3edc-abbc-4db5-a5ef-3d607419b023",
+  "id": "ae816e52-2b62-4b43-ac15-63e2b6dd978e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3169340+00:00"
+    "posted_at": "2026-11-09T23:31:58.6722320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ac8a0bbc-016c-42f9-b80b-1261b83dfd9a",
+  "subject_id": "48a2d790-a9ef-4e6b-ba0e-43cd28b4da70",
   "subject_name": "django/db/models/fields/related::ForeignObject._check_to_fields_composite_pk",
   "tags": [
     "entity:method"

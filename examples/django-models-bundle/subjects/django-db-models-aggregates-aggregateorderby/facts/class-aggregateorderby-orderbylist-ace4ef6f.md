@@ -1,6 +1,6 @@
 # Fact ace4ef6f
 
-Store id: 962fc6ac-0d03-4d7f-9f5b-c50dead4a904
+Store id: c13ec238-4853-45c7-b306-0071d35252a4
 
 ## Text
 
@@ -20,7 +20,7 @@ class AggregateOrderBy(OrderByList)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0311140+00:00`
+- posted_at: `2026-11-09T23:31:53.5308590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 62,
     "symbol": "AggregateOrderBy"
   },
-  "id": "962fc6ac-0d03-4d7f-9f5b-c50dead4a904",
+  "id": "c13ec238-4853-45c7-b306-0071d35252a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0311140+00:00"
+    "posted_at": "2026-11-09T23:31:53.5308590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cbe2e7c2-b165-4474-ad57-3f4825bf7075",
+  "subject_id": "c3352df0-9c89-44ed-89a2-edd9960a8e20",
   "subject_name": "django/db/models/aggregates::AggregateOrderBy",
   "tags": [
     "entity:class"

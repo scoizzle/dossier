@@ -1,8 +1,8 @@
 # django/db/models/functions/json
 
-- Subject: django/db/models/functions/json (id `abcfd616-3fe8-4797-95f6-2221b9d14bab`)
+- Subject: django/db/models/functions/json (id `ac17bd2f-e47a-4f85-889d-fb905a29fe3f`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 34 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

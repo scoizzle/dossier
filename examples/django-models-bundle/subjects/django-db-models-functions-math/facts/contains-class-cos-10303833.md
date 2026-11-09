@@ -1,6 +1,6 @@
 # Fact 10303833
 
-Store id: 31d1f974-3cb3-4c2c-8732-26e81b27b9b8
+Store id: 5da803be-787b-44b0-9c96-247d0bc2f1f0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Cos
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "31d1f974-3cb3-4c2c-8732-26e81b27b9b8",
+  "id": "5da803be-787b-44b0-9c96-247d0bc2f1f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Cos"
       },
       "rel": "contains",
-      "target": "553667e1-95e2-460a-b70e-10e0f2255e57"
+      "target": "e9ba6800-242a-4e12-9e92-f33899654c90"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

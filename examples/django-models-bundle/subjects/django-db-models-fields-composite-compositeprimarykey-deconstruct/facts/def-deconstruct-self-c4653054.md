@@ -1,6 +1,6 @@
 # Fact c4653054
 
-Store id: 598e6f05-850b-4c66-b519-93410bd60de7
+Store id: 4896092a-f09d-4070-8595-3bc315886363
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.9949130+00:00`
+- posted_at: `2026-11-09T23:31:57.1221160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 78,
     "symbol": "CompositePrimaryKey.deconstruct"
   },
-  "id": "598e6f05-850b-4c66-b519-93410bd60de7",
+  "id": "4896092a-f09d-4070-8595-3bc315886363",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.9949130+00:00"
+    "posted_at": "2026-11-09T23:31:57.1221160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9fa0dcfe-68bc-4727-acd0-2b2c8d548432",
+  "subject_id": "501628f2-35db-4089-a070-80c611916097",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.deconstruct",
   "tags": [
     "entity:method"

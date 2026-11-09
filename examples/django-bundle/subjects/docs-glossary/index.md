@@ -1,8 +1,8 @@
 # docs/glossary
 
-- Subject: docs/glossary (id `44809844-d1e1-4149-a9da-2a12e34df474`)
+- Subject: docs/glossary (id `23c33da2-d07c-40c6-aacd-474c378f657d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 734 tokens
 - Facts shown: 24 of 25
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DateField.__init__
 
-- Subject: django/db/models/fields/__init__::DateField.__init__ (id `7071ca55-922a-4d57-90fa-38887091fd29`)
+- Subject: django/db/models/fields/__init__::DateField.__init__ (id `873b4159-b48b-4ad0-8d24-ed6ea18c31d1`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 35 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

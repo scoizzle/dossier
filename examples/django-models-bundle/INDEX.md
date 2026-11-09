@@ -12,7 +12,7 @@ This file lists every subject in the bundle as folders and subjects: a row of ki
 - Facts: 2630
 - Conflicts: 8
 - Gaps: 0
-- Subject file tokens, all subjects: 338126
+- Subject file tokens, all subjects: 362634
 - Index files: 62
 - Largest index file, tokens: 5985
 

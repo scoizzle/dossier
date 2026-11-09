@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/prototypes/ds
 
-- Subject: django/contrib/gis/gdal/prototypes/ds (id `9514a883-e65f-4df6-a56e-7ad4d48780b5`)
+- Subject: django/contrib/gis/gdal/prototypes/ds (id `1f08008d-3a4d-42e9-88a5-0abd7959a4ac`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 8 of 12
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1285 tokens
+- Facts shown: 12 of 12
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - """ This module houses the ctypes function prototypes for OGR DataSource related data structures. OGR_Dr_*, OGR_DS_*, OGR_L_*, OGR_F_*, OGR_Fld_* routines are relevant here. """ [fc9437ef]
 - # DataSource open_ds = voidptr_output( lgdal.GDALOpenEx, [c_char_p, c_uint, POINTER(c_char_p), POINTER(c_char_p), POINTER(c_char_p)], ) destroy_ds = void_output(lgdal.GDALClose, [c_void_p], errcheck=False) get_ds_name = const_string_output(lgdal.GDALGetDescription, [c_void_p]) get_dataset_driver = voidptr_output(lgdal.GDALGetDatasetDriver, [c_void_p]) get_layer = voidptr_output(lgdal.GDALDatasetGetLayer, [c_void_p, c_int]) get_layer_by_name = voidptr_output( lgdal.GDALDatasetGetLayerByName, [c_void_p, c_char_p] ) get_layer_count = int_output(lgdal.GDALDatasetGetLayerCount, [c_void_p]) [100d090a]
@@ -19,6 +19,9 @@
 - GDAL_OF_ALL = 0x00 GDAL_OF_RASTER = 0x02 GDAL_OF_VECTOR = 0x04 [99c667d0]
 - GDAL_OF_READONLY = 0x00 GDAL_OF_UPDATE = 0x01 [8c200a85]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [4c59a246] [45e3a6b4] [6ae24ea0] [64973612]
+- [4c59a246] # Layer Routines get_extent = void_output(lgdal.OGR_L_GetExtent, [c_void_p, POINTER(OGREnvelope), c_int]) get_feature = voidptr_output(lgdal.OGR_L_GetFeature, [c_void_p, c_long]) get_feature_count = int_output(lgdal.OGR_L_GetFeatureCount, [c_void_p, c_int]) get_layer_defn = voidptr_output(lgdal.OGR_L_GetLayerDefn, [c_void_p]) get_layer_srs = srs_output(lgdal.OGR_L_GetSpatialRef, [c_void_p]) get_next_feature = voidptr_output(lgdal.OGR_L_GetNextFeature, [c_void_p]) reset_reading = void_output(lgdal.OGR_L_ResetReading, [c_void_p], errcheck=False) test_capability = int_output(lgdal.OGR_L_TestCapability, [c_void_p, c_char_p]) get_spatial_filter = geom_output(lgdal.OGR_L_GetSpatialFilter, [c_void_p]) set_spatial_filter = void_output( lgdal.OGR_L_SetSpatialFilter, [c_void_p, c_void_p], errcheck=False ) set_spatial_filter_rect = void_output( lgdal.OGR_L_SetSpatialFilterRect, [c_void_p, c_double, c_double, c_double, c_double], errcheck=False, )
+- [45e3a6b4] c_int_p = POINTER(c_int) # shortcut type
+- [6ae24ea0] from ctypes import POINTER, c_char_p, c_double, c_int, c_long, c_uint, c_void_p
+- [64973612] from django.contrib.gis.gdal.envelope import OGREnvelope from django.contrib.gis.gdal.libgdal import lgdal from django.contrib.gis.gdal.prototypes.generation import ( bool_output, const_string_output, double_output, geom_output, int64_output, int_output, srs_output, void_output, voidptr_output, )

@@ -1,6 +1,6 @@
 # Fact adfe025f
 
-Store id: 81ddf210-7343-45ed-aa1a-795aadc0a090
+Store id: 579b6a11-a356-4346-b4c2-c7a43cb09a78
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_filter_kwargs_for_object(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3364160+00:00`
+- posted_at: `2026-11-09T23:31:56.5021260+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1008,
     "symbol": "Field.get_filter_kwargs_for_object"
   },
-  "id": "81ddf210-7343-45ed-aa1a-795aadc0a090",
+  "id": "579b6a11-a356-4346-b4c2-c7a43cb09a78",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3364160+00:00"
+    "posted_at": "2026-11-09T23:31:56.5021260+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a672f9de-e223-4e82-b083-5fe2732249bc",
+  "subject_id": "6fc2eeab-f3f2-49af-9bc4-a68ac50a4906",
   "subject_name": "django/db/models/fields/__init__::Field.get_filter_kwargs_for_object",
   "tags": [
     "entity:method"

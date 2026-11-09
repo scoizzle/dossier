@@ -1,6 +1,6 @@
 # Fact c96078c8
 
-Store id: 3515efc0-73b9-49f1-a30e-3d7830053f8a
+Store id: 5114916a-45d9-45c4-89cf-0db7b262b222
 
 ## Text
 
@@ -20,7 +20,7 @@ def normalize_together(option_together)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.7170590+00:00`
+- posted_at: `2026-11-09T23:32:03.8693520+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 64,
     "symbol": "normalize_together"
   },
-  "id": "3515efc0-73b9-49f1-a30e-3d7830053f8a",
+  "id": "5114916a-45d9-45c4-89cf-0db7b262b222",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.7170590+00:00"
+    "posted_at": "2026-11-09T23:32:03.8693520+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e8c0332e-80d1-46c4-9a36-04da90d6f831",
+  "subject_id": "2c6cdf64-8d9b-4971-bbb7-825909d6d681",
   "subject_name": "django/db/models/options::normalize_together",
   "tags": [
     "entity:function"

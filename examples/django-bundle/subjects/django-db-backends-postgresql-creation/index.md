@@ -1,8 +1,8 @@
 # django/db/backends/postgresql/creation
 
-- Subject: django/db/backends/postgresql/creation (id `10a3baa4-85f4-4cee-952d-cc3be5b763fb`)
+- Subject: django/db/backends/postgresql/creation (id `996f2633-ece8-46a8-b743-795fd46f7135`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 831 tokens
 - Facts shown: 10 of 10
 - Conflicts: 0

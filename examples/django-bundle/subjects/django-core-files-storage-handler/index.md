@@ -1,8 +1,8 @@
 # django/core/files/storage/handler
 
-- Subject: django/core/files/storage/handler (id `f32d07ae-0aba-4444-8c0d-73b635e9ddf0`)
+- Subject: django/core/files/storage/handler (id `fd89680c-ebea-4cb0-b7e2-c2d292817b49`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 361 tokens
 - Facts shown: 6 of 6
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/db/models/functions/text
 
-- Subject: django/db/models/functions/text (id `d9e8fd53-42de-470d-a8c7-e4d2522921a9`)
+- Subject: django/db/models/functions/text (id `08714e53-0e7d-455c-90e4-6f9bb34964e1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 454 tokens
 - Facts shown: 28 of 28
 - Conflicts: 0

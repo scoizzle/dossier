@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.has_composite_fields
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.has_composite_fields (id `f8accbd6-0209-47e1-9b97-6292a4570de6`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.has_composite_fields (id `fc60385f-769e-44ff-884a-aa565cf1f3d7`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

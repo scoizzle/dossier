@@ -1,6 +1,6 @@
 # Fact baae8fa3
 
-Store id: 92ad079a-36fd-4fa9-a8c3-fc8fdba7967f
+Store id: 72213a70-1556-4aef-83f6-5a3711c35048
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6412510+00:00`
+- posted_at: `2026-11-09T23:31:56.8024160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2568,
     "symbol": "TextField.to_python"
   },
-  "id": "92ad079a-36fd-4fa9-a8c3-fc8fdba7967f",
+  "id": "72213a70-1556-4aef-83f6-5a3711c35048",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6412510+00:00"
+    "posted_at": "2026-11-09T23:31:56.8024160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "075eeb68-769b-47fb-87d7-d8d3c52c0a99",
+  "subject_id": "6b956aa9-cccd-4805-b18e-37ad2ea3909c",
   "subject_name": "django/db/models/fields/__init__::TextField.to_python",
   "tags": [
     "entity:method"

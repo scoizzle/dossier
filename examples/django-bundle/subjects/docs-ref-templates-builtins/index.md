@@ -1,14 +1,14 @@
 # docs/ref/templates/builtins
 
-- Subject: docs/ref/templates/builtins (id `d2f56973-f482-4b52-a174-69f22262c0b8`)
+- Subject: docs/ref/templates/builtins (id `2f8e90d5-c78d-47c5-9cfd-2514c2271ec7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 29 of 1127
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 29605 tokens
+- Facts shown: 915 of 1127
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - <h1>Archive for {{ year }}</h1> [a5df0e5c]
 - Check out <a href="https://www.djangoproject.com" rel="nofollow">www.djangoproject.com</a> [3995a8d6]
@@ -40,6 +40,891 @@
 - <tr> <td class="{% cycle 'row1' 'row2' as rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr> <tr> <td class="{% cycle rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr> [49b8a242]
 - It is the {% now "jS \o\f F" %} [7fbb751b]
 
-## Beyond the budget
+## All facts
 
-886 more facts did not fit in the budget: [654d8c23] [693ea500] [f4fc0f7bab0509f9] [98602e67] [efc6ed20] [1471be98] [e8c46ba6] [7b26cae9] [27b87aec] [b4b77a8d] [7a494f99] [1507df86] [9510dc45] [0edc7d43] [bf7b479b] [993d1d74] [918868d26f8b77e2] [218250b0] [7ff563642934590e] [2afe60c4] [b82b7423] [a95a9512] [5adc969a] [ecf48a6ac9d4b9f9] [7629d726] [2b846ae3] [b382c9a3] [a5f55c5b] [a369666f] [c785688b] [c6aabbbd] [5f4b88ec] [a1648f18] [3d74da0f] [a1c2189b] [dd38eb77] [625a965e] [e814a25e] [52f0c07c] [a96a3e31] [10bc2ab1] [54e126a8] [a08b2aaf] [3d3e8715] [08c9efc2ee439e7a] [2192494a] [f6f45706] [b44eb2a4] [9aec9a0cca6c6741-3] [6f801630] [8ec87eeb] [8cd4fc5b] [b5840109] [b51835d9] [acefc894] [23f3228b] [59557a7f] [3b528273] [3f993303] [78c58eb1] [9f6577cb] [097eb6936783c2dc-2] [bb291053] [f18ee81c] [5bba8599] [2a4f05a1] [d06d21ec] [46e0455b] [1d5e6d08] [3eccd93d] [f03fd2c002ce73bb] [fa22609f] [3b4bf3b2] [f36d9555] [ba1848e9] [773c82f7] [4180dcfc] [9970bd14] [d19007eb] [99e44dc6] [906106fe] [e41284d5] [e1fc717d] [9d5021a0] [8e38a4b0] [8e3091aa] [48520472] [1a212ca5] [06e9ab65] [e1e1c2e4] [a1f284d2] [8837f731] [ee116e00] [5658dd64] [de02bcf1] [bf52bc51] [aad4fcc3] [f9ac1f77] [d7222b20] [6b03d9d4] [74b9db7a] [c1c2fd3b] [8694c6ca] [fdf84008] [980335aa] [8cd856aa] [eec88db3] [6edd7a92] [da578e7f] [7824f358] [2aca4f63] [e8866d36] [ae015a3a] [5222194c] [1fef6fe2] [c7a4deeb] [329bb661] [5268e284] [aa0002cf7a1f1600] [030d9973] [751689da] [c3e71b3d] [620f6847] [22602230] [322a3303] [4078dabf] [71ce7a1f] [a67b9121] [5c12e30c] [000d6317] [339d3693] [486658f4] [d0de8dee] [995e85c0] [5180df73] [9e76dd92] [9d550c01] [bfd3cdce] [69ae9127] [d05492de] [55b6185a] [9ba6da35] [5eac9d68] [7fa0ce41] [3d1e5336] [ff881c39] [b369da4f] [06e7853b] [8b7e163a0a87884d] [1f5cdd40] [62f91df5] [a952cebb] [6d15493b] [54b5481de784a387] [b71ecee3] [76389e53] [5b422dfa] [a31bdb6c] [72396ccc] [65df3db9] [6e1bd6743dc1e163] [015b1a37] [32809f79] [2b25697e] [ecde430d] [9a8e26a9] [10d02463] [46ef4bc4] [13bbc9b0] [83c04133] [a4f509a3] [0f2cbeaa] [988f5dac] [cf3d42b9] [0b42190324218083] [0b42190324218083-2] [d1600148] [a8bed758] [74ba0eb5] [ea1b7197] [da16528a] [d8d284fb] [1870fe0f] [fc186773] [eacb7267] [e7842420] [0945c2da] [7d534a7f] [a4c111df] [25a89666] [a66514e1] [b71f7919] [48e59acb] [53f68793] [bf51a786] [b32d95d73a852758] [b32d95d73a852758-2] [b563ffce] [6f08c058] [915da5251b8e20d9] [915da5251b8e20d9-2] [915da5251b8e20d9-3] [fc7de39b9bcd8a77] [fc7de39b9bcd8a77-2] [7c9ac612] [884ed625] [2078e2562f0e616e] [2078e2562f0e616e-2] [2078e2562f0e616e-3] [c1f68f8f2b188343] [4d8e6570] [f618429e] [8dabcbe5] [d329fce8] [96348c33] [8f6cac92] [05e1367d] [761b1642] [d6241184] [e561a15e86fb8351] [e561a15e86fb8351-2] [b0f87606] [9eb4c237] [dd483d19] [cafbd39c] [96667a5e] [83a01324] [06903f62] [290c2da026719fa7] [6dfa8f4e] [c6598235] [f1634b861a77cfdb-17] [f1634b861a77cfdb-18] [f1634b861a77cfdb-19] [3f90e06ebee94674-6] [dfa717732ab88b73-6] [dfa717732ab88b73-7] [dfa717732ab88b73-8] [dfa717732ab88b73-9] [dfa717732ab88b73-10] [dfa717732ab88b73-11] [dfa717732ab88b73-12] [dfa717732ab88b73-13] [dfa717732ab88b73-14] [dfa717732ab88b73-15] [3a9340cd0d877339-29] [7904e6f98dc4b6fe-4] [7904e6f98dc4b6fe-5] [942ae6c11625c81c-150] [942ae6c11625c81c-151] [942ae6c11625c81c-152] [942ae6c11625c81c-153] [09d31931] [cae8360e] [27c3daea] [069aa731] [f38d01ac] [c82b38ee] [8ee1258d] [b12c54c2] [965192b1] [a09e44a5] [85c0b7db] [41ae836f] [a94bb01b] [42fa0a99] [f7bd1b63] [e9ca5005] [89e99fb5] [ca16b011] [ed5011fb] [2dbbe8a3] [5ddbb492] [357e9939] [53a1b46b] [fafe7029] [c415ddf1] [97f898d1] [cea7ad9e] [684acc4d] [cd46c80a] [daa41dc3d2c8b0c3-2] [d1616a65] [14a5a2ab] [b0647d8a] [45eb3842] [e3083df1] [9eb4b01e] [d1353d86] [1ae33f26] [4b199d13] [0f962371] [7088c3d2] [53de9b94] [c750266e] [b65ce78a] [d9887c78] [5ff962ca] [924121e4] [58cc3658] [f4bac2a9] [6ad68e1d] [dd8798f6] [e934e683] [1dd25c7e] [2c812f31] [7b3eb27f] [45df92f4] [607a2ac2] [20392010] [31fb6525] [9b0c626a] [8e42a8ce] [a81e347c] [f04b4018] [5fd9a68a] [13830ff9] [898a1b59] [0b476b58] [61f87a31] [b6f59da6] [bde592f3] [807c6a7d] [6776513b] [eabc9c2f] [12ae379a] [ef9b16e1] [42f43259] [87ba6999] [bbdbbdcc] [3998ffba] [7949d0bf] [35eefa92] [80bb27e8] [d7171273] [84a41197c19be8aa-2] [f250a869] [3026479e] [13b9bcd5] [5ba58f87] [9facc0cb] [533e3092] [16b0e170] [c90870c0] [a1eb26d754a3d60c-36] [a1eb26d754a3d60c-37] [0cf180bcf4ecfab5-27] [57739e32d87f6c76-20] [57739e32d87f6c76-21] [57739e32d87f6c76-22] [c54b54cb0805732a-84] [c54b54cb0805732a-85] [5f4ad4bb] [c9ad7c0d] [853ac4cf] [c9551104] [c3f111fa] [db73f809] [14208c2f] [1fc8fd5e] [b859b470] [94d2a3b9] [d778c9e7] [70be23c8] [f8950fcc] [68a93788] [a19b5890] [975ac685] [093e92ef] [cd47f77e] [9704cdbd] [158a8258] [89be7fef] [154713eb] [b372c2f1] [862ae4d7] [e91647c9] [9daddc7b] [09c767ee] [4495ca99] [6d3a9f42] [16f88816] [56efa6b9] [4571e530] [dd4138c8] [272452bc] [9ea763d7] [0ff63659] [01bfce98] [29e1632e] [ceeba914] [5f2c44b6] [d3d200b3] [6a8ede17] [0f7a6901] [9dc9cd91] [c7e97a7d] [52517948] [936c45cb] [3614815d] [e12e56c6] [2edc22e2] [26d2fb42] [8035b93f679711f2] [09d504e2] [ce0509d2] [7a1ef7c9] [1d89c2c9] [370454b6] [0f0c83c1] [1245e0b7] [d0b16916] [1fbd63a2] [b2d7c01a] [2173b594] [ceedeb9a] [fffd74a3] [ed1f0d4f] [a3f1ef1d] [cebabd5c] [46a2477f] [ea85eb41] [d8b68139] [34c27995] [fe7a71a6] [42971049] [f8e37805] [a8b8eef0] [ce2f483a] [7ce6d153] [8c25e4b1cdb1282e-16] [8c25e4b1cdb1282e-17] [20ed93bf2591ccc0-23] [20ed93bf2591ccc0-24] [20ed93bf2591ccc0-25] [20ed93bf2591ccc0-26] [20ed93bf2591ccc0-27] [12678636d153d030-8] [012918b1] [fa897a99] [2faa8c5e] [610a8ee2] [a3ed3491] [c83deea8] [33c125f8] [b3258ca2] [f042e9ac] [bc295f9831206ba3-15] [bc295f9831206ba3-16] [bc295f9831206ba3-17] [bc295f9831206ba3-18] [bc295f9831206ba3-19] [bc295f9831206ba3-20] [bc295f9831206ba3-21] [bc295f9831206ba3-22] [bc295f9831206ba3-23] [bc295f9831206ba3-24] [bc295f9831206ba3-25] [bc295f9831206ba3-26] [bc295f9831206ba3-27] [bc295f9831206ba3-28] [bc295f9831206ba3-29] [bc295f9831206ba3-30] [bc295f9831206ba3-31] [bc295f9831206ba3-32] [bc295f9831206ba3-33] [bc295f9831206ba3-34] [bc295f9831206ba3-35] [bc295f9831206ba3-36] [bc295f9831206ba3-37] [bc295f9831206ba3-38] [bc295f9831206ba3-39] [bc295f9831206ba3-40] [bc295f9831206ba3-41] [bc295f9831206ba3-42] [bc295f9831206ba3-43] [bc295f9831206ba3-44] [bc295f9831206ba3-45] [bc295f9831206ba3-46] [bc295f9831206ba3-47] [bc295f9831206ba3-48] [bc295f9831206ba3-49] [bc295f9831206ba3-50] [bc295f9831206ba3-51] [bc295f9831206ba3-52] [bc295f9831206ba3-53] [bc295f9831206ba3-54] [bc295f9831206ba3-55] [bc295f9831206ba3-56] [bc295f9831206ba3-57] [bc295f9831206ba3-58] [bc295f9831206ba3-59] [bc295f9831206ba3-60] [5b6e8c7c] [b9098ebd] [689bf71c] [0e3cc6e0] [7a4f1a4e] [2f401ad3] [11d666a8] [5718b647] [3f71e03b] [d857a0d8] [00904b70] [ac592175] [28c6da43] [51779231] [bc0efdd5] [7d4ee8d5] [df60e793] [d00cbcb9] [349bfc4c] [4541e60b] [419a933961c34d87] [ce013f76] [0ec4868e] [5508c41c] [2eec78a3] [36d3e138] [c9b4da33] [7120620c] [79ed0633] [43e696fd] [b3ea3b79] [1a93f5fb] [7cb22af9] [62da776d] [831efabb] [6ad42ebc] [7783b6e8] [b6d1d421] [ddfd9f79] [f9335d2f] [0c0bcd9f] [9b97f08d] [3bc45b14] [abb68cec] [19fd9eb6] [720c73f8] [f575871f] [e806feba] [b0ab65d5] [78ff3857] [c72f0750] [be63b04f] [fe76cf240b0eddc6] [fe76cf240b0eddc6-2] [fe76cf240b0eddc6-3] [c61f70ef] [c0ba2684] [72e7e79d] [76bd2fa3] [0d162b98] [28980440] [9696a00c] [78ab915b] [9ddf3f28] [cb87ed4e] [365ab730] [572e38f4] [3c170bfb] [5dff1a25] [055dec7e] [8d68ee6c] [69876aab] [3bb2e329] [35fadf2d] [0e790906] [efa8dc32] [fce8f2ab] [f7244638] [9508f280] [7022b3ee] [56a71ac7] [5046d257] [26e48bb1] [54366ac1] [76b4e21b] [1d14a45f] [7dcafb77] [e14f8f4f] [531dff5b] [3a86668f] [5b2f168a] [1629ce95] [53ffa218] [296a3a76] [24d8f633] [e21d72e8] [8d75c27c] [d5cabb4b] [98b62ff2] [aa3a4135a084f202] [f0be4869] [d55657d2] [9e21f57a] [37ab6023] [0356b4ca] [d22415ef] [6d39efe1] [8b1504a9] [6c3618e2] [a49ecc44] [2678bcdf] [ce655ae8] [c5a57ae6] [ff124bfd] [612553d4] [f2e6b7ad] [7fda7145] [7d5b6ed4] [eeb5faff] [3b28370b] [0fa7adc2] [4972bf6f] [660b44cf] [e0c2112f] [19493122] [2e4b0c62] [364e0c60] [f3801e03] [61c5095c] [7eab840c] [b2d1dab8] [34072055] [26a5f820] [2e7a8d5d] [0be1e9ea] [2f26be96] [b40dcc9d] [0f03b62d] [29d8c6e2] [0709bc53] [2e464e64] [b6593d85] [b13fcd26] [e3f17612] [9c09a243] [a5f71666] [6ef8e547] [152f5237] [dd8338abcb4e506e] [dd8338abcb4e506e-2] [dd8338abcb4e506e-3] [dd8338abcb4e506e-4] [dd8338abcb4e506e-5] [ce401da0] [4271ef0a] [afeea070] [ffa147c3] [657ed0c4] [926b27b4] [b7c7de33] [f6d803e4] [a1c7fc46] [b4cc773a] [ec1624f8] [d3d84af7] [92e708d4] [fc0ec31f] [99ec34bf] [fb19ee19] [1c785f88] [d7ecd7f3] [0d6730e3] [e60b1829] [87be44d3] [b81b52cf] [185752eb] [9bfca81d] [02fb3439] [a62c0710] [c424ee20] [5efc557c] [4efe53d9] [7dd3165e] [1987c1dd] [a239c034] [bf902935] [c6e0dc04] [1426a356] [1f95bc20] [4d2f0a60] [9311b91a] [d5b1f491] [f05c33d8] [edd59a89] [7aa424fb] [5b1af844] [8eeb8fe7] [599b8537] [72ba5900] [e0c5caa8] [48b05c7a] [3eb73794] [2e1497d1] [9dc9c39f] [9008fdff] [cba33cbb] [7fa082e2] [3e041ff9] [55df249d] [0d931ddb9fb1af3a] [4c8c61f4] [3e4c3574] [1ba8a9d8] [cc44e6db] [f749e1c1] [f1d9f926] [f8c1a5bc] [de5bbd77] [7bb45dfa] [d30a3109] [ba364f5d] [e6e182cd] [f902a964] [b1beb265] [0be2edcc] [9ab7b97b] [41575c98] [c85caeaf] [dcff9cfc] [62eba2e1] [92d1e273] [bdeb5f22] [be93ec2b] [ed61add7b30c480a-2] [ed61add7b30c480a-3] [ed61add7b30c480a-4] [eab82c12] [f8454aac] [9516bd7e] [ec71a6f0] [ffe9adc8] [3b4aa190] [1cd591c5] [862d180a] [05bc8f6b] [6b49536f] [f4854cf4] [d9d2f593] [76748445] [c44d58a7] [15f46064] [27c680cb] [b6378822] [dac88d55] [8d3495bc] [299510bf] [21bdaaa9] [05392915] [5afec94c] [46967bca] [927613d5] [1387fc1e] [ad51ed50] [b767eadb] [c4dbe274] [b5a8519c] [cdb24b9c] [dc82056b] [03ac7259] [ef2b03d5] [27cd3caa] [8c817b98] [513f1210] [50fe146b] [fbb1c5ef] [a8c3195c] [caf15592] [32b63f39] [0f62fdc5] [44f456c8] [51c68352] [8d22bde9] [2cc21351] [4befd7fe] [a50deb8c] [d7baeb74] [acea064c] [c97612a1] [87f4c915] [66025e6d] [498a9473] [3f26fc26] [19b266a4] [094f3f8e] [c675134a] [143b4d51] [815e13c8cb886ca0-2] [a2113f70] [169b4f92] [13e08a9f] [12d0befe] [870d547a] [76c22f9b] [95f55b25] [0a562c04] [4e54ce4a] [2622d3d1] [1d4bc966] [dae7dcc2] [1ab3d0e4] [d9ddb546] [477991ec] [1df367e4] [825ac56a] [99f7eb84] [ce60e138] [b445e4d4] [08d8c73b] [b29e2cb9] [5e6bfe5c] [bd852575] [dcc88c68300cfc76-4] [021f665d] [09f283ad] [b59b796b] [ac9ed04e] [63256f86] [f9f2ca92] [6f2a3088] [f96f00a0] [df51d4bc] [a1cd0f0d] [0eeebd07] [69a60b25] [6c91aea2] [06495e55] [6304931c] [2eadaf9c] [9da6c174] [fc51053a] [1dada46c] [4ddc691d] [131e7562] [7d32d837] [cdfc7eef] [51159f8b] [80e2511e] [b09d81ee] [8eb19ac0] [51e3d6e7] [37cbadca] [26e0ae05] [04c880ce] [b1ede104] [815b67d0] [f5b420bb] [b4f8f763] [e199ebef] [e3fee563] [9d93324e] [54d52871] [d382a4e5] [4f7b5774] [110847f4] [30b03231] [fb8ca302] [f09eefe8] [f4094ab0] [e7439c8e] [98ed4885] [77c14bca] [4de484b9] [8bd6d326] [0f1bf14d] [f7bfc116] [0c1f6e17] [9a81009d] [679a3b50] [e1f67c40] [bfa16d6c] [9db3a481] [f777f16b] [59d9b45b] [b379fc29] [2189c37c] [ce810fe2] [0d52527a] [7b14557e] [e66b9c35] [267111293e73cb7f] [b5037611] [9a532d4a] [44224262]
+- [654d8c23] <ul> {% if athlete_list %} {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% endfor %} {% else %} <li>Sorry, no athletes in this list.</li> {% endif %} </ul>
+- [693ea500] <ul> {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% empty %} <li>Sorry, no athletes in this list.</li> {% endfor %} </ul>
+- [f4fc0f7bab0509f9] <ul> {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% endfor %} </ul>
+- [98602e67] <ul> {% for country in country_list %} <li>{{ country.grouper }} <ul> {% for city in country.list %} <li>{{ city.name }}: {{ city.population }}</li> {% endfor %} </ul> </li> {% endfor %} </ul>
+- [efc6ed20] <ul> {% for country, local_cities in country_list %} <li>{{ country }} <ul> {% for city in local_cities %} <li>{{ city.name }}: {{ city.population }}</li> {% endfor %} </ul> </li> {% endfor %} </ul>
+- [1471be98] A ``?`` was prepended to the query string for empty results.
+- [e8c46ba6] As mentioned in the :ttag:`autoescape` section, when filters including ``escape`` are chained together, it can result in unexpected outcomes if preceding filters mark a potentially unsafe string as safe due to the lack of escaping caused by :ttag:`autoescape` being ``off``.
+- [7b26cae9] Blocks are evaluated *before* they are included. This means that a template that includes blocks from another will contain blocks that have *already been evaluated and rendered* - not blocks that can be overridden by, for example, an extending template.
+- [27b87aec] Check out <a href="http://www.djangoproject.com" rel="nofollow">www.djangoproject.com</a>
+- [b4b77a8d] Don't forget to put quotes around the URL pattern ``name``, otherwise the value will be interpreted as a context variable!
+- [7a494f99] If ``urlize`` is applied to text that already contains HTML markup, or to email addresses that contain single quotes (``'``), things won't work as expected. Apply this filter only to plain text.
+- [1507df86] If you are chaining filters, a filter applied after ``safe`` can make the contents unsafe again. For example, the following code prints the variable as is, unescaped:
+- [9510dc45] In such cases, chaining ``escape`` would not reescape strings that have already been marked as safe.
+- [0edc7d43] It is {% now "jS F Y H:i" %}
+- [bf7b479b] Joel is a slug
+- [993d1d74] Note that ``striptags`` doesn't give any guarantee about its output being HTML safe, particularly with non valid HTML input. So **NEVER** apply the ``safe`` filter to a ``striptags`` output. If you are looking for something more robust, consider using a third-party HTML sanitizing tool.
+- [918868d26f8b77e2] Processing large, potentially malformed HTML strings can be resource-intensive and impact service performance.
+- [218250b0] See :class:`~django.template.backends.jinja2.Jinja2` for information on using the ``static`` tag with Jinja2.
+- [7ff563642934590e] Set the transitional setting :setting:`URLIZE_ASSUME_HTTPS` to ``True`` to opt into using HTTPS during the Django 6.x release cycle.
+- [2afe60c4] Strictly speaking, ``filesizeformat`` does not conform to the International System of Units which recommends using KiB, MiB, GiB, etc. when byte sizes are calculated in powers of 1024 (which is the case here). Instead, Django uses traditional unit names (KB, MB, GB, etc.) corresponding to names that are more commonly used.
+- [b82b7423] Strings that can be coerced to integers will be **summed**, not concatenated, as in the first example above.
+- [a95a9512] Support for multiple positional mapping arguments was added.
+- [5adc969a] The :tfilter:`escape` and :tfilter:`safe` filters are not acceptable arguments. Instead, use the :ttag:`autoescape` tag to manage autoescaping for blocks of template code.
+- [ecf48a6ac9d4b9f9] The default protocol when none is provided will change from HTTP to HTTPS in Django 2028. Hence, the output will become:
+- [7629d726] The format passed can also be one of the predefined ones :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`SHORT_DATE_FORMAT` or :setting:`SHORT_DATETIME_FORMAT`. The predefined formats may vary depending on the current locale and if :doc:`/topics/i18n/formatting` is enabled, e.g.:
+- [2b846ae3] The variable ``forloop.length`` was added.
+- [b382c9a3] The {% templatetag openblock %} characters open a block.
+- [a5f55c5b] This is especially important when using filters that operate on sequences, for example :tfilter:`join`. If you need to escape each element in a sequence, use the dedicated :tfilter:`escapeseq` filter.
+- [a369666f] To use ``request.GET`` as the default ``QueryDict`` instance, the ``django.template.context_processors.request`` context processor should be enabled. If it's not enabled, you must either explicitly pass the ``request`` object into the template context, or provide a ``QueryDict`` instance to this tag.
+- [c785688b] You have {{ num_cherries }} cherr{{ num_cherries|pluralize:"y,ies" }}.
+- [c6aabbbd] You have {{ num_messages }} message{{ num_messages|pluralize }}.
+- [5f4b88ec] You have {{ num_walruses }} walrus{{ num_walruses|pluralize:"es" }}.
+- [a1648f18] [ ("a", "42"), ("b", "foo"), ("c", "string"), ]
+- [3d74da0f] [ {"name": "amy", "age": 22}, {"name": "joe", "age": 31}, {"name": "zed", "age": 19}, ]
+- [a1c2189b] [ {"title": "1984", "author": {"name": "George", "age": 45}}, {"title": "Timequake", "author": {"name": "Kurt", "age": 75}}, {"title": "Alice", "author": {"name": "Lewis", "age": 33}}, ]
+- [dd38eb77] cities = [ {"name": "Mumbai", "population": "19,000,000", "country": "India"}, {"name": "Calcutta", "population": "15,000,000", "country": "India"}, {"name": "New York", "population": "20,000,000", "country": "USA"}, {"name": "Chicago", "population": "7,000,000", "country": "USA"}, {"name": "Tokyo", "population": "33,000,000", "country": "Japan"}, ]
+- [625a965e] const value = JSON.parse(document.getElementById('hello-data').textContent);
+- [e814a25e] dir1/ template.html base2.html my/ base3.html base1.html
+- [52f0c07c] if (athlete_list and coach_list) or cheerleader_list: ...
+- [a96a3e31] one two three
+- [10bc2ab1] path("client/<int:id>/", app_views.client, name="app-views-client")
+- [54e126a8] path("clients/", include("project_name.app_name.urls"))
+- [a08b2aaf] {% autoescape off %} {% firstof var1 var2 var3 "<strong>fallback value</strong>" %} {% endautoescape %}
+- [3d3e8715] {% autoescape off %} {{ body|linebreaks|force_escape }} {% endautoescape %}
+- [08c9efc2ee439e7a] {% autoescape off %} {{ my_list|escapeseq|join:", " }} {% endautoescape %}
+- [2192494a] {% autoescape off %} {{ my_list|join:", "|escape }} {% endautoescape %}
+- [f6f45706] {% autoescape off %} {{ title|escape }} {% endautoescape %}
+- [b44eb2a4] {% autoescape on %} {{ body }} {% endautoescape %}
+- [9aec9a0cca6c6741-3] {% csp_nonce_attr form.media %}
+- [6f801630] {% cycle 'row1' 'row2' as rowcolors %}
+- [8ec87eeb] {% cycle 'row1' 'row2' as rowcolors silent %} {% cycle rowcolors %}
+- [8cd4fc5b] {% extends "./base2.html" %} {% extends "../base1.html" %} {% extends "./my/base3.html" %}
+- [b5840109] {% filter force_escape|lower %} This text will be HTML-escaped, and will appear in all lowercase. {% endfilter %}
+- [b51835d9] {% firstof var1 var2 var3 "fallback value" %}
+- [acefc894] {% firstof var1 var2 var3 %}
+- [23f3228b] {% firstof var1 var2|safe var3 "<strong>fallback value</strong>"|safe %}
+- [59557a7f] {% for book in books|dictsort:"author.age" %} * {{ book.title }} ({{ book.author.name }}) {% endfor %}
+- [3b528273] {% for coach in coach_list %} <h1>{{ coach.name }}</h1> {% for athlete in coach.athlete_set.all %} <p class="{% cycle 'odd' 'even' %}">{{ athlete.name }}</p> {% endfor %} {% resetcycle %} {% endfor %}
+- [3f993303] {% for item in list %} <p class="{% cycle 'odd' 'even' as stripe %} {% cycle 'major' 'minor' 'minor' 'minor' 'minor' as tick %}"> {{ item.data }} </p> {% ifchanged item.category %} <h1>{{ item.category }}</h1> {% if not forloop.first %}{% resetcycle tick %}{% endif %} {% endifchanged %} {% endfor %}
+- [78c58eb1] {% for key, value in data.items %} {{ key }}: {{ value }} {% endfor %}
+- [9f6577cb] {% for o in some_list %} <tr class="{% autoescape off %}{% cycle rowvalue1 rowvalue2 %}{% endautoescape %}"> ... </tr> {% endfor %}
+- [097eb6936783c2dc-2] {% for o in some_list %} <tr class="{% cycle 'row1' 'row2' %}"> ... </tr> {% endfor %}
+- [bb291053] {% for o in some_list %} <tr class="{% cycle 'row1' rowvalue2 'row3' %}"> ... </tr> {% endfor %}
+- [f18ee81c] {% for o in some_list %} <tr class="{% cycle rowvalue1 rowvalue2 %}"> ... </tr> {% endfor %}
+- [5bba8599] {% for obj in some_list %} {% cycle 'row1' 'row2' as rowcolors silent %} <tr class="{{ rowcolors }}">{% include "subtemplate.html" %}</tr> {% endfor %}
+- [2a4f05a1] {% for x, y in points %} There is a point at {{ x }},{{ y }} {% endfor %}
+- [d06d21ec] {% if "bc" in "abcdef" %} This appears since "bc" is a substring of "abcdef" {% endif %}
+- [46e0455b] {% if "hello" in greetings %} If greetings is a list or set, one element of which is the string "hello", this will appear. {% endif %}
+- [1d5e6d08] {% if a > b > c %} (WRONG)
+- [3eccd93d] {% if a > b and b > c %}
+- [f03fd2c002ce73bb] {% if athlete_list %} Number of athletes: {{ athlete_list|length }} {% elif athlete_in_locker_room_list %} Athletes should be out of the locker room soon! {% else %} No athletes. {% endif %}
+- [fa22609f] {% if athlete_list and coach_list %} Both athletes and coaches are available. {% endif %}
+- [3b4bf3b2] {% if athlete_list and not coach_list %} There are some athletes and absolutely no coaches. {% endif %}
+- [f36d9555] {% if athlete_list or coach_list %} There are some athletes or some coaches. {% endif %}
+- [ba1848e9] {% if messages|length >= 100 %} You have lots of messages today! {% endif %}
+- [773c82f7] {% if not athlete_list %} There are no athletes. {% endif %}
+- [4180dcfc] {% if not athlete_list or coach_list %} There are no athletes or there are some coaches. {% endif %}
+- [9970bd14] {% if somevar != "x" %} This appears if variable somevar does not equal the string "x", or if somevar is not found in the context {% endif %}
+- [d19007eb] {% if somevar < 100 %} This appears if variable somevar is less than 100. {% endif %}
+- [99e44dc6] {% if somevar <= 100 %} This appears if variable somevar is less than 100 or equal to 100. {% endif %}
+- [906106fe] {% if somevar == "x" %} This appears if variable somevar equals the string "x" {% endif %}
+- [e41284d5] {% if somevar > 0 %} This appears if variable somevar is greater than 0. {% endif %}
+- [e1fc717d] {% if somevar >= 1 %} This appears if variable somevar is greater than 1 or equal to 1. {% endif %}
+- [9d5021a0] {% if somevar is None %} This appears if somevar is None, or if somevar is not found in the context. {% endif %}
+- [8e38a4b0] {% if somevar is True %} This appears if and only if somevar is True. {% endif %}
+- [8e3091aa] {% if somevar is not None %} This appears if and only if somevar is not None. {% endif %}
+- [48520472] {% if user in users %} If users is a QuerySet, this will appear if user is an instance that belongs to the QuerySet. {% endif %}
+- [1a212ca5] {% if var1 %} {{ var1 }} {% elif var2 %} {{ var2 }} {% elif var3 %} {{ var3 }} {% endif %}
+- [06e9ab65] {% include "foo/bar.html" %}
+- [e1e1c2e4] {% include "name_snippet.html" %}
+- [a1f284d2] {% include "name_snippet.html" with greeting="Hi" only %}
+- [8837f731] {% include "name_snippet.html" with person="Jane" greeting="Hello" %}
+- [ee116e00] {% include template_name %}
+- [5658dd64] {% load foo bar from somelibrary %}
+- [de02bcf1] {% load somelibrary package.otherlibrary %}
+- [bf52bc51] {% load static %} <body data-media-url="{% get_media_prefix %}">
+- [aad4fcc3] {% load static %} <img src="{% get_static_prefix %}images/hi.jpg" alt="Hi!">
+- [f9ac1f77] {% load static %} <img src="{% static 'images/hi.jpg' %}" alt="Hi!">
+- [d7222b20] {% load static %} <link rel="stylesheet" href="{% static user_stylesheet %}" media="screen">
+- [6b03d9d4] {% load static %} {% get_static_prefix as STATIC_PREFIX %}
+- [74b9db7a] {% load static %} {% static "images/hi.jpg" as myphoto %} <img src="{{ myphoto }}" alt="Hi!">
+- [c1c2fd3b] {% lorem [count] [method] [random] %}
+- [8694c6ca] {% now "Y" as current_year %} {% blocktranslate %}Copyright {{ current_year }}{% endblocktranslate %}
+- [fdf84008] {% partial button %} {% partial button %} {% partial button %}
+- [980335aa] {% partial card %} {% partial card %}
+- [8cd856aa] {% partial partial_name %}
+- [eec88db3] {% partialdef button %} <button>Submit</button> {% endpartialdef %}
+- [6edd7a92] {% partialdef card %} <div class="card"> <h3>{{ title }}</h3> <p>{{ content }}</p> </div> {% endpartialdef %}
+- [da578e7f] {% partialdef partial_name %} {# Reusable content. #} {% endpartialdef %}
+- [7824f358] {% querystring %}
+- [2aca4f63] {% querystring color="red" size="S" %}
+- [e8866d36] {% querystring color=None %}
+- [ae015a3a] {% querystring color=my_list %}
+- [5222194c] {% querystring my_query_dict my_dict color=None size=None fabric=None type=None %}
+- [1fef6fe2] {% querystring my_query_dict my_dict size="S" type=None %}
+- [c7a4deeb] {% querystring page=page.next_page_number %}
+- [329bb661] {% querystring page=page.next_page_number as next_page %}
+- [5268e284] {% querystring size="M" %}
+- [aa0002cf7a1f1600] {% regroup cities by country as country_list %}
+- [030d9973] {% regroup cities by get_country_display as country_list %}
+- [751689da] {% spaceless %} <p> <a href="foo/">Foo</a> </p> {% endspaceless %}
+- [c3e71b3d] {% spaceless %} <strong> Hello </strong> {% endspaceless %}
+- [620f6847] {% url 'app-views-client' client.id %}
+- [22602230] {% url 'myapp:view-name' %}
+- [322a3303] {% url 'some-url-name' arg arg2 as the_url %}
+- [4078dabf] {% url 'some-url-name' arg1=v1 arg2=v2 %}
+- [71ce7a1f] {% url 'some-url-name' as the_url %} {% if the_url %} <a href="{{ the_url }}">Link to optional stuff</a> {% endif %}
+- [a67b9121] {% url 'some-url-name' v1 v2 %}
+- [5c12e30c] {% verbatim %} {{if dying}}Still alive.{{/if}} {% endverbatim %}
+- [000d6317] {% verbatim myblock %} Avoid template rendering via the {% verbatim %}{% endverbatim %} block. {% endverbatim myblock %}
+- [339d3693] {% widthratio this_value max_value max_width as width %} {% blocktranslate %}The width is: {{ width }}{% endblocktranslate %}
+- [486658f4] {% with alpha=1 beta=2 %} ... {% endwith %}
+- [d0de8dee] {% with total=business.employees.count %} {{ total }} employee{{ total|pluralize }} {% endwith %}
+- [995e85c0] {{ blog_date|timesince:comment_date }}
+- [5180df73] {{ conference_date|timeuntil:from_date }}
+- [9e76dd92] {{ first|add:second }}
+- [9d550c01] {{ greeting }}, {{ person|default:"friend" }}!
+- [bfd3cdce] {{ some_list|safeseq|join:", " }}
+- [69ae9127] {{ some_list|slice:":2" }}
+- [d05492de] {{ values|dictsort:"0" }}
+- [55b6185a] {{ value|add:"2" }}
+- [9ba6da35] {{ value|addslashes }}
+- [5eac9d68] {{ value|capfirst }}
+- [7fa0ce41] {{ value|cut:" " }}
+- [3d1e5336] {{ value|date }}
+- [ff881c39] {{ value|date:"D d M Y" }}
+- [b369da4f] {{ value|date:"D d M Y" }} {{ value|time:"H:i" }}
+- [06e7853b] {{ value|date:"SHORT_DATE_FORMAT" }}
+- [8b7e163a0a87884d] {{ value|default:"nothing" }}
+- [1f5cdd40] {{ value|default_if_none:"nothing" }}
+- [62f91df5] {{ value|dictsort:"name" }}
+- [a952cebb] {{ value|dictsort:0 }}
+- [6d15493b] {{ value|divisibleby:"3" }}
+- [54b5481de784a387] {{ value|filesizeformat }}
+- [b71ecee3] {{ value|first }}
+- [76389e53] {{ value|get_digit:"2" }}
+- [5b422dfa] {{ value|iriencode }}
+- [a31bdb6c] {{ value|join:" // " }}
+- [72396ccc] {{ value|json_script:"hello-data" }}
+- [65df3db9] {{ value|last }}
+- [6e1bd6743dc1e163] {{ value|length }}
+- [015b1a37] {{ value|linebreaks }}
+- [32809f79] {{ value|linebreaksbr }}
+- [2b25697e] {{ value|linenumbers }}
+- [ecde430d] {{ value|lower }}
+- [9a8e26a9] {{ value|make_list }}
+- [10d02463] {{ value|phone2numeric }}
+- [46ef4bc4] {{ value|random }}
+- [13bbc9b0] {{ value|slugify }}
+- [83c04133] {{ value|stringformat:"E" }}
+- [a4f509a3] {{ value|striptags }}
+- [0f2cbeaa] {{ value|time }}
+- [988f5dac] {{ value|time:"H:i" }}
+- [cf3d42b9] {{ value|time:"H\h i\m" }}
+- [0b42190324218083] {{ value|time:"TIME_FORMAT" }}
+- [0b42190324218083-2] {{ value|time:"TIME_FORMAT" }}
+- [d1600148] {{ value|title }}
+- [a8bed758] {{ value|truncatechars:7 }}
+- [74ba0eb5] {{ value|truncatechars_html:7 }}
+- [ea1b7197] {{ value|truncatewords:2 }}
+- [da16528a] {{ value|truncatewords_html:2 }}
+- [d8d284fb] {{ value|upper }}
+- [1870fe0f] {{ value|urlencode }}
+- [fc186773] {{ value|urlencode:"" }}
+- [eacb7267] {{ value|urlize }}
+- [e7842420] {{ value|urlizetrunc:15 }}
+- [0945c2da] {{ value|wordcount }}
+- [7d534a7f] {{ value|wordwrap:5 }}
+- [a4c111df] {{ value|yesno:"yeah,no,maybe" }}
+- [25a89666] * Calcutta: 15,000,000
+- [a66514e1] * Chicago: 7,000,000
+- [b71f7919] * Mumbai: 19,000,000
+- [48e59acb] * Mumbai: 19,000,000 * Calcutta: 15,000,000
+- [53f68793] * New York: 20,000,000
+- [bf51a786] * New York: 20,000,000 * Chicago: 7,000,000
+- [b32d95d73a852758] * Tokyo: 33,000,000
+- [b32d95d73a852758-2] * Tokyo: 33,000,000
+- [b563ffce] (This follows Python exactly). So, for example, the following complex :ttag:`if` tag:
+- [6f08c058] * Context: variable ``person`` is set to ``"John"`` and variable ``greeting`` is set to ``"Hello"``.
+- [915da5251b8e20d9] * India
+- [915da5251b8e20d9-2] * India
+- [915da5251b8e20d9-3] * India
+- [fc7de39b9bcd8a77] * Japan
+- [fc7de39b9bcd8a77-2] * Japan
+- [7c9ac612] * Template:
+- [884ed625] * The ``name_snippet.html`` template:
+- [2078e2562f0e616e] * USA
+- [2078e2562f0e616e-2] * USA
+- [2078e2562f0e616e-3] * USA
+- [c1f68f8f2b188343] * ``<`` is converted to ``&lt;`` * ``>`` is converted to ``&gt;`` * ``'`` (single quote) is converted to ``&#x27;`` * ``"`` (double quote) is converted to ``&quot;`` * ``&`` is converted to ``&amp;``
+- [4d8e6570] * ``grouper`` -- the item that was grouped by (e.g., the string "India" or "Japan"). * ``list`` -- a list of all items in this group (e.g., a list of all cities with country='India').
+- [f618429e] * ``or`` * ``and`` * ``not`` * ``in`` * ``==``, ``!=``, ``<``, ``>``, ``<=``, ``>=``
+- [8dabcbe5] * ``{% extends "base.html" %}`` (with quotes) uses the literal value ``"base.html"`` as the name of the parent template to extend.
+- [d329fce8] * ``{% extends variable %}`` uses the value of ``variable``. If the variable evaluates to a string, Django will use that string as the name of the parent template. If the variable evaluates to a ``Template`` object, Django will use that object as the parent template.
+- [96348c33] * ``{% lorem %}`` will output the common "lorem ipsum" paragraph. * ``{% lorem 3 p %}`` will output the common "lorem ipsum" paragraph and two random paragraphs each wrapped in HTML ``<p>`` tags. * ``{% lorem 2 w random %}`` will output two random Latin words.
+- [8f6cac92] **Argument:** Number of characters that link text should be truncated to, including the ellipsis that's added if truncation is necessary.
+- [05e1367d] **Argument:** Number of characters to truncate to
+- [761b1642] **Argument:** Number of words to truncate after
+- [d6241184] **Argument:** The optional HTML "id" of the ``<script>`` tag.
+- [e561a15e86fb8351] **Argument:** field size
+- [e561a15e86fb8351-2] **Argument:** field size
+- [b0f87606] **Argument:** number of characters at which to wrap the text
+- [9eb4c237] .. _date-and-time-formatting-specifiers:
+- [dd483d19] .. _ref-templates-builtins-filters:
+- [cafbd39c] .. _ref-templates-builtins-tags:
+- [96667a5e] .. admonition:: Chaining ``escape`` with other filters
+- [83a01324] .. admonition:: File sizes and SI units
+- [06903f62] .. admonition:: No safety guarantee
+- [290c2da026719fa7] .. admonition:: Size of input string
+- [6dfa8f4e] .. admonition:: Using Jinja2 templates?
+- [c6598235] .. admonition:: Using ``request.GET`` as default
+- [f1634b861a77cfdb-17] .. code-block:: html
+- [f1634b861a77cfdb-18] .. code-block:: html
+- [f1634b861a77cfdb-19] .. code-block:: html
+- [3f90e06ebee94674-6] .. code-block:: javascript
+- [dfa717732ab88b73-6] .. code-block:: python
+- [dfa717732ab88b73-7] .. code-block:: python
+- [dfa717732ab88b73-8] .. code-block:: python
+- [dfa717732ab88b73-9] .. code-block:: python
+- [dfa717732ab88b73-10] .. code-block:: python
+- [dfa717732ab88b73-11] .. code-block:: python
+- [dfa717732ab88b73-12] .. code-block:: python
+- [dfa717732ab88b73-13] .. code-block:: python
+- [dfa717732ab88b73-14] .. code-block:: python
+- [dfa717732ab88b73-15] .. code-block:: python
+- [3a9340cd0d877339-29] .. code-block:: text
+- [7904e6f98dc4b6fe-4] .. deprecated:: 6.0
+- [7904e6f98dc4b6fe-5] .. deprecated:: 6.0
+- [942ae6c11625c81c-150] .. note::
+- [942ae6c11625c81c-151] .. note::
+- [942ae6c11625c81c-152] .. note::
+- [942ae6c11625c81c-153] .. note::
+- [09d31931] .. note:: The :ttag:`include` tag should be considered as an implementation of "render this subtemplate and include the HTML", not as "parse this subtemplate and include its contents as if it were part of the parent". This means that there is no shared state between included templates -- each include is a completely independent rendering process.
+- [cae8360e] .. note:: These format characters are not used in Django outside of templates. They were designed to be compatible with PHP to ease transitioning for designers.
+- [27c3daea] .. note:: The previous more verbose format is still supported: ``{% with business.employees.count as total %}``
+- [069aa731] .. note:: Use :ttag:`blocktranslate` to pluralize translated strings.
+- [f38d01ac] .. templatefilter:: add
+- [c82b38ee] .. templatefilter:: addslashes
+- [8ee1258d] .. templatefilter:: capfirst
+- [b12c54c2] .. templatefilter:: center
+- [965192b1] .. templatefilter:: cut
+- [a09e44a5] .. templatefilter:: date
+- [85c0b7db] .. templatefilter:: default
+- [41ae836f] .. templatefilter:: default_if_none
+- [a94bb01b] .. templatefilter:: dictsort
+- [42fa0a99] .. templatefilter:: dictsortreversed
+- [f7bd1b63] .. templatefilter:: divisibleby
+- [e9ca5005] .. templatefilter:: escape
+- [89e99fb5] .. templatefilter:: escapejs
+- [ca16b011] .. templatefilter:: escapeseq
+- [ed5011fb] .. templatefilter:: filesizeformat
+- [2dbbe8a3] .. templatefilter:: first
+- [5ddbb492] .. templatefilter:: floatformat
+- [357e9939] .. templatefilter:: force_escape
+- [53a1b46b] .. templatefilter:: get_digit
+- [fafe7029] .. templatefilter:: iriencode
+- [c415ddf1] .. templatefilter:: join
+- [97f898d1] .. templatefilter:: json_script
+- [cea7ad9e] .. templatefilter:: last
+- [684acc4d] .. templatefilter:: length
+- [cd46c80a] .. templatefilter:: linebreaks
+- [daa41dc3d2c8b0c3-2] .. templatefilter:: linebreaksbr
+- [d1616a65] .. templatefilter:: linenumbers
+- [14a5a2ab] .. templatefilter:: ljust
+- [b0647d8a] .. templatefilter:: lower
+- [45eb3842] .. templatefilter:: make_list
+- [e3083df1] .. templatefilter:: phone2numeric
+- [9eb4b01e] .. templatefilter:: pluralize
+- [d1353d86] .. templatefilter:: pprint
+- [1ae33f26] .. templatefilter:: random
+- [4b199d13] .. templatefilter:: rjust
+- [0f962371] .. templatefilter:: safe
+- [7088c3d2] .. templatefilter:: safeseq
+- [53de9b94] .. templatefilter:: slice
+- [c750266e] .. templatefilter:: slugify
+- [b65ce78a] .. templatefilter:: stringformat
+- [d9887c78] .. templatefilter:: striptags
+- [5ff962ca] .. templatefilter:: time
+- [924121e4] .. templatefilter:: timesince
+- [58cc3658] .. templatefilter:: timeuntil
+- [f4bac2a9] .. templatefilter:: title
+- [6ad68e1d] .. templatefilter:: truncatechars
+- [dd8798f6] .. templatefilter:: truncatechars_html
+- [e934e683] .. templatefilter:: truncatewords
+- [1dd25c7e] .. templatefilter:: truncatewords_html
+- [2c812f31] .. templatefilter:: unordered_list
+- [7b3eb27f] .. templatefilter:: upper
+- [45df92f4] .. templatefilter:: urlencode
+- [607a2ac2] .. templatefilter:: urlize
+- [20392010] .. templatefilter:: urlizetrunc
+- [31fb6525] .. templatefilter:: wordcount
+- [9b0c626a] .. templatefilter:: wordwrap
+- [8e42a8ce] .. templatefilter:: yesno
+- [a81e347c] .. templatetag:: autoescape
+- [f04b4018] .. templatetag:: block
+- [5fd9a68a] .. templatetag:: comment
+- [13830ff9] .. templatetag:: csp_nonce_attr
+- [898a1b59] .. templatetag:: csrf_token
+- [0b476b58] .. templatetag:: cycle
+- [61f87a31] .. templatetag:: debug
+- [b6f59da6] .. templatetag:: extends
+- [bde592f3] .. templatetag:: filter
+- [807c6a7d] .. templatetag:: firstof
+- [6776513b] .. templatetag:: for
+- [eabc9c2f] .. templatetag:: get_media_prefix
+- [12ae379a] .. templatetag:: get_static_prefix
+- [ef9b16e1] .. templatetag:: if
+- [42f43259] .. templatetag:: ifchanged
+- [87ba6999] .. templatetag:: include
+- [bbdbbdcc] .. templatetag:: load
+- [3998ffba] .. templatetag:: lorem
+- [7949d0bf] .. templatetag:: now
+- [35eefa92] .. templatetag:: partial
+- [80bb27e8] .. templatetag:: partialdef
+- [d7171273] .. templatetag:: querystring
+- [84a41197c19be8aa-2] .. templatetag:: regroup
+- [f250a869] .. templatetag:: resetcycle
+- [3026479e] .. templatetag:: spaceless
+- [13b9bcd5] .. templatetag:: static
+- [5ba58f87] .. templatetag:: templatetag
+- [9facc0cb] .. templatetag:: url
+- [533e3092] .. templatetag:: verbatim
+- [16b0e170] .. templatetag:: widthratio
+- [c90870c0] .. templatetag:: with
+- [a1eb26d754a3d60c-36] .. versionadded:: 6.0
+- [a1eb26d754a3d60c-37] .. versionadded:: 6.0
+- [0cf180bcf4ecfab5-27] .. versionadded:: 6.1
+- [57739e32d87f6c76-20] .. versionchanged:: 6.0
+- [57739e32d87f6c76-21] .. versionchanged:: 6.0
+- [57739e32d87f6c76-22] .. versionchanged:: 6.0
+- [c54b54cb0805732a-84] .. warning::
+- [c54b54cb0805732a-85] .. warning::
+- [5f4ad4bb] ...and you'd like to display a hierarchical list that is ordered by country, like this:
+- [c9ad7c0d] ...then, in a template, you can create a link to this view like this:
+- [853ac4cf] ...will be interpreted as:
+- [c9551104] 1. Checks its own rendered contents against its previous state and only displays the content if it has changed. For example, this displays a list of days, only displaying the month if it changes:
+- [c3f111fa] 2. If given one or more variables, check whether any variable has changed. For example, the following shows the date every time it changes, while showing the hour if either the hour or the date has changed:
+- [db73f809] :ttag:`if` tags may also use the operators ``==``, ``!=``, ``<``, ``>``, ``<=``, ``>=``, ``in``, ``not in``, ``is``, and ``is not`` which work as follows:
+- [14208c2f] :ttag:`if` tags may use ``and``, ``or`` or ``not`` to test a number of variables or to negate a given variable:
+- [1fc8fd5e] ========== ====================== =========================================== Value Argument Outputs ========== ====================== =========================================== ``True`` ``yes`` ``True`` ``"yeah,no,maybe"`` ``yeah`` ``False`` ``"yeah,no,maybe"`` ``no`` ``None`` ``"yeah,no,maybe"`` ``maybe`` ``None`` ``"yeah,no"`` ``no`` (converts ``None`` to ``False`` if no mapping for ``None`` is given) ========== ====================== ===========================================
+- [b859b470] =========== ============================================================= Argument Description =========== ============================================================= ``count`` A number (or variable) containing the number of paragraphs or words to generate (default is 1). ``method`` Either ``w`` for words, ``p`` for HTML paragraphs or ``b`` for plain-text paragraph blocks (default is ``b``). ``random`` The word ``random``, which if given, does not use the common paragraph ("Lorem ipsum dolor sit amet...") when generating text. =========== =============================================================
+- [94d2a3b9] ============ =========================== ======== ``value`` Template Output ============ =========================== ======== ``34.23234`` ``{{ value|floatformat }}`` ``34.2`` ``34.00000`` ``{{ value|floatformat }}`` ``34`` ``34.26000`` ``{{ value|floatformat }}`` ``34.3`` ============ =========================== ========
+- [d778c9e7] ============ ============================= ========== ``value`` Template Output ============ ============================= ========== ``34.23234`` ``{{ value|floatformat:3 }}`` ``34.232`` ``34.00000`` ``{{ value|floatformat:3 }}`` ``34.000`` ``34.26000`` ``{{ value|floatformat:3 }}`` ``34.260`` ============ ============================= ==========
+- [70be23c8] ============ ================================ ========== ``value`` Template Output ============ ================================ ========== ``34.23234`` ``{{ value|floatformat:"0" }}`` ``34`` ``34.00000`` ``{{ value|floatformat:"0" }}`` ``34`` ``39.56000`` ``{{ value|floatformat:"0" }}`` ``40`` ============ ================================ ==========
+- [f8950fcc] ============ ================================= ============= ``value`` Template Output ============ ================================= ============= ``34.23234`` ``{{ value|floatformat:"3" }}`` ``34,232`` ``34.23234`` ``{{ value|floatformat:"3u" }}`` ``34.232`` ============ ================================= =============
+- [68a93788] ============ ================================= ============= ``value`` Template Output ============ ================================= ============= ``34232.34`` ``{{ value|floatformat:"2g" }}`` ``34,232.34`` ``34232.06`` ``{{ value|floatformat:"g" }}`` ``34,232.1`` ``34232.00`` ``{{ value|floatformat:"-3g" }}`` ``34,232`` ============ ================================= =============
+- [a19b5890] ================ ======================================== ===================== Format character Description Example output ================ ======================================== ===================== **Day** ``d`` Day of the month, 2 digits with ``'01'`` to ``'31'`` leading zeros. ``j`` Day of the month without leading ``'1'`` to ``'31'`` zeros. ``D`` Day of the week, textual, 3 letters. ``'Fri'`` ``l`` Day of the week, textual, long. ``'Friday'`` ``S`` English ordinal suffix for day of the ``'st'``, ``'nd'``, ``'rd'`` or ``'th'`` month, 2 characters. ``w`` Day of the week, digits without ``'0'`` (Sunday) to ``'6'`` (Saturday) leading zeros. ``z`` Day of the year. ``1`` to ``366`` **Week** ``W`` ISO-8601 week number of year, with ``1``, ``53`` weeks starting on Monday. **Month** ``m`` Month, 2 digits with leading zeros. ``'01'`` to ``'12'`` ``n`` Month without leading zeros. ``'1'`` to ``'12'`` ``M`` Month, textual, 3 letters. ``'Jan'`` ``b`` Month, textual, 3 letters, lowercase. ``'jan'`` ``E`` Month, locale specific alternative representation usually used for long date representation. ``'listopada'`` (for Polish locale, as opposed to ``'Listopad'``) ``F`` Month, textual, long. ``'January'`` ``N`` Month abbreviation in Associated Press ``'Jan.'``, ``'Feb.'``, ``'March'``, ``'May'`` style. Proprietary extension. ``t`` Number of days in the given month. ``28`` to ``31`` **Year** ``y`` Year, 2 digits with leading zeros. ``'00'`` to ``'99'`` ``Y`` Year, 4 digits with leading zeros. ``'0001'``, ..., ``'1999'``, ..., ``'9999'`` ``L`` Boolean for whether it's a leap year. ``True`` or ``False`` ``o`` ISO-8601 week-numbering year, ``'1999'`` corresponding to the ISO-8601 week number (W) which uses leap weeks. See Y for the more common year format. **Time** ``g`` Hour, 12-hour format without leading ``'1'`` to ``'12'`` zeros. ``G`` Hour, 24-hour format without leading ``'0'`` to ``'23'`` zeros. ``h`` Hour, 12-hour format. ``'01'`` to ``'12'`` ``H`` Hour, 24-hour format. ``'00'`` to ``'23'`` ``i`` Minutes. ``'00'`` to ``'59'`` ``s`` Seconds, 2 digits with leading zeros. ``'00'`` to ``'59'`` ``u`` Microseconds. ``000000`` to ``999999`` ``a`` ``'a.m.'`` or ``'p.m.'`` (Note that ``'a.m.'`` this is slightly different than PHP's output, because this includes periods to match Associated Press style.) ``A`` ``'AM'`` or ``'PM'``. ``'AM'`` ``f`` Time, in 12-hour hours and minutes, ``'1'``, ``'1:30'`` with minutes left off if they're zero. Proprietary extension. ``P`` Time, in 12-hour hours, minutes and ``'1 a.m.'``, ``'1:30 p.m.'``, ``'midnight'``, ``'noon'``, ``'12:30 p.m.'`` 'a.m.'/'p.m.', with minutes left off if they're zero and the special-case strings 'midnight' and 'noon' if appropriate. Proprietary extension. **Timezone** ``e`` Timezone name. Could be in any format, or might return an empty string, ``''``, ``'GMT'``, ``'-500'``, ``'US/Eastern'``, etc. depending on the datetime. ``I`` Daylight saving time, whether it's in ``'1'`` or ``'0'`` effect or not. ``O`` Difference to Greenwich time in hours. ``'+0200'`` ``T`` Time zone of this machine. ``'EST'``, ``'MDT'`` ``Z`` Time zone offset in seconds. The ``-43200`` to ``43200`` offset for timezones west of UTC is always negative, and for those east of UTC is always positive. **Date/Time** ``c`` ISO 8601 format. (Note: unlike other ``2008-01-02T10:30:00.000123+02:00``, formatters, such as "Z", "O" or "r", or ``2008-01-02T10:30:00.000123`` if the datetime is naive the "c" formatter will not add timezone offset if value is a naive datetime (see :class:`datetime.tzinfo`). ``r`` :rfc:`RFC 5322 <5322#section-3.3>` ``'Thu, 21 Dec 2000 16:01:07 +0200'`` formatted date. ``U`` Seconds since the Unix Epoch (January 1 1970 00:00:00 UTC). ================ ======================================== =====================
+- [975ac685] ================== ======= Argument Outputs ================== ======= ``openblock`` ``{%`` ``closeblock`` ``%}`` ``openvariable`` ``{{`` ``closevariable`` ``}}`` ``openbrace`` ``{`` ``closebrace`` ``}`` ``opencomment`` ``{#`` ``closecomment`` ``#}`` ================== =======
+- [093e92ef] ========================== =============================================== Variable Description ========================== =============================================== ``forloop.counter`` The current iteration of the loop (1-indexed) ``forloop.counter0`` The current iteration of the loop (0-indexed) ``forloop.revcounter`` The number of iterations from the end of the loop (1-indexed) ``forloop.revcounter0`` The number of iterations from the end of the loop (0-indexed) ``forloop.first`` True if this is the first time through the loop ``forloop.last`` True if this is the last time through the loop ``forloop.length`` The length of the loop ``forloop.parentloop`` For nested loops, this is the loop surrounding the current one ========================== ===============================================
+- [cd47f77e] ================================== Built-in template tags and filters ==================================
+- [9704cdbd] A common example of using this tag is to preserve the current query string when displaying a page of results, while adding a link to the next and previous pages of results. For example, if the paginator is currently on page 3, and the current query string is ``?color=blue&size=M&page=3``, the following code would output ``?color=blue&size=M&page=4``:
+- [158a8258] A common use is to allow a JavaScript template layer that collides with Django's syntax. For example:
+- [89be7fef] A set of Django template filters useful for adding a "human touch" to data. See :doc:`/ref/contrib/humanize`.
+- [154713eb] A wrapper around :func:`pprint.pprint` -- for debugging, really.
+- [b372c2f1] Additionally, the variable may be an iterable of template names, in which case the first that can be loaded will be used, as per :func:`~django.template.loader.select_template`.
+- [862ae4d7] Adds or modifies parameters in the query string. Each keyword argument will be added to the query string, replacing any existing value for that key. For instance, if the current query string is ``?color=green``, the output will be ``?color=red&size=S``.
+- [e91647c9] Adds slashes before quotes. Useful for escaping strings in CSV, for example.
+- [9daddc7b] Adds the argument to the value.
+- [09c767ee] All of the above can be combined to form complex expressions. For such expressions, it can be important to know how the operators are grouped when the expression is evaluated - that is, the precedence rules. The precedence of the operators, from lowest to highest, is as follows:
+- [4495ca99] An included template is rendered within the context of the template that includes it. This example produces the output ``"Hello, John!"``:
+- [6d3a9f42] An optional argument containing the characters which should not be escaped can be provided.
+- [16f88816] Another example:
+- [56efa6b9] Another solution is to sort the data in the template using the :tfilter:`dictsort` filter, if your data is in a list of dictionaries:
+- [4571e530] Any valid template lookup is a legal grouping attribute for the regroup tag, including methods, attributes, dictionary keys and list items. For example, if the "country" field is a foreign key to a class with an attribute "description," you could use:
+- [dd4138c8] Applies HTML escaping to a string (see the :tfilter:`escape` filter for details). This filter is applied *immediately* and returns a new, escaped string. This is useful in the rare cases where you need multiple escaping or want to apply other filters to the escaped results. Normally, you want to use the :tfilter:`escape` filter.
+- [272452bc] Applies the :tfilter:`escape` filter to each element of a sequence. Useful in conjunction with other filters that operate on sequences, such as :tfilter:`join`. For example:
+- [9ea763d7] Applying ``escape`` to a variable that would normally have auto-escaping applied to the result will only result in one round of escaping being done. So it is safe to use this function even in auto-escaping environments. If you want multiple escaping passes to be applied, use the :tfilter:`force_escape` filter.
+- [0ff63659] As with urlize_, this filter should only be applied to plain text.
+- [01bfce98] As you can see, the ``if`` tag may take one or several ``{% elif %}`` clauses, as well as an ``{% else %}`` clause that will be displayed if all previous conditions fail. These clauses are optional.
+- [29e1632e] Assuming that :setting:`LANGUAGE_CODE` is, for example, ``"de"``, then for:
+- [ceeba914] Assuming that :setting:`LANGUAGE_CODE` is, for example, ``"es"``, then for:
+- [5f2c44b6] Available format strings:
+- [d3d200b3] Basic usage ~~~~~~~~~~~
+- [6a8ede17] Because ``{% regroup %}`` produces :func:`~collections.namedtuple` objects, you can also write the previous example as:
+- [0f7a6901] Boolean operators ~~~~~~~~~~~~~~~~~
+- [9dc9cd91] Built-in filter reference =========================
+- [c7e97a7d] Built-in tag reference ======================
+- [52517948] By default, when you use the ``as`` keyword with the cycle tag, the usage of ``{% cycle %}`` that initiates the cycle will itself produce the first value in the cycle. This could be a problem if you want to use the value in a nested loop or an included template. If you only want to declare the cycle but not produce the first value, you can add a ``silent`` keyword as the last keyword in the tag. For example:
+- [936c45cb] By storing the value in a data attribute, we ensure it's escaped appropriately if we want to use it in a JavaScript context.
+- [3614815d] Caches a complex variable under a simpler name. This is useful when accessing an "expensive" method (e.g., one that hits the database) multiple times.
+- [e12e56c6] Capitalizes the first character of the value. If the first character is not a letter, this filter has no effect.
+- [2edc22e2] Centers the value in a field of a given width.
+- [26d2fb42] Check if a value has changed from the last iteration of a loop.
+- [8035b93f679711f2] Comparing offset-naive and offset-aware datetimes will return an empty string.
+- [09d504e2] Complex expressions ~~~~~~~~~~~~~~~~~~~
+- [ce0509d2] Contained within. This operator is supported by many Python containers to test whether the given value is in the container. The following are some examples of how ``x in y`` will be interpreted:
+- [7a1ef7c9] Controls the current auto-escaping behavior. This tag takes either ``on`` or ``off`` as an argument and that determines whether auto-escaping is in effect inside the block. The block is closed with an ``endautoescape`` ending tag.
+- [1d89c2c9] Converts URLs and email addresses in text into clickable links.
+- [370454b6] Converts URLs and email addresses into clickable links just like urlize_, but truncates URLs longer than the given character limit.
+- [0f0c83c1] Converts a phone number (possibly containing letters) to its numerical equivalent.
+- [1245e0b7] Converts a string into all lowercase.
+- [d0b16916] Converts a string into all uppercase.
+- [1fbd63a2] Converts a string into titlecase by making words start with an uppercase character and the remaining characters lowercase. This tag makes no effort to keep "trivial words" in lowercase.
+- [b2d7c01a] Converts all newlines in a piece of plain text to HTML line breaks (``<br>``).
+- [2173b594] Converts an IRI (Internationalized Resource Identifier) to a string that is suitable for including in a URL. This is necessary if you're trying to use strings containing non-ASCII characters in a URL.
+- [ceedeb9a] Converts to ASCII. Converts spaces to hyphens. Removes characters that aren't alphanumerics, underscores, or hyphens. Converts to lowercase. Also strips leading and trailing whitespace.
+- [fffd74a3] Customizing the base QueryDict ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [ed1f0d4f] Defines a block that can be overridden by child templates. See :ref:`Template inheritance <template-inheritance>` for more information.
+- [a3f1ef1d] Defines a reusable template fragment that can be rendered multiple times within the same template or accessed directly via :ref:`template loading or inclusion <template-partials-direct-access>`.
+- [cebabd5c] Displays random "lorem ipsum" Latin text. This is useful for providing sample data in templates.
+- [46a2477f] Displays text with line numbers.
+- [ea85eb41] Displays the current date and/or time, using a format according to the given string. Such string can contain format specifiers characters as described in the :tfilter:`date` filter section.
+- [d8b68139] Django comes with a couple of other template-tag libraries that you have to enable explicitly in your :setting:`INSTALLED_APPS` setting and enable in your template with the :ttag:`{% load %}<load>` tag.
+- [34c27995] Django provides template tags and filters to control each aspect of :doc:`internationalization </topics/i18n/index>` in templates. They allow for granular control of translations, formatting, and time zone conversions.
+- [fe7a71a6] Do not mix both positional and keyword syntax in a single call. All arguments required by the URLconf should be present.
+- [42971049] Dynamic usage ~~~~~~~~~~~~~
+- [f8e37805] Equality. Example:
+- [a8b8eef0] Escapes a string's HTML. Specifically, it makes these replacements:
+- [ce2f483a] Escapes a value for use in a URL.
+- [7ce6d153] Escapes characters for use as a whole JavaScript string literal, within single or double quotes, as below. This filter does not make the string safe for use in *"JavaScript template literals"* (the JavaScript backtick syntax). Any other uses not listed above are not supported. It is generally recommended that data should be passed using HTML ``data-`` attributes, or the :tfilter:`json_script` filter, rather than in embedded JavaScript.
+- [8c25e4b1cdb1282e-16] Example usage:
+- [8c25e4b1cdb1282e-17] Example usage:
+- [20ed93bf2591ccc0-23] Example:
+- [20ed93bf2591ccc0-24] Example:
+- [20ed93bf2591ccc0-25] Example:
+- [20ed93bf2591ccc0-26] Example:
+- [20ed93bf2591ccc0-27] Example:
+- [12678636d153d030-8] Examples:
+- [012918b1] Filters ~~~~~~~
+- [fa897a99] Filters the contents of the block through one or more filters. Multiple filters can be specified with pipes and filters can have arguments, just as in variable syntax.
+- [2faa8c5e] For creating bar charts and such, this tag calculates the ratio of a given value to a maximum value, and then applies that ratio to a constant.
+- [610a8ee2] For example, if ``my_query_dict`` is ``<QueryDict: {'color': ['blue'], 'size': ['S']}>`` and ``my_dict`` is ``{'color': 'orange', 'fabric': 'silk', 'type': 'dress'}``, this outputs ``?color=orange&size=S&fabric=silk``.
+- [a3ed3491] For example, if we have:
+- [c83deea8] For example, if you want to catch the ``<p>`` HTML elements created by the :tfilter:`linebreaks` filter:
+- [33c125f8] For example, suppose you have a view, ``app_views.client``, whose URLconf takes a client ID (here, ``client()`` is a method inside the views file ``app_views.py``). The URLconf line might look like this:
+- [b3258ca2] For example, the following template would load all the tags and filters registered in ``somelibrary`` and ``otherlibrary`` located in package ``package``:
+- [f042e9ac] For example, you can apply ``escape`` to fields when :ttag:`autoescape` is off:
+- [bc295f9831206ba3-15] For example:
+- [bc295f9831206ba3-16] For example:
+- [bc295f9831206ba3-17] For example:
+- [bc295f9831206ba3-18] For example:
+- [bc295f9831206ba3-19] For example:
+- [bc295f9831206ba3-20] For example:
+- [bc295f9831206ba3-21] For example:
+- [bc295f9831206ba3-22] For example:
+- [bc295f9831206ba3-23] For example:
+- [bc295f9831206ba3-24] For example:
+- [bc295f9831206ba3-25] For example:
+- [bc295f9831206ba3-26] For example:
+- [bc295f9831206ba3-27] For example:
+- [bc295f9831206ba3-28] For example:
+- [bc295f9831206ba3-29] For example:
+- [bc295f9831206ba3-30] For example:
+- [bc295f9831206ba3-31] For example:
+- [bc295f9831206ba3-32] For example:
+- [bc295f9831206ba3-33] For example:
+- [bc295f9831206ba3-34] For example:
+- [bc295f9831206ba3-35] For example:
+- [bc295f9831206ba3-36] For example:
+- [bc295f9831206ba3-37] For example:
+- [bc295f9831206ba3-38] For example:
+- [bc295f9831206ba3-39] For example:
+- [bc295f9831206ba3-40] For example:
+- [bc295f9831206ba3-41] For example:
+- [bc295f9831206ba3-42] For example:
+- [bc295f9831206ba3-43] For example:
+- [bc295f9831206ba3-44] For example:
+- [bc295f9831206ba3-45] For example:
+- [bc295f9831206ba3-46] For example:
+- [bc295f9831206ba3-47] For example:
+- [bc295f9831206ba3-48] For example:
+- [bc295f9831206ba3-49] For example:
+- [bc295f9831206ba3-50] For example:
+- [bc295f9831206ba3-51] For example:
+- [bc295f9831206ba3-52] For example:
+- [bc295f9831206ba3-53] For example:
+- [bc295f9831206ba3-54] For example:
+- [bc295f9831206ba3-55] For example:
+- [bc295f9831206ba3-56] For example:
+- [bc295f9831206ba3-57] For example:
+- [bc295f9831206ba3-58] For example:
+- [bc295f9831206ba3-59] For example:
+- [bc295f9831206ba3-60] For example:
+- [5b6e8c7c] For words that don't pluralize by simple suffix, you can specify both a singular and plural suffix, separated by a comma.
+- [b9098ebd] For words that require a suffix other than ``'s'``, you can provide an alternate suffix as a parameter to the filter.
+- [689bf71c] Formats a date according to the given format.
+- [0e3cc6e0] Formats a date as the time since that date (e.g., "4 days, 6 hours").
+- [7a4f1a4e] Formats a time according to the given format.
+- [2f401ad3] Formats the value like a 'human-readable' file size (i.e. ``'13 KB'``, ``'4.1 MB'``, ``'102 bytes'``, etc.).
+- [11d666a8] Formats the variable according to the argument, a string formatting specifier. This specifier uses the :ref:`old-string-formatting` syntax, with the exception that the leading "%" is dropped.
+- [5718b647] From then on, you can insert the current value of the cycle wherever you'd like in your template by referencing the cycle name as a context variable. If you want to move the cycle to the next value independently of the original ``cycle`` tag, you can use another ``cycle`` tag and specify the name of the variable. So, the following template:
+- [3f71e03b] Given a whole number, returns the requested digit, where 1 is the right-most digit, 2 is the second-right-most digit, etc. Returns the original value for invalid input (if input or argument is not an integer, or if argument is less than 1). Otherwise, output is always an integer.
+- [d857a0d8] Given format can be the predefined one :setting:`TIME_FORMAT`, or a custom format, same as the :tfilter:`date` filter. Note that the predefined format is locale-dependent.
+- [00904b70] Greater than or equal to. Example:
+- [ac592175] Greater than. Example:
+- [28c6da43] Grouping on other properties ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [51779231] Handling lists ~~~~~~~~~~~~~~
+- [bc0efdd5] If (and only if) value is ``None``, uses the given default. Otherwise, uses the value.
+- [7d4ee8d5] If ``books`` is:
+- [df60e793] If ``my_list`` is ``["red", "blue"]``, the output will be ``?color=red&color=blue``, preserving the list structure in the query string.
+- [d00cbcb9] If ``num_messages`` is ``1``, the output will be ``You have 1 message.`` If ``num_messages`` is ``2`` the output will be ``You have 2 messages.``
+- [349bfc4c] If ``some_list`` is ``['a', 'b', 'c']``, the output will be ``['a', 'b']``.
+- [4541e60b] If ``this_value`` is 175, ``max_value`` is 200, and ``max_width`` is 100, the image in the above example will be 88 pixels wide (because 175/200 = .875; .875 * 100 = 87.5 which is rounded up to 88).
+- [419a933961c34d87] If ``value`` is 123456789, the output would be ``117.7 MB``.
+- [ce013f76] If ``value`` is ``""`` (the empty string), the output will be ``nothing``.
+- [0ec4868e] If ``value`` is ``"<b>Joel</b> <button>is</button> a <span>slug</span>"``, the output will be ``"Joel is a slug"``.
+- [5508c41c] If ``value`` is ``"<p>Joel is a slug</p>"``, the output will be ``"<p>Joel is …</p>"``.
+- [2eec78a3] If ``value`` is ``"?test=I ♥ Django"``, the output will be ``"?test=I%20%E2%99%A5%20Django"``.
+- [36d3e138] If ``value`` is ``"Check out www.djangoproject.com"``, the output will be:
+- [c9b4da33] If ``value`` is ``"Check out www.djangoproject.com"``, the output would be:
+- [7120620c] If ``value`` is ``"Django"``, the output will be ``" Django "``.
+- [79ed0633] If ``value`` is ``"I'm using Django"``, the output will be ``"I\'m using Django"``.
+- [43e696fd] If ``value`` is ``"Joel is a slug"``, the output will be ``"Joel i…"``.
+- [b3ea3b79] If ``value`` is ``"Joel is a slug"``, the output will be ``4``.
+- [1a93f5fb] If ``value`` is ``"String with spaces"``, the output will be ``"Stringwithspaces"``.
+- [7cb22af9] If ``value`` is ``"https://www.example.org/"``, the output will be ``"https%3A%2F%2Fwww.example.org%2F"``.
+- [62da776d] If ``value`` is ``"https://www.example.org/foo?a=b&c=d"``, the output will be ``"https%3A//www.example.org/foo%3Fa%3Db%26c%3Dd"``.
+- [831efabb] If ``value`` is ``"my FIRST post"``, the output will be ``"My First Post"``.
+- [6ad42ebc] If ``value`` is ``10``, the output will be ``1.000000E+01``.
+- [7783b6e8] If ``value`` is ``123456789``, the output will be ``8``.
+- [b6d1d421] If ``value`` is ``21``, the output would be ``True``.
+- [ddfd9f79] If ``value`` is ``4``, then the output will be ``6``.
+- [f9335d2f] If ``value`` is ``800-COLLECT``, the output will be ``800-2655328``.
+- [0c0bcd9f] If ``value`` is ``Joel is a slug``, the output would be:
+- [9b97f08d] If ``value`` is ``Joel\nis a slug``, the output will be ``<p>Joel<br>is a slug</p>``.
+- [3bc45b14] If ``value`` is ``None``, the output will be ``nothing``.
+- [abb68cec] If ``value`` is ``Totally LOVING this Album!``, the output will be ``totally loving this album!``.
+- [19fd9eb6] If ``value`` is ``['a', 'b', 'c', 'd']`` or ``"abcd"``, the output will be ``4``.
+- [720c73f8] If ``value`` is a :class:`~datetime.datetime` object (e.g., the result of ``datetime.datetime.now()``), the output will be the string ``'Wed 09 Jan 2008'``.
+- [f575871f] If ``value`` is equivalent to ``datetime.datetime.now()``, the output will be the string ``"01:23"``.
+- [e806feba] If ``value`` is the dictionary ``{'hello': 'world'}``, the output will be:
+- [b0ab65d5] If ``value`` is the list ``['a', 'b', 'c', 'd']``, the output could be ``"b"``.
+- [78ff3857] If ``value`` is the list ``['a', 'b', 'c', 'd']``, the output will be the string ``"d"``.
+- [c72f0750] If ``value`` is the list ``['a', 'b', 'c']``, the output will be ``'a'``.
+- [be63b04f] If ``value`` is the string ``"Joel"``, the output would be the list ``['J', 'o', 'e', 'l']``. If ``value`` is ``123``, the output will be the list ``['1', '2', '3']``.
+- [fe76cf240b0eddc6] If ``value`` is:
+- [fe76cf240b0eddc6-2] If ``value`` is:
+- [fe76cf240b0eddc6-3] If ``value`` is:
+- [c61f70ef] If all keys are removed by setting them to ``None``, this outputs ``?``:
+- [c0ba2684] If not provided, the '/' character is assumed safe. An empty string can be provided when *all* characters should be escaped. For example:
+- [72e7e79d] If the argument passed to ``floatformat`` has the ``g`` suffix, it will force grouping by the :setting:`THOUSAND_SEPARATOR` for the active locale. For example, when the active locale is ``en`` (English):
+- [76bd2fa3] If the argument passed to ``floatformat`` is negative, it will round a number to that many decimal places -- but only if there's a decimal part to be displayed. For example:
+- [0d162b98] If this app's URLconf is included into the project's URLconf under a path such as this:
+- [28980440] If used with a numeric integer argument, ``floatformat`` rounds a number to that many decimal places. For example:
+- [9696a00c] If value evaluates to ``False``, uses the given default. Otherwise, uses the value.
+- [78ab915b] If you need different precedence, you will need to use nested :ttag:`if` tags. Sometimes that is better for clarity anyway, for the sake of those who do not know the precedence rules.
+- [9ddf3f28] If you need to loop over a list of lists, you can unpack the values in each sublist into individual variables. For example, if your context contains a list of (x,y) coordinates called ``points``, you could use the following to output the list of points:
+- [cb87ed4e] If you want to render the context only with the variables provided (or even no variables at all), use the ``only`` option. No other variables are available to the included template:
+- [365ab730] If you'd like to retrieve a URL without displaying it, you can use a slightly different call:
+- [572e38f4] If you'd like to retrieve a namespaced URL, specify the fully qualified name:
+- [3c170bfb] Ignores everything between ``{% comment %}`` and ``{% endcomment %}``. An optional note may be inserted in the first tag. For example, this is useful when commenting out code for documenting why the code was disabled.
+- [5dff1a25] In ``template.html``, the following paths would be valid:
+- [055dec7e] In addition to web links, ``urlize`` also converts email addresses into ``mailto:`` links. If ``value`` is ``"Send questions to foo@example.com"``, the output will be ``"Send questions to <a href="mailto:foo@example.com">foo@example.com</a>"``.
+- [8d68ee6c] In both forms, if the context processor is not configured, assets are rendered without a nonce attribute.
+- [69876aab] In order to properly escape every element in a sequence, use the :tfilter:`escapeseq` filter:
+- [3bb2e329] In some cases you might want to capture the result of ``widthratio`` in a variable. It can be useful, for instance, in a :ttag:`blocktranslate` like this:
+- [35fadf2d] In some cases you might want to refer to the current value of a cycle without advancing to the next value. To do this, give the ``{% cycle %}`` tag a name, using "as", like this:
+- [0e790906] In the above, if ``athlete_list`` is not empty, the number of athletes will be displayed by the ``{{ athlete_list|length }}`` variable.
+- [efa8dc32] In the following example, a new fragment named ``card`` is defined:
+- [fce8f2ab] In the following example, a partial named ``button`` is defined and then rendered three times:
+- [f7244638] In this example, we have both the alternating odd/even rows and a "major" row every fifth row. Only the five-row cycle is reset when a category changes.
+- [9508f280] Inequality. Example:
+- [7022b3ee] Internationalization tags and filters =====================================
+- [56a71ac7] It also supports domain-only links ending in one of the original top level domains (``.com``, ``.edu``, ``.gov``, ``.int``, ``.mil``, ``.net``, and ``.org``). For example, ``djangoproject.com`` gets converted.
+- [5046d257] It is also able to consume standard context variables, e.g. assuming a ``user_stylesheet`` variable is passed to the template:
+- [26e48bb1] It's safe to use this filter on a string that has already gone through the :tfilter:`urlencode` filter.
+- [54366ac1] Joins a list with a string, like Python's ``str.join(list)``
+- [76b4e21b] Keep in mind that for the dot operator, dictionary key lookup takes precedence over method lookup. Therefore if the ``data`` dictionary contains a key named ``'items'``, ``data.items`` will return ``data['items']`` instead of ``data.items()``. Avoid adding keys that are named like dictionary methods if you want to use those methods in a template (``items``, ``values``, ``keys``, etc.). Read more about the lookup order of the dot operator in the :ref:`documentation of template variables <template-variables>`.
+- [1d14a45f] Left-aligns the value in a field of a given width.
+- [7dcafb77] Less than or equal to. Example:
+- [e14f8f4f] Less than. Example:
+- [531dff5b] Let's walk through this example. ``{% regroup %}`` takes three arguments: the list you want to regroup, the attribute to group by, and the name of the resulting list. Here, we're regrouping the ``cities`` list by the ``country`` attribute and calling the result ``country_list``.
+- [3a86668f] Links can have trailing punctuation (periods, commas, close-parens) and leading punctuation (opening parens), and ``urlize`` will still do the right thing.
+- [5b2f168a] Links generated by ``urlize`` have a ``rel="nofollow"`` attribute added to them.
+- [1629ce95] Loads a custom template tag set.
+- [53ffa218] Loads a template and renders it with the current context. This is a way of "including" other templates within a template.
+- [296a3a76] Loops over each item in an array, making the item available in a context variable. For example, to display a list of athletes provided in ``athlete_list``:
+- [24d8f633] Makes all possible efforts to strip all [X]HTML tags.
+- [e21d72e8] Maps values for ``True``, ``False``, and (optionally) ``None``, to the strings "yes", "no", "maybe", or a custom mapping passed as a comma-separated list, and returns one of those strings according to the value:
+- [8d75c27c] Marks a string as not requiring further HTML escaping prior to output. When autoescaping is off, this filter has no effect.
+- [d5cabb4b] Minutes is the smallest unit used, and "0 minutes" will be returned for any date that is in the future relative to the comparison point.
+- [98b62ff2] Negated object identity. Tests if two values are not the same object. This is the negation of the ``is`` operator. Example:
+- [aa3a4135a084f202] Newlines in the HTML content will be preserved.
+- [f0be4869] Newlines within the string will be removed.
+- [d55657d2] Normally the template name is relative to the template loader's root directory. A string argument may also be a relative path starting with ``./`` or ``../`` as described in the :ttag:`extends` tag.
+- [9e21f57a] Normally the template name is relative to the template loader's root directory. A string argument may also be a relative path starting with ``./`` or ``../``. For example, assume the following directory structure:
+- [37ab6023] Not contained within. This is the negation of the ``in`` operator.
+- [0356b4ca] Note that ``{% regroup %}`` does not order its input! Our example relies on the fact that the ``cities`` list was ordered by ``country`` in the first place. If the ``cities`` list did *not* order its members by ``country``, the regrouping would naively display more than one group for a single country. For example, say the ``cities`` list was set to this (note that the countries are not grouped together):
+- [d22415ef] Note that if an empty string is given, the default value will *not* be used. Use the :tfilter:`default` filter if you want to fallback for empty strings.
+- [6d39efe1] Note that if the URL you're reversing doesn't exist, you'll get an :exc:`~django.urls.NoReverseMatch` exception raised, which will cause your site to display an error page.
+- [8b1504a9] Note that the block includes *all* the text between the ``filter`` and ``endfilter`` tags.
+- [6c3618e2] Note that you can backslash-escape a format string if you want to use the "raw" value. In this example, both "h" and "m" are backslash-escaped, because otherwise each is a format string that displays the hour and the month, respectively:
+- [a49ecc44] Note that you can backslash-escape a format string if you want to use the "raw" value. In this example, both "o" and "f" are backslash-escaped, because otherwise each is a format string that displays the year and the time, respectively:
+- [2678bcdf] Notice how the first block ends with ``class="odd"`` and the new one starts with ``class="odd"``. Without the ``{% resetcycle %}`` tag, the second block would start with ``class="even"``.
+- [ce655ae8] Object identity. Tests if two values are the same object. Example:
+- [c5a57ae6] Only space between *tags* is removed -- not space between tags and text. In this example, the space around ``Hello`` won't be stripped:
+- [ff124bfd] Or if only some variables should be escaped, you can use:
+- [612553d4] Or, if ``country`` is a field with ``choices``, it will have a :meth:`~django.db.models.Model.get_FOO_display` method available as an attribute, allowing you to group on the display string rather than the ``choices`` key:
+- [f2e6b7ad] Ordering by elements at specified index is not supported on dictionaries.
+- [7fda7145] Other tags and filters libraries ================================
+- [7d5b6ed4] Output is always localized (independently of the :ttag:`{% localize off %} <localize>` tag) unless the argument passed to ``floatformat`` has the ``u`` suffix, which will force disabling localization. For example, when the active locale is ``pl`` (Polish):
+- [eeb5faff] Outputs a URL-encoded formatted query string based on the provided parameters.
+- [3b28370b] Outputs a whole load of debugging information, including the current context and imported modules. ``{% debug %}`` outputs nothing when the :setting:`DEBUG` setting is ``False``.
+- [0fa7adc2] Outputs one of the syntax characters used to compose template tags.
+- [4972bf6f] Outputs the current query string verbatim. So if the query string in the request is ``?color=green``, the output would be ``?color=green``. If the current query string is empty, the output will be ``?``.
+- [660b44cf] Outputs the current query string with the addition of the ``size`` parameter. Following the previous example, the output would be ``?color=green&size=M``.
+- [e0c2112f] Outputs the first argument variable that is not "false" (i.e. exists, is not empty, is not a false boolean value, and is not a zero numeric value). Outputs nothing if all the passed variables are "false".
+- [19493122] Particularly useful is passing 0 (zero) as the argument which will round the float to the nearest integer.
+- [2e4b0c62] Passing ``None`` as the value removes the parameter from the query string. For example, if the current query string is ``?color=green&size=M``, the output will be ``?size=M``.
+- [364e0c60] Positional arguments are processed sequentially, while keyword arguments are treated as key-value pairs, applied last. Later arguments take precedence over earlier ones, ensuring the most recent pairs are reflected in the final result.
+- [f3801e03] Produces one of its arguments each time this tag is encountered. The first argument is produced on the first encounter, the second argument on the second encounter, and so forth. Once all arguments are exhausted, the tag cycles to the first argument and produces it again.
+- [61c5095c] Recursively takes a self-nested list and returns an HTML unordered list -- WITHOUT opening and closing ``<ul>`` tags.
+- [7eab840c] Regroups a list of alike objects by a common attribute.
+- [b2d1dab8] Removes all values of arg from the given string.
+- [34072055] Removes whitespace between HTML tags. This includes tab characters and newlines.
+- [26a5f820] Removing items ~~~~~~~~~~~~~~
+- [2e7a8d5d] Renders a template fragment that was defined with :ttag:`partialdef`, inserting the matching partial at this location.
+- [0be1e9ea] Replaces line breaks in plain text with appropriate HTML; a single newline becomes an HTML line break (``<br>``) and a new line followed by a blank line becomes a paragraph break (``</p>``).
+- [2f26be96] Resets a previous `cycle`_ so that it restarts from its first item at its next encounter. Without arguments, ``{% resetcycle %}`` will reset the last ``{% cycle %}`` defined in the template.
+- [b40dcc9d] Returns ``True`` if the value is divisible by the argument.
+- [0f03b62d] Returns a plural suffix if the value is not ``1``, ``'1'``, or an object of length 1. By default, this suffix is ``'s'``.
+- [29d8c6e2] Returns a random item from the given list.
+- [0709bc53] Returns a slice of the list.
+- [2e464e64] Returns an absolute path reference (a URL without the domain name) matching a given view and optional parameters. Any special characters in the resulting path will be encoded using :func:`~django.utils.encoding.iri_to_uri`.
+- [b6593d85] Returns the first item in a list.
+- [b13fcd26] Returns the last item in a list.
+- [e3f17612] Returns the length of the value. This works for both strings and lists.
+- [9c09a243] Returns the number of words.
+- [a5f71666] Returns the value turned into a list. For a string, it's a list of characters. For an integer, the argument is cast to a string before creating a list.
+- [6ef8e547] Right-aligns the value in a field of a given width.
+- [152f5237] Safely outputs a Python object as JSON, wrapped in a ``<script>`` tag, ready for use with JavaScript.
+- [dd8338abcb4e506e] Sample usage:
+- [dd8338abcb4e506e-2] Sample usage:
+- [dd8338abcb4e506e-3] Sample usage:
+- [dd8338abcb4e506e-4] Sample usage:
+- [dd8338abcb4e506e-5] Sample usage:
+- [ce401da0] See :doc:`Custom tag and filter libraries </howto/custom-template-tags>` for more information.
+- [4271ef0a] See :ref:`csp-nonce` for full configuration details.
+- [afeea070] See :ref:`specifying-translation-strings-in-template-code`.
+- [ffa147c3] See :ref:`template-inheritance` for more information.
+- [657ed0c4] See :ref:`time-zones-in-templates`.
+- [926b27b4] See :ref:`topic-l10n-templates`.
+- [b7c7de33] See also the :ttag:`verbatim` tag for another way of including these characters.
+- [f6d803e4] Setting items ~~~~~~~~~~~~~
+- [a1c7fc46] Signals that this template extends a parent template.
+- [b4cc773a] Similar to :tfilter:`truncatechars`, except that it is aware of HTML tags. Any tags that are opened in the string and not closed before the truncation point are closed immediately after the truncation.
+- [ec1624f8] Similar to ``timesince``, except that it measures the time from now until the given date or datetime. For example, if today is 1 June 2006 and ``conference_date`` is a date instance holding 29 June 2006, then ``{{ conference_date|timeuntil }}`` will return "4 weeks".
+- [d3d84af7] Similar to the :ttag:`get_static_prefix`, ``get_media_prefix`` populates a template variable with the media prefix :setting:`MEDIA_URL`, e.g.:
+- [92e708d4] Similarly, if all positional arguments are empty and keyword arguments do not contribute any new params, the output will also be ``?``.
+- [fc0ec31f] Stops the template engine from rendering the contents of this block tag.
+- [99ec34bf] Takes a list of dictionaries and returns that list sorted by the key given in the argument.
+- [fb19ee19] Takes a list of dictionaries and returns that list sorted in reverse order by the key given in the argument. This works exactly the same as the above filter, but the returned value will be in reverse order.
+- [1c785f88] Takes an optional argument that is a variable containing the date to use as the comparison point (instead of *now*). If ``from_date`` contains 22 June 2006, then the following will return "1 week":
+- [d7ecd7f3] Takes an optional argument that is a variable containing the date to use as the comparison point (without the argument, the comparison point is *now*). For example, if ``blog_date`` is a date instance representing midnight on 1 June 2006, and ``comment_date`` is a date instance for 08:00 on 1 June 2006, then the following would return "8 hours":
+- [0d6730e3] The ``for`` tag can take an optional ``{% empty %}`` clause whose text is displayed if the given array is empty or could not be found:
+- [e60b1829] The ``ifchanged`` tag can also take an optional ``{% else %}`` clause that will be displayed if the value has not changed:
+- [87be44d3] The ``partial_name`` argument is required and must be a valid template identifier.
+- [b81b52cf] The ``partial_name`` argument is the name of the template fragment to render.
+- [185752eb] The ``time`` filter will only accept parameters in the format string that relate to the time of day, not the date. If you need to format a ``date`` value, use the :tfilter:`date` filter instead (or along with :tfilter:`time` if you need to render a full :class:`~datetime.datetime` value).
+- [9bfca81d] The ``urlize`` filter also takes an optional parameter ``autoescape``. If ``autoescape`` is ``True``, the link text and URLs will be escaped using Django's built-in :tfilter:`escape` filter. The default value for ``autoescape`` is ``True``.
+- [02fb3439] The ``{% if %}`` tag evaluates a variable, and if that variable is "true" (i.e. exists, is not empty, and is not a false boolean value) the contents of the block are output:
+- [a62c0710] The ``{% ifchanged %}`` block tag is used within a loop. It has two possible uses.
+- [c424ee20] The ``{% lorem %}`` tag can be used with zero, one, two or three arguments. The arguments are:
+- [5efc557c] The above code will output the joined elements of ``my_list`` unescaped. This is because the filter chaining sequence executes first :tfilter:`join` on ``my_list`` (without applying escaping to each item since ``autoescape`` is ``off``), marking the result as safe. Subsequently, this safe result will be fed to :tfilter:`escape` filter, which does not apply a second round of escaping.
+- [4efe53d9] The above is equivalent to -- but shorter, cleaner, and possibly faster than -- the following:
+- [7dd3165e] The argument tells which template bit to output:
+- [1987c1dd] The comparison operators cannot be 'chained' like in Python or in mathematical notation. For example, instead of using:
+- [a239c034] The easiest solution to this gotcha is to make sure in your view code that the data is ordered according to how you want to display it.
+- [bf902935] The filter returns ``0`` for an undefined variable.
+- [c6e0dc04] The first argument is a :ref:`URL pattern name <naming-url-patterns>`. It can be a quoted literal or any other context variable. Additional arguments are optional and should be space-separated values that will be used as arguments in the URL. The example above shows passing positional arguments. Alternatively you may use keyword syntax:
+- [1426a356] The first iteration produces HTML that refers to class ``row1``, the second to ``row2``, the third to ``row1`` again, and so on for each iteration of the loop.
+- [1f95bc20] The for loop sets a number of variables available within the loop:
+- [4d2f0a60] The format passed can be one of the predefined ones :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`SHORT_DATE_FORMAT` or :setting:`SHORT_DATETIME_FORMAT`, or a custom format that uses the format specifiers shown in the table above. Note that predefined formats may vary depending on the current locale.
+- [9311b91a] The input doesn't have to be a valid phone number. This will happily convert any string.
+- [d5b1f491] The list is assumed to be in the proper format. For example, if ``var`` contains ``['States', ['Kansas', ['Lawrence', 'Topeka'], 'Illinois']]``, then ``{{ var|unordered_list }}`` would return:
+- [f05c33d8] The only exceptions are variables already marked as "safe" from escaping. Variables could be marked as "safe" by the code which populated the variable, by applying the :tfilter:`safe` or :tfilter:`escape` filters, or because it's the result of a previous filter that marked the string as "safe".
+- [edd59a89] The populated variable (in the example above, ``total``) is only available between the ``{% with %}`` and ``{% endwith %}`` tags.
+- [7aa424fb] The result always includes a leading ``"?"`` since this tag is mainly used for links, and an empty result could prevent the page from reloading as expected.
+- [5b1af844] The resulting data can be accessed in JavaScript like this:
+- [8eeb8fe7] The scope of the variable created by the ``as var`` syntax is the ``{% block %}`` in which the ``{% url %}`` tag appears.
+- [599b8537] The template name can either be a variable or a hardcoded (quoted) string, in either single or double quotes.
+- [72ba5900] The template system has no concept of "escaping" individual characters. However, you can use the ``{% templatetag %}`` tag to display one of the template tag character combinations.
+- [e0c5caa8] The template tag will output the string ``/clients/client/123/``.
+- [48b05c7a] The variable may also be any object with a ``render()`` method that accepts a context. This allows you to reference a compiled ``Template`` in your context.
+- [3eb73794] There is one exception the above rule: When passed a ``datetime`` value with attached timezone information (a :ref:`time-zone-aware <naive_vs_aware_datetimes>` ``datetime`` instance) the ``time`` filter will accept the timezone-related :ref:`format specifiers <date-and-time-formatting-specifiers>` ``'e'``, ``'O'`` , ``'T'`` and ``'Z'``.
+- [2e1497d1] There's also a second form you can use to avoid extra processing if you need the value multiple times:
+- [9dc9c39f] This ``{% url ... as var %}`` syntax will *not* cause an error if the view is missing. In practice you'll use this to link to views that are optional:
+- [9008fdff] This can also be useful if you need to access the items in a dictionary. For example, if your context contained a dictionary ``data``, the following would display the keys and values of the dictionary:
+- [cba33cbb] This complex tag is best illustrated by way of an example: say that ``cities`` is a list of cities represented by dictionaries containing ``"name"``, ``"population"``, and ``"country"`` keys:
+- [7fa082e2] This document describes Django's built-in template tags and filters. It is recommended that you use the :doc:`automatic documentation </ref/contrib/admin/admindocs>`, if available, as this will also include documentation for any custom tags or filters installed.
+- [3e041ff9] This example includes the contents of the template ``"foo/bar.html"``:
+- [55df249d] This example includes the contents of the template whose name is contained in the variable ``template_name``:
+- [0d931ddb9fb1af3a] This example would return this HTML:
+- [4c8c61f4] This filter will first try to coerce both values to integers. If this fails, it'll attempt to add the values together anyway. This will work on some data types (strings, list, etc.) and fail on others. If it fails, the result will be an empty string.
+- [3e4c3574] This is a way to output links without violating the DRY principle by having to hardcode URLs in your templates:
+- [1ba8a9d8] This is compatible with a strict Content Security Policy that prohibits in-page script execution. It also maintains a clean separation between passive data and executable code.
+- [cc44e6db] This is equivalent to:
+- [f749e1c1] This is less efficient than :tfilter:`truncatewords`, so should only be used when it is being passed HTML text.
+- [f1d9f926] This library allows specifying translatable text in templates. To enable it, set :setting:`USE_I18N` to ``True``, then load it with ``{% load i18n %}``.
+- [f8c1a5bc] This library provides control over the localization of values in templates. You only need to load the library using ``{% load l10n %}``.
+- [de5bbd77] This library provides control over time zone conversions in templates. Like ``l10n``, you only need to load the library using ``{% load tz %}``, but you'll usually also set :setting:`USE_TZ` to ``True`` so that conversion to local time happens by default.
+- [7bb45dfa] This partial can then be rendered using the :ttag:`partial` tag:
+- [d30a3109] This tag accepts positional arguments, which must be mappings (such as :class:`~django.http.QueryDict` or :class:`dict`). If no positional arguments are provided, :attr:`request.GET <django.http.HttpRequest.GET>` is used as the default to construct the query string.
+- [ba364f5d] This tag auto-escapes variable values. You can disable auto-escaping with:
+- [e6e182cd] This tag can be used in two ways:
+- [f902a964] This tag is particularly useful in a loop:
+- [b1beb265] This tag is used for CSRF protection, as described in the documentation for :doc:`Cross Site Request Forgeries </ref/csrf>`.
+- [0be2edcc] This template tag works on links prefixed with ``http://``, ``https://``, or ``www.``. For example, ``https://djangocon.eu`` will get converted but ``djangocon.eu`` won't.
+- [9ab7b97b] This will follow the normal :ref:`namespaced URL resolution strategy <topics-http-reversing-url-namespaces>`, including using any hints provided by the context as to the current application.
+- [41575c98] This will output a list of ``<tr>`` elements with ``class`` alternating between ``row1`` and ``row2``. The subtemplate will have access to ``rowcolors`` in its context and the value will match the class of the ``<tr>`` that encloses it. If the ``silent`` keyword were to be omitted, ``row1`` and ``row2`` would be emitted as normal text, outside the ``<tr>`` element.
+- [c85caeaf] This would display as "01h 23m".
+- [dcff9cfc] This would display as "It is the 4th of September".
+- [62eba2e1] To :ref:`render a fragment immediately in place <template-partials-inline>`, use the ``inline`` option. The partial is still stored and can be reused later.
+- [92d1e273] To link to static files that are saved in :setting:`STATIC_ROOT` Django ships with a :ttag:`static` template tag. If the :mod:`django.contrib.staticfiles` app is installed, the tag will serve files using ``url()`` method of the storage specified by ``staticfiles`` in :setting:`STORAGES`. For example:
+- [bdeb5f22] Truncates a string after a certain number of words.
+- [be93ec2b] Truncates a string if it is longer than the specified number of characters. Truncated strings will end with a translatable ellipsis character ("…").
+- [ed61add7b30c480a-2] Usage:
+- [ed61add7b30c480a-3] Usage:
+- [ed61add7b30c480a-4] Usage:
+- [eab82c12] Use of actual parentheses in the :ttag:`if` tag is invalid syntax. If you need them to indicate precedence, you should use nested :ttag:`if` tags.
+- [f8454aac] Use of both ``and`` and ``or`` clauses within the same tag is allowed, with ``and`` having higher precedence than ``or`` e.g.:
+- [9516bd7e] Uses a similar format to PHP's `date() <https://www.php.net/manual/en/function.date.php>`_ function with some differences.
+- [ec71a6f0] Uses the same syntax as Python's list slicing. See the `Python documentation <https://docs.python.org/3/tutorial/introduction.html#lists>`_ for an introduction.
+- [ffe9adc8] Using ``floatformat`` with no argument is equivalent to using ``floatformat`` with an argument of ``-1``.
+- [3b4aa190] Variables included in the cycle will be escaped. You can disable auto-escaping with:
+- [1cd591c5] When auto-escaping is in effect, all content derived from variables has HTML escaping applied before placing the result into the output (but after any filters are applied). This is equivalent to manually applying the :tfilter:`escape` filter to each variable.
+- [862d180a] When called with a :class:`~django.forms.Media` object as the argument, renders its assets with the CSP nonce applied to each ``<script>`` and ``<link>`` element:
+- [05bc8f6b] When called without arguments, renders a ``nonce="<value>"`` HTML attribute when the :func:`~django.template.context_processors.csp` context processor is configured, and an empty string otherwise. Use it in ``<script>`` or ``<link>`` elements to allow them under a nonce-based Content Security Policy:
+- [6b49536f] When the silent keyword is used on a cycle definition, the silence automatically applies to all subsequent uses of that specific cycle tag. The following template would output *nothing*, even though the second call to ``{% cycle %}`` doesn't specify ``silent``:
+- [f4854cf4] When used without a format string, the ``DATE_FORMAT`` format specifier is used. Assuming the same settings as the previous example:
+- [d9d2f593] When used without a format string, the ``TIME_FORMAT`` format specifier is used:
+- [76748445] When used without an argument, rounds a floating-point number to one decimal place -- but only if there's a decimal part to be displayed. For example:
+- [c44d58a7] With this input for ``cities``, the example ``{% regroup %}`` template code above would result in the following output:
+- [15f46064] Within the scope of disabled auto-escaping, chaining filters, including :tfilter:`escape`, may cause unexpected (but documented) results such as the following:
+- [27c680cb] Wraps words at specified line length.
+- [b6378822] XSS attacks are mitigated by escaping the characters "<", ">" and "&". For example if ``value`` is ``{'hello': 'world</script>&amp;'}``, the output is:
+- [dac88d55] You can also designate a specific closing tag, allowing the use of ``{% endverbatim %}`` as part of the unrendered contents:
+- [8d3495bc] You can also do more complicated things like:
+- [299510bf] You can also reset named cycle tags:
+- [21bdaaa9] You can also selectively load individual filters or tags from a library, using the ``from`` argument. In this example, the template tags/filters named ``foo`` and ``bar`` will be loaded from ``somelibrary``:
+- [05392915] You can also store the value in a variable. For example, if you need multiple links to the same page, define it as:
+- [5afec94c] You can also use a literal string as a fallback value in case all passed variables are False:
+- [46967bca] You can also use filters in the :ttag:`if` expression. For example:
+- [927613d5] You can also use the syntax ``{% now "Y" as current_year %}`` to store the output (as a string) inside a variable. This is useful if you want to use ``{% now %}`` inside a template tag like :ttag:`blocktranslate` for example:
+- [1387fc1e] You can assign more than one context variable:
+- [ad51ed50] You can combine ``date`` with the :tfilter:`time` filter to render a full representation of a ``datetime`` value. E.g.:
+- [b767eadb] You can loop over a list in reverse by using ``{% for obj in list reversed %}``.
+- [c4dbe274] You can mix variables and strings:
+- [b5a8519c] You can pass additional context to the template using keyword arguments:
+- [cdb24b9c] You can pass custom ``QueryDict`` or ``dict`` instances as positional arguments to replace ``request.GET``. When multiple arguments are provided, key-value pairs from later arguments take precedence over earlier ones.
+- [dc82056b] You can use any number of values in a ``cycle`` tag, separated by spaces. Values enclosed in single quotes (``'``) or double quotes (``"``) are treated as string literals, while values without quotes are treated as template variables.
+- [03ac7259] You can use the :ttag:`resetcycle` tag to make a ``{% cycle %}`` tag restart from its first value when it's next encountered.
+- [ef2b03d5] You can use the ``{% regroup %}`` tag to group the list of cities by country. The following snippet of template code would accomplish this:
+- [27cd3caa] You can use the syntax ``{% firstof var1 var2 var3 as value %}`` to store the output inside a variable.
+- [8c817b98] You can use variables, too. For example, if you have two template variables, ``rowvalue1`` and ``rowvalue2``, you can alternate between their values like this:
+- [513f1210] You couldn't use the :tfilter:`safe` filter directly in this case, as it would first convert the variable into a string, rather than working with the individual elements of the sequence.
+- [50fe146b] You must pass the index as an integer rather than a string. The following produce empty output:
+- [fbb1c5ef] You should prefer the :ttag:`static` template tag, but if you need more control over exactly where and how :setting:`STATIC_URL` is injected into the template, you can use the :ttag:`get_static_prefix` template tag:
+- [a8c3195c] ``!=`` operator ^^^^^^^^^^^^^^^
+- [caf15592] ``<=`` operator ^^^^^^^^^^^^^^^
+- [32b63f39] ``<`` operator ^^^^^^^^^^^^^^
+- [0f62fdc5] ``==`` operator ^^^^^^^^^^^^^^^
+- [44f456c8] ``>=`` operator ^^^^^^^^^^^^^^^
+- [51c68352] ``>`` operator ^^^^^^^^^^^^^^
+- [8d22bde9] ``add`` -------
+- [2cc21351] ``addslashes`` --------------
+- [4befd7fe] ``autoescape`` --------------
+- [a50deb8c] ``block`` ---------
+- [d7baeb74] ``capfirst`` ------------
+- [acea064c] ``center`` ----------
+- [c97612a1] ``comment`` -----------
+- [87f4c915] ``comment`` tags cannot be nested.
+- [66025e6d] ``csp_nonce_attr`` ------------------
+- [498a9473] ``csrf_token`` --------------
+- [3f26fc26] ``cut`` -------
+- [19b266a4] ``cycle`` ---------
+- [094f3f8e] ``date`` --------
+- [c675134a] ``debug`` ---------
+- [143b4d51] ``default_if_none`` -------------------
+- [815e13c8cb886ca0-2] ``default`` -----------
+- [a2113f70] ``dictsort`` ------------
+- [169b4f92] ``dictsort`` can also order a list of lists (or any other object implementing ``__getitem__()``) by elements at specified index. For example:
+- [13e08a9f] ``dictsortreversed`` --------------------
+- [12d0befe] ``divisibleby`` ---------------
+- [870d547a] ``django.contrib.humanize`` ---------------------------
+- [76c22f9b] ``escape`` ----------
+- [95f55b25] ``escapejs`` ------------
+- [0a562c04] ``escapeseq`` -------------
+- [4e54ce4a] ``extends`` -----------
+- [2622d3d1] ``filesizeformat`` ------------------
+- [1d4bc966] ``filter`` ----------
+- [dae7dcc2] ``first`` ---------
+- [1ab3d0e4] ``firstof`` -----------
+- [d9ddb546] ``floatformat`` ---------------
+- [477991ec] ``for`` -------
+- [1df367e4] ``for`` ... ``empty`` ---------------------
+- [825ac56a] ``force_escape`` ----------------
+- [99f7eb84] ``get_digit`` -------------
+- [ce60e138] ``get_media_prefix`` ~~~~~~~~~~~~~~~~~~~~
+- [b445e4d4] ``get_static_prefix`` ~~~~~~~~~~~~~~~~~~~~~
+- [08d8c73b] ``i18n`` --------
+- [b29e2cb9] ``if`` ------
+- [5e6bfe5c] ``ifchanged`` -------------
+- [bd852575] ``in`` operator ^^^^^^^^^^^^^^^
+- [dcc88c68300cfc76-4] ``include`` -----------
+- [021f665d] ``iriencode`` -------------
+- [09f283ad] ``is not`` operator ^^^^^^^^^^^^^^^^^^^
+- [b59b796b] ``is`` operator ^^^^^^^^^^^^^^^
+- [ac9ed04e] ``join`` --------
+- [63256f86] ``json_script`` ---------------
+- [f9f2ca92] ``l10n`` --------
+- [6f2a3088] ``last`` --------
+- [f96f00a0] ``length`` ----------
+- [df51d4bc] ``linebreaks`` --------------
+- [a1cd0f0d] ``linebreaksbr`` ----------------
+- [0eeebd07] ``linenumbers`` ---------------
+- [69a60b25] ``ljust`` ---------
+- [6c91aea2] ``load`` --------
+- [06495e55] ``lorem`` ---------
+- [6304931c] ``lower`` ---------
+- [2eadaf9c] ``make_list`` -------------
+- [9da6c174] ``not in`` operator ^^^^^^^^^^^^^^^^^^^
+- [fc51053a] ``now`` -------
+- [1dada46c] ``partial`` -----------
+- [4ddc691d] ``partialdef`` --------------
+- [131e7562] ``phone2numeric`` -----------------
+- [7d32d837] ``pluralize`` -------------
+- [cdfc7eef] ``pprint`` ----------
+- [51159f8b] ``querystring`` ----------------
+- [80e2511e] ``random`` ----------
+- [b09d81ee] ``regroup`` -----------
+- [8eb19ac0] ``resetcycle`` --------------
+- [51e3d6e7] ``rjust`` ---------
+- [37cbadca] ``safe`` --------
+- [26e0ae05] ``safeseq`` -----------
+- [04c880ce] ``slice`` ---------
+- [b1ede104] ``slugify`` -----------
+- [815b67d0] ``spaceless`` -------------
+- [f5b420bb] ``static`` ----------
+- [b4f8f763] ``static`` ~~~~~~~~~~
+- [e199ebef] ``stringformat`` ----------------
+- [e3fee563] ``striptags`` -------------
+- [9d93324e] ``templatetag`` ---------------
+- [54d52871] ``time`` --------
+- [d382a4e5] ``timesince`` -------------
+- [4f7b5774] ``timeuntil`` -------------
+- [110847f4] ``title`` ---------
+- [30b03231] ``truncatechars_html`` ----------------------
+- [fb8ca302] ``truncatechars`` -----------------
+- [f09eefe8] ``truncatewords_html`` ----------------------
+- [f4094ab0] ``truncatewords`` -----------------
+- [e7439c8e] ``tz`` ------
+- [98ed4885] ``unordered_list`` ------------------
+- [77c14bca] ``upper`` ---------
+- [4de484b9] ``url`` -------
+- [8bd6d326] ``urlencode`` -------------
+- [0f1bf14d] ``urlize`` ----------
+- [f7bfc116] ``urlizetrunc`` ---------------
+- [0c1f6e17] ``verbatim`` ------------
+- [9a81009d] ``widthratio`` --------------
+- [679a3b50] ``with`` --------
+- [e1f67c40] ``wordcount`` -------------
+- [bfa16d6c] ``wordwrap`` ------------
+- [9db3a481] ``yesno`` ---------
+- [f777f16b] ``{% regroup %}`` produces a list (in this case, ``country_list``) of **group objects**. Group objects are instances of :func:`~collections.namedtuple` with two fields:
+- [59d9b45b] ``{{ country.grouper }}`` will now display the value fields from the ``choices`` set rather than the keys.
+- [b379fc29] and ``first`` is ``[1, 2, 3]`` and ``second`` is ``[4, 5, 6]``, then the output will be ``[1, 2, 3, 4, 5, 6]``.
+- [2189c37c] is the same as:
+- [ce810fe2] outputs ``9 de Enero de 2008`` (the ``DATE_FORMAT`` format specifier for the ``es`` locale is ``r'j \d\e F \d\e Y'``). Both "d" and "e" are backslash-escaped, because otherwise each is a format string that displays the day and the timezone name, respectively.
+- [0d52527a] the output will be the string ``"01:23"`` (The ``"TIME_FORMAT"`` format specifier for the ``de`` locale as shipped with Django is ``"H:i"``).
+- [7b14557e] the output will be:
+- [e66b9c35] the output would be the string ``"09/01/2008"`` (the ``"SHORT_DATE_FORMAT"`` format specifier for the ``es`` locale as shipped with Django is ``"d/m/Y"``).
+- [267111293e73cb7f] then the output would be:
+- [b5037611] will be interpreted like::
+- [9a532d4a] would output:
+- [44224262] you should use:

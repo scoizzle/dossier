@@ -1,6 +1,6 @@
 # Fact 8c5eb8b1
 
-Store id: 88f9bb9f-4f25-4a2e-b499-05f4b42290f7
+Store id: 61a66932-180d-4170-bc0c-a27acc536446
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7032730+00:00`
+- posted_at: `2026-11-09T23:31:56.8652500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2800,
     "symbol": "BinaryField.value_to_string"
   },
-  "id": "88f9bb9f-4f25-4a2e-b499-05f4b42290f7",
+  "id": "61a66932-180d-4170-bc0c-a27acc536446",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7032730+00:00"
+    "posted_at": "2026-11-09T23:31:56.8652500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b516339f-e796-4032-beb7-7b42731dbbce",
+  "subject_id": "53a7972b-3413-451a-adf4-61ba9113ec69",
   "subject_name": "django/db/models/fields/__init__::BinaryField.value_to_string",
   "tags": [
     "entity:method"

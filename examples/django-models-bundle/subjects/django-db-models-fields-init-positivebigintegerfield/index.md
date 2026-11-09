@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::PositiveBigIntegerField
 
-- Subject: django/db/models/fields/__init__::PositiveBigIntegerField (id `105ae3bb-e941-47ec-8336-ed933e75f833`)
+- Subject: django/db/models/fields/__init__::PositiveBigIntegerField (id `87a7f915-4880-439b-a37f-a4580047d00c`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

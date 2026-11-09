@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.raw
 
-- Subject: django/db/models/query::QuerySet.raw (id `8c9a4752-7615-4122-8145-9f83689a721f`)
+- Subject: django/db/models/query::QuerySet.raw (id `559e16d4-2dd2-44c4-9e95-6ae632a43246`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

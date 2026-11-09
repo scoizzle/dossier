@@ -1,14 +1,14 @@
 # django/db/backends/postgresql/psycopg_any
 
-- Subject: django/db/backends/postgresql/psycopg_any (id `ca8756dd-2182-4ec4-802c-9406a81f2e4a`)
+- Subject: django/db/backends/postgresql/psycopg_any (id `5c61ab4d-22c1-4d85-8a6c-9720a1588ca2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 19 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1079 tokens
+- Facts shown: 24 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - context.adapters.register_loader("timestamptz", SpecificTzLoader) [4ab60992]
 - def __init__(self, oid, context): super().__init__(oid, context) self.orig_loader = orig_tz_loader_cls(oid, context) [0f983563]
@@ -30,6 +30,10 @@
 - is_psycopg3 = False [45c26c68]
 - is_psycopg3 = True [5ac5000a]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [18cafdc7] [c616059b] [ea90e893] [f201c440] [1cd2aef1]
+- [18cafdc7] from psycopg2 import errors, extensions, sql # NOQA from psycopg2.extras import ( # NOQA DateRange, DateTimeRange, DateTimeTZRange, Inet, Json, NumericRange, Range, )
+- [c616059b] sql.quote = _quote
+- [ea90e893] except ImportError: from enum import IntEnum
+- [f201c440] import ipaddress from functools import lru_cache
+- [1cd2aef1] try: from psycopg import ClientCursor, IsolationLevel, adapt, adapters, errors, pq, sql from psycopg.postgres import types from psycopg.types.json import Jsonb from psycopg.types.range import Range, RangeDumper from psycopg.types.string import TextLoader

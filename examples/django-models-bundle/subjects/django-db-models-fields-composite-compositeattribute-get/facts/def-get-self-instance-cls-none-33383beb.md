@@ -1,6 +1,6 @@
 # Fact 33383beb
 
-Store id: 9ac38b4c-6633-4940-840f-e757a5c4900e
+Store id: 50b186c8-34d8-4748-9567-4386a986acdd
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.9862260+00:00`
+- posted_at: `2026-11-09T23:31:57.1142730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 31,
     "symbol": "CompositeAttribute.__get__"
   },
-  "id": "9ac38b4c-6633-4940-840f-e757a5c4900e",
+  "id": "50b186c8-34d8-4748-9567-4386a986acdd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.9862260+00:00"
+    "posted_at": "2026-11-09T23:31:57.1142730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ebd7bc8-bb9f-49df-87b1-93ed37b52a4c",
+  "subject_id": "d4015201-3e77-47e7-abb7-93e3da7b1292",
   "subject_name": "django/db/models/fields/composite::CompositeAttribute.__get__",
   "tags": [
     "entity:method"

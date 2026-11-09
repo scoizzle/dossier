@@ -1,14 +1,14 @@
 # docs/ref/tasks
 
-- Subject: docs/ref/tasks (id `c43b7251-fddb-457f-aff0-696f7c7dcfb5`)
+- Subject: docs/ref/tasks (id `7d7d4e94-7580-4cf9-b6a0-0e27ecc4b0a2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 27 of 174
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5173 tokens
+- Facts shown: 173 of 174
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * :attr:`priority <Task.priority>` * :attr:`backend <Task.backend>` * :attr:`queue_name <Task.queue_name>` * :attr:`run_after <Task.run_after>` [93757dd0]
 - @task(foo=5, bar=600) def my_task(): pass [6710b8a3]
@@ -38,6 +38,151 @@
 - The :class:`Task` has finished executing successfully. [27d0c60c]
 - .. attribute:: Task.backend [c793e4ea]
 
-## Beyond the budget
+## All facts
 
-146 more facts did not fit in the budget: [c268d8ce] [10fdad01] [a5e017a9] [67386759] [6664fec5] [a5c69650] [d59f0c09] [49d253c5] [040fc0f6] [b52a3c4a] [885377a6] [9ccc8d55] [93322a66] [49efb46c] [1bb43bb6] [5f4c8716] [672fe107] [50480a94] [873043a7] [38d9860c] [e3d3972e] [e784a154] [5ba1b0ef] [faf73cce] [80f7abd6] [66b071d9] [04ffe37e] [69e1e9b0] [6cf653a0] [a9a7d0f8] [2f20dc80] [e2af7f41] [737b0e8c] [9fc9d0de] [d7ee9f4f] [50bc0caf] [b6936793] [733e2894] [74185d42] [56547294] [b5591972] [87187d41] [41fc2434] [45a1f5e1] [4ae3ba7c] [a94941c3] [6dc1a91c] [2b04ca86] [328b5417] [afd4ed72] [7cf7a31a] [d5866d5e] [9ba73312] [8f3351d2] [266f5a24] [f02c0b8a] [f0db2c19] [700c0cb3] [9308b202] [42244f90] [626f3398] [2caefcfc] [35d52473] [63eb0c20] [3da28cb7] [03bdecc9] [8cb494f7] [a576fe82] [507eca9e] [326caa5c] [b426df57] [3ccd4b53] [909630ad] [4bf8479f] [019215a6] [963d126e] [95cd8b7e] [2a966a198e13032b-26] [aae17f13] [6325cfd0] [01e25781] [095db439] [0caa3949] [cd4dab69] [3eb0c0fa] [c3e4e08d] [3b047703] [f7805b53] [ae9e7003] [c180fba0] [be9e9733] [d21a6d9f] [f77b9e52] [b145ea91] [412c5211] [6ccfc51c] [c9a2727c] [370fe608] [9cd6e114] [8ee649ef] [ed711c46] [51519b08] [f78b1d6e] [ba65c0c3] [d1f7f909] [63a89301] [29feccb3] [033159bc] [932b16cb] [1252f2a1] [8172a79d] [2b380f5e] [d463424d] [b6f77b51] [d17846f3] [12e4041f] [1e0b71c8] [cebee45b] [8deac109] [ba446b8f] [951ffb85] [545c270d] [1213fd20] [61df3195] [f4a71c89] [a1eb26d754a3d60c-34] [c1321a15] [2ad464b1] [9b614504] [b60cb2ef] [d35c23ae] [3744dbd6] [5d778bec] [c01017e7] [458050e52503f721-6] [0c8ab375] [76ba946b] [16fb0378] [167ae344] [c0c8aedb] [2b2aa894] [21c8ba7a] [d0627662] [e1dd7bd8] [6ef63d77] [2a024f94]
+- [c268d8ce] The :class:`Task` has just been enqueued, or is ready to be executed again.
+- [10fdad01] The :class:`Task` is currently being executed.
+- [a5e017a9] The :class:`Task` raised an exception during execution, or was unable to start.
+- [67386759] The :class:`Task` the result was enqueued for.
+- [6664fec5] The :class:`status <TaskResultStatus>` of the result.
+- [a5c69650] The :class:`~django.tasks.Task` subclass to use when creating tasks with the :func:`~django.tasks.task` decorator. Defaults to :class:`~django.tasks.Task`. Custom backends can override this to use a custom ``Task`` subclass with additional attributes.
+- [d59f0c09] The ``async`` variant of :meth:`BaseTaskBackend.enqueue`.
+- [49d253c5] The ``async`` variant of :meth:`BaseTaskBackend.get_result`.
+- [040fc0f6] The ``async`` variant of :meth:`TaskResult.refresh`.
+- [b52a3c4a] The ``async`` variant of :meth:`enqueue <Task.enqueue>`.
+- [885377a6] The ``async`` variant of :meth:`get_result <Task.get_result>`.
+- [9ccc8d55] The alias of the backend the ``Task`` should be enqueued to. This must match a backend defined in :setting:`BACKEND <TASKS-BACKEND>`.
+- [93322a66] The backend must have :attr:`.supports_defer` set to ``True`` to use this feature. Otherwise, :exc:`~django.tasks.exceptions.InvalidTask` is raised.
+- [49efb46c] The backend must have :attr:`.supports_priority` set to ``True`` to use this feature.
+- [1bb43bb6] The backend the result is from.
+- [5f4c8716] The earliest time the ``Task`` will be executed. This can be a :class:`timedelta <datetime.timedelta>`, which is used relative to the current time, a timezone-aware :class:`datetime <datetime.datetime>`, or ``None`` if not constrained. Defaults to ``None``.
+- [672fe107] The exception class raised when executing the ``Task``.
+- [50480a94] The format of the id will depend on the backend being used. Task result ids are always strings less than 64 characters.
+- [873043a7] The ids of the workers which have executed the Task.
+- [38d9860c] The name of the function decorated with :func:`task`. This name is not necessarily unique.
+- [e3d3972e] The name of the queue the ``Task`` will be enqueued on to. Defaults to ``"default"``. This must match a queue defined in :setting:`QUEUES <TASKS-QUEUES>`, unless :setting:`QUEUES <TASKS-QUEUES>` is set to ``[]``.
+- [e784a154] The number of the current execution attempts for this Task, starting at 1.
+- [5ba1b0ef] The number of times the Task has been run.
+- [faf73cce] The priority of the ``Task``. Priorities must be between -100 and 100, where larger numbers are higher priority, and will be run sooner.
+- [80f7abd6] The return value from the ``Task`` function.
+- [66b071d9] The time when the ``Task`` began execution, on its first attempt.
+- [04ffe37e] The time when the ``Task`` finished execution, whether it failed or succeeded.
+- [69e1e9b0] The time when the ``Task`` was enqueued.
+- [6cf653a0] The time when the most recent ``Task`` run began execution.
+- [a9a7d0f8] The traceback (as a string) from the raised exception when the ``Task`` failed.
+- [2f20dc80] This attribute can be set using :meth:`~Task.using`.
+- [e2af7f41] Validates whether the provided ``Task`` is able to be enqueued using the backend. If the Task is not valid, :exc:`InvalidTask <django.tasks.exceptions.InvalidTask>` is raised.
+- [737b0e8c] When implemented, ``enqueue()`` enqueues the ``task``, a :class:`.Task` instance, for later execution. ``args`` are the positional arguments and ``kwargs`` are the keyword arguments to be passed to the ``task``. Returns a :class:`~django.tasks.TaskResult`.
+- [9fc9d0de] Whether the ``Task`` has finished (successfully or not).
+- [d7ee9f4f] ``using`` allows modifying the following attributes:
+- [50bc0caf] * ``priority``: Sets the :attr:`~Task.priority` of the ``Task``. Defaults to 0. * ``queue_name``: Sets the :attr:`~Task.queue_name` of the ``Task``. Defaults to ``"default"``. * ``backend``: Sets the :attr:`~Task.backend` of the ``Task``. Defaults to ``"default"``. * ``takes_context``: Controls whether the ``Task`` function accepts a :class:`TaskContext`. Defaults to ``False``. See :ref:`Task context <task-context>` for details.
+- [b6936793] .. attribute:: BaseTaskBackend.options
+- [733e2894] .. attribute:: BaseTaskBackend.task_class
+- [74185d42] .. attribute:: DummyBackend.results
+- [56547294] .. attribute:: Task.name
+- [b5591972] .. attribute:: Task.priority
+- [87187d41] .. attribute:: Task.queue_name
+- [41fc2434] .. attribute:: Task.run_after
+- [45a1f5e1] .. attribute:: TaskContext.attempt
+- [4ae3ba7c] .. attribute:: TaskContext.task_result
+- [a94941c3] .. attribute:: TaskError.exception_class
+- [6dc1a91c] .. attribute:: TaskError.traceback
+- [2b04ca86] .. attribute:: TaskResult.attempts
+- [328b5417] .. attribute:: TaskResult.backend
+- [afd4ed72] .. attribute:: TaskResult.enqueued_at
+- [7cf7a31a] .. attribute:: TaskResult.errors
+- [d5866d5e] .. attribute:: TaskResult.finished_at
+- [9ba73312] .. attribute:: TaskResult.id
+- [8f3351d2] .. attribute:: TaskResult.is_finished
+- [266f5a24] .. attribute:: TaskResult.last_attempted_at
+- [f02c0b8a] .. attribute:: TaskResult.return_value
+- [f0db2c19] .. attribute:: TaskResult.started_at
+- [700c0cb3] .. attribute:: TaskResult.status
+- [9308b202] .. attribute:: TaskResult.task
+- [42244f90] .. attribute:: TaskResult.worker_ids
+- [626f3398] .. attribute:: TaskResultStatus.FAILED
+- [2caefcfc] .. attribute:: TaskResultStatus.READY
+- [35d52473] .. attribute:: TaskResultStatus.RUNNING
+- [63eb0c20] .. attribute:: TaskResultStatus.SUCCESSFUL
+- [3da28cb7] .. method:: BaseTaskBackend.aenqueue(task, args, kwargs)
+- [03bdecc9] .. method:: BaseTaskBackend.aget_result(result_id)
+- [8cb494f7] .. method:: BaseTaskBackend.enqueue(task, args, kwargs)
+- [a576fe82] .. method:: BaseTaskBackend.get_result(result_id)
+- [507eca9e] .. method:: BaseTaskBackend.validate_task(task)
+- [326caa5c] .. method:: DummyBackend.clear
+- [b426df57] .. method:: Task.aenqueue(*args, **kwargs)
+- [3ccd4b53] .. method:: Task.aget_result(*args, **kwargs)
+- [909630ad] .. method:: Task.enqueue(*args, **kwargs)
+- [4bf8479f] .. method:: Task.get_result(result_id)
+- [019215a6] .. method:: Task.using(*, priority=None, backend=None, queue_name=None, run_after=None)
+- [963d126e] .. method:: TaskResult.arefresh
+- [95cd8b7e] .. method:: TaskResult.refresh
+- [2a966a198e13032b-26] .. versionchanged:: 6.1
+- [aae17f13] An Enum representing the status of a :class:`TaskResult`.
+- [6325cfd0] Attributes of ``TaskContext`` cannot be modified.
+- [01e25781] Attributes of ``TaskResult`` cannot be modified.
+- [095db439] Attributes of ``Task`` cannot be modified. See :ref:`modifying Tasks <modifying-tasks>` for details.
+- [0caa3949] Contains context for the running :class:`Task`. Context only passed to a ``Task`` if it was defined with ``takes_context=True``.
+- [cd4dab69] Contains information about the error raised during the execution of a ``Task``.
+- [3eb0c0fa] Custom Task backends may define a custom ``task_class`` that accepts additional arguments. These can be passed through the ``@task`` decorator::
+- [c3e4e08d] Raised by :meth:`~django.tasks.Task.get_result` when the provided ``result_id`` is for a different Task than the current Task.
+- [3b047703] Raised by :meth:`~django.tasks.backends.base.BaseTaskBackend.get_result` when the provided ``result_id`` does not exist.
+- [f7805b53] Raised when the :class:`.Task` attempting to be enqueued is invalid.
+- [ae9e7003] Raised when the requested :class:`.BaseTaskBackend` is invalid.
+- [c180fba0] Represents a Task to be run in the background. Tasks should be defined using the :func:`task` decorator.
+- [be9e9733] See :ref:`defining tasks <defining-tasks>` for usage examples.
+- [d21a6d9f] The :ref:`dummy backend <dummy-task-backend>` does not execute enqueued Tasks. Instead, it stores task results for later inspection.
+- [f77b9e52] The :ref:`immediate backend <immediate-task-backend>` executes Tasks immediately, rather than in the background.
+- [b145ea91] The ``@task`` decorator defines a :class:`Task` instance. All keyword arguments are passed directly to the backend's ``task_class`` (which defaults to :class:`Task`).
+- [412c5211] The ``TaskResult`` stores the information about a specific execution of a :class:`Task`.
+- [6ccfc51c] The following standard arguments are supported:
+- [c9a2727c] Whether the backend supports enqueueing Tasks to be executed after a specific time using the :attr:`~django.tasks.Task.run_after` attribute.
+- [370fe608] Whether the backend supports enqueueing async functions (coroutines).
+- [9cd6e114] Whether the backend supports executing Tasks as ordered by their :attr:`~django.tasks.Task.priority`.
+- [8ee649ef] Whether the backend supports retrieving ``Task`` results from another thread after they have been enqueued.
+- [ed711c46] ``BaseTaskBackend`` is the parent class for all Task backends.
+- [51519b08] .. _task-available-backends:
+- [f78b1d6e] .. attribute:: BaseTaskBackend.supports_async_task
+- [ba65c0c3] .. attribute:: BaseTaskBackend.supports_defer
+- [d1f7f909] .. attribute:: BaseTaskBackend.supports_get_result
+- [63a89301] .. attribute:: BaseTaskBackend.supports_priority
+- [29feccb3] .. class:: BaseTaskBackend
+- [033159bc] .. class:: DummyBackend
+- [932b16cb] .. class:: ImmediateBackend
+- [1252f2a1] .. class:: Task
+- [8172a79d] .. class:: TaskContext
+- [2b380f5e] .. class:: TaskError
+- [d463424d] .. class:: TaskResult
+- [b6f77b51] .. class:: TaskResultStatus
+- [d17846f3] .. exception:: InvalidTask
+- [12e4041f] .. exception:: InvalidTaskBackend
+- [1e0b71c8] .. exception:: TaskResultDoesNotExist
+- [cebee45b] .. exception:: TaskResultMismatch
+- [8deac109] .. function:: task(*, priority=0, queue_name="default", backend="default", takes_context=False, **kwargs)
+- [ba446b8f] .. module:: django.tasks :synopsis: Django's built-in background Task system.
+- [951ffb85] .. module:: django.tasks.backends.base
+- [545c270d] .. module:: django.tasks.backends.dummy
+- [1213fd20] .. module:: django.tasks.backends.immediate
+- [61df3195] .. module:: django.tasks.exceptions
+- [f4a71c89] .. rubric:: Footnotes .. [#fnimmediateresult] The :class:`.ImmediateBackend` doesn't officially support ``get_result()``, despite implementing the API, since the result cannot be retrieved from a different thread. .. [#fndummypriority] The :class:`.DummyBackend` has ``supports_priority=True`` so that it can be used as a drop-in replacement in tests. Since this backend never executes Tasks, the ``priority`` value has no effect. .. [#fnimmediatepriority] The :class:`.ImmediateBackend` has ``supports_priority=True`` so that it can be used as a drop-in replacement in tests. Because Tasks run as soon as they are scheduled, the ``priority`` value has no effect.
+- [a1eb26d754a3d60c-34] .. versionadded:: 6.0
+- [c1321a15] ===== Tasks =====
+- [2ad464b1] ============================ ======================= =========================== Feature :class:`.DummyBackend` :class:`.ImmediateBackend` ============================ ======================= =========================== :attr:`.supports_defer` Yes No :attr:`.supports_async_task` Yes Yes :attr:`.supports_get_result` No No [#fnimmediateresult]_ :attr:`.supports_priority` Yes [#fndummypriority]_ Yes [#fnimmediatepriority]_ ============================ ======================= ===========================
+- [9b614504] Available backends ------------------
+- [b60cb2ef] Backends ========
+- [d35c23ae] Backends handle how Tasks are stored and executed. All backends share a common interface defined by ``BaseTaskBackend``, which specifies the core methods for enqueueing Tasks and retrieving results.
+- [3744dbd6] Base backend ------------
+- [5d778bec] Django includes only development and testing backends. These support local execution and inspection, for production ready backends refer to :ref:`configuring-a-task-backend`.
+- [c01017e7] Dummy backend ~~~~~~~~~~~~~
+- [458050e52503f721-6] Exceptions ==========
+- [0c8ab375] Feature flags ~~~~~~~~~~~~~
+- [76ba946b] Immediate backend ~~~~~~~~~~~~~~~~~
+- [16fb0378] Some backends may not support all features Django provides. It's possible to identify the supported functionality of a backend, and potentially change behavior accordingly.
+- [167ae344] Task context ============
+- [c0c8aedb] Task definition ===============
+- [2b2aa894] Task errors -----------
+- [21c8ba7a] Task results ============
+- [d0627662] The Task framework provides the contract and plumbing for background work, not the engine that runs it. The Tasks API defines how work is described, queued, and tracked, but leaves actual execution to external infrastructure.
+- [e1dd7bd8] The ``task`` decorator ----------------------
+- [6ef63d77] The below table notes which of the :ref:`built-in backends <task-available-backends>` support which features:
+- [2a024f94] ``Task`` --------

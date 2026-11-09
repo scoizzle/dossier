@@ -1,14 +1,14 @@
 # django/db/backends/sqlite3/creation
 
-- Subject: django/db/backends/sqlite3/creation (id `a44b9f7a-01ff-42a2-a5e9-08965bd02cd8`)
+- Subject: django/db/backends/sqlite3/creation (id `db560a6c-1026-4104-90f3-0fa401ab32a1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 8 of 14
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1426 tokens
+- Facts shown: 14 of 14
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - This takes into account the special cases of ":memory:" and "" for SQLite since the databases will be distinct despite having the same TEST NAME. See https://www.sqlite.org/inmemorydb.html """ test_database_name = self._get_test_db_name() sig = [self.connection.settings_dict["NAME"]] if self.is_in_memory_db(test_database_name): sig.append(self.connection.alias) else: sig.append(test_database_name) return tuple(sig) [b6ac99b7]
 - if keepdb: return test_database_name if not self.is_in_memory_db(test_database_name): # Erase the old test database if verbosity >= 1: self.log( "Destroying old test database for alias %s..." % (self._get_database_display_str(verbosity, test_database_name),) ) if os.access(test_database_name, os.F_OK): if not autoclobber: confirm = input( "Type 'yes' if you would like to try deleting the test " "database '%s', or 'no' to cancel: " % test_database_name ) if autoclobber or confirm == "yes": try: os.remove(test_database_name) except Exception as e: self.log("Got an error deleting the old test database: %s" % e) sys.exit(2) else: self.log("Tests cancelled.") sys.exit(1) return test_database_name [222e5bfa]
@@ -19,6 +19,11 @@
 - def _destroy_test_db(self, test_database_name, verbosity): if test_database_name and not self.is_in_memory_db(test_database_name): # Remove the SQLite database file os.remove(test_database_name) [78d313df]
 - def get_test_db_clone_settings(self, suffix): orig_settings_dict = self.connection.settings_dict source_database_name = orig_settings_dict["NAME"] or ":memory:" [a407266e]
 
-## Beyond the budget
+## All facts
 
-6 more facts did not fit in the budget: [49ca3eac] [91231be0] [be207370] [f683c619] [86c5c8cd] [2b255c6b]
+- [49ca3eac] def _get_test_db_name(self): test_database_name = self.connection.settings_dict["TEST"]["NAME"] or ":memory:" if test_database_name == ":memory:": return "file:memorydb_%s?mode=memory&cache=shared" % self.connection.alias return test_database_name
+- [91231be0] def setup_worker_connection(self, _worker_id): settings_dict = self.get_test_db_clone_settings(_worker_id) # connection.settings_dict must be updated in place for changes to be # reflected in django.db.connections. Otherwise new threads would # connect to the default database instead of the appropriate clone. start_method = multiprocessing.get_start_method() if start_method == "fork": # Update settings_dict in place. self.connection.settings_dict.update(settings_dict) self.connection.close() elif start_method in {"forkserver", "spawn"}: alias = self.connection.alias connection_str = ( f"file:memorydb_{alias}_{_worker_id}?mode=memory&cache=shared" ) source_db_name = settings_dict["NAME"] source_db = self.connection.Database.connect( f"file:{source_db_name}?mode=ro", uri=True ) target_db = sqlite3.connect(connection_str, uri=True) source_db.backup(target_db) source_db.close() # Update settings_dict in place. self.connection.settings_dict.update(settings_dict) self.connection.settings_dict["NAME"] = connection_str # Re-open connection to in-memory database before closing copy # connection. self.connection.connect() target_db.close()
+- [be207370] def test_db_signature(self): """ Return a tuple that uniquely identifies a test database.
+- [f683c619] class DatabaseCreation(BaseDatabaseCreation): @staticmethod def is_in_memory_db(database_name): return not isinstance(database_name, Path) and ( database_name == ":memory:" or "mode=memory" in database_name )
+- [86c5c8cd] from django.db import NotSupportedError from django.db.backends.base.creation import BaseDatabaseCreation
+- [2b255c6b] import multiprocessing import os import shutil import sqlite3 import sys from pathlib import Path

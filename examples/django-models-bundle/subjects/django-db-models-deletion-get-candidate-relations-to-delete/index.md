@@ -1,9 +1,9 @@
 # django/db/models/deletion::get_candidate_relations_to_delete
 
-- Subject: django/db/models/deletion::get_candidate_relations_to_delete (id `e016def7-b47a-4a12-b4c7-65d4a737e282`)
+- Subject: django/db/models/deletion::get_candidate_relations_to_delete (id `005f9048-056e-4164-9d30-ad2bd8ee3506`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

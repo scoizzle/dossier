@@ -1,6 +1,6 @@
 # Fact 7d46488f
 
-Store id: 52ea2395-137f-4931-ac69-669090d4e85d
+Store id: 8cbf5e15-d149-4506-be2d-12fe0ae79c4d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_refs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6543420+00:00`
+- posted_at: `2026-11-09T23:31:55.9193800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1473,
     "symbol": "Ref.get_refs"
   },
-  "id": "52ea2395-137f-4931-ac69-669090d4e85d",
+  "id": "8cbf5e15-d149-4506-be2d-12fe0ae79c4d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6543420+00:00"
+    "posted_at": "2026-11-09T23:31:55.9193800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0f5435a-0aaf-4b23-af65-9c379e841503",
+  "subject_id": "ff228803-d960-4605-b27b-6f48f129234b",
   "subject_name": "django/db/models/expressions::Ref.get_refs",
   "tags": [
     "entity:method"

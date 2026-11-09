@@ -1,9 +1,9 @@
 # django/db/models/base::Model._is_pk_set
 
-- Subject: django/db/models/base::Model._is_pk_set (id `07f511da-62d5-4f1f-baef-6e6212785570`)
+- Subject: django/db/models/base::Model._is_pk_set (id `4066697a-60fe-41b9-b030-a7b7f35563f0`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

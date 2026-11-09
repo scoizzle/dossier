@@ -1,6 +1,6 @@
 # Fact 3e1c2094
 
-Store id: d94ef594-249b-42bb-8b73-6749694a77b1
+Store id: 988bd663-5d8b-4143-8903-d9bb69a16d8b
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleIsNull(TupleLookupMixin, IsNull)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5980800+00:00`
+- posted_at: `2026-11-09T23:32:00.5875730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 169,
     "symbol": "TupleIsNull"
   },
-  "id": "d94ef594-249b-42bb-8b73-6749694a77b1",
+  "id": "988bd663-5d8b-4143-8903-d9bb69a16d8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5980800+00:00"
+    "posted_at": "2026-11-09T23:32:00.5875730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5e5ebfe9-27c2-4638-83f9-c752c6f21638",
+  "subject_id": "3d9484ae-4dcc-47ce-b5db-cd361f7f33b7",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIsNull",
   "tags": [
     "entity:class"

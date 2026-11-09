@@ -1,8 +1,8 @@
 # django/contrib/postgres/utils
 
-- Subject: django/contrib/postgres/utils (id `20394f0b-beef-474c-b4a1-7c569c281714`)
+- Subject: django/contrib/postgres/utils (id `9059bd37-474c-4494-b6d7-598e1c76c585`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 440 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

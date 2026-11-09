@@ -1,6 +1,6 @@
 # Fact e2af852c
 
-Store id: 26b49e22-b394-4a82-8e48-0c4e99693f59
+Store id: f35132d6-6587-49f1-ab8f-b1a1ee50acba
 
 ## Text
 
@@ -20,7 +20,7 @@ class ModelSignal(Signal)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.3196420+00:00`
+- posted_at: `2026-11-09T23:32:05.3600280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 9,
     "symbol": "ModelSignal"
   },
-  "id": "26b49e22-b394-4a82-8e48-0c4e99693f59",
+  "id": "f35132d6-6587-49f1-ab8f-b1a1ee50acba",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.3196420+00:00"
+    "posted_at": "2026-11-09T23:32:05.3600280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "27fda132-14d3-4adb-a78a-c710992669d6",
+  "subject_id": "098fa414-9903-4fee-9dff-d89f5f7dc39f",
   "subject_name": "django/db/models/signals::ModelSignal",
   "tags": [
     "entity:class"

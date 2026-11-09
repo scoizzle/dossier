@@ -1,6 +1,6 @@
 # Fact 50e58e64
 
-Store id: 9249471d-ba54-4fcc-be69-d95707443ff4
+Store id: f4087feb-9356-4cc3-b4a9-8b8eaae0c467
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FixDecimalInputMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.8818060+00:00`
+- posted_at: `2026-11-09T23:32:01.9598930+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9249471d-ba54-4fcc-be69-d95707443ff4",
+  "id": "f4087feb-9356-4cc3-b4a9-8b8eaae0c467",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.8818060+00:00"
+    "posted_at": "2026-11-09T23:32:01.9598930+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FixDecimalInputMixin"
       },
       "rel": "contains",
-      "target": "184e584f-440e-4708-a920-1bd063792912"
+      "target": "8157d196-1fe6-40a8-aff5-c3a3cd843e97"
     }
   ],
   "status": "live",
-  "subject_id": "2b48520c-3164-49b2-b539-d7cb92a8fbd0",
+  "subject_id": "9d365ca6-bc99-4db3-9918-2665c23ee737",
   "subject_name": "django/db/models/functions/mixins",
   "tags": [
     "entity:class"

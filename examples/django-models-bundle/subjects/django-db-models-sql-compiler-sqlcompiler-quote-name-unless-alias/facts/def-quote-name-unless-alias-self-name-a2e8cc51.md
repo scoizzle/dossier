@@ -1,6 +1,6 @@
 # Fact a2e8cc51
 
-Store id: 292a2a38-a8c1-4f5c-a85a-173bfb41421f
+Store id: c51e5e98-c2b9-4be5-9ba4-0283ef6ea477
 
 ## Text
 
@@ -20,7 +20,7 @@ def quote_name_unless_alias(self, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5998900+00:00`
+- posted_at: `2026-11-09T23:32:05.7265490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 581,
     "symbol": "SQLCompiler.quote_name_unless_alias"
   },
-  "id": "292a2a38-a8c1-4f5c-a85a-173bfb41421f",
+  "id": "c51e5e98-c2b9-4be5-9ba4-0283ef6ea477",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5998900+00:00"
+    "posted_at": "2026-11-09T23:32:05.7265490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4eba519-26dd-42de-b928-189ff8eaabe3",
+  "subject_id": "5e45f1c6-c364-4fe9-bfce-d6aeafc40507",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.quote_name_unless_alias",
   "tags": [
     "entity:method"

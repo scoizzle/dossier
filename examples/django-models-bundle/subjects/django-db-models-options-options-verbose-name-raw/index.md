@@ -1,9 +1,9 @@
 # django/db/models/options::Options.verbose_name_raw
 
-- Subject: django/db/models/options::Options.verbose_name_raw (id `9e69bc51-9bdc-4fec-8fc1-d3abd5e68916`)
+- Subject: django/db/models/options::Options.verbose_name_raw (id `5e25f173-629c-46a8-9941-eb1765accb6d`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

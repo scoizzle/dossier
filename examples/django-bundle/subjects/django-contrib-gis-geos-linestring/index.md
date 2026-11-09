@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/linestring
 
-- Subject: django/contrib/gis/geos/linestring (id `3d3386f1-5440-4647-9b68-99e31ef51bd1`)
+- Subject: django/contrib/gis/geos/linestring (id `e23cacee-5f6e-47c8-b0c0-2ebde8a9cef7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 16 of 31
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1549 tokens
+- Facts shown: 31 of 31
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if ndim is None: ndim = len(coord) self._checkdim(ndim) elif len(coord) != ndim: raise TypeError("Dimension mismatch.") [838ae612]
 - # Calling the base geometry initialization with the returned pointer # from the function. super().__init__(self._init_func(cs.ptr), srid=srid) [3d9263c6]
@@ -27,6 +27,20 @@
 - @property def is_counterclockwise(self): if self.empty: raise ValueError("Orientation of an empty LinearRing cannot be determined.") return self._cs.is_counterclockwise [193a1523]
 - _get_single_internal = _get_single_external [c9a27e0a939be8ad]
 
-## Beyond the budget
+## All facts
 
-15 more facts did not fit in the budget: [6bf62d51] [7a5eb684] [99ae2687] [7cf2067ea4ba94b9-6] [0eecd972] [942a435e] [8dbe1b19] [62cdb4c1] [21cad63e] [44f81664] [728aa950] [82490534] [c4421f5d] [3c8bb1de] [d455b0ee]
+- [6bf62d51] @property def x(self): "Return a list or numpy array of the X variable." return self._listarr(self._cs.getX)
+- [7a5eb684] @property def y(self): "Return a list or numpy array of the Y variable." return self._listarr(self._cs.getY)
+- [99ae2687] @property def z(self): "Return a list or numpy array of the Z variable." if not self.hasz: return None else: return self._listarr(self._cs.getZ)
+- [7cf2067ea4ba94b9-6] coords = tuple
+- [0eecd972] def __init__(self, *args, **kwargs): """ Initialize on the given sequence: may take lists, tuples, NumPy arrays of X,Y pairs, or Point objects. If Point objects are used, ownership is _not_ transferred to the LineString object.
+- [942a435e] def __iter__(self): "Allow iteration over this LineString." for i in range(len(self)): yield self[i]
+- [8dbe1b19] def __len__(self): "Return the number of points in this LineString." return len(self._cs)
+- [62cdb4c1] def _checkdim(self, dim): if dim not in (2, 3): raise TypeError("Dimension mismatch.")
+- [21cad63e] def _get_single_external(self, index): return self._cs[index]
+- [44f81664] def _listarr(self, func): """ Return a sequence (list) corresponding with the given function. Return a numpy array if possible. """ lst = [func(i) for i in range(len(self))] if numpy: return numpy.array(lst) # ARRRR! else: return lst
+- [728aa950] def _set_list(self, length, items): ndim = self._cs.dims hasz = self._cs.hasz # I don't understand why these are different srid = self.srid
+- [82490534] def _set_single(self, index, value): self._cs[index] = value
+- [c4421f5d] # LinearRings are LineStrings used within Polygons. class LinearRing(LineString): _minlength = 4 _init_func = capi.create_linearring
+- [3c8bb1de] class LineString(LinearGeometryMixin, GEOSGeometry): _init_func = capi.create_linestring _minlength = 2 has_cs = True
+- [d455b0ee] from django.contrib.gis.geos import prototypes as capi from django.contrib.gis.geos.coordseq import GEOSCoordSeq from django.contrib.gis.geos.error import GEOSException from django.contrib.gis.geos.geometry import GEOSGeometry, LinearGeometryMixin from django.contrib.gis.geos.point import Point from django.contrib.gis.shortcuts import numpy

@@ -1,6 +1,6 @@
 # Fact c9e61065
 
-Store id: cba0fc5b-66c6-483e-9bce-c31abc47f540
+Store id: c7dc98b7-bc80-45a0-8b15-fabe05a2db7e
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4027310+00:00`
+- posted_at: `2026-11-09T23:31:56.5682850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1392,
     "symbol": "DateTimeCheckMixin.check"
   },
-  "id": "cba0fc5b-66c6-483e-9bce-c31abc47f540",
+  "id": "c7dc98b7-bc80-45a0-8b15-fabe05a2db7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4027310+00:00"
+    "posted_at": "2026-11-09T23:31:56.5682850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b375d64e-48e0-4fcc-8487-3ec170bb5791",
+  "subject_id": "ac68cbec-b1b6-4707-935f-f757e4505cc4",
   "subject_name": "django/db/models/fields/__init__::DateTimeCheckMixin.check",
   "tags": [
     "entity:method"

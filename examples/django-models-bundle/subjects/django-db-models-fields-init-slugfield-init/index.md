@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::SlugField.__init__
 
-- Subject: django/db/models/fields/__init__::SlugField.__init__ (id `082d4328-d509-4f1a-9e0d-44c95b8db287`)
+- Subject: django/db/models/fields/__init__::SlugField.__init__ (id `cc46d9dc-e30d-49cd-97b3-fd7d8d85b2d0`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 33 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

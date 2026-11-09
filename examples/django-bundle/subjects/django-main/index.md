@@ -1,8 +1,8 @@
 # django/__main__
 
-- Subject: django/__main__ (id `b133f4b9-946d-4b74-b471-097f4293336e`)
+- Subject: django/__main__ (id `38ae42ac-67f7-4d12-9fa6-8243ffc6d228`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 94 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

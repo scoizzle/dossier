@@ -1,6 +1,6 @@
 # Fact 253182cd
 
-Store id: 404d3140-96ff-4aa9-a072-e828f6c8ea9f
+Store id: 7560d67c-4cd3-403d-8c9b-598b6c8236cc
 
 ## Text
 
@@ -20,7 +20,7 @@ class BigIntegerField(IntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5465690+00:00`
+- posted_at: `2026-11-09T23:31:56.7088740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2241,
     "symbol": "BigIntegerField"
   },
-  "id": "404d3140-96ff-4aa9-a072-e828f6c8ea9f",
+  "id": "7560d67c-4cd3-403d-8c9b-598b6c8236cc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5465690+00:00"
+    "posted_at": "2026-11-09T23:31:56.7088740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0188fa61-1737-436e-8b11-bae6b7fece1e",
+  "subject_id": "3117325a-0c44-4df3-850c-0b995f22ae9d",
   "subject_name": "django/db/models/fields/__init__::BigIntegerField",
   "tags": [
     "entity:class"

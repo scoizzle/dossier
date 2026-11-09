@@ -1,9 +1,9 @@
 # django/db/models/lookups::FieldGetDbPrepValueIterableMixin.get_prep_lookup
 
-- Subject: django/db/models/lookups::FieldGetDbPrepValueIterableMixin.get_prep_lookup (id `8a85027e-e7ba-451b-9635-b9f557a4ec23`)
+- Subject: django/db/models/lookups::FieldGetDbPrepValueIterableMixin.get_prep_lookup (id `fb11f39e-eeef-4f2e-a20a-884aa96803e5`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

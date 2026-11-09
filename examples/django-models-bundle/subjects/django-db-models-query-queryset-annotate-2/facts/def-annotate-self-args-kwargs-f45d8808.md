@@ -1,6 +1,6 @@
 # Fact f45d8808
 
-Store id: eb72713f-57c2-4680-b668-3d4475a16a62
+Store id: 6a2450a9-835f-4221-832e-56fb87757445
 
 ## Text
 
@@ -20,7 +20,7 @@ def annotate(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6484040+00:00`
+- posted_at: `2026-11-09T23:32:04.5759110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1861,
     "symbol": "QuerySet.annotate"
   },
-  "id": "eb72713f-57c2-4680-b668-3d4475a16a62",
+  "id": "6a2450a9-835f-4221-832e-56fb87757445",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6484040+00:00"
+    "posted_at": "2026-11-09T23:32:04.5759110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "81d19220-7344-46d1-af50-ec6d579dca65",
+  "subject_id": "e4895a69-a968-4a34-9928-5adc5777e0f2",
   "subject_name": "django/db/models/query::QuerySet.annotate",
   "tags": [
     "entity:method"

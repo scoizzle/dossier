@@ -1,6 +1,6 @@
 # Fact bc927f94
 
-Store id: 9f965ccb-c14a-4697-b6ff-a1571283f360
+Store id: 633d7f03-cea4-4140-8052-4c1383cf3c20
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function make_model_tuple
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1602360+00:00`
+- posted_at: `2026-11-09T23:32:07.9512730+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9f965ccb-c14a-4697-b6ff-a1571283f360",
+  "id": "633d7f03-cea4-4140-8052-4c1383cf3c20",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1602360+00:00"
+    "posted_at": "2026-11-09T23:32:07.9512730+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "make_model_tuple"
       },
       "rel": "contains",
-      "target": "eca21d29-683c-45aa-8316-6512f45c159f"
+      "target": "487d0216-1d46-407a-9a0c-6a5d579493eb"
     }
   ],
   "status": "live",
-  "subject_id": "f5e83459-87b7-40dd-8dc8-0296e557a739",
+  "subject_id": "8d25c560-4eac-44c9-a77d-da20cef77164",
   "subject_name": "django/db/models/utils",
   "tags": [
     "entity:function"

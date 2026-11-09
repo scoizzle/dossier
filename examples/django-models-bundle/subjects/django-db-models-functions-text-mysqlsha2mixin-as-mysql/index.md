@@ -1,9 +1,9 @@
 # django/db/models/functions/text::MySQLSHA2Mixin.as_mysql
 
-- Subject: django/db/models/functions/text::MySQLSHA2Mixin.as_mysql (id `488aee61-1a21-4fb0-a785-fa75f26ebea2`)
+- Subject: django/db/models/functions/text::MySQLSHA2Mixin.as_mysql (id `53fe7188-2762-42ae-8a77-954158b304b1`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

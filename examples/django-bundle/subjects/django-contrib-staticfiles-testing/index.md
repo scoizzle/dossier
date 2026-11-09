@@ -1,8 +1,8 @@
 # django/contrib/staticfiles/testing
 
-- Subject: django/contrib/staticfiles/testing (id `08f3f212-bb9a-4a75-9536-10882cac7b71`)
+- Subject: django/contrib/staticfiles/testing (id `4ef366e9-0106-4b43-a3d8-f63448fbd02b`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 140 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

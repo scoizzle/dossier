@@ -1,9 +1,9 @@
 # django/db/models/lookups::Lookup.get_db_prep_lookup
 
-- Subject: django/db/models/lookups::Lookup.get_db_prep_lookup (id `1ee17958-4f2d-4492-a4dc-0cd243e4356f`)
+- Subject: django/db/models/lookups::Lookup.get_db_prep_lookup (id `99afffd9-c517-4d5c-9ee9-7fe12296a40a`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/aggregates::StdDev
 
-- Subject: django/db/models/aggregates::StdDev (id `3eed5fe4-6dfe-416b-b67a-3db791340b74`)
+- Subject: django/db/models/aggregates::StdDev (id `8ce29e24-e789-4658-bd85-9162b146b4e5`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

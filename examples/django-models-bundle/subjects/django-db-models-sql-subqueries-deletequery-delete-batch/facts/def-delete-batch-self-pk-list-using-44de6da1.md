@@ -1,6 +1,6 @@
 # Fact 44de6da1
 
-Store id: 68bd2cb9-880e-4b09-883c-1b9306b6d7d2
+Store id: 293675f8-4300-416b-b8c1-6b7df1567604
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete_batch(self, pk_list, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7143580+00:00`
+- posted_at: `2026-11-09T23:32:07.3481120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 27,
     "symbol": "DeleteQuery.delete_batch"
   },
-  "id": "68bd2cb9-880e-4b09-883c-1b9306b6d7d2",
+  "id": "293675f8-4300-416b-b8c1-6b7df1567604",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7143580+00:00"
+    "posted_at": "2026-11-09T23:32:07.3481120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0ac79d38-00bf-4c18-b05c-adaf3ede965a",
+  "subject_id": "bb88848c-8500-48c4-9b19-ebaa5f342848",
   "subject_name": "django/db/models/sql/subqueries::DeleteQuery.delete_batch",
   "tags": [
     "entity:method"

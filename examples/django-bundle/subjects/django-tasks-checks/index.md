@@ -1,8 +1,8 @@
 # django/tasks/checks
 
-- Subject: django/tasks/checks (id `1ba340e7-5a65-41a0-9abe-dff111e54998`)
+- Subject: django/tasks/checks (id `baffb9ba-8f1e-446e-a1d8-346faee9234e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 99 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

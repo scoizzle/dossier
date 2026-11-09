@@ -1,14 +1,14 @@
 # django/db/models/functions/text
 
-- Subject: django/db/models/functions/text (id `36408967-0aa5-4e32-be15-e2deb4fb8a06`)
+- Subject: django/db/models/functions/text (id `2c28d708-ae14-4f36-aee3-286d46878dc8`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 14 of 61
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2871 tokens
+- Facts shown: 58 of 61
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - as_sqlite = pipes_concat_sql [4303c046]
 - def __init__(self, *expressions, **extra): if len(expressions) < 2: raise ValueError("Concat must take at least two expressions") paired = self._paired(expressions, output_field=extra.get("output_field")) super().__init__(paired, **extra) [4425c9ce]
@@ -25,6 +25,49 @@
 - def as_oracle(self, compiler, connection, **extra_context): raise NotSupportedError("SHA224 is not supported on Oracle.") [7151fe26]
 - function = "CONCAT" [01eb2aae]
 
-## Beyond the budget
+## All facts
 
-44 more facts did not fit in the budget: [66bd9f83] [3bd3f87e] [58378156] [cc1f80bb] [4c1c628c] [40bce517] [888525fc] [c753b2de] [c5882451] [2cf50ad8] [a4df6a41] [1eaf4f24] [ae6e3d1a] [e382d347] [cdbcac31] [30e06027] [2f3e46d7] [60469491] [de27a9ea] [227bcd46] [db798528] [f04c2dd5] [40a6f5ed] [c0cb1508] [b3f7f588] [91bacd45] [488e5af7] [699de7bc] [40d4006e] [825bf7c8] [9d93f927] [e51e34b1] [93fe9ea4] [1ad9f1ba] [eafb12da] [d581d857] [43a638a7] [e1fac33b] [f229f86e] [b43e045d] [591d51de] [6acd2e29] [fe1cc9b8] [3abea421]
+- [66bd9f83] def as_oracle(self, compiler, connection, **extra_context): # REVERSE in Oracle is undocumented and doesn't support multi-byte # strings. Use a special subquery instead. suffix = connection.features.bare_select_suffix sql, params = super().as_sql( compiler, connection, template=( "(SELECT LISTAGG(s) WITHIN GROUP (ORDER BY n DESC) FROM " f"(SELECT LEVEL n, SUBSTR(%(expressions)s, LEVEL, 1) s{suffix} " "CONNECT BY LEVEL <= LENGTH(%(expressions)s)) " "GROUP BY %(expressions)s)" ), **extra_context, ) return sql, params * 3
+- [3bd3f87e] def as_oracle(self, compiler, connection, **extra_context): expression, number = self.source_expressions length = None if number is None else Length(expression) * number rpad = RPad(expression, length, expression) return rpad.as_sql(compiler, connection, **extra_context)
+- [58378156] def as_oracle(self, compiler, connection, **extra_context): return self.get_substr().as_oracle(compiler, connection, **extra_context)
+- [cc1f80bb] def as_oracle(self, compiler, connection, **extra_context): return super().as_sql( compiler, connection, template="%(function)s(%(expressions)s USING NCHAR_CS)", **extra_context, )
+- [4c1c628c] def as_oracle(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="SUBSTR", **extra_context)
+- [40bce517] def as_postgresql(self, compiler, connection, **extra_context): c = self.copy() c.set_source_expressions( [ ( expression if isinstance(expression.output_field, (CharField, TextField)) else Cast(expression, TextField()) ) for expression in c.get_source_expressions() ] ) return c.pipes_concat_sql(compiler, connection, **extra_context)
+- [888525fc] def as_postgresql(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="STRPOS", **extra_context)
+- [c753b2de] def as_sqlite(self, compiler, connection, **extra_context): return self.get_substr().as_sqlite(compiler, connection, **extra_context)
+- [c5882451] def as_sqlite(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="CHAR", **extra_context)
+- [2cf50ad8] def coalesce(self): # null on either side results in null for expression, wrap with # coalesce c = self.copy() c.set_source_expressions( [ Coalesce(expression, Value("")) for expression in c.get_source_expressions() ] ) return c
+- [a4df6a41] def get_substr(self): return Substr( self.source_expressions[0], self.source_expressions[1] * Value(-1), self.source_expressions[1], )
+- [1eaf4f24] def pipes_concat_sql(self, compiler, connection, **extra_context): coalesced = self.coalesce() return super(ConcatPair, coalesced).as_sql( compiler, connection, template="(%(expressions)s)", arg_joiner=" || ", **extra_context, )
+- [ae6e3d1a] function = "INSTR" arity = 2 output_field = IntegerField()
+- [e382d347] function = "LENGTH" lookup_name = "length" output_field = IntegerField()
+- [cdbcac31] function = None template = "%(expressions)s"
+- [30e06027] class Chr(Transform): function = "CHR" lookup_name = "chr" output_field = CharField()
+- [2f3e46d7] class Concat(Func): """ Concatenate text fields together. Backends that result in an entire null expression when any arguments are null will wrap each argument in coalesce functions to ensure a non-null result. """
+- [60469491] class ConcatPair(Func): """ Concatenate two arguments together. This is used by `Concat` because not all backend databases support more than two arguments. """
+- [de27a9ea] class LPad(Func): function = "LPAD" output_field = CharField()
+- [227bcd46] class LTrim(Transform): function = "LTRIM" lookup_name = "ltrim"
+- [db798528] class Left(Func): function = "LEFT" arity = 2 output_field = CharField()
+- [f04c2dd5] class Length(Transform): """Return the number of characters in the expression."""
+- [40a6f5ed] class Lower(Transform): function = "LOWER" lookup_name = "lower"
+- [c0cb1508] class MD5(OracleHashMixin, Transform): function = "MD5" lookup_name = "md5"
+- [b3f7f588] class MySQLSHA2Mixin: def as_mysql(self, compiler, connection, **extra_context): return super().as_sql( compiler, connection, template="SHA2(%%(expressions)s, %s)" % self.function[3:], **extra_context, )
+- [91bacd45] class OracleHashMixin: def as_oracle(self, compiler, connection, **extra_context): return super().as_sql( compiler, connection, template=( "LOWER(RAWTOHEX(STANDARD_HASH(UTL_I18N.STRING_TO_RAW(" "%(expressions)s, 'AL32UTF8'), '%(function)s')))" ), **extra_context, )
+- [488e5af7] class Ord(Transform): function = "ASCII" lookup_name = "ord" output_field = IntegerField()
+- [699de7bc] class PostgreSQLSHAMixin: def as_postgresql(self, compiler, connection, **extra_context): return super().as_sql( compiler, connection, template="ENCODE(DIGEST(%(expressions)s, '%(function)s'), 'hex')", function=self.function.lower(), **extra_context, )
+- [40d4006e] class RPad(LPad): function = "RPAD"
+- [825bf7c8] class RTrim(Transform): function = "RTRIM" lookup_name = "rtrim"
+- [9d93f927] class Repeat(Func): function = "REPEAT" output_field = CharField()
+- [e51e34b1] class Replace(Func): function = "REPLACE"
+- [93fe9ea4] class Reverse(Transform): function = "REVERSE" lookup_name = "reverse"
+- [1ad9f1ba] class Right(Left): function = "RIGHT"
+- [eafb12da] class SHA1(OracleHashMixin, PostgreSQLSHAMixin, Transform): function = "SHA1" lookup_name = "sha1"
+- [d581d857] class SHA224(MySQLSHA2Mixin, PostgreSQLSHAMixin, Transform): function = "SHA224" lookup_name = "sha224"
+- [43a638a7] class SHA256(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform): function = "SHA256" lookup_name = "sha256"
+- [e1fac33b] class SHA384(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform): function = "SHA384" lookup_name = "sha384"
+- [f229f86e] class SHA512(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform): function = "SHA512" lookup_name = "sha512"
+- [b43e045d] class StrIndex(Func): """ Return a positive integer corresponding to the 1-indexed position of the first occurrence of a substring inside another string, or 0 if the substring is not found. """
+- [591d51de] class Substr(Func): function = "SUBSTRING" output_field = CharField()
+- [6acd2e29] class Trim(Transform): function = "TRIM" lookup_name = "trim"
+- [fe1cc9b8] class Upper(Transform): function = "UPPER" lookup_name = "upper"
+- [3abea421] from django.db import NotSupportedError from django.db.models.expressions import Func, Value from django.db.models.fields import CharField, IntegerField, TextField from django.db.models.functions import Cast, Coalesce from django.db.models.lookups import Transform

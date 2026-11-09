@@ -1,9 +1,9 @@
 # django/db/models/fields/mixins::CheckFieldDefaultMixin.check
 
-- Subject: django/db/models/fields/mixins::CheckFieldDefaultMixin.check (id `12cc5227-9868-4267-a382-2599a5066b0a`)
+- Subject: django/db/models/fields/mixins::CheckFieldDefaultMixin.check (id `5b46a1e2-595e-4e61-ae2e-1d0447626303`)
 - Kind: method
 - Parent: [django/db/models/fields/mixins](../django-db-models-fields-mixins/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

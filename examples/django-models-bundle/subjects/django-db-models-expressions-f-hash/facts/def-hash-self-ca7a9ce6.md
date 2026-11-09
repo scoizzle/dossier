@@ -1,6 +1,6 @@
 # Fact ca7a9ce6
 
-Store id: bed545d3-99fe-46cc-bff1-6c811a60e459
+Store id: 7ef317b0-29fa-4a0d-939f-5e6081956f85
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5657740+00:00`
+- posted_at: `2026-11-09T23:31:55.8384670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 939,
     "symbol": "F.__hash__"
   },
-  "id": "bed545d3-99fe-46cc-bff1-6c811a60e459",
+  "id": "7ef317b0-29fa-4a0d-939f-5e6081956f85",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5657740+00:00"
+    "posted_at": "2026-11-09T23:31:55.8384670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1fe691dc-4f51-48c2-bfb0-75086c756315",
+  "subject_id": "b8c261e2-f5d5-4cb8-a78e-6bdbe0254695",
   "subject_name": "django/db/models/expressions::F.__hash__",
   "tags": [
     "entity:method"

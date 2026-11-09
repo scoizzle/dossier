@@ -1,6 +1,6 @@
 # Fact 3390db2a
 
-Store id: da783113-c4d9-4c4d-86c0-cde2fc0eafa7
+Store id: 2b3c7b29-d77e-41e0-a91b-fe5c9466f0d3
 
 ## Text
 
@@ -20,7 +20,7 @@ class InsertQuery(Query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7573720+00:00`
+- posted_at: `2026-11-09T23:32:07.4025280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 148,
     "symbol": "InsertQuery"
   },
-  "id": "da783113-c4d9-4c4d-86c0-cde2fc0eafa7",
+  "id": "2b3c7b29-d77e-41e0-a91b-fe5c9466f0d3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7573720+00:00"
+    "posted_at": "2026-11-09T23:32:07.4025280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cac895ef-8ad1-4fed-843d-2639ef72c7ba",
+  "subject_id": "083889b7-121a-4705-89b6-e48c3b356aca",
   "subject_name": "django/db/models/sql/subqueries::InsertQuery",
   "tags": [
     "entity:class"

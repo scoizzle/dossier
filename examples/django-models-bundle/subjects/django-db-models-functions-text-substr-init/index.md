@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Substr.__init__
 
-- Subject: django/db/models/functions/text::Substr.__init__ (id `58dff103-fc54-48d2-aaea-a3b9646337c0`)
+- Subject: django/db/models/functions/text::Substr.__init__ (id `adc5609f-3a08-4279-bb74-ab691186eea6`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,8 +1,8 @@
 # django/contrib/auth/management/commands/changepassword
 
-- Subject: django/contrib/auth/management/commands/changepassword (id `89bfa66a-2d6c-408d-beb2-619709e2ddbe`)
+- Subject: django/contrib/auth/management/commands/changepassword (id `6a8e95bd-801c-4adc-aa74-169af877d533`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 644 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

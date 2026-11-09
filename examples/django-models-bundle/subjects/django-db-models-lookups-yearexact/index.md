@@ -1,9 +1,9 @@
 # django/db/models/lookups::YearExact
 
-- Subject: django/db/models/lookups::YearExact (id `5da197e2-937d-428c-aa20-4edc5bd69162`)
+- Subject: django/db/models/lookups::YearExact (id `7889d6f0-037e-4527-a47c-0d04ebcedc39`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

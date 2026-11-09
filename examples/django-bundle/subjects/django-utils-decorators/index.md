@@ -1,14 +1,14 @@
 # django/utils/decorators
 
-- Subject: django/utils/decorators (id `092c3e96-ccbe-41eb-8295-8ab536c6d44b`)
+- Subject: django/utils/decorators (id `6914f025-1b5d-46dc-a307-72a784ed75d4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 886 tokens
-- Facts shown: 17 of 37
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1881 tokens
+- Facts shown: 34 of 37
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def callback(response): return middleware.process_response(request, response) [4dea0535]
 - response.add_post_render_callback(callback) else: if hasattr(middleware, "process_response"): return middleware.process_response(request, response) return response [7b568799]
@@ -28,6 +28,22 @@
 - # Copy any attributes that a decorator adds to the function it decorates. for dec in decorators: _update_method_wrapper(_wrapper, dec) # Preserve any existing attributes of 'method', including the name. update_wrapper(_wrapper, method) [885f2427]
 - if iscoroutinefunction(method): markcoroutinefunction(_wrapper) [133a244c]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [04a7471c] [32547afb] [f93bc7e3] [18148b5e] [185de31c] [e43dbaf7] [fbab8376] [af9ec4ad] [5e0c43b5] [255505ee] [07980b9c] [3f0e7eae] [44867ad6] [a112d04c] [c3015287] [f4d2fb2a] [dade3b57]
+- [04a7471c] # Don't worry about making _dec look similar to a list/tuple as it's rather # meaningless. if not hasattr(decorator, "__iter__"): update_wrapper(_dec, decorator) # Change the name to aid debugging. obj = decorator if hasattr(decorator, "__name__") else decorator.__class__ _dec.__name__ = "method_decorator(%s)" % obj.__name__ return _dec
+- [32547afb] def _wrapper(self, *args, **kwargs): # bound_method has the signature that 'decorator' expects i.e. no # 'self' argument, but it's a closure over self so it can call # 'func'. Also, wrap method.__get__() in a function because new # attributes can't be set on bound method objects, only on functions. bound_method = wraps(method)(partial(method.__get__(self, type(self)))) for dec in decorators: bound_method = dec(bound_method) return bound_method(*args, **kwargs)
+- [f93bc7e3] return _make_decorator
+- [18148b5e] return _wrapper
+- [185de31c] update_wrapper(_wrapper, dummy)
+- [e43dbaf7] "Functions that help with dynamically creating decorators for views."
+- [fbab8376] class classonlymethod(classmethod): def __get__(self, instance, cls=None): if instance is not None: raise AttributeError( "This method is available only on the class, not on instances." ) return super().__get__(instance, cls)
+- [af9ec4ad] def _multi_decorate(decorators, method): """ Decorate `method` with one or more function decorators. `decorators` can be a single decorator or an iterable of decorators. """ if hasattr(decorators, "__iter__"): # Apply a list/tuple of decorators if 'decorators' is one. Decorator # functions are applied so that the call order is the same as the # order in which they appear in the iterable. decorators = decorators[::-1] else: decorators = [decorators]
+- [5e0c43b5] def _update_method_wrapper(_wrapper, decorator): # _multi_decorate()'s bound_method isn't available in this scope. Cheat by # using it on a dummy function. @decorator def dummy(*args, **kwargs): pass
+- [255505ee] def async_only_middleware(func): """Mark a middleware factory as returning an async middleware.""" func.sync_capable = False func.async_capable = True return func
+- [07980b9c] def decorator_from_middleware(middleware_class): """ Given a middleware class (not an instance), return a view decorator. This lets you use middleware functionality on a per-view basis. The middleware is created with no params passed. """ return make_middleware_decorator(middleware_class)()
+- [3f0e7eae] def decorator_from_middleware_with_args(middleware_class): """ Like decorator_from_middleware, but return a function that accepts the arguments to be passed to the middleware_class. Use like::
+- [44867ad6] def make_middleware_decorator(middleware_class): def _make_decorator(*m_args, **m_kwargs): def _decorator(view_func): middleware = middleware_class(view_func, *m_args, **m_kwargs)
+- [a112d04c] def method_decorator(decorator, name=""): """ Convert a function decorator into a method decorator """
+- [c3015287] def sync_and_async_middleware(func): """ Mark a middleware factory as returning a hybrid middleware supporting both types of request. """ func.sync_capable = True func.async_capable = True return func
+- [f4d2fb2a] def sync_only_middleware(func): """ Mark a middleware factory as returning a sync middleware. This is the default. """ func.sync_capable = True func.async_capable = False return func
+- [dade3b57] from functools import partial, update_wrapper, wraps from inspect import iscoroutinefunction, markcoroutinefunction

@@ -1,6 +1,6 @@
 # Fact 14a5bd05
 
-Store id: e0a4edbe-f150-4c9a-8706-f290b2e63ea4
+Store id: 829909ad-6765-44bb-9a43-cc2393a7bbd1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function resolve_callables
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1602360+00:00`
+- posted_at: `2026-11-09T23:32:07.9512730+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e0a4edbe-f150-4c9a-8706-f290b2e63ea4",
+  "id": "829909ad-6765-44bb-9a43-cc2393a7bbd1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1602360+00:00"
+    "posted_at": "2026-11-09T23:32:07.9512730+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "resolve_callables"
       },
       "rel": "contains",
-      "target": "b092c6e7-9b1f-4f62-b617-70455d30146f"
+      "target": "6e1057ee-cfbe-4ebc-8e57-e60501fac2ee"
     }
   ],
   "status": "live",
-  "subject_id": "f5e83459-87b7-40dd-8dc8-0296e557a739",
+  "subject_id": "8d25c560-4eac-44c9-a77d-da20cef77164",
   "subject_name": "django/db/models/utils",
   "tags": [
     "entity:function"

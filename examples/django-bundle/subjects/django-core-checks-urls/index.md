@@ -1,14 +1,14 @@
 # django/core/checks/urls
 
-- Subject: django/core/checks/urls (id `c132bce5-7cda-4030-811b-2fa32b94b9bd`)
+- Subject: django/core/checks/urls (id `27b8668d-8e9b-47b6-9000-dec3bd43901b`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 883 tokens
-- Facts shown: 13 of 19
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1183 tokens
+- Facts shown: 18 of 19
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - resolver = get_resolver() return check_resolver(resolver) return [] [a0a16b3d]
 - describe_pattern() cannot be used here, because we cannot rely on the urlpattern having regex or name attributes. """ if isinstance(pattern, str): hint = ( "Try removing the string '{}'. The list of urlpatterns should not " "have a prefix string as the first element.".format(pattern) ) elif isinstance(pattern, tuple): hint = "Try using path() instead of a tuple." else: hint = None [d2661448]
@@ -24,6 +24,10 @@
 - def E006(name): return Error( "The {} setting must end with a slash.".format(name), id="urls.E006", ) [c0ae4469]
 - def get_warning_for_invalid_pattern(pattern): """ Return a list containing a warning that the pattern is invalid. [4362de5d]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [589821bf] [ef5c7728] [170006802885494d-2] [ea0cd304] [bd10b3ee]
+- [589821bf] def _load_all_namespaces(resolver, parents=()): """ Recursively load all namespaces from URL patterns. """ url_patterns = getattr(resolver, "url_patterns", []) namespaces = [ ":".join([*parents, url.namespace]) for url in url_patterns if getattr(url, "namespace", None) is not None ] for pattern in url_patterns: namespace = getattr(pattern, "namespace", None) current = parents if namespace is not None: current += (namespace,) namespaces.extend(_load_all_namespaces(pattern, current)) return namespaces
+- [ef5c7728] def check_resolver(resolver): """ Recursively check the resolver. """ check_method = getattr(resolver, "check", None) if check_method is not None: return check_method() elif not hasattr(resolver, "resolve"): return get_warning_for_invalid_pattern(resolver) else: return []
+- [170006802885494d-2] from . import Error, Tags, Warning, register
+- [ea0cd304] from collections import Counter
+- [bd10b3ee] from django.conf import settings from django.core.exceptions import ViewDoesNotExist from django.utils.inspect import signature

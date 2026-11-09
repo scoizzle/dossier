@@ -1,6 +1,6 @@
 # Fact 2ea94fe3
 
-Store id: 781e6f16-9fd6-4471-9487-77b3ff71e231
+Store id: 52612d73-7d24-4d98-a1a5-96256af8d240
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9390060+00:00`
+- posted_at: `2026-11-09T23:32:00.9903450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 118,
     "symbol": "Collate.as_sql"
   },
-  "id": "781e6f16-9fd6-4471-9487-77b3ff71e231",
+  "id": "52612d73-7d24-4d98-a1a5-96256af8d240",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9390060+00:00"
+    "posted_at": "2026-11-09T23:32:00.9903450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06aa21af-75bd-481c-98db-01a9c51167fd",
+  "subject_id": "048e56b0-59d8-4b49-8d21-e1cff7f79d28",
   "subject_name": "django/db/models/functions/comparison::Collate.as_sql",
   "tags": [
     "entity:method"

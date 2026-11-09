@@ -1,9 +1,9 @@
 # django/db/models/base::Model._get_unique_checks
 
-- Subject: django/db/models/base::Model._get_unique_checks (id `f5990186-2ba9-416b-b624-c0359c9a78b7`)
+- Subject: django/db/models/base::Model._get_unique_checks (id `68e759c9-2763-469a-be67-24f4113de0cc`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

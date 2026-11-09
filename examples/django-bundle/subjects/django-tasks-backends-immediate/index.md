@@ -1,8 +1,8 @@
 # django/tasks/backends/immediate
 
-- Subject: django/tasks/backends/immediate (id `713168b6-9de4-4c0b-b325-2fad63536532`)
+- Subject: django/tasks/backends/immediate (id `48046db3-3076-497f-95af-a78ca12f8b94`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 788 tokens
 - Facts shown: 14 of 14
 - Conflicts: 0

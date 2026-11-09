@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode
 
-- Subject: django/db/models/sql/where::WhereNode (id `b090df3a-5ff1-4b6d-91d5-f36cc575cdca`)
+- Subject: django/db/models/sql/where::WhereNode (id `ea288970-4ff6-472d-bb88-cb5179ab8bf4`)
 - Kind: class
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

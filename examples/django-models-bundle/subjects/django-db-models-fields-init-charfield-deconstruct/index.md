@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::CharField.deconstruct
 
-- Subject: django/db/models/fields/__init__::CharField.deconstruct (id `ecd0348e-62d5-4dd4-897b-d6e98dacae13`)
+- Subject: django/db/models/fields/__init__::CharField.deconstruct (id `e5a559b8-d10c-42bf-8da1-b86774b7e7d8`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

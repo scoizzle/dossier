@@ -1,6 +1,6 @@
 # Fact 5e434591
 
-Store id: 4808885a-227a-4459-b89c-ccc5dfcf56df
+Store id: 0ae13cd8-4791-4979-a5ec-bee420138636
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6208020+00:00`
+- posted_at: `2026-11-09T23:31:57.8579650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 139,
     "symbol": "JSONField.value_to_string"
   },
-  "id": "4808885a-227a-4459-b89c-ccc5dfcf56df",
+  "id": "0ae13cd8-4791-4979-a5ec-bee420138636",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6208020+00:00"
+    "posted_at": "2026-11-09T23:31:57.8579650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5e35ac08-f5ff-4a45-972c-f2c56b0ca523",
+  "subject_id": "ec237e89-f03e-48b1-82e3-97add3f4bef5",
   "subject_name": "django/db/models/fields/json::JSONField.value_to_string",
   "tags": [
     "entity:method"

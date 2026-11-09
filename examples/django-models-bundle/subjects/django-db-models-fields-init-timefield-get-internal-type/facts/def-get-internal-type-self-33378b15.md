@@ -1,6 +1,6 @@
 # Fact 33378b15
 
-Store id: 21a6fe77-72b0-4fc5-836c-ba2780e3a82e
+Store id: eb973705-f19e-4b40-bd77-05cfe3f8bdd7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6633780+00:00`
+- posted_at: `2026-11-09T23:31:56.8190940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2657,
     "symbol": "TimeField.get_internal_type"
   },
-  "id": "21a6fe77-72b0-4fc5-836c-ba2780e3a82e",
+  "id": "eb973705-f19e-4b40-bd77-05cfe3f8bdd7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6633780+00:00"
+    "posted_at": "2026-11-09T23:31:56.8190940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6c002d91-6835-45e3-95df-34510647343b",
+  "subject_id": "e44e4fa8-0e8a-42c4-bb42-bdb54b7a4733",
   "subject_name": "django/db/models/fields/__init__::TimeField.get_internal_type",
   "tags": [
     "entity:method"

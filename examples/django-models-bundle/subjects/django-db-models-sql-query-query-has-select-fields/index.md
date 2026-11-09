@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.has_select_fields
 
-- Subject: django/db/models/sql/query::Query.has_select_fields (id `d390c782-dd78-41e2-9a36-00693e341f9a`)
+- Subject: django/db/models/sql/query::Query.has_select_fields (id `26c39799-4df5-4540-ab0b-4697240864ff`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

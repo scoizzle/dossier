@@ -1,14 +1,14 @@
 # docs/howto/deployment/wsgi/uwsgi
 
-- Subject: docs/howto/deployment/wsgi/uwsgi (id `3c5b7720-2a59-4485-bd10-c45839380ce9`)
+- Subject: docs/howto/deployment/wsgi/uwsgi (id `fe674188-40b4-4582-8825-da6e02e0e30c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 24 of 35
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1361 tokens
+- Facts shown: 35 of 35
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - env = LANG=en_US.UTF-8 [d2048346]
 - # Install current stable version. $ python -m pip install uwsgi [cc3b3e36]
@@ -35,6 +35,16 @@
 - Configuring and starting the uWSGI server for Django ---------------------------------------------------- [57c8759e]
 - uWSGI model ----------- [7e568247]
 
-## Beyond the budget
+## All facts
 
-11 more facts did not fit in the budget: [d4c253ae] [35afd56b] [9868b15c] [0fb7f393] [283a326e] [d0ee42c7] [c80c5458] [c652159d] [c731a106] [f3552a0d] [820d8ba5]
+- [d4c253ae] Example ini configuration file usage:
+- [35afd56b] Example ini configuration file:
+- [9868b15c] Here's an example command to start a uWSGI server:
+- [0fb7f393] Prerequisite: uWSGI ===================
+- [283a326e] See the uWSGI docs on `managing the uWSGI process`_ for information on starting, stopping and reloading the uWSGI workers.
+- [d0ee42c7] The Django-specific options here are:
+- [c80c5458] The uWSGI wiki describes several `installation procedures`_. Using pip, the Python package manager, you can install any uWSGI version with a single command. For example:
+- [c652159d] This assumes you have a top-level project package named ``mysite``, and within it a module :file:`mysite/wsgi.py` that contains a WSGI ``application`` object. This is the layout you'll have if you ran ``django-admin startproject mysite`` (using your own project name in place of ``mysite``) with a recent version of Django. If this file doesn't exist, you'll need to create it. See the :doc:`/howto/deployment/wsgi/index` documentation for the default contents you should put in this file and what else you can add to it.
+- [c731a106] uWSGI operates on a client-server model. Your web server (e.g., nginx, Apache) communicates with a ``django-uwsgi`` "worker" process to serve dynamic content.
+- [f3552a0d] uWSGI supports multiple ways to configure the process. See uWSGI's `configuration documentation`_.
+- [820d8ba5] uWSGI_ is a fast, self-healing and developer/sysadmin-friendly application container server coded in pure C.

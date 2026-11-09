@@ -1,6 +1,6 @@
 # Fact a6ef653e
 
-Store id: 73c0ec07-ad4e-46b4-ad50-9c0fe2c2e80e
+Store id: 47df5e50-6108-41ee-9c72-0355ce1f295d
 
 ## Text
 
@@ -20,7 +20,7 @@ class SHA384(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1878800+00:00`
+- posted_at: `2026-11-09T23:32:02.2915990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 320,
     "symbol": "SHA384"
   },
-  "id": "73c0ec07-ad4e-46b4-ad50-9c0fe2c2e80e",
+  "id": "47df5e50-6108-41ee-9c72-0355ce1f295d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1878800+00:00"
+    "posted_at": "2026-11-09T23:32:02.2915990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82670cf3-6e0c-486f-8ff7-ad2619ac396c",
+  "subject_id": "b1504b4f-270f-4d32-a3f2-6d7f083899a3",
   "subject_name": "django/db/models/functions/text::SHA384",
   "tags": [
     "entity:class"

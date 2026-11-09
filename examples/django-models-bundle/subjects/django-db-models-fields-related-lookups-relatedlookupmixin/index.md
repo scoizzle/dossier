@@ -1,9 +1,9 @@
 # django/db/models/fields/related_lookups::RelatedLookupMixin
 
-- Subject: django/db/models/fields/related_lookups::RelatedLookupMixin (id `977b49e5-1c91-4ed5-9ab5-ac8f744fee6f`)
+- Subject: django/db/models/fields/related_lookups::RelatedLookupMixin (id `6f26c6f7-c3fa-4bc5-a4db-0b40006e3f8b`)
 - Kind: class
 - Parent: [django/db/models/fields/related_lookups](../django-db-models-fields-related-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

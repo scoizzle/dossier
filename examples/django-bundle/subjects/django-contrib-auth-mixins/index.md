@@ -1,14 +1,14 @@
 # django/contrib/auth/mixins
 
-- Subject: django/contrib/auth/mixins (id `d9e00122-7b77-47c1-b0de-aa70c096f41b`)
+- Subject: django/contrib/auth/mixins (id `5aa82aae-d2dc-4e31-9024-7d8859cff1b2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 13 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1159 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - path = self.request.build_absolute_uri() resolved_login_url = resolve_url(self.get_login_url()) # If the login url is the same scheme and net location then use the # path as the "next" url. login_scheme, login_netloc = urlsplit(resolved_login_url)[:2] current_scheme, current_netloc = urlsplit(path)[:2] if (not login_scheme or login_scheme == current_scheme) and ( not login_netloc or login_netloc == current_netloc ): path = self.request.get_full_path() return redirect_to_login( path, resolved_login_url, self.get_redirect_field_name(), ) [82229837]
 - def dispatch(self, request, *args, **kwargs): if not request.user.is_authenticated: return self.handle_no_permission() return super().dispatch(request, *args, **kwargs) [327205b7]
@@ -24,6 +24,12 @@
 - def test_func(self): raise NotImplementedError( "{} is missing the implementation of the test_func() method.".format( self.__class__.__name__ ) ) [0d3589f3]
 - login_url = None permission_denied_message = "" raise_exception = False redirect_field_name = REDIRECT_FIELD_NAME [d809d6d6]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [eb377127] [702f58e6] [f346b335] [b88488bf] [bdd8a75c] [60b7900e] [de548eb6]
+- [eb377127] permission_required = None
+- [702f58e6] class AccessMixin: """ Abstract CBV mixin that gives access mixins the same customizable functionality. """
+- [f346b335] class LoginRequiredMixin(AccessMixin): """Verify that the current user is authenticated."""
+- [b88488bf] class PermissionRequiredMixin(AccessMixin): """Verify that the current user has all specified permissions."""
+- [bdd8a75c] class UserPassesTestMixin(AccessMixin): """ Deny a request with a permission error if the test_func() method returns False. """
+- [60b7900e] from django.conf import settings from django.contrib.auth import REDIRECT_FIELD_NAME from django.contrib.auth.views import redirect_to_login from django.core.exceptions import ImproperlyConfigured, PermissionDenied from django.shortcuts import resolve_url
+- [de548eb6] from urllib.parse import urlsplit

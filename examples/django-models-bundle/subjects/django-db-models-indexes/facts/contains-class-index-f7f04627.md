@@ -1,6 +1,6 @@
 # Fact f7f04627
 
-Store id: 89104783-b196-4d3d-940c-da2ab6315719
+Store id: 4fc9a532-abbf-4b11-9aa2-475240eae77e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Index
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.8269230+00:00`
+- posted_at: `2026-11-09T23:32:02.9673070+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "89104783-b196-4d3d-940c-da2ab6315719",
+  "id": "4fc9a532-abbf-4b11-9aa2-475240eae77e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.8269230+00:00"
+    "posted_at": "2026-11-09T23:32:02.9673070+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Index"
       },
       "rel": "contains",
-      "target": "63b81bce-73eb-42b3-8692-7d60d19a98bf"
+      "target": "0dc7cfe8-099e-4230-bb9e-5c4397cc8c39"
     }
   ],
   "status": "live",
-  "subject_id": "7b06f769-3963-4866-9665-b1b87d2eb0ec",
+  "subject_id": "98a02a58-fa22-414b-b079-a86d651a7525",
   "subject_name": "django/db/models/indexes",
   "tags": [
     "entity:class"

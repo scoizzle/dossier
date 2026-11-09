@@ -1,6 +1,6 @@
 # Fact 189ad703
 
-Store id: 9852906a-1ab9-4ea6-bf5f-5f5aaf85d240
+Store id: 6f6750ec-5c48-4c04-8262-3e3b12e1e428
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_next_or_previous_by_FIELD(self, field, is_next, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3453470+00:00`
+- posted_at: `2026-11-09T23:31:53.7517870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1353,
     "symbol": "Model._get_next_or_previous_by_FIELD"
   },
-  "id": "9852906a-1ab9-4ea6-bf5f-5f5aaf85d240",
+  "id": "6f6750ec-5c48-4c04-8262-3e3b12e1e428",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3453470+00:00"
+    "posted_at": "2026-11-09T23:31:53.7517870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7bdc12c1-d28b-4acd-bb00-b297272c4a40",
+  "subject_id": "89f3df16-4a6d-4498-ad8d-f83e697d5cca",
   "subject_name": "django/db/models/base::Model._get_next_or_previous_by_FIELD",
   "tags": [
     "entity:method"

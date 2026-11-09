@@ -1,8 +1,8 @@
 # django/core/management/sql
 
-- Subject: django/core/management/sql (id `b43294a0-b6ff-4c27-aaa9-0da55b6a9f60`)
+- Subject: django/core/management/sql (id `dbe190cf-29ec-4f28-a911-94a7023f749b`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 274 tokens
 - Facts shown: 4 of 5
 - Conflicts: 0

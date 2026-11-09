@@ -1,14 +1,14 @@
 # docs/releases/1.4.4
 
-- Subject: docs/releases/1.4.4 (id `da1c71c9-6c7f-49e5-a762-2e8e4b70e430`)
+- Subject: docs/releases/1.4.4 (id `74b2b1d8-3c1e-4838-8dc9-69e7df5ec7ab`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 895 tokens
-- Facts shown: 16 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1169 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * Prevented transaction state from leaking from one request to the next (#19707). * Changed an SQL command syntax to be MySQL 4 compatible (#19702). * Added backwards-compatibility with old unsalted MD5 passwords (#18144). * Numerous documentation improvements and fixes. [4a4dacb3]
 - *February 19, 2013* [2dc7ca58ee5f13d5-2]
@@ -27,6 +27,10 @@
 - Some parts of Django -- independent of end-user-written applications -- make use of full URLs, including domain name, which are generated from the HTTP Host header. Django's documentation has for some time contained notes advising users on how to configure web servers to ensure that only valid Host headers can reach the Django application. However, it has been reported to us that even with the recommended web server configurations there are still techniques available for tricking many common web servers into supplying the application with an incorrect and possibly malicious Host header. [41e5a65748f8e85b-2]
 - This host validation is disabled when ``DEBUG`` is ``True`` or when running tests. [d0878cb6f504b7d6-2]
 
-## Beyond the budget
+## All facts
 
-5 more facts did not fit in the budget: [82c9e1ae] [55428e64] [996b6fe372a466bc-2] [685b0659] [30a1cc760b9a67c3-2]
+- [82c9e1ae] The XML parser in the Python standard library is vulnerable to a number of attacks via external entities and entity expansion. Django uses this parser for deserializing XML-formatted database fixtures. This deserializer is not intended for use with untrusted data, but in order to err on the side of safety in Django 1.4.4 the XML deserializer refuses to parse an XML document with a DTD (DOCTYPE definition), which closes off these attack avenues.
+- [55428e64] The default value for this setting in Django 1.4.4 is ``['*']`` (matching any host), for backwards-compatibility, but we strongly encourage all sites to set a more restrictive value.
+- [996b6fe372a466bc-2] These issues in the Python standard library are CVE-2013-1664 and CVE-2013-1665. More information available `from the Python security team`_.
+- [685b0659] This is the fourth bugfix/security release in the Django 1.4 series.
+- [30a1cc760b9a67c3-2] XML deserialization ===================

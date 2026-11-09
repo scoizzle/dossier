@@ -1,6 +1,6 @@
 # Fact 137d41ca
 
-Store id: 27b418c7-3a06-4448-831f-e8735d19c9a1
+Store id: ea58b79b-96b2-4005-855e-2e6039f5dfff
 
 ## Text
 
@@ -20,7 +20,7 @@ class Collector
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0383610+00:00`
+- posted_at: `2026-11-09T23:31:55.0935630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "Collector"
   },
-  "id": "27b418c7-3a06-4448-831f-e8735d19c9a1",
+  "id": "ea58b79b-96b2-4005-855e-2e6039f5dfff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0383610+00:00"
+    "posted_at": "2026-11-09T23:31:55.0935630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "df8b024f-7f5b-4027-927a-e1b65da670f6",
+  "subject_id": "7be0b9ec-c794-4eda-9863-5ac0784b31c2",
   "subject_name": "django/db/models/deletion::Collector",
   "tags": [
     "entity:class"

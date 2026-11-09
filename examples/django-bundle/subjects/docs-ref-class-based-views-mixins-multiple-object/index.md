@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/mixins-multiple-object
 
-- Subject: docs/ref/class-based-views/mixins-multiple-object (id `387a372d-379d-47e4-bd90-538626146b62`)
+- Subject: docs/ref/class-based-views/mixins-multiple-object (id `0cd825ff-9e4e-4d79-b5de-b9d2294b69b4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 18 of 76
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2576 tokens
+- Facts shown: 74 of 76
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - ``queryset`` is a class attribute with a *mutable* value so care must be taken when using it directly. Before using it, either call its :meth:`~django.db.models.query.QuerySet.all` method or retrieve it with :meth:`get_queryset` which takes care of the cloning behind the scenes. [73dbef469a1e5ea6]
 - /objects/?page=3 [da7f53de]
@@ -29,6 +29,61 @@
 - Returns :attr:`ordering` by default. [404481d0]
 - .. code-block:: text [3a9340cd0d877339-17]
 
-## Beyond the budget
+## All facts
 
-56 more facts did not fit in the budget: [a8c0876e] [bc607ad2] [0df91948] [a6fca086] [7fd58491] [6daafa6e] [dff00eea2fe86e53] [dcb92b8c] [c1442de8] [08a4ef8c] [f9349e9ad1d5a49b-2] [663fbf4ea591ec9f] [4c49d60f] [cdb1efc8] [5559776d] [626ad2a7] [22f6d328] [ac0dd05fa9a91c22-8] [f3c346391998d9e9-2] [f3c346391998d9e9-3] [83eda2cf63eef8ea-11] [83eda2cf63eef8ea-12] [e7b6c80190b0dbd9-2] [f20798cb89158385] [a598e6014e379321-2] [ef8b1911] [6fdf5adc] [71bf37ba] [92f358fb] [d6ca6df5] [56676d52c9f851d5] [d458942f800a329c-4] [3a9340cd0d877339-18] [708250ad] [0e06ba1d6d133a88-2] [222c66d8] [06e2c47d] [068efeaa] [2d68c45a] [b3c30b0b] [4774f92856134f81] [68e197214557455a] [5efcda8c] [3c5f343c] [0ebc46e8] [7f96930f] [2b5c244b] [0b94ae4b] [c74868ac] [ddc7b684] [1b73d427] [e47a6c6e] [76b54220] [d8585dcd] [0bdc28d2] [5968e075]
+- [a8c0876e] Returns a 4-tuple containing (``paginator``, ``page``, ``object_list``, ``is_paginated``).
+- [bc607ad2] Returns a list of candidate template names. Returns the following list:
+- [0df91948] Returns a string (or iterable of strings) that defines the ordering that will be applied to the ``queryset``.
+- [a6fca086] Returns an instance of the paginator to use for this view. By default, instantiates an instance of :attr:`paginator_class`.
+- [7fd58491] Returns context data for displaying the list of objects.
+- [6daafa6e] Returns the number of items to paginate by, or ``None`` for no pagination. By default this returns the value of :attr:`paginate_by`.
+- [dff00eea2fe86e53] The model that this view will display data for. Specifying ``model = Foo`` is effectively the same as specifying ``queryset = Foo.objects.all()``, where ``objects`` stands for ``Foo``’s :ref:`default manager <default-managers>`.
+- [dcb92b8c] The suffix to append to the auto-generated candidate template name. Default suffix is ``_list``.
+- [c1442de8] path("objects/page<int:page>/", PaginatedView.as_view()),
+- [08a4ef8c] The paginator class to be used for pagination. By default, :class:`django.core.paginator.Paginator` is used. If the custom paginator class doesn't have the same constructor interface as :class:`django.core.paginator.Paginator`, you will also need to provide an implementation for :meth:`get_paginator`.
+- [f9349e9ad1d5a49b-2] * :class:`django.views.generic.base.ContextMixin`
+- [663fbf4ea591ec9f] * :class:`~django.views.generic.base.TemplateResponseMixin`
+- [4c49d60f] * Pass the page number via the ``page`` query-string parameter. For example, a URL would look like this:
+- [cdb1efc8] * Use the ``page`` parameter in the URLconf. For example, this is what your URLconf might look like::
+- [5559776d] * ``is_paginated``: A boolean representing whether the results are paginated. Specifically, this is set to ``False`` if no page size has been specified, or if the available objects do not span multiple pages.
+- [626ad2a7] * ``object_list``: The list of objects that this view is displaying. If ``context_object_name`` is specified, that variable will also be set in the context, with the same value as ``object_list``.
+- [22f6d328] * ``page_obj``: An instance of :class:`django.core.paginator.Page`. If the page is not paginated, this context variable will be ``None``.
+- [ac0dd05fa9a91c22-8] **Context**
+- [f3c346391998d9e9-2] **Extends**
+- [f3c346391998d9e9-3] **Extends**
+- [83eda2cf63eef8ea-11] **Methods and Attributes**
+- [83eda2cf63eef8ea-12] **Methods and Attributes**
+- [e7b6c80190b0dbd9-2] .. attribute:: allow_empty
+- [f20798cb89158385] .. attribute:: context_object_name
+- [a598e6014e379321-2] .. attribute:: model
+- [ef8b1911] .. attribute:: ordering
+- [6fdf5adc] .. attribute:: page_kwarg
+- [71bf37ba] .. attribute:: paginate_by
+- [92f358fb] .. attribute:: paginate_orphans
+- [d6ca6df5] .. attribute:: paginator_class
+- [56676d52c9f851d5] .. attribute:: queryset
+- [d458942f800a329c-4] .. attribute:: template_name_suffix
+- [3a9340cd0d877339-18] .. code-block:: text
+- [708250ad] .. method:: get_allow_empty()
+- [0e06ba1d6d133a88-2] .. method:: get_context_data(**kwargs)
+- [222c66d8] .. method:: get_context_object_name(object_list)
+- [06e2c47d] .. method:: get_ordering()
+- [068efeaa] .. method:: get_paginate_by(queryset)
+- [2d68c45a] .. method:: get_paginate_orphans()
+- [b3c30b0b] .. method:: get_paginator(queryset, per_page, orphans=0, allow_empty_first_page=True)
+- [4774f92856134f81] .. method:: get_queryset()
+- [68e197214557455a] .. method:: get_template_names()
+- [5efcda8c] .. method:: paginate_queryset(queryset, page_size)
+- [3c5f343c] A mixin class that performs template-based response rendering for views that operate upon a list of object instances. Requires that the view it is mixed with provides ``self.object_list``, the list of object instances that the view is operating on. ``self.object_list`` may be, but is not required to be, a :class:`~django.db.models.query.QuerySet`.
+- [0ebc46e8] A mixin that can be used to display a list of objects.
+- [7f96930f] As a special case, you are also permitted to use ``last`` as a value for ``page``:
+- [2b5c244b] For more on pagination, read the :doc:`pagination documentation </topics/pagination>`.
+- [0b94ae4b] If ``paginate_by`` is specified, Django will paginate the results returned by this. You can specify the page number in the URL in one of two ways:
+- [c74868ac] Note that ``page`` *must* be either a valid page number or the value ``last``; any other value for ``page`` will result in a 404 error.
+- [ddc7b684] These values and lists are 1-based, not 0-based, so the first page would be represented as page ``1``.
+- [1b73d427] This allows you to access the final page of results without first having to determine how many pages there are.
+- [e47a6c6e] .. class:: django.views.generic.list.MultipleObjectMixin
+- [76b54220] .. class:: django.views.generic.list.MultipleObjectTemplateResponseMixin
+- [d8585dcd] ====================== Multiple object mixins ======================
+- [0bdc28d2] ``MultipleObjectMixin`` =======================
+- [5968e075] ``MultipleObjectTemplateResponseMixin`` =======================================

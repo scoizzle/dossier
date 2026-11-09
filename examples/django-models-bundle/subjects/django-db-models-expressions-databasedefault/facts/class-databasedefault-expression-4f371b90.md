@@ -1,6 +1,6 @@
 # Fact 4f371b90
 
-Store id: a4b6f70c-7e4e-482e-a1c9-1b55ab6664b9
+Store id: 9d853dfd-0b4f-48ff-a924-20a0686f1315
 
 ## Text
 
@@ -20,7 +20,7 @@ class DatabaseDefault(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6142320+00:00`
+- posted_at: `2026-11-09T23:31:55.8794120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1311,
     "symbol": "DatabaseDefault"
   },
-  "id": "a4b6f70c-7e4e-482e-a1c9-1b55ab6664b9",
+  "id": "9d853dfd-0b4f-48ff-a924-20a0686f1315",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6142320+00:00"
+    "posted_at": "2026-11-09T23:31:55.8794120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c98563d-865b-405b-9387-73523e1ee65e",
+  "subject_id": "399b5a79-2754-4b8c-8f25-33c691053254",
   "subject_name": "django/db/models/expressions::DatabaseDefault",
   "tags": [
     "entity:class"

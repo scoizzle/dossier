@@ -1,6 +1,6 @@
 # Fact 98ec6dc7
 
-Store id: f013929f-7339-40a6-89f8-593d8f81e373
+Store id: 2fddb4cf-ddff-4c58-95ba-38f92da6a592
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_constraints(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3515800+00:00`
+- posted_at: `2026-11-09T23:31:53.7578580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1673,
     "symbol": "Model.get_constraints"
   },
-  "id": "f013929f-7339-40a6-89f8-593d8f81e373",
+  "id": "2fddb4cf-ddff-4c58-95ba-38f92da6a592",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3515800+00:00"
+    "posted_at": "2026-11-09T23:31:53.7578580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c39b817a-f61e-4b98-b67d-57df5e765b43",
+  "subject_id": "723a8c01-09e1-45c7-9508-2426e4580048",
   "subject_name": "django/db/models/base::Model.get_constraints",
   "tags": [
     "entity:method"

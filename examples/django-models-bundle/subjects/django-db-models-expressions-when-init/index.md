@@ -1,9 +1,9 @@
 # django/db/models/expressions::When.__init__
 
-- Subject: django/db/models/expressions::When.__init__ (id `6d5c4ed6-1b3d-4a88-ad8b-61be7dbaacaa`)
+- Subject: django/db/models/expressions::When.__init__ (id `10d3cebd-2ca3-4c2e-9fdc-ec9ffe88b5f3`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

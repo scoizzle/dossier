@@ -1,6 +1,6 @@
 # Fact 095a306b
 
-Store id: 38a7aab1-d693-4163-9300-7c7dbb34b47f
+Store id: f2eebc26-f9df-4033-a406-eb2121adce8f
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2698950+00:00`
+- posted_at: `2026-11-09T23:31:56.4247160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 299,
     "symbol": "Field.check"
   },
-  "id": "38a7aab1-d693-4163-9300-7c7dbb34b47f",
+  "id": "f2eebc26-f9df-4033-a406-eb2121adce8f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2698950+00:00"
+    "posted_at": "2026-11-09T23:31:56.4247160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f971bf83-25d5-4ca5-9413-1b2be8f9fac0",
+  "subject_id": "5a07eaf8-5a03-4a36-a2de-bca6e1b215df",
   "subject_name": "django/db/models/fields/__init__::Field.check",
   "tags": [
     "entity:method"

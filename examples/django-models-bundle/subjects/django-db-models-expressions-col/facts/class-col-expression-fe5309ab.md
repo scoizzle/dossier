@@ -1,6 +1,6 @@
 # Fact fe5309ab
 
-Store id: a7d5d39d-30f4-4311-940b-150e1d5479ae
+Store id: 375ab4f4-23ab-4138-824e-4a9b3fcefe03
 
 ## Text
 
@@ -20,7 +20,7 @@ class Col(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6261770+00:00`
+- posted_at: `2026-11-09T23:31:55.8880830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1351,
     "symbol": "Col"
   },
-  "id": "a7d5d39d-30f4-4311-940b-150e1d5479ae",
+  "id": "375ab4f4-23ab-4138-824e-4a9b3fcefe03",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6261770+00:00"
+    "posted_at": "2026-11-09T23:31:55.8880830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8f97e8d5-cf12-4bac-87d8-254f05c73aac",
+  "subject_id": "2ff85bdc-fc0c-4e9f-b042-495e5ed32353",
   "subject_name": "django/db/models/expressions::Col",
   "tags": [
     "entity:class"

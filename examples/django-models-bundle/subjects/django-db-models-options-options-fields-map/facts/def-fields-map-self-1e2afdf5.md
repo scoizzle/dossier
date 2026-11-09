@@ -1,6 +1,6 @@
 # Fact 1e2afdf5
 
-Store id: 2db9b72c-45bb-4215-9a66-1e46e6eb9cd7
+Store id: a05f6120-f8e2-4fa9-9fea-ba26e5f4eefe
 
 ## Text
 
@@ -20,7 +20,7 @@ def fields_map(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8650990+00:00`
+- posted_at: `2026-11-09T23:32:03.9985030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 655,
     "symbol": "Options.fields_map"
   },
-  "id": "2db9b72c-45bb-4215-9a66-1e46e6eb9cd7",
+  "id": "a05f6120-f8e2-4fa9-9fea-ba26e5f4eefe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8650990+00:00"
+    "posted_at": "2026-11-09T23:32:03.9985030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9f917f01-8e52-4d5f-abc6-c7883653d8ea",
+  "subject_id": "698d79d4-80da-4f3b-8e20-da127b64eb3a",
   "subject_name": "django/db/models/options::Options.fields_map",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact 1daa3a62
 
-Store id: 26a7623c-9dfe-4b73-9534-857aab66b08d
+Store id: c8860712-92e8-4b27-bb7e-382da9548c82
 
 ## Text
 
@@ -20,7 +20,7 @@ def remove_sql(self, model, schema_editor, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.7847660+00:00`
+- posted_at: `2026-11-09T23:32:02.9176200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 226,
     "symbol": "Index.remove_sql"
   },
-  "id": "26a7623c-9dfe-4b73-9534-857aab66b08d",
+  "id": "c8860712-92e8-4b27-bb7e-382da9548c82",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.7847660+00:00"
+    "posted_at": "2026-11-09T23:32:02.9176200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3cedafe4-c195-489b-9495-523053e3f3cd",
+  "subject_id": "2e256972-341b-40e3-91a6-80cfe92108d1",
   "subject_name": "django/db/models/indexes::Index.remove_sql",
   "tags": [
     "entity:method"

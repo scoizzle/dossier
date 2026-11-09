@@ -1,6 +1,6 @@
 # Fact 8d395106
 
-Store id: 0976efa3-c653-487d-b598-f2110d93c8d0
+Store id: e31b3d77-a87f-4338-aae2-4d4da73a81ec
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncYear(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1905140+00:00`
+- posted_at: `2026-11-09T23:32:01.2722130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 361,
     "symbol": "TruncYear"
   },
-  "id": "0976efa3-c653-487d-b598-f2110d93c8d0",
+  "id": "e31b3d77-a87f-4338-aae2-4d4da73a81ec",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1905140+00:00"
+    "posted_at": "2026-11-09T23:32:01.2722130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cdf4b9e6-7ebf-4def-ac59-cf7f0b59427b",
+  "subject_id": "d8aabd1f-2de6-4cdb-a2be-11bc7e9ed90c",
   "subject_name": "django/db/models/functions/datetime::TruncYear",
   "tags": [
     "entity:class"

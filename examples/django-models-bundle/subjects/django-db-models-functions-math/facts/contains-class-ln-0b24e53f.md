@@ -1,6 +1,6 @@
 # Fact 0b24e53f
 
-Store id: b5566353-2b62-4a43-b7bf-ee4873b11578
+Store id: 0d458194-3fe9-4dd1-9751-aa88349c4f36
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Ln
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b5566353-2b62-4a43-b7bf-ee4873b11578",
+  "id": "0d458194-3fe9-4dd1-9751-aa88349c4f36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Ln"
       },
       "rel": "contains",
-      "target": "04d93e38-b387-4bf9-ae1d-bad5fd02448b"
+      "target": "f77e8244-80f2-40bb-b445-0032159a24bc"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

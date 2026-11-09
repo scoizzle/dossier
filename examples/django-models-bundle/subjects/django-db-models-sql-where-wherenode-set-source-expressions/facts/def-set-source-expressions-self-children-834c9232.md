@@ -1,6 +1,6 @@
 # Fact 834c9232
 
-Store id: 434c37ad-d889-442f-b01e-a538e6b6c0f9
+Store id: 18fb12ce-53e9-4eea-b218-18f09f4c32ca
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_source_expressions(self, children)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9176010+00:00`
+- posted_at: `2026-11-09T23:32:07.6111320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 199,
     "symbol": "WhereNode.set_source_expressions"
   },
-  "id": "434c37ad-d889-442f-b01e-a538e6b6c0f9",
+  "id": "18fb12ce-53e9-4eea-b218-18f09f4c32ca",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9176010+00:00"
+    "posted_at": "2026-11-09T23:32:07.6111320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79922929-9e8c-48ee-a6d2-d5efe3e00cf6",
+  "subject_id": "cdddee09-a493-4dcf-a1ce-13fa0f7bdea5",
   "subject_name": "django/db/models/sql/where::WhereNode.set_source_expressions",
   "tags": [
     "entity:method"

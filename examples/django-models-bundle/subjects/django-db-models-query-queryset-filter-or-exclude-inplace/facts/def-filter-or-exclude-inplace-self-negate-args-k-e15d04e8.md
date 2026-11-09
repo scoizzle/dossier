@@ -1,6 +1,6 @@
 # Fact e15d04e8
 
-Store id: 4fc806eb-6c9c-4d55-affd-42b2d709dfbe
+Store id: d5abd8fb-ccc8-420f-8942-7d10a1c5e50a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _filter_or_exclude_inplace(self, negate, args, kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6149200+00:00`
+- posted_at: `2026-11-09T23:32:04.5472770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1722,
     "symbol": "QuerySet._filter_or_exclude_inplace"
   },
-  "id": "4fc806eb-6c9c-4d55-affd-42b2d709dfbe",
+  "id": "d5abd8fb-ccc8-420f-8942-7d10a1c5e50a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6149200+00:00"
+    "posted_at": "2026-11-09T23:32:04.5472770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c11349af-5fe7-47dd-81be-b32cb9bb0b37",
+  "subject_id": "36dc41fa-6c7e-4a95-9340-0e4d9f4f05a5",
   "subject_name": "django/db/models/query::QuerySet._filter_or_exclude_inplace",
   "tags": [
     "entity:method"

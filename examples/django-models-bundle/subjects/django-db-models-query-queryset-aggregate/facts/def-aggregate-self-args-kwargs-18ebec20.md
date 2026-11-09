@@ -1,6 +1,6 @@
 # Fact 18ebec20
 
-Store id: 76ca8f24-e8ab-4a7d-83ea-16ea871dc253
+Store id: 12668043-cf43-4ae2-81b6-b3f312a7f646
 
 ## Text
 
@@ -20,7 +20,7 @@ def aggregate(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3686930+00:00`
+- posted_at: `2026-11-09T23:32:04.3689950+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 654,
     "symbol": "QuerySet.aggregate"
   },
-  "id": "76ca8f24-e8ab-4a7d-83ea-16ea871dc253",
+  "id": "12668043-cf43-4ae2-81b6-b3f312a7f646",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3686930+00:00"
+    "posted_at": "2026-11-09T23:32:04.3689950+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8b195db5-a813-4489-a53d-92eee8b9b591",
+  "subject_id": "9614e782-bcfd-408b-8c95-aec30d04a907",
   "subject_name": "django/db/models/query::QuerySet.aggregate",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/install/postgis
 
-- Subject: docs/ref/contrib/gis/install/postgis (id `ca9010cf-52f0-4790-bb0e-feb0f9b95278`)
+- Subject: docs/ref/contrib/gis/install/postgis (id `44541607-1c87-4f5d-ae39-4d3351423da7`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 867 tokens
-- Facts shown: 20 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 943 tokens
+- Facts shown: 21 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ createdb <db name> $ psql <db name> > CREATE EXTENSION postgis; [9d5b5630]
 - class Migration(migrations.Migration): operations = [CreateExtension("postgis"), ...] [824ce545]
@@ -31,6 +31,6 @@
 - To administer the database, you can either use the pgAdmin III program (:menuselection:`Start --> PostgreSQL X --> pgAdmin III`) or the SQL Shell (:menuselection:`Start --> PostgreSQL X --> SQL Shell`). For example, to create a ``geodjango`` spatial database and user, the following may be executed from the SQL Shell as the ``postgres`` user: [fd38c5a4]
 - __ https://postgis.net/docs/Topology.html [9a1307f9]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [0909c0f0]
+- [0909c0f0] `PostGIS`_ adds geographic object support to PostgreSQL, turning it into a spatial database. :ref:`geosbuild`, :ref:`proj4` and :ref:`gdalbuild` should be installed prior to building PostGIS. You might also need additional libraries, see `PostGIS requirements`_.

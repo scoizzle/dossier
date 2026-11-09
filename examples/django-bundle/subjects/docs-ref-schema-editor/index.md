@@ -1,14 +1,14 @@
 # docs/ref/schema-editor
 
-- Subject: docs/ref/schema-editor (id `87879aeb-7096-4943-b4f4-74aec8b78292`)
+- Subject: docs/ref/schema-editor (id `bf06c4f5-0a36-46a0-a003-e5093058b518`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 30 of 70
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2457 tokens
+- Facts shown: 69 of 70
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - with connection.schema_editor() as schema_editor: schema_editor.delete_model(MyModel) [45a2c8c2]
 - .. attribute:: SchemaEditor.connection [a55b62d5]
@@ -41,6 +41,44 @@
 - Changes a model's ``index_together`` value; this will add or remove indexes from the model's table until they match the new value. [8428a7ff]
 - Methods ======= [ec8366aa0d7b3837-2]
 
-## Beyond the budget
+## All facts
 
-39 more facts did not fit in the budget: [f6103c2f] [29c76d32] [1bff3a8a] [71d3a129] [0f1e04b1] [0c0b3aa9] [450e2d50] [62171d93] [e4788018] [685a1ed7] [6665990b] [2fe0ab9f] [52142ec2] [ec2a312e] [d33e9e65] [48c29172] [7270e81f] [9dcdb9a6] [e8de5193] [f19b3d68] [3a635d1f] [c3298783] [ef99d405] [0fc7f004] [ec533205] [ce9081d4] [18b3d2d6] [29c11dc6] [84f0fa00] [9d24df44] [cf7f28d8] [005be3c6] [14b94ab0] [62cd38af] [c923a96f] [ced86606] [bfdafc92] [e0dc6033] [caceb211]
+- [f6103c2f] Creates a new table in the database for the provided model, along with any unique constraints or indexes it requires.
+- [29c76d32] Django's migration system is split into two parts; the logic for calculating and storing what operations should be run (``django.db.migrations``), and the database abstraction layer that turns things like "create a model" or "delete a field" into SQL - which is the job of the ``SchemaEditor``.
+- [1bff3a8a] Drops the model's table in the database along with any unique constraints or indexes it has.
+- [71d3a129] Each database backend in Django supplies its own version of ``SchemaEditor``, and it's always accessible via the ``connection.schema_editor()`` context manager::
+- [0f1e04b1] Executes the SQL statement passed in, with parameters if supplied. This is a wrapper around the normal database cursors that allows capture of the SQL to a ``.sql`` file if the user wishes.
+- [0c0b3aa9] If the database has the ``supports_combined_alters``, Django will try and do as many of these in a single database call as possible; otherwise, it will issue a separate ALTER statement for each change, but will not issue ALTERs where no change is required.
+- [450e2d50] If the field is a ManyToManyField without a value for ``through``, it will remove the table created to track the relationship. If ``through`` is provided, it is a no-op.
+- [62171d93] If the field is a ``ForeignKey``, this will also add the foreign key constraint to the column.
+- [e4788018] If the field is a ``ManyToManyField`` without a value for ``through``, instead of creating a column, it will make a table to represent the relationship. If ``through`` is provided, it is a no-op.
+- [685a1ed7] If you are writing or maintaining a third-party database backend for Django, you will need to provide a ``SchemaEditor`` implementation in order to work with Django's migration functionality - however, as long as your database is relatively standard in its use of SQL and relational design, you should be able to subclass one of the built-in Django ``SchemaEditor`` classes and tweak the syntax a little.
+- [6665990b] It exposes all possible operations as methods, that should be called in the order you wish changes to be applied. Some possible operations or types of change are not possible on all databases - for example, MyISAM does not support foreign key constraints.
+- [2fe0ab9f] It must be used via the context manager as this allows it to manage things like transactions and deferred SQL (like creating ``ForeignKey`` constraints).
+- [52142ec2] It's unlikely that you will want to interact directly with ``SchemaEditor`` as a normal developer using Django, but if you want to write your own migration system, or have more advanced needs, it's a lot nicer than writing SQL.
+- [ec2a312e] Moves the model's table from one tablespace to another.
+- [d33e9e65] Removes ``constraint`` from ``model``'s table.
+- [48c29172] Removes ``index`` from ``model``’s table.
+- [7270e81f] Removes the column(s) representing the field from the model's table, along with any unique constraints, foreign key constraints, or indexes caused by that field.
+- [9dcdb9a6] Renames ``old_index`` from ``model``’s table to ``new_index``.
+- [e8de5193] Renames the model's table from ``old_db_table`` to ``new_db_table``.
+- [f19b3d68] The most common transformation this cannot do is transforming a ``ManyToManyField`` into a normal Field or vice-versa; Django cannot do this without losing data, and so it will refuse to do it. Instead, :meth:`.remove_field` and :meth:`.add_field` should be called separately.
+- [3a635d1f] This is useful when doing data migrations for :ref:`migrations with multiple databases <data-migrations-and-multiple-databases>`.
+- [c3298783] This transforms the field on the model from the old field to the new one. This includes changing the name of the column (the :attr:`~django.db.models.Field.db_column` attribute), changing the type of the field (if the field class changes), changing the ``NULL`` status of the field, adding or removing field-only unique constraints and indexes, changing primary key, and changing the destination of ``ForeignKey`` constraints.
+- [ef99d405] ``add_constraint()`` --------------------
+- [0fc7f004] ``add_field()`` ---------------
+- [ec533205] ``add_index()`` ---------------
+- [ce9081d4] ``alter_db_table()`` --------------------
+- [18b3d2d6] ``alter_db_table_comment()`` ----------------------------
+- [29c11dc6] ``alter_db_tablespace()`` -------------------------
+- [84f0fa00] ``alter_field()`` -----------------
+- [9d24df44] ``alter_index_together()`` --------------------------
+- [cf7f28d8] ``alter_unique_together()`` ---------------------------
+- [005be3c6] ``connection`` --------------
+- [14b94ab0] ``create_model()`` ------------------
+- [62cd38af] ``delete_model()`` ------------------
+- [c923a96f] ``execute()`` -------------
+- [ced86606] ``remove_constraint()`` -----------------------
+- [bfdafc92] ``remove_field()`` ------------------
+- [e0dc6033] ``remove_index()`` ------------------
+- [caceb211] ``rename_index()`` ------------------

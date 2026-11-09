@@ -1,14 +1,14 @@
 # docs/intro/tutorial08
 
-- Subject: docs/intro/tutorial08 (id `86049acc-6bc5-43e8-9c9f-ea3a51c35a36`)
+- Subject: docs/intro/tutorial08 (id `b159a12d-1d7f-4d48-8895-1ad62175f610`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 883 tokens
-- Facts shown: 16 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1420 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ python -m pip install django-debug-toolbar [916a9692]
 - If you're having trouble going through this tutorial, please head over to the :doc:`Getting Help</faq/help>` section of the FAQ. [eff105796d7d4d6a-8]
@@ -27,6 +27,13 @@
 - It can be difficult to know what third-party packages you should use. This depends on your needs and goals. Sometimes it's fine to use a package that's in its alpha state. Other times, you need to know it's production ready. `Adam Johnson has a blog post <https://adamj.eu/tech/2021/11/04/the-well-maintained-test/>`_ that outlines a set of characteristics that qualifies a package as "well maintained". Django Packages shows data for some of these characteristics, such as when the package was last updated. [2867936d]
 - What's next? ============ [772ceab8a391e4de-2]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [8dff7427] [54c635e7] [2ece33d3] [f70507d6] [8a3870ee] [4225048a] [31cb9a76] [e929bc03]
+- [8dff7427] Once installed, you should be able to see the DjDT "handle" on the right side of the browser window when you browse to ``http://localhost:8000/admin/``. Click it to open the debug toolbar and use the tools in each panel. See the `panels documentation page`__ for more information on what the panels show.
+- [54c635e7] The beginner tutorial ends here. In the meantime, you might want to check out some pointers on :doc:`where to go from here </intro/whatsnext>`.
+- [2ece33d3] There are many more third-party packages, which you can find using the fantastic Django resource, `Django Packages <https://djangopackages.org/>`_.
+- [f70507d6] Third-party packages that integrate with Django need some post-installation setup to integrate them with your project. Often you will need to add the package's Django app to your :setting:`INSTALLED_APPS` setting. Some packages need other changes, like additions to your URLconf (``urls.py``).
+- [8a3870ee] This tutorial begins where :doc:`Tutorial 7 </intro/tutorial07>` left off. We've built our web-poll application and will now look at third-party packages. One of Django's strengths is the rich ecosystem of third-party packages. They're community developed packages that can be used to quickly improve the feature set of an application.
+- [4225048a] This tutorial will show how to add :pypi:`Django Debug Toolbar <django-debug-toolbar>`, a commonly used third-party package. The Django Debug Toolbar has ranked in the top three most used third-party packages in the Django Developers Survey in recent years.
+- [31cb9a76] To install a third-party application like the toolbar, you need to install the package by running the below command within an activated virtual environment. This is similar to our earlier step to :ref:`install Django <installing-official-release>`.
+- [e929bc03] __ https://django-debug-toolbar.readthedocs.io/en/latest/panels.html

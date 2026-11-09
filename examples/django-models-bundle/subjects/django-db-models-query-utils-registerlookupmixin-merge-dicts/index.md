@@ -1,9 +1,9 @@
 # django/db/models/query_utils::RegisterLookupMixin.merge_dicts
 
-- Subject: django/db/models/query_utils::RegisterLookupMixin.merge_dicts (id `eb0f8271-cb8c-41fa-ac10-8bbe6af6f795`)
+- Subject: django/db/models/query_utils::RegisterLookupMixin.merge_dicts (id `dfc44a88-7b05-4296-98f9-1bd785e9e12e`)
 - Kind: static_method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

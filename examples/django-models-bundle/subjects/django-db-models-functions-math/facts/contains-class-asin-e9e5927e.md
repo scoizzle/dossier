@@ -1,6 +1,6 @@
 # Fact e9e5927e
 
-Store id: dcce042b-2583-47cc-9757-b895639226c9
+Store id: 0885f2e8-362c-423a-88ed-d16b41eb0097
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ASin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "dcce042b-2583-47cc-9757-b895639226c9",
+  "id": "0885f2e8-362c-423a-88ed-d16b41eb0097",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ASin"
       },
       "rel": "contains",
-      "target": "47b975c9-aa70-4c0e-b800-3f2e70e34fb6"
+      "target": "98262b19-5a79-4115-877e-fa6a841f9747"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

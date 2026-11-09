@@ -1,6 +1,6 @@
 # Fact dfce8128
 
-Store id: 4217a726-eb1d-451e-9481-28e00da43d84
+Store id: 1d986bb7-d056-4ad3-a2f3-df0232f9606c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Exp
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6915750+00:00`
+- posted_at: `2026-11-09T23:32:01.7827000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4217a726-eb1d-451e-9481-28e00da43d84",
+  "id": "1d986bb7-d056-4ad3-a2f3-df0232f9606c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6915750+00:00"
+    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Exp"
       },
       "rel": "contains",
-      "target": "6e0ed2e3-4fd3-4d4d-bee0-bfede2d53061"
+      "target": "a2b302af-8deb-4e9b-a8cc-da4cf5ea0705"
     }
   ],
   "status": "live",
-  "subject_id": "a9d008b6-a3cc-46f7-84ae-22d1fddc73fd",
+  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.join_parent_model
 
-- Subject: django/db/models/sql/query::Query.join_parent_model (id `08f62f0b-b303-4589-b6f7-93a96806fa69`)
+- Subject: django/db/models/sql/query::Query.join_parent_model (id `2737c3a2-0fd9-445c-9b07-1f5f982ef9d8`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

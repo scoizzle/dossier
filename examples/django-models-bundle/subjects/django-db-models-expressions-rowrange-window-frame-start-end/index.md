@@ -1,9 +1,9 @@
 # django/db/models/expressions::RowRange.window_frame_start_end
 
-- Subject: django/db/models/expressions::RowRange.window_frame_start_end (id `effb0ca2-9d7b-4b55-9806-6e9133848a78`)
+- Subject: django/db/models/expressions::RowRange.window_frame_start_end (id `ea17ee55-6e8c-4b80-aca2-b63572c45554`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

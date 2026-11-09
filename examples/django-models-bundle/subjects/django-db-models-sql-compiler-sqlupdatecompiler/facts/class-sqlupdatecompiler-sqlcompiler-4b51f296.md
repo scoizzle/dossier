@@ -1,6 +1,6 @@
 # Fact 4b51f296
 
-Store id: 21821a6e-1db0-4e1b-b7c2-eea277ee8d97
+Store id: a3132ee2-04e0-40da-a51f-51634e72816d
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLUpdateCompiler(SQLCompiler)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7282340+00:00`
+- posted_at: `2026-11-09T23:32:06.0608030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2051,
     "symbol": "SQLUpdateCompiler"
   },
-  "id": "21821a6e-1db0-4e1b-b7c2-eea277ee8d97",
+  "id": "a3132ee2-04e0-40da-a51f-51634e72816d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7282340+00:00"
+    "posted_at": "2026-11-09T23:32:06.0608030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "51bac652-efc8-4697-89a6-d55a545dc993",
+  "subject_id": "a16c62f3-05dc-44e4-9faf-df9680909823",
   "subject_name": "django/db/models/sql/compiler::SQLUpdateCompiler",
   "tags": [
     "entity:class"

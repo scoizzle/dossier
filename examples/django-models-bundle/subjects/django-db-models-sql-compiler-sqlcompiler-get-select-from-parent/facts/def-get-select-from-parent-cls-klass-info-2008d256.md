@@ -1,6 +1,6 @@
 # Fact 2008d256
 
-Store id: ea4912be-0863-4b35-96dd-937354a5649c
+Store id: 81b752ca-50e6-4c59-80ce-0a80c9ee18e7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_select_from_parent(cls, klass_info)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5812870+00:00`
+- posted_at: `2026-11-09T23:32:05.6979400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 233,
     "symbol": "SQLCompiler.get_select_from_parent"
   },
-  "id": "ea4912be-0863-4b35-96dd-937354a5649c",
+  "id": "81b752ca-50e6-4c59-80ce-0a80c9ee18e7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5812870+00:00"
+    "posted_at": "2026-11-09T23:32:05.6979400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "45c889b1-40c9-41dd-914e-24f417a0c3d5",
+  "subject_id": "c8bf04aa-faa8-43e7-a3e5-1a8395c717c9",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select_from_parent",
   "tags": [
     "entity:class_method",

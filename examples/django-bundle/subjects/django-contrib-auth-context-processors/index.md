@@ -1,8 +1,8 @@
 # django/contrib/auth/context_processors
 
-- Subject: django/contrib/auth/context_processors (id `49f03a31-8a97-4479-a630-a0a35f4503ca`)
+- Subject: django/contrib/auth/context_processors (id `effa22ee-f9c2-4448-a869-4add3106933a`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 559 tokens
 - Facts shown: 15 of 15
 - Conflicts: 0

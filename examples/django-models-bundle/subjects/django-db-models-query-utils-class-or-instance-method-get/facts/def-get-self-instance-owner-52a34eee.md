@@ -1,6 +1,6 @@
 # Fact 52a34eee
 
-Store id: 876008f8-ef52-4d45-b599-33968a7077dc
+Store id: 054f4c37-cc01-4b46-9975-fcc8d2b43591
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, owner)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1333150+00:00`
+- posted_at: `2026-11-09T23:32:05.1340550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 330,
     "symbol": "class_or_instance_method.__get__"
   },
-  "id": "876008f8-ef52-4d45-b599-33968a7077dc",
+  "id": "054f4c37-cc01-4b46-9975-fcc8d2b43591",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1333150+00:00"
+    "posted_at": "2026-11-09T23:32:05.1340550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "972092ab-4e40-408a-9ddb-2ee62d716a49",
+  "subject_id": "d3a7b5f0-f3e9-48ec-b1e3-4c589007bdbd",
   "subject_name": "django/db/models/query_utils::class_or_instance_method.__get__",
   "tags": [
     "entity:method"

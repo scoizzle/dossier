@@ -1,6 +1,6 @@
 # Fact 42c0fb98
 
-Store id: 6232b6a2-1282-49cd-87c4-78cccbe98898
+Store id: c074908c-e8e7-4e5a-8d74-ac951477e2e4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FilteredRelation
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.2075540+00:00`
+- posted_at: `2026-11-09T23:32:05.2268070+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6232b6a2-1282-49cd-87c4-78cccbe98898",
+  "id": "c074908c-e8e7-4e5a-8d74-ac951477e2e4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.2075540+00:00"
+    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FilteredRelation"
       },
       "rel": "contains",
-      "target": "390b76e3-3d0f-49a8-ba96-6d3698463523"
+      "target": "db5c187d-a941-4ad4-ab05-7016cf75652f"
     }
   ],
   "status": "live",
-  "subject_id": "37abb0c2-46cb-4f07-a1c9-39d94326e8fb",
+  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:class"

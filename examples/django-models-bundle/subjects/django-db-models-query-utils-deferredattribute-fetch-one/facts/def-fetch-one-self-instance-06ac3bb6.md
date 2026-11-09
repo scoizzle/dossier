@@ -1,6 +1,6 @@
 # Fact 06ac3bb6
 
-Store id: 139cdebb-e13b-4558-aa3a-4f68fada4ec9
+Store id: c7b1568f-903a-4352-b7e3-662b380906a7
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_one(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1212710+00:00`
+- posted_at: `2026-11-09T23:32:05.1196660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 301,
     "symbol": "DeferredAttribute.fetch_one"
   },
-  "id": "139cdebb-e13b-4558-aa3a-4f68fada4ec9",
+  "id": "c7b1568f-903a-4352-b7e3-662b380906a7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1212710+00:00"
+    "posted_at": "2026-11-09T23:32:05.1196660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bffff1b1-0651-406c-93fa-9409aa9a44aa",
+  "subject_id": "b3b637aa-7e24-4c65-b4fd-22fbad12bf04",
   "subject_name": "django/db/models/query_utils::DeferredAttribute.fetch_one",
   "tags": [
     "entity:method"

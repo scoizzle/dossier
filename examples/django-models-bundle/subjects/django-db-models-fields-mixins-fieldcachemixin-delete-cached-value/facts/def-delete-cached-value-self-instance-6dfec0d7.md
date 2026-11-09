@@ -1,6 +1,6 @@
 # Fact 6dfec0d7
 
-Store id: 15d4699d-fef2-4072-938c-9cebe74d8c05
+Store id: cd0caaa5-3379-4c18-9c84-7603341390a9
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete_cached_value(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.9375130+00:00`
+- posted_at: `2026-11-09T23:31:58.2323030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 33,
     "symbol": "FieldCacheMixin.delete_cached_value"
   },
-  "id": "15d4699d-fef2-4072-938c-9cebe74d8c05",
+  "id": "cd0caaa5-3379-4c18-9c84-7603341390a9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.9375130+00:00"
+    "posted_at": "2026-11-09T23:31:58.2323030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7f04d58c-e504-468d-8f57-f6a3728e3e0a",
+  "subject_id": "1e969df7-3263-4c79-945e-36bb85e3aa4e",
   "subject_name": "django/db/models/fields/mixins::FieldCacheMixin.delete_cached_value",
   "tags": [
     "entity:method"

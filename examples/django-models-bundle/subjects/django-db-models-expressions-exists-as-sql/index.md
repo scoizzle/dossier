@@ -1,9 +1,9 @@
 # django/db/models/expressions::Exists.as_sql
 
-- Subject: django/db/models/expressions::Exists.as_sql (id `f1d13307-2c22-472b-886b-88e01c88c43f`)
+- Subject: django/db/models/expressions::Exists.as_sql (id `afb8d233-b0a6-451c-91a9-ff6b55376dbd`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

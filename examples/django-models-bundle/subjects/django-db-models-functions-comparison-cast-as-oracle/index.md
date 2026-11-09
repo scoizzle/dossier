@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Cast.as_oracle
 
-- Subject: django/db/models/functions/comparison::Cast.as_oracle (id `50a3fa08-c9ea-4573-82c5-587d4d0ef863`)
+- Subject: django/db/models/functions/comparison::Cast.as_oracle (id `c7dd947f-2ed0-4435-80ad-269334026fe0`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

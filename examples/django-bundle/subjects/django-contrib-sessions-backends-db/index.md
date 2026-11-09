@@ -1,14 +1,14 @@
 # django/contrib/sessions/backends/db
 
-- Subject: django/contrib/sessions/backends/db (id `1e9b8d25-b453-4960-b035-c5482dda077c`)
+- Subject: django/contrib/sessions/backends/db (id `5345297e-debc-4e29-b283-1cb96c5769f6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 15 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1461 tokens
+- Facts shown: 24 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - await sync_transaction() except IntegrityError: if must_create: raise CreateError raise except DatabaseError: if not must_create: raise UpdateError raise [da288410]
 - return Session [a8c6c797]
@@ -26,6 +26,14 @@
 - def __init__(self, session_key=None): super().__init__(session_key) [680783a9]
 - def create(self): while True: self._session_key = self._get_new_session_key() try: # Save immediately to ensure we have a unique entry in the # database. self.save(must_create=True) except CreateError: # Key wasn't unique. Try again. continue self.modified = True return [607d2ac7]
 
-## Beyond the budget
+## All facts
 
-9 more facts did not fit in the budget: [ce8d5d30] [83b9ecc1] [8b9dc5b8] [32e9ffd0] [eb3385c0] [4894ad97] [770890ad88958a4c-6] [25d79940] [47bc951ed6a0e3cc-4]
+- [ce8d5d30] def create_model_instance(self, data): """ Return a new instance of the session model object, which represents the current session state. Intended to be used for saving the session data to the database. """ return self.model( session_key=self._get_or_create_session_key(), session_data=self.encode(data), expire_date=self.get_expiry_date(), )
+- [83b9ecc1] def delete(self, session_key=None): if session_key is None: if self.session_key is None: return session_key = self.session_key try: self.model.objects.get(session_key=session_key).delete() except self.model.DoesNotExist: pass
+- [8b9dc5b8] def exists(self, session_key): return self.model.objects.filter(session_key=session_key).exists()
+- [32e9ffd0] def load(self): s = self._get_session_from_db() return self.decode(s.session_data) if s else {}
+- [eb3385c0] def save(self, must_create=False): """ Save the current session data to the database. If 'must_create' is True, raise a database error if the saving operation doesn't create a new entry (as opposed to possibly updating an existing entry). """ if self.session_key is None: return self.create() data = self._get_session(no_load=must_create) obj = self.create_model_instance(data) using = router.db_for_write(self.model, instance=obj) try: with transaction.atomic(using=using): obj.save( force_insert=must_create, force_update=not must_create, using=using ) except IntegrityError: if must_create: raise CreateError raise except DatabaseError: if not must_create: raise UpdateError raise
+- [4894ad97] class SessionStore(SessionBase): """ Implement database session store. """
+- [770890ad88958a4c-6] from asgiref.sync import sync_to_async
+- [25d79940] from django.contrib.sessions.backends.base import CreateError, SessionBase, UpdateError from django.core.exceptions import SuspiciousOperation from django.db import DatabaseError, IntegrityError, router, transaction from django.utils import timezone from django.utils.functional import cached_property
+- [47bc951ed6a0e3cc-4] import logging

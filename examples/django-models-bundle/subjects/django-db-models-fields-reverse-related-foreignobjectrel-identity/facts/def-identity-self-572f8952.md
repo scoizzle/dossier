@@ -1,6 +1,6 @@
 # Fact 572f8952
 
-Store id: 64472296-8492-4464-88ca-61f6fc236416
+Store id: 5aa2e2a8-f145-46c7-9739-5bcd32d3b375
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3340160+00:00`
+- posted_at: `2026-11-09T23:32:00.2789920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 138,
     "symbol": "ForeignObjectRel.identity"
   },
-  "id": "64472296-8492-4464-88ca-61f6fc236416",
+  "id": "5aa2e2a8-f145-46c7-9739-5bcd32d3b375",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3340160+00:00"
+    "posted_at": "2026-11-09T23:32:00.2789920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "008d10e6-c7b1-40ec-9dc2-9f0aaf5fe2c9",
+  "subject_id": "5470159c-39bb-4709-8da2-65ab594df5fc",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.identity",
   "tags": [
     "entity:method",

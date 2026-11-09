@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Repeat
 
-- Subject: django/db/models/functions/text::Repeat (id `ba416ab0-9e01-40ff-b308-ff9b8d4759b0`)
+- Subject: django/db/models/functions/text::Repeat (id `10b0c4e7-691a-441e-93c3-e7cb53e84205`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

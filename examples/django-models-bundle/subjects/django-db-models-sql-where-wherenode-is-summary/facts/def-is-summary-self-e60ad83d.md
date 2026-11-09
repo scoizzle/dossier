@@ -1,6 +1,6 @@
 # Fact e60ad83d
 
-Store id: b54b40ea-2a3c-4d9e-8059-d657ebbac0e9
+Store id: f999420c-a7b8-430e-b193-dfc96a5e03e0
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_summary(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9495040+00:00`
+- posted_at: `2026-11-09T23:32:07.6598270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 266,
     "symbol": "WhereNode.is_summary"
   },
-  "id": "b54b40ea-2a3c-4d9e-8059-d657ebbac0e9",
+  "id": "f999420c-a7b8-430e-b193-dfc96a5e03e0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9495040+00:00"
+    "posted_at": "2026-11-09T23:32:07.6598270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ac637ef-8d8a-43dd-9e16-a8687cde64ce",
+  "subject_id": "cdaf6e92-635f-42be-be30-c7b63e63698b",
   "subject_name": "django/db/models/sql/where::WhereNode.is_summary",
   "tags": [
     "entity:method",

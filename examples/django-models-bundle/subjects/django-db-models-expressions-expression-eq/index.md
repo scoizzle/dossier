@@ -1,9 +1,9 @@
 # django/db/models/expressions::Expression.__eq__
 
-- Subject: django/db/models/expressions::Expression.__eq__ (id `6777629c-d0c6-4f05-b22e-7aeaae2b871e`)
+- Subject: django/db/models/expressions::Expression.__eq__ (id `d72acaec-9034-45a9-b13e-0122c07ce744`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 15126800
 
-Store id: 961c9c51-aa7f-42a0-a4bc-f73f1958c5aa
+Store id: df556ad2-7e39-4fb7-877d-301ee36984ec
 
 ## Text
 
@@ -20,7 +20,7 @@ def unnest(fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0227470+00:00`
+- posted_at: `2026-11-09T23:31:57.1481390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 168,
     "symbol": "unnest"
   },
-  "id": "961c9c51-aa7f-42a0-a4bc-f73f1958c5aa",
+  "id": "df556ad2-7e39-4fb7-877d-301ee36984ec",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0227470+00:00"
+    "posted_at": "2026-11-09T23:31:57.1481390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9149dc15-2f26-410f-b6de-667708ca1215",
+  "subject_id": "4d8ccf57-2293-4b4d-82a9-fb5f5fcae52f",
   "subject_name": "django/db/models/fields/composite::unnest",
   "tags": [
     "entity:function"

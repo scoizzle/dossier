@@ -1,6 +1,6 @@
 # Fact 874b35bd
 
-Store id: 587f0476-1668-449b-8b38-702b099c06ef
+Store id: 138e8268-23c4-4c78-88d3-05e5591165a4
 
 ## Text
 
@@ -20,7 +20,7 @@ def exists(self, limit=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2661080+00:00`
+- posted_at: `2026-11-09T23:32:06.8049670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 661,
     "symbol": "Query.exists"
   },
-  "id": "587f0476-1668-449b-8b38-702b099c06ef",
+  "id": "138e8268-23c4-4c78-88d3-05e5591165a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2661080+00:00"
+    "posted_at": "2026-11-09T23:32:06.8049670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "783b1460-4db8-4f2d-8634-8e1d0584f43f",
+  "subject_id": "b8b62173-aad1-42c5-99cd-8fe5de3d613e",
   "subject_name": "django/db/models/sql/query::Query.exists",
   "tags": [
     "entity:method"

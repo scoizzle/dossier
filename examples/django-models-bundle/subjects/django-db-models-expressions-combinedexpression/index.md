@@ -1,9 +1,9 @@
 # django/db/models/expressions::CombinedExpression
 
-- Subject: django/db/models/expressions::CombinedExpression (id `a5a944ce-8602-443c-95e1-1363c78884de`)
+- Subject: django/db/models/expressions::CombinedExpression (id `475b9494-1f66-4297-9815-e3b77e26fc91`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

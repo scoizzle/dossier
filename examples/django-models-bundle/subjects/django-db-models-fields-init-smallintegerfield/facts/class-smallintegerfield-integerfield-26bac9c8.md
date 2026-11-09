@@ -1,6 +1,6 @@
 # Fact 26bac9c8
 
-Store id: a87122d7-e3d6-4103-b77e-580442105a2a
+Store id: 1df7edff-244b-4261-b76b-534c319f1c80
 
 ## Text
 
@@ -20,7 +20,7 @@ class SmallIntegerField(IntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5542560+00:00`
+- posted_at: `2026-11-09T23:31:56.7138380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2258,
     "symbol": "SmallIntegerField"
   },
-  "id": "a87122d7-e3d6-4103-b77e-580442105a2a",
+  "id": "1df7edff-244b-4261-b76b-534c319f1c80",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5542560+00:00"
+    "posted_at": "2026-11-09T23:31:56.7138380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "60eb3a75-f1ad-49b3-a4b4-3c854be8cf94",
+  "subject_id": "3dc85d1d-eb71-41a5-96e2-983154787c2e",
   "subject_name": "django/db/models/fields/__init__::SmallIntegerField",
   "tags": [
     "entity:class"

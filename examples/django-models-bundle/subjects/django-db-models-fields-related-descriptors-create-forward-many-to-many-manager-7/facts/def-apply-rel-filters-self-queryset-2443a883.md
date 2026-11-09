@@ -1,6 +1,6 @@
 # Fact 2443a883
 
-Store id: 6eae53dc-b97a-413d-87e9-fd28673256d6
+Store id: 5eea3328-9862-4901-af07-245a643d8034
 
 ## Text
 
@@ -20,7 +20,7 @@ def _apply_rel_filters(self, queryset)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8622300+00:00`
+- posted_at: `2026-11-09T23:31:59.3673430+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1163,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._apply_rel_filters"
   },
-  "id": "6eae53dc-b97a-413d-87e9-fd28673256d6",
+  "id": "5eea3328-9862-4901-af07-245a643d8034",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8622300+00:00"
+    "posted_at": "2026-11-09T23:31:59.3673430+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "127eb204-abe8-4cf7-af0e-26d9b9485e55",
+  "subject_id": "cd26e35c-e985-4b31-b66b-32ce5e6fd15f",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._apply_rel_filters",
   "tags": [
     "entity:method"

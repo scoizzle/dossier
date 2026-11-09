@@ -1,6 +1,6 @@
 # Fact 5b023c8a
 
-Store id: 84413e82-1421-48e2-9e50-a6c11dfe8e9b
+Store id: dff797b6-5442-4690-b412-429312b9bf9e
 
 ## Text
 
@@ -20,7 +20,7 @@ def _unregister_class_lookup(cls, lookup, lookup_name=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1650980+00:00`
+- posted_at: `2026-11-09T23:32:05.1786780+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 415,
     "symbol": "RegisterLookupMixin._unregister_class_lookup"
   },
-  "id": "84413e82-1421-48e2-9e50-a6c11dfe8e9b",
+  "id": "dff797b6-5442-4690-b412-429312b9bf9e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1650980+00:00"
+    "posted_at": "2026-11-09T23:32:05.1786780+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10ecf2a3-d0ca-4915-9553-65d1f8b0546d",
+  "subject_id": "d6287ced-55cb-4eaf-8e23-b868b3e2f50b",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin._unregister_class_lookup",
   "tags": [
     "entity:method"

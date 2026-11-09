@@ -1,14 +1,14 @@
 # docs/internals/contributing/bugs-and-features
 
-- Subject: docs/internals/contributing/bugs-and-features (id `8b26077b-315d-433b-85ba-bd5b6c8f74ec`)
+- Subject: docs/internals/contributing/bugs-and-features (id `e85e6f77-64b5-4961-8646-770d174aca65`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 17 of 68
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3152 tokens
+- Facts shown: 67 of 68
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ python -Wa manage.py test [101af2650c64d744-3]
 - $ python -m pip install --pre Django [1ae397e4]
@@ -28,6 +28,55 @@
 - * Describe clearly and concisely what the missing feature is and how you'd like to see it implemented. Include example code (non-functional is OK) if possible. [0d161b0e]
 - * Don't reopen issues that have been marked "needsnewfeatureprocess" without shepherding an issue through the `new feature ideas`_ GitHub project. [00bf2c16]
 
-## Beyond the budget
+## All facts
 
-50 more facts did not fit in the budget: [7a0dd707] [04bdf04c] [48044bc0] [53d697df] [8688b380] [1696c907] [b268872e] [92ef26d9] [0474797f] [b11cdee6] [9692532d] [7777aebd] [b464c013] [87e2461c] [d7000d4de70da096] [23d04747] [fe050392] [971706b2] [51370548] [6fc4f1d5] [faf6f5a8efbd7831-4] [416d1a3c] [4596bb19] [b78bf640] [eeab0aeb] [5e19b4b0] [8c953522] [68f42a13] [ad1a1732] [4fc7dcb9] [ab36ed7a] [f0b85f9e] [87f2d07e] [57f822e4] [23190d12] [14f40e87] [9b444216] [0f072870] [1132747c] [46d322a7] [8cc2e164] [eab3bd3f] [ebe93c6d] [aa89a0df] [6c85ebde] [e9928b06] [d54d5840] [f99028c6] [e1d8f2b7] [cb13450e]
+- [7a0dd707] * Don't reopen issues that have been marked "wontfix" without finding consensus to do so on the `Django Forum`_.
+- [04bdf04c] * Don't use the ticket system to ask support questions. Use the `Django Forum`_ or the `Django Discord server`_ for that.
+- [48044bc0] * Don't use the ticket tracker for lengthy discussions, because they're likely to get lost. If a particular ticket is controversial, please move the discussion to the `Django Forum`_.
+- [53d697df] * Evaluate whether the feature idea requires changes in Django's core. If your idea can be developed as an independent application or module — for instance, you want to support another database engine — we'll probably suggest that you develop it independently. Then, if your project gathers sufficient community support, we may consider it for inclusion in Django.
+- [8688b380] * Explain *why* you'd like the feature. Explaining a minimal use case will help others understand where it fits in, and if there are already other ways of achieving the same thing.
+- [1696c907] * Idea * Approved - Idea refinement - Team creation * In progress * Working solution - Review - Feedback * Needs maintainer (Django only) * Done
+- [b268872e] * If the issue is difficult to show off using a still image, consider capturing a *brief* screencast. If your software permits it, capture only the relevant area of the screen.
+- [92ef26d9] * If the issue relates to accessibility, please link to the relevant :ref:`accessibility standard <accessibility-standards>` if applicable.
+- [0474797f] * If you're offering a patch that changes the look or behavior of Django's UI, you **must** attach before *and* after screenshots/screencasts. Tickets lacking these are difficult for triagers to assess quickly.
+- [b11cdee6] * Include screenshots in your ticket which are the visual equivalent of a minimal test case. Show off the issue, not the crazy customizations you've made to your browser.
+- [9692532d] * Make sure to set the UI/UX flag on the ticket so interested parties can find your ticket.
+- [7777aebd] * Propose the feature in the `new feature ideas`_ GitHub project (not in the ticket tracker) by creating a new item in the **Idea** column. This is where the community and the :ref:`Steering Council <steering-council>` evaluate new ideas for the Django ecosystem. This step is especially important for large or complex proposals. We prefer to discuss any significant changes to Django's core before any development begins. In some cases, a feature may be better suited as a third-party package, where it can evolve independently of Django's release cycle.
+- [b464c013] * Screenshots don't absolve you of other good reporting practices. Make sure to include URLs, code snippets, and step-by-step instructions on how to reproduce the behavior visible in the screenshots.
+- [87e2461c] * 👍: I support this feature and would use it * 👎: I oppose this feature or believe it would cause issues for me or Django * 😕: I have no strong opinion on this feature * 🎉: This feature seems like a straightforward and beneficial addition
+- [d7000d4de70da096] .. Important::
+- [23d04747] .. _how-we-make-decisions:
+- [fe050392] .. _reporting-bugs:
+- [971706b2] .. _requesting-features:
+- [51370548] .. _searching: https://code.djangoproject.com/search .. _custom queries: https://code.djangoproject.com/query .. _Django Forum: https://forum.djangoproject.com/ .. _Django Discord server: https://chat.djangoproject.com .. _new feature ideas: https://github.com/orgs/django/projects/24/
+- [6fc4f1d5] .. _testing-pre-releases:
+- [faf6f5a8efbd7831-4] .. code-block:: console
+- [416d1a3c] ====================================== Reporting bugs and requesting features ======================================
+- [4596bb19] Although these votes are informal, they'll be taken very seriously. After a suitable voting period, if an obvious consensus arises we'll follow the votes.
+- [b78bf640] Before reporting a bug on the `ticket tracker <https://code.djangoproject.com/>`_ consider these points:
+- [eeab0aeb] Before testing a pre-release, it is important that your project is running smoothly on the latest stable release of Django. That way, any regressions can be attributed to the pre-release. See the :doc:`/howto/upgrade-version` guide for instructions on getting up to date.
+- [5e19b4b0] How to test pre-release versions of Django ==========================================
+- [8c953522] If you discover a bug, please report it via the `Django issue tracker <https://code.djangoproject.com/>`_ so it can be fixed before the final release. When creating the ticket, be sure to set the Django version field to the exact pre-release version you are testing.
+- [68f42a13] If you suspect a regression, it's helpful to report the specific commit that caused it. See :ref:`bisecting-a-regression` for instructions.
+- [ad1a1732] If your bug impacts anything visual in nature, there are a few additional guidelines to follow:
+- [4fc7dcb9] Occasionally, discussions on feature ideas or the direction of Django may take place on the Django Forum. These discussions may include informal votes, which follow the voting style invented by Apache and used on Python itself, where votes are given as +1, +0, -0, or -1. Roughly translated, these votes mean:
+- [ab36ed7a] Once installed, run your project's test suite. Rather than just checking if tests pass, try the following:
+- [f0b85f9e] Prerequisites ~~~~~~~~~~~~~
+- [87f2d07e] Reporting bugs ==============
+- [57f822e4] Reporting issues ~~~~~~~~~~~~~~~~
+- [23190d12] Reporting user interface bugs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [14f40e87] Reports of a performance regression, or suggested performance optimizations, should provide benchmarks and commands for the ticket triager to reproduce.
+- [9b444216] Requesting features ===================
+- [0f072870] Requesting performance optimizations ====================================
+- [1132747c] See also: :ref:`documenting-new-features`.
+- [46d322a7] See the :ref:`django-asv-benchmarks` for more details of Django's existing benchmarks.
+- [8cc2e164] Testing pre-releases is a great way to contribute to Django. Early testers help catch bugs before the final release, ensuring a smoother upgrade experience for everyone.
+- [eab3bd3f] Testing your project ~~~~~~~~~~~~~~~~~~~~
+- [ebe93c6d] The :ref:`Steering Council <steering-council>` will regularly review the ideas in the project, moving those with community support through the following stages:
+- [aa89a0df] To ensure your project is ready, you should also:
+- [6c85ebde] To understand the lifecycle of your ticket once you have created it, refer to :ref:`triage-workflow`.
+- [e9928b06] We're always trying to make Django better, and your feature requests are a key part of that. Here are some tips on how to make a request most effectively:
+- [d54d5840] Well-written bug reports are *incredibly* helpful. However, there's a certain amount of overhead involved in working with any bug tracking system so your help in keeping our ticket tracker as useful as possible is appreciated. In particular:
+- [f99028c6] Whenever possible, we aim for rough consensus. Emoji reactions are used on issues within the `new feature ideas`_ GitHub project to track community feedback. The following meanings are assigned to each reaction:
+- [e1d8f2b7] You can also discuss any issues or share feedback in the `Pre-releases <https://forum.djangoproject.com/c/announcements/prereleases/32>`_ category on the `Django Forum`_.
+- [cb13450e] You can install the latest pre-release using ``pip``:

@@ -1,8 +1,8 @@
 # django/middleware/csp
 
-- Subject: django/middleware/csp (id `20d65dc8-2967-401d-b0b0-316e9b46f9ef`)
+- Subject: django/middleware/csp (id `1ddb36cd-58f8-4002-9945-910c4bd7d98e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 346 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 792533c0
 
-Store id: 2b6b5fb7-7044-4781-82e8-a91415d61595
+Store id: ec803830-840b-4043-bee6-41562cdae13f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _combine(self, other, conn)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0589580+00:00`
+- posted_at: `2026-11-09T23:32:05.0423360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "Q._combine"
   },
-  "id": "2b6b5fb7-7044-4781-82e8-a91415d61595",
+  "id": "ec803830-840b-4043-bee6-41562cdae13f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0589580+00:00"
+    "posted_at": "2026-11-09T23:32:05.0423360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "14936c37-35d6-4961-8281-b6b7dde174e9",
+  "subject_id": "c932c680-2812-4b9d-b3a9-0c9cfe1d0c91",
   "subject_name": "django/db/models/query_utils::Q._combine",
   "tags": [
     "entity:method"

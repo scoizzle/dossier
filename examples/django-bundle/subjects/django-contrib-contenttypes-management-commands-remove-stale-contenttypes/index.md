@@ -1,8 +1,8 @@
 # django/contrib/contenttypes/management/commands/remove_stale_contenttypes
 
-- Subject: django/contrib/contenttypes/management/commands/remove_stale_contenttypes (id `0da9203e-6add-4fda-9b17-6344411c9634`)
+- Subject: django/contrib/contenttypes/management/commands/remove_stale_contenttypes (id `23c0f389-3688-4deb-8940-8dff2aa2faab`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 803 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

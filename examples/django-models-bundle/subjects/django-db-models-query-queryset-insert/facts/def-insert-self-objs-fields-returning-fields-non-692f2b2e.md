@@ -1,6 +1,6 @@
 # Fact 692f2b2e
 
-Store id: e5637bc3-43a6-4bca-b36e-68765f074dc8
+Store id: ca924ede-cdda-4206-a994-0fcd38904829
 
 ## Text
 
@@ -20,7 +20,7 @@ def _insert( self, objs, fields, returning_fields=None, raw=False, using=None, o
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6937910+00:00`
+- posted_at: `2026-11-09T23:32:04.6178610+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2141,
     "symbol": "QuerySet._insert"
   },
-  "id": "e5637bc3-43a6-4bca-b36e-68765f074dc8",
+  "id": "ca924ede-cdda-4206-a994-0fcd38904829",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6937910+00:00"
+    "posted_at": "2026-11-09T23:32:04.6178610+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "21a4e28f-2c7b-49b9-99c6-59630b7e276f",
+  "subject_id": "be939b4c-eca2-4987-bd55-ef279886ccde",
   "subject_name": "django/db/models/query::QuerySet._insert",
   "tags": [
     "entity:method"

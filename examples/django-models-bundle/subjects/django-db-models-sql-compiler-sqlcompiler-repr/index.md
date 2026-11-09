@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.__repr__
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.__repr__ (id `1375aacf-d27c-4697-ac33-ee36b75f2b26`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.__repr__ (id `acd752a6-17a8-4a2e-964c-8249aef09fd6`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

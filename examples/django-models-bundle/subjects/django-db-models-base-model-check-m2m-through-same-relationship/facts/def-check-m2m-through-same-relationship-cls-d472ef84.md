@@ -1,6 +1,6 @@
 # Fact d472ef84
 
-Store id: f1a103df-c37f-4af5-9396-f4b45b1a2567
+Store id: 5d8a9f36-3d1c-454d-a71f-6a7e57c057ad
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_m2m_through_same_relationship(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3585690+00:00`
+- posted_at: `2026-11-09T23:31:53.7638120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1953,
     "symbol": "Model._check_m2m_through_same_relationship"
   },
-  "id": "f1a103df-c37f-4af5-9396-f4b45b1a2567",
+  "id": "5d8a9f36-3d1c-454d-a71f-6a7e57c057ad",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3585690+00:00"
+    "posted_at": "2026-11-09T23:31:53.7638120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e1a53d6a-8289-41bb-b214-b844cc341b3f",
+  "subject_id": "3576b975-5f56-45e2-b0e4-352363a78e34",
   "subject_name": "django/db/models/base::Model._check_m2m_through_same_relationship",
   "tags": [
     "entity:class_method",

@@ -1,6 +1,6 @@
 # Fact f93bcf23
 
-Store id: 78c733de-dd5f-413d-a097-9237892a171d
+Store id: 63297566-de9f-4c14-be99-d07a5244be6f
 
 ## Text
 
@@ -20,7 +20,7 @@ def collapse_group_by(self, expressions, having)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.5784240+00:00`
+- posted_at: `2026-11-09T23:32:05.6935040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 201,
     "symbol": "SQLCompiler.collapse_group_by"
   },
-  "id": "78c733de-dd5f-413d-a097-9237892a171d",
+  "id": "63297566-de9f-4c14-be99-d07a5244be6f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.5784240+00:00"
+    "posted_at": "2026-11-09T23:32:05.6935040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "57fba03e-4a66-49e4-8cf7-d4c248bb75c1",
+  "subject_id": "cba6f368-33d6-4301-9c9d-a2fdd28b219a",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.collapse_group_by",
   "tags": [
     "entity:method"

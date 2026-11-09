@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleExact
 
-- Subject: django/db/models/fields/tuple_lookups::TupleExact (id `cd6db5d2-893a-4aa3-8d2c-35ed7d083785`)
+- Subject: django/db/models/fields/tuple_lookups::TupleExact (id `8ce62923-29cd-4002-9e49-9bfbda6f5ee3`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

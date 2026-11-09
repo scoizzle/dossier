@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.acontains
 
-- Subject: django/db/models/query::QuerySet.acontains (id `a7e375dd-c4ce-4651-b9e4-626488c6e274`)
+- Subject: django/db/models/query::QuerySet.acontains (id `5e20d358-5efb-4db7-860a-2e2272591817`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/views/static
 
-- Subject: django/views/static (id `cddd52e5-6199-4f2e-b9cd-e4481d73e3ee`)
+- Subject: django/views/static (id `a3338771-6d7a-4940-a1c0-af81a07742e3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 13 of 15
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1027 tokens
+- Facts shown: 15 of 15
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - from django.views.static import serve [490bfaeb]
 - path('<path:path>', serve, {'document_root': '/path/to/my/files/'}) [9d87fc12]
@@ -24,6 +24,7 @@
 - def serve(request, path, document_root=None, show_indexes=False): """ Serve static files below a given point in the directory structure. [c5897745]
 - import mimetypes import posixpath from pathlib import Path [15fe97ee]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [69e5b2a3] [051ebda3]
+- [69e5b2a3] def was_modified_since(header=None, mtime=0): """ Was something modified since the user last downloaded it?
+- [051ebda3] from django.http import FileResponse, Http404, HttpResponse, HttpResponseNotModified from django.template import Context, Engine, TemplateDoesNotExist, loader from django.utils._os import safe_join from django.utils.http import http_date, parse_http_date from django.utils.translation import gettext as _ from django.utils.translation import gettext_lazy

@@ -1,6 +1,6 @@
 # Fact 0a29afa6
 
-Store id: 9b30cfe8-d803-417a-8e4f-5162d522fed6
+Store id: 546bd0c3-92f1-47dc-9ec0-b8a800234f9c
 
 ## Text
 
@@ -20,7 +20,7 @@ class DeleteQuery(Query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.6966110+00:00`
+- posted_at: `2026-11-09T23:32:07.3284400+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 17,
     "symbol": "DeleteQuery"
   },
-  "id": "9b30cfe8-d803-417a-8e4f-5162d522fed6",
+  "id": "546bd0c3-92f1-47dc-9ec0-b8a800234f9c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.6966110+00:00"
+    "posted_at": "2026-11-09T23:32:07.3284400+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "360a8628-67d1-43b3-8878-3dd7dfd2ddb7",
+  "subject_id": "1bc2033c-5c1b-4477-a3df-1f59b15daa0c",
   "subject_name": "django/db/models/sql/subqueries::DeleteQuery",
   "tags": [
     "entity:class"

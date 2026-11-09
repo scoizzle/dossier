@@ -1,9 +1,9 @@
 # django/db/models/enums::ChoicesType.labels
 
-- Subject: django/db/models/enums::ChoicesType.labels (id `dc1ffa5d-6863-4c30-a9a8-b14cb9176faf`)
+- Subject: django/db/models/enums::ChoicesType.labels (id `ff46c671-ff5b-4a35-ad87-ee2ab01d0a6b`)
 - Kind: method
 - Parent: [django/db/models/enums](../django-db-models-enums/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

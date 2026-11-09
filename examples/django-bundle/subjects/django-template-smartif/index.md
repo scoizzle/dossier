@@ -1,14 +1,14 @@
 # django/template/smartif
 
-- Subject: django/template/smartif (id `fabe7d5d-b882-4ed3-affc-cf4470b37327`)
+- Subject: django/template/smartif (id `98025caa-5f67-400f-bbc4-b33f0737e281`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 22 of 39
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1707 tokens
+- Facts shown: 38 of 39
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def eval(self, context): try: return func(context, self.first) except Exception: return False [037d51cf]
 - def eval(self, context): try: return func(context, self.first, self.second) except Exception: # Templates shouldn't throw exceptions when rendering. We are # most likely to get exceptions for things like: # {% if foo in bar %} # where 'bar' does not support 'in', so default to False. return False [cefb2b19]
@@ -33,6 +33,21 @@
 - def nud(self, parser): return self [281a83d3]
 - return Operator [eee486165265df42]
 
-## Beyond the budget
+## All facts
 
-16 more facts did not fit in the budget: [cff74de9] [22a0781d] [04e4f4df] [eee486165265df42-2] [694aed02] [7f01343b] [3cb23b6f] [503c1155] [77df08c0] [d2c56d9e] [ab995d16] [4f6b06f9] [d9c620c5] [e2968cbe] [1fc06594] [03c548c8]
+- [cff74de9] def parse(self): retval = self.expression() # Check that we have exhausted all the tokens if self.current_token is not EndToken: raise self.error_class( "Unused '%s' at end of if expression." % self.current_token.display() ) return retval
+- [22a0781d] def translate_token(self, token): try: op = OPERATORS[token] except (KeyError, TypeError): return self.create_var(token) else: return op()
+- [04e4f4df] id = None # node/token type name value = None # used by literals first = second = None # used by tree nodes
+- [eee486165265df42-2] return Operator
+- [694aed02] """ Parser and utilities for the smart 'if' tag """
+- [7f01343b] # Assign 'id' to each: def _init_operators(): for key, op in OPERATORS.items(): op.id = key
+- [3cb23b6f] # Operator precedence follows Python. # We defer variable evaluation to the lambda to ensure that terms are # lazily evaluated using Python's boolean parsing logic. OPERATORS = { "or": infix(6, lambda context, x, y: x.eval(context) or y.eval(context)), "and": infix(7, lambda context, x, y: x.eval(context) and y.eval(context)), "not": prefix(8, lambda context, x: not x.eval(context)), "in": infix(9, lambda context, x, y: x.eval(context) in y.eval(context)), "not in": infix(9, lambda context, x, y: x.eval(context) not in y.eval(context)), "is": infix(10, lambda context, x, y: x.eval(context) is y.eval(context)), "is not": infix(10, lambda context, x, y: x.eval(context) is not y.eval(context)), "==": infix(10, lambda context, x, y: x.eval(context) == y.eval(context)), "!=": infix(10, lambda context, x, y: x.eval(context) != y.eval(context)), ">": infix(10, lambda context, x, y: x.eval(context) > y.eval(context)), ">=": infix(10, lambda context, x, y: x.eval(context) >= y.eval(context)), "<": infix(10, lambda context, x, y: x.eval(context) < y.eval(context)), "<=": infix(10, lambda context, x, y: x.eval(context) <= y.eval(context)), }
+- [503c1155] # Using a simple top down parser, as described here: # https://11l-lang.org/archive/simple-top-down-parsing/ # 'led' = left denotation # 'nud' = null denotation # 'bp' = binding power (left = lbp, right = rbp)
+- [77df08c0] EndToken = EndToken()
+- [d2c56d9e] _init_operators()
+- [ab995d16] class EndToken(TokenBase): lbp = 0
+- [4f6b06f9] class IfParser: error_class = ValueError
+- [d9c620c5] class Literal(TokenBase): """ A basic self-resolvable object similar to a Django template variable. """
+- [e2968cbe] class TokenBase: """ Base class for operators and literals, mainly for debugging and for throwing syntax errors. """
+- [1fc06594] def infix(bp, func): """ Create an infix operator, given a binding power and a function that evaluates the node. """
+- [03c548c8] def prefix(bp, func): """ Create a prefix operator, given a binding power and a function that evaluates the node. """

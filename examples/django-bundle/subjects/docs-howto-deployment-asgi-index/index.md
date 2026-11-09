@@ -1,8 +1,8 @@
 # docs/howto/deployment/asgi/index
 
-- Subject: docs/howto/deployment/asgi/index (id `bfb0d745-b3cd-4c2e-b5b9-7660f4da977e`)
+- Subject: docs/howto/deployment/asgi/index (id `0b808142-5268-47c4-8134-17573e483bd0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 898 tokens
 - Facts shown: 23 of 23
 - Conflicts: 0

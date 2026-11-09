@@ -1,6 +1,6 @@
 # Fact 281f023b
 
-Store id: e1543b13-f93f-4373-9631-06cd2fd1588f
+Store id: ac726a0f-aa76-4d54-a5c1-4cc8c098ce07
 
 ## Text
 
@@ -20,7 +20,7 @@ def earliest(self, *fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4660730+00:00`
+- posted_at: `2026-11-09T23:32:04.4363980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1201,
     "symbol": "QuerySet.earliest"
   },
-  "id": "e1543b13-f93f-4373-9631-06cd2fd1588f",
+  "id": "ac726a0f-aa76-4d54-a5c1-4cc8c098ce07",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4660730+00:00"
+    "posted_at": "2026-11-09T23:32:04.4363980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1fa9db4e-2d2e-4ed5-a32a-dba635f65f4a",
+  "subject_id": "c137f2f2-9a20-4ca1-96c9-6812c463fd2f",
   "subject_name": "django/db/models/query::QuerySet.earliest",
   "tags": [
     "entity:method"

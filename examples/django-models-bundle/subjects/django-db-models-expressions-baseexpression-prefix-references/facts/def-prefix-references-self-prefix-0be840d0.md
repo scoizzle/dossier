@@ -1,6 +1,6 @@
 # Fact 0be840d0
 
-Store id: e581b0cc-2221-4c34-8d4a-793c51a32df8
+Store id: 96408efe-011c-47d1-a5a4-6a73c72300e7
 
 ## Text
 
@@ -20,7 +20,7 @@ def prefix_references(self, prefix)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5278760+00:00`
+- posted_at: `2026-11-09T23:31:55.7897130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 446,
     "symbol": "BaseExpression.prefix_references"
   },
-  "id": "e581b0cc-2221-4c34-8d4a-793c51a32df8",
+  "id": "96408efe-011c-47d1-a5a4-6a73c72300e7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5278760+00:00"
+    "posted_at": "2026-11-09T23:31:55.7897130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c286c275-4634-4884-a856-4e6dd418ce27",
+  "subject_id": "1087c170-8089-49ab-aeaf-dd81c3a2dc3c",
   "subject_name": "django/db/models/expressions::BaseExpression.prefix_references",
   "tags": [
     "entity:method"

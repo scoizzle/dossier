@@ -1,14 +1,14 @@
 # docs/ref/models/expressions
 
-- Subject: docs/ref/models/expressions (id `bd64bc1d-0f47-43e2-8c59-17c71fbe30bc`)
+- Subject: docs/ref/models/expressions (id `fa797d91-5ad5-42b1-b9be-0453add009d8`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 21 of 394
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 16555 tokens
+- Facts shown: 380 of 394
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def as_mysql(self, compiler, connection, **extra_context): return super().as_sql( compiler, connection, function="CONCAT_WS", template="%(function)s('', %(expressions)s)", **extra_context ) [81e4f8c2]
 - class ConcatPair(Func): ... function = "CONCAT" ... [d440b546]
@@ -32,6 +32,364 @@
 - If you're constructing SQL like ``strftime('%W', 'date')`` and need a literal ``%`` character in the query, quadruple it (``%%%%``) in the ``template`` attribute because the string is interpolated twice: once during the template interpolation in ``as_sql()`` and once in the SQL interpolation with the query parameters in the database cursor. [cbc180b5]
 - .. attribute:: CURRENT_ROW [c86423f3]
 
-## Beyond the budget
+## All facts
 
-359 more facts did not fit in the budget: [96f698df] [5ff9d885] [cfcb15fe] [dd7eaf64] [2ceb4fb5] [5f31eb66] [6fef541a] [06ae2ba4] [faace308] [39454764] [9b2ed0fd] [0bd7d58b] [08917f9e] [11b89ed5] [b5a4c7c3] [91efa6b4] [1c50047b] [ab411162] [0bafad52] [49403217] [999089bd] [e8efd010] [a977616b] [419d5713] [34067fd5a1694924] [19778bbd] [9cb105d58a4d051d] [2cce0c7d] [edeb5627] [308ace8e] [5aaeda61] [070dfa01] [7c6d6db9] [64627081] [4c48bd42] [28a1325d] [e43e5643] [a8bc2385] [c3740829] [e0d2735a] [b1858e8f] [37b53c22] [a91fb317] [1a399a27] [6d9b64a6] [1fb3c299] [19b0820d] [a9341bc6] [1ed8cb0a] [bbe8eeb0] [f1cd5535] [a4789e9c] [0f6f6641] [3637b27d] [8def84d4] [27251770] [5eff35b1] [06687690] [b57a68dfbd44b392] [c128e0f0] [38ed8ec304ae8cc6] [38ed8ec304ae8cc6-2] [d9f1d5e6ec84c2b8] [d9f1d5e6ec84c2b8-2] [2440762b] [661778e8e5d21351] [661778e8e5d21351-2] [661778e8e5d21351-3] [9794c231dc21f21e] [9794c231dc21f21e-2] [93a6ceab] [da45b11c] [9a402ce1] [921c0059] [5eb36d90] [697e9dfb] [b5bccd83] [1d71d053] [9d682b95] [162856a9] [9e89021c] [5be2cd74] [6e4edb8a] [9bcd9188] [304dd4ea] [e8edc0d0] [9de08d46] [3bce1580] [872129e0] [d66d7cab] [74858176] [b7916e2e] [8202dab6] [dcd94f36] [cd0a8eff] [e83dfb65] [1e556ad1] [ef59d713] [9d9d9c4f] [828af4ad] [0ee073a4] [de1ab479] [3c3a83e8] [0eb52ef2] [4340dc57] [40e50289] [10111290] [507bd583] [f5559bb9] [1f496062] [fdf2f6c1] [5764a667] [bac0168e] [c6e5e099] [be76467f] [46466cf5] [228bc7e1a06eabc5] [cbb0c119] [53a9377b] [bfa1f066] [799e1d98] [092bd30a] [1d5e58dc] [44d53c5b] [7e27f249] [846259c1] [34badb5a] [43490068] [da884d07] [6a26fba7] [fecebe8b] [67781e0a] [a345df786882bc74-2] [9b1dfeda] [8812facd] [eabf35b0] [694dbc02] [398813d9] [926ae6d0] [c47e549b] [5cdb26f0] [bd49d020] [43ec2e1e] [4dd90a79] [92938e67] [eb494d7a] [c294732a] [788939d0] [37e05d4f] [991a2c7c] [20920b86] [81115ebd] [f9c25523] [86e9fa35] [9bb15e91] [73c1ca12] [f45a3d3e] [86215d69] [dbedfd7a] [888c82c0] [9e09e695] [f666c89f] [5caed6e4] [36a1ad57] [f7bb73ba] [c067dff0] [60bcfe44] [0a9420d9] [5379cc60] [725c5da6] [eaf050be34acb41d-436] [eaf050be34acb41d-437] [eaf050be34acb41d-438] [eaf050be34acb41d-439] [eaf050be34acb41d-440] [eaf050be34acb41d-441] [eaf050be34acb41d-442] [eaf050be34acb41d-443] [eaf050be34acb41d-444] [eaf050be34acb41d-445] [eaf050be34acb41d-446] [eaf050be34acb41d-447] [eaf050be34acb41d-448] [eaf050be34acb41d-449] [eaf050be34acb41d-450] [eaf050be34acb41d-451] [eaf050be34acb41d-452] [eaf050be34acb41d-453] [eaf050be34acb41d-454] [0ee73173f492412a-31] [0ee73173f492412a-32] [0ee73173f492412a-33] [0ee73173f492412a-34] [0ee73173f492412a-35] [3a368b18514a814b-5] [e4d958b020902249-2] [942ae6c11625c81c-102] [942ae6c11625c81c-103] [0cf180bcf4ecfab5-14] [57739e32d87f6c76-13] [57739e32d87f6c76-14] [c54b54cb0805732a-51] [15f2d1c7] [0ceb5e88] [51037540] [e92d0dd1] [2c9bb67e] [2bd3fed6] [42529ddf] [12b45ed2] [c6842907] [cfbc750f] [91ac7e90] [f1c15cfe] [fba8b8f9] [93bd2c85] [da1756cb] [563fdd70] [f1355ce9] [f1999914] [c0d908d3] [7cfdfd38] [b48200c0] [34146d5e] [8e866664] [aef7e6cc] [883d83be] [e9f47990] [16d1d73e] [1efc6c68] [f9e1b3e4] [824cf527] [2a774cbc] [1fe7052b] [0accb823] [d7203933] [5cf8cdd3] [da196661] [a845dcae] [cdcf187f] [46e32c69] [a09c2e4b] [3279f369] [fd3d3e7a] [5ee41e45] [5571ec00] [2d77c8c1] [9be33fc1] [33c9fa0a] [44800b1f] [d05954ee] [0a8baee3] [9c25e732] [665c88a0] [f8de7770] [41e668e8] [16fd104e] [28c21b45] [48336606] [d072adb14377a8fc] [9c52d9b9] [8aeeae0f] [778bd889] [c4fa7f6d] [84d4fb0e] [48ffa62e] [a7e6080f] [973f4b85] [af566505] [1b12a5ae] [e14a150a] [efdb5e96] [a006ecc9] [1212d368] [ece2480d] [1946e245] [0caaef70] [c5cedcb0] [2e396eea] [46a87b3d] [5f61e720] [4ffc8cdc] [cdb0a339] [916c91e6] [82a927da] [bfe75bfc] [bbd7fae4] [f71e064c] [2c2ae239] [6a5b537d] [815b28eb] [0e8e8fe4] [a3bf7adc] [95b54876] [20e698e4] [3bf8a7b7] [aca4fe22] [f02172a7] [21e12d12] [1a63b043] [955cd613] [7b8157b9] [45048141] [dae14dd0] [964b9858] [09563a65] [392cf928] [0ab88ea5] [b01e13c3] [c9530884] [da6fd5bb] [e51c9af6] [c7f647e6] [66fbb212] [69537883] [fa211f89] [6f70f66f] [a2b97330] [44630df6] [e628de2d] [240aaa2a] [d9c8502d] [615df5de] [e8603fa8] [a1bdeef8] [8ef8c15b] [c2d4c000] [916aba39] [fd6810e2] [2e84afd1] [677cea28] [41e10074] [0e2c5531] [2b41eec8] [89b8af92] [47a3202d] [c0159755] [0bc02609] [661d5c26] [8df05b08] [ad8bb4b6] [7e7b8c2c] [8dac3c09] [3b362630] [967fab84] [1b3b694e] [3014d16f] [50c34835] [7de1ccff] [6c7b3a25] [6cd9a3b7] [57984b21] [72e307a6] [419b422e] [481be862] [8bf877e9] [3daa820a] [f171b3c8] [87f5b45b]
+- [96f698df] Provides the chance to do any preprocessing or validation of the expression before it's added to the query. ``resolve_expression()`` must also be called on any nested expressions. A ``copy()`` of ``self`` should be returned with any necessary transformations.
+- [5ff9d885] RawSQL("select col from sometable where othercol = '%s'") # unsafe!
+- [cfcb15fe] Responsible for returning the list of columns referenced by this expression. ``get_group_by_cols()`` should be called on any nested expressions. ``F()`` objects, in particular, hold a reference to a column.
+- [dd7eaf64] Returns ``self`` with any modifications required to reverse the sort order within an ``order_by`` call. As an example, an expression implementing ``NULLS LAST`` would change its value to be ``NULLS FIRST``. Modifications are only required for expressions that implement sort order like ``OrderBy``. This method is called when :meth:`~django.db.models.query.QuerySet.reverse` is called on a queryset.
+- [2ceb4fb5] Returns a clone (copy) of ``self``, with any column aliases relabeled. Column aliases are renamed when subqueries are created. ``relabeled_clone()`` should also be called on any nested expressions and assigned to the clone.
+- [5f31eb66] Returns an ordered list of inner expressions. For example:
+- [6fef541a] Returns the expression ready to be sorted in ascending order.
+- [06ae2ba4] Returns the expression ready to be sorted in descending order.
+- [faace308] Takes a list of expressions and stores them such that ``get_source_expressions()`` can return them.
+- [39454764] Tells Django that this expression allows composite expressions, for example, to support :ref:`composite primary keys <cpk-and-database-functions>`. Defaults to ``False``.
+- [9b2ed0fd] Tells Django that this expression can be referenced in :meth:`.QuerySet.filter`. Defaults to ``True``.
+- [0bd7d58b] Tells Django that this expression can be used as the source expression in :class:`~django.db.models.expressions.Window`. Defaults to ``False``.
+- [08917f9e] Tells Django that this expression can be used during a constraint validation. Expressions with ``constraint_validation_compatible`` set to ``False`` must have only one source expression. Defaults to ``True``.
+- [11b89ed5] Tells Django that this expression can be used in :attr:`Field.db_default`. Defaults to ``False``.
+- [b5a4c7c3] Tells Django that this expression contains a :class:`~django.db.models.expressions.Window` expression. It's used, for example, to disallow window function expressions in queries that modify data.
+- [91efa6b4] Tells Django that this expression contains a set-returning function, enforcing subquery evaluation. It's used, for example, to allow some Postgres set-returning functions (e.g. ``JSONB_PATH_QUERY``, ``UNNEST``, etc.) to skip optimization and be properly evaluated when annotations spawn rows themselves. Defaults to ``False``.
+- [1c50047b] Tells Django that this expression contains an aggregate and that a ``GROUP BY`` clause needs to be added to the query.
+- [ab411162] Tells Django which value should be returned when the expression is used to apply a function over an empty result set. Defaults to :data:`NotImplemented` which forces the expression to be computed on the database.
+- [0bafad52] The ``as_vendor()`` methods should use the ``function``, ``template``, ``arg_joiner``, and any other ``**extra_context`` parameters to customize the SQL as needed. For example:
+- [49403217] This attribute is set to ``'RANGE'``.
+- [999089bd] This attribute is set to ``'ROWS'``.
+- [e8efd010] To avoid an SQL injection vulnerability, ``extra_context`` :ref:`must not contain untrusted user input <avoiding-sql-injection-in-query-expressions>` as these values are interpolated into the SQL string rather than passed as query parameters, where the database driver would escape them.
+- [a977616b] ``allow_joins`` is a boolean that allows or denies the use of joins in the query.
+- [419d5713] ``change_map`` is a dictionary mapping old aliases to new aliases.
+- [34067fd5a1694924] ``expression`` is the same as ``self``.
+- [19778bbd] ``for_save`` is a boolean that, when ``True``, signals that the query being executed is performing a create or update.
+- [9cb105d58a4d051d] ``nulls_first`` and ``nulls_last`` define how null values are sorted. See :ref:`using-f-to-sort-null-values` for example usage.
+- [2cce0c7d] ``query`` is the backend query implementation.
+- [edeb5627] ``reuse`` is a set of reusable joins for multi-join scenarios.
+- [308ace8e] ``summarize`` is a boolean that, when ``True``, signals that the query being computed is a terminal aggregate query.
+- [5aaeda61] def __init__(self, expression, all_values=False, **extra): super().__init__(expression, all_values="ALL " if all_values else "", **extra)
+- [070dfa01] def __init__(self, expression, substring): # substring=substring is an SQL injection vulnerability! super().__init__(expression, substring=substring)
+- [7c6d6db9] def __init__(self, expression, substring): super().__init__(substring, expression)
+- [64627081] def __init__(self, expressions, output_field): super().__init__(output_field=output_field) if len(expressions) < 2: raise ValueError("expressions must have at least 2 elements") for expression in expressions: if not hasattr(expression, "resolve_expression"): raise TypeError("%r is not an Expression" % expression) self.expressions = expressions
+- [4c48bd42] # Aggregates can contain complex computations also >>> Company.objects.annotate(num_offerings=Count(F("products") + F("services")))
+- [28a1325d] # Annotate models with an aggregated value. Both forms # below are equivalent. >>> Company.objects.annotate(num_products=Count("products")) >>> Company.objects.annotate(num_products=Count(F("products")))
+- [e43e5643] # Boolean expression can be used directly in filters. >>> from django.db.models import Exists, OuterRef >>> Company.objects.filter( ... Exists(Employee.objects.filter(company=OuterRef("pk"), salary__gt=10)) ... )
+- [a8bc2385] # Create a new company using expressions. >>> company = Company.objects.create(name="Google", ticker=Upper(Value("goog"))) >>> company.ticker 'GOOG'
+- [c3740829] # Expressions can also be used in order_by(), either directly >>> Company.objects.order_by(Length("name").asc()) >>> Company.objects.order_by(Length("name").desc()) # or using the double underscore lookup syntax. >>> from django.db.models import CharField >>> from django.db.models.functions import Length >>> CharField.register_lookup(Length) >>> Company.objects.order_by("name__length")
+- [e0d2735a] # Find companies that have at least twice as many employees # as chairs. Both the querysets below are equivalent. >>> Company.objects.filter(num_employees__gt=F("num_chairs") * 2) >>> Company.objects.filter(num_employees__gt=F("num_chairs") + F("num_chairs"))
+- [b1858e8f] # Find companies that have more employees than chairs. >>> Company.objects.filter(num_employees__gt=F("num_chairs"))
+- [37b53c22] # How many chairs are needed for each company to seat all employees? >>> company = ( ... Company.objects.filter(num_employees__gt=F("num_chairs")) ... .annotate(chairs_needed=F("num_employees") - F("num_chairs")) ... .first() ... ) >>> company.num_employees 120 >>> company.num_chairs 50 >>> company.chairs_needed 70
+- [a91fb317] # Lookup expressions can also be used directly in filters >>> Company.objects.filter(GreaterThan(F("num_employees"), F("num_chairs"))) # or annotations. >>> Company.objects.annotate( ... need_chairs=GreaterThan(F("num_employees"), F("num_chairs")), ... )
+- [1a399a27] # Tintin filed a news story! reporter = Reporters.objects.get(name="Tintin") reporter.stories_filed += 1 reporter.save()
+- [6d9b64a6] %(frame_type)s BETWEEN %(start)s AND %(end)s
+- [1fb3c299] %(frame_type)s BETWEEN %(start)s AND %(end)s EXCLUDE %(exclusion)s
+- [19b0820d] .. attribute:: GROUP
+- [a9341bc6] .. attribute:: NO_OTHERS
+- [1ed8cb0a] .. attribute:: TIES
+- [bbe8eeb0] .. attribute:: allow_distinct
+- [f1cd5535] .. attribute:: allow_order_by
+- [a4789e9c] .. attribute:: allowed_default
+- [0f6f6641] .. attribute:: allows_composite_expressions
+- [3637b27d] .. attribute:: arg_joiner
+- [8def84d4] .. attribute:: arity
+- [27251770] .. attribute:: constraint_validation_compatible
+- [5eff35b1] .. attribute:: contains_aggregate
+- [06687690] .. attribute:: contains_over_clause
+- [b57a68dfbd44b392] .. attribute:: empty_result_set_value
+- [c128e0f0] .. attribute:: filterable
+- [38ed8ec304ae8cc6] .. attribute:: frame_type
+- [38ed8ec304ae8cc6-2] .. attribute:: frame_type
+- [d9f1d5e6ec84c2b8] .. attribute:: function
+- [d9f1d5e6ec84c2b8-2] .. attribute:: function
+- [2440762b] .. attribute:: set_returning
+- [661778e8e5d21351] .. attribute:: template
+- [661778e8e5d21351-2] .. attribute:: template
+- [661778e8e5d21351-3] .. attribute:: template
+- [9794c231dc21f21e] .. attribute:: window_compatible
+- [9794c231dc21f21e-2] .. attribute:: window_compatible
+- [93a6ceab] .. method:: as_sql(compiler, connection, function=None, template=None, arg_joiner=None, **extra_context)
+- [da45b11c] .. method:: asc(nulls_first=None, nulls_last=None)
+- [9a402ce1] .. method:: convert_value(value, expression, connection)
+- [921c0059] .. method:: desc(nulls_first=None, nulls_last=None)
+- [5eb36d90] .. method:: get_group_by_cols()
+- [697e9dfb] .. method:: get_source_expressions()
+- [b5bccd83] .. method:: relabeled_clone(change_map)
+- [1d71d053] .. method:: resolve_expression(query=None, allow_joins=True, reuse=None, summarize=False, for_save=False)
+- [9d682b95] .. method:: reverse_ordering()
+- [162856a9] .. method:: set_source_expressions(expressions)
+- [9e89021c] >>> # Replacing a name with a substring of itself. >>> writer = Writers.objects.get(name="Priyansh") >>> writer.name = F("name")[1:5] >>> writer.save() >>> writer.name 'riya'
+- [5be2cd74] >>> Book.objects.filter(author=OuterRef(OuterRef("pk")))
+- [6e4edb8a] >>> car = Company.objects.annotate(built_by=F("manufacturer"))[0] >>> car.manufacturer <Manufacturer: Toyota> >>> car.built_by 3
+- [9bcd9188] >>> from datetime import timedelta >>> from django.utils import timezone >>> one_day_ago = timezone.now() - timedelta(days=1) >>> posts = Post.objects.filter(published_at__gte=one_day_ago) >>> Comment.objects.filter(post__in=Subquery(posts.values("pk")))
+- [304dd4ea] >>> from django.db.models import Avg, F, Max, Min, Window >>> window = { ... "partition_by": [F("studio"), F("genre")], ... "order_by": "released__year", ... } >>> Movie.objects.annotate( ... avg_rating=Window( ... expression=Avg("rating"), ... **window, ... ), ... best=Window( ... expression=Max("rating"), ... **window, ... ), ... worst=Window( ... expression=Min("rating"), ... **window, ... ), ... )
+- [e8edc0d0] >>> from django.db.models import Avg, F, RowRange, Window >>> Movie.objects.annotate( ... avg_rating=Window( ... expression=Avg("rating"), ... partition_by=[F("studio"), F("genre")], ... order_by="released__year", ... frame=RowRange(start=-2, end=2), ... ), ... )
+- [9de08d46] >>> from django.db.models import Avg, F, Window >>> Movie.objects.annotate( ... avg_rating=Window( ... expression=Avg("rating"), ... partition_by=[F("studio"), F("genre")], ... order_by="released__year", ... ), ... )
+- [3bce1580] >>> from django.db.models import Count, F, Value >>> from django.db.models.functions import Length, Upper >>> from django.db.models.lookups import GreaterThan
+- [872129e0] >>> from django.db.models import Exists, OuterRef >>> from datetime import timedelta >>> from django.utils import timezone >>> one_day_ago = timezone.now() - timedelta(days=1) >>> recent_comments = Comment.objects.filter( ... post=OuterRef("pk"), ... created_at__gte=one_day_ago, ... ) >>> Post.objects.annotate(recent_comment=Exists(recent_comments))
+- [d66d7cab] >>> from django.db.models import F, Value, CharField >>> qs = Company.objects.annotate( ... tagline=Coalesce( ... [F("motto"), F("ticker_name"), F("description"), Value("No Tagline")], ... output_field=CharField(), ... ) ... ) >>> for c in qs: ... print("%s: %s" % (c.name, c.tagline)) ... Google: Do No Evil Apple: AAPL Yahoo: Internet Company Django Software Foundation: No Tagline
+- [74858176] >>> from django.db.models import OuterRef, Subquery >>> newest = Comment.objects.filter(post=OuterRef("pk")).order_by("-created_at") >>> Post.objects.annotate(newest_commenter_email=Subquery(newest.values("email")[:1]))
+- [b7916e2e] >>> from django.db.models import OuterRef, Subquery, Sum >>> comments = Comment.objects.filter(post=OuterRef("pk")).order_by().values("post") >>> total_comments = comments.annotate(total=Sum("length")).values("total") >>> Post.objects.filter(length__gt=Subquery(total_comments))
+- [8202dab6] >>> from django.db.models.expressions import RawSQL >>> queryset.annotate(val=RawSQL("select col from sometable where othercol = %s", (param,)))
+- [dcd94f36] >>> qs = Movie.objects.annotate( ... category_rank=Window(Rank(), partition_by="category", order_by="-rating"), ... scenes_count=Count("actors"), ... ).filter(Q(category_rank__lte=3) | Q(title__contains="Batman")) >>> list(qs) NotImplementedError: Heterogeneous disjunctive predicates against window functions are not implemented when performing conditional aggregation.
+- [cd0a8eff] >>> queryset.filter(id__in=RawSQL("select id from sometable where col = %s", (param,)))
+- [e83dfb65] >>> recent_comments = Comment.objects.filter(...) # From above >>> Post.objects.filter(Exists(recent_comments))
+- [1e556ad1] >>> reporter = Reporters.objects.get(name="Tintin") >>> reporter.stories_filed = F("stories_filed") + 1 >>> reporter.save() >>> reporter.stories_filed # This triggers a refresh query on MySQL/MariaDB. 14 # Assuming the database value was 13 when the object was saved.
+- [ef59d713] >>> subquery = Subquery(newest.values("email")[:1]) >>> Post.objects.annotate(newest_commenter_email=subquery)
+- [9d9d9c4f] Built-in database functions (such as :class:`~django.db.models.functions.Cast`) vary in whether arguments such as ``output_field`` can be supplied as positional arguments or only by keyword. For ``output_field`` and several other cases, the input ultimately reaches ``Func()`` as a keyword argument, so the advice to avoid constructing keyword arguments from untrusted user input applies as equally to these arguments as it does to ``**extra``.
+- [828af4ad] Company.objects.annotate( managers_required=(Count("num_employees") / 4) + Count("num_managers") )
+- [0ee073a4] Company.objects.order_by(F("last_contacted").desc(nulls_last=True))
+- [de1ab479] Company.objects.update(is_active=~F("is_active"))
+- [3c3a83e8] In previous versions of Django, ``F()`` objects were not refreshed from the database on :meth:`~Model.save` which resulted in them being evaluated and persisted every time the instance was saved.
+- [0eb52ef2] Length.as_sqlserver = sqlserver_length
+- [4340dc57] PostgreSQL has limited support for ``ValueRange`` and only supports use of the standard start and end points, such as ``CURRENT ROW`` and ``UNBOUNDED FOLLOWING``.
+- [40e50289] Reporter.objects.update(stories_filed=F("stories_filed") + 1)
+- [10111290] SELECT ... LOWER("db_table"."field") as "field_lower"
+- [507bd583] SELECT "post"."id", "post"."published_at", EXISTS( SELECT (1) as "a" FROM "comment" U0 WHERE ( U0."created_at" >= YYYY-MM-DD HH:MM:SS AND U0."post_id" = "post"."id" ) LIMIT 1 ) AS "recent_comment" FROM "post"
+- [f5559bb9] SELECT "post"."id", ( SELECT U0."email" FROM "comment" U0 WHERE U0."post_id" = ("post"."id") ORDER BY U0."created_at" DESC LIMIT 1 ) AS "newest_commenter_email" FROM "post"
+- [1f496062] The ``order_by`` argument was added.
+- [fdf2f6c1] The examples in this section are designed to show how to force Django to execute a subquery. In some cases it may be possible to write an equivalent queryset that performs the same task more clearly or efficiently.
+- [5764a667] These expressions are defined in ``django.db.models.expressions`` and ``django.db.models.aggregates``, but for convenience they're available and usually imported from :mod:`django.db.models`.
+- [bac0168e] Ticket.objects.annotate( expires=ExpressionWrapper( F("active_at") + F("duration"), output_field=DateTimeField() ) )
+- [c6e5e099] To protect against `SQL injection attacks <https://en.wikipedia.org/wiki/SQL_injection>`_, you must escape any parameters that the user can control by using ``params``. ``params`` is a required argument to force you to acknowledge that you're not interpolating your SQL with user-provided data.
+- [be76467f] ValueRange(start=0, end=0)
+- [46466cf5] You also must not quote placeholders in the SQL string. This example is vulnerable to SQL injection because of the quotes around ``%s``::
+- [228bc7e1a06eabc5] You can read more about how Django's :ref:`SQL injection protection <sql-injection-protection>` works.
+- [cbb0c119] ``ExpressionWrapper`` only sets the output field for the ORM and does not perform any database-level casting. To ensure a specific type is returned from the database, use :class:`~django.db.models.functions.Cast` instead.
+- [53a9377b] class Lower(Func): function = "LOWER"
+- [bfa1f066] class Position(Func): function = "POSITION" arg_joiner = " IN "
+- [799e1d98] class Position(Func): function = "POSITION" template = "%(function)s('%(substring)s' in %(expressions)s)"
+- [092bd30a] class Sum(Aggregate): # Supports SUM(ALL field). function = "SUM" template = "%(function)s(%(all_values)s%(expressions)s)" allow_distinct = False arity = 1
+- [1d5e58dc] company = Company.objects.annotate(chairs_needed=F("num_employees") - F("num_chairs"))
+- [44d53c5b] def as_oracle(self, compiler, connection): """ Example of vendor specific handling (Oracle in this case). Let's make the function name lowercase. """ return self.as_sql(compiler, connection, template="coalesce( %(expressions)s )")
+- [7e27f249] def as_sql(self, compiler, connection, template=None): sql_expressions, sql_params = [], [] for expression in self.expressions: sql, params = compiler.compile(expression) sql_expressions.append(sql) sql_params.extend(params) template = template or self.template data = {"expressions": ",".join(sql_expressions)} return template % data, tuple(sql_params)
+- [846259c1] def get_source_expressions(self): return self.expressions
+- [34badb5a] def resolve_expression( self, query=None, allow_joins=True, reuse=None, summarize=False, for_save=False ): c = self.copy() c.is_summary = summarize for pos, expression in enumerate(self.expressions): c.expressions[pos] = expression.resolve_expression( query, allow_joins, reuse, summarize, for_save ) return c
+- [43490068] def set_source_expressions(self, expressions): self.expressions = expressions
+- [da884d07] def sqlserver_length(self, compiler, connection): return self.as_sql(compiler, connection, function="LEN")
+- [6a26fba7] from django.db.models import Aggregate
+- [fecebe8b] from django.db.models import Count
+- [67781e0a] from django.db.models import DateTimeField, ExpressionWrapper, F
+- [a345df786882bc74-2] from django.db.models import F
+- [9b1dfeda] from django.db.models import Func
+- [8812facd] from django.db.models.functions import Length
+- [eabf35b0] queryset.annotate(field_lower=Func(F("field"), function="LOWER"))
+- [694dbc02] queryset.annotate(field_lower=Lower("field"))
+- [398813d9] reporter = Reporters.objects.filter(name="Tintin") reporter.update(stories_filed=F("stories_filed") + 1)
+- [926ae6d0] reporter = Reporters.objects.get(name="Tintin") reporter.stories_filed = F("stories_filed") + 1 reporter.save()
+- [c47e549b] class Coalesce(Expression): template = "COALESCE( %(expressions)s )"
+- [5cdb26f0] from django.db.models import Expression
+- [bd49d020] (Using :meth:`~.QuerySet.get` instead of a slice would fail because the ``OuterRef`` cannot be resolved until the queryset is used within a ``Subquery``.)
+- [43ec2e1e] * getting the database, rather than Python, to do work * reducing the number of queries some operations require
+- [4dd90a79] .. _avoiding-race-conditions-using-f:
+- [92938e67] .. _avoiding-sql-injection-in-query-expressions:
+- [eb494d7a] .. _f-expressions:
+- [c294732a] .. _func-expressions:
+- [788939d0] .. _output-field:
+- [37e05d4f] .. _slicing-using-f:
+- [991a2c7c] .. _using-f-to-sort-null-values:
+- [20920b86] .. _using-f-with-annotations:
+- [81115ebd] .. _window-frames:
+- [f9c25523] .. _writing-your-own-query-expressions:
+- [86e9fa35] .. admonition:: Database casting not performed
+- [9bb15e91] .. admonition:: Sanitize input used to configure a query expression
+- [73c1ca12] .. class:: Aggregate(*expressions, output_field=None, distinct=False, filter=None, default=None, order_by=None, **extra)
+- [f45a3d3e] .. class:: Exists(queryset)
+- [86215d69] .. class:: Expression
+- [dbedfd7a] .. class:: ExpressionWrapper(expression, output_field)
+- [888c82c0] .. class:: F
+- [9e09e695] .. class:: Func(*expressions, **extra)
+- [f666c89f] .. class:: JSONNull()
+- [5caed6e4] .. class:: OuterRef(field)
+- [36a1ad57] .. class:: RawSQL(sql, params, output_field=None)
+- [f7bb73ba] .. class:: RowRange(start=None, end=None, exclusion=None)
+- [c067dff0] .. class:: Subquery(queryset, output_field=None)
+- [60bcfe44] .. class:: Value(value, output_field=None)
+- [0a9420d9] .. class:: ValueRange(start=None, end=None, exclusion=None)
+- [5379cc60] .. class:: Window(expression, partition_by=None, order_by=None, frame=None, output_field=None)
+- [725c5da6] .. class:: WindowFrameExclusion
+- [eaf050be34acb41d-436] .. code-block:: pycon
+- [eaf050be34acb41d-437] .. code-block:: pycon
+- [eaf050be34acb41d-438] .. code-block:: pycon
+- [eaf050be34acb41d-439] .. code-block:: pycon
+- [eaf050be34acb41d-440] .. code-block:: pycon
+- [eaf050be34acb41d-441] .. code-block:: pycon
+- [eaf050be34acb41d-442] .. code-block:: pycon
+- [eaf050be34acb41d-443] .. code-block:: pycon
+- [eaf050be34acb41d-444] .. code-block:: pycon
+- [eaf050be34acb41d-445] .. code-block:: pycon
+- [eaf050be34acb41d-446] .. code-block:: pycon
+- [eaf050be34acb41d-447] .. code-block:: pycon
+- [eaf050be34acb41d-448] .. code-block:: pycon
+- [eaf050be34acb41d-449] .. code-block:: pycon
+- [eaf050be34acb41d-450] .. code-block:: pycon
+- [eaf050be34acb41d-451] .. code-block:: pycon
+- [eaf050be34acb41d-452] .. code-block:: pycon
+- [eaf050be34acb41d-453] .. code-block:: pycon
+- [eaf050be34acb41d-454] .. code-block:: pycon
+- [0ee73173f492412a-31] .. code-block:: sql
+- [0ee73173f492412a-32] .. code-block:: sql
+- [0ee73173f492412a-33] .. code-block:: sql
+- [0ee73173f492412a-34] .. code-block:: sql
+- [0ee73173f492412a-35] .. code-block:: sql
+- [3a368b18514a814b-5] .. currentmodule:: django.db.models
+- [e4d958b020902249-2] .. currentmodule:: django.db.models.expressions
+- [942ae6c11625c81c-102] .. note::
+- [942ae6c11625c81c-103] .. note::
+- [0cf180bcf4ecfab5-14] .. versionadded:: 6.1
+- [57739e32d87f6c76-13] .. versionchanged:: 6.0
+- [57739e32d87f6c76-14] .. versionchanged:: 6.0
+- [c54b54cb0805732a-51] .. warning::
+- [15f2d1c7] ================= Query Expressions =================
+- [0ceb5e88] A ``Value()`` object represents the smallest possible component of an expression: a simple value. When you need to represent the value of an integer, boolean, or string within an expression, you can wrap that value within a ``Value()``.
+- [51037540] Adding support in third-party database backends -----------------------------------------------
+- [e92d0dd1] Aggregates may be used within a ``Subquery``, but they require a specific combination of :meth:`~.QuerySet.filter`, :meth:`~.QuerySet.values`, and :meth:`~.QuerySet.annotate` to get the subquery grouping correct.
+- [2c9bb67e] Although ``reporter.stories_filed = F('stories_filed') + 1`` looks like a normal Python assignment of value to an instance attribute, in fact it's an SQL construct describing an operation on the database.
+- [2bd3fed6] Among Django's built-in database backends, MySQL, PostgreSQL, and Oracle support window expressions. Support for different window expression features varies among the different databases. For example, the options in :meth:`~django.db.models.Expression.asc` and :meth:`~django.db.models.Expression.desc` may not be supported. Consult the documentation for your database as needed.
+- [42529ddf] An ``F()`` object represents the value of a model field, transformed value of a model field, or annotated column. It makes it possible to refer to model field values and perform database operations using them without actually having to pull them out of the database into Python memory.
+- [12b45ed2] An aggregate expression is a special case of a :ref:`Func() expression <func-expressions>` that informs the query that a ``GROUP BY`` clause is required. All of the :ref:`aggregate functions <aggregation-functions>`, like ``Sum()`` and ``Count()``, inherit from ``Aggregate()``.
+- [c6842907] Another useful benefit of ``F()`` is that having the database - rather than Python - update a field's value avoids a *race condition*.
+- [cfbc750f] As well as being used in operations on single instances as above, ``F()`` can be used with ``update()`` to perform bulk updates on a ``QuerySet``. This reduces the two queries we were using above - the ``get()`` and the :meth:`~Model.save` - to just one::
+- [91ac7e90] Assuming both models have a ``length`` field, to find posts where the post length is greater than the total length of all combined comments:
+- [f1c15cfe] Avoiding SQL injection ~~~~~~~~~~~~~~~~~~~~~~
+- [fba8b8f9] Below you'll find technical implementation details that may be useful to library authors. The technical API and examples below will help with creating generic query expressions that can extend the built-in functionality that Django provides.
+- [93bd2c85] Both classes return SQL with the template:
+- [da1756cb] Built-in Expressions ====================
+- [563fdd70] But both cases will result in a queryset where each model is annotated with an extra attribute ``field_lower`` produced, roughly, from the following SQL:
+- [f1355ce9] Conditional expressions -----------------------
+- [f1999914] Conditional expressions allow you to use :keyword:`if` ... :keyword:`elif` ... :keyword:`else` logic in queries. Django natively supports SQL ``CASE`` expressions. For more details see :doc:`/ref/models/conditional-expressions`.
+- [c0d908d3] Creating your own Aggregate Functions -------------------------------------
+- [7cfdfd38] Django supports negation, addition, subtraction, multiplication, division, modulo arithmetic, and the power operator on query expressions, using Python constants, variables, and even other expressions.
+- [b48200c0] Expression API --------------
+- [34146d5e] Filtering against window functions is supported as long as lookups are not disjunctive (not using ``OR`` or ``XOR`` as a connector) and against a queryset performing aggregation.
+- [8e866664] Filtering on a ``Subquery()`` or ``Exists()`` expressions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [aef7e6cc] Finally, we implement the rest of the methods that allow our query expression to play nice with other query expressions::
+- [883d83be] For a window frame, you can choose either a range-based sequence of rows or an ordinary sequence of rows.
+- [e9f47990] For example, a query that relies on aggregation and has an ``OR``-ed filter against a window function and a field is not supported. Applying combined predicates post-aggregation could cause rows that would normally be excluded from groups to be included:
+- [16d1d73e] For example, if ``substring`` is user-provided, this function is vulnerable to SQL injection::
+- [1efc6c68] For example, to annotate each movie with the average rating for the movies by the same studio in the same genre and release year:
+- [f9e1b3e4] For example, to annotate each post with the email address of the author of the newest comment on that post:
+- [824cf527] For example, to annotate each post with whether or not it has a comment from within the last day:
+- [2a774cbc] For example, to sort companies that haven't been contacted (``last_contacted`` is null) after companies that have been contacted::
+- [1fe7052b] For string-based fields, text-based fields, and :class:`~django.contrib.postgres.fields.ArrayField`, you can use Python's array-slicing syntax. The indices are 0-based. The ``step`` argument to ``slice`` and negative indexing are not supported. For example:
+- [0accb823] For user projects wishing to patch the backend that they're using, this code should live in an :meth:`AppConfig.ready()<django.apps.AppConfig.ready>` method.
+- [d7203933] Frames ~~~~~~
+- [5cf8cdd3] Frames narrow the rows that are used for computing the result. They shift from some start point to some specified end point. Frames can be used with and without partitions, but it's often a good idea to specify an ordering of the window to ensure a deterministic result. In a frame, a peer in a frame is a row with an equivalent value, or all rows if an ordering clause isn't present.
+- [da196661] Here's a corrected rewrite::
+- [a845dcae] Here, we have pulled the value of ``reporter.stories_filed`` from the database into memory and manipulated it using familiar Python operators, and then saved the object back to the database. But instead we could also have done::
+- [cdcf187f] If a movie's "peers" are described as movies released by the same studio in the same genre in the same year, this ``RowRange`` example annotates each movie with the average rating of a movie's two prior and two following peers:
+- [46e32c69] If no :ref:`output_field<output-field>` is specified, it will be inferred from the type of the provided ``value`` for many common types. For example, passing an instance of :class:`datetime.datetime` as ``value`` defaults ``output_field`` to :class:`~django.db.models.DateTimeField`.
+- [a09c2e4b] If the database is responsible for updating the field, the process is more robust: it will only ever update the field based on the value of the field in the database when the :meth:`~Model.save` or ``update()`` is executed, rather than based on its value when the instance was retrieved.
+- [3279f369] If the database supports it, you can specify the start and end points based on values of an expression in the partition. If the ``released`` field of the ``Movie`` model stores the release month of each movie, this ``ValueRange`` example annotates each movie with the average rating of a movie's peers released between twelve months before and twelve months after each movie:
+- [fd3d3e7a] If the fields that you're combining are of different types you'll need to tell Django what kind of field will be returned. Most expressions support :ref:`output_field<output-field>` for this case, but since ``F()`` does not, you will need to wrap the expression with :class:`ExpressionWrapper`::
+- [5ee41e45] If two Python threads execute the code in the first example above, one thread could retrieve, increment, and save a field's value after the other has retrieved it from the database. The value that the second thread saves will be based on the original value; the work of the first thread will be lost.
+- [5571ec00] If you're using a database backend that uses a different SQL syntax for a certain function, you can add support for it by monkey patching a new method onto the function's class.
+- [2d77c8c1] In this case, the subquery must only return a single column *and* a single row: the email address of the most recently created comment.
+- [9be33fc1] In this case, the subquery must use :meth:`~.QuerySet.values` to return only a single column: the primary key of the post.
+- [33c9fa0a] Instances of ``OuterRef`` may be used in conjunction with nested instances of ``Subquery`` to refer to a containing queryset that isn't the immediate parent. For example, this queryset would need to be within a nested pair of ``Subquery`` instances to resolve correctly:
+- [44800b1f] Instead, Django uses the ``F()`` object to generate an SQL expression that describes the required operation at the database level.
+- [d05954ee] It's unnecessary to force ``Exists`` to refer to a single column, since the columns are discarded and a boolean result is returned. Similarly, since ordering is unimportant within an SQL ``EXISTS`` subquery and would only degrade performance, it's automatically removed.
+- [0a8baee3] Let's say we're writing a backend for Microsoft's SQL Server which uses the SQL ``LEN`` instead of ``LENGTH`` for the :class:`~functions.Length` function. We'll monkey patch a new method called ``as_sqlserver()`` onto the ``Length`` class::
+- [9c25e732] Let's see how it works:
+- [665c88a0] Let's try this with an example. Normally, one might do something like this::
+- [f8de7770] Limiting a subquery to a single column ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [41e668e8] Limiting the subquery to a single row ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [16fd104e] Many of the expressions documented in this section support an optional ``output_field`` parameter. If given, Django will load the value into that field after retrieving it from the database.
+- [28c21b45] Next, we write the method responsible for generating the SQL::
+- [48336606] Now we implement the preprocessing and validation. Since we do not have any of our own validation at this point, we delegate to the nested expressions::
+- [d072adb14377a8fc] On PostgreSQL, the SQL looks like:
+- [9c52d9b9] Output field ============
+- [8aeeae0f] Positional arguments can be expressions or Python values. Strings are assumed to be column references and will be wrapped in ``F()`` expressions while other values will be wrapped in ``Value()`` expressions.
+- [778bd889] Query expressions describe a value or a computation that can be used as part of an update, create, filter, order by, annotation, or aggregate. When an expression outputs a boolean value, it may be used directly in filters. There are a number of built-in expressions (documented below) that can be used to help you write queries. Expressions can be combined, or in some cases nested, to form more complex computations.
+- [c4fa7f6d] Query expressions implement the :ref:`query expression API <query-expression>`, but also expose a number of extra methods and attributes listed below. All query expressions must inherit from ``Expression()`` or a relevant subclass.
+- [84d4fb0e] Raw SQL expressions -------------------
+- [48ffa62e] Referencing columns from the outer queryset ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [a7e6080f] See :doc:`/ref/models/database-functions` for a list of built-in database functions.
+- [973f4b85] See :ref:`storing-and-querying-for-none` for usage examples.
+- [af566505] Since ``Aggregate``\s are expressions and wrap expressions, you can represent some complex computations::
+- [1b12a5ae] Since a ``Func``'s keyword arguments for ``__init__()`` (``**extra``) and ``as_sql()`` (``**extra_context``) are interpolated into the SQL string rather than passed as query parameters (where the database driver would escape them), they must not contain untrusted user input.
+- [e14a150a] Slicing ``F()`` expressions ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [efdb5e96] Some examples =============
+- [a006ecc9] Sometimes database expressions can't easily express a complex ``WHERE`` clause. In these edge cases, use the ``RawSQL`` expression. For example:
+- [1212d368] Specialized expression to represent JSON scalar ``null`` on a :class:`~django.db.models.JSONField`.
+- [ece2480d] Supported arithmetic ====================
+- [1946e245] Technical Information =====================
+- [0caaef70] The :ref:`output_field<output-field>` is specified either as an argument or by the expression.
+- [c5cedcb0] The ``**extra`` kwargs are ``key=value`` pairs that can be interpolated into the ``template`` attribute.
+- [2e396eea] The ``**extra`` kwargs are ``key=value`` pairs that can be interpolated into the ``template`` attribute. To avoid an SQL injection vulnerability, ``extra`` :ref:`must not contain untrusted user input <avoiding-sql-injection-in-query-expressions>` as these values are interpolated into the SQL string rather than passed as query parameters, where the database driver would escape them.
+- [46a87b3d] The ``*expressions`` argument is a list of positional expressions that the function will be applied to. The expressions will be converted to strings, joined together with ``arg_joiner``, and then interpolated into the ``template`` as the ``expressions`` placeholder.
+- [5f61e720] The ``Aggregate`` API is as follows:
+- [4ffc8cdc] The ``COALESCE`` SQL function is defined as taking a list of columns or values. It will return the first column or value that isn't ``NULL``.
+- [cdb0a339] The ``Func`` API is as follows:
+- [916c91e6] The ``Window`` class is the main expression for an ``OVER`` clause.
+- [82a927da] The ``default`` argument takes a value that will be passed along with the aggregate to :class:`~django.db.models.functions.Coalesce`. This is useful for specifying a value to be returned other than ``None`` when the queryset (or grouping) contains no entries.
+- [bfe75bfc] The ``distinct`` argument determines whether or not the aggregate function should be invoked for each distinct value of ``expressions`` (or set of values, for multiple ``expressions``). The argument is only supported on aggregates that have :attr:`~Aggregate.allow_distinct` set to ``True``.
+- [bbd7fae4] The ``exclusion`` argument allows excluding rows (:attr:`~WindowFrameExclusion.CURRENT_ROW`), groups (:attr:`~WindowFrameExclusion.GROUP`), and ties (:attr:`~WindowFrameExclusion.TIES`) from the window frames on supported databases:
+- [f71e064c] The ``expression`` argument is either a :ref:`window function <window-functions>`, an :ref:`aggregate function <aggregation-functions>`, or an expression that's compatible in a window clause.
+- [2c2ae239] The ``expressions`` positional arguments can include expressions, transforms of the model field, or the names of model fields. They will be converted to a string and used as the ``expressions`` placeholder within the ``template``.
+- [6a5b537d] The ``filter`` argument takes a :ref:`Q object <q-objects>` that's used to filter the rows that are aggregated. See :ref:`conditional-aggregation` and :ref:`filtering-on-annotations` for example usage.
+- [815b28eb] The ``frame`` parameter specifies which other rows should be used in the computation. See :ref:`window-frames` for details.
+- [0e8e8fe4] The ``function``, ``template``, and ``arg_joiner`` keywords can be used to replace the attributes of the same name without having to define your own class. :ref:`output_field<output-field>` can be used to define the expected return type.
+- [a3bf7adc] The ``order_by`` argument accepts an expression on which you can call :meth:`~django.db.models.Expression.asc` and :meth:`~django.db.models.Expression.desc`, a string of a field name (with an optional ``"-"`` prefix which indicates descending order), or a tuple or list of strings and/or expressions. The ordering controls the order in which the expression is applied. For example, if you sum over the rows in a partition, the first result is the value of the first row, the second is the sum of first and second row.
+- [95b54876] The ``order_by`` argument behaves similarly to the ``field_names`` input of the :meth:`~.QuerySet.order_by` function, accepting a field name (with an optional ``"-"`` prefix which indicates descending order) or an expression (or a tuple or list of strings and/or expressions) that specifies the ordering of the elements in the result.
+- [20e698e4] The ``partition_by`` argument accepts an expression or a sequence of expressions (column names should be wrapped in an ``F``-object) that control the partitioning of the rows. Partitioning narrows which rows are used to compute the result set.
+- [3bf8a7b7] The ``value`` argument describes the value to be included in the expression, such as ``1``, ``True``, or ``None``. Django knows how to convert these Python values into their corresponding database type.
+- [aca4fe22] The accepted values for the ``start`` and ``end`` arguments are ``None``, an integer, or zero. A negative integer for ``start`` results in ``N PRECEDING``, while ``None`` yields ``UNBOUNDED PRECEDING``. In ``ROWS`` mode, a positive integer can be used for ``start`` resulting in ``N FOLLOWING``. Positive integers are accepted for ``end`` and results in ``N FOLLOWING``. In ``ROWS`` mode, a negative integer can be used for ``end`` resulting in ``N PRECEDING``. For both ``start`` and ``end``, zero will return ``CURRENT ROW``.
+- [f02172a7] The default starting point for a frame is ``UNBOUNDED PRECEDING`` which is the first row of the partition. The end point is always explicitly included in the SQL generated by the ORM and is by default ``UNBOUNDED FOLLOWING``. The default frame includes all rows from the partition to the last row in the set.
+- [21e12d12] The initial ``filter(...)`` limits the subquery to the relevant parameters. ``order_by()`` removes the default :attr:`~django.db.models.Options.ordering` (if any) on the ``Comment`` model. ``values('post')`` aggregates comments by ``Post``. Finally, ``annotate(...)`` performs the aggregation. The order in which these queryset methods are applied is important. In this case, since the subquery must be limited to a single column, ``values('total')`` is required.
+- [1a63b043] There are times when a single column must be returned from a ``Subquery``, for instance, to use a ``Subquery`` as the target of an ``__in`` lookup. To return all comments for posts published within the last day:
+- [955cd613] There's a difference in what ``CURRENT ROW`` includes. When specified in ``ROWS`` mode, the frame starts or ends with the current row. When specified in ``RANGE`` mode, the frame starts or ends at the first or last peer according to the ordering clause. Thus, ``RANGE CURRENT ROW`` evaluates the expression for rows which have the same value specified by the ordering. Because the template includes both the ``start`` and ``end`` points, this may be expressed with::
+- [7b8157b9] These extra lookups may not be portable to different database engines (because you're explicitly writing SQL code) and violate the DRY principle, so you should avoid them if possible.
+- [45048141] Third-party backends can register their functions in the top level ``__init__.py`` file of the backend package or in a top level ``expressions.py`` file (or package) that is imported from the top level ``__init__.py``.
+- [dae14dd0] This allows you to check if a movie is rated better or worse than its peers.
+- [964b9858] This function generates an SQL string without any parameters. Since ``substring`` is passed to ``super().__init__()`` as a keyword argument, it's interpolated into the SQL string before the query is sent to the database.
+- [09563a65] This is documented in :ref:`using F() expressions in queries <using-f-expressions-in-filters>`.
+- [392cf928] This is the only way to perform an aggregation within a ``Subquery``, as using :meth:`~.QuerySet.aggregate` attempts to evaluate the queryset (and if there is an ``OuterRef``, this will not be possible to resolve).
+- [0ab88ea5] This will ensure that the subquery will not be added to the ``SELECT`` columns, which may result in a better performance.
+- [b01e13c3] To prevent a subquery from returning multiple rows, a slice (``[:1]``) of the queryset is used:
+- [c9530884] Use ``F()`` and the ``nulls_first`` or ``nulls_last`` keyword argument to :meth:`.Expression.asc` or :meth:`~.Expression.desc` to control the ordering of a field's null values. By default, the ordering depends on your database.
+- [da6fd5bb] Use ``OuterRef`` when a queryset in a ``Subquery`` needs to refer to a field from the outer query or its transform. It acts like an :class:`F` expression except that the check to see if it refers to a valid field isn't made until the outer queryset is resolved.
+- [e51c9af6] Using ``F()`` in filters ~~~~~~~~~~~~~~~~~~~~~~~~
+- [c7f647e6] Using ``F()`` with logical operations ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [66fbb212] Using aggregates within a ``Subquery`` expression ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [69537883] We can also use :meth:`~django.db.models.query.QuerySet.update` to increment the field value on multiple objects - which could be very much faster than pulling them all into Python from the database, looping over them, incrementing the field value of each one, and saving each one back to the database::
+- [fa211f89] We do some basic validation on the parameters, including requiring at least 2 columns or values, and ensuring they are expressions. We are requiring :ref:`output_field<output-field>` here so that Django knows what kind of model field to assign the eventual result to.
+- [6f70f66f] We generate the SQL for each of the ``expressions`` by using the ``compiler.compile()`` method, and join the result together with commas. Then the template is filled out with our data and the SQL and parameters are returned.
+- [a2b97330] We use ``as_sqlserver()`` because ``django.db.connection.vendor`` returns ``sqlserver`` for the backend.
+- [44630df6] We'll start by defining the template to be used for SQL generation and an ``__init__()`` method to set some attributes::
+- [e628de2d] We've also defined a custom implementation that is specific to the Oracle backend. The ``as_oracle()`` function will be called instead of ``as_sql()`` if the Oracle backend is in use.
+- [240aaa2a] Whatever value is or was on ``reporter.stories_filed``, Python never gets to know about it - it is dealt with entirely by the database. All Python does, through Django's ``F()`` class, is create the SQL syntax to refer to the field and describe the operation.
+- [d9c8502d] When Django encounters an instance of ``F()``, it overrides the standard Python operators to create an encapsulated SQL expression; in this case, one which instructs the database to increment the database field represented by ``reporter.stories_filed``.
+- [615df5de] When a query expression wraps another expression, it is responsible for calling the appropriate methods on the wrapped expression.
+- [e8603fa8] When referencing relational fields such as ``ForeignKey``, ``F()`` returns the primary key value rather than a model instance:
+- [a1bdeef8] Window functions ----------------
+- [8ef8c15b] Window functions provide a way to apply functions on partitions. Unlike a normal aggregation function which computes a final result for each set defined by the group by, window functions operate on :ref:`frames <window-frames>` and partitions, and compute the result for each row.
+- [c2d4c000] With ``substring`` instead passed as a positional argument, it'll be passed as a parameter in the database query.
+- [916aba39] You can add an explicit subquery to a ``QuerySet`` using the ``Subquery`` expression.
+- [fd6810e2] You can also customize the SQL using the ``template`` parameter of ``as_sql()``.
+- [2e84afd1] You can create your own aggregate functions, too. At a minimum, you need to define ``function``, but you can also completely customize the SQL that is generated. Here's a brief example::
+- [677cea28] You can query using ``NOT EXISTS`` with ``~Exists()``.
+- [41e10074] You can specify multiple windows in the same query which in Django ORM would be equivalent to including multiple expressions in a :doc:`QuerySet.annotate() </topics/db/aggregation>` call. The ORM doesn't make use of named windows, instead they are part of the selected columns.
+- [0e2c5531] You can write your own query expression classes that use, and can integrate with, other query expressions. Let's step through an example by writing an implementation of the ``COALESCE`` SQL function, without using the built-in :ref:`Func() expressions <func-expressions>`.
+- [2b41eec8] You may want to apply multiple expressions over the same window, i.e., the same partition and frame. For example, you could modify the previous example to also include the best and worst rating in each movie's group (same studio, genre, and release year) by using three window functions in the same query. The partition and ordering from the previous example is extracted into a dictionary to reduce repetition:
+- [89b8af92] You will rarely need to use ``Value()`` directly. When you write the expression ``F('field') + 1``, Django implicitly wraps the ``1`` in a ``Value()``, allowing simple values to be used in more complex expressions. You will need to use ``Value()`` when you want to pass a string to an expression. Most expressions interpret a string argument as the name of a field, like ``Lower('name')``.
+- [47a3202d] ``Aggregate()`` expressions ---------------------------
+- [c0159755] ``Exists()`` subqueries ~~~~~~~~~~~~~~~~~~~~~~~
+- [0bc02609] ``Exists`` is a ``Subquery`` subclass that uses an SQL ``EXISTS`` statement. In many cases it will perform better than a subquery since the database is able to stop evaluation of the subquery when a first matching row is found.
+- [661d5c26] ``ExpressionWrapper()`` expressions -----------------------------------
+- [8df05b08] ``ExpressionWrapper`` surrounds another expression and provides access to properties, such as :ref:`output_field<output-field>`, that may not be available on other expressions. ``ExpressionWrapper`` is necessary when using arithmetic on ``F()`` expressions with different types as described in :ref:`using-f-with-annotations`.
+- [ad8bb4b6] ``F()`` assignments are refreshed after ``Model.save()`` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [7e7b8c2c] ``F()`` can be used to create dynamic fields on your models by combining different fields with arithmetic::
+- [8dac3c09] ``F()`` expressions -------------------
+- [3b362630] ``F()`` expressions that output ``BooleanField`` can be logically negated with the inversion operator ``~F()``. For example, to swap the activation status of companies::
+- [967fab84] ``F()`` is also very useful in ``QuerySet`` filters, where they make it possible to filter a set of objects against criteria based on their field values, rather than on Python values.
+- [1b3b694e] ``F()`` objects assigned to model fields are refreshed from the database on :meth:`~Model.save` on backends that support it without incurring a subsequent query (SQLite, PostgreSQL, and Oracle) and deferred otherwise (MySQL or MariaDB). For example:
+- [3014d16f] ``F()`` therefore can offer performance advantages by:
+- [50c34835] ``Func()`` expressions ----------------------
+- [7de1ccff] ``Func()`` expressions are the base type of all expressions that involve database functions like ``COALESCE`` and ``LOWER``, or aggregates like ``SUM``. They can be used directly::
+- [6c7b3a25] ``JSONNull()`` expression -------------------------
+- [6cd9a3b7] ``RawSQL`` expressions can also be used as the target of ``__in`` filters:
+- [57984b21] ``Subquery()`` expressions --------------------------
+- [72e307a6] ``Subquery()`` that returns a boolean value and ``Exists()`` may be used as a ``condition`` in :class:`~django.db.models.expressions.When` expressions, or to directly filter a queryset:
+- [419b422e] ``Value()`` expressions -----------------------
+- [481be862] ``as_sql()`` methods can support custom keyword arguments, allowing ``as_vendorname()`` methods to override data used to generate the SQL string. Using ``as_sql()`` keyword arguments for customization is preferable to mutating ``self`` within ``as_vendorname()`` methods as the latter can lead to errors when running on different database backends. If your class relies on class attributes to define data, consider allowing overrides in your ``as_sql()`` method.
+- [8bf877e9] ``output_field`` also allows using custom fields that perform type conversions outside a specific model field context. For example, if you frequently need to perform date arithmetic with ``timedelta``, you can create a custom field that handles the conversion, ensuring consistent results across databases. See :doc:`/howto/custom-model-fields`.
+- [3daa820a] ``output_field`` is only required when Django is unable to automatically determine the result's field type, such as complex expressions that mix field types. For example, adding a ``DecimalField()`` and a ``FloatField()`` requires an output field, like ``output_field=FloatField()``.
+- [f171b3c8] ``output_field`` takes a model field instance, like ``IntegerField()`` or ``BooleanField()``. Usually, the field doesn't need any arguments, like ``max_length``, since field arguments relate to data validation which will not be performed on the expression's output value.
+- [87f5b45b] or they can be used to build a library of database functions::

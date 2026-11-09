@@ -1,6 +1,6 @@
 # Fact ff4630f3
 
-Store id: fc243f5d-d0e4-4faa-9f57-400c12209a86
+Store id: 95b106ca-20c3-4b99-b089-9776f0b990b9
 
 ## Text
 
@@ -20,7 +20,7 @@ class Length(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1151800+00:00`
+- posted_at: `2026-11-09T23:32:02.1997670+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 179,
     "symbol": "Length"
   },
-  "id": "fc243f5d-d0e4-4faa-9f57-400c12209a86",
+  "id": "95b106ca-20c3-4b99-b089-9776f0b990b9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1151800+00:00"
+    "posted_at": "2026-11-09T23:32:02.1997670+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6eba96ea-871e-4f8d-b9b6-28e70a9c47cc",
+  "subject_id": "52d98ca3-eba5-4804-990d-a4d6f15fb6ba",
   "subject_name": "django/db/models/functions/text::Length",
   "tags": [
     "entity:class"

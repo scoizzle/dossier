@@ -1,6 +1,6 @@
 # Fact 3430ed88
 
-Store id: 15a19130-b5e4-4f67-8e3c-e73396ee81f9
+Store id: 9945e157-0db9-4de1-bfca-489c5c374e16
 
 ## Text
 
@@ -20,7 +20,7 @@ def __aiter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3264070+00:00`
+- posted_at: `2026-11-09T23:32:04.3353220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 476,
     "symbol": "QuerySet.__aiter__"
   },
-  "id": "15a19130-b5e4-4f67-8e3c-e73396ee81f9",
+  "id": "9945e157-0db9-4de1-bfca-489c5c374e16",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3264070+00:00"
+    "posted_at": "2026-11-09T23:32:04.3353220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f45a9482-c343-43c5-b32b-cd7777ba6aa3",
+  "subject_id": "5ae37c12-5022-4bb8-bc53-ff7e90a3278f",
   "subject_name": "django/db/models/query::QuerySet.__aiter__",
   "tags": [
     "entity:method"

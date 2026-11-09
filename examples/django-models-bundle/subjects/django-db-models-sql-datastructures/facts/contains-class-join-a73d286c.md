@@ -1,6 +1,6 @@
 # Fact a73d286c
 
-Store id: e7a2b680-5248-43ac-a65a-103a3a137288
+Store id: 64092963-ed92-4bc4-8e0f-dfa2f8d26ee7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Join
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.0344460+00:00`
+- posted_at: `2026-11-09T23:32:06.5084320+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e7a2b680-5248-43ac-a65a-103a3a137288",
+  "id": "64092963-ed92-4bc4-8e0f-dfa2f8d26ee7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.0344460+00:00"
+    "posted_at": "2026-11-09T23:32:06.5084320+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Join"
       },
       "rel": "contains",
-      "target": "eee05ff6-dc61-4bf8-a8c3-d3d93ecd8574"
+      "target": "3d53a54d-87ee-4469-b528-e0e8c2eacc08"
     }
   ],
   "status": "live",
-  "subject_id": "b1502e27-bc33-4761-a195-6853e0cf262a",
+  "subject_id": "173565d9-788f-4a55-b66f-e71d8d7b1a33",
   "subject_name": "django/db/models/sql/datastructures",
   "tags": [
     "entity:class"

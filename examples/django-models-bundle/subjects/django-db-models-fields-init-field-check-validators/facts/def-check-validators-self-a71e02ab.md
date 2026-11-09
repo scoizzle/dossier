@@ -1,6 +1,6 @@
 # Fact a71e02ab
 
-Store id: 48b24097-7e64-4338-b147-93a7430b6e83
+Store id: 0bb4e728-e9f1-4f95-aafb-99511dbbe24e
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_validators(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2864940+00:00`
+- posted_at: `2026-11-09T23:31:56.4386120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 527,
     "symbol": "Field._check_validators"
   },
-  "id": "48b24097-7e64-4338-b147-93a7430b6e83",
+  "id": "0bb4e728-e9f1-4f95-aafb-99511dbbe24e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2864940+00:00"
+    "posted_at": "2026-11-09T23:31:56.4386120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2cbca365-a37f-4e8f-96c2-f58376f6b8e2",
+  "subject_id": "6828ed55-ef80-4c3e-9ce6-12b21e4f3517",
   "subject_name": "django/db/models/fields/__init__::Field._check_validators",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/commands
 
-- Subject: docs/ref/contrib/gis/commands (id `9a7b9aa9-79d7-4616-8849-0754e9d19904`)
+- Subject: docs/ref/contrib/gis/commands (id `dcb9ca85-4c95-43c1-bec7-f6ba1fcd551f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 863 tokens
-- Facts shown: 25 of 27
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 944 tokens
+- Facts shown: 26 of 27
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Automatically generate a mapping dictionary for use with :class:`~django.contrib.gis.utils.LayerMapping`. [cf72d4e2]
 - Generates a ``__str__()`` method on the model that returns the given field name. [232d669f]
@@ -36,6 +36,6 @@
 - ``inspectdb`` ============= [55982dc7]
 - ``ogrinspect`` ============== [179313f0c34e8b4c]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [642f71ac]
+- [642f71ac] When :mod:`django.contrib.gis` is in your :setting:`INSTALLED_APPS`, the :djadmin:`inspectdb` management command is overridden with one from GeoDjango. The overridden command is spatially-aware, and places geometry fields in the auto-generated model definition, where appropriate.

@@ -1,6 +1,6 @@
 # Fact c0f09d7d
 
-Store id: bde9964a-f4aa-4d8b-a903-5c672c8e0cb1
+Store id: 4d5504c0-61e3-4b48-8138-9b1ee2dad6e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4967280+00:00`
+- posted_at: `2026-11-09T23:31:56.6660570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2012,
     "symbol": "EmailField.formfield"
   },
-  "id": "bde9964a-f4aa-4d8b-a903-5c672c8e0cb1",
+  "id": "4d5504c0-61e3-4b48-8138-9b1ee2dad6e8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4967280+00:00"
+    "posted_at": "2026-11-09T23:31:56.6660570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dd2d5e59-f29f-4724-bf31-a9af7cba8a77",
+  "subject_id": "1dec1561-99e9-43c7-bbd5-4d612ea6f36c",
   "subject_name": "django/db/models/fields/__init__::EmailField.formfield",
   "tags": [
     "entity:method"

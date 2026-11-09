@@ -1,6 +1,6 @@
 # Fact 0766c797
 
-Store id: 0f16a439-e98e-4027-9a2b-95fdac8e7c56
+Store id: 24efb5b4-f9ef-470d-9b9a-e8358960a877
 
 ## Text
 
@@ -20,7 +20,7 @@ class StdDev(NumericOutputFieldMixin, Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0452670+00:00`
+- posted_at: `2026-11-09T23:31:53.5411420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 340,
     "symbol": "StdDev"
   },
-  "id": "0f16a439-e98e-4027-9a2b-95fdac8e7c56",
+  "id": "24efb5b4-f9ef-470d-9b9a-e8358960a877",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0452670+00:00"
+    "posted_at": "2026-11-09T23:31:53.5411420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3eed5fe4-6dfe-416b-b67a-3db791340b74",
+  "subject_id": "8ce29e24-e789-4658-bd85-9162b146b4e5",
   "subject_name": "django/db/models/aggregates::StdDev",
   "tags": [
     "entity:class"

@@ -1,14 +1,14 @@
 # django/template/backends/django
 
-- Subject: django/template/backends/django (id `2c1e1980-1313-46fc-b5f1-daf4eb70d682`)
+- Subject: django/template/backends/django (id `7f2cc67a-bb7c-4cef-b3c7-c10cbe321295`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 20 of 27
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1485 tokens
+- Facts shown: 27 of 27
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - errors = [] [ea5291ead597635f-3]
 - for library_name, items in libraries.items(): if len(items) > 1: items = ", ".join(repr(item) for item in sorted(items)) errors.append( Warning( f"{library_name!r} is used for multiple template tag modules: " f"{items}", obj=self, id="templates.W003", ) ) [016bdd4c]
@@ -31,6 +31,12 @@
 - class Template: def __init__(self, template, backend): self.template = template self.backend = backend [fbb42c46]
 - from .base import BaseEngine [73d57bba]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [11511e80] [ce5bf657] [13844e41] [c794524c] [17468425] [fa1210c2] [50a28e34]
+- [11511e80] def copy_exception(exc, backend=None): """ Create a new TemplateDoesNotExist. Preserve its declared attributes and template debug data but discard __traceback__, __context__, and __cause__ to make this object suitable for keeping around (in a cache, for example). """ backend = backend or exc.backend new = exc.__class__(*exc.args, tried=exc.tried, backend=backend, chain=exc.chain) if hasattr(exc, "template_debug"): new.template_debug = exc.template_debug return new
+- [ce5bf657] def get_installed_libraries(): """ Return the built-in template tag libraries and those from installed applications. Libraries are stored in a dictionary where keys are the individual module names, not the full module paths. Example: django.templatetags.i18n is stored as i18n. """ return { module_name: full_name for module_name, full_name in get_template_tag_modules() }
+- [13844e41] def get_package_libraries(pkg): """ Recursively yield template tag libraries defined in submodules of a package. """ for entry in walk_packages(pkg.__path__, pkg.__name__ + "."): try: module = import_module(entry[1]) except ImportError as e: raise InvalidTemplateLibrary( "Invalid template library specified. ImportError raised when " "trying to load '%s': %s" % (entry[1], e) ) from e
+- [c794524c] def get_template_tag_modules(): """ Yield (module_name, module_path) pairs for all installed template tag libraries. """ candidates = ["django.templatetags"] candidates.extend( f"{app_config.name}.templatetags" for app_config in apps.get_app_configs() )
+- [17468425] def reraise(exc, backend): """ Reraise TemplateDoesNotExist while maintaining template debug information. """ new = copy_exception(exc, backend) raise new from exc
+- [fa1210c2] from collections import defaultdict from importlib import import_module from pkgutil import walk_packages
+- [50a28e34] from django.apps import apps from django.conf import settings from django.core.checks import Error, Warning from django.template import TemplateDoesNotExist from django.template.context import make_context from django.template.engine import Engine from django.template.library import InvalidTemplateLibrary

@@ -1,6 +1,6 @@
 # Fact e2d8495e
 
-Store id: 59c39a67-1bf0-445d-ac8a-b2ef605bd42b
+Store id: cf9208d7-7530-4dfc-b54b-e5809ac262fd
 
 ## Text
 
@@ -20,7 +20,7 @@ class IEndsWith(EndsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1930980+00:00`
+- posted_at: `2026-11-09T23:32:03.3764800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 652,
     "symbol": "IEndsWith"
   },
-  "id": "59c39a67-1bf0-445d-ac8a-b2ef605bd42b",
+  "id": "cf9208d7-7530-4dfc-b54b-e5809ac262fd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1930980+00:00"
+    "posted_at": "2026-11-09T23:32:03.3764800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "14a706a7-d474-40fd-8ea5-3eb6a27407ed",
+  "subject_id": "91cb2a7b-03cc-4304-8d87-857bdfba60e4",
   "subject_name": "django/db/models/lookups::IEndsWith",
   "tags": [
     "entity:class",

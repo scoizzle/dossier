@@ -1,8 +1,8 @@
 # django/urls/converters
 
-- Subject: django/urls/converters (id `ca0af40f-3a85-4574-ab10-f3478786c2f3`)
+- Subject: django/urls/converters (id `3311120f-4fbd-425c-b133-a05515cb5b90`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 425 tokens
 - Facts shown: 15 of 18
 - Conflicts: 0

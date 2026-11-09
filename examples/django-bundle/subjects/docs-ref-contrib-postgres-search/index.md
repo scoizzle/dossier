@@ -1,14 +1,14 @@
 # docs/ref/contrib/postgres/search
 
-- Subject: docs/ref/contrib/postgres/search (id `b84a82ba-6b11-4bfd-8ae5-b506c81f701c`)
+- Subject: docs/ref/contrib/postgres/search (id `c9708194-2353-48a7-9556-7d616a37ed97`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 13 of 141
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5801 tokens
+- Facts shown: 137 of 141
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Meta: indexes = [GinIndex(fields=["search_vector"])] [9d6f3363]
 - search_vector = models.GeneratedField( expression=SearchVector("headline", weight="A", config="english") + SearchVector("body_text", weight="B", config="english"), output_field=SearchVectorField(), db_persist=True, ) [1eae7b4c]
@@ -24,6 +24,129 @@
 - >>> from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector >>> vector = SearchVector("body_text") >>> query = SearchQuery("cheese") >>> Entry.objects.annotate(rank=SearchRank(vector, query)).order_by("-rank") <QuerySet [<Entry: Cheese on Toast recipes>, <Entry: Pizza recipes>]> [f4ad5607]
 - For a high-level overview of searching, see the :doc:`topic documentation </topics/db/search>`. [61cfcb44]
 
-## Beyond the budget
+## All facts
 
-124 more facts did not fit in the budget: [6b5c2c46] [23016b84] [fa7f6c8b] [7c8ec948] [2fa81440] [105477ae] [ca8b79f9] [8237b9a5] [9df6c898] [497f01ab] [0758207e] [cc3a43b3] [3fe9114b] [bd9f6eac] [ec61a36d] [97348f83] [cf377be2] [cf54b256] [e4ea84a5] [834e5a14] [0861ab1b] [eb421257] [2c360796] [d7cc0e99] [abfbb4c5] [4b9bb354] [d91af8b1] [a540c22c] [f7061c38] [c32b976c] [65a08ed9] [c01bdcd8] [eaf050be34acb41d-245] [eaf050be34acb41d-246] [eaf050be34acb41d-247] [eaf050be34acb41d-248] [eaf050be34acb41d-249] [eaf050be34acb41d-250] [eaf050be34acb41d-251] [eaf050be34acb41d-252] [eaf050be34acb41d-253] [eaf050be34acb41d-254] [eaf050be34acb41d-255] [eaf050be34acb41d-256] [eaf050be34acb41d-257] [eaf050be34acb41d-258] [eaf050be34acb41d-259] [eaf050be34acb41d-260] [eaf050be34acb41d-261] [eaf050be34acb41d-262] [eaf050be34acb41d-263] [eaf050be34acb41d-264] [77797082] [5212ed16] [6b4a5e54e001d097-19] [a1eb26d754a3d60c-20] [57739e32d87f6c76-8] [a3609f37] [fef206e6] [e35f2101] [94cfbe09] [a35f2b91] [09753ab7] [03cb0c3f] [87993a44] [0618c19a] [4fabe37f] [7424ac6d] [f85d7fa2] [1a555414] [3e92be26] [2ec6aead] [1ebca3e2] [d4cabd1f] [68f5062c] [4c1de632] [5476166e] [71982a3f] [d9980b02] [3090c23fe7b0bac4] [e7c4b51e] [d8139eaf] [ec145b2f] [dfff80dd] [30903a07] [89f725a3] [f6ed2faf] [2be941c2] [c67e37bd] [25efa7ff] [483aedf1] [18e7084f] [8cf9b1b0] [f23ba775] [9b062f9a] [26df1fe1] [3814373c] [35497d16] [fbf4d8b26aa7310d-2] [3ecdcd2d485c92ad-3] [3ecdcd2d485c92ad-4] [3ecdcd2d485c92ad-5] [3ecdcd2d485c92ad-6] [3ecdcd2d485c92ad-7] [4d77325f] [3f7a49e2] [9679c498] [ddd3c8be] [f05f7c3e] [17feee2b] [53a4c8a1] [d35b52ca] [d082f334] [a904a76c] [d1a53216] [ffe4227b] [8efa407c] [1f3fb319] [38680c7f] [b8e820e7] [ae182e5f] [1c2254a9] [9d012bdb] [88b3f8f2]
+- [6b5c2c46] >>> from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector >>> vector = SearchVector("body_text", weight="A") + SearchVector( ... "blog__tagline", weight="B" ... ) >>> query = SearchQuery("cheese") >>> Entry.objects.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.3).order_by( ... "rank" ... )
+- [23016b84] >>> from django.contrib.postgres.search import SearchQuery, SearchVector >>> Entry.objects.annotate( ... search=SearchVector("body_text", config="french"), ... ).filter(search=SearchQuery("œuf", config="french")) <QuerySet [<Entry: Pain perdu>]>
+- [fa7f6c8b] >>> from django.contrib.postgres.search import SearchQuery, SearchVector, Lexeme >>> vector = SearchVector("body_text", "blog__tagline") >>> Entry.objects.annotate(search=vector).filter( ... search=SearchQuery(Lexeme("fruit") & Lexeme("dessert")) ... ) <QuerySet [<Entry: Apple Crumble Recipes>, <Entry: Banana Split Recipes>]>
+- [7c8ec948] >>> from django.contrib.postgres.search import SearchVector >>> Entry.objects.annotate( ... search=SearchVector("body_text", "blog__tagline"), ... ).filter(search="Cheese") <QuerySet [<Entry: Cheese on Toast recipes>, <Entry: Pizza Recipes>]>
+- [2fa81440] >>> from django.contrib.postgres.search import TrigramDistance >>> Author.objects.create(name="Katy Stevens") >>> Author.objects.create(name="Stephen Keats") >>> test = "Katie Stephens" >>> Author.objects.annotate( ... distance=TrigramDistance("name", test), ... ).filter( ... distance__lte=0.7 ... ).order_by("distance") <QuerySet [<Author: Katy Stevens>, <Author: Stephen Keats>]>
+- [105477ae] >>> from django.contrib.postgres.search import TrigramSimilarity >>> Author.objects.create(name="Katy Stevens") >>> Author.objects.create(name="Stephen Keats") >>> test = "Katie Stephens" >>> Author.objects.annotate( ... similarity=TrigramSimilarity("name", test), ... ).filter( ... similarity__gt=0.3 ... ).order_by("-similarity") <QuerySet [<Author: Katy Stevens>, <Author: Stephen Keats>]>
+- [ca8b79f9] >>> from django.contrib.postgres.search import TrigramWordDistance >>> Author.objects.create(name="Katy Stevens") >>> Author.objects.create(name="Stephen Keats") >>> test = "Kat" >>> Author.objects.annotate( ... distance=TrigramWordDistance(test, "name"), ... ).filter( ... distance__lte=0.7 ... ).order_by("distance") <QuerySet [<Author: Katy Stevens>]>
+- [8237b9a5] >>> from django.contrib.postgres.search import TrigramWordSimilarity >>> Author.objects.create(name="Katy Stevens") >>> Author.objects.create(name="Stephen Keats") >>> test = "Kat" >>> Author.objects.annotate( ... similarity=TrigramWordSimilarity(test, "name"), ... ).filter( ... similarity__gt=0.3 ... ).order_by("-similarity") <QuerySet [<Author: Katy Stevens>]>
+- [9df6c898] >>> from django.db.models import F >>> Entry.objects.annotate( ... search=SearchVector("body_text", config=F("blog__language")), ... ).filter(search=SearchQuery("œuf", config=F("blog__language"))) <QuerySet [<Entry: Pain perdu>]>
+- [497f01ab] >>> from django.db.models import Value >>> Entry.objects.annotate( ... rank=SearchRank( ... vector, ... query, ... normalization=Value(2).bitor(Value(4)), ... ) ... )
+- [0758207e] >>> rank = SearchRank(vector, query, weights=[0.2, 0.4, 0.6, 0.8]) >>> Entry.objects.annotate(rank=rank).filter(rank__gte=0.3).order_by("-rank")
+- [cc3a43b3] GinIndex( SearchVector("body_text", "headline", config="english"), name="search_vector_idx", )
+- [3fe9114b] class Entry(models.Model): headline = models.CharField(max_length=255) body_text = models.TextField()
+- [bd9f6eac] from django.contrib.postgres.indexes import GinIndex from django.contrib.postgres.search import SearchVector, SearchVectorField from django.db import models
+- [ec61a36d] .. _Full Text Search docs: https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES
+- [97348f83] .. _PostgreSQL documentation: https://www.postgresql.org/docs/current/textsearch-features.html#TEXTSEARCH-UPDATE-TRIGGERS
+- [cf377be2] .. _different rank normalization options: https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-RANKING
+- [cf54b256] .. _highlighting search results: https://www.postgresql.org/docs/current/textsearch-controls.html#TEXTSEARCH-HEADLINE
+- [e4ea84a5] .. _postgresql-fts-search-configuration:
+- [834e5a14] .. _postgresql-fts-weighting-queries:
+- [0861ab1b] .. class:: Lexeme(value, output_field=None, *, invert=False, prefix=False, weight=None)
+- [eb421257] .. class:: SearchHeadline(expression, query, config=None, start_sel=None, stop_sel=None, max_words=None, min_words=None, short_word=None, highlight_all=None, max_fragments=None, fragment_delimiter=None)
+- [2c360796] .. class:: SearchQuery(value, config=None, search_type='plain')
+- [d7cc0e99] .. class:: SearchRank(vector, query, weights=None, normalization=None, cover_density=False)
+- [abfbb4c5] .. class:: SearchVector(*expressions, config=None, weight=None)
+- [4b9bb354] .. class:: SearchVectorField
+- [d91af8b1] .. class:: TrigramDistance(expression, string, **extra)
+- [a540c22c] .. class:: TrigramSimilarity(expression, string, **extra)
+- [f7061c38] .. class:: TrigramStrictWordDistance(string, expression, **extra)
+- [c32b976c] .. class:: TrigramStrictWordSimilarity(string, expression, **extra)
+- [65a08ed9] .. class:: TrigramWordDistance(string, expression, **extra)
+- [c01bdcd8] .. class:: TrigramWordSimilarity(string, expression, **extra)
+- [eaf050be34acb41d-245] .. code-block:: pycon
+- [eaf050be34acb41d-246] .. code-block:: pycon
+- [eaf050be34acb41d-247] .. code-block:: pycon
+- [eaf050be34acb41d-248] .. code-block:: pycon
+- [eaf050be34acb41d-249] .. code-block:: pycon
+- [eaf050be34acb41d-250] .. code-block:: pycon
+- [eaf050be34acb41d-251] .. code-block:: pycon
+- [eaf050be34acb41d-252] .. code-block:: pycon
+- [eaf050be34acb41d-253] .. code-block:: pycon
+- [eaf050be34acb41d-254] .. code-block:: pycon
+- [eaf050be34acb41d-255] .. code-block:: pycon
+- [eaf050be34acb41d-256] .. code-block:: pycon
+- [eaf050be34acb41d-257] .. code-block:: pycon
+- [eaf050be34acb41d-258] .. code-block:: pycon
+- [eaf050be34acb41d-259] .. code-block:: pycon
+- [eaf050be34acb41d-260] .. code-block:: pycon
+- [eaf050be34acb41d-261] .. code-block:: pycon
+- [eaf050be34acb41d-262] .. code-block:: pycon
+- [eaf050be34acb41d-263] .. code-block:: pycon
+- [eaf050be34acb41d-264] .. code-block:: pycon
+- [77797082] .. currentmodule:: django.contrib.postgres.search
+- [5212ed16] .. fieldlookup:: search
+- [6b4a5e54e001d097-19] .. seealso::
+- [a1eb26d754a3d60c-20] .. versionadded:: 6.0
+- [57739e32d87f6c76-8] .. versionchanged:: 6.0
+- [a3609f37] ================ Full text search ================
+- [fef206e6] A common way to use full text search is to search a single term against a single column in the database. For example:
+- [e35f2101] Accepts a field name or expression, and a string or expression. Returns the trigram distance between the two arguments.
+- [94cfbe09] Accepts a single text field or an expression, a query, a config, and a set of options. Returns highlighted search results.
+- [a35f2b91] Accepts a string or expression, and a field name or expression. Returns the trigram strict word similarity between the two arguments. Similar to :class:`TrigramWordSimilarity() <TrigramWordSimilarity>`, except that it forces extent boundaries to match word boundaries.
+- [09753ab7] Accepts a string or expression, and a field name or expression. Returns the trigram word similarity between the two arguments.
+- [03cb0c3f] An alternative method is to use a :class:`~django.db.models.GeneratedField`, which has PostgreSQL maintain the column rather than a trigger::
+- [87993a44] Another approach to searching is trigram similarity. A trigram is a group of three consecutive characters. In addition to the :lookup:`trigram_similar`, :lookup:`trigram_word_similar`, and :lookup:`trigram_strict_word_similar` lookups, you can use a couple of other expressions.
+- [0618c19a] Changing the search configuration =================================
+- [4fabe37f] Every field may not have the same relevance in a query, so you can set weights of various vectors before you combine them:
+- [7424ac6d] For the examples in this document, we'll use the models defined in :doc:`/topics/db/queries`.
+- [f85d7fa2] If ``search_type`` is ``'plain'``, which is the default, the terms are treated as separate keywords. If ``search_type`` is ``'phrase'``, the terms are treated as a single phrase. If ``search_type`` is ``'raw'``, then you can provide a formatted search query with terms and operators. If ``search_type`` is ``'websearch'``, then you can provide a formatted search query, similar to the one used by web search engines. ``'websearch'`` requires PostgreSQL ≥ 11. Read PostgreSQL's `Full Text Search docs`_ to learn about differences and syntax. Examples:
+- [1a555414] If this approach becomes too slow, you can add a ``SearchVectorField`` to your model. You'll need to keep it populated with triggers, for example, as described in the `PostgreSQL documentation`_. You can then query the field as if it were an annotated ``SearchVector``:
+- [3e92be26] In the event that all the fields you're querying on are contained within one particular model, you can create a functional :class:`~django.contrib.postgres.indexes.GinIndex` or :class:`~django.contrib.postgres.indexes.GistIndex` which matches the search vector you wish to use. For example::
+- [2ec6aead] Lexeme objects also support term weighting and prefixes:
+- [1ebca3e2] Performance ===========
+- [d4cabd1f] Provide a non-zero integer value to the ``max_fragments`` to set the maximum number of fragments to display. That's disabled by default in PostgreSQL.
+- [68f5062c] Provide an integer to the ``normalization`` parameter to control rank normalization. This integer is a bit mask, so you can combine multiple behaviors:
+- [4c1de632] Provide an integer value to the ``short_word`` parameter to discard words of this length or less in each headline. PostgreSQL's default is 3.
+- [5476166e] Provide integer values to the ``max_words`` and ``min_words`` parameters to determine the longest and shortest headlines. PostgreSQL's defaults are 35 and 15.
+- [71982a3f] Searching against a single field is great but rather limiting. The ``Entry`` instances we're searching belong to a ``Blog``, which has a ``tagline`` field. To query against both fields, use a ``SearchVector``:
+- [d9980b02] See :ref:`postgresql-fts-search-configuration` and :ref:`postgresql-fts-weighting-queries` for an explanation of the ``config`` and ``weight`` parameters.
+- [3090c23fe7b0bac4] See :ref:`postgresql-fts-search-configuration` for an explanation of the ``config`` parameter.
+- [e7c4b51e] See :ref:`postgresql-fts-weighting-queries` for an explanation of the ``weights`` parameter.
+- [d8139eaf] Set the ``cover_density`` parameter to ``True`` to enable the cover density ranking, which means that the proximity of matching query terms is taken into account.
+- [ec145b2f] Set the ``fragment_delimiter`` string parameter to configure the delimiter between fragments. PostgreSQL's default is ``" ... "``.
+- [dfff80dd] Set the ``highlight_all`` parameter to ``True`` to use the whole document in place of a fragment and ignore ``max_words``, ``min_words``, and ``short_word`` parameters. That's disabled by default in PostgreSQL.
+- [30903a07] Set the ``start_sel`` and ``stop_sel`` parameters to the string values to be used to wrap highlighted query terms in the document. PostgreSQL's defaults are ``<b>`` and ``</b>``.
+- [89f725a3] So far, we've returned the results for which any match between the vector and the query are possible. It's likely you may wish to order the results by some sort of relevancy. PostgreSQL provides a ranking function which takes into account how often the query terms appear in the document, how close together the terms are in the document, and how important the part of the document is where they occur. The better the match, the higher the value of the rank. To order by relevancy:
+- [f6ed2faf] Special database configuration isn't necessary to use any of these functions, however, if you're searching more than a few hundred records, you're likely to run into performance problems. Full text search is a more intensive process than comparing the size of an integer, for example.
+- [2be941c2] The PostgreSQL docs has details on `creating indexes for full text search <https://www.postgresql.org/docs/current/textsearch-tables.html#TEXTSEARCH-TABLES-INDEX>`_.
+- [c67e37bd] The PostgreSQL documentation has more details about `different rank normalization options`_.
+- [25efa7ff] The PostgreSQL documentation has more details on `highlighting search results`_.
+- [483aedf1] The ``search`` lookup =====================
+- [18e7084f] The arguments to ``SearchVector`` can be any :class:`~django.db.models.Expression` or the name of a field. Multiple arguments will be concatenated together using a space so that the search document includes them all.
+- [8cf9b1b0] The database functions in the ``django.contrib.postgres.search`` module ease the use of PostgreSQL's `full text search engine <https://www.postgresql.org/docs/current/textsearch.html>`_.
+- [f23ba775] The value of ``config`` could also be stored in another column:
+- [9b062f9a] The weight should be one of the following letters: D, C, B, A. By default, these weights refer to the numbers ``0.1``, ``0.2``, ``0.4``, and ``1.0``, respectively. If you wish to weight them differently, pass a list of four floats to :class:`SearchRank` as ``weights`` in the same order above:
+- [26df1fe1] This creates a ``to_tsvector`` in the database from the ``body_text`` field and a ``plainto_tsquery`` from the search term ``'Cheese'``, both using the default database search configuration. The results are obtained by matching the query and the vector.
+- [3814373c] To use the ``search`` lookup, ``'django.contrib.postgres'`` must be in your :setting:`INSTALLED_APPS`.
+- [35497d16] To use them, you need to activate the `pg_trgm extension <https://www.postgresql.org/docs/current/pgtrgm.html>`_ on PostgreSQL. You can install it using the :class:`~django.contrib.postgres.operations.TrigramExtension` migration operation.
+- [fbf4d8b26aa7310d-2] Trigram similarity ==================
+- [3ecdcd2d485c92ad-3] Usage example:
+- [3ecdcd2d485c92ad-4] Usage example:
+- [3ecdcd2d485c92ad-5] Usage example:
+- [3ecdcd2d485c92ad-6] Usage example:
+- [3ecdcd2d485c92ad-7] Usage example:
+- [4d77325f] Using ``GeneratedField`` ------------------------
+- [3f7a49e2] Weighting queries =================
+- [9679c498] You can combine lexemes with other lexemes using the ``&`` and ``|`` operators and also negate them with the ``~`` operator. For example:
+- [ddd3c8be] You can specify the ``config`` attribute to a :class:`SearchVector` and :class:`SearchQuery` to use a different search configuration. This allows using different language parsers and dictionaries as defined by the database:
+- [f05f7c3e] ``Lexeme`` ==========
+- [17feee2b] ``Lexeme`` objects allow search operators to be safely used with strings from an untrusted source. The content of each lexeme is escaped so that any operators that may exist in the string itself will not be interpreted.
+- [53a4c8a1] ``SearchHeadline`` ==================
+- [d35b52ca] ``SearchQuery`` ===============
+- [d082f334] ``SearchQuery`` terms can be combined logically to provide more flexibility:
+- [a904a76c] ``SearchQuery`` translates the terms the user provides into a search query object that the database compares to a search vector. By default, all the words the user provides are passed through the stemming algorithms, and then it looks for matches for all of the resulting terms.
+- [d1a53216] ``SearchRank`` ==============
+- [ffe4227b] ``SearchVectorField`` ---------------------
+- [8efa407c] ``SearchVector`` ================
+- [1f3fb319] ``SearchVector`` objects can be combined together, allowing you to reuse them. For example:
+- [38680c7f] ``TrigramDistance`` -------------------
+- [b8e820e7] ``TrigramSimilarity`` ---------------------
+- [ae182e5f] ``TrigramStrictWordDistance`` -----------------------------
+- [1c2254a9] ``TrigramStrictWordSimilarity`` -------------------------------
+- [9d012bdb] ``TrigramWordDistance`` -----------------------
+- [88b3f8f2] ``TrigramWordSimilarity`` -------------------------

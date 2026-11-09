@@ -1,6 +1,6 @@
 # Fact 2fb5fa17
 
-Store id: 400392dd-df19-4055-8ce6-f5c3e8bcec75
+Store id: 0ec9eec7-991b-41ac-8f83-75d4840f16d0
 
 ## Text
 
@@ -20,7 +20,7 @@ class RTrim(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.1712040+00:00`
+- posted_at: `2026-11-09T23:32:02.2715690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 297,
     "symbol": "RTrim"
   },
-  "id": "400392dd-df19-4055-8ce6-f5c3e8bcec75",
+  "id": "0ec9eec7-991b-41ac-8f83-75d4840f16d0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.1712040+00:00"
+    "posted_at": "2026-11-09T23:32:02.2715690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "65cb7c61-610f-45f7-9d33-97ec20a4e0ca",
+  "subject_id": "30b2a428-8698-4b75-8981-31a15db0f614",
   "subject_name": "django/db/models/functions/text::RTrim",
   "tags": [
     "entity:class"

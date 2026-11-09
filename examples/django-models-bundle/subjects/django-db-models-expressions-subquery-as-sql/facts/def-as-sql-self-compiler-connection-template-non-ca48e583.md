@@ -1,6 +1,6 @@
 # Fact ca48e583
 
-Store id: 2ddb1650-b6c6-4ce1-936a-e67f94d3e467
+Store id: e4bec569-a278-4bcd-8257-2063041e576b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, template=None, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7300490+00:00`
+- posted_at: `2026-11-09T23:31:55.9751870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1873,
     "symbol": "Subquery.as_sql"
   },
-  "id": "2ddb1650-b6c6-4ce1-936a-e67f94d3e467",
+  "id": "e4bec569-a278-4bcd-8257-2063041e576b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7300490+00:00"
+    "posted_at": "2026-11-09T23:31:55.9751870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "33dd0400-270a-41c5-94e4-94688072d5c7",
+  "subject_id": "aacc6c6c-b65b-4d22-8fab-8dc5ecb50ddf",
   "subject_name": "django/db/models/expressions::Subquery.as_sql",
   "tags": [
     "entity:method"

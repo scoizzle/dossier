@@ -1,9 +1,9 @@
 # django/db/models/expressions::BaseExpression.__getstate__
 
-- Subject: django/db/models/expressions::BaseExpression.__getstate__ (id `84994c6d-27c4-4be9-b2e4-bfc74e429698`)
+- Subject: django/db/models/expressions::BaseExpression.__getstate__ (id `226f3499-f386-41cc-a0bd-bb0b00dfff72`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

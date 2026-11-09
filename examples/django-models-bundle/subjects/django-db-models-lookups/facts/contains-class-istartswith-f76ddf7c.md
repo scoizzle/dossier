@@ -1,6 +1,6 @@
 # Fact f76ddf7c
 
-Store id: 10a895b3-cd89-4509-8170-ea237fd96d9a
+Store id: 26b4598e-a56d-4d39-b629-d32db47706fd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IStartsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "10a895b3-cd89-4509-8170-ea237fd96d9a",
+  "id": "26b4598e-a56d-4d39-b629-d32db47706fd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IStartsWith"
       },
       "rel": "contains",
-      "target": "77a7fcc7-95f3-4c45-b8ba-08b35375b637"
+      "target": "f383b6d8-672c-49de-9472-632f7ec61740"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

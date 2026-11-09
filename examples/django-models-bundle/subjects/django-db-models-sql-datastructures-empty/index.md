@@ -1,9 +1,9 @@
 # django/db/models/sql/datastructures::Empty
 
-- Subject: django/db/models/sql/datastructures::Empty (id `db5c277c-1eba-469e-ba50-21cc2aaf0591`)
+- Subject: django/db/models/sql/datastructures::Empty (id `a8f55ad4-8dd5-48db-936f-8e9d93942961`)
 - Kind: class
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

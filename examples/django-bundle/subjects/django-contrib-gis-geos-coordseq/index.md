@@ -1,14 +1,14 @@
 # django/contrib/gis/geos/coordseq
 
-- Subject: django/contrib/gis/geos/coordseq (id `857b5605-710c-4a9f-a1cb-caf16e50acaa`)
+- Subject: django/contrib/gis/geos/coordseq (id `e6664ecf-cbbc-43cf-a4a7-1f18effd2701`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 16 of 49
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2308 tokens
+- Facts shown: 49 of 49
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - coordinate_string = " ".join(coords) return f"<coordinates>{coordinate_string}</coordinates>" [05f5ffc9]
 - # ### Dimensions ### @property def size(self): "Return the size of this coordinate sequence." return capi.cs_getsize(self.ptr, byref(c_uint())) [2946b89a]
@@ -27,6 +27,38 @@
 - def __iter__(self): "Iterate over each point in the coordinate sequence." for i in range(self.size): yield self[i] [93565549]
 - ptr_type = CS_PTR [60effbbb]
 
-## Beyond the budget
+## All facts
 
-33 more facts did not fit in the budget: [c658ccd9] [60bb82c8] [6e777857] [d7388fab] [1770ac0a] [52cfe00e] [98b43e36] [d09fae6a] [9ced1240] [f11ed5e3] [9500b516] [4107f8c9] [d1865f1b] [f634d2e7] [cc1c3a5a] [e4a4cf5c] [b5bd8b25] [510b0dbc] [d256aa40] [27abfe08] [956e870e] [2eaf4f26] [78b22bbf] [19cf16d5] [67e33cd9] [6c000f38] [7a1365ea] [d480cf9a] [cf45581c] [35b02c79] [dce30935] [51f4a9d2] [d202fa25]
+- [c658ccd9] def __len__(self): "Return the number of points in the coordinate sequence." return self.size
+- [60bb82c8] def __setitem__(self, index, value): "Set the coordinate sequence value at the given index." # Checking the input value if isinstance(value, (list, tuple)): pass elif numpy and isinstance(value, numpy.ndarray): pass else: raise TypeError( "Must set coordinate with a sequence (list, tuple, or numpy array)." ) # Checking the dims of the input if self.dims == 3 and self._z: n_args = 3 point_setter = self._set_point_3d elif self.dims == 3 and self.hasm: n_args = 3 point_setter = self._set_point_3d_m elif self.dims == 4 and self._z and self.hasm: n_args = 4 point_setter = self._set_point_4d else: n_args = 2 point_setter = self._set_point_2d if len(value) != n_args: raise TypeError("Dimension of value does not match.") self._checkindex(index) point_setter(index, value)
+- [6e777857] def __str__(self): "Return the string representation of the coordinate sequence." return str(self.tuple)
+- [d7388fab] def _checkdim(self, dim): "Check the given dimension." if dim < 0 or dim > 3: raise GEOSException(f'Invalid ordinate dimension: "{dim:d}"')
+- [1770ac0a] def _get_m(self, index): return capi.cs_getm(self.ptr, index, byref(c_double()))
+- [52cfe00e] def _get_point_2d(self, index): return (self._get_x(index), self._get_y(index))
+- [98b43e36] def _get_point_3d(self, index): return (self._get_x(index), self._get_y(index), self._get_z(index))
+- [d09fae6a] def _get_point_3d_m(self, index): return (self._get_x(index), self._get_y(index), self._get_m(index))
+- [9ced1240] def _get_point_4d(self, index): return ( self._get_x(index), self._get_y(index), self._get_z(index), self._get_m(index), )
+- [f11ed5e3] def _get_x(self, index): return capi.cs_getx(self.ptr, index, byref(c_double()))
+- [9500b516] def _get_y(self, index): return capi.cs_gety(self.ptr, index, byref(c_double()))
+- [4107f8c9] def _get_z(self, index): return capi.cs_getz(self.ptr, index, byref(c_double()))
+- [d1865f1b] def _set_m(self, index, value): capi.cs_setm(self.ptr, index, value)
+- [f634d2e7] def _set_point_2d(self, index, value): x, y = value self._set_x(index, x) self._set_y(index, y)
+- [cc1c3a5a] def _set_point_3d(self, index, value): x, y, z = value self._set_x(index, x) self._set_y(index, y) self._set_z(index, z)
+- [e4a4cf5c] def _set_point_3d_m(self, index, value): x, y, m = value self._set_x(index, x) self._set_y(index, y) self._set_m(index, m)
+- [b5bd8b25] def _set_point_4d(self, index, value): x, y, z, m = value self._set_x(index, x) self._set_y(index, y) self._set_z(index, z) self._set_m(index, m)
+- [510b0dbc] def _set_x(self, index, value): capi.cs_setx(self.ptr, index, value)
+- [d256aa40] def _set_y(self, index, value): capi.cs_sety(self.ptr, index, value)
+- [27abfe08] def _set_z(self, index, value): capi.cs_setz(self.ptr, index, value)
+- [956e870e] def getM(self, index): "Get M with the value at the given index." return self.getOrdinate(3, index)
+- [2eaf4f26] def getX(self, index): "Get the X value at the index." return self.getOrdinate(0, index)
+- [78b22bbf] def getY(self, index): "Get the Y value at the given index." return self.getOrdinate(1, index)
+- [19cf16d5] def getZ(self, index): "Get Z with the value at the given index." return self.getOrdinate(2, index)
+- [67e33cd9] def setM(self, index, value): "Set M with the value at the given index." self.setOrdinate(3, index, value)
+- [6c000f38] def setOrdinate(self, dimension, index, value): "Set the value for the given dimension and index." self._checkindex(index) self._checkdim(dimension) capi.cs_setordinate(self.ptr, index, dimension, value)
+- [7a1365ea] def setX(self, index, value): "Set X with the value at the given index." self.setOrdinate(0, index, value)
+- [d480cf9a] def setY(self, index, value): "Set Y with the value at the given index." self.setOrdinate(1, index, value)
+- [cf45581c] def setZ(self, index, value): "Set Z with the value at the given index." self.setOrdinate(2, index, value)
+- [35b02c79] """ This module houses the GEOSCoordSeq object, which is used internally by GEOSGeometry to house the actual coordinates of the Point, LineString, and LinearRing geometries. """
+- [dce30935] class GEOSCoordSeq(GEOSBase): "The internal representation of a list of coordinates inside a Geometry."
+- [51f4a9d2] from ctypes import byref, c_byte, c_double, c_uint
+- [d202fa25] from django.contrib.gis.geos import prototypes as capi from django.contrib.gis.geos.base import GEOSBase from django.contrib.gis.geos.error import GEOSException from django.contrib.gis.geos.libgeos import CS_PTR, geos_version_tuple from django.contrib.gis.shortcuts import numpy

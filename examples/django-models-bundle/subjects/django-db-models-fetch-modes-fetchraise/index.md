@@ -1,9 +1,9 @@
 # django/db/models/fetch_modes::FetchRaise
 
-- Subject: django/db/models/fetch_modes::FetchRaise (id `68408bf3-30fe-4629-b342-95a16ad2f3c1`)
+- Subject: django/db/models/fetch_modes::FetchRaise (id `f715fece-43b8-414f-8295-94e6b3379c7f`)
 - Kind: class
 - Parent: [django/db/models/fetch_modes](../django-db-models-fetch-modes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

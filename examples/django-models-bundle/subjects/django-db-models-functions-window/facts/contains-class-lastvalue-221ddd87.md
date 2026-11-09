@@ -1,6 +1,6 @@
 # Fact 221ddd87
 
-Store id: 64949aba-65de-4c57-b27c-5f974e18cc4f
+Store id: bbc6c6b0-9720-444f-a6b6-e602f3d5ddbd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class LastValue
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "64949aba-65de-4c57-b27c-5f974e18cc4f",
+  "id": "bbc6c6b0-9720-444f-a6b6-e602f3d5ddbd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "LastValue"
       },
       "rel": "contains",
-      "target": "db508156-0108-405c-a1c1-de8cf235225a"
+      "target": "7ca460b0-669b-4c44-a6ae-eaa04bd0855d"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

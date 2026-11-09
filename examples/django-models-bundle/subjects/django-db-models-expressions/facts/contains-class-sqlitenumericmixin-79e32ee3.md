@@ -1,6 +1,6 @@
 # Fact 79e32ee3
 
-Store id: 95d2dd9b-828d-421b-a877-53a648cd561d
+Store id: 91892308-342c-4638-a4d9-1f06fabc40cb
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SQLiteNumericMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "95d2dd9b-828d-421b-a877-53a648cd561d",
+  "id": "91892308-342c-4638-a4d9-1f06fabc40cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SQLiteNumericMixin"
       },
       "rel": "contains",
-      "target": "39d5b24b-cf32-4b33-9df7-0b405ab0df16"
+      "target": "9b643254-7bd9-457c-b79b-a5c80b366b55"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

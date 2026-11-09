@@ -1,8 +1,8 @@
 # django/core/checks/security/sessions
 
-- Subject: django/core/checks/security/sessions (id `e199e965-05cc-48f1-a30d-7f7923b4eb2a`)
+- Subject: django/core/checks/security/sessions (id `8b5848cd-43ec-4c2b-b05c-57ad3fbe797d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 698 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

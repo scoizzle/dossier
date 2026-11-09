@@ -1,8 +1,8 @@
 # django/contrib/gis/geos/prototypes/predicates
 
-- Subject: django/contrib/gis/geos/prototypes/predicates (id `e9b580a2-2b5b-4119-be3f-4def3ad09fb3`)
+- Subject: django/contrib/gis/geos/prototypes/predicates (id `d8f8ef54-e22a-4755-bdd0-a4e0e54eb9df`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 511 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 7d8e0f53
 
-Store id: 7d220e8a-c05c-4ed1-93b8-7a91dc15b19a
+Store id: 1e2692a2-47c9-43cf-a460-63d6d269b2bc
 
 ## Text
 
@@ -20,7 +20,7 @@ class FirstValue(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.5550270+00:00`
+- posted_at: `2026-11-09T23:32:02.6836220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 31,
     "symbol": "FirstValue"
   },
-  "id": "7d220e8a-c05c-4ed1-93b8-7a91dc15b19a",
+  "id": "1e2692a2-47c9-43cf-a460-63d6d269b2bc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.5550270+00:00"
+    "posted_at": "2026-11-09T23:32:02.6836220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7a106a18-6079-4334-a61f-cb2478f40ebb",
+  "subject_id": "dd3831d4-294c-4e92-98e7-cb19a939f791",
   "subject_name": "django/db/models/functions/window::FirstValue",
   "tags": [
     "entity:class"

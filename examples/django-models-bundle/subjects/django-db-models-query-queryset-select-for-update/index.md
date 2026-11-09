@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.select_for_update
 
-- Subject: django/db/models/query::QuerySet.select_for_update (id `3e10e628-d4c2-497f-b63f-132308a17597`)
+- Subject: django/db/models/query::QuerySet.select_for_update (id `029b65d8-807b-49e9-9600-276471a04ec8`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 31 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

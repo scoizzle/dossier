@@ -1,8 +1,8 @@
 # django/db/models/sql/compiler
 
-- Subject: django/db/models/sql/compiler (id `a1b39a63-5894-4f24-9b98-7363166e586c`)
+- Subject: django/db/models/sql/compiler (id `eec456aa-334a-4312-a193-ed044257811d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 129 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

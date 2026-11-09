@@ -4,10 +4,10 @@ This file lists every subject under `django/db/models/signals/`, one row per sub
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/signals | subject | 1 | 0 | 0 | 190 | [subjects/django-db-models-signals/index.md](../subjects/django-db-models-signals/index.md) |
-|   django/db/models/signals::ModelSignal | class | 1 | 0 | 0 | 101 | [subjects/django-db-models-signals-modelsignal/index.md](../subjects/django-db-models-signals-modelsignal/index.md) |
-|   django/db/models/signals::ModelSignal._lazy_method | method | 1 | 0 | 0 | 124 | [subjects/django-db-models-signals-modelsignal-lazy-method/index.md](../subjects/django-db-models-signals-modelsignal-lazy-method/index.md) |
-|   django/db/models/signals::ModelSignal.connect | method | 1 | 0 | 0 | 125 | [subjects/django-db-models-signals-modelsignal-connect/index.md](../subjects/django-db-models-signals-modelsignal-connect/index.md) |
-|   django/db/models/signals::ModelSignal.disconnect | method | 1 | 0 | 0 | 126 | [subjects/django-db-models-signals-modelsignal-disconnect/index.md](../subjects/django-db-models-signals-modelsignal-disconnect/index.md) |
+| django/db/models/signals | subject | 1 | 0 | 0 | 201 | [subjects/django-db-models-signals/index.md](../subjects/django-db-models-signals/index.md) |
+|   django/db/models/signals::ModelSignal | class | 1 | 0 | 0 | 112 | [subjects/django-db-models-signals-modelsignal/index.md](../subjects/django-db-models-signals-modelsignal/index.md) |
+|   django/db/models/signals::ModelSignal._lazy_method | method | 1 | 0 | 0 | 135 | [subjects/django-db-models-signals-modelsignal-lazy-method/index.md](../subjects/django-db-models-signals-modelsignal-lazy-method/index.md) |
+|   django/db/models/signals::ModelSignal.connect | method | 1 | 0 | 0 | 136 | [subjects/django-db-models-signals-modelsignal-connect/index.md](../subjects/django-db-models-signals-modelsignal-connect/index.md) |
+|   django/db/models/signals::ModelSignal.disconnect | method | 1 | 0 | 0 | 137 | [subjects/django-db-models-signals-modelsignal-disconnect/index.md](../subjects/django-db-models-signals-modelsignal-disconnect/index.md) |
 
 Up: [index/django-db-models.md](django-db-models.md)

@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.is_nullable
 
-- Subject: django/db/models/sql/query::Query.is_nullable (id `098fe1e8-092b-4999-ad60-cad5166a75fc`)
+- Subject: django/db/models/sql/query::Query.is_nullable (id `8d7b90e2-69db-4fa3-b500-c683f7f0560c`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 04b7b908
 
-Store id: 0de9a179-7bc0-458e-a9a0-240a59aa2e90
+Store id: a2862837-4787-456a-995c-fd67f6ddc087
 
 ## Text
 
@@ -20,7 +20,7 @@ def reverse_related_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3265340+00:00`
+- posted_at: `2026-11-09T23:31:58.6847310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 810,
     "symbol": "ForeignObject.reverse_related_fields"
   },
-  "id": "0de9a179-7bc0-458e-a9a0-240a59aa2e90",
+  "id": "a2862837-4787-456a-995c-fd67f6ddc087",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3265340+00:00"
+    "posted_at": "2026-11-09T23:31:58.6847310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8d1b5ad9-5eb0-44ff-8978-79d618df62af",
+  "subject_id": "5c6f8603-c654-4db7-8f97-d07b00db8f98",
   "subject_name": "django/db/models/fields/related::ForeignObject.reverse_related_fields",
   "tags": [
     "entity:method",

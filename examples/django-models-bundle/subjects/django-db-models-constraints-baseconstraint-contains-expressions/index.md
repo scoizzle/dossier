@@ -1,9 +1,9 @@
 # django/db/models/constraints::BaseConstraint.contains_expressions
 
-- Subject: django/db/models/constraints::BaseConstraint.contains_expressions (id `bf803b34-4718-4d32-8cfa-ee989465034c`)
+- Subject: django/db/models/constraints::BaseConstraint.contains_expressions (id `66edfb75-d8ff-4ae2-8ae0-f8dde90ffff6`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

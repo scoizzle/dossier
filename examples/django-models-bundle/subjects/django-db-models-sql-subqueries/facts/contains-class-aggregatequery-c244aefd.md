@@ -1,6 +1,6 @@
 # Fact c244aefd
 
-Store id: 8f14e1db-5c9d-4258-93aa-473dc3cb9867
+Store id: 7e37f671-3753-4917-ac72-d86b37196a41
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class AggregateQuery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7753110+00:00`
+- posted_at: `2026-11-09T23:32:07.4245420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8f14e1db-5c9d-4258-93aa-473dc3cb9867",
+  "id": "7e37f671-3753-4917-ac72-d86b37196a41",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7753110+00:00"
+    "posted_at": "2026-11-09T23:32:07.4245420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "AggregateQuery"
       },
       "rel": "contains",
-      "target": "31f29054-8863-4af2-8ade-1aac61cdc8af"
+      "target": "4d6d5249-5aa1-4ef9-85b0-71bad5d44ab4"
     }
   ],
   "status": "live",
-  "subject_id": "24cbca74-a8b7-42cb-88b4-6cec59dfe7c6",
+  "subject_id": "8b880d6f-4c88-470e-b44a-994f5797b94a",
   "subject_name": "django/db/models/sql/subqueries",
   "tags": [
     "entity:class"

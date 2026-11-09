@@ -1,6 +1,6 @@
 # Fact fd704519
 
-Store id: f21526e7-0236-4b1b-8fa9-24e3dda30fb9
+Store id: dbef8971-7103-4d28-ba70-8eb532e70058
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *args, on_conflict=None, update_fields=None, unique_fields=N
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.7613020+00:00`
+- posted_at: `2026-11-09T23:32:07.4059850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 151,
     "symbol": "InsertQuery.__init__"
   },
-  "id": "f21526e7-0236-4b1b-8fa9-24e3dda30fb9",
+  "id": "dbef8971-7103-4d28-ba70-8eb532e70058",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.7613020+00:00"
+    "posted_at": "2026-11-09T23:32:07.4059850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9693fa91-5bb6-4b99-ba54-a8cf9377e121",
+  "subject_id": "1ed629a5-b94c-4d8e-9519-92d8223d5c15",
   "subject_name": "django/db/models/sql/subqueries::InsertQuery.__init__",
   "tags": [
     "entity:method"

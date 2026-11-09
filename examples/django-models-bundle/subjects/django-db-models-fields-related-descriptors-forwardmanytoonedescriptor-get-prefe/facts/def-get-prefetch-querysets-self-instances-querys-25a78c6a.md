@@ -1,6 +1,6 @@
 # Fact 25a78c6a
 
-Store id: 6f5167aa-b361-4252-820c-7a6049bcdc94
+Store id: e7fdb3c7-aa5e-4b87-a5bc-6e31434a39d8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prefetch_querysets(self, instances, querysets=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7150460+00:00`
+- posted_at: `2026-11-09T23:31:59.1521020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 174,
     "symbol": "ForwardManyToOneDescriptor.get_prefetch_querysets"
   },
-  "id": "6f5167aa-b361-4252-820c-7a6049bcdc94",
+  "id": "e7fdb3c7-aa5e-4b87-a5bc-6e31434a39d8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7150460+00:00"
+    "posted_at": "2026-11-09T23:31:59.1521020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37eca50b-b45d-4433-a193-1ef2a8732509",
+  "subject_id": "43ff6cda-a103-4061-be8f-9ae8c388cc4c",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.get_prefetch_querysets",
   "tags": [
     "entity:method"

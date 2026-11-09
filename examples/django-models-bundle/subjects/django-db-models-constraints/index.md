@@ -1,8 +1,8 @@
 # django/db/models/constraints
 
-- Subject: django/db/models/constraints (id `b0b09a84-2c50-431b-bcae-db67e92caf42`)
+- Subject: django/db/models/constraints (id `4329b994-d768-4016-b0c5-b696dac271e3`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 72 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

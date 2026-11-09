@@ -1,9 +1,9 @@
 # django/db/models/base::Model.save_base
 
-- Subject: django/db/models/base::Model.save_base (id `aac672f6-aaca-4163-9b4f-059c8b7781ff`)
+- Subject: django/db/models/base::Model.save_base (id `8e0b5c77-e343-4a2f-a1a8-89a58b7487b2`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

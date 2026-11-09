@@ -1,6 +1,6 @@
 # Fact 5fa1e214
 
-Store id: 0b88fd26-f0ba-4edd-9937-c3fed31e39fc
+Store id: 10e34a5d-fbd9-466a-a728-a9436eaba5f7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_base_chain(self, model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.8708210+00:00`
+- posted_at: `2026-11-09T23:32:04.0037220+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 697,
     "symbol": "Options.get_base_chain"
   },
-  "id": "0b88fd26-f0ba-4edd-9937-c3fed31e39fc",
+  "id": "10e34a5d-fbd9-466a-a728-a9436eaba5f7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.8708210+00:00"
+    "posted_at": "2026-11-09T23:32:04.0037220+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "985d927c-11ac-4691-b395-60f82d10e87a",
+  "subject_id": "6baa6dc9-9e45-4bdc-8cc7-3212cfc7f4e0",
   "subject_name": "django/db/models/options::Options.get_base_chain",
   "tags": [
     "entity:method"

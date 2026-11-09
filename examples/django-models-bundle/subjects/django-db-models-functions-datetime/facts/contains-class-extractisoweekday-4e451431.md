@@ -1,6 +1,6 @@
 # Fact 4e451431
 
-Store id: 42b42747-fc78-43dd-a029-2dd14b81b13f
+Store id: 24137fc8-3568-47fe-869a-f4c872e6b28b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractIsoWeekDay
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "42b42747-fc78-43dd-a029-2dd14b81b13f",
+  "id": "24137fc8-3568-47fe-869a-f4c872e6b28b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractIsoWeekDay"
       },
       "rel": "contains",
-      "target": "fc7cb8dd-1bc0-4c74-85d5-60216f884e12"
+      "target": "23639666-ab86-4250-84b2-8d08bdf2ea22"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

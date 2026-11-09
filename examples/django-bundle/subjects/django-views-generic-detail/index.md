@@ -1,14 +1,14 @@
 # django/views/generic/detail
 
-- Subject: django/views/generic/detail (id `31c2add9-55d3-4b55-bc1c-bea347c944b1`)
+- Subject: django/views/generic/detail (id `7f481dce-3847-4714-8ec6-6296ccfbd14c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 12 of 26
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1617 tokens
+- Facts shown: 26 of 26
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # If self.template_name_field is set, grab the value of the field # of that name from the object; this is the most specific template # name, if given. if self.object and self.template_name_field: name = getattr(self.object, self.template_name_field, None) if name: names.insert(0, name) [7e513eee]
 - # If we still haven't managed to find any template names, we should # re-raise the ImproperlyConfigured to alert the user. if not names: raise ImproperlyConfigured( "SingleObjectTemplateResponseMixin requires a definition " "of 'template_name', 'template_name_field', or 'model'; " "or an implementation of 'get_template_names()'." ) [f7a547a8]
@@ -23,6 +23,19 @@
 - try: # Get the single item from the filtered queryset obj = queryset.get() except queryset.model.DoesNotExist: raise Http404( _("No %(verbose_name)s found matching the query") % {"verbose_name": queryset.model._meta.verbose_name} ) return obj [2930a271]
 - This requires subclassing to provide a response mixin. """ [d4655f33703909eb-9]
 
-## Beyond the budget
+## All facts
 
-14 more facts did not fit in the budget: [bd930545] [e024bd13] [54d58d02] [7720ad11] [c9fd95fb] [db4e3005] [1194cb2a] [fdb63e61] [3f06fbe8] [63836e37] [53212b3e] [52fb1598] [5150fb20] [bc907d1d]
+- [bd930545] By default this is a model instance looked up from `self.queryset`, but the view will support display of *any* object by overriding `self.get_object()`. """
+- [e024bd13] def get(self, request, *args, **kwargs): self.object = self.get_object() context = self.get_context_data(object=self.object) return self.render_to_response(context)
+- [54d58d02] def get_context_data(self, **kwargs): """Insert the single object into the context dict.""" context = {} if self.object: context["object"] = self.object context_object_name = self.get_context_object_name(self.object) if context_object_name: context[context_object_name] = self.object context.update(kwargs) return super().get_context_data(**context)
+- [7720ad11] def get_context_object_name(self, obj): """Get the name to use for the object.""" if self.context_object_name: return self.context_object_name elif isinstance(obj, models.Model): return obj._meta.model_name else: return None
+- [c9fd95fb] def get_object(self, queryset=None): """ Return the object the view is displaying.
+- [db4e3005] def get_queryset(self): """ Return the `QuerySet` that will be used to look up the object.
+- [1194cb2a] def get_slug_field(self): """Get the name of a slug field to be used to look up by slug.""" return self.slug_field
+- [fdb63e61] def get_template_names(self): """ Return a list of template names to be used for the request. May not be called if render_to_response() is overridden. Return a list containing ``template_name``, if set on the value. Otherwise, return a list containing:
+- [3f06fbe8] model = None queryset = None slug_field = "slug" context_object_name = None slug_url_kwarg = "slug" pk_url_kwarg = "pk" query_pk_and_slug = False
+- [63836e37] class BaseDetailView(SingleObjectMixin, View): """ Base view for displaying a single object.
+- [53212b3e] class DetailView(SingleObjectTemplateResponseMixin, BaseDetailView): """ Render a "detail" view of an object.
+- [52fb1598] class SingleObjectMixin(ContextMixin): """ Provide the ability to retrieve a single object for further manipulation. """
+- [5150fb20] class SingleObjectTemplateResponseMixin(TemplateResponseMixin): template_name_field = None template_name_suffix = "_detail"
+- [bc907d1d] from django.core.exceptions import ImproperlyConfigured from django.db import models from django.http import Http404 from django.utils.translation import gettext as _ from django.views.generic.base import ContextMixin, TemplateResponseMixin, View

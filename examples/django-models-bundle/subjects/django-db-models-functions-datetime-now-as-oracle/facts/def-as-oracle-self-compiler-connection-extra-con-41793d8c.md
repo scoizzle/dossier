@@ -1,6 +1,6 @@
 # Fact 41793d8c
 
-Store id: 919e87f8-0494-45ff-8143-99c6f95a1418
+Store id: fc4a1b1b-bbdb-41fb-a040-2cd8c80cb49a
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.1701010+00:00`
+- posted_at: `2026-11-09T23:32:01.2455790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 238,
     "symbol": "Now.as_oracle"
   },
-  "id": "919e87f8-0494-45ff-8143-99c6f95a1418",
+  "id": "fc4a1b1b-bbdb-41fb-a040-2cd8c80cb49a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.1701010+00:00"
+    "posted_at": "2026-11-09T23:32:01.2455790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ce7e1a5f-2426-4e6c-bdea-6d7eeb99a7ab",
+  "subject_id": "5307a24e-a739-4b3d-b11c-ad7c8d84ab60",
   "subject_name": "django/db/models/functions/datetime::Now.as_oracle",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/functions/text::StrIndex.as_postgresql
 
-- Subject: django/db/models/functions/text::StrIndex.as_postgresql (id `92469298-74ef-476d-a154-2e8d6bedd6cc`)
+- Subject: django/db/models/functions/text::StrIndex.as_postgresql (id `0198c6ba-6420-409a-b82f-7d930b99f9fd`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

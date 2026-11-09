@@ -1,9 +1,9 @@
 # django/db/models/query::RawQuerySet.model_fields
 
-- Subject: django/db/models/query::RawQuerySet.model_fields (id `19c7405f-805c-4485-9644-070f9b44b777`)
+- Subject: django/db/models/query::RawQuerySet.model_fields (id `425cf5c3-cc11-4697-8e8b-1750e5635946`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

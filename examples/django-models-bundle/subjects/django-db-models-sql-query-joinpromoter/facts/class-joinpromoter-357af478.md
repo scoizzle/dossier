@@ -1,6 +1,6 @@
 # Fact 357af478
 
-Store id: 4021cc62-a168-45ec-95a4-cb5876f91ee7
+Store id: db7afa8b-5346-44f4-8ee3-f1f93d5c9e5f
 
 ## Text
 
@@ -20,7 +20,7 @@ class JoinPromoter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5642550+00:00`
+- posted_at: `2026-11-09T23:32:07.1626270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2808,
     "symbol": "JoinPromoter"
   },
-  "id": "4021cc62-a168-45ec-95a4-cb5876f91ee7",
+  "id": "db7afa8b-5346-44f4-8ee3-f1f93d5c9e5f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5642550+00:00"
+    "posted_at": "2026-11-09T23:32:07.1626270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dd8e0b95-7764-471a-b8ff-4dca6eb27472",
+  "subject_id": "0b96122d-adc6-405b-94f3-fbb1b5459c01",
   "subject_name": "django/db/models/sql/query::JoinPromoter",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::_filter_prefetch_queryset
 
-- Subject: django/db/models/fields/related_descriptors::_filter_prefetch_queryset (id `b1664099-2dd5-4838-8f95-ed343dfee2f4`)
+- Subject: django/db/models/fields/related_descriptors::_filter_prefetch_queryset (id `bba6c039-d2f3-42e6-8365-18b67bdea874`)
 - Kind: function
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

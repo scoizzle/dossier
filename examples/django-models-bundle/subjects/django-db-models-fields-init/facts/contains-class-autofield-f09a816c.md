@@ -1,6 +1,6 @@
 # Fact f09a816c
 
-Store id: b3b0b70c-2ea3-4fd2-a756-624a8714fd6f
+Store id: 50150539-55cd-45ea-b0be-74ee227d985a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class AutoField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b3b0b70c-2ea3-4fd2-a756-624a8714fd6f",
+  "id": "50150539-55cd-45ea-b0be-74ee227d985a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "AutoField"
       },
       "rel": "contains",
-      "target": "8908ccbf-fd13-4a7c-875b-18d27776b03d"
+      "target": "19e541bf-dc87-4f2a-b6dd-2f3af49f56df"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

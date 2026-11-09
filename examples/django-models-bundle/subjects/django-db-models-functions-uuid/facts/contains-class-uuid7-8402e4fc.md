@@ -1,6 +1,6 @@
 # Fact 8402e4fc
 
-Store id: ef091c25-54b1-44fe-9ed7-21a547b69a4f
+Store id: 11adc304-b46f-4393-8e08-40f86fb02ffd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUID7
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.4077450+00:00`
+- posted_at: `2026-11-09T23:32:02.5263200+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ef091c25-54b1-44fe-9ed7-21a547b69a4f",
+  "id": "11adc304-b46f-4393-8e08-40f86fb02ffd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.4077450+00:00"
+    "posted_at": "2026-11-09T23:32:02.5263200+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUID7"
       },
       "rel": "contains",
-      "target": "bd69de79-bec4-491f-8af5-0b132898c448"
+      "target": "6669c532-3e05-4796-a264-2cf647949a19"
     }
   ],
   "status": "live",
-  "subject_id": "2f49c011-fa56-48e7-9842-ae8bb83f7168",
+  "subject_id": "00f211ce-583d-46e5-b7d4-661eb6f15b68",
   "subject_name": "django/db/models/functions/uuid",
   "tags": [
     "entity:class"

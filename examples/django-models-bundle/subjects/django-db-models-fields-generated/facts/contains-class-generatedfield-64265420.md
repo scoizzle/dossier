@@ -1,6 +1,6 @@
 # Fact 64265420
 
-Store id: 8871f357-47c5-4713-9ee1-bcc29092a44e
+Store id: 10ed95f0-2e20-4c84-b9e6-3d7197164d05
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class GeneratedField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4490300+00:00`
+- posted_at: `2026-11-09T23:31:57.6498370+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8871f357-47c5-4713-9ee1-bcc29092a44e",
+  "id": "10ed95f0-2e20-4c84-b9e6-3d7197164d05",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4490300+00:00"
+    "posted_at": "2026-11-09T23:31:57.6498370+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "GeneratedField"
       },
       "rel": "contains",
-      "target": "a5762a83-a9f6-4c06-856f-82e4f1a334f3"
+      "target": "18a4f0e4-51f7-4435-bd91-57ee1af9b705"
     }
   ],
   "status": "live",
-  "subject_id": "256e9779-6221-43ce-890f-82cf2a950e71",
+  "subject_id": "8f8b2ea4-0b58-4c6e-8a1b-85152d41e0da",
   "subject_name": "django/db/models/fields/generated",
   "tags": [
     "entity:class"

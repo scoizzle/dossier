@@ -1,8 +1,8 @@
 # django/contrib/messages/middleware
 
-- Subject: django/contrib/messages/middleware (id `341590d7-b9a9-49ff-81d0-efa6032cb426`)
+- Subject: django/contrib/messages/middleware (id `5a6babe8-b6e8-4283-82fb-8bd3e0006ed0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 265 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

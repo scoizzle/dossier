@@ -1,9 +1,9 @@
 # django/db/models/indexes::Index.contains_expressions
 
-- Subject: django/db/models/indexes::Index.contains_expressions (id `ae5c7b38-f300-45cf-b443-0eb6bad3e7f3`)
+- Subject: django/db/models/indexes::Index.contains_expressions (id `b6215f4a-023d-4963-b861-9b6e3e6e567d`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

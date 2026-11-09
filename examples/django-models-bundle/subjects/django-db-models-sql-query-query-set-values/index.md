@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.set_values
 
-- Subject: django/db/models/sql/query::Query.set_values (id `e4274291-5744-48a0-ae07-821f91301305`)
+- Subject: django/db/models/sql/query::Query.set_values (id `190b7aa7-7efd-4aee-a305-cc48ba5d15bc`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact f5f8d2dd
 
-Store id: 70247ecc-7a6b-4120-8bad-99ad1d5e20ec
+Store id: 6f2a7e95-ea18-4ed8-bf40-b5305aaea8dc
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_field_name(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0166880+00:00`
+- posted_at: `2026-11-09T23:31:57.1425980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 129,
     "symbol": "CompositePrimaryKey._check_field_name"
   },
-  "id": "70247ecc-7a6b-4120-8bad-99ad1d5e20ec",
+  "id": "6f2a7e95-ea18-4ed8-bf40-b5305aaea8dc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0166880+00:00"
+    "posted_at": "2026-11-09T23:31:57.1425980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2aaea5ab-4072-458a-a6e8-da8406d2482e",
+  "subject_id": "be61c552-d3a8-4668-a632-e1f23105fe48",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey._check_field_name",
   "tags": [
     "entity:method"

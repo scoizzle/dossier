@@ -1,14 +1,14 @@
 # django/http/response
 
-- Subject: django/http/response (id `8d2c7695-416f-44e6-9240-ab2ede3c92c7`)
+- Subject: django/http/response (id `3a87e5f3-4eca-4cf8-9662-b7829a1aa0c0`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 9 of 111
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 6312 tokens
+- Facts shown: 110 of 111
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # async iterator. Consume in async_to_sync and map back. async def to_list(_iterator): as_list = [] async for chunk in _iterator: as_list.append(chunk) return as_list [c9d5fa0d]
 - async def awrapper(): async for part in _iterator: yield self.make_bytes(part) [5649ae91]
@@ -20,6 +20,106 @@
 - ``max_age`` can be: - int/float specifying seconds, - ``datetime.timedelta`` object. """ self.cookies[key] = value if expires is not None: if isinstance(expires, datetime.datetime): if timezone.is_naive(expires): expires = timezone.make_aware(expires, datetime.UTC) delta = expires - datetime.datetime.now(tz=datetime.UTC) # Add one second so the date matches exactly (a fraction of # time gets lost between converting to a timedelta and # then the date string). delta += datetime.timedelta(seconds=1) # Just set max_age - the max_age logic will set expires. expires = None if max_age is not None: raise ValueError("'expires' and 'max_age' can't be used together.") max_age = max(0, delta.days * 86400 + delta.seconds) else: self.cookies[key]["expires"] = expires else: self.cookies[key]["expires"] = "" if max_age is not None: if isinstance(max_age, datetime.timedelta): max_age = max_age.total_seconds() self.cookies[key]["max-age"] = int(max_age) # IE requires expires, so set it if hasn't been already. if not expires: self.cookies[key]["expires"] = http_date(time.time() + max_age) if path is not None: self.cookies[key]["path"] = path if domain is not None: self.cookies[key]["domain"] = domain if secure: self.cookies[key]["secure"] = True if httponly: self.cookies[key]["httponly"] = True if samesite: if samesite.lower() not in ("lax", "none", "strict"): raise ValueError('samesite must be "lax", "none", or "strict".') self.cookies[key]["samesite"] = samesite [8f63d10c]
 - filename = os.path.basename(self.filename or filename) if self._no_explicit_content_type: if filename: content_type, encoding = mimetypes.guess_type(filename) # Encoding isn't set to prevent browsers from automatically # uncompressing files. content_type = { "br": "application/x-brotli", "bzip2": "application/x-bzip", "compress": "application/x-compress", "gzip": "application/gzip", "xz": "application/x-xz", }.get(encoding, content_type) self.headers["Content-Type"] = ( content_type or "application/octet-stream" ) else: self.headers["Content-Type"] = "application/octet-stream" [0c33b3c7]
 
-## Beyond the budget
+## All facts
 
-101 more facts did not fit in the budget: [447db287] [97494c8d] [d372408b] [dffd38fa] [e1eb6561] [cada1755] [1d1f491f] [cba6c4da] [333bd6c6] [b415e761] [5c08aaf3] [d792b3d0] [60735670] [4f45d929] [91d52014] [ccf273ff] [f3e01404] [66e42ec2] [6ca3048f] [4a968e8e] [f5d939c1] [4d13c190] [0425153f] [f21fdbec] [a860517a] [b71605d2] [1729301a] [f00cf199] [bbc39638] [6f7dc119] [bace6e2b] [9c558a40] [ad056046] [403a524c] [7325dd80] [fb5c1b50] [78332590] [9f99c2f0] [5cffe041] [13ad6df7] [0772b6e1] [c5416404] [9ed5c6e6] [1b554659] [80dd9416] [2aa40cd3] [22a63097] [292f4d68] [3e2d9bb5] [9a45a85e] [c801e702] [0dbc7734] [48937fa8] [0852fc10] [671b15be] [56abfc55] [e914334d] [e8f7249d] [a10945d0] [251274c3] [d6083839] [afc2e13a] [3386e46f] [7c3d755c] [93919d3c] [803b6a9a] [23b116e9] [479fd210] [dc1c39c8] [66e61cd1] [ccadba4f] [09e7b8a4] [faf25e14] [d81ef6ac] [c37e5c8e] [1a9678c1] [9350e86d] [67f85210] [ed54500e] [bebd9b0d] [9413c3ae] [7d0750c8] [b9bb224d] [02f7c796] [fcec95d3] [72c699ac] [893634c5] [773ed0ce] [643300ef] [34fdf980] [39034025] [a66fa3e7] [ef3b1acc] [babdce40] [aeb4935a] [3bbfd5b0] [ae4184a5] [6a3cc8dd] [cf6bbf2daef2deb8-4] [5c49e75b] [b71e52d4]
+- [447db287] if content_disposition := content_disposition_header( self.as_attachment, filename ): self.headers["Content-Disposition"] = content_disposition
+- [97494c8d] self.file_to_stream = filelike = value if hasattr(filelike, "close"): self._resource_closers.append(filelike.close) value = iter(lambda: filelike.read(self.block_size), b"") self.set_headers(filelike) super()._set_streaming_content(value)
+- [d372408b] # Common methods used by subclasses
+- [dffd38fa] # The WSGI server must call this method upon completion of the request. # See # http://blog.dscpl.com.au/2012/10/obligations-for-calling-close-on.html def close(self): for closer in self._resource_closers: try: closer() except Exception: pass # Free resources that were still referenced. self._resource_closers.clear() self.closed = True signals.request_finished.send(sender=self._handler_class)
+- [e1eb6561] # These methods partially implement a stream-like object interface. # See https://docs.python.org/library/io.html#io.IOBase
+- [cada1755] # These methods partially implement the file-like object interface. # See https://docs.python.org/library/io.html#io.IOBase
+- [1d1f491f] :param data: Data to be dumped into json. By default only ``dict`` objects are allowed to be passed due to a security flaw before ECMAScript 5. See the ``safe`` parameter for more information. :param encoder: Should be a json encoder class. Defaults to ``django.core.serializers.json.DjangoJSONEncoder``. :param safe: Controls if only ``dict`` objects may be serialized. Defaults to ``True``. :param json_dumps_params: A dictionary of kwargs passed to json.dumps(). """
+- [cba6c4da] @HttpResponse.content.setter def content(self, value): if value: raise AttributeError( "You cannot set content to a 304 (Not Modified) response" ) self._container = []
+- [333bd6c6] @cached_property def text(self): return self.content.decode(self.charset or "utf-8")
+- [b415e761] @charset.setter def charset(self, value): self._charset = value
+- [5c08aaf3] @content.setter def content(self, value): # Consume iterators upon assignment to allow repeated iteration. if hasattr(value, "__iter__") and not isinstance( value, (bytes, memoryview, str) ): content = b"".join(self.make_bytes(chunk) for chunk in value) if hasattr(value, "close"): try: value.close() except Exception: pass else: content = self.make_bytes(value) # Create a list of properly encoded bytestrings to support write(). self._container = [content] self.__dict__.pop("text", None)
+- [d792b3d0] @property def _content_type_for_repr(self): return ( ', "%s"' % self.headers["Content-Type"] if "Content-Type" in self.headers else "" )
+- [60735670] @property def charset(self): if self._charset is not None: return self._charset # The Content-Type header may not yet be set, because the charset is # being inserted *into* it. if content_type := self.headers.get("Content-Type"): if matched := _charset_from_content_type_re.search(content_type): # Extract the charset and strip its double quotes. # Note that having parsed it from the Content-Type, we don't # store it back into the _charset for later intentionally, to # allow for the Content-Type to be switched again later. return matched["charset"].replace('"', "") return settings.DEFAULT_CHARSET
+- [4f45d929] @property def content(self): raise AttributeError( "This %s instance has no `content` attribute. Use " "`streaming_content` instead." % self.__class__.__name__ )
+- [91d52014] @property def content(self): return b"".join(self._container)
+- [ccf273ff] @property def reason_phrase(self): if self._reason_phrase is not None: return self._reason_phrase # Leave self._reason_phrase unset in order to use the default # reason phrase for status code. return responses.get(self.status_code, "Unknown Status Code")
+- [f3e01404] @property def streaming_content(self): if self.is_async: # pull to lexical scope to capture fixed reference in case # streaming_content is set again later. _iterator = self._iterator
+- [66e42ec2] @property def text(self): raise AttributeError( "This %s instance has no `text` attribute." % self.__class__.__name__ )
+- [6ca3048f] @reason_phrase.setter def reason_phrase(self, value): if value and _control_chars_re.search(value): raise BadHeaderError("reason_phrase can't contain control characters.") self._reason_phrase = value
+- [4a968e8e] @streaming_content.setter def streaming_content(self, value): self._set_streaming_content(value)
+- [f5d939c1] This class doesn't handle content. It should not be used directly. Use the HttpResponse and StreamingHttpResponse subclasses instead. """
+- [4d13c190] This content can be read, appended to, or replaced. """
+- [0425153f] This should only be iterated once, when the response is streamed to the client. However, it can be appended to or replaced with a new iterator that wraps the original content (or yields entirely new content). """
+- [f21fdbec] __bytes__ = serialize
+- [a860517a] __bytes__ = serialize_headers
+- [b71605d2] __contains__ = has_header
+- [1729301a] async def __aiter__(self): try: async for part in self.streaming_content: yield part except TypeError: warnings.warn( "StreamingHttpResponse must consume synchronous iterators in order to " "serve them asynchronously. Use an asynchronous iterator instead.", Warning, stacklevel=2, ) # sync iterator. Consume via sync_to_async and yield via async # generator. for part in await sync_to_async(list)(self.streaming_content): yield part
+- [f00cf199] block_size = 4096
+- [bbc39638] def __delitem__(self, header): del self.headers[header]
+- [6f7dc119] def __delitem__(self, key): self.pop(key)
+- [bace6e2b] def __getitem__(self, header): return self.headers[header]
+- [9c558a40] def __init__( self, data, encoder=DjangoJSONEncoder, safe=True, json_dumps_params=None, **kwargs, ): if safe and not isinstance(data, dict): raise TypeError( "In order to allow non-dict objects to be serialized set the " "safe parameter to False." ) if json_dumps_params is None: json_dumps_params = {} kwargs.setdefault("content_type", "application/json") data = json.dumps(data, cls=encoder, **json_dumps_params) super().__init__(content=data, **kwargs)
+- [ad056046] def __init__( self, redirect_to, preserve_request=False, *args, max_length=MAX_URL_REDIRECT_LENGTH, **kwargs, ): super().__init__(*args, **kwargs) self["Location"] = iri_to_uri(redirect_to) if max_length is not None and len(self["Location"]) > max_length: raise DisallowedRedirect( f"Unsafe redirect exceeding {max_length} characters" ) parsed = urlsplit(str(redirect_to)) if preserve_request: self.status_code = self.status_code_preserve_request if parsed.scheme and parsed.scheme not in self.allowed_schemes: raise DisallowedRedirect( "Unsafe redirect to URL with protocol '%s'" % parsed.scheme )
+- [403a524c] def __init__( self, content_type=None, status=None, reason=None, charset=None, headers=None ): self.headers = ResponseHeaders(headers) self._charset = charset if "Content-Type" not in self.headers: if content_type is None: content_type = f"text/html; charset={self.charset}" self.headers["Content-Type"] = content_type elif content_type: raise ValueError( "'headers' must not contain 'Content-Type' when the " "'content_type' parameter is provided." ) self._resource_closers = [] # This parameter is set by the handler. It's necessary to preserve the # historical behavior of request_finished. self._handler_class = None self.cookies = SimpleCookie() self.closed = False if status is not None: try: self.status_code = int(status) except (ValueError, TypeError): raise TypeError("HTTP status code must be an integer.")
+- [7325dd80] def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) del self["content-type"]
+- [fb5c1b50] def __init__(self, *args, as_attachment=False, filename="", **kwargs): self.as_attachment = as_attachment self.filename = filename self._no_explicit_content_type = ( "content_type" not in kwargs or kwargs["content_type"] is None ) super().__init__(*args, **kwargs)
+- [78332590] def __init__(self, content=b"", *args, **kwargs): super().__init__(*args, **kwargs) # Content is a bytestring. See the `content` property methods. self.content = content
+- [9f99c2f0] def __init__(self, permitted_methods, *args, **kwargs): super().__init__(*args, **kwargs) self["Allow"] = ", ".join(permitted_methods)
+- [5cffe041] def __init__(self, streaming_content=(), *args, **kwargs): super().__init__(*args, **kwargs) # `streaming_content` should be an iterable of bytestrings. # See the `streaming_content` property methods. self.streaming_content = streaming_content
+- [13ad6df7] def __iter__(self): return iter(self._container)
+- [0772b6e1] def __iter__(self): try: return iter(self.streaming_content) except TypeError: warnings.warn( "StreamingHttpResponse must consume asynchronous iterators in order to " "serve them synchronously. Use a synchronous iterator instead.", Warning, stacklevel=2, )
+- [c5416404] def __repr__(self): return "<%(cls)s [%(methods)s] status_code=%(status_code)d%(content_type)s>" % { "cls": self.__class__.__name__, "status_code": self.status_code, "content_type": self._content_type_for_repr, "methods": self["Allow"], }
+- [9ed5c6e6] def __repr__(self): return "<%(cls)s status_code=%(status_code)d%(content_type)s>" % { "cls": self.__class__.__qualname__, "status_code": self.status_code, "content_type": self._content_type_for_repr, }
+- [1b554659] def __repr__(self): return ( '<%(cls)s status_code=%(status_code)d%(content_type)s, url="%(url)s">' % { "cls": self.__class__.__name__, "status_code": self.status_code, "content_type": self._content_type_for_repr, "url": self.url, } )
+- [80dd9416] def __setitem__(self, header, value): self.headers[header] = value
+- [2aa40cd3] def __setitem__(self, key, value): key = self._convert_to_charset(key, "ascii") value = self._convert_to_charset(value, "latin-1", mime_encode=True) self._store[key.lower()] = (key, value)
+- [22a63097] def _convert_to_charset(self, value, charset, mime_encode=False): """ Convert headers key/value to ascii/latin-1 native strings. `charset` must be 'ascii' or 'latin-1'. If `mime_encode` is True and `value` can't be represented in the given charset, apply MIME-encoding. """ try: if isinstance(value, str): # Ensure string is valid in given charset value.encode(charset) elif isinstance(value, bytes): # Convert bytestring using given charset value = value.decode(charset) else: value = str(value) # Ensure string is valid in given charset. value.encode(charset) if "\n" in value or "\r" in value: raise BadHeaderError( f"Header values can't contain newlines (got {value!r})" ) except UnicodeError as e: # Encoding to a string of the specified charset failed, but we # don't know what type that value was, or if it contains newlines, # which we may need to check for before sending it to be # encoded for multiple character sets. if (isinstance(value, bytes) and (b"\n" in value or b"\r" in value)) or ( isinstance(value, str) and ("\n" in value or "\r" in value) ): raise BadHeaderError( f"Header values can't contain newlines (got {value!r})" ) from e if mime_encode: value = Header(value, "utf-8", maxlinelen=sys.maxsize).encode() else: e.reason += ", HTTP response headers must be in %s format" % charset raise return value
+- [292f4d68] def _set_streaming_content(self, value): # Ensure we can never iterate on "value" more than once. try: self._iterator = iter(value) self.is_async = False except TypeError: self._iterator = aiter(value) self.is_async = True if hasattr(value, "close"): self._resource_closers.append(value.close)
+- [3e2d9bb5] def _set_streaming_content(self, value): if not hasattr(value, "read"): self.file_to_stream = None return super()._set_streaming_content(value)
+- [9a45a85e] def delete_cookie(self, key, path="/", domain=None, samesite=None): # Browsers can ignore the Set-Cookie header if the cookie doesn't use # the secure flag and: # - the cookie name starts with "__Host-" or "__Secure-", or # - the samesite is "none". secure = key.startswith(("__Secure-", "__Host-")) or ( samesite and samesite.lower() == "none" ) self.set_cookie( key, max_age=0, path=path, domain=domain, secure=secure, expires="Thu, 01 Jan 1970 00:00:00 GMT", samesite=samesite, )
+- [c801e702] def flush(self): pass
+- [0dbc7734] def get(self, header, alternate=None): return self.headers.get(header, alternate)
+- [48937fa8] def getvalue(self): return b"".join(self.streaming_content)
+- [0852fc10] def getvalue(self): return self.content
+- [671b15be] def has_header(self, header): """Case-insensitive check for a header.""" return header in self.headers
+- [56abfc55] def items(self): return self.headers.items()
+- [e914334d] def make_bytes(self, value): """Turn a value into a bytestring encoded in the output charset.""" # Per PEP 3333, this response body must be bytes. To avoid returning # an instance of a subclass, this function returns `bytes(value)`. # This doesn't make a copy when `value` already contains bytes.
+- [e8f7249d] def pop(self, key, default=None): return self._store.pop(key.lower(), default)
+- [a10945d0] def readable(self): return False
+- [251274c3] def seekable(self): return False
+- [d6083839] def serialize(self): """Full HTTP message, including headers, as a bytestring.""" return self.serialize_headers() + b"\r\n\r\n" + self.content
+- [afc2e13a] def serialize_headers(self): """HTTP headers as a bytestring.""" return b"\r\n".join( [ key.encode("ascii") + b": " + value.encode("latin-1") for key, value in self.headers.items() ] )
+- [3386e46f] def set_cookie( self, key, value="", max_age=None, expires=None, path="/", domain=None, secure=False, httponly=False, samesite=None, ): """ Set a cookie.
+- [7c3d755c] def set_headers(self, filelike): """ Set some common response headers (Content-Length, Content-Type, and Content-Disposition) based on the `filelike` response content. """ filename = getattr(filelike, "name", "") filename = filename if isinstance(filename, str) else "" seekable = hasattr(filelike, "seek") and ( not hasattr(filelike, "seekable") or filelike.seekable() ) if hasattr(filelike, "tell"): if seekable: initial_position = filelike.tell() filelike.seek(0, io.SEEK_END) self.headers["Content-Length"] = filelike.tell() - initial_position filelike.seek(initial_position) elif hasattr(filelike, "getbuffer"): self.headers["Content-Length"] = ( filelike.getbuffer().nbytes - filelike.tell() ) elif os.path.exists(filename): self.headers["Content-Length"] = ( os.path.getsize(filename) - filelike.tell() ) elif seekable: self.headers["Content-Length"] = sum( iter(lambda: len(filelike.read(self.block_size)), 0) ) filelike.seek(-int(self.headers["Content-Length"]), io.SEEK_END)
+- [93919d3c] def set_signed_cookie(self, key, value, salt="", **kwargs): value = signing.get_cookie_signer( salt=signing._cookie_signer_salt(key, salt) ).sign(value) return self.set_cookie(key, value, **kwargs)
+- [803b6a9a] def setdefault(self, key, value): """Set a header unless it has already been set.""" self.headers.setdefault(key, value)
+- [23b116e9] def setdefault(self, key, value): if key not in self: self[key] = value
+- [479fd210] def tell(self): raise OSError( "This %s instance cannot tell its position" % self.__class__.__name__ )
+- [dc1c39c8] def tell(self): return len(self.content)
+- [66e61cd1] def writable(self): return False
+- [ccadba4f] def writable(self): return True
+- [09e7b8a4] def write(self, content): raise OSError("This %s instance is not writable" % self.__class__.__name__)
+- [faf25e14] def write(self, content): self._container.append(self.make_bytes(content))
+- [d81ef6ac] def writelines(self, lines): for line in lines: self.write(line)
+- [c37e5c8e] def writelines(self, lines): raise OSError("This %s instance is not writable" % self.__class__.__name__)
+- [1a9678c1] status_code = 200
+- [9350e86d] streaming = False
+- [67f85210] streaming = True
+- [ed54500e] url = property(lambda self: self["Location"])
+- [bebd9b0d] _charset_from_content_type_re = _lazy_re_compile( r";\s*charset=(?P<charset>[^\s;]+)", re.I ) _control_chars_re = _lazy_re_compile(r"[\x00-\x1f\x7f-\x9f]")
+- [9413c3ae] class BadHeaderError(ValueError): pass
+- [7d0750c8] class FileResponse(StreamingHttpResponse): """ A streaming HTTP response class optimized for files. """
+- [b9bb224d] class Http404(Exception): pass
+- [02f7c796] class HttpResponse(HttpResponseBase): """ An HTTP response class with a string as content.
+- [fcec95d3] class HttpResponseBadRequest(HttpResponse): status_code = 400
+- [72c699ac] class HttpResponseBase: """ An HTTP response base class with dictionary-accessed headers.
+- [893634c5] class HttpResponseForbidden(HttpResponse): status_code = 403
+- [773ed0ce] class HttpResponseGone(HttpResponse): status_code = 410
+- [643300ef] class HttpResponseNotAllowed(HttpResponse): status_code = 405
+- [34fdf980] class HttpResponseNotFound(HttpResponse): status_code = 404
+- [39034025] class HttpResponseNotModified(HttpResponse): status_code = 304
+- [a66fa3e7] class HttpResponsePermanentRedirect(HttpResponseRedirectBase): status_code = 301 status_code_preserve_request = 308
+- [ef3b1acc] class HttpResponseRedirect(HttpResponseRedirectBase): status_code = 302 status_code_preserve_request = 307
+- [babdce40] class HttpResponseRedirectBase(HttpResponse): allowed_schemes = ["http", "https", "ftp"]
+- [aeb4935a] class HttpResponseServerError(HttpResponse): status_code = 500
+- [3bbfd5b0] class JsonResponse(HttpResponse): """ An HTTP response class that consumes data to be serialized to JSON.
+- [ae4184a5] class ResponseHeaders(CaseInsensitiveMapping): def __init__(self, data): """ Populate the initial data using __setitem__ to ensure values are correctly encoded. """ self._store = {} if data: for header, value in self._unpack_items(data): self[header] = value
+- [6a3cc8dd] class StreamingHttpResponse(HttpResponseBase): """ A streaming HTTP response class with an iterator as content.
+- [cf6bbf2daef2deb8-4] from asgiref.sync import async_to_sync, sync_to_async
+- [5c49e75b] from django.conf import settings from django.core import signals, signing from django.core.exceptions import DisallowedRedirect from django.core.serializers.json import DjangoJSONEncoder from django.http.cookie import SimpleCookie from django.utils import timezone from django.utils.datastructures import CaseInsensitiveMapping from django.utils.encoding import iri_to_uri from django.utils.functional import cached_property from django.utils.http import ( MAX_URL_REDIRECT_LENGTH, content_disposition_header, http_date, ) from django.utils.regex_helper import _lazy_re_compile
+- [b71e52d4] import datetime import io import json import mimetypes import os import re import sys import time import warnings from email.header import Header from http.client import responses from urllib.parse import urlsplit

@@ -1,6 +1,6 @@
 # Fact c0814cbf
 
-Store id: 2b09176b-d8c0-4e00-9438-699b9952bc3d
+Store id: f12adb7f-5852-48fa-8767-8836f319d438
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_relation(scope_model, relation)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.2179020+00:00`
+- posted_at: `2026-11-09T23:31:58.5771500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 52,
     "symbol": "resolve_relation"
   },
-  "id": "2b09176b-d8c0-4e00-9438-699b9952bc3d",
+  "id": "f12adb7f-5852-48fa-8767-8836f319d438",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.2179020+00:00"
+    "posted_at": "2026-11-09T23:31:58.5771500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "66640c92-895c-4626-b47e-9eefc6b3d6ca",
+  "subject_id": "da644160-17e5-4365-8690-70389c43ca34",
   "subject_name": "django/db/models/fields/related::resolve_relation",
   "tags": [
     "entity:function"

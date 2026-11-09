@@ -1,6 +1,6 @@
 # Fact cff48b29
 
-Store id: 0e7c7b6f-fb03-496f-8cbe-073b3acd2d31
+Store id: 74e114ef-d71a-4da4-890f-50758c0abe36
 
 ## Text
 
@@ -20,7 +20,7 @@ def remove_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7006780+00:00`
+- posted_at: `2026-11-09T23:31:54.1438250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 49,
     "symbol": "BaseConstraint.remove_sql"
   },
-  "id": "0e7c7b6f-fb03-496f-8cbe-073b3acd2d31",
+  "id": "74e114ef-d71a-4da4-890f-50758c0abe36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7006780+00:00"
+    "posted_at": "2026-11-09T23:31:54.1438250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a6edddb0-2286-4a83-8264-a12bdbde5716",
+  "subject_id": "1ea8c3d8-8fe7-4ea0-9786-37f3a5db2e36",
   "subject_name": "django/db/models/constraints::BaseConstraint.remove_sql",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 9893e0b0
 
-Store id: 72d17cc2-cb05-4659-8bde-ae44df546b79
+Store id: 7a336665-8c15-43ff-8de8-1548e3c42524
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *, name, violation_error_code=None, violation_error_message=
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.6979200+00:00`
+- posted_at: `2026-11-09T23:31:54.1362970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 28,
     "symbol": "BaseConstraint.__init__"
   },
-  "id": "72d17cc2-cb05-4659-8bde-ae44df546b79",
+  "id": "7a336665-8c15-43ff-8de8-1548e3c42524",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.6979200+00:00"
+    "posted_at": "2026-11-09T23:31:54.1362970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cac306b0-4c75-4c13-8e63-870508e224ff",
+  "subject_id": "40f1553e-07ed-4ec7-afa7-a684253a16a5",
   "subject_name": "django/db/models/constraints::BaseConstraint.__init__",
   "tags": [
     "entity:method"

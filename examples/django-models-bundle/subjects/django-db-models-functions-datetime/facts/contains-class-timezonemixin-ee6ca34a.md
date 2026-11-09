@@ -1,6 +1,6 @@
 # Fact ee6ca34a
 
-Store id: 95b3f899-d76f-443f-8225-b61d1044021e
+Store id: 9b20f995-7a5f-4964-80d0-549c82cacafa
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TimezoneMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "95b3f899-d76f-443f-8225-b61d1044021e",
+  "id": "9b20f995-7a5f-4964-80d0-549c82cacafa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TimezoneMixin"
       },
       "rel": "contains",
-      "target": "88b5a9f4-6f8d-45b0-8454-9be8f55854f4"
+      "target": "d71f3cf0-be01-4075-837a-9e2b328a487b"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

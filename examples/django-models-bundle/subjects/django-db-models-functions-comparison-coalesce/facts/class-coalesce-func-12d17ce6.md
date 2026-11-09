@@ -1,6 +1,6 @@
 # Fact 12d17ce6
 
-Store id: aec877fa-a283-45b9-99d6-8b0013248f43
+Store id: 7cba10b9-640e-451f-8038-7b04f757d9ca
 
 ## Text
 
@@ -20,7 +20,7 @@ class Coalesce(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9132920+00:00`
+- posted_at: `2026-11-09T23:32:00.9645510+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 70,
     "symbol": "Coalesce"
   },
-  "id": "aec877fa-a283-45b9-99d6-8b0013248f43",
+  "id": "7cba10b9-640e-451f-8038-7b04f757d9ca",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9132920+00:00"
+    "posted_at": "2026-11-09T23:32:00.9645510+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b0bc4fba-dc75-4046-b6a6-8c8f91af21d4",
+  "subject_id": "d3a9b65e-0bdc-466f-b2b0-d3eadae9671d",
   "subject_name": "django/db/models/functions/comparison::Coalesce",
   "tags": [
     "entity:class"

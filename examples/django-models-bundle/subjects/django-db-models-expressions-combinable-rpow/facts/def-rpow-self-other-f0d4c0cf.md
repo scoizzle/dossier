@@ -1,6 +1,6 @@
 # Fact f0d4c0cf
 
-Store id: 69cbc482-d4b6-4136-b434-1117c4269c33
+Store id: 47525fd2-5a15-4622-bfea-08dc89b0433b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rpow__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4905030+00:00`
+- posted_at: `2026-11-09T23:31:55.7503980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 148,
     "symbol": "Combinable.__rpow__"
   },
-  "id": "69cbc482-d4b6-4136-b434-1117c4269c33",
+  "id": "47525fd2-5a15-4622-bfea-08dc89b0433b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4905030+00:00"
+    "posted_at": "2026-11-09T23:31:55.7503980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2015d1f1-eae9-4c7c-aaa1-9c675855154b",
+  "subject_id": "8ac59a7a-5d10-49dc-8348-700db05fac9a",
   "subject_name": "django/db/models/expressions::Combinable.__rpow__",
   "tags": [
     "entity:method"

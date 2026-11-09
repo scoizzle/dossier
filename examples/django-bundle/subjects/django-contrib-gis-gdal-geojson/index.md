@@ -1,14 +1,14 @@
 # django/contrib/gis/gdal/geojson
 
-- Subject: django/contrib/gis/gdal/geojson (id `312f6715-83d6-4dd5-b0f8-909153e736ff`)
+- Subject: django/contrib/gis/gdal/geojson (id `5af2fff2-f925-4e11-b8eb-fd7d7f29784d`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 10 of 13
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 994 tokens
+- Facts shown: 13 of 13
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Keep iterators rather than a list of pending geometries so that wide # collections don't require extra space proportional to their size. members = [iter(value_dict.items())] while members: try: key, member = next(members[-1]) except StopIteration: members.pop() continue # GDAL compares member names case-insensitively as C strings. key = key.split("\0", 1)[0].lower() if key == "crs": if member is None: continue if not isinstance(member, dict): raise ValueError("GeoJSON CRS must be an object.") cls.check_member(member) elif key == "geometries" and isinstance(member, list): # Follow collection members, not coordinates or properties. members.append( ( item for geometry in member if isinstance(geometry, dict) for item in geometry.items() ) ) elif key == "geometry" and isinstance(member, dict): members.append(iter(member.items())) [4586267d]
 - # SetFromUserInput() skips leading whitespace, so strip first. candidate = name.strip().lower() match = cls.AUTHORITY_CODE.match(candidate) if match and match.group(1) in cls.AUTHORITIES: return if cls.OGC_URN.match(candidate): return if candidate in cls.BARE: return [61e6dd7b]
@@ -21,6 +21,8 @@
 - The only CRS references accepted are those OGRSpatialReference resolves against the local PROJ database without I/O: an ``AUTHORITY:CODE`` from a known authority, an OGC CRS URN, or a well-known shorthand e.g. ``CRS84``. """ [0b50f62d]
 - import json [5766bf5bad9de4d2-4]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [0d38b2e8] [ffb4b0e2] [ffb1d101]
+- [0d38b2e8] """Utilities for pre-parsing GeoJSON inputs before forwarding to GDAL."""
+- [ffb4b0e2] class ExternalCRSBlocker: """ Reject any GeoJSON CRS that would make GDAL fetch or read a file.
+- [ffb1d101] from django.core.exceptions import SuspiciousOperation from django.utils.regex_helper import _lazy_re_compile

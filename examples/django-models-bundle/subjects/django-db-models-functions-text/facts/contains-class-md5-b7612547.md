@@ -1,6 +1,6 @@
 # Fact b7612547
 
-Store id: 0518760a-062b-4fe4-aa9f-2614612b7979
+Store id: b18708e5-2aaa-4da5-afaf-0213836a15c6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class MD5
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0518760a-062b-4fe4-aa9f-2614612b7979",
+  "id": "b18708e5-2aaa-4da5-afaf-0213836a15c6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "MD5"
       },
       "rel": "contains",
-      "target": "c65c51ec-15bb-414b-8ccf-d22237dd4e93"
+      "target": "5876e6bd-41fc-4218-8f75-7c5db0ac7f4d"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

@@ -1,8 +1,8 @@
 # django/contrib/flatpages/sitemaps
 
-- Subject: django/contrib/flatpages/sitemaps (id `6487911e-4a6f-4f13-b9e4-8a04127f1af7`)
+- Subject: django/contrib/flatpages/sitemaps (id `a3b5ce88-b41b-4e70-b0b2-8afdfef0a12e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 148 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

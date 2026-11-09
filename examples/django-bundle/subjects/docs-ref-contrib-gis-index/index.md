@@ -1,8 +1,8 @@
 # docs/ref/contrib/gis/index
 
-- Subject: docs/ref/contrib/gis/index (id `59e7ce2c-ac50-4ba8-b161-3470152e3830`)
+- Subject: docs/ref/contrib/gis/index (id `d1b41c67-3df0-4dd5-9b55-ef5186a6d9df`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 177 tokens
 - Facts shown: 5 of 5
 - Conflicts: 0

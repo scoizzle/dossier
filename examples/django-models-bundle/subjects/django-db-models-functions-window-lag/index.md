@@ -1,9 +1,9 @@
 # django/db/models/functions/window::Lag
 
-- Subject: django/db/models/functions/window::Lag (id `102c351a-faca-4ead-b2d3-a7a3bfc8cace`)
+- Subject: django/db/models/functions/window::Lag (id `e4c37dcf-880b-4e34-9e78-482d2c354ec9`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

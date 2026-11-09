@@ -1,6 +1,6 @@
 # Fact 28cf27ee
 
-Store id: 49f91eb4-3e84-4fe4-8215-2dcca2064b7b
+Store id: 2b2513ab-2b10-41d7-badc-1ba3ff1d8c0c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "49f91eb4-3e84-4fe4-8215-2dcca2064b7b",
+  "id": "2b2513ab-2b10-41d7-badc-1ba3ff1d8c0c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDContains"
       },
       "rel": "contains",
-      "target": "54d49c6f-bd72-4cee-8e04-e3befc5ba492"
+      "target": "55c0859e-f5c5-41f6-8901-83c763ca77b4"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

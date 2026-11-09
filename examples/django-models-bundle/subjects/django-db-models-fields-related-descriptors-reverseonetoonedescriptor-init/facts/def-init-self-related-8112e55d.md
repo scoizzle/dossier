@@ -1,6 +1,6 @@
 # Fact 8112e55d
 
-Store id: 78824594-3cfb-4ab8-9888-3b019a54bd6d
+Store id: e3c1f0c7-3bfc-488c-b185-fabbd9dc4ada
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, related)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.7425510+00:00`
+- posted_at: `2026-11-09T23:31:59.1846280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 445,
     "symbol": "ReverseOneToOneDescriptor.__init__"
   },
-  "id": "78824594-3cfb-4ab8-9888-3b019a54bd6d",
+  "id": "e3c1f0c7-3bfc-488c-b185-fabbd9dc4ada",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.7425510+00:00"
+    "posted_at": "2026-11-09T23:31:59.1846280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "280e4fb8-c94d-40b7-b566-3f7be80380b3",
+  "subject_id": "ff06239e-bf4f-4b5d-8645-8b515ecade44",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__init__",
   "tags": [
     "entity:method"

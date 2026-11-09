@@ -1,9 +1,9 @@
 # django/db/models/base::Model._prepare_related_fields_for_save
 
-- Subject: django/db/models/base::Model._prepare_related_fields_for_save (id `67205b71-d08f-445b-a568-5e78da5b04fd`)
+- Subject: django/db/models/base::Model._prepare_related_fields_for_save (id `4aa244c1-dd9e-460c-b242-99f161931ea1`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

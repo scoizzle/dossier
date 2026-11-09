@@ -1,14 +1,14 @@
 # django/core/files/locks
 
-- Subject: django/core/files/locks (id `8a944dd7-8a92-497b-b08f-6929fc3eb824`)
+- Subject: django/core/files/locks (id `543cf7c9-b9f7-4a7c-a7cf-ebd92f4971da`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 22 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1004 tokens
+- Facts shown: 25 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Dummy functions that don't do anything. def lock(f, flags): # File is not locked return False [39541af0]
 - LOCK_SH = fcntl.LOCK_SH # shared lock LOCK_NB = fcntl.LOCK_NB # non-blocking LOCK_EX = fcntl.LOCK_EX except (ImportError, AttributeError): # File locking is not supported. LOCK_EX = LOCK_SH = LOCK_NB = 0 [bc45a98d]
@@ -33,6 +33,8 @@
 - __all__ = ("LOCK_EX", "LOCK_SH", "LOCK_NB", "lock", "unlock") [5b4e2449]
 - else: try: import fcntl [3ecc835e]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [7d5a6878] [3d786ab6] [bbf3e0cdec1c52e4-4]
+- [7d5a6878] def _fd(f): """Get a filedescriptor from something which could be a file or an fd.""" return f.fileno() if hasattr(f, "fileno") else f
+- [3d786ab6] if os.name == "nt": import msvcrt from ctypes import ( POINTER, Structure, Union, WinDLL, byref, c_int64, c_ulong, c_void_p, sizeof, ) from ctypes.wintypes import BOOL, DWORD, HANDLE
+- [bbf3e0cdec1c52e4-4] import os

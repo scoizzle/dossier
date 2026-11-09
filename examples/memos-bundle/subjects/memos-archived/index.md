@@ -1,9 +1,9 @@
 # Memos/Archived
 
-- Subject: Memos/Archived (id `388e7ee9-835a-41a4-9b2d-351eed98c5d3`)
+- Subject: Memos/Archived (id `d2f1784a-f170-4d97-8fea-071e84050ad7`)
 - Kind: screen
 - Parent: [Memos](../memos/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 51 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

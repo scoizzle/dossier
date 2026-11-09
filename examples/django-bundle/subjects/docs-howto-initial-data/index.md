@@ -1,14 +1,14 @@
 # docs/howto/initial-data
 
-- Subject: docs/howto/initial-data (id `09193a71-4f52-4363-b588-6e7eb43155fe`)
+- Subject: docs/howto/initial-data (id `ea425309-8ef1-4c2e-8442-b0039ebaf330`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 874 tokens
-- Facts shown: 20 of 25
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1123 tokens
+- Facts shown: 24 of 25
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - - model: myapp.person pk: 1 fields: first_name: John last_name: Lennon - model: myapp.person pk: 2 fields: first_name: Paul last_name: McCartney [c4e92313]
 - Django will use the first fixture file it finds whose name matches, so if you have fixture files with the same name in different applications, you will be unable to distinguish between them in your ``loaddata`` commands. The easiest way to avoid this problem is by *namespacing* your fixture files. That is, by putting them inside a directory named for their application, as in the relative path example above. [5b09746c]
@@ -31,6 +31,9 @@
 - Tell Django where to look for fixture files ------------------------------------------- [eebfe8d2]
 - To automatically load initial data for an app, create a :ref:`data migration <data-migrations>`. Migrations are run when setting up the test database, so the data will be available there, subject to :ref:`some limitations <test-case-serialized-rollback>`. [bd4ab1f6]
 
-## Beyond the budget
+## All facts
 
-4 more facts did not fit in the budget: [8c30a932] [3de00c7e] [fce1cf31] [6590a4cf]
+- [8c30a932] To completely prevent default search from happening, use an absolute path to specify the location of your fixture file, e.g. ``loaddata /path/to/sample``.
+- [3de00c7e] You can also provide data using :ref:`fixtures <fixtures-explanation>`, however, this data isn't loaded automatically, except if you use :attr:`.TransactionTestCase.fixtures`.
+- [fce1cf31] You can load data by calling :djadmin:`manage.py loaddata <loaddata>` ``<fixturename>``, where ``<fixturename>`` is the name of the fixture file you've created. Each time you run :djadmin:`loaddata`, the data will be read from the fixture and reloaded into the database. Note this means that if you change one of the rows created by a fixture and then run :djadmin:`loaddata` again, you'll wipe out any changes you've made.
+- [6590a4cf] You'll store this data in a ``fixtures`` directory inside your app.

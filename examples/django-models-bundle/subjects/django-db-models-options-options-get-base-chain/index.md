@@ -1,9 +1,9 @@
 # django/db/models/options::Options.get_base_chain
 
-- Subject: django/db/models/options::Options.get_base_chain (id `985d927c-11ac-4691-b395-60f82d10e87a`)
+- Subject: django/db/models/options::Options.get_base_chain (id `6baa6dc9-9e45-4bdc-8cc7-3212cfc7f4e0`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

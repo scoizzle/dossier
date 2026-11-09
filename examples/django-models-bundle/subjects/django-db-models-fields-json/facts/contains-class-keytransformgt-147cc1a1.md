@@ -1,6 +1,6 @@
 # Fact 147cc1a1
 
-Store id: f0967068-b85d-4e81-b745-eb9df2cab0a4
+Store id: 62f9965d-e2df-496d-acc1-0918693399e2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformGt
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f0967068-b85d-4e81-b745-eb9df2cab0a4",
+  "id": "62f9965d-e2df-496d-acc1-0918693399e2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformGt"
       },
       "rel": "contains",
-      "target": "8d46b66f-b309-4720-af2d-658db668cdc8"
+      "target": "a7885cab-8a71-4846-9202-7b2649aa6e90"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

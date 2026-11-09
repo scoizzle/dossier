@@ -1,6 +1,6 @@
 # Fact 65917247
 
-Store id: d3937544-8f0f-4bf2-a852-2f79568dc1cd
+Store id: 271645fe-0b8c-4874-a259-73ab05428043
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_many(self, instances)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1244060+00:00`
+- posted_at: `2026-11-09T23:32:05.1232860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 304,
     "symbol": "DeferredAttribute.fetch_many"
   },
-  "id": "d3937544-8f0f-4bf2-a852-2f79568dc1cd",
+  "id": "271645fe-0b8c-4874-a259-73ab05428043",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1244060+00:00"
+    "posted_at": "2026-11-09T23:32:05.1232860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "59035020-9a0e-4bce-b8ae-d259900a4724",
+  "subject_id": "0b18b1e9-993f-4da5-bce9-824ec940a816",
   "subject_name": "django/db/models/query_utils::DeferredAttribute.fetch_many",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact f93e3b80
 
-Store id: 72291b0f-d216-4f3b-a67d-1ffc23724f52
+Store id: 230bda2a-743f-4870-b6cd-fe7a863e99c9
 
 ## Text
 
@@ -20,7 +20,7 @@ class PreventQuerySetCloning
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2666780+00:00`
+- posted_at: `2026-11-09T23:32:04.2865010+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 342,
     "symbol": "PreventQuerySetCloning"
   },
-  "id": "72291b0f-d216-4f3b-a67d-1ffc23724f52",
+  "id": "230bda2a-743f-4870-b6cd-fe7a863e99c9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2666780+00:00"
+    "posted_at": "2026-11-09T23:32:04.2865010+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c8f7061-4cf0-477e-91a2-0126a021879b",
+  "subject_id": "e115e634-7fb6-44a8-a762-6f714e648e3d",
   "subject_name": "django/db/models/query::PreventQuerySetCloning",
   "tags": [
     "entity:class"

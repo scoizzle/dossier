@@ -1,6 +1,6 @@
 # Fact 749bd1ba
 
-Store id: f097c9f2-9d1f-4876-bfc6-e2f258a8012a
+Store id: 6f580746-692b-46f5-bce7-a24abd495380
 
 ## Text
 
@@ -20,7 +20,7 @@ def __sub__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4732600+00:00`
+- posted_at: `2026-11-09T23:31:55.7271300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 82,
     "symbol": "Combinable.__sub__"
   },
-  "id": "f097c9f2-9d1f-4876-bfc6-e2f258a8012a",
+  "id": "6f580746-692b-46f5-bce7-a24abd495380",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4732600+00:00"
+    "posted_at": "2026-11-09T23:31:55.7271300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a0355d9d-af8a-46bf-8108-de58b04d8ba4",
+  "subject_id": "0af64861-5e49-4ed5-a719-090c311ae2a7",
   "subject_name": "django/db/models/expressions::Combinable.__sub__",
   "tags": [
     "entity:method"

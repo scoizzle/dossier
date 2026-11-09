@@ -1,6 +1,6 @@
 # Fact c1d847fa
 
-Store id: 0f73055d-daf7-4b07-9c29-6c833623422c
+Store id: 39004529-b487-43a4-9e44-55c36ecae93b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractYear
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0f73055d-daf7-4b07-9c29-6c833623422c",
+  "id": "39004529-b487-43a4-9e44-55c36ecae93b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractYear"
       },
       "rel": "contains",
-      "target": "2efbdf0e-b3be-469a-8587-3d210281e059"
+      "target": "49101521-6a10-4850-acd7-d7dd4f793a91"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

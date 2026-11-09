@@ -1,8 +1,8 @@
 # django/db/models/fields/tuple_lookups
 
-- Subject: django/db/models/fields/tuple_lookups (id `cee0b84a-5cfa-4b80-bfc8-675952a3b671`)
+- Subject: django/db/models/fields/tuple_lookups (id `efb95fe5-98d6-477d-97c9-b4235a733859`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 162 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

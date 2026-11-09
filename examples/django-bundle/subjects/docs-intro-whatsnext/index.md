@@ -1,14 +1,14 @@
 # docs/intro/whatsnext
 
-- Subject: docs/intro/whatsnext (id `eaa96ce3-3417-4d53-a22f-26ec3c43941f`)
+- Subject: docs/intro/whatsnext (id `88ee9301-abf4-4a0a-9c47-7e435620394c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 21 of 65
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2895 tokens
+- Facts shown: 64 of 65
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - $ cd path/to/django/docs $ make html [8c9196dd]
 - $ python -m pip install Sphinx [0a0d1193]
@@ -32,6 +32,48 @@
 - * The `main documentation web page`_ includes links to documentation for previous versions. Be sure you are using the version of the docs corresponding to the version of Django you are using! [008c4e71]
 - .. console:: [7714e199aac2701e-84]
 
-## Beyond the budget
+## All facts
 
-43 more facts did not fit in the budget: [bbaff07d] [6e0f6547] [64221f14] [73362000] [bceb61eb] [95ce9459] [1b8079a3] [1ff1dc8b] [0d4e0507] [7c325823] [2fc531ed] [c0342bc8] [7fb57f07] [a83120a5] [b4699e33] [f6c1e7ec] [c7178eac] [6146b270] [87bb7152] [92147f5c] [c70eb57a] [7d8ddec3] [141c4e5ec809f575-3] [8a2a4287] [f51e1ca3] [a8e260cf] [f9b6e77c] [f2343d37] [77488c78] [392afca9] [d0860406] [2dd837c5] [29a808dd] [f44f5ddf] [dc7b17e5] [231ed6f4] [6a7bc122] [12d138b8] [20102358] [db7005dc] [4b34cc2f] [c08f8787] [6b28b871]
+- [bbaff07d] * The development documentation at https://docs.djangoproject.com/en/dev/ is from the main branch. These docs correspond to the latest feature release, plus whatever features have been added/changed in the framework since then.
+- [6e0f6547] * The guides and how-to's don't cover every single class, function, and method available in Django -- that would be overwhelming when you're trying to learn. Instead, details about individual classes, functions, methods, and modules are kept in the :doc:`reference </ref/index>`. This is where you'll turn to find the details of a particular function or whatever you need.
+- [64221f14] * Then, use the included ``Makefile`` to turn the documentation into HTML:
+- [73362000] * To add documentation for new features as new features get added, or as Django APIs or behaviors change.
+- [bceb61eb] * To add information and/or examples to existing sections that need to be expanded.
+- [95ce9459] * To distinguish feature changes/additions in the docs, we use the phrase: "New in Django Development version" for the version of Django that hasn't been released yet, or "New in version X.Y" for released versions.
+- [1b8079a3] * To document Django features that aren't yet documented. (The list of such features is shrinking but exists nonetheless.)
+- [1ff1dc8b] * To make content fixes, such as grammar/typo corrections.
+- [0d4e0507] * Web development is often broad, not deep -- problems span many domains. We've written a set of :doc:`how-to guides </howto/index>` that answer common "How do I ...?" questions. Here you'll find information about :doc:`generating PDFs with Django </howto/outputting-pdf>`, :doc:`writing custom template tags </howto/custom-template-tags>`, and more.
+- [7c325823] .. _Django ecosystem: https://www.djangoproject.com/community/ecosystem/
+- [2fc531ed] .. _differences-between-doc-versions:
+- [c0342bc8] .. _main documentation web page: https://docs.djangoproject.com/en/dev/
+- [7fb57f07] .. _ticket system: https://code.djangoproject.com/ .. _Django Forum: https://forum.djangoproject.com/ .. _Django Discord server: https://chat.djangoproject.com
+- [a83120a5] ================= What to read next =================
+- [b4699e33] As HTML, locally ----------------
+- [f6c1e7ec] Differences between versions ============================
+- [c7178eac] Django's documentation is kept in the same source control system as its code. It lives in the :source:`docs` directory of our Git repository. Each document online is a separate text file in the repository.
+- [6146b270] Django's got a *lot* of documentation -- almost 450,000 words and counting -- so finding what you need can sometimes be tricky. A good place to start is the :ref:`genindex`. We also recommend using the builtin search feature.
+- [87bb7152] Django's main documentation is broken up into "chunks" designed to fill different needs:
+- [92147f5c] Finding documentation =====================
+- [c70eb57a] For offline reading, or just for convenience, you can read the Django documentation in plain text.
+- [7d8ddec3] How documentation is updated ============================
+- [141c4e5ec809f575-3] How the documentation is organized ==================================
+- [8a2a4287] If you're using an official release of Django, the zipped package (tarball) of the code includes a ``docs/`` directory, which contains all the documentation for that release.
+- [f51e1ca3] If you're using the development version of Django (aka the main branch), the ``docs/`` directory contains all of the documentation. You can update your Git checkout to get the latest changes.
+- [a8e260cf] In plain text -------------
+- [f9b6e77c] Just as the Django code base is developed and improved on a daily basis, our documentation is consistently improving. We improve documentation for several reasons:
+- [f2343d37] Note, however, that tickets should explicitly relate to the documentation, rather than asking broad tech-support questions. If you need help with your particular Django setup, try the `Django Forum`_ or the `Django Discord server`_ instead.
+- [77488c78] On the web ----------
+- [392afca9] One low-tech way of taking advantage of the text documentation is by using the Unix ``grep`` utility to search for a phrase in all of the documentation. For example, this will show you each mention of the phrase "max_length" in any Django document:
+- [d0860406] Or you can just browse around!
+- [2dd837c5] So what's next?
+- [29a808dd] So you've read all the :doc:`introductory material </intro/index>` and have decided you'd like to keep using Django. We've only just scratched the surface with this intro (in fact, if you've read every single word, you've read about 5% of the overall documentation).
+- [f44f5ddf] The most recent version of the Django documentation lives at https://docs.djangoproject.com/en/dev/. These HTML pages are generated automatically from the text files in source control. That means they reflect the "latest and greatest" in Django -- they include the very latest corrections and additions, and they discuss the latest Django features, which may only be available to users of the Django development version. (See :ref:`differences-between-doc-versions` below.)
+- [dc7b17e5] The text documentation in the main branch of the Git repository contains the "latest and greatest" changes and additions. These changes include documentation of new features targeted for Django's next :term:`feature release <Feature release>`. For that reason, it's worth pointing out our policy to highlight recent changes and additions to Django.
+- [231ed6f4] We encourage you to help improve the docs by submitting changes, corrections and suggestions in the `ticket system`_. The Django developers actively monitor the ticket system and use your feedback to improve the documentation for everybody.
+- [6a7bc122] We follow this policy:
+- [12d138b8] We've put a lot of effort into making Django's documentation useful, clear and as complete as possible. The rest of this document explains more about how the documentation works so that you can get the most out of it.
+- [20102358] Well, we've always been big fans of learning by doing. At this point you should know enough to start a project of your own and start fooling around. As you need to learn new tricks, come back to the documentation. There's also a bigger `Django ecosystem`_ out there for you to explore that the community has created.
+- [db7005dc] Where to get it ===============
+- [4b34cc2f] You can get a local copy of the HTML documentation following a few steps:
+- [c08f8787] You can read Django documentation in several ways. They are, in order of preference:
+- [6b28b871] __ https://www.sphinx-doc.org/ __ https://www.gnu.org/software/make/

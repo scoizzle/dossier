@@ -1,6 +1,6 @@
 # Fact 3af51254
 
-Store id: 3f419bf1-054c-4aba-87a3-ffee0fdcdca9
+Store id: 38de096f-397e-4093-b84b-9500f2fd2045
 
 ## Text
 
@@ -20,7 +20,7 @@ def _extract_model_params(self, defaults, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.4571290+00:00`
+- posted_at: `2026-11-09T23:32:04.4306440+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1152,
     "symbol": "QuerySet._extract_model_params"
   },
-  "id": "3f419bf1-054c-4aba-87a3-ffee0fdcdca9",
+  "id": "38de096f-397e-4093-b84b-9500f2fd2045",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.4571290+00:00"
+    "posted_at": "2026-11-09T23:32:04.4306440+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eefea9bf-2d4c-4039-bab8-f86be529def8",
+  "subject_id": "11df9cc0-989b-492c-be37-a0c5d5b96ea3",
   "subject_name": "django/db/models/query::QuerySet._extract_model_params",
   "tags": [
     "entity:method"

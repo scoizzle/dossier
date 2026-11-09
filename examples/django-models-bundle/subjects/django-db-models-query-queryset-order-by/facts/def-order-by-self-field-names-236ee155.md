@@ -1,6 +1,6 @@
 # Fact 236ee155
 
-Store id: 9f135f73-a76f-4fcb-9e33-3512bfe7c41a
+Store id: e78e5009-1e45-4bdd-8882-33805b43ad29
 
 ## Text
 
@@ -20,7 +20,7 @@ def order_by(self, *field_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.6582610+00:00`
+- posted_at: `2026-11-09T23:32:04.5838960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1934,
     "symbol": "QuerySet.order_by"
   },
-  "id": "9f135f73-a76f-4fcb-9e33-3512bfe7c41a",
+  "id": "e78e5009-1e45-4bdd-8882-33805b43ad29",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.6582610+00:00"
+    "posted_at": "2026-11-09T23:32:04.5838960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1926cb67-d00d-4f4a-90f5-23c5b0bc9a97",
+  "subject_id": "4c1db588-f18e-4716-8688-499f3a9e645f",
   "subject_name": "django/db/models/query::QuerySet.order_by",
   "tags": [
     "entity:method"

@@ -1,14 +1,14 @@
 # django/contrib/staticfiles/finders
 
-- Subject: django/contrib/staticfiles/finders (id `96919e71-d940-4857-8ab9-c5970d765160`)
+- Subject: django/contrib/staticfiles/finders (id `5b117852-2d77-4d61-b161-7bc86eb55fe1`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 9 of 32
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2405 tokens
+- Facts shown: 32 of 32
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - If the ``find_all`` parameter is False (default) return only the first found file path; if True, return a list of all found files paths. """ raise NotImplementedError( "subclasses of BaseFinder must provide a find() method" ) [a5ca914c]
 - If ``find_all`` is ``False`` (default), return the first matching absolute path (or ``None`` if no match). Otherwise return a list. """ searched_locations[:] = [] matches = [] for finder in get_finders(): result = finder.find(path, find_all=find_all) if not find_all and result: return result if not isinstance(result, (list, tuple)): result = [result] matches.extend(result) if matches: return matches # No match. return [] if find_all else None [cd9f6b72]
@@ -20,6 +20,28 @@
 - def find(self, path, find_all=False): """ Given a relative file path, find an absolute file path. [60f56eb6]
 - def find(self, path, find_all=False): """ Look for files in the app directories. """ matches = [] for app in self.apps: app_location = self.storages[app].location if app_location not in searched_locations: searched_locations.append(app_location) match = self.find_in_app(app, path) if match: if not find_all: return match matches.append(match) return matches [dd6a2a36]
 
-## Beyond the budget
+## All facts
 
-23 more facts did not fit in the budget: [8a8d184d] [7a1c565e] [81f260ce] [060c402b] [60119882] [13c0f162] [e9ab81b7] [0930d3bf] [2466c96c] [b9063f5f] [50f010e5] [6cf3d68e] [95bd5227] [ff498666] [a5b1ef8a] [1705c605] [64912fac] [519f945e] [5c935e7d] [8f03611e] [e70432d6] [2bc27306] [0d7a9619]
+- [8a8d184d] def check(self, **kwargs): errors = [] if not isinstance(settings.STATICFILES_DIRS, (list, tuple)): errors.append( Error( "The STATICFILES_DIRS setting is not a tuple or list.", hint="Perhaps you forgot a trailing comma?", id="staticfiles.E001", ) ) return errors for root in settings.STATICFILES_DIRS: if isinstance(root, (list, tuple)): prefix, root = root if prefix.endswith("/"): errors.append( Error( "The prefix %r in the STATICFILES_DIRS setting must " "not end with a slash." % prefix, id="staticfiles.E003", ) ) if settings.STATIC_ROOT and os.path.abspath( settings.STATIC_ROOT ) == os.path.abspath(root): errors.append( Error( "The STATICFILES_DIRS setting should not contain the " "STATIC_ROOT setting.", id="staticfiles.E002", ) ) if not os.path.isdir(root): errors.append( Warning( f"The directory '{root}' in the STATICFILES_DIRS setting " f"does not exist.", id="staticfiles.W004", ) ) return errors
+- [7a1c565e] def find(self, path, find_all=False): """ Look for files in the default file storage, if it's local. """ try: self.storage.path("") except NotImplementedError: pass else: if self.storage.location not in searched_locations: searched_locations.append(self.storage.location) if self.storage.exists(path): match = self.storage.path(path) if find_all: match = [match] return match return []
+- [81f260ce] def find(self, path, find_all=False): """ Look for files in the extra locations as defined in STATICFILES_DIRS. """ matches = [] for prefix, root in self.locations: if root not in searched_locations: searched_locations.append(root) matched_path = self.find_location(root, path, prefix) if matched_path: if not find_all: return matched_path matches.append(matched_path) return matches
+- [060c402b] def find_in_app(self, app, path): """ Find a requested static file in an app's static locations. """ storage = self.storages.get(app) # Only try to find a file if the source dir actually exists. if storage and storage.exists(path): matched_path = storage.path(path) if matched_path: return matched_path
+- [60119882] def find_location(self, root, path, prefix=None): """ Find a requested static file in a location and return the found absolute path (or ``None`` if no match). """ if prefix: prefix = "%s%s" % (prefix, os.sep) if not path.startswith(prefix): return None path = path.removeprefix(prefix) path = safe_join(root, path) if os.path.exists(path): return path
+- [13c0f162] def list(self, ignore_patterns): """ Given an optional list of paths to ignore, return a two item iterable consisting of the relative path and storage instance. """ raise NotImplementedError( "subclasses of BaseFinder must provide a list() method" )
+- [e9ab81b7] def list(self, ignore_patterns): """ List all files in all app storages. """ for storage in self.storages.values(): if storage.exists(""): # check if storage location exists for path in utils.get_files(storage, ignore_patterns): yield path, storage
+- [0930d3bf] def list(self, ignore_patterns): """ List all files in all locations. """ for prefix, root in self.locations: # Skip nonexistent directories. if os.path.isdir(root): storage = self.storages[root] for path in utils.get_files(storage, ignore_patterns): yield path, storage
+- [2466c96c] def list(self, ignore_patterns): """ List all files of the storage. """ for path in utils.get_files(self.storage, ignore_patterns): yield path, self.storage
+- [b9063f5f] storage = None
+- [50f010e5] storage = default_storage
+- [6cf3d68e] storage_class = FileSystemStorage source_dir = "static"
+- [95bd5227] # To keep track on which directories the finder has searched the static files. searched_locations = []
+- [ff498666] @functools.cache def get_finder(import_path): """ Import the staticfiles finder class described by import_path, where import_path is the full Python path to the class. """ Finder = import_string(import_path) if not issubclass(Finder, BaseFinder): raise ImproperlyConfigured( 'Finder "%s" is not a subclass of "%s"' % (Finder, BaseFinder) ) return Finder()
+- [a5b1ef8a] class AppDirectoriesFinder(BaseFinder): """ A static files finder that looks in the directory of each app as specified in the source_dir attribute. """
+- [1705c605] class BaseFinder: """ A base file finder to be used for custom staticfiles finder classes. """
+- [64912fac] class BaseStorageFinder(BaseFinder): """ A base static files finder to be used to extended with an own storage class. """
+- [519f945e] class DefaultStorageFinder(BaseStorageFinder): """ A static files finder that uses the default storage backend. """
+- [5c935e7d] class FileSystemFinder(BaseFinder): """ A static files finder that uses the ``STATICFILES_DIRS`` setting to locate files. """
+- [8f03611e] def find(path, find_all=False): """ Find a static file with the given path using all enabled finders.
+- [e70432d6] def get_finders(): for finder_path in settings.STATICFILES_FINDERS: yield get_finder(finder_path)
+- [2bc27306] from django.apps import apps from django.conf import settings from django.contrib.staticfiles import utils from django.core.checks import Error, Warning from django.core.exceptions import ImproperlyConfigured from django.core.files.storage import FileSystemStorage, Storage, default_storage from django.utils._os import safe_join from django.utils.functional import LazyObject, empty from django.utils.module_loading import import_string
+- [0d7a9619] import functools import os

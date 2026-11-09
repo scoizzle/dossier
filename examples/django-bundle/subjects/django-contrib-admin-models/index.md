@@ -1,14 +1,14 @@
 # django/contrib/admin/models
 
-- Subject: django/contrib/admin/models (id `438ad56f-d61e-4082-a51a-4201f1169a3e`)
+- Subject: django/contrib/admin/models (id `48cf0172-7c02-4401-a6d2-4f0337c54d6c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 14 of 24
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1440 tokens
+- Facts shown: 24 of 24
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - elif "changed" in sub_message: sub_message["changed"]["fields"] = get_text_list( [ gettext(field_name) for field_name in sub_message["changed"]["fields"] ], gettext("and"), ) if "name" in sub_message["changed"]: sub_message["changed"]["name"] = gettext( sub_message["changed"]["name"] ) messages.append( gettext("Changed {fields} for {name} “{object}”.").format( **sub_message["changed"] ) ) else: messages.append( gettext("Changed {fields}.").format( **sub_message["changed"] ) ) [ffd7941f]
 - elif "deleted" in sub_message: sub_message["deleted"]["name"] = gettext( sub_message["deleted"]["name"] ) messages.append( gettext("Deleted {name} “{object}”.").format( **sub_message["deleted"] ) ) [ee47051f]
@@ -25,6 +25,15 @@
 - def get_edited_object(self): """Return the edited object represented by this log entry.""" return self.content_type.get_object_for_this_type(pk=self.object_id) [1d32897d]
 - objects = LogEntryManager() [8feec33d]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [f8da17d6] [3da3e178] [5db6e966] [aa8da647] [4212baa1] [49c23151] [fac44db9] [d6be63b8] [8a258693] [5766bf5bad9de4d2-2]
+- [f8da17d6] def is_addition(self): return self.action_flag == ADDITION
+- [3da3e178] def is_change(self): return self.action_flag == CHANGE
+- [5db6e966] def is_deletion(self): return self.action_flag == DELETION
+- [aa8da647] def log_actions( self, user_id, queryset, action_flag, change_message="", *, single_object=False ): if isinstance(change_message, list): change_message = json.dumps(change_message)
+- [4212baa1] ACTION_FLAG_CHOICES = [ (ADDITION, _("Addition")), (CHANGE, _("Change")), (DELETION, _("Deletion")), ]
+- [49c23151] ADDITION = 1 CHANGE = 2 DELETION = 3
+- [fac44db9] class LogEntry(models.Model): action_time = models.DateTimeField( _("action time"), default=timezone.now, editable=False, ) user = models.ForeignKey( settings.AUTH_USER_MODEL, models.CASCADE, verbose_name=_("user"), ) content_type = models.ForeignKey( ContentType, models.SET_NULL, verbose_name=_("content type"), blank=True, null=True, ) object_id = models.TextField(_("object id"), blank=True, null=True) # Translators: 'repr' means representation # (https://docs.python.org/library/functions.html#repr) object_repr = models.CharField(_("object repr"), max_length=200) action_flag = models.PositiveSmallIntegerField( _("action flag"), choices=ACTION_FLAG_CHOICES ) # change_message is either a string or a JSON structure change_message = models.TextField(_("change message"), blank=True)
+- [d6be63b8] class LogEntryManager(models.Manager): use_in_migrations = True
+- [8a258693] from django.conf import settings from django.contrib.admin.utils import quote from django.contrib.contenttypes.models import ContentType from django.db import models from django.urls import NoReverseMatch, reverse from django.utils import timezone from django.utils.text import get_text_list from django.utils.translation import gettext from django.utils.translation import gettext_lazy as _
+- [5766bf5bad9de4d2-2] import json

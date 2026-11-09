@@ -1,9 +1,9 @@
 # django/db/models/aggregates::Count
 
-- Subject: django/db/models/aggregates::Count (id `9523552e-5bf3-41e9-9520-28b03320621b`)
+- Subject: django/db/models/aggregates::Count (id `bcd3907f-cca0-4ee9-93a9-4ec8de62b68f`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

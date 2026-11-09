@@ -1,6 +1,6 @@
 # Fact 40aeb422
 
-Store id: 6512d55b-e377-4eb9-94c9-faaba95faa5d
+Store id: bc03b31b-fff9-4af1-8b02-ce79ff49ef3b
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_related_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.3227390+00:00`
+- posted_at: `2026-11-09T23:31:58.6800960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 782,
     "symbol": "ForeignObject.resolve_related_fields"
   },
-  "id": "6512d55b-e377-4eb9-94c9-faaba95faa5d",
+  "id": "bc03b31b-fff9-4af1-8b02-ce79ff49ef3b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.3227390+00:00"
+    "posted_at": "2026-11-09T23:31:58.6800960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "24e80068-3344-487b-b854-4c5f5213465c",
+  "subject_id": "5b6ae9d7-f98d-4afb-93eb-1326ad75d68e",
   "subject_name": "django/db/models/fields/related::ForeignObject.resolve_related_fields",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DecimalField.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::DecimalField.get_db_prep_value (id `bbf58260-e1ab-4b31-a0cc-3854c695b4c1`)
+- Subject: django/db/models/fields/__init__::DecimalField.get_db_prep_value (id `1c3269ce-b458-491a-b48a-f7aafcb418ed`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

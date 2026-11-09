@@ -1,6 +1,6 @@
 # Fact 5b5ffceb
 
-Store id: 24d1c981-2a41-4895-84a4-b7fd9c974fbe
+Store id: 883347b9-fe27-4c23-8ae3-703c516bd0b2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtraWhere
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9997070+00:00`
+- posted_at: `2026-11-09T23:32:07.7324610+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "24d1c981-2a41-4895-84a4-b7fd9c974fbe",
+  "id": "883347b9-fe27-4c23-8ae3-703c516bd0b2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9997070+00:00"
+    "posted_at": "2026-11-09T23:32:07.7324610+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtraWhere"
       },
       "rel": "contains",
-      "target": "1ab0866a-973d-4283-b2ab-84c158e7edae"
+      "target": "f5e86fed-6c87-4434-8938-45f419171418"
     }
   ],
   "status": "live",
-  "subject_id": "bfe254f8-8b12-4be9-bdee-4043373d6994",
+  "subject_id": "054a8784-2f6d-4aca-bf87-0be8a185e83b",
   "subject_name": "django/db/models/sql/where",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 2e776bf1
 
-Store id: ad7f5c6d-9738-41fb-a6aa-6533b823b28b
+Store id: 181e9282-e665-455f-9b9e-04a55f8ed410
 
 ## Text
 
@@ -20,7 +20,7 @@ def orderby_issubset_groupby(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.4908120+00:00`
+- posted_at: `2026-11-09T23:32:07.0713950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2362,
     "symbol": "Query.orderby_issubset_groupby"
   },
-  "id": "ad7f5c6d-9738-41fb-a6aa-6533b823b28b",
+  "id": "181e9282-e665-455f-9b9e-04a55f8ed410",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.4908120+00:00"
+    "posted_at": "2026-11-09T23:32:07.0713950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5567da75-7583-4c6e-823b-6415f7c8b987",
+  "subject_id": "6e9c5050-ef5f-4b80-8a87-54a98278f8d4",
   "subject_name": "django/db/models/sql/query::Query.orderby_issubset_groupby",
   "tags": [
     "entity:method",

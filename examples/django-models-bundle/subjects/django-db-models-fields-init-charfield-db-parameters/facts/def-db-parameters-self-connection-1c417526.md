@@ -1,6 +1,6 @@
 # Fact 1c417526
 
-Store id: f5fd8153-0fb9-48b2-81a0-da1f98eec660
+Store id: b8205448-ae6c-4bd5-b935-a9a9ac096613
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_parameters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3818680+00:00`
+- posted_at: `2026-11-09T23:31:56.5550580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1325,
     "symbol": "CharField.db_parameters"
   },
-  "id": "f5fd8153-0fb9-48b2-81a0-da1f98eec660",
+  "id": "b8205448-ae6c-4bd5-b935-a9a9ac096613",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3818680+00:00"
+    "posted_at": "2026-11-09T23:31:56.5550580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "de29908e-338e-42ef-94ed-bd03c136556f",
+  "subject_id": "031ded8c-0f7f-4221-990c-b3fb71ecdc4c",
   "subject_name": "django/db/models/fields/__init__::CharField.db_parameters",
   "tags": [
     "entity:method"

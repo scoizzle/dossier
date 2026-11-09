@@ -1,14 +1,14 @@
 # docs/ref/models/conditional-expressions
 
-- Subject: docs/ref/models/conditional-expressions (id `5aed9bb8-fabd-44af-b044-6284fcd26b55`)
+- Subject: docs/ref/models/conditional-expressions (id `51b6ce48-6715-468c-a23f-e3de5d37ddc3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 892 tokens
-- Facts shown: 9 of 58
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3054 tokens
+- Facts shown: 58 of 58
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> When(then__exact=0, then=1) >>> When(Q(then=0), then=1) [97213297]
 - .. code-block:: pycon [eaf050be34acb41d-350]
@@ -20,6 +20,54 @@
 - from django.db import models [4af926756c29efa6-17]
 - .. _conditional-aggregation: [e51d85d0]
 
-## Beyond the budget
+## All facts
 
-49 more facts did not fit in the budget: [744d8070] [9d3f32b7] [f7af092c] [e4b98caf] [a2ec19c3] [34caab8e] [780c31f4] [9b91a60e] [795090b6] [483e3ebe] [eaf050be34acb41d-351] [eaf050be34acb41d-352] [eaf050be34acb41d-353] [eaf050be34acb41d-354] [eaf050be34acb41d-355] [eaf050be34acb41d-356] [eaf050be34acb41d-357] [0ee73173f492412a-28] [0ee73173f492412a-29] [0ee73173f492412a-30] [e4d958b020902249] [942ae6c11625c81c-100] [942ae6c11625c81c-101] [62fa3f73] [3658d5f0] [1e77e03d] [bc0309c3] [07f1fe36] [27d22988] [415c8436] [dab12d4c] [ec7b37c5] [df4495a1] [8429157b] [a4f69d058049da89] [98700f19] [3df8c9f3] [6ad3322f] [c5d19d6b728490f9-2] [8d950e11] [a2ffd59f] [f4306af9] [5df547d7] [947bf61e] [13cef096] [16a44c6a] [871ee235] [c85bda26] [1e60f037]
+- [744d8070] >>> from django.db.models import F, Q, When >>> # String arguments refer to fields; the following two examples are equivalent: >>> When(account_type=Client.GOLD, then="name") >>> When(account_type=Client.GOLD, then=F("name")) >>> # You can use field lookups in the condition >>> from datetime import date >>> When( ... registered_on__gt=date(2014, 1, 1), ... registered_on__lt=date(2015, 1, 1), ... then="account_type", ... ) >>> # Complex conditions can be created using Q objects >>> When(Q(name__startswith="John") | Q(name__startswith="Paul"), then="name") >>> # Condition can be created using boolean expressions. >>> from django.db.models import Exists, OuterRef >>> non_unique_account_type = ( ... Client.objects.filter( ... account_type=OuterRef("account_type"), ... ) ... .exclude(pk=OuterRef("pk")) ... .values("pk") ... ) >>> When(Exists(non_unique_account_type), then=Value("non unique")) >>> # Condition can be created using lookup expressions. >>> from django.db.models.lookups import GreaterThan, LessThan >>> When( ... GreaterThan(F("registered_on"), date(2014, 1, 1)) ... & LessThan(F("registered_on"), date(2015, 1, 1)), ... then="account_type", ... )
+- [9d3f32b7] >>> non_unique_account_type = ( ... Client.objects.filter( ... account_type=OuterRef("account_type"), ... ) ... .exclude(pk=OuterRef("pk")) ... .values("pk") ... ) >>> Client.objects.filter(~Exists(non_unique_account_type))
+- [f7af092c] Remember that the conditions are evaluated in order, so in the above example we get the correct result even though the second condition matches both Jane Doe and Jack Black. This works just like an :keyword:`if` ... :keyword:`elif` ... :keyword:`else` statement in ``Python``.
+- [e4b98caf] SELECT ... FROM client c0 WHERE NOT EXISTS ( SELECT c1.id FROM client c1 WHERE c1.account_type = c0.account_type AND NOT c1.id = c0.id )
+- [a2ec19c3] SELECT count('id') FILTER (WHERE account_type=1) as regular, count('id') FILTER (WHERE account_type=2) as gold, count('id') FILTER (WHERE account_type=3) as platinum FROM clients;
+- [34caab8e] SELECT count(CASE WHEN account_type=1 THEN id ELSE null) as regular, count(CASE WHEN account_type=2 THEN id ELSE null) as gold, count(CASE WHEN account_type=3 THEN id ELSE null) as platinum FROM clients;
+- [780c31f4] Since the ``then`` keyword argument is reserved for the result of the ``When()``, there is a potential conflict if a :class:`~django.db.models.Model` has a field named ``then``. This can be resolved in two ways:
+- [9b91a60e] class Client(models.Model): REGULAR = "R" GOLD = "G" PLATINUM = "P" ACCOUNT_TYPE_CHOICES = { REGULAR: "Regular", GOLD: "Gold", PLATINUM: "Platinum", } name = models.CharField(max_length=50) registered_on = models.DateField() account_type = models.CharField( max_length=1, choices=ACCOUNT_TYPE_CHOICES, default=REGULAR, )
+- [795090b6] .. class:: Case(*cases, **extra)
+- [483e3ebe] .. class:: When(condition=None, then=None, **lookups)
+- [eaf050be34acb41d-351] .. code-block:: pycon
+- [eaf050be34acb41d-352] .. code-block:: pycon
+- [eaf050be34acb41d-353] .. code-block:: pycon
+- [eaf050be34acb41d-354] .. code-block:: pycon
+- [eaf050be34acb41d-355] .. code-block:: pycon
+- [eaf050be34acb41d-356] .. code-block:: pycon
+- [eaf050be34acb41d-357] .. code-block:: pycon
+- [0ee73173f492412a-28] .. code-block:: sql
+- [0ee73173f492412a-29] .. code-block:: sql
+- [0ee73173f492412a-30] .. code-block:: sql
+- [e4d958b020902249] .. currentmodule:: django.db.models.expressions
+- [942ae6c11625c81c-100] .. note::
+- [942ae6c11625c81c-101] .. note::
+- [62fa3f73] ======================= Conditional Expressions =======================
+- [3658d5f0] A ``Case()`` expression is like the :keyword:`if` ... :keyword:`elif` ... :keyword:`else` statement in ``Python``. Each ``condition`` in the provided ``When()`` objects is evaluated in order, until one evaluates to a truthful value. The ``result`` expression from the matching ``When()`` object is returned.
+- [1e77e03d] A ``When()`` object is used to encapsulate a condition and its result for use in the conditional expression. Using a ``When()`` object is similar to using the :meth:`~django.db.models.query.QuerySet.filter` method. The condition can be specified using :ref:`field lookups <field-lookups>`, :class:`~django.db.models.Q` objects, or :class:`~django.db.models.Expression` objects that have an ``output_field`` that is a :class:`~django.db.models.BooleanField`. The result is provided using the ``then`` keyword.
+- [bc0309c3] Advanced queries ================
+- [07f1fe36] An example:
+- [27d22988] Conditional aggregation -----------------------
+- [415c8436] Conditional expressions can be used in annotations, aggregations, filters, lookups, and updates. They can also be combined and nested with other expressions. This allows you to make powerful conditional queries.
+- [dab12d4c] Conditional expressions let you use :keyword:`if` ... :keyword:`elif` ... :keyword:`else` logic within filters, annotations, aggregations, and updates. A conditional expression evaluates a series of conditions for each row of a table and returns the matching result expression. Conditional expressions can also be combined and nested like other :doc:`expressions </ref/models/expressions>`.
+- [ec7b37c5] Conditional filter ------------------
+- [df4495a1] Conditional update ------------------
+- [8429157b] If we wanted to change our previous query to get the discount based on how long the ``Client`` has been with us, we could do so using lookups:
+- [a4f69d058049da89] In SQL terms, that evaluates to:
+- [98700f19] Keep in mind that each of these values can be an expression.
+- [3df8c9f3] Let's say we want to change the ``account_type`` for our clients to match their registration dates. We can do this using a conditional expression and the :meth:`~django.db.models.query.QuerySet.update` method:
+- [6ad3322f] On other databases, this is emulated using a ``CASE`` statement:
+- [c5d19d6b728490f9-2] Some examples:
+- [8d950e11] The conditional expression classes ==================================
+- [a2ffd59f] The two SQL statements are functionally equivalent but the more explicit ``FILTER`` may perform better.
+- [f4306af9] This aggregate produces a query with the SQL 2003 ``FILTER WHERE`` syntax on databases that support it:
+- [5df547d7] We'll be using the following model in the subsequent examples::
+- [947bf61e] What if we want to find out how many clients there are for each ``account_type``? We can use the ``filter`` argument of :ref:`aggregate functions <aggregation-functions>` to achieve this:
+- [13cef096] When a conditional expression returns a boolean value, it is possible to use it directly in filters. This means that it will not be added to the ``SELECT`` columns, but you can still use it to filter results:
+- [16a44c6a] ``Case()`` accepts any number of ``When()`` objects as individual arguments. Other options are provided using keyword arguments. If none of the conditions evaluate to ``TRUE``, then the expression given with the ``default`` keyword argument is returned. If a ``default`` argument isn't provided, ``None`` is used.
+- [871ee235] ``Case()`` also works in a ``filter()`` clause. For example, to find gold clients that registered more than a month ago and platinum clients that registered more than a year ago:
+- [c85bda26] ``Case`` --------
+- [1e60f037] ``When`` --------

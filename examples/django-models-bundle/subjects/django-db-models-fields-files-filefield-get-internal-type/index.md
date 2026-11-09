@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FileField.get_internal_type
 
-- Subject: django/db/models/fields/files::FileField.get_internal_type (id `93db885c-b572-47fa-ade1-4529e64cd1d7`)
+- Subject: django/db/models/fields/files::FileField.get_internal_type (id `8c2a5cbb-de07-4f2e-bdd5-3c62f9bd565e`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

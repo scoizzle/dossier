@@ -1,9 +1,9 @@
 # django/db/models/functions/math::Log.as_sqlite
 
-- Subject: django/db/models/functions/math::Log.as_sqlite (id `0978289a-4d6f-4c36-a66c-07e85ac8ec19`)
+- Subject: django/db/models/functions/math::Log.as_sqlite (id `b6a7e59b-1905-410a-82f4-dcf40a64eed8`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

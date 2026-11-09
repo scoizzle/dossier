@@ -1,6 +1,6 @@
 # Fact a9c3071f
 
-Store id: e2b4c56a-fc91-4f42-8dd9-60a1592a3ef7
+Store id: f615c859-0a5c-401f-9ae3-c7cfc51d5387
 
 ## Text
 
@@ -20,7 +20,7 @@ def count(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.3777910+00:00`
+- posted_at: `2026-11-09T23:32:04.3762540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 682,
     "symbol": "QuerySet.count"
   },
-  "id": "e2b4c56a-fc91-4f42-8dd9-60a1592a3ef7",
+  "id": "f615c859-0a5c-401f-9ae3-c7cfc51d5387",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.3777910+00:00"
+    "posted_at": "2026-11-09T23:32:04.3762540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dee10d4e-6882-4e02-ad05-5e782d4a1e29",
+  "subject_id": "0bc9df4e-a311-4d11-99f9-40441839a54e",
   "subject_name": "django/db/models/query::QuerySet.count",
   "tags": [
     "entity:method"

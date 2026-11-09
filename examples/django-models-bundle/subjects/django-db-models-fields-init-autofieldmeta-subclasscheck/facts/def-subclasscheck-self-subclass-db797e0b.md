@@ -1,6 +1,6 @@
 # Fact db797e0b
 
-Store id: 0046c8dc-29d9-4ba2-be29-98df5d2ca9cf
+Store id: f6f77032-f3c9-40d6-a54b-fa0ef5d403b0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __subclasscheck__(self, subclass)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7491970+00:00`
+- posted_at: `2026-11-09T23:31:56.9171140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2957,
     "symbol": "AutoFieldMeta.__subclasscheck__"
   },
-  "id": "0046c8dc-29d9-4ba2-be29-98df5d2ca9cf",
+  "id": "f6f77032-f3c9-40d6-a54b-fa0ef5d403b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7491970+00:00"
+    "posted_at": "2026-11-09T23:31:56.9171140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "af2ca235-1b7c-4ac4-8fd8-5cccce3652ad",
+  "subject_id": "cb6b27e9-c7ea-44ad-96f1-1b3fadd955b8",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMeta.__subclasscheck__",
   "tags": [
     "entity:method"

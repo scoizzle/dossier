@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query
 
-- Subject: django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query (id `21acfc60-44d0-470d-99fd-d9776a99ea5d`)
+- Subject: django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query (id `c0e48b4c-ce3a-4a53-8a93-0c32805aa28c`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

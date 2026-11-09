@@ -1,6 +1,6 @@
 # Fact a11a4740
 
-Store id: c0037cdd-45f2-4280-8e4d-4616de42ad1a
+Store id: c4a48081-ac8d-4a33-aa2c-795881342489
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractWeek
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c0037cdd-45f2-4280-8e4d-4616de42ad1a",
+  "id": "c4a48081-ac8d-4a33-aa2c-795881342489",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractWeek"
       },
       "rel": "contains",
-      "target": "6a68f8c3-c2d9-4419-bfd8-9ed58875ffe6"
+      "target": "1026ff57-84f2-4720-b9e4-a7a3e2230a18"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLAggregateCompiler
 
-- Subject: django/db/models/sql/compiler::SQLAggregateCompiler (id `e5466d8a-2829-4339-87f6-1b9c81ba212a`)
+- Subject: django/db/models/sql/compiler::SQLAggregateCompiler (id `43275326-bdf5-4150-aada-1086d206fcaf`)
 - Kind: class
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 27c6ae3a
 
-Store id: a05d2d37-72d2-45bf-9df1-43104528f761
+Store id: 8457e56e-e66a-4105-9b21-0906a582c15c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.9976550+00:00`
+- posted_at: `2026-11-09T23:32:06.4653620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 162,
     "symbol": "Join.__eq__"
   },
-  "id": "a05d2d37-72d2-45bf-9df1-43104528f761",
+  "id": "8457e56e-e66a-4105-9b21-0906a582c15c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.9976550+00:00"
+    "posted_at": "2026-11-09T23:32:06.4653620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "65b7c4bf-a1e0-4659-ae73-da93936ea1cc",
+  "subject_id": "354330cc-ca4d-4900-ad47-5cb05187cba1",
   "subject_name": "django/db/models/sql/datastructures::Join.__eq__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 4bed368d
 
-Store id: 0c08729e-62aa-40d4-bbf3-abf45b9c5952
+Store id: fac076ad-0537-4a31-ae44-c99825c5a04d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.6397720+00:00`
+- posted_at: `2026-11-09T23:31:55.9015570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1400,
     "symbol": "ColPairs.__iter__"
   },
-  "id": "0c08729e-62aa-40d4-bbf3-abf45b9c5952",
+  "id": "fac076ad-0537-4a31-ae44-c99825c5a04d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.6397720+00:00"
+    "posted_at": "2026-11-09T23:31:55.9015570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0e028bfb-138b-4315-89de-833af86987eb",
+  "subject_id": "7a0c990d-cb45-402e-95d6-32ccaf2c885d",
   "subject_name": "django/db/models/expressions::ColPairs.__iter__",
   "tags": [
     "entity:method"

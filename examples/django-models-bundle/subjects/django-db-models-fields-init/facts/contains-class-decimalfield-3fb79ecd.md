@@ -1,6 +1,6 @@
 # Fact 3fb79ecd
 
-Store id: 4ae3c4ae-2bc2-4010-b6bb-33fff4b97b7e
+Store id: dec975eb-1cfd-46e3-93f9-8155ea9c05f5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DecimalField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4ae3c4ae-2bc2-4010-b6bb-33fff4b97b7e",
+  "id": "dec975eb-1cfd-46e3-93f9-8155ea9c05f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DecimalField"
       },
       "rel": "contains",
-      "target": "25ff08c8-f0d2-423c-b20d-a1f93aa7e99b"
+      "target": "12e7afd1-6ef4-40ef-aa2c-28dd8a094828"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

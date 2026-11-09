@@ -1,9 +1,9 @@
 # django/db/models/sql/datastructures::Join
 
-- Subject: django/db/models/sql/datastructures::Join (id `eee05ff6-dc61-4bf8-a8c3-d3d93ecd8574`)
+- Subject: django/db/models/sql/datastructures::Join (id `3d53a54d-87ee-4469-b528-e0e8c2eacc08`)
 - Kind: class
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 13 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

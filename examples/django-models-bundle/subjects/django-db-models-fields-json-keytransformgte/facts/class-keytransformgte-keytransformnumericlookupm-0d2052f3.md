@@ -1,6 +1,6 @@
 # Fact 0d2052f3
 
-Store id: 58547430-a16b-49ff-ae4c-98ba7806d854
+Store id: 9a96b212-f84b-425a-9ced-4c25f62fa075
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformGte(KeyTransformNumericLookupMixin, lookups.GreaterThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7659310+00:00`
+- posted_at: `2026-11-09T23:31:58.0398480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 740,
     "symbol": "KeyTransformGte"
   },
-  "id": "58547430-a16b-49ff-ae4c-98ba7806d854",
+  "id": "9a96b212-f84b-425a-9ced-4c25f62fa075",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7659310+00:00"
+    "posted_at": "2026-11-09T23:31:58.0398480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "81c68fb7-84c2-497f-b5e3-adfce8a1c2b9",
+  "subject_id": "fba312f7-34c4-4101-bbf9-4c49be8ac12f",
   "subject_name": "django/db/models/fields/json::KeyTransformGte",
   "tags": [
     "entity:class"

@@ -1,14 +1,14 @@
 # docs/ref/contrib/admin/actions
 
-- Subject: docs/ref/contrib/admin/actions (id `a614ec33-3350-49e8-b01f-64bd24be4c63`)
+- Subject: docs/ref/contrib/admin/actions (id `87f1a618-10a5-447f-8dc5-8072434c6628`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 23 of 174
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 6732 tokens
+- Facts shown: 167 of 174
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def get_actions(self, request, action_location=ActionLocation.CHANGE_LIST): actions = super().get_actions(request, action_location=action_location) if request.user.username[0].upper() != "J": if "delete_selected" in actions: del actions["delete_selected"] return actions [fefad1e0]
 - # Globally disable delete selected admin.site.disable_action("delete_selected") [8cc11bc9]
@@ -34,6 +34,149 @@
 - def make_published(self, request, queryset): queryset.update(status="p") [97ff1f8c]
 - for obj in queryset: do_something_with(obj) [6295b89e]
 
-## Beyond the budget
+## All facts
 
-144 more facts did not fit in the budget: [f4214c59] [13fbe7fc2a5a9c75-8] [012c9ea9] [31c8b63e] [8f021413] [64f1a494] [62642ae79cdd8ad4] [69458c34] [911ba915] [80d47dc5547c9038] [b46828cc] [2a966a198e13032b-2] [2a966a198e13032b-3] [c059dbb7f93ef187-7] [2e041db2] [0564ac69] [7705716d] [cd73424d] [9ce5569e] [a60bf2e2e676c80b] [5797d68e] [158461e3] [bc37a8c8] [fd242d93] [284ef505] [98ca94c6] [cbbd8e6c] [73519aab] [a7e5499b] [b39dcce8] [265b45df788406c8] [18fded40] [111e14c7] [66031b32] [ef7f6052] [a832229a] [8cf94418] [e25a640b1b2e58eb] [9bfbd9cf] [1317b1f9] [d9df7e1f] [93a38f5d] [4d1080f7] [b772f7e5] [9d7a9b2b38b9a19e] [fb7b26f1d1cd45d5] [7b63a026] [72f2a4eb] [24133552] [caec589c] [482b408b] [5bd45197] [ecd62bb7] [6f9eda1b] [71e51752] [e7a9750b] [e0a348eb] [4af926756c29efa6-9] [5675ed0d] [c94506d4] [e6758c8d] [1a38583b] [73ffc1a1] [cdffb868] [8de4bb82] [b9c97d67] [5e7e5d81] [6509bfe4] [26dee6ef] [982890c8] [0d5ffd3b] [ec0c550817dfd42f] [670dbebc] [89898537] [889cf822] [65128467] [c3c0f269] [3967c5c9] [a1f94339] [942ae6c11625c81c-31] [942ae6c11625c81c-32] [0cf180bcf4ecfab5-2] [0cf180bcf4ecfab5-3] [0cf180bcf4ecfab5-4] [c54b54cb0805732a-14] [992509bf] [8e41546d] [b1fbf47f] [5f78d402] [477ec8a4] [9e2e08ef] [6c6c80ff] [19e7ac0b] [44bf00ec] [f67a507d] [60383e02] [1cde0213] [000ef820] [4c4f54de] [acd6c997] [4a0f3167] [fc7ceaf2] [218f3188] [14f4a55d] [f10c7814] [207eaba8] [28edef836ab93f57-5] [146e6865] [e7d93d45] [818946bc] [ed78a8c2] [0e67e7c4] [976066e3] [efe622e8] [6f160d11] [aefe3d13] [cd37d2ed] [9a413ff7] [0a825bf7] [ade552dd] [1af116bb] [3f23415b] [bc6aaece] [6db4303a] [5686e23e] [b8492f1d] [73700abc] [67fab799] [26a619e3] [b82870b4] [08542ba1] [22986792] [d2b8e4bf] [eee22f73] [578ca24e] [4e16adbd] [291cc924] [fb95f2be] [39ddffd3] [91c4ef25] [2d35a075] [108db846] [4319f732] [57030c54]
+- [f4214c59] def make_published(self, request, queryset): updated = queryset.update(status="p") self.message_user( request, ngettext( "%d story was successfully marked as published.", "%d stories were successfully marked as published.", updated, ) % updated, messages.SUCCESS, )
+- [13fbe7fc2a5a9c75-8] from django.contrib import admin
+- [012c9ea9] make_published.allowed_permissions = ["publish"] make_published.short_description = "Mark selected stories as published"
+- [31c8b63e] The action is available on the admin change form. When an action is run, any unsaved changes on the admin change form will be lost.
+- [8f021413] The action is available on the admin change list.
+- [64f1a494] .. admonition:: Action description ``%``-formatting support
+- [62642ae79cdd8ad4] .. attribute:: description
+- [69458c34] .. attribute:: func
+- [911ba915] .. attribute:: locations
+- [80d47dc5547c9038] .. attribute:: name
+- [b46828cc] .. attribute:: plural_description
+- [2a966a198e13032b-2] .. versionchanged:: 6.1
+- [2a966a198e13032b-3] .. versionchanged:: 6.1
+- [c059dbb7f93ef187-7] ...
+- [2e041db2] :param description: A human-readable description of the action to be rendered in the admin. If ``description`` is not provided, Django renders the function's name, converting underscores to spaces and capitalizing the first letter of the first word. This sets the ``short_description`` attribute on the function.
+- [0564ac69] :param description_plural: A human-readable description of the action used in contexts where plural wording is required, such as on the admin change list. If ``description_plural`` is not provided, falls back to ``description``. This sets the ``plural_description`` attribute on the function.
+- [7705716d] :param location: Specifies where the action is available. Accepts either a single :class:`ActionLocation` value or an iterable of values. If omitted, the action is only available on the admin change list. See :ref:`admin-action-availability` for details.
+- [cd73424d] :param permissions: A list of permission codenames that restrict the action to users who have at least one of the defined permissions. This sets the ``allowed_permissions`` attribute on the function. See :ref:`admin-action-permissions` for details.
+- [9ce5569e] @admin.action( location=[ActionLocation.CHANGE_FORM, ActionLocation.CHANGE_LIST], description="Publish", description_plural="Mark selected stories as published", ) def make_published(modeladmin, request, queryset): ...
+- [a60bf2e2e676c80b] @admin.action(description="Mark selected stories as published") def make_published(modeladmin, request, queryset): queryset.update(status="p")
+- [5797d68e] @admin.action(location=ActionLocation.CHANGE_FORM) def make_published(modeladmin, request, queryset): ...
+- [158461e3] @admin.action(permissions=["change"]) def make_published(modeladmin, request, queryset): queryset.update(status="p")
+- [bc37a8c8] Finally, you can conditionally enable or disable actions on a per-request (and hence per-user basis) by overriding :meth:`ModelAdmin.get_actions`.
+- [fd242d93] For example, if you only want users whose names begin with 'J' to be able to delete objects in bulk::
+- [284ef505] For example, you can use this method to remove the built-in "delete selected objects" action::
+- [98ca94c6] For more background on bulk deletion, see the documentation on :ref:`object deletion <topics-db-queries-delete>`.
+- [cbbd8e6c] For the best performance, we're using the queryset's :ref:`update method <topics-db-queries-update>`. Other types of actions might need to deal with each object individually; in these cases we'd iterate over the queryset::
+- [73519aab] If you need to disable a :ref:`site-wide action <adminsite-actions>` you can call :meth:`AdminSite.disable_action`.
+- [a7e5499b] If you wish to override this behavior, you can override :meth:`.ModelAdmin.delete_queryset` or write a custom action which does deletion in your preferred manner -- for example, by calling ``Model.delete()`` for each of the selected items.
+- [b39dcce8] If, however, you need to reenable a globally-disabled action for one particular model, list it explicitly in your ``ModelAdmin.actions`` list::
+- [265b45df788406c8] In this case it will add no attributes to the function.
+- [18fded40] Once you've done the above, that action will no longer be available site-wide.
+- [111e14c7] Represents an action. Actions should be defined using the :func:`action` decorator.
+- [66031b32] STATUS_CHOICES = { "d": "Draft", "p": "Published", "w": "Withdrawn", }
+- [ef7f6052] Some actions are best if they're made available to *any* object in the admin site -- the export action defined above would be a good candidate. You can make an action globally available using :meth:`AdminSite.add_action`. For example::
+- [a832229a] The "delete selected objects" action uses :meth:`QuerySet.delete() <django.db.models.query.QuerySet.delete>` for efficiency reasons, which has an important caveat: your model's ``delete()`` method will not be called.
+- [8cf94418] This decorator can be used for setting specific attributes on custom action functions that can be used with :attr:`~django.contrib.admin.ModelAdmin.actions`::
+- [e25a640b1b2e58eb] This is equivalent to setting some attributes (with the original, longer names) on the function directly::
+- [9bfbd9cf] This makes the ``export_selected_objects`` action globally available as an action named "export_selected_objects". You can explicitly give the action a name -- good if you later want to programmatically :ref:`remove the action <disabling-admin-actions>` -- by passing a second argument to :meth:`AdminSite.add_action`::
+- [1317b1f9] This might look familiar; the admin's :attr:`~django.contrib.admin.ModelAdmin.list_display` option uses a similar technique with the :func:`~django.contrib.admin.display` decorator to provide human-readable descriptions for callback functions registered there, too.
+- [d9df7e1f] This returns a dictionary of actions allowed for the specific ``action_location``. The keys are action names, and the values are :class:`Action` objects.
+- [93a38f5d] Use of this decorator is not compulsory to make an action function, but it can be useful to use it without arguments as a marker in your source to identify the purpose of the function::
+- [4d1080f7] admin.site.register(Article, ArticleAdmin)
+- [b772f7e5] class Article(models.Model): title = models.CharField(max_length=100) body = models.TextField() status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+- [9d7a9b2b38b9a19e] class ArticleAdmin(admin.ModelAdmin): ...
+- [fb7b26f1d1cd45d5] class ArticleAdmin(admin.ModelAdmin): actions = ["make_published"]
+- [7b63a026] class ArticleAdmin(admin.ModelAdmin): list_display = ["title", "status"] ordering = ["title"] actions = [make_published]
+- [72f2a4eb] class MyModelAdmin(admin.ModelAdmin): actions = None
+- [24133552] def export_as_json(modeladmin, request, queryset): response = HttpResponse(content_type="application/json") serializers.serialize("json", queryset, stream=response) return response
+- [caec589c] def export_selected_objects(modeladmin, request, queryset): selected = queryset.values_list("pk", flat=True) ct = ContentType.objects.get_for_model(queryset.model) return HttpResponseRedirect( "/export/?ct=%s&ids=%s" % ( ct.pk, ",".join(str(pk) for pk in selected), ) )
+- [482b408b] def make_published(modeladmin, request, queryset): queryset.update(status="p")
+- [5bd45197] from django.contrib import admin from django.contrib.admin import ActionLocation
+- [ecd62bb7] from django.contrib import admin from django.contrib.auth import get_permission_codename
+- [6f9eda1b] from django.contrib import admin from myapp.models import Article
+- [71e51752] from django.contrib import messages from django.utils.translation import ngettext
+- [e7a9750b] from django.contrib.contenttypes.models import ContentType from django.http import HttpResponseRedirect
+- [e0a348eb] from django.core import serializers from django.http import HttpResponse
+- [4af926756c29efa6-9] from django.db import models
+- [5675ed0d] .. attribute:: CHANGE_FORM
+- [c94506d4] .. attribute:: CHANGE_LIST
+- [e6758c8d] Enum of allowed values for the ``location`` parameter of the :func:`~django.contrib.admin.action` decorator.
+- [1a38583b] * The current :class:`ModelAdmin` * An :class:`~django.http.HttpRequest` representing the current request, * A :class:`~django.db.models.query.QuerySet` containing the set of objects selected by the user.
+- [73ffc1a1] - ``'add'``: :meth:`.ModelAdmin.has_add_permission` - ``'change'``: :meth:`.ModelAdmin.has_change_permission` - ``'delete'``: :meth:`.ModelAdmin.has_delete_permission` - ``'view'``: :meth:`.ModelAdmin.has_view_permission`
+- [cdffb868] .. _action-function:
+- [8de4bb82] .. _admin-action-availability:
+- [b9c97d67] .. _admin-action-permissions:
+- [5e7e5d81] .. _adminsite-actions:
+- [6509bfe4] .. _custom-admin-action:
+- [26dee6ef] .. _disabling-admin-actions:
+- [982890c8] .. class:: Action
+- [0d5ffd3b] .. class:: ActionLocation
+- [ec0c550817dfd42f] .. currentmodule:: django.contrib.admin
+- [670dbebc] .. function:: action(*, permissions=None, description=None, description_plural=None, location=ActionLocation.CHANGE_LIST)
+- [89898537] .. image:: _images/actions-as-modeladmin-methods.png
+- [889cf822] .. image:: _images/adding-actions-to-the-modeladmin.png
+- [65128467] .. image:: _images/admin-actions.png
+- [c3c0f269] .. method:: AdminSite.add_action(action, name=None)
+- [3967c5c9] .. method:: AdminSite.disable_action(name)
+- [a1f94339] .. method:: ModelAdmin.get_actions(request, action_location=ActionLocation.CHANGE_LIST)
+- [942ae6c11625c81c-31] .. note::
+- [942ae6c11625c81c-32] .. note::
+- [0cf180bcf4ecfab5-2] .. versionadded:: 6.1
+- [0cf180bcf4ecfab5-3] .. versionadded:: 6.1
+- [0cf180bcf4ecfab5-4] .. versionadded:: 6.1
+- [c54b54cb0805732a-14] .. warning::
+- [992509bf] ============= Admin actions =============
+- [8e41546d] A common task we might perform with a model like this is to update an article's status from "draft" to "published". We could easily do this in the admin one article at a time, but if we wanted to bulk-publish a group of articles, it'd be tedious. So, let's write an action that lets us change an article's status to "published."
+- [b1fbf47f] A common use case for admin actions is the bulk updating of a model. Imagine a news application with an ``Article`` model::
+- [5f78d402] Actions as :class:`ModelAdmin` methods --------------------------------------
+- [477ec8a4] Actions may limit their availability to users with specific permissions by wrapping the action function with the :func:`~django.contrib.admin.action` decorator and passing the ``permissions`` argument::
+- [9e2e08ef] Actions that provide intermediate pages ---------------------------------------
+- [6c6c80ff] Adding actions to the :class:`ModelAdmin` -----------------------------------------
+- [19e7ac0b] Advanced action techniques ==========================
+- [44bf00ec] As you can see, the action is rather short; all the complex logic would belong in your export view. This would need to deal with objects of any type, hence the business with the ``ContentType``.
+- [f67a507d] Available values for ``permissions`` and the corresponding method checks are:
+- [60383e02] By default, admin actions are available on the change list page only. You can control where an action appears using the ``location`` argument of the ``@admin.action`` decorator.
+- [1cde0213] By default, after an action is performed the user is redirected back to the original change list page. However, some actions, especially more complex ones, will need to return intermediate pages. For example, the built-in delete action asks for confirmation before deleting the selected objects.
+- [000ef820] Conditionally enabling or disabling actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [4c4f54de] Controlling where actions are available ---------------------------------------
+- [acd6c997] Defining actions as methods gives the action more idiomatic access to the :class:`ModelAdmin` itself, allowing the action to call any of the methods provided by the admin.
+- [4a0f3167] Disabling a site-wide action ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [fc7ceaf2] Disabling actions -----------------
+- [218f3188] Disabling all actions for a particular :class:`ModelAdmin` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [14f4a55d] First, we'll need to write a function that gets called when the action is triggered from the admin. Action functions are regular functions that take three arguments:
+- [f10c7814] For example, to make an action available only on the change form, set ``location`` to :attr:`ActionLocation.CHANGE_FORM`::
+- [207eaba8] For example, we can use ``self`` to flash a message to the user informing them that the action was successful::
+- [28edef836ab93f57-5] For example::
+- [146e6865] Generally, something like the above isn't considered a great idea. Most of the time, the best practice will be to return an :class:`~django.http.HttpResponseRedirect` and redirect the user to a view you've written, passing the list of selected objects in the GET query string. This allows you to provide complex interaction logic on the intermediary pages. For example, if you wanted to provide a more complete export function, you'd want to let the user choose a format, and possibly a list of fields to include in the export. The best thing to do would be to write a small action that redirects to your custom export view::
+- [e7d93d45] Handling errors in actions --------------------------
+- [818946bc] If ``permissions`` has more than one permission, the action will be available as long as the user passes at least one of the checks.
+- [ed78a8c2] If there are foreseeable error conditions that may occur while running your action, you should gracefully inform the user of the problem. This means handling exceptions and using :meth:`django.contrib.admin.ModelAdmin.message_user` to display a user friendly description of the problem in the response.
+- [0e67e7c4] If you look at any change list in the admin, you'll see this feature in action; Django ships with a "delete selected objects" action available to all models. For example, here's the user module from Django's built-in :mod:`django.contrib.auth` app:
+- [976066e3] If you want *no* bulk actions available for a given :class:`ModelAdmin`, set :attr:`ModelAdmin.actions` to ``None``::
+- [efe622e8] In these cases, Django's admin lets you write and register "actions" -- functions that get called with a list of objects selected on the change list page.
+- [6f160d11] Making actions available site-wide ----------------------------------
+- [aefe3d13] Next, we'll need to inform our :class:`ModelAdmin` of the action. This works just like any other configuration option. So, the complete ``admin.py`` with the action and its registration would look like::
+- [cd37d2ed] Notice first that we've moved ``make_published`` into a method and renamed the ``modeladmin`` parameter to ``self``, and second that we've now put the string ``'make_published'`` in ``actions`` instead of a direct function reference. This tells the :class:`ModelAdmin` to look up the action as a method.
+- [9a413ff7] Notice that ``description`` and ``description_plural`` were provided. These are optional but the admin action will be labeled by ``description`` in the admin change form and ``description_plural`` in the admin change list.
+- [0a825bf7] Our publish-these-articles function won't need the :class:`ModelAdmin` or the request object, but we will use the queryset::
+- [ade552dd] Read on to find out how to add your own actions to this list.
+- [1af116bb] Setting permissions for actions -------------------------------
+- [3f23415b] Sometimes you need to disable certain actions -- especially those :ref:`registered site-wide <adminsite-actions>` -- for particular objects. There's a few ways you can disable actions:
+- [bc6aaece] That code will give us an admin change list that looks something like this:
+- [6db4303a] That's actually all there is to writing an action! However, we'll take one more optional-but-useful step and give the action a "nice" title in the admin. By default, this action would appear in the action list as "Make published" -- the function name, with underscores replaced by spaces. That's fine, but we can provide a better, more human-friendly name by using the :func:`~django.contrib.admin.action` decorator on the ``make_published`` function::
+- [5686e23e] That's really all there is to it! If you're itching to write your own actions, you now know enough to get started. The rest of this document covers more advanced techniques.
+- [b8492f1d] The ``action`` decorator ========================
+- [73700abc] The ``make_published()`` action will only be available to users that pass the :meth:`.ModelAdmin.has_change_permission` check when it is called with ``obj=None``.
+- [67fab799] The admin doesn't automatically check object-level permissions for each selected object when executing an action. To limit which objects an action may modify based on object-level permissions, perform those checks in the action itself. For example::
+- [26a619e3] The basic workflow of Django's admin is, in a nutshell, "select an object, then change it." This works well for a majority of use cases. However, if you need to make the same change to many objects at once, this workflow can be quite tedious.
+- [b82870b4] The easiest way to explain actions is by example, so let's dive in.
+- [08542ba1] The example above shows the ``make_published`` action defined as a function. That's perfectly fine, but it's not perfect from a code design point of view: since the action is tightly coupled to the ``Article`` object, it makes sense to hook the action to the ``ArticleAdmin`` object itself.
+- [22986792] There's a couple of extra options and possibilities you can exploit for more advanced options.
+- [d2b8e4bf] This makes the action match what the admin itself does after successfully performing an action:
+- [eee22f73] This tells the :class:`ModelAdmin` to not display or allow any actions, including any :ref:`site-wide actions <adminsite-actions>`.
+- [578ca24e] To make an action available on both the change list and the change form::
+- [4e16adbd] To provide an intermediary page, return an :class:`~django.http.HttpResponse` (or subclass) from your action. For example, you might write an export function that uses Django's :doc:`serialization functions </topics/serialization>` to dump some selected objects as JSON::
+- [291cc924] Writing action functions ------------------------
+- [fb95f2be] Writing actions ===============
+- [39ddffd3] Writing this view is left as an exercise to the reader.
+- [91c4ef25] You can customize how actions are rendered by overriding admin templates. The change list page uses ``admin/actions.html`` and the change form page uses ``admin/change_form_actions.html``. Note that the change form template inherits from the change list actions template.
+- [2d35a075] You can do it like this::
+- [108db846] You can specify any other value as long as you implement a corresponding ``has_<value>_permission(self, request)`` method on the ``ModelAdmin``.
+- [4319f732] ``ActionLocation`` ==================
+- [57030c54] ``Action`` ==========

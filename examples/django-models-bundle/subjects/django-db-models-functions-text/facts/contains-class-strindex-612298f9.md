@@ -1,6 +1,6 @@
 # Fact 612298f9
 
-Store id: 82fbd5a0-87e6-4fb3-bfb1-f5682bcbb28a
+Store id: 0eb9e615-4f85-44bd-a97e-5286ddf92951
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class StrIndex
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "82fbd5a0-87e6-4fb3-bfb1-f5682bcbb28a",
+  "id": "0eb9e615-4f85-44bd-a97e-5286ddf92951",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "StrIndex"
       },
       "rel": "contains",
-      "target": "ae141f1f-c104-4514-a906-d99406a7ce17"
+      "target": "a76fe82e-da57-401b-98b0-31611e50a736"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

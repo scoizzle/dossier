@@ -1,6 +1,6 @@
 # Fact 801c4bed
 
-Store id: 9cbea9ec-8920-4304-8714-d9c80ddabae5
+Store id: 585b8c24-08c4-4ac8-9768-09943a091d71
 
 ## Text
 
@@ -20,7 +20,7 @@ def date_error_message(self, lookup_type, field_name, unique_for)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3505910+00:00`
+- posted_at: `2026-11-09T23:31:53.7568640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1624,
     "symbol": "Model.date_error_message"
   },
-  "id": "9cbea9ec-8920-4304-8714-d9c80ddabae5",
+  "id": "585b8c24-08c4-4ac8-9768-09943a091d71",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3505910+00:00"
+    "posted_at": "2026-11-09T23:31:53.7568640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "865de93b-9024-4f3c-92e4-c58dc28328ab",
+  "subject_id": "29f2e0a8-7455-429e-9aa0-56fc5a99d9d6",
   "subject_name": "django/db/models/base::Model.date_error_message",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/fields/related::RelatedField.__init__
 
-- Subject: django/db/models/fields/related::RelatedField.__init__ (id `706c4d53-de9c-4883-a7aa-45559f238920`)
+- Subject: django/db/models/fields/related::RelatedField.__init__ (id `4af0ea1a-d28c-48f3-8607-bed44358c2ff`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 35 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

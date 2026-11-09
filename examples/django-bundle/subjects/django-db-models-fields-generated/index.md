@@ -1,14 +1,14 @@
 # django/db/models/fields/generated
 
-- Subject: django/db/models/fields/generated (id `82e5344d-aa71-439e-9f70-ab434a59f517`)
+- Subject: django/db/models/fields/generated (id `6e67a3bb-55cd-40a5-9b36-34920bdb7732`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 10 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1622 tokens
+- Facts shown: 20 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - return Col(self.model._meta.db_table, self, self.output_field) [22262bc9]
 - self._query = Query(model=self.model, alias_cols=False) # Register lookups from the output_field class. for lookup_name, lookup in self.output_field.get_class_lookups().items(): self.register_lookup(lookup, lookup_name=lookup_name) [19a301f7]
@@ -21,6 +21,15 @@
 - def _check_supported(self, databases): errors = [] for db in databases: if not router.allow_migrate_model(db, self.model): continue connection = connections[db] if ( self.model._meta.required_db_vendor and self.model._meta.required_db_vendor != connection.vendor ): continue if not ( connection.features.supports_virtual_generated_columns or "supports_stored_generated_columns" in self.model._meta.required_db_features ) and not ( connection.features.supports_stored_generated_columns or "supports_virtual_generated_columns" in self.model._meta.required_db_features ): errors.append( checks.Error( f"{connection.display_name} does not support GeneratedFields.", obj=self, id="fields.E220", ) ) return errors [f4ed573e]
 - __all__ = ["GeneratedField"] [c208f1b6]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [fceb3203] [f10b1bda] [90f087cf] [79ebaf56] [d57b0ae8] [80ffc14f] [23af3e5f] [a89684ae] [99393d2a] [f093878c]
+- [fceb3203] def check(self, **kwargs): databases = kwargs.get("databases") or [] errors = [ *super().check(**kwargs), *self._check_supported(databases), *self._check_persistence(databases), ] output_field_clone = self.output_field.clone() output_field_clone.model = self.model output_field_checks = output_field_clone.check(databases=databases) if output_field_checks: separator = "\n " error_messages = separator.join( f"{output_check.msg} ({output_check.id})" for output_check in output_field_checks if isinstance(output_check, checks.Error) ) if error_messages: errors.append( checks.Error( "GeneratedField.output_field has errors:" f"{separator}{error_messages}", obj=self, id="fields.E223", ) ) warning_messages = separator.join( f"{output_check.msg} ({output_check.id})" for output_check in output_field_checks if isinstance(output_check, checks.Warning) ) if warning_messages: errors.append( checks.Warning( "GeneratedField.output_field has warnings:" f"{separator}{warning_messages}", obj=self, id="fields.W224", ) ) return errors
+- [f10b1bda] def contribute_to_class(self, *args, **kwargs): super().contribute_to_class(*args, **kwargs)
+- [90f087cf] def db_parameters(self, connection): return self.output_field.db_parameters(connection)
+- [79ebaf56] def deconstruct(self): name, path, args, kwargs = super().deconstruct() del kwargs["blank"] del kwargs["editable"] kwargs["db_persist"] = self.db_persist kwargs["expression"] = self.expression kwargs["output_field"] = self.output_field return name, path, args, kwargs
+- [d57b0ae8] def generated_sql(self, connection): compiler = connection.ops.compiler("SQLCompiler")( self._query, connection=connection, using=None ) resolved_expression = self.expression.resolve_expression( self._query, allow_joins=False ) sql, params = compiler.compile(resolved_expression) if ( getattr(self.expression, "conditional", False) and not connection.features.supports_boolean_expr_in_select_clause ): sql = f"CASE WHEN {sql} THEN 1 ELSE 0 END" return sql, params
+- [80ffc14f] def get_col(self, alias, output_field=None): if alias != self.model._meta.db_table and output_field in (None, self): output_field = self.output_field return super().get_col(alias, output_field)
+- [23af3e5f] def get_internal_type(self): return self.output_field.get_internal_type()
+- [a89684ae] class GeneratedField(Field): generated = True db_returning = True
+- [99393d2a] from . import NOT_PROVIDED, Field
+- [f093878c] from django.core import checks from django.db import connections, router from django.db.models.sql import Query from django.utils.functional import cached_property

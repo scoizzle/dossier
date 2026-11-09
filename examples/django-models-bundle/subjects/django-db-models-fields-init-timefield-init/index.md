@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::TimeField.__init__
 
-- Subject: django/db/models/fields/__init__::TimeField.__init__ (id `1748ae6c-7baf-490b-9c0b-17368bfe72d9`)
+- Subject: django/db/models/fields/__init__::TimeField.__init__ (id `7a4e3a53-b82c-4cbe-bed5-dd3a6c4809b3`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 35 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

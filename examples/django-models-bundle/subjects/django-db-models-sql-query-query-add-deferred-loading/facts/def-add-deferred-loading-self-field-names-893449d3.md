@@ -1,6 +1,6 @@
 # Fact 893449d3
 
-Store id: 0f71d19a-0b90-41ab-9011-34b6ab84547d
+Store id: cfdb6447-c32c-47dc-9b2f-88b338afac37
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_deferred_loading(self, field_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5159760+00:00`
+- posted_at: `2026-11-09T23:32:07.1007590+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2500,
     "symbol": "Query.add_deferred_loading"
   },
-  "id": "0f71d19a-0b90-41ab-9011-34b6ab84547d",
+  "id": "cfdb6447-c32c-47dc-9b2f-88b338afac37",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5159760+00:00"
+    "posted_at": "2026-11-09T23:32:07.1007590+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2ae7967a-b4a9-4eae-bf8d-280b280bb578",
+  "subject_id": "3705e992-2d8e-4715-9d66-d44b87fbbf59",
   "subject_name": "django/db/models/sql/query::Query.add_deferred_loading",
   "tags": [
     "entity:method"

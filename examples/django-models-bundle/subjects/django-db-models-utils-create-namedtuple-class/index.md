@@ -1,9 +1,9 @@
 # django/db/models/utils::create_namedtuple_class
 
-- Subject: django/db/models/utils::create_namedtuple_class (id `a80f91e6-2132-4457-9485-de3d443f89a0`)
+- Subject: django/db/models/utils::create_namedtuple_class (id `ea9def74-6e40-46f2-815a-e0c32efaf49f`)
 - Kind: function
 - Parent: [django/db/models/utils](../django-db-models-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

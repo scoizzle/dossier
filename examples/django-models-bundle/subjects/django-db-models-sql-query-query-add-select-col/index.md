@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.add_select_col
 
-- Subject: django/db/models/sql/query::Query.add_select_col (id `70e89bac-3087-4758-bffc-efad72105bb5`)
+- Subject: django/db/models/sql/query::Query.add_select_col (id `8da973ec-adec-42fe-8e9a-ba978eaf60c9`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

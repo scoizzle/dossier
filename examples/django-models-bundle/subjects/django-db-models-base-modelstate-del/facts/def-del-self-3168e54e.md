@@ -1,6 +1,6 @@
 # Fact 3168e54e
 
-Store id: fcd82484-5556-4bdb-9065-a986b71d4ab1
+Store id: aba41806-c3aa-4f02-914d-23ab594c7663
 
 ## Text
 
@@ -20,7 +20,7 @@ def __del__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3305880+00:00`
+- posted_at: `2026-11-09T23:31:53.7310480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 497,
     "symbol": "ModelState.__del__"
   },
-  "id": "fcd82484-5556-4bdb-9065-a986b71d4ab1",
+  "id": "aba41806-c3aa-4f02-914d-23ab594c7663",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3305880+00:00"
+    "posted_at": "2026-11-09T23:31:53.7310480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5973a882-2a3e-4fa5-ad78-3f0a61122d63",
+  "subject_id": "4d54bc21-d84e-40c6-b7ab-243a50dc84ba",
   "subject_name": "django/db/models/base::ModelState.__del__",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.apply_converters
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.apply_converters (id `6ab8a443-5610-4ff0-af06-af065dd3693f`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.apply_converters (id `92d21e0c-4231-4008-88f7-f0009381382a`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

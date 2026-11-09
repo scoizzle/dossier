@@ -1,8 +1,8 @@
 # django/http/cookie
 
-- Subject: django/http/cookie (id `0c312808-6435-4218-aca5-7c98f12575c1`)
+- Subject: django/http/cookie (id `cdfde6c9-6229-492a-ac61-b63429551460`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 169 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

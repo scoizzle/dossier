@@ -1,14 +1,14 @@
 # django/contrib/auth/models
 
-- Subject: django/contrib/auth/models (id `262ca7db-cbe1-4dad-8d6e-74e3e6c093dd`)
+- Subject: django/contrib/auth/models (id `687e4eda-e0e6-4033-9113-ace4caf25e7e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 22 of 112
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5186 tokens
+- Facts shown: 102 of 112
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Otherwise we need to check the backends. return _user_has_perm(self, perm, obj) [5805a065]
 - # Otherwise we need to check the backends. return await _auser_has_perm(self, perm, obj) [c8d67702]
@@ -33,6 +33,85 @@
 - acreate_superuser.alters_data = True [e548b892]
 - objects = GroupManager() [287a21bf]
 
-## Beyond the budget
+## All facts
 
-80 more facts did not fit in the budget: [4357d1ab] [5163ae0a] [f512fb47] [a1180282] [54b48c546b9fcfb8] [746354f4] [62b6230c] [79d52dda] [5a78f9b7] [e7640f09] [d6a1df95] [de5f995c] [f0e51798] [a8a5f86d] [0afb6d10] [62379663e021eaaf-2] [06903379] [9e404c90] [92cddf37] [2a865acc] [ed0bcf9a] [89fb82a2] [ec95a329] [774a5bb2] [0c8d4eff] [e237145c] [5e7b3fdc80e0535c] [1fd802cc] [e74d5cac] [8b0dcc35] [72256fc7] [0eb957a2] [82fbc6a6] [2ba230f1] [98ec562b] [121d6dba2565d21a] [cd46abac] [fecf669b] [2f4b9d76] [206f03db] [cec263a3] [c1fdc22e] [c5dbadae] [4853e66b] [ef279d51] [1f0ddd0f] [474eaaeb] [87a4f35c] [5b436a4b] [6a2645f7] [9bc9ab29] [1d3494b2] [5e2d8c6a] [42e34b00] [04040d22] [f336ab7b] [4f8354ff] [aa2ab63c] [bee62305d24cd880] [3c7b9181] [235e9acf] [e8bd181a] [4de4619a] [66c345d8] [f28430f6] [592d8fb8] [a71a0eb7] [d164f2cc] [d446b010] [fb12bec7] [676f093d] [8487fe82] [c7b21ada] [987a6d2d] [cd81b0cf] [9e41c746] [481c8c0c] [28960877] [0957225fa9318a60] [cf658e73]
+- [4357d1ab] acreate_user.alters_data = True
+- [5163ae0a] async def _acreate_user(self, username, email, password, **extra_fields): """See _create_user()""" user = self._create_user_object(username, email, password, **extra_fields) await user.asave(using=self._db) return user
+- [f512fb47] async def acreate_superuser( self, username, email=None, password=None, **extra_fields ): extra_fields.setdefault("is_staff", True) extra_fields.setdefault("is_superuser", True)
+- [a1180282] async def acreate_user(self, username, email=None, password=None, **extra_fields): extra_fields.setdefault("is_staff", False) extra_fields.setdefault("is_superuser", False) return await self._acreate_user(username, email, password, **extra_fields)
+- [54b48c546b9fcfb8] async def aget_all_permissions(self, obj=None): return await _auser_get_permissions(self, obj, "all")
+- [746354f4] async def aget_by_natural_key(self, name): return await self.aget(name=name)
+- [62b6230c] async def aget_group_permissions(self, obj=None): """See get_group_permissions()""" return await _auser_get_permissions(self, obj, "group")
+- [79d52dda] async def aget_group_permissions(self, obj=None): return self.get_group_permissions(obj)
+- [5a78f9b7] async def aget_user_permissions(self, obj=None): return await _auser_get_permissions(self, obj, "user")
+- [e7640f09] async def ahas_module_perms(self, app_label): """See has_module_perms()""" # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
+- [d6a1df95] async def ahas_module_perms(self, module): return await _auser_has_module_perms(self, module)
+- [de5f995c] async def ahas_perm(self, perm, obj=None): """See has_perm()""" # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
+- [f0e51798] async def ahas_perm(self, perm, obj=None): return await _auser_has_perm(self, perm, obj=obj)
+- [a8a5f86d] async def ahas_perms(self, perm_list, obj=None): """See has_perms()""" if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") for perm in perm_list: if not await self.ahas_perm(perm, obj): return False return True
+- [0afb6d10] class Meta(AbstractUser.Meta): swappable = "AUTH_USER_MODEL"
+- [62379663e021eaaf-2] class Meta: abstract = True
+- [06903379] class Meta: verbose_name = _("group") verbose_name_plural = _("groups")
+- [9e404c90] class Meta: verbose_name = _("permission") verbose_name_plural = _("permissions") unique_together = [["content_type", "codename"]] ordering = ["content_type__app_label", "content_type__model", "codename"]
+- [92cddf37] class Meta: verbose_name = _("user") verbose_name_plural = _("users") abstract = True
+- [2a865acc] create_superuser.alters_data = True
+- [ed0bcf9a] create_user.alters_data = True
+- [89fb82a2] def __eq__(self, other): return isinstance(other, self.__class__)
+- [ec95a329] def __hash__(self): return 1 # instances always return the same hash value
+- [774a5bb2] def __int__(self): raise TypeError( "Cannot cast AnonymousUser to int. Are you trying to use it in place of " "User?" )
+- [0c8d4eff] def __str__(self): return "%s | %s" % (self.content_type, self.name)
+- [e237145c] def __str__(self): return "AnonymousUser"
+- [5e7b3fdc80e0535c] def __str__(self): return self.name
+- [1fd802cc] def _create_user(self, username, email, password, **extra_fields): """ Create and save a user with the given username, email, and password. """ user = self._create_user_object(username, email, password, **extra_fields) user.save(using=self._db) return user
+- [e74d5cac] def _create_user_object(self, username, email, password, **extra_fields): if not username: raise ValueError("The given username must be set") email = self.normalize_email(email) # Lookup the real model class from the global app registry so this # manager method can be used in migrations. This is fine because # managers are by definition working on the real model. GlobalUserModel = apps.get_model( self.model._meta.app_label, self.model._meta.object_name ) username = GlobalUserModel.normalize_username(username) user = self.model(username=username, email=email, **extra_fields) user.password = make_password(password) return user
+- [8b0dcc35] def check_password(self, raw_password): raise NotImplementedError( "Django doesn't provide a DB representation for AnonymousUser." )
+- [72256fc7] def clean(self): super().clean() self.email = self.__class__.objects.normalize_email(self.email)
+- [0eb957a2] def create_superuser(self, username, email=None, password=None, **extra_fields): extra_fields.setdefault("is_staff", True) extra_fields.setdefault("is_superuser", True)
+- [82fbc6a6] def create_user(self, username, email=None, password=None, **extra_fields): extra_fields.setdefault("is_staff", False) extra_fields.setdefault("is_superuser", False) return self._create_user(username, email, password, **extra_fields)
+- [2ba230f1] def delete(self): raise NotImplementedError( "Django doesn't provide a DB representation for AnonymousUser." )
+- [98ec562b] def email_user(self, subject, message, from_email=None, **kwargs): """Send an email to this user.""" send_mail(subject, message, from_email, [self.email], **kwargs)
+- [121d6dba2565d21a] def get_all_permissions(self, obj=None): return _user_get_permissions(self, obj, "all")
+- [cd46abac] def get_by_natural_key(self, codename, app_label, model): return self.get( codename=codename, content_type=ContentType.objects.db_manager(self.db).get_by_natural_key( app_label, model ), )
+- [fecf669b] def get_by_natural_key(self, name): return self.get(name=name)
+- [2f4b9d76] def get_full_name(self): """ Return the first_name plus the last_name, with a space in between. """ full_name = "%s %s" % (self.first_name, self.last_name) return full_name.strip()
+- [206f03db] def get_group_permissions(self, obj=None): """ Return a list of permission strings that this user has through their groups. Query all available auth backends. If an object is passed in, return only permissions matching this object. """ return _user_get_permissions(self, obj, "group")
+- [cec263a3] def get_group_permissions(self, obj=None): return set()
+- [c1fdc22e] def get_short_name(self): """Return the short name for the user.""" return self.first_name
+- [c5dbadae] def get_username(self): return self.username
+- [4853e66b] def has_module_perms(self, app_label): """ Return True if the user has any permissions in the given app label. Use similar logic as has_perm(), above. """ # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
+- [ef279d51] def has_module_perms(self, module): return _user_has_module_perms(self, module)
+- [1f0ddd0f] def has_perm(self, perm, obj=None): """ Return True if the user has the specified permission. Query all available auth backends, but return immediately if any backend returns True. Thus, a user who has permission from a single auth backend is assumed to have permission in general. If an object is provided, check permissions for that object. """ # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
+- [474eaaeb] def has_perm(self, perm, obj=None): return _user_has_perm(self, perm, obj=obj)
+- [87a4f35c] def has_perms(self, perm_list, obj=None): """ Return True if the user has each of the specified permissions. If object is passed, check if the user has all required perms for it. """ if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") return all(self.has_perm(perm, obj) for perm in perm_list)
+- [5b436a4b] def has_perms(self, perm_list, obj=None): if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") return all(self.has_perm(perm, obj) for perm in perm_list)
+- [6a2645f7] def natural_key(self): return (self.codename, *self.content_type.natural_key())
+- [9bc9ab29] def natural_key(self): return (self.name,)
+- [1d3494b2] def with_perm( self, perm, is_active=True, include_superusers=True, backend=None, obj=None ): if backend is None: backends = auth.get_backends() if len(backends) == 1: backend = backends[0] else: raise ValueError( "You have multiple authentication backends configured and " "therefore must provide the `backend` argument." ) elif not isinstance(backend, str): raise TypeError( "backend must be a dotted import path string (got %r)." % backend ) else: backend = auth.load_backend(backend) if hasattr(backend, "with_perm"): return backend.with_perm( perm, is_active=is_active, include_superusers=include_superusers, obj=obj, ) return self.none()
+- [5e2d8c6a] is_superuser = models.BooleanField( _("superuser status"), default=False, help_text=_( "Designates that this user has all permissions without " "explicitly assigning them." ), ) groups = models.ManyToManyField( Group, verbose_name=_("groups"), blank=True, help_text=_( "The groups this user belongs to. A user will get all permissions " "granted to each of their groups." ), related_name="user_set", related_query_name="user", ) user_permissions = models.ManyToManyField( Permission, verbose_name=_("user permissions"), blank=True, help_text=_("Specific permissions for this user."), related_name="user_set", related_query_name="user", )
+- [42e34b00] name = models.CharField(_("name"), max_length=150, unique=True) permissions = models.ManyToManyField( Permission, verbose_name=_("permissions"), blank=True, )
+- [04040d22] name = models.CharField(_("name"), max_length=255) content_type = models.ForeignKey( ContentType, models.CASCADE, verbose_name=_("content type"), ) codename = models.CharField(_("codename"), max_length=100)
+- [f336ab7b] natural_key.dependencies = ["contenttypes.contenttype"]
+- [4f8354ff] objects = PermissionManager()
+- [aa2ab63c] objects = UserManager()
+- [bee62305d24cd880] use_in_migrations = True
+- [3c7b9181] username = models.CharField( _("username"), max_length=150, unique=True, help_text=_( "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only." ), validators=[username_validator], error_messages={ "unique": _("A user with that username already exists."), }, ) first_name = models.CharField(_("first name"), max_length=150, blank=True) last_name = models.CharField(_("last name"), max_length=150, blank=True) email = models.EmailField(_("email address"), blank=True) is_staff = models.BooleanField( _("staff status"), default=False, help_text=_("Designates whether the user can log into this admin site."), ) is_active = models.BooleanField( _("active"), default=True, help_text=_( "Designates whether this user should be treated as active. " "Unselect this instead of deleting accounts." ), ) date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
+- [235e9acf] username_validator = UnicodeUsernameValidator()
+- [e8bd181a] # A few helper functions for common logic between User and AnonymousUser. def _user_get_permissions(user, obj, from_name): permissions = set() name = "get_%s_permissions" % from_name for backend in auth.get_backends(): if hasattr(backend, name): permissions.update(getattr(backend, name)(user, obj)) return permissions
+- [4de4619a] async def _auser_get_permissions(user, obj, from_name): permissions = set() name = "aget_%s_permissions" % from_name for backend in auth.get_backends(): if hasattr(backend, name): permissions.update(await getattr(backend, name)(user, obj)) return permissions
+- [66c345d8] async def _auser_has_module_perms(user, app_label): """See _user_has_module_perms()""" for backend in auth.get_backends(): if not hasattr(backend, "ahas_module_perms"): continue try: if await backend.ahas_module_perms(user, app_label): return True except PermissionDenied: return False return False
+- [f28430f6] async def _auser_has_perm(user, perm, obj): """See _user_has_perm()""" for backend in auth.get_backends(): if not hasattr(backend, "ahas_perm"): continue try: if await backend.ahas_perm(user, perm, obj): return True except PermissionDenied: return False return False
+- [592d8fb8] class AbstractUser(AbstractBaseUser, PermissionsMixin): """ An abstract base class implementing a fully featured User model with admin-compliant permissions.
+- [a71a0eb7] class AnonymousUser: id = None pk = None username = "" is_staff = False is_active = False is_superuser = False _groups = EmptyManager(Group) _user_permissions = EmptyManager(Permission)
+- [d164f2cc] class Group(models.Model): """ Groups are a generic way of categorizing users to apply permissions, or some other label, to those users. A user can belong to any number of groups.
+- [d446b010] class GroupManager(models.Manager): """ The manager for the auth's Group model. """
+- [fb12bec7] class Permission(models.Model): """ The permissions system provides a way to assign permissions to specific users and groups of users.
+- [676f093d] class PermissionManager(models.Manager): use_in_migrations = True
+- [8487fe82] class PermissionsMixin(models.Model): """ Add the fields and methods necessary to support the Group and Permission models using the ModelBackend. """
+- [c7b21ada] class User(AbstractUser): """ Users within the Django authentication system are represented by this model.
+- [987a6d2d] class UserManager(BaseUserManager): use_in_migrations = True
+- [cd81b0cf] def _user_has_module_perms(user, app_label): """ A backend can raise `PermissionDenied` to short-circuit permission checks. """ for backend in auth.get_backends(): if not hasattr(backend, "has_module_perms"): continue try: if backend.has_module_perms(user, app_label): return True except PermissionDenied: return False return False
+- [9e41c746] def _user_has_perm(user, perm, obj): """ A backend can raise `PermissionDenied` to short-circuit permission checks. """ for backend in auth.get_backends(): if not hasattr(backend, "has_perm"): continue try: if backend.has_perm(user, perm, obj): return True except PermissionDenied: return False return False
+- [481c8c0c] def update_last_login(sender, user, **kwargs): """ A signal receiver which updates the last_login date for the user logging in. """ user.last_login = timezone.now() user.save(update_fields=["last_login"])
+- [28960877] from .validators import UnicodeUsernameValidator
+- [0957225fa9318a60] from collections.abc import Iterable
+- [cf658e73] from django.apps import apps from django.contrib import auth from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager from django.contrib.auth.hashers import make_password from django.contrib.contenttypes.models import ContentType from django.core.exceptions import PermissionDenied from django.core.mail import send_mail from django.db import models from django.db.models.manager import EmptyManager from django.utils import timezone from django.utils.translation import gettext_lazy as _

@@ -1,6 +1,6 @@
 # Fact dc6593a4
 
-Store id: f8d8e3f4-7dfa-4bf9-a005-eef1840c4717
+Store id: fea413f7-af5e-48a6-98cf-a2d547c134e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rxor__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4942650+00:00`
+- posted_at: `2026-11-09T23:31:55.7535450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 161,
     "symbol": "Combinable.__rxor__"
   },
-  "id": "f8d8e3f4-7dfa-4bf9-a005-eef1840c4717",
+  "id": "fea413f7-af5e-48a6-98cf-a2d547c134e8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4942650+00:00"
+    "posted_at": "2026-11-09T23:31:55.7535450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "03377cb9-c433-4ce7-b6ab-d3e4c78a2540",
+  "subject_id": "55621000-c7b8-431a-82b0-512987d90aeb",
   "subject_name": "django/db/models/expressions::Combinable.__rxor__",
   "tags": [
     "entity:method"

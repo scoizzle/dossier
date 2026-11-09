@@ -1,8 +1,8 @@
 # django/db/models/sql/datastructures
 
-- Subject: django/db/models/sql/datastructures (id `b1502e27-bc33-4761-a195-6853e0cf262a`)
+- Subject: django/db/models/sql/datastructures (id `173565d9-788f-4a55-b66f-e71d8d7b1a33`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 66 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

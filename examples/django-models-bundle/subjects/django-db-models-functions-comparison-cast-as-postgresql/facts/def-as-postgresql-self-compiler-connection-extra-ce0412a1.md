@@ -1,6 +1,6 @@
 # Fact ce0412a1
 
-Store id: 4f27de5d-2182-4e2a-813d-78d6da8c0526
+Store id: 91d68a07-cb23-4e08-b4de-03bd60b407ba
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9079700+00:00`
+- posted_at: `2026-11-09T23:32:00.9597110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 49,
     "symbol": "Cast.as_postgresql"
   },
-  "id": "4f27de5d-2182-4e2a-813d-78d6da8c0526",
+  "id": "91d68a07-cb23-4e08-b4de-03bd60b407ba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9079700+00:00"
+    "posted_at": "2026-11-09T23:32:00.9597110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da62a47b-0025-496f-9736-80a22497d2fb",
+  "subject_id": "8b9bbe4e-d1d3-4a05-8878-c720d3852fef",
   "subject_name": "django/db/models/functions/comparison::Cast.as_postgresql",
   "tags": [
     "entity:method"

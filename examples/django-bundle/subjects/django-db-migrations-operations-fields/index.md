@@ -1,14 +1,14 @@
 # django/db/migrations/operations/fields
 
-- Subject: django/db/migrations/operations/fields (id `fd5e875e-9a9e-4726-8fd7-46c7469fa0ee`)
+- Subject: django/db/migrations/operations/fields (id `b1fe1dc1-c7a4-4948-bda9-ecf94e7b4671`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 18 of 53
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2313 tokens
+- Facts shown: 43 of 53
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if ( isinstance(operation, DeleteModel) and operation.name_lower == self.model_name_lower ): return [operation] return super().reduce(operation, app_label) [19f4917c]
 - @cached_property def model_name_lower(self): return self.model_name.lower() [0eadb4a7d232abbe-2]
@@ -29,6 +29,30 @@
 - def deconstruct(self): kwargs = { "model_name": self.model_name, "name": self.name, "field": self.field, } if self.preserve_default is not True: kwargs["preserve_default"] = self.preserve_default return (self.__class__.__name__, [], kwargs) [f3b5d9f33995b868]
 - def deconstruct(self): kwargs = { "model_name": self.model_name, "name": self.name, } return (self.__class__.__name__, [], kwargs) [d69b5d7b]
 
-## Beyond the budget
+## All facts
 
-25 more facts did not fit in the budget: [fe2f81cb] [1eb168f3] [dd93653f] [7f38c21a] [d8e67eb8] [33dd2062] [b6f3f167] [a60fb6a7] [0cce256d] [67343f4a] [3f2708b4] [2c08b38f] [280865f9] [a65d8ac4] [2c0f3173] [1132cd99] [debc275d] [c4dbc519] [f1df1dce] [e3422979] [216999e4] [8d72cff7] [70cfaa45] [3aab3890e152ab07] [a267abb6]
+- [fe2f81cb] def deconstruct(self): kwargs = { "model_name": self.model_name, "old_name": self.old_name, "new_name": self.new_name, } return (self.__class__.__name__, [], kwargs)
+- [1eb168f3] def describe(self): return "Add field %s to %s" % (self.name, self.model_name)
+- [dd93653f] def describe(self): return "Alter field %s on %s" % (self.name, self.model_name)
+- [7f38c21a] def describe(self): return "Remove field %s from %s" % (self.name, self.model_name)
+- [d8e67eb8] def describe(self): return "Rename field %s on %s to %s" % ( self.old_name, self.model_name, self.new_name, )
+- [33dd2062] def is_same_field_operation(self, operation): return ( self.is_same_model_operation(operation) and self.name_lower == operation.name_lower )
+- [b6f3f167] def is_same_model_operation(self, operation): return self.model_name_lower == operation.model_name_lower
+- [a60fb6a7] def reduce(self, operation, app_label): from .models import DeleteModel
+- [0cce256d] def reduce(self, operation, app_label): if ( isinstance(operation, RenameField) and self.is_same_model_operation(operation) and self.new_name_lower == operation.old_name_lower ): return [replace(self, new_name=operation.new_name)] # Skip `FieldOperation.reduce` as we want to run `references_field` # against self.old_name and self.new_name. return super(FieldOperation, self).reduce(operation, app_label) or not ( operation.references_field(self.model_name, self.old_name, app_label) or operation.references_field(self.model_name, self.new_name, app_label) )
+- [67343f4a] def reduce(self, operation, app_label): if isinstance( operation, (AlterField, RemoveField) ) and self.is_same_field_operation(operation): return [operation] elif ( isinstance(operation, RenameField) and self.is_same_field_operation(operation) and self.field.db_column is None ): return [ operation, replace(self, name=operation.new_name), ] return super().reduce(operation, app_label)
+- [3f2708b4] def reduce(self, operation, app_label): if isinstance(operation, FieldOperation) and self.is_same_field_operation( operation ): if isinstance(operation, AlterField): return [ replace( self, name=operation.name, field=operation.field, ), ] elif isinstance(operation, RemoveField): return [] elif isinstance(operation, RenameField): return [replace(self, name=operation.new_name)] return super().reduce(operation, app_label)
+- [2c08b38f] def reduce(self, operation, app_label): return super().reduce(operation, app_label) or not operation.references_field( self.model_name, self.name, app_label )
+- [280865f9] def references_field(self, model_name, name, app_label): model_name_lower = model_name.lower() # Check if this operation locally references the field. if model_name_lower == self.model_name_lower: if name == self.name: return True if self.field: if ( hasattr(self.field, "from_fields") and name in self.field.from_fields ): return True elif self.field.generated and any( field_name == name for field_name, *_ in Model._get_expr_references( self.field.expression ) ): return True # Check if this operation remotely references the field. if self.field is None: return False return bool( field_references( (app_label, self.model_name_lower), self.field, (app_label, model_name_lower), name, ) )
+- [a65d8ac4] def references_field(self, model_name, name, app_label): return self.references_model(model_name, app_label) and ( name.lower() == self.old_name_lower or name.lower() == self.new_name_lower )
+- [2c0f3173] def references_model(self, name, app_label): name_lower = name.lower() if name_lower == self.model_name_lower: return True if self.field: return bool( field_references( (app_label, self.model_name_lower), self.field, (app_label, name_lower), ) ) return False
+- [1132cd99] def state_forwards(self, app_label, state): state.add_field( app_label, self.model_name_lower, self.name, self.field, self.preserve_default, )
+- [debc275d] def state_forwards(self, app_label, state): state.remove_field(app_label, self.model_name_lower, self.name)
+- [c4dbc519] def state_forwards(self, app_label, state): state.rename_field( app_label, self.model_name_lower, self.old_name, self.new_name )
+- [f1df1dce] class AddField(FieldOperation): """Add a field to a model."""
+- [e3422979] class AlterField(FieldOperation): """ Alter a field's database column (e.g. null, max_length) to the provided new field. """
+- [216999e4] class FieldOperation(Operation): def __init__(self, model_name, name, field=None): self.model_name = model_name self.name = name self.field = field
+- [8d72cff7] class RemoveField(FieldOperation): """Remove a field from a model."""
+- [70cfaa45] class RenameField(FieldOperation): """Rename a field on the model. Might affect db_column too."""
+- [3aab3890e152ab07] from .base import Operation, OperationCategory
+- [a267abb6] from django.db.migrations.utils import field_references from django.db.models import NOT_PROVIDED, Model from django.utils.copy import replace from django.utils.functional import cached_property

@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::TextField.__init__
 
-- Subject: django/db/models/fields/__init__::TextField.__init__ (id `e4cd29ab-4b8a-400a-82de-3525e8d5a307`)
+- Subject: django/db/models/fields/__init__::TextField.__init__ (id `93901b96-9e2a-4d37-9efe-1e2a919fff5a`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

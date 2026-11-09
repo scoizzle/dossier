@@ -1,6 +1,6 @@
 # Fact e7bf4d49
 
-Store id: 3c1292d5-bcf9-4a8b-b88c-79f074535a4a
+Store id: 1f493cbf-2687-4e6b-9efc-91a415dd7e2c
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, against, using=DEFAULT_DB_ALIAS)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0920800+00:00`
+- posted_at: `2026-11-09T23:32:05.0838330+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 171,
     "symbol": "Q.check"
   },
-  "id": "3c1292d5-bcf9-4a8b-b88c-79f074535a4a",
+  "id": "1f493cbf-2687-4e6b-9efc-91a415dd7e2c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0920800+00:00"
+    "posted_at": "2026-11-09T23:32:05.0838330+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ec0c21b9-075c-4ebc-beb2-727fa623197d",
+  "subject_id": "c8ef0eef-02fd-4777-8989-be86b739a2c6",
   "subject_name": "django/db/models/query_utils::Q.check",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 87537179
 
-Store id: 8c627742-b5a0-4dfa-91bb-f3a2e3f6aa4f
+Store id: 5c61d472-6a21-4454-b9e5-41dab3361cc7
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_field_choices()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.6392000+00:00`
+- posted_at: `2026-11-09T23:32:05.8015290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1210,
     "symbol": "SQLCompiler.get_related_selections._get_field_choices"
   },
-  "id": "8c627742-b5a0-4dfa-91bb-f3a2e3f6aa4f",
+  "id": "5c61d472-6a21-4454-b9e5-41dab3361cc7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.6392000+00:00"
+    "posted_at": "2026-11-09T23:32:05.8015290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4956fb07-7c30-4046-b644-bd51371909e6",
+  "subject_id": "fb80c1df-8141-451f-bc29-61dc1a9a5080",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections._get_field_choices",
   "tags": [
     "entity:function"

@@ -1,9 +1,9 @@
 # django/db/models/aggregates::Variance._get_repr_options
 
-- Subject: django/db/models/aggregates::Variance._get_repr_options (id `b47716b7-3dd1-444c-b4e7-801e064242c0`)
+- Subject: django/db/models/aggregates::Variance._get_repr_options (id `c42e438b-0a1c-4640-bb23-a01efe5375ea`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

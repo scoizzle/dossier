@@ -1,14 +1,14 @@
 # django/core/handlers/asgi
 
-- Subject: django/core/handlers/asgi (id `8d35ae39-8862-424b-af3a-90ae253277dc`)
+- Subject: django/core/handlers/asgi (id `ab8e1fd0-5c73-4ee8-b0ab-0aa1886488c6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 897 tokens
-- Facts shown: 16 of 34
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2912 tokens
+- Facts shown: 33 of 34
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Quit out if that's the end. if not message.get("more_body", False): break body_file.seek(0) return body_file [3439ca27]
 - class RequestProcessed(Exception): pass [401ef10b]
@@ -27,6 +27,22 @@
 - def __init__(self): super().__init__() self.load_middleware(is_async=True) [5c798dc7]
 - def _get_files(self): if not hasattr(self, "_files"): self._load_post_and_files() return self._files [589c0488]
 
-## Beyond the budget
+## All facts
 
-17 more facts did not fit in the budget: [069b73a6] [205bd34a] [a36fffed] [4e4bf3c4] [8d2b436e] [412b9cfd2b807fd4] [740dfe57] [aae5d157] [37591200] [4253f5d3] [0b632ed7] [a964b6ab] [c41d859e] [3349edb8] [8484f9df] [1f56a096] [a783acd9b0048dcc]
+- [069b73a6] async def read_body(self, receive): """Reads an HTTP body from an ASGI connection.""" # Use the tempfile that auto rolls-over to a disk file as it fills up. body_file = tempfile.SpooledTemporaryFile( max_size=settings.FILE_UPLOAD_MAX_MEMORY_SIZE, mode="w+b" ) while True: message = await receive() if message["type"] == "http.disconnect": body_file.close() # Early client disconnect. raise RequestAborted() # Add a body chunk from the message, if provided. if "body" in message: on_disk = getattr(body_file, "_rolled", False) if on_disk: async_write = sync_to_async( body_file.write, thread_sensitive=False, ) await async_write(message["body"]) else: body_file.write(message["body"])
+- [205bd34a] async def run_get_response(self, request): """Get async response.""" # Use the async mode of BaseHandler. response = await self.get_response_async(request) response._handler_class = self.__class__ # Increase chunk size on file responses (ASGI servers handles low-level # chunking). if isinstance(response, FileResponse): response.block_size = self.chunk_size return response
+- [a36fffed] async def send_response(self, response, send): """Encode and send a response out over ASGI.""" # Collect cookies into headers. Have to preserve header case as there # are some non-RFC compliant clients that require e.g. Content-Type. response_headers = [] for header, value in response.items(): if isinstance(header, str): header = header.encode("ascii") if isinstance(value, str): value = value.encode("latin1") response_headers.append((bytes(header), bytes(value))) for c in response.cookies.values(): response_headers.append((b"Set-Cookie", c.OutputString().encode("ascii"))) # Initial response message. await send( { "type": "http.response.start", "status": response.status_code, "headers": response_headers, } ) # Streaming responses need to be pinned to their iterator. if response.streaming: # - Consume via `__aiter__` and not `streaming_content` directly, # to allow mapping of a sync iterator. # - Use aclosing() when consuming aiter. See # https://github.com/python/cpython/commit/6e8dcdaaa49d4313bf9fab9f9923ca5828fbb10e async with aclosing(aiter(response)) as content: async for part in content: for chunk, _ in self.chunk_bytes(part): await send( { "type": "http.response.body", "body": chunk, # Ignore "more" as there may be more parts; # instead, use an empty final closing message # with False. "more_body": True, } ) # Final closing message. await send({"type": "http.response.body"}) # Other responses just need chunking. else: # Yield chunks of response. for chunk, last in self.chunk_bytes(response.content): await send( { "type": "http.response.body", "body": chunk, "more_body": not last, } )
+- [4e4bf3c4] def __init__(self, scope, body_file): self.scope = scope self._post_parse_error = False self._read_started = False self.resolver_match = None self.path = scope["path"] self.script_name = get_script_prefix(scope) if self.script_name: script_name = self.script_name.rstrip("/") if self.path.startswith(script_name + "/") or self.path == script_name: self.path_info = self.path[len(script_name) :] else: self.path_info = self.path else: self.path_info = self.path # HTTP basics. self.method = self.scope["method"].upper() # Ensure query string is encoded correctly. query_string = self.scope.get("query_string", "") if isinstance(query_string, bytes): query_string = query_string.decode() self.META = { "REQUEST_METHOD": self.method, "QUERY_STRING": query_string, "SCRIPT_NAME": self.script_name, "PATH_INFO": self.path_info, # WSGI-expecting code will need these for a while "wsgi.multithread": True, "wsgi.multiprocess": True, } if self.scope.get("client"): self.META["REMOTE_ADDR"] = self.scope["client"][0] self.META["REMOTE_HOST"] = self.META["REMOTE_ADDR"] self.META["REMOTE_PORT"] = self.scope["client"][1] if self.scope.get("server"): self.META["SERVER_NAME"] = self.scope["server"][0] self.META["SERVER_PORT"] = str(self.scope["server"][1]) else: self.META["SERVER_NAME"] = "unknown" self.META["SERVER_PORT"] = "0" # Headers go into META. _headers = defaultdict(list) for name, value in self.scope.get("headers", []): name = name.decode("latin1") # Prevent spoofing via ambiguity between underscores and hyphens. if "_" in name: continue if name == "content-length": corrected_name = "CONTENT_LENGTH" elif name == "content-type": corrected_name = "CONTENT_TYPE" else: corrected_name = "HTTP_%s" % name.upper().replace("-", "_") # HTTP/2 say only ASCII chars are allowed in headers, but decode # latin1 just in case. value = value.decode("latin1") if corrected_name == "HTTP_COOKIE": value = value.rstrip("; ") _headers[corrected_name].append(value) if cookie_header := _headers.pop("HTTP_COOKIE", None): self.META["HTTP_COOKIE"] = "; ".join(cookie_header) self.META.update({name: ",".join(value) for name, value in _headers.items()}) # Pull out request encoding, if provided. self._set_content_type_params(self.META) # Directly assign the body file to be our stream. self._stream = body_file # Other bits. self.resolver_match = None
+- [8d2b436e] def _get_scheme(self): return self.scope.get("scheme") or super()._get_scheme()
+- [412b9cfd2b807fd4] def _set_post(self, post): self._post = post
+- [740dfe57] def close(self): super().close() self._stream.close()
+- [aae5d157] def create_request(self, scope, body_file): """ Create the Request object and returns either (request, None) or (None, response) if there is an error response. """ try: return self.request_class(scope, body_file), None except UnicodeDecodeError: logger.warning( "Bad Request (UnicodeDecodeError)", exc_info=sys.exc_info(), extra={"status_code": 400}, ) return None, HttpResponseBadRequest() except RequestDataTooBig: return None, HttpResponse("413 Payload too large", status=413)
+- [37591200] def handle_uncaught_exception(self, request, resolver, exc_info): """Last-chance handler for exceptions.""" # There's no WSGI server to catch the exception further up # if this fails, so translate it into a plain text response. try: return super().handle_uncaught_exception(request, resolver, exc_info) except Exception: return HttpResponseServerError( traceback.format_exc() if settings.DEBUG else "Internal Server Error", content_type="text/plain", )
+- [4253f5d3] request_class = ASGIRequest # Size to chunk response bodies into for multiple response messages. chunk_size = 2**16
+- [0b632ed7] class ASGIHandler(base.BaseHandler): """Handler for ASGI requests."""
+- [a964b6ab] class ASGIRequest(HttpRequest): """ Custom request subclass that decodes from an ASGI-standard request dict and wraps request body handling. """
+- [c41d859e] def get_script_prefix(scope): """ Return the script prefix to use from either the scope or a setting. """ if settings.FORCE_SCRIPT_NAME: return settings.FORCE_SCRIPT_NAME return scope.get("root_path", "") or ""
+- [3349edb8] from asgiref.sync import ThreadSensitiveContext, sync_to_async
+- [8484f9df] from django.conf import settings from django.core import signals from django.core.exceptions import RequestAborted, RequestDataTooBig from django.core.handlers import base from django.http import ( FileResponse, HttpRequest, HttpResponse, HttpResponseBadRequest, HttpResponseServerError, QueryDict, parse_cookie, ) from django.urls import set_script_prefix from django.utils.functional import cached_property
+- [1f56a096] import asyncio import logging import sys import tempfile import traceback from collections import defaultdict from contextlib import aclosing, closing
+- [a783acd9b0048dcc] logger = logging.getLogger("django.request")

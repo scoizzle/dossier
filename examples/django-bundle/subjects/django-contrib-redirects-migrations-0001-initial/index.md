@@ -1,8 +1,8 @@
 # django/contrib/redirects/migrations/0001_initial
 
-- Subject: django/contrib/redirects/migrations/0001_initial (id `57a10c38-eaa5-47fe-8cb5-31132dcb2b91`)
+- Subject: django/contrib/redirects/migrations/0001_initial (id `c0346a05-21c5-4d58-bede-9b77ed40a40d`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 285 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

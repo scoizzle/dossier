@@ -4,7 +4,7 @@ This file lists every subject under `django/db/models/constants/`, one row per s
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/constants | subject | 1 | 0 | 0 | 106 | [subjects/django-db-models-constants/index.md](../subjects/django-db-models-constants/index.md) |
-|   django/db/models/constants::OnConflict | class | 1 | 0 | 0 | 101 | [subjects/django-db-models-constants-onconflict/index.md](../subjects/django-db-models-constants-onconflict/index.md) |
+| django/db/models/constants | subject | 1 | 0 | 0 | 117 | [subjects/django-db-models-constants/index.md](../subjects/django-db-models-constants/index.md) |
+|   django/db/models/constants::OnConflict | class | 1 | 0 | 0 | 112 | [subjects/django-db-models-constants-onconflict/index.md](../subjects/django-db-models-constants-onconflict/index.md) |
 
 Up: [index/django-db-models.md](django-db-models.md)

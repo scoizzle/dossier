@@ -1,14 +1,14 @@
 # django/tasks/backends/base
 
-- Subject: django/tasks/backends/base (id `134394c3-66a0-4fcf-a107-2f8c35b3ae19`)
+- Subject: django/tasks/backends/base (id `f0652175-0f5d-4552-809a-d38056e477a5`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 890 tokens
-- Facts shown: 20 of 22
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1016 tokens
+- Facts shown: 22 of 22
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Raise TaskResultDoesNotExist if such result does not exist. """ raise NotImplementedError( "This backend does not support retrieving or refreshing results." ) [464246bb]
 - if ( settings.USE_TZ and task.run_after is not None and not timezone.is_aware(task.run_after) ): raise InvalidTask("run_after must be an aware datetime.") [982a8c85]
@@ -31,6 +31,7 @@
 - class BaseTaskBackend(metaclass=ABCMeta): task_class = Task [1d51a7fe]
 - from asgiref.sync import sync_to_async [770890ad88958a4c-14]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [9a78cee9] [2fd90c59]
+- [9a78cee9] from abc import ABCMeta, abstractmethod from inspect import iscoroutinefunction
+- [2fd90c59] from django.conf import settings from django.tasks import DEFAULT_TASK_QUEUE_NAME from django.tasks.base import ( DEFAULT_TASK_PRIORITY, TASK_MAX_PRIORITY, TASK_MIN_PRIORITY, Task, ) from django.tasks.exceptions import InvalidTask from django.utils import timezone from django.utils.inspect import get_func_args, is_module_level_function

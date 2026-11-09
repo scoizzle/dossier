@@ -1,6 +1,6 @@
 # Fact 452eb6e2
 
-Store id: ea1d87ea-12fd-48b0-b7ef-1feb82253f13
+Store id: ef8838f4-3702-40f9-80fe-080ec74efcad
 
 ## Text
 
@@ -20,7 +20,7 @@ def _expression_refs_exclude(cls, model, expression, exclude)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7011750+00:00`
+- posted_at: `2026-11-09T23:31:54.1475700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 52,
     "symbol": "BaseConstraint._expression_refs_exclude"
   },
-  "id": "ea1d87ea-12fd-48b0-b7ef-1feb82253f13",
+  "id": "ef8838f4-3702-40f9-80fe-080ec74efcad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7011750+00:00"
+    "posted_at": "2026-11-09T23:31:54.1475700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "674fb1df-855d-4bc2-aefc-42e87862e02e",
+  "subject_id": "8a757d10-1348-4f65-83e6-15587224deb1",
   "subject_name": "django/db/models/constraints::BaseConstraint._expression_refs_exclude",
   "tags": [
     "entity:class_method",

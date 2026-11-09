@@ -1,6 +1,6 @@
 # Fact 4c682c2d
 
-Store id: 3e363654-3617-4002-aa1b-70be73efbaa9
+Store id: b88808f0-ca5a-4c75-9b74-ead2dd10188a
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformRegex(KeyTransformTextLookupMixin, lookups.Regex)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7519390+00:00`
+- posted_at: `2026-11-09T23:31:58.0247750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 710,
     "symbol": "KeyTransformRegex"
   },
-  "id": "3e363654-3617-4002-aa1b-70be73efbaa9",
+  "id": "b88808f0-ca5a-4c75-9b74-ead2dd10188a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7519390+00:00"
+    "posted_at": "2026-11-09T23:31:58.0247750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5134e9f3-a04b-4a87-b1d7-6bf331a6caca",
+  "subject_id": "0a0718b2-7821-4f4a-8ae9-545aa9dcd8d0",
   "subject_name": "django/db/models/fields/json::KeyTransformRegex",
   "tags": [
     "entity:class"

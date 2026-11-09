@@ -1,8 +1,8 @@
 # django/core/checks/database
 
-- Subject: django/core/checks/database (id `b932a786-e11f-40e5-8ac8-41f4d89b3c32`)
+- Subject: django/core/checks/database (id `0f06b33f-b810-4d33-aab1-6918b1b0c38a`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 106 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

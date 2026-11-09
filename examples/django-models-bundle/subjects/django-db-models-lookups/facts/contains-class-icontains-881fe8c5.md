@@ -1,6 +1,6 @@
 # Fact 881fe8c5
 
-Store id: 1fec8dec-da95-417f-b48e-00ba558b4305
+Store id: 84e21f22-e225-43fa-8eca-ae8fa45e8a32
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1fec8dec-da95-417f-b48e-00ba558b4305",
+  "id": "84e21f22-e225-43fa-8eca-ae8fa45e8a32",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IContains"
       },
       "rel": "contains",
-      "target": "21a7d083-462c-4c20-901f-88203a3dab18"
+      "target": "4b35ee6b-0cc3-476a-8c41-c6dfb85e8fb7"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

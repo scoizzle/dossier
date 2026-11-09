@@ -1,6 +1,6 @@
 # Fact ddc7b168
 
-Store id: 7a559ad1-f88e-494c-8798-f27b96e7b3d2
+Store id: e25cb607-2737-4486-98c1-08be2861daed
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONObject
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.4087520+00:00`
+- posted_at: `2026-11-09T23:32:01.5142500+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7a559ad1-f88e-494c-8798-f27b96e7b3d2",
+  "id": "e25cb607-2737-4486-98c1-08be2861daed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.4087520+00:00"
+    "posted_at": "2026-11-09T23:32:01.5142500+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONObject"
       },
       "rel": "contains",
-      "target": "9e827d32-8f1b-44a6-92c0-f21f7cd0bec2"
+      "target": "90c9df14-9393-42d7-b096-7043dd702440"
     }
   ],
   "status": "live",
-  "subject_id": "abcfd616-3fe8-4797-95f6-2221b9d14bab",
+  "subject_id": "ac17bd2f-e47a-4f85-889d-fb905a29fe3f",
   "subject_name": "django/db/models/functions/json",
   "tags": [
     "entity:class"

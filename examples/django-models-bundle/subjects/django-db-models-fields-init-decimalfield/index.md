@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::DecimalField
 
-- Subject: django/db/models/fields/__init__::DecimalField (id `25ff08c8-f0d2-423c-b20d-a1f93aa7e99b`)
+- Subject: django/db/models/fields/__init__::DecimalField (id `12e7afd1-6ef4-40ef-aa2c-28dd8a094828`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

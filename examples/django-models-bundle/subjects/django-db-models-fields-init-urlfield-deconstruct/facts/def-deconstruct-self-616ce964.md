@@ -1,6 +1,6 @@
 # Fact 616ce964
 
-Store id: be77c380-1e7e-4dca-a2f7-58736ee1416b
+Store id: 855296d4-fcf7-4785-a40d-308aed86c903
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.6833480+00:00`
+- posted_at: `2026-11-09T23:31:56.8361720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2727,
     "symbol": "URLField.deconstruct"
   },
-  "id": "be77c380-1e7e-4dca-a2f7-58736ee1416b",
+  "id": "855296d4-fcf7-4785-a40d-308aed86c903",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.6833480+00:00"
+    "posted_at": "2026-11-09T23:31:56.8361720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bd0ee409-e9dd-4560-88bf-27e4be3849f6",
+  "subject_id": "dde8afef-f652-4b82-a832-0e5b7622ff2e",
   "subject_name": "django/db/models/fields/__init__::URLField.deconstruct",
   "tags": [
     "entity:method"

@@ -1,8 +1,8 @@
 # django/contrib/postgres/forms/ranges
 
-- Subject: django/contrib/postgres/forms/ranges (id `5d9d890a-dcc5-43a5-9d42-2dc09a2520d2`)
+- Subject: django/contrib/postgres/forms/ranges (id `c8cf27be-f65c-45a6-9a9f-690357f1ddbe`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 883 tokens
 - Facts shown: 14 of 14
 - Conflicts: 0

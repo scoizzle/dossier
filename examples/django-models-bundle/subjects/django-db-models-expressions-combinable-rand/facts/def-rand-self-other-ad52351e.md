@@ -1,6 +1,6 @@
 # Fact ad52351e
 
-Store id: eabb60c6-d1f3-4dd5-9c4f-fc415a1ba27e
+Store id: 37fc4645-b5db-4405-b920-68c01276b290
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rand__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4918640+00:00`
+- posted_at: `2026-11-09T23:31:55.7515350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 151,
     "symbol": "Combinable.__rand__"
   },
-  "id": "eabb60c6-d1f3-4dd5-9c4f-fc415a1ba27e",
+  "id": "37fc4645-b5db-4405-b920-68c01276b290",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4918640+00:00"
+    "posted_at": "2026-11-09T23:31:55.7515350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82a3583b-74aa-49df-a1ca-eae25bee9a81",
+  "subject_id": "ff4d7fb8-6b41-4c40-95b3-0f834ace70b5",
   "subject_name": "django/db/models/expressions::Combinable.__rand__",
   "tags": [
     "entity:method"

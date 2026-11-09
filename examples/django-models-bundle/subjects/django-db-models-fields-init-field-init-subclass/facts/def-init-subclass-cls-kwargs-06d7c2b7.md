@@ -1,6 +1,6 @@
 # Fact 06d7c2b7
 
-Store id: 801faa2c-e8d8-4718-9602-80d9ac90a362
+Store id: 056619c2-7616-4d25-a719-3e6ff4fe212b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init_subclass__(cls, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.2579550+00:00`
+- posted_at: `2026-11-09T23:31:56.4178250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 193,
     "symbol": "Field.__init_subclass__"
   },
-  "id": "801faa2c-e8d8-4718-9602-80d9ac90a362",
+  "id": "056619c2-7616-4d25-a719-3e6ff4fe212b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.2579550+00:00"
+    "posted_at": "2026-11-09T23:31:56.4178250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6607f2f5-9b85-4fb3-b84b-b97b9678614d",
+  "subject_id": "bf1409f1-e041-4719-8de3-d2123879efb0",
   "subject_name": "django/db/models/fields/__init__::Field.__init_subclass__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact d740ccdf
 
-Store id: 03c781db-1c8d-41db-96b5-a99753a3aaa9
+Store id: 9b29d38a-096c-4861-9753-a3566c6ceb07
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.2043310+00:00`
+- posted_at: `2026-11-09T23:32:03.3932410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 670,
     "symbol": "IsNull.as_sql"
   },
-  "id": "03c781db-1c8d-41db-96b5-a99753a3aaa9",
+  "id": "9b29d38a-096c-4861-9753-a3566c6ceb07",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.2043310+00:00"
+    "posted_at": "2026-11-09T23:32:03.3932410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c54269e-1ff0-4e31-bd8b-6d18b700879e",
+  "subject_id": "fb739f61-0329-4763-ab46-8b83e24f5028",
   "subject_name": "django/db/models/lookups::IsNull.as_sql",
   "tags": [
     "entity:method"

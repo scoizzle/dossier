@@ -1,14 +1,14 @@
 # django/core/management/utils
 
-- Subject: django/core/management/utils (id `8e739026-e5e6-46be-8081-c84c14d2b6fe`)
+- Subject: django/core/management/utils (id `fbdfdb73-0dec-4321-be8b-8c654413a1c3`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 885 tokens
-- Facts shown: 13 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1395 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> handle_extensions(['.html', 'html,js,py,py,py,.py', 'py,.py']) {'.html', '.js', '.py'} >>> handle_extensions(['.html, txt,.tpl']) {'.html', '.tpl', '.txt'} """ ext_list = [] for ext in extensions: ext_list.extend(ext.replace(" ", "").split(",")) for i, ext in enumerate(ext_list): if not ext.startswith("."): ext_list[i] = ".%s" % ext_list[i] return set(ext_list) [3dd5ef14]
 - For example: running 'django-admin makemessages -e js,txt -e xhtml -a' would result in an extension list: ['.js', '.txt', '.xhtml'] [db7db499]
@@ -24,6 +24,12 @@
 - def handle_extensions(extensions): """ Organize multiple extensions that are separated with commas or passed by using --extension/-e multiple times. [3685a252]
 - def popen_wrapper(args, stdout_encoding="utf-8"): """ Friendly wrapper around Popen. [bd88fe48]
 
-## Beyond the budget
+## All facts
 
-7 more facts did not fit in the budget: [df9103fe] [f1aeaa0c] [8ceb9bc5] [37d8bb4e] [b4518402] [7f0a09fd] [44e09d14]
+- [df9103fe] def is_ignored_path(path, ignore_patterns): """ Check if the given path should be ignored or not based on matching one of the glob style `ignore_patterns`. """ path = Path(path)
+- [f1aeaa0c] def normalize_path_patterns(patterns): """Normalize an iterable of glob style patterns based on OS.""" patterns = [os.path.normcase(p) for p in patterns] dir_suffixes = {"%s*" % path_sep for path_sep in {"/", os.sep}} norm_patterns = [] for pattern in patterns: for dir_suffix in dir_suffixes: if pattern.endswith(dir_suffix): norm_patterns.append(pattern.removesuffix(dir_suffix)) break else: norm_patterns.append(pattern) return norm_patterns
+- [8ceb9bc5] def parse_apps_and_model_labels(labels): """ Parse a list of "app_label.ModelName" or "app_label" strings into actual objects and return a two-element tuple: (set of model classes, set of app_configs). Raise a CommandError if some specified models or apps don't exist. """ apps = set() models = set()
+- [37d8bb4e] def run_formatters(written_files, black_path=(sentinel := object()), stderr=sys.stderr): """ Run the black formatter on the specified files. """ # Use a sentinel rather than None, as which() returns None when not found. if black_path is sentinel: black_path = shutil.which("black") if black_path: try: subprocess.run( [black_path, "--fast", "--", *written_files], capture_output=True, ) except OSError: stderr.write("Formatters failed to launch:") traceback.print_exc(file=stderr)
+- [b4518402] from .base import CommandError, CommandParser
+- [7f0a09fd] from django.apps import apps as installed_apps from django.utils.crypto import get_random_string from django.utils.encoding import DEFAULT_LOCALE_ENCODING
+- [44e09d14] import fnmatch import os import shutil import subprocess import sys import traceback from pathlib import Path from subprocess import run

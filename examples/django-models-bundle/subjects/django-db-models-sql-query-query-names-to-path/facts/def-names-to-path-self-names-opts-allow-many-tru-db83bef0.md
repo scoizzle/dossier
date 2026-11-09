@@ -1,6 +1,6 @@
 # Fact db83bef0
 
-Store id: 42420be0-5a6c-4ebb-ad5e-00436c737e9d
+Store id: a275fcef-f724-4925-807a-2c959117e568
 
 ## Text
 
@@ -20,7 +20,7 @@ def names_to_path(self, names, opts, allow_many=True, fail_on_missing=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3979160+00:00`
+- posted_at: `2026-11-09T23:32:06.9614280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1774,
     "symbol": "Query.names_to_path"
   },
-  "id": "42420be0-5a6c-4ebb-ad5e-00436c737e9d",
+  "id": "a275fcef-f724-4925-807a-2c959117e568",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3979160+00:00"
+    "posted_at": "2026-11-09T23:32:06.9614280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a1b679f-7218-4d42-b3ad-bfe743d9ed9c",
+  "subject_id": "5cc9fc72-8d88-43d1-b514-97294a7cb641",
   "subject_name": "django/db/models/sql/query::Query.names_to_path",
   "tags": [
     "entity:method"

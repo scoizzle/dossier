@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.set_group_by
 
-- Subject: django/db/models/sql/query::Query.set_group_by (id `fccf5297-2fde-47da-9893-97742c0270eb`)
+- Subject: django/db/models/sql/query::Query.set_group_by (id `c1233311-44aa-43fa-945d-95a749c43b17`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

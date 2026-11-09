@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.explain_query
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.explain_query (id `06302f78-73ae-4205-93b6-ba3a3bc5e4f6`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.explain_query (id `cd7095bc-c672-4292-a3ef-f6270a59723e`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

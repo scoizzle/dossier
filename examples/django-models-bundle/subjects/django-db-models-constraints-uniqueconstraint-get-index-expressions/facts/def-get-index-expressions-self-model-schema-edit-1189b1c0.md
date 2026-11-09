@@ -1,6 +1,6 @@
 # Fact 1189b1c0
 
-Store id: 63c0647e-2ecb-4509-a69c-0d107778719f
+Store id: 4dfb34fc-b9e0-4bc4-848c-e7b13dc898b2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_index_expressions(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.7265010+00:00`
+- posted_at: `2026-11-09T23:31:54.2378500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 451,
     "symbol": "UniqueConstraint._get_index_expressions"
   },
-  "id": "63c0647e-2ecb-4509-a69c-0d107778719f",
+  "id": "4dfb34fc-b9e0-4bc4-848c-e7b13dc898b2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.7265010+00:00"
+    "posted_at": "2026-11-09T23:31:54.2378500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8d57edc4-33c1-4944-9a15-1a4e7e838514",
+  "subject_id": "bf9fcecd-fce0-4a55-9511-cf26471b9882",
   "subject_name": "django/db/models/constraints::UniqueConstraint._get_index_expressions",
   "tags": [
     "entity:method"

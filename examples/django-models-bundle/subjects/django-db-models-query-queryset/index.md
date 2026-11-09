@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet
 
-- Subject: django/db/models/query::QuerySet (id `2644b5c2-4213-41b2-9f8d-bd393de7978b`)
+- Subject: django/db/models/query::QuerySet (id `b00ad65a-fa33-4333-803d-406a3ed70c02`)
 - Kind: class
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

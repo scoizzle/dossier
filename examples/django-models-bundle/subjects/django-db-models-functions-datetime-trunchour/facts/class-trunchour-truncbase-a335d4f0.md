@@ -1,6 +1,6 @@
 # Fact a335d4f0
 
-Store id: 6e46600a-faef-4579-84e1-dbc1aa9d48f1
+Store id: d2aef152-5534-48e5-966d-6055fdb18c69
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncHour(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2142840+00:00`
+- posted_at: `2026-11-09T23:32:01.3002420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 407,
     "symbol": "TruncHour"
   },
-  "id": "6e46600a-faef-4579-84e1-dbc1aa9d48f1",
+  "id": "d2aef152-5534-48e5-966d-6055fdb18c69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2142840+00:00"
+    "posted_at": "2026-11-09T23:32:01.3002420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a54847c-edd7-4ae1-8219-77405c98d9c7",
+  "subject_id": "7285adb2-658a-4312-81ca-c76e13dfef52",
   "subject_name": "django/db/models/functions/datetime::TruncHour",
   "tags": [
     "entity:class"

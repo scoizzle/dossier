@@ -10,6 +10,7 @@
     "subject": { "$ref": "subject.schema.json" },
     "depth": { "type": "string", "enum": ["index", "full"] },
     "needs": { "type": "array", "items": { "type": "string" } },
+    "budget_mode": { "type": "string", "enum": ["complete", "strict"], "description": "complete (default): every fact is emitted and budget_tokens is only the highlight threshold; used_tokens may exceed it and dropped is empty. strict: facts are cut to the budget and the rest is listed in dropped." },
     "budget_tokens": { "type": "integer", "minimum": 0 },
     "used_tokens": { "type": "integer", "minimum": 0 },
     "facts": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "FactViews with section and cites populated." },
@@ -50,7 +51,7 @@
         }
       }
     },
-    "dropped": { "type": "array", "items": { "type": "string" }, "description": "Fact ids dropped by the budget." },
+    "dropped": { "type": "array", "items": { "type": "string" }, "description": "Fact ids dropped by the budget; always empty in complete mode." },
     "degraded": { "type": "string" },
     "self_check": {
       "type": "object",

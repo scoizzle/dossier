@@ -1,6 +1,6 @@
 # Fact b2b73a7a
 
-Store id: d5dd2e81-abae-450d-a1ea-a30e2ca28ffa
+Store id: b22e5353-2ca6-437a-88be-a36c4054eb44
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_from_object(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3621070+00:00`
+- posted_at: `2026-11-09T23:31:56.5339740+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1191,
     "symbol": "Field.value_from_object"
   },
-  "id": "d5dd2e81-abae-450d-a1ea-a30e2ca28ffa",
+  "id": "b22e5353-2ca6-437a-88be-a36c4054eb44",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3621070+00:00"
+    "posted_at": "2026-11-09T23:31:56.5339740+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "63fe75fb-1ffd-486b-babe-a74f36203f4e",
+  "subject_id": "2881eb2f-ed40-4cc4-947a-82911f350cdc",
   "subject_name": "django/db/models/fields/__init__::Field.value_from_object",
   "tags": [
     "entity:method"

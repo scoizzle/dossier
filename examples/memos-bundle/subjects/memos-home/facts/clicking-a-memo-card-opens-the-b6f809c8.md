@@ -1,6 +1,6 @@
 # Fact b6f809c8
 
-Store id: af44a101-7552-4c05-952a-b5c7e54e466d
+Store id: 2ec2656d-dfd1-486a-8d7d-ff79355c0e54
 
 ## Text
 
@@ -20,7 +20,7 @@ Clicking a memo card opens the memo detail screen.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:20:04.9288170+00:00`
+- posted_at: `2026-11-09T23:31:46.5621970+00:00`
 
 ## Refs
 
@@ -52,13 +52,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "af44a101-7552-4c05-952a-b5c7e54e466d",
+  "id": "2ec2656d-dfd1-486a-8d7d-ff79355c0e54",
   "kind": "action",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
   },
   "refs": [
     {
@@ -76,7 +76,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
   "subject_name": "Memos/Home",
   "tags": [
     "section:actions"

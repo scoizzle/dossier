@@ -1,6 +1,6 @@
 # Fact 97568b0a
 
-Store id: 56fc68a4-bf49-4f41-9f87-a64ffab52858
+Store id: 4abbba7a-cc71-49a6-a617-1e94a2ab4edc
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_paths_from_expression(expr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1566770+00:00`
+- posted_at: `2026-11-09T23:32:06.6645040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 81,
     "symbol": "get_paths_from_expression"
   },
-  "id": "56fc68a4-bf49-4f41-9f87-a64ffab52858",
+  "id": "4abbba7a-cc71-49a6-a617-1e94a2ab4edc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1566770+00:00"
+    "posted_at": "2026-11-09T23:32:06.6645040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e04e5037-81fb-41fa-bb1c-c39b6177c6ce",
+  "subject_id": "81e1a0fc-f452-4e72-9f06-f77cd8b0bda6",
   "subject_name": "django/db/models/sql/query::get_paths_from_expression",
   "tags": [
     "entity:function"

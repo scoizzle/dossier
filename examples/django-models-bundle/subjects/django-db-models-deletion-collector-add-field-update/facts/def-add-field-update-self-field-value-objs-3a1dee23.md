@@ -1,6 +1,6 @@
 # Fact 3a1dee23
 
-Store id: 4c2a57ff-72dc-405f-b44b-32bd9b72fc76
+Store id: f80fa959-30d6-46c8-abea-2424ae588282
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_field_update(self, field, value, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.0508800+00:00`
+- posted_at: `2026-11-09T23:31:55.1032780+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 173,
     "symbol": "Collector.add_field_update"
   },
-  "id": "4c2a57ff-72dc-405f-b44b-32bd9b72fc76",
+  "id": "f80fa959-30d6-46c8-abea-2424ae588282",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.0508800+00:00"
+    "posted_at": "2026-11-09T23:31:55.1032780+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "08c801ed-fada-4c37-9a6d-b48badd07401",
+  "subject_id": "51c08d33-cec9-4d4f-a3cc-0ecf131dcfac",
   "subject_name": "django/db/models/deletion::Collector.add_field_update",
   "tags": [
     "entity:method"

@@ -1,8 +1,8 @@
 # django/db/models/fields/related_lookups
 
-- Subject: django/db/models/fields/related_lookups (id `70a7dfd2-e82a-4d95-871a-306ceb34fbd0`)
+- Subject: django/db/models/fields/related_lookups (id `d5f2171b-837e-44b2-b714-ab9ab8435437`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 170 tokens
 - Facts shown: 9 of 9
 - Conflicts: 0

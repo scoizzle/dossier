@@ -1,8 +1,8 @@
 # django/contrib/postgres/functions
 
-- Subject: django/contrib/postgres/functions (id `801572a1-34e0-4577-8e5d-c27f652cf77c`)
+- Subject: django/contrib/postgres/functions (id `a2e4d8ad-d7c4-4a72-9873-f6d9fb0175dc`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 90 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

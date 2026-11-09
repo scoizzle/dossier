@@ -1,6 +1,6 @@
 # Fact b4d29a20
 
-Store id: c56c849a-740f-4b5c-8a74-46b1764d41ae
+Store id: 7e075942-4903-4cd7-a2d9-73a672295257
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NumericOutputFieldMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.8818060+00:00`
+- posted_at: `2026-11-09T23:32:01.9598930+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c56c849a-740f-4b5c-8a74-46b1764d41ae",
+  "id": "7e075942-4903-4cd7-a2d9-73a672295257",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.8818060+00:00"
+    "posted_at": "2026-11-09T23:32:01.9598930+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NumericOutputFieldMixin"
       },
       "rel": "contains",
-      "target": "f2b0730e-ce7f-4fd9-9c2c-76225389427c"
+      "target": "6c65db8f-720b-4d6f-b5b5-c8c1f3132d74"
     }
   ],
   "status": "live",
-  "subject_id": "2b48520c-3164-49b2-b539-d7cb92a8fbd0",
+  "subject_id": "9d365ca6-bc99-4db3-9918-2665c23ee737",
   "subject_name": "django/db/models/functions/mixins",
   "tags": [
     "entity:class"

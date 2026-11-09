@@ -1,6 +1,6 @@
 # Fact 48c7089f
 
-Store id: 49d6ef8a-0ab8-492e-8d79-a60a358b9ab0
+Store id: ca87ca48-703f-4662-8952-e844e3b4ff36
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PositiveSmallIntegerField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7718540+00:00`
+- posted_at: `2026-11-09T23:31:56.9379270+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "49d6ef8a-0ab8-492e-8d79-a60a358b9ab0",
+  "id": "ca87ca48-703f-4662-8952-e844e3b4ff36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7718540+00:00"
+    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PositiveSmallIntegerField"
       },
       "rel": "contains",
-      "target": "4f5fa5a8-ce77-4545-8945-60b3b704dfc3"
+      "target": "b78b7844-16cd-412d-ac34-f2c00d57c404"
     }
   ],
   "status": "live",
-  "subject_id": "f1f51ac6-feb8-4290-a64b-e2496c526c27",
+  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

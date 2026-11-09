@@ -1,6 +1,6 @@
 # Fact fb8209c9
 
-Store id: d41e2eec-81c4-406d-b179-cbc1e61a3d8d
+Store id: 2f5eafed-e4cd-4550-bad9-34a6525051fa
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d41e2eec-81c4-406d-b179-cbc1e61a3d8d",
+  "id": "2f5eafed-e4cd-4550-bad9-34a6525051fa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONExact"
       },
       "rel": "contains",
-      "target": "d435e8d1-20b1-48ec-9ee6-d63799d81b4b"
+      "target": "18be0084-a724-4538-a7e2-ecc17d46bd3f"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

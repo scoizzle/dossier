@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._check_fk_val
 
-- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._check_fk_val (id `d20c42e9-08a4-49ef-a21e-79403b1d3298`)
+- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._check_fk_val (id `db2e2414-682f-4469-84c2-2d03a53436c6`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

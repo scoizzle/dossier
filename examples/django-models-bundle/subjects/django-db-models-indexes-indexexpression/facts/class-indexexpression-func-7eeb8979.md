@@ -1,6 +1,6 @@
 # Fact 7eeb8979
 
-Store id: f2363153-81ff-4a32-86cd-faa57a500994
+Store id: 08ef6f64-824a-4b6e-a692-8d170a1e2153
 
 ## Text
 
@@ -20,7 +20,7 @@ class IndexExpression(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.8122560+00:00`
+- posted_at: `2026-11-09T23:32:02.9481820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 307,
     "symbol": "IndexExpression"
   },
-  "id": "f2363153-81ff-4a32-86cd-faa57a500994",
+  "id": "08ef6f64-824a-4b6e-a692-8d170a1e2153",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.8122560+00:00"
+    "posted_at": "2026-11-09T23:32:02.9481820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "359f5a6a-c25f-4e68-8942-70bb4f1647e0",
+  "subject_id": "615f1c50-8901-4967-8865-79a3b719618b",
   "subject_name": "django/db/models/indexes::IndexExpression",
   "tags": [
     "entity:class"

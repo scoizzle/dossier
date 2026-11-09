@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::AttributeSetter
 
-- Subject: django/db/models/fields/composite::AttributeSetter (id `f114eae3-edaa-4754-a8d0-42497e5b82f1`)
+- Subject: django/db/models/fields/composite::AttributeSetter (id `e9797aa3-be50-4ca7-87fc-d72772ac4a4a`)
 - Kind: class
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

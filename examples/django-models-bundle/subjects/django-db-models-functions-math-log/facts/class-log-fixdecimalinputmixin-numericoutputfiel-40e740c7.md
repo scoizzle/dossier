@@ -1,6 +1,6 @@
 # Fact 40e740c7
 
-Store id: c9150b41-09b0-475a-a2e5-70cf7f95f97b
+Store id: d86d1354-c508-40a3-b7e8-0a95249611bd
 
 ## Text
 
@@ -20,7 +20,7 @@ class Log(FixDecimalInputMixin, NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6219720+00:00`
+- posted_at: `2026-11-09T23:32:01.7173820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 112,
     "symbol": "Log"
   },
-  "id": "c9150b41-09b0-475a-a2e5-70cf7f95f97b",
+  "id": "d86d1354-c508-40a3-b7e8-0a95249611bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6219720+00:00"
+    "posted_at": "2026-11-09T23:32:01.7173820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "69027647-a7fc-40b8-a51e-9fbaec2f6560",
+  "subject_id": "7d7192c6-7f0a-4149-812a-6eaa8527001d",
   "subject_name": "django/db/models/functions/math::Log",
   "tags": [
     "entity:class"

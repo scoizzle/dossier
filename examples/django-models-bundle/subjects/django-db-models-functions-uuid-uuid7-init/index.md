@@ -1,9 +1,9 @@
 # django/db/models/functions/uuid::UUID7.__init__
 
-- Subject: django/db/models/functions/uuid::UUID7.__init__ (id `f2627d1b-8457-43b1-ae46-02a3d881a48b`)
+- Subject: django/db/models/functions/uuid::UUID7.__init__ (id `ba49f757-cc5b-436e-a049-5a011b606e04`)
 - Kind: method
 - Parent: [django/db/models/functions/uuid](../django-db-models-functions-uuid/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

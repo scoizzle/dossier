@@ -1,14 +1,14 @@
 # django/contrib/gis/forms/widgets
 
-- Subject: django/contrib/gis/forms/widgets (id `8bc0f449-25d3-40ff-87f4-7916da026bbe`)
+- Subject: django/contrib/gis/forms/widgets (id `34edb42c-31f3-421c-904e-802add1cc662`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 882 tokens
-- Facts shown: 17 of 18
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 991 tokens
+- Facts shown: 18 of 18
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if value: # Check that srid of value and map match if value.srid and value.srid != self.map_srid: try: ogr = value.ogr ogr.transform(self.map_srid) value = ogr except gdal.GDALException as err: logger.error( "Error transforming geometry from srid '%s' to srid '%s' (%s)", value.srid, self.map_srid, err, ) context["serialized"] = self.serialize(value) geom_type = gdal.OGRGeomType(self.attrs["geom_type"]).name context["widget"]["attrs"]["geom_name"] = ( "Geometry" if geom_type == "Unknown" else geom_type ) return context [eacbb20a]
 - base_layer = "osm" default_lon = 5 default_lat = 47 default_zoom = 12 [2993c3bc]
@@ -28,6 +28,6 @@
 - import logging [47bc951ed6a0e3cc-2]
 - logger = logging.getLogger("django.contrib.gis") [e92fc94cc00bbb3c-2]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [34e78501]
+- [34e78501] from django.contrib.gis import gdal from django.contrib.gis.gdal import GDALException from django.contrib.gis.geometry import json_regex from django.contrib.gis.geos import GEOSException, GEOSGeometry from django.contrib.gis.geos.prototypes.io import MAX_GEOM_COLLECTIONS from django.forms.widgets import Widget from django.utils.log import log_message from django.utils.text import trim_value

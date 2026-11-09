@@ -1,6 +1,6 @@
 # Fact 83dddfe1
 
-Store id: 7d7e9c43-a97e-4a5e-9c72-d4ea69fd2f3d
+Store id: 8cc2dfae-3463-4fe6-8a9f-d81e9668bd14
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncDay
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.2219070+00:00`
+- posted_at: `2026-11-09T23:32:01.3094010+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7d7e9c43-a97e-4a5e-9c72-d4ea69fd2f3d",
+  "id": "8cc2dfae-3463-4fe6-8a9f-d81e9668bd14",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.2219070+00:00"
+    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncDay"
       },
       "rel": "contains",
-      "target": "f4421ae1-7bca-43a2-a3d9-0b3baae48279"
+      "target": "1ca0086e-5bfd-400a-a5b3-e516634f35e4"
     }
   ],
   "status": "live",
-  "subject_id": "6590f65d-0701-441c-adae-1cea47b0b755",
+  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

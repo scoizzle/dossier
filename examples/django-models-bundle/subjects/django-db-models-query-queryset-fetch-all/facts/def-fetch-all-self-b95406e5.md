@@ -1,6 +1,6 @@
 # Fact b95406e5
 
-Store id: d0155326-c6a8-4dff-af2e-ead43e8112c8
+Store id: 8afdb644-82fc-4ac7-98af-fbf46fddd3a4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _fetch_all(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.7167450+00:00`
+- posted_at: `2026-11-09T23:32:04.6453810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2285,
     "symbol": "QuerySet._fetch_all"
   },
-  "id": "d0155326-c6a8-4dff-af2e-ead43e8112c8",
+  "id": "8afdb644-82fc-4ac7-98af-fbf46fddd3a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.7167450+00:00"
+    "posted_at": "2026-11-09T23:32:04.6453810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5320604d-9270-4772-a722-c7e107061b46",
+  "subject_id": "07b5330b-a90c-457c-a308-13414c07df36",
   "subject_name": "django/db/models/query::QuerySet._fetch_all",
   "tags": [
     "entity:method"

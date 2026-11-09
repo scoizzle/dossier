@@ -1,6 +1,6 @@
 # Fact 2af22d77
 
-Store id: e4540cc6-4420-44cf-803f-14148057115f
+Store id: f359c810-db7a-4a7f-8ba1-c7c0e4cd69bd
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2142230+00:00`
+- posted_at: `2026-11-09T23:32:02.3144130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 366,
     "symbol": "Substr.as_oracle"
   },
-  "id": "e4540cc6-4420-44cf-803f-14148057115f",
+  "id": "f359c810-db7a-4a7f-8ba1-c7c0e4cd69bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2142230+00:00"
+    "posted_at": "2026-11-09T23:32:02.3144130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "706c16ac-fdc4-4c4b-8ff4-c002a6f8898c",
+  "subject_id": "1597f273-c2c5-4aba-87f7-ca4409d88bd9",
   "subject_name": "django/db/models/functions/text::Substr.as_oracle",
   "tags": [
     "entity:method"

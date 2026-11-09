@@ -1,6 +1,6 @@
 # Fact 4f7224b3
 
-Store id: a8ee9630-f5b4-4ce4-ba53-7bc9976b3591
+Store id: b8c6abed-d95b-4dbd-bbd3-0e4638cc98dc
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7349430+00:00`
+- posted_at: `2026-11-09T23:31:58.0010030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 627,
     "symbol": "KeyTransformExact.process_rhs"
   },
-  "id": "a8ee9630-f5b4-4ce4-ba53-7bc9976b3591",
+  "id": "b8c6abed-d95b-4dbd-bbd3-0e4638cc98dc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7349430+00:00"
+    "posted_at": "2026-11-09T23:31:58.0010030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3333c4c3-a78a-4cb8-9c7a-60b59222fa7e",
+  "subject_id": "3c1d4a50-6c1c-4b73-b35c-a40d406f9c08",
   "subject_name": "django/db/models/fields/json::KeyTransformExact.process_rhs",
   "tags": [
     "entity:method"

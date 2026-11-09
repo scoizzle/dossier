@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field._check_backend_specific_checks
 
-- Subject: django/db/models/fields/__init__::Field._check_backend_specific_checks (id `6e07ea67-0625-4e75-8283-17bfc0d04e36`)
+- Subject: django/db/models/fields/__init__::Field._check_backend_specific_checks (id `e3cb3a59-1e0a-4465-94f2-1a14af228d14`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

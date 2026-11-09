@@ -1,6 +1,6 @@
 # Fact 82f80a0f
 
-Store id: 130f73cd-b2d6-4fc3-af78-c7e1dcf2ba76
+Store id: b4e9da5c-6f8a-4d6c-a3d9-444ebbce7ad9
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function unpickle_named_row
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1602360+00:00`
+- posted_at: `2026-11-09T23:32:07.9512730+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "130f73cd-b2d6-4fc3-af78-c7e1dcf2ba76",
+  "id": "b4e9da5c-6f8a-4d6c-a3d9-444ebbce7ad9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1602360+00:00"
+    "posted_at": "2026-11-09T23:32:07.9512730+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "unpickle_named_row"
       },
       "rel": "contains",
-      "target": "60d69f6c-fb7a-458c-a459-e4fb3f3b6769"
+      "target": "8038e670-20f5-41b8-8454-810262771598"
     }
   ],
   "status": "live",
-  "subject_id": "f5e83459-87b7-40dd-8dc8-0296e557a739",
+  "subject_id": "8d25c560-4eac-44c9-a77d-da20cef77164",
   "subject_name": "django/db/models/utils",
   "tags": [
     "entity:function"

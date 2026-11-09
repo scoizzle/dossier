@@ -1,6 +1,6 @@
 # Fact 89b0c818
 
-Store id: 502166f3-9dda-49ed-b4b0-5781bed75319
+Store id: a42f3bdc-ca52-4260-bb6b-3794b27cf963
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Ord
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.2220660+00:00`
+- posted_at: `2026-11-09T23:32:02.3237530+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "502166f3-9dda-49ed-b4b0-5781bed75319",
+  "id": "a42f3bdc-ca52-4260-bb6b-3794b27cf963",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.2220660+00:00"
+    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Ord"
       },
       "rel": "contains",
-      "target": "4773bb10-58a6-4205-ae81-d5d89fe9d7af"
+      "target": "74915aa5-fa60-47ce-9ed7-22b75e95e7b1"
     }
   ],
   "status": "live",
-  "subject_id": "d9e8fd53-42de-470d-a8c7-e4d2522921a9",
+  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

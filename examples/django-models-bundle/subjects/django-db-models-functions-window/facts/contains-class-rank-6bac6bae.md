@@ -1,6 +1,6 @@
 # Fact 6bac6bae
 
-Store id: 48af807a-f642-43bf-8470-16caf955bf57
+Store id: 44297a9d-d37d-4f78-9a82-df594b4aa406
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Rank
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6102730+00:00`
+- posted_at: `2026-11-09T23:32:02.7398280+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "48af807a-f642-43bf-8470-16caf955bf57",
+  "id": "44297a9d-d37d-4f78-9a82-df594b4aa406",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6102730+00:00"
+    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Rank"
       },
       "rel": "contains",
-      "target": "5064388b-97bf-4809-9d78-866df62bb26d"
+      "target": "5c09ad3d-a74b-4ce8-a481-4bfeadd8a303"
     }
   ],
   "status": "live",
-  "subject_id": "c53215d3-8848-4654-aadd-1dac3d5d72de",
+  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

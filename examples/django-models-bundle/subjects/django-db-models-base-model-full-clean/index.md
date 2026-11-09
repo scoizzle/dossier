@@ -1,9 +1,9 @@
 # django/db/models/base::Model.full_clean
 
-- Subject: django/db/models/base::Model.full_clean (id `aa4d76e6-2637-4cf9-93ae-749c43c6b57a`)
+- Subject: django/db/models/base::Model.full_clean (id `2844b69d-fcac-4753-99d8-16dd408b5630`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 32 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

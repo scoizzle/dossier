@@ -1,9 +1,9 @@
 # django/db/models/lookups::Lookup.process_rhs
 
-- Subject: django/db/models/lookups::Lookup.process_rhs (id `2f001105-d5f5-453f-8fa6-aa6e2dd0cfdc`)
+- Subject: django/db/models/lookups::Lookup.process_rhs (id `08ad1001-f48b-4410-bd3f-413a355c0e44`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,14 +1,14 @@
 # django/utils/csp
 
-- Subject: django/utils/csp (id `d301edac-9c9f-4131-93e3-82ad869f1e85`)
+- Subject: django/utils/csp (id `250ea42b-a40c-4676-93cc-e7eb9719619e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 894 tokens
-- Facts shown: 23 of 32
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1185 tokens
+- Facts shown: 32 of 32
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Replace the nonce sentinel with the actual nonce values, if the # sentinel is found and a nonce is provided. Otherwise, remove it. if (has_sentinel := CSP.NONCE in values) and nonce: values = [f"'nonce-{nonce}'" if v == CSP.NONCE else v for v in values] elif has_sentinel: values = [v for v in values if v != CSP.NONCE] [7c2cc3b8]
 - if not values: continue [5284ddbb]
@@ -34,6 +34,14 @@
 - def __init__(self): super().__init__(generate_nonce) [fa66690a]
 - for directive, values in config.items(): if values in (None, False): continue [de250d67]
 
-## Beyond the budget
+## All facts
 
-9 more facts did not fit in the budget: [0c63eab9] [984c27d3] [3696bbb7] [4e349e5c] [a91ea976] [de8d7cd8] [762e9f56] [0329b4fb] [b5c4bca2]
+- [0c63eab9] return "; ".join(policy)
+- [984c27d3] # Template context key for the CSP nonce. CONTEXT_KEY = "csp_nonce"
+- [3696bbb7] class CSP(StrEnum): """ Content Security Policy constants for directive values and special tokens.
+- [4e349e5c] class LazyNonce(SimpleLazyObject): """ Lazily generates a cryptographically secure nonce string, for use in CSP headers.
+- [a91ea976] def build_policy(config, nonce=None): policy = []
+- [de8d7cd8] def generate_nonce(): return secrets.token_urlsafe(16)
+- [762e9f56] def nonce_attr(context, media=None): nonce = context.get(CONTEXT_KEY) if media: return media.render(attrs={"nonce": nonce} if nonce is not None else None) if nonce is None: return "" return format_html('nonce="{}"', nonce)
+- [0329b4fb] from django.utils.functional import SimpleLazyObject, empty from django.utils.html import format_html
+- [b5c4bca2] import secrets from enum import StrEnum

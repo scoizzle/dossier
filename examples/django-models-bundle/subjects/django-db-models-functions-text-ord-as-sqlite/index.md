@@ -1,9 +1,9 @@
 # django/db/models/functions/text::Ord.as_sqlite
 
-- Subject: django/db/models/functions/text::Ord.as_sqlite (id `f7124c1b-6f75-409e-814d-deb4e063de33`)
+- Subject: django/db/models/functions/text::Ord.as_sqlite (id `85535927-3047-4af4-99b7-894c4bc8677a`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

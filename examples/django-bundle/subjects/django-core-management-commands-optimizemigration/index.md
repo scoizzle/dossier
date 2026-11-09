@@ -1,14 +1,14 @@
 # django/core/management/commands/optimizemigration
 
-- Subject: django/core/management/commands/optimizemigration (id `c472cb48-109e-4e55-b7ae-18a4607b3423`)
+- Subject: django/core/management/commands/optimizemigration (id `b64047dc-9da1-4f89-a20f-1d7545fe0d16`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 9 of 11
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1080 tokens
+- Facts shown: 11 of 11
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Load the current graph state. loader = MigrationLoader(None) if app_label not in loader.migrated_apps: raise CommandError(f"App '{app_label}' does not have migrations.") # Find a migration. try: migration = loader.get_migration_by_prefix(app_label, migration_name) except AmbiguityError: raise CommandError( f"More than one migration matches '{migration_name}' in app " f"'{app_label}'. Please be more specific." ) except KeyError: raise CommandError( f"Cannot find a migration matching '{migration_name}' from app " f"'{app_label}'." ) [0da8a9ee]
 - # Optimize the migration. optimizer = MigrationOptimizer() new_operations = optimizer.optimize(migration.operations, migration.app_label) if len(migration.operations) == len(new_operations): if verbosity > 0: self.stdout.write("No optimizations possible.") return else: if verbosity > 0: self.stdout.write( "Optimizing from %d operations to %d operations." % (len(migration.operations), len(new_operations)) ) if check: sys.exit(1) [6f6c68c7]
@@ -20,6 +20,7 @@
 - class Command(BaseCommand): help = "Optimizes the operations for the named migration." [b2928f0d]
 - import shutil import sys [b87080ae]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [43900577] [af8595c5]
+- [43900577] def handle(self, *args, **options): verbosity = options["verbosity"] app_label = options["app_label"] migration_name = options["migration_name"] check = options["check"]
+- [af8595c5] from django.apps import apps from django.core.management.base import BaseCommand, CommandError from django.core.management.utils import run_formatters from django.db import migrations from django.db.migrations.exceptions import AmbiguityError from django.db.migrations.loader import MigrationLoader from django.db.migrations.optimizer import MigrationOptimizer from django.db.migrations.writer import MigrationWriter from django.utils.version import get_docs_version

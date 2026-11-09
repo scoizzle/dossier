@@ -1,9 +1,9 @@
 # django/db/models/query::aprefetch_related_objects
 
-- Subject: django/db/models/query::aprefetch_related_objects (id `12dc9d5b-cdc5-4d8f-afa7-49a0f329cb67`)
+- Subject: django/db/models/query::aprefetch_related_objects (id `c48a67cc-07a6-45e5-b307-f2cca3c36d97`)
 - Kind: async_function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

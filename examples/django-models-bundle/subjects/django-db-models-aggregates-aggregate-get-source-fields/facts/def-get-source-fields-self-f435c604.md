@@ -1,6 +1,6 @@
 # Fact f435c604
 
-Store id: 2790bace-02ec-405f-8b4e-9535b8f2ec92
+Store id: 3e6613d0-c2c9-49c7-bede-a459aea460ca
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0346900+00:00`
+- posted_at: `2026-11-09T23:31:53.5319930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 108,
     "symbol": "Aggregate.get_source_fields"
   },
-  "id": "2790bace-02ec-405f-8b4e-9535b8f2ec92",
+  "id": "3e6613d0-c2c9-49c7-bede-a459aea460ca",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0346900+00:00"
+    "posted_at": "2026-11-09T23:31:53.5319930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b2d8e061-ef50-47b1-970a-130f1dc789ec",
+  "subject_id": "02fb6525-3b1d-48f7-8a96-729b5e876e0b",
   "subject_name": "django/db/models/aggregates::Aggregate.get_source_fields",
   "tags": [
     "entity:method"

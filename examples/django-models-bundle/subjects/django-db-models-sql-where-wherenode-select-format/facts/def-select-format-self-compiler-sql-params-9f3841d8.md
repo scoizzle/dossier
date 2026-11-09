@@ -1,6 +1,6 @@
 # Fact 9f3841d8
 
-Store id: 6f8c29ff-664e-4905-af7c-d51544f9eae7
+Store id: bc6bef5e-cfbe-42ea-ad00-d7f74cb348e0
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9688240+00:00`
+- posted_at: `2026-11-09T23:32:07.6900590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 302,
     "symbol": "WhereNode.select_format"
   },
-  "id": "6f8c29ff-664e-4905-af7c-d51544f9eae7",
+  "id": "bc6bef5e-cfbe-42ea-ad00-d7f74cb348e0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9688240+00:00"
+    "posted_at": "2026-11-09T23:32:07.6900590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "326fec70-aec0-4d7a-b002-2340106e9935",
+  "subject_id": "bda002f5-a1a5-4a34-83e4-49959ae1d17b",
   "subject_name": "django/db/models/sql/where::WhereNode.select_format",
   "tags": [
     "entity:method"

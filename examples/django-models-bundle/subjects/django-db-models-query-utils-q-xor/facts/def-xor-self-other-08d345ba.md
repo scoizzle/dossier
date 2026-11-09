@@ -1,6 +1,6 @@
 # Fact 08d345ba
 
-Store id: 2ff16f44-f137-4e80-b200-2d440b3806a0
+Store id: 4a7c93b9-70b2-460f-af68-f7f8f5853ec8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __xor__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.0686880+00:00`
+- posted_at: `2026-11-09T23:32:05.0567720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 93,
     "symbol": "Q.__xor__"
   },
-  "id": "2ff16f44-f137-4e80-b200-2d440b3806a0",
+  "id": "4a7c93b9-70b2-460f-af68-f7f8f5853ec8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.0686880+00:00"
+    "posted_at": "2026-11-09T23:32:05.0567720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "40417650-c737-4dd7-b66f-99d73a985167",
+  "subject_id": "1422058a-682e-4750-ac0b-4687a2558076",
   "subject_name": "django/db/models/query_utils::Q.__xor__",
   "tags": [
     "entity:method"

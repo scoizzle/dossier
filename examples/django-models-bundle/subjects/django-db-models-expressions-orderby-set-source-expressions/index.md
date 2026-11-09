@@ -1,9 +1,9 @@
 # django/db/models/expressions::OrderBy.set_source_expressions
 
-- Subject: django/db/models/expressions::OrderBy.set_source_expressions (id `cc19dc48-e04f-4f9f-a958-bfe4d6cf3b3d`)
+- Subject: django/db/models/expressions::OrderBy.set_source_expressions (id `e322bdda-d8ef-4ac7-923f-5476eb4a8c35`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

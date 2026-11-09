@@ -1,6 +1,6 @@
 # Fact c8fcc3d1
 
-Store id: 5c9692f1-d682-44bb-a8e7-a1e66a79b1c0
+Store id: 30765d4c-64c4-40e3-9b37-74ea808c3747
 
 ## Text
 
@@ -20,7 +20,7 @@ def convert_empty_strings(self, value, expression, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4181670+00:00`
+- posted_at: `2026-11-09T23:31:58.7915520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1330,
     "symbol": "ForeignKey.convert_empty_strings"
   },
-  "id": "5c9692f1-d682-44bb-a8e7-a1e66a79b1c0",
+  "id": "30765d4c-64c4-40e3-9b37-74ea808c3747",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4181670+00:00"
+    "posted_at": "2026-11-09T23:31:58.7915520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c118e96-7756-4f4d-93cf-912edde0834c",
+  "subject_id": "b034cc4c-ae90-4b35-b895-0c193ddf0886",
   "subject_name": "django/db/models/fields/related::ForeignKey.convert_empty_strings",
   "tags": [
     "entity:method"

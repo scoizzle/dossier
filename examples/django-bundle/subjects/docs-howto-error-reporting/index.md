@@ -1,14 +1,14 @@
 # docs/howto/error-reporting
 
-- Subject: docs/howto/error-reporting (id `63f6be68-b753-4855-8ab8-d288708e97cc`)
+- Subject: docs/howto/error-reporting (id `13926b0c-11ca-400a-8321-c6b5107cb2b6`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 22 of 102
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 4498 tokens
+- Facts shown: 101 of 102
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @sensitive_variables("user", "pw", "cc") @some_decorator @another_decorator def process_info(user): ... [d2ea5bf8]
 - class CustomExceptionReporter(ExceptionReporter): def get_traceback_data(self): data = super().get_traceback_data() # ... remove/add something here ... return data [8ac03c23]
@@ -33,6 +33,84 @@
 - Used for HTML version of debug 500 HTTP error page. [12820590]
 - from django.views.decorators.debug import sensitive_variables [54f47e7c]
 
-## Beyond the budget
+## All facts
 
-79 more facts did not fit in the budget: [99f89ea8] [77e7515a] [53920bf8] [0aac7a90] [006a4503] [90900aa3] [1b042c19] [686ccf66] [f2f9e74c] [bb701313] [9f5d9349] [78366855] [529cb51b] [bd0e8028] [859697be] [e973f76f] [ab437fee] [21f0b744] [af85fd2c] [1f24cfa9] [c728cd4d] [88d57552] [6bbcd0a8] [e375a126] [e1a7aa65] [9c64f938] [503f9891] [c342df21] [86e2628e] [c7a49aec] [2aa0760d] [90f4387cea1dbdff-4] [90f4387cea1dbdff-5] [179852e2] [39b16fe2] [b806aa44] [0b9e6188] [5a41c135] [6c69a34a] [5d28bd98] [9b150535] [9aa35b76] [21541574] [7c235117] [3551131d] [848e58cc] [942ae6c11625c81c-6] [942ae6c11625c81c-7] [6b4a5e54e001d097-2] [6b4a5e54e001d097-3] [6b4a5e54e001d097-4] [c54b54cb0805732a-6] [e3d98449] [733e3092] [dc92633c] [55234a3f] [c039a8f8] [ebf1370d] [76ca8884] [76ff035d] [ea8bcb02] [09590a8c] [e31f2d5d] [1a640efb] [9b3f8039] [8385cdc2] [2718edd2] [6c1a9856] [9db74f00] [067e76a9] [71f38086] [d8a25e21] [ce671b5e] [8b2eba01] [b8f79bea] [90bb03d7] [78ed29bd] [b62aad5e] [c51e1404]
+- [99f89ea8] Used for plain text version of debug 500 HTTP error page and email reports.
+- [77e7515a] from django.views.decorators.debug import sensitive_post_parameters
+- [53920bf8] .. admonition:: When using multiple decorators
+- [0aac7a90] .. attribute:: cleansed_substitute
+- [006a4503] .. attribute:: hidden_settings
+- [90900aa3] .. attribute:: html_template_path
+- [1b042c19] .. attribute:: text_template_path
+- [686ccf66] .. method:: get_post_parameters(request)
+- [f2f9e74c] .. method:: get_traceback_data()
+- [bb701313] .. method:: get_traceback_frame_variables(request, tb_frame)
+- [9f5d9349] .. method:: get_traceback_html()
+- [78366855] .. method:: get_traceback_text()
+- [529cb51b] .. method:: is_active(request)
+- [bd0e8028] 404 errors are logged using the logging framework. By default, these log records are ignored, but you can use them for error reporting by writing a handler and :doc:`configuring logging </topics/logging>` appropriately.
+- [859697be] :class:`~django.middleware.common.BrokenLinkEmailsMiddleware` must appear before other middleware that intercepts 404 errors, such as :class:`~django.middleware.locale.LocaleMiddleware` or :class:`~django.contrib.flatpages.middleware.FlatpageFallbackMiddleware`. Put it toward the top of your :setting:`MIDDLEWARE` setting.
+- [e973f76f] All POST parameters are systematically filtered out of error reports for certain :mod:`django.contrib.auth.views` views (``login``, ``password_reset_confirm``, ``password_change``, and ``add_view`` and ``user_change_password`` in the ``auth`` admin) to prevent the leaking of sensitive information such as user passwords.
+- [ab437fee] DEFAULT_EXCEPTION_REPORTER = "path.to.your.CustomExceptionReporter"
+- [21f0b744] DEFAULT_EXCEPTION_REPORTER_FILTER = "path.to.your.CustomExceptionReporterFilter"
+- [af85fd2c] Filtering sensitive data is a hard problem, and it's nearly impossible to guarantee that sensitive data won't leak into an error report. Therefore, error reports should only be available to trusted team members and you should avoid transmitting error reports unencrypted over the internet (such as through email).
+- [1f24cfa9] IGNORABLE_404_URLS = [ re.compile(r"\.(php|cgi)$"), re.compile(r"^/phpmyadmin/"), ]
+- [c728cd4d] IGNORABLE_404_URLS = [ re.compile(r"^/apple-touch-icon.*\.png$"), re.compile(r"^/favicon\.ico$"), re.compile(r"^/robots\.txt$"), ]
+- [88d57552] If a function (either a view or any regular callback) in your code uses local variables susceptible to contain sensitive information, you may prevent the values of those variables from being included in error reports using the ``sensitive_variables`` decorator::
+- [6bbcd0a8] If one of your views receives an :class:`~django.http.HttpRequest` object with :attr:`~django.http.HttpRequest.POST` parameters susceptible to contain sensitive information, you may prevent the values of those parameters from being included in the error reports using the ``sensitive_post_parameters`` decorator::
+- [e375a126] In the above example, the values for the ``pass_word`` and ``credit_card_number`` POST parameters will be hidden and replaced with stars (``**********``) in the request's representation inside the error reports, whereas the value of the ``name`` parameter will be disclosed.
+- [e1a7aa65] In the above example, the values for the ``user``, ``pw`` and ``cc`` variables will be hidden and replaced with stars (``**********``) in the error reports, whereas the value of the ``name`` variable will be disclosed.
+- [9c64f938] Server error emails are sent using the logging framework, so you can customize this behavior by :doc:`customizing your logging configuration </topics/logging>`.
+- [503f9891] To systematically hide all POST parameters of a request in error reports, do not provide any argument to the ``sensitive_post_parameters`` decorator::
+- [c342df21] To systematically hide all local variables of a function from error logs, do not provide any argument to the ``sensitive_variables`` decorator::
+- [86e2628e] You can also set up custom error reporting by writing a custom piece of :ref:`exception middleware <exception-middleware>`. If you do write custom error handling, it's a good idea to emulate Django's built-in error handling and only report/log errors if :setting:`DEBUG` is ``False``.
+- [c7a49aec] def my_view(request): if request.user.is_authenticated: request.exception_reporter_class = CustomExceptionReporter() ...
+- [2aa0760d] def my_view(request): if request.user.is_authenticated: request.exception_reporter_filter = CustomExceptionReporterFilter() ...
+- [90f4387cea1dbdff-4] import re
+- [90f4387cea1dbdff-5] import re
+- [179852e2] In order to send email, Django requires a few settings telling it how to connect to your mail server. At the very least, you'll need to specify :setting:`EMAIL_HOST` and possibly :setting:`EMAIL_HOST_USER` and :setting:`EMAIL_HOST_PASSWORD`, though other settings may be also required depending on your mail server's configuration. Consult :doc:`the Django settings documentation </ref/settings>` for a full list of email-related settings.
+- [39b16fe2] (Note that these are regular expressions, so we put a backslash in front of periods to escape them.)
+- [b806aa44] * :setting:`DEBUG` is ``False``;
+- [0b9e6188] * Your :setting:`MIDDLEWARE` setting includes :class:`django.middleware.common.BrokenLinkEmailsMiddleware`.
+- [5a41c135] .. _`full traceback`: https://en.wikipedia.org/wiki/Stack_trace .. _`traceback frame`: https://en.wikipedia.org/wiki/Stack_frame
+- [6c69a34a] .. _custom-error-reports:
+- [5d28bd98] .. _filtering-error-reports:
+- [9b150535] .. class:: ExceptionReporter
+- [9aa35b76] .. class:: SafeExceptionReporterFilter
+- [21541574] .. currentmodule:: django.views.debug
+- [7c235117] .. currentmodule:: django.views.decorators.debug
+- [3551131d] .. function:: sensitive_post_parameters(*parameters)
+- [848e58cc] .. function:: sensitive_variables(*variables)
+- [942ae6c11625c81c-6] .. note::
+- [942ae6c11625c81c-7] .. note::
+- [6b4a5e54e001d097-2] .. seealso::
+- [6b4a5e54e001d097-3] .. seealso::
+- [6b4a5e54e001d097-4] .. seealso::
+- [c54b54cb0805732a-6] .. warning::
+- [e3d98449] 404 errors ----------
+- [733e3092] ============================= How to manage error reporting =============================
+- [dc92633c] All :func:`sensitive_variables` and :func:`sensitive_post_parameters` do is, respectively, annotate the decorated function with the names of sensitive variables and annotate the ``HttpRequest`` object with the names of sensitive POST parameters, so that this sensitive information can later be filtered out of reports when an error occurs. The actual filtering is done by Django's default error reporter filter: :class:`django.views.debug.SafeExceptionReporterFilter`. This filter uses the decorators' annotations to replace the corresponding values with stars (``**********``) when the error reports are produced. If you wish to override or customize this default behavior for your entire site, you need to define your own filter class and tell Django to use it via the :setting:`DEFAULT_EXCEPTION_REPORTER_FILTER` setting::
+- [55234a3f] As with the filter class, you may control which exception reporter class to use within any given view by setting the ``HttpRequest``’s ``exception_reporter_class`` attribute::
+- [c039a8f8] By default, Django will send email from ``root@localhost``. However, some mail providers reject all email from this address. To use a different sender address, modify the :setting:`SERVER_EMAIL` setting.
+- [ebf1370d] Custom error reports --------------------
+- [76ca8884] Django can also be configured to email errors about broken links (404 "page not found" errors). Django sends emails about 404 errors when:
+- [76ff035d] Email reports =============
+- [ea8bcb02] Error reports are really helpful for debugging errors, so it is generally useful to record as much relevant information about those errors as possible. For example, by default Django records the `full traceback`_ for the exception raised, each `traceback frame`_’s local variables, and the :class:`~django.http.HttpRequest`’s :ref:`attributes<httprequest-attributes>`.
+- [09590a8c] Filtering error reports =======================
+- [e31f2d5d] Filtering sensitive information -------------------------------
+- [1a640efb] However, running with :setting:`DEBUG` set to ``False`` means you'll never see errors generated by your site -- everyone will instead see your public error pages. You need to keep track of errors that occur in deployed sites, so Django can be configured to create reports with details about those errors.
+- [9b3f8039] However, sometimes certain types of information may be too sensitive and thus may not be appropriate to be kept track of, for example a user's password or credit card number. So in addition to filtering out settings that appear to be sensitive as described in the :setting:`DEBUG` documentation, Django offers a set of function decorators to help you control which information should be filtered out of error reports in a production environment (that is, where :setting:`DEBUG` is set to ``False``): :func:`sensitive_variables` and :func:`sensitive_post_parameters`.
+- [8385cdc2] If those conditions are met, Django will email the users listed in the :setting:`MANAGERS` setting whenever your code raises a 404 and the request has a referer. It doesn't bother to email for 404s that don't have a referer -- those are usually people typing in broken URLs or broken web bots. It also ignores 404s when the referer is equal to the requested URL, since this behavior is from broken web bots too.
+- [2718edd2] If you need to customize error reports beyond filtering you may specify a custom error reporter class by defining the :setting:`DEFAULT_EXCEPTION_REPORTER` setting::
+- [6c1a9856] If you'd like to customize the behavior of :class:`django.middleware.common.BrokenLinkEmailsMiddleware` further (for example to ignore requests coming from web crawlers), you should subclass it and override its methods.
+- [9db74f00] In this example, a 404 to any URL ending with ``.php`` or ``.cgi`` will *not* be reported. Neither will any URL starting with ``/phpmyadmin/``.
+- [067e76a9] Server errors -------------
+- [71f38086] The exception reporter is responsible for compiling the exception report data, and formatting it as text or HTML appropriately. (The exception reporter uses :setting:`DEFAULT_EXCEPTION_REPORTER_FILTER` when preparing the exception report data.)
+- [d8a25e21] The following example shows how to exclude some conventional URLs that browsers and crawlers often request::
+- [ce671b5e] To activate this behavior, put the email addresses of the recipients in the :setting:`ADMINS` setting.
+- [8b2eba01] When :setting:`DEBUG` is ``False``, Django will email the users listed in the :setting:`ADMINS` setting whenever your code raises an unhandled exception and results in an internal server error (strictly speaking, for any response with an HTTP status code of 500 or greater). This gives the administrators immediate notification of any errors. The :setting:`ADMINS` will get a description of the error, a complete Python traceback, and details about the HTTP request that caused the error.
+- [b8f79bea] When you're running a public site you should always turn off the :setting:`DEBUG` setting. That will make your server run much faster, and will also prevent malicious users from seeing details of your application that can be revealed by the error pages.
+- [90bb03d7] You can tell Django to stop reporting particular 404s by tweaking the :setting:`IGNORABLE_404_URLS` setting. It should be a list of compiled regular expression objects. For example::
+- [78ed29bd] You may also control in a more granular way which filter to use within any given view by setting the ``HttpRequest``’s ``exception_reporter_filter`` attribute::
+- [b62aad5e] Your custom filter class needs to inherit from :class:`django.views.debug.SafeExceptionReporterFilter` and may override the following attributes and methods:
+- [c51e1404] Your custom reporter class needs to inherit from :class:`django.views.debug.ExceptionReporter`.

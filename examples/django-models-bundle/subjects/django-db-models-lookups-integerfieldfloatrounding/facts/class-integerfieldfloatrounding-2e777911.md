@@ -1,6 +1,6 @@
 # Fact 2e777911
 
-Store id: 8b8b8b0e-cfa8-4b85-9552-3f81b668a540
+Store id: cec3683d-3fcb-4466-b4e3-b3a63b97edf5
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerFieldFloatRounding
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.1302240+00:00`
+- posted_at: `2026-11-09T23:32:03.2908150+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 463,
     "symbol": "IntegerFieldFloatRounding"
   },
-  "id": "8b8b8b0e-cfa8-4b85-9552-3f81b668a540",
+  "id": "cec3683d-3fcb-4466-b4e3-b3a63b97edf5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.1302240+00:00"
+    "posted_at": "2026-11-09T23:32:03.2908150+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b1ead53e-b1a7-4def-a684-0e8d58ad1353",
+  "subject_id": "7b0e448d-212a-4b8d-b864-76c0e5c5449b",
   "subject_name": "django/db/models/lookups::IntegerFieldFloatRounding",
   "tags": [
     "entity:class"

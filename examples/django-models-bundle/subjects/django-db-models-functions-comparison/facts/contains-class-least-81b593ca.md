@@ -1,6 +1,6 @@
 # Fact 81b593ca
 
-Store id: c7234553-e2ff-4ea7-a058-6aa0796669f8
+Store id: 5ad4697a-36a0-4d81-a852-35fbbb55c34d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Least
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9636910+00:00`
+- posted_at: `2026-11-09T23:32:01.0159390+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c7234553-e2ff-4ea7-a058-6aa0796669f8",
+  "id": "5ad4697a-36a0-4d81-a852-35fbbb55c34d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9636910+00:00"
+    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Least"
       },
       "rel": "contains",
-      "target": "29f98159-637a-44c2-88bb-ad2f5b09fbec"
+      "target": "dfe791e7-d5d7-4e64-904c-de79b3de536d"
     }
   ],
   "status": "live",
-  "subject_id": "49850189-241e-4880-b785-93bab786ac63",
+  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

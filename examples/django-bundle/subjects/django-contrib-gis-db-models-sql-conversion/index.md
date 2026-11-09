@@ -1,8 +1,8 @@
 # django/contrib/gis/db/models/sql/conversion
 
-- Subject: django/contrib/gis/db/models/sql/conversion (id `519d244e-d799-417f-8cdf-8b3a5738106a`)
+- Subject: django/contrib/gis/db/models/sql/conversion (id `46640867-2fa4-455c-a04a-e1b16e7c7c8b`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 636 tokens
 - Facts shown: 14 of 15
 - Conflicts: 0

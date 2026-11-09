@@ -1,6 +1,6 @@
 # Fact b91af303
 
-Store id: 6bc799e3-d53c-4c72-9c08-2ef45cf16ece
+Store id: e85c664e-2650-42e7-a130-02706b07d32d
 
 ## Text
 
@@ -20,7 +20,7 @@ def register_class_lookup(cls, lookup, lookup_name=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.1595920+00:00`
+- posted_at: `2026-11-09T23:32:05.1723500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 393,
     "symbol": "RegisterLookupMixin.register_class_lookup"
   },
-  "id": "6bc799e3-d53c-4c72-9c08-2ef45cf16ece",
+  "id": "e85c664e-2650-42e7-a130-02706b07d32d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.1595920+00:00"
+    "posted_at": "2026-11-09T23:32:05.1723500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "603c3d1b-6618-4a5d-bae9-acb466fba9cc",
+  "subject_id": "4cbcc573-075b-40b3-8121-072d61ba50c0",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin.register_class_lookup",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 77d132b5
 
-Store id: 618114c1-6c03-4ee1-9ab3-29df355e7d15
+Store id: 1c53160d-b54e-43b7-88cf-b21afca8d8fb
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleLessThanOrEqual(TupleLookupMixin, LessThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6245660+00:00`
+- posted_at: `2026-11-09T23:32:00.6135650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 275,
     "symbol": "TupleLessThanOrEqual"
   },
-  "id": "618114c1-6c03-4ee1-9ab3-29df355e7d15",
+  "id": "1c53160d-b54e-43b7-88cf-b21afca8d8fb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6245660+00:00"
+    "posted_at": "2026-11-09T23:32:00.6135650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9290fe3f-767c-4695-ae3b-d614ecc34631",
+  "subject_id": "cab66d07-bb87-489c-a08b-442e730eb777",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLessThanOrEqual",
   "tags": [
     "entity:class"

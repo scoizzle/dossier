@@ -1,6 +1,6 @@
 # Fact edc3e403
 
-Store id: 677719dd-ee77-4fc6-b3f2-63fcb298fc6e
+Store id: 92d885c8-5f0f-4a4a-b514-69f080529303
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function _register_combinable_fields
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7964630+00:00`
+- posted_at: `2026-11-09T23:31:56.0452560+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "677719dd-ee77-4fc6-b3f2-63fcb298fc6e",
+  "id": "92d885c8-5f0f-4a4a-b514-69f080529303",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7964630+00:00"
+    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "_register_combinable_fields"
       },
       "rel": "contains",
-      "target": "cdb69da6-efac-45ff-bc70-f47e8edea265"
+      "target": "e9c1431e-f395-4dce-9e44-4b6509a43f7c"
     }
   ],
   "status": "live",
-  "subject_id": "c73c9fb4-2e38-469b-adb6-39bb26aff37e",
+  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:function"

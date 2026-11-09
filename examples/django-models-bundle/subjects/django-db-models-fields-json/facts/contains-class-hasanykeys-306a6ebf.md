@@ -1,6 +1,6 @@
 # Fact 306a6ebf
 
-Store id: 39408a89-935d-4e47-9599-2c9c399ef724
+Store id: 9efdae1b-7d42-4e05-8e63-d830b8e2d9a1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class HasAnyKeys
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "39408a89-935d-4e47-9599-2c9c399ef724",
+  "id": "9efdae1b-7d42-4e05-8e63-d830b8e2d9a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "HasAnyKeys"
       },
       "rel": "contains",
-      "target": "9355a184-5006-4089-834c-4cc02f9f7112"
+      "target": "d3912e20-8af3-4797-ba9f-04f04330edaf"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

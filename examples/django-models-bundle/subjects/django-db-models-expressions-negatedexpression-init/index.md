@@ -1,9 +1,9 @@
 # django/db/models/expressions::NegatedExpression.__init__
 
-- Subject: django/db/models/expressions::NegatedExpression.__init__ (id `ba710e86-c104-4416-bf4f-f82dd8d1e8ab`)
+- Subject: django/db/models/expressions::NegatedExpression.__init__ (id `0731fdb6-41bb-4c0a-8e41-16b4075bf42d`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 4a25f99e
 
-Store id: c5441d78-91c9-448c-ae84-94a616d4c2d3
+Store id: f73e2bb3-625f-4ee7-a701-f2c92d904fdc
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_namedtuple_class(*names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1328690+00:00`
+- posted_at: `2026-11-09T23:32:07.9166920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 41,
     "symbol": "create_namedtuple_class"
   },
-  "id": "c5441d78-91c9-448c-ae84-94a616d4c2d3",
+  "id": "f73e2bb3-625f-4ee7-a701-f2c92d904fdc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1328690+00:00"
+    "posted_at": "2026-11-09T23:32:07.9166920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a80f91e6-2132-4457-9485-de3d443f89a0",
+  "subject_id": "ea9def74-6e40-46f2-815a-e0c32efaf49f",
   "subject_name": "django/db/models/utils::create_namedtuple_class",
   "tags": [
     "entity:function",

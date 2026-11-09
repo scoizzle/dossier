@@ -1,14 +1,14 @@
 # docs/internals/mailing-lists
 
-- Subject: docs/internals/mailing-lists (id `e5ad5a22-8b34-4a70-a3b1-c871f0bd576a`)
+- Subject: docs/internals/mailing-lists (id `35ed73d8-330b-4c97-b13f-66ead83b495c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 28 of 37
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1123 tokens
+- Facts shown: 36 of 37
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Before asking a question about how to contribute, read :doc:`/internals/contributing/index`. Many frequently asked questions are answered there. [a5621d0b]
 - Please report security issues **only** to ``security@djangoproject.com``. This is a private list only open to long-time, highly trusted Django developers, and its archives are not public. For further details, please see :doc:`our security policies </internals/security>`. [c177c6a0973dc325-2]
@@ -39,6 +39,13 @@
 - Django has an `official Forum`_ where you can input and ask questions. [352950b5]
 - ``django-updates`` ================== [baf6e135]
 
-## Beyond the budget
+## All facts
 
-8 more facts did not fit in the budget: [a1b4f382] [16531e3d] [cdc2e827] [700e54d0] [4f876e46] [08465978] [ca5ca9cc] [bec17d02]
+- [a1b4f382] In addition, Django has several official mailing lists on Google Groups that are open to anyone.
+- [16531e3d] The following mailing lists are archived and no longer active. These are still available as a historical resource.
+- [cdc2e827] There are several categories of discussion including:
+- [700e54d0] This was used for discussions about the development of Django itself.
+- [4f876e46] This was used for questions regarding the installation, usage, or debugging of Django projects.
+- [08465978] ``django-announce`` ===================
+- [ca5ca9cc] ``django-developers`` ---------------------
+- [bec17d02] ``django-users`` ----------------

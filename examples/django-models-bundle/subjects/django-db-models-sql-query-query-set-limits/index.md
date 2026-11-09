@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query.set_limits
 
-- Subject: django/db/models/sql/query::Query.set_limits (id `cb7883cc-6eeb-4c0f-a5b4-14d9319e2b79`)
+- Subject: django/db/models/sql/query::Query.set_limits (id `f83b2942-824d-4461-9ec0-b15458bd4968`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

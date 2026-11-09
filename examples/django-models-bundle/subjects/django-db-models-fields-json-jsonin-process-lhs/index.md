@@ -1,9 +1,9 @@
 # django/db/models/fields/json::JSONIn.process_lhs
 
-- Subject: django/db/models/fields/json::JSONIn.process_lhs (id `691641a3-e3f3-45e3-949c-8de4f75aaca5`)
+- Subject: django/db/models/fields/json::JSONIn.process_lhs (id `c82eb7b7-eb00-4067-aeb0-7bb512bac6e2`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

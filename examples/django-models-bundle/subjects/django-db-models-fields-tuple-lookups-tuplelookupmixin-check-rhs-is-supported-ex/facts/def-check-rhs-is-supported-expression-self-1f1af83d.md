@@ -1,6 +1,6 @@
 # Fact 1f1af83d
 
-Store id: fd5fefab-94dd-4e7d-bb96-d30aeff40905
+Store id: 53341523-1e11-4cfa-98cb-633fc0dbb77c
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rhs_is_supported_expression(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.5653510+00:00`
+- posted_at: `2026-11-09T23:32:00.5498680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 77,
     "symbol": "TupleLookupMixin.check_rhs_is_supported_expression"
   },
-  "id": "fd5fefab-94dd-4e7d-bb96-d30aeff40905",
+  "id": "53341523-1e11-4cfa-98cb-633fc0dbb77c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.5653510+00:00"
+    "posted_at": "2026-11-09T23:32:00.5498680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b6c66a7-7129-4417-8c6c-c1bd75aed6fc",
+  "subject_id": "80807c89-9834-4c1d-8546-efb8aeccab48",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.check_rhs_is_supported_expression",
   "tags": [
     "entity:method"

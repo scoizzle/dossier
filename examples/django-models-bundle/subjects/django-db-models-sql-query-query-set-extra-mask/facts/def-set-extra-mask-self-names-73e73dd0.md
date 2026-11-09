@@ -1,6 +1,6 @@
 # Fact 73e73dd0
 
-Store id: 71da9d29-0a74-4c90-a590-11c7512aae9d
+Store id: 6549b68b-0a60-4382-bec0-0d2ab598f603
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_extra_mask(self, names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.5324550+00:00`
+- posted_at: `2026-11-09T23:32:07.1230800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2572,
     "symbol": "Query.set_extra_mask"
   },
-  "id": "71da9d29-0a74-4c90-a590-11c7512aae9d",
+  "id": "6549b68b-0a60-4382-bec0-0d2ab598f603",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.5324550+00:00"
+    "posted_at": "2026-11-09T23:32:07.1230800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79002478-ad79-4baf-9854-e1356fc10b42",
+  "subject_id": "0eb24bd7-bfc5-4818-87a2-9e272aaaa819",
   "subject_name": "django/db/models/sql/query::Query.set_extra_mask",
   "tags": [
     "entity:method"

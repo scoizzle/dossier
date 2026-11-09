@@ -1,9 +1,9 @@
 # django/db/models/query_utils::FilteredRelation.__eq__
 
-- Subject: django/db/models/query_utils::FilteredRelation.__eq__ (id `b9c79c3a-ab55-4b1e-ab06-32a5d834ec73`)
+- Subject: django/db/models/query_utils::FilteredRelation.__eq__ (id `deb6ace5-4fe4-45e8-aa03-e890323b590d`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

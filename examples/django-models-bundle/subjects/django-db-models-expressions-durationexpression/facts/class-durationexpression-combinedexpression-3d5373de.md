@@ -1,6 +1,6 @@
 # Fact 3d5373de
 
-Store id: 07ba81b3-5ca5-430a-8a4f-6ce0b92feff6
+Store id: 4b791bf6-2daa-4f22-8215-3877b515b75a
 
 ## Text
 
@@ -20,7 +20,7 @@ class DurationExpression(CombinedExpression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5512940+00:00`
+- posted_at: `2026-11-09T23:31:55.8209530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 815,
     "symbol": "DurationExpression"
   },
-  "id": "07ba81b3-5ca5-430a-8a4f-6ce0b92feff6",
+  "id": "4b791bf6-2daa-4f22-8215-3877b515b75a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5512940+00:00"
+    "posted_at": "2026-11-09T23:31:55.8209530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d2079e24-0502-41e9-bd72-484a8f544c01",
+  "subject_id": "3d9d6d5c-4241-4517-b9f3-da11d9791830",
   "subject_name": "django/db/models/expressions::DurationExpression",
   "tags": [
     "entity:class"

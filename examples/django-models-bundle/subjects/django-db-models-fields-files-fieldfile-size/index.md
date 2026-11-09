@@ -1,9 +1,9 @@
 # django/db/models/fields/files::FieldFile.size
 
-- Subject: django/db/models/fields/files::FieldFile.size (id `be1aaff1-ee00-4424-adf9-91334ef356f6`)
+- Subject: django/db/models/fields/files::FieldFile.size (id `84099744-5673-4278-a261-d5fd00f751cc`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

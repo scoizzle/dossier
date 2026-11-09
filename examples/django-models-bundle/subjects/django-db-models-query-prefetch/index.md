@@ -1,9 +1,9 @@
 # django/db/models/query::Prefetch
 
-- Subject: django/db/models/query::Prefetch (id `e0ac7d28-49f6-491d-8f7b-de77d0ade658`)
+- Subject: django/db/models/query::Prefetch (id `09748518-8783-4c23-ac00-1d73ba872f21`)
 - Kind: class
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

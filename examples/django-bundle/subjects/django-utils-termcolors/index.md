@@ -1,14 +1,14 @@
 # django/utils/termcolors
 
-- Subject: django/utils/termcolors (id `71871fc1-8bcd-4e77-bfc6-3a6d218fa67c`)
+- Subject: django/utils/termcolors (id `9e3c4618-8799-416b-9322-9ab62696948f`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 893 tokens
-- Facts shown: 17 of 28
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1773 tokens
+- Facts shown: 27 of 28
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # All remaining instructions are options opts = tuple(s for s in styles if s in opt_dict) if opts: definition["opts"] = opts [d6c7935d]
 - # Break the definition into the role, # plus the list of specific instructions. # The role must be in upper case role, instructions = part.split("=") role = role.upper() [ec5ec637]
@@ -28,6 +28,15 @@
 - Valid options: 'bold' 'underscore' 'blink' 'reverse' 'conceal' 'noreset' - string will not be auto-terminated with the RESET code [174ce8f1]
 - """ termcolors.py """ [b7bff268]
 
-## Beyond the budget
+## All facts
 
-10 more facts did not fit in the budget: [76feda56] [cfc6abb7] [bbb6e5de] [ad77554d] [17342d91] [25cb4559] [2ca1518b] [deb0321d] [0b33cf81] [9a029e01]
+- [76feda56] Valid options: 'bold', 'underscore', 'blink', 'reverse', 'conceal', 'noreset' """ if not config_string: return PALETTES[DEFAULT_PALETTE]
+- [cfc6abb7] Valid roles: 'error', 'success', 'warning', 'notice', 'sql_field', 'sql_coltype', 'sql_keyword', 'sql_table', 'http_info', 'http_success', 'http_redirect', 'http_not_modified', 'http_bad_request', 'http_not_found', 'http_server_error', 'migrate_heading', 'migrate_label'
+- [bbb6e5de] where: palette is a named palette; one of 'light', 'dark', or 'nocolor'. role is a named style used by Django fg is a foreground color. bg is a background color. option is a display options.
+- [ad77554d] NOCOLOR_PALETTE = "nocolor" DARK_PALETTE = "dark" LIGHT_PALETTE = "light"
+- [17342d91] PALETTES = { NOCOLOR_PALETTE: { "ERROR": {}, "SUCCESS": {}, "WARNING": {}, "NOTICE": {}, "SQL_FIELD": {}, "SQL_COLTYPE": {}, "SQL_KEYWORD": {}, "SQL_TABLE": {}, "HTTP_INFO": {}, "HTTP_SUCCESS": {}, "HTTP_REDIRECT": {}, "HTTP_NOT_MODIFIED": {}, "HTTP_BAD_REQUEST": {}, "HTTP_NOT_FOUND": {}, "HTTP_SERVER_ERROR": {}, "MIGRATE_HEADING": {}, "MIGRATE_LABEL": {}, }, DARK_PALETTE: { "ERROR": {"fg": "red", "opts": ("bold",)}, "SUCCESS": {"fg": "green", "opts": ("bold",)}, "WARNING": {"fg": "yellow", "opts": ("bold",)}, "NOTICE": {"fg": "red"}, "SQL_FIELD": {"fg": "green", "opts": ("bold",)}, "SQL_COLTYPE": {"fg": "green"}, "SQL_KEYWORD": {"fg": "yellow"}, "SQL_TABLE": {"opts": ("bold",)}, "HTTP_INFO": {"opts": ("bold",)}, "HTTP_SUCCESS": {}, "HTTP_REDIRECT": {"fg": "green"}, "HTTP_NOT_MODIFIED": {"fg": "cyan"}, "HTTP_BAD_REQUEST": {"fg": "red", "opts": ("bold",)}, "HTTP_NOT_FOUND": {"fg": "yellow"}, "HTTP_SERVER_ERROR": {"fg": "magenta", "opts": ("bold",)}, "MIGRATE_HEADING": {"fg": "cyan", "opts": ("bold",)}, "MIGRATE_LABEL": {"opts": ("bold",)}, }, LIGHT_PALETTE: { "ERROR": {"fg": "red", "opts": ("bold",)}, "SUCCESS": {"fg": "green", "opts": ("bold",)}, "WARNING": {"fg": "yellow", "opts": ("bold",)}, "NOTICE": {"fg": "red"}, "SQL_FIELD": {"fg": "green", "opts": ("bold",)}, "SQL_COLTYPE": {"fg": "green"}, "SQL_KEYWORD": {"fg": "blue"}, "SQL_TABLE": {"opts": ("bold",)}, "HTTP_INFO": {"opts": ("bold",)}, "HTTP_SUCCESS": {}, "HTTP_REDIRECT": {"fg": "green", "opts": ("bold",)}, "HTTP_NOT_MODIFIED": {"fg": "green"}, "HTTP_BAD_REQUEST": {"fg": "red", "opts": ("bold",)}, "HTTP_NOT_FOUND": {"fg": "red"}, "HTTP_SERVER_ERROR": {"fg": "magenta", "opts": ("bold",)}, "MIGRATE_HEADING": {"fg": "cyan", "opts": ("bold",)}, "MIGRATE_LABEL": {"opts": ("bold",)}, }, } DEFAULT_PALETTE = DARK_PALETTE
+- [25cb4559] RESET = "0" opt_dict = { "bold": "1", "underscore": "4", "blink": "5", "reverse": "7", "conceal": "8", }
+- [2ca1518b] color_names = ("black", "red", "green", "yellow", "blue", "magenta", "cyan", "white") foreground = {color_names[x]: "3%s" % x for x in range(8)} background = {color_names[x]: "4%s" % x for x in range(8)}
+- [deb0321d] def colorize(text="", opts=(), **kwargs): """ Return your text, enclosed in ANSI graphics codes.
+- [0b33cf81] def make_style(opts=(), **kwargs): """ Return a function with default parameters for colorize()
+- [9a029e01] def parse_color_setting(config_string): """Parse a DJANGO_COLORS environment variable to produce the system palette

@@ -1,6 +1,6 @@
 # Fact 1f25260f
 
-Store id: 69f9bb72-114b-487e-a812-91ebeb7e2540
+Store id: 5e6d94c2-9b2b-4739-995e-1413724eb6d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rhs_is_query(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6388250+00:00`
+- posted_at: `2026-11-09T23:32:00.6338560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 332,
     "symbol": "TupleIn.check_rhs_is_query"
   },
-  "id": "69f9bb72-114b-487e-a812-91ebeb7e2540",
+  "id": "5e6d94c2-9b2b-4739-995e-1413724eb6d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6388250+00:00"
+    "posted_at": "2026-11-09T23:32:00.6338560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "21acfc60-44d0-470d-99fd-d9776a99ea5d",
+  "subject_id": "c0e48b4c-ce3a-4a53-8a93-0c32805aa28c",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query",
   "tags": [
     "entity:method"

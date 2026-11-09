@@ -1,6 +1,6 @@
 # Fact ce61045c
 
-Store id: e7648b1d-d8cc-402d-a65d-471263233a49
+Store id: 6e12a30b-02c4-4bcd-9de3-58133cb66b74
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDEndsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e7648b1d-d8cc-402d-a65d-471263233a49",
+  "id": "6e12a30b-02c4-4bcd-9de3-58133cb66b74",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDEndsWith"
       },
       "rel": "contains",
-      "target": "761dca5e-abf4-4260-9c44-4bc91e996bb7"
+      "target": "b487eb1d-1383-48f1-85a5-5e9465ebad46"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

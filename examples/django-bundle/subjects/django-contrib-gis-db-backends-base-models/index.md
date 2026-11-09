@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/base/models
 
-- Subject: django/contrib/gis/db/backends/base/models (id `ebe7c8fb-7e39-432c-9336-7115a0297235`)
+- Subject: django/contrib/gis/db/backends/base/models (id `567482cd-5b42-4194-995c-8cbdb535d0f2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 876 tokens
-- Facts shown: 19 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 909 tokens
+- Facts shown: 20 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - if not string: return sphere_name, sphere_params else: # `string` parameter used to place in format acceptable by PostGIS if len(sphere_params) == 3: radius, flattening = sphere_params[0], sphere_params[2] else: radius, flattening = sphere_params return 'SPHEROID["%s",%s,%s]' % (sphere_name, radius, flattening) [215ed0e0]
 - raise Exception( "Could not get OSR SpatialReference.\n" f"Error for WKT '{self.wkt}': {wkt_error}\n" f"Error for PROJ.4 '{self.proj4text}': {proj4_error}" ) [a5b3f0cc]
@@ -30,6 +30,6 @@
 - def __str__(self): """ Return the string representation, a 'pretty' OGC WKT. """ return str(self.srs) [3c1e3087]
 - class SpatialRefSysMixin: """ The SpatialRefSysMixin is a class used by the database-dependent SpatialRefSys objects to reduce redundant code. """ [24595224]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [91ab5492]
+- [91ab5492] from django.contrib.gis import gdal from django.utils.functional import cached_property

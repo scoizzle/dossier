@@ -1,14 +1,14 @@
 # docs/intro/overview
 
-- Subject: docs/intro/overview (id `a0272db1-5ac2-443d-b903-4bf978d35ca7`)
+- Subject: docs/intro/overview (id `64d275f5-570c-4651-95f6-67f0974187a0`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 24 of 92
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3936 tokens
+- Facts shown: 89 of 92
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - def __str__(self): return self.full_name [357f8731]
 - def __str__(self): return self.headline [da572ff3]
@@ -35,6 +35,70 @@
 - from . import models [628b8592]
 - from . import views [c00926fe3424edad]
 
-## Beyond the budget
+## All facts
 
-65 more facts did not fit in the budget: [f1559cb2] [13fbe7fc2a5a9c75] [4af926756c29efa6-5] [f3bb80f2b2fd7f5d-2] [c537d1941a7e3025] [5e8730b8] [7c481acd] [1ebc1c73] [0a6c70ed0cb3c3fb-5] [69d10c0e] [f9390803] [d563f3cc] [6f5e47ec] [fabbc27a] [06d6609f] [aff96a88] [402439f4] [8d3fee85] [eaf050be34acb41d-6] [b2dc06ee] [3af9e285bc17d457] [402a0e9b] [3be1659cdc78684b] [7714e199aac2701e-65] [64c7e504] [116b4a95] [0bd04867] [c01681cd] [180a0d47] [f257df38] [6b04596d] [02c09188] [59479c0d] [ae10edcf] [3a2e0913] [253dcf8b] [2d6c4f0f] [ce64428b] [a69cb078] [988590fe] [ee91d398] [8648d194] [0e0fec80] [17ec420a] [14e379b5] [8e5e38a5] [f77b7199] [d20327d7] [b8eff2e8] [3ce6db98] [a7cc207c] [86eb2219] [7bf37223] [a7dcd7a3] [bd4a80b6] [e9ba301e] [709ec45f] [7b46609a] [49e8c5de] [1d6b4fd1] [3a4d9d3c] [91d1b17f] [5d4db016] [09166433] [cf6e69c1]
+- [f1559cb2] from .models import Article
+- [13fbe7fc2a5a9c75] from django.contrib import admin
+- [4af926756c29efa6-5] from django.db import models
+- [f3bb80f2b2fd7f5d-2] from django.shortcuts import render
+- [c537d1941a7e3025] from django.urls import path
+- [5e8730b8] urlpatterns = [ path("articles/<int:year>/", views.year_archive), path("articles/<int:year>/<int:month>/", views.month_archive), path("articles/<int:year>/<int:month>/<int:pk>/", views.article_detail), ]
+- [7c481acd] {% block content %} <h1>Articles for {{ year }}</h1>
+- [1ebc1c73] {% block title %}Articles for {{ year }}{% endblock %}
+- [0a6c70ed0cb3c3fb-5] {% extends "base.html" %}
+- [69d10c0e] {% for article in article_list %} <p>{{ article.headline }}</p> <p>By {{ article.reporter.full_name }}</p> <p>Published {{ article.pub_date|date:"F j, Y" }}</p> {% endfor %} {% endblock %}
+- [f9390803] {% load static %} <html lang="en"> <head> <title>{% block title %}{% endblock %}</title> </head> <body> <img src="{% static 'images/sitelogo.png' %}" alt="Logo"> {% block content %}{% endblock %} </body> </html>
+- [d563f3cc] * A :doc:`caching framework </topics/cache>` that integrates with memcached or other backends.
+- [6f5e47ec] * A :doc:`syndication framework </ref/contrib/syndication>` that lets you create RSS and Atom feeds by writing a small Python class.
+- [fabbc27a] * More attractive automatically-generated admin features -- this overview barely scratched the surface.
+- [06d6609f] .. _download Django: https://www.djangoproject.com/download/ .. _the community: https://www.djangoproject.com/community/
+- [aff96a88] .. _object-relational mapper: https://en.wikipedia.org/wiki/Object-relational_mapping
+- [402439f4] .. code-block:: html+django :caption: ``news/templates/news/year_archive.html``
+- [8d3fee85] .. code-block:: html+django :caption: ``templates/base.html``
+- [eaf050be34acb41d-6] .. code-block:: pycon
+- [b2dc06ee] .. code-block:: python :caption: ``news/admin.py``
+- [3af9e285bc17d457] .. code-block:: python :caption: ``news/models.py``
+- [402a0e9b] .. code-block:: python :caption: ``news/urls.py``
+- [3be1659cdc78684b] .. code-block:: python :caption: ``news/views.py``
+- [7714e199aac2701e-65] .. console::
+- [64c7e504] ================== Django at a glance ==================
+- [116b4a95] A clean, elegant URL scheme is an important detail in a high-quality web application. Django encourages beautiful URL design and doesn't put any cruft in URLs, like ``.php`` or ``.asp``.
+- [0bd04867] A dynamic admin interface: it's not just scaffolding -- it's the whole house ============================================================================
+- [c01681cd] Although you can use Django without a database, it comes with an `object-relational mapper`_ in which you describe your database layout in Python code.
+- [180a0d47] Because Django was developed in a fast-paced newsroom environment, it was designed to make common web development tasks fast and easy. Here's an informal overview of how to write a database-driven web app with Django.
+- [f257df38] Design your URLs ================
+- [6b04596d] Design your model =================
+- [02c09188] Design your templates =====================
+- [59479c0d] Django has a template search path, which allows you to minimize redundancy among templates. In your Django settings, you specify a list of directories to check for templates with :setting:`DIRS <TEMPLATES-DIRS>`. If a template doesn't exist in the first directory, it checks the second, and so on.
+- [ae10edcf] Each view is responsible for doing one of two things: Returning an :class:`~django.http.HttpResponse` object containing the content for the requested page, or raising an exception such as :class:`~django.http.Http404`. The rest is up to you.
+- [3a2e0913] Enjoy the free API ==================
+- [253dcf8b] Finally, Django uses the concept of "template inheritance". That's what the ``{% extends "base.html" %}`` does. It means "First load the template called 'base', which has defined a bunch of blocks, and fill the blocks with the following blocks." In short, that lets you dramatically cut down on redundancy in templates: each template has to define only what's unique to that template.
+- [2d6c4f0f] For example, if a user requested the URL "/articles/2005/05/39323/", Django would call the function ``news.views.article_detail(request, year=2005, month=5, pk=39323)``.
+- [ce64428b] Generally, a view retrieves data according to the parameters, loads a template and renders the template with the retrieved data. Here's an example view for ``year_archive`` from above:
+- [a69cb078] Here's what a URLconf might look like for the ``Reporter``/``Article`` example above:
+- [988590fe] Here's what the "base.html" template, including the use of :doc:`static files </howto/static-files/index>`, might look like:
+- [ee91d398] Install it ==========
+- [8648d194] It also lets you create multiple versions of a site, with different base templates, while reusing child templates. Django's creators have used this technique to create strikingly different mobile versions of sites by only creating a new base template.
+- [0e0fec80] Let's say the ``news/year_archive.html`` template was found. Here's what that might look like:
+- [17ec420a] Next, run the Django command-line utilities to create the database tables automatically:
+- [14e379b5] Note ``{{ article.pub_date|date:"F j, Y" }}`` uses a Unix-style "pipe" (the "|" character). This is called a template filter, and it's a way to filter the value of a variable. In this case, the date filter formats a Python datetime object in the given format (as found in PHP's date function).
+- [8e5e38a5] Note that you don't have to use Django's template system if you prefer another system. While Django's template system is particularly well-integrated with Django's model layer, nothing forces you to use it. For that matter, you don't have to use Django's database API, either. You can use another database abstraction layer, you can read XML files, you can read files off disk, or anything you want. Each piece of Django -- models, views, templates -- is decoupled from the next.
+- [f77b7199] Once one of the URL patterns matches, Django calls the given view, which is a Python function. Each view gets passed a request object -- which contains request metadata -- and the values captured in the pattern.
+- [d20327d7] Once your models are defined, Django can automatically create a professional, production ready :doc:`administrative interface </ref/contrib/admin/index>` -- a website that lets authenticated users add, change and delete objects. The only step required is to register your model in the admin site:
+- [b8eff2e8] One typical workflow in creating Django apps is to create models and get the admin sites up and running as fast as possible, so your staff (or clients) can start populating data. Then, develop the way data is presented to the public.
+- [3ce6db98] Simplistically, it defines the look-and-feel of the site (with the site's logo), and provides "holes" for child templates to fill. This means that a site redesign can be done by changing a single file -- the base template.
+- [a7cc207c] The :djadmin:`makemigrations` command looks at all your available models and creates migrations for whichever tables don't already exist. :djadmin:`migrate` runs the migrations and creates tables in your database, as well as optionally providing :doc:`much richer schema control </topics/migrations>`.
+- [86eb2219] The :doc:`data-model syntax </topics/db/models>` offers many rich ways of representing your models -- so far, it's been solving many years' worth of database-schema problems. Here's a quick example:
+- [7bf37223] The code above loads the ``news/year_archive.html`` template.
+- [a7dcd7a3] The code above maps URL paths to Python callback functions ("views"). The path strings use parameter tags to "capture" values from the URLs. When a user requests a page, Django runs through each path, in order, and stops at the first one that matches the requested URL. (If none of them matches, Django calls a special-case 404 view.) This is blazingly fast, because the paths are compiled into regular expressions at load time.
+- [bd4a80b6] The goal of this document is to give you enough technical specifics to understand how Django works, but this isn't intended to be a tutorial or reference -- but we've got both! When you're ready to start a project, you can :doc:`start with the tutorial </intro/tutorial01>` or :doc:`dive right into more detailed documentation </topics/index>`.
+- [e9ba301e] The next steps are for you to `download Django`_, read :doc:`the tutorial </intro/tutorial01>` and join `the community`_. Thanks for your interest!
+- [709ec45f] The philosophy here is that your site is edited by a staff, or a client, or maybe just you -- and you don't want to have to deal with creating backend interfaces only to manage content.
+- [7b46609a] This example uses Django's :doc:`template system </topics/templates>`, which has several powerful features but strives to stay simple enough for non-programmers to use.
+- [49e8c5de] This has been only a quick overview of Django's functionality. Some more useful features:
+- [1d6b4fd1] This is just the surface ========================
+- [3a4d9d3c] To design URLs for an app, you create a Python module called a :doc:`URLconf </topics/http/urls>`. A table of contents for your app, it contains a mapping between URL patterns and Python callback functions. URLconfs also serve to decouple URLs from Python code.
+- [91d1b17f] Variables are surrounded by double-curly braces. ``{{ article.headline }}`` means "Output the value of the article's headline attribute." But dots aren't used only for attribute lookup. They also can do dictionary-key lookup, index lookup and function calls.
+- [5d4db016] With that, you've got a free, and rich, :doc:`Python API </topics/db/queries>` to access your data. The API is created on the fly, no code generation necessary:
+- [09166433] Write your views ================
+- [cf6e69c1] You can chain together as many filters as you'd like. You can write :ref:`custom template filters <howto-writing-custom-template-filters>`. You can write :doc:`custom template tags </howto/custom-template-tags>`, which run custom Python code behind the scenes.

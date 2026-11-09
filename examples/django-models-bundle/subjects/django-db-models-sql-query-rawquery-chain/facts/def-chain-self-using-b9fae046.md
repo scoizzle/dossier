@@ -1,6 +1,6 @@
 # Fact b9fae046
 
-Store id: 5e0d2f0d-94f1-4ddf-9cc2-e48b4045dd0f
+Store id: 6fd3f3ab-8aa7-431d-bf6a-4d016739ed59
 
 ## Text
 
@@ -20,7 +20,7 @@ def chain(self, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1893820+00:00`
+- posted_at: `2026-11-09T23:32:06.7059470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 170,
     "symbol": "RawQuery.chain"
   },
-  "id": "5e0d2f0d-94f1-4ddf-9cc2-e48b4045dd0f",
+  "id": "6fd3f3ab-8aa7-431d-bf6a-4d016739ed59",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1893820+00:00"
+    "posted_at": "2026-11-09T23:32:06.7059470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8b9541e5-49d3-4610-bb34-bc8e54316b77",
+  "subject_id": "5c10914f-b1e7-4c96-95bf-b09170786430",
   "subject_name": "django/db/models/sql/query::RawQuery.chain",
   "tags": [
     "entity:method"

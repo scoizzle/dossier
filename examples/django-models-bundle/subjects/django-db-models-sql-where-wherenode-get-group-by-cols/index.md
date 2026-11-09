@@ -1,9 +1,9 @@
 # django/db/models/sql/where::WhereNode.get_group_by_cols
 
-- Subject: django/db/models/sql/where::WhereNode.get_group_by_cols (id `39befe6f-c586-4a72-8459-ccdd68e05f1e`)
+- Subject: django/db/models/sql/where::WhereNode.get_group_by_cols (id `cdbb36e1-17a2-4c46-a8ae-c95fafd96241`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

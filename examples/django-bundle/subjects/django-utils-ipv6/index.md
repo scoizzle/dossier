@@ -1,8 +1,8 @@
 # django/utils/ipv6
 
-- Subject: django/utils/ipv6 (id `dc30420d-da6e-4023-a420-a17d256b9215`)
+- Subject: django/utils/ipv6 (id `df5a4a54-6969-47ba-8d73-d5afd0e867a1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 521 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

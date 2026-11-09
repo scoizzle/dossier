@@ -1,6 +1,6 @@
 # Fact d529a804
 
-Store id: 9a4e3794-d483-46b1-ae1d-73943fc96e83
+Store id: 45d7295f-6fd1-452b-83b0-083e039ac6ad
 
 ## Text
 
@@ -20,7 +20,7 @@ class Rank(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.6041490+00:00`
+- posted_at: `2026-11-09T23:32:02.7329610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 111,
     "symbol": "Rank"
   },
-  "id": "9a4e3794-d483-46b1-ae1d-73943fc96e83",
+  "id": "45d7295f-6fd1-452b-83b0-083e039ac6ad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.6041490+00:00"
+    "posted_at": "2026-11-09T23:32:02.7329610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5064388b-97bf-4809-9d78-866df62bb26d",
+  "subject_id": "5c09ad3d-a74b-4ce8-a481-4bfeadd8a303",
   "subject_name": "django/db/models/functions/window::Rank",
   "tags": [
     "entity:class"

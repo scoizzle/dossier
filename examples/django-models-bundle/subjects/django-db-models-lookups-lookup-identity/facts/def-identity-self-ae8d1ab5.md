@@ -1,6 +1,6 @@
 # Fact ae8d1ab5
 
-Store id: 49d30019-a885-44de-98c2-24fcaf514bdc
+Store id: 5c13a120-c52d-4f44-bf72-1ccdcbc95883
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0326210+00:00`
+- posted_at: `2026-11-09T23:32:03.1786560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 172,
     "symbol": "Lookup.identity"
   },
-  "id": "49d30019-a885-44de-98c2-24fcaf514bdc",
+  "id": "5c13a120-c52d-4f44-bf72-1ccdcbc95883",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0326210+00:00"
+    "posted_at": "2026-11-09T23:32:03.1786560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1334a41-0368-4c74-aaec-a2c2c2cdf684",
+  "subject_id": "50f2984a-9944-4a2e-bcdc-1e59843132e5",
   "subject_name": "django/db/models/lookups::Lookup.identity",
   "tags": [
     "entity:method",

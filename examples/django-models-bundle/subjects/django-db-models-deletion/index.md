@@ -1,8 +1,8 @@
 # django/db/models/deletion
 
-- Subject: django/db/models/deletion (id `9dd01ff9-dc4a-434f-bc10-89b57d3d6bb3`)
+- Subject: django/db/models/deletion (id `c6ec8df1-dcd1-4e95-abda-df3f68ba6875`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 216 tokens
 - Facts shown: 12 of 12
 - Conflicts: 0

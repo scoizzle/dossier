@@ -1,8 +1,8 @@
 # docs/ref/contrib/postgres/index
 
-- Subject: docs/ref/contrib/postgres/index (id `42d91787-f977-4700-bc46-f684de5f4c84`)
+- Subject: docs/ref/contrib/postgres/index (id `0e5654fc-d216-455c-ba09-4372a72fe6c8`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 407 tokens
 - Facts shown: 7 of 7
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 3ca6425c
 
-Store id: f3750714-6ec7-4a19-879c-d949b3937f26
+Store id: fc8da280-a592-418e-8e6f-193327219d69
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4996350+00:00`
+- posted_at: `2026-11-09T23:31:55.7576870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 193,
     "symbol": "BaseExpression.__init__"
   },
-  "id": "f3750714-6ec7-4a19-879c-d949b3937f26",
+  "id": "fc8da280-a592-418e-8e6f-193327219d69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4996350+00:00"
+    "posted_at": "2026-11-09T23:31:55.7576870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36a5c831-9fdc-443f-9deb-1f1b69245ce5",
+  "subject_id": "982dc508-2d04-4f97-9e31-01240d994b49",
   "subject_name": "django/db/models/expressions::BaseExpression.__init__",
   "tags": [
     "entity:method"

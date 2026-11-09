@@ -1,6 +1,6 @@
 # Fact 744d7d2b
 
-Store id: 82362d7e-c80c-42a4-b67f-cdebe6d12968
+Store id: 8a10c157-062c-427e-807e-670e2cb2be4e
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_ordering(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3636220+00:00`
+- posted_at: `2026-11-09T23:31:53.7683290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2285,
     "symbol": "Model._check_ordering"
   },
-  "id": "82362d7e-c80c-42a4-b67f-cdebe6d12968",
+  "id": "8a10c157-062c-427e-807e-670e2cb2be4e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3636220+00:00"
+    "posted_at": "2026-11-09T23:31:53.7683290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07afefd3-68ec-47c7-8d03-a7d81170002a",
+  "subject_id": "66a8bdea-5412-47f8-8281-a80048f003c1",
   "subject_name": "django/db/models/base::Model._check_ordering",
   "tags": [
     "entity:class_method",

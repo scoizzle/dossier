@@ -1,6 +1,6 @@
 # Fact 2dac24f3
 
-Store id: bfabfc11-6d9c-4a24-baa7-a73b3182fa47
+Store id: 220c5398-850d-48c0-bf85-d20e37749ad4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class EmptyQuerySet
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9155620+00:00`
+- posted_at: `2026-11-09T23:32:04.8716240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bfabfc11-6d9c-4a24-baa7-a73b3182fa47",
+  "id": "220c5398-850d-48c0-bf85-d20e37749ad4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9155620+00:00"
+    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "EmptyQuerySet"
       },
       "rel": "contains",
-      "target": "9184f5a0-d0f2-4f9f-8274-7b08643a55a8"
+      "target": "a7a5e963-fe31-4d35-9f2e-0f6f819923bf"
     }
   ],
   "status": "live",
-  "subject_id": "8760e773-b477-4dc2-a0d3-b24b429fa7ec",
+  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

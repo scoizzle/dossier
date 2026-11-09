@@ -1,6 +1,6 @@
 # Fact 929b68cc
 
-Store id: 4a27f685-fea4-4871-868a-19d8323305f1
+Store id: d2616311-612d-4d60-bea3-250df6633c78
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.6036600+00:00`
+- posted_at: `2026-11-09T23:32:00.5943780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 180,
     "symbol": "TupleIsNull.as_sql"
   },
-  "id": "4a27f685-fea4-4871-868a-19d8323305f1",
+  "id": "d2616311-612d-4d60-bea3-250df6633c78",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.6036600+00:00"
+    "posted_at": "2026-11-09T23:32:00.5943780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7485adc-2936-49a6-9c9b-16fe7172b030",
+  "subject_id": "a38544de-238f-4d60-b3af-b3f0437bb921",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIsNull.as_sql",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/fetch_modes::FetchOne
 
-- Subject: django/db/models/fetch_modes::FetchOne (id `6b7685c8-f42b-4f63-b9d8-ce96a11711ae`)
+- Subject: django/db/models/fetch_modes::FetchOne (id `b110837e-8b78-4eb2-b7f7-241bc738dd03`)
 - Kind: class
 - Parent: [django/db/models/fetch_modes](../django-db-models-fetch-modes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

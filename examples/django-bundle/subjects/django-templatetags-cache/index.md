@@ -1,8 +1,8 @@
 # django/templatetags/cache
 
-- Subject: django/templatetags/cache (id `f8eba4be-4cec-47a6-acc6-31289437df33`)
+- Subject: django/templatetags/cache (id `2d047d95-7922-46aa-a7cc-644f5527b1bb`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 834 tokens
 - Facts shown: 13 of 13
 - Conflicts: 0

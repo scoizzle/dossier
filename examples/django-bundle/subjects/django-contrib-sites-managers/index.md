@@ -1,8 +1,8 @@
 # django/contrib/sites/managers
 
-- Subject: django/contrib/sites/managers (id `e9d278c6-c5bd-4827-a5d6-77b1e47aa218`)
+- Subject: django/contrib/sites/managers (id `e47f5cd5-a6f3-4ead-96b1-5abdd93a4670`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 469 tokens
 - Facts shown: 11 of 11
 - Conflicts: 0

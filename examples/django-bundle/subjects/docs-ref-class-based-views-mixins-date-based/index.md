@@ -1,14 +1,14 @@
 # docs/ref/class-based-views/mixins-date-based
 
-- Subject: docs/ref/class-based-views/mixins-date-based (id `068bbf6d-acdf-48df-bfca-e132cde9e265`)
+- Subject: docs/ref/class-based-views/mixins-date-based (id `aa2b4a75-4e98-4c85-8567-37845469ce31`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 19 of 112
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3019 tokens
+- Facts shown: 97 of 112
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - In this situation, if you have implemented per-user time zone selection, the same URL may show a different set of objects, depending on the end user's time zone. To avoid this, you should use a ``DateField`` as the ``date_field`` attribute. [a05a8c36]
 - * The value of the :attr:`DayMixin.day` attribute. * The value of the ``day`` argument captured in the URL pattern. * The value of the ``day`` ``GET`` query argument. [e81d65b8]
@@ -30,6 +30,83 @@
 - Returns a date object containing the previous valid day. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`. [145519d3]
 - Returns the day for which this view will display data, as a string. Tries the following sources, in order: [98454f80]
 
-## Beyond the budget
+## All facts
 
-78 more facts did not fit in the budget: [9e8b8188] [02d6bc8e] [9b9110d4] [5147bf3d] [ab7d287a] [e52917bb] [d3db864f] [ed608513] [75438356] [bd815fec] [ac37cc27] [9b1d9037] [01fa32a4] [9629ed42] [4ee73b0b] [292d40c4] [984a23ca] [83eda2cf63eef8ea] [83eda2cf63eef8ea-2] [83eda2cf63eef8ea-3] [83eda2cf63eef8ea-4] [83eda2cf63eef8ea-5] [83eda2cf63eef8ea-6] [77f7bed952734363] [e7b6c80190b0dbd9] [7b775eb7] [2765e60e] [b8bb49a1] [1149e08c] [5ef307c2] [1cab55ad] [ef774139] [174a0115] [b59c156c] [93b5c25e] [eb54d4ab] [a4e68e27] [620fe5f1] [cce0e102] [44ffb697] [ac323331] [14a01744] [7d455677] [1e3850b1] [a4eb91b3] [6a34911f] [a3fb3184] [c058f21e] [9804991b] [2031efcd] [261dacaf] [7bfdd666] [981600d6] [5ec4a928] [108aa9b1] [a7217553] [f8df0166] [2db3cc59] [673dfbb9] [065c8eb2] [eaa7b735] [4230afd9] [4ce5c9da] [8b492c29] [db1a35fd] [286592d5] [2b07dafd] [c51c6bcd] [8b63a262] [f2271ab6] [942ae6c11625c81c-27] [70b2d8b4] [7a8e9186] [7c5ba0b0] [378e40ee] [a8e28f39] [bdaf7511] [e05c3f49]
+- [9e8b8188] Returns a queryset, filtered using the query arguments defined by ``lookup``. Enforces any restrictions on the queryset, such as ``allow_empty`` and ``allow_future``.
+- [02d6bc8e] Returns the :func:`~time.strftime` format to use when parsing the month. Returns :attr:`~MonthMixin.month_format` by default.
+- [9b9110d4] Returns the :func:`~time.strftime` format to use when parsing the week. Returns :attr:`~WeekMixin.week_format` by default.
+- [5147bf3d] Returns the :func:`~time.strftime` format to use when parsing the year. Returns :attr:`~YearMixin.year_format` by default.
+- [ab7d287a] Returns the :func:`~time.strftime` format to use when parsing the day. Returns :attr:`~DayMixin.day_format` by default.
+- [e52917bb] Returns the aggregation period for ``date_list``. Returns :attr:`~BaseDateListView.date_list_period` by default.
+- [d3db864f] Returns the list of dates of type ``date_type`` for which ``queryset`` contains entries. For example, ``get_date_list(qs, 'year')`` will return the list of years for which ``qs`` has entries. If ``date_type`` isn't provided, the result of :meth:`~BaseDateListView.get_date_list_period` is used. ``date_type`` and ``ordering`` are passed to :meth:`QuerySet.dates()<django.db.models.query.QuerySet.dates>`.
+- [ed608513] Returns the name of the field that contains the date data that this view will operate on. Returns :attr:`~DateMixin.date_field` by default.
+- [75438356] The :func:`~time.strftime` format to use when parsing the day. By default, this is ``'%d'``.
+- [bd815fec] The :func:`~time.strftime` format to use when parsing the month. By default, this is ``'%b'``.
+- [ac37cc27] The :func:`~time.strftime` format to use when parsing the week. By default, this is ``'%U'``, which means the week starts on Sunday. Set it to ``'%W'`` or ``'%V'`` (ISO 8601 week) if your week starts on Monday.
+- [9b1d9037] The :func:`~time.strftime` format to use when parsing the year. By default, this is ``'%Y'``.
+- [01fa32a4] The name of the ``DateField`` or ``DateTimeField`` in the ``QuerySet``’s model that the date-based archive should use to determine the list of objects to display on the page.
+- [9629ed42] This is identical to :attr:`django.views.generic.list.MultipleObjectMixin.allow_empty`, except for the default value, which is ``False``.
+- [4ee73b0b] When :doc:`time zone support </topics/i18n/timezones>` is enabled and ``date_field`` is a ``DateTimeField``, dates are assumed to be in the current time zone. Otherwise, the queryset could include objects from the previous or the next day in the end user's time zone.
+- [292d40c4] ``date_list`` is the list of dates for which data is available. ``object_list`` is the list of objects. ``extra_context`` is a dictionary of context data that will be added to any context data provided by the :class:`~django.views.generic.list.MultipleObjectMixin`.
+- [984a23ca] * :class:`~django.views.generic.dates.DateMixin` * :class:`~django.views.generic.list.MultipleObjectMixin`
+- [83eda2cf63eef8ea] **Methods and Attributes**
+- [83eda2cf63eef8ea-2] **Methods and Attributes**
+- [83eda2cf63eef8ea-3] **Methods and Attributes**
+- [83eda2cf63eef8ea-4] **Methods and Attributes**
+- [83eda2cf63eef8ea-5] **Methods and Attributes**
+- [83eda2cf63eef8ea-6] **Methods and Attributes**
+- [77f7bed952734363] **Mixins**
+- [e7b6c80190b0dbd9] .. attribute:: allow_empty
+- [7b775eb7] .. attribute:: allow_future
+- [2765e60e] .. attribute:: date_field
+- [b8bb49a1] .. attribute:: date_list_period
+- [1149e08c] .. attribute:: day
+- [5ef307c2] .. attribute:: day_format
+- [1cab55ad] .. attribute:: month
+- [ef774139] .. attribute:: month_format
+- [174a0115] .. attribute:: week
+- [b59c156c] .. attribute:: week_format
+- [93b5c25e] .. attribute:: year
+- [eb54d4ab] .. attribute:: year_format
+- [a4e68e27] .. method:: get_allow_future()
+- [620fe5f1] .. method:: get_date_field()
+- [cce0e102] .. method:: get_date_list(queryset, date_type=None, ordering='ASC')
+- [44ffb697] .. method:: get_date_list_period()
+- [ac323331] .. method:: get_dated_items()
+- [14a01744] .. method:: get_dated_queryset(**lookup)
+- [7d455677] .. method:: get_day()
+- [1e3850b1] .. method:: get_day_format()
+- [a4eb91b3] .. method:: get_month()
+- [6a34911f] .. method:: get_month_format()
+- [a3fb3184] .. method:: get_next_day(date)
+- [c058f21e] .. method:: get_next_month(date)
+- [9804991b] .. method:: get_next_week(date)
+- [2031efcd] .. method:: get_next_year(date)
+- [261dacaf] .. method:: get_prev_week(date)
+- [7bfdd666] .. method:: get_previous_day(date)
+- [981600d6] .. method:: get_previous_month(date)
+- [5ec4a928] .. method:: get_previous_year(date)
+- [108aa9b1] .. method:: get_week()
+- [a7217553] .. method:: get_week_format()
+- [f8df0166] .. method:: get_year()
+- [2db3cc59] .. method:: get_year_format()
+- [673dfbb9] A base class that provides common behavior for all date-based views. There won't normally be a reason to instantiate :class:`~django.views.generic.dates.BaseDateListView`; instantiate one of the subclasses instead.
+- [065c8eb2] A mixin class providing common behavior for all date-based views.
+- [eaa7b735] A mixin that can be used to retrieve and provide parsing information for a day component of a date.
+- [4230afd9] All the date formatting attributes in these mixins use :func:`~time.strftime` format characters. Do not try to use the format characters from the :ttag:`now` template tag as they are not compatible.
+- [4ce5c9da] While this view (and its subclasses) are executing, ``self.object_list`` will contain the list of objects that the view is operating upon, and ``self.date_list`` will contain the list of dates for which data is available.
+- [8b492c29] .. class:: BaseDateListView
+- [db1a35fd] .. class:: DateMixin
+- [286592d5] .. class:: DayMixin
+- [2b07dafd] .. class:: MonthMixin
+- [c51c6bcd] .. class:: WeekMixin
+- [8b63a262] .. class:: YearMixin
+- [f2271ab6] .. currentmodule:: django.views.generic.dates
+- [942ae6c11625c81c-27] .. note::
+- [70b2d8b4] ================= Date-based mixins =================
+- [7a8e9186] ``BaseDateListView`` ====================
+- [7c5ba0b0] ``DateMixin`` =============
+- [378e40ee] ``DayMixin`` ============
+- [a8e28f39] ``MonthMixin`` ==============
+- [bdaf7511] ``WeekMixin`` =============
+- [e05c3f49] ``YearMixin`` =============

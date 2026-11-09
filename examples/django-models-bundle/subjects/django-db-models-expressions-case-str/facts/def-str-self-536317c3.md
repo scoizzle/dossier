@@ -1,6 +1,6 @@
 # Fact 536317c3
 
-Store id: d5806cfd-2b87-4e91-900c-f767fc486b47
+Store id: 531376ee-ad3b-48cd-b948-59f34650b6b8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7082880+00:00`
+- posted_at: `2026-11-09T23:31:55.9591930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1741,
     "symbol": "Case.__str__"
   },
-  "id": "d5806cfd-2b87-4e91-900c-f767fc486b47",
+  "id": "531376ee-ad3b-48cd-b948-59f34650b6b8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7082880+00:00"
+    "posted_at": "2026-11-09T23:31:55.9591930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82e39784-c555-4c26-9243-e4326d4c1863",
+  "subject_id": "9b5c80fa-358a-4f60-9a78-409ff7fa1d65",
   "subject_name": "django/db/models/expressions::Case.__str__",
   "tags": [
     "entity:method"

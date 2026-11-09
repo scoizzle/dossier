@@ -1,6 +1,6 @@
 # Fact 2b003d75
 
-Store id: fa86dcce-19b8-4ab9-88ab-4f8d643bcc01
+Store id: fa10b576-b1fe-48f4-8080-a29c2334eb10
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prefetch_querysets(self, instances, querysets=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.8015030+00:00`
+- posted_at: `2026-11-09T23:31:59.2486180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 814,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.get_prefetch_querysets"
   },
-  "id": "fa86dcce-19b8-4ab9-88ab-4f8d643bcc01",
+  "id": "fa10b576-b1fe-48f4-8080-a29c2334eb10",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.8015030+00:00"
+    "posted_at": "2026-11-09T23:31:59.2486180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8c712f9-cbac-40f4-87d9-030d0fd88c68",
+  "subject_id": "7e728752-3f92-4006-b416-2269ba2720f4",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.get_prefetch_querysets",
   "tags": [
     "entity:method"

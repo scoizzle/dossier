@@ -1,14 +1,14 @@
 # django/contrib/auth/views
 
-- Subject: django/contrib/auth/views (id `0e17b216-f09d-46cf-a75d-1a6531055bea`)
+- Subject: django/contrib/auth/views (id `09e116f5-d7a5-4943-a940-1f0c1381525c`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 11 of 49
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3364 tokens
+- Facts shown: 48 of 49
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Display the "Password reset unsuccessful" page. return self.render_to_response(self.get_context_data()) [0c24fd63]
 - Optionally takes a request argument, allowing use outside class-based views. """ if request is None: request = self.request redirect_to = request.POST.get( self.redirect_field_name, request.GET.get(self.redirect_field_name) ) url_is_safe = url_has_allowed_host_and_scheme( url=redirect_to, allowed_hosts=self.get_success_url_allowed_hosts(request), require_https=request.is_secure(), ) return redirect_to if url_is_safe else "" [c5c992fb]
@@ -22,6 +22,42 @@
 - def form_valid(self, form): user = form.save() del self.request.session[INTERNAL_RESET_SESSION_TOKEN] if self.post_reset_login: auth_login(self.request, user, self.post_reset_login_backend) return super().form_valid(form) [55e0b8db]
 - def get_form_class(self): return self.authentication_form or self.form_class [20e1c251]
 
-## Beyond the budget
+## All facts
 
-37 more facts did not fit in the budget: [5b74fd03] [49b4b158] [17aa5b60] [4887d69a] [56625906] [016f2714] [7bb60d38] [3001a035] [c746de6c] [43f3fec6] [826eb03d] [f2448376] [fe102e4f] [3ba16cc5] [aa33a8a6] [69e19bc9] [1477e2bb] [f7d1c08d] [56debdd8] [29eed29b] [8dffcc8d] [62407c5b] [16e2956a] [7289de07] [2045db65] [be830948] [ab5852cf] [17193361] [2fa46812] [470da165] [890d18efd7375f44-3] [c4713e0a] [11a43688] [56ff7b66] [0060b689] [60c1cf40f51b59b8] [ee671c75]
+- [5b74fd03] def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) context.update( {"title": self.title, "subtitle": None, **(self.extra_context or {})} ) return context
+- [49b4b158] def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) context["login_url"] = resolve_url(settings.LOGIN_URL) return context
+- [17aa5b60] def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) current_site = get_current_site(self.request) context.update( { "site": current_site, "site_name": current_site.name, "title": _("Logged out"), "subtitle": None, **(self.extra_context or {}), } ) return context
+- [4887d69a] def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) current_site = get_current_site(self.request) context.update( { self.redirect_field_name: self.get_redirect_url(), "site": current_site, "site_name": current_site.name, **(self.extra_context or {}), } ) return context
+- [56625906] def get_context_data(self, **kwargs): context = super().get_context_data(**kwargs) if self.validlink: context["validlink"] = True else: context.update( { "form": None, "title": _("Password reset unsuccessful"), "validlink": False, } ) return context
+- [016f2714] def get_default_redirect_url(self): """Return the default redirect URL.""" if self.next_page: return resolve_url(self.next_page) elif settings.LOGOUT_REDIRECT_URL: return resolve_url(settings.LOGOUT_REDIRECT_URL) else: return self.request.path
+- [7bb60d38] def get_default_redirect_url(self): """Return the default redirect URL.""" if self.next_page: return resolve_url(self.next_page) else: return resolve_url(settings.LOGIN_REDIRECT_URL)
+- [3001a035] def get_default_redirect_url(self): """Return the default redirect URL.""" if self.next_page: return resolve_url(self.next_page) raise ImproperlyConfigured("No URL to redirect to. Provide a next_page.")
+- [c746de6c] def get_form_kwargs(self): kwargs = super().get_form_kwargs() kwargs["request"] = self.request return kwargs
+- [43f3fec6] def get_form_kwargs(self): kwargs = super().get_form_kwargs() kwargs["user"] = self.user return kwargs
+- [826eb03d] def get_redirect_url(self, request=None): """Return the user-originating redirect URL if it's safe.
+- [f2448376] def get_success_url(self): return self.get_redirect_url() or self.get_default_redirect_url()
+- [fe102e4f] def get_success_url_allowed_hosts(self, request=None): if request is None: request = self.request return {request.get_host(), *self.success_url_allowed_hosts}
+- [3ba16cc5] def get_user(self, uidb64): try: # urlsafe_base64_decode() decodes to bytestring uid = urlsafe_base64_decode(uidb64).decode() pk = UserModel._meta.pk.to_python(uid) user = UserModel._default_manager.get(pk=pk) except ( TypeError, ValueError, OverflowError, UserModel.DoesNotExist, ValidationError, ): user = None return user
+- [aa33a8a6] def post(self, request, *args, **kwargs): """Logout may be done via POST.""" auth_logout(request) redirect_to = self.get_success_url() if redirect_to != request.get_full_path(): # Redirect to target page once the session has been cleared. return HttpResponseRedirect(redirect_to) return super().get(request, *args, **kwargs)
+- [69e19bc9] form_class = AuthenticationForm authentication_form = None template_name = "registration/login.html" redirect_authenticated_user = False extra_context = None
+- [1477e2bb] http_method_names = ["post", "options"] template_name = "registration/logged_out.html" extra_context = None
+- [f7d1c08d] login_url_parts = list(urlsplit(resolved_url)) if redirect_field_name: querystring = QueryDict(login_url_parts[3], mutable=True) querystring[redirect_field_name] = next login_url_parts[3] = querystring.urlencode(safe="/")
+- [56debdd8] return HttpResponseRedirect(urlunsplit(login_url_parts))
+- [29eed29b] # Avoid shadowing the login() and logout() views below. from django.contrib.auth import REDIRECT_FIELD_NAME, get_user_model from django.contrib.auth import login as auth_login from django.contrib.auth import logout as auth_logout from django.contrib.auth import update_session_auth_hash from django.contrib.auth.decorators import login_not_required, login_required from django.contrib.auth.forms import ( AuthenticationForm, PasswordChangeForm, PasswordResetForm, SetPasswordForm, ) from django.contrib.auth.tokens import default_token_generator from django.contrib.sites.shortcuts import get_current_site from django.core.exceptions import ImproperlyConfigured, ValidationError from django.http import HttpResponseRedirect, QueryDict from django.shortcuts import resolve_url from django.urls import reverse_lazy from django.utils.decorators import method_decorator from django.utils.http import url_has_allowed_host_and_scheme, urlsafe_base64_decode from django.utils.translation import gettext_lazy as _ from django.views.decorators.cache import never_cache from django.views.decorators.csrf import csrf_protect from django.views.decorators.debug import sensitive_post_parameters from django.views.generic.base import TemplateView from django.views.generic.edit import FormView
+- [8dffcc8d] # Class-based password reset views # - PasswordResetView sends the mail # - PasswordResetDoneView shows a success message for the above # - PasswordResetConfirmView checks the link the user clicked and # prompts for a new password # - PasswordResetCompleteView shows a success message for the above
+- [62407c5b] @method_decorator( [login_not_required, sensitive_post_parameters(), csrf_protect, never_cache], name="dispatch", ) class LoginView(RedirectURLMixin, FormView): """ Display the login form and handle the login action. """
+- [16e2956a] @method_decorator( [login_not_required, sensitive_post_parameters(), never_cache], name="dispatch" ) class PasswordResetConfirmView(PasswordContextMixin, FormView): form_class = SetPasswordForm post_reset_login = False post_reset_login_backend = None reset_url_token = "set-password" success_url = reverse_lazy("password_reset_complete") template_name = "registration/password_reset_confirm.html" title = _("Enter new password") token_generator = default_token_generator
+- [7289de07] @method_decorator( [sensitive_post_parameters(), csrf_protect, login_required], name="dispatch" ) class PasswordChangeView(PasswordContextMixin, FormView): form_class = PasswordChangeForm success_url = reverse_lazy("password_change_done") template_name = "registration/password_change_form.html" title = _("Password change")
+- [2045db65] @method_decorator([csrf_protect, never_cache], name="dispatch") class LogoutView(RedirectURLMixin, TemplateView): """ Log out the user and display the 'You are logged out' message. """
+- [be830948] @method_decorator([login_not_required, csrf_protect], name="dispatch") class PasswordResetView(PasswordContextMixin, FormView): email_template_name = "registration/password_reset_email.html" extra_email_context = None form_class = PasswordResetForm from_email = None html_email_template_name = None subject_template_name = "registration/password_reset_subject.txt" success_url = reverse_lazy("password_reset_done") template_name = "registration/password_reset_form.html" title = _("Password reset") token_generator = default_token_generator
+- [ab5852cf] @method_decorator(login_not_required, name="dispatch") class PasswordResetCompleteView(PasswordContextMixin, TemplateView): template_name = "registration/password_reset_complete.html" title = _("Password reset complete")
+- [17193361] @method_decorator(login_not_required, name="dispatch") class PasswordResetDoneView(PasswordContextMixin, TemplateView): template_name = "registration/password_reset_done.html" title = _("Password reset sent")
+- [2fa46812] @method_decorator(login_required, name="dispatch") class PasswordChangeDoneView(PasswordContextMixin, TemplateView): template_name = "registration/password_change_done.html" title = _("Password change successful")
+- [470da165] INTERNAL_RESET_SESSION_TOKEN = "_password_reset_token"
+- [890d18efd7375f44-3] UserModel = get_user_model()
+- [c4713e0a] class PasswordContextMixin: extra_context = None
+- [11a43688] class RedirectURLMixin: next_page = None redirect_field_name = REDIRECT_FIELD_NAME success_url_allowed_hosts = set()
+- [56ff7b66] def logout_then_login(request, login_url=None): """ Log out the user if they are logged in. Then redirect to the login page. """ login_url = resolve_url(login_url or settings.LOGIN_URL) return LogoutView.as_view(next_page=login_url)(request)
+- [0060b689] def redirect_to_login(next, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME): """ Redirect the user to the login page, passing the given 'next' page. """ resolved_url = resolve_url(login_url or settings.LOGIN_URL)
+- [60c1cf40f51b59b8] from django.conf import settings
+- [ee671c75] from urllib.parse import urlsplit, urlunsplit

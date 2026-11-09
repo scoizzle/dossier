@@ -1,6 +1,6 @@
 # Fact 95bf1454
 
-Store id: b6dc8888-b413-49ec-bcaf-c6776e947785
+Store id: f91c1efe-3e49-4820-8046-b40e8f943abd
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.6808480+00:00`
+- posted_at: `2026-11-09T23:31:57.9301700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 344,
     "symbol": "JSONExact.as_oracle"
   },
-  "id": "b6dc8888-b413-49ec-bcaf-c6776e947785",
+  "id": "f91c1efe-3e49-4820-8046-b40e8f943abd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.6808480+00:00"
+    "posted_at": "2026-11-09T23:31:57.9301700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7072f0ba-8cea-41db-92e9-d2d555a34cf7",
+  "subject_id": "6f83de70-f565-4196-93ba-aa15500d9030",
   "subject_name": "django/db/models/fields/json::JSONExact.as_oracle",
   "tags": [
     "entity:method"

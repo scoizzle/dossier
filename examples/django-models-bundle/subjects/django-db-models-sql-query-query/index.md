@@ -1,9 +1,9 @@
 # django/db/models/sql/query::Query
 
-- Subject: django/db/models/sql/query::Query (id `865536af-be51-49fa-80ee-b755315244e0`)
+- Subject: django/db/models/sql/query::Query (id `40be6ccc-9594-40c0-8331-28bddced1662`)
 - Kind: class
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

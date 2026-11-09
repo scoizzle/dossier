@@ -1,6 +1,6 @@
 # Fact 60b46030
 
-Store id: 1f02db7f-6b87-486b-b700-6a9fadd01b78
+Store id: 7116fc70-d334-452e-8581-d014e0cca695
 
 ## Text
 
@@ -20,7 +20,7 @@ def join(self, join, reuse=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3210660+00:00`
+- posted_at: `2026-11-09T23:32:06.8726270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1134,
     "symbol": "Query.join"
   },
-  "id": "1f02db7f-6b87-486b-b700-6a9fadd01b78",
+  "id": "7116fc70-d334-452e-8581-d014e0cca695",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3210660+00:00"
+    "posted_at": "2026-11-09T23:32:06.8726270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "de621fa3-68eb-48de-acb8-6d42b423f54e",
+  "subject_id": "1cdde047-ee03-43fc-ba8f-184d7d4386a7",
   "subject_name": "django/db/models/sql/query::Query.join",
   "tags": [
     "entity:method"

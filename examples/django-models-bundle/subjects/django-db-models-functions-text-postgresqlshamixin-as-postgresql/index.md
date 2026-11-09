@@ -1,9 +1,9 @@
 # django/db/models/functions/text::PostgreSQLSHAMixin.as_postgresql
 
-- Subject: django/db/models/functions/text::PostgreSQLSHAMixin.as_postgresql (id `bdf34a29-0401-40c9-8f51-e2ffe42d97c7`)
+- Subject: django/db/models/functions/text::PostgreSQLSHAMixin.as_postgresql (id `0916d41a-1ea3-410c-a32f-edfe5e96bc0e`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

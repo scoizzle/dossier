@@ -1,9 +1,9 @@
 # django/db/models/manager::BaseManager.check
 
-- Subject: django/db/models/manager::BaseManager.check (id `e84e45e7-0290-4738-a61e-c51c88caadc1`)
+- Subject: django/db/models/manager::BaseManager.check (id `4880ae47-56ed-45f4-85cb-48dfe8177f00`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact b535df41
 
-Store id: 107bc751-38fd-4d60-a024-a31a3639f7b3
+Store id: c1496698-4844-4f56-8dbc-31d643fef575
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_to_class(cls, name, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3258290+00:00`
+- posted_at: `2026-11-09T23:31:53.7267870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 392,
     "symbol": "ModelBase.add_to_class"
   },
-  "id": "107bc751-38fd-4d60-a024-a31a3639f7b3",
+  "id": "c1496698-4844-4f56-8dbc-31d643fef575",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3258290+00:00"
+    "posted_at": "2026-11-09T23:31:53.7267870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da7952cc-2286-4c16-9270-6ca701ce5ca4",
+  "subject_id": "70b8aafd-44da-4dfc-be21-8f653334a9c5",
   "subject_name": "django/db/models/base::ModelBase.add_to_class",
   "tags": [
     "entity:method"

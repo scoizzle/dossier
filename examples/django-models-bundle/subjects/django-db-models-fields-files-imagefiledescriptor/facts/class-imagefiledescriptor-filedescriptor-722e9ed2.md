@@ -1,6 +1,6 @@
 # Fact 722e9ed2
 
-Store id: 1bcdd4df-ef48-4584-aa3b-d2f3322e82fb
+Store id: 42523900-aa7f-4d68-84ac-43df490f7740
 
 ## Text
 
@@ -20,7 +20,7 @@ class ImageFileDescriptor(FileDescriptor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2536100+00:00`
+- posted_at: `2026-11-09T23:31:57.4156390+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 383,
     "symbol": "ImageFileDescriptor"
   },
-  "id": "1bcdd4df-ef48-4584-aa3b-d2f3322e82fb",
+  "id": "42523900-aa7f-4d68-84ac-43df490f7740",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2536100+00:00"
+    "posted_at": "2026-11-09T23:31:57.4156390+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c12a5f66-e753-428a-b175-06fd2789406b",
+  "subject_id": "944560e4-e365-4f7c-9095-53ff78d2c9ac",
   "subject_name": "django/db/models/fields/files::ImageFileDescriptor",
   "tags": [
     "entity:class"

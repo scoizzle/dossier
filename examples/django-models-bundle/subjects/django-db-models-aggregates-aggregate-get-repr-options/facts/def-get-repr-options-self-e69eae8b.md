@@ -1,6 +1,6 @@
 # Fact e69eae8b
 
-Store id: c9522539-dab1-4d8a-a90e-4b770a5a6cff
+Store id: aa3024ae-35c2-4017-ab66-736525583f85
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_repr_options(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0379560+00:00`
+- posted_at: `2026-11-09T23:31:53.5349150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 215,
     "symbol": "Aggregate._get_repr_options"
   },
-  "id": "c9522539-dab1-4d8a-a90e-4b770a5a6cff",
+  "id": "aa3024ae-35c2-4017-ab66-736525583f85",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0379560+00:00"
+    "posted_at": "2026-11-09T23:31:53.5349150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d8a3fb2f-c53a-4313-9da9-8d3a1c3dc014",
+  "subject_id": "30a65147-b8da-452b-8768-de54d6c23222",
   "subject_name": "django/db/models/aggregates::Aggregate._get_repr_options",
   "tags": [
     "entity:method"

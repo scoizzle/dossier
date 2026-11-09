@@ -1,6 +1,6 @@
 # Fact fdb9cb45
 
-Store id: 3990d334-b5c2-4d0e-83b6-208cbb15a937
+Store id: 414ab311-97b5-4c39-9504-b50a0aa2bba6
 
 ## Text
 
@@ -20,7 +20,7 @@ def copy(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5271880+00:00`
+- posted_at: `2026-11-09T23:31:55.7889100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 443,
     "symbol": "BaseExpression.copy"
   },
-  "id": "3990d334-b5c2-4d0e-83b6-208cbb15a937",
+  "id": "414ab311-97b5-4c39-9504-b50a0aa2bba6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5271880+00:00"
+    "posted_at": "2026-11-09T23:31:55.7889100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e42ab72-c0c6-4dc5-b2bf-e1a8b29f6de9",
+  "subject_id": "cb8937d8-d53b-447e-8e4c-049c5d264d21",
   "subject_name": "django/db/models/expressions::BaseExpression.copy",
   "tags": [
     "entity:method"

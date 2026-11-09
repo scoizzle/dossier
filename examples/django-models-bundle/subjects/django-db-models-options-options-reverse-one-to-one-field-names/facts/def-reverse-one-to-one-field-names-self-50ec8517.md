@@ -1,6 +1,6 @@
 # Fact 50ec8517
 
-Store id: 048c9648-759a-48bd-8539-6f1823628ad3
+Store id: 51b328a8-e7fb-4ac6-83c8-66abb3cbdba0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _reverse_one_to_one_field_names(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.9821350+00:00`
+- posted_at: `2026-11-09T23:32:04.0518310+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1030,
     "symbol": "Options._reverse_one_to_one_field_names"
   },
-  "id": "048c9648-759a-48bd-8539-6f1823628ad3",
+  "id": "51b328a8-e7fb-4ac6-83c8-66abb3cbdba0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.9821350+00:00"
+    "posted_at": "2026-11-09T23:32:04.0518310+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ff316678-350d-473c-ac40-13ffa3d8860e",
+  "subject_id": "5e4dc713-7bb3-469a-9daa-78755b8394a8",
   "subject_name": "django/db/models/options::Options._reverse_one_to_one_field_names",
   "tags": [
     "entity:method",

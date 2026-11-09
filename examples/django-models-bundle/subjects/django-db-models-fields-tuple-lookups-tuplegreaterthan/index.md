@@ -1,9 +1,9 @@
 # django/db/models/fields/tuple_lookups::TupleGreaterThan
 
-- Subject: django/db/models/fields/tuple_lookups::TupleGreaterThan (id `fa515b70-c4e0-4dee-95ab-2c51caaeb36a`)
+- Subject: django/db/models/fields/tuple_lookups::TupleGreaterThan (id `7419c836-04dc-4bfb-b633-18947894b0f8`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

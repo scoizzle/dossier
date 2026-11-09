@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLUpdateCompiler
 
-- Subject: django/db/models/sql/compiler::SQLUpdateCompiler (id `51bac652-efc8-4697-89a6-d55a545dc993`)
+- Subject: django/db/models/sql/compiler::SQLUpdateCompiler (id `a16c62f3-05dc-44e4-9faf-df9680909823`)
 - Kind: class
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

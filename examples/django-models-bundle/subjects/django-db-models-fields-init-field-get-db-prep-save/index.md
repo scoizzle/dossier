@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::Field.get_db_prep_save
 
-- Subject: django/db/models/fields/__init__::Field.get_db_prep_save (id `16a870f9-9b9f-493b-9435-bbedde8eb4ed`)
+- Subject: django/db/models/fields/__init__::Field.get_db_prep_save (id `7f2dedfa-0496-4fd7-8e23-e2ebe9e18a8d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

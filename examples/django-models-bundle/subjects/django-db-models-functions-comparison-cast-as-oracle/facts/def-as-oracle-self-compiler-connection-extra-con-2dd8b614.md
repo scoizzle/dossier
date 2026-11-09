@@ -1,6 +1,6 @@
 # Fact 2dd8b614
 
-Store id: a68c2148-88c7-47cf-b13f-5f3d9eb4f240
+Store id: 745cfd05-a71a-45bf-8faf-acb3704f1198
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9106550+00:00`
+- posted_at: `2026-11-09T23:32:00.9622240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 60,
     "symbol": "Cast.as_oracle"
   },
-  "id": "a68c2148-88c7-47cf-b13f-5f3d9eb4f240",
+  "id": "745cfd05-a71a-45bf-8faf-acb3704f1198",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9106550+00:00"
+    "posted_at": "2026-11-09T23:32:00.9622240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "50a3fa08-c9ea-4573-82c5-587d4d0ef863",
+  "subject_id": "c7dd947f-2ed0-4435-80ad-269334026fe0",
   "subject_name": "django/db/models/functions/comparison::Cast.as_oracle",
   "tags": [
     "entity:method"

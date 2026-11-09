@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ManyToManyField.check
 
-- Subject: django/db/models/fields/related::ManyToManyField.check (id `5ecd6126-6f67-46a8-899f-b46d77373d49`)
+- Subject: django/db/models/fields/related::ManyToManyField.check (id `aab0e056-2900-48e2-9431-2a1fd3075dbf`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

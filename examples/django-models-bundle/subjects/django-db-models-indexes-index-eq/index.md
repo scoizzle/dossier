@@ -1,9 +1,9 @@
 # django/db/models/indexes::Index.__eq__
 
-- Subject: django/db/models/indexes::Index.__eq__ (id `ef8bab63-c05c-4929-8d8c-8f362b720d2e`)
+- Subject: django/db/models/indexes::Index.__eq__ (id `375894b6-66a6-4dec-a48d-1bb2d4e94a26`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 200d5ac8
 
-Store id: 0390b792-e036-4d5c-bd70-cc8bd338b387
+Store id: f68489c8-9913-4d2b-b8d7-cd015c89627d
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_aggregate(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.9402900+00:00`
+- posted_at: `2026-11-09T23:32:07.6447290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 252,
     "symbol": "WhereNode.contains_aggregate"
   },
-  "id": "0390b792-e036-4d5c-bd70-cc8bd338b387",
+  "id": "f68489c8-9913-4d2b-b8d7-cd015c89627d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.9402900+00:00"
+    "posted_at": "2026-11-09T23:32:07.6447290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e8d10e55-180e-4692-bf0c-bb299975caf2",
+  "subject_id": "c94d78af-9cc8-4cc0-a6db-d51cea64ab0a",
   "subject_name": "django/db/models/sql/where::WhereNode.contains_aggregate",
   "tags": [
     "entity:method",

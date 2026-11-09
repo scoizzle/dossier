@@ -1,6 +1,6 @@
 # Fact 1e5c6ab1
 
-Store id: caff885f-14c9-4732-b177-5c95ba03d5b6
+Store id: 48db23f0-bc08-429b-9577-fa5afe3f1aba
 
 ## Text
 
@@ -20,7 +20,7 @@ class SmallAutoField(AutoFieldMixin, SmallIntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7659990+00:00`
+- posted_at: `2026-11-09T23:31:56.9319210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2979,
     "symbol": "SmallAutoField"
   },
-  "id": "caff885f-14c9-4732-b177-5c95ba03d5b6",
+  "id": "48db23f0-bc08-429b-9577-fa5afe3f1aba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7659990+00:00"
+    "posted_at": "2026-11-09T23:31:56.9319210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7d25ede3-2f18-4ce9-a604-4561d4613617",
+  "subject_id": "6fe9795d-6981-465b-987d-3c93ae6f9e7c",
   "subject_name": "django/db/models/fields/__init__::SmallAutoField",
   "tags": [
     "entity:class"

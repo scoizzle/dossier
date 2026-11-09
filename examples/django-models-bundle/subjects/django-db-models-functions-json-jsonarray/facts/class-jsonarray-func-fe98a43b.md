@@ -1,6 +1,6 @@
 # Fact fe98a43b
 
-Store id: c296d08c-52c1-4abc-a815-f87de60dad87
+Store id: e03d061b-562b-4b20-9087-a24ba4728d79
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONArray(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.3537060+00:00`
+- posted_at: `2026-11-09T23:32:01.4462190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 8,
     "symbol": "JSONArray"
   },
-  "id": "c296d08c-52c1-4abc-a815-f87de60dad87",
+  "id": "e03d061b-562b-4b20-9087-a24ba4728d79",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.3537060+00:00"
+    "posted_at": "2026-11-09T23:32:01.4462190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eda98944-c484-4e4f-b3b7-9b02d2a7a150",
+  "subject_id": "bb6fd098-b015-40b3-965d-347c4d120d3e",
   "subject_name": "django/db/models/functions/json::JSONArray",
   "tags": [
     "entity:class"

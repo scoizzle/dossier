@@ -1,8 +1,8 @@
 # docs/misc/index
 
-- Subject: docs/misc/index (id `db70fc7a-e5d2-4690-9712-0d33ce2de3e5`)
+- Subject: docs/misc/index (id `a8febe81-a881-4e88-89b0-a239da499fbf`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 124 tokens
 - Facts shown: 4 of 4
 - Conflicts: 0

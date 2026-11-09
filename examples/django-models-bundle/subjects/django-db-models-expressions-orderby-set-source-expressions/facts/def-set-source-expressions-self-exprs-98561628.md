@@ -1,6 +1,6 @@
 # Fact 98561628
 
-Store id: f16c9dab-7315-44a9-8171-467a00d85e11
+Store id: 92234ba8-9f98-4d66-9f80-9ad6e49d8887
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_source_expressions(self, exprs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.7439310+00:00`
+- posted_at: `2026-11-09T23:31:55.9888870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1938,
     "symbol": "OrderBy.set_source_expressions"
   },
-  "id": "f16c9dab-7315-44a9-8171-467a00d85e11",
+  "id": "92234ba8-9f98-4d66-9f80-9ad6e49d8887",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.7439310+00:00"
+    "posted_at": "2026-11-09T23:31:55.9888870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cc19dc48-e04f-4f9f-a958-bfe4d6cf3b3d",
+  "subject_id": "e322bdda-d8ef-4ac7-923f-5476eb4a8c35",
   "subject_name": "django/db/models/expressions::OrderBy.set_source_expressions",
   "tags": [
     "entity:method"

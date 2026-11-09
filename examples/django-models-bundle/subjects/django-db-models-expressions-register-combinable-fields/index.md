@@ -1,9 +1,9 @@
 # django/db/models/expressions::_register_combinable_fields
 
-- Subject: django/db/models/expressions::_register_combinable_fields (id `cdb69da6-efac-45ff-bc70-f47e8edea265`)
+- Subject: django/db/models/expressions::_register_combinable_fields (id `e9c1431e-f395-4dce-9e44-4b6509a43f7c`)
 - Kind: function
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

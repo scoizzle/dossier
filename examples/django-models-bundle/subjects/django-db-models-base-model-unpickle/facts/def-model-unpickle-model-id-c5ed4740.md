@@ -1,6 +1,6 @@
 # Fact c5ed4740
 
-Store id: fd144ddd-ccfa-47dc-b248-217163ca65e5
+Store id: ad8f4e55-ad25-4674-b1e3-098390411322
 
 ## Text
 
@@ -20,7 +20,7 @@ def model_unpickle(model_id)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3694300+00:00`
+- posted_at: `2026-11-09T23:31:53.7760880+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2566,
     "symbol": "model_unpickle"
   },
-  "id": "fd144ddd-ccfa-47dc-b248-217163ca65e5",
+  "id": "ad8f4e55-ad25-4674-b1e3-098390411322",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3694300+00:00"
+    "posted_at": "2026-11-09T23:31:53.7760880+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b88c94c-985a-45fb-b506-9915fdad46e6",
+  "subject_id": "eaa023bd-9df3-481e-a8f3-b764b1520937",
   "subject_name": "django/db/models/base::model_unpickle",
   "tags": [
     "entity:function"

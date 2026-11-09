@@ -1,6 +1,6 @@
 # Fact b5838476
 
-Store id: cb6f6525-74d9-460e-bb0c-09b426161c29
+Store id: d632ccee-d099-4f86-b510-d428c1aaa9c7
 
 ## Text
 
@@ -20,7 +20,7 @@ class FloatField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5186280+00:00`
+- posted_at: `2026-11-09T23:31:56.6845050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2099,
     "symbol": "FloatField"
   },
-  "id": "cb6f6525-74d9-460e-bb0c-09b426161c29",
+  "id": "d632ccee-d099-4f86-b510-d428c1aaa9c7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5186280+00:00"
+    "posted_at": "2026-11-09T23:31:56.6845050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "424c4d3e-a9e3-47f0-9747-6fd5ad1c7ff9",
+  "subject_id": "1252b3f3-c52d-46c0-acad-69041080cd6f",
   "subject_name": "django/db/models/fields/__init__::FloatField",
   "tags": [
     "entity:class"

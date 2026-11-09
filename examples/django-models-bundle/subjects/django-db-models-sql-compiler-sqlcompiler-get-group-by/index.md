@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.get_group_by
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_group_by (id `7c88fd12-341e-42ff-83e4-5c5441f2440f`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_group_by (id `61665cbb-6083-401f-82a2-6bc24d0f47bd`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 85e83e80
 
-Store id: 03d157d8-8ebc-466a-8525-5145f691488f
+Store id: 1bf17060-2064-4a6c-a7fb-57d48c7802f6
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.0469550+00:00`
+- posted_at: `2026-11-09T23:31:53.5458320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 360,
     "symbol": "StringAggDelimiter.as_mysql"
   },
-  "id": "03d157d8-8ebc-466a-8525-5145f691488f",
+  "id": "1bf17060-2064-4a6c-a7fb-57d48c7802f6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.0469550+00:00"
+    "posted_at": "2026-11-09T23:31:53.5458320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "19b49195-7cf5-4ffd-9501-60c18f83b2bf",
+  "subject_id": "96596e84-3889-49c2-8b44-0c30fa237b54",
   "subject_name": "django/db/models/aggregates::StringAggDelimiter.as_mysql",
   "tags": [
     "entity:method"

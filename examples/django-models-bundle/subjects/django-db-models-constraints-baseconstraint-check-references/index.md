@@ -1,9 +1,9 @@
 # django/db/models/constraints::BaseConstraint._check_references
 
-- Subject: django/db/models/constraints::BaseConstraint._check_references (id `d125e440-cf85-4203-a65f-f144dc53239b`)
+- Subject: django/db/models/constraints::BaseConstraint._check_references (id `f5fddef3-6f2e-4c87-af49-fe3e01b2693d`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

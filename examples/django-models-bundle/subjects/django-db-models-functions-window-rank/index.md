@@ -1,9 +1,9 @@
 # django/db/models/functions/window::Rank
 
-- Subject: django/db/models/functions/window::Rank (id `5064388b-97bf-4809-9d78-866df62bb26d`)
+- Subject: django/db/models/functions/window::Rank (id `5c09ad3d-a74b-4ce8-a481-4bfeadd8a303`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

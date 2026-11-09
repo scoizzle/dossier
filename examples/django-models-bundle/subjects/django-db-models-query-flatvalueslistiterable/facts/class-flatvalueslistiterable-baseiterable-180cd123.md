@@ -1,6 +1,6 @@
 # Fact 180cd123
 
-Store id: c6d19530-e54d-4263-bad0-1854328a5da9
+Store id: e359d0cc-31ae-4e91-93a9-515e8309cbe3
 
 ## Text
 
@@ -20,7 +20,7 @@ class FlatValuesListIterable(BaseIterable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.2571070+00:00`
+- posted_at: `2026-11-09T23:32:04.2807710+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 327,
     "symbol": "FlatValuesListIterable"
   },
-  "id": "c6d19530-e54d-4263-bad0-1854328a5da9",
+  "id": "e359d0cc-31ae-4e91-93a9-515e8309cbe3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.2571070+00:00"
+    "posted_at": "2026-11-09T23:32:04.2807710+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae998216-299a-4fe2-b003-cd534b73f287",
+  "subject_id": "a52946d2-eebd-4cd9-bb56-57ab1a5d143a",
   "subject_name": "django/db/models/query::FlatValuesListIterable",
   "tags": [
     "entity:class"

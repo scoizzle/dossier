@@ -1,9 +1,9 @@
 # django/db/models/expressions::Window._resolve_output_field
 
-- Subject: django/db/models/expressions::Window._resolve_output_field (id `13fda055-7a03-451a-872a-dbb684919779`)
+- Subject: django/db/models/expressions::Window._resolve_output_field (id `38e63e2b-a4d2-4a14-9b6f-0a7aa84fd96e`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

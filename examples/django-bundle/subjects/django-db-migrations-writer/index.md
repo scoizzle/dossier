@@ -1,14 +1,14 @@
 # django/db/migrations/writer
 
-- Subject: django/db/migrations/writer (id `68b42f3a-f79d-4c61-9721-e2d5ed0a1334`)
+- Subject: django/db/migrations/writer (id `e1a06f2f-1cc1-40d5-a9f1-986628b5d783`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 9 of 43
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2659 tokens
+- Facts shown: 43 of 43
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Alright, see if it's a direct submodule of the app app_config = apps.get_app_config(self.migration.app_label) ( maybe_app_name, _, migrations_package_basename, ) = migrations_package_name.rpartition(".") if app_config.name == maybe_app_name: return os.path.join(app_config.path, migrations_package_basename) [30ebaded]
 - # Deconstruct operations operations = [] for operation in self.migration.operations: operation_string, operation_imports = OperationWriter(operation).serialize() imports.update(operation_imports) operations.append(operation_string) items["operations"] = "\n".join(operations) + "\n" if operations else "" [cad07684]
@@ -20,6 +20,39 @@
 - # django.db.migrations is always used, but models import may not be. # If models import exists, merge it with migrations import. if "from django.db import models" in imports: imports.discard("from django.db import models") imports.add("from django.db import migrations, models") else: imports.add("from django.db import migrations") [146ac11a]
 - final_dir = os.path.join(base_dir, *missing_dirs) os.makedirs(final_dir, exist_ok=True) for missing_dir in missing_dirs: base_dir = os.path.join(base_dir, missing_dir) with open(os.path.join(base_dir, "__init__.py"), "w"): pass [58f6dcbe]
 
-## Beyond the budget
+## All facts
 
-34 more facts did not fit in the budget: [2771191c] [ba9fa5dd] [38482298] [d050d4f3] [3e5691e8] [936ac5ae] [8c90410c] [3ca87fcb] [bfe9b4ba] [b9e35cf9] [2237818a] [c21a01fc] [a5c81933] [9d8915dd] [68e040b9] [72a6ae6f] [bb9498c6] [a8439194] [8c29361b] [19544e23] [daac68d1] [865a4a8f] [5a0c1d70] [0b84ffd4] [fc8336d4] [d346d78f8c109f45-3] [008fc6cf] [c21161ac] [55c684e1] [c8186708] [b1477b6b] [5a1e0cc1] [211d9954] [107fc362]
+- [2771191c] # Sort imports by the package / module to be imported (the part after # "from" in "from ... import ..." or after "import" in "import ..."). # First group the "import" statements, then "from ... import ...". sorted_imports = sorted( imports, key=lambda i: (i.split()[0] == "from", i.split()[1]) ) items["imports"] = "\n".join(sorted_imports) + "\n" if imports else "" if migration_imports: items["imports"] += ( "\n\n# Functions from the following migrations need manual " "copying.\n# Move them and any dependencies into this file, " "then update the\n# RunPython operations to refer to the local " "versions:\n# %s" ) % "\n# ".join(sorted(migration_imports)) if self.migration.replaces: items["replaces_str"] = ( "\n replaces = %s\n" % self.serialize(self.migration.replaces)[0] ) if self.migration.run_before: items["run_before_str"] = ( "\n run_before = %s\n" % self.serialize(self.migration.run_before)[0] ) # Hinting that goes into comment if self.include_header: items["migration_header"] = MIGRATION_HEADER_TEMPLATE % { "version": get_version(), "timestamp": now().strftime("%Y-%m-%d %H:%M"), } else: items["migration_header"] = ""
+- [ba9fa5dd] for i, arg in enumerate(args): arg_value = arg arg_name = operation_args[i] _write(arg_name, arg_value)
+- [38482298] i = len(args) # Only iterate over remaining arguments for arg_name in operation_args[i:]: if arg_name in kwargs: # Don't sort to maintain signature order arg_value = kwargs[arg_name] _write(arg_name, arg_value)
+- [d050d4f3] if migrations_package_name is None: raise ValueError( "Django can't create migrations for app '%s' because " "migrations have been disabled via the MIGRATION_MODULES " "setting." % self.migration.app_label )
+- [3e5691e8] if self.migration.initial: items["initial_str"] = "\n initial = True\n" if not self.migration.atomic: items["atomic_str"] = "\n atomic = False\n"
+- [936ac5ae] imports = set()
+- [8c90410c] imports = set() name, args, kwargs = self.operation.deconstruct() operation_args = get_func_args(self.operation.__init__)
+- [3ca87fcb] return MIGRATION_TEMPLATE % items
+- [bfe9b4ba] return final_dir
+- [b9e35cf9] self.indent()
+- [2237818a] self.unindent() self.feed("),") return self.render(), imports
+- [c21a01fc] @classmethod def register_serializer(cls, type_, serializer): Serializer.register(type_, serializer)
+- [a5c81933] @classmethod def serialize(cls, value): return serializer_factory(value).serialize()
+- [9d8915dd] @classmethod def unregister_serializer(cls, type_): Serializer.unregister(type_)
+- [68e040b9] @property def basedir(self): migrations_package_name, _ = MigrationLoader.migrations_module( self.migration.app_label )
+- [72a6ae6f] @property def filename(self): return "%s.py" % self.migration.name
+- [bb9498c6] @property def path(self): return os.path.join(self.basedir, self.filename)
+- [a8439194] def __init__(self, migration, include_header=True): self.migration = migration self.include_header = include_header self.needs_manual_porting = False
+- [8c29361b] def as_string(self): """Return a string of the file contents.""" items = { "replaces_str": "", "initial_str": "", "run_before_str": "", "atomic_str": "", }
+- [19544e23] def feed(self, line): self.buff.append(" " * (self.indentation * 4) + line)
+- [daac68d1] def indent(self): self.indentation += 1
+- [865a4a8f] def render(self): return "\n".join(self.buff)
+- [5a0c1d70] def serialize(self): def _write(_arg_name, _arg_value): if _arg_name in self.operation.serialization_expand_args and isinstance( _arg_value, (list, tuple, dict) ): if isinstance(_arg_value, dict): self.feed("%s={" % _arg_name) self.indent() for key, value in _arg_value.items(): key_string, key_imports = MigrationWriter.serialize(key) arg_string, arg_imports = MigrationWriter.serialize(value) args = arg_string.splitlines() if len(args) > 1: self.feed("%s: %s" % (key_string, args[0])) for arg in args[1:-1]: self.feed(arg) self.feed("%s," % args[-1]) else: self.feed("%s: %s," % (key_string, arg_string)) imports.update(key_imports) imports.update(arg_imports) self.unindent() self.feed("},") else: self.feed("%s=[" % _arg_name) self.indent() for item in _arg_value: arg_string, arg_imports = MigrationWriter.serialize(item) args = arg_string.splitlines() if len(args) > 1: for arg in args[:-1]: self.feed(arg) self.feed("%s," % args[-1]) else: self.feed("%s," % arg_string) imports.update(arg_imports) self.unindent() self.feed("],") else: arg_string, arg_imports = MigrationWriter.serialize(_arg_value) args = arg_string.splitlines() if len(args) > 1: self.feed("%s=%s" % (_arg_name, args[0])) for arg in args[1:-1]: self.feed(arg) self.feed("%s," % args[-1]) else: self.feed("%s=%s," % (_arg_name, arg_string)) imports.update(arg_imports)
+- [0b84ffd4] def unindent(self): self.indentation -= 1
+- [fc8336d4] operations = [ %(operations)s\ ] """
+- [d346d78f8c109f45-3] """
+- [008fc6cf] # SettingsReference imported for backwards compatibility in Django 2.2. from django.conf import SettingsReference # NOQA from django.db import migrations from django.db.migrations.loader import MigrationLoader from django.db.migrations.serializer import Serializer, serializer_factory from django.utils.inspect import get_func_args from django.utils.module_loading import module_dir from django.utils.timezone import now
+- [c21161ac] MIGRATION_HEADER_TEMPLATE = """\ # Generated by Django %(version)s on %(timestamp)s
+- [55c684e1] MIGRATION_TEMPLATE = """\ %(migration_header)s%(imports)s
+- [c8186708] class Migration(migrations.Migration): %(replaces_str)s%(initial_str)s%(atomic_str)s%(run_before_str)s dependencies = [ %(dependencies)s\ ]
+- [b1477b6b] class MigrationWriter: """ Take a Migration instance and is able to produce the contents of the migration file from it. """
+- [5a1e0cc1] class OperationWriter: def __init__(self, operation, indentation=2): self.operation = operation self.buff = [] self.indentation = indentation
+- [211d9954] from django import get_version from django.apps import apps
+- [107fc362] import os import re from importlib import import_module

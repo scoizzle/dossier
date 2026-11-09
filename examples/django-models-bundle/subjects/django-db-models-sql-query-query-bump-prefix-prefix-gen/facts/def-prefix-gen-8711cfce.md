@@ -1,6 +1,6 @@
 # Fact 8711cfce
 
-Store id: 1ea38ca1-1292-412e-bb10-e31938554953
+Store id: 70956b4b-4a7d-476b-80f7-a209d787305c
 
 ## Text
 
@@ -20,7 +20,7 @@ def prefix_gen()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.3120860+00:00`
+- posted_at: `2026-11-09T23:32:06.8625510+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1065,
     "symbol": "Query.bump_prefix.prefix_gen"
   },
-  "id": "1ea38ca1-1292-412e-bb10-e31938554953",
+  "id": "70956b4b-4a7d-476b-80f7-a209d787305c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.3120860+00:00"
+    "posted_at": "2026-11-09T23:32:06.8625510+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b058623-b3d0-4dae-bf4e-b936b48d2817",
+  "subject_id": "84e911c6-ebbd-4c6a-aebf-994fde6837f9",
   "subject_name": "django/db/models/sql/query::Query.bump_prefix.prefix_gen",
   "tags": [
     "entity:function"

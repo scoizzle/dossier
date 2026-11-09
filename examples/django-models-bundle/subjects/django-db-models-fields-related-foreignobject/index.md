@@ -1,9 +1,9 @@
 # django/db/models/fields/related::ForeignObject
 
-- Subject: django/db/models/fields/related::ForeignObject (id `8a37ca3a-8a42-482e-b072-2a94df7d9a72`)
+- Subject: django/db/models/fields/related::ForeignObject (id `50063628-5d9d-4993-beaa-5f54c89ac570`)
 - Kind: class
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

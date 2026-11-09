@@ -1,9 +1,9 @@
 # django/db/models/base::Model._save_parents
 
-- Subject: django/db/models/base::Model._save_parents (id `a23b5eed-d666-48b7-ab06-2765b59112d2`)
+- Subject: django/db/models/base::Model._save_parents (id `ba72b385-3407-43d4-a45b-2c877c940772`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 33 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

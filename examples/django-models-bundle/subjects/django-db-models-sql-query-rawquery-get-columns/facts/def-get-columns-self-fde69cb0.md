@@ -1,6 +1,6 @@
 # Fact fde69cb0
 
-Store id: 6f4ebe01-c5ac-4bd6-9bd3-1c08bab4a13f
+Store id: e93fc99f-1616-4698-a3ae-50942c0c07a8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_columns(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1964520+00:00`
+- posted_at: `2026-11-09T23:32:06.7134740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 176,
     "symbol": "RawQuery.get_columns"
   },
-  "id": "6f4ebe01-c5ac-4bd6-9bd3-1c08bab4a13f",
+  "id": "e93fc99f-1616-4698-a3ae-50942c0c07a8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1964520+00:00"
+    "posted_at": "2026-11-09T23:32:06.7134740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c556bc60-62ab-481e-9934-76711e7b1e0a",
+  "subject_id": "c1f21ace-fccc-49f7-987a-16fc5ce9874b",
   "subject_name": "django/db/models/sql/query::RawQuery.get_columns",
   "tags": [
     "entity:method"

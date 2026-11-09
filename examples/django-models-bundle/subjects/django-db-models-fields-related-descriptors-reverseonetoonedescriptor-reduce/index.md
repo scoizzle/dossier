@@ -1,9 +1,9 @@
 # django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__reduce__
 
-- Subject: django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__reduce__ (id `3bec3e44-190c-4915-82e3-d871a113ac49`)
+- Subject: django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.__reduce__ (id `1fa7fbcd-b81f-4a6f-ae99-2040aae2344c`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

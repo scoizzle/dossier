@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::TextField.check
 
-- Subject: django/db/models/fields/__init__::TextField.check (id `d2fb151c-aaf0-4905-b1d0-f45ce3ecf1d8`)
+- Subject: django/db/models/fields/__init__::TextField.check (id `4b2c7c79-3cd9-4dd5-8b45-d5214bb7f1af`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

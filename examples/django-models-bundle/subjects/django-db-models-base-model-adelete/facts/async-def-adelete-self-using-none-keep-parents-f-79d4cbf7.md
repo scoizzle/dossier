@@ -1,6 +1,6 @@
 # Fact 79d4cbf7
 
-Store id: d3ec0fed-2fa4-45f7-9032-743fa6944cee
+Store id: eab93543-bdbc-48de-8bdf-4bd909bcac31
 
 ## Text
 
@@ -20,7 +20,7 @@ async def adelete(self, using=None, keep_parents=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3444360+00:00`
+- posted_at: `2026-11-09T23:31:53.7499870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1337,
     "symbol": "Model.adelete"
   },
-  "id": "d3ec0fed-2fa4-45f7-9032-743fa6944cee",
+  "id": "eab93543-bdbc-48de-8bdf-4bd909bcac31",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3444360+00:00"
+    "posted_at": "2026-11-09T23:31:53.7499870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fa4c21ff-12c8-4222-96c5-b6701ad98df3",
+  "subject_id": "40511359-a968-4df3-b2c4-5324cd69e717",
   "subject_name": "django/db/models/base::Model.adelete",
   "tags": [
     "entity:method",

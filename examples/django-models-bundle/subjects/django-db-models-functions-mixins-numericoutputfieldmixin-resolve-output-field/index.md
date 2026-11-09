@@ -1,9 +1,9 @@
 # django/db/models/functions/mixins::NumericOutputFieldMixin._resolve_output_field
 
-- Subject: django/db/models/functions/mixins::NumericOutputFieldMixin._resolve_output_field (id `f97ecd04-3441-4449-bff2-f5a394e49128`)
+- Subject: django/db/models/functions/mixins::NumericOutputFieldMixin._resolve_output_field (id `cb9d7d0d-dbdd-42b7-8d5f-4639626e8969`)
 - Kind: method
 - Parent: [django/db/models/functions/mixins](../django-db-models-functions-mixins/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

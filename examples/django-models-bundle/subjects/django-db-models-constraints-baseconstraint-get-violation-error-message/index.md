@@ -1,9 +1,9 @@
 # django/db/models/constraints::BaseConstraint.get_violation_error_message
 
-- Subject: django/db/models/constraints::BaseConstraint.get_violation_error_message (id `a6ac91f9-bf77-448a-8507-5eae5049e7df`)
+- Subject: django/db/models/constraints::BaseConstraint.get_violation_error_message (id `4c72c8cc-aa0b-4caa-8f84-c3522149c631`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

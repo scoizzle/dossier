@@ -1,6 +1,6 @@
 # Fact a44e85d5
 
-Store id: 7af27255-dd9b-4eb8-92b7-2694724101c9
+Store id: b3c78783-8c3f-429a-9847-64e4877ffb79
 
 ## Text
 
@@ -20,7 +20,7 @@ def generated_sql(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.4325670+00:00`
+- posted_at: `2026-11-09T23:31:57.6270610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 54,
     "symbol": "GeneratedField.generated_sql"
   },
-  "id": "7af27255-dd9b-4eb8-92b7-2694724101c9",
+  "id": "b3c78783-8c3f-429a-9847-64e4877ffb79",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.4325670+00:00"
+    "posted_at": "2026-11-09T23:31:57.6270610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "05b0efbd-123b-4361-9275-50b10fa043ed",
+  "subject_id": "90acf01e-9f4e-4619-b89f-13e436469928",
   "subject_name": "django/db/models/fields/generated::GeneratedField.generated_sql",
   "tags": [
     "entity:method"

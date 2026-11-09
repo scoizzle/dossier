@@ -1,6 +1,6 @@
 # Fact e41a50cd
 
-Store id: fae523f5-e337-4876-977e-5b0f144bdd9a
+Store id: 628b7753-12d4-4a0e-9ed1-3e56c08a604d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __aiter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.8035390+00:00`
+- posted_at: `2026-11-09T23:32:04.7456280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2503,
     "symbol": "RawQuerySet.__aiter__"
   },
-  "id": "fae523f5-e337-4876-977e-5b0f144bdd9a",
+  "id": "628b7753-12d4-4a0e-9ed1-3e56c08a604d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.8035390+00:00"
+    "posted_at": "2026-11-09T23:32:04.7456280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8490419e-32d2-44b6-8d88-b77008f0354b",
+  "subject_id": "fb1ae90d-79a6-44c1-9ae8-4b369377ebef",
   "subject_name": "django/db/models/query::RawQuerySet.__aiter__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 1cc37b19
 
-Store id: 53e00514-b04f-4088-ae8e-f0a789a10210
+Store id: b2c18de9-921a-43b7-86ac-f537427b0238
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.5285770+00:00`
+- posted_at: `2026-11-09T23:31:56.6920770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2141,
     "symbol": "IntegerField"
   },
-  "id": "53e00514-b04f-4088-ae8e-f0a789a10210",
+  "id": "b2c18de9-921a-43b7-86ac-f537427b0238",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.5285770+00:00"
+    "posted_at": "2026-11-09T23:31:56.6920770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5e061fe0-60a7-4714-a2cb-93881e9e2d7b",
+  "subject_id": "09f77384-ab80-4f82-8675-c8ccff7e38d1",
   "subject_name": "django/db/models/fields/__init__::IntegerField",
   "tags": [
     "entity:class"

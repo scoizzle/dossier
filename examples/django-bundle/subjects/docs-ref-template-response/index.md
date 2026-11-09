@@ -1,14 +1,14 @@
 # docs/ref/template-response
 
-- Subject: docs/ref/template-response (id `d54b7aeb-61c6-40a4-b73d-97aaa67329f5`)
+- Subject: docs/ref/template-response (id `fd627b1f-ad3d-4f30-b51d-2bedc390dff4`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 898 tokens
-- Facts shown: 21 of 85
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3133 tokens
+- Facts shown: 76 of 85
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Assigning content does change, no render() call required >>> t.content = t.rendered_content >>> print(t.content) New content [a257f3fc]
 - # Re-rendering doesn't change content >>> t.template_name = "new.html" >>> t.render() >>> print(t.content) Original content [01d86ad4]
@@ -32,6 +32,60 @@
 - When called, callbacks will be passed a single argument -- the rendered :class:`~django.template.response.SimpleTemplateResponse` instance. [34977662]
 - ``TemplateResponse`` is a subclass of :class:`~django.template.response.SimpleTemplateResponse` that knows about the current :class:`~django.http.HttpRequest`. [a2cd9ffb]
 
-## Beyond the budget
+## All facts
 
-55 more facts did not fit in the budget: [3286d326fe78ee1b] [1f2656517290407d] [7275f4d1c0f68aeb] [9df2acb40e4691bd] [065efea1] [dccf414a] [2f600077f2180b9f] [b7cc75c3c75f83d3] [60e85ba2b5411ec8] [88a2cf1e] [b0dab9fb] [7d5f58c6] [ac4cbee2e748370f] [db84992b] [3a0764aa] [b230c892] [0a0b5a13] [fa085a4b] [01806670] [1dcf176e] [02499ff5] [7ec2b636] [eaf050be34acb41d-582] [ec1f2ed5] [6d64f336] [57b5d622] [fd8fdcef] [4ae76b76] [b8c2beb6] [558dbbd3] [2a455d71] [0481c49d] [e282d0f3] [bb91fb20711fda29-8] [d83300b8] [033b4c87] [9a05ff6b] [d55ff75e] [4fe043c0] [db683de5] [d5edc39b] [d5882157dc780592-12] [d5882157dc780592-13] [88a89c1c] [238ee609] [093081dd] [eca74c95] [638223a9] [31bb6ed8] [62f6ebfc] [a2fad889] [2a568cef] [db5714bd] [1c03e1a4] [ab9ae75d]
+- [3286d326fe78ee1b] ``charset`` The charset in which the response will be encoded. If not given it will be extracted from ``content_type``, and if that is unsuccessful, the :setting:`DEFAULT_CHARSET` setting will be used.
+- [1f2656517290407d] ``content_type`` The value included in the HTTP ``Content-Type`` header, including the MIME type specification and the character set encoding. If ``content_type`` is specified, then its value is used. Otherwise, ``'text/html'`` is used.
+- [7275f4d1c0f68aeb] ``context`` A :class:`dict` of values to add to the template context. By default, this is an empty dictionary.
+- [9df2acb40e4691bd] ``headers`` A :class:`dict` of HTTP headers to add to the response.
+- [065efea1] ``render()`` will only have an effect the first time it is called. On subsequent calls, it will return the result obtained from the first call.
+- [dccf414a] ``request`` An :class:`~django.http.HttpRequest` instance.
+- [2f600077f2180b9f] ``status`` The HTTP status code for the response.
+- [b7cc75c3c75f83d3] ``template`` A backend-dependent template object (such as those returned by :func:`~django.template.loader.get_template`), the name of a template, or a list of template names.
+- [60e85ba2b5411ec8] ``using`` The :setting:`NAME <TEMPLATES-NAME>` of a template engine to use for loading the template.
+- [88a2cf1e] def blog_index(request): return TemplateResponse( request, "entry_list.html", {"entries": Entry.objects.all()} )
+- [b0dab9fb] def my_render_callback(response): # Do content-sensitive processing do_post_processing()
+- [7d5f58c6] def my_view(request): # Create a response response = TemplateResponse(request, "mytemplate.html", {}) # Register the callback response.add_post_render_callback(my_render_callback) # Return the response return response
+- [ac4cbee2e748370f] from django.template.response import TemplateResponse
+- [db84992b] * After passing through template response middleware, but before passing through response middleware.
+- [3a0764aa] * When the ``TemplateResponse`` instance is explicitly rendered, using the :meth:`SimpleTemplateResponse.render` method.
+- [b230c892] * When the content of the response is explicitly set by assigning ``response.content``.
+- [0a0b5a13] .. attribute:: SimpleTemplateResponse.context_data
+- [fa085a4b] .. attribute:: SimpleTemplateResponse.is_rendered
+- [01806670] .. attribute:: SimpleTemplateResponse.rendered_content
+- [1dcf176e] .. attribute:: SimpleTemplateResponse.template_name
+- [02499ff5] .. class:: SimpleTemplateResponse()
+- [7ec2b636] .. class:: TemplateResponse()
+- [eaf050be34acb41d-582] .. code-block:: pycon
+- [ec1f2ed5] .. method:: SimpleTemplateResponse.__init__(template, context=None, content_type=None, status=None, charset=None, using=None, headers=None)
+- [6d64f336] .. method:: SimpleTemplateResponse.add_post_render_callback()
+- [57b5d622] .. method:: SimpleTemplateResponse.render()
+- [fd8fdcef] .. method:: SimpleTemplateResponse.resolve_context(context)
+- [4ae76b76] .. method:: SimpleTemplateResponse.resolve_template(template)
+- [b8c2beb6] .. method:: TemplateResponse.__init__(request, template, context=None, content_type=None, status=None, charset=None, using=None, headers=None)
+- [558dbbd3] .. module:: django.template.response :synopsis: Classes dealing with lazy-rendered HTTP responses.
+- [2a455d71] =================================================== ``TemplateResponse`` and ``SimpleTemplateResponse`` ===================================================
+- [0481c49d] A :class:`TemplateResponse` object can be used anywhere that a normal :class:`django.http.HttpResponse` can be used. It can also be used as an alternative to calling :func:`~django.shortcuts.render`.
+- [e282d0f3] A ``TemplateResponse`` can only be rendered once. The first call to :meth:`SimpleTemplateResponse.render` sets the content of the response; subsequent rendering calls do not change the response content.
+- [bb91fb20711fda29-8] Attributes ----------
+- [d83300b8] Before a :class:`~django.template.response.TemplateResponse` instance can be returned to the client, it must be rendered. The rendering process takes the intermediate representation of template and context, and turns it into the final byte stream that can be served to the client.
+- [033b4c87] For example, the following view returns a :class:`TemplateResponse` with a template and a context containing a queryset::
+- [9a05ff6b] However, if you're using a decorator, the same opportunities do not exist. Any behavior defined in a decorator is handled immediately.
+- [d55ff75e] However, it can sometimes be beneficial to allow decorators or middleware to modify a response *after* it has been constructed by the view. For example, you may want to change the template that is used, or put additional data into the context.
+- [4fe043c0] However, when ``response.content`` is explicitly assigned, the change is always applied. If you want to force the content to be re-rendered, you can reevaluate the rendered content, and assign the content of the response manually:
+- [db683de5] If the template has already been rendered, the callback will be invoked immediately.
+- [d5edc39b] If you're using middleware, you can do that. Middleware provides multiple opportunities to process a response on exit from a view. If you put behavior in the response middleware, it's guaranteed to execute after template rendering has taken place.
+- [d5882157dc780592-12] Methods -------
+- [d5882157dc780592-13] Methods -------
+- [88a89c1c] Post-render callbacks ---------------------
+- [238ee609] Some operations -- such as caching -- cannot be performed on an unrendered template. They must be performed on a fully complete and rendered response.
+- [093081dd] Standard :class:`~django.http.HttpResponse` objects are static structures. They are provided with a block of pre-rendered content at time of construction, and while that content can be modified, it isn't in a form that makes it easy to perform modifications.
+- [eca74c95] TemplateResponse provides a way to do just that. Unlike basic :class:`~django.http.HttpResponse` objects, TemplateResponse objects retain the details of the template and context that was provided by the view to compute the response. The final output of the response is not computed until it is needed, later in the response process.
+- [638223a9] The rendering process =====================
+- [31bb6ed8] There are three circumstances under which a ``TemplateResponse`` will be rendered:
+- [62f6ebfc] To compensate for this (and any other analogous use cases), :class:`TemplateResponse` allows you to register callbacks that will be invoked when rendering has completed. Using this callback, you can defer critical processing until a point where you can guarantee that rendered content will be available.
+- [a2fad889] To define a post-render callback, define a function that takes a single argument -- response -- and register that function with the template response::
+- [2a568cef] Using ``TemplateResponse`` and ``SimpleTemplateResponse`` =========================================================
+- [db5714bd] ``SimpleTemplateResponse`` objects ==================================
+- [1c03e1a4] ``TemplateResponse`` objects ============================
+- [ab9ae75d] ``my_render_callback()`` will be invoked after the ``mytemplate.html`` has been rendered, and will be provided the fully rendered :class:`TemplateResponse` instance as an argument.

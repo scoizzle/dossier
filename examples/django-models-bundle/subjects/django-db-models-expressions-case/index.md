@@ -1,9 +1,9 @@
 # django/db/models/expressions::Case
 
-- Subject: django/db/models/expressions::Case (id `2824962e-13ab-4fe3-92fd-854da159eed6`)
+- Subject: django/db/models/expressions::Case (id `8004b512-7c0f-40bb-9e25-b1096df3a553`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

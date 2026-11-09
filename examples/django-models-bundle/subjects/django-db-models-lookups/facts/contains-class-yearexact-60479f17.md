@@ -1,6 +1,6 @@
 # Fact 60479f17
 
-Store id: b1d538ba-05fb-48bf-8233-6e471f9e0431
+Store id: cbf3d9d9-a642-4fdc-a1d9-d9ad5d44da60
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class YearExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b1d538ba-05fb-48bf-8233-6e471f9e0431",
+  "id": "cbf3d9d9-a642-4fdc-a1d9-d9ad5d44da60",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "YearExact"
       },
       "rel": "contains",
-      "target": "5da197e2-937d-428c-aa20-4edc5bd69162"
+      "target": "7889d6f0-037e-4527-a47c-0d04ebcedc39"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

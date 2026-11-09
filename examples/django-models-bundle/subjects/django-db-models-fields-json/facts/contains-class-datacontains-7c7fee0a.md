@@ -1,6 +1,6 @@
 # Fact 7c7fee0a
 
-Store id: 5882ecdb-20f2-417c-bf0c-2520140d3080
+Store id: 664178f0-aef6-4a21-b0f6-48d7590a430d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DataContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7741560+00:00`
+- posted_at: `2026-11-09T23:31:58.0480240+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5882ecdb-20f2-417c-bf0c-2520140d3080",
+  "id": "664178f0-aef6-4a21-b0f6-48d7590a430d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7741560+00:00"
+    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DataContains"
       },
       "rel": "contains",
-      "target": "0936a8ed-83fa-4d5e-b6af-88d075b55d00"
+      "target": "7b0bc489-c840-45fa-8cb0-3cac4764a7b7"
     }
   ],
   "status": "live",
-  "subject_id": "e8033e5a-9cc0-487a-86e5-7f58586f9b90",
+  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

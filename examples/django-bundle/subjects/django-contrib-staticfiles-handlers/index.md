@@ -1,14 +1,14 @@
 # django/contrib/staticfiles/handlers
 
-- Subject: django/contrib/staticfiles/handlers (id `02ef4594-300a-4ccd-be1e-ba8f30709f5b`)
+- Subject: django/contrib/staticfiles/handlers (id `cee4ccf4-e39b-46f6-bb6c-25c98a693dfd`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 888 tokens
-- Facts shown: 17 of 21
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1033 tokens
+- Facts shown: 20 of 21
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - async def awrapper(): for part in await sync_to_async(list)(_iterator): yield part [e59f0855]
 - response.streaming_content = awrapper() return response [8da2866b]
@@ -28,6 +28,8 @@
 - class StaticFilesHandler(StaticFilesHandlerMixin, WSGIHandler): """ WSGI middleware that intercepts calls to the static files directory, as defined by the STATIC_URL setting, and serves those files. """ [fdb0b94a]
 - class StaticFilesHandlerMixin: """ Common methods used by WSGI and ASGI handlers. """ [e8fc6790]
 
-## Beyond the budget
+## All facts
 
-3 more facts did not fit in the budget: [770890ad88958a4c-7] [58720100] [59b91910]
+- [770890ad88958a4c-7] from asgiref.sync import sync_to_async
+- [58720100] from django.conf import settings from django.contrib.staticfiles import utils from django.contrib.staticfiles.views import serve from django.core.handlers.asgi import ASGIHandler from django.core.handlers.exception import response_for_exception from django.core.handlers.wsgi import WSGIHandler, get_path_info from django.http import Http404
+- [59b91910] from urllib.parse import urlparse from urllib.request import url2pathname

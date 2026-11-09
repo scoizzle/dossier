@@ -1,14 +1,14 @@
 # django/contrib/gis/db/backends/postgis/operations
 
-- Subject: django/contrib/gis/db/backends/postgis/operations (id `684666a5-1624-4b5b-b009-dd8c500e34b8`)
+- Subject: django/contrib/gis/db/backends/postgis/operations (id `595cfc80-17d5-4ee3-ac82-432999609737`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 15 of 56
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3801 tokens
+- Facts shown: 53 of 56
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - return "geography(%s,%d)" % (geom_type, f.srid) else: return "geometry(%s,%d)" % (geom_type, f.srid) [dbb8bad9]
 - try: vtup = self.postgis_version_tuple() except ProgrammingError: raise ImproperlyConfigured( 'Cannot determine PostGIS version for database "%s" ' 'using command "SELECT postgis_lib_version()". ' "GeoDjango requires at least PostGIS version 3.2. " "Was the database created from a spatial database " "template?" % self.connection.settings_dict["NAME"] ) version = vtup[1:] return version [f4cf208d]
@@ -26,6 +26,43 @@
 - # Routines for getting the OGC-compliant models. def geometry_columns(self): return PostGISGeometryColumns [eb1d863b]
 - Adapter = PostGISAdapter [b0e677a8]
 
-## Beyond the budget
+## All facts
 
-38 more facts did not fit in the budget: [0bc3247e] [18b71fb1] [436bb4c2] [3b955447] [f78e68ab] [8074b7a2] [e08ffc70] [94892b02] [6a79a582] [d7c1db85] [d71af4c2] [efd465f9] [1c17be56] [0e33aa46] [6c5444f0] [20726c2c42b92ea4-2] [238ec787] [dbbdc19d] [565d49c1] [a3557b86] [e34f47dd] [e928a83d] [3b75c719] [88fd8caf] [04a3b7cf] [b01ba265] [e486e9c1] [6bbae539] [6c63e036] [3d4db0af] [09c66272] [0d637c67] [f1f4f1d1] [feb38845] [2ba8c80c] [fd513bc8] [5780403d] [dae3b101b4aa9562-5]
+- [0bc3247e] if isinstance(value, Distance): if geography: dist_param = value.m elif geodetic: if lookup_type == "dwithin": raise ValueError( "Only numeric values of degree units are " "allowed on geographic DWithin queries." ) dist_param = value.m else: dist_param = getattr( value, Distance.unit_attname(f.units_name(self.connection)) ) else: # Assuming the distance is in the units of the field. dist_param = value
+- [18b71fb1] @cached_property def function_names(self): function_names = { "AsWKB": "ST_AsBinary", "AsWKT": "ST_AsText", "BoundingCircle": "ST_MinimumBoundingCircle", "FromWKB": "ST_GeomFromWKB", "FromWKT": "ST_GeomFromText", "NumDimensions": "ST_NDims", "NumPoints": "ST_NPoints", "GeometryType": "GeometryType", } return function_names
+- [436bb4c2] @cached_property def output_field(self): return GeometryField(srid=self.source_expressions[0].field.srid)
+- [3b955447] @cached_property def spatial_version(self): """Determine the version of the PostGIS library.""" # Trying to get the PostGIS version because the function # signatures will depend on the version used. The cost # here is a database query to determine the version, which # can be mitigated by setting `POSTGIS_VERSION` with a 3-tuple # comprising user-supplied values for the major, minor, and # subminor revision of PostGIS. if hasattr(settings, "POSTGIS_VERSION"): version = settings.POSTGIS_VERSION else: # Run a basic query to check the status of the connection so we're # sure we only raise the error below if the problem comes from # PostGIS and not from PostgreSQL itself (see #24862). self._get_postgis_func("version")
+- [f78e68ab] @staticmethod def _normalize_distance_lookup_arg(arg): is_raster = ( arg.field.geom_type == "RASTER" if hasattr(arg, "field") else isinstance(arg, GDALRaster) ) return ST_Polygon(arg) if is_raster else arg
+- [8074b7a2] collect = geom_func_prefix + "Collect" extent = geom_func_prefix + "Extent" extent3d = geom_func_prefix + "3DExtent" length3d = geom_func_prefix + "3DLength" makeline = geom_func_prefix + "MakeLine" perimeter3d = geom_func_prefix + "3DPerimeter" unionagg = geom_func_prefix + "Union"
+- [e08ffc70] def __init__(self, expr): super().__init__(expr) expr = self.source_expressions[0] if isinstance(expr, Value) and not expr._output_field_or_none: self.source_expressions[0] = Value( expr.value, output_field=RasterField(srid=expr.value.srid) )
+- [94892b02] def _get_postgis_func(self, func): """ Helper routine for calling PostGIS functions and returning their result. """ # Close out the connection. See #9437. with self.connection.temporary_connection() as cursor: cursor.execute("SELECT %s()" % func) return cursor.fetchone()[0]
+- [6a79a582] def as_sql(self, connection, lookup, template_params, *args): template_params = self.check_raster(lookup, template_params) template_params = self.check_geography(lookup, template_params) return super().as_sql(connection, lookup, template_params, *args)
+- [d7c1db85] def check_geography(self, lookup, template_params): """Convert geography fields to geometry types, if necessary.""" if lookup.lhs.output_field.geography and not self.geography: template_params["lhs"] += "::geometry" return template_params
+- [d71af4c2] def check_raster(self, lookup, template_params): spheroid = lookup.rhs_params and lookup.rhs_params[-1] == "spheroid"
+- [efd465f9] def convert_extent(self, box): """ Return a 4-tuple extent for the `Extent` aggregate by converting the bounding box text returned by PostGIS (`box` argument), for example: "BOX(-90.0 30.0, -85.0 40.0)". """ if box is None: return None ll, ur = box[4:-1].split(",") xmin, ymin = map(float, ll.split()) xmax, ymax = map(float, ur.split()) return (xmin, ymin, xmax, ymax)
+- [1c17be56] def convert_extent3d(self, box3d): """ Return a 6-tuple extent for the `Extent3D` aggregate by converting the 3d bounding-box text returned by PostGIS (`box3d` argument), for example: "BOX3D(-90.0 30.0 1, -85.0 40.0 2)". """ if box3d is None: return None ll, ur = box3d[6:-1].split(",") xmin, ymin, zmin = map(float, ll.split()) xmax, ymax, zmax = map(float, ur.split()) return (xmin, ymin, zmin, xmax, ymax, zmax)
+- [0e33aa46] def distance_expr_for_lookup(self, lhs, rhs, **kwargs): return super().distance_expr_for_lookup( self._normalize_distance_lookup_arg(lhs), self._normalize_distance_lookup_arg(rhs), **kwargs, )
+- [6c5444f0] def geo_db_type(self, f): """ Return the database field type for the given spatial field. """ if f.geom_type == "RASTER": return "raster"
+- [20726c2c42b92ea4-2] def get_area_att_for_field(self, field): return "sq_m"
+- [238ec787] def get_distance(self, f, dist_val, lookup_type): """ Retrieve the distance parameters for the given geometry field, distance lookup value, and the distance lookup type.
+- [dbbdc19d] def get_geom_placeholder_sql(self, f, value, compiler): """ Provide a proper substitution value for Geometries or rasters that are not in the SRID of the field. Specifically, this routine will substitute in the ST_Transform() function call. """ transform_func = self.spatial_function_name("Transform") if hasattr(value, "as_sql"): sql, params = compiler.compile(value) if self._must_transform_value(value.field, f): sql = f"{transform_func}({sql}, %s)" params = (*params, f.srid) return sql, params
+- [565d49c1] def get_geometry_converter(self, expression): read = wkb_r().read geom_class = expression.output_field.geom_class
+- [a3557b86] def parse_raster(self, value): """Convert a PostGIS HEX String into a dict readable by GDALRaster.""" return from_pgraster(value)
+- [e34f47dd] def postgis_full_version(self): "Return PostGIS version number and compile-time options." return self._get_postgis_func("postgis_full_version")
+- [e928a83d] def postgis_geos_version(self): "Return the version of the GEOS library used with PostGIS." return self._get_postgis_func("postgis_geos_version")
+- [3b75c719] def postgis_lib_version(self): """ Return the version number of the PostGIS library used with PostgreSQL. """ return self._get_postgis_func("postgis_lib_version")
+- [88fd8caf] def postgis_version_tuple(self): """ Return the PostGIS version as a tuple (version string, major, minor, subminor). """ version = self.postgis_lib_version() return (version, *get_version_tuple(version))
+- [04a3b7cf] def proj_version_tuple(self): """ Return the version of PROJ used by PostGIS as a tuple of the major, minor, and subminor release numbers. """ proj_regex = re.compile(r"(\d+)\.(\d+)\.(\d+)") proj_ver_str = self.postgis_proj_version() m = proj_regex.search(proj_ver_str) if m: return tuple(map(int, m.groups())) else: raise Exception("Could not determine PROJ version from PostGIS.")
+- [b01ba265] def spatial_aggregate_name(self, agg_name): if agg_name == "Extent3D": return self.extent3d else: return self.geom_func_prefix + agg_name
+- [e486e9c1] def spatial_ref_sys(self): return PostGISSpatialRefSys
+- [6bbae539] gis_operators = { "bbcontains": PostGISOperator(op="~", raster=True), "bboverlaps": PostGISOperator(op="&&", geography=True, raster=True), "contained": PostGISOperator(op="@", raster=True), "overlaps_left": PostGISOperator(op="&<", raster=BILATERAL), "overlaps_right": PostGISOperator(op="&>", raster=BILATERAL), "overlaps_below": PostGISOperator(op="&<|"), "overlaps_above": PostGISOperator(op="|&>"), "left": PostGISOperator(op="<<"), "right": PostGISOperator(op=">>"), "strictly_below": PostGISOperator(op="<<|"), "strictly_above": PostGISOperator(op="|>>"), "same_as": PostGISOperator(op="~=", raster=BILATERAL), "exact": PostGISOperator(op="~=", raster=BILATERAL), # alias of same_as "contains": PostGISOperator(func="ST_Contains", raster=BILATERAL), "contains_properly": PostGISOperator( func="ST_ContainsProperly", raster=BILATERAL ), "coveredby": PostGISOperator( func="ST_CoveredBy", geography=True, raster=BILATERAL ), "covers": PostGISOperator(func="ST_Covers", geography=True, raster=BILATERAL), "crosses": PostGISOperator(func="ST_Crosses"), "disjoint": PostGISOperator(func="ST_Disjoint", raster=BILATERAL), "equals": PostGISOperator(func="ST_Equals"), "intersects": PostGISOperator( func="ST_Intersects", geography=True, raster=BILATERAL ), "overlaps": PostGISOperator(func="ST_Overlaps", raster=BILATERAL), "relate": PostGISOperator(func="ST_Relate"), "touches": PostGISOperator(func="ST_Touches", raster=BILATERAL), "within": PostGISOperator(func="ST_Within", raster=BILATERAL), "dwithin": PostGISOperator(func="ST_DWithin", geography=True, raster=BILATERAL), }
+- [6c63e036] select = "%s" if is_psycopg3 else "%s::bytea"
+- [3d4db0af] select_extent = None
+- [09c66272] unsupported_functions = set()
+- [0d637c67] # Identifier to mark raster lookups as bilateral. BILATERAL = "bilateral"
+- [f1f4f1d1] class PostGISOperations(BaseSpatialOperations, DatabaseOperations): name = "postgis" postgis = True geom_func_prefix = "ST_"
+- [feb38845] class PostGISOperator(SpatialOperator): def __init__(self, geography=False, raster=False, **kwargs): # Only a subset of the operators and functions are available for the # geography type. Lookups that don't support geography will be cast to # geometry. self.geography = geography # Only a subset of the operators and functions are available for the # raster type. Lookups that don't support raster will be converted to # polygons. If the raster argument is set to BILATERAL, then the # operator cannot handle mixed geom-raster lookups. self.raster = raster super().__init__(**kwargs)
+- [2ba8c80c] class ST_Polygon(Func): function = "ST_Polygon"
+- [fd513bc8] from .adapter import PostGISAdapter from .models import PostGISGeometryColumns, PostGISSpatialRefSys from .pgraster import from_pgraster
+- [5780403d] from django.conf import settings from django.contrib.gis.db.backends.base.operations import BaseSpatialOperations from django.contrib.gis.db.backends.utils import SpatialOperator from django.contrib.gis.db.models import GeometryField, RasterField from django.contrib.gis.gdal import GDALRaster from django.contrib.gis.geos.geometry import GEOSGeometryBase from django.contrib.gis.geos.prototypes.io import wkb_r from django.contrib.gis.measure import Distance from django.core.exceptions import ImproperlyConfigured from django.db import NotSupportedError, ProgrammingError from django.db.backends.postgresql.operations import DatabaseOperations from django.db.backends.postgresql.psycopg_any import is_psycopg3 from django.db.models import Func, Value from django.utils.functional import cached_property from django.utils.version import get_version_tuple
+- [dae3b101b4aa9562-5] import re

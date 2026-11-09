@@ -1,6 +1,6 @@
 # Fact 55d21884
 
-Store id: 36acc3d8-89ed-4995-806e-bad87162b456
+Store id: 70ec43da-718e-4e28-a9a1-81c310244e28
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_children_from_q(q)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.1604320+00:00`
+- posted_at: `2026-11-09T23:32:06.6688740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 92,
     "symbol": "get_children_from_q"
   },
-  "id": "36acc3d8-89ed-4995-806e-bad87162b456",
+  "id": "70ec43da-718e-4e28-a9a1-81c310244e28",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.1604320+00:00"
+    "posted_at": "2026-11-09T23:32:06.6688740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "95245811-987a-461d-b1fb-4b571d17e9cf",
+  "subject_id": "38e68cf6-6cdc-4b17-a83a-4981537e2607",
   "subject_name": "django/db/models/sql/query::get_children_from_q",
   "tags": [
     "entity:function"

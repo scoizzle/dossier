@@ -1,6 +1,6 @@
 # Fact e688dd48
 
-Store id: 7d8a52ef-ed41-4dca-9eea-2ed91bf4e653
+Store id: b8da9d56-0e34-4a51-8b18-08fe6a4a72b9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prepare_related_fields_for_save(self, operation_name, fields=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3434880+00:00`
+- posted_at: `2026-11-09T23:31:53.7481930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1270,
     "symbol": "Model._prepare_related_fields_for_save"
   },
-  "id": "7d8a52ef-ed41-4dca-9eea-2ed91bf4e653",
+  "id": "b8da9d56-0e34-4a51-8b18-08fe6a4a72b9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3434880+00:00"
+    "posted_at": "2026-11-09T23:31:53.7481930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "67205b71-d08f-445b-a568-5e78da5b04fd",
+  "subject_id": "4aa244c1-dd9e-460c-b242-99f161931ea1",
   "subject_name": "django/db/models/base::Model._prepare_related_fields_for_save",
   "tags": [
     "entity:method"

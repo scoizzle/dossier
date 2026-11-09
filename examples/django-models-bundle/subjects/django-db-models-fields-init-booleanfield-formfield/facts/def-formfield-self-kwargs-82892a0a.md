@@ -1,6 +1,6 @@
 # Fact 82892a0a
 
-Store id: 8c7ea8c9-f4f0-4aef-a1e0-1911a2da6f90
+Store id: 36bd6274-2dfc-49fc-bf21-2ca9244fd80b
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3706900+00:00`
+- posted_at: `2026-11-09T23:31:56.5427800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1233,
     "symbol": "BooleanField.formfield"
   },
-  "id": "8c7ea8c9-f4f0-4aef-a1e0-1911a2da6f90",
+  "id": "36bd6274-2dfc-49fc-bf21-2ca9244fd80b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3706900+00:00"
+    "posted_at": "2026-11-09T23:31:56.5427800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "32d17bb7-719c-44e4-a9d1-f36aa9a61688",
+  "subject_id": "0bdbd7f1-57f3-4527-8e36-b5b462acf7d2",
   "subject_name": "django/db/models/fields/__init__::BooleanField.formfield",
   "tags": [
     "entity:method"

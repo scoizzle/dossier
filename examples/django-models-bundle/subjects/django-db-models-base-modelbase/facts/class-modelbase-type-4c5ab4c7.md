@@ -1,6 +1,6 @@
 # Fact 4c5ab4c7
 
-Store id: 5bd905e3-37f9-4a9d-8c94-5b3b855fa8a9
+Store id: 68538271-8c0a-4c8c-b553-583bd2c744d5
 
 ## Text
 
@@ -20,7 +20,7 @@ class ModelBase(type)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3247890+00:00`
+- posted_at: `2026-11-09T23:31:53.7258620+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 95,
     "symbol": "ModelBase"
   },
-  "id": "5bd905e3-37f9-4a9d-8c94-5b3b855fa8a9",
+  "id": "68538271-8c0a-4c8c-b553-583bd2c744d5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3247890+00:00"
+    "posted_at": "2026-11-09T23:31:53.7258620+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a5f30df-9892-47b2-9b4e-f3ec1c1fbaf3",
+  "subject_id": "9a92cbbd-4c60-42e8-bfa5-d2a8714c789b",
   "subject_name": "django/db/models/base::ModelBase",
   "tags": [
     "entity:class"

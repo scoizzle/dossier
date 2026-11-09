@@ -1,6 +1,6 @@
 # Fact 624a24f6
 
-Store id: bcd14cf3-5a85-4629-b72f-54cde42662ae
+Store id: d4ed176c-244f-40b3-ab05-7b19d7152619
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function create_namedtuple_class
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:52.1602360+00:00`
+- posted_at: `2026-11-09T23:32:07.9512730+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bcd14cf3-5a85-4629-b72f-54cde42662ae",
+  "id": "d4ed176c-244f-40b3-ab05-7b19d7152619",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:52.1602360+00:00"
+    "posted_at": "2026-11-09T23:32:07.9512730+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "create_namedtuple_class"
       },
       "rel": "contains",
-      "target": "a80f91e6-2132-4457-9485-de3d443f89a0"
+      "target": "ea9def74-6e40-46f2-815a-e0c32efaf49f"
     }
   ],
   "status": "live",
-  "subject_id": "f5e83459-87b7-40dd-8dc8-0296e557a739",
+  "subject_id": "8d25c560-4eac-44c9-a77d-da20cef77164",
   "subject_name": "django/db/models/utils",
   "tags": [
     "entity:function"

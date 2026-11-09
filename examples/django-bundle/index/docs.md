@@ -4,16 +4,16 @@ This file lists every subject under `docs/` as folders and subjects: a row of ki
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| _theme/ | group | 8 | 0 | 0 | 203 | [index/docs-theme.md](docs-theme.md) |
-| docs/contents | subject | 7 | 0 | 0 | 169 | [subjects/docs-contents/index.md](../subjects/docs-contents/index.md) |
-| faq/ | group | 237 | 0 | 0 | 438 | [index/docs-faq.md](docs-faq.md) |
-| docs/glossary | subject | 25 | 0 | 0 | 615 | [subjects/docs-glossary/index.md](../subjects/docs-glossary/index.md) |
-| howto/ | group | 2144 | 0 | 0 | 1745 | [index/docs-howto.md](docs-howto.md) |
-| docs/index | subject | 81 | 0 | 0 | 1079 | [subjects/docs-index/index.md](../subjects/docs-index/index.md) |
-| internals/ | group | 2672 | 0 | 0 | 1313 | [index/docs-internals.md](docs-internals.md) |
-| intro/ | group | 1265 | 0 | 0 | 650 | [index/docs-intro.md](docs-intro.md) |
-| misc/ | group | 139 | 0 | 0 | 293 | [index/docs-misc.md](docs-misc.md) |
-| ref/ | group | 20349 | 0 | 0 | 5128 | [index/docs-ref.md](docs-ref.md) |
-| releases/ | group | 3253 | 0 | 0 | 3977 | [index/docs-releases.md](docs-releases.md) |
+| _theme/ | group | 8 | 0 | 0 | 205 | [index/docs-theme.md](docs-theme.md) |
+| docs/contents | subject | 7 | 0 | 0 | 180 | [subjects/docs-contents/index.md](../subjects/docs-contents/index.md) |
+| faq/ | group | 237 | 0 | 0 | 441 | [index/docs-faq.md](docs-faq.md) |
+| docs/glossary | subject | 25 | 0 | 0 | 626 | [subjects/docs-glossary/index.md](../subjects/docs-glossary/index.md) |
+| howto/ | group | 2144 | 0 | 0 | 1752 | [index/docs-howto.md](docs-howto.md) |
+| docs/index | subject | 81 | 0 | 0 | 3418 | [subjects/docs-index/index.md](../subjects/docs-index/index.md) |
+| internals/ | group | 2672 | 0 | 0 | 1318 | [index/docs-internals.md](docs-internals.md) |
+| intro/ | group | 1265 | 0 | 0 | 654 | [index/docs-intro.md](docs-intro.md) |
+| misc/ | group | 139 | 0 | 0 | 296 | [index/docs-misc.md](docs-misc.md) |
+| ref/ | group | 20349 | 0 | 0 | 5144 | [index/docs-ref.md](docs-ref.md) |
+| releases/ | group | 3253 | 0 | 0 | 3983 | [index/docs-releases.md](docs-releases.md) |
 
 Up: [INDEX.md](../INDEX.md)

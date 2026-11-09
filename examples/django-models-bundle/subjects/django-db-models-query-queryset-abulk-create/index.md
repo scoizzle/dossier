@@ -1,9 +1,9 @@
 # django/db/models/query::QuerySet.abulk_create
 
-- Subject: django/db/models/query::QuerySet.abulk_create (id `0bf35c2b-2b8b-4ebe-877b-66d131f4efd6`)
+- Subject: django/db/models/query::QuerySet.abulk_create (id `950640ac-3364-4765-9d52-c3124a1f3b41`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 46 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

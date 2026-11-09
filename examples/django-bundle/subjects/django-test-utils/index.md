@@ -1,14 +1,14 @@
 # django/test/utils
 
-- Subject: django/test/utils (id `b0985544-367e-43fe-bcbb-8e627af7da46`)
+- Subject: django/test/utils (id `89376e53-342f-40c6-9bf0-4abb8010fe89`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 887 tokens
-- Facts shown: 13 of 149
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 8313 tokens
+- Facts shown: 149 of 149
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # Actually create the database for the first connection if first_alias is None: first_alias = alias with time_keeper.timed(" Creating '%s'" % alias): connection.creation.create_test_db( verbosity=verbosity, autoclobber=not interactive, keepdb=keepdb, ) if serialized_aliases is None or alias in serialized_aliases: serialize_connections.append(connection) if parallel > 1: for index in range(parallel): with time_keeper.timed(" Cloning '%s'" % alias): connection.creation.clone_test_db( suffix=str(index + 1), verbosity=verbosity, keepdb=keepdb, ) # Configure all other connections as mirrors of the first one else: connections[alias].creation.set_as_test_mirror( connections[first_alias].settings_dict ) [4263ebae]
 - @wraps(func) def inner(*args, **kwargs): with self as context: if self.kwarg_name: kwargs[self.kwarg_name] = context return func(*args, **kwargs) [adbe3c3f]
@@ -24,6 +24,141 @@
 - self.registry = registry self.new_checks = new_checks self.deployment_checks = deployment_checks super().__init__() [575a3260]
 - # Configure the test mirrors. for alias, mirror_alias in mirrored_aliases.items(): connections[alias].creation.set_as_test_mirror( connections[mirror_alias].settings_dict ) [210832e8]
 
-## Beyond the budget
+## All facts
 
-136 more facts did not fit in the budget: [e130dc76] [598a9158] [78ea7447] [990d8c4a] [d460bff5] [d539623a] [5249a8a2] [f6f14001] [d0a4d371] [c0ef8850] [3426e299] [a3dec1de] [a8ea4890] [a0b07f2d] [357247e3] [d78af972] [91ce023e] [cb62e7ff] [e05658d4] [45884091] [b2e5deef] [3570505b] [e92da6f4] [abc53248] [d461ef48] [88d05d6c] [7796ccf3] [b868483a] [da330370] [7ef1a45d] [2a9e9261] [0d672049] [f1a04016] [f0a7ddc935b65180-5] [286bab07] [1417e290] [c58109e1] [a3aa6fe7] [56bdd844] [5298b50d] [54f0afd9] [f14b3873] [9320e2b2] [a35667e7] [61aed685] [bc565f79] [60679974] [12284225] [85ae2dd5] [c4ea2b06] [01a7e88e] [59ef5aa7] [da82f500] [0dfba270] [a3156094] [8b2145f2] [336a8136] [6b8983a0] [f66ef300] [89a3f5ef] [5ba1b1b0] [f5cb84cc] [2acb1113] [9099a13b] [8b34adbd] [8c67fc5a] [283a8e3f] [dc922c04] [d67cc6d4] [127d9593] [4a0fa7c8] [47d6cb5b] [5806df51] [b8bb8e25] [9ccaf182] [7bfed7aa] [8a7383f9] [aac3da1d] [fa8d8331] [9d747066] [021b5df2d691cbd2-4] [06d68c23] [2766fbd4] [3c3fdd34] [f3c27240] [d3efd8aa] [f593c356] [9cf912bb] [3462c826] [7c79476f] [48c7108f] [916f8d78] [7ed45dbc] [656dcdb9] [4ded90b1] [59f4db18] [5df74386] [b48b210c] [f4e2fd96] [80204829] [af225c29] [0d542b1e] [c0266106] [214b3d74] [dfaca9f9] [0ebfd80d] [e9735252] [72ba85f4] [4a44251b] [dfaa13fd] [b065909d] [3fa9d610] [ea7c50d9] [40b79ad1] [69b9d892] [3f0b3b3d] [91f9fa0b] [3375a419] [d137f688] [6aceae21] [f4fc38fa] [a17f1432] [e9c4827c] [fe1153da] [18e4cb59] [611668da] [e75a35e6] [51258f78] [f146c29b] [e02d9bf6] [3b1a366d] [89a5b714] [08f82940] [52bd56be] [df8b2531] [d6854e4c]
+- [e130dc76] # Check that no database depends on its own alias for sig, (_, aliases) in test_databases: all_deps = set() for alias in aliases: all_deps.update(dependencies.get(alias, [])) if not all_deps.isdisjoint(aliases): raise ImproperlyConfigured( "Circular dependency: databases %r depend on each other, " "but are aliases." % aliases ) dependencies_map[sig] = all_deps
+- [598a9158] # If the string is not a complete xml document, we may need to add a # root element. This allow us to compare fragments, like "<foo/><bar/>" if not want.startswith("<?xml"): wrapper = "<root>%s</root>" want = wrapper % want got = wrapper % got
+- [78ea7447] # Maps db signature to dependencies of all its aliases dependencies_map = {}
+- [990d8c4a] # Parse the want and got strings, and compare the parsings. want_root = first_node(parseString(want)) got_root = first_node(parseString(got))
+- [d460bff5] # RemovedInDjango2028Warning: Override MAILERS unconditionally; # remove EMAIL_BACKEND override. if hasattr(settings, "MAILERS"): saved_data.mailers = settings.MAILERS settings.MAILERS = { alias: {"BACKEND": "django.core.mail.backends.locmem.EmailBackend"} for alias in settings.MAILERS } else: saved_data.email_backend = settings.EMAIL_BACKEND settings.EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
+- [d539623a] # Serialize content of test databases only once all of them are setup to # account for database mirroring and routing during serialization. This # slightly horrific process is so people who are testing on databases # without transactions or using TransactionTestCase still get a clean # database on every test run. for serialize_connection in serialize_connections: serialize_connection._test_serialized_contents = ( serialize_connection.creation.serialize_db_to_string() )
+- [5249a8a2] @contextmanager def timed(self, name): self.records[name] start_time = time.perf_counter() try: yield finally: end_time = time.perf_counter() - start_time self.records[name].append(end_time)
+- [f6f14001] @property def captured_queries(self): return self.connection.queries[self.initial_queries : self.final_queries]
+- [d0a4d371] Based on https://github.com/lxml/lxml/blob/master/src/lxml/doctestcompare.py """ _norm_whitespace_re = re.compile(r"[ \t\n][ \t\n]+")
+- [c0ef8850] Deduplicate entries in DATABASES that correspond the same database or are configured as test mirrors.
+- [3426e299] Note: This function and the following ``captured_std*`` are copied from CPython's ``test.support`` module.""" orig_stdout = getattr(sys, stream_name) setattr(sys, stream_name, StringIO()) try: yield getattr(sys, stream_name) finally: setattr(sys, stream_name, orig_stdout)
+- [a3dec1de] Return two values: - test_databases: ordered mapping of signatures to (name, list of aliases) where all aliases share the same underlying database. - mirrored_aliases: mapping of mirror aliases to original aliases. """ if aliases is None: aliases = connections mirrored_aliases = {} test_databases = {} dependencies = {} default_sig = connections[DEFAULT_DB_ALIAS].creation.test_db_signature()
+- [a8ea4890] The list of installed apps the isolated registry should contain must be passed as arguments.
+- [a0b07f2d] The tests argument can also be an iterable of TestCase objects. """ for test in tests: if isinstance(test, str): # Prevent an unfriendly RecursionError that can happen with # strings. raise TypeError( f"Test {test!r} must be a test case or test suite not string " f"(was found in {tests!r})." ) if isinstance(test, TestCase): yield test else: # Otherwise, assume it is a test suite. yield from iter_test_cases(test)
+- [357247e3] Two optional keyword arguments can be specified:
+- [d78af972] `attr_name`: attribute assigned the isolated registry if used as a class decorator.
+- [91ce023e] `attr_name`: attribute assigned the return value of enable() if used as a class decorator.
+- [cb62e7ff] `kwarg_name`: keyword argument passing the isolated registry if used as a function decorator. """
+- [e05658d4] `kwarg_name`: keyword argument passing the return value of enable() if used as a function decorator. """
+- [45884091] deactivate()
+- [b2e5deef] def __call__(self, decorated): if isinstance(decorated, type): return self.decorate_class(decorated) elif callable(decorated): return self.decorate_callable(decorated) raise TypeError("Cannot decorate object of type %s" % type(decorated))
+- [3570505b] def __contains__(self, key): try: self[key] except KeyError: return False return True
+- [e92da6f4] def __enter__(self): return self.enable()
+- [abc53248] def __enter__(self): self.force_debug_cursor = self.connection.force_debug_cursor self.connection.force_debug_cursor = True # Run any initialization queries if needed so that they won't be # included as part of the count. self.connection.ensure_connection() self.initial_queries = len(self.connection.queries_log) self.final_queries = None self.reset_queries_disconnected = request_started.disconnect(reset_queries) return self
+- [d461ef48] def __eq__(self, other): return self.val == other or round(abs(self.val - other), self.places) == 0
+- [88d05d6c] def __exit__(self, exc_type, exc_value, traceback): self.connection.force_debug_cursor = self.force_debug_cursor if self.reset_queries_disconnected: request_started.connect(reset_queries) if exc_type is not None: return self.final_queries = len(self.connection.queries_log)
+- [7796ccf3] def __exit__(self, exc_type, exc_value, traceback): self.disable()
+- [b868483a] def __getitem__(self, index): return self.captured_queries[index]
+- [da330370] def __getitem__(self, key): if isinstance(key, str): for subcontext in self: if key in subcontext: return subcontext[key] raise KeyError(key) else: return super().__getitem__(key)
+- [7ef1a45d] def __init__(self, **kwargs): self.options = kwargs super().__init__()
+- [2a9e9261] def __init__(self, *args, **kwargs): if args: # Hack used when instantiating from SimpleTestCase.setUpClass. assert not kwargs self.operations = args[0] else: assert not args self.operations = list(kwargs.items()) super(override_settings, self).__init__()
+- [0d672049] def __init__(self, *installed_apps, **kwargs): self.installed_apps = installed_apps super().__init__(**kwargs)
+- [f1a04016] def __init__(self, attr_name=None, kwarg_name=None): self.attr_name = attr_name self.kwarg_name = kwarg_name
+- [f0a7ddc935b65180-5] def __init__(self, connection): self.connection = connection
+- [286bab07] def __init__(self, new_checks, deployment_checks=None): from django.core.checks.registry import registry
+- [1417e290] def __init__(self, prefix): self.prefix = prefix super().__init__()
+- [c58109e1] def __iter__(self): return iter(self.captured_queries)
+- [a3aa6fe7] def __len__(self): return len(self.captured_queries)
+- [56bdd844] def __repr__(self): return repr(self.val)
+- [5298b50d] def attrs_dict(element): return dict(element.attributes.items())
+- [54f0afd9] def check_element(want_element, got_element): if want_element.tagName != got_element.tagName: return False if norm_child_text(want_element) != norm_child_text(got_element): return False if attrs_dict(want_element) != attrs_dict(got_element): return False want_children = children(want_element) got_children = children(got_element) if len(want_children) != len(got_children): return False return all( check_element(want, got) for want, got in zip(want_children, got_children) )
+- [f14b3873] def child_text(element): return "".join( c.data for c in element.childNodes if c.nodeType == Node.TEXT_NODE )
+- [9320e2b2] def children(element): return [c for c in element.childNodes if c.nodeType == Node.ELEMENT_NODE]
+- [a35667e7] def decorate_callable(self, func): if iscoroutinefunction(func): # If the inner function is an async function, we must execute async # as well so that the `with` statement executes at the right time. @wraps(func) async def inner(*args, **kwargs): with self as context: if self.kwarg_name: kwargs[self.kwarg_name] = context return await func(*args, **kwargs)
+- [61aed685] def decorate_class(self, cls): from django.test import SimpleTestCase
+- [bc565f79] def decorate_class(self, cls): if issubclass(cls, TestCase): decorated_setUp = cls.setUp
+- [60679974] def decorator(obj): if hasattr(obj, "tags"): obj.tags = obj.tags.union(tags) else: setattr(obj, "tags", set(tags)) return obj
+- [12284225] def disable(self): if "INSTALLED_APPS" in self.options: apps.unset_installed_apps() settings._wrapped = self.wrapped del self.wrapped responses = [] for key in self.options: new_value = getattr(settings, key, None) responses_for_setting = setting_changed.send_robust( sender=settings._wrapped.__class__, setting=key, value=new_value, enter=False, ) responses.extend(responses_for_setting) if self.enable_exception is not None: exc = self.enable_exception self.enable_exception = None raise exc for _, response in responses: if isinstance(response, Exception): raise response
+- [85ae2dd5] def disable(self): raise NotImplementedError
+- [c4ea2b06] def disable(self): self.catch_warnings.__exit__(*sys.exc_info())
+- [01a7e88e] def disable(self): self.registry.registered_checks = self.old_checks self.registry.deployment_checks = self.old_deployment_checks
+- [59ef5aa7] def disable(self): set_script_prefix(self.old_prefix)
+- [da82f500] def disable(self): setattr(Options, "default_apps", self.old_apps)
+- [0dfba270] def enable(self): # Keep this code at the beginning to leave the settings unchanged # in case it raises an exception because INSTALLED_APPS is invalid. if "INSTALLED_APPS" in self.options: try: apps.set_installed_apps(self.options["INSTALLED_APPS"]) except Exception: apps.unset_installed_apps() raise override = UserSettingsHolder(settings._wrapped) for key, new_value in self.options.items(): setattr(override, key, new_value) self.wrapped = settings._wrapped settings._wrapped = override for key, new_value in self.options.items(): try: setting_changed.send( sender=settings._wrapped.__class__, setting=key, value=new_value, enter=True, ) except Exception as exc: self.enable_exception = exc self.disable()
+- [a3156094] def enable(self): raise NotImplementedError
+- [8b2145f2] def enable(self): self.catch_warnings = warnings.catch_warnings() self.catch_warnings.__enter__() self.filter_func("ignore", **self.ignore_kwargs)
+- [336a8136] def enable(self): self.old_apps = Options.default_apps apps = Apps(self.installed_apps) setattr(Options, "default_apps", apps) return apps
+- [6b8983a0] def enable(self): self.old_checks = self.registry.registered_checks self.registry.registered_checks = set() for check in self.new_checks: self.registry.register(check, *getattr(check, "tags", ())) self.old_deployment_checks = self.registry.deployment_checks if self.deployment_checks is not None: self.registry.deployment_checks = set() for check in self.deployment_checks: self.registry.register(check, *getattr(check, "tags", ()), deploy=True)
+- [f66ef300] def enable(self): self.old_prefix = get_script_prefix() set_script_prefix(self.prefix)
+- [89a3f5ef] def enable(self): self.options = {} for name, operations in self.operations: try: # When called from SimpleTestCase.setUpClass, values may be # overridden several times; cumulate changes. value = self.options[name] except KeyError: value = list(getattr(settings, name, [])) for action, items in operations.items(): # items may be a single value or an iterable. if isinstance(items, str): items = [items] if action == "append": value += [item for item in items if item not in value] elif action == "prepend": value = [item for item in items if item not in value] + value elif action == "remove": value = [item for item in value if item not in items] else: raise ValueError("Unsupported action: %s" % action) self.options[name] = value super().enable()
+- [5ba1b1b0] def first_node(document): for node in document.childNodes: if node.nodeType not in ( Node.COMMENT_NODE, Node.DOCUMENT_TYPE_NODE, Node.PROCESSING_INSTRUCTION_NODE, ): return node
+- [f5cb84cc] def get(self, key, default=None): try: return self.__getitem__(key) except KeyError: return default
+- [2acb1113] def keys(self): """ Flattened keys of subcontexts. """ return set(chain.from_iterable(d for subcontext in self for d in subcontext))
+- [9099a13b] def norm_child_text(element): return norm_whitespace(child_text(element))
+- [8b34adbd] def norm_whitespace(v): return _norm_whitespace_re.sub(" ", v)
+- [8c67fc5a] def print_results(self): for name, end_times in self.records.items(): for record_time in end_times: record = "%s took %.3fs" % (name, record_time) sys.stderr.write(record + os.linesep)
+- [283a8e3f] def print_results(self): pass
+- [dc922c04] def save_options(self, test_func): if test_func._modified_settings is None: test_func._modified_settings = self.operations else: # Duplicate list to prevent subclasses from altering their parent. test_func._modified_settings = ( list(test_func._modified_settings) + self.operations )
+- [d67cc6d4] def save_options(self, test_func): if test_func._overridden_settings is None: test_func._overridden_settings = self.options else: # Duplicate dict to prevent subclasses from altering their parent. test_func._overridden_settings = { **test_func._overridden_settings, **self.options, }
+- [127d9593] def setUp(self): self.logger = logging.getLogger("django") self.old_stream = self.logger.handlers[0].stream self.logger_output = StringIO() self.logger.handlers[0].stream = self.logger_output
+- [4a0fa7c8] def tearDown(self): self.logger.handlers[0].stream = self.old_stream
+- [47d6cb5b] del _TestState.saved_data del mail.outbox
+- [5806df51] enable_exception = None
+- [b8bb8e25] for alias in connections: connection = connections[alias] test_settings = connection.settings_dict["TEST"]
+- [9ccaf182] for db_name, aliases in test_databases.values(): first_alias = None for alias in aliases: connection = connections[alias] old_names.append((connection, db_name, first_alias is None))
+- [7bfed7aa] if debug is None: debug = settings.DEBUG
+- [8a7383f9] if debug_sql: for alias in connections: connections[alias].force_debug_cursor = True
+- [aac3da1d] mail.outbox = []
+- [fa8d8331] old_names = [] serialize_connections = []
+- [9d747066] return check_element(want_root, got_root)
+- [021b5df2d691cbd2-4] return decorator
+- [06d68c23] return old_names
+- [2766fbd4] saved_data = SimpleNamespace() _TestState.saved_data = saved_data
+- [3c3fdd34] saved_data.allowed_hosts = settings.ALLOWED_HOSTS # Add the default host of the test client. settings.ALLOWED_HOSTS = [*settings.ALLOWED_HOSTS, "testserver"]
+- [f3c27240] saved_data.debug = settings.DEBUG settings.DEBUG = debug
+- [d3efd8aa] saved_data.template_render = Template._render saved_data.partial_template_render = PartialTemplate._render Template._render = instrumented_test_render PartialTemplate._render = instrumented_test_render
+- [f593c356] settings.ALLOWED_HOSTS = saved_data.allowed_hosts settings.DEBUG = saved_data.debug # RemovedInDjango2028Warning: Restore MAILERS unconditionally; # remove EMAIL_BACKEND support. if hasattr(saved_data, "mailers"): settings.MAILERS = saved_data.mailers if hasattr(saved_data, "email_backend"): settings.EMAIL_BACKEND = saved_data.email_backend Template._render = saved_data.template_render PartialTemplate._render = saved_data.partial_template_render
+- [9cf912bb] test_databases = dict(dependency_ordered(test_databases.items(), dependencies)) return test_databases, mirrored_aliases
+- [3462c826] test_databases, mirrored_aliases = get_unique_databases_and_mirrors(aliases)
+- [7c79476f] want = want.strip().replace("\\n", "\n") got = got.strip().replace("\\n", "\n")
+- [48c7108f] while test_databases: changed = False deferred = []
+- [916f8d78] with captured_stderr() as stderr: print("hello", file=sys.stderr) self.assertEqual(stderr.getvalue(), "hello\n") """ return captured_output("stderr")
+- [7ed45dbc] with captured_stdin() as stdin: stdin.write('hello\n') stdin.seek(0) # call test code that consumes from sys.stdin captured = input() self.assertEqual(captured, "hello") """ return captured_output("stdin")
+- [656dcdb9] with captured_stdout() as stdout: print("hello") self.assertEqual(stdout.getvalue(), "hello\n") """ return captured_output("stdout")
+- [4ded90b1] # On OSes that don't provide tzset (Windows), we can't set the timezone # in which the program runs. As a consequence, we must skip tests that # don't enforce a specific timezone (with timezone.override or equivalent), # or attempt to interpret naive datetimes in the default timezone.
+- [59f4db18] @contextmanager def captured_output(stream_name): """Return a context manager used by captured_stdout/stdin/stderr that temporarily replaces the sys stream *stream_name* with a StringIO.
+- [5df74386] @contextmanager def extend_sys_path(*paths): """Context manager to temporarily add paths to sys.path.""" _orig_sys_path = sys.path[:] sys.path.extend(paths) try: yield finally: sys.path = _orig_sys_path
+- [b48b210c] @contextmanager def freeze_time(t): """ Context manager to temporarily freeze time.time(). This temporarily modifies the time function of the time module. Modules which import the time function directly (e.g. `from time import time`) won't be affected This isn't meant as a public API, but helps reduce some repetitive code in Django's test suite. """ _real_time = time.time time.time = lambda: t try: yield finally: time.time = _real_time
+- [f4e2fd96] @contextmanager def isolate_lru_cache(lru_cache_object): """Clear the cache of an LRU cache object on entering and exiting.""" lru_cache_object.cache_clear() try: yield finally: lru_cache_object.cache_clear()
+- [80204829] @contextmanager def register_lookup(field, *lookups, lookup_name=None): """ Context manager to temporarily register lookups on a model field using lookup_name (or the lookup's lookup_name if not provided). """ try: for lookup in lookups: field.register_lookup(lookup, lookup_name) yield finally: for lookup in lookups: field._unregister_lookup(lookup, lookup_name)
+- [af225c29] TZ_SUPPORT = hasattr(time, "tzset")
+- [0d542b1e] __all__ = ( "Approximate", "ContextList", "isolate_lru_cache", "garbage_collect", "get_runner", "CaptureQueriesContext", "ignore_warnings", "isolate_apps", "modify_settings", "override_settings", "override_system_checks", "tag", "requires_tz_support", "setup_databases", "setup_test_environment", "teardown_test_environment", )
+- [c0266106] class Approximate: def __init__(self, val, places=7): self.val = val self.places = places
+- [214b3d74] class CaptureQueriesContext: """ Context manager that captures queries executed by the specified connection. """
+- [dfaca9f9] class ContextList(list): """ A wrapper that provides direct key access to context items contained in a list of context objects. """
+- [0ebfd80d] class LoggingCaptureMixin: """ Capture the output from the 'django' logger and store it on the class's logger_output attribute. """
+- [e9735252] class NullTimeKeeper: @contextmanager def timed(self, name): yield
+- [72ba85f4] class TestContextDecorator: """ A base class that can either be used as a context manager during tests or as a test function or unittest.TestCase subclass decorator to perform temporary alterations.
+- [4a44251b] class TimeKeeper: def __init__(self): self.records = collections.defaultdict(list)
+- [dfaa13fd] class _TestState: pass
+- [b065909d] class ignore_warnings(TestContextDecorator): def __init__(self, **kwargs): self.ignore_kwargs = kwargs if "message" in self.ignore_kwargs or "module" in self.ignore_kwargs: self.filter_func = warnings.filterwarnings else: self.filter_func = warnings.simplefilter super().__init__()
+- [3fa9d610] class isolate_apps(TestContextDecorator): """ Act as either a decorator or a context manager to register models defined in its wrapped context to an isolated registry.
+- [ea7c50d9] class modify_settings(override_settings): """ Like override_settings, but makes it possible to append, prepend, or remove items instead of redefining the entire list. """
+- [40b79ad1] class override_script_prefix(TestContextDecorator): """Decorator or context manager to temporary override the script prefix."""
+- [69b9d892] class override_settings(TestContextDecorator): """ Act as either a decorator or a context manager. If it's a decorator, take a function and return a wrapped function. If it's a contextmanager, use it with the ``with`` statement. In either event, entering/exiting are called before and after, respectively, the function/block is executed. """
+- [3f0b3b3d] class override_system_checks(TestContextDecorator): """ Act as a decorator. Override list of registered system checks. Useful when you override `INSTALLED_APPS`, e.g. if you exclude `auth` app, you also need to exclude its system checks. """
+- [91f9fa0b] def captured_stderr(): """Capture the output of sys.stderr:
+- [3375a419] def captured_stdin(): """Capture the input to sys.stdin:
+- [d137f688] def captured_stdout(): """Capture the output of sys.stdout:
+- [6aceae21] def compare_xml(want, got): """ Try to do a 'xml-comparison' of want and got. Plain string comparison doesn't always work because, for example, attribute ordering should not be important. Ignore comment nodes, processing instructions, document type node, and leading and trailing whitespaces.
+- [f4fc38fa] def dependency_ordered(test_databases, dependencies): """ Reorder test_databases into an order that honors the dependencies described in TEST[DEPENDENCIES]. """ ordered_test_databases = [] resolved_databases = set()
+- [a17f1432] def garbage_collect(): gc.collect() if PYPY: # Collecting weakreferences can take two collections on PyPy. gc.collect()
+- [e9c4827c] def get_runner(settings, test_runner_class=None): test_runner_class = test_runner_class or settings.TEST_RUNNER test_path = test_runner_class.split(".") # Allow for relative paths if len(test_path) > 1: test_module_name = ".".join(test_path[:-1]) else: test_module_name = "." test_module = __import__(test_module_name, {}, {}, test_path[-1]) return getattr(test_module, test_path[-1])
+- [fe1153da] def get_unique_databases_and_mirrors(aliases=None): """ Figure out which databases actually need to be created.
+- [18e4cb59] def instrumented_test_render(self, context): """ An instrumented Template render method, providing a signal that can be intercepted by the test Client. """ template_rendered.send(sender=self, template=self, context=context) return self.nodelist.render(context)
+- [611668da] def iter_test_cases(tests): """ Return an iterator over a test suite's unittest.TestCase objects.
+- [e75a35e6] def require_jinja2(test_func): """ Decorator to enable a Jinja2 template engine in addition to the regular Django template engine for a test or skip it if Jinja2 isn't available. """ test_func = skipIf(jinja2 is None, "this test requires jinja2")(test_func) return override_settings( TEMPLATES=[ { "BACKEND": "django.template.backends.django.DjangoTemplates", "APP_DIRS": True, }, { "BACKEND": "django.template.backends.jinja2.Jinja2", "APP_DIRS": True, "OPTIONS": {"keep_trailing_newline": True}, }, ] )(test_func)
+- [51258f78] def setup_databases( verbosity, interactive, *, time_keeper=None, keepdb=False, debug_sql=False, parallel=0, aliases=None, serialized_aliases=None, **kwargs, ): """Create the test databases.""" if time_keeper is None: time_keeper = NullTimeKeeper()
+- [f146c29b] def setup_test_environment(debug=None): """ Perform global pre-test setup, such as installing the instrumented template renderer and setting the email backend to the locmem email backend. """ if hasattr(_TestState, "saved_data"): # Executing this function twice would overwrite the saved values. raise RuntimeError( "setup_test_environment() was already called and can't be called " "again without first calling teardown_test_environment()." )
+- [e02d9bf6] def tag(*tags): """Decorator to add tags to a test class or method."""
+- [3b1a366d] def teardown_databases(old_config, verbosity, parallel=0, keepdb=False): """Destroy all the non-mirror databases.""" for connection, old_name, destroy in old_config: if destroy: if parallel > 1: for index in range(parallel): connection.creation.destroy_test_db( suffix=str(index + 1), verbosity=verbosity, keepdb=keepdb, ) connection.creation.destroy_test_db(old_name, verbosity, keepdb)
+- [89a5b714] def teardown_test_environment(): """ Perform any global post-test teardown, such as restoring the original template renderer and restoring the email sending functions. """ saved_data = _TestState.saved_data
+- [08f82940] from django.apps import apps from django.apps.registry import Apps from django.conf import UserSettingsHolder, settings from django.core import mail from django.core.exceptions import ImproperlyConfigured from django.core.signals import request_started, setting_changed from django.db import DEFAULT_DB_ALIAS, connections, reset_queries from django.db.models.options import Options from django.template import PartialTemplate, Template from django.test.signals import template_rendered from django.urls import get_script_prefix, set_script_prefix from django.utils.translation import deactivate from django.utils.version import PYPY
+- [52bd56be] import collections import gc import logging import os import re import sys import time import warnings from contextlib import contextmanager from functools import wraps from inspect import iscoroutinefunction from io import StringIO from itertools import chain from types import SimpleNamespace from unittest import TestCase, skipIf, skipUnless from xml.dom.minidom import Node, parseString
+- [df8b2531] requires_tz_support = skipUnless( TZ_SUPPORT, "This test relies on the ability to run a program in an arbitrary " "time zone, but your operating system isn't able to do that.", )
+- [d6854e4c] try: import jinja2 except ImportError: jinja2 = None

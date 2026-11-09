@@ -1,6 +1,6 @@
 # Fact 8956bcea
 
-Store id: 87ad2fa7-7a2a-46a8-acb6-8d1702dfed4c
+Store id: ea7807c8-7016-42c6-b3a7-1ab44bb50ca3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __ror__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.4930690+00:00`
+- posted_at: `2026-11-09T23:31:55.7525470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 156,
     "symbol": "Combinable.__ror__"
   },
-  "id": "87ad2fa7-7a2a-46a8-acb6-8d1702dfed4c",
+  "id": "ea7807c8-7016-42c6-b3a7-1ab44bb50ca3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.4930690+00:00"
+    "posted_at": "2026-11-09T23:31:55.7525470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3e167c6a-955d-4d5c-b22e-8074872d143e",
+  "subject_id": "d918e02a-b56e-4059-9c3f-a854529956ef",
   "subject_name": "django/db/models/expressions::Combinable.__ror__",
   "tags": [
     "entity:method"

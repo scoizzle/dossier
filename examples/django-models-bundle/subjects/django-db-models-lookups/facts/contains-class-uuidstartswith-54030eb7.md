@@ -1,6 +1,6 @@
 # Fact 54030eb7
 
-Store id: eb030205-751b-443d-a936-c654c4e72f53
+Store id: 494eed9c-3018-47d9-9095-f635a1bd82c1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDStartsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.3048640+00:00`
+- posted_at: `2026-11-09T23:32:03.5009330+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "eb030205-751b-443d-a936-c654c4e72f53",
+  "id": "494eed9c-3018-47d9-9095-f635a1bd82c1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.3048640+00:00"
+    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDStartsWith"
       },
       "rel": "contains",
-      "target": "cce6352f-f7d7-4aae-8ff9-f5ac162466bb"
+      "target": "f105efad-c6b1-4376-98bb-dd3c5f9a1a8f"
     }
   ],
   "status": "live",
-  "subject_id": "8a4b2e84-bc75-4dfe-afa5-aa8af215b8c6",
+  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

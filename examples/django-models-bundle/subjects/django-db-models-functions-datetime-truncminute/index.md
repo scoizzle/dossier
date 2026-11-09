@@ -1,9 +1,9 @@
 # django/db/models/functions/datetime::TruncMinute
 
-- Subject: django/db/models/functions/datetime::TruncMinute (id `5d61f2b0-f22e-4033-ad7e-39ec129daa06`)
+- Subject: django/db/models/functions/datetime::TruncMinute (id `1ee4f9c0-3fdc-41e9-a62c-cff2f1e06e7c`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

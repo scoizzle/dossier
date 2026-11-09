@@ -1,14 +1,14 @@
 # docs/ref/models/class
 
-- Subject: docs/ref/models/class (id `10193dec-f203-4e05-b2a7-f324337cd79f`)
+- Subject: docs/ref/models/class (id `c56b481e-785d-481f-b6e1-ace8ab310abc`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 21 of 23
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 934 tokens
+- Facts shown: 23 of 23
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - class Person(models.Model): # Add manager with another name people = models.Manager() [52722079]
 - from django.db import models [4af926756c29efa6-16]
@@ -32,6 +32,7 @@
 - ``DoesNotExist`` ---------------- [92ebc6de]
 - ``MultipleObjectsReturned`` --------------------------- [77c87fbbd18bdfb0-2]
 
-## Beyond the budget
+## All facts
 
-2 more facts did not fit in the budget: [536c3c62] [a4e68a78]
+- [536c3c62] ``NotUpdated`` --------------
+- [a4e68a78] ``objects`` -----------

@@ -1,14 +1,14 @@
 # docs/ref/contrib/gis/geos
 
-- Subject: docs/ref/contrib/gis/geos (id `e5641446-d2d0-4a17-bc77-fdd7de9c0756`)
+- Subject: docs/ref/contrib/gis/geos (id `4a894bf7-1415-4a7e-8c87-b3565a2692e2`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 899 tokens
-- Facts shown: 14 of 392
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 13354 tokens
+- Facts shown: 389 of 392
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - >>> ext_coords = ((0, 0), (0, 1), (1, 1), (1, 0), (0, 0)) >>> int_coords = ((0.4, 0.4), (0.4, 0.6), (0.6, 0.6), (0.6, 0.4), (0.4, 0.4)) >>> poly = Polygon(ext_coords, int_coords) >>> poly = Polygon(LinearRing(ext_coords), LinearRing(int_coords)) [fcf2dc66]
 - >>> from django.contrib.gis.geos import LineString >>> ls1 = LineString((0, 0), (1, 1)) >>> ls2 = LineString((1, 1), (0, 0)) >>> ls3 = LineString((1, 1), (0, 0), srid=4326) >>> ls1.equals(ls2) True >>> ls1 == ls2 False >>> ls3 == ls2 # different SRIDs False [9d17bc4a]
@@ -25,6 +25,380 @@
 - >>> from django.contrib.gis.geos import fromfile >>> g = fromfile("/home/bob/geom.wkt") [8503155a]
 - See :attr:`WKBWriter.outdim`. [d1d056f2]
 
-## Beyond the budget
+## All facts
 
-375 more facts did not fit in the budget: [18f64566] [d86c4ba6] [9d1f6b0a] [e4bf355b] [4dbffe2f] [7e70365a] [00a1ff1f] [4b504d43] [0a4e0da1] [e83571ec] [51bfeeb7] [dd918595] [0a93764b] [856c43cf] [ab4cf5aa] [0e003f9f] [aa3b3fb8] [6bb03271] [1be7f02a] [5327773e] [fc4c6b56] [e6b16cde] [199db3f7] [77d56fdd] [5ad81c76] [e9ace4cc] [32ac0ffa] [327703be] [0bfb0f42] [8eb5de68] [904c45e0] [46a2243f] [ed5f543c] [055e1835] [2db9b0be] [8ce3557b444892a7] [8ce3557b444892a7-2] [47b37965] [751ecb6d] [21237ca0] [ceb066a7a2246d02-2] [eaf050be34acb41d-139] [eaf050be34acb41d-140] [eaf050be34acb41d-141] [eaf050be34acb41d-142] [eaf050be34acb41d-143] [eaf050be34acb41d-144] [eaf050be34acb41d-145] [eaf050be34acb41d-146] [eaf050be34acb41d-147] [eaf050be34acb41d-148] [eaf050be34acb41d-149] [eaf050be34acb41d-150] [eaf050be34acb41d-151] [eaf050be34acb41d-152] [eaf050be34acb41d-153] [eaf050be34acb41d-154] [eaf050be34acb41d-155] [eaf050be34acb41d-156] [eaf050be34acb41d-157] [eaf050be34acb41d-158] [eaf050be34acb41d-159] [eaf050be34acb41d-160] [eaf050be34acb41d-161] [eaf050be34acb41d-162] [eaf050be34acb41d-163] [eaf050be34acb41d-164] [eaf050be34acb41d-165] [043b4756] [f4f6c491] [33d9d03b] [6c42620f049e21b6-2] [d9fc9a33] [91ba0312] [bc16580d64d34732-2] [f71621e815e46dcb-2] [b1eaa80bf297e3f1-2] [a1a515580d7933d8-2] [ec7d9f2ce657a36b-2] [403a395e5964badc-2] [942ae6c11625c81c-50] [942ae6c11625c81c-51] [942ae6c11625c81c-52] [a1eb26d754a3d60c-9] [81ac8b98] [bb73500d] [caa5e4d5] [5d98e84e] [518b1cde] [092a299f] [f34d3163] [a24e3181] [b1a8cc16] [c80b623e] [3213ebc4] [c8dc22ab] [7d8f79b3] [6c883982] [bd90753c] [c0537a3e] [8636127c] [959f21cc] [8492f608] [4e810698] [2025d1e8] [d12ad71f] [447304c3] [42290f2f] [1345e535] [2daaa76b] [f782ebd5] [20ed93bf2591ccc0-14] [20ed93bf2591ccc0-15] [20ed93bf2591ccc0-16] [20ed93bf2591ccc0-17] [20ed93bf2591ccc0-18] [20ed93bf2591ccc0-19] [73910cd9] [905b244b] [f409a781] [913cee46] [e2b02523] [02078ded] [0efd0d17] [d88e1bef] [ec1a453b] [23868b7b] [be1bf1a0] [2b89fff1] [ca23c0ad] [3a7253c3] [bc1a10fb] [2e5abe38] [0cfb2ad8] [08af8eca] [445e3f59] [a3efce55] [cbdc9d80] [b4af49d6] [7b7b17c0] [3bbc8ea6] [c7415fa8] [8a3b1414] [07bded90] [74fce9b1] [5a17be89] [1582a168] [6ffbf99b] [78b8b14a] [2dacc71e] [98fa407a] [fb6d9ae2] [ee4c7eea] [492bfa27] [b2dd48dc] [836d2ccf] [7091f2c3] [6b5400c8] [9393db05] [1f013855] [fe68e7d8] [792e8ab3] [b75285f1] [b1e7e56e] [76ce4077] [18ba04e6] [a942aa16] [d55250ce] [75ef20ea] [60cce7a4] [91769338] [83bc14ba] [23a4919f] [d091d8af] [a985b70e] [cc713efb] [6722a0df] [25778857] [e5e4e8db] [00cf7246] [79742195] [3c323300] [5abf1826] [cb30ac9a] [2d2b7bb2] [3f30e74846c0e0ab] [154466eb] [d9edaec1] [06dbd6f6] [9323dd0d] [52956d55] [23afb2a1] [9d20b881] [a800e906] [65941887] [d0e2e018] [4dfec693] [1306686b] [c48aafc1] [acd90350] [74fd5c41] [d4dadaf3] [8abb0861] [3e771e28] [c9f6500c] [8a294da9] [cc1aff2f] [34618be5] [027d5cad] [4b5da3dd] [0db35147] [24e8a7ed] [e891afb5] [6bb84271] [8dac5b69] [8e780024] [2f9544f6] [7af7a84a] [b5d7b0b5] [63d59a44] [f0a8930b] [3e4c3a8f] [9c4ae0c8] [d90b820d] [d2cbaee5] [325a8c44] [7dda2970] [9a769a2e] [6f1b8796] [5b660314] [72e73434] [afcdb593] [15ea80f1] [483a6926] [bbc81a93] [33c0daf6] [0254c043] [bec79105] [03659239] [d7d8130f] [405e3d91] [9ea67e7d] [9961400c] [b421478d] [5a14093b] [36229421] [94ad0e40] [7c718988] [d60bd6a3] [c7521be3] [f7ff94f7] [6369e9f4] [4f15afe7] [a2b9c46a] [bc5de9a2] [63bbab33] [1641d75b] [9e76878e] [0d5fd1cd] [55483a89] [8adbc89d] [42198c69] [7e7a0b3f] [81b58372] [9f1349bb] [add409ca] [ed77177e] [cdde0faa] [1add0a31] [eaf050be34acb41d-166] [eaf050be34acb41d-167] [eaf050be34acb41d-168] [eaf050be34acb41d-169] [eaf050be34acb41d-170] [eaf050be34acb41d-171] [eaf050be34acb41d-172] [eaf050be34acb41d-173] [eaf050be34acb41d-174] [eaf050be34acb41d-175] [eaf050be34acb41d-176] [eaf050be34acb41d-177] [cbf1913a] [96bb152e] [978aaeae] [6d79ec80] [ff1fb61a] [bda872a5] [c167d4c7] [adb252f7] [1a8d82fd] [216ca832] [dfcb7f2c] [5ee55b90] [837c19a3] [f8617966] [faa00447] [7550978f] [f467247f] [91f16dc3] [2e886862] [1f101126] [04f20ed5] [37e12c27] [78387958] [23559e25] [24829110] [ccd83074] [3560f4d5] [76ee77bc] [253bb422] [b852789d] [12bb5c6b] [942ae6c11625c81c-53] [768b3126] [fbd4a8d4] [acbd0c51f780d445-3] [16572c53] [2acdacf3] [365c9b7b] [9f1ae4bb] [9065b5e1] [a1a59137] [ac95a770] [2ad3649c] [c7ba07fc] [fe1b1ee1] [458050e52503f721-4] [1355169e] [f7cb9ddd] [bc295f9831206ba3-8] [9bd1628d] [05137133] [f8b44352] [945233a2] [ef3c702c] [d5be7db8] [3c1d9568] [83241457] [163fba2c] [86e53d65] [1d62d4bc] [fd8f20fb] [074e766e] [3ec5cf56] [0277d7c6] [94005583b32250b8-3] [7e110dc5] [7e140414] [a9d4367f] [86f396a2] [1450e62f] [84660086] [a41ab892] [b0560dc5] [ea2f2cec] [d3de7241] [22873aa9] [f060bc8e] [482cd4ab] [64781e38] [97a01a6e] [80c7f9a7090bc8b5-2] [dd45d56e] [5f654cd2] [3d34393e] [c97c2ff8] [4a1ee678] [adfe08be] [fae786a7] [f50d94fa] [e7d6f9a5] [73e45248] [2b7be999] [a0a25749] [4e8329d4]
+- [18f64566] >>> from django.contrib.gis.geos import fromstr >>> pnt = fromstr("POINT(-90.5 29.5)", srid=4326)
+- [d86c4ba6] >>> g = MultiPoint(Point(0, 0), Point(2, 2), Point(1, 1)) >>> print(g) MULTIPOINT (0 0, 2 2, 1 1) >>> g.normalize() >>> print(g) MULTIPOINT (2 2, 1 1, 0 0)
+- [9d1f6b0a] >>> if poly_1.area > poly_2.area: ... pass ...
+- [e4bf355b] >>> ls = LineString(((0, 0), (1, 1))) >>> ls = LineString([Point(0, 0), Point(1, 1)])
+- [4dbffe2f] >>> ls = LineString() >>> ls = LineString([])
+- [7e70365a] >>> ls = LinearRing((0, 0), (0, 1), (1, 1), (0, 0))
+- [00a1ff1f] >>> ls1 = LineString((0, 0), (1, 1)) >>> ls2 = LineString((2, 2), (3, 3)) >>> mls = MultiLineString(ls1, ls2) >>> mls = MultiLineString([ls1, ls2])
+- [4b504d43] >>> mp = MultiPoint(Point(0, 0), Point(1, 1)) >>> mp = MultiPoint((Point(0, 0), Point(1, 1)))
+- [0a4e0da1] >>> p1 = Polygon(((0, 0), (0, 1), (1, 1), (0, 0))) >>> p2 = Polygon(((1, 1), (1, 2), (2, 2), (1, 1))) >>> mp = MultiPolygon(p1, p2) >>> mp = MultiPolygon([p1, p2])
+- [e83571ec] >>> pnt = GEOSGeometry("POINT(5 23)") >>> pnt.geom_type 'Point'
+- [51bfeeb7] >>> pnt = Point() >>> pnt = Point([])
+- [dd918595] >>> pnt = Point(5, 23) >>> pnt = Point([5, 23])
+- [0a93764b] >>> pnt = Point(5, 23) >>> print(pnt.srid) None >>> pnt.srid = 4326 >>> pnt.srid 4326
+- [856c43cf] >>> poly = Polygon(((0, 0), (0, 1), (1, 1), (0, 0))) >>> gc = GeometryCollection(Point(0, 0), MultiPoint(Point(0, 0), Point(1, 1)), poly) >>> gc = GeometryCollection((Point(0, 0), MultiPoint(Point(0, 0), Point(1, 1)), poly))
+- [ab4cf5aa] GEOS distance calculations are linear -- in other words, GEOS does not perform a spherical calculation even if the SRID specifies a geographic coordinate system.
+- [0e003f9f] Raises :class:`~django.contrib.gis.geos.GEOSException` if GDAL is not available or if the geometry's SRID is ``None`` or less than 0. It doesn't impose any constraints on the geometry's SRID if called with a :class:`~django.contrib.gis.gdal.CoordTransform` object.
+- [aa3b3fb8] Returns ``True`` if and only if all elements are closed.
+- [6bb03271] Returns a :class:`LineString` representing the line merge of all the components in this ``MultiLineString``.
+- [1be7f02a] Returns a polygon object from the given bounding-box, a 4-tuple comprising ``(xmin, ymin, xmax, ymax)``.
+- [5327773e] Returns the number of interior rings in this geometry.
+- [fc4c6b56] Returns whether or not this ``LineString`` is closed.
+- [e6b16cde] Returns whether this ``LinearRing`` is counterclockwise.
+- [199db3f7] The output from this property does not include the 3dm, 3dz, and 4d information that PostGIS supports in its EWKT representations.
+- [77d56fdd] * Every point of the other geometry is a point of this geometry. * The `DE-9IM`_ Intersection Matrix for the two geometries is ``T*****FF*``, ``*T****FF*``, ``***T**FF*``, or ``****T*FF*``.
+- [5ad81c76] * Unioning a set of :class:`LineString`\s has the effect of fully noding and dissolving the linework.
+- [e9ace4cc] * Unioning a set of :class:`Polygon`\s will always return a :class:`Polygon` or :class:`MultiPolygon` geometry (unlike :meth:`GEOSGeometry.union`, which may return geometries of lower dimension if a topology collapse occurs).
+- [32ac0ffa] * ``0`` for :class:`Point`\s and :class:`MultiPoint`\s * ``1`` for :class:`LineString`\s and :class:`MultiLineString`\s * ``2`` for :class:`Polygon`\s and :class:`MultiPolygon`\s * ``-1`` for empty :class:`GeometryCollection`\s * the maximum dimension of its elements for non-empty :class:`GeometryCollection`\s
+- [327703be] * ``end_cap_style`` can be round (``1``), flat (``2``), or square (``3``). * ``join_style`` can be round (``1``), mitre (``2``), or bevel (``3``). * Mitre ratio limit (``mitre_limit``) only affects mitered join style.
+- [0bfb0f42] .. _DE-9IM: https://en.wikipedia.org/wiki/DE-9IM
+- [8eb5de68] .. attribute:: WKBWriter.byteorder
+- [904c45e0] .. attribute:: WKBWriter.outdim
+- [46a2243f] .. attribute:: WKBWriter.srid
+- [ed5f543c] .. attribute:: WKTWriter.outdim
+- [055e1835] .. attribute:: WKTWriter.precision
+- [2db9b0be] .. attribute:: WKTWriter.trim
+- [8ce3557b444892a7] .. attribute:: closed
+- [8ce3557b444892a7-2] .. attribute:: closed
+- [47b37965] .. attribute:: is_counterclockwise
+- [751ecb6d] .. attribute:: merged
+- [21237ca0] .. attribute:: num_interior_rings
+- [ceb066a7a2246d02-2] .. classmethod:: from_bbox(bbox)
+- [eaf050be34acb41d-139] .. code-block:: pycon
+- [eaf050be34acb41d-140] .. code-block:: pycon
+- [eaf050be34acb41d-141] .. code-block:: pycon
+- [eaf050be34acb41d-142] .. code-block:: pycon
+- [eaf050be34acb41d-143] .. code-block:: pycon
+- [eaf050be34acb41d-144] .. code-block:: pycon
+- [eaf050be34acb41d-145] .. code-block:: pycon
+- [eaf050be34acb41d-146] .. code-block:: pycon
+- [eaf050be34acb41d-147] .. code-block:: pycon
+- [eaf050be34acb41d-148] .. code-block:: pycon
+- [eaf050be34acb41d-149] .. code-block:: pycon
+- [eaf050be34acb41d-150] .. code-block:: pycon
+- [eaf050be34acb41d-151] .. code-block:: pycon
+- [eaf050be34acb41d-152] .. code-block:: pycon
+- [eaf050be34acb41d-153] .. code-block:: pycon
+- [eaf050be34acb41d-154] .. code-block:: pycon
+- [eaf050be34acb41d-155] .. code-block:: pycon
+- [eaf050be34acb41d-156] .. code-block:: pycon
+- [eaf050be34acb41d-157] .. code-block:: pycon
+- [eaf050be34acb41d-158] .. code-block:: pycon
+- [eaf050be34acb41d-159] .. code-block:: pycon
+- [eaf050be34acb41d-160] .. code-block:: pycon
+- [eaf050be34acb41d-161] .. code-block:: pycon
+- [eaf050be34acb41d-162] .. code-block:: pycon
+- [eaf050be34acb41d-163] .. code-block:: pycon
+- [eaf050be34acb41d-164] .. code-block:: pycon
+- [eaf050be34acb41d-165] .. code-block:: pycon
+- [043b4756] .. method:: WKBWriter.write(geom)
+- [f4f6c491] .. method:: WKBWriter.write_hex(geom)
+- [33d9d03b] .. method:: WKTWriter.write(geom)
+- [6c42620f049e21b6-2] .. method:: contains(other)
+- [d9fc9a33] .. method:: contains_properly(other)
+- [91ba0312] .. method:: covers(other)
+- [bc16580d64d34732-2] .. method:: crosses(other)
+- [f71621e815e46dcb-2] .. method:: disjoint(other)
+- [b1eaa80bf297e3f1-2] .. method:: intersects(other)
+- [a1a515580d7933d8-2] .. method:: overlaps(other)
+- [ec7d9f2ce657a36b-2] .. method:: touches(other)
+- [403a395e5964badc-2] .. method:: within(other)
+- [942ae6c11625c81c-50] .. note::
+- [942ae6c11625c81c-51] .. note::
+- [942ae6c11625c81c-52] .. note::
+- [a1eb26d754a3d60c-9] .. versionadded:: 6.0
+- [81ac8b98] :param file_h: input file that contains spatial data :type file_h: a Python ``file`` object or a string path to the file :rtype: a :class:`GEOSGeometry` corresponding to the spatial data in the file
+- [bb73500d] :param geo_input: Geometry input value (string or :class:`memoryview`) :param srid: spatial reference identifier :param max_geom_collections: maximum number of nested geometry collections accepted before parsing is refused :type srid: int
+- [caa5e4d5] :param string: string that contains spatial data :type string: str :param srid: spatial reference identifier :type srid: int :rtype: a :class:`GEOSGeometry` corresponding to the spatial data in the string
+- [5d98e84e] ============ =========================== Outdim Value Description ============ =========================== 2 The default, output 2D WKB. 3 Output 3D WKB. ============ ===========================
+- [518b1cde] =============== ================================================= Byteorder Value Description =============== ================================================= 0 Big Endian (e.g., compatible with RISC systems) 1 Little Endian (e.g., compatible with x86 systems) =============== =================================================
+- [092a299f] =========================== ======== Geometry ID =========================== ======== :class:`Point` 0 :class:`LineString` 1 :class:`LinearRing` 2 :class:`Polygon` 3 :class:`MultiPoint` 4 :class:`MultiLineString` 5 :class:`MultiPolygon` 6 :class:`GeometryCollection` 7 =========================== ========
+- [f34d3163] >>> from django.contrib.gis.geos import GEOSGeometry >>> GEOSGeometry("POINT EMPTY", srid=4326).ewkt 'SRID=4326;POINT EMPTY' >>> GEOSGeometry("SRID=4326;POINT EMPTY", srid=4326).ewkt 'SRID=4326;POINT EMPTY' >>> GEOSGeometry("SRID=1;POINT EMPTY", srid=4326) Traceback (most recent call last): ... ValueError: Input geometry already has SRID: 1.
+- [a24e3181] >>> from django.contrib.gis.geos import GEOSGeometry >>> pnt = GEOSGeometry("POINT(5 23)") # WKT >>> pnt = GEOSGeometry("010100000000000000000014400000000000003740") # HEX >>> pnt = GEOSGeometry( ... memoryview( ... b"\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x14@\x00\x00\x00\x00\x00\x007@" ... ) ... ) # WKB >>> pnt = GEOSGeometry( ... '{ "type": "Point", "coordinates": [ 5.000000, 23.000000 ] }' ... ) # GeoJSON
+- [b1a8cc16] >>> from django.contrib.gis.geos import GEOSGeometry, LineString, Point >>> print(GEOSGeometry("POINT (0 0)", srid=4326)) SRID=4326;POINT (0 0) >>> print(LineString((0, 0), (1, 1), srid=4326)) SRID=4326;LINESTRING (0 0, 1 1) >>> print(Point(0, 0, srid=32140)) SRID=32140;POINT (0 0)
+- [c80b623e] >>> from django.contrib.gis.geos import LineString >>> line = LineString((0, 0), (0, 50), (50, 50), (50, 0), (0, 0)) >>> line[0] (0.0, 0.0) >>> line[-2] (50.0, 0.0)
+- [3213ebc4] >>> from django.contrib.gis.geos import LineString >>> ls1 = LineString((0, 0), (2, 2)) >>> ls2 = LineString((1, 1), (3, 3)) >>> print(ls1 | ls2) # equivalent to `ls1.union(ls2)` MULTILINESTRING ((0 0, 1 1), (1 1, 2 2), (2 2, 3 3)) >>> print(ls1 & ls2) # equivalent to `ls1.intersection(ls2)` LINESTRING (1 1, 2 2) >>> print(ls1 - ls2) # equivalent to `ls1.difference(ls2)` LINESTRING(0 0, 1 1) >>> print(ls1 ^ ls2) # equivalent to `ls1.sym_difference(ls2)` MULTILINESTRING ((0 0, 1 1), (2 2, 3 3))
+- [c8dc22ab] >>> from django.contrib.gis.geos import Point >>> pnt = Point(5, 23)
+- [7d8f79b3] >>> from django.contrib.gis.geos import Point, Polygon >>> poly = Polygon.from_bbox((0, 0, 5, 5)) >>> prep_poly = poly.prepared >>> prep_poly.contains(Point(2.5, 2.5)) True
+- [6c883982] >>> from django.contrib.gis.geos import Polygon >>> poly = Polygon(((0.0, 0.0), (0.0, 50.0), (50.0, 50.0), (50.0, 0.0), (0.0, 0.0))) >>> poly[0] <LinearRing object at 0x1044395b0> >>> poly[0][-2] # second-to-last coordinate of external ring (50.0, 0.0)
+- [bd90753c] >>> from django.contrib.gis.geos import fromfile >>> pnt = fromfile("/path/to/pnt.wkt") >>> pnt = fromfile(open("/path/to/pnt.wkt"))
+- [c0537a3e] >>> line[0] = (1.0, 1.0) >>> line.pop() (0.0, 0.0) >>> line.append((1.0, 1.0)) >>> line.coords ((1.0, 1.0), (0.0, 50.0), (50.0, 50.0), (50.0, 0.0), (1.0, 1.0))
+- [8636127c] >>> pnt = Point(5, 23) >>> [coord for coord in pnt] [5.0, 23.0]
+- [959f21cc] >>> pnt.coords (5.0, 23.0)
+- [8492f608] A ``SuspiciousOperation`` is raised before forwarding inputs to GDAL when a CRS reference to an external resource is found.
+- [4e810698] Alias for :attr:`GEOSGeometry.json`.
+- [2025d1e8] All methods on ``PreparedGeometry`` take an ``other`` argument, which must be a :class:`GEOSGeometry` instance.
+- [d12ad71f] By default, this function does not preserve topology. For example, :class:`Polygon` objects can be split, be collapsed into lines, or disappear. :class:`Polygon` holes can be created or disappear, and lines may cross. By specifying ``preserve_topology=True``, the result will have the same dimension and number of components as the input; this is significantly slower, however.
+- [447304c3] Computes and returns a :class:`Point` guaranteed to be on the interior of this geometry.
+- [42290f2f] Computes the union of all the elements of this geometry.
+- [1345e535] Constructs a :class:`GEOSGeometry` from the given GML string.
+- [2daaa76b] Converts this geometry to canonical form. If the ``clone`` keyword is set, then the geometry is not modified and a normalized clone of the geometry is returned instead:
+- [f782ebd5] Empty ``LineString`` objects may be instantiated by passing no arguments or an empty sequence. The following are equivalent:
+- [20ed93bf2591ccc0-14] Example:
+- [20ed93bf2591ccc0-15] Example:
+- [20ed93bf2591ccc0-16] Example:
+- [20ed93bf2591ccc0-17] Example:
+- [20ed93bf2591ccc0-18] Example:
+- [20ed93bf2591ccc0-19] Example:
+- [73910cd9] Given a distance (float), returns the point (or closest point) within the geometry (:class:`LineString` or :class:`MultiLineString`) at that distance. The normalized version takes the distance as a float between 0 (origin) and 1 (endpoint).
+- [905b244b] If either geometry is empty, returns ``False``.
+- [f409a781] In addition, ``LineString`` objects may also be created by passing in a single sequence of coordinate or :class:`Point` objects:
+- [913cee46] Note that it is possible to compare ``Polygon`` objects directly with ``<`` or ``>``, but as the comparison is made through Polygon's :class:`LineString`, it does not mean much (but is consistent and quick). You can always force the comparison with the :attr:`~GEOSGeometry.area` property:
+- [e2b02523] Notice that ``(0, 0)`` is the first and last coordinate -- if they were not equal, an error would be raised.
+- [02078ded] Property that may be used to retrieve or set the SRID associated with the geometry. For example:
+- [0efd0d17] Raising ``SuspiciousOperation`` for external coordinate reference systems was added.
+- [d88e1bef] Return the EWKB representation of this Geometry as a Python buffer. This is an extension of the WKB specification that includes any SRID value that are a part of this geometry.
+- [ec1a453b] Returns WKB of the geometry in hexadecimal. Example:
+- [23868b7b] Returns ``True`` if :meth:`GEOSGeometry.disjoint` is ``False``.
+- [be1bf1a0] Returns ``True`` if :meth:`other.within(this) <GEOSGeometry.within>` returns ``True``.
+- [2b89fff1] Returns ``True`` if the DE-9IM intersection matrix for the two Geometries is ``T*T******`` (for a point and a curve,a point and an area or a line and an area) ``0********`` (for two curves).
+- [ca23c0ad] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``FF*FF****``.
+- [3a7253c3] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``FT*******``, ``F**T*****`` or ``F***T****``.
+- [bc1a10fb] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``T*F**FFF*``.
+- [2e5abe38] Returns ``True`` if the elements in the DE-9IM intersection matrix for this geometry and the other matches the given ``pattern`` -- a string of nine characters from the alphabet: {``T``, ``F``, ``*``, ``0``}.
+- [0cfb2ad8] Returns ``True`` if the two geometries are point-wise equivalent by checking that the structure, ordering, and values of all vertices are identical in all dimensions. ``NaN`` values are considered to be equal to other ``NaN`` values. Requires GEOS 3.12.
+- [08af8eca] Returns ``True`` if this geometry covers the specified geometry.
+- [445e3f59] Returns a :class:`GEOSGeometry` combining the points in this geometry not in other, and the points in other not in this geometry.
+- [a3efce55] Returns a :class:`GEOSGeometry` representing all the points in this geometry and the other.
+- [cbdc9d80] Returns a :class:`GEOSGeometry` representing the points making up this geometry that do not make up other.
+- [b4af49d6] Returns a :class:`GEOSGeometry` representing the points shared by this geometry and other.
+- [7b7b17c0] Returns a :class:`GEOSGeometry` that represents all points whose distance from this geometry is less than or equal to the given ``width``. The optional ``quadsegs`` keyword sets the number of segments used to approximate a quarter circle (defaults is 8).
+- [3bbc8ea6] Returns a :class:`Point` object representing the geometric center of the geometry. The point is not guaranteed to be on the interior of the geometry.
+- [c7415fa8] Returns a :class:`Polygon` that represents the bounding envelope of this geometry. Note that it can also return a :class:`Point` if the input geometry is a point.
+- [8a3b1414] Returns a :class:`~django.contrib.gis.gdal.SpatialReference` object corresponding to the SRID of the geometry or ``None``.
+- [07bded90] Returns a GEOS ``PreparedGeometry`` for the contents of this geometry. ``PreparedGeometry`` objects are optimized for the contains, intersects, covers, crosses, disjoint, overlaps, touches and within operations. Refer to the :ref:`prepared-geometries` documentation for more information.
+- [74fce9b1] Returns a `KML`__ (Keyhole Markup Language) representation of the geometry. This should only be used for geometries with an SRID of 4326 (WGS84), but this restriction is not enforced.
+- [5a17be89] Returns a boolean indicating whether the geometry has the M dimension. Requires GEOS 3.12.
+- [1582a168] Returns a boolean indicating whether the geometry has the Z dimension.
+- [6ffbf99b] Returns a boolean indicating whether the geometry is 'simple'. A geometry is simple if and only if it does not intersect itself (except at boundary points). For example, a :class:`LineString` object is not simple if it intersects itself. Thus, :class:`LinearRing` and :class:`Polygon` objects are always simple because they cannot intersect themselves, by definition.
+- [78b8b14a] Returns a boolean indicating whether the geometry is a ``LinearRing``.
+- [2dacc71e] Returns a boolean indicating whether the geometry is valid.
+- [98fa407a] Returns a new :class:`GEOSGeometry`, simplified to the specified tolerance using the Douglas-Peucker algorithm. A higher tolerance value implies fewer points in the output. If no tolerance is provided, it defaults to 0.
+- [fb6d9ae2] Returns a string corresponding to the type of geometry. For example:
+- [ee4c7eea] Returns a string describing the reason why a geometry is invalid.
+- [492bfa27] Returns a valid :class:`GEOSGeometry` equivalent, trying not to lose any of the input vertices. If the geometry is already valid, it is returned untouched. This is similar to the :class:`~django.contrib.gis.db.models.functions.MakeValid` database function.
+- [b2dd48dc] Returns an :class:`~django.contrib.gis.gdal.OGRGeometry` object corresponding to the GEOS geometry.
+- [836d2ccf] Returns the "extended" Well-Known Text of the geometry. This representation is specific to PostGIS and is a superset of the OGC WKT standard. [#fnogc]_ Essentially the SRID is prepended to the WKT representation, for example ``SRID=4326;POINT(5 23)``.
+- [7091f2c3] Returns the DE-9IM intersection matrix (a string) representing the topological relationship between this geometry and the other.
+- [6b5400c8] Returns the EWKB of this Geometry in hexadecimal form. This is an extension of the WKB specification that includes the SRID value that are a part of this geometry.
+- [9393db05] Returns the GEOS geometry type identification number. The following table shows the value for each geometry type:
+- [1f013855] Returns the GeoJSON representation of the geometry. Note that the result is not a complete GeoJSON structure but only the ``geometry`` key content of a GeoJSON structure. See also :doc:`/ref/contrib/gis/serializers`.
+- [fe68e7d8] Returns the WKB (Well-Known Binary) representation of this Geometry as a Python buffer. SRID value is not included, use the :attr:`GEOSGeometry.ewkb` property instead.
+- [792e8ab3] Returns the WKB of the given geometry as a Python ``buffer`` object. Example:
+- [b75285f1] Returns the WKB of this Geometry in hexadecimal form. Please note that the SRID value is not included in this representation because it is not a part of the OGC specification (use the :attr:`GEOSGeometry.hexewkb` property instead).
+- [b1e7e56e] Returns the WKT of the given geometry. Example:
+- [76ce4077] Returns the Well-Known Text of the geometry (an OGC standard).
+- [18ba04e6] Returns the boundary as a newly allocated Geometry object.
+- [a942aa16] Returns the coordinates of the geometry as a tuple.
+- [d55250ce] Returns the dimension of the geometry:
+- [75ef20ea] Returns the distance (float) from the origin of the geometry (:class:`LineString` or :class:`MultiLineString`) to the point projected on the geometry (that is to a point of the line the closest to the given point). The normalized version returns the distance as a float between 0 (origin) and 1 (endpoint).
+- [60cce7a4] Returns the distance between the closest points on this geometry and the given ``geom`` (another :class:`GEOSGeometry` object).
+- [91769338] Returns the length of this geometry (e.g., 0 for a :class:`Point`, the length of a :class:`LineString`, or the circumference of a :class:`Polygon`).
+- [83bc14ba] Returns the number of coordinates in the geometry.
+- [23a4919f] Returns the number of geometries in this geometry. In other words, will return 1 on anything but geometry collections.
+- [d091d8af] Returns the smallest :class:`Polygon` that contains all the points in the geometry.
+- [a985b70e] Returns true if the DE-9IM intersection matrix for the two geometries is ``T*T***T**`` (for two points or two surfaces) ``1*T***T**`` (for two curves).
+- [cc713efb] Returns true if the two geometries are exactly equal, up to a specified tolerance. The ``tolerance`` value should be a floating point number representing the error tolerance in the comparison, e.g., ``poly1.equals_exact(poly2, 0.001)`` will compare equality to within one thousandth of a unit.
+- [6722a0df] Returns whether or not the set of points in the geometry is empty.
+- [25778857] Reverse of :meth:`GEOSGeometry.interpolate`.
+- [e5e4e8db] Reverse of :meth:`GEOSGeometry.project`.
+- [00cf7246] Same as :meth:`buffer`, but allows customizing the style of the buffer.
+- [79742195] Set this property with a boolean to indicate whether the SRID of the geometry should be included with the WKB representation. Example:
+- [3c323300] The :class:`~GEOSGeometry` equality operator uses :meth:`~GEOSGeometry.equals_exact`, not :meth:`~GEOSGeometry.equals`, i.e. it requires the compared geometries to have the same coordinates in the same positions with the same SRIDs:
+- [5abf1826] The ``covers`` predicate has the following equivalent definitions:
+- [cb30ac9a] The base GEOS exception, indicates a GEOS-related error.
+- [2d2b7bb2] The result obeys the following contract:
+- [3f30e74846c0e0ab] The setting must be the *full* path to the **C** shared library; in other words you want to use ``libgeos_c.so``, not ``libgeos.so``.
+- [154466eb] This class allows outputting the WKT representation of a geometry. See the :attr:`WKBWriter.outdim`, :attr:`trim`, and :attr:`precision` attributes for details about the constructor arguments.
+- [d9edaec1] This method returns a :class:`GEOSGeometry` that is a clone of the original.
+- [06dbd6f6] This predicate is similar to :meth:`GEOSGeometry.contains`, but is more inclusive (i.e. returns ``True`` for more cases). In particular, unlike :meth:`~GEOSGeometry.contains` it does not distinguish between points in the boundary and in the interior of geometries. For most situations, ``covers()`` should be preferred to :meth:`~GEOSGeometry.contains`. As an added benefit, ``covers()`` is more amenable to optimization and hence should outperform :meth:`~GEOSGeometry.contains`.
+- [9323dd0d] This property controls the rounding precision of coordinates; if set to ``None`` rounding is disabled.
+- [52956d55] This property is used to enable or disable trimming of unnecessary decimals.
+- [23afb2a1] This property may be set to change the byte-order of the geometry representation.
+- [9d20b881] This property may be set to change the output dimension of the geometry representation. In other words, if you have a 3D geometry then set to 3 so that the Z value is included in the WKB.
+- [a800e906] This property returns the area of the Geometry.
+- [65941887] This property returns the extent of this geometry as a 4-tuple, consisting of ``(xmin, ymin, xmax, ymax)``.
+- [d0e2e018] Transforms the geometry according to the given coordinate transformation parameter (``ct``), which may be an integer SRID, spatial reference WKT string, a PROJ string, a :class:`~django.contrib.gis.gdal.SpatialReference` object, or a :class:`~django.contrib.gis.gdal.CoordTransform` object. By default, the geometry is transformed in-place and nothing is returned. However if the ``clone`` keyword is set, then the geometry is not modified and a transformed clone of the geometry is returned instead.
+- [4dfec693] You find many ``TypeError`` or ``AttributeError`` exceptions filling your web server's log files. This generally means that you are creating GEOS objects at the top level of some of your Python modules. Then, due to a race condition in the garbage collector, your module is garbage collected before the GEOS object. To prevent this, create :class:`GEOSGeometry` objects inside the local scope of your functions/methods.
+- [1306686b] ``GeometryCollection`` objects may be instantiated by passing in other :class:`GEOSGeometry` as arguments, or a single sequence of :class:`GEOSGeometry` objects:
+- [c48aafc1] ``LineString`` objects are instantiated using arguments that are either a sequence of coordinates or :class:`Point` objects. For example, the following are equivalent:
+- [acd90350] ``LinearRing`` objects are constructed in the exact same way as :class:`LineString` objects, however the coordinates must be *closed*, in other words, the first coordinates must be the same as the last coordinates. For example:
+- [74fd5c41] ``MultiLineString`` objects may be instantiated by passing in :class:`LineString` objects as arguments, or a single sequence of :class:`LineString` objects:
+- [d4dadaf3] ``MultiPoint`` objects may be instantiated by passing in :class:`Point` objects as arguments, or a single sequence of :class:`Point` objects:
+- [8abb0861] ``MultiPolygon`` objects may be instantiated by passing :class:`Polygon` objects as arguments, or a single sequence of :class:`Polygon` objects:
+- [3e771e28] ``Point`` objects are instantiated using arguments that represent the component coordinates of the point or with a single sequence coordinates. For example, the following are equivalent:
+- [c9f6500c] ``Polygon`` objects may be instantiated by passing in parameters that represent the rings of the polygon. The parameters must either be :class:`LinearRing` instances, or a sequence that may be used to construct a :class:`LinearRing`:
+- [8a294da9] ``WKBWriter`` provides the most control over its output. By default it returns OGC-compliant WKB when its ``write`` method is called. However, it has properties that allow for the creation of EWKB, a superset of the WKB standard that includes additional information. See the :attr:`WKBWriter.outdim` documentation for more details about the ``dim`` argument.
+- [cc1aff2f] ``fromstr(string, srid)`` is equivalent to :class:`GEOSGeometry(string, srid) <GEOSGeometry>`.
+- [34618be5] * A BSD-licensed interface to the GEOS geometry routines, implemented purely in Python using ``ctypes``. * Loosely-coupled to GeoDjango. For example, :class:`GEOSGeometry` objects may be used outside of a Django project/application. In other words, no need to have :envvar:`DJANGO_SETTINGS_MODULE` set or use a database, etc. * Mutability: :class:`GEOSGeometry` objects may be modified. * Cross-platform tested.
+- [027d5cad] .. _ewkb:
+- [4b5da3dd] .. _geos-exceptions-in-logfile:
+- [0db35147] .. _geos-geometry-collections:
+- [24e8a7ed] .. _geos-overview:
+- [e891afb5] .. _geos-tutorial:
+- [6bb84271] .. _prepared-geometries:
+- [8dac5b69] .. _wkb:
+- [8e780024] .. admonition:: Comparing Polygons
+- [2f9544f6] .. admonition:: Equality operator doesn't check spatial equality
+- [7af7a84a] .. admonition:: My logs are filled with GEOS-related errors
+- [b5d7b0b5] .. admonition:: References to external ``crs`` definitions not allowed
+- [63d59a44] .. attribute:: GEOSGeometry.area
+- [f0a8930b] .. attribute:: GEOSGeometry.boundary
+- [3e4c3a8f] .. attribute:: GEOSGeometry.centroid
+- [9c4ae0c8] .. attribute:: GEOSGeometry.convex_hull
+- [d90b820d] .. attribute:: GEOSGeometry.coords
+- [d2cbaee5] .. attribute:: GEOSGeometry.dims
+- [325a8c44] .. attribute:: GEOSGeometry.empty
+- [7dda2970] .. attribute:: GEOSGeometry.envelope
+- [9a769a2e] .. attribute:: GEOSGeometry.ewkb
+- [6f1b8796] .. attribute:: GEOSGeometry.ewkt
+- [5b660314] .. attribute:: GEOSGeometry.extent
+- [72e73434] .. attribute:: GEOSGeometry.geojson
+- [afcdb593] .. attribute:: GEOSGeometry.geom_type
+- [15ea80f1] .. attribute:: GEOSGeometry.geom_typeid
+- [483a6926] .. attribute:: GEOSGeometry.hasm
+- [bbc81a93] .. attribute:: GEOSGeometry.hasz
+- [33c0daf6] .. attribute:: GEOSGeometry.hex
+- [0254c043] .. attribute:: GEOSGeometry.hexewkb
+- [bec79105] .. attribute:: GEOSGeometry.json
+- [03659239] .. attribute:: GEOSGeometry.kml
+- [d7d8130f] .. attribute:: GEOSGeometry.length
+- [405e3d91] .. attribute:: GEOSGeometry.num_coords
+- [9ea67e7d] .. attribute:: GEOSGeometry.num_geom
+- [9961400c] .. attribute:: GEOSGeometry.ogr
+- [b421478d] .. attribute:: GEOSGeometry.point_on_surface
+- [5a14093b] .. attribute:: GEOSGeometry.prepared
+- [36229421] .. attribute:: GEOSGeometry.ring
+- [94ad0e40] .. attribute:: GEOSGeometry.simple
+- [7c718988] .. attribute:: GEOSGeometry.srid
+- [d60bd6a3] .. attribute:: GEOSGeometry.srs
+- [c7521be3] .. attribute:: GEOSGeometry.unary_union
+- [f7ff94f7] .. attribute:: GEOSGeometry.valid
+- [6369e9f4] .. attribute:: GEOSGeometry.valid_reason
+- [4f15afe7] .. attribute:: GEOSGeometry.wkb
+- [a2b9c46a] .. attribute:: GEOSGeometry.wkt
+- [bc5de9a2] .. class:: GEOSGeometry(geo_input, srid=None, *, max_geom_collections=198)
+- [63bbab33] .. class:: GeometryCollection(*args, **kwargs)
+- [1641d75b] .. class:: LineString(*args, **kwargs)
+- [9e76878e] .. class:: LinearRing(*args, **kwargs)
+- [0d5fd1cd] .. class:: MultiLineString(*args, **kwargs)
+- [55483a89] .. class:: MultiPoint(*args, **kwargs)
+- [8adbc89d] .. class:: MultiPolygon(*args, **kwargs)
+- [42198c69] .. class:: Point(x=None, y=None, z=None, srid=None)
+- [7e7a0b3f] .. class:: Polygon(*args, **kwargs)
+- [81b58372] .. class:: PreparedGeometry
+- [9f1349bb] .. class:: WKBReader
+- [add409ca] .. class:: WKBWriter(dim=2)
+- [ed77177e] .. class:: WKTReader
+- [cdde0faa] .. class:: WKTWriter(dim=2, trim=False, precision=None)
+- [1add0a31] .. classmethod:: GEOSGeometry.from_gml(gml_string)
+- [eaf050be34acb41d-166] .. code-block:: pycon
+- [eaf050be34acb41d-167] .. code-block:: pycon
+- [eaf050be34acb41d-168] .. code-block:: pycon
+- [eaf050be34acb41d-169] .. code-block:: pycon
+- [eaf050be34acb41d-170] .. code-block:: pycon
+- [eaf050be34acb41d-171] .. code-block:: pycon
+- [eaf050be34acb41d-172] .. code-block:: pycon
+- [eaf050be34acb41d-173] .. code-block:: pycon
+- [eaf050be34acb41d-174] .. code-block:: pycon
+- [eaf050be34acb41d-175] .. code-block:: pycon
+- [eaf050be34acb41d-176] .. code-block:: pycon
+- [eaf050be34acb41d-177] .. code-block:: pycon
+- [cbf1913a] .. exception:: GEOSException
+- [96bb152e] .. function:: fromfile(file_h)
+- [978aaeae] .. function:: fromstr(string, srid=None)
+- [6d79ec80] .. method:: GEOSGeometry.buffer(width, quadsegs=8)
+- [ff1fb61a] .. method:: GEOSGeometry.buffer_with_style(width, quadsegs=8, end_cap_style=1, join_style=1, mitre_limit=5.0)
+- [bda872a5] .. method:: GEOSGeometry.clone()
+- [c167d4c7] .. method:: GEOSGeometry.contains(other)
+- [adb252f7] .. method:: GEOSGeometry.covers(other)
+- [1a8d82fd] .. method:: GEOSGeometry.crosses(other)
+- [216ca832] .. method:: GEOSGeometry.difference(other)
+- [dfcb7f2c] .. method:: GEOSGeometry.disjoint(other)
+- [5ee55b90] .. method:: GEOSGeometry.distance(geom)
+- [837c19a3] .. method:: GEOSGeometry.equals(other)
+- [f8617966] .. method:: GEOSGeometry.equals_exact(other, tolerance=0)
+- [faa00447] .. method:: GEOSGeometry.equals_identical(other)
+- [7550978f] .. method:: GEOSGeometry.interpolate(distance) .. method:: GEOSGeometry.interpolate_normalized(distance)
+- [f467247f] .. method:: GEOSGeometry.intersection(other)
+- [91f16dc3] .. method:: GEOSGeometry.intersects(other)
+- [2e886862] .. method:: GEOSGeometry.make_valid()
+- [1f101126] .. method:: GEOSGeometry.normalize(clone=False)
+- [04f20ed5] .. method:: GEOSGeometry.overlaps(other)
+- [37e12c27] .. method:: GEOSGeometry.project(point) .. method:: GEOSGeometry.project_normalized(point)
+- [78387958] .. method:: GEOSGeometry.relate(other)
+- [23559e25] .. method:: GEOSGeometry.relate_pattern(other, pattern)
+- [24829110] .. method:: GEOSGeometry.simplify(tolerance=0.0, preserve_topology=False)
+- [ccd83074] .. method:: GEOSGeometry.sym_difference(other)
+- [3560f4d5] .. method:: GEOSGeometry.touches(other)
+- [76ee77bc] .. method:: GEOSGeometry.transform(ct, clone=False)
+- [253bb422] .. method:: GEOSGeometry.union(other)
+- [b852789d] .. method:: GEOSGeometry.within(other)
+- [12bb5c6b] .. module:: django.contrib.gis.geos :synopsis: GeoDjango's high-level interface to the GEOS library.
+- [942ae6c11625c81c-53] .. note::
+- [768b3126] .. rubric:: Footnotes .. [#fnogc] *See* `PostGIS EWKB, EWKT and Canonical Forms <https://postgis.net/docs/using_postgis_dbmanagement.html#EWKB_EWKT>`_, PostGIS documentation at Ch. 4.1.2.
+- [fbd4a8d4] .. setting:: GEOS_LIBRARY_PATH
+- [acbd0c51f780d445-3] .. versionchanged:: 5.2.19
+- [16572c53] :class:`GEOSGeometry` objects may be created in a few ways. The first is to simply instantiate the object on some spatial input -- the following are examples of creating the same geometry from WKT, HEX, WKB, and GeoJSON:
+- [2acdacf3] ======== GEOS API ========
+- [365c9b7b] ======================= ============== Format Input Type ======================= ============== WKT / EWKT ``str`` HEX / HEXEWKB ``str`` WKB / EWKB ``memoryview`` :rfc:`GeoJSON <7946>` ``str`` ======================= ==============
+- [9f1ae4bb] A string specifying the location of the GEOS C library. Typically, this setting is only used if the GEOS C library is in a non-standard location (e.g., ``/home/bob/lib/libgeos_c.so``).
+- [9065b5e1] All of the following spatial predicate methods take another :class:`GEOSGeometry` instance (``other``) as a parameter, and return a boolean.
+- [a1a59137] All these constructors take the keyword argument ``srid``. For example:
+- [ac95a770] All writer objects have a ``write(geom)`` method that returns either the WKB or WKT of the given geometry. In addition, :class:`WKBWriter` objects also have properties that may be used to change the byte order, and or include the SRID value (in other words, EWKB).
+- [2ad3649c] Another option is to use the constructor for the specific geometry type that you wish to create. For example, a :class:`Point` object may be created by passing in the X and Y coordinates into its constructor:
+- [c7ba07fc] Background ==========
+- [fe1b1ee1] Creating a Geometry -------------------
+- [458050e52503f721-4] Exceptions ==========
+- [1355169e] Features --------
+- [f7cb9ddd] Finally, there is the :func:`fromfile` factory method which returns a :class:`GEOSGeometry` object from a file:
+- [bc295f9831206ba3-8] For example:
+- [9bd1628d] For the GeoJSON format, the SRID is set based on the ``crs`` member. If ``crs`` isn't provided, the SRID defaults to 4326. (The ``crs`` member was :rfc:`removed <7946#section-4>` from the GeoJSON spec, and some clients consider it invalid.)
+- [05137133] GeoDjango implements a high-level Python wrapper for the GEOS library, its features include:
+- [f8b44352] Geometries are Pythonic ----------------------- :class:`GEOSGeometry` objects are 'Pythonic', in other words components may be accessed, modified, and iterated over using standard Python conventions. For example, you can iterate over the coordinates in a :class:`Point`:
+- [945233a2] Geometries support set-like operators:
+- [ef3c702c] Geometry Collections ====================
+- [d5be7db8] Geometry Factories ==================
+- [3c1d9568] Geometry Objects ================
+- [83241457] I/O Objects ===========
+- [163fba2c] In addition, coordinates/components of the geometry may added or modified, just like a Python list:
+- [86e53d65] In order to obtain a prepared geometry, access the :attr:`GEOSGeometry.prepared` property. Once you have a ``PreparedGeometry`` instance its spatial predicate methods, listed below, may be used with other ``GEOSGeometry`` objects. An operation with a prepared geometry can be orders of magnitude faster -- the more complex the geometry that is prepared, the larger the speedup in the operation. For more information, please consult the `GEOS wiki page on prepared geometries <https://trac.osgeo.org/geos/wiki/PreparedGeometry>`_.
+- [1d62d4bc] Other Properties & Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [fd8f20fb] Output Properties ~~~~~~~~~~~~~~~~~
+- [074e766e] Prepared Geometries ===================
+- [3ec5cf56] Properties ~~~~~~~~~~
+- [0277d7c6] Reader Objects --------------
+- [94005583b32250b8-3] Settings ========
+- [7e110dc5] Spatial Predicate Methods ~~~~~~~~~~~~~~~~~~~~~~~~~
+- [7e140414] The ``srid`` parameter, if given, is set as the SRID of the created geometry if ``geo_input`` doesn't have an SRID. If different SRIDs are provided through the ``geo_input`` and ``srid`` parameters, ``ValueError`` is raised:
+- [a9d4367f] The following input formats, along with their corresponding Python types, are accepted:
+- [86f396a2] The properties in this section export the :class:`GEOSGeometry` object into a different. This output may be in the form of a string, buffer, or even another object.
+- [1450e62f] The reader I/O classes return a :class:`GEOSGeometry` instance from the WKB and/or WKT input given to their ``read(geom)`` method.
+- [84660086] This is the base class for all GEOS geometry objects. It initializes on the given ``geo_input`` argument, and then assumes the proper geometry subclass (e.g., ``GEOSGeometry('POINT(1 1)')`` will create a :class:`Point` object).
+- [a41ab892] This section contains a brief introduction and tutorial to using :class:`GEOSGeometry` objects.
+- [b0560dc5] Topological Methods ~~~~~~~~~~~~~~~~~~~
+- [ea2f2cec] Topological Properties ~~~~~~~~~~~~~~~~~~~~~~
+- [d3de7241] Tutorial ========
+- [22873aa9] What is GEOS? -------------
+- [f060bc8e] Whereas indexing on a :class:`Polygon` will return the ring (a :class:`LinearRing` object) corresponding to the index:
+- [482cd4ab] With any geometry object, the :attr:`GEOSGeometry.coords` property may be used to get the geometry coordinates as a Python tuple:
+- [64781e38] Writer Objects --------------
+- [97a01a6e] You can get/set geometry components using standard Python indexing techniques. However, what is returned depends on the geometry type of the object. For example, indexing on a :class:`LineString` returns a coordinate tuple:
+- [80c7f9a7090bc8b5-2] __ https://developers.google.com/kml/documentation/
+- [dd45d56e] __ https://libgeos.org/ __ https://sourceforge.net/projects/jts-topo-suite/ __ https://www.ogc.org/standard/sfs/ __ http://www.refractions.net/
+- [5f654cd2] `GEOS`__ stands for **Geometry Engine - Open Source**, and is a C++ library, ported from the `Java Topology Suite`__. GEOS implements the OpenGIS `Simple Features for SQL`__ spatial predicate functions and spatial operators. GEOS, now an OSGeo project, was initially developed and maintained by `Refractions Research`__ of Victoria, Canada.
+- [3d34393e] ``GEOSGeometry`` ----------------
+- [c97c2ff8] ``GEOS_LIBRARY_PATH`` ---------------------
+- [4a1ee678] ``GeometryCollection`` ----------------------
+- [adfe08be] ``LineString`` --------------
+- [fae786a7] ``LinearRing`` --------------
+- [f50d94fa] ``MultiLineString`` -------------------
+- [e7d6f9a5] ``MultiPoint`` --------------
+- [73e45248] ``MultiPolygon`` ----------------
+- [2b7be999] ``Point`` ---------
+- [a0a25749] ``Polygon`` -----------
+- [4e8329d4] ``PreparedGeometry`` --------------------

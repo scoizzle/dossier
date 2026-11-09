@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::IntegerField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::IntegerField.get_internal_type (id `5899d87e-15df-4f3b-a5f7-91ab9bcd3485`)
+- Subject: django/db/models/fields/__init__::IntegerField.get_internal_type (id `bb11c0c7-8043-4ba3-bfe8-85ead0711986`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

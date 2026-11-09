@@ -1,9 +1,9 @@
 # django/db/models/fields/related::RelatedField.contribute_to_class
 
-- Subject: django/db/models/fields/related::RelatedField.contribute_to_class (id `3e43a516-351a-4ab2-9f3f-a906940f83bb`)
+- Subject: django/db/models/fields/related::RelatedField.contribute_to_class (id `89b6323e-bb80-48c6-bbf7-e31350c5ae61`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,6 +1,6 @@
 # Fact 4a2e91a5
 
-Store id: 0385bab3-0be8-4625-a21d-d839beef3bbe
+Store id: ecc171a2-4069-44d4-a8db-a3d0d93b171b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __deepcopy__(self, memo)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.2349790+00:00`
+- posted_at: `2026-11-09T23:32:06.7654690+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 363,
     "symbol": "Query.__deepcopy__"
   },
-  "id": "0385bab3-0be8-4625-a21d-d839beef3bbe",
+  "id": "ecc171a2-4069-44d4-a8db-a3d0d93b171b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.2349790+00:00"
+    "posted_at": "2026-11-09T23:32:06.7654690+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b452cd72-f59b-4346-8f27-f1ca532ab830",
+  "subject_id": "35134c0d-cf7c-4299-afeb-62d0ed510d1f",
   "subject_name": "django/db/models/sql/query::Query.__deepcopy__",
   "tags": [
     "entity:method"

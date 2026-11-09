@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Coalesce.empty_result_set_value
 
-- Subject: django/db/models/functions/comparison::Coalesce.empty_result_set_value (id `fab0efee-7946-475e-a0a4-b922b107e805`)
+- Subject: django/db/models/functions/comparison::Coalesce.empty_result_set_value (id `19c21457-ef13-4138-991f-71a657b2af77`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/fields/files::ImageField.check
 
-- Subject: django/db/models/fields/files::ImageField.check (id `324f60f9-e7f1-41f8-b2c7-5684608e11f1`)
+- Subject: django/db/models/fields/files::ImageField.check (id `4c156d2e-a573-49a3-b20e-a10a75d5aa35`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -1,9 +1,9 @@
 # django/db/models/functions/mixins::FixDurationInputMixin.as_mysql
 
-- Subject: django/db/models/functions/mixins::FixDurationInputMixin.as_mysql (id `51c69000-ecf8-4d3e-9aeb-617fa51f001a`)
+- Subject: django/db/models/functions/mixins::FixDurationInputMixin.as_mysql (id `8e67f252-2ceb-444b-8c55-c896f9992655`)
 - Kind: method
 - Parent: [django/db/models/functions/mixins](../django-db-models-functions-mixins/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

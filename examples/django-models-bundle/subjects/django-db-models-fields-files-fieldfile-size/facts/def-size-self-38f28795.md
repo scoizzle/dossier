@@ -1,6 +1,6 @@
 # Fact 38f28795
 
-Store id: 6bcbdd65-5604-417d-adeb-22a5b061ab3b
+Store id: dd329d05-682a-4209-ba3f-275b7a906a71
 
 ## Text
 
@@ -20,7 +20,7 @@ def size(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.2029690+00:00`
+- posted_at: `2026-11-09T23:31:57.3607010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "FieldFile.size"
   },
-  "id": "6bcbdd65-5604-417d-adeb-22a5b061ab3b",
+  "id": "dd329d05-682a-4209-ba3f-275b7a906a71",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.2029690+00:00"
+    "posted_at": "2026-11-09T23:31:57.3607010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be1aaff1-ee00-4424-adf9-91334ef356f6",
+  "subject_id": "84099744-5673-4278-a261-d5fd00f751cc",
   "subject_name": "django/db/models/fields/files::FieldFile.size",
   "tags": [
     "entity:method",

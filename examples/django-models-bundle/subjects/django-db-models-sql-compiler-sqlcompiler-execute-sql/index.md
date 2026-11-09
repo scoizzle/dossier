@@ -1,9 +1,9 @@
 # django/db/models/sql/compiler::SQLCompiler.execute_sql
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.execute_sql (id `bffa32b0-01e8-4796-ba5c-3d050cc59fe4`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.execute_sql (id `8e426d78-87f1-4089-a1dc-c48b9eb86ef5`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 36 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

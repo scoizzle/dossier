@@ -1,9 +1,9 @@
 # django/db/models/functions/json::JSONObject.as_postgresql
 
-- Subject: django/db/models/functions/json::JSONObject.as_postgresql (id `b88f6230-b280-4c59-9104-6941e9d4e507`)
+- Subject: django/db/models/functions/json::JSONObject.as_postgresql (id `303e5ad9-ea90-47b8-b7ce-b67b9b1ece3d`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

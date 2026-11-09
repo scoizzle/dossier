@@ -1,6 +1,6 @@
 # Fact aa5733e2
 
-Store id: c7eab36f-f37f-4baa-8572-c85bb8740c79
+Store id: 5fc1c5cb-5143-45bf-a75c-7dbb4dfdafe8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.3185150+00:00`
+- posted_at: `2026-11-09T23:31:53.7191420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 62,
     "symbol": "Deferred.__repr__"
   },
-  "id": "c7eab36f-f37f-4baa-8572-c85bb8740c79",
+  "id": "5fc1c5cb-5143-45bf-a75c-7dbb4dfdafe8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.3185150+00:00"
+    "posted_at": "2026-11-09T23:31:53.7191420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "413a1dbb-d640-4ebd-85f7-a9e4cb6ddb0a",
+  "subject_id": "9cbb9603-a446-4e40-a945-8fbb96f57bac",
   "subject_name": "django/db/models/base::Deferred.__repr__",
   "tags": [
     "entity:method"

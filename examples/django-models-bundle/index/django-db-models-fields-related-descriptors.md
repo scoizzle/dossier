@@ -4,7 +4,7 @@ This file lists every subject under `django/db/models/fields/related_descriptors
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/fields/related_descriptors | subject | 10 | 0 | 0 | 5383 | [subjects/django-db-models-fields-related-descriptors/index.md](../subjects/django-db-models-fields-related-descriptors/index.md) |
+| django/db/models/fields/related_descriptors | subject | 10 | 0 | 0 | 5394 | [subjects/django-db-models-fields-related-descriptors/index.md](../subjects/django-db-models-fields-related-descriptors/index.md) |
 | part-1/ | group | 67 | 0 | 0 | 5956 | [index/django-db-models-fields-related-descriptors-part-1.md](django-db-models-fields-related-descriptors-part-1.md) |
 | part-2/ | group | 36 | 0 | 0 | 2995 | [index/django-db-models-fields-related-descriptors-part-2.md](django-db-models-fields-related-descriptors-part-2.md) |
 

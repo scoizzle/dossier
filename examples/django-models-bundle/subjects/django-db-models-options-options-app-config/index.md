@@ -1,9 +1,9 @@
 # django/db/models/options::Options.app_config
 
-- Subject: django/db/models/options::Options.app_config (id `8a87365d-c3f9-4ed3-a31b-3bd9b970aa7d`)
+- Subject: django/db/models/options::Options.app_config (id `abf36ee6-fae2-4b80-8031-c8eb2a0e81df`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

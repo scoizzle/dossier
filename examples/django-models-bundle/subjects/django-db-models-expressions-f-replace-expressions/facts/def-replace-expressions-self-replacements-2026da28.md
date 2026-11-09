@@ -1,6 +1,6 @@
 # Fact 2026da28
 
-Store id: 95ef316b-c17c-4405-ae3a-592d0f5f2212
+Store id: 68a786cc-b809-4a69-930d-0b89adc4cfe3
 
 ## Text
 
@@ -20,7 +20,7 @@ def replace_expressions(self, replacements)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:41.5624820+00:00`
+- posted_at: `2026-11-09T23:31:55.8354250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 910,
     "symbol": "F.replace_expressions"
   },
-  "id": "95ef316b-c17c-4405-ae3a-592d0f5f2212",
+  "id": "68a786cc-b809-4a69-930d-0b89adc4cfe3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:41.5624820+00:00"
+    "posted_at": "2026-11-09T23:31:55.8354250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18357dbb-ec61-44c7-8c55-05e642f64db1",
+  "subject_id": "5b9538fb-2e7b-49c6-98ca-600d609a385f",
   "subject_name": "django/db/models/expressions::F.replace_expressions",
   "tags": [
     "entity:method"

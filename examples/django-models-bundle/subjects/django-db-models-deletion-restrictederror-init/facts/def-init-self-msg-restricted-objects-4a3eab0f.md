@@ -1,6 +1,6 @@
 # Fact 4a3eab0f
 
-Store id: ac9a2146-815a-4453-8be8-23ce6ee0cbb8
+Store id: 658ff5b1-88ab-4128-9cfd-a85a94852a1c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, msg, restricted_objects)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:40.9860580+00:00`
+- posted_at: `2026-11-09T23:31:55.0239280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 17,
     "symbol": "RestrictedError.__init__"
   },
-  "id": "ac9a2146-815a-4453-8be8-23ce6ee0cbb8",
+  "id": "658ff5b1-88ab-4128-9cfd-a85a94852a1c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:40.9860580+00:00"
+    "posted_at": "2026-11-09T23:31:55.0239280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "48bbd256-da6a-4c9b-ad97-6ea2cd9f4fa0",
+  "subject_id": "ad0f0881-6a21-4fd8-8be7-278590957a55",
   "subject_name": "django/db/models/deletion::RestrictedError.__init__",
   "tags": [
     "entity:method"

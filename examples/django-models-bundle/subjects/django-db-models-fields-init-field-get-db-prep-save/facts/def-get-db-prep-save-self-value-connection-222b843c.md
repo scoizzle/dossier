@@ -1,6 +1,6 @@
 # Fact 222b843c
 
-Store id: 8719fc70-81f9-49fc-bc78-ecc04444b0ed
+Store id: ee184879-fc9b-4f38-a4fc-b1d5b3f4b993
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_save(self, value, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.3453890+00:00`
+- posted_at: `2026-11-09T23:31:56.5200620+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1047,
     "symbol": "Field.get_db_prep_save"
   },
-  "id": "8719fc70-81f9-49fc-bc78-ecc04444b0ed",
+  "id": "ee184879-fc9b-4f38-a4fc-b1d5b3f4b993",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.3453890+00:00"
+    "posted_at": "2026-11-09T23:31:56.5200620+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16a870f9-9b9f-493b-9435-bbedde8eb4ed",
+  "subject_id": "7f2dedfa-0496-4fd7-8e23-e2ebe9e18a8d",
   "subject_name": "django/db/models/fields/__init__::Field.get_db_prep_save",
   "tags": [
     "entity:method"

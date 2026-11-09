@@ -1,14 +1,14 @@
 # django/core/handlers/base
 
-- Subject: django/core/handlers/base (id `6ba2ef84-54f9-4d71-a4fd-024af536b64a`)
+- Subject: django/core/handlers/base (id `304af51d-df38-46d0-92d7-82e0042c73c9`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 891 tokens
-- Facts shown: 12 of 36
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 2956 tokens
+- Facts shown: 34 of 36
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - handler = convert_exception_to_response(mw_instance) handler_is_async = middleware_is_async [8d793d24]
 - if hasattr(mw_instance, "process_view"): self._view_middleware.insert( 0, self.adapt_method_mode(is_async, mw_instance.process_view), ) if hasattr(mw_instance, "process_template_response"): self._template_response_middleware.append( self.adapt_method_mode( is_async, mw_instance.process_template_response ), ) if hasattr(mw_instance, "process_exception"): # The exception-handling stack is still always synchronous for # now, so adapt that way. self._exception_middleware.append( self.adapt_method_mode(False, mw_instance.process_exception), ) [09e0fb63]
@@ -23,6 +23,27 @@
 - return response [8034aacd88b9c7ae]
 - # Other utility methods. [8c062c3a]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [6f30c065] [4daee446] [0bbd4302] [bf317459] [c966dfcf] [fe8e1763] [8fba71ae] [8f60cfc6] [09e67880] [cd9d686e] [71365cfa] [a13a139e] [f4943437] [5b138c98] [745783a4] [c253e1c9] [62eab511] [cf6bbf2daef2deb8-2] [01dcc1f0] [48d5f94d] [a783acd9b0048dcc-2] [e529c1f5]
+- [6f30c065] Funneling everything, including WSGI, into a single async get_response() is too slow. Avoid the context switch by using a separate async response path. """ # Setup default url resolver for this thread. set_urlconf(settings.ROOT_URLCONF) response = await self._middleware_chain(request) response._resource_closers.append(request.close) if response.status_code >= 400: await sync_to_async(log_response, thread_sensitive=False)( "%s: %s", response.reason_phrase, request.path, response=response, request=request, ) return response
+- [4daee446] Must be called after the environment is fixed (see __call__ in subclasses). """ self._view_middleware = [] self._template_response_middleware = [] self._exception_middleware = []
+- [0bbd4302] get_response = self._get_response_async if is_async else self._get_response handler = convert_exception_to_response(get_response) handler_is_async = is_async for middleware_path in reversed(settings.MIDDLEWARE): middleware = import_string(middleware_path) middleware_can_sync = getattr(middleware, "sync_capable", True) middleware_can_async = getattr(middleware, "async_capable", False) if not middleware_can_sync and not middleware_can_async: raise RuntimeError( "Middleware %s must have at least one of " "sync_capable/async_capable set to True." % middleware_path ) elif not handler_is_async and middleware_can_sync: middleware_is_async = False else: middleware_is_async = middleware_can_async try: # Adapt handler, if needed. adapted_handler = self.adapt_method_mode( middleware_is_async, handler, handler_is_async, debug=settings.DEBUG, name="middleware %s" % middleware_path, ) mw_instance = middleware(adapted_handler) except MiddlewareNotUsed as exc: if settings.DEBUG: if str(exc): logger.debug("MiddlewareNotUsed(%r): %s", middleware_path, exc) else: logger.debug("MiddlewareNotUsed: %r", middleware_path) continue else: handler = adapted_handler
+- [bf317459] if response is None: wrapped_callback = self.make_view_atomic(callback) # If it is a synchronous view, run it in a subthread if not iscoroutinefunction(wrapped_callback): wrapped_callback = sync_to_async( wrapped_callback, thread_sensitive=True ) try: response = await wrapped_callback( request, *callback_args, **callback_kwargs ) except Exception as e: response = await sync_to_async( self.process_exception_by_middleware, thread_sensitive=True, )(e, request) if response is None: raise
+- [c966dfcf] if response is None: wrapped_callback = self.make_view_atomic(callback) # If it is an asynchronous view, run it in a subthread. if iscoroutinefunction(wrapped_callback): wrapped_callback = async_to_sync(wrapped_callback) try: response = wrapped_callback(request, *callback_args, **callback_kwargs) except Exception as e: response = self.process_exception_by_middleware(e, request) if response is None: raise
+- [fe8e1763] async def _get_response_async(self, request): """ Resolve and call the view, then apply view, exception, and template_response middleware. This method is everything that happens inside the request/response middleware. """ response = None callback, callback_args, callback_kwargs = self.resolve_request(request)
+- [8fba71ae] async def get_response_async(self, request): """ Asynchronous version of get_response.
+- [8f60cfc6] def adapt_method_mode( self, is_async, method, method_is_async=None, debug=False, name=None, ): """ Adapt a method to be in the correct "mode": - If is_async is False: - Synchronous methods are left alone - Asynchronous methods are wrapped with async_to_sync - If is_async is True: - Synchronous methods are wrapped with sync_to_async() - Asynchronous methods are left alone """ if method_is_async is None: method_is_async = iscoroutinefunction(method) if debug and not name: name = name or "method %s()" % method.__qualname__ if is_async: if not method_is_async: if debug: logger.debug("Synchronous handler adapted for %s.", name) return sync_to_async(method, thread_sensitive=True) elif method_is_async: if debug: logger.debug("Asynchronous handler adapted for %s.", name) return async_to_sync(method) return method
+- [09e67880] def check_response(self, response, callback, name=None): """ Raise an error if the view returned None or an uncalled coroutine. """ if not (response is None or asyncio.iscoroutine(response)): return if not name: if isinstance(callback, types.FunctionType): # FBV name = "The view %s.%s" % (callback.__module__, callback.__name__) else: # CBV name = "The view %s.%s.__call__" % ( callback.__module__, callback.__class__.__name__, ) if response is None: raise ValueError( "%s didn't return an HttpResponse object. It returned None " "instead." % name ) elif asyncio.iscoroutine(response): raise ValueError( "%s didn't return an HttpResponse object. It returned an " "unawaited coroutine instead. You may need to add an 'await' " "into your view." % name )
+- [cd9d686e] def get_response(self, request): """Return an HttpResponse object for the given HttpRequest.""" # Setup default url resolver for this thread set_urlconf(settings.ROOT_URLCONF) response = self._middleware_chain(request) response._resource_closers.append(request.close) if response.status_code >= 400: log_response( "%s: %s", response.reason_phrase, request.path, response=response, request=request, ) return response
+- [71365cfa] def load_middleware(self, is_async=False): """ Populate middleware lists from settings.MIDDLEWARE.
+- [a13a139e] def make_view_atomic(self, view): non_atomic_requests = getattr(view, "_non_atomic_requests", set()) for alias, settings_dict in connections.settings.items(): if settings_dict["ATOMIC_REQUESTS"] and alias not in non_atomic_requests: if iscoroutinefunction(view): raise RuntimeError( "You cannot use ATOMIC_REQUESTS with async views." ) view = transaction.atomic(using=alias)(view) return view
+- [f4943437] def process_exception_by_middleware(self, exception, request): """ Pass the exception to the exception middleware. If no middleware return a response for this exception, return None. """ for middleware_method in self._exception_middleware: response = middleware_method(request, exception) if response: return response return None
+- [5b138c98] def resolve_request(self, request): """ Retrieve/set the urlconf for the request. Return the view resolved, with its args and kwargs. """ # Work out the resolver. if hasattr(request, "urlconf"): urlconf = request.urlconf set_urlconf(urlconf) resolver = get_resolver(urlconf) else: resolver = get_resolver() # Resolve the view, and assign the match object back to the request. resolver_match = resolver.resolve(request.path_info) request.resolver_match = resolver_match return resolver_match
+- [745783a4] class BaseHandler: _view_middleware = None _template_response_middleware = None _exception_middleware = None _middleware_chain = None
+- [c253e1c9] def reset_urlconf(sender, **kwargs): """Reset the URLconf after each request is finished.""" set_urlconf(None)
+- [62eab511] from .exception import convert_exception_to_response
+- [cf6bbf2daef2deb8-2] from asgiref.sync import async_to_sync, sync_to_async
+- [01dcc1f0] from django.conf import settings from django.core.exceptions import ImproperlyConfigured, MiddlewareNotUsed from django.core.signals import request_finished from django.db import connections, transaction from django.urls import get_resolver, set_urlconf from django.utils.log import log_response from django.utils.module_loading import import_string
+- [48d5f94d] import asyncio import logging import types from inspect import iscoroutinefunction
+- [a783acd9b0048dcc-2] logger = logging.getLogger("django.request")
+- [e529c1f5] request_finished.connect(reset_urlconf)

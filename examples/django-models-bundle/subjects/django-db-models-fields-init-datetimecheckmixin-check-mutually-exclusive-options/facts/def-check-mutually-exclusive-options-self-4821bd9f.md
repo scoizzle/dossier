@@ -1,6 +1,6 @@
 # Fact 4821bd9f
 
-Store id: b79301a3-8dea-4a81-9c63-45d333348e93
+Store id: 4df9464e-6ad0-43ea-b8ae-22420435b9d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_mutually_exclusive_options(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.4050370+00:00`
+- posted_at: `2026-11-09T23:31:56.5702960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1399,
     "symbol": "DateTimeCheckMixin._check_mutually_exclusive_options"
   },
-  "id": "b79301a3-8dea-4a81-9c63-45d333348e93",
+  "id": "4df9464e-6ad0-43ea-b8ae-22420435b9d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.4050370+00:00"
+    "posted_at": "2026-11-09T23:31:56.5702960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9c4f7d45-e351-4c50-983f-6f95f29005b6",
+  "subject_id": "cc59191a-72c7-4b21-9153-5c1e1bc435da",
   "subject_name": "django/db/models/fields/__init__::DateTimeCheckMixin._check_mutually_exclusive_options",
   "tags": [
     "entity:method"

@@ -1,9 +1,9 @@
 # django/db/models/expressions::Col.get_db_converters
 
-- Subject: django/db/models/expressions::Col.get_db_converters (id `906f4fca-d21b-4011-855a-0280785f3188`)
+- Subject: django/db/models/expressions::Col.get_db_converters (id `82c0ca00-2bf5-4c9e-9c37-7207950f7453`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

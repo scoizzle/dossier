@@ -1,14 +1,14 @@
 # docs/faq/help
 
-- Subject: docs/faq/help (id `e4a3eb9c-6d8a-4e7c-9f11-534346894bef`)
+- Subject: docs/faq/help (id `02aeee51-9eca-4eb6-8d4e-edeb99ca5606`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 873 tokens
-- Facts shown: 19 of 20
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 915 tokens
+- Facts shown: 20 of 20
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - * The Django Forum section `"Using Django"`_. This is for web-based discussions. * The `Django Discord server`_ for chat-based discussions. [2e8e962d]
 - .. _Django Code of Conduct: https://www.djangoproject.com/conduct/ [975f8fe5]
@@ -30,6 +30,6 @@
 - Then, please post it in one of the following channels: [5afb4a7e]
 - Try making your question more specific, or provide a better example of your problem. [ac64d063]
 
-## Beyond the budget
+## All facts
 
-1 more facts did not fit in the budget: [14a938d2]
+- [14a938d2] You can also try asking on a different channel. But please don't post your question in all three channels in quick succession.

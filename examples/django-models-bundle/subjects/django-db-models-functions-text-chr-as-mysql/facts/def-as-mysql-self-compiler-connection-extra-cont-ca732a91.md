@@ -1,6 +1,6 @@
 # Fact ca732a91
 
-Store id: 42864beb-4720-420f-b598-b1eaad4a53a4
+Store id: e14c347e-9aea-468e-b2bf-ec4a7093fae2
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:47.0559180+00:00`
+- posted_at: `2026-11-09T23:32:02.1399810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 47,
     "symbol": "Chr.as_mysql"
   },
-  "id": "42864beb-4720-420f-b598-b1eaad4a53a4",
+  "id": "e14c347e-9aea-468e-b2bf-ec4a7093fae2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:47.0559180+00:00"
+    "posted_at": "2026-11-09T23:32:02.1399810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5deefe1c-9541-4ec3-aff2-6fd5ff4d6f82",
+  "subject_id": "673746ff-9f32-4a86-919c-7f5487cf88e0",
   "subject_name": "django/db/models/functions/text::Chr.as_mysql",
   "tags": [
     "entity:method"

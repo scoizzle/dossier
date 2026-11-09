@@ -1,8 +1,8 @@
 # django/middleware/security
 
-- Subject: django/middleware/security (id `7fdfe389-bb74-4e2f-8a3f-1ebc456f8b8f`)
+- Subject: django/middleware/security (id `6f2013c6-b9fe-4f43-8713-85a4649c2de0`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 584 tokens
 - Facts shown: 8 of 8
 - Conflicts: 0

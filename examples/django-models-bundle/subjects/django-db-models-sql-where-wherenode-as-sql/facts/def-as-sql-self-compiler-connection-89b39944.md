@@ -1,6 +1,6 @@
 # Fact 89b39944
 
-Store id: 9eb76436-6413-4732-a40f-bf44ca5a3c10
+Store id: df99e767-1a92-47e1-ae0e-34cf34ec19e7
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:51.8982160+00:00`
+- posted_at: `2026-11-09T23:32:07.5860910+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 116,
     "symbol": "WhereNode.as_sql"
   },
-  "id": "9eb76436-6413-4732-a40f-bf44ca5a3c10",
+  "id": "df99e767-1a92-47e1-ae0e-34cf34ec19e7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:51.8982160+00:00"
+    "posted_at": "2026-11-09T23:32:07.5860910+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18eb2ef2-8398-472a-ae5c-827acb1e8e9c",
+  "subject_id": "2fc5434c-0feb-4dd8-81d9-b1985fde0354",
   "subject_name": "django/db/models/sql/where::WhereNode.as_sql",
   "tags": [
     "entity:method"

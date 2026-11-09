@@ -1,6 +1,6 @@
 # Fact da49c1ec
 
-Store id: 8667fad2-4bd3-49e1-a277-8c8c3de76544
+Store id: f47bc6dd-dcb3-4dbc-baf8-6a03720c3429
 
 ## Text
 
@@ -20,7 +20,7 @@ def populate(self, row, from_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:49.9084550+00:00`
+- posted_at: `2026-11-09T23:32:04.8624860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 3067,
     "symbol": "RelatedPopulator.populate"
   },
-  "id": "8667fad2-4bd3-49e1-a277-8c8c3de76544",
+  "id": "f47bc6dd-dcb3-4dbc-baf8-6a03720c3429",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:49.9084550+00:00"
+    "posted_at": "2026-11-09T23:32:04.8624860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c48f6b8d-81db-4e8a-9aa0-c74a92c0eff3",
+  "subject_id": "46d5a0e2-3190-43c3-9fb2-7896545d5982",
   "subject_name": "django/db/models/query::RelatedPopulator.populate",
   "tags": [
     "entity:method"

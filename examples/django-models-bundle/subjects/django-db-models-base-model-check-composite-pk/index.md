@@ -1,9 +1,9 @@
 # django/db/models/base::Model._check_composite_pk
 
-- Subject: django/db/models/base::Model._check_composite_pk (id `be38d477-1ad7-46c2-bb99-6ada1b0d3b8e`)
+- Subject: django/db/models/base::Model._check_composite_pk (id `f2f3e17a-9b74-4b89-83b5-bfe0dd3aa7bd`)
 - Kind: class_method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

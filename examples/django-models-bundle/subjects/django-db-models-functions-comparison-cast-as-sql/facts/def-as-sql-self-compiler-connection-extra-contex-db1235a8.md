@@ -1,6 +1,6 @@
 # Fact db1235a8
 
-Store id: e9d57691-1fe2-4645-b496-a25abb0886c3
+Store id: dd9a4817-d784-4b70-84bd-715156d5edd0
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.9000060+00:00`
+- posted_at: `2026-11-09T23:32:00.9498580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 16,
     "symbol": "Cast.as_sql"
   },
-  "id": "e9d57691-1fe2-4645-b496-a25abb0886c3",
+  "id": "dd9a4817-d784-4b70-84bd-715156d5edd0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.9000060+00:00"
+    "posted_at": "2026-11-09T23:32:00.9498580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82a7e091-5756-45b9-8731-915e3f225ddb",
+  "subject_id": "4008a925-4064-4f21-b83f-33f30527eb0c",
   "subject_name": "django/db/models/functions/comparison::Cast.as_sql",
   "tags": [
     "entity:method"

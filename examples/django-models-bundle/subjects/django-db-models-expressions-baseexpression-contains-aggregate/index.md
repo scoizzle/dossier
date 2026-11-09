@@ -1,9 +1,9 @@
 # django/db/models/expressions::BaseExpression.contains_aggregate
 
-- Subject: django/db/models/expressions::BaseExpression.contains_aggregate (id `321afeff-45de-4875-8a09-3146f1d091aa`)
+- Subject: django/db/models/expressions::BaseExpression.contains_aggregate (id `bb9438b0-541d-4ec2-92fc-1e177f1c2b35`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

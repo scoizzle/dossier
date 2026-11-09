@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::PositiveIntegerField
 
-- Subject: django/db/models/fields/__init__::PositiveIntegerField (id `0e613b3a-0777-48b1-84b0-6f551fe45a2d`)
+- Subject: django/db/models/fields/__init__::PositiveIntegerField (id `856112ee-3f32-49e6-8c69-82a52640312e`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

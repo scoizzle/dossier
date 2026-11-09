@@ -1,14 +1,14 @@
 # docs/faq/general
 
-- Subject: docs/faq/general (id `24ade406-3ff0-4913-916f-a74e4024b22b`)
+- Subject: docs/faq/general (id `a21e88ff-1ba6-42aa-9fe3-c20eeb58f486`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 900 tokens
-- Facts shown: 22 of 71
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 3181 tokens
+- Facts shown: 71 of 71
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - Django (Version 1.5) [Computer Software]. (2013). Retrieved from https://www.djangoproject.com/. [fccdecfd]
 - .. _APA style: https://apastyle.apa.org/ [30146b6c]
@@ -33,6 +33,54 @@
 - Does Django scale? ================== [b017bedb]
 - For example, `APA style`_, would dictate something like: [c6e76bd8]
 
-## Beyond the budget
+## All facts
 
-49 more facts did not fit in the budget: [664838e2] [6c116e01] [9a1cf743] [12c30714] [65356ea1] [f68c4f8b] [20a72a9b] [8c35101d] [4df22cba] [20072add] [44d22103] [7ae98de7] [a248f7f4] [49941746] [44378a99] [80f37a77] [3e530eed] [1e39b1b8] [19f502aa] [cf04a90d] [491e6a89] [e2bea6c3] [7e341e76] [fb1f52c9] [013ef391] [0caa3902] [c827945e] [0a7615ca] [b690a41a] [1977f095] [1042d445] [0ed90279] [11ce74df] [799ffdf6] [9e8d76e7] [043e29cc] [1555c170] [3e02ae81] [f8a783aa] [17e1f2a7] [b82971bb] [4d8fd9b6] [e505bc79] [0c430375] [aa743a19] [d1986729] [77ec363f] [4a941384] [3ef4d979]
+- [664838e2] Django was originally developed at World Online, the web department of a newspaper in Lawrence, Kansas, USA. Django's now run by an international `team of volunteers <https://www.djangoproject.com/foundation/teams/>`_.
+- [6c116e01] For example, it doesn't make much sense to compare Django to something like Drupal_, because Django is something you use to *create* things like Drupal.
+- [9a1cf743] Furthermore, it's sensible to separate content from presentation -- which is where templates come in. In Django, a "view" describes which data is presented, but a view normally delegates to a template, which describes *how* the data is presented.
+- [12c30714] How can I download the Django documentation to read it offline? ===============================================================
+- [65356ea1] How do I cite Django? =====================
+- [f68c4f8b] How is Django licensed? =======================
+- [20a72a9b] However, the only true guide is what your publisher will accept, so get a copy of those guidelines and fill in the gaps as best you can.
+- [8c35101d] If you need a name, just use "Django", without any tagline.
+- [4df22cba] If you need a publication date, use the year of release of the version you're referencing (e.g., 2013 for v1.5).
+- [20072add] If you need a publishing location, use "Lawrence, Kansas".
+- [44d22103] If you need a web address, use https://www.djangoproject.com/.
+- [7ae98de7] If you're hungry for acronyms, you might say that Django is a "MTV" framework -- that is, "model", "template", and "view." That breakdown makes much more sense.
+- [a248f7f4] If your referencing style guide requires a publisher name, use "Django Software Foundation".
+- [49941746] In fall 2003, the World Online developers (Adrian Holovaty and Simon Willison) ditched PHP and began using Python to develop its websites. As they built intensive, richly interactive sites such as Lawrence.com, they began to extract a generic web development framework that let them build web applications more and more quickly. They tweaked this framework constantly, adding improvements over two years.
+- [44378a99] In most cases, however, we found that existing frameworks/tools inevitably had some sort of fundamental, fatal flaw that made us squeamish. No tool fit our philosophies 100%.
+- [80f37a77] In our interpretation of MVC, the "view" describes the data that gets presented to the user. It's not necessarily *how* the data *looks*, but *which* data is presented. The view describes *which data you see*, not *how you see it.* It's a subtle distinction.
+- [3e530eed] In our opinion, none of them were completely up to snuff.
+- [1e39b1b8] In summer 2005, World Online decided to open-source the resulting software, Django. Django would not be possible without a whole host of open-source projects -- `Apache`_, `Python`_, and `PostgreSQL`_ to name a few -- and we're thrilled to be able to give something back to the open-source community.
+- [19f502aa] Is Django a content-management-system (CMS)? ============================================
+- [cf04a90d] Is Django stable? =================
+- [491e6a89] It's difficult to give an official citation format, for two reasons: citation formats can vary wildly between publications, and citation standards for software are still a matter of some debate.
+- [e2bea6c3] Like we said: We're picky.
+- [7e341e76] Listen to his music. You'll like it.
+- [fb1f52c9] No, Django is not a CMS, or any sort of "turnkey product" in and of itself. It's a web framework; it's a programming tool that lets you build websites.
+- [013ef391] Over time, we stumbled across open-source libraries that did things we'd already implemented. It was reassuring to see other people solving similar problems in similar ways, but it was too late to integrate outside code: We'd already written, tested and implemented our own framework bits in several production settings -- and our own code met our needs delightfully.
+- [0caa3902] So, in our case, a "view" is the Python callback function for a particular URL, because that callback function describes which data is presented.
+- [c827945e] Technically, the docs on Django's site are generated from the latest development versions of those reST documents, so the docs on the Django site may offer more information than the docs that come with the latest Django release.
+- [0a7615ca] That page will be updated to contain links to various Django content such as podcasts, videos, conferences, blogs, books, and learning resources. It also features popular, robust, community-maintained packages.
+- [b690a41a] The Django docs are available in the ``docs`` directory of each Django tarball release. These docs are in reST (reStructuredText) format, and each text file corresponds to a web page on the official Django site.
+- [1977f095] The Steering Council maintains a collection of Django third-party packages, organizations and resources at https://www.djangoproject.com/community/ecosystem/.
+- [1042d445] The framework cleanly separates components such as its database layer and application layer. And it ships with a simple-yet-powerful :doc:`cache framework </topics/cache>`.
+- [0ed90279] We're picky. You might even call us perfectionists. (With deadlines.)
+- [11ce74df] We're well aware that there are other awesome web frameworks out there, and we're not averse to borrowing ideas where appropriate. However, Django was developed precisely because we were unhappy with the status quo, so please be aware that "because <Framework X> does it" is not going to be sufficient reason to add a given feature to Django.
+- [799ffdf6] We've also recorded an `audio clip of the pronunciation`_.
+- [9e8d76e7] We've documented our philosophies on the :doc:`design philosophies page </misc/design-philosophies>`.
+- [043e29cc] Well, the standard names are debatable.
+- [1555c170] What does "Django" mean, and how do you pronounce it? =====================================================
+- [3e02ae81] When Django was originally written, Adrian and Simon spent quite a bit of time exploring the various Python web frameworks available.
+- [f8a783aa] Where can I find more Django resources? =======================================
+- [17e1f2a7] Where does the "controller" fit in, then? In Django's case, it's probably the framework itself: the machinery that sends a request to the appropriate view, according to the Django URL configuration.
+- [b82971bb] Which sites use Django? =======================
+- [4d8fd9b6] Who's behind this? ==================
+- [e505bc79] Why did you write all of Django from scratch, instead of using other Python libraries? ======================================================================================
+- [0c430375] Why does Django include Python's license file? ==============================================
+- [aa743a19] Why does this project exist? ============================
+- [d1986729] Yes, Django's automatic admin site is fantastic and timesaving -- but the admin site is one module of Django the framework. Furthermore, although Django has special conveniences for building "CMS-y" apps, that doesn't mean it's not just as appropriate for building "non-CMS-y" apps (whatever that means!).
+- [77ec363f] Yes, it's quite stable. Companies like Disqus, Instagram, Pinterest, and Mozilla have been using Django for many years. Sites built on Django have weathered traffic spikes of over 50 thousand hits per second.
+- [4a941384] Yes. Compared to development time, hardware is cheap, and so Django is designed to take advantage of as much hardware as you can throw at it.
+- [3ef4d979] `BuiltWithDjango.com`_ features a constantly growing list of Django-powered sites.

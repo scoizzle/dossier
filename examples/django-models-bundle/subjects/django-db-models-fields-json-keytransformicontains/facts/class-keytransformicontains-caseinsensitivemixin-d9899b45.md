@@ -1,6 +1,6 @@
 # Fact d9899b45
 
-Store id: 8fdb9d81-a732-4c7e-9169-765cd9f20f13
+Store id: a6e11b58-967e-4961-baee-1afcffc65238
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIContains( CaseInsensitiveMixin, KeyTransformTextLookupMixin, 
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.7425360+00:00`
+- posted_at: `2026-11-09T23:31:58.0115300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 684,
     "symbol": "KeyTransformIContains"
   },
-  "id": "8fdb9d81-a732-4c7e-9169-765cd9f20f13",
+  "id": "a6e11b58-967e-4961-baee-1afcffc65238",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.7425360+00:00"
+    "posted_at": "2026-11-09T23:31:58.0115300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15f125e3-20e7-4596-bfac-afe96b25fd93",
+  "subject_id": "d7daed8f-c52b-45cf-a6d9-037efe98bec4",
   "subject_name": "django/db/models/fields/json::KeyTransformIContains",
   "tags": [
     "entity:class"

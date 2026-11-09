@@ -1,14 +1,14 @@
 # django/db/backends/ddl_references
 
-- Subject: django/db/backends/ddl_references (id `05f29b58-45ee-4674-974b-378d5de84de5`)
+- Subject: django/db/backends/ddl_references (id `b3d72571-b3e3-44a6-bf9f-df37481f8259`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 896 tokens
-- Facts shown: 20 of 50
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 1894 tokens
+- Facts shown: 42 of 50
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - return ", ".join( col_str(column, idx) for idx, column in enumerate(self.columns) ) [1799c23cfa03ba85]
 - Allows keeping a reference to a statement without interpolating identifiers that might have to be adjusted if they're referencing a table or column that is removed """ [9d50c7ba]
@@ -31,6 +31,27 @@
 - def references_column(self, table, column): return any( hasattr(part, "references_column") and part.references_column(table, column) for part in self.parts.values() ) [9d6dca82]
 - def references_column(self, table, column): return self.table == table and column in self.columns [cfc9ff76]
 
-## Beyond the budget
+## All facts
 
-22 more facts did not fit in the budget: [5f126d05] [9bd12450] [6f12f08c] [c956c3fe] [f23e0fe6] [8e2f2343] [f994a5f2] [f681d29a] [861dc062] [90782d33] [ef1009a4] [e9280cb6] [5a779899] [5fdd0a3a] [fd3922c1] [b0345815] [02fa136a] [bf941a3e] [15a2fea6] [b6e76545] [6048c026] [ed4edd1d59c7513d]
+- [5f126d05] def references_column(self, table, column): return super().references_column( table, column ) or self.to_reference.references_column(table, column)
+- [9bd12450] def references_index(self, table, index): return self.references_table(table) and str(self) == index
+- [6f12f08c] def references_table(self, table): return self.table == table
+- [c956c3fe] def rename_column_references(self, table, old_column, new_column): """ Rename all references to the old_column to the new_column. """ pass
+- [f23e0fe6] def rename_column_references(self, table, old_column, new_column): for part in self.parts.values(): if hasattr(part, "rename_column_references"): part.rename_column_references(table, old_column, new_column)
+- [8e2f2343] def rename_column_references(self, table, old_column, new_column): if self.table != table: return expressions = deepcopy(self.expressions) self.columns = [] for col in self.compiler.query._gen_cols([expressions]): if col.target.column == old_column: col.target.column = new_column self.columns.append(col.target.column) self.expressions = expressions
+- [f994a5f2] def rename_column_references(self, table, old_column, new_column): if self.table == table: for index, column in enumerate(self.columns): if column == old_column: self.columns[index] = new_column
+- [f681d29a] def rename_column_references(self, table, old_column, new_column): super().rename_column_references(table, old_column, new_column) self.to_reference.rename_column_references(table, old_column, new_column)
+- [861dc062] def rename_table_references(self, old_table, new_table): """ Rename all references to the old_name to the new_table. """ pass
+- [90782d33] def rename_table_references(self, old_table, new_table): if self.table != old_table: return self.expressions = self.expressions.relabeled_clone({old_table: new_table}) super().rename_table_references(old_table, new_table)
+- [ef1009a4] def rename_table_references(self, old_table, new_table): if self.table == old_table: self.table = new_table
+- [e9280cb6] """ Helpers to manipulate deferred DDL statements that might need to be adjusted or discarded when executing a migration. """
+- [5a779899] class Columns(TableColumns): """Hold a reference to one or many columns."""
+- [5fdd0a3a] class Expressions(TableColumns): def __init__(self, table, expressions, compiler, quote_value): self.compiler = compiler self.expressions = expressions self.quote_value = quote_value columns = [ col.target.column for col in self.compiler.query._gen_cols([self.expressions]) ] super().__init__(table, columns)
+- [fd3922c1] class ForeignKeyName(TableColumns): """Hold a reference to a foreign key name."""
+- [b0345815] class IndexColumns(Columns): def __init__(self, table, columns, quote_name, col_suffixes=(), opclasses=()): self.opclasses = opclasses super().__init__(table, columns, quote_name, col_suffixes)
+- [02fa136a] class IndexName(TableColumns): """Hold a reference to an index name."""
+- [bf941a3e] class Reference: """Base class that defines the reference interface."""
+- [15a2fea6] class Statement(Reference): """ Statement template and formatting parameters container.
+- [b6e76545] class Table(Reference): """Hold a reference to a table."""
+- [6048c026] class TableColumns(Table): """Base class for references to multiple columns of a table."""
+- [ed4edd1d59c7513d] from copy import deepcopy

@@ -1,6 +1,6 @@
 # Fact 12af9af8
 
-Store id: f5d80d46-1c03-4248-a6f9-42a3f45ce4bd
+Store id: 1115e755-0121-41a9-bdf9-caa216cc0fcf
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7208300+00:00`
+- posted_at: `2026-11-09T23:31:56.8880680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2865,
     "symbol": "UUIDField.formfield"
   },
-  "id": "f5d80d46-1c03-4248-a6f9-42a3f45ce4bd",
+  "id": "1115e755-0121-41a9-bdf9-caa216cc0fcf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7208300+00:00"
+    "posted_at": "2026-11-09T23:31:56.8880680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3bd691c2-01f3-4219-9b43-cea6d3ab8f85",
+  "subject_id": "ee0bfc46-e1c8-468c-b842-6c4751c3918c",
   "subject_name": "django/db/models/fields/__init__::UUIDField.formfield",
   "tags": [
     "entity:method"

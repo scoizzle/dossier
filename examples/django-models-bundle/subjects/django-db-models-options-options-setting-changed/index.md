@@ -1,9 +1,9 @@
 # django/db/models/options::Options.setting_changed
 
-- Subject: django/db/models/options::Options.setting_changed (id `da8a4672-d7f3-46ff-b30a-3361ed6192c3`)
+- Subject: django/db/models/options::Options.setting_changed (id `5caa996a-963e-459f-9838-b88c3e2633a5`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

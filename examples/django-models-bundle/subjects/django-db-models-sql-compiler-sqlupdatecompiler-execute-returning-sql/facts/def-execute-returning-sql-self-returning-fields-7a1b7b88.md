@@ -1,6 +1,6 @@
 # Fact 7a1b7b88
 
-Store id: 80e2116c-d5d6-49d0-bdee-a69a5f66ce2f
+Store id: e6669f9e-1c5c-4afe-b8b1-6d2b5f56dcac
 
 ## Text
 
@@ -20,7 +20,7 @@ def execute_returning_sql(self, returning_fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:50.7379380+00:00`
+- posted_at: `2026-11-09T23:32:06.0919970+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2153,
     "symbol": "SQLUpdateCompiler.execute_returning_sql"
   },
-  "id": "80e2116c-d5d6-49d0-bdee-a69a5f66ce2f",
+  "id": "e6669f9e-1c5c-4afe-b8b1-6d2b5f56dcac",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:50.7379380+00:00"
+    "posted_at": "2026-11-09T23:32:06.0919970+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ce1d04a8-fdc3-4c76-9426-5ed328c78517",
+  "subject_id": "0079b624-978d-431d-909e-c4d0b6fc5e2a",
   "subject_name": "django/db/models/sql/compiler::SQLUpdateCompiler.execute_returning_sql",
   "tags": [
     "entity:method"

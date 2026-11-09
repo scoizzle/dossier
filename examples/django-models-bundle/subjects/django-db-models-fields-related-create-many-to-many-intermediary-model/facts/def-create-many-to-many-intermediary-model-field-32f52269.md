@@ -1,6 +1,6 @@
 # Fact 32f52269
 
-Store id: 467e930f-050f-48f9-81d4-d2e2be78b4e2
+Store id: dbfb162c-ac18-47ef-84a6-820bf2142264
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_many_to_many_intermediary_model(field, klass)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.4365920+00:00`
+- posted_at: `2026-11-09T23:31:58.8201380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1401,
     "symbol": "create_many_to_many_intermediary_model"
   },
-  "id": "467e930f-050f-48f9-81d4-d2e2be78b4e2",
+  "id": "dbfb162c-ac18-47ef-84a6-820bf2142264",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.4365920+00:00"
+    "posted_at": "2026-11-09T23:31:58.8201380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "800b68c6-572e-4548-918e-fbf434955207",
+  "subject_id": "99da41e8-8f9c-48b3-ab7d-93c2f75a8149",
   "subject_name": "django/db/models/fields/related::create_many_to_many_intermediary_model",
   "tags": [
     "entity:function"

@@ -1,9 +1,9 @@
 # django/db/models/functions/comparison::Cast
 
-- Subject: django/db/models/functions/comparison::Cast (id `1a49eb3b-401b-4364-b32b-d9b8de12dee7`)
+- Subject: django/db/models/functions/comparison::Cast (id `2552c40c-8ef9-428f-a591-3c47dfde6dbf`)
 - Kind: class
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

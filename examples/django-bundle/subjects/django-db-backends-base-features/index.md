@@ -1,14 +1,14 @@
 # django/db/backends/base/features
 
-- Subject: django/db/backends/base/features (id `fa177c71-fb50-4673-a352-f774937e6164`)
+- Subject: django/db/backends/base/features (id `6706126f-08ff-41ef-8e1d-d172a6b7ca2e`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 882 tokens
-- Facts shown: 19 of 105
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 5225 tokens
+- Facts shown: 104 of 105
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - # A set of dotted paths to tests in Django's test suite that are expected # to fail on this database. django_test_expected_failures = set() # A map of reasons to sets of dotted paths to tests in Django's test suite # that should be skipped for this database. django_test_skips = {} [2a9d33e0]
 - # Can a fixture contain forward references? i.e., are # FK constraints checked at the end of transaction, or # at the end of each save operation? supports_forward_references = True [fdcf4549]
@@ -30,6 +30,90 @@
 - # Do we need to NULL a ForeignKey out, or can the constraint check be # deferred can_defer_constraint_checks = False [b3e5ea0e]
 - # Does 'a' LIKE 'A' match? has_case_insensitive_like = False [5c0f3024]
 
-## Beyond the budget
+## All facts
 
-85 more facts did not fit in the budget: [f82dfd19] [df95d1a2] [0da97f8f] [73542d46] [a5ddbb05] [b7134793] [45eaf3dd] [a3c56ea7] [bc656367] [e6b5061e] [b83f6fd7] [95a6fa37] [0d5432c8] [d2671aaf] [d1a48700] [ecd62e2b] [aa700f7f] [a7d1b60c] [f2e74c02] [380c8a6b] [77bc68aa] [576aab8e] [0a7bc5cd] [d65c8018] [baee080e] [00857fec] [d02cbdf6] [a49ffe8f] [c76449f4] [4edb7a7e] [971e5f77] [bde4392a] [d26b9758] [8924b297] [46cc2c0f] [033d08e2] [31c2832a] [d3ddad7d] [29d7cd5b] [c58bbb5d] [66d24607] [ebb745f9] [daec9fc7] [6932ab50] [081a8369] [3daff479] [5f15ac99] [44dada8b] [4473ae8a] [04eab70b] [d1e81580] [5ef7c229] [3e8dfac3] [04c721b1] [4bb91e99] [56a11837] [b4989d16] [6a06a800] [5e8bdb35] [9418d4cd] [e55ad731] [c066829c] [88b26d37] [afca17d7] [49e9c9c3] [c013598a] [84779321] [cb230516] [58ed1d8f] [655a5e70] [efb078bb] [448119d7] [a3fe60d7] [2224092f] [9d849f94] [57bcd40c] [9a35b1ba] [6c4a1f1c] [aedcdc0442006877-3] [f0a7ddc935b65180-2] [a7ce7e8f] [028d31d8] [5de769a0] [9cd290f1] [acb6f3e2]
+- [f82dfd19] # Does it automatically index foreign keys? indexes_foreign_keys = True
+- [df95d1a2] # Does it support CHECK constraints? supports_column_check_constraints = True supports_table_check_constraints = True # Does the backend support introspection of CHECK constraints? can_introspect_check_constraints = True
+- [0da97f8f] # Does it support foreign keys? supports_foreign_keys = True
+- [73542d46] # Does the Round() database function round to even? rounds_to_even = False
+- [a5ddbb05] # Does the __regex lookup support backreferencing and grouping? supports_regex_backreferencing = True
+- [b7134793] # Does the backend allow inserting duplicate NULL rows in a nullable # unique field? All core backends implement this correctly, but other # databases such as SQL Server do not. supports_nullable_unique_constraints = True
+- [45eaf3dd] # Does the backend allow inserting duplicate rows when a unique_together # constraint exists and some fields are nullable but not all of them? supports_partially_nullable_unique_constraints = True
+- [a3c56ea7] # Does the backend consider table names with different casing to # be equal? ignores_table_name_case = False
+- [bc656367] # Does the backend distinguish between '' and None? interprets_empty_strings_as_nulls = False
+- [e6b5061e] # Does the backend ignore null expressions in GREATEST and LEAST queries # unless every expression is null? greatest_least_ignores_nulls = False
+- [b83f6fd7] # Does the backend ignore unnecessary ORDER BY clauses in subqueries? ignores_unnecessary_order_by_in_subqueries = True
+- [95a6fa37] # Does the backend order NULL values as largest or smallest? nulls_order_largest = False
+- [0d5432c8] # Does the backend orders NULLS FIRST by default? order_by_nulls_first = False
+- [d2671aaf] # Does the backend prevent running SQL queries in broken transactions? atomic_transactions = True
+- [d1a48700] # Does the backend require a connection reset after each material schema # change? connection_persists_old_columns = False
+- [ecd62e2b] # Does the backend require literal defaults, rather than parameterized # ones? requires_literal_defaults = False
+- [aa700f7f] # Does the backend reset sequences between tests? supports_sequence_reset = True
+- [a7d1b60c] # Does the backend support "select for update" queries with limit (and # offset)? supports_select_for_update_with_limit = True
+- [f2e74c02] # Does the backend support 'pyformat' style: # ("... %(name)s ...", {'name': value}) # parameter passing? Note this can be provided by the backend even if not # supported by the Python driver supports_paramstyle_pyformat = True
+- [380c8a6b] # Does the backend support CASCADE, DEFAULT, NULL as delete options? supports_on_delete_db_cascade = True supports_on_delete_db_default = True supports_on_delete_db_null = True
+- [77bc68aa] # Does the backend support CAST with precision? supports_cast_with_precision = True
+- [576aab8e] # Does the backend support JSONField? supports_json_field = True # Can the backend introspect a JSONField? can_introspect_json_field = True # Does the backend support primitives in JSONField? supports_primitives_in_json_field = True # Is there a true datatype for JSON? has_native_json_field = False # Does the backend use PostgreSQL-style JSON operators like '->'? has_json_operators = False # Does the backend support __contains and __contained_by lookups for # a JSONField? supports_json_field_contains = True # Does value__d__contains={'f': 'g'} (without a list around the dict) match # {'d': [{'f': 'g'}]}? json_key_contains_list_matching_requires_list = False # Does the backend support JSONObject() database function? has_json_object_function = True # Does the backend support negative JSON array indexing? supports_json_negative_indexing = True
+- [0a7bc5cd] # Does the backend support NULLS FIRST and NULLS LAST in ORDER BY? supports_order_by_nulls_modifier = True
+- [d65c8018] # Does the backend support boolean expressions in SELECT and GROUP BY # clauses? supports_boolean_expr_in_select_clause = True # Does the backend support comparing boolean expressions in WHERE clauses? # Eg: WHERE (price > 0) IS NOT NULL supports_comparing_boolean_expr = True
+- [baee080e] # Does the backend support column and table comments? supports_comments = False # Does the backend support column comments in ADD COLUMN statements? supports_comments_inline = False
+- [00857fec] # Does the backend support column collations? supports_collation_on_charfield = True supports_collation_on_textfield = True # Does the backend support non-deterministic collations? supports_non_deterministic_collations = True
+- [d02cbdf6] # Does the backend support functions in defaults? supports_expression_defaults = True
+- [a49ffe8f] # Does the backend support ignoring constraint or uniqueness errors during # INSERT? supports_ignore_conflicts = True # Does the backend support updating rows on constraint or uniqueness errors # during INSERT? supports_update_conflicts = False supports_update_conflicts_with_target = False
+- [c76449f4] # Does the backend support indexing a TextField? supports_index_on_text_field = True
+- [4edb7a7e] # Does the backend support initially deferrable unique constraints? supports_deferrable_unique_constraints = False
+- [971e5f77] # Does the backend support introspection of materialized views? can_introspect_materialized_views = False
+- [bde4392a] # Does the backend support keyword parameters for cursor.callproc()? supports_callproc_kwargs = False
+- [d26b9758] # Does the backend support native tuple gt(e), lt(e) comparisons against # subqueries? supports_tuple_comparison_against_subquery = True
+- [8924b297] # Does the backend support native tuple lookups (=, >, <, IN)? supports_tuple_lookups = True
+- [46cc2c0f] # Does the backend support numeric columns with no precision? supports_no_precision_decimalfield = False
+- [033d08e2] # Does the backend support partial indexes (CREATE INDEX ... WHERE ...)? supports_partial_indexes = True supports_functions_in_partial_indexes = True # Does the backend support covering indexes (CREATE INDEX ... INCLUDE ...)? supports_covering_indexes = False # Does the backend support indexes on expressions? supports_expression_indexes = True # Does the backend treat COLLATE as an indexed expression? collate_as_index_expression = False
+- [31c2832a] # Does the backend support stored generated columns? supports_stored_generated_columns = False # Does the backend support virtual generated columns? supports_virtual_generated_columns = False # Does the backend support altering data types of generated columns? supports_alter_generated_column_data_type = True
+- [d3ddad7d] # Does the backend support tablespaces? Default to False because it isn't # in the SQL standard. supports_tablespaces = False
+- [29d7cd5b] # Does the backend support the DEFAULT keyword in bulk insert queries? supports_default_keyword_in_bulk_insert = True
+- [c58bbb5d] # Does the backend support the default parameter in lead() and lag()? supports_default_in_lead_lag = True
+- [66d24607] # Does the backend support the inspectdb management command? supports_inspectdb = True
+- [ebb745f9] # Does the backend support the logical XOR operator? supports_logical_xor = False
+- [daec9fc7] # Does the backend support unlimited character columns? supports_unlimited_charfield = False
+- [6932ab50] # Does the backend support window expressions (expression OVER (...))? supports_over_clause = False supports_frame_range_fixed_distance = False supports_frame_exclusion = False only_supports_unbounded_with_preceding_and_following = False
+- [081a8369] # Does the backend supports specifying whether NULL values should be # considered distinct in unique constraints? supports_nulls_distinct_unique_constraints = False
+- [3daff479] # Does the backend truncate names properly when they are too long? truncates_names = False
+- [5f15ac99] # Does the database allow more than one constraint or index on the same # field(s)? allows_multiple_constraints_on_same_fields = True
+- [44dada8b] # Does the database backend support DISTINCT when using multiple arguments # in an aggregate expression? For example, Sqlite treats the "delimiter" # argument of STRING_AGG/GROUP_CONCAT as an extra argument and does not # allow using a custom delimiter along with DISTINCT. supports_aggregate_distinct_multiple_argument = True
+- [4473ae8a] # Does the database driver supports same type temporal data subtraction # by returning the type used to store duration field? supports_temporal_subtraction = False
+- [04eab70b] # Does the database have a copy of the zoneinfo database? has_zoneinfo_database = True
+- [d1e81580] # Does the database support ORDER BY in aggregate expressions? supports_aggregate_order_by_clause = False
+- [5ef7c229] # Does the database support SQL 2003 FILTER (WHERE ...) in aggregate # expressions? supports_aggregate_filter_clause = False
+- [3e8dfac3] # Does the database support SQL 2023 ANY_VALUE in GROUP BY? supports_any_value = False
+- [04c721b1] # Does the database support bitwise aggregations: BIT_AND, BIT_OR, and # BIT_XOR? supports_bit_aggregations = True # Does the backend support the default parameter in bitwise aggregations? supports_default_in_bit_aggregations = True
+- [4bb91e99] # Does the default test database allow multiple connections? # Usually an indication that the test database is in-memory test_db_allows_multiple_connections = True
+- [56a11837] # Does this backend require casting the results of CASE expressions used # in UPDATE statements to ensure the expression has the correct type? requires_casted_case_in_updates = False
+- [b4989d16] # How many second decimals does the database return when casting a value to # a type with time? time_cast_precision = 6
+- [6a06a800] # If NULL is implied on columns without needing to be explicitly specified implied_column_null = False
+- [5e8bdb35] # If True, don't use integer foreign keys referring to, e.g., positive # integer primary keys. related_fields_match_type = False allow_sliced_subqueries_with_in = True has_select_for_update = False has_select_for_update_nowait = False has_select_for_update_skip_locked = False has_select_for_update_of = False has_select_for_no_key_update = False # Does the database's SELECT FOR UPDATE OF syntax require a column rather # than a table? select_for_update_of_column = False
+- [9418d4cd] # Is there a REAL datatype in addition to floats/doubles? has_real_datatype = False supports_subqueries_in_group_by = True
+- [e55ad731] # Is there a true datatype for boolean? has_native_boolean_field = False
+- [c066829c] # Is there a true datatype for timedeltas? has_native_duration_field = False
+- [88b26d37] # Is there a true datatype for uuid? has_native_uuid_field = False
+- [afca17d7] # Map fields which some backends may not be able to differentiate to the # field it's introspected as. introspected_field_types = { "AutoField": "AutoField", "BigAutoField": "BigAutoField", "BigIntegerField": "BigIntegerField", "BinaryField": "BinaryField", "BooleanField": "BooleanField", "CharField": "CharField", "DurationField": "DurationField", "GenericIPAddressField": "GenericIPAddressField", "IntegerField": "IntegerField", "PositiveBigIntegerField": "PositiveBigIntegerField", "PositiveIntegerField": "PositiveIntegerField", "PositiveSmallIntegerField": "PositiveSmallIntegerField", "SmallAutoField": "SmallAutoField", "SmallIntegerField": "SmallIntegerField", "TimeField": "TimeField", }
+- [49e9c9c3] # Place FOR UPDATE right after FROM clause. Used on MSSQL. for_update_after_from = False
+- [c013598a] # SQL to create a model instance using the database defaults. insert_test_table_with_defaults = None
+- [84779321] # SQL to create a procedure for use by the Django test suite. The # functionality of the procedure isn't important. create_test_procedure_without_params_sql = None create_test_procedure_with_int_param_sql = None
+- [cb230516] # Set to (exception, message) if null characters in text are disallowed. prohibits_null_characters_in_text_exception = None
+- [58ed1d8f] # Should PatternLookup.process_rhs() use self.param_pattern? It's unneeded # on databases that don't use LIKE for pattern matching. pattern_lookup_needs_param_pattern = True
+- [655a5e70] # Suffix for backends that don't support "SELECT xxx;" queries. bare_select_suffix = ""
+- [efb078bb] # Support for the DISTINCT ON clause can_distinct_on_fields = False
+- [448119d7] # The database's limit on the number of query parameters. max_query_params = None
+- [a3fe60d7] # What formats does the backend EXPLAIN syntax support? supported_explain_formats = set()
+- [2224092f] # What kind of error does the backend throw when accessing closed cursor? closed_cursor_error_class = ProgrammingError
+- [9d849f94] # When performing a GROUP BY, is an ORDER BY NULL required # to remove any ordering? requires_explicit_null_ordering_when_grouping = False
+- [57bcd40c] @cached_property def supports_explaining_query_execution(self): """Does this backend support explaining query execution?""" return self.connection.ops.explain_prefix is not None
+- [9a35b1ba] @cached_property def supports_transactions(self): """Confirm support for transactions.""" with self.connection.cursor() as cursor: cursor.execute("CREATE TABLE ROLLBACK_TEST (X INT)") self.connection.set_autocommit(False) cursor.execute("INSERT INTO ROLLBACK_TEST (X) VALUES (8)") self.connection.rollback() self.connection.set_autocommit(True) cursor.execute("SELECT COUNT(X) FROM ROLLBACK_TEST") (count,) = cursor.fetchone() cursor.execute("DROP TABLE ROLLBACK_TEST") return count == 0
+- [6c4a1f1c] can_use_chunked_reads = True can_return_columns_from_insert = False can_return_rows_from_bulk_insert = False can_return_rows_from_update = False has_bulk_insert = True uses_savepoints = True can_release_savepoints = False
+- [aedcdc0442006877-3] def __del__(self): del self.connection
+- [f0a7ddc935b65180-2] def __init__(self, connection): self.connection = connection
+- [a7ce7e8f] def allows_group_by_selected_pks_on_model(self, model): if not self.allows_group_by_selected_pks: return False return model._meta.managed
+- [028d31d8] schema_editor_uses_clientside_param_binding = False
+- [5de769a0] supports_uuid4_function = False supports_uuid4_function_in_default = False supports_uuid7_function = False supports_uuid7_function_shift = False
+- [9cd290f1] class BaseDatabaseFeatures: # An optional tuple indicating the minimum supported database version. minimum_database_version = None gis_enabled = False # Oracle can't group by LOB (large object) data types. allows_group_by_lob = True allows_group_by_selected_pks = False allows_group_by_select_index = True empty_fetchmany_value = [] update_can_self_select = True # Does the backend support self-reference subqueries in the DELETE # statement? delete_can_self_reference_subquery = True
+- [acb6f3e2] from django.db import ProgrammingError from django.utils.functional import cached_property

@@ -1,8 +1,8 @@
 # django/conf/locale/ckb/formats
 
-- Subject: django/conf/locale/ckb/formats (id `0216ccb9-ff3f-44c9-a100-60fc125aef88`)
+- Subject: django/conf/locale/ckb/formats (id `00256906-6e4d-4ff4-8416-dccab632b5e1`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 200 tokens
 - Facts shown: 2 of 2
 - Conflicts: 0

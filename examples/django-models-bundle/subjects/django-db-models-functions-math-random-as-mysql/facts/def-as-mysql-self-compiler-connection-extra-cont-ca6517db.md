@@ -1,6 +1,6 @@
 # Fact ca6517db
 
-Store id: 84933909-52fe-4e59-9204-f47d69a055ab
+Store id: c35f1264-b322-43ba-a099-4f9d468569ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:46.6531640+00:00`
+- posted_at: `2026-11-09T23:32:01.7444220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 163,
     "symbol": "Random.as_mysql"
   },
-  "id": "84933909-52fe-4e59-9204-f47d69a055ab",
+  "id": "c35f1264-b322-43ba-a099-4f9d468569ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:46.6531640+00:00"
+    "posted_at": "2026-11-09T23:32:01.7444220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "002d7861-79c5-40bf-94ef-cbdde4d872f3",
+  "subject_id": "fbb36fa1-6a7b-49f1-b916-13f1432d4404",
   "subject_name": "django/db/models/functions/math::Random.as_mysql",
   "tags": [
     "entity:method"

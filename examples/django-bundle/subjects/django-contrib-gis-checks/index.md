@@ -1,8 +1,8 @@
 # django/contrib/gis/checks
 
-- Subject: django/contrib/gis/checks (id `8b65e430-f294-4fed-8d96-09245c722735`)
+- Subject: django/contrib/gis/checks (id `6128b191-636c-4ad8-8e08-37e5c72bdaf2`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 145 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

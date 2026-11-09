@@ -1,6 +1,6 @@
 # Fact 487602c2
 
-Store id: 3c2bb476-f165-4ddd-8b4a-333dce8bb8aa
+Store id: 0a3a8398-2828-4e25-8617-f43d2d4c29c5
 
 ## Text
 
@@ -20,7 +20,7 @@ def lhs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:48.0533510+00:00`
+- posted_at: `2026-11-09T23:32:03.2030780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 220,
     "symbol": "Transform.lhs"
   },
-  "id": "3c2bb476-f165-4ddd-8b4a-333dce8bb8aa",
+  "id": "0a3a8398-2828-4e25-8617-f43d2d4c29c5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:48.0533510+00:00"
+    "posted_at": "2026-11-09T23:32:03.2030780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c41b057f-ba68-49d0-9a6e-9adaa4fc29a7",
+  "subject_id": "f433724d-7235-492c-b159-558522f19019",
   "subject_name": "django/db/models/lookups::Transform.lhs",
   "tags": [
     "entity:method",

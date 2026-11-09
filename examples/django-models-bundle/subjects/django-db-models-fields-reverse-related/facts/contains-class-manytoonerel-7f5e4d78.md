@@ -1,6 +1,6 @@
 # Fact 7f5e4d78
 
-Store id: cac8f234-a362-4cf3-948b-c65f2cd57621
+Store id: 14925317-241d-4d66-aa19-aa2f1c66eb8b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ManyToOneRel
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:45.3981780+00:00`
+- posted_at: `2026-11-09T23:32:00.3580660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cac8f234-a362-4cf3-948b-c65f2cd57621",
+  "id": "14925317-241d-4d66-aa19-aa2f1c66eb8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:45.3981780+00:00"
+    "posted_at": "2026-11-09T23:32:00.3580660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ManyToOneRel"
       },
       "rel": "contains",
-      "target": "8ec10572-323a-4f87-8e5a-3048ca831beb"
+      "target": "b69ae772-bb05-494a-bbc5-b570a8b6e4d0"
     }
   ],
   "status": "live",
-  "subject_id": "8a53be14-0352-4a8b-a2bd-e72f3cfc71a3",
+  "subject_id": "5aa43ba1-b642-41bc-ace0-777a2d99efeb",
   "subject_name": "django/db/models/fields/reverse_related",
   "tags": [
     "entity:class"

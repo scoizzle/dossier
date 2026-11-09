@@ -1,9 +1,9 @@
 # django/db/models/base::Model.serializable_value
 
-- Subject: django/db/models/base::Model.serializable_value (id `0fb469ba-1034-4616-aa1a-11d94b8b2430`)
+- Subject: django/db/models/base::Model.serializable_value (id `e35182b4-5269-4bd7-9094-05bea2a1c860`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

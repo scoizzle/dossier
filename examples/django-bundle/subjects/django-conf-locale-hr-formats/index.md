@@ -1,8 +1,8 @@
 # django/conf/locale/hr/formats
 
-- Subject: django/conf/locale/hr/formats (id `0b8a9690-c333-475e-aa05-4f924aca3958`)
+- Subject: django/conf/locale/hr/formats (id `ec934806-8848-4914-82f9-c719a36a98c9`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 437 tokens
 - Facts shown: 3 of 3
 - Conflicts: 0

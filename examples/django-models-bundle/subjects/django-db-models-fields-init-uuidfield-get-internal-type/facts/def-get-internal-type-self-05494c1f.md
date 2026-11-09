@@ -1,6 +1,6 @@
 # Fact 05494c1f
 
-Store id: 3151538f-9958-4906-8d24-6ecef771ac59
+Store id: a0ef68b9-e11a-4777-99a4-89a6d36fbea3
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:42.7133220+00:00`
+- posted_at: `2026-11-09T23:31:56.8810720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2835,
     "symbol": "UUIDField.get_internal_type"
   },
-  "id": "3151538f-9958-4906-8d24-6ecef771ac59",
+  "id": "a0ef68b9-e11a-4777-99a4-89a6d36fbea3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:42.7133220+00:00"
+    "posted_at": "2026-11-09T23:31:56.8810720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fa7cd68a-064a-4ae1-a3c5-a9efaf261fcc",
+  "subject_id": "cba59bb5-fd53-4d48-a877-9e75bd449362",
   "subject_name": "django/db/models/fields/__init__::UUIDField.get_internal_type",
   "tags": [
     "entity:method"

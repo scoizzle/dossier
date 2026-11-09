@@ -1,6 +1,6 @@
 # Fact 9c188ede
 
-Store id: 3c9f0799-40b8-43b1-a677-52bfc0a0ebd5
+Store id: 3d63ccea-b5a2-4ad2-96da-fafbac5483bf
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ManyToManyDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:44.9500290+00:00`
+- posted_at: `2026-11-09T23:31:59.5992420+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "3c9f0799-40b8-43b1-a677-52bfc0a0ebd5",
+  "id": "3d63ccea-b5a2-4ad2-96da-fafbac5483bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:44.9500290+00:00"
+    "posted_at": "2026-11-09T23:31:59.5992420+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ManyToManyDescriptor"
       },
       "rel": "contains",
-      "target": "5294cea7-0ab8-45b6-a81f-6dc5783ff329"
+      "target": "5a4bb1e9-9147-4efc-9ff0-c42a013b4cac"
     }
   ],
   "status": "live",
-  "subject_id": "ab7c02b3-8e61-4183-bee7-c417a3a67ad2",
+  "subject_id": "468ed079-81c3-4570-9307-d21a1d74776a",
   "subject_name": "django/db/models/fields/related_descriptors",
   "tags": [
     "entity:class"

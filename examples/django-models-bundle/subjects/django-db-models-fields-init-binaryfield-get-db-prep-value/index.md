@@ -1,9 +1,9 @@
 # django/db/models/fields/__init__::BinaryField.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::BinaryField.get_db_prep_value (id `305b927a-2cc2-40dd-bd44-a389ca7c7122`)
+- Subject: django/db/models/fields/__init__::BinaryField.get_db_prep_value (id `2c9b237a-cd32-482d-8f91-af8e7c7eeb5e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

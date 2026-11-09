@@ -1,6 +1,6 @@
 # Fact 1677bbc3
 
-Store id: 40e0d864-62bc-4711-8829-cf9d6f87bb87
+Store id: 43327e35-a199-4f84-b722-93fe1dd1e7d5
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:39:43.0051800+00:00`
+- posted_at: `2026-11-09T23:31:57.1313480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 100,
     "symbol": "CompositePrimaryKey.__iter__"
   },
-  "id": "40e0d864-62bc-4711-8829-cf9d6f87bb87",
+  "id": "43327e35-a199-4f84-b722-93fe1dd1e7d5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T22:39:43.0051800+00:00"
+    "posted_at": "2026-11-09T23:31:57.1313480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c148dd00-a765-488d-b65e-a9618e33f255",
+  "subject_id": "a059b16e-b963-4c19-8e7f-38b2e777ea50",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.__iter__",
   "tags": [
     "entity:method"

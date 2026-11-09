@@ -1,14 +1,14 @@
 # docs/ref/models/instances
 
-- Subject: docs/ref/models/instances (id `562aa664-6450-4c9f-aa31-a3d743515df4`)
+- Subject: docs/ref/models/instances (id `4fb8c969-356c-49d3-8433-7b75740c6463`)
 - Kind: subject
-- Budget: 1200 tokens
-- Used: 889 tokens
-- Facts shown: 24 of 262
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
+- Used: 12231 tokens
+- Facts shown: 254 of 262
 - Conflicts: 0
 - Gaps: 0
 
-## Facts
+## Highlights
 
 - @classmethod def create(cls, title): book = cls(title=title) # do something with the book return book [e54f8caf]
 - def clean_fields(self, exclude=None): super().clean_fields(exclude=exclude) if self.status == "draft" and self.pub_date is not None: if exclude and "status" in exclude: raise ValidationError( _("Draft entries may not have a publication date.") ) else: raise ValidationError( { "status": _( "Set status to draft if there is not a publication date." ), } ) [f3834d35]
@@ -35,6 +35,235 @@
 - <a href="{{ object.get_absolute_url }}">{{ object.name }}</a> [d5acd89f]
 - >>> b2 = Blog(name="Cheddar Talk", tagline="Thoughts on cheese.") >>> b2.id # Returns None, because b2 doesn't have an ID yet. >>> b2.save() >>> b2.id # Returns the ID of your new object. [bf26a11f]
 
-## Beyond the budget
+## All facts
 
-230 more facts did not fit in the budget: [b9e4a756] [022cccb3] [a22ff421] [79f1ecc4] [6b08990d] [b2dc2c1c] [e6cb83fe] [d0396177] [bcce4c1a] [840e5cb8] [24b0d17e] [e5e21c77] [78d2b34e] [45df2f38] [fc437f40] [ff7cef96] [3b9c2f7a] [704d2c606e749739] [6bb99922] [a859441c] [81828cec] [93ed737f] [e5302131] [72a1c9ea] [68ba1f49] [f9d8e77a] [75acec7d] [c2f567a8] [aa1fa934] [ab8db0e6] [cc6e503b] [faf0de29] [4f068a4a] [6272c218d11324a9-3] [ebd964b3] [8d83dbc0] [ec3e4eba] [170dde67] [798a61a8] [e2148d20c78ef2f1] [5eeeaab5] [b04ce7f2] [fac4cb54] [5aed7fc3] [6febadae] [e1607669] [3c1cc922] [0fe32170] [e0b3653a] [b1cb6fec] [4fd8186c] [21afae5f] [03a5cf95] [1fcde08d] [0ee13cdb] [e18ef61e] [cfdf76f3] [9dd17d6d4c96250c] [f10d83df] [b6273033] [05ae214f] [cbe092ea] [017f3a3a] [f638a68f] [ae52c346] [d5f8886e] [eef4fe66] [ef66837c] [19634cf7] [b12581a78f7d2838] [348476ea] [d8f1e420] [3ecbd156] [05ac5607] [026b3edb] [685d15dfb6eb2285-80] [eaf050be34acb41d-459] [eaf050be34acb41d-460] [eaf050be34acb41d-461] [eaf050be34acb41d-462] [eaf050be34acb41d-463] [eaf050be34acb41d-464] [3a368b18514a814b-12] [01aaf10861da6524-8] [8c84cc77] [7a297061] [63a9a47f] [6d9b72de] [8ec3056c] [050efc89] [ad94d73c] [1107109f] [f39c8618] [03e7b1f9] [6665b922] [0d6cebde] [44777b6e] [a4e39374] [dec979b3] [104a0f7d] [942ae6c11625c81c-114] [4912291b] [57739e32d87f6c76-16] [2a966a198e13032b-18] [2a966a198e13032b-19] [c54b54cb0805732a-55] [8b894b79] [009f60d2] [d2a0a92b] [4a732235] [d95971fb] [fc69c0d0] [2d9337ee] [f5d3cb33] [9ff396b8] [85cb27f3] [43ac16f6] [5364489b] [48dc83dd] [53540e6a] [b13258b6] [2107b922] [be764c38] [b9df65d3] [421a68d3] [4f6e0a92] [b6431628] [4fdc2c9c] [28edef836ab93f57-19] [28edef836ab93f57-20] [28edef836ab93f57-21] [28edef836ab93f57-22] [28edef836ab93f57-23] [a233eb56] [61d6039b] [f9d41b33] [28c4c40f] [5fbfcaaa] [45a05e31] [615d99ec] [c7174e07] [2ab1d79c] [660112f8] [0570b778] [12bef256] [f6d7f8e4] [47535daa] [cf642ffe] [13c9f43f] [2f12deae] [6846cd18] [dd8c5704] [c17ecf56] [a54a911f] [b6e43737] [954bf94a] [cb025485] [1585ece5] [db561665] [7bb75946] [e5aa8ec3] [92bc9b77] [7789f674] [bf1ae693] [102eca55] [28458e0a] [f63f20ac] [f0839da5] [4bd46567] [fee49113] [4320acac] [531e8590] [68983777] [af54de59] [56b002c7] [70769cb7] [03813475] [db8e299e] [0f97f341] [5566f1c1] [0cce015c] [4e391fa1] [adc5e773] [af190837] [a68dbc82] [6daf1a18] [0ed3ebbe] [f78beb8a] [a725d4f7] [62af8f2d] [b2019619] [a4872f23] [5570d076] [036a1417] [4f4fb195] [7efdb865] [2dd2e687] [79dab20d] [396b9abc] [6e289fc9] [6d7d2e4a] [b5cad9c5] [ea15c8be] [853ef64b] [6060173d] [858fbb41dd44aafc] [ce73f9f1] [ec3c3110] [a54aad56] [8d6d0b5a] [8bf1e305] [358b8ef9] [aaf777fc] [3cf7c260] [9cdae336] [e50c46cb] [d0e80e4c] [8301998d] [ad7624ee] [a14a4904] [5aa3d393] [61dcec24] [464dca47] [b898c42d] [3207d036] [c321ad94] [f53265f9] [ac86425b] [aae8b60d] [e9b7f874]
+- [b9e4a756] >>> b3 = Blog(id=3, name="Cheddar Talk", tagline="Thoughts on cheese.") >>> b3.id # Returns 3. >>> b3.save() >>> b3.id # Returns 3.
+- [022cccb3] >>> from django.db.models import F >>> product = Product.objects.get(name="Venezuelan Beaver Cheese") >>> product.number_sold = F("number_sold") + 1 >>> product.save()
+- [a22ff421] >>> obj = MyModel.objects.first() >>> del obj.field >>> obj.field # Loads the field from the database
+- [79f1ecc4] >>> p = Person(name="Fred Flintstone", shirt_size="L") >>> p.save() >>> p.shirt_size 'L' >>> p.get_shirt_size_display() 'Large'
+- [6b08990d] >>> product = Product.objects.get(name="Venezuelan Beaver Cheese") >>> product.number_sold += 1 >>> product.save()
+- [b2dc2c1c] @classmethod def from_db(cls, db, field_names, values, *, fetch_mode=None): # Default implementation of from_db() (subject to change and could # be replaced with super()). if len(values) != len(cls._meta.concrete_fields): values = list(values) values.reverse() values = [ values.pop() if f.attname in field_names else DEFERRED for f in cls._meta.concrete_fields ] instance = cls(*values) instance._state.adding = False instance._state.db = db if fetch_mode is not None: instance._state.fetch_mode = fetch_mode # customization to store the original field values on the instance instance._loaded_values = dict( zip(field_names, (value for value in values if value is not DEFERRED)) ) return instance
+- [e6cb83fe] Code and templates calling ``get_absolute_url()`` should be able to use the result directly without any further processing. You may wish to use the ``django.utils.encoding.iri_to_uri()`` function to help with this if you are using strings containing characters outside the ASCII range.
+- [d0396177] If ``self.name`` is ``'/example.com'`` this returns ``'//example.com/'`` which, in turn, is a valid schema relative URL but not the expected ``'/%2Fexample.com/'``.
+- [bcce4c1a] If ``update_fields`` is passed in, only the :meth:`~django.db.models.Field.pre_save` methods of the ``update_fields`` are called. For example, this means that date/time fields with ``auto_now=True`` will not be updated unless they are included in the ``update_fields``.
+- [840e5cb8] In most cases overriding or inheriting ``get_FOO_display()``, ``get_next_by_FOO()``, and ``get_previous_by_FOO()`` should work as expected. Since they are added by the metaclass however, it is not practical to account for all possible inheritance structures. In more complex cases you should override ``Field.contribute_to_class()`` to set the methods you need.
+- [24b0d17e] Newly instantiated instances have ``adding=True`` and ``db=None``, since they are yet to be saved, and ``fetch_mode=models.FETCH_ONE``. Instances fetched from a ``QuerySet`` will have ``adding=False``, ``db`` set to the alias of the associated database, and ``fetch_mode`` copied from the queryset's fetch mode.
+- [e5e21c77] Pickles of models are only valid for the version of Django that was used to generate them. If you generate a pickle using Django version N, there is no guarantee that pickle will be readable with Django version N+1. Pickles should not be used as part of a long-term archival strategy.
+- [78d2b34e] Restaurant(pk=1, name="Bob's Cafe").save(force_insert=(Place,))
+- [45df2f38] Restaurant(pk=1, name="Bob's Cafe", rating=4).save(force_insert=(Place, Rating))
+- [fc437f40] Setting a model attribute does not convert the value to the field's Python type. That conversion happens when the model is :ref:`validated <validating-objects>`. Although a field assigned a value of a different type (for example, a string assigned to a :class:`~django.db.models.UUIDField`) may be converted when :meth:`~Model.save` executes a query, the in-memory instance will keep the original value until it is :ref:`reloaded <refreshing-objects>`.
+- [ff7cef96] Since pickle compatibility errors can be difficult to diagnose, such as silently corrupted objects, a ``RuntimeWarning`` is raised when you try to unpickle a model in a Django version that is different than the one in which it was pickled.
+- [3b9c2f7a] Support for ``from_db()`` methods that do not accept the ``fetch_mode`` keyword argument is deprecated and will be removed in Django 2028.
+- [704d2c606e749739] Support for the ``DB_*`` variants of ``on_delete`` attribute was added.
+- [6bb99922] The ``ModelState`` object has three attributes: ``adding``, a flag which is ``True`` if the model has not been saved to the database yet, ``db``, a string referring to the database alias the instance was loaded from or saved to, and ``fetch_mode``, the :doc:`fetch mode </topics/db/fetch-modes>` to be used in subsequent field fetches.
+- [a859441c] The ``_is_pk_set()`` method returns whether the model instance's ``pk`` is set. It abstracts the model's primary key definition, ensuring consistent behavior regardless of the specific ``pk`` configuration. A ``DatabaseDefault`` on an unsaved instance is considered unset.
+- [81828cec] The ``_state`` attribute refers to a ``ModelState`` object that tracks the lifecycle of the model instance.
+- [93ed737f] The ``fetch_mode`` parameter was added.
+- [e5302131] To work around this dilemma, instead override :meth:`Model.clean_fields() <django.db.models.Model.clean_fields>` as it receives the list of fields that are excluded from validation. For example::
+- [72a1c9ea] When a forced update does not affect any rows a :exc:`~django.db.models.Model.NotUpdated` exception is raised. On previous versions a generic :exc:`django.db.DatabaseError` was raised.
+- [68ba1f49] You can't raise validation errors in ``Model.clean()`` for fields that don't appear in a model form (a form may limit its fields using ``Meta.fields`` or ``Meta.exclude``). Doing so will raise a ``ValueError`` because the validation error won't be able to be associated with the excluded field.
+- [f9d8e77a] You may be tempted to customize the model by overriding the ``__init__`` method. If you do so, however, take care not to change the calling signature as any change may prevent the model instance from being saved. Additionally, referring to model fields within ``__init__`` may potentially result in infinite recursion errors in some circumstances. Rather than overriding ``__init__``, try using one of these approaches:
+- [75acec7d] You should avoid building the URL from unvalidated user input, in order to reduce possibilities of link or redirect poisoning::
+- [c2f567a8] b4 = Blog(id=3, name="Not Cheddar", tagline="Anything but cheese.") b4.save() # Overrides the previous blog with ID=3!
+- [aa1fa934] class ExampleModel(models.Model): def refresh_from_db(self, using=None, fields=None, **kwargs): # fields contains the name of the deferred field to be # loaded. if fields is not None: fields = set(fields) deferred_fields = self.get_deferred_fields() # If any deferred field is going to be loaded if fields.intersection(deferred_fields): # then load all of them fields = fields.union(deferred_fields) super().refresh_from_db(using, fields, **kwargs)
+- [ab8db0e6] class MultitableInherited(MyModel): pass
+- [cc6e503b] class MyModel(models.Model): id = models.AutoField(primary_key=True)
+- [faf0de29] class MyProxyModel(MyModel): class Meta: proxy = True
+- [4f068a4a] class Person(models.Model): SHIRT_SIZES = { "S": "Small", "M": "Medium", "L": "Large", } name = models.CharField(max_length=60) shirt_size = models.CharField(max_length=2, choices=SHIRT_SIZES)
+- [6272c218d11324a9-3] class Person(models.Model): first_name = models.CharField(max_length=50) last_name = models.CharField(max_length=50)
+- [ebd964b3] def get_absolute_url(self): from django.urls import reverse
+- [8d83dbc0] def get_absolute_url(self): return "/people/%i/" % self.id
+- [ec3e4eba] def save(self, **kwargs): # Check how the current values differ from ._loaded_values. For example, # prevent changing the creator_id of the model. (This example doesn't # support cases where 'creator_id' is deferred). if not self._state.adding and ( self.creator_id != self._loaded_values["creator_id"] ): raise ValueError("Updating the value of creator isn't allowed") super().save(**kwargs)
+- [170dde67] def test_update_result(self): obj = MyModel.objects.create(val=1) MyModel.objects.filter(pk=obj.pk).update(val=F("val") + 1) # At this point obj.val is still 1, but the value in the database # was updated to 2. The object's updated value needs to be reloaded # from the database. obj.refresh_from_db() self.assertEqual(obj.val, 2)
+- [798a61a8] from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
+- [e2148d20c78ef2f1] from django.core.exceptions import ValidationError
+- [5eeeaab5] from django.db.models import DEFERRED
+- [b04ce7f2] import datetime from django.core.exceptions import ValidationError from django.db import models from django.utils.translation import gettext_lazy as _
+- [fac4cb54] obj.refresh_from_db(from_queryset=MyModel.active_objects.all())
+- [5aed7fc3] obj.refresh_from_db(from_queryset=MyModel.objects.select_for_update())
+- [6febadae] obj.refresh_from_db(from_queryset=MyModel.objects.select_related("related_field"))
+- [e1607669] product.name = "Name changed again" product.save(update_fields=["name"])
+- [3c1cc922] raise ValidationError( { "title": ValidationError(_("Missing title."), code="required"), "pub_date": ValidationError(_("Invalid date."), code="invalid"), } )
+- [0fe32170] try: article.full_clean() except ValidationError as e: # Do something based on the errors contained in e.message_dict. # Display them to a user, or handle them programmatically. pass
+- [e0b3653a] try: article.full_clean() except ValidationError as e: non_field_errors = e.message_dict[NON_FIELD_ERRORS]
+- [b1cb6fec] For example, :class:`~django.db.models.DateField` fields use a Python ``datetime`` object to store data. Databases don't store ``datetime`` objects, so the field value must be converted into an ISO-compliant date string for insertion into the database.
+- [4fd8186c] Most fields don't require data preparation. Simple data types, such as integers and strings, are 'ready to write' as a Python object. However, more complex data types often require some modification.
+- [21afae5f] #. **Emit a post-save signal.** The :data:`~django.db.models.signals.post_save` signal is sent, allowing any functions listening for that signal to do something.
+- [03a5cf95] #. **Insert the data into the database.** The preprocessed, prepared data is composed into an SQL statement for insertion into the database.
+- [1fcde08d] #. **Prepare the data for the database.** Each field's :meth:`~django.db.models.Field.get_db_prep_save` method is asked to provide its current value in a data type that can be written to the database.
+- [0ee13cdb] #. **Preprocess the data.** Each field's :meth:`~django.db.models.Field.pre_save` method is called to perform any automated data modification that's needed. For example, the date/time fields override ``pre_save()`` to implement :attr:`~django.db.models.DateField.auto_now_add` and :attr:`~django.db.models.DateField.auto_now`.
+- [e18ef61e] #. All non-deferred fields of the model are updated to the values currently present in the database. #. Any cached relations are cleared from the reloaded instance.
+- [cfdf76f3] * If the object's primary key attribute is set to anything except ``None``, Django executes an ``UPDATE``. * If the object's primary key attribute is *not* set or if the ``UPDATE`` didn't update anything (e.g. if primary key is set to a value that doesn't exist in the database), Django executes an ``INSERT``.
+- [9dd17d6d4c96250c] *Asynchronous version*: ``adelete()``
+- [f10d83df] *Asynchronous version*: ``arefresh_from_db()``
+- [b6273033] *Asynchronous version*: ``asave()``
+- [05ae214f] .. _model-instance-methods:
+- [cbe092ea] .. _ref-models-field-updates-using-f-expressions:
+- [017f3a3a] .. _ref-models-force-insert:
+- [f638a68f] .. _ref-models-update-fields:
+- [ae52c346] .. _refreshing-objects:
+- [d5f8886e] .. _validating-objects:
+- [eef4fe66] .. admonition:: How to raise field-specific validation errors if those fields don't appear in a ``ModelForm``
+- [ef66837c] .. admonition:: Overriding extra instance methods
+- [19634cf7] .. admonition:: Setting attributes does not convert types
+- [b12581a78f7d2838] .. admonition:: You can't share pickles between versions
+- [348476ea] .. admonition:: ``Field.pre_save()`` and ``update_fields``
+- [d8f1e420] .. attribute:: Model._state
+- [3ecbd156] .. attribute:: Model.pk
+- [05ac5607] .. class:: Model(**kwargs)
+- [026b3edb] .. classmethod:: Model.from_db(db, field_names, values, *, fetch_mode=None)
+- [685d15dfb6eb2285-80] .. code-block:: html+django
+- [eaf050be34acb41d-459] .. code-block:: pycon
+- [eaf050be34acb41d-460] .. code-block:: pycon
+- [eaf050be34acb41d-461] .. code-block:: pycon
+- [eaf050be34acb41d-462] .. code-block:: pycon
+- [eaf050be34acb41d-463] .. code-block:: pycon
+- [eaf050be34acb41d-464] .. code-block:: pycon
+- [3a368b18514a814b-12] .. currentmodule:: django.db.models
+- [01aaf10861da6524-8] .. deprecated:: 6.1
+- [8c84cc77] .. method:: Model.__eq__()
+- [7a297061] .. method:: Model.__hash__()
+- [63a9a47f] .. method:: Model.__str__()
+- [6d9b72de] .. method:: Model._is_pk_set()
+- [8ec3056c] .. method:: Model.clean()
+- [050efc89] .. method:: Model.clean_fields(exclude=None)
+- [ad94d73c] .. method:: Model.delete(using=DEFAULT_DB_ALIAS, keep_parents=False) .. method:: Model.adelete(using=DEFAULT_DB_ALIAS, keep_parents=False)
+- [1107109f] .. method:: Model.full_clean(exclude=None, validate_unique=True, validate_constraints=True)
+- [f39c8618] .. method:: Model.get_FOO_display()
+- [03e7b1f9] .. method:: Model.get_absolute_url()
+- [6665b922] .. method:: Model.get_deferred_fields()
+- [0d6cebde] .. method:: Model.get_next_by_FOO(**kwargs) .. method:: Model.get_previous_by_FOO(**kwargs)
+- [44777b6e] .. method:: Model.refresh_from_db(using=None, fields=None, from_queryset=None) .. method:: Model.arefresh_from_db(using=None, fields=None, from_queryset=None)
+- [a4e39374] .. method:: Model.save(*, force_insert=False, force_update=False, using=DEFAULT_DB_ALIAS, update_fields=None) .. method:: Model.asave(*, force_insert=False, force_update=False, using=DEFAULT_DB_ALIAS, update_fields=None)
+- [dec979b3] .. method:: Model.validate_constraints(exclude=None)
+- [104a0f7d] .. method:: Model.validate_unique(exclude=None)
+- [942ae6c11625c81c-114] .. note::
+- [4912291b] .. note:: The string you return from ``get_absolute_url()`` **must** contain only ASCII characters (required by the URI specification, :rfc:`3986#section-2`) and be URL-encoded, if necessary.
+- [57739e32d87f6c76-16] .. versionchanged:: 6.0
+- [2a966a198e13032b-18] .. versionchanged:: 6.1
+- [2a966a198e13032b-19] .. versionchanged:: 6.1
+- [c54b54cb0805732a-55] .. warning::
+- [8b894b79] 1. Validate the model fields - :meth:`Model.clean_fields` 2. Validate the model as a whole - :meth:`Model.clean` 3. Validate the field uniqueness - :meth:`Model.validate_unique` 4. Validate the constraints - :meth:`Model.validate_constraints`
+- [009f60d2] :class:`~django.db.models.UniqueConstraint`\s defined in the :attr:`Meta.constraints <django.db.models.Options.constraints>` are validated by :meth:`Model.validate_constraints`.
+- [d2a0a92b] ======================== Model instance reference ========================
+- [4a732235] A few object methods have special purposes.
+- [d95971fb] A helper method that returns a set containing the attribute names of all those fields that are currently deferred for this model.
+- [fc69c0d0] All four steps are performed when you call a model's :meth:`~Model.full_clean` method.
+- [2d9337ee] Auto-incrementing primary keys ------------------------------
+- [f5d3cb33] Below is an example showing how to record the initial values of fields that are loaded from the database::
+- [9ff396b8] Both of these methods will perform their queries using the default manager for the model. If you need to emulate filtering used by a custom manager, or want to perform one-off custom filtering, both methods also accept optional keyword arguments, which should be in the format described in :ref:`Field lookups <field-lookups>`.
+- [85cb27f3] Creating objects ================
+- [43ac16f6] Customizing model loading -------------------------
+- [5364489b] Define a ``get_absolute_url()`` method to tell Django how to calculate the canonical URL for an object. To callers, this method should appear to return a string that can be used to refer to the object over HTTP.
+- [48dc83dd] Deleting objects ================
+- [53540e6a] Explicitly specifying auto-primary-key values ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [b13258b6] Explicitly specifying auto-primary-key values is mostly useful for bulk-saving objects, when you're confident you won't have primary-key collision.
+- [2107b922] Extra instance methods ======================
+- [be764c38] Finally, ``full_clean()`` will check any other constraints on your model.
+- [b9df65d3] For convenience, each model has an :class:`~django.db.models.AutoField` named ``id`` by default unless you explicitly specify ``primary_key=True`` on a field in your model. See the documentation for :class:`~django.db.models.AutoField` for more details.
+- [421a68d3] For details on using the ``force_insert`` and ``force_update`` arguments, see :ref:`ref-models-force-insert`. Details about the ``update_fields`` argument can be found in the :ref:`ref-models-update-fields` section.
+- [4f6e0a92] For every :class:`~django.db.models.DateField` and :class:`~django.db.models.DateTimeField` that does not have :attr:`null=True <django.db.models.Field.null>`, the object will have ``get_next_by_FOO()`` and ``get_previous_by_FOO()`` methods, where ``FOO`` is the name of the field. This returns the next and previous object with respect to the date field, raising a :exc:`~django.db.models.Model.DoesNotExist` exception when appropriate.
+- [b6431628] For every field that has :attr:`~django.db.models.Field.choices` set, the object will have a ``get_FOO_display()`` method, where ``FOO`` is the name of the field. This method returns the "human-readable" value of the field.
+- [4fdc2c9c] For example, to test that an ``update()`` call resulted in the expected update, you could write a test similar to this::
+- [28edef836ab93f57-19] For example::
+- [28edef836ab93f57-20] For example::
+- [28edef836ab93f57-21] For example::
+- [28edef836ab93f57-22] For example::
+- [28edef836ab93f57-23] For example::
+- [a233eb56] For more details, including how to delete objects in bulk, see :ref:`topics-db-queries-delete`.
+- [61d6039b] For more details, see the documentation on :ref:`f-expressions` and their :ref:`use in update queries <topics-db-queries-update>`.
+- [f9d41b33] Forcing an INSERT or UPDATE ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [28c4c40f] Given the above ``'Cheddar Talk'`` blog example, this example would override the previous record in the database::
+- [5fbfcaaa] How Django knows to UPDATE vs. INSERT -------------------------------------
+- [45a05e31] If ``save()`` is passed a list of field names in keyword argument ``update_fields``, only the fields named in that list will be updated. This may be desirable if you want to update just one or a few fields on an object. There will be a slight performance benefit from preventing all of the model fields from being updated in the database. For example::
+- [615d99ec] If a model has an :class:`~django.db.models.AutoField` but you want to define a new object's ID explicitly when saving, define it explicitly before saving, rather than relying on the auto-assignment of the ID:
+- [c7174e07] If a model has an :class:`~django.db.models.AutoField` — an auto-incrementing primary key — then that auto-incremented value will be calculated and saved as an attribute on your object the first time you call ``save()``:
+- [2ab1d79c] If the object's primary key attribute defines a :attr:`~django.db.models.Field.default` or :attr:`~django.db.models.Field.db_default` then Django executes an ``UPDATE`` if it is an existing model instance and primary key is set to a value that exists in the database. Otherwise, Django executes an ``INSERT``.
+- [660112f8] If the old ``number_sold`` value retrieved from the database was 10, then the value of 11 will be written back to the database.
+- [0570b778] If you assign auto-primary-key values manually, make sure not to use an already-existing primary-key value! If you create a new object with an explicit primary-key value that already exists in the database, Django will assume you're changing the existing record rather than creating a new one.
+- [12bef256] If you delete a field from a model instance, accessing it again reloads the value from the database:
+- [f6d7f8e4] If you detect errors in multiple fields during ``Model.clean()``, you can also pass a dictionary mapping field names to errors::
+- [47535daa] If you need to reload a model's values from the database, you can use the ``refresh_from_db()`` method. When this method is called without arguments the following is done:
+- [cf642ffe] If you want customized deletion behavior, you can override the ``delete()`` method. See :ref:`overriding-model-methods` for more details.
+- [13c9f43f] If you want customized saving behavior, you can override this ``save()`` method. See :ref:`overriding-model-methods` for more details.
+- [2f12deae] If you're using PostgreSQL, the sequence associated with the primary key might need to be updated; see :ref:`manually-specified-autoincrement-pk`.
+- [6846cd18] In Django 1.5 and earlier, Django did a ``SELECT`` when the primary key attribute was set. If the ``SELECT`` found a row, then Django did an ``UPDATE``, otherwise it did an ``INSERT``. The old algorithm results in one more query in the ``UPDATE`` case. There are some rare cases where the database doesn't report that a row was updated even if the database contains a row for the object's primary key value. An example is the PostgreSQL ``ON UPDATE`` trigger which returns ``NULL``. In such cases it is possible to revert to the old algorithm by setting the :attr:`~django.db.models.Options.select_on_save` option to ``True``.
+- [dd8c5704] In addition to :meth:`~Model.save`, :meth:`~Model.delete`, a model object might have some of the following methods:
+- [c17ecf56] In addition to creating the new model, the ``from_db()`` method must set the ``adding`` and ``db`` flags in the new instance's :attr:`~Model._state` attribute, and, when ``fetch_mode`` is not ``None``, its ``fetch_mode`` attribute.
+- [a54a911f] In some rare circumstances, it's necessary to be able to force the :meth:`~Model.save` method to perform an SQL ``INSERT`` and not fall back to doing an ``UPDATE``. Or vice-versa: update, if possible, but not insert a new row. In these cases you can pass the ``force_insert=True`` or ``force_update=True`` parameters to the :meth:`~Model.save` method. Passing both parameters is an error: you cannot both insert *and* update at the same time!
+- [b6e43737] In the above example, the :exc:`~django.core.exceptions.ValidationError` exception raised by ``Model.clean()`` was instantiated with a string, so it will be stored in a special error dictionary key, :data:`~django.core.exceptions.NON_FIELD_ERRORS`. This key is used for errors that are tied to the entire model instead of to a specific field::
+- [954bf94a] Issues an SQL ``DELETE`` for the object. This only deletes the object in the database; the Python instance will still exist and will still have data in its fields, except for the primary key set to ``None``. This method returns the number of objects deleted and a dictionary with the number of deletions per object type. The return value will count instances from related models if Django is emulating cascade behavior via Python :attr:`~ForeignKey.on_delete` variants. Otherwise, for database variants such as :attr:`~django.db.models.DB_CASCADE`, the return value will report only instances of the :class:`.QuerySet`'s model.
+- [cb025485] It is possible to force the set of fields to be loaded by using the ``fields`` argument.
+- [1585ece5] It should be very rare that you'll need to use these parameters. Django will almost always do the right thing and trying to override that will lead to errors that are difficult to track down. This feature is for advanced use only.
+- [db561665] It's good practice to use ``get_absolute_url()`` in templates, instead of hardcoding your objects' URLs. For example, this template code is bad:
+- [7bb75946] Note that ``full_clean()`` will *not* be called automatically when you call your model's :meth:`~Model.save` method. You'll need to call it manually when you want to run one-step model validation for your own manually created models. For example::
+- [e5aa8ec3] Note that if you provide an ``exclude`` argument to ``validate_unique()``, any :attr:`~django.db.models.Options.unique_together` constraint involving one of the fields you provided will not be checked.
+- [92bc9b77] Note that in the case of identical date values, these methods will use the primary key as a tie-breaker. This guarantees that no records are skipped or duplicated. That also means you cannot use those methods on unsaved objects.
+- [7789f674] Note, however, that like :meth:`Model.full_clean`, a model's ``clean()`` method is not invoked when you call your model's :meth:`~Model.save` method.
+- [bf1ae693] One place Django uses ``get_absolute_url()`` is in the admin app. If an object defines this method, the object-editing page will have a "View on site" link that will jump you directly to the object's public view, as given by ``get_absolute_url()``.
+- [102eca55] Only fields of the model are reloaded from the database. Other database-dependent values such as annotations aren't reloaded. Any :func:`@cached_property <django.utils.functional.cached_property>` attributes aren't cleared either.
+- [28458e0a] Other attributes ================
+- [f63f20ac] Other model instance methods ============================
+- [f0839da5] Pickling objects ================
+- [4bd46567] Refreshing objects from database ================================
+- [fee49113] Regardless of whether you define a primary key field yourself, or let Django supply one for you, each model will have a property called ``pk``. It behaves like a normal attribute on the model, but is actually an alias for whichever field or fields compose the primary key for the model. You can read and set this value, just as you would for any other attribute, and it will update the correct fields in the model.
+- [4320acac] Saving objects ==============
+- [531e8590] See `How Django knows to UPDATE vs. INSERT`_, below, for the reason this happens.
+- [68983777] Similarly, a couple of other bits of Django, such as the :doc:`syndication feed framework </ref/contrib/syndication>`, use ``get_absolute_url()`` when it is defined. If it makes sense for your model's instances to each have a unique URL, you should define ``get_absolute_url()``.
+- [af54de59] Sometimes with :ref:`multi-table inheritance <multi-table-inheritance>` you may want to delete only a child model's data. Specifying ``keep_parents=True`` will keep the parent model's data.
+- [56b002c7] Sometimes you'll need to perform a simple arithmetic task on a field, such as incrementing or decrementing the current value. One way of achieving this is doing the arithmetic in Python like:
+- [70769cb7] Specifying ``update_fields`` will force an update.
+- [03813475] Specifying which fields to save -------------------------------
+- [db8e299e] The ``__hash__()`` method is based on the instance's primary key value. It is effectively ``hash(obj.pk)``. If the instance doesn't have a primary key value then a ``TypeError`` will be raised (otherwise the ``__hash__()`` method would return different values before and after the instance is saved), but changing the :meth:`~object.__hash__` value of an instance is forbidden in Python.
+- [0f97f341] The ``__str__()`` method is called whenever you call ``str()`` on an object. Django uses ``str(obj)`` in a number of places. Most notably, to display an object in the Django admin site and as the value inserted into a template when it displays an object. Thus, you should always return a nice, human-readable representation of the model from the ``__str__()`` method.
+- [5566f1c1] The ``db`` argument contains the database alias for the database the model is loaded from, ``field_names`` contains the names of all loaded fields, and ``values`` contains the loaded values for each field in ``field_names``. The ``field_names`` are in the same order as the ``values``. If all of the model's fields are present, then ``values`` are guaranteed to be in the order ``__init__()`` expects them. That is, the instance can be created by ``cls(*values)``. If any fields are deferred, they won't appear in ``field_names``. In that case, assign a value of ``django.db.models.DEFERRED`` to each of the missing fields. The ``fetch_mode`` argument contains the :doc:`fetch mode </topics/db/fetch-modes>` of the query that loaded the instance, or ``None`` if it was loaded outside of a query.
+- [0cce015c] The ``from_db()`` method can be used to customize model instance creation when loading from the database.
+- [4e391fa1] The ``from_queryset`` argument allows using a different queryset than the one created from :attr:`~django.db.models.Model._base_manager`. It gives you more control over how the model is reloaded. For example, when your model uses soft deletion you can make ``refresh_from_db()`` to take this into account::
+- [adc5e773] The ``pk`` property ~~~~~~~~~~~~~~~~~~~
+- [af190837] The ``update_fields`` argument can be any iterable containing strings. An empty ``update_fields`` iterable will skip the save. A value of ``None`` will perform an update on all fields.
+- [a68dbc82] The equality method is defined such that instances with the same primary key value and the same concrete class are considered equal, except that instances with a primary key value of ``None`` aren't equal to anything except themselves. For proxy models, concrete class is defined as the model's first non-proxy parent; for all other models it's simply the model's class.
+- [6daf1a18] The example above shows a full ``from_db()`` implementation to clarify how that is done. In this case it would be possible to use a ``super()`` call in the ``from_db()`` method.
+- [0ed3ebbe] The first step ``full_clean()`` performs is to clean each individual field.
+- [f78beb8a] The keyword arguments are the names of the fields you've defined on your model. Note that instantiating a model in no way touches your database; for that, you need to :meth:`~Model.save`.
+- [a725d4f7] The logic here is that if you change the URL structure of your objects, even for something small like correcting a spelling error, you don't want to have to track down every place that the URL might be created. Specify it once, in ``get_absolute_url()`` and have all your other code call that one place.
+- [62af8f2d] The model save process also has some subtleties; see the sections below.
+- [b2019619] The one gotcha here is that you should be careful not to specify a primary-key value explicitly when saving new objects, if you cannot guarantee the primary-key value is unused. For more on this nuance, see `Explicitly specifying auto-primary-key values`_ above and `Forcing an INSERT or UPDATE`_ below.
+- [a4872f23] The optional ``exclude`` argument can be used to provide a ``set`` of field names that can be excluded from validation and cleaning. :class:`~django.forms.ModelForm` uses this argument to exclude fields that aren't present on your form from being validated since any errors raised could not be corrected by the user.
+- [5570d076] The process can be made robust, :ref:`avoiding a race condition <avoiding-race-conditions-using-f>`, as well as slightly faster by expressing the update relative to the original field value, rather than as an explicit assignment of a new value. Django provides :ref:`f-expressions` for performing this kind of relative update. Using :ref:`f-expressions`, the previous example is expressed as:
+- [036a1417] The reloading happens from the database the instance was loaded from, or from the default database if the instance wasn't loaded from the database. The ``using`` argument can be used to force the database used for reloading.
+- [4f4fb195] The second step ``full_clean()`` performs is to call :meth:`Model.clean`. This method should be overridden to perform custom validation on your model.
+- [7efdb865] Then, ``full_clean()`` will check unique constraints on your model.
+- [2dd2e687] There are four steps involved in validating a model:
+- [79dab20d] There's no way to tell what the value of an ID will be before you call ``save()``, because that value is calculated by your database, not by Django.
+- [396b9abc] This document describes the details of the ``Model`` API. It builds on the material presented in the :doc:`model </topics/db/models>` and :doc:`database query </topics/db/queries>` guides, so you'll probably want to read and understand those documents before reading this one.
+- [6e289fc9] This method calls :meth:`Model.clean_fields`, :meth:`Model.clean`, :meth:`Model.validate_unique` (if ``validate_unique`` is ``True``), and :meth:`Model.validate_constraints` (if ``validate_constraints`` is ``True``) in that order and raises a :exc:`~django.core.exceptions.ValidationError` that has a ``message_dict`` attribute containing errors from all four stages.
+- [6d7d2e4a] This method is similar to :meth:`~Model.clean_fields`, but validates uniqueness constraints defined via :attr:`.Field.unique`, :attr:`.Field.unique_for_date`, :attr:`.Field.unique_for_month`, :attr:`.Field.unique_for_year`, or :attr:`Meta.unique_together <django.db.models.Options.unique_together>` on your model instead of individual field values. The optional ``exclude`` argument allows you to provide a ``set`` of field names to exclude from validation. It will raise a :exc:`~django.core.exceptions.ValidationError` if any fields fail validation.
+- [b5cad9c5] This method should be used to provide custom model validation, and to modify attributes on your model if desired. For instance, you could use it to automatically provide a value for a field, or to do validation that requires access to more than a single field::
+- [ea15c8be] This method validates all constraints defined in :attr:`Meta.constraints <django.db.models.Options.constraints>`. The optional ``exclude`` argument allows you to provide a ``set`` of field names to exclude from validation. It will raise a :exc:`~django.core.exceptions.ValidationError` if any constraints fail validation.
+- [853ef64b] This method will validate all fields on your model. The optional ``exclude`` argument lets you provide a ``set`` of field names to exclude from validation. It will raise a :exc:`~django.core.exceptions.ValidationError` if any fields fail validation.
+- [6060173d] This template code is much better:
+- [858fbb41dd44aafc] Throughout this reference we'll use the :ref:`example blog models <queryset-model-example>` presented in the :doc:`database query guide </topics/db/queries>`.
+- [ce73f9f1] To assign exceptions to a specific field, instantiate the :exc:`~django.core.exceptions.ValidationError` with a dictionary, where the keys are the field names. We could update the previous example to assign the error to the ``pub_date`` field::
+- [ec3c3110] To create a new instance of a model, instantiate it like any other Python class:
+- [a54aad56] To save an object back to the database, call ``save()``:
+- [8d6d0b5a] Updating attributes based on existing fields --------------------------------------------
+- [8bf1e305] Using ``update_fields`` will force an update similarly to ``force_update``.
+- [358b8ef9] Validating objects ==================
+- [aaf777fc] What happens when you save? ---------------------------
+- [3cf7c260] When a deferred field is loaded on-demand for a single model instance, the loading happens through this method. Thus it is possible to customize the way this loading happens. The example below shows how one can reload all of the instance's fields when a deferred field is loaded on-demand::
+- [9cdae336] When saving a model fetched through deferred model loading (:meth:`~django.db.models.query.QuerySet.only` or :meth:`~django.db.models.query.QuerySet.defer`) only the fields loaded from the DB will get updated. In effect there is an automatic ``update_fields`` in this case. If you assign or change any deferred field value, the field will be added to the updated fields.
+- [e50c46cb] When using :ref:`multi-table inheritance <multi-table-inheritance>`, it's also possible to provide a tuple of parent classes to ``force_insert`` in order to force ``INSERT`` statements for each base. For example::
+- [d0e80e4c] When you :mod:`pickle` a model, its current state is pickled. When you unpickle it, it'll contain the model instance at the moment it was pickled, rather than the data that's currently in the database.
+- [8301998d] When you save an object, Django performs the following steps:
+- [ad7624ee] When you use a :class:`~django.forms.ModelForm`, the call to :meth:`~django.forms.Form.is_valid` will perform these validation steps for all the fields that are included on the form. See the :doc:`ModelForm documentation </topics/forms/modelforms>` for more information. You should only need to call a model's :meth:`~Model.full_clean` method if you plan to handle validation errors yourself, or if you have excluded fields from the :class:`~django.forms.ModelForm` that require validation.
+- [a14a4904] While this code is correct and simple, it may not be the most portable way to write this kind of method. The :func:`~django.urls.reverse` function is usually the best approach.
+- [5aa3d393] You can cache related objects that otherwise would be cleared from the reloaded instance::
+- [61dcec24] You can lock the row until the end of transaction before reloading a model's values::
+- [464dca47] You can pass ``force_insert=(models.Model,)`` to force an ``INSERT`` statement for all parents. By default, ``force_insert=True`` only forces the insertion of a new row for the current model.
+- [b898c42d] You may have noticed Django database objects use the same ``save()`` method for creating and changing objects. Django abstracts the need to use ``INSERT`` or ``UPDATE`` SQL statements. Specifically, when you call ``save()`` and the object's primary key attribute does **not** define a :attr:`~django.db.models.Field.default` or :attr:`~django.db.models.Field.db_default`, Django follows this algorithm:
+- [3207d036] ``__eq__()`` ------------
+- [c321ad94] ``__hash__()`` --------------
+- [f53265f9] ``__str__()`` -------------
+- [ac86425b] ``_is_pk_set()`` ----------------
+- [aae8b60d] ``_state`` ----------
+- [e9b7f874] ``get_absolute_url()`` ----------------------

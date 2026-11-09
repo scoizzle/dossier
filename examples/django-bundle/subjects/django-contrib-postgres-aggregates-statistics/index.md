@@ -1,8 +1,8 @@
 # django/contrib/postgres/aggregates/statistics
 
-- Subject: django/contrib/postgres/aggregates/statistics (id `9e6fe960-07c3-4811-ba89-146ce8d7b044`)
+- Subject: django/contrib/postgres/aggregates/statistics (id `1c24ee41-a612-43a1-b937-c871b1ebb83e`)
 - Kind: subject
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 490 tokens
 - Facts shown: 15 of 15
 - Conflicts: 0

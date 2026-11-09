@@ -1,9 +1,9 @@
 # django/db/models/fields/composite::CompositePrimaryKey._check_field_name
 
-- Subject: django/db/models/fields/composite::CompositePrimaryKey._check_field_name (id `2aaea5ab-4072-458a-a6e8-da8406d2482e`)
+- Subject: django/db/models/fields/composite::CompositePrimaryKey._check_field_name (id `be61c552-d3a8-4668-a632-e1f23105fe48`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
-- Budget: 1200 tokens
+- Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
 - Facts shown: 1 of 1
 - Conflicts: 0

@@ -143,6 +143,8 @@ public sealed partial class DossierStore
         public string Id = string.Empty;
         public string SubjectId = string.Empty;
         public string Kind = string.Empty;
+        public string? Key;
+        public string ContentHash = string.Empty;
         public string Text = string.Empty;
         public List<string> Tags = new();
         public double Confidence;
@@ -157,6 +159,47 @@ public sealed partial class DossierStore
         public HashSet<string> TextTokens = new(StringComparer.Ordinal);
         public List<string> Collapsed = new();
     }
+
+    /// <summary>
+    /// Total order over candidates that never consults the random fact id: score descending, then
+    /// key (when present), kind, text and finally content_hash ascending. content_hash comes last
+    /// because it folds in resolved ref targets, which for fact-to-fact refs are random ids; placed
+    /// earlier it would reintroduce id dependence. Two stores holding the same logical
+    /// facts therefore rank, select and drop identically whatever ids they assigned.
+    /// </summary>
+    private sealed class RankOrder : IComparer<Candidate>
+    {
+        public int Compare(Candidate? x, Candidate? y)
+        {
+            if (ReferenceEquals(x, y))
+            {
+                return 0;
+            }
+
+            var byScore = y!.Score.CompareTo(x!.Score);
+            if (byScore != 0)
+            {
+                return byScore;
+            }
+
+            var byKey = string.CompareOrdinal(x.Key ?? string.Empty, y.Key ?? string.Empty);
+            if (byKey != 0)
+            {
+                return byKey;
+            }
+
+            var byKind = string.CompareOrdinal(x.Kind, y.Kind);
+            if (byKind != 0)
+            {
+                return byKind;
+            }
+
+            var byText = string.CompareOrdinal(x.Text, y.Text);
+            return byText != 0 ? byText : string.CompareOrdinal(x.ContentHash, y.ContentHash);
+        }
+    }
+
+    private static readonly IComparer<Candidate> RankComparer = new RankOrder();
 
     /// <summary>
     /// compile_dossier: rank, dedupe, budget, surface conflicts and gaps, and emit a cited Dossier.
@@ -202,10 +245,7 @@ public sealed partial class DossierStore
         var candidates = LoadCandidates(connection, subjectIds);
         ScoreCandidates(connection, candidates, needs, recencyWeight);
 
-        var ranked = candidates
-            .OrderByDescending(c => c.Score)
-            .ThenBy(c => c.Id, StringComparer.Ordinal)
-            .ToList();
+        var ranked = candidates.OrderBy(c => c, RankComparer).ToList();
 
         var representatives = Dedupe(ranked);
         var conflicts = FindConflicts(candidates, subject.Id);
@@ -264,7 +304,7 @@ public sealed partial class DossierStore
         {
             emitted = emitted
                 .OrderBy(c => c.CreatedAt, StringComparer.Ordinal)
-                .ThenBy(c => c.Id, StringComparer.Ordinal)
+                .ThenBy(c => c, RankComparer)
                 .ToList();
         }
 
@@ -400,7 +440,7 @@ public sealed partial class DossierStore
             connection,
             null,
             $"""
-            SELECT f.id, f.subject_id, f.kind, f.text, f.data, f.tags, f.confidence, f.status, f.created_at,
+            SELECT f.id, f.subject_id, f.kind, f.text, f.data, f.tags, f.confidence, f.status, f.created_at, f.key, f.content_hash,
                    (SELECT COUNT(*) FROM refs r WHERE r.target = f.id) AS inbound,
                    (SELECT CASE MAX(CASE r.basis WHEN 'observed' THEN 2 WHEN 'derived' THEN 1 ELSE 0 END)
                                 WHEN 2 THEN 1.0 WHEN 1 THEN 0.5 ELSE 0.25 END
@@ -409,7 +449,7 @@ public sealed partial class DossierStore
             WHERE f.subject_id IN ({list})
               AND f.status NOT IN ('superseded', 'retracted')
               AND f.kind <> 'dossier'
-            ORDER BY f.id
+            ORDER BY f.key, f.kind, f.text, f.content_hash, f.id
             """);
         BindAll(command, parameters);
         using var reader = command.ExecuteReader();
@@ -427,11 +467,13 @@ public sealed partial class DossierStore
                 Confidence = reader.GetDouble(6),
                 Status = reader.GetString(7),
                 CreatedAt = createdAt,
+                Key = reader.IsDBNull(9) ? null : reader.GetString(9),
+                ContentHash = reader.GetString(10),
                 CreatedTime = DateTimeOffset.TryParse(createdAt, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out var parsed)
                     ? parsed
                     : DateTimeOffset.MinValue,
-                Inbound = reader.GetInt32(9),
-                Explicitness = reader.IsDBNull(10) ? 0.25 : reader.GetDouble(10),
+                Inbound = reader.GetInt32(11),
+                Explicitness = reader.IsDBNull(12) ? 0.25 : reader.GetDouble(12),
             });
         }
 
@@ -532,7 +574,6 @@ public sealed partial class DossierStore
                 }
             }
 
-            head.Collapsed.Sort(StringComparer.Ordinal);
         }
 
         return representatives;
@@ -571,10 +612,10 @@ public sealed partial class DossierStore
     /// <summary>Conflicts over live facts on the subject itself whose data is a JSON object.</summary>
     private static List<DossierConflict> FindConflicts(List<Candidate> candidates, string subjectId)
     {
-        var byPath = new SortedDictionary<string, List<(string Fact, JsonElement Value)>>(StringComparer.Ordinal);
+        var byPath = new SortedDictionary<string, List<(string Fact, JsonElement Value, Candidate Source)>>(StringComparer.Ordinal);
         foreach (var candidate in candidates
                      .Where(c => c.SubjectId == subjectId && c.Status == "live" && c.DataJson is not null)
-                     .OrderBy(c => c.Id, StringComparer.Ordinal))
+                     .OrderBy(c => c, RankComparer))
         {
             using var document = JsonDocument.Parse(candidate.DataJson!);
             if (document.RootElement.ValueKind != JsonValueKind.Object)
@@ -586,10 +627,10 @@ public sealed partial class DossierStore
             {
                 if (!byPath.TryGetValue(path, out var list))
                 {
-                    byPath[path] = list = new List<(string, JsonElement)>();
+                    byPath[path] = list = new List<(string, JsonElement, Candidate)>();
                 }
 
-                list.Add((candidate.Id, value.Clone()));
+                list.Add((candidate.Id, value.Clone(), candidate));
             }
         }
 
@@ -607,7 +648,7 @@ public sealed partial class DossierStore
             {
                 Field = path,
                 Values = entries
-                    .OrderBy(e => e.Fact, StringComparer.Ordinal)
+                    .OrderBy(e => e.Source, RankComparer)
                     .Select(e => new ConflictValue { Fact = e.Fact, Value = e.Value })
                     .ToList(),
             });

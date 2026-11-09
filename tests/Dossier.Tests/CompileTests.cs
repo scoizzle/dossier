@@ -355,7 +355,7 @@ public sealed class CompileTests
         var json = JsonSerializer.Serialize(dossier, JsonCodec.Options);
 
         await Assert.That(conflict.Field).IsEqualTo("cfg.port");
-        await Assert.That(conflict.Values.Select(v => v.Fact).SequenceEqual(ids.OrderBy(i => i, StringComparer.Ordinal))).IsTrue();
+        await Assert.That(conflict.Values.Select(v => v.Fact).SequenceEqual(ids.OrderBy(i => db.Store.Show(i)!.Fact.Text, StringComparer.Ordinal))).IsTrue();
         await Assert.That(conflict.Resolution).IsNull();
         await Assert.That(json.Contains("\"resolution\":null")).IsTrue();
     }
@@ -677,12 +677,12 @@ public sealed class CompileTests
 
         // Control: same store, empty needs, recency weight 0 and all confidences equal. Every
         // remaining term is then an identical constant, so any residual bm25 ordering would show
-        // up here; instead the result is the pure id tie-break, proving relevance is exactly 0.
+        // up here; instead the result is the pure text tie-break, proving relevance is exactly 0.
         var flat = Full();
         flat.Needs = new List<string>();
         flat.Rank = new RankOptions { Recency = 0 };
         var flattened = db.Store.Compile(flat).Facts.Select(f => f.Id).ToList();
-        var idOrder = ids.OrderBy(id => id, StringComparer.Ordinal).ToList();
+        var idOrder = ids.OrderBy(id => db.Store.Show(id)!.Fact.Text, StringComparer.Ordinal).ToList();
         await Assert.That(flattened.SequenceEqual(idOrder)).IsTrue();
     }
 
@@ -713,5 +713,103 @@ public sealed class CompileTests
         await Assert.That(stopwatch.Elapsed < TimeSpan.FromSeconds(5)).IsTrue();
         await Assert.That(dossier.Facts.Count).IsEqualTo(2);
         await Assert.That(dossier.Subject.Id).IsEqualTo(a.Response.Subject.Id);
+    }
+
+    private const int LogicalFactCount = 40;
+    private const int HubCount = 10;
+
+    private static FactInput LogicalFact(int i)
+    {
+        var padding = string.Join(' ', Enumerable.Range(0, (i % 7) + 1).Select(k => $"pad{i}x{k}"));
+        var text = $"fact number {i} concerning area{i} aspect{i} detail{i} {padding}";
+        var localId = i < HubCount ? $"h{i}" : null;
+        var refs = i >= HubCount && i % 3 != 0
+            ? new List<RefInput> { Fixtures.Ref($"@h{i % HubCount}", basis: i % 2 == 0 ? "observed" : "derived") }
+            : null;
+        JsonElement? data = i is >= 10 and < 20 ? Fixtures.Json($"{{\"price\": {i % 3}, \"name\": \"n{i % 2}\"}}") : null;
+        var key = i is >= 20 and < 30 ? $"k{i}" : null;
+        return Fixtures.Fact(text, key: key, localId: localId, refs: refs, data: data);
+    }
+
+    /// <summary>Posts the 40 logical facts in the given order (hubs must come before their referrers) with one shared created_at, so recency is equal and most scores tie: the tie-break decides the selection.</summary>
+    private static TempDb BuildLogicalStore(IEnumerable<int> order)
+    {
+        var db = new TempDb();
+        var inputs = order.Select(LogicalFact).ToArray();
+        db.Store.PostFacts(Fixtures.Post("Widget", inputs));
+        Exec(db, "UPDATE facts SET created_at = $c", ("$c", At(0)));
+
+        return db;
+    }
+
+    private static string TextOf(TempDb db, string id) => db.Store.Show(id)!.Fact.Text ?? string.Empty;
+
+    private static CompileRequest ReproRequest() => new()
+    {
+        Subject = "Widget",
+        Depth = "full",
+        Format = "json",
+        Needs = new List<string> { "aspect7", "detail12" },
+    };
+
+    [Test]
+    public async Task Reproducible_SelectionAcrossIndependentStores()
+    {
+        // Store A: ascending. Store B: hubs reversed first, then the rest descending. Different
+        // insertion order and different GUIDs, same logical facts.
+        using var a = BuildLogicalStore(Enumerable.Range(0, LogicalFactCount));
+        using var b = BuildLogicalStore(
+            Enumerable.Range(0, HubCount).Reverse().Concat(Enumerable.Range(HubCount, LogicalFactCount - HubCount).Reverse()));
+
+        var left = a.Store.Compile(ReproRequest());
+        var right = b.Store.Compile(ReproRequest());
+
+        var leftFacts = left.Facts.Select(f => f.Text).ToList();
+        var rightFacts = right.Facts.Select(f => f.Text).ToList();
+        var leftDropped = left.Dropped.Select(id => TextOf(a, id)).ToList();
+        var rightDropped = right.Dropped.Select(id => TextOf(b, id)).ToList();
+
+        await Assert.That(leftDropped.Count).IsGreaterThan(0);
+        await Assert.That(left.Facts.Select(f => f.Id).SequenceEqual(right.Facts.Select(f => f.Id))).IsFalse();
+        await Assert.That(rightFacts.SequenceEqual(leftFacts)).IsTrue();
+        await Assert.That(rightDropped.SequenceEqual(leftDropped)).IsTrue();
+        await Assert.That(right.UsedTokens).IsEqualTo(left.UsedTokens);
+        await Assert.That(right.Conflicts.Select(c => c.Field).SequenceEqual(left.Conflicts.Select(c => c.Field))).IsTrue();
+    }
+
+    [Test]
+    public async Task Reproducible_RepeatedCompileIsByteIdentical()
+    {
+        using var db = BuildLogicalStore(Enumerable.Range(0, LogicalFactCount));
+
+        var runs = Enumerable.Range(0, 3)
+            .Select(_ => JsonSerializer.Serialize(db.Store.Compile(ReproRequest()), JsonCodec.Options))
+            .ToList();
+
+        await Assert.That(runs[1]).IsEqualTo(runs[0]);
+        await Assert.That(runs[2]).IsEqualTo(runs[0]);
+    }
+
+    [Test]
+    public async Task Budget_IsBoundedAsCorpusGrows()
+    {
+        var emittedCounts = new List<int>();
+        foreach (var n in new[] { 50, 200, 1000 })
+        {
+            using var db = new TempDb();
+            var facts = Enumerable.Range(0, n)
+                .Select(i => Fixtures.Fact($"entry {i:D4} alpha{i:D4} beta{i:D4} gamma{i:D4} delta{i:D4}"))
+                .ToArray();
+            db.Store.PostFacts(Fixtures.Post("Corpus", facts));
+
+            var dossier = db.Store.Compile(new CompileRequest { Subject = "Corpus", Depth = "full", Budget = 1200, Format = "markdown" });
+
+            await Assert.That(dossier.UsedTokens).IsLessThanOrEqualTo(1200);
+            await Assert.That(dossier.Facts.Count).IsLessThanOrEqualTo(n);
+            emittedCounts.Add(dossier.Facts.Count);
+        }
+
+        await Assert.That(emittedCounts[1]).IsGreaterThanOrEqualTo(emittedCounts[0]);
+        await Assert.That(emittedCounts[2]).IsGreaterThanOrEqualTo(emittedCounts[1]);
     }
 }

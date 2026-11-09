@@ -150,6 +150,33 @@ currently adds cost, while C's accuracy is still unmeasured. The hypothesis stil
 needs a subject with 200 or more facts, where a fixed token budget forces
 selection.
 
+### Reproducibility
+
+For a given subject and budget, the dossier costs at most the budget regardless of corpus
+size. Selection is deterministic for a given logical fact set and independent of fact id
+assignment: ranking breaks score ties on content, never on the random fact id (score
+descending, then key when present, kind, text, and content_hash last; applied to selected
+facts, dropped, conflict values and `order: seq` ties). This boundedness, rather than any
+single compression ratio, is the claim worth relying on. The 24-fact ratio above says
+nothing about growth.
+
+Ordering note: content_hash was intended as the first tie-break, but it hashes resolved ref
+targets, which for fact-to-fact refs are random ids, so placed first it reintroduced id
+dependence (found by `Reproducible_SelectionAcrossIndependentStores`). It is now the last
+disambiguator.
+
+Measured with `bash scripts/scaling.sh` (synthetic distinct facts on one subject, budget
+1200, depth full, markdown, chars/4; two consecutive runs printed identical values):
+
+| N | plain-facts tokens | dossier tokens | facts emitted | ratio plain/dossier |
+| --- | --- | --- | --- | --- |
+| 50 | 625 | 892 | 39 | 0.70 |
+| 200 | 2500 | 892 | 39 | 2.80 |
+| 1000 | 12500 | 892 | 39 | 14.01 |
+
+The dossier cost is flat (892 tokens, under 1200) while plain facts grow linearly; the
+ratio is a consequence of the bound, not the claim. Guarded by `Budget_IsBoundedAsCorpusGrows`.
+
 ## Path to Poly
 
 - The contract is the deliverable; the C# implementation is a reference implementation.

@@ -1,6 +1,6 @@
 # Fact 9d2c775c
 
-Store id: ac887107-ea8a-40f6-aafb-b4b2c919b4ce
+Store id: 365302a4-7883-4142-b220-dc7ed4b799fc
 
 ## Text
 
@@ -20,7 +20,7 @@ Home supports keyboard navigation between memo cards.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

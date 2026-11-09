@@ -1,6 +1,6 @@
 # Fact b5a926c6
 
-Store id: 6dbde9b1-a5c2-4af0-a5ba-b5ae1c2894ec
+Store id: 324284dd-910c-420a-9740-167f28b7e039
 
 ## Text
 
@@ -20,7 +20,7 @@ Home shows a floating action button that focuses the composer.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

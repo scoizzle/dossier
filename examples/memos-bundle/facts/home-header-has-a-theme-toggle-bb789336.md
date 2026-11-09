@@ -1,6 +1,6 @@
 # Fact bb789336
 
-Store id: 023ec9c8-8dd2-4137-b356-0878b5a77e29
+Store id: e399dd26-ec8d-4912-8a1f-4278a30e702c
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header has a theme toggle between light and dark.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

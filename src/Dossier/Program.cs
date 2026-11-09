@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts]>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets]>";
 
 if (args.Length == 0)
 {
@@ -196,7 +196,7 @@ try
             var outDir = ValueAfter(args, "--out");
             if (outDir is null)
             {
-                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--depth index|full] [--facts detail|none]");
+                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--depth index|full] [--facts detail|none] [--assets detail|none]");
                 return 1;
             }
 
@@ -207,10 +207,16 @@ try
                 Budget = ParseInt(ValueAfter(args, "--budget"), "--budget") ?? DossierStore.DefaultBudgetTokens,
                 Depth = ValueAfter(args, "--depth") ?? "full",
                 Facts = ValueAfter(args, "--facts") ?? "detail",
+                Assets = ValueAfter(args, "--assets") ?? "detail",
                 CommandLine = "dossier " + string.Join(' ', args.Select(a => a.Length > 0 && a.All(c => !char.IsWhiteSpace(c) && c != '\'') ? a : "'" + a.Replace("'", "'\\''") + "'")),
             };
 
             var published = new DossierStore().Publish(publishOptions);
+            foreach (var warning in published.Warnings)
+            {
+                Console.Error.WriteLine(warning);
+            }
+
             Console.WriteLine(JsonSerializer.Serialize(
                 new { published.Out, files = published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed },
                 JsonCodec.Options));

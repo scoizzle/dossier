@@ -1,6 +1,6 @@
 # Fact e626d57b
 
-Store id: daf6a16c-4794-4b69-9635-1de6b5934482
+Store id: 5094eb34-d708-4193-b92a-5eaed7e7719d
 
 ## Text
 
@@ -20,7 +20,7 @@ Home memo cards offer a pin action that keeps a memo at the top.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

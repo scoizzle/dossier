@@ -1,6 +1,6 @@
 # Fact e096b348
 
-Store id: fc11d4de-bf8d-47c2-b1fd-0d03e2b1b4f4
+Store id: 01995af7-150b-471b-98e7-5492d48711b1
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header is 72 pixels tall in the second audit of the same build.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Data
 

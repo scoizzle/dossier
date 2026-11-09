@@ -1,6 +1,6 @@
 # Fact 254bc1a5
 
-Store id: c372f4fb-7658-4292-8088-0c7305df439f
+Store id: 8752a121-93c4-462b-9b73-bdc8a4033c17
 
 ## Text
 
@@ -20,7 +20,7 @@ Memos is a self-hosted, open-source memo app with a web client and an HTTP API.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.1551760+00:00`
+- posted_at: `2026-11-09T21:31:28.9082860+00:00`
 
 ## Refs
 

@@ -1,6 +1,6 @@
 # Fact b6f809c8
 
-Store id: f0305bfb-b378-4762-b1ff-762c564cfd79
+Store id: 99953bbb-98dc-4b09-94f8-e44448c680c5
 
 ## Text
 
@@ -20,7 +20,7 @@ Clicking a memo card opens the memo detail screen.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

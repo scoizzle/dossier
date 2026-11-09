@@ -1,6 +1,6 @@
 # Fact 807dd592
 
-Store id: 843dccd7-058c-4643-83ca-b05bae319f23
+Store id: b5d1e3d5-6e82-42c7-9b74-64c23f4f016f
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer shows tag chips for the tags on the current draft.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

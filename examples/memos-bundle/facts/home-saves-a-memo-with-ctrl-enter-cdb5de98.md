@@ -1,6 +1,6 @@
 # Fact cdb5de98
 
-Store id: a86b7602-a312-46de-9699-8b3b9ae10434
+Store id: 1dfd47b4-8579-48a9-89c5-6f32f793bdf0
 
 ## Text
 
@@ -20,7 +20,7 @@ Home saves a memo with Ctrl+Enter on Windows and Linux.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Data
 

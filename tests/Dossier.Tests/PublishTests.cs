@@ -595,4 +595,190 @@ public sealed class PublishTests
             await Assert.That(lines[0]).IsEqualTo("Store id: " + id);
         }
     }
+
+    // ---- assets ----------------------------------------------------------------------------
+
+    private sealed record Shot(string Sha, byte[] Bytes, string Filename, string Mime);
+
+    private static Shot WriteBlob(TempDb db, string content, string filename, string mime)
+    {
+        var bytes = Encoding.UTF8.GetBytes(content);
+        var sha = Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
+        Directory.CreateDirectory(db.Store.BlobRoot);
+        File.WriteAllBytes(Path.Combine(db.Store.BlobRoot, sha), bytes);
+        return new Shot(sha, bytes, filename, mime);
+    }
+
+    private static FactInput ShotFact(string text, Shot shot) => Fixtures.Fact(
+        text,
+        attachments: new List<AttachmentInput>
+        {
+            new() { Sha256 = shot.Sha, Filename = shot.Filename, Mime = shot.Mime, Bytes = shot.Bytes.Length },
+        });
+
+    private static PostFactsRequest ShotRequest(string subject, params FactInput[] facts)
+    {
+        var request = new PostFactsRequest { Subject = new SubjectInput { Name = subject, Kind = "screen" } };
+        request.Facts.AddRange(facts);
+        return request;
+    }
+
+    [Test]
+    public async Task Publish_WritesAssetFilesPerSubject()
+    {
+        using var db = new TempDb();
+        var one = WriteBlob(db, "first screenshot bytes", "shots/Login Screen.PNG", "image/png");
+        var two = WriteBlob(db, "second document bytes!!", "notes", "application/pdf");
+        db.Store.PostFacts(ShotRequest("Login", ShotFact("Shows the login form.", one), ShotFact("Has a spec sheet.", two)));
+
+        var result = db.Store.Publish(Options(db));
+
+        var first = $"assets/login/{one.Sha[..8]}-login-screen.png";
+        var second = $"assets/login/{two.Sha[..8]}-notes.pdf";
+        await Assert.That(File.ReadAllBytes(Path.Combine(Out(db), first)).SequenceEqual(one.Bytes)).IsTrue();
+        await Assert.That(File.ReadAllBytes(Path.Combine(Out(db), second)).SequenceEqual(two.Bytes)).IsTrue();
+        await Assert.That(new FileInfo(Path.Combine(Out(db), second)).Length).IsEqualTo((long)two.Bytes.Length);
+        await Assert.That(result.Files.Contains(first)).IsTrue();
+        await Assert.That(result.Warnings.Count).IsEqualTo(0);
+
+        var manifest = JsonDocument.Parse(File.ReadAllText(Path.Combine(Out(db), "manifest.json"))).RootElement;
+        var entry = manifest.GetProperty("assets").GetProperty($"login/{one.Sha[..8]}-login-screen.png");
+        await Assert.That(entry.GetProperty("sha256").GetString()).IsEqualTo(one.Sha);
+        await Assert.That(entry.GetProperty("bytes").GetInt64()).IsEqualTo((long)one.Bytes.Length);
+        await Assert.That(entry.GetProperty("mime").GetString()).IsEqualTo("image/png");
+        await Assert.That(entry.GetProperty("missing").GetBoolean()).IsFalse();
+        await Assert.That(manifest.GetProperty("files").EnumerateArray().Any(e => e.GetString() == first)).IsTrue();
+    }
+
+    [Test]
+    public async Task Publish_SubjectFileLinksAssetsWithCorrectRelativePath()
+    {
+        using var db = new TempDb();
+        var one = WriteBlob(db, "alpha", "a.png", "image/png");
+        var two = WriteBlob(db, "beta", "b", "image/jpeg");
+        db.Store.PostFacts(ShotRequest("Login", ShotFact("Shows the login form.", one), ShotFact("Has a second view.", two)));
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var link = new Regex(@"\]\((\.\./assets/[^)]+)\)");
+
+        var subject = files["subjects/login.md"];
+        await Assert.That(subject).Contains("## Assets");
+        var subjectLinks = link.Matches(subject).Select(m => m.Groups[1].Value).ToList();
+        await Assert.That(subjectLinks.Count).IsEqualTo(2);
+        foreach (var rel in subjectLinks)
+        {
+            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "subjects", rel)))).IsTrue();
+        }
+
+        var factFiles = files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal) && kv.Value.Contains("## Attachments")).ToList();
+        await Assert.That(factFiles.Count).IsEqualTo(2);
+        foreach (var (_, content) in factFiles)
+        {
+            var links = link.Matches(content).Select(m => m.Groups[1].Value).ToList();
+            await Assert.That(links.Count).IsEqualTo(1);
+            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "facts", links[0])))).IsTrue();
+        }
+
+        await Assert.That(subject).Contains("(image/png, 5 bytes, from [");
+        await Assert.That(subjectLinks.Any(l => l.EndsWith("-b.jpg", StringComparison.Ordinal))).IsTrue();
+    }
+
+    [Test]
+    public async Task Publish_MissingBlobIsFailOpen()
+    {
+        using var db = new TempDb();
+        var gone = WriteBlob(db, "will vanish", "gone.png", "image/png");
+        var kept = WriteBlob(db, "stays here", "kept.png", "image/png");
+        db.Store.PostFacts(ShotRequest("Login", ShotFact("Has a vanished shot.", gone), ShotFact("Has a kept shot.", kept)));
+        File.Delete(Path.Combine(db.Store.BlobRoot, gone.Sha));
+
+        var result = db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+
+        await Assert.That(result.Warnings.Count).IsEqualTo(1);
+        await Assert.That(result.Warnings[0]).Contains(gone.Sha);
+        await Assert.That(files["subjects/login.md"]).Contains("MISSING " + gone.Sha);
+        await Assert.That(files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal)).Any(kv => kv.Value.Contains("MISSING " + gone.Sha))).IsTrue();
+        await Assert.That(files.Keys.Any(k => k.StartsWith("assets/", StringComparison.Ordinal) && k.Contains(gone.Sha[..8], StringComparison.Ordinal))).IsFalse();
+        await Assert.That(files.Keys.Count(k => k.StartsWith("assets/", StringComparison.Ordinal))).IsEqualTo(1);
+
+        var assets = JsonDocument.Parse(files["manifest.json"]).RootElement.GetProperty("assets");
+        var entry = assets.GetProperty($"login/{gone.Sha[..8]}-gone.png");
+        await Assert.That(entry.GetProperty("missing").GetBoolean()).IsTrue();
+        await Assert.That(entry.GetProperty("sha256").GetString()).IsEqualTo(gone.Sha);
+        await Assert.That(assets.GetProperty($"login/{kept.Sha[..8]}-kept.png").GetProperty("missing").GetBoolean()).IsFalse();
+    }
+
+    [Test]
+    public async Task Publish_AssetsNoneOmitsDirectory()
+    {
+        using var db = new TempDb();
+        var one = WriteBlob(db, "alpha", "a.png", "image/png");
+        db.Store.PostFacts(ShotRequest("Login", ShotFact("Shows the login form.", one)));
+
+        db.Store.Publish(Options(db, o => o.Assets = "none"));
+        var files = ReadAll(Out(db));
+
+        await Assert.That(Directory.Exists(Path.Combine(Out(db), "assets"))).IsFalse();
+        await Assert.That(files.Keys.Any(k => k.StartsWith("assets/", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(files["subjects/login.md"]).Contains("`" + one.Sha + "` (image/png, 5 bytes, from [");
+        await Assert.That(files["subjects/login.md"]).DoesNotContain("assets/");
+        foreach (var fact in files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal) && kv.Value.Contains("## Attachments")))
+        {
+            var section = fact.Value[fact.Value.IndexOf("## Attachments", StringComparison.Ordinal)..];
+            section = section[..section.IndexOf("## Referenced by", StringComparison.Ordinal)];
+            await Assert.That(section).DoesNotContain("](");
+            await Assert.That(fact.Value).DoesNotContain("../assets");
+        }
+
+        var manifest = JsonDocument.Parse(files["manifest.json"]).RootElement;
+        await Assert.That(manifest.GetProperty("assets").EnumerateObject().Count()).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Publish_RepublishRemovesStaleAssets()
+    {
+        using var db = new TempDb();
+        var one = WriteBlob(db, "alpha", "a.png", "image/png");
+        var posted = db.Store.PostFacts(ShotRequest("Login", ShotFact("Shows the login form.", one), Fixtures.Fact("A plain fact.")));
+        var withAsset = posted.Response.Facts[0].Id;
+
+        db.Store.Publish(Options(db));
+        var assetPath = Path.Combine(Out(db), $"assets/login/{one.Sha[..8]}-a.png");
+        var foreign = Path.Combine(Out(db), "assets", "login", "mine.txt");
+        File.WriteAllText(foreign, "not generated");
+        await Assert.That(File.Exists(assetPath)).IsTrue();
+
+        db.Store.Retract(withAsset);
+        var result = db.Store.Publish(Options(db));
+
+        await Assert.That(File.Exists(assetPath)).IsFalse();
+        await Assert.That(result.Removed.Contains($"assets/login/{one.Sha[..8]}-a.png")).IsTrue();
+        await Assert.That(File.Exists(foreign)).IsTrue();
+        await Assert.That(JsonDocument.Parse(File.ReadAllText(Path.Combine(Out(db), "manifest.json"))).RootElement
+            .GetProperty("assets").EnumerateObject().Count()).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Publish_AssetNamesAreStableAcrossStores()
+    {
+        using var one = new TempDb();
+        using var two = new TempDb();
+        var shotOne = WriteBlob(one, "identical bytes", "Home Page.png", "image/png");
+        var shotTwo = WriteBlob(two, "identical bytes", "Home Page.png", "image/png");
+        one.Store.PostFacts(ShotRequest("Home", ShotFact("Home has a hero image.", shotOne)));
+        two.Store.PostFacts(ShotRequest("Home", ShotFact("Home has a hero image.", shotTwo)));
+
+        one.Store.Publish(Options(one));
+        two.Store.Publish(Options(two));
+
+        string[] AssetPaths(TempDb db) => ReadAll(Out(db)).Keys.Where(k => k.StartsWith("assets/", StringComparison.Ordinal)).OrderBy(k => k, StringComparer.Ordinal).ToArray();
+        var a = AssetPaths(one);
+        var b = AssetPaths(two);
+        await Assert.That(a.Length).IsEqualTo(1);
+        await Assert.That(a[0]).IsEqualTo($"assets/home/{shotOne.Sha[..8]}-home-page.png");
+        await Assert.That(b.SequenceEqual(a)).IsTrue();
+        await Assert.That(File.ReadAllBytes(Path.Combine(Out(one), a[0])).SequenceEqual(File.ReadAllBytes(Path.Combine(Out(two), b[0])))).IsTrue();
+    }
 }

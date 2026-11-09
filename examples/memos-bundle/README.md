@@ -5,10 +5,11 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/memos-bundle`
-- Generated at: `2026-11-09T21:12:18Z`
+- Generated at: `2026-11-09T21:31:29Z`
 - Scope: every subject
 - Budget per subject: 1200 tokens, depth full
 - Fact files: one per fact under `facts/`
+- Assets: attachment bytes copied under `assets/<subject-slug>/`
 - The timestamp is kept as-is while the bundle's content is unchanged, so republishing identical inputs rewrites nothing.
 
 ## Totals
@@ -17,7 +18,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 - Facts: 32
 - Conflicts: 3
 - Gaps: 0
-- Subject file tokens, all subjects: 1512
+- Subject file tokens, all subjects: 1558
 
 ## How to read it
 
@@ -27,7 +28,11 @@ Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<ke
 2. `subjects/<slug>.md` is the compiled dossier for one subject; each claim ends in its bracketed fact key.
 3. `facts/<slug>-<key>.md` holds one fact in full: text, provenance, data, refs and the facts that reference it.
 4. [conflicts.md](conflicts.md) and [gaps.md](gaps.md) collect the disagreements and the unmet needs across subjects.
-5. [manifest.json](manifest.json) maps fact keys to store ids and paths, subject ids to paths, and lists every generated file.
+5. [manifest.json](manifest.json) maps fact keys to store ids and paths, subject ids to paths, and lists every generated file and every asset.
+
+## Assets
+
+Attachment bytes are copied to `assets/<subject-slug>/<sha8>-<file-stem>.<ext>`: `sha8` is the first 8 hex characters of the blob's sha256, the stem is the attachment's file name without extension (slugified, at most 40 characters, `asset` if empty) and the extension is the file's own, else one derived from the mime type, else `bin`. Subject files list their attachments under an `Assets` heading and fact files under `Attachments`; every link is relative to the file it is in, so from `subjects/` and from `facts/` alike it is `../assets/<subject-slug>/<file>`. A blob shared by two subjects is copied once per subject on purpose, so each subject's directory is self-contained. If a blob was missing from the store when the bundle was published, the entry reads `MISSING <sha256>`, no file exists for it and the manifest records `missing: true`.
 
 ## Slugs
 

@@ -1,6 +1,6 @@
 # Fact f4dc6a2f
 
-Store id: 509e1dd9-77bc-4c0b-aecf-527033d86fa8
+Store id: df247fea-8202-4df9-afa1-570cea664d22
 
 ## Text
 
@@ -20,7 +20,7 @@ The delete action removes the memo after a confirmation.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.3498640+00:00`
+- posted_at: `2026-11-09T21:31:29.1097470+00:00`
 
 ## Refs
 

@@ -1,6 +1,6 @@
 # Fact fb0b6c6b
 
-Store id: 7af23cc5-52c1-4744-93a9-7ed117ebe51e
+Store id: 3c66f10b-d2f0-42d8-8b57-0959ba99cba9
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer auto-saves the draft while the user types.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

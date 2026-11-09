@@ -1,6 +1,6 @@
 # Fact 6ccac6a1
 
-Store id: 1f0a755d-1490-452f-96a4-66e330d36c5e
+Store id: da7a93c4-5fae-4deb-8fb3-ec39ac4f14bf
 
 ## Text
 
@@ -20,7 +20,7 @@ Sign in screen has a username field, a password field, and a submit button.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.2500450+00:00`
+- posted_at: `2026-11-09T21:31:29.0126580+00:00`
 
 ## Refs
 

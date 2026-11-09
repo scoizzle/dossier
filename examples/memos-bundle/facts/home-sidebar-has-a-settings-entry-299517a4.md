@@ -1,6 +1,6 @@
 # Fact 299517a4
 
-Store id: 849c07fc-9415-4a65-a585-7c842c59e1e5
+Store id: 186f661c-b9e4-4f41-b666-e3d129ac67ae
 
 ## Text
 
@@ -20,7 +20,7 @@ Home sidebar has a settings entry for workspace preferences.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

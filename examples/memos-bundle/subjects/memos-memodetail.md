@@ -1,6 +1,6 @@
 # Memos/MemoDetail
 
-- Subject: Memos/MemoDetail (id `fd2df98f-2208-4609-8b66-b098baa429df`)
+- Subject: Memos/MemoDetail (id `5e4ce33a-e265-41a2-bbb0-54ec85222f06`)
 - Kind: screen
 - Parent: [Memos](memos.md)
 - Budget: 1200 tokens

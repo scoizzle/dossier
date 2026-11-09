@@ -1,6 +1,6 @@
 # Fact 977a0461
 
-Store id: 46a883e6-48f2-49ac-a59b-69bedda4b494
+Store id: 18a2821e-88df-45eb-b106-f13fa913f68c
 
 ## Text
 
@@ -20,7 +20,7 @@ Home shows an empty state when the workspace has no memos yet.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

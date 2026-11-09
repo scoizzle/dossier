@@ -1,6 +1,6 @@
 # Fact 7454a029
 
-Store id: 69c6e2c5-8378-4a06-a978-7f2903bc78de
+Store id: 4546ff3d-a8c4-4953-8855-2a9ff0eda0db
 
 ## Text
 
@@ -20,7 +20,7 @@ Clicking the archive button opens the archived memos screen.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:12:18.5533410+00:00`
+- posted_at: `2026-11-09T21:31:29.3042220+00:00`
 
 ## Refs
 

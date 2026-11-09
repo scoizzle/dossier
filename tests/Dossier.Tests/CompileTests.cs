@@ -411,6 +411,84 @@ public sealed class CompileTests
             }
 
     [Test]
+    public async Task Budget_IsMeasuredInRenderedForm()
+    {
+        using var db = new TempDb();
+        var facts = Enumerable.Range(1, 20)
+            .Select(i => Fixtures.Fact($"rendered cost probe {i} " + string.Join(' ', Enumerable.Range(0, 8).Select(w => $"tok{i}x{w}"))))
+            .ToArray();
+        Post(db, "Widget", facts);
+
+        var json = Full(budget: 1200);
+        json.Format = "json";
+        var markdown = Full(budget: 1200);
+        markdown.Format = "markdown";
+
+        var jsonDossier = db.Store.Compile(json);
+        var markdownDossier = db.Store.Compile(markdown);
+
+        // Same store and budget: markdown lines cost less than serialized FactViews, so more fit.
+        await Assert.That(markdownDossier.Facts.Count).IsGreaterThan(jsonDossier.Facts.Count);
+        await Assert.That(markdownDossier.UsedTokens).IsLessThan(jsonDossier.UsedTokens);
+    }
+
+    [Test]
+    public async Task Markdown_StaysWithinBudget()
+    {
+        using var db = new TempDb();
+        var facts = Enumerable.Range(1, 12)
+            .Select(i => Fixtures.Fact($"budget probe {i} " + string.Join(' ', Enumerable.Range(0, 10).Select(w => $"word{i}x{w}"))))
+            .ToArray();
+        Post(db, "Widget", facts);
+
+        var budget = 200;
+        var request = Full(budget: budget);
+        request.Format = "markdown";
+        var dossier = db.Store.Compile(request);
+
+        var factTokens = dossier.Facts.Sum(f => DossierStore.EstimateFactTokens(f, "markdown"));
+        await Assert.That(factTokens).IsLessThanOrEqualTo((int)Math.Floor(budget * 0.75));
+        await Assert.That(dossier.UsedTokens).IsLessThanOrEqualTo(budget);
+
+        // Conflicts are exempt from the fact slice: when they alone exceed the budget the dossier
+        // may overrun it, but every conflict is still surfaced and the facts still fit the slice.
+        using var conflictedDb = new TempDb();
+        Post(
+            conflictedDb,
+            "Widget",
+            Fixtures.Fact("first config", data: Fixtures.Json("""{"a":1,"b":1,"c":1,"d":1}""")),
+            Fixtures.Fact("second config", data: Fixtures.Json("""{"a":2,"b":2,"c":2,"d":2}""")));
+
+        var conflictedRequest = Full(budget: 20);
+        conflictedRequest.Format = "markdown";
+        var conflicted = conflictedDb.Store.Compile(conflictedRequest);
+
+        var conflictedFactTokens = conflicted.Facts.Sum(f => DossierStore.EstimateFactTokens(f, "markdown"));
+        await Assert.That(conflicted.Conflicts.Count).IsEqualTo(4);
+        await Assert.That(conflicted.SelfCheck.ConflictsSurfaced).IsEqualTo(4);
+        await Assert.That(conflictedFactTokens).IsLessThanOrEqualTo((int)Math.Floor(20 * 0.75));
+        await Assert.That(conflicted.UsedTokens).IsGreaterThan(conflicted.BudgetTokens);
+    }
+
+    [Test]
+    public async Task IndexDepth_UsesRenderedCost()
+    {
+        using var db = new TempDb();
+        var facts = Enumerable.Range(1, 20)
+            .Select(i => Fixtures.Fact($"fact {i} " + string.Join(' ', Enumerable.Range(0, 60).Select(w => $"word{i}x{w}"))))
+            .ToArray();
+        Post(db, "Widget", facts);
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Format = "markdown" });
+        var rendered = DossierStore.RenderMarkdown(dossier);
+
+        await Assert.That(dossier.Depth).IsEqualTo("index");
+        await Assert.That(DossierStore.EstimateTokens(rendered)).IsLessThanOrEqualTo(300);
+        await Assert.That(DossierStore.EstimateRenderedTokens(dossier, "markdown")).IsLessThanOrEqualTo(300);
+        await Assert.That(dossier.Facts.Count).IsGreaterThan(0);
+    }
+
+    [Test]
     public async Task SeqOrder_IsChronological()
     {
         using var db = new TempDb();

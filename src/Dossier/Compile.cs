@@ -106,6 +106,27 @@ public sealed partial class DossierStore
     /// <summary>Token estimator: ceil(length / 4).</summary>
     public static int EstimateTokens(string value) => (value.Length + 3) / 4;
 
+    /// <summary>
+    /// Estimated tokens of one fact as the caller receives it in the requested format:
+    /// the serialized FactView for json, or the single rendered markdown line for markdown.
+    /// </summary>
+    public static int EstimateFactTokens(FactView fact, string format) => format == "markdown"
+        ? EstimateTokens("- " + OneLine(fact.Text, int.MaxValue) + " [" + fact.Id + "]\n")
+        : EstimateTokens(Serialize(fact));
+
+    /// <summary>Estimated tokens of a whole dossier as the caller receives it in the requested format.</summary>
+    public static int EstimateRenderedTokens(CompiledDossier dossier, string format) => format == "markdown"
+        ? EstimateTokens(RenderMarkdown(dossier))
+        : EstimateTokens(Serialize(dossier));
+
+    private static int EstimateConflictTokens(DossierConflict conflict, string format) => format == "markdown"
+        ? EstimateTokens("- " + conflict.Field + ": " + string.Join("; ", conflict.Values.Select(v => $"{v.Value.GetRawText()} [{v.Fact}]")) + "\n")
+        : EstimateTokens(Serialize(conflict));
+
+    private static int EstimateGapTokens(DossierGap gap, string format) => format == "markdown"
+        ? EstimateTokens("- " + gap.Need + ": " + gap.Reason + "\n")
+        : EstimateTokens(Serialize(gap));
+
     private sealed class Candidate
     {
         public string Id = string.Empty;
@@ -157,6 +178,7 @@ public sealed partial class DossierStore
         }
 
         var needs = (request.Needs ?? new List<string>()).ToList();
+        var format = request.Format ?? "json";
 
         using var connection = OpenConnection();
         var subject = ResolveCompileSubject(connection, request.Subject);
@@ -176,7 +198,6 @@ public sealed partial class DossierStore
 
         var representatives = Dedupe(ranked);
         var conflicts = FindConflicts(candidates, subject.Id);
-        var conflictTokens = conflicts.Sum(c => EstimateTokens(Serialize(c)));
 
         var views = representatives.ToDictionary(c => c.Id, ToDossierView, StringComparer.Ordinal);
         var emitted = new List<Candidate>();
@@ -189,7 +210,7 @@ public sealed partial class DossierStore
             var running = 0;
             foreach (var candidate in representatives)
             {
-                var cost = EstimateTokens(Serialize(views[candidate.Id]));
+                var cost = EstimateFactTokens(views[candidate.Id], format);
                 if (running + cost <= factSlice)
                 {
                     running += cost;
@@ -211,7 +232,7 @@ public sealed partial class DossierStore
                 if (fits && emitted.Count < IndexMaxFacts)
                 {
                     var trial = BuildDossier(subject, depth, needs, budget, emitted.Append(candidate).ToList(), views, conflicts, new List<DossierGap>(), representatives);
-                    if (EstimateTokens(Serialize(trial)) <= cap)
+                    if (EstimateRenderedTokens(trial, format) <= cap)
                     {
                         emitted.Add(candidate);
                         continue;
@@ -231,7 +252,7 @@ public sealed partial class DossierStore
             while (emitted.Count > 0)
             {
                 var trial = BuildDossier(subject, depth, needs, budget, emitted, views, conflicts, gaps, representatives);
-                if (EstimateTokens(Serialize(trial)) <= cap)
+                if (EstimateRenderedTokens(trial, format) <= cap)
                 {
                     break;
                 }
@@ -251,9 +272,9 @@ public sealed partial class DossierStore
 
         var dossier = BuildDossier(subject, depth, needs, budget, emitted, views, conflicts, gaps, representatives);
         dossier.UsedTokens =
-            dossier.Facts.Sum(f => EstimateTokens(Serialize(f)))
-            + conflictTokens
-            + gaps.Sum(g => EstimateTokens(Serialize(g)));
+            dossier.Facts.Sum(f => EstimateFactTokens(f, format))
+            + dossier.Conflicts.Sum(c => EstimateConflictTokens(c, format))
+            + dossier.Gaps.Sum(g => EstimateGapTokens(g, format));
         return dossier;
     }
 

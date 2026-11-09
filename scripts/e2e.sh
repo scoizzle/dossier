@@ -44,29 +44,41 @@ facts_created="$(printf '%s\n' "$seed_out" | sed -n 's/^facts_created=//p')"
 echo "== subjects created: $subjects_created"
 echo "== facts created: $facts_created"
 
-# 2. A search result count for a query.
+# 2. Compile counts for the root subject, without and with descendants.
+plain_json="$(dotnet "$DLL" dossier compile --subject "Memos" --depth full 2>/dev/null)"
+plain_facts="$(printf '%s' "$plain_json" | jq '.facts | length')"
+descendants_json="$(dotnet "$DLL" dossier compile --subject "Memos" --depth full --descendants 2>/dev/null)"
+descendants_facts="$(printf '%s' "$descendants_json" | jq '.facts | length')"
+echo "== compile Memos (default budget): facts=$plain_facts"
+echo "== compile Memos --descendants: facts=$descendants_facts"
+if [ "$descendants_facts" -le "$plain_facts" ]; then
+  echo "descendants compile ($descendants_facts) must exceed plain compile ($plain_facts)" >&2
+  exit 1
+fi
+
+# 3. A search result count for a query.
 search_json="$(dotnet "$DLL" search --subject "Memos/Home" --q "composer" --limit 100)"
 search_total="$(printf '%s' "$search_json" | sed -n 's/.*"total":\([0-9]*\).*/\1/p')"
 echo "== search total for q=composer: $search_total"
 
-# 3. The compiled markdown for Memos/Home at depth full.
+# 4. The compiled markdown for Memos/Home at depth full.
 markdown="$(dotnet "$DLL" dossier compile --subject "Memos/Home" --depth full --format markdown 2>/dev/null)"
 printf '%s\n' "$markdown"
 
-# 4. The conflicts section (three seeded contradictions on Memos/Home).
+# 5. The conflicts section (three seeded contradictions on Memos/Home).
 printf '%s\n' "$markdown" | sed -n '/^## Conflicts/,$p'
 
-# 5. The gaps for two needs that no fact answers.
+# 6. The gaps for two needs that no fact answers.
 gaps_md="$(dotnet "$DLL" dossier compile --subject "Memos/Home" --depth full --format markdown --need "billing invoice" --need "webhook signature" 2>/dev/null)"
 printf '%s\n' "$gaps_md" | sed -n '/^## Gaps/,$p'
 
-# 6. A dump manifest with created and deduped counts (two identical dumps).
+# 7. A dump manifest with created and deduped counts (two identical dumps).
 dump_first="$(dotnet "$DLL" dump --source "$ROOT/scripts/seed/notes.md" --subject "Memos" --split heading)"
 dump_second="$(dotnet "$DLL" dump --source "$ROOT/scripts/seed/notes.md" --subject "Memos" --split heading)"
 echo "== dump first:  created=$(count_json_array "$(array_field "$dump_first" created)") deduped=$(count_json_array "$(array_field "$dump_first" deduped)")"
 echo "== dump second: created=$(count_json_array "$(array_field "$dump_second" created)") deduped=$(count_json_array "$(array_field "$dump_second" deduped)")"
 
-# 7. A correlate proposal count.
+# 8. A correlate proposal count.
 correlate_json="$(dotnet "$DLL" correlate --subject "Memos/Home")"
 correlate_count="$(printf '%s' "$correlate_json" | { grep -o '"fact_id"' || true; } | wc -l | tr -d ' ')"
 echo "== correlate proposals: $correlate_count"

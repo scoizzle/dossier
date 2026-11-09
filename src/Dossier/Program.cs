@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|post --file <path>|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>>";
+const string usage = "usage: dossier <init|post --file <path>|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...>";
 
 if (args.Length == 0)
 {
@@ -109,6 +109,49 @@ try
             return 0;
         }
 
+        case "dossier":
+        {
+            if (args.Length < 2 || args[1] != "compile")
+            {
+                Console.Error.WriteLine("usage: dossier dossier compile --subject <s> [--budget n] [--depth index|full] [--format json|markdown] [--need text]... [--descendants] [--order rank|seq] [--recency 0..1]");
+                return 1;
+            }
+
+            var subject = ValueAfter(args, "--subject");
+            if (subject is null)
+            {
+                Console.Error.WriteLine("compile requires --subject <subject>");
+                return 1;
+            }
+
+            var format = ValueAfter(args, "--format") ?? "json";
+            if (format is not ("json" or "markdown"))
+            {
+                Console.Error.WriteLine($"--format must be json or markdown, got \"{format}\"");
+                return 1;
+            }
+
+            var compileRequest = new CompileRequest
+            {
+                Subject = subject,
+                Budget = ParseInt(ValueAfter(args, "--budget"), "--budget"),
+                Depth = ValueAfter(args, "--depth"),
+                Order = ValueAfter(args, "--order"),
+                Needs = ValuesAfter(args, "--need"),
+                Descendants = args.Contains("--descendants") ? true : null,
+                Rank = ValueAfter(args, "--recency") is { } recency
+                    ? new RankOptions { Recency = double.Parse(recency, System.Globalization.CultureInfo.InvariantCulture) }
+                    : null,
+            };
+
+            var dossier = new DossierStore().Compile(compileRequest);
+            Console.Error.WriteLine("token estimator: chars/4");
+            Console.WriteLine(format == "markdown"
+                ? DossierStore.RenderMarkdown(dossier).TrimEnd('\n')
+                : JsonSerializer.Serialize(dossier, JsonCodec.Options));
+            return 0;
+        }
+
         default:
             Console.Error.WriteLine(usage);
             return 1;
@@ -131,6 +174,35 @@ static string? ValueAfter(string[] arguments, string flag)
     }
 
     return null;
+}
+
+static List<string> ValuesAfter(string[] arguments, string flag)
+{
+    var values = new List<string>();
+    for (var i = 1; i < arguments.Length - 1; i++)
+    {
+        if (arguments[i] == flag)
+        {
+            values.Add(arguments[i + 1]);
+        }
+    }
+
+    return values;
+}
+
+static int? ParseInt(string? value, string flag)
+{
+    if (value is null)
+    {
+        return null;
+    }
+
+    if (!int.TryParse(value, out var number))
+    {
+        throw new ArgumentException($"{flag} must be an integer, got \"{value}\"");
+    }
+
+    return number;
 }
 
 static int? ParseLimit(string? value)

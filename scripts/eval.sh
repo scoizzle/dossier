@@ -70,7 +70,7 @@ c_artifacts=$(( c_files + shots ))
 set -x
 
 # Arm B: the compiled dossier at budget 1200, depth full, format markdown.
-dotnet "$DLL" dossier compile --subject "$SUBJECT" --budget 1200 --depth full --format markdown > "$OUT/arm-b.md" 2>/dev/null
+dotnet "$DLL" dossier compile --subject "$SUBJECT" --budget 1200 --budget-mode strict --depth full --format markdown > "$OUT/arm-b.md" 2>/dev/null
 
 a_chars="$(wc -c < "$OUT/arm-a.json" | tr -d ' ')"
 a2_chars="$(wc -c < "$OUT/arm-a2.txt" | tr -d ' ')"

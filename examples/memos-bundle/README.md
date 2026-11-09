@@ -5,7 +5,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/memos-bundle`
-- Generated at: `2026-11-09T21:02:25Z`
+- Generated at: `2026-11-09T21:12:18Z`
 - Scope: every subject
 - Budget per subject: 1200 tokens, depth full
 - Fact files: one per fact under `facts/`
@@ -17,17 +17,17 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 - Facts: 32
 - Conflicts: 3
 - Gaps: 0
-- Subject file tokens, all subjects: 1449
+- Subject file tokens, all subjects: 1512
 
 ## How to read it
 
-Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<shortid>.md
+Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md
 
 1. [INDEX.md](INDEX.md) lists every subject with its fact, conflict and gap counts and the token cost of its file.
-2. `subjects/<slug>.md` is the compiled dossier for one subject; each claim ends in its bracketed fact id.
-3. `facts/<shortid>.md` holds one fact in full: text, provenance, data, refs and the facts that reference it.
+2. `subjects/<slug>.md` is the compiled dossier for one subject; each claim ends in its bracketed fact key.
+3. `facts/<slug>-<key>.md` holds one fact in full: text, provenance, data, refs and the facts that reference it.
 4. [conflicts.md](conflicts.md) and [gaps.md](gaps.md) collect the disagreements and the unmet needs across subjects.
-5. [manifest.json](manifest.json) maps ids to paths and lists every generated file.
+5. [manifest.json](manifest.json) maps fact keys to store ids and paths, subject ids to paths, and lists every generated file.
 
 ## Slugs
 

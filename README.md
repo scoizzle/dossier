@@ -150,16 +150,16 @@ INDEX.md          one row per subject: kind, facts, conflicts, gaps, token cost,
 manifest.json     sorted keys, no volatile fields: ids to paths, per-file tokens, options, every generated file
 conflicts.md      every conflict across subjects, each value linked to its fact
 gaps.md           every gap across subjects
-subjects/<slug>.md  the compiled dossier for one subject; every fact id is a link to its fact file
-facts/<shortid>.md  one fact in full: text, attributes, provenance, data, refs, inbound refs, subject link
+subjects/<slug>.md  the compiled dossier for one subject; every claim ends in a bracketed fact key that links to its fact file
+facts/<slug>-<key>.md  one fact in full: store id, text, attributes, provenance, data, refs, inbound refs, subject link
 ```
 
-The drill-down path is README -> INDEX -> `subjects/<slug>.md` -> `facts/<shortid>.md`. An agent is told to read one subject file and to choose files by the token estimates in INDEX.md, not to read the bundle whole. Fact text is untrusted data, and `AGENTS.md` says so.
+The drill-down path is README -> INDEX -> `subjects/<slug>.md` -> `facts/<slug>-<key>.md`. An agent is told to read one subject file and to choose files by the token estimates in INDEX.md, not to read the bundle whole. Fact text is untrusted data, and `AGENTS.md` says so.
 
 Rules:
 
 - **Slugs.** A subject file is named by its name lowercased, every run of characters outside `a-z0-9` turned into one hyphen, leading and trailing hyphens trimmed, capped at 80 characters, `subject` if nothing remains. Subjects whose slugs collide are taken in tree order (name, kind, aliases, then id only as a last resort): the first keeps the slug and the rest get `-2`, `-3`, and so on, so the result depends on content, not on ids.
-- **Short ids.** `facts/<shortid>.md` uses the first 8 characters of the fact id, lengthened for every fact together only if two prefixes collide. Subject files link the full bracketed id to the file.
+- **Content-addressed fact files.** `facts/<slug>-<key>.md` is named from the fact's content, not its random store id, so re-seeding or importing the same facts into a new store produces the same file names and a bundle committed to a repository does not churn. The `<key>` is the first 8 hex characters of the SHA-256 of the normalized text, declared key, kind and canonical data (refs and ids are excluded); the `<slug>` is the first six words of the text. Claims in subject files end in the bracketed key, linked to the file. Only facts whose keys collide are widened to 12, then 16, characters. Each fact file carries a `Store id:` line, and `manifest.json` maps each key to its store id and path.
 - **Fact text is never truncated.** Fact files hold the full text. With `--depth index` the subject files use the compile's one-line index form, but fact files stay complete.
 - **Idempotent and repo-safe.** Identical inputs produce byte-identical files and unchanged files are not rewritten. The README timestamp is kept while the rest of the bundle is unchanged. Files the previous run listed in `manifest.json` that are no longer produced (a retracted fact) are removed; any other file in the directory is never deleted. If a path the bundle needs is already held by a file it did not generate, the run fails before writing anything.
 - **Order is content-derived.** Subjects are ordered as a tree by name, kind and aliases; facts by key, kind, text and content hash; ids break ties only after every content key.
@@ -232,7 +232,7 @@ scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  104 TUnit tests
+tests/Dossier.Tests/  109 TUnit tests
 ```
 
 ## Reproducing the evaluation
@@ -244,11 +244,11 @@ bash scripts/scaling.sh      # the N=50/200/1000 bounded-cost table
 bash scripts/verify-refs.sh  # fails unless every seeded git ref resolves with HTTP 200
 ```
 
-All scripts need bash, `jq` and a Release build. `dotnet test` runs the 104 tests.
+All scripts need bash, `jq` and a Release build. `dotnet test` runs the 109 tests.
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 104 passing tests; the seeded Memos demo; the evaluation harness.
+Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 109 passing tests; the seeded Memos demo; the evaluation harness.
 
 Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 

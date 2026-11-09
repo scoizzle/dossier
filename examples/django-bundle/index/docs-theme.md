@@ -4,6 +4,6 @@ This file lists every subject under `docs/_theme/`, one row per subject, grouped
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|         docs/_theme/djangodocs/static/fontawesome/LICENSE | subject | 8 | 0 | 0 | 479 | [subjects/docs-theme-djangodocs-static-fontawesome-license.md](../subjects/docs-theme-djangodocs-static-fontawesome-license.md) |
+|         docs/_theme/djangodocs/static/fontawesome/LICENSE | subject | 8 | 0 | 0 | 479 | [subjects/docs-theme-djangodocs-static-fontawesome-license/index.md](../subjects/docs-theme-djangodocs-static-fontawesome-license/index.md) |
 
 Up: [index/docs.md](docs.md)

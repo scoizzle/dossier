@@ -150,18 +150,29 @@ INDEX.md          one row per subject: kind, facts, conflicts, gaps, token cost,
 manifest.json     sorted keys, no volatile fields: ids to paths, per-file tokens, options, every generated file
 conflicts.md      every conflict across subjects, each value linked to its fact
 gaps.md           every gap across subjects
-subjects/<slug>.md  the compiled dossier for one subject; every claim ends in a bracketed fact key that links to its fact file
-facts/<slug>-<key>.md  one fact in full: store id, text, attributes, provenance, data, refs, inbound refs, attachments, subject link
-assets/<subject-slug>/<sha8>-<file-stem>.<ext>  the bytes of each attachment on that subject's facts
+index/<group>.md  deeper index files, only when INDEX.md would exceed --index-max-tokens; a `group` row links to one
+subjects/<slug>/index.md  the compiled dossier for one subject; every claim ends in a bracketed fact key that links to its fact file
+subjects/<slug>/facts/<words>-<key>.md  one fact in full: store id, text, attributes, provenance, data, refs, inbound refs, attachments, subject link
+subjects/<slug>/assets/<sha8>-<file-stem>.<ext>  the bytes of each attachment on that subject's facts
 ```
 
-The drill-down path is README -> INDEX -> `subjects/<slug>.md` -> `facts/<slug>-<key>.md`. An agent is told to read one subject file and to choose files by the token estimates in INDEX.md, not to read the bundle whole. Fact text is untrusted data, and `AGENTS.md` says so.
+Everything that belongs to a subject lives in that subject's directory, so removing a subject removes one directory.
+
+The drill-down path is AGENTS.md -> INDEX.md -> `index/<group>.md` -> `subjects/<slug>/index.md` -> `subjects/<slug>/facts/<key>.md`. An agent is told to read one subject file and to choose files by the token estimates in INDEX.md, not to read the bundle whole. Fact text is untrusted data, and `AGENTS.md` says so.
+
+A fact file links onward to the facts and subjects it depends on, so the bundle is a graph to walk, not a list of described edges:
+
+- A ref of kind `fact` links to that fact's file; a ref of kind `slot` (`<subject>#<key>`) links to the fact that currently occupies the slot, so after the slot is superseded the link points at the new head, and an empty slot is shown as text marked `unresolved slot`; a ref of kind `subject` (id or name) links to that subject's `index.md`.
+- Paths are computed from the two files they join: `<file>` inside one subject, `../../<other>/facts/<file>` to a fact in another subject, `../../<other>/index.md` to another subject from a fact file and `../<other>/index.md` from a subject's index.md. The `Referenced by` list links back with the referring fact's kind and rel.
+- External refs (git, file, doc, http) stay text, except a target starting with `http://` or `https://`, which is a plain markdown link with the URL unchanged.
+- Every generated internal link resolves to a file in the bundle. A ref whose target is not in the bundle (outside a `--subject` scope, superseded, or `--facts none`) is shown as text, never as a dangling link.
+- A subject with no live fact and no descendant holding one gets no directory, so retracting its last fact removes it on the next publish.
 
 Rules:
 
-- **Slugs.** A subject file is named by its name lowercased, every run of characters outside `a-z0-9` turned into one hyphen, leading and trailing hyphens trimmed, capped at 80 characters, `subject` if nothing remains. Subjects whose slugs collide are taken in tree order (name, kind, aliases, then id only as a last resort): the first keeps the slug and the rest get `-2`, `-3`, and so on, so the result depends on content, not on ids.
-- **Content-addressed fact files.** `facts/<slug>-<key>.md` is named from the fact's content, not its random store id, so re-seeding or importing the same facts into a new store produces the same file names and a bundle committed to a repository does not churn. The `<key>` is the first 8 hex characters of the SHA-256 of the normalized text, declared key, kind and canonical data (refs and ids are excluded); the `<slug>` is the first six words of the text. Claims in subject files end in the bracketed key, linked to the file. Only facts whose keys collide are widened to 12, then 16, characters. Each fact file carries a `Store id:` line, and `manifest.json` maps each key to its store id and path.
-- **Assets.** Attachment bytes are copied from `blobs/<sha256>` (next to the database) to `assets/<subject-slug>/<sha8>-<file-stem>.<ext>`: `sha8` is the first 8 hex characters of the blob's sha256, the stem is the attachment file name without extension (slugified like fact files, at most 40 characters, `asset` if empty), and the extension is the file's own lowercased, else derived from the mime type, else `bin`. Names depend only on the attachment, so independent stores agree. A blob used by two subjects is copied once per subject, deliberately duplicating bytes so each subject directory is self-contained. Subject files get an `Assets` section and fact files an `Attachments` section; **every link is relative to the file it is written in**, so from `subjects/` and from `facts/` alike it is `../assets/<subject-slug>/<file>`. `manifest.json` gains an `assets` map keyed `subject-slug/filename` with `{sha256, bytes, mime, missing}`. Republishing removes asset files it generated earlier and no longer needs, by the same manifest rule as markdown, and never a file it did not generate. `--assets none` writes no `assets/` directory and lists attachments by sha256 with no link.
+- **Slugs.** A subject directory is named by its name lowercased, every run of characters outside `a-z0-9` turned into one hyphen, leading and trailing hyphens trimmed, capped at 80 characters, `subject` if nothing remains. Subjects whose slugs collide are taken in tree order (name, kind, aliases, then id only as a last resort): the first keeps the slug and the rest get `-2`, `-3`, and so on, so the result depends on content, not on ids.
+- **Content-addressed fact files.** `subjects/<slug>/facts/<words>-<key>.md` is named from the fact's content, not its random store id, so re-seeding or importing the same facts into a new store produces the same file names and a bundle committed to a repository does not churn. The `<key>` is the first 8 hex characters of the SHA-256 of the normalized text, declared key, kind and canonical data (refs and ids are excluded); the `<words>` are the first six words of the text, and no subject prefix is part of the file name (the directory carries it). Claims in subject files end in the bracketed key, linked to the file. Only facts whose keys collide are widened to 12, then 16, characters. Each fact file carries a `Store id:` line, and `manifest.json` maps each key to its store id and path.
+- **Assets.** Attachment bytes are copied from `blobs/<sha256>` (next to the database) to `subjects/<slug>/assets/<sha8>-<file-stem>.<ext>`: `sha8` is the first 8 hex characters of the blob's sha256, the stem is the attachment file name without extension (slugified like fact files, at most 40 characters, `asset` if empty), and the extension is the file's own lowercased, else derived from the mime type, else `bin`. Names depend only on the attachment, so independent stores agree. A blob used by two subjects is copied once per subject, deliberately duplicating bytes so each subject directory is self-contained. Subject files get an `Assets` section and fact files an `Attachments` section; **every link is relative to the file it is written in**: `assets/<file>` from the subject's `index.md` and `../assets/<file>` from one of its fact files. `manifest.json` gains an `assets` map keyed by the asset's bundle path with `{sha256, bytes, mime, missing}`. Republishing removes asset files it generated earlier and no longer needs, by the same manifest rule as markdown, and never a file it did not generate. `--assets none` writes no assets directories and lists attachments by sha256 with no link.
 - **Missing blobs are fail-open.** If `blobs/<sha256>` does not exist, publish still writes the markdown, renders the entry as `MISSING <sha256>`, creates no asset file, records `{sha256, missing: true}` in the manifest, prints a warning line to stderr and exits 0. (A file in the output directory that the bundle did not generate is different: that still refuses, before writing anything.)
 - **Fact text is never truncated.** Fact files hold the full text. With `--depth index` the subject files use the compile's one-line index form, but fact files stay complete.
 - **Idempotent and repo-safe.** Identical inputs produce byte-identical files and unchanged files are not rewritten. The README timestamp is kept while the rest of the bundle is unchanged. Files the previous run listed in `manifest.json` that are no longer produced (a retracted fact) are removed; any other file in the directory is never deleted. If a path the bundle needs is already held by a file it did not generate, the run fails before writing anything.
@@ -235,7 +246,7 @@ scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  109 TUnit tests
+tests/Dossier.Tests/  129 TUnit tests
 ```
 
 ## Reproducing the evaluation
@@ -247,11 +258,11 @@ bash scripts/scaling.sh      # the N=50/200/1000 bounded-cost table
 bash scripts/verify-refs.sh  # fails unless every seeded git ref resolves with HTTP 200
 ```
 
-All scripts need bash, `jq` and a Release build. `dotnet test` runs the 109 tests.
+All scripts need bash, `jq` and a Release build. `dotnet test` runs the 129 tests.
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 109 passing tests; the seeded Memos demo; the evaluation harness.
+Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 129 passing tests; the seeded Memos demo; the evaluation harness.
 
 Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 

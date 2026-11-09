@@ -1,0 +1,29 @@
+# django/db/models/fields/related_descriptors
+
+- Subject: django/db/models/fields/related_descriptors (id `96db90a6-9d97-483e-9778-477a0fe24452`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 890 tokens
+- Facts shown: 13 of 241
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- self.remove(*old_objs, bulk=bulk) self.add(*new_objs, bulk=bulk) else: self.add(*objs, bulk=bulk) [d9065309]
+- new_objs = [] for obj in objs: fk_val = ( self.target_field.get_foreign_related_value(obj)[0] if isinstance(obj, self.model) else self.target_field.get_prep_value(obj) ) if fk_val in old_ids: old_ids.remove(fk_val) else: new_objs.append(obj) [f0259970]
+- self._remove_base(*old_ids, using=db, raw=raw) self._add_base( *new_objs, through_defaults=through_defaults, using=db, raw=raw ) [ea4a8d13]
+- if must_send_signals: signals.m2m_changed.send( sender=self.through, action="post_add", instance=self.instance, reverse=self.reverse, model=self.model, pk_set=missing_target_ids, using=db, raw=raw, ) [a514c4f5]
+- signals.m2m_changed.send( sender=self.through, action="post_clear", instance=self.instance, reverse=self.reverse, model=self.model, pk_set=None, using=db, raw=raw, ) [2186c0a2]
+- signals.m2m_changed.send( sender=self.through, action="post_remove", instance=self.instance, reverse=self.reverse, model=self.model, pk_set=old_ids, using=db, raw=raw, ) [5b390406]
+- # Check that all the objects are of the right type old_ids = set() for obj in objs: if isinstance(obj, self.model): fk_val = self.target_field.get_foreign_related_value(obj)[0] old_ids.add(fk_val) else: old_ids.add(obj) [bc854777]
+- # For non-autocreated 'through' models, can't assume we are # dealing with PK values. fk = self.through._meta.get_field(self.source_field_name) join_table = fk.model._meta.db_table connection = connections[queryset.db] qn = connection.ops.quote_name queryset = queryset.extra( select={ "_prefetch_related_val_%s" % f.attname: "%s.%s" % (qn(join_table), qn(f.column)) for f in fk.local_related_fields } ) # Restore subsequent cloning operations. if _cloning_disabled: queryset._enable_cloning() [e191cb59]
+- # If any of the related model's fields are deferred, fallback to # fetching all fields from the related model. This avoids a query # on the related model for every deferred field. if not any(field in fields for field in deferred): kwargs = {field: getattr(instance, field) for field in fields} obj = rel_model(**kwargs) obj._state.adding = instance._state.adding obj._state.db = instance._state.db obj._state.fetch_mode = instance._state.fetch_mode return obj return super().get_object(instance) [f8040e9f]
+- # If we've got an old related object, we need to clear out its # cache. This cache also might not exist if the related object # hasn't been accessed yet. if related is not None: remote_field.set_cached_value(related, None) [be832d3f]
+- # M2M: need to annotate the query in order to get the primary model # that the secondary model was actually related to. We know that # there will already be a join on the join table, so we can just # add the select. [6f243e1f]
+- # Set the forward accessor cache on the related object to the # current instance to avoid an extra SQL query if it's accessed # later on. self.related.field.set_cached_value(value, instance) [9f9e02e7]
+- # Set the related instance cache used by __get__ to avoid an SQL # query when accessing the attribute we just set. self.related.set_cached_value(instance, value) [6ac746de]
+
+## Beyond the budget
+
+194 more facts did not fit in the budget: [8ecfde24] [7cd64c6a] [b4d3b68eef051f81-2] [3a74b1f45ab47fab-2] [c9131a0e9b2c331b-2] [9f3f26cae09870be-2] [895f46b98568eca6-2] [165a33af] [af407daf] [9b2627f7] [4b313cd9] [a8dc5976] [8761568a] [7786fe39] [b759344d] [bb3571f8] [fc98e7af] [4faa93b0] [3e2cb7cf] [cbc3fb5e] [66d5efa6] [f18eed73] [58101b34] [021ded2ac309d7b4-2] [7e057104] [59d4c25c] [9767fc5f] [fb442ebe] [dfbf7a2c685d65c9-2] [ff81129f] [8f156eb5] [1056ad5e] [a7d2ec6a] [36b3b6c9] [d73a156f] [79fd40c1] [2b13661e] [ef36f684] [fcfef640] [cb923e47] [e23c3ae2] [3176276d] [9a782660] [1966e7c1] [34a7f1be] [410f2b43] [cdd59f15] [868d1fb1] [d0feedaf] [393ec062] [8cd39301] [680ef256] [8cb77637] [8b5fced0] [f499c94e23f07ee5-2] [576409106383f1ca-2] [4f35f36a17cab1a3-2] [6c126b1d98a061cc-2] [bc48feccc450613f-2] [3434eecf7cd14c12-2] [3f4ffe56] [7a794f12] [2698ceb5ad4b32cc-2] [531b1361] [ebc04f4cc76f7fa0-2] [4a3bb920] [8033b64d] [992b1e68] [3a3b5c71] [f3750fe957b9e064-2] [1806ae32] [2c650fdeabb2939b-2] [f6b67f322d028d9d] [c2487062] [cfe4d7e079e363a5] [347b90046126c94d-2] [ba21b523] [a6d92251] [53550438] [60202e80] [2c23425f] [dea52453] [0e083e77] [4d0ea72e] [5edb9ced] [2b91dce7] [9747ab11] [0a02a8d2] [83124cea] [87ba2902] [d465f8fe] [7d954ba3] [2e783337] [35199c9e] [319dcfda] [222c6118] [12bcc4a1] [56baaf14] [3896de39] [49274d3e] [ebc3023e8bbe4e56] [54f23ec3] [b213b10c] [cee76358] [cf61eb77] [8eb8870d] [fda8c66e065de4e2-2] [ce9adfa1a6799e1e-2] [fcb2ab51] [24689b99] [913946cd] [25fbe00e] [88757579] [419152e9] [182c4b94] [41502b49] [d05af26d] [180d0826c75792e9-2] [2e9b28d6d374cb12-2] [449d0e25] [644cdff0] [7c27dd71] [fe9bb1bd] [320c82ed] [a4e30d52] [03b76986ddf3adcd-2] [03b76986ddf3adcd-3] [03b76986ddf3adcd-4] [03b76986ddf3adcd-5] [03b76986ddf3adcd-6] [a123a783] [fee355c6] [984af1ca] [8d1ecacf] [bdab423a] [837a7d36] [284b49a0] [86855058] [fc3c4737] [06ec5a17] [f08f9348] [afdc0d1f] [f9c66036] [87a24292] [9856dbd3] [cc830a3e] [a8c2b2fb] [32ec6145] [26128bcd] [de2a4e24] [98418597] [af30b014] [552cbc26] [7b36b515] [20bc9a6f] [2c14e907] [40a2ac9d] [03e29ef5] [0e9b332b] [d3d4da38] [05f2d811] [56fac176bcde2407-2] [b022277a] [af942c30] [c91207fb] [fea1a465] [ebeae941] [c3fcfdb0] [77a0a4b2] [e78e7d4b] [8cd3a0ef] [a512ec4f] [f17aa437] [31c1e450] [abdc1d7a] [61956a20] [a3b9c764] [f2df9b5e] [f1a0d5f2] [5e4d0310] [ae4bae82] [9905e5e7] [79080c56] [8764ce41] [bdf22780] [f752cf14] [23387673] [720b2756] [a096e403] [9a08ef05] [70827747] [20439fe9] [770890ad88958a4c-12] [46e58c49]

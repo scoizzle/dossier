@@ -1,0 +1,18 @@
+# django/core/mail/utils
+
+- Subject: django/core/mail/utils (id `e8c800ad-0ff1-4598-a616-803640e0078e`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 177 tokens
+- Facts shown: 6 of 6
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def get_fqdn(self): if not hasattr(self, "_fqdn"): self._fqdn = punycode(socket.getfqdn()) return self._fqdn [907712f6]
+- """ Email message and email sending related helper functions. """ [ec9b3e69]
+- # Cache the hostname, but do it lazily: socket.getfqdn() can take a couple of # seconds, which slows down the restart of the server. class CachedDnsName: def __str__(self): return self.get_fqdn() [5e92de6c]
+- DNS_NAME = CachedDnsName() [dd38d8d3]
+- from django.utils.encoding import punycode [92ee1802]
+- import socket [63a09fd79c1eb796]

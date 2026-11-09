@@ -69,6 +69,22 @@ public sealed class PublishTests
         return (entry.Name, entry.Value.GetProperty("path").GetString()!);
     }
 
+    private static bool IsFactFile(string path) =>
+        path.StartsWith("subjects/", StringComparison.Ordinal) && path.Contains("/facts/", StringComparison.Ordinal);
+
+    private static bool IsAssetFile(string path) =>
+        path.StartsWith("subjects/", StringComparison.Ordinal) && path.Contains("/assets/", StringComparison.Ordinal);
+
+    private static bool IsSubjectIndex(string path) =>
+        path.StartsWith("subjects/", StringComparison.Ordinal) && path.EndsWith("/index.md", StringComparison.Ordinal);
+
+    /// <summary>Resolves a relative link written in the bundle file <paramref name="from"/> to a bundle-relative path.</summary>
+    private static string Resolve(string from, string target)
+    {
+        var dir = from.Contains('/') ? from[..from.LastIndexOf('/')] : string.Empty;
+        return Path.GetFullPath(Path.Combine("/r", dir, target))[3..];
+    }
+
     private static string FileName(string path) => path[(path.LastIndexOf('/') + 1)..];
 
     [Test]
@@ -85,10 +101,10 @@ public sealed class PublishTests
             await Assert.That(files.ContainsKey(required)).IsTrue();
         }
 
-        await Assert.That(files.ContainsKey("subjects/my-app.md")).IsTrue();
-        await Assert.That(files.ContainsKey("subjects/home-screen.md")).IsTrue();
-        await Assert.That(files.ContainsKey("subjects/settings-screen.md")).IsTrue();
-        await Assert.That(files.Keys.Count(k => k.StartsWith("facts/", StringComparison.Ordinal))).IsEqualTo(7);
+        await Assert.That(files.ContainsKey("subjects/my-app/index.md")).IsTrue();
+        await Assert.That(files.ContainsKey("subjects/home-screen/index.md")).IsTrue();
+        await Assert.That(files.ContainsKey("subjects/settings-screen/index.md")).IsTrue();
+        await Assert.That(files.Keys.Count(k => IsFactFile(k))).IsEqualTo(7);
         await Assert.That(result.Files.Count).IsEqualTo(files.Count);
         await Assert.That(files["README.md"]).Contains("2026-01-02T03:04:05Z");
     }
@@ -126,9 +142,9 @@ public sealed class PublishTests
         {
             "Dossier bundle",
             "Start here: [INDEX.md]",
-            "AGENTS.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md",
+            "AGENTS.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>/index.md -> subjects/<slug>/facts/<key>.md",
             "bracketed fact key",
-            "resolves to a file under `facts/`",
+            "subjects/<slug>/facts/<words>-<key>.md",
             "token estimate",
             "Choose files by cost",
             "Do not read the whole bundle",
@@ -159,7 +175,7 @@ public sealed class PublishTests
         await Assert.That(index).Contains("| subject | kind | facts | conflicts | gaps | tokens | file |");
         foreach (var slug in new[] { "my-app", "home-screen", "settings-screen" })
         {
-            var path = $"subjects/{slug}.md";
+            var path = $"subjects/{slug}/index.md";
             var row = index.Split('\n').Single(l => l.StartsWith("|", StringComparison.Ordinal) && l.Contains($"]({path})", StringComparison.Ordinal));
             var tokens = DossierStore.EstimateTokens(files[path]).ToString();
             await Assert.That(row).Contains($"| {tokens} |");
@@ -170,7 +186,7 @@ public sealed class PublishTests
         var conflicts = index.IndexOf("## Subjects with conflicts", StringComparison.Ordinal);
         await Assert.That(totals).IsGreaterThan(0);
         await Assert.That(conflicts).IsGreaterThan(totals);
-        await Assert.That(index[conflicts..]).Contains("[Home Screen](subjects/home-screen.md)");
+        await Assert.That(index[conflicts..]).Contains("[Home Screen](subjects/home-screen/index.md)");
     }
 
     [Test]
@@ -180,7 +196,7 @@ public sealed class PublishTests
         var seeded = Seed(db);
         db.Store.Publish(Options(db));
         var files = ReadAll(Out(db));
-        var screen = files["subjects/home-screen.md"];
+        var screen = files["subjects/home-screen/index.md"];
 
         await Assert.That(screen).Contains("# Home Screen");
         await Assert.That(screen).Contains(seeded.ScreenId);
@@ -191,7 +207,7 @@ public sealed class PublishTests
         foreach (var id in seeded.ScreenFactIds)
         {
             var (key, path) = FactOf(files, id);
-            await Assert.That(screen).Contains($"[{key}](../{path})");
+            await Assert.That(screen).Contains($"[{key}]({path["subjects/home-screen/".Length..]})");
             await Assert.That(files.ContainsKey(path)).IsTrue();
         }
 
@@ -224,7 +240,7 @@ public sealed class PublishTests
         await Assert.That(pointer).Contains("- confidence: 0.9");
         await Assert.That(pointer).Contains("- locator: none");
         await Assert.That(pointer).Contains("rev: `abc123`");
-        await Assert.That(pointer).Contains("(../subjects/home-screen.md)");
+        await Assert.That(pointer).Contains("(../index.md)");
 
         var target = files[targetPath];
         await Assert.That(target).Contains("## Referenced by");
@@ -258,7 +274,7 @@ public sealed class PublishTests
 
         var home = manifest.GetProperty("subjects").GetProperty(seeded.ScreenId);
         await Assert.That(home.GetProperty("slug").GetString()).IsEqualTo("home-screen");
-        await Assert.That(home.GetProperty("path").GetString()).IsEqualTo("subjects/home-screen.md");
+        await Assert.That(home.GetProperty("path").GetString()).IsEqualTo("subjects/home-screen/index.md");
         var (pointerKey, pointerPath) = FactOf(files, seeded.PointerId);
         var pointerEntry = manifest.GetProperty("facts").GetProperty(pointerKey);
         await Assert.That(pointerEntry.GetProperty("path").GetString()).IsEqualTo(pointerPath);
@@ -309,10 +325,10 @@ public sealed class PublishTests
         var files = ReadAll(Out(db));
 
         await Assert.That(filtered.Subjects).IsEqualTo(1);
-        await Assert.That(files.ContainsKey("subjects/home-screen.md")).IsTrue();
-        await Assert.That(files.ContainsKey("subjects/my-app.md")).IsFalse();
-        await Assert.That(files.ContainsKey("subjects/settings-screen.md")).IsFalse();
-        await Assert.That(files.Keys.Count(k => k.StartsWith("facts/", StringComparison.Ordinal))).IsEqualTo(5);
+        await Assert.That(files.ContainsKey("subjects/home-screen/index.md")).IsTrue();
+        await Assert.That(files.ContainsKey("subjects/my-app/index.md")).IsFalse();
+        await Assert.That(files.ContainsKey("subjects/settings-screen/index.md")).IsFalse();
+        await Assert.That(files.Keys.Count(k => IsFactFile(k))).IsEqualTo(5);
 
         var wide = db.Store.Publish(Options(db, o =>
         {
@@ -332,9 +348,9 @@ public sealed class PublishTests
         db.Store.Publish(Options(db, o => o.Facts = "none"));
         var files = ReadAll(Out(db));
 
-        await Assert.That(files.Keys.Any(k => k.StartsWith("facts/", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(files.Keys.Any(k => IsFactFile(k))).IsFalse();
         await Assert.That(Directory.Exists(Path.Combine(Out(db), "facts"))).IsFalse();
-        await Assert.That(files["subjects/home-screen.md"]).DoesNotContain("../facts/");
+        await Assert.That(files["subjects/home-screen/index.md"]).DoesNotContain("facts/");
         await Assert.That(files["AGENTS.md"]).Contains("--facts none");
         await Assert.That(files.ContainsKey("INDEX.md")).IsTrue();
     }
@@ -353,7 +369,7 @@ public sealed class PublishTests
         await Assert.That(files[longPath]).DoesNotContain("...");
 
         db.Store.Publish(Options(db, o => o.Depth = "full"));
-        await Assert.That(File.ReadAllText(Path.Combine(Out(db), "subjects", "home-screen.md"))).Contains(LongText);
+        await Assert.That(File.ReadAllText(Path.Combine(Out(db), "subjects", "home-screen", "index.md"))).Contains(LongText);
     }
 
     [Test]
@@ -374,7 +390,7 @@ public sealed class PublishTests
 
         static string SubjectCell(string index, string slug)
         {
-            var file = $"subjects/{slug}.md";
+            var file = $"subjects/{slug}/index.md";
             var row = index.Split('\n').Single(l => l.StartsWith("|", StringComparison.Ordinal) && l.Contains($"]({file})", StringComparison.Ordinal));
             // Column 0 is the empty text before the leading '|'; column 1 is the subject cell.
             // Drop exactly the single space that separates the cell from its '|'.
@@ -395,7 +411,7 @@ public sealed class PublishTests
         await Assert.That(rootCell.StartsWith("Memos", StringComparison.Ordinal)).IsTrue();
 
         // The subject file's own H1 still shows the full subject name.
-        await Assert.That(files["subjects/memos-archived.md"]).Contains("# Memos/Archived");
+        await Assert.That(files["subjects/memos-archived/index.md"]).Contains("# Memos/Archived");
     }
 
     private static int Count(string haystack, string needle)
@@ -421,8 +437,8 @@ public sealed class PublishTests
         db.Store.Publish(Options(db));
         var files = ReadAll(Out(db));
 
-        await Assert.That(files.ContainsKey("subjects/same-name.md")).IsTrue();
-        await Assert.That(files.ContainsKey("subjects/same-name-2.md")).IsTrue();
+        await Assert.That(files.ContainsKey("subjects/same-name/index.md")).IsTrue();
+        await Assert.That(files.ContainsKey("subjects/same-name-2/index.md")).IsTrue();
         await Assert.That(DossierStore.Slugify("  Héllo / World!! ")).IsEqualTo("h-llo-world");
         await Assert.That(DossierStore.Slugify("***")).IsEqualTo("subject");
     }
@@ -466,7 +482,7 @@ public sealed class PublishTests
         var files = ReadAll(Out(db));
 
         var key = Sha8("The Quick brown fox, jumps over the lazy dog!\u001f\u001fnote\u001f");
-        var expected = $"facts/the-quick-brown-fox-jumps-over-{key}.md";
+        var expected = $"subjects/naming/facts/the-quick-brown-fox-jumps-over-{key}.md";
         await Assert.That(files.ContainsKey(expected)).IsTrue();
         await Assert.That(FactOf(files, id).Path).IsEqualTo(expected);
         await Assert.That(key.Length).IsEqualTo(8);
@@ -494,8 +510,8 @@ public sealed class PublishTests
 
         first.Store.Publish(Options(first));
         second.Store.Publish(Options(second));
-        var a = ReadAll(Out(first)).Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal)).ToDictionary(kv => kv.Key, kv => kv.Value);
-        var b = ReadAll(Out(second)).Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal)).ToDictionary(kv => kv.Key, kv => kv.Value);
+        var a = ReadAll(Out(first)).Where(kv => IsFactFile(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
+        var b = ReadAll(Out(second)).Where(kv => IsFactFile(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
 
         static string Strip(string content) =>
             string.Join('\n', content.Split('\n').Where(l => !l.StartsWith("Store id:", StringComparison.Ordinal)));
@@ -516,14 +532,14 @@ public sealed class PublishTests
         db.Store.Publish(Options(db));
         var files = ReadAll(Out(db));
 
-        var anchor = new Regex(@"\[([^\]]+)\]\(\.\./(facts/[^)]+\.md)\)");
+        var anchor = new Regex(@"\[([^\]]+)\]\((facts/[^)]+\.md)\)");
         var total = 0;
-        foreach (var (path, content) in files.Where(kv => kv.Key.StartsWith("subjects/", StringComparison.Ordinal)))
+        foreach (var (path, content) in files.Where(kv => IsSubjectIndex(kv.Key)))
         {
             foreach (Match match in anchor.Matches(content))
             {
                 total++;
-                await Assert.That(files.ContainsKey(match.Groups[2].Value)).IsTrue();
+                await Assert.That(files.ContainsKey(Resolve(path, match.Groups[2].Value))).IsTrue();
                 await Assert.That(match.Groups[1].Value.Length).IsEqualTo(8);
                 await Assert.That(GuidPattern.IsMatch(match.Groups[1].Value)).IsFalse();
                 await Assert.That(match.Groups[2].Value).Contains("-" + match.Groups[1].Value + ".md");
@@ -532,9 +548,9 @@ public sealed class PublishTests
 
         await Assert.That(total).IsGreaterThan(0);
         // Every claim line in a subject file ends in a bracketed key link.
-        foreach (var line in files["subjects/home-screen.md"].Split('\n').Where(l => l.StartsWith("- ", StringComparison.Ordinal)).Skip(0))
+        foreach (var line in files["subjects/home-screen/index.md"].Split('\n').Where(l => l.StartsWith("- ", StringComparison.Ordinal)).Skip(0))
         {
-            if (line.Contains("](../facts/", StringComparison.Ordinal))
+            if (line.Contains("](facts/", StringComparison.Ordinal))
             {
                 await Assert.That(anchor.IsMatch(line)).IsTrue();
             }
@@ -559,7 +575,7 @@ public sealed class PublishTests
                 Fixtures.Fact("plain fact"),
             }));
             db.Store.Publish(Options(db, o => o.BundleHash = Collide));
-            return ReadAll(Out(db)).Keys.Where(k => k.StartsWith("facts/", StringComparison.Ordinal)).ToHashSet(StringComparer.Ordinal);
+            return ReadAll(Out(db)).Keys.Where(k => IsFactFile(k)).ToHashSet(StringComparer.Ordinal);
         }
 
         var first = Run();
@@ -567,17 +583,17 @@ public sealed class PublishTests
 
         await Assert.That(first.Count).IsEqualTo(3);
         await Assert.That(first.SetEquals(second)).IsTrue();
-        var twins = first.Where(k => k.StartsWith("facts/twin-fact-", StringComparison.Ordinal)).ToList();
+        var twins = first.Where(k => k.StartsWith("subjects/twins/facts/twin-fact-", StringComparison.Ordinal)).ToList();
         await Assert.That(twins.Count).IsEqualTo(2);
         foreach (var twin in twins)
         {
-            var key = twin["facts/twin-fact-".Length..^3];
+            var key = twin["subjects/twins/facts/twin-fact-".Length..^3];
             await Assert.That(key.Length).IsEqualTo(12);
             await Assert.That(key).StartsWith("deadbeef");
         }
 
-        var plain = first.Single(k => k.StartsWith("facts/plain-fact-", StringComparison.Ordinal));
-        await Assert.That(plain["facts/plain-fact-".Length..^3].Length).IsEqualTo(8);
+        var plain = first.Single(k => k.StartsWith("subjects/twins/facts/plain-fact-", StringComparison.Ordinal));
+        await Assert.That(plain["subjects/twins/facts/plain-fact-".Length..^3].Length).IsEqualTo(8);
     }
 
     [Test]
@@ -633,8 +649,8 @@ public sealed class PublishTests
 
         var result = db.Store.Publish(Options(db));
 
-        var first = $"assets/login/{one.Sha[..8]}-login-screen.png";
-        var second = $"assets/login/{two.Sha[..8]}-notes.pdf";
+        var first = $"subjects/login/assets/{one.Sha[..8]}-login-screen.png";
+        var second = $"subjects/login/assets/{two.Sha[..8]}-notes.pdf";
         await Assert.That(File.ReadAllBytes(Path.Combine(Out(db), first)).SequenceEqual(one.Bytes)).IsTrue();
         await Assert.That(File.ReadAllBytes(Path.Combine(Out(db), second)).SequenceEqual(two.Bytes)).IsTrue();
         await Assert.That(new FileInfo(Path.Combine(Out(db), second)).Length).IsEqualTo((long)two.Bytes.Length);
@@ -642,7 +658,7 @@ public sealed class PublishTests
         await Assert.That(result.Warnings.Count).IsEqualTo(0);
 
         var manifest = JsonDocument.Parse(File.ReadAllText(Path.Combine(Out(db), "manifest.json"))).RootElement;
-        var entry = manifest.GetProperty("assets").GetProperty($"login/{one.Sha[..8]}-login-screen.png");
+        var entry = manifest.GetProperty("assets").GetProperty(first);
         await Assert.That(entry.GetProperty("sha256").GetString()).IsEqualTo(one.Sha);
         await Assert.That(entry.GetProperty("bytes").GetInt64()).IsEqualTo((long)one.Bytes.Length);
         await Assert.That(entry.GetProperty("mime").GetString()).IsEqualTo("image/png");
@@ -660,24 +676,25 @@ public sealed class PublishTests
 
         db.Store.Publish(Options(db));
         var files = ReadAll(Out(db));
-        var link = new Regex(@"\]\((\.\./assets/[^)]+)\)");
+        var link = new Regex(@"\]\(((?:\.\./)?assets/[^)]+)\)");
 
-        var subject = files["subjects/login.md"];
+        var subject = files["subjects/login/index.md"];
         await Assert.That(subject).Contains("## Assets");
         var subjectLinks = link.Matches(subject).Select(m => m.Groups[1].Value).ToList();
         await Assert.That(subjectLinks.Count).IsEqualTo(2);
         foreach (var rel in subjectLinks)
         {
-            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "subjects", rel)))).IsTrue();
+            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "subjects", "login", rel)))).IsTrue();
         }
 
-        var factFiles = files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal) && kv.Value.Contains("## Attachments")).ToList();
+        var factFiles = files.Where(kv => IsFactFile(kv.Key) && kv.Value.Contains("## Attachments")).ToList();
         await Assert.That(factFiles.Count).IsEqualTo(2);
         foreach (var (_, content) in factFiles)
         {
             var links = link.Matches(content).Select(m => m.Groups[1].Value).ToList();
             await Assert.That(links.Count).IsEqualTo(1);
-            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "facts", links[0])))).IsTrue();
+            await Assert.That(links[0]).StartsWith("../assets/");
+            await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "subjects", "login", "facts", links[0])))).IsTrue();
         }
 
         await Assert.That(subject).Contains("(image/png, 5 bytes, from [");
@@ -698,16 +715,16 @@ public sealed class PublishTests
 
         await Assert.That(result.Warnings.Count).IsEqualTo(1);
         await Assert.That(result.Warnings[0]).Contains(gone.Sha);
-        await Assert.That(files["subjects/login.md"]).Contains("MISSING " + gone.Sha);
-        await Assert.That(files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal)).Any(kv => kv.Value.Contains("MISSING " + gone.Sha))).IsTrue();
-        await Assert.That(files.Keys.Any(k => k.StartsWith("assets/", StringComparison.Ordinal) && k.Contains(gone.Sha[..8], StringComparison.Ordinal))).IsFalse();
-        await Assert.That(files.Keys.Count(k => k.StartsWith("assets/", StringComparison.Ordinal))).IsEqualTo(1);
+        await Assert.That(files["subjects/login/index.md"]).Contains("MISSING " + gone.Sha);
+        await Assert.That(files.Where(kv => IsFactFile(kv.Key)).Any(kv => kv.Value.Contains("MISSING " + gone.Sha))).IsTrue();
+        await Assert.That(files.Keys.Any(k => IsAssetFile(k) && k.Contains(gone.Sha[..8], StringComparison.Ordinal))).IsFalse();
+        await Assert.That(files.Keys.Count(k => IsAssetFile(k))).IsEqualTo(1);
 
         var assets = JsonDocument.Parse(files["manifest.json"]).RootElement.GetProperty("assets");
-        var entry = assets.GetProperty($"login/{gone.Sha[..8]}-gone.png");
+        var entry = assets.GetProperty($"subjects/login/assets/{gone.Sha[..8]}-gone.png");
         await Assert.That(entry.GetProperty("missing").GetBoolean()).IsTrue();
         await Assert.That(entry.GetProperty("sha256").GetString()).IsEqualTo(gone.Sha);
-        await Assert.That(assets.GetProperty($"login/{kept.Sha[..8]}-kept.png").GetProperty("missing").GetBoolean()).IsFalse();
+        await Assert.That(assets.GetProperty($"subjects/login/assets/{kept.Sha[..8]}-kept.png").GetProperty("missing").GetBoolean()).IsFalse();
     }
 
     [Test]
@@ -721,10 +738,10 @@ public sealed class PublishTests
         var files = ReadAll(Out(db));
 
         await Assert.That(Directory.Exists(Path.Combine(Out(db), "assets"))).IsFalse();
-        await Assert.That(files.Keys.Any(k => k.StartsWith("assets/", StringComparison.Ordinal))).IsFalse();
-        await Assert.That(files["subjects/login.md"]).Contains("`" + one.Sha + "` (image/png, 5 bytes, from [");
-        await Assert.That(files["subjects/login.md"]).DoesNotContain("assets/");
-        foreach (var fact in files.Where(kv => kv.Key.StartsWith("facts/", StringComparison.Ordinal) && kv.Value.Contains("## Attachments")))
+        await Assert.That(files.Keys.Any(k => IsAssetFile(k))).IsFalse();
+        await Assert.That(files["subjects/login/index.md"]).Contains("`" + one.Sha + "` (image/png, 5 bytes, from [");
+        await Assert.That(files["subjects/login/index.md"]).DoesNotContain("assets/");
+        foreach (var fact in files.Where(kv => IsFactFile(kv.Key) && kv.Value.Contains("## Attachments")))
         {
             var section = fact.Value[fact.Value.IndexOf("## Attachments", StringComparison.Ordinal)..];
             section = section[..section.IndexOf("## Referenced by", StringComparison.Ordinal)];
@@ -745,8 +762,8 @@ public sealed class PublishTests
         var withAsset = posted.Response.Facts[0].Id;
 
         db.Store.Publish(Options(db));
-        var assetPath = Path.Combine(Out(db), $"assets/login/{one.Sha[..8]}-a.png");
-        var foreign = Path.Combine(Out(db), "assets", "login", "mine.txt");
+        var assetPath = Path.Combine(Out(db), $"subjects/login/assets/{one.Sha[..8]}-a.png");
+        var foreign = Path.Combine(Out(db), "subjects", "login", "assets", "mine.txt");
         File.WriteAllText(foreign, "not generated");
         await Assert.That(File.Exists(assetPath)).IsTrue();
 
@@ -754,7 +771,7 @@ public sealed class PublishTests
         var result = db.Store.Publish(Options(db));
 
         await Assert.That(File.Exists(assetPath)).IsFalse();
-        await Assert.That(result.Removed.Contains($"assets/login/{one.Sha[..8]}-a.png")).IsTrue();
+        await Assert.That(result.Removed.Contains($"subjects/login/assets/{one.Sha[..8]}-a.png")).IsTrue();
         await Assert.That(File.Exists(foreign)).IsTrue();
         await Assert.That(JsonDocument.Parse(File.ReadAllText(Path.Combine(Out(db), "manifest.json"))).RootElement
             .GetProperty("assets").EnumerateObject().Count()).IsEqualTo(0);
@@ -773,11 +790,11 @@ public sealed class PublishTests
         one.Store.Publish(Options(one));
         two.Store.Publish(Options(two));
 
-        string[] AssetPaths(TempDb db) => ReadAll(Out(db)).Keys.Where(k => k.StartsWith("assets/", StringComparison.Ordinal)).OrderBy(k => k, StringComparer.Ordinal).ToArray();
+        string[] AssetPaths(TempDb db) => ReadAll(Out(db)).Keys.Where(k => IsAssetFile(k)).OrderBy(k => k, StringComparer.Ordinal).ToArray();
         var a = AssetPaths(one);
         var b = AssetPaths(two);
         await Assert.That(a.Length).IsEqualTo(1);
-        await Assert.That(a[0]).IsEqualTo($"assets/home/{shotOne.Sha[..8]}-home-page.png");
+        await Assert.That(a[0]).IsEqualTo($"subjects/home/assets/{shotOne.Sha[..8]}-home-page.png");
         await Assert.That(b.SequenceEqual(a)).IsTrue();
         await Assert.That(File.ReadAllBytes(Path.Combine(Out(one), a[0])).SequenceEqual(File.ReadAllBytes(Path.Combine(Out(two), b[0])))).IsTrue();
     }
@@ -857,12 +874,6 @@ public sealed class PublishTests
         var files = ReadAll(Out(db));
 
         var link = new Regex(@"\]\(([^)]+)\)", RegexOptions.Compiled);
-        string Resolve(string from, string target)
-        {
-            var dir = from.Contains('/') ? from[..from.LastIndexOf('/')] : string.Empty;
-            return Path.GetFullPath(Path.Combine("/r", dir, target))[3..];
-        }
-
         // Every link in every index file exists.
         foreach (var (path, content) in IndexFiles(files))
         {
@@ -905,7 +916,7 @@ public sealed class PublishTests
             }
         }
 
-        var subjectFiles = files.Keys.Where(k => k.StartsWith("subjects/", StringComparison.Ordinal)).ToHashSet(StringComparer.Ordinal);
+        var subjectFiles = files.Keys.Where(IsSubjectIndex).ToHashSet(StringComparer.Ordinal);
         await Assert.That(subjectFiles.Count).IsEqualTo(15 * 15 + 1);
         await Assert.That(reached.SetEquals(subjectFiles)).IsTrue();
         await Assert.That(seen.Count).IsEqualTo(IndexFiles(files).Count);
@@ -931,7 +942,7 @@ public sealed class PublishTests
         await Assert.That(big).Contains("| g0/ | group |");
         await Assert.That(big).Contains("(big-g0.md)");
         await Assert.That(big.Contains("](../subjects/", StringComparison.Ordinal)).IsFalse();
-        await Assert.That(files["index/big-g0.md"]).Contains("](../subjects/big-g0-leaf-0.md)");
+        await Assert.That(files["index/big-g0.md"]).Contains("](../subjects/big-g0-leaf-0/index.md)");
         await Assert.That(files["index/big-g0.md"]).Contains("Up: [index/big.md](big.md)");
 
         var root = files["INDEX.md"];
@@ -963,5 +974,312 @@ public sealed class PublishTests
         Seed(db);
         db.Store.Publish(Options(db));
         await Assert.That(IndexFiles(ReadAll(Out(db))).Count).IsEqualTo(1);
+    }
+
+    // ---- fact files under their subject, and links that resolve ---------------------------
+
+    private static readonly Regex MarkdownLink = new(@"\]\((?:<([^>]+)>|([^)\s]+))\)", RegexOptions.Compiled);
+
+    private static IEnumerable<string> LinkTargets(string content) =>
+        MarkdownLink.Matches(content).Select(m => m.Groups[1].Success ? m.Groups[1].Value : m.Groups[2].Value);
+
+    private static bool IsExternal(string target) =>
+        target.StartsWith("http://", StringComparison.Ordinal) || target.StartsWith("https://", StringComparison.Ordinal);
+
+    private static string TargetLine(string factFile, string needle) =>
+        factFile.Split('\n').Single(l => l.StartsWith("  - target: ", StringComparison.Ordinal) && l.Contains(needle, StringComparison.Ordinal));
+
+    [Test]
+    public async Task Publish_EachFactLivesUnderItsSubject()
+    {
+        using var db = new TempDb();
+        var posted = db.Store.PostFacts(Fixtures.Post(
+            "Trio",
+            Fixtures.Fact("First fact of the trio."),
+            Fixtures.Fact("Second fact of the trio."),
+            Fixtures.Fact("Third fact of the trio.")));
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+
+        var factPaths = posted.Response.Facts.Select(f => FactOf(files, f.Id).Path).ToList();
+        await Assert.That(factPaths.Count).IsEqualTo(3);
+        foreach (var path in factPaths)
+        {
+            await Assert.That(path).StartsWith("subjects/trio/facts/");
+            await Assert.That(files.ContainsKey(path)).IsTrue();
+        }
+
+        await Assert.That(files.Keys.Count(k => k.StartsWith("subjects/trio/facts/", StringComparison.Ordinal))).IsEqualTo(3);
+        await Assert.That(files.ContainsKey("subjects/trio/index.md")).IsTrue();
+        await Assert.That(files.Keys.Any(k => k.StartsWith("facts/", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(Directory.Exists(Path.Combine(Out(db), "facts"))).IsFalse();
+    }
+
+    [Test]
+    public async Task Publish_FactRefLinksResolve()
+    {
+        using var db = new TempDb();
+        var other = db.Store.PostFacts(Fixtures.Post("Beta Subject", Fixtures.Fact("The far fact lives in beta.")));
+        var farId = other.Response.Facts[0].Id;
+        var near = db.Store.PostFacts(Fixtures.Post(
+            "Alpha Subject",
+            Fixtures.Fact("The near fact lives in alpha.", localId: "near"),
+            Fixtures.Fact(
+                "The pointer fact depends on two others.",
+                refs: new List<RefInput>
+                {
+                    Fixtures.Ref("@near", rel: "depends_on"),
+                    Fixtures.Ref(farId, rel: "depends_on"),
+                })));
+        var nearId = near.Response.Facts[0].Id;
+        var pointerId = near.Response.Facts[1].Id;
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+
+        var (nearKey, nearPath) = FactOf(files, nearId);
+        var (farKey, farPath) = FactOf(files, farId);
+        var (pointerKey, pointerPath) = FactOf(files, pointerId);
+        var pointer = files[pointerPath];
+
+        // Same subject: a bare file name. Other subject: up out of facts/ and the subject directory.
+        await Assert.That(pointer).Contains($"- target: [{nearKey}]({FileName(nearPath)})");
+        await Assert.That(pointer).Contains($"- target: [{farKey}](../../beta-subject/facts/{FileName(farPath)})");
+        await Assert.That(File.Exists(Path.Combine(Out(db), nearPath))).IsTrue();
+        await Assert.That(File.Exists(Path.Combine(Out(db), farPath))).IsTrue();
+        await Assert.That(File.Exists(Path.GetFullPath(Path.Combine(Out(db), "subjects/alpha-subject/facts", "../../beta-subject/facts", FileName(farPath))))).IsTrue();
+
+        // The far fact links back, with the referring fact's kind and rel.
+        var far = files[farPath];
+        await Assert.That(far).Contains($"- [{pointerKey}](../../alpha-subject/facts/{FileName(pointerPath)}) (note, rel: depends_on)");
+    }
+
+    [Test]
+    public async Task Publish_SlotRefResolvesToLiveFact()
+    {
+        using var db = new TempDb();
+        var first = db.Store.PostFacts(Fixtures.Post("Config", Fixtures.Fact("The theme is dark.", key: "theme")));
+        var darkId = first.Response.Facts[0].Id;
+        var reader = db.Store.PostFacts(Fixtures.Post(
+            "Reader",
+            Fixtures.Fact(
+                "The reader honours the theme setting.",
+                refs: new List<RefInput> { Fixtures.Ref("Config#theme", kind: "slot", rel: "reads") })));
+        var readerId = reader.Response.Facts[0].Id;
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var (darkKey, darkPath) = FactOf(files, darkId);
+        var readerPath = FactOf(files, readerId).Path;
+        await Assert.That(TargetLine(files[readerPath], "Config#theme")).Contains($"[{darkKey}](../../config/facts/{FileName(darkPath)})");
+        await Assert.That(files[darkPath]).Contains("(note, rel: reads)");
+
+        // Supersede the slot's occupant: the link follows the slot to the new head.
+        var second = db.Store.PostFacts(Fixtures.Post("Config", Fixtures.Fact("The theme is light.", key: "theme")));
+        var lightId = second.Response.Facts[0].Id;
+        await Assert.That(lightId).IsNotEqualTo(darkId);
+
+        db.Store.Publish(Options(db));
+        files = ReadAll(Out(db));
+        var (lightKey, lightPath) = FactOf(files, lightId);
+        var line = TargetLine(files[readerPath], "Config#theme");
+        await Assert.That(line).Contains($"[{lightKey}](../../config/facts/{FileName(lightPath)})");
+        await Assert.That(line).DoesNotContain(FileName(darkPath));
+        await Assert.That(files.ContainsKey(darkPath)).IsFalse();
+        await Assert.That(files.ContainsKey(lightPath)).IsTrue();
+        await Assert.That(files[lightPath]).Contains("rel: reads");
+    }
+
+    [Test]
+    public async Task Publish_SubjectRefLinksToSubjectIndex()
+    {
+        using var db = new TempDb();
+        var team = db.Store.PostFacts(Fixtures.Post("Team Atlas", Fixtures.Fact("Atlas owns the maps.")));
+        var teamId = team.Response.Subject.Id;
+        var child = db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "Team Atlas Docs", Kind = "docs", Parent = teamId },
+            Facts = { Fixtures.Fact("The docs describe the maps.") },
+        });
+        var service = db.Store.PostFacts(Fixtures.Post(
+            "Service",
+            Fixtures.Fact(
+                "The service is run by a team.",
+                refs: new List<RefInput>
+                {
+                    Fixtures.Ref(teamId, kind: "subject", rel: "owned_by"),
+                    Fixtures.Ref("team atlas docs", kind: "subject", rel: "documented_in"),
+                })));
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var factPath = FactOf(files, service.Response.Facts[0].Id).Path;
+
+        var fact = files[factPath];
+        await Assert.That(TargetLine(fact, "Team Atlas](")).Contains("[Team Atlas](../../team-atlas/index.md)");
+        await Assert.That(TargetLine(fact, "Docs](")).Contains("[Team Atlas Docs](../../team-atlas-docs/index.md)");
+
+        // From a subject index the neighbours are sibling directories.
+        await Assert.That(files["subjects/team-atlas/index.md"]).Contains("[Team Atlas Docs](../team-atlas-docs/index.md)");
+        await Assert.That(files["subjects/team-atlas-docs/index.md"]).Contains("- Parent: [Team Atlas](../team-atlas/index.md)");
+        _ = child;
+    }
+
+    private static AttachmentInput ShotAttachment(Shot shot) =>
+        new() { Sha256 = shot.Sha, Filename = shot.Filename, Mime = shot.Mime, Bytes = shot.Bytes.Length };
+
+    [Test]
+    public async Task Publish_UnresolvedSlotStaysText()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Config", Fixtures.Fact("The theme is dark.", key: "theme")));
+        var posted = db.Store.PostFacts(Fixtures.Post(
+            "Reader",
+            Fixtures.Fact(
+                "The reader looks for a slot nobody filled.",
+                refs: new List<RefInput>
+                {
+                    Fixtures.Ref("Config#missing", kind: "slot", rel: "reads"),
+                    Fixtures.Ref("Nowhere#theme", kind: "slot", rel: "reads"),
+                })));
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var fact = files[FactOf(files, posted.Response.Facts[0].Id).Path];
+
+        foreach (var target in new[] { "Config#missing", "Nowhere#theme" })
+        {
+            var line = TargetLine(fact, target);
+            await Assert.That(line).Contains("unresolved slot");
+            await Assert.That(line).Contains("`" + target + "`");
+            await Assert.That(line).DoesNotContain("](");
+        }
+    }
+
+    [Test]
+    public async Task Publish_ExternalRefsStayTextExceptHttpLinks()
+    {
+        using var db = new TempDb();
+        var posted = db.Store.PostFacts(Fixtures.Post(
+            "Docs",
+            Fixtures.Fact(
+                "The fact cites outside material.",
+                refs: new List<RefInput>
+                {
+                    Fixtures.Ref("https://example.com/spec?a=1&b=(2)", kind: "http", rel: "cites"),
+                    Fixtures.Ref("src/Program.cs", kind: "file", rel: "cites"),
+                    Fixtures.Ref("deadbeef", kind: "git", rel: "cites"),
+                })));
+
+        db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+        var fact = files[FactOf(files, posted.Response.Facts[0].Id).Path];
+
+        await Assert.That(TargetLine(fact, "example.com")).Contains("(<https://example.com/spec?a=1&b=(2)>)");
+        await Assert.That(TargetLine(fact, "Program.cs")).IsEqualTo("  - target: `src/Program.cs`");
+        await Assert.That(TargetLine(fact, "deadbeef")).IsEqualTo("  - target: `deadbeef`");
+    }
+
+    [Test]
+    public async Task Publish_EveryInternalLinkResolves()
+    {
+        // A small stand-in for the Django-sized bundle: a nested subject tree, keyed slots, fact,
+        // slot and subject refs across subjects, an unresolvable ref, attachments, a budget that drops
+        // facts from subject indexes, and a token cap small enough to force a tiered index.
+        using var db = new TempDb();
+        var shot = WriteBlob(db, "shot bytes", "shot.png", "image/png");
+        var rootId = db.Store.PostFacts(Fixtures.Post("Pkg", Fixtures.Fact("The package root."))).Response.Subject.Id;
+        var factIds = new List<string>();
+        var subjectIds = new List<string> { rootId };
+        for (var m = 0; m < 6; m++)
+        {
+            var module = db.Store.PostFacts(new PostFactsRequest
+            {
+                Subject = new SubjectInput { Name = $"Pkg/mod{m}", Kind = "module", Parent = rootId },
+                Facts = { Fixtures.Fact($"Module {m} exists.", key: "summary") },
+            });
+            var moduleId = module.Response.Subject.Id;
+            subjectIds.Add(moduleId);
+            factIds.Add(module.Response.Facts[0].Id);
+            for (var c = 0; c < 4; c++)
+            {
+                var refs = new List<RefInput>
+                {
+                    Fixtures.Ref(factIds[^1], rel: "extends"),
+                    Fixtures.Ref($"Pkg/mod{(m + 1) % 6}#summary", kind: "slot", rel: "uses"),
+                    Fixtures.Ref(subjectIds[(m + c) % subjectIds.Count], kind: "subject", rel: "see_also"),
+                    Fixtures.Ref("Pkg/gone#nothing", kind: "slot", rel: "uses"),
+                    Fixtures.Ref("https://example.com/m" + m, kind: "http", rel: "cites"),
+                    Fixtures.Ref("pkg/mod" + m + ".py", kind: "file", rel: "defined_in"),
+                };
+                var attachments = c == 0 ? new List<AttachmentInput> { ShotAttachment(shot) } : null;
+                var posted = db.Store.PostFacts(new PostFactsRequest
+                {
+                    Subject = new SubjectInput { Name = $"Pkg/mod{m}/cls{c}", Kind = "class", Parent = moduleId },
+                    Facts = { Fixtures.Fact($"Class {c} of module {m} does something worth {LongText}.", refs: refs, attachments: attachments) },
+                });
+                factIds.Add(posted.Response.Facts[0].Id);
+                subjectIds.Add(posted.Response.Subject.Id);
+            }
+        }
+
+        foreach (var budget in new[] { 1200, 60 })
+        {
+            db.Store.Publish(Options(db, o =>
+            {
+                o.IndexMaxTokens = 700;
+                o.Budget = budget;
+            }));
+            var files = ReadAll(Out(db));
+            await Assert.That(files.Keys.Count(IsFactFile)).IsEqualTo(factIds.Count + 1);
+
+            var internalLinks = 0;
+            foreach (var (path, content) in files.Where(kv => kv.Key.EndsWith(".md", StringComparison.Ordinal)))
+            {
+                foreach (var target in LinkTargets(content).Where(t => !IsExternal(t)))
+                {
+                    internalLinks++;
+                    var resolved = Resolve(path, target);
+                    await Assert.That(files.ContainsKey(resolved)).IsTrue();
+                }
+            }
+
+            // The corpus really exercised every link family.
+            await Assert.That(internalLinks).IsGreaterThan(factIds.Count * 6);
+            var all = string.Concat(files.Where(kv => IsFactFile(kv.Key)).Select(kv => kv.Value));
+            await Assert.That(all).Contains("(slot `Pkg/mod");
+            await Assert.That(all).Contains("unresolved slot");
+            await Assert.That(all).Contains("index.md)");
+            await Assert.That(all).Contains("](../assets/");
+        }
+    }
+
+    [Test]
+    public async Task Publish_SubjectDirectoryIsRemovedWhenSubjectIsGone()
+    {
+        using var db = new TempDb();
+        var doomed = db.Store.PostFacts(Fixtures.Post("Doomed", Fixtures.Fact("First doomed fact."), Fixtures.Fact("Second doomed fact.")));
+        db.Store.PostFacts(Fixtures.Post("Survivor", Fixtures.Fact("The survivor stays.")));
+
+        db.Store.Publish(Options(db));
+        await Assert.That(Directory.Exists(Path.Combine(Out(db), "subjects", "doomed", "facts"))).IsTrue();
+
+        var foreign = Path.Combine(Out(db), "subjects", "survivor", "notes.txt");
+        File.WriteAllText(foreign, "keep me");
+
+        foreach (var fact in doomed.Response.Facts)
+        {
+            db.Store.Retract(fact.Id);
+        }
+
+        var result = db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+
+        await Assert.That(Directory.Exists(Path.Combine(Out(db), "subjects", "doomed"))).IsFalse();
+        await Assert.That(files.Keys.Any(k => k.StartsWith("subjects/doomed", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(result.Removed.Contains("subjects/doomed/index.md")).IsTrue();
+        await Assert.That(File.ReadAllText(foreign)).IsEqualTo("keep me");
+        await Assert.That(files.ContainsKey("subjects/survivor/index.md")).IsTrue();
+        await Assert.That(files["INDEX.md"]).DoesNotContain("Doomed");
     }
 }

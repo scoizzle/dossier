@@ -4,8 +4,8 @@ This file lists every subject under `django/apps/`, one row per subject, grouped
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/apps/__init__ | subject | 2 | 0 | 0 | 83 | [subjects/django-apps-init.md](../subjects/django-apps-init.md) |
-|   django/apps/config | subject | 35 | 0 | 0 | 961 | [subjects/django-apps-config.md](../subjects/django-apps-config.md) |
-|   django/apps/registry | subject | 78 | 0 | 0 | 1018 | [subjects/django-apps-registry.md](../subjects/django-apps-registry.md) |
+|   django/apps/__init__ | subject | 2 | 0 | 0 | 83 | [subjects/django-apps-init/index.md](../subjects/django-apps-init/index.md) |
+|   django/apps/config | subject | 35 | 0 | 0 | 961 | [subjects/django-apps-config/index.md](../subjects/django-apps-config/index.md) |
+|   django/apps/registry | subject | 78 | 0 | 0 | 1018 | [subjects/django-apps-registry/index.md](../subjects/django-apps-registry/index.md) |
 
 Up: [index/django.md](django.md)

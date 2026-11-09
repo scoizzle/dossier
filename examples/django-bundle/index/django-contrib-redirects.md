@@ -4,11 +4,11 @@ This file lists every subject under `django/contrib/redirects/`, one row per sub
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/redirects/admin | subject | 2 | 0 | 0 | 129 | [subjects/django-contrib-redirects-admin.md](../subjects/django-contrib-redirects-admin.md) |
-|   django/contrib/redirects/apps | subject | 2 | 0 | 0 | 127 | [subjects/django-contrib-redirects-apps.md](../subjects/django-contrib-redirects-apps.md) |
-|   django/contrib/redirects/middleware | subject | 7 | 0 | 0 | 471 | [subjects/django-contrib-redirects-middleware.md](../subjects/django-contrib-redirects-middleware.md) |
-|     django/contrib/redirects/migrations/0001_initial | subject | 3 | 0 | 0 | 336 | [subjects/django-contrib-redirects-migrations-0001-initial.md](../subjects/django-contrib-redirects-migrations-0001-initial.md) |
-|     django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text | subject | 3 | 0 | 0 | 199 | [subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text.md](../subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text.md) |
-|   django/contrib/redirects/models | subject | 4 | 0 | 0 | 289 | [subjects/django-contrib-redirects-models.md](../subjects/django-contrib-redirects-models.md) |
+|   django/contrib/redirects/admin | subject | 2 | 0 | 0 | 129 | [subjects/django-contrib-redirects-admin/index.md](../subjects/django-contrib-redirects-admin/index.md) |
+|   django/contrib/redirects/apps | subject | 2 | 0 | 0 | 127 | [subjects/django-contrib-redirects-apps/index.md](../subjects/django-contrib-redirects-apps/index.md) |
+|   django/contrib/redirects/middleware | subject | 7 | 0 | 0 | 471 | [subjects/django-contrib-redirects-middleware/index.md](../subjects/django-contrib-redirects-middleware/index.md) |
+|     django/contrib/redirects/migrations/0001_initial | subject | 3 | 0 | 0 | 336 | [subjects/django-contrib-redirects-migrations-0001-initial/index.md](../subjects/django-contrib-redirects-migrations-0001-initial/index.md) |
+|     django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text | subject | 3 | 0 | 0 | 199 | [subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text/index.md](../subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text/index.md) |
+|   django/contrib/redirects/models | subject | 4 | 0 | 0 | 289 | [subjects/django-contrib-redirects-models/index.md](../subjects/django-contrib-redirects-models/index.md) |
 
 Up: [index/django-contrib.md](django-contrib.md)

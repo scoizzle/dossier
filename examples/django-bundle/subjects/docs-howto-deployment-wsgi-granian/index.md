@@ -1,0 +1,26 @@
+# docs/howto/deployment/wsgi/granian
+
+- Subject: docs/howto/deployment/wsgi/granian (id `eaa98e94-dd92-461f-a971-1476bde5b3ed`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 427 tokens
+- Facts shown: 14 of 14
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- granian myproject.wsgi:application --interface wsgi [e1617fb4]
+- python -m pip install granian [91cecfceb8b06e10-2]
+- .. _Granian: https://github.com/emmett-framework/granian [3d68eea4c1765924-2]
+- .. code-block:: shell [8aa7203c166b13be-11]
+- .. code-block:: shell [8aa7203c166b13be-12]
+- ============================== How to use Django with Granian ============================== [6826eb95df973ceb-2]
+- For a typical Django project, invoking Granian would look like: [6cc847a1f31001ff-2]
+- For more advanced usage, please read the `Granian documentation <Granian_>`_. [b1ce3a2ee6a277e9-2]
+- Granian_ is a Rust-based high-performance HTTP server for Python applications, supporting ASGI and WSGI interfaces. [ee8736c6d8c95426-2]
+- Installing Granian ================== [b0affcc7a9ababe6-2]
+- Running Django in Granian ========================= [7c2cc7b0512be679-2]
+- This will start one process listening on ``127.0.0.1:8000``. It requires that your project be on the Python path; to ensure that, run this command from the same directory as your ``manage.py`` file. [16bb3c319ea90534-2]
+- When Granian is installed, a ``granian`` command is available which runs WSGI applications. Granian needs to be called with the location of a module containing a WSGI application object named ``application``, using the ``--interface wsgi`` option. [dc803850]
+- You can install Granian with ``pip``: [06b1490fa10f7ffa-2]

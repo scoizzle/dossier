@@ -1,0 +1,20 @@
+# django/db/backends/postgresql/schema
+
+- Subject: django/db/backends/postgresql/schema (id `ca9b35ad-797f-4a3f-a013-108eecbdfea8`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 899 tokens
+- Facts shown: 4 of 24
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- # Removed an index? Drop any PostgreSQL-specific indexes. if old_field.unique and not (new_field.db_index or new_field.unique): index_to_remove = self._create_index_name( model._meta.db_table, [old_field.column], suffix="_like" ) self.execute(self._delete_index_sql(model, index_to_remove)) [dffeb83e]
+- self.sql_alter_column_type = ( "ALTER COLUMN %(column)s TYPE %(type)s%(collation)s" ) # Cast when data type changed. if using_sql := self._using_sql(new_field, old_field): self.sql_alter_column_type += using_sql new_internal_type = new_field.get_internal_type() old_internal_type = old_field.get_internal_type() # Make ALTER TYPE with IDENTITY make sense. table = strip_quotes(model._meta.db_table) auto_field_types = { "AutoField", "BigAutoField", "SmallAutoField", } old_is_auto = old_internal_type in auto_field_types new_is_auto = new_internal_type in auto_field_types if new_is_auto and not old_is_auto: column = strip_quotes(new_field.column) return ( ( self.sql_alter_column_type % { "column": self.quote_name(column), "type": new_type, "collation": "", }, [], ), [ ( self.sql_add_identity % { "table": self.quote_name(table), "column": self.quote_name(column), }, [], ), ], ) elif old_is_auto and not new_is_auto: # Drop IDENTITY if exists (pre-Django 4.1 serial columns don't have # it). self.execute( self.sql_drop_indentity % { "table": self.quote_name(table), "column": self.quote_name(strip_quotes(new_field.column)), } ) column = strip_quotes(new_field.column) fragment, _ = super()._alter_column_type_sql( model, old_field, new_field, new_type, old_collation, new_collation ) # Drop the sequence if exists (Django 4.1+ identity columns don't # have it). other_actions = [] if sequence_name := self._get_sequence_name(table, column): other_actions = [ ( self.sql_delete_sequence % { "sequence": self.quote_name(sequence_name), }, [], ) ] return fragment, other_actions elif new_is_auto and old_is_auto and old_internal_type != new_internal_type: fragment, _ = super()._alter_column_type_sql( model, old_field, new_field, new_type, old_collation, new_collation ) column = strip_quotes(new_field.column) db_types = { "AutoField": "integer", "BigAutoField": "bigint", "SmallAutoField": "smallint", } # Alter the sequence type if exists (Django 4.1+ identity columns # don't have it). other_actions = [] if sequence_name := self._get_sequence_name(table, column): other_actions = [ ( self.sql_alter_sequence_type % { "sequence": self.quote_name(sequence_name), "type": db_types[new_internal_type], }, [], ), ] return fragment, other_actions else: return super()._alter_column_type_sql( model, old_field, new_field, new_type, old_collation, new_collation ) [a59e09b6]
+- # Setting the constraint to IMMEDIATE to allow changing data in the same # transaction. sql_create_column_inline_fk = ( "CONSTRAINT %(name)s REFERENCES %(to_table)s(%(to_column)s)%(on_delete_db)s" "%(deferrable)s; SET CONSTRAINTS %(namespace)s%(name)s IMMEDIATE" ) # Setting the constraint to IMMEDIATE runs any deferred checks to allow # dropping it in the same transaction. sql_delete_fk = ( "SET CONSTRAINTS %(name)s IMMEDIATE; " "ALTER TABLE %(table)s DROP CONSTRAINT %(name)s" ) sql_delete_procedure = "DROP FUNCTION %(procedure)s(%(param_types)s)" [be57363a]
+- def _delete_index_sql(self, model, name, sql=None, concurrently=False): sql = sql or ( self.sql_delete_index_concurrently if concurrently else self.sql_delete_index ) return super()._delete_index_sql(model, name, sql) [1ccec9aa]
+
+## Beyond the budget
+
+20 more facts did not fit in the budget: [22236e7e] [8a0c9d84] [4d083bcb] [e45aed76] [c2f39937] [ac064baf] [2514c9b0] [18e44308] [b248190b] [f9865729] [4e7808bc] [76e1a9ce] [03fb770d] [0bd0723e] [7c47be98] [bec8e7bb] [c2d504c4] [b6895649] [8d603a61] [261eb725]

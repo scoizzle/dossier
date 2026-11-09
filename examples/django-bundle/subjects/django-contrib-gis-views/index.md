@@ -1,0 +1,16 @@
+# django/contrib/gis/views
+
+- Subject: django/contrib/gis/views (id `cb6d908e-36cf-4c1b-b0a3-a95f494cab3e`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 200 tokens
+- Facts shown: 4 of 4
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- instance = f() instance.feed_url = getattr(f, "feed_url", None) or request.path instance.title_template = f.title_template or ("feeds/%s_title.html" % slug) instance.description_template = f.description_template or ( "feeds/%s_description.html" % slug ) return instance(request) [5bfe68d6]
+- slug = url.partition("/")[0] try: f = feed_dict[slug] except KeyError: raise Http404(_("Slug %r isn’t registered.") % slug) [05be3f2e]
+- def feed(request, url, feed_dict=None): """Provided for backwards compatibility.""" if not feed_dict: raise Http404(_("No feeds are registered.")) [0c609038]
+- from django.http import Http404 from django.utils.translation import gettext as _ [39da9705]

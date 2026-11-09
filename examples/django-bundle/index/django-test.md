@@ -4,13 +4,13 @@ This file lists every subject under `django/test/`, one row per subject, grouped
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/test/__init__ | subject | 3 | 0 | 0 | 244 | [subjects/django-test-init.md](../subjects/django-test-init.md) |
-|   django/test/client | subject | 128 | 0 | 0 | 1185 | [subjects/django-test-client.md](../subjects/django-test-client.md) |
-|   django/test/html | subject | 31 | 0 | 0 | 922 | [subjects/django-test-html.md](../subjects/django-test-html.md) |
-|   django/test/runner | subject | 165 | 0 | 0 | 1280 | [subjects/django-test-runner.md](../subjects/django-test-runner.md) |
-|   django/test/selenium | subject | 39 | 0 | 0 | 883 | [subjects/django-test-selenium.md](../subjects/django-test-selenium.md) |
-|   django/test/signals | subject | 53 | 0 | 0 | 800 | [subjects/django-test-signals.md](../subjects/django-test-signals.md) |
-|   django/test/testcases | subject | 215 | 0 | 0 | 1458 | [subjects/django-test-testcases.md](../subjects/django-test-testcases.md) |
-|   django/test/utils | subject | 149 | 0 | 0 | 1244 | [subjects/django-test-utils.md](../subjects/django-test-utils.md) |
+|   django/test/__init__ | subject | 3 | 0 | 0 | 244 | [subjects/django-test-init/index.md](../subjects/django-test-init/index.md) |
+|   django/test/client | subject | 128 | 0 | 0 | 1185 | [subjects/django-test-client/index.md](../subjects/django-test-client/index.md) |
+|   django/test/html | subject | 31 | 0 | 0 | 922 | [subjects/django-test-html/index.md](../subjects/django-test-html/index.md) |
+|   django/test/runner | subject | 165 | 0 | 0 | 1280 | [subjects/django-test-runner/index.md](../subjects/django-test-runner/index.md) |
+|   django/test/selenium | subject | 39 | 0 | 0 | 883 | [subjects/django-test-selenium/index.md](../subjects/django-test-selenium/index.md) |
+|   django/test/signals | subject | 53 | 0 | 0 | 800 | [subjects/django-test-signals/index.md](../subjects/django-test-signals/index.md) |
+|   django/test/testcases | subject | 215 | 0 | 0 | 1458 | [subjects/django-test-testcases/index.md](../subjects/django-test-testcases/index.md) |
+|   django/test/utils | subject | 149 | 0 | 0 | 1244 | [subjects/django-test-utils/index.md](../subjects/django-test-utils/index.md) |
 
 Up: [index/django.md](django.md)

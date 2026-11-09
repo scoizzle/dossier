@@ -4,11 +4,11 @@ This file lists every subject in the bundle, one row per subject, grouped by the
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| Memos | app | 2 | 0 | 0 | 164 | [subjects/memos.md](subjects/memos.md) |
-|   Memos/Archived | screen | 2 | 0 | 0 | 124 | [subjects/memos-archived.md](subjects/memos-archived.md) |
-|   Memos/Home | screen | 24 | 3 | 0 | 1021 | [subjects/memos-home.md](subjects/memos-home.md) |
-|   Memos/MemoDetail | screen | 2 | 0 | 0 | 124 | [subjects/memos-memodetail.md](subjects/memos-memodetail.md) |
-|   Memos/SignIn | screen | 2 | 0 | 0 | 125 | [subjects/memos-signin.md](subjects/memos-signin.md) |
+| Memos | app | 2 | 0 | 0 | 171 | [subjects/memos/index.md](subjects/memos/index.md) |
+|   Memos/Archived | screen | 2 | 0 | 0 | 125 | [subjects/memos-archived/index.md](subjects/memos-archived/index.md) |
+|   Memos/Home | screen | 24 | 3 | 0 | 997 | [subjects/memos-home/index.md](subjects/memos-home/index.md) |
+|   Memos/MemoDetail | screen | 2 | 0 | 0 | 125 | [subjects/memos-memodetail/index.md](subjects/memos-memodetail/index.md) |
+|   Memos/SignIn | screen | 2 | 0 | 0 | 125 | [subjects/memos-signin/index.md](subjects/memos-signin/index.md) |
 
 ## Totals
 
@@ -16,10 +16,10 @@ This file lists every subject in the bundle, one row per subject, grouped by the
 - Facts: 32
 - Conflicts: 3
 - Gaps: 0
-- Subject file tokens, all subjects: 1558
+- Subject file tokens, all subjects: 1543
 - Index files: 1
-- Largest index file, tokens: 312
+- Largest index file, tokens: 328
 
 ## Subjects with conflicts
 
-- [Memos/Home](subjects/memos-home.md): 3
+- [Memos/Home](subjects/memos-home/index.md): 3

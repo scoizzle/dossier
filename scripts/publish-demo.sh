@@ -18,7 +18,7 @@ trap 'rm -rf "$TMP"' EXIT
 bash "$ROOT/scripts/seed.sh" >/dev/null 2>&1
 
 # The seed records one screenshot attachment but posting does not store bytes; place the blob
-# (content-addressed at blobs/<sha256> next to the database) so publish can copy it into assets/.
+# (content-addressed at blobs/<sha256> next to the database) so publish can copy it into subjects/<slug>/assets/.
 SHOT="$ROOT/scripts/seed/shot-1x1.png"
 SHA="$(shasum -a 256 "$SHOT" | cut -d' ' -f1)"
 mkdir -p "$TMP/blobs"

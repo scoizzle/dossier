@@ -4,7 +4,7 @@ This file lists every subject under `django/dispatch/`, one row per subject, gro
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/dispatch/__init__ | subject | 4 | 0 | 0 | 140 | [subjects/django-dispatch-init.md](../subjects/django-dispatch-init.md) |
-|   django/dispatch/dispatcher | subject | 97 | 0 | 0 | 1030 | [subjects/django-dispatch-dispatcher.md](../subjects/django-dispatch-dispatcher.md) |
+|   django/dispatch/__init__ | subject | 4 | 0 | 0 | 140 | [subjects/django-dispatch-init/index.md](../subjects/django-dispatch-init/index.md) |
+|   django/dispatch/dispatcher | subject | 97 | 0 | 0 | 1030 | [subjects/django-dispatch-dispatcher/index.md](../subjects/django-dispatch-dispatcher/index.md) |
 
 Up: [index/django.md](django.md)

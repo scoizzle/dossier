@@ -4,10 +4,10 @@ This file lists every subject under `django/contrib/admindocs/`, one row per sub
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/admindocs/apps | subject | 2 | 0 | 0 | 118 | [subjects/django-contrib-admindocs-apps.md](../subjects/django-contrib-admindocs-apps.md) |
-|   django/contrib/admindocs/middleware | subject | 4 | 0 | 0 | 351 | [subjects/django-contrib-admindocs-middleware.md](../subjects/django-contrib-admindocs-middleware.md) |
-|   django/contrib/admindocs/urls | subject | 2 | 0 | 0 | 320 | [subjects/django-contrib-admindocs-urls.md](../subjects/django-contrib-admindocs-urls.md) |
-|   django/contrib/admindocs/utils | subject | 26 | 0 | 0 | 907 | [subjects/django-contrib-admindocs-utils.md](../subjects/django-contrib-admindocs-utils.md) |
-|   django/contrib/admindocs/views | subject | 36 | 0 | 0 | 1021 | [subjects/django-contrib-admindocs-views.md](../subjects/django-contrib-admindocs-views.md) |
+|   django/contrib/admindocs/apps | subject | 2 | 0 | 0 | 118 | [subjects/django-contrib-admindocs-apps/index.md](../subjects/django-contrib-admindocs-apps/index.md) |
+|   django/contrib/admindocs/middleware | subject | 4 | 0 | 0 | 351 | [subjects/django-contrib-admindocs-middleware/index.md](../subjects/django-contrib-admindocs-middleware/index.md) |
+|   django/contrib/admindocs/urls | subject | 2 | 0 | 0 | 320 | [subjects/django-contrib-admindocs-urls/index.md](../subjects/django-contrib-admindocs-urls/index.md) |
+|   django/contrib/admindocs/utils | subject | 26 | 0 | 0 | 907 | [subjects/django-contrib-admindocs-utils/index.md](../subjects/django-contrib-admindocs-utils/index.md) |
+|   django/contrib/admindocs/views | subject | 36 | 0 | 0 | 1021 | [subjects/django-contrib-admindocs-views/index.md](../subjects/django-contrib-admindocs-views/index.md) |
 
 Up: [index/django-contrib.md](django-contrib.md)

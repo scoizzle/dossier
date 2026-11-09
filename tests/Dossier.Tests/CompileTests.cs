@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text.Json;
 using Microsoft.Data.Sqlite;
 using TUnit.Assertions;
@@ -371,5 +372,103 @@ public sealed class CompileTests
 
         await Assert.That(markdown.Contains("## Conflicts")).IsTrue();
         await Assert.That(markdown.Contains("## Gaps")).IsTrue();
+    }
+
+    [Test]
+    public async Task Relevance_Bm25RanksMatchingNeedFirst()
+    {
+        using var db = new TempDb();
+        // Three facts with disjoint token sets (Jaccard 0, no clustering) and no refs, so only the
+        // bm25 relevance term can separate the fact that carries the need tokens.
+        var ids = Post(
+            db,
+            "Widget",
+            Fixtures.Fact("deployment pipeline runs nightly builds"),
+            Fixtures.Fact("widget renders charts quickly"),
+            Fixtures.Fact("database stores user records"));
+        // Make the relevant fact the oldest: without relevance it ranks last on recency, so the
+        // bm25 term alone can move it to position 1 (deterministic, unlike a GUID tie-break).
+        SetCreated(db, ids[0], 0);
+        SetCreated(db, ids[1], 50);
+        SetCreated(db, ids[2], 100);
+
+        var withoutNeeds = db.Store.Compile(Full()).Facts.Select(f => f.Id).ToList();
+        await Assert.That(withoutNeeds.SequenceEqual(new[] { ids[2], ids[1], ids[0] })).IsTrue();
+
+        var request = Full();
+        request.Needs = new List<string> { "deployment pipeline" };
+        var dossier = db.Store.Compile(request);
+        var order = dossier.Facts.Select(f => f.Id).ToList();
+
+        await Assert.That(order.Count).IsEqualTo(3);
+        // Position 1 in the score-ordered facts array is the only fact whose tokens match the need.
+        await Assert.That(order[0]).IsEqualTo(ids[0]);
+        await Assert.That(dossier.Facts[0].Text.Contains("deployment pipeline")).IsTrue();
+    }
+
+    [Test]
+    public async Task Relevance_AbsentWhenNoRelevance()
+    {
+        using var db = new TempDb();
+        var ids = Post(
+            db,
+            "Widget",
+            Fixtures.Fact("alpha beta gamma delta"),
+            Fixtures.Fact("zeta eta theta iota"),
+            Fixtures.Fact("kappa lambda mu nu"));
+        SetCreated(db, ids[0], 0);
+        SetCreated(db, ids[1], 50);
+        SetCreated(db, ids[2], 100);
+        foreach (var id in ids)
+        {
+            Exec(db, "UPDATE facts SET confidence = 0.5 WHERE id = $id", ("$id", id));
+        }
+
+        // Empty needs: bm25 has no terms, so relevance is 0 and the other four terms decide.
+        // With equal confidence, equal explicitness, no inbound refs, and the default recency
+        // weight, only recency differs, so the newest fact ranks first and the oldest last.
+        var none = Full();
+        none.Needs = new List<string>();
+        var ranked = db.Store.Compile(none).Facts.Select(f => f.Id).ToList();
+        await Assert.That(ranked.SequenceEqual(new[] { ids[2], ids[1], ids[0] })).IsTrue();
+
+        // Control: same store, empty needs, recency weight 0 and all confidences equal. Every
+        // remaining term is then an identical constant, so any residual bm25 ordering would show
+        // up here; instead the result is the pure id tie-break, proving relevance is exactly 0.
+        var flat = Full();
+        flat.Needs = new List<string>();
+        flat.Rank = new RankOptions { Recency = 0 };
+        var flattened = db.Store.Compile(flat).Facts.Select(f => f.Id).ToList();
+        var idOrder = ids.OrderBy(id => id, StringComparer.Ordinal).ToList();
+        await Assert.That(flattened.SequenceEqual(idOrder)).IsTrue();
+    }
+
+    [Test]
+    public async Task Descendants_CycleInParentsDoesNotHang()
+    {
+        using var db = new TempDb();
+        var a = db.Store.PostFacts(Fixtures.Post("CycleA", Fixtures.Fact("cycle alpha fact")));
+        var b = db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "CycleB", Parent = a.Response.Subject.Id },
+            Facts = new List<FactInput> { Fixtures.Fact("cycle bravo fact") },
+        });
+
+        // Close the loop: A's parent becomes B, so A -> B -> A.
+        Exec(
+            db,
+            "UPDATE subjects SET parent_id = $parent WHERE id = $id",
+            ("$parent", b.Response.Subject.Id),
+            ("$id", a.Response.Subject.Id));
+
+        var request = Full("CycleA");
+        request.Descendants = true;
+        var stopwatch = Stopwatch.StartNew();
+        var dossier = db.Store.Compile(request);
+        stopwatch.Stop();
+
+        await Assert.That(stopwatch.Elapsed < TimeSpan.FromSeconds(5)).IsTrue();
+        await Assert.That(dossier.Facts.Count).IsEqualTo(2);
+        await Assert.That(dossier.Subject.Id).IsEqualTo(a.Response.Subject.Id);
     }
 }

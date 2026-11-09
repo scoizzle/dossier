@@ -58,6 +58,7 @@ Hard invariants (rules):
 8. Retrieval is fail-open: a degraded compile returns the last good dossier plus an explicit degraded marker; it never errors out.
 9. Zero models, zero network in the core. The client resolves rev/snapshot/etag and supplies them.
 10. Absence is a fact: a scan: note fact is how "not scanned" is distinguished from "no references".
+11. Dedupe scope is (subject_id, content_hash); content-hash dedupe never merges across subjects or across different keys.
 
 ## The three verbs
 
@@ -83,6 +84,8 @@ Shapes in `contract/ops.schema.json`.
 - SQLite (WAL) + FTS5, raw ADO.NET. Attachments as files in `blobs/<sha256>`.
 - No EF Core, no DI container, no NuGet packages, no Poly reference.
 - Core operations are pure functions over a Store abstraction, so storage/transport/domain stay out of the core.
+- Tests: TUnit 1.81.10 running on Microsoft.Testing.Platform.
+- `global.json` sets `test.runner = Microsoft.Testing.Platform`; the .NET 10 SDK requires it for `dotnet test`.
 
 ## Gates
 

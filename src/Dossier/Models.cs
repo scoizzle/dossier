@@ -96,6 +96,21 @@ public sealed class FactResult
 /// <summary>An item the write path rejected; the rest of the batch still commits.</summary>
 public sealed record PostError(int Index, string Code, string Message);
 
+/// <summary>
+/// A request-level failure that rejects the whole call before any write happens, carrying a
+/// stable machine-readable <see cref="Code"/> (for example "subject_not_found").
+/// </summary>
+public sealed class DossierRequestException : Exception
+{
+    public DossierRequestException(string code, string message)
+        : base(message)
+    {
+        Code = code;
+    }
+
+    public string Code { get; }
+}
+
 public sealed record PostResult(PostFactsResponse Response, IReadOnlyList<PostError> Errors);
 
 public sealed record RetractResult(bool Found, string Id);

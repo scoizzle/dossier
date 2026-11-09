@@ -65,10 +65,9 @@ public sealed partial class DossierStore
                 continue;
             }
 
-            // Hash the refs as supplied: a batch-local "@x" target is content, and the
-            // generated fact ids must not leak into a content hash.
-            var suppliedRefs = fact.Refs ?? NoRefs;
-            var hash = ContentHash.Compute(fact.Text, fact.Data, suppliedRefs);
+            // Hash the resolved refs: an "@x" target must hash as the fact id it points at, so a
+            // repost (local id) and a direct-GUID post of the same edge agree on content_hash.
+            var hash = ContentHash.Compute(fact.Text, fact.Data, resolvedRefs);
 
             var replacedId = fact.Key is null
                 ? null
@@ -200,8 +199,10 @@ public sealed partial class DossierStore
                 return new SubjectResolution(existing.Id, existing.Name, false, existing.ParentId);
             }
 
-            InsertSubject(connection, transaction, input.Id!, input.Id!, input.Kind ?? "subject", input.Parent, requestedAliases, createdAt);
-            return new SubjectResolution(input.Id!, input.Id!, true, input.Parent);
+            // Fail closed: an unknown id must not materialize a subject named after the id.
+            throw new DossierRequestException(
+                "subject_not_found",
+                $"subject \"{input.Id}\" does not exist");
         }
 
         var wanted = Names.Normalize(input.Name);

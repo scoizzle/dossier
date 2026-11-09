@@ -140,18 +140,96 @@ public sealed class PostFactsTests
 
         var created = db.Store.PostFacts(new PostFactsRequest
         {
-            Subject = new SubjectInput { Id = "subject-fixed" },
+            Subject = new SubjectInput { Name = "Widget" },
             Facts = new List<FactInput> { Fixtures.Fact("one") },
         });
+        var subjectId = created.Response.Subject.Id;
         var reused = db.Store.PostFacts(new PostFactsRequest
         {
-            Subject = new SubjectInput { Id = "subject-fixed" },
+            Subject = new SubjectInput { Id = subjectId },
             Facts = new List<FactInput> { Fixtures.Fact("two") },
         });
 
-        await Assert.That(created.Response.Subject.Id).IsEqualTo("subject-fixed");
         await Assert.That(created.Response.Subject.Created).IsTrue();
+        await Assert.That(reused.Response.Subject.Id).IsEqualTo(subjectId);
         await Assert.That(reused.Response.Subject.Created).IsFalse();
+    }
+
+    [Test]
+    public async Task Subject_UnknownId_IsRejectedAndNotCreated()
+    {
+        using var db = new TempDb();
+
+        DossierRequestException? caught = null;
+        try
+        {
+            db.Store.PostFacts(new PostFactsRequest
+            {
+                Subject = new SubjectInput { Id = "subject-that-does-not-exist" },
+                Facts = new List<FactInput> { Fixtures.Fact("should not land") },
+            });
+        }
+        catch (DossierRequestException exception)
+        {
+            caught = exception;
+        }
+
+        await Assert.That(caught).IsNotNull();
+        await Assert.That(caught!.Code).IsEqualTo("subject_not_found");
+
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM subjects")).IsEqualTo(0);
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts")).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Batch_Repost_Dedupes_WithLocalIds()
+    {
+        using var db = new TempDb();
+
+        PostFactsRequest Batch() => Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("the first fact", localId: "x"),
+            Fixtures.Fact("the second fact", refs: new List<RefInput> { Fixtures.Ref("@x") }));
+
+        var first = db.Store.PostFacts(Batch());
+        var second = db.Store.PostFacts(Batch());
+
+        var firstTargetId = first.Response.Facts[0].Id;
+        var firstPointerId = first.Response.Facts[1].Id;
+
+        await Assert.That(first.Response.Facts[0].Status).IsEqualTo("new");
+        await Assert.That(first.Response.Facts[1].Status).IsEqualTo("new");
+        await Assert.That(second.Response.Facts[0].Status).IsEqualTo("deduped");
+        await Assert.That(second.Response.Facts[1].Status).IsEqualTo("deduped");
+        await Assert.That(second.Response.Facts[0].Id).IsEqualTo(firstTargetId);
+        await Assert.That(second.Response.Facts[1].Id).IsEqualTo(firstPointerId);
+
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts")).IsEqualTo(2);
+    }
+
+    [Test]
+    public async Task DirectGuidTarget_Dedupes_AgainstLocalIdFact()
+    {
+        using var db = new TempDb();
+
+        var first = db.Store.PostFacts(Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("the target fact", localId: "x"),
+            Fixtures.Fact("the pointer fact", refs: new List<RefInput> { Fixtures.Ref("@x") })));
+        var targetGuid = first.Response.Facts[0].Id;
+        var pointerId = first.Response.Facts[1].Id;
+
+        var direct = db.Store.PostFacts(Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("the pointer fact", refs: new List<RefInput> { Fixtures.Ref(targetGuid) })));
+
+        await Assert.That(direct.Response.Facts[0].Status).IsEqualTo("deduped");
+        await Assert.That(direct.Response.Facts[0].Id).IsEqualTo(pointerId);
+
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts")).IsEqualTo(2);
     }
 
     [Test]

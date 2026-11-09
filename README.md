@@ -187,6 +187,25 @@ Rules:
 
 **Round tripping requires `--facts detail` (the default).** A bundle published with `--facts none` has no fact files, so import fails closed and says so. Publish, import into a fresh store and publish again yields the same bundle file for file apart from the README's `Generated at` line (given the same recorded command line); `bash scripts/publish-demo.sh` output was checked this way. Only what a bundle holds is restored: superseded and retracted facts, and subjects with no live facts in their subtree, are not published and so not imported.
 
+### Profiles and shards: publishing to a consumer's quotas
+
+Some consumers cap how many files you can upload and degrade on tiny ones. Microsoft Copilot Studio, for example, accepts 500 uploaded files per agent and falls back to document-level citations for files under about 4 KB, while a Django-sized bundle is over a thousand files of 1-2 KB. A **profile** is a small JSON file of limits; publish checks the bundle against it and, with `--respect-limits`, repacks it to fit.
+
+```sh
+dotnet src/Dossier/bin/Release/net10.0/Dossier.dll publish --out out --profile profiles/copilot-studio.json                    # normal bundle + compliance table
+dotnet src/Dossier/bin/Release/net10.0/Dossier.dll publish --out out --profile profiles/copilot-studio.json --respect-limits   # shards + compliance table
+```
+
+`profiles/copilot-studio.json` (Microsoft Learn, "Quotas and limits", <https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas>, retrieved 2026-11-09) holds `max_files` 500, `min_file_bytes` 4096, `max_file_bytes` 536870912, `max_total_bytes` 0 (unbounded: the page states no total), `allowed_extensions` doc, docx, xls, xlsx, ppt, pptx, pdf, `max_path_depth` 10, plus `source_url`, `retrieved` and a `note`. `profiles/generic-large.json` (5000 files, no size floor, `md` allowed) shows the mechanism is not Microsoft-specific. Every limit is optional; `0` means unbounded (no floor for `min_file_bytes`) and an absent `allowed_extensions` accepts anything. An unknown key or a wrongly typed field makes publish exit non-zero naming the field, before anything is written.
+
+**Compliance table.** With `--profile`, publish prints one row per limit (`max_files`, `min_file_bytes`, `max_file_bytes`, `max_total_bytes`, `allowed_extensions`, `max_path_depth`): allowed, actual and PASS/FAIL, then `overall`. It measures what a consumer would upload: the whole bundle except `manifest.json` for a normal publish, the `shards/` documents in shard mode (the index, `AGENTS.md`, `README.md`, `conflicts.md`, `gaps.md` and `manifest.json` are navigation aids for a reader of the repository and are not counted). `--profile` alone only reports; it exits 0 even when rows FAIL.
+
+**`--respect-limits`** (requires `--profile`) writes shards instead of the subject tree. Subjects are taken in the bundle's deterministic tree order and packed into `shards/<n>.md`, at most `max_files` documents, each at least `min_file_bytes` where the corpus allows (a corpus smaller than the floor yields one short shard and the table says FAIL) and never above `max_file_bytes`. Each shard opens with front matter (`shard`, `of`, `subjects`, `fact_files: absent`), a table of contents of its subjects, then one section per subject whose anchor is the subject's slug (`<a id="<slug>"></a>`). Every index row, and the links in `conflicts.md` and `gaps.md`, point at `shards/<n>.md#<slug>`; parent and child links inside a shard are `#<slug>` or `<n>.md#<slug>`. Subject directories, fact files and assets are **not** written: fact keys are plain citations and attachments are listed by sha256. Shard boundaries depend only on subject content, so the same store and profile give identical bytes. If one subject's page cannot fit `max_file_bytes`, publish fails before writing and names the subject and its size.
+
+`bash scripts/publish-profile-demo.sh` rebuilds a 1080-subject Django-shaped corpus from the committed `examples/django-bundle` manifest (no re-ingest), prints the table before and after, and writes `examples/django-shards/` (399 shards of 5867 to 9368 bytes). Against `copilot-studio.json` the shard bundle passes `max_files`, `min_file_bytes`, `max_file_bytes`, `max_total_bytes` and `max_path_depth`.
+
+**The format gap.** Copilot Studio uploads accept doc, docx, xls, xlsx, ppt, pptx and pdf. The bundle is markdown, and no converter ships here, so the `allowed_extensions` row **FAILs** against `copilot-studio.json` even in shard mode (`unsupported: md (markdown)`). Sharding fixes the file cap and the size floor; converting the shards to a supported format (for example with pandoc) is a step you run before uploading. The profile reports the gap; it does not hide it.
+
 ## Surfaces
 
 All three surfaces call the same core functions.
@@ -250,12 +269,13 @@ global.json        pins the Microsoft.Testing.Platform test runner
 assets/            icon
 contract/          JSON Schemas: subject, fact, ref, ops, dossier (the normative shapes)
 docs/PLAN.md       hypothesis, kill criterion, invariants, measured results
-examples/          memos-bundle/, a committed publish output
-scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish-demo.sh
+examples/          memos-bundle/, django-bundle/, django-models-bundle/, django-shards/: committed publish outputs
+profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
+scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  129 TUnit tests
+tests/Dossier.Tests/  155 TUnit tests
 ```
 
 ## Reproducing the evaluation

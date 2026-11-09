@@ -1377,4 +1377,295 @@ public sealed class PublishTests
         await Assert.That(plainRecord.TryGetProperty("data", out _)).IsFalse();
         _ = result;
     }
+
+    // ---- profiles and shard mode -----------------------------------------------------------
+
+    private static string RepoFile(string relative)
+    {
+        var dir = new DirectoryInfo(AppContext.BaseDirectory);
+        while (dir is not null && !Directory.Exists(Path.Combine(dir.FullName, "profiles")))
+        {
+            dir = dir.Parent;
+        }
+
+        return Path.Combine(dir!.FullName, relative);
+    }
+
+    /// <summary>A Django-shaped corpus: module subjects named with '/', a few facts each.</summary>
+    private static void SeedMany(TempDb db, int count)
+    {
+        for (var i = 0; i < count; i++)
+        {
+            var module = $"django/contrib/app{i / 40:D2}/module{i:D4}";
+            db.Store.PostFacts(Fixtures.Post(
+                module,
+                Fixtures.Fact($"Module {i} defines the model layer for app {i / 40}. " + new string('x', 120), key: "overview"),
+                Fixtures.Fact($"Module {i} registers its admin options and its signal handlers."),
+                Fixtures.Fact($"Module {i} is imported by the app config at startup.")));
+        }
+    }
+
+    private static string WriteProfile(TempDb db, string json, string name = "profile.json")
+    {
+        var path = Path.Combine(db.Directory, name);
+        File.WriteAllText(path, json);
+        return path;
+    }
+
+    private const string TightProfile = "{\"name\":\"tight\",\"max_files\":50,\"min_file_bytes\":4096,\"max_file_bytes\":536870912,\"max_total_bytes\":0,\"allowed_extensions\":[\"pdf\"],\"max_path_depth\":10}";
+
+    private static Task<DossierRequestException> Rejected(Action action)
+    {
+        try
+        {
+            action();
+        }
+        catch (DossierRequestException exception)
+        {
+            return Task.FromResult(exception);
+        }
+
+        throw new InvalidOperationException("expected a DossierRequestException, but the call succeeded");
+    }
+
+    [Test]
+    public async Task Publish_ProfileReportFlagsViolations()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 1200);
+
+        var result = db.Store.Publish(Options(db, o => o.ProfilePath = RepoFile("profiles/copilot-studio.json")));
+
+        var report = result.Compliance!;
+        var files = report.Rows.Single(r => r.Limit == "max_files");
+        await Assert.That(files.Pass).IsFalse();
+        await Assert.That(files.Allowed).IsEqualTo("500");
+        await Assert.That(int.Parse(files.Actual)).IsGreaterThan(1200);
+
+        var extensions = report.Rows.Single(r => r.Limit == "allowed_extensions");
+        await Assert.That(extensions.Pass).IsFalse();
+        await Assert.That(extensions.Actual).Contains("markdown");
+
+        var min = report.Rows.Single(r => r.Limit == "min_file_bytes");
+        await Assert.That(min.Pass).IsFalse();
+        await Assert.That(report.Passed).IsFalse();
+
+        var text = report.Render();
+        await Assert.That(text).Contains("max_files");
+        await Assert.That(text).Contains("FAIL");
+        await Assert.That(text).Contains("md (markdown)");
+
+        // Profile only: the normal bundle is written, no shards.
+        var written = ReadAll(Out(db));
+        await Assert.That(written.Keys.Any(k => k.StartsWith("shards/", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(written.ContainsKey("subjects/django-contrib-app00-module0000/index.md")).IsTrue();
+    }
+
+    [Test]
+    public async Task Publish_RespectLimitsShardsUnderFileCap()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 1200);
+        var profile = WriteProfile(db, TightProfile.Replace("[\"pdf\"]", "[\"md\"]", StringComparison.Ordinal));
+
+        var result = db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; }));
+
+        var written = ReadAll(Out(db));
+        var shards = written.Where(kv => kv.Key.StartsWith("shards/", StringComparison.Ordinal)).ToList();
+        await Assert.That(shards.Count).IsGreaterThan(0);
+        await Assert.That(shards.Count).IsLessThanOrEqualTo(50);
+        foreach (var (path, text) in shards)
+        {
+            await Assert.That(Encoding.UTF8.GetByteCount(text)).IsGreaterThanOrEqualTo(4096);
+            _ = path;
+        }
+
+        // The point of the mode: no subject directories, fact files or assets.
+        await Assert.That(written.Keys.Any(k => k.StartsWith("subjects/", StringComparison.Ordinal))).IsFalse();
+        await Assert.That(result.Compliance!.Rows.Single(r => r.Limit == "max_files").Pass).IsTrue();
+        await Assert.That(result.Compliance!.Rows.Single(r => r.Limit == "min_file_bytes").Pass).IsTrue();
+        await Assert.That(result.Compliance!.Passed).IsTrue();
+
+        // Every subject is in exactly one shard.
+        var manifest = JsonDocument.Parse(written["manifest.json"]).RootElement;
+        var inShards = manifest.GetProperty("shards").EnumerateObject().Sum(s => s.Value.GetProperty("subjects").GetArrayLength());
+        await Assert.That(inShards).IsEqualTo(1200);
+    }
+
+    [Test]
+    public async Task Publish_ShardLinksUseAnchors()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 150);
+        var profile = WriteProfile(db, "{\"name\":\"small\",\"max_files\":6,\"min_file_bytes\":1024,\"allowed_extensions\":[\"md\"]}");
+
+        db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; o.IndexMaxTokens = 300; }));
+        var files = ReadAll(Out(db));
+
+        var indexFiles = files.Keys.Where(k => k == "INDEX.md" || k.StartsWith("index/", StringComparison.Ordinal)).ToList();
+        await Assert.That(indexFiles.Count).IsGreaterThan(1);
+
+        var rows = 0;
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var index in indexFiles)
+        {
+            foreach (var line in files[index].Split('\n').Where(l => l.StartsWith("| ", StringComparison.Ordinal) && l.Contains("shards/", StringComparison.Ordinal)))
+            {
+                var match = Regex.Match(line, @"\[(shards/(\d+)\.md#([a-z0-9-]+))\]\(([^)]+)\) \|$");
+                await Assert.That(match.Success).IsTrue();
+                await Assert.That(Resolve(index, match.Groups[4].Value)).IsEqualTo(match.Groups[1].Value);
+
+                var shard = match.Groups[1].Value[..match.Groups[1].Value.IndexOf('#')];
+                await Assert.That(files.ContainsKey(shard)).IsTrue();
+                await Assert.That(files[shard]).Contains("<a id=\"" + match.Groups[3].Value + "\"></a>");
+                seen.Add(match.Groups[3].Value);
+                rows++;
+            }
+        }
+
+        await Assert.That(rows).IsEqualTo(150);
+        await Assert.That(seen.Count).IsEqualTo(150);
+
+        // Links inside a shard (parent/child, table of contents) also resolve to anchors that exist.
+        foreach (var (path, text) in files.Where(kv => kv.Key.StartsWith("shards/", StringComparison.Ordinal)))
+        {
+            foreach (Match link in Regex.Matches(text, @"\]\((\d*)(?:\.md)?#([a-z0-9-]+)\)"))
+            {
+                var target = link.Groups[1].Value.Length == 0 ? path : "shards/" + link.Groups[1].Value + ".md";
+                await Assert.That(files[target]).Contains("<a id=\"" + link.Groups[2].Value + "\"></a>");
+            }
+        }
+    }
+
+    [Test]
+    public async Task Publish_ShardModeIsDeterministic()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 300);
+        var profile = WriteProfile(db, "{\"name\":\"det\",\"max_files\":12,\"min_file_bytes\":4096,\"allowed_extensions\":[\"md\"]}");
+
+        db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; }));
+        var first = ReadAll(Out(db));
+        var secondDir = Path.Combine(db.Directory, "second");
+        db.Store.Publish(Options(db, o => { o.Out = secondDir; o.ProfilePath = profile; o.RespectLimits = true; }));
+        var second = ReadAll(secondDir);
+
+        var shards = first.Keys.Where(k => k.StartsWith("shards/", StringComparison.Ordinal)).OrderBy(k => k, StringComparer.Ordinal).ToList();
+        await Assert.That(shards.Count).IsGreaterThan(1);
+        await Assert.That(second.Keys.Where(k => k.StartsWith("shards/", StringComparison.Ordinal)).OrderBy(k => k, StringComparer.Ordinal).SequenceEqual(shards)).IsTrue();
+        foreach (var path in shards)
+        {
+            await Assert.That(second[path]).IsEqualTo(first[path]);
+        }
+
+        // Republishing into the same directory rewrites nothing.
+        var again = db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; }));
+        await Assert.That(again.Written).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Publish_ShardFailsClosedOnOversizedSubject()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 20);
+        var profile = WriteProfile(db, "{\"name\":\"tiny\",\"max_files\":5,\"max_file_bytes\":64,\"allowed_extensions\":[\"md\"]}");
+
+        var error = await Rejected(() => db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; })));
+
+        await Assert.That(error.Message).Contains("django/contrib/app00/module0000");
+        await Assert.That(error.Message).Contains("bytes");
+        await Assert.That(error.Message).Contains("max_file_bytes 64");
+        await Assert.That(Directory.Exists(Out(db))).IsFalse();
+    }
+
+    [Test]
+    public async Task Publish_ProfileRejectsMalformedFile()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 3);
+
+        var unknown = WriteProfile(db, "{\"max_files\":10,\"max_filez\":3}", "unknown.json");
+        var unknownError = await Rejected(() => db.Store.Publish(Options(db, o => o.ProfilePath = unknown)));
+        await Assert.That(unknownError.Message).Contains("max_filez");
+
+        var wrongType = WriteProfile(db, "{\"max_files\":\"five\"}", "type.json");
+        var typeError = await Rejected(() => db.Store.Publish(Options(db, o => o.ProfilePath = wrongType)));
+        await Assert.That(typeError.Message).Contains("max_files");
+
+        var extensions = WriteProfile(db, "{\"allowed_extensions\":\"md\"}", "ext.json");
+        var extensionError = await Rejected(() => db.Store.Publish(Options(db, o => o.ProfilePath = extensions)));
+        await Assert.That(extensionError.Message).Contains("allowed_extensions");
+
+        var broken = WriteProfile(db, "{\"max_files\":", "broken.json");
+        var brokenError = await Rejected(() => db.Store.Publish(Options(db, o => o.ProfilePath = broken)));
+        await Assert.That(brokenError.Message).Contains("not valid JSON");
+
+        var missingError = await Rejected(() => db.Store.Publish(Options(db, o => o.ProfilePath = Path.Combine(db.Directory, "nope.json"))));
+        await Assert.That(missingError.Message).Contains("nope.json");
+
+        // Nothing was written by any of them.
+        await Assert.That(Directory.Exists(Out(db))).IsFalse();
+    }
+
+    [Test]
+    public async Task Publish_GenericProfileAcceptsMarkdown()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 120);
+
+        var sharded = db.Store.Publish(Options(db, o => { o.ProfilePath = RepoFile("profiles/generic-large.json"); o.RespectLimits = true; }));
+        var extensions = sharded.Compliance!.Rows.Single(r => r.Limit == "allowed_extensions");
+        await Assert.That(extensions.Pass).IsTrue();
+        await Assert.That(extensions.Allowed).IsEqualTo("md");
+        await Assert.That(sharded.Compliance.Passed).IsTrue();
+
+        var plainDir = Path.Combine(db.Directory, "plain");
+        var plain = db.Store.Publish(Options(db, o => { o.Out = plainDir; o.ProfilePath = RepoFile("profiles/generic-large.json"); }));
+        await Assert.That(plain.Compliance!.Rows.Single(r => r.Limit == "allowed_extensions").Pass).IsTrue();
+        await Assert.That(plain.Compliance.Passed).IsTrue();
+    }
+
+    [Test]
+    public async Task Publish_RespectLimitsRequiresProfile()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 2);
+
+        var error = await Rejected(() => db.Store.Publish(Options(db, o => o.RespectLimits = true)));
+
+        await Assert.That(error.Message).Contains("--profile");
+        await Assert.That(Directory.Exists(Out(db))).IsFalse();
+    }
+
+    [Test]
+    public async Task Publish_ShardOpensWithContentsAndStatesFactFilesAbsent()
+    {
+        using var db = new TempDb();
+        SeedMany(db, 60);
+        var profile = WriteProfile(db, "{\"name\":\"toc\",\"max_files\":3,\"min_file_bytes\":2048,\"allowed_extensions\":[\"md\"]}");
+
+        db.Store.Publish(Options(db, o => { o.ProfilePath = profile; o.RespectLimits = true; }));
+        var files = ReadAll(Out(db));
+
+        var shard = files["shards/1.md"];
+        await Assert.That(shard).StartsWith("---\nshard: 1\nof: ");
+        var front = shard[..shard.IndexOf("\n---\n", 4, StringComparison.Ordinal)];
+        await Assert.That(front).Contains("fact_files: absent");
+        await Assert.That(shard).Contains("## Contents");
+
+        // The table of contents lists exactly the subjects the shard holds, each linking to its section.
+        var contents = shard[(shard.IndexOf("## Contents", StringComparison.Ordinal))..shard.IndexOf("\n---\n\n", shard.IndexOf("## Contents", StringComparison.Ordinal), StringComparison.Ordinal)];
+        var anchors = Regex.Matches(contents, @"\(#([a-z0-9-]+)\)").Select(m => m.Groups[1].Value).ToList();
+        await Assert.That(anchors.Count).IsGreaterThan(0);
+        foreach (var anchor in anchors)
+        {
+            await Assert.That(shard).Contains("<a id=\"" + anchor + "\"></a>");
+        }
+
+        var sectionCount = Regex.Matches(shard, "<a id=\"").Count;
+        await Assert.That(sectionCount).IsEqualTo(anchors.Count);
+
+        // No fact file links survive: citations are plain keys.
+        await Assert.That(shard).DoesNotContain("/facts/");
+    }
 }

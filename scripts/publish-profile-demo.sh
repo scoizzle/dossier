@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+# Publish a Django-shaped corpus against a consumer profile (Microsoft Copilot Studio quotas) and show
+# the compliance table before (plain bundle) and after (--respect-limits shards).
+#
+# The corpus is synthesised from the committed examples/django-bundle: one subject per manifest entry,
+# with the fact lines its subject page shows posted back as facts. Nothing is re-ingested from Django.
+# The facts are the ones the page showed at budget 1200 (a sample, not the whole 50k-fact corpus), so
+# the subject count (1080) matches the bundle and the byte counts are smaller than a full ingest.
+#
+# usage: scripts/publish-profile-demo.sh [out-dir]    (default: examples/django-shards)
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+DLL="$ROOT/src/Dossier/bin/Release/net10.0/Dossier.dll"
+SRC="$ROOT/examples/django-bundle"
+OUT="${1:-$ROOT/examples/django-shards}"
+PROFILE="profiles/copilot-studio.json"
+
+if [ ! -f "$DLL" ]; then
+  echo "missing $DLL; build it with: dotnet build -c Release src/Dossier/Dossier.csproj" >&2
+  exit 1
+fi
+
+TMP="$(mktemp -d "${TMPDIR:-/tmp}/dossier-profile.XXXXXX")"
+export DOSSIER_DB="$TMP/dossier.db"
+trap 'rm -rf "$TMP"' EXIT
+
+dotnet "$DLL" init
+mkdir -p "$TMP/posts"
+
+# One post file per subject: the "- <text> [<key>]" bullets under "## Facts" of its subject page.
+jq -r '.subjects | to_entries | sort_by(.value.slug)[] | [.value.slug, .value.name, .value.kind] | @tsv' "$SRC/manifest.json" |
+  while IFS=$'\t' read -r slug name kind; do
+    awk '
+      /^## Facts/ { on = 1; next }
+      /^## / { on = 0 }
+      on && /^- / { sub(/^- /, ""); sub(/ \[[0-9a-f]+\]$/, ""); print }
+    ' "$SRC/subjects/$slug/index.md" |
+      jq -R -s --arg name "$name" --arg kind "$kind" '
+        split("\n") | map(select(length > 0)) as $texts
+        | if ($texts | length) == 0 then empty
+          else {subject: {name: $name, kind: $kind}, facts: ($texts | map({kind: "note", text: .}))} end' \
+        > "$TMP/posts/$slug.json"
+    [ -s "$TMP/posts/$slug.json" ] || rm -f "$TMP/posts/$slug.json"
+  done
+
+(cd "$TMP/posts" && ls | xargs -P 4 -I{} dotnet "$DLL" post --file {} >/dev/null)
+printf 'posted subjects=%s\n' "$(ls "$TMP/posts" | wc -l | tr -d ' ')"
+
+cd "$ROOT"
+
+echo
+echo "== before: plain bundle (--profile only) =="
+dotnet "$DLL" publish --out "$TMP/plain" --profile "$PROFILE" | sed -n '/^profile:/,$p'
+
+echo
+echo "== after: --respect-limits =="
+REL_OUT="${OUT#"$ROOT"/}"
+dotnet "$DLL" publish --out "$REL_OUT" --profile "$PROFILE" --respect-limits | sed -n '/^profile:/,$p'
+
+count="$(find "$OUT" -type f | wc -l | tr -d ' ')"
+bytes="$(find "$OUT" -type f -exec cat {} + | wc -c | tr -d ' ')"
+shards="$(find "$OUT/shards" -type f | wc -l | tr -d ' ')"
+sizes="$(find "$OUT/shards" -type f -exec wc -c {} + | grep -v ' total$' | awk '{print $1}' | sort -n)"
+echo
+printf 'files=%s\n' "$count"
+printf 'bytes=%s\n' "$bytes"
+printf 'shards=%s\n' "$shards"
+printf 'smallest_shard_bytes=%s\n' "$(echo "$sizes" | head -1)"
+printf 'largest_shard_bytes=%s\n' "$(echo "$sizes" | tail -1)"

@@ -1,0 +1,12 @@
+{
+  "name": "copilot-studio",
+  "source_url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-quotas",
+  "retrieved": "2026-11-09",
+  "max_files": 500,
+  "min_file_bytes": 4096,
+  "max_file_bytes": 536870912,
+  "max_total_bytes": 0,
+  "allowed_extensions": ["doc", "docx", "xls", "xlsx", "ppt", "pptx", "pdf"],
+  "max_path_depth": 10,
+  "note": "Microsoft Copilot Studio, 'Quotas and limits' page (Copilot Studio web app limits: 500 uploaded files and 500 knowledge sources per agent, 512 MB per file; unstructured data limits: file types doc, docx, xls, xlsx, ppt, pptx, pdf and 10 levels of subfolders). Files under about 4 KB fall back to document-level citations. max_total_bytes 0 means the page states no total cap."
+}

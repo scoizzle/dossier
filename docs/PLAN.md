@@ -100,6 +100,36 @@ Shapes in `contract/ops.schema.json`.
 - Secondary: citation precision >= 95% on 20 spot-checked claims; unsupported-claim rate 0; reverse-impact recall on the code domain; compile p95 < 1s at 20 facts.
 - Report the estimator used for token counts.
 
+### Measured results
+
+Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts), on a clean
+temp DB. Token counts use the chars/4 estimator (`ceil(chars / 4)`).
+
+| Arm | Context | Chars | Tokens (chars/4) | Facts |
+| --- | --- | --- | --- | --- |
+| A | `search` JSON, limit 100 | 5902 | 1476 | 24 |
+| A2 | same facts as bare text, one line each, no ids or tags | 1483 | 371 | 24 |
+| B | compiled dossier, budget 1200, depth full, markdown | 2830 | 708 | 24 |
+
+Accuracy: two independent agents, one given only arm A and one given only arm B,
+each with the ten questions in `scripts/eval/questions.json`, both scored 10/10.
+Both answered all three contradiction questions as a conflict with both values,
+and both answered both unanswerable questions `UNANSWERABLE`.
+
+Outcome: the dossier matched the raw context on accuracy at 2.08x compression
+against the JSON baseline (A/B). Against the plain-text baseline it does not
+compress: A2 is 371 tokens and B is 708, so B is 190.8% of A2 (ratio A2/B 0.52).
+The plain-text baseline is smaller than the dossier because citations cost
+tokens, and the 25 percent target is **not** met. This is expected at 24 facts:
+every fact is relevant to some question, so there is nothing to cut. Compression
+can only be expected to matter as the fact count grows.
+
+This does **not** prove the hypothesis. The hypothesis is untested at the scale
+where it could hold, because a small corpus of all-relevant facts leaves a
+budgeted compiler nothing to select away. The next experiment is a subject with
+200 or more facts, where a fixed token budget forces selection and a raw dump
+cannot fit.
+
 ## Path to Poly
 
 - The contract is the deliverable; the C# implementation is a reference implementation.
@@ -133,8 +163,8 @@ Ranked:
 ## End-to-end
 
 The seeded demo lives in `scripts/seed/` and the evaluation harness in
-`scripts/eval/`. Both scripts need only bash and the built DLL, and every command
-calls `src/Dossier/bin/Release/net10.0/Dossier.dll` rather than `dotnet run`.
+`scripts/eval/`. Both scripts need only bash, jq, and the built DLL, and every
+command calls `src/Dossier/bin/Release/net10.0/Dossier.dll` rather than `dotnet run`.
 `DOSSIER_DB` selects the database; each script makes its own temp DB with
 `mktemp` and removes it on exit.
 
@@ -170,12 +200,17 @@ bash scripts/eval.sh
 Measured on the same seed:
 
 - arm A (raw search, limit 100): 5902 chars, 1476 tokens (chars/4), 24 facts
+- arm A2 (same facts as bare text): 1483 chars, 371 tokens (chars/4), 24 facts
 - arm B (compiled dossier, budget 1200, depth full, markdown): 2830 chars, 708 tokens (chars/4), 24 facts
 - ratio A/B (tokens): 2.08, so B is about 48% of A
+- ratio A2/B (tokens): 0.52, so B is 190.8% of A2
+
+`docs/PLAN.md#measured-results` records the accuracy scores for these arms.
 
 Ids are GUIDs, so arm B's exact bytes move by a few characters between fresh
 databases; the counts above come from one real run.
 
 `scripts/eval/questions.json` holds the 10-question set: 3 questions require a
 contradiction to be noticed and 2 are unanswerable from the seed. The harness
-writes `arm-a.json` and `arm-b.md` under `scripts/eval/artifacts/` (git-ignored).
+writes `arm-a.json`, `arm-a2.txt` and `arm-b.md` under `scripts/eval/artifacts/`
+(git-ignored).

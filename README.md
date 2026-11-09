@@ -14,4 +14,11 @@ DOSSIER_DB=./dossier.db dotnet src/Dossier/bin/Release/net10.0/Dossier.dll dossi
 ```
 
 See `docs/PLAN.md#end-to-end` for the full demo (`bash scripts/e2e.sh`) and the
-evaluation harness (`bash scripts/eval.sh`).
+evaluation harness:
+
+```sh
+bash scripts/eval.sh
+```
+
+The current measured result is 10/10 accuracy at 2.08x compression against the
+JSON baseline; compression is not yet demonstrated against a plain-text baseline.

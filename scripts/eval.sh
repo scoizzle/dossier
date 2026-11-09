@@ -26,29 +26,44 @@ bash "$ROOT/scripts/seed.sh" >/dev/null
 # Arm A: every live fact for the subject as returned by search with limit 100.
 dotnet "$DLL" search --subject "$SUBJECT" --limit 100 > "$OUT/arm-a.json"
 
+# Arm A2: the same live facts as arm A, one bare line of text each: no ids,
+# no JSON envelope, no tags. This is the fair raw baseline.
+jq -r '.hits[].text' "$OUT/arm-a.json" > "$OUT/arm-a2.txt"
+
 # Arm B: the compiled dossier at budget 1200, depth full, format markdown.
 dotnet "$DLL" dossier compile --subject "$SUBJECT" --budget 1200 --depth full --format markdown > "$OUT/arm-b.md" 2>/dev/null
 
 a_chars="$(wc -c < "$OUT/arm-a.json" | tr -d ' ')"
+a2_chars="$(wc -c < "$OUT/arm-a2.txt" | tr -d ' ')"
 b_chars="$(wc -c < "$OUT/arm-b.md" | tr -d ' ')"
 a_tokens=$(( (a_chars + 3) / 4 ))
+a2_tokens=$(( (a2_chars + 3) / 4 ))
 b_tokens=$(( (b_chars + 3) / 4 ))
-ratio="$(awk -v a="$a_tokens" -v b="$b_tokens" 'BEGIN { if (b == 0) { print "inf" } else { printf "%.2f", a / b } }')"
+ratio_ab="$(awk -v a="$a_tokens" -v b="$b_tokens" 'BEGIN { if (b == 0) { print "inf" } else { printf "%.2f", a / b } }')"
+ratio_a2b="$(awk -v a="$a2_tokens" -v b="$b_tokens" 'BEGIN { if (b == 0) { print "inf" } else { printf "%.2f", a / b } }')"
+b_pct_a2="$(awk -v a2="$a2_tokens" -v b="$b_tokens" 'BEGIN { if (a2 == 0) { print "inf" } else { printf "%.1f", (b / a2) * 100 } }')"
 
 a_facts="$({ grep -o '"subject_id"' "$OUT/arm-a.json" || true; } | wc -l | tr -d ' ')"
+a2_facts="$(wc -l < "$OUT/arm-a2.txt" | tr -d ' ')"
 b_facts="$(awk '/^## / { exit } /^- / { n++ } END { print n + 0 }' "$OUT/arm-b.md")"
 
 q_total="$(grep -c '"id":' "$ROOT/scripts/eval/questions.json" || true)"
 q_contradiction="$(grep -c '"requires_contradiction": true' "$ROOT/scripts/eval/questions.json" || true)"
 q_unanswerable="$(grep -c '"supporting_fragments": \[\]' "$ROOT/scripts/eval/questions.json" || true)"
 
-echo "== arm A (raw search): $OUT/arm-a.json"
+echo "== arm A (raw search JSON): $OUT/arm-a.json"
 echo "   chars: $a_chars"
 echo "   tokens (chars/4): $a_tokens"
 echo "   facts: $a_facts"
+echo "== arm A2 (raw plain text): $OUT/arm-a2.txt"
+echo "   chars: $a2_chars"
+echo "   tokens (chars/4): $a2_tokens"
+echo "   facts: $a2_facts"
 echo "== arm B (compiled dossier): $OUT/arm-b.md"
 echo "   chars: $b_chars"
 echo "   tokens (chars/4): $b_tokens"
 echo "   facts: $b_facts"
-echo "== ratio A/B (tokens): $ratio"
+echo "== ratio A/B (tokens): $ratio_ab"
+echo "== ratio A2/B (tokens): $ratio_a2b"
+echo "== B as a percentage of A2 (tokens): $b_pct_a2%"
 echo "== eval questions: $q_total (contradiction: $q_contradiction, unanswerable: $q_unanswerable)"

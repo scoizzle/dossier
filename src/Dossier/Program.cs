@@ -173,6 +173,7 @@ try
                 Subject = subject,
                 Budget = ParseInt(ValueAfter(args, "--budget"), "--budget"),
                 Depth = ValueAfter(args, "--depth"),
+                Format = format,
                 Order = ValueAfter(args, "--order"),
                 Needs = ValuesAfter(args, "--need"),
                 Descendants = args.Contains("--descendants") ? true : null,
@@ -183,6 +184,7 @@ try
 
             var dossier = new DossierStore().Compile(compileRequest);
             Console.Error.WriteLine("token estimator: chars/4");
+            Console.Error.WriteLine($"used_tokens: {dossier.UsedTokens}");
             Console.WriteLine(format == "markdown"
                 ? DossierStore.RenderMarkdown(dossier).TrimEnd('\n')
                 : JsonSerializer.Serialize(dossier, JsonCodec.Options));

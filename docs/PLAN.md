@@ -155,7 +155,7 @@ Measured on a clean temp DB (macOS, .NET 10.0.403):
 - subjects created: 5 (Memos, Memos/SignIn, Memos/Home, Memos/MemoDetail, Memos/Archived)
 - facts created: 32 (24 of them on Memos/Home)
 - search total for `q=composer`: 9
-- Memos/Home at depth full: 11 facts emitted in the markdown
+- Memos/Home at depth full, budget 1200, markdown: 24 facts emitted (used_tokens 709)
 - conflicts: `composerMaxRows` 6 vs 12, `headerHeight` 64 vs 72, `saveShortcut` Cmd+Enter vs Ctrl+Enter
 - gaps for `billing invoice` and `webhook signature`: both `no fact`
 - dump of `scripts/seed/notes.md`: first run created=4 deduped=0, second created=0 deduped=4
@@ -170,8 +170,8 @@ bash scripts/eval.sh
 Measured on the same seed:
 
 - arm A (raw search, limit 100): 5902 chars, 1476 tokens (chars/4), 24 facts
-- arm B (compiled dossier, budget 1200, depth full, markdown): 1487 chars, 372 tokens (chars/4), 11 facts
-- ratio A/B (tokens): 3.97, so B is about 25% of A
+- arm B (compiled dossier, budget 1200, depth full, markdown): 2830 chars, 708 tokens (chars/4), 24 facts
+- ratio A/B (tokens): 2.08, so B is about 48% of A
 
 Ids are GUIDs, so arm B's exact bytes move by a few characters between fresh
 databases; the counts above come from one real run.

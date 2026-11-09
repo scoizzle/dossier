@@ -15,16 +15,10 @@ public sealed class WebTests
         using var db = new TempDb();
         var factId = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha web fact"))).Response.Facts[0].Id;
 
-        var listener = new TcpListener(IPAddress.Loopback, 0);
-        listener.Start();
-        var port = ((IPEndPoint)listener.LocalEndpoint).Port;
-        listener.Stop();
-
-        using var server = new WebServer(db.Store, port);
-        server.Start();
+        using var server = await StartServerAsync(db.Store);
         try
         {
-            using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{port}/") };
+            using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
 
             var fact = await http.GetAsync("api/fact?id=" + Uri.EscapeDataString(factId));
             await Assert.That((int)fact.StatusCode).IsEqualTo(200);
@@ -50,16 +44,11 @@ public sealed class WebTests
         using var db = new TempDb();
         db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha web fact")));
 
-        var listener = new TcpListener(IPAddress.Loopback, 0);
-        listener.Start();
-        var port = ((IPEndPoint)listener.LocalEndpoint).Port;
-        listener.Stop();
-
-        using var server = new WebServer(db.Store, port);
-        server.Start();
+        using var server = await StartServerAsync(db.Store);
+        await Assert.That(server.Port).IsGreaterThan(0);
         try
         {
-            using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{port}/") };
+            using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
 
             var search = await http.GetAsync("api/search?q=alpha");
             await Assert.That((int)search.StatusCode).IsEqualTo(200);
@@ -81,5 +70,37 @@ public sealed class WebTests
         {
             server.Stop();
         }
+    }
+
+    /// <summary>
+    /// Starts a web server on a fresh random port. The previous pattern reserved an ephemeral
+    /// port with a TcpListener, released it, then bound the same number, so another process could
+    /// claim the port in the gap. Here the port is bound directly and a failed bind is retried on
+    /// a new port, bounded and without sleeps. The range avoids the OS ephemeral range used by
+    /// outgoing test connections.
+    /// </summary>
+    private static Task<WebServer> StartServerAsync(DossierStore store)
+    {
+        const int FirstPort = 20_000;
+        const int LastPortExclusive = 32_000;
+        const int Attempts = 50;
+
+        for (var attempt = 0; attempt < Attempts; attempt++)
+        {
+            var server = new WebServer(store, Random.Shared.Next(FirstPort, LastPortExclusive));
+            try
+            {
+                server.Start();
+            }
+            catch (Exception exception) when (exception is HttpListenerException or SocketException)
+            {
+                server.Dispose();
+                continue;
+            }
+
+            return Task.FromResult(server);
+        }
+
+        throw new InvalidOperationException($"could not bind a loopback port after {Attempts} attempts");
     }
 }

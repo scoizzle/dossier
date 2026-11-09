@@ -232,7 +232,7 @@ scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  103 TUnit tests
+tests/Dossier.Tests/  104 TUnit tests
 ```
 
 ## Reproducing the evaluation
@@ -244,19 +244,17 @@ bash scripts/scaling.sh      # the N=50/200/1000 bounded-cost table
 bash scripts/verify-refs.sh  # fails unless every seeded git ref resolves with HTTP 200
 ```
 
-All scripts need bash, `jq` and a Release build. `dotnet test` runs the 103 tests.
+All scripts need bash, `jq` and a Release build. `dotnet test` runs the 104 tests.
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 103 passing tests; the seeded Memos demo; the evaluation harness.
+Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 104 passing tests; the seeded Memos demo; the evaluation harness.
 
 Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 
-## Toward Poly
+## Contract and implementation
 
-Dossier is a proof of concept of the retained-model idea with the compiler lifted out: facts are kept, linked and cited once, and the expensive read is not repeated by every agent. The contract in `contract/` is the deliverable; the C# in this repository is a reference implementation that can be replaced.
-
-There are zero project references to Poly. If a Poly type (Domain, AnalysisResult, Session) were ever required here, the abstraction would have failed. The integration seam is the store interface: SQLite today, Poly persistence later.
+The JSON Schemas in `contract/` are the normative shapes; the C# in this repository is a reference implementation of them. Nothing in the core is specific to any consumer, so another implementation of the same contract would interoperate.
 
 ## Design notes
 

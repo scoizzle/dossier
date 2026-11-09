@@ -1,6 +1,6 @@
 # Fact ff3f908b
 
-Store id: 068bef7e-f66d-453c-9f02-5061f01ac322
+Store id: 6f4d2664-63e7-4dad-b0b8-f24429598cb7
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer offers a visibility selector for public, private, and protected me
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Refs
 
@@ -33,3 +33,28 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "id": "6f4d2664-63e7-4dad-b0b8-f24429598cb7",
+  "kind": "element",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:visibility"
+  ],
+  "text": "Home composer offers a visibility selector for public, private, and protected memos."
+}
+```

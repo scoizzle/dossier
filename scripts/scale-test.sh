@@ -116,7 +116,7 @@ echo "largest_subject=$(sort -t$'\t' -k2,2nr -k1,1 "$WORK/subjects.tsv" | head -
 PROBE="$WORK/probe-bundle"
 rm -rf "$PROBE"
 dos publish --out "$PROBE" --depth full --budget 1200 --facts detail >/dev/null
-would="$(find "$PROBE/facts" -type f 2>/dev/null | wc -l | tr -d ' ')"
+would="$(find "$PROBE/subjects" -path '*/facts/*' -type f 2>/dev/null | wc -l | tr -d ' ')"
 echo "fact_files_would_write=$would"
 if [ "$would" -gt "$FACT_FILE_CAP" ]; then facts_mode=none; else facts_mode=detail; fi
 echo "publish_facts_mode=$facts_mode"

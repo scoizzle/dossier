@@ -1,6 +1,6 @@
 # Fact e096b348
 
-Store id: bd6ed9b2-8bb5-4c64-aa0f-75db9325ff4c
+Store id: 7a27c3da-4949-40ed-9f45-b190e69178be
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header is 72 pixels tall in the second audit of the same build.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Data
 
@@ -41,3 +41,31 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "headerHeight": 72
+  },
+  "id": "7a27c3da-4949-40ed-9f45-b190e69178be",
+  "kind": "element",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:header-alt"
+  ],
+  "text": "Home header is 72 pixels tall in the second audit of the same build."
+}
+```

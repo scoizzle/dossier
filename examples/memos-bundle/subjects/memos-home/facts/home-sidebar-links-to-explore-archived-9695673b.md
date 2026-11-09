@@ -1,6 +1,6 @@
 # Fact 9695673b
 
-Store id: 516c5159-5b03-43a8-8c7b-c5b945f4e2ce
+Store id: 1222a756-b5c2-4217-81e7-7c8972311f07
 
 ## Text
 
@@ -20,7 +20,7 @@ Home sidebar links to Explore, Archived, and Settings.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Refs
 
@@ -33,3 +33,28 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "id": "1222a756-b5c2-4217-81e7-7c8972311f07",
+  "kind": "element",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:sidebar"
+  ],
+  "text": "Home sidebar links to Explore, Archived, and Settings."
+}
+```

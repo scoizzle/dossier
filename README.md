@@ -177,12 +177,19 @@ Rules:
 - **Fact text is never truncated.** Fact files hold the full text. With `--depth index` the subject files use the compile's one-line index form, but fact files stay complete.
 - **Idempotent and repo-safe.** Identical inputs produce byte-identical files and unchanged files are not rewritten. The README timestamp is kept while the rest of the bundle is unchanged. Files the previous run listed in `manifest.json` that are no longer produced (a retracted fact) are removed; any other file in the directory is never deleted. If a path the bundle needs is already held by a file it did not generate, the run fails before writing anything.
 - **Order is content-derived.** Subjects are ordered as a tree by name, kind and aliases; facts by key, kind, text and content hash; ids break ties only after every content key.
+- **Machine record.** Every fact file ends with a `## Machine record` heading and one fenced `json` block holding the canonical record of the fact: `id`, `subject_id`, `subject_name`, `key`, `kind`, `text`, `data`, `items`, `tags`, `confidence`, `status`, `provenance` (`actor`, `actor_type`, `channel`, `origin`, `posted_at`), `refs` (`rel`, `kind`, `target`, `locator`, `basis`, `confidence`, `rev`, `snapshot`, `snapshot_hash`, `etag`, `verified_at`, `valid`) and `attachments` (`sha256`, `filename`, `mime`, `bytes`, `perceptual`), with contract field names, keys sorted at every level and nulls omitted. A ref target is the original, unmodified target (a `fact` ref carries the fact id, not the bundle key shown in the prose) and the declared `key` is printed. The block is authoritative; the prose above it is the view. `manifest.json`'s `subjects` map also carries each subject's `aliases`, `parent` (when the parent is in the bundle) and `pin`.
+
+### Import: rebuild a store from a bundle
+
+`dossier import --from <bundle dir> [--db <path>]` reads every fact file's machine record and reconstructs the store: subjects first (name, kind, parent, aliases and pin from the manifest's subject map), then facts with their **original ids**, then refs with their original targets, then attachments, copied from the subject's `assets/` directory into `blobs/<sha256>` next to the database (bytes that do not hash to the recorded sha256 are not copied). Import inserts ids verbatim instead of generating them, still enforces the live-slot rule (two live facts claiming the same subject, kind and key abort the import naming both ids), writes everything in one transaction, and refuses to overwrite a subject or fact id already in the target store, so use an empty database. It prints a manifest as JSON: `subjects`, `facts`, `refs`, `attachments`, `blobs` and `skipped` (each skipped record with its path and reason, for example a fact file with no machine record or attachment bytes missing from the bundle).
+
+**Round tripping requires `--facts detail` (the default).** A bundle published with `--facts none` has no fact files, so import fails closed and says so. Publish, import into a fresh store and publish again yields the same bundle file for file apart from the README's `Generated at` line (given the same recorded command line); `bash scripts/publish-demo.sh` output was checked this way. Only what a bundle holds is restored: superseded and retracted facts, and subjects with no live facts in their subtree, are not published and so not imported.
 
 ## Surfaces
 
 All three surfaces call the same core functions.
 
-**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `retract`, `dossier compile`, `publish`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
+**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `retract`, `dossier compile`, `publish`, `import`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
 
 ```text
 $ d search --q composer --subject Memos/Home --limit 2     # trimmed

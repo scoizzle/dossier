@@ -1,6 +1,6 @@
 # Fact ee572406
 
-Store id: f8ec2028-4c53-40b7-b26f-d47aac0500b5
+Store id: 5ab96879-7065-4bef-87f8-606cbbdf55f1
 
 ## Text
 
@@ -20,7 +20,7 @@ The web client routes /, /explore, /archived, /settings, and /m/:id.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.4413890+00:00`
+- posted_at: `2026-11-09T22:20:04.4886480+00:00`
 
 ## Refs
 
@@ -33,3 +33,26 @@ None.
 ## Subject
 
 [Memos](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "id": "5ab96879-7065-4bef-87f8-606cbbdf55f1",
+  "kind": "route",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.4886480+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "887820fe-cba6-4cd0-8216-71cc10d6cb89",
+  "subject_name": "Memos",
+  "tags": [],
+  "text": "The web client routes /, /explore, /archived, /settings, and /m/:id."
+}
+```

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets --index-max-tokens]>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets --index-max-tokens]|import --from <dir> [--db <path>]>";
 
 if (args.Length == 0)
 {
@@ -220,6 +220,30 @@ try
 
             Console.WriteLine(JsonSerializer.Serialize(
                 new { published.Out, files = published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed },
+                JsonCodec.Options));
+            return 0;
+        }
+
+        case "import":
+        {
+            var from = ValueAfter(args, "--from");
+            if (from is null)
+            {
+                Console.Error.WriteLine("usage: dossier import --from <bundle dir> [--db <path>]  (the bundle must have been published with --facts detail)");
+                return 1;
+            }
+
+            var imported = new DossierStore(ValueAfter(args, "--db")).Import(new ImportOptions { From = from });
+            Console.WriteLine(JsonSerializer.Serialize(
+                new
+                {
+                    imported.Subjects,
+                    imported.Facts,
+                    imported.Refs,
+                    imported.Attachments,
+                    imported.Blobs,
+                    imported.Skipped,
+                },
                 JsonCodec.Options));
             return 0;
         }

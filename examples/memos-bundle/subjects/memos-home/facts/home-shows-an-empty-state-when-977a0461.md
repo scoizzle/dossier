@@ -1,6 +1,6 @@
 # Fact 977a0461
 
-Store id: 514d1959-a66e-4539-98fc-d88574d0868d
+Store id: 743e8ee1-73c9-4adf-9dcc-7ddee3336c89
 
 ## Text
 
@@ -20,7 +20,7 @@ Home shows an empty state when the workspace has no memos yet.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Refs
 
@@ -33,3 +33,28 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "id": "743e8ee1-73c9-4adf-9dcc-7ddee3336c89",
+  "kind": "note",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:empty"
+  ],
+  "text": "Home shows an empty state when the workspace has no memos yet."
+}
+```

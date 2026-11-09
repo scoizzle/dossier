@@ -1,6 +1,6 @@
 # Memos
 
-- Subject: Memos (id `47dc3ad0-9bea-42d5-8e79-96785f2d8ee9`)
+- Subject: Memos (id `887820fe-cba6-4cd0-8216-71cc10d6cb89`)
 - Kind: app
 - Aliases: Memos App
 - Budget: 1200 tokens

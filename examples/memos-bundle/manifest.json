@@ -7,165 +7,165 @@
       "sha256": "938cef59266aa6f120e5a8d896dce5b7b4bede6719bd464f7999e1edd548b3b5"
     }
   },
-  "bundle_hash": "75f9cb0fd1d6b48b49ac5ef8967b4906a1ba3be60081a2e72d86af99f561b484",
+  "bundle_hash": "276825ec2478d5027759ec6178eebbbf4720fc700f0c429c4e7d469bbf3f26f4",
   "facts": {
     "01986879": {
-      "id": "d9535016-b6c6-432b-9d73-ffd874496f36",
+      "id": "4750899f-28e9-49d7-8b3b-05bbacfed7dd",
       "path": "subjects/memos-home/facts/home-composer-grows-to-at-most-01986879.md",
       "subject_slug": "memos-home"
     },
     "08695c73": {
-      "id": "7f8ada2f-3fa5-4738-8766-9891b867c14b",
+      "id": "45d67d62-c982-48ea-8c22-33953a64cd83",
       "path": "subjects/memos-home/facts/home-saves-a-memo-with-cmd-enter-08695c73.md",
       "subject_slug": "memos-home"
     },
     "0a03e359": {
-      "id": "37e21cb0-f359-4290-a6e6-384818eab220",
+      "id": "9c42c9a5-86b1-40bf-84aa-e2180bb092de",
       "path": "subjects/memos-home/facts/home-header-contains-a-search-field-0a03e359.md",
       "subject_slug": "memos-home"
     },
     "10b4f78a": {
-      "id": "64a6c048-9972-4f13-8098-1714e5dd244e",
+      "id": "56aebeba-9e82-42a3-a716-f93f0818b393",
       "path": "subjects/memos-archived/facts/archived-screen-lists-archived-memos-with-10b4f78a.md",
       "subject_slug": "memos-archived"
     },
     "254bc1a5": {
-      "id": "d2736c81-be06-4d08-926c-105eb0379049",
+      "id": "75fe4954-4ffc-4af5-b169-a640e724ba59",
       "path": "subjects/memos/facts/memos-is-a-self-hosted-open-source-memo-254bc1a5.md",
       "subject_slug": "memos"
     },
     "299517a4": {
-      "id": "945ab40a-e973-4872-b146-7d60ec9344aa",
+      "id": "cae6cf36-4903-45f2-87db-b2dcaace06e1",
       "path": "subjects/memos-home/facts/home-sidebar-has-a-settings-entry-299517a4.md",
       "subject_slug": "memos-home"
     },
     "3937c1bf": {
-      "id": "37c4d5a5-f523-44bb-a692-5bcc92c692d4",
+      "id": "bc817cbc-534b-467c-bf6e-3d0971e84ce1",
       "path": "subjects/memos-home/facts/home-header-is-64-pixels-tall-3937c1bf.md",
       "subject_slug": "memos-home"
     },
     "6ccac6a1": {
-      "id": "23017464-1239-4eed-ba9e-f194b1669cc8",
+      "id": "c26c5b61-8e02-4222-ad82-5fc77798958b",
       "path": "subjects/memos-signin/facts/sign-in-screen-has-a-username-6ccac6a1.md",
       "subject_slug": "memos-signin"
     },
     "7454a029": {
-      "id": "0b1669cd-4702-45a4-8b30-1102e8d99faa",
+      "id": "65e11811-fec6-4cb3-8652-fdfca4ef6c9d",
       "path": "subjects/memos-home/facts/clicking-the-archive-button-opens-the-7454a029.md",
       "subject_slug": "memos-home"
     },
     "807dd592": {
-      "id": "e4ff6df3-8b8d-425d-94f6-c6ddba82f340",
+      "id": "03dab10d-094a-4be3-8af3-4a839c6ba0b9",
       "path": "subjects/memos-home/facts/home-composer-shows-tag-chips-for-807dd592.md",
       "subject_slug": "memos-home"
     },
     "818e4aa0": {
-      "id": "fe5db218-74a2-4e2f-972f-7dc64eaf8f7f",
+      "id": "2e68c985-29fa-4dcc-b232-6fc0d2057e49",
       "path": "subjects/memos-home/facts/home-composer-suggests-mentions-as-the-818e4aa0.md",
       "subject_slug": "memos-home"
     },
     "9695673b": {
-      "id": "516c5159-5b03-43a8-8c7b-c5b945f4e2ce",
+      "id": "1222a756-b5c2-4217-81e7-7c8972311f07",
       "path": "subjects/memos-home/facts/home-sidebar-links-to-explore-archived-9695673b.md",
       "subject_slug": "memos-home"
     },
     "977a0461": {
-      "id": "514d1959-a66e-4539-98fc-d88574d0868d",
+      "id": "743e8ee1-73c9-4adf-9dcc-7ddee3336c89",
       "path": "subjects/memos-home/facts/home-shows-an-empty-state-when-977a0461.md",
       "subject_slug": "memos-home"
     },
     "9d2c775c": {
-      "id": "187e4dc3-ac98-4ea5-bede-8d4d36096645",
+      "id": "3b0ae82e-0a92-4370-b19a-f9d05895bb69",
       "path": "subjects/memos-home/facts/home-supports-keyboard-navigation-between-memo-9d2c775c.md",
       "subject_slug": "memos-home"
     },
     "afb70f3f": {
-      "id": "c991072e-76e8-4cd3-bb0f-5cc7568ade6b",
+      "id": "d0c2c861-5f38-4c02-a92e-adc0e7f79763",
       "path": "subjects/memos-signin/facts/submitting-valid-credentials-opens-the-home-afb70f3f.md",
       "subject_slug": "memos-signin"
     },
     "b5a926c6": {
-      "id": "71c84563-f5c2-470a-a706-33dbac661902",
+      "id": "56cfef0d-4f08-4381-9573-11daf45824cc",
       "path": "subjects/memos-home/facts/home-shows-a-floating-action-button-b5a926c6.md",
       "subject_slug": "memos-home"
     },
     "b6f809c8": {
-      "id": "76ed3bba-4612-4748-a6f4-4d02e4698fec",
+      "id": "af44a101-7552-4c05-952a-b5c7e54e466d",
       "path": "subjects/memos-home/facts/clicking-a-memo-card-opens-the-b6f809c8.md",
       "subject_slug": "memos-home"
     },
     "bb789336": {
-      "id": "aaf4e4e8-51df-4026-88b0-c866386ae001",
+      "id": "901eff6a-940e-4c6a-bb81-947968b38f1b",
       "path": "subjects/memos-home/facts/home-header-has-a-theme-toggle-bb789336.md",
       "subject_slug": "memos-home"
     },
     "bed126f1": {
-      "id": "900caaad-7c03-4a58-898d-27963ccf5124",
+      "id": "07e46890-4c49-4e97-9aba-707ec7f354c5",
       "path": "subjects/memos-memodetail/facts/memo-detail-shows-the-full-memo-bed126f1.md",
       "subject_slug": "memos-memodetail"
     },
     "c98fcec9": {
-      "id": "365be2ca-12bf-4c9d-a74f-396c4e3c5611",
+      "id": "b69bc42d-b7db-46bd-b473-b200f239630b",
       "path": "subjects/memos-home/facts/home-composer-lets-a-user-type-c98fcec9.md",
       "subject_slug": "memos-home"
     },
     "cdb5de98": {
-      "id": "badf4390-c7e6-4371-aad1-6d9b30d2c0c1",
+      "id": "9622d13f-1bda-4552-93db-dbc806e96644",
       "path": "subjects/memos-home/facts/home-saves-a-memo-with-ctrl-enter-cdb5de98.md",
       "subject_slug": "memos-home"
     },
     "e096b348": {
-      "id": "bd6ed9b2-8bb5-4c64-aa0f-75db9325ff4c",
+      "id": "7a27c3da-4949-40ed-9f45-b190e69178be",
       "path": "subjects/memos-home/facts/home-header-is-72-pixels-tall-e096b348.md",
       "subject_slug": "memos-home"
     },
     "e11907c5": {
-      "id": "7ed459f4-6cc5-4498-9bbd-751b92e39ed2",
+      "id": "1da2574a-2c6d-4cbc-b136-824070249ee3",
       "path": "subjects/memos-home/facts/home-composer-grows-to-at-most-e11907c5.md",
       "subject_slug": "memos-home"
     },
     "e1931db4": {
-      "id": "5ed5487e-d550-469b-ac9b-4ddb40b53cfb",
+      "id": "6ccf0274-7df2-459f-b16b-93ae18007ba6",
       "path": "subjects/memos-home/facts/home-keeps-the-draft-in-local-e1931db4.md",
       "subject_slug": "memos-home"
     },
     "e41afa29": {
-      "id": "70f169d8-bd13-4ff9-9510-b2ad317b8a8b",
+      "id": "d30a71b3-583c-4ef9-88b2-3e7baacfb4f2",
       "path": "subjects/memos-home/facts/home-composer-previews-an-attached-image-e41afa29.md",
       "subject_slug": "memos-home"
     },
     "e626d57b": {
-      "id": "5776fe47-1e77-46bf-9654-b96d582abf7b",
+      "id": "7476ce64-b4cb-4fd4-bff1-4dcdf3913cac",
       "path": "subjects/memos-home/facts/home-memo-cards-offer-a-pin-e626d57b.md",
       "subject_slug": "memos-home"
     },
     "e983be7b": {
-      "id": "bdffef0f-cd27-41c9-b765-7c16416e9154",
+      "id": "d51ec00f-4b6c-4b6c-9043-2c779a05b787",
       "path": "subjects/memos-archived/facts/restoring-an-archived-memo-sends-it-e983be7b.md",
       "subject_slug": "memos-archived"
     },
     "ee572406": {
-      "id": "f8ec2028-4c53-40b7-b26f-d47aac0500b5",
+      "id": "5ab96879-7065-4bef-87f8-606cbbdf55f1",
       "path": "subjects/memos/facts/the-web-client-routes-explore-ee572406.md",
       "subject_slug": "memos"
     },
     "f4dc6a2f": {
-      "id": "0e2d4ae5-4efe-476c-9586-aabfe3f490cf",
+      "id": "09cfc37c-f666-4315-aa23-65cff51bef8a",
       "path": "subjects/memos-memodetail/facts/the-delete-action-removes-the-memo-f4dc6a2f.md",
       "subject_slug": "memos-memodetail"
     },
     "f503b480": {
-      "id": "235e0cb4-1871-4faa-a267-3883d62ed306",
+      "id": "ac2948e8-d962-445b-8f36-78aec3fcc72b",
       "path": "subjects/memos-home/facts/home-memo-list-renders-cards-newest-f503b480.md",
       "subject_slug": "memos-home"
     },
     "fb0b6c6b": {
-      "id": "b0215365-1549-49a7-a4c6-d20543db8f4d",
+      "id": "fb97292d-5ece-45db-9e6b-5c85a64afb22",
       "path": "subjects/memos-home/facts/home-composer-auto-saves-the-draft-while-fb0b6c6b.md",
       "subject_slug": "memos-home"
     },
     "ff3f908b": {
-      "id": "068bef7e-f66d-453c-9f02-5061f01ac322",
+      "id": "6f4d2664-63e7-4dad-b0b8-f24429598cb7",
       "path": "subjects/memos-home/facts/home-composer-offers-a-visibility-selector-ff3f908b.md",
       "subject_slug": "memos-home"
     }
@@ -230,23 +230,20 @@
     "subject_id": null
   },
   "subjects": {
-    "132985ec-77f8-4149-bffe-2134f24a7649": {
+    "388e7ee9-835a-41a4-9b2d-351eed98c5d3": {
+      "aliases": [],
       "kind": "screen",
-      "name": "Memos/SignIn",
-      "path": "subjects/memos-signin/index.md",
-      "slug": "memos-signin",
-      "title": "Memos / Memos/SignIn",
+      "name": "Memos/Archived",
+      "parent": "887820fe-cba6-4cd0-8216-71cc10d6cb89",
+      "path": "subjects/memos-archived/index.md",
+      "slug": "memos-archived",
+      "title": "Memos / Memos/Archived",
       "tokens": 125
     },
-    "305be1b8-8bfe-4dcb-938b-7493dc6b9eff": {
-      "kind": "screen",
-      "name": "Memos/Home",
-      "path": "subjects/memos-home/index.md",
-      "slug": "memos-home",
-      "title": "Memos / Memos/Home",
-      "tokens": 997
-    },
-    "47dc3ad0-9bea-42d5-8e79-96785f2d8ee9": {
+    "887820fe-cba6-4cd0-8216-71cc10d6cb89": {
+      "aliases": [
+        "Memos App"
+      ],
       "kind": "app",
       "name": "Memos",
       "path": "subjects/memos/index.md",
@@ -254,20 +251,36 @@
       "title": "Memos",
       "tokens": 171
     },
-    "e4a64a54-556e-450d-8005-50b50e3bc55c": {
+    "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5": {
+      "aliases": [
+        "Home"
+      ],
+      "kind": "screen",
+      "name": "Memos/Home",
+      "parent": "887820fe-cba6-4cd0-8216-71cc10d6cb89",
+      "path": "subjects/memos-home/index.md",
+      "slug": "memos-home",
+      "title": "Memos / Memos/Home",
+      "tokens": 997
+    },
+    "d29ec042-4c7e-4041-a9b4-2c19a517f418": {
+      "aliases": [],
+      "kind": "screen",
+      "name": "Memos/SignIn",
+      "parent": "887820fe-cba6-4cd0-8216-71cc10d6cb89",
+      "path": "subjects/memos-signin/index.md",
+      "slug": "memos-signin",
+      "title": "Memos / Memos/SignIn",
+      "tokens": 125
+    },
+    "df322425-d88b-42c6-a72c-d948ac3a3d38": {
+      "aliases": [],
       "kind": "screen",
       "name": "Memos/MemoDetail",
+      "parent": "887820fe-cba6-4cd0-8216-71cc10d6cb89",
       "path": "subjects/memos-memodetail/index.md",
       "slug": "memos-memodetail",
       "title": "Memos / Memos/MemoDetail",
-      "tokens": 125
-    },
-    "f0ff5cce-f73d-478a-85b6-47698ac27561": {
-      "kind": "screen",
-      "name": "Memos/Archived",
-      "path": "subjects/memos-archived/index.md",
-      "slug": "memos-archived",
-      "title": "Memos / Memos/Archived",
       "tokens": 125
     }
   },
@@ -277,42 +290,42 @@
     "README.md": 893,
     "conflicts.md": 200,
     "gaps.md": 25,
-    "subjects/memos-archived/facts/archived-screen-lists-archived-memos-with-10b4f78a.md": 108,
-    "subjects/memos-archived/facts/restoring-an-archived-memo-sends-it-e983be7b.md": 108,
+    "subjects/memos-archived/facts/archived-screen-lists-archived-memos-with-10b4f78a.md": 236,
+    "subjects/memos-archived/facts/restoring-an-archived-memo-sends-it-e983be7b.md": 235,
     "subjects/memos-archived/index.md": 125,
-    "subjects/memos-home/facts/clicking-a-memo-card-opens-the-b6f809c8.md": 195,
-    "subjects/memos-home/facts/clicking-the-archive-button-opens-the-7454a029.md": 147,
-    "subjects/memos-home/facts/home-composer-auto-saves-the-draft-while-fb0b6c6b.md": 148,
-    "subjects/memos-home/facts/home-composer-grows-to-at-most-01986879.md": 124,
-    "subjects/memos-home/facts/home-composer-grows-to-at-most-e11907c5.md": 125,
-    "subjects/memos-home/facts/home-composer-lets-a-user-type-c98fcec9.md": 313,
-    "subjects/memos-home/facts/home-composer-offers-a-visibility-selector-ff3f908b.md": 118,
-    "subjects/memos-home/facts/home-composer-previews-an-attached-image-e41afa29.md": 166,
-    "subjects/memos-home/facts/home-composer-shows-tag-chips-for-807dd592.md": 112,
-    "subjects/memos-home/facts/home-composer-suggests-mentions-as-the-818e4aa0.md": 164,
-    "subjects/memos-home/facts/home-header-contains-a-search-field-0a03e359.md": 166,
-    "subjects/memos-home/facts/home-header-has-a-theme-toggle-bb789336.md": 109,
-    "subjects/memos-home/facts/home-header-is-64-pixels-tall-3937c1bf.md": 200,
-    "subjects/memos-home/facts/home-header-is-72-pixels-tall-e096b348.md": 125,
-    "subjects/memos-home/facts/home-keeps-the-draft-in-local-e1931db4.md": 147,
-    "subjects/memos-home/facts/home-memo-cards-offer-a-pin-e626d57b.md": 111,
-    "subjects/memos-home/facts/home-memo-list-renders-cards-newest-f503b480.md": 286,
-    "subjects/memos-home/facts/home-saves-a-memo-with-cmd-enter-08695c73.md": 121,
-    "subjects/memos-home/facts/home-saves-a-memo-with-ctrl-enter-cdb5de98.md": 124,
-    "subjects/memos-home/facts/home-shows-a-floating-action-button-b5a926c6.md": 148,
-    "subjects/memos-home/facts/home-shows-an-empty-state-when-977a0461.md": 110,
-    "subjects/memos-home/facts/home-sidebar-has-a-settings-entry-299517a4.md": 111,
-    "subjects/memos-home/facts/home-sidebar-links-to-explore-archived-9695673b.md": 109,
-    "subjects/memos-home/facts/home-supports-keyboard-navigation-between-memo-9d2c775c.md": 109,
+    "subjects/memos-home/facts/clicking-a-memo-card-opens-the-b6f809c8.md": 408,
+    "subjects/memos-home/facts/clicking-the-archive-button-opens-the-7454a029.md": 311,
+    "subjects/memos-home/facts/home-composer-auto-saves-the-draft-while-fb0b6c6b.md": 316,
+    "subjects/memos-home/facts/home-composer-grows-to-at-most-01986879.md": 268,
+    "subjects/memos-home/facts/home-composer-grows-to-at-most-e11907c5.md": 269,
+    "subjects/memos-home/facts/home-composer-lets-a-user-type-c98fcec9.md": 569,
+    "subjects/memos-home/facts/home-composer-offers-a-visibility-selector-ff3f908b.md": 257,
+    "subjects/memos-home/facts/home-composer-previews-an-attached-image-e41afa29.md": 372,
+    "subjects/memos-home/facts/home-composer-shows-tag-chips-for-807dd592.md": 247,
+    "subjects/memos-home/facts/home-composer-suggests-mentions-as-the-818e4aa0.md": 353,
+    "subjects/memos-home/facts/home-header-contains-a-search-field-0a03e359.md": 357,
+    "subjects/memos-home/facts/home-header-has-a-theme-toggle-bb789336.md": 240,
+    "subjects/memos-home/facts/home-header-is-64-pixels-tall-3937c1bf.md": 404,
+    "subjects/memos-home/facts/home-header-is-72-pixels-tall-e096b348.md": 271,
+    "subjects/memos-home/facts/home-keeps-the-draft-in-local-e1931db4.md": 313,
+    "subjects/memos-home/facts/home-memo-cards-offer-a-pin-e626d57b.md": 244,
+    "subjects/memos-home/facts/home-memo-list-renders-cards-newest-f503b480.md": 591,
+    "subjects/memos-home/facts/home-saves-a-memo-with-cmd-enter-08695c73.md": 262,
+    "subjects/memos-home/facts/home-saves-a-memo-with-ctrl-enter-cdb5de98.md": 269,
+    "subjects/memos-home/facts/home-shows-a-floating-action-button-b5a926c6.md": 316,
+    "subjects/memos-home/facts/home-shows-an-empty-state-when-977a0461.md": 242,
+    "subjects/memos-home/facts/home-sidebar-has-a-settings-entry-299517a4.md": 244,
+    "subjects/memos-home/facts/home-sidebar-links-to-explore-archived-9695673b.md": 241,
+    "subjects/memos-home/facts/home-supports-keyboard-navigation-between-memo-9d2c775c.md": 239,
     "subjects/memos-home/index.md": 997,
-    "subjects/memos-memodetail/facts/memo-detail-shows-the-full-memo-bed126f1.md": 111,
-    "subjects/memos-memodetail/facts/the-delete-action-removes-the-memo-f4dc6a2f.md": 108,
+    "subjects/memos-memodetail/facts/memo-detail-shows-the-full-memo-bed126f1.md": 240,
+    "subjects/memos-memodetail/facts/the-delete-action-removes-the-memo-f4dc6a2f.md": 235,
     "subjects/memos-memodetail/index.md": 125,
-    "subjects/memos-signin/facts/sign-in-screen-has-a-username-6ccac6a1.md": 112,
-    "subjects/memos-signin/facts/submitting-valid-credentials-opens-the-home-afb70f3f.md": 106,
+    "subjects/memos-signin/facts/sign-in-screen-has-a-username-6ccac6a1.md": 243,
+    "subjects/memos-signin/facts/submitting-valid-credentials-opens-the-home-afb70f3f.md": 230,
     "subjects/memos-signin/index.md": 125,
-    "subjects/memos/facts/memos-is-a-self-hosted-open-source-memo-254bc1a5.md": 111,
-    "subjects/memos/facts/the-web-client-routes-explore-ee572406.md": 108,
+    "subjects/memos/facts/memos-is-a-self-hosted-open-source-memo-254bc1a5.md": 242,
+    "subjects/memos/facts/the-web-client-routes-explore-ee572406.md": 235,
     "subjects/memos/index.md": 171
   }
 }

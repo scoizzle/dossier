@@ -1,6 +1,6 @@
 # Fact 9d2c775c
 
-Store id: 187e4dc3-ac98-4ea5-bede-8d4d36096645
+Store id: 3b0ae82e-0a92-4370-b19a-f9d05895bb69
 
 ## Text
 
@@ -20,7 +20,7 @@ Home supports keyboard navigation between memo cards.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Refs
 
@@ -33,3 +33,28 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "id": "3b0ae82e-0a92-4370-b19a-f9d05895bb69",
+  "kind": "note",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:keyboard"
+  ],
+  "text": "Home supports keyboard navigation between memo cards."
+}
+```

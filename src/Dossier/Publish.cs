@@ -78,7 +78,7 @@ public sealed partial class DossierStore
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
 
-    private sealed record PubSubject(string Id, string Name, string Kind, string? ParentId, List<string> Aliases);
+    private sealed record PubSubject(string Id, string Name, string Kind, string? ParentId, List<string> Aliases, JsonElement? Pin = null);
 
     private const int MaxAssetStemLength = 40;
 
@@ -494,7 +494,7 @@ public sealed partial class DossierStore
     private static List<PubSubject> LoadPubSubjects(Microsoft.Data.Sqlite.SqliteConnection connection)
     {
         var result = new List<PubSubject>();
-        using var command = Command(connection, null, "SELECT id, name, kind, parent_id, aliases FROM subjects ORDER BY id");
+        using var command = Command(connection, null, "SELECT id, name, kind, parent_id, aliases, pin FROM subjects ORDER BY id");
         using var reader = command.ExecuteReader();
         while (reader.Read())
         {
@@ -503,7 +503,8 @@ public sealed partial class DossierStore
                 reader.GetString(1),
                 reader.GetString(2),
                 reader.IsDBNull(3) ? null : reader.GetString(3),
-                ParseAliases(reader.GetString(4))));
+                ParseAliases(reader.GetString(4)),
+                ParseJson(reader.IsDBNull(5) ? null : reader.GetString(5))));
         }
 
         return result;
@@ -1162,7 +1163,171 @@ public sealed partial class DossierStore
 
         b.Append("\n## Subject\n\n");
         b.Append("[").Append(Inline(subject.Name)).Append("](").Append(RelativeLink(self, SubjectIndexPath(slugs[subject.Id]))).Append(")\n");
+
+        // Last on purpose: import reads the final json block under this heading. The prose above is
+        // a view; this record is authoritative.
+        b.Append("\n## ").Append(MachineRecordHeading).Append("\n\n");
+        b.Append(Fence(MachineRecordJson(fact, subject), "json"));
         return b.ToString();
+    }
+
+    /// <summary>Heading of the authoritative record that ends every fact file; <c>import</c> reads the json block under it.</summary>
+    internal const string MachineRecordHeading = "Machine record";
+
+    /// <summary>
+    /// The canonical record of a fact: contract field names, keys sorted at every level, nulls
+    /// omitted, ref targets exactly as stored (a fact ref carries the original fact id, not the bundle key).
+    /// </summary>
+    private static string MachineRecordJson(PubFact fact, PubSubject subject)
+    {
+        using var stream = new MemoryStream();
+        using (var w = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true, NewLine = "\n", Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping }))
+        {
+            w.WriteStartObject();
+            w.WriteStartArray("attachments");
+            foreach (var a in fact.Attachments)
+            {
+                w.WriteStartObject();
+                w.WriteNumber("bytes", a.Bytes);
+                w.WriteString("filename", a.Filename);
+                w.WriteString("mime", a.Mime);
+                if (a.Perceptual is { } perceptual)
+                {
+                    w.WritePropertyName("perceptual");
+                    WriteElementSorted(w, perceptual);
+                }
+
+                w.WriteString("sha256", a.Sha256);
+                w.WriteEndObject();
+            }
+
+            w.WriteEndArray();
+            w.WriteNumber("confidence", fact.Confidence);
+            if (fact.Data is { } data)
+            {
+                w.WritePropertyName("data");
+                WriteElementSorted(w, data);
+            }
+
+            w.WriteString("id", fact.Id);
+            if (fact.Items is { } items)
+            {
+                w.WritePropertyName("items");
+                WriteElementSorted(w, items);
+            }
+
+            if (fact.Key is not null)
+            {
+                w.WriteString("key", fact.Key);
+            }
+
+            w.WriteString("kind", fact.Kind);
+            if (fact.Provenance is { } provenance)
+            {
+                w.WritePropertyName("provenance");
+                WriteElementSorted(w, provenance);
+            }
+
+            w.WriteStartArray("refs");
+            foreach (var r in fact.Refs)
+            {
+                w.WriteStartObject();
+                w.WriteString("basis", r.Basis);
+                if (r.Confidence is { } rc)
+                {
+                    w.WriteNumber("confidence", rc);
+                }
+
+                if (r.Etag is not null)
+                {
+                    w.WriteString("etag", r.Etag);
+                }
+
+                w.WriteString("kind", r.Kind);
+                if (r.Locator is { } locator)
+                {
+                    w.WritePropertyName("locator");
+                    WriteElementSorted(w, locator);
+                }
+
+                w.WriteString("rel", r.Rel);
+                if (r.Rev is not null)
+                {
+                    w.WriteString("rev", r.Rev);
+                }
+
+                if (r.Snapshot is not null)
+                {
+                    w.WriteString("snapshot", r.Snapshot);
+                }
+
+                if (r.SnapshotHash is not null)
+                {
+                    w.WriteString("snapshot_hash", r.SnapshotHash);
+                }
+
+                w.WriteString("target", r.Target);
+                if (r.Valid is { } valid)
+                {
+                    w.WriteBoolean("valid", valid);
+                }
+
+                if (r.VerifiedAt is not null)
+                {
+                    w.WriteString("verified_at", r.VerifiedAt);
+                }
+
+                w.WriteEndObject();
+            }
+
+            w.WriteEndArray();
+            w.WriteString("status", fact.Status);
+            w.WriteString("subject_id", fact.SubjectId);
+            w.WriteString("subject_name", subject.Name);
+            w.WriteStartArray("tags");
+            foreach (var tag in fact.Tags)
+            {
+                w.WriteStringValue(tag);
+            }
+
+            w.WriteEndArray();
+            w.WriteString("text", fact.Text);
+            w.WriteEndObject();
+        }
+
+        return Utf8NoBom.GetString(stream.ToArray());
+    }
+
+    private static void WriteElementSorted(Utf8JsonWriter w, JsonElement element)
+    {
+        switch (element.ValueKind)
+        {
+            case JsonValueKind.Object:
+                w.WriteStartObject();
+                foreach (var property in element.EnumerateObject().OrderBy(p => p.Name, StringComparer.Ordinal))
+                {
+                    w.WritePropertyName(property.Name);
+                    WriteElementSorted(w, property.Value);
+                }
+
+                w.WriteEndObject();
+                break;
+            case JsonValueKind.Array:
+                w.WriteStartArray();
+                foreach (var item in element.EnumerateArray())
+                {
+                    WriteElementSorted(w, item);
+                }
+
+                w.WriteEndArray();
+                break;
+            case JsonValueKind.Number:
+                w.WriteRawValue(element.GetRawText());
+                break;
+            default:
+                element.WriteTo(w);
+                break;
+        }
     }
 
     private static void AppendOptional(StringBuilder b, string label, string? value)
@@ -1709,8 +1874,9 @@ public sealed partial class DossierStore
         var subjectMap = new Dictionary<string, object?>();
         foreach (var subject in ordered)
         {
-            subjectMap[subject.Id] = new Dictionary<string, object?>
+            var entry = new Dictionary<string, object?>
             {
+                ["aliases"] = subject.Aliases.ToList(),
                 ["kind"] = subject.Kind,
                 ["name"] = subject.Name,
                 ["path"] = SubjectIndexPath(slugs[subject.Id]),
@@ -1718,6 +1884,19 @@ public sealed partial class DossierStore
                 ["title"] = paths[subject.Id],
                 ["tokens"] = subjectTokens[subject.Id],
             };
+            if (subject.ParentId is not null && slugs.ContainsKey(subject.ParentId))
+            {
+                entry["parent"] = subject.ParentId;
+            }
+
+            if (subject.Pin is { ValueKind: JsonValueKind.Object } pin
+                && pin.TryGetProperty("repo", out var pinRepo) && pinRepo.ValueKind == JsonValueKind.String
+                && pin.TryGetProperty("rev", out var pinRev) && pinRev.ValueKind == JsonValueKind.String)
+            {
+                entry["pin"] = new Dictionary<string, object?> { ["repo"] = pinRepo.GetString(), ["rev"] = pinRev.GetString() };
+            }
+
+            subjectMap[subject.Id] = entry;
         }
 
         var factMap = new Dictionary<string, object?>();

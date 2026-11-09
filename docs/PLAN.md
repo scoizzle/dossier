@@ -84,6 +84,15 @@ Invariants:
 - Fact text is never truncated in fact files. Slugs: lowercase, runs of non `a-z0-9` to one hyphen, trimmed, 80 max, deterministic `-2`, `-3` suffixes on collision.
 - `AGENTS.md` carries the untrusted-data warning and the staleness note (facts are pinned to the revisions in their files).
 
+### import (the inverse of publish)
+
+`dossier import --from <dir> [--db path]` rebuilds a store from a bundle. Each fact file ends with `## Machine record` and a fenced `json` block holding the canonical record (id, subject_id, subject_name, key, kind, text, data, items, tags, confidence, status, provenance, refs with their original targets, attachments); keys are sorted, nulls omitted, and the block is authoritative while the prose above it is the view. `manifest.json`'s subject map adds `aliases`, `parent` and `pin` so subjects can be rebuilt.
+
+- Order: subjects, then facts with their original ids (inserted verbatim, `created_at` from `provenance.posted_at`, `content_hash` recomputed), then refs, then attachment rows and blobs copied from `subjects/<slug>/assets/` to `blobs/<sha256>` after the sha256 is verified. One transaction; nothing is written on failure.
+- Fail closed: no fact files (the bundle was published with `--facts none`: round tripping requires `--facts detail`), two live facts claiming one (subject, kind, key) slot (names both ids), a duplicate fact id across files, or an id already present in the target store. A fact file with no or an unreadable machine record is skipped with its reason; the manifest printed on stdout lists subjects, facts, refs, attachments and blobs restored, and skipped records.
+- Proof: publish A, import into a fresh store B, publish B: the two bundles are identical file for file apart from README's `Generated at` line (test `RoundTrip_PublishImportPublishIsIdentical`; also run on `examples/memos-bundle`).
+- Not restored: superseded or retracted facts and subjects with no live facts in their subtree (never published), and ref `seq` gaps (order is kept).
+
 ## Failure policy
 
 | Path | Policy | Behaviour |

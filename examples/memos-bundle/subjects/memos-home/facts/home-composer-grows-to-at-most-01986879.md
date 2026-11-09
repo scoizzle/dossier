@@ -1,6 +1,6 @@
 # Fact 01986879
 
-Store id: d9535016-b6c6-432b-9d73-ffd874496f36
+Store id: 4750899f-28e9-49d7-8b3b-05bbacfed7dd
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer grows to at most 6 rows before it scrolls.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T22:05:39.7996600+00:00`
+- posted_at: `2026-11-09T22:20:04.9288170+00:00`
 
 ## Data
 
@@ -41,3 +41,31 @@ None.
 ## Subject
 
 [Memos/Home](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "composerMaxRows": 6
+  },
+  "id": "4750899f-28e9-49d7-8b3b-05bbacfed7dd",
+  "kind": "element",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:20:04.9288170+00:00"
+  },
+  "refs": [],
+  "status": "live",
+  "subject_id": "bdf5b7de-81c8-4130-bb3c-d4b8bdbbd4f5",
+  "subject_name": "Memos/Home",
+  "tags": [
+    "section:composer-rows-a"
+  ],
+  "text": "Home composer grows to at most 6 rows before it scrolls."
+}
+```

@@ -513,8 +513,13 @@ public sealed class PublishTests
         var a = ReadAll(Out(first)).Where(kv => IsFactFile(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
         var b = ReadAll(Out(second)).Where(kv => IsFactFile(kv.Key)).ToDictionary(kv => kv.Key, kv => kv.Value);
 
+        // Store ids are random per seed: the Store id line and the ids inside the machine record
+        // (id, subject_id, fact-ref targets) are the only content allowed to differ.
         static string Strip(string content) =>
-            string.Join('\n', content.Split('\n').Where(l => !l.StartsWith("Store id:", StringComparison.Ordinal)));
+            Regex.Replace(
+                string.Join('\n', content.Split('\n').Where(l => !l.StartsWith("Store id:", StringComparison.Ordinal))),
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+                "<id>");
 
         await Assert.That(a.Count).IsEqualTo(12);
         await Assert.That(a.Keys.OrderBy(k => k, StringComparer.Ordinal).SequenceEqual(b.Keys.OrderBy(k => k, StringComparer.Ordinal))).IsTrue();
@@ -1281,5 +1286,69 @@ public sealed class PublishTests
         await Assert.That(File.ReadAllText(foreign)).IsEqualTo("keep me");
         await Assert.That(files.ContainsKey("subjects/survivor/index.md")).IsTrue();
         await Assert.That(files["INDEX.md"]).DoesNotContain("Doomed");
+    }
+
+    // ---- machine record --------------------------------------------------------------------
+
+    private static JsonElement MachineRecordOf(string fileContent)
+    {
+        var heading = "\n## Machine record\n\n";
+        var at = fileContent.LastIndexOf(heading, StringComparison.Ordinal);
+        var lines = fileContent[(at + heading.Length)..].TrimEnd('\n').Split('\n');
+        return JsonDocument.Parse(string.Join('\n', lines[1..^1])).RootElement.Clone();
+    }
+
+    [Test]
+    public async Task Publish_EmitsMachineRecord()
+    {
+        using var db = new TempDb();
+        var target = db.Store.PostFacts(Fixtures.Post("Rec", Fixtures.Fact("Target text.", key: "slot-one", tags: new List<string> { "x" })));
+        var targetId = target.Response.Facts[0].Id;
+        db.Store.PostFacts(Fixtures.Post(
+            "Rec",
+            Fixtures.Fact(
+                "Pointer text.",
+                key: "ptr",
+                data: Fixtures.Json("{\"b\":2,\"a\":1.50}"),
+                refs: new List<RefInput> { new() { Rel = "supports", Kind = "fact", Target = targetId, Basis = "observed", Confidence = 0.7, Rev = "r1" } })));
+
+        var result = db.Store.Publish(Options(db));
+        var files = ReadAll(Out(db));
+
+        var pointer = files.Single(kv => IsFactFile(kv.Key) && kv.Value.Contains("Pointer text.")).Value;
+        await Assert.That(pointer.TrimEnd('\n').EndsWith("```")).IsTrue();
+        var record = MachineRecordOf(pointer);
+        var stored = db.Store.Show(db.Store.Search(new SearchRequest { Q = "Pointer" }).Hits.Single().Id)!;
+
+        await Assert.That(record.GetProperty("id").GetString()).IsEqualTo(stored.Fact.Id);
+        await Assert.That(record.GetProperty("subject_id").GetString()).IsEqualTo(stored.Fact.SubjectId);
+        await Assert.That(record.GetProperty("subject_name").GetString()).IsEqualTo("Rec");
+        await Assert.That(record.GetProperty("key").GetString()).IsEqualTo("ptr");
+        await Assert.That(record.GetProperty("kind").GetString()).IsEqualTo(stored.Fact.Kind);
+        await Assert.That(record.GetProperty("text").GetString()).IsEqualTo(stored.Fact.Text);
+        await Assert.That(record.GetProperty("status").GetString()).IsEqualTo(stored.Fact.Status);
+        await Assert.That(record.GetProperty("confidence").GetDouble()).IsEqualTo(stored.Fact.Confidence);
+        await Assert.That(CanonicalJson.Write(record.GetProperty("data"))).IsEqualTo("{\"a\":1.50,\"b\":2}");
+        await Assert.That(record.GetProperty("provenance").GetProperty("posted_at").GetString()).IsEqualTo(stored.Fact.Provenance!.Value.GetProperty("posted_at").GetString());
+        await Assert.That(record.GetProperty("provenance").GetProperty("actor").GetString()).IsEqualTo("dossier-cli");
+
+        var reference = record.GetProperty("refs").EnumerateArray().Single();
+        await Assert.That(reference.GetProperty("target").GetString()).IsEqualTo(targetId);
+        await Assert.That(reference.GetProperty("rel").GetString()).IsEqualTo("supports");
+        await Assert.That(reference.GetProperty("kind").GetString()).IsEqualTo("fact");
+        await Assert.That(reference.GetProperty("basis").GetString()).IsEqualTo("observed");
+        await Assert.That(reference.GetProperty("confidence").GetDouble()).IsEqualTo(0.7);
+        await Assert.That(reference.GetProperty("rev").GetString()).IsEqualTo("r1");
+        await Assert.That(reference.TryGetProperty("etag", out _)).IsFalse();
+
+        // Prose shows the bundle key for that ref; the record keeps the store id.
+        await Assert.That(pointer.Contains(targetId + ")")).IsFalse();
+
+        var plain = files.Single(kv => IsFactFile(kv.Key) && kv.Value.Contains("Target text.")).Value;
+        var plainRecord = MachineRecordOf(plain);
+        await Assert.That(plainRecord.GetProperty("key").GetString()).IsEqualTo("slot-one");
+        await Assert.That(plainRecord.GetProperty("tags").EnumerateArray().Single().GetString()).IsEqualTo("x");
+        await Assert.That(plainRecord.TryGetProperty("data", out _)).IsFalse();
+        _ = result;
     }
 }

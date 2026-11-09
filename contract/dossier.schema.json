@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/dossier.schema.json",
+  "title": "Dossier",
+  "description": "Compiled, cited view of a subject. Retrieval is fail-open: a degraded compile returns the last good dossier plus a degraded marker.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["subject", "depth", "needs", "budget_tokens", "used_tokens", "facts", "linked", "conflicts", "gaps", "dropped", "self_check"],
+  "properties": {
+    "subject": { "$ref": "subject.schema.json" },
+    "depth": { "type": "string", "enum": ["index", "full"] },
+    "needs": { "type": "array", "items": { "type": "string" } },
+    "budget_tokens": { "type": "integer", "minimum": 0 },
+    "used_tokens": { "type": "integer", "minimum": 0 },
+    "facts": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "FactViews with section and cites populated." },
+    "linked": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "From follow; separate budget slice (~25%)." },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "values", "resolution"],
+        "properties": {
+          "field": { "type": "string" },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["fact", "value"],
+              "properties": {
+                "fact": { "type": "string", "description": "Fact id." },
+                "value": { "description": "Any JSON value." }
+              }
+            }
+          },
+          "resolution": { "type": "null" }
+        }
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["need", "reason"],
+        "properties": {
+          "need": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "dropped": { "type": "array", "items": { "type": "string" }, "description": "Fact ids dropped by the budget." },
+    "degraded": { "type": "string" },
+    "self_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uncited_claims", "conflicts_surfaced"],
+      "properties": {
+        "uncited_claims": { "type": "integer", "minimum": 0 },
+        "conflicts_surfaced": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "FactView": {
+      "title": "FactView",
+      "description": "One object used by BOTH search hits and dossier facts. Optional fields are null when not applicable.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "subject_id", "kind", "text", "tags", "confidence", "status"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "subject_id": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "text": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "$ref": "fact.schema.json#/$defs/Status" },
+        "score": { "type": ["number", "null"], "description": "Search only." },
+        "section": { "type": ["string", "null"], "description": "Dossier only." },
+        "cites": { "type": ["array", "null"], "items": { "type": "string" }, "description": "Dossier only. Fact ids." }
+      }
+    }
+  }
+}

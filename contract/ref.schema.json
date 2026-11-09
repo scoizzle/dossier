@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/ref.schema.json",
+  "title": "Ref",
+  "description": "The only edge. Carried by a fact. INTERNAL kinds are exactly fact|slot|subject; every other kind is EXTERNAL and has freshness (rev, snapshot, snapshot_hash, etag, verified_at, valid). For kind=slot, target is \"<subjectIdOrName>#<key>\". Effective chain confidence = MIN over refs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rel", "kind", "target", "basis"],
+  "properties": {
+    "rel": {
+      "type": "string",
+      "enum": ["about", "mentions", "contains", "supersedes", "contradicts", "supports", "derived_from", "leads_to", "confirms", "refutes"]
+    },
+    "kind": { "type": "string", "minLength": 1, "description": "Open string. fact|slot|subject are internal; all others external." },
+    "target": { "type": "string", "minLength": 1, "description": "kind=slot: \"<subjectIdOrName>#<key>\"; otherwise an opaque normalized string." },
+    "locator": { "$ref": "#/$defs/Locator" },
+    "basis": { "type": "string", "enum": ["observed", "derived", "inferred"] },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "seq": { "type": "integer", "description": "Ordering within a chain." },
+    "rev": { "type": "string" },
+    "snapshot": { "type": "string" },
+    "snapshot_hash": { "type": "string" },
+    "etag": { "type": "string" },
+    "verified_at": { "type": "string", "format": "date-time" },
+    "valid": { "type": "boolean" }
+  },
+  "$defs": {
+    "Locator": {
+      "title": "Locator",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "line": { "type": "integer", "minimum": 1 },
+        "symbol": { "type": "string" },
+        "bbox": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "[x, y, w, h]"
+        },
+        "selector": { "type": "string" },
+        "item": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/subject.schema.json",
+  "title": "Subject",
+  "description": "A thing a dossier is about. Kind is an open string (e.g. app|screen|repo|module|doc|process).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "kind", "aliases"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "kind": { "type": "string", "minLength": 1 },
+    "parent": { "type": "string", "minLength": 1, "description": "Subject id of the parent subject." },
+    "aliases": { "type": "array", "items": { "type": "string" } },
+    "pin": { "$ref": "#/$defs/Pin" }
+  },
+  "$defs": {
+    "Pin": {
+      "title": "Pin",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo", "rev"],
+      "properties": {
+        "repo": { "type": "string", "minLength": 1 },
+        "rev": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

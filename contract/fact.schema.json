@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/fact.schema.json",
+  "title": "Fact",
+  "description": "Immutable assertion about a subject. Correction = a new fact with rel=supersedes. status is derived, never authoritative. kind is an open string; reserved value: \"dossier\". text soft limit 240 chars, warn above 280, never truncate.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "subject_id", "kind", "text", "tags", "confidence", "status", "provenance", "content_hash"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "subject_id": { "type": "string", "minLength": 1 },
+    "kind": { "type": "string", "minLength": 1 },
+    "key": { "type": "string", "minLength": 1, "description": "Declared slot. Unique per (subject_id, kind, key) among live facts." },
+    "text": { "type": "string" },
+    "data": { "description": "Optional structured payload (any JSON value). Presence makes the fact conflict-eligible." },
+    "items": { "type": "array", "items": { "$ref": "#/$defs/Item" }, "description": "Optional compound sub-assertions; allowed on any fact." },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "status": { "$ref": "#/$defs/Status" },
+    "provenance": { "$ref": "#/$defs/Provenance" },
+    "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 over normalized text + canonical JSON of data + sorted refs (kind,target,locator). Excludes rev, snapshot, etag, verified_at." },
+    "refs": { "type": "array", "items": { "$ref": "ref.schema.json" } },
+    "attachments": { "type": "array", "items": { "$ref": "#/$defs/Attachment" } }
+  },
+  "$defs": {
+    "Status": {
+      "title": "Status",
+      "type": "string",
+      "enum": ["live", "superseded", "contested", "retracted", "stale"],
+      "description": "Derived, never authoritative."
+    },
+    "Item": {
+      "title": "Item",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text"],
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "text": { "type": "string" },
+        "locator": { "$ref": "ref.schema.json#/$defs/Locator" }
+      }
+    },
+    "Provenance": {
+      "title": "Provenance",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["actor", "actor_type", "channel", "posted_at"],
+      "properties": {
+        "actor": { "type": "string", "minLength": 1 },
+        "actor_type": { "type": "string", "enum": ["human", "agent", "tool"] },
+        "channel": { "type": "string", "enum": ["cli", "mcp", "api"] },
+        "origin": { "type": "string" },
+        "posted_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Attachment": {
+      "title": "Attachment",
+      "description": "File on disk (blobs/<sha256>), never in the DB.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sha256", "filename", "mime", "bytes"],
+      "properties": {
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "filename": { "type": "string", "minLength": 1 },
+        "mime": { "type": "string", "minLength": 1 },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "perceptual": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["algo", "value"],
+          "properties": {
+            "algo": { "type": "string", "minLength": 1 },
+            "value": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    }
+  }
+}

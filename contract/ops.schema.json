@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/ops.schema.json",
+  "title": "Dossier operations",
+  "description": "Request/response shapes for dump, post_facts, correlate, search, compile_dossier. Core is pure functions over a Store; transports call the same functions.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "dump": { "$ref": "#/$defs/Op_dump" },
+    "post_facts": { "$ref": "#/$defs/Op_post_facts" },
+    "correlate": { "$ref": "#/$defs/Op_correlate" },
+    "search": { "$ref": "#/$defs/Op_search" },
+    "compile_dossier": { "$ref": "#/$defs/Op_compile_dossier" }
+  },
+  "$defs": {
+    "Op_dump": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/DumpRequest" },
+        "response": { "$ref": "#/$defs/DumpResponse" }
+      }
+    },
+    "Op_post_facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/PostFactsRequest" },
+        "response": { "$ref": "#/$defs/PostFactsResponse" }
+      }
+    },
+    "Op_correlate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/CorrelateRequest" },
+        "response": { "$ref": "#/$defs/CorrelateResponse" }
+      }
+    },
+    "Op_search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/SearchRequest" },
+        "response": { "$ref": "#/$defs/SearchResponse" }
+      }
+    },
+    "Op_compile_dossier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/CompileRequest" },
+        "response": { "$ref": "dossier.schema.json" }
+      }
+    },
+
+    "DumpRequest": {
+      "title": "dump request",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "subject"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "subject": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "split": { "type": "string", "enum": ["heading", "paragraph", "file", "none"] },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "DumpResponse": {
+      "title": "dump response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created", "deduped", "skipped", "errors"],
+      "properties": {
+        "created": { "type": "array", "items": { "type": "string" }, "description": "Fact ids." },
+        "deduped": { "type": "array", "items": { "type": "string" }, "description": "Existing fact ids." },
+        "skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["locator", "reason"],
+            "properties": {
+              "locator": { "$ref": "ref.schema.json#/$defs/Locator" },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+        "errors": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+
+    "SubjectInput": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name"],
+          "properties": {
+            "name": { "type": "string", "minLength": 1 },
+            "kind": { "type": "string", "minLength": 1 },
+            "parent": { "type": "string", "minLength": 1 },
+            "aliases": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id"],
+          "properties": {
+            "id": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "FactInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "text"],
+      "properties": {
+        "key": { "type": "string", "minLength": 1 },
+        "local_id": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "text": { "type": "string" },
+        "data": { "description": "Any JSON value." },
+        "items": { "type": "array", "items": { "$ref": "fact.schema.json#/$defs/Item" } },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "refs": { "type": "array", "items": { "$ref": "ref.schema.json" } },
+        "attachments": { "type": "array", "items": { "$ref": "fact.schema.json#/$defs/Attachment" } }
+      }
+    },
+    "PostFactsRequest": {
+      "title": "post_facts request",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "facts"],
+      "properties": {
+        "idempotency_key": { "type": "string", "minLength": 1 },
+        "subject": { "$ref": "#/$defs/SubjectInput" },
+        "redact": { "type": "array", "items": { "type": "string" } },
+        "facts": { "type": "array", "items": { "$ref": "#/$defs/FactInput" } }
+      }
+    },
+    "PostFactsResponse": {
+      "title": "post_facts response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "facts"],
+      "properties": {
+        "subject": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "name", "created"],
+          "properties": {
+            "id": { "type": "string", "minLength": 1 },
+            "name": { "type": "string", "minLength": 1 },
+            "created": { "type": "boolean" },
+            "parent": { "type": "string", "minLength": 1 }
+          }
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "status"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "status": { "type": "string", "enum": ["new", "deduped", "replaced", "near_duplicate"] },
+              "replaced": { "type": "string", "description": "Id of the fact replaced (status=replaced)." },
+              "duplicate_of": { "type": "string", "description": "Id of the existing fact (deduped / near_duplicate)." }
+            }
+          }
+        }
+      }
+    },
+
+    "CorrelateRequest": {
+      "title": "correlate request",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "matchers": { "type": "array", "items": { "type": "string", "enum": ["same_ref", "shared_tag"] } }
+      }
+    },
+    "CorrelateResponse": {
+      "title": "correlate response",
+      "description": "Deterministic matchers only. Proposed refs carry basis \"derived\" and are never asserted.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proposed"],
+      "properties": {
+        "proposed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["fact_id", "ref"],
+            "properties": {
+              "fact_id": { "type": "string", "minLength": 1, "description": "Fact that would carry the ref." },
+              "ref": {
+                "allOf": [
+                  { "$ref": "ref.schema.json" },
+                  { "properties": { "basis": { "const": "derived" } } }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "SearchRequest": {
+      "title": "search request",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "key": { "type": "string", "minLength": 1 },
+        "tag": { "type": "string", "minLength": 1 },
+        "actor": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "fact.schema.json#/$defs/Status" },
+        "since": { "type": "string", "format": "date-time" },
+        "q": { "type": "string" },
+        "ref_target": { "type": "string", "minLength": 1 },
+        "direction": { "type": "string", "enum": ["in", "out"] },
+        "limit": { "type": "integer", "minimum": 1, "default": 20 },
+        "cursor": { "type": "string" }
+      }
+    },
+    "SearchResponse": {
+      "title": "search response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hits", "total", "complete"],
+      "properties": {
+        "hits": { "type": "array", "items": { "$ref": "dossier.schema.json#/$defs/FactView" } },
+        "total": { "type": "integer", "minimum": 0 },
+        "complete": { "type": "boolean" },
+        "refine": { "type": "string" },
+        "next": { "type": "string" }
+      }
+    },
+
+    "CompileRequest": {
+      "title": "compile_dossier request",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject"],
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "descendants": { "type": "boolean" },
+        "needs": { "type": "array", "items": { "type": "string" } },
+        "budget": { "type": "integer", "minimum": 0 },
+        "depth": { "type": "string", "enum": ["index", "full"] },
+        "order": { "type": "string", "enum": ["rank", "seq"] },
+        "rank": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "recency": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "follow": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "rels": { "type": "array", "items": { "type": "string" } },
+            "hops": { "type": "integer", "enum": [1, 2] }
+          }
+        },
+        "format": { "type": "string", "enum": ["json", "markdown"] }
+      }
+    }
+  }
+}

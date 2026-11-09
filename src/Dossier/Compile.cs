@@ -183,20 +183,17 @@ public sealed partial class DossierStore
 
         if (depth == "full")
         {
+            // Greedy fill: a candidate that does not fit is skipped, not fatal, so a later smaller
+            // fact can still use the remaining slice. Everything not emitted lands in Dropped below.
             var factSlice = (int)Math.Floor(budget * 0.75);
             var running = 0;
-            var fits = true;
             foreach (var candidate in representatives)
             {
                 var cost = EstimateTokens(Serialize(views[candidate.Id]));
-                if (fits && running + cost <= factSlice)
+                if (running + cost <= factSlice)
                 {
                     running += cost;
                     emitted.Add(candidate);
-                }
-                else
-                {
-                    fits = false;
                 }
             }
         }

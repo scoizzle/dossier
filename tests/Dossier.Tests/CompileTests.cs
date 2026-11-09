@@ -224,6 +224,104 @@ public sealed class CompileTests
     }
 
     [Test]
+    public async Task Packing_SkipsOversizedCandidateAndEmitsLaterSmallerOnes()
+    {
+        using var db = new TempDb();
+        var oversized = "oversized " + string.Join(' ', Enumerable.Range(0, 120).Select(i => $"blob{i}"));
+        var ids = Post(
+            db,
+            "Widget",
+            Fixtures.Fact(oversized),
+            Fixtures.Fact("small one alpha beta"),
+            Fixtures.Fact("small two gamma delta"));
+        Exec(db, "UPDATE facts SET confidence = 0.95 WHERE id = $id", ("$id", ids[0]));
+        Exec(db, "UPDATE facts SET confidence = 0.90 WHERE id = $id", ("$id", ids[1]));
+        Exec(db, "UPDATE facts SET confidence = 0.85 WHERE id = $id", ("$id", ids[2]));
+        for (var i = 0; i < 3; i++)
+        {
+            SetCreated(db, ids[i], 0);
+        }
+
+        // Rank order is the oversized fact, then the two small ones.
+        var everything = db.Store.Compile(Full(budget: 1_000_000));
+        await Assert.That(everything.Facts.Select(f => f.Id).SequenceEqual(ids)).IsTrue();
+        var cost = everything.Facts.ToDictionary(
+            f => f.Id,
+            f => DossierStore.EstimateTokens(JsonSerializer.Serialize(f, JsonCodec.Options)));
+        var slice = cost[ids[1]] + cost[ids[2]];
+        await Assert.That(cost[ids[0]] > slice).IsTrue();
+
+        var tight = db.Store.Compile(Full(budget: (int)Math.Ceiling(slice / 0.75)));
+
+        // The large fact was skipped, not fatal: both later small facts are emitted in rank order.
+        await Assert.That(tight.Facts.Select(f => f.Id).SequenceEqual(new[] { ids[1], ids[2] })).IsTrue();
+        await Assert.That(tight.Dropped.SequenceEqual(new[] { ids[0] })).IsTrue();
+    }
+
+    [Test]
+    public async Task Packing_StopsWhenRemainingBudgetCannotFitSmallestCandidate()
+    {
+        using var db = new TempDb();
+        var ids = Post(
+            db,
+            "Widget",
+            Fixtures.Fact("alpha bravo charlie delta"),
+            Fixtures.Fact("echo foxtrot golf hotel"),
+            Fixtures.Fact("india juliet kilo lima"),
+            Fixtures.Fact("mike november oscar papa"),
+            Fixtures.Fact("quebec romeo sierra tango"));
+        for (var i = 0; i < ids.Count; i++)
+        {
+            Exec(db, "UPDATE facts SET confidence = 0.5 WHERE id = $id", ("$id", ids[i]));
+            SetCreated(db, ids[i], 0);
+        }
+
+        var everything = db.Store.Compile(Full(budget: 1_000_000));
+        var rankIds = everything.Facts.Select(f => f.Id).ToList();
+        await Assert.That(rankIds.Count).IsEqualTo(5);
+        var costs = everything.Facts
+            .Select(f => DossierStore.EstimateTokens(JsonSerializer.Serialize(f, JsonCodec.Options)))
+            .ToList();
+        var slice = costs[0] + costs[1];
+
+        var tight = db.Store.Compile(Full(budget: (int)Math.Ceiling(slice / 0.75)));
+
+        await Assert.That(tight.Facts.Select(f => f.Id).SequenceEqual(rankIds.Take(2))).IsTrue();
+        await Assert.That(tight.Facts.Count).IsEqualTo(2);
+        await Assert.That(tight.Dropped.Count).IsEqualTo(3);
+    }
+
+    [Test]
+    public async Task Packing_DroppedHasNoDuplicatesAndIsRankOrdered()
+    {
+        using var db = new TempDb();
+        var facts = Enumerable.Range(1, 6)
+            .Select(i => Fixtures.Fact($"pack{i} alpha{i} bravo{i} charlie{i}"))
+            .ToArray();
+        var ids = Post(db, "Widget", facts);
+        for (var i = 0; i < ids.Count; i++)
+        {
+            Exec(db, "UPDATE facts SET confidence = $c WHERE id = $id", ("$c", 0.9 - (i * 0.1)), ("$id", ids[i]));
+            SetCreated(db, ids[i], 0);
+        }
+
+        var everything = db.Store.Compile(Full(budget: 1_000_000));
+        var rankIds = everything.Facts.Select(f => f.Id).ToList();
+        await Assert.That(rankIds.Count).IsEqualTo(6);
+        var costs = everything.Facts
+            .Select(f => DossierStore.EstimateTokens(JsonSerializer.Serialize(f, JsonCodec.Options)))
+            .ToList();
+        var slice = costs[0] + costs[1];
+
+        var tight = db.Store.Compile(Full(budget: (int)Math.Ceiling(slice / 0.75)));
+
+        await Assert.That(tight.Dropped.Count).IsGreaterThan(0);
+        await Assert.That(tight.Dropped.Distinct(StringComparer.Ordinal).Count()).IsEqualTo(tight.Dropped.Count);
+        var expected = rankIds.Where(id => tight.Dropped.Contains(id)).ToList();
+        await Assert.That(tight.Dropped.SequenceEqual(expected)).IsTrue();
+    }
+
+    [Test]
     public async Task Conflicts_ExemptFromBudgetAndExceedSlice()
     {
         using var db = new TempDb();

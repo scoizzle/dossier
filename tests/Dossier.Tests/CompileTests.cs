@@ -20,7 +20,7 @@ public sealed class CompileTests
         }
 
         command.ExecuteNonQuery();
-        SqliteConnection.ClearAllPools();
+        SqliteConnection.ClearPool(connection);
     }
 
     private static string At(int minutes) => new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero).AddMinutes(minutes).ToString("O");

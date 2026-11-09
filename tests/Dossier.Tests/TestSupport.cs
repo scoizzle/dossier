@@ -20,9 +20,20 @@ internal sealed class TempDb : IDisposable
 
     public DossierStore Store { get; }
 
+    /// <summary>
+    /// Releases only this store's pooled handles. SqliteConnection.ClearAllPools() is
+    /// process-wide and disposes handles that parallel tests are acquiring, which
+    /// surfaced as intermittent ObjectDisposedException.
+    /// </summary>
+    internal static void ClearPool(DossierStore store)
+    {
+        using var connection = store.OpenConnection();
+        SqliteConnection.ClearPool(connection);
+    }
+
     public void Dispose()
     {
-        SqliteConnection.ClearAllPools();
+        ClearPool(Store);
         try
         {
             System.IO.Directory.Delete(Directory, recursive: true);

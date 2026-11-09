@@ -1,0 +1,14 @@
+# django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aupdate_or_create
+
+- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.aupdate_or_create (id `8635d19a-7e76-442e-be23-2a7983512682`)
+- Kind: method
+- Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
+- Budget: 1200 tokens
+- Used: 28 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- async def aupdate_or_create(self, *, through_defaults=None, **kwargs) [e00f4118](facts/async-def-aupdate-or-create-self-through-default-e00f4118.md)

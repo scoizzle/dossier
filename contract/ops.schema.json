@@ -68,7 +68,12 @@
         "source": { "type": "string", "minLength": 1 },
         "subject": { "type": "string", "minLength": 1 },
         "kind": { "type": "string", "minLength": 1 },
-        "split": { "type": "string", "enum": ["heading", "paragraph", "file", "none"] },
+        "split": { "type": "string", "enum": ["heading", "paragraph", "file", "code", "none"] },
+        "entity_subjects": {
+          "type": "boolean",
+          "default": false,
+          "description": "Optional, default false. When true, and split=code finds entities, each entity becomes its own child subject named <module>::<qualname> instead of one fact on the module subject."
+        },
         "tags": { "type": "array", "items": { "type": "string" } }
       }
     },

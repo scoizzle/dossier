@@ -1,0 +1,14 @@
+# django/db/models/sql/compiler::SQLInsertCompiler.as_sql
+
+- Subject: django/db/models/sql/compiler::SQLInsertCompiler.as_sql (id `451510f2-cd61-49cb-9650-52b4c30cdd3e`)
+- Kind: method
+- Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
+- Budget: 1200 tokens
+- Used: 15 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def as_sql(self) [56243a33](facts/def-as-sql-self-56243a33.md)

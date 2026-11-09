@@ -1,0 +1,14 @@
+# django/db/models/aggregates::Count.resolve_expression
+
+- Subject: django/db/models/aggregates::Count.resolve_expression (id `3eb5eb76-fef8-4dfe-b34e-541d5d8280ff`)
+- Kind: method
+- Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
+- Budget: 1200 tokens
+- Used: 22 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def resolve_expression(self, *args, **kwargs) [378d44eb](facts/def-resolve-expression-self-args-kwargs-378d44eb.md)

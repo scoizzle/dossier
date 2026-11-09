@@ -1,0 +1,117 @@
+# Fact ea8c8999
+
+Store id: 2928d838-c0c9-4bde-8286-fede12e45564
+
+## Text
+
+```text
+def contains(self, obj)
+```
+
+## Attributes
+
+- Kind: code
+- Status: live
+- Confidence: 1
+- Tags: `entity:method`
+
+## Provenance
+
+- actor: `dossier-cli`
+- actor_type: `tool`
+- channel: `cli`
+- posted_at: `2026-11-09T22:39:49.5470000+00:00`
+
+## Data
+
+```json
+{
+  "end_line": 1508,
+  "entity_kind": "method",
+  "parent": "QuerySet",
+  "start_line": 1489,
+  "symbol": "QuerySet.contains"
+}
+```
+
+## Refs
+
+- rel: derived_from
+  - kind: file
+  - target: `django/db/models/query.py`
+  - basis: observed
+  - confidence: none
+  - locator: `{"line":1489,"selector":"L1489-L1508","symbol":"QuerySet.contains"}`
+
+## Items
+
+```json
+[
+  {
+    "text": "Return True if the QuerySet contains the provided obj, False otherwise.",
+    "locator": {
+      "line": 1490
+    }
+  }
+]
+```
+
+## Referenced by
+
+None.
+
+## Subject
+
+[django/db/models/query::QuerySet.contains](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "end_line": 1508,
+    "entity_kind": "method",
+    "parent": "QuerySet",
+    "start_line": 1489,
+    "symbol": "QuerySet.contains"
+  },
+  "id": "2928d838-c0c9-4bde-8286-fede12e45564",
+  "items": [
+    {
+      "locator": {
+        "line": 1490
+      },
+      "text": "Return True if the QuerySet contains the provided obj, False otherwise."
+    }
+  ],
+  "kind": "code",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:39:49.5470000+00:00"
+  },
+  "refs": [
+    {
+      "basis": "observed",
+      "kind": "file",
+      "locator": {
+        "line": 1489,
+        "selector": "L1489-L1508",
+        "symbol": "QuerySet.contains"
+      },
+      "rel": "derived_from",
+      "target": "django/db/models/query.py"
+    }
+  ],
+  "status": "live",
+  "subject_id": "805bd361-60a3-4939-ab1c-b25e319c5049",
+  "subject_name": "django/db/models/query::QuerySet.contains",
+  "tags": [
+    "entity:method"
+  ],
+  "text": "def contains(self, obj)"
+}
+```

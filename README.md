@@ -23,7 +23,9 @@ The expensive reading happens once, when facts are captured, and every fact keep
 
 ## Three verbs
 
-**dump** ingests raw material deterministically into facts: `dossier dump --source <path> --subject <name>`. The input is stored as a content-addressed blob, split by markdown headings and paragraphs (the one splitter shipped), and the result is a manifest of created, deduped and skipped items. Running it twice is idempotent. Structured facts with declared refs go in through `dossier post --file <request.json>`.
+**dump** ingests raw material deterministically into facts: `dossier dump --source <path> --subject <name>`. The input is stored as a content-addressed blob, split by markdown headings, paragraphs, or (with `--split code`) Python code entities, and the result is a manifest of created, deduped and skipped items. Running it twice is idempotent. Structured facts with declared refs go in through `dossier post --file <request.json>`.
+
+**Code split.** `dossier dump --source mod.py --subject pkg/mod --split code` emits one fact per class, function, async function and method at any nesting depth, in source order, instead of paragraph blobs. The fact text is the signature (colon removed, whitespace collapsed; capped at 240 characters only for a longer signature, cut at a word boundary with an ellipsis and tagged `signature_truncated`). `data` carries `symbol` (dotted qualname such as `QuerySet.filter`), `entity_kind` (`class`, `function`, `async_function`, `method`, `static_method`, `class_method`), `parent` (enclosing qualname, or the module stem), `start_line` and `end_line`; the `derived_from` locator carries `line`, `selector` and `symbol`; tags include `entity:<kind>` and `decorator:<name>`; the docstring's first paragraph is the fact's single item. Add `--entity-subjects` to also make every entity its own subject `<module-subject>::<qualname>` (kind = entity kind, parent = the module subject) holding that entity's fact, while the module subject gets one `contains` fact per top-level entity. **Only Python (`.py`, `.pyi`) is supported**; any other file with `--split code` falls back to paragraph and reports `warning: split_fallback` in the manifest's `errors`. The scanner is a line-based tokenizer, not a full parser: it understands strings, comments, bracket and backslash continuation, but not f-string nesting corner cases. `scripts/dump-code-demo.sh` ingests `django/db/models` at tag 6.1.3 this way and publishes `examples/django-models-bundle`.
 
 **correlate** proposes refs between facts using deterministic matchers (`same_ref`, `shared_tag`): `dossier correlate [--subject <name>]`. Proposals carry basis `derived`, are returned and never written, and are never asserted as truth.
 
@@ -229,7 +231,7 @@ One project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) with FTS5
 | `Models.cs` | Request, response and domain types |
 | `Store.cs` | `DossierStore`: the SQLite connection, schema and FTS5 index |
 | `PostFacts.cs` | Writes: resolution order (declared supersede, hash dedupe, insert), refs, attachments |
-| `Dump.cs` | Deterministic ingest and the markdown splitter |
+| `Dump.cs` | Deterministic ingest, the markdown splitter and the Python code splitter |
 | `Correlate.cs` | The `same_ref` and `shared_tag` matchers |
 | `Search.cs` | Search, filters, reverse `ref_target` lookup |
 | `Compile.cs` | Ranking, budgeted selection, conflicts, gaps, markdown rendering |

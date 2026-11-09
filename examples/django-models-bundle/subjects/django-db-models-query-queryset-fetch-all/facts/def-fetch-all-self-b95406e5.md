@@ -1,0 +1,96 @@
+# Fact b95406e5
+
+Store id: d0155326-c6a8-4dff-af2e-ead43e8112c8
+
+## Text
+
+```text
+def _fetch_all(self)
+```
+
+## Attributes
+
+- Kind: code
+- Status: live
+- Confidence: 1
+- Tags: `entity:method`
+
+## Provenance
+
+- actor: `dossier-cli`
+- actor_type: `tool`
+- channel: `cli`
+- posted_at: `2026-11-09T22:39:49.7167450+00:00`
+
+## Data
+
+```json
+{
+  "end_line": 2289,
+  "entity_kind": "method",
+  "parent": "QuerySet",
+  "start_line": 2285,
+  "symbol": "QuerySet._fetch_all"
+}
+```
+
+## Refs
+
+- rel: derived_from
+  - kind: file
+  - target: `django/db/models/query.py`
+  - basis: observed
+  - confidence: none
+  - locator: `{"line":2285,"selector":"L2285-L2289","symbol":"QuerySet._fetch_all"}`
+
+## Referenced by
+
+None.
+
+## Subject
+
+[django/db/models/query::QuerySet._fetch_all](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "end_line": 2289,
+    "entity_kind": "method",
+    "parent": "QuerySet",
+    "start_line": 2285,
+    "symbol": "QuerySet._fetch_all"
+  },
+  "id": "d0155326-c6a8-4dff-af2e-ead43e8112c8",
+  "kind": "code",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:39:49.7167450+00:00"
+  },
+  "refs": [
+    {
+      "basis": "observed",
+      "kind": "file",
+      "locator": {
+        "line": 2285,
+        "selector": "L2285-L2289",
+        "symbol": "QuerySet._fetch_all"
+      },
+      "rel": "derived_from",
+      "target": "django/db/models/query.py"
+    }
+  ],
+  "status": "live",
+  "subject_id": "5320604d-9270-4772-a722-c7e107061b46",
+  "subject_name": "django/db/models/query::QuerySet._fetch_all",
+  "tags": [
+    "entity:method"
+  ],
+  "text": "def _fetch_all(self)"
+}
+```

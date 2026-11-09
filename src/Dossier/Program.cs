@@ -61,6 +61,7 @@ try
                 Subject = subject,
                 Kind = ValueAfter(args, "--kind"),
                 Split = ValueAfter(args, "--split"),
+                EntitySubjects = args.Contains("--entity-subjects") ? true : null,
                 Tags = ValuesAfter(args, "--tag"),
             };
 

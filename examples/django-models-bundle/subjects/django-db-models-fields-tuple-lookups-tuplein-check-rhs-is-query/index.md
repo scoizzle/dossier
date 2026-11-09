@@ -1,0 +1,14 @@
+# django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query
+
+- Subject: django/db/models/fields/tuple_lookups::TupleIn.check_rhs_is_query (id `21acfc60-44d0-470d-99fd-d9776a99ea5d`)
+- Kind: method
+- Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
+- Budget: 1200 tokens
+- Used: 18 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def check_rhs_is_query(self) [1f25260f](facts/def-check-rhs-is-query-self-1f25260f.md)

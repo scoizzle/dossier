@@ -1,0 +1,75 @@
+# django/db/models/functions/math
+
+- Subject: django/db/models/functions/math (id `a9d008b6-a3cc-46f7-84ae-22d1fddc73fd`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 358 tokens
+- Facts shown: 23 of 23
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- contains class ACos [2dbc1610](facts/contains-class-acos-2dbc1610.md)
+- contains class ASin [e9e5927e](facts/contains-class-asin-e9e5927e.md)
+- contains class ATan [04eb9df5](facts/contains-class-atan-04eb9df5.md)
+- contains class ATan2 [c8394b57](facts/contains-class-atan2-c8394b57.md)
+- contains class Abs [68b761ca](facts/contains-class-abs-68b761ca.md)
+- contains class Ceil [271c2a19](facts/contains-class-ceil-271c2a19.md)
+- contains class Cos [10303833](facts/contains-class-cos-10303833.md)
+- contains class Cot [c69531e9](facts/contains-class-cot-c69531e9.md)
+- contains class Degrees [3a305bf7](facts/contains-class-degrees-3a305bf7.md)
+- contains class Exp [dfce8128](facts/contains-class-exp-dfce8128.md)
+- contains class Floor [a805ab50](facts/contains-class-floor-a805ab50.md)
+- contains class Ln [0b24e53f](facts/contains-class-ln-0b24e53f.md)
+- contains class Log [6c7b67e0](facts/contains-class-log-6c7b67e0.md)
+- contains class Mod [d90eccfa](facts/contains-class-mod-d90eccfa.md)
+- contains class Pi [591cfe9f](facts/contains-class-pi-591cfe9f.md)
+- contains class Power [016476e4](facts/contains-class-power-016476e4.md)
+- contains class Radians [e8a480f4](facts/contains-class-radians-e8a480f4.md)
+- contains class Random [b5ab9430](facts/contains-class-random-b5ab9430.md)
+- contains class Round [b6bdeb64](facts/contains-class-round-b6bdeb64.md)
+- contains class Sign [1d95f6d4](facts/contains-class-sign-1d95f6d4.md)
+- contains class Sin [457b1e7d](facts/contains-class-sin-457b1e7d.md)
+- contains class Sqrt [2e4e9d8b](facts/contains-class-sqrt-2e4e9d8b.md)
+- contains class Tan [171637a4](facts/contains-class-tan-171637a4.md)
+
+## Child subjects
+
+- [django/db/models/functions/math::Abs](../django-db-models-functions-math-abs/index.md)
+- [django/db/models/functions/math::ACos](../django-db-models-functions-math-acos/index.md)
+- [django/db/models/functions/math::ASin](../django-db-models-functions-math-asin/index.md)
+- [django/db/models/functions/math::ATan](../django-db-models-functions-math-atan/index.md)
+- [django/db/models/functions/math::ATan2](../django-db-models-functions-math-atan2/index.md)
+- [django/db/models/functions/math::ATan2.as_sqlite](../django-db-models-functions-math-atan2-as-sqlite/index.md)
+- [django/db/models/functions/math::Ceil](../django-db-models-functions-math-ceil/index.md)
+- [django/db/models/functions/math::Ceil.as_oracle](../django-db-models-functions-math-ceil-as-oracle/index.md)
+- [django/db/models/functions/math::Cos](../django-db-models-functions-math-cos/index.md)
+- [django/db/models/functions/math::Cot](../django-db-models-functions-math-cot/index.md)
+- [django/db/models/functions/math::Cot.as_oracle](../django-db-models-functions-math-cot-as-oracle/index.md)
+- [django/db/models/functions/math::Degrees](../django-db-models-functions-math-degrees/index.md)
+- [django/db/models/functions/math::Degrees.as_oracle](../django-db-models-functions-math-degrees-as-oracle/index.md)
+- [django/db/models/functions/math::Exp](../django-db-models-functions-math-exp/index.md)
+- [django/db/models/functions/math::Floor](../django-db-models-functions-math-floor/index.md)
+- [django/db/models/functions/math::Ln](../django-db-models-functions-math-ln/index.md)
+- [django/db/models/functions/math::Log](../django-db-models-functions-math-log/index.md)
+- [django/db/models/functions/math::Log.as_sqlite](../django-db-models-functions-math-log-as-sqlite/index.md)
+- [django/db/models/functions/math::Mod](../django-db-models-functions-math-mod/index.md)
+- [django/db/models/functions/math::Pi](../django-db-models-functions-math-pi/index.md)
+- [django/db/models/functions/math::Pi.as_oracle](../django-db-models-functions-math-pi-as-oracle/index.md)
+- [django/db/models/functions/math::Power](../django-db-models-functions-math-power/index.md)
+- [django/db/models/functions/math::Radians](../django-db-models-functions-math-radians/index.md)
+- [django/db/models/functions/math::Radians.as_oracle](../django-db-models-functions-math-radians-as-oracle/index.md)
+- [django/db/models/functions/math::Random](../django-db-models-functions-math-random/index.md)
+- [django/db/models/functions/math::Random.as_mysql](../django-db-models-functions-math-random-as-mysql/index.md)
+- [django/db/models/functions/math::Random.as_oracle](../django-db-models-functions-math-random-as-oracle/index.md)
+- [django/db/models/functions/math::Random.as_sqlite](../django-db-models-functions-math-random-as-sqlite/index.md)
+- [django/db/models/functions/math::Random.get_group_by_cols](../django-db-models-functions-math-random-get-group-by-cols/index.md)
+- [django/db/models/functions/math::Round](../django-db-models-functions-math-round/index.md)
+- [django/db/models/functions/math::Round.__init__](../django-db-models-functions-math-round-init/index.md)
+- [django/db/models/functions/math::Round._resolve_output_field](../django-db-models-functions-math-round-resolve-output-field/index.md)
+- [django/db/models/functions/math::Round.as_sqlite](../django-db-models-functions-math-round-as-sqlite/index.md)
+- [django/db/models/functions/math::Sign](../django-db-models-functions-math-sign/index.md)
+- [django/db/models/functions/math::Sin](../django-db-models-functions-math-sin/index.md)
+- [django/db/models/functions/math::Sqrt](../django-db-models-functions-math-sqrt/index.md)
+- [django/db/models/functions/math::Tan](../django-db-models-functions-math-tan/index.md)

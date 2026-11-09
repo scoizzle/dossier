@@ -1,0 +1,14 @@
+# django/db/models/fields/json::JSONIn.resolve_expression_parameter
+
+- Subject: django/db/models/fields/json::JSONIn.resolve_expression_parameter (id `c30c7ad2-e27c-40d3-b6ef-22ddb3412acf`)
+- Kind: method
+- Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
+- Budget: 1200 tokens
+- Used: 29 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def resolve_expression_parameter(self, compiler, connection, sql, param) [1dbdb6f6](facts/def-resolve-expression-parameter-self-compiler-c-1dbdb6f6.md)

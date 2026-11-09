@@ -1,0 +1,14 @@
+# django/db/models/expressions::Window.__init__
+
+- Subject: django/db/models/expressions::Window.__init__ (id `c190a581-a947-46c6-aa4d-f8d74b5bc13c`)
+- Kind: method
+- Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
+- Budget: 1200 tokens
+- Used: 35 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def __init__( self, expression, partition_by=None, order_by=None, frame=None, output_field=None, ) [7da2d43c](facts/def-init-self-expression-partition-by-none-order-7da2d43c.md)

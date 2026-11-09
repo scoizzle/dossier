@@ -1,0 +1,14 @@
+# django/db/models/sql/query::Query.clear_select_clause
+
+- Subject: django/db/models/sql/query::Query.clear_select_clause (id `725812a4-df77-4b74-a41b-9c698de77d0c`)
+- Kind: method
+- Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
+- Budget: 1200 tokens
+- Used: 18 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def clear_select_clause(self) [df4d005e](facts/def-clear-select-clause-self-df4d005e.md)

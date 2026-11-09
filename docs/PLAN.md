@@ -64,7 +64,7 @@ Hard invariants (rules):
 
 Shapes in `contract/ops.schema.json`.
 
-- **dump** `({ source, subject, kind?, split?: "heading"|"paragraph"|"file"|"none", tags? })` => `{ created[], deduped[], skipped[{locator, reason}], errors[] }`. v0 ships exactly ONE splitter (markdown headings/paragraphs). Raw input is stored as a content-addressed blob before parsing. Deterministic, idempotent, manifest-returning. No truncation.
+- **dump** `({ source, subject, kind?, split?: "heading"|"paragraph"|"file"|"none", tags? })` => `{ created[], deduped[], skipped[{locator, reason}], errors[] }`. v0 ships the markdown splitter (headings/paragraphs); a later addition is `split: "code"` (Python only, see "Code split" below; the contract enum is not yet widened). Raw input is stored as a content-addressed blob before parsing. Deterministic, idempotent, manifest-returning. No truncation.
 - **post_facts** `({ idempotency_key?, subject: {name,kind?,parent?,aliases?}|{id}, redact?: string[], facts: [{ key?, local_id?, kind, text, data?, items?, tags?, confidence?, refs?, attachments? }] })` => `{ subject: {id,name,created,parent?}, facts: [{id, status: "new"|"deduped"|"replaced"|"near_duplicate", replaced?, duplicate_of?}] }`
 - **correlate** `({ subject?, matchers?: ["same_ref","shared_tag"] })` => `{ proposed[] }`. Deterministic matchers only; emits PROPOSED refs with basis "derived", never asserted.
 - **search** `({ subject?, kind?, key?, tag?, actor?, status?, since?, q?, ref_target?, direction?: "in"|"out", limit?: 20, cursor? })` => `{ hits: [FactView], total, complete, refine?, next? }`
@@ -320,3 +320,15 @@ databases; the counts above come from one real run.
 contradiction to be noticed and 2 are unanswerable from the seed. The harness
 writes `arm-a.json`, `arm-a2.txt` and `arm-b.md` under `scripts/eval/artifacts/`
 (git-ignored).
+
+## Code split (`--split code`, `--entity-subjects`)
+
+Motivation: paragraph-splitting `django/db/models/query.py` gave 308 facts with no structure, and compile picked arbitrary ones (REPL snippets, directives). A Python module's real units are its classes and functions.
+
+- `--split code` walks a Python file (`.py`/`.pyi`) and emits ONE fact per class, function, async function and method, at any depth, in source order (deterministic). Text = the signature without the trailing colon, whitespace collapsed; truncated at a word boundary to 240 characters with an ellipsis only when longer, and then tagged `signature_truncated`. No other fact text is truncated.
+- `data`: `symbol` (dotted qualname), `entity_kind` (`class|function|async_function|method|static_method|class_method`), `parent` (enclosing qualname or module stem), `start_line` (first decorator line if decorated), `end_line`. `derived_from` locator: `line`, `selector` `L<start>-L<end>`, `symbol`. Tags: `entity:<kind>`, `decorator:<name>` per decorator, `async` for async defs (an async method is `method`), `signature_truncated`. The docstring's first paragraph is the single item.
+- Nesting is by indentation: a method's parent is its class, a nested function's parent is the enclosing function. The module itself is not an entity.
+- `--entity-subjects` (default off): each entity also becomes a subject `<module-subject>::<qualname>` with kind = `entity_kind` and parent = the module subject id; the entity fact is posted there, and the module subject gets one `contains` fact (ref `rel=contains`, `kind=subject`) per top-level entity.
+- Limitation: **Python only.** Other files fall back to paragraph with `warning: split_fallback` in `errors`. Subject names are compared case-insensitively, so `Foo` and `foo` in one module share a subject; conditional redefinitions and property setters (`x` / `x.setter`) produce several facts for one qualname.
+- Demo: `bash scripts/dump-code-demo.sh` ingests `django/db/models` (tag 6.1.3) into 45 modules, 2,630 facts and 2,228 subjects (385 classes, 1,662 methods, 88 functions, 43 class methods, 6 static methods, 3 async functions, 41 module subjects) and publishes `examples/django-models-bundle` (4,870 files). `examples/django-bundle` (paragraph split) is untouched. Module `django/db/models/query.py`: paragraph split = 308 facts / 1 subject; code split with entity subjects = 209 facts / 187 subjects (186 entities + the module).
+

@@ -1,0 +1,75 @@
+# django/db/models/query_utils
+
+- Subject: django/db/models/query_utils (id `37abb0c2-46cb-4f07-a1c9-39d94326e8fb`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 174 tokens
+- Facts shown: 9 of 9
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- contains class DeferredAttribute [c68ca4aa](facts/contains-class-deferredattribute-c68ca4aa.md)
+- contains class FilteredRelation [42c0fb98](facts/contains-class-filteredrelation-42c0fb98.md)
+- contains class Q [441d19ed](facts/contains-class-q-441d19ed.md)
+- contains class RegisterLookupMixin [d66d2dd3](facts/contains-class-registerlookupmixin-d66d2dd3.md)
+- contains class class_or_instance_method [bd7b2a57](facts/contains-class-class-or-instance-method-bd7b2a57.md)
+- contains function check_rel_lookup_compatibility [c16761fd](facts/contains-function-check-rel-lookup-compatibility-c16761fd.md)
+- contains function refs_expression [42ea71d9](facts/contains-function-refs-expression-42ea71d9.md)
+- contains function select_related_descend [889860a2](facts/contains-function-select-related-descend-889860a2.md)
+- contains function subclasses [04d28473](facts/contains-function-subclasses-04d28473.md)
+
+## Child subjects
+
+- [django/db/models/query_utils::check_rel_lookup_compatibility](../django-db-models-query-utils-check-rel-lookup-compatibility/index.md)
+- [django/db/models/query_utils::check_rel_lookup_compatibility.check](../django-db-models-query-utils-check-rel-lookup-compatibility-check/index.md)
+- [django/db/models/query_utils::class_or_instance_method](../django-db-models-query-utils-class-or-instance-method/index.md)
+- [django/db/models/query_utils::class_or_instance_method.__get__](../django-db-models-query-utils-class-or-instance-method-get/index.md)
+- [django/db/models/query_utils::class_or_instance_method.__init__](../django-db-models-query-utils-class-or-instance-method-init/index.md)
+- [django/db/models/query_utils::DeferredAttribute](../django-db-models-query-utils-deferredattribute/index.md)
+- [django/db/models/query_utils::DeferredAttribute.__get__](../django-db-models-query-utils-deferredattribute-get/index.md)
+- [django/db/models/query_utils::DeferredAttribute.__init__](../django-db-models-query-utils-deferredattribute-init/index.md)
+- [django/db/models/query_utils::DeferredAttribute._check_parent_chain](../django-db-models-query-utils-deferredattribute-check-parent-chain/index.md)
+- [django/db/models/query_utils::DeferredAttribute.fetch_many](../django-db-models-query-utils-deferredattribute-fetch-many/index.md)
+- [django/db/models/query_utils::DeferredAttribute.fetch_one](../django-db-models-query-utils-deferredattribute-fetch-one/index.md)
+- [django/db/models/query_utils::FilteredRelation](../django-db-models-query-utils-filteredrelation/index.md)
+- [django/db/models/query_utils::FilteredRelation.__eq__](../django-db-models-query-utils-filteredrelation-eq/index.md)
+- [django/db/models/query_utils::FilteredRelation.__init__](../django-db-models-query-utils-filteredrelation-init/index.md)
+- [django/db/models/query_utils::FilteredRelation.as_sql](../django-db-models-query-utils-filteredrelation-as-sql/index.md)
+- [django/db/models/query_utils::FilteredRelation.clone](../django-db-models-query-utils-filteredrelation-clone/index.md)
+- [django/db/models/query_utils::FilteredRelation.relabeled_clone](../django-db-models-query-utils-filteredrelation-relabeled-clone/index.md)
+- [django/db/models/query_utils::FilteredRelation.resolve_expression](../django-db-models-query-utils-filteredrelation-resolve-expression/index.md)
+- [django/db/models/query_utils::Q](../django-db-models-query-utils-q/index.md)
+- [django/db/models/query_utils::Q.__and__](../django-db-models-query-utils-q-and/index.md)
+- [django/db/models/query_utils::Q.__eq__](../django-db-models-query-utils-q-eq/index.md)
+- [django/db/models/query_utils::Q.__hash__](../django-db-models-query-utils-q-hash/index.md)
+- [django/db/models/query_utils::Q.__init__](../django-db-models-query-utils-q-init/index.md)
+- [django/db/models/query_utils::Q.__invert__](../django-db-models-query-utils-q-invert/index.md)
+- [django/db/models/query_utils::Q.__or__](../django-db-models-query-utils-q-or/index.md)
+- [django/db/models/query_utils::Q.__xor__](../django-db-models-query-utils-q-xor/index.md)
+- [django/db/models/query_utils::Q._check_connector](../django-db-models-query-utils-q-check-connector/index.md)
+- [django/db/models/query_utils::Q._combine](../django-db-models-query-utils-q-combine/index.md)
+- [django/db/models/query_utils::Q.check](../django-db-models-query-utils-q-check/index.md)
+- [django/db/models/query_utils::Q.create](../django-db-models-query-utils-q-create/index.md)
+- [django/db/models/query_utils::Q.deconstruct](../django-db-models-query-utils-q-deconstruct/index.md)
+- [django/db/models/query_utils::Q.flatten](../django-db-models-query-utils-q-flatten/index.md)
+- [django/db/models/query_utils::Q.identity](../django-db-models-query-utils-q-identity/index.md)
+- [django/db/models/query_utils::Q.referenced_base_fields](../django-db-models-query-utils-q-referenced-base-fields/index.md)
+- [django/db/models/query_utils::Q.replace_expressions](../django-db-models-query-utils-q-replace-expressions/index.md)
+- [django/db/models/query_utils::Q.resolve_expression](../django-db-models-query-utils-q-resolve-expression/index.md)
+- [django/db/models/query_utils::refs_expression](../django-db-models-query-utils-refs-expression/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin](../django-db-models-query-utils-registerlookupmixin/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin._clear_cached_class_lookups](../django-db-models-query-utils-registerlookupmixin-clear-cached-class-lookups/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin._get_lookup](../django-db-models-query-utils-registerlookupmixin-get-lookup/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin._unregister_class_lookup](../django-db-models-query-utils-registerlookupmixin-unregister-class-lookup/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin._unregister_instance_lookup](../django-db-models-query-utils-registerlookupmixin-unregister-instance-lookup/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.get_class_lookups](../django-db-models-query-utils-registerlookupmixin-get-class-lookups/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.get_instance_lookups](../django-db-models-query-utils-registerlookupmixin-get-instance-lookups/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.get_lookup](../django-db-models-query-utils-registerlookupmixin-get-lookup-2/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.get_transform](../django-db-models-query-utils-registerlookupmixin-get-transform/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.merge_dicts](../django-db-models-query-utils-registerlookupmixin-merge-dicts/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.register_class_lookup](../django-db-models-query-utils-registerlookupmixin-register-class-lookup/index.md)
+- [django/db/models/query_utils::RegisterLookupMixin.register_instance_lookup](../django-db-models-query-utils-registerlookupmixin-register-instance-lookup/index.md)
+- [django/db/models/query_utils::select_related_descend](../django-db-models-query-utils-select-related-descend/index.md)
+- [django/db/models/query_utils::subclasses](../django-db-models-query-utils-subclasses/index.md)

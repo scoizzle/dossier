@@ -1,0 +1,118 @@
+# Fact 2020b68c
+
+Store id: c4f998bb-87a7-459d-be92-14d06f43be3e
+
+## Text
+
+```text
+def _property_names(self)
+```
+
+## Attributes
+
+- Kind: code
+- Status: live
+- Confidence: 1
+- Tags: `entity:method`, `decorator:cached_property`
+
+## Provenance
+
+- actor: `dossier-cli`
+- actor_type: `tool`
+- channel: `cli`
+- posted_at: `2026-11-09T22:39:48.9733920+00:00`
+
+## Data
+
+```json
+{
+  "end_line": 1012,
+  "entity_kind": "method",
+  "parent": "Options",
+  "start_line": 1000,
+  "symbol": "Options._property_names"
+}
+```
+
+## Refs
+
+- rel: derived_from
+  - kind: file
+  - target: `django/db/models/options.py`
+  - basis: observed
+  - confidence: none
+  - locator: `{"line":1000,"selector":"L1000-L1012","symbol":"Options._property_names"}`
+
+## Items
+
+```json
+[
+  {
+    "text": "Return a set of the names of the properties defined on the model.",
+    "locator": {
+      "line": 1002
+    }
+  }
+]
+```
+
+## Referenced by
+
+None.
+
+## Subject
+
+[django/db/models/options::Options._property_names](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "end_line": 1012,
+    "entity_kind": "method",
+    "parent": "Options",
+    "start_line": 1000,
+    "symbol": "Options._property_names"
+  },
+  "id": "c4f998bb-87a7-459d-be92-14d06f43be3e",
+  "items": [
+    {
+      "locator": {
+        "line": 1002
+      },
+      "text": "Return a set of the names of the properties defined on the model."
+    }
+  ],
+  "kind": "code",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:39:48.9733920+00:00"
+  },
+  "refs": [
+    {
+      "basis": "observed",
+      "kind": "file",
+      "locator": {
+        "line": 1000,
+        "selector": "L1000-L1012",
+        "symbol": "Options._property_names"
+      },
+      "rel": "derived_from",
+      "target": "django/db/models/options.py"
+    }
+  ],
+  "status": "live",
+  "subject_id": "c3254eea-4890-454f-8f41-0adb843edc02",
+  "subject_name": "django/db/models/options::Options._property_names",
+  "tags": [
+    "entity:method",
+    "decorator:cached_property"
+  ],
+  "text": "def _property_names(self)"
+}
+```

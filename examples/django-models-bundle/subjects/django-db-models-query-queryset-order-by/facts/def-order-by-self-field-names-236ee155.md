@@ -1,0 +1,117 @@
+# Fact 236ee155
+
+Store id: 9f135f73-a76f-4fcb-9e33-3512bfe7c41a
+
+## Text
+
+```text
+def order_by(self, *field_names)
+```
+
+## Attributes
+
+- Kind: code
+- Status: live
+- Confidence: 1
+- Tags: `entity:method`
+
+## Provenance
+
+- actor: `dossier-cli`
+- actor_type: `tool`
+- channel: `cli`
+- posted_at: `2026-11-09T22:39:49.6582610+00:00`
+
+## Data
+
+```json
+{
+  "end_line": 1941,
+  "entity_kind": "method",
+  "parent": "QuerySet",
+  "start_line": 1934,
+  "symbol": "QuerySet.order_by"
+}
+```
+
+## Refs
+
+- rel: derived_from
+  - kind: file
+  - target: `django/db/models/query.py`
+  - basis: observed
+  - confidence: none
+  - locator: `{"line":1934,"selector":"L1934-L1941","symbol":"QuerySet.order_by"}`
+
+## Items
+
+```json
+[
+  {
+    "text": "Return a new QuerySet instance with the ordering changed.",
+    "locator": {
+      "line": 1935
+    }
+  }
+]
+```
+
+## Referenced by
+
+None.
+
+## Subject
+
+[django/db/models/query::QuerySet.order_by](../index.md)
+
+## Machine record
+
+```json
+{
+  "attachments": [],
+  "confidence": 1,
+  "data": {
+    "end_line": 1941,
+    "entity_kind": "method",
+    "parent": "QuerySet",
+    "start_line": 1934,
+    "symbol": "QuerySet.order_by"
+  },
+  "id": "9f135f73-a76f-4fcb-9e33-3512bfe7c41a",
+  "items": [
+    {
+      "locator": {
+        "line": 1935
+      },
+      "text": "Return a new QuerySet instance with the ordering changed."
+    }
+  ],
+  "kind": "code",
+  "provenance": {
+    "actor": "dossier-cli",
+    "actor_type": "tool",
+    "channel": "cli",
+    "posted_at": "2026-11-09T22:39:49.6582610+00:00"
+  },
+  "refs": [
+    {
+      "basis": "observed",
+      "kind": "file",
+      "locator": {
+        "line": 1934,
+        "selector": "L1934-L1941",
+        "symbol": "QuerySet.order_by"
+      },
+      "rel": "derived_from",
+      "target": "django/db/models/query.py"
+    }
+  ],
+  "status": "live",
+  "subject_id": "1926cb67-d00d-4f4a-90f5-23c5b0bc9a97",
+  "subject_name": "django/db/models/query::QuerySet.order_by",
+  "tags": [
+    "entity:method"
+  ],
+  "text": "def order_by(self, *field_names)"
+}
+```

@@ -1420,7 +1420,7 @@ public sealed partial class DossierStore
 
     // ---- tiered index ----------------------------------------------------------------------
 
-    /// <summary>A folder in the name tree: subjects are grouped by their name split on '/'.</summary>
+    /// <summary>A folder in the name tree: subjects are grouped by their name split on '/' or '::'.</summary>
     private sealed class IndexNode
     {
         public string Segment = string.Empty;
@@ -1434,14 +1434,20 @@ public sealed partial class DossierStore
         public int Conflicts;
         public int Gaps;
 
-        public bool IsLeaf => Children.Count == 0;
+        /// <summary>A synthetic node that groups a folder's own subject rows into one more index file.</summary>
+        public bool Synthetic;
+
+        public bool IsLeaf => Children.Count == 0 && !Synthetic;
 
         public string FilePath => Parent is null ? "INDEX.md" : $"index/{FileSlug}.md";
     }
 
     private static List<string> IndexSegments(string name)
     {
-        var segments = name.Split('/').Select(Inline).Where(p => p.Length > 0).ToList();
+        var segments = name.Split(new[] { "/", "::" }, StringSplitOptions.None)
+            .Select(Inline)
+            .Where(p => p.Length > 0)
+            .ToList();
         if (segments.Count == 0)
         {
             var whole = Inline(name);
@@ -1550,7 +1556,7 @@ public sealed partial class DossierStore
             var scope = isRoot ? "every subject in the bundle" : "every subject under `" + Inline(string.Join('/', node.Path)) + "/`";
             if (full)
             {
-                b.Append("This file lists ").Append(scope).Append(", one row per subject, grouped by the `/`-separated segments of its name. ")
+                b.Append("This file lists ").Append(scope).Append(", one row per subject, grouped by the `/`- or `::`-separated segments of its name. ")
                     .Append("The subject cell is the subject's own name; a subject is indented two spaces per level of its name path below this file's scope, so its position shows its depth. ")
                     .Append("`tokens` is the estimated cost (chars/4, rounded up) of reading that row's file. ")
                     .Append("Pick the row you need and read only that file.\n\n");
@@ -1682,21 +1688,105 @@ public sealed partial class DossierStore
             }
         }
 
+        // A folder whose own rows do not fit one file, and that has no folder child left to split on,
+        // packs its leaf children into synthetic "part-N" folders, one index file each. This is what
+        // lets `<module>::<entity>` subjects (which split only on '::') tier instead of piling every
+        // entity of a module into one unsplittable file.
+        void BucketLeaves(IndexNode n)
+        {
+            var leaves = n.Children.Where(c => c.IsLeaf).ToList();
+            if (leaves.Count == 0)
+            {
+                return;
+            }
+
+            var buckets = new List<IndexNode>();
+            IndexNode NewBucket()
+            {
+                var segment = "part-" + (buckets.Count + 1).ToString(CultureInfo.InvariantCulture);
+                var path = n.Path.Append(segment).ToList();
+                var baseSlug = Slugify(string.Join('/', path));
+                var candidate = baseSlug;
+                var i = 2;
+                while (!taken.Add(candidate))
+                {
+                    candidate = baseSlug + "-" + i.ToString(CultureInfo.InvariantCulture);
+                    i++;
+                }
+
+                return new IndexNode
+                {
+                    Segment = segment,
+                    Parent = n,
+                    Depth = n.Depth + 1,
+                    Path = path,
+                    FileSlug = candidate,
+                    Synthetic = true,
+                };
+            }
+
+            static void Add(IndexNode target, IndexNode child)
+            {
+                target.Own.AddRange(child.Own);
+                target.Facts += child.Facts;
+                target.Conflicts += child.Conflicts;
+                target.Gaps += child.Gaps;
+            }
+
+            IndexNode? bucket = null;
+            foreach (var child in leaves)
+            {
+                if (bucket is null)
+                {
+                    bucket = NewBucket();
+                    buckets.Add(bucket);
+                }
+
+                var ownBefore = bucket.Own.Count;
+                Add(bucket, child);
+                if (ownBefore > 0 && EstimateTokens(Render(bucket, true, null)) > cap)
+                {
+                    // This child pushes the file over the cap: start a new part with it.
+                    bucket.Own.RemoveRange(ownBefore, bucket.Own.Count - ownBefore);
+                    bucket.Facts -= child.Facts;
+                    bucket.Conflicts -= child.Conflicts;
+                    bucket.Gaps -= child.Gaps;
+                    bucket = NewBucket();
+                    buckets.Add(bucket);
+                    Add(bucket, child);
+                }
+            }
+
+            n.Children.RemoveAll(c => c.IsLeaf);
+            n.Children.AddRange(buckets);
+            foreach (var part in buckets)
+            {
+                Put(part, Render(part, true, null));
+            }
+        }
+
         void Emit(IndexNode n)
         {
             var full = Render(n, true, null);
-            if (EstimateTokens(full) <= cap || !n.Children.Any(c => !c.IsLeaf))
+            if (EstimateTokens(full) <= cap)
             {
                 Put(n, full);
                 return;
             }
 
-            foreach (var c in n.Children.Where(c => !c.IsLeaf))
+            foreach (var c in n.Children.Where(c => !c.IsLeaf).ToList())
             {
                 Emit(c);
             }
 
-            Put(n, Render(n, false, null));
+            var flat = Render(n, false, null);
+            if (EstimateTokens(flat) > cap)
+            {
+                BucketLeaves(n);
+                flat = Render(n, false, null);
+            }
+
+            Put(n, flat);
         }
 
         // The root states the file count and the largest file, and its own size is part of both, so
@@ -1721,18 +1811,24 @@ public sealed partial class DossierStore
         }
 
         var single = RenderRoot(true, 1, 0);
-        if (EstimateTokens(single) <= cap || !root.Children.Any(c => !c.IsLeaf))
+        if (EstimateTokens(single) <= cap)
         {
             Put(root, single);
         }
         else
         {
-            foreach (var c in root.Children.Where(c => !c.IsLeaf))
+            foreach (var c in root.Children.Where(c => !c.IsLeaf).ToList())
             {
                 Emit(c);
             }
 
-            Put(root, RenderRoot(false, tokens.Count + 1, tokens.Count == 0 ? 0 : tokens.Values.Max()));
+            int OthersMax() => tokens.Count == 0 ? 0 : tokens.Values.Max();
+            if (EstimateTokens(RenderRoot(false, tokens.Count + 1, OthersMax())) > cap)
+            {
+                BucketLeaves(root);
+            }
+
+            Put(root, RenderRoot(false, tokens.Count + 1, OthersMax()));
         }
 
         return (files, warnings);

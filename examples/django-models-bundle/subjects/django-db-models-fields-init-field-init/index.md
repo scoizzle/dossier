@@ -1,0 +1,14 @@
+# django/db/models/fields/__init__::Field.__init__
+
+- Subject: django/db/models/fields/__init__::Field.__init__ (id `4ed22f82-df26-45c0-ba2e-e7b05fbcd267`)
+- Kind: method
+- Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
+- Budget: 1200 tokens
+- Used: 67 tokens
+- Facts shown: 1 of 1
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def __init__( self, verbose_name=None, name=None, primary_key=False, max_length=None, unique=False, blank=False, null=False, db_index=False, rel=None, default=NOT_PROVIDED, editable=True, serialize=True, unique_for_date=None,… [f5d0d9e9](facts/def-init-self-verbose-name-none-name-none-primar-f5d0d9e9.md)

@@ -848,6 +848,32 @@ public sealed class PublishTests
     }
 
     [Test]
+    public async Task Publish_EntitySubjectsTierOnDoubleColon()
+    {
+        using var db = new TempDb();
+        // Entity subjects are named <module>::<qualname>; the module folder has no '/', so only '::'
+        // (or packing the leaf rows into parts) can keep this one index file under the cap.
+        for (var i = 0; i < 300; i++)
+        {
+            db.Store.PostFacts(Fixtures.Post(
+                $"pkg/models::Entity{i:000}",
+                Fixtures.Fact($"Entity {i:000} handles request {i:000} and mentions widget {i:000}.")));
+        }
+
+        var cap = 1200;
+        var result = db.Store.Publish(Options(db, o => o.IndexMaxTokens = cap));
+        var indexes = IndexFiles(ReadAll(Out(db)));
+
+        await Assert.That(indexes.Count).IsGreaterThan(1);
+        foreach (var (path, content) in indexes)
+        {
+            await Assert.That(DossierStore.EstimateTokens(content)).IsLessThanOrEqualTo(cap);
+        }
+
+        await Assert.That(result.Warnings.Count).IsEqualTo(0);
+    }
+
+    [Test]
     public async Task Publish_IndexIsDeterministic()
     {
         using var one = new TempDb();

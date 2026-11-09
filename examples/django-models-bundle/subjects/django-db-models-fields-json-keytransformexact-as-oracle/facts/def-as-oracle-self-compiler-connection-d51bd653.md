@@ -1,6 +1,6 @@
 # Fact d51bd653
 
-Store id: 07bc334f-3026-40fa-8e73-88eadd952927
+Store id: 2762f508-d808-4dc1-9f77-40ff6da7e3ec
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0031350+00:00`
+- posted_at: `2026-11-09T23:44:51.0454190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 651,
     "symbol": "KeyTransformExact.as_oracle"
   },
-  "id": "07bc334f-3026-40fa-8e73-88eadd952927",
+  "id": "2762f508-d808-4dc1-9f77-40ff6da7e3ec",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0031350+00:00"
+    "posted_at": "2026-11-09T23:44:51.0454190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3f75713d-4a02-4f8d-91cc-fc01dc0c1ee1",
+  "subject_id": "5565682c-87a1-4e9c-bca0-e9af881e341e",
   "subject_name": "django/db/models/fields/json::KeyTransformExact.as_oracle",
   "tags": [
     "entity:method"

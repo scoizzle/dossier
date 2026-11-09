@@ -1,10 +1,10 @@
 # django/contrib/gis/shortcuts
 
-- Subject: django/contrib/gis/shortcuts (id `1850c18a-6edc-44ed-9f7c-f9aef24ffc82`)
+- Subject: django/contrib/gis/shortcuts (id `253e2882-e00f-4be7-a48e-80c0fa0f90d9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 292 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

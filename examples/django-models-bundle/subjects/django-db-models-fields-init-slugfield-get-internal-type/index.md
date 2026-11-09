@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::SlugField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::SlugField.get_internal_type (id `e3154f2b-4462-4b26-999b-a99ec048a639`)
+- Subject: django/db/models/fields/__init__::SlugField.get_internal_type (id `3d3f35c6-29c2-4799-a6b8-c8ccaca51306`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/templates/builtins
 
-- Subject: docs/ref/templates/builtins (id `2f8e90d5-c78d-47c5-9cfd-2514c2271ec7`)
+- Subject: docs/ref/templates/builtins (id `918a3cfa-cfc7-4560-a8cc-0da8ea043975`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 29605 tokens
-- Facts shown: 915 of 1127
+- Used: 34010 tokens
+- Facts shown: 1127 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - <h1>Archive for {{ year }}</h1> [a5df0e5c]
 - Check out <a href="https://www.djangoproject.com" rel="nofollow">www.djangoproject.com</a> [3995a8d6]
+- Check out <a href="https://www.djangoproject.com" rel="nofollow">www.djangoproj…</a> [a876412a]
 - It is {% now "SHORT_DATETIME_FORMAT" %} [219cfca6]
 - {% for date in days %} {% ifchanged %}<h3>{{ date|date:"F" }}</h3>{% endifchanged %} <a href="{{ date|date:"M/d"|lower }}/">{{ date|date:"j" }}</a> {% endfor %} [7d277d9b]
 - {% for date in days %} {% ifchanged date.date %} {{ date.date }} {% endifchanged %} {% ifchanged date.hour date.date %} {{ date.hour }} {% endifchanged %} {% endfor %} [f5a57269]
@@ -23,6 +24,9 @@
 - (a == b) or ((c == d) and e) [ae8dfe7c]
 - * Alice (Lewis) * 1984 (George) * Timequake (Kurt) [87ac118d]
 - .. code-block:: html+django [685d15dfb6eb2285-87]
+- .. code-block:: html+django [685d15dfb6eb2285-88]
+- .. code-block:: html+django [685d15dfb6eb2285-89]
+- .. code-block:: html+django [685d15dfb6eb2285-90]
 - 1. one 2. two 3. three [d690b388]
 - <a href="{{ the_url }}">I'm linking to {{ the_url }}</a> [9700424a]
 - <h1>Gareth</h1> <p class="odd">Harry</p> <p class="even">John</p> <p class="odd">Nick</p> [c59234ce]
@@ -36,36 +40,40 @@
 - <script id="hello-data" type="application/json">{"hello": "world\\u003C/script\\u003E\\u0026amp;"}</script> [509a3757]
 - <script src="/path/to/script.js" {% csp_nonce_attr %}></script> <link rel="stylesheet" href="/path/to/style.css" {% csp_nonce_attr %}> [1ada02a86f39bfa7-3]
 - <script> let myValue = '{{ value|escapejs }}' [2338d30d]
-- <tr> <td class="row1">...</td> <td class="row1">...</td> </tr> <tr> <td class="row2">...</td> <td class="row2">...</td> </tr> [cfcb5bb3]
-- <tr> <td class="{% cycle 'row1' 'row2' as rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr> <tr> <td class="{% cycle rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr> [49b8a242]
-- It is the {% now "jS \o\f F" %} [7fbb751b]
+- <ul> {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% endfor %} </ul> [f4fc0f7bab0509f9]
 
 ## All facts
 
+- [cfcb5bb3] <tr> <td class="row1">...</td> <td class="row1">...</td> </tr> <tr> <td class="row2">...</td> <td class="row2">...</td> </tr>
+- [49b8a242] <tr> <td class="{% cycle 'row1' 'row2' as rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr> <tr> <td class="{% cycle rowcolors %}">...</td> <td class="{{ rowcolors }}">...</td> </tr>
 - [654d8c23] <ul> {% if athlete_list %} {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% endfor %} {% else %} <li>Sorry, no athletes in this list.</li> {% endif %} </ul>
 - [693ea500] <ul> {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% empty %} <li>Sorry, no athletes in this list.</li> {% endfor %} </ul>
-- [f4fc0f7bab0509f9] <ul> {% for athlete in athlete_list %} <li>{{ athlete.name }}</li> {% endfor %} </ul>
 - [98602e67] <ul> {% for country in country_list %} <li>{{ country.grouper }} <ul> {% for city in country.list %} <li>{{ city.name }}: {{ city.population }}</li> {% endfor %} </ul> </li> {% endfor %} </ul>
 - [efc6ed20] <ul> {% for country, local_cities in country_list %} <li>{{ country }} <ul> {% for city in local_cities %} <li>{{ city.name }}: {{ city.population }}</li> {% endfor %} </ul> </li> {% endfor %} </ul>
 - [1471be98] A ``?`` was prepended to the query string for empty results.
 - [e8c46ba6] As mentioned in the :ttag:`autoescape` section, when filters including ``escape`` are chained together, it can result in unexpected outcomes if preceding filters mark a potentially unsafe string as safe due to the lack of escaping caused by :ttag:`autoescape` being ``off``.
 - [7b26cae9] Blocks are evaluated *before* they are included. This means that a template that includes blocks from another will contain blocks that have *already been evaluated and rendered* - not blocks that can be overridden by, for example, an extending template.
 - [27b87aec] Check out <a href="http://www.djangoproject.com" rel="nofollow">www.djangoproject.com</a>
+- [2c13c30d] Check out <a href="http://www.djangoproject.com" rel="nofollow">www.djangoproj…</a>
 - [b4b77a8d] Don't forget to put quotes around the URL pattern ``name``, otherwise the value will be interpreted as a context variable!
 - [7a494f99] If ``urlize`` is applied to text that already contains HTML markup, or to email addresses that contain single quotes (``'``), things won't work as expected. Apply this filter only to plain text.
 - [1507df86] If you are chaining filters, a filter applied after ``safe`` can make the contents unsafe again. For example, the following code prints the variable as is, unescaped:
 - [9510dc45] In such cases, chaining ``escape`` would not reescape strings that have already been marked as safe.
+- [7fbb751b] It is the {% now "jS \o\f F" %}
 - [0edc7d43] It is {% now "jS F Y H:i" %}
 - [bf7b479b] Joel is a slug
 - [993d1d74] Note that ``striptags`` doesn't give any guarantee about its output being HTML safe, particularly with non valid HTML input. So **NEVER** apply the ``safe`` filter to a ``striptags`` output. If you are looking for something more robust, consider using a third-party HTML sanitizing tool.
 - [918868d26f8b77e2] Processing large, potentially malformed HTML strings can be resource-intensive and impact service performance.
+- [918868d26f8b77e2-2] Processing large, potentially malformed HTML strings can be resource-intensive and impact service performance.
 - [218250b0] See :class:`~django.template.backends.jinja2.Jinja2` for information on using the ``static`` tag with Jinja2.
 - [7ff563642934590e] Set the transitional setting :setting:`URLIZE_ASSUME_HTTPS` to ``True`` to opt into using HTTPS during the Django 6.x release cycle.
+- [7ff563642934590e-2] Set the transitional setting :setting:`URLIZE_ASSUME_HTTPS` to ``True`` to opt into using HTTPS during the Django 6.x release cycle.
 - [2afe60c4] Strictly speaking, ``filesizeformat`` does not conform to the International System of Units which recommends using KiB, MiB, GiB, etc. when byte sizes are calculated in powers of 1024 (which is the case here). Instead, Django uses traditional unit names (KB, MB, GB, etc.) corresponding to names that are more commonly used.
 - [b82b7423] Strings that can be coerced to integers will be **summed**, not concatenated, as in the first example above.
 - [a95a9512] Support for multiple positional mapping arguments was added.
 - [5adc969a] The :tfilter:`escape` and :tfilter:`safe` filters are not acceptable arguments. Instead, use the :ttag:`autoescape` tag to manage autoescaping for blocks of template code.
 - [ecf48a6ac9d4b9f9] The default protocol when none is provided will change from HTTP to HTTPS in Django 2028. Hence, the output will become:
+- [ecf48a6ac9d4b9f9-2] The default protocol when none is provided will change from HTTP to HTTPS in Django 2028. Hence, the output will become:
 - [7629d726] The format passed can also be one of the predefined ones :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`SHORT_DATE_FORMAT` or :setting:`SHORT_DATETIME_FORMAT`. The predefined formats may vary depending on the current locale and if :doc:`/topics/i18n/formatting` is enabled, e.g.:
 - [2b846ae3] The variable ``forloop.length`` was added.
 - [b382c9a3] The {% templatetag openblock %} characters open a block.
@@ -75,9 +83,12 @@
 - [c6aabbbd] You have {{ num_messages }} message{{ num_messages|pluralize }}.
 - [5f4b88ec] You have {{ num_walruses }} walrus{{ num_walruses|pluralize:"es" }}.
 - [a1648f18] [ ("a", "42"), ("b", "foo"), ("c", "string"), ]
+- [ffb92025] [ ("a", "42"), ("c", "string"), ("b", "foo"), ]
 - [3d74da0f] [ {"name": "amy", "age": 22}, {"name": "joe", "age": 31}, {"name": "zed", "age": 19}, ]
+- [08910af2] [ {"name": "zed", "age": 19}, {"name": "amy", "age": 22}, {"name": "joe", "age": 31}, ]
 - [a1c2189b] [ {"title": "1984", "author": {"name": "George", "age": 45}}, {"title": "Timequake", "author": {"name": "Kurt", "age": 75}}, {"title": "Alice", "author": {"name": "Lewis", "age": 33}}, ]
 - [dd38eb77] cities = [ {"name": "Mumbai", "population": "19,000,000", "country": "India"}, {"name": "Calcutta", "population": "15,000,000", "country": "India"}, {"name": "New York", "population": "20,000,000", "country": "USA"}, {"name": "Chicago", "population": "7,000,000", "country": "USA"}, {"name": "Tokyo", "population": "33,000,000", "country": "Japan"}, ]
+- [d3ac2ea0] cities = [ {"name": "Mumbai", "population": "19,000,000", "country": "India"}, {"name": "New York", "population": "20,000,000", "country": "USA"}, {"name": "Calcutta", "population": "15,000,000", "country": "India"}, {"name": "Chicago", "population": "7,000,000", "country": "USA"}, {"name": "Tokyo", "population": "33,000,000", "country": "Japan"}, ]
 - [625a965e] const value = JSON.parse(document.getElementById('hello-data').textContent);
 - [e814a25e] dir1/ template.html base2.html my/ base3.html base1.html
 - [52f0c07c] if (athlete_list and coach_list) or cheerleader_list: ...
@@ -87,6 +98,7 @@
 - [a08b2aaf] {% autoescape off %} {% firstof var1 var2 var3 "<strong>fallback value</strong>" %} {% endautoescape %}
 - [3d3e8715] {% autoescape off %} {{ body|linebreaks|force_escape }} {% endautoescape %}
 - [08c9efc2ee439e7a] {% autoescape off %} {{ my_list|escapeseq|join:", " }} {% endautoescape %}
+- [08c9efc2ee439e7a-2] {% autoescape off %} {{ my_list|escapeseq|join:", " }} {% endautoescape %}
 - [2192494a] {% autoescape off %} {{ my_list|join:", "|escape }} {% endautoescape %}
 - [f6f45706] {% autoescape off %} {{ title|escape }} {% endautoescape %}
 - [b44eb2a4] {% autoescape on %} {{ body }} {% endautoescape %}
@@ -110,10 +122,12 @@
 - [2a4f05a1] {% for x, y in points %} There is a point at {{ x }},{{ y }} {% endfor %}
 - [d06d21ec] {% if "bc" in "abcdef" %} This appears since "bc" is a substring of "abcdef" {% endif %}
 - [46e0455b] {% if "hello" in greetings %} If greetings is a list or set, one element of which is the string "hello", this will appear. {% endif %}
+- [b8d37907] {% if a == b or c == d and e %}
 - [1d5e6d08] {% if a > b > c %} (WRONG)
 - [3eccd93d] {% if a > b and b > c %}
 - [f03fd2c002ce73bb] {% if athlete_list %} Number of athletes: {{ athlete_list|length }} {% elif athlete_in_locker_room_list %} Athletes should be out of the locker room soon! {% else %} No athletes. {% endif %}
 - [fa22609f] {% if athlete_list and coach_list %} Both athletes and coaches are available. {% endif %}
+- [82e577c2] {% if athlete_list and coach_list or cheerleader_list %}
 - [3b4bf3b2] {% if athlete_list and not coach_list %} There are some athletes and absolutely no coaches. {% endif %}
 - [f36d9555] {% if athlete_list or coach_list %} There are some athletes or some coaches. {% endif %}
 - [ba1848e9] {% if messages|length >= 100 %} You have lots of messages today! {% endif %}
@@ -128,6 +142,7 @@
 - [9d5021a0] {% if somevar is None %} This appears if somevar is None, or if somevar is not found in the context. {% endif %}
 - [8e38a4b0] {% if somevar is True %} This appears if and only if somevar is True. {% endif %}
 - [8e3091aa] {% if somevar is not None %} This appears if and only if somevar is not None. {% endif %}
+- [263b05a8] {% if somevar is not True %} This appears if somevar is not True, or if somevar is not found in the context. {% endif %}
 - [48520472] {% if user in users %} If users is a QuerySet, this will appear if user is an instance that belongs to the QuerySet. {% endif %}
 - [1a212ca5] {% if var1 %} {{ var1 }} {% elif var2 %} {{ var2 }} {% elif var3 %} {{ var3 }} {% endif %}
 - [06e9ab65] {% include "foo/bar.html" %}
@@ -161,7 +176,10 @@
 - [329bb661] {% querystring page=page.next_page_number as next_page %}
 - [5268e284] {% querystring size="M" %}
 - [aa0002cf7a1f1600] {% regroup cities by country as country_list %}
+- [aa0002cf7a1f1600-2] {% regroup cities by country as country_list %}
+- [56cb787b] {% regroup cities by country.description as country_list %}
 - [030d9973] {% regroup cities by get_country_display as country_list %}
+- [5c59f26e] {% regroup cities|dictsort:"country" by country as country_list %}
 - [751689da] {% spaceless %} <p> <a href="foo/">Foo</a> </p> {% endspaceless %}
 - [c3e71b3d] {% spaceless %} <strong> Hello </strong> {% endspaceless %}
 - [620f6847] {% url 'app-views-client' client.id %}
@@ -231,6 +249,8 @@
 - [0945c2da] {{ value|wordcount }}
 - [7d534a7f] {{ value|wordwrap:5 }}
 - [a4c111df] {{ value|yesno:"yeah,no,maybe" }}
+- [685d15dfb6eb2285-91] .. code-block:: html+django
+- [685d15dfb6eb2285-92] .. code-block:: html+django
 - [25a89666] * Calcutta: 15,000,000
 - [a66514e1] * Chicago: 7,000,000
 - [b71f7919] * Mumbai: 19,000,000
@@ -239,6 +259,8 @@
 - [bf51a786] * New York: 20,000,000 * Chicago: 7,000,000
 - [b32d95d73a852758] * Tokyo: 33,000,000
 - [b32d95d73a852758-2] * Tokyo: 33,000,000
+- [685d15dfb6eb2285-93] .. code-block:: html+django
+- [685d15dfb6eb2285-94] .. code-block:: html+django
 - [b563ffce] (This follows Python exactly). So, for example, the following complex :ttag:`if` tag:
 - [6f08c058] * Context: variable ``person`` is set to ``"John"`` and variable ``greeting`` is set to ``"Hello"``.
 - [915da5251b8e20d9] * India
@@ -271,11 +293,182 @@
 - [83a01324] .. admonition:: File sizes and SI units
 - [06903f62] .. admonition:: No safety guarantee
 - [290c2da026719fa7] .. admonition:: Size of input string
+- [290c2da026719fa7-2] .. admonition:: Size of input string
 - [6dfa8f4e] .. admonition:: Using Jinja2 templates?
 - [c6598235] .. admonition:: Using ``request.GET`` as default
 - [f1634b861a77cfdb-17] .. code-block:: html
 - [f1634b861a77cfdb-18] .. code-block:: html
 - [f1634b861a77cfdb-19] .. code-block:: html
+- [685d15dfb6eb2285-95] .. code-block:: html+django
+- [685d15dfb6eb2285-96] .. code-block:: html+django
+- [685d15dfb6eb2285-97] .. code-block:: html+django
+- [685d15dfb6eb2285-98] .. code-block:: html+django
+- [685d15dfb6eb2285-99] .. code-block:: html+django
+- [685d15dfb6eb2285-100] .. code-block:: html+django
+- [685d15dfb6eb2285-101] .. code-block:: html+django
+- [685d15dfb6eb2285-102] .. code-block:: html+django
+- [685d15dfb6eb2285-103] .. code-block:: html+django
+- [685d15dfb6eb2285-104] .. code-block:: html+django
+- [685d15dfb6eb2285-105] .. code-block:: html+django
+- [685d15dfb6eb2285-106] .. code-block:: html+django
+- [685d15dfb6eb2285-107] .. code-block:: html+django
+- [685d15dfb6eb2285-108] .. code-block:: html+django
+- [685d15dfb6eb2285-109] .. code-block:: html+django
+- [685d15dfb6eb2285-110] .. code-block:: html+django
+- [685d15dfb6eb2285-111] .. code-block:: html+django
+- [685d15dfb6eb2285-112] .. code-block:: html+django
+- [685d15dfb6eb2285-113] .. code-block:: html+django
+- [685d15dfb6eb2285-114] .. code-block:: html+django
+- [685d15dfb6eb2285-115] .. code-block:: html+django
+- [685d15dfb6eb2285-116] .. code-block:: html+django
+- [685d15dfb6eb2285-117] .. code-block:: html+django
+- [685d15dfb6eb2285-118] .. code-block:: html+django
+- [685d15dfb6eb2285-119] .. code-block:: html+django
+- [685d15dfb6eb2285-120] .. code-block:: html+django
+- [685d15dfb6eb2285-121] .. code-block:: html+django
+- [685d15dfb6eb2285-122] .. code-block:: html+django
+- [685d15dfb6eb2285-123] .. code-block:: html+django
+- [685d15dfb6eb2285-124] .. code-block:: html+django
+- [685d15dfb6eb2285-125] .. code-block:: html+django
+- [685d15dfb6eb2285-126] .. code-block:: html+django
+- [685d15dfb6eb2285-127] .. code-block:: html+django
+- [685d15dfb6eb2285-128] .. code-block:: html+django
+- [685d15dfb6eb2285-129] .. code-block:: html+django
+- [685d15dfb6eb2285-130] .. code-block:: html+django
+- [685d15dfb6eb2285-131] .. code-block:: html+django
+- [685d15dfb6eb2285-132] .. code-block:: html+django
+- [685d15dfb6eb2285-133] .. code-block:: html+django
+- [685d15dfb6eb2285-134] .. code-block:: html+django
+- [685d15dfb6eb2285-135] .. code-block:: html+django
+- [685d15dfb6eb2285-136] .. code-block:: html+django
+- [685d15dfb6eb2285-137] .. code-block:: html+django
+- [685d15dfb6eb2285-138] .. code-block:: html+django
+- [685d15dfb6eb2285-139] .. code-block:: html+django
+- [685d15dfb6eb2285-140] .. code-block:: html+django
+- [685d15dfb6eb2285-141] .. code-block:: html+django
+- [685d15dfb6eb2285-142] .. code-block:: html+django
+- [685d15dfb6eb2285-143] .. code-block:: html+django
+- [685d15dfb6eb2285-144] .. code-block:: html+django
+- [685d15dfb6eb2285-145] .. code-block:: html+django
+- [685d15dfb6eb2285-146] .. code-block:: html+django
+- [685d15dfb6eb2285-147] .. code-block:: html+django
+- [685d15dfb6eb2285-148] .. code-block:: html+django
+- [685d15dfb6eb2285-149] .. code-block:: html+django
+- [685d15dfb6eb2285-150] .. code-block:: html+django
+- [685d15dfb6eb2285-151] .. code-block:: html+django
+- [685d15dfb6eb2285-152] .. code-block:: html+django
+- [685d15dfb6eb2285-153] .. code-block:: html+django
+- [685d15dfb6eb2285-154] .. code-block:: html+django
+- [685d15dfb6eb2285-155] .. code-block:: html+django
+- [685d15dfb6eb2285-156] .. code-block:: html+django
+- [685d15dfb6eb2285-157] .. code-block:: html+django
+- [685d15dfb6eb2285-158] .. code-block:: html+django
+- [685d15dfb6eb2285-159] .. code-block:: html+django
+- [685d15dfb6eb2285-160] .. code-block:: html+django
+- [685d15dfb6eb2285-161] .. code-block:: html+django
+- [685d15dfb6eb2285-162] .. code-block:: html+django
+- [685d15dfb6eb2285-163] .. code-block:: html+django
+- [685d15dfb6eb2285-164] .. code-block:: html+django
+- [685d15dfb6eb2285-165] .. code-block:: html+django
+- [685d15dfb6eb2285-166] .. code-block:: html+django
+- [685d15dfb6eb2285-167] .. code-block:: html+django
+- [685d15dfb6eb2285-168] .. code-block:: html+django
+- [685d15dfb6eb2285-169] .. code-block:: html+django
+- [685d15dfb6eb2285-170] .. code-block:: html+django
+- [685d15dfb6eb2285-171] .. code-block:: html+django
+- [685d15dfb6eb2285-172] .. code-block:: html+django
+- [685d15dfb6eb2285-173] .. code-block:: html+django
+- [685d15dfb6eb2285-174] .. code-block:: html+django
+- [685d15dfb6eb2285-175] .. code-block:: html+django
+- [685d15dfb6eb2285-176] .. code-block:: html+django
+- [685d15dfb6eb2285-177] .. code-block:: html+django
+- [685d15dfb6eb2285-178] .. code-block:: html+django
+- [685d15dfb6eb2285-179] .. code-block:: html+django
+- [685d15dfb6eb2285-180] .. code-block:: html+django
+- [685d15dfb6eb2285-181] .. code-block:: html+django
+- [685d15dfb6eb2285-182] .. code-block:: html+django
+- [685d15dfb6eb2285-183] .. code-block:: html+django
+- [685d15dfb6eb2285-184] .. code-block:: html+django
+- [685d15dfb6eb2285-185] .. code-block:: html+django
+- [685d15dfb6eb2285-186] .. code-block:: html+django
+- [685d15dfb6eb2285-187] .. code-block:: html+django
+- [685d15dfb6eb2285-188] .. code-block:: html+django
+- [685d15dfb6eb2285-189] .. code-block:: html+django
+- [685d15dfb6eb2285-190] .. code-block:: html+django
+- [685d15dfb6eb2285-191] .. code-block:: html+django
+- [685d15dfb6eb2285-192] .. code-block:: html+django
+- [685d15dfb6eb2285-193] .. code-block:: html+django
+- [685d15dfb6eb2285-194] .. code-block:: html+django
+- [685d15dfb6eb2285-195] .. code-block:: html+django
+- [685d15dfb6eb2285-196] .. code-block:: html+django
+- [685d15dfb6eb2285-197] .. code-block:: html+django
+- [685d15dfb6eb2285-198] .. code-block:: html+django
+- [685d15dfb6eb2285-199] .. code-block:: html+django
+- [685d15dfb6eb2285-200] .. code-block:: html+django
+- [685d15dfb6eb2285-201] .. code-block:: html+django
+- [685d15dfb6eb2285-202] .. code-block:: html+django
+- [685d15dfb6eb2285-203] .. code-block:: html+django
+- [685d15dfb6eb2285-204] .. code-block:: html+django
+- [685d15dfb6eb2285-205] .. code-block:: html+django
+- [685d15dfb6eb2285-206] .. code-block:: html+django
+- [685d15dfb6eb2285-207] .. code-block:: html+django
+- [685d15dfb6eb2285-208] .. code-block:: html+django
+- [685d15dfb6eb2285-209] .. code-block:: html+django
+- [685d15dfb6eb2285-210] .. code-block:: html+django
+- [685d15dfb6eb2285-211] .. code-block:: html+django
+- [685d15dfb6eb2285-212] .. code-block:: html+django
+- [685d15dfb6eb2285-213] .. code-block:: html+django
+- [685d15dfb6eb2285-214] .. code-block:: html+django
+- [685d15dfb6eb2285-215] .. code-block:: html+django
+- [685d15dfb6eb2285-216] .. code-block:: html+django
+- [685d15dfb6eb2285-217] .. code-block:: html+django
+- [685d15dfb6eb2285-218] .. code-block:: html+django
+- [685d15dfb6eb2285-219] .. code-block:: html+django
+- [685d15dfb6eb2285-220] .. code-block:: html+django
+- [685d15dfb6eb2285-221] .. code-block:: html+django
+- [685d15dfb6eb2285-222] .. code-block:: html+django
+- [685d15dfb6eb2285-223] .. code-block:: html+django
+- [685d15dfb6eb2285-224] .. code-block:: html+django
+- [685d15dfb6eb2285-225] .. code-block:: html+django
+- [685d15dfb6eb2285-226] .. code-block:: html+django
+- [685d15dfb6eb2285-227] .. code-block:: html+django
+- [685d15dfb6eb2285-228] .. code-block:: html+django
+- [685d15dfb6eb2285-229] .. code-block:: html+django
+- [685d15dfb6eb2285-230] .. code-block:: html+django
+- [685d15dfb6eb2285-231] .. code-block:: html+django
+- [685d15dfb6eb2285-232] .. code-block:: html+django
+- [685d15dfb6eb2285-233] .. code-block:: html+django
+- [685d15dfb6eb2285-234] .. code-block:: html+django
+- [685d15dfb6eb2285-235] .. code-block:: html+django
+- [685d15dfb6eb2285-236] .. code-block:: html+django
+- [685d15dfb6eb2285-237] .. code-block:: html+django
+- [685d15dfb6eb2285-238] .. code-block:: html+django
+- [685d15dfb6eb2285-239] .. code-block:: html+django
+- [685d15dfb6eb2285-240] .. code-block:: html+django
+- [685d15dfb6eb2285-241] .. code-block:: html+django
+- [685d15dfb6eb2285-242] .. code-block:: html+django
+- [685d15dfb6eb2285-243] .. code-block:: html+django
+- [685d15dfb6eb2285-244] .. code-block:: html+django
+- [685d15dfb6eb2285-245] .. code-block:: html+django
+- [685d15dfb6eb2285-246] .. code-block:: html+django
+- [685d15dfb6eb2285-247] .. code-block:: html+django
+- [685d15dfb6eb2285-248] .. code-block:: html+django
+- [685d15dfb6eb2285-249] .. code-block:: html+django
+- [685d15dfb6eb2285-250] .. code-block:: html+django
+- [685d15dfb6eb2285-251] .. code-block:: html+django
+- [685d15dfb6eb2285-252] .. code-block:: html+django
+- [685d15dfb6eb2285-253] .. code-block:: html+django
+- [685d15dfb6eb2285-254] .. code-block:: html+django
+- [685d15dfb6eb2285-255] .. code-block:: html+django
+- [685d15dfb6eb2285-256] .. code-block:: html+django
+- [685d15dfb6eb2285-257] .. code-block:: html+django
+- [685d15dfb6eb2285-258] .. code-block:: html+django
+- [685d15dfb6eb2285-259] .. code-block:: html+django
+- [685d15dfb6eb2285-260] .. code-block:: html+django
+- [685d15dfb6eb2285-261] .. code-block:: html+django
+- [685d15dfb6eb2285-262] .. code-block:: html+django
+- [685d15dfb6eb2285-263] .. code-block:: html+django
+- [685d15dfb6eb2285-264] .. code-block:: html+django
 - [3f90e06ebee94674-6] .. code-block:: javascript
 - [dfa717732ab88b73-6] .. code-block:: python
 - [dfa717732ab88b73-7] .. code-block:: python
@@ -405,6 +598,7 @@
 - [b859b470] =========== ============================================================= Argument Description =========== ============================================================= ``count`` A number (or variable) containing the number of paragraphs or words to generate (default is 1). ``method`` Either ``w`` for words, ``p`` for HTML paragraphs or ``b`` for plain-text paragraph blocks (default is ``b``). ``random`` The word ``random``, which if given, does not use the common paragraph ("Lorem ipsum dolor sit amet...") when generating text. =========== =============================================================
 - [94d2a3b9] ============ =========================== ======== ``value`` Template Output ============ =========================== ======== ``34.23234`` ``{{ value|floatformat }}`` ``34.2`` ``34.00000`` ``{{ value|floatformat }}`` ``34`` ``34.26000`` ``{{ value|floatformat }}`` ``34.3`` ============ =========================== ========
 - [d778c9e7] ============ ============================= ========== ``value`` Template Output ============ ============================= ========== ``34.23234`` ``{{ value|floatformat:3 }}`` ``34.232`` ``34.00000`` ``{{ value|floatformat:3 }}`` ``34.000`` ``34.26000`` ``{{ value|floatformat:3 }}`` ``34.260`` ============ ============================= ==========
+- [ae5c4e89] ============ ================================ ========== ``value`` Template Output ============ ================================ ========== ``34.23234`` ``{{ value|floatformat:"-3" }}`` ``34.232`` ``34.00000`` ``{{ value|floatformat:"-3" }}`` ``34`` ``34.26000`` ``{{ value|floatformat:"-3" }}`` ``34.260`` ============ ================================ ==========
 - [70be23c8] ============ ================================ ========== ``value`` Template Output ============ ================================ ========== ``34.23234`` ``{{ value|floatformat:"0" }}`` ``34`` ``34.00000`` ``{{ value|floatformat:"0" }}`` ``34`` ``39.56000`` ``{{ value|floatformat:"0" }}`` ``40`` ============ ================================ ==========
 - [f8950fcc] ============ ================================= ============= ``value`` Template Output ============ ================================= ============= ``34.23234`` ``{{ value|floatformat:"3" }}`` ``34,232`` ``34.23234`` ``{{ value|floatformat:"3u" }}`` ``34.232`` ============ ================================= =============
 - [68a93788] ============ ================================= ============= ``value`` Template Output ============ ================================= ============= ``34232.34`` ``{{ value|floatformat:"2g" }}`` ``34,232.34`` ``34232.06`` ``{{ value|floatformat:"g" }}`` ``34,232.1`` ``34232.00`` ``{{ value|floatformat:"-3g" }}`` ``34,232`` ============ ================================= =============
@@ -428,6 +622,7 @@
 - [4571e530] Any valid template lookup is a legal grouping attribute for the regroup tag, including methods, attributes, dictionary keys and list items. For example, if the "country" field is a foreign key to a class with an attribute "description," you could use:
 - [dd4138c8] Applies HTML escaping to a string (see the :tfilter:`escape` filter for details). This filter is applied *immediately* and returns a new, escaped string. This is useful in the rare cases where you need multiple escaping or want to apply other filters to the escaped results. Normally, you want to use the :tfilter:`escape` filter.
 - [272452bc] Applies the :tfilter:`escape` filter to each element of a sequence. Useful in conjunction with other filters that operate on sequences, such as :tfilter:`join`. For example:
+- [15873e32] Applies the :tfilter:`safe` filter to each element of a sequence. Useful in conjunction with other filters that operate on sequences, such as :tfilter:`join`. For example:
 - [9ea763d7] Applying ``escape`` to a variable that would normally have auto-escaping applied to the result will only result in one round of escaping being done. So it is safe to use this function even in auto-escaping environments. If you want multiple escaping passes to be applied, use the :tfilter:`force_escape` filter.
 - [0ff63659] As with urlize_, this filter should only be applied to plain text.
 - [01bfce98] As you can see, the ``if`` tag may take one or several ``{% elif %}`` clauses, as well as an ``{% else %}`` clause that will be displayed if all previous conditions fail. These clauses are optional.
@@ -446,6 +641,7 @@
 - [2edc22e2] Centers the value in a field of a given width.
 - [26d2fb42] Check if a value has changed from the last iteration of a loop.
 - [8035b93f679711f2] Comparing offset-naive and offset-aware datetimes will return an empty string.
+- [8035b93f679711f2-2] Comparing offset-naive and offset-aware datetimes will return an empty string.
 - [09d504e2] Complex expressions ~~~~~~~~~~~~~~~~~~~
 - [ce0509d2] Contained within. This operator is supported by many Python containers to test whether the given value is in the container. The following are some examples of how ``x in y`` will be interpreted:
 - [7a1ef7c9] Controls the current auto-escaping behavior. This tag takes either ``on`` or ``off`` as an argument and that determines whether auto-escaping is in effect inside the block. The block is closed with an ``endautoescape`` ending tag.
@@ -559,14 +755,19 @@
 - [ce013f76] If ``value`` is ``""`` (the empty string), the output will be ``nothing``.
 - [0ec4868e] If ``value`` is ``"<b>Joel</b> <button>is</button> a <span>slug</span>"``, the output will be ``"Joel is a slug"``.
 - [5508c41c] If ``value`` is ``"<p>Joel is a slug</p>"``, the output will be ``"<p>Joel is …</p>"``.
+- [3f1e7b69] If ``value`` is ``"<p>Joel is a slug</p>"``, the output will be ``"<p>Joel i…</p>"``.
 - [2eec78a3] If ``value`` is ``"?test=I ♥ Django"``, the output will be ``"?test=I%20%E2%99%A5%20Django"``.
 - [36d3e138] If ``value`` is ``"Check out www.djangoproject.com"``, the output will be:
 - [c9b4da33] If ``value`` is ``"Check out www.djangoproject.com"``, the output would be:
 - [7120620c] If ``value`` is ``"Django"``, the output will be ``" Django "``.
 - [79ed0633] If ``value`` is ``"I'm using Django"``, the output will be ``"I\'m using Django"``.
+- [e65c91fa] If ``value`` is ``"Joel is a slug"``, the output will be ``"JOEL IS A SLUG"``.
+- [5ef036b4] If ``value`` is ``"Joel is a slug"``, the output will be ``"Joel is …"``.
 - [43e696fd] If ``value`` is ``"Joel is a slug"``, the output will be ``"Joel i…"``.
+- [d642a2ca] If ``value`` is ``"Joel is a slug"``, the output will be ``"joel-is-a-slug"``.
 - [b3ea3b79] If ``value`` is ``"Joel is a slug"``, the output will be ``4``.
 - [1a93f5fb] If ``value`` is ``"String with spaces"``, the output will be ``"Stringwithspaces"``.
+- [83993e8e] If ``value`` is ``"django"``, the output will be ``"Django"``.
 - [7cb22af9] If ``value`` is ``"https://www.example.org/"``, the output will be ``"https%3A%2F%2Fwww.example.org%2F"``.
 - [62da776d] If ``value`` is ``"https://www.example.org/foo?a=b&c=d"``, the output will be ``"https%3A//www.example.org/foo%3Fa%3Db%26c%3Dd"``.
 - [831efabb] If ``value`` is ``"my FIRST post"``, the output will be ``"My First Post"``.
@@ -575,8 +776,11 @@
 - [b6d1d421] If ``value`` is ``21``, the output would be ``True``.
 - [ddfd9f79] If ``value`` is ``4``, then the output will be ``6``.
 - [f9335d2f] If ``value`` is ``800-COLLECT``, the output will be ``800-2655328``.
+- [51ece25f] If ``value`` is ``Django``, the output will be ``" Django"``.
+- [56202b8d] If ``value`` is ``Django``, the output will be ``"Django "``.
 - [0c0bcd9f] If ``value`` is ``Joel is a slug``, the output would be:
 - [9b97f08d] If ``value`` is ``Joel\nis a slug``, the output will be ``<p>Joel<br>is a slug</p>``.
+- [8f5b7dca] If ``value`` is ``Joel\nis a slug``, the output will be ``Joel<br>is a slug``.
 - [3bc45b14] If ``value`` is ``None``, the output will be ``nothing``.
 - [abb68cec] If ``value`` is ``Totally LOVING this Album!``, the output will be ``totally loving this album!``.
 - [19fd9eb6] If ``value`` is ``['a', 'b', 'c', 'd']`` or ``"abcd"``, the output will be ``4``.
@@ -586,6 +790,7 @@
 - [b0ab65d5] If ``value`` is the list ``['a', 'b', 'c', 'd']``, the output could be ``"b"``.
 - [78ff3857] If ``value`` is the list ``['a', 'b', 'c', 'd']``, the output will be the string ``"d"``.
 - [c72f0750] If ``value`` is the list ``['a', 'b', 'c']``, the output will be ``'a'``.
+- [18df484a] If ``value`` is the list ``['a', 'b', 'c']``, the output will be the string ``"a // b // c"``.
 - [be63b04f] If ``value`` is the string ``"Joel"``, the output would be the list ``['J', 'o', 'e', 'l']``. If ``value`` is ``123``, the output will be the list ``['1', '2', '3']``.
 - [fe76cf240b0eddc6] If ``value`` is:
 - [fe76cf240b0eddc6-2] If ``value`` is:
@@ -602,6 +807,7 @@
 - [cb87ed4e] If you want to render the context only with the variables provided (or even no variables at all), use the ``only`` option. No other variables are available to the included template:
 - [365ab730] If you'd like to retrieve a URL without displaying it, you can use a slightly different call:
 - [572e38f4] If you'd like to retrieve a namespaced URL, specify the fully qualified name:
+- [b3e5492d] If you'd like to retrieve a static URL without displaying it, you can use a slightly different call:
 - [3c170bfb] Ignores everything between ``{% comment %}`` and ``{% endcomment %}``. An optional note may be inserted in the first tag. For example, this is useful when commenting out code for documenting why the code was disabled.
 - [5dff1a25] In ``template.html``, the following paths would be valid:
 - [055dec7e] In addition to web links, ``urlize`` also converts email addresses into ``mailto:`` links. If ``value`` is ``"Send questions to foo@example.com"``, the output will be ``"Send questions to <a href="mailto:foo@example.com">foo@example.com</a>"``.
@@ -633,8 +839,10 @@
 - [e21d72e8] Maps values for ``True``, ``False``, and (optionally) ``None``, to the strings "yes", "no", "maybe", or a custom mapping passed as a comma-separated list, and returns one of those strings according to the value:
 - [8d75c27c] Marks a string as not requiring further HTML escaping prior to output. When autoescaping is off, this filter has no effect.
 - [d5cabb4b] Minutes is the smallest unit used, and "0 minutes" will be returned for any date that is in the future relative to the comparison point.
+- [d2d84e61] Minutes is the smallest unit used, and "0 minutes" will be returned for any date that is in the past relative to the comparison point.
 - [98b62ff2] Negated object identity. Tests if two values are not the same object. This is the negation of the ``is`` operator. Example:
 - [aa3a4135a084f202] Newlines in the HTML content will be preserved.
+- [aa3a4135a084f202-2] Newlines in the HTML content will be preserved.
 - [f0be4869] Newlines within the string will be removed.
 - [d55657d2] Normally the template name is relative to the template loader's root directory. A string argument may also be a relative path starting with ``./`` or ``../`` as described in the :ttag:`extends` tag.
 - [9e21f57a] Normally the template name is relative to the template loader's root directory. A string argument may also be a relative path starting with ``./`` or ``../``. For example, assume the following directory structure:
@@ -698,6 +906,7 @@
 - [f6d803e4] Setting items ~~~~~~~~~~~~~
 - [a1c7fc46] Signals that this template extends a parent template.
 - [b4cc773a] Similar to :tfilter:`truncatechars`, except that it is aware of HTML tags. Any tags that are opened in the string and not closed before the truncation point are closed immediately after the truncation.
+- [14018c12] Similar to :tfilter:`truncatewords`, except that it is aware of HTML tags. Any tags that are opened in the string and not closed before the truncation point, are closed immediately after the truncation.
 - [ec1624f8] Similar to ``timesince``, except that it measures the time from now until the given date or datetime. For example, if today is 1 June 2006 and ``conference_date`` is a date instance holding 29 June 2006, then ``{{ conference_date|timeuntil }}`` will return "4 weeks".
 - [d3d84af7] Similar to the :ttag:`get_static_prefix`, ``get_media_prefix`` populates a template variable with the media prefix :setting:`MEDIA_URL`, e.g.:
 - [92e708d4] Similarly, if all positional arguments are empty and keyword arguments do not contribute any new params, the output will also be ``?``.
@@ -745,6 +954,7 @@
 - [3e041ff9] This example includes the contents of the template ``"foo/bar.html"``:
 - [55df249d] This example includes the contents of the template whose name is contained in the variable ``template_name``:
 - [0d931ddb9fb1af3a] This example would return this HTML:
+- [0d931ddb9fb1af3a-2] This example would return this HTML:
 - [4c8c61f4] This filter will first try to coerce both values to integers. If this fails, it'll attempt to add the values together anyway. This will work on some data types (strings, list, etc.) and fail on others. If it fails, the result will be an empty string.
 - [3e4c3574] This is a way to output links without violating the DRY principle by having to hardcode URLs in your templates:
 - [1ba8a9d8] This is compatible with a strict Content Security Policy that prohibits in-page script execution. It also maintains a clean separation between passive data and executable code.
@@ -925,6 +1135,8 @@
 - [7b14557e] the output will be:
 - [e66b9c35] the output would be the string ``"09/01/2008"`` (the ``"SHORT_DATE_FORMAT"`` format specifier for the ``es`` locale as shipped with Django is ``"d/m/Y"``).
 - [267111293e73cb7f] then the output would be:
+- [267111293e73cb7f-2] then the output would be:
+- [267111293e73cb7f-3] then the output would be:
 - [b5037611] will be interpreted like::
 - [9a532d4a] would output:
 - [44224262] you should use:

@@ -1,6 +1,6 @@
 # Fact 6bf97bcb
 
-Store id: 288dcc34-c831-41b2-8b20-ba5214267dea
+Store id: 5f6ef3c9-6338-44ea-887f-2784489f9eee
 
 ## Text
 
@@ -20,7 +20,7 @@ def table_alias(self, table_name, create=False, filtered_relation=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8311020+00:00`
+- posted_at: `2026-11-09T23:44:58.7103940+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 899,
     "symbol": "Query.table_alias"
   },
-  "id": "288dcc34-c831-41b2-8b20-ba5214267dea",
+  "id": "5f6ef3c9-6338-44ea-887f-2784489f9eee",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8311020+00:00"
+    "posted_at": "2026-11-09T23:44:58.7103940+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c65bdd14-1a58-4261-a79c-078ca64cf33e",
+  "subject_id": "aec4d797-ef70-45f3-b568-2eb39b005441",
   "subject_name": "django/db/models/sql/query::Query.table_alias",
   "tags": [
     "entity:method"

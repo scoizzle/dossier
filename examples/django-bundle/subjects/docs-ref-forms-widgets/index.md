@@ -1,10 +1,10 @@
 # docs/ref/forms/widgets
 
-- Subject: docs/ref/forms/widgets (id `0098f9c3-013b-4627-bb70-0b2b3787bbce`)
+- Subject: docs/ref/forms/widgets (id `c80e4fab-cf5d-489f-a97b-ae9d3d050e7f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 10585 tokens
-- Facts shown: 275 of 292
+- Used: 11258 tokens
+- Facts shown: 292 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,6 +41,7 @@
 - [691620be] <div> <div><input type="checkbox" name="..." ></div> ... </div>
 - [c4d0c434] <div> <div><input type="radio" name="..."></div> ... </div>
 - [fcc4aa1d] <fieldset> <legend>Radio buttons</legend> <div class="myradio"> <label for="id_beatles_0"><input id="id_beatles_0" name="beatles" type="radio" value="john" required> John</label> </div> <div class="myradio"> <label for="id_beatles_1"><input id="id_beatles_1" name="beatles" type="radio" value="paul" required> Paul</label> </div> <div class="myradio"> <label for="id_beatles_2"><input id="id_beatles_2" name="beatles" type="radio" value="george" required> George</label> </div> <div class="myradio"> <label for="id_beatles_3"><input id="id_beatles_3" name="beatles" type="radio" value="ringo" required> Ringo</label> </div> </fieldset>
+- [492cce6c] <fieldset> <legend>Radio buttons</legend> <label for="id_beatles_0"> John <span class="radio"><input id="id_beatles_0" name="beatles" type="radio" value="john" required></span> </label> <label for="id_beatles_1"> Paul <span class="radio"><input id="id_beatles_1" name="beatles" type="radio" value="paul" required></span> </label> <label for="id_beatles_2"> George <span class="radio"><input id="id_beatles_2" name="beatles" type="radio" value="george" required></span> </label> <label for="id_beatles_3"> Ringo <span class="radio"><input id="id_beatles_3" name="beatles" type="radio" value="ringo" required></span> </label> </fieldset>
 - [b2846fc6] <fieldset> <legend>{{ myform.beatles.label }}</legend> {% for radio in myform.beatles %} <div class="myradio"> {{ radio }} </div> {% endfor %} </fieldset>
 - [5a1dffb9] <fieldset> <legend>{{ myform.beatles.label }}</legend> {% for radio in myform.beatles %} <label for="{{ radio.id_for_label }}"> {{ radio.choice_label }} <span class="radio">{{ radio.tag }}</span> </label> {% endfor %} </fieldset>
 - [ef5224fe] A callable that takes the value of the ``CheckboxInput`` and returns ``True`` if the checkbox should be checked for that value.
@@ -71,6 +72,8 @@
 - [c8c09793] Similar to :attr:`Widget.attrs`. A dictionary containing HTML attributes to be set on the rendered :class:`DateInput` and :class:`TimeInput` widgets, respectively. If these attributes aren't set, :attr:`Widget.attrs` is used instead.
 - [a4810416] Special cases are :class:`~django.forms.CheckboxInput`, :class:`~django.forms.CheckboxSelectMultiple`, and :class:`~django.forms.SelectMultiple`, which always return ``False`` because an unchecked checkbox and unselected ``<select multiple>`` don't appear in the data of an HTML form submission, so it's unknown whether or not the user submitted a value.
 - [5a8a1781296c882d] The format in which this field's initial value will be displayed.
+- [5a8a1781296c882d-2] The format in which this field's initial value will be displayed.
+- [5a8a1781296c882d-3] The format in which this field's initial value will be displayed.
 - [db1b43e1] The keys of the dict correspond to the month number (1-indexed) and the values are the displayed months::
 - [787fd128] The method's result affects whether or not a field in a model form :ref:`falls back to its default <topics-modelform-save>`.
 - [3675e607] The rationale behind "decompression" is that it is necessary to "split" the combined value of the form field into the values for each widget.
@@ -95,6 +98,7 @@
 - [1e11ae9b] * ``input_type``: ``'tel'`` * ``template_name``: ``'django/forms/widgets/tel.html'`` * Renders as: ``<input type="tel" ...>``
 - [1fcb3a02] * ``input_type``: ``'text'`` * ``template_name``: ``'django/forms/widgets/date.html'`` * Renders as: ``<input type="text" ...>``
 - [cbdfb32a] * ``input_type``: ``'text'`` * ``template_name``: ``'django/forms/widgets/datetime.html'`` * Renders as: ``<input type="text" ...>``
+- [20152389] * ``input_type``: ``'text'`` * ``template_name``: ``'django/forms/widgets/text.html'`` * Renders as: ``<input type="text" ...>``
 - [38846fa0] * ``input_type``: ``'text'`` * ``template_name``: ``'django/forms/widgets/time.html'`` * Renders as: ``<input type="text" ...>``
 - [b649e6fd] * ``input_type``: ``'url'`` * ``template_name``: ``'django/forms/widgets/url.html'`` * Renders as: ``<input type="url" ...>``
 - [8c743d0a] * ``template_name``: ``'django/forms/widgets/checkbox_select.html'`` * ``option_template_name``: ``'django/forms/widgets/checkbox_option.html'``
@@ -102,6 +106,8 @@
 - [e214a37e] * ``template_name``: ``'django/forms/widgets/file.html'`` * Renders as: ``<input type="file" ...>``
 - [af021d81] * ``template_name``: ``'django/forms/widgets/multiple_hidden.html'`` * Renders as: multiple ``<input type="hidden" ...>`` tags
 - [e2423552] * ``template_name``: ``'django/forms/widgets/radio.html'`` * ``option_template_name``: ``'django/forms/widgets/radio_option.html'``
+- [152e890e7f9f7c32] * ``template_name``: ``'django/forms/widgets/select.html'`` * ``option_template_name``: ``'django/forms/widgets/select_option.html'``
+- [152e890e7f9f7c32-2] * ``template_name``: ``'django/forms/widgets/select.html'`` * ``option_template_name``: ``'django/forms/widgets/select_option.html'``
 - [a6f0fbd3] * ``template_name``: ``'django/forms/widgets/select.html'`` * ``option_template_name``: ``'django/forms/widgets/select_option.html'`` * Renders as: ``<select><option ...>...</select>``
 - [5f59d3f4] * ``template_name``: ``'django/forms/widgets/select_date.html'``
 - [c3cef5e1] * ``template_name``: ``'django/forms/widgets/splitdatetime.html'``
@@ -128,9 +134,12 @@
 - [f1634b861a77cfdb-14] .. code-block:: html
 - [f1634b861a77cfdb-15] .. code-block:: html
 - [f1634b861a77cfdb-16] .. code-block:: html
+- [685d15dfb6eb2285-78] .. code-block:: html+django
+- [685d15dfb6eb2285-79] .. code-block:: html+django
 - [4e885956f001b283-2] .. method:: decompress(value)
 - [488475b4] .. method:: format_value(value)
 - [ff0b91a107b83b10] .. method:: get_context(name, value, attrs)
+- [ff0b91a107b83b10-2] .. method:: get_context(name, value, attrs)
 - [760158af] .. method:: id_for_label(id_)
 - [bce63f83] .. method:: render(name, value, attrs=None, renderer=None)
 - [431edfb9] .. method:: use_required_attribute(initial)
@@ -152,6 +161,7 @@
 - [cd54e6cd] For the treatment of microseconds, see :class:`DateTimeInput`.
 - [bd95c47e] Here's an example widget which subclasses :class:`MultiWidget` to display a date with the day, month, and year in different select boxes. This widget is intended to be used with a :class:`~django.forms.DateField` rather than a :class:`~django.forms.MultiValueField`, thus we have implemented :meth:`~Widget.value_from_datadict`::
 - [4f9dba66] If no ``format`` argument is provided, the default format is the first format found in :setting:`DATETIME_INPUT_FORMATS` and respects :doc:`/topics/i18n/formatting`. ``%U``, ``%W``, and ``%j`` formats are not supported by this widget.
+- [cc99beda] If no ``format`` argument is provided, the default format is the first format found in :setting:`DATE_INPUT_FORMATS` and respects :doc:`/topics/i18n/formatting`. ``%U``, ``%W``, and ``%j`` formats are not supported by this widget.
 - [ee95298a] If no ``format`` argument is provided, the default format is the first format found in :setting:`TIME_INPUT_FORMATS` and respects :doc:`/topics/i18n/formatting`.
 - [aafacad1] If you decide not to loop over the radio buttons -- e.g., if your template includes ``{{ myform.beatles }}`` -- they'll be output in a ``<div>`` with ``<div>`` tags, as above.
 - [b5242b2c] It provides some custom context:
@@ -162,12 +172,16 @@
 - [5ec83d99] Similar to :class:`Select`, but rendered as a list of radio buttons within ``<div>`` tags:
 - [454e9635] Similar to :class:`SplitDateTimeWidget`, but uses :class:`HiddenInput` for both date and time.
 - [3a9950388e0fad45-5] Takes one optional argument:
+- [3a9950388e0fad45-6] Takes one optional argument:
 - [0a2418c3753eb7c6] Takes same arguments as :class:`TextInput`, with one more optional argument:
+- [0a2418c3753eb7c6-2] Takes same arguments as :class:`TextInput`, with one more optional argument:
+- [0a2418c3753eb7c6-3] Takes same arguments as :class:`TextInput`, with one more optional argument:
 - [0cfe3919] Takes several optional arguments:
 - [32fd0962] That included the ``<label>`` tags. To get more granular, you can use each radio button's ``tag``, ``choice_label`` and ``id_for_label`` attributes. For example, this template...
 - [4af30558] The constructor creates several :class:`Select` widgets in a list. The ``super()`` method uses this list to set up the widget.
 - [5b22f157] The default implementation of :meth:`~Widget.value_from_datadict` returns a list of values corresponding to each ``Widget``. This is appropriate when using a ``MultiWidget`` with a :class:`~django.forms.MultiValueField`. But since we want to use this widget with a :class:`~django.forms.DateField`, which takes a single value, we have overridden this method. The implementation here combines the data from the subwidgets into a string in the format that :class:`~django.forms.DateField` expects.
 - [33d8b345d994b5cd] The outer ``<div>`` container receives the ``id`` attribute of the widget, if defined, or :attr:`BoundField.auto_id` otherwise.
+- [33d8b345d994b5cd-2] The outer ``<div>`` container receives the ``id`` attribute of the widget, if defined, or :attr:`BoundField.auto_id` otherwise.
 - [9be7734f] The required method :meth:`~MultiWidget.decompress` breaks up a ``datetime.date`` value into the day, month, and year values corresponding to each widget. If an invalid date was selected, such as the non-existent 30th February, the :class:`~django.forms.DateField` passes this method a string instead, so that needs parsing. The final ``return`` handles when ``value`` is ``None``, meaning we don't have any defaults for our subwidgets.
 - [077d88ce] This abstract class cannot be rendered, but provides the basic attribute :attr:`~Widget.attrs`. You may also implement or override the :meth:`~Widget.render` method on custom widgets.
 - [c81354e3] This would generate the following HTML:
@@ -177,11 +191,14 @@
 - [11213111] Wrapper around three :class:`~django.forms.Select` widgets: one each for month, day, and year.
 - [fab49878] ``SplitDateTimeWidget`` has several optional arguments:
 - [8b0d706cc49a7819] class CommentForm(forms.Form): name = forms.CharField() url = forms.URLField() comment = forms.CharField()
+- [8b0d706cc49a7819-2] class CommentForm(forms.Form): name = forms.CharField() url = forms.URLField() comment = forms.CharField()
 - [c1fe3599] class CommentForm(forms.Form): name = forms.CharField() url = forms.URLField() comment = forms.CharField(widget=forms.Textarea)
 - [fd434074] class CommentForm(forms.Form): name = forms.CharField(widget=forms.TextInput(attrs={"class": "special"})) url = forms.URLField() comment = forms.CharField(widget=forms.TextInput(attrs={"size": "40"}))
 - [33e1db6c] class CommentForm(forms.ModelForm): def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) self.fields["name"].widget.attrs.update({"class": "special"}) self.fields["comment"].widget.attrs.update(size="40")
 - [a4e647b8] class SimpleForm(forms.Form): birth_year = forms.DateField( widget=forms.SelectDateWidget(years=BIRTH_YEAR_CHOICES) ) favorite_colors = forms.MultipleChoiceField( required=False, widget=forms.CheckboxSelectMultiple, choices=FAVORITE_COLORS_CHOICES, )
 - [9ee3a9405e27875c-7] from django import forms
+- [9ee3a9405e27875c-8] from django import forms
+- [9ee3a9405e27875c-9] from django import forms
 - [d406b42b] .. _base-widget-classes:
 - [101e9e02] .. _built-in widgets:
 - [ffb875a5] .. _composite-widgets:

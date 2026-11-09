@@ -1,6 +1,6 @@
 # Fact dbd74275
 
-Store id: 0e046308-7fcd-439a-a283-fd27421f5097
+Store id: b43fbf3a-7f52-424b-91fe-0e803fc00744
 
 ## Text
 
@@ -20,7 +20,7 @@ def output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1747410+00:00`
+- posted_at: `2026-11-09T23:44:54.8930300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 168,
     "symbol": "Lookup.output_field"
   },
-  "id": "0e046308-7fcd-439a-a283-fd27421f5097",
+  "id": "b43fbf3a-7f52-424b-91fe-0e803fc00744",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1747410+00:00"
+    "posted_at": "2026-11-09T23:44:54.8930300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2d135c15-13e2-44ad-a48f-af774e0172d8",
+  "subject_id": "c063827b-9ba9-41b9-9201-6b639e0623d1",
   "subject_name": "django/db/models/lookups::Lookup.output_field",
   "tags": [
     "entity:method",

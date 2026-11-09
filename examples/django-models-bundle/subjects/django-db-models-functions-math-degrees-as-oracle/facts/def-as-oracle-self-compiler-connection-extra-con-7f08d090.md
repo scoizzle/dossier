@@ -1,6 +1,6 @@
 # Fact 7f08d090
 
-Store id: 7b247734-60b9-4cba-b331-ed6e7606eb83
+Store id: bba24a62-4278-43d7-8d1d-08b2fa2f249b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7066920+00:00`
+- posted_at: `2026-11-09T23:44:53.7232020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 88,
     "symbol": "Degrees.as_oracle"
   },
-  "id": "7b247734-60b9-4cba-b331-ed6e7606eb83",
+  "id": "bba24a62-4278-43d7-8d1d-08b2fa2f249b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7066920+00:00"
+    "posted_at": "2026-11-09T23:44:53.7232020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6dbd1503-7453-4846-9f3f-b0d55592f870",
+  "subject_id": "a36b4334-5cbb-400e-ade8-0e6db264ea24",
   "subject_name": "django/db/models/functions/math::Degrees.as_oracle",
   "tags": [
     "entity:method"

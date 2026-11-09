@@ -1,6 +1,6 @@
 # Fact 27e607d1
 
-Store id: 1c50a7c3-53dd-4787-b419-7ba1ae254772
+Store id: 2758daee-4284-44ea-89f2-8010fb870b0c
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_attributes_from_rel(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6329320+00:00`
+- posted_at: `2026-11-09T23:44:51.4897440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 467,
     "symbol": "RelatedField.set_attributes_from_rel"
   },
-  "id": "1c50a7c3-53dd-4787-b419-7ba1ae254772",
+  "id": "2758daee-4284-44ea-89f2-8010fb870b0c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6329320+00:00"
+    "posted_at": "2026-11-09T23:44:51.4897440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bb68c993-5eb1-44c8-bbf0-4142d80b79b8",
+  "subject_id": "0e61ec84-5ab4-42cb-a8be-8f7c5fa42f31",
   "subject_name": "django/db/models/fields/related::RelatedField.set_attributes_from_rel",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/files::ImageField.formfield
 
-- Subject: django/db/models/fields/files::ImageField.formfield (id `ea6d1a81-53d2-49ec-80d5-c5fe7a050d83`)
+- Subject: django/db/models/fields/files::ImageField.formfield (id `724e1b5f-ced6-4264-89ab-1a39b436c8d7`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

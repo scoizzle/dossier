@@ -1,6 +1,6 @@
 # Fact c2dc2ced
 
-Store id: 1d357c0a-1470-44d0-a32f-fa2aae43bb58
+Store id: a8f317a2-f1dc-4489-9654-b1a1187b57d0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FileField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4465340+00:00`
+- posted_at: `2026-11-09T23:44:50.6886790+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1d357c0a-1470-44d0-a32f-fa2aae43bb58",
+  "id": "a8f317a2-f1dc-4489-9654-b1a1187b57d0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
+    "posted_at": "2026-11-09T23:44:50.6886790+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FileField"
       },
       "rel": "contains",
-      "target": "9ecf65a9-7e92-4dce-a564-be18c5568171"
+      "target": "1ed7c651-e32e-4d7a-b9a1-5521c842a297"
     }
   ],
   "status": "live",
-  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
+  "subject_id": "a957c718-7162-4a08-a413-08d802f7b159",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

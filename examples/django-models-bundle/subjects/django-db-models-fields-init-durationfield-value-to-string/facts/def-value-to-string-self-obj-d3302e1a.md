@@ -1,6 +1,6 @@
 # Fact d3302e1a
 
-Store id: bd214ebe-333c-4815-9b37-5074c711ecf8
+Store id: 50ee3563-34dd-4b47-b829-e0c158ff445b
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6556540+00:00`
+- posted_at: `2026-11-09T23:44:50.1341160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1984,
     "symbol": "DurationField.value_to_string"
   },
-  "id": "bd214ebe-333c-4815-9b37-5074c711ecf8",
+  "id": "50ee3563-34dd-4b47-b829-e0c158ff445b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6556540+00:00"
+    "posted_at": "2026-11-09T23:44:50.1341160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "69d7045c-26fc-4704-a8d4-6192197cf086",
+  "subject_id": "b60a74c4-13f4-4dbb-bb8d-baf9968ca8c5",
   "subject_name": "django/db/models/fields/__init__::DurationField.value_to_string",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/db/models/expressions
 
-- Subject: django/db/models/expressions (id `b6aac3de-5ad7-41de-9ca7-8bc6258105cd`)
+- Subject: django/db/models/expressions (id `2c4dd199-6c07-4fdd-a6cf-99cf7ee24af4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 17821 tokens
-- Facts shown: 288 of 320
+- Used: 18798 tokens
+- Facts shown: 320 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -88,6 +88,7 @@
 - [b102d525] def __init__(self, expression): super().__init__(expression, output_field=fields.BooleanField())
 - [9c72b923] def __init__(self, expression, descending=False, nulls_first=None, nulls_last=None): if nulls_first and nulls_last: raise ValueError("nulls_first and nulls_last are mutually exclusive") if nulls_first is False or nulls_last is False: raise ValueError("nulls_first and nulls_last values must be True or None.") self.nulls_first = nulls_first self.nulls_last = nulls_last self.descending = descending if not hasattr(expression, "resolve_expression"): raise ValueError("expression must be an expression type") self.expression = expression
 - [e98c1c40] def __init__(self, expression, output_field): super().__init__(output_field=output_field) self.expression = expression
+- [41b506e5] def __init__(self, expression, output_field=None): super().__init__(output_field) self.expression = expression
 - [87b03cd1] def __init__(self, lhs, rhs): super().__init__(lhs, self.SUB, rhs)
 - [1b743ea7] def __init__(self, name): """ Arguments: * name: the name of the field this expression references """ self.name = name
 - [de22d288] def __init__(self, obj, subscript): super().__init__(obj.name) self.obj = obj if isinstance(subscript, int): if subscript < 0: raise ValueError("Negative indexing is not supported.") self.start = subscript + 1 self.length = 1 elif isinstance(subscript, slice): if (subscript.start is not None and subscript.start < 0) or ( subscript.stop is not None and subscript.stop < 0 ): raise ValueError("Negative indexing is not supported.") if subscript.step is not None: raise ValueError("Step argument is not supported.") if subscript.stop and subscript.start and subscript.stop < subscript.start: raise ValueError("Slice stop must be greater than slice start.") self.start = 1 if subscript.start is None else subscript.start + 1 if subscript.stop is None: self.length = None else: self.length = subscript.stop - (subscript.start or 0) else: raise TypeError("Argument to slice must be either int or slice instance.")
@@ -105,25 +106,34 @@
 - [0da2f572] def __mod__(self, other): return self._combine(other, self.MOD, False)
 - [09707945] def __mul__(self, other): return self._combine(other, self.MUL, False)
 - [91241e7e] def __neg__(self): return self._combine(-1, self.MUL, False)
+- [48c5b3fc] def __or__(self, other): if getattr(self, "conditional", False) and getattr(other, "conditional", False): return Q(self) | Q(other) raise NotImplementedError( "Use .bitand(), .bitor(), and .bitxor() for bitwise logical operations." )
 - [bb157f95] def __pow__(self, other): return self._combine(other, self.POW, False)
 - [cf4973ba] def __radd__(self, other): return self._combine(other, self.ADD, True)
 - [f16273da] def __rand__(self, other): raise NotImplementedError( "Use .bitand(), .bitor(), and .bitxor() for bitwise logical operations." )
 - [f705d288] def __repr__(self): alias, target = self.alias, self.target identifiers = (alias, str(target)) if alias else (str(target),) return "{}({})".format(self.__class__.__name__, ", ".join(identifiers))
 - [e58447e4] def __repr__(self): args = self.arg_joiner.join(str(arg) for arg in self.source_expressions) extra = {**self.extra, **self._get_repr_options()} if extra: extra = ", ".join( str(key) + "=" + str(val) for key, val in sorted(extra.items()) ) return "{}({}, {})".format(self.__class__.__name__, args, extra) return "{}({})".format(self.__class__.__name__, args)
 - [786242c26f533382-2] def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self)
+- [786242c26f533382-3] def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self)
+- [786242c26f533382-4] def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self)
+- [786242c26f533382-5] def __repr__(self): return "<%s: %s>" % (self.__class__.__name__, self)
 - [253229e2] def __repr__(self): return "<{}: {}>".format(self.__class__.__name__, self)
+- [600ba61e] def __repr__(self): return "{}({})".format(self.__class__.__name__, self.expression)
+- [d2ae23e9] def __repr__(self): return "{}({})".format(self.__class__.__name__, self.name)
 - [20637497] def __repr__(self): return "{}({}, descending={})".format( self.__class__.__name__, self.expression, self.descending )
 - [2bfe791b] def __repr__(self): return "{}({}, {})".format(self.__class__.__name__, self.refs, self.source)
 - [1102abb1] def __repr__(self): return "{}({}, {})".format(self.__class__.__name__, self.sql, self.params)
 - [c1d40931] def __repr__(self): return ( f"{self.__class__.__name__}({self.alias!r}, {self.targets!r}, " f"{self.sources!r}, {self.output_field!r})" )
 - [982df977] def __repr__(self): return f"{self.__class__.__name__}()"
 - [df3af0c8] def __repr__(self): return f"{self.__class__.__name__}({self.value!r})"
+- [8302ca8f] def __repr__(self): return f"{self.__class__.__qualname__}.{self._name_}"
 - [c3e7c381] def __repr__(self): start = self.start - 1 stop = None if self.length is None else start + self.length subscript = slice(start, stop) return f"{self.__class__.__qualname__}({self.obj!r}, {subscript!r})"
 - [8fd986a3] def __rmod__(self, other): return self._combine(other, self.MOD, True)
 - [0d3ff7a0] def __rmul__(self, other): return self._combine(other, self.MUL, True)
+- [1208507d] def __ror__(self, other): raise NotImplementedError( "Use .bitand(), .bitor(), and .bitxor() for bitwise logical operations." )
 - [4b650ade] def __rpow__(self, other): return self._combine(other, self.POW, True)
 - [706e56eb] def __rsub__(self, other): return self._combine(other, self.SUB, True)
 - [2e4419dd] def __rtruediv__(self, other): return self._combine(other, self.DIV, True)
+- [993e588a] def __rxor__(self, other): raise NotImplementedError( "Use .bitand(), .bitor(), and .bitxor() for bitwise logical operations." )
 - [ea29590f] def __str__(self): if self.start.value is not None and self.start.value < 0: start = "%d %s" % (abs(self.start.value), connection.ops.PRECEDING) elif self.start.value is not None and self.start.value == 0: start = connection.ops.CURRENT_ROW elif self.start.value is not None and self.start.value > 0: start = "%d %s" % (self.start.value, connection.ops.FOLLOWING) else: start = connection.ops.UNBOUNDED_PRECEDING
 - [31fb10c6] def __str__(self): return "CASE %s, ELSE %r" % ( ", ".join(str(c) for c in self.cases), self.default, )
 - [a3790779] def __str__(self): return "WHEN %r THEN %r" % (self.condition, self.result)
@@ -132,6 +142,7 @@
 - [fb8ef8318565966b-2] def __str__(self): return self.arg_joiner.join(str(arg) for arg in self.source_expressions)
 - [041e4958] def __sub__(self, other): return self._combine(other, self.SUB, False)
 - [135a707c] def __truediv__(self, other): return self._combine(other, self.DIV, False)
+- [806c207d] def __xor__(self, other): if getattr(self, "conditional", False) and getattr(other, "conditional", False): return Q(self) ^ Q(other) raise NotImplementedError( "Use .bitand(), .bitor(), and .bitxor() for bitwise logical operations." )
 - [eec5fc33] def _combine(self, other, connector, reversed): if not hasattr(other, "resolve_expression"): # everything must be resolvable to an expression other = Value(other)
 - [cf0230ee] def _get_repr_options(self): """Return a dict of extra __init__() options to include in the repr.""" return {}
 - [d824847e] def _parse_expressions(self, *expressions): return [ ( arg if hasattr(arg, "resolve_expression") else (F(arg) if isinstance(arg, str) else Value(arg)) ) for arg in expressions ]
@@ -173,6 +184,7 @@
 - [0eb07cd3] def as_sqlite(self, compiler, connection, **extra_context): sql, params = self.as_sql(compiler, connection, **extra_context) try: if self.output_field.get_internal_type() == "DecimalField": sql = "(CAST(%s AS NUMERIC))" % sql except FieldError: pass return sql, params
 - [165e72bd] def asc(self): self.descending = False
 - [2c3dbec2aea8088c] def asc(self, **kwargs): return OrderBy(self, **kwargs)
+- [2c3dbec2aea8088c-2] def asc(self, **kwargs): return OrderBy(self, **kwargs)
 - [b26cf548] def bitand(self, other): return self._combine(other, self.BITAND, False)
 - [4f4d8100] def bitleftshift(self, other): return self._combine(other, self.BITLEFTSHIFT, False)
 - [9bee5f02] def bitor(self, other): return self._combine(other, self.BITOR, False)
@@ -182,8 +194,10 @@
 - [e58c10b1] def copy(self): clone = super().copy() clone.query = clone.query.clone() return clone
 - [faffbdb4] def copy(self): copy = super().copy() copy.source_expressions = self.source_expressions[:] copy.extra = self.extra.copy() return copy
 - [e61fca3f62813c14] def copy(self): return copy.copy(self)
+- [e61fca3f62813c14-2] def copy(self): return copy.copy(self)
 - [4722034f] def desc(self): self.descending = True
 - [95ce2fc4e00256cc] def desc(self, **kwargs): return OrderBy(self, descending=True, **kwargs)
+- [95ce2fc4e00256cc-2] def desc(self, **kwargs): return OrderBy(self, descending=True, **kwargs)
 - [c18a5768] def flatten(self): """ Recursively yield this expression and all subexpressions, in depth-first order. """ yield self for expr in self.get_source_expressions(): if expr: if hasattr(expr, "flatten"): yield from expr.flatten() else: yield expr
 - [029fb92c] def get_cols(self): return [ Col(self.alias, target, source) for target, source in zip(self.targets, self.sources) ]
 - [b4aabfe8] def get_db_converters(self, connection): if self.target == self.output_field: return self.output_field.get_db_converters(connection) return self.output_field.get_db_converters( connection ) + self.target.get_db_converters(connection)
@@ -193,11 +207,17 @@
 - [9598323a] def get_external_cols(self): return self.query.get_external_cols()
 - [68fe7ac1] def get_group_by_cols(self): # This is not a complete expression and cannot be used in GROUP BY. cols = [] for source in self.get_source_expressions(): cols.extend(source.get_group_by_cols()) return cols
 - [b7072a4d15402fa7] def get_group_by_cols(self): cols = [] for source in self.get_source_expressions(): cols.extend(source.get_group_by_cols()) return cols
+- [66bfd0d5] def get_group_by_cols(self): group_by_cols = [] for expr in self.get_source_expressions(): group_by_cols.extend(expr.get_group_by_cols()) return group_by_cols
 - [2fc64834] def get_group_by_cols(self): group_by_cols = [] if self.partition_by: group_by_cols.extend(self.partition_by.get_group_by_cols()) if self.order_by is not None: group_by_cols.extend(self.order_by.get_group_by_cols()) return group_by_cols
 - [d4a0812d] def get_group_by_cols(self): if isinstance(self.expression, Expression): expression = self.expression.copy() expression.output_field = self.output_field return expression.get_group_by_cols() # For non-expressions e.g. an SQL WHERE clause, the entire # `expression` must be included in the GROUP BY clause. return super().get_group_by_cols()
 - [15b275eb] def get_group_by_cols(self): if not self.cases: return self.default.get_group_by_cols() return super().get_group_by_cols()
 - [f7c6182c] def get_group_by_cols(self): if not self.contains_aggregate: return [self] cols = [] for source in self.get_source_expressions(): cols.extend(source.get_group_by_cols()) return cols
 - [bcca889fb4987223-2] def get_group_by_cols(self): return []
+- [bcca889fb4987223-3] def get_group_by_cols(self): return []
+- [bcca889fb4987223-4] def get_group_by_cols(self): return []
+- [4c8e316f5a42efcb] def get_group_by_cols(self): return [self]
+- [4c8e316f5a42efcb-2] def get_group_by_cols(self): return [self]
+- [4c8e316f5a42efcb-3] def get_group_by_cols(self): return [self]
 - [3d116cac] def get_group_by_cols(self): return self.query.get_group_by_cols(wrapper=self)
 - [06f038c4a2bc2157] def get_lookup(self, lookup): return self.output_field.get_lookup(lookup)
 - [13abe39a] def get_refs(self): refs = set() for expr in self.get_source_expressions(): if expr is None: continue refs |= expr.get_refs() return refs
@@ -205,9 +225,16 @@
 - [4b618db1] def get_source_expressions(self): return [*self.cases, self.default]
 - [30a10e53] def get_source_expressions(self): return []
 - [df8d43d0] def get_source_expressions(self): return [self.condition, self.result]
+- [53959436efc55871] def get_source_expressions(self): return [self.expression]
+- [53959436efc55871-2] def get_source_expressions(self): return [self.expression]
+- [53959436efc55871-3] def get_source_expressions(self): return [self.expression]
 - [24ae41da] def get_source_expressions(self): return [self.lhs, self.rhs]
+- [b17ba5a8] def get_source_expressions(self): return [self.query]
+- [b2774a66] def get_source_expressions(self): return [self.source]
 - [65014508] def get_source_expressions(self): return [self.source_expression, self.partition_by, self.order_by, self.frame]
 - [294f5833] def get_source_expressions(self): return [self.start, self.end]
+- [4543b0c1] def get_source_expressions(self): return self.get_cols()
+- [4be35c14] def get_source_expressions(self): return self.source_expressions
 - [80581424] def get_source_fields(self): """Return the underlying field types used by this aggregate.""" return [e._output_field_or_none for e in self.get_source_expressions()]
 - [cc1e0131] def get_source_fields(self): # We're only interested in the fields of the result expressions. return [self.result._output_field_or_none]
 - [3d7da027] def get_transform(self, name): return self.output_field.get_transform(name)
@@ -216,6 +243,7 @@
 - [f1f7a295] def relabeled_clone(self, relabels): clone = self.copy() clone.source = self.source.relabeled_clone(relabels) return clone
 - [ae651548] def relabeled_clone(self, relabels): if self.alias is None: return self return self.__class__( relabels.get(self.alias, self.alias), self.target, self.output_field )
 - [1a8aadaf89049c98] def relabeled_clone(self, relabels): return self
+- [1a8aadaf89049c98-2] def relabeled_clone(self, relabels): return self
 - [de0a9809] def relabeled_clone(self, relabels): return self.__class__( relabels.get(self.alias, self.alias), self.targets, self.sources, self.field )
 - [10668986] def replace_expressions(self, replacements): if (replacement := replacements.get(self)) is not None: return replacement field_name, *transforms = self.name.split(LOOKUP_SEP) # Avoid unnecessarily looking up replacements with field_name again as # in the vast majority of cases F instances won't be composed of any # lookups. if not transforms: return self if ( replacement := replacements.get(F(field_name)) ) is None or replacement._output_field_or_none is None: return self for transform in transforms: transform_class = replacement.get_transform(transform) if transform_class is None: return self replacement = transform_class(replacement) return replacement
 - [793002ed] def replace_expressions(self, replacements): if not replacements: return self if replacement := replacements.get(self): return replacement if not (source_expressions := self.get_source_expressions()): return self clone = self.copy() clone.set_source_expressions( [ None if expr is None else expr.replace_expressions(replacements) for expr in source_expressions ] ) return clone
@@ -240,13 +268,17 @@
 - [8e786288] def select_format(self, compiler, sql, params): # Wrap boolean expressions with a CASE WHEN expression if a database # backend (e.g. Oracle) doesn't support boolean expression in SELECT or # GROUP BY list. expression_supported_in_where_clause = ( compiler.connection.ops.conditional_expression_supported_in_where_clause ) if ( not compiler.connection.features.supports_boolean_expr_in_select_clause # Avoid double wrapping. and expression_supported_in_where_clause(self.expression) ): sql = "CASE WHEN {} THEN 1 ELSE 0 END".format(sql) return sql, params
 - [4c995438] def select_format(self, compiler, sql, params): return sql, params
 - [126a924c] def set_source_expressions(self, exprs): (self.expression,) = exprs
+- [886cd105] def set_source_expressions(self, exprs): (self.source,) = exprs
 - [2f79a1fa] def set_source_expressions(self, exprs): *self.cases, self.default = exprs
 - [0e0eb14f] def set_source_expressions(self, exprs): assert all(isinstance(expr, Col) and expr.alias == self.alias for expr in exprs) self.targets = [col.target for col in exprs] self.sources = [col.field for col in exprs]
 - [ebd069e0] def set_source_expressions(self, exprs): assert not exprs
 - [c6f2d559] def set_source_expressions(self, exprs): self.condition, self.result = exprs
+- [c3fdcdf071e0738d] def set_source_expressions(self, exprs): self.expression = exprs[0]
+- [c3fdcdf071e0738d-2] def set_source_expressions(self, exprs): self.expression = exprs[0]
 - [74e5442f] def set_source_expressions(self, exprs): self.lhs, self.rhs = exprs
 - [d6414ad7] def set_source_expressions(self, exprs): self.query = exprs[0]
 - [776f7f33] def set_source_expressions(self, exprs): self.source_expression, self.partition_by, self.order_by, self.frame = exprs
+- [86fa7642] def set_source_expressions(self, exprs): self.source_expressions = exprs
 - [df0918b6] def set_source_expressions(self, exprs): self.start, self.end = exprs
 - [8d27b295] def window_frame_start_end(self, connection, start, end): raise NotImplementedError("Subclasses must implement window_frame_start_end().")
 - [f1fbeb11] def window_frame_start_end(self, connection, start, end): return connection.ops.window_frame_range_start_end(start, end)

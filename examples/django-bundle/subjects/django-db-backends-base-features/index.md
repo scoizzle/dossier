@@ -1,10 +1,10 @@
 # django/db/backends/base/features
 
-- Subject: django/db/backends/base/features (id `6706126f-08ff-41ef-8e1d-d172a6b7ca2e`)
+- Subject: django/db/backends/base/features (id `1329fc41-7962-47ed-8d86-1134b26621f5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5225 tokens
-- Facts shown: 104 of 105
+- Used: 5263 tokens
+- Facts shown: 105 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -71,6 +71,7 @@
 - [31c2832a] # Does the backend support stored generated columns? supports_stored_generated_columns = False # Does the backend support virtual generated columns? supports_virtual_generated_columns = False # Does the backend support altering data types of generated columns? supports_alter_generated_column_data_type = True
 - [d3ddad7d] # Does the backend support tablespaces? Default to False because it isn't # in the SQL standard. supports_tablespaces = False
 - [29d7cd5b] # Does the backend support the DEFAULT keyword in bulk insert queries? supports_default_keyword_in_bulk_insert = True
+- [398335b4] # Does the backend support the DEFAULT keyword in insert queries? supports_default_keyword_in_insert = True
 - [c58bbb5d] # Does the backend support the default parameter in lead() and lag()? supports_default_in_lead_lag = True
 - [66d24607] # Does the backend support the inspectdb management command? supports_inspectdb = True
 - [ebb745f9] # Does the backend support the logical XOR operator? supports_logical_xor = False

@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_first_selected_col_from_model
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_first_selected_col_from_model (id `5f1972d7-0fba-498d-9632-11523abc16da`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_first_selected_col_from_model (id `d9bfea46-76b0-463a-a228-d5009c953c51`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

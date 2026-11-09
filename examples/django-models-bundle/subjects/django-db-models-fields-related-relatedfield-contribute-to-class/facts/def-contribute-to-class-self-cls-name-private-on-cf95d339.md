@@ -1,6 +1,6 @@
 # Fact cf95d339
 
-Store id: 5be32df1-ea67-490a-8584-4f9bd8b26c16
+Store id: 10dbec04-f552-4cae-91ec-40a9a3b6e489
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, private_only=False, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6187900+00:00`
+- posted_at: `2026-11-09T23:44:51.4779480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 376,
     "symbol": "RelatedField.contribute_to_class"
   },
-  "id": "5be32df1-ea67-490a-8584-4f9bd8b26c16",
+  "id": "10dbec04-f552-4cae-91ec-40a9a3b6e489",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6187900+00:00"
+    "posted_at": "2026-11-09T23:44:51.4779480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "89b6323e-bb80-48c6-bbf7-e31350c5ae61",
+  "subject_id": "a77675e4-3aa0-4176-9ff6-6feeb672e8e1",
   "subject_name": "django/db/models/fields/related::RelatedField.contribute_to_class",
   "tags": [
     "entity:method"

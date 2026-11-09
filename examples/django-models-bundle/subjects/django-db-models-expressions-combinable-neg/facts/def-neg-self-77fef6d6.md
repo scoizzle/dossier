@@ -1,6 +1,6 @@
 # Fact 77fef6d6
 
-Store id: f39a5ee4-f9e6-42ad-8c98-4ecdf5ba08d4
+Store id: e74cc1ac-490e-4296-853a-8b9feffc4549
 
 ## Text
 
@@ -20,7 +20,7 @@ def __neg__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7253250+00:00`
+- posted_at: `2026-11-09T23:44:49.2407430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 76,
     "symbol": "Combinable.__neg__"
   },
-  "id": "f39a5ee4-f9e6-42ad-8c98-4ecdf5ba08d4",
+  "id": "e74cc1ac-490e-4296-853a-8b9feffc4549",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7253250+00:00"
+    "posted_at": "2026-11-09T23:44:49.2407430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cb7ec866-a5b3-4133-bd5d-6d316bb8e532",
+  "subject_id": "0cf2de02-cf43-4562-a92b-6a0b5b202a29",
   "subject_name": "django/db/models/expressions::Combinable.__neg__",
   "tags": [
     "entity:method"

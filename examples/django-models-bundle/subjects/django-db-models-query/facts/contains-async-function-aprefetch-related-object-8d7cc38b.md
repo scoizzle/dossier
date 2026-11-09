@@ -1,6 +1,6 @@
 # Fact 8d7cc38b
 
-Store id: 4c2581d6-01b7-4ce2-abf2-b892db878fa8
+Store id: 1f53c575-d71b-4789-bc14-1a7db9fc0146
 
 ## Text
 
@@ -20,7 +20,7 @@ contains async_function aprefetch_related_objects
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4c2581d6-01b7-4ce2-abf2-b892db878fa8",
+  "id": "1f53c575-d71b-4789-bc14-1a7db9fc0146",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "aprefetch_related_objects"
       },
       "rel": "contains",
-      "target": "c48a67cc-07a6-45e5-b307-f2cca3c36d97"
+      "target": "45085c27-5d7b-462b-ae2b-130979f46014"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:async_function"

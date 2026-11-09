@@ -1,6 +1,6 @@
 # Fact de9d60ac
 
-Store id: e6ab958f-1668-4b65-8057-110ba72a6873
+Store id: f9a6d159-eb11-4aae-b525-714052a72d0b
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, obj, subscript)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8487890+00:00`
+- posted_at: `2026-11-09T23:44:49.5018830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1004,
     "symbol": "Sliced.__init__"
   },
-  "id": "e6ab958f-1668-4b65-8057-110ba72a6873",
+  "id": "f9a6d159-eb11-4aae-b525-714052a72d0b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8487890+00:00"
+    "posted_at": "2026-11-09T23:44:49.5018830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8a44e964-f812-4871-8185-492be6d78b26",
+  "subject_id": "1cb7c942-bd04-491a-993b-8b9de7d2a033",
   "subject_name": "django/db/models/expressions::Sliced.__init__",
   "tags": [
     "entity:method"

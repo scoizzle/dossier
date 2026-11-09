@@ -1,6 +1,6 @@
 # Fact 38d87c4d
 
-Store id: e0d491f0-e175-493f-bb2b-a8ced3254e70
+Store id: cfc94e2f-acc9-419c-b80a-e787ef9d5e8c
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5359500+00:00`
+- posted_at: `2026-11-09T23:44:52.6941100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 50,
     "symbol": "TupleLookupMixin"
   },
-  "id": "e0d491f0-e175-493f-bb2b-a8ced3254e70",
+  "id": "cfc94e2f-acc9-419c-b80a-e787ef9d5e8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5359500+00:00"
+    "posted_at": "2026-11-09T23:44:52.6941100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "968c4069-532b-4717-b70c-9c49d23380ec",
+  "subject_id": "ea0418f2-cb86-4ff9-bb65-8124aa1baf0b",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin",
   "tags": [
     "entity:class"

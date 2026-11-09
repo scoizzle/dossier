@@ -1,6 +1,6 @@
 # Fact 9fef63ff
 
-Store id: 8782b93e-eeb6-4230-862e-8ded1ad1c802
+Store id: ca6b50ff-ac57-4602-bc3f-845b32d56940
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5306810+00:00`
+- posted_at: `2026-11-09T23:44:52.6828150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 35,
     "symbol": "Tuple.__iter__"
   },
-  "id": "8782b93e-eeb6-4230-862e-8ded1ad1c802",
+  "id": "ca6b50ff-ac57-4602-bc3f-845b32d56940",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5306810+00:00"
+    "posted_at": "2026-11-09T23:44:52.6828150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15222d65-18f7-4b7d-81d3-c3c1c324d94a",
+  "subject_id": "f5028ace-31f2-4583-8283-5646f5df9ec6",
   "subject_name": "django/db/models/fields/tuple_lookups::Tuple.__iter__",
   "tags": [
     "entity:method"

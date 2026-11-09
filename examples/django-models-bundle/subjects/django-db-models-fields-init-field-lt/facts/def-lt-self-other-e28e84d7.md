@@ -1,6 +1,6 @@
 # Fact e28e84d7
 
-Store id: 92767d9b-13ca-4979-b12e-3e54cf108459
+Store id: 0b0aba5c-bf83-42be-ad3c-5667a02f025f
 
 ## Text
 
@@ -20,7 +20,7 @@ def __lt__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4545360+00:00`
+- posted_at: `2026-11-09T23:44:49.9949170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 722,
     "symbol": "Field.__lt__"
   },
-  "id": "92767d9b-13ca-4979-b12e-3e54cf108459",
+  "id": "0b0aba5c-bf83-42be-ad3c-5667a02f025f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4545360+00:00"
+    "posted_at": "2026-11-09T23:44:49.9949170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a47c134f-ec3d-443c-99cf-669ea6f33263",
+  "subject_id": "c7d11dc5-251f-4635-bdbb-6077885e8abc",
   "subject_name": "django/db/models/fields/__init__::Field.__lt__",
   "tags": [
     "entity:method"

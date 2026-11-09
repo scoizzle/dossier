@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/creation
 
-- Subject: django/db/backends/sqlite3/creation (id `db560a6c-1026-4104-90f3-0fa401ab32a1`)
+- Subject: django/db/backends/sqlite3/creation (id `4e00bfd1-f70e-4a15-b745-24165ec87e34`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1426 tokens
-- Facts shown: 14 of 14
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 

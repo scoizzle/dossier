@@ -266,7 +266,10 @@ public sealed partial class DossierStore
 
         var ranked = candidates.OrderBy(c => c, RankComparer).ToList();
 
-        var representatives = Dedupe(ranked);
+        // Complete mode never clusters: every candidate is its own entry, so a near-duplicate cannot
+        // hide behind a representative's cites. Strict mode keeps the clustering that collapses
+        // near-duplicates into one representative.
+        var representatives = budgetMode == BudgetModeComplete ? ranked : Dedupe(ranked);
         var conflicts = FindConflicts(candidates, subject.Id);
 
         var views = representatives.ToDictionary(c => c.Id, ToDossierView, StringComparer.Ordinal);
@@ -583,8 +586,9 @@ public sealed partial class DossierStore
     }
 
     /// <summary>
-    /// Greedy clustering in rank order: a not-yet-collapsed fact becomes a representative and absorbs
-    /// later facts whose token-set Jaccard similarity to it is at least 0.85. Short facts never cluster.
+    /// Greedy clustering in rank order, used by strict mode only: a not-yet-collapsed fact becomes a
+    /// representative and absorbs later facts whose token-set Jaccard similarity to it is at least
+    /// 0.85. Short facts never cluster. Complete mode skips this entirely, so every candidate is emitted.
     /// </summary>
     private static List<Candidate> Dedupe(List<Candidate> ranked)
     {

@@ -1,6 +1,6 @@
 # Fact fd997fdb
 
-Store id: 32d34163-b345-469f-9e15-fee235ed1505
+Store id: 02ee8375-e16a-46c4-a8b3-d88a860759d8
 
 ## Text
 
@@ -20,7 +20,7 @@ def single_alias(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0085610+00:00`
+- posted_at: `2026-11-09T23:44:57.6961170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1992,
     "symbol": "SQLDeleteCompiler.single_alias"
   },
-  "id": "32d34163-b345-469f-9e15-fee235ed1505",
+  "id": "02ee8375-e16a-46c4-a8b3-d88a860759d8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0085610+00:00"
+    "posted_at": "2026-11-09T23:44:57.6961170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee54e6b8-790b-498e-9980-3efa92ee67d5",
+  "subject_id": "6a78c5de-c869-4c5d-ad6d-70535dd90959",
   "subject_name": "django/db/models/sql/compiler::SQLDeleteCompiler.single_alias",
   "tags": [
     "entity:method",

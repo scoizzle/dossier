@@ -1,11 +1,11 @@
 # django/db/models/fields/json::HasKeyOrArrayIndex
 
-- Subject: django/db/models/fields/json::HasKeyOrArrayIndex (id `30f5884b-13ef-4f79-b95e-36086e2bca24`)
+- Subject: django/db/models/fields/json::HasKeyOrArrayIndex (id `100a079d-499f-4bff-af8a-f392c449888f`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

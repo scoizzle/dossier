@@ -5,12 +5,12 @@ This file lists every subject under `django/db/models/functions/uuid/`, one row 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | django/db/models/functions/uuid | subject | 2 | 0 | 0 | 447 | [subjects/django-db-models-functions-uuid/index.md](../subjects/django-db-models-functions-uuid/index.md) |
-|   django/db/models/functions/uuid::UUID4 | class | 1 | 0 | 0 | 112 | [subjects/django-db-models-functions-uuid-uuid4/index.md](../subjects/django-db-models-functions-uuid-uuid4/index.md) |
+|   django/db/models/functions/uuid::UUID4 | class | 1 | 0 | 0 | 113 | [subjects/django-db-models-functions-uuid-uuid4/index.md](../subjects/django-db-models-functions-uuid-uuid4/index.md) |
 |   django/db/models/functions/uuid::UUID4.as_mysql | method | 1 | 0 | 0 | 135 | [subjects/django-db-models-functions-uuid-uuid4-as-mysql/index.md](../subjects/django-db-models-functions-uuid-uuid4-as-mysql/index.md) |
 |   django/db/models/functions/uuid::UUID4.as_oracle | method | 1 | 0 | 0 | 136 | [subjects/django-db-models-functions-uuid-uuid4-as-oracle/index.md](../subjects/django-db-models-functions-uuid-uuid4-as-oracle/index.md) |
 |   django/db/models/functions/uuid::UUID4.as_postgresql | method | 1 | 0 | 0 | 139 | [subjects/django-db-models-functions-uuid-uuid4-as-postgresql/index.md](../subjects/django-db-models-functions-uuid-uuid4-as-postgresql/index.md) |
 |   django/db/models/functions/uuid::UUID4.as_sql | method | 1 | 0 | 0 | 134 | [subjects/django-db-models-functions-uuid-uuid4-as-sql/index.md](../subjects/django-db-models-functions-uuid-uuid4-as-sql/index.md) |
-|   django/db/models/functions/uuid::UUID7 | class | 1 | 0 | 0 | 112 | [subjects/django-db-models-functions-uuid-uuid7/index.md](../subjects/django-db-models-functions-uuid-uuid7/index.md) |
+|   django/db/models/functions/uuid::UUID7 | class | 1 | 0 | 0 | 113 | [subjects/django-db-models-functions-uuid-uuid7/index.md](../subjects/django-db-models-functions-uuid-uuid7/index.md) |
 |   django/db/models/functions/uuid::UUID7.__init__ | method | 1 | 0 | 0 | 126 | [subjects/django-db-models-functions-uuid-uuid7-init/index.md](../subjects/django-db-models-functions-uuid-uuid7-init/index.md) |
 |   django/db/models/functions/uuid::UUID7._parse_expressions | method | 1 | 0 | 0 | 134 | [subjects/django-db-models-functions-uuid-uuid7-parse-expressions/index.md](../subjects/django-db-models-functions-uuid-uuid7-parse-expressions/index.md) |
 |   django/db/models/functions/uuid::UUID7.as_mysql | method | 1 | 0 | 0 | 135 | [subjects/django-db-models-functions-uuid-uuid7-as-mysql/index.md](../subjects/django-db-models-functions-uuid-uuid7-as-mysql/index.md) |

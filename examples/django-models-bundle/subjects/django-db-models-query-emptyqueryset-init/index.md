@@ -1,11 +1,11 @@
 # django/db/models/query::EmptyQuerySet.__init__
 
-- Subject: django/db/models/query::EmptyQuerySet.__init__ (id `7a0bf68b-47fd-46a9-9aff-9fef418daa96`)
+- Subject: django/db/models/query::EmptyQuerySet.__init__ (id `54a09e71-d291-4dac-ad5a-af5e05ee0550`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

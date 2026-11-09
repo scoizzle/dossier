@@ -1,6 +1,6 @@
 # Fact 15e0898d
 
-Store id: 6bf2f9d7-08f0-4e16-8ecc-991d3e4a6990
+Store id: d24bd9d9-b91d-4003-917e-45b9bc763965
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_compiler(self, using=None, connection=None, elide_empty=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7703120+00:00`
+- posted_at: `2026-11-09T23:44:58.6164310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 369,
     "symbol": "Query.get_compiler"
   },
-  "id": "6bf2f9d7-08f0-4e16-8ecc-991d3e4a6990",
+  "id": "d24bd9d9-b91d-4003-917e-45b9bc763965",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7703120+00:00"
+    "posted_at": "2026-11-09T23:44:58.6164310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "621ad298-6beb-47b0-8b73-1819c45f6964",
+  "subject_id": "fc8d13a4-afac-4bf5-8c05-950acc6c52cb",
   "subject_name": "django/db/models/sql/query::Query.get_compiler",
   "tags": [
     "entity:method"

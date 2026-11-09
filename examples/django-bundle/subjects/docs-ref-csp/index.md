@@ -1,10 +1,10 @@
 # docs/ref/csp
 
-- Subject: docs/ref/csp (id `ca339851-c91a-4d99-985d-5b661bc19aeb`)
+- Subject: docs/ref/csp (id `9577258e-3aa6-4f46-a402-700b810e6088`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3778 tokens
-- Facts shown: 86 of 90
+- Used: 3905 tokens
+- Facts shown: 90 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - @csp_override( { "default-src": [CSP.SELF], "img-src": [CSP.SELF, "data:"], } ) def my_view(request): return HttpResponse("Custom Content-Security-Policy header applied") [8f3ced70]
 - @csp_override({}) def my_other_view(request): return HttpResponse("No Content-Security-Policy header added") [d730d350]
 - @csp_report_only_override( { "default-src": [CSP.SELF], "img-src": [CSP.SELF, "data:"], "report-uri": "https://mysite.com/csp-report/", } ) def my_view(request): return HttpResponse("Custom Content-Security-Policy-Report-Only header applied") [eb60887c]
+- @csp_report_only_override({}) def my_other_view(request): return HttpResponse("No Content-Security-Policy-Report-Only header added") [c361079e]
 - from django.http import HttpResponse from django.utils.csp import CSP from django.views.decorators.csp import csp_override [c7237f86]
 - from django.http import HttpResponse from django.utils.csp import CSP from django.views.decorators.csp import csp_report_only_override [47c2e669]
 - Django-specific placeholder value (``"<CSP_NONCE_SENTINEL>"``) used in ``script-src`` or ``style-src`` directives to activate nonce-based CSP. This string is replaced at runtime by the :class:`~django.middleware.csp.ContentSecurityPolicyMiddleware` with a secure, random nonce that is generated for each request. See detailed explanation in :ref:`csp-nonce`. [adde0c18]
@@ -27,13 +28,13 @@
 - <script nonce="{{ csp_nonce }}"> // This inline JavaScript will be allowed. </script> [68bdfc626470e6ff-2]
 - <script src="/path/to/script.js" {% csp_nonce_attr %}></script> <link rel="stylesheet" href="/path/to/style.css" {% csp_nonce_attr %}> [1ada02a86f39bfa7-2]
 - The :ttag:`csp_nonce_attr` template tag was added, including support for rendering :class:`~django.forms.Media` objects. [136c63f9c5a3bf62-2]
-- Weakening or disabling a CSP policy on any page can compromise the security of the entire site. Because of the "same origin" policy, an attacker could exploit a vulnerability on one page to access other parts of the site. [758f9be2]
 - {% csp_nonce_attr form.media %} [9aec9a0cca6c6741-2]
+- .. attribute:: NONCE [82c989e1]
 
 ## All facts
 
+- [758f9be2] Weakening or disabling a CSP policy on any page can compromise the security of the entire site. Because of the "same origin" policy, an attacker could exploit a vulnerability on one page to access other parts of the site.
 - [6db103e9] * Use :setting:`SECURE_CSP` alone to enforce a policy that has already been tested and verified. * Use :setting:`SECURE_CSP_REPORT_ONLY` on its own to evaluate a new policy without disrupting site behavior. This mode does not block violations, it only logs them. It's useful for testing and monitoring, but provides no protection against active threats. * Use *both* to maintain an enforced baseline while experimenting with changes. Even for well-established policies, continuing to collect reports can help detect regressions, unexpected changes in behavior, or potential tampering in production environments.
-- [82c989e1] .. attribute:: NONCE
 - [2b7d63ec] .. attribute:: NONE
 - [167007a2] .. attribute:: REPORT_SAMPLE
 - [4fb1c5cf] .. attribute:: SELF
@@ -47,6 +48,7 @@
 - [730c225c80dac295-3] Examples::
 - [1b3ed166] Like :func:`csp_override`, the ``config`` argument must be a mapping with the desired CSP directives. If ``config`` is an empty mapping (``{}``), no CSP report-only header will be added to the response returned by that view, effectively disabling report-only CSP for that view.
 - [79367089] Overrides the ``Content-Security-Policy-Report-Only`` header for the decorated view using directives in the same format as the :setting:`SECURE_CSP_REPORT_ONLY` setting.
+- [af89abc2] Overrides the ``Content-Security-Policy`` header for the decorated view using directives in the same format as the :setting:`SECURE_CSP` setting.
 - [657114a7] The ``config`` argument must be a mapping with the desired CSP directives. If ``config`` is an empty mapping (``{}``), no CSP enforcement header will be added to the response returned by that view, effectively disabling CSP for that view.
 - [4ff2d095] * :setting:`SECURE_CSP`: defines the **enforced Content Security Policy**. * :setting:`SECURE_CSP_REPORT_ONLY`: defines a **report-only Content Security Policy**.
 - [a801923b] * Avoid caching full responses that include ``{{ csp_nonce }}`` or :ttag:`csp_nonce_attr`. * If caching is necessary, use a strategy that injects a fresh nonce on each request, or consider refactoring your application to avoid inline scripts and styles altogether.
@@ -59,6 +61,8 @@
 - [52c0ed79] .. admonition:: These settings can be used independently or together
 - [acc45e8c] .. class:: CSP
 - [685d15dfb6eb2285-71] .. code-block:: html+django
+- [685d15dfb6eb2285-72] .. code-block:: html+django
+- [685d15dfb6eb2285-73] .. code-block:: html+django
 - [69c6061e] .. function:: csp_override(config)(view)
 - [2d50bb14] .. function:: csp_report_only_override(config)(view)
 - [c67bce5c] .. module:: django.middleware.csp :synopsis: Middleware for Content Security Policy headers

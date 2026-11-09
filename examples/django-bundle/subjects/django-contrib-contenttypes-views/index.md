@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/views
 
-- Subject: django/contrib/contenttypes/views (id `81172e7d-e284-4519-99d0-80b6b8003cb7`)
+- Subject: django/contrib/contenttypes/views (id `8cb55180-54e2-4c52-ac55-f061db565a3b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 797 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

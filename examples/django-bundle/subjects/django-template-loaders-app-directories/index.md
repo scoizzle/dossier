@@ -1,10 +1,10 @@
 # django/template/loaders/app_directories
 
-- Subject: django/template/loaders/app_directories (id `01fc3258-3db8-411e-b4c5-614a94d22f8b`)
+- Subject: django/template/loaders/app_directories (id `e7172b9a-df44-4294-8576-e530e605af3c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 116 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

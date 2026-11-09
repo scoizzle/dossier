@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformNumericLookupMixin
 
-- Subject: django/db/models/fields/json::KeyTransformNumericLookupMixin (id `b6e18691-c517-455d-96b2-3c679905c955`)
+- Subject: django/db/models/fields/json::KeyTransformNumericLookupMixin (id `ec396fa9-7ea8-43e3-8767-c34c951390f2`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

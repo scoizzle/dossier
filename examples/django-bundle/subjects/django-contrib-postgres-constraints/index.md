@@ -1,10 +1,10 @@
 # django/contrib/postgres/constraints
 
-- Subject: django/contrib/postgres/constraints (id `bd1a8813-f1fe-4660-8374-2927e17dce7a`)
+- Subject: django/contrib/postgres/constraints (id `96620f98-5600-45c1-a522-c9201f4b2597`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2156 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

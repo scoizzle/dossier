@@ -1,6 +1,6 @@
 # Fact ce6808b8
 
-Store id: ec41eaf9-8e81-407a-8d50-db4cfa8bec8b
+Store id: b15a4ae7-72f5-4ed4-8688-78c081c3dc74
 
 ## Text
 
@@ -20,7 +20,7 @@ def flatten(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0796410+00:00`
+- posted_at: `2026-11-09T23:44:56.5712590+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 156,
     "symbol": "Q.flatten"
   },
-  "id": "ec41eaf9-8e81-407a-8d50-db4cfa8bec8b",
+  "id": "b15a4ae7-72f5-4ed4-8688-78c081c3dc74",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0796410+00:00"
+    "posted_at": "2026-11-09T23:44:56.5712590+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6eab433e-dadc-44d5-9f61-32a6a6f5954d",
+  "subject_id": "fee45986-1a4b-4229-b5a6-cd6e8e04db1c",
   "subject_name": "django/db/models/query_utils::Q.flatten",
   "tags": [
     "entity:method"

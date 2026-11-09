@@ -1,6 +1,6 @@
 # Fact c9589488
 
-Store id: 329e3491-97c4-482c-ae09-a948c8ea4c5e
+Store id: 96870f57-0c58-4d01-a86c-62a17c41326f
 
 ## Text
 
@@ -20,7 +20,7 @@ async def alatest(self, *fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4451840+00:00`
+- posted_at: `2026-11-09T23:44:55.9481760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1218,
     "symbol": "QuerySet.alatest"
   },
-  "id": "329e3491-97c4-482c-ae09-a948c8ea4c5e",
+  "id": "96870f57-0c58-4d01-a86c-62a17c41326f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4451840+00:00"
+    "posted_at": "2026-11-09T23:44:55.9481760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5cd9aa9b-43b8-44e3-93be-658101c44687",
+  "subject_id": "bdfdad15-0189-4ea2-a477-ec712e6a0ef1",
   "subject_name": "django/db/models/query::QuerySet.alatest",
   "tags": [
     "entity:method",

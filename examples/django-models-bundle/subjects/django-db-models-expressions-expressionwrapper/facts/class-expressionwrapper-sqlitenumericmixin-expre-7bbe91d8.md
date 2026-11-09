@@ -1,6 +1,6 @@
 # Fact 7bbe91d8
 
-Store id: 8456ade9-2b0c-4e61-9424-4f3a71286436
+Store id: 529353fa-6d3d-47f8-9ac3-21de0615f4dd
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExpressionWrapper(SQLiteNumericMixin, Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9328250+00:00`
+- posted_at: `2026-11-09T23:44:49.5935120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1547,
     "symbol": "ExpressionWrapper"
   },
-  "id": "8456ade9-2b0c-4e61-9424-4f3a71286436",
+  "id": "529353fa-6d3d-47f8-9ac3-21de0615f4dd",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9328250+00:00"
+    "posted_at": "2026-11-09T23:44:49.5935120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e2f814a6-34f2-4672-8458-38dd487ad931",
+  "subject_id": "5d43b79d-82b0-47ad-8365-94d736a17488",
   "subject_name": "django/db/models/expressions::ExpressionWrapper",
   "tags": [
     "entity:class",

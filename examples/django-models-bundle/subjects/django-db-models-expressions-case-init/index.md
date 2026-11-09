@@ -1,11 +1,11 @@
 # django/db/models/expressions::Case.__init__
 
-- Subject: django/db/models/expressions::Case.__init__ (id `755e5687-1fc3-462a-9a39-345dba7b8839`)
+- Subject: django/db/models/expressions::Case.__init__ (id `7aa994c2-0a33-4bbc-adba-868a6d8e8111`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

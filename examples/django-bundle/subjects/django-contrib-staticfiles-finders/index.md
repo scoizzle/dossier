@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/finders
 
-- Subject: django/contrib/staticfiles/finders (id `5b117852-2d77-4d61-b161-7bc86eb55fe1`)
+- Subject: django/contrib/staticfiles/finders (id `8d84f374-68a1-4346-b0cd-12be881478b3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2405 tokens
-- Facts shown: 32 of 32
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 

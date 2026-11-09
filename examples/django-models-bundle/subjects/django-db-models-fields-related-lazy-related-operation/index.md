@@ -1,11 +1,11 @@
 # django/db/models/fields/related::lazy_related_operation
 
-- Subject: django/db/models/fields/related::lazy_related_operation (id `52d2c36d-ee25-44b7-861e-005fae0b71e8`)
+- Subject: django/db/models/fields/related::lazy_related_operation (id `c578eaae-b9fd-4767-ba9d-ed185fa45528`)
 - Kind: function
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

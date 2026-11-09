@@ -1,6 +1,6 @@
 # Fact 6ed1bd9e
 
-Store id: 8875042a-3500-4641-966f-be61c4af6d17
+Store id: 349f8145-073e-4583-af53-37d93241c423
 
 ## Text
 
@@ -20,7 +20,7 @@ def cast_db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5525080+00:00`
+- posted_at: `2026-11-09T23:44:50.0646980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1320,
     "symbol": "CharField.cast_db_type"
   },
-  "id": "8875042a-3500-4641-966f-be61c4af6d17",
+  "id": "349f8145-073e-4583-af53-37d93241c423",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5525080+00:00"
+    "posted_at": "2026-11-09T23:44:50.0646980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b822ebe-0aa5-4328-a95e-4c2e9117da1e",
+  "subject_id": "dcf27109-a887-4a74-8409-915590e47f66",
   "subject_name": "django/db/models/fields/__init__::CharField.cast_db_type",
   "tags": [
     "entity:method"

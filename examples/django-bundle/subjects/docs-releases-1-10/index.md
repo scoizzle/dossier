@@ -1,10 +1,10 @@
 # docs/releases/1.10
 
-- Subject: docs/releases/1.10 (id `67f84dad-a306-4cb1-b8a2-e84f9ffeec78`)
+- Subject: docs/releases/1.10 (id `5a13cb8b-4ee7-4b9f-a04b-afc4f2143bb2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 17375 tokens
-- Facts shown: 368 of 371
+- Used: 17441 tokens
+- Facts shown: 371 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -40,6 +40,7 @@
 - [debca5a7] from django.contrib.auth.forms import UserCreationForm
 - [d7c117e5] from django.core.validators import validate_comma_separated_integer_list from django.db import models
 - [4af926756c29efa6-39] from django.db import models
+- [4af926756c29efa6-40] from django.db import models
 - [ee1bc7ce] from django.db.models import CharField from django.db.models.functions import Length
 - [7c49ba95] from django.db.models import Field from django.db.models.lookups import Exact
 - [7df81ca3] if request.user.is_authenticated is True: ...
@@ -275,6 +276,8 @@
 - [2bd5af6ca1e8da6e] :mod:`django.contrib.admin` ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [9208af79aedaac2a] :mod:`django.contrib.auth` ~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [0d7f305806da573d] :mod:`django.contrib.gis` -------------------------
+- [0d7f305806da573d-2] :mod:`django.contrib.gis` -------------------------
+- [c10501bb55a2bce3] :mod:`django.contrib.gis` ~~~~~~~~~~~~~~~~~~~~~~~~~
 - [796fd654b8a44e4f] :mod:`django.contrib.postgres` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [92df77a9] :mod:`django.contrib.sessions` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [d562ea7e] :mod:`django.contrib.sites` ~~~~~~~~~~~~~~~~~~~~~~~~~~~

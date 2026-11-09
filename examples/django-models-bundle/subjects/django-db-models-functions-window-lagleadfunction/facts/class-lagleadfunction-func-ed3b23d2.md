@@ -1,6 +1,6 @@
 # Fact ed3b23d2
 
-Store id: 7c80c31b-ce2c-47f9-8af4-e2cab4050021
+Store id: e4f9d886-306b-4c70-9907-4aa7304c2686
 
 ## Text
 
@@ -20,7 +20,7 @@ class LagLeadFunction(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.6868190+00:00`
+- posted_at: `2026-11-09T23:44:54.4660400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 37,
     "symbol": "LagLeadFunction"
   },
-  "id": "7c80c31b-ce2c-47f9-8af4-e2cab4050021",
+  "id": "e4f9d886-306b-4c70-9907-4aa7304c2686",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.6868190+00:00"
+    "posted_at": "2026-11-09T23:44:54.4660400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "46ea1e93-3a38-4e4f-9232-83bbbe933c3e",
+  "subject_id": "16167ea6-3f59-4722-8e67-9bf622dd83df",
   "subject_name": "django/db/models/functions/window::LagLeadFunction",
   "tags": [
     "entity:class"

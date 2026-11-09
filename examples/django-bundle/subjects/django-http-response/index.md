@@ -1,10 +1,10 @@
 # django/http/response
 
-- Subject: django/http/response (id `3a87e5f3-4eca-4cf8-9662-b7829a1aa0c0`)
+- Subject: django/http/response (id `c2fcb522-c865-42b5-8413-ab87e681dcd0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6312 tokens
-- Facts shown: 110 of 111
+- Used: 6372 tokens
+- Facts shown: 111 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -64,6 +64,7 @@
 - [13ad6df7] def __iter__(self): return iter(self._container)
 - [0772b6e1] def __iter__(self): try: return iter(self.streaming_content) except TypeError: warnings.warn( "StreamingHttpResponse must consume asynchronous iterators in order to " "serve them synchronously. Use a synchronous iterator instead.", Warning, stacklevel=2, )
 - [c5416404] def __repr__(self): return "<%(cls)s [%(methods)s] status_code=%(status_code)d%(content_type)s>" % { "cls": self.__class__.__name__, "status_code": self.status_code, "content_type": self._content_type_for_repr, "methods": self["Allow"], }
+- [8f1fd67f] def __repr__(self): return "<%(cls)s status_code=%(status_code)d%(content_type)s>" % { "cls": self.__class__.__name__, "status_code": self.status_code, "content_type": self._content_type_for_repr, }
 - [9ed5c6e6] def __repr__(self): return "<%(cls)s status_code=%(status_code)d%(content_type)s>" % { "cls": self.__class__.__qualname__, "status_code": self.status_code, "content_type": self._content_type_for_repr, }
 - [1b554659] def __repr__(self): return ( '<%(cls)s status_code=%(status_code)d%(content_type)s, url="%(url)s">' % { "cls": self.__class__.__name__, "status_code": self.status_code, "content_type": self._content_type_for_repr, "url": self.url, } )
 - [80dd9416] def __setitem__(self, header, value): self.headers[header] = value

@@ -1,10 +1,10 @@
 # docs/ref/models/querysets
 
-- Subject: docs/ref/models/querysets (id `47e536da-de17-4e6f-98ff-1114b1764337`)
+- Subject: docs/ref/models/querysets (id `594d48a5-ed54-49c7-9f05-a41abc8c4573`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 49509 tokens
-- Facts shown: 1252 of 1339
+- Used: 52866 tokens
+- Facts shown: 1339 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -40,6 +40,7 @@
 - [2c10b856] Optional. By default, ``StdDev`` returns the population standard deviation. However, if ``sample=True``, the return value will be the sample standard deviation.
 - [266cf55a] Optional. By default, ``Variance`` returns the population variance. However, if ``sample=True``, the return value will be the sample variance.
 - [afbf2272] Optional. If ``distinct=True``, ``Avg`` returns the mean value of unique values. This is the SQL equivalent of ``AVG(DISTINCT <field>)``. The default value is ``False``.
+- [4ee54283] Optional. If ``distinct=True``, ``Sum`` returns the sum of unique values. This is the SQL equivalent of ``SUM(DISTINCT <field>)``. The default value is ``False``.
 - [8d00ecfb] Optional. If ``distinct=True``, the count will only include unique instances. This is the SQL equivalent of ``COUNT(DISTINCT <field>)``. The default value is ``False``.
 - [1cb258dc] Returns ``True`` if the ``QuerySet`` is ordered and the ordering is deterministic. This requires that the ordering includes a field (or set of fields) that is unique and non-nullable.
 - [bbf762ff] SELECT ... WHERE pub_date BETWEEN '2005-01-01 00:00:00' and '2005-03-31 00:00:00';
@@ -62,6 +63,7 @@
 - [e55db45b] Entry.objects.extra(select={"is_recent": "pub_date > '2006-01-01'"})
 - [d9cee0b7] Entry.objects.extra(where=["foo='a' OR bar = 'a'", "baz = 'a'"])
 - [fec5f3f872afb0e2] Entry.objects.extra(where=["headline=%s"], params=["Lennon"])
+- [fec5f3f872afb0e2-2] Entry.objects.extra(where=["headline=%s"], params=["Lennon"])
 - [fc075984] Entry.objects.extra(where=["headline='Lennon'"])
 - [9f6f4dcb] SELECT * FROM blog_entry WHERE (foo='a' OR bar='a') AND (baz='a')
 - [a7d534f2] SELECT blog_blog.*, (SELECT COUNT(*) FROM blog_entry WHERE blog_entry.blog_id = blog_blog.id) AS entry_count FROM blog_blog;
@@ -96,7 +98,12 @@
 - [05faf8ab] * Default alias: ``<field>__anyvalue`` * Return type: same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
 - [f5eef3d3] * Default alias: ``<field>__avg`` * Return type: ``float`` if input is ``int``, otherwise same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
 - [34202506] * Default alias: ``<field>__count`` * Return type: ``int``
+- [fb3ab175] * Default alias: ``<field>__max`` * Return type: same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
+- [060e3866] * Default alias: ``<field>__min`` * Return type: same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
+- [3ae66719] * Default alias: ``<field>__stddev`` * Return type: ``float`` if input is ``int``, otherwise same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
 - [2393878a] * Default alias: ``<field>__stringagg`` * Return type: ``string`` or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
+- [fb1873da] * Default alias: ``<field>__sum`` * Return type: same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
+- [ccf2284f] * Default alias: ``<field>__variance`` * Return type: ``float`` if input is ``int``, otherwise same as input field, or ``output_field`` if supplied. If the queryset or grouping is empty, ``default`` is returned.
 - [e380a6f2] - SQLite: no requirements. Conversions are performed in Python. - PostgreSQL: no requirements (see `Time Zones`_). - Oracle: no requirements (see `Choosing a Time Zone File`_). - MySQL: load the time zone tables with `mysql_tzinfo_to_sql`_.
 - [4ea0fc05] .. _Time Zones: https://www.postgresql.org/docs/current/datatype-datetime.html#DATATYPE-TIMEZONES .. _Choosing a Time Zone File: https://docs.oracle.com/en/database/oracle/ oracle-database/18/nlspg/datetime-data-types-and-time-zone-support.html #GUID-805AB986-DE12-4FEA-AF56-5AABCD2132DF .. _mysql_tzinfo_to_sql: https://dev.mysql.com/doc/refman/en/mysql-tzinfo-to-sql.html
 - [fcd38ea5] .. admonition:: MySQL with ``ONLY_FULL_GROUP_BY`` enabled
@@ -141,10 +148,12 @@
 - [b52505b2] >>> Entry.objects.filter(id=64).update(comments_on=True) 1
 - [5643d92a] >>> Entry.objects.filter(pub_date__year=2010).update( ... comments_on=False, headline="This is old" ... )
 - [912a2c31] >>> Entry.objects.filter(pub_date__year=2010).update(comments_on=False)
+- [7c6b9573] >>> Entry.objects.filter(pub_date__year=2010).update(comments_on=False) 132
 - [aa655697] >>> Entry.objects.filter(slug="nonexistent-slug").update(comments_on=True) 0
 - [39273c27] >>> Entry.objects.none() <QuerySet []> >>> from django.db.models.query import EmptyQuerySet >>> isinstance(Entry.objects.none(), EmptyQuerySet) True
 - [f7f8315b] >>> Entry.objects.update(blog__name="foo") # Won't work!
 - [14353757] >>> Entry.objects.values("blog") <QuerySet [{'blog': 1}, ...]>
+- [d2a24dbc] >>> Entry.objects.values("blog_id") <QuerySet [{'blog_id': 1}, ...]>
 - [74c36efc] >>> Entry.objects.values() <QuerySet [{'blog_id': 1, 'headline': 'First Entry', ...}, ...]>
 - [bb044152] >>> Entry.objects.values_list("authors") <QuerySet [('Noam Chomsky',), ('George Orwell',), (None,)]>
 - [d4366547] >>> Entry.objects.values_list("headline", flat=True).get(pk=1) 'First entry'
@@ -162,6 +171,7 @@
 - [c6c9a8d7] >>> Restaurant.objects.prefetch_related( ... Prefetch("pizzas__toppings", queryset=Toppings.objects.order_by("name")) ... )
 - [c7a3754e] >>> Restaurant.objects.prefetch_related("best_pizza__toppings")
 - [366281d7] >>> Restaurant.objects.prefetch_related("pizzas__toppings")
+- [1afd6ec1] >>> Restaurant.objects.select_related("best_pizza").prefetch_related("best_pizza__toppings")
 - [bd205394] >>> b = Blog.objects.get(pk=1)
 - [8287a926] >>> blogs = Blog.objects.all()
 - [1876b9c4] >>> from django.db.models import CharField >>> from django.db.models.functions import Lower >>> CharField.register_lookup(Lower) >>> Blog.objects.values("name__lower") <QuerySet [{'name__lower': 'beatles blog'}]>
@@ -190,6 +200,7 @@
 - [f12e57fc] >>> queryset = Pizza.objects.filter(vegetarian=True) >>> >>> # Recommended: >>> restaurants = Restaurant.objects.prefetch_related( ... Prefetch("pizzas", queryset=queryset, to_attr="vegetarian_pizzas") ... ) >>> vegetarian_pizzas = restaurants[0].vegetarian_pizzas >>> >>> # Not recommended: >>> restaurants = Restaurant.objects.prefetch_related( ... Prefetch("pizzas", queryset=queryset), ... ) >>> vegetarian_pizzas = restaurants[0].pizzas.all()
 - [376185b8] >>> queryset = Pizza.objects.only("name") >>> >>> restaurants = Restaurant.objects.prefetch_related( ... Prefetch("best_pizza", queryset=queryset) ... )
 - [3e3462f1] >>> vegetarian_pizzas = Pizza.objects.filter(vegetarian=True) >>> Restaurant.objects.prefetch_related( ... Prefetch("pizzas", queryset=vegetarian_pizzas, to_attr="vegetarian_menu"), ... "vegetarian_menu__toppings", ... )
+- [56203d64] >>> vegetarian_pizzas = Pizza.objects.filter(vegetarian=True) >>> Restaurant.objects.prefetch_related( ... Prefetch("pizzas", to_attr="menu"), ... Prefetch("pizzas", queryset=vegetarian_pizzas, to_attr="vegetarian_menu"), ... )
 - [98b4498b] >>> voted_choices = Choice.objects.filter(votes__gt=0) >>> voted_choices <QuerySet [<Choice: The sky>]> >>> prefetch = Prefetch("choice_set", queryset=voted_choices) >>> Question.objects.prefetch_related(prefetch).get().choice_set.all() <QuerySet [<Choice: The sky>]>
 - [a85bf891] Aggregation functions return ``None`` when used with an empty ``QuerySet`` or group. For example, the ``Sum`` aggregation function returns ``None`` instead of ``0`` if the ``QuerySet`` contains no entries or for any empty group in a non-empty ``QuerySet``. To return another value instead, define the ``default`` argument. ``Count`` is an exception to this behavior; it returns ``0`` if the ``QuerySet`` is empty since ``Count`` does not support the ``default`` argument.
 - [d44f80be] Also, if you call the database-altering methods :meth:`~django.db.models.fields.related.RelatedManager.add`, :meth:`~django.db.models.fields.related.RelatedManager.create`, :meth:`~django.db.models.fields.related.RelatedManager.remove`, :meth:`~django.db.models.fields.related.RelatedManager.clear` or :meth:`~django.db.models.fields.related.RelatedManager.set`, on a :class:`~django.db.models.fields.related.RelatedManager`, any prefetched cache for the relation will be cleared.
@@ -206,8 +217,10 @@
 - [cc1bf6de] Consider this case::
 - [d911d1c0] Deferred fields will not lazy-load like this from asynchronous code. Instead, you will get a ``SynchronousOnlyOperation`` exception. If you are writing asynchronous code, you should not try to access any fields that you ``defer()``.
 - [468626ad] Due to the way the ``JSON_EXTRACT`` and ``JSON_TYPE`` SQL functions are implemented on SQLite, and lack of the ``BOOLEAN`` data type, ``values()`` will return ``True``, ``False``, and ``None`` instead of ``"true"``, ``"false"``, and ``"null"`` strings for :class:`~django.db.models.JSONField` key transforms.
+- [3e127063] Due to the way the ``JSON_EXTRACT`` and ``JSON_TYPE`` SQL functions are implemented on SQLite, and lack of the ``BOOLEAN`` data type, ``values_list()`` will return ``True``, ``False``, and ``None`` instead of ``"true"``, ``"false"``, and ``"null"`` strings for :class:`~django.db.models.JSONField` key transforms.
 - [afb3d3a1] Entry.objects.defer("headline", "body")
 - [6e3f403c] Entry.objects.exclude(pub_date__gt=datetime.date(2005, 1, 3)).exclude(headline="Hello")
+- [c35498fa] Entry.objects.exclude(pub_date__gt=datetime.date(2005, 1, 3), headline="Hello")
 - [66b680e9] Entry.objects.filter(headline__endswith="Lennon")
 - [d05b15de] Entry.objects.filter(headline__iendswith="Lennon")
 - [bdf8647a] Entry.objects.filter(headline__istartswith="Lennon")
@@ -227,6 +240,7 @@
 - [665fcac5] Entry.objects.filter(pub_date__time=datetime.time(14, 30)) Entry.objects.filter(pub_date__time__range=(datetime.time(8), datetime.time(17)))
 - [0c47c82b] Entry.objects.filter(pub_date__week=52) Entry.objects.filter(pub_date__week__gte=32, pub_date__week__lte=38)
 - [c00f3ce5] Entry.objects.filter(pub_date__week_day=2) Entry.objects.filter(pub_date__week_day__gte=2)
+- [f8812512] Entry.objects.filter(pub_date__year=2005) Entry.objects.filter(pub_date__year__gte=2005)
 - [6906fdb2] Entry.objects.filter(pub_date__year=2005).order_by("-pub_date", "headline")
 - [bc763740] Entry.objects.get(headline__contains="Lennon")
 - [e2624409] Entry.objects.get(headline__icontains="Lennon")
@@ -243,6 +257,7 @@
 - [e6f5b2a0] Entry.objects.order_by("blog")
 - [f9383061] Entry.objects.order_by("blog__id")
 - [b572a222] Entry.objects.order_by("blog__name")
+- [1b610278] Entry.objects.order_by("blog__name", "headline")
 - [9051fe56] Entry.objects.order_by("headline").order_by("pub_date")
 - [7a4f86cb] Entry.objects.order_by(Coalesce("summary", "headline").desc())
 - [5af7dd83] Entry.objects.order_by(Lower("headline").desc())
@@ -266,7 +281,10 @@
 - [30add585] If you want to lock parents models when using :ref:`multi-table inheritance <multi-table-inheritance>`, you must specify parent link fields (by default ``<parent_model_name>_ptr``) in the ``of`` argument. For example::
 - [06b16c12] In MySQL, a database table's "collation" setting determines whether ``exact`` comparisons are case-sensitive. This is a database setting, *not* a Django setting. It's possible to configure your MySQL tables to use case-sensitive comparisons, but some trade-offs are involved. For more information about this, see the :ref:`collation section <mysql-collation>` in the :doc:`databases </ref/databases>` documentation.
 - [6c50b8ed] Model.objects.filter(Q(x=1) ^ Q(y=2))
+- [3a64eee2] Model.objects.filter(Q(x=1) | Q(y=2))
+- [1cb48c1a] Model.objects.filter(x=1) & Model.objects.filter(y=2) Model.objects.filter(x=1).filter(y=2)
 - [316f3f10] Model.objects.filter(x=1) ^ Model.objects.filter(y=2) from django.db.models import Q
+- [d99325aa] Model.objects.filter(x=1) | Model.objects.filter(y=2) from django.db.models import Q
 - [38572c1c] Note the ``list()`` call around the Blog ``QuerySet`` to force execution of the first query. Without it, a nested query would be executed, because :ref:`querysets-are-lazy`.
 - [ecc0874b] On MySQL and MariaDB, setting the ``ignore_conflicts`` parameter to ``True`` turns certain types of errors, other than duplicate key, into warnings. Even with Strict Mode. For example: invalid values or non-nullable violations. See the `MySQL documentation`_ and `MariaDB documentation`_ for more details.
 - [f9c9f815] On MySQL, ``QuerySet.update()`` may execute a ``SELECT`` followed by an ``UPDATE`` instead of a single ``UPDATE`` when filtering on related tables, which can introduce a race condition if concurrent changes occur between the queries. To ensure atomicity, consider using transactions or avoiding such filter conditions on MySQL.
@@ -276,6 +294,8 @@
 - [f3280a92] PostgreSQL doesn't support ``select_for_update()`` with :class:`~django.db.models.expressions.Window` expressions.
 - [652400cd] Remember that, as always with ``QuerySet`` objects, any subsequent chained methods which imply a different database query will ignore previously cached results, and retrieve data using a fresh database query. So, if you write the following:
 - [a30aeda9dc9e9627-2] Returns an ``int`` of the bitwise ``AND`` of all non-null input values, or ``default`` if all values are null.
+- [b851c5bfdd91a88a-2] Returns an ``int`` of the bitwise ``OR`` of all non-null input values, or ``default`` if all values are null.
+- [eb5852bc1e5f8f85-2] Returns an ``int`` of the bitwise ``XOR`` of all non-null input values, or ``default`` if all values are null.
 - [00a2760f] Returns an arbitrary value from the non-null input values.
 - [e129263dd012440b-2] Returns the input values concatenated into a string, separated by the ``delimiter`` string, or ``default`` if there are no values.
 - [a0fc2bc5] Returns the maximum value of the given expression.
@@ -285,6 +305,7 @@
 - [e66361a0] Returns the standard deviation of the data in the provided expression.
 - [fa2e1a93] Returns the variance of the data in the provided expression.
 - [fd1a7d95] SELECT ... WHERE NOT (pub_date > '2005-1-3' AND headline = 'Hello')
+- [d401ec67] SELECT ... WHERE NOT pub_date > '2005-1-3' AND NOT headline = 'Hello'
 - [33d0eb11] SELECT ... WHERE EXTRACT('day' FROM pub_date) = '3'; SELECT ... WHERE EXTRACT('day' FROM pub_date) >= '3';
 - [bf18aa93] SELECT ... WHERE EXTRACT('hour' FROM timestamp) = '23'; SELECT ... WHERE EXTRACT('hour' FROM time) = '5'; SELECT ... WHERE EXTRACT('hour' FROM timestamp) >= '12';
 - [fe0e2f25] SELECT ... WHERE EXTRACT('minute' FROM timestamp) = '29'; SELECT ... WHERE EXTRACT('minute' FROM time) = '46'; SELECT ... WHERE EXTRACT('minute' FROM timestamp) >= '29';
@@ -294,16 +315,24 @@
 - [c1ade8ce] SELECT ... WHERE REGEXP_LIKE(title, '^(an?|the) +', 'i'); -- Oracle
 - [cd4d152b] SELECT ... WHERE blog.id IN (SELECT id FROM ... WHERE NAME LIKE '%Cheddar%')
 - [2766fe04] SELECT ... WHERE headline ILIKE '%Lennon%';
+- [547a5bbc] SELECT ... WHERE headline ILIKE '%Lennon';
+- [df927a27] SELECT ... WHERE headline ILIKE 'Lennon%';
 - [8c1a337c] SELECT ... WHERE headline LIKE '%Lennon%';
+- [feaa9e16] SELECT ... WHERE headline LIKE '%Lennon';
+- [683e60b4] SELECT ... WHERE headline LIKE 'Lennon%';
 - [5671a9f9] SELECT ... WHERE id = 14; SELECT ... WHERE id IS NULL;
 - [4833c2f1] SELECT ... WHERE id > 4;
 - [2c1c7c2b] SELECT ... WHERE id IN (1, 3, 4); SELECT ... WHERE headline IN ('a', 'b', 'c');
 - [90ca4c76] SELECT ... WHERE name ILIKE 'beatles blog'; SELECT ... WHERE name IS NULL;
 - [09dd2a52] SELECT ... WHERE pub_date BETWEEN '2005-01-01' AND '2005-12-31'; SELECT ... WHERE pub_date >= '2005-01-01';
+- [41204a1f] SELECT ... WHERE pub_date BETWEEN '2005-01-01' and '2005-03-31';
 - [9b116b5d] SELECT ... WHERE pub_date IS NULL;
 - [24898808] SELECT ... WHERE title REGEXP '(?i)^(an?|the) +'; -- SQLite
+- [0d3803fc] SELECT ... WHERE title REGEXP '^(An?|The) +'; -- SQLite
 - [718b4b08] SELECT ... WHERE title REGEXP '^(an?|the) +'; -- MySQL
+- [875123e3] SELECT ... WHERE title REGEXP BINARY '^(An?|The) +'; -- MySQL
 - [6495368f] SELECT ... WHERE title ~ '^(An?|The) +'; -- PostgreSQL
+- [e125c53a] SELECT ... WHERE title ~* '^(an?|the) +'; -- PostgreSQL
 - [468855f9] SELECT ... WHERE x=1 AND y=2
 - [b2f54fc2] SELECT ... WHERE x=1 OR y=2
 - [ad06da7a] SELECT ... WHERE x=1 XOR y=2
@@ -319,6 +348,8 @@
 - [a50236aa] Take the following examples:
 - [092d167d] The ``QuerySet`` class has the following public attributes you can use for introspection:
 - [b0e78f6e2bbde48e] The ``default`` parameter is not supported on MariaDB, MySQL, and Oracle.
+- [b0e78f6e2bbde48e-2] The ``default`` parameter is not supported on MariaDB, MySQL, and Oracle.
+- [b0e78f6e2bbde48e-3] The ``default`` parameter is not supported on MariaDB, MySQL, and Oracle.
 - [872c442c] The ``defer()`` method (and its cousin, :meth:`only`, below) are only for advanced use-cases. They provide an optimization for when you have analyzed your queries closely and understand *exactly* what information you need and have measured that the difference between returning the fields you need and the full set of fields for the model will be significant.
 - [e7405452] The main benefit of using :class:`~django.db.models.expressions.RawSQL` is that you can set ``output_field`` if needed. The main downside is that if you refer to some table alias of the queryset in the raw SQL, then it is possible that Django might change that alias (for example, when the queryset is used as a subquery in yet another query).
 - [666f2bbf] The moral here is that if you are using ``distinct()`` be careful about ordering by related models. Similarly, when using ``distinct()`` and :meth:`values` together, be careful when ordering by fields not in the :meth:`values` call.
@@ -336,12 +367,16 @@
 - [3ecdcd2d485c92ad-53] Usage example:
 - [a3498026] Usually when you'll interact with a ``QuerySet`` you'll use it by :ref:`chaining filters <chaining-filters>`. To make this work, most ``QuerySet`` methods return new querysets. These methods are covered in detail later in this section.
 - [6184034f36a0cde4] When calling :meth:`~django.db.models.Model.save` for instances with deferred fields, only the loaded fields will be saved. See :meth:`~django.db.models.Model.save` for more details.
+- [6184034f36a0cde4-2] When calling :meth:`~django.db.models.Model.save` for instances with deferred fields, only the loaded fields will be saved. See :meth:`~django.db.models.Model.save` for more details.
 - [b78fa128] When combining multiple field types, Django can only determine the ``output_field`` if all fields are of the same type. Otherwise, you must provide the ``output_field`` yourself.
 - [64fc98d64f788ddb] When passing a ``QuerySet`` to the :lookup:`in` lookup, ensure the subquery does not return ``NULL`` values. See :ref:`this note <null-and-three-valued-logic>` for details.
+- [64fc98d64f788ddb-2] When passing a ``QuerySet`` to the :lookup:`in` lookup, ensure the subquery does not return ``NULL`` values. See :ref:`this note <null-and-three-valued-logic>` for details.
 - [a944c90b] When using :meth:`defer` after ``only()`` the fields in :meth:`defer` will override ``only()`` for fields that are listed in both.
 - [b3c451a6] When using ``to_attr`` the prefetched result is stored in a list. This can provide a significant speed improvement over traditional ``prefetch_related`` calls which store the cached result within a ``QuerySet`` instance.
 - [2d32ce34] When using a subquery (a ``QuerySet``) on the right-hand side of an ``__in`` lookup, if the subquery returns any ``NULL`` values, it can produce unexpected results due to SQL's three-valued logic.
 - [f78bb26c84c097b3] When using the SQLite backend and non-ASCII strings, bear in mind the :ref:`database note <sqlite-string-matching>` about string comparisons.
+- [f78bb26c84c097b3-2] When using the SQLite backend and non-ASCII strings, bear in mind the :ref:`database note <sqlite-string-matching>` about string comparisons.
+- [f78bb26c84c097b3-3] When using the SQLite backend and non-ASCII strings, bear in mind the :ref:`database note <sqlite-string-matching>` about string comparisons.
 - [b4f58892] When using the SQLite backend and non-ASCII strings, bear in mind the :ref:`database note <sqlite-string-matching>` about string comparisons. SQLite does not do case-insensitive matching for non-ASCII strings.
 - [ee2cbd01] You also must not quote placeholders in the SQL string. This example is vulnerable to SQL injection because of the quotes around ``%s``:
 - [228bc7e1a06eabc5-2] You can read more about how Django's :ref:`SQL injection protection <sql-injection-protection>` works.
@@ -365,11 +400,16 @@
 - [caf8e594] for e in Entry.objects.filter(pub_date__year=2010): e.comments_on = False e.save()
 - [eb953a9e] from django.core.exceptions import ObjectDoesNotExist
 - [4af926756c29efa6-34] from django.db import models
+- [4af926756c29efa6-35] from django.db import models
+- [4af926756c29efa6-36] from django.db import models
 - [2364a6dd] from django.db import transaction
 - [57400118] from django.db.models import Q
 - [80b26bd32599564d] from itertools import islice
+- [80b26bd32599564d-2] from itertools import islice
 - [38fee00c] if obj in some_queryset: print("Entry contained in queryset")
+- [b2a295de] if some_queryset.contains(obj): print("Entry contained in queryset")
 - [4e93fad7] if some_queryset.exists(): print("There is at least one object in some_queryset")
+- [ff17688e] if some_queryset: print("There is at least one object in some_queryset")
 - [b75c8d9ca5df7aa8-3] import datetime
 - [7b494e10] inner_qs = Blog.objects.filter(name__contains="Ch").values("name") entries = Entry.objects.filter(blog__name__in=inner_qs)
 - [1c5672d3] inner_qs = Blog.objects.filter(name__contains="Cheddar") entries = Entry.objects.filter(blog__in=inner_qs)
@@ -377,6 +417,7 @@
 - [7b74f44a] my_queryset.reverse()[:5]
 - [980bf5a3] obj, created = Person.objects.filter( Q(first_name="Bob") | Q(first_name="Robert"), ).get_or_create(last_name="Marley", defaults={"first_name": "Bob"})
 - [1cab9a4e] obj, created = Person.objects.get_or_create( first_name="John", last_name="Lennon", defaults={"birthday": date(1940, 10, 9)}, )
+- [7370e549] obj, created = Person.objects.update_or_create( first_name="John", last_name="Lennon", defaults={"first_name": "Bob"}, create_defaults={"first_name": "Bob", "birthday": date(1940, 10, 9)}, )
 - [53000711] p = Article.objects.order_by("title", "pub_date").first()
 - [fd8cd723] p = Person(first_name="Bruce", last_name="Springsteen") p.save(force_insert=True)
 - [529c345e] p = Person.objects.create(first_name="Bruce", last_name="Springsteen")
@@ -433,7 +474,24 @@
 - [9bad0dd4] ``where`` and ``tables`` both take a list of strings. All ``where`` parameters are "AND"ed to any other search criteria.
 - [e3ad6a9c] #. If related fields use ``DB_*`` options. #. If there are no cascades and no delete signal receivers.
 - [217b11ffa0908b1f] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
+- [217b11ffa0908b1f-2] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
+- [217b11ffa0908b1f-3] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
+- [217b11ffa0908b1f-4] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
+- [217b11ffa0908b1f-5] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
+- [217b11ffa0908b1f-6] (No equivalent SQL code fragment is included for this lookup because implementation of the relevant query varies among different database engines.)
 - [a904f3f07bf05579] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-2] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-3] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-4] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-5] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-6] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-7] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-8] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-9] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-10] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-11] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-12] (The exact SQL syntax varies for each database engine.)
+- [a904f3f07bf05579-13] (The exact SQL syntax varies for each database engine.)
 - [312e044f] (This assumes your ``Entry`` model has fields ``pub_date`` and ``comments_on``.)
 - [71e8ffc5] * **Asynchronous iteration.** A ``QuerySet`` can also be iterated over using ``async for``::
 - [b631b9c7] * **Iteration.** A ``QuerySet`` is iterable, and it executes its database query the first time you iterate over it. For example, this will print the headline of all entries in the database::
@@ -507,10 +565,13 @@
 - [90016d718a9a9571-5] .. admonition:: SQLite users
 - [90016d718a9a9571-6] .. admonition:: SQLite users
 - [db28816e6e2d3288] .. admonition:: Special values for ``JSONField`` on SQLite
+- [db28816e6e2d3288-2] .. admonition:: Special values for ``JSONField`` on SQLite
 - [55d8a579] .. admonition:: Use this method as a last resort
 - [c5a1e26b] .. admonition:: Using ``select_for_update(of=(...))`` with specified fields
 - [b12581a78f7d2838-2] .. admonition:: You can't share pickles between versions
 - [ccd8d0b0a9ad8ceb] .. admonition:: ``NULL`` values and three-valued logic
+- [ccd8d0b0a9ad8ceb-2] .. admonition:: ``NULL`` values and three-valued logic
+- [ccd8d0b0a9ad8ceb-3] .. admonition:: ``NULL`` values and three-valued logic
 - [6ab7a838] .. admonition:: ``earliest()`` and ``latest()`` may return instances with null dates.
 - [5815d068] .. class:: AnyValue(expression, output_field=None, filter=None, default=None, **extra)
 - [cda1bfcd] .. class:: Avg(expression, output_field=None, distinct=False, filter=None, default=None, **extra)
@@ -848,6 +909,7 @@
 - [8d8ce3f7] Finally, realize that ``update()`` does an update at the SQL level and, thus, method :ref:`does not call<methods-not-called-on-bulk-operations>` any ``save()`` methods on your models, nor does it emit the :attr:`~django.db.models.signals.pre_save` or :attr:`~django.db.models.signals.post_save` signals (which are a consequence of calling :meth:`Model.save() <django.db.models.Model.save>`). If you want to update a bunch of records for a model that has a custom :meth:`~django.db.models.Model.save` method, loop over them and call :meth:`~django.db.models.Model.save`, like this::
 - [faa03f53] For a detailed description of how names passed in ``kwargs`` are resolved, see :meth:`get_or_create`.
 - [16422aae3de1dbe8] For an in-depth discussion of aggregation, see :doc:`the topic guide on Aggregation </topics/db/aggregation>`.
+- [16422aae3de1dbe8-2] For an in-depth discussion of aggregation, see :doc:`the topic guide on Aggregation </topics/db/aggregation>`.
 - [285163ec] For an introduction, see :ref:`models and database queries documentation <field-lookups-intro>`.
 - [30c6c1a6] For date and datetime fields, a 'day of the week' match. Allows chaining additional field lookups.
 - [d6790bc5] For date and datetime fields, a 'quarter of the year' match. Allows chaining additional field lookups. Takes an integer value between 1 and 4 representing the quarter of the year.
@@ -855,9 +917,11 @@
 - [4457fd34] For date and datetime fields, an exact ISO 8601 week-numbering year match. Allows chaining additional field lookups. Takes an integer year.
 - [7eb00063] For date and datetime fields, an exact day match. Allows chaining additional field lookups. Takes an integer day.
 - [61b16255] For date and datetime fields, an exact month match. Allows chaining additional field lookups. Takes an integer 1 (January) through 12 (December).
+- [ca27aa93] For date and datetime fields, an exact year match. Allows chaining additional field lookups. Takes an integer year.
 - [98f7110e] For date and datetime fields, return the week number (1-52 or 53) according to `ISO-8601 <https://en.wikipedia.org/wiki/ISO-8601>`_, i.e., weeks start on a Monday and the first week contains the year's first Thursday.
 - [ea1bc00e] For datetime and time fields, an exact hour match. Allows chaining additional field lookups. Takes an integer between 0 and 23.
 - [10b40850] For datetime and time fields, an exact minute match. Allows chaining additional field lookups. Takes an integer between 0 and 59.
+- [6a92ed61] For datetime and time fields, an exact second match. Allows chaining additional field lookups. Takes an integer between 0 and 59.
 - [d172442d] For datetime fields, casts the value as date. Allows chaining additional field lookups. Takes a date value.
 - [9e289f5e] For datetime fields, casts the value as time. Allows chaining additional field lookups. Takes a :class:`datetime.time` value.
 - [0cfe2753] For example, if you want to find blogs with more than 5 entries, but are not interested in the exact number of entries, you could do this:
@@ -903,6 +967,7 @@
 - [b22ce4bf] If your model's :ref:`Meta <meta-options>` specifies :attr:`~django.db.models.Options.get_latest_by`, you can omit any arguments to ``earliest()`` or ``latest()``. The fields specified in :attr:`~django.db.models.Options.get_latest_by` will be used by default.
 - [daf609cd] In English, that means start with any non-``'defaults'`` keyword argument that doesn't contain a double underscore (which would indicate a non-exact lookup). Then add the contents of ``defaults``, overriding any keys if necessary, and use the result as the keyword arguments to the model class. If there are any callables in ``defaults``, evaluate them. As hinted at above, this is a simplification of the algorithm that is used, but it contains all the pertinent details. The internal implementation has some more error-checking than this and handles some extra edge-conditions; if you're interested, read the code.
 - [a4f69d058049da89-2] In SQL terms, that evaluates to:
+- [a4f69d058049da89-3] In SQL terms, that evaluates to:
 - [ed3ba059] In a given iterable; often a list, tuple, or queryset. It's not a common use case, but strings (being iterables) are accepted.
 - [fcd3ab9c] In addition, only ``LIMIT``, ``OFFSET``, ``COUNT(*)``, ``ORDER BY``, and specifying columns (i.e. slicing, :meth:`count`, :meth:`exists`, :meth:`order_by`, and :meth:`values`/:meth:`values_list`) are allowed on the resulting ``QuerySet``. Further, databases place restrictions on what operations are allowed in the combined queries. For example, most databases don't allow ``LIMIT`` or ``OFFSET`` in the combined queries.
 - [6c6a4c4b] In its simplest form ``Prefetch`` is equivalent to the traditional string based lookups:
@@ -933,6 +998,7 @@
 - [df9f9642] Note the first query will match ``'Beatles Blog'``, ``'beatles blog'``, ``'BeAtLes BLoG'``, etc.
 - [abd6dcd4] Note the second example is more restrictive.
 - [d7ab0da5] Note this will match any record with a ``pub_date`` that falls on a Monday (day 1 of the week), regardless of the month or year in which it occurs. Week days are indexed with day 1 being Monday and day 7 being Sunday.
+- [d26b1df5] Note this will match any record with a ``pub_date`` that falls on a Monday (day 2 of the week), regardless of the month or year in which it occurs. Week days are indexed with day 1 being Sunday and day 7 being Saturday.
 - [ed8dcf77] Note this will match any record with a pub_date on the third day of the month, such as January 3, July 3, etc.
 - [b3fc25d1] Note this will match the headline ``'Lennon honored today'`` but not ``'lennon honored today'``.
 - [ce75d758] Note: ``order_by('?')`` queries may be expensive and slow, depending on the database backend you're using.
@@ -961,16 +1027,19 @@
 - [922674fd] Returns ``True`` if the :class:`.QuerySet` contains any results, and ``False`` if not. This tries to perform the query in the simplest and fastest way possible, but it *does* execute nearly the same query as a normal :class:`.QuerySet` query.
 - [c7c318c5] Returns a *copy* of the current ``QuerySet`` (or ``QuerySet`` subclass). This can be useful in situations where you might want to pass in either a model manager or a ``QuerySet`` and do further filtering on the result. After calling ``all()`` on either object, you'll definitely have a ``QuerySet`` to work with.
 - [6c376bac] Returns a ``QuerySet`` that evaluates to a list of :class:`datetime.date` objects representing all available dates of a particular kind within the contents of the ``QuerySet``.
+- [953683a1] Returns a ``QuerySet`` that evaluates to a list of :class:`datetime.datetime` objects representing all available dates of a particular kind within the contents of the ``QuerySet``.
 - [c8c3d088] Returns a ``QuerySet`` that returns dictionaries, rather than model instances, when used as an iterable.
 - [bac31432] Returns a ``QuerySet`` that sets the given fetch mode for all model instances created by this ``QuerySet``. The fetch mode controls on-demand loading of fields when they are accessed, such as for foreign keys and deferred fields. For example, to use the :attr:`~django.db.models.FETCH_PEERS` mode to batch-load all related objects on first access:
 - [85514057] Returns a ``QuerySet`` that will automatically retrieve the given lookups, each in one extra batch query. Prefetching is a way to optimize database access when you know you'll be accessing related objects later, so you can avoid triggering the on-demand loading behavior of the model instances' :doc:`fetch mode </topics/db/fetch-modes>`.
 - [9da78bbc] Returns a ``QuerySet`` that will join in the named foreign-key relationships, selecting additional related objects when it executes its query. This method can be a performance booster, fetching data ahead of time rather than triggering on-demand loading through the model instances' :doc:`fetch mode </topics/db/fetch-modes>`, at the cost of a more complex initial query.
 - [53a426da] Returns a dictionary of aggregate values (averages, sums, etc.) calculated over the ``QuerySet``. Each argument to ``aggregate()`` specifies a value that will be included in the dictionary that is returned.
 - [32904b0f] Returns a new ``QuerySet`` containing objects that do *not* match the given lookup parameters.
+- [4a57d8bc] Returns a new ``QuerySet`` containing objects that match the given lookup parameters.
 - [e320b877] Returns a new ``QuerySet`` that uses ``SELECT DISTINCT`` in its SQL query. This eliminates duplicate rows from the query results.
 - [745c8dd1] Returns a queryset that will lock rows until the end of the transaction, generating a ``SELECT ... FOR UPDATE`` SQL statement on supported databases.
 - [6fcf0d82] Returns a string of the ``QuerySet``’s execution plan, which details how the database would execute the query, including any indexes or joins that would be used. Knowing these details may help you improve the performance of slow queries.
 - [c710005a] Returns a tuple of ``(object, created)``, where ``object`` is the created or updated object and ``created`` is a boolean specifying whether a new object was created.
+- [f1c963ef] Returns a tuple of ``(object, created)``, where ``object`` is the retrieved or created object and ``created`` is a boolean specifying whether a new object was created.
 - [0b11f928] Returns an integer representing the number of objects in the database matching the ``QuerySet``.
 - [784e4875] Returns the first object matched by the queryset, or ``None`` if there is no matching object. If the ``QuerySet`` has no ordering defined (and has not had ordering forcibly cleared by calling :meth:`order_by` with no arguments), then the queryset is automatically ordered by the primary key. This can affect aggregation results as described in :ref:`aggregation-ordering-interaction`.
 - [9cd35667] Returns the latest object in the table based on the given field(s).
@@ -1002,6 +1071,7 @@
 - [3fb2c797] SQLite doesn't support case-sensitive ``LIKE`` statements; ``startswith`` acts like ``istartswith`` for SQLite.
 - [c0490c39] Same as :meth:`annotate`, but instead of annotating objects in the ``QuerySet``, saves the expression for later reuse with other ``QuerySet`` methods. This is useful when the result of the expression itself is not needed but it is used for filtering, ordering, or as a part of a complex expression. Not selecting the unused value removes redundant work from the database which should result in better performance.
 - [f2ba0a9cbc1056a9] See :meth:`union` for some restrictions.
+- [f2ba0a9cbc1056a9-2] See :meth:`union` for some restrictions.
 - [3b8e936c] See :ref:`conditional-aggregation` and :ref:`filtering-on-annotations` for example usage.
 - [3497aefd] See more in the :doc:`fetch mode topic guide </topics/db/fetch-modes>`.
 - [976549cb] See the :doc:`/topics/db/sql` for more information.
@@ -1020,6 +1090,7 @@
 - [36cce675] Takes a list of field values (``id_list``) and the ``field_name`` for those values, and returns a dictionary mapping each value to an instance of the object with the given field value. No :exc:`django.core.exceptions.ObjectDoesNotExist` exceptions will ever be raised by ``in_bulk``; that is, any ``id_list`` value not matching any instance will simply be ignored. If ``id_list`` isn't provided, all objects in the queryset are returned. ``field_name`` must be a unique field or a distinct field (if there's only one field specified in :meth:`distinct`). ``field_name`` defaults to the primary key.
 - [408e0938] Takes a raw SQL query, executes it, and returns a ``django.db.models.query.RawQuerySet`` instance. This ``RawQuerySet`` instance can be iterated over just like a normal ``QuerySet`` to provide object instances.
 - [5837345a] Takes an integer value representing the day of the week from 1 (Monday) to 7 (Sunday).
+- [2f5c3d60] Takes an integer value representing the day of week from 1 (Sunday) to 7 (Saturday).
 - [b63201ee] Takes either ``True`` or ``False``, which correspond to SQL queries of ``IS NULL`` and ``IS NOT NULL``, respectively.
 - [7950d47f] That is, all the relevant toppings will have been fetched in a single query, and used to make ``QuerySet`` instances that have a pre-filled cache of the relevant results; these are then used in the ``self.toppings.all()`` calls.
 - [ca87ba15] The :ref:`force_insert <ref-models-force-insert>` parameter is documented elsewhere, but all it means is that a new object will always be created. Normally you won't need to worry about this. However, if your model contains a manual primary key value that you set and if that value already exists in the database, a call to ``create()`` will fail with an :exc:`~django.db.IntegrityError` since primary keys must be unique. Be prepared to handle the exception if you are using manual primary keys.
@@ -1052,6 +1123,8 @@
 - [af628c65] The following ``QuerySet`` methods evaluate the ``QuerySet`` and return something *other than* a ``QuerySet``.
 - [f1bbb8f0] The following are all legal:
 - [89db3369bcdcdebe] The following are equivalent::
+- [89db3369bcdcdebe-2] The following are equivalent::
+- [89db3369bcdcdebe-3] The following are equivalent::
 - [da479456] The following examples illustrate the difference between plain lookups and ``select_related()`` lookups. Here's standard lookup::
 - [99783f9e] The lookup parameters (``**kwargs``) should be in the format described in `Field lookups`_ below. Multiple parameters are joined via ``AND`` in the underlying SQL statement, and the whole thing is enclosed in a ``NOT()``.
 - [18268021] The lookup parameters (``**kwargs``) should be in the format described in `Field lookups`_ below. Multiple parameters are joined via ``AND`` in the underlying SQL statement.
@@ -1072,6 +1145,7 @@
 - [6cde4c4d] This document describes the details of the ``QuerySet`` API. It builds on the material presented in the :doc:`model </topics/db/models>` and :doc:`database query </topics/db/queries>` guides, so you'll probably want to read and understand those documents before reading this one.
 - [ea1c4587] This example compares the dictionaries of ``values()`` with the normal model objects:
 - [0eac9442] This example excludes all entries whose ``pub_date`` is later than 2005-1-3 AND whose ``headline`` is "Hello"::
+- [e2709cda] This example excludes all entries whose ``pub_date`` is later than 2005-1-3 OR whose headline is "Hello"::
 - [ce2d2f5a] This example returns the latest ``Entry`` in the table, according to the ``pub_date`` field::
 - [b4f9bd40] This example will raise an exception, since the inner query is trying to extract two field values, where only one is expected::
 - [e148b066] This has a number of caveats though:
@@ -1109,6 +1183,18 @@
 - [77028e1d] Usually, if another transaction has already acquired a lock on one of the selected rows, the query will block until the lock is released. If this is not the behavior you want, call ``select_for_update(nowait=True)``. This will make the call non-blocking. If a conflicting lock is already acquired by another transaction, :exc:`~django.db.DatabaseError` will be raised when the queryset is evaluated. You can also ignore locked rows by using ``select_for_update(skip_locked=True)`` instead. The ``nowait`` and ``skip_locked`` are mutually exclusive and attempts to call ``select_for_update()`` with both options enabled will result in a :exc:`ValueError`.
 - [00a0cfb8] We can reduce to just two queries using ``prefetch_related``:
 - [4e3e24b150bc73f4] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-2] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-3] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-4] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-5] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-6] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-7] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-8] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-9] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-10] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [4e3e24b150bc73f4-11] When :setting:`USE_TZ` is ``True``, datetime fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [1725fd0a63462914] When :setting:`USE_TZ` is ``True``, fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
+- [1725fd0a63462914-2] When :setting:`USE_TZ` is ``True``, fields are converted to the current time zone before filtering. This requires :ref:`time zone definitions in the database <database-time-zone-definitions>`.
 - [26bb951a] When ``QuerySet``\s are evaluated =================================
 - [e66159f7] When a ``QuerySet`` is :ref:`evaluated <when-querysets-are-evaluated>`, it typically caches its results. If the data in the database might have changed since a ``QuerySet`` was evaluated, you can get updated results for the same query by calling ``all()`` on a previously evaluated ``QuerySet``.
 - [0e3acb58] When the queryset is evaluated (``for entry in entries`` in this case), all matched entries will be locked until the end of the transaction block, meaning that other transactions will be prevented from changing or acquiring locks on them.
@@ -1232,6 +1318,7 @@
 - [4344dc68] ``only()`` ~~~~~~~~~~
 - [e48a9c91] ``order_by()`` ~~~~~~~~~~~~~~
 - [bfa0155e580cf12c] ``order``, which defaults to ``'ASC'``, should be either ``'ASC'`` or ``'DESC'``. This specifies how to order the results.
+- [bfa0155e580cf12c-2] ``order``, which defaults to ``'ASC'``, should be either ``'ASC'`` or ``'DESC'``. This specifies how to order the results.
 - [a2d60f93] ``output_field`` ~~~~~~~~~~~~~~~~
 - [7fb4a47b] ``prefetch_related()`` ~~~~~~~~~~~~~~~~~~~~~~
 - [fee004d2] ``prefetch_related_objects()`` ------------------------------

@@ -1,6 +1,6 @@
 # Fact 505b35a8
 
-Store id: 8d7055c1-c95f-481e-b241-0d2fc55f363f
+Store id: 2a932fc4-dba0-4468-94d1-07d43e74e881
 
 ## Text
 
@@ -20,7 +20,7 @@ def empty_result_set_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9804610+00:00`
+- posted_at: `2026-11-09T23:44:53.1492460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 80,
     "symbol": "Coalesce.empty_result_set_value"
   },
-  "id": "8d7055c1-c95f-481e-b241-0d2fc55f363f",
+  "id": "2a932fc4-dba0-4468-94d1-07d43e74e881",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9804610+00:00"
+    "posted_at": "2026-11-09T23:44:53.1492460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "19c21457-ef13-4138-991f-71a657b2af77",
+  "subject_id": "a41609ed-757d-4a3c-b1a3-85e0218e6158",
   "subject_name": "django/db/models/functions/comparison::Coalesce.empty_result_set_value",
   "tags": [
     "entity:method",

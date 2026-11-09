@@ -1,6 +1,6 @@
 # Fact f90fe3ed
 
-Store id: 839a6248-2d71-440d-8d4b-2c0174b2c1f0
+Store id: 1fdd4397-6a13-459a-8e4c-7c67cf50a58a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, output_field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9336420+00:00`
+- posted_at: `2026-11-09T23:44:49.5943930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1554,
     "symbol": "ExpressionWrapper.__init__"
   },
-  "id": "839a6248-2d71-440d-8d4b-2c0174b2c1f0",
+  "id": "1fdd4397-6a13-459a-8e4c-7c67cf50a58a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9336420+00:00"
+    "posted_at": "2026-11-09T23:44:49.5943930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bfc48cce-70b0-4353-ab3d-835ebe4820ec",
+  "subject_id": "a32b56ce-68d3-4176-ac40-91d372ba9de2",
   "subject_name": "django/db/models/expressions::ExpressionWrapper.__init__",
   "tags": [
     "entity:method"

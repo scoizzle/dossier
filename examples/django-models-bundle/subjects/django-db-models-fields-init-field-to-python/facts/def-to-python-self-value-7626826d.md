@@ -1,6 +1,6 @@
 # Fact 7626826d
 
-Store id: b04b5856-ed5f-424f-80f2-7f19c32a2678
+Store id: e96d232a-23ac-4df2-94db-0531562e2894
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4638660+00:00`
+- posted_at: `2026-11-09T23:44:50.0031590+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 798,
     "symbol": "Field.to_python"
   },
-  "id": "b04b5856-ed5f-424f-80f2-7f19c32a2678",
+  "id": "e96d232a-23ac-4df2-94db-0531562e2894",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4638660+00:00"
+    "posted_at": "2026-11-09T23:44:50.0031590+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16aa8ea4-e005-4823-ba0e-2fb827b5bed9",
+  "subject_id": "b1558b9e-2162-4352-913f-6056ba7897bf",
   "subject_name": "django/db/models/fields/__init__::Field.to_python",
   "tags": [
     "entity:method"

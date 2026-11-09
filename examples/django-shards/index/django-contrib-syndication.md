@@ -4,7 +4,6 @@ This file lists every subject under `django/contrib/syndication/`, one row per s
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/syndication/apps | subject | 2 | 0 | 0 | 1906 | [shards/125.md#django-contrib-syndication-apps](../shards/125.md#django-contrib-syndication-apps) |
-|   django/contrib/syndication/views | subject | 10 | 0 | 0 | 1906 | [shards/125.md#django-contrib-syndication-views](../shards/125.md#django-contrib-syndication-views) |
+|   django/contrib/syndication/apps | subject | 2 | 0 | 0 | 1449 | [shards/93.md#django-contrib-syndication-apps](../shards/93.md#django-contrib-syndication-apps) |
 
 Up: [index/django-contrib.md](django-contrib.md)

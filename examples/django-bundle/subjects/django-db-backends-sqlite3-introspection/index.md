@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/introspection
 
-- Subject: django/db/backends/sqlite3/introspection (id `a59a7579-099f-48e1-8298-b04ec050ad21`)
+- Subject: django/db/backends/sqlite3/introspection (id `275c972b-6665-48b6-9223-1e0f0b448738`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3387 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

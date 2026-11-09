@@ -1,6 +1,6 @@
 # Fact 79654b13
 
-Store id: 5c5784ca-1e51-48ce-a3c1-e54f9b68c984
+Store id: af1907b2-a987-4a13-ba45-4008fe08bf0a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_paths_from_expression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1866820+00:00`
+- posted_at: `2026-11-09T23:44:59.0942990+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5c5784ca-1e51-48ce-a3c1-e54f9b68c984",
+  "id": "af1907b2-a987-4a13-ba45-4008fe08bf0a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
+    "posted_at": "2026-11-09T23:44:59.0942990+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_paths_from_expression"
       },
       "rel": "contains",
-      "target": "81e1a0fc-f452-4e72-9f06-f77cd8b0bda6"
+      "target": "026504a8-255d-4712-a176-3e0cc9cddbc8"
     }
   ],
   "status": "live",
-  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
+  "subject_id": "ba44da72-3cad-4dd7-ae2b-7d1f35aaf915",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

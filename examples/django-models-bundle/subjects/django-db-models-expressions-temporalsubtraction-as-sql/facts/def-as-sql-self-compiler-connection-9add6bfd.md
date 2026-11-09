@@ -1,6 +1,6 @@
 # Fact 9add6bfd
 
-Store id: cc4ce98f-b444-4134-a5d0-9859b9b778ed
+Store id: 513066fe-9b82-40fd-a3dc-05806f551fa7
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8284160+00:00`
+- posted_at: `2026-11-09T23:44:49.4602340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 872,
     "symbol": "TemporalSubtraction.as_sql"
   },
-  "id": "cc4ce98f-b444-4134-a5d0-9859b9b778ed",
+  "id": "513066fe-9b82-40fd-a3dc-05806f551fa7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8284160+00:00"
+    "posted_at": "2026-11-09T23:44:49.4602340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "332e788e-10f9-468a-a162-913b7e28c1ca",
+  "subject_id": "c3795595-f5bf-4920-bfb7-05d111d8cd1a",
   "subject_name": "django/db/models/expressions::TemporalSubtraction.as_sql",
   "tags": [
     "entity:method"

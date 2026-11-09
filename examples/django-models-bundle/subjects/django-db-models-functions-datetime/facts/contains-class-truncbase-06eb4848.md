@@ -1,6 +1,6 @@
 # Fact 06eb4848
 
-Store id: 1fcaadc1-f156-444c-8e0e-18941ae68538
+Store id: 02f24b04-b348-46ef-86fb-573035fe2031
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncBase
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1fcaadc1-f156-444c-8e0e-18941ae68538",
+  "id": "02f24b04-b348-46ef-86fb-573035fe2031",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncBase"
       },
       "rel": "contains",
-      "target": "7af9c79c-2317-4083-a115-13b4ba722bb5"
+      "target": "055b5a1d-7692-4fd6-8f81-83197c7c97f6"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

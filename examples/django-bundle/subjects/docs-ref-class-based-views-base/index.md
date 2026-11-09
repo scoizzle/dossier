@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/base
 
-- Subject: docs/ref/class-based-views/base (id `c294936c-e31a-495a-8cdb-cb1aefd67e43`)
+- Subject: docs/ref/class-based-views/base (id `90ff622a-35b7-488f-98eb-510efc0255c3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3286 tokens
-- Facts shown: 94 of 98
+- Used: 3373 tokens
+- Facts shown: 98 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -50,9 +50,11 @@
 - [cafee15d] class MyView(View): def get(self, request, *args, **kwargs): return HttpResponse("Hello, World!")
 - [1d91c9c1] from article.views import ArticleCounterRedirectView, ArticleDetailView
 - [69dbb3213d5b379f] from articles.models import Article
+- [69dbb3213d5b379f-2] from articles.models import Article
 - [94f78459] from django.http import HttpResponse from django.views import View
 - [d46bb570] from django.shortcuts import get_object_or_404 from django.views.generic.base import RedirectView
 - [c537d1941a7e3025-6] from django.urls import path
+- [c537d1941a7e3025-7] from django.urls import path
 - [b64869c9] from django.urls import path from django.views.generic.base import RedirectView
 - [6a848170] from django.views.generic.base import TemplateView
 - [8054800a] from myapp.views import HomePageView
@@ -99,8 +101,10 @@
 - [47418807] The base view class. All other class-based views inherit from this base class. It isn't strictly a generic view and thus can also be imported from ``django.views``.
 - [c3d4a605] The given URL may contain dictionary-style string formatting, which will be interpolated against the parameters captured in the URL. Because keyword interpolation is *always* done (even if no arguments are passed in), any ``"%"`` characters in the URL must be written as ``"%%"`` so that Python will convert them to a single percent sign on output.
 - [ac4b98ec] This view inherits methods and attributes from the following view:
+- [470bc2847d96bfb8] This view inherits methods and attributes from the following views:
 - [8827e2af] .. class:: django.views.generic.base.RedirectView
 - [b88ee002] .. class:: django.views.generic.base.TemplateView
+- [7f2ce0d1] .. class:: django.views.generic.base.View
 - [7feafc49] ========== Base views ==========
 - [c517bc2b] Many of Django's built-in class-based views inherit from other class-based views or various mixins. Because this inheritance chain is very important, the ancestor classes are documented under the section title of **Ancestors (MRO)**. MRO is an acronym for Method Resolution Order.
 - [15e01f83] The following three classes provide much of the functionality needed to create Django views. You may think of them as *parent* views, which can be used by themselves or inherited from. They may not provide all the capabilities required for projects, in which case there are Mixins and Generic class-based views.

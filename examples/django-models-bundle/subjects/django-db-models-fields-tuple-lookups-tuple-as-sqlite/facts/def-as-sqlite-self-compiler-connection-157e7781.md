@@ -1,6 +1,6 @@
 # Fact 157e7781
 
-Store id: 0d06911a-1bd7-4d31-8860-d2b530c2d7a0
+Store id: b9ccf6a6-663d-45d9-8865-a792fa4891f9
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5335830+00:00`
+- posted_at: `2026-11-09T23:44:52.6892450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 38,
     "symbol": "Tuple.as_sqlite"
   },
-  "id": "0d06911a-1bd7-4d31-8860-d2b530c2d7a0",
+  "id": "b9ccf6a6-663d-45d9-8865-a792fa4891f9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5335830+00:00"
+    "posted_at": "2026-11-09T23:44:52.6892450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4efe86c8-a5c7-4d76-910f-f351350e2257",
+  "subject_id": "41b61444-2a41-4074-8eda-a660008e215b",
   "subject_name": "django/db/models/fields/tuple_lookups::Tuple.as_sqlite",
   "tags": [
     "entity:method"

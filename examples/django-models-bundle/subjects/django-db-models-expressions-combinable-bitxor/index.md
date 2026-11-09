@@ -1,11 +1,11 @@
 # django/db/models/expressions::Combinable.bitxor
 
-- Subject: django/db/models/expressions::Combinable.bitxor (id `cff75b80-e51f-4e3a-83dd-849f49c8faf9`)
+- Subject: django/db/models/expressions::Combinable.bitxor (id `894b9f33-86a8-4ed8-a002-e5b987bddff6`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

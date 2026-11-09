@@ -1,10 +1,10 @@
 # django/contrib/postgres/search
 
-- Subject: django/contrib/postgres/search (id `dc237a15-8f41-4b3b-8880-8e5e659098b7`)
+- Subject: django/contrib/postgres/search (id `50d4502d-c905-4b57-b438-f6a629db9dbf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3850 tokens
-- Facts shown: 76 of 81
+- Used: 4066 tokens
+- Facts shown: 81 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -21,24 +21,28 @@
 - self.function = self.SEARCH_TYPES.get(search_type) if self.function is None: raise ValueError("Unknown search_type argument '%s'." % search_type) if not hasattr(value, "resolve_expression"): value = Value(value) expressions = (value,) self.config = SearchConfig.from_parameter(config) if self.config is not None: expressions = [self.config, *expressions] self.invert = invert super().__init__(*expressions, output_field=output_field) [32e076be]
 - self.prefix = prefix self.invert = invert self.weight = weight super().__init__(value, output_field=output_field) [262e665f]
 - # On Combinable, these are not implemented to reduce confusion with Q. In # this case we are actually (ab)using them to do logical combination so # it's consistent with other usage in Django. def __or__(self, other): return self._combine(other, self.BITOR, False) [439827868bd89bfb]
+- # On Combinable, these are not implemented to reduce confusion with Q. In # this case we are actually (ab)using them to do logical combination so # it's consistent with other usage in Django. def __or__(self, other): return self._combine(other, self.BITOR, False) [439827868bd89bfb-2]
 - @classmethod def from_parameter(cls, config): if config is None or isinstance(config, cls): return config return cls(config) [5a4a1bc3]
 - class UTF8Dumper(Dumper): def dump(self, obj): return bytes(obj, "utf-8") [d8fb5b27]
 - def __and__(self, other): return self._combine(other, self.BITAND, False) [f659b53843c4eef1]
+- def __and__(self, other): return self._combine(other, self.BITAND, False) [f659b53843c4eef1-2]
 - def __init__( self, value, output_field=None, *, config=None, invert=False, search_type="plain", ): if isinstance(value, LexemeCombinable): search_type = "raw" [23ac639f]
-- def __init__( self, vector, query, weights=None, normalization=None, cover_density=False, ): from .fields.array import ArrayField [90c07f8b]
-- def __init__( self, value, output_field=None, *, invert=False, prefix=False, weight=None ): if value == "": raise ValueError("Lexeme value cannot be empty.") [c562c840]
-- class SearchVectorCombinable: ADD = "||" [7345c19e]
 
 ## All facts
 
 - [ae026459] def __init__( self, expression, query, *, config=None, start_sel=None, stop_sel=None, max_words=None, min_words=None, short_word=None, highlight_all=None, max_fragments=None, fragment_delimiter=None, ): if not hasattr(query, "resolve_expression"): query = SearchQuery(query) options = { "StartSel": start_sel, "StopSel": stop_sel, "MaxWords": max_words, "MinWords": min_words, "ShortWord": short_word, "HighlightAll": highlight_all, "MaxFragments": max_fragments, "FragmentDelimiter": fragment_delimiter, } self.options = { option: value for option, value in options.items() if value is not None } expressions = (expression, query) if config is not None: config = SearchConfig.from_parameter(config) expressions = (config, *expressions) super().__init__(*expressions)
+- [90c07f8b] def __init__( self, vector, query, weights=None, normalization=None, cover_density=False, ): from .fields.array import ArrayField
+- [c562c840] def __init__( self, value, output_field=None, *, invert=False, prefix=False, weight=None ): if value == "": raise ValueError("Lexeme value cannot be empty.")
 - [8d0774e6] def __init__(self, *expressions, config=None, weight=None): super().__init__(*expressions) self.config = SearchConfig.from_parameter(config) if weight is not None and not hasattr(weight, "resolve_expression"): weight = Value(weight) self.weight = weight
 - [02c534ce] def __init__(self, expression, string, **extra): if not hasattr(string, "resolve_expression"): string = Value(string) super().__init__(expression, string, **extra)
+- [e0b81df2] def __init__(self, string, expression, **extra): if not hasattr(string, "resolve_expression"): string = Value(string) super().__init__(string, expression, **extra)
 - [f186db36] def __invert__(self): # Apply De Morgan's theorem. cloned = self.copy() cloned.connector = self.BITAND if self.connector == self.BITOR else self.BITOR cloned.lhs = ~self.lhs cloned.rhs = ~self.rhs return cloned
 - [b168d574] def __invert__(self): clone = self.copy() clone.invert = not self.invert return clone
 - [e70b6d06] def __invert__(self): cloned = self.copy() cloned.invert = not self.invert return cloned
 - [57090870be5dc3fa] def __rand__(self, other): return self._combine(other, self.BITAND, True)
+- [57090870be5dc3fa-2] def __rand__(self, other): return self._combine(other, self.BITAND, True)
 - [8658e2a00e896e67] def __ror__(self, other): return self._combine(other, self.BITOR, True)
+- [8658e2a00e896e67-2] def __ror__(self, other): return self._combine(other, self.BITOR, True)
 - [71a47520] def __str__(self): result = super().__str__() return ("~%s" % result) if self.invert else result
 - [92fa58e4] def __str__(self): return "(%s)" % super().__str__()
 - [89440b35] def _combine(self, other, connector, reversed): if not isinstance(other, LexemeCombinable): raise TypeError( "A Lexeme can only be combined with another Lexeme, " f"got {other.__class__.__name__}." ) if reversed: return CombinedLexeme(other, connector, self) return CombinedLexeme(self, connector, other)
@@ -70,6 +74,7 @@
 - [a9ee3933] class SearchQueryField(CheckPostgresInstalledMixin, Field): def db_type(self, connection): return "tsquery"
 - [cb12c988] class SearchRank(Func): function = "ts_rank" output_field = FloatField()
 - [6cf00b3b] class SearchVector(SearchVectorCombinable, Func): function = "to_tsvector" arg_joiner = " || ' ' || " output_field = SearchVectorField()
+- [7345c19e] class SearchVectorCombinable: ADD = "||"
 - [9d129420] class SearchVectorExact(Lookup): lookup_name = "exact"
 - [d40edf05] class SearchVectorField(CheckPostgresInstalledMixin, Field): def db_type(self, connection): return "tsvector"
 - [af9c8354] class TrigramBase(Func): output_field = FloatField()

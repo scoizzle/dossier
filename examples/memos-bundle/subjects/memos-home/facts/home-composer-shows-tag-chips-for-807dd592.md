@@ -1,6 +1,6 @@
 # Fact 807dd592
 
-Store id: 4093d44a-76ae-4f61-be53-5fd88feab021
+Store id: 5ded4ba1-cb59-4a0b-b5df-672088b4f0a3
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer shows tag chips for the tags on the current draft.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4093d44a-76ae-4f61-be53-5fd88feab021",
+  "id": "5ded4ba1-cb59-4a0b-b5df-672088b4f0a3",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:tag-chips"

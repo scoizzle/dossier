@@ -1,6 +1,6 @@
 # Fact f3a5d537
 
-Store id: 67e90c3d-b0c7-490e-bbae-c1f4a4b783d8
+Store id: 2bbf4e61-e712-4b87-9c3a-3351d9ad8640
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ProtectedError
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "67e90c3d-b0c7-490e-bbae-c1f4a4b783d8",
+  "id": "2bbf4e61-e712-4b87-9c3a-3351d9ad8640",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ProtectedError"
       },
       "rel": "contains",
-      "target": "68010fea-7d3f-467d-938b-d7b6801910c8"
+      "target": "1f5a3434-b91b-422d-b506-8e3dd843f381"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:class"

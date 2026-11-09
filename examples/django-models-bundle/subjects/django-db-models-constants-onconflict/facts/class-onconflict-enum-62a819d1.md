@@ -1,6 +1,6 @@
 # Fact 62a819d1
 
-Store id: 9ca1326f-75d3-4497-a2c4-b33ca3e930fd
+Store id: 18790b6d-396b-4775-b917-4c66754e2495
 
 ## Text
 
@@ -20,7 +20,7 @@ class OnConflict(Enum)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.9242570+00:00`
+- posted_at: `2026-11-09T23:44:48.6554000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 11,
     "symbol": "OnConflict"
   },
-  "id": "9ca1326f-75d3-4497-a2c4-b33ca3e930fd",
+  "id": "18790b6d-396b-4775-b917-4c66754e2495",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.9242570+00:00"
+    "posted_at": "2026-11-09T23:44:48.6554000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8feca834-240c-45d4-9179-7272c877f6f7",
+  "subject_id": "69661565-deb5-4949-b889-143c805ce940",
   "subject_name": "django/db/models/constants::OnConflict",
   "tags": [
     "entity:class"

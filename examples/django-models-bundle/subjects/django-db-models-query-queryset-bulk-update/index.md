@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.bulk_update
 
-- Subject: django/db/models/query::QuerySet.bulk_update (id `b14d98f6-2b38-4457-bfbf-33a88e8e01ff`)
+- Subject: django/db/models/query::QuerySet.bulk_update (id `ff20acd1-5c5e-46fd-8c9e-a95093948a8d`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

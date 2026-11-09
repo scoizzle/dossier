@@ -1,6 +1,6 @@
 # Fact 87e93816
 
-Store id: eeb12e1b-8535-4665-926a-6f827cff84de
+Store id: 63fa3205-2d64-42b9-9218-8275e659184a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleLessThan
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6413340+00:00`
+- posted_at: `2026-11-09T23:44:52.8042050+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "eeb12e1b-8535-4665-926a-6f827cff84de",
+  "id": "63fa3205-2d64-42b9-9218-8275e659184a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
+    "posted_at": "2026-11-09T23:44:52.8042050+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleLessThan"
       },
       "rel": "contains",
-      "target": "6dd8028d-0254-4828-b1cb-b1761fc099b3"
+      "target": "c3e24090-2335-4452-ab69-5364a553f576"
     }
   ],
   "status": "live",
-  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
+  "subject_id": "ad1ef182-041a-46cc-bb2c-1492986a5333",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

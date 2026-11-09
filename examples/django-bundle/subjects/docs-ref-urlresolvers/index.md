@@ -1,10 +1,10 @@
 # docs/ref/urlresolvers
 
-- Subject: docs/ref/urlresolvers (id `a1e8e36d-2f07-4352-a1ca-dcaab0318f41`)
+- Subject: docs/ref/urlresolvers (id `d8f02f5e-c3c3-4546-9c45-158606f849ce`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3226 tokens
-- Facts shown: 92 of 94
+- Used: 3302 tokens
+- Facts shown: 94 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,6 +17,7 @@
 - The additional keyword arguments that would be passed to the view function. [d7c54e94]
 - The application namespace for the URL pattern that matches the URL. [435bfd3d]
 - The arguments that would be passed to the view function, as parsed from the URL. [efca0e41]
+- The captured keyword arguments that would be passed to the view function, as parsed from the URL. [d0357cae]
 - The instance namespace for the URL pattern that matches the URL. [a5dfe46b]
 - The list of URL patterns tried before the URL either matched one or exhausted available patterns. [f48752e3]
 - The list of individual namespace components in the full application namespace for the URL pattern that matches the URL. For example, if the ``app_name`` is ``'foo:bar'``, then ``app_names`` will be ``['foo', 'bar']``. [06b92461]
@@ -38,11 +39,11 @@
 - .. attribute:: ResolverMatch.captured_kwargs [a057c0b7]
 - .. attribute:: ResolverMatch.extra_kwargs [27817075]
 - .. attribute:: ResolverMatch.func [ec576ad5]
-- .. attribute:: ResolverMatch.kwargs [99f06f06]
-- .. attribute:: ResolverMatch.namespace [d5628f15]
 
 ## All facts
 
+- [99f06f06] .. attribute:: ResolverMatch.kwargs
+- [d5628f15] .. attribute:: ResolverMatch.namespace
 - [1eaef438] .. attribute:: ResolverMatch.namespaces
 - [b8483f4e] .. attribute:: ResolverMatch.route
 - [c63c8042] .. attribute:: ResolverMatch.tried
@@ -75,6 +76,7 @@
 - [be0e1f62] .. function:: get_script_prefix()
 - [b111270c] .. function:: resolve(path, urlconf=None)
 - [37edbe05] .. function:: reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None, *, query=None, fragment=None)
+- [3af08ca2] .. function:: reverse_lazy(viewname, urlconf=None, args=None, kwargs=None, current_app=None, *, query=None, fragment=None)
 - [5a1fbe48] .. module:: django.urls
 - [942ae6c11625c81c-154] .. note::
 - [c54b54cb0805732a-87] .. warning::

@@ -1,10 +1,10 @@
 # django/db/backends/oracle/validation
 
-- Subject: django/db/backends/oracle/validation (id `3733c500-f443-485f-b6fc-90f120e1f8ae`)
+- Subject: django/db/backends/oracle/validation (id `61530861-200d-463d-803b-08bbe4d02017`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 171 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

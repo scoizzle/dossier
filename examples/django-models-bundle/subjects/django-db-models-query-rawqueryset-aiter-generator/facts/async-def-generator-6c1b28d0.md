@@ -1,6 +1,6 @@
 # Fact 6c1b28d0
 
-Store id: 417c85ff-702e-4f08-947e-1ff9c04a43ce
+Store id: 15a06b5a-4b5f-4b5e-8be1-c2d95d8b2d6e
 
 ## Text
 
@@ -20,7 +20,7 @@ async def generator()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7493780+00:00`
+- posted_at: `2026-11-09T23:44:56.2494100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2506,
     "symbol": "RawQuerySet.__aiter__.generator"
   },
-  "id": "417c85ff-702e-4f08-947e-1ff9c04a43ce",
+  "id": "15a06b5a-4b5f-4b5e-8be1-c2d95d8b2d6e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7493780+00:00"
+    "posted_at": "2026-11-09T23:44:56.2494100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7430c5d4-8f13-4d04-b23e-a33c94be8bf8",
+  "subject_id": "4c7c34ec-294e-4c0c-a5ca-b00e1369bc05",
   "subject_name": "django/db/models/query::RawQuerySet.__aiter__.generator",
   "tags": [
     "entity:async_function",

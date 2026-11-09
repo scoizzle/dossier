@@ -1,6 +1,6 @@
 # Fact 8f21013f
 
-Store id: 409c1c7e-d518-4f28-81a3-7260bdcafa9c
+Store id: 1d232d96-175f-496d-95ee-91cf590f3960
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_target_ids(self, target_field_name, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.5657330+00:00`
+- posted_at: `2026-11-09T23:44:52.0172200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1498,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._get_target_ids"
   },
-  "id": "409c1c7e-d518-4f28-81a3-7260bdcafa9c",
+  "id": "1d232d96-175f-496d-95ee-91cf590f3960",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.5657330+00:00"
+    "posted_at": "2026-11-09T23:44:52.0172200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4b76d82d-e017-442f-b27f-b94a27a1fe3e",
+  "subject_id": "7a15e0b9-7cc7-4a8a-a957-08d62eb507cf",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._get_target_ids",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 002aace7
 
-Store id: 127f4409-e1da-4248-b54f-dc36ec2e92b0
+Store id: 29ad820a-de9c-4e0e-95b6-269c1badc3f4
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getitem__(self, subscript)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8325290+00:00`
+- posted_at: `2026-11-09T23:44:49.4731250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 897,
     "symbol": "F.__getitem__"
   },
-  "id": "127f4409-e1da-4248-b54f-dc36ec2e92b0",
+  "id": "29ad820a-de9c-4e0e-95b6-269c1badc3f4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8325290+00:00"
+    "posted_at": "2026-11-09T23:44:49.4731250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "213e56ef-767b-479b-af55-8f21fe48fae4",
+  "subject_id": "b405aac4-de28-42cd-8705-658292a130eb",
   "subject_name": "django/db/models/expressions::F.__getitem__",
   "tags": [
     "entity:method"

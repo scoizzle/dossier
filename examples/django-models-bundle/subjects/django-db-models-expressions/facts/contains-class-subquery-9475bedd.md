@@ -1,6 +1,6 @@
 # Fact 9475bedd
 
-Store id: cbabdb8f-2ef5-4f07-83a8-f58071a18f20
+Store id: 60eb542a-8ff4-4d64-864b-589f90494a22
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Subquery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cbabdb8f-2ef5-4f07-83a8-f58071a18f20",
+  "id": "60eb542a-8ff4-4d64-864b-589f90494a22",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Subquery"
       },
       "rel": "contains",
-      "target": "63d4e49d-e5ca-4c49-8162-f4530a9d9bf0"
+      "target": "3c6e1344-74dd-4839-95bd-9df832f5241c"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

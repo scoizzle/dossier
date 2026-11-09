@@ -1,6 +1,6 @@
 # Fact 71756133
 
-Store id: 02d54fad-96ed-4ebb-88ff-974824905028
+Store id: cf778f1a-e34a-44d2-8b06-6edd41b71c32
 
 ## Text
 
@@ -20,7 +20,7 @@ def related_objects(self, related_model, related_fields, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1212660+00:00`
+- posted_at: `2026-11-09T23:44:48.9156170+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 433,
     "symbol": "Collector.related_objects"
   },
-  "id": "02d54fad-96ed-4ebb-88ff-974824905028",
+  "id": "cf778f1a-e34a-44d2-8b06-6edd41b71c32",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1212660+00:00"
+    "posted_at": "2026-11-09T23:44:48.9156170+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "24a74626-2943-432f-a797-7fb3918e8703",
+  "subject_id": "e31075c8-103f-4248-b80b-f957a9444bac",
   "subject_name": "django/db/models/deletion::Collector.related_objects",
   "tags": [
     "entity:method"

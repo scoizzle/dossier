@@ -1,6 +1,6 @@
 # Fact 2a7b6abc
 
-Store id: 7cbf5417-9dff-492e-ab8c-888ef2b784c1
+Store id: bfbf1e5d-487d-4a29-909e-ed87c888687f
 
 ## Text
 
@@ -20,7 +20,7 @@ def many_to_many(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9896420+00:00`
+- posted_at: `2026-11-09T23:44:55.5410660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 599,
     "symbol": "Options.many_to_many"
   },
-  "id": "7cbf5417-9dff-492e-ab8c-888ef2b784c1",
+  "id": "bfbf1e5d-487d-4a29-909e-ed87c888687f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9896420+00:00"
+    "posted_at": "2026-11-09T23:44:55.5410660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6cbfaf54-b23d-4dd2-a4fd-03e1722ee3ff",
+  "subject_id": "4356fb4d-dfb9-4e12-9b2b-276c83493ff9",
   "subject_name": "django/db/models/options::Options.many_to_many",
   "tags": [
     "entity:method",

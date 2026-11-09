@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/introspection
 
-- Subject: django/contrib/gis/db/backends/postgis/introspection (id `7e212ecf-0a02-47d0-ade0-42e2a8a7baf6`)
+- Subject: django/contrib/gis/db/backends/postgis/introspection (id `a91841eb-99a8-4d0a-95f2-b59cd903b68a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 650 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

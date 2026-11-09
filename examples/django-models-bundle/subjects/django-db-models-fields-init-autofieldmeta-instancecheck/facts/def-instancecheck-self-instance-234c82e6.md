@@ -1,6 +1,6 @@
 # Fact 234c82e6
 
-Store id: 8b630f92-9bc7-4bfd-bdb9-cbc2698bc9c6
+Store id: e58b1ce6-212e-4e2c-bc1f-aa52c30a34f8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __instancecheck__(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9135100+00:00`
+- posted_at: `2026-11-09T23:44:50.3311060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2952,
     "symbol": "AutoFieldMeta.__instancecheck__"
   },
-  "id": "8b630f92-9bc7-4bfd-bdb9-cbc2698bc9c6",
+  "id": "e58b1ce6-212e-4e2c-bc1f-aa52c30a34f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9135100+00:00"
+    "posted_at": "2026-11-09T23:44:50.3311060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ae471ce-b151-423f-abd5-6d7fe066418a",
+  "subject_id": "335d4be1-51a0-4d5b-9dc5-de486174623a",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMeta.__instancecheck__",
   "tags": [
     "entity:method"

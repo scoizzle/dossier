@@ -1,10 +1,10 @@
 # django/contrib/gis/sitemaps/__init__
 
-- Subject: django/contrib/gis/sitemaps/__init__ (id `f22535ff-61bc-478a-b4d3-4e453f3342d9`)
+- Subject: django/contrib/gis/sitemaps/__init__ (id `42e85088-2932-4d41-a19e-6deea7b8673f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 55 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

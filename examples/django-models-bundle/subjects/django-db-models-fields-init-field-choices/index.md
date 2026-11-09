@@ -1,12 +1,12 @@
 # django/db/models/fields/__init__::Field.choices
 
-- Subject: django/db/models/fields/__init__::Field.choices (id `0473ca15-7734-4f01-a92e-ba87d571047b`)
+- Subject: django/db/models/fields/__init__::Field.choices (id `9be077cb-e493-4f16-9cde-5d3b7b651a12`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Aliases: django/db/models/fields/__init__::Field.choices
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 83 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 2
 - Gaps: 0
 

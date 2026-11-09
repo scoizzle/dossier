@@ -5,7 +5,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/django-bundle --depth full --budget 1200 --facts none`
-- Generated at: `2026-11-09T23:38:04Z`
+- Generated at: `2026-11-09T23:49:56Z`
 - Scope: every subject
 - Budget per subject: 1200 tokens (complete mode: the highlight threshold, every fact is listed), depth full
 - Fact files: omitted (`--facts none`)
@@ -18,7 +18,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 - Facts: 50013
 - Conflicts: 0
 - Gaps: 0
-- Subject file tokens, all subjects: 2243307
+- Subject file tokens, all subjects: 2318322
 
 ## How to read it
 

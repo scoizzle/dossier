@@ -1,11 +1,11 @@
 # django/db/models/manager::BaseManager.deconstruct
 
-- Subject: django/db/models/manager::BaseManager.deconstruct (id `49500973-6da9-4872-9ca6-e742757fcde5`)
+- Subject: django/db/models/manager::BaseManager.deconstruct (id `459ea370-ccae-43e4-898a-615e103c8cdd`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

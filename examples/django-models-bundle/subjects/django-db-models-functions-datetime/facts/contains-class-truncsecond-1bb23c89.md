@@ -1,6 +1,6 @@
 # Fact 1bb23c89
 
-Store id: 97d62818-0552-4f22-90dd-4a7830692d73
+Store id: de99f223-f9ff-4742-9176-baf27aff65b0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncSecond
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "97d62818-0552-4f22-90dd-4a7830692d73",
+  "id": "de99f223-f9ff-4742-9176-baf27aff65b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncSecond"
       },
       "rel": "contains",
-      "target": "fba22b0c-7b38-4f45-9a68-610a75291c8d"
+      "target": "4ce3f8a5-53f8-4336-bd94-cd2a86ca5be8"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

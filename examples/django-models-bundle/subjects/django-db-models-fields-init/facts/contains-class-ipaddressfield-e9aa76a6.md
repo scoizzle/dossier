@@ -1,6 +1,6 @@
 # Fact e9aa76a6
 
-Store id: 550a5b60-73f5-4da7-91f5-b13f8cd0d699
+Store id: aea2d9d7-9aaa-47ea-90cc-81fb1927c809
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IPAddressField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "550a5b60-73f5-4da7-91f5-b13f8cd0d699",
+  "id": "aea2d9d7-9aaa-47ea-90cc-81fb1927c809",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IPAddressField"
       },
       "rel": "contains",
-      "target": "c27aad2b-4a67-4738-b41f-214012a0c688"
+      "target": "a5437c41-fa3a-49cf-a742-18fab56eff10"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

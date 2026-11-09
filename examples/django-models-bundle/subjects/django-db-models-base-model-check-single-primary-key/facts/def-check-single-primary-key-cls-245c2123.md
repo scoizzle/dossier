@@ -1,6 +1,6 @@
 # Fact 245c2123
 
-Store id: 7e5bc011-38f4-46db-bae7-50d4d2e5105a
+Store id: 8ed68eff-4b3f-49f3-bc85-a85ed1ecfe8c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_single_primary_key(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7662920+00:00`
+- posted_at: `2026-11-09T23:44:48.5512210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2151,
     "symbol": "Model._check_single_primary_key"
   },
-  "id": "7e5bc011-38f4-46db-bae7-50d4d2e5105a",
+  "id": "8ed68eff-4b3f-49f3-bc85-a85ed1ecfe8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7662920+00:00"
+    "posted_at": "2026-11-09T23:44:48.5512210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae645d0b-571a-4187-a181-b3cc22ff9c8e",
+  "subject_id": "7b0985f4-58d6-48ad-ae9e-97beb25b481c",
   "subject_name": "django/db/models/base::Model._check_single_primary_key",
   "tags": [
     "entity:class_method",

@@ -1,6 +1,6 @@
 # Fact 39d26bb8
 
-Store id: 4a7bfd59-4588-47b8-ba37-d85d7cab6f73
+Store id: 9b734edd-d5d0-4318-bdbe-33d48b1735d7
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function create_reverse_many_to_one_manager
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.5992420+00:00`
+- posted_at: `2026-11-09T23:44:52.0283500+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4a7bfd59-4588-47b8-ba37-d85d7cab6f73",
+  "id": "9b734edd-d5d0-4318-bdbe-33d48b1735d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.5992420+00:00"
+    "posted_at": "2026-11-09T23:44:52.0283500+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "create_reverse_many_to_one_manager"
       },
       "rel": "contains",
-      "target": "c0b30863-fa0e-4f20-90d7-c8ed57a7d290"
+      "target": "8444a628-88fe-44aa-b9d4-d83e901a7dc5"
     }
   ],
   "status": "live",
-  "subject_id": "468ed079-81c3-4570-9307-d21a1d74776a",
+  "subject_id": "266dc5c5-9f24-462d-becd-263287321fdc",
   "subject_name": "django/db/models/fields/related_descriptors",
   "tags": [
     "entity:function"

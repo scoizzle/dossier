@@ -1,6 +1,6 @@
 # Fact d8004457
 
-Store id: bdc19fa0-39d2-452a-9c84-baa7a3a74753
+Store id: 2b4bdca0-acbf-442d-8584-3675504629bf
 
 ## Text
 
@@ -20,7 +20,7 @@ def save_form_data(self, instance, data)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8974870+00:00`
+- posted_at: `2026-11-09T23:44:51.6746250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2185,
     "symbol": "ManyToManyField.save_form_data"
   },
-  "id": "bdc19fa0-39d2-452a-9c84-baa7a3a74753",
+  "id": "2b4bdca0-acbf-442d-8584-3675504629bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8974870+00:00"
+    "posted_at": "2026-11-09T23:44:51.6746250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1370e96-9430-496c-b25e-20711db5b817",
+  "subject_id": "37b2da61-cc98-44ee-8caa-c32c2b100980",
   "subject_name": "django/db/models/fields/related::ManyToManyField.save_form_data",
   "tags": [
     "entity:method"

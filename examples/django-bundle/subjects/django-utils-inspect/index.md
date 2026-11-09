@@ -1,10 +1,10 @@
 # django/utils/inspect
 
-- Subject: django/utils/inspect (id `15c3fdbd-d596-4fe3-9fe9-1bd4a18d1c30`)
+- Subject: django/utils/inspect (id `a6f817f1-43a6-44fc-8144-945eac7aa2be`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1200 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

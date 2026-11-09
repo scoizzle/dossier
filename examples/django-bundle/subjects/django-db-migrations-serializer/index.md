@@ -1,10 +1,10 @@
 # django/db/migrations/serializer
 
-- Subject: django/db/migrations/serializer (id `4e44d968-a21f-44cf-9abb-e1f2c163fdc3`)
+- Subject: django/db/migrations/serializer (id `fb2c654c-7702-49e9-906f-838ef04ead27`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3680 tokens
-- Facts shown: 52 of 52
+- Facts shown: 52 facts
 - Conflicts: 0
 - Gaps: 0
 

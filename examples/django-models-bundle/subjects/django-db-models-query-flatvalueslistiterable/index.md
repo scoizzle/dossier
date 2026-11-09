@@ -1,11 +1,11 @@
 # django/db/models/query::FlatValuesListIterable
 
-- Subject: django/db/models/query::FlatValuesListIterable (id `a52946d2-eebd-4cd9-bb56-57ab1a5d143a`)
+- Subject: django/db/models/query::FlatValuesListIterable (id `6e2f53bb-3e8e-4589-8bd9-21e1863f4502`)
 - Kind: class
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

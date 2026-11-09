@@ -1,11 +1,11 @@
 # django/db/models/expressions::BaseExpression.get_transform
 
-- Subject: django/db/models/expressions::BaseExpression.get_transform (id `d10f0c1d-1484-46e7-ad68-676a9ef49810`)
+- Subject: django/db/models/expressions::BaseExpression.get_transform (id `6b8d9780-f55c-4cc4-8a99-ab2a508729f1`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

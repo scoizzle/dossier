@@ -1,10 +1,10 @@
 # docs/ref/views
 
-- Subject: docs/ref/views (id `49f4730e-d705-4e5e-bbbb-3745c432b691`)
+- Subject: docs/ref/views (id `a7ee17b5-b742-4523-96fa-8dbb7fa60cf7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2100 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact a9ca0760
 
-Store id: 0833a4d3-9bb0-46d0-b19c-93d5dbece8b0
+Store id: 67ef0a81-29e2-405b-9fe7-6a9e55bd09d8
 
 ## Text
 
@@ -20,7 +20,7 @@ class Exp(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7089500+00:00`
+- posted_at: `2026-11-09T23:44:53.7254580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 97,
     "symbol": "Exp"
   },
-  "id": "0833a4d3-9bb0-46d0-b19c-93d5dbece8b0",
+  "id": "67ef0a81-29e2-405b-9fe7-6a9e55bd09d8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7089500+00:00"
+    "posted_at": "2026-11-09T23:44:53.7254580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a2b302af-8deb-4e9b-a8cc-da4cf5ea0705",
+  "subject_id": "4408d07c-815e-43b1-a300-195708ef12c1",
   "subject_name": "django/db/models/functions/math::Exp",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact fc39b2ed
 
-Store id: 22c8ca70-b7f8-41af-9de1-89e35f7c195a
+Store id: c2ce2ae3-9a3e-4d12-8fd8-01233ea26175
 
 ## Text
 
@@ -20,7 +20,7 @@ class RawQuery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.6971990+00:00`
+- posted_at: `2026-11-09T23:44:58.5309640+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 155,
     "symbol": "RawQuery"
   },
-  "id": "22c8ca70-b7f8-41af-9de1-89e35f7c195a",
+  "id": "c2ce2ae3-9a3e-4d12-8fd8-01233ea26175",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.6971990+00:00"
+    "posted_at": "2026-11-09T23:44:58.5309640+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a3342579-fe3c-479f-884e-228d31e6e20b",
+  "subject_id": "cb5fd61d-de34-4319-84c4-5a1a92caf36d",
   "subject_name": "django/db/models/sql/query::RawQuery",
   "tags": [
     "entity:class"

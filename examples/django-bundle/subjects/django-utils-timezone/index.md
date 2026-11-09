@@ -1,24 +1,27 @@
 # django/utils/timezone
 
-- Subject: django/utils/timezone (id `3a2372a9-ad23-41b9-99be-35681bb49903`)
+- Subject: django/utils/timezone (id `778160c3-376f-416c-9088-e48bee9cbeea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2009 tokens
-- Facts shown: 44 of 47
+- Used: 2125 tokens
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Highlights
 
 - Assuming value.tzinfo is either None or a proper datetime.tzinfo, value.utcoffset() implements the appropriate logic. """ return value.utcoffset() is None [a40b5b34]
+- Assuming value.tzinfo is either None or a proper datetime.tzinfo, value.utcoffset() implements the appropriate logic. """ return value.utcoffset() is not None [d7c8c530]
 - Django will then use the time zone defined by settings.TIME_ZONE. """ if hasattr(_active, "value"): del _active.value [211a7d45]
 - If use_tz is provided and is not None, that will force the value to be converted (or not), overriding the value of settings.USE_TZ. [a7222255]
 - Local time is defined by the current time zone, unless another time zone is specified. """ if value is None: value = now() if timezone is None: timezone = get_current_timezone() # Emulate the behavior of astimezone() on Python < 3.6. if is_naive(value): raise ValueError("localtime() cannot be applied to a naive datetime") return value.astimezone(timezone) [6d99bbb2]
 - Local time is defined by the current time zone, unless another time zone is specified. """ return localtime(value, timezone).date() [6af78a23]
 - Only aware datetimes are allowed. When value is omitted, it defaults to now(). [c9caba1f89b63088]
+- Only aware datetimes are allowed. When value is omitted, it defaults to now(). [c9caba1f89b63088-2]
 - The ``timezone`` argument must be an instance of a ``tzinfo`` subclass, a time zone name, or ``None``. If it is ``None``, Django enables the default time zone. """ [afda694c]
 - The ``timezone`` argument must be an instance of a tzinfo subclass or a time zone name. """ if isinstance(timezone, tzinfo): _active.value = timezone elif isinstance(timezone, str): _active.value = zoneinfo.ZoneInfo(timezone) else: raise ValueError("Invalid timezone: %r" % timezone) [2c4bc0aa]
 - The concept is defined in Python's docs: https://docs.python.org/library/datetime.html#datetime.tzinfo [c6c73f98a7c394b1]
+- The concept is defined in Python's docs: https://docs.python.org/library/datetime.html#datetime.tzinfo [c6c73f98a7c394b1-2]
 - This function is designed for use by the template engine. """ should_convert = ( isinstance(value, datetime) and (settings.USE_TZ if use_tz is None else use_tz) and not is_naive(value) and getattr(value, "convert_to_local_time", True) ) return localtime(value) if should_convert else value [ee5aa424]
 - This is a context manager that uses django.utils.timezone.activate() to set the timezone on entry and restores the previously active timezone on exit. [74e04492]
 - This is the time zone defined by settings.TIME_ZONE. """ return zoneinfo.ZoneInfo(settings.TIME_ZONE) [47ed077d]
@@ -26,11 +29,11 @@
 - def __exit__(self, exc_type, exc_value, traceback): if self.old_timezone is None: deactivate() else: _active.value = self.old_timezone [b9698db0]
 - def __init__(self, timezone): self.timezone = timezone [4fcb8ada]
 - """ Timezone-related classes and functions. """ [9a9b8e14]
-- # By design, these four functions don't perform any checks on their arguments. # The caller should ensure that they don't receive an invalid value like None. [a0e7abf8]
-- # In order to avoid accessing settings at compile time, # wrap the logic in a function and cache the result. @functools.lru_cache def get_default_timezone(): """ Return the default time zone as a tzinfo instance. [0bb34e17]
 
 ## All facts
 
+- [a0e7abf8] # By design, these four functions don't perform any checks on their arguments. # The caller should ensure that they don't receive an invalid value like None.
+- [0bb34e17] # In order to avoid accessing settings at compile time, # wrap the logic in a function and cache the result. @functools.lru_cache def get_default_timezone(): """ Return the default time zone as a tzinfo instance.
 - [b9d5ea9a] # Templates
 - [db75c3c6] # These functions don't change os.environ['TZ'] and call time.tzset() # because it isn't thread safe.
 - [c1727d7f] # This function exists for consistency with get_current_timezone_name def get_default_timezone_name(): """Return the name of the default time zone.""" return _get_timezone_name(get_default_timezone())

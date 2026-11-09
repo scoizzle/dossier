@@ -1,6 +1,6 @@
 # Fact 91cbc438
 
-Store id: 08d4172b-aa3a-4dd6-9cdc-4bbe8c43d635
+Store id: 5f5688ea-65e1-4dd4-b64f-5991342b54f3
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, num_buckets=1, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7276230+00:00`
+- posted_at: `2026-11-09T23:44:54.5016320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "Ntile.__init__"
   },
-  "id": "08d4172b-aa3a-4dd6-9cdc-4bbe8c43d635",
+  "id": "5f5688ea-65e1-4dd4-b64f-5991342b54f3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7276230+00:00"
+    "posted_at": "2026-11-09T23:44:54.5016320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f560fb58-6ebc-4c18-9eb1-64432e9f41c5",
+  "subject_id": "1e6321af-006d-4494-9a93-2067a12e73bc",
   "subject_name": "django/db/models/functions/window::Ntile.__init__",
   "tags": [
     "entity:method"

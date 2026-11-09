@@ -1,10 +1,10 @@
 # docs/howto/initial-data
 
-- Subject: docs/howto/initial-data (id `ea425309-8ef1-4c2e-8442-b0039ebaf330`)
+- Subject: docs/howto/initial-data (id `6bcb6b21-4031-451f-a65d-6c6b7774a3d4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1123 tokens
-- Facts shown: 24 of 25
+- Used: 1184 tokens
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - - model: myapp.person pk: 1 fields: first_name: John last_name: Lennon - model: myapp.person pk: 2 fields: first_name: Paul last_name: McCartney [c4e92313]
 - Django will use the first fixture file it finds whose name matches, so if you have fixture files with the same name in different applications, you will be unable to distinguish between them in your ``loaddata`` commands. The easiest way to avoid this problem is by *namespacing* your fixture files. That is, by putting them inside a directory named for their application, as in the relative path example above. [5b09746c]
 - Fixtures are also used by the :ref:`testing framework <topics-testing-fixtures>` to help set up a consistent test environment. [d60ad91f]
+- [ { "model": "myapp.person", "pk": 1, "fields": { "first_name": "John", "last_name": "Lennon" } }, { "model": "myapp.person", "pk": 2, "fields": { "first_name": "Paul", "last_name": "McCartney" } } ] [7a6b55f1]
 - .. _PyYAML: https://pyyaml.org/ [d0c25b90]
 - .. _initial-data-via-fixtures: [d1649042]
 - .. admonition:: Namespace your fixture files [41421ccc]
@@ -29,11 +30,11 @@
 - Provide data with fixtures ========================== [2747bc24]
 - Provide initial data with migrations ==================================== [27f57463]
 - Tell Django where to look for fixture files ------------------------------------------- [eebfe8d2]
-- To automatically load initial data for an app, create a :ref:`data migration <data-migrations>`. Migrations are run when setting up the test database, so the data will be available there, subject to :ref:`some limitations <test-case-serialized-rollback>`. [bd4ab1f6]
+- You'll store this data in a ``fixtures`` directory inside your app. [6590a4cf]
 
 ## All facts
 
+- [bd4ab1f6] To automatically load initial data for an app, create a :ref:`data migration <data-migrations>`. Migrations are run when setting up the test database, so the data will be available there, subject to :ref:`some limitations <test-case-serialized-rollback>`.
 - [8c30a932] To completely prevent default search from happening, use an absolute path to specify the location of your fixture file, e.g. ``loaddata /path/to/sample``.
 - [3de00c7e] You can also provide data using :ref:`fixtures <fixtures-explanation>`, however, this data isn't loaded automatically, except if you use :attr:`.TransactionTestCase.fixtures`.
 - [fce1cf31] You can load data by calling :djadmin:`manage.py loaddata <loaddata>` ``<fixturename>``, where ``<fixturename>`` is the name of the fixture file you've created. Each time you run :djadmin:`loaddata`, the data will be read from the fixture and reloaded into the database. Note this means that if you change one of the rows created by a fixture and then run :djadmin:`loaddata` again, you'll wipe out any changes you've made.
-- [6590a4cf] You'll store this data in a ``fixtures`` directory inside your app.

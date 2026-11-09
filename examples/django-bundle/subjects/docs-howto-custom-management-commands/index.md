@@ -1,10 +1,10 @@
 # docs/howto/custom-management-commands
 
-- Subject: docs/howto/custom-management-commands (id `c41c976f-d55b-4ef4-9682-64b3e78662e1`)
+- Subject: docs/howto/custom-management-commands (id `e9314339-6872-4940-8937-d03ae036bdfe`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4701 tokens
-- Facts shown: 115 of 116
+- Used: 4728 tokens
+- Facts shown: 116 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -109,6 +109,7 @@
 - [9ea00dc5] In other words, to override a command, the new command must have the same name and its app must be before the overridden command's app in :setting:`INSTALLED_APPS`.
 - [6d8e9208] In this example, the ``closepoll`` command will be made available to any project that includes the ``polls`` application in :setting:`INSTALLED_APPS`.
 - [d1bd9d0b] Information on how to test custom management commands can be found in the :ref:`testing docs <topics-testing-management-commands>`.
+- [2663ef88] Management commands and locales ===============================
 - [52de68c2] Management commands from third-party apps that have been unintentionally overridden can be made available under a new name by creating a new command in one of your project's apps (ordered before the third-party app in :setting:`INSTALLED_APPS`) which imports the ``Command`` of the overridden command.
 - [d5882157dc780592] Methods -------
 - [3c80bde9] Overriding commands ===================

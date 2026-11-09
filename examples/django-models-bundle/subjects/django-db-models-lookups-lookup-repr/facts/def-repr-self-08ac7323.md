@@ -1,6 +1,6 @@
 # Fact 08ac7323
 
-Store id: caeae394-7bdd-4042-8931-d091ae78aee1
+Store id: 45178c8e-fe94-4447-b4f5-23f5a2c16db4
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1274240+00:00`
+- posted_at: `2026-11-09T23:44:54.8499990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 58,
     "symbol": "Lookup.__repr__"
   },
-  "id": "caeae394-7bdd-4042-8931-d091ae78aee1",
+  "id": "45178c8e-fe94-4447-b4f5-23f5a2c16db4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1274240+00:00"
+    "posted_at": "2026-11-09T23:44:54.8499990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a8e4a3a-ab05-4e70-92ca-600c88b14890",
+  "subject_id": "dbc2dba9-776d-4de8-b01e-e3547a940c00",
   "subject_name": "django/db/models/lookups::Lookup.__repr__",
   "tags": [
     "entity:method"

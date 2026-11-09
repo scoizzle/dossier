@@ -1,6 +1,6 @@
 # Fact f6a5da96
 
-Store id: 95df35c4-91fd-4226-8cb5-04188321f6bf
+Store id: c08fb4f0-7bd4-40a2-b1ad-9e4e60d8253d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function _get_naive_now
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "95df35c4-91fd-4226-8cb5-04188321f6bf",
+  "id": "c08fb4f0-7bd4-40a2-b1ad-9e4e60d8253d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "_get_naive_now"
       },
       "rel": "contains",
-      "target": "f604c656-bdb3-4c4a-af07-c5e42b5bc07a"
+      "target": "657c4efe-5d50-453e-a669-b62ced6b5105"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:function"

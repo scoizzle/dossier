@@ -1,6 +1,6 @@
 # Fact 95cf49dd
 
-Store id: b3a1ed3f-fabd-44ab-83d9-f38e7cbd0591
+Store id: ae0f7852-d7c1-4b38-96ea-af31d89b160f
 
 ## Text
 
@@ -20,7 +20,7 @@ def demote(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4728860+00:00`
+- posted_at: `2026-11-09T23:44:58.2356180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 170,
     "symbol": "Join.demote"
   },
-  "id": "b3a1ed3f-fabd-44ab-83d9-f38e7cbd0591",
+  "id": "ae0f7852-d7c1-4b38-96ea-af31d89b160f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4728860+00:00"
+    "posted_at": "2026-11-09T23:44:58.2356180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e8b4551e-b6a6-493f-8c7e-56dd23df5fc8",
+  "subject_id": "697f3542-5c3f-48c9-86c9-b1322416f2b0",
   "subject_name": "django/db/models/sql/datastructures::Join.demote",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/utils/encoding
 
-- Subject: django/utils/encoding (id `59e777d1-6a21-4c0f-ae31-8bdac9fad0ec`)
+- Subject: django/utils/encoding (id `13d9b7c6-deaa-4df0-b492-2501dfd56ff2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2085 tokens
-- Facts shown: 26 of 28
+- Used: 2206 tokens
+- Facts shown: 28 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,21 +14,23 @@
 - If strings_only is True, don't convert (some) non-string-like objects. """ # Handle the common case first for performance reasons. if isinstance(s, bytes): if encoding == "utf-8": return s else: return s.decode("utf-8", errors).encode(encoding, errors) if strings_only and is_protected_type(s): return s if isinstance(s, memoryview): return bytes(s) return str(s).encode(encoding, errors) [8345ee38]
 - If strings_only is True, don't convert (some) non-string-like objects. """ # Handle the common case first for performance reasons. if issubclass(type(s), str): return s if strings_only and is_protected_type(s): return s try: if isinstance(s, bytes): s = str(s, encoding, errors) else: s = str(s) except UnicodeDecodeError as e: raise DjangoUnicodeDecodeError(*e.args) from None return s [b7d7a6dc]
 - If strings_only is True, don't convert (some) non-string-like objects. """ if isinstance(s, Promise): # The input is the result of a gettext_lazy() call. return s return force_bytes(s, encoding, strings_only, errors) [7cd832f9]
+- If strings_only is True, don't convert (some) non-string-like objects. """ if isinstance(s, Promise): # The input is the result of a gettext_lazy() call. return s return force_str(s, encoding, strings_only, errors) [7cbee6a9]
 - Objects of protected types are preserved as-is when passed to force_str(strings_only=True). """ return isinstance(obj, _PROTECTED_TYPES) [55b9520f]
 - Take an IRI (string or UTF-8 bytes, e.g. '/I ♥ Django/' or b'/I \xe2\x99\xa5 Django/') and return a string containing the encoded result with ASCII chars only (e.g. '/I%20%E2%99%A5%20Django/'). """ # The list of safe characters here is constructed from the "reserved" and # "unreserved" characters specified in RFC 3986 Sections 2.2 and 2.3: # reserved = gen-delims / sub-delims # gen-delims = ":" / "/" / "?" / "#" / "[" / "]" / "@" # sub-delims = "!" / "$" / "&" / "'" / "(" / ")" # / "*" / "+" / "," / ";" / "=" # unreserved = ALPHA / DIGIT / "-" / "." / "_" / "~" # Of the unreserved characters, urllib.parse.quote() already considers all # but the ~ safe. # The % character is also added to the list of safe characters here, as the # end of RFC 3987 Section 3.1 specifically mentions that % must not be # converted. if iri is None: return iri elif isinstance(iri, Promise): iri = str(iri) return quote(iri, safe="/#%[]=:;$&()+,!?*@'~") [8210ca40]
-- Take an URI in ASCII bytes (e.g. '/I%20%E2%99%A5%20Django/') and return a string containing the encoded result (e.g. '/I%20♥%20Django/'). """ if uri is None: return uri uri = force_bytes(uri) # Fast selective unquote: First, split on '%' and then starting with the # second block, decode the first 2 bytes if they represent a hex code to # decode. The rest of the block is the part after '%AB', not containing # any '%'. Add that to the output without further processing. bits = uri.split(b"%") if len(bits) == 1: iri = uri else: parts = [bits[0]] append = parts.append hextobyte = _hextobyte for item in bits[1:]: hex = item[:2] if hex in hextobyte: append(hextobyte[item[:2]]) append(item[2:]) else: append(b"%") append(item) iri = b"".join(parts) return repercent_broken_unicode(iri).decode() [274c3573]
+- This is the algorithm from RFC 3987 Section 3.1, slightly simplified since the input is assumed to be a string rather than an arbitrary byte stream. [5673cc60]
+- This is the algorithm from RFC 3987 Section 3.2, excluding step 4. [62d8caf2]
+- DEFAULT_LOCALE_ENCODING = get_system_encoding() [1ce5b373]
+- _PROTECTED_TYPES = ( NoneType, int, float, Decimal, datetime.datetime, datetime.date, datetime.time, ) [2bec0660]
 
 ## All facts
 
-- [5673cc60] This is the algorithm from RFC 3987 Section 3.1, slightly simplified since the input is assumed to be a string rather than an arbitrary byte stream.
-- [62d8caf2] This is the algorithm from RFC 3987 Section 3.2, excluding step 4.
+- [274c3573] Take an URI in ASCII bytes (e.g. '/I%20%E2%99%A5%20Django/') and return a string containing the encoded result (e.g. '/I%20♥%20Django/'). """ if uri is None: return uri uri = force_bytes(uri) # Fast selective unquote: First, split on '%' and then starting with the # second block, decode the first 2 bytes if they represent a hex code to # decode. The rest of the block is the part after '%AB', not containing # any '%'. Add that to the output without further processing. bits = uri.split(b"%") if len(bits) == 1: iri = uri else: parts = [bits[0]] append = parts.append hextobyte = _hextobyte for item in bits[1:]: hex = item[:2] if hex in hextobyte: append(hextobyte[item[:2]]) append(item[2:]) else: append(b"%") append(item) iri = b"".join(parts) return repercent_broken_unicode(iri).decode()
 - [439e823b] # List of byte values that uri_to_iri() decodes from percent encoding. # First, the unreserved characters from RFC 3986: _ascii_ranges = [[45, 46, 95, 126], range(65, 91), range(97, 123)] _hextobyte = { (fmt % char).encode(): bytes((char,)) for ascii_range in _ascii_ranges for char in ascii_range for fmt in ["%02x", "%02X"] } # And then everything above 128, because bytes ≥ 128 are part of multibyte # Unicode characters. _hexdig = "0123456789ABCDEFabcdef" _hextobyte.update( {(a + b).encode(): bytes.fromhex(a + b) for a in _hexdig[8:] for b in _hexdig} )
-- [1ce5b373] DEFAULT_LOCALE_ENCODING = get_system_encoding()
-- [2bec0660] _PROTECTED_TYPES = ( NoneType, int, float, Decimal, datetime.datetime, datetime.date, datetime.time, )
 - [d34c6336] class DjangoUnicodeDecodeError(UnicodeDecodeError): def __str__(self): return "%s. You passed in %r (%s)" % ( super().__str__(), self.object, type(self.object), )
 - [640df788] def escape_uri_path(path): """ Escape the unsafe characters from the path portion of a Uniform Resource Identifier (URI). """ # These are the "reserved" and "unreserved" characters specified in RFC # 3986 Sections 2.2 and 2.3: # reserved = ";" | "/" | "?" | ":" | "@" | "&" | "=" | "+" | "$" | "," # unreserved = alphanum | mark # mark = "-" | "_" | "." | "!" | "~" | "*" | "'" | "(" | ")" # The list of safe characters here is constructed subtracting ";", "=", # and "?" according to RFC 3986 Section 3.3. # The reason for not subtracting and escaping "/" is that we are escaping # the entire path, not a path segment. return quote(path, safe="/:@&+$,-_.!~*'()")
 - [6b89b171] def filepath_to_uri(path): """Convert a file system path to a URI portion that is suitable for inclusion in a URL.
 - [a01b177c] def force_bytes(s, encoding="utf-8", strings_only=False, errors="strict"): """ Similar to smart_bytes, except that lazy instances are resolved to strings, rather than kept as lazy objects.
+- [45cc7ba3] def force_str(s, encoding="utf-8", strings_only=False, errors="strict"): """ Similar to smart_str(), except that lazy instances are resolved to strings, rather than kept as lazy objects.
 - [2fd3e774] def get_system_encoding(): """ The encoding for the character type functions. Fallback to 'ascii' if the encoding is unsupported by Python or could not be determined. See tickets #10335 and #5846. """ try: encoding = locale.getlocale()[1] or "ascii" codecs.lookup(encoding) except Exception: encoding = "ascii" return encoding
 - [477a3a6f] def iri_to_uri(iri): """ Convert an Internationalized Resource Identifier (IRI) portion to a URI portion that is suitable for inclusion in a URL.
 - [a335136b] def is_protected_type(obj): """Determine if the object instance is of a protected type.

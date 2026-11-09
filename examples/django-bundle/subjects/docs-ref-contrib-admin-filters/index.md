@@ -1,10 +1,10 @@
 # docs/ref/contrib/admin/filters
 
-- Subject: docs/ref/contrib/admin/filters (id `3d78c28e-6a94-487f-8b0f-2e52e9de9018`)
+- Subject: docs/ref/contrib/admin/filters (id `13f890d8-59ae-4e83-a81f-c607178d0b8c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2304 tokens
-- Facts shown: 52 of 52
+- Facts shown: 52 facts
 - Conflicts: 0
 - Gaps: 0
 

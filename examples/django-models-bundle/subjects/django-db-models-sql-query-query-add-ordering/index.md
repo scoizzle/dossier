@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.add_ordering
 
-- Subject: django/db/models/sql/query::Query.add_ordering (id `6dfc475b-0177-498b-84b4-03b7424ecd5a`)
+- Subject: django/db/models/sql/query::Query.add_ordering (id `dae89c10-6d29-4495-8c9a-a9bf85e6efaf`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

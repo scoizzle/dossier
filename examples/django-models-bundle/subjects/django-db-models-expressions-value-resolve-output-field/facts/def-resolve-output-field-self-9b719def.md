@@ -1,6 +1,6 @@
 # Fact 9b719def
 
-Store id: 3ef819bd-d170-46fd-b65f-ac33a4807e11
+Store id: b1a66c6f-1919-43a6-a926-e1eb15a4175b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8636290+00:00`
+- posted_at: `2026-11-09T23:44:49.5302080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1215,
     "symbol": "Value._resolve_output_field"
   },
-  "id": "3ef819bd-d170-46fd-b65f-ac33a4807e11",
+  "id": "b1a66c6f-1919-43a6-a926-e1eb15a4175b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8636290+00:00"
+    "posted_at": "2026-11-09T23:44:49.5302080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8b9a1c47-62c7-4118-bf46-99a01a803ca7",
+  "subject_id": "963d6be4-2ff8-471e-a613-f27f071833b9",
   "subject_name": "django/db/models/expressions::Value._resolve_output_field",
   "tags": [
     "entity:method"

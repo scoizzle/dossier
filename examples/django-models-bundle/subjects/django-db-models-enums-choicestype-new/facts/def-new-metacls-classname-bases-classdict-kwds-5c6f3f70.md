@@ -1,6 +1,6 @@
 # Fact 5c6f3f70
 
-Store id: d74ce90a-4543-4854-8a84-e6696c6bc3a4
+Store id: 68d319a0-842f-4501-a43e-aca3f8a0c2c4
 
 ## Text
 
@@ -20,7 +20,7 @@ def __new__(metacls, classname, bases, classdict, **kwds)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.4949340+00:00`
+- posted_at: `2026-11-09T23:44:49.0418810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 13,
     "symbol": "ChoicesType.__new__"
   },
-  "id": "d74ce90a-4543-4854-8a84-e6696c6bc3a4",
+  "id": "68d319a0-842f-4501-a43e-aca3f8a0c2c4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.4949340+00:00"
+    "posted_at": "2026-11-09T23:44:49.0418810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ecde5b10-4c58-462c-81dc-982af9d12717",
+  "subject_id": "75bde6c5-517f-481e-b104-4bc3191bc37c",
   "subject_name": "django/db/models/enums::ChoicesType.__new__",
   "tags": [
     "entity:method"

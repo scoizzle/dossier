@@ -1,6 +1,6 @@
 # Fact 8e02af78
 
-Store id: f99a21fe-c8a9-4860-9b89-51e2d27be756
+Store id: 78b023cf-ef23-4549-819c-98218045a10c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_blank_and_null_values(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7391610+00:00`
+- posted_at: `2026-11-09T23:44:50.1922210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2324,
     "symbol": "GenericIPAddressField._check_blank_and_null_values"
   },
-  "id": "f99a21fe-c8a9-4860-9b89-51e2d27be756",
+  "id": "78b023cf-ef23-4549-819c-98218045a10c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7391610+00:00"
+    "posted_at": "2026-11-09T23:44:50.1922210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "44d08406-0cd2-4c19-8ba9-51d9d7c036c8",
+  "subject_id": "508edf13-a1ed-40f5-b4da-83d4efe9bae7",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField._check_blank_and_null_values",
   "tags": [
     "entity:method"

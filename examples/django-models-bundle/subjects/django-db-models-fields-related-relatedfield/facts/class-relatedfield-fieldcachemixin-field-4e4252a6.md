@@ -1,6 +1,6 @@
 # Fact 4e4252a6
 
-Store id: cac8723a-4d27-4c15-aa5b-33c62f189e0a
+Store id: bce7c4d1-2b0c-49b2-832f-3cc60275f93b
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedField(FieldCacheMixin, Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.5964120+00:00`
+- posted_at: `2026-11-09T23:44:51.4589870+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 98,
     "symbol": "RelatedField"
   },
-  "id": "cac8723a-4d27-4c15-aa5b-33c62f189e0a",
+  "id": "bce7c4d1-2b0c-49b2-832f-3cc60275f93b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.5964120+00:00"
+    "posted_at": "2026-11-09T23:44:51.4589870+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "700936dc-c3aa-4d2f-be13-27d176d413ef",
+  "subject_id": "69d168a4-028d-4814-bd96-691b258bf5f3",
   "subject_name": "django/db/models/fields/related::RelatedField",
   "tags": [
     "entity:class"

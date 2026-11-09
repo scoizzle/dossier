@@ -1,10 +1,10 @@
 # django/contrib/admin/migrations/0003_logentry_add_action_flag_choices
 
-- Subject: django/contrib/admin/migrations/0003_logentry_add_action_flag_choices (id `493c1a4f-b356-4435-bd79-0d684a480c93`)
+- Subject: django/contrib/admin/migrations/0003_logentry_add_action_flag_choices (id `95c20064-a0f5-4834-8291-3f23add9d4c3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 135 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

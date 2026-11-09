@@ -1,11 +1,11 @@
 # django/db/models/indexes::IndexExpression.set_wrapper_classes
 
-- Subject: django/db/models/indexes::IndexExpression.set_wrapper_classes (id `16cf4290-d04a-447e-a6f6-d2eec57f512e`)
+- Subject: django/db/models/indexes::IndexExpression.set_wrapper_classes (id `5a947adc-1deb-4f96-b970-32c387d09c09`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

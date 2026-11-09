@@ -1,6 +1,6 @@
 # Fact bccd2051
 
-Store id: 20663086-8ff6-4ff5-8201-980314032826
+Store id: 0b70ec5f-8798-49d7-8cfd-a7d6c1f9fdb1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Transform
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "20663086-8ff6-4ff5-8201-980314032826",
+  "id": "0b70ec5f-8798-49d7-8cfd-a7d6c1f9fdb1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Transform"
       },
       "rel": "contains",
-      "target": "5185bf0d-262d-4ea4-a3e3-ce4a74effc8f"
+      "target": "f5c5dd9a-eb8a-4e3f-bf7e-9fdb4e4b0609"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

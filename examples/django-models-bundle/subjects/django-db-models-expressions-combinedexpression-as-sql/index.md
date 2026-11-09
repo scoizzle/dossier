@@ -1,11 +1,11 @@
 # django/db/models/expressions::CombinedExpression.as_sql
 
-- Subject: django/db/models/expressions::CombinedExpression.as_sql (id `5f8de7b1-361c-4768-809c-51875dee4e49`)
+- Subject: django/db/models/expressions::CombinedExpression.as_sql (id `eb182c60-5df0-43e0-878e-a4261f854509`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

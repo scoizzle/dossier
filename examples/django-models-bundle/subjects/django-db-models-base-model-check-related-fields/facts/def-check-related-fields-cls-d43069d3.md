@@ -1,6 +1,6 @@
 # Fact d43069d3
 
-Store id: 669d4c35-0e5c-4e79-b571-f7b2caa14fd2
+Store id: 63d689ef-b707-42d0-8607-7aeaaebf556a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_related_fields(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7715650+00:00`
+- posted_at: `2026-11-09T23:44:48.5553250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2474,
     "symbol": "Model._check_related_fields"
   },
-  "id": "669d4c35-0e5c-4e79-b571-f7b2caa14fd2",
+  "id": "63d689ef-b707-42d0-8607-7aeaaebf556a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7715650+00:00"
+    "posted_at": "2026-11-09T23:44:48.5553250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7c9eb294-3792-4afc-9b22-680e1a749175",
+  "subject_id": "12fef892-1105-4d62-9866-f5ad9c332ac6",
   "subject_name": "django/db/models/base::Model._check_related_fields",
   "tags": [
     "entity:class_method",

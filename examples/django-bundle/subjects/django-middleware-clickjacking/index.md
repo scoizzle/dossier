@@ -1,10 +1,10 @@
 # django/middleware/clickjacking
 
-- Subject: django/middleware/clickjacking (id `66a53edb-9611-4f2e-8578-03344901d16c`)
+- Subject: django/middleware/clickjacking (id `45ab4c36-e3de-4ecc-8cde-43752c08c5bc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 493 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

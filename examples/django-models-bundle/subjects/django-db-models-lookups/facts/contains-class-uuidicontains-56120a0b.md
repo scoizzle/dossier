@@ -1,6 +1,6 @@
 # Fact 56120a0b
 
-Store id: bb626375-0fbb-4a06-b317-ca7b8008ad1b
+Store id: 60894b97-fc56-4234-a74f-bd14dfaca805
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDIContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bb626375-0fbb-4a06-b317-ca7b8008ad1b",
+  "id": "60894b97-fc56-4234-a74f-bd14dfaca805",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDIContains"
       },
       "rel": "contains",
-      "target": "b93fc582-0529-4192-ae39-52d3cc184a6c"
+      "target": "20d7683a-a227-4402-aa18-6861e1ecd3cd"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

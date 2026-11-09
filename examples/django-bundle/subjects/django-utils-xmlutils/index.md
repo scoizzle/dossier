@@ -1,10 +1,10 @@
 # django/utils/xmlutils
 
-- Subject: django/utils/xmlutils (id `7496b65b-d0af-4572-b69d-63d25714638c`)
+- Subject: django/utils/xmlutils (id `7aac8c66-3de6-45ed-88e5-c63560725384`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 397 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

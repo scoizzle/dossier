@@ -1,11 +1,11 @@
 # django/db/models/expressions::RowRange
 
-- Subject: django/db/models/expressions::RowRange (id `75bdafa9-f8a5-42aa-9e35-26dd885ab8e5`)
+- Subject: django/db/models/expressions::RowRange (id `2eac95b4-17b9-4f91-a0c1-1f33ce9c42ad`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

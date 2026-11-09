@@ -1,6 +1,6 @@
 # Fact dee436ff
 
-Store id: dc5847de-28ae-4249-a0ca-f012a953a17a
+Store id: 270d2994-4666-47bc-ba47-e1a0158e9bbd
 
 ## Text
 
@@ -20,7 +20,7 @@ class BuiltinLookup(Lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2095960+00:00`
+- posted_at: `2026-11-09T23:44:54.9216140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 234,
     "symbol": "BuiltinLookup"
   },
-  "id": "dc5847de-28ae-4249-a0ca-f012a953a17a",
+  "id": "270d2994-4666-47bc-ba47-e1a0158e9bbd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2095960+00:00"
+    "posted_at": "2026-11-09T23:44:54.9216140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "60ecaf8e-1e62-46ff-9273-77e602e18552",
+  "subject_id": "b095d2ab-eb26-4135-a659-a017adeb5256",
   "subject_name": "django/db/models/lookups::BuiltinLookup",
   "tags": [
     "entity:class"

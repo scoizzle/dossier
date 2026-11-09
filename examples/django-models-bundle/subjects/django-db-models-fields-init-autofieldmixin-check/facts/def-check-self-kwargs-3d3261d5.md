@@ -1,6 +1,6 @@
 # Fact 3d3261d5
 
-Store id: 025bc623-2788-474e-8b0b-cd28bf5d46a6
+Store id: 05ed8fae-0444-4a5b-9f96-511e1c0a67e0
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8933800+00:00`
+- posted_at: `2026-11-09T23:44:50.3144100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2881,
     "symbol": "AutoFieldMixin.check"
   },
-  "id": "025bc623-2788-474e-8b0b-cd28bf5d46a6",
+  "id": "05ed8fae-0444-4a5b-9f96-511e1c0a67e0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8933800+00:00"
+    "posted_at": "2026-11-09T23:44:50.3144100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "65cf3c82-db91-4d71-b62b-6c6a6340ba0f",
+  "subject_id": "c3ac43f5-d930-4365-bdd7-b865e5002073",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.check",
   "tags": [
     "entity:method"

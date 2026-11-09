@@ -1,10 +1,10 @@
 # django/core/files/locks
 
-- Subject: django/core/files/locks (id `543cf7c9-b9f7-4a7c-a7cf-ebd92f4971da`)
+- Subject: django/core/files/locks (id `3e556c26-f9d5-4af9-af30-3fc1b571313b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1004 tokens
-- Facts shown: 25 of 25
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 

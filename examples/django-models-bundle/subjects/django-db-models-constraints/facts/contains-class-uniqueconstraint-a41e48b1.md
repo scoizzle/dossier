@@ -1,6 +1,6 @@
 # Fact a41e48b1
 
-Store id: 300d9dc8-7ebe-4b99-b8ad-a18f5234db58
+Store id: ee930ff0-1730-4411-b26c-73bfabd2e738
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UniqueConstraint
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.3332080+00:00`
+- posted_at: `2026-11-09T23:44:48.7914180+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "300d9dc8-7ebe-4b99-b8ad-a18f5234db58",
+  "id": "ee930ff0-1730-4411-b26c-73bfabd2e738",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.3332080+00:00"
+    "posted_at": "2026-11-09T23:44:48.7914180+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UniqueConstraint"
       },
       "rel": "contains",
-      "target": "9c99d040-c978-4adc-b829-e8d26a1e998e"
+      "target": "a2a66c72-04f8-4283-9062-0585fcea9147"
     }
   ],
   "status": "live",
-  "subject_id": "4329b994-d768-4016-b0c5-b696dac271e3",
+  "subject_id": "2413cdca-8c7a-412d-988f-cb092648fcf4",
   "subject_name": "django/db/models/constraints",
   "tags": [
     "entity:class"

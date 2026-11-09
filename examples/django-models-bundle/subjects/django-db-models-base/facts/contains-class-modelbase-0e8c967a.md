@@ -1,6 +1,6 @@
 # Fact 0e8c967a
 
-Store id: b4a0968a-2ff0-461c-9a3f-4a480b141a16
+Store id: 110fea2c-bc17-4f7f-b8af-dec48af322b4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelBase
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b4a0968a-2ff0-461c-9a3f-4a480b141a16",
+  "id": "110fea2c-bc17-4f7f-b8af-dec48af322b4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelBase"
       },
       "rel": "contains",
-      "target": "9a92cbbd-4c60-42e8-bfa5-d2a8714c789b"
+      "target": "d3a9c706-b0a9-47fe-8907-767cddc9646f"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:class"

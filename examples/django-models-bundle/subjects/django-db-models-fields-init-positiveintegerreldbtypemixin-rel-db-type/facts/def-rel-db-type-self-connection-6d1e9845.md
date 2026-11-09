@@ -1,6 +1,6 @@
 # Fact 6d1e9845
 
-Store id: 80e66e57-e831-46f3-90a6-2201f8a62e4e
+Store id: 8c5806e4-fdb7-43ad-a655-a2aa95d5674b
 
 ## Text
 
@@ -20,7 +20,7 @@ def rel_db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7643410+00:00`
+- posted_at: `2026-11-09T23:44:50.2118890+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2427,
     "symbol": "PositiveIntegerRelDbTypeMixin.rel_db_type"
   },
-  "id": "80e66e57-e831-46f3-90a6-2201f8a62e4e",
+  "id": "8c5806e4-fdb7-43ad-a655-a2aa95d5674b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7643410+00:00"
+    "posted_at": "2026-11-09T23:44:50.2118890+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "29fbb191-5a40-4f7b-9591-7e71172b59c2",
+  "subject_id": "d6b56382-3492-4c80-a893-6ee21487fc09",
   "subject_name": "django/db/models/fields/__init__::PositiveIntegerRelDbTypeMixin.rel_db_type",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/composite::CompositePrimaryKey.get_pk_value_on_save
 
-- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_pk_value_on_save (id `40b05822-c3d2-47d9-86b8-bbf7cf58e6ed`)
+- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_pk_value_on_save (id `a2f8c435-89f0-4149-9956-cc3248d39975`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

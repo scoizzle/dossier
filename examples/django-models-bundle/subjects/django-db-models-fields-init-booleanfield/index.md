@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::BooleanField
 
-- Subject: django/db/models/fields/__init__::BooleanField (id `1c691d9d-153d-4fc8-83c6-ad8b6ecd08b7`)
+- Subject: django/db/models/fields/__init__::BooleanField (id `bf90735d-df6e-4929-936e-d4b6366e362e`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

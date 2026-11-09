@@ -1,6 +1,6 @@
 # Fact 9e918f8b
 
-Store id: 32618394-adbf-4d6f-a519-a3c41a4a4359
+Store id: eeb547a2-d900-4ca4-8a7f-abe700a8cc36
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class QuerySet
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "32618394-adbf-4d6f-a519-a3c41a4a4359",
+  "id": "eeb547a2-d900-4ca4-8a7f-abe700a8cc36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "QuerySet"
       },
       "rel": "contains",
-      "target": "b00ad65a-fa33-4333-803d-406a3ed70c02"
+      "target": "9beca53b-c46e-4232-b4f9-77ae2cc445a4"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

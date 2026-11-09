@@ -1,6 +1,6 @@
 # Fact 84c7ed91
 
-Store id: a4362562-dde8-498e-86ad-6d79b9364719
+Store id: 6e2b9a31-a82d-4d6d-8490-ca97f9bef2a8
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDEndsWith(UUIDTextMixin, EndsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4941000+00:00`
+- posted_at: `2026-11-09T23:44:55.1235110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 825,
     "symbol": "UUIDEndsWith"
   },
-  "id": "a4362562-dde8-498e-86ad-6d79b9364719",
+  "id": "6e2b9a31-a82d-4d6d-8490-ca97f9bef2a8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4941000+00:00"
+    "posted_at": "2026-11-09T23:44:55.1235110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b487eb1d-1383-48f1-85a5-5e9465ebad46",
+  "subject_id": "977451fa-5779-4003-995a-c9b1ff2a1c02",
   "subject_name": "django/db/models/lookups::UUIDEndsWith",
   "tags": [
     "entity:class",

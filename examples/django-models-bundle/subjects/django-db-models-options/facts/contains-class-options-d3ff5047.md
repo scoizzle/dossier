@@ -1,6 +1,6 @@
 # Fact d3ff5047
 
-Store id: 2ea89116-6a46-4b18-88a4-1de201438cfd
+Store id: 3a92904f-81c3-4333-9cce-36f69d6e2aa8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Options
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0597530+00:00`
+- posted_at: `2026-11-09T23:44:55.6096670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2ea89116-6a46-4b18-88a4-1de201438cfd",
+  "id": "3a92904f-81c3-4333-9cce-36f69d6e2aa8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0597530+00:00"
+    "posted_at": "2026-11-09T23:44:55.6096670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Options"
       },
       "rel": "contains",
-      "target": "f072ea1d-3bc4-44f4-986b-3d444258e1b3"
+      "target": "7003c2e8-a8a9-4dc9-8c64-69972325edb7"
     }
   ],
   "status": "live",
-  "subject_id": "5abd8127-25aa-41b5-b865-250ec14238cc",
+  "subject_id": "8ecb41bc-ee7b-4793-ab54-21bb0dbd78cb",
   "subject_name": "django/db/models/options",
   "tags": [
     "entity:class"

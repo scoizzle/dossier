@@ -1,6 +1,6 @@
 # Fact 5ab4732e
 
-Store id: e9b8452a-b4f1-460a-ade4-50c6222b9945
+Store id: f56a56b2-0252-4b0d-b698-9174166d15e9
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_field_names_from_opts
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1866820+00:00`
+- posted_at: `2026-11-09T23:44:59.0942990+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e9b8452a-b4f1-460a-ade4-50c6222b9945",
+  "id": "f56a56b2-0252-4b0d-b698-9174166d15e9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
+    "posted_at": "2026-11-09T23:44:59.0942990+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_field_names_from_opts"
       },
       "rel": "contains",
-      "target": "e58e599a-b26d-4882-8869-366d9770ef4b"
+      "target": "30b75681-82c6-4896-9eb0-6b941083e6b9"
     }
   ],
   "status": "live",
-  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
+  "subject_id": "ba44da72-3cad-4dd7-ae2b-7d1f35aaf915",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

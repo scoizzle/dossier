@@ -1,10 +1,10 @@
 # django/template/autoreload
 
-- Subject: django/template/autoreload (id `7cf37512-e1d0-40c0-ad19-542abfe855ed`)
+- Subject: django/template/autoreload (id `cd3cd44e-3672-4cb5-b0f6-c7fe142a9952`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 544 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

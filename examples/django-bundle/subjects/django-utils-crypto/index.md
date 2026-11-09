@@ -1,10 +1,10 @@
 # django/utils/crypto
 
-- Subject: django/utils/crypto (id `6032b32d-dc7b-4427-b9f4-04aae1ae9fb7`)
+- Subject: django/utils/crypto (id `0dddcbb9-a870-48b4-bba3-bf5b021c5459`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 916 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

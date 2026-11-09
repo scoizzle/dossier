@@ -1,11 +1,11 @@
 # django/db/models/options::Options.__init__
 
-- Subject: django/db/models/options::Options.__init__ (id `b73d5369-6158-4b0d-b8a9-80af7f6a610d`)
+- Subject: django/db/models/options::Options.__init__ (id `47ae0901-5af9-4ed5-b709-d1a6ed5f3c9e`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

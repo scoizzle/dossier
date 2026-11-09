@@ -1,11 +1,11 @@
 # django/db/models/fields/mixins::FieldCacheMixin.set_cached_value
 
-- Subject: django/db/models/fields/mixins::FieldCacheMixin.set_cached_value (id `ac878a9c-cb59-4b3c-a215-073fb79dd606`)
+- Subject: django/db/models/fields/mixins::FieldCacheMixin.set_cached_value (id `e0339caa-67f0-4efd-8045-b0f2452d0b2f`)
 - Kind: method
 - Parent: [django/db/models/fields/mixins](../django-db-models-fields-mixins/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

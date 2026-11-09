@@ -1,11 +1,11 @@
 # django/db/models/fetch_modes::FetchPeers.__reduce__
 
-- Subject: django/db/models/fetch_modes::FetchPeers.__reduce__ (id `ce5d7a47-fc7d-4055-8ec3-ce40a946bd83`)
+- Subject: django/db/models/fetch_modes::FetchPeers.__reduce__ (id `b66069a9-4bda-4758-8822-f508cf0f81d4`)
 - Kind: method
 - Parent: [django/db/models/fetch_modes](../django-db-models-fetch-modes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

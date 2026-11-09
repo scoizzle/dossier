@@ -1,11 +1,11 @@
 # django/db/models/fields/json::HasAnyKeys
 
-- Subject: django/db/models/fields/json::HasAnyKeys (id `d3912e20-8af3-4797-ba9f-04f04330edaf`)
+- Subject: django/db/models/fields/json::HasAnyKeys (id `16152845-4178-41bb-9fc1-c709444ca9e4`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

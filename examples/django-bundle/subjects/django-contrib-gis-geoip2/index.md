@@ -1,10 +1,10 @@
 # django/contrib/gis/geoip2
 
-- Subject: django/contrib/gis/geoip2 (id `7a6c47cb-062a-4aa7-aca3-59cbc189b412`)
+- Subject: django/contrib/gis/geoip2 (id `9c961fe3-3d2d-45d9-998f-173363eda596`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2139 tokens
-- Facts shown: 36 of 38
+- Used: 2234 tokens
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -38,8 +38,10 @@
 - [cbe41753] def city(self, query): """ Return a dictionary of city information for the given IP address or Fully Qualified Domain Name (FQDN). Some information in the dictionary may be undefined (None). """ response = self._query(query, require_city=True) region = response.subdivisions[0] if response.subdivisions else None return { "accuracy_radius": response.location.accuracy_radius, "city": response.city.name, "continent_code": response.continent.code, "continent_name": response.continent.name, "country_code": response.country.iso_code, "country_name": response.country.name, "is_in_european_union": response.country.is_in_european_union, "latitude": response.location.latitude, "longitude": response.location.longitude, "metro_code": response.location.metro_code, "postal_code": response.postal.code, "region_code": region.iso_code if region else None, "region_name": region.name if region else None, "time_zone": response.location.time_zone, # Kept for backward compatibility. "dma_code": response.location.metro_code, "region": region.iso_code if region else None, }
 - [25a05390] def country(self, query): """ Return a dictionary with the country code and name when given an IP address or a Fully Qualified Domain Name (FQDN). For example, both '24.124.1.80' and 'djangoproject.com' are valid parameters. """ response = self._query(query, require_city=False) return { "continent_code": response.continent.code, "continent_name": response.continent.name, "country_code": response.country.iso_code, "country_name": response.country.name, "is_in_european_union": response.country.is_in_european_union, }
 - [16f8f77b] def country_code(self, query): "Return the country code for the given IP Address or FQDN." return self.country(query)["country_code"]
+- [3dbb8c4e] def country_name(self, query): "Return the country name for the given IP Address or FQDN." return self.country(query)["country_name"]
 - [90f44440] def geos(self, query): "Return a GEOS Point object for the given query." # Allows importing and using GeoIP2() when GEOS is not installed. from django.contrib.gis.geos import Point
 - [104e2691] def lat_lon(self, query): "Return a tuple of the (latitude, longitude) for the given query." data = self.city(query) return data["latitude"], data["longitude"]
+- [28cd7ecb] def lon_lat(self, query): "Return a tuple of the (longitude, latitude) for the given query." data = self.city(query) return data["longitude"], data["latitude"]
 - [05764be7] """ This module houses the GeoIP2 object, a wrapper for the MaxMind GeoIP2(R) Python API (https://geoip2.readthedocs.io/). This is an alternative to the Python GeoIP2 interface provided by MaxMind.
 - [826537bb] # These are the values stored in the `database_type` field of the metadata. # See https://maxmind.github.io/MaxMind-DB/#database_type for details. SUPPORTED_DATABASE_TYPES = { "DBIP-City-Lite", "DBIP-Country-Lite", "GeoIP2-City", "GeoIP2-Country", "GeoLite2-City", "GeoLite2-Country", }
 - [2a2876ec] For IP-based geolocation, this module requires the GeoLite2 Country and City datasets, in binary format (CSV will not work!). The datasets may be downloaded from MaxMind at https://dev.maxmind.com/geoip/geoip2/geolite2/. Grab GeoLite2-Country.mmdb.gz and GeoLite2-City.mmdb.gz, and unzip them in the directory corresponding to settings.GEOIP_PATH. """

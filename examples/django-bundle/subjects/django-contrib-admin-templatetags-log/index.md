@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/log
 
-- Subject: django/contrib/admin/templatetags/log (id `5c99ce53-6b7c-4b17-be75-56b2eead53dd`)
+- Subject: django/contrib/admin/templatetags/log (id `b8cfc7f4-ab46-40a5-bdbc-6cce53c7662f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 529 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

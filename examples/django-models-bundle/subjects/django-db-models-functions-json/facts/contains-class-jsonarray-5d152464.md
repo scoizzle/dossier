@@ -1,6 +1,6 @@
 # Fact 5d152464
 
-Store id: e19528ac-3c0d-44bc-92bc-453ab3df82ff
+Store id: 4987dee6-57ef-4ef8-8a31-4947e14c5685
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONArray
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.5142500+00:00`
+- posted_at: `2026-11-09T23:44:53.5739800+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e19528ac-3c0d-44bc-92bc-453ab3df82ff",
+  "id": "4987dee6-57ef-4ef8-8a31-4947e14c5685",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.5142500+00:00"
+    "posted_at": "2026-11-09T23:44:53.5739800+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONArray"
       },
       "rel": "contains",
-      "target": "bb6fd098-b015-40b3-965d-347c4d120d3e"
+      "target": "e969c87e-b451-434d-9ba3-482f2d73fc93"
     }
   ],
   "status": "live",
-  "subject_id": "ac17bd2f-e47a-4f85-889d-fb905a29fe3f",
+  "subject_id": "9279d8eb-8723-4d88-ad40-e95bcce6d2b4",
   "subject_name": "django/db/models/functions/json",
   "tags": [
     "entity:class"

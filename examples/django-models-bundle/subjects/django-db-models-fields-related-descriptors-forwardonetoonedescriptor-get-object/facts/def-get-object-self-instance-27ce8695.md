@@ -1,6 +1,6 @@
 # Fact 27ce8695
 
-Store id: 39a72082-5a24-4650-a1d7-a93bd2992987
+Store id: 5ba020ae-dc5c-4494-85b1-db4b9bf4810e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_object(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1739280+00:00`
+- posted_at: `2026-11-09T23:44:51.8609790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 392,
     "symbol": "ForwardOneToOneDescriptor.get_object"
   },
-  "id": "39a72082-5a24-4650-a1d7-a93bd2992987",
+  "id": "5ba020ae-dc5c-4494-85b1-db4b9bf4810e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1739280+00:00"
+    "posted_at": "2026-11-09T23:44:51.8609790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e28e221d-1afd-4051-b1f4-5061d6144727",
+  "subject_id": "4c4539a6-2186-4f18-b952-805ebf41c443",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardOneToOneDescriptor.get_object",
   "tags": [
     "entity:method"

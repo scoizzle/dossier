@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/base
 
-- Subject: django/contrib/sessions/backends/base (id `9f1c9d24-0cdc-4d1d-97ed-3c7d459a1b96`)
+- Subject: django/contrib/sessions/backends/base (id `5121177c-2156-4d1d-9135-ea7f43769350`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4152 tokens
-- Facts shown: 89 of 92
+- Used: 4364 tokens
+- Facts shown: 92 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,19 +17,20 @@
 - Optionally, this function accepts `modification` and `expiry` keyword arguments specifying the modification and expiry of the session. """ try: modification = kwargs["modification"] except KeyError: modification = timezone.now() # Make the difference between "expiry=None passed in kwargs" and # "expiry not passed in kwargs", in order to guarantee not to trigger # self.load() when expiry is provided. try: expiry = kwargs["expiry"] except KeyError: expiry = self.get("_session_expiry") [35eab2ec]
 - Optionally, this function accepts `modification` and `expiry` keyword arguments specifying the modification and expiry of the session. """ try: modification = kwargs["modification"] except KeyError: modification = timezone.now() # Same comment as in get_expiry_age try: expiry = kwargs["expiry"] except KeyError: expiry = self.get("_session_expiry") [5280fbcb]
 - if isinstance(expiry, datetime): return expiry elif isinstance(expiry, str): return datetime.fromisoformat(expiry) expiry = expiry or self.get_session_cookie_age() return modification + timedelta(seconds=expiry) [e3c39df46d66fb2f]
+- if isinstance(expiry, datetime): return expiry elif isinstance(expiry, str): return datetime.fromisoformat(expiry) expiry = expiry or self.get_session_cookie_age() return modification + timedelta(seconds=expiry) [e3c39df46d66fb2f-2]
 - if not expiry: # Checks both None and 0 cases return self.get_session_cookie_age() if not isinstance(expiry, (datetime, str)): return expiry if isinstance(expiry, str): expiry = datetime.fromisoformat(expiry) delta = expiry - modification return delta.days * 86400 + delta.seconds [c519ac4a276341b6]
+- if not expiry: # Checks both None and 0 cases return self.get_session_cookie_age() if not isinstance(expiry, (datetime, str)): return expiry if isinstance(expiry, str): expiry = datetime.fromisoformat(expiry) delta = expiry - modification return delta.days * 86400 + delta.seconds [c519ac4a276341b6-2]
 - # Methods that child classes must implement. [c77627da]
 - @classmethod async def aclear_expired(cls): return await sync_to_async(cls.clear_expired)() [63102cf4]
 - @classmethod def clear_expired(cls): """ Remove expired sessions from the session store. [52cd6455]
-- @property def key_salt(self): return "django.contrib.sessions." + self.__class__.__qualname__ [05cfba7e]
-- TEST_COOKIE_NAME = "testcookie" TEST_COOKIE_VALUE = "worked" [0f913b04]
 - __not_given = object() [0bee4b5d]
-- _session = property(_get_session) [c0c35695]
-- async def _aget_new_session_key(self): while True: session_key = get_random_string(32, VALID_KEY_CHARS) if not await self.aexists(session_key): return session_key [0ad82628]
-- pass [7655780f0d17b825-7]
 
 ## All facts
 
+- [05cfba7e] @property def key_salt(self): return "django.contrib.sessions." + self.__class__.__qualname__
+- [0f913b04] TEST_COOKIE_NAME = "testcookie" TEST_COOKIE_VALUE = "worked"
+- [c0c35695] _session = property(_get_session)
+- [0ad82628] async def _aget_new_session_key(self): while True: session_key = get_random_string(32, VALID_KEY_CHARS) if not await self.aexists(session_key): return session_key
 - [3734b65a] async def _aget_or_create_session_key(self): if self._session_key is None: self._session_key = await self._aget_new_session_key() return self._session_key
 - [abb2fa8a] async def _aget_session(self, no_load=False): self.accessed = True try: return self._session_cache except AttributeError: if self.session_key is None or no_load: self._session_cache = {} else: self._session_cache = await self.aload() return self._session_cache
 - [d22c2288] async def acreate(self): return await sync_to_async(self.create)()
@@ -41,6 +42,7 @@
 - [41d7babe] async def aget(self, key, default=None): return (await self._aget_session()).get(key, default)
 - [b57c357d] async def aget_expire_at_browser_close(self): if (expiry := await self.aget("_session_expiry")) is None: return settings.SESSION_EXPIRE_AT_BROWSER_CLOSE return expiry == 0
 - [ebaf9d5a] async def aget_expiry_age(self, **kwargs): try: modification = kwargs["modification"] except KeyError: modification = timezone.now() try: expiry = kwargs["expiry"] except KeyError: expiry = await self.aget("_session_expiry")
+- [10d858f0] async def aget_expiry_date(self, **kwargs): try: modification = kwargs["modification"] except KeyError: modification = timezone.now() try: expiry = kwargs["expiry"] except KeyError: expiry = await self.aget("_session_expiry")
 - [2a06c53d] async def ahas_key(self, key): return key in (await self._aget_session())
 - [1384ae19] async def aitems(self): return (await self._aget_session()).items()
 - [a3f94d55] async def akeys(self): return (await self._aget_session()).keys()
@@ -93,6 +95,7 @@
 - [c4c86457] def test_cookie_worked(self): return self.get(self.TEST_COOKIE_NAME) == self.TEST_COOKIE_VALUE
 - [8b642d22] def update(self, dict_): self._session.update(dict_) self.modified = True
 - [82ffc6e3] def values(self): return self._session.values()
+- [7655780f0d17b825-7] pass
 - [7655780f0d17b825-8] pass
 - [8a194b3d] session_key = property(_get_session_key) _session_key = property(_get_session_key, _set_session_key)
 - [0906189e] # session_key should not be case sensitive because some backends can store it # on case insensitive file systems. VALID_KEY_CHARS = string.ascii_lowercase + string.digits

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.ref_alias
 
-- Subject: django/db/models/sql/query::Query.ref_alias (id `b6fa6fdb-1716-4420-946d-c4c9fba8c0c3`)
+- Subject: django/db/models/sql/query::Query.ref_alias (id `90996211-ab5e-4fc8-8292-9581508f2d89`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

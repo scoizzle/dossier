@@ -1,6 +1,6 @@
 # Fact 84999974
 
-Store id: d3938739-fb0e-466c-b5a4-0a04ff3d1fa6
+Store id: 4bb0ecec-f814-4bff-b066-e04a29a81b42
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedExact(RelatedLookupMixin, Exact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.9928990+00:00`
+- posted_at: `2026-11-09T23:44:52.2603230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 131,
     "symbol": "RelatedExact"
   },
-  "id": "d3938739-fb0e-466c-b5a4-0a04ff3d1fa6",
+  "id": "4bb0ecec-f814-4bff-b066-e04a29a81b42",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.9928990+00:00"
+    "posted_at": "2026-11-09T23:44:52.2603230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "62ca3d54-9703-4b54-9e7d-4e4f62d7e2a0",
+  "subject_id": "6e4b847e-e553-4492-9ebe-d9ebfcaa1f85",
   "subject_name": "django/db/models/fields/related_lookups::RelatedExact",
   "tags": [
     "entity:class"

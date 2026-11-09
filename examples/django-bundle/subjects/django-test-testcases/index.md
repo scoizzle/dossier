@@ -1,10 +1,10 @@
 # django/test/testcases
 
-- Subject: django/test/testcases (id `f47617da-dc84-4f1b-8889-d2c28b4c7299`)
+- Subject: django/test/testcases (id `576b4496-9af7-42ef-8a16-102e691f22a3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 15114 tokens
-- Facts shown: 213 of 215
+- Used: 15298 tokens
+- Facts shown: 215 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -46,6 +46,7 @@
 - [eeca5b66] else: # Not a followed redirect self.assertEqual( response.status_code, status_code, msg_prefix + ( "Response didn't redirect as expected: Response code was %d " "(expected %d)" ) % (response.status_code, status_code), )
 - [b3f3591f] errors can be either a single error message or a list of errors messages. Using errors=[] test that the field has no errors.
 - [a167fb6b] if (count is None and real_count > 0) or ( (count is not None and real_count == count) ): return
+- [f651bf95] if (count is None and real_count > 0) or count == real_count: return
 - [05c1684a] if cls.fixtures: for db_name in cls._databases_names(include_mirrors=False): try: call_command( "loaddata", *cls.fixtures, verbosity=0, database=db_name, ) except Exception: cls._rollback_atomics(cls.cls_atomics) raise pre_attrs = cls.__dict__.copy() try: cls.setUpTestData() except Exception: cls._rollback_atomics(cls.cls_atomics) raise for name, value in cls.__dict__.items(): if value is not pre_attrs.get(name): setattr(cls, name, TestData(name, value))
 - [3aba6c3e] if cls.reset_sequences: raise TypeError("reset_sequences cannot be used on TestCase instances") cls.atomics = cls._enter_atomics() if not cls._databases_support_savepoints(): if cls.fixtures: for db_name in cls._databases_names(include_mirrors=False): call_command( "loaddata", *cls.fixtures, **{"verbosity": 0, "database": db_name}, ) cls.setUpTestData()
 - [6109bbf1] if count is not None: msg = ( f"{real_count} != {count} : {msg_prefix}Found {real_count} instances " f"of {text_repr} (expected {count}) in the following response\n" f"{response_content!r}" ) else: msg = ( f"False is not true : {msg_prefix}Couldn't find {text_repr} in the " f"following response\n{response_content!r}" ) self.fail(msg)
@@ -161,6 +162,7 @@
 - [e2241fb0] def assertHTMLNotEqual(self, html1, html2, msg=None): """Assert that two HTML snippets are not semantically equivalent.""" dom1 = assert_and_parse_html( self, html1, msg, "First argument is not valid HTML:" ) dom2 = assert_and_parse_html( self, html2, msg, "Second argument is not valid HTML:" )
 - [ce3ee0f8] def assertInHTML(self, needle, haystack, count=None, msg_prefix=""): parsed_needle = assert_and_parse_html( self, needle, None, "First argument is not valid HTML:" ) parsed_haystack = assert_and_parse_html( self, haystack, None, "Second argument is not valid HTML:" ) real_count = parsed_haystack.count(parsed_needle)
 - [b5463468] def assertJSONEqual(self, raw, expected_data, msg=None): """ Assert that the JSON fragments raw and expected_data are equal. Usual JSON non-significant whitespace rules apply as the heavyweight is delegated to the json library. """ try: data = json.loads(raw) except json.JSONDecodeError: self.fail("First argument is not valid JSON: %r" % raw) if isinstance(expected_data, str): try: expected_data = json.loads(expected_data) except ValueError: self.fail("Second argument is not valid JSON: %r" % expected_data) self.assertEqual(data, expected_data, msg=msg)
+- [48284c0d] def assertJSONNotEqual(self, raw, expected_data, msg=None): """ Assert that the JSON fragments raw and expected_data are not equal. Usual JSON non-significant whitespace rules apply as the heavyweight is delegated to the json library. """ try: data = json.loads(raw) except json.JSONDecodeError: self.fail("First argument is not valid JSON: %r" % raw) if isinstance(expected_data, str): try: expected_data = json.loads(expected_data) except json.JSONDecodeError: self.fail("Second argument is not valid JSON: %r" % expected_data) self.assertNotEqual(data, expected_data, msg=msg)
 - [9f4ee33b] def assertNotContains( self, response, text, status_code=200, msg_prefix="", html=False ): """ Assert that a response indicates that some content was retrieved successfully, (i.e., the HTTP status code was as expected) and that ``text`` doesn't occur in the content of the response. """ real_count, msg_prefix, response_content = self._assert_contains( response, text, status_code, msg_prefix, html )
 - [20252c63] def assertNotInHTML(self, needle, haystack, msg_prefix=""): self.assertInHTML(needle, haystack, count=0, msg_prefix=msg_prefix)
 - [16051b87] def assertNumQueries(self, num, func=None, *args, using=DEFAULT_DB_ALIAS, **kwargs): conn = connections[using]

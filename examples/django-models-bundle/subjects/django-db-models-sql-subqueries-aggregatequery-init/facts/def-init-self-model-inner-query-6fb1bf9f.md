@@ -1,6 +1,6 @@
 # Fact 6fb1bf9f
 
-Store id: a53e95db-66ba-4a44-9cdf-b5df7ce8e897
+Store id: 86555975-84ac-4390-991a-29790cb0abf5
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, model, inner_query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.4182070+00:00`
+- posted_at: `2026-11-09T23:44:59.4484000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 175,
     "symbol": "AggregateQuery.__init__"
   },
-  "id": "a53e95db-66ba-4a44-9cdf-b5df7ce8e897",
+  "id": "86555975-84ac-4390-991a-29790cb0abf5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.4182070+00:00"
+    "posted_at": "2026-11-09T23:44:59.4484000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b2e21aae-4e58-4a8c-8370-9ff8967060ad",
+  "subject_id": "c031dd18-a06d-42ff-861b-ecd99b14f53a",
   "subject_name": "django/db/models/sql/subqueries::AggregateQuery.__init__",
   "tags": [
     "entity:method"

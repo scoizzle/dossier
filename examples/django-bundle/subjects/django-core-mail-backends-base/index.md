@@ -1,10 +1,10 @@
 # django/core/mail/backends/base
 
-- Subject: django/core/mail/backends/base (id `de7c7a45-868f-4f69-97ae-6c88b55dd7ea`)
+- Subject: django/core/mail/backends/base (id `6c067488-a6cb-4560-bb58-e76c1230586a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1074 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

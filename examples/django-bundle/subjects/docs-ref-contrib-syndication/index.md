@@ -1,10 +1,10 @@
 # docs/ref/contrib/syndication
 
-- Subject: docs/ref/contrib/syndication (id `e879f687-c126-402b-a35a-24bf361da70d`)
+- Subject: docs/ref/contrib/syndication (id `97064a1f-9712-41f6-a507-4a886a439355`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 11318 tokens
-- Facts shown: 276 of 304
+- Used: 12384 tokens
+- Facts shown: 304 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -15,6 +15,7 @@
 - def items(self): return Article.objects.order_by("-pub_date")[:5] [4c7d69a2]
 - # AUTHOR EMAIL --One of the following three is optional. The framework # looks for them in this order. [04db6766]
 - # AUTHOR LINK --One of the following three is optional. The framework # looks for them in this order. In each case, the URL should include # the scheme (such as "https://") and domain name. [9b281b71]
+- # AUTHOR NAME --One of the following three is optional. The framework # looks for them in this order. [b2eb2e3b]
 - # CATEGORIES -- One of the following three is optional. The framework # looks for them in this order. In each case, the method/attribute # should return an iterable object that returns strings. [31fd43cb]
 - # COPYRIGHT NOTICE -- One of the following three is optional. The # framework looks for them in this order. [47a313c1]
 - # DESCRIPTION -- One of the following three is required. The framework # looks for them in this order. [98c2b48a]
@@ -28,21 +29,27 @@
 - # ITEM AUTHOR NAME -- One of the following three is optional. The # framework looks for them in this order. [15e41723]
 - # ITEM CATEGORIES -- It's optional to use one of these three. This is # a hook that specifies how to get the list of categories for a given # item. In each case, the method/attribute should return an iterable # object that returns strings. [1ec7bc33]
 - # ITEM COMMENTS URL -- It's optional to use one of these three. This is # a hook that specifies how to get the URL of a page for comments for a # given item. [e97beec3]
-- # ITEM COPYRIGHT NOTICE (only applicable to Atom feeds) -- One of the # following three is optional. The framework looks for them in this # order. [1033f925]
+- Note: [baa2e082d1d55e26-2]
 
 ## All facts
 
+- [1033f925] # ITEM COPYRIGHT NOTICE (only applicable to Atom feeds) -- One of the # following three is optional. The framework looks for them in this # order.
 - [48d58d29] # ITEM ENCLOSURE LENGTH -- One of these three is required if you're # publishing enclosures and you're not using ``item_enclosures``. The # framework looks for them in this order. In each case, the returned # value should be either an integer, or a string representation of the # integer, in bytes.
 - [bc2652e4] # ITEM ENCLOSURE MIME TYPE -- One of these three is required if you're # publishing enclosures and you're not using ``item_enclosures``. The # framework looks for them in this order.
+- [cf737bfd] # ITEM ENCLOSURE URL -- One of these three is required if you're # publishing enclosures and you're not using ``item_enclosures``. The # framework looks for them in this order.
 - [673eb429] # ITEM ENCLOSURES -- One of the following three is optional. The # framework looks for them in this order. If one of them is defined, # ``item_enclosure_url``, ``item_enclosure_length``, and # ``item_enclosure_mime_type`` will have no effect.
 - [cd470061] # ITEM LINK -- One of these three is required. The framework looks for # them in this order.
 - [99315119] # ITEM PUBDATE -- It's optional to use one of these three. This is a # hook that specifies how to get the pubdate for a given item. # In each case, the method/attribute should return a Python # datetime.datetime object.
 - [9f59152a] # ITEM TITLE AND DESCRIPTION -- If title_template or # description_template are not defined, these are used instead. Both are # optional, by default they will use the string representation of the # item.
+- [eeb8323f] # ITEM UPDATED -- It's optional to use one of these three. This is a # hook that specifies how to get the updateddate for a given item. # In each case, the method/attribute should return a Python # datetime.datetime object.
+- [20c846dd] # ITEMS -- One of the following three is required. The framework looks # for them in this order.
 - [17bc16da] # ITEM_GUID -- The following method is optional. If not provided, the # item's link is used by default.
 - [ca8c2f8b] # ITEM_GUID_IS_PERMALINK -- The following method is optional. If # provided, it sets the 'isPermaLink' attribute of an item's # GUID element. This method is used only when 'item_guid' is # specified.
 - [ccc6d220] # LANGUAGE -- Optional. This should be a string specifying a language # code. Defaults to django.utils.translation.get_language(). language = "de"
+- [9958f5b8] # LINK -- One of the following three is required. The framework # looks for them in this order.
 - [b6fca62a] # STYLESHEETS -- Optional. To set, provide one of the following three. # The framework looks for them in this order.
 - [b65397e1] # TEMPLATE NAMES -- Optional. These should be strings # representing names of Django templates that the system should # use in rendering the title and description of your feed items. # Both are optional. If a template is not specified, the # item_title() or item_description() methods are used instead.
+- [0a1dce25] # TITLE -- One of the following three is required. The framework # looks for them in this order.
 - [f0356687] # TTL -- One of the following three is optional. The framework looks # for them in this order. Ignored for Atom feeds.
 - [ecb1efeb] # item_link is only needed if NewsItem has no get_absolute_url method. def item_link(self, item): return reverse("news-item", args=[item.pk])
 - [af80c808] author_email = "test@example.com" # Hard-coded author email.
@@ -54,9 +61,13 @@
 - [4a5493b5] def author_email(self): """ Returns the feed's author's email as a normal Python string. """
 - [2502a6e5] def author_email(self, obj): """ Takes the object returned by get_object() and returns the feed's author's email as a normal Python string. """
 - [182fbc80] def author_link(self): """ Returns the feed's author's URL as a normal Python string. """
+- [49e6f9cd] def author_link(self, obj): """ Takes the object returned by get_object() and returns the feed's author's URL as a normal Python string. """
+- [6a22228c] def author_name(self): """ Returns the feed's author's name as a normal Python string. """
+- [27838d34] def author_name(self, obj): """ Takes the object returned by get_object() and returns the feed's author's name as a normal Python string. """
 - [8d967208] def categories(self): """ Returns the feed's categories as iterable over strings. """
 - [a703ef18] def categories(self, obj): """ Takes the object returned by get_object() and returns the feed's categories as iterable over strings. """
 - [6ad15efd] def description(self): """ Returns the feed's description as a normal Python string. """
+- [3a36f0a6] def description(self, obj): """ Takes the object returned by get_object() and returns the feed's description as a normal Python string. """
 - [2b6ccc8b] def description(self, obj): return "Crimes recently reported in police beat %s" % obj.beat
 - [3b7e6858] def feed_copyright(self): """ Returns the feed's copyright notice as a normal Python string. """
 - [0da1da69] def feed_copyright(self, obj): """ Takes the object returned by get_object() and returns the feed's copyright notice as a normal Python string. """
@@ -70,7 +81,9 @@
 - [0ea32599] def item_author_email(self): """ Returns the author email for every item in the feed. """
 - [e827b333] def item_author_email(self, obj): """ Takes an item, as returned by items(), and returns the item's author's email as a normal Python string. """
 - [ee92cd81] def item_author_link(self): """ Returns the author URL for every item in the feed. """
+- [4a9e786c] def item_author_link(self, obj): """ Takes an item, as returned by items(), and returns the item's author's URL as a normal Python string. """
 - [1fc4ad3b] def item_author_name(self): """ Returns the author name for every item in the feed. """
+- [9c4b040d] def item_author_name(self, item): """ Takes an item, as returned by items(), and returns the item's author's name as a normal Python string. """
 - [8b4c413c] def item_categories(self): """ Returns the categories for every item in the feed. """
 - [151f3a28] def item_categories(self, item): """ Takes an item, as returned by items(), and returns the item's categories. """
 - [56744a54] def item_comments(self): """ Returns the comments URL for every item in the feed. """
@@ -85,17 +98,23 @@
 - [7b60fae0] def item_enclosure_mime_type(self): """ Returns the enclosure MIME type for every item in the feed. """
 - [ec8a62f5] def item_enclosure_mime_type(self, item): """ Takes an item, as returned by items(), and returns the item's enclosure MIME type. """
 - [16023b66] def item_enclosure_url(self): """ Returns the enclosure URL for every item in the feed. """
+- [1ee896da] def item_enclosure_url(self, item): """ Takes an item, as returned by items(), and returns the item's enclosure URL. """
 - [70d4c7c2] def item_enclosures(self): """ Returns the ``django.utils.feedgenerator.Enclosure`` list for every item in the feed. """
 - [db57478d] def item_enclosures(self, item): """ Takes an item, as returned by items(), and returns a list of ``django.utils.feedgenerator.Enclosure`` objects. """
 - [19a65a6f] def item_guid(self, obj): """ Takes an item, as return by items(), and returns the item's ID. """
 - [5d8f569a] def item_guid_is_permalink(self, obj): """ Takes an item, as returned by items(), and returns a boolean. """
+- [10f55ef2] def item_link(self): """ Returns the URL for every item in the feed. """
 - [4b7b92b3] def item_link(self, item): """ Takes an item, as returned by items(), and returns the item's URL. """
 - [a4d62df8] def item_pubdate(self): """ Returns the pubdate for every item in the feed. """
+- [001acf18] def item_pubdate(self, item): """ Takes an item, as returned by items(), and returns the item's pubdate. """
 - [5e29015d] def item_title(self): """ Returns the title for every item in the feed. """
+- [5c61d12d] def item_title(self, item): """ Takes an item, as returned by items(), and returns the item's title as a normal Python string. """
 - [3754fd67] def item_title(self, item): return item.title
 - [f2e8ab05] def item_updateddate(self): """ Returns the updateddate for every item in the feed. """
+- [b3f33475] def item_updateddate(self, item): """ Takes an item, as returned by items(), and returns the item's updateddate. """
 - [97a9fcd4] def items(self): """ Returns a list of items to publish in this feed. """
 - [eb9520893e312aa8] def items(self): return NewsItem.objects.order_by("-pub_date")[:5]
+- [eb9520893e312aa8-2] def items(self): return NewsItem.objects.order_by("-pub_date")[:5]
 - [d2af52a7] def items(self, obj): """ Takes the object returned by get_object() and returns a list of items to publish in this feed. """
 - [f602be8f] def items(self, obj): return Crime.objects.filter(beat=obj).order_by("-crime_date")[:30]
 - [c4cfc0c4] def link(self): """ Returns the URL of the HTML version of the feed as a normal Python string. """
@@ -104,6 +123,7 @@
 - [dafd1924] def stylesheets(self): """ Returns the feed's stylesheets (as URL strings or Stylesheet instances). """
 - [74e57cc1] def stylesheets(self, obj): """ Takes the object returned by get_object() and returns the feed's stylesheets (as URL strings or as Stylesheet instances). """
 - [6592c097] def title(self): """ Returns the feed's title as a normal Python string. """
+- [afafe6bf] def title(self, obj): """ Takes the object returned by get_object() and returns the feed's title as a normal Python string. """
 - [ce137d63] def title(self, obj): return "Police beat central: Crimes for beat %s" % obj.beat
 - [723e0519] def ttl(self): """ Returns the feed's TTL as a normal Python string. """
 - [2917d848] def ttl(self, obj): """ Takes the object returned by get_object() and returns the feed's TTL (Time To Live) as a normal Python string. """
@@ -113,6 +133,9 @@
 - [d8696160] feed_type = feedgenerator.Rss201rev2Feed
 - [835f34c6] feed_url = "/blog/rss/" # Hard-coded URL.
 - [de224c3f] from mysite.models import Article from django.contrib.syndication.views import Feed
+- [65bf2aab] item_author_email = "test@example.com" # Hard-coded author email.
+- [6e5e55aa] item_author_link = "https://www.example.com/" # Hard-coded author URL.
+- [812b0db3] item_author_name = "Sally Smith" # Hard-coded author name.
 - [c5f73793] item_categories = ["python", "django"] # Hard-coded categories.
 - [29024a2a] item_comments = "https://www.example.com/comments" # Hard-coded comments URL
 - [a7568eb0] item_copyright = "Copyright (c) 2007, Sally Smith" # Hard-coded copyright notice.
@@ -161,12 +184,17 @@
 - [6d3665af] class LatestEntriesFeed(Feed): title = "Police beat site news" link = "/sitenews/" description = "Updates on changes and additions to police beat central."
 - [7060746b] class MultiStylesheetFeed(Feed): stylesheets = [ "/stylesheet1.xsl", Stylesheet("/stylesheet2.xsl"), ]
 - [fed48201] class MyFeed(Feed): feed_type = Atom1Feed
+- [fd438677] class RssSiteNewsFeed(Feed): title = "Police beat site news" link = "/sitenews/" description = "Updates on changes and additions to police beat central."
 - [6213a640] class iTunesFeed(Rss201rev2Feed): def root_attributes(self): attrs = super().root_attributes() attrs["xmlns:itunes"] = "http://www.itunes.com/dtds/podcast-1.0.dtd" return attrs
 - [f4be580e1354ac0a] from django.contrib.syndication.views import Feed
+- [f4be580e1354ac0a-2] from django.contrib.syndication.views import Feed
 - [7786a036] from django.contrib.syndication.views import Feed from django.templatetags.static import static
 - [4b36744b] from django.contrib.syndication.views import Feed from django.urls import reverse from policebeat.models import NewsItem
 - [bce3813b] from django.contrib.syndication.views import Feed from django.urls import reverse_lazy
 - [c6474577] from django.contrib.syndication.views import Feed from django.utils import feedgenerator
+- [d827fc1aad883d98] from django.contrib.syndication.views import Feed from django.utils.feedgenerator import Stylesheet
+- [d827fc1aad883d98-2] from django.contrib.syndication.views import Feed from django.utils.feedgenerator import Stylesheet
+- [d827fc1aad883d98-3] from django.contrib.syndication.views import Feed from django.utils.feedgenerator import Stylesheet
 - [d8f5fbc4] from django.contrib.syndication.views import Feed from policebeat.models import NewsItem from django.utils.feedgenerator import Atom1Feed
 - [4c7b4dfe] from django.urls import path from myproject.feeds import AtomSiteNewsFeed, RssSiteNewsFeed
 - [cccfeb08] from django.urls import path from myproject.feeds import LatestEntriesFeed
@@ -207,6 +235,7 @@
 - [1aecbe9f] .. _georss: https://georss.org .. _itunes podcast format: https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 - [220952be] .. _xslt: https://developer.mozilla.org/en-US/docs/Web/XSLT/Transforming_XML_with_XSLT
 - [65d688e4] .. class:: views.Feed
+- [685d15dfb6eb2285-70] .. code-block:: html+django
 - [eaf050be34acb41d-267] .. code-block:: pycon
 - [5e5c2ee8] .. currentmodule:: django.contrib.syndication
 - [89133eaa] .. currentmodule:: django.utils.feedgenerator
@@ -251,7 +280,6 @@
 - [174a72f8] Language --------
 - [1224591e] Like a view, the arguments in the URL are passed to the ``get_object()`` method along with the request object.
 - [93ad56e8] Note that you set ``feed_type`` to a class object, not an instance.
-- [baa2e082d1d55e26-2] Note:
 - [84563bb1] One thing is left to do. In an RSS feed, each ``<item>`` has a ``<title>``, ``<link>`` and ``<description>``. We need to tell the framework what data to put into those elements.
 - [c7442268] Overview --------
 - [ba81c305] Publishing Atom and RSS feeds in tandem ---------------------------------------

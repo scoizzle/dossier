@@ -1,6 +1,6 @@
 # Fact 4f6ed3fe
 
-Store id: 9c37f540-d639-4de2-9df0-137d3e05412c
+Store id: 6824e30a-745d-431f-bf4a-5d97063f7c01
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, using, origin=None, force_collection=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0953780+00:00`
+- posted_at: `2026-11-09T23:44:48.9072810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 118,
     "symbol": "Collector.__init__"
   },
-  "id": "9c37f540-d639-4de2-9df0-137d3e05412c",
+  "id": "6824e30a-745d-431f-bf4a-5d97063f7c01",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0953780+00:00"
+    "posted_at": "2026-11-09T23:44:48.9072810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bf8fd975-1437-4104-8477-9bd9aecc1cba",
+  "subject_id": "bcb614cb-8bbc-43ea-9ad9-6750fe9fa574",
   "subject_name": "django/db/models/deletion::Collector.__init__",
   "tags": [
     "entity:method"

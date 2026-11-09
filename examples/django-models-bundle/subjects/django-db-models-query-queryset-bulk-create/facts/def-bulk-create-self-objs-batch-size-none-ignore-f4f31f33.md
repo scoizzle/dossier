@@ -1,6 +1,6 @@
 # Fact f4f31f33
 
-Store id: ce8cdb94-310f-460b-9346-738d4a6d7dc9
+Store id: efe9ee4d-a6ee-4648-91c3-81b893b7cc0a
 
 ## Text
 
@@ -20,7 +20,7 @@ def bulk_create( self, objs, batch_size=None, ignore_conflicts=False, update_con
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4032460+00:00`
+- posted_at: `2026-11-09T23:44:55.9124170+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 833,
     "symbol": "QuerySet.bulk_create"
   },
-  "id": "ce8cdb94-310f-460b-9346-738d4a6d7dc9",
+  "id": "efe9ee4d-a6ee-4648-91c3-81b893b7cc0a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4032460+00:00"
+    "posted_at": "2026-11-09T23:44:55.9124170+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "303ba3f6-f327-4798-8c6b-5ec0a01d71e9",
+  "subject_id": "470f8ab4-4dfa-42b7-b474-eba018124271",
   "subject_name": "django/db/models/query::QuerySet.bulk_create",
   "tags": [
     "entity:method"

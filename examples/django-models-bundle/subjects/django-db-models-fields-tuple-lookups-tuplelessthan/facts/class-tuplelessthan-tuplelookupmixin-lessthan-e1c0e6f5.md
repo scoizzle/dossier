@@ -1,6 +1,6 @@
 # Fact e1c0e6f5
 
-Store id: 5e446099-9851-4626-b1b7-a085fe9d4130
+Store id: 10792277-670e-4555-940d-39e4c899653d
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleLessThan(TupleLookupMixin, LessThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6085790+00:00`
+- posted_at: `2026-11-09T23:44:52.7756230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 247,
     "symbol": "TupleLessThan"
   },
-  "id": "5e446099-9851-4626-b1b7-a085fe9d4130",
+  "id": "10792277-670e-4555-940d-39e4c899653d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6085790+00:00"
+    "posted_at": "2026-11-09T23:44:52.7756230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6dd8028d-0254-4828-b1cb-b1761fc099b3",
+  "subject_id": "c3e24090-2335-4452-ab69-5364a553f576",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLessThan",
   "tags": [
     "entity:class"

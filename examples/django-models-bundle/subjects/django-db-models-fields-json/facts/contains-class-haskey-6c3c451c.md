@@ -1,6 +1,6 @@
 # Fact 6c3c451c
 
-Store id: bc5fa56e-8ad8-4087-84e4-3a58addc28e7
+Store id: d58ec02f-54a4-449e-9489-fa0b5a703cbd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class HasKey
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bc5fa56e-8ad8-4087-84e4-3a58addc28e7",
+  "id": "d58ec02f-54a4-449e-9489-fa0b5a703cbd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "HasKey"
       },
       "rel": "contains",
-      "target": "f73ea2a0-8e99-4a98-9a54-0dd910b6b4b1"
+      "target": "530cd06c-d242-430a-b98b-1ffa62bc30b8"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

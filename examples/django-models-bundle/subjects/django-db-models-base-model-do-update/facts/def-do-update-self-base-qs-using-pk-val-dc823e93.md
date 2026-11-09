@@ -1,6 +1,6 @@
 # Fact dc823e93
 
-Store id: b5397a4a-ee27-419e-83de-db59d0d0a76a
+Store id: 0d7bc889-57b7-426a-b990-79f2b4ddd09c
 
 ## Text
 
@@ -20,7 +20,7 @@ def _do_update( self, base_qs, using, pk_val, values, update_fields, forced_upda
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7447390+00:00`
+- posted_at: `2026-11-09T23:44:48.5355660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1208,
     "symbol": "Model._do_update"
   },
-  "id": "b5397a4a-ee27-419e-83de-db59d0d0a76a",
+  "id": "0d7bc889-57b7-426a-b990-79f2b4ddd09c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7447390+00:00"
+    "posted_at": "2026-11-09T23:44:48.5355660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5b54c104-a857-4b64-8458-9c006c3bc759",
+  "subject_id": "638c7ef0-f591-4d16-b123-3c77e79cf843",
   "subject_name": "django/db/models/base::Model._do_update",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact be632e64
 
-Store id: c8c883ee-8f86-4d7d-bdc2-5c9a2aadafcd
+Store id: da94b25c-ffbe-4796-8adc-1498ce172499
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_local_fields(cls, fields, option)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7677980+00:00`
+- posted_at: `2026-11-09T23:44:48.5525630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2206,
     "symbol": "Model._check_local_fields"
   },
-  "id": "c8c883ee-8f86-4d7d-bdc2-5c9a2aadafcd",
+  "id": "da94b25c-ffbe-4796-8adc-1498ce172499",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7677980+00:00"
+    "posted_at": "2026-11-09T23:44:48.5525630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4038af70-1f42-40e6-9e86-08bef65b2c96",
+  "subject_id": "604f28dd-a9be-4c49-b73a-1a341d318060",
   "subject_name": "django/db/models/base::Model._check_local_fields",
   "tags": [
     "entity:class_method",

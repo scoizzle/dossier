@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.resolve_ref
 
-- Subject: django/db/models/sql/query::Query.resolve_ref (id `d3e00fec-1df3-4f92-8bf8-2a4f8a4b7db9`)
+- Subject: django/db/models/sql/query::Query.resolve_ref (id `675382dd-9bd6-4c1f-b38a-c6a414079198`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

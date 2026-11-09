@@ -1,6 +1,6 @@
 # Fact 8d9095c3
 
-Store id: b696b0d9-9b6f-4b84-b977-22753881014d
+Store id: 62c37343-cb7b-46d9-b86f-664a30a0629c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_reverse_joining_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7067740+00:00`
+- posted_at: `2026-11-09T23:44:51.5437690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 859,
     "symbol": "ForeignObject.get_reverse_joining_fields"
   },
-  "id": "b696b0d9-9b6f-4b84-b977-22753881014d",
+  "id": "62c37343-cb7b-46d9-b86f-664a30a0629c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7067740+00:00"
+    "posted_at": "2026-11-09T23:44:51.5437690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bc3df6a0-69c0-427a-a495-20114f742bb9",
+  "subject_id": "b5ce034c-9a93-496c-8f79-ffdbadb98ccc",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_reverse_joining_fields",
   "tags": [
     "entity:method"

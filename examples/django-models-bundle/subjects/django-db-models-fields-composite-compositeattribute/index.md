@@ -1,11 +1,11 @@
 # django/db/models/fields/composite::CompositeAttribute
 
-- Subject: django/db/models/fields/composite::CompositeAttribute (id `f09abc9a-4173-4d00-aa28-19dc705ec3b0`)
+- Subject: django/db/models/fields/composite::CompositeAttribute (id `9c35b70c-0455-4804-81de-88ac760f5c3c`)
 - Kind: class
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/core/checks/security/csrf
 
-- Subject: django/core/checks/security/csrf (id `f48d5bd5-94e3-4691-908e-78b09e5c8583`)
+- Subject: django/core/checks/security/csrf (id `1ec144ae-a40b-4a2b-b4d3-d304520ae13c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 538 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

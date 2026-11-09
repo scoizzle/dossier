@@ -1,6 +1,6 @@
 # Fact 00d2f58f
 
-Store id: 20e50d48-c48a-4862-80c7-1314b4107780
+Store id: 26029a25-1460-40d7-a2cd-474f9120f39f
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8957140+00:00`
+- posted_at: `2026-11-09T23:44:50.9720860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 262,
     "symbol": "HasKeyLookup.as_sqlite"
   },
-  "id": "20e50d48-c48a-4862-80c7-1314b4107780",
+  "id": "26029a25-1460-40d7-a2cd-474f9120f39f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8957140+00:00"
+    "posted_at": "2026-11-09T23:44:50.9720860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7f0d0482-3107-4418-b06d-0d7a9d36a727",
+  "subject_id": "4b82a01b-14f3-4fce-9d66-89561e25cdbb",
   "subject_name": "django/db/models/fields/json::HasKeyLookup.as_sqlite",
   "tags": [
     "entity:method"

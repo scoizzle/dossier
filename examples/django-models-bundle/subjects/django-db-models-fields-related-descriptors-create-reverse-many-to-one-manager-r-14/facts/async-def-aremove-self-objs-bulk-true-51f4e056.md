@@ -1,6 +1,6 @@
 # Fact 51f4e056
 
-Store id: 4916dcec-0066-4275-9651-9db5cb6e4621
+Store id: 139e6fb5-c558-449a-a56c-f03c486f8923
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aremove(self, *objs, bulk=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2789860+00:00`
+- posted_at: `2026-11-09T23:44:51.9385610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 961,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.aremove"
   },
-  "id": "4916dcec-0066-4275-9651-9db5cb6e4621",
+  "id": "139e6fb5-c558-449a-a56c-f03c486f8923",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2789860+00:00"
+    "posted_at": "2026-11-09T23:44:51.9385610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9de14045-8ab3-4042-8e36-5d7dc49b7e25",
+  "subject_id": "7c028ca5-778d-47c6-a292-6e655a525d0a",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aremove",
   "tags": [
     "entity:method",

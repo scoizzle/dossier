@@ -1,6 +1,6 @@
 # Fact 69835ff4
 
-Store id: 6362b314-d136-4698-849a-2a3b8f53dded
+Store id: fea0443f-d144-416c-9a53-ca9d29bbd1c0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, key_transform, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9895350+00:00`
+- posted_at: `2026-11-09T23:44:51.0347860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 580,
     "symbol": "KeyTransformTextLookupMixin.__init__"
   },
-  "id": "6362b314-d136-4698-849a-2a3b8f53dded",
+  "id": "fea0443f-d144-416c-9a53-ca9d29bbd1c0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9895350+00:00"
+    "posted_at": "2026-11-09T23:44:51.0347860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "791d41e7-a474-4d59-9418-9c06ecf69cd8",
+  "subject_id": "5af0af52-34ed-42e4-938b-0e27cb139f92",
   "subject_name": "django/db/models/fields/json::KeyTransformTextLookupMixin.__init__",
   "tags": [
     "entity:method"

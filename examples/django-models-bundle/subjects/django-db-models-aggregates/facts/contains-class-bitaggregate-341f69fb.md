@@ -1,6 +1,6 @@
 # Fact 341f69fb
 
-Store id: 043da9c0-9c88-4201-a059-2da71e22758a
+Store id: a2a5d321-82b9-4e66-a0ee-64d50e4a7b88
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BitAggregate
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "043da9c0-9c88-4201-a059-2da71e22758a",
+  "id": "a2a5d321-82b9-4e66-a0ee-64d50e4a7b88",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BitAggregate"
       },
       "rel": "contains",
-      "target": "4e528ec1-f9c7-48ce-98bf-e417f016620c"
+      "target": "f2fb7542-5941-4b9b-b9ae-f699a8cbbef3"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

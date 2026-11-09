@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformExact
 
-- Subject: django/db/models/fields/json::KeyTransformExact (id `d3ecf5aa-e580-4e5a-b731-4e062b268e02`)
+- Subject: django/db/models/fields/json::KeyTransformExact (id `074838c5-c6a9-47e0-ac56-21a6b639f483`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

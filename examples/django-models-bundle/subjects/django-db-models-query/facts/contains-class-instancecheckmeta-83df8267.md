@@ -1,6 +1,6 @@
 # Fact 83df8267
 
-Store id: 2941a8fd-3477-4c5d-b771-7269483f884d
+Store id: 60c22e6a-cb3d-4fb2-a203-1a02936e1970
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class InstanceCheckMeta
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2941a8fd-3477-4c5d-b771-7269483f884d",
+  "id": "60c22e6a-cb3d-4fb2-a203-1a02936e1970",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "InstanceCheckMeta"
       },
       "rel": "contains",
-      "target": "e1703eaa-fb5e-41c8-a4d2-0dd676e1f4ee"
+      "target": "52813487-c68d-4adc-a598-0bec79ab2fc6"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

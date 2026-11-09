@@ -1,6 +1,6 @@
 # Fact a26d747b
 
-Store id: 6a05b069-257f-4653-b038-7971a6cb6b66
+Store id: 834e14e4-66af-4431-9b96-d129cec0f97c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_order_dir
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1866820+00:00`
+- posted_at: `2026-11-09T23:44:59.0942990+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6a05b069-257f-4653-b038-7971a6cb6b66",
+  "id": "834e14e4-66af-4431-9b96-d129cec0f97c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
+    "posted_at": "2026-11-09T23:44:59.0942990+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_order_dir"
       },
       "rel": "contains",
-      "target": "9b68c60a-5243-46f6-84e5-1c303ed401b7"
+      "target": "d5703cb8-6992-45c9-9764-8ce0758c79fe"
     }
   ],
   "status": "live",
-  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
+  "subject_id": "ba44da72-3cad-4dd7-ae2b-7d1f35aaf915",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

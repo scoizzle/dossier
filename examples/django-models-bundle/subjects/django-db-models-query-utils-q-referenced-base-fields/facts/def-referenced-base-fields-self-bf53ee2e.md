@@ -1,6 +1,6 @@
 # Fact bf53ee2e
 
-Store id: b7ab47e0-1502-499f-a8e0-13e8bfe4b168
+Store id: 2b4b5e3f-b036-4db5-8104-c366d93d8f49
 
 ## Text
 
@@ -20,7 +20,7 @@ def referenced_base_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1002120+00:00`
+- posted_at: `2026-11-09T23:44:56.5989000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 236,
     "symbol": "Q.referenced_base_fields"
   },
-  "id": "b7ab47e0-1502-499f-a8e0-13e8bfe4b168",
+  "id": "2b4b5e3f-b036-4db5-8104-c366d93d8f49",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1002120+00:00"
+    "posted_at": "2026-11-09T23:44:56.5989000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0eb00501-f45f-45b4-a3a1-83ca01cebfbb",
+  "subject_id": "2dc735f9-6585-4b9f-a6c9-e87b62430484",
   "subject_name": "django/db/models/query_utils::Q.referenced_base_fields",
   "tags": [
     "entity:method",

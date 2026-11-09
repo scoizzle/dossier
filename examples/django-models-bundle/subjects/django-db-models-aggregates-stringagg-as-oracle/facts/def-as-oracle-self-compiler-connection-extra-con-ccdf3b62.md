@@ -1,6 +1,6 @@
 # Fact ccdf3b62
 
-Store id: e98b8ea3-ed9e-43d2-afa4-e74bb84178d3
+Store id: b01ece9d-00a8-424a-ab62-84467e2c0f69
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5471270+00:00`
+- posted_at: `2026-11-09T23:44:48.4052320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 383,
     "symbol": "StringAgg.as_oracle"
   },
-  "id": "e98b8ea3-ed9e-43d2-afa4-e74bb84178d3",
+  "id": "b01ece9d-00a8-424a-ab62-84467e2c0f69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5471270+00:00"
+    "posted_at": "2026-11-09T23:44:48.4052320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fbdd0c26-bd55-43c6-92d8-b9b975dcbb29",
+  "subject_id": "6fbe6278-60de-406d-9788-a6c73ad5b729",
   "subject_name": "django/db/models/aggregates::StringAgg.as_oracle",
   "tags": [
     "entity:method"

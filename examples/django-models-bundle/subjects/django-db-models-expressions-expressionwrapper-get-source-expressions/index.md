@@ -1,11 +1,11 @@
 # django/db/models/expressions::ExpressionWrapper.get_source_expressions
 
-- Subject: django/db/models/expressions::ExpressionWrapper.get_source_expressions (id `82f65132-1f2c-43d4-b6d9-1f7834cf01cb`)
+- Subject: django/db/models/expressions::ExpressionWrapper.get_source_expressions (id `b2a5131e-cdeb-4112-af8c-1ac27d237cd0`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

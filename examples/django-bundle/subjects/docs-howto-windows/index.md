@@ -1,10 +1,10 @@
 # docs/howto/windows
 
-- Subject: docs/howto/windows (id `c43d2f68-4514-4e40-833f-21060477ad15`)
+- Subject: docs/howto/windows (id `25a20b18-a7af-40e1-aa05-d4c745ad0347`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1859 tokens
-- Facts shown: 47 of 47
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 

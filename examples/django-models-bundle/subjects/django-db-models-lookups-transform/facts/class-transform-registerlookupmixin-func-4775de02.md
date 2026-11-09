@@ -1,6 +1,6 @@
 # Fact 4775de02
 
-Store id: 79b87660-5a4e-4cb2-b558-fb802706fda8
+Store id: 12499ca7-1f8e-4400-8641-67d1db065bf4
 
 ## Text
 
@@ -20,7 +20,7 @@ class Transform(RegisterLookupMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1966990+00:00`
+- posted_at: `2026-11-09T23:44:54.9119820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 211,
     "symbol": "Transform"
   },
-  "id": "79b87660-5a4e-4cb2-b558-fb802706fda8",
+  "id": "12499ca7-1f8e-4400-8641-67d1db065bf4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1966990+00:00"
+    "posted_at": "2026-11-09T23:44:54.9119820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5185bf0d-262d-4ea4-a3e3-ce4a74effc8f",
+  "subject_id": "f5c5dd9a-eb8a-4e3f-bf7e-9fdb4e4b0609",
   "subject_name": "django/db/models/lookups::Transform",
   "tags": [
     "entity:class"

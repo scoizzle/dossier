@@ -1,6 +1,6 @@
 # Fact a52f7dc5
 
-Store id: 18363d27-8239-4845-81b5-10142bbf6468
+Store id: 382b39b3-f4d4-4323-a2b1-4793720a5f5a
 
 ## Text
 
@@ -20,7 +20,7 @@ class ATan2(NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.6724110+00:00`
+- posted_at: `2026-11-09T23:44:53.6946050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 33,
     "symbol": "ATan2"
   },
-  "id": "18363d27-8239-4845-81b5-10142bbf6468",
+  "id": "382b39b3-f4d4-4323-a2b1-4793720a5f5a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.6724110+00:00"
+    "posted_at": "2026-11-09T23:44:53.6946050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a1f704be-70b6-4074-8f2c-988054e68886",
+  "subject_id": "ef66b671-d384-4cdf-a047-47ddaa264494",
   "subject_name": "django/db/models/functions/math::ATan2",
   "tags": [
     "entity:class"

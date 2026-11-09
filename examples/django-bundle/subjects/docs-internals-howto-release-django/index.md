@@ -1,10 +1,10 @@
 # docs/internals/howto-release-django
 
-- Subject: docs/internals/howto-release-django (id `a8406bc6-6f1b-49c4-bbd3-9b24893a0a2d`)
+- Subject: docs/internals/howto-release-django (id `b21864c6-d6f2-45ef-98ea-15e9d7e6a97c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 10013 tokens
-- Facts shown: 240 of 240
+- Facts shown: 240 facts
 - Conflicts: 0
 - Gaps: 0
 

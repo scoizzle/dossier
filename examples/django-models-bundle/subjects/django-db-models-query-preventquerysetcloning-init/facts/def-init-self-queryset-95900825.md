@@ -1,6 +1,6 @@
 # Fact 95900825
 
-Store id: 13e923b9-8463-4969-82d7-f499d74ff45c
+Store id: 196a9469-43bd-4731-9037-04f5820e988c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, queryset)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.2899200+00:00`
+- posted_at: `2026-11-09T23:44:55.8165910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 354,
     "symbol": "PreventQuerySetCloning.__init__"
   },
-  "id": "13e923b9-8463-4969-82d7-f499d74ff45c",
+  "id": "196a9469-43bd-4731-9037-04f5820e988c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.2899200+00:00"
+    "posted_at": "2026-11-09T23:44:55.8165910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a26ebd7-7582-4eca-a9fe-407368e9623a",
+  "subject_id": "29fa5c59-d0a3-4f70-8c42-d583516c841a",
   "subject_name": "django/db/models/query::PreventQuerySetCloning.__init__",
   "tags": [
     "entity:method"

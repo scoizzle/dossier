@@ -1,6 +1,6 @@
 # Fact e525fd7c
 
-Store id: 21cf2ee4-d609-4416-b2a4-0b0dfd399948
+Store id: d77d95e4-845a-4314-9df3-1847ba402758
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9242680+00:00`
+- posted_at: `2026-11-09T23:44:50.9918420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 308,
     "symbol": "CaseInsensitiveMixin.process_rhs"
   },
-  "id": "21cf2ee4-d609-4416-b2a4-0b0dfd399948",
+  "id": "d77d95e4-845a-4314-9df3-1847ba402758",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9242680+00:00"
+    "posted_at": "2026-11-09T23:44:50.9918420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5731c286-642a-4257-8727-4baef06dd3f8",
+  "subject_id": "2bd45438-38ac-4962-b137-28c77097a4b6",
   "subject_name": "django/db/models/fields/json::CaseInsensitiveMixin.process_rhs",
   "tags": [
     "entity:method"

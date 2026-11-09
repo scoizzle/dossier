@@ -1686,7 +1686,7 @@ public sealed class PublishTests
         db.Store.Publish(Options(db, o => o.Budget = 300));
         var page = ReadAll(Out(db))["subjects/big-subject/index.md"];
 
-        await Assert.That(page).Contains("- Facts shown: 200 of 200");
+        await Assert.That(page).Contains("- Facts shown: 200 facts");
         await Assert.That(page).Contains("## Highlights");
         await Assert.That(page).Contains("## All facts");
         await Assert.That(page).DoesNotContain("Beyond the budget");

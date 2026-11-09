@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor.__init__
 
-- Subject: django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor.__init__ (id `e3344934-a958-469d-a069-43b42338db7d`)
+- Subject: django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor.__init__ (id `294b3900-ed56-43d4-93d3-b4048377accf`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

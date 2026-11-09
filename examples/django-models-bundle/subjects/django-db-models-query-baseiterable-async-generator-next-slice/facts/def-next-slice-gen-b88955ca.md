@@ -1,6 +1,6 @@
 # Fact b88955ca
 
-Store id: 2b319e27-8d31-413b-89a9-828f3bd0aed2
+Store id: 032e39d9-a1ae-46b7-955d-cbf6a0b992be
 
 ## Text
 
@@ -20,7 +20,7 @@ def next_slice(gen)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.2302840+00:00`
+- posted_at: `2026-11-09T23:44:55.7655260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "BaseIterable._async_generator.next_slice"
   },
-  "id": "2b319e27-8d31-413b-89a9-828f3bd0aed2",
+  "id": "032e39d9-a1ae-46b7-955d-cbf6a0b992be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.2302840+00:00"
+    "posted_at": "2026-11-09T23:44:55.7655260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba733ca5-d3a7-45d3-b9a5-1c3d327297e3",
+  "subject_id": "7f6b8022-a5f1-48af-8db2-ec149415da16",
   "subject_name": "django/db/models/query::BaseIterable._async_generator.next_slice",
   "tags": [
     "entity:function"

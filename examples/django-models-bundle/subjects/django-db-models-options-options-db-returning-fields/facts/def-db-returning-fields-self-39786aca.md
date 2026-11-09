@@ -1,6 +1,6 @@
 # Fact 39786aca
 
-Store id: dbd51bf2-3593-4aca-89a1-631ba9f14521
+Store id: 9b546ad9-e9e0-4c5b-b98a-68fd458f9944
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_returning_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0551440+00:00`
+- posted_at: `2026-11-09T23:44:55.6068110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1040,
     "symbol": "Options.db_returning_fields"
   },
-  "id": "dbd51bf2-3593-4aca-89a1-631ba9f14521",
+  "id": "9b546ad9-e9e0-4c5b-b98a-68fd458f9944",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0551440+00:00"
+    "posted_at": "2026-11-09T23:44:55.6068110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7f76845e-7994-498f-a4c3-7e796c67ee74",
+  "subject_id": "05342f89-81ce-45fc-a2a0-81ad26606371",
   "subject_name": "django/db/models/options::Options.db_returning_fields",
   "tags": [
     "entity:method",

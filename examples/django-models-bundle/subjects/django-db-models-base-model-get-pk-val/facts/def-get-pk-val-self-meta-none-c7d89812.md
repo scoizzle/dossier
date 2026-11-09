@@ -1,6 +1,6 @@
 # Fact c7d89812
 
-Store id: 5824a4dc-1ea8-4c41-8169-f08a657fdf9a
+Store id: 127af169-c3fa-4c39-a506-953b0b3f3f96
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_pk_val(self, meta=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7355150+00:00`
+- posted_at: `2026-11-09T23:44:48.5293390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 698,
     "symbol": "Model._get_pk_val"
   },
-  "id": "5824a4dc-1ea8-4c41-8169-f08a657fdf9a",
+  "id": "127af169-c3fa-4c39-a506-953b0b3f3f96",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7355150+00:00"
+    "posted_at": "2026-11-09T23:44:48.5293390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3655942b-c5cc-488a-b247-ccd3323a1e0d",
+  "subject_id": "b1ef149d-2c39-4632-b907-3092d45bde97",
   "subject_name": "django/db/models/base::Model._get_pk_val",
   "tags": [
     "entity:method"

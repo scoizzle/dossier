@@ -1,10 +1,10 @@
 # django/db/backends/mysql/features
 
-- Subject: django/db/backends/mysql/features (id `45cc375d-c34a-4992-9973-e9c2d125eaf6`)
+- Subject: django/db/backends/mysql/features (id `bf0c42e5-3cdd-418d-8eaf-1a82385f4a04`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2011 tokens
-- Facts shown: 32 of 33
+- Used: 2059 tokens
+- Facts shown: 33 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -34,6 +34,7 @@
 - [fb35db97] @cached_property def supports_index_column_ordering(self): if self._mysql_storage_engine != "InnoDB": return False return True
 - [f3ce925a] @cached_property def supports_transactions(self): """ All storage engines except MyISAM support transactions. """ return self._mysql_storage_engine != "MyISAM"
 - [7cae6242] @cached_property def supports_uuid4_function(self): if self.connection.mysql_is_mariadb: return self.connection.mysql_version >= (11, 7) return False
+- [e6dab236] @cached_property def supports_uuid7_function(self): if self.connection.mysql_is_mariadb: return self.connection.mysql_version >= (11, 7) return False
 - [fb3b9985] @cached_property def test_collations(self): return { "ci": "utf8mb4_general_ci", "non_default": "utf8mb4_esperanto_ci", "swedish_ci": "utf8mb4_swedish_ci", "virtual": "utf8mb4_esperanto_ci", }
 - [f51c14a9] @cached_property def update_can_self_select(self): return self.connection.mysql_is_mariadb
 - [62ad7748] can_return_rows_from_bulk_insert = property( operator.attrgetter("can_return_columns_from_insert") )

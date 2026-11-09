@@ -1,6 +1,6 @@
 # Fact 062b93af
 
-Store id: ff58060b-2bfc-43f8-bb9b-1e33810593ec
+Store id: fc30deee-5bff-4adb-b3d1-27097143fc04
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PositiveIntegerRelDbTypeMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ff58060b-2bfc-43f8-bb9b-1e33810593ec",
+  "id": "fc30deee-5bff-4adb-b3d1-27097143fc04",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PositiveIntegerRelDbTypeMixin"
       },
       "rel": "contains",
-      "target": "ff7dcab8-d730-47d8-92f6-1f2f655129ac"
+      "target": "493e1ba2-b3ff-48ba-9336-5946289686bc"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/contrib/admin/widgets
 
-- Subject: django/contrib/admin/widgets (id `6a54130a-7fbf-4f2a-b6db-debb76769cfa`)
+- Subject: django/contrib/admin/widgets (id `30486411-53c9-4ccf-bf37-6665f0917807`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4879 tokens
-- Facts shown: 79 of 80
+- Used: 4906 tokens
+- Facts shown: 80 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -50,6 +50,7 @@
 - [8b769813] def get_related_url(self, info, action, *args): return reverse( "admin:%s_%s_%s" % (*info, action), current_app=self.admin_site.name, args=args, )
 - [d5151ede] def get_url(self): return reverse(self.url_name % self.admin_site.name)
 - [7e1af501] def id_for_label(self, id_): return id_
+- [fb06c2ac] def id_for_label(self, id_): return self.widget.id_for_label(id_)
 - [bd504a42] def label_and_url_for_value(self, value): key = self.rel.get_related_field().name try: obj = self.rel.model._default_manager.using(self.db).get(**{key: value}) except (ValueError, self.rel.model.DoesNotExist, ValidationError): return "", ""
 - [93ad8e19] def label_and_url_for_value(self, value): return "", ""
 - [cb0aa27e] def optgroups(self, name, value, attr=None): """Return selected options based on the ModelChoiceIterator.""" default = (None, [], 0) groups = [default] has_selected = False selected_choices = { str(v) for v in value if str(v) not in self.choices.field.empty_values } if not self.is_required and not self.allow_multiple_selected: default[1].append(self.create_option(name, "", "", False, 0)) remote_model_opts = self.field.remote_field.model._meta to_field_name = getattr( self.field.remote_field, "field_name", remote_model_opts.pk.attname ) to_field_name = remote_model_opts.get_field(to_field_name).attname choices = ( (getattr(obj, to_field_name), self.choices.field.label_from_instance(obj)) for obj in self.choices.queryset.using(self.db).filter( **{"%s__in" % to_field_name: selected_choices} ) ) for option_value, option_label in choices: selected = str(option_value) in value and ( has_selected is False or self.allow_multiple_selected ) has_selected |= selected index = len(default[1]) subgroup = default[1] subgroup.append( self.create_option( name, option_value, option_label, selected_choices, index ) ) return groups

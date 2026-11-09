@@ -1,6 +1,6 @@
 # Fact e11907c5
 
-Store id: b4a0ab90-438d-4ece-a59d-a74fdde2e6ec
+Store id: 13dd25a9-1107-4f31-ac48-d48234b47110
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer grows to at most 12 rows before it scrolls.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Data
 
@@ -51,17 +51,17 @@ None.
   "data": {
     "composerMaxRows": 12
   },
-  "id": "b4a0ab90-438d-4ece-a59d-a74fdde2e6ec",
+  "id": "13dd25a9-1107-4f31-ac48-d48234b47110",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:composer-rows-b"

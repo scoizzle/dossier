@@ -1,6 +1,6 @@
 # Fact c1e09f00
 
-Store id: 1bcae5c8-f78f-4d7c-98b4-e976222795ce
+Store id: 7ba3e41d-0e81-4fc1-b0f7-8368becb8345
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, field_with_rel)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1299630+00:00`
+- posted_at: `2026-11-09T23:44:51.8266610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 145,
     "symbol": "ForwardManyToOneDescriptor.__init__"
   },
-  "id": "1bcae5c8-f78f-4d7c-98b4-e976222795ce",
+  "id": "7ba3e41d-0e81-4fc1-b0f7-8368becb8345",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1299630+00:00"
+    "posted_at": "2026-11-09T23:44:51.8266610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ed5c3828-b165-49fd-bd65-95e51ecf02aa",
+  "subject_id": "4300bd0b-5ba7-4704-86aa-a56b6cb62b37",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__init__",
   "tags": [
     "entity:method"

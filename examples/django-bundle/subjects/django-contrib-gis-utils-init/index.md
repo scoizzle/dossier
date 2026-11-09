@@ -1,10 +1,10 @@
 # django/contrib/gis/utils/__init__
 
-- Subject: django/contrib/gis/utils/__init__ (id `89f9658b-2905-4150-8d30-dcaff2ce97ff`)
+- Subject: django/contrib/gis/utils/__init__ (id `ac59227d-2921-480a-83ce-2f27658a1758`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 136 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

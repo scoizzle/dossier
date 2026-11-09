@@ -1,6 +1,6 @@
 # Fact 8ec44c95
 
-Store id: 24b49883-8351-4731-83b6-09173bed93fe
+Store id: 4a0fa2c5-2174-4082-9241-2b9fcd6a039b
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_source_expressions(self, exprs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8150320+00:00`
+- posted_at: `2026-11-09T23:44:49.4437140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 744,
     "symbol": "CombinedExpression.set_source_expressions"
   },
-  "id": "24b49883-8351-4731-83b6-09173bed93fe",
+  "id": "4a0fa2c5-2174-4082-9241-2b9fcd6a039b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8150320+00:00"
+    "posted_at": "2026-11-09T23:44:49.4437140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10b5e694-50e2-4af6-a022-9f0b2f552978",
+  "subject_id": "cd5e1a1e-e145-4c95-b9fe-1d06991ad41e",
   "subject_name": "django/db/models/expressions::CombinedExpression.set_source_expressions",
   "tags": [
     "entity:method"

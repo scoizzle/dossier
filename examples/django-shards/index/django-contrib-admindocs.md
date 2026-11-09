@@ -4,10 +4,8 @@ This file lists every subject under `django/contrib/admindocs/`, one row per sub
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/admindocs/apps | subject | 2 | 0 | 0 | 1874 | [shards/35.md#django-contrib-admindocs-apps](../shards/35.md#django-contrib-admindocs-apps) |
-|   django/contrib/admindocs/middleware | subject | 4 | 0 | 0 | 1874 | [shards/35.md#django-contrib-admindocs-middleware](../shards/35.md#django-contrib-admindocs-middleware) |
-|   django/contrib/admindocs/urls | subject | 2 | 0 | 0 | 1874 | [shards/35.md#django-contrib-admindocs-urls](../shards/35.md#django-contrib-admindocs-urls) |
-|   django/contrib/admindocs/utils | subject | 12 | 0 | 0 | 1874 | [shards/35.md#django-contrib-admindocs-utils](../shards/35.md#django-contrib-admindocs-utils) |
-|   django/contrib/admindocs/views | subject | 4 | 0 | 0 | 1927 | [shards/36.md#django-contrib-admindocs-views](../shards/36.md#django-contrib-admindocs-views) |
+|   django/contrib/admindocs/apps | subject | 2 | 0 | 0 | 1093 | [shards/36.md#django-contrib-admindocs-apps](../shards/36.md#django-contrib-admindocs-apps) |
+|   django/contrib/admindocs/middleware | subject | 4 | 0 | 0 | 1307 | [shards/37.md#django-contrib-admindocs-middleware](../shards/37.md#django-contrib-admindocs-middleware) |
+|   django/contrib/admindocs/urls | subject | 2 | 0 | 0 | 1307 | [shards/37.md#django-contrib-admindocs-urls](../shards/37.md#django-contrib-admindocs-urls) |
 
 Up: [index/django-contrib.md](django-contrib.md)

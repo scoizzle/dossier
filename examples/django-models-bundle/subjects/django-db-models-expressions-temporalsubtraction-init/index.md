@@ -1,11 +1,11 @@
 # django/db/models/expressions::TemporalSubtraction.__init__
 
-- Subject: django/db/models/expressions::TemporalSubtraction.__init__ (id `0b61c387-5d19-41a1-8faf-519b651c3be0`)
+- Subject: django/db/models/expressions::TemporalSubtraction.__init__ (id `98e78019-0396-4a23-8db6-e344a6489373`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/version
 
-- Subject: django/utils/version (id `64d0ea4d-a4f4-4ff5-9551-a83f8d155234`)
+- Subject: django/utils/version (id `b5458094-e791-464d-9daf-7d5f4e796fb7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1001 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

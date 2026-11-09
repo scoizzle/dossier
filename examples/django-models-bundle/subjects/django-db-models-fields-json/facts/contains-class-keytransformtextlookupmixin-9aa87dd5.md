@@ -1,6 +1,6 @@
 # Fact 9aa87dd5
 
-Store id: 2f22024f-a0a4-4931-873a-cb40e30ee766
+Store id: 1ff0f2fa-9901-43d9-a949-a0e3c92815fe
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformTextLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2f22024f-a0a4-4931-873a-cb40e30ee766",
+  "id": "1ff0f2fa-9901-43d9-a949-a0e3c92815fe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformTextLookupMixin"
       },
       "rel": "contains",
-      "target": "3d87411b-619b-47f9-898b-13e0c56c9a6b"
+      "target": "74cb5747-764d-42c0-a9cd-b6c7d0afbec2"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

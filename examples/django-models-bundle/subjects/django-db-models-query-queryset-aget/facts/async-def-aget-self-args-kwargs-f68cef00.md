@@ -1,6 +1,6 @@
 # Fact f68cef00
 
-Store id: 6aee132c-f652-4ae8-96e0-c79453519618
+Store id: 611b7049-654b-4b43-9507-38ee7879de62
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aget(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3858390+00:00`
+- posted_at: `2026-11-09T23:44:55.8968540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 733,
     "symbol": "QuerySet.aget"
   },
-  "id": "6aee132c-f652-4ae8-96e0-c79453519618",
+  "id": "611b7049-654b-4b43-9507-38ee7879de62",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3858390+00:00"
+    "posted_at": "2026-11-09T23:44:55.8968540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c70be724-64d9-485d-a58e-e8ed5006d6d2",
+  "subject_id": "15bc9ff1-d4ae-4267-806f-5feb7ec272fd",
   "subject_name": "django/db/models/query::QuerySet.aget",
   "tags": [
     "entity:method",

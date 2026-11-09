@@ -1,10 +1,10 @@
 # django/core/servers/basehttp
 
-- Subject: django/core/servers/basehttp (id `4d5e688c-a806-4478-9508-585c6695552d`)
+- Subject: django/core/servers/basehttp (id `d6e14b4b-2a54-4d3f-b58f-711a5142ef68`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2417 tokens
-- Facts shown: 39 of 39
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 

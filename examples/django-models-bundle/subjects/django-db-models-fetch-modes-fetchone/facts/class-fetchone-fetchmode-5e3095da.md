@@ -1,6 +1,6 @@
 # Fact 5e3095da
 
-Store id: b865c4a7-6d55-4cfe-9835-b9d65c46f2ea
+Store id: 73bcce6e-c70b-4197-8d7b-99a36fbd1a46
 
 ## Text
 
@@ -20,7 +20,7 @@ class FetchOne(FetchMode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2159010+00:00`
+- posted_at: `2026-11-09T23:44:49.8117440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 13,
     "symbol": "FetchOne"
   },
-  "id": "b865c4a7-6d55-4cfe-9835-b9d65c46f2ea",
+  "id": "73bcce6e-c70b-4197-8d7b-99a36fbd1a46",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2159010+00:00"
+    "posted_at": "2026-11-09T23:44:49.8117440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b110837e-8b78-4eb2-b7f7-241bc738dd03",
+  "subject_id": "c8ada374-bc1a-40fb-80d2-0389e3f30118",
   "subject_name": "django/db/models/fetch_modes::FetchOne",
   "tags": [
     "entity:class"

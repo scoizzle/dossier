@@ -1,6 +1,6 @@
 # Fact 39ddc7d2
 
-Store id: c5cdcd5b-c11f-4b97-97ff-1353ce56a516
+Store id: 731ac7ec-db79-4e67-95ae-807e138f4356
 
 ## Text
 
@@ -20,7 +20,7 @@ def app_config(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.8997450+00:00`
+- posted_at: `2026-11-09T23:44:55.4655530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 180,
     "symbol": "Options.app_config"
   },
-  "id": "c5cdcd5b-c11f-4b97-97ff-1353ce56a516",
+  "id": "731ac7ec-db79-4e67-95ae-807e138f4356",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.8997450+00:00"
+    "posted_at": "2026-11-09T23:44:55.4655530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "abf36ee6-fae2-4b80-8031-c8eb2a0e81df",
+  "subject_id": "fe573c2a-e3e6-4614-af49-e735ca312417",
   "subject_name": "django/db/models/options::Options.app_config",
   "tags": [
     "entity:method",

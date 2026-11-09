@@ -1,6 +1,6 @@
 # Fact 2a740153
 
-Store id: a4d0febd-3774-4b69-a65c-76917dcfb53a
+Store id: fb875556-58f4-49e0-b628-316086080833
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql( self, compiler, connection, function=None, template=None, arg_joiner
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8560130+00:00`
+- posted_at: `2026-11-09T23:44:49.5130420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1097,
     "symbol": "Func.as_sql"
   },
-  "id": "a4d0febd-3774-4b69-a65c-76917dcfb53a",
+  "id": "fb875556-58f4-49e0-b628-316086080833",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8560130+00:00"
+    "posted_at": "2026-11-09T23:44:49.5130420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "72dcf9c9-3290-433c-96dc-84a3fed07150",
+  "subject_id": "aa775d1b-c969-4c17-bedf-9830c60caebc",
   "subject_name": "django/db/models/expressions::Func.as_sql",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact de84023e
 
-Store id: 623df954-0252-47a1-b66c-d5b972106953
+Store id: 6c410baf-b28d-45e1-97bf-014afc36239e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_fallback_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6008300+00:00`
+- posted_at: `2026-11-09T23:44:52.7659280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 192,
     "symbol": "TupleGreaterThan.get_fallback_sql"
   },
-  "id": "623df954-0252-47a1-b66c-d5b972106953",
+  "id": "6c410baf-b28d-45e1-97bf-014afc36239e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6008300+00:00"
+    "posted_at": "2026-11-09T23:44:52.7659280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "620b2ada-5b1f-44fe-8924-1b0ba2989927",
+  "subject_id": "89d08eb1-d3be-47d0-89b4-2f7669bc5527",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleGreaterThan.get_fallback_sql",
   "tags": [
     "entity:method"

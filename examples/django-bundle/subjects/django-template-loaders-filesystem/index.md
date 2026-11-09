@@ -1,10 +1,10 @@
 # django/template/loaders/filesystem
 
-- Subject: django/template/loaders/filesystem (id `9f01b871-e39d-4ddb-a7e5-db686f98c1a0`)
+- Subject: django/template/loaders/filesystem (id `6a595033-8535-4ac5-8bc1-5f17deb29709`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 383 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

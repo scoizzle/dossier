@@ -1,10 +1,10 @@
 # docs/ref/databases
 
-- Subject: docs/ref/databases (id `c10be0f7-25cc-4ca6-8479-879fbb0d0016`)
+- Subject: docs/ref/databases (id `1e904df5-c8c7-47a9-9b59-cb886d362f65`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 15177 tokens
-- Facts shown: 338 of 340
+- Used: 15222 tokens
+- Facts shown: 340 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -169,6 +169,7 @@
 - [ba2762da] Character fields ~~~~~~~~~~~~~~~~
 - [f4a0ab4c] Collation settings ~~~~~~~~~~~~~~~~~~
 - [383dce08da8f0e33] Connecting to the database --------------------------
+- [383dce08da8f0e33-2] Connecting to the database --------------------------
 - [98300953] Connection management ~~~~~~~~~~~~~~~~~~~~~
 - [e3d6bc02a013fdc6] Connection pool ---------------
 - [e3d6bc02a013fdc6-2] Connection pool ---------------
@@ -239,6 +240,7 @@
 - [a8c939a1] Migration operation for adding extensions -----------------------------------------
 - [76bf7af3] MySQL Connector/Python ~~~~~~~~~~~~~~~~~~~~~~
 - [43504e63] MySQL Connector/Python is available from the `download page`_. The Django adapter is available in versions 1.1.X and later. It may not support the most recent releases of Django.
+- [99ee8865] MySQL DB API Drivers --------------------
 - [7094a7d6] MySQL and MariaDB do not support some options to the ``SELECT ... FOR UPDATE`` statement. If ``select_for_update()`` is used with an unsupported option, then a :exc:`~django.db.NotSupportedError` is raised.
 - [23acd031] MySQL can index only the first N chars of a ``BLOB`` or ``TEXT`` column. Since ``TextField`` doesn't have a defined length, you can't mark it as ``unique=True``. MySQL will report: "BLOB/TEXT column '<db_column>' used in key specification without a key length".
 - [27d3f505] MySQL can store fractional seconds, provided that the column definition includes a fractional indication (e.g. ``DATETIME(6)``).

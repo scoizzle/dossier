@@ -1,10 +1,10 @@
 # django/core/files/storage/memory
 
-- Subject: django/core/files/storage/memory (id `ec7e0e1d-0aa9-45bc-9a39-ca02495bbebe`)
+- Subject: django/core/files/storage/memory (id `41f9451c-af66-42e6-949a-9b42783ebc39`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2474 tokens
-- Facts shown: 49 of 50
+- Used: 2521 tokens
+- Facts shown: 50 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -21,16 +21,17 @@
 - @cached_property def base_location(self): return self._value_or_setting(self._location, settings.MEDIA_ROOT) [7a31e0fac4ec8b62-2]
 - @cached_property def base_url(self): if self._base_url is not None and not self._base_url.endswith("/"): self._base_url += "/" return self._value_or_setting(self._base_url, settings.MEDIA_URL) [b2e1396457fbae67-2]
 - @cached_property def directory_permissions_mode(self): return self._value_or_setting( self._directory_permissions_mode, settings.FILE_UPLOAD_DIRECTORY_PERMISSIONS ) [f8d33481c24a6fb0-2]
+- @cached_property def file_permissions_mode(self): return self._value_or_setting( self._file_permissions_mode, settings.FILE_UPLOAD_PERMISSIONS ) [4094fbd72b565b94-2]
 - @cached_property def location(self): return os.path.abspath(self.base_location) [09859160e487624d-2]
 - Handle path navigation of directory trees, creating missing nodes if needed. """ [7abe88a3]
 - Handle unicode/bytes conversion during I/O operations and record creation, modification, and access times. """ [4f7ea5c3]
 - def __init__( self, location=None, base_url=None, file_permissions_mode=None, directory_permissions_mode=None, ): self._location = location self._base_url = base_url self._file_permissions_mode = file_permissions_mode self._directory_permissions_mode = directory_permissions_mode self._root = InMemoryDirNode() self._resolve( self.base_location, create_if_missing=True, leaf_cls=InMemoryDirNode ) setting_changed.connect(self._clear_cached_properties) [23957a43]
 - def __init__(self): self._children = {} self._initialize_times() [83cf2eec]
-- def __init__(self, content="", name=None): super().__init__(content, name) self._content_type = type(content) self._initialize_times() [8c2892d2]
-- def _update_accessed_time(self): self.accessed_time = now() [c5ec2c8d]
+- __all__ = ("InMemoryStorage",) [484e01b1]
 
 ## All facts
 
+- [8c2892d2] def __init__(self, content="", name=None): super().__init__(content, name) self._content_type = type(content) self._initialize_times()
 - [50935899] def _convert_stream_content(self, mode): """Convert actual file content according to the opening mode.""" new_content_type = bytes if "b" in mode else str # No conversion needed. if self._content_type == new_content_type: return
 - [fe5417b8] def _initialize_stream(self): """Initialize underlying stream according to the content type.""" self.file = io.BytesIO() if self._content_type == bytes else io.StringIO()
 - [7c7e9c66] def _open(self, name, mode="rb"): create_if_missing = "w" in mode file_node = self._resolve( name, create_if_missing=create_if_missing, leaf_cls=InMemoryFileNode ) return file_node.open(mode)
@@ -38,6 +39,7 @@
 - [edff0d4e] def _resolve(self, name, create_if_missing=False, leaf_cls=None, check_exists=True): try: relative_path = self._relative_path(name) return self._root.resolve( relative_path, create_if_missing=create_if_missing, leaf_cls=leaf_cls, check_exists=check_exists, ) except NotADirectoryError as exc: absolute_path = self.path(exc.filename) raise FileExistsError(f"{absolute_path} exists and is not a directory.")
 - [33ff554d] def _resolve_child(self, path_segment, create_if_missing, child_cls): if create_if_missing: self._update_accessed_time() self._update_modified_time() if child_cls is InMemoryFileNode: child = child_cls(name=path_segment) else: child = child_cls() return self._children.setdefault(path_segment, child) return self._children.get(path_segment)
 - [eb0497d4] def _save(self, name, content): file_node = self._resolve( name, create_if_missing=True, leaf_cls=InMemoryFileNode ) fd = None for chunk in content.chunks(): if fd is None: mode = "wb" if isinstance(chunk, bytes) else "wt" fd = file_node.open(mode) fd.write(chunk)
+- [c5ec2c8d] def _update_accessed_time(self): self.accessed_time = now()
 - [62f36b95] def _update_modified_time(self): self.modified_time = now()
 - [fda611bb] def delete(self, name): path, filename = os.path.split(name) dir_node = self._resolve(path, check_exists=False) if dir_node is None: return None dir_node.remove_child(filename)
 - [39df8fd7] def exists(self, name): return self._resolve(name, check_exists=False) is not None
@@ -55,7 +57,6 @@
 - [f7031137] def write(self, data): super().write(data) self._update_modified_time()
 - [02c913e0] """ Based on dj-inmemorystorage (BSD) by Cody Soyland, Seán Hayes, Tore Birkeland, and Nick Presta. """
 - [205994fc] @deconstructible(path="django.core.files.storage.InMemoryStorage") class InMemoryStorage(Storage, StorageSettingsMixin): """A storage saving files in memory."""
-- [484e01b1] __all__ = ("InMemoryStorage",)
 - [818521db] class InMemoryDirNode(TimingMixin): """ Helper class representing an in-memory directory node.
 - [6e21e5ab] class InMemoryFileNode(ContentFile, TimingMixin): """ Helper class representing an in-memory file node.
 - [8b55d8b5] class TimingMixin: def _initialize_times(self): self.created_time = now() self.accessed_time = self.created_time self.modified_time = self.created_time

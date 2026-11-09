@@ -1,11 +1,11 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.get_choices
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_choices (id `88e78b72-b593-45e2-945e-da33148a99f8`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_choices (id `817b331e-f416-47f2-9b4e-0c36340e2432`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 36 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

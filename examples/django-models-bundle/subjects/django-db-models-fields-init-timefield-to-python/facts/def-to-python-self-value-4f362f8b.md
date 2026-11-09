@@ -1,6 +1,6 @@
 # Fact 4f362f8b
 
-Store id: b6011763-6be1-45b7-b9af-5bbce23cc704
+Store id: b7778f0b-e351-4c72-acdf-be28309d50ab
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8215360+00:00`
+- posted_at: `2026-11-09T23:44:50.2587890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2660,
     "symbol": "TimeField.to_python"
   },
-  "id": "b6011763-6be1-45b7-b9af-5bbce23cc704",
+  "id": "b7778f0b-e351-4c72-acdf-be28309d50ab",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8215360+00:00"
+    "posted_at": "2026-11-09T23:44:50.2587890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da08c10c-f9d2-4dab-a976-452265c85114",
+  "subject_id": "f1f0777c-b1c8-450d-ac2f-6e9e88ab4aae",
   "subject_name": "django/db/models/fields/__init__::TimeField.to_python",
   "tags": [
     "entity:method"

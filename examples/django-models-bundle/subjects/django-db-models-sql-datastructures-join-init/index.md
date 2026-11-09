@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::Join.__init__
 
-- Subject: django/db/models/sql/datastructures::Join.__init__ (id `d7cdd98e-49f1-40ab-bf7c-9a15261ea343`)
+- Subject: django/db/models/sql/datastructures::Join.__init__ (id `8acb15d0-6898-4426-80f2-d4ca7712c4d6`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 40 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

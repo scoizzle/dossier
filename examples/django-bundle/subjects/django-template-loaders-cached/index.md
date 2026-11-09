@@ -1,10 +1,10 @@
 # django/template/loaders/cached
 
-- Subject: django/template/loaders/cached (id `ed13c627-797b-469f-861f-ff9410a571b1`)
+- Subject: django/template/loaders/cached (id `9fa0af93-60a4-4126-9921-ef439ca0d6e2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 976 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

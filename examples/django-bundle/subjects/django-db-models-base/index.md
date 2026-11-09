@@ -1,10 +1,10 @@
 # django/db/models/base
 
-- Subject: django/db/models/base (id `c9cd9625-24ae-4c6c-85b7-0495ef0590c6`)
+- Subject: django/db/models/base (id `e1d8356e-5acd-428d-be34-6e1de1e556f5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 19648 tokens
-- Facts shown: 237 of 240
+- Used: 19772 tokens
+- Facts shown: 240 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -64,6 +64,7 @@
 - [c9a41a39] # Look for an application configuration to attach the model to. app_config = apps.get_containing_app_config(module)
 - [15de0edc] # Now we're left with the unprocessed fields that *must* come from # keywords, or default.
 - [90af2d49] # Run constraints checks, but only for fields that passed validation. if validate_constraints: for name in errors: if name != NON_FIELD_ERRORS and name not in exclude: exclude.add(name) try: self.validate_constraints(exclude=exclude) except ValidationError as e: errors = e.update_error_dict(errors)
+- [3dd0c060] # Run unique checks, but only for fields that passed validation. if validate_unique: for name in errors: if name != NON_FIELD_ERRORS and name not in exclude: exclude.add(name) try: self.validate_unique(exclude=exclude) except ValidationError as e: errors = e.update_error_dict(errors)
 - [abcf8ff5] # Separate related fields and non-related fields. _fields = [] related_fields = [] for f in fields: if LOOKUP_SEP in f: related_fields.append(f) else: _fields.append(f) fields = _fields
 - [480ff008] # Set the name of _meta.indexes. This can't be done in # Options.contribute_to_class() because fields haven't been added to # the model at that point. for index in cls._meta.indexes: if not index.name: index.set_name_with_model(cls)
 - [eadc9507] # Set up the storage for instance state self._state = ModelState()
@@ -117,6 +118,8 @@
 - [7b357891] if allowed_len is None: return errors
 - [297fd83a] if cls._meta.order_with_respect_to or not cls._meta.ordering: return []
 - [22c6a0100843fcbe] if errors: raise ValidationError(errors)
+- [22c6a0100843fcbe-2] if errors: raise ValidationError(errors)
+- [22c6a0100843fcbe-3] if errors: raise ValidationError(errors)
 - [5d916ae8] if from_queryset is None: hints = {"instance": self} from_queryset = self.__class__._base_manager.db_manager(using, hints=hints) elif using is not None: from_queryset = from_queryset.using(using)
 - [45f72c43] if getattr(meta, "app_label", None) is None: if app_config is None: if not abstract: raise RuntimeError( "Model class %s.%s doesn't declare an explicit " "app_label and isn't in an application in " "INSTALLED_APPS." % (module, name) )
 - [e07dc1b0] if include_meta_constraints: for model_class, model_constraints in constraints: for constraint in model_constraints: if not any(name in exclude for name in constraint.fields): unique_checks.append((model_class, constraint.fields))

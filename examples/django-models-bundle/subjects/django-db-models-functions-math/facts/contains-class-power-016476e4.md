@@ -1,6 +1,6 @@
 # Fact 016476e4
 
-Store id: 050862a9-ce60-45b6-ba79-f41b398e9670
+Store id: 46418677-1f24-487d-9549-6df24358da25
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Power
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "050862a9-ce60-45b6-ba79-f41b398e9670",
+  "id": "46418677-1f24-487d-9549-6df24358da25",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Power"
       },
       "rel": "contains",
-      "target": "01bcbd09-5b52-46e4-917f-a222bd3e668a"
+      "target": "cde72ab9-4ed3-4b00-b51d-d51429917233"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

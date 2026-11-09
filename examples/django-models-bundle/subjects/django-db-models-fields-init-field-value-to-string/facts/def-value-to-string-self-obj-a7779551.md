@@ -1,6 +1,6 @@
 # Fact a7779551
 
-Store id: 2c145295-9d34-4bc2-831d-b3ac6ce7bda4
+Store id: cf35480a-57ac-46ff-abe7-ca325cb1e344
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5292140+00:00`
+- posted_at: `2026-11-09T23:44:50.0454840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1127,
     "symbol": "Field.value_to_string"
   },
-  "id": "2c145295-9d34-4bc2-831d-b3ac6ce7bda4",
+  "id": "cf35480a-57ac-46ff-abe7-ca325cb1e344",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5292140+00:00"
+    "posted_at": "2026-11-09T23:44:50.0454840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "db0d665f-4f54-4e7e-93ca-c1a5525e3415",
+  "subject_id": "acc0bd1c-01a1-44d5-bdb4-b78b5cfa8ae5",
   "subject_name": "django/db/models/fields/__init__::Field.value_to_string",
   "tags": [
     "entity:method"

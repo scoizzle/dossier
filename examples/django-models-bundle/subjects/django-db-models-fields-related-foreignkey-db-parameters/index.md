@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.db_parameters
 
-- Subject: django/db/models/fields/related::ForeignKey.db_parameters (id `dccaa7ca-ae8a-4ec0-b978-fc80cfd945dc`)
+- Subject: django/db/models/fields/related::ForeignKey.db_parameters (id `7cfa9c05-6ecd-41f4-b0b3-02a14678090a`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

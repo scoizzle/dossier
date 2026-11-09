@@ -1,6 +1,6 @@
 # Fact 8fec1c8b
 
-Store id: 4ee08cf5-5f0d-4de4-af55-260798eea96c
+Store id: 9a25d198-1587-485c-8079-b0c86936a278
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.4841920+00:00`
+- posted_at: `2026-11-09T23:44:53.5523280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 78,
     "symbol": "JSONObject.as_sql"
   },
-  "id": "4ee08cf5-5f0d-4de4-af55-260798eea96c",
+  "id": "9a25d198-1587-485c-8079-b0c86936a278",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.4841920+00:00"
+    "posted_at": "2026-11-09T23:44:53.5523280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dfdc977f-e978-426a-82a9-638020b821b1",
+  "subject_id": "450a3f22-55fe-4611-a58c-470a2b64526c",
   "subject_name": "django/db/models/functions/json::JSONObject.as_sql",
   "tags": [
     "entity:method"

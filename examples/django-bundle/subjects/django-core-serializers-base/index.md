@@ -1,10 +1,10 @@
 # django/core/serializers/base
 
-- Subject: django/core/serializers/base (id `0fefd459-066c-497a-b9b2-b212c45da104`)
+- Subject: django/core/serializers/base (id `cb8136c1-b113-4f88-b641-d7bb4cc2ff66`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3116 tokens
-- Facts shown: 52 of 52
+- Facts shown: 52 facts
 - Conflicts: 0
 - Gaps: 0
 

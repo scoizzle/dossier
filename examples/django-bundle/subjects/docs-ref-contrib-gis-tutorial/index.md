@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/tutorial
 
-- Subject: docs/ref/contrib/gis/tutorial (id `53d1f547-12bd-4da6-81fb-fc19f83ac1d1`)
+- Subject: docs/ref/contrib/gis/tutorial (id `20759382-7c8a-4b49-a6d0-e0cf21c00f68`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8673 tokens
-- Facts shown: 209 of 211
+- Used: 8707 tokens
+- Facts shown: 211 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,19 +27,21 @@
 - $ python manage.py ogrinspect world/data/TM_WORLD_BORDERS-0.3.shp WorldBorder \ --srid=4326 --mapping --multi [e39f6db2]
 - $ python manage.py runserver [46c9a5006c713d0c-5]
 - $ python manage.py shell [dc0da2cbf091829d-7]
+- $ python manage.py shell [dc0da2cbf091829d-8]
+- $ python manage.py shell [dc0da2cbf091829d-9]
 - $ python manage.py sqlmigrate world 0001 [0c5b46f2]
 - .. code-block:: pycon [eaf050be34acb41d-191]
 - >>> [fld.__name__ for fld in lyr.field_types] ['OFTString', 'OFTString', 'OFTString', 'OFTInteger', 'OFTString', 'OFTInteger', 'OFTInteger64', 'OFTInteger', 'OFTInteger', 'OFTReal', 'OFTReal'] [d7f21e33]
 - >>> feat = lyr[234] >>> print(feat.get("NAME")) San Marino [f152abdb]
-- >>> for feat in lyr: ... print(feat.get("NAME"), feat.geom.num_points) ... Guernsey 18 Jersey 26 South Georgia South Sandwich Islands 338 Taiwan 363 [35e0a030]
-- >>> from world import load >>> load.run() [5c650d53]
+- >>> from django.contrib.gis.geos import GEOSGeometry, Point >>> pnt = Point(954158.1, 4215137.1, srid=32140) [ea66971d]
 
 ## All facts
 
+- [35e0a030] >>> for feat in lyr: ... print(feat.get("NAME"), feat.geom.num_points) ... Guernsey 18 Jersey 26 South Georgia South Sandwich Islands 338 Taiwan 363
 - [cf9d3234] >>> from django.contrib.gis.gdal import DataSource >>> ds = DataSource(world_shp) >>> print(ds) / ... /geodjango/world/data/TM_WORLD_BORDERS-0.3.shp (ESRI Shapefile)
-- [ea66971d] >>> from django.contrib.gis.geos import GEOSGeometry, Point >>> pnt = Point(954158.1, 4215137.1, srid=32140)
 - [b71ab154] >>> from django.contrib.gis.geos import Point >>> pnt = Point(12.4604, 43.9420) >>> WorldBorder.objects.get(mpoly__intersects=pnt) <WorldBorder: San Marino>
 - [54eb2f20] >>> from pathlib import Path >>> import world >>> world_shp = Path(world.__file__).resolve().parent / "data" / "TM_WORLD_BORDERS-0.3.shp"
+- [5c650d53] >>> from world import load >>> load.run()
 - [185c9ac1] >>> from world.models import WorldBorder >>> WorldBorder.objects.filter(mpoly__contains=pnt_wkt) <QuerySet [<WorldBorder: United States>]>
 - [7bd304af] >>> geom = feat.geom >>> print(geom.wkt) POLYGON ((12.415798 43.957954,12.450554 ... >>> print(geom.json) { "type": "Polygon", "coordinates": [ [ [ 12.415798, 43.957954 ], [ 12.450554, 43.979721 ], ...
 - [1339cfe1] >>> lyr[0:2] [<django.contrib.gis.gdal.feature.Feature object at 0x2f47690>, <django.contrib.gis.gdal.feature.Feature object at 0x2f47650>]

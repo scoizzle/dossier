@@ -1,10 +1,10 @@
 # django/db/models/fields/proxy
 
-- Subject: django/db/models/fields/proxy (id `83fe5829-2b9e-476c-8fce-00750779296f`)
+- Subject: django/db/models/fields/proxy (id `e70c0d04-ebab-47c6-8c35-707db6f8de34`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 160 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

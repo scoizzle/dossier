@@ -1,11 +1,11 @@
 # django/db/models/expressions::NegatedExpression
 
-- Subject: django/db/models/expressions::NegatedExpression (id `37dc2be2-8f69-401e-b36a-de132796daed`)
+- Subject: django/db/models/expressions::NegatedExpression (id `c4c379a7-d006-4eeb-aa42-abc48f39a2aa`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

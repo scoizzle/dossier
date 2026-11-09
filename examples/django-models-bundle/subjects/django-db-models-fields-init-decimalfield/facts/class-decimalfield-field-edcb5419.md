@@ -1,6 +1,6 @@
 # Fact edcb5419
 
-Store id: 22ff0401-3a3b-4422-a79e-fe516001194d
+Store id: 310da831-5cfc-47d1-976c-b5902a2a9334
 
 ## Text
 
@@ -20,7 +20,7 @@ class DecimalField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6107390+00:00`
+- posted_at: `2026-11-09T23:44:50.1101950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1740,
     "symbol": "DecimalField"
   },
-  "id": "22ff0401-3a3b-4422-a79e-fe516001194d",
+  "id": "310da831-5cfc-47d1-976c-b5902a2a9334",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6107390+00:00"
+    "posted_at": "2026-11-09T23:44:50.1101950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "12e7afd1-6ef4-40ef-aa2c-28dd8a094828",
+  "subject_id": "2405b5de-548f-4174-84de-c66e6d3c1486",
   "subject_name": "django/db/models/fields/__init__::DecimalField",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/geomtype
 
-- Subject: django/contrib/gis/gdal/geomtype (id `ef43ca20-dd0a-45a9-9b8d-86ba077e6cd0`)
+- Subject: django/contrib/gis/gdal/geomtype (id `d79358c5-c0ba-4cca-a3e7-1e3c29a55c25`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 999 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/csp
 
-- Subject: django/utils/csp (id `250ea42b-a40c-4676-93cc-e7eb9719619e`)
+- Subject: django/utils/csp (id `f15ce121-3d56-4ecf-8e38-05385fd701d9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1185 tokens
-- Facts shown: 32 of 32
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.latest
 
-- Subject: django/db/models/query::QuerySet.latest (id `2b2809d9-b60a-43f3-a8f5-7fb5001d035f`)
+- Subject: django/db/models/query::QuerySet.latest (id `83d0cc41-144f-4625-88fc-827be04e2c34`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

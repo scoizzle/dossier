@@ -1,10 +1,10 @@
 # docs/ref/signals
 
-- Subject: docs/ref/signals (id `fe65fb89-e4c2-4209-bbee-80e6c3a2061c`)
+- Subject: docs/ref/signals (id `744d05d1-cddd-4162-a6d4-f7682cd8671d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6668 tokens
-- Facts shown: 196 of 239
+- Used: 8020 tokens
+- Facts shown: 239 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -18,25 +18,28 @@
 - >>> t.pizza_set.remove(p) [0f85fa57]
 - A boolean; ``True`` if the model is saved exactly as presented (i.e. when loading a :ref:`fixture <fixtures-explanation>`). One should not query/modify other records in the database as the database might not be in a consistent state yet. [e8fe3ae8]
 - For example, the :mod:`django.contrib.auth` app only prompts to create a superuser when ``interactive`` is ``True``. [b25861e4c736794c]
+- For example, the :mod:`django.contrib.auth` app only prompts to create a superuser when ``interactive`` is ``True``. [b25861e4c736794c-2]
 - For performance reasons, you shouldn't perform queries in receivers of ``pre_init`` or ``post_init`` signals because they would be executed for each instance returned during queryset iteration. [10ddc7ea]
 - For the ``pre_clear`` and ``post_clear`` actions, this is ``None``. [432dc810]
 - For the ``pre_remove`` and ``post_remove`` actions, this is a set of primary key values that was submitted to be removed from the relation. This is not dependent on whether the values actually will be, or have been, removed. In particular, non-existent values may be submitted, and will appear in ``pk_set``, even though they have no effect on the database. [4618b5cd]
 - Functions which listen for :data:`post_migrate` should adjust what they output to the screen based on the value of this argument. [09341330]
+- Functions which listen for :data:`pre_migrate` should adjust what they output to the screen based on the value of this argument. [d9834ae7]
 - If you override these methods on your model, you must call the parent class' methods for these signals to be sent. [630fb83e]
 - If you provide an :class:`~django.apps.AppConfig` instance as the sender argument, please ensure that the signal is registered in :meth:`~django.apps.AppConfig.ready`. ``AppConfig``\s are recreated for tests that run with a modified set of :setting:`INSTALLED_APPS` (such as when settings are overridden) and such signals should be connected for each new ``AppConfig`` instance. [338ed99b]
 - Many of these signals are sent by various model methods like ``__init__()`` or :meth:`~django.db.models.Model.save` that you can override in your own code. [68f5fa5a]
 - Model signals ``sender`` model can be lazily referenced when connecting a receiver by specifying its full application label. For example, an ``Question`` model defined in the ``polls`` application could be referenced as ``'polls.Question'``. This sort of reference can be quite handy when dealing with circular import dependencies and swappable models. [12d97a85]
-- Note also that Django stores signal handlers as weak references by default, so if your handler is a local function, it may be garbage collected. To prevent this, pass ``weak=False`` when you call the signal's :meth:`~django.dispatch.Signal.connect`. [aa5511c2]
-- class MyAppConfig(AppConfig): ... [e3e1f276]
+- .. note:: [942ae6c11625c81c-147]
 
 ## All facts
 
+- [aa5511c2] Note also that Django stores signal handlers as weak references by default, so if your handler is a local function, it may be garbage collected. To prevent this, pass ``weak=False`` when you call the signal's :meth:`~django.dispatch.Signal.connect`.
 - [56e78c32] Note that the object will no longer be in the database, so be very careful what you do with this instance.
 - [f028967e] See the documentation on the :doc:`signal dispatcher </topics/signals>` for information regarding how to register for and receive signals.
 - [a55fe753] Signals can make your code harder to maintain. Consider :doc:`using a middleware </topics/http/middleware>` before using request/response signals.
 - [3b8b5bf9] Signals can make your code harder to maintain. Consider implementing a helper method on a :ref:`custom manager <custom-managers>`, to both update your models and perform additional logic, or else :ref:`overriding model methods <overriding-model-methods>` before using model signals.
 - [55ca1d10] The :doc:`authentication framework </topics/auth/index>` sends :ref:`signals when a user is logged in / out <topics-auth-signals>`.
 - [bec5ac8f] ``"pre_add"`` Sent *before* one or more objects are added to the relation. ``"post_add"`` Sent *after* one or more objects are added to the relation. ``"pre_remove"`` Sent *before* one or more objects are removed from the relation. ``"post_remove"`` Sent *after* one or more objects are removed from the relation. ``"pre_clear"`` Sent *before* the relation is cleared. ``"post_clear"`` Sent *after* the relation is cleared.
+- [e3e1f276] class MyAppConfig(AppConfig): ...
 - [b5fd9980] class Pizza(models.Model): # ... toppings = models.ManyToManyField(Topping)
 - [e7700ff1e52b3085-2] class Topping(models.Model): # ... pass
 - [09f65761] def my_callback(sender, **kwargs): # Your specific logic here pass
@@ -71,7 +74,6 @@
 - [7393af6f] .. module:: django.db.backends :synopsis: Core signals sent by the database wrapper.
 - [dce664a5] .. module:: django.db.models.signals :synopsis: Signals sent by the model system.
 - [545c9e88] .. module:: django.test.signals :synopsis: Signals sent during testing.
-- [942ae6c11625c81c-147] .. note::
 - [942ae6c11625c81c-148] .. note::
 - [6b4a5e54e001d097-25] .. seealso::
 - [a1eb26d754a3d60c-33] .. versionadded:: 6.0
@@ -82,9 +84,27 @@
 - [66d1a43d] ======= Signals =======
 - [8f0b655f] ========== =============================================================== Argument Value ========== =============================================================== ``sender`` ``Question`` (the class itself)
 - [1219195139e22f0a] ============== ============================================================ Argument Value ============== ============================================================ ``sender`` ``Pizza.toppings.through`` (the intermediate m2m class)
+- [1219195139e22f0a-2] ============== ============================================================ Argument Value ============== ============================================================ ``sender`` ``Pizza.toppings.through`` (the intermediate m2m class)
 - [7d443ec4] A list of all the signals that Django sends. All built-in signals are sent using the :meth:`~django.dispatch.Signal.send` method.
 - [804ad222] And if we would then do something like this:
 - [f0f31d135f4abac9-2] Arguments sent with this signal:
+- [f0f31d135f4abac9-3] Arguments sent with this signal:
+- [f0f31d135f4abac9-4] Arguments sent with this signal:
+- [f0f31d135f4abac9-5] Arguments sent with this signal:
+- [f0f31d135f4abac9-6] Arguments sent with this signal:
+- [f0f31d135f4abac9-7] Arguments sent with this signal:
+- [f0f31d135f4abac9-8] Arguments sent with this signal:
+- [f0f31d135f4abac9-9] Arguments sent with this signal:
+- [f0f31d135f4abac9-10] Arguments sent with this signal:
+- [f0f31d135f4abac9-11] Arguments sent with this signal:
+- [f0f31d135f4abac9-12] Arguments sent with this signal:
+- [f0f31d135f4abac9-13] Arguments sent with this signal:
+- [f0f31d135f4abac9-14] Arguments sent with this signal:
+- [f0f31d135f4abac9-15] Arguments sent with this signal:
+- [f0f31d135f4abac9-16] Arguments sent with this signal:
+- [f0f31d135f4abac9-17] Arguments sent with this signal:
+- [f0f31d135f4abac9-18] Arguments sent with this signal:
+- [f0f31d135f4abac9-19] Arguments sent with this signal:
 - [2a9c99cc] Arguments that are sent with this signal:
 - [50147c04] Database Wrappers =================
 - [91dde4ad] For example, if a ``Pizza`` can have multiple ``Topping`` objects, modeled like this::
@@ -130,7 +150,9 @@
 - [deaa51c1] ``action`` ``"pre_add"`` (followed by a separate signal with ``"post_add"``)
 - [a9ec025a] ``action`` ``"pre_remove"`` (followed by a separate signal with ``"post_remove"``)
 - [933146e406f5a738] ``app_config`` Same as ``sender``.
+- [933146e406f5a738-2] ``app_config`` Same as ``sender``.
 - [39de69ec] ``apps`` An instance of :data:`Apps <django.apps.apps>` containing the state of the project after the migration run. It should be used instead of the global :attr:`apps <django.apps.apps>` registry to retrieve the models you want to perform operations on.
+- [edb083d5] ``apps`` An instance of :data:`Apps <django.apps>` containing the state of the project before the migration run. It should be used instead of the global :attr:`apps <django.apps.apps>` registry to retrieve the models you want to perform operations on.
 - [b6719aad] ``args`` A list of positional arguments passed to ``__init__()``.
 - [ecdf6c13] ``args`` ``[]`` (an empty list because there were no positional arguments passed to ``__init__()``)
 - [0bfcb592] ``class_prepared`` ------------------
@@ -141,12 +163,15 @@
 - [d44e9954] ``enter`` A boolean; ``True`` if the setting is applied, ``False`` if restored.
 - [5ebbf8ac] ``got_request_exception`` -------------------------
 - [efa5cf1407ef4292] ``instance`` The actual instance being deleted.
+- [efa5cf1407ef4292-2] ``instance`` The actual instance being deleted.
 - [b6164f448ddacd90] ``instance`` The actual instance being saved.
+- [b6164f448ddacd90-2] ``instance`` The actual instance being saved.
 - [e41a26e8] ``instance`` The actual instance of the model that's just been created.
 - [d9a321ec] ``instance`` The instance whose many-to-many relation is updated. This can be an instance of the ``sender``, or of the class the :class:`~django.db.models.ManyToManyField` is related to.
 - [537ca0b8] ``instance`` ``p`` (the ``Pizza`` instance being modified)
 - [7e4d7501] ``instance`` ``t`` (the ``Topping`` instance being modified)
 - [e1447255e2ddd0c7] ``interactive`` If ``interactive`` is ``True``, it's safe to prompt the user to input things on the command line. If ``interactive`` is ``False``, functions which listen for this signal should not try to prompt for anything.
+- [e1447255e2ddd0c7-2] ``interactive`` If ``interactive`` is ``True``, it's safe to prompt the user to input things on the command line. If ``interactive`` is ``False``, functions which listen for this signal should not try to prompt for anything.
 - [08b70f8e] ``kwargs`` A dictionary of keyword arguments passed to ``__init__()``.
 - [86a25d6d] ``kwargs`` ``{'question_text': "What's new?",`` ``'pub_date': datetime.datetime(2012, 2, 26, 13, 0, 0, 775217, tzinfo=datetime.UTC)}`` ========== ===============================================================
 - [c8346950] ``m2m_changed`` ---------------
@@ -154,10 +179,12 @@
 - [a9845b58] ``model`` ``Pizza`` (the class of the objects removed from the ``Topping``)
 - [bed0d799] ``model`` ``Topping`` (the class of the objects added to the ``Pizza``)
 - [1e8687e3b0189897] ``origin`` The ``Model`` or ``QuerySet`` instance from which the deletion originated, that is, the instance whose ``delete()`` method was invoked.
+- [1e8687e3b0189897-2] ``origin`` The ``Model`` or ``QuerySet`` instance from which the deletion originated, that is, the instance whose ``delete()`` method was invoked.
 - [5eda9137] ``pk_set`` For the ``pre_add`` and ``post_add`` actions, this is a set of primary key values that will be, or have been, added to the relation. This may be a subset of the values submitted to be added, since inserts must filter existing values in order to avoid a database ``IntegrityError``.
 - [fc905735] ``pk_set`` ``{p.id}`` (since only ``Pizza p`` was removed from the relation)
 - [34419854] ``pk_set`` ``{t.id}`` (since only ``Topping t`` was added to the relation)
 - [1502ed1f] ``plan`` The migration plan that is going to be used for the migration run. While the plan is not public API, this allows for the rare cases when it is necessary to know the plan. A plan is a list of 2-tuples with the first item being the instance of a migration class and the second item showing if the migration was rolled back (``True``) or applied (``False``).
+- [ca927cd9] ``plan`` The migration plan that was used for the migration run. While the plan is not public API, this allows for the rare cases when it is necessary to know the plan. A plan is a list of 2-tuples with the first item being the instance of a migration class and the second item showing if the migration was rolled back (``True``) or applied (``False``).
 - [d0f9f806] ``post_delete`` ---------------
 - [e314851c] ``post_init`` -------------
 - [d33782dc] ``post_migrate`` ----------------
@@ -167,7 +194,10 @@
 - [49a678e1] ``pre_migrate`` ---------------
 - [2fea6dad] ``pre_save`` ------------
 - [0517bc77] ``raw``
+- [9e9e5e019f3f0b2d] ``raw`` A boolean; ``True`` if the model is saved exactly as presented (i.e. when loading a :ref:`fixture <fixtures-explanation>`). One should not query/modify other records in the database as the database might not be in a consistent state yet.
+- [9e9e5e019f3f0b2d-2] ``raw`` A boolean; ``True`` if the model is saved exactly as presented (i.e. when loading a :ref:`fixture <fixtures-explanation>`). One should not query/modify other records in the database as the database might not be in a consistent state yet.
 - [e0b5e608b97ae7d8] ``raw`` ``False`` (since it is not loaded from a fixture) ============== ============================================================
+- [e0b5e608b97ae7d8-2] ``raw`` ``False`` (since it is not loaded from a fixture) ============== ============================================================
 - [db924753] ``request_finished`` --------------------
 - [c00ed516] ``request_started`` -------------------
 - [413957eb] ``request`` The :class:`~django.http.HttpRequest` object.
@@ -179,6 +209,8 @@
 - [0bda8258] ``sender`` As above: the model class that just had an instance created.
 - [39378e9c] ``sender`` The :class:`~django.template.Template` object which was rendered.
 - [773ab5befddcbbbd] ``sender`` The backend class which the Task was enqueued on to.
+- [773ab5befddcbbbd-2] ``sender`` The backend class which the Task was enqueued on to.
+- [773ab5befddcbbbd-3] ``sender`` The backend class which the Task was enqueued on to.
 - [b522dad9] ``sender`` The database wrapper class -- i.e. ``django.db.backends.postgresql.DatabaseWrapper`` or ``django.db.backends.mysql.DatabaseWrapper``, etc.
 - [e8f03fad] ``sender`` The handler class -- e.g. ``django.core.handlers.wsgi.WsgiHandler`` -- that handled the request. ``environ`` The ``environ`` dictionary provided to the request.
 - [08faa68c] ``sender`` The handler class, as above.
@@ -186,11 +218,15 @@
 - [07cccc5c] ``sender`` The model class that just had an instance created.
 - [821787af] ``sender`` The model class which was just prepared.
 - [184508f11de6c3d2] ``sender`` The model class.
+- [184508f11de6c3d2-2] ``sender`` The model class.
+- [184508f11de6c3d2-3] ``sender`` The model class.
+- [184508f11de6c3d2-4] ``sender`` The model class.
 - [a9e801ff] ``sender`` The settings handler.
 - [f88ed64d] ``sender`` Unused (always ``None``).
 - [88a71e84] ``setting_changed`` -------------------
 - [02d35e59] ``setting`` The name of the setting.
 - [03a73d61deffeee0] ``stdout`` A stream-like object where verbose output should be redirected.
+- [03a73d61deffeee0-2] ``stdout`` A stream-like object where verbose output should be redirected.
 - [def78e5a] ``task_enqueued`` -----------------
 - [5cae73b5] ``task_finished`` -----------------
 - [732fe2fb] ``task_result`` The enqueued :class:`TaskResult <django.tasks.TaskResult>`.
@@ -200,12 +236,19 @@
 - [0f0df9b9] ``template_rendered`` ---------------------
 - [75c4d4dc] ``template`` Same as sender
 - [b5cf9ae5dff65b84] ``update_fields`` The set of fields to update as passed to :meth:`.Model.save`, or ``None`` if ``update_fields`` wasn't passed to ``save()``.
+- [b5cf9ae5dff65b84-2] ``update_fields`` The set of fields to update as passed to :meth:`.Model.save`, or ``None`` if ``update_fields`` wasn't passed to ``save()``.
 - [9f9172f2] ``using`` The alias of database on which a command will operate.
 - [f6f8499fa102d0d5] ``using`` The database alias being used.
+- [f6f8499fa102d0d5-2] ``using`` The database alias being used.
+- [f6f8499fa102d0d5-3] ``using`` The database alias being used.
+- [f6f8499fa102d0d5-4] ``using`` The database alias being used.
+- [f6f8499fa102d0d5-5] ``using`` The database alias being used.
 - [66ea7d19] ``using`` The database alias used for synchronization. Defaults to the ``default`` database.
 - [51252e300cc5c7d8] ``using`` ``"default"`` (since the default router sends writes here)
+- [51252e300cc5c7d8-2] ``using`` ``"default"`` (since the default router sends writes here)
 - [c0ac09f1] ``value`` The value of the setting after the change. For settings that initially don't exist, in the "teardown" phase, ``value`` is ``None``.
 - [6d77b51bb5ce56c0] ``verbosity`` Indicates how much information ``manage.py`` is printing on screen. See the :option:`--verbosity` flag for details.
+- [6d77b51bb5ce56c0-2] ``verbosity`` Indicates how much information ``manage.py`` is printing on screen. See the :option:`--verbosity` flag for details.
 - [002be2c5] and then did something like this:
 - [67fe6b3e] the arguments sent to a :data:`m2m_changed` handler (``toppings_changed`` in the example above) would be:
 - [c9c14253] the arguments sent to a :data:`m2m_changed` handler would be:

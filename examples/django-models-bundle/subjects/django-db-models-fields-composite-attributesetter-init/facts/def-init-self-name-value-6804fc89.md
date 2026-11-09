@@ -1,6 +1,6 @@
 # Fact 6804fc89
 
-Store id: 4cf6f6c8-32c4-4073-844e-2cb3b139b8e2
+Store id: 75bf4870-011a-490e-b8eb-740da76f360d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, name, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1039340+00:00`
+- posted_at: `2026-11-09T23:44:50.4688860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "AttributeSetter.__init__"
   },
-  "id": "4cf6f6c8-32c4-4073-844e-2cb3b139b8e2",
+  "id": "75bf4870-011a-490e-b8eb-740da76f360d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1039340+00:00"
+    "posted_at": "2026-11-09T23:44:50.4688860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "285507ff-60aa-4645-99dd-1c71054c4bf2",
+  "subject_id": "d50d5862-4c18-4a29-bcfb-6c6b21cd7337",
   "subject_name": "django/db/models/fields/composite::AttributeSetter.__init__",
   "tags": [
     "entity:method"

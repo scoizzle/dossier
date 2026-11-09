@@ -1,6 +1,6 @@
 # Fact a6191f79
 
-Store id: ee36049f-5084-4ebf-85e8-3900eb75051b
+Store id: 609e3030-09bb-4b8a-abf7-2cb4fc5760d7
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncWeek(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2815760+00:00`
+- posted_at: `2026-11-09T23:44:53.4006900+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 373,
     "symbol": "TruncWeek"
   },
-  "id": "ee36049f-5084-4ebf-85e8-3900eb75051b",
+  "id": "609e3030-09bb-4b8a-abf7-2cb4fc5760d7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2815760+00:00"
+    "posted_at": "2026-11-09T23:44:53.4006900+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "17816aae-c297-4b0f-a2fe-5365dcfabc39",
+  "subject_id": "140643a9-c1f2-49de-b259-b530bc1fc202",
   "subject_name": "django/db/models/functions/datetime::TruncWeek",
   "tags": [
     "entity:class"

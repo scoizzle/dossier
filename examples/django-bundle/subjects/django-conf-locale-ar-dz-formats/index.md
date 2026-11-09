@@ -1,10 +1,10 @@
 # django/conf/locale/ar_DZ/formats
 
-- Subject: django/conf/locale/ar_DZ/formats (id `0ff57899-351f-4c2c-a5b7-25eaa682a71c`)
+- Subject: django/conf/locale/ar_DZ/formats (id `8253cae2-2702-4702-ae69-44bb42e3fb5d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 240 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

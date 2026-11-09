@@ -1,10 +1,10 @@
 # docs/internals/release-process
 
-- Subject: docs/internals/release-process (id `5cc340ee-3b94-4fef-9bcb-40ce5d1e1c5c`)
+- Subject: docs/internals/release-process (id `9969acfd-5087-42b9-8aa3-27bd54e1d353`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4663 tokens
-- Facts shown: 112 of 128
+- Used: 5472 tokens
+- Facts shown: 128 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -72,10 +72,15 @@
 - [f1b5126b] A feature release may deprecate certain features from previous releases. If a feature is deprecated in feature release ``A.x``, it will continue to work in all ``A.x`` versions (for all versions of ``x``) but raise warnings. Deprecated features will be removed in the ``B.0`` release, or ``B.1`` for features deprecated in the last ``A.x`` feature release to ensure deprecations are done over at least 2 feature releases.
 - [02ddc9b6] A more generic example:
 - [406482d2] Active development / Pre-feature freeze ---------------------------------------
+- [0ea60b0a] Active development / Pre-feature freeze ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [406e314d] After each feature release, the release manager will publish a timeline for the next feature release. The timeline for an upcoming feature release can be found in the corresponding roadmap page, e.g. https://www.djangoproject.com/download/2028/roadmap.
+- [bd55cda0] After each feature release, the release manager will publish a timeline for the next feature release. The timeline for an upcoming feature release can be found in the corresponding roadmap page, e.g. https://www.djangoproject.com/download/6.0/roadmap.
 - [941053fd] After the alpha, all bug fixes merged in ``main`` are also backported to ``stable/A.B.x``. Refactors are backported at the discretion of the merger. Mergers will be more and more conservative with backports, to avoid introducing regressions.
+- [f64b3ce9] After the alpha, all bug fixes merged in ``main`` are also backported to ``stable/YYYY.x``. Refactors are backported at the discretion of the merger. Mergers will be more and more conservative with backports, to avoid introducing regressions.
 - [00ba3fafe2a55c17] After the release candidate, only release blockers and documentation fixes are backported.
+- [00ba3fafe2a55c17-2] After the release candidate, only release blockers and documentation fixes are backported.
 - [94bfba2801c0f6ef] All major and minor features, including deprecations and breaking changes, must be merged by the feature freeze. Any features not done by this point will be deferred to the next feature release.
+- [94bfba2801c0f6ef-2] All major and minor features, including deprecations and breaking changes, must be merged by the feature freeze. Any features not done by this point will be deferred to the next feature release.
 - [4b14f615] As a concrete example, consider a moment in time halfway between the release of Django 2029 and 2030. At this point in time:
 - [4e57f3de] As a concrete example, consider a moment in time halfway between the release of Django 5.1 and 5.2. At this point in time:
 - [d5587a28] At any moment in time, Django's developer team will support a set of releases to varying levels. See `the supported versions section <https://www.djangoproject.com/download/#supported-versions>`_ of the download page for the current state of support for each version.
@@ -89,21 +94,27 @@
 - [3733a883] Django uses a time-based release schedule. Up to Django 6.2, feature releases happen every eight months or so. From Django 2028, they happen once a year, as described in :ref:`the annual release cycle <annual-release-cadence>`.
 - [fced91b5] Each feature release series goes through two support phases:
 - [9434c86d] Feature freeze / Alpha release ------------------------------
+- [b4b3ced9] Feature freeze / Alpha release ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [e38141e4] Features deprecated in Django 6.0, 6.1, or 6.2 are removed following the same rules, with Django 2028 taking the place of 7.0 and Django 2029 taking the place of 7.1. Features deprecated in Django 2028 or later follow the :ref:`annual release cycle deprecation policy <annual-deprecation-policy>`.
 - [8a37c5a1] Final release -------------
 - [4f3f6577] Final release ~~~~~~~~~~~~~
 - [8340ed22] For example, if a feature is deprecated in Django 2028:
 - [9818998c32f165ec] For more information about how the Django project issues new releases for security purposes, please see :doc:`our security policies </internals/security>`.
+- [9818998c32f165ec-2] For more information about how the Django project issues new releases for security purposes, please see :doc:`our security policies </internals/security>`.
 - [ebfd21d0] From Django 2.0, and ending with Django 6.2, version numbers use a loose form of `semantic versioning <https://semver.org/>`_ such that each version following a :term:`long-term support release` will bump to the next "dot zero" version. For example: 2.0, 2.1, 2.2 (LTS), 3.0, 3.1, 3.2 (LTS), etc.
 - [09878474] Ideally, the final release will ship in approximately the second week of January.
 - [3d9868e8] Ideally, the final release will ship two weeks after the last release candidate.
 - [b532d051] If a feature is deprecated in feature release ``YYYY``, it will continue to work in the following feature release, ``YYYY+1``, while raising warnings. The feature will be removed in ``YYYY+2``.
 - [36fa90da58a8960c] If there are major bugs still being found 2 weeks after the release candidate, there will be a decision on how to proceed (likely another release candidate would be issued and the final release date will be pushed out).
+- [36fa90da58a8960c-2] If there are major bugs still being found 2 weeks after the release candidate, there will be a decision on how to proceed (likely another release candidate would be issued and the final release date will be pushed out).
 - [f78f35575fa5ee8a] If there is still a consistent stream of release blockers coming in at the planned release candidate date, a beta 2 will be released to encourage further testing and the release candidate date will be pushed out ~1 month.
+- [f78f35575fa5ee8a-2] If there is still a consistent stream of release blockers coming in at the planned release candidate date, a beta 2 will be released to encourage further testing and the release candidate date will be pushed out ~1 month.
 - [0e5e5e7b] In git, each Django release will have a tag indicating its version number, signed with the Django release key. Additionally, each release series has its own branch, called ``stable/A.B.x``, and bugfix/security releases will be issued from those branches.
+- [3df0bccb] In git, each Django release will have a tag indicating its version number, signed with the Django release key. Additionally, each release series has its own branch, called ``stable/YYYY.x``, and bugfix/security releases will be issued from those branches.
 - [a57aee59] In parallel to this phase, ``main`` can continue to receive new features, to be released in the ``A.B+1`` cycle.
 - [ef567a7a] In parallel to this phase, ``main`` can continue to receive new features, to be released in the ``YYYY+1`` cycle.
 - [a90b18ae] Non-release blocking bug fix freeze / Beta release --------------------------------------------------
+- [f8fb915b] Non-release blocking bug fix freeze / Beta release ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [89122134] Official releases -----------------
 - [2adbdd30] Official releases =================
 - [68571245] One feature release will be made each calendar year. Final releases are planned for approximately the second week of January and use that calendar year's number. The exact release date is at the release manager's discretion.
@@ -113,6 +124,7 @@
 - [a6f4374d] Release process ===============
 - [31e801e9] See `the supported versions section <https://www.djangoproject.com/download/#supported-versions>`__ of the download page for the current state of support for each version.
 - [d7334f8c48e47322] See also the :ref:`deprecating-a-feature` guide.
+- [d7334f8c48e47322-2] See also the :ref:`deprecating-a-feature` guide.
 - [5844d9dd] SemVer makes it easier to see at a glance how compatible releases are with each other. It also helps to anticipate when compatibility shims will be removed. It's not a pure form of SemVer as each feature release will continue to have a few documented backwards incompatibilities where a deprecation path isn't possible or not worth the cost. Also, deprecations started in an LTS release (``X.2``) will be dropped in a non-dot-zero release (``Y.1``) to accommodate our policy of keeping deprecation shims for at least two feature releases. Read on to the next section for an example.
 - [c8a4d1c9] Since version 1.0, and ending with Django 6.2, Django's release numbering works as follows:
 - [93d39740] So, for example, if we decided to start the deprecation of a function in Django 4.2:
@@ -121,7 +133,11 @@
 - [4982c6af531ad1e9] Supported versions ==================
 - [e93d3527] The annual release cycle ========================
 - [550592171df5e2dc] The release candidate marks the string freeze, and it happens at least two weeks before the final release. Translators can then submit updated translations for inclusion in the final release. After this point, new translatable strings must not be added.
+- [550592171df5e2dc-2] The release candidate marks the string freeze, and it happens at least two weeks before the final release. Translators can then submit updated translations for inclusion in the final release. After this point, new translatable strings must not be added.
+- [9a8ae125] The warnings are silent by default. You can turn on display of these warnings with the ``python -Wd`` option.
 - [135413b2] Translation string freeze / Release candidate release -----------------------------------------------------
+- [097c4e85] Translation string freeze / Release candidate release ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [0f19b587] Work begins on the feature release ``A.B`` after the feature freeze of the previous release, i.e. when the ``stable/A.B-1.x`` branch is forked.
 - [6a2cb388] Work begins on the feature release ``YYYY`` after the feature freeze of the previous release, i.e. when the ``stable/YYYY-1.x`` branch is forked. For Django 2028, the previous release is Django 6.2, so that branch is ``stable/6.2.x``.
 - [aa892819735db8ae] You can find the current branch under active development in the `Django release process <https://code.djangoproject.com/#Djangoreleaseprocess>`_ on Trac.
+- [aa892819735db8ae-2] You can find the current branch under active development in the `Django release process <https://code.djangoproject.com/#Djangoreleaseprocess>`_ on Trac.

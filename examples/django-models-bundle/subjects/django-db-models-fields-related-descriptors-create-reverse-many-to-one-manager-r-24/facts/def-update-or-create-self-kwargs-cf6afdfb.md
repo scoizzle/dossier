@@ -1,6 +1,6 @@
 # Fact cf6afdfb
 
-Store id: 049dcbe4-9a67-405c-85de-0c7f13d762ba
+Store id: 056e4a6c-80ca-4a54-a1e0-d7085110485e
 
 ## Text
 
@@ -20,7 +20,7 @@ def update_or_create(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2698430+00:00`
+- posted_at: `2026-11-09T23:44:51.9327170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 918,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.update_or_create"
   },
-  "id": "049dcbe4-9a67-405c-85de-0c7f13d762ba",
+  "id": "056e4a6c-80ca-4a54-a1e0-d7085110485e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2698430+00:00"
+    "posted_at": "2026-11-09T23:44:51.9327170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5a85b3e9-7e15-48fa-94a7-4d8c7a22b727",
+  "subject_id": "8fe7a9f4-1105-4e07-9e4d-1d7bd10110a7",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.update_or_create",
   "tags": [
     "entity:method"

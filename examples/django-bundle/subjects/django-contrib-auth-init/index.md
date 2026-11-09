@@ -1,10 +1,10 @@
 # django/contrib/auth/__init__
 
-- Subject: django/contrib/auth/__init__ (id `a925042e-ba90-435a-b31c-feeaaa359cb6`)
+- Subject: django/contrib/auth/__init__ (id `efa7b707-9f5a-427d-9405-99bd9ac2f104`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3124 tokens
-- Facts shown: 43 of 48
+- Used: 3514 tokens
+- Facts shown: 48 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,28 +13,33 @@
 - async def auser(): return user [0a5160ef]
 - request.auser = auser [9551ef64]
 - # The credentials supplied are invalid to all backends, fire signal user_login_failed.send( sender=__name__, credentials=_clean_credentials(credentials), request=request ) [8de2244a]
+- # The credentials supplied are invalid to all backends, fire signal. await user_login_failed.asend( sender=__name__, credentials=_clean_credentials(credentials), request=request ) [0a096c04]
 - Not comprehensive - intended for user_login_failed signal """ SENSITIVE_CREDENTIALS = re.compile("api|token|key|secret|password|signature", re.I) CLEANSED_SUBSTITUTE = "********************" for key in credentials: if SENSITIVE_CREDENTIALS.search(key): credentials[key] = CLEANSED_SUBSTITUTE return credentials [60e7402b]
 - Take the current request and the updated user object from which the new session hash will be derived and update the session hash appropriately to prevent a password change from logging out the session from which the password was changed. """ request.session.cycle_key() if hasattr(user, "get_session_auth_hash") and request.user == user: request.session[HASH_SESSION_KEY] = user.get_session_auth_hash() [fa4d57f3]
 - _set_auth_user(request) [e53c551d1d4d5c6c]
+- _set_auth_user(request) [e53c551d1d4d5c6c-2]
 - await request.session.aset(SESSION_KEY, user._meta.pk.value_to_string(user)) await request.session.aset(BACKEND_SESSION_KEY, backend) await request.session.aset(HASH_SESSION_KEY, session_auth_hash) _set_auth_user(request, user) rotate_token(request) await user_logged_in.asend(sender=user.__class__, request=request, user=user) [08e7f5fe]
 - backend = _get_backend_from_user(user=user, backend=backend) [322274953f89d623]
+- backend = _get_backend_from_user(user=user, backend=backend) [322274953f89d623-2]
 - if SESSION_KEY in request.session: if _get_user_session_key(request) != user.pk or ( session_auth_hash and not constant_time_compare( request.session.get(HASH_SESSION_KEY, ""), session_auth_hash ) ): # To avoid reusing another user's session, create a new, empty # session if the existing session corresponds to a different # authenticated user. request.session.flush() else: request.session.cycle_key() [b3199419]
 - if await request.session.ahas_key(SESSION_KEY): if await _aget_user_session_key(request) != user.pk or ( session_auth_hash and not constant_time_compare( await request.session.aget(HASH_SESSION_KEY, ""), session_auth_hash, ) ): # To avoid reusing another user's session, create a new, empty # session if the existing session corresponds to a different # authenticated user. await request.session.aflush() else: await request.session.acycle_key() [83fb7d12]
 - if hasattr(request, "user"): request.user = user if hasattr(request, "auser"): [cdee1e83]
 - if user is None: user = AnonymousUser() [2c52488a]
 - request.session[SESSION_KEY] = user._meta.pk.value_to_string(user) request.session[BACKEND_SESSION_KEY] = backend request.session[HASH_SESSION_KEY] = session_auth_hash _set_auth_user(request, user) rotate_token(request) user_logged_in.send(sender=user.__class__, request=request, user=user) [330656f3]
-- return user or AnonymousUser() [58ab581662dc428e]
-- @sensitive_variables("credentials") def _clean_credentials(credentials): """ Clean a dictionary of credentials of potentially sensitive info before sending to less secure functions. [c5588162]
-- async def aget_user(request): """See get_user().""" from .models import AnonymousUser [abd565c5]
 
 ## All facts
 
+- [58ab581662dc428e] return user or AnonymousUser()
+- [58ab581662dc428e-2] return user or AnonymousUser()
 - [a8124339] user = None try: user_id = _get_user_session_key(request) backend_path = request.session[BACKEND_SESSION_KEY] except KeyError: pass else: if backend_path in settings.AUTHENTICATION_BACKENDS: backend = load_backend(backend_path) user = backend.get_user(user_id) # Verify the session if hasattr(user, "get_session_auth_hash"): session_hash = request.session.get(HASH_SESSION_KEY) if not session_hash: session_hash_verified = False else: session_auth_hash = user.get_session_auth_hash() session_hash_verified = constant_time_compare( session_hash, session_auth_hash ) if not session_hash_verified: # If the current secret does not verify the session, try # with the fallback secrets and stop when a matching one is # found. if session_hash and any( constant_time_compare(session_hash, fallback_auth_hash) for fallback_auth_hash in user.get_session_auth_fallback_hash() ): request.session.cycle_key() request.session[HASH_SESSION_KEY] = session_auth_hash else: request.session.flush() user = None
+- [776da470] user = None try: user_id = await _aget_user_session_key(request) backend_path = await request.session.aget(BACKEND_SESSION_KEY) except KeyError: pass else: if backend_path in settings.AUTHENTICATION_BACKENDS: backend = load_backend(backend_path) user = await backend.aget_user(user_id) # Verify the session if hasattr(user, "get_session_auth_hash"): session_hash = await request.session.aget(HASH_SESSION_KEY) if not session_hash: session_hash_verified = False else: session_auth_hash = user.get_session_auth_hash() session_hash_verified = constant_time_compare( session_hash, session_auth_hash ) if not session_hash_verified: # If the current secret does not verify the session, try # with the fallback secrets and stop when a matching one is # found. if session_hash and any( constant_time_compare(session_hash, fallback_auth_hash) for fallback_auth_hash in user.get_session_auth_fallback_hash() ): await request.session.acycle_key() await request.session.aset(HASH_SESSION_KEY, session_auth_hash) else: await request.session.aflush() user = None
 - [0a8f01a5] @sensitive_variables("credentials") async def aauthenticate(request=None, **credentials): """See authenticate().""" for backend, backend_path in _get_compatible_backends(request, **credentials): try: user = await backend.aauthenticate(request, **credentials) except PermissionDenied: # This backend says to stop in our tracks - this user should not be # allowed in at all. break if user is None: continue # Annotate the user object with the path of the backend. user.backend = backend_path return user
+- [c5588162] @sensitive_variables("credentials") def _clean_credentials(credentials): """ Clean a dictionary of credentials of potentially sensitive info before sending to less secure functions.
 - [1dbafea6] @sensitive_variables("credentials") def authenticate(request=None, **credentials): """ If the given credentials are valid, return a User object. """ for backend, backend_path in _get_compatible_backends(request, **credentials): try: user = backend.authenticate(request, **credentials) except PermissionDenied: # This backend says to stop in our tracks - this user should not be # allowed in at all. break if user is None: continue # Annotate the user object with the path of the backend. user.backend = backend_path return user
 - [4cf66660] SESSION_KEY = "_auth_user_id" BACKEND_SESSION_KEY = "_auth_user_backend" HASH_SESSION_KEY = "_auth_user_hash" REDIRECT_FIELD_NAME = "next"
 - [25619374] async def _aget_user_session_key(request): # This value in the session is always serialized to a string, so we need # to convert it back to Python whenever we access it. session_key = await request.session.aget(SESSION_KEY) if session_key is None: raise KeyError() return get_user_model()._meta.pk.to_python(session_key)
 - [428c91b0] async def acheck_password_with_timing_attack_mitigation(user, password): """See check_user_with_timing_attack_mitigation.""" if user is None: set_password = get_user_model()().set_password await sync_to_async(set_password, thread_sensitive=False)(password) else: return await user.acheck_password(password)
+- [abd565c5] async def aget_user(request): """See get_user().""" from .models import AnonymousUser
 - [71f887a0] async def alogin(request, user, backend=None): """See login().""" session_auth_hash = user.get_session_auth_hash()
 - [d94c451c] async def alogout(request): """See logout().""" # Dispatch the signal before the user is logged out so the receivers have a # chance to find out *who* logged out. user = getattr(request, "auser", None) if user is not None: user = await user() if not getattr(user, "is_authenticated", True): user = None await user_logged_out.asend(sender=user.__class__, request=request, user=user) await request.session.aflush()
 - [68dcd1eb] async def aupdate_session_auth_hash(request, user): """See update_session_auth_hash().""" await request.session.acycle_key() if hasattr(user, "get_session_auth_hash") and await request.auser() == user: await request.session.aset(HASH_SESSION_KEY, user.get_session_auth_hash())

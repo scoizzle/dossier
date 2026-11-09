@@ -1,10 +1,10 @@
 # docs/ref/contrib/admin/admindocs
 
-- Subject: docs/ref/contrib/admin/admindocs (id `bd36ace2-c240-4b5e-89c9-9bc8b7abcc67`)
+- Subject: docs/ref/contrib/admin/admindocs (id `de3e677b-dcb1-4254-9508-f4a29a19b263`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1684 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

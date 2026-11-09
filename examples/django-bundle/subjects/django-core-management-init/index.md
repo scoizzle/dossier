@@ -1,10 +1,10 @@
 # django/core/management/__init__
 
-- Subject: django/core/management/__init__ (id `fa00cd55-9345-4e02-a7b3-2d46e8df5c8b`)
+- Subject: django/core/management/__init__ (id `01d18046-50cc-4868-9247-2b2517c8df15`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3898 tokens
-- Facts shown: 46 of 46
+- Facts shown: 46 facts
 - Conflicts: 0
 - Gaps: 0
 

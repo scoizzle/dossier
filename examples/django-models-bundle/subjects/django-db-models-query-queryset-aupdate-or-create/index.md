@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.aupdate_or_create
 
-- Subject: django/db/models/query::QuerySet.aupdate_or_create (id `8bb773e3-54fd-473c-bc76-00e365d187ce`)
+- Subject: django/db/models/query::QuerySet.aupdate_or_create (id `f51880a6-7470-48ff-973b-44fcce48b81e`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 31 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

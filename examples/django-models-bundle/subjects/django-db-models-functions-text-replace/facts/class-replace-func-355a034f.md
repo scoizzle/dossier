@@ -1,6 +1,6 @@
 # Fact 355a034f
 
-Store id: c05073b1-81b4-4ac2-a884-f0c3d77ba97c
+Store id: 8f87a4ef-464c-4df4-b26f-df387fc688de
 
 ## Text
 
@@ -20,7 +20,7 @@ class Replace(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2491560+00:00`
+- posted_at: `2026-11-09T23:44:54.1235500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 253,
     "symbol": "Replace"
   },
-  "id": "c05073b1-81b4-4ac2-a884-f0c3d77ba97c",
+  "id": "8f87a4ef-464c-4df4-b26f-df387fc688de",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2491560+00:00"
+    "posted_at": "2026-11-09T23:44:54.1235500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "305f11d6-f633-45df-9337-ec53f1f4521f",
+  "subject_id": "0afe037c-29dd-4d10-b09a-ed6141f29dfb",
   "subject_name": "django/db/models/functions/text::Replace",
   "tags": [
     "entity:class"

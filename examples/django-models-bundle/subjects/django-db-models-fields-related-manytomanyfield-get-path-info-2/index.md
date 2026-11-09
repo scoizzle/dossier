@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.get_path_info
 
-- Subject: django/db/models/fields/related::ManyToManyField.get_path_info (id `6603ea4b-349b-4327-be2d-89f463a49578`)
+- Subject: django/db/models/fields/related::ManyToManyField.get_path_info (id `8f13dd99-3d52-4f09-b570-fe5e1a471907`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

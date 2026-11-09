@@ -1,6 +1,6 @@
 # Fact 2c34d042
 
-Store id: 7d859d6c-a016-476e-9a92-04983cf9bd3a
+Store id: b4e07def-ecfc-4651-8b50-6c1600cd7501
 
 ## Text
 
@@ -20,7 +20,7 @@ def compile(self, side, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8217620+00:00`
+- posted_at: `2026-11-09T23:44:49.4522540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 816,
     "symbol": "DurationExpression.compile"
   },
-  "id": "7d859d6c-a016-476e-9a92-04983cf9bd3a",
+  "id": "b4e07def-ecfc-4651-8b50-6c1600cd7501",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8217620+00:00"
+    "posted_at": "2026-11-09T23:44:49.4522540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ef0ee091-ef34-44fb-8ac6-b5ad9d43cd79",
+  "subject_id": "bf5392e9-1439-4ea3-98a8-30b7fdc869ed",
   "subject_name": "django/db/models/expressions::DurationExpression.compile",
   "tags": [
     "entity:method"

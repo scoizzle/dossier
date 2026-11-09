@@ -1,11 +1,11 @@
 # django/db/models/sql/query::RawQuery.__iter__
 
-- Subject: django/db/models/sql/query::RawQuery.__iter__ (id `157f4ed6-bd21-484d-94c0-72d5baba4419`)
+- Subject: django/db/models/sql/query::RawQuery.__iter__ (id `58765183-dbb6-429c-affd-e4c78c144118`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

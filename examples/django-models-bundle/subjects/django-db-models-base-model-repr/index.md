@@ -1,11 +1,11 @@
 # django/db/models/base::Model.__repr__
 
-- Subject: django/db/models/base::Model.__repr__ (id `c9a850f2-bf95-40de-8ef2-c215fa8f1b3c`)
+- Subject: django/db/models/base::Model.__repr__ (id `a0731119-1456-47e3-96e5-a94e344833e6`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/howto/csrf
 
-- Subject: docs/howto/csrf (id `bc3403bb-0b65-465e-b799-c831697137fc`)
+- Subject: docs/howto/csrf (id `ee877956-13e0-4c92-84f3-253ddaf7de1f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3784 tokens
-- Facts shown: 84 of 85
+- Used: 3802 tokens
+- Facts shown: 85 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,6 +41,7 @@
 - [d1c66a4d] .. _csrf-rejected-requests:
 - [2870a5f5] .. _fetch(): https://developer.mozilla.org/en-US/docs/Web/API/fetch
 - [74ddfaf9] .. _using-csrf:
+- [685d15dfb6eb2285-5] .. code-block:: html+django
 - [4d50152b] .. code-block:: html+jinja
 - [3f90e06ebee94674] .. code-block:: javascript
 - [3f90e06ebee94674-2] .. code-block:: javascript

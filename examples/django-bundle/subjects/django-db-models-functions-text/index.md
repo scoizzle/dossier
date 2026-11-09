@@ -1,10 +1,10 @@
 # django/db/models/functions/text
 
-- Subject: django/db/models/functions/text (id `2c28d708-ae14-4f36-aee3-286d46878dc8`)
+- Subject: django/db/models/functions/text (id `4131606c-a022-4d9e-8dab-0af495930647`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2871 tokens
-- Facts shown: 58 of 61
+- Used: 2999 tokens
+- Facts shown: 61 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -36,8 +36,11 @@
 - [888525fc] def as_postgresql(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="STRPOS", **extra_context)
 - [c753b2de] def as_sqlite(self, compiler, connection, **extra_context): return self.get_substr().as_sqlite(compiler, connection, **extra_context)
 - [c5882451] def as_sqlite(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="CHAR", **extra_context)
+- [0fbff191] def as_sqlite(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="SUBSTR", **extra_context)
+- [3afa1339] def as_sqlite(self, compiler, connection, **extra_context): return super().as_sql(compiler, connection, function="UNICODE", **extra_context)
 - [2cf50ad8] def coalesce(self): # null on either side results in null for expression, wrap with # coalesce c = self.copy() c.set_source_expressions( [ Coalesce(expression, Value("")) for expression in c.get_source_expressions() ] ) return c
 - [a4df6a41] def get_substr(self): return Substr( self.source_expressions[0], self.source_expressions[1] * Value(-1), self.source_expressions[1], )
+- [37e2188a] def get_substr(self): return Substr(self.source_expressions[0], Value(1), self.source_expressions[1])
 - [1eaf4f24] def pipes_concat_sql(self, compiler, connection, **extra_context): coalesced = self.coalesce() return super(ConcatPair, coalesced).as_sql( compiler, connection, template="(%(expressions)s)", arg_joiner=" || ", **extra_context, )
 - [ae6e3d1a] function = "INSTR" arity = 2 output_field = IntegerField()
 - [e382d347] function = "LENGTH" lookup_name = "length" output_field = IntegerField()

@@ -1,10 +1,10 @@
 # django/contrib/auth/forms
 
-- Subject: django/contrib/auth/forms (id `618e25ce-cd7a-42a3-9906-ec5551d1dd1d`)
+- Subject: django/contrib/auth/forms (id `73ebc46a-91e7-4bcb-be0e-57f9db86a25e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4903 tokens
-- Facts shown: 79 of 81
+- Used: 5001 tokens
+- Facts shown: 81 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,6 +16,7 @@
 - This allows subclasses to more easily customize the default policies that prevent inactive users and users with unusable passwords from resetting their password. """ email_field_name = UserModel.get_email_field_name() active_users = UserModel._default_manager.filter( **{ "%s__iexact" % email_field_name: email, "is_active": True, } ) return ( u for u in active_users if u.has_usable_password() and _unicode_ci_compare(email, getattr(u, email_field_name)) ) [60927ab7]
 - email_message = EmailMultiAlternatives(subject, body, from_email, [to_email]) if html_email_template_name is not None: html_email = loader.render_to_string(html_email_template_name, context) email_message.attach_alternative(html_email, "text/html") [a63e7501]
 - if not password1 and password1_field_name not in self.errors: error = ValidationError( self.fields[password1_field_name].error_messages["required"], code="required", ) self.add_error(password1_field_name, error) [25dd9ad7]
+- if not password2 and password2_field_name not in self.errors: error = ValidationError( self.fields[password2_field_name].error_messages["required"], code="required", ) self.add_error(password2_field_name, error) [2df028c6]
 - if not usable_password: return [0f17cb8e]
 - if password1 and password2 and password1 != password2: error = ValidationError( self.error_messages["password_mismatch"], code="password_mismatch", ) self.add_error(password2_field_name, error) [b93c229e]
 - if username is not None and password: self.user_cache = authenticate( self.request, username=username, password=password ) if self.user_cache is None: raise self.get_invalid_login_error() else: self.confirm_login_allowed(self.user_cache) [3ed2bc42]
@@ -24,19 +25,20 @@
 - super().validate_passwords(password1_field_name, password2_field_name) [7d7ec314]
 - try: email_message.send() except Exception: logger.exception( "Failed to send password reset email to %s", context["user"].pk ) [1e665429]
 - @property def changed_data(self): data = super().changed_data if "set_usable_password" in data or "password1" in data and "password2" in data: return ["password"] return [] [eb9038fe]
-- @sensitive_variables("old_password") def clean_old_password(self): """ Validate that the old_password field is correct. """ old_password = self.cleaned_data["old_password"] if not self.user.check_password(old_password): raise ValidationError( self.error_messages["password_incorrect"], code="password_incorrect", ) return old_password [fe219689]
+- @sensitive_variables() def clean(self): username = self.cleaned_data.get("username") password = self.cleaned_data.get("password") [b17e6845]
 
 ## All facts
 
+- [fe219689] @sensitive_variables("old_password") def clean_old_password(self): """ Validate that the old_password field is correct. """ old_password = self.cleaned_data["old_password"] if not self.user.check_password(old_password): raise ValidationError( self.error_messages["password_incorrect"], code="password_incorrect", ) return old_password
 - [094c1d78] @sensitive_variables("password") def validate_password_for_user(self, user, password_field_name="password2"): password = self.cleaned_data.get(password_field_name) if password: try: password_validation.validate_password(password, user) except ValidationError as error: self.add_error(password_field_name, error)
 - [549c801a] @sensitive_variables("password1", "password2") def validate_passwords( self, password1_field_name="password1", password2_field_name="password2", usable_password_field_name="usable_password", ): usable_password = ( self.cleaned_data.pop(usable_password_field_name, None) != "false" ) self.cleaned_data["set_usable_password"] = usable_password
 - [5d111d47] @sensitive_variables("password1", "password2") def validate_passwords( self, password1_field_name="password1", password2_field_name="password2", ): password1 = self.cleaned_data.get(password1_field_name) password2 = self.cleaned_data.get(password2_field_name)
-- [b17e6845] @sensitive_variables() def clean(self): username = self.cleaned_data.get("username") password = self.cleaned_data.get("password")
 - [a3eda9e9] @staticmethod def create_password_fields(label1=_("Password"), label2=_("Password confirmation")): password1 = forms.CharField( label=label1, required=True, strip=False, widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}), help_text=password_validation.password_validators_help_text_html(), ) password2 = forms.CharField( label=label2, required=True, widget=forms.PasswordInput(attrs={"autocomplete": "new-password"}), strip=False, help_text=_("Enter the same password as before, for verification."), ) return password1, password2
 - [5bf25e22] @staticmethod def create_usable_password_field(help_text=usable_password_help_text): return forms.ChoiceField( label=_("Password-based authentication"), required=False, initial="true", choices={"true": _("Enabled"), "false": _("Disabled")}, widget=forms.RadioSelect(attrs={"class": "radiolist"}), help_text=help_text, )
 - [4262c18a] This is the documented base class for customizing the user creation form. It should be kept mostly unchanged to ensure consistency and compatibility. """
 - [91e62cf7] This mixin should be used in combination with `SetPasswordMixin`. """
 - [ce9ff60d] class Meta: model = User fields = "__all__" field_classes = {"username": UsernameField}
+- [b731eebd] class Meta: model = User fields = ("username",) field_classes = {"username": UsernameField}
 - [59678c39296a52e4] def __class_getitem__(cls, *args, **kwargs): return cls
 - [04ce5a38] def __init__(self, *args, **kwargs): kwargs.setdefault("required", False) kwargs.setdefault("disabled", True) super().__init__(*args, **kwargs)
 - [b1d59037] def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) if self._meta.model.USERNAME_FIELD in self.fields: self.fields[self._meta.model.USERNAME_FIELD].widget.attrs[ "autofocus" ] = True

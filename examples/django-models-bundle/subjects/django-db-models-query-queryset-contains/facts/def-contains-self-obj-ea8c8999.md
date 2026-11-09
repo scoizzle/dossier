@@ -1,6 +1,6 @@
 # Fact ea8c8999
 
-Store id: e843bf1d-cfc8-478f-ad19-9ef791595862
+Store id: 2e3f1f14-13eb-4de7-bfd1-694e211b7a06
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4992400+00:00`
+- posted_at: `2026-11-09T23:44:55.9961070+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1489,
     "symbol": "QuerySet.contains"
   },
-  "id": "e843bf1d-cfc8-478f-ad19-9ef791595862",
+  "id": "2e3f1f14-13eb-4de7-bfd1-694e211b7a06",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4992400+00:00"
+    "posted_at": "2026-11-09T23:44:55.9961070+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e565c435-1a40-4016-98ca-36f67701c225",
+  "subject_id": "230c039a-a7c4-4b2e-8ed8-87523689dc4b",
   "subject_name": "django/db/models/query::QuerySet.contains",
   "tags": [
     "entity:method"

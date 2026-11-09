@@ -1,6 +1,6 @@
 # Fact 82937cfb
 
-Store id: 0d6cd317-21ca-42c2-9157-ac1a4c20027b
+Store id: f9573a7e-4ad7-4677-9aeb-0aa970b5e35b
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_limit_one(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0306530+00:00`
+- posted_at: `2026-11-09T23:44:58.9470710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2220,
     "symbol": "Query.has_limit_one"
   },
-  "id": "0d6cd317-21ca-42c2-9157-ac1a4c20027b",
+  "id": "f9573a7e-4ad7-4677-9aeb-0aa970b5e35b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0306530+00:00"
+    "posted_at": "2026-11-09T23:44:58.9470710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c7024668-85be-414c-aec4-336b8c5d3018",
+  "subject_id": "5fce396d-5eba-4b31-92d6-53cb4b8fb004",
   "subject_name": "django/db/models/sql/query::Query.has_limit_one",
   "tags": [
     "entity:method"

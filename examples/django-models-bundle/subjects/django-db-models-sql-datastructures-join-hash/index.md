@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::Join.__hash__
 
-- Subject: django/db/models/sql/datastructures::Join.__hash__ (id `2d0a9bd4-1bb4-4d20-8fc1-22f55db661ef`)
+- Subject: django/db/models/sql/datastructures::Join.__hash__ (id `8515444c-3bfc-4320-9df2-0d1185a1c171`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/field
 
-- Subject: django/contrib/gis/gdal/field (id `4d58e092-770c-45a7-a89a-9c32191b6d16`)
+- Subject: django/contrib/gis/gdal/field (id `1d5873d7-153a-491b-8bd1-2df09fca26a1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1757 tokens
-- Facts shown: 35 of 35
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 

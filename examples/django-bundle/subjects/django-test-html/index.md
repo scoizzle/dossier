@@ -1,10 +1,10 @@
 # django/test/html
 
-- Subject: django/test/html (id `2d985932-8e03-473f-a39b-4bd000455dc4`)
+- Subject: django/test/html (id `f8d1c8cd-c1a2-424f-8225-eb5b6cb340e6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2001 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/db/backends/oracle/creation
 
-- Subject: django/db/backends/oracle/creation (id `1d45b8db-0728-4be6-94ba-cc11341f548c`)
+- Subject: django/db/backends/oracle/creation (id `161d162c-05fd-4a12-ba12-31abf137014b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3986 tokens
-- Facts shown: 33 of 38
+- Used: 4189 tokens
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -39,6 +39,11 @@
 - [373aba98] def _test_database_tblspace_maxsize(self): return self._test_settings_get("DATAFILE_MAXSIZE", default="500M")
 - [e10dd6d9] def _test_database_tblspace_size(self): return self._test_settings_get("DATAFILE_SIZE", default="50M")
 - [51501e39] def _test_database_tblspace_tmp(self): settings_dict = self.connection.settings_dict return settings_dict["TEST"].get( "TBLSPACE_TMP", TEST_DATABASE_PREFIX + settings_dict["USER"] + "_temp" )
+- [c3cf59fa] def _test_database_tblspace_tmp_datafile(self): tblspace = "%s.dbf" % self._test_database_tblspace_tmp() return self._test_settings_get("DATAFILE_TMP", default=tblspace)
+- [75f58e60] def _test_database_tblspace_tmp_extsize(self): return self._test_settings_get("DATAFILE_TMP_EXTSIZE", default="25M")
+- [ac7cb922] def _test_database_tblspace_tmp_maxsize(self): return self._test_settings_get("DATAFILE_TMP_MAXSIZE", default="500M")
+- [f6cc22e6] def _test_database_tblspace_tmp_size(self): return self._test_settings_get("DATAFILE_TMP_SIZE", default="50M")
+- [e94062f1] def _test_database_user(self): return self._test_settings_get("USER", prefixed="USER")
 - [670220ce] def _test_settings_get(self, key, default=None, prefixed=None): """ Return a value from the test settings dict, or a given default, or a prefixed entry from the main settings dict. """ settings_dict = self.connection.settings_dict val = settings_dict["TEST"].get(key, default) if val is None and prefixed: val = TEST_DATABASE_PREFIX + settings_dict[prefixed] return val
 - [d20c3fd1] def _test_user_create(self): return self._test_settings_get("CREATE_USER", default=True)
 - [ead0e3b1] def set_as_test_mirror(self, primary_settings_dict): """ Set this database up to be used in testing as a mirror of a primary database whose settings are given. """ self.connection.settings_dict["USER"] = primary_settings_dict["USER"] self.connection.settings_dict["PASSWORD"] = primary_settings_dict["PASSWORD"]

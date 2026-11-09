@@ -1,6 +1,6 @@
 # Fact c23ec9d2
 
-Store id: ccf6dbcc-99b6-4ae6-aea6-50af9f53b3fd
+Store id: c54e867d-b583-41c6-9a6e-66552824e12f
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_update_fields(self, values_seq)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.3900760+00:00`
+- posted_at: `2026-11-09T23:44:59.4091960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 106,
     "symbol": "UpdateQuery.add_update_fields"
   },
-  "id": "ccf6dbcc-99b6-4ae6-aea6-50af9f53b3fd",
+  "id": "c54e867d-b583-41c6-9a6e-66552824e12f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.3900760+00:00"
+    "posted_at": "2026-11-09T23:44:59.4091960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a28c7cc-1d4c-4566-9b06-791936024cd2",
+  "subject_id": "b9d679e3-f285-4be4-99b3-0eabdc88cced",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery.add_update_fields",
   "tags": [
     "entity:method"

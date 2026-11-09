@@ -1,10 +1,10 @@
 # docs/howto/deployment/index
 
-- Subject: docs/howto/deployment/index (id `6ea35067-4ac8-44a9-b4a9-b302bd1c2530`)
+- Subject: docs/howto/deployment/index (id `211bcaca-7c68-4a1b-ac74-9afd8fc4985d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 545 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

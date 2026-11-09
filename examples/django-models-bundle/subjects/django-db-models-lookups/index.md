@@ -1,10 +1,10 @@
 # django/db/models/lookups
 
-- Subject: django/db/models/lookups (id `e7bf7849-709d-446b-ad7a-17abee6ffd25`)
+- Subject: django/db/models/lookups (id `08d59620-584d-4fa4-9163-3befcd8a2879`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 796 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

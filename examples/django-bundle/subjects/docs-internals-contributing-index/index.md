@@ -1,10 +1,10 @@
 # docs/internals/contributing/index
 
-- Subject: docs/internals/contributing/index (id `9572a986-5d5a-4061-93a8-faf97ca23ff2`)
+- Subject: docs/internals/contributing/index (id `48a9cba9-b2ad-4ab5-a989-955f56919c33`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1492 tokens
-- Facts shown: 38 of 38
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 

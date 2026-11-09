@@ -1,10 +1,10 @@
 # django/db/models/functions/math
 
-- Subject: django/db/models/functions/math (id `83b0e08c-b94a-4c1a-b104-7154d9ba1d11`)
+- Subject: django/db/models/functions/math (id `a574d944-89dc-455a-aff8-c3b908ba3f8a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 358 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

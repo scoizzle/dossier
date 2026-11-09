@@ -1,10 +1,10 @@
 # docs/releases/1.4
 
-- Subject: docs/releases/1.4 (id `86ba055f-b9d0-4340-892e-520cec902da2`)
+- Subject: docs/releases/1.4 (id `895d8200-9383-493a-94c1-5cffe6cc8acf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 17607 tokens
-- Facts shown: 333 of 335
+- Used: 17670 tokens
+- Facts shown: 335 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,6 +41,7 @@
 - [a38efe5f] if __name__ == "__main__": os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings")
 - [90f4387cea1dbdff-6] import re
 - [6b4c8679] manage.py myapp/ __init__.py models.py mysite/ __init__.py settings.py urls.py
+- [44c74573] manage.py mysite/ __init__.py settings.py urls.py myapp/ __init__.py models.py
 - [a8be9dfc] noop.is_safe = True
 - [4d65dd96] with self.assertTemplateUsed("index.html"): render_to_string("index.html") with self.assertTemplateNotUsed("base.html"): render_to_string("index.html")
 - [005618072ec479e9-3] {% my_tag 123 "abcd" book.title warning=message|lower profile=user.profile %}
@@ -56,6 +57,7 @@
 - [aea92b63] * Time period: Defined by ``PASSWORD_RESET_TIMEOUT_DAYS``.
 - [b5780e11] * Time period: The amount of time you expect user to take filling out such forms.
 - [659f70f4] * Time period: The amount of time you expect users to take filling out comment forms.
+- [c2130a07] * Time period: The amount of time you expect users to take filling out the affected forms.
 - [4b66be85] DATE_FORMAT = r"j \d\e F \d\e Y"
 - [db4145bc] DATE_FORMAT = r"j \de F \de Y"
 - [43688687] For more details, see the documentation for :meth:`~django.db.models.query.QuerySet.distinct`.

@@ -1,10 +1,10 @@
 # docs/ref/forms/validation
 
-- Subject: docs/ref/forms/validation (id `d7c025fb-1c0c-4562-9d1e-d74cce6c3857`)
+- Subject: docs/ref/forms/validation (id `d91d96e3-f547-4d20-b3d2-2012fe5e7202`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4789 tokens
-- Facts shown: 85 of 92
+- Used: 4992 tokens
+- Facts shown: 92 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,31 +14,38 @@
 - if urgent and subject and "help" not in subject: self.add_error( "subject", "Must put 'help' in the subject for urgent requests." ) self.add_error( "urgent", "Must not mark urgent unless 'help' is in the subject." ) [dc9b66a8]
 - if urgent and subject: # Only do something if both fields are valid so far. if "help" not in subject: raise ValidationError( "Must put 'help' in the subject for urgent requests." ) [30e9c230]
 - def clean(self): cleaned_data = super().clean() urgent = cleaned_data.get("urgent") subject = cleaned_data.get("subject") [3c0dd9e59eb33c71]
+- def clean(self): cleaned_data = super().clean() urgent = cleaned_data.get("urgent") subject = cleaned_data.get("subject") [3c0dd9e59eb33c71-2]
 - def clean_recipients(self): data = self.cleaned_data["recipients"] if not all(email.endswith("@example.com") for email in data): raise ValidationError("All recipients must be @example.com.") [f76e701f]
 - def validate(self, value): """Check if value consists only of valid emails.""" # Use the parent's handling of required fields, etc. super().validate(value) for email in value: validate_email(email) [c628633c]
 - # Bad ValidationError( _("Invalid value: %s"), params=("42",), ) [a30a81c5]
 - # Bad ValidationError("Invalid value") [af508c14]
+- # Bad ValidationError(_("Invalid value")) [06f3eddc]
 - # Bad ValidationError(_("Invalid value: %s") % value) [780e060a]
 - # Good ValidationError( _("Invalid value: %(value)s"), params={"value": "42"}, ) [1a4fa7db8e9da72e]
+- # Good ValidationError( _("Invalid value: %(value)s"), params={"value": "42"}, ) [1a4fa7db8e9da72e-2]
 - # Good ValidationError(_("Invalid value")) [231030be]
 - # Good ValidationError(_("Invalid value"), code="invalid") [ccc081b0]
 - # Bad raise ValidationError( [ _("Error 1"), _("Error 2"), ] ) [12c1cc2b]
 - # Good raise ValidationError( [ ValidationError(_("Error 1"), code="error1"), ValidationError(_("Error 2"), code="error2"), ] ) [9f6a46c5]
 - ValidationError(_("Invalid value: %s") % value) [f4dd216b]
 - class ContactForm(forms.Form): # Everything as before. ... [78af0fd413e99702]
+- class ContactForm(forms.Form): # Everything as before. ... [78af0fd413e99702-2]
+- class ContactForm(forms.Form): # Everything as before. ... [78af0fd413e99702-3]
 - class ContactForm(forms.Form): subject = forms.CharField(max_length=100) message = forms.CharField() contact_email = forms.EmailField() recipients = MultiEmailField() urgent = forms.BooleanField(required=False) [cfc14fcd]
 - class MultiEmailField(forms.Field): def to_python(self, value): """Normalize data to a list of strings.""" # Return an empty list if no input was given. if not value: return [] return value.split(",") [07737c13]
 - class SlugField(CharField): default_validators = [validators.validate_slug] [45aeff7c]
 - from django import forms [9ee3a9405e27875c-6]
-- from django import forms from django.core.exceptions import ValidationError [16586e74373992d7]
-- from django import forms from django.core.validators import validate_email [775121b8]
-- from django.core import validators from django.forms import CharField [30e607bb]
-- raise ValidationError( _("Invalid value: %(value)s"), code="invalid", params={"value": "42"}, ) [64524247]
-- slug = forms.SlugField() [0c192c1e]
 
 ## All facts
 
+- [a4a2158a] def clean(self): super().clean() urgent = self.cleaned_data.get("urgent") ...
+- [16586e74373992d7] from django import forms from django.core.exceptions import ValidationError
+- [16586e74373992d7-2] from django import forms from django.core.exceptions import ValidationError
+- [775121b8] from django import forms from django.core.validators import validate_email
+- [30e607bb] from django.core import validators from django.forms import CharField
+- [64524247] raise ValidationError( _("Invalid value: %(value)s"), code="invalid", params={"value": "42"}, )
 - [d2f5602e] slug = forms.CharField(validators=[validators.validate_slug])
+- [0c192c1e] slug = forms.SlugField()
 - [d8cfb1ee] Also note that there are special considerations when overriding the ``clean()`` method of a ``ModelForm`` subclass. (see the :ref:`ModelForm documentation <overriding-modelform-clean-method>` for more information)
 - [b1e4b9c5] For example, if you wanted to validate that the contents of a ``CharField`` called ``serialnumber`` was unique, ``clean_serialnumber()`` would be the right place to do this. You don't need a specific field (it's a ``CharField``), but you want a formfield-specific piece of validation and, possibly, cleaning/normalizing the data.
 - [d7e5f41b] Note that any errors raised by your :meth:`Form.clean` override will not be associated with any field in particular. They go into a special "field" (called ``__all__``), which you can access via the :meth:`~django.forms.Form.non_field_errors` method if you need to. If you want to attach errors to a specific field in the form, you need to call :meth:`~django.forms.Form.add_error`.

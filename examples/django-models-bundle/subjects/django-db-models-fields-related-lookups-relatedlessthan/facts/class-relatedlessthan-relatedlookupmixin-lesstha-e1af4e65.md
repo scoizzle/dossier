@@ -1,6 +1,6 @@
 # Fact e1af4e65
 
-Store id: 0a82f9b7-f3cf-44de-a955-d6eeb66720a8
+Store id: ec81abc8-94cb-4e98-979f-a385df6f6ce3
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedLessThan(RelatedLookupMixin, LessThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.9964520+00:00`
+- posted_at: `2026-11-09T23:44:52.2643510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 135,
     "symbol": "RelatedLessThan"
   },
-  "id": "0a82f9b7-f3cf-44de-a955-d6eeb66720a8",
+  "id": "ec81abc8-94cb-4e98-979f-a385df6f6ce3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.9964520+00:00"
+    "posted_at": "2026-11-09T23:44:52.2643510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ad56147-dac9-4ad4-80ac-1848d0b52352",
+  "subject_id": "54b917db-7bdc-4058-9dbc-9c1c04310402",
   "subject_name": "django/db/models/fields/related_lookups::RelatedLessThan",
   "tags": [
     "entity:class"

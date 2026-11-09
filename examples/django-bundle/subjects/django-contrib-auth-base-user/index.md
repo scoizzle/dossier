@@ -1,10 +1,10 @@
 # django/contrib/auth/base_user
 
-- Subject: django/contrib/auth/base_user (id `bf8a77c2-178c-47a2-a21b-6d670f5c1e4f`)
+- Subject: django/contrib/auth/base_user (id `0a04dca8-feeb-4ffb-a06d-e0f53d7cbe78`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1334 tokens
-- Facts shown: 32 of 32
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 

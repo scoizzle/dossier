@@ -1,11 +1,11 @@
 # django/db/models/base::Model.from_db
 
-- Subject: django/db/models/base::Model.from_db (id `07c5ebb8-7754-4dad-90d9-3d91faa0e9a8`)
+- Subject: django/db/models/base::Model.from_db (id `4835e8da-ae30-4773-bd82-11b2eb154ccb`)
 - Kind: class_method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

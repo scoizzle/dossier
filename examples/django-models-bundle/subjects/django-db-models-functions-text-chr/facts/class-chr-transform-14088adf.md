@@ -1,6 +1,6 @@
 # Fact 14088adf
 
-Store id: 50717957-1259-418d-a94c-530c9b45c3ff
+Store id: d3766121-b263-41b4-9a4b-1cc82b5de1c5
 
 ## Text
 
@@ -20,7 +20,7 @@ class Chr(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1368260+00:00`
+- posted_at: `2026-11-09T23:44:54.0434620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 42,
     "symbol": "Chr"
   },
-  "id": "50717957-1259-418d-a94c-530c9b45c3ff",
+  "id": "d3766121-b263-41b4-9a4b-1cc82b5de1c5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1368260+00:00"
+    "posted_at": "2026-11-09T23:44:54.0434620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "161034f5-87da-4e5e-9098-6310aec2b040",
+  "subject_id": "a9cd202b-abed-45b4-82e9-8a8d3ee4d0b6",
   "subject_name": "django/db/models/functions/text::Chr",
   "tags": [
     "entity:class"

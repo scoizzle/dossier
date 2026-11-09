@@ -1,6 +1,6 @@
 # Fact d6d95f92
 
-Store id: 83252b49-130f-4239-b4b0-46c5c205ab39
+Store id: c58e7e4f-8c15-4275-82c9-ed5693b96f7e
 
 ## Text
 
@@ -20,7 +20,7 @@ class TimezoneMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.1526280+00:00`
+- posted_at: `2026-11-09T23:44:53.3053270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 22,
     "symbol": "TimezoneMixin"
   },
-  "id": "83252b49-130f-4239-b4b0-46c5c205ab39",
+  "id": "c58e7e4f-8c15-4275-82c9-ed5693b96f7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.1526280+00:00"
+    "posted_at": "2026-11-09T23:44:53.3053270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d71f3cf0-be01-4075-837a-9e2b328a487b",
+  "subject_id": "18d9990f-ee6e-46a1-9c4f-2f780d10ff1d",
   "subject_name": "django/db/models/functions/datetime::TimezoneMixin",
   "tags": [
     "entity:class"

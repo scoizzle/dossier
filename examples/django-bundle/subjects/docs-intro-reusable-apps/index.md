@@ -1,10 +1,10 @@
 # docs/intro/reusable-apps
 
-- Subject: docs/intro/reusable-apps (id `b86fdaed-d83f-422a-a066-6dd6564b9b52`)
+- Subject: docs/intro/reusable-apps (id `daeff3ce-eea7-4d9d-ad2b-e99375babd17`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4119 tokens
-- Facts shown: 84 of 84
+- Facts shown: 84 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact cd62ad91
 
-Store id: 3ea00162-5f5b-4ce9-895c-913270c9bb9b
+Store id: 4285a7a5-ecfd-4071-8ad9-06b2e7756df5
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *expressions, distinct=False, filter=None, default=None, ord
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5316840+00:00`
+- posted_at: `2026-11-09T23:44:48.3949780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 84,
     "symbol": "Aggregate.__init__"
   },
-  "id": "3ea00162-5f5b-4ce9-895c-913270c9bb9b",
+  "id": "4285a7a5-ecfd-4071-8ad9-06b2e7756df5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5316840+00:00"
+    "posted_at": "2026-11-09T23:44:48.3949780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dc327e00-7626-4099-a612-fe28692974b7",
+  "subject_id": "112d75e6-c167-4cea-a42e-79e04fb49e7a",
   "subject_name": "django/db/models/aggregates::Aggregate.__init__",
   "tags": [
     "entity:method"

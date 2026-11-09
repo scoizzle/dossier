@@ -1,6 +1,6 @@
 # Fact 50c2c6f3
 
-Store id: da4264c2-0b09-460f-81b6-c63c919de397
+Store id: d9717a85-c244-4ce2-8911-56844b6bcce9
 
 ## Text
 
@@ -20,7 +20,7 @@ class Options
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.8871760+00:00`
+- posted_at: `2026-11-09T23:44:55.4546610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 90,
     "symbol": "Options"
   },
-  "id": "da4264c2-0b09-460f-81b6-c63c919de397",
+  "id": "d9717a85-c244-4ce2-8911-56844b6bcce9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.8871760+00:00"
+    "posted_at": "2026-11-09T23:44:55.4546610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f072ea1d-3bc4-44f4-986b-3d444258e1b3",
+  "subject_id": "7003c2e8-a8a9-4dc9-8c64-69972325edb7",
   "subject_name": "django/db/models/options::Options",
   "tags": [
     "entity:class"

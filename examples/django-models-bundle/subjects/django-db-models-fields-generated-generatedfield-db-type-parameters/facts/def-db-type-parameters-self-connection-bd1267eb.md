@@ -1,6 +1,6 @@
 # Fact bd1267eb
 
-Store id: 372baef2-b35c-472d-9085-bad66991364e
+Store id: 75a689a7-c5c8-4793-80ae-1863600f25d8
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_type_parameters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6468390+00:00`
+- posted_at: `2026-11-09T23:44:50.8161570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 206,
     "symbol": "GeneratedField.db_type_parameters"
   },
-  "id": "372baef2-b35c-472d-9085-bad66991364e",
+  "id": "75a689a7-c5c8-4793-80ae-1863600f25d8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6468390+00:00"
+    "posted_at": "2026-11-09T23:44:50.8161570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee86e996-cb65-427c-a5c5-555f19605629",
+  "subject_id": "74c27771-e2e7-4c0d-b04b-d7b604b69b18",
   "subject_name": "django/db/models/fields/generated::GeneratedField.db_type_parameters",
   "tags": [
     "entity:method"

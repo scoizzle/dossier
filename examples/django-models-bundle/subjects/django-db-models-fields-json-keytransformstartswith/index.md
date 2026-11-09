@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformStartsWith
 
-- Subject: django/db/models/fields/json::KeyTransformStartsWith (id `2af1d424-e02b-479a-932c-fe2a130890b4`)
+- Subject: django/db/models/fields/json::KeyTransformStartsWith (id `5754cef3-0405-4260-8d26-9b6a355cb8f4`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

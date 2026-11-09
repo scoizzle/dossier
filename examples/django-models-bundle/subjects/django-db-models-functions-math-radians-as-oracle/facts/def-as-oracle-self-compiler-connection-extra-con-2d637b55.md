@@ -1,6 +1,6 @@
 # Fact 2d637b55
 
-Store id: 42375811-c353-4b0b-b37e-066214e54398
+Store id: 9ce3413a-fcd1-485a-ad00-2ce064752afb
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7386840+00:00`
+- posted_at: `2026-11-09T23:44:53.7481810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 150,
     "symbol": "Radians.as_oracle"
   },
-  "id": "42375811-c353-4b0b-b37e-066214e54398",
+  "id": "9ce3413a-fcd1-485a-ad00-2ce064752afb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7386840+00:00"
+    "posted_at": "2026-11-09T23:44:53.7481810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "83445444-1273-4dd0-83d4-8aa32acf0e10",
+  "subject_id": "46da5de9-6d5d-4f23-9594-451d4bfe7097",
   "subject_name": "django/db/models/functions/math::Radians.as_oracle",
   "tags": [
     "entity:method"

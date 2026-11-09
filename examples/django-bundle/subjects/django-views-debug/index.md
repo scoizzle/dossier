@@ -1,10 +1,10 @@
 # django/views/debug
 
-- Subject: django/views/debug (id `b010b115-7750-4952-babb-4c3c1a5cd5f5`)
+- Subject: django/views/debug (id `cae53955-acf0-4dc1-a5bc-7b6e0ef382ae`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5695 tokens
-- Facts shown: 65 of 67
+- Used: 5845 tokens
+- Facts shown: 67 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -52,11 +52,13 @@
 - [99105181] def get_exception_traceback_frames(self, exc_value, tb): exc_cause = self._get_explicit_or_implicit_cause(exc_value) exc_cause_explicit = getattr(exc_value, "__cause__", True) if tb is None: yield { "exc_cause": exc_cause, "exc_cause_explicit": exc_cause_explicit, "tb": None, "type": "user", } while tb is not None: # Support for __traceback_hide__ which is used by a few libraries # to hide internal frames. if tb.tb_frame.f_locals.get("__traceback_hide__"): tb = tb.tb_next continue filename = tb.tb_frame.f_code.co_filename function = tb.tb_frame.f_code.co_name lineno = tb.tb_lineno - 1 loader = tb.tb_frame.f_globals.get("__loader__") module_name = tb.tb_frame.f_globals.get("__name__") or "" ( pre_context_lineno, pre_context, context_line, post_context, ) = self._get_lines_from_file( filename, lineno, 7, loader, module_name, ) if pre_context_lineno is None: pre_context_lineno = lineno pre_context = [] context_line = "<source code not available>" post_context = []
 - [89cdb6dd] def get_post_parameters(self, request): """ Replace the values of POST parameters marked as sensitive with stars (*********). """ if request is None: return {} sensitive_post_parameters = getattr(request, "sensitive_post_parameters", []) if self.is_active(request) and sensitive_post_parameters: return self._cleanse_multivaluedict(request.POST, sensitive_post_parameters) return request.POST
 - [ba3ee6d6] def get_safe_cookies(self, request): """ Return a dictionary of request.COOKIES with sensitive values redacted. """ if not hasattr(request, "COOKIES"): return {} return {k: self.cleanse_setting(k, v) for k, v in request.COOKIES.items()}
+- [2ec5c607] def get_safe_request_meta(self, request): """ Return a dictionary of request.META with sensitive values redacted. """ if not hasattr(request, "META"): return {} return {k: self.cleanse_setting(k, v) for k, v in request.META.items()}
 - [65514fa2] def get_safe_settings(self): """ Return a dictionary of the settings module with values of sensitive settings replaced with stars (*********). """ settings_dict = {} for k in dir(settings): if k.isupper(): settings_dict[k] = self.cleanse_setting(k, getattr(settings, k)) return settings_dict
 - [03eeb652] def get_traceback_data(self): """Return a dictionary containing traceback information.""" if self.exc_type and issubclass(self.exc_type, TemplateDoesNotExist): self.template_does_not_exist = True self.postmortem = self.exc_value.chain or [self.exc_value]
 - [0b0da05a] def get_traceback_frame_variables(self, request, tb_frame): """ Replace the values of variables marked as sensitive with stars (*********). """ sensitive_variables = None
 - [a129f813] def get_traceback_frames(self): # Get the exception and all its causes exceptions = [] exc_value = self.exc_value while exc_value: exceptions.append(exc_value) exc_value = self._get_explicit_or_implicit_cause(exc_value) if exc_value in exceptions: warnings.warn( "Cycle in the exception chain detected: exception '%s' " "encountered again." % exc_value, ExceptionCycleWarning, ) # Avoid infinite loop if there's a cyclic reference (#29393). break
 - [5d31d357] def get_traceback_html(self): """Return HTML version of debug 500 HTTP error page.""" with self.html_template_path.open(encoding="utf-8") as fh: t = DEBUG_ENGINE.from_string(fh.read()) c = Context(self.get_traceback_data(), use_l10n=False) return t.render(c)
+- [e480077d] def get_traceback_text(self): """Return plain text version of debug 500 HTTP error page.""" with self.text_template_path.open(encoding="utf-8") as fh: t = DEBUG_ENGINE.from_string(fh.read()) c = Context(self.get_traceback_data(), autoescape=False, use_l10n=False) return t.render(c)
 - [f86e7e29] def is_active(self, request): """ This filter is to add safety in production environments (i.e. DEBUG is False). If DEBUG is True then your site is not safe anyway. This hook is provided as a convenience to easily activate or deactivate the filter on a per request basis. """ return settings.DEBUG is False
 - [709faf90] patterns_with_debug_info = [] for urlpattern in tried or (): patterns = [] for inner_pattern in urlpattern: wrapper = {"tried": inner_pattern} if isinstance(inner_pattern, URLResolver): wrapper["debug_key"] = "namespace" wrapper["debug_val"] = inner_pattern.namespace else: wrapper["debug_key"] = "name" wrapper["debug_val"] = inner_pattern.name patterns.append(wrapper) patterns_with_debug_info.append(patterns)
 - [1d14097b] return HttpResponse(t.render(c))

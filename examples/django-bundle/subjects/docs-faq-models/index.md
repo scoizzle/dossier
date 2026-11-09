@@ -1,10 +1,10 @@
 # docs/faq/models
 
-- Subject: docs/faq/models (id `e7316f36-e3ff-4dfb-b98b-7c00e09ed589`)
+- Subject: docs/faq/models (id `948f517c-d88b-4950-8ea7-302e82e2f127`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1120 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

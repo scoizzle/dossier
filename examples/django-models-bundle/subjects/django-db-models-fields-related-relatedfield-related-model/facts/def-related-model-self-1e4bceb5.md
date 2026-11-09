@@ -1,6 +1,6 @@
 # Fact 1e4bceb5
 
-Store id: 236fa5dd-6b9a-4854-8744-9bc8cf8b23e3
+Store id: 95913105-647f-4653-86e4-6aab2c680632
 
 ## Text
 
@@ -20,7 +20,7 @@ def related_model(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6020250+00:00`
+- posted_at: `2026-11-09T23:44:51.4623650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 119,
     "symbol": "RelatedField.related_model"
   },
-  "id": "236fa5dd-6b9a-4854-8744-9bc8cf8b23e3",
+  "id": "95913105-647f-4653-86e4-6aab2c680632",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6020250+00:00"
+    "posted_at": "2026-11-09T23:44:51.4623650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3cd0a39f-bf7e-4ff6-a684-f1bfb80be0ca",
+  "subject_id": "dbf96c34-992a-4e64-90e8-9ca851c120b3",
   "subject_name": "django/db/models/fields/related::RelatedField.related_model",
   "tags": [
     "entity:method",

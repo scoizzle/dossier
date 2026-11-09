@@ -1,10 +1,10 @@
 # django/contrib/gis/db/models/fields
 
-- Subject: django/contrib/gis/db/models/fields (id `436633ef-7d8a-4326-92dd-667828d27339`)
+- Subject: django/contrib/gis/db/models/fields (id `c810fca5-23da-463e-8c6f-55caf523abb3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3899 tokens
-- Facts shown: 65 of 66
+- Used: 3932 tokens
+- Facts shown: 66 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -56,6 +56,7 @@
 - [24659508] def select_format(self, compiler, sql, params): select = compiler.connection.ops.select_extent return select % sql if select else sql, params
 - [763714bb] def spheroid(self, connection): return get_srid_info(self.srid, connection).spheroid
 - [44f297f8] def units(self, connection): return get_srid_info(self.srid, connection).units
+- [b44d703f] def units_name(self, connection): return get_srid_info(self.srid, connection).units_name
 - [0b9e945b] description = _( "The base Geometry field — maps to the OpenGIS Specification Geometry type." ) form_class = forms.GeometryField # The OpenGIS Geometry name. geom_type = "GEOMETRY" geom_class = None
 - [0b9a5fe9] description = _("Extent Aggregate Field")
 - [c7b60d25] description = _("Raster Field") geom_type = "RASTER" geography = False

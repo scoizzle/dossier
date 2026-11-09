@@ -17,7 +17,7 @@ This file lists every subject under `django/contrib/` as folders and subjects: a
 | sessions/ | group | 246 | 0 | 0 | 852 | [index/django-contrib-sessions.md](django-contrib-sessions.md) |
 | sitemaps/ | group | 45 | 0 | 0 | 285 | [index/django-contrib-sitemaps.md](django-contrib-sitemaps.md) |
 | sites/ | group | 65 | 0 | 0 | 647 | [index/django-contrib-sites.md](django-contrib-sites.md) |
-| staticfiles/ | group | 194 | 0 | 0 | 759 | [index/django-contrib-staticfiles.md](django-contrib-staticfiles.md) |
+| staticfiles/ | group | 194 | 0 | 0 | 760 | [index/django-contrib-staticfiles.md](django-contrib-staticfiles.md) |
 | syndication/ | group | 28 | 0 | 0 | 248 | [index/django-contrib-syndication.md](django-contrib-syndication.md) |
 
 Up: [index/django.md](django.md)

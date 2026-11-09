@@ -1,10 +1,10 @@
 # django/contrib/messages/context_processors
 
-- Subject: django/contrib/messages/context_processors (id `cb45841d-274c-4d59-998d-44e5f47d7c19`)
+- Subject: django/contrib/messages/context_processors (id `a4a70022-778c-474a-a942-803192e39d2a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 99 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

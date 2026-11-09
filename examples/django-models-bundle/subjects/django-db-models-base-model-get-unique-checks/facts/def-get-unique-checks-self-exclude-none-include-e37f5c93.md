@@ -1,6 +1,6 @@
 # Fact e37f5c93
 
-Store id: e5a2140f-5018-4b36-9edf-1a3e63d9820f
+Store id: e2f8544e-aa42-452d-a56d-7beaf4f92174
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_unique_checks(self, exclude=None, include_meta_constraints=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7550830+00:00`
+- posted_at: `2026-11-09T23:44:48.5416470+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1476,
     "symbol": "Model._get_unique_checks"
   },
-  "id": "e5a2140f-5018-4b36-9edf-1a3e63d9820f",
+  "id": "e2f8544e-aa42-452d-a56d-7beaf4f92174",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7550830+00:00"
+    "posted_at": "2026-11-09T23:44:48.5416470+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "68e759c9-2763-469a-be67-24f4113de0cc",
+  "subject_id": "f7564846-1ba9-4a83-a547-550aefe8310a",
   "subject_name": "django/db/models/base::Model._get_unique_checks",
   "tags": [
     "entity:method"

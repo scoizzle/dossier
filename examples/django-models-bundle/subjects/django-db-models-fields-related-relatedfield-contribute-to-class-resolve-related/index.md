@@ -1,11 +1,11 @@
 # django/db/models/fields/related::RelatedField.contribute_to_class.resolve_related_class
 
-- Subject: django/db/models/fields/related::RelatedField.contribute_to_class.resolve_related_class (id `e2b56261-ff57-4aa0-beda-51bb9a4f1b60`)
+- Subject: django/db/models/fields/related::RelatedField.contribute_to_class.resolve_related_class (id `29003104-730a-431b-a297-5349c60d3543`)
 - Kind: function
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

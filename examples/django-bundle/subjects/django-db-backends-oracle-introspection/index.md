@@ -1,10 +1,10 @@
 # django/db/backends/oracle/introspection
 
-- Subject: django/db/backends/oracle/introspection (id `78b0fd5c-14f1-47e2-b0a7-219064a9aad9`)
+- Subject: django/db/backends/oracle/introspection (id `e3afbc7d-bc98-4a16-98ea-c83bb07dfd78`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2782 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

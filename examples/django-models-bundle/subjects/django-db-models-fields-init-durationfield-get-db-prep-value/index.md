@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DurationField.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::DurationField.get_db_prep_value (id `79f4c3b8-9e16-47ec-9b9a-5c208f411298`)
+- Subject: django/db/models/fields/__init__::DurationField.get_db_prep_value (id `79509371-3fb2-4f6c-b34b-2a9b69926c59`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

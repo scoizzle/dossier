@@ -1,10 +1,10 @@
 # django/utils/translation/trans_real
 
-- Subject: django/utils/translation/trans_real (id `c656a0eb-a0c6-4b4f-8082-74cb69dade94`)
+- Subject: django/utils/translation/trans_real (id `49d6f01f-6af8-4188-a8a4-e4b9b9b1ab8c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5693 tokens
-- Facts shown: 90 of 90
+- Facts shown: 90 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.as_sql
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.as_sql (id `b56e7f1d-d966-45dd-94d5-a62677615bd0`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.as_sql (id `2ba241b8-9168-49be-9c6f-8815f95a8546`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

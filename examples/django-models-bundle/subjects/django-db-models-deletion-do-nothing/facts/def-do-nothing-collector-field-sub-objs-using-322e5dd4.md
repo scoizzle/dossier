@@ -1,6 +1,6 @@
 # Fact 322e5dd4
 
-Store id: d55581f7-3073-445a-b69f-89992e8a8ada
+Store id: f18bb77b-4034-496f-9115-aeaa9b8c2adc
 
 ## Text
 
@@ -20,7 +20,7 @@ def DO_NOTHING(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0782310+00:00`
+- posted_at: `2026-11-09T23:44:48.9032380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 80,
     "symbol": "DO_NOTHING"
   },
-  "id": "d55581f7-3073-445a-b69f-89992e8a8ada",
+  "id": "f18bb77b-4034-496f-9115-aeaa9b8c2adc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0782310+00:00"
+    "posted_at": "2026-11-09T23:44:48.9032380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2408caa4-d8c1-4841-a6d4-10cbb7363456",
+  "subject_id": "b362266c-fd46-4081-a387-0dfca0088dd3",
   "subject_name": "django/db/models/deletion::DO_NOTHING",
   "tags": [
     "entity:function"

@@ -1,6 +1,6 @@
 # Fact b5ab9430
 
-Store id: 5b176360-665e-4501-ac32-58d3eacb8fb3
+Store id: deb750d5-d767-4f5f-95f1-772495277b69
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Random
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5b176360-665e-4501-ac32-58d3eacb8fb3",
+  "id": "deb750d5-d767-4f5f-95f1-772495277b69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Random"
       },
       "rel": "contains",
-      "target": "c3435621-df9d-462e-bf07-3e5dc5c8d9c1"
+      "target": "6d007881-bd4b-4af7-a6e5-b9143a5c923f"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

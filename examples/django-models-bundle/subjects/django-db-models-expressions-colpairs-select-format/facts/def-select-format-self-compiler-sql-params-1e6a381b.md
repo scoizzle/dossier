@@ -1,6 +1,6 @@
 # Fact 1e6a381b
 
-Store id: f1fffc39-0db9-491a-92e2-e4a134d4cf2f
+Store id: 07999900-dedb-4f4a-82c5-2a081b9d58aa
 
 ## Text
 
@@ -20,7 +20,7 @@ def select_format(self, compiler, sql, params)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9085460+00:00`
+- posted_at: `2026-11-09T23:44:49.5708020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1443,
     "symbol": "ColPairs.select_format"
   },
-  "id": "f1fffc39-0db9-491a-92e2-e4a134d4cf2f",
+  "id": "07999900-dedb-4f4a-82c5-2a081b9d58aa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9085460+00:00"
+    "posted_at": "2026-11-09T23:44:49.5708020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ca5c22c0-5c01-456e-8c55-6ce51d3b7355",
+  "subject_id": "6d3accb7-a6c2-4993-8f4a-7458761432d1",
   "subject_name": "django/db/models/expressions::ColPairs.select_format",
   "tags": [
     "entity:method"

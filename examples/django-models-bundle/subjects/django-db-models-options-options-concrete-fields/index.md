@@ -1,11 +1,11 @@
 # django/db/models/options::Options.concrete_fields
 
-- Subject: django/db/models/options::Options.concrete_fields (id `878a942b-4306-428a-95ec-6d42b018e5b8`)
+- Subject: django/db/models/options::Options.concrete_fields (id `bb91e3a2-09d6-44cb-a0e2-5d7184aee720`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

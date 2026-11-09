@@ -1,6 +1,6 @@
 # Fact 67851f51
 
-Store id: 99eebf3b-b728-4e45-ac78-4c2fd4c66d1f
+Store id: c96ebc86-1b86-40ce-a8c3-30fd5dea4356
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9064390+00:00`
+- posted_at: `2026-11-09T23:44:50.3247110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2918,
     "symbol": "AutoFieldMixin.contribute_to_class"
   },
-  "id": "99eebf3b-b728-4e45-ac78-4c2fd4c66d1f",
+  "id": "c96ebc86-1b86-40ce-a8c3-30fd5dea4356",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9064390+00:00"
+    "posted_at": "2026-11-09T23:44:50.3247110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d5116bb0-e10b-4df0-b623-ec3a58b7405c",
+  "subject_id": "4191b710-09d9-46ca-816b-ddf9becba110",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.contribute_to_class",
   "tags": [
     "entity:method"

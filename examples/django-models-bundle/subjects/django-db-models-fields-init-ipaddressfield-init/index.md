@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::IPAddressField.__init__
 
-- Subject: django/db/models/fields/__init__::IPAddressField.__init__ (id `15621fcb-9d50-4bc1-b183-e93d50ef1e02`)
+- Subject: django/db/models/fields/__init__::IPAddressField.__init__ (id `83a70a92-0bc6-48ed-a2d5-50173683ef28`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

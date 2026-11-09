@@ -1,6 +1,6 @@
 # Fact 8eb03b23
 
-Store id: 260542d2-08b9-4bd6-8e76-0601f72b8317
+Store id: 61b681b7-40cb-4307-adad-3b3b9c29bf4c
 
 ## Text
 
@@ -20,7 +20,7 @@ class FileField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3874320+00:00`
+- posted_at: `2026-11-09T23:44:50.6487300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 239,
     "symbol": "FileField"
   },
-  "id": "260542d2-08b9-4bd6-8e76-0601f72b8317",
+  "id": "61b681b7-40cb-4307-adad-3b3b9c29bf4c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3874320+00:00"
+    "posted_at": "2026-11-09T23:44:50.6487300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9ecf65a9-7e92-4dce-a564-be18c5568171",
+  "subject_id": "1ed7c651-e32e-4d7a-b9a1-5521c842a297",
   "subject_name": "django/db/models/fields/files::FileField",
   "tags": [
     "entity:class"

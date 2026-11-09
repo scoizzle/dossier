@@ -1,11 +1,11 @@
 # django/db/models/expressions::Col.relabeled_clone
 
-- Subject: django/db/models/expressions::Col.relabeled_clone (id `dcf0d6d2-e070-493e-b8d4-2e0c922de60b`)
+- Subject: django/db/models/expressions::Col.relabeled_clone (id `cf26c2b1-dc15-433a-bcdf-4eea08705b5c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

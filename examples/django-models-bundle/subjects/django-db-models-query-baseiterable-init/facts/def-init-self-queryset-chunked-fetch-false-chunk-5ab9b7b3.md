@@ -1,6 +1,6 @@
 # Fact 5ab9b7b3
 
-Store id: 52b1685a-8585-4b76-9ab9-7a493686e3e7
+Store id: 3cfa51a6-965d-4789-8d78-b92f58e3ceff
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, queryset, chunked_fetch=False, chunk_size=GET_ITERATOR_CHUNK
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.2229270+00:00`
+- posted_at: `2026-11-09T23:44:55.7599990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 86,
     "symbol": "BaseIterable.__init__"
   },
-  "id": "52b1685a-8585-4b76-9ab9-7a493686e3e7",
+  "id": "3cfa51a6-965d-4789-8d78-b92f58e3ceff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.2229270+00:00"
+    "posted_at": "2026-11-09T23:44:55.7599990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "774f1594-509a-4667-9e7e-6a658638f860",
+  "subject_id": "3fae0619-d816-4944-9018-02373cf1066f",
   "subject_name": "django/db/models/query::BaseIterable.__init__",
   "tags": [
     "entity:method"

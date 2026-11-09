@@ -1,11 +1,11 @@
 # django/db/models/functions/text::StrIndex
 
-- Subject: django/db/models/functions/text::StrIndex (id `a76fe82e-da57-401b-98b0-31611e50a736`)
+- Subject: django/db/models/functions/text::StrIndex (id `5213eacd-5e28-40da-a940-f7ae3a7be51c`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

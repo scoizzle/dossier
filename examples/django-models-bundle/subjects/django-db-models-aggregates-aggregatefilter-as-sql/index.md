@@ -1,11 +1,11 @@
 # django/db/models/aggregates::AggregateFilter.as_sql
 
-- Subject: django/db/models/aggregates::AggregateFilter.as_sql (id `c819f7bc-dc86-47df-8036-4e61fef15276`)
+- Subject: django/db/models/aggregates::AggregateFilter.as_sql (id `4b241dc6-1f73-47cd-b087-a9680e653064`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

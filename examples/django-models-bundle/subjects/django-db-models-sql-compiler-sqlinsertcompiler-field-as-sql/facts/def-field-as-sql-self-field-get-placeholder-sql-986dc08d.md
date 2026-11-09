@@ -1,6 +1,6 @@
 # Fact 986dc08d
 
-Store id: 3c208033-f82a-4921-aaac-f287ed863901
+Store id: ff99ef33-fa42-4c18-baf1-079c943579b6
 
 ## Text
 
@@ -20,7 +20,7 @@ def field_as_sql(self, field, get_placeholder_sql, val)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.9454900+00:00`
+- posted_at: `2026-11-09T23:44:57.6532410+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1705,
     "symbol": "SQLInsertCompiler.field_as_sql"
   },
-  "id": "3c208033-f82a-4921-aaac-f287ed863901",
+  "id": "ff99ef33-fa42-4c18-baf1-079c943579b6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.9454900+00:00"
+    "posted_at": "2026-11-09T23:44:57.6532410+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d226e75a-5c58-482a-9119-ef0c9077e4f2",
+  "subject_id": "4947098f-e8cb-443f-b147-0b59a97473bc",
   "subject_name": "django/db/models/sql/compiler::SQLInsertCompiler.field_as_sql",
   "tags": [
     "entity:method"

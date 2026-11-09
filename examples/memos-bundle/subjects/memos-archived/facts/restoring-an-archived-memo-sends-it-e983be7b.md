@@ -1,6 +1,6 @@
 # Fact e983be7b
 
-Store id: d3925f9c-0397-4d08-9226-1cf8ad75f765
+Store id: 34f8348b-5288-4d33-9199-4191f574395e
 
 ## Text
 
@@ -20,7 +20,7 @@ Restoring an archived memo sends it back to the home list.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.3369340+00:00`
+- posted_at: `2026-11-09T23:44:32.3313430+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d3925f9c-0397-4d08-9226-1cf8ad75f765",
+  "id": "34f8348b-5288-4d33-9199-4191f574395e",
   "kind": "action",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.3369340+00:00"
+    "posted_at": "2026-11-09T23:44:32.3313430+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "d2f1784a-f170-4d97-8fea-071e84050ad7",
+  "subject_id": "4fe5c8a4-1ad4-48f1-bcf0-1620887e6ab5",
   "subject_name": "Memos/Archived",
   "tags": [],
   "text": "Restoring an archived memo sends it back to the home list."

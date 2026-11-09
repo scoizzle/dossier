@@ -1,6 +1,6 @@
 # Fact 6da4cef2
 
-Store id: c1272425-9713-4b4c-9568-b550ade1eb59
+Store id: e7f975b1-a752-452c-8f5f-cffbd6e73292
 
 ## Text
 
@@ -20,7 +20,7 @@ def count(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.4167510+00:00`
+- posted_at: `2026-11-09T23:44:51.9820720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1290,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.count"
   },
-  "id": "c1272425-9713-4b4c-9568-b550ade1eb59",
+  "id": "e7f975b1-a752-452c-8f5f-cffbd6e73292",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.4167510+00:00"
+    "posted_at": "2026-11-09T23:44:51.9820720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "db5f07eb-c9e5-4fb3-8a07-4affb4a9c13c",
+  "subject_id": "60f2bba7-4d2d-4351-9457-383018538a91",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.count",
   "tags": [
     "entity:method"

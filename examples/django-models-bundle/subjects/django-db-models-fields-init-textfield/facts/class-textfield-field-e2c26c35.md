@@ -1,6 +1,6 @@
 # Fact e2c26c35
 
-Store id: 9041e79c-ce7d-4812-b194-c9916b7fe925
+Store id: 9a6c74e4-680f-4b11-9c5c-25b62ddc4f32
 
 ## Text
 
@@ -20,7 +20,7 @@ class TextField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7920920+00:00`
+- posted_at: `2026-11-09T23:44:50.2338700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2524,
     "symbol": "TextField"
   },
-  "id": "9041e79c-ce7d-4812-b194-c9916b7fe925",
+  "id": "9a6c74e4-680f-4b11-9c5c-25b62ddc4f32",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7920920+00:00"
+    "posted_at": "2026-11-09T23:44:50.2338700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7a0c4c34-ea50-4dea-a384-624939481b43",
+  "subject_id": "e26468f2-4084-4093-baf5-9c7b8bbfafbe",
   "subject_name": "django/db/models/fields/__init__::TextField",
   "tags": [
     "entity:class"

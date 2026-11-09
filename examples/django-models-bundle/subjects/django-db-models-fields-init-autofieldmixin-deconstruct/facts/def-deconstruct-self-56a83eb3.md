@@ -1,6 +1,6 @@
 # Fact 56a83eb3
 
-Store id: 31d89591-c832-4555-8d82-b0a06e441dfb
+Store id: 8887bcf4-3fdc-4296-9ac2-b158b039c030
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8975840+00:00`
+- posted_at: `2026-11-09T23:44:50.3179160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2899,
     "symbol": "AutoFieldMixin.deconstruct"
   },
-  "id": "31d89591-c832-4555-8d82-b0a06e441dfb",
+  "id": "8887bcf4-3fdc-4296-9ac2-b158b039c030",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8975840+00:00"
+    "posted_at": "2026-11-09T23:44:50.3179160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "871be4c1-0cc4-4925-82f3-0d3a88fc2325",
+  "subject_id": "6c73e169-f8e9-4845-9b55-8a6410fdf4c6",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.deconstruct",
   "tags": [
     "entity:method"

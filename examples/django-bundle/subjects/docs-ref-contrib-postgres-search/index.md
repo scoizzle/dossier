@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/search
 
-- Subject: docs/ref/contrib/postgres/search (id `c9708194-2353-48a7-9556-7d616a37ed97`)
+- Subject: docs/ref/contrib/postgres/search (id `308dff69-6129-4e6c-86b0-04debb34d335`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5801 tokens
-- Facts shown: 137 of 141
+- Used: 5962 tokens
+- Facts shown: 141 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -86,8 +86,11 @@
 - [a3609f37] ================ Full text search ================
 - [fef206e6] A common way to use full text search is to search a single term against a single column in the database. For example:
 - [e35f2101] Accepts a field name or expression, and a string or expression. Returns the trigram distance between the two arguments.
+- [ddb2d23a] Accepts a field name or expression, and a string or expression. Returns the trigram similarity between the two arguments.
 - [94cfbe09] Accepts a single text field or an expression, a query, a config, and a set of options. Returns highlighted search results.
+- [94098bdc] Accepts a string or expression, and a field name or expression. Returns the trigram strict word distance between the two arguments.
 - [a35f2b91] Accepts a string or expression, and a field name or expression. Returns the trigram strict word similarity between the two arguments. Similar to :class:`TrigramWordSimilarity() <TrigramWordSimilarity>`, except that it forces extent boundaries to match word boundaries.
+- [851cbc2b] Accepts a string or expression, and a field name or expression. Returns the trigram word distance between the two arguments.
 - [09753ab7] Accepts a string or expression, and a field name or expression. Returns the trigram word similarity between the two arguments.
 - [03cb0c3f] An alternative method is to use a :class:`~django.db.models.GeneratedField`, which has PostgreSQL maintain the column rather than a trigger::
 - [87993a44] Another approach to searching is trigram similarity. A trigram is a group of three consecutive characters. In addition to the :lookup:`trigram_similar`, :lookup:`trigram_word_similar`, and :lookup:`trigram_strict_word_similar` lookups, you can use a couple of other expressions.
@@ -106,6 +109,7 @@
 - [71982a3f] Searching against a single field is great but rather limiting. The ``Entry`` instances we're searching belong to a ``Blog``, which has a ``tagline`` field. To query against both fields, use a ``SearchVector``:
 - [d9980b02] See :ref:`postgresql-fts-search-configuration` and :ref:`postgresql-fts-weighting-queries` for an explanation of the ``config`` and ``weight`` parameters.
 - [3090c23fe7b0bac4] See :ref:`postgresql-fts-search-configuration` for an explanation of the ``config`` parameter.
+- [3090c23fe7b0bac4-2] See :ref:`postgresql-fts-search-configuration` for an explanation of the ``config`` parameter.
 - [e7c4b51e] See :ref:`postgresql-fts-weighting-queries` for an explanation of the ``weights`` parameter.
 - [d8139eaf] Set the ``cover_density`` parameter to ``True`` to enable the cover density ranking, which means that the proximity of matching query terms is taken into account.
 - [ec145b2f] Set the ``fragment_delimiter`` string parameter to configure the delimiter between fragments. PostgreSQL's default is ``" ... "``.

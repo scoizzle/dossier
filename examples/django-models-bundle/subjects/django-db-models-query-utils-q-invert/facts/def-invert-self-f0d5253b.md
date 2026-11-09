@@ -1,6 +1,6 @@
 # Fact f0d5253b
 
-Store id: 8f61a404-d985-481a-8da4-19bab8f46f8a
+Store id: 75a6cae1-a27f-4d99-a048-1e51db503f02
 
 ## Text
 
@@ -20,7 +20,7 @@ def __invert__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0697350+00:00`
+- posted_at: `2026-11-09T23:44:56.5594660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 96,
     "symbol": "Q.__invert__"
   },
-  "id": "8f61a404-d985-481a-8da4-19bab8f46f8a",
+  "id": "75a6cae1-a27f-4d99-a048-1e51db503f02",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0697350+00:00"
+    "posted_at": "2026-11-09T23:44:56.5594660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c0e35c9a-4f86-41f8-b1dc-f3d5e4c5d1f8",
+  "subject_id": "d53c1d83-fa07-4f30-a032-e4f0972fd6b8",
   "subject_name": "django/db/models/query_utils::Q.__invert__",
   "tags": [
     "entity:method"

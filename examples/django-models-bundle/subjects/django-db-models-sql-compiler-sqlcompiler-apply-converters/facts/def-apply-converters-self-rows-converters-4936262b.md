@@ -1,6 +1,6 @@
 # Fact 4936262b
 
-Store id: a331b318-1c84-43ef-a136-736fdff65207
+Store id: a3aaea4a-8c82-4790-a9fb-fd3e638dc50d
 
 ## Text
 
@@ -20,7 +20,7 @@ def apply_converters(self, rows, converters)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.8700690+00:00`
+- posted_at: `2026-11-09T23:44:57.6064580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1554,
     "symbol": "SQLCompiler.apply_converters"
   },
-  "id": "a331b318-1c84-43ef-a136-736fdff65207",
+  "id": "a3aaea4a-8c82-4790-a9fb-fd3e638dc50d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.8700690+00:00"
+    "posted_at": "2026-11-09T23:44:57.6064580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "92d21e0c-4231-4008-88f7-f0009381382a",
+  "subject_id": "011ebf26-51f5-4770-9afc-05a4665a89a8",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.apply_converters",
   "tags": [
     "entity:method"

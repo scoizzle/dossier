@@ -1,10 +1,10 @@
 # django/contrib/flatpages/urls
 
-- Subject: django/contrib/flatpages/urls (id `21fb9ab2-0645-45fd-b35d-c3b4d23ca976`)
+- Subject: django/contrib/flatpages/urls (id `ea6c7f97-a538-4cb1-b26f-ae567d1bb65f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 65 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

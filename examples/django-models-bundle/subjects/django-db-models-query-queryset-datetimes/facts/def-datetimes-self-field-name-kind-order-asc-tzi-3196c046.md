@@ -1,6 +1,6 @@
 # Fact 3196c046
 
-Store id: 6cb604df-7fac-4372-8a46-e4a5aa2d7f79
+Store id: 400e669c-7b14-4204-859f-2306fe45ce92
 
 ## Text
 
@@ -20,7 +20,7 @@ def datetimes(self, field_name, kind, order="ASC", tzinfo=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5285230+00:00`
+- posted_at: `2026-11-09T23:44:56.0241090+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1645,
     "symbol": "QuerySet.datetimes"
   },
-  "id": "6cb604df-7fac-4372-8a46-e4a5aa2d7f79",
+  "id": "400e669c-7b14-4204-859f-2306fe45ce92",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5285230+00:00"
+    "posted_at": "2026-11-09T23:44:56.0241090+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "34eb10aa-c63f-4c53-9eb5-08e6a9ba257c",
+  "subject_id": "db3d81ae-8532-4df5-ae19-8daa0a0e1382",
   "subject_name": "django/db/models/query::QuerySet.datetimes",
   "tags": [
     "entity:method"

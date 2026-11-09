@@ -1,10 +1,10 @@
 # docs/intro/tutorial02
 
-- Subject: docs/intro/tutorial02 (id `018307f4-639d-44d4-9622-d8e3babc310a`)
+- Subject: docs/intro/tutorial02 (id `e59abf37-3e42-4420-a27f-c178f4901d12`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7387 tokens
-- Facts shown: 168 of 171
+- Used: 7453 tokens
+- Facts shown: 171 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -59,6 +59,7 @@
 - [df692aec3f5cbbed] from .models import Question
 - [13fbe7fc2a5a9c75-2] from django.contrib import admin
 - [4af926756c29efa6-7] from django.db import models
+- [4af926756c29efa6-8] from django.db import models
 - [11a0b287] from django.db import models from django.utils import timezone
 - [b75c8d9ca5df7aa8] import datetime
 - [e97cba14] A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you're storing. Django follows the :ref:`DRY Principle <dry>`. The goal is to define your data model in one place and automatically derive things from it.
@@ -91,6 +92,8 @@
 - [bf67fa15468f979f] .. code-block:: python :caption: ``mysite/settings.py``
 - [20257edb57d397a8] .. code-block:: python :caption: ``polls/admin.py``
 - [ce20b11c82955ef6] .. code-block:: python :caption: ``polls/models.py``
+- [ce20b11c82955ef6-2] .. code-block:: python :caption: ``polls/models.py``
+- [ce20b11c82955ef6-3] .. code-block:: python :caption: ``polls/models.py``
 - [3a9340cd0d877339-13] .. code-block:: text
 - [3a9340cd0d877339-14] .. code-block:: text
 - [3a9340cd0d877339-15] .. code-block:: text

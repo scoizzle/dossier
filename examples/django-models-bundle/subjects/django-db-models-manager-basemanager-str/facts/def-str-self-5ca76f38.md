@@ -1,6 +1,6 @@
 # Fact 5ca76f38
 
-Store id: 4321d1e6-5df9-4198-8158-5d71020c62f3
+Store id: 555cbadd-3a64-49b7-8b30-84197f50f521
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.6527550+00:00`
+- posted_at: `2026-11-09T23:44:55.2546850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 35,
     "symbol": "BaseManager.__str__"
   },
-  "id": "4321d1e6-5df9-4198-8158-5d71020c62f3",
+  "id": "555cbadd-3a64-49b7-8b30-84197f50f521",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.6527550+00:00"
+    "posted_at": "2026-11-09T23:44:55.2546850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36801d92-6b5b-44aa-bd9b-ef1380d8c502",
+  "subject_id": "8c11f475-0e99-45c8-877b-d15b6e28270f",
   "subject_name": "django/db/models/manager::BaseManager.__str__",
   "tags": [
     "entity:method"

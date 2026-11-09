@@ -1,6 +1,6 @@
 # Fact bc7d3508
 
-Store id: f9f8359d-31bd-41dd-88a0-d2cc1f23b6ae
+Store id: 091d2b72-bb6b-4e8a-8ef2-3e98c0055b11
 
 ## Text
 
@@ -20,7 +20,7 @@ async def abulk_update(self, objs, fields, batch_size=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4147520+00:00`
+- posted_at: `2026-11-09T23:44:55.9224630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1051,
     "symbol": "QuerySet.abulk_update"
   },
-  "id": "f9f8359d-31bd-41dd-88a0-d2cc1f23b6ae",
+  "id": "091d2b72-bb6b-4e8a-8ef2-3e98c0055b11",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4147520+00:00"
+    "posted_at": "2026-11-09T23:44:55.9224630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "83ba1e6a-8731-4d28-949b-c0c76c0e57c6",
+  "subject_id": "fa4e3643-6ab1-47d8-b29b-61ee99de4420",
   "subject_name": "django/db/models/query::QuerySet.abulk_update",
   "tags": [
     "entity:method",

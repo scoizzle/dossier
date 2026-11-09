@@ -1,10 +1,10 @@
 # django/db/migrations/writer
 
-- Subject: django/db/migrations/writer (id `e1a06f2f-1cc1-40d5-a9f1-986628b5d783`)
+- Subject: django/db/migrations/writer (id `e7963bb0-7525-4a7a-9b8f-d97149f4026b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2659 tokens
-- Facts shown: 43 of 43
+- Facts shown: 43 facts
 - Conflicts: 0
 - Gaps: 0
 

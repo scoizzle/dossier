@@ -1,10 +1,10 @@
 # django/views/decorators/debug
 
-- Subject: django/views/decorators/debug (id `6aea38b7-9339-4f6b-8a5a-8024f624ff88`)
+- Subject: django/views/decorators/debug (id `02225fad-78cf-4f20-bb0d-3b1c893499d5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1166 tokens
-- Facts shown: 28 of 29
+- Used: 1285 tokens
+- Facts shown: 29 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - @wraps(func) def sensitive_variables_wrapper(*func_args, **func_kwargs): if variables: sensitive_variables_wrapper.sensitive_variables = variables else: sensitive_variables_wrapper.sensitive_variables = "__ALL__" return func(*func_args, **func_kwargs) [aba582d1]
 - @wraps(view) async def sensitive_post_parameters_wrapper(request, *args, **kwargs): if not isinstance(request, HttpRequest): raise TypeError( "sensitive_post_parameters didn't receive an HttpRequest " "object. If you are decorating a classmethod, make sure to use " "@method_decorator." ) if parameters: request.sensitive_post_parameters = parameters else: request.sensitive_post_parameters = "__ALL__" return await view(request, *args, **kwargs) [c7acb046]
+- @wraps(view) def sensitive_post_parameters_wrapper(request, *args, **kwargs): if not isinstance(request, HttpRequest): raise TypeError( "sensitive_post_parameters didn't receive an HttpRequest " "object. If you are decorating a classmethod, make sure to use " "@method_decorator." ) if parameters: request.sensitive_post_parameters = parameters else: request.sensitive_post_parameters = "__ALL__" return view(request, *args, **kwargs) [79dc4138]
 - if variables: coroutine_functions_to_sensitive_variables[key] = variables else: coroutine_functions_to_sensitive_variables[key] = "__ALL__" [02361520]
 - try: file_path = inspect.getfile(wrapped_func) except TypeError: # Raises for builtins or native functions. raise ValueError( f"{func.__name__} cannot safely be wrapped by " "@sensitive_variables, make it either non-async or defined in a " "Python file (not a builtin or from a native extension)." ) else: # A source file may not be available (e.g. in .pyc-only # builds), use the first line number instead. first_line_number = wrapped_func.__code__.co_firstlineno key = hash(f"{file_path}:{first_line_number}") [3e9bb3de]
 - wrapped_func = func while getattr(wrapped_func, "__wrapped__", None) is not None: wrapped_func = wrapped_func.__wrapped__ [a7343948]
@@ -25,14 +26,14 @@
 - return sensitive_variables_wrapper [46aa6fcb]
 - * with specified parameters: [4182f604]
 - * with specified variable names: [66b9784a]
-- * without any specified parameters, in which case consider all variables are sensitive: [b96c630e]
-- * without any specified variable names, in which case consider all variables are sensitive: [dabfc86e]
-- Accept two forms: [2d30c255dc8877c5]
-- Accept two forms: [2d30c255dc8877c5-2]
-- def decorator(func): if iscoroutinefunction(func): sensitive_variables_wrapper = func [a5902558]
 
 ## All facts
 
+- [b96c630e] * without any specified parameters, in which case consider all variables are sensitive:
+- [dabfc86e] * without any specified variable names, in which case consider all variables are sensitive:
+- [2d30c255dc8877c5] Accept two forms:
+- [2d30c255dc8877c5-2] Accept two forms:
+- [a5902558] def decorator(func): if iscoroutinefunction(func): sensitive_variables_wrapper = func
 - [b5b049da] def decorator(view): if iscoroutinefunction(view):
 - [021b5df2d691cbd2-8] return decorator
 - [021b5df2d691cbd2-9] return decorator

@@ -1,6 +1,6 @@
 # Fact 6bd04c7a
 
-Store id: 89a2bb4d-821f-4643-8dcb-90d2913c66d5
+Store id: c27487ac-7447-42bf-9498-c4ce9ca75e3f
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5311410+00:00`
+- posted_at: `2026-11-09T23:44:48.3942810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 65,
     "symbol": "AggregateOrderBy.as_sql"
   },
-  "id": "89a2bb4d-821f-4643-8dcb-90d2913c66d5",
+  "id": "c27487ac-7447-42bf-9498-c4ce9ca75e3f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5311410+00:00"
+    "posted_at": "2026-11-09T23:44:48.3942810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ce48e4b-fc55-4cc3-8fc9-da6929c6abb7",
+  "subject_id": "fca2979f-2d99-4517-81e3-a1ff1ba1afd4",
   "subject_name": "django/db/models/aggregates::AggregateOrderBy.as_sql",
   "tags": [
     "entity:method"

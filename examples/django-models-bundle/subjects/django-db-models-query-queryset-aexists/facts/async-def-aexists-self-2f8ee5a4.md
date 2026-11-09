@@ -1,6 +1,6 @@
 # Fact 2f8ee5a4
 
-Store id: 26f767f2-9ec8-4143-82a9-df5ed1ff5481
+Store id: 93df816e-9158-40a3-92cf-0fe0ba4a7ae7
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aexists(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4963760+00:00`
+- posted_at: `2026-11-09T23:44:55.9934810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1486,
     "symbol": "QuerySet.aexists"
   },
-  "id": "26f767f2-9ec8-4143-82a9-df5ed1ff5481",
+  "id": "93df816e-9158-40a3-92cf-0fe0ba4a7ae7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4963760+00:00"
+    "posted_at": "2026-11-09T23:44:55.9934810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "35433c0d-e678-42c5-8db4-b5051e2eb884",
+  "subject_id": "55055377-6d1b-4a1e-bc91-842ce9935288",
   "subject_name": "django/db/models/query::QuerySet.aexists",
   "tags": [
     "entity:method",

@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FileField.__init__
 
-- Subject: django/db/models/fields/files::FileField.__init__ (id `9a5e2545-118a-460f-95b8-60f4be30ef61`)
+- Subject: django/db/models/fields/files::FileField.__init__ (id `2e36422d-3fd3-450c-8298-43122980c80a`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 33 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 3d1b32bc
 
-Store id: cfc44db2-b239-4209-ae96-3129b18c6a21
+Store id: 431c33da-6f22-466c-ab12-fe388e2f575b
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_save(self, model_instance, add)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8232400+00:00`
+- posted_at: `2026-11-09T23:44:50.2602540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2688,
     "symbol": "TimeField.pre_save"
   },
-  "id": "cfc44db2-b239-4209-ae96-3129b18c6a21",
+  "id": "431c33da-6f22-466c-ab12-fe388e2f575b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8232400+00:00"
+    "posted_at": "2026-11-09T23:44:50.2602540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3549d256-0376-46ec-bade-1a74f3a3638b",
+  "subject_id": "6666a771-33a6-4066-b6b4-88644c4703af",
   "subject_name": "django/db/models/fields/__init__::TimeField.pre_save",
   "tags": [
     "entity:method"

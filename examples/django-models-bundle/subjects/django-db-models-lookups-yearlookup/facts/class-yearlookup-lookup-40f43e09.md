@@ -1,6 +1,6 @@
 # Fact 40f43e09
 
-Store id: 4cb6572b-a5f9-40e5-af29-3fcb6f55944b
+Store id: 08368ac9-8e62-4c24-9ca9-47bcba591d3a
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearLookup(Lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4096890+00:00`
+- posted_at: `2026-11-09T23:44:55.0535850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 712,
     "symbol": "YearLookup"
   },
-  "id": "4cb6572b-a5f9-40e5-af29-3fcb6f55944b",
+  "id": "08368ac9-8e62-4c24-9ca9-47bcba591d3a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4096890+00:00"
+    "posted_at": "2026-11-09T23:44:55.0535850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8b8b462-abca-4e11-86b2-1ea37bc3c410",
+  "subject_id": "8f9cccf4-0b9b-477a-a97c-d5ab77106d3e",
   "subject_name": "django/db/models/lookups::YearLookup",
   "tags": [
     "entity:class"

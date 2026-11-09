@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject.get_joining_fields
 
-- Subject: django/db/models/fields/related::ForeignObject.get_joining_fields (id `bd3c4cb6-abe3-44f5-a31e-a1f07aa99b0d`)
+- Subject: django/db/models/fields/related::ForeignObject.get_joining_fields (id `edfcd01a-4439-4652-b710-854d18627268`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

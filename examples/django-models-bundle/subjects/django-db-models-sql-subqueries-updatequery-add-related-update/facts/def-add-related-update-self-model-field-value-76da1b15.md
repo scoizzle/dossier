@@ -1,6 +1,6 @@
 # Fact 76da1b15
 
-Store id: 4a400143-fd23-48fd-b47f-7fb0781d6b28
+Store id: 8070f72a-b4a3-4bb6-8949-b8b5515a5d0e
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_related_update(self, model, field, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.3939160+00:00`
+- posted_at: `2026-11-09T23:44:59.4143050+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 122,
     "symbol": "UpdateQuery.add_related_update"
   },
-  "id": "4a400143-fd23-48fd-b47f-7fb0781d6b28",
+  "id": "8070f72a-b4a3-4bb6-8949-b8b5515a5d0e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.3939160+00:00"
+    "posted_at": "2026-11-09T23:44:59.4143050+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "42bd1d13-e6b8-4df6-9c39-3cccfcdc8ffb",
+  "subject_id": "80bbb348-52c4-4f95-956c-79959af98a73",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery.add_related_update",
   "tags": [
     "entity:method"

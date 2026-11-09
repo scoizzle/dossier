@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/deployment
 
-- Subject: docs/ref/contrib/gis/deployment (id `acf68fde-8d45-4692-af40-880cdb714ce4`)
+- Subject: docs/ref/contrib/gis/deployment (id `fe45d6d4-d009-4fc2-a16f-0865bf3b004b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 236 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

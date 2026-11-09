@@ -1,11 +1,11 @@
 # django/db/models/fields/tuple_lookups::TupleIn.check_rhs_elements_length_equals_lhs_length
 
-- Subject: django/db/models/fields/tuple_lookups::TupleIn.check_rhs_elements_length_equals_lhs_length (id `af50fe29-772f-41e3-a27d-fc0416dff4ec`)
+- Subject: django/db/models/fields/tuple_lookups::TupleIn.check_rhs_elements_length_equals_lhs_length (id `f54cc8a2-4bab-4a74-b772-f201afc89e95`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

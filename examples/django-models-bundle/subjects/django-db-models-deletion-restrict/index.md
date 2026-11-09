@@ -1,11 +1,11 @@
 # django/db/models/deletion::RESTRICT
 
-- Subject: django/db/models/deletion::RESTRICT (id `0131d0f0-0e99-4a30-b340-415100a6aeeb`)
+- Subject: django/db/models/deletion::RESTRICT (id `fbdef160-cd65-4b4e-a758-2d56c1701818`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

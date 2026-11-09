@@ -1,6 +1,6 @@
 # Fact b668a519
 
-Store id: 9cadb91a-7fc1-4657-a27f-35583c626469
+Store id: 724332d6-b110-4690-a951-1437d5962731
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IndexExpression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9673070+00:00`
+- posted_at: `2026-11-09T23:44:54.7230940+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9cadb91a-7fc1-4657-a27f-35583c626469",
+  "id": "724332d6-b110-4690-a951-1437d5962731",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9673070+00:00"
+    "posted_at": "2026-11-09T23:44:54.7230940+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IndexExpression"
       },
       "rel": "contains",
-      "target": "615f1c50-8901-4967-8865-79a3b719618b"
+      "target": "debbb8c3-c07b-4816-867a-a6d97e0b1fb5"
     }
   ],
   "status": "live",
-  "subject_id": "98a02a58-fa22-414b-b079-a86d651a7525",
+  "subject_id": "2ba30146-264b-4fc8-9f70-339860ef0262",
   "subject_name": "django/db/models/indexes",
   "tags": [
     "entity:class"

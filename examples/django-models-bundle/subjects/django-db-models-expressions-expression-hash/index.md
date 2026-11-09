@@ -1,11 +1,11 @@
 # django/db/models/expressions::Expression.__hash__
 
-- Subject: django/db/models/expressions::Expression.__hash__ (id `dda4990b-513f-47d1-8b85-28cb76e480e1`)
+- Subject: django/db/models/expressions::Expression.__hash__ (id `ad4706c7-8b6d-49b5-b063-46f7d5413694`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

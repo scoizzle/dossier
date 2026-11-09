@@ -1,10 +1,10 @@
 # docs/ref/checks
 
-- Subject: docs/ref/checks (id `c6cc515a-3a10-4ac5-8c1f-fc6e69f0db00`)
+- Subject: docs/ref/checks (id `28a80d53-4579-4be9-b953-760ff040a8a7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 13575 tokens
-- Facts shown: 107 of 109
+- Used: 13675 tokens
+- Facts shown: 109 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -86,6 +86,8 @@
 - [c0d7d146] The following checks are performed on :mod:`django.contrib.postgres` model fields, indexes, and constraints:
 - [f0b54d4f] The following checks are performed on any :class:`~django.contrib.admin.InlineModelAdmin` that is registered as an inline on a :class:`~django.contrib.admin.ModelAdmin`.
 - [9e4d0fc0] The following checks are performed on any :class:`~django.contrib.admin.ModelAdmin` (or subclass) that is registered with the admin site:
+- [819498cf] The following checks are performed on any :class:`~django.contrib.admin.ModelAdmin` that is registered with the admin site:
+- [6d4fbf9c] The following checks are performed on any :class:`~django.contrib.contenttypes.admin.GenericInlineModelAdmin` that is registered as an inline on a :class:`~django.contrib.admin.ModelAdmin`.
 - [8a2b9838] The following checks are performed on any model using a :class:`~django.contrib.sites.managers.CurrentSiteManager`:
 - [9f46a4c9] The following checks are performed on the default :class:`~django.contrib.admin.AdminSite`:
 - [d5491821] The following checks are performed on your URL configuration:

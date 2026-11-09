@@ -1,6 +1,6 @@
 # Fact ea89bb5c
 
-Store id: 2982bc73-35ed-4c59-9dd0-05481877a493
+Store id: 9990d48a-f2a6-454b-8a58-733c7df4f189
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_cached(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1898650+00:00`
+- posted_at: `2026-11-09T23:44:51.8708640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 467,
     "symbol": "ReverseOneToOneDescriptor.is_cached"
   },
-  "id": "2982bc73-35ed-4c59-9dd0-05481877a493",
+  "id": "9990d48a-f2a6-454b-8a58-733c7df4f189",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1898650+00:00"
+    "posted_at": "2026-11-09T23:44:51.8708640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0b229226-5d91-4d88-9aa5-3b4ffb6ad594",
+  "subject_id": "1c0c5c77-f387-4855-bfca-c7d84409b38d",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseOneToOneDescriptor.is_cached",
   "tags": [
     "entity:method"

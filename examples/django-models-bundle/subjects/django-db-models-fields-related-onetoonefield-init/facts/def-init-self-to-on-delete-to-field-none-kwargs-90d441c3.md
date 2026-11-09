@@ -1,6 +1,6 @@
 # Fact 90d441c3
 
-Store id: 8a9f9a33-5f95-40fd-95f4-90d19f3c90fc
+Store id: cf3b1fe1-81c2-42dd-8a78-a4ae72d20637
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, to, on_delete, to_field=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8035420+00:00`
+- posted_at: `2026-11-09T23:44:51.6155930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1371,
     "symbol": "OneToOneField.__init__"
   },
-  "id": "8a9f9a33-5f95-40fd-95f4-90d19f3c90fc",
+  "id": "cf3b1fe1-81c2-42dd-8a78-a4ae72d20637",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8035420+00:00"
+    "posted_at": "2026-11-09T23:44:51.6155930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "987d0c1d-971f-42c9-8eef-01705269af2d",
+  "subject_id": "2443f966-35e7-439d-b336-7f8347fc4d4e",
   "subject_name": "django/db/models/fields/related::OneToOneField.__init__",
   "tags": [
     "entity:method"

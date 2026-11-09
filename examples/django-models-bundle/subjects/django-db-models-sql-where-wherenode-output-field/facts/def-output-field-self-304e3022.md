@@ -1,6 +1,6 @@
 # Fact 304e3022
 
-Store id: e8567e2e-58d8-442e-a736-e631b0c5f077
+Store id: 96135573-e6a4-4be1-8d4a-15ad790c50c4
 
 ## Text
 
@@ -20,7 +20,7 @@ def output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6793600+00:00`
+- posted_at: `2026-11-09T23:44:59.7959740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 292,
     "symbol": "WhereNode.output_field"
   },
-  "id": "e8567e2e-58d8-442e-a736-e631b0c5f077",
+  "id": "96135573-e6a4-4be1-8d4a-15ad790c50c4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6793600+00:00"
+    "posted_at": "2026-11-09T23:44:59.7959740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1fd36ca3-30ee-40d9-a03f-66b92d98367c",
+  "subject_id": "079d8e2f-e951-4247-a8e9-21fcdd83b47e",
   "subject_name": "django/db/models/sql/where::WhereNode.output_field",
   "tags": [
     "entity:method",

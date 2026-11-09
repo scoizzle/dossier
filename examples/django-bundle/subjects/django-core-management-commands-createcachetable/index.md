@@ -1,10 +1,10 @@
 # django/core/management/commands/createcachetable
 
-- Subject: django/core/management/commands/createcachetable (id `261a419e-c75c-432d-bef7-b738118f8c93`)
+- Subject: django/core/management/commands/createcachetable (id `f87dd5fc-25ea-4398-84bf-9648f3733cf0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 949 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

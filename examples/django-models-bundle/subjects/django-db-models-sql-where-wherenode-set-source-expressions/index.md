@@ -1,11 +1,11 @@
 # django/db/models/sql/where::WhereNode.set_source_expressions
 
-- Subject: django/db/models/sql/where::WhereNode.set_source_expressions (id `cdddee09-a493-4dcf-a1ce-13fa0f7bdea5`)
+- Subject: django/db/models/sql/where::WhereNode.set_source_expressions (id `5e5361ef-4253-4c0b-8ae5-60388692c17b`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

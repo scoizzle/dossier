@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.db_parameters
 
-- Subject: django/db/models/fields/related::ManyToManyField.db_parameters (id `18db3f74-b136-440e-8daf-29f66ca07af8`)
+- Subject: django/db/models/fields/related::ManyToManyField.db_parameters (id `cc5112ef-542f-4663-940b-94f060a2ef71`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

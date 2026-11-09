@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/geoip2
 
-- Subject: docs/ref/contrib/gis/geoip2 (id `189a32e4-61fe-4e40-b774-ad7131d2aa93`)
+- Subject: docs/ref/contrib/gis/geoip2 (id `8b2334fe-4ef6-4e6b-a893-29412bf58f53`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1805 tokens
-- Facts shown: 48 of 51
+- Used: 1899 tokens
+- Facts shown: 51 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,6 +22,7 @@
 - .. method:: GeoIP2.country_name(query) [7cc09a35]
 - .. method:: GeoIP2.geos(query) [3839e14a]
 - .. method:: GeoIP2.lat_lon(query) [7a325b44]
+- .. method:: GeoIP2.lon_lat(query) [ee57f178]
 - .. module:: django.contrib.gis.geoip2 :synopsis: Python interface for MaxMind's GeoIP2 databases. [df479e65]
 - .. rubric:: Footnotes .. [#] GeoIP(R) is a registered trademark of MaxMind, Inc. [9bd509ef]
 - .. setting:: GEOIP_CITY [d7e82c7a]
@@ -33,11 +34,11 @@
 - API Reference ============= [b230c4722728fb5b-2]
 - Additionally, it is recommended to install the `libmaxminddb C library`__, so that ``geoip2`` can leverage the C library's faster speed. [eba04a03]
 - Coordinate Retrieval -------------------- [5e22c39a]
-- Example ======= [cf1461d9a1a7899c-2]
 
 ## All facts
 
 - [661583e1] All the following querying routines may take an instance of :class:`~ipaddress.IPv4Address` or :class:`~ipaddress.IPv6Address`, a string IP address, or a fully qualified domain name (FQDN). For example, ``IPv4Address("205.186.163.125")``, ``"205.186.163.125"``, and ``"djangoproject.com"`` would all be valid query parameters.
+- [cf1461d9a1a7899c-2] Example =======
 - [458050e52503f721-3] Exceptions ==========
 - [9e0500d6] Here is an example of its usage:
 - [8d5f6230] In order to perform IP-based geolocation, the :class:`GeoIP2` object requires the :pypi:`geoip2` Python package and the GeoIP ``Country`` and/or ``City`` datasets in binary format (the CSV files will not work!), downloaded from e.g. `MaxMind`__ or `DB-IP`__ websites. Grab the ``GeoLite2-Country.mmdb.gz`` and ``GeoLite2-City.mmdb.gz`` files and unzip them in a directory corresponding to the :setting:`GEOIP_PATH` setting.
@@ -46,6 +47,7 @@
 - [cc34e0c3] Querying --------
 - [adc11796] Returns a :class:`~django.contrib.gis.geos.Point` object corresponding to the query.
 - [d1a2a8b9] Returns a coordinate tuple of (latitude, longitude),
+- [ec61ea72] Returns a coordinate tuple of (longitude, latitude).
 - [63df0f60] Returns a dictionary of city information for the given query. Some of the values in the dictionary may be undefined (``None``).
 - [f63a6fad] Returns a dictionary with the country code and country for the given query.
 - [4f9e6a90] Returns the country code corresponding to the query.
@@ -61,3 +63,4 @@
 - [58fc4c14] ``GEOIP_PATH`` --------------
 - [a353548c] ``cache`` The cache settings when opening up the GeoIP datasets. May be an integer in (0, 1, 2, 4, 8) corresponding to the ``MODE_AUTO``, ``MODE_MMAP_EXT``, ``MODE_MMAP``, and ``GEOIP_INDEX_CACHE`` ``MODE_MEMORY`` C API settings, respectively. Defaults to 0 (``MODE_AUTO``).
 - [74c15054] ``city`` The name of the GeoIP city data file. Defaults to ``GeoLite2-City.mmdb``. Setting this keyword overrides the :setting:`GEOIP_CITY` setting. =================== =======================================================
+- [4b0c65d2] ``country`` The name of the GeoIP country data file. Defaults to ``GeoLite2-Country.mmdb``. Setting this keyword overrides the :setting:`GEOIP_COUNTRY` setting.

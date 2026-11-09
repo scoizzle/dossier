@@ -1,6 +1,6 @@
 # Fact 0e79965c
 
-Store id: 056bcfe2-0254-48e4-a91f-9348d9e7fa0a
+Store id: 451801dd-50f7-467c-b8c5-981d8c8c6c79
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class LessThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "056bcfe2-0254-48e4-a91f-9348d9e7fa0a",
+  "id": "451801dd-50f7-467c-b8c5-981d8c8c6c79",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "LessThanOrEqual"
       },
       "rel": "contains",
-      "target": "4c510d7c-026d-48c1-b6c9-4ad576b1add5"
+      "target": "d30b8c1e-5f60-4b30-8f98-e7102eb2f3c9"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

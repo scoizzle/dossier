@@ -1,6 +1,6 @@
 # Fact 0da8adc7
 
-Store id: 8522c17a-1fa3-41f2-8adf-28feba0ecd0a
+Store id: 88c1d5ee-7ebe-4785-b0b8-c9188917b841
 
 ## Text
 
@@ -20,7 +20,7 @@ def desc(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7931730+00:00`
+- posted_at: `2026-11-09T23:44:49.4022290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 475,
     "symbol": "BaseExpression.desc"
   },
-  "id": "8522c17a-1fa3-41f2-8adf-28feba0ecd0a",
+  "id": "88c1d5ee-7ebe-4785-b0b8-c9188917b841",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7931730+00:00"
+    "posted_at": "2026-11-09T23:44:49.4022290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0e2da549-634d-40b0-8ece-ae3dfb434891",
+  "subject_id": "ceedae44-c40a-4a24-92c4-77e06abe001a",
   "subject_name": "django/db/models/expressions::BaseExpression.desc",
   "tags": [
     "entity:method"

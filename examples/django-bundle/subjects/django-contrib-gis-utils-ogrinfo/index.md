@@ -1,10 +1,10 @@
 # django/contrib/gis/utils/ogrinfo
 
-- Subject: django/contrib/gis/utils/ogrinfo (id `d1076785-a975-432d-a029-ed3809448ef6`)
+- Subject: django/contrib/gis/utils/ogrinfo (id `3323c395-56b5-4a23-9090-313ac916c146`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 443 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

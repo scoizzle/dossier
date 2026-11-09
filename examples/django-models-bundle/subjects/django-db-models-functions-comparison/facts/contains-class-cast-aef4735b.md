@@ -1,6 +1,6 @@
 # Fact aef4735b
 
-Store id: 98dc2ccb-11fa-4a1e-a5e9-85fd60a4fc75
+Store id: 0f566c93-df95-436a-b6be-da0201e53cdd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Cast
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0159390+00:00`
+- posted_at: `2026-11-09T23:44:53.1901490+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "98dc2ccb-11fa-4a1e-a5e9-85fd60a4fc75",
+  "id": "0f566c93-df95-436a-b6be-da0201e53cdd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
+    "posted_at": "2026-11-09T23:44:53.1901490+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Cast"
       },
       "rel": "contains",
-      "target": "2552c40c-8ef9-428f-a591-3c47dfde6dbf"
+      "target": "82768e17-a351-4720-bcd2-fd95d8f81706"
     }
   ],
   "status": "live",
-  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
+  "subject_id": "b144e176-2f68-4d7b-9b17-76f2684f59e8",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

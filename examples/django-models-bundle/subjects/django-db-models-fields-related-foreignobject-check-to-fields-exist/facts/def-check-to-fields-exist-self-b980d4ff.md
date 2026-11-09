@@ -1,6 +1,6 @@
 # Fact b980d4ff
 
-Store id: 194a94d4-3468-4423-8344-7b27e699cfad
+Store id: 94549a80-21a4-4eae-80f3-efd9f23a605e
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_to_fields_exist(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6702000+00:00`
+- posted_at: `2026-11-09T23:44:51.5193520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 620,
     "symbol": "ForeignObject._check_to_fields_exist"
   },
-  "id": "194a94d4-3468-4423-8344-7b27e699cfad",
+  "id": "94549a80-21a4-4eae-80f3-efd9f23a605e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6702000+00:00"
+    "posted_at": "2026-11-09T23:44:51.5193520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "26bb536d-0e72-4edd-9275-1034dcf0fd29",
+  "subject_id": "bf930082-2e82-4c87-9f91-56d1d319390e",
   "subject_name": "django/db/models/fields/related::ForeignObject._check_to_fields_exist",
   "tags": [
     "entity:method"

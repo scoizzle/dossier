@@ -1,6 +1,6 @@
 # Fact d007ad4b
 
-Store id: d2e095cf-2b6c-49ef-9cf6-5c72e6ba599a
+Store id: 59c3861e-222e-4a10-b522-3a7ef92d60d8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, operation, name, forced_collector=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0882710+00:00`
+- posted_at: `2026-11-09T23:44:48.9044650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 85,
     "symbol": "DatabaseOnDelete.__init__"
   },
-  "id": "d2e095cf-2b6c-49ef-9cf6-5c72e6ba599a",
+  "id": "59c3861e-222e-4a10-b522-3a7ef92d60d8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0882710+00:00"
+    "posted_at": "2026-11-09T23:44:48.9044650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f6d28d9f-7e0b-4796-87e6-2249e062d295",
+  "subject_id": "f76d4aef-9ee3-45fb-b620-e3ecf47541f6",
   "subject_name": "django/db/models/deletion::DatabaseOnDelete.__init__",
   "tags": [
     "entity:method"

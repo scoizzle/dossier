@@ -1,11 +1,11 @@
 # django/db/models/expressions::ColPairs.__init__
 
-- Subject: django/db/models/expressions::ColPairs.__init__ (id `cc74db25-2cd4-4571-b2ed-2a14384c2d6f`)
+- Subject: django/db/models/expressions::ColPairs.__init__ (id `0d0a9cf2-9ca7-423e-922c-14ac3203e3b3`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

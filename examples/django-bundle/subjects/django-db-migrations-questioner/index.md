@@ -1,10 +1,10 @@
 # django/db/migrations/questioner
 
-- Subject: django/db/migrations/questioner (id `e0ebb576-f039-4621-a69a-5f174e1d0ed2`)
+- Subject: django/db/migrations/questioner (id `76e59897-51a5-41a8-bf41-8420bb57a2fd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2846 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

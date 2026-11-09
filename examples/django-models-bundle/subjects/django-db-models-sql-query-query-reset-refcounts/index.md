@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.reset_refcounts
 
-- Subject: django/db/models/sql/query::Query.reset_refcounts (id `44c02478-f5e0-43a5-99ac-29816b6425dc`)
+- Subject: django/db/models/sql/query::Query.reset_refcounts (id `3cd70457-fa93-4175-bf7c-40e2119c3121`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

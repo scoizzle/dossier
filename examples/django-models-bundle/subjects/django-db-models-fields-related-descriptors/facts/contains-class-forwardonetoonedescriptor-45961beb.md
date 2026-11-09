@@ -1,6 +1,6 @@
 # Fact 45961beb
 
-Store id: 0b0943cd-9330-41c0-b7ef-56614a28c970
+Store id: bc93f2c3-21bd-4cc4-b1f9-98c2e165425d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ForwardOneToOneDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.5992420+00:00`
+- posted_at: `2026-11-09T23:44:52.0283500+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0b0943cd-9330-41c0-b7ef-56614a28c970",
+  "id": "bc93f2c3-21bd-4cc4-b1f9-98c2e165425d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.5992420+00:00"
+    "posted_at": "2026-11-09T23:44:52.0283500+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ForwardOneToOneDescriptor"
       },
       "rel": "contains",
-      "target": "1f3ddd53-934b-46ec-a6ff-e9b1ead8537e"
+      "target": "5a5fe52b-fd02-4178-b643-6def8b61aa63"
     }
   ],
   "status": "live",
-  "subject_id": "468ed079-81c3-4570-9307-d21a1d74776a",
+  "subject_id": "266dc5c5-9f24-462d-becd-263287321fdc",
   "subject_name": "django/db/models/fields/related_descriptors",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/indexes::Index.set_name_with_model
 
-- Subject: django/db/models/indexes::Index.set_name_with_model (id `184f43c1-ad3c-4744-8a5a-a26f0c0dcfe8`)
+- Subject: django/db/models/indexes::Index.set_name_with_model (id `a1044d71-abad-4ce0-9e4b-5e1ccc01e1c1`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

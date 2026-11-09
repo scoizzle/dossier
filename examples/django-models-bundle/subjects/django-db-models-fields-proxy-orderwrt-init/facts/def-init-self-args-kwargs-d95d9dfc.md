@@ -1,6 +1,6 @@
 # Fact d95d9dfc
 
-Store id: 5e285ea9-86d6-4c05-83ac-6087e2dfa513
+Store id: 420cb429-807f-4f8b-a1f0-dde2d80159c5
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.4292650+00:00`
+- posted_at: `2026-11-09T23:44:51.3327900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 15,
     "symbol": "OrderWrt.__init__"
   },
-  "id": "5e285ea9-86d6-4c05-83ac-6087e2dfa513",
+  "id": "420cb429-807f-4f8b-a1f0-dde2d80159c5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.4292650+00:00"
+    "posted_at": "2026-11-09T23:44:51.3327900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "296e28cc-13c4-416c-bd63-a0f3db751c5a",
+  "subject_id": "46c38e26-36d7-4cd1-ba3f-ab214f026e76",
   "subject_name": "django/db/models/fields/proxy::OrderWrt.__init__",
   "tags": [
     "entity:method"

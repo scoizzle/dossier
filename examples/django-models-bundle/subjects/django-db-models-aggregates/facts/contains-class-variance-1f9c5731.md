@@ -1,6 +1,6 @@
 # Fact 1f9c5731
 
-Store id: 78799a88-0344-4650-9e0d-6b9506959707
+Store id: 243e761d-7e77-4567-8340-7881a2d690bd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Variance
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "78799a88-0344-4650-9e0d-6b9506959707",
+  "id": "243e761d-7e77-4567-8340-7881a2d690bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Variance"
       },
       "rel": "contains",
-      "target": "810cdaa4-e71d-4b52-b72c-e1420fc4d236"
+      "target": "8ed729f4-8e86-46fe-8ae6-d849ffc68bf5"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

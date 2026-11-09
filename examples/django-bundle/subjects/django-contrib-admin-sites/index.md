@@ -1,10 +1,10 @@
 # django/contrib/admin/sites
 
-- Subject: django/contrib/admin/sites (id `44d64779-fee2-4e6c-9fbf-1bf4029d8365`)
+- Subject: django/contrib/admin/sites (id `1c153527-8bca-4c2e-9cb9-fb7b7abef9f5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5529 tokens
-- Facts shown: 94 of 95
+- Used: 5548 tokens
+- Facts shown: 95 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -57,6 +57,7 @@
 - [834ba342] if self.final_catch_all_view: urlpatterns.append(re_path(r"(?P<url>.*)$", wrap(self.catch_all_view)))
 - [aa9b1cd6] redirect_url = LoginView().get_redirect_url(request) or reverse( "admin:index", current_app=self.name ) if request.method == "GET" and self.has_permission(request): # Already logged-in, redirect accordingly. return HttpResponseRedirect(redirect_url)
 - [eb4914fd755250ce] request.current_app = self.name
+- [eb4914fd755250ce-2] request.current_app = self.name
 - [de2fcee0] return LogEntry.objects.select_related("content_type", "user")
 - [4a8ba5b8] return TemplateResponse( request, self.app_index_template or ["admin/%s/app_index.html" % app_label, "admin/app_index.html"], context, )
 - [bc65e96a] return TemplateResponse( request, self.index_template or "admin/index.html", context )

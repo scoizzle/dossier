@@ -1,6 +1,6 @@
 # Fact 41be0ac8
 
-Store id: e1ed56ce-b27b-4ee0-867d-4dc2406cd6c5
+Store id: 43fa31f0-3dd2-44a6-a048-4478ca7e16a9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_repr_options(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5501050+00:00`
+- posted_at: `2026-11-09T23:44:48.4073480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 467,
     "symbol": "Variance._get_repr_options"
   },
-  "id": "e1ed56ce-b27b-4ee0-867d-4dc2406cd6c5",
+  "id": "43fa31f0-3dd2-44a6-a048-4478ca7e16a9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5501050+00:00"
+    "posted_at": "2026-11-09T23:44:48.4073480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c42e438b-0a1c-4640-bb23-a01efe5375ea",
+  "subject_id": "e6e9246a-e291-4439-958d-3615ef1c3611",
   "subject_name": "django/db/models/aggregates::Variance._get_repr_options",
   "tags": [
     "entity:method"

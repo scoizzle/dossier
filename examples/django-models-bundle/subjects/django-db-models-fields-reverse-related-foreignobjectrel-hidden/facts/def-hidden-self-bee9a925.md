@@ -1,6 +1,6 @@
 # Fact bee9a925
 
-Store id: eac53b06-e6cb-4e49-a19d-77fc543fd772
+Store id: df7dd292-c97b-47fb-b406-64ce42e4b984
 
 ## Text
 
@@ -20,7 +20,7 @@ def hidden(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2190310+00:00`
+- posted_at: `2026-11-09T23:44:52.4235550+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 64,
     "symbol": "ForeignObjectRel.hidden"
   },
-  "id": "eac53b06-e6cb-4e49-a19d-77fc543fd772",
+  "id": "df7dd292-c97b-47fb-b406-64ce42e4b984",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2190310+00:00"
+    "posted_at": "2026-11-09T23:44:52.4235550+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ecd80859-f23f-45e6-85e4-d68b79a5a0a8",
+  "subject_id": "da563f8d-f0e3-4113-be49-f5f020ef44e4",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.hidden",
   "tags": [
     "entity:method",

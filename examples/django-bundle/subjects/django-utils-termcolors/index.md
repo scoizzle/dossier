@@ -1,10 +1,10 @@
 # django/utils/termcolors
 
-- Subject: django/utils/termcolors (id `9e3c4618-8799-416b-9322-9ab62696948f`)
+- Subject: django/utils/termcolors (id `5af4acfb-a234-4744-b67b-510ee5e300f6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1773 tokens
-- Facts shown: 27 of 28
+- Used: 1805 tokens
+- Facts shown: 28 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -25,11 +25,12 @@
 - Specifying a named palette is the same as manually specifying the individual definitions for each role. Any individual definitions following the palette definition will augment the base palette definition. [2a87a2b7]
 - The general form of a palette definition is: [3123e6d8]
 - Valid colors: 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' [e7bf44ea2bdcce69]
-- Valid options: 'bold' 'underscore' 'blink' 'reverse' 'conceal' 'noreset' - string will not be auto-terminated with the RESET code [174ce8f1]
+- Valid colors: 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white' [e7bf44ea2bdcce69-2]
 - """ termcolors.py """ [b7bff268]
 
 ## All facts
 
+- [174ce8f1] Valid options: 'bold' 'underscore' 'blink' 'reverse' 'conceal' 'noreset' - string will not be auto-terminated with the RESET code
 - [76feda56] Valid options: 'bold', 'underscore', 'blink', 'reverse', 'conceal', 'noreset' """ if not config_string: return PALETTES[DEFAULT_PALETTE]
 - [cfc6abb7] Valid roles: 'error', 'success', 'warning', 'notice', 'sql_field', 'sql_coltype', 'sql_keyword', 'sql_table', 'http_info', 'http_success', 'http_redirect', 'http_not_modified', 'http_bad_request', 'http_not_found', 'http_server_error', 'migrate_heading', 'migrate_label'
 - [bbb6e5de] where: palette is a named palette; one of 'light', 'dark', or 'nocolor'. role is a named style used by Django fg is a foreground color. bg is a background color. option is a display options.

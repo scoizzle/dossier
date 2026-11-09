@@ -1,6 +1,6 @@
 # Fact 01d17e17
 
-Store id: 1004a426-a82d-47be-bee7-f5680f8345c1
+Store id: c8268a52-a858-4193-a671-73b486adf893
 
 ## Text
 
@@ -20,7 +20,7 @@ def solve_lookup_type(self, lookup, summarize=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9126690+00:00`
+- posted_at: `2026-11-09T23:44:58.8167270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1343,
     "symbol": "Query.solve_lookup_type"
   },
-  "id": "1004a426-a82d-47be-bee7-f5680f8345c1",
+  "id": "c8268a52-a858-4193-a671-73b486adf893",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9126690+00:00"
+    "posted_at": "2026-11-09T23:44:58.8167270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fbead622-6546-4e90-8dfa-8f7d7d07c0e6",
+  "subject_id": "ebc0e119-571d-4eaf-b6de-83e1787148d6",
   "subject_name": "django/db/models/sql/query::Query.solve_lookup_type",
   "tags": [
     "entity:method"

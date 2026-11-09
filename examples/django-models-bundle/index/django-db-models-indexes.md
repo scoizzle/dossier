@@ -13,14 +13,14 @@ This file lists every subject under `django/db/models/indexes/`, one row per sub
 |   django/db/models/indexes::Index.check | method | 1 | 0 | 0 | 117 | [subjects/django-db-models-indexes-index-check/index.md](../subjects/django-db-models-indexes-index-check/index.md) |
 |   django/db/models/indexes::Index.clone | method | 1 | 0 | 0 | 108 | [subjects/django-db-models-indexes-index-clone/index.md](../subjects/django-db-models-indexes-index-clone/index.md) |
 |   django/db/models/indexes::Index.contains_expressions | method | 1 | 0 | 0 | 123 | [subjects/django-db-models-indexes-index-contains-expressions/index.md](../subjects/django-db-models-indexes-index-contains-expressions/index.md) |
-|   django/db/models/indexes::Index.create_sql | method | 1 | 0 | 0 | 130 | [subjects/django-db-models-indexes-index-create-sql/index.md](../subjects/django-db-models-indexes-index-create-sql/index.md) |
+|   django/db/models/indexes::Index.create_sql | method | 1 | 0 | 0 | 131 | [subjects/django-db-models-indexes-index-create-sql/index.md](../subjects/django-db-models-indexes-index-create-sql/index.md) |
 |   django/db/models/indexes::Index.deconstruct | method | 1 | 0 | 0 | 114 | [subjects/django-db-models-indexes-index-deconstruct/index.md](../subjects/django-db-models-indexes-index-deconstruct/index.md) |
-|   django/db/models/indexes::Index.remove_sql | method | 1 | 0 | 0 | 127 | [subjects/django-db-models-indexes-index-remove-sql/index.md](../subjects/django-db-models-indexes-index-remove-sql/index.md) |
+|   django/db/models/indexes::Index.remove_sql | method | 1 | 0 | 0 | 128 | [subjects/django-db-models-indexes-index-remove-sql/index.md](../subjects/django-db-models-indexes-index-remove-sql/index.md) |
 |   django/db/models/indexes::Index.set_name_with_model | method | 1 | 0 | 0 | 125 | [subjects/django-db-models-indexes-index-set-name-with-model/index.md](../subjects/django-db-models-indexes-index-set-name-with-model/index.md) |
-|   django/db/models/indexes::IndexExpression | class | 1 | 0 | 0 | 115 | [subjects/django-db-models-indexes-indexexpression/index.md](../subjects/django-db-models-indexes-indexexpression/index.md) |
+|   django/db/models/indexes::IndexExpression | class | 1 | 0 | 0 | 116 | [subjects/django-db-models-indexes-indexexpression/index.md](../subjects/django-db-models-indexes-indexexpression/index.md) |
 |   django/db/models/indexes::IndexExpression.as_sqlite | method | 1 | 0 | 0 | 134 | [subjects/django-db-models-indexes-indexexpression-as-sqlite/index.md](../subjects/django-db-models-indexes-indexexpression-as-sqlite/index.md) |
 |   django/db/models/indexes::IndexExpression.register_wrappers | class_method | 1 | 0 | 0 | 134 | [subjects/django-db-models-indexes-indexexpression-register-wrappers/index.md](../subjects/django-db-models-indexes-indexexpression-register-wrappers/index.md) |
-|   django/db/models/indexes::IndexExpression.resolve_expression | method | 1 | 0 | 0 | 150 | [subjects/django-db-models-indexes-indexexpression-resolve-expression/index.md](../subjects/django-db-models-indexes-indexexpression-resolve-expression/index.md) |
+|   django/db/models/indexes::IndexExpression.resolve_expression | method | 1 | 0 | 0 | 151 | [subjects/django-db-models-indexes-indexexpression-resolve-expression/index.md](../subjects/django-db-models-indexes-indexexpression-resolve-expression/index.md) |
 |   django/db/models/indexes::IndexExpression.set_wrapper_classes | method | 1 | 0 | 0 | 135 | [subjects/django-db-models-indexes-indexexpression-set-wrapper-classes/index.md](../subjects/django-db-models-indexes-indexexpression-set-wrapper-classes/index.md) |
 
 Up: [index/django-db-models.md](django-db-models.md)

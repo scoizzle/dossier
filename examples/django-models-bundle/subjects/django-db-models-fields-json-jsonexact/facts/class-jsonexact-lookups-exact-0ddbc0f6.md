@@ -1,6 +1,6 @@
 # Fact 0ddbc0f6
 
-Store id: cbc64437-b6ad-40f3-a61b-ad805eac76f3
+Store id: dc58bb38-2aef-41b0-bbfe-685e9efda777
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONExact(lookups.Exact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9260920+00:00`
+- posted_at: `2026-11-09T23:44:50.9937260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 315,
     "symbol": "JSONExact"
   },
-  "id": "cbc64437-b6ad-40f3-a61b-ad805eac76f3",
+  "id": "dc58bb38-2aef-41b0-bbfe-685e9efda777",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9260920+00:00"
+    "posted_at": "2026-11-09T23:44:50.9937260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18be0084-a724-4538-a7e2-ecc17d46bd3f",
+  "subject_id": "c5691fe1-d165-45ac-95af-02c2bb4315a4",
   "subject_name": "django/db/models/fields/json::JSONExact",
   "tags": [
     "entity:class"

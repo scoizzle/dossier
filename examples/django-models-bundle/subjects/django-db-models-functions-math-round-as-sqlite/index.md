@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Round.as_sqlite
 
-- Subject: django/db/models/functions/math::Round.as_sqlite (id `61677894-f14b-4dab-a631-1022b850ff59`)
+- Subject: django/db/models/functions/math::Round.as_sqlite (id `fed09c0b-cf05-4d43-aaba-bf0aa8475c16`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

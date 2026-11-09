@@ -1,10 +1,10 @@
 # docs/howto/deployment/checklist
 
-- Subject: docs/howto/deployment/checklist (id `a0a8fc00-c64f-47ee-aa31-4ce6bb37b3f4`)
+- Subject: docs/howto/deployment/checklist (id `c3097768-bfba-48ac-91cf-989f2aae01f0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3385 tokens
-- Facts shown: 85 of 85
+- Facts shown: 85 facts
 - Conflicts: 0
 - Gaps: 0
 

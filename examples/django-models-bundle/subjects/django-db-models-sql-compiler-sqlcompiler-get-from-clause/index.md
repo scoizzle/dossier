@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_from_clause
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_from_clause (id `71c4ac1e-e78e-4b1c-8629-e3fff5536d50`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_from_clause (id `f59cc17d-404f-4055-8f2a-45d9ece9a150`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

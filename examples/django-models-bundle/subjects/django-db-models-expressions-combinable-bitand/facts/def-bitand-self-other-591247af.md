@@ -1,6 +1,6 @@
 # Fact 591247af
 
-Store id: 21cfd8bc-dc67-4d2c-825a-37ff3b25d163
+Store id: 4509ced0-de3b-4b68-8479-47102a9fb813
 
 ## Text
 
@@ -20,7 +20,7 @@ def bitand(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7326890+00:00`
+- posted_at: `2026-11-09T23:44:49.2466950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 104,
     "symbol": "Combinable.bitand"
   },
-  "id": "21cfd8bc-dc67-4d2c-825a-37ff3b25d163",
+  "id": "4509ced0-de3b-4b68-8479-47102a9fb813",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7326890+00:00"
+    "posted_at": "2026-11-09T23:44:49.2466950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dbbc4460-c5ec-45b0-a6c5-9c036921ab83",
+  "subject_id": "8cb0f713-8cbb-4fd6-adbc-9e0c721d6abc",
   "subject_name": "django/db/models/expressions::Combinable.bitand",
   "tags": [
     "entity:method"

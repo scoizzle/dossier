@@ -1,6 +1,6 @@
 # Fact 61a1c3b1
 
-Store id: 3c94a492-9275-49fe-8395-11b82afe1d50
+Store id: 1c49c07a-1fe9-4b2c-992c-a658f272d22e
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rhs_length_equals_lhs_length(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5451000+00:00`
+- posted_at: `2026-11-09T23:44:52.7083020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 69,
     "symbol": "TupleLookupMixin.check_rhs_length_equals_lhs_length"
   },
-  "id": "3c94a492-9275-49fe-8395-11b82afe1d50",
+  "id": "1c49c07a-1fe9-4b2c-992c-a658f272d22e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5451000+00:00"
+    "posted_at": "2026-11-09T23:44:52.7083020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "531cd1d1-f1c8-495a-945c-395f7ceaf14f",
+  "subject_id": "76a7bf11-241e-4616-8fa0-0228d2f704e4",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.check_rhs_length_equals_lhs_length",
   "tags": [
     "entity:method"

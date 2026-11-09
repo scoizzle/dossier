@@ -1,10 +1,10 @@
 # docs/ref/forms/fields
 
-- Subject: docs/ref/forms/fields (id `8f05b55d-b0b2-4b18-b8a2-a42528bbdc30`)
+- Subject: docs/ref/forms/fields (id `d6d4cae8-ffdc-4be6-824a-aec0d8d95428`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 16719 tokens
-- Facts shown: 414 of 444
+- Used: 18058 tokens
+- Facts shown: 444 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -36,11 +36,13 @@
 - [f3797ebd] A default ``incomplete`` error message can be defined on the :class:`MultiValueField` subclass, or different messages can be defined on each individual field. For example::
 - [cae7c266] A function that takes one argument and returns a coerced value. Examples include the built-in ``int``, ``float``, ``bool`` and other types. Defaults to an identity function. Note that coercion happens after input validation, so it is possible to coerce to a value not present in ``choices``.
 - [49a37f31] A list of formats used to attempt to convert a string to a valid ``datetime.date`` object.
+- [212f2087] A list of formats used to attempt to convert a string to a valid ``datetime.time`` object.
 - [0b8273f8] A regular expression pattern; only files with names matching this expression will be allowed as choices.
 - [bddc0d03] A regular expression specified either as a string or a compiled regular expression object.
 - [4c8dca33] A tuple of fields whose values are cleaned and subsequently combined into a single value. Each value of the field is cleaned by the corresponding field in ``fields`` -- the first value is cleaned by the first field, the second value is cleaned by the second field, etc. Once all fields are cleaned, the list of clean values is combined into a single value by :meth:`~MultiValueField.compress`.
 - [9aaa0c7f] An iterable of formats used to attempt to convert a string to a valid ``datetime.date`` object.
 - [b57b6e70] An iterable of formats used to attempt to convert a string to a valid ``datetime.datetime`` object, in addition to ISO 8601 formats.
+- [f333dbbb] An iterable of formats used to attempt to convert a string to a valid ``datetime.time`` object.
 - [72dc98de] By default the ``<select>`` widget used by ``ModelChoiceField`` will have an empty choice at the top of the list. You can change the text of this label (which is ``"- Select an option -"`` by default) with the ``empty_label`` attribute, or you can disable the empty label entirely by setting ``empty_label`` to ``None``::
 - [7257f2af] Defaults to 39, and behaves the same way as it does for :class:`CharField`.
 - [deaa8ce5] Defaults to ``False``. If enabled, stripping will be applied before the regex validation.
@@ -51,11 +53,14 @@
 - [08d11063] If provided, these arguments ensure that the string is at most or at least the given length.
 - [16021f3b] If you use a :class:`ModelForm <django.forms.ModelForm>`, the ``encoder`` and ``decoder`` from :class:`~django.db.models.JSONField` will be used.
 - [2173e2fec326da6a] Limit valid inputs to an integral multiple of ``step_size``. If ``min_value`` is also provided, it's added as an offset to determine if the step size matches.
+- [2173e2fec326da6a-2] Limit valid inputs to an integral multiple of ``step_size``. If ``min_value`` is also provided, it's added as an offset to determine if the step size matches.
+- [2173e2fec326da6a-3] Limit valid inputs to an integral multiple of ``step_size``. If ``min_value`` is also provided, it's added as an offset to determine if the step size matches.
 - [e4a5ca71] Limits valid inputs to the specified protocol. Accepted values are ``both`` (default), ``IPv4`` or ``IPv6``. Matching is case insensitive.
 - [3c61db54] Must be a subclass of :class:`django.forms.MultiWidget`. Default value is :class:`~django.forms.TextInput`, which probably is not very useful in this case.
 - [12a0a079] Note that no empty choice is created (regardless of the value of ``empty_label``) if a ``ModelChoiceField`` is required and has a default initial value, or a ``widget`` is set to :class:`~django.forms.RadioSelect` and the :attr:`~ModelChoiceField.blank` argument is ``False``.
 - [b2a77767] NullBooleanField( widget=Select( choices=[ ("", "Unknown"), (True, "Yes"), (False, "No"), ] ) )
 - [2a5c4355] Optional. Either ``True`` or ``False``. Default is ``False``. Specifies whether folders in the specified location should be included. Either this or :attr:`allow_files` must be ``True``.
+- [7a9628c9] Optional. Either ``True`` or ``False``. Default is ``True``. Specifies whether files in the specified location should be included. Either this or :attr:`allow_folders` must be ``True``.
 - [d5f6bde4] Return ``value`` as a string to be rendered in HTML.
 - [8f8f8bea] Same as :class:`ModelChoiceField.iterator`.
 - [f9baf702] Same as :class:`ModelChoiceField.queryset`.
@@ -77,6 +82,7 @@
 - [a18f2506] The value to use to represent "empty." Defaults to the empty string; ``None`` is another common choice here. Note that this value will not be coerced by the function given in the ``coerce`` argument, so choose it accordingly.
 - [9123f4bc] These control the range of values permitted in the field, and should be given as ``decimal.Decimal`` values.
 - [8266f6ba531ae3a3] These control the range of values permitted in the field.
+- [8266f6ba531ae3a3-2] These control the range of values permitted in the field.
 - [502f5ac4] This field normalizes choices to strings, so if choices are required in other data types, such as integers or booleans, consider using :class:`TypedChoiceField` instead.
 - [dd094ede] This method must be implemented in the subclasses.
 - [5cc9b7d2] This optional argument is used to specify the field to use as the value of the choices in the field's widget. Be sure it's a unique field for the model, otherwise the selected value could match more than one object. By default it is set to ``None``, in which case the primary key of each object will be used. For example::
@@ -95,19 +101,25 @@
 - [b8132755] A boolean instructing the field to accept Unicode letters in addition to ASCII letters. Defaults to ``False``.
 - [4492226d] If ``True`` (default), the value will be stripped of leading and trailing whitespace.
 - [e3060ad6345b7474] The value to use to represent "empty". Defaults to an empty string.
+- [e3060ad6345b7474-2] The value to use to represent "empty". Defaults to an empty string.
 - [724d1433] * Default widget: :class:`CheckboxInput` * Empty value: ``False`` * Normalizes to: A Python ``True`` or ``False`` value. * Validates that the value is ``True`` (e.g. the check box is checked) if the field has ``required=True``. * Error message keys: ``required``
 - [b98b95c3] * Default widget: :class:`ClearableFileInput` * Empty value: ``None`` * Normalizes to: An ``UploadedFile`` object that wraps the file content and file name into a single object. * Can validate that non-empty file data has been bound to the form. * Error message keys: ``required``, ``invalid``, ``missing``, ``empty``, ``max_length``
 - [fda9c602] * Default widget: :class:`ClearableFileInput` * Empty value: ``None`` * Normalizes to: An ``UploadedFile`` object that wraps the file content and file name into a single object. * Validates that file data has been bound to the form. Also uses :class:`~django.core.validators.FileExtensionValidator` to validate that the file extension is supported by Pillow. * Error message keys: ``required``, ``invalid``, ``missing``, ``empty``, ``invalid_image``
 - [d972a270] * Default widget: :class:`DateInput` * Empty value: ``None`` * Normalizes to: A Python ``datetime.date`` object. * Validates that the given value is either a ``datetime.date``, ``datetime.datetime`` or string formatted in a particular date format. * Error message keys: ``required``, ``invalid``
+- [c734e9be] * Default widget: :class:`DateTimeInput` * Empty value: ``None`` * Normalizes to: A Python ``datetime.datetime`` object. * Validates that the given value is either a ``datetime.datetime``, ``datetime.date`` or string formatted in a particular datetime format. * Error message keys: ``required``, ``invalid``
 - [ad314f77] * Default widget: :class:`EmailInput` * Empty value: Whatever you've given as ``empty_value``. * Normalizes to: A string. * Uses :class:`~django.core.validators.EmailValidator` to validate that the given value is a valid email address, using a moderately complex regular expression. * Error message keys: ``required``, ``invalid``
 - [140c20b5] * Default widget: :class:`NullBooleanSelect` * Empty value: ``None`` * Normalizes to: A Python ``True``, ``False`` or ``None`` value. * Validates nothing (i.e., it never raises a ``ValidationError``).
 - [e4b66ab0] * Default widget: :class:`NumberInput` when :attr:`Field.localize` is ``False``, else :class:`TextInput`. * Empty value: ``None`` * Normalizes to: A Python ``decimal``. * Validates that the given value is a decimal. Uses :class:`~django.core.validators.MaxValueValidator` and :class:`~django.core.validators.MinValueValidator` if ``max_value`` and ``min_value`` are provided. Uses :class:`~django.core.validators.StepValueValidator` if ``step_size`` is provided. Leading and trailing whitespace is ignored. * Error message keys: ``required``, ``invalid``, ``max_value``, ``min_value``, ``max_digits``, ``max_decimal_places``, ``max_whole_digits``, ``step_size``.
 - [8dadc020] * Default widget: :class:`NumberInput` when :attr:`Field.localize` is ``False``, else :class:`TextInput`. * Empty value: ``None`` * Normalizes to: A Python float. * Validates that the given value is a float. Uses :class:`~django.core.validators.MaxValueValidator` and :class:`~django.core.validators.MinValueValidator` if ``max_value`` and ``min_value`` are provided. Uses :class:`~django.core.validators.StepValueValidator` if ``step_size`` is provided. Leading and trailing whitespace is allowed, as in Python's ``float()`` function. * Error message keys: ``required``, ``invalid``, ``max_value``, ``min_value``, ``step_size``.
+- [e4cc54a1] * Default widget: :class:`NumberInput` when :attr:`Field.localize` is ``False``, else :class:`TextInput`. * Empty value: ``None`` * Normalizes to: A Python integer. * Validates that the given value is an integer. Uses :class:`~django.core.validators.MaxValueValidator` and :class:`~django.core.validators.MinValueValidator` if ``max_value`` and ``min_value`` are provided. Uses :class:`~django.core.validators.StepValueValidator` if ``step_size`` is provided. Leading and trailing whitespace is allowed, as in Python's ``int()`` function. * Error message keys: ``required``, ``invalid``, ``max_value``, ``min_value``, ``step_size``
 - [7e44fc30] * Default widget: :class:`SelectMultiple` * Empty value: An empty ``QuerySet`` (``self.queryset.none()``) * Normalizes to: A ``QuerySet`` of model instances. * Validates that every id in the given list of values exists in the queryset. * Error message keys: ``required``, ``invalid_list``, ``invalid_choice``, ``invalid_pk_value``
 - [cf85a94b] * Default widget: :class:`SelectMultiple` * Empty value: Whatever you've given as ``empty_value`` * Normalizes to: A list of values of the type provided by the ``coerce`` argument. * Validates that the given values exists in the list of choices and can be coerced. * Error message keys: ``required``, ``invalid_choice``
 - [78452a0a] * Default widget: :class:`SelectMultiple` * Empty value: ``[]`` (an empty list) * Normalizes to: A list of strings. * Validates that every value in the given list of values exists in the list of choices. * Error message keys: ``required``, ``invalid_choice``, ``invalid_list``
+- [8ac15cae] * Default widget: :class:`Select` * Empty value: Whatever you've given as :attr:`empty_value`. * Normalizes to: A value of the type provided by the :attr:`coerce` argument. * Validates that the given value exists in the list of choices and can be coerced. * Error message keys: ``required``, ``invalid_choice``
 - [c3d5db9c] * Default widget: :class:`Select` * Empty value: ``''`` (an empty string) * Normalizes to: A string. * Validates that the given value exists in the list of choices. * Error message keys: ``required``, ``invalid_choice``
+- [9097a7fd] * Default widget: :class:`Select` * Empty value: ``''`` (an empty string) * Normalizes to: A string. * Validates that the selected choice exists in the list of choices. * Error message keys: ``required``, ``invalid_choice``
 - [ae2517a6] * Default widget: :class:`Select` * Empty value: ``None`` * Normalizes to: A model instance. * Validates that the given id exists in the queryset. * Error message keys: ``required``, ``invalid_choice``
+- [08a4cdd1] * Default widget: :class:`SplitDateTimeWidget` * Empty value: ``None`` * Normalizes to: A Python ``datetime.datetime`` object. * Validates that the given value is a ``datetime.datetime`` or string formatted in a particular datetime format. * Error message keys: ``required``, ``invalid``, ``invalid_date``, ``invalid_time``
 - [b4968802] * Default widget: :class:`TextInput` * Empty value: Whatever you've given as :attr:`empty_value`. * Normalizes to: A string. * Uses :class:`~django.core.validators.MaxLengthValidator` and :class:`~django.core.validators.MinLengthValidator` if ``max_length`` and ``min_length`` are provided. Otherwise, all inputs are valid. * Error message keys: ``required``, ``max_length``, ``min_length``
 - [f036442d] * Default widget: :class:`TextInput` * Empty value: Whatever you've given as ``empty_value``. * Normalizes to: A string. * Uses :class:`~django.core.validators.RegexValidator` to validate that the given value matches a certain regular expression. * Error message keys: ``required``, ``invalid``
 - [c65855fe] * Default widget: :class:`TextInput` * Empty value: ``''`` (an empty string) * Normalizes to: A string. * Validates the given value against each of the fields specified as an argument to the ``ComboField``. * Error message keys: ``required``, ``invalid``
@@ -116,6 +128,7 @@
 - [5fc3ad8e] * Default widget: :class:`TextInput` * Empty value: ``None`` * Normalizes to: A :class:`~python:uuid.UUID` object. * Error message keys: ``required``, ``invalid``
 - [607858f9] * Default widget: :class:`TextInput` * Empty value: ``None`` * Normalizes to: A Python :class:`~python:datetime.timedelta`. * Validates that the given value is a string which can be converted into a ``timedelta``. The value must be between :attr:`datetime.timedelta.min` and :attr:`datetime.timedelta.max`. * Error message keys: ``required``, ``invalid``, ``overflow``.
 - [fe2dee7c] * Default widget: :class:`Textarea` * Empty value: ``None`` * Normalizes to: A Python representation of the JSON value (usually as a ``dict``, ``list``, or ``None``), depending on :attr:`JSONField.decoder`. * Validates that the given value is a valid JSON. * Error message keys: ``required``, ``invalid``
+- [32e011de] * Default widget: :class:`TimeInput` * Empty value: ``None`` * Normalizes to: A Python ``datetime.time`` object. * Validates that the given value is either a ``datetime.time`` or string formatted in a particular time format. * Error message keys: ``required``, ``invalid``
 - [dc11d265] * Default widget: :class:`URLInput` * Empty value: Whatever you've given as ``empty_value``. * Normalizes to: A string. * Uses :class:`~django.core.validators.URLValidator` to validate that the given value is a valid URL. * Error message keys: ``required``, ``invalid``
 - [a554c4aa] * ``'2006-10-25 14:30:59'`` * ``'2006-10-25T14:30:59'`` * ``'2006-10-25 14:30'`` * ``'2006-10-25T14:30'`` * ``'2006-10-25T14:30Z'`` * ``'2006-10-25T14:30+02:00'`` * ``'2006-10-25'``
 - [cff07763] .. admonition:: Choice type
@@ -149,6 +162,8 @@
 - [97f6c5ac0309812d-2] .. attribute:: max_length
 - [fe5cb13c] .. attribute:: max_length .. attribute:: min_length
 - [8770f72eb1487385] .. attribute:: max_value .. attribute:: min_value
+- [8770f72eb1487385-2] .. attribute:: max_value .. attribute:: min_value
+- [8770f72eb1487385-3] .. attribute:: max_value .. attribute:: min_value
 - [dd6fc413] .. attribute:: path
 - [62aa09dc] .. attribute:: protocol
 - [56676d52c9f851d5-3] .. attribute:: queryset
@@ -162,6 +177,7 @@
 - [792891587ad4e58d] .. attribute:: strip
 - [792891587ad4e58d-2] .. attribute:: strip
 - [1f803d6294f096bf] .. attribute:: to_field_name
+- [1f803d6294f096bf-2] .. attribute:: to_field_name
 - [a0d7376d] .. attribute:: unpack_ipv4
 - [cf0cb78afe9f713e-2] .. attribute:: value
 - [eaf050be34acb41d-330] .. code-block:: pycon
@@ -190,6 +206,8 @@
 - [77fda18f] A field containing either an IPv4 or an IPv6 address.
 - [07771e0e] A field which accepts JSON encoded data for a :class:`~django.db.models.JSONField`.
 - [4efd3a3b126d973c] A single argument is required:
+- [4efd3a3b126d973c-2] A single argument is required:
+- [4efd3a3b126d973c-3] A single argument is required:
 - [69ea5d27] Accepts any format understood by :func:`~django.utils.dateparse.parse_duration`.
 - [51a2544f] Additionally, ``UploadedFile.content_type`` will be updated with the image's content type if Pillow can determine it, otherwise it will be set to ``None``.
 - [675660a5] After the field has been cleaned and validated, the ``UploadedFile`` object will have an additional ``image`` attribute containing the Pillow `Image`_ instance used to check if the file was a valid image. Pillow closes the underlying file descriptor after verifying an image, so while non-image data attributes, such as ``format``, ``height``, and ``width``, are available, methods that access the underlying image data, such as ``getdata()`` or ``getpixel()``, cannot be used without reopening the file. For example:
@@ -204,6 +222,7 @@
 - [3ea9b091] Has the optional arguments for validation: ``max_length`` and ``allow_empty_file``. If provided, these ensure that the file name is at most the given length, and that validation will succeed even if the file content is empty.
 - [55494017] If no ``input_date_formats`` argument is provided, the default input formats for :class:`DateField` are used.
 - [bf2c4293] If no ``input_formats`` argument is provided, the default input formats are taken from the active locale format ``DATETIME_INPUT_FORMATS`` and ``DATE_INPUT_FORMATS`` keys, or from :setting:`DATETIME_INPUT_FORMATS` and :setting:`DATE_INPUT_FORMATS` if localization is disabled. See also :doc:`format localization </topics/i18n/formatting>`.
+- [2c00b291] If no ``input_formats`` argument is provided, the default input formats are taken from the active locale format ``DATE_INPUT_FORMATS`` key, or from :setting:`DATE_INPUT_FORMATS` if localization is disabled. See also :doc:`format localization </topics/i18n/formatting>`.
 - [0f0005a5] If no ``input_formats`` argument is provided, the default input formats are taken from the active locale format ``TIME_INPUT_FORMATS`` key, or from :setting:`TIME_INPUT_FORMATS` if localization is disabled. See also :doc:`format localization </topics/i18n/formatting>`.
 - [e6b6f878] If no ``input_time_formats`` argument is provided, the default input formats for :class:`TimeField` are used.
 - [3910ddc5] Just like a :class:`ChoiceField`, except :class:`TypedChoiceField` takes two extra arguments, :attr:`coerce` and :attr:`empty_value`.
@@ -214,15 +233,24 @@
 - [3783468c] Takes one extra argument:
 - [9ab39552] Takes one extra required argument, ``choices``, as for :class:`ChoiceField`.
 - [c6b1e8f16608168e] Takes one extra required argument:
+- [c6b1e8f16608168e-2] Takes one extra required argument:
 - [3a9950388e0fad45] Takes one optional argument:
+- [3a9950388e0fad45-2] Takes one optional argument:
+- [3a9950388e0fad45-3] Takes one optional argument:
+- [3a9950388e0fad45-4] Takes one optional argument:
 - [e67409fb] Takes one required argument:
 - [0762534b] Takes three optional arguments for validation:
 - [eea9781d8b22d617] Takes three optional arguments:
+- [eea9781d8b22d617-2] Takes three optional arguments:
 - [4b7da02d] Takes two extra arguments, ``coerce`` and ``empty_value``, as for :class:`TypedChoiceField`.
 - [897f5bada46bc2b5] Takes two optional arguments:
+- [897f5bada46bc2b5-2] Takes two optional arguments:
 - [1bd5b89e22de0699] The IPv6 address normalization follows :rfc:`4291#section-2.2` section 2.2, including using the IPv4 format suggested in paragraph 3 of that section, like ``::ffff:192.0.2.0``. For example, ``2001:0::0:01`` would be normalized to ``2001::1``, and ``::ffff:0a0a:0a0a`` to ``::ffff:10.10.10.10``. All characters are converted to lowercase.
 - [957c066e] The ``__str__()`` method of the model will be called to generate string representations of the objects for use in the field's choices. To provide customized representations, subclass ``ModelChoiceField`` and override ``label_from_instance``. This method will receive a model object and should return a string suitable for representing it. For example::
 - [99370c324ffbd3d1] The ``invalid_choice`` error message may contain ``%(value)s``, which will be replaced with the selected choice.
+- [99370c324ffbd3d1-2] The ``invalid_choice`` error message may contain ``%(value)s``, which will be replaced with the selected choice.
+- [99370c324ffbd3d1-3] The ``invalid_choice`` error message may contain ``%(value)s``, which will be replaced with the selected choice.
+- [99370c324ffbd3d1-4] The ``invalid_choice`` error message may contain ``%(value)s``, which will be replaced with the selected choice.
 - [3c2f7b8c] The ``invalid_choice`` message may contain ``%(value)s`` and the ``invalid_pk_value`` message may contain ``%(pk)s``, which will be substituted by the appropriate values.
 - [59d3a3e6] The ``max_length`` error refers to the length of the filename. In the error message for that key, ``%(max)d`` will be replaced with the maximum filename length and ``%(length)d`` will be replaced with the current filename length.
 - [5ec27766] The ``max_value`` and ``min_value`` error messages may contain ``%(limit_value)s``, which will be substituted by the appropriate limit. Similarly, the ``max_digits``, ``max_decimal_places`` and ``max_whole_digits`` error messages may contain ``%(max)s``.
@@ -339,11 +367,13 @@
 - [8bfec213] Core field arguments ====================
 - [81d0adfe] Creating custom fields ======================
 - [b4b9e71a] Each ``Field`` class constructor takes at least these arguments. Some ``Field`` classes take additional, field-specific arguments, but the following should *always* be accepted:
+- [95ef3a2a] Fields which handle relationships =================================
 - [7dd99156] For each field, we describe the default widget used if you don't specify ``widget``. We also specify the value returned when you provide an empty value (see the section on ``required`` above to understand what that means).
 - [3e686392] For example, consider the following models::
 - [1188bdcc] For more advanced usage you may subclass ``ModelChoiceIterator`` in order to customize the yielded 2-tuple choices.
 - [ec656d1c] For more complex uses, you can specify ``queryset=None`` when declaring the form field and then populate the ``queryset`` in the form's ``__init__()`` method::
 - [9ec14b37] Here's a full example ``Form`` that implements ``help_text`` for two of its fields. We've specified ``auto_id=False`` to simplify the output:
+- [8e71c36a] Here's a full example ``Form`` that implements ``label`` for two of its fields. We've specified ``auto_id=False`` to simplify the output:
 - [d7742243] If a ``Field`` has ``required=False`` and you pass ``clean()`` an empty value, then ``clean()`` will return a *normalized* empty value rather than raising ``ValidationError``. For ``CharField``, this will return :attr:`~CharField.empty_value` which defaults to an empty string. For other ``Field`` classes, it might be ``None``. (This varies from field to field.)
 - [5962504f] If the built-in ``Field`` classes don't meet your needs, you can create custom ``Field`` classes. To do this, create a subclass of ``django.forms.Field``. Its only requirements are that it implement a ``clean()`` method and that its ``__init__()`` method accept the core arguments mentioned above (``required``, ``label``, ``initial``, ``widget``, ``help_text``).
 - [f67ef2a8] In the `built-in Field classes`_ section below, each ``Field`` defines the error message keys it uses.

@@ -1,6 +1,6 @@
 # Fact 5f9adaf3
 
-Store id: 8c1c8ffe-371f-4473-be5b-de922940abf8
+Store id: 396762a9-c6dd-48f4-8d62-733e6d9c4057
 
 ## Text
 
@@ -20,7 +20,7 @@ def count_active_tables(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8694030+00:00`
+- posted_at: `2026-11-09T23:44:58.7564150+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1126,
     "symbol": "Query.count_active_tables"
   },
-  "id": "8c1c8ffe-371f-4473-be5b-de922940abf8",
+  "id": "396762a9-c6dd-48f4-8d62-733e6d9c4057",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8694030+00:00"
+    "posted_at": "2026-11-09T23:44:58.7564150+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ebcd8ed3-0f83-4388-ba33-aec7d5a381b2",
+  "subject_id": "1f6a589e-0d76-42f6-86cc-ab5e07c7f12d",
   "subject_name": "django/db/models/sql/query::Query.count_active_tables",
   "tags": [
     "entity:method"

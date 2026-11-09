@@ -1,6 +1,6 @@
 # Fact d90eccfa
 
-Store id: c78e0cf8-3c03-4e6b-9e0e-afb7eccdefb5
+Store id: 9f89c869-9e9a-4bdc-81be-179191f9ce81
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Mod
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c78e0cf8-3c03-4e6b-9e0e-afb7eccdefb5",
+  "id": "9f89c869-9e9a-4bdc-81be-179191f9ce81",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Mod"
       },
       "rel": "contains",
-      "target": "f7db253c-285e-41ca-b03d-ed9597cb9a91"
+      "target": "48f3d0ca-4f99-4362-a9b3-f96849c0f6ab"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

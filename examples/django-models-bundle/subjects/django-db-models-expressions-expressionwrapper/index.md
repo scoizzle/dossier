@@ -1,11 +1,11 @@
 # django/db/models/expressions::ExpressionWrapper
 
-- Subject: django/db/models/expressions::ExpressionWrapper (id `e2f814a6-34f2-4672-8458-38dd487ad931`)
+- Subject: django/db/models/expressions::ExpressionWrapper (id `5d43b79d-82b0-47ad-8365-94d736a17488`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 1e4cf333
 
-Store id: d053e81b-228b-4068-b984-acda3a009ebb
+Store id: 6f1a53fc-7093-42a5-84a4-bde2068fd803
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ImageFileDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4465340+00:00`
+- posted_at: `2026-11-09T23:44:50.6886790+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d053e81b-228b-4068-b984-acda3a009ebb",
+  "id": "6f1a53fc-7093-42a5-84a4-bde2068fd803",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
+    "posted_at": "2026-11-09T23:44:50.6886790+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ImageFileDescriptor"
       },
       "rel": "contains",
-      "target": "944560e4-e365-4f7c-9095-53ff78d2c9ac"
+      "target": "86f51a05-4c85-4246-828b-af9d511797f4"
     }
   ],
   "status": "live",
-  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
+  "subject_id": "a957c718-7162-4a08-a413-08d802f7b159",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

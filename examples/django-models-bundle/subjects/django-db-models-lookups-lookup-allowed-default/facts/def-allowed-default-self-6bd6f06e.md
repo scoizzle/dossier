@@ -1,6 +1,6 @@
 # Fact 6bd6f06e
 
-Store id: d1563959-83dc-4629-bba7-a0af2aaf29df
+Store id: 47dec0b2-3d6a-4dcb-85a8-f98ba1493ca0
 
 ## Text
 
@@ -20,7 +20,7 @@ def allowed_default(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1937170+00:00`
+- posted_at: `2026-11-09T23:44:54.9093900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 206,
     "symbol": "Lookup.allowed_default"
   },
-  "id": "d1563959-83dc-4629-bba7-a0af2aaf29df",
+  "id": "47dec0b2-3d6a-4dcb-85a8-f98ba1493ca0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1937170+00:00"
+    "posted_at": "2026-11-09T23:44:54.9093900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b43b5f19-323c-419d-860f-38fcc85a8c21",
+  "subject_id": "c4d9120b-25a4-4f14-87b0-f8854a0037e1",
   "subject_name": "django/db/models/lookups::Lookup.allowed_default",
   "tags": [
     "entity:method",

@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/spatialite/operations
 
-- Subject: django/contrib/gis/db/backends/spatialite/operations (id `3916a019-4fc7-46ab-89df-49276a87f0de`)
+- Subject: django/contrib/gis/db/backends/spatialite/operations (id `aa67062e-69fa-4c7b-ac77-a80c6ab98b40`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2059 tokens
-- Facts shown: 31 of 32
+- Used: 2105 tokens
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,6 +31,7 @@
 - [3e092ab9] def get_geometry_converter(self, expression): geom_class = expression.output_field.geom_class read = wkb_r().read
 - [9842a32c] def lwgeom_version(self): """Return the version of LWGEOM library used by SpatiaLite.""" return self._get_spatialite_func("lwgeom_version()")
 - [054c8555] def proj_version(self): """Return the version of the PROJ library used by SpatiaLite.""" return self._get_spatialite_func("proj4_version()")
+- [5e567df2] def rttopo_version(self): """Return the version of RTTOPO library used by SpatiaLite.""" return self._get_spatialite_func("rttopo_version()")
 - [c9be3c67] def spatial_aggregate_name(self, agg_name): """ Return the spatial aggregate SQL template and function for the given Aggregate instance. """ agg_name = "unionagg" if agg_name.lower() == "union" else agg_name.lower() return getattr(self, agg_name)
 - [56c74106] def spatial_ref_sys(self): from django.contrib.gis.db.backends.spatialite.models import ( SpatialiteSpatialRefSys, )
 - [d016ff22] def spatialite_version(self): "Return the SpatiaLite library version as a string." return self._get_spatialite_func("spatialite_version()")

@@ -1,6 +1,6 @@
 # Fact 7f63cd42
 
-Store id: 68919abf-e029-41f2-8880-662428d235a5
+Store id: 4bf94944-35ce-47d2-a115-e9195fb3ed19
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_converters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6536150+00:00`
+- posted_at: `2026-11-09T23:44:50.1328840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1978,
     "symbol": "DurationField.get_db_converters"
   },
-  "id": "68919abf-e029-41f2-8880-662428d235a5",
+  "id": "4bf94944-35ce-47d2-a115-e9195fb3ed19",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6536150+00:00"
+    "posted_at": "2026-11-09T23:44:50.1328840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7734dd79-a91f-495b-b8d3-cddd21465910",
+  "subject_id": "3b2fa7bc-ec23-429d-a85d-ff34cde93f84",
   "subject_name": "django/db/models/fields/__init__::DurationField.get_db_converters",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/functions/math::ATan2.as_sqlite
 
-- Subject: django/db/models/functions/math::ATan2.as_sqlite (id `f1705cdb-5472-40c6-82c9-61fccb38aea8`)
+- Subject: django/db/models/functions/math::ATan2.as_sqlite (id `b0837b42-8e60-4bad-a49a-497bfeb0005e`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

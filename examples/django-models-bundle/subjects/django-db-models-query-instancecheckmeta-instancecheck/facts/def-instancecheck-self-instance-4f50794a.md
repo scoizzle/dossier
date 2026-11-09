@@ -1,6 +1,6 @@
 # Fact 4f50794a
 
-Store id: e89b53db-1771-476c-a725-c0ed1f96c31d
+Store id: ffe94146-8ddf-4cb0-8716-4c50de0c8fdf
 
 ## Text
 
@@ -20,7 +20,7 @@ def __instancecheck__(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6940730+00:00`
+- posted_at: `2026-11-09T23:44:56.2009360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2396,
     "symbol": "InstanceCheckMeta.__instancecheck__"
   },
-  "id": "e89b53db-1771-476c-a725-c0ed1f96c31d",
+  "id": "ffe94146-8ddf-4cb0-8716-4c50de0c8fdf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6940730+00:00"
+    "posted_at": "2026-11-09T23:44:56.2009360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6418de74-1b12-407a-8a3a-9491a1a997f7",
+  "subject_id": "2bbd4e96-91dc-4e29-95f3-33b3c02b4778",
   "subject_name": "django/db/models/query::InstanceCheckMeta.__instancecheck__",
   "tags": [
     "entity:method"

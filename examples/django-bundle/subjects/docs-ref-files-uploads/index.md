@@ -1,10 +1,10 @@
 # docs/ref/files/uploads
 
-- Subject: docs/ref/files/uploads (id `43b1a29c-e017-4a3b-bf30-36848322f1ee`)
+- Subject: docs/ref/files/uploads (id `8dc30c8e-9b41-48fa-b7ae-0a6bce81a529`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2960 tokens
-- Facts shown: 83 of 84
+- Used: 2985 tokens
+- Facts shown: 84 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -78,6 +78,7 @@
 - [d214b87d] .. method:: FileUploadHandler.upload_interrupted()
 - [316cc367] .. method:: TemporaryUploadedFile.temporary_file_path()
 - [9cdfcb07] .. method:: UploadedFile.chunks(chunk_size=None)
+- [7d7088d7] .. method:: UploadedFile.multiple_chunks(chunk_size=None)
 - [50d0f5dd] .. method:: UploadedFile.read()
 - [0ba5d612] .. module:: django.core.files.uploadedfile :synopsis: Classes representing uploaded files.
 - [150d1e65] .. module:: django.core.files.uploadhandler :synopsis: Django's handlers for file uploads.

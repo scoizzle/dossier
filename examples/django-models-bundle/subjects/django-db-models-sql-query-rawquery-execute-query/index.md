@@ -1,11 +1,11 @@
 # django/db/models/sql/query::RawQuery._execute_query
 
-- Subject: django/db/models/sql/query::RawQuery._execute_query (id `6e362afb-a4be-4c72-b305-ae041d4fee51`)
+- Subject: django/db/models/sql/query::RawQuery._execute_query (id `c52d178a-63cc-4249-92d4-1433b0f61907`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

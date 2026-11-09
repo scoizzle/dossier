@@ -1,6 +1,6 @@
 # Fact 4fbf1833
 
-Store id: 12941776-899a-4931-9a64-643b0f4c2206
+Store id: fbea5dfc-99b3-4007-8b94-3dd4c8e987d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_col(self, alias, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6214370+00:00`
+- posted_at: `2026-11-09T23:44:50.8013060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 41,
     "symbol": "GeneratedField.get_col"
   },
-  "id": "12941776-899a-4931-9a64-643b0f4c2206",
+  "id": "fbea5dfc-99b3-4007-8b94-3dd4c8e987d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6214370+00:00"
+    "posted_at": "2026-11-09T23:44:50.8013060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c511d35b-13bd-4247-93e5-d1e86e8671fc",
+  "subject_id": "959bfd09-4597-4e78-a596-f87e12309e61",
   "subject_name": "django/db/models/fields/generated::GeneratedField.get_col",
   "tags": [
     "entity:method"

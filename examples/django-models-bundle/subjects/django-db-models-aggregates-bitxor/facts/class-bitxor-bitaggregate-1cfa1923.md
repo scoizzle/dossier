@@ -1,6 +1,6 @@
 # Fact 1cfa1923
 
-Store id: e6755f06-6182-42ea-a4f4-3efcfc919f9f
+Store id: 8c807244-f9b4-4012-abc0-47ba14a79a8b
 
 ## Text
 
@@ -20,7 +20,7 @@ class BitXor(BitAggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5386480+00:00`
+- posted_at: `2026-11-09T23:44:48.4006220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 290,
     "symbol": "BitXor"
   },
-  "id": "e6755f06-6182-42ea-a4f4-3efcfc919f9f",
+  "id": "8c807244-f9b4-4012-abc0-47ba14a79a8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5386480+00:00"
+    "posted_at": "2026-11-09T23:44:48.4006220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c5556ffc-d813-4446-ae5f-9f85b192fe2a",
+  "subject_id": "d5d4ace2-3798-4464-88ab-8edc637f53e2",
   "subject_name": "django/db/models/aggregates::BitXor",
   "tags": [
     "entity:class"

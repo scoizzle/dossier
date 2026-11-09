@@ -1,6 +1,6 @@
 # Fact 89572908
 
-Store id: db12de7b-7d66-46c2-a942-1b09ebc74c88
+Store id: caf869de-6b40-4bcc-bf0b-6212daefb19b
 
 ## Text
 
@@ -20,7 +20,7 @@ def bitor(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7407620+00:00`
+- posted_at: `2026-11-09T23:44:49.2510520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 130,
     "symbol": "Combinable.bitor"
   },
-  "id": "db12de7b-7d66-46c2-a942-1b09ebc74c88",
+  "id": "caf869de-6b40-4bcc-bf0b-6212daefb19b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7407620+00:00"
+    "posted_at": "2026-11-09T23:44:49.2510520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "402f3bc0-c844-4b6d-a553-ea9845f1e648",
+  "subject_id": "938b0c81-0a2c-439d-9b84-00095adb0054",
   "subject_name": "django/db/models/expressions::Combinable.bitor",
   "tags": [
     "entity:method"

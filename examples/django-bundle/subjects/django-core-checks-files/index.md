@@ -1,10 +1,10 @@
 # django/core/checks/files
 
-- Subject: django/core/checks/files (id `289fe6fe-b7f2-43bd-b3c6-19453738d3ff`)
+- Subject: django/core/checks/files (id `8745cf44-12c0-4641-ba7a-824428075640`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 148 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

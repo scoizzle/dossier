@@ -1,6 +1,6 @@
 # Fact 3e2cb4ef
 
-Store id: 06b892a5-65fd-474a-9cbb-fd4497d2959f
+Store id: ebe317a4-7848-41ea-9a46-ec9439a774ce
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NullIf
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0159390+00:00`
+- posted_at: `2026-11-09T23:44:53.1901490+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "06b892a5-65fd-474a-9cbb-fd4497d2959f",
+  "id": "ebe317a4-7848-41ea-9a46-ec9439a774ce",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
+    "posted_at": "2026-11-09T23:44:53.1901490+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NullIf"
       },
       "rel": "contains",
-      "target": "520d26c5-a175-4c85-9ae6-68001a6d826c"
+      "target": "eca69c14-3318-47ac-ba1a-d4b1988cc6bb"
     }
   ],
   "status": "live",
-  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
+  "subject_id": "b144e176-2f68-4d7b-9b17-76f2684f59e8",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

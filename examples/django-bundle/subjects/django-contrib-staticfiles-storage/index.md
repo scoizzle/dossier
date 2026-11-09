@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/storage
 
-- Subject: django/contrib/staticfiles/storage (id `82e2763b-1e8a-4bad-b6f3-09a68085bc21`)
+- Subject: django/contrib/staticfiles/storage (id `7d8835ff-a4fb-4863-9b33-1421998bf7ec`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5214 tokens
-- Facts shown: 72 of 72
+- Facts shown: 72 facts
 - Conflicts: 0
 - Gaps: 0
 

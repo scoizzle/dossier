@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/admin
 
-- Subject: django/contrib/contenttypes/admin (id `60a1230e-c1a0-4a0a-9edf-3ad849bdb0ed`)
+- Subject: django/contrib/contenttypes/admin (id `a1ca8dbf-004b-47f5-8052-0f4c7edc218f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1236 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

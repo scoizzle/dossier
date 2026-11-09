@@ -1,6 +1,6 @@
 # Fact cbdbb90d
 
-Store id: 12aca0cc-1114-4d95-be0e-e97499cd38ff
+Store id: 50d84e6d-35db-4e0f-84cf-76f0964320ab
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6465770+00:00`
+- posted_at: `2026-11-09T23:44:50.1285890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1953,
     "symbol": "DurationField.get_internal_type"
   },
-  "id": "12aca0cc-1114-4d95-be0e-e97499cd38ff",
+  "id": "50d84e6d-35db-4e0f-84cf-76f0964320ab",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6465770+00:00"
+    "posted_at": "2026-11-09T23:44:50.1285890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "22136bba-e7be-4adf-9c1e-6c9d962f60a3",
+  "subject_id": "b0e300e4-1011-4726-99b8-7617ca162a73",
   "subject_name": "django/db/models/fields/__init__::DurationField.get_internal_type",
   "tags": [
     "entity:method"

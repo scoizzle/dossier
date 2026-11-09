@@ -1,6 +1,6 @@
 # Fact 3e04a62a
 
-Store id: 550540db-22ba-4b78-921c-35cd9502ae44
+Store id: 6892513f-f8db-400f-bc58-94b28829b65e
 
 ## Text
 
@@ -20,7 +20,7 @@ def context(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6314080+00:00`
+- posted_at: `2026-11-09T23:44:50.1186610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1878,
     "symbol": "DecimalField.context"
   },
-  "id": "550540db-22ba-4b78-921c-35cd9502ae44",
+  "id": "6892513f-f8db-400f-bc58-94b28829b65e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6314080+00:00"
+    "posted_at": "2026-11-09T23:44:50.1186610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d597d3ed-5c4d-44d3-9631-3873614e56e9",
+  "subject_id": "14544b7f-3ab0-410e-a4a6-554566060863",
   "subject_name": "django/db/models/fields/__init__::DecimalField.context",
   "tags": [
     "entity:method",

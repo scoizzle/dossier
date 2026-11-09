@@ -1,6 +1,6 @@
 # Fact d46b7849
 
-Store id: 182a33a1-25e8-492e-ac1c-c0c7de04294e
+Store id: 32e407a5-4e9c-4222-8298-f28fb0199bf2
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_empty(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0058030+00:00`
+- posted_at: `2026-11-09T23:44:58.9201180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2181,
     "symbol": "Query.set_empty"
   },
-  "id": "182a33a1-25e8-492e-ac1c-c0c7de04294e",
+  "id": "32e407a5-4e9c-4222-8298-f28fb0199bf2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0058030+00:00"
+    "posted_at": "2026-11-09T23:44:58.9201180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e6fd74ab-f007-4c91-9c46-11e51f69d687",
+  "subject_id": "46e9583e-0a9e-4ec6-916d-64387942a009",
   "subject_name": "django/db/models/sql/query::Query.set_empty",
   "tags": [
     "entity:method"

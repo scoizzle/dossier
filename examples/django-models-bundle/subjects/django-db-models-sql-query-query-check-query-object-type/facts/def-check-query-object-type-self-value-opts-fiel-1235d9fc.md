@@ -1,6 +1,6 @@
 # Fact 1235d9fc
 
-Store id: 685e3520-4adc-4ef6-998a-8fbab5575076
+Store id: be3f9081-0b9f-46a1-b763-60f484cb9ee7
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_query_object_type(self, value, opts, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9160940+00:00`
+- posted_at: `2026-11-09T23:44:58.8213800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1366,
     "symbol": "Query.check_query_object_type"
   },
-  "id": "685e3520-4adc-4ef6-998a-8fbab5575076",
+  "id": "be3f9081-0b9f-46a1-b763-60f484cb9ee7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9160940+00:00"
+    "posted_at": "2026-11-09T23:44:58.8213800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4b7257e1-87b9-4d15-990d-7d2ac37e7b8f",
+  "subject_id": "0ab7189a-cd08-4c07-b853-9f78e23a6a66",
   "subject_name": "django/db/models/sql/query::Query.check_query_object_type",
   "tags": [
     "entity:method"

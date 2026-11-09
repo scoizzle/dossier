@@ -1,6 +1,6 @@
 # Fact 944a100e
 
-Store id: 7edeb973-55d2-4ed7-b4fa-4681ebed3839
+Store id: 2fde7a07-97df-4dc0-9cd4-353b86e6fc00
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9270750+00:00`
+- posted_at: `2026-11-09T23:44:50.3410700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2972,
     "symbol": "BigAutoField.get_internal_type"
   },
-  "id": "7edeb973-55d2-4ed7-b4fa-4681ebed3839",
+  "id": "2fde7a07-97df-4dc0-9cd4-353b86e6fc00",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9270750+00:00"
+    "posted_at": "2026-11-09T23:44:50.3410700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37954cd6-a539-470f-8d6d-51381977572c",
+  "subject_id": "25a6252d-2105-4fea-b981-31289aa0f745",
   "subject_name": "django/db/models/fields/__init__::BigAutoField.get_internal_type",
   "tags": [
     "entity:method"

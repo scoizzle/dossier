@@ -1,6 +1,6 @@
 # Fact 3937c1bf
 
-Store id: 66f68924-352c-43e5-bb6c-db0a98420274
+Store id: b10f135c-781f-4ad1-a60f-0c94d0a831c5
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header is 64 pixels tall in the first audit and shows the workspace name.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Data
 
@@ -57,13 +57,13 @@ Home header is 64 pixels tall in the first audit and shows the workspace name.
   "data": {
     "headerHeight": 64
   },
-  "id": "66f68924-352c-43e5-bb6c-db0a98420274",
+  "id": "b10f135c-781f-4ad1-a60f-0c94d0a831c5",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [
     {
@@ -75,7 +75,7 @@ Home header is 64 pixels tall in the first audit and shows the workspace name.
     }
   ],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:header"

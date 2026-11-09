@@ -1,10 +1,10 @@
 # docs/ref/models/conditional-expressions
 
-- Subject: docs/ref/models/conditional-expressions (id `51b6ce48-6715-468c-a23f-e3de5d37ddc3`)
+- Subject: docs/ref/models/conditional-expressions (id `801fdc03-82e3-4277-ab8a-5f6fb18f90a9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3054 tokens
-- Facts shown: 58 of 58
+- Facts shown: 58 facts
 - Conflicts: 0
 - Gaps: 0
 

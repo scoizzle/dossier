@@ -1,10 +1,10 @@
 # django/urls/resolvers
 
-- Subject: django/urls/resolvers (id `2968714e-58d5-4bf4-9396-d717ac320188`)
+- Subject: django/urls/resolvers (id `0a8f90a6-4e53-4a25-b188-6a56f6cd47f3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6366 tokens
-- Facts shown: 72 of 74
+- Used: 6472 tokens
+- Facts shown: 74 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,7 +28,9 @@
 - [ee46e56c] @cached_property def urlconf_module(self): if isinstance(self.urlconf_name, str): return import_module(self.urlconf_name) else: return self.urlconf_name
 - [6dd4d777] @property def app_dict(self): language_code = get_language() if language_code not in self._app_dict: self._populate() return self._app_dict[language_code]
 - [87d2c184] @property def language_prefix(self): language_code = get_language() or settings.LANGUAGE_CODE if language_code == settings.LANGUAGE_CODE and not self.prefix_default_language: return "" else: return "%s/" % language_code
+- [9f93670e] @property def namespace_dict(self): language_code = get_language() if language_code not in self._namespace_dict: self._populate() return self._namespace_dict[language_code]
 - [405a0508] @property def regex(self): # This is only used by reverse() and cached in _reverse_dict. return re.compile(re.escape(self.language_prefix))
+- [f2ca875a] @property def reverse_dict(self): language_code = get_language() if language_code not in self._reverse_dict: self._populate() return self._reverse_dict[language_code]
 - [91e27be7] @staticmethod def _extend_tried(tried, pattern, sub_tried=None): if sub_tried is None: tried.append([pattern]) else: tried.extend([pattern, *t] for t in sub_tried)
 - [9e1a448a] @staticmethod def _join_route(route1, route2): """Join two routes, without the starting ^ in the second route.""" if not route1: return route2 route2 = route2.removeprefix("^") return route1 + route2
 - [fe182379] def __getitem__(self, index): return (self.func, self.args, self.kwargs)[index]

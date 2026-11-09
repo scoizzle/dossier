@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/schema
 
-- Subject: django/db/backends/postgresql/schema (id `acd9e454-5488-48c4-b330-480e6ecb7c2a`)
+- Subject: django/db/backends/postgresql/schema (id `3e17f4e2-eade-4a0a-bee8-f20f5d1aa0c8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2939 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

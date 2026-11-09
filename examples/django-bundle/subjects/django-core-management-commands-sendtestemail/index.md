@@ -1,16 +1,17 @@
 # django/core/management/commands/sendtestemail
 
-- Subject: django/core/management/commands/sendtestemail (id `1c0e5ecb-29c6-4159-85ab-32dacbec6c25`)
+- Subject: django/core/management/commands/sendtestemail (id `2727642c-4f88-4469-b7cd-f11bba8d0658`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 399 tokens
-- Facts shown: 7 of 8
+- Used: 436 tokens
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Facts
 
 - if kwargs["admins"]: mail_admins(subject, "This email was sent to the site admins.", using=using) [ebb03c55]
+- if kwargs["managers"]: mail_managers( subject, "This email was sent to the site managers.", using=using ) [9e11f42c]
 - send_mail( subject=subject, message="If you're reading this, it was successful.", from_email=None, recipient_list=kwargs["email"], using=using, ) [87e0a86c]
 - def add_arguments(self, parser): parser.add_argument( "email", nargs="*", help="One or more email addresses to send a test email to.", ) parser.add_argument( "--managers", action="store_true", help="Send a test email to the addresses specified in settings.MANAGERS.", ) parser.add_argument( "--admins", action="store_true", help="Send a test email to the addresses specified in settings.ADMINS.", ) parser.add_argument( "--using", default=None, help=( "Specify the MAILERS alias to use for sending the test email. " "Defaults to 'default'." ), ) [520ed5cb]
 - def handle(self, *args, using=None, **kwargs): subject = "Test email from %s on %s" % (socket.gethostname(), timezone.now()) [9c06e94b]

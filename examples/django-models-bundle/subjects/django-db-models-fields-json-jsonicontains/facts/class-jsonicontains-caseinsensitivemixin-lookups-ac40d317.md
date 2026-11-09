@@ -1,6 +1,6 @@
 # Fact ac40d317
 
-Store id: 74c82076-7a2b-48f6-84cd-53d541278a8d
+Store id: 4f84a6d4-4028-46ac-84b2-443ccb6eb308
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONIContains(CaseInsensitiveMixin, lookups.IContains)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9319110+00:00`
+- posted_at: `2026-11-09T23:44:50.9996060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 353,
     "symbol": "JSONIContains"
   },
-  "id": "74c82076-7a2b-48f6-84cd-53d541278a8d",
+  "id": "4f84a6d4-4028-46ac-84b2-443ccb6eb308",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9319110+00:00"
+    "posted_at": "2026-11-09T23:44:50.9996060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dbb0f910-44ee-4fe2-a152-cbecabf5a597",
+  "subject_id": "fa8a9341-7664-4687-92a7-8bda04471e4d",
   "subject_name": "django/db/models/fields/json::JSONIContains",
   "tags": [
     "entity:class"

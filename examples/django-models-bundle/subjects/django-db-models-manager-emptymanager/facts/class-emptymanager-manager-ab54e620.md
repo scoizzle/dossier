@@ -1,6 +1,6 @@
 # Fact ab54e620
 
-Store id: 56124195-3937-4acd-8aee-023a132b2d04
+Store id: e694c7c9-6557-4582-b840-215d22955490
 
 ## Text
 
@@ -20,7 +20,7 @@ class EmptyManager(Manager)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.7254200+00:00`
+- posted_at: `2026-11-09T23:44:55.3217420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 207,
     "symbol": "EmptyManager"
   },
-  "id": "56124195-3937-4acd-8aee-023a132b2d04",
+  "id": "e694c7c9-6557-4582-b840-215d22955490",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.7254200+00:00"
+    "posted_at": "2026-11-09T23:44:55.3217420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bdecd72c-d0ee-4845-a253-b31ffff78b1c",
+  "subject_id": "df1eb2b8-86f5-41e6-a6b6-2965ced2e6ee",
   "subject_name": "django/db/models/manager::EmptyManager",
   "tags": [
     "entity:class"

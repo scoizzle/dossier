@@ -1,6 +1,6 @@
 # Fact c92b739b
 
-Store id: c9db2eab-c89e-4b27-9235-d42f33c98478
+Store id: ae63cc3f-96b3-45d4-860d-a1cd34e3e69d
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7954930+00:00`
+- posted_at: `2026-11-09T23:44:50.2369490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2531,
     "symbol": "TextField.check"
   },
-  "id": "c9db2eab-c89e-4b27-9235-d42f33c98478",
+  "id": "ae63cc3f-96b3-45d4-860d-a1cd34e3e69d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7954930+00:00"
+    "posted_at": "2026-11-09T23:44:50.2369490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4b2c7c79-3cd9-4dd5-8b45-d5214bb7f1af",
+  "subject_id": "a44f2c5f-9762-4e25-b198-b7062cb013c8",
   "subject_name": "django/db/models/fields/__init__::TextField.check",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/admin_filters
 
-- Subject: django/contrib/admin/templatetags/admin_filters (id `3017656b-a93d-47ba-a4f7-195bb8b879ae`)
+- Subject: django/contrib/admin/templatetags/admin_filters (id `f282fbc1-7f1a-4ff9-a6af-544fc0434a31`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 654 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

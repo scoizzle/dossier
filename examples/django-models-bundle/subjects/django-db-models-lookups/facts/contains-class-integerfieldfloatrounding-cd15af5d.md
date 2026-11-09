@@ -1,6 +1,6 @@
 # Fact cd15af5d
 
-Store id: 14b360ae-4f84-4e3d-8b5b-b9b139c10238
+Store id: 48bd312c-62e4-4114-aaac-97035976a08a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerFieldFloatRounding
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "14b360ae-4f84-4e3d-8b5b-b9b139c10238",
+  "id": "48bd312c-62e4-4114-aaac-97035976a08a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerFieldFloatRounding"
       },
       "rel": "contains",
-      "target": "7b0e448d-212a-4b8d-b864-76c0e5c5449b"
+      "target": "1129c9fc-0e92-40e7-8f43-5b57fea9dd5d"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 22f7ad30
 
-Store id: 73e7e7c1-a439-40b8-bbf9-93c9a7afc623
+Store id: fa84bd1c-165e-4be8-849a-46c51dfdc7cc
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Avg
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "73e7e7c1-a439-40b8-bbf9-93c9a7afc623",
+  "id": "fa84bd1c-165e-4be8-849a-46c51dfdc7cc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Avg"
       },
       "rel": "contains",
-      "target": "b32d4796-2352-4db5-ae43-37815fdf85b0"
+      "target": "2e018115-a358-4f5f-a328-3b6599a7fdf6"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

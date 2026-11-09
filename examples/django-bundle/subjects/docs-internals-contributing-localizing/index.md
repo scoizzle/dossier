@@ -1,10 +1,10 @@
 # docs/internals/contributing/localizing
 
-- Subject: docs/internals/contributing/localizing (id `2bc4f732-9b31-4a09-9299-5757723ad596`)
+- Subject: docs/internals/contributing/localizing (id `14059bb6-a1c8-4471-962e-666f6bc225d0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1230 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

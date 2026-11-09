@@ -1,10 +1,10 @@
 # django/contrib/humanize/apps
 
-- Subject: django/contrib/humanize/apps (id `07297eea-fe12-4def-a813-3c124a9744b3`)
+- Subject: django/contrib/humanize/apps (id `12397737-6a1d-4bf1-87d7-d51f5853fa36`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 67 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

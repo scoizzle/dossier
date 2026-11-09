@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-code/javascript
 
-- Subject: docs/internals/contributing/writing-code/javascript (id `0fff3e59-8ad7-4ad6-856c-e6f8fc0af059`)
+- Subject: docs/internals/contributing/writing-code/javascript (id `2da497c5-2508-4ecd-955c-d1e4d7324edb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1290 tokens
-- Facts shown: 36 of 36
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 

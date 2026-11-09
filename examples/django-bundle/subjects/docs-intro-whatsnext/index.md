@@ -1,10 +1,10 @@
 # docs/intro/whatsnext
 
-- Subject: docs/intro/whatsnext (id `88ee9301-abf4-4a0a-9c47-7e435620394c`)
+- Subject: docs/intro/whatsnext (id `e416a208-64d6-4082-adbc-e571ad77caf6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2895 tokens
-- Facts shown: 64 of 65
+- Used: 2915 tokens
+- Facts shown: 65 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - $ cd path/to/django/docs $ make html [8c9196dd]
 - $ python -m pip install Sphinx [0a0d1193]
+- cd path\to\django\docs make.bat html [cf6b1125]
 - $ grep -r max_length /path/to/django/docs/ [d3c0170c]
 - .. code-block:: bat [fefc44cb8bc5d316]
 - .. code-block:: console [faf6f5a8efbd7831-12]
@@ -29,24 +30,24 @@
 - * The :doc:`introductory material </intro/index>` is designed for people new to Django -- or to web development in general. It doesn't cover anything in depth, but instead gives a high-level overview of how developing in Django "feels". [c79d9e74]
 - * The :doc:`topic guides </topics/index>`, on the other hand, dive deep into individual parts of Django. There are complete guides to Django's :doc:`model system </topics/db/index>`, :doc:`template engine </topics/templates>`, :doc:`forms framework </topics/forms/index>`, and much more. [1876f85c]
 - * The HTML documentation will be placed in ``docs/_build/html``. [d9365ace]
-- * The `main documentation web page`_ includes links to documentation for previous versions. Be sure you are using the version of the docs corresponding to the version of Django you are using! [008c4e71]
-- .. console:: [7714e199aac2701e-84]
+- * Then, use the included ``Makefile`` to turn the documentation into HTML: [64221f14]
+- * To make content fixes, such as grammar/typo corrections. [1ff1dc8b]
 
 ## All facts
 
+- [008c4e71] * The `main documentation web page`_ includes links to documentation for previous versions. Be sure you are using the version of the docs corresponding to the version of Django you are using!
 - [bbaff07d] * The development documentation at https://docs.djangoproject.com/en/dev/ is from the main branch. These docs correspond to the latest feature release, plus whatever features have been added/changed in the framework since then.
 - [6e0f6547] * The guides and how-to's don't cover every single class, function, and method available in Django -- that would be overwhelming when you're trying to learn. Instead, details about individual classes, functions, methods, and modules are kept in the :doc:`reference </ref/index>`. This is where you'll turn to find the details of a particular function or whatever you need.
-- [64221f14] * Then, use the included ``Makefile`` to turn the documentation into HTML:
 - [73362000] * To add documentation for new features as new features get added, or as Django APIs or behaviors change.
 - [bceb61eb] * To add information and/or examples to existing sections that need to be expanded.
 - [95ce9459] * To distinguish feature changes/additions in the docs, we use the phrase: "New in Django Development version" for the version of Django that hasn't been released yet, or "New in version X.Y" for released versions.
 - [1b8079a3] * To document Django features that aren't yet documented. (The list of such features is shrinking but exists nonetheless.)
-- [1ff1dc8b] * To make content fixes, such as grammar/typo corrections.
 - [0d4e0507] * Web development is often broad, not deep -- problems span many domains. We've written a set of :doc:`how-to guides </howto/index>` that answer common "How do I ...?" questions. Here you'll find information about :doc:`generating PDFs with Django </howto/outputting-pdf>`, :doc:`writing custom template tags </howto/custom-template-tags>`, and more.
 - [7c325823] .. _Django ecosystem: https://www.djangoproject.com/community/ecosystem/
 - [2fc531ed] .. _differences-between-doc-versions:
 - [c0342bc8] .. _main documentation web page: https://docs.djangoproject.com/en/dev/
 - [7fb57f07] .. _ticket system: https://code.djangoproject.com/ .. _Django Forum: https://forum.djangoproject.com/ .. _Django Discord server: https://chat.djangoproject.com
+- [7714e199aac2701e-84] .. console::
 - [a83120a5] ================= What to read next =================
 - [b4699e33] As HTML, locally ----------------
 - [f6c1e7ec] Differences between versions ============================

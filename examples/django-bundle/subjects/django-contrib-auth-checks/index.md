@@ -1,10 +1,10 @@
 # django/contrib/auth/checks
 
-- Subject: django/contrib/auth/checks (id `dc3d2265-74ab-4858-951d-6d1ead28727e`)
+- Subject: django/contrib/auth/checks (id `e272dc59-ff8e-4dd0-a400-001e83b35f63`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1818 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

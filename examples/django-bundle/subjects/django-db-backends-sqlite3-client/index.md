@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/client
 
-- Subject: django/db/backends/sqlite3/client (id `1a01926a-0f8b-4568-9e50-e037f167a06c`)
+- Subject: django/db/backends/sqlite3/client (id `7ef3d3fd-72c5-429f-a42f-68ec5680b8e1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 104 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.formfield
 
-- Subject: django/db/models/fields/__init__::Field.formfield (id `bd086af5-867d-486b-9e4d-942bbdc5813a`)
+- Subject: django/db/models/fields/__init__::Field.formfield (id `acc5af33-d870-415f-ae1b-db820ca4118e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

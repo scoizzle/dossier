@@ -1,11 +1,11 @@
 # django/db/models/expressions::Subquery.get_group_by_cols
 
-- Subject: django/db/models/expressions::Subquery.get_group_by_cols (id `17b5a0f0-372a-42b5-9728-dd3ab3d616fa`)
+- Subject: django/db/models/expressions::Subquery.get_group_by_cols (id `a2ba03e3-d849-4507-b42e-64b65004429d`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

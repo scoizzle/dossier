@@ -1,10 +1,10 @@
 # django/core/management/commands/sqlsequencereset
 
-- Subject: django/core/management/commands/sqlsequencereset (id `73f738af-6467-4eb6-b8f0-ff6d10fb5740`)
+- Subject: django/core/management/commands/sqlsequencereset (id `1f413340-33d8-4b57-b588-c9750faa3488`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 273 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

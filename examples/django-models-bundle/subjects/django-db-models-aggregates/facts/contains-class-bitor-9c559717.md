@@ -1,6 +1,6 @@
 # Fact 9c559717
 
-Store id: 6252463a-9d50-4610-9aab-797034993e45
+Store id: 9355a2e0-8782-4587-b04a-c90380267aa0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BitOr
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6252463a-9d50-4610-9aab-797034993e45",
+  "id": "9355a2e0-8782-4587-b04a-c90380267aa0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BitOr"
       },
       "rel": "contains",
-      "target": "007d735b-2fc3-4474-9e0d-c6802aa33cc8"
+      "target": "95979ff2-7c62-44e9-8198-21273ff8f6eb"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

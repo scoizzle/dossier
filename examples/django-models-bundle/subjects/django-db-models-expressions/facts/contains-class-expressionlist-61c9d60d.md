@@ -1,6 +1,6 @@
 # Fact 61c9d60d
 
-Store id: 57317190-b07c-42f3-a368-d403114c0b6a
+Store id: a41c61cd-a766-4bc4-8faa-1c3039ee8772
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExpressionList
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "57317190-b07c-42f3-a368-d403114c0b6a",
+  "id": "a41c61cd-a766-4bc4-8faa-1c3039ee8772",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExpressionList"
       },
       "rel": "contains",
-      "target": "45255c16-2e59-4265-90aa-01fa463833ca"
+      "target": "dfe601c8-5cf0-4660-b841-82fa87a90385"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

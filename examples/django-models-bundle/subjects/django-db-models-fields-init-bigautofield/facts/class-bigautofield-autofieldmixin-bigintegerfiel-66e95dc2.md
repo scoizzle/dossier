@@ -1,6 +1,6 @@
 # Fact 66e95dc2
 
-Store id: e7a2ae15-f1c7-434b-ac8c-0d71983c7ce9
+Store id: cc337814-9685-4dfe-9c1a-0c3d0e7e83fa
 
 ## Text
 
@@ -20,7 +20,7 @@ class BigAutoField(AutoFieldMixin, BigIntegerField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9252800+00:00`
+- posted_at: `2026-11-09T23:44:50.3393780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2971,
     "symbol": "BigAutoField"
   },
-  "id": "e7a2ae15-f1c7-434b-ac8c-0d71983c7ce9",
+  "id": "cc337814-9685-4dfe-9c1a-0c3d0e7e83fa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9252800+00:00"
+    "posted_at": "2026-11-09T23:44:50.3393780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eb79234d-f0f8-4bd6-b563-3779cecfe640",
+  "subject_id": "8d16b83d-2240-45ed-922e-d3f0362aaf0c",
   "subject_name": "django/db/models/fields/__init__::BigAutoField",
   "tags": [
     "entity:class"

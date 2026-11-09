@@ -1,6 +1,6 @@
 # Fact 544bbb5e
 
-Store id: bd387a8a-5a87-4396-8b8e-1c12e5e43401
+Store id: 0e55e988-7acf-46a7-afe9-5d071d617382
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, form_class=None, choices_form_class=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5327130+00:00`
+- posted_at: `2026-11-09T23:44:50.0488460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1142,
     "symbol": "Field.formfield"
   },
-  "id": "bd387a8a-5a87-4396-8b8e-1c12e5e43401",
+  "id": "0e55e988-7acf-46a7-afe9-5d071d617382",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5327130+00:00"
+    "posted_at": "2026-11-09T23:44:50.0488460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bd086af5-867d-486b-9e4d-942bbdc5813a",
+  "subject_id": "acc5af33-d870-415f-ae1b-db820ca4118e",
   "subject_name": "django/db/models/fields/__init__::Field.formfield",
   "tags": [
     "entity:method"

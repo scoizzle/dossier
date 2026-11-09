@@ -1,6 +1,6 @@
 # Fact 795e3be8
 
-Store id: 26612809-f918-4f69-8630-3dfd272f16ca
+Store id: 0a3976dd-61fb-46eb-a338-9fe5c6a02c04
 
 ## Text
 
@@ -20,7 +20,7 @@ class SHA256(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2877640+00:00`
+- posted_at: `2026-11-09T23:44:54.1489040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 315,
     "symbol": "SHA256"
   },
-  "id": "26612809-f918-4f69-8630-3dfd272f16ca",
+  "id": "0a3976dd-61fb-46eb-a338-9fe5c6a02c04",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2877640+00:00"
+    "posted_at": "2026-11-09T23:44:54.1489040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78537c06-53f3-41a7-bc53-df23bf01d8da",
+  "subject_id": "8d89015b-4d6a-47b0-8fc7-64805390b873",
   "subject_name": "django/db/models/functions/text::SHA256",
   "tags": [
     "entity:class"

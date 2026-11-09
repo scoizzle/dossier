@@ -1,11 +1,11 @@
 # django/db/models/functions/window::PercentRank
 
-- Subject: django/db/models/functions/window::PercentRank (id `f651ef97-c095-4777-86a2-42dab8472206`)
+- Subject: django/db/models/functions/window::PercentRank (id `c7ad23ec-3dcd-4702-a7e5-fc8255653451`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 58fab214
 
-Store id: 74028ae0-471a-47c2-857d-56f21f97edc4
+Store id: 44eb28dc-a690-4cd1-a9de-5ae737f1500c
 
 ## Text
 
@@ -20,7 +20,7 @@ def swapped(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9515820+00:00`
+- posted_at: `2026-11-09T23:44:55.5082460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 421,
     "symbol": "Options.swapped"
   },
-  "id": "74028ae0-471a-47c2-857d-56f21f97edc4",
+  "id": "44eb28dc-a690-4cd1-a9de-5ae737f1500c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9515820+00:00"
+    "posted_at": "2026-11-09T23:44:55.5082460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c26feaa-0bff-40e2-a663-c3b08e898021",
+  "subject_id": "7ab5b77d-258c-4525-95af-7cadad4fee6e",
   "subject_name": "django/db/models/options::Options.swapped",
   "tags": [
     "entity:method",

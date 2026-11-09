@@ -1,11 +1,11 @@
 # django/db/models/query::BaseIterable._async_generator
 
-- Subject: django/db/models/query::BaseIterable._async_generator (id `3b9f3ca9-54b9-4ec6-b315-cc88060c2d59`)
+- Subject: django/db/models/query::BaseIterable._async_generator (id `713482b6-aca9-483b-be08-3121401cba4b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

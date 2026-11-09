@@ -1,6 +1,6 @@
 # Fact a5b29079
 
-Store id: f227c5af-2fab-486f-8bfb-3f9e0c737cfb
+Store id: 57fa71f7-d385-4cf8-956f-8dc7bedb585b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0240620+00:00`
+- posted_at: `2026-11-09T23:44:49.6865740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2169,
     "symbol": "WindowFrame.as_sql"
   },
-  "id": "f227c5af-2fab-486f-8bfb-3f9e0c737cfb",
+  "id": "57fa71f7-d385-4cf8-956f-8dc7bedb585b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0240620+00:00"
+    "posted_at": "2026-11-09T23:44:49.6865740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d4a38e83-80f9-4073-aea1-16078c6f0079",
+  "subject_id": "c629ab46-b875-488b-8552-15ca14d6bfd3",
   "subject_name": "django/db/models/expressions::WindowFrame.as_sql",
   "tags": [
     "entity:method"

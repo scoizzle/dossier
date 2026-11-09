@@ -1,6 +1,6 @@
 # Fact c3630de7
 
-Store id: f8b59ad3-d768-4e5b-a389-695e73d7092a
+Store id: 7230fd04-9a14-4c6b-9342-78422eb16a55
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_expr_references(cls, expr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7731990+00:00`
+- posted_at: `2026-11-09T23:44:48.5557220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2497,
     "symbol": "Model._get_expr_references"
   },
-  "id": "f8b59ad3-d768-4e5b-a389-695e73d7092a",
+  "id": "7230fd04-9a14-4c6b-9342-78422eb16a55",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7731990+00:00"
+    "posted_at": "2026-11-09T23:44:48.5557220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "063de4f4-1581-489a-aa12-4f0d95e07e8d",
+  "subject_id": "c8c5ea3e-692a-457f-b707-fbbad774c359",
   "subject_name": "django/db/models/base::Model._get_expr_references",
   "tags": [
     "entity:class_method",

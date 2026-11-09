@@ -1,6 +1,6 @@
 # Fact 22d6b86c
 
-Store id: 51a4a085-8fe8-4996-a0d5-3d0a3819d759
+Store id: 320a45f1-9233-4735-b586-3eedbe505b29
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8248240+00:00`
+- posted_at: `2026-11-09T23:44:50.2617320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2696,
     "symbol": "TimeField.get_prep_value"
   },
-  "id": "51a4a085-8fe8-4996-a0d5-3d0a3819d759",
+  "id": "320a45f1-9233-4735-b586-3eedbe505b29",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8248240+00:00"
+    "posted_at": "2026-11-09T23:44:50.2617320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "608346fb-d1aa-444d-b46b-d4cf91b4fb93",
+  "subject_id": "4a102f6e-71e7-4a45-88bb-a1be6278559a",
   "subject_name": "django/db/models/fields/__init__::TimeField.get_prep_value",
   "tags": [
     "entity:method"

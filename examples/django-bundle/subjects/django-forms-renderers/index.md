@@ -1,10 +1,10 @@
 # django/forms/renderers
 
-- Subject: django/forms/renderers (id `8b4d2990-8d56-4b07-a1e9-385446c34cd3`)
+- Subject: django/forms/renderers (id `a931dc15-06df-4adf-bdac-8bf5dac8b28a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 580 tokens
-- Facts shown: 15 of 16
+- Used: 632 tokens
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,6 +22,7 @@
 - class BaseRenderer: form_template_name = "django/forms/div.html" formset_template_name = "django/forms/formsets/div.html" field_template_name = "django/forms/field.html" [b00b5929]
 - class DjangoTemplates(EngineMixin, BaseRenderer): """ Load Django templates from the built-in widget templates in django/forms/templates and from apps' 'templates' directory. """ [e854dde9]
 - class EngineMixin: def get_template(self, template_name): return self.engine.get_template(template_name) [2189cc17]
+- class Jinja2(EngineMixin, BaseRenderer): """ Load Jinja2 templates from the built-in widget templates in django/forms/jinja2 and from apps' 'jinja2' directory. """ [0e4c13a0]
 - class TemplatesSetting(BaseRenderer): """ Load templates using template.loader.get_template() which is configured based on settings.TEMPLATES. """ [81837a7a]
 - from django.conf import settings from django.template.backends.django import DjangoTemplates from django.template.loader import get_template from django.utils.functional import cached_property from django.utils.module_loading import import_string [0966e427]
 - import functools from pathlib import Path [8ddb5008]

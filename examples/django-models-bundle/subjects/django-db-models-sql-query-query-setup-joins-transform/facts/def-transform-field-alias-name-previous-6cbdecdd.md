@@ -1,6 +1,6 @@
 # Fact 6cbdecdd
 
-Store id: 2717e793-254d-4936-9fd7-21f5d69e4392
+Store id: 590b0217-dc04-45cc-bc01-c4ea8c270773
 
 ## Text
 
@@ -20,7 +20,7 @@ def transform(field, alias, *, name, previous)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9744570+00:00`
+- posted_at: `2026-11-09T23:44:58.8926510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1961,
     "symbol": "Query.setup_joins.transform"
   },
-  "id": "2717e793-254d-4936-9fd7-21f5d69e4392",
+  "id": "590b0217-dc04-45cc-bc01-c4ea8c270773",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9744570+00:00"
+    "posted_at": "2026-11-09T23:44:58.8926510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "783c48ce-206c-4e28-855c-b5e7ad4b1dce",
+  "subject_id": "4c5dca42-8965-4656-bba3-92952fb4450b",
   "subject_name": "django/db/models/sql/query::Query.setup_joins.transform",
   "tags": [
     "entity:function"

@@ -1,10 +1,10 @@
 # django/db/backends/mysql/validation
 
-- Subject: django/db/backends/mysql/validation (id `cb8532e3-13d1-4599-ad0c-3e914681d905`)
+- Subject: django/db/backends/mysql/validation (id `5232861a-ea70-48b7-9d7d-e0c141f9bd55`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 556 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

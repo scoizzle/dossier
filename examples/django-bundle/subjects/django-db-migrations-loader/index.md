@@ -1,10 +1,10 @@
 # django/db/migrations/loader
 
-- Subject: django/db/migrations/loader (id `c4314acc-3136-49d6-b0c5-f0db1c28bba6`)
+- Subject: django/db/migrations/loader (id `efe6497b-0979-48f6-92b3-3786288de40c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3809 tokens
-- Facts shown: 29 of 29
+- Facts shown: 29 facts
 - Conflicts: 0
 - Gaps: 0
 

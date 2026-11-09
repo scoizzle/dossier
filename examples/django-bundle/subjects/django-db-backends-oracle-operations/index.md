@@ -1,10 +1,10 @@
 # django/db/backends/oracle/operations
 
-- Subject: django/db/backends/oracle/operations (id `ce6ce466-5037-42cc-8e94-b92123cc4876`)
+- Subject: django/db/backends/oracle/operations (id `df92c843-7ac4-4a5c-abc9-a4c6a31f8916`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 6235 tokens
-- Facts shown: 71 of 71
+- Facts shown: 71 facts
 - Conflicts: 0
 - Gaps: 0
 

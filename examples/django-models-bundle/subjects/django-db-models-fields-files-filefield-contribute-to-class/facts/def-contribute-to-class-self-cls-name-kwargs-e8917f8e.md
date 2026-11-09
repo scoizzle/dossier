@@ -1,6 +1,6 @@
 # Fact e8917f8e
 
-Store id: b360b6ea-9506-4940-9798-ef5b3bbbaaf8
+Store id: b04342eb-a4a9-4287-b04f-73ebb560b289
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4059890+00:00`
+- posted_at: `2026-11-09T23:44:50.6624890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 344,
     "symbol": "FileField.contribute_to_class"
   },
-  "id": "b360b6ea-9506-4940-9798-ef5b3bbbaaf8",
+  "id": "b04342eb-a4a9-4287-b04f-73ebb560b289",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4059890+00:00"
+    "posted_at": "2026-11-09T23:44:50.6624890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "46a16dab-979c-4aad-8432-6d60653a5dfc",
+  "subject_id": "34a08d3d-e6e3-4aad-b3e8-0a0fc2460937",
   "subject_name": "django/db/models/fields/files::FileField.contribute_to_class",
   "tags": [
     "entity:method"

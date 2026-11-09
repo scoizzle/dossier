@@ -1,6 +1,6 @@
 # Fact 388eb3e2
 
-Store id: b668e9f9-c813-418a-aace-83ee2a42144f
+Store id: 5bc04f42-06e6-4894-a7ac-a44c560d358d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_manager(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3123540+00:00`
+- posted_at: `2026-11-09T23:44:55.8348910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 399,
     "symbol": "QuerySet.as_manager"
   },
-  "id": "b668e9f9-c813-418a-aace-83ee2a42144f",
+  "id": "5bc04f42-06e6-4894-a7ac-a44c560d358d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3123540+00:00"
+    "posted_at": "2026-11-09T23:44:55.8348910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1adc6b97-160e-4597-86d8-480cc2113abb",
+  "subject_id": "682289f0-92cb-44d5-b89e-2c3711ed2da3",
   "subject_name": "django/db/models/query::QuerySet.as_manager",
   "tags": [
     "entity:method"

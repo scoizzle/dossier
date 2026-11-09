@@ -1,6 +1,6 @@
 # Fact 87c58a2a
 
-Store id: 265f0d2b-0652-433e-aad6-9aa4917fca35
+Store id: 7d37397b-75ea-4e50-ac8e-e7d87ae81366
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *expressions, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9670430+00:00`
+- posted_at: `2026-11-09T23:44:53.1360820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 75,
     "symbol": "Coalesce.__init__"
   },
-  "id": "265f0d2b-0652-433e-aad6-9aa4917fca35",
+  "id": "7d37397b-75ea-4e50-ac8e-e7d87ae81366",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9670430+00:00"
+    "posted_at": "2026-11-09T23:44:53.1360820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f03ceedd-c9df-4244-9d99-e0fe15aa33c6",
+  "subject_id": "b42d6f4c-ece2-4382-b72c-304ef9bcc550",
   "subject_name": "django/db/models/functions/comparison::Coalesce.__init__",
   "tags": [
     "entity:method"

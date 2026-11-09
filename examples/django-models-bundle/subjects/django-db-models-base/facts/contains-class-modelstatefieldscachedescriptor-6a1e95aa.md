@@ -1,6 +1,6 @@
 # Fact 6a1e95aa
 
-Store id: 29592b6a-b196-4bd1-b4f1-f288c29dc2d9
+Store id: 43c31408-3557-43ff-be1e-3686467c79f8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelStateFieldsCacheDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "29592b6a-b196-4bd1-b4f1-f288c29dc2d9",
+  "id": "43c31408-3557-43ff-be1e-3686467c79f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelStateFieldsCacheDescriptor"
       },
       "rel": "contains",
-      "target": "9eecf7b4-7694-4435-9d2e-ecf27bd08976"
+      "target": "72d8186e-9340-434e-8e09-2f0b0b894554"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:class"

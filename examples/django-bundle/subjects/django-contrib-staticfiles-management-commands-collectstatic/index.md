@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/management/commands/collectstatic
 
-- Subject: django/contrib/staticfiles/management/commands/collectstatic (id `2ec57dfe-83da-46e0-941a-8fbcffecd1b7`)
+- Subject: django/contrib/staticfiles/management/commands/collectstatic (id `25bb55f5-a460-4295-8dcb-a3a2d5d280be`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3193 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

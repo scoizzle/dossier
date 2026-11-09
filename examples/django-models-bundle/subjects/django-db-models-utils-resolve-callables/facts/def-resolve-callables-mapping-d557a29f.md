@@ -1,6 +1,6 @@
 # Fact d557a29f
 
-Store id: 0d48f2dd-7898-40a6-83a3-8aff2e42073e
+Store id: 51036d3c-c727-41d3-9bad-a9a1dd1ac704
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_callables(mapping)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.9060140+00:00`
+- posted_at: `2026-11-09T23:45:00.0284050+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 28,
     "symbol": "resolve_callables"
   },
-  "id": "0d48f2dd-7898-40a6-83a3-8aff2e42073e",
+  "id": "51036d3c-c727-41d3-9bad-a9a1dd1ac704",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.9060140+00:00"
+    "posted_at": "2026-11-09T23:45:00.0284050+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e1057ee-cfbe-4ebc-8e57-e60501fac2ee",
+  "subject_id": "4f4f83dd-c45c-4b2d-9fa2-57b90d550e62",
   "subject_name": "django/db/models/utils::resolve_callables",
   "tags": [
     "entity:function"

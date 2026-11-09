@@ -1,10 +1,10 @@
 # django/contrib/messages/test
 
-- Subject: django/contrib/messages/test (id `bd5c21e7-77ab-426e-a0ad-58b67ac35156`)
+- Subject: django/contrib/messages/test (id `8e2c769b-5304-4271-9f10-30e50f7ae091`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 130 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

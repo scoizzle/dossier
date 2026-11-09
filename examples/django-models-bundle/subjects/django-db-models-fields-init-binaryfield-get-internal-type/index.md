@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::BinaryField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::BinaryField.get_internal_type (id `6c6cc2cc-ceac-4e86-974d-71ef93599e18`)
+- Subject: django/db/models/fields/__init__::BinaryField.get_internal_type (id `b6b419e9-ea3d-401f-864d-d7addd994826`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

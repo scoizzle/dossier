@@ -1,10 +1,10 @@
 # docs/ref/forms/index
 
-- Subject: docs/ref/forms/index (id `32d0452b-0287-4b10-baa5-db4db4055081`)
+- Subject: docs/ref/forms/index (id `0cde8070-493f-4d77-a050-0bc632c5cb71`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 94 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

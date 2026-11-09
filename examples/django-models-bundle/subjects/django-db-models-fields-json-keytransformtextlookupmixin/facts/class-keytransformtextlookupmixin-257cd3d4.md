@@ -1,6 +1,6 @@
 # Fact 257cd3d4
 
-Store id: db16dcfc-3247-4aba-b3e0-84cd6da225fb
+Store id: 817f01b8-0d49-4c3b-b312-1b59a9f97840
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformTextLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9874270+00:00`
+- posted_at: `2026-11-09T23:44:51.0332920+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 572,
     "symbol": "KeyTransformTextLookupMixin"
   },
-  "id": "db16dcfc-3247-4aba-b3e0-84cd6da225fb",
+  "id": "817f01b8-0d49-4c3b-b312-1b59a9f97840",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9874270+00:00"
+    "posted_at": "2026-11-09T23:44:51.0332920+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3d87411b-619b-47f9-898b-13e0c56c9a6b",
+  "subject_id": "74cb5747-764d-42c0-a9cd-b6c7d0afbec2",
   "subject_name": "django/db/models/fields/json::KeyTransformTextLookupMixin",
   "tags": [
     "entity:class"

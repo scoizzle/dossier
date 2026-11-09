@@ -1,10 +1,10 @@
 # docs/howto/deployment/asgi/daphne
 
-- Subject: docs/howto/deployment/asgi/daphne (id `6ff70777-abc0-4e56-8b09-8e396561947a`)
+- Subject: docs/howto/deployment/asgi/daphne (id `2e39006c-dd27-4cfe-98ec-f145ebe66390`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 553 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

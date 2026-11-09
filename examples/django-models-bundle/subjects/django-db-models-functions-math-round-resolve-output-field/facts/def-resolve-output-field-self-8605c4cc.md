@@ -1,6 +1,6 @@
 # Fact 8605c4cc
 
-Store id: a6505050-4233-46ea-9879-d7388c233c21
+Store id: 77662951-d286-4768-88d3-b17ff2d98ce1
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7660630+00:00`
+- posted_at: `2026-11-09T23:44:53.7678730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 192,
     "symbol": "Round._resolve_output_field"
   },
-  "id": "a6505050-4233-46ea-9879-d7388c233c21",
+  "id": "77662951-d286-4768-88d3-b17ff2d98ce1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7660630+00:00"
+    "posted_at": "2026-11-09T23:44:53.7678730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c84ee1fb-e1d4-453e-a3ae-b170cddfad82",
+  "subject_id": "7f86486f-89a0-4509-a3b4-d9a78ee0f189",
   "subject_name": "django/db/models/functions/math::Round._resolve_output_field",
   "tags": [
     "entity:method"

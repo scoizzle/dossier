@@ -1,6 +1,6 @@
 # Fact 05fc588d
 
-Store id: 20f6897b-3b7e-4719-a518-1231239af7cd
+Store id: 7bb428ab-59c5-410f-8722-c5c641ad13b0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, lookup_name=None, tzinfo=None, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.1730140+00:00`
+- posted_at: `2026-11-09T23:44:53.3208540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 43,
     "symbol": "Extract.__init__"
   },
-  "id": "20f6897b-3b7e-4719-a518-1231239af7cd",
+  "id": "7bb428ab-59c5-410f-8722-c5c641ad13b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.1730140+00:00"
+    "posted_at": "2026-11-09T23:44:53.3208540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a444dbcd-a4f1-4cdc-ab03-7de3d0e20d37",
+  "subject_id": "faf34f5a-295d-4d4b-9ad6-15795732fa1b",
   "subject_name": "django/db/models/functions/datetime::Extract.__init__",
   "tags": [
     "entity:method"

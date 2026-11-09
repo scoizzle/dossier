@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateTimeField.value_to_string
 
-- Subject: django/db/models/fields/__init__::DateTimeField.value_to_string (id `0a540d2b-2666-488e-aaf1-0194187a6243`)
+- Subject: django/db/models/fields/__init__::DateTimeField.value_to_string (id `e3cb3e7d-a7a5-4595-a117-4958ae491b0e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

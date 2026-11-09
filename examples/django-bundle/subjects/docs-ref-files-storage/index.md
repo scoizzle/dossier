@@ -1,10 +1,10 @@
 # docs/ref/files/storage
 
-- Subject: docs/ref/files/storage (id `70259aa8-25d8-4694-af8f-cbe27a1e52aa`)
+- Subject: docs/ref/files/storage (id `afc1b6de-5a6d-4b29-a6c5-c6e6c6d937ff`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2992 tokens
-- Facts shown: 79 of 88
+- Used: 3327 tokens
+- Facts shown: 88 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,23 +16,26 @@
 - Deletes the file referenced by ``name``. If deletion is not supported on the target storage system this will raise ``NotImplementedError`` instead. [93aa4ea9]
 - Flag to control allowing saving a new file over an existing one. Defaults to ``False``. [41213a48]
 - If :setting:`USE_TZ` is ``True``, returns an aware ``datetime``, otherwise returns a naive ``datetime`` in the local timezone. [d79a0ce2d045b2c6]
+- If :setting:`USE_TZ` is ``True``, returns an aware ``datetime``, otherwise returns a naive ``datetime`` in the local timezone. [d79a0ce2d045b2c6-2]
+- If :setting:`USE_TZ` is ``True``, returns an aware ``datetime``, otherwise returns a naive ``datetime`` in the local timezone. [d79a0ce2d045b2c6-3]
 - If a file with ``name`` already exists, :meth:`get_alternative_name` is called to obtain an alternative name. [6ae2f5dc]
 - Lists the contents of the specified path, returning a 2-tuple of lists; the first item being directories, the second item being files. For storage systems that aren't able to provide such a listing, this will raise a ``NotImplementedError`` instead. [cbf8635a]
 - Opens the file given by ``name``. Note that although the returned file is guaranteed to be a ``File`` object, it might actually be some subclass. In the case of remote file storage this means that reading/writing could be quite slow, so be warned. [da67d749]
 - Returns ``True`` if a file referenced by the given name already exists in the storage system. [004e34c7]
 - Returns a :class:`~datetime.datetime` of the creation time of the file. For storage systems unable to return the creation time this will raise :exc:`NotImplementedError`. [c26455d0]
+- Returns a :class:`~datetime.datetime` of the last accessed time of the file. For storage systems unable to return the last accessed time this will raise :exc:`NotImplementedError`. [5f5ed023]
+- Returns a :class:`~datetime.datetime` of the last modified time of the file. For storage systems unable to return the last modified time this will raise :exc:`NotImplementedError`. [5fd5253e]
 - Returns a :class:`~datetime.datetime` of the system's ctime, i.e. :func:`os.path.getctime`. On some systems (like Unix), this is the time of the last metadata change, and on others (like Windows), it's the creation time of the file. [12ab6f90]
 - Returns a filename based on the ``name`` parameter that's free and available for new content to be written to on the target storage system. [e477dc61]
-- Returns a filename based on the ``name`` parameter that's suitable for use on the target storage system. [a7e2a61a]
-- Returns an alternative filename based on the ``file_root`` and ``file_ext`` parameters, an underscore plus a random 7 character alphanumeric string is appended to the filename before the extension. [79cd2a6d]
-- Returns the URL where the contents of the file referenced by ``name`` can be accessed. For storage systems that don't support access by URL this will raise ``NotImplementedError`` instead. [dc4799bd]
-- The ``FileSystemStorage.delete()`` method will not raise an exception if the given file name does not exist. [22a9dc4b]
-- .. note:: [942ae6c11625c81c-93]
 
 ## All facts
 
+- [a7e2a61a] Returns a filename based on the ``name`` parameter that's suitable for use on the target storage system.
+- [79cd2a6d] Returns an alternative filename based on the ``file_root`` and ``file_ext`` parameters, an underscore plus a random 7 character alphanumeric string is appended to the filename before the extension.
+- [dc4799bd] Returns the URL where the contents of the file referenced by ``name`` can be accessed. For storage systems that don't support access by URL this will raise ``NotImplementedError`` instead.
 - [1655a9a8] Returns the total size, in bytes, of the file referenced by ``name``. For storage systems that aren't able to return the file size this will raise ``NotImplementedError`` instead.
 - [965a7e34] Saves a new file using the storage system, preferably with the name specified. If there already exists a file with this name ``name``, the storage system may modify the filename as necessary to get a unique name. The actual name of the stored file will be returned.
+- [22a9dc4b] The ``FileSystemStorage.delete()`` method will not raise an exception if the given file name does not exist.
 - [c65d6726] The ``content`` argument must be an instance of :class:`django.core.files.File` or a file-like object that can be wrapped in ``File``.
 - [01064c2f] The ``filename`` argument may include a path as returned by :attr:`FileField.upload_to <django.db.models.FileField.upload_to>`. In that case, the path won't be passed to :attr:`get_valid_name` but will be prepended back to the resulting name.
 - [a6067ed4] The ``max_length`` argument is passed along to :meth:`get_available_name`.
@@ -40,15 +43,19 @@
 - [e65799e7] The file system permissions assigned to directories, provided for compatibility with ``FileSystemStorage``. Defaults to :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS`.
 - [0707ad73] The file system permissions assigned to files, provided for compatibility with ``FileSystemStorage``. Defaults to :setting:`FILE_UPLOAD_PERMISSIONS`.
 - [89649391] The file system permissions that the directory will receive when it is saved. Defaults to :setting:`FILE_UPLOAD_DIRECTORY_PERMISSIONS`.
+- [b1200bce] The file system permissions that the file will receive when it is saved. Defaults to :setting:`FILE_UPLOAD_PERMISSIONS`.
 - [0def82e8] The length of the filename will not exceed ``max_length``, if provided. If a free unique filename cannot be found, a :exc:`SuspiciousFileOperation <django.core.exceptions.SuspiciousOperation>` exception will be raised.
 - [9c0bf2ca] The local filesystem path where the file can be opened using Python's standard ``open()``. For storage systems that aren't accessible from the local filesystem, this will raise ``NotImplementedError`` instead.
 - [4ad3eef3148e184b] URL that serves the files stored at this location. Defaults to the value of your :setting:`MEDIA_URL` setting.
+- [4ad3eef3148e184b-2] URL that serves the files stored at this location. Defaults to the value of your :setting:`MEDIA_URL` setting.
 - [503b4e84] Validates the ``filename`` by calling :attr:`get_valid_name` and returns a filename to be passed to the :meth:`save` method.
 - [80540a40] .. attribute:: allow_overwrite
 - [6ea6ed78119e1f0b] .. attribute:: base_url
 - [6ea6ed78119e1f0b-2] .. attribute:: base_url
 - [7cc9f774c57cbf78] .. attribute:: directory_permissions_mode
+- [7cc9f774c57cbf78-2] .. attribute:: directory_permissions_mode
 - [58eb84c4517fcc57] .. attribute:: file_permissions_mode
+- [58eb84c4517fcc57-2] .. attribute:: file_permissions_mode
 - [e7aefde6f7263b24] .. attribute:: location
 - [e7aefde6f7263b24-2] .. attribute:: location
 - [eaf050be34acb41d-271] .. code-block:: pycon
@@ -59,6 +66,7 @@
 - [bd797ff1393b1f3b-2] .. method:: get_alternative_name(file_root, file_ext)
 - [11fedd4125163ab9-2] .. method:: get_available_name(name, max_length=None)
 - [5d770e3b662b3467] .. method:: get_created_time(name)
+- [5d770e3b662b3467-2] .. method:: get_created_time(name)
 - [b3818c5f] .. method:: get_modified_time(name)
 - [cd2ce08a59414809-2] .. method:: get_valid_name(name)
 - [908d2944] .. method:: listdir(path)
@@ -67,6 +75,7 @@
 - [2a8936ed] .. method:: save(name, content, max_length=None)
 - [548cc3ea] .. method:: size(name)
 - [14e20c01] .. method:: url(name)
+- [942ae6c11625c81c-93] .. note::
 - [a22ed217] .. note:: When methods return naive ``datetime`` objects, the effective timezone used will be the current value of ``os.environ['TZ']``; note that this is usually set from Django's :setting:`TIME_ZONE`.
 - [76abb848] :class:`~django.core.files.storage.DefaultStorage` provides lazy access to the default storage system as defined by ``default`` key in :setting:`STORAGES`. :class:`DefaultStorage` uses :data:`~django.core.files.storage.storages` internally.
 - [bc647458] :data:`~django.core.files.storage.default_storage` is an instance of the :class:`~django.core.files.storage.DefaultStorage`.

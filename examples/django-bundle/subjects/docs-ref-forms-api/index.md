@@ -1,10 +1,10 @@
 # docs/ref/forms/api
 
-- Subject: docs/ref/forms/api (id `33937100-455f-4bd5-b6f6-38504f4d8bee`)
+- Subject: docs/ref/forms/api (id `af357d08-768f-4f32-8569-5f22b5cebe10`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 19655 tokens
-- Facts shown: 476 of 495
+- Used: 20758 tokens
+- Facts shown: 495 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -55,6 +55,7 @@
 - [1a14e5ee] .. attribute:: template_name_ul
 - [f1634b861a77cfdb-3] .. code-block:: html
 - [685d15dfb6eb2285-74] .. code-block:: html+django
+- [685d15dfb6eb2285-75] .. code-block:: html+django
 - [eaf050be34acb41d-272] .. code-block:: pycon
 - [eaf050be34acb41d-273] .. code-block:: pycon
 - [eaf050be34acb41d-274] .. code-block:: pycon
@@ -71,6 +72,8 @@
 - [f9375210] :attr:`BoundField.initial` caches its return value, which is useful especially when dealing with callables whose return values can change (e.g. ``datetime.now`` or ``uuid.uuid4``):
 - [65ff8867] <div> <label for="id_subject">Subject:</label> <ul class="errorlist" id="id_subject_error"><li>This field is required.</li></ul> <input type="text" name="subject" maxlength="100" required aria-invalid="true" aria-describedby="id_subject_error" id="id_subject"> </div> <div> <label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message">Hi there</textarea> </div> <div> <label for="id_contact_email">Contact email:</label> <ul class="errorlist" id="id_contact_email_error"><li>Enter a valid email address.</li></ul> <input type="email" name="contact_email" value="invalid email address" maxlength="320" required aria-invalid="true" aria-describedby="id_contact_email_error" id="id_contact_email"> </div> <div> <label for="id_urgent">Urgent:</label> <input type="checkbox" name="urgent" id="id_urgent" checked> </div>
 - [9dfd83c9] <div> <label for="id_subject">Subject:</label> <input type="text" name="subject" maxlength="100" required id="id_subject"> </div> <div> <label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message"></textarea> </div> <div> <label for="id_contact_email">Contact email:</label> <input type="email" name="contact_email" required id="id_contact_email"> </div> <div> <label for="id_urgent">Urgent:</label> <input type="checkbox" name="urgent" id="id_urgent"> </div>
+- [5a5a8d21] <li><label for="id_subject">Subject:</label> <input type="text" name="subject" maxlength="100" required id="id_subject"></li> <li><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message"></textarea></li> <li><label for="id_contact_email">Contact email:</label> <input type="email" name="contact_email" maxlength="320" required id="id_contact_email"></li> <li><label for="id_urgent">Urgent:</label> <input type="checkbox" name="urgent" id="id_urgent"></li>
+- [2463e1cc] <p><label for="id_subject">Subject:</label> <input type="text" name="subject" maxlength="100" required id="id_subject"></p> <p><label for="id_message">Message:</label> <textarea name="message" cols="40" rows="10" required id="id_message"></textarea></p> <p><label for="id_contact_email">Contact email:</label> <input type="email" name="contact_email" maxlength="320" required id="id_contact_email"></p> <p><label for="id_urgent">Urgent:</label> <input type="checkbox" name="urgent" id="id_urgent"></p>
 - [26cecec5] <tr><th><label for="id_subject">Subject:</label></th><td><input type="text" name="subject" maxlength="100" required id="id_subject"></td></tr> <tr><th><label for="id_message">Message:</label></th><td><textarea name="message" cols="40" rows="10" required id="id_message"></textarea></td></tr> <tr><th><label for="id_contact_email">Contact email:</label></th><td><input type="email" name="contact_email" maxlength="320" required id="id_contact_email"></td></tr> <tr><th><label for="id_urgent">Urgent:</label></th><td><input type="checkbox" name="urgent" id="id_urgent"></td></tr>
 - [5121f7e7] >>> class ChildForm(ParentForm): ... name = None ...
 - [67a9ca4e] >>> class ContactFormWithDepartment(ContactForm): ... department = forms.CharField() ... >>> f = ContactFormWithDepartment(auto_id=False) >>> print(f) <div>Subject:<input type="text" name="subject" maxlength="100" required></div> <div>Message:<textarea name="message" cols="40" rows="10" required></textarea></div> <div>Contact email:<input type="email" name="contact_email" required></div> <div>Urgent:<input type="checkbox" name="urgent"></div> <div>Department:<input type="text" name="department" required></div>
@@ -78,8 +81,10 @@
 - [e0481ed3] >>> class PersonForm(forms.Form): ... ... ... prefix = "person" ...
 - [eebd861c] >>> data = { ... "subject": "", ... "message": "Hi there", ... "contact_email": "invalid email address", ... "urgent": True, ... } >>> ContactForm(data).as_div()
 - [ed82539a] >>> data = { ... "subject": "", ... "message": "Hi there", ... "contact_email": "invalid email address", ... "urgent": True, ... } >>> f = ContactForm(data) >>> f.is_valid() False
+- [3f1510a0] >>> data = { ... "subject": "", ... "message": "Hi there", ... "contact_email": "invalid email address", ... "urgent": True, ... } >>> f = ContactForm(data) >>> f.is_valid() False >>> f.cleaned_data {'message': 'Hi there', 'urgent': True}
 - [c2d6f5fb] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... "extra_field_1": "foo", ... "extra_field_2": "bar", ... "extra_field_3": "baz", ... } >>> f = ContactForm(data) >>> f.is_valid() True >>> f.cleaned_data # Doesn't contain extra_field_1, etc. {'subject': 'hello', 'message': 'Hi there', 'contact_email': 'foo@example.com', 'urgent': True}
 - [3b8b580a] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... } >>> f = ContactForm(data)
+- [3a25c610] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... } >>> f = ContactForm(data) >>> f.is_valid() True
 - [3c73f9b6] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... } >>> f = ContactForm(data) >>> f.is_valid() True >>> f.cleaned_data {'subject': 'hello', 'message': 'Hi there', 'contact_email': 'foo@example.com', 'urgent': True}
 - [947c5acc] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... } >>> f = ContactForm(data) >>> print(f) <div><label for="id_subject">Subject:</label><input type="text" name="subject" value="hello" maxlength="100" required id="id_subject"></div> <div><label for="id_message">Message:</label><textarea name="message" cols="40" rows="10" required id="id_message">Hi there</textarea></div> <div><label for="id_contact_email">Contact email:</label><input type="email" name="contact_email" value="foo@example.com" maxlength="320" required id="id_contact_email"></div> <div><label for="id_urgent">Urgent:</label><input type="checkbox" name="urgent" id="id_urgent" checked></div>
 - [30bfc911] >>> data = { ... "subject": "hello", ... "message": "Hi there", ... "contact_email": "foo@example.com", ... "urgent": True, ... } >>> f = ContactForm(data, initial=data) >>> f.has_changed() False
@@ -91,9 +96,11 @@
 - [6ab38009] >>> f = ContactForm() >>> f.is_bound False >>> f = ContactForm({"subject": "hello"}) >>> f.is_bound True
 - [d083335a] >>> f = ContactForm() >>> f.is_valid() False >>> f.errors {}
 - [4bae8dda] >>> f = ContactForm() >>> print(f) <div><label for="id_subject">Subject:</label><input type="text" name="subject" maxlength="100" required id="id_subject"></div> <div><label for="id_message">Message:</label><textarea name="message" cols="40" rows="10" required id="id_message"></textarea></div> <div><label for="id_contact_email">Contact email:</label><input type="email" name="contact_email" maxlength="320" required id="id_contact_email"></div> <div><label for="id_urgent">Urgent:</label><input type="checkbox" name="urgent" id="id_urgent"></div>
+- [5dad9605] >>> f = ContactForm(auto_id="id_for_%s") >>> print(f) <div><label for="id_for_subject">Subject:</label><input type="text" name="subject" maxlength="100" required id="id_for_subject"></div> <div><label for="id_for_message">Message:</label><textarea name="message" cols="40" rows="10" required id="id_for_message"></textarea></div> <div><label for="id_for_contact_email">Contact email:</label><input type="email" name="contact_email" required id="id_for_contact_email"></div> <div><label for="id_for_urgent">Urgent:</label><input type="checkbox" name="urgent" id="id_for_urgent"></div>
 - [a4d15b40] >>> f = ContactForm(auto_id="id_for_%s", label_suffix="") >>> print(f) <div><label for="id_for_subject">Subject</label><input type="text" name="subject" maxlength="100" required id="id_for_subject"></div> <div><label for="id_for_message">Message</label><textarea name="message" cols="40" rows="10" required id="id_for_message"></textarea></div> <div><label for="id_for_contact_email">Contact email</label><input type="email" name="contact_email" required id="id_for_contact_email"></div> <div><label for="id_for_urgent">Urgent</label><input type="checkbox" name="urgent" id="id_for_urgent"></div> >>> f = ContactForm(auto_id="id_for_%s", label_suffix=" ->") >>> print(f) <div><label for="id_for_subject">Subject -&gt;</label><input type="text" name="subject" maxlength="100" required id="id_for_subject"></div> <div><label for="id_for_message">Message -&gt;</label><textarea name="message" cols="40" rows="10" required id="id_for_message"></textarea></div> <div><label for="id_for_contact_email">Contact email -&gt;</label><input type="email" name="contact_email" required id="id_for_contact_email"></div> <div><label for="id_for_urgent">Urgent -&gt;</label><input type="checkbox" name="urgent" id="id_for_urgent"></div>
 - [d296444e] >>> f = ContactForm(auto_id=False) >>> print(f) <div>Subject:<input type="text" name="subject" maxlength="100" required></div> <div>Message:<textarea name="message" cols="40" rows="10" required></textarea></div> <div>Contact email:<input type="email" name="contact_email" required></div> <div>Urgent:<input type="checkbox" name="urgent"></div>
 - [795fd9b2] >>> f = ContactForm(auto_id=False) >>> print(f["message"]) <textarea name="message" cols="40" rows="10" required></textarea> >>> f = ContactForm(auto_id="id_%s") >>> print(f["message"]) <textarea name="message" cols="40" rows="10" required id="id_message"></textarea>
+- [035acc87] >>> f = ContactForm(auto_id=True) >>> print(f) <div><label for="subject">Subject:</label><input type="text" name="subject" maxlength="100" required id="subject"></div> <div><label for="message">Message:</label><textarea name="message" cols="40" rows="10" required id="message"></textarea></div> <div><label for="contact_email">Contact email:</label><input type="email" name="contact_email" required id="contact_email"></div> <div><label for="urgent">Urgent:</label><input type="checkbox" name="urgent" id="urgent"></div>
 - [e258d2eb] >>> f = ContactForm(data) >>> print(f) <div class="required"><label for="id_subject" class="required">Subject:</label> ... <div class="required"><label for="id_message" class="required">Message:</label> ... <div class="required"><label for="id_contact_email" class="required">Contact email:</label> ... <div><label for="id_urgent">Urgent:</label> ... >>> f["subject"].label_tag() <label class="required" for="id_subject">Subject:</label> >>> f["subject"].legend_tag() <legend class="required" for="id_subject">Subject:</legend> >>> f["subject"].label_tag(attrs={"class": "foo"}) <label for="id_subject" class="foo required">Subject:</label> >>> f["subject"].legend_tag(attrs={"class": "foo"}) <legend for="id_subject" class="foo required">Subject:</legend>
 - [86cce584] >>> f = ContactForm(initial={"subject": "Hi there!"})
 - [d8594567] >>> f = ContactForm(request.POST, initial=data) >>> f.changed_data ['subject', 'message']
@@ -124,6 +131,7 @@
 - [1adc5d25] FORM_RENDERER = "mysite.renderers.CustomRenderer"
 - [ac687efe] If you want to provide some additional classes in addition to the error and required classes that may be required, you can provide those classes as an argument:
 - [0b2fed4d] If you'd like to customize the rendering of errors this can be achieved by overriding the :attr:`.template_name` attribute or more generally by overriding the default template, see also :ref:`overriding-built-in-form-templates`.
+- [39aef827] If you'd like to customize the rendering this can be achieved by overriding the :attr:`.Form.template_name_label` attribute or more generally by overriding the default template, see also :ref:`overriding-built-in-form-templates`.
 - [04ad4fac] Of the framework provided templates and output styles, the default ``as_div()`` is recommended over the ``as_p()``, ``as_table()``, and ``as_ul()`` versions as the template implements ``<fieldset>`` and ``<legend>`` to group related inputs and is easier for screen reader users to navigate.
 - [8614c225] Renders a label tag for the form field using the template specified by :attr:`.Form.template_name_label`.
 - [c8a7c119] Renders the field by rendering the passed widget, adding any HTML attributes passed as ``attrs``. If no widget is specified, then the field's default widget will be used.
@@ -138,6 +146,7 @@
 - [c951108a] The :attr:`~django.forms.Field.label` of the field. This is used in :meth:`~BoundField.label_tag`/:meth:`~BoundField.legend_tag`.
 - [43976549] The :class:`~django.forms.Form` instance this :class:`~django.forms.BoundField` is bound to.
 - [26b87af6] The HTML ID attribute for this ``BoundField``. Returns an empty string if :attr:`Form.auto_id` is ``False``.
+- [62eab4f6001930ec-2] The available context is:
 - [00d36ab5] The form :class:`~django.forms.Field` instance from the form class that this :class:`~django.forms.BoundField` wraps.
 - [27fbc614] The name of the template rendered with :meth:`.BoundField.as_field_group`.
 - [d91cdd01] The name of this field in the form:
@@ -165,6 +174,8 @@
 - [3fc86952] class WrappedBoundField(BoundField): def css_classes(self, extra_classes=None): parent_css_classes = super().css_classes(extra_classes) return f"field-class {parent_css_classes}".strip()
 - [2db4bcbc] form = MyForm(renderer=MyRenderer())
 - [335151e1] from .forms import CustomBoundField
+- [9ee3a9405e27875c-3] from django import forms
+- [9ee3a9405e27875c-4] from django import forms
 - [b4360280] from django.forms.renderers import DjangoTemplates
 - [334501a2] {% if form.is_multipart %} <form enctype="multipart/form-data" method="post" action="/foo/"> {% else %} <form method="post" action="/foo/"> {% endif %} {{ form }} </form>
 - [f6464a31] >>> f = UserForm() >>> print(f) <div class="field-class"><label for="id_name">Name:</label><input type="text" name="name" required id="id_name"></div>
@@ -187,6 +198,7 @@
 - [ac8e3f36] * The output uses HTML5 syntax, targeting ``<!DOCTYPE html>``. For example, it uses boolean attributes such as ``checked`` rather than the XHTML style of ``checked='checked'``.
 - [dfa11905] * The text label for each field -- e.g. ``'Subject:'``, ``'Message:'`` and ``'Contact email:'`` is generated from the field name by converting all underscores to spaces and upper-casing the first letter. Again, note these are merely sensible defaults; you can also specify labels manually.
 - [7143423fb86e9d50] * ``form``: The bound form. * ``fields``: All bound fields, except the hidden fields. * ``hidden_fields``: All hidden bound fields. * ``errors``: All non field related or hidden field related form errors.
+- [23636948] * ``template_name``: :attr:`.Form.template_name` * ``context``: Value returned by :meth:`.Form.get_context` * ``renderer``: Value returned by :attr:`.Form.default_renderer`
 - [d8567659] .. _binding-uploaded-files:
 - [b6fc8b48] .. _custom-boundfield:
 - [d599a7ee] .. _form-error-display:
@@ -243,6 +255,7 @@
 - [f1634b861a77cfdb-7] .. code-block:: html
 - [f1634b861a77cfdb-8] .. code-block:: html
 - [f1634b861a77cfdb-9] .. code-block:: html
+- [685d15dfb6eb2285-76] .. code-block:: html+django
 - [eaf050be34acb41d-280] .. code-block:: pycon
 - [eaf050be34acb41d-281] .. code-block:: pycon
 - [eaf050be34acb41d-282] .. code-block:: pycon
@@ -300,6 +313,8 @@
 - [76fe14ed] .. method:: BoundField.css_classes(extra_classes=None)
 - [0182bc6d] .. method:: BoundField.get_context()
 - [e78faf27] .. method:: BoundField.label_tag(contents=None, attrs=None, label_suffix=None, tag=None)
+- [bc255d5b] .. method:: BoundField.legend_tag(contents=None, attrs=None, label_suffix=None)
+- [397ccae8] .. method:: BoundField.render(template_name=None, context=None, renderer=None)
 - [ded8f6e0] .. method:: BoundField.value()
 - [872d0c8f] .. method:: Form.add_error(field, error)
 - [913254d0] .. method:: Form.as_div()
@@ -318,6 +333,7 @@
 - [bd93b872] .. method:: Form.is_valid()
 - [fefb1ec1] .. method:: Form.non_field_errors()
 - [1f85f1a9] .. method:: Form.order_fields(field_order)
+- [dd3f9272] .. method:: Form.render(template_name=None, context=None, renderer=None)
 - [ac636788] .. module:: django.forms
 - [942ae6c11625c81c-95] .. note::
 - [e187e57562f15bbc] ... gives HTML like:
@@ -344,6 +360,7 @@
 - [b3b95cb9] By default, ``auto_id`` is set to the string ``'id_%s'``.
 - [31577169] By default, a property returning the value of the renderer's :attr:`~django.forms.renderers.BaseRenderer.form_template_name`. You may set it as a string template name in order to override that for a particular form class.
 - [db477814] By default, the form rendering methods include:
+- [46dd444fffaf2950-2] By passing ``template_name`` you can customize the template used for just a single call.
 - [122e2e54] Checking which form data has changed ====================================
 - [9edc5534] Configuring form elements' HTML ``id`` attributes and ``<label>`` tags ----------------------------------------------------------------------
 - [7020fc62] Configuring the rendering of a form's widgets ---------------------------------------------
@@ -412,6 +429,7 @@
 - [9ee8f8a7] Returns the errors as a dictionary suitable for serializing to JSON. :meth:`Form.errors.as_json` returns serialized JSON, while this returns the error data before it's serialized.
 - [2aacabb5] Returns the initial data for a form field. It retrieves the data from :attr:`Form.initial` if present, otherwise trying :attr:`Field.initial`. Callable values are evaluated.
 - [8b7506a2] Secondly, when you use the form, you need to bind the file data. File data is handled separately to normal form data, so when your form contains a ``FileField`` and ``ImageField``, you will need to specify a second argument when you bind your form. So if we extend our ContactForm to include an ``ImageField`` called ``mugshot``, we need to bind the file data containing the mugshot image:
+- [f522a293] Specifies the :doc:`renderer </ref/forms/renderers>` to use for the form. Defaults to ``None`` which means to use the default renderer specified by the :setting:`FORM_RENDERER` setting.
 - [38efdd49] Styling required or erroneous form rows ---------------------------------------
 - [edd9c1fe] Subclassing forms =================
 - [e9fd6d5e] Testing for multipart forms ---------------------------
@@ -422,6 +440,7 @@
 - [3646d3dc] The ``escape_html`` parameter behaves as described in :meth:`Form.errors.as_json`.
 - [28c81b10] The ``field`` argument is the name of the field to which the errors should be added. If its value is ``None`` the error will be treated as a non-field error as returned by :meth:`Form.non_field_errors() <django.forms.Form.non_field_errors>`.
 - [159aa63b] The ``id`` attribute values are generated by prepending ``id_`` to the form field names. This behavior is configurable, though, if you want to change the ``id`` convention or remove HTML ``id`` attributes and ``<label>`` tags entirely.
+- [62eab4f6001930ec-3] The available context is:
 - [2059970b] The default rendering when you ``print`` a form uses the following methods and attributes.
 - [85917732] The field-specific output honors the form object's ``auto_id`` setting:
 - [4a4ec78e] The following helper functions are provided for backward compatibility and are a proxy to :meth:`Form.render` passing a particular ``template_name`` value.

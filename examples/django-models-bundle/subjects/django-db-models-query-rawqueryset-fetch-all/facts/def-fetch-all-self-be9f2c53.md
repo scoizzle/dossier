@@ -1,6 +1,6 @@
 # Fact be9f2c53
 
-Store id: 16f0cbd5-3d34-4530-b725-905df0febb35
+Store id: 748abf23-72e7-4eba-a4c5-ba674af218d2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _fetch_all(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7292150+00:00`
+- posted_at: `2026-11-09T23:44:56.2321370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2485,
     "symbol": "RawQuerySet._fetch_all"
   },
-  "id": "16f0cbd5-3d34-4530-b725-905df0febb35",
+  "id": "748abf23-72e7-4eba-a4c5-ba674af218d2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7292150+00:00"
+    "posted_at": "2026-11-09T23:44:56.2321370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "36d8ce62-8eeb-4fd3-a851-70b808eeda1e",
+  "subject_id": "82e05b0c-2f4f-473f-ae67-56874c7bce7e",
   "subject_name": "django/db/models/query::RawQuerySet._fetch_all",
   "tags": [
     "entity:method"

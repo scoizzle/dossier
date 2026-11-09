@@ -1,11 +1,11 @@
 # django/db/models/sql/where::WhereNode.relabeled_clone
 
-- Subject: django/db/models/sql/where::WhereNode.relabeled_clone (id `afdeccc8-6f04-4e25-988c-31922b4afa99`)
+- Subject: django/db/models/sql/where::WhereNode.relabeled_clone (id `5e830a83-d4b1-417c-ab1c-f833b14e3261`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

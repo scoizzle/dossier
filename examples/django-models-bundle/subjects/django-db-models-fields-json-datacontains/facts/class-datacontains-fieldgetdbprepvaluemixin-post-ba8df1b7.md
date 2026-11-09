@@ -1,6 +1,6 @@
 # Fact ba8df1b7
 
-Store id: 8eacc2f4-fea9-4bad-889e-63e9fc4b6796
+Store id: 8648ebd4-7d32-4738-b3ee-3d07c7be3f79
 
 ## Text
 
@@ -20,7 +20,7 @@ class DataContains(FieldGetDbPrepValueMixin, PostgresOperatorLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8655340+00:00`
+- posted_at: `2026-11-09T23:44:50.9532410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 153,
     "symbol": "DataContains"
   },
-  "id": "8eacc2f4-fea9-4bad-889e-63e9fc4b6796",
+  "id": "8648ebd4-7d32-4738-b3ee-3d07c7be3f79",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8655340+00:00"
+    "posted_at": "2026-11-09T23:44:50.9532410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7b0bc489-c840-45fa-8cb0-3cac4764a7b7",
+  "subject_id": "36ebada6-dfc3-4dff-bd3e-20ce32a0b29e",
   "subject_name": "django/db/models/fields/json::DataContains",
   "tags": [
     "entity:class"

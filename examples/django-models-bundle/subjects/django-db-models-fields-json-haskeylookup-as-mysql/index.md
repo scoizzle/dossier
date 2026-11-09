@@ -1,11 +1,11 @@
 # django/db/models/fields/json::HasKeyLookup.as_mysql
 
-- Subject: django/db/models/fields/json::HasKeyLookup.as_mysql (id `d0c40a73-56f8-432c-aa14-f78fdbb250a9`)
+- Subject: django/db/models/fields/json::HasKeyLookup.as_mysql (id `fec8e700-b4e5-4f39-b320-524edab4c180`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/template/loader_tags
 
-- Subject: django/template/loader_tags (id `214adfba-e203-47ea-9686-d4377aeb6d53`)
+- Subject: django/template/loader_tags (id `0b8ec48b-b1cb-4f9b-91db-5c33c5008cb5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3146 tokens
-- Facts shown: 42 of 42
+- Facts shown: 42 facts
 - Conflicts: 0
 - Gaps: 0
 

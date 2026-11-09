@@ -1,11 +1,11 @@
 # django/db/models/base::Model._do_insert
 
-- Subject: django/db/models/base::Model._do_insert (id `54c78652-eda2-412d-8352-0feedb85eb84`)
+- Subject: django/db/models/base::Model._do_insert (id `704acb14-f2b6-40e9-8dc9-6ab86ac86280`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

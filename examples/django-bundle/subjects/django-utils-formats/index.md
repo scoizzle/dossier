@@ -1,10 +1,10 @@
 # django/utils/formats
 
-- Subject: django/utils/formats (id `c6d15ebf-8bb7-4c82-a031-cad80e735f83`)
+- Subject: django/utils/formats (id `43bffc9b-e0d0-4b45-9e5d-d62d62773def`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2494 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

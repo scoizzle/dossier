@@ -1,10 +1,10 @@
 # django/forms/models
 
-- Subject: django/forms/models (id `3ffe4ad0-b659-4e85-9766-c2d156096edc`)
+- Subject: django/forms/models (id `26586b11-3dc6-4718-9651-84d25a928408`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 13377 tokens
-- Facts shown: 167 of 177
+- Used: 13742 tokens
+- Facts shown: 177 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -65,19 +65,27 @@
 - [bcc938e6] @classmethod def get_default_prefix(cls): return cls.fk.remote_field.get_accessor_name(model=cls.model).replace("+", "")
 - [53c9e0e5] ``apply_limit_choices_to`` is a boolean indicating if limit_choices_to should be applied to a field's queryset.
 - [a3330731b82638b1] ``error_messages`` is a dictionary of model field names mapped to a dictionary of error messages.
+- [a3330731b82638b1-2] ``error_messages`` is a dictionary of model field names mapped to a dictionary of error messages.
 - [8886f3a4960c3ab6] ``exclude`` is an optional list of field names. If provided, exclude the named fields from the returned fields, even if they are listed in the ``fields`` argument.
+- [8886f3a4960c3ab6-2] ``exclude`` is an optional list of field names. If provided, exclude the named fields from the returned fields, even if they are listed in the ``fields`` argument.
 - [e1324f50] ``exclude`` is an optional list of field names. If provided, exclude the named from the returned dict, even if they are listed in the ``fields`` argument. """ opts = instance._meta data = {} for f in chain(opts.concrete_fields, opts.private_fields, opts.many_to_many): if not getattr(f, "editable", False): continue if fields is not None and f.name not in fields: continue if exclude and f.name in exclude: continue data[f.name] = f.value_from_object(instance) return data
 - [16a6392c] ``field_classes`` is a dictionary of model field names mapped to a form field class.
 - [11c75ecf] ``field_classes`` is a dictionary of model field names mapped to a form field class. """ # Create the inner Meta class. FIXME: ideally, we should be able to # construct a ModelForm without creating and passing in a temporary # inner class.
 - [c412c4d6] ``fields`` is an optional list of field names. If provided, include only the named fields in the returned fields. If omitted or '__all__', use all fields.
 - [198143a4] ``fields`` is an optional list of field names. If provided, return only the named fields.
+- [988f88eb] ``fields`` is an optional list of field names. If provided, return only the named.
 - [58e23c9b] ``fk_name`` must be provided if ``model`` has more than one ``ForeignKey`` to ``parent_model``. """ fk = _get_foreign_key(parent_model, model, fk_name=fk_name) # enforce a max_num=1 when the foreign key to the parent model is unique. if fk.unique: max_num = 1 kwargs = { "form": form, "formfield_callback": formfield_callback, "formset": formset, "extra": extra, "can_delete": can_delete, "can_order": can_order, "fields": fields, "exclude": exclude, "min_num": min_num, "max_num": max_num, "widgets": widgets, "validate_min": validate_min, "validate_max": validate_max, "localized_fields": localized_fields, "labels": labels, "help_texts": help_texts, "error_messages": error_messages, "field_classes": field_classes, "absolute_max": absolute_max, "can_delete_extra": can_delete_extra, "renderer": renderer, "edit_only": edit_only, } FormSet = modelformset_factory(model, **kwargs) FormSet.fk = fk return FormSet
 - [b73f66a0] ``form_declared_fields`` is a dictionary of form fields created directly on a form. """ form_declared_fields = form_declared_fields or {} field_dict = {} ignored = [] opts = model._meta # Avoid circular import from django.db.models import Field as ModelField
 - [b9d4b5c1a9c7a8f3] ``formfield_callback`` is a callable that takes a model field and returns a form field.
+- [b9d4b5c1a9c7a8f3-2] ``formfield_callback`` is a callable that takes a model field and returns a form field.
 - [184d62219b3cb639] ``help_texts`` is a dictionary of model field names mapped to a help text.
+- [184d62219b3cb639-2] ``help_texts`` is a dictionary of model field names mapped to a help text.
 - [89c474e36f3a7f9c] ``labels`` is a dictionary of model field names mapped to a label.
+- [89c474e36f3a7f9c-2] ``labels`` is a dictionary of model field names mapped to a label.
 - [d85f59833eee5b7f] ``localized_fields`` is a list of names of fields which should be localized.
+- [d85f59833eee5b7f-2] ``localized_fields`` is a list of names of fields which should be localized.
 - [1fb45f431c81f469] ``widgets`` is a dictionary of model field names mapped to a widget.
+- [1fb45f431c81f469-2] ``widgets`` is a dictionary of model field names mapped to a widget.
 - [cd7e955f] choices = property(_get_choices, ChoiceField.choices.fset)
 - [05ce5582] cleaned_data = form.cleaned_data file_field_list = [] for f in opts.fields: if ( not f.editable or isinstance(f, models.AutoField) or f.name not in cleaned_data ): continue if fields is not None and f.name not in fields: continue if exclude and f.name in exclude: continue # Leave defaults for fields that aren't in POST data, except for # checkbox inputs because they don't appear in POST data if not # checked. if ( f.has_default() and form[f.name].field.widget.value_omitted_from_data( form.data, form.files, form.add_prefix(f.name) ) and cleaned_data.get(f.name) in form[f.name].field.empty_values ): continue # Defer saving file-type fields until after the other fields, so a # callable upload_to can use the values from other fields. if isinstance(f, models.FileField): file_field_list.append(f) else: f.save_form_data(instance, cleaned_data[f.name])
 - [29bafc0c] def __bool__(self): return self.field.empty_label is not None or self.queryset.exists()
@@ -137,6 +145,7 @@
 - [3f1badf5] def validate(self, value): return Field.validate(self, value)
 - [99d38273] def validate_constraints(self): """ Call the instance's validate_constraints() method and update the form's validation errors if any were raised. """ exclude = self._get_validation_exclusions() try: self.instance.validate_constraints(exclude=exclude) except ValidationError as e: self._update_errors(e)
 - [fa59d7ba] def validate_no_null_characters(self, value): non_null_character_validator = ProhibitNullCharactersValidator() return non_null_character_validator(value)
+- [a8cac36b] def validate_unique(self): """ Call the instance's validate_unique() method and update the form's validation errors if any were raised. """ exclude = self._get_validation_exclusions() try: self.instance.validate_unique(exclude=exclude) except ValidationError as e: self._update_errors(e)
 - [f29c0361] def validate_unique(self): # Collect unique_checks and date_checks to run from all the forms. all_unique_checks = set() all_date_checks = set() forms_to_delete = self.deleted_forms valid_forms = [ form for form in self.forms if form.is_valid() and form not in forms_to_delete ] for form in valid_forms: exclude = form._get_validation_exclusions() unique_checks, date_checks = form.instance._get_unique_checks( exclude=exclude, include_meta_constraints=True, ) all_unique_checks.update(unique_checks) all_date_checks.update(date_checks)
 - [9e9a93b1] for f in file_field_list: f.save_form_data(instance, cleaned_data[f.name])
 - [ac139bec] form = modelform_factory( model, form=form, fields=fields, exclude=exclude, formfield_callback=formfield_callback, widgets=widgets, localized_fields=localized_fields, labels=labels, help_texts=help_texts, error_messages=error_messages, field_classes=field_classes, ) FormSet = formset_factory( form, formset, extra=extra, min_num=min_num, max_num=max_num, can_order=can_order, can_delete=can_delete, validate_min=validate_min, validate_max=validate_max, absolute_max=absolute_max, can_delete_extra=can_delete_extra, renderer=renderer, ) FormSet.model = model FormSet.edit_only = edit_only return FormSet
@@ -148,6 +157,7 @@
 - [7dc5dfbf] queryset = property(_get_queryset, _set_queryset)
 - [62dd43db] return instance
 - [f5d522f57fd5e2a5-3] save.alters_data = True
+- [f5d522f57fd5e2a5-4] save.alters_data = True
 - [bab7a55e] sortable_private_fields = [ f for f in opts.private_fields if isinstance(f, ModelField) ] for f in sorted( chain(opts.concrete_fields, sortable_private_fields, opts.many_to_many) ): if not getattr(f, "editable", False): if ( fields is not None and f.name in fields and (exclude is None or f.name not in exclude) ): raise FieldError( "'%s' cannot be specified for %s model form as it is a " "non-editable field" % (f.name, model.__name__) ) continue if fields is not None and f.name not in fields: continue if exclude and f.name in exclude: continue if f.name in form_declared_fields: field_dict[f.name] = form_declared_fields[f.name] continue
 - [76e92725] widget = HiddenInput default_error_messages = { "invalid_choice": _("The inline value did not match the parent instance."), }
 - [9ebeca52] widget = SelectMultiple hidden_widget = MultipleHiddenInput default_error_messages = { "invalid_list": _("Enter a list of values."), "invalid_choice": _( "Select a valid choice. %(value)s is not one of the available choices." ), "invalid_pk_value": _("“%(pk)s” is not a valid value."), }

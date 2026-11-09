@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField._check_table_uniqueness
 
-- Subject: django/db/models/fields/related::ManyToManyField._check_table_uniqueness (id `b91c9a44-d07e-4adf-8b54-db2a85ec4b43`)
+- Subject: django/db/models/fields/related::ManyToManyField._check_table_uniqueness (id `31547fbc-bfa7-4bc8-9614-3aea7e8f8979`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

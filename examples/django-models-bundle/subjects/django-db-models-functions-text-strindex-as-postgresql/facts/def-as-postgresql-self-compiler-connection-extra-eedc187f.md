@@ -1,6 +1,6 @@
 # Fact eedc187f
 
-Store id: 69c24d4c-497b-43bb-b1b4-ab3d085bfce8
+Store id: 86e28555-c558-4e7b-92a0-7f44d5ed3b2e
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3030280+00:00`
+- posted_at: `2026-11-09T23:44:54.1605220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 341,
     "symbol": "StrIndex.as_postgresql"
   },
-  "id": "69c24d4c-497b-43bb-b1b4-ab3d085bfce8",
+  "id": "86e28555-c558-4e7b-92a0-7f44d5ed3b2e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3030280+00:00"
+    "posted_at": "2026-11-09T23:44:54.1605220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0198c6ba-6420-409a-b82f-7d930b99f9fd",
+  "subject_id": "714e0b76-1357-417e-8624-f7b4f71fd692",
   "subject_name": "django/db/models/functions/text::StrIndex.as_postgresql",
   "tags": [
     "entity:method"

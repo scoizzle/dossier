@@ -1,6 +1,6 @@
 # Fact 35714548
 
-Store id: 51ddb22a-40c0-495a-bb79-6cdf3aa1bb51
+Store id: 32d0c6a8-6e12-41e2-a295-fcdf7288f0ff
 
 ## Text
 
@@ -20,7 +20,7 @@ class NthValue(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7169230+00:00`
+- posted_at: `2026-11-09T23:44:54.4913090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "NthValue"
   },
-  "id": "51ddb22a-40c0-495a-bb79-6cdf3aa1bb51",
+  "id": "32d0c6a8-6e12-41e2-a295-fcdf7288f0ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7169230+00:00"
+    "posted_at": "2026-11-09T23:44:54.4913090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cb4be3b7-b45d-42ef-a56d-9c3cbfbec561",
+  "subject_id": "a70a0f59-5c39-41d1-a823-93028083ca76",
   "subject_name": "django/db/models/functions/window::NthValue",
   "tags": [
     "entity:class"

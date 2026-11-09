@@ -1,11 +1,11 @@
 # django/db/models/query::Prefetch.__getstate__
 
-- Subject: django/db/models/query::Prefetch.__getstate__ (id `5fee1caa-0499-420a-ba52-99d41518de87`)
+- Subject: django/db/models/query::Prefetch.__getstate__ (id `47b096dd-778d-451a-bd82-392f63b5c248`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

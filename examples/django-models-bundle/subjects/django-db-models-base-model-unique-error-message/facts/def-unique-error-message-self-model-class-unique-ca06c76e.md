@@ -1,6 +1,6 @@
 # Fact ca06c76e
 
-Store id: 770129fd-bcd8-494c-af14-1256fbfe83d0
+Store id: 2fbc17f5-6a16-431a-956f-540cba2ade96
 
 ## Text
 
@@ -20,7 +20,7 @@ def unique_error_message(self, model_class, unique_check)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7573710+00:00`
+- posted_at: `2026-11-09T23:44:48.5433910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1641,
     "symbol": "Model.unique_error_message"
   },
-  "id": "770129fd-bcd8-494c-af14-1256fbfe83d0",
+  "id": "2fbc17f5-6a16-431a-956f-540cba2ade96",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7573710+00:00"
+    "posted_at": "2026-11-09T23:44:48.5433910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f6113cf1-7f47-4dfa-9723-25de8cd9a86e",
+  "subject_id": "883c0969-20c4-439f-b6bd-26c1ce13aa0a",
   "subject_name": "django/db/models/base::Model.unique_error_message",
   "tags": [
     "entity:method"

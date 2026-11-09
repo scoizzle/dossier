@@ -1,6 +1,6 @@
 # Fact ad275f46
 
-Store id: 26f8acf8-9326-40e3-b7fa-cb9ab1a1b49a
+Store id: a1752493-70eb-45fe-969d-ec7c60a3154b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _setup_joins(self, pieces, opts, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7839510+00:00`
+- posted_at: `2026-11-09T23:44:57.5339860+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1144,
     "symbol": "SQLCompiler._setup_joins"
   },
-  "id": "26f8acf8-9326-40e3-b7fa-cb9ab1a1b49a",
+  "id": "a1752493-70eb-45fe-969d-ec7c60a3154b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7839510+00:00"
+    "posted_at": "2026-11-09T23:44:57.5339860+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "19f7ce0c-5395-433f-9c79-8c8ad2523674",
+  "subject_id": "f07a130f-b7e4-4a6c-a3ab-6b653f6d4d04",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler._setup_joins",
   "tags": [
     "entity:method"

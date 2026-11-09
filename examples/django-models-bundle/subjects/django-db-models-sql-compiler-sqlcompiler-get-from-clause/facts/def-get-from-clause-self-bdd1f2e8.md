@@ -1,6 +1,6 @@
 # Fact bdd1f2e8
 
-Store id: 8b26a31d-80d6-47ce-8f17-84455f0fc0eb
+Store id: a99ce351-471b-4b63-92c6-5c16de332fbf
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_from_clause(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7923290+00:00`
+- posted_at: `2026-11-09T23:44:57.5396370+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1159,
     "symbol": "SQLCompiler.get_from_clause"
   },
-  "id": "8b26a31d-80d6-47ce-8f17-84455f0fc0eb",
+  "id": "a99ce351-471b-4b63-92c6-5c16de332fbf",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7923290+00:00"
+    "posted_at": "2026-11-09T23:44:57.5396370+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "71c4ac1e-e78e-4b1c-8629-e3fff5536d50",
+  "subject_id": "f59cc17d-404f-4055-8f2a-45d9ece9a150",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_from_clause",
   "tags": [
     "entity:method"

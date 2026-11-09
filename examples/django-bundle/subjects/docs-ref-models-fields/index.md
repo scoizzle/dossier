@@ -1,10 +1,10 @@
 # docs/ref/models/fields
 
-- Subject: docs/ref/models/fields (id `a20ad5e8-e75b-4a23-ae91-60ec0111370e`)
+- Subject: docs/ref/models/fields (id `283c6095-c27f-4e6a-9dc1-dc43cd5b6506`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 31192 tokens
-- Facts shown: 748 of 789
+- Used: 32702 tokens
+- Facts shown: 789 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -25,11 +25,12 @@
 - A verbose description of the field, e.g. for the :mod:`django.contrib.admindocs` application. [e607397b]
 - By default, if both ``form_class`` and ``choices_form_class`` are ``None``, it uses :class:`~django.forms.CharField`. If the field has :attr:`~django.db.models.Field.choices` and ``choices_form_class`` isn't specified, it uses :class:`~django.forms.TypedChoiceField`. [0ecaabfc]
 - Collation names are not standardized. As such, this will not be portable across multiple database backends. [794bb4c1e4ac5a84]
-- Converts ``obj`` to a string. Used to serialize the value of the field. [2fe524f3]
-- Model.m2mfield.through.objects.all() [6e296dbd]
+- Collation names are not standardized. As such, this will not be portable across multiple database backends. [794bb4c1e4ac5a84-2]
+- .. note:: [942ae6c11625c81c-105]
 
 ## All facts
 
+- [2fe524f3] Converts ``obj`` to a string. Used to serialize the value of the field.
 - [ff6106f1] Converts ``value`` to a backend-specific value. By default it returns ``value`` if ``prepared=True``, and :meth:`get_prep_value(value) <Field.get_prep_value>` otherwise.
 - [d83b2275] Converts a value as returned by the database to a Python object. It is the reverse of :meth:`get_prep_value`.
 - [09d0b3d9] Converts the value into the correct Python object. It acts as the reverse of :meth:`value_to_string`, and is also called in :meth:`~django.db.models.Model.clean`.
@@ -39,6 +40,7 @@
 - [8a48faf8] If you are writing an application that must be portable to multiple database backends, you should be aware that there are restrictions on ``max_length`` for some backends. Refer to the :doc:`database backend notes </ref/databases>` for details.
 - [af8bfc0d] It should return the value of the appropriate attribute from ``model_instance`` for this field. The attribute name is in ``self.attname`` (this is set up by :class:`~django.db.models.Field`).
 - [800c1980] Method called prior to :meth:`get_db_prep_save` to prepare the value before being saved (e.g. for :attr:`DateField.auto_now`).
+- [6e296dbd] Model.m2mfield.through.objects.all()
 - [1f52f850] Oracle does not support collations for a ``TextField``.
 - [527486bd] Oracle supports collations only when the ``MAX_STRING_SIZE`` database initialization parameter is set to ``EXTENDED``.
 - [fadf4c07] Recursive relationships using an intermediary model can't determine the reverse accessors names, as they would be the same. You need to set a :attr:`~ForeignKey.related_name` to at least one of them. If you'd prefer Django not to create a backwards relation, set ``related_name`` to ``'+'``.
@@ -52,7 +54,10 @@
 - [45a1f285] See :ref:`converting-model-field-to-serialization` for usage.
 - [5c5d141a] See :ref:`converting-python-objects-to-query-values` for usage.
 - [4eb3725e] See :ref:`converting-query-values-to-database-values` for usage.
+- [e9877168001a5f22] See :ref:`converting-values-to-python-objects` for usage.
+- [e9877168001a5f22-2] See :ref:`converting-values-to-python-objects` for usage.
 - [64f09fca68aa8ad8] See :ref:`custom-database-types` for usage in custom fields.
+- [64f09fca68aa8ad8-2] See :ref:`custom-database-types` for usage in custom fields.
 - [2473b495] See :ref:`emulating-built-in-field-types` for usage in custom fields.
 - [31ab61a6] See :ref:`preprocessing-values-before-saving` for usage.
 - [48e38fb6] See :ref:`specifying-form-field-for-model-field` for usage.
@@ -82,9 +87,12 @@
 - [15e72ca3] def get_sentinel_user(): return get_user_model().objects.get_or_create(username="deleted")[0]
 - [04260323] def images_path(): return os.path.join(settings.LOCAL_FILE_DIR, "images")
 - [6efb6177] def is_upperclass(self): return self.year_in_school in { self.YearInSchool.JUNIOR, self.YearInSchool.SENIOR, }
+- [f25acc8c] def is_upperclass(self): return self.year_in_school in {self.JUNIOR, self.SENIOR}
 - [080f8812] def limit_pub_date_choices(): return {"pub_date__lte": datetime.date.today()}
 - [4aca0a21] def user_directory_path(instance, filename): # file will be uploaded to MEDIA_ROOT/user_<id>/<filename> return "user_{0}/{1}".format(instance.user.id, filename)
 - [d1b8a3c4] from django.conf import settings from django.contrib.auth import get_user_model from django.db import models
+- [4af926756c29efa6-19] from django.db import models
+- [4af926756c29efa6-20] from django.db import models
 - [713e1735] from django.db.models import DateField, ExpressionWrapper, F
 - [a540086c] import datetime from django.db.models import DateField, F from django.db.models.functions import Cast
 - [2e60e709] import os from django.conf import settings from django.db import models
@@ -101,6 +109,7 @@
 - [65558699] # Open an existing file using Python's built-in open() f = open("/path/to/hello.world") myfile = File(f)
 - [b407d1f5] * For :class:`DateField`: ``default=date.today`` - from :meth:`datetime.date.today` * For :class:`DateTimeField`: ``default=timezone.now`` - from :func:`django.utils.timezone.now`
 - [3f360c85009cf126] * You have legacy data that is not valid. * You're sharding your database.
+- [3f360c85009cf126-2] * You have legacy data that is not valid. * You're sharding your database.
 - [8669ff8f] * ``id``: the primary key of the relation. * ``<containing_model>_id``: the ``id`` of the model that declares the ``ManyToManyField``. * ``<other_model>_id``: the ``id`` of the model that the ``ManyToManyField`` points to.
 - [b65be6c9] * ``id``: the primary key of the relation. * ``from_<model>_id``: the ``id`` of the instance which points at the model (i.e. the source instance). * ``to_<model>_id``: the ``id`` of the instance to which the relationship points (i.e. the target model instance).
 - [0d128d8f] * when it queries the database (Python value -> database backend value) * when it loads data from the database (database backend value -> Python value) * when it saves to the database (Python value -> database backend value)
@@ -123,7 +132,6 @@
 - [ef432dcc] .. method:: to_python(value)
 - [336ae9b4] .. method:: value_from_object(obj)
 - [3acf5065] .. method:: value_to_string(obj)
-- [942ae6c11625c81c-105] .. note::
 - [942ae6c11625c81c-106] .. note::
 - [942ae6c11625c81c-107] .. note::
 - [942ae6c11625c81c-108] .. note::
@@ -157,11 +165,14 @@
 - [c523eb89] Boolean flag that is ``True`` if the field has a many-to-many relation; ``False`` otherwise. The only field included with Django where this is ``True`` is ``ManyToManyField``.
 - [b88c201e] Boolean flag that is ``True`` if the field has a many-to-one relation, such as a ``ForeignKey``; ``False`` otherwise.
 - [9557fa55] Boolean flag that is ``True`` if the field has a one-to-many relation, such as a ``GenericRelation`` or the reverse of a ``ForeignKey``; ``False`` otherwise.
+- [001e5d16] Boolean flag that is ``True`` if the field has a one-to-one relation, such as a ``OneToOneField``; ``False`` otherwise.
 - [c01b3f13] Cascade deletes. Database-level version of :attr:`CASCADE`: the database deletes referred-to rows and the one containing the ``ForeignKey``.
 - [34527a68] Cascade deletes. Django emulates the behavior of the SQL constraint ``ON DELETE CASCADE`` and also deletes the object containing the :class:`ForeignKey`.
 - [821c5f44] Consider this set of models::
 - [08353b93] Controls the migration framework's reaction if this :class:`ManyToManyField` is pointing at a swappable model. If it is ``True`` - the default - then if the :class:`ManyToManyField` is pointing at a model which matches the current value of ``settings.AUTH_USER_MODEL`` (or another swappable model setting) the relationship will be stored in the migration using a reference to the setting, not to the model directly.
+- [734d4030] Controls the migration framework's reaction if this :class:`ForeignKey` is pointing at a swappable model. If it is ``True`` - the default - then if the :class:`ForeignKey` is pointing at a model which matches the current value of ``settings.AUTH_USER_MODEL`` (or another swappable model setting) the relationship will be stored in the migration using a reference to the setting, not to the model directly.
 - [7712ec14] Controls whether or not a constraint should be created in the database for this foreign key. The default is ``True``, and that's almost certainly what you want; setting this to ``False`` can be very bad for data integrity. That said, here are some scenarios where you might want to do this:
+- [7cb90523] Controls whether or not constraints should be created in the database for the foreign keys in the intermediary table. The default is ``True``, and that's almost certainly what you want; setting this to ``False`` can be very bad for data integrity. That said, here are some scenarios where you might want to do this:
 - [f730a89c584b4917-2] Defaults to ``json.JSONDecoder``.
 - [d16ad057fd9e3b88-2] Defaults to ``json.JSONEncoder``.
 - [a4a955bd] Determines if the database column should occupy storage as if it were a real column. If ``False``, the column acts as a virtual column and does not occupy database storage space.
@@ -176,6 +187,7 @@
 - [8a94fb95] If ``True``, the field accepts Unicode letters in addition to ASCII letters. Defaults to ``False``.
 - [e27a9671] If ``limit_choices_to`` is or returns a :class:`Q object <django.db.models.Q>`, which is useful for :ref:`complex queries <complex-lookups-with-q>`, then it will only have an effect on the choices available in the admin when the field is not listed in :attr:`~django.contrib.admin.ModelAdmin.raw_id_fields` in the ``ModelAdmin`` for the model.
 - [e280251fcc01e8ab] If in doubt, leave it to its default of ``True``.
+- [e280251fcc01e8ab-2] If in doubt, leave it to its default of ``True``.
 - [562ff25f] If the ``ManyToManyField`` points from and to the same model, the following fields are generated:
 - [501642f4] If the source and target models differ, the following fields are generated:
 - [0729880d] If this is set to ``False``, accessing a related object that doesn't exist will raise its ``DoesNotExist`` exception.
@@ -193,14 +205,18 @@
 - [d3e8db14] Like :attr:`related_name`, ``related_query_name`` supports app label and class interpolation via :ref:`some special syntax <abstract-related-name>`.
 - [0230f505] Limits valid inputs to the specified protocol. Accepted values are ``'both'`` (default), ``'IPv4'`` or ``'IPv6'``. Matching is case insensitive.
 - [dbe04adb] MEDIA_CHOICES = [ ( "Audio", ( ("vinyl", "Vinyl"), ("cd", "CD"), ), ), ( "Video", ( ("vhs", "VHS Tape"), ("dvd", "DVD"), ), ), ("unknown", "Unknown"), ]
+- [db0fed98] MEDIA_CHOICES = { "Audio": { "vinyl": "Vinyl", "cd": "CD", }, "Video": { "vhs": "VHS Tape", "dvd": "DVD", }, "unknown": "Unknown", }
 - [66f5ec92] Name of a model field which is auto-populated with the height of the image each time an image object is set.
+- [4ae08358] Name of a model field which is auto-populated with the width of the image each time an image object is set.
 - [333d7f2b] On PostgreSQL and MySQL, arithmetic operations on a ``DateField`` with a :class:`~datetime.timedelta` return a ``datetime`` instead of a ``date``. This occurs because Python's ``timedelta`` is converted to SQL ``INTERVAL``, and the SQL operation ``date +/- interval`` returns a ``timestamp`` on these databases.
 - [b54fa284] Only used in the definition of ManyToManyFields on self. Consider the following model::
 - [f3d770c2] Only used when a custom intermediary model is specified. Django will normally determine which fields of the intermediary model to use in order to establish a many-to-many relationship automatically. However, consider the following models::
 - [0d68b1ad] Optional. A regular expression, as a string, that :class:`FilePathField` will use to filter filenames. Note that the regex will be applied to the base filename, not the full path. Example: ``"foo.*\.txt$"``, which will match a file called ``foo23.txt`` but not ``bar.txt`` or ``foo23.png``.
 - [7e1558af] Optional. Either ``True`` or ``False``. Default is ``False``. Specifies whether all subdirectories of :attr:`~FilePathField.path` should be included
 - [25c14a6d] Optional. Either ``True`` or ``False``. Default is ``False``. Specifies whether folders in the specified location should be included. Either this or :attr:`~FilePathField.allow_files` must be ``True``.
+- [9614132d] Optional. Either ``True`` or ``False``. Default is ``True``. Specifies whether files in the specified location should be included. Either this or :attr:`~FilePathField.allow_folders` must be ``True``.
 - [6b50b12cc621e542] Optional. The database collation name of the field.
+- [6b50b12cc621e542-2] Optional. The database collation name of the field.
 - [cf6aa8ce] Optional. The maximum length (in bytes) of the field. The maximum length is enforced in Django's validation using :class:`~django.core.validators.MaxLengthValidator`.
 - [fedde6e0] Or on PostgreSQL only, use integer arithmetic to represent days::
 - [932452b2] Oracle Database does not support storing JSON scalar values. Only JSON objects and arrays (represented in Python using :class:`dict` and :class:`list`) are supported.
@@ -214,6 +230,7 @@
 - [97114909] Returns the model on which the field is defined. If a field is defined on a superclass of a model, ``model`` will refer to the superclass, not the class of the instance.
 - [060a4e11] Same as :attr:`ForeignKey.limit_choices_to`.
 - [0c220737] Same as :attr:`ForeignKey.related_name`.
+- [7c78d8ad] Same as :attr:`ForeignKey.related_query_name`.
 - [3fac02f0] Set the :class:`ForeignKey` null; this is only possible if :attr:`~Field.null` is ``True``.
 - [0dce6c82] Set the :class:`ForeignKey` to its default value; a default for the :class:`ForeignKey` must be set.
 - [e941336b] Set the :class:`ForeignKey` to the value passed to :func:`~django.db.models.SET`, or if a callable is passed in, the result of calling it. In most cases, passing a callable will be necessary to avoid executing queries at the time your ``models.py`` is imported::
@@ -262,7 +279,9 @@
 - [8ca30180] When you have more than one foreign key on an intermediary model to any (or even both) of the models participating in a many-to-many relationship, you *must* specify ``through_fields``. This also applies to :ref:`recursive relationships <recursive-relationships>` when an intermediary model is used and there are more than two foreign keys to the model, or you want to explicitly specify which two Django should use.
 - [7f280a1c] Where possible, use the :attr:`Meta.indexes <Options.indexes>` option instead. In nearly all cases, :attr:`~Options.indexes` provides more functionality than ``db_index``. ``db_index`` may be deprecated in the future.
 - [979e4f05] YEAR_IN_SCHOOL_CHOICES = [ ("FR", "Freshman"), ("SO", "Sophomore"), ("JR", "Junior"), ("SR", "Senior"), ("GR", "Graduate"), ]
+- [748fa105] YEAR_IN_SCHOOL_CHOICES = { "FR": "Freshman", "SO": "Sophomore", "JR": "Junior", "SR": "Senior", "GR": "Graduate", }
 - [d654a8e967891037] You only want to override this to be ``False`` if you are sure your model should always point toward the swapped-in model - for example, if it is a profile model designed specifically for your custom user model.
+- [d654a8e967891037-2] You only want to override this to be ``False`` if you are sure your model should always point toward the swapped-in model - for example, if it is a profile model designed specifically for your custom user model.
 - [e54da7ae] You should always check that ``expression`` is supported on your database. Check out `MariaDB`_, `MySQL`_, `Oracle`_, `PostgreSQL`_, or `SQLite`_ docs.
 - [f86787af] ``Artist`` can be deleted even if that implies deleting an ``Album`` which is referenced by a ``Song``, because ``Song`` also references ``Artist`` itself through a cascading relationship. For example:
 - [468f277a] ``DB_SET_DEFAULT`` is not supported on MySQL and MariaDB.
@@ -279,10 +298,14 @@
 - [87abe213] class Answer(models.IntegerChoices): NO = 0, _("No") YES = 1, _("Yes")
 - [a392d528] class Car(AbstractCar): pass
 - [379bfc86] class Car(models.Model): manufacturer = models.ForeignKey( "Manufacturer", on_delete=models.CASCADE, )
+- [02f16b45] class Car(models.Model): manufacturer = models.ForeignKey( "thirdpartyapp.Manufacturer", on_delete=models.CASCADE, )
+- [c940acc8] class Car(models.Model): manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)
 - [d118d058] class Card(models.Model): class Suit(models.IntegerChoices): DIAMOND = 1 SPADE = 2 HEART = 3 CLUB = 4
 - [52d53f3f] class Expense(models.Model): amount = models.DecimalField(max_digits=10, decimal_places=2) currency = models.CharField(max_length=3, choices=get_currencies)
 - [89189a439e7b0dc7] class Manufacturer(models.Model): name = models.TextField()
+- [89189a439e7b0dc7-2] class Manufacturer(models.Model): name = models.TextField()
 - [61e0ea91d00144be] class Manufacturer(models.Model): name = models.TextField() suppliers = models.ManyToManyField("self", symmetrical=False)
+- [61e0ea91d00144be-2] class Manufacturer(models.Model): name = models.TextField() suppliers = models.ManyToManyField("self", symmetrical=False)
 - [efef1ca8] class MoonLandings(datetime.date, models.Choices): APOLLO_11 = 1969, 7, 20, "Apollo 11 (Eagle)" APOLLO_12 = 1969, 11, 19, "Apollo 12 (Intrepid)" APOLLO_14 = 1971, 2, 5, "Apollo 14 (Antares)" APOLLO_15 = 1971, 7, 30, "Apollo 15 (Falcon)" APOLLO_16 = 1972, 4, 21, "Apollo 16 (Orion)" APOLLO_17 = 1972, 12, 11, "Apollo 17 (Challenger)"
 - [9e7f8faf] class MySpecialUser(models.Model): user = models.OneToOneField( settings.AUTH_USER_MODEL, on_delete=models.CASCADE, ) supervisor = models.OneToOneField( settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="supervisor_of", )
 - [c218c4e9] class MyUUIDModel(models.Model): id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False) # other fields
@@ -293,8 +316,14 @@
 - [68745ef0] def contact_default(): return {"email": "to1@example.com"}
 - [abf42cb8] def get_currencies(): return {i: i for i in settings.CURRENCIES}
 - [849255ee] end = models.IntegerField(db_default=F("start") + 50)
+- [725ff66d] from django.conf import settings from django.db import models
 - [8b500362] from django.core.files import File
 - [fbd604675a8db13c-2] from django.core.files.base import ContentFile
+- [4af926756c29efa6-21] from django.db import models
+- [4af926756c29efa6-22] from django.db import models
+- [4af926756c29efa6-23] from django.db import models
+- [4af926756c29efa6-24] from django.db import models
+- [4af926756c29efa6-25] from django.db import models
 - [ea0646af] from django.db import models from products.models import AbstractCar
 - [c2cea957e5e2362f] from django.utils.translation import gettext_lazy as _
 - [13542011] help_text = "Please use the following format: <em>YYYY-MM-DD</em>."
@@ -383,6 +412,7 @@
 - [82fea592] .. attribute:: Field.many_to_one
 - [bb2658d3] .. attribute:: Field.model
 - [adca6bfd] .. attribute:: Field.null
+- [df5602d4] .. attribute:: Field.one_to_many
 - [16f71ca7] .. attribute:: Field.one_to_one
 - [c8273a9d] .. attribute:: Field.primary_key
 - [e46983ab] .. attribute:: Field.related_model
@@ -472,6 +502,9 @@
 - [83a8f679] .. code-block:: python :caption: ``production/models.py``
 - [4774ab6b] .. code-block:: python :caption: ``products/models.py``
 - [3a368b18514a814b-7] .. currentmodule:: django.db.models
+- [3a368b18514a814b-8] .. currentmodule:: django.db.models
+- [3a368b18514a814b-9] .. currentmodule:: django.db.models
+- [3a368b18514a814b-10] .. currentmodule:: django.db.models
 - [fb146ff3] .. currentmodule:: django.db.models.fields.files
 - [805489a3] .. method:: FieldFile.close()
 - [a2d3f43d] .. method:: FieldFile.delete(save=True)
@@ -500,7 +533,9 @@
 - [9af2edca] :attr:`~Field.null` has no effect since there is no way to require a relationship at the database level.
 - [aae4edbd] :class:`CharField` has the following extra arguments:
 - [f7213937] :class:`FileField` instances are created in your database as ``varchar`` columns with a default max length of 100 characters. As with other fields, you can change the maximum length using the :attr:`~CharField.max_length` argument.
+- [979e5116] :class:`FilePathField` instances are created in your database as ``varchar`` columns with a default max length of 100 characters. As with other fields, you can change the maximum length using the :attr:`~CharField.max_length` argument.
 - [ca8d3cf1] :class:`ForeignKey` accepts other arguments that define the details of how the relation works.
+- [81735181] :class:`ImageField` instances are created in your database as ``varchar`` columns with a default max length of 100 characters. As with other fields, you can change the maximum length using the :attr:`~CharField.max_length` argument.
 - [261ff206] :class:`ManyToManyField` accepts an extra set of arguments -- all optional -- that control how the relationship functions.
 - [e32ecf08] :class:`ManyToManyField` does not support :attr:`~Field.validators`.
 - [c72b3adb] :term:`Slug <slug>` is a newspaper term. A slug is a short label for something, containing only letters, numbers, underscores or hyphens. They're generally used in URLs.
@@ -612,6 +647,7 @@
 - [8a27005c] Like :attr:`~Field.unique_for_date` and :attr:`~Field.unique_for_month`.
 - [9ee89e55] Like :attr:`~Field.unique_for_date`, but requires the field to be unique with respect to the month.
 - [802a031a] Like a :class:`PositiveIntegerField`, but only allows values under a certain (database-dependent) point. Values from ``0`` to ``32767`` are compatible in all databases supported by Django.
+- [ac581940] Like a :class:`PositiveIntegerField`, but only allows values under a certain (database-dependent) point. Values from ``0`` to ``9223372036854775807`` are compatible in all databases supported by Django.
 - [6e706d92] Like a CharField, you can specify :attr:`~CharField.max_length` (read the note about database portability and :attr:`~CharField.max_length` in that section, too). If :attr:`~CharField.max_length` is not specified, Django will use a default length of 50.
 - [10266d9c] Like all :class:`CharField` subclasses, :class:`URLField` takes the optional :attr:`~CharField.max_length` argument. If you don't specify :attr:`~CharField.max_length`, a default of 200 is used.
 - [8fb93f70] Like an :class:`AutoField`, but only allows values under a certain (database-dependent) limit. Values from ``1`` to ``32767`` are compatible in all databases supported by Django.
@@ -655,9 +691,14 @@
 - [dc738338] The default can't be a mutable object (model instance, ``list``, ``set``, etc.), as a reference to the same instance of that object would be used as the default value in all new model instances. Instead, wrap the desired default in a callable. For example, if you want to specify a default ``dict`` for :class:`~django.db.models.JSONField`, use a function::
 - [10141fc0] The default form widget for this field is :class:`~django.forms.CheckboxInput`, or :class:`~django.forms.NullBooleanSelect` if :attr:`null=True <Field.null>`.
 - [de4cfc7883ca5699] The default form widget for this field is a :class:`~django.forms.ClearableFileInput`.
+- [de4cfc7883ca5699-2] The default form widget for this field is a :class:`~django.forms.ClearableFileInput`.
 - [95acf7b0] The default form widget for this field is a :class:`~django.forms.DateInput`. The admin adds a JavaScript calendar, and a shortcut for "Today". Includes an additional ``invalid_date`` error message key.
 - [78c730370ab5d428] The default form widget for this field is a :class:`~django.forms.NumberInput` when :attr:`~django.forms.Field.localize` is ``False`` or :class:`~django.forms.TextInput` otherwise.
+- [78c730370ab5d428-2] The default form widget for this field is a :class:`~django.forms.NumberInput` when :attr:`~django.forms.Field.localize` is ``False`` or :class:`~django.forms.TextInput` otherwise.
+- [78c730370ab5d428-3] The default form widget for this field is a :class:`~django.forms.NumberInput` when :attr:`~django.forms.Field.localize` is ``False`` or :class:`~django.forms.TextInput` otherwise.
+- [08db3de3] The default form widget for this field is a :class:`~django.forms.TextInput`.
 - [19a2a5ab] The default form widget for this field is a :class:`~django.forms.TimeInput`. The admin adds some JavaScript shortcuts.
+- [6ff35b33] The default form widget for this field is a :class:`~django.forms.URLInput`.
 - [4c566ca0] The default form widget for this field is a single :class:`~django.forms.DateTimeInput`. The admin uses two separate :class:`~django.forms.TextInput` widgets with JavaScript shortcuts.
 - [747b8560] The default value can also be set at the database level with :attr:`Field.db_default`.
 - [c9866c94] The default value for the field. This can be a value or a callable object. If callable it will be called every time a new object is created.

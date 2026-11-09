@@ -1,6 +1,6 @@
 # Fact 5aa0d502
 
-Store id: 150eb73e-d5ac-47dc-b66a-96ef186ba953
+Store id: eaa55fe2-4154-4fd4-ba95-146e6b2d3ebf
 
 ## Text
 
@@ -20,7 +20,7 @@ class FetchPeers(FetchMode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2205930+00:00`
+- posted_at: `2026-11-09T23:44:49.8149230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 26,
     "symbol": "FetchPeers"
   },
-  "id": "150eb73e-d5ac-47dc-b66a-96ef186ba953",
+  "id": "eaa55fe2-4154-4fd4-ba95-146e6b2d3ebf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2205930+00:00"
+    "posted_at": "2026-11-09T23:44:49.8149230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd72d1f5-6ea5-475b-beb5-f2f102350e1b",
+  "subject_id": "780864d2-9273-4ee7-b3f0-dae3fd60b3c5",
   "subject_name": "django/db/models/fetch_modes::FetchPeers",
   "tags": [
     "entity:class"

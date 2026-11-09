@@ -1,10 +1,10 @@
 # django/contrib/sites/shortcuts
 
-- Subject: django/contrib/sites/shortcuts (id `c022add4-2f1d-4ff0-b63a-7f239a64f70a`)
+- Subject: django/contrib/sites/shortcuts (id `18590435-fc41-4ae3-a10e-3371a98ce4ae`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 170 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 9fe8d0c9
 
-Store id: 213947fd-2165-44a7-91ca-eb94b816aeb8
+Store id: 459952be-0ef4-4b0a-8ca7-ae81fd91d8a3
 
 ## Text
 
@@ -20,7 +20,7 @@ class FixDecimalInputMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.9281100+00:00`
+- posted_at: `2026-11-09T23:44:53.8872770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 7,
     "symbol": "FixDecimalInputMixin"
   },
-  "id": "213947fd-2165-44a7-91ca-eb94b816aeb8",
+  "id": "459952be-0ef4-4b0a-8ca7-ae81fd91d8a3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.9281100+00:00"
+    "posted_at": "2026-11-09T23:44:53.8872770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8157d196-1fe6-40a8-aff5-c3a3cd843e97",
+  "subject_id": "7709970d-167a-4096-aeb7-be264a6b2772",
   "subject_name": "django/db/models/functions/mixins::FixDecimalInputMixin",
   "tags": [
     "entity:class"

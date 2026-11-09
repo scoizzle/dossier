@@ -1,10 +1,10 @@
 # docs/faq/troubleshooting
 
-- Subject: docs/faq/troubleshooting (id `98d4d827-1fab-4f2d-b585-3d733a1dd6f0`)
+- Subject: docs/faq/troubleshooting (id `1074b7d8-c310-4b0b-96d9-0208a296e709`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 681 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

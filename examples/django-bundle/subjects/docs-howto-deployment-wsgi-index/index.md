@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/index
 
-- Subject: docs/howto/deployment/wsgi/index (id `eea2a2b4-b74b-4794-a891-f030b2f0e80c`)
+- Subject: docs/howto/deployment/wsgi/index (id `aeff5b78-219f-495a-98ef-cbf16411d26d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1027 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

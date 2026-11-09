@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::GenericIPAddressField.deconstruct
 
-- Subject: django/db/models/fields/__init__::GenericIPAddressField.deconstruct (id `63d05d1d-fba1-4bc7-8275-bdc1a8e370e9`)
+- Subject: django/db/models/fields/__init__::GenericIPAddressField.deconstruct (id `f3d3213f-de7b-45be-8e65-24f771333833`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

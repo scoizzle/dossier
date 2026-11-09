@@ -1,10 +1,10 @@
 # django/contrib/gis/db/models/aggregates
 
-- Subject: django/contrib/gis/db/models/aggregates (id `9ad962ee-273e-4fa2-a891-5a410e5c8f7c`)
+- Subject: django/contrib/gis/db/models/aggregates (id `64b4abef-8fa1-4014-b912-a1da802c259f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 777 tokens
-- Facts shown: 15 of 16
+- Used: 814 tokens
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - @cached_property def output_field(self): return self.output_field_class(self.source_expressions[0].output_field.srid) [10f671d5]
 - def __init__(self, expression, **extra): super().__init__(expression, output_field=ExtentField(), **extra) [75bc0ad388da3110]
+- def __init__(self, expression, **extra): super().__init__(expression, output_field=ExtentField(), **extra) [75bc0ad388da3110-2]
 - def as_oracle(self, compiler, connection, **extra_context): if not self.is_extent: tolerance = self.extra.get("tolerance") or getattr(self, "tolerance", 0.05) clone = self.copy() *source_exprs, filter_expr, order_by_expr = self.get_source_expressions() spatial_type_expr = Func( *source_exprs, Value(tolerance), function="SDOAGGRTYPE", output_field=self.output_field, ) source_expressions = [spatial_type_expr, filter_expr, order_by_expr] clone.set_source_expressions(source_expressions) return clone.as_sql(compiler, connection, **extra_context) return self.as_sql(compiler, connection, **extra_context) [8a87999c]
 - def as_sql(self, compiler, connection, function=None, **extra_context): # this will be called again in parent, but it's needed now - before # we get the spatial_aggregate_name connection.ops.check_expression_support(self) return super().as_sql( compiler, connection, function=function or connection.ops.spatial_aggregate_name(self.name), **extra_context, ) [fbe9aa29]
 - def convert_value(self, value, expression, connection): return connection.ops.convert_extent(value) [1ccdf92d]

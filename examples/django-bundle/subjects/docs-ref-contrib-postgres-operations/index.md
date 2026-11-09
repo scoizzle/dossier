@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/operations
 
-- Subject: docs/ref/contrib/postgres/operations (id `7a9e20b4-a0c8-4be1-a04c-48566071ed8b`)
+- Subject: docs/ref/contrib/postgres/operations (id `c16b654b-18ae-43e9-affa-9c6b5037f46a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2785 tokens
-- Facts shown: 91 of 99
+- Used: 3265 tokens
+- Facts shown: 99 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -20,6 +20,14 @@
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-18]
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-19]
 - The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-2]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-3]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-4]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-5]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-6]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-7]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-8]
+- The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in :ref:`making routing decisions <topics-db-multi-db-hints>`. [8705a8910c5812e0-9]
 - This is a required argument. The name of the extension to be installed. [9fd827e9]
 - operations = [ CreateCollation( "case_insensitive", provider="icu", locale="und-u-ks-level2", deterministic=False, ), ..., ] [e229373e]
 - operations = [HStoreExtension(), ...] [d52fe96b]
@@ -30,27 +38,28 @@
 - .. attribute:: hints [3c424b3911ef1fc8-5]
 - .. attribute:: hints [3c424b3911ef1fc8-6]
 - .. attribute:: hints [3c424b3911ef1fc8-7]
-- .. attribute:: hints [3c424b3911ef1fc8-8]
-- .. attribute:: hints [3c424b3911ef1fc8-9]
-- .. attribute:: name [80d47dc5547c9038-11]
-- An ``Operation`` subclass which installs a PostgreSQL extension. For common extensions, use one of the more specific subclasses below. [655be0ec]
-- Creates a collation with the given ``name``, ``locale`` and ``provider``. [e00f4008]
-- Installs the ``bloom`` extension. [3fc6e7dc]
-- Installs the ``btree_gin`` extension. [9e86e0a5]
-- Installs the ``btree_gist`` extension. [2cee8add]
-- Installs the ``citext`` extension. [98c340c8]
-- Installs the ``hstore`` extension and also sets up the connection to interpret hstore data for possible use in subsequent migrations. [de11f0b6]
-- Installs the ``pg_trgm`` extension. [e305649e]
-- Installs the ``pgcrypto`` extension. [4c1a275e]
-- Installs the ``unaccent`` extension. [fd920c4c]
-- Like :class:`~django.db.migrations.operations.AddConstraint`, but avoids validating the constraint on existing rows. [5c449583]
-- Like :class:`~django.db.migrations.operations.AddIndex`, but creates an index with the ``CONCURRENTLY`` option. This has a few caveats to be aware of when using this option, see `the PostgreSQL documentation of building indexes concurrently <https://www.postgresql.org/docs/current/ sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY>`_. [f0f3c9b2]
-- Removes the collations named ``name``. [e74e95bb]
-- Scans through the table and validates the given check constraint on existing rows. [c7c871e8]
+- .. note:: [942ae6c11625c81c-85]
 
 ## All facts
 
+- [3c424b3911ef1fc8-8] .. attribute:: hints
+- [3c424b3911ef1fc8-9] .. attribute:: hints
+- [80d47dc5547c9038-11] .. attribute:: name
+- [655be0ec] An ``Operation`` subclass which installs a PostgreSQL extension. For common extensions, use one of the more specific subclasses below.
+- [e00f4008] Creates a collation with the given ``name``, ``locale`` and ``provider``.
+- [3fc6e7dc] Installs the ``bloom`` extension.
+- [9e86e0a5] Installs the ``btree_gin`` extension.
+- [2cee8add] Installs the ``btree_gist`` extension.
+- [98c340c8] Installs the ``citext`` extension.
+- [de11f0b6] Installs the ``hstore`` extension and also sets up the connection to interpret hstore data for possible use in subsequent migrations.
+- [e305649e] Installs the ``pg_trgm`` extension.
+- [4c1a275e] Installs the ``pgcrypto`` extension.
+- [fd920c4c] Installs the ``unaccent`` extension.
+- [5c449583] Like :class:`~django.db.migrations.operations.AddConstraint`, but avoids validating the constraint on existing rows.
+- [f0f3c9b2] Like :class:`~django.db.migrations.operations.AddIndex`, but creates an index with the ``CONCURRENTLY`` option. This has a few caveats to be aware of when using this option, see `the PostgreSQL documentation of building indexes concurrently <https://www.postgresql.org/docs/current/ sql-createindex.html#SQL-CREATEINDEX-CONCURRENTLY>`_.
 - [6563f699] Like :class:`~django.db.migrations.operations.RemoveIndex`, but removes the index with the ``CONCURRENTLY`` option. This has a few caveats to be aware of when using this option, see `the PostgreSQL documentation <https://www.postgresql.org/docs/current/sql-dropindex.html>`_.
+- [e74e95bb] Removes the collations named ``name``.
+- [c7c871e8] Scans through the table and validates the given check constraint on existing rows.
 - [47b54514] Set the ``deterministic`` parameter to ``False`` to create a non-deterministic collation, such as for case-insensitive filtering.
 - [a117bb62] The ``CONCURRENTLY`` option is not supported inside a transaction (see :ref:`non-atomic migration <non-atomic-migrations>`).
 - [ff061728] When reversed this is creating a collation with the provided ``locale``, ``provider``, and ``deterministic`` arguments. Therefore, ``locale`` is required to make this operation reversible.
@@ -77,7 +86,6 @@
 - [ebb41f0d] .. class:: UnaccentExtension(hints=None)
 - [49b6d6b2] .. class:: ValidateConstraint(model_name, name)
 - [9f26dd28] .. currentmodule:: django.contrib.postgres.operations
-- [942ae6c11625c81c-85] .. note::
 - [942ae6c11625c81c-86] .. note::
 - [80c7b11d] ============================= Database migration operations =============================
 - [71d286cf] Adding constraints without enforcing validation ===============================================

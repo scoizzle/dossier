@@ -1,10 +1,10 @@
 # django/db/models/sql/subqueries
 
-- Subject: django/db/models/sql/subqueries (id `8b880d6f-4c88-470e-b44a-994f5797b94a`)
+- Subject: django/db/models/sql/subqueries (id `f88703af-2f40-495f-90f4-b3d47ecffadf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 69 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

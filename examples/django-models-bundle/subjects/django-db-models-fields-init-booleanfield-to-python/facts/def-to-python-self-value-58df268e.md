@@ -1,6 +1,6 @@
 # Fact 58df268e
 
-Store id: 7fc8c544-bf7d-47aa-9d71-ad0900cb821e
+Store id: 4974a5ad-b1a9-470e-9e8c-c265ffde650f
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5405190+00:00`
+- posted_at: `2026-11-09T23:44:50.0544270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1211,
     "symbol": "BooleanField.to_python"
   },
-  "id": "7fc8c544-bf7d-47aa-9d71-ad0900cb821e",
+  "id": "4974a5ad-b1a9-470e-9e8c-c265ffde650f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5405190+00:00"
+    "posted_at": "2026-11-09T23:44:50.0544270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3bac1d77-8ab8-41ee-bbf6-c86ad6cb2a61",
+  "subject_id": "2415f86f-d12c-4519-879f-202cb99f3e8d",
   "subject_name": "django/db/models/fields/__init__::BooleanField.to_python",
   "tags": [
     "entity:method"

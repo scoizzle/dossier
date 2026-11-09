@@ -1,10 +1,10 @@
 # django/contrib/flatpages/migrations/0001_initial
 
-- Subject: django/contrib/flatpages/migrations/0001_initial (id `1ffcdd66-1b32-4fa0-b67d-b3c6157a91b2`)
+- Subject: django/contrib/flatpages/migrations/0001_initial (id `bfc83f18-7448-419b-b1ff-cc0eb2419920`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 350 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 613031e9
 
-Store id: c8f28275-3ddd-40a0-ae02-064893fc564a
+Store id: 8652ed99-a552-4ea4-b9da-14c08e23b760
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function CASCADE
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c8f28275-3ddd-40a0-ae02-064893fc564a",
+  "id": "8652ed99-a552-4ea4-b9da-14c08e23b760",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CASCADE"
       },
       "rel": "contains",
-      "target": "a863d2c8-c887-4375-b59c-472b35da8864"
+      "target": "9c959ac2-fcfd-42be-bc19-9ab734ae6a9e"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

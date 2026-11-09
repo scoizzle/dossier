@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/fields
 
-- Subject: django/contrib/contenttypes/fields (id `5293f8a5-55e2-4f38-8292-9c5086acae5a`)
+- Subject: django/contrib/contenttypes/fields (id `6327aa2b-e93a-408a-bf0d-1387e131ff32`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7185 tokens
-- Facts shown: 113 of 116
+- Used: 7307 tokens
+- Facts shown: 116 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -47,6 +47,7 @@
 - [f3750fe957b9e064] async def aupdate_or_create(self, **kwargs): return await sync_to_async(self.update_or_create)(**kwargs)
 - [2c650fdeabb2939b] aupdate_or_create.alters_data = True
 - [c62a50b1] class Post(Model): comments = GenericRelation(Comment)
+- [90d2bb66f8ab2248] clear.alters_data = True
 - [347b90046126c94d] create.alters_data = True
 - [e4adf9a2] def __call__(self, *, manager): manager = getattr(self.model, manager) manager_class = create_generic_related_manager(manager.__class__, rel) return manager_class(instance=self.instance)
 - [e589de80] def __str__(self): return repr(self)
@@ -61,6 +62,7 @@
 - [eacb2df9] def get_queryset(self): try: return self.instance._prefetched_objects_cache[self.prefetch_cache_name] except (AttributeError, KeyError): queryset = super().get_queryset() return self._apply_rel_filters(queryset)
 - [d81b22ed] def remove(self, *objs, bulk=True): if not objs: return self._clear(self.filter(pk__in=[o.pk for o in objs]), bulk)
 - [86d9f0d0] def set(self, objs, *, bulk=True, clear=False): # Force evaluation of `objs` in case it's a queryset whose value # could be affected by `manager.clear()`. Refs #19816. objs = tuple(objs)
+- [88b37adf] def update_or_create(self, **kwargs): kwargs[self.content_type_field_name] = self.content_type kwargs[self.object_id_field_name] = self.pk_val db = router.db_for_write(self.model, instance=self.instance) return super().using(db).update_or_create(**kwargs)
 - [fda8c66e065de4e2] do_not_call_in_templates = True
 - [ce9adfa1a6799e1e] get_or_create.alters_data = True
 - [08942695] instance._state.fetch_mode.fetch(self, instance) return self.field.get_cached_value(instance)
@@ -114,6 +116,7 @@
 - [93affb1664b85670] def set_attributes_from_rel(self): pass
 - [864dda8a] def value_to_string(self, obj): qs = getattr(obj, self.name).all() return str([instance.pk for instance in qs])
 - [1a35d3f5] many_to_many = False many_to_one = False one_to_many = True one_to_one = False
+- [e9d3ad73] many_to_many = False many_to_one = True one_to_many = False one_to_one = False
 - [f882b84d] mti_inherited = False
 - [1b4e403a] rel_class = GenericRel
 - [18b530e5] return GenericRelatedObjectManager

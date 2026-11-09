@@ -1,6 +1,6 @@
 # Fact 905ff9c6
 
-Store id: f2232312-90bf-4f89-ae43-b1d31d76263c
+Store id: 626c97f8-086c-429e-ab63-0cc1d5e09d8a
 
 ## Text
 
@@ -20,7 +20,7 @@ def values(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.5036470+00:00`
+- posted_at: `2026-11-09T23:44:49.0445550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 49,
     "symbol": "ChoicesType.values"
   },
-  "id": "f2232312-90bf-4f89-ae43-b1d31d76263c",
+  "id": "626c97f8-086c-429e-ab63-0cc1d5e09d8a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.5036470+00:00"
+    "posted_at": "2026-11-09T23:44:49.0445550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bc4d3d8c-37c6-4c0d-a5b1-634ecdeced5b",
+  "subject_id": "d42e7670-f67f-4f2f-bda8-9ff71351a74f",
   "subject_name": "django/db/models/enums::ChoicesType.values",
   "tags": [
     "entity:method",

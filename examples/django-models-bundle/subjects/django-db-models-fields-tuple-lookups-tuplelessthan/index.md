@@ -1,11 +1,11 @@
 # django/db/models/fields/tuple_lookups::TupleLessThan
 
-- Subject: django/db/models/fields/tuple_lookups::TupleLessThan (id `6dd8028d-0254-4828-b1cb-b1761fc099b3`)
+- Subject: django/db/models/fields/tuple_lookups::TupleLessThan (id `c3e24090-2335-4452-ab69-5364a553f576`)
 - Kind: class
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact e41afa29
 
-Store id: a4433e15-a3bf-4f11-b9e7-1c61aca44877
+Store id: 6ac0b49a-c0eb-46d3-b0a4-dc670d1bafb7
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer previews an attached image before the memo is saved.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -55,17 +55,17 @@ None.
     }
   ],
   "confidence": 1,
-  "id": "a4433e15-a3bf-4f11-b9e7-1c61aca44877",
+  "id": "6ac0b49a-c0eb-46d3-b0a4-dc670d1bafb7",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:attachment"

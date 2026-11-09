@@ -1,6 +1,6 @@
 # Fact 0b5218d1
 
-Store id: b54aff3a-5388-4892-9b53-1354c3076adb
+Store id: 9e89b599-d582-40b8-aa99-c34fc985a82e
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.5091180+00:00`
+- posted_at: `2026-11-09T23:44:53.5696810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "JSONObject.as_postgresql"
   },
-  "id": "b54aff3a-5388-4892-9b53-1354c3076adb",
+  "id": "9e89b599-d582-40b8-aa99-c34fc985a82e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.5091180+00:00"
+    "posted_at": "2026-11-09T23:44:53.5696810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "303e5ad9-ea90-47b8-b7ce-b67b9b1ece3d",
+  "subject_id": "85fcaeca-cfa9-4a49-8fe6-23faed2192ba",
   "subject_name": "django/db/models/functions/json::JSONObject.as_postgresql",
   "tags": [
     "entity:method"

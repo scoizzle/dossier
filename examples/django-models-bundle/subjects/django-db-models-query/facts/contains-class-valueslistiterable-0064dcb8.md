@@ -1,6 +1,6 @@
 # Fact 0064dcb8
 
-Store id: 1c49be96-0cc7-408a-b8e2-5cec5dad272b
+Store id: e2d5a7b9-6c72-4a5c-bd2e-f43d490f5aff
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ValuesListIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1c49be96-0cc7-408a-b8e2-5cec5dad272b",
+  "id": "e2d5a7b9-6c72-4a5c-bd2e-f43d490f5aff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ValuesListIterable"
       },
       "rel": "contains",
-      "target": "3fd89ebd-16c0-4a82-9ea7-7b5e2fbd907c"
+      "target": "55dc4e26-a287-4cc9-943d-0377cf6b43a5"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

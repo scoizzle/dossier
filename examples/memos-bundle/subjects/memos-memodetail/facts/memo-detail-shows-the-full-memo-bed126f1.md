@@ -1,6 +1,6 @@
 # Fact bed126f1
 
-Store id: bbc62e00-bd49-452c-9247-385af1d180e8
+Store id: 69bf19a2-db45-4e63-8ac4-4406927c15ed
 
 ## Text
 
@@ -20,7 +20,7 @@ Memo detail shows the full memo text, its timestamp, and its tags.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.1762130+00:00`
+- posted_at: `2026-11-09T23:44:32.2398330+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bbc62e00-bd49-452c-9247-385af1d180e8",
+  "id": "69bf19a2-db45-4e63-8ac4-4406927c15ed",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.1762130+00:00"
+    "posted_at": "2026-11-09T23:44:32.2398330+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "23a68f36-38ee-45ac-acc4-725c5bfda95a",
+  "subject_id": "063b987a-de3a-4a04-8814-0cad1eb233c3",
   "subject_name": "Memos/MemoDetail",
   "tags": [],
   "text": "Memo detail shows the full memo text, its timestamp, and its tags."

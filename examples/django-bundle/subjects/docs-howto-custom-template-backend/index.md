@@ -1,10 +1,10 @@
 # docs/howto/custom-template-backend
 
-- Subject: docs/howto/custom-template-backend (id `2d2da847-03a4-440f-a8ae-6e58e1d254ad`)
+- Subject: docs/howto/custom-template-backend (id `12282781-e2cf-44b6-9cac-23a800772841`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1816 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

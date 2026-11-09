@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/oracle/base
 
-- Subject: django/contrib/gis/db/backends/oracle/base (id `75c1647a-a85f-4e78-9a15-5bf58f37c184`)
+- Subject: django/contrib/gis/db/backends/oracle/base (id `207c021f-6bcf-46c3-ae84-e5914151fde8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 153 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

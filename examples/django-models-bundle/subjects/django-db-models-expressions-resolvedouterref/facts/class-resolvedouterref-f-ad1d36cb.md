@@ -1,6 +1,6 @@
 # Fact ad1d36cb
 
-Store id: aee84106-af5d-4f4e-9688-8f16c1b4499c
+Store id: 85d06e78-e172-4efd-aae7-100a4d4ef9c8
 
 ## Text
 
@@ -20,7 +20,7 @@ class ResolvedOuterRef(F)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8410620+00:00`
+- posted_at: `2026-11-09T23:44:49.4894660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 946,
     "symbol": "ResolvedOuterRef"
   },
-  "id": "aee84106-af5d-4f4e-9688-8f16c1b4499c",
+  "id": "85d06e78-e172-4efd-aae7-100a4d4ef9c8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8410620+00:00"
+    "posted_at": "2026-11-09T23:44:49.4894660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a0f4850f-686f-4dc9-9156-7b49df01a1c1",
+  "subject_id": "fbeca020-6313-4159-bcb2-dbf545d5a7f9",
   "subject_name": "django/db/models/expressions::ResolvedOuterRef",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/lookups
 
-- Subject: docs/ref/contrib/postgres/lookups (id `8310b7a0-424b-4a63-9e8a-c39eb875279d`)
+- Subject: docs/ref/contrib/postgres/lookups (id `bd882033-fa12-4abf-9d99-2474ac641477`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1131 tokens
-- Facts shown: 29 of 33
+- Used: 1367 tokens
+- Facts shown: 33 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -29,16 +29,20 @@
 - Similar to :lookup:`trigram_word_similar`, except that it forces extent boundaries to match word boundaries. [11941d86]
 - The ``trigram_similar`` lookup allows you to perform trigram lookups, measuring the number of trigrams (three consecutive characters) shared, using a dedicated PostgreSQL extension. A trigram lookup is given an expression and returns results that have a similarity measurement greater than the current similarity threshold. [d2147dcc]
 - The ``trigram_similar`` lookup can be used on :class:`~django.db.models.CharField` and :class:`~django.db.models.TextField`: [6edfb397]
+- The ``trigram_strict_word_similar`` lookup can be used on :class:`~django.db.models.CharField` and :class:`~django.db.models.TextField`. [036aa98e]
 - The ``trigram_word_similar`` lookup allows you to perform trigram word similarity lookups using a dedicated PostgreSQL extension. It can be approximately understood as measuring the greatest number of trigrams shared between the parameter and any substring of the field. A trigram word lookup is given an expression and returns results that have a word similarity measurement greater than the current similarity threshold. [7b493633]
+- The ``trigram_word_similar`` lookup can be used on :class:`~django.db.models.CharField` and :class:`~django.db.models.TextField`: [a97c39a8]
 - The ``unaccent`` lookup allows you to perform accent-insensitive lookups using a dedicated PostgreSQL extension. [d49d5bd8]
-- The ``unaccent`` lookup can be used on :class:`~django.db.models.CharField` and :class:`~django.db.models.TextField`: [42252da3]
-- Trigram similarity ================== [fbf4d8b26aa7310d]
 - ``Unaccent`` ============ [edf962c1]
-- ``trigram_similar`` ------------------- [2a46a5ce]
 
 ## All facts
 
+- [42252da3] The ``unaccent`` lookup can be used on :class:`~django.db.models.CharField` and :class:`~django.db.models.TextField`:
 - [e1f9e305] This lookup is implemented using :class:`~django.db.models.Transform`, so it can be chained with other lookup functions. To use it, you need to add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `unaccent extension on PostgreSQL`_. The :class:`~django.contrib.postgres.operations.UnaccentExtension` migration operation is available if you want to perform this activation using migrations.
 - [5db16fcc1bbcfb35] To use it, add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `pg_trgm extension`_ on PostgreSQL. You can install the extension using the :class:`~django.contrib.postgres.operations.TrigramExtension` migration operation.
+- [5db16fcc1bbcfb35-2] To use it, add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `pg_trgm extension`_ on PostgreSQL. You can install the extension using the :class:`~django.contrib.postgres.operations.TrigramExtension` migration operation.
+- [5db16fcc1bbcfb35-3] To use it, add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS` and activate the `pg_trgm extension`_ on PostgreSQL. You can install the extension using the :class:`~django.contrib.postgres.operations.TrigramExtension` migration operation.
+- [fbf4d8b26aa7310d] Trigram similarity ==================
+- [2a46a5ce] ``trigram_similar`` -------------------
 - [684ac06a] ``trigram_strict_word_similar`` -------------------------------
 - [26282979] ``trigram_word_similar`` ------------------------

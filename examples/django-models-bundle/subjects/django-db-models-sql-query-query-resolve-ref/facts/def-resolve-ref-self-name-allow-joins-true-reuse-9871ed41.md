@@ -1,6 +1,6 @@
 # Fact 9871ed41
 
-Store id: e8b8b6f1-2ea9-4e4a-909c-336ac3f16509
+Store id: 6b75eaed-0775-4acb-a675-58752c0c2744
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_ref(self, name, allow_joins=True, reuse=None, summarize=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9959670+00:00`
+- posted_at: `2026-11-09T23:44:58.9106820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2061,
     "symbol": "Query.resolve_ref"
   },
-  "id": "e8b8b6f1-2ea9-4e4a-909c-336ac3f16509",
+  "id": "6b75eaed-0775-4acb-a675-58752c0c2744",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9959670+00:00"
+    "posted_at": "2026-11-09T23:44:58.9106820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d3e00fec-1df3-4f92-8bf8-2a4f8a4b7db9",
+  "subject_id": "675382dd-9bd6-4c1f-b38a-c6a414079198",
   "subject_name": "django/db/models/sql/query::Query.resolve_ref",
   "tags": [
     "entity:method"

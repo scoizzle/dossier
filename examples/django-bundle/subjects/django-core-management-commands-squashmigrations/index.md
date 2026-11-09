@@ -1,10 +1,10 @@
 # django/core/management/commands/squashmigrations
 
-- Subject: django/core/management/commands/squashmigrations (id `7a47deba-dd9e-41c6-b74c-23806308320e`)
+- Subject: django/core/management/commands/squashmigrations (id `cf00abd9-f6ef-440f-a60c-2fb6f225bc27`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2003 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

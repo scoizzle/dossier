@@ -1,11 +1,11 @@
 # django/db/models/expressions::F.asc
 
-- Subject: django/db/models/expressions::F.asc (id `1400c272-91a2-4b09-88bb-e4296b329182`)
+- Subject: django/db/models/expressions::F.asc (id `a7174c10-2075-41a5-b0e6-199efb4f3b4c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

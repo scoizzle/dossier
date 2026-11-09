@@ -1,10 +1,10 @@
 # django/contrib/messages/storage/session
 
-- Subject: django/contrib/messages/storage/session (id `e7adefb7-e3d7-49b8-8048-c921888af3f9`)
+- Subject: django/contrib/messages/storage/session (id `c1544fbf-4330-47eb-91d2-0c34ae71534c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 453 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

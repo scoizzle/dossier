@@ -1,6 +1,6 @@
 # Fact 3f0817af
 
-Store id: 4ba671d4-061d-42fd-91a2-b7c5bcadc04c
+Store id: 6c2d1817-1a2b-4c11-bbdf-458a3de54395
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aiterator(self, chunk_size=2000)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3660900+00:00`
+- posted_at: `2026-11-09T23:44:55.8805850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 618,
     "symbol": "QuerySet.aiterator"
   },
-  "id": "4ba671d4-061d-42fd-91a2-b7c5bcadc04c",
+  "id": "6c2d1817-1a2b-4c11-bbdf-458a3de54395",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3660900+00:00"
+    "posted_at": "2026-11-09T23:44:55.8805850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "70d5886e-cbbc-454d-9c30-6b013047e55b",
+  "subject_id": "ee464fb1-d214-4cca-a046-42cfa41255e8",
   "subject_name": "django/db/models/query::QuerySet.aiterator",
   "tags": [
     "entity:method",

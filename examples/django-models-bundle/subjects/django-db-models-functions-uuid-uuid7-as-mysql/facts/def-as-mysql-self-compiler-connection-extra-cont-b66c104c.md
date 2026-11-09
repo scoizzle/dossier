@@ -1,6 +1,6 @@
 # Fact b66c104c
 
-Store id: 2bdae7d4-3cb3-42ae-b4f2-e2b455f695cc
+Store id: d0b1eedb-0980-4134-8d37-2dab0049d447
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.5232110+00:00`
+- posted_at: `2026-11-09T23:44:54.3448120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 87,
     "symbol": "UUID7.as_mysql"
   },
-  "id": "2bdae7d4-3cb3-42ae-b4f2-e2b455f695cc",
+  "id": "d0b1eedb-0980-4134-8d37-2dab0049d447",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.5232110+00:00"
+    "posted_at": "2026-11-09T23:44:54.3448120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "881f2043-80b7-4737-97ec-535cd7b2842a",
+  "subject_id": "ba0a5abc-3362-4814-85f7-16a41b789b67",
   "subject_name": "django/db/models/functions/uuid::UUID7.as_mysql",
   "tags": [
     "entity:method"

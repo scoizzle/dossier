@@ -55,8 +55,8 @@ The normative shapes are the JSON Schemas in `contract/` (`subject`, `fact`, `re
 
 `compile` and `publish` take `--budget-mode complete|strict` (JSON: `budget_mode`).
 
-- **complete** (the default): no fact is omitted. `facts` holds every candidate in rank order, `dropped` is empty, and `used_tokens` is the true total, which may exceed `budget_tokens`. The budget is only the highlight threshold: when the facts do not fit it, the markdown shows a `## Highlights` section (the top facts that fit the budget) followed by `## All facts` (every remaining fact as one compact line, still ranked). When everything fits, it is the single `## Facts` list. Complete mode is **not bounded**: cost grows with the corpus.
-- **strict**: the facts are cut to the budget and the remainder is listed in `dropped`. Only strict mode gives the bounded-cost guarantee below.
+- **complete** (the default): no fact is omitted. Near-duplicate clustering is not applied, so a fact never hides behind another fact's `cites`: `facts` holds every candidate in rank order, each cites only its own id, `dropped` is empty, and `used_tokens` is the true total, which may exceed `budget_tokens`. The budget is only the highlight threshold: when the facts do not fit it, the markdown shows a `## Highlights` section (the top facts that fit the budget) followed by `## All facts` (every remaining fact as one compact line, still ranked). When everything fits, it is the single `## Facts` list. Complete mode is **not bounded**: cost grows with the corpus.
+- **strict**: near-duplicates still cluster into one representative whose `cites` list the collapsed fact ids, then the facts are cut to the budget and the remainder is listed in `dropped`. Only strict mode gives the bounded-cost guarantee below.
 
 Conflicts and gaps behave the same in both modes. An invalid value exits non-zero and names the accepted values.
 

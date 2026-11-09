@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FileDescriptor
 
-- Subject: django/db/models/fields/files::FileDescriptor (id `adb6e22a-d982-4b8b-b543-44b57129f21a`)
+- Subject: django/db/models/fields/files::FileDescriptor (id `c3ffeaca-b24f-4315-bcd6-8fc80864aae2`)
 - Kind: class
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

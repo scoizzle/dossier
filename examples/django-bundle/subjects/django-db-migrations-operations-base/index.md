@@ -1,10 +1,10 @@
 # django/db/migrations/operations/base
 
-- Subject: django/db/migrations/operations/base (id `0cb8f018-86a2-40a5-9cec-bef5e953e973`)
+- Subject: django/db/migrations/operations/base (id `a9954c8a-5874-4e62-a426-9ef89ff1f3f3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1493 tokens
-- Facts shown: 30 of 31
+- Used: 1548 tokens
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -38,6 +38,7 @@
 - [6d28e516] def formatted_description(self): """Output a description prefixed by a category symbol.""" description = self.describe() if self.category is None: return f"{OperationCategory.MIXED} {description}" return f"{self.category} {description}"
 - [dbb64c0c] def reduce(self, operation, app_label): """ Return either a list of operations the actual operation should be replaced with or a boolean that indicates whether or not the specified operation can be optimized across. """ if self.elidable: return [operation] elif operation.elidable: return [self] return False
 - [c8795a83] def references_field(self, model_name, name, app_label): """ Return True if there is a chance this operation references the given field name, with an app label for accuracy.
+- [5310f23b] def references_model(self, name, app_label): """ Return True if there is a chance this operation references the given model name (as a string), with an app label for accuracy.
 - [2e9daf96] def state_forwards(self, app_label, state): """ Take the state from the previous migration, and mutate it so that it matches what this migration would perform. """ raise NotImplementedError( "subclasses of Operation must provide a state_forwards() method" )
 - [0af88c83] class Operation: """ Base class for migration operations.
 - [acbda3ea] class OperationCategory(StrEnum): ADDITION = "+" REMOVAL = "-" ALTERATION = "~" PYTHON = "p" SQL = "s" MIXED = "?"

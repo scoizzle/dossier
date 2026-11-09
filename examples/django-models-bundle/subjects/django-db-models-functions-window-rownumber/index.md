@@ -1,11 +1,11 @@
 # django/db/models/functions/window::RowNumber
 
-- Subject: django/db/models/functions/window::RowNumber (id `3110707d-1792-4eb7-a722-e156e7403a7f`)
+- Subject: django/db/models/functions/window::RowNumber (id `85da41c9-2c79-49ec-aaed-de07fb84cb33`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/core/management/color
 
-- Subject: django/core/management/color (id `1200cf79-9ad6-4199-8cf9-6b55c961fc7e`)
+- Subject: django/core/management/color (id `6df4cb8c-ede9-4ac7-ba74-b02e9aa41211`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 877 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

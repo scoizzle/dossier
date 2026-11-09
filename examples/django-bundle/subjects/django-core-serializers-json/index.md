@@ -1,10 +1,10 @@
 # django/core/serializers/json
 
-- Subject: django/core/serializers/json (id `294f6a44-2317-4268-b459-6acc60cb6806`)
+- Subject: django/core/serializers/json (id `660ab036-fbed-443b-931c-013cede55a5f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 903 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

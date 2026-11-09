@@ -1,11 +1,11 @@
 # django/db/models/expressions::Window.as_sql
 
-- Subject: django/db/models/expressions::Window.as_sql (id `69e953cd-db51-47e0-9bff-04fae926f5ae`)
+- Subject: django/db/models/expressions::Window.as_sql (id `5015a872-a410-440b-bd09-8f8efc8fb0a3`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

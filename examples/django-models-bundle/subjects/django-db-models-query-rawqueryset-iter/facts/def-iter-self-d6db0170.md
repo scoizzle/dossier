@@ -1,6 +1,6 @@
 # Fact d6db0170
 
-Store id: 9cba31fc-936c-40e3-a99e-d56de4d34a98
+Store id: 7090e1da-1006-4bfd-bf67-22cc1ad55388
 
 ## Text
 
@@ -20,7 +20,7 @@ def __iter__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7418120+00:00`
+- posted_at: `2026-11-09T23:44:56.2416920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2499,
     "symbol": "RawQuerySet.__iter__"
   },
-  "id": "9cba31fc-936c-40e3-a99e-d56de4d34a98",
+  "id": "7090e1da-1006-4bfd-bf67-22cc1ad55388",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7418120+00:00"
+    "posted_at": "2026-11-09T23:44:56.2416920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "11863f07-25b5-49d8-8882-0320291b7a83",
+  "subject_id": "8728eacb-6176-4123-890b-81fb0cb95611",
   "subject_name": "django/db/models/query::RawQuerySet.__iter__",
   "tags": [
     "entity:method"

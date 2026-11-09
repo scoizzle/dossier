@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::NOT_PROVIDED
 
-- Subject: django/db/models/fields/__init__::NOT_PROVIDED (id `622e1b3a-064b-4cb7-bce9-5a354c2e3dda`)
+- Subject: django/db/models/fields/__init__::NOT_PROVIDED (id `868d8e29-db35-4122-a473-9ea117175e37`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

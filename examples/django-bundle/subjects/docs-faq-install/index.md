@@ -1,10 +1,10 @@
 # docs/faq/install
 
-- Subject: docs/faq/install (id `bed1f220-f17e-49c9-9e07-e21131ba789c`)
+- Subject: docs/faq/install (id `5b53f341-15e1-48bd-b5af-31eae0c026c2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1200 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

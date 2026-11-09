@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Ceil.as_oracle
 
-- Subject: django/db/models/functions/math::Ceil.as_oracle (id `34d3b7c7-de1b-45c7-b845-b32f8edbb962`)
+- Subject: django/db/models/functions/math::Ceil.as_oracle (id `69376a28-268b-4bc4-9370-7278a0965718`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

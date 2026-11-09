@@ -1,6 +1,6 @@
 # Fact abc66a46
 
-Store id: 8ca58fef-4f7b-4b09-bb9a-80e84a20251e
+Store id: 50744df2-1b1b-49d5-a8ff-e82b5a54d182
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncTime(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2934530+00:00`
+- posted_at: `2026-11-09T23:44:53.4092250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 395,
     "symbol": "TruncTime"
   },
-  "id": "8ca58fef-4f7b-4b09-bb9a-80e84a20251e",
+  "id": "50744df2-1b1b-49d5-a8ff-e82b5a54d182",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2934530+00:00"
+    "posted_at": "2026-11-09T23:44:53.4092250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7941e2c8-20ce-400e-b25b-4f9467ba296a",
+  "subject_id": "e4ea9ecd-5fc0-45ef-9691-7a0741ae814b",
   "subject_name": "django/db/models/functions/datetime::TruncTime",
   "tags": [
     "entity:class"

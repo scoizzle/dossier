@@ -1,6 +1,6 @@
 # Fact 1890635f
 
-Store id: 4327af9a-3d2f-4375-8807-96210120006c
+Store id: c335618b-6c31-4ccd-9966-603a7deabca5
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractWeekDay(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2112500+00:00`
+- posted_at: `2026-11-09T23:44:53.3515350+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 151,
     "symbol": "ExtractWeekDay"
   },
-  "id": "4327af9a-3d2f-4375-8807-96210120006c",
+  "id": "c335618b-6c31-4ccd-9966-603a7deabca5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2112500+00:00"
+    "posted_at": "2026-11-09T23:44:53.3515350+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "89fd52d3-fb4e-4290-a07b-e91e3a4d17e7",
+  "subject_id": "925416b7-9c6d-498e-8f46-479f679d1627",
   "subject_name": "django/db/models/functions/datetime::ExtractWeekDay",
   "tags": [
     "entity:class"

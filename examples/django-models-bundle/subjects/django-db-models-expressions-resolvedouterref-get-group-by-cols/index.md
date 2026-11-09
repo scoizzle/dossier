@@ -1,11 +1,11 @@
 # django/db/models/expressions::ResolvedOuterRef.get_group_by_cols
 
-- Subject: django/db/models/expressions::ResolvedOuterRef.get_group_by_cols (id `8fcef662-9f74-4631-8a51-c9d201f22f6c`)
+- Subject: django/db/models/expressions::ResolvedOuterRef.get_group_by_cols (id `e494799a-88d8-4129-8e52-d11e7ebe5ca5`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/expressions::OutputFieldIsNoneError
 
-- Subject: django/db/models/expressions::OutputFieldIsNoneError (id `0b23cf0c-c438-4417-bf8f-3b464120954b`)
+- Subject: django/db/models/expressions::OutputFieldIsNoneError (id `5cf1bca6-9ebe-40d7-97bb-7f6a35501a9f`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact d9c8783e
 
-Store id: f20b4d62-6b2a-4ef0-b5e1-d5c064208a37
+Store id: 767a707c-917e-401a-9ef9-c8200da8ef04
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6382860+00:00`
+- posted_at: `2026-11-09T23:44:50.1221240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1893,
     "symbol": "DecimalField.to_python"
   },
-  "id": "f20b4d62-6b2a-4ef0-b5e1-d5c064208a37",
+  "id": "767a707c-917e-401a-9ef9-c8200da8ef04",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6382860+00:00"
+    "posted_at": "2026-11-09T23:44:50.1221240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5458ff46-db17-4b04-8043-750ecca43804",
+  "subject_id": "31f5be43-8580-4b74-adae-bfda0248dd3f",
   "subject_name": "django/db/models/fields/__init__::DecimalField.to_python",
   "tags": [
     "entity:method"

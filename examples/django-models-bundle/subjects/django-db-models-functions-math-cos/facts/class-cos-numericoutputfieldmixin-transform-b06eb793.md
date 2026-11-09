@@ -1,6 +1,6 @@
 # Fact b06eb793
 
-Store id: 5eba0c75-c277-4f5f-80f2-d38c86bbc855
+Store id: 26a374d1-d140-4e53-8ce1-2be70bd2e086
 
 ## Text
 
@@ -20,7 +20,7 @@ class Cos(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.6871000+00:00`
+- posted_at: `2026-11-09T23:44:53.7046920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 69,
     "symbol": "Cos"
   },
-  "id": "5eba0c75-c277-4f5f-80f2-d38c86bbc855",
+  "id": "26a374d1-d140-4e53-8ce1-2be70bd2e086",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.6871000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7046920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e9ba6800-242a-4e12-9e92-f33899654c90",
+  "subject_id": "8773e806-6dbf-4cd2-9095-b2cca776f154",
   "subject_name": "django/db/models/functions/math::Cos",
   "tags": [
     "entity:class"

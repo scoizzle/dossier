@@ -1,6 +1,6 @@
 # Fact c16761fd
 
-Store id: 2aa061a8-317d-4108-b543-d796c261ed39
+Store id: 7146aa69-37a6-4ab7-ad4a-2664838a091a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function check_rel_lookup_compatibility
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2aa061a8-317d-4108-b543-d796c261ed39",
+  "id": "7146aa69-37a6-4ab7-ad4a-2664838a091a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "check_rel_lookup_compatibility"
       },
       "rel": "contains",
-      "target": "d645cd3b-7161-4e40-88f5-e42922a6947a"
+      "target": "05b84e01-9ab4-4288-b2cf-44f8c294020e"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:function"

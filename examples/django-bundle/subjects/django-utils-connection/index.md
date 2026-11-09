@@ -1,10 +1,10 @@
 # django/utils/connection
 
-- Subject: django/utils/connection (id `2177ae92-71eb-4aea-ae61-d7ec090bb47e`)
+- Subject: django/utils/connection (id `e5f03453-bcdb-43c3-a07a-685a7feea9d8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 757 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

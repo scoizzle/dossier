@@ -1,11 +1,11 @@
 # django/db/models/manager::BaseManager.__hash__
 
-- Subject: django/db/models/manager::BaseManager.__hash__ (id `8d4faf5b-3cd0-412b-93ca-b8717a125ffb`)
+- Subject: django/db/models/manager::BaseManager.__hash__ (id `92f36207-2ec8-40f5-bdc1-be6416803550`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

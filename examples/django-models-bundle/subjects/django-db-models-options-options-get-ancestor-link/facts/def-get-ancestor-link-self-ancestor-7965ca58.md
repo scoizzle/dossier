@@ -1,6 +1,6 @@
 # Fact 7965ca58
 
-Store id: f9eb962e-3ea6-4ad6-add8-e81614496704
+Store id: 026880a1-25db-442c-b92e-7b252706d0ca
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_ancestor_link(self, ancestor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0133540+00:00`
+- posted_at: `2026-11-09T23:44:55.5635810+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 734,
     "symbol": "Options.get_ancestor_link"
   },
-  "id": "f9eb962e-3ea6-4ad6-add8-e81614496704",
+  "id": "026880a1-25db-442c-b92e-7b252706d0ca",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0133540+00:00"
+    "posted_at": "2026-11-09T23:44:55.5635810+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f1b757cd-c2bb-4e51-8ea4-694df358173f",
+  "subject_id": "2981e803-b766-489b-9d9f-23bb8f246213",
   "subject_name": "django/db/models/options::Options.get_ancestor_link",
   "tags": [
     "entity:method"

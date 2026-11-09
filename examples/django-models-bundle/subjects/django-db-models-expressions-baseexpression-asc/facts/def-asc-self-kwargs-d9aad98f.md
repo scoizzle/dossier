@@ -1,6 +1,6 @@
 # Fact d9aad98f
 
-Store id: abd1c0a8-2db2-49ec-bf4d-adbeeb1e8641
+Store id: 05826f9e-1213-4903-945f-b09d5d859017
 
 ## Text
 
@@ -20,7 +20,7 @@ def asc(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7922240+00:00`
+- posted_at: `2026-11-09T23:44:49.3752550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 472,
     "symbol": "BaseExpression.asc"
   },
-  "id": "abd1c0a8-2db2-49ec-bf4d-adbeeb1e8641",
+  "id": "05826f9e-1213-4903-945f-b09d5d859017",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7922240+00:00"
+    "posted_at": "2026-11-09T23:44:49.3752550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bab999cb-113e-4b6b-9fda-99ea4c6265ef",
+  "subject_id": "5688f54c-5d56-4994-b83d-71d97eb0cce8",
   "subject_name": "django/db/models/expressions::BaseExpression.asc",
   "tags": [
     "entity:method"

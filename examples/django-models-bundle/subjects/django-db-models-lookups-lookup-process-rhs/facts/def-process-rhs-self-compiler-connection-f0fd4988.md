@@ -1,6 +1,6 @@
 # Fact f0fd4988
 
-Store id: 176df77d-ee24-4945-9dd0-27f971d54a97
+Store id: 41a30a84-0d4a-488b-8c8c-cf818ae807be
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1626140+00:00`
+- posted_at: `2026-11-09T23:44:54.8784210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "Lookup.process_rhs"
   },
-  "id": "176df77d-ee24-4945-9dd0-27f971d54a97",
+  "id": "41a30a84-0d4a-488b-8c8c-cf818ae807be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1626140+00:00"
+    "posted_at": "2026-11-09T23:44:54.8784210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "08ad1001-f48b-4410-bd3f-413a355c0e44",
+  "subject_id": "36de5130-896c-4164-936a-e0d90d58ad31",
   "subject_name": "django/db/models/lookups::Lookup.process_rhs",
   "tags": [
     "entity:method"

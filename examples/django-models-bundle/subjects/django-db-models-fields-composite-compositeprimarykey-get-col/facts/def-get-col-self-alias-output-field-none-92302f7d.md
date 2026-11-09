@@ -1,6 +1,6 @@
 # Fact 92302f7d
 
-Store id: 5a642600-a937-40e5-9cfd-dc28126401d1
+Store id: 95b7a7c2-3328-4b5a-a5d5-63e9f93326b5
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_col(self, alias, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1390430+00:00`
+- posted_at: `2026-11-09T23:44:50.4928980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 110,
     "symbol": "CompositePrimaryKey.get_col"
   },
-  "id": "5a642600-a937-40e5-9cfd-dc28126401d1",
+  "id": "95b7a7c2-3328-4b5a-a5d5-63e9f93326b5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1390430+00:00"
+    "posted_at": "2026-11-09T23:44:50.4928980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c88f03c-ccbd-4985-ae4d-9db27355c8c7",
+  "subject_id": "bec5261c-f02d-41d2-bcb8-476577bdfd04",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.get_col",
   "tags": [
     "entity:method"

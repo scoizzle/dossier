@@ -1,10 +1,10 @@
 # django/utils/html
 
-- Subject: django/utils/html (id `e6a444e0-a33a-4c88-91fe-cb6c7cb48e91`)
+- Subject: django/utils/html (id `998ef395-12c2-41c3-adf7-7da60194bc2b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4369 tokens
-- Facts shown: 63 of 63
+- Facts shown: 63 facts
 - Conflicts: 0
 - Gaps: 0
 

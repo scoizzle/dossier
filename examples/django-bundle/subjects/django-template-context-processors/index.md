@@ -1,10 +1,10 @@
 # django/template/context_processors
 
-- Subject: django/template/context_processors (id `68dc7c7f-905a-4a1d-a0cf-22b75b76dc92`)
+- Subject: django/template/context_processors (id `977617f0-d17e-4ac1-9929-902e9f5af364`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 761 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

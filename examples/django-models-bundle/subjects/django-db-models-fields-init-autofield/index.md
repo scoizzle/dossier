@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::AutoField
 
-- Subject: django/db/models/fields/__init__::AutoField (id `19e541bf-dc87-4f2a-b6dd-2f3af49f56df`)
+- Subject: django/db/models/fields/__init__::AutoField (id `0eefb26b-5858-4441-ac8f-6905e4f4c7a2`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

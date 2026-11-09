@@ -1,6 +1,6 @@
 # Fact c5e64ee9
 
-Store id: 7f7679d4-3195-477e-aacc-8a0f9406f111
+Store id: 5bc96e4b-bc04-4a12-802f-d16f0e59216c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6616660+00:00`
+- posted_at: `2026-11-09T23:44:50.1385860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2001,
     "symbol": "EmailField.__init__"
   },
-  "id": "7f7679d4-3195-477e-aacc-8a0f9406f111",
+  "id": "5bc96e4b-bc04-4a12-802f-d16f0e59216c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6616660+00:00"
+    "posted_at": "2026-11-09T23:44:50.1385860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1cc387a0-3aeb-434a-b3ad-209a9eda7bb1",
+  "subject_id": "c29ab3e9-cd87-4aa2-ac66-3341af0b0f18",
   "subject_name": "django/db/models/fields/__init__::EmailField.__init__",
   "tags": [
     "entity:method"

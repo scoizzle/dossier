@@ -1,10 +1,10 @@
 # django/db/migrations/migration
 
-- Subject: django/db/migrations/migration (id `fc603f69-4484-4c67-bbd5-a4d83b412d7f`)
+- Subject: django/db/migrations/migration (id `20a7f253-235d-45ed-92e1-cc44d085da70`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2219 tokens
-- Facts shown: 32 of 33
+- Used: 2285 tokens
+- Facts shown: 33 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -40,6 +40,7 @@
 - [53fd8021] def apply(self, project_state, schema_editor, collect_sql=False): """ Take a project_state representing all migrations prior to this one and a schema_editor for a live database and apply the migration in a forwards order.
 - [a6502d34] def mutate_state(self, project_state, preserve=True): """ Take a ProjectState and return a new one with the migration's operations applied to it. Preserve the original object state by default and return a mutated state from a copy. """ new_state = project_state if preserve: new_state = project_state.clone()
 - [66082f26] def suggest_name(self): """ Suggest a name for the operations this migration might represent. Names are not guaranteed to be unique, but put some effort into the fallback name to avoid VCS conflicts if possible. """ if self.initial: return "initial"
+- [0f66778f] def unapply(self, project_state, schema_editor, collect_sql=False): """ Take a project_state representing all migrations prior to this one and a schema_editor for a live database and apply the migration in a reverse order.
 - [537c624f] class Migration: """ The base class for all migrations.
 - [3989241f] class SwappableTuple(tuple): """ Subclass of tuple so Django can tell this was originally a swappable dependency when it reads the migration file. """
 - [e74c5c73] def swappable_dependency(value): """Turn a setting value into a dependency.""" return SwappableTuple((value.split(".", 1)[0], "__first__"), value)

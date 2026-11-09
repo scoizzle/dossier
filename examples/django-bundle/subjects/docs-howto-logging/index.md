@@ -1,10 +1,10 @@
 # docs/howto/logging
 
-- Subject: docs/howto/logging (id `713ba2ef-cd48-4b2d-88e6-ede6b08c3bef`)
+- Subject: docs/howto/logging (id `87ba6551-3a9e-4469-94fb-f71b34e27970`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3416 tokens
-- Facts shown: 86 of 90
+- Used: 3500 tokens
+- Facts shown: 90 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,6 +26,7 @@
 - import logging [50c88141]
 - logger = logging.getLogger("project.payment") [794dfd32]
 - logger = logging.getLogger(__name__) [6bedbb626d39929f]
+- logger = logging.getLogger(__name__) [6bedbb626d39929f-2]
 - logger.critical("Payment system is not responding") [cec738da]
 - logger.debug("Attempting to connect to API") [4515c445]
 - { "class": "logging.FileHandler", "filename": "general.log", "level": "DEBUG", } [2eb450c6]
@@ -35,12 +36,15 @@
 - .. _naming-loggers-hierarchy: [e07666b8]
 - .. _naming-loggers: [2267e6a0]
 - .. admonition:: Don't be tempted to use logging calls in ``settings.py``. [1d76b413]
-- .. code-block:: python :emphasize-lines: 3-12 [d95ba495]
 
 ## All facts
 
+- [d95ba495] .. code-block:: python :emphasize-lines: 3-12
 - [bb65b26e7c242781] .. code-block:: python :emphasize-lines: 3-8
+- [bb65b26e7c242781-2] .. code-block:: python :emphasize-lines: 3-8
 - [0ddc325a84512bdf] .. code-block:: python :emphasize-lines: 4
+- [0ddc325a84512bdf-2] .. code-block:: python :emphasize-lines: 4
+- [0ddc325a84512bdf-3] .. code-block:: python :emphasize-lines: 4
 - [a5d95d79] .. code-block:: python :emphasize-lines: 5
 - [46fe41aa] .. important::
 - [6b4a5e54e001d097-7] .. seealso::

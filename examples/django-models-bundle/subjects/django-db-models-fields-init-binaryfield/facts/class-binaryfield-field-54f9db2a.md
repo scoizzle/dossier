@@ -1,6 +1,6 @@
 # Fact 54f9db2a
 
-Store id: 0badc15a-1c39-4ad2-98b4-5ab35bf18f3b
+Store id: dc631f17-1bec-4a09-b5a8-1dee32d96721
 
 ## Text
 
@@ -20,7 +20,7 @@ class BinaryField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8401040+00:00`
+- posted_at: `2026-11-09T23:44:50.2751220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2744,
     "symbol": "BinaryField"
   },
-  "id": "0badc15a-1c39-4ad2-98b4-5ab35bf18f3b",
+  "id": "dc631f17-1bec-4a09-b5a8-1dee32d96721",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8401040+00:00"
+    "posted_at": "2026-11-09T23:44:50.2751220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "87f170a2-dea3-4a40-a580-06f31acb6333",
+  "subject_id": "d8a9e00c-74fa-462d-99af-c10d0ada74a1",
   "subject_name": "django/db/models/fields/__init__::BinaryField",
   "tags": [
     "entity:class"

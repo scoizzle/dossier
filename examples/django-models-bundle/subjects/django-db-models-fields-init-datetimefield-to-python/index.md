@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateTimeField.to_python
 
-- Subject: django/db/models/fields/__init__::DateTimeField.to_python (id `9f8472a3-b031-4f3a-9ae1-0a95a666ada7`)
+- Subject: django/db/models/fields/__init__::DateTimeField.to_python (id `34562e12-e85e-40a5-b8e1-3f2b12a4e41f`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

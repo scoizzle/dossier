@@ -1,19 +1,21 @@
 # django/contrib/auth/decorators
 
-- Subject: django/contrib/auth/decorators (id `c5cc6607-e7bc-417c-9d83-3da3ecbb3647`)
+- Subject: django/contrib/auth/decorators (id `1d0acb6d-05fa-4472-bba1-0204c34bbca3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1079 tokens
-- Facts shown: 22 of 24
+- Used: 1196 tokens
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Highlights
 
 - if test_pass: return await view_func(request, *args, **kwargs) return _redirect_to_login(request) [6e239c89]
+- if test_pass: return view_func(request, *args, **kwargs) return _redirect_to_login(request) [74942c7b]
 - async def _view_wrapper(request, *args, **kwargs): auser = await request.auser() if iscoroutinefunction(test_func): test_pass = await test_func(auser) else: test_pass = await sync_to_async(test_func)(auser) [abdbfd5e]
 - async def check_perms(user): # First check if the user has the permission (even anon users). if await user.ahas_perms(perms): return True # In case the 403 handler should be called raise the exception. if raise_exception: raise PermissionDenied # As the last resort, show the login form. return False [1263d2b1]
 - def _view_wrapper(request, *args, **kwargs): if iscoroutinefunction(test_func): test_pass = async_to_sync(test_func)(request.user) else: test_pass = test_func(request.user) [033fe21a]
+- def check_perms(user): # First check if the user has the permission (even anon users). if user.has_perms(perms): return True # In case the 403 handler should be called raise the exception. if raise_exception: raise PermissionDenied # As the last resort, show the login form. return False [e669f61a]
 - return redirect_to_login(path, resolved_login_url, redirect_field_name) [1c5d5452]
 - # Attributes used by LoginRequiredMiddleware. _view_wrapper.login_url = login_url _view_wrapper.redirect_field_name = redirect_field_name [dd16179a]
 - else: [6ad07797f4838346]
@@ -27,11 +29,11 @@
 - return decorator [021b5df2d691cbd2-2]
 - def login_not_required(view_func): """ Decorator for views that allows access to unauthenticated requests. """ view_func.login_required = False return view_func [330f6f11]
 - def login_required( function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url=None ): """ Decorator for views that checks that the user is logged in, redirecting to the log-in page if necessary. """ actual_decorator = user_passes_test( lambda u: u.is_authenticated, login_url=login_url, redirect_field_name=redirect_field_name, ) if function: return actual_decorator(function) return actual_decorator [b80717df]
-- def permission_required(perm, login_url=None, raise_exception=False): """ Decorator for views that checks whether a user has a particular permission enabled, redirecting to the log-in page if necessary. If the raise_exception parameter is given the PermissionDenied exception is raised. """ if isinstance(perm, str): perms = (perm,) else: perms = perm [9e5f6e07]
-- from asgiref.sync import async_to_sync, sync_to_async [cf6bbf2daef2deb8]
 
 ## All facts
 
+- [9e5f6e07] def permission_required(perm, login_url=None, raise_exception=False): """ Decorator for views that checks whether a user has a particular permission enabled, redirecting to the log-in page if necessary. If the raise_exception parameter is given the PermissionDenied exception is raised. """ if isinstance(perm, str): perms = (perm,) else: perms = perm
 - [773a1d04] def user_passes_test( test_func, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME ): """ Decorator for views that checks that the user passes the given test, redirecting to the log-in page if necessary. The test should be a callable that takes the user object and returns True if the user passes. """
+- [cf6bbf2daef2deb8] from asgiref.sync import async_to_sync, sync_to_async
 - [43a33608] from django.conf import settings from django.contrib.auth import REDIRECT_FIELD_NAME from django.core.exceptions import PermissionDenied from django.shortcuts import resolve_url
 - [bac40041] from functools import wraps from inspect import iscoroutinefunction from urllib.parse import urlsplit

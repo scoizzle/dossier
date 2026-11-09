@@ -1,6 +1,6 @@
 # Fact ab81a5ca
 
-Store id: 58398ad8-bb45-48ff-b29d-5274e352a211
+Store id: d7d866d0-45a0-48c4-be71-c65785d7f3d0
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_composite_fields(self, expressions)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.8774420+00:00`
+- posted_at: `2026-11-09T23:44:57.6109590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1565,
     "symbol": "SQLCompiler.has_composite_fields"
   },
-  "id": "58398ad8-bb45-48ff-b29d-5274e352a211",
+  "id": "d7d866d0-45a0-48c4-be71-c65785d7f3d0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.8774420+00:00"
+    "posted_at": "2026-11-09T23:44:57.6109590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fc60385f-769e-44ff-884a-aa565cf1f3d7",
+  "subject_id": "3648f3b0-84c4-498d-a2d6-1ff2fbd987eb",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.has_composite_fields",
   "tags": [
     "entity:method"

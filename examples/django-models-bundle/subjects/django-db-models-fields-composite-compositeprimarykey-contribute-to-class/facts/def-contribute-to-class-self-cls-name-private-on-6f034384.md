@@ -1,6 +1,6 @@
 # Fact 6f034384
 
-Store id: 0252eca2-db84-4738-bcf7-28d40e355ad5
+Store id: 7c24fa85-485a-4223-914e-317c720bbea6
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, private_only=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1272750+00:00`
+- posted_at: `2026-11-09T23:44:50.4850720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 92,
     "symbol": "CompositePrimaryKey.contribute_to_class"
   },
-  "id": "0252eca2-db84-4738-bcf7-28d40e355ad5",
+  "id": "7c24fa85-485a-4223-914e-317c720bbea6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1272750+00:00"
+    "posted_at": "2026-11-09T23:44:50.4850720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e9e467d-9a27-49d1-aac0-d75425b5fcc0",
+  "subject_id": "e48c704a-9257-41b8-a3b5-0f0f00e3fbc9",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.contribute_to_class",
   "tags": [
     "entity:method"

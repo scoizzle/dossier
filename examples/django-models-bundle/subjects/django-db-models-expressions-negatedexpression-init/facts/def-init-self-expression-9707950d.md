@@ -1,6 +1,6 @@
 # Fact 9707950d
 
-Store id: 129c4b10-30fe-4b93-ac93-884420aa3c40
+Store id: 8ea0d407-8519-4a86-b047-c9d16241a735
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9403780+00:00`
+- posted_at: `2026-11-09T23:44:49.6014230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1587,
     "symbol": "NegatedExpression.__init__"
   },
-  "id": "129c4b10-30fe-4b93-ac93-884420aa3c40",
+  "id": "8ea0d407-8519-4a86-b047-c9d16241a735",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9403780+00:00"
+    "posted_at": "2026-11-09T23:44:49.6014230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0731fdb6-41bb-4c0a-8e41-16b4075bf42d",
+  "subject_id": "588b1793-d296-4bd4-829e-bf05f7ce3b24",
   "subject_name": "django/db/models/expressions::NegatedExpression.__init__",
   "tags": [
     "entity:method"

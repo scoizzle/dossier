@@ -1,10 +1,10 @@
 # django/middleware/common
 
-- Subject: django/middleware/common (id `c584956d-1b51-4b9e-baf6-a83fec4564a0`)
+- Subject: django/middleware/common (id `83892897-8a46-4538-bbe8-57b8d0d9d4ad`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1938 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

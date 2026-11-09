@@ -1,6 +1,6 @@
 # Fact b17314b9
 
-Store id: c96290b2-9686-4f4b-a290-700c87bb248c
+Store id: c3b7194c-e10e-40e6-a4d6-bd22f809dadd
 
 ## Text
 
@@ -20,7 +20,7 @@ class Ceil(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.6785450+00:00`
+- posted_at: `2026-11-09T23:44:53.6989230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 61,
     "symbol": "Ceil"
   },
-  "id": "c96290b2-9686-4f4b-a290-700c87bb248c",
+  "id": "c3b7194c-e10e-40e6-a4d6-bd22f809dadd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.6785450+00:00"
+    "posted_at": "2026-11-09T23:44:53.6989230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "69704df4-f1ce-4103-bc98-6c19c854a1aa",
+  "subject_id": "416c9a23-b574-4662-a6ab-c987b9eca9eb",
   "subject_name": "django/db/models/functions/math::Ceil",
   "tags": [
     "entity:class"

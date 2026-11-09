@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile.url
 
-- Subject: django/db/models/fields/files::FieldFile.url (id `4f5e9398-ecec-4b21-8a59-dc8bfd30ba4a`)
+- Subject: django/db/models/fields/files::FieldFile.url (id `e15605a6-411f-41ae-9788-3ea4f2fc618f`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

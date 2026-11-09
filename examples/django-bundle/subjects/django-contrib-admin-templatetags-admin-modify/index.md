@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/admin_modify
 
-- Subject: django/contrib/admin/templatetags/admin_modify (id `12e5beeb-21cd-4bb1-bd62-afb97af7d77e`)
+- Subject: django/contrib/admin/templatetags/admin_modify (id `f19d9b64-6a62-486e-b539-ec7969292341`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1199 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/json::JSONExact.as_oracle
 
-- Subject: django/db/models/fields/json::JSONExact.as_oracle (id `6f83de70-f565-4196-93ba-aa15500d9030`)
+- Subject: django/db/models/fields/json::JSONExact.as_oracle (id `c9d9ed96-f65c-4d18-ad7c-93cc0191aaf9`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

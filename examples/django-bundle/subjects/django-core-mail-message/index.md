@@ -1,10 +1,10 @@
 # django/core/mail/message
 
-- Subject: django/core/mail/message (id `24a511de-66b7-4e2a-88c8-020222649c9d`)
+- Subject: django/core/mail/message (id `2129928a-3965-4e2e-9c04-406395d6f587`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5548 tokens
-- Facts shown: 62 of 63
+- Used: 5626 tokens
+- Facts shown: 63 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -23,6 +23,7 @@
 ## All facts
 
 - [d86a97f4] For a text/* mimetype (guessed or specified), when a bytes object is specified as content, decode it as UTF-8. If that fails, set the mimetype to DEFAULT_ATTACHMENT_MIME_TYPE and don't decode the content. """ if isinstance(filename, email.message.MIMEPart): if content is not None or mimetype is not None: raise ValueError( "content and mimetype must not be given when a MIMEPart " "instance is provided." ) self.attachments.append(filename) elif isinstance(filename, MIMEBase): warnings.warn( "MIMEBase attachments are deprecated." " Use an email.message.MIMEPart instead.", RemovedInDjango2028Warning, ) if content is not None or mimetype is not None: raise ValueError( "content and mimetype must not be given when a MIMEBase " "instance is provided." ) self.attachments.append(filename) elif content is None: raise ValueError("content must be provided.") else: mimetype = ( mimetype or mimetypes.guess_type(filename)[0] or DEFAULT_ATTACHMENT_MIME_TYPE ) basetype, subtype = mimetype.split("/", 1)
+- [2a30e211] This overrides the default as_string() implementation to not mangle lines that begin with 'From '. See bug #13433 for details. """ fp = StringIO() g = generator.Generator(fp, mangle_from_=False) g.flatten(self, unixfrom=unixfrom, linesep=linesep) return fp.getvalue()
 - [de5f9501] for content, mimetype in self.alternatives: if mimetype.startswith("text/") and text not in content: return False return True
 - [df7e01dc] from django.core import mail
 - [422b01bc] if fail_silently: warn_about_external_use( FAIL_SILENTLY_ARG_WARNING, RemovedInDjango2028Warning ) if hasattr(self, "get_connection"): raise AttributeError( "EmailMessage no longer supports the undocumented " "get_connection() method." )

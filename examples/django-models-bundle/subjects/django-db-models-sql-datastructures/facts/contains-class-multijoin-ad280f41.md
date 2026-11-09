@@ -1,6 +1,6 @@
 # Fact ad280f41
 
-Store id: 062caa5d-1ce4-41c5-9e82-e6afb00c0bb8
+Store id: 2fc16f92-f3f5-44ba-9543-a02646edff29
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class MultiJoin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.5084320+00:00`
+- posted_at: `2026-11-09T23:44:58.2955640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "062caa5d-1ce4-41c5-9e82-e6afb00c0bb8",
+  "id": "2fc16f92-f3f5-44ba-9543-a02646edff29",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.5084320+00:00"
+    "posted_at": "2026-11-09T23:44:58.2955640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "MultiJoin"
       },
       "rel": "contains",
-      "target": "5fd8ab27-3e8d-4e30-9918-9d57542df189"
+      "target": "daf160c2-5f9b-4ff7-b13b-1dc0f43761a2"
     }
   ],
   "status": "live",
-  "subject_id": "173565d9-788f-4a55-b66f-e71d8d7b1a33",
+  "subject_id": "a61dfdc2-4877-4b53-a0ac-6fd76c6f4abb",
   "subject_name": "django/db/models/sql/datastructures",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # docs/ref/index
 
-- Subject: docs/ref/index (id `78a3942d-90dc-4a86-bf91-fffeb0ed5d63`)
+- Subject: docs/ref/index (id `fedd9e60-6f3d-453c-ab72-909457f13af4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 133 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

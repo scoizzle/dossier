@@ -1,6 +1,6 @@
 # Fact a767b4b3
 
-Store id: c3790617-1b76-440e-b52b-125fdd953077
+Store id: 5eab86c8-c87b-407c-bf7c-2ac8e079f8b7
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_model_init_order(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7120210+00:00`
+- posted_at: `2026-11-09T23:44:56.2179520+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2439,
     "symbol": "RawQuerySet.resolve_model_init_order"
   },
-  "id": "c3790617-1b76-440e-b52b-125fdd953077",
+  "id": "5eab86c8-c87b-407c-bf7c-2ac8e079f8b7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7120210+00:00"
+    "posted_at": "2026-11-09T23:44:56.2179520+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b54c67b-bd7c-4b94-9c40-dcec3f26439a",
+  "subject_id": "1f21a91b-1970-4480-84ba-69889ecfee87",
   "subject_name": "django/db/models/query::RawQuerySet.resolve_model_init_order",
   "tags": [
     "entity:method"

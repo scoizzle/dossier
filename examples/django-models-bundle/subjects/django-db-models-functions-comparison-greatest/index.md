@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::Greatest
 
-- Subject: django/db/models/functions/comparison::Greatest (id `634654b4-954d-45f9-ae1c-fef3196387fc`)
+- Subject: django/db/models/functions/comparison::Greatest (id `89955b78-e948-4b03-9a69-483e19dc89f6`)
 - Kind: class
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

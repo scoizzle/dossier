@@ -1,6 +1,6 @@
 # Fact d2ee8383
 
-Store id: 829b23da-aecc-4c11-b9f4-aabd965fe867
+Store id: e8549981-8d2c-4c09-9d5b-e09607146a34
 
 ## Text
 
@@ -20,7 +20,7 @@ def _process_as_sqlite(self, sql, params, connection, key_transforms=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9403690+00:00`
+- posted_at: `2026-11-09T23:44:51.0062750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 388,
     "symbol": "ProcessJSONLHSMixin._process_as_sqlite"
   },
-  "id": "829b23da-aecc-4c11-b9f4-aabd965fe867",
+  "id": "e8549981-8d2c-4c09-9d5b-e09607146a34",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9403690+00:00"
+    "posted_at": "2026-11-09T23:44:51.0062750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c83fb258-7227-4d66-9c7e-9b818761118d",
+  "subject_id": "6900e1e3-97b0-495a-b9c2-27e26b6314d1",
   "subject_name": "django/db/models/fields/json::ProcessJSONLHSMixin._process_as_sqlite",
   "tags": [
     "entity:method"

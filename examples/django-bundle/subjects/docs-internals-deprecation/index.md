@@ -1,10 +1,10 @@
 # docs/internals/deprecation
 
-- Subject: docs/internals/deprecation (id `f18abc9c-03e3-479d-aa99-92c7111cfe66`)
+- Subject: docs/internals/deprecation (id `602aa5dc-5742-43fa-8e74-5451ed13a95f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 18485 tokens
-- Facts shown: 470 of 499
+- Used: 19470 tokens
+- Facts shown: 499 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -83,6 +83,7 @@
 - [0aae62cd] * Support for logging out via ``GET`` requests in the ``django.contrib.auth.views.LogoutView`` and ``django.contrib.auth.views.logout_then_login()`` will be removed.
 - [bdadc587] * Support for old-style middleware using ``settings.MIDDLEWARE_CLASSES`` will be removed.
 - [83d22950] * Support for overriding ``ModelAdmin.get_action_choices()`` without the new ``action_location`` parameter will be removed.
+- [f2fd6709] * Support for overriding ``ModelAdmin.get_actions()`` without the new ``action_location`` parameter will be removed.
 - [727c0cd3] * Support for passing Python's legacy email ``email.mime.base.MIMEBase`` object to ``EmailMessage.attach()`` (or including one in the message's ``attachments`` list) will be removed.
 - [d4cbc06b] * Support for passing a 3-tuple as the first argument to ``include()`` will be removed.
 - [6c0f7ec6] * Support for passing encoded JSON string literals to ``JSONField`` and associated lookups and expressions will be removed.
@@ -316,6 +317,7 @@
 - [b493d292] * The internal ``django.utils.functional.memoize`` will be removed.
 - [e0185d57] * The many to many SQL generation functions on the database backends will be removed.
 - [85c7e4a8] * The model ``CommaSeparatedIntegerField`` will be removed. A stub field will remain for compatibility with historical migrations.
+- [b41b8ae5] * The model ``NullBooleanField`` will be removed. A stub field will remain for compatibility with historical migrations.
 - [e9eed628] * The model ``django.contrib.postgres.fields.CICharField``, ``django.contrib.postgres.fields.CIEmailField``, and ``django.contrib.postgres.fields.CITextField`` will be removed. Stub fields will remain for compatibility with historical migrations.
 - [374cdf51] * The model ``django.contrib.postgres.fields.JSONField`` will be removed. A stub field will remain for compatibility with historical migrations.
 - [2d2a4b2d] * The model and form ``IPAddressField`` will be removed. A stub field will remain for compatibility with historical migrations.
@@ -457,9 +459,13 @@
 - [7a53b5cd] .. _deprecation-removed-in-2.1:
 - [024d9f0d] .. _deprecation-removed-in-2028:
 - [113e43f1] .. _deprecation-removed-in-3.0:
+- [efdbdbad] .. _deprecation-removed-in-3.1:
 - [a2f8afd9] .. _deprecation-removed-in-4.0:
+- [49e4f04b] .. _deprecation-removed-in-4.1:
 - [1a69c945] .. _deprecation-removed-in-5.0:
+- [e34a49ef] .. _deprecation-removed-in-5.1:
 - [62b500f9] .. _deprecation-removed-in-6.0:
+- [7d7871a0] .. _deprecation-removed-in-6.1:
 - [6d2011e2] 1.10 ----
 - [2db6207d] 1.3 ---
 - [23b03515] 1.4 ---
@@ -481,5 +487,28 @@
 - [33247c3b] 6.1 ---
 - [f5af6f97] =========================== Django Deprecation Timeline ===========================
 - [10dd455d] See the :ref:`Django 1.1 release notes<deprecated-features-1.1>` for more details on these changes.
+- [21291f8f] See the :ref:`Django 1.10 release notes <deprecated-features-1.10>` for more details on these changes.
+- [ff2afc26] See the :ref:`Django 1.11 release notes<deprecated-features-1.11>` for more details on these changes.
+- [ecd40127] See the :ref:`Django 1.2 release notes<deprecated-features-1.2>` for more details on these changes.
+- [e965d73a] See the :ref:`Django 1.3 release notes<deprecated-features-1.3>` for more details on these changes.
+- [6de09f6b] See the :ref:`Django 1.4 release notes<deprecated-features-1.4>` for more details on these changes.
+- [be973569] See the :ref:`Django 1.5 release notes<deprecated-features-1.5>` for more details on these changes.
+- [a714f130] See the :ref:`Django 1.6 release notes<deprecated-features-1.6>` for more details on these changes.
+- [ffeb5dc0] See the :ref:`Django 1.7 release notes<deprecated-features-1.7>` for more details on these changes.
+- [3f2fe506] See the :ref:`Django 1.8 release notes<deprecated-features-1.8>` for more details on these changes.
+- [22ab6611] See the :ref:`Django 1.9 release notes<deprecated-features-1.9>` for more details on these changes.
 - [64418440] See the :ref:`Django 2.0 release notes<deprecated-features-2.0>` for more details on these changes.
+- [cf37e1a0] See the :ref:`Django 2.1 release notes <deprecated-features-2.1>` for more details on these changes.
+- [513fed17] See the :ref:`Django 2.2 release notes <deprecated-features-2.2>` for more details on these changes.
+- [a0d23eae] See the :ref:`Django 3.0 release notes <deprecated-features-3.0>` for more details on these changes.
+- [2c73b9cd] See the :ref:`Django 3.1 release notes <deprecated-features-3.1>` for more details on these changes.
+- [6bf7c84d] See the :ref:`Django 3.2 release notes <deprecated-features-3.2>` for more details on these changes.
+- [b4c9d816] See the :ref:`Django 4.0 release notes <deprecated-features-4.0>` for more details on these changes.
+- [755741e2] See the :ref:`Django 4.1 release notes <deprecated-features-4.1>` for more details on these changes.
+- [1b3f9fbf] See the :ref:`Django 4.2 release notes <deprecated-features-4.2>` for more details on these changes.
+- [88a16352] See the :ref:`Django 5.0 release notes <deprecated-features-5.0>` for more details on these changes.
+- [38a7099c] See the :ref:`Django 5.1 release notes <deprecated-features-5.1>` for more details on these changes.
+- [84b55d2e] See the :ref:`Django 5.2 release notes <deprecated-features-5.2>` for more details on these changes.
+- [0de23635] See the :ref:`Django 6.0 release notes <deprecated-features-6.0>` for more details on these changes.
+- [60210a0f] See the :ref:`Django 6.1 release notes <deprecated-features-6.1>` for more details on these changes.
 - [868deccd] This document outlines when various pieces of Django will be removed or altered in a backward incompatible way, following their deprecation, as per the :ref:`deprecation policy <internal-release-deprecation-policy>`. More details about each item can often be found in the release notes of two versions prior.

@@ -1,10 +1,10 @@
 # docs/howto/custom-file-storage
 
-- Subject: docs/howto/custom-file-storage (id `0a8c04f8-19b1-4b55-b7ce-74669807256b`)
+- Subject: docs/howto/custom-file-storage (id `4a3cc853-7db0-4d2f-8c88-c74e8939281a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1764 tokens
-- Facts shown: 39 of 40
+- Used: 1786 tokens
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -15,6 +15,7 @@
 - from django.conf import settings from django.core.files.storage import Storage [fbb6912b]
 - from django.core.files.storage import Storage [9a737fee]
 - example_storage = storages["example"] [ac6b4bb1]
+- from django.core.files.storage import storages [b677ac7c]
 - In addition, if your class provides local file storage, it must override the ``path()`` method. [b3a862e1]
 - #. Django must be able to instantiate your storage system without any arguments. This means that any settings should be taken from ``django.conf.settings``:: [f2d72073]
 - #. Your custom storage system must be a subclass of ``django.core.files.storage.Storage``:: [379c23e2]
@@ -33,12 +34,12 @@
 - Another example would be a backend that only handles writing to files. In this case, you would not need to implement any of the above methods. [fe6a48ee]
 - By default, the following methods raise ``NotImplementedError`` and will typically have to be overridden: [14cc9064]
 - By way of example, if listing the contents of certain storage backends turns out to be expensive, you might decide not to implement ``Storage.listdir()``. [815d7a37]
-- Called by ``Storage.open()``, this is the actual mechanism the storage class uses to open the file. This must return a ``File`` object, though in most cases, you'll want to return some subclass here that implements logic specific to the backend storage system. The :exc:`FileNotFoundError` exception should be raised when a file doesn't exist. [3b385453]
+- Called by ``Storage.save()``. The ``name`` will already have gone through ``get_valid_name()`` and ``get_available_name()``, and the ``content`` will be a ``File`` object itself. [6bb34b85]
+- If a file with ``name`` already exists, ``get_alternative_name()`` is called to obtain an alternative name. [3140bfe5]
 
 ## All facts
 
-- [6bb34b85] Called by ``Storage.save()``. The ``name`` will already have gone through ``get_valid_name()`` and ``get_available_name()``, and the ``content`` will be a ``File`` object itself.
-- [3140bfe5] If a file with ``name`` already exists, ``get_alternative_name()`` is called to obtain an alternative name.
+- [3b385453] Called by ``Storage.open()``, this is the actual mechanism the storage class uses to open the file. This must return a ``File`` object, though in most cases, you'll want to return some subclass here that implements logic specific to the backend storage system. The :exc:`FileNotFoundError` exception should be raised when a file doesn't exist.
 - [7d37d8b7] If you need to provide custom file storage -- a common example is storing files on some remote system -- you can do so by defining a custom storage class. You'll need to follow these steps:
 - [0755c483] Note however that not all these methods are required and may be deliberately omitted. As it happens, it is possible to leave each method unimplemented and still have a working Storage.
 - [1696aec2] Returns a filename suitable for use with the underlying storage system. The ``name`` argument passed to this method is either the original filename sent to the server or, if ``upload_to`` is a callable, the filename returned by that method after any path information is removed. Override this to customize how non-standard characters are converted to safe filenames.

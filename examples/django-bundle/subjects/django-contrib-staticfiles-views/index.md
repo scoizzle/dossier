@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/views
 
-- Subject: django/contrib/staticfiles/views (id `648595d0-a90c-42e1-8f98-f87897642aba`)
+- Subject: django/contrib/staticfiles/views (id `f493a13a-ff76-43a6-a6bf-e251473f589b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 394 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact b99ad981
 
-Store id: 167b98b4-2571-44c8-8ca6-ca67640f8e87
+Store id: 4796a693-bd19-4d44-ac14-2d4b87a34c50
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerGreaterThanOrEqual( IntegerFieldOverflow, IntegerFieldFloatRounding
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3066630+00:00`
+- posted_at: `2026-11-09T23:44:54.9912630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 485,
     "symbol": "IntegerGreaterThanOrEqual"
   },
-  "id": "167b98b4-2571-44c8-8ca6-ca67640f8e87",
+  "id": "4796a693-bd19-4d44-ac14-2d4b87a34c50",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3066630+00:00"
+    "posted_at": "2026-11-09T23:44:54.9912630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b02150bb-080e-445d-b530-6d3413f157bb",
+  "subject_id": "1a40f093-b8f9-4194-a35d-b1d8126bae21",
   "subject_name": "django/db/models/lookups::IntegerGreaterThanOrEqual",
   "tags": [
     "entity:class",

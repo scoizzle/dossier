@@ -1,11 +1,11 @@
 # django/db/models/lookups::YearLookup.get_bound_params
 
-- Subject: django/db/models/lookups::YearLookup.get_bound_params (id `c760af94-281a-438b-8d5d-6efcbe65a368`)
+- Subject: django/db/models/lookups::YearLookup.get_bound_params (id `4b2f7e8f-26e1-42fe-a48c-5b2f6661eef8`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

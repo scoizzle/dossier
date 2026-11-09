@@ -1,6 +1,6 @@
 # Fact 27a56e98
 
-Store id: 47a8ad09-86f5-473c-bba9-7c2261596682
+Store id: cd8d0f1d-d53d-4774-9629-352849b33ff2
 
 ## Text
 
@@ -20,7 +20,7 @@ def build_filter( self, filter_expr, branch_negated=False, current_negated=False
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9343780+00:00`
+- posted_at: `2026-11-09T23:44:58.8446840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1487,
     "symbol": "Query.build_filter"
   },
-  "id": "47a8ad09-86f5-473c-bba9-7c2261596682",
+  "id": "cd8d0f1d-d53d-4774-9629-352849b33ff2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9343780+00:00"
+    "posted_at": "2026-11-09T23:44:58.8446840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9805cbbc-ced6-45e1-8496-c96816c33a7a",
+  "subject_id": "1185b259-dd2e-4c00-a805-93af2dfab105",
   "subject_name": "django/db/models/sql/query::Query.build_filter",
   "tags": [
     "entity:method"

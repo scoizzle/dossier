@@ -1,11 +1,11 @@
 # django/db/models/lookups::Contains
 
-- Subject: django/db/models/lookups::Contains (id `f329660c-cb80-4cef-892e-f650223aeaf0`)
+- Subject: django/db/models/lookups::Contains (id `27492d26-9381-4cc2-ad93-bd0d10c67b68`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

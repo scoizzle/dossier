@@ -1,10 +1,10 @@
 # django/db/migrations/executor
 
-- Subject: django/db/migrations/executor (id `ca8e46d1-f91b-4948-a487-7623ec7e17fd`)
+- Subject: django/db/migrations/executor (id `fbcc3bf5-cb1d-4956-9f81-dc63aa17f8ac`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3858 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

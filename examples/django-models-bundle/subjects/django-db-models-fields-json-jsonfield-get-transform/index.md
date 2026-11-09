@@ -1,11 +1,11 @@
 # django/db/models/fields/json::JSONField.get_transform
 
-- Subject: django/db/models/fields/json::JSONField.get_transform (id `2e5b330e-675c-42fc-85e8-6857afe60a2f`)
+- Subject: django/db/models/fields/json::JSONField.get_transform (id `6584a9e6-4d17-4b3e-a23d-3ea28f8f7b3a`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 8f9bf8b9
 
-Store id: 3d2b5fe6-47d9-4e08-b790-1c865c878f58
+Store id: cc8874ba-a3f0-48ac-8323-4118125d6bde
 
 ## Text
 
@@ -20,7 +20,7 @@ def _clear_base(self, using=None, raw=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.4638600+00:00`
+- posted_at: `2026-11-09T23:44:51.9950950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1355,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager._clear_base"
   },
-  "id": "3d2b5fe6-47d9-4e08-b790-1c865c878f58",
+  "id": "cc8874ba-a3f0-48ac-8323-4118125d6bde",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.4638600+00:00"
+    "posted_at": "2026-11-09T23:44:51.9950950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aa523c24-02ce-40e9-8783-4cdd8370253f",
+  "subject_id": "d9fac40e-6e66-42a9-bc73-0da845717681",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._clear_base",
   "tags": [
     "entity:method"

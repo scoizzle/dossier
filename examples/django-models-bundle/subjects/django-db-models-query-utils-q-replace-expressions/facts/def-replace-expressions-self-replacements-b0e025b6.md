@@ -1,6 +1,6 @@
 # Fact b0e025b6
 
-Store id: 639f70fb-adc3-4b0d-98f0-7dee6e339886
+Store id: e11cebd0-55a1-4dd6-a365-a94d9dad24c4
 
 ## Text
 
@@ -20,7 +20,7 @@ def replace_expressions(self, replacements)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0765980+00:00`
+- posted_at: `2026-11-09T23:44:56.5673300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "Q.replace_expressions"
   },
-  "id": "639f70fb-adc3-4b0d-98f0-7dee6e339886",
+  "id": "e11cebd0-55a1-4dd6-a365-a94d9dad24c4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0765980+00:00"
+    "posted_at": "2026-11-09T23:44:56.5673300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "135918ad-2bcf-4cc6-9223-b780a0bb7b5e",
+  "subject_id": "0ed024ee-ede5-4cbd-872f-d556cbc32908",
   "subject_name": "django/db/models/query_utils::Q.replace_expressions",
   "tags": [
     "entity:method"

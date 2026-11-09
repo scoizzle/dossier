@@ -1,10 +1,10 @@
 # django/core/paginator
 
-- Subject: django/core/paginator (id `be54f54e-9012-4fc2-9c9c-f472bc3578fa`)
+- Subject: django/core/paginator (id `e0e870fd-3f7d-4650-a669-f5da06efb39f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3610 tokens
-- Facts shown: 66 of 67
+- Used: 3668 tokens
+- Facts shown: 67 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,6 +16,7 @@
 - This method must be awaited before AsyncPage can be treated as a sequence of self.object_list. """ if not isinstance(self.object_list, list): if hasattr(self.object_list, "__aiter__"): self.object_list = [obj async for obj in self.object_list] else: self.object_list = await sync_to_async(list)(self.object_list) return self.object_list [1ea62d09]
 - if not isinstance(self.object_list, list): raise TypeError( "AsyncPage.aget_object_list() must be awaited before using indexing." ) return self.object_list[index] [72193e56]
 - if number < (num_pages - on_each_side - on_ends) - 1: yield from range(number + 1, number + on_each_side + 1) yield self.ELLIPSIS yield from range(num_pages - on_ends + 1, num_pages + 1) else: yield from range(number + 1, num_pages + 1) [1db75ea5]
+- if number > (1 + on_each_side + on_ends) + 1: yield from range(1, on_ends + 1) yield self.ELLIPSIS yield from range(number - on_each_side, number + 1) else: yield from range(1, number + 1) [2deae432]
 - return reversed(self.object_list) [a6909839]
 - return self._get_page(self.object_list[bottom:top], number, self) [cf83d4b5]
 - self._cache_acount = count return count [c9568d71]
@@ -26,10 +27,10 @@
 - async def __aiter__(self): if hasattr(self.object_list, "__aiter__"): async for obj in self.object_list: yield obj else: for obj in self.object_list: yield obj [4f6940e1]
 - async def __aiter__(self): page_range = await self.apage_range() for page_number in page_range: yield await self.apage(page_number) [203c26df]
 - async def acount(self): """See Paginator.count().""" if self._cache_acount is not None: return self._cache_acount c = getattr(self.object_list, "acount", None) if ( inspect.iscoroutinefunction(c) and not inspect.isbuiltin(c) and method_has_no_args(c) ): count = await c() else: count = len(self.object_list) [7dfaee9a]
-- async def aend_index(self): """See Page.end_index().""" num_pages = await self.paginator.anum_pages() if self.number == num_pages: return await self.paginator.acount() return self.number * self.paginator.per_page [92107b62]
 
 ## All facts
 
+- [92107b62] async def aend_index(self): """See Page.end_index().""" num_pages = await self.paginator.anum_pages() if self.number == num_pages: return await self.paginator.acount() return self.number * self.paginator.per_page
 - [e791c862] async def aget_elided_page_range(self, number=1, *, on_each_side=3, on_ends=2): number = await self.avalidate_number(number) num_pages = await self.anum_pages() page_range = await self.apage_range() for page in self._get_elided_page_range( number, num_pages, page_range, on_each_side, on_ends ): yield page
 - [4a5b3705] async def aget_object_list(self): """ Returns self.object_list as a list.
 - [b9fc6fc4] async def aget_page(self, number): """See Paginator.get_page().""" try: number = await self.avalidate_number(number) except PageNotAnInteger: number = 1 except EmptyPage: number = await self.anum_pages() return await self.apage(number)

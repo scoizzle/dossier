@@ -1,6 +1,6 @@
 # Fact d326996e
 
-Store id: 9ff47e64-439d-48fa-958c-c020eebdc429
+Store id: 879b156a-2452-49ae-b911-9247fbc21577
 
 ## Text
 
@@ -20,7 +20,7 @@ class BitAnd(BitAggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5378100+00:00`
+- posted_at: `2026-11-09T23:44:48.3998310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 280,
     "symbol": "BitAnd"
   },
-  "id": "9ff47e64-439d-48fa-958c-c020eebdc429",
+  "id": "879b156a-2452-49ae-b911-9247fbc21577",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5378100+00:00"
+    "posted_at": "2026-11-09T23:44:48.3998310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "59034b6b-e582-4e87-962b-95a20fb03f2f",
+  "subject_id": "864f8369-167e-441d-955c-bd95807de327",
   "subject_name": "django/db/models/aggregates::BitAnd",
   "tags": [
     "entity:class"

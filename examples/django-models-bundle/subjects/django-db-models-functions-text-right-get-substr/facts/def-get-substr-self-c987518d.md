@@ -1,6 +1,6 @@
 # Fact c987518d
 
-Store id: 505858bc-5330-4a3a-99d4-4c24ba1f6822
+Store id: 7b46d719-e93b-4ad6-b59b-1063dd3275a4
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_substr(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2651020+00:00`
+- posted_at: `2026-11-09T23:44:54.1350700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 285,
     "symbol": "Right.get_substr"
   },
-  "id": "505858bc-5330-4a3a-99d4-4c24ba1f6822",
+  "id": "7b46d719-e93b-4ad6-b59b-1063dd3275a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2651020+00:00"
+    "posted_at": "2026-11-09T23:44:54.1350700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8305a2be-a766-4a78-b561-207875db7e5e",
+  "subject_id": "6e123947-a06c-4288-b63f-dcb80bcbd791",
   "subject_name": "django/db/models/functions/text::Right.get_substr",
   "tags": [
     "entity:method"

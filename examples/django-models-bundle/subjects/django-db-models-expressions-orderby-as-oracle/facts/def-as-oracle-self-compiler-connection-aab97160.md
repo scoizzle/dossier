@@ -1,6 +1,6 @@
 # Fact aab97160
 
-Store id: bf98f4ea-4f3a-4e5c-844f-cbf55af2ee04
+Store id: 4e765d4c-e94b-4b0a-bd54-d645fd27b320
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9928910+00:00`
+- posted_at: `2026-11-09T23:44:49.6605460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1980,
     "symbol": "OrderBy.as_oracle"
   },
-  "id": "bf98f4ea-4f3a-4e5c-844f-cbf55af2ee04",
+  "id": "4e765d4c-e94b-4b0a-bd54-d645fd27b320",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9928910+00:00"
+    "posted_at": "2026-11-09T23:44:49.6605460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7284853c-9a70-444f-b0e7-a225ca6a302f",
+  "subject_id": "9ed8e6e0-4c81-4809-a7e7-e6f7785c0b56",
   "subject_name": "django/db/models/expressions::OrderBy.as_oracle",
   "tags": [
     "entity:method"

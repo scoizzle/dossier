@@ -1,6 +1,6 @@
 # Fact adc673e9
 
-Store id: 905f34bd-d20c-4182-8d1c-ee51efddb598
+Store id: 6dbb5d6a-a1cb-4799-9c16-e3e7e5029593
 
 ## Text
 
@@ -20,7 +20,7 @@ def __bool__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3440060+00:00`
+- posted_at: `2026-11-09T23:44:50.6173730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 37,
     "symbol": "FieldFile.__bool__"
   },
-  "id": "905f34bd-d20c-4182-8d1c-ee51efddb598",
+  "id": "6dbb5d6a-a1cb-4799-9c16-e3e7e5029593",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3440060+00:00"
+    "posted_at": "2026-11-09T23:44:50.6173730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2f9d4474-c970-44d0-b7ba-e78eb4a3d3fa",
+  "subject_id": "f03a5f78-5e60-4d63-9aee-3b1309554fa8",
   "subject_name": "django/db/models/fields/files::FieldFile.__bool__",
   "tags": [
     "entity:method"

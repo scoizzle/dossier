@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile.__getstate__
 
-- Subject: django/db/models/fields/files::FieldFile.__getstate__ (id `2e81ab47-3a27-4c3b-bc67-030798687748`)
+- Subject: django/db/models/fields/files::FieldFile.__getstate__ (id `bad1e5c5-1733-4138-b8a1-29a05684ae71`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

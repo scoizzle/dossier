@@ -1,10 +1,10 @@
 # django/contrib/auth/password_validation
 
-- Subject: django/contrib/auth/password_validation (id `65fa2d9a-da79-45d9-afc7-450050cb57d0`)
+- Subject: django/contrib/auth/password_validation (id `346bc4e7-730b-432b-9c3b-5a9ba0b29c75`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2404 tokens
-- Facts shown: 41 of 41
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 

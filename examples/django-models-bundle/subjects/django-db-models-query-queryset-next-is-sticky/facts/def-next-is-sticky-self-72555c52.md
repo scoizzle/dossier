@@ -1,6 +1,6 @@
 # Fact 72555c52
 
-Store id: 8eb803e4-f6c0-4820-87f6-e845079f1523
+Store id: e8ef1409-c249-40df-8e82-ce725c70b4c8
 
 ## Text
 
@@ -20,7 +20,7 @@ def _next_is_sticky(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6486510+00:00`
+- posted_at: `2026-11-09T23:44:56.1610920+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2291,
     "symbol": "QuerySet._next_is_sticky"
   },
-  "id": "8eb803e4-f6c0-4820-87f6-e845079f1523",
+  "id": "e8ef1409-c249-40df-8e82-ce725c70b4c8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6486510+00:00"
+    "posted_at": "2026-11-09T23:44:56.1610920+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "49a26ed5-1993-48b8-b047-a076f368f77c",
+  "subject_id": "b92a7d27-bb13-4d34-826a-f1f49e288caa",
   "subject_name": "django/db/models/query::QuerySet._next_is_sticky",
   "tags": [
     "entity:method"

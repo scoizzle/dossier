@@ -1,6 +1,6 @@
 # Fact 2732516e
 
-Store id: 78abb6ac-88a7-4a1f-8785-51145bc6215d
+Store id: 12450997-c05e-49eb-af47-75ef0f9d7841
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerChoices
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.5153950+00:00`
+- posted_at: `2026-11-09T23:44:49.0496350+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "78abb6ac-88a7-4a1f-8785-51145bc6215d",
+  "id": "12450997-c05e-49eb-af47-75ef0f9d7841",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.5153950+00:00"
+    "posted_at": "2026-11-09T23:44:49.0496350+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerChoices"
       },
       "rel": "contains",
-      "target": "322ad7b4-0b16-4b13-a8bd-3481267b07b9"
+      "target": "3c3ddb57-9502-48ae-bdd8-d25527c4e3c1"
     }
   ],
   "status": "live",
-  "subject_id": "54364be7-37e6-46d5-aa55-5d6eed226a31",
+  "subject_id": "ac6e1f16-8862-4f75-b1df-d57266ed28cf",
   "subject_name": "django/db/models/enums",
   "tags": [
     "entity:class"

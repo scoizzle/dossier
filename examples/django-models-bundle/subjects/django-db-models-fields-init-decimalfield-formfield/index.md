@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DecimalField.formfield
 
-- Subject: django/db/models/fields/__init__::DecimalField.formfield (id `01f5a7e3-9ce2-4c2c-839e-fd4f3c74a0c9`)
+- Subject: django/db/models/fields/__init__::DecimalField.formfield (id `9802c067-1c0b-4cfe-b323-dae5b04b889e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

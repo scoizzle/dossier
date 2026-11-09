@@ -1,10 +1,10 @@
 # django/contrib/gis/forms/fields
 
-- Subject: django/contrib/gis/forms/fields (id `5060fe8b-43f7-445d-a1ff-25f88f1031b1`)
+- Subject: django/contrib/gis/forms/fields (id `50a0f244-5180-45cc-96d0-03d4402a387a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1298 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

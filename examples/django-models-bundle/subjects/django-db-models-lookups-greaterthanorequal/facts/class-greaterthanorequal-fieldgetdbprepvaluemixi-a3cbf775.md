@@ -1,6 +1,6 @@
 # Fact a3cbf775
 
-Store id: 1aaacf97-5a00-491e-8698-3c23e2a8b6c6
+Store id: d37cb91f-2d6a-4732-afb8-43fd3c7dac71
 
 ## Text
 
@@ -20,7 +20,7 @@ class GreaterThanOrEqual(FieldGetDbPrepValueMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2706670+00:00`
+- posted_at: `2026-11-09T23:44:54.9672210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 430,
     "symbol": "GreaterThanOrEqual"
   },
-  "id": "1aaacf97-5a00-491e-8698-3c23e2a8b6c6",
+  "id": "d37cb91f-2d6a-4732-afb8-43fd3c7dac71",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2706670+00:00"
+    "posted_at": "2026-11-09T23:44:54.9672210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a58f8a2c-155a-406e-bf3b-b3c9916d61a2",
+  "subject_id": "871985d4-60df-4014-9f93-b3e6ab07ad3b",
   "subject_name": "django/db/models/lookups::GreaterThanOrEqual",
   "tags": [
     "entity:class",

@@ -1,6 +1,6 @@
 # Fact 9d0851ee
 
-Store id: c3b4a8b9-5496-404e-9d68-bd0bf7aa608b
+Store id: 7ee248fd-e555-4d90-bf5e-fb2d7d6899b8
 
 ## Text
 
@@ -20,7 +20,7 @@ def __copy__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6640290+00:00`
+- posted_at: `2026-11-09T23:44:51.5143730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 597,
     "symbol": "ForeignObject.__copy__"
   },
-  "id": "c3b4a8b9-5496-404e-9d68-bd0bf7aa608b",
+  "id": "7ee248fd-e555-4d90-bf5e-fb2d7d6899b8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6640290+00:00"
+    "posted_at": "2026-11-09T23:44:51.5143730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "832e981a-68e8-4810-89c9-e5aa56534bef",
+  "subject_id": "1943b460-b701-416e-9ead-eae88a572178",
   "subject_name": "django/db/models/fields/related::ForeignObject.__copy__",
   "tags": [
     "entity:method"

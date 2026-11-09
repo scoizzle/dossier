@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/mixins-single-object
 
-- Subject: docs/ref/class-based-views/mixins-single-object (id `04a2689c-c6c2-4fb7-9142-d04f89b7fc6e`)
+- Subject: docs/ref/class-based-views/mixins-single-object (id `2c4f1dc9-3977-4fd1-92eb-5ea8c9dac3b5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2195 tokens
-- Facts shown: 52 of 52
+- Facts shown: 52 facts
 - Conflicts: 0
 - Gaps: 0
 

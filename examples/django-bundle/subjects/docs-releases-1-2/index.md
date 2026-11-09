@@ -1,10 +1,10 @@
 # docs/releases/1.2
 
-- Subject: docs/releases/1.2 (id `430c873a-3a5f-4245-b2b3-b8b0cc0129c1`)
+- Subject: docs/releases/1.2 (id `961f85d2-4fff-4b37-ad93-85ff334e65e8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 14135 tokens
-- Facts shown: 289 of 309
+- Used: 14652 tokens
+- Facts shown: 309 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,7 +17,10 @@
 - def get_db_prep_lookup(self, lookup_type, value): ... [5b8c2aee]
 - def get_db_prep_lookup(self, lookup_type, value, connection, prepared=False): ... [b7556689]
 - def get_db_prep_save(self, value): ... [adbc07fe]
+- def get_db_prep_save(self, value, connection): ... [639dcdd8]
+- def get_db_prep_value(self, value): ... [db4ef67e]
 - def get_db_prep_value(self, value, connection, prepared=False): ... [65a6163b]
+- def get_prep_lookup(self, lookup_type, value): ... [015ea57b]
 - def get_prep_value(self, value): ... [b5da0118]
 - sr_qs = SpatialRefSys.objects.using("my_spatialite").filter(...) gc_qs = GeometryColumns.objects.using("my_postgis").filter(...) [226497c0]
 - <div {% if user.email|lower == message.recipient|lower %} class="highlight" {% endif %} >{{ message }}</div> [84b687ac]
@@ -33,32 +36,41 @@
 - PostGISAdaptor = connection.ops.Adapter [bd13bb9c]
 - When using the models returned from the ``spatial_ref_sys()`` and ``geometry_columns()`` method, you'll still need to use the correct database alias when querying on the non-default connection. In other words, to ensure that the models in the example above use the correct database:: [0cced6e0]
 - __members__ = property(lambda self: self.__dir__()) [03df0866]
-- `Django Advent`_ covered the release of Django 1.2 with a series of articles and tutorials that cover some of the new features in depth. [906fc70e]
 - class CustomModelField(models.Field): ... [cbe4cee4c4b4d041]
-- class LatestEntriesByCategory(Feed): def get_object(self, request, category_id): return get_object_or_404(Category, id=category_id) [08f85161]
+- class CustomModelField(models.Field): ... [cbe4cee4c4b4d041-2]
 
 ## All facts
 
+- [906fc70e] `Django Advent`_ covered the release of Django 1.2 with a series of articles and tutorials that cover some of the new features in depth.
+- [08f85161] class LatestEntriesByCategory(Feed): def get_object(self, request, category_id): return get_object_or_404(Category, id=category_id)
 - [30408147] class MyClass(object): @login_required def my_view(self, request): pass
+- [cce4f36b] class MyClass(object): @login_required_m def my_view(self, request): pass
 - [8eaed4df] class MyClass(object): @method_decorator(login_required) def my_view(self, request): pass
 - [4b5dbb9b] connection = SMTPConnection() messages = get_notification_email() connection.send_messages(messages)
 - [9ee8fd3f] connection = get_connection( "django.core.mail.backends.smtp.EmailBackend", hostname="localhost", port=1234 )
 - [1ba0605b] connection = get_connection("django.core.mail.backends.smtp.EmailBackend") messages = get_notification_email() connection.send_messages(messages)
+- [a1c02dca] connection = get_connection() messages = get_notification_email() connection.send_messages(messages)
 - [088fa5fb] date_format = formats.get_format("DATE_FORMAT") datetime_format = formats.get_format("DATETIME_FORMAT") time_format = formats.get_format("TIME_FORMAT")
+- [decd2994] date_format, datetime_format, time_format = get_date_formats()
 - [1639bf88] even even even even ...
 - [4c1ea5da] even odd even odd ...
 - [53a9b68f] feeds = { "latest": LatestEntries, "categories": LatestEntriesByCategory, }
 - [70240740] for message in messages.get_messages(request): ...
 - [b801a824] for message in user.get_and_delete_messages(): ...
 - [1143c031d2854603] from django.conf.urls.defaults import * from myproject.feeds import LatestEntries, LatestEntriesByCategory
+- [1143c031d2854603-2] from django.conf.urls.defaults import * from myproject.feeds import LatestEntries, LatestEntriesByCategory
 - [c05c3ad0030e2165-4] from django.contrib import messages
+- [c05c3ad0030e2165-5] from django.contrib import messages
 - [30f9a70a] from django.contrib.gis.db.backend.postgis import PostGISAdaptor
 - [4e50e643] from django.contrib.syndication.views import Feed from django.shortcuts import get_object_or_404 from myproject.models import Category
 - [435e3364] from django.core.mail import SMTPConnection
 - [e24aec43cb74f05e] from django.core.mail import get_connection
+- [e24aec43cb74f05e-2] from django.core.mail import get_connection
 - [89aade5c] from django.db import connection
 - [37ef7148cf6f0f4b] from django.utils import formats
+- [37ef7148cf6f0f4b-2] from django.utils import formats
 - [ea54f5c3e43fe11a] from django.utils.decorators import method_decorator
+- [ea54f5c3e43fe11a-2] from django.utils.decorators import method_decorator
 - [4467a5f4] from django.utils.translation import get_date_formats
 - [2883162e] login_required_m = method_decorator(login_required)
 - [d68dd761] messages.add_message(request, messages.INFO, "a message")
@@ -70,6 +82,7 @@
 - [8de3a17f] {% for object in object_list %} {% include "subtemplate.html" %} {% endfor %}
 - [8986d27b] {% if a != b %} ... {% endif %}
 - [543047b0] {% ifnotequal a b %} ... {% endifnotequal %}
+- [5613a52b7cbe645f-2] The upgrade notes have been removed in current Django docs. Please refer to the docs for Django 1.3 or older to find these instructions.
 - [f44b21b91f62f4e2] .. admonition:: Documentation removed
 - [ac0a2085] However, upgrading to the new CSRF protection framework requires a few important backwards-incompatible changes, detailed in `CSRF Protection`_, below.
 - [cb804723] "Smart" :ttag:`if` tag ----------------------
@@ -109,6 +122,10 @@
 - [3add9ad2] .. _whats-new-1.2:
 - [f44b21b91f62f4e2-2] .. admonition:: Documentation removed
 - [685d15dfb6eb2285-306] .. code-block:: html+django
+- [685d15dfb6eb2285-307] .. code-block:: html+django
+- [685d15dfb6eb2285-308] .. code-block:: html+django
+- [685d15dfb6eb2285-309] .. code-block:: html+django
+- [685d15dfb6eb2285-310] .. code-block:: html+django
 - [3a9340cd0d877339-30] .. code-block:: text
 - [3a9340cd0d877339-31] .. code-block:: text
 - [942ae6c11625c81c-155] .. note::
@@ -219,10 +236,12 @@
 - [81a464b6] Prior to Django 1.2, a custom ``Field`` had the option of defining several functions to support conversion of Python values into database-compatible values. A custom field might look something like::
 - [fdcfb56b] Prior to the creation of the separate spatial backends, the ``django.contrib.gis.db.backend.SpatialBackend`` object was provided as an abstraction to introspect on the capabilities of the spatial database. All of the attributes and routines provided by ``SpatialBackend`` are now a part of the ``ops`` attribute of the database backend.
 - [ae34cf4ae6f76a23-3] Python compatibility ====================
+- [b6d9d4d4] Relaxed requirements for usernames ----------------------------------
 - [393742b6] Specifying databases --------------------
 - [40d110e3] Starting with 1.2, the default value for ``max_num`` has been changed to ``None``, and FormSets will differentiate between a value of ``None`` and a value of ``0``. A value of ``None`` indicates that no limit on the number of forms is to be imposed; a value of ``0`` indicates that a maximum of 0 forms should be imposed. This doesn't necessarily mean that no forms will be displayed -- see the :ref:`ModelFormSet documentation <model-formsets-max-num>` for more details.
 - [d672fa15] Stateful template tags ----------------------
 - [81ff63e6] Support for 3D geometry fields was added, and may be enabled by setting the :attr:`~django.contrib.gis.db.models.GeometryField.dim` keyword to 3 in your :class:`~django.contrib.gis.db.models.GeometryField`. The :class:`~django.contrib.gis.db.models.Extent3D` aggregate and ``extent3d()`` ``GeoQuerySet`` method were added as a part of this feature.
+- [d0aeccc1] Support for multiple databases ------------------------------
 - [08ef649f] Syndication feeds as views --------------------------
 - [21baeb9f] Technical message IDs ---------------------
 - [5ba55858] Template caching ----------------
@@ -299,6 +318,7 @@
 - [c27a40d6] ``get_db_prep_*()`` methods on ``Field`` ----------------------------------------
 - [7651a02d] ``postgresql`` database backend -------------------------------
 - [8807ce61] ``readonly_fields`` in ``ModelAdmin`` -------------------------------------
+- [87e4fb83] ``user_passes_test``, ``login_required`` and ``permission_required`` --------------------------------------------------------------------
 - [05c2b0e6bc097b8e-2] or::
 - [1e89a00498496058-2] to this::
 - [5d0a1ddf] with a ``subtemplate.html`` that reads:

@@ -1,6 +1,6 @@
 # Fact cca134b8
 
-Store id: 2fe4984a-05d8-4816-be75-7649d2fcbb59
+Store id: e2ae6e63-a736-40cf-82ef-f09b3d01e72d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8225820+00:00`
+- posted_at: `2026-11-09T23:44:49.4531040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 827,
     "symbol": "DurationExpression.as_sql"
   },
-  "id": "2fe4984a-05d8-4816-be75-7649d2fcbb59",
+  "id": "e2ae6e63-a736-40cf-82ef-f09b3d01e72d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8225820+00:00"
+    "posted_at": "2026-11-09T23:44:49.4531040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "40b8839b-8ea4-4b78-95e2-e02a4ebe09a2",
+  "subject_id": "ef5e188e-f851-4e21-9a30-ee4f789bee49",
   "subject_name": "django/db/models/expressions::DurationExpression.as_sql",
   "tags": [
     "entity:method"

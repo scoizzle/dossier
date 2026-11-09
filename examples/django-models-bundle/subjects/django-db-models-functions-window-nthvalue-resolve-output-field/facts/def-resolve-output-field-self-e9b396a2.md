@@ -1,6 +1,6 @@
 # Fact e9b396a2
 
-Store id: e1ef5d68-d20b-4558-b1b5-fc96551940dc
+Store id: a34be352-8eb6-48e7-8796-1146fbe83bf4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7226440+00:00`
+- posted_at: `2026-11-09T23:44:54.4962050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 89,
     "symbol": "NthValue._resolve_output_field"
   },
-  "id": "e1ef5d68-d20b-4558-b1b5-fc96551940dc",
+  "id": "a34be352-8eb6-48e7-8796-1146fbe83bf4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7226440+00:00"
+    "posted_at": "2026-11-09T23:44:54.4962050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "408470f8-51f3-485a-89a4-6bba9304f154",
+  "subject_id": "3da631a8-2efe-46a9-bf53-3cafc7ea6e5f",
   "subject_name": "django/db/models/functions/window::NthValue._resolve_output_field",
   "tags": [
     "entity:method"

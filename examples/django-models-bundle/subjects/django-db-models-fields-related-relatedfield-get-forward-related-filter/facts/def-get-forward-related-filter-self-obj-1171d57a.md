@@ -1,6 +1,6 @@
 # Fact 1171d57a
 
-Store id: 79eeaf73-98ba-4fdf-a851-f8de78977883
+Store id: 34defd8d-d5ac-4bc4-b86c-5e9931d4027f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_forward_related_filter(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6254070+00:00`
+- posted_at: `2026-11-09T23:44:51.4840990+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 419,
     "symbol": "RelatedField.get_forward_related_filter"
   },
-  "id": "79eeaf73-98ba-4fdf-a851-f8de78977883",
+  "id": "34defd8d-d5ac-4bc4-b86c-5e9931d4027f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6254070+00:00"
+    "posted_at": "2026-11-09T23:44:51.4840990+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "19dc55fe-2c59-46b1-bfcb-3472f6ab2e3a",
+  "subject_id": "528a6378-2b1e-4855-9c6f-4c230d323563",
   "subject_name": "django/db/models/fields/related::RelatedField.get_forward_related_filter",
   "tags": [
     "entity:method"

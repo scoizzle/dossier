@@ -1,6 +1,6 @@
 # Fact fa331925
 
-Store id: c9bd0d37-40bb-4d17-a0ec-ebc098cd433b
+Store id: 0e7cbc30-a9e2-4239-b609-78a083dd5400
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7811260+00:00`
+- posted_at: `2026-11-09T23:44:49.3349810+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 346,
     "symbol": "BaseExpression._resolve_output_field"
   },
-  "id": "c9bd0d37-40bb-4d17-a0ec-ebc098cd433b",
+  "id": "0e7cbc30-a9e2-4239-b609-78a083dd5400",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7811260+00:00"
+    "posted_at": "2026-11-09T23:44:49.3349810+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae5154d2-0cc5-4e95-a963-dfb7cc50d4d7",
+  "subject_id": "10622d7d-04ae-4465-bb8e-f4c13128dbcc",
   "subject_name": "django/db/models/expressions::BaseExpression._resolve_output_field",
   "tags": [
     "entity:method"

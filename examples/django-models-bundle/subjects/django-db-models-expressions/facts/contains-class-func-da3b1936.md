@@ -1,6 +1,6 @@
 # Fact da3b1936
 
-Store id: 4892d561-e205-4b3d-a934-955089cb25b0
+Store id: c4a02d77-2f4b-4d67-914c-98e932aa5bf2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Func
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4892d561-e205-4b3d-a934-955089cb25b0",
+  "id": "c4a02d77-2f4b-4d67-914c-98e932aa5bf2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Func"
       },
       "rel": "contains",
-      "target": "71b3224b-299c-4220-b834-bc6b53449511"
+      "target": "4cc20d4b-63ea-439d-b332-940815b1268d"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

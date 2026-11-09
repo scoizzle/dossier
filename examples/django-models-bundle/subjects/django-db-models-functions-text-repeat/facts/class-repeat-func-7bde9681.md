@@ -1,6 +1,6 @@
 # Fact 7bde9681
 
-Store id: b44a19b0-a633-4f94-be84-c9abe5a59f93
+Store id: 82f4b28c-4fc1-4c9d-b2a8-bfb4dcc67e26
 
 ## Text
 
@@ -20,7 +20,7 @@ class Repeat(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2364180+00:00`
+- posted_at: `2026-11-09T23:44:54.1167820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 233,
     "symbol": "Repeat"
   },
-  "id": "b44a19b0-a633-4f94-be84-c9abe5a59f93",
+  "id": "82f4b28c-4fc1-4c9d-b2a8-bfb4dcc67e26",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2364180+00:00"
+    "posted_at": "2026-11-09T23:44:54.1167820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10b0c4e7-691a-441e-93c3-e7cb53e84205",
+  "subject_id": "3e91e6da-ad01-4358-b27f-92239c9da460",
   "subject_name": "django/db/models/functions/text::Repeat",
   "tags": [
     "entity:class"

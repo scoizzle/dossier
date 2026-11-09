@@ -1,10 +1,10 @@
 # docs/faq/contributing
 
-- Subject: docs/faq/contributing (id `288ae778-247a-4e9f-8e60-2735f855b4eb`)
+- Subject: docs/faq/contributing (id `0b2ba27c-fab3-4b1a-84ae-f878aa2dcb64`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1685 tokens
-- Facts shown: 26 of 26
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 

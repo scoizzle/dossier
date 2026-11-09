@@ -1,6 +1,6 @@
 # Fact 69114795
 
-Store id: 66dd70a5-ae80-44c3-9d45-d3973d27ec09
+Store id: 4084b2e9-f483-4425-9303-65c0dfb67929
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_field_name(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4262840+00:00`
+- posted_at: `2026-11-09T23:44:49.9704230+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 312,
     "symbol": "Field._check_field_name"
   },
-  "id": "66dd70a5-ae80-44c3-9d45-d3973d27ec09",
+  "id": "4084b2e9-f483-4425-9303-65c0dfb67929",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4262840+00:00"
+    "posted_at": "2026-11-09T23:44:49.9704230+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d7fc6fe1-e0f8-44a0-8917-93e3e70f846e",
+  "subject_id": "888fe1e8-f136-4c3a-ae84-478bfa349f21",
   "subject_name": "django/db/models/fields/__init__::Field._check_field_name",
   "tags": [
     "entity:method"

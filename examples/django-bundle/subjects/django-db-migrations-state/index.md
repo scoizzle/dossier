@@ -1,10 +1,10 @@
 # django/db/migrations/state
 
-- Subject: django/db/migrations/state (id `b0a6d23c-20d1-4e12-bd3f-dbb63370bc93`)
+- Subject: django/db/migrations/state (id `108436de-9156-42b4-826c-e720fa70f614`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 9158 tokens
-- Facts shown: 98 of 98
+- Facts shown: 98 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 2ba04bde
 
-Store id: 58471078-aa10-472b-8632-7f24c783d5f1
+Store id: 620dc5a3-0e64-41b6-9964-0278e78818c7
 
 ## Text
 
@@ -20,7 +20,7 @@ class FileDescriptor(DeferredAttribute)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3778440+00:00`
+- posted_at: `2026-11-09T23:44:50.6423400+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 159,
     "symbol": "FileDescriptor"
   },
-  "id": "58471078-aa10-472b-8632-7f24c783d5f1",
+  "id": "620dc5a3-0e64-41b6-9964-0278e78818c7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3778440+00:00"
+    "posted_at": "2026-11-09T23:44:50.6423400+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "adb6e22a-d982-4b8b-b543-44b57129f21a",
+  "subject_id": "c3ffeaca-b24f-4315-bcd6-8fc80864aae2",
   "subject_name": "django/db/models/fields/files::FileDescriptor",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/expressions::Ref.set_source_expressions
 
-- Subject: django/db/models/expressions::Ref.set_source_expressions (id `4cbb9fd0-0a2b-413d-a1d7-d6c5a08618b5`)
+- Subject: django/db/models/expressions::Ref.set_source_expressions (id `1a88f5d3-adb7-4fa8-9fc2-5094fc1c7037`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

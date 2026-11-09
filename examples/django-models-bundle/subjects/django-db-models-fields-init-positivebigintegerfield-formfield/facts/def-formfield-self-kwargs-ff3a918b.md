@@ -1,6 +1,6 @@
 # Fact ff3a918b
 
-Store id: e0b56431-e689-4f63-9e5e-10471f215eb7
+Store id: 3a02042d-0fec-4593-9800-3778915d27dc
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7697460+00:00`
+- posted_at: `2026-11-09T23:44:50.2161730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2448,
     "symbol": "PositiveBigIntegerField.formfield"
   },
-  "id": "e0b56431-e689-4f63-9e5e-10471f215eb7",
+  "id": "3a02042d-0fec-4593-9800-3778915d27dc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7697460+00:00"
+    "posted_at": "2026-11-09T23:44:50.2161730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "97cdbd66-8f1c-487e-8342-76232bd3dd51",
+  "subject_id": "3a36ee16-3bbd-40c7-80fa-9c7886fe3453",
   "subject_name": "django/db/models/fields/__init__::PositiveBigIntegerField.formfield",
   "tags": [
     "entity:method"

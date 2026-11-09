@@ -1,6 +1,6 @@
 # Fact 50cabcb7
 
-Store id: 2d511807-e081-49f3-9d3e-b92d6a8cd2c8
+Store id: 97dbf906-6ba3-44ff-8a82-9679071f6624
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_selections( self, select, select_mask, opts=None, root_alias=Non
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7973310+00:00`
+- posted_at: `2026-11-09T23:44:57.5436600+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1193,
     "symbol": "SQLCompiler.get_related_selections"
   },
-  "id": "2d511807-e081-49f3-9d3e-b92d6a8cd2c8",
+  "id": "97dbf906-6ba3-44ff-8a82-9679071f6624",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7973310+00:00"
+    "posted_at": "2026-11-09T23:44:57.5436600+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9f9a5658-fc51-4b77-90e6-83be0a812ab9",
+  "subject_id": "02952a54-0822-4f54-b41c-40dc3ef8e8dc",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections",
   "tags": [
     "entity:method"

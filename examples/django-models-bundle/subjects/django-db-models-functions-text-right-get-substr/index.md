@@ -1,11 +1,11 @@
 # django/db/models/functions/text::Right.get_substr
 
-- Subject: django/db/models/functions/text::Right.get_substr (id `8305a2be-a766-4a78-b561-207875db7e5e`)
+- Subject: django/db/models/functions/text::Right.get_substr (id `6e123947-a06c-4288-b63f-dcb80bcbd791`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

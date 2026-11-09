@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.get_db_prep_value
 
-- Subject: django/db/models/fields/related::ForeignKey.get_db_prep_value (id `ad4a6de0-9a73-45f2-8c0d-946cea501ce9`)
+- Subject: django/db/models/fields/related::ForeignKey.get_db_prep_value (id `df41d724-e783-4a4c-b172-b33f743e5b33`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

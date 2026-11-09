@@ -1,10 +1,10 @@
 # django/contrib/postgres/operations
 
-- Subject: django/contrib/postgres/operations (id `28be43e8-b0d8-47be-9048-0fd42295383f`)
+- Subject: django/contrib/postgres/operations (id `61f860bc-b2d6-4a04-a6d9-4e716f59be93`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2872 tokens
-- Facts shown: 55 of 61
+- Used: 3258 tokens
+- Facts shown: 61 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,29 +27,35 @@
 - def create_collation(self, schema_editor): args = {"locale": schema_editor.quote_name(self.locale)} if self.provider != "libc": args["provider"] = schema_editor.quote_name(self.provider) if self.deterministic is False: args["deterministic"] = "false" schema_editor.execute( "CREATE COLLATION %(name)s (%(args)s)" % { "name": schema_editor.quote_name(self.name), "args": ", ".join( f"{option}={value}" for option, value in args.items() ), } ) [bb921680]
 - def database_backwards(self, app_label, schema_editor, from_state, to_state): # PostgreSQL does not provide a way to make a constraint invalid. pass [be06e6a8]
 - def database_backwards(self, app_label, schema_editor, from_state, to_state): if not router.allow_migrate(schema_editor.connection.alias, app_label): return self.create_collation(schema_editor) [500ccda1]
+- def database_backwards(self, app_label, schema_editor, from_state, to_state): if not router.allow_migrate(schema_editor.connection.alias, app_label): return self.remove_collation(schema_editor) [1cfa78ac]
 - def database_backwards(self, app_label, schema_editor, from_state, to_state): if schema_editor.connection.vendor != "postgresql" or not router.allow_migrate( schema_editor.connection.alias, app_label, **self.hints ): return if self.extension_exists(schema_editor, self.name): schema_editor.execute( "DROP EXTENSION IF EXISTS %s" % schema_editor.quote_name(self.name) ) # Clear cached, stale oids. get_hstore_oids.cache_clear() get_citext_oids.cache_clear() [ed2a054e]
-- def database_backwards(self, app_label, schema_editor, from_state, to_state): self._ensure_not_in_transaction(schema_editor) model = from_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): schema_editor.remove_index(model, self.index, concurrently=True) [e971f6ec]
-- def describe(self): return f"Create collation {self.name}" [09bfcde7]
+- def deconstruct(self): return ( self.__class__.__name__, [], { "model_name": self.model_name, "name": self.name, }, ) [ac6b1f5a63e03430]
 
 ## All facts
 
+- [e971f6ec] def database_backwards(self, app_label, schema_editor, from_state, to_state): self._ensure_not_in_transaction(schema_editor) model = from_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): schema_editor.remove_index(model, self.index, concurrently=True)
 - [bbdb8828] def database_backwards(self, app_label, schema_editor, from_state, to_state): self._ensure_not_in_transaction(schema_editor) model = to_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): to_model_state = to_state.models[app_label, self.model_name_lower] index = to_model_state.get_index_by_name(self.name) schema_editor.add_index(model, index, concurrently=True)
 - [cb83f9f9] def database_forwards(self, app_label, schema_editor, from_state, to_state): if schema_editor.connection.vendor != "postgresql" or not router.allow_migrate( schema_editor.connection.alias, app_label ): return self.create_collation(schema_editor)
+- [860f30cc] def database_forwards(self, app_label, schema_editor, from_state, to_state): if schema_editor.connection.vendor != "postgresql" or not router.allow_migrate( schema_editor.connection.alias, app_label ): return self.remove_collation(schema_editor)
 - [57c93247] def database_forwards(self, app_label, schema_editor, from_state, to_state): if schema_editor.connection.vendor != "postgresql" or not router.allow_migrate( schema_editor.connection.alias, app_label, **self.hints ): return if not self.extension_exists(schema_editor, self.name): schema_editor.execute( "CREATE EXTENSION IF NOT EXISTS %s" % schema_editor.quote_name(self.name) ) # Clear cached, stale oids. get_hstore_oids.cache_clear() get_citext_oids.cache_clear() # Registering new type handlers cannot be done before the extension is # installed, otherwise a subsequent data migration would use the same # connection. register_type_handlers(schema_editor.connection) if hasattr(schema_editor.connection, "register_geometry_adapters"): schema_editor.connection.register_geometry_adapters( schema_editor.connection.connection, True )
 - [62188702] def database_forwards(self, app_label, schema_editor, from_state, to_state): model = from_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): constraint_sql = self.constraint.create_sql(model, schema_editor) if constraint_sql: # Constraint.create_sql returns interpolated SQL which makes # params=None a necessity to avoid escaping attempts on # execution. schema_editor.execute(str(constraint_sql) + " NOT VALID", params=None)
 - [0c151cbe] def database_forwards(self, app_label, schema_editor, from_state, to_state): model = from_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): schema_editor.execute( "ALTER TABLE %s VALIDATE CONSTRAINT %s" % ( schema_editor.quote_name(model._meta.db_table), schema_editor.quote_name(self.name), ) )
+- [29e0d212] def database_forwards(self, app_label, schema_editor, from_state, to_state): self._ensure_not_in_transaction(schema_editor) model = from_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): from_model_state = from_state.models[app_label, self.model_name_lower] index = from_model_state.get_index_by_name(self.name) schema_editor.remove_index(model, index, concurrently=True)
+- [c1be775a] def database_forwards(self, app_label, schema_editor, from_state, to_state): self._ensure_not_in_transaction(schema_editor) model = to_state.apps.get_model(app_label, self.model_name) if self.allow_migrate_model(schema_editor.connection.alias, model): schema_editor.add_index(model, self.index, concurrently=True)
 - [d9d6ae04] def deconstruct(self): kwargs = {"name": self.name, "locale": self.locale} if self.provider and self.provider != "libc": kwargs["provider"] = self.provider if self.deterministic is False: kwargs["deterministic"] = self.deterministic return ( self.__class__.__qualname__, [], kwargs, )
-- [ac6b1f5a63e03430] def deconstruct(self): return ( self.__class__.__name__, [], { "model_name": self.model_name, "name": self.name, }, )
 - [90540e3f] def describe(self): return "Concurrently create index %s on field(s) %s of model %s" % ( self.index.name, ", ".join(self.index.fields), self.model_name, )
 - [bd54efae] def describe(self): return "Concurrently remove index %s from %s" % (self.name, self.model_name)
 - [2fd2c686] def describe(self): return "Create not valid constraint %s on model %s" % ( self.constraint.name, self.model_name, )
 - [d9870e5c] def describe(self): return "Creates extension %s" % self.name
 - [0b61ef73] def describe(self): return "Validate constraint %s on model %s" % (self.name, self.model_name)
+- [09bfcde7] def describe(self): return f"Create collation {self.name}"
 - [a325703a] def describe(self): return f"Remove collation {self.name}"
 - [fe0afdea] def extension_exists(self, schema_editor, extension): with schema_editor.connection.cursor() as cursor: cursor.execute( "SELECT 1 FROM pg_extension WHERE extname = %s", [extension], ) return bool(cursor.fetchone())
 - [540b0022] def reduce(self, operation, app_label): if isinstance(operation, RemoveCollation) and self.name == operation.name: return [] return super().reduce(operation, app_label)
 - [a77c5d6f] def remove_collation(self, schema_editor): schema_editor.execute( "DROP COLLATION %s" % schema_editor.quote_name(self.name), )
 - [a952f4ec5eea6cc8] def state_forwards(self, app_label, state): pass
+- [a952f4ec5eea6cc8-2] def state_forwards(self, app_label, state): pass
+- [a952f4ec5eea6cc8-3] def state_forwards(self, app_label, state): pass
 - [b1880d00] class AddConstraintNotValid(AddConstraint): """ Add a table constraint without enforcing validation, using PostgreSQL's NOT VALID syntax. """
 - [2d9680e1] class AddIndexConcurrently(NotInTransactionMixin, AddIndex): """Create an index using PostgreSQL's CREATE INDEX CONCURRENTLY syntax."""
 - [52c67206] class BloomExtension(CreateExtension): def __init__(self, hints=None): super().__init__("bloom", hints=hints)

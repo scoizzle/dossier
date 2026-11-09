@@ -1,6 +1,6 @@
 # Fact 983841ab
 
-Store id: 37132d9c-c09e-4279-961e-7f9c76f44177
+Store id: 7b2e4136-3597-491e-b29d-64846b233311
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function unnest
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1501670+00:00`
+- posted_at: `2026-11-09T23:44:50.5014100+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "37132d9c-c09e-4279-961e-7f9c76f44177",
+  "id": "7b2e4136-3597-491e-b29d-64846b233311",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1501670+00:00"
+    "posted_at": "2026-11-09T23:44:50.5014100+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "unnest"
       },
       "rel": "contains",
-      "target": "4d8ccf57-2293-4b4d-82a9-fb5f5fcae52f"
+      "target": "606122af-e40a-43bc-b488-690901d5adad"
     }
   ],
   "status": "live",
-  "subject_id": "491ed372-374e-4a6d-8e01-91b4c3f9a27f",
+  "subject_id": "b8232277-ea28-4cdf-8d6a-026269c8b135",
   "subject_name": "django/db/models/fields/composite",
   "tags": [
     "entity:function"

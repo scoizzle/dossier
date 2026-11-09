@@ -1,10 +1,10 @@
 # django/db/backends/mysql/creation
 
-- Subject: django/db/backends/mysql/creation (id `65379977-4cd5-4553-ad8c-feab2263735a`)
+- Subject: django/db/backends/mysql/creation (id `81d6dbb2-1563-4cc2-999d-9a034016225d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 806 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

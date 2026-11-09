@@ -1,10 +1,10 @@
 # django/contrib/postgres/apps
 
-- Subject: django/contrib/postgres/apps (id `32472cee-6051-4b43-956f-650e331b6fd0`)
+- Subject: django/contrib/postgres/apps (id `8c2572e1-e757-4789-a79e-2d17733ec37e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 894 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

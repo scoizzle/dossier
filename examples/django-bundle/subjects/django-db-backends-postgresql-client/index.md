@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/client
 
-- Subject: django/db/backends/postgresql/client (id `de60cf08-2597-444b-abe3-b04bf8de7c6a`)
+- Subject: django/db/backends/postgresql/client (id `3e18fff3-f4b3-490a-b6f1-278c63536863`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 472 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/contrib/admin/actions
 
-- Subject: docs/ref/contrib/admin/actions (id `87f1a618-10a5-447f-8dc5-8072434c6628`)
+- Subject: docs/ref/contrib/admin/actions (id `25545521-6ab7-447a-b5e8-286e493f382d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6732 tokens
-- Facts shown: 167 of 174
+- Used: 6939 tokens
+- Facts shown: 174 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,6 +16,7 @@
 - # This one will class AnotherModelAdmin(admin.ModelAdmin): actions = ["delete_selected", "a_third_action"] ... [03f68aa2]
 - @admin.action def make_inactive(self, request, queryset): queryset.update(is_active=False) [0838e845]
 - @admin.action( permissions=["publish"], description="Mark selected stories as published", ) def make_published(self, request, queryset): queryset.update(status="p") [5a2490f1]
+- @admin.action(description="Mark selected stories as published") def make_published(self, request, queryset): queryset.update(status="p") [2b26368b]
 - @admin.action(permissions=["change"]) def make_published(self, request, queryset): for obj in queryset: if self.has_change_permission(request, obj=obj): obj.status = "p" obj.save(update_fields=["status"]) [05cf6bc1]
 - @admin.action(permissions=["publish"]) def make_published(self, request, queryset): queryset.update(status="p") [d04e9e72]
 - A human-readable description of the action to be rendered in the admin. [b08f3a1c]
@@ -28,15 +29,17 @@
 - The keyword arguments ``description_plural`` and ``location`` were added. [2bf4cf5c]
 - actions = ["make_published"] [8bdfbe19]
 - admin.site.add_action(export_selected_objects) [cc1055dd]
+- admin.site.add_action(export_selected_objects, "export_selected") [b3a4477c]
+- admin.site.disable_action("delete_selected") [d239421f]
 - class MyModelAdmin(admin.ModelAdmin): ... [27cabe28]
 - def __str__(self): return self.title [e11058e0]
-- def has_publish_permission(self, request): """Does the user have the publish permission?""" opts = self.opts codename = get_permission_codename("publish", opts) return request.user.has_perm("%s.%s" % (opts.app_label, codename)) [9142a4eb]
 - def make_published(self, request, queryset): queryset.update(status="p") [97ff1f8c]
-- for obj in queryset: do_something_with(obj) [6295b89e]
 
 ## All facts
 
+- [9142a4eb] def has_publish_permission(self, request): """Does the user have the publish permission?""" opts = self.opts codename = get_permission_codename("publish", opts) return request.user.has_perm("%s.%s" % (opts.app_label, codename))
 - [f4214c59] def make_published(self, request, queryset): updated = queryset.update(status="p") self.message_user( request, ngettext( "%d story was successfully marked as published.", "%d stories were successfully marked as published.", updated, ) % updated, messages.SUCCESS, )
+- [6295b89e] for obj in queryset: do_something_with(obj)
 - [13fbe7fc2a5a9c75-8] from django.contrib import admin
 - [012c9ea9] make_published.allowed_permissions = ["publish"] make_published.short_description = "Mark selected stories as published"
 - [31c8b63e] The action is available on the admin change form. When an action is run, any unsaved changes on the admin change form will be lost.
@@ -56,6 +59,7 @@
 - [cd73424d] :param permissions: A list of permission codenames that restrict the action to users who have at least one of the defined permissions. This sets the ``allowed_permissions`` attribute on the function. See :ref:`admin-action-permissions` for details.
 - [9ce5569e] @admin.action( location=[ActionLocation.CHANGE_FORM, ActionLocation.CHANGE_LIST], description="Publish", description_plural="Mark selected stories as published", ) def make_published(modeladmin, request, queryset): ...
 - [a60bf2e2e676c80b] @admin.action(description="Mark selected stories as published") def make_published(modeladmin, request, queryset): queryset.update(status="p")
+- [a60bf2e2e676c80b-2] @admin.action(description="Mark selected stories as published") def make_published(modeladmin, request, queryset): queryset.update(status="p")
 - [5797d68e] @admin.action(location=ActionLocation.CHANGE_FORM) def make_published(modeladmin, request, queryset): ...
 - [158461e3] @admin.action(permissions=["change"]) def make_published(modeladmin, request, queryset): queryset.update(status="p")
 - [bc37a8c8] Finally, you can conditionally enable or disable actions on a per-request (and hence per-user basis) by overriding :meth:`ModelAdmin.get_actions`.
@@ -81,12 +85,15 @@
 - [4d1080f7] admin.site.register(Article, ArticleAdmin)
 - [b772f7e5] class Article(models.Model): title = models.CharField(max_length=100) body = models.TextField() status = models.CharField(max_length=1, choices=STATUS_CHOICES)
 - [9d7a9b2b38b9a19e] class ArticleAdmin(admin.ModelAdmin): ...
+- [9d7a9b2b38b9a19e-2] class ArticleAdmin(admin.ModelAdmin): ...
 - [fb7b26f1d1cd45d5] class ArticleAdmin(admin.ModelAdmin): actions = ["make_published"]
+- [fb7b26f1d1cd45d5-2] class ArticleAdmin(admin.ModelAdmin): actions = ["make_published"]
 - [7b63a026] class ArticleAdmin(admin.ModelAdmin): list_display = ["title", "status"] ordering = ["title"] actions = [make_published]
 - [72f2a4eb] class MyModelAdmin(admin.ModelAdmin): actions = None
 - [24133552] def export_as_json(modeladmin, request, queryset): response = HttpResponse(content_type="application/json") serializers.serialize("json", queryset, stream=response) return response
 - [caec589c] def export_selected_objects(modeladmin, request, queryset): selected = queryset.values_list("pk", flat=True) ct = ContentType.objects.get_for_model(queryset.model) return HttpResponseRedirect( "/export/?ct=%s&ids=%s" % ( ct.pk, ",".join(str(pk) for pk in selected), ) )
 - [482b408b] def make_published(modeladmin, request, queryset): queryset.update(status="p")
+- [13fbe7fc2a5a9c75-9] from django.contrib import admin
 - [5bd45197] from django.contrib import admin from django.contrib.admin import ActionLocation
 - [ecd62bb7] from django.contrib import admin from django.contrib.auth import get_permission_codename
 - [6f9eda1b] from django.contrib import admin from myapp.models import Article

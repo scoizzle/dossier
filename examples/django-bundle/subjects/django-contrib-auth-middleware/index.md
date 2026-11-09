@@ -1,16 +1,17 @@
 # django/contrib/auth/middleware
 
-- Subject: django/contrib/auth/middleware (id `b925da03-61a1-4ecb-87c2-6e5dc39e19a2`)
+- Subject: django/contrib/auth/middleware (id `b24fad7a-e0f7-4c71-b216-6d63e0fc1ba8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2388 tokens
-- Facts shown: 34 of 36
+- Used: 2787 tokens
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Highlights
 
 - # We are seeing this user for the first time in this session, attempt # to authenticate the user. user = auth.authenticate(request, remote_user=username) if user: # User is valid. Persist the user in the session by logging the # user in. auth.login(request, user) [3c764504]
+- # We are seeing this user for the first time in this session, attempt # to authenticate the user. user = await auth.aauthenticate(request, remote_user=username) if user: # User is valid. Persist the user in the session by logging the # user in. await auth.alogin(request, user) [7969c999]
 - if request.user.is_authenticated: return None [91dbf975]
 - return redirect_to_login( path, resolved_login_url, self.get_redirect_field_name(view_func), ) [d560f225]
 - return self.handle_no_permission(request, view_func) [d1adf993]
@@ -24,18 +25,19 @@
 - async def _aremove_invalid_user(self, request): """ Remove the current authenticated user in the request which is invalid but only if the user is authenticated via the RemoteUserBackend. """ try: stored_backend = load_backend( await request.session.aget(auth.BACKEND_SESSION_KEY, "") ) except ImportError: # Backend failed to load. await auth.alogout(request) else: if isinstance(stored_backend, RemoteUserBackend): await auth.alogout(request) [c6440438]
 - async def aclean_username(self, username, request): """See clean_username.""" backend_str = await request.session.aget(auth.BACKEND_SESSION_KEY) backend = auth.load_backend(backend_str) try: username = backend.clean_username(username) except AttributeError: # Backend has no clean_username method. pass return username [2162fdf7]
 - def __call__(self, request): if self.is_async: return self.__acall__(request) self.process_request(request) return self.get_response(request) [0b9182d1]
-- def __init__(self, get_response): if get_response is None: raise ValueError("get_response must be provided.") self.get_response = get_response self.is_async = iscoroutinefunction(get_response) if self.is_async: markcoroutinefunction(self) super().__init__() [fb20a004]
 - force_logout_if_no_header = False [c5066ba7]
 
 ## All facts
 
 - [37d2db09] async def aprocess_request(self, request): # AuthenticationMiddleware is required so that request.auser exists. if not hasattr(request, "auser"): raise ImproperlyConfigured( "The Django remote user auth middleware requires the" " authentication middleware to be installed. Edit your" " MIDDLEWARE setting to insert" " 'django.contrib.auth.middleware.AuthenticationMiddleware'" f" before the {self.__class__.__name__} class." ) try: username = self.get_username(request) except KeyError: # If specified header doesn't exist then remove any existing # authenticated remote-user, or return (leaving request.user set to # AnonymousUser by the AuthenticationMiddleware). if self.force_logout_if_no_header: user = await request.auser() if user.is_authenticated: await self._aremove_invalid_user(request) return user = await request.auser() # If the user is already authenticated and that user is the user we are # getting passed in the headers, then the correct user is already # persisted in the session and we don't need to continue. if user.is_authenticated: if user.get_username() == await self.aclean_username(username, request): return else: # An authenticated user is associated with the request, but # it does not match the authorized user in the header. await self._aremove_invalid_user(request)
+- [fb20a004] def __init__(self, get_response): if get_response is None: raise ValueError("get_response must be provided.") self.get_response = get_response self.is_async = iscoroutinefunction(get_response) if self.is_async: markcoroutinefunction(self) super().__init__()
 - [c942b47c] def _remove_invalid_user(self, request): """ Remove the current authenticated user in the request which is invalid but only if the user is authenticated via the RemoteUserBackend. """ try: stored_backend = load_backend( request.session.get(auth.BACKEND_SESSION_KEY, "") ) except ImportError: # backend failed to load auth.logout(request) else: if isinstance(stored_backend, RemoteUserBackend): auth.logout(request)
 - [92d0fec4] def clean_username(self, username, request): """ Allow the backend to clean the username, if the backend defines a clean_username method. """ backend_str = request.session[auth.BACKEND_SESSION_KEY] backend = auth.load_backend(backend_str) try: username = backend.clean_username(username) except AttributeError: # Backend has no clean_username method. pass return username
 - [567039b4] def get_login_url(self, view_func): login_url = getattr(view_func, "login_url", None) or settings.LOGIN_URL if not login_url: raise ImproperlyConfigured( "No login URL to redirect to. Define settings.LOGIN_URL or " "provide a login_url via the 'django.contrib.auth.decorators." "login_required' decorator." ) return str(login_url)
 - [e67f4ec7] def get_redirect_field_name(self, view_func): return getattr(view_func, "redirect_field_name", self.redirect_field_name)
 - [7b3921c4] def get_username(self, request): if ( isinstance(request, ASGIRequest) and self.header == RemoteUserMiddleware.header ): return request.META["HTTP_" + self.header] return request.META[self.header]
 - [89a759c5] def handle_no_permission(self, request, view_func): path = request.build_absolute_uri() resolved_login_url = resolve_url(self.get_login_url(view_func)) # If the login url is the same scheme and net location then use the # path as the "next" url. login_scheme, login_netloc = urlsplit(resolved_login_url)[:2] current_scheme, current_netloc = urlsplit(path)[:2] if (not login_scheme or login_scheme == current_scheme) and ( not login_netloc or login_netloc == current_netloc ): path = request.get_full_path()
+- [ee088533] def process_request(self, request): # AuthenticationMiddleware is required so that request.user exists. if not hasattr(request, "user"): raise ImproperlyConfigured( "The Django remote user auth middleware requires the" " authentication middleware to be installed. Edit your" " MIDDLEWARE setting to insert" " 'django.contrib.auth.middleware.AuthenticationMiddleware'" f" before the {self.__class__.__name__} class." ) try: username = self.get_username(request) except KeyError: # If specified header doesn't exist then remove any existing # authenticated remote-user, or return (leaving request.user set to # AnonymousUser by the AuthenticationMiddleware). if self.force_logout_if_no_header and request.user.is_authenticated: self._remove_invalid_user(request) return # If the user is already authenticated and that user is the user we are # getting passed in the headers, then the correct user is already # persisted in the session and we don't need to continue. if request.user.is_authenticated: if request.user.get_username() == self.clean_username(username, request): return else: # An authenticated user is associated with the request, but # it does not match the authorized user in the header. self._remove_invalid_user(request)
 - [a1a8d1a8] def process_view(self, request, view_func, view_args, view_kwargs): if not getattr(view_func, "login_required", True): return None
 - [12350b11] redirect_field_name = REDIRECT_FIELD_NAME
 - [586136fa] sync_capable = True async_capable = True

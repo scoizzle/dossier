@@ -1,6 +1,6 @@
 # Fact cd9f2fb8
 
-Store id: 479896a5-08e6-4152-9979-8151aa442cad
+Store id: 4969d05c-7aa7-493f-be4b-5215bd31ed0c
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6403440+00:00`
+- posted_at: `2026-11-09T23:44:51.4953270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 492,
     "symbol": "RelatedField.formfield"
   },
-  "id": "479896a5-08e6-4152-9979-8151aa442cad",
+  "id": "4969d05c-7aa7-493f-be4b-5215bd31ed0c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6403440+00:00"
+    "posted_at": "2026-11-09T23:44:51.4953270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee4eef9f-18f2-4e46-be7b-1c2b213bf725",
+  "subject_id": "2ff97d19-8ea9-4b88-b4f0-be51f17238c7",
   "subject_name": "django/db/models/fields/related::RelatedField.formfield",
   "tags": [
     "entity:method"

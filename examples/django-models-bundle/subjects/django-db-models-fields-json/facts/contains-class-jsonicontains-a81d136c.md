@@ -1,6 +1,6 @@
 # Fact a81d136c
 
-Store id: 793e6ef4-fc4b-4d87-b61f-5421d3342958
+Store id: c9bf0a20-bb1d-4e5b-b465-04eb16b87862
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONIContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "793e6ef4-fc4b-4d87-b61f-5421d3342958",
+  "id": "c9bf0a20-bb1d-4e5b-b465-04eb16b87862",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONIContains"
       },
       "rel": "contains",
-      "target": "dbb0f910-44ee-4fe2-a152-cbecabf5a597"
+      "target": "fa8a9341-7664-4687-92a7-8bda04471e4d"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

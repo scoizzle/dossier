@@ -1,6 +1,6 @@
 # Fact 7e5e2432
 
-Store id: cb67c196-485a-4b04-8be9-56f7218a59ba
+Store id: 5a37dd44-a21e-4cf2-857b-81849457e33f
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7406800+00:00`
+- posted_at: `2026-11-09T23:44:50.1939050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2336,
     "symbol": "GenericIPAddressField.deconstruct"
   },
-  "id": "cb67c196-485a-4b04-8be9-56f7218a59ba",
+  "id": "5a37dd44-a21e-4cf2-857b-81849457e33f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7406800+00:00"
+    "posted_at": "2026-11-09T23:44:50.1939050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "63d05d1d-fba1-4bc7-8275-bdc1a8e370e9",
+  "subject_id": "f3d3213f-de7b-45be-8e65-24f771333833",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.deconstruct",
   "tags": [
     "entity:method"

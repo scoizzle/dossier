@@ -1,6 +1,6 @@
 # Fact c8a580cd
 
-Store id: de3a8a54-3e65-434d-9f5a-6dace4b369bf
+Store id: 89703df8-6fc7-4e60-a4f4-dac65d3279f3
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_manager(self, manager)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9259500+00:00`
+- posted_at: `2026-11-09T23:44:55.4879780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 336,
     "symbol": "Options.add_manager"
   },
-  "id": "de3a8a54-3e65-434d-9f5a-6dace4b369bf",
+  "id": "89703df8-6fc7-4e60-a4f4-dac65d3279f3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9259500+00:00"
+    "posted_at": "2026-11-09T23:44:55.4879780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6563c053-3f31-40ed-afa9-a0acb4d4e216",
+  "subject_id": "01c6fa4b-4274-4f9a-92d5-efcf4cddb7c3",
   "subject_name": "django/db/models/options::Options.add_manager",
   "tags": [
     "entity:method"

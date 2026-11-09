@@ -1,10 +1,10 @@
 # django/core/mail/utils
 
-- Subject: django/core/mail/utils (id `5a2e7353-94e2-4617-80a2-e2f350f9353e`)
+- Subject: django/core/mail/utils (id `eecbc244-b92d-4258-9bd1-09a4c0e32ab8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 177 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

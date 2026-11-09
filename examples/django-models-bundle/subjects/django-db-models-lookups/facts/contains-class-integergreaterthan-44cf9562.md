@@ -1,6 +1,6 @@
 # Fact 44cf9562
 
-Store id: f985a0fc-2cf9-4469-9b19-b89eee1f8872
+Store id: bf33b7c6-ec5d-41ff-8232-62ff1aebdde2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerGreaterThan
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f985a0fc-2cf9-4469-9b19-b89eee1f8872",
+  "id": "bf33b7c6-ec5d-41ff-8232-62ff1aebdde2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerGreaterThan"
       },
       "rel": "contains",
-      "target": "5e0f80d7-dc43-4723-9c99-2dcba9e5797d"
+      "target": "516b053b-28ab-41f6-8223-feb556529b57"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/core/serializers/pyyaml
 
-- Subject: django/core/serializers/pyyaml (id `ed25445b-ca1a-49bc-86dc-3685c496e36a`)
+- Subject: django/core/serializers/pyyaml (id `f11e8e1c-c83a-4a2d-9d4b-e6ebdea4f208`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 752 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

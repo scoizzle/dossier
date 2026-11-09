@@ -1,6 +1,6 @@
 # Fact feb2ce14
 
-Store id: 9e8cd1a2-0b33-4afd-a027-d9bc79bab690
+Store id: f69ada82-78f0-4c4e-86cb-39bd4e5279fa
 
 ## Text
 
@@ -20,7 +20,7 @@ class Left(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1853430+00:00`
+- posted_at: `2026-11-09T23:44:54.0825000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 154,
     "symbol": "Left"
   },
-  "id": "9e8cd1a2-0b33-4afd-a027-d9bc79bab690",
+  "id": "f69ada82-78f0-4c4e-86cb-39bd4e5279fa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1853430+00:00"
+    "posted_at": "2026-11-09T23:44:54.0825000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd44fbff-86cc-4952-8b7b-f78779eb2e34",
+  "subject_id": "57de39f9-8a94-4e60-8021-8b0b45e0f71b",
   "subject_name": "django/db/models/functions/text::Left",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query._gen_cols
 
-- Subject: django/db/models/sql/query::Query._gen_cols (id `e3e0b4d1-fed8-4e1a-b294-ab0d713ae8ec`)
+- Subject: django/db/models/sql/query::Query._gen_cols (id `08740bc2-3457-4eab-9426-73e18834c2df`)
 - Kind: class_method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

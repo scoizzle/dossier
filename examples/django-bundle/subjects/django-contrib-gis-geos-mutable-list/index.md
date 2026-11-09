@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/mutable_list
 
-- Subject: django/contrib/gis/geos/mutable_list (id `d628de84-fac0-4991-8461-debaa0f30948`)
+- Subject: django/contrib/gis/geos/mutable_list (id `31117917-6f02-44f9-8689-f5d471366aa9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2584 tokens
-- Facts shown: 59 of 61
+- Used: 2622 tokens
+- Facts shown: 61 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -23,6 +23,8 @@
 - origLen = len(self) start, stop, step = index.indices(origLen) [0c3535e2]
 - self._check_allowed(valueList) [b4b77687]
 - self._rebuild(newLen, newItems()) [5f75a573b6b295dc]
+- self._rebuild(newLen, newItems()) [5f75a573b6b295dc-2]
+- self._rebuild(newLen, newItems) [66b5ee32]
 - self._set_list(newLen, newItems) [a257ca83]
 - super().__init__(*args, **kwargs) [a84ca41e6642a566-2]
 - # ## Mutating ## def append(self, val): "Standard list append method" self[len(self) :] = [val] [29cd34dd]
@@ -32,12 +34,12 @@
 - # ### Special methods for arithmetic operations ### def __add__(self, other): "add another list-like object" return self.__class__([*self, *other]) [3552331c]
 - _minlength = 0 _maxlength = None [594ce221]
 - def __delitem__(self, index): "Delete the item(s) at the specified index/slice." if not isinstance(index, (int, slice)): raise TypeError("%s is not a legal index" % index) [9b5028ed]
-- def __iadd__(self, other): "add another list-like object to self" self.extend(other) return self [51725cf4]
 
 ## All facts
 
 - [27b6be0c] def __eq__(self, other): olen = len(other) for i in range(olen): try: c = self[i] == other[i] except IndexError: # self must be shorter return False if not c: return False return len(self) == olen
 - [5d766a8c] def __getitem__(self, index): "Get the item(s) at the specified index/slice." if isinstance(index, slice): return [ self._get_single_external(i) for i in range(*index.indices(len(self))) ] else: index = self._checkindex(index) return self._get_single_external(index)
+- [51725cf4] def __iadd__(self, other): "add another list-like object to self" self.extend(other) return self
 - [093c4a47] def __imul__(self, n): "multiply" if n <= 0: del self[:] else: cache = list(self) for i in range(n - 1): self.extend(cache) return self
 - [1ab5dd2c] def __init__(self, *args, **kwargs): if not hasattr(self, "_get_single_internal"): self._get_single_internal = self._get_single_external
 - [df0b6565] def __lt__(self, other): olen = len(other) for i in range(olen): try: c = self[i] < other[i] except IndexError: # self must be shorter return True if c: return c elif other[i] < self[i]: return False return len(self) < olen

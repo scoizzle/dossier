@@ -1,10 +1,10 @@
 # django/template/context
 
-- Subject: django/template/context (id `d707cdc2-d443-406f-8be7-bec4bd07ef0e`)
+- Subject: django/template/context (id `9ebfe2e0-8c59-4b8d-9de2-5ed8fcaeb544`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2404 tokens
-- Facts shown: 49 of 49
+- Facts shown: 49 facts
 - Conflicts: 0
 - Gaps: 0
 

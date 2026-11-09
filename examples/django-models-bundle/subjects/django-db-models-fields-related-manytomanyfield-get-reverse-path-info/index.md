@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.get_reverse_path_info
 
-- Subject: django/db/models/fields/related::ManyToManyField.get_reverse_path_info (id `d99b5981-0745-4581-b6b8-2e9175029e40`)
+- Subject: django/db/models/fields/related::ManyToManyField.get_reverse_path_info (id `d73e3dc2-f541-460b-aa38-cddf866ecca8`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

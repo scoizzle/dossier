@@ -1,11 +1,11 @@
 # django/db/models/deletion::Collector.clear_restricted_objects_from_set
 
-- Subject: django/db/models/deletion::Collector.clear_restricted_objects_from_set (id `df547c10-928e-4d24-86e5-425bb4bf55c0`)
+- Subject: django/db/models/deletion::Collector.clear_restricted_objects_from_set (id `6fa5bd3f-60e7-400e-915a-cc62b68c8dbd`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

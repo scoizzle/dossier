@@ -1,10 +1,10 @@
 # docs/ref/contrib/sites
 
-- Subject: docs/ref/contrib/sites (id `9a37de6a-5e11-417a-83cb-91081886a078`)
+- Subject: docs/ref/contrib/sites (id `c7519cd7-5515-49f5-b7b4-666f8ee22329`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5800 tokens
-- Facts shown: 116 of 125
+- Used: 6118 tokens
+- Facts shown: 125 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -40,13 +40,20 @@
 - [c3b8fce4] class Article(models.Model): headline = models.CharField(max_length=200) # ... site = models.ForeignKey(Site, on_delete=models.CASCADE)
 - [534331f7] class Article(models.Model): headline = models.CharField(max_length=200) # ... sites = models.ManyToManyField(Site)
 - [04f0b4fc] class Photo(models.Model): photo = models.FileField(upload_to="photos") photographer_name = models.CharField(max_length=100) pub_date = models.DateField() publish_on = models.ForeignKey(Site, on_delete=models.CASCADE) objects = models.Manager() on_site = CurrentSiteManager("publish_on")
+- [8a0c7022] class Photo(models.Model): photo = models.FileField(upload_to="photos") photographer_name = models.CharField(max_length=100) pub_date = models.DateField() site = models.ForeignKey(Site, on_delete=models.CASCADE) objects = models.Manager() on_site = CurrentSiteManager()
 - [07ceed98] def my_function_without_request(): current_site = Site.objects.get_current() if current_site.domain == "foo.com": # Do something pass else: # Do something else. pass
 - [c2e855cb] def my_view(request): current_site = get_current_site(request) if current_site.domain == "foo.com": # Do something pass else: # Do something else. pass
 - [e85bb237] def my_view(request): if settings.SITE_ID == 3: # Do something. pass else: # Do something else. pass
 - [cb89d7bf881951cc] def register_for_newsletter(request): # Check form values, etc., and subscribe the user. # ...
+- [cb89d7bf881951cc-2] def register_for_newsletter(request): # Check form values, etc., and subscribe the user. # ...
 - [e0d111f1d44acb07-2] from django.conf import settings
 - [0183f3a9b10540ba] from django.contrib.sites.models import Site
+- [0183f3a9b10540ba-2] from django.contrib.sites.models import Site
 - [a469f631d2ceb5f6] from django.contrib.sites.models import Site from django.contrib.sites.managers import CurrentSiteManager from django.db import models
+- [a469f631d2ceb5f6-2] from django.contrib.sites.models import Site from django.contrib.sites.managers import CurrentSiteManager from django.db import models
+- [dabed9ec2b4c3daa] from django.contrib.sites.models import Site from django.db import models
+- [dabed9ec2b4c3daa-2] from django.contrib.sites.models import Site from django.db import models
+- [6640ffcc7d240625-2] from django.contrib.sites.shortcuts import get_current_site
 - [aa2bfb4a] from django.contrib.sites.shortcuts import get_current_site from django.core.mail import send_mail
 - [ca638471] from django.core.mail import send_mail from django.template import loader
 - [6d887609] #. Add ``'django.contrib.sites'`` to your :setting:`INSTALLED_APPS` setting.
@@ -83,6 +90,7 @@
 - [cea22b3d] Caching the current ``Site`` object ===================================
 - [7b517bc7] Django comes with an optional "sites" framework. It's a hook for associating objects and functionality to particular websites, and it's a holding place for the domain names and "verbose" names of your Django-powered sites.
 - [42dafa68] Django's ``get_absolute_url()`` convention is nice for getting your objects' URL without the domain name, but in some cases you might want to display the full URL -- with ``https://`` and the domain and everything -- for an object. To do this, you can use the sites framework. An example:
+- [e503913e] Enabling the sites framework ============================
 - [bce99cf2] Example usage =============
 - [1c7f827c] Finally, note that you'll probably want to keep a normal (non-site-specific) ``Manager`` on your model, even if you use :class:`~django.contrib.sites.managers.CurrentSiteManager`. As explained in the :doc:`manager documentation </topics/db/managers>`, if you define a manager manually, then Django won't create the automatic ``objects = models.Manager()`` manager for you. Also note that certain parts of Django -- namely, the Django admin site and generic views -- use whichever manager is defined *first* in the model, so if you want your admin site to have access to all objects (not just site-specific ones), put ``objects = models.Manager()`` in your model, before you define :class:`~django.contrib.sites.managers.CurrentSiteManager`.
 - [432cca1a] Finally, to avoid repetitive fallback code, the framework provides a :func:`django.contrib.sites.shortcuts.get_current_site` function.
@@ -91,6 +99,7 @@
 - [a9729483] Getting the current domain for full URLs ----------------------------------------
 - [93c716a2] Here's an example of what the form-handling view looks like::
 - [e62d24fc] Here's how Django uses the sites framework:
+- [098ca4bd] Hooking into the current site from views ----------------------------------------
 - [7533230a] How Django uses the sites framework ===================================
 - [09b4db39] How did :class:`~django.contrib.sites.managers.CurrentSiteManager` know which field of ``Photo`` was the :class:`~django.contrib.sites.models.Site`? By default, :class:`~django.contrib.sites.managers.CurrentSiteManager` looks for either a :class:`~django.db.models.ForeignKey` called ``site`` or a :class:`~django.db.models.ManyToManyField` called ``sites`` to filter on. If you use a field named something other than ``site`` or ``sites`` to identify which :class:`~django.contrib.sites.models.Site` objects your object is related to, then you need to explicitly pass the custom field name as a parameter to :class:`~django.contrib.sites.managers.CurrentSiteManager` on your model. The following model, which has a field called ``publish_on``, demonstrates this::
 - [4d5ca060] How you use this is up to you, but Django uses it in a couple of ways automatically via a couple of conventions.

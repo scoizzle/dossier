@@ -1,6 +1,6 @@
 # Fact 467308a3
 
-Store id: ff64aefb-c7df-4283-afc7-c1da3921953d
+Store id: c8d287d9-6e59-472a-a9cb-b220b209c617
 
 ## Text
 
@@ -20,7 +20,7 @@ def _apply_rel_filters(self, queryset)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2411660+00:00`
+- posted_at: `2026-11-09T23:44:51.9092380+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 747,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager._apply_rel_filters"
   },
-  "id": "ff64aefb-c7df-4283-afc7-c1da3921953d",
+  "id": "c8d287d9-6e59-472a-a9cb-b220b209c617",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2411660+00:00"
+    "posted_at": "2026-11-09T23:44:51.9092380+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d78a60cc-cb88-4341-a08e-8c9f21aec75e",
+  "subject_id": "418372fe-ca3b-4a21-a7b7-0e77761968bc",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._apply_rel_filters",
   "tags": [
     "entity:method"

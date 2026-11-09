@@ -1,10 +1,10 @@
 # django/contrib/admin/decorators
 
-- Subject: django/contrib/admin/decorators (id `9cc3e427-215c-4f0f-af12-aaf216041d4a`)
+- Subject: django/contrib/admin/decorators (id `65cd11e3-0c89-4e0f-92ba-21630529277c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 969 tokens
-- Facts shown: 21 of 23
+- Used: 1034 tokens
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,15 +22,17 @@
 - @register(Author) class AuthorAdmin(admin.ModelAdmin): pass [17fa4a2d]
 - The `site` kwarg is an admin site to use instead of the default admin site. """ from django.contrib.admin import ModelAdmin from django.contrib.admin.sites import AdminSite from django.contrib.admin.sites import site as default_site [8d545cf2]
 - This is equivalent to setting some attributes (with the original, longer names) on the function directly:: [9593e142406d5f73]
+- This is equivalent to setting some attributes (with the original, longer names) on the function directly:: [9593e142406d5f73-2]
 - def _model_admin_wrapper(admin_class): if not models: raise ValueError("At least one model must be passed to register.") [a45a0279]
 - def decorator(func): if boolean is not None and empty_value is not None: raise ValueError( "The boolean and empty_value arguments to the @display " "decorator are mutually exclusive." ) if boolean is not None: func.boolean = boolean if ordering is not None: func.admin_order_field = ordering if description is not None: func.short_description = description if empty_value is not None: func.empty_value_display = empty_value return func [480444b7]
 - def decorator(func): if permissions is not None: func.allowed_permissions = permissions if description is not None: func.short_description = description if description_plural is not None: func.plural_description = description_plural elif description is not None: func.plural_description = description func.locations = ( [location] if isinstance(location, ActionLocation) else location ) return func [38b04f25]
 - if function is None: return decorator else: return decorator(function) [e0b285362dfff970]
+- if function is None: return decorator else: return decorator(function) [e0b285362dfff970-2]
 - return _model_admin_wrapper [79f0aecd]
-- def action( function=None, *, permissions=None, description=None, description_plural=None, location=ActionLocation.CHANGE_LIST, ): """ Conveniently add attributes to an action function:: [884f1c7e]
-- def register(*models, site=None): """ Register the given model(s) classes and wrapped ModelAdmin class with admin site: [0831e4e9]
+- from django.contrib.admin.options import ActionLocation [42acd4a4]
 
 ## All facts
 
+- [884f1c7e] def action( function=None, *, permissions=None, description=None, description_plural=None, location=ActionLocation.CHANGE_LIST, ): """ Conveniently add attributes to an action function::
 - [e91988b6] def display( function=None, *, boolean=None, ordering=None, description=None, empty_value=None ): """ Conveniently add attributes to a display function::
-- [42acd4a4] from django.contrib.admin.options import ActionLocation
+- [0831e4e9] def register(*models, site=None): """ Register the given model(s) classes and wrapped ModelAdmin class with admin site:

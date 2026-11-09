@@ -1,6 +1,6 @@
 # Fact 113dc960
 
-Store id: e1a91048-916c-40a8-9bc1-0526395df22c
+Store id: b3fc8258-c19b-4dff-a818-7e9cebbe4d57
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelSignal
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.3894760+00:00`
+- posted_at: `2026-11-09T23:44:56.9808100+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e1a91048-916c-40a8-9bc1-0526395df22c",
+  "id": "b3fc8258-c19b-4dff-a818-7e9cebbe4d57",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.3894760+00:00"
+    "posted_at": "2026-11-09T23:44:56.9808100+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelSignal"
       },
       "rel": "contains",
-      "target": "098fa414-9903-4fee-9dff-d89f5f7dc39f"
+      "target": "4fba7b1c-df3e-4059-99f0-fbed132b2bc7"
     }
   ],
   "status": "live",
-  "subject_id": "caae093d-2e65-40f1-9798-db10aff0f9e8",
+  "subject_id": "33fd3e73-9894-403b-a8fc-258210bc02ae",
   "subject_name": "django/db/models/signals",
   "tags": [
     "entity:class"

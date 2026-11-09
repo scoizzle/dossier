@@ -1,10 +1,10 @@
 # django/core/files/images
 
-- Subject: django/core/files/images (id `807d1a85-226a-4792-b1a6-d4269f69bf07`)
+- Subject: django/core/files/images (id `b4b9950f-92fb-4a2b-8424-3b618a56811e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 595 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

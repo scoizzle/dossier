@@ -1,6 +1,6 @@
 # Fact bb9751fe
 
-Store id: 91c53bc8-b460-4737-bfd4-50dd8af81edf
+Store id: 543ca0e4-7619-4d9d-9ab1-c1c423e42f66
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ManyToManyRel
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3580660+00:00`
+- posted_at: `2026-11-09T23:44:52.5352060+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "91c53bc8-b460-4737-bfd4-50dd8af81edf",
+  "id": "543ca0e4-7619-4d9d-9ab1-c1c423e42f66",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3580660+00:00"
+    "posted_at": "2026-11-09T23:44:52.5352060+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ManyToManyRel"
       },
       "rel": "contains",
-      "target": "91f9047a-9e61-4235-b93a-ff5e751c8a14"
+      "target": "31cb8a71-4741-4962-bb35-5021ba24342d"
     }
   ],
   "status": "live",
-  "subject_id": "5aa43ba1-b642-41bc-ace0-777a2d99efeb",
+  "subject_id": "33ef98f6-f27a-4a21-99f3-242030d5c4d2",
   "subject_name": "django/db/models/fields/reverse_related",
   "tags": [
     "entity:class"

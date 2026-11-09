@@ -1,6 +1,6 @@
 # Fact ba3957d4
 
-Store id: 4524f669-b533-4253-b495-4411a0f34805
+Store id: 547ca027-42a6-4aec-812c-52f1c9796e13
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_set_deprecation_msg_params(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.3278970+00:00`
+- posted_at: `2026-11-09T23:44:51.9567750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1067,
     "symbol": "ManyToManyDescriptor._get_set_deprecation_msg_params"
   },
-  "id": "4524f669-b533-4253-b495-4411a0f34805",
+  "id": "547ca027-42a6-4aec-812c-52f1c9796e13",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.3278970+00:00"
+    "posted_at": "2026-11-09T23:44:51.9567750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e4ab89eb-a6ff-4c0e-80a4-3e87d735d982",
+  "subject_id": "254bd370-8639-4826-a934-5b5cdfc4b4e6",
   "subject_name": "django/db/models/fields/related_descriptors::ManyToManyDescriptor._get_set_deprecation_msg_params",
   "tags": [
     "entity:method"

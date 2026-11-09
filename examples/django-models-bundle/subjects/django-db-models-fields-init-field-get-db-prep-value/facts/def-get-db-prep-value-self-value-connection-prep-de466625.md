@@ -1,6 +1,6 @@
 # Fact de466625
 
-Store id: 53402fc8-08ff-4d1e-a28e-438f802e2332
+Store id: f1f6d6f5-978b-46fd-8467-f0646f529964
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5176030+00:00`
+- posted_at: `2026-11-09T23:44:50.0364410+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1036,
     "symbol": "Field.get_db_prep_value"
   },
-  "id": "53402fc8-08ff-4d1e-a28e-438f802e2332",
+  "id": "f1f6d6f5-978b-46fd-8467-f0646f529964",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5176030+00:00"
+    "posted_at": "2026-11-09T23:44:50.0364410+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "48137b4d-9d12-48f9-b9be-077641ccf0b7",
+  "subject_id": "cc081d23-7840-41cb-953d-2202748667a0",
   "subject_name": "django/db/models/fields/__init__::Field.get_db_prep_value",
   "tags": [
     "entity:method"

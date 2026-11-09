@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/driver
 
-- Subject: django/contrib/gis/gdal/driver (id `fcaea301-21c7-4dc1-bc74-bd687f436c76`)
+- Subject: django/contrib/gis/gdal/driver (id `a218ac7d-5efe-48d5-b227-856bdaefbc1f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 753 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

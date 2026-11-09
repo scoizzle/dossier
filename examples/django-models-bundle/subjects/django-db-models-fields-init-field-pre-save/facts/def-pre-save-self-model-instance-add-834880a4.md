@@ -1,6 +1,6 @@
 # Fact 834880a4
 
-Store id: 09cb8801-f569-4f2c-87a5-47f622545aeb
+Store id: b477edc2-8166-4637-be62-63079c150d2e
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_save(self, model_instance, add)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5123880+00:00`
+- posted_at: `2026-11-09T23:44:50.0344240+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1026,
     "symbol": "Field.pre_save"
   },
-  "id": "09cb8801-f569-4f2c-87a5-47f622545aeb",
+  "id": "b477edc2-8166-4637-be62-63079c150d2e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5123880+00:00"
+    "posted_at": "2026-11-09T23:44:50.0344240+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ac57428c-d752-4d37-ac70-5b4395c5bcfa",
+  "subject_id": "d3213861-fbe0-43f6-a83f-267c3f8cff63",
   "subject_name": "django/db/models/fields/__init__::Field.pre_save",
   "tags": [
     "entity:method"

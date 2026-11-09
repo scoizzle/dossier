@@ -1,6 +1,6 @@
 # Fact 6bccd449
 
-Store id: a8c36b90-8424-4579-b05f-27a82763ce97
+Store id: 6364e0ec-2118-4c1d-91fb-6cd936543ae4
 
 ## Text
 
@@ -20,7 +20,7 @@ class ForeignKeyDeferredAttribute(DeferredAttribute)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1032030+00:00`
+- posted_at: `2026-11-09T23:44:51.8036470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 87,
     "symbol": "ForeignKeyDeferredAttribute"
   },
-  "id": "a8c36b90-8424-4579-b05f-27a82763ce97",
+  "id": "6364e0ec-2118-4c1d-91fb-6cd936543ae4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1032030+00:00"
+    "posted_at": "2026-11-09T23:44:51.8036470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "31428215-6b37-4931-84de-b634a12070f4",
+  "subject_id": "4cb24a19-0805-4510-8588-ddb104d5ad7d",
   "subject_name": "django/db/models/fields/related_descriptors::ForeignKeyDeferredAttribute",
   "tags": [
     "entity:class"

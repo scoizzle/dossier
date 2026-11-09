@@ -1,6 +1,6 @@
 # Fact 69831470
 
-Store id: 0eae91e7-597e-4c62-81eb-bd1699ead6d0
+Store id: e6fdc79b-406c-40e3-b85c-aa299583f8be
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1124330+00:00`
+- posted_at: `2026-11-09T23:44:56.6122270+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 259,
     "symbol": "DeferredAttribute.__get__"
   },
-  "id": "0eae91e7-597e-4c62-81eb-bd1699ead6d0",
+  "id": "e6fdc79b-406c-40e3-b85c-aa299583f8be",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1124330+00:00"
+    "posted_at": "2026-11-09T23:44:56.6122270+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9947408b-036b-445d-bd11-6e03929f39cd",
+  "subject_id": "53a6aa07-e7a0-4473-8213-63d68829e9bb",
   "subject_name": "django/db/models/query_utils::DeferredAttribute.__get__",
   "tags": [
     "entity:method"

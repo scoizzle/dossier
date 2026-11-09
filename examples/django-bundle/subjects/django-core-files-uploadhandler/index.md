@@ -1,10 +1,10 @@
 # django/core/files/uploadhandler
 
-- Subject: django/core/files/uploadhandler (id `a552b17b-7136-410d-8df9-344814f5f20b`)
+- Subject: django/core/files/uploadhandler (id `e4578008-5f83-4cd0-a1a4-586c54058834`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1968 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

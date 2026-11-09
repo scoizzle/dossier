@@ -1,6 +1,6 @@
 # Fact b7f7527d
 
-Store id: 6e6a8110-546a-4b29-b772-7a7770709af4
+Store id: e22b7337-02f1-4a79-8aa4-f047d15816ff
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FlatValuesListIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6e6a8110-546a-4b29-b772-7a7770709af4",
+  "id": "e22b7337-02f1-4a79-8aa4-f047d15816ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FlatValuesListIterable"
       },
       "rel": "contains",
-      "target": "a52946d2-eebd-4cd9-bb56-57ab1a5d143a"
+      "target": "6e2f53bb-3e8e-4589-8bd9-21e1863f4502"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

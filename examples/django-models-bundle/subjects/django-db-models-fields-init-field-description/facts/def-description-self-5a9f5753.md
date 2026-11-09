@@ -1,6 +1,6 @@
 # Fact 5a9f5753
 
-Store id: fc791210-8ac6-4be8-a728-4fc7d96be065
+Store id: 9159b02f-8070-473d-a835-98b225edc895
 
 ## Text
 
@@ -20,7 +20,7 @@ def _description(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4164740+00:00`
+- posted_at: `2026-11-09T23:44:49.9562300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 186,
     "symbol": "Field._description"
   },
-  "id": "fc791210-8ac6-4be8-a728-4fc7d96be065",
+  "id": "9159b02f-8070-473d-a835-98b225edc895",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4164740+00:00"
+    "posted_at": "2026-11-09T23:44:49.9562300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "087d8935-8232-484d-bc5b-6bd82600bd34",
+  "subject_id": "99f13dca-352b-4743-b857-d6a822d45ea3",
   "subject_name": "django/db/models/fields/__init__::Field._description",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact aab8854b
 
-Store id: 69f24708-8bc8-4b45-9da0-aab281c2878a
+Store id: 1abeb865-2827-4762-a153-1844cb34f3b3
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_reverse_related_filter(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6280490+00:00`
+- posted_at: `2026-11-09T23:44:51.4860050+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 432,
     "symbol": "RelatedField.get_reverse_related_filter"
   },
-  "id": "69f24708-8bc8-4b45-9da0-aab281c2878a",
+  "id": "1abeb865-2827-4762-a153-1844cb34f3b3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6280490+00:00"
+    "posted_at": "2026-11-09T23:44:51.4860050+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a8820a1f-b32c-4c27-a6ec-e8ea639eb2b9",
+  "subject_id": "5eca5708-baa5-40ed-83c2-f90eeec3fa85",
   "subject_name": "django/db/models/fields/related::RelatedField.get_reverse_related_filter",
   "tags": [
     "entity:method"

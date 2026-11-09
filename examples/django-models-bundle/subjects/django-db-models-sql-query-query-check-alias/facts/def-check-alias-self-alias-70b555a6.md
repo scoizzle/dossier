@@ -1,6 +1,6 @@
 # Fact 70b555a6
 
-Store id: 8b06e6c8-e93f-45e4-86c5-8e622fab9306
+Store id: 0515b1a1-95b0-40a6-93ac-aa1646bbfcf0
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_alias(self, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8817130+00:00`
+- posted_at: `2026-11-09T23:44:58.7770750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1221,
     "symbol": "Query.check_alias"
   },
-  "id": "8b06e6c8-e93f-45e4-86c5-8e622fab9306",
+  "id": "0515b1a1-95b0-40a6-93ac-aa1646bbfcf0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8817130+00:00"
+    "posted_at": "2026-11-09T23:44:58.7770750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c023d9f3-5386-422e-aef3-ac9174b1594d",
+  "subject_id": "b5b375d6-3e53-425b-874a-503193b006cc",
   "subject_name": "django/db/models/sql/query::Query.check_alias",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 56192506
 
-Store id: 3ea3f510-147f-4bac-936a-93164734d5ef
+Store id: 8331e82d-5e1f-49ae-8c47-a41c952f929b
 
 ## Text
 
@@ -20,7 +20,7 @@ def intersection(self, *other_qs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5615360+00:00`
+- posted_at: `2026-11-09T23:44:56.0527400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1773,
     "symbol": "QuerySet.intersection"
   },
-  "id": "3ea3f510-147f-4bac-936a-93164734d5ef",
+  "id": "8331e82d-5e1f-49ae-8c47-a41c952f929b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5615360+00:00"
+    "posted_at": "2026-11-09T23:44:56.0527400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39094145-7e98-4c33-8208-1432da891059",
+  "subject_id": "be7a067d-1884-4feb-b43b-e447d82a833d",
   "subject_name": "django/db/models/query::QuerySet.intersection",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/lookups::YearGt
 
-- Subject: django/db/models/lookups::YearGt (id `4e54fc69-eb4c-47e2-9eec-a06a781de544`)
+- Subject: django/db/models/lookups::YearGt (id `84633d12-9212-4f58-bb5d-d8b8301944ac`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

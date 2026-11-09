@@ -1,11 +1,11 @@
 # django/db/models/options::make_immutable_fields_list
 
-- Subject: django/db/models/options::make_immutable_fields_list (id `10d042b8-1566-4498-91d8-0b2cfb997bd7`)
+- Subject: django/db/models/options::make_immutable_fields_list (id `0e14f6ff-d276-47db-897a-506ee37525bc`)
 - Kind: function
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

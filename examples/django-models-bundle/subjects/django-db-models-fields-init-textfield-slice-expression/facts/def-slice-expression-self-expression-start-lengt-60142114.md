@@ -1,6 +1,6 @@
 # Fact 60142114
 
-Store id: b1c7d01f-6eff-4542-a2f9-3cfa1709312e
+Store id: 0ed56700-9ae7-46eb-ae69-84be07f4f555
 
 ## Text
 
@@ -20,7 +20,7 @@ def slice_expression(self, expression, start, length)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8089770+00:00`
+- posted_at: `2026-11-09T23:44:50.2491160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2595,
     "symbol": "TextField.slice_expression"
   },
-  "id": "b1c7d01f-6eff-4542-a2f9-3cfa1709312e",
+  "id": "0ed56700-9ae7-46eb-ae69-84be07f4f555",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8089770+00:00"
+    "posted_at": "2026-11-09T23:44:50.2491160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "89afa1d2-0723-4c63-a6be-de1ff74869b0",
+  "subject_id": "03650ec5-53b5-4a75-959f-c769a50086f7",
   "subject_name": "django/db/models/fields/__init__::TextField.slice_expression",
   "tags": [
     "entity:method"

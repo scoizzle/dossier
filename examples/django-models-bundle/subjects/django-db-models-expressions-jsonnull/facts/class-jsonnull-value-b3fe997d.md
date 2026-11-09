@@ -1,6 +1,6 @@
 # Fact b3fe997d
 
-Store id: 6764cec7-829e-4d08-a325-df471bff5b18
+Store id: 2ead5a12-9ed4-4094-ab5d-bb637c68bc67
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONNull(Value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8651150+00:00`
+- posted_at: `2026-11-09T23:44:49.5322960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1244,
     "symbol": "JSONNull"
   },
-  "id": "6764cec7-829e-4d08-a325-df471bff5b18",
+  "id": "2ead5a12-9ed4-4094-ab5d-bb637c68bc67",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8651150+00:00"
+    "posted_at": "2026-11-09T23:44:49.5322960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6154c3d7-5b7f-4ed0-9be3-220330774673",
+  "subject_id": "bc9b6ed1-58e3-4ece-bd4c-20ceca0f7926",
   "subject_name": "django/db/models/expressions::JSONNull",
   "tags": [
     "entity:class",

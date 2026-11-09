@@ -5,12 +5,12 @@ This file lists every subject under `django/test/`, one row per subject, grouped
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 |   django/test/__init__ | subject | 3 | 0 | 0 | 255 | [subjects/django-test-init/index.md](../subjects/django-test-init/index.md) |
-|   django/test/client | subject | 128 | 0 | 0 | 8999 | [subjects/django-test-client/index.md](../subjects/django-test-client/index.md) |
+|   django/test/client | subject | 128 | 0 | 0 | 10845 | [subjects/django-test-client/index.md](../subjects/django-test-client/index.md) |
 |   django/test/html | subject | 31 | 0 | 0 | 1847 | [subjects/django-test-html/index.md](../subjects/django-test-html/index.md) |
-|   django/test/runner | subject | 165 | 0 | 0 | 9428 | [subjects/django-test-runner/index.md](../subjects/django-test-runner/index.md) |
-|   django/test/selenium | subject | 39 | 0 | 0 | 2223 | [subjects/django-test-selenium/index.md](../subjects/django-test-selenium/index.md) |
-|   django/test/signals | subject | 53 | 0 | 0 | 1840 | [subjects/django-test-signals/index.md](../subjects/django-test-signals/index.md) |
-|   django/test/testcases | subject | 215 | 0 | 0 | 13631 | [subjects/django-test-testcases/index.md](../subjects/django-test-testcases/index.md) |
+|   django/test/runner | subject | 165 | 0 | 0 | 9427 | [subjects/django-test-runner/index.md](../subjects/django-test-runner/index.md) |
+|   django/test/selenium | subject | 39 | 0 | 0 | 2258 | [subjects/django-test-selenium/index.md](../subjects/django-test-selenium/index.md) |
+|   django/test/signals | subject | 53 | 0 | 0 | 1854 | [subjects/django-test-signals/index.md](../subjects/django-test-signals/index.md) |
+|   django/test/testcases | subject | 215 | 0 | 0 | 13800 | [subjects/django-test-testcases/index.md](../subjects/django-test-testcases/index.md) |
 |   django/test/utils | subject | 149 | 0 | 0 | 7292 | [subjects/django-test-utils/index.md](../subjects/django-test-utils/index.md) |
 
 Up: [index/django.md](django.md)

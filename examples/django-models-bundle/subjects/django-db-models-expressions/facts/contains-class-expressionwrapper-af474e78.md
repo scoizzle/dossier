@@ -1,6 +1,6 @@
 # Fact af474e78
 
-Store id: 94cae9ce-a6da-4eea-a8bf-b66381d475df
+Store id: ac2fcb5b-de9f-42be-a00c-e3e2370c8685
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExpressionWrapper
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "94cae9ce-a6da-4eea-a8bf-b66381d475df",
+  "id": "ac2fcb5b-de9f-42be-a00c-e3e2370c8685",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExpressionWrapper"
       },
       "rel": "contains",
-      "target": "e2f814a6-34f2-4672-8458-38dd487ad931"
+      "target": "5d43b79d-82b0-47ad-8365-94d736a17488"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact e5923d8f
 
-Store id: a550f4f8-ef43-48da-80f3-2152f3ab5419
+Store id: 6009bf4a-4428-4b64-92d7-fe28f7ddc1db
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BaseExpression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a550f4f8-ef43-48da-80f3-2152f3ab5419",
+  "id": "6009bf4a-4428-4b64-92d7-fe28f7ddc1db",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BaseExpression"
       },
       "rel": "contains",
-      "target": "bddcfb63-1a9e-4594-834d-db54219a877d"
+      "target": "2e3773e5-7cc3-47c4-bf65-af996644824a"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

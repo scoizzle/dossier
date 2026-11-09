@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/testing
 
-- Subject: docs/ref/contrib/gis/testing (id `64cf8abd-a004-4bc9-ada4-bcf0db30d0bb`)
+- Subject: docs/ref/contrib/gis/testing (id `84508a77-b368-4fe8-a866-b6171de6a384`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1334 tokens
-- Facts shown: 43 of 44
+- Used: 1373 tokens
+- Facts shown: 44 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -45,6 +45,7 @@
 
 ## All facts
 
+- [7f67a376] Or you may alter the user's role from the SQL shell (assuming this is done from an existing superuser account):
 - [444f0888] PostGIS =======
 - [6f4876d9cd2b3e11] Settings --------
 - [c3d53385] The ``-R -S`` flags indicate that we do not want the user to have the ability to create additional users (roles) or to be a superuser, respectively.

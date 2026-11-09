@@ -1,6 +1,6 @@
 # Fact 1b36495d
 
-Store id: 9286eb71-4ca7-4b9c-be2f-989f9798c2f2
+Store id: d0b8a516-f61f-4c81-a5a5-89a8d0600432
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_on_delete(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8466970+00:00`
+- posted_at: `2026-11-09T23:44:51.6434840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1905,
     "symbol": "ManyToManyField._check_on_delete"
   },
-  "id": "9286eb71-4ca7-4b9c-be2f-989f9798c2f2",
+  "id": "d0b8a516-f61f-4c81-a5a5-89a8d0600432",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8466970+00:00"
+    "posted_at": "2026-11-09T23:44:51.6434840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "86eac1d9-ccbf-4efc-9d8a-880373232330",
+  "subject_id": "2e52c711-adf0-4723-a863-bad673760dae",
   "subject_name": "django/db/models/fields/related::ManyToManyField._check_on_delete",
   "tags": [
     "entity:method"

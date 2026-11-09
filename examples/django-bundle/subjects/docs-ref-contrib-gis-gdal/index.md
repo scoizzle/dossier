@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/gdal
 
-- Subject: docs/ref/contrib/gis/gdal (id `66ad10f2-388a-4ff8-8070-41f96b921d74`)
+- Subject: docs/ref/contrib/gis/gdal (id `2ed715c8-290f-4886-8160-05b1dda377e4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 22739 tokens
-- Facts shown: 697 of 705
+- Used: 23048 tokens
+- Facts shown: 705 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - >>> GDALRaster({"width": 10, "height": 10, "name": "myraster", "srid": 4326}).name 'myraster' [8a2e1040]
 - >>> GDALRaster({"width": 10, "height": 10, "srid": 4326}).driver.name 'MEM' [364241da]
 - >>> GDALRaster({"width": 10, "height": 20, "srid": 4326}).height 20 [f9913927]
+- >>> GDALRaster({"width": 10, "height": 20, "srid": 4326}).width 10 [a228caf0]
 - >>> import tempfile >>> rstfile = tempfile.NamedTemporaryFile(suffix=".tif") >>> rst = GDALRaster( ... { ... "driver": "GTiff", ... "name": rstfile.name, ... "srid": 4326, ... "width": 255, ... "height": 255, ... "nr_of_bands": 1, ... } ... ) >>> rst.name '/tmp/tmp7x9H4J.tif' # The exact filename will be different on your computer >>> rst.driver.name 'GTiff' [e2599b27]
 - >>> rst = GDALRaster( ... { ... "width": 1, ... "height": 2, ... "srid": 4326, ... "bands": [{"data": [0, 1]}, {"data": [2, 3]}], ... } ... ) >>> len(rst.bands) 2 >>> rst.bands[1].data() array([[ 2., 3.]], dtype=float32) [fc129aff]
 - >>> rst = GDALRaster( ... { ... "width": 6, ... "height": 6, ... "srid": 3086, ... "origin": [500000, 400000], ... "scale": [100, -100], ... "bands": [{"data": range(36), "nodata_value": 99}], ... } ... ) >>> target = rst.warp({"scale": [200, -200], "width": 3, "height": 3}) >>> target.bands[0].data() array([[ 7., 9., 11.], [ 19., 21., 23.], [ 31., 33., 35.]], dtype=float32) [b799eb14]
@@ -20,17 +21,16 @@
 - >>> rst = GDALRaster( ... {"width": 4, "height": 4, "srid": 4326, "datatype": 1, "nr_of_bands": 1} ... ) >>> bnd = rst.bands[0] >>> bnd.data(range(16)) >>> bnd.data() array([[ 0, 1, 2, 3], [ 4, 5, 6, 7], [ 8, 9, 10, 11], [12, 13, 14, 15]], dtype=int8) >>> bnd.data(offset=(1, 1), size=(2, 2)) array([[ 5, 6], [ 9, 10]], dtype=int8) >>> bnd.data(data=[-1, -2, -3, -4], offset=(1, 1), size=(2, 2)) >>> bnd.data() array([[ 0, 1, 2, 3], [ 4, -1, -2, 7], [ 8, -3, -4, 11], [12, 13, 14, 15]], dtype=int8) >>> bnd.data(data="\x9d\xa8\xb3\xbe", offset=(1, 1), size=(2, 2)) >>> bnd.data() array([[ 0, 1, 2, 3], [ 4, -99, -88, 7], [ 8, -77, -66, 11], [ 12, 13, 14, 15]], dtype=int8) >>> bnd.data([1], shape=(1, 1)) >>> bnd.data() array([[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], dtype=uint8) >>> bnd.data(range(4), shape=(1, 4)) array([[0, 0, 0, 0], [1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3]], dtype=uint8) [6571fd2c]
 - >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.extent (0.0, -20.0, 10.0, 0.0) >>> rst.origin.x = 100 >>> rst.extent (100.0, -20.0, 110.0, 0.0) [e65423b5]
 - >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.geotransform [0.0, 1.0, 0.0, 0.0, 0.0, -1.0] [c465c760]
-- >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.metadata {} >>> rst.metadata = {"DEFAULT": {"OWNER": "Django", "VERSION": "1.0"}} >>> rst.metadata {'DEFAULT': {'OWNER': 'Django', 'VERSION': '1.0'}} >>> rst.metadata = {"DEFAULT": {"OWNER": None, "VERSION": "2.0"}} >>> rst.metadata {'DEFAULT': {'VERSION': '2.0'}} [b82750cf]
-- >>> city.fid 0 [f9c0d87a]
+- >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.origin [0.0, 0.0] >>> rst.origin.x = 1 >>> rst.origin [1.0, 0.0] [1854afbf]
+- Xgeo = GT(0) + Xpixel * GT(1) + Yline * GT(2) Ygeo = GT(3) + Xpixel * GT(4) + Yline * GT(5) [befe4fcd]
 
 ## All facts
 
-- [1854afbf] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.origin [0.0, 0.0] >>> rst.origin.x = 1 >>> rst.origin [1.0, 0.0]
+- [b82750cf] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.metadata {} >>> rst.metadata = {"DEFAULT": {"OWNER": "Django", "VERSION": "1.0"}} >>> rst.metadata {'DEFAULT': {'OWNER': 'Django', 'VERSION': '1.0'}} >>> rst.metadata = {"DEFAULT": {"OWNER": None, "VERSION": "2.0"}} >>> rst.metadata {'DEFAULT': {'VERSION': '2.0'}}
 - [76908188] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.scale [1.0, -1.0] >>> rst.scale.x = 2 >>> rst.scale [2.0, -1.0]
 - [3feb6171] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.skew [0.0, 0.0] >>> rst.skew.x = 3 >>> rst.skew [3.0, 0.0]
 - [b9ded504] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.srid 4326 >>> rst.srid = 3086 >>> rst.srid 3086 >>> rst.srs.srid # This is equivalent 3086
 - [ba6ea0df] >>> rst = GDALRaster({"width": 10, "height": 20, "srid": 4326}) >>> rst.srs.srid 4326 >>> rst.srs = 3086 >>> rst.srs.srid 3086
-- [befe4fcd] Xgeo = GT(0) + Xpixel * GT(1) + Yline * GT(2) Ygeo = GT(3) + Xpixel * GT(4) + Yline * GT(5)
 - [db419db6] **URLs and file paths resolved below GDAL 3.9**
 - [ed998b18] **Use with trusted data only**
 - [eaf050be34acb41d-48] .. code-block:: pycon
@@ -66,6 +66,7 @@
 - [3b10c521] >>> OGRGeometry("POINT(1 2)").wkb_size 21
 - [9b8691db] >>> [ft.__name__ for ft in layer.field_types] ['OFTString', 'OFTReal', 'OFTReal', 'OFTDate']
 - [82dfb8bb] >>> [pt.tuple for pt in layer.get_geoms()] [(-104.609252, 38.255001), (-95.23506, 38.971823), (-95.363151, 29.763374)]
+- [f9c0d87a] >>> city.fid 0
 - [0c432a57] >>> city.geom.srs.name 'GCS_WGS_1984'
 - [117dd960] >>> city.geom.tuple (-104.609252, 38.255001)
 - [59f3b621] >>> city.get("Population") 102121
@@ -438,6 +439,7 @@
 - [d57db6ea] Adds a geometry to this geometry collection. Not applicable to other geometry types.
 - [5836d781] Alias for :attr:`SpatialReference.proj`.
 - [254ed78427e0303a] Alias for :attr:`point_count`.
+- [254ed78427e0303a-2] Alias for :attr:`point_count`.
 - [34333702] Although the module is named ``gdal``, GeoDjango only supports some of the capabilities of OGR and GDAL's raster features at this time.
 - [ccd51abf] An alias for :attr:`shell`.
 - [9cb95fe1] An alias for :attr:`tuple`.
@@ -484,9 +486,11 @@
 - [4eb13686] Returns a boolean indicating whether this layer supports the given capability (a string). Examples of valid capability strings include: ``'RandomRead'``, ``'SequentialWrite'``, ``'RandomWrite'``, ``'FastSpatialFilter'``, ``'FastFeatureCount'``, ``'FastGetExtent'``, ``'CreateField'``, ``'Transactions'``, ``'DeleteFeature'``, and ``'FastSetNextByIndex'``.
 - [d9291071] Returns a clone of this spatial reference object.
 - [72034ce1] Returns a curved version of the geometry. If no conversion can be made, the original geometry is returned.
+- [f8d0e01a] Returns a linear version of the geometry. If no conversion can be made, the original geometry is returned.
 - [a9fd728c] Returns a list of M coordinates in this line or ``None`` if the line does not have M coordinates:
 - [84f5c478] Returns a list of X coordinates in this line:
 - [34015313] Returns a list of Y coordinates in this line:
+- [dd2a15c0] Returns a list of Z coordinates in this line, or ``None`` if the line does not have Z coordinates:
 - [0479735a] Returns a list of the data types of each of the fields in this layer. These are subclasses of ``Field``, discussed below:
 - [00014f28] Returns a list of the maximum field widths for each of the fields in this layer:
 - [3a750794] Returns a list of the names of each of the fields in this layer:
@@ -538,12 +542,16 @@
 - [426f2112] Returns the number of elements in this geometry:
 - [ef0e8aae] Returns the number of features in the layer. Same as ``len(layer)``:
 - [07794e92] Returns the number of fields in the layer, i.e the number of fields of data associated with each feature in the layer:
+- [df1707bd] Returns the number of fields of data associated with the feature. This will be the same for all features in a given layer and is equivalent to the :attr:`Layer.num_fields` property of the :class:`Layer` object the feature came from.
 - [f12721c8] Returns the number of layers in the data source.
 - [f4d46f9b] Returns the number of points in a :class:`LineString`, the number of rings in a :class:`Polygon`, or the number of geometries in a :class:`GeometryCollection`. Not applicable to other geometry types.
 - [0f744008] Returns the number of points used to describe this geometry:
 - [13c2e151] Returns the numeric precision of this field. This is meaningless (and set to zero) for non-numeric fields:
 - [8f4b0cba] Returns the point at the specified index for a :class:`LineString`, the interior ring at the specified index for a :class:`Polygon`, or the geometry at the specified index in a :class:`GeometryCollection`. Not applicable to other geometry types.
 - [4cba5240] Returns the region consisting of the difference of this geometry and the other, as a new :class:`OGRGeometry` object.
+- [f529e9c4] Returns the region consisting of the intersection of this geometry and the other, as a new :class:`OGRGeometry` object.
+- [5211ff38] Returns the region consisting of the symmetric difference of this geometry and the other, as a new :class:`OGRGeometry` object.
+- [5567d628] Returns the region consisting of the union of this geometry and the other, as a new :class:`OGRGeometry` object.
 - [7777a3fb] Returns the semi major axis of the ellipsoid for this spatial reference.
 - [4663108e] Returns the semi minor axis of the ellipsoid for this spatial reference.
 - [82847c1e] Returns the shell or exterior ring of this polygon, as a ``LinearRing`` geometry.

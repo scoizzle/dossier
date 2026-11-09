@@ -1,10 +1,10 @@
 # docs/howto/overriding-templates
 
-- Subject: docs/howto/overriding-templates (id `159b38fc-6611-4736-88a9-41fe6fc96c4c`)
+- Subject: docs/howto/overriding-templates (id `155d459e-f219-44dc-917e-3e6dccc4be46`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1475 tokens
-- Facts shown: 34 of 35
+- Used: 1502 tokens
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,7 @@
 - .. code-block:: none [591022f6b117516e-2]
 - .. seealso:: [6b4a5e54e001d097-9]
 - ========================= How to override templates ========================= [32de9e89]
+- Extending an overridden template ================================ [5fc4db3f]
 - First, make sure your template settings are checking inside app directories:: [2cca548b]
 - First, we'll explore overriding templates by creating replacement templates in your project's templates directory. [14816c7e]
 - For example, you can use this technique to add a custom logo to the ``admin/base_site.html`` template: [299829ce]
@@ -34,11 +35,11 @@
 - If you want to put the template overrides in an app called ``myapp`` and the templates to override are named ``blog/list.html`` and ``blog/post.html``, then your directory structure will look like: [8cdb7df0]
 - In your project, you might want to override a template in another Django application, whether it be a third-party application or a contrib application such as ``django.contrib.admin``. You can either put template overrides in your project's templates directory or in an application's templates directory. [b049fa84]
 - Key points to note: [efc66e4e]
-- Overriding from an app's template directory =========================================== [0a4471c0]
 
 ## All facts
 
 - [e65b5dc0] Let's say you're trying to override the templates for a third-party application called ``blog``, which provides the templates ``blog/post.html`` and ``blog/list.html``. The relevant settings for your project would look like::
+- [0a4471c0] Overriding from an app's template directory ===========================================
 - [48630b3b] Overriding from the project's templates directory =================================================
 - [409e595e] Since you're overriding templates located outside of one of your project's apps, it's more common to use the first method and put template overrides in a project's templates folder. If you prefer, however, it's also possible to put the overrides in an app's template directory.
 - [cf81c818] The :setting:`TEMPLATES` setting and ``BASE_DIR`` will already exist if you created your project using the default project template. The setting that needs to be modified is :setting:`DIRS<TEMPLATES-DIRS>`.

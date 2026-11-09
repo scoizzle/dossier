@@ -1,6 +1,6 @@
 # Fact d21430b4
 
-Store id: 49053e5b-ad1d-40b6-b598-e3518cc20d86
+Store id: e9b95487-0947-48b6-b8fe-0618e50d03ff
 
 ## Text
 
@@ -20,7 +20,7 @@ def _populate_directed_relation_graph(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0228280+00:00`
+- posted_at: `2026-11-09T23:44:55.5719290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 808,
     "symbol": "Options._populate_directed_relation_graph"
   },
-  "id": "49053e5b-ad1d-40b6-b598-e3518cc20d86",
+  "id": "e9b95487-0947-48b6-b8fe-0618e50d03ff",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0228280+00:00"
+    "posted_at": "2026-11-09T23:44:55.5719290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "912ae26e-a8bf-43cf-8dcb-55b4bf7df4f0",
+  "subject_id": "c5370e99-9602-489a-ad44-251178f205e0",
   "subject_name": "django/db/models/options::Options._populate_directed_relation_graph",
   "tags": [
     "entity:method"

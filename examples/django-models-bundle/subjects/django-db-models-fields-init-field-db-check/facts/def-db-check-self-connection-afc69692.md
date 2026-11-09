@@ -1,6 +1,6 @@
 # Fact afc69692
 
-Store id: e82ab986-50be-4618-932e-e3fb93a51a71
+Store id: 8c3bc6f9-64e2-497e-b6db-b3c23f5bb9c4
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_check(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4743630+00:00`
+- posted_at: `2026-11-09T23:44:50.0153000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 883,
     "symbol": "Field.db_check"
   },
-  "id": "e82ab986-50be-4618-932e-e3fb93a51a71",
+  "id": "8c3bc6f9-64e2-497e-b6db-b3c23f5bb9c4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4743630+00:00"
+    "posted_at": "2026-11-09T23:44:50.0153000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c955625-6fc4-4205-8207-73d0f18182dd",
+  "subject_id": "0e021741-f9ca-45b4-af7e-927a10836c75",
   "subject_name": "django/db/models/fields/__init__::Field.db_check",
   "tags": [
     "entity:method"

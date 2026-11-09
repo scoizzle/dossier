@@ -1,10 +1,10 @@
 # docs/ref/models/instances
 
-- Subject: docs/ref/models/instances (id `4fb8c969-356c-49d3-8433-7b75740c6463`)
+- Subject: docs/ref/models/instances (id `e416308a-262d-48e1-b341-6de1c2d8e05e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 12231 tokens
-- Facts shown: 254 of 262
+- Used: 12419 tokens
+- Facts shown: 262 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,6 +19,7 @@
 - book = Book.objects.create_book("Pride and Prejudice") [a6cbfb60]
 - class Article(models.Model): ... [a107874ed3ff2f8b]
 - class Book(models.Model): title = models.CharField(max_length=100) [17cf7d31e7e8d657]
+- class Book(models.Model): title = models.CharField(max_length=100) [17cf7d31e7e8d657-2]
 - class BookManager(models.Manager): def create_book(self, title): book = self.create(title=title) # do something with the book return book [39071eb2]
 - def __str__(self): return f"{self.first_name} {self.last_name}" [6bdcabf3]
 - def clean(self): # Don't allow draft entries to have a pub_date. if self.status == "draft" and self.pub_date is not None: raise ValidationError( {"pub_date": _("Draft entries may not have a publication date.")} ) ... [f9d215e5]
@@ -33,13 +34,13 @@
 - .. versionchanged:: 6.1 [2a966a198e13032b-17]
 - <!-- BAD template code. Avoid! --> <a href="/people/{{ object.id }}/">{{ object.name }}</a> [a1ddafb5]
 - <a href="{{ object.get_absolute_url }}">{{ object.name }}</a> [d5acd89f]
-- >>> b2 = Blog(name="Cheddar Talk", tagline="Thoughts on cheese.") >>> b2.id # Returns None, because b2 doesn't have an ID yet. >>> b2.save() >>> b2.id # Returns the ID of your new object. [bf26a11f]
+- >>> obj = MyModel.objects.first() >>> del obj.field >>> obj.field # Loads the field from the database [a22ff421]
 
 ## All facts
 
+- [bf26a11f] >>> b2 = Blog(name="Cheddar Talk", tagline="Thoughts on cheese.") >>> b2.id # Returns None, because b2 doesn't have an ID yet. >>> b2.save() >>> b2.id # Returns the ID of your new object.
 - [b9e4a756] >>> b3 = Blog(id=3, name="Cheddar Talk", tagline="Thoughts on cheese.") >>> b3.id # Returns 3. >>> b3.save() >>> b3.id # Returns 3.
 - [022cccb3] >>> from django.db.models import F >>> product = Product.objects.get(name="Venezuelan Beaver Cheese") >>> product.number_sold = F("number_sold") + 1 >>> product.save()
-- [a22ff421] >>> obj = MyModel.objects.first() >>> del obj.field >>> obj.field # Loads the field from the database
 - [79f1ecc4] >>> p = Person(name="Fred Flintstone", shirt_size="L") >>> p.save() >>> p.shirt_size 'L' >>> p.get_shirt_size_display() 'Large'
 - [6b08990d] >>> product = Product.objects.get(name="Venezuelan Beaver Cheese") >>> product.number_sold += 1 >>> product.save()
 - [b2dc2c1c] @classmethod def from_db(cls, db, field_names, values, *, fetch_mode=None): # Default implementation of from_db() (subject to change and could # be replaced with super()). if len(values) != len(cls._meta.concrete_fields): values = list(values) values.reverse() values = [ values.pop() if f.attname in field_names else DEFERRED for f in cls._meta.concrete_fields ] instance = cls(*values) instance._state.adding = False instance._state.db = db if fetch_mode is not None: instance._state.fetch_mode = fetch_mode # customization to store the original field values on the instance instance._loaded_values = dict( zip(field_names, (value for value in values if value is not DEFERRED)) ) return instance
@@ -65,6 +66,8 @@
 - [f9d8e77a] You may be tempted to customize the model by overriding the ``__init__`` method. If you do so, however, take care not to change the calling signature as any change may prevent the model instance from being saved. Additionally, referring to model fields within ``__init__`` may potentially result in infinite recursion errors in some circumstances. Rather than overriding ``__init__``, try using one of these approaches:
 - [75acec7d] You should avoid building the URL from unvalidated user input, in order to reduce possibilities of link or redirect poisoning::
 - [c2f567a8] b4 = Blog(id=3, name="Not Cheddar", tagline="Anything but cheese.") b4.save() # Overrides the previous blog with ID=3!
+- [a107874ed3ff2f8b-2] class Article(models.Model): ...
+- [a107874ed3ff2f8b-3] class Article(models.Model): ...
 - [aa1fa934] class ExampleModel(models.Model): def refresh_from_db(self, using=None, fields=None, **kwargs): # fields contains the name of the deferred field to be # loaded. if fields is not None: fields = set(fields) deferred_fields = self.get_deferred_fields() # If any deferred field is going to be loaded if fields.intersection(deferred_fields): # then load all of them fields = fields.union(deferred_fields) super().refresh_from_db(using, fields, **kwargs)
 - [ab8db0e6] class MultitableInherited(MyModel): pass
 - [cc6e503b] class MyModel(models.Model): id = models.AutoField(primary_key=True)
@@ -77,6 +80,9 @@
 - [170dde67] def test_update_result(self): obj = MyModel.objects.create(val=1) MyModel.objects.filter(pk=obj.pk).update(val=F("val") + 1) # At this point obj.val is still 1, but the value in the database # was updated to 2. The object's updated value needs to be reloaded # from the database. obj.refresh_from_db() self.assertEqual(obj.val, 2)
 - [798a61a8] from django.core.exceptions import NON_FIELD_ERRORS, ValidationError
 - [e2148d20c78ef2f1] from django.core.exceptions import ValidationError
+- [4af926756c29efa6-27] from django.db import models
+- [4af926756c29efa6-28] from django.db import models
+- [4af926756c29efa6-29] from django.db import models
 - [5eeeaab5] from django.db.models import DEFERRED
 - [b04ce7f2] import datetime from django.core.exceptions import ValidationError from django.db import models from django.utils.translation import gettext_lazy as _
 - [fac4cb54] obj.refresh_from_db(from_queryset=MyModel.active_objects.all())
@@ -89,6 +95,7 @@
 - [b1cb6fec] For example, :class:`~django.db.models.DateField` fields use a Python ``datetime`` object to store data. Databases don't store ``datetime`` objects, so the field value must be converted into an ISO-compliant date string for insertion into the database.
 - [4fd8186c] Most fields don't require data preparation. Simple data types, such as integers and strings, are 'ready to write' as a Python object. However, more complex data types often require some modification.
 - [21afae5f] #. **Emit a post-save signal.** The :data:`~django.db.models.signals.post_save` signal is sent, allowing any functions listening for that signal to do something.
+- [ba88d478] #. **Emit a pre-save signal.** The :data:`~django.db.models.signals.pre_save` signal is sent, allowing any functions listening for that signal to do something.
 - [03a5cf95] #. **Insert the data into the database.** The preprocessed, prepared data is composed into an SQL statement for insertion into the database.
 - [1fcde08d] #. **Prepare the data for the database.** Each field's :meth:`~django.db.models.Field.get_db_prep_save` method is asked to provide its current value in a data type that can be written to the database.
 - [0ee13cdb] #. **Preprocess the data.** Each field's :meth:`~django.db.models.Field.pre_save` method is called to perform any automated data modification that's needed. For example, the date/time fields override ``pre_save()`` to implement :attr:`~django.db.models.DateField.auto_now_add` and :attr:`~django.db.models.DateField.auto_now`.
@@ -113,6 +120,7 @@
 - [05ac5607] .. class:: Model(**kwargs)
 - [026b3edb] .. classmethod:: Model.from_db(db, field_names, values, *, fetch_mode=None)
 - [685d15dfb6eb2285-80] .. code-block:: html+django
+- [685d15dfb6eb2285-81] .. code-block:: html+django
 - [eaf050be34acb41d-459] .. code-block:: pycon
 - [eaf050be34acb41d-460] .. code-block:: pycon
 - [eaf050be34acb41d-461] .. code-block:: pycon

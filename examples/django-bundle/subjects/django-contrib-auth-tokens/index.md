@@ -1,10 +1,10 @@
 # django/contrib/auth/tokens
 
-- Subject: django/contrib/auth/tokens (id `0396079c-f93f-42ea-b887-658061d19418`)
+- Subject: django/contrib/auth/tokens (id `8ff60130-f6cf-4ed0-a894-ac9f7f60eeea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1111 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

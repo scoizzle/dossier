@@ -1,6 +1,6 @@
 # Fact 0247c996
 
-Store id: 55ac0ef9-6049-4346-a784-92da434bf494
+Store id: be9760ff-ee58-4a91-a944-1fd4b48f73f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def labels(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.5014880+00:00`
+- posted_at: `2026-11-09T23:44:49.0439560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 45,
     "symbol": "ChoicesType.labels"
   },
-  "id": "55ac0ef9-6049-4346-a784-92da434bf494",
+  "id": "be9760ff-ee58-4a91-a944-1fd4b48f73f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.5014880+00:00"
+    "posted_at": "2026-11-09T23:44:49.0439560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ff46c671-ff5b-4a35-ad87-ee2ab01d0a6b",
+  "subject_id": "613270dd-e7ad-410b-9769-2a889d3943f7",
   "subject_name": "django/db/models/enums::ChoicesType.labels",
   "tags": [
     "entity:method",

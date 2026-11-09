@@ -10,7 +10,7 @@ This file lists every subject under `django/tasks/`, one row per subject, groupe
 |     django/tasks/backends/immediate | subject | 14 | 0 | 0 | 760 | [subjects/django-tasks-backends-immediate/index.md](../subjects/django-tasks-backends-immediate/index.md) |
 |   django/tasks/base | subject | 47 | 0 | 0 | 2012 | [subjects/django-tasks-base/index.md](../subjects/django-tasks-base/index.md) |
 |   django/tasks/checks | subject | 4 | 0 | 0 | 134 | [subjects/django-tasks-checks/index.md](../subjects/django-tasks-checks/index.md) |
-|   django/tasks/exceptions | subject | 6 | 0 | 0 | 212 | [subjects/django-tasks-exceptions/index.md](../subjects/django-tasks-exceptions/index.md) |
+|   django/tasks/exceptions | subject | 6 | 0 | 0 | 213 | [subjects/django-tasks-exceptions/index.md](../subjects/django-tasks-exceptions/index.md) |
 |   django/tasks/signals | subject | 11 | 0 | 0 | 462 | [subjects/django-tasks-signals/index.md](../subjects/django-tasks-signals/index.md) |
 
 Up: [index/django.md](django.md)

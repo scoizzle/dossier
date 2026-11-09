@@ -1,6 +1,6 @@
 # Fact 5c5ca401
 
-Store id: 03d12316-f183-4390-9c1b-0580c26e8bda
+Store id: dd96723f-6b97-46ca-9981-4493bffbd350
 
 ## Text
 
@@ -20,7 +20,7 @@ def non_db_attrs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6660430+00:00`
+- posted_at: `2026-11-09T23:44:51.5159910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 604,
     "symbol": "ForeignObject.non_db_attrs"
   },
-  "id": "03d12316-f183-4390-9c1b-0580c26e8bda",
+  "id": "dd96723f-6b97-46ca-9981-4493bffbd350",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6660430+00:00"
+    "posted_at": "2026-11-09T23:44:51.5159910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ee4c65da-0d54-496d-9542-4717b3d5f030",
+  "subject_id": "850c9348-ba4c-4919-b2cc-f80b6089eac9",
   "subject_name": "django/db/models/fields/related::ForeignObject.non_db_attrs",
   "tags": [
     "entity:method",

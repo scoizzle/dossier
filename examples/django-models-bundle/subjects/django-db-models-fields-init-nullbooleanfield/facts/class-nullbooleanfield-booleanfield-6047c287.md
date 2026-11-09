@@ -1,6 +1,6 @@
 # Fact 6047c287
 
-Store id: c4f7e363-96e6-4ad1-bffc-7d43f120e232
+Store id: e4518f9b-38bf-4a90-acc7-49b9e367136a
 
 ## Text
 
@@ -20,7 +20,7 @@ class NullBooleanField(BooleanField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7536590+00:00`
+- posted_at: `2026-11-09T23:44:50.2035750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2387,
     "symbol": "NullBooleanField"
   },
-  "id": "c4f7e363-96e6-4ad1-bffc-7d43f120e232",
+  "id": "e4518f9b-38bf-4a90-acc7-49b9e367136a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7536590+00:00"
+    "posted_at": "2026-11-09T23:44:50.2035750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8897c3b8-2bef-413e-ade8-0faa2980ac3e",
+  "subject_id": "aba4f633-b292-4398-9c43-67fe6ba50197",
   "subject_name": "django/db/models/fields/__init__::NullBooleanField",
   "tags": [
     "entity:class"

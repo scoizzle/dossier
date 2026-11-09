@@ -1,10 +1,10 @@
 # django/db/models/expressions
 
-- Subject: django/db/models/expressions (id `191e4ce1-7784-4937-a266-0e0cfc932363`)
+- Subject: django/db/models/expressions (id `28327a89-66c3-4156-a323-5c05be9f6cae`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 645 tokens
-- Facts shown: 37 of 38
+- Used: 667 tokens
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -47,6 +47,7 @@
 - contains class WindowFrameExclusion [92a755a0](facts/contains-class-windowframeexclusion-92a755a0.md)
 - contains function _register_combinable_fields [edc3e403](facts/contains-function-register-combinable-fields-edc3e403.md)
 - contains function _resolve_combined_type [a2b95e15](facts/contains-function-resolve-combined-type-a2b95e15.md)
+- contains function register_combinable_fields [fa391c0d](facts/contains-function-register-combinable-fields-fa391c0d.md)
 
 ## Child subjects
 

@@ -1,6 +1,6 @@
 # Fact b5a0cf20
 
-Store id: 428cb93d-2684-4495-ade6-40efe2faacfe
+Store id: f5729a84-0cab-4078-bced-7f761da39fe9
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1851930+00:00`
+- posted_at: `2026-11-09T23:44:54.9020880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 181,
     "symbol": "Lookup.__hash__"
   },
-  "id": "428cb93d-2684-4495-ade6-40efe2faacfe",
+  "id": "f5729a84-0cab-4078-bced-7f761da39fe9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1851930+00:00"
+    "posted_at": "2026-11-09T23:44:54.9020880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d1ce9836-cbbf-49ee-b831-7d5d31da1e6b",
+  "subject_id": "a543ff2e-8552-4662-bc56-e3a311ee770b",
   "subject_name": "django/db/models/lookups::Lookup.__hash__",
   "tags": [
     "entity:method"

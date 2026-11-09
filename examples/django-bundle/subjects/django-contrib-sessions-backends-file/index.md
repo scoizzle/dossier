@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/file
 
-- Subject: django/contrib/sessions/backends/file (id `9b449141-f9c1-4f93-ab14-ad015aeb5385`)
+- Subject: django/contrib/sessions/backends/file (id `a01f412f-116e-4599-85d1-3e14a064f5ac`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1865 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

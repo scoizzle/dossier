@@ -1,10 +1,10 @@
 # django/core/management/commands/makemessages
 
-- Subject: django/core/management/commands/makemessages (id `4624e21a-21f9-4323-a6a2-733ba45384f5`)
+- Subject: django/core/management/commands/makemessages (id `d690bd64-3af0-4e20-8cfd-5cc81db556c7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5989 tokens
-- Facts shown: 67 of 67
+- Facts shown: 67 facts
 - Conflicts: 0
 - Gaps: 0
 

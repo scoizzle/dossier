@@ -1,6 +1,6 @@
 # Fact e452d984
 
-Store id: d6495abb-6b9d-47fe-bcfa-2947e0f1afaa
+Store id: 73f1fa42-14ae-4cdd-af2b-26cd6c6671e6
 
 ## Text
 
@@ -20,7 +20,7 @@ def cached_col(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6186740+00:00`
+- posted_at: `2026-11-09T23:44:50.7996850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 35,
     "symbol": "GeneratedField.cached_col"
   },
-  "id": "d6495abb-6b9d-47fe-bcfa-2947e0f1afaa",
+  "id": "73f1fa42-14ae-4cdd-af2b-26cd6c6671e6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6186740+00:00"
+    "posted_at": "2026-11-09T23:44:50.7996850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e12e5e56-86e8-4af1-aec0-ec45c3d1fc85",
+  "subject_id": "32944863-bd7a-4740-977c-435ab1a89aa0",
   "subject_name": "django/db/models/fields/generated::GeneratedField.cached_col",
   "tags": [
     "entity:method",

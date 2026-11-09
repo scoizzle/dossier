@@ -1,6 +1,6 @@
 # Fact b2d32519
 
-Store id: 1da13487-a524-4c2e-a49b-79f010a538c0
+Store id: be550935-b3e3-44bf-8bce-42870e7a2d81
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BooleanField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1da13487-a524-4c2e-a49b-79f010a538c0",
+  "id": "be550935-b3e3-44bf-8bce-42870e7a2d81",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BooleanField"
       },
       "rel": "contains",
-      "target": "1c691d9d-153d-4fc8-83c6-ad8b6ecd08b7"
+      "target": "bf90735d-df6e-4929-936e-d4b6366e362e"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

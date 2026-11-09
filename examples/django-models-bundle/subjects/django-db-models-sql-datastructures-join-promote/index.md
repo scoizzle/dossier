@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::Join.promote
 
-- Subject: django/db/models/sql/datastructures::Join.promote (id `b6f6be94-3195-4f6c-8f02-93ad4fbfc61d`)
+- Subject: django/db/models/sql/datastructures::Join.promote (id `9617531e-b976-4060-950b-590646c6cde1`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

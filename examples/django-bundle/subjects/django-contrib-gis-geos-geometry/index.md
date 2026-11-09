@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/geometry
 
-- Subject: django/contrib/gis/geos/geometry (id `a89d500c-c2c0-48a0-865c-7797005a2fda`)
+- Subject: django/contrib/gis/geos/geometry (id `76eec69a-528c-4023-aebd-a3c783ae6a15`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6542 tokens
-- Facts shown: 111 of 115
+- Used: 6707 tokens
+- Facts shown: 115 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,6 +26,7 @@
 - [6dc6cf52] if isinstance(ct, gdal.CoordTransform): # We don't care about SRID because CoordTransform presupposes # source SRS. srid = None elif srid is None or srid < 0: raise GEOSException( "Calling transform() with no SRID set is not supported." )
 - [d5a7b837] if not g: raise GEOSException("Could not initialize GEOS Geometry with given input.")
 - [b3da7272] if not isinstance(point, Point): raise TypeError("locate_point argument must be a Point") return capi.geos_project(self.ptr, point.ptr)
+- [9a995615] if not isinstance(point, Point): raise TypeError("locate_point argument must be a Point") return capi.geos_project_normalized(self.ptr, point.ptr)
 - [eef40dc0] input_srid = input_srid or capi.geos_get_srid(g) or None if input_srid and srid and input_srid != srid: raise ValueError("Input geometry already has SRID: %d." % input_srid)
 - [83a1b2ca] super().__init__(g, None) # Set the SRID, if given. srid = input_srid or srid if srid and isinstance(srid, int): self.srid = srid
 - [95541008] # ### Geometry set-like operations ### # Thanks to Sean Gillies for inspiration: # http://lists.gispython.org/pipermail/community/2007-July/001034.html # g = g1 | g2 def __or__(self, other): "Return the union of this Geometry and the other." return self.union(other)
@@ -103,12 +104,14 @@
 - [bde0ccf1] def equals_exact(self, other, tolerance=0): """ Return true if the two Geometries are exactly equal, up to a specified tolerance. """ return capi.geos_equalsexact(self.ptr, other.ptr, float(tolerance))
 - [adfe9824] def equals_identical(self, other): """ Return true if the two Geometries are point-wise equivalent. """ if geos_version_tuple() < (3, 12): raise GEOSException( "GEOSGeometry.equals_identical() requires GEOS >= 3.12.0." ) return capi.geos_equalsidentical(self.ptr, other.ptr)
 - [a41af4c3] def interpolate(self, distance): return self._topology(capi.geos_interpolate(self.ptr, distance))
+- [4b8ecd15] def interpolate_normalized(self, distance): return self._topology(capi.geos_interpolate_normalized(self.ptr, distance))
 - [10451b07] def intersection(self, other): """ Return a Geometry representing the points shared by this Geometry and other. """ return self._topology(capi.geos_intersection(self.ptr, other.ptr))
 - [f4e0505e] def intersects(self, other): "Return true if disjoint return false." return capi.geos_intersects(self.ptr, other.ptr)
 - [41ee1f56] def make_valid(self): """ Attempt to create a valid representation of a given invalid geometry without losing any of the input vertices. """ return GEOSGeometry(capi.geos_makevalid(self.ptr), srid=self.srid)
 - [78162da8] def normalize(self, clone=False): """ Convert this Geometry to normal form (or canonical form). If the `clone` keyword is set, then the geometry is not modified and a normalized clone of the geometry is returned instead. """ if clone: clone = self.clone() capi.geos_normalize(clone.ptr) return clone capi.geos_normalize(self.ptr)
 - [4a29b66b] def overlaps(self, other): """ Return true if the DE-9IM intersection matrix for the two Geometries is T*T***T** (for two points or two surfaces) 1*T***T** (for two curves). """ return capi.geos_overlaps(self.ptr, other.ptr)
 - [eeefe856] def project(self, point): from .point import Point
+- [357b6a92] def project_normalized(self, point): from .point import Point
 - [f252fcb1] def relate(self, other): """ Return the DE-9IM intersection matrix for this Geometry and the other. """ return capi.geos_relate(self.ptr, other.ptr).decode()
 - [421c2725] def relate_pattern(self, other, pattern): """ Return true if the elements in the DE-9IM intersection matrix for the two Geometries match the elements in pattern. """ if not isinstance(pattern, str) or len(pattern) > 9: raise GEOSException("Invalid intersection matrix pattern.") return capi.geos_relatepattern(self.ptr, other.ptr, force_bytes(pattern))
 - [9708fed3] def simplify(self, tolerance=0.0, preserve_topology=False): """ Return the Geometry, simplified using the Douglas-Peucker algorithm to the specified tolerance (higher tolerance => less points). If no tolerance provided, defaults to 0.
@@ -116,6 +119,7 @@
 - [8ff721da] def touches(self, other): """ Return true if the DE-9IM intersection matrix for the two Geometries is FT*******, F**T***** or F***T****. """ return capi.geos_touches(self.ptr, other.ptr)
 - [ab9109ef] def transform(self, ct, clone=False): """ Requires GDAL. Transform the geometry according to the given transformation object, which may be an integer SRID, and WKT or PROJ string. By default, transform the geometry in-place and return nothing. However if the `clone` keyword is set, don't modify the geometry and return a transformed clone instead. """ srid = self.srid
 - [4f87d09c] def union(self, other): """ Return a Geometry representing all the points in this Geometry and other. """ return self._topology(capi.geos_union(self.ptr, other.ptr))
+- [8ffc1f40] def within(self, other): """ Return true if the DE-9IM intersection matrix for the two Geometries is T*F**F***. """ return capi.geos_within(self.ptr, other.ptr)
 - [bb57a036f17ae469-2] geojson = json
 - [56e3beda] ptr_type = GEOM_PTR destructor = capi.destroy_geom has_cs = False # Only Point, LineString, LinearRing have coordinate sequences
 - [84109ba8] """ This module contains the 'base' GEOSGeometry object -- all GEOS Geometries inherit from this object. """

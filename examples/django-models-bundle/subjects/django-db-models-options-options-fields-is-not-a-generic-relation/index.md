@@ -1,11 +1,11 @@
 # django/db/models/options::Options.fields.is_not_a_generic_relation
 
-- Subject: django/db/models/options::Options.fields.is_not_a_generic_relation (id `01900ade-9ebe-4244-8935-e1311f40ea62`)
+- Subject: django/db/models/options::Options.fields.is_not_a_generic_relation (id `9f38be58-7d6b-4804-9083-cb8d41cf71be`)
 - Kind: function
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

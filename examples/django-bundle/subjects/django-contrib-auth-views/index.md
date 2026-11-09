@@ -1,10 +1,10 @@
 # django/contrib/auth/views
 
-- Subject: django/contrib/auth/views (id `09e116f5-d7a5-4943-a940-1f0c1381525c`)
+- Subject: django/contrib/auth/views (id `ee421770-986e-4363-8bd3-c4ae8379bb6a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3364 tokens
-- Facts shown: 48 of 49
+- Used: 3402 tokens
+- Facts shown: 49 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -33,6 +33,7 @@
 - [7bb60d38] def get_default_redirect_url(self): """Return the default redirect URL.""" if self.next_page: return resolve_url(self.next_page) else: return resolve_url(settings.LOGIN_REDIRECT_URL)
 - [3001a035] def get_default_redirect_url(self): """Return the default redirect URL.""" if self.next_page: return resolve_url(self.next_page) raise ImproperlyConfigured("No URL to redirect to. Provide a next_page.")
 - [c746de6c] def get_form_kwargs(self): kwargs = super().get_form_kwargs() kwargs["request"] = self.request return kwargs
+- [add6db9e] def get_form_kwargs(self): kwargs = super().get_form_kwargs() kwargs["user"] = self.request.user return kwargs
 - [43f3fec6] def get_form_kwargs(self): kwargs = super().get_form_kwargs() kwargs["user"] = self.user return kwargs
 - [826eb03d] def get_redirect_url(self, request=None): """Return the user-originating redirect URL if it's safe.
 - [f2448376] def get_success_url(self): return self.get_redirect_url() or self.get_default_redirect_url()

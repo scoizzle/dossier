@@ -1,6 +1,6 @@
 # Fact 06f8f6de
 
-Store id: 79edeeee-7e08-42bd-adbd-469c4878410d
+Store id: 413bbce6-c9bf-4cc3-b4d9-1ee29a4e96ac
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2306770+00:00`
+- posted_at: `2026-11-09T23:44:54.1124280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 226,
     "symbol": "Ord.as_mysql"
   },
-  "id": "79edeeee-7e08-42bd-adbd-469c4878410d",
+  "id": "413bbce6-c9bf-4cc3-b4d9-1ee29a4e96ac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2306770+00:00"
+    "posted_at": "2026-11-09T23:44:54.1124280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fe392f89-8e15-4c2c-bb95-3ef1283ea70f",
+  "subject_id": "19d366a8-c4f2-47b5-9299-163a1a10d336",
   "subject_name": "django/db/models/functions/text::Ord.as_mysql",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::ExtractMonth
 
-- Subject: django/db/models/functions/datetime::ExtractMonth (id `01258883-7973-4911-8953-bf64ff5e7698`)
+- Subject: django/db/models/functions/datetime::ExtractMonth (id `bb780a00-d230-4f57-b2cd-f2fd3f8e6056`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

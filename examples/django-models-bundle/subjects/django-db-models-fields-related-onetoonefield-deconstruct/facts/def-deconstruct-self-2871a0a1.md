@@ -1,6 +1,6 @@
 # Fact 2871a0a1
 
-Store id: d6e6482b-e7da-44f7-a316-9c85eda8fb97
+Store id: 3184c499-94c2-4f47-a593-62d1cb91da45
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8067680+00:00`
+- posted_at: `2026-11-09T23:44:51.6173300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1375,
     "symbol": "OneToOneField.deconstruct"
   },
-  "id": "d6e6482b-e7da-44f7-a316-9c85eda8fb97",
+  "id": "3184c499-94c2-4f47-a593-62d1cb91da45",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8067680+00:00"
+    "posted_at": "2026-11-09T23:44:51.6173300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "546469d9-a19d-4a2d-adde-9f65c01cb072",
+  "subject_id": "9bd793cf-712e-4b3c-87c5-28be31ff856a",
   "subject_name": "django/db/models/fields/related::OneToOneField.deconstruct",
   "tags": [
     "entity:method"

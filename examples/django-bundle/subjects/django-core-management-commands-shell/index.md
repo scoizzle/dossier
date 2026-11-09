@@ -1,10 +1,10 @@
 # django/core/management/commands/shell
 
-- Subject: django/core/management/commands/shell (id `ad874ad7-f4f9-434c-a3c9-a8aff9973d59`)
+- Subject: django/core/management/commands/shell (id `432191a1-a757-418e-be8f-abd1d8a80edd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2203 tokens
-- Facts shown: 41 of 41
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 

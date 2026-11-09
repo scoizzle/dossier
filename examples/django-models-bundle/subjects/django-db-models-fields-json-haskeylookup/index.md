@@ -1,11 +1,11 @@
 # django/db/models/fields/json::HasKeyLookup
 
-- Subject: django/db/models/fields/json::HasKeyLookup (id `397dd665-22a4-4d45-8e58-5a08e3194b90`)
+- Subject: django/db/models/fields/json::HasKeyLookup (id `cbdff0ae-c627-49d0-84f6-2d0ba2812d3f`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

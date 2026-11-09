@@ -1,6 +1,6 @@
 # Fact 354063e3
 
-Store id: a557dd66-7f09-45a8-8114-4463112e0d65
+Store id: 4e36bd76-16d4-44ad-a9d0-c0acf8934a31
 
 ## Text
 
@@ -20,7 +20,7 @@ def compile(self, node)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7329120+00:00`
+- posted_at: `2026-11-09T23:44:57.4841700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 592,
     "symbol": "SQLCompiler.compile"
   },
-  "id": "a557dd66-7f09-45a8-8114-4463112e0d65",
+  "id": "4e36bd76-16d4-44ad-a9d0-c0acf8934a31",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7329120+00:00"
+    "posted_at": "2026-11-09T23:44:57.4841700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "443babc6-23d7-4f9f-861e-d981ab0c9c11",
+  "subject_id": "cf5c8af8-032f-4edf-b58f-295c6d1e28c5",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.compile",
   "tags": [
     "entity:method"

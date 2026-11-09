@@ -1,6 +1,6 @@
 # Fact 926150f2
 
-Store id: 237e2d03-a372-463c-b6c0-c0eaa7714f23
+Store id: de1ba818-e378-4e6e-b679-39743493192a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDIStartsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "237e2d03-a372-463c-b6c0-c0eaa7714f23",
+  "id": "de1ba818-e378-4e6e-b679-39743493192a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDIStartsWith"
       },
       "rel": "contains",
-      "target": "656a0a72-7f55-4a68-9fd2-515e9e416694"
+      "target": "bf878196-bb3d-4088-bb21-a6f853302e3f"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

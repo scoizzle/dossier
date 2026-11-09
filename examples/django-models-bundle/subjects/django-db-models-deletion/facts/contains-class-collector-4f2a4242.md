@@ -1,6 +1,6 @@
 # Fact 4f2a4242
 
-Store id: 874353b9-76c1-4162-b7d1-da78dc147265
+Store id: 9856109e-f99c-49a6-bdc1-d85385de1e9c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Collector
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "874353b9-76c1-4162-b7d1-da78dc147265",
+  "id": "9856109e-f99c-49a6-bdc1-d85385de1e9c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Collector"
       },
       "rel": "contains",
-      "target": "7be0b9ec-c794-4eda-9863-5ac0784b31c2"
+      "target": "7db2be7b-d46d-4225-870f-e5c639e5839d"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:class"

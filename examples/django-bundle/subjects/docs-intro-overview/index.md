@@ -1,10 +1,10 @@
 # docs/intro/overview
 
-- Subject: docs/intro/overview (id `64d275f5-570c-4651-95f6-67f0974187a0`)
+- Subject: docs/intro/overview (id `cc021b40-9d9a-4f74-a1af-48c0cbf44159`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3936 tokens
-- Facts shown: 89 of 92
+- Used: 4038 tokens
+- Facts shown: 92 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -30,16 +30,18 @@
 - $ python manage.py makemigrations $ python manage.py migrate [f38f790a]
 - admin.site.register(models.Article) [75b7dec4]
 - class Article(models.Model): pub_date = models.DateField() headline = models.CharField(max_length=200) content = models.TextField() reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE) [c9d6fc47d5d16201]
+- class Article(models.Model): pub_date = models.DateField() headline = models.CharField(max_length=200) content = models.TextField() reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE) [c9d6fc47d5d16201-2]
 - class Reporter(models.Model): full_name = models.CharField(max_length=70) [660b44df]
-- def year_archive(request, year): a_list = Article.objects.filter(pub_date__year=year) context = {"year": year, "article_list": a_list} return render(request, "news/year_archive.html", context) [7e807aec]
 - from . import models [628b8592]
 - from . import views [c00926fe3424edad]
 
 ## All facts
 
+- [7e807aec] def year_archive(request, year): a_list = Article.objects.filter(pub_date__year=year) context = {"year": year, "article_list": a_list} return render(request, "news/year_archive.html", context)
 - [f1559cb2] from .models import Article
 - [13fbe7fc2a5a9c75] from django.contrib import admin
 - [4af926756c29efa6-5] from django.db import models
+- [4af926756c29efa6-6] from django.db import models
 - [f3bb80f2b2fd7f5d-2] from django.shortcuts import render
 - [c537d1941a7e3025] from django.urls import path
 - [5e8730b8] urlpatterns = [ path("articles/<int:year>/", views.year_archive), path("articles/<int:year>/<int:month>/", views.month_archive), path("articles/<int:year>/<int:month>/<int:pk>/", views.article_detail), ]
@@ -58,6 +60,7 @@
 - [eaf050be34acb41d-6] .. code-block:: pycon
 - [b2dc06ee] .. code-block:: python :caption: ``news/admin.py``
 - [3af9e285bc17d457] .. code-block:: python :caption: ``news/models.py``
+- [3af9e285bc17d457-2] .. code-block:: python :caption: ``news/models.py``
 - [402a0e9b] .. code-block:: python :caption: ``news/urls.py``
 - [3be1659cdc78684b] .. code-block:: python :caption: ``news/views.py``
 - [7714e199aac2701e-65] .. console::

@@ -1,11 +1,11 @@
 # django/db/models/indexes::IndexExpression.register_wrappers
 
-- Subject: django/db/models/indexes::IndexExpression.register_wrappers (id `20c76ca3-2873-4830-8b7a-292218ed046a`)
+- Subject: django/db/models/indexes::IndexExpression.register_wrappers (id `ef410a8e-dae7-46dc-925f-33bba2e6f3f3`)
 - Kind: class_method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

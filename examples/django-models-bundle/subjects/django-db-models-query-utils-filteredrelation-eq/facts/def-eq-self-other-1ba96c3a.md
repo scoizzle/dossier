@@ -1,6 +1,6 @@
 # Fact 1ba96c3a
 
-Store id: 9e74a8a4-4983-4e1a-bd70-ea3717468d4c
+Store id: 7a1e013d-7e45-4c3c-8349-14a66c5f0f8c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2073390+00:00`
+- posted_at: `2026-11-09T23:44:56.7469430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 536,
     "symbol": "FilteredRelation.__eq__"
   },
-  "id": "9e74a8a4-4983-4e1a-bd70-ea3717468d4c",
+  "id": "7a1e013d-7e45-4c3c-8349-14a66c5f0f8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2073390+00:00"
+    "posted_at": "2026-11-09T23:44:56.7469430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "deb6ace5-4fe4-45e8-aa03-e890323b590d",
+  "subject_id": "44f8b1e3-a6f9-410f-8dc7-69394c014402",
   "subject_name": "django/db/models/query_utils::FilteredRelation.__eq__",
   "tags": [
     "entity:method"

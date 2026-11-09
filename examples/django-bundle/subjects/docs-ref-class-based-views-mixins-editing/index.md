@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/mixins-editing
 
-- Subject: docs/ref/class-based-views/mixins-editing (id `e2bcc045-40a5-46dd-a2b8-0f498730ecf7`)
+- Subject: docs/ref/class-based-views/mixins-editing (id `93f529f6-0790-4481-8be1-1646f744abeb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2494 tokens
-- Facts shown: 82 of 89
+- Used: 2694 tokens
+- Facts shown: 89 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -24,18 +24,19 @@
 - Redirects to :meth:`~django.views.generic.edit.FormMixin.get_success_url`. [e46c2aa1]
 - Renders a response using a context created with :meth:`~django.views.generic.edit.FormMixin.get_context_data`. [17f011d3]
 - Renders a response, providing the invalid form as context. [2437115d6439d353]
+- Renders a response, providing the invalid form as context. [2437115d6439d353-2]
 - Retrieve initial data for the form. By default, returns a copy of :attr:`~django.views.generic.edit.FormMixin.initial`. [746c6bc5]
 - Retrieve the form class to instantiate. By default :attr:`~django.views.generic.edit.FormMixin.form_class`. [dd71a80b]
 - Retrieve the form class to instantiate. If :attr:`~django.views.generic.edit.FormMixin.form_class` is provided, that class will be used. Otherwise, a ``ModelForm`` will be instantiated using the model associated with the :attr:`~django.views.generic.detail.SingleObjectMixin.queryset`, or with the :attr:`~django.views.generic.detail.SingleObjectMixin.model`, depending on which attribute is provided. [c43f962c]
 - Retrieves the target object and calls its ``delete()`` method, then redirects to the success URL. [474f1446]
 - Returns the url to redirect to when the nominated object has been successfully deleted. Returns :attr:`~django.views.generic.edit.DeletionMixin.success_url` by default. [3871c791]
-- Saves the form instance, sets the current object for the view, and redirects to :meth:`~django.views.generic.edit.FormMixin.get_success_url`. [be64dfdf]
-- **Extends** [f3c346391998d9e9]
+- The :attr:`~django.forms.Form.prefix` for the generated form. [42e9e7f4]
 
 ## All facts
 
-- [42e9e7f4] The :attr:`~django.forms.Form.prefix` for the generated form.
+- [be64dfdf] Saves the form instance, sets the current object for the view, and redirects to :meth:`~django.views.generic.edit.FormMixin.get_success_url`.
 - [a04ae0aec67217fe] The URL to redirect to when the form is successfully processed.
+- [a04ae0aec67217fe-2] The URL to redirect to when the form is successfully processed.
 - [a3b1e058] The ``PUT`` action is also handled and passes all parameters through to :meth:`post`.
 - [2d8fdae1] The ``initial`` argument is set to :meth:`.get_initial`. If the request is a ``POST`` or ``PUT``, the request data (``request.POST`` and ``request.FILES``) will also be provided.
 - [fbc0cda8] The form class to instantiate.
@@ -43,9 +44,11 @@
 - [19af86eb] This is a required attribute if you are generating the form class automatically (e.g. using ``model``). Omitting this attribute will result in an :exc:`~django.core.exceptions.ImproperlyConfigured` exception.
 - [83b55070] This is named 'ProcessFormView' and inherits directly from :class:`django.views.generic.base.View`, but breaks if used independently, so it is more of a mixin.
 - [e230f903] ``success_url`` may contain dictionary string formatting, which will be interpolated against the object's field attributes. For example, you could use ``success_url="/polls/{slug}/"`` to redirect to a URL composed out of the ``slug`` field on a model.
+- [d5533434] ``success_url`` may contain dictionary string formatting, which will be interpolated against the object's field attributes. For example, you could use ``success_url="/parent/{parent_id}/"`` to redirect to a URL composed out of the ``parent_id`` field on a model.
 - [f9349e9ad1d5a49b] * :class:`django.views.generic.base.ContextMixin`
 - [b7741a2ef07f59a9-2] * :class:`django.views.generic.base.View`
 - [4b3897c8] * :class:`django.views.generic.edit.FormMixin` * :class:`django.views.generic.detail.SingleObjectMixin`
+- [f3c346391998d9e9] **Extends**
 - [83eda2cf63eef8ea-7] **Methods and Attributes**
 - [83eda2cf63eef8ea-8] **Methods and Attributes**
 - [83eda2cf63eef8ea-9] **Methods and Attributes**
@@ -69,10 +72,14 @@
 - [0e06ba1d6d133a88] .. method:: get_context_data(**kwargs)
 - [e62d2bac] .. method:: get_form(form_class=None)
 - [49f66c59b0adc462] .. method:: get_form_class()
+- [49f66c59b0adc462-2] .. method:: get_form_class()
 - [ece6b9e38d9cdfad] .. method:: get_form_kwargs()
+- [ece6b9e38d9cdfad-2] .. method:: get_form_kwargs()
 - [8eb92c30] .. method:: get_initial()
 - [1d04127c] .. method:: get_prefix()
 - [f18c4be0de7a5b22] .. method:: get_success_url()
+- [f18c4be0de7a5b22-2] .. method:: get_success_url()
+- [f18c4be0de7a5b22-3] .. method:: get_success_url()
 - [cc72feb621724713-3] .. method:: post(request, *args, **kwargs)
 - [099bc8a8] .. method:: put(*args, **kwargs)
 - [942ae6c11625c81c-28] .. note::

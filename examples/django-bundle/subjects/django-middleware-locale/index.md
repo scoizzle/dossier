@@ -1,10 +1,10 @@
 # django/middleware/locale
 
-- Subject: django/middleware/locale (id `3427adb1-c88c-41d6-bc36-11c9bd7520e4`)
+- Subject: django/middleware/locale (id `98985285-5885-4cd5-805b-903ff022e047`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 772 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

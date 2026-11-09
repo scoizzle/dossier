@@ -1,10 +1,10 @@
 # django/contrib/redirects/models
 
-- Subject: django/contrib/redirects/models (id `17d5d142-dd79-4e18-aca8-4a47cdc53cc3`)
+- Subject: django/contrib/redirects/models (id `aa80df5e-de25-4a1f-afb7-5228917b07a7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 260 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

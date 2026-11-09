@@ -1,6 +1,6 @@
 # Fact 2e465f6a
 
-Store id: ef06692b-3a99-415b-a5b9-90a103b93812
+Store id: baab6a5f-a9a5-4692-97ec-10e50be52896
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Deferrable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.3332080+00:00`
+- posted_at: `2026-11-09T23:44:48.7914180+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ef06692b-3a99-415b-a5b9-90a103b93812",
+  "id": "baab6a5f-a9a5-4692-97ec-10e50be52896",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.3332080+00:00"
+    "posted_at": "2026-11-09T23:44:48.7914180+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Deferrable"
       },
       "rel": "contains",
-      "target": "bc8e6bd9-d6be-424c-a276-c106106a203b"
+      "target": "b19f5efa-30a2-49f4-9c64-e1976efc6262"
     }
   ],
   "status": "live",
-  "subject_id": "4329b994-d768-4016-b0c5-b696dac271e3",
+  "subject_id": "2413cdca-8c7a-412d-988f-cb092648fcf4",
   "subject_name": "django/db/models/constraints",
   "tags": [
     "entity:class"

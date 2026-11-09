@@ -1,6 +1,6 @@
 # Fact 369f862d
 
-Store id: 73104b40-76da-4e83-8c2f-30d32c4882ed
+Store id: 5d403458-98e2-4cee-b011-1a58f866de40
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerLessThan
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "73104b40-76da-4e83-8c2f-30d32c4882ed",
+  "id": "5d403458-98e2-4cee-b011-1a58f866de40",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerLessThan"
       },
       "rel": "contains",
-      "target": "5f7f2c33-4957-47fb-be16-0ef541ea0b0d"
+      "target": "0d472b02-6cc9-40d2-a106-863ee86cf821"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/apps
 
-- Subject: django/contrib/staticfiles/apps (id `2cf9dfd0-7648-4038-93cb-bdc6887add19`)
+- Subject: django/contrib/staticfiles/apps (id `ebd314b8-ea21-494b-9dfe-bbb5cb30ea1f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 149 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

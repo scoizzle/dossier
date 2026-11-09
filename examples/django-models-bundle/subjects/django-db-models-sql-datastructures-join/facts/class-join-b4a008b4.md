@@ -1,6 +1,6 @@
 # Fact b4a008b4
 
-Store id: ada2d31f-7e14-4788-acf5-309ecb5c28e8
+Store id: e217ccd8-afd1-4fa1-9f30-0f1b01963d6a
 
 ## Text
 
@@ -20,7 +20,7 @@ class Join
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4362400+00:00`
+- posted_at: `2026-11-09T23:44:58.1787820+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 27,
     "symbol": "Join"
   },
-  "id": "ada2d31f-7e14-4788-acf5-309ecb5c28e8",
+  "id": "e217ccd8-afd1-4fa1-9f30-0f1b01963d6a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4362400+00:00"
+    "posted_at": "2026-11-09T23:44:58.1787820+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3d53a54d-87ee-4469-b528-e0e8c2eacc08",
+  "subject_id": "1c76a977-0cb7-45e4-ab93-5d8b4648ce4d",
   "subject_name": "django/db/models/sql/datastructures::Join",
   "tags": [
     "entity:class"

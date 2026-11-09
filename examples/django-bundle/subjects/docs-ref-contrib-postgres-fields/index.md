@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/fields
 
-- Subject: docs/ref/contrib/postgres/fields (id `bf432f84-adf0-40c9-bbdb-d6d0970b6ce3`)
+- Subject: docs/ref/contrib/postgres/fields (id `1bb1cc22-6f70-4300-8589-694afc28ccf0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8926 tokens
-- Facts shown: 265 of 289
+- Used: 10067 tokens
+- Facts shown: 289 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,25 +19,30 @@
 - If passed, the array will have a maximum size as specified. This will be passed to the database, although PostgreSQL at present does not enforce the restriction. [67928282]
 - It is possible to nest array fields - you can specify an instance of ``ArrayField`` as the ``base_field``. For example:: [ec07eb6d]
 - Optional. The value of ``bounds`` for list and tuple inputs. The default is lower bound included, upper bound excluded, that is ``[)`` (see the PostgreSQL documentation for details about `different bounds`_). ``default_bounds`` is not used for ``django.db.backends.postgresql.psycopg_any.DateTimeTZRange`` inputs. [ee24b284]
+- Optional. The value of ``bounds`` for list and tuple inputs. The default is lower bound included, upper bound excluded, that is ``[)`` (see the PostgreSQL documentation for details about `different bounds`_). ``default_bounds`` is not used for ``django.db.backends.postgresql.psycopg_any.NumericRange`` inputs. [4eb7ddf2]
 - Specifies the underlying data type and behavior for the array. It should be an instance of a subclass of :class:`~django.db.models.Field`. For example, it could be an :class:`~django.db.models.IntegerField` or a :class:`~django.db.models.CharField`. Most field types are permitted, with the exception of those handling relational data (:class:`~django.db.models.ForeignKey`, :class:`~django.db.models.OneToOneField` and :class:`~django.db.models.ManyToManyField`) and file fields (:class:`~django.db.models.FileField` and :class:`~django.db.models.ImageField`). [b222edc9]
 - The form field class to use. Should be a subclass of :class:`django.contrib.postgres.forms.BaseRangeField`. [b5b78621]
 - The form field to use. [1e991c75]
 - The model field class to use. [229e6dea]
 - The range type to use. [26696acf55f6c9ac]
+- The range type to use. [26696acf55f6c9ac-2]
 - This is a required argument. [53b65ff014e563d9]
 - This is an optional argument. [0182a528]
 - Transformation of values between the database and the model, validation of data and configuration, and serialization are all delegated to the underlying base field. [e004dba3]
 - class Board(models.Model): pieces = ArrayField(ArrayField(models.IntegerField())) [47cd175e]
 - def __str__(self): return self.name [560696855ea91c7e]
-- #. Add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS`. #. :ref:`Set up the hstore extension <create-postgresql-extensions>` in PostgreSQL. [b84c5b10]
-- .. attribute:: DateTimeRangeField.default_bounds [ef77a41b]
-- .. attribute:: DecimalRangeField.default_bounds [142eacca]
-- .. attribute:: base_field [a239bb8c6d3d6d84]
-- .. attribute:: base_field [a239bb8c6d3d6d84-2]
-- .. attribute:: base_field [a239bb8c6d3d6d84-3]
+- def __str__(self): return self.name [560696855ea91c7e-2]
+- def __str__(self): return self.name [560696855ea91c7e-3]
 
 ## All facts
 
+- [aa2427af22ca3464-2] from django.contrib.postgres.fields import ArrayField from django.db import models
+- [b84c5b10] #. Add ``'django.contrib.postgres'`` in your :setting:`INSTALLED_APPS`. #. :ref:`Set up the hstore extension <create-postgresql-extensions>` in PostgreSQL.
+- [ef77a41b] .. attribute:: DateTimeRangeField.default_bounds
+- [142eacca] .. attribute:: DecimalRangeField.default_bounds
+- [a239bb8c6d3d6d84] .. attribute:: base_field
+- [a239bb8c6d3d6d84-2] .. attribute:: base_field
+- [a239bb8c6d3d6d84-3] .. attribute:: base_field
 - [d97b9698] .. attribute:: form_field
 - [2680a4bb] .. attribute:: inclusive_lower
 - [7f8962a2] .. attribute:: inclusive_upper
@@ -45,13 +50,18 @@
 - [168ad531c394c044-2] .. attribute:: range_type
 - [77c39c8db15001c7] .. attribute:: size
 - [54b136225a0cc227] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"}) >>> Dog.objects.create(name="Fred", data={})
+- [54b136225a0cc227-2] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador", "owner": "Bob"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"}) >>> Dog.objects.create(name="Fred", data={})
+- [b255f8d4b49124f5] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
+- [b255f8d4b49124f5-2] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
 - [387074b4] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie"})
+- [26740865] >>> Dog.objects.create(name="Rufus", data={"breed": "labrador"}) >>> Dog.objects.create(name="Meg", data={"owner": "Bob"}) >>> Dog.objects.create(name="Fred", data={})
 - [21733f84] >>> Dog.objects.create(name="Rufus", data={"toy": "bone"}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
 - [69960832] >>> Dog.objects.create(name="Rufus", data={}) >>> Dog.objects.create(name="Meg", data={"breed": "collie", "owner": "Bob"})
 - [c23aafc2] >>> Dog.objects.filter(data__breed="collie") <QuerySet [<Dog: Meg>]>
 - [01e4d71b] >>> Dog.objects.filter(data__breed__contains="l") <QuerySet [<Dog: Rufus>, <Dog: Meg>]>
 - [f6997cdd] >>> Dog.objects.filter(data__contained_by={"breed": "collie", "owner": "Bob"}) <QuerySet [<Dog: Meg>, <Dog: Fred>]>
 - [5b1d9b0b] >>> Dog.objects.filter(data__contained_by={"breed": "collie"}) <QuerySet [<Dog: Fred>]>
+- [b244c006] >>> Dog.objects.filter(data__contains={"breed": "collie"}) <QuerySet [<Dog: Meg>]>
 - [326bddfa] >>> Dog.objects.filter(data__contains={"owner": "Bob"}) <QuerySet [<Dog: Rufus>, <Dog: Meg>]>
 - [9e4c93ae] >>> Dog.objects.filter(data__has_any_keys=["owner", "breed"]) <QuerySet [<Dog: Rufus>, <Dog: Meg>]>
 - [af36658a] >>> Dog.objects.filter(data__has_key="owner") <QuerySet [<Dog: Meg>]>
@@ -75,8 +85,12 @@
 - [2b6f35e8] >>> Event.objects.filter(ages__upper_inf=True) <QuerySet [<Event: Pub trip>]>
 - [e8ef9db9] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts", "tutorial"]) >>> Post.objects.create(name="Third post", tags=["tutorial", "django"])
 - [4009edee7723c770] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts"])
+- [4009edee7723c770-2] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts"])
 - [b82e75e6] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts"]) >>> Post.objects.create(name="Third post", tags=["django", "python", "thoughts"])
+- [49934201904738c4] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts"]) >>> Post.objects.create(name="Third post", tags=["tutorial", "django"])
+- [49934201904738c4-2] >>> Post.objects.create(name="First post", tags=["thoughts", "django"]) >>> Post.objects.create(name="Second post", tags=["thoughts"]) >>> Post.objects.create(name="Third post", tags=["tutorial", "django"])
 - [d805b15c] >>> Post.objects.filter(tags__0="thoughts") <QuerySet [<Post: First post>, <Post: Second post>]>
+- [a14be0c8] >>> Post.objects.filter(tags__0_1=["thoughts"]) <QuerySet [<Post: First post>, <Post: Second post>]>
 - [e8d18c7d] >>> Post.objects.filter(tags__0_2__contains=["thoughts"]) <QuerySet [<Post: First post>, <Post: Second post>]>
 - [7ac9a736] >>> Post.objects.filter(tags__1__iexact="Django") <QuerySet [<Post: First post>]>
 - [e7c86cb6] >>> Post.objects.filter(tags__276="javascript") <QuerySet []>
@@ -104,7 +118,10 @@
 - [638388476e77cbba] On occasions it may be useful to require or restrict the keys which are valid for a given field. This can be done using the :class:`~django.contrib.postgres.validators.KeysValidator`.
 - [f3db7b33] PostgreSQL has some rather esoteric behavior when using indexes and slices on multidimensional arrays. It will always work to use indexes to reach down to the final underlying data, but most other slices behave strangely at the database level and cannot be supported in a logical, consistent fashion by Django.
 - [ea69175c] PostgreSQL uses 1-based indexing for array fields when writing raw SQL. However these indexes and those used in :lookup:`slices <arrayfield.slice>` use 0-based indexing to be consistent with Python.
+- [b9bd51f7] PostgreSQL uses 1-based indexing for array fields when writing raw SQL. However these slices and those used in :lookup:`indexes <arrayfield.index>` use 0-based indexing to be consistent with Python.
 - [20f599f523dd1db1] Regardless of the bounds specified when saving the data, PostgreSQL always returns a range in a canonical form that includes the lower bound and excludes the upper bound, that is ``[)``.
+- [20f599f523dd1db1-2] Regardless of the bounds specified when saving the data, PostgreSQL always returns a range in a canonical form that includes the lower bound and excludes the upper bound, that is ``[)``.
+- [20f599f523dd1db1-3] Regardless of the bounds specified when saving the data, PostgreSQL always returns a range in a canonical form that includes the lower bound and excludes the upper bound, that is ``[)``.
 - [a33b900e] Since any string could be a key in a hstore value, any lookup other than those listed below will be interpreted as a key lookup. No errors are raised. Be extra careful for typing mistakes, and always check your queries work as you intend.
 - [34a2487a] Stores a range of dates. Based on a :class:`~django.db.models.DateField`. Represented by a ``daterange`` in the database and a ``django.db.backends.postgresql.psycopg_any.DateRange`` in Python.
 - [1d0e7eb6] Stores a range of floating point values. Based on a :class:`~django.db.models.DecimalField`. Represented by a ``numrange`` in the database and a ``django.db.backends.postgresql.psycopg_any.NumericRange`` in Python.
@@ -118,6 +135,7 @@
 - [cdc9c667] class Event(models.Model): name = models.CharField(max_length=200) ages = IntegerRangeField() start = models.DateTimeField()
 - [fe5ef936] class Post(models.Model): name = models.CharField(max_length=200) tags = ArrayField(models.CharField(max_length=200), blank=True)
 - [a3f24dab] class RangeOperators: EQUAL = "=" NOT_EQUAL = "<>" CONTAINS = "@>" CONTAINED_BY = "<@" OVERLAPS = "&&" FULLY_LT = "<<" FULLY_GT = ">>" NOT_LT = "&>" NOT_GT = "&<" ADJACENT_TO = "-|-"
+- [aa2427af22ca3464-3] from django.contrib.postgres.fields import ArrayField from django.db import models
 - [aa05b6d4] from django.contrib.postgres.fields import HStoreField from django.db import models
 - [b150ca3e] from django.contrib.postgres.fields import IntegerRangeField from django.db import models
 - [bf4ccdd9] .. _different bounds: https://www.postgresql.org/docs/current/rangetypes.html#RANGETYPES-IO
@@ -218,10 +236,15 @@
 - [fef2bf87] RangeBoundary() expressions ---------------------------
 - [410ac49c] Returned objects are empty ranges. Can be chained to valid lookups for a :class:`~django.db.models.BooleanField`.
 - [1a535ea2] Returned objects have the given lower bound. Can be chained to valid lookups for the base field.
+- [1f15e0be] Returned objects have the given upper bound. Can be chained to valid lookups for the base field.
 - [251bbf93] Returns objects that have inclusive or exclusive lower bounds, depending on the boolean value passed. Can be chained to valid lookups for a :class:`~django.db.models.BooleanField`.
+- [91e73588] Returns objects that have inclusive or exclusive upper bounds, depending on the boolean value passed. Can be chained to valid lookups for a :class:`~django.db.models.BooleanField`.
 - [071531ad] Returns objects that have unbounded (infinite) or bounded lower bound, depending on the boolean value passed. Can be chained to valid lookups for a :class:`~django.db.models.BooleanField`.
+- [c0481966] Returns objects that have unbounded (infinite) or bounded upper bound, depending on the boolean value passed. Can be chained to valid lookups for a :class:`~django.db.models.BooleanField`.
 - [8ce2629c] Returns objects where all of the given keys are in the data. Uses the SQL operator ``?&``. For example:
+- [877ac2ac] Returns objects where any of the given keys are in the data. Uses the SQL operator ``?|``. For example:
 - [52cfb4a3] Returns objects where the array of keys is the given value. Note that the order is not guaranteed to be reliable, so this transform is mainly useful for using in conjunction with lookups on :class:`~django.contrib.postgres.fields.ArrayField`. Uses the SQL function ``akeys()``. For example:
+- [88d62462] Returns objects where the array of values is the given value. Note that the order is not guaranteed to be reliable, so this transform is mainly useful for using in conjunction with lookups on :class:`~django.contrib.postgres.fields.ArrayField`. Uses the SQL function ``avals()``. For example:
 - [7c35847c] Returns objects where the data shares any results with the values passed. Uses the SQL operator ``&&``. For example:
 - [851b78a3] Returns objects where the given key is in the data. Uses the SQL operator ``?``. For example:
 - [06eedecc] Returns the length of the array. The lookups available afterward are those available for :class:`~django.db.models.IntegerField`. For example:
@@ -231,6 +254,7 @@
 - [2c096a50] The :lookup:`contains` lookup is overridden on :class:`ArrayField`. The returned objects will be those where the values passed are a subset of the data. It uses the SQL operator ``@>``. For example:
 - [5fa63762] The ``contained_by`` lookup is also available on the non-range field types: :class:`~django.db.models.SmallAutoField`, :class:`~django.db.models.AutoField`, :class:`~django.db.models.BigAutoField`, :class:`~django.db.models.SmallIntegerField`, :class:`~django.db.models.IntegerField`, :class:`~django.db.models.BigIntegerField`, :class:`~django.db.models.DecimalField`, :class:`~django.db.models.FloatField`, :class:`~django.db.models.DateField`, and :class:`~django.db.models.DateTimeField`. For example:
 - [12bf889d] The returned ranges are strictly greater than the passed range. In other words, the all the points in the returned range are greater than all those in the passed range.
+- [b0dee2d3] The returned ranges are strictly less than the passed range. In other words, all the points in the returned range are less than all those in the passed range.
 - [2f0f3ffa] The returned ranges do not contain any points greater than the passed range, that is the upper bound of the returned range is at most the upper bound of the passed range.
 - [b1442052] The returned ranges do not contain any points less than the passed range, that is the lower bound of the returned range is at least the lower bound of the passed range.
 - [57a3e9ad] The returned ranges share a bound with the passed range.

@@ -1,10 +1,10 @@
 # docs/ref/models/database-functions
 
-- Subject: docs/ref/models/database-functions (id `1fbbbc5a-73c2-44ab-a8f0-eb458fe3e215`)
+- Subject: docs/ref/models/database-functions (id `f89c6788-e909-407d-a246-072d1f6a6147`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 19536 tokens
-- Facts shown: 554 of 596
+- Used: 21488 tokens
+- Facts shown: 596 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - >>> from datetime import datetime >>> dt = datetime(2015, 6, 15) >>> (dt.isoweekday() % 7) + 1 2 [a842baf4]
 - >>> from django.db.models import DateTimeField >>> from django.db.models.functions import Cast, Coalesce >>> from django.utils import timezone >>> now = timezone.now() >>> Coalesce("updated", Cast(now, DateTimeField())) [cecce31d]
 - >>> from django.utils import timezone >>> from datetime import UTC, datetime >>> from django.db.models.functions import ExtractHour >>> start = datetime(2015, 6, 15, 14, 30, 50, 321) >>> start = timezone.make_aware(start) >>> exp = Experiment.objects.create(start_datetime=start) >>> find_this_exp = Experiment.objects.annotate( ... extract_hour_start=ExtractHour("start_datetime") ... ).filter(extract_hour_start=start.hour) # Comparing local time to UTC finds no results. >>> find_this_exp.count() 0 >>> find_this_exp_adjusted = Experiment.objects.annotate( ... extract_hour_start=ExtractHour("start_datetime", tzinfo=UTC) ... ).filter(extract_hour_start=start.hour) >>> find_this_exp_adjusted.count() 1 [885464b5]
+- >>> from django.utils import timezone >>> from datetime import UTC, datetime >>> from django.db.models.functions import TruncSecond >>> start = datetime(2015, 6, 15, 14, 30, 50, 321) >>> start = timezone.make_aware(start) >>> exp = Experiment.objects.create(start_datetime=start) >>> find_this_exp = Experiment.objects.annotate( ... trunc_start=TruncSecond("start_datetime") ... ).filter(trunc_start__lte=start) # Comparing local time to UTC finds no results. >>> find_this_exp.count() 0 >>> find_this_exp_adjusted = Experiment.objects.annotate( ... trunc_start=TruncSecond("start_datetime", tzinfo=UTC) ... ).filter(trunc_start__lte=start) >>> find_this_exp_adjusted.count() 1 [6222483b]
 - (rank - 1) / (total rows - 1) [7e869524]
 - - PostgreSQL: ``Greatest`` will return the largest non-null expression, or ``null`` if all expressions are ``null``. - SQLite, Oracle, and MySQL: If any expression is ``null``, ``Greatest`` will return ``null``. [97828609]
 - - PostgreSQL: ``Least`` will return the smallest non-null expression, or ``null`` if all expressions are ``null``. - SQLite, Oracle, and MySQL: If any expression is ``null``, ``Least`` will return ``null``. [7595e61e]
@@ -30,18 +31,18 @@
 - .. attribute:: lookup_name = 'date' .. attribute:: output_field = DateField() [3156b81b]
 - .. attribute:: lookup_name = 'day' [13fb4d50]
 - .. attribute:: lookup_name = 'hour' [fd09ec5c]
-- .. attribute:: lookup_name = 'iso_week_day' [cd7cd2f4]
-- .. attribute:: lookup_name = 'iso_year' [8b757df5]
 - .. attribute:: lookup_name = 'minute' [0a0c0642]
-- .. attribute:: lookup_name = 'month' [105da5b6]
-- .. attribute:: lookup_name = 'quarter' [1a9b6c3e]
-- .. attribute:: lookup_name = 'second' [81f868c2]
-- .. attribute:: lookup_name = 'time' .. attribute:: output_field = TimeField() [cd7a7455]
-- .. attribute:: lookup_name = 'week' [c0f4029d]
-- .. attribute:: lookup_name = 'week_day' [bc25e80f]
 
 ## All facts
 
+- [cd7cd2f4] .. attribute:: lookup_name = 'iso_week_day'
+- [8b757df5] .. attribute:: lookup_name = 'iso_year'
+- [105da5b6] .. attribute:: lookup_name = 'month'
+- [1a9b6c3e] .. attribute:: lookup_name = 'quarter'
+- [81f868c2] .. attribute:: lookup_name = 'second'
+- [cd7a7455] .. attribute:: lookup_name = 'time' .. attribute:: output_field = TimeField()
+- [c0f4029d] .. attribute:: lookup_name = 'week'
+- [bc25e80f] .. attribute:: lookup_name = 'week_day'
 - [fada5f26] .. attribute:: lookup_name = 'year'
 - [eaf050be34acb41d-358] .. code-block:: pycon
 - [eaf050be34acb41d-359] .. code-block:: pycon
@@ -58,10 +59,12 @@
 - [d6ecc22a] >>> from datetime import UTC, datetime >>> from django.db.models import Count >>> from django.db.models.functions import TruncMonth, TruncYear >>> start1 = datetime(2014, 6, 15, 14, 30, 50, 321, tzinfo=UTC) >>> start2 = datetime(2015, 6, 15, 14, 40, 2, 123, tzinfo=UTC) >>> start3 = datetime(2015, 12, 31, 17, 5, 27, 999, tzinfo=UTC) >>> Experiment.objects.create(start_datetime=start1, start_date=start1.date()) >>> Experiment.objects.create(start_datetime=start2, start_date=start2.date()) >>> Experiment.objects.create(start_datetime=start3, start_date=start3.date()) >>> experiments_per_year = ( ... Experiment.objects.annotate(year=TruncYear("start_date")) ... .values("year") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_year: ... print(exp["year"], exp["experiments"]) ... 2014-01-01 1 2015-01-01 2
 - [dec3c1e6] >>> from datetime import UTC, datetime >>> from django.db.models import Count, TimeField >>> from django.db.models.functions import TruncHour >>> start1 = datetime(2014, 6, 15, 14, 30, 50, 321, tzinfo=UTC) >>> start2 = datetime(2014, 6, 15, 14, 40, 2, 123, tzinfo=UTC) >>> start3 = datetime(2015, 12, 31, 17, 5, 27, 999, tzinfo=UTC) >>> Experiment.objects.create(start_datetime=start1, start_time=start1.time()) >>> Experiment.objects.create(start_datetime=start2, start_time=start2.time()) >>> Experiment.objects.create(start_datetime=start3, start_time=start3.time()) >>> experiments_per_hour = ( ... Experiment.objects.annotate( ... hour=TruncHour("start_datetime", output_field=TimeField()), ... ) ... .values("hour") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_hour: ... print(exp["hour"], exp["experiments"]) ... 14:00:00 2 17:00:00 1
 - [998f9fc6] >>> from datetime import UTC, datetime >>> from django.db.models.functions import ( ... ExtractDay, ... ExtractHour, ... ExtractMinute, ... ExtractMonth, ... ExtractQuarter, ... ExtractSecond, ... ExtractWeek, ... ExtractIsoWeekDay, ... ExtractWeekDay, ... ExtractIsoYear, ... ExtractYear, ... ) >>> start_2015 = datetime(2015, 6, 15, 23, 30, 1, tzinfo=UTC) >>> end_2015 = datetime(2015, 6, 16, 13, 11, 27, tzinfo=UTC) >>> Experiment.objects.create( ... start_datetime=start_2015, ... start_date=start_2015.date(), ... end_datetime=end_2015, ... end_date=end_2015.date(), ... ) >>> Experiment.objects.annotate( ... year=ExtractYear("start_datetime"), ... isoyear=ExtractIsoYear("start_datetime"), ... quarter=ExtractQuarter("start_datetime"), ... month=ExtractMonth("start_datetime"), ... week=ExtractWeek("start_datetime"), ... day=ExtractDay("start_datetime"), ... weekday=ExtractWeekDay("start_datetime"), ... isoweekday=ExtractIsoWeekDay("start_datetime"), ... hour=ExtractHour("start_datetime"), ... minute=ExtractMinute("start_datetime"), ... second=ExtractSecond("start_datetime"), ... ).values( ... "year", ... "isoyear", ... "month", ... "week", ... "day", ... "weekday", ... "isoweekday", ... "hour", ... "minute", ... "second", ... ).get( ... end_datetime__year=ExtractYear("start_datetime") ... ) {'year': 2015, 'isoyear': 2015, 'quarter': 2, 'month': 6, 'week': 25, 'day': 15, 'weekday': 2, 'isoweekday': 1, 'hour': 23, 'minute': 30, 'second': 1}
+- [27054a4b] >>> from datetime import UTC, datetime >>> from django.db.models.functions import ( ... ExtractDay, ... ExtractMonth, ... ExtractQuarter, ... ExtractWeek, ... ExtractIsoWeekDay, ... ExtractWeekDay, ... ExtractIsoYear, ... ExtractYear, ... ) >>> start_2015 = datetime(2015, 6, 15, 23, 30, 1, tzinfo=UTC) >>> end_2015 = datetime(2015, 6, 16, 13, 11, 27, tzinfo=UTC) >>> Experiment.objects.create( ... start_datetime=start_2015, ... start_date=start_2015.date(), ... end_datetime=end_2015, ... end_date=end_2015.date(), ... ) >>> Experiment.objects.annotate( ... year=ExtractYear("start_date"), ... isoyear=ExtractIsoYear("start_date"), ... quarter=ExtractQuarter("start_date"), ... month=ExtractMonth("start_date"), ... week=ExtractWeek("start_date"), ... day=ExtractDay("start_date"), ... weekday=ExtractWeekDay("start_date"), ... isoweekday=ExtractIsoWeekDay("start_date"), ... ).values( ... "year", ... "isoyear", ... "quarter", ... "month", ... "week", ... "day", ... "weekday", ... "isoweekday", ... ).get( ... end_date__year=ExtractYear("start_date") ... ) {'year': 2015, 'isoyear': 2015, 'quarter': 2, 'month': 6, 'week': 25, 'day': 15, 'weekday': 2, 'isoweekday': 1}
 - [7d4eb12c] >>> from datetime import datetime >>> from django.db.models import Count, DateTimeField >>> from django.db.models.functions import Trunc >>> Experiment.objects.create(start_datetime=datetime(2015, 6, 15, 14, 30, 50, 321)) >>> Experiment.objects.create(start_datetime=datetime(2015, 6, 15, 14, 40, 2, 123)) >>> Experiment.objects.create(start_datetime=datetime(2015, 12, 25, 10, 5, 27, 999)) >>> experiments_per_day = ( ... Experiment.objects.annotate( ... start_day=Trunc("start_datetime", "day", output_field=DateTimeField()) ... ) ... .values("start_day") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_day: ... print(exp["start_day"], exp["experiments"]) ... 2015-06-15 00:00:00 2 2015-12-25 00:00:00 1 >>> experiments = Experiment.objects.annotate( ... start_day=Trunc("start_datetime", "day", output_field=DateTimeField()) ... ).filter(start_day=datetime(2015, 6, 15)) >>> for exp in experiments: ... print(exp.start_datetime) ... 2015-06-15 14:30:50.000321 2015-06-15 14:40:02.000123
 - [3d8c6119] >>> from datetime import datetime >>> from django.db.models.functions import Extract >>> start = datetime(2015, 6, 15) >>> end = datetime(2015, 7, 2) >>> Experiment.objects.create( ... start_datetime=start, start_date=start.date(), end_datetime=end, end_date=end.date() ... ) >>> # Add the experiment start year as a field in the QuerySet. >>> experiment = Experiment.objects.annotate( ... start_year=Extract("start_datetime", "year") ... ).get() >>> experiment.start_year 2015 >>> # How many experiments completed in the same year in which they started? >>> Experiment.objects.filter(start_datetime__year=Extract("end_datetime", "year")).count() 1
 - [1f2342b6] >>> from django.db.models import CharField >>> from django.db.models.functions import Length >>> CharField.register_lookup(Length) >>> # Get authors whose name is longer than 7 characters >>> authors = Author.objects.filter(name__length__gt=7)
 - [8a69e019] >>> from django.db.models import F >>> from django.db.models.functions import JSONArray, Lower >>> Author.objects.create(name="Margaret Smith", alias="msmith", age=25) >>> author = Author.objects.annotate( ... json_array=JSONArray( ... Lower("name"), ... "alias", ... F("age") * 2, ... ) ... ).get() >>> author.json_array ['margaret smith', 'msmith', 50]
+- [57435c25] >>> from django.db.models import F >>> from django.db.models.functions import JSONObject, Lower >>> Author.objects.create(name="Margaret Smith", alias="msmith", age=25) >>> author = Author.objects.annotate( ... json_object=JSONObject( ... name=Lower("name"), ... alias="alias", ... age=F("age") * 2, ... ) ... ).get() >>> author.json_object {'name': 'margaret smith', 'alias': 'msmith', 'age': 50}
 - [9976ddbd] >>> from django.db.models import FloatField >>> from django.db.models.functions import ACos >>> FloatField.register_lookup(ACos) >>> # Get vectors whose arccosine is less than 1 >>> vectors = Vector.objects.filter(x__acos__lt=1, y__acos__lt=1)
 - [bf6008be] >>> from django.db.models import FloatField >>> from django.db.models.functions import ASin >>> FloatField.register_lookup(ASin) >>> # Get vectors whose arcsine is less than 1 >>> vectors = Vector.objects.filter(x__asin__lt=1, y__asin__lt=1)
 - [efe304f8] >>> from django.db.models import FloatField >>> from django.db.models.functions import ATan >>> FloatField.register_lookup(ATan) >>> # Get vectors whose arctangent is less than 2 >>> vectors = Vector.objects.filter(x__atan__lt=2, y__atan__lt=2)
@@ -72,12 +75,14 @@
 - [8713b802] >>> from django.db.models import FloatField >>> from django.db.models.functions import Cot >>> FloatField.register_lookup(Cot) >>> # Get vectors whose cotangent is less than 1 >>> vectors = Vector.objects.filter(x__cot__lt=1, y__cot__lt=1)
 - [0d3a8aa3] >>> from django.db.models import FloatField >>> from django.db.models.functions import Degrees >>> FloatField.register_lookup(Degrees) >>> # Get vectors whose degrees are less than 360 >>> vectors = Vector.objects.filter(x__degrees__lt=360, y__degrees__lt=360)
 - [62f176c1] >>> from django.db.models import FloatField >>> from django.db.models.functions import Exp >>> FloatField.register_lookup(Exp) >>> # Get vectors whose exp() is greater than 10 >>> vectors = Vector.objects.filter(x__exp__gt=10, y__exp__gt=10)
+- [d7d227d7] >>> from django.db.models import FloatField >>> from django.db.models.functions import Floor >>> FloatField.register_lookup(Floor) >>> # Get vectors whose floor() is greater than 10 >>> vectors = Vector.objects.filter(x__floor__gt=10, y__floor__gt=10)
 - [ef16b81d] >>> from django.db.models import FloatField >>> from django.db.models.functions import Ln >>> FloatField.register_lookup(Ln) >>> # Get vectors whose value greater than e >>> vectors = Vector.objects.filter(x__ln__gt=1, y__ln__gt=1)
 - [006bcfd8] >>> from django.db.models import FloatField >>> from django.db.models.functions import Radians >>> FloatField.register_lookup(Radians) >>> # Get vectors whose radians are less than 1 >>> vectors = Vector.objects.filter(x__radians__lt=1, y__radians__lt=1)
 - [b9c5f6a0] >>> from django.db.models import FloatField >>> from django.db.models.functions import Round >>> FloatField.register_lookup(Round) >>> # Get vectors whose round() is less than 20 >>> vectors = Vector.objects.filter(x__round__lt=20, y__round__lt=20)
 - [35727ed1] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sign >>> FloatField.register_lookup(Sign) >>> # Get vectors whose signs of components are less than 0. >>> vectors = Vector.objects.filter(x__sign__lt=0, y__sign__lt=0)
 - [dfd4f37f] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sin >>> FloatField.register_lookup(Sin) >>> # Get vectors whose sin() is less than 0 >>> vectors = Vector.objects.filter(x__sin__lt=0, y__sin__lt=0)
 - [2deb248b] >>> from django.db.models import FloatField >>> from django.db.models.functions import Sqrt >>> FloatField.register_lookup(Sqrt) >>> # Get vectors whose sqrt() is less than 5 >>> vectors = Vector.objects.filter(x__sqrt__lt=5, y__sqrt__lt=5)
+- [2ce50f96] >>> from django.db.models import FloatField >>> from django.db.models.functions import Tan >>> FloatField.register_lookup(Tan) >>> # Get vectors whose tangent is less than 0 >>> vectors = Vector.objects.filter(x__tan__lt=0, y__tan__lt=0)
 - [e8a19945] >>> from django.db.models import Value >>> from django.db.models.functions import LPad >>> Author.objects.create(name="John", alias="j") >>> Author.objects.update(name=LPad("name", 8, Value("abc"))) 1 >>> print(Author.objects.get(alias="j").name) abcaJohn
 - [30a6e21b] >>> from django.db.models import Value >>> from django.db.models.functions import Replace >>> Author.objects.create(name="Margaret Johnson") >>> Author.objects.create(name="Margaret Smith") >>> Author.objects.update(name=Replace("name", Value("Margaret"), Value("Margareth"))) 2 >>> Author.objects.values("name") <QuerySet [{'name': 'Margareth Johnson'}, {'name': 'Margareth Smith'}]>
 - [e3bd9a8f] >>> from django.db.models import Value as V >>> from django.db.models.functions import StrIndex >>> Author.objects.create(name="Margaret Smith") >>> Author.objects.create(name="Smith, Margaret") >>> Author.objects.create(name="Margaret Jackson") >>> Author.objects.filter(name="Margaret Jackson").annotate( ... smith_index=StrIndex("name", V("Smith")) ... ).get().smith_index 0 >>> authors = Author.objects.annotate(smith_index=StrIndex("name", V("Smith"))).filter( ... smith_index__gt=0 ... ) <QuerySet [<Author: Margaret Smith>, <Author: Smith, Margaret>]>
@@ -99,6 +104,7 @@
 - [bb5d5a81] >>> from django.db.models.functions import Log >>> Vector.objects.create(x=2.0, y=4.0) >>> vector = Vector.objects.annotate(log=Log("x", "y")).get() >>> vector.log 2.0
 - [0c9d94c5] >>> from django.db.models.functions import Lower >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_lower=Lower("name")).get() >>> print(author.name_lower) margaret smith
 - [79d293e1] >>> from django.db.models.functions import MD5 >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_md5=MD5("name")).get() >>> print(author.name_md5) 749fb689816b2db85f5b169c2055b247
+- [d9a3d889] >>> from django.db.models.functions import Mod >>> Vector.objects.create(x=5.4, y=2.3) >>> vector = Vector.objects.annotate(mod=Mod("x", "y")).get() >>> vector.mod 0.8
 - [ed78532f] >>> from django.db.models.functions import Now >>> Article.objects.filter(published__lte=Now()) <QuerySet [<Article: How to Django>]>
 - [b19945f4] >>> from django.db.models.functions import Ord >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_code_point=Ord("name")).get() >>> print(author.name_code_point) 77
 - [2f0ffe6d] >>> from django.db.models.functions import Power >>> Vector.objects.create(x=2, y=-2) >>> vector = Vector.objects.annotate(power=Power("x", "y")).get() >>> vector.power 0.25
@@ -113,6 +119,7 @@
 - [6bf43652] >>> from django.db.models.functions import Sqrt >>> Vector.objects.create(x=4.0, y=12.0) >>> vector = Vector.objects.annotate(x_sqrt=Sqrt("x"), y_sqrt=Sqrt("y")).get() >>> vector.x_sqrt, vector.y_sqrt (2.0, 3.46410)
 - [45b0e2b2] >>> from django.db.models.functions import Tan >>> Vector.objects.create(x=0, y=12) >>> vector = Vector.objects.annotate(x_tan=Tan("x"), y_tan=Tan("y")).get() >>> vector.x_tan, vector.y_tan (0.0, -0.6358599286615808)
 - [470fa3a0] >>> from django.db.models.functions import Trim >>> Author.objects.create(name=" John ", alias="j") >>> Author.objects.update(name=Trim("name")) 1 >>> print(Author.objects.get(alias="j").name) John
+- [3db56796] >>> from django.db.models.functions import Upper >>> Author.objects.create(name="Margaret Smith") >>> author = Author.objects.annotate(name_upper=Upper("name")).get() >>> print(author.name_upper) MARGARET SMITH
 - [ac66c9ab] >>> from django.utils import timezone >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") # UTC+10:00 >>> with timezone.override(melb): ... Experiment.objects.annotate( ... day=ExtractDay("start_datetime"), ... weekday=ExtractWeekDay("start_datetime"), ... isoweekday=ExtractIsoWeekDay("start_datetime"), ... hour=ExtractHour("start_datetime"), ... ).values("day", "weekday", "isoweekday", "hour").get( ... end_datetime__year=ExtractYear("start_datetime"), ... ) ... {'day': 16, 'weekday': 3, 'isoweekday': 2, 'hour': 9}
 - [7a3163b8] >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> Experiment.objects.annotate( ... day=ExtractDay("start_datetime", tzinfo=melb), ... weekday=ExtractWeekDay("start_datetime", tzinfo=melb), ... isoweekday=ExtractIsoWeekDay("start_datetime", tzinfo=melb), ... hour=ExtractHour("start_datetime", tzinfo=melb), ... ).values("day", "weekday", "isoweekday", "hour").get( ... end_datetime__year=ExtractYear("start_datetime"), ... ) {'day': 16, 'weekday': 3, 'isoweekday': 2, 'hour': 9}
 - [3e63c3cd] >>> import zoneinfo >>> melb = zoneinfo.ZoneInfo("Australia/Melbourne") >>> experiments_per_hour = ( ... Experiment.objects.annotate( ... hour=TruncHour("start_datetime", tzinfo=melb), ... ) ... .values("hour") ... .annotate(experiments=Count("id")) ... ) >>> for exp in experiments_per_hour: ... print(exp["hour"], exp["experiments"]) ... 2014-06-16 00:00:00+10:00 2 2016-01-01 04:00:00+11:00 1
@@ -123,6 +130,7 @@
 - [b77411bf] Due to an :ref:`Oracle convention<oracle-null-empty-strings>`, this function returns the empty string instead of ``None`` when the expressions are of type :class:`~django.db.models.CharField`.
 - [eb170853] In MySQL, a database table's :ref:`collation<mysql-collation>` determines whether string comparisons (such as the ``expression`` and ``substring`` of this function) are case-sensitive. Comparisons are case-insensitive by default.
 - [807f2448a61ddd47] MariaDB `doesn't support <https://jira.mariadb.org/browse/MDEV-12981>`_ the ``default`` parameter.
+- [807f2448a61ddd47-2] MariaDB `doesn't support <https://jira.mariadb.org/browse/MDEV-12981>`_ the ``default`` parameter.
 - [5ea0965d] On Oracle, the SQL ``LOCALTIMESTAMP`` is used to avoid issues with casting ``CURRENT_TIMESTAMP`` to ``DateTimeField``.
 - [6e124244] On PostgreSQL, ``UUID7`` also supports an optional ``shift`` value, which can be used to offset the timestamp of the generated UUID. This should be a :class:`datetime.timedelta` or an expression with an ``output_field`` of :class:`~django.db.models.DurationField`. A positive value will shift the timestamp into the future and a negative value into the past.
 - [2652548a] On PostgreSQL, the SQL ``CURRENT_TIMESTAMP`` returns the time that the current transaction started. Therefore for cross-database compatibility, ``Now()`` uses ``STATEMENT_TIMESTAMP`` instead. If you need the transaction timestamp, use :class:`django.contrib.postgres.functions.TransactionNow`.
@@ -131,13 +139,16 @@
 - [042ff557] Returns the ISO-8601 week day with day 1 being Monday and day 7 being Sunday.
 - [c1e13b60] Returns the ISO-8601 week-numbering year.
 - [12d92d74] The PostgreSQL behavior can be emulated using ``Coalesce`` if you know a sensible maximum value to provide as a default.
+- [78cfee6d] The PostgreSQL behavior can be emulated using ``Coalesce`` if you know a sensible minimum value to provide as a default.
 - [d10d158b] The ``week_day`` ``lookup_type`` is calculated differently from most databases and from Python's standard functions. This function will return ``1`` for Sunday, ``2`` for Monday, through ``7`` for Saturday.
 - [842814ce] The ``week`` ``lookup_type`` is calculated based on `ISO-8601 <https://en.wikipedia.org/wiki/ISO-8601>`_, i.e., a week starts on a Monday. The first week of a year is the one that contains the year's first Thursday, i.e. the first week has the majority (four or more) of its days in the year. The value returned is in the range 1 to 52 or 53.
 - [b48e488f] The `pgcrypto extension <https://www.postgresql.org/docs/current/ pgcrypto.html>`_ must be installed. You can use the :class:`~django.contrib.postgres.operations.CryptoExtension` migration operation to install it.
 - [3e1fe829] The behavior of ``Greatest`` when one or more expression may be ``null`` varies between databases:
+- [b691f4ec] The behavior of ``Least`` when one or more expression may be ``null`` varies between databases:
 - [8be50e39] The equivalent calculation in Python is:
 - [7057b934] Truncates to midnight on the Monday of the week.
 - [ab33048d] When :setting:`USE_TZ` is ``True``, Django saves values in ``UTC`` (or the connection's configured timezone). Since ``tzinfo`` defaults to :setting:`TIME_ZONE` when not provided, you may need to provide an explicit ``tzinfo`` to compare extracted values. The following example demonstrates what happens when "Europe/Berlin" is active and how to adjust for this:
+- [c72a6da7] When :setting:`USE_TZ` is ``True``, Django saves values in ``UTC`` (or the connection's configured timezone). Since ``tzinfo`` defaults to :setting:`TIME_ZONE` when not provided, you may need to provide an explicit ``tzinfo`` to compare truncated values. The following example demonstrates what happens when "Europe/Berlin" is active and how to adjust for this:
 - [a8d30017] class Author(models.Model): name = models.CharField(max_length=50) age = models.PositiveIntegerField(null=True, blank=True) alias = models.CharField(max_length=50, null=True, blank=True) goes_by = models.CharField(max_length=50, null=True, blank=True)
 - [2d93625c] class Blog(models.Model): body = models.TextField() modified = models.DateTimeField(auto_now=True)
 - [1671a26c] class Comment(models.Model): body = models.TextField() modified = models.DateTimeField(auto_now=True) blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
@@ -157,6 +168,7 @@
 - [c1baf2c74443708b-2] .. admonition:: Availability
 - [d56c2b96] .. admonition:: Caveats on Oracle
 - [0255f273c1fc1ac6] .. admonition:: MariaDB and ``default``
+- [0255f273c1fc1ac6-2] .. admonition:: MariaDB and ``default``
 - [d78ad3ab25cd8d9c] .. admonition:: Oracle
 - [d78ad3ab25cd8d9c-2] .. admonition:: Oracle
 - [0a7dd373] .. admonition:: PostgreSQL
@@ -244,10 +256,13 @@
 - [a9fd712e] .. class:: TruncDate(expression, tzinfo=None, **extra)
 - [eea23959] .. class:: TruncDay(expression, output_field=None, tzinfo=None, **extra)
 - [bc7f9a68] .. class:: TruncHour(expression, output_field=None, tzinfo=None, **extra)
+- [2cd0c3a9] .. class:: TruncHour(expression, output_field=None, tzinfo=None, **extra) :noindex:
 - [9c736815] .. class:: TruncMinute(expression, output_field=None, tzinfo=None, **extra)
+- [b4aaf753] .. class:: TruncMinute(expression, output_field=None, tzinfo=None, **extra) :noindex:
 - [f477cbf2] .. class:: TruncMonth(expression, output_field=None, tzinfo=None, **extra)
 - [0b899749] .. class:: TruncQuarter(expression, output_field=None, tzinfo=None, **extra)
 - [fdbfc730] .. class:: TruncSecond(expression, output_field=None, tzinfo=None, **extra)
+- [93e005f4] .. class:: TruncSecond(expression, output_field=None, tzinfo=None, **extra) :noindex:
 - [5be79912] .. class:: TruncTime(expression, tzinfo=None, **extra)
 - [b1995e2c] .. class:: TruncWeek(expression, output_field=None, tzinfo=None, **extra)
 - [c20d3b16] .. class:: TruncYear(expression, output_field=None, tzinfo=None, **extra)
@@ -339,6 +354,7 @@
 - [b208c395] ================== Database Functions ==================
 - [d5640d01] Accepts a list of at least two field names or expressions and returns the first non-null value (note that an empty string is not considered a null value). Each argument must be of a similar type, so mixing text and numbers will result in a database error.
 - [5a985d8a] Accepts a list of at least two field names or expressions and returns the greatest value. Each argument must be of a similar type, so mixing text and numbers will result in a database error.
+- [8a00fd59] Accepts a list of at least two field names or expressions and returns the least value. Each argument must be of a similar type, so mixing text and numbers will result in a database error.
 - [b97e7cad] Accepts a list of at least two text fields or expressions and returns the concatenated text. Each argument must be of a text or char type. If you want to concatenate a ``TextField()`` with a ``CharField()``, then be sure to tell Django that the ``output_field`` should be a ``TextField()``. Specifying an ``output_field`` is also required when concatenating a ``Value`` as in the example below.
 - [c8489711] Accepts a list of field names or expressions and returns a JSON array containing those values.
 - [64c1b586] Accepts a numeric field or expression and returns the text representation of the expression as a single character. It works the same as Python's :func:`chr` function.
@@ -347,6 +363,7 @@
 - [b3ce98d1] Accepts a single text field or expression and returns the characters of that expression in reverse order.
 - [efe693e4] Accepts a single text field or expression and returns the lowercase representation.
 - [ba24e6ec] Accepts a single text field or expression and returns the number of characters the value has. If the expression is null, then the length will also be null.
+- [f11c4858] Accepts a single text field or expression and returns the particular hash of the string.
 - [3cc679b3] Accepts a single text field or expression and returns the uppercase representation.
 - [718a5254] Accepts two expressions and returns ``None`` if they are equal, otherwise returns ``expression1``.
 - [87dfd508] Accepts two numeric fields or expressions and returns the logarithm of the second to base of the first.
@@ -363,6 +380,7 @@
 - [6ee060cc] Computes the row number according to the ordering of either the frame clause or the ordering of the whole query if there is no partitioning of the :ref:`window frame <window-frames>`.
 - [c14c61d1] Computes the row relative to the offset ``nth`` (must be a positive value) within the window. Returns ``None`` if no row exists.
 - [777aa403] Converts a numeric field or expression from degrees to radians.
+- [218f78bb] Converts a numeric field or expression from radians to degrees.
 - [21859861] Date functions ==============
 - [659d1b27] Each ``kind`` above has a corresponding ``Trunc`` subclass (listed below) that should typically be used instead of the more verbose equivalent, e.g. use ``TruncYear(...)`` rather than ``Trunc(..., kind='year')``.
 - [4aee5ac8] Each ``lookup_name`` above has a corresponding ``Extract`` subclass (listed below) that should typically be used instead of the more verbose equivalent, e.g. use ``ExtractYear(...)`` rather than ``Extract(..., lookup_name='year')``.
@@ -379,8 +397,28 @@
 - [74bfdd05] If a different timezone like ``Australia/Melbourne`` is active in Django, then the datetime is converted to the timezone before the value is extracted. The timezone offset for Melbourne in the example date above is +10:00. The values returned when this timezone is active will be the same as above except for:
 - [c3419c8c] In addition to the following, all extracts for ``DateField`` listed above may also be used on ``DateTimeField``\s .
 - [886f30f88ca101db] It can also be registered as a transform as described in :class:`Length`.
+- [886f30f88ca101db-2] It can also be registered as a transform as described in :class:`Length`.
+- [886f30f88ca101db-3] It can also be registered as a transform as described in :class:`Length`.
 - [3607914e] It can also be registered as a transform as described in :class:`Length`. The default lookup name is ``ord``.
+- [09e11116] It can also be registered as a transform as described in :class:`Length`. The default lookup name is ``reverse``.
 - [701ec15f98eeae6c] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-2] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-3] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-4] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-5] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-6] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-7] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-8] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-9] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-10] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-11] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-12] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-13] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-14] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-15] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-16] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-17] It can also be registered as a transform. For example:
+- [701ec15f98eeae6c-18] It can also be registered as a transform. For example:
 - [40b32785] It can also be used when ordering, for example with PostgreSQL:
 - [1a1612b5] JSON Functions ==============
 - [c668f7d2] Like :class:`Length`, it can be registered as a transform on ``IntegerField``. The default lookup name is ``chr``.
@@ -415,7 +453,9 @@
 - [e0666df3] Rounds a numeric field or expression to ``precision`` (must be an integer) decimal places. By default, it rounds to the nearest integer. Whether half values are rounded up or down depends on the database.
 - [abc6e792] Similar to :class:`~django.db.models.functions.LPad`, but pads on the right side.
 - [836d113f] Similar to :class:`~django.db.models.functions.Trim`, but removes only leading spaces.
+- [41f0ab0f] Similar to :class:`~django.db.models.functions.Trim`, but removes only trailing spaces.
 - [939e45b3] Since ``DateField``\s don't have a time component, only ``Extract`` subclasses that deal with date-parts can be used with ``DateField``:
+- [83fea173] Since ``DateField``\s don't have a time component, only ``Trunc`` subclasses that deal with date-parts can be used with ``DateField``:
 - [e9131d25] Since ``TimeField``\s don't have a date component, only ``Trunc`` subclasses that deal with time-parts can be used with ``TimeField``:
 - [cc489de6] Some databases may handle a nonexistent nth-value differently. For example, Oracle returns an empty string rather than ``None`` for character-based expressions. Django doesn't do any conversions in these cases.
 - [af921e3e] Takes a list of key-value pairs and returns a JSON object containing those pairs.
@@ -485,6 +525,7 @@
 - [15fbcd9b] Usage examples:
 - [4b55c0b2] We don't usually recommend allowing ``null=True`` for ``CharField`` since this allows the field to have two "empty values", but it's important for the ``Coalesce`` example below.
 - [06aa970b7bdc06e7] We'll be using the following model in examples of each function::
+- [06aa970b7bdc06e7-2] We'll be using the following model in examples of each function::
 - [f121e93a] We'll be using the following model in math function examples::
 - [90bc1636] When :setting:`USE_TZ` is ``True`` then datetimes are stored in the database in UTC. If a different timezone is active in Django, the datetime is converted to that timezone before the value is extracted. The example below converts to the Melbourne timezone (UTC +10:00), which changes the day, weekday, and hour values that are returned:
 - [65094cfb] When you only care if something happened in a particular year, hour, or day, but not the exact second, then ``Trunc`` (and its subclasses) can be useful to filter or aggregate your data. For example, you can use ``Trunc`` to calculate the number of sales per day.
@@ -567,3 +608,4 @@
 - [49b4bd78] ``Upper`` ---------
 - [96919d78] ``annotated_comment.last_updated`` will be the most recent of ``blog.modified`` and ``comment.modified``.
 - [86cf48d59935e94d] ``default`` must have the same type as the ``expression``, however, this is only validated by the database and not in Python.
+- [86cf48d59935e94d-2] ``default`` must have the same type as the ``expression``, however, this is only validated by the database and not in Python.

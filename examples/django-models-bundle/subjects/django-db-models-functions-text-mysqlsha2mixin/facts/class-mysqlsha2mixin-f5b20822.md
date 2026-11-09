@@ -1,6 +1,6 @@
 # Fact f5b20822
 
-Store id: 78bf4f6a-c4c3-47bd-87e5-a3c9f4ef9cd5
+Store id: 6825942a-2fdf-45ea-866a-60129dc3f3e2
 
 ## Text
 
@@ -20,7 +20,7 @@ class MySQLSHA2Mixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1074520+00:00`
+- posted_at: `2026-11-09T23:44:54.0189760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 8,
     "symbol": "MySQLSHA2Mixin"
   },
-  "id": "78bf4f6a-c4c3-47bd-87e5-a3c9f4ef9cd5",
+  "id": "6825942a-2fdf-45ea-866a-60129dc3f3e2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1074520+00:00"
+    "posted_at": "2026-11-09T23:44:54.0189760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "33e090fb-ca67-4a74-835f-9c458e602d65",
+  "subject_id": "4669df76-ade3-432e-9ff8-c1e89dc517c9",
   "subject_name": "django/db/models/functions/text::MySQLSHA2Mixin",
   "tags": [
     "entity:class"

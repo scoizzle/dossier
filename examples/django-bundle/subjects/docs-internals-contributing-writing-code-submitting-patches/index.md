@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-code/submitting-patches
 
-- Subject: docs/internals/contributing/writing-code/submitting-patches (id `70736d53-d19c-458c-b370-7c4e9a1928fa`)
+- Subject: docs/internals/contributing/writing-code/submitting-patches (id `285c9735-a559-448c-8fdb-b930f1041593`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6855 tokens
-- Facts shown: 137 of 138
+- Used: 6892 tokens
+- Facts shown: 138 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,6 +16,7 @@
 - def foo(): warnings.warn( "foo() is deprecated.", category=RemovedInDjangoXXXXWarning, skip_file_prefixes=django_file_prefixes(), ) old_private_helper() ... [c0ccaef5]
 - def test_foo_deprecation_warning(self): msg = "Expected deprecation message" with self.assertWarnsMessage(RemovedInDjangoXXXXWarning, msg) as ctx: # invoke deprecated behavior ... self.assertEqual(ctx.filename, __file__) [88deb849]
 - from django.test import ignore_warnings from django.utils.deprecation import RemovedInDjangoXXXXWarning [d477b139cfe88760]
+- from django.test import ignore_warnings from django.utils.deprecation import RemovedInDjangoXXXXWarning [d477b139cfe88760-2]
 - from django.utils.deprecation import RemovedInDjangoXXXXWarning [1b9e642c]
 - import warnings from django.utils.deprecation import RemovedInDjangoXXXXWarning, django_file_prefixes [c6f6f942]
 - "Claiming" tickets ================== [20648e46]
@@ -30,7 +31,6 @@
 - * **Review and verify** all AI-generated output. Ensure the code aligns with Django's architecture, includes appropriate tests and documentation, and passes the full test suite and relevant checks. [a857010f]
 - * Are there tests to "exercise" all of the new code? * Is there a release note in ``docs/releases/A.B.txt``? * Is there documentation for the feature and is it :ref:`annotated appropriately <documenting-new-features>` with ``.. versionadded:: A.B`` or ``.. versionchanged:: A.B``? [655b707a]
 - * Assist reviewers. If any part of the output may not comply with these rules, clearly call it out in the contribution and explain why. [cd99ac6b]
-- * Double-check the proposal against the :ref:`patch-review-checklist`. [eef62df6]
 
 ## All facts
 
@@ -40,6 +40,7 @@
 - [fbe59fbd] * Disclose your involvement. Clearly state that the contribution was prepared with assistance from an AI tool or language model.
 - [cc3b27f2] * Does the :doc:`coding style </internals/contributing/writing-code/coding-style>` conform to our guidelines? Are there any ``black``, ``blacken-docs``, ``flake8``, ``isort``, or ``zizmor`` errors? You can install the :ref:`pre-commit <coding-style-pre-commit>` hooks to automatically catch these errors. * If the change is backwards incompatible in any way, is there a note in the release notes (``docs/releases/A.B.txt``)? * Is Django's test suite passing? * If there is a :ref:`code coverage report <code-coverage-on-pull-requests>` comment on the pull request, have you reviewed the missing coverage in context (considering database/platform-specific limitations)? * If the change affects the Django admin or rendered HTML output, has :ref:`accessibility testing <accessibility-testing-baseline>` been done?
 - [abffe55b] * Does the documentation build without any errors (``make html``, or ``make.bat html`` on Windows, from the ``docs`` directory)? * Does the documentation follow the writing style guidelines in :doc:`/internals/contributing/writing-documentation`? * Are there any :ref:`spelling errors <documentation-spelling-check>`?
+- [eef62df6] * Double-check the proposal against the :ref:`patch-review-checklist`.
 - [6fe45f55] * Ensure technical accuracy and avoid fabrication. Do not invent APIs, features, functions, or citations that do not exist. Placeholder or fictitious content will result in rejection.
 - [4dcbf5c6] * Finally, click the "Submit changes" button at the bottom to save.
 - [4386aeda] * Follow the GitHub pull request template. Ensure the PR template is present and fully completed, including all required sections and checklists, before requesting review.

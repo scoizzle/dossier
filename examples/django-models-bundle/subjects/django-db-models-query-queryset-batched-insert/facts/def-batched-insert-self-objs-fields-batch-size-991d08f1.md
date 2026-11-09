@@ -1,6 +1,6 @@
 # Fact 991d08f1
 
-Store id: a8b7a868-0dbb-422a-94e9-be3ccf6391b3
+Store id: 7abfc2d6-3be5-43d4-89f5-fc6429b7a668
 
 ## Text
 
@@ -20,7 +20,7 @@ def _batched_insert( self, objs, fields, batch_size, on_conflict=None, update_fi
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6226640+00:00`
+- posted_at: `2026-11-09T23:44:56.1352550+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2171,
     "symbol": "QuerySet._batched_insert"
   },
-  "id": "a8b7a868-0dbb-422a-94e9-be3ccf6391b3",
+  "id": "7abfc2d6-3be5-43d4-89f5-fc6429b7a668",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6226640+00:00"
+    "posted_at": "2026-11-09T23:44:56.1352550+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "241d1192-154b-475b-9497-548ba36243e2",
+  "subject_id": "19f7932b-0bde-4c1b-95be-e5413e3ff95a",
   "subject_name": "django/db/models/query::QuerySet._batched_insert",
   "tags": [
     "entity:method"

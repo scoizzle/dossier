@@ -1,6 +1,6 @@
 # Fact 80ea1977
 
-Store id: 0c87c57a-6e7e-423f-9519-769772c60654
+Store id: b64e5f7a-7330-4504-91f6-86e96faebad4
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aearliest(self, *fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4393140+00:00`
+- posted_at: `2026-11-09T23:44:55.9428750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1206,
     "symbol": "QuerySet.aearliest"
   },
-  "id": "0c87c57a-6e7e-423f-9519-769772c60654",
+  "id": "b64e5f7a-7330-4504-91f6-86e96faebad4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4393140+00:00"
+    "posted_at": "2026-11-09T23:44:55.9428750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c0bf9c2-951c-4fd6-ab86-6e38a80eb747",
+  "subject_id": "2c3812a4-d3db-4cbf-aa7a-8f8bd6bf78e5",
   "subject_name": "django/db/models/query::QuerySet.aearliest",
   "tags": [
     "entity:method",

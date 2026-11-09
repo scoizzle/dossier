@@ -1,10 +1,10 @@
 # django/core/handlers/wsgi
 
-- Subject: django/core/handlers/wsgi (id `c1c6ca09-6dd0-4aac-bee3-27ed84929a57`)
+- Subject: django/core/handlers/wsgi (id `f99f616e-e34a-41f7-92a9-9b836452714b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1840 tokens
-- Facts shown: 30 of 31
+- Used: 1876 tokens
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,5 +41,6 @@
 - [d9ad4dae] def get_bytes_from_wsgi(environ, key, default): """ Get a value from the WSGI environ dictionary as bytes.
 - [70225bd6] def get_path_info(environ): """Return the HTTP request's PATH_INFO as a string.""" path_info = get_bytes_from_wsgi(environ, "PATH_INFO", "/")
 - [93dc7d9c] def get_script_name(environ): """ Return the equivalent of the HTTP request's SCRIPT_NAME environment variable. If Apache mod_rewrite is used, return what would have been the script name prior to any rewriting (so it's the script name as seen from the client's perspective), unless the FORCE_SCRIPT_NAME setting is set (to anything). """ if settings.FORCE_SCRIPT_NAME is not None: return settings.FORCE_SCRIPT_NAME
+- [9a51c912] def get_str_from_wsgi(environ, key, default): """ Get a value from the WSGI environ dictionary as str.
 - [08ac259c] from django.conf import settings from django.core import signals from django.core.handlers import base from django.http import HttpRequest, QueryDict, parse_cookie from django.urls import set_script_prefix from django.utils.encoding import repercent_broken_unicode from django.utils.functional import cached_property from django.utils.regex_helper import _lazy_re_compile
 - [6fade208] from io import IOBase

@@ -1,6 +1,6 @@
 # Fact bf5c480f
 
-Store id: e8e7817d-c84f-4204-82e2-b5b00df54c07
+Store id: 809114fc-74ae-4c0e-8d49-c5933b41b2d6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RTrim
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e8e7817d-c84f-4204-82e2-b5b00df54c07",
+  "id": "809114fc-74ae-4c0e-8d49-c5933b41b2d6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RTrim"
       },
       "rel": "contains",
-      "target": "30b2a428-8698-4b75-8981-31a15db0f614"
+      "target": "48d0c801-eaa3-44fa-92f5-34ca18debd06"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

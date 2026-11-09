@@ -1,6 +1,6 @@
 # Fact 57f55aaa
 
-Store id: 8ecf5ff7-d55a-4282-90ac-46762065e2c3
+Store id: 9cb55417-5dbb-47c5-a67a-3d727b1ba999
 
 ## Text
 
@@ -20,7 +20,7 @@ def _to_naive(value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5649030+00:00`
+- posted_at: `2026-11-09T23:44:50.0753650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1381,
     "symbol": "_to_naive"
   },
-  "id": "8ecf5ff7-d55a-4282-90ac-46762065e2c3",
+  "id": "9cb55417-5dbb-47c5-a67a-3d727b1ba999",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5649030+00:00"
+    "posted_at": "2026-11-09T23:44:50.0753650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bd18f222-4b2f-4a06-b30d-9c12a0098527",
+  "subject_id": "3e234698-3e99-4861-b378-3b619cea9295",
   "subject_name": "django/db/models/fields/__init__::_to_naive",
   "tags": [
     "entity:function"

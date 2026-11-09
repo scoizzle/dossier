@@ -1,6 +1,6 @@
 # Fact 16e22f14
 
-Store id: 53a5ee58-bd0e-4054-9d4e-e21e70f71eed
+Store id: a0f46d03-cc5b-4f13-863e-d685f9785d18
 
 ## Text
 
@@ -20,7 +20,7 @@ class RelatedGreaterThanOrEqual(RelatedLookupMixin, GreaterThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.0222190+00:00`
+- posted_at: `2026-11-09T23:44:52.2847840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 143,
     "symbol": "RelatedGreaterThanOrEqual"
   },
-  "id": "53a5ee58-bd0e-4054-9d4e-e21e70f71eed",
+  "id": "a0f46d03-cc5b-4f13-863e-d685f9785d18",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.0222190+00:00"
+    "posted_at": "2026-11-09T23:44:52.2847840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8894b4be-d14d-41d5-a2a0-ee383aeaaa4c",
+  "subject_id": "9a26be30-96e0-44cf-9358-c366413530b5",
   "subject_name": "django/db/models/fields/related_lookups::RelatedGreaterThanOrEqual",
   "tags": [
     "entity:class"

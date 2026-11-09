@@ -1,6 +1,6 @@
 # Fact 5baabeab
 
-Store id: d5bbe864-0d80-4ccc-be4f-ae03a8dfee70
+Store id: 77d2ed76-bc33-42b5-bf25-9be3f56d38f5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TupleGreaterThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6413340+00:00`
+- posted_at: `2026-11-09T23:44:52.8042050+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d5bbe864-0d80-4ccc-be4f-ae03a8dfee70",
+  "id": "77d2ed76-bc33-42b5-bf25-9be3f56d38f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6413340+00:00"
+    "posted_at": "2026-11-09T23:44:52.8042050+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TupleGreaterThanOrEqual"
       },
       "rel": "contains",
-      "target": "8bfa6a4d-a7e3-494a-83cb-381fe18119b2"
+      "target": "c58b07c0-17d0-4514-9749-9984f4cbf762"
     }
   ],
   "status": "live",
-  "subject_id": "efb95fe5-98d6-477d-97c9-b4235a733859",
+  "subject_id": "ad1ef182-041a-46cc-bb2c-1492986a5333",
   "subject_name": "django/db/models/fields/tuple_lookups",
   "tags": [
     "entity:class"

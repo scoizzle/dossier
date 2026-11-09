@@ -1,6 +1,6 @@
 # Fact 8160378e
 
-Store id: 45a2eaa2-794f-405c-af91-00b61337c023
+Store id: 935d110f-93df-4e80-8d49-fdcd37212b2c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, key_name, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9638760+00:00`
+- posted_at: `2026-11-09T23:44:51.0189650+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 500,
     "symbol": "KeyTransform.__init__"
   },
-  "id": "45a2eaa2-794f-405c-af91-00b61337c023",
+  "id": "935d110f-93df-4e80-8d49-fdcd37212b2c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9638760+00:00"
+    "posted_at": "2026-11-09T23:44:51.0189650+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "958b70d1-673d-4665-9cbd-c1d75f19d22f",
+  "subject_id": "6088cabd-6f42-4b8c-851d-58bff3c8cc39",
   "subject_name": "django/db/models/fields/json::KeyTransform.__init__",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/dispatch/__init__
 
-- Subject: django/dispatch/__init__ (id `c58d62ef-4b3a-4e36-bb5b-16d356774bf4`)
+- Subject: django/dispatch/__init__ (id `730752b1-0b37-41b7-99a4-afb81c5e7ce3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 113 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::Cast.as_postgresql
 
-- Subject: django/db/models/functions/comparison::Cast.as_postgresql (id `8b9bbe4e-d1d3-4a05-8878-c720d3852fef`)
+- Subject: django/db/models/functions/comparison::Cast.as_postgresql (id `0340c311-9fc9-443d-9857-f1f18d54cbbb`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

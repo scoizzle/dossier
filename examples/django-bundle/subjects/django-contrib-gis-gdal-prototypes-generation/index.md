@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/prototypes/generation
 
-- Subject: django/contrib/gis/gdal/prototypes/generation (id `8b7ce8a4-4a9f-4259-b166-dfcc79b8a985`)
+- Subject: django/contrib/gis/gdal/prototypes/generation (id `809f5fad-ee78-4ff6-882b-56d6f739a991`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1321 tokens
-- Facts shown: 25 of 25
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 

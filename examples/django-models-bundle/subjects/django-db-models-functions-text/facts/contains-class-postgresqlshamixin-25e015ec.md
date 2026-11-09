@@ -1,6 +1,6 @@
 # Fact 25e015ec
 
-Store id: 2d2b649c-566f-42de-83d3-24e3bb1df268
+Store id: 1dfc1dca-1af5-4c5c-ab99-bcce63de2b85
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PostgreSQLSHAMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2d2b649c-566f-42de-83d3-24e3bb1df268",
+  "id": "1dfc1dca-1af5-4c5c-ab99-bcce63de2b85",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PostgreSQLSHAMixin"
       },
       "rel": "contains",
-      "target": "190c7fc1-84ea-463b-8dcc-1ca1bb5b854c"
+      "target": "b046992c-6e09-4ce5-a343-1c090e43ba29"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/utils/functional
 
-- Subject: django/utils/functional (id `fb8ef7dc-2b5b-4f4e-91d2-89c92fee3f0f`)
+- Subject: django/utils/functional (id `6bec6c67-62d2-4302-a2ad-bce45e27f3d3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3701 tokens
-- Facts shown: 79 of 81
+- Used: 3849 tokens
+- Facts shown: 81 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -57,7 +57,9 @@
 - [b01711b4] __getattr__ = new_method_proxy(getattr)
 - [1ef77acc] class __proxy__(Promise): """ Encapsulate a function call and act as a proxy for methods that are called on the result of that function. The function is not evaluated until one of the methods on the result is called. """
 - [f932cdd7] def __copy__(self): if self._wrapped is empty: # If uninitialized, copy the wrapper. Use SimpleLazyObject, not # self.__class__, because the latter is proxied. return SimpleLazyObject(self._setupfunc) else: # If initialized, return a copy of the wrapped object. return copy.copy(self._wrapped)
+- [46373421] def __copy__(self): if self._wrapped is empty: # If uninitialized, copy the wrapper. Use type(self), not # self.__class__, because the latter is proxied. return type(self)() else: # If initialized, return a copy of the wrapped object. return copy.copy(self._wrapped)
 - [10e50e42] def __deepcopy__(self, memo): if self._wrapped is empty: # We have to use SimpleLazyObject, not self.__class__, because the # latter is proxied. result = SimpleLazyObject(self._setupfunc) memo[id(self)] = result return result return copy.deepcopy(self._wrapped, memo)
+- [4afd5183] def __deepcopy__(self, memo): if self._wrapped is empty: # We have to use type(self), not self.__class__, because the # latter is proxied. result = type(self)() memo[id(self)] = result return result return copy.deepcopy(self._wrapped, memo)
 - [339e22aa] def __delattr__(self, name): if name == "_wrapped": raise TypeError("can't delete _wrapped.") if self._wrapped is empty: self._setup() delattr(self._wrapped, name)
 - [692837e1] def __get__(self, instance, cls=None): """ Call the function and put the return value in instance.__dict__ so that subsequent attribute access on the instance returns the cached value instead of calling cached_property.__get__(). """ if instance is None: return self res = instance.__dict__[self.name] = self.func(instance) return res
 - [cb0fdc4b] def __get__(self, instance, cls=None): return self.fget(cls)

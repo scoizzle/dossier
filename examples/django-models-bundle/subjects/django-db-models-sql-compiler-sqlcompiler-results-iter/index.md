@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.results_iter
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.results_iter (id `56f50f83-dd3b-4895-a0ba-09c8aa90e878`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.results_iter (id `b3bb8ece-b64c-4fe1-b813-023479710d59`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 40 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

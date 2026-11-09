@@ -1,10 +1,10 @@
 # django/contrib/auth/admin
 
-- Subject: django/contrib/auth/admin (id `6d305371-e2a5-4916-ba52-f045e55e7035`)
+- Subject: django/contrib/auth/admin (id `859e9e39-aaaa-4c11-b387-39e87e91998c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2134 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

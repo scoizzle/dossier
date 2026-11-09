@@ -1,6 +1,6 @@
 # Fact 501710bd
 
-Store id: 206130ce-b03a-4516-83da-4fd870b4807e
+Store id: 16430b5f-1021-4dc3-bf50-15026569682d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, length, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1880290+00:00`
+- posted_at: `2026-11-09T23:44:54.0848490+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 159,
     "symbol": "Left.__init__"
   },
-  "id": "206130ce-b03a-4516-83da-4fd870b4807e",
+  "id": "16430b5f-1021-4dc3-bf50-15026569682d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1880290+00:00"
+    "posted_at": "2026-11-09T23:44:54.0848490+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "026fddd7-3a84-4e34-ae3c-e4c415a421bd",
+  "subject_id": "2ab7315f-bb79-4c66-a2c3-cc769cad0f44",
   "subject_name": "django/db/models/functions/text::Left.__init__",
   "tags": [
     "entity:method"

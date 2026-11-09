@@ -1,11 +1,11 @@
 # django/db/models/indexes::IndexExpression.as_sqlite
 
-- Subject: django/db/models/indexes::IndexExpression.as_sqlite (id `3f3f05ae-63eb-4af0-945f-1512aba4c05c`)
+- Subject: django/db/models/indexes::IndexExpression.as_sqlite (id `85d3f703-b3a6-4460-8230-fade04484465`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/operations
 
-- Subject: django/db/backends/postgresql/operations (id `479ab3b7-9ef1-4da3-a6d4-8d4095032b48`)
+- Subject: django/db/backends/postgresql/operations (id `d8280d81-968c-4445-9548-b4821c25feb1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3505 tokens
-- Facts shown: 57 of 59
+- Used: 3630 tokens
+- Facts shown: 59 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,7 +41,9 @@
 - [d16d8d8e] def date_extract_sql(self, lookup_type, sql, params): # https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-EXTRACT if lookup_type == "week_day": # For consistency across backends, we return Sunday=1, Saturday=7. return f"EXTRACT(DOW FROM {sql}) + 1", params elif lookup_type == "iso_week_day": return f"EXTRACT(ISODOW FROM {sql})", params elif lookup_type == "iso_year": return f"EXTRACT(ISOYEAR FROM {sql})", params
 - [d3530cc7] def date_trunc_sql(self, lookup_type, sql, params, tzname=None): sql, params = self._convert_sql_to_tz(sql, params, tzname) # https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-TRUNC return f"DATE_TRUNC(%s, {sql})", (lookup_type, *params)
 - [87c4c0eb] def datetime_cast_date_sql(self, sql, params, tzname): sql, params = self._convert_sql_to_tz(sql, params, tzname) return f"({sql})::date", params
+- [da6412aa] def datetime_cast_time_sql(self, sql, params, tzname): sql, params = self._convert_sql_to_tz(sql, params, tzname) return f"({sql})::time", params
 - [19cbe634] def datetime_extract_sql(self, lookup_type, sql, params, tzname): sql, params = self._convert_sql_to_tz(sql, params, tzname) if lookup_type == "second": # Truncate fractional seconds. return f"EXTRACT(SECOND FROM DATE_TRUNC(%s, {sql}))", ("second", *params) return self.date_extract_sql(lookup_type, sql, params)
+- [3eeb4a24] def datetime_trunc_sql(self, lookup_type, sql, params, tzname): sql, params = self._convert_sql_to_tz(sql, params, tzname) # https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-TRUNC return f"DATE_TRUNC(%s, {sql})", (lookup_type, *params)
 - [9fdf550584590da8-2] def deferrable_sql(self): return " DEFERRABLE INITIALLY DEFERRED"
 - [e5a0a490] def distinct_sql(self, fields, params): if fields: params = [param for param_list in params for param in param_list] return (["DISTINCT ON (%s)" % ", ".join(fields)], params) else: return ["DISTINCT"], []
 - [05608ac3] def explain_query_prefix(self, format=None, **options): extra = {} if serialize := options.pop("serialize", None): if serialize.upper() in {"TEXT", "BINARY"}: extra["SERIALIZE"] = serialize.upper() # Normalize options. if options: options = { name.upper(): "true" if value else "false" for name, value in options.items() } for valid_option in self.explain_options: value = options.pop(valid_option, None) if value is not None: extra[valid_option] = value prefix = super().explain_query_prefix(format, **options) if format: extra["FORMAT"] = format if extra: prefix += " (%s)" % ", ".join("%s %s" % i for i in extra.items()) return prefix

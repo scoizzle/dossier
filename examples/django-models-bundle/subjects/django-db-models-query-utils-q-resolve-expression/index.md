@@ -1,11 +1,11 @@
 # django/db/models/query_utils::Q.resolve_expression
 
-- Subject: django/db/models/query_utils::Q.resolve_expression (id `934f1e66-7fd3-42f4-b29d-c3762b26b6e4`)
+- Subject: django/db/models/query_utils::Q.resolve_expression (id `ae8126da-8161-496b-9328-5fd28a5ce34c`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

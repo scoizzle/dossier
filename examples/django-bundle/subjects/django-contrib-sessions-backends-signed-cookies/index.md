@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/signed_cookies
 
-- Subject: django/contrib/sessions/backends/signed_cookies (id `0d14f229-3a43-48fb-ba7c-947bfca56557`)
+- Subject: django/contrib/sessions/backends/signed_cookies (id `63e36b61-20cd-4b99-aae1-7496967301ad`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 799 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

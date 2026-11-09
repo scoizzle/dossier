@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/functions
 
-- Subject: docs/ref/contrib/gis/functions (id `8f28b797-da3d-46de-9112-f9eeda2c05ba`)
+- Subject: docs/ref/contrib/gis/functions (id `baa5e992-4cd0-400e-ae7c-f9cddf6b2eec`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7735 tokens
-- Facts shown: 221 of 228
+- Used: 8128 tokens
+- Facts shown: 228 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,24 +19,32 @@
 - >>> qs = Zipcode.objects.annotate(kml=AsKML("poly")) >>> print(qs[0].kml) <Polygon><outerBoundaryIs><LinearRing><coordinates>-103.04135,36.217596,0 ... -103.04135,36.217596,0</coordinates></LinearRing></outerBoundaryIs></Polygon> [7a5095df]
 - Because the ``distance`` attribute is a :class:`~django.contrib.gis.measure.Distance` object, you can easily express the value in the units of your choice. For example, ``city.distance.mi`` is the distance value in miles and ``city.distance.km`` is the distance value in kilometers. See :doc:`/ref/contrib/gis/measure` for usage details and the list of :ref:`supported_units`. [2d5350f5]
 - MariaDB 12.0.1+ support was added. [da6e6ec8a1a60ce4]
+- MariaDB 12.0.1+ support was added. [da6e6ec8a1a60ce4-2]
 - SpatiaLite support was added. [7eb29854c6e4f668]
 - What spatial reference system an integer SRID corresponds to may depend on the spatial database used. In other words, the SRID numbers used for Oracle are not necessarily the same as those used by PostGIS. [bc5b187f]
 - *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-format-conversion-functions.html#function_st-asbinary>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_AsBinary.html>`__, SpatiaLite [23587543]
+- *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-format-conversion-functions.html#function_st-astext>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_AsText.html>`__, SpatiaLite [fced4e75]
 - *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-general-property-functions.html#function_st-envelope>`__, `Oracle <https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/ spatial-operators-reference.html#GUID-ACED800F-3435-44AA-9606-D40934A23ED0>`__, `PostGIS <https://postgis.net/docs/ST_Envelope.html>`__, SpatiaLite [6959d3da]
-- *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-geometrycollection-property-functions.html#function_st-numgeometries>`__, `PostGIS <https://postgis.net/docs/ST_NumGeometries.html>`__, Oracle, SpatiaLite [be0b8562]
-- *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-linestring-property-functions.html#function_st-length>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_Length.html>`__, SpatiaLite [de2c2d0a]
+- *Availability*: Oracle, `PostGIS <https://postgis.net/docs/ST_AsGML.html>`__, SpatiaLite [5c1f0fb8]
+- .. class:: Area(expression, **extra) [be6c9d4c]
 
 ## All facts
 
+- [be0b8562] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-geometrycollection-property-functions.html#function_st-numgeometries>`__, `PostGIS <https://postgis.net/docs/ST_NumGeometries.html>`__, Oracle, SpatiaLite
+- [de2c2d0a] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-linestring-property-functions.html#function_st-length>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_Length.html>`__, SpatiaLite
+- [f3870abe] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-linestring-property-functions.html#function_st-numpoints>`__, `PostGIS <https://postgis.net/docs/ST_NPoints.html>`__, Oracle, SpatiaLite
 - [97429145] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-polygon-property-functions.html#function_st-area>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_Area.html>`__, SpatiaLite
+- [ce3d78fc] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-polygon-property-functions.html#function_st-centroid>`__, `PostGIS <https://postgis.net/docs/ST_Centroid.html>`__, Oracle, SpatiaLite
 - [9148b013] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-wkb-functions.html#function_st-geomfromwkb>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_GeomFromWKB.html>`__, SpatiaLite
 - [f0ffd4ec] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/gis-wkt-functions.html#function_st-geomfromtext>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_GeomFromText.html>`__, SpatiaLite
 - [e37a73f1] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-convenience-functions.html#function_st-isvalid>`__, `PostGIS <https://postgis.net/docs/ST_IsValid.html>`__, Oracle, SpatiaLite
 - [09d1c626] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-geohash-functions.html#function_st-geohash>`__, `PostGIS <https://postgis.net/docs/ST_GeoHash.html>`__, SpatiaLite (LWGEOM/RTTOPO)
 - [82a565c0] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-geojson-functions.html#function_st-asgeojson>`__, Oracle, `PostGIS <https://postgis.net/docs/ST_AsGeoJSON.html>`__, SpatiaLite
 - [72510923] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-operator-functions.html#function_st-difference>`__, `PostGIS <https://postgis.net/docs/ST_Difference.html>`__, Oracle, SpatiaLite
+- [39d53f4f] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-operator-functions.html#function_st-intersection>`__, `PostGIS <https://postgis.net/docs/ST_Intersection.html>`__, Oracle, SpatiaLite
+- [7c84529f] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-operator-functions.html#function_st-symdifference>`__, `PostGIS <https://postgis.net/docs/ST_SymDifference.html>`__, Oracle, SpatiaLite
+- [58279adb] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-operator-functions.html#function_st-union>`__, `PostGIS <https://postgis.net/docs/ST_Union.html>`__, Oracle, SpatiaLite
 - [e968bd92] *Availability*: MariaDB, `MySQL <https://dev.mysql.com/doc/refman/en/spatial-relation-functions-object-shapes.html#function_st-distance>`__, `PostGIS <https://postgis.net/docs/ST_Distance.html>`__, Oracle, SpatiaLite
-- [5c1f0fb8] *Availability*: Oracle, `PostGIS <https://postgis.net/docs/ST_AsGML.html>`__, SpatiaLite
 - [7a30ff05] *Availability*: `PostGIS <https://postgis.net/docs/ST_MinimumBoundingCircle.html>`__, `Oracle <https://docs.oracle.com/en/database/oracle/oracle-database/21/spatl/ SDO_GEOM-reference.html#GUID-82A61626-BB64-4793-B53D-A0DBEC91831A>`_, SpatiaLite 5.1+
 - [a55aaa44] *Availability*: `PostGIS <https://postgis.net/docs/geometry_distance_knn.html>`__
 - [ada33b87bf6f9b34] *Availability*: `PostGIS <https://postgis.net/docs/GeometryType.html>`__, Oracle 23c+, MariaDB, MySQL, SpatiaLite
@@ -59,7 +67,6 @@
 - [2f98437d] *Availability*: `PostGIS <https://postgis.net/docs/ST_Transform.html>`__, Oracle, SpatiaLite
 - [5dce73c3] *Availability*: `PostGIS <https://postgis.net/docs/ST_Translate.html>`__, SpatiaLite
 - [4a96faca] .. _`Well-known binary (WKB)`: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary .. _`Well-known text (WKT)`: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry
-- [be6c9d4c] .. class:: Area(expression, **extra)
 - [eb4334ae] .. class:: AsGML(expression, version=2, precision=8, **extra)
 - [e9c69c8d] .. class:: AsGeoJSON(expression, bbox=False, crs=False, precision=8, **extra)
 - [e3219db4] .. class:: AsKML(expression, precision=8, **extra)

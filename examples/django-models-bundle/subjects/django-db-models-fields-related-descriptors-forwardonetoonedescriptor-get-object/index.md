@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::ForwardOneToOneDescriptor.get_object
 
-- Subject: django/db/models/fields/related_descriptors::ForwardOneToOneDescriptor.get_object (id `e28e221d-1afd-4051-b1f4-5061d6144727`)
+- Subject: django/db/models/fields/related_descriptors::ForwardOneToOneDescriptor.get_object (id `4c4539a6-2186-4f18-b952-805ebf41c443`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

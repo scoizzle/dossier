@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformIContains
 
-- Subject: django/db/models/fields/json::KeyTransformIContains (id `d7daed8f-c52b-45cf-a6d9-037efe98bec4`)
+- Subject: django/db/models/fields/json::KeyTransformIContains (id `e9069268-0dd9-44d8-86d5-bf1951b9e8b5`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 36 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

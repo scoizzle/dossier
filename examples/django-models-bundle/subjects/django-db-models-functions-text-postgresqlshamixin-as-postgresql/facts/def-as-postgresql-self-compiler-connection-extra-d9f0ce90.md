@@ -1,6 +1,6 @@
 # Fact d9f0ce90
 
-Store id: 0d2852e8-b091-4124-98c1-eb8d45648ce9
+Store id: dc2f8016-14f3-430f-928e-c429c8e398cc
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1339150+00:00`
+- posted_at: `2026-11-09T23:44:54.0410900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 32,
     "symbol": "PostgreSQLSHAMixin.as_postgresql"
   },
-  "id": "0d2852e8-b091-4124-98c1-eb8d45648ce9",
+  "id": "dc2f8016-14f3-430f-928e-c429c8e398cc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1339150+00:00"
+    "posted_at": "2026-11-09T23:44:54.0410900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0916d41a-1ea3-410c-a32f-edfe5e96bc0e",
+  "subject_id": "aed275af-30c7-4618-8c29-f2e87fde2935",
   "subject_name": "django/db/models/functions/text::PostgreSQLSHAMixin.as_postgresql",
   "tags": [
     "entity:method"

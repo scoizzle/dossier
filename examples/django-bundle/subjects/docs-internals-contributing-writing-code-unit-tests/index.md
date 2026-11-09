@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-code/unit-tests
 
-- Subject: docs/internals/contributing/writing-code/unit-tests (id `18aae47d-e098-4487-a93d-198e5f2b3885`)
+- Subject: docs/internals/contributing/writing-code/unit-tests (id `54458480-76f3-4e67-98a9-394320a48ac1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7429 tokens
-- Facts shown: 190 of 193
+- Used: 7524 tokens
+- Facts shown: 193 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -30,20 +30,22 @@
 - $ tox -e py312-postgres -- --settings=my_postgres_settings [015d5256]
 - $ tox -l py3 black blacken-docs flake8>=3.7.0 docs isort>=7.0.0 lint-docs zizmor>=1.19.0 [a37b456d]
 - .. code-block:: python :caption: ``tests/app_label/tests.py`` [c7cb1f56]
+- ...\> set DJANGO_SETTINGS_MODULE=my_postgres_settings ...\> tox -e py312-postgres [10975f38]
 - In order to make sure the models defined within the context of :func:`~django.test.utils.isolate_apps` instances are correctly installed, you should pass the set of targeted ``app_label`` as arguments: [e86e5eed]
 - Models defined in a test method with no explicit :attr:`~django.db.models.Options.app_label` are automatically assigned the label of the app in which their test class is located. [6cc0b8a5]
 - class SeleniumTests(SeleniumTestCase): @screenshot_cases(["desktop_size", "mobile_size", "rtl", "dark", "high_contrast"]) def test_login_button_centered(self): self.selenium.get(self.live_server_url + reverse("admin:login")) self.take_screenshot("login") ... [fb319690]
 - class TestModelDefinition(SimpleTestCase): @isolate_apps("app_label") def test_model_definition(self): class TestModel(models.Model): pass [9ca2aa17]
+- from django.db import models from django.test import SimpleTestCase from django.test.utils import isolate_apps [4c49fc61b7ed53de-2]
 - from django.test.selenium import SeleniumTestCase, screenshot_cases from django.urls import reverse [3dc6ba99]
 - objc[42074]: +[__NSPlaceholderDate initialize] may have been in progress in another thread when fork() was called. [49c1c36b]
-- $ ./runtests.py --selenium=firefox,chrome [2af4cb6e]
-- $ ./runtests.py --settings=path.to.settings generic_relations i18n [57e2a9f2]
-- $ ./runtests.py --start-after=wsgi [e7e4c59e]
 
 ## All facts
 
+- [2af4cb6e] $ ./runtests.py --selenium=firefox,chrome
+- [57e2a9f2] $ ./runtests.py --settings=path.to.settings generic_relations i18n
 - [78ec7507] $ ./runtests.py --settings=path.to.settings i18n.tests.TranslationTests
 - [676b8f15] $ ./runtests.py --settings=path.to.settings i18n.tests.TranslationTests.test_lazy_objects
+- [e7e4c59e] $ ./runtests.py --start-after=wsgi
 - [aa35972b] $ ./runtests.py --start-at=wsgi
 - [15652fe0] $ coverage combine
 - [b2bf88d8] $ coverage html
@@ -108,6 +110,7 @@
 - [bc04d64f] By default tests are run in parallel with one process per core. When the tests are run in parallel, however, you'll only see a truncated traceback for any test failures. You can adjust this behavior with the ``--parallel`` option:
 - [e7596b47] By default, ``tox`` runs the test suite with the bundled test settings file for SQLite, ``black``, ``blacken-docs``, ``flake8``, ``isort``, ``lint-docs``, ``zizmor``, and the documentation spelling checker. In addition to the system dependencies noted elsewhere in this documentation, the command ``python3`` must be on your path and linked to the appropriate version of Python. A list of default environments can be seen as follows:
 - [bb4c706d] Code coverage -------------
+- [06d6c8ef] Code coverage on pull requests ------------------------------
 - [2af19c22] Contrib apps ============
 - [97b18f26] Contributors are encouraged to run coverage on the test suite to identify areas that need additional tests. The coverage tool installation and use is described in :ref:`testing code coverage<topics-testing-code-coverage>`.
 - [a11a4641] Django comes with a test suite of its own, in the ``tests`` directory of the code base. It's our policy to make sure all tests pass at all times.

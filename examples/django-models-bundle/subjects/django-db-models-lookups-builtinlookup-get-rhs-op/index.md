@@ -1,11 +1,11 @@
 # django/db/models/lookups::BuiltinLookup.get_rhs_op
 
-- Subject: django/db/models/lookups::BuiltinLookup.get_rhs_op (id `208b8850-0eed-43de-9162-8b127c60eb96`)
+- Subject: django/db/models/lookups::BuiltinLookup.get_rhs_op (id `e76cad18-e1ae-44b1-be93-617db89ab167`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

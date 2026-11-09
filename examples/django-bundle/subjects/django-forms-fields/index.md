@@ -1,10 +1,10 @@
 # django/forms/fields
 
-- Subject: django/forms/fields (id `44668c3a-3aac-4fe7-bc00-baafb431792d`)
+- Subject: django/forms/fields (id `58baa5da-4d40-4350-9070-b25d0ca53451`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 10819 tokens
-- Facts shown: 145 of 152
+- Used: 11112 tokens
+- Facts shown: 152 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -56,6 +56,7 @@
 - [add6ad7d] def __init__(self, fields, **kwargs): super().__init__(**kwargs) # Set 'required' to False on the individual fields, because the # required validation will be handled by ComboField, not by those # individual fields. for f in fields: f.required = False self.fields = fields
 - [bda24cff] def __init__(self, fields, *, require_all_fields=True, **kwargs): self.require_all_fields = require_all_fields super().__init__(**kwargs) for f in fields: f.error_messages.setdefault("incomplete", self.error_messages["incomplete"]) if self.disabled: f.disabled = True if self.require_all_fields: # Set 'required' to False on the individual fields, because the # required validation will be handled by MultiValueField, not # by those individual fields. f.required = False self.fields = fields
 - [603dddf4] def _clean_bound_field(self, bf): value = bf.initial if self.disabled else bf.data return self.clean(value)
+- [05767810] def _clean_bound_field(self, bf): value = bf.initial if self.disabled else bf.data return self.clean(value, bf.initial)
 - [be22b36e] def _coerce(self, value): """ Validate that the value can be coerced to the right type (if not empty). """ if value == self.empty_value or value in self.empty_values: return self.empty_value try: value = self.coerce(value) except (ValueError, TypeError, ValidationError): raise ValidationError( self.error_messages["invalid_choice"], code="invalid_choice", params={"value": value}, ) return value
 - [ba91d566] def _coerce(self, value): """ Validate that the values are in self.choices and can be coerced to the right type. """ if value == self.empty_value or value in self.empty_values: return self.empty_value new_value = [] for choice in value: try: new_value.append(self.coerce(choice)) except (ValueError, TypeError, ValidationError): raise ValidationError( self.error_messages["invalid_choice"], code="invalid_choice", params={"value": choice}, ) return new_value
 - [7ec8de62] def _get_regex(self): return self._regex
@@ -68,6 +69,7 @@
 - [561a7cc4] def clean(self, value): """ Validate the given value against all of self.fields, which is a list of Field instances. """ super().clean(value) for field in self.fields: value = field.clean(value) return value
 - [0056fcef] def clean(self, value): """ Validate the given value and return its "cleaned" value as an appropriate Python object. Raise ValidationError for any errors. """ value = self.to_python(value) self.validate(value) self.run_validators(value) return value
 - [4fb872191a392972] def clean(self, value): value = super().clean(value) return self._coerce(value)
+- [4fb872191a392972-2] def clean(self, value): value = super().clean(value) return self._coerce(value)
 - [e3c2f802] def compress(self, data_list): """ Return a single value for the given list of values. The values can be assumed to be valid.
 - [be5cb6a8] def compress(self, data_list): if data_list: # Raise a validation error if time or date is empty # (possible if SplitDateTimeField has required=False). if data_list[0] in self.empty_values: raise ValidationError( self.error_messages["invalid_date"], code="invalid_date" ) if data_list[1] in self.empty_values: raise ValidationError( self.error_messages["invalid_time"], code="invalid_time" ) result = datetime.datetime.combine(*data_list) return from_current_timezone(result) return None
 - [92af837f] def get_bound_field(self, form, field_name): """ Return a BoundField instance that will be used when accessing the form field in a template. """ bound_field_class = ( self.bound_field_class or form.bound_field_class or BoundField ) return bound_field_class(form, self, field_name)
@@ -86,6 +88,8 @@
 - [8107475e] def set_choices(self): if self.required: self.choices = [] else: self.choices = [("", get_blank_choice_label())]
 - [05d3c16c] def strptime(self, value, format): raise NotImplementedError("Subclasses must define this method.")
 - [916255dd] def strptime(self, value, format): return datetime.datetime.strptime(value, format)
+- [5ca583c1] def strptime(self, value, format): return datetime.datetime.strptime(value, format).date()
+- [bec22a1a] def strptime(self, value, format): return datetime.datetime.strptime(value, format).time()
 - [24fca4c8] def to_python(self, data): """ Check that the file-upload field data contains a valid image (GIF, JPG, PNG, etc. -- whatever Pillow supports). """ f = super().to_python(data) if f is None: return None
 - [3fcea77d] def to_python(self, data): if data in self.empty_values: return None
 - [a34fdeaa] def to_python(self, value): """ Explicitly check for the string 'True' and 'False', which is what a hidden field will submit for True and False, for 'true' and 'false', which are likely to be returned by JavaScript serializations of forms, and for '1' and '0', which is what a RadioField will submit. Unlike the Booleanfield, this field must check for True because it doesn't use the bool() function. """ if value in (True, "True", "true", "1"): return True elif value in (False, "False", "false", "0"): return False else: return None
@@ -93,9 +97,11 @@
 - [a60fc66c] def to_python(self, value): """ Validate that int() can be called on the input. Return the result of int() or None for empty values. """ value = super().to_python(value) if value in self.empty_values: return None if self.localize: value = formats.sanitize_separators(value) # Strip trailing decimal and zeros. try: value = int(self.re_decimal.sub("", str(value))) except (ValueError, TypeError): raise ValidationError(self.error_messages["invalid"], code="invalid") return value
 - [32db8b61] def to_python(self, value): """ Validate that the input can be converted to a date. Return a Python datetime.date object. """ if value in self.empty_values: return None if isinstance(value, datetime.datetime): return value.date() if isinstance(value, datetime.date): return value return super().to_python(value)
 - [ee95dc49] def to_python(self, value): """ Validate that the input can be converted to a datetime. Return a Python datetime.datetime object. """ if value in self.empty_values: return None if isinstance(value, datetime.datetime): return from_current_timezone(value) if isinstance(value, datetime.date): result = datetime.datetime(value.year, value.month, value.day) return from_current_timezone(result) try: result = parse_datetime(value.strip()) except ValueError: raise ValidationError(self.error_messages["invalid"], code="invalid") if not result: result = super().to_python(value) return from_current_timezone(result)
+- [c8845e06] def to_python(self, value): """ Validate that the input can be converted to a time. Return a Python datetime.time object. """ if value in self.empty_values: return None if isinstance(value, datetime.time): return value return super().to_python(value)
 - [3d244168] def to_python(self, value): """ Validate that the input is a decimal number. Return a Decimal instance or None for empty values. Ensure that there are no more than max_digits in the number and no more than decimal_places digits after the decimal point. """ if value in self.empty_values: return None if self.localize: value = formats.sanitize_separators(value) try: value = Decimal(str(value)) except DecimalException: raise ValidationError(self.error_messages["invalid"], code="invalid") return value
 - [7580973c] def to_python(self, value): """Return a Python boolean object.""" # Explicitly check for the string 'False', which is what a hidden field # will submit for False. Also check for '0', since this is what # RadioSelect will provide. Because bool("True") == bool('1') == True, # we don't need to handle that explicitly. if isinstance(value, str) and value.lower() in ("false", "0"): value = False else: value = bool(value) return super().to_python(value)
 - [c351be4f] def to_python(self, value): """Return a string.""" if value in self.empty_values: return "" return str(value)
+- [efb2477a] def to_python(self, value): """Return a string.""" if value not in self.empty_values: value = str(value) if self.strip: value = value.strip() if value in self.empty_values: return self.empty_value return value
 - [3b34b233] def to_python(self, value): if not value: return [] elif not isinstance(value, (list, tuple)): raise ValidationError( self.error_messages["invalid_list"], code="invalid_list" ) return [str(val) for val in value]
 - [47579677] def to_python(self, value): if self.disabled: return value if value in self.empty_values: return None elif isinstance(value, (list, dict, int, float, JSONString)): return value try: converted = json.loads(value, cls=self.decoder) except json.JSONDecodeError: raise ValidationError( self.error_messages["invalid"], code="invalid", params={"value": value}, ) if isinstance(converted, str): return JSONString(converted) else: return converted
 - [284af485] def to_python(self, value): if value in self.empty_values: return "" value = value.strip() if value and ":" in value: return clean_ipv6_address( value, self.unpack_ipv4, max_length=self.max_length ) return value
@@ -111,6 +117,7 @@
 - [57ae02b6] def validate(self, value): if value != self.empty_value: super().validate(value) elif self.required: raise ValidationError(self.error_messages["required"], code="required")
 - [2f3c65e4] def validate(self, value): if value in self.empty_values and self.required: raise ValidationError(self.error_messages["required"], code="required")
 - [1b7e20ea12a84abb] def validate(self, value): pass
+- [1b7e20ea12a84abb-2] def validate(self, value): pass
 - [3c2812e0] def validate(self, value): super().validate(value) if value in self.empty_values: return if not math.isfinite(value): raise ValidationError(self.error_messages["invalid"], code="invalid")
 - [fe6d0c0b] def validate(self, value): super().validate(value) if value in self.empty_values: return if not value.is_finite(): raise ValidationError( self.error_messages["invalid"], code="invalid", params={"value": value}, )
 - [302a32fa] def widget_attrs(self, widget): """ Given a Widget instance (*not* a Widget class), return a dictionary of any HTML attributes that should be added to the Widget, based on this Field. """ return {}

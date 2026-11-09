@@ -1,6 +1,6 @@
 # Fact a5c536a8
 
-Store id: e674b4f4-bd8d-4cc5-9431-56c708039da6
+Store id: 2f77d253-ac02-4c13-bf54-dd3676fc3dda
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_supported(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8367580+00:00`
+- posted_at: `2026-11-09T23:44:50.9361800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 54,
     "symbol": "JSONField._check_supported"
   },
-  "id": "e674b4f4-bd8d-4cc5-9431-56c708039da6",
+  "id": "2f77d253-ac02-4c13-bf54-dd3676fc3dda",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8367580+00:00"
+    "posted_at": "2026-11-09T23:44:50.9361800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bc44cca4-4626-4df0-8e22-592dbd08167c",
+  "subject_id": "74952910-2484-416a-b7f0-d6516fb13351",
   "subject_name": "django/db/models/fields/json::JSONField._check_supported",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformTextLookupMixin
 
-- Subject: django/db/models/fields/json::KeyTransformTextLookupMixin (id `3d87411b-619b-47f9-898b-13e0c56c9a6b`)
+- Subject: django/db/models/fields/json::KeyTransformTextLookupMixin (id `74cb5747-764d-42c0-a9cd-b6c7d0afbec2`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

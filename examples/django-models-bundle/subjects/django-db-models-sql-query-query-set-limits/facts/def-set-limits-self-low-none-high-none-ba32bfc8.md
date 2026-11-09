@@ -1,6 +1,6 @@
 # Fact ba32bfc8
 
-Store id: 4888117a-1ab0-4abe-9ab4-85a41e436017
+Store id: cbbed271-1f31-493e-baa8-06774ee9d4a2
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_limits(self, low=None, high=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0156060+00:00`
+- posted_at: `2026-11-09T23:44:58.9297530+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2189,
     "symbol": "Query.set_limits"
   },
-  "id": "4888117a-1ab0-4abe-9ab4-85a41e436017",
+  "id": "cbbed271-1f31-493e-baa8-06774ee9d4a2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0156060+00:00"
+    "posted_at": "2026-11-09T23:44:58.9297530+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f83b2942-824d-4461-9ec0-b15458bd4968",
+  "subject_id": "73bbc9f8-ab3f-4ed7-ab08-46dadf5766ab",
   "subject_name": "django/db/models/sql/query::Query.set_limits",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.formfield
 
-- Subject: django/db/models/fields/related::ForeignKey.formfield (id `ceddf4d2-5d5c-4467-b77f-c62ea27f8c17`)
+- Subject: django/db/models/fields/related::ForeignKey.formfield (id `14f38828-c95f-45a7-885f-7f65a06feb71`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

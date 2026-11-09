@@ -1,10 +1,10 @@
 # docs/ref/contrib/contenttypes
 
-- Subject: docs/ref/contrib/contenttypes (id `1e4feb66-2e2c-40d4-94c8-7c755278a2cc`)
+- Subject: docs/ref/contrib/contenttypes (id `379f21ec-ea17-4229-9df0-ea115fcb9b4a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 7662 tokens
-- Facts shown: 157 of 157
+- Facts shown: 157 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/template/backends/jinja2
 
-- Subject: django/template/backends/jinja2 (id `e62621e5-d71e-47d3-95c5-21d9e414b314`)
+- Subject: django/template/backends/jinja2 (id `4726965c-0065-4778-bf7b-6679f2160066`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1017 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

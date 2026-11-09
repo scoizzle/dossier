@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Ceil
 
-- Subject: django/db/models/functions/math::Ceil (id `69704df4-f1ce-4103-bc98-6c19c854a1aa`)
+- Subject: django/db/models/functions/math::Ceil (id `416c9a23-b574-4662-a6ab-c987b9eca9eb`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/install/index
 
-- Subject: docs/ref/contrib/gis/install/index (id `d00372ce-2035-49bc-9642-6238fa298c2a`)
+- Subject: docs/ref/contrib/gis/install/index (id `f7636a26-d2f4-4a13-a7da-e6650ee9345e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5039 tokens
-- Facts shown: 140 of 140
+- Facts shown: 140 facts
 - Conflicts: 0
 - Gaps: 0
 

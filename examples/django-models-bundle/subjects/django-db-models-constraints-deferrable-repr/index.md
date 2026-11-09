@@ -1,11 +1,11 @@
 # django/db/models/constraints::Deferrable.__repr__
 
-- Subject: django/db/models/constraints::Deferrable.__repr__ (id `1f95a56d-ca75-4b69-9bcc-87afb03ba65b`)
+- Subject: django/db/models/constraints::Deferrable.__repr__ (id `cf359688-bdda-4f49-a662-84b55cec0b1c`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

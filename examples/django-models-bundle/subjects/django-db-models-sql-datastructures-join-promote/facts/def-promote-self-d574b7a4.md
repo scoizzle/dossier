@@ -1,6 +1,6 @@
 # Fact d574b7a4
 
-Store id: 42daa12f-329b-417f-ba17-6807839fd42c
+Store id: d6f8f0ee-28f5-4e7d-9ea6-6e455f488022
 
 ## Text
 
@@ -20,7 +20,7 @@ def promote(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4768870+00:00`
+- posted_at: `2026-11-09T23:44:58.2400890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 175,
     "symbol": "Join.promote"
   },
-  "id": "42daa12f-329b-417f-ba17-6807839fd42c",
+  "id": "d6f8f0ee-28f5-4e7d-9ea6-6e455f488022",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4768870+00:00"
+    "posted_at": "2026-11-09T23:44:58.2400890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b6f6be94-3195-4f6c-8f02-93ad4fbfc61d",
+  "subject_id": "9617531e-b976-4060-950b-590646c6cde1",
   "subject_name": "django/db/models/sql/datastructures::Join.promote",
   "tags": [
     "entity:method"

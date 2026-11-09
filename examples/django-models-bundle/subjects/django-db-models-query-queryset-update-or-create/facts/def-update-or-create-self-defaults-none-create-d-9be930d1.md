@@ -1,6 +1,6 @@
 # Fact 9be930d1
 
-Store id: a6901164-87f7-4f27-bb3c-5ec83c63441b
+Store id: 3aa805b7-82cf-4492-9890-00f9f2e97432
 
 ## Text
 
@@ -20,7 +20,7 @@ def update_or_create(self, defaults=None, create_defaults=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4248220+00:00`
+- posted_at: `2026-11-09T23:44:55.9305340+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1095,
     "symbol": "QuerySet.update_or_create"
   },
-  "id": "a6901164-87f7-4f27-bb3c-5ec83c63441b",
+  "id": "3aa805b7-82cf-4492-9890-00f9f2e97432",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4248220+00:00"
+    "posted_at": "2026-11-09T23:44:55.9305340+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2443ea93-6971-4f84-8826-a8d8682d6144",
+  "subject_id": "42558a42-3a73-4d30-853b-a861d932bfcc",
   "subject_name": "django/db/models/query::QuerySet.update_or_create",
   "tags": [
     "entity:method"

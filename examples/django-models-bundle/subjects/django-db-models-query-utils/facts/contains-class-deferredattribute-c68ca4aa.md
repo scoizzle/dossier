@@ -1,6 +1,6 @@
 # Fact c68ca4aa
 
-Store id: df966189-49bb-4b12-8e6c-1b784b050bcb
+Store id: 1e3404a7-a3e5-4033-a12c-d21abd8ed9e3
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DeferredAttribute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "df966189-49bb-4b12-8e6c-1b784b050bcb",
+  "id": "1e3404a7-a3e5-4033-a12c-d21abd8ed9e3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DeferredAttribute"
       },
       "rel": "contains",
-      "target": "b467f470-ebc9-4b8f-8331-643618164d83"
+      "target": "8338ff95-1140-4fd5-9538-b536d54a7662"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:class"

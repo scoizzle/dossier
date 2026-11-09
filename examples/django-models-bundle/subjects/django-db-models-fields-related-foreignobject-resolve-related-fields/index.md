@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject.resolve_related_fields
 
-- Subject: django/db/models/fields/related::ForeignObject.resolve_related_fields (id `5b6ae9d7-f98d-4afb-93eb-1326ad75d68e`)
+- Subject: django/db/models/fields/related::ForeignObject.resolve_related_fields (id `ea6d7c21-7559-42d5-838e-841b811bfcbb`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

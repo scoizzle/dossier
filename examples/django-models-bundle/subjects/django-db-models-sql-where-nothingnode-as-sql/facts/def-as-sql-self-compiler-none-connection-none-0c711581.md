@@ -1,6 +1,6 @@
 # Fact 0c711581
 
-Store id: ca604e51-b84c-4e99-957d-13c8c1114394
+Store id: 3a6cefe5-61ca-4e50-9d19-bb660cda2f8c
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler=None, connection=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.7103580+00:00`
+- posted_at: `2026-11-09T23:44:59.8281740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 330,
     "symbol": "NothingNode.as_sql"
   },
-  "id": "ca604e51-b84c-4e99-957d-13c8c1114394",
+  "id": "3a6cefe5-61ca-4e50-9d19-bb660cda2f8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.7103580+00:00"
+    "posted_at": "2026-11-09T23:44:59.8281740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be70589f-d6c3-4b44-9f50-dbdb8c4a296a",
+  "subject_id": "b36fd69b-0ea6-430e-b380-e9bfab1ee00c",
   "subject_name": "django/db/models/sql/where::NothingNode.as_sql",
   "tags": [
     "entity:method"

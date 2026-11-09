@@ -1,6 +1,6 @@
 # Fact 3d87fd7a
 
-Store id: 4f5fca20-98f0-49ce-ba86-28438b4f4cc1
+Store id: 0bf479e7-2e87-4c63-a1e2-e93a742f5b5c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FetchRaise
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2320950+00:00`
+- posted_at: `2026-11-09T23:44:49.8213950+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4f5fca20-98f0-49ce-ba86-28438b4f4cc1",
+  "id": "0bf479e7-2e87-4c63-a1e2-e93a742f5b5c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2320950+00:00"
+    "posted_at": "2026-11-09T23:44:49.8213950+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FetchRaise"
       },
       "rel": "contains",
-      "target": "f715fece-43b8-414f-8295-94e6b3379c7f"
+      "target": "2403084c-d9a8-4cc3-b300-75409810ed03"
     }
   ],
   "status": "live",
-  "subject_id": "f8e0e3b5-43b0-4f06-860b-a7321ec7819a",
+  "subject_id": "702ebbab-e2d3-4f56-b7b2-7525b2ae3fde",
   "subject_name": "django/db/models/fetch_modes",
   "tags": [
     "entity:class"

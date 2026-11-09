@@ -1,6 +1,6 @@
 # Fact f503b480
 
-Store id: 923647b1-1cc0-47d3-bb45-ab2f486627b0
+Store id: 1583550c-b2a8-4cd0-a626-584d97cfb193
 
 ## Text
 
@@ -20,7 +20,7 @@ Home memo list renders cards newest first in a single column.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -73,7 +73,7 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "923647b1-1cc0-47d3-bb45-ab2f486627b0",
+  "id": "1583550c-b2a8-4cd0-a626-584d97cfb193",
   "items": [
     {
       "key": "card",
@@ -89,20 +89,20 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [
     {
       "basis": "observed",
       "kind": "fact",
       "rel": "contains",
-      "target": "66f68924-352c-43e5-bb6c-db0a98420274"
+      "target": "b10f135c-781f-4ad1-a60f-0c94d0a831c5"
     },
     {
       "basis": "observed",
       "kind": "fact",
       "rel": "contains",
-      "target": "eb162ac3-b6e5-4c55-b797-28e1b501faa2"
+      "target": "bb07c64e-35e7-475d-adab-464cb281ffd3"
     },
     {
       "basis": "observed",
@@ -113,7 +113,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:list"

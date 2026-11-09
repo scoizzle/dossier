@@ -1,10 +1,10 @@
 # django/core/checks/compatibility/django_4_0
 
-- Subject: django/core/checks/compatibility/django_4_0 (id `6c344322-eac8-460d-9909-ac0d795b3169`)
+- Subject: django/core/checks/compatibility/django_4_0 (id `1f1cbce5-8f06-48a0-a6c4-48e8aaaa7b01`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 145 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 94e7c401
 
-Store id: 70d0b5e8-6bc6-4f65-bbcd-509ab8b0e618
+Store id: a543beb3-66f7-4799-9c50-6566cd323bb6
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate(self, model, instance, exclude=None, using=DEFAULT_DB_ALIAS)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.3277230+00:00`
+- posted_at: `2026-11-09T23:44:48.7908880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 578,
     "symbol": "UniqueConstraint.validate"
   },
-  "id": "70d0b5e8-6bc6-4f65-bbcd-509ab8b0e618",
+  "id": "a543beb3-66f7-4799-9c50-6566cd323bb6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.3277230+00:00"
+    "posted_at": "2026-11-09T23:44:48.7908880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06e19da9-869f-4235-ace1-62b4692c59f0",
+  "subject_id": "d0aaf668-3877-4712-91f3-e5c012b315a0",
   "subject_name": "django/db/models/constraints::UniqueConstraint.validate",
   "tags": [
     "entity:method"

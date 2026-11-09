@@ -1,6 +1,6 @@
 # Fact 6ed79c0d
 
-Store id: cf7b88cc-e209-4179-90ec-2c6288afa70c
+Store id: f429a831-ff56-43b2-9a7b-86c01763b36b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5947520+00:00`
+- posted_at: `2026-11-09T23:44:50.1014450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1634,
     "symbol": "DateTimeField.get_internal_type"
   },
-  "id": "cf7b88cc-e209-4179-90ec-2c6288afa70c",
+  "id": "f429a831-ff56-43b2-9a7b-86c01763b36b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5947520+00:00"
+    "posted_at": "2026-11-09T23:44:50.1014450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "efc44464-1f61-429e-9704-f66a1c888e63",
+  "subject_id": "2e0d1cc3-4103-4caf-abe1-41d068faba3a",
   "subject_name": "django/db/models/fields/__init__::DateTimeField.get_internal_type",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 81ce8758
 
-Store id: 2781c6a7-5ad3-48e3-be09-dbe08ed3e3e8
+Store id: 118d3426-65fc-4de6-9c92-46440ef149ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_placeholder_sql(self, value, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8566870+00:00`
+- posted_at: `2026-11-09T23:44:50.2853960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2783,
     "symbol": "BinaryField.get_placeholder_sql"
   },
-  "id": "2781c6a7-5ad3-48e3-be09-dbe08ed3e3e8",
+  "id": "118d3426-65fc-4de6-9c92-46440ef149ee",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8566870+00:00"
+    "posted_at": "2026-11-09T23:44:50.2853960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c5f512b-d00f-40ce-a798-db11e88630f0",
+  "subject_id": "f5fb9001-5571-4399-bb1f-2c15c6c2d30b",
   "subject_name": "django/db/models/fields/__init__::BinaryField.get_placeholder_sql",
   "tags": [
     "entity:method"

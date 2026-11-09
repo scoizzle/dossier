@@ -1,6 +1,6 @@
 # Fact 2497b8f8
 
-Store id: a022b21d-7377-484f-aec5-63b4eee4729d
+Store id: ae431999-8aca-4c83-89a8-a8aaa51f10ef
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1710490+00:00`
+- posted_at: `2026-11-09T23:44:54.0702800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 102,
     "symbol": "ConcatPair.as_mysql"
   },
-  "id": "a022b21d-7377-484f-aec5-63b4eee4729d",
+  "id": "ae431999-8aca-4c83-89a8-a8aaa51f10ef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1710490+00:00"
+    "posted_at": "2026-11-09T23:44:54.0702800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7d1a98fb-f4c1-4bab-801e-e5e01d020e2e",
+  "subject_id": "4c42d918-48ad-408d-84d8-ab5d19482e9d",
   "subject_name": "django/db/models/functions/text::ConcatPair.as_mysql",
   "tags": [
     "entity:method"

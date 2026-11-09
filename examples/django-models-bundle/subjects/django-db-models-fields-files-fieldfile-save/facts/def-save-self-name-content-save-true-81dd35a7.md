@@ -1,6 +1,6 @@
 # Fact 81dd35a7
 
-Store id: c7d9fc79-7291-4f9e-9090-3186d2dc902a
+Store id: 40280bef-d794-4051-b8d5-c6535ce86fe3
 
 ## Text
 
@@ -20,7 +20,7 @@ def save(self, name, content, save=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3670560+00:00`
+- posted_at: `2026-11-09T23:44:50.6329670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "FieldFile.save"
   },
-  "id": "c7d9fc79-7291-4f9e-9090-3186d2dc902a",
+  "id": "40280bef-d794-4051-b8d5-c6535ce86fe3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3670560+00:00"
+    "posted_at": "2026-11-09T23:44:50.6329670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fd2c501d-f9dd-4360-95b5-e2a1d700e319",
+  "subject_id": "2f033681-92ec-4452-bb2f-94bf5aa6b947",
   "subject_name": "django/db/models/fields/files::FieldFile.save",
   "tags": [
     "entity:method"

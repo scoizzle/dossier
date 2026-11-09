@@ -1,6 +1,6 @@
 # Fact 309aef5b
 
-Store id: 484d526f-0556-4307-85bf-264bd0ac1b62
+Store id: 0ec9ccde-ca5a-4105-a0b6-132808d5c4e4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _is_pk_set(self, meta=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7364450+00:00`
+- posted_at: `2026-11-09T23:44:48.5300670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 710,
     "symbol": "Model._is_pk_set"
   },
-  "id": "484d526f-0556-4307-85bf-264bd0ac1b62",
+  "id": "0ec9ccde-ca5a-4105-a0b6-132808d5c4e4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7364450+00:00"
+    "posted_at": "2026-11-09T23:44:48.5300670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4066697a-60fe-41b9-b030-a7b7f35563f0",
+  "subject_id": "84a48eaa-24ea-4c8e-bb87-34bafc763c54",
   "subject_name": "django/db/models/base::Model._is_pk_set",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 857a322b
 
-Store id: 6fd00acc-9415-482c-bdff-866526df4047
+Store id: 144f4148-1468-470a-b7a2-16e5412be295
 
 ## Text
 
@@ -20,7 +20,7 @@ def _order_by_pairs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7095640+00:00`
+- posted_at: `2026-11-09T23:44:57.4582850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 338,
     "symbol": "SQLCompiler._order_by_pairs"
   },
-  "id": "6fd00acc-9415-482c-bdff-866526df4047",
+  "id": "144f4148-1468-470a-b7a2-16e5412be295",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7095640+00:00"
+    "posted_at": "2026-11-09T23:44:57.4582850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "44d7c050-743e-4373-8aa2-6a88d79fbb2c",
+  "subject_id": "5ae5b5e3-0a1f-45bb-a80f-fac070d4b2d2",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler._order_by_pairs",
   "tags": [
     "entity:method"

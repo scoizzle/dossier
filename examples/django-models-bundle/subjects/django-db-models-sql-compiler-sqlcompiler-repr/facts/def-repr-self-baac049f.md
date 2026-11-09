@@ -1,6 +1,6 @@
 # Fact baac049f
 
-Store id: 161b6b54-3390-4261-a666-f0290f1f200b
+Store id: f7905c5a-414a-42fb-b1d4-1f4f3e7a64aa
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.6626900+00:00`
+- posted_at: `2026-11-09T23:44:57.3868750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 67,
     "symbol": "SQLCompiler.__repr__"
   },
-  "id": "161b6b54-3390-4261-a666-f0290f1f200b",
+  "id": "f7905c5a-414a-42fb-b1d4-1f4f3e7a64aa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.6626900+00:00"
+    "posted_at": "2026-11-09T23:44:57.3868750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "acd752a6-17a8-4a2e-964c-8249aef09fd6",
+  "subject_id": "67abf3ba-1c33-4570-afab-5788ebddc681",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.__repr__",
   "tags": [
     "entity:method"

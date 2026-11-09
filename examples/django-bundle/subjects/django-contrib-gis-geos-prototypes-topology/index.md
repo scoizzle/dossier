@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prototypes/topology
 
-- Subject: django/contrib/gis/geos/prototypes/topology (id `77a6b105-83fa-43c2-8533-225b6bf55080`)
+- Subject: django/contrib/gis/geos/prototypes/topology (id `335fb58a-f9c1-4c7c-8c26-16b006c45a32`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 662 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

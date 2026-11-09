@@ -1,6 +1,6 @@
 # Fact 2c171f21
 
-Store id: 9acd5ee9-06f4-4a8d-a77a-2a87da4920dc
+Store id: 236f6f90-3638-4d4e-ad12-9fd3e8507888
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_fields(self, field_names, allow_m2m=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0633800+00:00`
+- posted_at: `2026-11-09T23:44:58.9780060+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2267,
     "symbol": "Query.add_fields"
   },
-  "id": "9acd5ee9-06f4-4a8d-a77a-2a87da4920dc",
+  "id": "236f6f90-3638-4d4e-ad12-9fd3e8507888",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0633800+00:00"
+    "posted_at": "2026-11-09T23:44:58.9780060+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e7f86788-3375-4afe-aee1-1a03ba5d8d6d",
+  "subject_id": "8c7f142d-f757-44a4-843e-3c2eff5adf18",
   "subject_name": "django/db/models/sql/query::Query.add_fields",
   "tags": [
     "entity:method"

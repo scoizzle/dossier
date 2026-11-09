@@ -1,6 +1,6 @@
 # Fact 64b34ec5
 
-Store id: e648ce01-3ef9-4c75-b185-3fbd4204983c
+Store id: d52d0060-250f-454e-9540-1347017e7521
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_one(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1592980+00:00`
+- posted_at: `2026-11-09T23:44:51.8514600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 279,
     "symbol": "ForwardManyToOneDescriptor.fetch_one"
   },
-  "id": "e648ce01-3ef9-4c75-b185-3fbd4204983c",
+  "id": "d52d0060-250f-454e-9540-1347017e7521",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1592980+00:00"
+    "posted_at": "2026-11-09T23:44:51.8514600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7108e254-e41c-49d7-83d9-09c54d902191",
+  "subject_id": "d6678eed-1d62-495d-81f3-334d9b9bdb77",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.fetch_one",
   "tags": [
     "entity:method"

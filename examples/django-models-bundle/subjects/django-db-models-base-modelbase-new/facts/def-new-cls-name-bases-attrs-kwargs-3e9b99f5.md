@@ -1,6 +1,6 @@
 # Fact 3e9b99f5
 
-Store id: 3e7ce5af-83d7-4ad7-9ebf-be083fc88193
+Store id: c0c27858-eeae-42c9-a647-9e9b06ece912
 
 ## Text
 
@@ -20,7 +20,7 @@ def __new__(cls, name, bases, attrs, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7263460+00:00`
+- posted_at: `2026-11-09T23:44:48.5202010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 98,
     "symbol": "ModelBase.__new__"
   },
-  "id": "3e7ce5af-83d7-4ad7-9ebf-be083fc88193",
+  "id": "c0c27858-eeae-42c9-a647-9e9b06ece912",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7263460+00:00"
+    "posted_at": "2026-11-09T23:44:48.5202010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "24730b32-cc31-443c-a60e-7b739b51363b",
+  "subject_id": "1d90e620-97d0-42b4-aa50-71e36f829d8f",
   "subject_name": "django/db/models/base::ModelBase.__new__",
   "tags": [
     "entity:method"

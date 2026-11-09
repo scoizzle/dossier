@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/apache-auth
 
-- Subject: docs/howto/deployment/wsgi/apache-auth (id `8f8604e6-24d2-4682-81e5-a6a33dd064dd`)
+- Subject: docs/howto/deployment/wsgi/apache-auth (id `c88d3983-7574-432a-952e-dfb230e5850d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1605 tokens
-- Facts shown: 40 of 42
+- Used: 1690 tokens
+- Facts shown: 42 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,12 +13,14 @@
 - LoadModule auth_basic_module modules/mod_auth_basic.so LoadModule authz_user_module modules/mod_authz_user.so [0861217f]
 - .. code-block:: apache [1e18959e4cc41bff]
 - <Location "/secret"> AuthType Basic AuthName "Top Secret" AuthBasicProvider wsgi WSGIAuthUserScript /path/to/mysite.com/mysite/wsgi.py WSGIAuthGroupScript /path/to/mysite.com/mysite/wsgi.py Require group secret-agents Require valid-user </Location> [e435e24f]
+- <Location "/secret"> AuthType Basic AuthName "Top Secret" Require valid-user AuthBasicProvider wsgi WSGIAuthUserScript /path/to/mysite.com/mysite/wsgi.py </Location> [c182866c]
 - Make sure that ``mod_auth_basic`` and ``mod_authz_user`` are loaded. [642c3ef1]
 - The use of ``WSGIApplicationGroup %{GLOBAL}`` in the configurations below presumes that your Apache instance is running only one Django application. If you are running more than one Django application, please refer to the `Defining Application Groups`_ section of the mod_wsgi docs for more information about this setting. [650e8184]
 - These might be compiled statically into Apache, or you might need to use LoadModule to load them dynamically in your ``httpd.conf``: [cc7f2932]
 - WSGIProcessGroup %{GLOBAL} WSGIApplicationGroup %{GLOBAL} [808b57a1301d2241]
 - WSGIProcessGroup %{GLOBAL} WSGIApplicationGroup %{GLOBAL} [808b57a1301d2241-2]
 - WSGIScriptAlias / /path/to/mysite.com/mysite/wsgi.py [b252bc2a3a786de2]
+- WSGIScriptAlias / /path/to/mysite.com/mysite/wsgi.py WSGIPythonPath /path/to/mysite.com [614d2300]
 - application = WSGIHandler() [522ca3c7]
 - from django.contrib.auth.handlers.modwsgi import check_password [93e7b7cc]
 - from django.contrib.auth.handlers.modwsgi import check_password, groups_for_user [6d5bf289]
@@ -35,12 +37,12 @@
 - .. code-block:: apache [1e18959e4cc41bff-3]
 - .. code-block:: python [dfa717732ab88b73]
 - .. note:: [942ae6c11625c81c-4]
-- ============================================================== How to authenticate against Django's user database from Apache ============================================================== [8e4176bb]
-- Authentication with ``mod_wsgi`` ================================ [d4f80b3a]
 
 ## All facts
 
 - [7494fac1] .. note:: If you have installed a :ref:`custom user model <auth-custom-user>` and want to use this default auth handler, it must support an ``is_active`` attribute. If you want to use group based authorization, your custom user must have a relation named 'groups', referring to a related object that has a 'name' field. You can also specify your own custom mod_wsgi auth handler if your custom cannot conform to these requirements.
+- [8e4176bb] ============================================================== How to authenticate against Django's user database from Apache ==============================================================
+- [d4f80b3a] Authentication with ``mod_wsgi`` ================================
 - [2ad1a693] Authorization with ``mod_wsgi`` and Django groups -------------------------------------------------
 - [25020f0e] Finally, edit your WSGI script ``mysite.wsgi`` to tie Apache's authentication to your site's authentication mechanisms by importing the ``check_password`` function::
 - [e28172fe] In this case, the Apache configuration should look like this:

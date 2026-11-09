@@ -1,6 +1,6 @@
 # Fact d380cbb3
 
-Store id: 6fa939cb-b6f1-44b4-b955-8125421ee836
+Store id: e9570b55-6dd3-4a73-bd75-c658cf2c4d1f
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_to_attr_attribute(instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8428930+00:00`
+- posted_at: `2026-11-09T23:44:56.3245590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2831,
     "symbol": "get_prefetcher.is_to_attr_fetched.has_to_attr_attribute"
   },
-  "id": "6fa939cb-b6f1-44b4-b955-8125421ee836",
+  "id": "e9570b55-6dd3-4a73-bd75-c658cf2c4d1f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8428930+00:00"
+    "posted_at": "2026-11-09T23:44:56.3245590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8062a76b-e33b-4953-981e-7e1d4cc481ab",
+  "subject_id": "9a6be4ae-76f6-46c9-88a0-140a648ae1b4",
   "subject_name": "django/db/models/query::get_prefetcher.is_to_attr_fetched.has_to_attr_attribute",
   "tags": [
     "entity:function"

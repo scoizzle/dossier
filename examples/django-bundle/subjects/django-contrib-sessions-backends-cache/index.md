@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/cache
 
-- Subject: django/contrib/sessions/backends/cache (id `4832c844-eba0-49f1-8aa3-50de96b4eebb`)
+- Subject: django/contrib/sessions/backends/cache (id `c59fe0c8-8adf-47c9-a2e8-fa880e9863b7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1089 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

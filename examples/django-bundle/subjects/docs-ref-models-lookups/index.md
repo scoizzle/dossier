@@ -1,10 +1,10 @@
 # docs/ref/models/lookups
 
-- Subject: docs/ref/models/lookups (id `83163891-aad6-4816-a220-7ff9df1150dd`)
+- Subject: docs/ref/models/lookups (id `cd3040b7-8dd9-479e-bccc-6674e29cf2e3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2934 tokens
-- Facts shown: 70 of 73
+- Used: 3018 tokens
+- Facts shown: 73 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -54,6 +54,7 @@
 - [f57e1331] Defines the type of class returned by the ``get_lookup()`` method. It must be a :class:`~django.db.models.Field` instance.
 - [0ebd1f9d] Generates the SQL fragment for the expression. Returns a tuple ``(sql, params)``, where ``sql`` is the SQL string, and ``params`` is the list or tuple of query parameters. The ``compiler`` is an ``SQLCompiler`` object, which has a ``compile()`` method that can be used to compile other expressions. The ``connection`` is the connection used to execute the query.
 - [c37dbc3c] Must return the lookup named ``lookup_name``. For instance, by returning ``self.output_field.get_lookup(lookup_name)``.
+- [dbbea68d] Must return the lookup named ``transform_name``. For instance, by returning ``self.output_field.get_transform(transform_name)``.
 - [7c104639] The notation to use a ``Transform`` in a lookup expression is ``<expression>__<transformation>`` (e.g. ``date__year``).
 - [5298b900] The primary notation to use a lookup in an expression is ``<lhs>__<lookup_name>=<rhs>``. Lookups can also be used directly in ``QuerySet`` filters::
 - [68a70f84] This class follows the :ref:`Query Expression API <query-expression>`, which implies that you can use ``<expression>__<transform1>__<transform2>``. It's a specialized :ref:`Func() expression <func-expressions>` that only accepts one argument. It can also be used on the right hand side of a filter or directly as an annotation.
@@ -70,6 +71,8 @@
 - [3a368b18514a814b-13] .. currentmodule:: django.db.models
 - [9f5adfe6] .. method:: as_sql(compiler, connection)
 - [2b68146c] .. method:: as_vendorname(compiler, connection)
+- [f72035e4291ffb79-2] .. method:: get_lookup(lookup_name)
+- [82933397ffb0dabb-2] .. method:: get_transform(transform_name)
 - [a7f0b73e] .. module:: django.db.models.lookups :synopsis: Lookups API
 - [89c74e3e] ==================== Lookup API reference ====================
 - [a844ce35] A lookup expression consists of three parts:

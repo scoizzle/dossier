@@ -1,6 +1,6 @@
 # Fact 7cab34ad
 
-Store id: edc087bc-ab24-4fd4-a5bf-a362c7650866
+Store id: c39c5ce9-eec6-4360-b767-c3138e44d396
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_file(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3494690+00:00`
+- posted_at: `2026-11-09T23:44:50.6202220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 50,
     "symbol": "FieldFile._get_file"
   },
-  "id": "edc087bc-ab24-4fd4-a5bf-a362c7650866",
+  "id": "c39c5ce9-eec6-4360-b767-c3138e44d396",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3494690+00:00"
+    "posted_at": "2026-11-09T23:44:50.6202220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a1d6822-5e66-41da-a122-5c6dad9acfbe",
+  "subject_id": "46a62e00-2f6c-4867-bcf3-c3ef62cec3c1",
   "subject_name": "django/db/models/fields/files::FieldFile._get_file",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/aggregates::StringAgg.as_mysql
 
-- Subject: django/db/models/aggregates::StringAgg.as_mysql (id `374978fe-57ac-487a-9485-952bcfb30894`)
+- Subject: django/db/models/aggregates::StringAgg.as_mysql (id `f33c7741-3f71-470f-88ec-e6804599d01d`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

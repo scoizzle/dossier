@@ -1,10 +1,10 @@
 # django/core/signals
 
-- Subject: django/core/signals (id `b91e0238-7dda-4869-abcd-563a2f2a75ca`)
+- Subject: django/core/signals (id `69358f18-f457-4235-9c7e-8c419306aaf0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 58 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

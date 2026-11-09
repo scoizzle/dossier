@@ -1,6 +1,6 @@
 # Fact af17750b
 
-Store id: 47ba59f8-6313-4010-a4e8-a46042f1a604
+Store id: fda76032-3af4-46db-9464-1ea0e0335798
 
 ## Text
 
@@ -20,7 +20,7 @@ def subclass_exception(name, bases, module, attached_to)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7209300+00:00`
+- posted_at: `2026-11-09T23:44:48.5169550+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 72,
     "symbol": "subclass_exception"
   },
-  "id": "47ba59f8-6313-4010-a4e8-a46042f1a604",
+  "id": "fda76032-3af4-46db-9464-1ea0e0335798",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7209300+00:00"
+    "posted_at": "2026-11-09T23:44:48.5169550+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d57bf993-aac2-40fd-a059-d70983e50fc7",
+  "subject_id": "9340da12-636e-432e-a41a-f8a7e88df16e",
   "subject_name": "django/db/models/base::subclass_exception",
   "tags": [
     "entity:function"

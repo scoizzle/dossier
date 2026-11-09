@@ -1,6 +1,6 @@
 # Fact 8e66192e
 
-Store id: d6b09cd5-9065-43e5-baab-cd48f45fbe32
+Store id: 59bda9c1-4329-4d10-a40c-8d807761a768
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FetchMode
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2320950+00:00`
+- posted_at: `2026-11-09T23:44:49.8213950+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d6b09cd5-9065-43e5-baab-cd48f45fbe32",
+  "id": "59bda9c1-4329-4d10-a40c-8d807761a768",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2320950+00:00"
+    "posted_at": "2026-11-09T23:44:49.8213950+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FetchMode"
       },
       "rel": "contains",
-      "target": "06c6222b-d4e0-4173-9c5e-8fd5495de624"
+      "target": "d2100cbc-785e-48b9-b460-0ab83309219b"
     }
   ],
   "status": "live",
-  "subject_id": "f8e0e3b5-43b0-4f06-860b-a7321ec7819a",
+  "subject_id": "702ebbab-e2d3-4f56-b7b2-7525b2ae3fde",
   "subject_name": "django/db/models/fetch_modes",
   "tags": [
     "entity:class"

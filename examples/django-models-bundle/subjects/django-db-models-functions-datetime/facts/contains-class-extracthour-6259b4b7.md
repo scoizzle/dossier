@@ -1,6 +1,6 @@
 # Fact 6259b4b7
 
-Store id: 168688f4-3d88-4bc0-84ab-a9d474d854fd
+Store id: bef4ef84-e77e-4c95-9d10-d8ae37b61be6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractHour
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "168688f4-3d88-4bc0-84ab-a9d474d854fd",
+  "id": "bef4ef84-e77e-4c95-9d10-d8ae37b61be6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractHour"
       },
       "rel": "contains",
-      "target": "6e5af903-f9ee-4439-a6a1-fa6fa1b16ee9"
+      "target": "27821475-5fe1-46e3-88b1-d6c015fe8af8"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/collections
 
-- Subject: django/contrib/gis/geos/collections (id `5873bfac-f63a-4014-9b5c-29bac513b6da`)
+- Subject: django/contrib/gis/geos/collections (id `32f411e5-3b70-4433-ab48-94b0bfda8db1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1044 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

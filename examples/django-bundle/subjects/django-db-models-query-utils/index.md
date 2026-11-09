@@ -1,10 +1,10 @@
 # django/db/models/query_utils
 
-- Subject: django/db/models/query_utils (id `fadecec3-d791-4129-9e8f-7b062898fa7b`)
+- Subject: django/db/models/query_utils (id `9ec1049e-ba6f-4f99-aab5-5b15cdcae6cf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4812 tokens
-- Facts shown: 67 of 69
+- Used: 4911 tokens
+- Facts shown: 69 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - instance._state.fetch_mode.fetch(self, instance) if field_name not in data: # FETCH_PEERS may not load the field if the instance's row # was deleted after the queryset was evaluated. msg = f"{instance._meta.object_name} matching query does not exist." raise instance._meta.model.DoesNotExist(msg) else: data[field_name] = val return data[field_name] [6597d05e]
 - found = self._get_lookup(lookup_name) if found is None and hasattr(self, "output_field"): return self.output_field.get_lookup(lookup_name) if found is not None and not issubclass(found, Lookup): return None return found [e17110f8]
+- found = self._get_lookup(lookup_name) if found is None and hasattr(self, "output_field"): return self.output_field.get_transform(lookup_name) if found is not None and not issubclass(found, Transform): return None return found [f116279a]
 - obj = self.create(connector=conn) obj.add(self, conn) obj.add(other, conn) return obj [f39de080]
 - query = Query(None) for name, value in against.items(): if not hasattr(value, "resolve_expression"): value = Value(value) query.add_annotation(value, name, select=False) query.add_annotation(Value(1), "_check") connection = connections[using] # This will raise a FieldError if a field is missing in "against". query.add_q(self) compiler = query.get_compiler(using=using) context_manager = ( transaction.atomic(using=using) if connection.in_atomic_block else nullcontext() ) try: with context_manager: return compiler.execute_sql(SINGLE) is not None except DatabaseError as e: logger.warning("Got a database error calling check() on %r: %s", self, e) return True [8f88e786]
 - return { child.split(LOOKUP_SEP, 1)[0] for child in query.get_children_from_q(self) } [01a13552]
@@ -19,11 +20,11 @@
 - # If the field is a primary key, then doing a query against the field's # model is ok, too. Consider the case: # class Restaurant(models.Model): # place = OneToOneField(Place, primary_key=True): # Restaurant.objects.filter(pk__in=Restaurant.objects.all()). # If we didn't have the primary key check, then pk__in (== place__in) would # give Place's opts as the target opts, but Restaurant isn't compatible # with that. This logic applies only to primary keys, as when doing # __in=qs, we are going to turn this into __in=qs.values('pk') later on. return check(target_opts) or ( getattr(field, "primary_key", False) and check(field.model._meta) ) [c7e830b8]
 - @cached_property def identity(self): path, args, kwargs = self.deconstruct() identity = [path, *kwargs.items()] for child in args: if isinstance(child, tuple): arg, value = child value = make_hashable(value) identity.append((arg, value)) else: identity.append(child) return tuple(identity) [38b4639b]
 - @cached_property def referenced_base_fields(self): """ Retrieve all base fields referenced directly or through F expressions excluding any fields referenced through joins. """ # Avoid circular imports. from django.db.models.sql import query [33df6783]
-- @classmethod def _check_connector(cls, connector): if connector not in cls.connectors: connector_reprs = ", ".join(f"{conn!r}" for conn in cls.connectors[1:]) raise ValueError(f"connector must be one of {connector_reprs}, or None.") [e66acbd3]
 - @classmethod def _clear_cached_class_lookups(cls): for subclass in subclasses(cls): subclass.get_class_lookups.cache_clear() [da760896]
 
 ## All facts
 
+- [e66acbd3] @classmethod def _check_connector(cls, connector): if connector not in cls.connectors: connector_reprs = ", ".join(f"{conn!r}" for conn in cls.connectors[1:]) raise ValueError(f"connector must be one of {connector_reprs}, or None.")
 - [49d06e65] @classmethod def create(cls, children=None, connector=None, negated=False): cls._check_connector(connector) return super().create(children=children, connector=connector, negated=negated)
 - [ff5766aa] @functools.cache def get_class_lookups(cls): class_lookups = [ parent.__dict__.get("class_lookups", {}) for parent in inspect.getmro(cls) ] return cls.merge_dicts(class_lookups)
 - [99ff28aa] @staticmethod def merge_dicts(dicts): """ Merge dicts in reverse to preference the order of the original list. e.g., merge_dicts([a, b]) will preference the keys in 'a' over those in 'b'. """ merged = {} for d in reversed(dicts): merged.update(d) return merged
@@ -56,6 +57,7 @@
 - [722e23d8] def flatten(self): """ Recursively yield this Q object and all subexpressions, in depth-first order. """ yield self for child in self.children: if isinstance(child, tuple): # Use the lookup. child = child[1] if hasattr(child, "flatten"): yield from child.flatten() else: yield child
 - [970ee4ca] def get_instance_lookups(self): class_lookups = self.get_class_lookups() if instance_lookups := getattr(self, "instance_lookups", None): return {**class_lookups, **instance_lookups} return class_lookups
 - [2b0ecd46] def get_lookup(self, lookup_name): from django.db.models.lookups import Lookup
+- [2ebb24c7] def get_transform(self, lookup_name): from django.db.models.lookups import Transform
 - [9994a1e9] def register_class_lookup(cls, lookup, lookup_name=None): if lookup_name is None: lookup_name = lookup.lookup_name if "class_lookups" not in cls.__dict__: cls.class_lookups = {} cls.class_lookups[lookup_name] = lookup cls._clear_cached_class_lookups() return lookup
 - [17705efc] def register_instance_lookup(self, lookup, lookup_name=None): if lookup_name is None: lookup_name = lookup.lookup_name if "instance_lookups" not in self.__dict__: self.instance_lookups = {} self.instance_lookups[lookup_name] = lookup return lookup
 - [03102fa6] def relabeled_clone(self, change_map): clone = self.clone() if resolved_condition := clone.resolved_condition: clone.resolved_condition = resolved_condition.relabeled_clone(change_map) return clone

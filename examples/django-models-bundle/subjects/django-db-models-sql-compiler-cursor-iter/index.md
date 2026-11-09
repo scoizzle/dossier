@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::cursor_iter
 
-- Subject: django/db/models/sql/compiler::cursor_iter (id `1fd19681-3402-44b7-b123-c8ec1090187c`)
+- Subject: django/db/models/sql/compiler::cursor_iter (id `89def0e0-3f76-4740-8f18-9ec9f2c96522`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

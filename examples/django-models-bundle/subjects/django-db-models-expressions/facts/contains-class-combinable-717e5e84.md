@@ -1,6 +1,6 @@
 # Fact 717e5e84
 
-Store id: 14c87554-5e1d-4f95-b543-a6d6cc87f9ef
+Store id: 62cd96e3-565e-4483-8086-052479adb08f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Combinable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "14c87554-5e1d-4f95-b543-a6d6cc87f9ef",
+  "id": "62cd96e3-565e-4483-8086-052479adb08f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Combinable"
       },
       "rel": "contains",
-      "target": "2d6a5fe9-56d1-4d3b-983b-e087dc58eea2"
+      "target": "5c51edf3-53b1-47a5-97cc-9ad16b57d315"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

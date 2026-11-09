@@ -1,6 +1,6 @@
 # Fact 2e4e9d8b
 
-Store id: af60abce-5c80-41d3-ad89-ac0329ef20b9
+Store id: 49cae545-fd1f-4b17-a02d-2f6eb52ed3dc
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Sqrt
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "af60abce-5c80-41d3-ad89-ac0329ef20b9",
+  "id": "49cae545-fd1f-4b17-a02d-2f6eb52ed3dc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Sqrt"
       },
       "rel": "contains",
-      "target": "47248188-936e-4721-a29b-1e88702e39c0"
+      "target": "82509de4-0361-49c1-9d00-6313dbce4f20"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

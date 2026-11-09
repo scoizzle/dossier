@@ -1,10 +1,10 @@
 # django/core/serializers/xml_serializer
 
-- Subject: django/core/serializers/xml_serializer (id `04126a91-ce1c-49b2-a93f-22610552a491`)
+- Subject: django/core/serializers/xml_serializer (id `25fa3a41-9b42-455f-a48f-c05cc498c197`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4602 tokens
-- Facts shown: 65 of 66
+- Used: 4648 tokens
+- Facts shown: 66 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -45,6 +45,7 @@
 - [d2330ce7] def __next__(self): for event, node in self.event_stream: if event == "START_ELEMENT" and node.nodeName == "object": self.event_stream.expandNode(node) return self._handle_object(node) raise StopIteration
 - [67be5f30107b5926] def __repr__(self): return str(self)
 - [f6b67dd0] def __str__(self): tpl = "DTDForbidden(name='{}', system_id={!r}, public_id={!r})" return tpl.format(self.name, self.sysid, self.pubid)
+- [14382a35] def __str__(self): tpl = "EntitiesForbidden(name='{}', system_id={!r}, public_id={!r})" return tpl.format(self.name, self.sysid, self.pubid)
 - [5e6187e4] def __str__(self): tpl = "ExternalReferenceForbidden(system_id='{}', public_id={})" return tpl.format(self.sysid, self.pubid)
 - [4693c9e0] def _get_model_from_node(self, node, attr): """ Look up a model from a <object model=...> or a <field rel=... to=...> node. """ model_identifier = node.getAttribute(attr) if not model_identifier: raise base.DeserializationError( "<%s> node is missing the required '%s' attribute" % (node.nodeName, attr) ) try: return apps.get_model(model_identifier) except (LookupError, TypeError): raise base.DeserializationError( "<%s> node has invalid model identifier: '%s'" % (node.nodeName, model_identifier) )
 - [48c8c5a2] def _handle_fk_field_node(self, node, field): """ Handle a <field> node for a ForeignKey """ # Check if there is a child node named 'None', returning None if so. natural_keys = getChildrenByTagName(node, "natural") if getChildrenByTagName(node, "None") and not natural_keys: return None else: model = field.remote_field.model if hasattr(model._default_manager, "get_by_natural_key"): if natural_keys: # If there are 'natural' subelements, it must be a natural # key field_value = [] for k in natural_keys: if getChildrenByTagName(k, "None"): field_value.append(None) else: field_value.append(getInnerText(k).strip()) try: obj = model._default_manager.db_manager( self.db ).get_by_natural_key(*field_value) except ObjectDoesNotExist: if self.handle_forward_references: return base.DEFER_FIELD else: raise obj_pk = getattr(obj, field.remote_field.field_name) # If this is a natural foreign key to an object that # has a FK/O2O as the foreign key, use the FK value if field.remote_field.model._meta.pk.remote_field: obj_pk = obj_pk.pk else: # Otherwise, treat like a normal PK field_value = getInnerText(node).strip() obj_pk = model._meta.get_field( field.remote_field.field_name ).to_python(field_value) return obj_pk else: field_value = getInnerText(node).strip() return model._meta.get_field(field.remote_field.field_name).to_python( field_value )

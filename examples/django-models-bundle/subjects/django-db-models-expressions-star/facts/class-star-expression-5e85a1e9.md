@@ -1,6 +1,6 @@
 # Fact 5e85a1e9
 
-Store id: e4a9973b-b01c-4bd2-8e59-ad3ce5afa996
+Store id: 91e4d7fd-6c6e-4427-b6cf-18016bfff43a
 
 ## Text
 
@@ -20,7 +20,7 @@ class Star(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8768600+00:00`
+- posted_at: `2026-11-09T23:44:49.5421240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1303,
     "symbol": "Star"
   },
-  "id": "e4a9973b-b01c-4bd2-8e59-ad3ce5afa996",
+  "id": "91e4d7fd-6c6e-4427-b6cf-18016bfff43a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8768600+00:00"
+    "posted_at": "2026-11-09T23:44:49.5421240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cb41d7c5-5abf-4a4a-afe5-d6f9e666b530",
+  "subject_id": "e8a1a957-84aa-46a9-a8b6-559edbf9689f",
   "subject_name": "django/db/models/expressions::Star",
   "tags": [
     "entity:class"

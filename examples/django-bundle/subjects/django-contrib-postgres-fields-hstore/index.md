@@ -1,10 +1,10 @@
 # django/contrib/postgres/fields/hstore
 
-- Subject: django/contrib/postgres/fields/hstore (id `f8f66362-98fd-4f53-9cdf-d5fff0209b0c`)
+- Subject: django/contrib/postgres/fields/hstore (id `ba70ca23-42c9-4e91-8581-15e27fdb4738`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 930 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

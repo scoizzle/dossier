@@ -1,10 +1,10 @@
 # django/utils/choices
 
-- Subject: django/utils/choices (id `6a3a84a5-3ea6-42e3-bffe-8bf8deb09654`)
+- Subject: django/utils/choices (id `980d3b20-27cc-4d89-911b-f61edd0968d2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1048 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

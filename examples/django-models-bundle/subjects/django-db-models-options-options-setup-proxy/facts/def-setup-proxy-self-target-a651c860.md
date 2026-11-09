@@ -1,6 +1,6 @@
 # Fact a651c860
 
-Store id: 4f97fca7-68a9-43cd-9d82-ae551d37d59f
+Store id: 3f50fa6d-381e-469a-960e-c1b04f3708c3
 
 ## Text
 
@@ -20,7 +20,7 @@ def setup_proxy(self, target)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9351410+00:00`
+- posted_at: `2026-11-09T23:44:55.4955940+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 380,
     "symbol": "Options.setup_proxy"
   },
-  "id": "4f97fca7-68a9-43cd-9d82-ae551d37d59f",
+  "id": "3f50fa6d-381e-469a-960e-c1b04f3708c3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9351410+00:00"
+    "posted_at": "2026-11-09T23:44:55.4955940+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c4dce91e-f228-4422-94c9-57f157793506",
+  "subject_id": "e69250e7-2e61-4399-a9a2-860396d3e883",
   "subject_name": "django/db/models/options::Options.setup_proxy",
   "tags": [
     "entity:method"

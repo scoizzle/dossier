@@ -1,6 +1,6 @@
 # Fact 892b5713
 
-Store id: 302c2991-9d59-4c48-9532-beff093fd952
+Store id: 5872055e-4dc0-4d83-808f-7cf98dfcd719
 
 ## Text
 
@@ -20,7 +20,7 @@ def setup_pk(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9320960+00:00`
+- posted_at: `2026-11-09T23:44:55.4929940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 375,
     "symbol": "Options.setup_pk"
   },
-  "id": "302c2991-9d59-4c48-9532-beff093fd952",
+  "id": "5872055e-4dc0-4d83-808f-7cf98dfcd719",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9320960+00:00"
+    "posted_at": "2026-11-09T23:44:55.4929940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eb14266d-d576-4c2d-8e57-da42fc29803a",
+  "subject_id": "52574cba-496d-46c5-b41d-4a201da6f328",
   "subject_name": "django/db/models/options::Options.setup_pk",
   "tags": [
     "entity:method"

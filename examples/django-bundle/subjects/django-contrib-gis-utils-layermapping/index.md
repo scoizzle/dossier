@@ -1,10 +1,10 @@
 # django/contrib/gis/utils/layermapping
 
-- Subject: django/contrib/gis/utils/layermapping (id `f5d1034d-02b2-420d-9cc4-eaf2ceea19c0`)
+- Subject: django/contrib/gis/utils/layermapping (id `4d192b7c-ff39-4bdf-a95a-3d26c88ad7dd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 6086 tokens
-- Facts shown: 81 of 81
+- Facts shown: 81 facts
 - Conflicts: 0
 - Gaps: 0
 

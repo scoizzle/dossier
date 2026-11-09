@@ -1,6 +1,6 @@
 # Fact 552a27e2
 
-Store id: 33d5eb53-d0d9-473e-8ff1-e25f37df70bf
+Store id: 1a163286-43c4-4b91-9607-6ff7280487e2
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_wrapper_classes(self, connection=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9511700+00:00`
+- posted_at: `2026-11-09T23:44:54.7125740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 313,
     "symbol": "IndexExpression.set_wrapper_classes"
   },
-  "id": "33d5eb53-d0d9-473e-8ff1-e25f37df70bf",
+  "id": "1a163286-43c4-4b91-9607-6ff7280487e2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9511700+00:00"
+    "posted_at": "2026-11-09T23:44:54.7125740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16cf4290-d04a-447e-a6f6-d2eec57f512e",
+  "subject_id": "5a947adc-1deb-4f96-b970-32c387d09c09",
   "subject_name": "django/db/models/indexes::IndexExpression.set_wrapper_classes",
   "tags": [
     "entity:method"

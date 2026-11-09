@@ -1,6 +1,6 @@
 # Fact 8fe2f5b9
 
-Store id: f0289f0e-26b2-4517-b479-cfd2821cade5
+Store id: e436a26b-a51f-4c26-b710-88b5ae8c8166
 
 ## Text
 
@@ -20,7 +20,7 @@ def from_lookup(cls, lookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9854360+00:00`
+- posted_at: `2026-11-09T23:44:51.0318290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 559,
     "symbol": "KeyTextTransform.from_lookup"
   },
-  "id": "f0289f0e-26b2-4517-b479-cfd2821cade5",
+  "id": "e436a26b-a51f-4c26-b710-88b5ae8c8166",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9854360+00:00"
+    "posted_at": "2026-11-09T23:44:51.0318290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b25c2230-9cd0-40f1-b603-3fb4db44609c",
+  "subject_id": "8276e81f-fbe4-44e8-8990-cbe24e92ff8a",
   "subject_name": "django/db/models/fields/json::KeyTextTransform.from_lookup",
   "tags": [
     "entity:class_method",

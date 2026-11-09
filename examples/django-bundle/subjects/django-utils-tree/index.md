@@ -1,10 +1,10 @@
 # django/utils/tree
 
-- Subject: django/utils/tree (id `772995fc-e102-47f3-91f5-a53e15dcdc1c`)
+- Subject: django/utils/tree (id `e0666ce3-a829-49f4-8f3f-3372827c2aee`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1114 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

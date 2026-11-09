@@ -1,10 +1,10 @@
 # django/middleware/cache
 
-- Subject: django/middleware/cache (id `4f0c5616-0dc9-49dc-b0fa-918c2814f9b0`)
+- Subject: django/middleware/cache (id `499d156d-3024-4f0e-9dd4-bb167e15b6cc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2396 tokens
-- Facts shown: 38 of 39
+- Used: 2421 tokens
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -25,6 +25,7 @@
 
 - [75d4a9bb] try: key_prefix = kwargs["key_prefix"] if key_prefix is None: key_prefix = "" self.key_prefix = key_prefix except KeyError: pass try: cache_alias = kwargs["cache_alias"] if cache_alias is None: cache_alias = DEFAULT_CACHE_ALIAS self.cache_alias = cache_alias except KeyError: pass
 - [0b2463de0782a8a0] @property def cache(self): return caches[self.cache_alias]
+- [0b2463de0782a8a0-2] @property def cache(self): return caches[self.cache_alias]
 - [33fbc2bb] Also used as the hook point for the cache decorator, which is generated using the decorator-from-middleware utility. """
 - [bbe3b265] MIDDLEWARE = [ 'django.middleware.cache.UpdateCacheMiddleware', ... 'django.middleware.cache.FetchFromCacheMiddleware' ]
 - [4e91819d] Must be used as part of the two-part update/fetch cache middleware. FetchFromCacheMiddleware must be the last piece of middleware in MIDDLEWARE so that it'll get called last during the request phase. """

@@ -1,6 +1,6 @@
 # Fact 1aa6012c
 
-Store id: 9035eb4e-3ca8-4bb0-bc17-01b6274618d8
+Store id: 111359b4-93e3-4894-97ea-104c2699f0f0
 
 ## Text
 
@@ -20,7 +20,7 @@ class DenseRank(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.6807660+00:00`
+- posted_at: `2026-11-09T23:44:54.4608850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 25,
     "symbol": "DenseRank"
   },
-  "id": "9035eb4e-3ca8-4bb0-bc17-01b6274618d8",
+  "id": "111359b4-93e3-4894-97ea-104c2699f0f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.6807660+00:00"
+    "posted_at": "2026-11-09T23:44:54.4608850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c996847d-f8c2-4a7f-8104-5360b8ca13c7",
+  "subject_id": "5c94211b-c85f-406d-b048-aeef3463360c",
   "subject_name": "django/db/models/functions/window::DenseRank",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 21d911ed
 
-Store id: c15f4bb4-59c9-4500-adfa-cbaf862ed2c4
+Store id: fc5bac8b-46b5-4e95-b171-4e7b68188386
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.4915710+00:00`
+- posted_at: `2026-11-09T23:44:54.3153100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 30,
     "symbol": "UUID4.as_oracle"
   },
-  "id": "c15f4bb4-59c9-4500-adfa-cbaf862ed2c4",
+  "id": "fc5bac8b-46b5-4e95-b171-4e7b68188386",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.4915710+00:00"
+    "posted_at": "2026-11-09T23:44:54.3153100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "237d44ee-3640-474c-a505-86f365003e5e",
+  "subject_id": "b18e38d3-ca4a-4549-94e5-58fb77d3d657",
   "subject_name": "django/db/models/functions/uuid::UUID4.as_oracle",
   "tags": [
     "entity:method"

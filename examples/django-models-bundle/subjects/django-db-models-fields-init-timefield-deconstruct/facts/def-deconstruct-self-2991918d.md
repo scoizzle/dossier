@@ -1,6 +1,6 @@
 # Fact 2991918d
 
-Store id: cd0cc663-64d2-4f26-a1ad-81628c93ed7f
+Store id: 2efad5af-8cc7-49d9-a458-008fea51b31d
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8167540+00:00`
+- posted_at: `2026-11-09T23:44:50.2552580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2646,
     "symbol": "TimeField.deconstruct"
   },
-  "id": "cd0cc663-64d2-4f26-a1ad-81628c93ed7f",
+  "id": "2efad5af-8cc7-49d9-a458-008fea51b31d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8167540+00:00"
+    "posted_at": "2026-11-09T23:44:50.2552580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6893316d-5c9f-44db-a32b-c9e00e3f9d1d",
+  "subject_id": "e9bcadaa-e4e1-442a-81d0-675fc8607843",
   "subject_name": "django/db/models/fields/__init__::TimeField.deconstruct",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.get_attname_column
 
-- Subject: django/db/models/fields/related::ForeignKey.get_attname_column (id `a8068c2f-a8c0-4ae4-96cf-bd50b13c5538`)
+- Subject: django/db/models/fields/related::ForeignKey.get_attname_column (id `f0681de9-1635-449e-b1b2-3499dd9d2245`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

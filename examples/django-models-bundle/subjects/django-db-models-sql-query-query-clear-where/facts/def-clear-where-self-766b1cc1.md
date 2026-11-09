@@ -1,6 +1,6 @@
 # Fact 766b1cc1
 
-Store id: a6d5f0f1-4b47-4706-b232-51a5616b1c0d
+Store id: 47a2b2c8-2634-442c-b492-47f4dd6f4d80
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_where(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9489340+00:00`
+- posted_at: `2026-11-09T23:44:58.8635080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1688,
     "symbol": "Query.clear_where"
   },
-  "id": "a6d5f0f1-4b47-4706-b232-51a5616b1c0d",
+  "id": "47a2b2c8-2634-442c-b492-47f4dd6f4d80",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9489340+00:00"
+    "posted_at": "2026-11-09T23:44:58.8635080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06e27809-a7ae-4aaa-95d4-ab7ec2eb52f8",
+  "subject_id": "1b78241f-82f4-436e-ad9f-8a9ff250b796",
   "subject_name": "django/db/models/sql/query::Query.clear_where",
   "tags": [
     "entity:method"

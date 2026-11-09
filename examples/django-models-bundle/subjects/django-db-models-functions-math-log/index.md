@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Log
 
-- Subject: django/db/models/functions/math::Log (id `7d7192c6-7f0a-4149-812a-6eaa8527001d`)
+- Subject: django/db/models/functions/math::Log (id `5c3da3a6-3ec8-4ca9-8053-2750c63fb01f`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

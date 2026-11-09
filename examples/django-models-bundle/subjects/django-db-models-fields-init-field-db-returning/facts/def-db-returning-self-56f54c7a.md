@@ -1,6 +1,6 @@
 # Fact 56f54c7a
 
-Store id: 0ab8555e-1ea0-49c5-83ee-66126ca3daf4
+Store id: c4cd7452-9540-4d4b-aec1-d42976b9add7
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_returning(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4951780+00:00`
+- posted_at: `2026-11-09T23:44:50.0265960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 972,
     "symbol": "Field.db_returning"
   },
-  "id": "0ab8555e-1ea0-49c5-83ee-66126ca3daf4",
+  "id": "c4cd7452-9540-4d4b-aec1-d42976b9add7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4951780+00:00"
+    "posted_at": "2026-11-09T23:44:50.0265960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "58116d1d-2b66-48d3-bd0f-a6f018f0b1d9",
+  "subject_id": "af22fbcc-6564-43d9-8194-4a5006e5af0d",
   "subject_name": "django/db/models/fields/__init__::Field.db_returning",
   "tags": [
     "entity:method",

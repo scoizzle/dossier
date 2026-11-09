@@ -1,6 +1,6 @@
 # Fact fde31939
 
-Store id: 7022c25d-98c5-42a1-8509-ea675d173bc9
+Store id: 0d2e61d9-40af-4fe7-901e-5b38d369d9ac
 
 ## Text
 
@@ -20,7 +20,7 @@ def execute_sql(self, result_type)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0790960+00:00`
+- posted_at: `2026-11-09T23:44:57.7305430+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2132,
     "symbol": "SQLUpdateCompiler.execute_sql"
   },
-  "id": "7022c25d-98c5-42a1-8509-ea675d173bc9",
+  "id": "0d2e61d9-40af-4fe7-901e-5b38d369d9ac",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0790960+00:00"
+    "posted_at": "2026-11-09T23:44:57.7305430+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "71752f2b-7596-42ba-b3ba-4795af834c7d",
+  "subject_id": "264c63dc-7f07-4feb-b3ea-3038cfed8621",
   "subject_name": "django/db/models/sql/compiler::SQLUpdateCompiler.execute_sql",
   "tags": [
     "entity:method"

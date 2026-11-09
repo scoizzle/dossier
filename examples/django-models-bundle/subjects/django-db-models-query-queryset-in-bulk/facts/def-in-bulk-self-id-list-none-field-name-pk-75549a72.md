@@ -1,6 +1,6 @@
 # Fact 75549a72
 
-Store id: 14eabe69-4f92-46a2-b87a-d35e21cd848f
+Store id: 7a442a50-c48d-45d5-b037-1527b3e4b110
 
 ## Text
 
@@ -20,7 +20,7 @@ def in_bulk(self, id_list=None, *, field_name="pk")
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4614800+00:00`
+- posted_at: `2026-11-09T23:44:55.9628740+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1247,
     "symbol": "QuerySet.in_bulk"
   },
-  "id": "14eabe69-4f92-46a2-b87a-d35e21cd848f",
+  "id": "7a442a50-c48d-45d5-b037-1527b3e4b110",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4614800+00:00"
+    "posted_at": "2026-11-09T23:44:55.9628740+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "29d2cac4-12ef-4381-8af0-ea716104bdbb",
+  "subject_id": "e52a354f-b6d8-4ba2-8fac-bc84ba7b1e17",
   "subject_name": "django/db/models/query::QuerySet.in_bulk",
   "tags": [
     "entity:method"

@@ -5,7 +5,7 @@ This file lists every subject under `docs/misc/`, one row per subject, grouped b
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 |   docs/misc/api-stability | subject | 20 | 0 | 0 | 894 | [subjects/docs-misc-api-stability/index.md](../subjects/docs-misc-api-stability/index.md) |
-|   docs/misc/design-philosophies | subject | 106 | 0 | 0 | 2905 | [subjects/docs-misc-design-philosophies/index.md](../subjects/docs-misc-design-philosophies/index.md) |
+|   docs/misc/design-philosophies | subject | 106 | 0 | 0 | 2948 | [subjects/docs-misc-design-philosophies/index.md](../subjects/docs-misc-design-philosophies/index.md) |
 |   docs/misc/distributions | subject | 9 | 0 | 0 | 476 | [subjects/docs-misc-distributions/index.md](../subjects/docs-misc-distributions/index.md) |
 |   docs/misc/index | subject | 4 | 0 | 0 | 160 | [subjects/docs-misc-index/index.md](../subjects/docs-misc-index/index.md) |
 

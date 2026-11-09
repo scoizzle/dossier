@@ -5,6 +5,6 @@ This file lists every subject under `django/dispatch/`, one row per subject, gro
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 |   django/dispatch/__init__ | subject | 4 | 0 | 0 | 151 | [subjects/django-dispatch-init/index.md](../subjects/django-dispatch-init/index.md) |
-|   django/dispatch/dispatcher | subject | 97 | 0 | 0 | 3628 | [subjects/django-dispatch-dispatcher/index.md](../subjects/django-dispatch-dispatcher/index.md) |
+|   django/dispatch/dispatcher | subject | 97 | 0 | 0 | 4080 | [subjects/django-dispatch-dispatcher/index.md](../subjects/django-dispatch-dispatcher/index.md) |
 
 Up: [index/django.md](django.md)

@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject._check_unique_target
 
-- Subject: django/db/models/fields/related::ForeignObject._check_unique_target (id `a97955df-6310-4f62-872b-cc794822fdf2`)
+- Subject: django/db/models/fields/related::ForeignObject._check_unique_target (id `62b51a47-9193-4c8f-821a-42bb65ab2551`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

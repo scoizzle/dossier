@@ -1,6 +1,6 @@
 # Fact be38b433
 
-Store id: 8fb11c3d-70e8-491c-8963-6da6c8f6a926
+Store id: 046f477a-5849-46f5-b318-137cb4f7a181
 
 ## Text
 
@@ -20,7 +20,7 @@ def using(self, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7703880+00:00`
+- posted_at: `2026-11-09T23:44:56.2662680+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2527,
     "symbol": "RawQuerySet.using"
   },
-  "id": "8fb11c3d-70e8-491c-8963-6da6c8f6a926",
+  "id": "046f477a-5849-46f5-b318-137cb4f7a181",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7703880+00:00"
+    "posted_at": "2026-11-09T23:44:56.2662680+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd7cebb1-d753-4228-97fe-f84330e57f18",
+  "subject_id": "eb2b50f2-e45a-4ffd-9205-d84591ac0976",
   "subject_name": "django/db/models/query::RawQuerySet.using",
   "tags": [
     "entity:method"

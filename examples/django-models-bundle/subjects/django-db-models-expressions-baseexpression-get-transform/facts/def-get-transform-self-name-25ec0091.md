@@ -1,6 +1,6 @@
 # Fact 25ec0091
 
-Store id: 0cc22fd0-e8f4-4a0c-bf96-7ad611af0fea
+Store id: aa6986ef-67d6-4880-8208-3a32e436ff5f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_transform(self, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7859050+00:00`
+- posted_at: `2026-11-09T23:44:49.3448490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 406,
     "symbol": "BaseExpression.get_transform"
   },
-  "id": "0cc22fd0-e8f4-4a0c-bf96-7ad611af0fea",
+  "id": "aa6986ef-67d6-4880-8208-3a32e436ff5f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7859050+00:00"
+    "posted_at": "2026-11-09T23:44:49.3448490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d10f0c1d-1484-46e7-ad68-676a9ef49810",
+  "subject_id": "6b8d9780-f55c-4cc4-8a99-ab2a508729f1",
   "subject_name": "django/db/models/expressions::BaseExpression.get_transform",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Radians.as_oracle
 
-- Subject: django/db/models/functions/math::Radians.as_oracle (id `83445444-1273-4dd0-83d4-8aa32acf0e10`)
+- Subject: django/db/models/functions/math::Radians.as_oracle (id `46da5de9-6d5d-4f23-9594-451d4bfe7097`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

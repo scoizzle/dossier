@@ -1,11 +1,11 @@
 # django/db/models/query::prefetch_one_level
 
-- Subject: django/db/models/query::prefetch_one_level (id `137dd2a0-b608-4611-8eec-2ff4e49adfd5`)
+- Subject: django/db/models/query::prefetch_one_level (id `413d8873-f950-4a57-9950-ca167e1ce47b`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

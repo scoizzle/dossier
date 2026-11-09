@@ -1,6 +1,6 @@
 # Fact 96ae5316
 
-Store id: cca92507-18ce-4e72-a28a-a57376ef02c1
+Store id: 91f9ca7b-5cef-4387-94eb-fe3d5875f457
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncBase(TimezoneMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2496030+00:00`
+- posted_at: `2026-11-09T23:44:53.3792500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 244,
     "symbol": "TruncBase"
   },
-  "id": "cca92507-18ce-4e72-a28a-a57376ef02c1",
+  "id": "91f9ca7b-5cef-4387-94eb-fe3d5875f457",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2496030+00:00"
+    "posted_at": "2026-11-09T23:44:53.3792500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7af9c79c-2317-4083-a115-13b4ba722bb5",
+  "subject_id": "055b5a1d-7692-4fd6-8f81-83197c7c97f6",
   "subject_name": "django/db/models/functions/datetime::TruncBase",
   "tags": [
     "entity:class"

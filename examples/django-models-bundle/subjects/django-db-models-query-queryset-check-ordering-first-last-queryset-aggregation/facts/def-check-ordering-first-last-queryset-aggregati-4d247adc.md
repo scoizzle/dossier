@@ -1,6 +1,6 @@
 # Fact 4d247adc
 
-Store id: 00f0563d-8d4b-44ef-bcfa-8009442f089c
+Store id: 4e617870-fbfd-4796-91df-b9172affbd94
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_ordering_first_last_queryset_aggregation(self, method)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6829670+00:00`
+- posted_at: `2026-11-09T23:44:56.1914210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2371,
     "symbol": "QuerySet._check_ordering_first_last_queryset_aggregation"
   },
-  "id": "00f0563d-8d4b-44ef-bcfa-8009442f089c",
+  "id": "4e617870-fbfd-4796-91df-b9172affbd94",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6829670+00:00"
+    "posted_at": "2026-11-09T23:44:56.1914210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "927b59e2-2e6b-4f85-bb6b-13d44e36b94e",
+  "subject_id": "e1163416-5153-4f02-8ad7-4a625c5ad4b1",
   "subject_name": "django/db/models/query::QuerySet._check_ordering_first_last_queryset_aggregation",
   "tags": [
     "entity:method"

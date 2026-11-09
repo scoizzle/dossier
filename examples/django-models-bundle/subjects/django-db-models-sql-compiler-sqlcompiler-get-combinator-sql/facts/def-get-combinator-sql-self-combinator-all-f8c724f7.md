@@ -1,6 +1,6 @@
 # Fact f8c724f7
 
-Store id: 83509790-20ec-453f-8eb4-950d1091912a
+Store id: c2ad7384-5512-4e35-8070-aadc21f2aebe
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_combinator_sql(self, combinator, all)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7396580+00:00`
+- posted_at: `2026-11-09T23:44:57.4903090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 600,
     "symbol": "SQLCompiler.get_combinator_sql"
   },
-  "id": "83509790-20ec-453f-8eb4-950d1091912a",
+  "id": "c2ad7384-5512-4e35-8070-aadc21f2aebe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7396580+00:00"
+    "posted_at": "2026-11-09T23:44:57.4903090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37724854-dd78-49d7-ac44-ad6d249dae2d",
+  "subject_id": "7b225ec7-5489-48a2-93f8-fc817ece6508",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_combinator_sql",
   "tags": [
     "entity:method"

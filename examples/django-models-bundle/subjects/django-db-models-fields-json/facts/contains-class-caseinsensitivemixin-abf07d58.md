@@ -1,6 +1,6 @@
 # Fact abf07d58
 
-Store id: cc1e9366-5c8e-4228-8d6c-8c0586bac213
+Store id: c439bfae-8fab-428a-a236-c7923c2ac336
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CaseInsensitiveMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cc1e9366-5c8e-4228-8d6c-8c0586bac213",
+  "id": "c439bfae-8fab-428a-a236-c7923c2ac336",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CaseInsensitiveMixin"
       },
       "rel": "contains",
-      "target": "8dd8f51c-617b-4b41-bea8-7ea6c31229f6"
+      "target": "c73d62b0-35a6-40b3-8aea-c6897768606f"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

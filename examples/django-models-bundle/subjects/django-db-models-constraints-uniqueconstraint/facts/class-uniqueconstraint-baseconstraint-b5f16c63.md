@@ -1,6 +1,6 @@
 # Fact b5f16c63
 
-Store id: 5c9d95af-67bc-439e-ab3e-56fdad9460a5
+Store id: 54c2a5c1-1380-4646-8f94-b13b5134c0b3
 
 ## Text
 
@@ -20,7 +20,7 @@ class UniqueConstraint(BaseConstraint)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.2171720+00:00`
+- posted_at: `2026-11-09T23:44:48.7843070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 269,
     "symbol": "UniqueConstraint"
   },
-  "id": "5c9d95af-67bc-439e-ab3e-56fdad9460a5",
+  "id": "54c2a5c1-1380-4646-8f94-b13b5134c0b3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.2171720+00:00"
+    "posted_at": "2026-11-09T23:44:48.7843070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9c99d040-c978-4adc-b829-e8d26a1e998e",
+  "subject_id": "a2a66c72-04f8-4283-9062-0585fcea9147",
   "subject_name": "django/db/models/constraints::UniqueConstraint",
   "tags": [
     "entity:class"

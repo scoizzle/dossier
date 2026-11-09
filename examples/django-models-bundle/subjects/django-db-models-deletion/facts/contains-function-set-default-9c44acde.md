@@ -1,6 +1,6 @@
 # Fact 9c44acde
 
-Store id: e9669b41-d503-4faa-a974-57d44d7e7e3b
+Store id: 6ad4b99c-2ad2-4496-9c78-3836db441ee6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function SET_DEFAULT
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e9669b41-d503-4faa-a974-57d44d7e7e3b",
+  "id": "6ad4b99c-2ad2-4496-9c78-3836db441ee6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SET_DEFAULT"
       },
       "rel": "contains",
-      "target": "ce13f4d2-ae51-4e3c-ab02-8ee813e6cc88"
+      "target": "f318a3d2-c0d4-497e-93e6-411396a293b8"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

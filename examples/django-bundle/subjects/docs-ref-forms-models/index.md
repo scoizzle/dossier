@@ -1,10 +1,10 @@
 # docs/ref/forms/models
 
-- Subject: docs/ref/forms/models (id `c50a6a59-e06d-4e2c-88a1-794fc67351e9`)
+- Subject: docs/ref/forms/models (id `a81e39b9-4dc5-4e59-bd88-cf69e7b6b709`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3195 tokens
-- Facts shown: 83 of 83
+- Facts shown: 83 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact ac120098
 
-Store id: 2a31ecdf-261b-4df0-b997-d57d1f701622
+Store id: 7a35c6b8-aa94-4421-bff5-1e3e9ef3c21a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __rmod__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7491370+00:00`
+- posted_at: `2026-11-09T23:44:49.2562840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 145,
     "symbol": "Combinable.__rmod__"
   },
-  "id": "2a31ecdf-261b-4df0-b997-d57d1f701622",
+  "id": "7a35c6b8-aa94-4421-bff5-1e3e9ef3c21a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7491370+00:00"
+    "posted_at": "2026-11-09T23:44:49.2562840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b7d0d2e7-c885-47dc-a0b0-b9b1b3721544",
+  "subject_id": "7e582994-55d3-48ad-bc4c-155a4a80a6db",
   "subject_name": "django/db/models/expressions::Combinable.__rmod__",
   "tags": [
     "entity:method"

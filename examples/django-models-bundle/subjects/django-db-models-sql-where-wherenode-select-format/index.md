@@ -1,11 +1,11 @@
 # django/db/models/sql/where::WhereNode.select_format
 
-- Subject: django/db/models/sql/where::WhereNode.select_format (id `bda002f5-a1a5-4a34-83e4-49959ae1d17b`)
+- Subject: django/db/models/sql/where::WhereNode.select_format (id `18187787-90ae-4528-a9a8-6e94946bfd0a`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

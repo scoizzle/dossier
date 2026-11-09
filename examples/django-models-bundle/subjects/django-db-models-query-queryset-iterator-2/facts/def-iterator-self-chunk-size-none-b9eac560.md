@@ -1,6 +1,6 @@
 # Fact b9eac560
 
-Store id: 449c1835-8c50-49b4-bca7-15687e7e535a
+Store id: be153462-e360-424d-a5b4-c8ed7990caef
 
 ## Text
 
@@ -20,7 +20,7 @@ def iterator(self, chunk_size=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3631870+00:00`
+- posted_at: `2026-11-09T23:44:55.8780600+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 599,
     "symbol": "QuerySet.iterator"
   },
-  "id": "449c1835-8c50-49b4-bca7-15687e7e535a",
+  "id": "be153462-e360-424d-a5b4-c8ed7990caef",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3631870+00:00"
+    "posted_at": "2026-11-09T23:44:55.8780600+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2ac4c197-e856-4e18-82c8-0235d38140d3",
+  "subject_id": "8969a6a5-e1c9-448d-b59d-0a4c3ea50d8c",
   "subject_name": "django/db/models/query::QuerySet.iterator",
   "tags": [
     "entity:method"

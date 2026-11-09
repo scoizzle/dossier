@@ -1,6 +1,6 @@
 # Fact d70bfca3
 
-Store id: 96725fe6-f687-46c6-8fe8-db44c01de765
+Store id: c6c9d0c0-0fb3-45a9-9055-c378278b19ea
 
 ## Text
 
@@ -20,7 +20,7 @@ def update(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4830160+00:00`
+- posted_at: `2026-11-09T23:44:55.9821160+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1408,
     "symbol": "QuerySet.update"
   },
-  "id": "96725fe6-f687-46c6-8fe8-db44c01de765",
+  "id": "c6c9d0c0-0fb3-45a9-9055-c378278b19ea",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4830160+00:00"
+    "posted_at": "2026-11-09T23:44:55.9821160+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a2cf34a1-d5b3-4c81-b254-f4e05571e85a",
+  "subject_id": "75f8fdad-86ec-4449-9775-2d0be0d8fbf6",
   "subject_name": "django/db/models/query::QuerySet.update",
   "tags": [
     "entity:method"

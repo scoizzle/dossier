@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.__aiter__.generator
 
-- Subject: django/db/models/query::QuerySet.__aiter__.generator (id `508f2fb1-2962-4241-91f3-a88c735368e4`)
+- Subject: django/db/models/query::QuerySet.__aiter__.generator (id `6999582b-22fa-440f-9aae-25956644d2f8`)
 - Kind: async_function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

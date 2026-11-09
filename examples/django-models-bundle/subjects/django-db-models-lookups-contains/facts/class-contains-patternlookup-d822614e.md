@@ -1,6 +1,6 @@
 # Fact d822614e
 
-Store id: 3fc0fc84-c6ed-48cd-82f0-9bdc4dc54c02
+Store id: 04fb8958-cfdb-4098-9983-8e6fdb07e05c
 
 ## Text
 
@@ -20,7 +20,7 @@ class Contains(PatternLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3572110+00:00`
+- posted_at: `2026-11-09T23:44:55.0218280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 625,
     "symbol": "Contains"
   },
-  "id": "3fc0fc84-c6ed-48cd-82f0-9bdc4dc54c02",
+  "id": "04fb8958-cfdb-4098-9983-8e6fdb07e05c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3572110+00:00"
+    "posted_at": "2026-11-09T23:44:55.0218280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f329660c-cb80-4cef-892e-f650223aeaf0",
+  "subject_id": "27492d26-9381-4cc2-ad93-bd0d10c67b68",
   "subject_name": "django/db/models/lookups::Contains",
   "tags": [
     "entity:class",

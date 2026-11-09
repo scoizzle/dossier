@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-code/coding-style
 
-- Subject: docs/internals/contributing/writing-code/coding-style (id `4ece6383-18b9-4b42-b687-8398c0c3097a`)
+- Subject: docs/internals/contributing/writing-code/coding-style (id `3f737a25-e120-42ee-b3f3-182c233303c7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4571 tokens
-- Facts shown: 139 of 167
+- Used: 5100 tokens
+- Facts shown: 167 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,7 @@
 - class Person(models.Model): FirstName = models.CharField(max_length=20) Last_Name = models.CharField(max_length=40) [33299c8e]
 - class Person(models.Model): class Meta: verbose_name_plural = "people" [ff82ca3f]
 - class Person(models.Model): first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) [c770f1c830f731fb]
+- class Person(models.Model): first_name = models.CharField(max_length=20) last_name = models.CharField(max_length=40) [c770f1c830f731fb-2]
 - def my_view(req, foo): ... [07a984b9]
 - def my_view(request, foo): ... [a40f35aa]
 - from django.views import View [312d6da0ca4d357f]
@@ -35,6 +36,8 @@
 - {# This is a comment #} {% extends "base.html" %} [c9629579]
 - {% block content %} [3d4c4e5442e939f4-2]
 - {% block content %} <h1 class="font-semibold text-xl"> {{ pages.title }} </h1> {% endblock content %} [3314cec1ab70bd73]
+- {% block content %} <h1 class="font-semibold text-xl"> {{ pages.title }} </h1> {% endblock content %} [3314cec1ab70bd73-2]
+- {% block content %} <h1 class="font-semibold text-xl"> {{ pages.title }} </h1> {% endblock content %} [3314cec1ab70bd73-3]
 - {% block header %} [a0fd446ea9becfa4]
 - {% block header %} [a0fd446ea9becfa4-2]
 - {% endblock %} [27937693bf26c47c-2]
@@ -45,15 +48,16 @@
 - {% load humanize %} [500a4a3bf5772a1b]
 - {% load i18n %} {% extends "base.html" %} [6af8978e]
 - {% load i18n l10 tz %} [eec4aa95]
+- {% load l10 i18n tz %} [dcc1b648]
 - {%load humanize%} [2aa9890a]
-- {{ user }} [4fa65860]
-- {{user}} [302d00e8]
-- # Allowed f"hello {user}" f"hello {user.name}" f"hello {self.user.name}" [2e6e6639]
-- # Allowed with local variable assignment user = get_user() f"hello {user}" user_days_old = user.age * 365.25 f"you are {user_days_old} days old" [15df7ec8]
-- # Disallowed f"hello {get_user()}" f"you are {user.age * 365.25} days old" [ad57c958]
 
 ## All facts
 
+- [4fa65860] {{ user }}
+- [302d00e8] {{user}}
+- [2e6e6639] # Allowed f"hello {user}" f"hello {user.name}" f"hello {self.user.name}"
+- [15df7ec8] # Allowed with local variable assignment user = get_user() f"hello {user}" user_days_old = user.age * 365.25 f"you are {user_days_old} days old"
+- [ad57c958] # Disallowed f"hello {get_user()}" f"you are {user.age * 365.25} days old"
 - [2894405ebdfc4412-2] $ python -m pip install pre-commit $ pre-commit install
 - [c176e0ad] class MyModel(models.Model): DIRECTION_UP = "U" DIRECTION_DOWN = "D" DIRECTION_CHOICES = { DIRECTION_UP: "Up", DIRECTION_DOWN: "Down", }
 - [5a0e447d] class MyModel(models.Model): class Direction(models.TextChoices): UP = "U", "Up" DOWN = "D", "Down"
@@ -63,9 +67,24 @@
 - [176acd86] from django.conf import settings from django.urls import get_callable
 - [81f95c79] settings.configure({}, SOME_SETTING="foo")
 - [8aa52b95] {% if user . name | lower == "admin" %}
+- [a21d0d48] {% if user.name|lower == "admin" %}
 - [4b946cd6] {{ user.name | upper }}
 - [ecada48d] * All database fields * Custom manager attributes * ``class Meta`` * ``def __str__()`` and other Python magic methods * ``def save()`` * ``def get_absolute_url()`` * Any custom methods
 - [685d15dfb6eb2285-27] .. code-block:: html+django
+- [685d15dfb6eb2285-28] .. code-block:: html+django
+- [685d15dfb6eb2285-29] .. code-block:: html+django
+- [685d15dfb6eb2285-30] .. code-block:: html+django
+- [685d15dfb6eb2285-31] .. code-block:: html+django
+- [685d15dfb6eb2285-32] .. code-block:: html+django
+- [685d15dfb6eb2285-33] .. code-block:: html+django
+- [685d15dfb6eb2285-34] .. code-block:: html+django
+- [685d15dfb6eb2285-35] .. code-block:: html+django
+- [685d15dfb6eb2285-36] .. code-block:: html+django
+- [685d15dfb6eb2285-37] .. code-block:: html+django
+- [685d15dfb6eb2285-38] .. code-block:: html+django
+- [685d15dfb6eb2285-39] .. code-block:: html+django
+- [685d15dfb6eb2285-40] .. code-block:: html+django
+- [685d15dfb6eb2285-41] .. code-block:: html+django
 - [ef446009] .. code-block:: python :caption: ``django/contrib/admin/example.py``
 - [7714e199aac2701e-15] .. console::
 - [1f3535c2] Alternatively, consider using :ref:`field-choices-enum-types`::
@@ -81,6 +100,15 @@
 - [572f3869fd620fc3-2] Do this::
 - [572f3869fd620fc3-3] Do this::
 - [44c358dc648f3d03] Don't do this:
+- [44c358dc648f3d03-2] Don't do this:
+- [44c358dc648f3d03-3] Don't do this:
+- [44c358dc648f3d03-4] Don't do this:
+- [44c358dc648f3d03-5] Don't do this:
+- [44c358dc648f3d03-6] Don't do this:
+- [44c358dc648f3d03-7] Don't do this:
+- [87f12bec6719f166] Don't do this::
+- [87f12bec6719f166-2] Don't do this::
+- [87f12bec6719f166-3] Don't do this::
 - [cbd439cb] Don't waste time doing unrelated refactoring of existing code to adjust the formatting method.
 - [5a5c7092] Final judgments of readability are left to the Merger's discretion. As a guide, f-strings should use only plain variable and property access, with prior local variable assignment for more complex cases::
 - [a2fe3aed] For example (comments are for explanatory purposes only):

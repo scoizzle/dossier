@@ -1,10 +1,10 @@
 # django/core/management/commands/migrate
 
-- Subject: django/core/management/commands/migrate (id `42ab8e89-ef12-4932-a2a4-2cd5175e403f`)
+- Subject: django/core/management/commands/migrate (id `449a0d43-0dec-4301-97d2-853500f3f989`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4013 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

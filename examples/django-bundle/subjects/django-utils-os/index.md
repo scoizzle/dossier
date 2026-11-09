@@ -1,10 +1,10 @@
 # django/utils/_os
 
-- Subject: django/utils/_os (id `b06198e9-5b48-4032-870f-b48061c7b803`)
+- Subject: django/utils/_os (id `a249417d-d972-4545-b2e0-6c2091a92a1c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1155 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

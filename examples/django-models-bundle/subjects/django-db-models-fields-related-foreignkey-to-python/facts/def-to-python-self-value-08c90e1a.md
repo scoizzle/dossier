@@ -1,6 +1,6 @@
 # Fact 08c90e1a
 
-Store id: 774a5f3e-0467-45fd-baff-88ea8bee354b
+Store id: 30da2505-2f4c-4891-9fce-a6b3a35e1ac2
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7548970+00:00`
+- posted_at: `2026-11-09T23:44:51.5770070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1208,
     "symbol": "ForeignKey.to_python"
   },
-  "id": "774a5f3e-0467-45fd-baff-88ea8bee354b",
+  "id": "30da2505-2f4c-4891-9fce-a6b3a35e1ac2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7548970+00:00"
+    "posted_at": "2026-11-09T23:44:51.5770070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0badde3f-fb2c-4ad4-a489-aad67c2289fd",
+  "subject_id": "88eaf599-6335-45f6-a1d2-7b2b00c6dba4",
   "subject_name": "django/db/models/fields/related::ForeignKey.to_python",
   "tags": [
     "entity:method"

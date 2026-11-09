@@ -1,10 +1,10 @@
 # django/contrib/postgres/serializers
 
-- Subject: django/contrib/postgres/serializers (id `9c199432-64eb-4bda-8a02-6a563f1729ff`)
+- Subject: django/contrib/postgres/serializers (id `fdd3dc66-0263-4cb6-9828-f41795cb2d8a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 118 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

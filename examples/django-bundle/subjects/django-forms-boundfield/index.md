@@ -1,16 +1,17 @@
 # django/forms/boundfield
 
-- Subject: django/forms/boundfield (id `527be3d7-e737-4f7d-aa3a-8672290b735d`)
+- Subject: django/forms/boundfield (id `31cbcb9e-abde-4e6c-bded-5e8c65c25acf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2983 tokens
-- Facts shown: 42 of 44
+- Used: 3087 tokens
+- Facts shown: 44 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Highlights
 
 - If attrs are given, use them as HTML attributes on the <label> tag. [36c5b80b]
+- If attrs are given, use them as HTML attributes on the <legend> tag. [e1426e72]
 - This property is cached so that only one database query occurs when rendering ModelChoiceFields. """ id_ = self.field.widget.attrs.get("id") or self.auto_id attrs = {"id": id_} if id_ else {} attrs = self.build_widget_attrs(attrs) return [ BoundWidget(self.field.widget, widget, self.form.renderer) for widget in self.field.widget.subwidgets( self.html_name, self.value(), attrs=attrs ) ] [2fc6bb75]
 - label_suffix overrides the form's label_suffix. """ contents = contents or self.label if label_suffix is None: label_suffix = ( self.field.label_suffix if self.field.label_suffix is not None else self.form.label_suffix ) # Only add the suffix if the label does not end in punctuation. # Translators: If found as last label character, these punctuation # characters will prevent the default label_suffix to be appended to # the label if label_suffix and contents and contents[-1] not in _(":?.!"): contents = format_html("{}{}", contents, label_suffix) widget = self.field.widget id_ = widget.attrs.get("id") or self.auto_id if id_: attrs = {**(attrs or {})} id_for_label = widget.id_for_label(id_) if id_for_label: if tag != "legend": attrs = {**attrs, "for": id_for_label} if self.field.required and hasattr(self.form, "required_css_class"): if "class" in attrs: attrs["class"] += " " + self.form.required_css_class else: attrs["class"] = self.form.required_css_class context = { "field": self, "label": contents, "attrs": attrs, "use_tag": bool(id_), "tag": tag or "label", } return self.form.render(self.form.template_name_label, context) [536a9b27]
 - label_suffix overrides the form's label_suffix. """ return self.label_tag(contents, attrs, label_suffix, tag="legend") [22bc1047]
@@ -21,7 +22,6 @@
 - @property def choice_label(self): return self.data["label"] [8637e527]
 - @property def data(self): """ Return the data for this BoundField, or None if it wasn't given. """ return self.form._widget_data_value(self.field.widget, self.html_name) [709a834d]
 - @property def id_for_label(self): return self.data["attrs"].get("id") [ab0ad6a6]
-- def __iter__(self): return iter(self.subwidgets) [04af4eed]
 
 ## All facts
 
@@ -36,6 +36,7 @@
 - [5fad8508] def __getitem__(self, idx): # Prevent unnecessary reevaluation when accessing BoundField's attrs # from templates. if not isinstance(idx, (int, slice)): raise TypeError( "BoundField indices must be integers or slices, not %s." % type(idx).__name__ ) return self.subwidgets[idx]
 - [8765d778] def __init__(self, form, field, name): self.form = form self.field = field self.name = name self.html_name = form.add_prefix(name) self.html_initial_name = form.add_initial_prefix(name) self.html_initial_id = form.add_initial_prefix(self.auto_id) if self.field.label is None: self.label = pretty_name(name) else: self.label = self.field.label self.help_text = field.help_text or "" self.renderer = form.renderer
 - [c9f42c21] def __init__(self, parent_widget, data, renderer): self.parent_widget = parent_widget self.data = data self.renderer = renderer
+- [04af4eed] def __iter__(self): return iter(self.subwidgets)
 - [cda03f48] def __len__(self): return len(self.subwidgets)
 - [71271e05] def __str__(self): return self.tag(wrap_label=True)
 - [8cee5f4e] def _has_changed(self): field = self.field if field.show_hidden_initial: hidden_widget = field.hidden_widget() initial_value = self.form._widget_data_value( hidden_widget, self.html_initial_name, ) try: initial_value = field.to_python(initial_value) except ValidationError: # Always assume data has changed if validation fails. return True else: initial_value = self.initial return field.has_changed(initial_value, self.data)
@@ -47,6 +48,7 @@
 - [e417a9bc] def css_classes(self, extra_classes=None): """ Return a string of space-separated CSS classes for this field. """ if hasattr(extra_classes, "split"): extra_classes = extra_classes.split() extra_classes = set(extra_classes or []) if self.errors and hasattr(self.form, "error_css_class"): extra_classes.add(self.form.error_css_class) if self.field.required and hasattr(self.form, "required_css_class"): extra_classes.add(self.form.required_css_class) return " ".join(extra_classes)
 - [d2bc2b42] def get_context(self): return {"field": self}
 - [eedc2381] def label_tag(self, contents=None, attrs=None, label_suffix=None, tag=None): """ Wrap the given contents in a <label>, if the field has an ID attribute. contents should be mark_safe'd to avoid HTML escaping. If contents aren't given, use the field's HTML-escaped label.
+- [167c6c81] def legend_tag(self, contents=None, attrs=None, label_suffix=None): """ Wrap the given contents in a <legend>, if the field has an ID attribute. Contents should be mark_safe'd to avoid HTML escaping. If contents aren't given, use the field's HTML-escaped label.
 - [fb1f23f9] def tag(self, wrap_label=False): context = {"widget": {**self.data, "wrap_label": wrap_label}} return self.parent_widget._render(self.template_name, context, self.renderer)
 - [62f42ad1] def value(self): """ Return the value for this BoundField, using the initial value if the form is not bound or the data otherwise. """ data = self.initial if self.form.is_bound: data = self.field.bound_data(self.data, data) return self.field.prepare_value(data)
 - [f990185d] {% for radio in myform.beatles %} <label for="{{ radio.id_for_label }}"> {{ radio.choice_label }} <span class="radio">{{ radio.tag }}</span> </label> {% endfor %} """

@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Radians
 
-- Subject: django/db/models/functions/math::Radians (id `31b70c11-5e13-4042-a48e-da17cd9465f2`)
+- Subject: django/db/models/functions/math::Radians (id `872cf0b8-483e-43e0-83ba-bf8056721935`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

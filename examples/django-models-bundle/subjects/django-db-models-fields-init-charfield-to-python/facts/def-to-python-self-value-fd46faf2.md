@@ -1,6 +1,6 @@
 # Fact fd46faf2
 
-Store id: b678d031-dde3-4a54-80f3-40307d859e40
+Store id: c0d33108-5380-463f-aa73-4f1ce5d62e1f
 
 ## Text
 
@@ -20,7 +20,7 @@ def to_python(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5579620+00:00`
+- posted_at: `2026-11-09T23:44:50.0686760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1333,
     "symbol": "CharField.to_python"
   },
-  "id": "b678d031-dde3-4a54-80f3-40307d859e40",
+  "id": "c0d33108-5380-463f-aa73-4f1ce5d62e1f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5579620+00:00"
+    "posted_at": "2026-11-09T23:44:50.0686760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "441d5000-9338-4ce7-ad5b-71bc26eee85d",
+  "subject_id": "74462aea-4244-4023-b373-3999f1c70119",
   "subject_name": "django/db/models/fields/__init__::CharField.to_python",
   "tags": [
     "entity:method"

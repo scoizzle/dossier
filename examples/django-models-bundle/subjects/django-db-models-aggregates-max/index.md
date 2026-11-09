@@ -1,11 +1,11 @@
 # django/db/models/aggregates::Max
 
-- Subject: django/db/models/aggregates::Max (id `b53a19bd-8a66-4a2c-8402-92bb3749ef9b`)
+- Subject: django/db/models/aggregates::Max (id `9ff1ad2e-5d76-4e8b-b5eb-cbbbc42a51de`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

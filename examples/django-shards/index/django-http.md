@@ -4,10 +4,7 @@ This file lists every subject under `django/http/`, one row per subject, grouped
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/http/__init__ | subject | 2 | 0 | 0 | 1571 | [shards/220.md#django-http-init](../shards/220.md#django-http-init) |
-|   django/http/cookie | subject | 3 | 0 | 0 | 1571 | [shards/220.md#django-http-cookie](../shards/220.md#django-http-cookie) |
-|   django/http/multipartparser | subject | 10 | 0 | 0 | 1571 | [shards/220.md#django-http-multipartparser](../shards/220.md#django-http-multipartparser) |
-|   django/http/request | subject | 18 | 0 | 0 | 1830 | [shards/221.md#django-http-request](../shards/221.md#django-http-request) |
-|   django/http/response | subject | 9 | 0 | 0 | 1830 | [shards/221.md#django-http-response](../shards/221.md#django-http-response) |
+|   django/http/__init__ | subject | 2 | 0 | 0 | 1071 | [shards/127.md#django-http-init](../shards/127.md#django-http-init) |
+|   django/http/cookie | subject | 3 | 0 | 0 | 1246 | [shards/128.md#django-http-cookie](../shards/128.md#django-http-cookie) |
 
 Up: [index/django.md](django.md)

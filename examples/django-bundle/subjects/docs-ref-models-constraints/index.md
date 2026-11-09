@@ -1,10 +1,10 @@
 # docs/ref/models/constraints
 
-- Subject: docs/ref/models/constraints (id `7e1f6934-4b52-432f-ad75-034f02e70e05`)
+- Subject: docs/ref/models/constraints (id `08e6aa4a-1730-49f5-84a0-8ce63afb7b5d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3695 tokens
-- Facts shown: 110 of 113
+- Used: 3872 tokens
+- Facts shown: 113 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -72,6 +72,7 @@
 - [6b79972f] All constraints have the following parameters in common:
 - [4582a05f3e793cbe-2] By default constraints are not deferred. A deferred constraint will not be enforced until the end of the transaction. An immediate constraint will be enforced immediately after every command.
 - [967419e7] Defaults to :attr:`.BaseConstraint.violation_error_code`, when either :attr:`.UniqueConstraint.condition` is set or :attr:`.UniqueConstraint.fields` is not set.
+- [68f6948c] Defaults to :attr:`.BaseConstraint.violation_error_message`, when either :attr:`.UniqueConstraint.condition` is set or :attr:`.UniqueConstraint.fields` is not set.
 - [28edef836ab93f57-8] For example::
 - [28edef836ab93f57-9] For example::
 - [28edef836ab93f57-10] For example::
@@ -81,6 +82,7 @@
 - [28edef836ab93f57-14] For example::
 - [8a6db4fb] Functional unique constraints have the same database restrictions as :attr:`Index.expressions`.
 - [5f607209] If :attr:`.UniqueConstraint.fields` is set without a :attr:`.UniqueConstraint.condition`, defaults to the :attr:`Meta.unique_together <django.db.models.Options.unique_together>` error code when there are multiple fields, and to the :attr:`.Field.unique` error code when there is a single field.
+- [c30ef0d2] If :attr:`.UniqueConstraint.fields` is set without a :attr:`.UniqueConstraint.condition`, defaults to the :attr:`Meta.unique_together <django.db.models.Options.unique_together>` error message when there are multiple fields, and to the :attr:`.Field.unique` error message when there is a single field.
 - [0e33ae94] Non-key columns have the same database restrictions as :attr:`Index.include`.
 - [afa824af] Positional argument ``*expressions`` allows creating functional unique constraints on expressions and database functions.
 - [ef19328f] Raise a ``ValidationError`` if the constraint is violated.
@@ -89,6 +91,7 @@
 - [57e2bd85a3d0d59e-2] The error code used when ``ValidationError`` is raised during :ref:`model validation <validating-objects>`. Defaults to ``None``.
 - [2b930ffd] The error code used when a ``ValidationError`` is raised during :ref:`model validation <validating-objects>`.
 - [8ecf537a] The error message used when ``ValidationError`` is raised during :ref:`model validation <validating-objects>`. Defaults to ``"Constraint “%(name)s” is violated."``.
+- [01762424] The error message used when a ``ValidationError`` is raised during :ref:`model validation <validating-objects>`.
 - [cfc085d1] The name of the constraint. You must always specify a unique name for the constraint.
 - [e6e99c7e] The names of the `PostgreSQL operator classes <https://www.postgresql.org/docs/current/indexes-opclass.html>`_ to use for this unique index. If you require a custom operator class, you must provide one for each field in the index.
 - [27a00d8b] These conditions have the same database restrictions as :attr:`Index.condition`.

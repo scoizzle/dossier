@@ -1,10 +1,10 @@
 # django/contrib/gis/sitemaps/views
 
-- Subject: django/contrib/gis/sitemaps/views (id `38fcb356-0817-4227-9da2-8fc2479a4b86`)
+- Subject: django/contrib/gis/sitemaps/views (id `b1ef2c58-ae48-4fb6-885f-9ebe5dd2db8c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 581 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

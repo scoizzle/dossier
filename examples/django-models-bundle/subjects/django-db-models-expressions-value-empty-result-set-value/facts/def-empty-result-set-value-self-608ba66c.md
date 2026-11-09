@@ -1,6 +1,6 @@
 # Fact 608ba66c
 
-Store id: c40ab94c-7ca1-45f8-8a5a-9cdb6243d79f
+Store id: 43efa03b-240d-4960-9353-90ae00b344ed
 
 ## Text
 
@@ -20,7 +20,7 @@ def empty_result_set_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8643390+00:00`
+- posted_at: `2026-11-09T23:44:49.5310680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1239,
     "symbol": "Value.empty_result_set_value"
   },
-  "id": "c40ab94c-7ca1-45f8-8a5a-9cdb6243d79f",
+  "id": "43efa03b-240d-4960-9353-90ae00b344ed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8643390+00:00"
+    "posted_at": "2026-11-09T23:44:49.5310680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c8f3fc9d-96c6-4214-a266-9ef7655c0496",
+  "subject_id": "e6618026-4023-48f1-a9b4-51c42508f333",
   "subject_name": "django/db/models/expressions::Value.empty_result_set_value",
   "tags": [
     "entity:method",

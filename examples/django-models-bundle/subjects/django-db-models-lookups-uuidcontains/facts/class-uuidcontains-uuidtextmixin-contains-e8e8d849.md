@@ -1,6 +1,6 @@
 # Fact e8e8d849
 
-Store id: 8026897a-3bb2-4171-a940-9eb2cd84fc57
+Store id: dcd571b4-3806-4099-9407-879376dbb678
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDContains(UUIDTextMixin, Contains)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4755610+00:00`
+- posted_at: `2026-11-09T23:44:55.1085420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 805,
     "symbol": "UUIDContains"
   },
-  "id": "8026897a-3bb2-4171-a940-9eb2cd84fc57",
+  "id": "dcd571b4-3806-4099-9407-879376dbb678",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4755610+00:00"
+    "posted_at": "2026-11-09T23:44:55.1085420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "55c0859e-f5c5-41f6-8901-83c763ca77b4",
+  "subject_id": "9ef0d8ba-592d-43e0-9c64-e957b82126c8",
   "subject_name": "django/db/models/lookups::UUIDContains",
   "tags": [
     "entity:class",

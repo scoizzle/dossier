@@ -1,10 +1,10 @@
 # docs/ref/schema-editor
 
-- Subject: docs/ref/schema-editor (id `bf06c4f5-0a36-46a0-a003-e5093058b518`)
+- Subject: docs/ref/schema-editor (id `41b05bb7-68a2-40b6-ad2f-856356416a7a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2457 tokens
-- Facts shown: 69 of 70
+- Used: 2495 tokens
+- Facts shown: 70 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,6 +17,7 @@
 - .. method:: BaseDatabaseSchemaEditor.add_field(model, field) [cba8fd40]
 - .. method:: BaseDatabaseSchemaEditor.add_index(model, index) [8ac67b3b]
 - .. method:: BaseDatabaseSchemaEditor.alter_db_table(model, old_db_table, new_db_table) [2c4c0ce9]
+- .. method:: BaseDatabaseSchemaEditor.alter_db_table_comment(model, old_db_table_comment, new_db_table_comment) [ab378f2a]
 - .. method:: BaseDatabaseSchemaEditor.alter_db_tablespace(model, old_db_tablespace, new_db_tablespace) [f50916c4]
 - .. method:: BaseDatabaseSchemaEditor.alter_field(model, old_field, new_field, strict=False) [a04efc30]
 - .. method:: BaseDatabaseSchemaEditor.alter_index_together(model, old_index_together, new_index_together) [360e52d2]
@@ -38,11 +39,11 @@
 - Attributes ========== [1aaa4a27458d239d-2]
 - Change the ``model``’s table comment to ``new_db_table_comment``. [e02c3489]
 - Changes a model's :attr:`~django.db.models.Options.unique_together` value; this will add or remove unique constraints from the model's table until they match the new value. [690b891a]
-- Changes a model's ``index_together`` value; this will add or remove indexes from the model's table until they match the new value. [8428a7ff]
 - Methods ======= [ec8366aa0d7b3837-2]
 
 ## All facts
 
+- [8428a7ff] Changes a model's ``index_together`` value; this will add or remove indexes from the model's table until they match the new value.
 - [f6103c2f] Creates a new table in the database for the provided model, along with any unique constraints or indexes it requires.
 - [29c76d32] Django's migration system is split into two parts; the logic for calculating and storing what operations should be run (``django.db.migrations``), and the database abstraction layer that turns things like "create a model" or "delete a field" into SQL - which is the job of the ``SchemaEditor``.
 - [1bff3a8a] Drops the model's table in the database along with any unique constraints or indexes it has.

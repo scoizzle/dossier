@@ -1,6 +1,6 @@
 # Fact 46b6c3ec
 
-Store id: 39bfa677-567d-4374-b946-02960d43cfd0
+Store id: e65e4c43-6233-4660-b7e3-738538ce120f
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, auto_now=False, auto_now_add=F
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8123710+00:00`
+- posted_at: `2026-11-09T23:44:50.2521000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2615,
     "symbol": "TimeField.__init__"
   },
-  "id": "39bfa677-567d-4374-b946-02960d43cfd0",
+  "id": "e65e4c43-6233-4660-b7e3-738538ce120f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8123710+00:00"
+    "posted_at": "2026-11-09T23:44:50.2521000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7a4e3a53-b82c-4cbe-bed5-dd3a6c4809b3",
+  "subject_id": "b32a69d4-817b-4f28-b390-62279690e968",
   "subject_name": "django/db/models/fields/__init__::TimeField.__init__",
   "tags": [
     "entity:method"

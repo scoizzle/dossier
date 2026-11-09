@@ -1,6 +1,6 @@
 # Fact 1f04e378
 
-Store id: f7ff5b8c-00a4-4d2d-93cd-e4e693504c10
+Store id: 1b187c25-38cb-4f3a-9cb1-fe4061f4d0d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_parent_klass_info(klass_info)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.8369060+00:00`
+- posted_at: `2026-11-09T23:44:57.5839190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1432,
     "symbol": "SQLCompiler.get_select_for_update_of_arguments._get_parent_klass_info"
   },
-  "id": "f7ff5b8c-00a4-4d2d-93cd-e4e693504c10",
+  "id": "1b187c25-38cb-4f3a-9cb1-fe4061f4d0d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.8369060+00:00"
+    "posted_at": "2026-11-09T23:44:57.5839190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b5f7ccb5-fd59-4069-ab37-1fd130c7f78e",
+  "subject_id": "9e19d113-fe95-4391-921b-31f5d6f4601b",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments._get_parent_klass_info",
   "tags": [
     "entity:function"

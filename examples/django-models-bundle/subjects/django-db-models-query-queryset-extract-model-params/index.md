@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet._extract_model_params
 
-- Subject: django/db/models/query::QuerySet._extract_model_params (id `11df9cc0-989b-492c-be37-a0c5d5b96ea3`)
+- Subject: django/db/models/query::QuerySet._extract_model_params (id `58cdfebe-60aa-40d6-a683-d4d8e07169df`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

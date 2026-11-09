@@ -1,11 +1,11 @@
 # django/db/models/query::ValuesIterable
 
-- Subject: django/db/models/query::ValuesIterable (id `1610d974-80c6-472f-a10b-4c36ea0093ef`)
+- Subject: django/db/models/query::ValuesIterable (id `11a12ddf-77a4-4bcc-adf5-9e0e6e8a91ac`)
 - Kind: class
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact f927cae2
 
-Store id: 75c95cb9-c9bc-4b1e-8fdd-bf8ef51ac5b2
+Store id: c2f1c2b4-5541-4580-b4d2-8f03e1ceb78d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_updates(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.3985660+00:00`
+- posted_at: `2026-11-09T23:44:59.4184650+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 130,
     "symbol": "UpdateQuery.get_related_updates"
   },
-  "id": "75c95cb9-c9bc-4b1e-8fdd-bf8ef51ac5b2",
+  "id": "c2f1c2b4-5541-4580-b4d2-8f03e1ceb78d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.3985660+00:00"
+    "posted_at": "2026-11-09T23:44:59.4184650+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8fe1528a-e9d5-4e53-837c-8842030b5129",
+  "subject_id": "9ea48252-11e4-4765-87d8-e742f936ad52",
   "subject_name": "django/db/models/sql/subqueries::UpdateQuery.get_related_updates",
   "tags": [
     "entity:method"

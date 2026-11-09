@@ -1,10 +1,10 @@
 # django/core/asgi
 
-- Subject: django/core/asgi (id `a72784f7-f14a-43d5-82be-b9283f15d4fa`)
+- Subject: django/core/asgi (id `5577015a-1e03-4da9-8c4e-674361caf4f8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 121 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

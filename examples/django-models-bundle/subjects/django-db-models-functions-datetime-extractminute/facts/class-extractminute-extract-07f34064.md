@@ -1,6 +1,6 @@
 # Fact 07f34064
 
-Store id: ea15ee26-8339-4603-a334-35bb97dd7bba
+Store id: bcd31a3e-1782-4172-8b34-a5dde0b6dae8
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractMinute(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2214710+00:00`
+- posted_at: `2026-11-09T23:44:53.3622990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 175,
     "symbol": "ExtractMinute"
   },
-  "id": "ea15ee26-8339-4603-a334-35bb97dd7bba",
+  "id": "bcd31a3e-1782-4172-8b34-a5dde0b6dae8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2214710+00:00"
+    "posted_at": "2026-11-09T23:44:53.3622990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b073442f-a0af-4bd8-96cb-98ad31fb9db4",
+  "subject_id": "d4636aae-0876-4a64-ba60-9fb9c6a2b2f5",
   "subject_name": "django/db/models/functions/datetime::ExtractMinute",
   "tags": [
     "entity:class"

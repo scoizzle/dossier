@@ -1,11 +1,11 @@
 # django/db/models/sql/subqueries::UpdateQuery.get_related_updates
 
-- Subject: django/db/models/sql/subqueries::UpdateQuery.get_related_updates (id `8fe1528a-e9d5-4e53-837c-8842030b5129`)
+- Subject: django/db/models/sql/subqueries::UpdateQuery.get_related_updates (id `9ea48252-11e4-4765-87d8-e742f936ad52`)
 - Kind: method
 - Parent: [django/db/models/sql/subqueries](../django-db-models-sql-subqueries/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 18395ef1
 
-Store id: 6274550d-8ca2-456b-8083-b77e83255ff1
+Store id: 0f657f1a-ab3f-4e0f-885c-cef55c856715
 
 ## Text
 
@@ -20,7 +20,7 @@ def cache_name(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3155100+00:00`
+- posted_at: `2026-11-09T23:44:52.5012290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 242,
     "symbol": "ForeignObjectRel.cache_name"
   },
-  "id": "6274550d-8ca2-456b-8083-b77e83255ff1",
+  "id": "0f657f1a-ab3f-4e0f-885c-cef55c856715",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3155100+00:00"
+    "posted_at": "2026-11-09T23:44:52.5012290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "db1b3612-7adc-4b13-b093-f2a26e292e50",
+  "subject_id": "daec492c-a3e3-4531-964e-03b1313923d7",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.cache_name",
   "tags": [
     "entity:method",

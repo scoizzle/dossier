@@ -1,6 +1,6 @@
 # Fact 1d5b0e03
 
-Store id: 28893cef-bf9d-42d2-ad68-335093c5da2f
+Store id: aea338f3-5fd2-4e55-a4d1-34d98da393fb
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aexplain(self, *, format=None, **options)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5107250+00:00`
+- posted_at: `2026-11-09T23:44:56.0069140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1525,
     "symbol": "QuerySet.aexplain"
   },
-  "id": "28893cef-bf9d-42d2-ad68-335093c5da2f",
+  "id": "aea338f3-5fd2-4e55-a4d1-34d98da393fb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5107250+00:00"
+    "posted_at": "2026-11-09T23:44:56.0069140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6c62c813-19fc-404c-8872-577708a501bb",
+  "subject_id": "716f6236-6e10-46cb-b2b2-e496be3f4e53",
   "subject_name": "django/db/models/query::QuerySet.aexplain",
   "tags": [
     "entity:method",

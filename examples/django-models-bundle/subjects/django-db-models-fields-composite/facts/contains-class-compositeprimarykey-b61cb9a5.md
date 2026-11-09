@@ -1,6 +1,6 @@
 # Fact b61cb9a5
 
-Store id: ffa535a8-231b-4b9d-a8bc-5e932ddd7fd2
+Store id: 81eeedba-a2b1-41d2-90d6-0416bd0b6e62
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CompositePrimaryKey
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1501670+00:00`
+- posted_at: `2026-11-09T23:44:50.5014100+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ffa535a8-231b-4b9d-a8bc-5e932ddd7fd2",
+  "id": "81eeedba-a2b1-41d2-90d6-0416bd0b6e62",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1501670+00:00"
+    "posted_at": "2026-11-09T23:44:50.5014100+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CompositePrimaryKey"
       },
       "rel": "contains",
-      "target": "09c11a45-d389-4355-a809-9a22cc60ee7f"
+      "target": "0e7eafa6-817e-4a5b-9884-ee11414a7688"
     }
   ],
   "status": "live",
-  "subject_id": "491ed372-374e-4a6d-8e01-91b4c3f9a27f",
+  "subject_id": "b8232277-ea28-4cdf-8d6a-026269c8b135",
   "subject_name": "django/db/models/fields/composite",
   "tags": [
     "entity:class"

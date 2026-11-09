@@ -1,10 +1,10 @@
 # django/core/checks/async_checks
 
-- Subject: django/core/checks/async_checks (id `cd5557eb-4905-40c4-b8ed-1cd7b261fcf7`)
+- Subject: django/core/checks/async_checks (id `cfee5a9e-14aa-4659-95a5-d5f91b204391`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 135 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

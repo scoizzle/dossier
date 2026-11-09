@@ -1,6 +1,6 @@
 # Fact 3e22a65b
 
-Store id: 8eafbff6-2d94-4d65-b28e-2f0cbd592db1
+Store id: 7e9f8644-737d-4cab-b44a-0f995adbe345
 
 ## Text
 
@@ -20,7 +20,7 @@ def make_immutable_fields_list(name, data)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.8834910+00:00`
+- posted_at: `2026-11-09T23:44:55.4518540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 86,
     "symbol": "make_immutable_fields_list"
   },
-  "id": "8eafbff6-2d94-4d65-b28e-2f0cbd592db1",
+  "id": "7e9f8644-737d-4cab-b44a-0f995adbe345",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.8834910+00:00"
+    "posted_at": "2026-11-09T23:44:55.4518540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10d042b8-1566-4498-91d8-0b2cfb997bd7",
+  "subject_id": "0e14f6ff-d276-47db-897a-506ee37525bc",
   "subject_name": "django/db/models/options::make_immutable_fields_list",
   "tags": [
     "entity:function"

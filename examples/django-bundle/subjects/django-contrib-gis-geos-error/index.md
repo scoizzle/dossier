@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/error
 
-- Subject: django/contrib/gis/geos/error (id `d2c9b4fd-960e-4dad-ab8d-fba77f0e3374`)
+- Subject: django/contrib/gis/geos/error (id `208a058e-6f2f-4551-aade-4a7fc9d32cc3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 45 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/contrib/gis/management/commands/ogrinspect
 
-- Subject: django/contrib/gis/management/commands/ogrinspect (id `8135de89-4286-47da-8161-098e4b0876b8`)
+- Subject: django/contrib/gis/management/commands/ogrinspect (id `d7284b6c-1b32-4852-8042-de4b0fdaccd1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1288 tokens
-- Facts shown: 14 of 14
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 

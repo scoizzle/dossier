@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::AutoFieldMixin.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::AutoFieldMixin.get_db_prep_value (id `62afe0c3-1b48-48f5-9b13-f38fb27341db`)
+- Subject: django/db/models/fields/__init__::AutoFieldMixin.get_db_prep_value (id `e88ce5d5-a5c1-4fab-abcf-96967f339c69`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

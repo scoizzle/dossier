@@ -1,6 +1,6 @@
 # Fact f84918f5
 
-Store id: 22671a01-878f-42bb-9309-87ca3604dae5
+Store id: c1629844-5569-4c87-ab95-a6cb812a5ecf
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, length, fill_text=Value(" "), **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2121130+00:00`
+- posted_at: `2026-11-09T23:44:54.1036170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 201,
     "symbol": "LPad.__init__"
   },
-  "id": "22671a01-878f-42bb-9309-87ca3604dae5",
+  "id": "c1629844-5569-4c87-ab95-a6cb812a5ecf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2121130+00:00"
+    "posted_at": "2026-11-09T23:44:54.1036170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a8cc5e08-2988-4345-b068-711d29ba6f1b",
+  "subject_id": "db67266f-8b43-4b95-a129-f15b340e9838",
   "subject_name": "django/db/models/functions/text::LPad.__init__",
   "tags": [
     "entity:method"

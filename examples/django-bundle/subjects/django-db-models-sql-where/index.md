@@ -1,10 +1,10 @@
 # django/db/models/sql/where
 
-- Subject: django/db/models/sql/where (id `04e36846-ddca-436a-ada8-4a5c5333125c`)
+- Subject: django/db/models/sql/where (id `6f4a3f0b-caaf-456a-8a01-e4d5e262b610`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2816 tokens
-- Facts shown: 42 of 42
+- Facts shown: 42 facts
 - Conflicts: 0
 - Gaps: 0
 

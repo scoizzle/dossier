@@ -1,10 +1,10 @@
 # docs/internals/contributing/new-contributors
 
-- Subject: docs/internals/contributing/new-contributors (id `7a5e5e64-658f-473f-829c-3e7c33beed1b`)
+- Subject: docs/internals/contributing/new-contributors (id `c8c12891-3098-456e-b3a5-a6f80da78b87`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2202 tokens
-- Facts shown: 47 of 47
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 

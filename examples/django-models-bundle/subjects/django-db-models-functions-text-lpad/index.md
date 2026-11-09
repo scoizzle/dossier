@@ -1,11 +1,11 @@
 # django/db/models/functions/text::LPad
 
-- Subject: django/db/models/functions/text::LPad (id `0289256f-1789-470e-8da5-e017e8a76dbb`)
+- Subject: django/db/models/functions/text::LPad (id `1d2d883a-98e3-4ceb-9eee-43088903362d`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

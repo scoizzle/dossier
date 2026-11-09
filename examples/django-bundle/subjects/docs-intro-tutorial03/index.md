@@ -1,10 +1,10 @@
 # docs/intro/tutorial03
 
-- Subject: docs/intro/tutorial03 (id `3a55aeb5-c3c2-4b05-9638-1a808a09ffd4`)
+- Subject: docs/intro/tutorial03 (id `feb09af2-f663-4e58-b51b-190dae6ca06f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5286 tokens
-- Facts shown: 112 of 129
+- Used: 5689 tokens
+- Facts shown: 129 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -18,31 +18,38 @@
 - <h1>{{ question.question_text }}</h1> <ul> {% for choice in question.choice_set.all %} <li>{{ choice.choice_text }}</li> {% endfor %} </ul> [1117b076]
 - <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> [76d37ba5]
 - <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li> [d1381f60c6feec3e]
+- <li><a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li> [d1381f60c6feec3e-2]
+- <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li> [08ccf1bb]
 - Because that would couple the model layer to the view layer. One of the foremost design goals of Django is to maintain loose coupling. Some controlled coupling is introduced in the :mod:`django.shortcuts` module. [e714c5e2]
 - If you're having trouble going through this tutorial, please head over to the :doc:`Getting Help</faq/help>` section of the FAQ. [eff105796d7d4d6a-3]
 - Now we *might* be able to get away with putting our templates directly in ``polls/templates`` (rather than creating another ``polls`` subdirectory), but it would actually be a bad idea. Django will choose the first template it finds whose name matches, and if you had a template with the same name in a *different* application, Django would be unable to distinguish between them. We need to be able to point Django at the right one, and the best way to ensure this is by *namespacing* them. That is, by putting those templates inside *another* directory named for the application itself. [72ef00b6]
 - To make the tutorial shorter, all template examples use incomplete HTML. In your own projects you should use `complete HTML documents`__. [1a90ec42]
 - Why do we use a helper function :func:`~django.shortcuts.get_object_or_404` instead of automatically catching the :exc:`~django.core.exceptions.ObjectDoesNotExist` exceptions at a higher level, or having the model API raise :exc:`~django.http.Http404` instead of :exc:`~django.core.exceptions.ObjectDoesNotExist`? [3cd86f4c]
 - app_name = "polls" urlpatterns = [ path("", views.index, name="index"), path("<int:question_id>/", views.detail, name="detail"), path("<int:question_id>/results/", views.results, name="results"), path("<int:question_id>/vote/", views.vote, name="vote"), ] [74d47d17]
-- def detail(request, question_id): return HttpResponse("You're looking at question %s." % question_id) [7518eead]
-- def index(request): latest_question_list = Question.objects.order_by("-pub_date")[:5] output = ", ".join([q.question_text for q in latest_question_list]) return HttpResponse(output) [b9d06d6b]
+- detail(request=<HttpRequest object>, question_id=34) [9e49b008]
 
 ## All facts
 
+- [7518eead] def detail(request, question_id): return HttpResponse("You're looking at question %s." % question_id)
 - [440670ec] def index(request): latest_question_list = Question.objects.order_by("-pub_date")[:5] context = {"latest_question_list": latest_question_list} return render(request, "polls/index.html", context)
+- [b9d06d6b] def index(request): latest_question_list = Question.objects.order_by("-pub_date")[:5] output = ", ".join([q.question_text for q in latest_question_list]) return HttpResponse(output)
 - [c704759c] def index(request): latest_question_list = Question.objects.order_by("-pub_date")[:5] template = loader.get_template("polls/index.html") context = {"latest_question_list": latest_question_list} return HttpResponse(template.render(context, request))
 - [df81238d] def results(request, question_id): response = "You're looking at the results of question %s." return HttpResponse(response % question_id)
 - [c25305d8] def vote(request, question_id): return HttpResponse("You're voting on question %s." % question_id)
-- [9e49b008] detail(request=<HttpRequest object>, question_id=34)
 - [c00926fe3424edad-3] from . import views
 - [c00926fe3424edad-4] from . import views
 - [df692aec3f5cbbed-2] from .models import Question
+- [df692aec3f5cbbed-3] from .models import Question
+- [df692aec3f5cbbed-4] from .models import Question
+- [df692aec3f5cbbed-5] from .models import Question
+- [df692aec3f5cbbed-6] from .models import Question
 - [6b52c258] from django.http import Http404 from django.shortcuts import render
 - [c672e2c6d47dd35c-2] from django.http import HttpResponse
 - [c5bda1b341cf97d4-2] from django.http import HttpResponse from django.template import loader
 - [02eea688fdf57895] from django.shortcuts import get_object_or_404, render
 - [f3bb80f2b2fd7f5d-3] from django.shortcuts import render
 - [c537d1941a7e3025-3] from django.urls import path
+- [c537d1941a7e3025-4] from django.urls import path
 - [cd9175d1] urlpatterns = [ # ex: /polls/ path("", views.index, name="index"), # ex: /polls/5/ path("<int:question_id>/", views.detail, name="detail"), # ex: /polls/5/results/ path("<int:question_id>/results/", views.results, name="results"), # ex: /polls/5/vote/ path("<int:question_id>/vote/", views.vote, name="vote"), ]
 - [7a8f81fd] {% if latest_question_list %} <ul> {% for question in latest_question_list %} <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li> {% endfor %} </ul> {% else %} <p>No polls are available.</p> {% endif %}
 - [c344d94b] {{ question }}
@@ -60,11 +67,21 @@
 - [2dea0dea] .. admonition:: Template namespacing
 - [dbb2ef17dd903b2b-4] .. admonition:: Where to get help:
 - [685d15dfb6eb2285-42] .. code-block:: html+django
+- [685d15dfb6eb2285-43] .. code-block:: html+django
 - [5a286ce802025afd] .. code-block:: html+django :caption: ``polls/templates/polls/detail.html``
+- [5a286ce802025afd-2] .. code-block:: html+django :caption: ``polls/templates/polls/detail.html``
 - [a8588014402a8293] .. code-block:: html+django :caption: ``polls/templates/polls/index.html``
+- [a8588014402a8293-2] .. code-block:: html+django :caption: ``polls/templates/polls/index.html``
+- [a8588014402a8293-3] .. code-block:: html+django :caption: ``polls/templates/polls/index.html``
 - [eaf050be34acb41d-9] .. code-block:: pycon
 - [5c9a4d2d821e33d5-2] .. code-block:: python :caption: ``polls/urls.py``
+- [5c9a4d2d821e33d5-3] .. code-block:: python :caption: ``polls/urls.py``
 - [d59bf1960628576c-2] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-3] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-4] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-5] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-6] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-7] .. code-block:: python :caption: ``polls/views.py``
 - [942ae6c11625c81c-21] .. note::
 - [4c9112b7] ===================================== Writing your first Django app, part 3 =====================================
 - [34dbed0f] A URL pattern is the general form of a URL - for example: ``/newsarchive/<year>/<month>/``.

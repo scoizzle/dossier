@@ -1,10 +1,10 @@
 # django/template/base
 
-- Subject: django/template/base (id `207e5619-e288-4b4b-81ed-bbdcd33884f6`)
+- Subject: django/template/base (id `03753d9a-435b-47a8-b821-819e32dbdda3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 9839 tokens
-- Facts shown: 144 of 146
+- Used: 9909 tokens
+- Facts shown: 146 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -74,12 +74,14 @@
 - [f44fd51b] def __repr__(self): return "<%s: %r>" % (self.__class__.__name__, self.var)
 - [93dd5ecf] def __repr__(self): return "<Variable Node: %s>" % self.filter_expression
 - [0abc9b13] def __repr__(self): return '<%s template_string="%s...", verbatim=%s>' % ( self.__class__.__qualname__, self.template_string[:20].replace("\n", ""), self.verbatim, )
+- [339c1eb5] def __repr__(self): return '<%s template_string="%s...">' % ( self.__class__.__qualname__, self.source[:20].replace("\n", ""), )
 - [797edcaf] def __repr__(self): token_name = self.token_type.name.capitalize() return '<%s token: "%s...">' % ( token_name, self.contents[:20].replace("\n", ""), )
 - [8686744b] def __str__(self): return self.msg % self.params
 - [5e7b3fdc80e0535c-4] def __str__(self): return self.name
 - [17f19829] def __str__(self): return self.token
 - [7db67474] def __str__(self): return self.var
 - [4179a05844031c4b] def _render(self, context): return self.nodelist.render(context)
+- [4179a05844031c4b-2] def _render(self, context): return self.nodelist.render(context)
 - [e1cd534e] def _resolve_lookup(self, context): """ Perform resolution of a real variable (i.e. not a literal) against the given context.
 - [626f8ccb] def add_library(self, lib): self.tags.update(lib.tags) self.filters.update(lib.filters)
 - [d1402f20] def args_check(name, func, provided): provided = list(provided) # First argument, filter input, is implied. plen = len(provided) + 1 # Check to see if a decorator is providing the real function. func = inspect.unwrap(func)

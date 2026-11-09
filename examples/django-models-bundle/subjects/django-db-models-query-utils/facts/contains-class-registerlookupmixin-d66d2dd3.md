@@ -1,6 +1,6 @@
 # Fact d66d2dd3
 
-Store id: 240d82a8-cab3-44ac-95ab-3a2c0a95187b
+Store id: 7f1030e5-0ecb-4327-bd31-2679816fb46a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RegisterLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "240d82a8-cab3-44ac-95ab-3a2c0a95187b",
+  "id": "7f1030e5-0ecb-4327-bd31-2679816fb46a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RegisterLookupMixin"
       },
       "rel": "contains",
-      "target": "033860c2-1637-4c49-bfb5-f25c56f6be1f"
+      "target": "60ddf1f3-fc66-4696-8791-16248cd26cb5"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:class"

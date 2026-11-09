@@ -1,10 +1,10 @@
 # docs/howto/deployment/asgi/hypercorn
 
-- Subject: docs/howto/deployment/asgi/hypercorn (id `b39f011d-4ecf-4e5a-8f6f-017ff5d2bde9`)
+- Subject: docs/howto/deployment/asgi/hypercorn (id `a50ec734-af06-41f4-8560-92a58714dc33`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 430 tokens
-- Facts shown: 14 of 14
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 

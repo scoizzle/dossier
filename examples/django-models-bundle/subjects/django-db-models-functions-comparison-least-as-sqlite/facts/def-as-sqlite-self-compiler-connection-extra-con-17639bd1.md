@@ -1,6 +1,6 @@
 # Fact 17639bd1
 
-Store id: 541511c7-33db-42cd-8811-ae6117569e14
+Store id: fa9c49dc-05da-4e8a-8d8c-7922036972b3
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0081160+00:00`
+- posted_at: `2026-11-09T23:44:53.1837940+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 160,
     "symbol": "Least.as_sqlite"
   },
-  "id": "541511c7-33db-42cd-8811-ae6117569e14",
+  "id": "fa9c49dc-05da-4e8a-8d8c-7922036972b3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0081160+00:00"
+    "posted_at": "2026-11-09T23:44:53.1837940+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "94af726d-5fd0-4418-b2cb-6930109df04b",
+  "subject_id": "ff41b086-6d5d-418d-8b2f-22e36d27370b",
   "subject_name": "django/db/models/functions/comparison::Least.as_sqlite",
   "tags": [
     "entity:method"

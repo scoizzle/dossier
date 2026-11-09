@@ -4,11 +4,11 @@ This file lists every subject in the bundle, one row per subject, grouped by the
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| Memos | app | 2 | 0 | 0 | 182 | [subjects/memos/index.md](subjects/memos/index.md) |
+| Memos | app | 2 | 0 | 0 | 183 | [subjects/memos/index.md](subjects/memos/index.md) |
 |   Memos/Archived | screen | 2 | 0 | 0 | 136 | [subjects/memos-archived/index.md](subjects/memos-archived/index.md) |
 |   Memos/Home | screen | 24 | 3 | 0 | 1008 | [subjects/memos-home/index.md](subjects/memos-home/index.md) |
 |   Memos/MemoDetail | screen | 2 | 0 | 0 | 136 | [subjects/memos-memodetail/index.md](subjects/memos-memodetail/index.md) |
-|   Memos/SignIn | screen | 2 | 0 | 0 | 136 | [subjects/memos-signin/index.md](subjects/memos-signin/index.md) |
+|   Memos/SignIn | screen | 2 | 0 | 0 | 137 | [subjects/memos-signin/index.md](subjects/memos-signin/index.md) |
 
 ## Totals
 
@@ -16,7 +16,7 @@ This file lists every subject in the bundle, one row per subject, grouped by the
 - Facts: 32
 - Conflicts: 3
 - Gaps: 0
-- Subject file tokens, all subjects: 1598
+- Subject file tokens, all subjects: 1600
 - Index files: 1
 - Largest index file, tokens: 331
 

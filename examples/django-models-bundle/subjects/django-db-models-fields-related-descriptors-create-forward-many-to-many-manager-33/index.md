@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.remove
 
-- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.remove (id `8c8deac4-7392-4928-aa96-fd8ff7ec2856`)
+- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.remove (id `89a5aa77-c1db-4a69-aedc-165a0d35866f`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/views/static
 
-- Subject: django/views/static (id `a3338771-6d7a-4940-a1c0-af81a07742e3`)
+- Subject: django/views/static (id `5d55867e-90d9-4f0f-8397-d517c7518dc0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1027 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

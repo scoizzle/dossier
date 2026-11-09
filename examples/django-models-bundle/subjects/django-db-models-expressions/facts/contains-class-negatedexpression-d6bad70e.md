@@ -1,6 +1,6 @@
 # Fact d6bad70e
 
-Store id: dc77116d-0272-4928-a643-29f201a8f011
+Store id: 1f8969db-af7f-4bce-9f42-bb20c4f59965
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NegatedExpression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "dc77116d-0272-4928-a643-29f201a8f011",
+  "id": "1f8969db-af7f-4bce-9f42-bb20c4f59965",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NegatedExpression"
       },
       "rel": "contains",
-      "target": "37dc2be2-8f69-401e-b36a-de132796daed"
+      "target": "c4c379a7-d006-4eeb-aa42-abc48f39a2aa"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

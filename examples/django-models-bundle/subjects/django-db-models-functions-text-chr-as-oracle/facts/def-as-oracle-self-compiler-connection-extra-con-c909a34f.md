@@ -1,6 +1,6 @@
 # Fact c909a34f
 
-Store id: 9efb1901-24c2-4b1c-9968-ffdefa54fcb0
+Store id: 3b50e652-e31a-468f-992d-f6aaff1981b7
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1442530+00:00`
+- posted_at: `2026-11-09T23:44:54.0488820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 56,
     "symbol": "Chr.as_oracle"
   },
-  "id": "9efb1901-24c2-4b1c-9968-ffdefa54fcb0",
+  "id": "3b50e652-e31a-468f-992d-f6aaff1981b7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1442530+00:00"
+    "posted_at": "2026-11-09T23:44:54.0488820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c7fbe64b-b7bb-47e2-9a23-36398bb55d5d",
+  "subject_id": "405c0625-8f2d-4fd3-a3ea-f95526734e62",
   "subject_name": "django/db/models/functions/text::Chr.as_oracle",
   "tags": [
     "entity:method"

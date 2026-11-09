@@ -1,6 +1,6 @@
 # Fact e47cbbae
 
-Store id: 803260dc-d036-4f9d-896d-4aeb8e04d78d
+Store id: a4e71a6d-84ef-442a-af05-afe39db5a80d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8915420+00:00`
+- posted_at: `2026-11-09T23:44:50.3126850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2877,
     "symbol": "AutoFieldMixin.__init__"
   },
-  "id": "803260dc-d036-4f9d-896d-4aeb8e04d78d",
+  "id": "a4e71a6d-84ef-442a-af05-afe39db5a80d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8915420+00:00"
+    "posted_at": "2026-11-09T23:44:50.3126850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0dcb679f-fce5-4784-a803-f49833597e49",
+  "subject_id": "0a4001e6-9e7a-4aef-bb8a-3cf7f792a351",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.__init__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact c142cae1
 
-Store id: 4744658d-63c3-49a0-9bda-77bf4b3793c7
+Store id: 2ffba4a2-f44a-461b-904a-06bd7d5ca2f1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PatternLookup
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4744658d-63c3-49a0-9bda-77bf4b3793c7",
+  "id": "2ffba4a2-f44a-461b-904a-06bd7d5ca2f1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PatternLookup"
       },
       "rel": "contains",
-      "target": "4418826c-473d-4a84-99a9-4ac35f7ce7ab"
+      "target": "413afc12-afe1-4de6-a096-e9c0d400591f"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

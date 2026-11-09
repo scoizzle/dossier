@@ -1,10 +1,10 @@
 # django/core/cache/__init__
 
-- Subject: django/core/cache/__init__ (id `9479aa35-4536-4f54-87d9-5464feaf05d7`)
+- Subject: django/core/cache/__init__ (id `fd8628d0-afb7-4c46-a11b-9515efb7e091`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 574 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

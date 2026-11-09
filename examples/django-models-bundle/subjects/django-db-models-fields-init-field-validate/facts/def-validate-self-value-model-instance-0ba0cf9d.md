@@ -1,6 +1,6 @@
 # Fact 0ba0cf9d
 
-Store id: 533f26b0-a1f8-4631-b4e3-cf86f7a62d1f
+Store id: ac41159c-c673-40ad-bf73-82c5479ed378
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate(self, value, model_instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4691710+00:00`
+- posted_at: `2026-11-09T23:44:50.0086630+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 838,
     "symbol": "Field.validate"
   },
-  "id": "533f26b0-a1f8-4631-b4e3-cf86f7a62d1f",
+  "id": "ac41159c-c673-40ad-bf73-82c5479ed378",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4691710+00:00"
+    "posted_at": "2026-11-09T23:44:50.0086630+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "689cad6c-fa28-40e6-8ce4-19fe3bdbea15",
+  "subject_id": "23ff5448-7788-4463-955f-4fefc61fef3c",
   "subject_name": "django/db/models/fields/__init__::Field.validate",
   "tags": [
     "entity:method"

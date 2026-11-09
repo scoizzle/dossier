@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/management/commands/findstatic
 
-- Subject: django/contrib/staticfiles/management/commands/findstatic (id `8e053575-9832-406a-bbf9-d621a42187b0`)
+- Subject: django/contrib/staticfiles/management/commands/findstatic (id `e0e2d30c-675a-4b51-a8ee-4362c71f6b53`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 347 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransform.as_mysql
 
-- Subject: django/db/models/fields/json::KeyTransform.as_mysql (id `a0a15d66-b448-4e3b-87c6-542b3bfca609`)
+- Subject: django/db/models/fields/json::KeyTransform.as_mysql (id `e1a00346-cc22-4b59-83d0-3e9c5fcfee1f`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 18a34e40
 
-Store id: be234943-198d-423b-bdf2-f552eb5d6c82
+Store id: bcdc1239-bd11-40ce-9f97-e509da8957f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _paired(self, expressions, output_field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1825960+00:00`
+- posted_at: `2026-11-09T23:44:54.0800570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 141,
     "symbol": "Concat._paired"
   },
-  "id": "be234943-198d-423b-bdf2-f552eb5d6c82",
+  "id": "bcdc1239-bd11-40ce-9f97-e509da8957f0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1825960+00:00"
+    "posted_at": "2026-11-09T23:44:54.0800570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2e9a663a-e2e6-4765-a745-ec937e58b422",
+  "subject_id": "bff39322-637b-4fe3-963d-8121c2c8b431",
   "subject_name": "django/db/models/functions/text::Concat._paired",
   "tags": [
     "entity:method"

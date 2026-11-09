@@ -1,6 +1,6 @@
 # Fact ff3f908b
 
-Store id: c4a94e5c-db86-4540-8f22-4572c50400ae
+Store id: 838982d8-4e07-4b75-ac5c-96ed54721ca2
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer offers a visibility selector for public, private, and protected me
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c4a94e5c-db86-4540-8f22-4572c50400ae",
+  "id": "838982d8-4e07-4b75-ac5c-96ed54721ca2",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:visibility"

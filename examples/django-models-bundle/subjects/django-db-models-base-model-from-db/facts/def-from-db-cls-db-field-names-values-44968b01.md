@@ -1,6 +1,6 @@
 # Fact 44968b01
 
-Store id: 71ee6b86-2a7c-40d9-aa90-cafb651eea6e
+Store id: 1f647fc4-1763-4eba-8c03-688a962764d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def from_db(cls, db, field_names, values, *, fetch_mode=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7322760+00:00`
+- posted_at: `2026-11-09T23:44:48.5261450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 617,
     "symbol": "Model.from_db"
   },
-  "id": "71ee6b86-2a7c-40d9-aa90-cafb651eea6e",
+  "id": "1f647fc4-1763-4eba-8c03-688a962764d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7322760+00:00"
+    "posted_at": "2026-11-09T23:44:48.5261450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07c5ebb8-7754-4dad-90d9-3d91faa0e9a8",
+  "subject_id": "4835e8da-ae30-4773-bd82-11b2eb154ccb",
   "subject_name": "django/db/models/base::Model.from_db",
   "tags": [
     "entity:class_method",

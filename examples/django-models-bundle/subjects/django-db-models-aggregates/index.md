@@ -1,10 +1,10 @@
 # django/db/models/aggregates
 
-- Subject: django/db/models/aggregates (id `b5feecb6-d0e1-4e7f-8b00-717f9dabceb1`)
+- Subject: django/db/models/aggregates (id `6bc5f39c-532b-45f7-9f53-5325c9016e4d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 282 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

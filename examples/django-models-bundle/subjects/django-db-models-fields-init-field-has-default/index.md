@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.has_default
 
-- Subject: django/db/models/fields/__init__::Field.has_default (id `f9de01da-fa8a-40a0-b57c-1ac49aa3aa36`)
+- Subject: django/db/models/fields/__init__::Field.has_default (id `0e3e0040-d650-4894-8cb6-5dec27cf2da7`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

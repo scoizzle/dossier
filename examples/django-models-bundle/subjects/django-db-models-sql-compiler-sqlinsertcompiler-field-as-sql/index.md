@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLInsertCompiler.field_as_sql
 
-- Subject: django/db/models/sql/compiler::SQLInsertCompiler.field_as_sql (id `d226e75a-5c58-482a-9119-ef0c9077e4f2`)
+- Subject: django/db/models/sql/compiler::SQLInsertCompiler.field_as_sql (id `4947098f-e8cb-443f-b147-0b59a97473bc`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

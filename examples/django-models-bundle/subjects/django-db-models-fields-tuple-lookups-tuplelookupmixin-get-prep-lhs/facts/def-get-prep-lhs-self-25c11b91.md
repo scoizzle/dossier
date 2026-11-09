@@ -1,6 +1,6 @@
 # Fact 25c11b91
 
-Store id: 3fb5faca-22a4-446f-bcc2-79438856b215
+Store id: 974c67ee-8b2f-4107-809a-5d0073d2289f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lhs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5681400+00:00`
+- posted_at: `2026-11-09T23:44:52.7413140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 96,
     "symbol": "TupleLookupMixin.get_prep_lhs"
   },
-  "id": "3fb5faca-22a4-446f-bcc2-79438856b215",
+  "id": "974c67ee-8b2f-4107-809a-5d0073d2289f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5681400+00:00"
+    "posted_at": "2026-11-09T23:44:52.7413140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "000dfb44-7c13-4b5b-b62e-5af84426c179",
+  "subject_id": "d7f2fe56-03ee-488d-a655-6b47708f881c",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.get_prep_lhs",
   "tags": [
     "entity:method"

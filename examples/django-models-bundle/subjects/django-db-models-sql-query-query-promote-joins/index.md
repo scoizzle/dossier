@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.promote_joins
 
-- Subject: django/db/models/sql/query::Query.promote_joins (id `198c6657-1182-459f-8789-129d7889b41b`)
+- Subject: django/db/models/sql/query::Query.promote_joins (id `000efb77-45ba-41f8-bda9-7d26455e3404`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

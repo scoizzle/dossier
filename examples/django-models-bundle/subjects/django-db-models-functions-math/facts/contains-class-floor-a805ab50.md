@@ -1,6 +1,6 @@
 # Fact a805ab50
 
-Store id: 7ed2d411-b315-4709-a866-02341bad504d
+Store id: 513ab3a4-1dc4-42a6-895a-8584e5832832
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Floor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7ed2d411-b315-4709-a866-02341bad504d",
+  "id": "513ab3a4-1dc4-42a6-895a-8584e5832832",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Floor"
       },
       "rel": "contains",
-      "target": "40e5f6f8-1bad-426e-8896-138e0461b00e"
+      "target": "00f2d136-812f-476e-adbc-d3729e21f9d7"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

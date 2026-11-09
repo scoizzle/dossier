@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field._check_db_default
 
-- Subject: django/db/models/fields/__init__::Field._check_db_default (id `65b7d0bc-da87-4061-8fc7-9cf83139f1f8`)
+- Subject: django/db/models/fields/__init__::Field._check_db_default (id `3fde24dc-921f-4b19-b09b-91eff7d6c50b`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

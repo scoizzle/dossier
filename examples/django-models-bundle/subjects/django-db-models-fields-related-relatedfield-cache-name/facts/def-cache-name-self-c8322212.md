@@ -1,6 +1,6 @@
 # Fact c8322212
 
-Store id: fd8a3ad9-52d6-4910-8f2f-6e46aee20063
+Store id: ad805559-3c0c-46f9-bac1-f953d11687a5
 
 ## Text
 
@@ -20,7 +20,7 @@ def cache_name(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6568730+00:00`
+- posted_at: `2026-11-09T23:44:51.5087490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 539,
     "symbol": "RelatedField.cache_name"
   },
-  "id": "fd8a3ad9-52d6-4910-8f2f-6e46aee20063",
+  "id": "ad805559-3c0c-46f9-bac1-f953d11687a5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6568730+00:00"
+    "posted_at": "2026-11-09T23:44:51.5087490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "af7cbe48-a60c-428e-8ae4-53f1ba20ef40",
+  "subject_id": "51047ca3-77ce-4e8d-9ea1-0aa23e957999",
   "subject_name": "django/db/models/fields/related::RelatedField.cache_name",
   "tags": [
     "entity:method",

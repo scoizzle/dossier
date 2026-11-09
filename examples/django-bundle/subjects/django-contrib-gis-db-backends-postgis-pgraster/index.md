@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/pgraster
 
-- Subject: django/contrib/gis/db/backends/postgis/pgraster (id `d5872390-89b8-4c26-ab78-e66f543f13f8`)
+- Subject: django/contrib/gis/db/backends/postgis/pgraster (id `707feece-9816-4580-9403-5c9fcf90fcc1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1223 tokens
-- Facts shown: 25 of 25
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 

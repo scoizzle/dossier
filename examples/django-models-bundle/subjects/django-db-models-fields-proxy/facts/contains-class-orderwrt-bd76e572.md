@@ -1,6 +1,6 @@
 # Fact bd76e572
 
-Store id: 9198c979-39b8-47b8-9de5-3561da5df01d
+Store id: 567e70ae-0e00-40bf-abf6-898cb35ace04
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OrderWrt
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.4317420+00:00`
+- posted_at: `2026-11-09T23:44:51.3346000+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9198c979-39b8-47b8-9de5-3561da5df01d",
+  "id": "567e70ae-0e00-40bf-abf6-898cb35ace04",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.4317420+00:00"
+    "posted_at": "2026-11-09T23:44:51.3346000+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OrderWrt"
       },
       "rel": "contains",
-      "target": "8ca693d8-6edd-4a39-a800-a5a03b1a32d3"
+      "target": "ead50282-31c9-44d9-ba33-8b9ae0878470"
     }
   ],
   "status": "live",
-  "subject_id": "428491dc-32e0-4e3a-bcb9-6bc004ecee0b",
+  "subject_id": "b66aa6a7-e458-49ee-9c8b-87bc87b1918c",
   "subject_name": "django/db/models/fields/proxy",
   "tags": [
     "entity:class"

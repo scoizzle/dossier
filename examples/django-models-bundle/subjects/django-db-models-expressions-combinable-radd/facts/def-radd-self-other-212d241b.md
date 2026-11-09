@@ -1,6 +1,6 @@
 # Fact 212d241b
 
-Store id: 8e1c262e-0456-49ee-ba9e-a931cf4f256e
+Store id: f98d27de-3a94-4716-8523-935268102787
 
 ## Text
 
@@ -20,7 +20,7 @@ def __radd__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7422790+00:00`
+- posted_at: `2026-11-09T23:44:49.2517670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 133,
     "symbol": "Combinable.__radd__"
   },
-  "id": "8e1c262e-0456-49ee-ba9e-a931cf4f256e",
+  "id": "f98d27de-3a94-4716-8523-935268102787",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7422790+00:00"
+    "posted_at": "2026-11-09T23:44:49.2517670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fb4571f7-3588-4bba-9cf5-8b5122e59d32",
+  "subject_id": "f9e5169a-24f4-4a88-a35e-33a5cc601a6c",
   "subject_name": "django/db/models/expressions::Combinable.__radd__",
   "tags": [
     "entity:method"

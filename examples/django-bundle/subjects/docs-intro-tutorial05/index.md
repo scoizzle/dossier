@@ -1,10 +1,10 @@
 # docs/intro/tutorial05
 
-- Subject: docs/intro/tutorial05 (id `ad7c1c44-82fe-47f5-bca0-85d7beb7bdc9`)
+- Subject: docs/intro/tutorial05 (id `ae4075ef-7792-4b15-b73c-cd64642ead18`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8317 tokens
-- Facts shown: 165 of 173
+- Used: 8502 tokens
+- Facts shown: 173 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -18,18 +18,19 @@
 - def test_past_question(self): """ The detail view of a question with a pub_date in the past displays the question's text. """ past_question = create_question(question_text="Past Question.", days=-5) url = reverse("polls:detail", args=(past_question.id,)) response = self.client.get(url) self.assertContains(response, past_question.question_text) [324e54cd]
 - def test_two_past_questions(self): """ The questions index page may display multiple questions. """ question1 = create_question(question_text="Past question 1.", days=-30) question2 = create_question(question_text="Past question 2.", days=-5) response = self.client.get(reverse("polls:index")) self.assertQuerySetEqual( response.context["latest_question_list"], [question2, question1], ) [80162869]
 - $ python manage.py shell [dc0da2cbf091829d-5]
+- $ python manage.py shell [dc0da2cbf091829d-6]
 - $ python manage.py test polls [58c2b5d7]
 - ---------------------------------------------------------------------- Ran 1 test in 0.001s [ae40ecc3]
 - >>> # get a response from '/' >>> response = client.get("/") Not Found: / >>> # we should expect a 404 from that address; if you instead see an >>> # "Invalid HTTP_HOST header" error and a 400 response, you probably >>> # omitted the setup_test_environment() call described earlier. >>> response.status_code 404 >>> # on the other hand we should expect to find something at '/polls/' >>> # we'll use 'reverse()' rather than a hardcoded URL >>> from django.urls import reverse >>> response = client.get(reverse("polls:index")) >>> response.status_code 200 >>> response.content b'\n <ul>\n \n <li><a href="/polls/1/">What&#x27;s up?</a></li>\n \n </ul>\n\n' >>> response.context["latest_question_list"] <QuerySet [<Question: What's up?>]> [05601858]
-- >>> from django.test import Client >>> # create an instance of the client for our use >>> client = Client() [7d089887]
+- FAILED (failures=1) Destroying test database for alias 'default'... [0ef6813d]
 
 ## All facts
 
+- [7d089887] >>> from django.test import Client >>> # create an instance of the client for our use >>> client = Client()
 - [8d87d4c0] >>> from django.test.utils import setup_test_environment >>> setup_test_environment()
 - [1e7ffdef] >>> import datetime >>> from django.utils import timezone >>> # create a Question instance with pub_date 30 days in the future >>> future_question = Question(pub_date=timezone.now() + datetime.timedelta(days=30)) >>> # was it published recently? >>> future_question.was_published_recently() True
 - [b248a034] Creating test database for alias 'default'... System check identified no issues (0 silenced). . ---------------------------------------------------------------------- Ran 1 test in 0.001s
 - [0d24be93] Creating test database for alias 'default'... System check identified no issues (0 silenced). F ====================================================================== FAIL: test_was_published_recently_with_future_question (polls.tests.QuestionModelTests) ---------------------------------------------------------------------- Traceback (most recent call last): File "/path/to/djangotutorial/polls/tests.py", line 16, in test_was_published_recently_with_future_question self.assertIs(future_question.was_published_recently(), False) AssertionError: True is not False
-- [0ef6813d] FAILED (failures=1) Destroying test database for alias 'default'...
 - [707b79e7] If instead you're getting a ``NameError`` here, you may have missed a step in :ref:`Part 2 <tutorial02-import-timezone>` where we added imports of ``datetime`` and ``timezone`` to ``polls/models.py``. Copy the imports from that section, and try running your tests again.
 - [eff105796d7d4d6a-5] If you're having trouble going through this tutorial, please head over to the :doc:`Getting Help</faq/help>` section of the FAQ.
 - [6e486d98] OK Destroying test database for alias 'default'...
@@ -67,7 +68,14 @@
 - [fccd37de02dbdecc-4] .. code-block:: pytb
 - [ce20b11c82955ef6-4] .. code-block:: python :caption: ``polls/models.py``
 - [f6fe084f1479e5db] .. code-block:: python :caption: ``polls/tests.py``
+- [f6fe084f1479e5db-2] .. code-block:: python :caption: ``polls/tests.py``
+- [f6fe084f1479e5db-3] .. code-block:: python :caption: ``polls/tests.py``
+- [f6fe084f1479e5db-4] .. code-block:: python :caption: ``polls/tests.py``
+- [f6fe084f1479e5db-5] .. code-block:: python :caption: ``polls/tests.py``
 - [d59bf1960628576c-11] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-12] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-13] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-14] .. code-block:: python :caption: ``polls/views.py``
 - [8aa7203c166b13be-74] .. code-block:: shell
 - [7714e199aac2701e-77] .. console::
 - [7714e199aac2701e-78] .. console::

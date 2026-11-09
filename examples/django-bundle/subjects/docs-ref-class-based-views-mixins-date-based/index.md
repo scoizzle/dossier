@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/mixins-date-based
 
-- Subject: docs/ref/class-based-views/mixins-date-based (id `aa2b4a75-4e98-4c85-8567-37845469ce31`)
+- Subject: docs/ref/class-based-views/mixins-date-based (id `3747171d-9898-4c5c-8a0e-96a80cbf2ac8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3019 tokens
-- Facts shown: 97 of 112
+- Used: 3856 tokens
+- Facts shown: 112 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,6 +17,9 @@
 - * The value of the :attr:`YearMixin.year` attribute. * The value of the ``year`` argument captured in the URL pattern. * The value of the ``year`` ``GET`` query argument. [1f9e766b]
 - **Optional** A string defining the aggregation period for ``date_list``. It must be one of ``'year'`` (default), ``'month'``, or ``'day'``. [a019b104]
 - **Optional** The value for the day, as a string. By default, set to ``None``, which means the day will be determined using other means. [3cb78f5f]
+- **Optional** The value for the month, as a string. By default, set to ``None``, which means the month will be determined using other means. [d4aa4068]
+- **Optional** The value for the week, as a string. By default, set to ``None``, which means the week will be determined using other means. [8925535b]
+- **Optional** The value for the year, as a string. By default, set to ``None``, which means the year will be determined using other means. [aaa88a87]
 - .. warning:: [c54b54cb0805732a-11]
 - A boolean specifying whether to display the page if no objects are available. If this is ``True`` and no objects are available, the view will display an empty page instead of raising a 404. [13eb8358]
 - A boolean specifying whether to include "future" objects on this page, where "future" means objects in which the field specified in ``date_field`` is greater than the current date/time. By default, this is ``False``. [4702f11d]
@@ -26,20 +29,29 @@
 - Raises a 404 if no valid week specification can be found. [e8e749b9]
 - Raises a 404 if no valid year specification can be found. [d5f70183]
 - Returns a 3-tuple containing (``date_list``, ``object_list``, ``extra_context``). [11558494]
-- Returns a date object containing the first day of the month after the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`. [963d684f]
-- Returns a date object containing the previous valid day. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`. [145519d3]
-- Returns the day for which this view will display data, as a string. Tries the following sources, in order: [98454f80]
+- Returns a queryset, filtered using the query arguments defined by ``lookup``. Enforces any restrictions on the queryset, such as ``allow_empty`` and ``allow_future``. [9e8b8188]
 
 ## All facts
 
-- [9e8b8188] Returns a queryset, filtered using the query arguments defined by ``lookup``. Enforces any restrictions on the queryset, such as ``allow_empty`` and ``allow_future``.
+- [963d684f] Returns a date object containing the first day of the month after the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [a00de276] Returns a date object containing the first day of the month before the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [c5d46f9a] Returns a date object containing the first day of the week after the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [998eb41b] Returns a date object containing the first day of the week before the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [f3b85771] Returns a date object containing the first day of the year after the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [81ec12c1] Returns a date object containing the first day of the year before the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [2d654f9d] Returns a date object containing the next valid day after the date provided. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [145519d3] Returns a date object containing the previous valid day. This function can also return ``None`` or raise an :class:`~django.http.Http404` exception, depending on the values of :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
 - [02d6bc8e] Returns the :func:`~time.strftime` format to use when parsing the month. Returns :attr:`~MonthMixin.month_format` by default.
 - [9b9110d4] Returns the :func:`~time.strftime` format to use when parsing the week. Returns :attr:`~WeekMixin.week_format` by default.
 - [5147bf3d] Returns the :func:`~time.strftime` format to use when parsing the year. Returns :attr:`~YearMixin.year_format` by default.
 - [ab7d287a] Returns the :func:`~time.strftime` format to use when parsing the day. Returns :attr:`~DayMixin.day_format` by default.
 - [e52917bb] Returns the aggregation period for ``date_list``. Returns :attr:`~BaseDateListView.date_list_period` by default.
+- [98454f80] Returns the day for which this view will display data, as a string. Tries the following sources, in order:
 - [d3db864f] Returns the list of dates of type ``date_type`` for which ``queryset`` contains entries. For example, ``get_date_list(qs, 'year')`` will return the list of years for which ``qs`` has entries. If ``date_type`` isn't provided, the result of :meth:`~BaseDateListView.get_date_list_period` is used. ``date_type`` and ``ordering`` are passed to :meth:`QuerySet.dates()<django.db.models.query.QuerySet.dates>`.
+- [0704e838] Returns the month for which this view will display data, as a string. Tries the following sources, in order:
 - [ed608513] Returns the name of the field that contains the date data that this view will operate on. Returns :attr:`~DateMixin.date_field` by default.
+- [3075ee79] Returns the week for which this view will display data, as a string. Tries the following sources, in order:
+- [71d483ba] Returns the year for which this view will display data, as a string. Tries the following sources, in order:
 - [75438356] The :func:`~time.strftime` format to use when parsing the day. By default, this is ``'%d'``.
 - [bd815fec] The :func:`~time.strftime` format to use when parsing the month. By default, this is ``'%b'``.
 - [ac37cc27] The :func:`~time.strftime` format to use when parsing the week. By default, this is ``'%U'``, which means the week starts on Sunday. Set it to ``'%W'`` or ``'%V'`` (ISO 8601 week) if your week starts on Monday.
@@ -93,6 +105,9 @@
 - [673dfbb9] A base class that provides common behavior for all date-based views. There won't normally be a reason to instantiate :class:`~django.views.generic.dates.BaseDateListView`; instantiate one of the subclasses instead.
 - [065c8eb2] A mixin class providing common behavior for all date-based views.
 - [eaa7b735] A mixin that can be used to retrieve and provide parsing information for a day component of a date.
+- [1e003870] A mixin that can be used to retrieve and provide parsing information for a month component of a date.
+- [0d1e58e7] A mixin that can be used to retrieve and provide parsing information for a week component of a date.
+- [34b61095] A mixin that can be used to retrieve and provide parsing information for a year component of a date.
 - [4230afd9] All the date formatting attributes in these mixins use :func:`~time.strftime` format characters. Do not try to use the format characters from the :ttag:`now` template tag as they are not compatible.
 - [4ce5c9da] While this view (and its subclasses) are executing, ``self.object_list`` will contain the list of objects that the view is operating upon, and ``self.date_list`` will contain the list of dates for which data is available.
 - [8b492c29] .. class:: BaseDateListView

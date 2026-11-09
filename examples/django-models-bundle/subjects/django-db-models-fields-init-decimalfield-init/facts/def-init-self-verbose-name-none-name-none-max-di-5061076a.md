@@ -1,6 +1,6 @@
 # Fact 5061076a
 
-Store id: a37e4d6a-1674-473f-aef3-e041b3311f0a
+Store id: 25f900bb-ce8f-4893-9e04-d3cf9567fa1a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, max_digits=None, decimal_place
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6136220+00:00`
+- posted_at: `2026-11-09T23:44:50.1112920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1747,
     "symbol": "DecimalField.__init__"
   },
-  "id": "a37e4d6a-1674-473f-aef3-e041b3311f0a",
+  "id": "25f900bb-ce8f-4893-9e04-d3cf9567fa1a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6136220+00:00"
+    "posted_at": "2026-11-09T23:44:50.1112920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a0856daf-a5cc-444e-a46c-e35278b4edb2",
+  "subject_id": "08cde864-bca9-41bf-94e0-a6ffc4404e55",
   "subject_name": "django/db/models/fields/__init__::DecimalField.__init__",
   "tags": [
     "entity:method"

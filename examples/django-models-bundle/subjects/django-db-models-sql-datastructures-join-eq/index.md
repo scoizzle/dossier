@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::Join.__eq__
 
-- Subject: django/db/models/sql/datastructures::Join.__eq__ (id `354330cc-ca4d-4900-ad47-5cb05187cba1`)
+- Subject: django/db/models/sql/datastructures::Join.__eq__ (id `a9c7f3da-8c58-41a8-aa4b-1f0b6e789935`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

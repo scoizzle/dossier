@@ -1,6 +1,6 @@
 # Fact fb0b6c6b
 
-Store id: 9db81c69-54fc-4166-8778-04cad380116c
+Store id: bc5af805-0021-49cf-801b-6555f1a24fea
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer auto-saves the draft while the user types.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -45,24 +45,24 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9db81c69-54fc-4166-8778-04cad380116c",
+  "id": "bc5af805-0021-49cf-801b-6555f1a24fea",
   "kind": "note",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [
     {
       "basis": "observed",
       "kind": "fact",
       "rel": "derived_from",
-      "target": "eb162ac3-b6e5-4c55-b797-28e1b501faa2"
+      "target": "bb07c64e-35e7-475d-adab-464cb281ffd3"
     }
   ],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:autosave"

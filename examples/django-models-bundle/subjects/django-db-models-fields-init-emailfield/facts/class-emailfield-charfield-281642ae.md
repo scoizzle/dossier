@@ -1,6 +1,6 @@
 # Fact 281642ae
 
-Store id: ce90ebdb-a0bc-48f4-9f8a-465f313e39f8
+Store id: 1eb9477d-2368-4d6a-9dbd-7f51b13b5436
 
 ## Text
 
@@ -20,7 +20,7 @@ class EmailField(CharField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6599300+00:00`
+- posted_at: `2026-11-09T23:44:50.1373810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1997,
     "symbol": "EmailField"
   },
-  "id": "ce90ebdb-a0bc-48f4-9f8a-465f313e39f8",
+  "id": "1eb9477d-2368-4d6a-9dbd-7f51b13b5436",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6599300+00:00"
+    "posted_at": "2026-11-09T23:44:50.1373810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "86349baa-9006-4bc7-8a4c-82406d3e39eb",
+  "subject_id": "f5122cf5-0e4c-47bb-8eae-b2ef65cc2360",
   "subject_name": "django/db/models/fields/__init__::EmailField",
   "tags": [
     "entity:class"

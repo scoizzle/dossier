@@ -1,6 +1,6 @@
 # Fact 318aff00
 
-Store id: c47b19d1-4bb6-4792-8c00-e0761099b57a
+Store id: afb3e9ef-38d7-48b6-9c40-44dde1f36e06
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerFieldExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c47b19d1-4bb6-4792-8c00-e0761099b57a",
+  "id": "afb3e9ef-38d7-48b6-9c40-44dde1f36e06",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerFieldExact"
       },
       "rel": "contains",
-      "target": "156c74bb-9f73-4f5c-b2b8-9a7e559361d3"
+      "target": "58e0e1d3-c800-4559-b00f-25e409cbbf99"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

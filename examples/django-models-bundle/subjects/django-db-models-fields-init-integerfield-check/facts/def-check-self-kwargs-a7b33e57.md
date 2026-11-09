@@ -1,6 +1,6 @@
 # Fact a7b33e57
 
-Store id: 385d2f3b-08a1-40eb-9ef5-84a7d71ad57a
+Store id: 3a6c7626-2f15-4a3f-b397-e401b379a731
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6935070+00:00`
+- posted_at: `2026-11-09T23:44:50.1599310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2148,
     "symbol": "IntegerField.check"
   },
-  "id": "385d2f3b-08a1-40eb-9ef5-84a7d71ad57a",
+  "id": "3a6c7626-2f15-4a3f-b397-e401b379a731",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6935070+00:00"
+    "posted_at": "2026-11-09T23:44:50.1599310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "238d83b0-661a-4826-9e39-63aba9ab7890",
+  "subject_id": "d94acb6b-5d42-4c51-9edc-76fb506efe25",
   "subject_name": "django/db/models/fields/__init__::IntegerField.check",
   "tags": [
     "entity:method"

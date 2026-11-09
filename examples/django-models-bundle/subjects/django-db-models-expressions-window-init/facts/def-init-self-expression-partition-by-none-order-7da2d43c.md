@@ -1,6 +1,6 @@
 # Fact 7da2d43c
 
-Store id: a6d11f63-6868-4f87-b935-9ac5c41a74ef
+Store id: bb6026ec-4f58-445a-89ca-4337cd32a866
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, expression, partition_by=None, order_by=None, frame=None, ou
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9998320+00:00`
+- posted_at: `2026-11-09T23:44:49.6676450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2028,
     "symbol": "Window.__init__"
   },
-  "id": "a6d11f63-6868-4f87-b935-9ac5c41a74ef",
+  "id": "bb6026ec-4f58-445a-89ca-4337cd32a866",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9998320+00:00"
+    "posted_at": "2026-11-09T23:44:49.6676450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "42bbe2f8-ed16-442b-9358-01f497dea27d",
+  "subject_id": "17a9d1ad-df27-4221-9c2c-f554d22fc8da",
   "subject_name": "django/db/models/expressions::Window.__init__",
   "tags": [
     "entity:method"

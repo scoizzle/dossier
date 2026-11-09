@@ -1,6 +1,6 @@
 # Fact 7d2b522e
 
-Store id: 1825764e-902a-44bf-b4f2-4d00bb10378b
+Store id: 9efc280d-e588-4ee6-95b3-80c558d3182c
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_extra(self, select, select_params, where, params, tables, order_by)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0905110+00:00`
+- posted_at: `2026-11-09T23:44:59.0076560+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2463,
     "symbol": "Query.add_extra"
   },
-  "id": "1825764e-902a-44bf-b4f2-4d00bb10378b",
+  "id": "9efc280d-e588-4ee6-95b3-80c558d3182c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0905110+00:00"
+    "posted_at": "2026-11-09T23:44:59.0076560+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f8f833e7-dd8b-45c4-a5d1-222f80eb2e39",
+  "subject_id": "78473f01-bf40-4c32-a8b7-08df1d510348",
   "subject_name": "django/db/models/sql/query::Query.add_extra",
   "tags": [
     "entity:method"

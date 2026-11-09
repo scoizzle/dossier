@@ -1,11 +1,11 @@
 # django/db/models/expressions::ColPairs.select_format
 
-- Subject: django/db/models/expressions::ColPairs.select_format (id `ca5c22c0-5c01-456e-8c55-6ce51d3b7355`)
+- Subject: django/db/models/expressions::ColPairs.select_format (id `6d3accb7-a6c2-4993-8f4a-7458761432d1`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

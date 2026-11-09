@@ -1,6 +1,6 @@
 # Fact bdf62cae
 
-Store id: e8a954a2-4dbe-4f8d-9edf-ed5720a65275
+Store id: cf569709-d11a-4f90-adab-ed766181d4f1
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_source_expressions(self, new_exprs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1372020+00:00`
+- posted_at: `2026-11-09T23:44:54.8574800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 83,
     "symbol": "Lookup.set_source_expressions"
   },
-  "id": "e8a954a2-4dbe-4f8d-9edf-ed5720a65275",
+  "id": "cf569709-d11a-4f90-adab-ed766181d4f1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1372020+00:00"
+    "posted_at": "2026-11-09T23:44:54.8574800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f21811af-7387-4852-84a1-14df0f8b06f2",
+  "subject_id": "fc5e3c18-c45b-4dbb-b50b-3cc7f1a0804f",
   "subject_name": "django/db/models/lookups::Lookup.set_source_expressions",
   "tags": [
     "entity:method"

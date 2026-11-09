@@ -1,6 +1,6 @@
 # Fact b424883a
 
-Store id: 27016197-8ade-46e9-8780-fc2a6b8d858c
+Store id: a3dcc716-c5cf-4554-8f1a-bfc84f43b1b3
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class JSONField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "27016197-8ade-46e9-8780-fc2a6b8d858c",
+  "id": "a3dcc716-c5cf-4554-8f1a-bfc84f43b1b3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "JSONField"
       },
       "rel": "contains",
-      "target": "7413bc4d-7a81-4bcf-8beb-3fbd2ee69c75"
+      "target": "6603f76f-770b-499e-aed0-4dfb699a73f6"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

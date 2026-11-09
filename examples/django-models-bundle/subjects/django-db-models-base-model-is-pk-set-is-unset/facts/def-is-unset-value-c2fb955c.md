@@ -1,6 +1,6 @@
 # Fact c2fb955c
 
-Store id: 526c16f6-bb67-4c2b-84a5-d3959ee85d3a
+Store id: 30d5274c-40b4-4bc7-a7e7-a92c6fd934c0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _is_unset(value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7374360+00:00`
+- posted_at: `2026-11-09T23:44:48.5304540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 713,
     "symbol": "Model._is_pk_set._is_unset"
   },
-  "id": "526c16f6-bb67-4c2b-84a5-d3959ee85d3a",
+  "id": "30d5274c-40b4-4bc7-a7e7-a92c6fd934c0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7374360+00:00"
+    "posted_at": "2026-11-09T23:44:48.5304540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a3c2efe-cb21-4046-81e5-9dfc625015a0",
+  "subject_id": "1baea17b-fd9f-49c6-9e0b-e873023d5bed",
   "subject_name": "django/db/models/base::Model._is_pk_set._is_unset",
   "tags": [
     "entity:function"

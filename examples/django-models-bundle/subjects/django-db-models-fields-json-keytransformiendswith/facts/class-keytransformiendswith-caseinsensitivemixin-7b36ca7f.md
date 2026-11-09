@@ -1,6 +1,6 @@
 # Fact 7b36ca7f
 
-Store id: 36760581-ef9b-45ea-83bf-d4cfa0b0eb9a
+Store id: 6852eba3-29d5-4c16-b416-280392c72821
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIEndsWith( CaseInsensitiveMixin, KeyTransformTextLookupMixin, 
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0224860+00:00`
+- posted_at: `2026-11-09T23:44:51.0573980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 704,
     "symbol": "KeyTransformIEndsWith"
   },
-  "id": "36760581-ef9b-45ea-83bf-d4cfa0b0eb9a",
+  "id": "6852eba3-29d5-4c16-b416-280392c72821",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0224860+00:00"
+    "posted_at": "2026-11-09T23:44:51.0573980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a0ff1f01-f9a8-48b1-9c20-f572ab437a93",
+  "subject_id": "016812a7-9cb7-46a3-b8bf-ddfa0b2b6e50",
   "subject_name": "django/db/models/fields/json::KeyTransformIEndsWith",
   "tags": [
     "entity:class"

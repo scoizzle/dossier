@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateTimeCheckMixin._check_if_value_fixed
 
-- Subject: django/db/models/fields/__init__::DateTimeCheckMixin._check_if_value_fixed (id `1836a9ab-e2ce-45d1-9538-a3af97c4f0a6`)
+- Subject: django/db/models/fields/__init__::DateTimeCheckMixin._check_if_value_fixed (id `cffaf84a-999b-490b-a5a5-c785605b3599`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

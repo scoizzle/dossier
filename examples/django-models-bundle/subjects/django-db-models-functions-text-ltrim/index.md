@@ -1,11 +1,11 @@
 # django/db/models/functions/text::LTrim
 
-- Subject: django/db/models/functions/text::LTrim (id `2f9ac18e-b4da-4d9f-9d9b-ef96264e92d2`)
+- Subject: django/db/models/functions/text::LTrim (id `29d6aa36-d32e-4f70-8068-b56c4ce1461c`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

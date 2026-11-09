@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/db-api
 
-- Subject: docs/ref/contrib/gis/db-api (id `b7728eca-1c19-45f1-826c-d6c7b3745ac9`)
+- Subject: docs/ref/contrib/gis/db-api (id `593b32a9-7e9c-4817-adae-5c8a651aa0ac`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5295 tokens
-- Facts shown: 103 of 104
+- Used: 5320 tokens
+- Facts shown: 104 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -57,6 +57,7 @@
 - [3a9340cd0d877339-19] .. code-block:: text
 - [3a9340cd0d877339-20] .. code-block:: text
 - [98670c268fdc55ed] .. currentmodule:: django.contrib.gis.db.models
+- [5abdc0ff] .. currentmodule:: django.contrib.gis.db.models.functions
 - [cd3888f0] .. module:: django.contrib.gis.db.backends :synopsis: GeoDjango's spatial database backends.
 - [942ae6c11625c81c-42] .. note::
 - [942ae6c11625c81c-43] .. note::

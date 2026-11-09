@@ -1,6 +1,6 @@
 # Fact b8f7c2e0
 
-Store id: 3b01ac34-d3c7-436f-af51-b028be2acf4c
+Store id: f3539633-1b25-4272-852e-0172a56c394b
 
 ## Text
 
@@ -20,7 +20,7 @@ class Q(tree.Node)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0258630+00:00`
+- posted_at: `2026-11-09T23:44:56.4981370+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 41,
     "symbol": "Q"
   },
-  "id": "3b01ac34-d3c7-436f-af51-b028be2acf4c",
+  "id": "f3539633-1b25-4272-852e-0172a56c394b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0258630+00:00"
+    "posted_at": "2026-11-09T23:44:56.4981370+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c902221d-bb84-4c1f-9d7a-aa5b046cb03c",
+  "subject_id": "bf69ee04-6f46-454c-a386-d9845c43546e",
   "subject_name": "django/db/models/query_utils::Q",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/query::RawQuerySet.__init__
 
-- Subject: django/db/models/query::RawQuerySet.__init__ (id `d870a586-2887-4f5b-8f5a-f5a1190cc3f1`)
+- Subject: django/db/models/query::RawQuerySet.__init__ (id `7519bfab-eeb9-4491-9efd-2b7237f50fa1`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 46 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

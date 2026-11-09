@@ -1,6 +1,6 @@
 # Fact f0ba87bf
 
-Store id: 38ac9596-4af6-4afb-b01f-80e1f6b6a4c8
+Store id: c4dc8a95-09f3-4141-b52d-4ccc05eb52ce
 
 ## Text
 
@@ -20,7 +20,7 @@ class LPad(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2085820+00:00`
+- posted_at: `2026-11-09T23:44:54.1012260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 197,
     "symbol": "LPad"
   },
-  "id": "38ac9596-4af6-4afb-b01f-80e1f6b6a4c8",
+  "id": "c4dc8a95-09f3-4141-b52d-4ccc05eb52ce",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2085820+00:00"
+    "posted_at": "2026-11-09T23:44:54.1012260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0289256f-1789-470e-8da5-e017e8a76dbb",
+  "subject_id": "1d2d883a-98e3-4ceb-9eee-43088903362d",
   "subject_name": "django/db/models/functions/text::LPad",
   "tags": [
     "entity:class"

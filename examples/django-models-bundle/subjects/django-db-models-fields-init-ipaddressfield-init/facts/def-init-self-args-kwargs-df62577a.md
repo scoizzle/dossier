@@ -1,6 +1,6 @@
 # Fact df62577a
 
-Store id: 48ec1744-8f8d-412f-b354-3d63a36126f1
+Store id: c5eac53e-111f-4d40-90a5-8a92bffd0270
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7208410+00:00`
+- posted_at: `2026-11-09T23:44:50.1810630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2277,
     "symbol": "IPAddressField.__init__"
   },
-  "id": "48ec1744-8f8d-412f-b354-3d63a36126f1",
+  "id": "c5eac53e-111f-4d40-90a5-8a92bffd0270",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7208410+00:00"
+    "posted_at": "2026-11-09T23:44:50.1810630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "15621fcb-9d50-4bc1-b183-e93d50ef1e02",
+  "subject_id": "83a70a92-0bc6-48ed-a2d5-50173683ef28",
   "subject_name": "django/db/models/fields/__init__::IPAddressField.__init__",
   "tags": [
     "entity:method"

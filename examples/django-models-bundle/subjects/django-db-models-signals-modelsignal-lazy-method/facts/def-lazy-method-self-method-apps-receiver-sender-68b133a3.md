@@ -1,6 +1,6 @@
 # Fact 68b133a3
 
-Store id: 6a59c884-9e7c-4857-8ff7-2fb88a9bcb08
+Store id: 8d6c3079-a646-45c2-9f55-794b8ff33085
 
 ## Text
 
@@ -20,7 +20,7 @@ def _lazy_method(self, method, apps, receiver, sender, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.3767610+00:00`
+- posted_at: `2026-11-09T23:44:56.9638580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 15,
     "symbol": "ModelSignal._lazy_method"
   },
-  "id": "6a59c884-9e7c-4857-8ff7-2fb88a9bcb08",
+  "id": "8d6c3079-a646-45c2-9f55-794b8ff33085",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.3767610+00:00"
+    "posted_at": "2026-11-09T23:44:56.9638580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "757c5fe2-9c0b-4865-97b4-d1f6e078fc77",
+  "subject_id": "510863a4-7881-4aed-898d-3b240bde5401",
   "subject_name": "django/db/models/signals::ModelSignal._lazy_method",
   "tags": [
     "entity:method"

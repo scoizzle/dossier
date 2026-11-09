@@ -1,16 +1,17 @@
 # django/db/backends/ddl_references
 
-- Subject: django/db/backends/ddl_references (id `b3d72571-b3e3-44a6-bf9f-df37481f8259`)
+- Subject: django/db/backends/ddl_references (id `75f82f62-0dbc-44e1-a100-c751a4ce8dbe`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1894 tokens
-- Facts shown: 42 of 50
+- Used: 2262 tokens
+- Facts shown: 50 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Highlights
 
 - return ", ".join( col_str(column, idx) for idx, column in enumerate(self.columns) ) [1799c23cfa03ba85]
+- return ", ".join( col_str(column, idx) for idx, column in enumerate(self.columns) ) [1799c23cfa03ba85-2]
 - Allows keeping a reference to a statement without interpolating identifiers that might have to be adjusted if they're referencing a table or column that is removed """ [9d50c7ba]
 - def __init__( self, from_table, from_columns, to_table, to_columns, suffix_template, create_fk_name, ): self.to_reference = TableColumns(to_table, to_columns) self.suffix_template = suffix_template self.create_fk_name = create_fk_name super().__init__( from_table, from_columns, ) [0160e85d]
 - def __init__(self, table, columns): self.table = table self.columns = columns [f68ba5b0]
@@ -29,21 +30,28 @@
 - def __str__(self): suffix = self.suffix_template % { "to_table": self.to_reference.table, "to_column": self.to_reference.columns[0], } return self.create_fk_name(self.table, self.columns, suffix) [6eeeb0ad]
 - def references_column(self, table, column): """ Return whether or not this instance references the specified column. """ return False [0122729c]
 - def references_column(self, table, column): return any( hasattr(part, "references_column") and part.references_column(table, column) for part in self.parts.values() ) [9d6dca82]
-- def references_column(self, table, column): return self.table == table and column in self.columns [cfc9ff76]
 
 ## All facts
 
+- [cfc9ff76] def references_column(self, table, column): return self.table == table and column in self.columns
 - [5f126d05] def references_column(self, table, column): return super().references_column( table, column ) or self.to_reference.references_column(table, column)
+- [39dba64f] def references_index(self, table, index): """ Return whether or not this instance references the specified index. """ return False
+- [5a1f9866] def references_index(self, table, index): return any( hasattr(part, "references_index") and part.references_index(table, index) for part in self.parts.values() )
 - [9bd12450] def references_index(self, table, index): return self.references_table(table) and str(self) == index
+- [f752ae14] def references_table(self, table): """ Return whether or not this instance references the specified table. """ return False
+- [ad338efe] def references_table(self, table): return any( hasattr(part, "references_table") and part.references_table(table) for part in self.parts.values() )
 - [6f12f08c] def references_table(self, table): return self.table == table
+- [73038d88] def references_table(self, table): return super().references_table(table) or self.to_reference.references_table( table )
 - [c956c3fe] def rename_column_references(self, table, old_column, new_column): """ Rename all references to the old_column to the new_column. """ pass
 - [f23e0fe6] def rename_column_references(self, table, old_column, new_column): for part in self.parts.values(): if hasattr(part, "rename_column_references"): part.rename_column_references(table, old_column, new_column)
 - [8e2f2343] def rename_column_references(self, table, old_column, new_column): if self.table != table: return expressions = deepcopy(self.expressions) self.columns = [] for col in self.compiler.query._gen_cols([expressions]): if col.target.column == old_column: col.target.column = new_column self.columns.append(col.target.column) self.expressions = expressions
 - [f994a5f2] def rename_column_references(self, table, old_column, new_column): if self.table == table: for index, column in enumerate(self.columns): if column == old_column: self.columns[index] = new_column
 - [f681d29a] def rename_column_references(self, table, old_column, new_column): super().rename_column_references(table, old_column, new_column) self.to_reference.rename_column_references(table, old_column, new_column)
 - [861dc062] def rename_table_references(self, old_table, new_table): """ Rename all references to the old_name to the new_table. """ pass
+- [88873f8c] def rename_table_references(self, old_table, new_table): for part in self.parts.values(): if hasattr(part, "rename_table_references"): part.rename_table_references(old_table, new_table)
 - [90782d33] def rename_table_references(self, old_table, new_table): if self.table != old_table: return self.expressions = self.expressions.relabeled_clone({old_table: new_table}) super().rename_table_references(old_table, new_table)
 - [ef1009a4] def rename_table_references(self, old_table, new_table): if self.table == old_table: self.table = new_table
+- [4adc6c1e] def rename_table_references(self, old_table, new_table): super().rename_table_references(old_table, new_table) self.to_reference.rename_table_references(old_table, new_table)
 - [e9280cb6] """ Helpers to manipulate deferred DDL statements that might need to be adjusted or discarded when executing a migration. """
 - [5a779899] class Columns(TableColumns): """Hold a reference to one or many columns."""
 - [5fdd0a3a] class Expressions(TableColumns): def __init__(self, table, expressions, compiler, quote_value): self.compiler = compiler self.expressions = expressions self.quote_value = quote_value columns = [ col.target.column for col in self.compiler.query._gen_cols([self.expressions]) ] super().__init__(table, columns)

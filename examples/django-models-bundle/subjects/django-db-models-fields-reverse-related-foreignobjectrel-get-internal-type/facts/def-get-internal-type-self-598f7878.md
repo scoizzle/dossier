@@ -1,6 +1,6 @@
 # Fact 598f7878
 
-Store id: 9d78635d-29b4-4b6a-88bc-4df17f9d92f5
+Store id: 8e54667c-0cfa-4b04-a484-c678ebe097b7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2654390+00:00`
+- posted_at: `2026-11-09T23:44:52.4637540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 124,
     "symbol": "ForeignObjectRel.get_internal_type"
   },
-  "id": "9d78635d-29b4-4b6a-88bc-4df17f9d92f5",
+  "id": "8e54667c-0cfa-4b04-a484-c678ebe097b7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2654390+00:00"
+    "posted_at": "2026-11-09T23:44:52.4637540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "29a05cbc-c8f8-4919-b507-d12cba020dd6",
+  "subject_id": "dbb42ca3-f2e2-4b0e-86c8-eb7ee1a16fad",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.get_internal_type",
   "tags": [
     "entity:method"

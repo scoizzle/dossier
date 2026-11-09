@@ -1,6 +1,6 @@
 # Fact 5b2bda59
 
-Store id: 664a2b16-80d7-4679-8d02-f11f0907d8fd
+Store id: a60eb400-e683-4b23-9955-e9a169e371d6
 
 ## Text
 
@@ -20,7 +20,7 @@ class CombinedExpression(SQLiteNumericMixin, Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8089370+00:00`
+- posted_at: `2026-11-09T23:44:49.4321120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 728,
     "symbol": "CombinedExpression"
   },
-  "id": "664a2b16-80d7-4679-8d02-f11f0907d8fd",
+  "id": "a60eb400-e683-4b23-9955-e9a169e371d6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8089370+00:00"
+    "posted_at": "2026-11-09T23:44:49.4321120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "475b9494-1f66-4297-9815-e3b77e26fc91",
+  "subject_id": "075c5403-621a-4054-9731-8f247da75101",
   "subject_name": "django/db/models/expressions::CombinedExpression",
   "tags": [
     "entity:class"

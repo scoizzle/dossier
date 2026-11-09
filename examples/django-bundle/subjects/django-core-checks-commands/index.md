@@ -1,10 +1,10 @@
 # django/core/checks/commands
 
-- Subject: django/core/checks/commands (id `29d08f78-cb48-426e-ab8f-b11663d76428`)
+- Subject: django/core/checks/commands (id `c22a5300-8826-40f3-8e9b-fbd961030196`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 248 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

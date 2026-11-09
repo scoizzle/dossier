@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/modwsgi
 
-- Subject: docs/howto/deployment/wsgi/modwsgi (id `92208721-20de-47cc-ab68-cd7766df05a2`)
+- Subject: docs/howto/deployment/wsgi/modwsgi (id `192e8cd6-10b8-47e8-936e-76fddf9f6b1c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2765 tokens
-- Facts shown: 68 of 71
+- Used: 2851 tokens
+- Facts shown: 71 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,10 +13,12 @@
 - WSGIDaemonProcess example.com lang='en_US.UTF-8' locale='en_US.UTF-8' [d5c170e0]
 - export LANG='en_US.UTF-8' export LC_ALL='en_US.UTF-8' [6ac6d180]
 - os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings") [09865886]
+- os.environ["DJANGO_SETTINGS_MODULE"] = "{{ project_name }}.settings" [1901b0d1]
 - .. code-block:: shell [8aa7203c166b13be-14]
 - .. code-block:: text [3a9340cd0d877339-4]
 - <Directory /path/to/mysite.com/media> Require all granted </Directory> [8772f1b1]
 - <Directory /path/to/mysite.com/mysite> <Files wsgi.py> Require all granted </Files> </Directory> [641e6993571cd81b]
+- <Directory /path/to/mysite.com/mysite> <Files wsgi.py> Require all granted </Files> </Directory> [641e6993571cd81b-2]
 - <Directory /path/to/mysite.com/static> Require all granted </Directory> [80a0f316]
 - A common location to put this configuration is ``/etc/apache2/envvars``. [4a517fdb]
 - Alias /media/ /path/to/mysite.com/media/ Alias /static/ /path/to/mysite.com/static/ [09a2bb87]
@@ -32,15 +34,15 @@
 - in ``wsgi.py``, to:: [5b3a1d5e]
 - or by :ref:`using mod_wsgi daemon mode<daemon-mode>` and ensuring that each site runs in its own daemon process. [9b6f6e86]
 - "Daemon mode" is the recommended mode for running mod_wsgi (on non-Windows platforms). To create the required daemon process group and delegate the Django instance to run in it, you will need to add appropriate ``WSGIDaemonProcess`` and ``WSGIProcessGroup`` directives. A further change required to the above configuration if you use daemon mode is that you can't use ``WSGIPythonPath``; instead you should use the ``python-path`` option to ``WSGIDaemonProcess``, for example: [68c5a8ee]
-- * Nginx_ * A stripped-down version of Apache_ [ac3f6c4228e684da]
-- .. More details on configuring a mod_wsgi site to serve static files can be found .. in the mod_wsgi documentation on `hosting static files`_. [78cb1b3c]
+- .. _daemon-mode: [1f50f65c]
 
 ## All facts
 
+- [ac3f6c4228e684da] * Nginx_ * A stripped-down version of Apache_
+- [78cb1b3c] .. More details on configuring a mod_wsgi site to serve static files can be found .. in the mod_wsgi documentation on `hosting static files`_.
 - [3fb9ff93] .. _Apache: https://httpd.apache.org/ .. _mod_wsgi: https://modwsgi.readthedocs.io/en/develop/
 - [7334fd784939ff19] .. _Nginx: https://nginx.org/en/ .. _Apache: https://httpd.apache.org/
 - [54be1072bdafdbaa-2] .. _WSGI: https://wsgi.readthedocs.io/en/latest/
-- [1f50f65c] .. _daemon-mode:
 - [1399f262] .. _details on setting up daemon mode: https://modwsgi.readthedocs.io/en/develop/user-guides/quick-configuration-guide.html#delegation-to-daemon-process
 - [4051c526] .. _hosting static files: https://modwsgi.readthedocs.io/en/develop/user-guides/configuration-guidelines.html#hosting-of-static-files
 - [0d7c5567] .. _httpd.conf: https://cwiki.apache.org/confluence/display/httpd/DistrosDefaultLayout
@@ -70,6 +72,7 @@
 - [83e3aec8] Once you've got mod_wsgi installed and activated, edit your Apache server's `httpd.conf`_ file and add the following.
 - [fde2c20c] See the official mod_wsgi documentation for `details on setting up daemon mode`_.
 - [42fef4dc] Serving files =============
+- [1b8a462e] Serving the admin files =======================
 - [d8ed003f] The ``<Directory>`` piece ensures that Apache can access your :file:`wsgi.py` file.
 - [1b54b36a] The ``WSGIPythonPath`` line ensures that your project package is available for import on the Python path; in other words, that ``import mysite`` works.
 - [c4f2903f] The `official mod_wsgi documentation`_ is your source for all the details about how to use mod_wsgi. You'll probably want to start with the `installation and configuration documentation`_.

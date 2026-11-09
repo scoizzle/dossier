@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/spatialite/features
 
-- Subject: django/contrib/gis/db/backends/spatialite/features (id `bb2dd101-1868-4a1d-96ab-f699ea7b0c30`)
+- Subject: django/contrib/gis/db/backends/spatialite/features (id `ce1a3ea8-877c-4d4c-bc73-53f0ba159268`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 224 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

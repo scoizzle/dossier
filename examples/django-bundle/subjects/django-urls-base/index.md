@@ -1,10 +1,10 @@
 # django/urls/base
 
-- Subject: django/urls/base (id `2cad1180-eca3-48c4-ab2b-42e47268dc7e`)
+- Subject: django/urls/base (id `2f04bde7-73ec-404b-aac2-e969bc796d11`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1473 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 1b78cc63
 
-Store id: 55c32170-56f1-47c8-bd44-bdf930a54054
+Store id: 9b04db07-febc-4865-b2f6-e9fb22fed185
 
 ## Text
 
@@ -20,7 +20,7 @@ def RelatedObjectDoesNotExist(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1320280+00:00`
+- posted_at: `2026-11-09T23:44:51.8290160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 148,
     "symbol": "ForwardManyToOneDescriptor.RelatedObjectDoesNotExist"
   },
-  "id": "55c32170-56f1-47c8-bd44-bdf930a54054",
+  "id": "9b04db07-febc-4865-b2f6-e9fb22fed185",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1320280+00:00"
+    "posted_at": "2026-11-09T23:44:51.8290160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1bff918d-3cb1-4156-b618-21b753a1e4ad",
+  "subject_id": "ae65fbc7-ad63-4281-a9be-0043c7069ce2",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.RelatedObjectDoesNotExist",
   "tags": [
     "entity:method",

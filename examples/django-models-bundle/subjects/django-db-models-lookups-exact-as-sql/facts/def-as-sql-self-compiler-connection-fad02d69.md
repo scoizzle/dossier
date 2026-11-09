@@ -1,6 +1,6 @@
 # Fact fad02d69
 
-Store id: b269e277-2526-4d68-ae4f-8b945b553e40
+Store id: 2841043b-88b4-4956-9954-2afedfcb7e72
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2569420+00:00`
+- posted_at: `2026-11-09T23:44:54.9571170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 396,
     "symbol": "Exact.as_sql"
   },
-  "id": "b269e277-2526-4d68-ae4f-8b945b553e40",
+  "id": "2841043b-88b4-4956-9954-2afedfcb7e72",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2569420+00:00"
+    "posted_at": "2026-11-09T23:44:54.9571170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6a161ea5-f50f-44d9-af44-c5a1e1e4113e",
+  "subject_id": "2d3af7a7-f42b-446b-83f0-badd5c8f394a",
   "subject_name": "django/db/models/lookups::Exact.as_sql",
   "tags": [
     "entity:method"

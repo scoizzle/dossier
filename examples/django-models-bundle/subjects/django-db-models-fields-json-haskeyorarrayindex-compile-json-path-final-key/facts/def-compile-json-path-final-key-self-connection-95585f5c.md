@@ -1,6 +1,6 @@
 # Fact 95585f5c
 
-Store id: ea2db4e4-f58b-4823-8f24-cd8697d6bc9d
+Store id: 1f2574a5-8c3a-4f5c-9c76-da07b221d41e
 
 ## Text
 
@@ -20,7 +20,7 @@ def compile_json_path_final_key(self, connection, key_transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9115170+00:00`
+- posted_at: `2026-11-09T23:44:50.9833090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 290,
     "symbol": "HasKeyOrArrayIndex.compile_json_path_final_key"
   },
-  "id": "ea2db4e4-f58b-4823-8f24-cd8697d6bc9d",
+  "id": "1f2574a5-8c3a-4f5c-9c76-da07b221d41e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9115170+00:00"
+    "posted_at": "2026-11-09T23:44:50.9833090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aba58436-e2bc-4b50-8ee9-7107d53700dd",
+  "subject_id": "9e837094-8dbe-4565-a4ed-9ec8612f7ad9",
   "subject_name": "django/db/models/fields/json::HasKeyOrArrayIndex.compile_json_path_final_key",
   "tags": [
     "entity:method"

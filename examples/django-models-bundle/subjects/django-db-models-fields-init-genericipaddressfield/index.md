@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::GenericIPAddressField
 
-- Subject: django/db/models/fields/__init__::GenericIPAddressField (id `c62d5ba8-b30e-4da1-a118-b79a8ef4325e`)
+- Subject: django/db/models/fields/__init__::GenericIPAddressField (id `99d636e6-1f65-4961-9846-1cb54d23947a`)
 - Kind: class
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

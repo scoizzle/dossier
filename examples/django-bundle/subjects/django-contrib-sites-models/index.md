@@ -1,10 +1,10 @@
 # django/contrib/sites/models
 
-- Subject: django/contrib/sites/models (id `6edf3309-bb54-4e5b-b7bc-0a393c7ab1ed`)
+- Subject: django/contrib/sites/models (id `5b1f39bd-c36c-4b7d-aea8-3e447cac122f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 961 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

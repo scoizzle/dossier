@@ -1,11 +1,11 @@
 # django/db/models/query_utils::check_rel_lookup_compatibility
 
-- Subject: django/db/models/query_utils::check_rel_lookup_compatibility (id `d645cd3b-7161-4e40-88f5-e42922a6947a`)
+- Subject: django/db/models/query_utils::check_rel_lookup_compatibility (id `05b84e01-9ab4-4288-b2cf-44f8c294020e`)
 - Kind: function
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

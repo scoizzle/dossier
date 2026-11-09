@@ -1,10 +1,10 @@
 # django/forms/formsets
 
-- Subject: django/forms/formsets (id `79341013-c8cd-4f34-b0b3-d421c51abc83`)
+- Subject: django/forms/formsets (id `131d0843-059f-4fad-8ee5-22c409862a91`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4654 tokens
-- Facts shown: 54 of 55
+- Used: 4701 tokens
+- Facts shown: 55 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -30,6 +30,7 @@
 - [b0790311] @property def empty_form(self): form_kwargs = { **self.get_form_kwargs(None), "auto_id": self.auto_id, "prefix": self.add_prefix("__prefix__"), "empty_permitted": True, "use_required_attribute": False, "renderer": self.form_renderer, } form = self.form(**form_kwargs) self.add_fields(form, None) return form
 - [6c0cbaf7] @property def errors(self): """Return a list of form.errors for every form in self.forms.""" if self._errors is None: self.full_clean() return self._errors
 - [0e794a74] @property def extra_forms(self): """Return a list of all the extra forms in this formset.""" return self.forms[self.initial_form_count() :]
+- [3f94332d] @property def initial_forms(self): """Return a list of all the initial forms in this formset.""" return self.forms[: self.initial_form_count()]
 - [f8764473] @property def media(self): # All the forms on a FormSet are the same, so you only need to # interrogate the first form for media. if self.forms: return self.forms[0].media else: return self.empty_form.media
 - [738bd1a0] @property def ordered_forms(self): """ Return a list of form in the order specified by the incoming data. Raise an AttributeError if ordering is not allowed. """ if not self.is_valid() or not self.can_order: raise AttributeError( "'%s' object has no attribute 'ordered_forms'" % self.__class__.__name__ ) # Construct _ordering, which is a list of (form_index, # order_field_value) tuples. After constructing this list, we'll sort # it by order_field_value so we have a way to get to the form indexes # in the order specified by the form data. if not hasattr(self, "_ordering"): self._ordering = [] for i, form in enumerate(self.forms): # If this is an extra form and hasn't changed, ignore it. if i >= self.initial_form_count() and not form.has_changed(): continue # don't add data marked for deletion to self.ordered_data if self.can_delete and self._should_delete_form(form): continue self._ordering.append((i, form.cleaned_data[ORDERING_FIELD_NAME])) # After we're done populating self._ordering, sort it. # A sort function to order things numerically ascending, but # None should be sorted below anything else. Allowing None as # a comparison value makes it so we can leave ordering fields # blank.
 - [13a4b01b] @property def template_name(self): return self.renderer.formset_template_name

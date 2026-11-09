@@ -1,6 +1,6 @@
 # Fact 54ed8c8e
 
-Store id: a760c427-bff1-4ca9-b842-a9b41e4229a2
+Store id: 5d369c00-049c-44e8-83d6-e47107060b65
 
 ## Text
 
@@ -20,7 +20,7 @@ class Lead(LagLeadFunction)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7032890+00:00`
+- posted_at: `2026-11-09T23:44:54.4790340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 70,
     "symbol": "Lead"
   },
-  "id": "a760c427-bff1-4ca9-b842-a9b41e4229a2",
+  "id": "5d369c00-049c-44e8-83d6-e47107060b65",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7032890+00:00"
+    "posted_at": "2026-11-09T23:44:54.4790340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3091f539-9c93-43ac-a5c5-99fc530f9544",
+  "subject_id": "25226143-3f5c-4c72-8248-61731f15b836",
   "subject_name": "django/db/models/functions/window::Lead",
   "tags": [
     "entity:class"

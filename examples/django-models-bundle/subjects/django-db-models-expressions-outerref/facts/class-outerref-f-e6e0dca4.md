@@ -1,6 +1,6 @@
 # Fact e6e0dca4
 
-Store id: 946ace9c-b877-4b7e-8a34-689b939ece90
+Store id: 54ddd1e0-1efe-4e18-ac3a-f5c99c32660d
 
 ## Text
 
@@ -20,7 +20,7 @@ class OuterRef(F)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8451820+00:00`
+- posted_at: `2026-11-09T23:44:49.4932140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 983,
     "symbol": "OuterRef"
   },
-  "id": "946ace9c-b877-4b7e-8a34-689b939ece90",
+  "id": "54ddd1e0-1efe-4e18-ac3a-f5c99c32660d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8451820+00:00"
+    "posted_at": "2026-11-09T23:44:49.4932140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "073b44c2-2a51-4fc4-9865-b3e4df8d2bda",
+  "subject_id": "2450916f-7dc7-4aaa-ab8e-ba16211c1fb4",
   "subject_name": "django/db/models/expressions::OuterRef",
   "tags": [
     "entity:class"

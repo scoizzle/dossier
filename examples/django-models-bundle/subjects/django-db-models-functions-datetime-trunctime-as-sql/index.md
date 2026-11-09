@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::TruncTime.as_sql
 
-- Subject: django/db/models/functions/datetime::TruncTime.as_sql (id `66edf587-e14c-4aa4-82c4-77b99aa6a200`)
+- Subject: django/db/models/functions/datetime::TruncTime.as_sql (id `43665afa-278f-40e3-829e-1bd2b20dcf44`)
 - Kind: method
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

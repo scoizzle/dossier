@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/polygon
 
-- Subject: django/contrib/gis/geos/polygon (id `c66bf81f-1f38-4567-a8ae-058fde47bd3a`)
+- Subject: django/contrib/gis/geos/polygon (id `b23305f2-0b3f-4a9b-a8e1-19045869c13d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1658 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.set_select
 
-- Subject: django/db/models/sql/query::Query.set_select (id `dc2e30de-9927-4e44-b413-c07e3676885e`)
+- Subject: django/db/models/sql/query::Query.set_select (id `c0afb839-fe2d-407a-ae0e-efa6345c289c`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

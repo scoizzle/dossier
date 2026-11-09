@@ -1,10 +1,10 @@
 # django/contrib/redirects/apps
 
-- Subject: django/contrib/redirects/apps (id `b8ac0c26-f2b4-4354-9d81-f9778807be2c`)
+- Subject: django/contrib/redirects/apps (id `2b1a1e70-f244-4dbb-a868-dd4be95b4640`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 81 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

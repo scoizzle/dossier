@@ -1,6 +1,6 @@
 # Fact 88f92adf
 
-Store id: 0d0f82d6-66c8-40d9-89d1-90ea9118ab9b
+Store id: 973c4cf2-6f2a-476e-aa8b-7bca54bee4e6
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9530700+00:00`
+- posted_at: `2026-11-09T23:44:49.6154630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1685,
     "symbol": "When.get_source_fields"
   },
-  "id": "0d0f82d6-66c8-40d9-89d1-90ea9118ab9b",
+  "id": "973c4cf2-6f2a-476e-aa8b-7bca54bee4e6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9530700+00:00"
+    "posted_at": "2026-11-09T23:44:49.6154630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a5c427fa-de27-45a8-b6e4-ad86c52342d5",
+  "subject_id": "50b346d3-a002-49e6-bf54-52cca1563ec3",
   "subject_name": "django/db/models/expressions::When.get_source_fields",
   "tags": [
     "entity:method"

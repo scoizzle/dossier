@@ -1,6 +1,6 @@
 # Fact 5bb98854
 
-Store id: 044f820b-12b1-4e6f-97a9-7f9528bc2be3
+Store id: 5a583383-ab12-4187-b396-665036b672ca
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDIEndsWith(UUIDTextMixin, IEndsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4976630+00:00`
+- posted_at: `2026-11-09T23:44:55.1280960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 830,
     "symbol": "UUIDIEndsWith"
   },
-  "id": "044f820b-12b1-4e6f-97a9-7f9528bc2be3",
+  "id": "5a583383-ab12-4187-b396-665036b672ca",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4976630+00:00"
+    "posted_at": "2026-11-09T23:44:55.1280960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "beb39e70-6aa0-4ae1-ac44-c2ba284fcfea",
+  "subject_id": "b100282d-aa6a-47bb-a258-4719585e7d15",
   "subject_name": "django/db/models/lookups::UUIDIEndsWith",
   "tags": [
     "entity:class",

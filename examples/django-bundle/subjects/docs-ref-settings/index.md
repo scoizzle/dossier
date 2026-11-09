@@ -1,10 +1,10 @@
 # docs/ref/settings
 
-- Subject: docs/ref/settings (id `acf5ff91-5503-462f-9dbc-112fcde1ad42`)
+- Subject: docs/ref/settings (id `6919676b-0463-4626-adb1-7f73b17e2255`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 43230 tokens
-- Facts shown: 1261 of 1331
+- Used: 46317 tokens
+- Facts shown: 1331 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - MESSAGE_LEVEL = message_constants.DEBUG [c8ee2aa6]
 - MESSAGE_TAGS = {message_constants.INFO: ""} [f565d778]
 - from django.contrib.messages import constants as message_constants [a68cc969557020e3]
+- from django.contrib.messages import constants as message_constants [a68cc969557020e3-2]
 - "HOST": "/var/run/mysql" [5c789270]
 - * Your Django app is behind a proxy. * Your proxy strips the ``X-Forwarded-Proto`` header from all incoming requests, even when it contains a comma-separated list of protocols. In other words, if end users include that header in their requests, the proxy will discard it. * Your proxy sets the ``X-Forwarded-Proto`` header and sends it to Django, but only for requests that originally come in via HTTPS. [3534c4ff]
 - **Always prefix the mode with** ``0o`` **.** [df961657]
@@ -29,20 +30,22 @@
 - As such, fallback values should be removed after an appropriate period, allowing for key rotation. [e3875f7b]
 - Be careful when you override settings, especially when the default value is a non-empty list or dictionary, such as :setting:`STATICFILES_FINDERS`. Make sure you keep the components required by the features of Django you wish to use. [e840f9dd]
 - CACHES = { "default": { "BACKEND": "django.core.cache.backends.filebased.FileBasedCache", "LOCATION": "/var/tmp/django_cache", } } [3be70c90]
-- DATABASES = { "default": { "ENGINE": "django.db.backends.sqlite3", "NAME": "mydatabase", } } [bcea6474]
 
 ## All facts
 
 - [aa10c489] DATABASES = { "default": { "ENGINE": "django.db.backends.postgresql", "NAME": "mydatabase", "USER": "mydatabaseuser", "PASSWORD": "mypassword", "HOST": "127.0.0.1", "PORT": "5432", } }
 - [c59c326a] DATABASES = { "default": { "ENGINE": "django.db.backends.postgresql", "USER": "mydatabaseuser", "NAME": "mydatabase", "TEST": { "NAME": "mytestdatabase", }, }, }
+- [bcea6474] DATABASES = { "default": { "ENGINE": "django.db.backends.sqlite3", "NAME": "mydatabase", } }
 - [1bb6e1ef] Defining this setting overrides the default value and is *not* merged with it.
 - [38bcbee7] Explicitly defined through models are already handled by the migrations system.
 - [d0284d1b] FORMAT_MODULE_PATH = [ "mysite.formats", "some_app.formats", ]
 - [b67035dc] If :setting:`MEDIA_URL` is a relative path, then it will be prefixed by the server-provided value of ``SCRIPT_NAME`` (or ``/`` if not set). This makes it easier to serve a Django application in a subpath without adding an extra configuration to the settings.
+- [642b5bfd] If :setting:`STATIC_URL` is a relative path, then it will be prefixed by the server-provided value of ``SCRIPT_NAME`` (or ``/`` if not set). This makes it easier to serve a Django application in a subpath without adding an extra configuration to the settings.
 - [ab5420d5] If any of those are not true, you should keep this setting set to ``None`` and find another way of determining HTTPS, perhaps via custom middleware.
 - [28588857] If you're not familiar with file modes, please note that the ``0o`` prefix is very important: it indicates an octal number, which is the way that modes must be specified. If you try to use ``644``, you'll get totally incorrect behavior.
 - [66b6538e] In Django 2028, the default value will change from "Not defined" to ``{}``. Until then, if ``MAILERS`` is not defined in the project's settings, Django will create a ``"default"`` mailer using the :setting:`EMAIL_BACKEND` setting. Projects can opt into the Django 2028 behavior at any time by adding ``MAILERS`` and removing ``EMAIL_BACKEND`` from their settings. See :ref:`migrating-to-mailers-settings`.
 - [cc7158320b986592] In older versions, required a list of (name, address) tuples.
+- [cc7158320b986592-2] In older versions, required a list of (name, address) tuples.
 - [f692af80] In older versions, the default value is :class:`django.db.models.AutoField`.
 - [b4de810b] In older versions, the default was ``True``.
 - [3e5c2349] In order to address this, you should add a :class:`~django.db.migrations.operations.RunSQL` operation to your migrations to perform the required ``ALTER TABLE`` step. You can check the existing table name through ``sqlmigrate``, ``dbshell``, or with the field’s ``remote_field.through._meta.db_table`` property.
@@ -73,7 +76,15 @@
 - [f2a95bcb] This means that if you switch the value of ``DEFAULT_AUTO_FIELD`` and then generate migrations, the primary keys of the related models will be updated, as will the foreign keys from the through table, but the primary key of the auto-created through table will not be migrated.
 - [0b9978c8] This setting is deprecated and will be removed in Django 2028. Its replacement is :setting:`BACKEND <MAILERS-BACKEND>` in the :setting:`MAILERS` ``"default"`` configuration. See :ref:`migrating-to-mailers`.
 - [d0fb0558] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"file_path"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the file email backend. See :ref:`migrating-to-mailers`.
+- [1de01708] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"host"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [778520d2] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"password"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [c2ff05ee] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"port"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
 - [33070325] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"ssl_certfile"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [ecd5d98b] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"ssl_keyfile"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [62f1bcd9] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"timeout"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [14ac8eb8] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"use_ssl"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [9d4ccc13] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"use_tls"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
+- [38b8a5d7] This setting is deprecated and will be removed in Django 2028. Its replacement is ``"username"`` under :setting:`OPTIONS <MAILERS-OPTIONS>` in a :setting:`MAILERS` definition that uses the SMTP email backend. See :ref:`migrating-to-mailers`.
 - [3fe64b87] This setting will be removed in Django 2028. To use a custom default blank choice label, override ``django.db.models.fields.BLANK_CHOICE_LABEL`` in the app's ``ready()`` method.
 - [0b8526de] This should be an initially empty destination directory for collecting your static files from their permanent locations into one directory for ease of deployment; it is **not** a place to store your static files permanently. You should do that in directories that will be found by :doc:`staticfiles</ref/contrib/staticfiles>`’s :setting:`finders<STATICFILES_FINDERS>`, which by default, are ``'static/'`` app sub-directories and any directories you include in :setting:`STATICFILES_DIRS`.
 - [159fa437] This transitional setting will be removed in Django 2028, when legacy signed cookies will no longer be accepted.
@@ -89,6 +100,7 @@
 - [911a85ac] [ "django.core.files.uploadhandler.MemoryFileUploadHandler", "django.core.files.uploadhandler.TemporaryFileUploadHandler", ]
 - [2ce943a2] def csrf_failure(request, reason=""): ...
 - [ac6cbe5b3e28dda2-5] from django.utils.csp import CSP
+- [ac6cbe5b3e28dda2-6] from django.utils.csp import CSP
 - [c2cea957e5e2362f-2] from django.utils.translation import gettext_lazy as _
 - [1ca7dd54] mysite/ formats/ __init__.py en/ __init__.py formats.py
 - [a6263053] { "default": { "BACKEND": "django.core.cache.backends.locmem.LocMemCache", } }
@@ -99,8 +111,10 @@
 - [d1a3b1b4] Django's CSP middleware helps construct and send the appropriate header based on your settings, but it does **not validate** that the directives and values conform to the CSP specification. It is your responsibility to ensure that the configuration is syntactically and semantically correct. Use browser developer tools or external CSP validators during development.
 - [42a3b3f6] For a list of available directives and their values, refer to the `MDN documentation on CSP directives <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy#directives>`_.
 - [d174a004c44097fd] If desired, you may specify the numeric values for the constants directly according to the values in the above :ref:`constants table <message-level-constants>`.
+- [d174a004c44097fd-2] If desired, you may specify the numeric values for the constants directly according to the values in the above :ref:`constants table <message-level-constants>`.
 - [ac0294fb] If turning this to ``True`` causes infinite redirects, it probably means your site is running behind a proxy and can't tell which requests are secure and which are not. Your proxy likely sets a header to indicate secure requests; you can correct the problem by finding out what that header is and configuring the :setting:`SECURE_PROXY_SSL_HEADER` setting accordingly.
 - [a9771bd5] If you override ``MESSAGE_LEVEL`` in your settings file and rely on any of the built-in constants, you must import the constants module directly to avoid the potential for circular imports, e.g.::
+- [3ce8aea3] If you override ``MESSAGE_TAGS`` in your settings file and rely on any of the built-in constants, you must import the ``constants`` module directly to avoid the potential for circular imports, e.g.::
 - [e89e6e05] Reducing the value of this timeout doesn't make any difference to the ability of an attacker to brute-force a password reset token. Tokens are designed to be safe from brute-forcing without any timeout.
 - [7e0ebbbd] This timeout exists to protect against some unlikely attack scenarios, such as someone gaining access to email archives that may contain old, unused password reset tokens.
 - [b26a745f] * :setting:`CSRF_COOKIE_DOMAIN` * :setting:`CSRF_COOKIE_NAME` * :setting:`CSRF_COOKIE_PATH` * :setting:`CSRF_COOKIE_SAMESITE` * :setting:`CSRF_COOKIE_SECURE` * :setting:`CSRF_FAILURE_VIEW` * :setting:`CSRF_HEADER_NAME` * :setting:`CSRF_TRUSTED_ORIGINS` * :setting:`CSRF_USE_SESSIONS`
@@ -159,6 +173,7 @@
 - [2c149d74] .. admonition:: A numeric value trumps umask
 - [f328d9d1] .. admonition:: Application names and labels must be unique in :setting:`INSTALLED_APPS`
 - [46487cb7196e5ce3] .. admonition:: Avoiding circular imports
+- [46487cb7196e5ce3-2] .. admonition:: Avoiding circular imports
 - [0b758f60] .. admonition:: Directives validation
 - [4b48d36f] .. admonition:: Is my value merged with the default value?
 - [6cd19c4c] .. admonition:: Migrating auto-created through tables
@@ -456,6 +471,7 @@
 - [8357c993] A list of fallback secret keys for a particular Django installation. These are used to allow rotation of the ``SECRET_KEY``.
 - [3b957953] A list of formats that will be accepted when inputting data on a date field. Formats will be tried in order, using the first valid one. Note that these format strings use Python's :ref:`datetime module syntax <strftime-strptime-behavior>`, not the format strings from the :tfilter:`date` template filter.
 - [b166e3b2] A list of formats that will be accepted when inputting data on a datetime field. Formats will be tried in order, using the first valid one. Note that these format strings use Python's :ref:`datetime module syntax <strftime-strptime-behavior>`, not the format strings from the :tfilter:`date` template filter. Date-only formats are not included as datetime fields will automatically try :setting:`DATE_INPUT_FORMATS` in last resort.
+- [b6e766f1] A list of formats that will be accepted when inputting data on a time field. Formats will be tried in order, using the first valid one. Note that these format strings use Python's :ref:`datetime module syntax <strftime-strptime-behavior>`, not the format strings from the :tfilter:`date` template filter.
 - [55077e43] A list of handlers to use for uploading. Changing this setting allows complete customization -- even replacement -- of Django's upload process.
 - [44ca262a] A list of identifiers of messages generated by the system check framework (i.e. ``["models.W001"]``) that you wish to permanently acknowledge and ignore. Silenced checks will not be output to the console.
 - [48584c56] A list of middleware to use. See :doc:`/topics/http/middleware`.
@@ -478,6 +494,7 @@
 - [794e21ff] Although the setting offers little practical benefit, it's sometimes required by security auditors.
 - [6c5d4fd8] Among other things, the default logging configuration passes HTTP 500 server errors to an email log handler when :setting:`DEBUG` is ``False``. See also :ref:`configuring-logging`.
 - [d216a0bb] An available formatting that can be used for displaying date fields on templates. Note that the corresponding locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
+- [bd44bce9] An available formatting that can be used for displaying datetime fields on templates. Note that the corresponding locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
 - [c33a50b4] As a security measure, Django will *not* include settings that might be sensitive, such as :setting:`SECRET_KEY`. Specifically, it will exclude any setting whose name includes any of the following:
 - [80cf3bd7] As noted in the `MDN documentation on Content-Security-Policy-Report-Only <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only>`_, the ``report-uri`` directive must be specified for reports to be sent; otherwise, the header has no reporting effect (other than logging to the browser's developer tools console).
 - [cf42ebb4] As with other HTTP headers in ``request.META``, the header name received from the server is normalized by converting all characters to uppercase, replacing any hyphens with underscores, and adding an ``'HTTP_'`` prefix to the name. For example, if your client sends a ``'X-XSRF-TOKEN'`` header, the setting should be ``'HTTP_X_XSRF_TOKEN'``.
@@ -485,6 +502,7 @@
 - [df167c6e] Available formats are:
 - [8eb896b1] Be cautious when updating this setting on a production site. If you update this setting to enable cross-domain cookies on a site that previously used standard domain cookies, existing user cookies that have the old domain will not be updated. This will result in site users being unable to switch the language as long as these cookies persist. The only safe and reliable option to perform the switch is to change the language cookie name permanently (via the :setting:`LANGUAGE_COOKIE_NAME` setting) and to add a middleware that copies the value from the old cookie to a new one and then deletes the old one.
 - [98eae285] Be cautious when updating this setting on a production site. If you update this setting to enable cross-domain cookies on a site that previously used standard domain cookies, existing user cookies will be set to the old domain. This may result in them being unable to log in as long as these cookies persist.
+- [1f671cd8] Be cautious when updating this setting on a production site. If you update this setting to use a deeper path than it previously used, existing user cookies that have the old path will not be updated. This will result in site users being unable to switch the language as long as these cookies persist. The only safe and reliable option to perform the switch is to change the language cookie name permanently (via the :setting:`LANGUAGE_COOKIE_NAME` setting), and to add a middleware that copies the value from the old cookie to a new one and then deletes the one.
 - [a8f5d97f] By default, ``is_secure()`` determines if a request is secure by confirming that a requested URL uses ``https://``. This method is important for Django's CSRF protection, and it may be used by your own code or third-party apps.
 - [c937904b] Cache ----- * :setting:`CACHES` * :setting:`CACHE_MIDDLEWARE_ALIAS` * :setting:`CACHE_MIDDLEWARE_KEY_PREFIX` * :setting:`CACHE_MIDDLEWARE_SECONDS`
 - [c11f3582] Common use is to display a thousand separator. If this setting is ``0``, then no grouping will be applied to the number. If this setting is greater than ``0``, then :setting:`THOUSAND_SEPARATOR` will be used as the separator between those groups.
@@ -500,6 +518,7 @@
 - [a1cc9a1c] Default decimal separator used when formatting decimal numbers.
 - [4a941c29] Default email address for automated correspondence from the site manager(s). This address is used in the ``From:`` header of outgoing emails and can take any format valid in the chosen email sending protocol.
 - [e58b649b] Default exception reporter class to be used if none has been assigned to the :class:`~django.http.HttpRequest` instance yet. See :ref:`custom-error-reports`.
+- [75c04bcd] Default exception reporter filter class to be used if none has been assigned to the :class:`~django.http.HttpRequest` instance yet. See :ref:`Filtering error reports<filtering-error-reports>`.
 - [41603ad0] Default primary key field type to use for models that don't have a field with :attr:`primary_key=True <django.db.models.Field.primary_key>`.
 - [c6e4523d] Default tablespace to use for indexes on fields that don't specify one, if the backend supports it (see :doc:`/topics/db/tablespaces`).
 - [95985dd6] Default tablespace to use for models that don't specify one, if the backend supports it (see :doc:`/topics/db/tablespaces`).
@@ -595,6 +614,7 @@
 - [23fba42f] Default: ``259200`` (3 days, in seconds)
 - [262e5fce] Default: ``25``
 - [5963f9e8859ecc15] Default: ``2621440`` (i.e. 2.5 MB).
+- [5963f9e8859ecc15-2] Default: ``2621440`` (i.e. 2.5 MB).
 - [a44ba2e1] Default: ``300``
 - [35647ea5] Default: ``31449600`` (approximately 1 year, in seconds)
 - [d08e811a] Default: ``600``
@@ -760,6 +780,7 @@
 - [e7ea236e] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` :ref:`redirects <ssl-redirect>` all non-HTTPS requests to HTTPS (except for those URLs matching a regular expression listed in :setting:`SECURE_REDIRECT_EXEMPT`).
 - [861eae00] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`x-content-type-options` header on all responses that do not already have it.
 - [53db0056] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` adds the ``includeSubDomains`` directive to the :ref:`http-strict-transport-security` header. It has no effect unless :setting:`SECURE_HSTS_SECONDS` is set to a non-zero value.
+- [00f932b2] If ``True``, the :class:`~django.middleware.security.SecurityMiddleware` adds the ``preload`` directive to the :ref:`http-strict-transport-security` header. It has no effect unless :setting:`SECURE_HSTS_SECONDS` is set to a non-zero value.
 - [1a9ea45f] If a URL path matches a regular expression in this list, the request will not be redirected to HTTPS. The :class:`~django.middleware.security.SecurityMiddleware` strips leading slashes from URL paths, so patterns shouldn't include them, e.g. ``SECURE_REDIRECT_EXEMPT = [r'^no-ssl/$', …]``. If :setting:`SECURE_SSL_REDIRECT` is ``False``, this setting has no effect.
 - [180986cb] If a string (e.g. ``secure.example.com``), all SSL redirects will be directed to this host rather than the originally-requested host (e.g. ``www.example.com``). If :setting:`SECURE_SSL_REDIRECT` is ``False``, this setting has no effect.
 - [61ac7a58] If configured, the :class:`~django.middleware.security.SecurityMiddleware` sets the :ref:`referrer-policy` header on all responses that do not already have it to the value provided.
@@ -811,7 +832,11 @@
 - [acc85302] Note that changing this setting affects all forms using the default renderer, including those in :doc:`the admin site </ref/contrib/admin/index>` or third-party packages.
 - [cdc6d57c] Note that setting :setting:`EMAIL_SSL_CERTFILE` and :setting:`EMAIL_SSL_KEYFILE` doesn't result in any certificate checking. They're passed to the underlying SSL connection. Please refer to the documentation of Python's :meth:`python:ssl.SSLContext.wrap_socket` function for details on how the certificate chain file and private key file are handled.
 - [63e7ea246fbd1fa1] Note that the corresponding locale-dictated format has higher precedence and will be applied instead.
+- [63e7ea246fbd1fa1-2] Note that the corresponding locale-dictated format has higher precedence and will be applied instead.
 - [14dd81b3] Note that the header needs to be in the format as used by ``request.META`` -- all caps and likely starting with ``HTTP_``. (Remember, Django automatically adds ``'HTTP_'`` to the start of x-header names before making the header available in ``request.META``.)
+- [515bb920345b6a18] Note that the locale-dictated format has higher precedence and will be applied instead.
+- [515bb920345b6a18-2] Note that the locale-dictated format has higher precedence and will be applied instead.
+- [515bb920345b6a18-3] Note that the locale-dictated format has higher precedence and will be applied instead.
 - [dd03e5a4] Note that these are *partial* matches. ``'PASS'`` will also match PASSWORD, just as ``'TOKEN'`` will also match TOKENIZED and so on.
 - [f41745bb] Note that these paths should use Unix-style forward slashes, even on Windows (e.g. ``"C:/Users/user/mysite/extra_static_content"``).
 - [12b0198cec145720] Note that these paths should use Unix-style forward slashes, even on Windows.
@@ -828,9 +853,11 @@
 - [69b87754] Prefixes (optional) ~~~~~~~~~~~~~~~~~~~
 - [e3b066c3] Security -------- * Cross Site Request Forgery Protection
 - [f309e4b6fe2b8df7] See :doc:`/topics/cache`.
+- [f309e4b6fe2b8df7-2] See :doc:`/topics/cache`.
 - [9d69ab8b] See :ref:`auth_password_storage`.
 - [e825040f] See :ref:`configuring-sessions` for more details.
 - [c08fd1b3d2252300] See :ref:`file-upload-handlers` for details.
+- [c08fd1b3d2252300-2] See :ref:`file-upload-handlers` for details.
 - [c0100f4c] See :ref:`how-django-discovers-language-preference` for more details.
 - [050cc6fc] See :ref:`initial-data-via-fixtures` and :ref:`topics-testing-fixtures`.
 - [61f5f686] See :ref:`message storage backends <message-storage-backends>` for more details.
@@ -839,13 +866,18 @@
 - [05a237fe] See :ref:`topic-email-backends` for a list of Django's built-in backends and pointers to community-maintained options.
 - [dc52bac2] See :ref:`topic-email-configuration` for more information.
 - [d5aca3fa1a6b0e93] See :setting:`SESSION_COOKIE_HTTPONLY` for details on ``HttpOnly``.
+- [d5aca3fa1a6b0e93-2] See :setting:`SESSION_COOKIE_HTTPONLY` for details on ``HttpOnly``.
 - [d4ae33bd08d0e1d7] See :setting:`SESSION_COOKIE_SAMESITE` for details about ``SameSite``.
+- [d4ae33bd08d0e1d7-2] See :setting:`SESSION_COOKIE_SAMESITE` for details about ``SameSite``.
 - [e6223c90] See :tfilter:`allowed date format strings <date>`. See also :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`TIME_FORMAT` and :setting:`YEAR_MONTH_FORMAT`.
+- [45d64ab3] See :tfilter:`allowed date format strings <date>`. See also :setting:`DATE_FORMAT`, :setting:`DATETIME_FORMAT`, :setting:`TIME_FORMAT` and :setting:`MONTH_DAY_FORMAT`.
 - [04c5227a] See also :setting:`DATA_UPLOAD_MAX_MEMORY_SIZE`.
 - [d9244458] See also :setting:`DATETIME_FORMAT`, :setting:`TIME_FORMAT` and :setting:`SHORT_DATE_FORMAT`.
 - [02c0e636] See also :setting:`DATETIME_INPUT_FORMATS` and :setting:`TIME_INPUT_FORMATS`.
 - [a3bbe674] See also :setting:`DATE_FORMAT` and :setting:`DATETIME_FORMAT`.
+- [21f3cdb4] See also :setting:`DATE_FORMAT` and :setting:`SHORT_DATETIME_FORMAT`.
 - [401af000] See also :setting:`DATE_FORMAT` and :setting:`SHORT_DATE_FORMAT`.
+- [c00055f1] See also :setting:`DATE_FORMAT`, :setting:`TIME_FORMAT` and :setting:`SHORT_DATETIME_FORMAT`.
 - [4dc4cec4] See also :setting:`DATE_INPUT_FORMATS` and :setting:`DATETIME_INPUT_FORMATS`.
 - [abe59675] See also :setting:`DATE_INPUT_FORMATS` and :setting:`TIME_INPUT_FORMATS`.
 - [0a9a33a0] See also :setting:`DECIMAL_SEPARATOR`, :setting:`NUMBER_GROUPING` and :setting:`THOUSAND_SEPARATOR`.
@@ -856,6 +888,7 @@
 - [a073fa83] See also :setting:`FILE_UPLOAD_MAX_MEMORY_SIZE`.
 - [f502b9e6] See also :setting:`LANGUAGE_CODE` and :setting:`USE_TZ`.
 - [2e4ca573] See also :setting:`MEDIA_URL`.
+- [d4cfda03] See also :setting:`NUMBER_GROUPING`, :setting:`DECIMAL_SEPARATOR` and :setting:`USE_THOUSAND_SEPARATOR`.
 - [793cfa99] See also :setting:`NUMBER_GROUPING`, :setting:`THOUSAND_SEPARATOR` and :setting:`USE_THOUSAND_SEPARATOR`.
 - [24005707] See also :setting:`TIME_ZONE` and :setting:`USE_I18N`.
 - [41e142bf] See also the :doc:`/ref/checks` documentation.
@@ -913,6 +946,7 @@
 - [d0b9b690] The alias for this particular template engine. It's an identifier that allows selecting an engine for rendering. Aliases must be unique across all configured template engines.
 - [8a758398] The alias of the database that this database should mirror during testing. It depends on transactions and therefore must be used within :class:`~django.test.TransactionTestCase` instead of :class:`~django.test.TestCase`.
 - [7b91d839] The amount by which the DATAFILE is extended when more space is required.
+- [e7dd4b4d] The amount by which the DATAFILE_TMP is extended when more space is required.
 - [64070794] The amount of request data is correlated to the amount of memory or storage needed to process the request and populate the GET and POST dictionaries. Large requests could be used as a denial-of-service attack vector if left unchecked. Since web servers don't typically perform deep request inspection, it's not possible to perform a similar check at that level.
 - [e5f16e99] The backend to use for sending emails. For the list of available backends see :ref:`topic-email-backends`.
 - [8f14fc5b] The backend used for signing cookies and other data.
@@ -926,7 +960,10 @@
 - [3fbf3bd0] The default blank choice label in ``Select`` widgets was changed from ``"---------"`` to ``django.db.models.fields.BLANK_CHOICE_LABEL``. Set this transitional setting to ``True`` to revert to the previous label.
 - [a91f6f41] The default class that renders forms and form widgets. It must implement :ref:`the low-level render API <low-level-widget-render-api>`. Included form renderers are:
 - [cebd320d] The default formatting to use for date fields on Django admin change-list pages -- and, possibly, by other parts of the system -- in cases when only the month and day are displayed.
+- [92e6b46f] The default formatting to use for date fields on Django admin change-list pages -- and, possibly, by other parts of the system -- in cases when only the year and month are displayed.
 - [005ca6fc] The default formatting to use for displaying date fields in any part of the system. Note that the locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
+- [d34bf664] The default formatting to use for displaying datetime fields in any part of the system. Note that the locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
+- [d63d0949] The default formatting to use for displaying time fields in any part of the system. Note that the locale-dictated format has higher precedence and will be applied instead. See :tfilter:`allowed date format strings <date>`.
 - [45fbcc7c] The default integer number of seconds to cache a page for the :ref:`cache middleware <the-per-site-cache>`.
 - [90eac7b3] The default value for the X-Frame-Options header used by :class:`~django.middleware.clickjacking.XFrameOptionsMiddleware`. See the :doc:`clickjacking protection </ref/clickjacking/>` documentation.
 - [ea151861] The default version number for cache keys generated by the Django server.
@@ -935,6 +972,7 @@
 - [9d8b0413] The directory used by the :ref:`file email backend <topic-email-file-backend>` to store output files.
 - [b8549de8] The domain to be used when setting the CSRF cookie. This can be useful for easily allowing cross-subdomain requests to be excluded from the normal cross site request forgery protection. It should be set to a string such as ``".example.com"`` to allow a POST request from a form on one subdomain to be accepted by a view served from another subdomain.
 - [9736b1b5] The domain to use for session cookies. Set this to a string such as ``"example.com"`` for cross-domain cookies, or use ``None`` for a standard domain cookie.
+- [9645b51e] The domain to use for the language cookie. Set this to a string such as ``"example.com"`` for cross-domain cookies, or use ``None`` for a standard domain cookie.
 - [12e7646f] The email address that error messages come from, such as those sent to :setting:`ADMINS` and :setting:`MANAGERS`. This address is used in the ``From:`` header and can take any format valid in the chosen email sending protocol.
 - [37d2876b] The following inner options that may be required for more complex configurations are available:
 - [8a8cba23] The following is an example ``settings.py`` snippet defining a custom file storage called ``example``::
@@ -951,12 +989,15 @@
 - [c08759fd] The list of routers that will be used to determine which database to use when performing a database query.
 - [22b1cd03] The list of validators that are used to check the strength of user's passwords. See :ref:`password-validation` for more details. By default, no validation is performed and all passwords are accepted.
 - [c6499e820afe5cf1] The locale-dictated format has higher precedence and will be applied instead.
+- [c6499e820afe5cf1-2] The locale-dictated format has higher precedence and will be applied instead.
+- [c6499e820afe5cf1-3] The locale-dictated format has higher precedence and will be applied instead.
 - [2b344f58] The location of the cache to use. This might be the directory for a file system cache, a host and port for a memcache server, or an identifying name for a local memory cache. e.g.::
 - [fcf5f802] The maximum number of files that may be received via POST in a ``multipart/form-data`` encoded request before a :exc:`~django.core.exceptions.SuspiciousOperation` (``TooManyFiles``) is raised. You can set this to ``None`` to disable the check. Applications that are expected to receive an unusually large number of file fields should tune this setting.
 - [e3875141] The maximum number of parameters that may be received via GET or POST before a :exc:`~django.core.exceptions.SuspiciousOperation` (``TooManyFields``) is raised. You can set this to ``None`` to disable the check. Applications that are expected to receive an unusually large number of form fields should tune this setting.
 - [5aa47358] The maximum size (in bytes) that an upload will be before it gets streamed to the file system. See :ref:`file-upload-handlers` for details.
 - [d724e8f1] The maximum size in bytes that a request body may be before a :exc:`~django.core.exceptions.SuspiciousOperation` (``RequestDataTooBig``) is raised. The size check occurs when you access ``request.body`` or ``request.POST``. For ``request.POST``, the size check uses the total request size without the file upload data (``request.FILES``). For ``request.body``, the size check uses the total raw request payload. The payload includes the file upload data. You can set this to ``None`` to disable the check. Applications that are expected to receive unusually large form posts should tune this setting.
 - [4c1b3e62] The maximum size that the DATAFILE is allowed to grow to.
+- [f30241f9] The maximum size that the DATAFILE_TMP is allowed to grow to.
 - [d6be84c4] The model name used in this setting should be all lowercase, regardless of the case of the actual model class name.
 - [2abaa2cb] The model to use to represent a User. See :ref:`auth-custom-user`.
 - [c08dc9ba] The name of a `template`_ (e.g. ``'template0'``) from which to create the test database.
@@ -967,10 +1008,13 @@
 - [8665e96c] The name of the cookie to use for the language cookie. This can be whatever you want (as long as it's different from the other cookie names in your application). See :doc:`/topics/i18n/index`.
 - [61f0a3f0] The name of the database to use. For SQLite, it's the full path to the database file. When specifying the path, always use forward slashes, even on Windows (e.g. ``C:/homes/user/mysite/sqlite3.db``).
 - [c61a0437] The name of the datafile to use for the TBLSPACE. If not provided, Django will use ``TBLSPACE + '.dbf'``.
+- [5b6e61a2] The name of the datafile to use for the TBLSPACE_TMP. If not provided, Django will use ``TBLSPACE_TMP + '.dbf'``.
 - [06c53ed5] The name of the directory containing the format definitions is expected to be named using :term:`locale name` notation, for example ``de``, ``pt_BR``, ``en_US``, etc.
 - [1862afbe] The name of the request header used for CSRF authentication.
 - [cde38bc1] The name of the tablespace that will be used when running tests. If not provided, Django will use ``'test_' + USER``.
+- [72c97fed] The name of the temporary tablespace that will be used when running tests. If not provided, Django will use ``'test_' + USER + '_temp'``.
 - [06611645] The number of accepted files is correlated to the amount of time and memory needed to process the request. Large requests could be used as a denial-of-service attack vector if left unchecked. Since web servers don't typically perform deep request inspection, it's not possible to perform a similar check at that level.
+- [157676a7] The number of request parameters is correlated to the amount of time needed to process the request and populate the GET and POST dictionaries. Large requests could be used as a denial-of-service attack vector if left unchecked. Since web servers don't typically perform deep request inspection, it's not possible to perform a similar check at that level.
 - [4bccae7f] The number of seconds a password reset link is valid for.
 - [ad1bbfa2] The number of seconds before a cache entry is considered stale. If the value of this setting is ``None``, cache entries will not expire. A value of ``0`` causes keys to immediately expire (effectively "don't cache").
 - [6fee745f] The numeric mode (i.e. ``0o644``) to set newly uploaded files to. For more information about what these modes mean, see the documentation for :func:`os.chmod`.
@@ -978,6 +1022,8 @@
 - [f8e8db49] The password to use when connecting to the Oracle database that will be used when running tests. If not provided, Django will generate a random password.
 - [e52ec5bd] The password to use when connecting to the database. Not used with SQLite.
 - [87eeef11] The path set on the CSRF cookie. This should either match the URL path of your Django installation or be a parent of that path.
+- [b2933b49] The path set on the language cookie. This should either match the URL path of your Django installation or be a parent of that path.
+- [1d461940] The path set on the session cookie. This should either match the URL path of your Django installation or be parent of that path.
 - [8c9c8ca7] The port to use when connecting to the database. An empty string means the default port. Not used with SQLite.
 - [29a0d9ee] The reason for setting a long-lived expiration time is to avoid problems in the case of a user closing a browser or bookmarking a page and then loading that page from a browser cache. Without persistent cookies, the form submission would fail in this case.
 - [22dbc375] The secret key is used for:
@@ -989,19 +1035,38 @@
 - [624460de] The username to use when connecting to the database. Not used with SQLite.
 - [3d3c4e43] The value must be an integer from 0 to 6, where 0 means Sunday, 1 means Monday and so on.
 - [31a47e89] The value of the `SameSite`_ flag on the CSRF cookie. This flag prevents the cookie from being sent in cross-site requests.
+- [aa73c5fa] The value of the `SameSite`_ flag on the language cookie. This flag prevents the cookie from being sent in cross-site requests.
 - [81126651] The value of the `SameSite`_ flag on the session cookie. This flag prevents the cookie from being sent in cross-site requests thus preventing CSRF attacks and making some methods of stealing session cookie impossible.
 - [d362fa5f] These checks prevent, for example, a ``POST`` request from ``subdomain.example.com`` from succeeding against ``api.example.com``. If you need cross-origin unsafe requests, continuing the example, add ``'https://subdomain.example.com'`` to this list (and/or ``http://...`` if requests originate from an insecure page).
 - [0bb90e5d] This can be useful for some test setups. It shouldn't be used on a live site unless you want your web server (instead of Django) to generate "Internal Server Error" responses. In that case, make sure your server doesn't show the stack trace or other sensitive information in the response.
 - [80f547c5] This doesn't affect error messages sent to :setting:`ADMINS` and :setting:`MANAGERS`. See :setting:`SERVER_EMAIL` for that.
 - [df9fca37] This example illustrates the expected structure, using the constants defined in :ref:`csp-constants`::
 - [cc9601bfb8bb7394] This is a PostgreSQL-specific setting.
+- [cc9601bfb8bb7394-2] This is a PostgreSQL-specific setting.
 - [30a89f8498c5011d] This is an Oracle-specific setting.
+- [30a89f8498c5011d-2] This is an Oracle-specific setting.
+- [30a89f8498c5011d-3] This is an Oracle-specific setting.
+- [30a89f8498c5011d-4] This is an Oracle-specific setting.
+- [30a89f8498c5011d-5] This is an Oracle-specific setting.
+- [30a89f8498c5011d-6] This is an Oracle-specific setting.
+- [30a89f8498c5011d-7] This is an Oracle-specific setting.
+- [30a89f8498c5011d-8] This is an Oracle-specific setting.
+- [30a89f8498c5011d-9] This is an Oracle-specific setting.
+- [30a89f8498c5011d-10] This is an Oracle-specific setting.
+- [30a89f8498c5011d-11] This is an Oracle-specific setting.
+- [30a89f8498c5011d-12] This is an Oracle-specific setting.
+- [30a89f8498c5011d-13] This is an Oracle-specific setting.
+- [30a89f8498c5011d-14] This is an Oracle-specific setting.
+- [30a89f8498c5011d-15] This is an Oracle-specific setting.
 - [341c9287] This is only used if :class:`~django.middleware.common.BrokenLinkEmailsMiddleware` is enabled (see :doc:`/topics/http/middleware`).
 - [51ac1d26] This is useful if you have multiple Django instances running under the same hostname. They can use different cookie paths and each instance will only see its own language cookie.
+- [6de58176] This is useful if you have multiple Django instances running under the same hostname. They can use different cookie paths, and each instance will only see its own CSRF cookie.
+- [40132243] This is useful if you have multiple Django instances running under the same hostname. They can use different cookie paths, and each instance will only see its own session cookie.
 - [c57b769f] This makes it less trivial for an attacker to escalate a cross-site scripting vulnerability into full hijacking of a user's session. There aren't many good reasons for turning this off. Your code shouldn't read session cookies from JavaScript.
 - [1a495e48] This sets the mapping of message level to message tag, which is typically rendered as a CSS class in HTML. If you specify a value, it will extend the default. This means you only have to specify those values which you need to override. See :ref:`message-displaying` above for more details.
 - [2432a8d9] This setting also affects cookies set by :mod:`django.contrib.messages`.
 - [d9c87600] This setting also determines the default permissions for collected static directories when using the :djadmin:`collectstatic` management command. See :djadmin:`collectstatic` for details on overriding it.
+- [1a01d039] This setting also determines the default permissions for collected static files when using the :djadmin:`collectstatic` management command. See :djadmin:`collectstatic` for details on overriding it.
 - [04a22897] This setting defines the additional locations the staticfiles app will traverse if the ``FileSystemFinder`` finder is enabled, e.g. if you use the :djadmin:`collectstatic` or :djadmin:`findstatic` management command or use the static file serving view.
 - [fac4d5de] This setting defines the directives used by the :class:`~django.middleware.csp.ContentSecurityPolicyMiddleware`, which generates and adds a :ref:`Content-Security-Policy <csp-overview>` (CSP) header to all responses that do not already include one.
 - [fcdbc796] This setting exists to allow for testing of primary/replica (referred to as master/slave by some databases) configurations of multiple databases. See the documentation on :ref:`testing primary/replica configurations <topics-testing-primaryreplica>` for details.
@@ -1014,6 +1079,7 @@
 - [6b3a822b] This value mirrors the functionality and caveats of the :setting:`FILE_UPLOAD_PERMISSIONS` setting.
 - [1430a238] This would allow you to refer to the local file ``'/opt/webfiles/stats/polls_20101022.tar.gz'`` with ``'/static/downloads/polls_20101022.tar.gz'`` in your templates, e.g.:
 - [71d2e06580a80d50] To build an address with a display name from variable content, see :ref:`formatting-addresses`.
+- [71d2e06580a80d50-2] To build an address with a display name from variable content, see :ref:`formatting-addresses`.
 - [6da3a2b0] To disable queue name validation, set to an empty list (``[]``).
 - [dd1fdc16] To safely build an address with a display name from variable content, see :ref:`formatting-addresses`, which recommends using :class:`~email.headerregistry.Address` over string formatting, but since this setting requires a list of strings, wrap each ``Address`` in ``str(...)``.
 - [1be79d76] To use cross-domain cookies with :setting:`CSRF_USE_SESSIONS`, you must include a leading dot (e.g. ``".example.com"``) to accommodate the CSRF middleware's referer checking.
@@ -1046,8 +1112,12 @@
 - [6b7502ed] Whether to send the SMTP ``Date`` header of email messages in the local time zone (``True``) or in UTC (``False``).
 - [0247e1db] Whether to store the CSRF token in the user's session instead of in a cookie. It requires the use of :mod:`django.contrib.sessions`.
 - [ce10f821] Whether to use ``HttpOnly`` flag on the CSRF cookie. If this is set to ``True``, client-side JavaScript will not be able to access the CSRF cookie.
+- [52d1e3d3] Whether to use ``HttpOnly`` flag on the language cookie. If this is set to ``True``, client-side JavaScript will not be able to access the language cookie.
+- [30c6e75d] Whether to use ``HttpOnly`` flag on the session cookie. If this is set to ``True``, client-side JavaScript will not be able to access the session cookie.
 - [9725582b] Whether to use a TLS (secure) connection when talking to the SMTP server. This is used for explicit TLS connections, generally on port 587. If you are experiencing hanging connections, see the implicit TLS setting :setting:`EMAIL_USE_SSL`.
 - [1545f2c7] Whether to use a secure cookie for the CSRF cookie. If this is set to ``True``, the cookie will be marked as "secure", which means browsers may ensure that the cookie is only sent with an HTTPS connection.
+- [f167f170] Whether to use a secure cookie for the language cookie. If this is set to ``True``, the cookie will be marked as "secure", which means browsers may ensure that the cookie is only sent under an HTTPS connection.
+- [dfdc36b9] Whether to use a secure cookie for the session cookie. If this is set to ``True``, the cookie will be marked as "secure", which means browsers may ensure that the cookie is only sent under an HTTPS connection.
 - [d641cb36] Whether to use an implicit TLS (secure) connection when talking to the SMTP server. In most email documentation this type of TLS connection is referred to as SSL. It is generally used on port 465. If you are experiencing problems, see the explicit TLS setting :setting:`EMAIL_USE_TLS`.
 - [f696c05f] Which host to use when connecting to the database. An empty string means localhost. Not used with SQLite.
 - [5641cb56] You can also set this setting to a list of Python paths, for example::

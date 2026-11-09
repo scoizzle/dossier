@@ -1,6 +1,6 @@
 # Fact 42ea71d9
 
-Store id: 8ed28376-722b-4450-9dae-50b8157bf22c
+Store id: c65462db-ca61-48f2-841e-1418730d8d79
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function refs_expression
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8ed28376-722b-4450-9dae-50b8157bf22c",
+  "id": "c65462db-ca61-48f2-841e-1418730d8d79",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "refs_expression"
       },
       "rel": "contains",
-      "target": "e1513c7a-ad8f-4ee2-ab0f-3c351367bc88"
+      "target": "77dfd1d3-e0f2-4100-86e9-03e20351be55"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:function"

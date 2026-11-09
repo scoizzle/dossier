@@ -1,6 +1,6 @@
 # Fact 319a95c1
 
-Store id: 8779be85-ce02-4902-8ad9-32a21b7d7c39
+Store id: c11d5739-c31c-446d-b2f6-e2d0eede9510
 
 ## Text
 
@@ -20,7 +20,7 @@ class DeferredAttribute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1043300+00:00`
+- posted_at: `2026-11-09T23:44:56.6037920+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 250,
     "symbol": "DeferredAttribute"
   },
-  "id": "8779be85-ce02-4902-8ad9-32a21b7d7c39",
+  "id": "c11d5739-c31c-446d-b2f6-e2d0eede9510",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1043300+00:00"
+    "posted_at": "2026-11-09T23:44:56.6037920+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b467f470-ebc9-4b8f-8331-643618164d83",
+  "subject_id": "8338ff95-1140-4fd5-9538-b536d54a7662",
   "subject_name": "django/db/models/query_utils::DeferredAttribute",
   "tags": [
     "entity:class"

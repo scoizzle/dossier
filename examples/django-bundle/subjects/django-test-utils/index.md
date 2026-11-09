@@ -1,10 +1,10 @@
 # django/test/utils
 
-- Subject: django/test/utils (id `89376e53-342f-40c6-9bf0-4abb8010fe89`)
+- Subject: django/test/utils (id `f1c17af3-b768-463b-8bf2-dcfa6a885134`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 8313 tokens
-- Facts shown: 149 of 149
+- Facts shown: 149 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/options::Options.add_manager
 
-- Subject: django/db/models/options::Options.add_manager (id `6563c053-3f31-40ed-afa9-a0acb4d4e216`)
+- Subject: django/db/models/options::Options.add_manager (id `01c6fa4b-4274-4f9a-92d5-efcf4cddb7c3`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/translation/reloader
 
-- Subject: django/utils/translation/reloader (id `e69114c2-2add-49f7-8d60-8a55c0fec02a`)
+- Subject: django/utils/translation/reloader (id `a02b0cde-4876-4ae7-912d-ac410dbd3cc4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 321 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

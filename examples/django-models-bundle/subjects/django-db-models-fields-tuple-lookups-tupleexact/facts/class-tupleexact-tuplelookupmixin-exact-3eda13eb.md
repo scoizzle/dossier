@@ -1,6 +1,6 @@
 # Fact 3eda13eb
 
-Store id: ec868001-b452-466c-b313-c94606cde1e5
+Store id: 4b51d7ea-ea00-415f-8c83-0f149c4a9acb
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleExact(TupleLookupMixin, Exact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5814060+00:00`
+- posted_at: `2026-11-09T23:44:52.7527600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 155,
     "symbol": "TupleExact"
   },
-  "id": "ec868001-b452-466c-b313-c94606cde1e5",
+  "id": "4b51d7ea-ea00-415f-8c83-0f149c4a9acb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5814060+00:00"
+    "posted_at": "2026-11-09T23:44:52.7527600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8ce62923-29cd-4002-9e49-9bfbda6f5ee3",
+  "subject_id": "a43d1064-120f-497b-a589-d41fdc358ea1",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleExact",
   "tags": [
     "entity:class"

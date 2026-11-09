@@ -1,6 +1,6 @@
 # Fact 877ad2fe
 
-Store id: 86c020d5-f179-431d-88a1-ae59277f6611
+Store id: 150edee3-4d1e-45d8-96dd-8846c5dc17cf
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7558120+00:00`
+- posted_at: `2026-11-09T23:44:50.2051220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2402,
     "symbol": "NullBooleanField.__init__"
   },
-  "id": "86c020d5-f179-431d-88a1-ae59277f6611",
+  "id": "150edee3-4d1e-45d8-96dd-8846c5dc17cf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7558120+00:00"
+    "posted_at": "2026-11-09T23:44:50.2051220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c434731d-be59-4098-be62-dc51f805870d",
+  "subject_id": "70ac5bf7-4e02-4085-9a88-737d7ed8ccfd",
   "subject_name": "django/db/models/fields/__init__::NullBooleanField.__init__",
   "tags": [
     "entity:method"

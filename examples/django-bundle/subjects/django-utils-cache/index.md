@@ -1,10 +1,10 @@
 # django/utils/cache
 
-- Subject: django/utils/cache (id `54ecbabd-f425-4814-a598-836569ad3519`)
+- Subject: django/utils/cache (id `53282cf4-3ddb-4459-9ee5-e467a57d7009`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4150 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

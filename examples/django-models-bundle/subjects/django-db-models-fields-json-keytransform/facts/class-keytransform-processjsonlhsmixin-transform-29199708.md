@@ -1,6 +1,6 @@
 # Fact 29199708
 
-Store id: 065fb3c7-411e-4193-ba4d-a504d0f8ca82
+Store id: 1ea8a4ca-2da1-4d7e-ba72-9035444c9bed
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransform(ProcessJSONLHSMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9600220+00:00`
+- posted_at: `2026-11-09T23:44:51.0173500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 496,
     "symbol": "KeyTransform"
   },
-  "id": "065fb3c7-411e-4193-ba4d-a504d0f8ca82",
+  "id": "1ea8a4ca-2da1-4d7e-ba72-9035444c9bed",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9600220+00:00"
+    "posted_at": "2026-11-09T23:44:51.0173500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9476ef9e-8916-4271-8b27-5ef680e29e6f",
+  "subject_id": "071c26bc-281f-4181-bfbf-16d1065b90ec",
   "subject_name": "django/db/models/fields/json::KeyTransform",
   "tags": [
     "entity:class"

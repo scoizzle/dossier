@@ -1,10 +1,10 @@
 # django/utils/safestring
 
-- Subject: django/utils/safestring (id `bd7dd196-dbe1-415c-81fd-934656cfa7a6`)
+- Subject: django/utils/safestring (id `b7091d05-2beb-4535-911a-06434a3fac4b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 648 tokens
-- Facts shown: 17 of 17
+- Facts shown: 17 facts
 - Conflicts: 0
 - Gaps: 0
 

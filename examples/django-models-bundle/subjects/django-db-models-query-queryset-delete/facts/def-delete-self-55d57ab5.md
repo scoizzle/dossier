@@ -1,6 +1,6 @@
 # Fact 55d57ab5
 
-Store id: ff04e743-cd06-4949-b93a-a8fe55059cfd
+Store id: ccab4793-cefb-4ddd-82e5-ba37d150f8db
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4740290+00:00`
+- posted_at: `2026-11-09T23:44:55.9740760+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1358,
     "symbol": "QuerySet.delete"
   },
-  "id": "ff04e743-cd06-4949-b93a-a8fe55059cfd",
+  "id": "ccab4793-cefb-4ddd-82e5-ba37d150f8db",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4740290+00:00"
+    "posted_at": "2026-11-09T23:44:55.9740760+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c80c42a-df47-4053-beda-1bda0fca469f",
+  "subject_id": "f6529601-29ce-4d17-9ebd-68e9fe074234",
   "subject_name": "django/db/models/query::QuerySet.delete",
   "tags": [
     "entity:method"

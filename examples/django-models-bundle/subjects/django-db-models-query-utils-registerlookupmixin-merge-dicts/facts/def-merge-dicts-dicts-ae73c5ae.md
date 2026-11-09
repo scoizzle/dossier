@@ -1,6 +1,6 @@
 # Fact ae73c5ae
 
-Store id: 32edce1e-cad6-4d4b-b541-ce5e4f144485
+Store id: 8219eed0-0bc8-4b0d-9dd8-6b7e701a7c82
 
 ## Text
 
@@ -20,7 +20,7 @@ def merge_dicts(dicts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1647310+00:00`
+- posted_at: `2026-11-09T23:44:56.6859500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 376,
     "symbol": "RegisterLookupMixin.merge_dicts"
   },
-  "id": "32edce1e-cad6-4d4b-b541-ce5e4f144485",
+  "id": "8219eed0-0bc8-4b0d-9dd8-6b7e701a7c82",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1647310+00:00"
+    "posted_at": "2026-11-09T23:44:56.6859500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dfc44a88-7b05-4296-98f9-1bd785e9e12e",
+  "subject_id": "6e03934a-5908-4d6c-99e9-8eb294659bef",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin.merge_dicts",
   "tags": [
     "entity:static_method",

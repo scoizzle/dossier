@@ -1,6 +1,6 @@
 # Fact 4e068095
 
-Store id: 4bb75a98-4382-4ae1-bcfd-33e13f3174c1
+Store id: d4aed6ca-ff6b-4daf-bc81-107ba70a70c0
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7633090+00:00`
+- posted_at: `2026-11-09T23:44:53.7657220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 186,
     "symbol": "Round.as_sqlite"
   },
-  "id": "4bb75a98-4382-4ae1-bcfd-33e13f3174c1",
+  "id": "d4aed6ca-ff6b-4daf-bc81-107ba70a70c0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7633090+00:00"
+    "posted_at": "2026-11-09T23:44:53.7657220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "61677894-f14b-4dab-a631-1022b850ff59",
+  "subject_id": "fed09c0b-cf05-4d43-aaba-bf0aa8475c16",
   "subject_name": "django/db/models/functions/math::Round.as_sqlite",
   "tags": [
     "entity:method"

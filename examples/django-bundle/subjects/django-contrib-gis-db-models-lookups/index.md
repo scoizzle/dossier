@@ -1,10 +1,10 @@
 # django/contrib/gis/db/models/lookups
 
-- Subject: django/contrib/gis/db/models/lookups (id `db2533ef-d5a2-49a9-a9c5-efee68146184`)
+- Subject: django/contrib/gis/db/models/lookups (id `5d439335-34a0-4907-973a-c7cf3c3926f1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3205 tokens
-- Facts shown: 65 of 65
+- Facts shown: 65 facts
 - Conflicts: 0
 - Gaps: 0
 

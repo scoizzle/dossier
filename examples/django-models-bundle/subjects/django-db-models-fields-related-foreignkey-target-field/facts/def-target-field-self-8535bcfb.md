@@ -1,6 +1,6 @@
 # Fact 8535bcfb
 
-Store id: ca8cd57d-7564-49d8-93ff-09b7477479bb
+Store id: 49a22c64-89c9-4680-9b34-1c48446fcc19
 
 ## Text
 
@@ -20,7 +20,7 @@ def target_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7566940+00:00`
+- posted_at: `2026-11-09T23:44:51.5788390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1211,
     "symbol": "ForeignKey.target_field"
   },
-  "id": "ca8cd57d-7564-49d8-93ff-09b7477479bb",
+  "id": "49a22c64-89c9-4680-9b34-1c48446fcc19",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7566940+00:00"
+    "posted_at": "2026-11-09T23:44:51.5788390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2358a76-8c57-4c4b-9a18-abcaa06dc91e",
+  "subject_id": "90c63ab2-2dcc-4bf5-8472-cefd34cf4426",
   "subject_name": "django/db/models/fields/related::ForeignKey.target_field",
   "tags": [
     "entity:method",

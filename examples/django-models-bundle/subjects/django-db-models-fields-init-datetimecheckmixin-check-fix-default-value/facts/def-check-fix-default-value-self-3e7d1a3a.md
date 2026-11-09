@@ -1,6 +1,6 @@
 # Fact 3e7d1a3a
 
-Store id: 3028e020-098d-4050-b482-32b08a148c00
+Store id: e2123519-0781-4ee8-ad23-1b27df780669
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_fix_default_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5718000+00:00`
+- posted_at: `2026-11-09T23:44:50.0822380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1424,
     "symbol": "DateTimeCheckMixin._check_fix_default_value"
   },
-  "id": "3028e020-098d-4050-b482-32b08a148c00",
+  "id": "e2123519-0781-4ee8-ad23-1b27df780669",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5718000+00:00"
+    "posted_at": "2026-11-09T23:44:50.0822380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9e4e799f-a0f5-4f3a-a8ce-74ab9292adfb",
+  "subject_id": "5a77d74e-6e11-4209-9665-b369f0c10862",
   "subject_name": "django/db/models/fields/__init__::DateTimeCheckMixin._check_fix_default_value",
   "tags": [
     "entity:method"

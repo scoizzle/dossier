@@ -1,6 +1,6 @@
 # Fact 2c9111cc
 
-Store id: 616a4bc1-c5ec-4b45-b6c9-d0c667a1bc89
+Store id: f63936eb-8963-4168-898e-f50d8a3a0dce
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.9468690+00:00`
+- posted_at: `2026-11-09T23:44:53.9024820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 29,
     "symbol": "FixDurationInputMixin.as_mysql"
   },
-  "id": "616a4bc1-c5ec-4b45-b6c9-d0c667a1bc89",
+  "id": "f63936eb-8963-4168-898e-f50d8a3a0dce",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.9468690+00:00"
+    "posted_at": "2026-11-09T23:44:53.9024820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e67f252-2ceb-444b-8c55-c896f9992655",
+  "subject_id": "dfea991b-6952-45b7-86a0-c3bee8c34808",
   "subject_name": "django/db/models/functions/mixins::FixDurationInputMixin.as_mysql",
   "tags": [
     "entity:method"

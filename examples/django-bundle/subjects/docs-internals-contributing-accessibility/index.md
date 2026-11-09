@@ -1,10 +1,10 @@
 # docs/internals/contributing/accessibility
 
-- Subject: docs/internals/contributing/accessibility (id `a9d73b6c-5fa6-44b7-9cc8-613bd7944eb1`)
+- Subject: docs/internals/contributing/accessibility (id `417607a6-7096-4b7b-9083-d30324dfba3a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2201 tokens
-- Facts shown: 46 of 46
+- Facts shown: 46 facts
 - Conflicts: 0
 - Gaps: 0
 

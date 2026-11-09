@@ -1,10 +1,10 @@
 # django/apps/config
 
-- Subject: django/apps/config (id `b02ed89e-20a6-4352-822b-abbea9dd5110`)
+- Subject: django/apps/config (id `d6f1e367-f6be-4370-8308-2a45a8e2b000`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2542 tokens
-- Facts shown: 35 of 35
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 

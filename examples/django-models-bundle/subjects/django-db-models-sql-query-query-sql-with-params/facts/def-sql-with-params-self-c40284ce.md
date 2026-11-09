@@ -1,6 +1,6 @@
 # Fact c40284ce
 
-Store id: acf829be-fd71-4138-b025-71648d1f4d9c
+Store id: 60d0be77-e102-409a-a183-3fb1067cecdb
 
 ## Text
 
@@ -20,7 +20,7 @@ def sql_with_params(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7617270+00:00`
+- posted_at: `2026-11-09T23:44:58.6076540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 356,
     "symbol": "Query.sql_with_params"
   },
-  "id": "acf829be-fd71-4138-b025-71648d1f4d9c",
+  "id": "60d0be77-e102-409a-a183-3fb1067cecdb",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7617270+00:00"
+    "posted_at": "2026-11-09T23:44:58.6076540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "14b0b599-e11a-4d99-bb58-569e0d881dd8",
+  "subject_id": "5e453085-0b9c-4f12-a068-8345e334b8dc",
   "subject_name": "django/db/models/sql/query::Query.sql_with_params",
   "tags": [
     "entity:method"

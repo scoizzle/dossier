@@ -1,10 +1,10 @@
 # django/utils/autoreload
 
-- Subject: django/utils/autoreload (id `f277e17e-f349-4613-bddd-e6282f452c90`)
+- Subject: django/utils/autoreload (id `4fc67f78-8007-4f5e-a43d-4d5aa77cfb3c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5742 tokens
-- Facts shown: 71 of 71
+- Facts shown: 71 facts
 - Conflicts: 0
 - Gaps: 0
 

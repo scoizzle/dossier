@@ -1,6 +1,6 @@
 # Fact 75d7c166
 
-Store id: c6c363a4-4336-46a3-a6e5-721e854e9198
+Store id: 7bae9361-ed0e-45a6-902d-880764e71a3b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7014190+00:00`
+- posted_at: `2026-11-09T23:44:53.7183620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 78,
     "symbol": "Cot.as_oracle"
   },
-  "id": "c6c363a4-4336-46a3-a6e5-721e854e9198",
+  "id": "7bae9361-ed0e-45a6-902d-880764e71a3b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7014190+00:00"
+    "posted_at": "2026-11-09T23:44:53.7183620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8a5cfdb6-6739-4aa3-89dc-a50e2696d954",
+  "subject_id": "06b47226-0cdf-41c7-b2da-9fc0e6d3719e",
   "subject_name": "django/db/models/functions/math::Cot.as_oracle",
   "tags": [
     "entity:method"

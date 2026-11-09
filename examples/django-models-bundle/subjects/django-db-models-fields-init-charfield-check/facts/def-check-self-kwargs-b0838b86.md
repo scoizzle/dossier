@@ -1,6 +1,6 @@
 # Fact b0838b86
 
-Store id: 1754436f-53d6-4a8f-b0a5-a98ccace185a
+Store id: d10421e5-3648-4e40-8adb-a3e051ff1ea1
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5489860+00:00`
+- posted_at: `2026-11-09T23:44:50.0612220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1260,
     "symbol": "CharField.check"
   },
-  "id": "1754436f-53d6-4a8f-b0a5-a98ccace185a",
+  "id": "d10421e5-3648-4e40-8adb-a3e051ff1ea1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5489860+00:00"
+    "posted_at": "2026-11-09T23:44:50.0612220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c522fe4c-90c2-4599-941f-a329921542d7",
+  "subject_id": "1f8538bd-0d76-4760-bb5c-936c48a35ca2",
   "subject_name": "django/db/models/fields/__init__::CharField.check",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 935c248c
 
-Store id: ed0a33bb-5220-4677-a347-930b63c21d2f
+Store id: 77abba03-099e-4196-a422-658fd2e10331
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5482380+00:00`
+- posted_at: `2026-11-09T23:44:48.4058850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 422,
     "symbol": "StringAgg.as_sqlite"
   },
-  "id": "ed0a33bb-5220-4677-a347-930b63c21d2f",
+  "id": "77abba03-099e-4196-a422-658fd2e10331",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5482380+00:00"
+    "posted_at": "2026-11-09T23:44:48.4058850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c79203e4-dc26-4940-aff0-1d5334ee8eca",
+  "subject_id": "728dda97-7f2e-48f3-bcca-a0ce3f843a62",
   "subject_name": "django/db/models/aggregates::StringAgg.as_sqlite",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 78fc5e9d
 
-Store id: 6b8c021a-db55-4318-b3e7-448907825ff9
+Store id: 5b532aae-bc41-4cde-8174-b68c38b69506
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7511430+00:00`
+- posted_at: `2026-11-09T23:44:50.2020700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2377,
     "symbol": "GenericIPAddressField.formfield"
   },
-  "id": "6b8c021a-db55-4318-b3e7-448907825ff9",
+  "id": "5b532aae-bc41-4cde-8174-b68c38b69506",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7511430+00:00"
+    "posted_at": "2026-11-09T23:44:50.2020700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "56b8d136-680a-49ea-856c-9ad659df5cbd",
+  "subject_id": "bf898b0b-2223-4f36-ab96-7f8a6431de98",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.formfield",
   "tags": [
     "entity:method"

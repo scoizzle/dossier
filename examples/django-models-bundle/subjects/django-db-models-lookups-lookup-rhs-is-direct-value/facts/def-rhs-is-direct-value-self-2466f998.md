@@ -1,6 +1,6 @@
 # Fact 2466f998
 
-Store id: 4ee5cee6-c1cb-4e9d-bf5a-490d42f4ae28
+Store id: 6f525a32-3cc2-4de7-8615-9e08cf8be086
 
 ## Text
 
@@ -20,7 +20,7 @@ def rhs_is_direct_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1653690+00:00`
+- posted_at: `2026-11-09T23:44:54.8810470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 141,
     "symbol": "Lookup.rhs_is_direct_value"
   },
-  "id": "4ee5cee6-c1cb-4e9d-bf5a-490d42f4ae28",
+  "id": "6f525a32-3cc2-4de7-8615-9e08cf8be086",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1653690+00:00"
+    "posted_at": "2026-11-09T23:44:54.8810470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d45398e1-feb5-4803-bf8d-aa6101e9ffa7",
+  "subject_id": "40083280-8a0f-43c9-8c3d-cb36272a7b35",
   "subject_name": "django/db/models/lookups::Lookup.rhs_is_direct_value",
   "tags": [
     "entity:method"

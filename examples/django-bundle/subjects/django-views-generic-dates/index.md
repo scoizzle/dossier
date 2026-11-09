@@ -1,10 +1,10 @@
 # django/views/generic/dates
 
-- Subject: django/views/generic/dates (id `195e809f-1248-4167-8e3c-9ccd5bfea4d4`)
+- Subject: django/views/generic/dates (id `05608737-6006-4ff2-8bb7-8266905711d2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5641 tokens
-- Facts shown: 116 of 144
+- Used: 6849 tokens
+- Facts shown: 144 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -29,9 +29,11 @@
 
 - [4679b277] The interval is defined by start date <= item date < next start date. """ return date + datetime.timedelta(days=1)
 - [8eef0903] The interval is defined by start date <= item date < next start date. """ try: return date + datetime.timedelta(days=7 - self._get_weekday(date)) except OverflowError: raise Http404(_("Date out of range"))
+- [9095c4fb] The interval is defined by start date <= item date < next start date. """ try: return date.replace(year=date.year + 1, month=1, day=1) except ValueError: raise Http404(_("Date out of range"))
 - [c425e7c0] When time zone support is enabled, `date` is assumed to be in the current time zone, so that displayed items are consistent with the URL. """ if self.uses_datetime_field: value = datetime.datetime.combine(value, datetime.time.min) if settings.USE_TZ: value = timezone.make_aware(value) return value
 - [8fcfa87f] date = _date_from_string( year, self.get_year_format(), month, self.get_month_format(), day, self.get_day_format(), )
 - [20d16e32] date_field = self.get_date_field() date = _date_from_string( year, self.get_year_format(), month, self.get_month_format() )
+- [fa3917af] date_field = self.get_date_field() date = _date_from_string(year, self.get_year_format())
 - [0794bea3] date_field = self.get_date_field() week_format = self.get_week_format() week_choices = {"%W": "1", "%U": "0", "%V": "1"} try: week_start = week_choices[week_format] except KeyError: raise ValueError( "Unknown week format %r. Choices are: %s" % ( week_format, ", ".join(sorted(week_choices)), ) ) year_format = self.get_year_format() if week_format == "%V" and year_format != "%G": raise ValueError( "ISO week directive '%s' is incompatible with the year " "directive '%s'. Use the ISO year '%%G' instead." % ( week_format, year_format, ) ) date = _date_from_string(year, year_format, week_start, "%w", week, week_format) since = self._make_date_lookup_arg(date) until = self._make_date_lookup_arg(self._get_next_week(date)) lookup_kwargs = { "%s__gte" % date_field: since, "%s__lt" % date_field: until, }
 - [60f96f93] if allow_future or result <= timezone_today(): return result else: return None
 - [32211246] if not allow_empty: # When pagination is enabled, it's better to do a cheap query # than to load the unpaginated queryset in memory. is_empty = not qs if paginate_by is None else not qs.exists() if is_empty: raise Http404( _("No %(verbose_name_plural)s available") % { "verbose_name_plural": qs.model._meta.verbose_name_plural, } )
@@ -42,6 +44,7 @@
 - [33f4cbb9] qs = generic_view.get_queryset().filter(**lookup).order_by(ordering)
 - [a6953ed3] qs = self.get_dated_queryset(**lookup_kwargs)
 - [6f97693605250e35] qs = self.get_dated_queryset(**lookup_kwargs) date_list = self.get_date_list(qs)
+- [6f97693605250e35-2] qs = self.get_dated_queryset(**lookup_kwargs) date_list = self.get_date_list(qs)
 - [342aebda] return ( None, qs, { "day": date, "previous_day": self.get_previous_day(date), "next_day": self.get_next_day(date), "previous_month": self.get_previous_month(date), "next_month": self.get_next_month(date), }, )
 - [ccf0b360] return ( None, qs, { "week": date, "next_week": self.get_next_week(date), "previous_week": self.get_previous_week(date), }, )
 - [af214cd1] return ( date_list, qs, { "month": date, "next_month": self.get_next_month(date), "previous_month": self.get_previous_month(date), }, )
@@ -52,6 +55,7 @@
 - [e7730f95] return self._get_dated_items(date)
 - [4c104852] return super().get_object(queryset=qs)
 - [f7068da7] since = self._make_date_lookup_arg(date) until = self._make_date_lookup_arg(self._get_next_month(date)) lookup_kwargs = { "%s__gte" % date_field: since, "%s__lt" % date_field: until, }
+- [82921693] since = self._make_date_lookup_arg(date) until = self._make_date_lookup_arg(self._get_next_year(date)) lookup_kwargs = { "%s__gte" % date_field: since, "%s__lt" % date_field: until, }
 - [a3136c10] # Bounds of the current interval start, end = get_current(date), get_next(date)
 - [7cc8e174] # If allow_empty is True, the naive result will be valid if allow_empty: if is_previous: result = get_current(start - datetime.timedelta(days=1)) else: result = end
 - [317617b2] # Note: the following three methods only work in subclasses that also # inherit SingleObjectMixin or MultipleObjectMixin.
@@ -60,6 +64,13 @@
 - [9a5f7294] However in essence the logic comes down to:
 - [72fcfeb6] This is a bit complicated since it handles different intervals of time, hence the coupling to generic_view.
 - [d4655f33703909eb] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-2] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-3] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-4] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-5] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-6] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-7] This requires subclassing to provide a response mixin. """
+- [d4655f33703909eb-8] This requires subclassing to provide a response mixin. """
 - [e00924a9] allow_empty = False date_list_period = "year"
 - [5c5338b9] context_object_name = "latest"
 - [c17e3779] date_field = None allow_future = False
@@ -69,6 +80,7 @@
 - [e016c07b] def _get_current_day(self, date): """Return the start date of the current interval.""" return date
 - [562598f3] def _get_current_month(self, date): """Return the start date of the previous interval.""" return date.replace(day=1)
 - [04def20c] def _get_current_week(self, date): """Return the start date of the current interval.""" return date - datetime.timedelta(self._get_weekday(date))
+- [e543255d] def _get_current_year(self, date): """Return the start date of the current interval.""" return date.replace(month=1, day=1)
 - [20ac228a] def _get_dated_items(self, date): """ Do the actual heavy lifting of getting the dated items; this accepts a date object so that TodayArchiveView can be trivial. """ lookup_kwargs = self._make_single_date_lookup(date) qs = self.get_dated_queryset(**lookup_kwargs)
 - [57a72176] def _get_next_day(self, date): """ Return the start date of the next interval.
 - [d1149c9e] def _get_next_month(self, date): """ Return the start date of the next interval.
@@ -86,18 +98,34 @@
 - [0aa581fa] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" qs = self.get_dated_queryset() date_list = self.get_date_list(qs, ordering="DESC")
 - [5e63a2ce] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" return self._get_dated_items(datetime.date.today())
 - [621055d7] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" year = self.get_year()
+- [844923da] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" year = self.get_year() month = self.get_month()
+- [09519348] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" year = self.get_year() month = self.get_month() day = self.get_day()
+- [a54c7cc1] def get_dated_items(self): """Return (date_list, items, extra_context) for this request.""" year = self.get_year() week = self.get_week()
 - [7c078592] def get_dated_queryset(self, **lookup): """ Get a queryset properly filtered according to `allow_future` and any extra lookup kwargs. """ qs = self.get_queryset().filter(**lookup) date_field = self.get_date_field() allow_future = self.get_allow_future() allow_empty = self.get_allow_empty() paginate_by = self.get_paginate_by(qs)
 - [ea03e9e3] def get_day(self): """Return the day for which this view should display data.""" day = self.day if day is None: try: day = self.kwargs["day"] except KeyError: try: day = self.request.GET["day"] except KeyError: raise Http404(_("No day specified")) return day
 - [6fffa4d7] def get_day_format(self): """ Get a day format string in strptime syntax to be used to parse the day from url variables. """ return self.day_format
 - [f8db0d2f] def get_make_object_list(self): """ Return `True` if this view should contain the full list of objects in the given year. """ return self.make_object_list
+- [23ecf857] def get_month(self): """Return the month for which this view should display data.""" month = self.month if month is None: try: month = self.kwargs["month"] except KeyError: try: month = self.request.GET["month"] except KeyError: raise Http404(_("No month specified")) return month
+- [c1b282d5] def get_month_format(self): """ Get a month format string in strptime syntax to be used to parse the month from url variables. """ return self.month_format
 - [34d3cff2] def get_next_day(self, date): """Get the next valid day.""" return _get_next_prev(self, date, is_previous=False, period="day")
+- [03677b24] def get_next_month(self, date): """Get the next valid month.""" return _get_next_prev(self, date, is_previous=False, period="month")
+- [a9a23fb6] def get_next_week(self, date): """Get the next valid week.""" return _get_next_prev(self, date, is_previous=False, period="week")
+- [fb6f98e2] def get_next_year(self, date): """Get the next valid year.""" return _get_next_prev(self, date, is_previous=False, period="year")
 - [b138cb61] def get_object(self, queryset=None): """Get the object this request displays.""" year = self.get_year() month = self.get_month() day = self.get_day() date = _date_from_string( year, self.get_year_format(), month, self.get_month_format(), day, self.get_day_format(), )
 - [6664c4d6] def get_ordering(self): """ Return the field or fields to use for ordering the queryset; use the date field by default. """ return "-%s" % self.get_date_field() if self.ordering is None else self.ordering
+- [aeff5c42] def get_previous_day(self, date): """Get the previous valid day.""" return _get_next_prev(self, date, is_previous=True, period="day")
 - [0adccb32] def get_previous_month(self, date): """Get the previous valid month.""" return _get_next_prev(self, date, is_previous=True, period="month")
+- [b3f98ae3] def get_previous_week(self, date): """Get the previous valid week.""" return _get_next_prev(self, date, is_previous=True, period="week")
+- [e5e83238] def get_previous_year(self, date): """Get the previous valid year.""" return _get_next_prev(self, date, is_previous=True, period="year")
+- [e02a9f1f] def get_week(self): """Return the week for which this view should display data.""" week = self.week if week is None: try: week = self.kwargs["week"] except KeyError: try: week = self.request.GET["week"] except KeyError: raise Http404(_("No week specified")) return week
+- [ef95c56e] def get_week_format(self): """ Get a week format string in strptime syntax to be used to parse the week from url variables. """ return self.week_format
+- [d119ba3b] def get_year(self): """Return the year for which this view should display data.""" year = self.year if year is None: try: year = self.kwargs["year"] except KeyError: try: year = self.request.GET["year"] except KeyError: raise Http404(_("No year specified")) return year
+- [976e3614] def get_year_format(self): """ Get a year format string in strptime syntax to be used to parse the year from url variables. """ return self.year_format
 - [3a88bfe3] get_current = getattr(generic_view, "_get_current_%s" % period) get_next = getattr(generic_view, "_get_next_%s" % period)
 - [b1179a27] month_format = "%b" month = None
 - [bd7e5648] template_name_suffix = "_archive"
 - [0b740a2ee9b891ef] template_name_suffix = "_archive_day"
+- [0b740a2ee9b891ef-2] template_name_suffix = "_archive_day"
 - [5abacf64] template_name_suffix = "_archive_month"
 - [9f3fae10] template_name_suffix = "_archive_week"
 - [aaca4d84] template_name_suffix = "_archive_year"

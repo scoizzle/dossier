@@ -1,6 +1,6 @@
 # Fact de1d62a2
 
-Store id: d919954c-38f5-4a2a-9ee5-61a423bd8bf4
+Store id: c93e3a04-fde4-4b01-ae1f-69482dbf8841
 
 ## Text
 
@@ -20,7 +20,7 @@ def total_unique_constraints(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0382120+00:00`
+- posted_at: `2026-11-09T23:44:55.5877960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 976,
     "symbol": "Options.total_unique_constraints"
   },
-  "id": "d919954c-38f5-4a2a-9ee5-61a423bd8bf4",
+  "id": "c93e3a04-fde4-4b01-ae1f-69482dbf8841",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0382120+00:00"
+    "posted_at": "2026-11-09T23:44:55.5877960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f43762bd-7623-4bf5-85c6-c653dbefa356",
+  "subject_id": "c94614a3-159f-4f8d-89e0-75c37bc2d119",
   "subject_name": "django/db/models/options::Options.total_unique_constraints",
   "tags": [
     "entity:method",

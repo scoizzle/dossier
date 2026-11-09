@@ -1,17 +1,19 @@
 # django/views/decorators/cache
 
-- Subject: django/views/decorators/cache (id `c65609df-9212-4c06-83b7-ab3344a68734`)
+- Subject: django/views/decorators/cache (id `3b16cf45-e4f7-4bd8-90bd-38b3cfbc8ba6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 668 tokens
-- Facts shown: 16 of 18
+- Used: 780 tokens
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Facts
 
 - async def _view_wrapper(request, *args, **kw): _check_request(request, "cache_control") response = await viewfunc(request, *args, **kw) patch_cache_control(response, **kwargs) return response [c7981e5e]
+- def _view_wrapper(request, *args, **kw): _check_request(request, "cache_control") response = viewfunc(request, *args, **kw) patch_cache_control(response, **kwargs) return response [b0dec1f9]
 - async def _view_wrapper(request, *args, **kwargs): _check_request(request, "never_cache") response = await view_func(request, *args, **kwargs) add_never_cache_headers(response) return response [2234264e]
+- def _view_wrapper(request, *args, **kwargs): _check_request(request, "never_cache") response = view_func(request, *args, **kwargs) add_never_cache_headers(response) return response [974ebc16]
 - else: [6ad07797f4838346-17]
 - return wraps(viewfunc)(_view_wrapper) [a909dd44]
 - Additionally, all headers from the response's Vary header will be taken into account on caching -- just like the middleware does. """ return decorator_from_middleware_with_args(CacheMiddleware)( page_timeout=timeout, cache_alias=cache, key_prefix=key_prefix, ) [f23b761a]

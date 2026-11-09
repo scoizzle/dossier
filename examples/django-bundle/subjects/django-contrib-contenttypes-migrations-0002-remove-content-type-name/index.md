@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/migrations/0002_remove_content_type_name
 
-- Subject: django/contrib/contenttypes/migrations/0002_remove_content_type_name (id `c4463ef7-db77-41ef-892d-de7ca0d30058`)
+- Subject: django/contrib/contenttypes/migrations/0002_remove_content_type_name (id `2efd9a25-f928-4d6a-8705-002a88dd66c8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 263 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

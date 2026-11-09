@@ -1,6 +1,6 @@
 # Fact 17d8517a
 
-Store id: 47fe4cae-8fbe-46e0-aa33-8c94978ede66
+Store id: 977057e5-e93d-496a-8713-45024f5a9261
 
 ## Text
 
@@ -20,7 +20,7 @@ class Sign(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7690660+00:00`
+- posted_at: `2026-11-09T23:44:53.7699060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 197,
     "symbol": "Sign"
   },
-  "id": "47fe4cae-8fbe-46e0-aa33-8c94978ede66",
+  "id": "977057e5-e93d-496a-8713-45024f5a9261",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7690660+00:00"
+    "posted_at": "2026-11-09T23:44:53.7699060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3919d92f-71e3-4aba-8d80-f688cc14d18a",
+  "subject_id": "58570879-1493-46a9-859f-6b8bc748af47",
   "subject_name": "django/db/models/functions/math::Sign",
   "tags": [
     "entity:class"

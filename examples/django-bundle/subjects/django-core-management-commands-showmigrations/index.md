@@ -1,10 +1,10 @@
 # django/core/management/commands/showmigrations
 
-- Subject: django/core/management/commands/showmigrations (id `3cdfa1ac-e688-4ea9-96a3-83b38ac02746`)
+- Subject: django/core/management/commands/showmigrations (id `2e8cabe7-efd4-4ce7-acb9-23103f861c71`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1322 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

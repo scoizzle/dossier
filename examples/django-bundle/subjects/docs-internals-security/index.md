@@ -1,10 +1,10 @@
 # docs/internals/security
 
-- Subject: docs/internals/security (id `a157faa8-3ecb-4283-b853-14a0a64fd3a1`)
+- Subject: docs/internals/security (id `cf60fe0d-8bc3-4f1a-89c8-8e9ad9ecbb8c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7539 tokens
-- Facts shown: 151 of 152
+- Used: 7569 tokens
+- Facts shown: 152 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,6 +19,7 @@
 - def my_proof_of_concept(request): form = EmailForm(request.GET) if form.is_valid(): send_mail( "Email subject", "Email body", form.cleaned_data["email"], ["admin@example.com"], ) return JsonResponse(status=200) return JsonResponse(form.errors, status=400) [235c7d55]
 - def my_proof_of_concept(request): query = request.GET.get("query", "") q = MyModel.objects.extra(select={"id": query}) return HttpResponse(q.values()) [66d2c090]
 - from django import forms from django.core.mail import send_mail from django.http import JsonResponse [92801f7d]
+- from django.core.mail import send_mail from django.http import JsonResponse [d021e0c3]
 - from django.shortcuts import HttpResponse from .models import MyModel [dfbadb70]
 - * Cross site scripting (XSS) * Cross site request forgery (CSRF) * Broken authentication [c050242a]
 - * Denial-of-service attacks * Sensitive data exposure * Broken session management * Unvalidated redirects/forwards * Issues requiring an uncommon configuration option [06ad5ca0]
@@ -28,12 +29,12 @@
 - #. Issue the relevant release(s), by placing new packages on the :pypi:`Python Package Index <Django>` and on the `djangoproject.com website <https://www.djangoproject.com/download/>`_, and tagging the new release(s) in Django's git repository. [6b5f1a16]
 - #. Post a notice to the |django-announce| and oss-security@lists.openwall.com mailing lists that links to the blog post. [7e495a23]
 - #. Post a public entry on `the official Django development blog`_, describing the issue and its resolution in detail, pointing to the relevant patches and new releases, and crediting the reporter of the issue (if the reporter wishes to be publicly identified). [34425afc]
-- * **High** [fdc669e4]
-- * **Low** [ad04f6fb]
 
 ## All facts
 
 - [e3bf64fa] * **Disclose** which AI tools were used and specify what they were used for (analysis, writing the description, writing the exploit, etc). * **Verify** that the issue describes a real, reproducible vulnerability that otherwise meets these reporting guidelines. * **Avoid** fabricated code, placeholder text, or references to non-existent Django features.
+- [fdc669e4] * **High**
+- [ad04f6fb] * **Low**
 - [12a5d7cd] * **Moderate**
 - [8abde078] * :term:`Long-term support release`\s will receive security updates for a specified period.
 - [e6d6ea19] * A brief description of the issue and where in Django it occurs.

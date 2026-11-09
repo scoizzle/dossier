@@ -1,6 +1,6 @@
 # Fact 4896883f
 
-Store id: 28264c99-a4d4-4260-92a3-15a7664dd9a4
+Store id: 5515543f-ebb8-4713-a0b2-3208c40953a1
 
 ## Text
 
@@ -20,7 +20,7 @@ class OrderByList(ExpressionList)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9303660+00:00`
+- posted_at: `2026-11-09T23:44:49.5906570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1516,
     "symbol": "OrderByList"
   },
-  "id": "28264c99-a4d4-4260-92a3-15a7664dd9a4",
+  "id": "5515543f-ebb8-4713-a0b2-3208c40953a1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9303660+00:00"
+    "posted_at": "2026-11-09T23:44:49.5906570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1fde638d-26e7-454e-b5ae-c84caff2ac98",
+  "subject_id": "31be472e-e850-4cf3-bef9-07ec39262fee",
   "subject_name": "django/db/models/expressions::OrderByList",
   "tags": [
     "entity:class"

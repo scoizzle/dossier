@@ -1,6 +1,6 @@
 # Fact 9c91b258
 
-Store id: d5928189-f72d-446c-b570-8809d57cd9c8
+Store id: 44451408-5115-4db2-84b1-5091cd9199ab
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONField(CheckFieldDefaultMixin, Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8195840+00:00`
+- posted_at: `2026-11-09T23:44:50.9235080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 24,
     "symbol": "JSONField"
   },
-  "id": "d5928189-f72d-446c-b570-8809d57cd9c8",
+  "id": "44451408-5115-4db2-84b1-5091cd9199ab",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8195840+00:00"
+    "posted_at": "2026-11-09T23:44:50.9235080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7413bc4d-7a81-4bcf-8beb-3fbd2ee69c75",
+  "subject_id": "6603f76f-770b-499e-aed0-4dfb699a73f6",
   "subject_name": "django/db/models/fields/json::JSONField",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.abulk_update
 
-- Subject: django/db/models/query::QuerySet.abulk_update (id `83ba1e6a-8731-4d28-949b-c0c76c0e57c6`)
+- Subject: django/db/models/query::QuerySet.abulk_update (id `fa4e3643-6ab1-47d8-b29b-61ee99de4420`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

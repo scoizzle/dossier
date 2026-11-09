@@ -1,6 +1,6 @@
 # Fact f19b1937
 
-Store id: 128f8ba5-0770-41e1-ac1b-963b1f91d121
+Store id: 65843e38-d0a0-48db-8395-e18b22db338b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_select_for_update_of_arguments(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.8329880+00:00`
+- posted_at: `2026-11-09T23:44:57.5757600+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1426,
     "symbol": "SQLCompiler.get_select_for_update_of_arguments"
   },
-  "id": "128f8ba5-0770-41e1-ac1b-963b1f91d121",
+  "id": "65843e38-d0a0-48db-8395-e18b22db338b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.8329880+00:00"
+    "posted_at": "2026-11-09T23:44:57.5757600+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3fde7788-6e62-4e21-a73f-31f64915f47a",
+  "subject_id": "37893343-b540-4473-aeec-eb53b09ac427",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_select_for_update_of_arguments",
   "tags": [
     "entity:method"

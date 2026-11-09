@@ -1,11 +1,11 @@
 # django/db/models/fields/composite::CompositePrimaryKey.get_col
 
-- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_col (id `3c88f03c-ccbd-4985-ae4d-9db27355c8c7`)
+- Subject: django/db/models/fields/composite::CompositePrimaryKey.get_col (id `bec5261c-f02d-41d2-bcb8-476577bdfd04`)
 - Kind: method
 - Parent: [django/db/models/fields/composite](../django-db-models-fields-composite/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

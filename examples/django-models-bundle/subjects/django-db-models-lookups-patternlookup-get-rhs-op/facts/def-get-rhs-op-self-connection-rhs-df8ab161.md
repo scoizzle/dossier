@@ -1,6 +1,6 @@
 # Fact df8ab161
 
-Store id: c0b4343b-c941-4d4e-8c68-110fdfe53ec0
+Store id: b84d772f-c66a-423e-81d8-630865a8afef
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_rhs_op(self, connection, rhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3451200+00:00`
+- posted_at: `2026-11-09T23:44:55.0151230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 588,
     "symbol": "PatternLookup.get_rhs_op"
   },
-  "id": "c0b4343b-c941-4d4e-8c68-110fdfe53ec0",
+  "id": "b84d772f-c66a-423e-81d8-630865a8afef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3451200+00:00"
+    "posted_at": "2026-11-09T23:44:55.0151230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "865c0582-84c7-45ed-bba5-e246b56e4ac1",
+  "subject_id": "4fbbeeba-53c7-4a42-9e0a-c2547679ce09",
   "subject_name": "django/db/models/lookups::PatternLookup.get_rhs_op",
   "tags": [
     "entity:method"

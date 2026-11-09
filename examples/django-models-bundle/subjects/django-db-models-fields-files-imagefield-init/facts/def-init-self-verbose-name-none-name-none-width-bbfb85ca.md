@@ -1,6 +1,6 @@
 # Fact bbfb85ca
 
-Store id: d09e7ecb-11c3-42eb-b3b9-126abef50f6f
+Store id: 120ba125-8d99-45f5-b6aa-1c47ca6a8bfa
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, width_field=None, height_field
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4332350+00:00`
+- posted_at: `2026-11-09T23:44:50.6772110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 425,
     "symbol": "ImageField.__init__"
   },
-  "id": "d09e7ecb-11c3-42eb-b3b9-126abef50f6f",
+  "id": "120ba125-8d99-45f5-b6aa-1c47ca6a8bfa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4332350+00:00"
+    "posted_at": "2026-11-09T23:44:50.6772110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6b9243e6-1455-43f0-b267-160be1894bfb",
+  "subject_id": "9362b281-4559-47ea-8267-d770dae08d0f",
   "subject_name": "django/db/models/fields/files::ImageField.__init__",
   "tags": [
     "entity:method"

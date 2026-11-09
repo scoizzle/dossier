@@ -1,10 +1,10 @@
 # django/db/models/fields/files
 
-- Subject: django/db/models/fields/files (id `8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36`)
+- Subject: django/db/models/fields/files (id `a957c718-7162-4a08-a413-08d802f7b159`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 106 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

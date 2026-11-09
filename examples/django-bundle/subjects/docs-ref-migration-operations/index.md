@@ -1,10 +1,10 @@
 # docs/ref/migration-operations
 
-- Subject: docs/ref/migration-operations (id `2230f75c-8b00-4540-bab1-7b043c51f091`)
+- Subject: docs/ref/migration-operations (id `c84f2220-0b4f-420a-a5fd-f342fd67cebc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7580 tokens
-- Facts shown: 178 of 183
+- Used: 7879 tokens
+- Facts shown: 183 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -59,6 +59,7 @@
 - [7d76bf5d] def reverse_func(apps, schema_editor): # forwards_func() creates two Country instances, # so reverse_func() should delete them. Country = apps.get_model("myapp", "Country") db_alias = schema_editor.connection.alias Country.objects.using(db_alias).filter(name="USA", code="us").delete() Country.objects.using(db_alias).filter(name="France", code="fr").delete()
 - [5602f214839c9ad3-5] from django.db import migrations
 - [d9b321265979488b] from django.db.migrations.operations.base import Operation
+- [d9b321265979488b-2] from django.db.migrations.operations.base import Operation
 - [54f1856d] migrations.RunSQL( "ALTER TABLE musician ADD COLUMN name varchar(255) NOT NULL;", state_operations=[ migrations.AddField( "musician", "name", models.CharField(max_length=255), ), ], )
 - [8007df53] migrations.RunSQL( sql=[("INSERT INTO musician (name) VALUES (%s);", ["Reinhardt"])], reverse_sql=[("DELETE FROM musician where name=%s;", ["Reinhardt"])], )
 - [a4619044] migrations.RunSQL("INSERT INTO musician (name) VALUES ('Reinhardt');") migrations.RunSQL([("INSERT INTO musician (name) VALUES ('Reinhardt');", None)]) migrations.RunSQL([("INSERT INTO musician (name) VALUES (%s);", ["Reinhardt"])])
@@ -117,6 +118,7 @@
 - [2c8150c4] Changes the model's set of custom indexes (the ``index_together`` option on the ``Meta`` subclass).
 - [1f16bede] Changes the model's set of unique constraints (the :attr:`~django.db.models.Options.unique_together` option on the ``Meta`` subclass).
 - [3900977b] Changes the model's table comment (the :attr:`~django.db.models.Options.db_table_comment` option on the ``Meta`` subclass).
+- [d53004bf] Changes the model's table name (the :attr:`~django.db.models.Options.db_table` option on the ``Meta`` subclass).
 - [baed0e1b] Creates a :doc:`constraint </ref/models/constraints>` in the database table for the model with ``model_name``.
 - [829646fe] Creates a new model in the project history and a corresponding table in the database to match it.
 - [a8051a8f] Creates an index in the database table for the model with ``model_name``. ``index`` is an instance of the :class:`~django.db.models.Index` class.
@@ -150,11 +152,14 @@
 - [536edc51] Special Operations ==================
 - [ee3cdad2] Stores changes to miscellaneous model options (settings on a model's ``Meta``) like ``permissions`` and ``verbose_name``. Does not affect the database, but persists these changes for :class:`RunPython` instances to use. ``options`` should be a dictionary mapping option names to values.
 - [e94cb19e] The ``preserve_default`` argument indicates whether the field's default value is permanent and should be baked into the project state (``True``), or if it is temporary and just for this migration (``False``) - usually because the migration is adding a non-nullable field to a table and needs a default value to put into existing rows. It does not affect the behavior of setting defaults in the database directly.
+- [cf4ae5cd] The ``preserve_default`` argument indicates whether the field's default value is permanent and should be baked into the project state (``True``), or if it is temporary and just for this migration (``False``) - usually because the migration is altering a nullable field to a non-nullable one and needs a default value to put into existing rows. It does not affect the behavior of setting defaults in the database directly.
 - [47487c20] The ``reverse_code`` argument is called when unapplying migrations. This callable should undo what is done in the ``code`` callable so that the migration is reversible. If ``reverse_code`` is ``None`` (the default), the ``RunPython`` operation is irreversible.
 - [8436c64d] The ``reverse_sql`` queries are executed when the migration is unapplied. They should undo what is done by the ``sql`` queries. For example, to undo the above insertion with a deletion::
 - [0551d71b] The ``state_operations`` argument allows you to supply operations that are equivalent to the SQL in terms of project state. For example, if you are manually creating a column, you should pass in a list containing an ``AddField`` operation here so that the autodetector still has an up-to-date state of the model. If you don't, when you next run ``makemigrations``, it won't see any operation that adds that field and so will try to run it again. For example::
 - [684cdffae40374da] The optional ``elidable`` argument determines whether or not the operation will be removed (elided) when :ref:`squashing migrations <migration-squashing>`.
+- [684cdffae40374da-2] The optional ``elidable`` argument determines whether or not the operation will be removed (elided) when :ref:`squashing migrations <migration-squashing>`.
 - [b49285e2] The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in making routing decisions. See :ref:`topics-db-multi-db-hints` for more details on database hints.
+- [4ba22504] The optional ``hints`` argument will be passed as ``**hints`` to the :meth:`allow_migrate` method of database routers to assist them in making a routing decision. See :ref:`topics-db-multi-db-hints` for more details on database hints.
 - [9fa86356] There are also more specialized ``Operation`` objects which are for things like :ref:`data migrations <data-migrations>` and for advanced manual database manipulation. You can also write your own ``Operation`` classes if you want to encapsulate a custom change you commonly make.
 - [110ac9f9] This is generally the operation you would use to create :ref:`data migrations <data-migrations>`, run custom data updates and alterations, and anything else you need access to an ORM and/or Python code for.
 - [0272992c] Writing your own ================

@@ -1,6 +1,6 @@
 # Fact 87834ba2
 
-Store id: 6e159dc0-0f21-4bb6-a1e3-6f71a621a6cd
+Store id: 6e587ebd-b989-4731-9d80-215a37bc424b
 
 ## Text
 
@@ -20,7 +20,7 @@ class OutputFieldIsNoneError(FieldError)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7552960+00:00`
+- posted_at: `2026-11-09T23:44:49.2631990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 170,
     "symbol": "OutputFieldIsNoneError"
   },
-  "id": "6e159dc0-0f21-4bb6-a1e3-6f71a621a6cd",
+  "id": "6e587ebd-b989-4731-9d80-215a37bc424b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7552960+00:00"
+    "posted_at": "2026-11-09T23:44:49.2631990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0b23cf0c-c438-4417-bf8f-3b464120954b",
+  "subject_id": "5cf1bca6-9ebe-40d7-97bb-7f6a35501a9f",
   "subject_name": "django/db/models/expressions::OutputFieldIsNoneError",
   "tags": [
     "entity:class"

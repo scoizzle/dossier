@@ -1,6 +1,6 @@
 # Fact 5791b1ee
 
-Store id: be2e765d-b7b7-4009-abed-c33690b9c808
+Store id: 79dc0206-ed21-44ce-9969-78646420557d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_extra_restriction(self, alias, related_alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7137270+00:00`
+- posted_at: `2026-11-09T23:44:51.5471360+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 877,
     "symbol": "ForeignObject.get_extra_restriction"
   },
-  "id": "be2e765d-b7b7-4009-abed-c33690b9c808",
+  "id": "79dc0206-ed21-44ce-9969-78646420557d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7137270+00:00"
+    "posted_at": "2026-11-09T23:44:51.5471360+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6fab97ca-63f7-4141-a6a7-5a464388ab75",
+  "subject_id": "87396546-18d5-454f-9cbb-2914f4d56cf0",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_extra_restriction",
   "tags": [
     "entity:method"

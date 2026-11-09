@@ -1,10 +1,10 @@
 # django/core/checks/security/base
 
-- Subject: django/core/checks/security/base (id `a0827dd1-d326-4295-b3f8-01393b9f91c1`)
+- Subject: django/core/checks/security/base (id `5ce25517-1305-4108-9e77-83c89b74bfa1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3047 tokens
-- Facts shown: 44 of 44
+- Facts shown: 44 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 11cae4f2
 
-Store id: 5f12a5d5-1a00-4ddf-89d4-4a6ee6286477
+Store id: 98ffb083-7e82-4e33-8aea-2518e7bb6832
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_transform(self, lookup_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1617160+00:00`
+- posted_at: `2026-11-09T23:44:56.6818200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 366,
     "symbol": "RegisterLookupMixin.get_transform"
   },
-  "id": "5f12a5d5-1a00-4ddf-89d4-4a6ee6286477",
+  "id": "98ffb083-7e82-4e33-8aea-2518e7bb6832",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1617160+00:00"
+    "posted_at": "2026-11-09T23:44:56.6818200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dfaedc80-2dd2-4edd-b960-4f24ab2947a8",
+  "subject_id": "f3b4eced-583e-4975-a8a3-b94b86b0dd30",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin.get_transform",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/aggregates
 
-- Subject: docs/ref/contrib/postgres/aggregates (id `eb39bebf-17ea-4647-b37c-8c0cfe521ba3`)
+- Subject: docs/ref/contrib/postgres/aggregates (id `d7938b31-222c-4f26-982c-f66bb52f6b54`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3630 tokens
-- Facts shown: 119 of 133
+- Used: 4233 tokens
+- Facts shown: 133 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,20 +22,27 @@
 - >>> from django.db.models import Q >>> from django.contrib.postgres.aggregates import BoolAnd >>> Comment.objects.aggregate(booland=BoolAnd("published")) {'booland': False} >>> Comment.objects.aggregate(booland=BoolAnd(Q(rank__lt=100))) {'booland': True} [1beda15b]
 - >>> from django.db.models import Q >>> from django.contrib.postgres.aggregates import BoolOr >>> Comment.objects.aggregate(boolor=BoolOr("published")) {'boolor': True} >>> Comment.objects.aggregate(boolor=BoolOr(Q(rank__gt=2))) {'boolor': False} [a250e54a]
 - An optional boolean argument that determines if array values will be distinct. Defaults to ``False``. [11db72846e1e83dc]
+- An optional boolean argument that determines if array values will be distinct. Defaults to ``False``. [11db72846e1e83dc-2]
+- An optional boolean argument that determines if concatenated values will be distinct. Defaults to ``False``. [ce506b94]
 - An optional string of a field name (with an optional ``"-"`` prefix which indicates descending order) or an expression (or a tuple or list of strings and/or expressions) that specifies the ordering of the elements in the result list. [44c7afa2dda05201]
+- An optional string of a field name (with an optional ``"-"`` prefix which indicates descending order) or an expression (or a tuple or list of strings and/or expressions) that specifies the ordering of the elements in the result list. [44c7afa2dda05201-2]
 - Examples are the same as for :attr:`ArrayAgg.order_by`. [06e85ac386111403]
-- Examples:: [730c225c80dac295]
-- Optional. By default ``CovarPop`` returns the general population covariance. However, if ``sample=True``, the return value will be the sample population covariance. [ebd87249]
-- Required argument. A string, :class:`~django.db.models.Value`, or expression representing the string for separating values. For example, ``Value(",")``. [208f4bfa]
-- The PostgreSQL ``StringAgg`` class is deprecated in favor of the generally available :class:`~django.db.models.StringAgg` class. [7cb6a7a6]
-- .. attribute:: sample [c04d4b5d5f04da1d]
+- Examples are the same as for :attr:`ArrayAgg.order_by`. [06e85ac386111403-2]
 
 ## All facts
 
+- [4990f769] An optional string of a field name (with an optional ``"-"`` prefix which indicates descending order) or an expression (or a tuple or list of strings and/or expressions) that specifies the ordering of the elements in the result string.
+- [730c225c80dac295] Examples::
+- [ebd87249] Optional. By default ``CovarPop`` returns the general population covariance. However, if ``sample=True``, the return value will be the sample population covariance.
+- [208f4bfa] Required argument. A string, :class:`~django.db.models.Value`, or expression representing the string for separating values. For example, ``Value(",")``.
+- [7cb6a7a6] The PostgreSQL ``StringAgg`` class is deprecated in favor of the generally available :class:`~django.db.models.StringAgg` class.
 - [cfacf19a790917ae] The ``default`` argument is not supported.
 - [00c173d6] This class is deprecated in favor of the generally available :class:`~django.db.models.BitAnd` class.
+- [90096d19] This class is deprecated in favor of the generally available :class:`~django.db.models.BitOr` class.
+- [e598dda3] This class is deprecated in favor of the generally available :class:`~django.db.models.BitXor` class.
 - [98c870b3] class Article(models.Model): headline = models.CharField(max_length=100) publications = models.ManyToManyField(Publication)
 - [7bb2dd9650992b2c] class Comment(models.Model): body = models.TextField() published = models.BooleanField() rank = models.IntegerField()
+- [7bb2dd9650992b2c-2] class Comment(models.Model): body = models.TextField() published = models.BooleanField() rank = models.IntegerField()
 - [dc519cfe] class HotelReservation(models.Model): room = models.ForeignKey("Room", on_delete=models.CASCADE) start = models.DateTimeField() end = models.DateTimeField() requirements = models.JSONField(blank=True, null=True)
 - [3ced8730] class Publication(models.Model): title = models.CharField(max_length=30)
 - [82f17d4b] class Room(models.Model): number = models.IntegerField(unique=True)
@@ -46,6 +53,7 @@
 - [f8ed1fbe338e5d59] .. attribute:: order_by
 - [f8ed1fbe338e5d59-2] .. attribute:: order_by
 - [f8ed1fbe338e5d59-3] .. attribute:: order_by
+- [c04d4b5d5f04da1d] .. attribute:: sample
 - [eaf050be34acb41d-212] .. code-block:: pycon
 - [eaf050be34acb41d-213] .. code-block:: pycon
 - [eaf050be34acb41d-214] .. code-block:: pycon
@@ -67,12 +75,18 @@
 - [1d656a14] Returns ``sum(y^2) - sum(y)^2/N`` ("sum of squares" of the dependent variable) as a ``float``, or ``default`` if there aren't any matching rows.
 - [87f330e8] Returns a list of values, including nulls, concatenated into an array, or ``default`` if there are no values.
 - [a30aeda9dc9e9627] Returns an ``int`` of the bitwise ``AND`` of all non-null input values, or ``default`` if all values are null.
+- [b851c5bfdd91a88a] Returns an ``int`` of the bitwise ``OR`` of all non-null input values, or ``default`` if all values are null.
+- [eb5852bc1e5f8f85] Returns an ``int`` of the bitwise ``XOR`` of all non-null input values, or ``default`` if all values are null.
 - [620b2f87] Returns an ``int`` of the number of input rows in which both expressions are not null.
+- [ad725f9b] Returns the average of the dependent variable (``sum(y)/N``) as a ``float``, or ``default`` if there aren't any matching rows.
+- [bc01f1d7] Returns the average of the independent variable (``sum(x)/N``) as a ``float``, or ``default`` if there aren't any matching rows.
 - [b624cfa3] Returns the correlation coefficient as a ``float``, or ``default`` if there aren't any matching rows.
 - [45ad2962] Returns the input values as a ``JSON`` array, or ``default`` if there are no values. You can query the result using :lookup:`key and index lookups <jsonfield.key>`.
 - [e129263dd012440b] Returns the input values concatenated into a string, separated by the ``delimiter`` string, or ``default`` if there are no values.
 - [2f77c8f2] Returns the population covariance as a ``float``, or ``default`` if there aren't any matching rows.
 - [23ec4a92] Returns the slope of the least-squares-fit linear equation determined by the ``(x, y)`` pairs as a ``float``, or ``default`` if there aren't any matching rows.
+- [59c86dfd] Returns the square of the correlation coefficient as a ``float``, or ``default`` if there aren't any matching rows.
+- [c98bbfc3] Returns the y-intercept of the least-squares-fit linear equation determined by the ``(x, y)`` pairs as a ``float``, or ``default`` if there aren't any matching rows.
 - [a2032f1b06c0a2ba] Usage example::
 - [a2032f1b06c0a2ba-2] Usage example::
 - [a2032f1b06c0a2ba-3] Usage example::

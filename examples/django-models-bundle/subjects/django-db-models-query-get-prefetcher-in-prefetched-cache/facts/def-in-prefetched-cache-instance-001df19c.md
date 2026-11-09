@@ -1,6 +1,6 @@
 # Fact 001df19c
 
-Store id: 0f3e7a4e-75b7-4472-b7bc-90b1092dce07
+Store id: b8d151f8-00bd-4d9c-b6c4-356db9d35703
 
 ## Text
 
@@ -20,7 +20,7 @@ def in_prefetched_cache(instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8477940+00:00`
+- posted_at: `2026-11-09T23:44:56.3285680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2867,
     "symbol": "get_prefetcher.in_prefetched_cache"
   },
-  "id": "0f3e7a4e-75b7-4472-b7bc-90b1092dce07",
+  "id": "b8d151f8-00bd-4d9c-b6c4-356db9d35703",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8477940+00:00"
+    "posted_at": "2026-11-09T23:44:56.3285680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ebc6cbd6-7885-4ac6-9afb-9481117583a7",
+  "subject_id": "68ff822e-b1dc-4fc2-9152-785c46395509",
   "subject_name": "django/db/models/query::get_prefetcher.in_prefetched_cache",
   "tags": [
     "entity:function"

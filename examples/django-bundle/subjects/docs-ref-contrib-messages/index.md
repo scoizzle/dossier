@@ -1,10 +1,10 @@
 # docs/ref/contrib/messages
 
-- Subject: docs/ref/contrib/messages (id `de02bf12-9686-418a-9d64-c8e7758ca082`)
+- Subject: docs/ref/contrib/messages (id `e75fda04-5d99-4ba6-9183-111445b3261f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5377 tokens
-- Facts shown: 130 of 135
+- Used: 5519 tokens
+- Facts shown: 135 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -42,10 +42,13 @@
 - [c6e8e47f] current_level = messages.get_level(request)
 - [3109678c] def my_view(request): messages.add_message(request, CRITICAL, "A serious error occurred.")
 - [c05c3ad0030e2165] from django.contrib import messages
+- [c05c3ad0030e2165-2] from django.contrib import messages
+- [c05c3ad0030e2165-3] from django.contrib import messages
 - [778e0c56] from django.contrib.messages import constants as messages
 - [e9e8791e] from django.contrib.messages import get_messages
 - [11e88996] from django.contrib.messages.test import MessagesTestMixin from django.test import TestCase
 - [2bc93803] from django.contrib.messages.views import SuccessMessageMixin from django.views.generic.edit import CreateView from myapp.models import Author
+- [740bd9c7] from django.contrib.messages.views import SuccessMessageMixin from django.views.generic.edit import CreateView from myapp.models import ComplicatedModel
 - [b04c3e11] messages.add_message( request, messages.SUCCESS, "Profile details updated.", fail_silently=True, ) messages.info(request, "Hello world.", fail_silently=True)
 - [32643ad1] messages.add_message(request, messages.INFO, "Hello world.")
 - [5b91e56a] messages.add_message(request, messages.INFO, "Over 9000!", extra_tags="dragonball") messages.error(request, "Email box full", extra_tags="email")
@@ -76,6 +79,7 @@
 - [1f8cfe58] .. class:: storage.session.SessionStorage
 - [b9304add] .. class:: views.SuccessMessageMixin
 - [685d15dfb6eb2285-67] .. code-block:: html+django
+- [685d15dfb6eb2285-68] .. code-block:: html+django
 - [7e76e05a] .. function:: add_message(request, level, message, extra_tags='', fail_silently=False)
 - [ddeff58a] .. method:: MessagesTestMixin.assertMessages(response, expected_messages, ordered=True)
 - [e75731a7] .. module:: django.contrib.messages :synopsis: Provides cookie- and session-based temporary message storage.
@@ -93,6 +97,7 @@
 - [46141c55] Adding extra message tags -------------------------
 - [7b450901] Adding messages in class-based views ------------------------------------
 - [0b5caa99] Behavior of parallel requests =============================
+- [689b3a7c] Changing the minimum recorded level per-request -----------------------------------------------
 - [fb3387fe] Configuring the message engine ==============================
 - [bcc20f78] Creating custom message levels ------------------------------
 - [d025b12c] Displaying messages ------------------- .. function:: get_messages(request)

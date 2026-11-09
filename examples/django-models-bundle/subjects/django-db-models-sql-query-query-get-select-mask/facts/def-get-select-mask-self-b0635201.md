@@ -1,6 +1,6 @@
 # Fact b0635201
 
-Store id: 1fcc77b8-cf09-4595-8c5a-b9fa100e9ae0
+Store id: 3d49d3b4-228d-4cd0-835f-cabb468f371b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_select_mask(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8269800+00:00`
+- posted_at: `2026-11-09T23:44:58.7035900+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 877,
     "symbol": "Query.get_select_mask"
   },
-  "id": "1fcc77b8-cf09-4595-8c5a-b9fa100e9ae0",
+  "id": "3d49d3b4-228d-4cd0-835f-cabb468f371b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8269800+00:00"
+    "posted_at": "2026-11-09T23:44:58.7035900+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "18d2f411-f9c0-462c-a810-a963a03e20c4",
+  "subject_id": "d475b1ff-b54a-4947-b622-b4146de2d77a",
   "subject_name": "django/db/models/sql/query::Query.get_select_mask",
   "tags": [
     "entity:method"

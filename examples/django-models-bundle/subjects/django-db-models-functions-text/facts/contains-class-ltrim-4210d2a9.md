@@ -1,6 +1,6 @@
 # Fact 4210d2a9
 
-Store id: 5589caed-3488-4106-a2e2-541541fe7c65
+Store id: 63a999c6-8b25-4784-b6c3-d9dec1e42640
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class LTrim
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5589caed-3488-4106-a2e2-541541fe7c65",
+  "id": "63a999c6-8b25-4784-b6c3-d9dec1e42640",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "LTrim"
       },
       "rel": "contains",
-      "target": "2f9ac18e-b4da-4d9f-9d9b-ef96264e92d2"
+      "target": "29d6aa36-d32e-4f70-8068-b56c4ce1461c"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

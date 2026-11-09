@@ -1,6 +1,6 @@
 # Fact 3b1b628c
 
-Store id: 5294900a-6fe8-415b-b024-20cb364a112c
+Store id: ef7920e0-3ae2-4c9c-b72e-a8b88b572bb3
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4445380+00:00`
+- posted_at: `2026-11-09T23:44:50.6864860+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 535,
     "symbol": "ImageField.formfield"
   },
-  "id": "5294900a-6fe8-415b-b024-20cb364a112c",
+  "id": "ef7920e0-3ae2-4c9c-b72e-a8b88b572bb3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4445380+00:00"
+    "posted_at": "2026-11-09T23:44:50.6864860+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ea6d1a81-53d2-49ec-80d5-c5fe7a050d83",
+  "subject_id": "724e1b5f-ced6-4264-89ab-1a39b436c8d7",
   "subject_name": "django/db/models/fields/files::ImageField.formfield",
   "tags": [
     "entity:method"

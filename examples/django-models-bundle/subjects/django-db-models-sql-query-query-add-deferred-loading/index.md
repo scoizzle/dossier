@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.add_deferred_loading
 
-- Subject: django/db/models/sql/query::Query.add_deferred_loading (id `3705e992-2d8e-4715-9d66-d44b87fbbf59`)
+- Subject: django/db/models/sql/query::Query.add_deferred_loading (id `4389c9e4-9be6-4cc3-85d7-e0e04699bdfb`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

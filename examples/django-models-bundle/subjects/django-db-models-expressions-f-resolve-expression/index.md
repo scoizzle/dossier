@@ -1,11 +1,11 @@
 # django/db/models/expressions::F.resolve_expression
 
-- Subject: django/db/models/expressions::F.resolve_expression (id `ccba5a15-d341-4f69-9d8e-cf363cbb880c`)
+- Subject: django/db/models/expressions::F.resolve_expression (id `a718e230-89b9-4e42-a734-d1480a868b0c`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

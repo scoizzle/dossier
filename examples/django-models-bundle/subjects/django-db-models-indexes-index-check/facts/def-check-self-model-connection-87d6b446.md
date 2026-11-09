@@ -1,6 +1,6 @@
 # Fact 87d6b446
 
-Store id: 253afd9e-571a-44c1-9441-7c1a5d8e7194
+Store id: d4c6b297-2ef5-45af-be6f-8e64e0cfc916
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, model, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9057260+00:00`
+- posted_at: `2026-11-09T23:44:54.6711930+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 86,
     "symbol": "Index.check"
   },
-  "id": "253afd9e-571a-44c1-9441-7c1a5d8e7194",
+  "id": "d4c6b297-2ef5-45af-be6f-8e64e0cfc916",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9057260+00:00"
+    "posted_at": "2026-11-09T23:44:54.6711930+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "35e526c7-3ea8-4494-a0a3-8a66e1a9a214",
+  "subject_id": "6d34550a-a615-438c-b134-c4de1e2fe547",
   "subject_name": "django/db/models/indexes::Index.check",
   "tags": [
     "entity:method"

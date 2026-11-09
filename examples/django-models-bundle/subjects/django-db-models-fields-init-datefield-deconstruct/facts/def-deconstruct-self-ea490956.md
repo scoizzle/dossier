@@ -1,6 +1,6 @@
 # Fact ea490956
 
-Store id: a583a944-f44e-4feb-8aaa-2839a9caa543
+Store id: c3d9ab97-3cbe-4b31-9976-09e6d5164852
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5793030+00:00`
+- posted_at: `2026-11-09T23:44:50.0883880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1506,
     "symbol": "DateField.deconstruct"
   },
-  "id": "a583a944-f44e-4feb-8aaa-2839a9caa543",
+  "id": "c3d9ab97-3cbe-4b31-9976-09e6d5164852",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5793030+00:00"
+    "posted_at": "2026-11-09T23:44:50.0883880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6f17816f-ec29-486e-80c3-a8dc64b7be81",
+  "subject_id": "3ecbfdfd-0376-4075-a1d9-3c8b19e550ea",
   "subject_name": "django/db/models/fields/__init__::DateField.deconstruct",
   "tags": [
     "entity:method"

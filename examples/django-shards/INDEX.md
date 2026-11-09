@@ -4,18 +4,18 @@ This file lists every subject in the bundle as folders and subjects: a row of ki
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/ | group | 7070 | 0 | 0 | 587 | [index/django.md](index/django.md) |
-| docs/ | group | 5456 | 0 | 0 | 407 | [index/docs.md](index/docs.md) |
+| django/ | group | 2517 | 0 | 0 | 555 | [index/django.md](index/django.md) |
+| docs/ | group | 1184 | 0 | 0 | 4647 | [index/docs.md](index/docs.md) |
 
 ## Totals
 
-- Subjects: 1080
-- Facts: 12526
+- Subjects: 548
+- Facts: 3701
 - Conflicts: 0
 - Gaps: 0
-- Subject file tokens, all subjects: 657499
-- Index files: 42
-- Largest index file, tokens: 5575
+- Subject file tokens, all subjects: 220420
+- Index files: 34
+- Largest index file, tokens: 4647
 
 ## Subjects with conflicts
 

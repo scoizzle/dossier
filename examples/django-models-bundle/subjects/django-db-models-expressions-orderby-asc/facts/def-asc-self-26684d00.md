@@ -1,6 +1,6 @@
 # Fact 26684d00
 
-Store id: cf4124c2-72d3-4e0c-a003-4f9d2b06c853
+Store id: bd64bca7-9915-4eef-b1ff-3faaeb84b898
 
 ## Text
 
@@ -20,7 +20,7 @@ def asc(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9960270+00:00`
+- posted_at: `2026-11-09T23:44:49.6641000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2013,
     "symbol": "OrderBy.asc"
   },
-  "id": "cf4124c2-72d3-4e0c-a003-4f9d2b06c853",
+  "id": "bd64bca7-9915-4eef-b1ff-3faaeb84b898",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9960270+00:00"
+    "posted_at": "2026-11-09T23:44:49.6641000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d152694b-8d21-4887-a080-923b371cf3ad",
+  "subject_id": "8832d30c-5e63-4848-9798-4b43556aa294",
   "subject_name": "django/db/models/expressions::OrderBy.asc",
   "tags": [
     "entity:method"

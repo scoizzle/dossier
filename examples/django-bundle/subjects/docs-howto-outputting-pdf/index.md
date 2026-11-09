@@ -1,10 +1,10 @@
 # docs/howto/outputting-pdf
 
-- Subject: docs/howto/outputting-pdf (id `95307cf6-11f8-4dcb-975d-070903620697`)
+- Subject: docs/howto/outputting-pdf (id `91bf7e10-6797-4c3a-9a15-8e66b8250341`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1400 tokens
-- Facts shown: 36 of 36
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 

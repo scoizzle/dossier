@@ -1,11 +1,11 @@
 # django/db/models/fields/json::JSONField.from_db_value
 
-- Subject: django/db/models/fields/json::JSONField.from_db_value (id `ebf3c0dd-f0bf-4902-8bc8-6dabf329b7dc`)
+- Subject: django/db/models/fields/json::JSONField.from_db_value (id `7d026c1b-3c8f-4e2e-9e7a-3c9666731f8f`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/howto/error-reporting
 
-- Subject: docs/howto/error-reporting (id `13926b0c-11ca-400a-8321-c6b5107cb2b6`)
+- Subject: docs/howto/error-reporting (id `5426a99f-d6ba-4e04-b6a6-3ab5a2a8e6a3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4498 tokens
-- Facts shown: 101 of 102
+- Used: 4560 tokens
+- Facts shown: 102 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,6 +22,7 @@
 - A compiled regular expression object used to match settings and ``request.META`` values considered as sensitive. By default equivalent to:: [51b21e89]
 - If the variable you want to hide is also a function argument (e.g. '``user``’ in the following example), and if the decorated function has multiple decorators, then make sure to place ``@sensitive_variables`` at the top of the decorator chain. This way it will also hide the function argument as it gets passed through the other decorators:: [adffd60b]
 - Property that returns a :class:`pathlib.Path` representing the absolute filesystem path to a template for rendering the HTML representation of the exception. Defaults to the Django provided template. [c1a808ab]
+- Property that returns a :class:`pathlib.Path` representing the absolute filesystem path to a template for rendering the plain-text representation of the exception. Defaults to the Django provided template. [9464fa72]
 - Return HTML version of exception report. [657d938d]
 - Return a dictionary containing traceback information. [1012f4f2]
 - Return plain text version of exception report. [9aa3321e]
@@ -29,16 +30,16 @@
 - Returns the filtered dictionary of POST parameters. Sensitive values are replaced with :attr:`cleansed_substitute`. [3c737d9b]
 - Returns the filtered dictionary of local variables for the given traceback frame. Sensitive values are replaced with :attr:`cleansed_substitute`. [e0e896e6]
 - The string value to replace sensitive value with. By default it replaces the values of sensitive variables with stars (``**********``). [6610a2b0]
-- This is the main extension point for customizing exception reports, for example:: [18fe418f]
-- Used for HTML version of debug 500 HTTP error page. [12820590]
-- from django.views.decorators.debug import sensitive_variables [54f47e7c]
+- .. attribute:: cleansed_substitute [0aac7a90]
 
 ## All facts
 
+- [18fe418f] This is the main extension point for customizing exception reports, for example::
+- [12820590] Used for HTML version of debug 500 HTTP error page.
 - [99f89ea8] Used for plain text version of debug 500 HTTP error page and email reports.
 - [77e7515a] from django.views.decorators.debug import sensitive_post_parameters
+- [54f47e7c] from django.views.decorators.debug import sensitive_variables
 - [53920bf8] .. admonition:: When using multiple decorators
-- [0aac7a90] .. attribute:: cleansed_substitute
 - [006a4503] .. attribute:: hidden_settings
 - [90900aa3] .. attribute:: html_template_path
 - [1b042c19] .. attribute:: text_template_path

@@ -1,6 +1,6 @@
 # Fact 16867812
 
-Store id: d9ec9e5b-a747-4a0d-89d8-73643cc507c6
+Store id: d1ae366d-2c62-41bf-8b82-ef341ff1520e
 
 ## Text
 
@@ -20,7 +20,7 @@ class ValueRange(WindowFrame)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0428890+00:00`
+- posted_at: `2026-11-09T23:44:49.6955960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2231,
     "symbol": "ValueRange"
   },
-  "id": "d9ec9e5b-a747-4a0d-89d8-73643cc507c6",
+  "id": "d1ae366d-2c62-41bf-8b82-ef341ff1520e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0428890+00:00"
+    "posted_at": "2026-11-09T23:44:49.6955960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d4c4be22-fe0f-4526-92eb-c505a7fe65a9",
+  "subject_id": "3782a047-3050-4473-bd7b-9dcb04dc4f99",
   "subject_name": "django/db/models/expressions::ValueRange",
   "tags": [
     "entity:class"

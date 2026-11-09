@@ -1,6 +1,6 @@
 # Fact 49896c41
 
-Store id: c326edf5-7f81-41f8-8a65-2a9fe22f57b1
+Store id: e7172e5e-c7ce-429b-b650-b25b947817da
 
 ## Text
 
@@ -20,7 +20,7 @@ def referenced_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6300980+00:00`
+- posted_at: `2026-11-09T23:44:50.8057390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 69,
     "symbol": "GeneratedField.referenced_fields"
   },
-  "id": "c326edf5-7f81-41f8-8a65-2a9fe22f57b1",
+  "id": "e7172e5e-c7ce-429b-b650-b25b947817da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6300980+00:00"
+    "posted_at": "2026-11-09T23:44:50.8057390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b1f6f930-0a2f-493d-ad70-366d91229fd0",
+  "subject_id": "10400777-1d26-4f95-83f2-ccbce95f8038",
   "subject_name": "django/db/models/fields/generated::GeneratedField.referenced_fields",
   "tags": [
     "entity:method",

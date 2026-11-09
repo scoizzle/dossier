@@ -1,6 +1,6 @@
 # Fact d5f49f79
 
-Store id: 78e1bd7d-a5ae-410d-a99f-b39c799f82fb
+Store id: 02b492a5-1940-4c76-9165-face7b425fa0
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIn(JSONIn)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9972590+00:00`
+- posted_at: `2026-11-09T23:44:51.0408030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 618,
     "symbol": "KeyTransformIn"
   },
-  "id": "78e1bd7d-a5ae-410d-a99f-b39c799f82fb",
+  "id": "02b492a5-1940-4c76-9165-face7b425fa0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9972590+00:00"
+    "posted_at": "2026-11-09T23:44:51.0408030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "34f32a3e-7a86-44de-8ae8-3a631eed5b0c",
+  "subject_id": "67759b45-a158-4935-8e81-87807f166ae5",
   "subject_name": "django/db/models/fields/json::KeyTransformIn",
   "tags": [
     "entity:class"

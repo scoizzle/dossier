@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet._filter_or_exclude_inplace
 
-- Subject: django/db/models/query::QuerySet._filter_or_exclude_inplace (id `36dc41fa-6c7e-4a95-9340-0e4d9f4f05a5`)
+- Subject: django/db/models/query::QuerySet._filter_or_exclude_inplace (id `2286b408-1892-4c40-9ee8-6c0b713ef787`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

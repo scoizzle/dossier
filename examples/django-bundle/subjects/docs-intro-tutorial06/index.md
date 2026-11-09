@@ -1,10 +1,10 @@
 # docs/intro/tutorial06
 
-- Subject: docs/intro/tutorial06 (id `25e1cddf-cb1e-4bb0-bb78-b8bd01f4fd14`)
+- Subject: docs/intro/tutorial06 (id `a9af68ff-bfb3-48cc-ad6c-b7cc3cef7cb6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1690 tokens
-- Facts shown: 35 of 36
+- Used: 1716 tokens
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -21,6 +21,7 @@
 - .. admonition:: Static file namespacing [08ae221c1fd71bc8-2]
 - .. admonition:: Where to get help: [dbb2ef17dd903b2b-7]
 - .. code-block:: css :caption: ``polls/static/polls/style.css`` [ee3cb333e8ab509d]
+- .. code-block:: css :caption: ``polls/static/polls/style.css`` [ee3cb333e8ab509d-2]
 - .. code-block:: html+django :caption: ``polls/templates/polls/index.html`` [a8588014402a8293-4]
 - .. console:: [7714e199aac2701e-80]
 - .. warning:: [c54b54cb0805732a-8]
@@ -30,11 +31,11 @@
 - Customize your *app's* look and feel ==================================== [00a7aa17]
 - Django's :setting:`STATICFILES_FINDERS` setting contains a list of finders that know how to discover static files from various sources. One of the defaults is ``AppDirectoriesFinder`` which looks for a "static" subdirectory in each of the :setting:`INSTALLED_APPS`, like the one in ``polls`` we just created. The admin site uses the same directory structure for its static files. [c282385a]
 - First, create a directory called ``static`` in your ``polls`` directory. Django will look for static files there, similarly to how Django finds templates inside ``polls/templates/``. [fa7766c3]
-- Next, add the following at the top of ``polls/templates/polls/index.html``: [c9523164]
 
 ## All facts
 
 - [f68d2833] For small projects, this isn't a big deal, because you can keep the static files somewhere your web server can find it. However, in bigger projects -- especially those comprised of multiple apps -- dealing with the multiple sets of static files provided by each application starts to get tricky.
+- [c9523164] Next, add the following at the top of ``polls/templates/polls/index.html``:
 - [592d6370] Next, we'll create a subdirectory for images. Create an ``images`` subdirectory in the ``polls/static/polls/`` directory. Inside this directory, add any image file that you'd like to use as a background. For the purposes of this tutorial, we're using a file named ``background.png``, which will have the full path ``polls/static/polls/images/background.png``.
 - [48fd24ba] Put the following code in that stylesheet (``polls/static/polls/style.css``):
 - [693a5426] Reload ``http://localhost:8000/polls/`` and you should see that the question links are green (Django style!) which means that your stylesheet was properly loaded.

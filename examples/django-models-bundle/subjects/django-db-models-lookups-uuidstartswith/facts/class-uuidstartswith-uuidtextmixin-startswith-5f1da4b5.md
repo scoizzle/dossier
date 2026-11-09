@@ -1,6 +1,6 @@
 # Fact 5f1da4b5
 
-Store id: 83c69ed1-fde9-4e9c-87c3-3bbd3cf55695
+Store id: f494fbe0-0223-4c76-8550-3bd45b73ee64
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDStartsWith(UUIDTextMixin, StartsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4837060+00:00`
+- posted_at: `2026-11-09T23:44:55.1148070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 815,
     "symbol": "UUIDStartsWith"
   },
-  "id": "83c69ed1-fde9-4e9c-87c3-3bbd3cf55695",
+  "id": "f494fbe0-0223-4c76-8550-3bd45b73ee64",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4837060+00:00"
+    "posted_at": "2026-11-09T23:44:55.1148070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f105efad-c6b1-4376-98bb-dd3c5f9a1a8f",
+  "subject_id": "a5262afc-6a23-4111-bb52-4cd3c61dbd5b",
   "subject_name": "django/db/models/lookups::UUIDStartsWith",
   "tags": [
     "entity:class",

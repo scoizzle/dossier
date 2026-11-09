@@ -1,6 +1,6 @@
 # Fact 841e4c26
 
-Store id: 2eb218bc-9d3f-43ca-91dc-d8c8245db216
+Store id: a9e09180-fceb-4799-be01-a30193019011
 
 ## Text
 
@@ -20,7 +20,7 @@ class Extract(TimezoneMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.1704530+00:00`
+- posted_at: `2026-11-09T23:44:53.3186300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 39,
     "symbol": "Extract"
   },
-  "id": "2eb218bc-9d3f-43ca-91dc-d8c8245db216",
+  "id": "a9e09180-fceb-4799-be01-a30193019011",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.1704530+00:00"
+    "posted_at": "2026-11-09T23:44:53.3186300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10cb4c9b-961f-4b23-a024-e9215314246d",
+  "subject_id": "e44fd605-bc56-41e4-a8c2-492fb5d0f1f0",
   "subject_name": "django/db/models/functions/datetime::Extract",
   "tags": [
     "entity:class"

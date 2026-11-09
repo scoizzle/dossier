@@ -1,11 +1,11 @@
 # django/db/models/aggregates::BitXor
 
-- Subject: django/db/models/aggregates::BitXor (id `c5556ffc-d813-4446-ae5f-9f85b192fe2a`)
+- Subject: django/db/models/aggregates::BitXor (id `d5d4ace2-3798-4464-88ab-8edc637f53e2`)
 - Kind: class
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

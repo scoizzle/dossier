@@ -1,6 +1,6 @@
 # Fact df7b97c4
 
-Store id: 46798ecd-9854-4b02-86a6-bccbf919489f
+Store id: f7437bca-4c65-44b4-814a-6b84ef2b0a53
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.2737380+00:00`
+- posted_at: `2026-11-09T23:44:48.7893020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 518,
     "symbol": "UniqueConstraint.__repr__"
   },
-  "id": "46798ecd-9854-4b02-86a6-bccbf919489f",
+  "id": "f7437bca-4c65-44b4-814a-6b84ef2b0a53",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.2737380+00:00"
+    "posted_at": "2026-11-09T23:44:48.7893020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5d2a28e3-cfbe-414a-8c87-82f2c1c466d0",
+  "subject_id": "e95a638e-40fc-4c56-98aa-e8a03a62776d",
   "subject_name": "django/db/models/constraints::UniqueConstraint.__repr__",
   "tags": [
     "entity:method"

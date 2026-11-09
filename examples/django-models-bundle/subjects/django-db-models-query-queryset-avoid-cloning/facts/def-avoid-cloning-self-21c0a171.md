@@ -1,6 +1,6 @@
 # Fact 21c0a171
 
-Store id: ada3ca83-6dc7-40c3-84b7-b47ee7afc378
+Store id: 082b610e-897b-4275-b7f7-aaace3fb4b84
 
 ## Text
 
@@ -20,7 +20,7 @@ def _avoid_cloning(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6340150+00:00`
+- posted_at: `2026-11-09T23:44:56.1467670+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2235,
     "symbol": "QuerySet._avoid_cloning"
   },
-  "id": "ada3ca83-6dc7-40c3-84b7-b47ee7afc378",
+  "id": "082b610e-897b-4275-b7f7-aaace3fb4b84",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6340150+00:00"
+    "posted_at": "2026-11-09T23:44:56.1467670+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a6f1120-5230-44b2-bc68-f272a131d894",
+  "subject_id": "08070c61-5c0b-4490-9cd2-382637e0d3ce",
   "subject_name": "django/db/models/query::QuerySet._avoid_cloning",
   "tags": [
     "entity:method"

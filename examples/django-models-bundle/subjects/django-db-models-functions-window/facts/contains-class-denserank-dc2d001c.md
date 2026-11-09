@@ -1,6 +1,6 @@
 # Fact dc2d001c
 
-Store id: f9cfaa1e-10a4-4f77-8386-b980c35eef3c
+Store id: e1a8f06f-9aef-4206-b6a6-2d0044b67e95
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DenseRank
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7398280+00:00`
+- posted_at: `2026-11-09T23:44:54.5136690+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f9cfaa1e-10a4-4f77-8386-b980c35eef3c",
+  "id": "e1a8f06f-9aef-4206-b6a6-2d0044b67e95",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
+    "posted_at": "2026-11-09T23:44:54.5136690+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DenseRank"
       },
       "rel": "contains",
-      "target": "c996847d-f8c2-4a7f-8104-5360b8ca13c7"
+      "target": "5c94211b-c85f-406d-b048-aeef3463360c"
     }
   ],
   "status": "live",
-  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
+  "subject_id": "0980d3e2-fd09-4943-88c2-8f704578a39a",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 8e16cf5d
 
-Store id: 970feb49-bca6-4d5e-ac6a-f20f66e98d21
+Store id: 5929ba5f-468c-4a28-b465-24a183e92144
 
 ## Text
 
@@ -20,7 +20,7 @@ class Concat(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1760580+00:00`
+- posted_at: `2026-11-09T23:44:54.0748280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 125,
     "symbol": "Concat"
   },
-  "id": "970feb49-bca6-4d5e-ac6a-f20f66e98d21",
+  "id": "5929ba5f-468c-4a28-b465-24a183e92144",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1760580+00:00"
+    "posted_at": "2026-11-09T23:44:54.0748280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "10180892-fc28-4179-81d3-2e1882a16e70",
+  "subject_id": "a2f1afa2-4bdb-4ae3-9729-b4a46e828972",
   "subject_name": "django/db/models/functions/text::Concat",
   "tags": [
     "entity:class"

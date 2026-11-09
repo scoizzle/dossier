@@ -1,10 +1,10 @@
 # django/contrib/sites/requests
 
-- Subject: django/contrib/sites/requests (id `596c6c82-fe71-4087-813a-e65f5bb3109b`)
+- Subject: django/contrib/sites/requests (id `ea9df982-ce9f-4e0e-a096-7c636fc39dd8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 204 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

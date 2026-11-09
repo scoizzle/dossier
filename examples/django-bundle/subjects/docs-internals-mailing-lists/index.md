@@ -1,10 +1,10 @@
 # docs/internals/mailing-lists
 
-- Subject: docs/internals/mailing-lists (id `35ed73d8-330b-4c97-b13f-66ead83b495c`)
+- Subject: docs/internals/mailing-lists (id `e079b451-d81c-4acb-8ae2-c469edb4e58d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1123 tokens
-- Facts shown: 36 of 37
+- Used: 1196 tokens
+- Facts shown: 37 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -24,6 +24,7 @@
 - .. _django-announce-mailing-list: [8a469bf1]
 - .. _django-developers mailing archive: https://groups.google.com/g/django-developers [50dc8d39]
 - .. _django-developers-mailing-list: [f066863d]
+- .. _django-updates mailing archive: https://groups.google.com/g/django-updates .. _django-updates subscription email address: mailto:django-updates+subscribe@googlegroups.com .. _django-updates posting email: mailto:django-updates@googlegroups.com [9727546a]
 - .. _django-updates-mailing-list: [84dcce1a]
 - .. _django-users mailing archive: https://groups.google.com/g/django-users [ec8f815e]
 - .. _django-users-mailing-list: [97e42337]
@@ -34,13 +35,12 @@
 - ======================= Mailing lists and Forum ======================= [6f1436fb]
 - A (very) low-traffic list for announcing :ref:`upcoming security releases <security-disclosure>`, new releases of Django, and security advisories. [cb601011]
 - All the ticket updates are mailed automatically to this list, which is tracked by developers and interested community members. [6c5ff782]
-- Archived mailing lists ====================== [80de8fcc]
-- Django Forum ============ [4794099b]
-- Django has an `official Forum`_ where you can input and ask questions. [352950b5]
-- ``django-updates`` ================== [baf6e135]
 
 ## All facts
 
+- [80de8fcc] Archived mailing lists ======================
+- [4794099b] Django Forum ============
+- [352950b5] Django has an `official Forum`_ where you can input and ask questions.
 - [a1b4f382] In addition, Django has several official mailing lists on Google Groups that are open to anyone.
 - [16531e3d] The following mailing lists are archived and no longer active. These are still available as a historical resource.
 - [cdc2e827] There are several categories of discussion including:
@@ -48,4 +48,5 @@
 - [4f876e46] This was used for questions regarding the installation, usage, or debugging of Django projects.
 - [08465978] ``django-announce`` ===================
 - [ca5ca9cc] ``django-developers`` ---------------------
+- [baf6e135] ``django-updates`` ==================
 - [bec17d02] ``django-users`` ----------------

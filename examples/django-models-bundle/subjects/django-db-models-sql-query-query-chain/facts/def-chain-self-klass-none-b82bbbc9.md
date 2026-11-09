@@ -1,6 +1,6 @@
 # Fact b82bbbc9
 
-Store id: 17f98526-9a1d-440f-bf56-d45d03e3fc57
+Store id: 206d2a9a-a8f9-4147-9546-67354c3769e8
 
 ## Text
 
@@ -20,7 +20,7 @@ def chain(self, klass=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7814560+00:00`
+- posted_at: `2026-11-09T23:44:58.6359890+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 432,
     "symbol": "Query.chain"
   },
-  "id": "17f98526-9a1d-440f-bf56-d45d03e3fc57",
+  "id": "206d2a9a-a8f9-4147-9546-67354c3769e8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7814560+00:00"
+    "posted_at": "2026-11-09T23:44:58.6359890+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "06c0e5fb-55dd-4313-9188-0d3d80569fe5",
+  "subject_id": "ee5eda98-6e75-4c0b-a8c4-030cbd794eb8",
   "subject_name": "django/db/models/sql/query::Query.chain",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 2b608022
 
-Store id: 44e7f995-5fd9-4dec-bd99-4a7ecdeabc03
+Store id: d1e1ced0-2749-4168-99d4-e2efe3b7f32f
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_rel_lookup_compatibility(model, target_opts, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1945050+00:00`
+- posted_at: `2026-11-09T23:44:56.7267920+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 491,
     "symbol": "check_rel_lookup_compatibility"
   },
-  "id": "44e7f995-5fd9-4dec-bd99-4a7ecdeabc03",
+  "id": "d1e1ced0-2749-4168-99d4-e2efe3b7f32f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1945050+00:00"
+    "posted_at": "2026-11-09T23:44:56.7267920+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d645cd3b-7161-4e40-88f5-e42922a6947a",
+  "subject_id": "05b84e01-9ab4-4288-b2cf-44f8c294020e",
   "subject_name": "django/db/models/query_utils::check_rel_lookup_compatibility",
   "tags": [
     "entity:function"

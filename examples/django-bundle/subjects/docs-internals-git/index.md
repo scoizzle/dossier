@@ -1,10 +1,10 @@
 # docs/internals/git
 
-- Subject: docs/internals/git (id `446beafd-a097-4aa2-b1be-6249a2aba09c`)
+- Subject: docs/internals/git (id `5a5cb400-4bc4-4aa9-9de1-8b72fb69eae8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2903 tokens
-- Facts shown: 64 of 65
+- Used: 2931 tokens
+- Facts shown: 65 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -49,6 +49,7 @@
 - [94138150] A number of tags also exist under the ``archive/`` prefix for :ref:`archived work<archived-feature-development-work>`.
 - [391d347f] A number of tags exist under the ``archive/`` prefix to maintain a reference to this and other work of historical interest.
 - [54df0152] Additionally, the following tags under the ``archive/attic/`` prefix reference the tips of branches that were closed, but whose code was never merged into Django, and the features they aimed to implement were never finished:
+- [e463627d] Archived feature-development work ---------------------------------
 - [91c09e8e] Django used to be maintained with the Subversion revision control system, that has no standard way of indicating this. As a workaround, branches of Django which are closed and no longer maintained were moved into ``attic``.
 - [e456f2d5] Django uses branches to prepare for releases of Django. Each major release series has its own stable branch.
 - [420db252] Each Django release is tagged and signed by the releaser.

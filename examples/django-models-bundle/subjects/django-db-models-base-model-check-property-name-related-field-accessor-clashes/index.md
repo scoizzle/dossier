@@ -1,11 +1,11 @@
 # django/db/models/base::Model._check_property_name_related_field_accessor_clashes
 
-- Subject: django/db/models/base::Model._check_property_name_related_field_accessor_clashes (id `36b066df-f4ee-4c11-a481-ebede2f59e2f`)
+- Subject: django/db/models/base::Model._check_property_name_related_field_accessor_clashes (id `4bfdae5a-be7d-41cf-8239-1935f9f948dc`)
 - Kind: class_method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

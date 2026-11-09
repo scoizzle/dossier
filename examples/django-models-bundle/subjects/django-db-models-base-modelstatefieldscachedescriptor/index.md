@@ -1,11 +1,11 @@
 # django/db/models/base::ModelStateFieldsCacheDescriptor
 
-- Subject: django/db/models/base::ModelStateFieldsCacheDescriptor (id `9eecf7b4-7694-4435-9d2e-ecf27bd08976`)
+- Subject: django/db/models/base::ModelStateFieldsCacheDescriptor (id `72d8186e-9340-434e-8e09-2f0b0b894554`)
 - Kind: class
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

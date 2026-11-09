@@ -1,10 +1,10 @@
 # django/db/models/functions/window
 
-- Subject: django/db/models/functions/window (id `c87c1ada-eed9-4bc0-b963-8509710edf52`)
+- Subject: django/db/models/functions/window (id `5a09fdbf-3d4f-46b7-8864-0f15f5a647fe`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 744 tokens
-- Facts shown: 18 of 19
+- Used: 781 tokens
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - def __init__(self, expression, offset=1, default=None, **extra): if expression is None: raise ValueError( "%s requires a non-null source expression." % self.__class__.__name__ ) if offset is None or offset <= 0: raise ValueError( "%s requires a positive integer for the offset." % self.__class__.__name__ ) args = (expression, offset) if default is not None: args += (default,) super().__init__(*args, **extra) [bcb7d725]
 - def __init__(self, num_buckets=1, **extra): if num_buckets <= 0: raise ValueError("num_buckets must be greater than 0.") super().__init__(num_buckets, **extra) [f5327c29]
 - def _resolve_output_field(self): sources = self.get_source_expressions() return sources[0].output_field [c722ba755cb416b3]
+- def _resolve_output_field(self): sources = self.get_source_expressions() return sources[0].output_field [c722ba755cb416b3-2]
 - __all__ = [ "CumeDist", "DenseRank", "FirstValue", "Lag", "LastValue", "Lead", "NthValue", "Ntile", "PercentRank", "Rank", "RowNumber", ] [a630915a]
 - class CumeDist(Func): function = "CUME_DIST" output_field = FloatField() window_compatible = True [5a97f062]
 - class DenseRank(Func): function = "DENSE_RANK" output_field = IntegerField() window_compatible = True [70155ac3]

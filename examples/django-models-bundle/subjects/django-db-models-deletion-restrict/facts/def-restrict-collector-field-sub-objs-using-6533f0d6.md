@@ -1,6 +1,6 @@
 # Fact 6533f0d6
 
-Store id: 04dce9a8-b74c-4da8-8595-365a6008f0b5
+Store id: aff44b35-ac0d-4e5e-ab08-e1a4272b5006
 
 ## Text
 
@@ -20,7 +20,7 @@ def RESTRICT(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0353350+00:00`
+- posted_at: `2026-11-09T23:44:48.8996710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 47,
     "symbol": "RESTRICT"
   },
-  "id": "04dce9a8-b74c-4da8-8595-365a6008f0b5",
+  "id": "aff44b35-ac0d-4e5e-ab08-e1a4272b5006",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0353350+00:00"
+    "posted_at": "2026-11-09T23:44:48.8996710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0131d0f0-0e99-4a30-b340-415100a6aeeb",
+  "subject_id": "fbdef160-cd65-4b4e-a758-2d56c1701818",
   "subject_name": "django/db/models/deletion::RESTRICT",
   "tags": [
     "entity:function"

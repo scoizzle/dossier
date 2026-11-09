@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/index
 
-- Subject: docs/ref/class-based-views/index (id `3a7d6ff8-b20c-4615-8cdf-943d7b9f10b7`)
+- Subject: docs/ref/class-based-views/index (id `3ca0e0ad-c711-4ab2-b07a-8b89c5968e8f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 720 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

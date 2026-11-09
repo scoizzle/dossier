@@ -1,6 +1,6 @@
 # Fact cbd4f741
 
-Store id: 871b047a-ffdc-42cb-90ce-dec52b6e2bf8
+Store id: 90b80ac7-0c9f-4a12-8018-3c86512537d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_expressions(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0208800+00:00`
+- posted_at: `2026-11-09T23:44:49.6844040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2161,
     "symbol": "WindowFrame.get_source_expressions"
   },
-  "id": "871b047a-ffdc-42cb-90ce-dec52b6e2bf8",
+  "id": "90b80ac7-0c9f-4a12-8018-3c86512537d7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0208800+00:00"
+    "posted_at": "2026-11-09T23:44:49.6844040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "71463fcc-0bfb-4c23-a2ae-2063fddd147e",
+  "subject_id": "ecb03d27-c744-459a-9f9d-daca36e7845d",
   "subject_name": "django/db/models/expressions::WindowFrame.get_source_expressions",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/contrib/admin/__init__
 
-- Subject: django/contrib/admin/__init__ (id `74630730-66a8-4813-92fc-c507f6b747fd`)
+- Subject: django/contrib/admin/__init__ (id `073cd2cf-7a7d-4d79-b86a-a830c5739090`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 307 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

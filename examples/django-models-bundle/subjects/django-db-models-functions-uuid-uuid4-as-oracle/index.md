@@ -1,11 +1,11 @@
 # django/db/models/functions/uuid::UUID4.as_oracle
 
-- Subject: django/db/models/functions/uuid::UUID4.as_oracle (id `237d44ee-3640-474c-a505-86f365003e5e`)
+- Subject: django/db/models/functions/uuid::UUID4.as_oracle (id `b18e38d3-ca4a-4549-94e5-58fb77d3d657`)
 - Kind: method
 - Parent: [django/db/models/functions/uuid](../django-db-models-functions-uuid/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

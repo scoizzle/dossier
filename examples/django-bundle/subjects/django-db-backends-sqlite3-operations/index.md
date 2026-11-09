@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/operations
 
-- Subject: django/db/backends/sqlite3/operations (id `0a3c4b96-ef1b-4232-8f37-0851744dc759`)
+- Subject: django/db/backends/sqlite3/operations (id `0226252f-28db-4789-a6f8-1a182b53740d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3499 tokens
-- Facts shown: 50 of 53
+- Used: 3664 tokens
+- Facts shown: 53 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -42,7 +42,9 @@
 - [221d7c9c] def date_extract_sql(self, lookup_type, sql, params): """ Support EXTRACT with a user-defined function django_date_extract() that's registered in connect(). Use single quotes because this is a string and could otherwise cause a collision with a field name. """ return f"django_date_extract(%s, {sql})", (lookup_type.lower(), *params)
 - [6661aec9] def date_trunc_sql(self, lookup_type, sql, params, tzname=None): return f"django_date_trunc(%s, {sql}, %s, %s)", ( lookup_type.lower(), *params, *self._convert_tznames_to_sql(tzname), )
 - [9c369371] def datetime_cast_date_sql(self, sql, params, tzname): return f"django_datetime_cast_date({sql}, %s, %s)", ( *params, *self._convert_tznames_to_sql(tzname), )
+- [16442a27] def datetime_cast_time_sql(self, sql, params, tzname): return f"django_datetime_cast_time({sql}, %s, %s)", ( *params, *self._convert_tznames_to_sql(tzname), )
 - [5c71d778] def datetime_extract_sql(self, lookup_type, sql, params, tzname): return f"django_datetime_extract(%s, {sql}, %s, %s)", ( lookup_type.lower(), *params, *self._convert_tznames_to_sql(tzname), )
+- [8738292d] def datetime_trunc_sql(self, lookup_type, sql, params, tzname): return f"django_datetime_trunc(%s, {sql}, %s, %s)", ( lookup_type.lower(), *params, *self._convert_tznames_to_sql(tzname), )
 - [4c7620fb] def format_for_duration_arithmetic(self, sql): """Do nothing since formatting is handled in the custom function.""" return sql
 - [6129f0e0] def format_json_path_numeric_index(self, num): return "[#%s]" % num if num < 0 else super().format_json_path_numeric_index(num)
 - [d1afbd3d] def get_db_converters(self, expression): converters = super().get_db_converters(expression) internal_type = expression.output_field.get_internal_type() if internal_type == "DateTimeField": converters.append(self.convert_datetimefield_value) elif internal_type == "DateField": converters.append(self.convert_datefield_value) elif internal_type == "TimeField": converters.append(self.convert_timefield_value) elif internal_type == "DecimalField": converters.append(self.get_decimalfield_converter(expression)) elif internal_type == "UUIDField": converters.append(self.convert_uuidfield_value) elif internal_type == "BooleanField": converters.append(self.convert_booleanfield_value) return converters
@@ -58,6 +60,7 @@
 - [b95418e0] def sql_flush(self, style, tables, *, reset_sequences=False, allow_cascade=False): if tables and allow_cascade: # Simulate TRUNCATE CASCADE by recursively collecting the tables # referencing the tables to be flushed. tables = set( chain.from_iterable(self._references_graph(table) for table in tables) ) sql = [ "%s %s %s;" % ( style.SQL_KEYWORD("DELETE"), style.SQL_KEYWORD("FROM"), style.SQL_FIELD(self.quote_name(table)), ) for table in tables ] if reset_sequences: sequences = [{"table": table} for table in tables] sql.extend(self.sequence_reset_by_name_sql(style, sequences)) return sql
 - [06464a81] def subtract_temporals(self, internal_type, lhs, rhs): lhs_sql, lhs_params = lhs rhs_sql, rhs_params = rhs params = (*lhs_params, *rhs_params) if internal_type == "TimeField": return "django_time_diff(%s, %s)" % (lhs_sql, rhs_sql), params return "django_timestamp_diff(%s, %s)" % (lhs_sql, rhs_sql), params
 - [c7afeb11] def time_extract_sql(self, lookup_type, sql, params): return f"django_time_extract(%s, {sql})", (lookup_type.lower(), *params)
+- [29637f3e] def time_trunc_sql(self, lookup_type, sql, params, tzname=None): return f"django_time_trunc(%s, {sql}, %s, %s)", ( lookup_type.lower(), *params, *self._convert_tznames_to_sql(tzname), )
 - [788ab083] UNSUPPORTED_DATETIME_AGGREGATES = ( models.Sum, models.Avg, models.Variance, models.StdDev, ) DATETIME_FIELDS = (models.DateField, models.DateTimeField, models.TimeField)
 - [b0e3a0b6] class DatabaseOperations(BaseDatabaseOperations): cast_char_field_without_max_length = "text" cast_data_types = { "DateField": "TEXT", "DateTimeField": "TEXT", } explain_prefix = "EXPLAIN QUERY PLAN" # List of datatypes to that cannot be extracted with JSON_EXTRACT() on # SQLite. Use JSON_TYPE() instead. jsonfield_datatype_values = frozenset(["null", "false", "true"])
 - [26c8dfb3c93f7ac3-3] from .base import Database

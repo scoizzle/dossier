@@ -1,6 +1,6 @@
 # Fact 4daed894
 
-Store id: d1483fe6-ed2f-4086-aedd-81e0a164de91
+Store id: 065bd981-0052-4cf3-92d3-b62ca10a7fa3
 
 ## Text
 
@@ -20,7 +20,7 @@ async def _async_generator(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.2267640+00:00`
+- posted_at: `2026-11-09T23:44:55.7627440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 93,
     "symbol": "BaseIterable._async_generator"
   },
-  "id": "d1483fe6-ed2f-4086-aedd-81e0a164de91",
+  "id": "065bd981-0052-4cf3-92d3-b62ca10a7fa3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.2267640+00:00"
+    "posted_at": "2026-11-09T23:44:55.7627440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3b9f3ca9-54b9-4ec6-b315-cc88060c2d59",
+  "subject_id": "713482b6-aca9-483b-be08-3121401cba4b",
   "subject_name": "django/db/models/query::BaseIterable._async_generator",
   "tags": [
     "entity:method",

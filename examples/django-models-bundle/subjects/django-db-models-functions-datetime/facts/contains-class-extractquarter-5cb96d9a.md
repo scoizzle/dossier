@@ -1,6 +1,6 @@
 # Fact 5cb96d9a
 
-Store id: cece3241-e736-4d1c-b71c-e875c3365c06
+Store id: e207724a-4f06-4daf-bbb5-2f6313ae8594
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractQuarter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "cece3241-e736-4d1c-b71c-e875c3365c06",
+  "id": "e207724a-4f06-4daf-bbb5-2f6313ae8594",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractQuarter"
       },
       "rel": "contains",
-      "target": "393e7bf5-9512-4093-ac6e-0a1b13777d10"
+      "target": "8f0c2b59-0bc7-409a-966a-e18b44e228ae"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

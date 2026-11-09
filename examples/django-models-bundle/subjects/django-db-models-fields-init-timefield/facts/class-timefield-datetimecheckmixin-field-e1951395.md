@@ -1,6 +1,6 @@
 # Fact e1951395
 
-Store id: bede8f6c-33f4-4d74-a5bc-2a6bb2b48dfe
+Store id: 8f21fc32-ae96-494f-80f5-18b84dae91cb
 
 ## Text
 
@@ -20,7 +20,7 @@ class TimeField(DateTimeCheckMixin, Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8106140+00:00`
+- posted_at: `2026-11-09T23:44:50.2505600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2601,
     "symbol": "TimeField"
   },
-  "id": "bede8f6c-33f4-4d74-a5bc-2a6bb2b48dfe",
+  "id": "8f21fc32-ae96-494f-80f5-18b84dae91cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8106140+00:00"
+    "posted_at": "2026-11-09T23:44:50.2505600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "04094d40-68bc-4a5c-b9e9-f07f85999a50",
+  "subject_id": "0afe7f12-5426-460b-a77e-44ac16badc7a",
   "subject_name": "django/db/models/fields/__init__::TimeField",
   "tags": [
     "entity:class"

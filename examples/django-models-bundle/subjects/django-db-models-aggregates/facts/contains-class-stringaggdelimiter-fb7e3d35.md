@@ -1,6 +1,6 @@
 # Fact fb7e3d35
 
-Store id: fbed68e2-50bc-414d-8af1-db1fd39c19fb
+Store id: 4817d4c7-0c58-4f96-8f1f-242d098e0d27
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class StringAggDelimiter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fbed68e2-50bc-414d-8af1-db1fd39c19fb",
+  "id": "4817d4c7-0c58-4f96-8f1f-242d098e0d27",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "StringAggDelimiter"
       },
       "rel": "contains",
-      "target": "f842e3c3-4488-4483-b399-d11ff740215e"
+      "target": "90f5a6ea-1bb8-4610-ba74-087ed94dd712"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

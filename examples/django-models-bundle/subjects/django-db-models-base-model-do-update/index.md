@@ -1,11 +1,11 @@
 # django/db/models/base::Model._do_update
 
-- Subject: django/db/models/base::Model._do_update (id `5b54c104-a857-4b64-8458-9c006c3bc759`)
+- Subject: django/db/models/base::Model._do_update (id `638c7ef0-f591-4d16-b123-3c77e79cf843`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

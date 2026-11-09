@@ -1,11 +1,11 @@
 # django/db/models/fields/generated::GeneratedField._check_supported
 
-- Subject: django/db/models/fields/generated::GeneratedField._check_supported (id `b236c3e4-057c-4da1-b2c0-a534e05a6ba7`)
+- Subject: django/db/models/fields/generated::GeneratedField._check_supported (id `011b4732-a1cf-4bef-ab44-e2f48acc9d2f`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

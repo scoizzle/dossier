@@ -1,10 +1,10 @@
 # django/db/models/manager
 
-- Subject: django/db/models/manager (id `5e85a5f7-e460-4775-bcc8-e7045c95860f`)
+- Subject: django/db/models/manager (id `dc0aeb12-8c7a-413b-aab2-e5de5c51b999`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 70 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

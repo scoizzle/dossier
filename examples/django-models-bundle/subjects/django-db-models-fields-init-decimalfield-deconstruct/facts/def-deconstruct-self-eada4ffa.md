@@ -1,6 +1,6 @@
 # Fact eada4ffa
 
-Store id: cc1218e7-fa47-4d75-b1cd-7853692a6bf4
+Store id: a7bd9e40-f9b4-4f34-9812-a29f53d438c2
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6333600+00:00`
+- posted_at: `2026-11-09T23:44:50.1198660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1882,
     "symbol": "DecimalField.deconstruct"
   },
-  "id": "cc1218e7-fa47-4d75-b1cd-7853692a6bf4",
+  "id": "a7bd9e40-f9b4-4f34-9812-a29f53d438c2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6333600+00:00"
+    "posted_at": "2026-11-09T23:44:50.1198660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c449debb-7967-423c-b37e-1b3bc14b17eb",
+  "subject_id": "ac6e80e8-5f4d-4f5d-85e1-0dae9353c8b8",
   "subject_name": "django/db/models/fields/__init__::DecimalField.deconstruct",
   "tags": [
     "entity:method"

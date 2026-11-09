@@ -1,6 +1,6 @@
 # Fact a98342a7
 
-Store id: 1dfc7f33-4aa6-45a3-af42-dce863f7e596
+Store id: 4d7aae9f-b593-431b-9f17-ee38a2a5e4cf
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FetchPeers
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2320950+00:00`
+- posted_at: `2026-11-09T23:44:49.8213950+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1dfc7f33-4aa6-45a3-af42-dce863f7e596",
+  "id": "4d7aae9f-b593-431b-9f17-ee38a2a5e4cf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2320950+00:00"
+    "posted_at": "2026-11-09T23:44:49.8213950+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FetchPeers"
       },
       "rel": "contains",
-      "target": "cd72d1f5-6ea5-475b-beb5-f2f102350e1b"
+      "target": "780864d2-9273-4ee7-b3f0-dae3fd60b3c5"
     }
   ],
   "status": "live",
-  "subject_id": "f8e0e3b5-43b0-4f06-860b-a7321ec7819a",
+  "subject_id": "702ebbab-e2d3-4f56-b7b2-7525b2ae3fde",
   "subject_name": "django/db/models/fetch_modes",
   "tags": [
     "entity:class"

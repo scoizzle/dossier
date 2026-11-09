@@ -1,10 +1,10 @@
 # docs/misc/design-philosophies
 
-- Subject: docs/misc/design-philosophies (id `eb560598-7f17-49c1-937c-ca479eaf837f`)
+- Subject: docs/misc/design-philosophies (id `623834e8-a118-4a59-8c1d-f2d694f4bd69`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3577 tokens
-- Facts shown: 104 of 106
+- Used: 3631 tokens
+- Facts shown: 106 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -52,6 +52,8 @@
 - [aaf7ca98] Encourage best practices ------------------------
 - [930bb42f] Every distinct concept and/or piece of data should live in one, and only one, place. Redundancy is bad. Normalization is good.
 - [2d118164] Every object should be able to access every related object, systemwide. This access should work both ways.
+- [9a677d9e7caf4a3f] Explicit is better than implicit --------------------------------
+- [9a677d9e7caf4a3f-2] Explicit is better than implicit --------------------------------
 - [b2aa54db7fd8deb1] Extensibility -------------
 - [b2aa54db7fd8deb1-2] Extensibility -------------
 - [31ab1a81] Fields shouldn't assume certain behaviors based solely on the name of the field. This requires too much knowledge of the system and is prone to errors. Instead, behaviors should be based on keyword arguments and, in some cases, on the type of the field.

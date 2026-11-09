@@ -1,10 +1,10 @@
 # docs/intro/install
 
-- Subject: docs/intro/install (id `d18e4582-b344-441e-98d1-85cd2b7ab54a`)
+- Subject: docs/intro/install (id `4fc038e6-4360-4f72-8430-dc1a73ca152b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 946 tokens
-- Facts shown: 25 of 25
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 

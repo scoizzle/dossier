@@ -1,6 +1,6 @@
 # Fact 13bdfc4c
 
-Store id: 85701e59-2230-4cb6-a76e-e456ae1ae55f
+Store id: 683b2ef1-5991-4e3a-87e3-635a9d5abcc0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_allowing_files_or_folders(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6742330+00:00`
+- posted_at: `2026-11-09T23:44:50.1463890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2048,
     "symbol": "FilePathField._check_allowing_files_or_folders"
   },
-  "id": "85701e59-2230-4cb6-a76e-e456ae1ae55f",
+  "id": "683b2ef1-5991-4e3a-87e3-635a9d5abcc0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6742330+00:00"
+    "posted_at": "2026-11-09T23:44:50.1463890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5f5fae30-13dc-4e89-a5a3-36c82946ffee",
+  "subject_id": "0d961ce3-e6ac-4205-b768-fce5a3ca6a8c",
   "subject_name": "django/db/models/fields/__init__::FilePathField._check_allowing_files_or_folders",
   "tags": [
     "entity:method"

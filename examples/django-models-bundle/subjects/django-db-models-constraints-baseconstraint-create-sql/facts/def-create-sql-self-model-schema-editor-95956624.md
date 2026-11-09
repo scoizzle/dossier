@@ -1,6 +1,6 @@
 # Fact 95956624
 
-Store id: 25a32443-ea97-4009-96f9-8d4259cfd856
+Store id: 5c8cd57d-36ea-4642-b52b-48f9cc1ba5b9
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1429420+00:00`
+- posted_at: `2026-11-09T23:44:48.7725200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 46,
     "symbol": "BaseConstraint.create_sql"
   },
-  "id": "25a32443-ea97-4009-96f9-8d4259cfd856",
+  "id": "5c8cd57d-36ea-4642-b52b-48f9cc1ba5b9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1429420+00:00"
+    "posted_at": "2026-11-09T23:44:48.7725200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6058f6ef-5a4b-4b11-9182-d8532af767d8",
+  "subject_id": "327aafea-29b3-4655-9241-42ef763c42bc",
   "subject_name": "django/db/models/constraints::BaseConstraint.create_sql",
   "tags": [
     "entity:method"

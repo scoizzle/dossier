@@ -1,6 +1,6 @@
 # Fact b7986a1f
 
-Store id: e510837d-735d-4df6-af96-5d43496b0205
+Store id: 7518fcaa-e4ac-4972-8778-c229438a935f
 
 ## Text
 
@@ -20,7 +20,7 @@ def relabeled_clone(self, change_map)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6257430+00:00`
+- posted_at: `2026-11-09T23:44:59.7385280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 225,
     "symbol": "WhereNode.relabeled_clone"
   },
-  "id": "e510837d-735d-4df6-af96-5d43496b0205",
+  "id": "7518fcaa-e4ac-4972-8778-c229438a935f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6257430+00:00"
+    "posted_at": "2026-11-09T23:44:59.7385280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "afdeccc8-6f04-4e25-988c-31922b4afa99",
+  "subject_id": "5e830a83-d4b1-417c-ab1c-f833b14e3261",
   "subject_name": "django/db/models/sql/where::WhereNode.relabeled_clone",
   "tags": [
     "entity:method"

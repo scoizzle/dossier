@@ -1,6 +1,6 @@
 # Fact fb7ec539
 
-Store id: 1c5b3dd6-5fa3-4306-adea-93ba038c74cf
+Store id: 9c7c17dc-939b-47a2-9e97-ff0383be03b8
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_ordering(self, *ordering)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0674570+00:00`
+- posted_at: `2026-11-09T23:44:58.9817600+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2326,
     "symbol": "Query.add_ordering"
   },
-  "id": "1c5b3dd6-5fa3-4306-adea-93ba038c74cf",
+  "id": "9c7c17dc-939b-47a2-9e97-ff0383be03b8",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0674570+00:00"
+    "posted_at": "2026-11-09T23:44:58.9817600+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6dfc475b-0177-498b-84b4-03b7424ecd5a",
+  "subject_id": "dae89c10-6d29-4495-8c9a-a9bf85e6efaf",
   "subject_name": "django/db/models/sql/query::Query.add_ordering",
   "tags": [
     "entity:method"

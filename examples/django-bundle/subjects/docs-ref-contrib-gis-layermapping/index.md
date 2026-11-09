@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/layermapping
 
-- Subject: docs/ref/contrib/gis/layermapping (id `9b450dba-45f0-4976-8b34-3ee151f359e4`)
+- Subject: docs/ref/contrib/gis/layermapping (id `ff8409bb-a5cd-41cd-a269-170373bd8204`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2669 tokens
-- Facts shown: 54 of 54
+- Facts shown: 54 facts
 - Conflicts: 0
 - Gaps: 0
 

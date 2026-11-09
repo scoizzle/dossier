@@ -1,6 +1,6 @@
 # Fact 3a9b1b78
 
-Store id: 878365b8-6652-4abd-b080-07608e688743
+Store id: 1a2c2e7d-c522-4f41-92a9-6bc2500d23d1
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5848610+00:00`
+- posted_at: `2026-11-09T23:44:50.0935190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1558,
     "symbol": "DateField.contribute_to_class"
   },
-  "id": "878365b8-6652-4abd-b080-07608e688743",
+  "id": "1a2c2e7d-c522-4f41-92a9-6bc2500d23d1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5848610+00:00"
+    "posted_at": "2026-11-09T23:44:50.0935190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8adc06ba-31af-44a8-b8f1-963adbe6a922",
+  "subject_id": "067780c6-d12c-495a-8d80-bd8d618b6d07",
   "subject_name": "django/db/models/fields/__init__::DateField.contribute_to_class",
   "tags": [
     "entity:method"

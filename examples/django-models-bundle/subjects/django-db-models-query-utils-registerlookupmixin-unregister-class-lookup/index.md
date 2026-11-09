@@ -1,11 +1,11 @@
 # django/db/models/query_utils::RegisterLookupMixin._unregister_class_lookup
 
-- Subject: django/db/models/query_utils::RegisterLookupMixin._unregister_class_lookup (id `d6287ced-55cb-4eaf-8e23-b868b3e2f50b`)
+- Subject: django/db/models/query_utils::RegisterLookupMixin._unregister_class_lookup (id `40afaf8f-9b49-4cec-a534-d26cbcd3c6ad`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

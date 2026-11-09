@@ -1,6 +1,6 @@
 # Fact 0ca910e5
 
-Store id: 850f3212-4ce0-4342-ae34-61a27cf98ef4
+Store id: e5fe7241-fc37-41a0-8447-e1191b36cc0f
 
 ## Text
 
@@ -20,7 +20,7 @@ class NullIf(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0109360+00:00`
+- posted_at: `2026-11-09T23:44:53.1860080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 165,
     "symbol": "NullIf"
   },
-  "id": "850f3212-4ce0-4342-ae34-61a27cf98ef4",
+  "id": "e5fe7241-fc37-41a0-8447-e1191b36cc0f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0109360+00:00"
+    "posted_at": "2026-11-09T23:44:53.1860080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "520d26c5-a175-4c85-9ae6-68001a6d826c",
+  "subject_id": "eca69c14-3318-47ac-ba1a-d4b1988cc6bb",
   "subject_name": "django/db/models/functions/comparison::NullIf",
   "tags": [
     "entity:class"

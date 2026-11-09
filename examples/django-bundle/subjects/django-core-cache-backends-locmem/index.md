@@ -1,10 +1,10 @@
 # django/core/cache/backends/locmem
 
-- Subject: django/core/cache/backends/locmem (id `7e669686-19fa-46b2-9a62-049a24dd1566`)
+- Subject: django/core/cache/backends/locmem (id `c099fae0-fea6-4e34-9689-93c415df1302`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 983 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

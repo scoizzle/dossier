@@ -1,6 +1,6 @@
 # Fact 1f986879
 
-Store id: 54cd0720-b890-4bf9-aead-8e3c001be445
+Store id: 4cea4d46-8be3-45d7-b527-30113a83c444
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SlugField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "54cd0720-b890-4bf9-aead-8e3c001be445",
+  "id": "4cea4d46-8be3-45d7-b527-30113a83c444",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SlugField"
       },
       "rel": "contains",
-      "target": "73eba36e-8ec4-4539-a90f-2850d39e7a64"
+      "target": "f5120c3b-12df-48b0-a347-3cd593257baa"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

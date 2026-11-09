@@ -1,6 +1,6 @@
 # Fact 81e4cc79
 
-Store id: 68ff3ba1-2eb0-4c0e-ab8f-24ec868d1dae
+Store id: 11cd0146-a68b-4dca-a0be-d18aa46c55d0
 
 ## Text
 
@@ -20,7 +20,7 @@ def delete(self, using=None, keep_parents=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7489970+00:00`
+- posted_at: `2026-11-09T23:44:48.5373270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1324,
     "symbol": "Model.delete"
   },
-  "id": "68ff3ba1-2eb0-4c0e-ab8f-24ec868d1dae",
+  "id": "11cd0146-a68b-4dca-a0be-d18aa46c55d0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7489970+00:00"
+    "posted_at": "2026-11-09T23:44:48.5373270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "251f7535-a3d3-4eec-85ff-362161068a5e",
+  "subject_id": "8499a6ba-1c18-434e-9ef7-b2651473a5d5",
   "subject_name": "django/db/models/base::Model.delete",
   "tags": [
     "entity:method"

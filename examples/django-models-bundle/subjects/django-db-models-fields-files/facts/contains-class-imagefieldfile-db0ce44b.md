@@ -1,6 +1,6 @@
 # Fact db0ce44b
 
-Store id: 0484e14c-389c-48f5-a5f8-aa8531e19702
+Store id: 91653941-d17f-42b9-b3e5-8292051f4ab8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ImageFieldFile
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4465340+00:00`
+- posted_at: `2026-11-09T23:44:50.6886790+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0484e14c-389c-48f5-a5f8-aa8531e19702",
+  "id": "91653941-d17f-42b9-b3e5-8292051f4ab8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
+    "posted_at": "2026-11-09T23:44:50.6886790+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ImageFieldFile"
       },
       "rel": "contains",
-      "target": "8fa7fffd-b1d6-4784-a1d6-0d4e9cadf82f"
+      "target": "859a8025-f0cb-4f17-b97b-e1807744b092"
     }
   ],
   "status": "live",
-  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
+  "subject_id": "a957c718-7162-4a08-a413-08d802f7b159",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

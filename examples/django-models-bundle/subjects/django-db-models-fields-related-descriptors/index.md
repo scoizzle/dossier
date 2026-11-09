@@ -1,10 +1,10 @@
 # django/db/models/fields/related_descriptors
 
-- Subject: django/db/models/fields/related_descriptors (id `468ed079-81c3-4570-9307-d21a1d74776a`)
+- Subject: django/db/models/fields/related_descriptors (id `266dc5c5-9f24-462d-becd-263287321fdc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 215 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact bdb0fcaa
 
-Store id: e8a35950-e1df-4579-ae4f-1d34a4972f83
+Store id: 0c499201-76d6-4fc8-990c-2695897bba0a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ConcatPair
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e8a35950-e1df-4579-ae4f-1d34a4972f83",
+  "id": "0c499201-76d6-4fc8-990c-2695897bba0a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ConcatPair"
       },
       "rel": "contains",
-      "target": "df6facfb-ff43-4b1a-9d4f-82b22ed3eaba"
+      "target": "7b1b84a8-a012-4803-bafd-f795a8e04c40"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

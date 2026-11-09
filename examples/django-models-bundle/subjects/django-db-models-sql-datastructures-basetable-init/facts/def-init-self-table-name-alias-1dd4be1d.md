@@ -1,6 +1,6 @@
 # Fact 1dd4be1d
 
-Store id: 36822baf-70c0-4bb2-b520-ee10575ebde1
+Store id: bb58b574-15fc-472a-a077-879be3349ada
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, table_name, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4846650+00:00`
+- posted_at: `2026-11-09T23:44:58.2532910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 193,
     "symbol": "BaseTable.__init__"
   },
-  "id": "36822baf-70c0-4bb2-b520-ee10575ebde1",
+  "id": "bb58b574-15fc-472a-a077-879be3349ada",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4846650+00:00"
+    "posted_at": "2026-11-09T23:44:58.2532910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "04c842a6-61b8-4a61-b45c-b7dc91ff82ad",
+  "subject_id": "7b79f377-d250-42d6-bcbe-55d4666fa633",
   "subject_name": "django/db/models/sql/datastructures::BaseTable.__init__",
   "tags": [
     "entity:method"

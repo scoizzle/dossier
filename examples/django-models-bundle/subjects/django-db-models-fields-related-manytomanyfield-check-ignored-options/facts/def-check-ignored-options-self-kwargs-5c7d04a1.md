@@ -1,6 +1,6 @@
 # Fact 5c7d04a1
 
-Store id: 33033bfd-4737-4f92-aa89-662bb1c29750
+Store id: 7f8a5b4b-d1a8-4772-b1dd-414cbfe8efe5
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_ignored_options(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8351070+00:00`
+- posted_at: `2026-11-09T23:44:51.6363680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1558,
     "symbol": "ManyToManyField._check_ignored_options"
   },
-  "id": "33033bfd-4737-4f92-aa89-662bb1c29750",
+  "id": "7f8a5b4b-d1a8-4772-b1dd-414cbfe8efe5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8351070+00:00"
+    "posted_at": "2026-11-09T23:44:51.6363680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07fa4e3f-7ac3-4fbf-bc01-653b15b3600e",
+  "subject_id": "53171d74-0424-4389-b6d8-3478c89c11d7",
   "subject_name": "django/db/models/fields/related::ManyToManyField._check_ignored_options",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 86a989ab
 
-Store id: 47ce0ef1-e0a4-4eb7-8102-f262cd7a2c5a
+Store id: 508abcda-833f-40b6-a347-f9cb15218d80
 
 ## Text
 
@@ -20,7 +20,7 @@ class SQLInsertCompiler(SQLCompiler)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.9384320+00:00`
+- posted_at: `2026-11-09T23:44:57.6475970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1701,
     "symbol": "SQLInsertCompiler"
   },
-  "id": "47ce0ef1-e0a4-4eb7-8102-f262cd7a2c5a",
+  "id": "508abcda-833f-40b6-a347-f9cb15218d80",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.9384320+00:00"
+    "posted_at": "2026-11-09T23:44:57.6475970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b8470818-59b1-41d5-8d41-a3a1c5e7bf67",
+  "subject_id": "8d7a6e8b-8777-4623-9672-986df04aec0c",
   "subject_name": "django/db/models/sql/compiler::SQLInsertCompiler",
   "tags": [
     "entity:class"

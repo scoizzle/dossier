@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Round
 
-- Subject: django/db/models/functions/math::Round (id `f44a428c-d350-4137-b158-d16059d41648`)
+- Subject: django/db/models/functions/math::Round (id `52fa71a0-3a1f-44b4-b322-c0da24d91bd1`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

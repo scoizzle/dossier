@@ -1,10 +1,10 @@
 # django/utils/hashable
 
-- Subject: django/utils/hashable (id `8644ebd9-7210-406b-abec-41ef0c68f433`)
+- Subject: django/utils/hashable (id `70e65ea1-76e7-48af-95d9-298c54ed1e09`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 176 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

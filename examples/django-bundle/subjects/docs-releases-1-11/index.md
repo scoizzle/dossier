@@ -1,10 +1,10 @@
 # docs/releases/1.11
 
-- Subject: docs/releases/1.11 (id `defbce31-fa7d-48ac-9bf1-4726dfcc40a9`)
+- Subject: docs/releases/1.11 (id `05135885-86a5-45a1-afe5-d578155ea9fe`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 11566 tokens
-- Facts shown: 233 of 235
+- Used: 11609 tokens
+- Facts shown: 235 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - def url(self): return reverse("guitarist_detail", args=[self.slug]) [2f6c5913]
 - TIME_ZONE = get_localzone().zone [1aa54f84]
 - class MyModel(models.Model): ... [9b587d1ae68976c0]
+- class MyModel(models.Model): ... [9b587d1ae68976c0-2]
 - from django.db import models [4af926756c29efa6-41]
 - from django.db import models from django.urls import reverse [80b3b4640d5882cf-3]
 - from tzlocal import get_localzone [4bfbe5bd]
@@ -28,18 +29,17 @@
 - * :class:`~django.middleware.http.ConditionalGetMiddleware` no longer sets the ``Date`` header as web servers set that header. It also no longer sets the ``Content-Length`` header as this is now done by :class:`~django.middleware.common.CommonMiddleware`. [d14e76c1]
 - * :class:`~django.middleware.http.ConditionalGetMiddleware` now adds the ``ETag`` header to responses. [25d4178e]
 - * :djadmin:`inspectdb` no longer calls ``DatabaseIntrospection.get_indexes()`` which is deprecated. Custom database backends should ensure all types of indexes are returned by ``DatabaseIntrospection.get_constraints()``. [b30b38e1]
-- * :func:`~django.contrib.auth.get_user_model` can now be called at import time, even in modules that define models. [aab751aa]
-- *April 4, 2017* [7afc10e3cb48f02d-2]
+- * :meth:`~django.utils.safestring.mark_safe` can now be used as a decorator. [0c68ade3]
 
 ## All facts
 
 - [19352101] * :func:`~django.contrib.auth.authenticate` now passes a ``request`` argument to the ``authenticate()`` method of authentication backends. Support for methods that don't accept ``request`` as the first positional argument will be removed in Django 2.1.
+- [aab751aa] * :func:`~django.contrib.auth.get_user_model` can now be called at import time, even in modules that define models.
 - [7a7f4edc] * :func:`~django.contrib.auth.update_session_auth_hash` now rotates the session key to allow a password change to invalidate stolen session cookies.
 - [790b1520] * :func:`~django.utils.cache.patch_response_headers` no longer adds a ``Last-Modified`` header. According to the :rfc:`7234#section-4.2.2`, this header is useless alongside other caching headers that provide an explicit expiration time, e.g. ``Expires`` or ``Cache-Control``. :class:`~django.middleware.cache.UpdateCacheMiddleware` and :func:`~django.utils.cache.add_never_cache_headers` call ``patch_response_headers()`` and therefore are also affected by this change.
 - [2db91606] * :meth:`.QuerySet.iterator` now uses `server-side cursors`_ on PostgreSQL. This feature transfers some of the worker memory load (used to hold query results) to the database and might increase database memory usage.
 - [63afd8ae] * :meth:`RelatedManager.add() <django.db.models.fields.related.RelatedManager.add>`, :meth:`~django.db.models.fields.related.RelatedManager.remove`, :meth:`~django.db.models.fields.related.RelatedManager.clear`, and :meth:`~django.db.models.fields.related.RelatedManager.set` now clear the ``prefetch_related()`` cache.
 - [69902b36] * :meth:`~django.apps.AppConfig.get_model` and :meth:`~django.apps.AppConfig.get_models` now raise :exc:`~django.core.exceptions.AppRegistryNotReady` if they're called before models of all applications have been loaded. Previously they only required the target application's models to be loaded and thus could return models without all their relations set up. If you need the old behavior of ``get_model()``, set the ``require_ready`` argument to ``False``.
-- [0c68ade3] * :meth:`~django.utils.safestring.mark_safe` can now be used as a decorator.
 - [a0dbf1cd] * :setting:`ALLOWED_HOSTS` validation is no longer disabled when running tests. If your application includes tests with custom host names, you must include those host names in :setting:`ALLOWED_HOSTS`. See :ref:`topics-testing-advanced-multiple-hosts`.
 - [22cb5a7c] * Added :class:`~django.core.validators.FileExtensionValidator` to validate file extensions and :data:`~django.core.validators.validate_image_file_extension` to validate image files.
 - [3dc5afa0] * Added :meth:`.DiscoverRunner.get_test_runner_kwargs` to allow customizing the keyword arguments passed to the test runner.
@@ -159,6 +159,7 @@
 - [ed12a5c5] * ``django.contrib.postgres.fields.JSONField`` accepts a new ``encoder`` parameter to specify a custom class to encode data types not supported by the standard encoder.
 - [86144082] * ``django.test.runner.setup_databases()`` is moved to :func:`django.test.utils.setup_databases`. The old location is deprecated.
 - [b9510184] * ``django.utils.translation.string_concat()`` is deprecated in favor of :func:`django.utils.text.format_lazy`. ``string_concat(*strings)`` can be replaced by ``format_lazy('{}' * len(strings), *strings)``.
+- [7afc10e3cb48f02d-2] *April 4, 2017*
 - [4ae02d47] .. _backwards-incompatible-1.11:
 - [4eeb89f0] .. _deprecated-features-1.11:
 - [a3e5e9aa] .. _liveservertestcase-port-zero-change:
@@ -168,6 +169,7 @@
 - [9208af79aedaac2a-2] :mod:`django.contrib.auth` ~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [3bb227b6] :mod:`django.contrib.contenttypes` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [0d7f305806da573d-3] :mod:`django.contrib.gis` -------------------------
+- [c10501bb55a2bce3-2] :mod:`django.contrib.gis` ~~~~~~~~~~~~~~~~~~~~~~~~~
 - [796fd654b8a44e4f-2] :mod:`django.contrib.postgres` ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [49bd3e4d] :mod:`django.contrib.staticfiles` ---------------------------------
 - [e3c8fa42] ========================= Django 1.11 release notes =========================

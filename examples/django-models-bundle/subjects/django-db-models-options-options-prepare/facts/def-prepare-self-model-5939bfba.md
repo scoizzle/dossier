@@ -1,6 +1,6 @@
 # Fact 5939bfba
 
-Store id: e567eef1-d2c7-401d-bec7-299df3dca688
+Store id: 47ef3e74-f6fd-4b01-a196-32a74c1a098f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prepare(self, model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9230340+00:00`
+- posted_at: `2026-11-09T23:44:55.4854550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 292,
     "symbol": "Options._prepare"
   },
-  "id": "e567eef1-d2c7-401d-bec7-299df3dca688",
+  "id": "47ef3e74-f6fd-4b01-a196-32a74c1a098f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9230340+00:00"
+    "posted_at": "2026-11-09T23:44:55.4854550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "16ab8d27-0801-4c44-baea-e15072bd6952",
+  "subject_id": "304b3877-dcb3-49b0-9a59-5ad286cb1467",
   "subject_name": "django/db/models/options::Options._prepare",
   "tags": [
     "entity:method"

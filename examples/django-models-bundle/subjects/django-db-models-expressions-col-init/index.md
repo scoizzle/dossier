@@ -1,11 +1,11 @@
 # django/db/models/expressions::Col.__init__
 
-- Subject: django/db/models/expressions::Col.__init__ (id `e7110d5e-f01b-4b45-9979-c027f3332d79`)
+- Subject: django/db/models/expressions::Col.__init__ (id `c8a65660-ebf0-4302-bd5a-4e1efaf5cca5`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/dates
 
-- Subject: django/utils/dates (id `1f4ac074-d143-4ff7-9f4a-41bb293cd0a6`)
+- Subject: django/utils/dates (id `13ed7fc5-4763-4bb9-ba57-1168cb7bab76`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 514 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

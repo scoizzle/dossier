@@ -1,6 +1,6 @@
 # Fact 239066ed
 
-Store id: 5cbba8f9-fc02-4d21-ab04-644324420d7c
+Store id: 51727f4a-0b17-4e8e-90ec-6703d92b85ac
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class CompositeAttribute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1501670+00:00`
+- posted_at: `2026-11-09T23:44:50.5014100+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5cbba8f9-fc02-4d21-ab04-644324420d7c",
+  "id": "51727f4a-0b17-4e8e-90ec-6703d92b85ac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1501670+00:00"
+    "posted_at": "2026-11-09T23:44:50.5014100+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "CompositeAttribute"
       },
       "rel": "contains",
-      "target": "f09abc9a-4173-4d00-aa28-19dc705ec3b0"
+      "target": "9c35b70c-0455-4804-81de-88ac760f5c3c"
     }
   ],
   "status": "live",
-  "subject_id": "491ed372-374e-4a6d-8e01-91b4c3f9a27f",
+  "subject_id": "b8232277-ea28-4cdf-8d6a-026269c8b135",
   "subject_name": "django/db/models/fields/composite",
   "tags": [
     "entity:class"

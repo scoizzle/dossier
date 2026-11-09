@@ -1,10 +1,10 @@
 # django/core/mail/exceptions
 
-- Subject: django/core/mail/exceptions (id `99910a3e-babb-4f12-944c-bd508ce46a5f`)
+- Subject: django/core/mail/exceptions (id `17017a4c-4335-4c59-b3ed-8b08911ac9af`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 187 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

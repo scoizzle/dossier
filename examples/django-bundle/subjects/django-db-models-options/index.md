@@ -1,10 +1,10 @@
 # django/db/models/options
 
-- Subject: django/db/models/options (id `1072240a-cac5-4718-b9ef-ff282066dde5`)
+- Subject: django/db/models/options (id `45db1df3-0e2c-4aba-983d-5f3485069fad`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8340 tokens
-- Facts shown: 99 of 102
+- Used: 8589 tokens
+- Facts shown: 102 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -35,6 +35,7 @@
 - [7a7ea5fc] Private API intended only to be used by Django itself; get_fields() combined with filtering of field properties is the public API for obtaining this field list. """
 - [d6b0499b] Private API intended only to be used by Django itself; get_fields() combined with filtering of field properties is the public API for obtaining this field list. """ all_related_fields = self._get_fields( forward=False, reverse=True, include_hidden=True ) return make_immutable_fields_list( "related_objects", ( obj for obj in all_related_fields if not obj.hidden or obj.field.many_to_many ), )
 - [8e62b04c] Private API intended only to be used by Django itself; get_fields() combined with filtering of field properties is the public API for obtaining this field list. """ return make_immutable_fields_list( "concrete_fields", (f for f in self.fields if f.concrete) )
+- [7b94533e] Private API intended only to be used by Django itself; get_fields() combined with filtering of field properties is the public API for obtaining this field list. """ return make_immutable_fields_list( "local_concrete_fields", (f for f in self.local_fields if f.concrete) )
 - [7c9ee49b] Private API intended only to be used by Django itself; get_fields() combined with filtering of field properties is the public API for obtaining this list. """ return make_immutable_fields_list( "many_to_many", ( f for f in self._get_fields(reverse=False) if f.is_relation and f.many_to_many ), )
 - [837796ac] Return None if the model isn't an ancestor of this one. """ if ancestor in self.parents: return self.parents[ancestor] for parent in self.parents: # Tries to get a link field from the immediate parent parent_link = parent._meta.get_ancestor_link(ancestor) if parent_link: # In case of a proxied model, the first link # of the chain to the ancestor is that parent # links return self.parents[parent] or parent_link
 - [975c79fc] all_models = self.apps.get_models(include_auto_created=True) for model in all_models: opts = model._meta # Abstract model's fields are copied to child models, hence we will # see the fields from the child models. if opts.abstract: continue fields_with_relations = ( f for f in opts._get_fields(reverse=False, include_parents=False) if f.is_relation and f.related_model is not None ) for f in fields_with_relations: if not isinstance(f.remote_field.model, str): remote_label = f.remote_field.model._meta.concrete_model._meta.label related_objects_graph[remote_label].append(f)
@@ -44,6 +45,7 @@
 - [47a968d6] fields = [] # Recursively call _get_fields() on each parent, with the same # options provided in this call. if include_parents is not False: # In diamond inheritance it is possible that we see the same model # from two different routes. In that case, avoid adding fields from # the same parent again. parent_fields = set() for parent in self.parents: if ( parent._meta.concrete_model != self.concrete_model and include_parents == PROXY_PARENTS ): continue for obj in parent._meta._get_fields( forward=forward, reverse=reverse, include_parents=include_parents, include_hidden=include_hidden, topmost_call=False, ): if ( not getattr(obj, "parent_link", False) or obj.model == self.concrete_model ) and obj not in parent_fields: fields.append(obj) parent_fields.add(obj)
 - [a8396264] for model in all_models: # Set the relation_tree using the internal __dict__. In this way # we avoid calling the cached property. In attribute lookup, # __dict__ takes precedence over a data descriptor (such as # @cached_property). This means that the _meta._relation_tree is # only called if related_objects is not in __dict__. related_objects = related_objects_graph[ model._meta.concrete_model._meta.label ] model._meta.__dict__["_relation_tree"] = related_objects # It seems it is possible that self is not in all_models, so guard # against that with default for get(). return self.__dict__.get("_relation_tree", EMPTY_RELATION_TREE)
 - [09875859] if base_manager_name: try: return self.managers_map[base_manager_name] except KeyError: raise ValueError( "%s has no manager named %r" % ( self.object_name, base_manager_name, ) )
+- [89e57e89] if default_manager_name: try: return self.managers_map[default_manager_name] except KeyError: raise ValueError( "%s has no manager named %r" % ( self.object_name, default_manager_name, ) )
 - [fbcab7b0] if forward: fields += self.local_fields fields += self.local_many_to_many # Private fields are recopied to each child model, and they get a # different model as field.model in each child. Hence we have to # add the private fields separately from the topmost call. If we # did this recursively similar to local_fields, we would get field # instances with field.model != self.model. if topmost_call: fields += self.private_fields
 - [74d61f3a] if reverse and not self.proxy: # Tree is computed once and cached until the app cache is expired. # It is composed of a list of fields pointing to the current model # from other models. all_fields = self._relation_tree for field in all_fields: # If hidden fields should be included or the relation is not # intentionally hidden, add to the fields dict. if include_hidden or not field.remote_field.hidden: fields.append(field.remote_field)
 - [dd056e42] if self.managers: return self.managers[0]
@@ -66,6 +68,7 @@
 - [1d451869] @cached_property def db_returning_fields(self): """ Private API intended only to be used by Django itself. Fields to be returned after a database insert. """ return [ field for field in self._get_fields( forward=True, reverse=False, include_parents=PROXY_PARENTS ) if getattr(field, "db_returning", False) ]
 - [94467d01] @cached_property def default_manager(self): default_manager_name = self.default_manager_name if not default_manager_name and not self.local_managers: # Get the first parent's default_manager_name if there's one. for parent in self.model.mro()[1:]: if hasattr(parent, "_meta"): default_manager_name = parent._meta.default_manager_name break
 - [aa957a43] @cached_property def fields(self): """ Return a list of all forward fields on the model and its parents, excluding ManyToManyFields.
+- [4378e451] @cached_property def fields_map(self): res = {} fields = self._get_fields(forward=False, include_hidden=True) for field in fields: res[field.name] = field # Due to the way Django's internals work, get_field() should also # be able to fetch a field by attname. In the case of a concrete # field with relation, includes the *_id name too try: res[field.attname] = field except AttributeError: pass return res
 - [a120714d] @cached_property def local_concrete_fields(self): """ Return a list of all concrete fields on the model.
 - [f5677e36] @cached_property def managers(self): managers = [] seen_managers = set() bases = (b for b in self.model.mro() if hasattr(b, "_meta")) for depth, base in enumerate(bases): for manager in base._meta.local_managers: if manager.name in seen_managers: continue
 - [c289fdec] @cached_property def managers_map(self): return {manager.name: manager for manager in self.managers}

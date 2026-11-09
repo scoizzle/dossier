@@ -1,6 +1,6 @@
 # Fact 19054178
 
-Store id: 22d53e9d-50bf-4776-8015-b9ea846108c1
+Store id: 7f193e61-448a-4032-b4bc-9aaadfe6f3a7
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_fix_default_value(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8147160+00:00`
+- posted_at: `2026-11-09T23:44:50.2536310+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2624,
     "symbol": "TimeField._check_fix_default_value"
   },
-  "id": "22d53e9d-50bf-4776-8015-b9ea846108c1",
+  "id": "7f193e61-448a-4032-b4bc-9aaadfe6f3a7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8147160+00:00"
+    "posted_at": "2026-11-09T23:44:50.2536310+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8f9c85b0-fed3-4e70-9204-45fe412a7d9f",
+  "subject_id": "4cbf5215-af01-470c-864a-6e92c497b12e",
   "subject_name": "django/db/models/fields/__init__::TimeField._check_fix_default_value",
   "tags": [
     "entity:method"

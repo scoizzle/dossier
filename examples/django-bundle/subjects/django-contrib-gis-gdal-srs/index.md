@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/srs
 
-- Subject: django/contrib/gis/gdal/srs (id `bce749d0-9226-40ed-a02c-43229a64db9e`)
+- Subject: django/contrib/gis/gdal/srs (id `2d60db4f-1740-4308-806e-47f4a39e62b0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3079 tokens
-- Facts shown: 48 of 51
+- Used: 3228 tokens
+- Facts shown: 51 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,6 +26,7 @@
 
 ## All facts
 
+- [77596921] @property def angular_units(self): "Return the value of the angular units." units, name = capi.angular_units(self.ptr, byref(c_char_p())) return units
 - [f43cef22] @property def inverse_flattening(self): "Return the Inverse Flattening for this Spatial Reference." return capi.invflattening(self.ptr, byref(c_int()))
 - [bc0d704f] @property def linear_units(self): "Return the value of the linear units." units, name = capi.linear_units(self.ptr, byref(c_char_p())) return units
 - [281560e5] @property def local(self): """ Return True if this SpatialReference is local (root node is LOCAL_CS). """ return bool(capi.islocal(self.ptr))
@@ -33,6 +34,7 @@
 - [d9886656] @property def proj(self): """Return the PROJ representation for this Spatial Reference.""" return capi.to_proj(self.ptr, byref(c_char_p()))
 - [96c870ea] @property def projected(self): """ Return True if this SpatialReference is a projected coordinate system (root node is PROJCS). """ return bool(capi.isprojected(self.ptr))
 - [ce28284e] @property def semi_major(self): "Return the Semi Major Axis for this Spatial Reference." return capi.semi_major(self.ptr, byref(c_int()))
+- [7f88d0e4] @property def semi_minor(self): "Return the Semi Minor Axis for this Spatial Reference." return capi.semi_minor(self.ptr, byref(c_int()))
 - [2cd9f0c5] @property def srid(self): "Return the SRID of top-level authority, or None if undefined." try: return int(self.auth_code(target=None)) except (TypeError, ValueError): return None
 - [4d3c79f0] @property def units(self): """ Return a 2-tuple of the units value and the units name. Automatically determine whether to return the linear or angular units. """ units, name = None, None if self.projected or self.local: units, name = capi.linear_units(self.ptr, byref(c_char_p())) elif self.geographic: units, name = capi.angular_units(self.ptr, byref(c_char_p())) if name is not None: name = force_str(name) return (units, name)
 - [89d9b525] @property def xml(self, dialect=""): "Return the XML representation of this Spatial Reference." return capi.to_xml(self.ptr, byref(c_char_p()), force_bytes(dialect))
@@ -42,6 +44,7 @@
 - [c82e7d37] def __str__(self): "Use 'pretty' WKT." return self.pretty_wkt
 - [878174ca] def __str__(self): return 'Transform from "%s" to "%s"' % (self._srs1_name, self._srs2_name)
 - [b7a576f8] def auth_code(self, target): "Return the authority code for the given string target node." return capi.get_auth_code( self.ptr, target if target is None else force_bytes(target) )
+- [bd4b391c] def auth_name(self, target): "Return the authority name for the given string target node." return capi.get_auth_name( self.ptr, target if target is None else force_bytes(target) )
 - [e96c2a36] def clone(self): "Return a clone of this SpatialReference object." return SpatialReference(capi.clone_srs(self.ptr), axis_order=self.axis_order)
 - [742de969] def from_esri(self): "Morph this SpatialReference from ESRI's format to EPSG." capi.morph_from_esri(self.ptr)
 - [ad831770] def identify_epsg(self): """ This method inspects the WKT of this SpatialReference, and will add EPSG authority nodes where an EPSG identifier is applicable. """ capi.identify_epsg(self.ptr)

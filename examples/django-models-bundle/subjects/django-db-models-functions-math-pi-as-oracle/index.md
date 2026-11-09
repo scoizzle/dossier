@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Pi.as_oracle
 
-- Subject: django/db/models/functions/math::Pi.as_oracle (id `4c81f301-2c8e-4487-8563-fa1e45bbc854`)
+- Subject: django/db/models/functions/math::Pi.as_oracle (id `cb77ac15-4e10-459c-a4fa-b76aa20ca145`)
 - Kind: method
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

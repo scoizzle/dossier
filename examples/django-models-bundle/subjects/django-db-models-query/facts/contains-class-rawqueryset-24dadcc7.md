@@ -1,6 +1,6 @@
 # Fact 24dadcc7
 
-Store id: 8017b60f-08ab-419d-b573-23ccf715151d
+Store id: 5f666e63-ad53-40eb-919f-374de6414210
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RawQuerySet
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "8017b60f-08ab-419d-b573-23ccf715151d",
+  "id": "5f666e63-ad53-40eb-919f-374de6414210",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RawQuerySet"
       },
       "rel": "contains",
-      "target": "d50e49db-87da-4fa4-b3e7-3a5120ac63dc"
+      "target": "7d538028-2402-474e-903d-a73cbd5918f4"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

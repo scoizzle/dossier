@@ -1,6 +1,6 @@
 # Fact 267caa5e
 
-Store id: 74d43307-ca8e-42c5-9636-8ff7a02c758b
+Store id: ed1d2e89-a357-41a7-aae2-75ed22f28777
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9268050+00:00`
+- posted_at: `2026-11-09T23:44:49.5863380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1500,
     "symbol": "ExpressionList.as_sql"
   },
-  "id": "74d43307-ca8e-42c5-9636-8ff7a02c758b",
+  "id": "ed1d2e89-a357-41a7-aae2-75ed22f28777",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9268050+00:00"
+    "posted_at": "2026-11-09T23:44:49.5863380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79e9256e-49d6-4770-ac50-3a7318cbfd8f",
+  "subject_id": "61bbc6c8-5dca-419f-bc38-98c8709596ac",
   "subject_name": "django/db/models/expressions::ExpressionList.as_sql",
   "tags": [
     "entity:method"

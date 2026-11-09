@@ -1,10 +1,10 @@
 # django/templatetags/l10n
 
-- Subject: django/templatetags/l10n (id `15bc0ebb-d673-4557-aab9-504ebd481a53`)
+- Subject: django/templatetags/l10n (id `eb56be23-30b1-4346-9368-417bfff8c629`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 389 tokens
-- Facts shown: 9 of 10
+- Used: 442 tokens
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -15,6 +15,7 @@
 - def __repr__(self): return "<%s>" % self.__class__.__name__ [791ef1e88e5bd5fd-3]
 - def render(self, context): old_setting = context.use_l10n context.use_l10n = self.use_l10n output = self.nodelist.render(context) context.use_l10n = old_setting return output [0d80f84d]
 - @register.filter(is_safe=False) def localize(value): """ Force a value to be rendered as a localized value. """ return str(formats.localize(value, use_l10n=True)) [24a69df9]
+- @register.filter(is_safe=False) def unlocalize(value): """ Force a value to be rendered as a non-localized value. """ return str(formats.localize(value, use_l10n=False)) [3210cce8]
 - @register.tag("localize") def localize_tag(parser, token): """ Force or prevents localization of values. [573fd8ad]
 - class LocalizeNode(Node): def __init__(self, nodelist, use_l10n): self.nodelist = nodelist self.use_l10n = use_l10n [b0092f6b]
 - from django.template import Library, Node, TemplateSyntaxError from django.utils import formats [6994c05c]

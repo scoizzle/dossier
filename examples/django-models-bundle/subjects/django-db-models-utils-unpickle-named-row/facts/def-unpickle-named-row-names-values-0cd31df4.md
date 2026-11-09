@@ -1,6 +1,6 @@
 # Fact 0cd31df4
 
-Store id: 01fc5115-bd40-460d-b57f-92934740a1c0
+Store id: e471e7d2-9a24-41ed-85a8-e5ad0f0c4444
 
 ## Text
 
@@ -20,7 +20,7 @@ def unpickle_named_row(names, values)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.9103660+00:00`
+- posted_at: `2026-11-09T23:45:00.0322550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 37,
     "symbol": "unpickle_named_row"
   },
-  "id": "01fc5115-bd40-460d-b57f-92934740a1c0",
+  "id": "e471e7d2-9a24-41ed-85a8-e5ad0f0c4444",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.9103660+00:00"
+    "posted_at": "2026-11-09T23:45:00.0322550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8038e670-20f5-41b8-8454-810262771598",
+  "subject_id": "b845d95c-745c-4b1b-8e79-54e14fa0244f",
   "subject_name": "django/db/models/utils::unpickle_named_row",
   "tags": [
     "entity:function"

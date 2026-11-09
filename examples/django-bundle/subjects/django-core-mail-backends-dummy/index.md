@@ -1,10 +1,10 @@
 # django/core/mail/backends/dummy
 
-- Subject: django/core/mail/backends/dummy (id `4c9f7e65-66b7-440c-baf7-76fe07d29b58`)
+- Subject: django/core/mail/backends/dummy (id `3a46427a-1ddc-4c44-a50a-3f2ab92dd3ad`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 87 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

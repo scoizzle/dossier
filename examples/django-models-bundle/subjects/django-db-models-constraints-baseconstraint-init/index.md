@@ -1,11 +1,11 @@
 # django/db/models/constraints::BaseConstraint.__init__
 
-- Subject: django/db/models/constraints::BaseConstraint.__init__ (id `40f1553e-07ed-4ec7-afa7-a684253a16a5`)
+- Subject: django/db/models/constraints::BaseConstraint.__init__ (id `12ed90d0-41b4-47c3-a7f7-7ba65ff7a13e`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 32 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact b91e75b3
 
-Store id: 1ca65010-f7dc-4495-8f24-44612291e64d
+Store id: dd80a7e7-7b47-496a-9e18-fab709d00a8e
 
 ## Text
 
@@ -20,7 +20,7 @@ class AggregateFilter(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5133290+00:00`
+- posted_at: `2026-11-09T23:44:48.3836120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 40,
     "symbol": "AggregateFilter"
   },
-  "id": "1ca65010-f7dc-4495-8f24-44612291e64d",
+  "id": "dd80a7e7-7b47-496a-9e18-fab709d00a8e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5133290+00:00"
+    "posted_at": "2026-11-09T23:44:48.3836120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7f1a263a-5160-425d-8052-61fd06742a0d",
+  "subject_id": "617f5d2e-70e7-4eb8-b594-7a81f42fb146",
   "subject_name": "django/db/models/aggregates::AggregateFilter",
   "tags": [
     "entity:class"

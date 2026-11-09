@@ -1,10 +1,10 @@
 # django/db/backends/mysql/compiler
 
-- Subject: django/db/backends/mysql/compiler (id `a8c15799-40cb-4014-a0da-27637507fa13`)
+- Subject: django/db/backends/mysql/compiler (id `aaf05e4b-c4dd-4127-8f7f-7622aaf36b59`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 644 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

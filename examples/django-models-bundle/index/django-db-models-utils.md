@@ -12,6 +12,6 @@ This file lists every subject under `django/db/models/utils/`, one row per subje
 |   django/db/models/utils::get_blank_choice_label | function | 1 | 0 | 0 | 118 | [subjects/django-db-models-utils-get-blank-choice-label/index.md](../subjects/django-db-models-utils-get-blank-choice-label/index.md) |
 |   django/db/models/utils::make_model_tuple | function | 1 | 0 | 0 | 115 | [subjects/django-db-models-utils-make-model-tuple/index.md](../subjects/django-db-models-utils-make-model-tuple/index.md) |
 |   django/db/models/utils::resolve_callables | function | 1 | 0 | 0 | 117 | [subjects/django-db-models-utils-resolve-callables/index.md](../subjects/django-db-models-utils-resolve-callables/index.md) |
-|   django/db/models/utils::unpickle_named_row | function | 1 | 0 | 0 | 120 | [subjects/django-db-models-utils-unpickle-named-row/index.md](../subjects/django-db-models-utils-unpickle-named-row/index.md) |
+|   django/db/models/utils::unpickle_named_row | function | 1 | 0 | 0 | 121 | [subjects/django-db-models-utils-unpickle-named-row/index.md](../subjects/django-db-models-utils-unpickle-named-row/index.md) |
 
 Up: [index/django-db-models.md](django-db-models.md)

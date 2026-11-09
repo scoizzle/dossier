@@ -1,10 +1,10 @@
 # django/core/management/templates
 
-- Subject: django/core/management/templates (id `6abdb5ed-7efb-43a2-bae5-6fa1b536e727`)
+- Subject: django/core/management/templates (id `f6a13ec8-125a-4e88-af24-7a7a003f93de`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3250 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact b3f36b30
 
-Store id: 56030d8d-6754-4b60-9801-bcda92f1d295
+Store id: 990d3daf-201b-4803-9114-48a6d531af8d
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_source_expressions(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5323130+00:00`
+- posted_at: `2026-11-09T23:44:48.3955580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 113,
     "symbol": "Aggregate.get_source_expressions"
   },
-  "id": "56030d8d-6754-4b60-9801-bcda92f1d295",
+  "id": "990d3daf-201b-4803-9114-48a6d531af8d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5323130+00:00"
+    "posted_at": "2026-11-09T23:44:48.3955580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "48ad9dd1-2d90-4aff-937d-ad8ffb6d7981",
+  "subject_id": "bc225cac-b3f8-4427-9304-5e089f46de10",
   "subject_name": "django/db/models/aggregates::Aggregate.get_source_expressions",
   "tags": [
     "entity:method"

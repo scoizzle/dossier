@@ -1,10 +1,10 @@
 # django/core/cache/backends/base
 
-- Subject: django/core/cache/backends/base (id `d1527ebe-1d2b-46e6-92e5-ffd506fe6355`)
+- Subject: django/core/cache/backends/base (id `7c030852-aa36-4af5-95ed-367b652e7e43`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3890 tokens
-- Facts shown: 66 of 67
+- Used: 3929 tokens
+- Facts shown: 67 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -32,6 +32,7 @@
 
 - [1551d2ab] async def aclose(self, **kwargs): return await sync_to_async(self.close, thread_sensitive=True)(**kwargs)
 - [7b8ccbdc] async def adecr(self, key, delta=1, version=None): return await self.aincr(key, -delta, version=version)
+- [9310bf65] async def adecr_version(self, key, delta=1, version=None): return await self.aincr_version(key, -delta, version)
 - [118fc4f0] async def adelete(self, key, version=None): return await sync_to_async(self.delete, thread_sensitive=True)(key, version)
 - [05349bfd] async def adelete_many(self, keys, version=None): if self.delete_many.__func__ is not BaseCache.delete_many: return await sync_to_async(self.delete_many, thread_sensitive=True)( keys, version=version ) for key in keys: await self.adelete(key, version=version)
 - [4f84d02c] async def aget(self, key, default=None, version=None): return await sync_to_async(self.get, thread_sensitive=True)( key, default, version )

@@ -1,6 +1,6 @@
 # Fact 04d28473
 
-Store id: ff367463-6629-43bb-840c-933935ca0958
+Store id: 7cfad09f-7b68-4752-bb43-759a4b14472b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function subclasses
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ff367463-6629-43bb-840c-933935ca0958",
+  "id": "7cfad09f-7b68-4752-bb43-759a4b14472b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "subclasses"
       },
       "rel": "contains",
-      "target": "cc6fbe6b-1af0-4f95-b273-5f0fbc37b665"
+      "target": "42fb977b-7801-49b0-b1da-827977821190"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:function"

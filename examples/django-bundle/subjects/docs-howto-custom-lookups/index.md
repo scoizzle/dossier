@@ -1,10 +1,10 @@
 # docs/howto/custom-lookups
 
-- Subject: docs/howto/custom-lookups (id `1ccb7673-cbb5-4662-a443-55fa4256e5e3`)
+- Subject: docs/howto/custom-lookups (id `07042358-100d-4ed3-8099-f63db5e52ccc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4290 tokens
-- Facts shown: 84 of 91
+- Used: 4487 tokens
+- Facts shown: 91 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,11 +12,13 @@
 
 - @property def output_field(self): return FloatField() [6385f90b]
 - def as_sql(self, compiler, connection): lhs, lhs_params = compiler.compile(self.lhs.lhs) rhs, rhs_params = self.process_rhs(compiler, connection) params = lhs_params + rhs_params + lhs_params + rhs_params return "%s < %s AND %s > -%s" % (lhs, rhs, lhs, rhs), params [7b788422]
+- def as_sql(self, compiler, connection): lhs, lhs_params = self.process_lhs(compiler, connection) rhs, rhs_params = self.process_rhs(compiler, connection) params = lhs_params + rhs_params return "%s <> %s" % (lhs, rhs), params [b521f6a0]
 - @Field.register_lookup class NotEqualLookup(Lookup): ... [e54f4bbe]
 - SELECT .. WHERE "experiments"."change" < 27 AND "experiments"."change" > -27 [f1302d47]
 - SELECT ... DISTINCT ON ABS("experiments"."change") [e9f703db]
 - SELECT ... ORDER BY ABS("experiments"."change") ASC [34121b9c]
 - SELECT ... WHERE ABS("experiments"."change") < 27 [b6b77324]
+- SELECT ... WHERE ABS("experiments"."change") = 27 [2be974d1]
 - SELECT ... WHERE UPPER("author"."name") = UPPER('doe') [bab31f45]
 - class AbsoluteValue(Transform): lookup_name = "abs" function = "ABS" [71365885e940e4eb]
 - class CoordinatesField(Field): def get_lookup(self, lookup_name): if lookup_name.startswith("x"): try: dimension = int(lookup_name.removeprefix("x")) except ValueError: pass else: return get_coordinate_lookup(dimension) return super().get_lookup(lookup_name) [54863ad1]
@@ -28,18 +30,23 @@
 - Field.register_lookup(MySQLNotEqual) [b988e35c]
 - Field.register_lookup(NotEqual) [b84f5316]
 - IntegerField.register_lookup(AbsoluteValue) [7919a5d3]
+- class AbsoluteValue(Transform): lookup_name = "abs" function = "ABS" [71365885e940e4eb-2]
 - class AbsoluteValueLessThan(Lookup): lookup_name = "lt" [ab14caa1]
 - class MySQLNotEqual(NotEqual): def as_mysql(self, compiler, connection, **extra_context): lhs, lhs_params = self.process_lhs(compiler, connection) rhs, rhs_params = self.process_rhs(compiler, connection) params = lhs_params + rhs_params return "%s != %s" % (lhs, rhs), params [cfcaa6aa]
 - class NotEqual(Lookup): lookup_name = "ne" [9f30cd9e]
 - class UpperCase(Transform): lookup_name = "upper" function = "UPPER" bilateral = True [92fdb582]
 - from django.db.models import CharField, TextField [a3805cde]
+- from django.db.models import Field [843257ed3e771056-2]
 - from django.db.models import IntegerField [75c589bf]
 - from django.db.models import Lookup [9099c674b8f0850a]
-- - ``.filter(myfield__mylookup)`` will call ``myfield.get_lookup('mylookup')``. - ``.filter(myfield__mytransform__mylookup)`` will call ``myfield.get_transform('mytransform')``, and then ``mytransform.get_lookup('mylookup')``. - ``.filter(myfield__mytransform)`` will first call ``myfield.get_lookup('mytransform')``, which will fail, so it will fall back to calling ``myfield.get_transform('mytransform')`` and then ``mytransform.get_lookup('exact')``. [97514652]
-- .. code-block:: sql [0ee73173f492412a-2]
 
 ## All facts
 
+- [9099c674b8f0850a-2] from django.db.models import Lookup
+- [5ba5c98ef8463692] from django.db.models import Transform
+- [5ba5c98ef8463692-2] from django.db.models import Transform
+- [97514652] - ``.filter(myfield__mylookup)`` will call ``myfield.get_lookup('mylookup')``. - ``.filter(myfield__mytransform__mylookup)`` will call ``myfield.get_transform('mytransform')``, and then ``mytransform.get_lookup('mylookup')``. - ``.filter(myfield__mytransform)`` will first call ``myfield.get_lookup('mytransform')``, which will fail, so it will fall back to calling ``myfield.get_transform('mytransform')`` and then ``mytransform.get_lookup('exact')``.
+- [0ee73173f492412a-2] .. code-block:: sql
 - [0ee73173f492412a-3] .. code-block:: sql
 - [0ee73173f492412a-4] .. code-block:: sql
 - [0ee73173f492412a-5] .. code-block:: sql

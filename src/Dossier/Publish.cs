@@ -1087,8 +1087,16 @@ public sealed partial class DossierStore
         b.Append("- Budget: ").Append(dossier.BudgetTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens")
             .Append(dossier.BudgetMode == DossierStore.BudgetModeComplete ? " (highlight threshold; every fact is listed)" : " (strict cutoff)").Append('\n');
         b.Append("- Used: ").Append(dossier.UsedTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens\n");
-        b.Append("- Facts shown: ").Append(dossier.Facts.Count.ToString(CultureInfo.InvariantCulture))
-            .Append(" of ").Append(liveFacts.ToString(CultureInfo.InvariantCulture)).Append('\n');
+        b.Append("- Facts shown: ").Append(dossier.Facts.Count.ToString(CultureInfo.InvariantCulture));
+        if (dossier.BudgetMode == DossierStore.BudgetModeComplete)
+        {
+            // Complete mode holds nothing back, so "N of M" would only imply a remainder exists.
+            b.Append(" facts\n");
+        }
+        else
+        {
+            b.Append(" of ").Append(liveFacts.ToString(CultureInfo.InvariantCulture)).Append('\n');
+        }
         b.Append("- Conflicts: ").Append(dossier.Conflicts.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
         b.Append("- Gaps: ").Append(dossier.Gaps.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
 

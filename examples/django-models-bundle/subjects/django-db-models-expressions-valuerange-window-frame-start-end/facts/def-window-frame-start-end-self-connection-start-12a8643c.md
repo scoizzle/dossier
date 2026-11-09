@@ -1,6 +1,6 @@
 # Fact 12a8643c
 
-Store id: 55251a6d-8dd9-43ea-bbba-9b545d70c207
+Store id: 6d6f4d95-2a4c-46b6-b40f-0da5bb95dd69
 
 ## Text
 
@@ -20,7 +20,7 @@ def window_frame_start_end(self, connection, start, end)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0441740+00:00`
+- posted_at: `2026-11-09T23:44:49.6968120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2234,
     "symbol": "ValueRange.window_frame_start_end"
   },
-  "id": "55251a6d-8dd9-43ea-bbba-9b545d70c207",
+  "id": "6d6f4d95-2a4c-46b6-b40f-0da5bb95dd69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0441740+00:00"
+    "posted_at": "2026-11-09T23:44:49.6968120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "58d84a31-c73b-47b3-8410-ac12b675c56d",
+  "subject_id": "d50f8d29-0137-4944-8df4-3adfa3630718",
   "subject_name": "django/db/models/expressions::ValueRange.window_frame_start_end",
   "tags": [
     "entity:method"

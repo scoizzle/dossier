@@ -1,6 +1,6 @@
 # Fact 0729b216
 
-Store id: 004fce58-1e41-4d95-91ed-9bd1b1bd62a4
+Store id: 2b5ea9d3-c924-4497-bba8-5efb47c1827a
 
 ## Text
 
@@ -20,7 +20,7 @@ def execute_sql( self, result_type=MULTI, chunked_fetch=False, chunk_size=GET_IT
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.9190390+00:00`
+- posted_at: `2026-11-09T23:44:57.6356330+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1613,
     "symbol": "SQLCompiler.execute_sql"
   },
-  "id": "004fce58-1e41-4d95-91ed-9bd1b1bd62a4",
+  "id": "2b5ea9d3-c924-4497-bba8-5efb47c1827a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.9190390+00:00"
+    "posted_at": "2026-11-09T23:44:57.6356330+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e426d78-87f1-4089-a1dc-c48b9eb86ef5",
+  "subject_id": "aefd6bb1-1b69-4c7b-a7b2-87f075224110",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.execute_sql",
   "tags": [
     "entity:method"

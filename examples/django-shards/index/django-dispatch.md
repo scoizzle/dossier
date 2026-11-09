@@ -4,7 +4,6 @@ This file lists every subject under `django/dispatch/`, one row per subject, gro
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/dispatch/__init__ | subject | 4 | 0 | 0 | 1941 | [shards/215.md#django-dispatch-init](../shards/215.md#django-dispatch-init) |
-|   django/dispatch/dispatcher | subject | 21 | 0 | 0 | 1941 | [shards/215.md#django-dispatch-dispatcher](../shards/215.md#django-dispatch-dispatcher) |
+|   django/dispatch/__init__ | subject | 4 | 0 | 0 | 1131 | [shards/126.md#django-dispatch-init](../shards/126.md#django-dispatch-init) |
 
 Up: [index/django.md](django.md)

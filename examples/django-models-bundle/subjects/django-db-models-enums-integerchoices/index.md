@@ -1,11 +1,11 @@
 # django/db/models/enums::IntegerChoices
 
-- Subject: django/db/models/enums::IntegerChoices (id `322ad7b4-0b16-4b13-a8bd-3481267b07b9`)
+- Subject: django/db/models/enums::IntegerChoices (id `3c3ddb57-9502-48ae-bdd8-d25527c4e3c1`)
 - Kind: class
 - Parent: [django/db/models/enums](../django-db-models-enums/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

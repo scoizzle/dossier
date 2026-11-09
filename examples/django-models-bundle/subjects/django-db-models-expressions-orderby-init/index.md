@@ -1,11 +1,11 @@
 # django/db/models/expressions::OrderBy.__init__
 
-- Subject: django/db/models/expressions::OrderBy.__init__ (id `f820cae5-4325-4c5f-8b42-628996fa785f`)
+- Subject: django/db/models/expressions::OrderBy.__init__ (id `4434902d-5cf4-4d62-9353-82fca57eeaea`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 32 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

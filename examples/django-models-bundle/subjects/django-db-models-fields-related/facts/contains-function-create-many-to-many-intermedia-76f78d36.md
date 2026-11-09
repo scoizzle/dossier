@@ -1,6 +1,6 @@
 # Fact 76f78d36
 
-Store id: 930aa69c-18e1-4f54-b5da-f4e612356e51
+Store id: 9ac96718-29ec-4e71-a539-b9c9b9e59e99
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function create_many_to_many_intermediary_model
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.9119250+00:00`
+- posted_at: `2026-11-09T23:44:51.6886880+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "930aa69c-18e1-4f54-b5da-f4e612356e51",
+  "id": "9ac96718-29ec-4e71-a539-b9c9b9e59e99",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
+    "posted_at": "2026-11-09T23:44:51.6886880+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "create_many_to_many_intermediary_model"
       },
       "rel": "contains",
-      "target": "99da41e8-8f9c-48b3-ab7d-93c2f75a8149"
+      "target": "3b62f803-a406-452d-8fcf-f873639b65b2"
     }
   ],
   "status": "live",
-  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
+  "subject_id": "b482f690-f78b-4457-98ca-4cee1c63890e",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:function"

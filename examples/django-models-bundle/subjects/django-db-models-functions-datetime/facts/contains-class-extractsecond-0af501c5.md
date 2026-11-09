@@ -1,6 +1,6 @@
 # Fact 0af501c5
 
-Store id: 7c787093-a53a-45ed-bf9e-f6c8c4dcf80d
+Store id: 497b4e78-50c5-4397-8882-c98554f2348c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ExtractSecond
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7c787093-a53a-45ed-bf9e-f6c8c4dcf80d",
+  "id": "497b4e78-50c5-4397-8882-c98554f2348c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ExtractSecond"
       },
       "rel": "contains",
-      "target": "7a916678-af9b-4e1a-bb6d-1d88ce29f97f"
+      "target": "e83acb46-1ef4-431c-8627-75b55de2bd69"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

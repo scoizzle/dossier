@@ -1,6 +1,6 @@
 # Fact de3e1bd0
 
-Store id: 42bbf0c3-9267-44a0-8ec7-11e96c267911
+Store id: c33d1665-59bc-42a5-a320-5ec9a344288d
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SQLUpdateCompiler
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.1168670+00:00`
+- posted_at: `2026-11-09T23:44:57.7715820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "42bbf0c3-9267-44a0-8ec7-11e96c267911",
+  "id": "c33d1665-59bc-42a5-a320-5ec9a344288d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.1168670+00:00"
+    "posted_at": "2026-11-09T23:44:57.7715820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SQLUpdateCompiler"
       },
       "rel": "contains",
-      "target": "a16c62f3-05dc-44e4-9faf-df9680909823"
+      "target": "99cf2853-ee7a-4c68-a2f5-88a0df621528"
     }
   ],
   "status": "live",
-  "subject_id": "eec456aa-334a-4312-a193-ed044257811d",
+  "subject_id": "d0d15420-734c-41c7-8915-96b8b2169578",
   "subject_name": "django/db/models/sql/compiler",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 30fc87f5
 
-Store id: 4c1722d3-7b15-41cf-81a5-3ef6907823c0
+Store id: d7465c3e-eb55-4ef2-a1cd-d711b5c64e36
 
 ## Text
 
@@ -20,7 +20,7 @@ class IRegex(Regex)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4060210+00:00`
+- posted_at: `2026-11-09T23:44:55.0512230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 707,
     "symbol": "IRegex"
   },
-  "id": "4c1722d3-7b15-41cf-81a5-3ef6907823c0",
+  "id": "d7465c3e-eb55-4ef2-a1cd-d711b5c64e36",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4060210+00:00"
+    "posted_at": "2026-11-09T23:44:55.0512230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aa571be8-3e60-4a2f-8543-a27928cf6e78",
+  "subject_id": "6fb5298c-28d8-4cd1-b441-60ef2f3e02b9",
   "subject_name": "django/db/models/lookups::IRegex",
   "tags": [
     "entity:class",

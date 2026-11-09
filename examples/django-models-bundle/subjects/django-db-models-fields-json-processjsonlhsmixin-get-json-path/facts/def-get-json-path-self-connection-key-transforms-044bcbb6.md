@@ -1,6 +1,6 @@
 # Fact 044bcbb6
 
-Store id: ca993e10-0235-4ddf-9328-e67758a90fa3
+Store id: f636c906-3e6d-43b6-900e-72a3fa0748cd
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_json_path(self, connection, key_transforms)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9360000+00:00`
+- posted_at: `2026-11-09T23:44:51.0030810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 358,
     "symbol": "ProcessJSONLHSMixin._get_json_path"
   },
-  "id": "ca993e10-0235-4ddf-9328-e67758a90fa3",
+  "id": "f636c906-3e6d-43b6-900e-72a3fa0748cd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9360000+00:00"
+    "posted_at": "2026-11-09T23:44:51.0030810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39321b8f-88e4-46e7-83cb-4974e62834de",
+  "subject_id": "2b62e879-f2e8-4b69-a3b3-447cfb43ab77",
   "subject_name": "django/db/models/fields/json::ProcessJSONLHSMixin._get_json_path",
   "tags": [
     "entity:method"

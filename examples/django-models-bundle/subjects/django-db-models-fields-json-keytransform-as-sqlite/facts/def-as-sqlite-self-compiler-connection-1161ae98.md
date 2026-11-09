@@ -1,6 +1,6 @@
 # Fact 1161ae98
 
-Store id: 6cb5dd68-45bf-45f4-b735-70072fef1d3e
+Store id: 210782ea-828f-490c-ba83-cc4ab5c3057b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9751980+00:00`
+- posted_at: `2026-11-09T23:44:51.0265870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 535,
     "symbol": "KeyTransform.as_sqlite"
   },
-  "id": "6cb5dd68-45bf-45f4-b735-70072fef1d3e",
+  "id": "210782ea-828f-490c-ba83-cc4ab5c3057b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9751980+00:00"
+    "posted_at": "2026-11-09T23:44:51.0265870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0aac16ca-fd86-4131-911f-1e1da6a0d11f",
+  "subject_id": "7bea25eb-ec2c-4707-9fab-ad928e032fc5",
   "subject_name": "django/db/models/fields/json::KeyTransform.as_sqlite",
   "tags": [
     "entity:method"

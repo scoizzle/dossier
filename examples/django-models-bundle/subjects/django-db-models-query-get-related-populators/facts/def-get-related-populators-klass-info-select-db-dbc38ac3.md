@@ -1,6 +1,6 @@
 # Fact dbc38ac3
 
-Store id: c523dda1-6ec3-461f-a0a4-b24349889a41
+Store id: 8cb39b39-4a7e-4f73-89fd-8524eb2b8c0f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_populators(klass_info, select, db, fetch_mode)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8668470+00:00`
+- posted_at: `2026-11-09T23:44:56.3439640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 3090,
     "symbol": "get_related_populators"
   },
-  "id": "c523dda1-6ec3-461f-a0a4-b24349889a41",
+  "id": "8cb39b39-4a7e-4f73-89fd-8524eb2b8c0f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8668470+00:00"
+    "posted_at": "2026-11-09T23:44:56.3439640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "404ebbf6-af06-4968-bb41-de001a42cf11",
+  "subject_id": "3d28dc8e-d374-41f3-af2f-d2f0379018f0",
   "subject_name": "django/db/models/query::get_related_populators",
   "tags": [
     "entity:function"

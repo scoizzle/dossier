@@ -1,11 +1,11 @@
 # django/db/models/expressions::RawSQL.__init__
 
-- Subject: django/db/models/expressions::RawSQL.__init__ (id `6cce09af-ca89-4b2e-9282-4f2a27afc269`)
+- Subject: django/db/models/expressions::RawSQL.__init__ (id `c475e092-44b2-4f3b-89d4-3ed54058cc3e`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

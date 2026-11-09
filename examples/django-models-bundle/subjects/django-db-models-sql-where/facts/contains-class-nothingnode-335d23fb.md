@@ -1,6 +1,6 @@
 # Fact 335d23fb
 
-Store id: 0b375466-07bf-4ef7-96a1-997e5784a051
+Store id: f675a89c-cf5c-4c3d-9856-38c2efa0fca2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class NothingNode
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.7324610+00:00`
+- posted_at: `2026-11-09T23:44:59.8503870+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0b375466-07bf-4ef7-96a1-997e5784a051",
+  "id": "f675a89c-cf5c-4c3d-9856-38c2efa0fca2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.7324610+00:00"
+    "posted_at": "2026-11-09T23:44:59.8503870+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "NothingNode"
       },
       "rel": "contains",
-      "target": "02840afb-11ac-4678-b656-d3869909fb51"
+      "target": "d65458d6-945e-4db4-9e3b-74af603dcaf7"
     }
   ],
   "status": "live",
-  "subject_id": "054a8784-2f6d-4aca-bf87-0be8a185e83b",
+  "subject_id": "c9be0d36-44cc-4f80-84ab-c9048f1df063",
   "subject_name": "django/db/models/sql/where",
   "tags": [
     "entity:class"

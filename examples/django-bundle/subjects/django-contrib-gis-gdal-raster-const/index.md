@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/raster/const
 
-- Subject: django/contrib/gis/gdal/raster/const (id `d64a63e5-73a1-4f92-bdf1-3970284b69b7`)
+- Subject: django/contrib/gis/gdal/raster/const (id `274c7a30-b532-448c-93fa-d2f8cf97ef90`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 863 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

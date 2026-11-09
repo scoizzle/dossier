@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject.path_infos
 
-- Subject: django/db/models/fields/related::ForeignObject.path_infos (id `58633c2a-a15d-473f-b42d-be018711a603`)
+- Subject: django/db/models/fields/related::ForeignObject.path_infos (id `2b624bd1-0c02-4da5-a7f7-2f50a3e958e3`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

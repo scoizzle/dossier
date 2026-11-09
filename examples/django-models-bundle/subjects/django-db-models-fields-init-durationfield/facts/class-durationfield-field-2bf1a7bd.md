@@ -1,6 +1,6 @@
 # Fact 2bf1a7bd
 
-Store id: 82c5e241-7473-414e-a451-ef9b1569202e
+Store id: d619d4f5-8897-462f-af4c-a6bb11d8d918
 
 ## Text
 
@@ -20,7 +20,7 @@ class DurationField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6449200+00:00`
+- posted_at: `2026-11-09T23:44:50.1269830+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1936,
     "symbol": "DurationField"
   },
-  "id": "82c5e241-7473-414e-a451-ef9b1569202e",
+  "id": "d619d4f5-8897-462f-af4c-a6bb11d8d918",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6449200+00:00"
+    "posted_at": "2026-11-09T23:44:50.1269830+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4aa473b5-a84c-40dd-b33e-b9584200a499",
+  "subject_id": "d6b01c6c-d1b4-4748-8499-fad34125a060",
   "subject_name": "django/db/models/fields/__init__::DurationField",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/core/management/commands/test
 
-- Subject: django/core/management/commands/test (id `8aa6cc47-5b7c-4162-bd47-34236da69b37`)
+- Subject: django/core/management/commands/test (id `e43dcd24-f82a-4345-b80a-a0380eb0ebeb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 583 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

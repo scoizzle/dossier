@@ -1,6 +1,6 @@
 # Fact 4aeb681c
 
-Store id: f282c723-9dbe-4591-b9d9-35ef58522f8c
+Store id: 3587e1eb-fd61-4d6a-a665-64f1829bc63a
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1442430+00:00`
+- posted_at: `2026-11-09T23:44:50.4971060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 140,
     "symbol": "CompositePrimaryKey.value_to_string"
   },
-  "id": "f282c723-9dbe-4591-b9d9-35ef58522f8c",
+  "id": "3587e1eb-fd61-4d6a-a665-64f1829bc63a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1442430+00:00"
+    "posted_at": "2026-11-09T23:44:50.4971060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1a510ef0-0f31-4013-91e8-1bfe4f99575b",
+  "subject_id": "fa98b183-d419-46ad-8a88-a85a312ee323",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.value_to_string",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLDeleteCompiler.single_alias
 
-- Subject: django/db/models/sql/compiler::SQLDeleteCompiler.single_alias (id `ee54e6b8-790b-498e-9980-3efa92ee67d5`)
+- Subject: django/db/models/sql/compiler::SQLDeleteCompiler.single_alias (id `6a78c5de-c869-4c5d-ad6d-70535dd90959`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

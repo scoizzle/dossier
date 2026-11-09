@@ -1,6 +1,6 @@
 # Fact 1b7c7ed6
 
-Store id: a315cb59-b60e-426e-a1ff-719cbbdc839a
+Store id: aef04ac4-cec9-4204-be29-04b38f8e5b67
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_extra_descriptor_filter(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7102510+00:00`
+- posted_at: `2026-11-09T23:44:51.5454440+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 862,
     "symbol": "ForeignObject.get_extra_descriptor_filter"
   },
-  "id": "a315cb59-b60e-426e-a1ff-719cbbdc839a",
+  "id": "aef04ac4-cec9-4204-be29-04b38f8e5b67",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7102510+00:00"
+    "posted_at": "2026-11-09T23:44:51.5454440+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8089198b-1239-4879-8cea-92ef8ce8d443",
+  "subject_id": "bf5056cf-45f5-48d9-bba3-9e15b3c87bd3",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_extra_descriptor_filter",
   "tags": [
     "entity:method"

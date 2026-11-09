@@ -1,6 +1,6 @@
 # Fact 68b761ca
 
-Store id: 347b475f-7ae9-4712-9da6-5772e92bc720
+Store id: 268da81d-6dc1-4b3a-ba10-2eacf2c563bc
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Abs
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "347b475f-7ae9-4712-9da6-5772e92bc720",
+  "id": "268da81d-6dc1-4b3a-ba10-2eacf2c563bc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Abs"
       },
       "rel": "contains",
-      "target": "40103c85-aa92-45a2-b8ed-e5ff265fc7cc"
+      "target": "fab0a7ed-588b-435c-8587-6ed42694e9aa"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

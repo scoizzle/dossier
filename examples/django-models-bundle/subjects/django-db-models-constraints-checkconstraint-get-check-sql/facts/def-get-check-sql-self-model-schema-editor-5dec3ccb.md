@@ -1,6 +1,6 @@
 # Fact 5dec3ccb
 
-Store id: 559448ba-3ad5-45b9-be37-6d409bd974f5
+Store id: 5254bd6b-ae7e-48ac-a181-65070d7e009d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_check_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1707510+00:00`
+- posted_at: `2026-11-09T23:44:48.7786070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 194,
     "symbol": "CheckConstraint._get_check_sql"
   },
-  "id": "559448ba-3ad5-45b9-be37-6d409bd974f5",
+  "id": "5254bd6b-ae7e-48ac-a181-65070d7e009d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1707510+00:00"
+    "posted_at": "2026-11-09T23:44:48.7786070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "29f93a8b-66c5-40b9-a641-c65baaffc7d4",
+  "subject_id": "ab6e4d59-cbed-4ac4-93f7-a55b26852b4a",
   "subject_name": "django/db/models/constraints::CheckConstraint._get_check_sql",
   "tags": [
     "entity:method"

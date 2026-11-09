@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/geoquerysets
 
-- Subject: docs/ref/contrib/gis/geoquerysets (id `1965b417-fe47-4287-a414-36e243aac82d`)
+- Subject: docs/ref/contrib/gis/geoquerysets (id `ab19d6ad-286a-4687-8308-f371ffe7f220`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 9627 tokens
-- Facts shown: 305 of 336
+- Used: 10991 tokens
+- Facts shown: 336 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,34 +14,45 @@
 - <field>__<distance lookup>=(<geometry/raster>, <distance value>[, "spheroid"]) <field>__<distance lookup>=(<raster>, <band_index>, <distance value>[, "spheroid"]) <field>__<band_index>__<distance lookup>=(<raster>, <band_index>, <distance value>[, "spheroid"]) [c3ff6f78]
 - >>> from django.contrib.gis.db.models import Extent, Union >>> WorldBorder.objects.aggregate(Extent("mpoly"), Union("mpoly")) [bb6069ae]
 - >>> qs = City.objects.filter(name__in=("Houston", "Dallas")).aggregate(Extent("poly")) >>> print(qs["poly__extent"]) (-96.8016128540039, 29.7633724212646, -95.3631439208984, 32.782058715820) [788847cb]
+- >>> qs = City.objects.filter(name__in=("Houston", "Dallas")).aggregate(Extent3D("poly")) >>> print(qs["poly__extent3d"]) (-96.8016128540039, 29.7633724212646, 0, -95.3631439208984, 32.782058715820, 0) [dc00872a]
 - >>> qs = City.objects.filter(name__in=("Houston", "Dallas")).aggregate(MakeLine("poly")) >>> print(qs["poly__makeline"]) LINESTRING (-95.3631510000000020 29.7633739999999989, -96.8016109999999941 32.7820570000000018) [20922b41]
 - >>> u = Zipcode.objects.aggregate(Union(poly)) # This may take a long time. >>> u = Zipcode.objects.filter(poly__within=bbox).aggregate( ... Union(poly) ... ) # A more sensible approach. [6f9b822a]
 - If the computation time for using this method is too expensive, consider using :class:`Collect` instead. [e50a3784]
 - MariaDB 12.0.1+ support was added. [da6e6ec8a1a60ce4-3]
+- MariaDB 12.0.1+ support was added. [da6e6ec8a1a60ce4-4]
+- MariaDB 12.0.1+ support was added. [da6e6ec8a1a60ce4-5]
 - SELECT ... WHERE Relate(poly, geom, 'T*T***FF*') [738e6889]
 - SELECT ... WHERE SDO_RELATE(poly, geom, 'anyinteract') [bc3069a6]
 - SELECT ... WHERE ST_Relate(poly, ST_Polygon(rast, 1), 'T*T***FF*') SELECT ... WHERE ST_Relate(ST_Polygon(rast, 2), ST_Polygon(rast, 1), 'T*T***FF*') [a5586e60]
+- SELECT ... WHERE ST_Relate(poly, geom, 'T*T***FF*') [9f76ce19]
 - SELECT ... WHERE poly &< geom [02f895ac]
+- SELECT ... WHERE poly &<| geom [656506ac]
+- SELECT ... WHERE poly &> geom [d3eff27a]
+- SELECT ... WHERE poly << geom [403f619e]
+- SELECT ... WHERE poly <<| geom [57c5e691]
+- SELECT ... WHERE poly >> geom [df290d60]
+- SELECT ... WHERE poly |&> geom [d5268926]
+- SELECT ... WHERE poly |>> geom [5ff0fc8b]
 - SpatiaLite support was added. [7eb29854c6e4f668-2]
 - Zipcode.objects.filter(geom__num_dimensions=3) [536af564]
 - Zipcode.objects.filter(poly=geom) [541d054f]
 - Zipcode.objects.filter(poly__bbcontains=geom) [4ec171bd]
 - Zipcode.objects.filter(poly__bboverlaps=geom) [28a813fc]
 - Zipcode.objects.filter(poly__contained=geom) [b14e8a2c]
-- Zipcode.objects.filter(poly__contains=geom) [47eaa816]
-- Zipcode.objects.filter(poly__coveredby=geom) [0b3497a3]
-- Zipcode.objects.filter(poly__covers=geom) [b67d1434]
-- Zipcode.objects.filter(poly__crosses=geom) [fc1704ab]
-- Zipcode.objects.filter(poly__disjoint=geom) [15ef5cd5]
-- Zipcode.objects.filter(poly__distance_gt=(geom, D(m=5))) [c668c84b]
-- Zipcode.objects.filter(poly__distance_gte=(geom, D(m=5))) [27ffea4e]
-- Zipcode.objects.filter(poly__distance_lt=(geom, D(m=5))) [f8cb1a35]
-- Zipcode.objects.filter(poly__distance_lte=(geom, D(m=5))) [a5af5896]
-- Zipcode.objects.filter(poly__dwithin=(geom, D(m=5))) [60b884c7]
-- .. _distance-lookups: [192946c5]
 
 ## All facts
 
+- [47eaa816] Zipcode.objects.filter(poly__contains=geom)
+- [3bdd940c] Zipcode.objects.filter(poly__contains_properly=geom)
+- [0b3497a3] Zipcode.objects.filter(poly__coveredby=geom)
+- [b67d1434] Zipcode.objects.filter(poly__covers=geom)
+- [fc1704ab] Zipcode.objects.filter(poly__crosses=geom)
+- [15ef5cd5] Zipcode.objects.filter(poly__disjoint=geom)
+- [c668c84b] Zipcode.objects.filter(poly__distance_gt=(geom, D(m=5)))
+- [27ffea4e] Zipcode.objects.filter(poly__distance_gte=(geom, D(m=5)))
+- [f8cb1a35] Zipcode.objects.filter(poly__distance_lt=(geom, D(m=5)))
+- [a5af5896] Zipcode.objects.filter(poly__distance_lte=(geom, D(m=5)))
+- [60b884c7] Zipcode.objects.filter(poly__dwithin=(geom, D(m=5)))
 - [5970bae1] Zipcode.objects.filter(poly__equals=geom)
 - [dc10bbc1] Zipcode.objects.filter(poly__geom_type="POLYGON")
 - [011e6842] Zipcode.objects.filter(poly__intersects=geom)
@@ -50,9 +61,11 @@
 - [930694e8] Zipcode.objects.filter(poly__left=geom)
 - [be38ed36] Zipcode.objects.filter(poly__overlaps_above=geom)
 - [4490f85e] Zipcode.objects.filter(poly__overlaps_below=geom)
+- [3038c7fd] Zipcode.objects.filter(poly__overlaps_left=geom)
 - [b5aaea49] Zipcode.objects.filter(poly__overlaps_right=geom)
 - [8fcb2d78] Zipcode.objects.filter(poly__relate=(geom, "anyinteract"))
 - [c22477df] Zipcode.objects.filter(poly__relate=(rast, 1, "T*T***FF*")) Zipcode.objects.filter(rast__2__relate=(rast, 1, "T*T***FF*"))
+- [07a53727] Zipcode.objects.filter(poly__right=geom)
 - [8e993577] Zipcode.objects.filter(poly__strictly_above=geom)
 - [5a9589cb] Zipcode.objects.filter(poly__strictly_below=geom)
 - [b2c52108] Zipcode.objects.filter(poly__touches=geom)
@@ -61,6 +74,7 @@
 - [59a5d665] *Availability*: PostGIS, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
 - [8e6d147f] *Availability*: `PostGIS <https://postgis.net/docs/ST_ContainsProperly.html>`__, PGRaster (Bilateral)
 - [b06ffbc9] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Contain.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
+- [61bb9662] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Contained.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
 - [3b5bc6ba] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overabove.html>`__, PGRaster (Conversion)
 - [3fc3c117] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overbelow.html>`__, PGRaster (Conversion)
 - [b491599d] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Overleft.html>`__, PGRaster (Bilateral)
@@ -69,8 +83,10 @@
 - [8bbc02c0] *Availability*: `PostGIS <https://postgis.net/docs/ST_3DExtent.html>`__
 - [9fa7b243] *Availability*: `PostGIS <https://postgis.net/docs/ST_Collect.html>`__, MariaDB, MySQL, SpatiaLite
 - [b650b32f] *Availability*: `PostGIS <https://postgis.net/docs/ST_Contains.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
+- [c9b99253] *Availability*: `PostGIS <https://postgis.net/docs/ST_CoveredBy.html>`__, Oracle, MariaDB, MySQL, PGRaster (Bilateral), SpatiaLite
 - [2a461464] *Availability*: `PostGIS <https://postgis.net/docs/ST_Covers.html>`__, Oracle, MySQL, PGRaster (Bilateral), SpatiaLite
 - [d6673b84] *Availability*: `PostGIS <https://postgis.net/docs/ST_Crosses.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Conversion)
+- [e9c66ea8] *Availability*: `PostGIS <https://postgis.net/docs/ST_Disjoint.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
 - [cd633601] *Availability*: `PostGIS <https://postgis.net/docs/ST_Equals.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Conversion)
 - [1ed35819] *Availability*: `PostGIS <https://postgis.net/docs/ST_Extent.html>`__, Oracle, SpatiaLite
 - [6271f9c3] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Above.html>`__, PGRaster (Conversion)
@@ -78,16 +94,20 @@
 - [250805bc] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Left.html>`__, PGRaster (Conversion)
 - [7e33cded] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Right.html>`__, PGRaster (Conversion)
 - [9804582d] *Availability*: `PostGIS <https://postgis.net/docs/ST_Geometry_Same.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
+- [43e4ae98] *Availability*: `PostGIS <https://postgis.net/docs/ST_Intersects.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
 - [e87f377f582676fb-2] *Availability*: `PostGIS <https://postgis.net/docs/ST_IsEmpty.html>`__, SpatiaLite
 - [262fa4b5] *Availability*: `PostGIS <https://postgis.net/docs/ST_MakeLine.html>`__, SpatiaLite
 - [4648db9f5c6194ab-2] *Availability*: `PostGIS <https://postgis.net/docs/ST_NDims.html>`__, SpatiaLite
+- [dddaa067] *Availability*: `PostGIS <https://postgis.net/docs/ST_Overlaps.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
 - [010682de] *Availability*: `PostGIS <https://postgis.net/docs/ST_Relate.html>`__, MariaDB, Oracle, SpatiaLite, PGRaster (Conversion)
 - [e5fe3ca8] *Availability*: `PostGIS <https://postgis.net/docs/ST_Touches.html>`__, Oracle, MariaDB, MySQL, SpatiaLite
 - [7240d7f5] *Availability*: `PostGIS <https://postgis.net/docs/ST_Union.html>`__, Oracle, SpatiaLite
+- [176c7d5a] *Availability*: `PostGIS <https://postgis.net/docs/ST_Within.html>`__, Oracle, MariaDB, MySQL, SpatiaLite, PGRaster (Bilateral)
 - [a6f4e454] *Availability*: `PostGIS <https://postgis.net/docs/geometry_overlaps.html>`__, MariaDB, MySQL, SpatiaLite, PGRaster (Native)
 - [e635ebb2] - Bilateral raster support ``B``: the operator supports rasters only if both sides of the lookup receive raster inputs. Raster data is automatically converted to geometries for mixed lookups.
 - [532e8b0c] - Geometry conversion support ``C``. The lookup does not have native raster support, all raster data is automatically converted to geometries.
 - [ab09ee01] - Native raster support ``N``: the operator accepts rasters natively on both sides of the lookup, and raster input can be mixed with geometry inputs.
+- [192946c5] .. _distance-lookups:
 - [bf0d934a] .. _gis-aggregation-functions:
 - [6eddb01b] .. _spatial-lookups:
 - [9a8aec7c] .. class:: Collect(geo_field, filter=None)
@@ -165,13 +185,18 @@
 - [af4a2637] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``poly @ geom`` MariaDB ``MBRWithin(poly, geom)`` MySQL ``MBRWithin(poly, geom)`` SpatiaLite ``MbrWithin(poly, geom)`` ========== ==========================
 - [ba03bc0e] ========== ========================== Backend SQL Equivalent ========== ========================== PostGIS ``poly ~ geom`` MariaDB ``MBRContains(poly, geom)`` MySQL ``MBRContains(poly, geom)`` SpatiaLite ``MbrContains(poly, geom)`` ========== ==========================
 - [ff75b720] ========== ============================ Backend SQL Equivalent ========== ============================ PostGIS ``ST_Contains(poly, geom)`` Oracle ``SDO_CONTAINS(poly, geom)`` MariaDB ``ST_Contains(poly, geom)`` MySQL ``ST_Contains(poly, geom)`` SpatiaLite ``Contains(poly, geom)`` ========== ============================
+- [f936c06a] ========== ============================ Backend SQL Equivalent ========== ============================ PostGIS ``ST_Overlaps(poly, geom)`` Oracle ``SDO_OVERLAPS(poly, geom)`` MariaDB ``ST_Overlaps(poly, geom)`` MySQL ``ST_Overlaps(poly, geom)`` SpatiaLite ``Overlaps(poly, geom)`` ========== ============================
 - [9ff2a33f] ========== ============================= Backend SQL Equivalent ========== ============================= PostGIS ``ST_CoveredBy(poly, geom)`` Oracle ``SDO_COVEREDBY(poly, geom)`` MariaDB ``MBRCoveredBy(poly, geom)`` MySQL ``MBRCoveredBy(poly, geom)`` SpatiaLite ``CoveredBy(poly, geom)`` ========== =============================
 - [ddab360a] ========== =================================== Backend SQL Equivalent ========== =================================== PostGIS ``ST_ContainsProperly(poly, geom)`` ========== ===================================
 - [e4b1d423] ========== ====================================== Backend SQL Equivalent ========== ====================================== PostGIS ``ST_DWithin(poly, geom, 5)`` Oracle ``SDO_WITHIN_DISTANCE(poly, geom, 5)`` SpatiaLite ``PtDistWithin(poly, geom, 5)`` ========== ======================================
 - [e8e56928] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Disjoint(poly, geom)`` Oracle ``SDO_GEOM.RELATE(poly, 'DISJOINT', geom, 0.05)`` MariaDB ``ST_Disjoint(poly, geom)`` MySQL ``ST_Disjoint(poly, geom)`` SpatiaLite ``Disjoint(poly, geom)`` ========== =================================================
 - [b5de19ce] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Equals(poly, geom)`` Oracle ``SDO_EQUAL(poly, geom)`` MariaDB ``ST_Equals(poly, geom)`` MySQL ``ST_Equals(poly, geom)`` SpatiaLite ``Equals(poly, geom)`` ========== =================================================
 - [e240981b] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``ST_Intersects(poly, geom)`` Oracle ``SDO_OVERLAPBDYINTERSECT(poly, geom)`` MariaDB ``ST_Intersects(poly, geom)`` MySQL ``ST_Intersects(poly, geom)`` SpatiaLite ``Intersects(poly, geom)`` ========== =================================================
+- [6c3465d6] ========== ================================================= Backend SQL Equivalent ========== ================================================= PostGIS ``poly ~= geom`` Oracle ``SDO_EQUAL(poly, geom)`` MariaDB ``ST_Equals(poly, geom)`` MySQL ``ST_Equals(poly, geom)`` SpatiaLite ``Equals(poly, geom)`` ========== =================================================
 - [1cb533c8] ========== ================================================== Backend SQL Equivalent ========== ================================================== PostGIS ``ST_Distance/ST_Distance_Sphere(poly, geom) < 5`` MariaDB ``ST_Distance(poly, geom) < 5`` MySQL ``ST_Distance(poly, geom) < 5`` Oracle ``SDO_GEOM.SDO_DISTANCE(poly, geom, 0.05) < 5`` SpatiaLite ``Distance(poly, geom) < 5`` ========== ==================================================
+- [6f8db29c] ========== ================================================== Backend SQL Equivalent ========== ================================================== PostGIS ``ST_Distance/ST_Distance_Sphere(poly, geom) > 5`` MariaDB ``ST_Distance(poly, geom) > 5`` MySQL ``ST_Distance(poly, geom) > 5`` Oracle ``SDO_GEOM.SDO_DISTANCE(poly, geom, 0.05) > 5`` SpatiaLite ``Distance(poly, geom) > 5`` ========== ==================================================
+- [90d64a50] ========== =================================================== Backend SQL Equivalent ========== =================================================== PostGIS ``ST_Distance/ST_Distance_Sphere(poly, geom) <= 5`` MariaDB ``ST_Distance(poly, geom) <= 5`` MySQL ``ST_Distance(poly, geom) <= 5`` Oracle ``SDO_GEOM.SDO_DISTANCE(poly, geom, 0.05) <= 5`` SpatiaLite ``Distance(poly, geom) <= 5`` ========== ===================================================
+- [3be4f556] ========== =================================================== Backend SQL Equivalent ========== =================================================== PostGIS ``ST_Distance/ST_Distance_Sphere(poly, geom) >= 5`` MariaDB ``ST_Distance(poly, geom) >= 5`` MySQL ``ST_Distance(poly, geom) >= 5`` Oracle ``SDO_GEOM.SDO_DISTANCE(poly, geom, 0.05) >= 5`` SpatiaLite ``Distance(poly, geom) >= 5`` ========== ===================================================
 - [8fc16734] =================== ================== Backend SQL Equivalent =================== ================== PostGIS, SpatiaLite ``ST_NDims(geom)`` =================== ==================
 - [02408a5c] ===================== ===================================================== Keyword Argument Description ===================== ===================================================== ``tolerance`` This keyword is for Oracle only. It is for the tolerance value used by the ``SDOAGGRTYPE`` procedure; the `Oracle documentation`__ has more details. ===================== =====================================================
 - [59e68140] ========================== GIS QuerySet API Reference ==========================
@@ -244,6 +269,8 @@
 - [f0861ca3] Returns a ``LineString`` constructed from the point field geometries in the ``QuerySet``. Currently, ordering the queryset has no effect.
 - [0de86c19] Returns models where the distance to the geometry field from the lookup geometry are within the given distance from one another. Note that you can only provide :class:`~django.contrib.gis.measure.Distance` objects if the targeted geometries are in a projected system. For geographic geometries, you should use units of the geometry field (e.g. degrees for ``WGS84``) .
 - [c30780be] Returns models where the distance to the geometry field from the lookup geometry is greater than or equal to the given distance value.
+- [f0ecbf51] Returns models where the distance to the geometry field from the lookup geometry is greater than the given distance value.
+- [a2035805] Returns models where the distance to the geometry field from the lookup geometry is less than or equal to the given distance value.
 - [af4236e7] Returns models where the distance to the geometry field from the lookup geometry is less than the given distance value.
 - [947614e3] Returns the 3D extent of all ``geo_field`` in the ``QuerySet`` as a 6-tuple, comprising the lower left coordinate and upper right coordinate (each with x, y, and z coordinates).
 - [fd733cad] Returns the extent of all ``geo_field`` in the ``QuerySet`` as a 4-tuple, comprising the lower left coordinate and the upper right coordinate.
@@ -254,6 +281,7 @@
 - [4ea76185fa1bf24a-2] Spatial Lookups ===============
 - [fd34be91] Spatial lookups with rasters are only supported for PostGIS backends (denominated as PGRaster in this section).
 - [a900b756] Tests if no point in the geometry field is outside the lookup geometry. [#fncovers]_
+- [3ec0fd23] Tests if no point in the lookup geometry is outside the geometry field. [#fncovers]_
 - [1ca3549e] Tests if the geometry field is "equal" to the lookup geometry. On Oracle, MySQL, and SpatiaLite, it tests spatial equality, while on PostGIS it tests equality of bounding boxes.
 - [e39e0926] Tests if the geometry field is spatially disjoint from the lookup geometry.
 - [2dd1acb8] Tests if the geometry field is spatially equal to the lookup geometry.
@@ -268,8 +296,11 @@
 - [7391d99f] Tests if the geometry field's bounding box is strictly above the lookup geometry's bounding box.
 - [123cc1d2] Tests if the geometry field's bounding box is strictly below the lookup geometry's bounding box.
 - [c40035e5] Tests if the geometry field's bounding box is strictly to the left of the lookup geometry's bounding box.
+- [32e2cee5] Tests if the geometry field's bounding box is strictly to the right of the lookup geometry's bounding box.
 - [0715a289] Tests if the geometry field's bounding box overlaps or is above the lookup geometry's bounding box.
+- [275e283a] Tests if the geometry field's bounding box overlaps or is below the lookup geometry's bounding box.
 - [c3a03e85] Tests if the geometry field's bounding box overlaps or is to the left of the lookup geometry's bounding box.
+- [3290a81c] Tests if the geometry field's bounding box overlaps or is to the right of the lookup geometry's bounding box.
 - [23aeeaa1] Tests if the geometry field's bounding box overlaps the lookup geometry's bounding box.
 - [791ddd0e] Tests if the geometry is empty.
 - [7985c22d] Tests if the geometry is valid.

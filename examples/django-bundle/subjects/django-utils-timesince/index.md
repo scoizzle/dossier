@@ -1,10 +1,10 @@
 # django/utils/timesince
 
-- Subject: django/utils/timesince (id `e68a47f3-a949-48bc-9daf-4341b62c61b8`)
+- Subject: django/utils/timesince (id `ed4a701c-111e-4df7-8fa8-dc9113ad6cb1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1300 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

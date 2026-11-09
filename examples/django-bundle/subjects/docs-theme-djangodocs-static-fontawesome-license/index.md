@@ -1,10 +1,10 @@
 # docs/_theme/djangodocs/static/fontawesome/LICENSE
 
-- Subject: docs/_theme/djangodocs/static/fontawesome/LICENSE (id `6664450e-108a-4e28-a330-6dcfa9be4f15`)
+- Subject: docs/_theme/djangodocs/static/fontawesome/LICENSE (id `9f107151-83fa-4fa7-982e-f8532f78eb89`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 469 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

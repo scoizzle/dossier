@@ -1,6 +1,6 @@
 # Fact 1352a834
 
-Store id: 926ac9b6-381a-4b7d-b59d-f2ba710ff12d
+Store id: da4d9a06-c959-4943-99e6-d5ad1902e894
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5099990+00:00`
+- posted_at: `2026-11-09T23:44:50.0333950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1023,
     "symbol": "Field.get_internal_type"
   },
-  "id": "926ac9b6-381a-4b7d-b59d-f2ba710ff12d",
+  "id": "da4d9a06-c959-4943-99e6-d5ad1902e894",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5099990+00:00"
+    "posted_at": "2026-11-09T23:44:50.0333950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1b6b1031-bcd4-426a-9ee5-e7776319ff29",
+  "subject_id": "8fbc8690-014b-4c1e-8b48-21cd50de4e6c",
   "subject_name": "django/db/models/fields/__init__::Field.get_internal_type",
   "tags": [
     "entity:method"

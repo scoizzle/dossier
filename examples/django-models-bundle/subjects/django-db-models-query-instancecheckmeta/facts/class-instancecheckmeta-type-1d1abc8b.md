@@ -1,6 +1,6 @@
 # Fact 1d1abc8b
 
-Store id: c35fbf76-243b-4592-a4ad-8ac1d79bd2c9
+Store id: e2823ed4-6551-4459-aaf0-580d69d0f64f
 
 ## Text
 
@@ -20,7 +20,7 @@ class InstanceCheckMeta(type)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6904860+00:00`
+- posted_at: `2026-11-09T23:44:56.1976480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2395,
     "symbol": "InstanceCheckMeta"
   },
-  "id": "c35fbf76-243b-4592-a4ad-8ac1d79bd2c9",
+  "id": "e2823ed4-6551-4459-aaf0-580d69d0f64f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6904860+00:00"
+    "posted_at": "2026-11-09T23:44:56.1976480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e1703eaa-fb5e-41c8-a4d2-0dd676e1f4ee",
+  "subject_id": "52813487-c68d-4adc-a598-0bec79ab2fc6",
   "subject_name": "django/db/models/query::InstanceCheckMeta",
   "tags": [
     "entity:class"

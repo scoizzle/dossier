@@ -1,10 +1,10 @@
 # docs/internals/contributing/committing-code
 
-- Subject: docs/internals/contributing/committing-code (id `0e86b75b-3071-469f-ab8c-191b5868d1f4`)
+- Subject: docs/internals/contributing/committing-code (id `c77eca93-9bf7-4a4f-858f-98595d11493e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4043 tokens
-- Facts shown: 93 of 93
+- Facts shown: 93 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Pi
 
-- Subject: django/db/models/functions/math::Pi (id `4acd53c0-e952-4768-9733-fdfd9f67fff3`)
+- Subject: django/db/models/functions/math::Pi (id `cca98509-69d3-4dab-b7b6-95625d7a4445`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

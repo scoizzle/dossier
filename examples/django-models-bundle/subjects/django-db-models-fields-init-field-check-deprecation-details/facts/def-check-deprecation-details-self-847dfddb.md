@@ -1,6 +1,6 @@
 # Fact 847dfddb
 
-Store id: 2565d7e3-cca8-4fd4-b277-28a4e16bf82e
+Store id: 618268b9-9e00-4217-97f1-b3a96b69063b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_deprecation_details(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4406890+00:00`
+- posted_at: `2026-11-09T23:44:49.9838910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 547,
     "symbol": "Field._check_deprecation_details"
   },
-  "id": "2565d7e3-cca8-4fd4-b277-28a4e16bf82e",
+  "id": "618268b9-9e00-4217-97f1-b3a96b69063b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4406890+00:00"
+    "posted_at": "2026-11-09T23:44:49.9838910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2b98a724-0602-4eac-a374-5e539dfe479e",
+  "subject_id": "dd0ab628-16f4-49e3-adf3-09fb79de6321",
   "subject_name": "django/db/models/fields/__init__::Field._check_deprecation_details",
   "tags": [
     "entity:method"

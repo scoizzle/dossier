@@ -1,10 +1,10 @@
 # django/conf/global_settings
 
-- Subject: django/conf/global_settings (id `b5656984-950a-4a3a-a405-77ba8ecb0f29`)
+- Subject: django/conf/global_settings (id `a5f3722c-ec3e-4759-b80f-3dc19ea6169d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6626 tokens
-- Facts shown: 113 of 118
+- Used: 6970 tokens
+- Facts shown: 118 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,13 +31,18 @@
 
 - [7f211a6b] # Default email address to use for various automated correspondence from # the site managers. DEFAULT_FROM_EMAIL = "webmaster@localhost"
 - [05bbbb3c] # Default exception reporter class used in case none has been # specifically assigned to the HttpRequest instance. DEFAULT_EXCEPTION_REPORTER = "django.views.debug.ExceptionReporter"
+- [3e1679f6] # Default exception reporter filter class used in case none has been # specifically assigned to the HttpRequest instance. DEFAULT_EXCEPTION_REPORTER_FILTER = "django.views.debug.SafeExceptionReporterFilter"
 - [2cdb3825] # Default form rendering class. FORM_RENDERER = "django.forms.renderers.DjangoTemplates" # RemovedInDjango2028Warning: This setting allows to revert back to the old # blank choice label in Django 6.1. USE_BLANK_CHOICE_DASH = False
 - [e292ecef] # Default formats to be used when parsing dates and times from input boxes, # in order # See all available format string here: # https://docs.python.org/library/datetime.html#strftime-behavior # * Note that these format strings are different from the ones to display dates DATETIME_INPUT_FORMATS = [ "%Y-%m-%d %H:%M:%S", # '2006-10-25 14:30:59' "%Y-%m-%d %H:%M:%S.%f", # '2006-10-25 14:30:59.000200' "%Y-%m-%d %H:%M", # '2006-10-25 14:30' "%m/%d/%Y %H:%M:%S", # '10/25/2006 14:30:59' "%m/%d/%Y %H:%M:%S.%f", # '10/25/2006 14:30:59.000200' "%m/%d/%Y %H:%M", # '10/25/2006 14:30' "%m/%d/%y %H:%M:%S", # '10/25/06 14:30:59' "%m/%d/%y %H:%M:%S.%f", # '10/25/06 14:30:59.000200' "%m/%d/%y %H:%M", # '10/25/06 14:30' ]
 - [c0866eef] # Default formats to be used when parsing dates from input boxes, in order # See all available format string here: # https://docs.python.org/library/datetime.html#strftime-behavior # * Note that these format strings are different from the ones to display dates DATE_INPUT_FORMATS = [ "%Y-%m-%d", # '2006-10-25' "%m/%d/%Y", # '10/25/2006' "%m/%d/%y", # '10/25/06' "%b %d %Y", # 'Oct 25 2006' "%b %d, %Y", # 'Oct 25, 2006' "%d %b %Y", # '25 Oct 2006' "%d %b, %Y", # '25 Oct, 2006' "%B %d %Y", # 'October 25 2006' "%B %d, %Y", # 'October 25, 2006' "%d %B %Y", # '25 October 2006' "%d %B, %Y", # '25 October, 2006' ]
+- [6cabe1e5] # Default formats to be used when parsing times from input boxes, in order # See all available format string here: # https://docs.python.org/library/datetime.html#strftime-behavior # * Note that these format strings are different from the ones to display dates TIME_INPUT_FORMATS = [ "%H:%M:%S", # '14:30:59' "%H:%M:%S.%f", # '14:30:59.000200' "%H:%M", # '14:30' ]
 - [83905d00] # Default formatting for date objects when only the month and day are relevant. # See all available format strings here: # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date MONTH_DAY_FORMAT = "F j"
+- [abc29c73] # Default formatting for date objects when only the year and month are # relevant. See all available format strings here: # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date YEAR_MONTH_FORMAT = "F Y"
 - [e48af4e3] # Default formatting for date objects. See all available format strings here: # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date DATE_FORMAT = "N j, Y"
+- [7bc4472c] # Default formatting for datetime objects. See all available format strings # here: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date DATETIME_FORMAT = "N j, Y, P"
 - [ab477c11] # Default formatting for time objects. See all available format strings here: # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date TIME_FORMAT = "P"
 - [7c903c89] # Default short formatting for date objects. See all available format strings # here: https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date SHORT_DATE_FORMAT = "m/d/Y"
+- [2501fa19] # Default short formatting for datetime objects. # See all available format strings here: # https://docs.djangoproject.com/en/dev/ref/templates/builtins/#date SHORT_DATETIME_FORMAT = "m/d/Y P"
 - [65d79577] # Default values of MESSAGE_LEVEL and MESSAGE_TAGS are defined within # django.contrib.messages to avoid imports in this settings file.
 - [5f94af0a] # Directory in which upload streamed files will be temporarily saved. A value # of `None` will make Django use the operating system's default temporary # directory (i.e. "/tmp" on *nix systems). FILE_UPLOAD_TEMP_DIR = None
 - [9d6fd491] # Dotted path to callable to be used as view when a request is # rejected by the CSRF middleware. CSRF_FAILURE_VIEW = "django.views.csrf.csrf_failure"

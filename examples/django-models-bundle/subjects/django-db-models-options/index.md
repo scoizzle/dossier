@@ -1,10 +1,10 @@
 # django/db/models/options
 
-- Subject: django/db/models/options (id `5abd8127-25aa-41b5-b865-250ec14238cc`)
+- Subject: django/db/models/options (id `8ecb41bc-ee7b-4793-ab54-21bb0dbd78cb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 58 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

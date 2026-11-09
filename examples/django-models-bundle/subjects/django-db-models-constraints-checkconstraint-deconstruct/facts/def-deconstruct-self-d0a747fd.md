@@ -1,6 +1,6 @@
 # Fact d0a747fd
 
-Store id: f945e3a4-5802-40dc-881b-d53826838684
+Store id: b58f42d4-8888-4801-8d75-264f03f0434e
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.2045840+00:00`
+- posted_at: `2026-11-09T23:44:48.7826700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 254,
     "symbol": "CheckConstraint.deconstruct"
   },
-  "id": "f945e3a4-5802-40dc-881b-d53826838684",
+  "id": "b58f42d4-8888-4801-8d75-264f03f0434e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.2045840+00:00"
+    "posted_at": "2026-11-09T23:44:48.7826700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9949e967-06d8-431d-8879-4b4d097200b3",
+  "subject_id": "3bc683f2-21e5-4f24-bbd0-49dc865d1f90",
   "subject_name": "django/db/models/constraints::CheckConstraint.deconstruct",
   "tags": [
     "entity:method"

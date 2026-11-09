@@ -1,10 +1,10 @@
 # django/db/models/functions/comparison
 
-- Subject: django/db/models/functions/comparison (id `f413cc9f-0314-4d47-88d5-686eaa21e619`)
+- Subject: django/db/models/functions/comparison (id `b144e176-2f68-4d7b-9b17-76f2684f59e8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 98 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

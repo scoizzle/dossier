@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.convert_empty_strings
 
-- Subject: django/db/models/fields/related::ForeignKey.convert_empty_strings (id `b034cc4c-ae90-4b35-b895-0c193ddf0886`)
+- Subject: django/db/models/fields/related::ForeignKey.convert_empty_strings (id `59a45ee4-030a-4619-9627-8a17caa8fc43`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

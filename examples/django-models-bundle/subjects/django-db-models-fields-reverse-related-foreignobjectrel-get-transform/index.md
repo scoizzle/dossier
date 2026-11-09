@@ -1,11 +1,11 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.get_transform
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_transform (id `aa8eff00-5f0e-444a-b598-8057fc1b33ec`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.get_transform (id `cdb2a235-ff8a-44a7-8d6d-7c762738a79b`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

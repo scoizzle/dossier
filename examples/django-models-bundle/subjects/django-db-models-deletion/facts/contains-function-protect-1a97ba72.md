@@ -1,6 +1,6 @@
 # Fact 1a97ba72
 
-Store id: 96ca3ae2-01b2-46e7-baa4-b24b704a86d7
+Store id: 81b5b970-e0e5-4159-b4a5-3faaac06eb87
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function PROTECT
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "96ca3ae2-01b2-46e7-baa4-b24b704a86d7",
+  "id": "81b5b970-e0e5-4159-b4a5-3faaac06eb87",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PROTECT"
       },
       "rel": "contains",
-      "target": "54cfd144-7054-4a4d-8a0c-7c753803e4ed"
+      "target": "fa59e2eb-4a8d-454c-979b-8e2699123cfc"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

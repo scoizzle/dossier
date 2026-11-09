@@ -1,6 +1,6 @@
 # Fact 70cea43a
 
-Store id: 583f9ed0-74eb-4548-bb0a-c395fe125180
+Store id: 29789d87-9f49-44bf-95d2-5154b7d9f139
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1581370+00:00`
+- posted_at: `2026-11-09T23:44:48.7760680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "BaseConstraint.deconstruct"
   },
-  "id": "583f9ed0-74eb-4548-bb0a-c395fe125180",
+  "id": "29789d87-9f49-44bf-95d2-5154b7d9f139",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1581370+00:00"
+    "posted_at": "2026-11-09T23:44:48.7760680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "22025ba8-adc8-430a-8895-8d9ce7cc2e0f",
+  "subject_id": "f6e58e27-64b6-43c9-8d20-fb710972d168",
   "subject_name": "django/db/models/constraints::BaseConstraint.deconstruct",
   "tags": [
     "entity:method"

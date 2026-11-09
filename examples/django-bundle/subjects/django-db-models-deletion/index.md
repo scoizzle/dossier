@@ -1,10 +1,10 @@
 # django/db/models/deletion
 
-- Subject: django/db/models/deletion (id `ada28cef-8303-43ea-ac75-45507fa36b4b`)
+- Subject: django/db/models/deletion (id `165d9d75-5917-48c1-bd90-bc051155c707`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4676 tokens
-- Facts shown: 58 of 59
+- Used: 4713 tokens
+- Facts shown: 59 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,7 @@
 - [32320fc6] Return a list of all objects that were not already collected. """ if not objs: return [] new_objs = [] model = objs[0].__class__ instances = self.data[model] for obj in objs: if obj not in instances: new_objs.append(obj) instances.update(new_objs) # Nullable relationships can be ignored -- they are nulled out before # deleting, and therefore do not affect the order in which objects have # to be deleted. if source is not None and not nullable: self.add_dependency(source, model, reverse_dependency=reverse_dependency) return new_objs
 - [7aa26003] The 'from_field' tells where we are coming from - we need this to determine if the objects are in fact to be deleted. Allow also skipping parent -> child -> parent chain preventing fast delete of the child. """ if self.force_collection: return False if from_field and from_field.remote_field.on_delete is not CASCADE: return False if hasattr(objs, "_meta"): model = objs._meta.model elif hasattr(objs, "model") and hasattr(objs, "_raw_delete"): model = objs.model else: return False if self._has_signal_listeners(model): return False # The use of from_field comes from the need to avoid cascade back to # parent when parent delete is cascading to child. opts = model._meta return ( all( link == from_field for link in opts.concrete_model._meta.parents.values() ) and # Foreign keys pointing to this model. all( related.field.remote_field.on_delete in SKIP_COLLECTION for related in get_candidate_relations_to_delete(opts) ) and ( # Something like generic foreign key. not any( hasattr(field, "bulk_related_objects") for field in opts.private_fields ) ) )
 - [abbc234d] def set_on_delete(collector, field, sub_objs, using): collector.add_field_update(field, value(), sub_objs)
+- [1f2abaa2] def set_on_delete(collector, field, sub_objs, using): collector.add_field_update(field, value, sub_objs)
 - [1331f808] for model, instances in self.data.items(): for instance in instances: setattr(instance, model._meta.pk.attname, None) return sum(deleted_counter.values()), dict(deleted_counter)
 - [367aa431] if fail_on_restricted: # Raise an error if collected restricted objects (RESTRICT) aren't # candidates for deletion also collected via CASCADE. for related_model, instances in self.data.items(): self.clear_restricted_objects_from_set(related_model, instances) for qs in self.fast_deletes: self.clear_restricted_objects_from_queryset(qs.model, qs) if self.restricted_objects.values(): restricted_objects = defaultdict(list) for related_model, fields in self.restricted_objects.items(): for field, objs in fields.items(): if objs: key = "'%s.%s'" % (related_model.__name__, field.name) restricted_objects[key] += objs if restricted_objects: raise RestrictedError( "Cannot delete some instances of model %r because " "they are referenced through restricted foreign keys: " "%s." % ( model.__name__, ", ".join(restricted_objects), ), set(chain.from_iterable(restricted_objects.values())), )
 - [75a3d00c] if not keep_parents: # Recursively collect concrete model's parent models, but not their # related objects. These will be found by meta.get_fields() concrete_model = model._meta.concrete_model for ptr in concrete_model._meta.parents.values(): if ptr: parent_objs = [getattr(obj, ptr.name) for obj in new_objs] self.collect( parent_objs, source=model, source_attr=ptr.remote_field.related_name, collect_related=False, reverse_dependency=True, fail_on_restricted=False, ) if not collect_related: return

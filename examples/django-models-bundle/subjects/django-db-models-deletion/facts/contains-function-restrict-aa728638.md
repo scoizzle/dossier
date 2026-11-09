@@ -1,6 +1,6 @@
 # Fact aa728638
 
-Store id: b2711723-7247-418f-92c0-51969f3af224
+Store id: 71585f15-dc14-4bac-9582-1a088afb4f3c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function RESTRICT
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b2711723-7247-418f-92c0-51969f3af224",
+  "id": "71585f15-dc14-4bac-9582-1a088afb4f3c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RESTRICT"
       },
       "rel": "contains",
-      "target": "0131d0f0-0e99-4a30-b340-415100a6aeeb"
+      "target": "fbdef160-cd65-4b4e-a758-2d56c1701818"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

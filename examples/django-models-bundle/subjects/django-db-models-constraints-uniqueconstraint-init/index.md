@@ -1,11 +1,11 @@
 # django/db/models/constraints::UniqueConstraint.__init__
 
-- Subject: django/db/models/constraints::UniqueConstraint.__init__ (id `550f86bd-b4f6-42f1-8d84-fb0af830abc0`)
+- Subject: django/db/models/constraints::UniqueConstraint.__init__ (id `20d3cce2-eaa4-4c98-b372-a053195b7599`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 59 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

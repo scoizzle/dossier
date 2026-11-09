@@ -1,6 +1,6 @@
 # Fact d30e2b0f
 
-Store id: d4a67159-85d0-4388-872c-cc8ac8b24850
+Store id: a68d6598-6b06-4a97-8245-80ecc8d49ffe
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.4601260+00:00`
+- posted_at: `2026-11-09T23:44:53.5389520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 12,
     "symbol": "JSONArray.as_sql"
   },
-  "id": "d4a67159-85d0-4388-872c-cc8ac8b24850",
+  "id": "a68d6598-6b06-4a97-8245-80ecc8d49ffe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.4601260+00:00"
+    "posted_at": "2026-11-09T23:44:53.5389520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a6ced4ea-e89d-4caa-8b40-f79dfcec6753",
+  "subject_id": "a291fa88-a981-4415-bf6b-20cb5c302e7b",
   "subject_name": "django/db/models/functions/json::JSONArray.as_sql",
   "tags": [
     "entity:method"

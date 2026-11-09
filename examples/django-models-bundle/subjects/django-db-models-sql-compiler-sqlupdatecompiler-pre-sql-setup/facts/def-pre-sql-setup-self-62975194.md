@@ -1,6 +1,6 @@
 # Fact 62975194
 
-Store id: 73834c2d-d920-418a-950f-aed3f2b85c8a
+Store id: 09a914a2-de6a-4d81-accd-739436241703
 
 ## Text
 
@@ -20,7 +20,7 @@ def pre_sql_setup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0989210+00:00`
+- posted_at: `2026-11-09T23:44:57.7443320+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2185,
     "symbol": "SQLUpdateCompiler.pre_sql_setup"
   },
-  "id": "73834c2d-d920-418a-950f-aed3f2b85c8a",
+  "id": "09a914a2-de6a-4d81-accd-739436241703",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0989210+00:00"
+    "posted_at": "2026-11-09T23:44:57.7443320+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "43ab3735-7a71-444b-bb2c-cde650eb70e9",
+  "subject_id": "944c9c43-2040-4588-ad86-21285ce76816",
   "subject_name": "django/db/models/sql/compiler::SQLUpdateCompiler.pre_sql_setup",
   "tags": [
     "entity:method"

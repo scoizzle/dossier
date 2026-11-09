@@ -1,10 +1,10 @@
 # django/contrib/sitemaps/views
 
-- Subject: django/contrib/sitemaps/views (id `fbde115f-5400-4db4-b208-e22bfccefee8`)
+- Subject: django/contrib/sitemaps/views (id `76356e45-9dac-4817-8f39-36f0d5bed415`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1082 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

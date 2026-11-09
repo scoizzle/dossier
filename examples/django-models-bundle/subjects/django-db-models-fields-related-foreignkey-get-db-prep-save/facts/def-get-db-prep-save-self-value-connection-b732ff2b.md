@@ -1,6 +1,6 @@
 # Fact b732ff2b
 
-Store id: 583eb993-dc2d-463c-bd7d-0327dc0aff5e
+Store id: 7bc146a1-56ed-406c-bc77-a438c881ba27
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_save(self, value, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7684900+00:00`
+- posted_at: `2026-11-09T23:44:51.5909290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1273,
     "symbol": "ForeignKey.get_db_prep_save"
   },
-  "id": "583eb993-dc2d-463c-bd7d-0327dc0aff5e",
+  "id": "7bc146a1-56ed-406c-bc77-a438c881ba27",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7684900+00:00"
+    "posted_at": "2026-11-09T23:44:51.5909290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c96b64d-ca45-486f-94e4-be3f44fc2df7",
+  "subject_id": "2c0628f7-58a6-4f59-8dc4-8287a56708e8",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_db_prep_save",
   "tags": [
     "entity:method"

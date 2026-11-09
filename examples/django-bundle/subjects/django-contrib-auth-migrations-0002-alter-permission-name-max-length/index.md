@@ -1,10 +1,10 @@
 # django/contrib/auth/migrations/0002_alter_permission_name_max_length
 
-- Subject: django/contrib/auth/migrations/0002_alter_permission_name_max_length (id `538f64c9-f927-4a60-8844-eda6f2f49a78`)
+- Subject: django/contrib/auth/migrations/0002_alter_permission_name_max_length (id `bdc2224a-e973-476d-b86d-adfcd7892b4a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 99 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 54b09194
 
-Store id: aa3044d1-78ff-4a1d-9108-ff20f35f6764
+Store id: 4017aac6-c04d-4b99-9b40-9070b9307946
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_related_objects(self, field, value, opts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9194280+00:00`
+- posted_at: `2026-11-09T23:44:58.8255120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1378,
     "symbol": "Query.check_related_objects"
   },
-  "id": "aa3044d1-78ff-4a1d-9108-ff20f35f6764",
+  "id": "4017aac6-c04d-4b99-9b40-9070b9307946",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9194280+00:00"
+    "posted_at": "2026-11-09T23:44:58.8255120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ca32a61-d412-483a-8aa5-71ff09126dad",
+  "subject_id": "3a04f58b-7eca-4821-bdca-6cf034a7c36e",
   "subject_name": "django/db/models/sql/query::Query.check_related_objects",
   "tags": [
     "entity:method"

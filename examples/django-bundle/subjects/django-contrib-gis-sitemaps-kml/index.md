@@ -1,10 +1,10 @@
 # django/contrib/gis/sitemaps/kml
 
-- Subject: django/contrib/gis/sitemaps/kml (id `6237744b-69e4-41c8-a647-0b7ab7d770f2`)
+- Subject: django/contrib/gis/sitemaps/kml (id `340cc419-7a67-4198-a495-da7a7fbd75ba`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 561 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

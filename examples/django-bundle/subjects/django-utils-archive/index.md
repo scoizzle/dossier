@@ -1,10 +1,10 @@
 # django/utils/archive
 
-- Subject: django/utils/archive (id `a9b364b0-92ac-49f6-9c06-dc6cf97261f6`)
+- Subject: django/utils/archive (id `3d464668-abae-4f75-a683-aff14b3e08e1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1883 tokens
-- Facts shown: 31 of 34
+- Used: 1952 tokens
+- Facts shown: 34 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,17 +16,20 @@
 - def __exit__(self, exc_type, exc_value, traceback): self.close() [13fbb7dd43764b1a-2]
 - def __init__(self, file): self._archive = self._archive_cls(file)(file) [d650a8e0]
 - def close(self): self._archive.close() [bc9e991491347ef6]
+- def close(self): self._archive.close() [bc9e991491347ef6-2]
+- def close(self): self._archive.close() [bc9e991491347ef6-3]
 - def extract(self): raise NotImplementedError( "subclasses of BaseArchive must provide an extract() method" ) [d36037c4]
 - def extract(self, to_path): members = self._archive.getmembers() leading = self.has_leading_dir(x.name for x in members) for member in members: name = member.name if leading: name = self.split_leading_dir(name)[1] filename = self.target_filename(to_path, name) if member.isdir(): if filename: os.makedirs(filename, exist_ok=True) else: try: extracted = self._archive.extractfile(member) except (KeyError, AttributeError) as exc: # Some corrupt tar files seem to produce this # (specifically bad symlinks) print( "In the tar file %s the member %s is invalid: %s" % (name, member.name, exc) ) else: dirname = os.path.dirname(filename) if dirname: os.makedirs(dirname, exist_ok=True) with open(filename, "wb") as outfile: shutil.copyfileobj(extracted, outfile) self._copy_permissions(member.mode, filename) finally: if extracted: extracted.close() [247348b1]
 - def extract(self, to_path): namelist = self._archive.namelist() leading = self.has_leading_dir(namelist) for name in namelist: data = self._archive.read(name) info = self._archive.getinfo(name) if leading: name = self.split_leading_dir(name)[1] if not name: continue filename = self.target_filename(to_path, name) if name.endswith(("/", "\\")): # A directory os.makedirs(filename, exist_ok=True) else: dirname = os.path.dirname(filename) if dirname: os.makedirs(dirname, exist_ok=True) with open(filename, "wb") as outfile: outfile.write(data) # Convert ZipInfo.external_attr to mode mode = info.external_attr >> 16 self._copy_permissions(mode, filename) [45fbd340]
 - def extract(self, to_path): self._archive.extract(to_path) [9fe195a5]
-- def has_leading_dir(self, paths): """ Return True if all the paths have the same leading path name (i.e., everything is in one subdirectory in an archive). """ common_prefix = None for path in paths: prefix, rest = self.split_leading_dir(path) if not prefix: return False elif common_prefix is None: common_prefix = prefix elif prefix != common_prefix: return False return True [7fbddcd1]
+- def list(self): raise NotImplementedError( "subclasses of BaseArchive must provide a list() method" ) [87a0a4b7]
 - def list(self): self._archive.list() [f9e9cf58]
+- def list(self, *args, **kwargs): self._archive.list(*args, **kwargs) [a4366e63]
 
 ## All facts
 
-- [87a0a4b7] def list(self): raise NotImplementedError( "subclasses of BaseArchive must provide a list() method" )
-- [a4366e63] def list(self, *args, **kwargs): self._archive.list(*args, **kwargs)
+- [7fbddcd1] def has_leading_dir(self, paths): """ Return True if all the paths have the same leading path name (i.e., everything is in one subdirectory in an archive). """ common_prefix = None for path in paths: prefix, rest = self.split_leading_dir(path) if not prefix: return False elif common_prefix is None: common_prefix = prefix elif prefix != common_prefix: return False return True
+- [1fdce35e] def list(self, *args, **kwargs): self._archive.printdir(*args, **kwargs)
 - [43c8c5ad] def split_leading_dir(self, path): path = str(path) path = path.lstrip("/").lstrip("\\") if "/" in path and ( ("\\" in path and path.find("/") < path.find("\\")) or "\\" not in path ): return path.split("/", 1) elif "\\" in path: return path.split("\\", 1) else: return path, ""
 - [36e44d97] def target_filename(self, to_path, name): target_path = os.path.abspath(to_path) filename = os.path.abspath(os.path.join(target_path, name)) try: if os.path.commonpath([target_path, filename]) != target_path: raise SuspiciousOperation("Archive contains invalid path: '%s'" % name) except ValueError: # Different drives on Windows raises ValueError. raise SuspiciousOperation("Archive contains invalid path: '%s'" % name) return filename
 - [601c5f36] """ Based on "python-archive" -- https://pypi.org/project/python-archive/

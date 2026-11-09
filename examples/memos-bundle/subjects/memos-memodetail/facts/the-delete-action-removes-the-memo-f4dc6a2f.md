@@ -1,6 +1,6 @@
 # Fact f4dc6a2f
 
-Store id: f1201c62-9562-4a3d-a7be-b24e5c16bbf5
+Store id: 639e99d7-225f-4f29-89c6-afe8a26712d0
 
 ## Text
 
@@ -20,7 +20,7 @@ The delete action removes the memo after a confirmation.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.1762130+00:00`
+- posted_at: `2026-11-09T23:44:32.2398330+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f1201c62-9562-4a3d-a7be-b24e5c16bbf5",
+  "id": "639e99d7-225f-4f29-89c6-afe8a26712d0",
   "kind": "action",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.1762130+00:00"
+    "posted_at": "2026-11-09T23:44:32.2398330+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "23a68f36-38ee-45ac-acc4-725c5bfda95a",
+  "subject_id": "063b987a-de3a-4a04-8814-0cad1eb233c3",
   "subject_name": "Memos/MemoDetail",
   "tags": [],
   "text": "The delete action removes the memo after a confirmation."

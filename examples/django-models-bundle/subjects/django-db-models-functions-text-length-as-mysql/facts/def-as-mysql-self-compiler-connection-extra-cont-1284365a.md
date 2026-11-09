@@ -1,6 +1,6 @@
 # Fact 1284365a
 
-Store id: e9cc39e9-19a5-449e-90e4-e1cac68aa5d1
+Store id: fc4ea2c1-2c55-4c06-bb11-8df0055d9fa5
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2026350+00:00`
+- posted_at: `2026-11-09T23:44:54.0966600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 186,
     "symbol": "Length.as_mysql"
   },
-  "id": "e9cc39e9-19a5-449e-90e4-e1cac68aa5d1",
+  "id": "fc4ea2c1-2c55-4c06-bb11-8df0055d9fa5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2026350+00:00"
+    "posted_at": "2026-11-09T23:44:54.0966600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0d6ab6d9-95f3-4fb7-99e0-3c6424ecbb05",
+  "subject_id": "7f37fc79-071a-4601-be51-77c5359f27b5",
   "subject_name": "django/db/models/functions/text::Length.as_mysql",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/functions/text::Reverse
 
-- Subject: django/db/models/functions/text::Reverse (id `165ed61c-a426-45f7-a084-5cbc75ebe8b3`)
+- Subject: django/db/models/functions/text::Reverse (id `b31ea27d-7388-46df-b4f4-6c261fdcfb1a`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

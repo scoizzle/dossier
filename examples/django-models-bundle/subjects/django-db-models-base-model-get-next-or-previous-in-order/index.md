@@ -1,11 +1,11 @@
 # django/db/models/base::Model._get_next_or_previous_in_order
 
-- Subject: django/db/models/base::Model._get_next_or_previous_in_order (id `9130121b-0c8c-45cb-8c52-330da1362ede`)
+- Subject: django/db/models/base::Model._get_next_or_previous_in_order (id `9af17b7d-799b-4e89-804b-a7e9f7705853`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

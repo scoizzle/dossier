@@ -1,10 +1,10 @@
 # docs/howto/auth-remote-user
 
-- Subject: docs/howto/auth-remote-user (id `586d0ec2-547b-4ee4-b556-87224f636e5f`)
+- Subject: docs/howto/auth-remote-user (id `a794f9d8-d2a0-4ed3-83b8-a88be3ba23b0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1912 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

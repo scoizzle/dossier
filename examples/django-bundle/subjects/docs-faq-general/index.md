@@ -1,10 +1,10 @@
 # docs/faq/general
 
-- Subject: docs/faq/general (id `a21e88ff-1ba6-42aa-9fe3-c20eeb58f486`)
+- Subject: docs/faq/general (id `ba06c7b1-c77e-4db5-89b7-f5acce62c025`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3181 tokens
-- Facts shown: 71 of 71
+- Facts shown: 71 facts
 - Conflicts: 0
 - Gaps: 0
 

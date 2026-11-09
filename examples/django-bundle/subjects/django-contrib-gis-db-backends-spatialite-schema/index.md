@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/spatialite/schema
 
-- Subject: django/contrib/gis/db/backends/spatialite/schema (id `2165c9c4-7d82-400f-933d-45f7a8ec5fe6`)
+- Subject: django/contrib/gis/db/backends/spatialite/schema (id `46ea0d0c-9c41-4689-9cca-eb164dc8e325`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1468 tokens
-- Facts shown: 18 of 19
+- Used: 1502 tokens
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,7 @@
 - [25a6f82c] def create_model(self, model): super().create_model(model) # Create geometry columns for sql in self.geometry_sql: self.execute(sql) self.geometry_sql = []
 - [5cda69df] def delete_model(self, model, **kwargs): from django.contrib.gis.db.models import GeometryField
 - [97ded5e0e226ebb7-3] def geo_quote_name(self, name): return self.connection.ops.geo_quote_name(name)
+- [dc8bc4c2] def remove_field(self, model, field): from django.contrib.gis.db.models import GeometryField
 - [70afff0d] def remove_geometry_metadata(self, model, field): self.execute( self.sql_remove_geometry_metadata % { "table": self.quote_name(model._meta.db_table), "column": self.quote_name(field.column), } ) self.execute( self.sql_drop_spatial_index % { "table": model._meta.db_table, "column": field.column, } )
 - [5413d18a] geometry_tables = [ "geometry_columns", "geometry_columns_auth", "geometry_columns_time", "geometry_columns_statistics", ]
 - [51266fd7] class SpatialiteSchemaEditor(DatabaseSchemaEditor): sql_add_geometry_column = ( "SELECT AddGeometryColumn(%(table)s, %(column)s, %(srid)s, " "%(geom_type)s, %(dim)s, %(null)s)" ) sql_add_spatial_index = "SELECT CreateSpatialIndex(%(table)s, %(column)s)" sql_drop_spatial_index = "DROP TABLE idx_%(table)s_%(column)s" sql_recover_geometry_metadata = ( "SELECT RecoverGeometryColumn(%(table)s, %(column)s, %(srid)s, " "%(geom_type)s, %(dim)s)" ) sql_remove_geometry_metadata = "SELECT DiscardGeometryColumn(%(table)s, %(column)s)" sql_discard_geometry_columns = ( "DELETE FROM %(geom_table)s WHERE f_table_name = %(table)s" ) sql_update_geometry_columns = ( "UPDATE %(geom_table)s SET f_table_name = %(new_table)s " "WHERE f_table_name = %(old_table)s" )

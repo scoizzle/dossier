@@ -1,6 +1,6 @@
 # Fact b2aab9a0
 
-Store id: 58a58246-c32d-4126-9db0-a70f44283bdd
+Store id: 1bd5e86a-04af-4c90-9bb5-3f75a82b2d86
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lhs(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1445320+00:00`
+- posted_at: `2026-11-09T23:44:54.8632960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 99,
     "symbol": "Lookup.get_prep_lhs"
   },
-  "id": "58a58246-c32d-4126-9db0-a70f44283bdd",
+  "id": "1bd5e86a-04af-4c90-9bb5-3f75a82b2d86",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1445320+00:00"
+    "posted_at": "2026-11-09T23:44:54.8632960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7dd76c28-c60a-483c-94d6-cb751db9c3be",
+  "subject_id": "1707d9db-3890-4d36-be3f-032fadb17237",
   "subject_name": "django/db/models/lookups::Lookup.get_prep_lhs",
   "tags": [
     "entity:method"

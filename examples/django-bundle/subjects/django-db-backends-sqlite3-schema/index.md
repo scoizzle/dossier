@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/schema
 
-- Subject: django/db/backends/sqlite3/schema (id `00ba62bf-06d4-4de4-ac32-812e66f50ad6`)
+- Subject: django/db/backends/sqlite3/schema (id `6417eb64-e458-45bb-849e-159175308b83`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4062 tokens
-- Facts shown: 37 of 38
+- Used: 4143 tokens
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -46,6 +46,7 @@
 - [bd022bd9] def delete_model(self, model, handle_autom2m=True): if handle_autom2m: super().delete_model(model) else: # Delete the table (and only that) self.execute( self.sql_delete_table % { "table": self.quote_name(model._meta.db_table), } ) # Remove all deferred statements referencing the deleted table. for sql in list(self.deferred_sql): if isinstance(sql, Statement) and sql.references_table( model._meta.db_table ): self.deferred_sql.remove(sql)
 - [512d1078ba2dee30-2] def prepare_default(self, value): return self.quote_value(value)
 - [be2fb077] def quote_value(self, value): # The backend "mostly works" without this function and there are use # cases for compiling Python without the sqlite3 libraries (e.g. # security hardening). try: import sqlite3
+- [ba499f91] def remove_constraint(self, model, constraint): if isinstance(constraint, UniqueConstraint) and ( constraint.condition or constraint.contains_expressions or constraint.include or constraint.deferrable ): super().remove_constraint(model, constraint) else: self._remake_table(model)
 - [3a274324] def remove_field(self, model, field): """ Remove a field from a model. Usually involves deleting a column, but for M2Ms may involve deleting a table. """ # M2M fields are a special case if field.many_to_many: # For implicit M2M tables, delete the auto-created table if field.remote_field.through._meta.auto_created: self.delete_model(field.remote_field.through) # For explicit "through" M2M fields, do nothing elif ( # Primary keys, unique fields, indexed fields, and foreign keys are # not supported in ALTER TABLE DROP COLUMN. not field.primary_key and not field.unique and not field.db_index and not (field.remote_field and field.db_constraint) ): super().remove_field(model, field) # For everything else, remake. else: # It might not actually have a column behind it if field.db_parameters(connection=self.connection)["type"] is None: return self._remake_table(model, delete_field=field)
 - [0c39b6ae] class DatabaseSchemaEditor(BaseDatabaseSchemaEditor): sql_delete_table = "DROP TABLE %(table)s" sql_create_fk = None sql_create_inline_fk = ( "REFERENCES %(to_table)s (%(to_column)s)%(on_delete_db)s DEFERRABLE INITIALLY " "DEFERRED" ) sql_create_column_inline_fk = sql_create_inline_fk sql_create_unique = "CREATE UNIQUE INDEX %(name)s ON %(table)s (%(columns)s)" sql_delete_unique = "DROP INDEX %(name)s" sql_alter_table_comment = None sql_alter_column_comment = None
 - [cb3fd787] from django.apps.registry import Apps from django.db import NotSupportedError from django.db.backends.base.schema import ( BaseDatabaseSchemaEditor, _related_non_m2m_objects, ) from django.db.backends.ddl_references import Statement from django.db.backends.utils import strip_quotes from django.db.models import CompositePrimaryKey, UniqueConstraint

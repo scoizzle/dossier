@@ -1,10 +1,10 @@
 # django/contrib/postgres/forms/array
 
-- Subject: django/contrib/postgres/forms/array (id `efa44ed4-b919-4b02-81fe-f169b7229be1`)
+- Subject: django/contrib/postgres/forms/array (id `ee37578f-848a-48b0-acd9-80ac6008d545`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1695 tokens
-- Facts shown: 25 of 26
+- Used: 1794 tokens
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,6 +31,7 @@
 - [cd75d472] def run_validators(self, value): super().run_validators(value) errors = [] for index, item in enumerate(value): try: self.base_field.run_validators(item) except ValidationError as error: errors.append( prefix_validation_error( error, prefix=self.error_messages["item_invalid"], code="item_invalid", params={"nth": index + 1}, ) ) if errors: raise ValidationError(errors)
 - [6fd28d47] def to_python(self, value): if isinstance(value, list): items = value elif value: items = value.split(self.delimiter) else: items = [] errors = [] values = [] for index, item in enumerate(items): try: values.append(self.base_field.to_python(item)) except ValidationError as error: errors.append( prefix_validation_error( error, prefix=self.error_messages["item_invalid"], code="item_invalid", params={"nth": index + 1}, ) ) if errors: raise ValidationError(errors) return values
 - [dbcee69e] def to_python(self, value): value = super().to_python(value) return [self.base_field.to_python(item) for item in value]
+- [1d0da741] def validate(self, value): super().validate(value) errors = [] for index, item in enumerate(value): try: self.base_field.validate(item) except ValidationError as error: errors.append( prefix_validation_error( error, prefix=self.error_messages["item_invalid"], code="item_invalid", params={"nth": index + 1}, ) ) if errors: raise ValidationError(errors)
 - [96e89215] def value_from_datadict(self, data, files, name): return [ self.widget.value_from_datadict(data, files, "%s_%s" % (name, index)) for index in range(self.size) ]
 - [0c6dc7be] def value_omitted_from_data(self, data, files, name): return all( self.widget.value_omitted_from_data(data, files, "%s_%s" % (name, index)) for index in range(self.size) )
 - [6fdd7a81] class SimpleArrayField(forms.CharField): default_error_messages = { "item_invalid": _("Item %(nth)s in the array did not validate:"), }

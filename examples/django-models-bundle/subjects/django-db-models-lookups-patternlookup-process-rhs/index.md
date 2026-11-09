@@ -1,11 +1,11 @@
 # django/db/models/lookups::PatternLookup.process_rhs
 
-- Subject: django/db/models/lookups::PatternLookup.process_rhs (id `4cc86d9d-760c-404b-9e88-e2a9a534e805`)
+- Subject: django/db/models/lookups::PatternLookup.process_rhs (id `41e2457c-800e-460e-aed1-196d02cfe47f`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

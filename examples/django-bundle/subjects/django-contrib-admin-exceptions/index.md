@@ -1,10 +1,10 @@
 # django/contrib/admin/exceptions
 
-- Subject: django/contrib/admin/exceptions (id `fdbb91ab-1c1a-4f1e-8d2f-25afb01a1f5d`)
+- Subject: django/contrib/admin/exceptions (id `7d507c02-68cb-41dd-b824-b97a905b8ca7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 211 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

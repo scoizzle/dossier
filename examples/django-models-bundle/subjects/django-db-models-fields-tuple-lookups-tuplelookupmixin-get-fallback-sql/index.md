@@ -1,11 +1,11 @@
 # django/db/models/fields/tuple_lookups::TupleLookupMixin.get_fallback_sql
 
-- Subject: django/db/models/fields/tuple_lookups::TupleLookupMixin.get_fallback_sql (id `f40ae415-21a8-47a3-ab70-09340e4edca1`)
+- Subject: django/db/models/fields/tuple_lookups::TupleLookupMixin.get_fallback_sql (id `e971a0c0-a846-4dc8-9bf2-60633dec22f0`)
 - Kind: method
 - Parent: [django/db/models/fields/tuple_lookups](../django-db-models-fields-tuple-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 3dfd1e06
 
-Store id: edb64cfe-5ff1-4115-82fb-b8b379f1fdfa
+Store id: d72f9ec1-0c9d-4d90-8108-391a4d128b8d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1716890+00:00`
+- posted_at: `2026-11-09T23:44:54.8891840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 150,
     "symbol": "Lookup.as_oracle"
   },
-  "id": "edb64cfe-5ff1-4115-82fb-b8b379f1fdfa",
+  "id": "d72f9ec1-0c9d-4d90-8108-391a4d128b8d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1716890+00:00"
+    "posted_at": "2026-11-09T23:44:54.8891840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6fcc315b-34af-4926-8372-8a50f60af35f",
+  "subject_id": "5eabbe88-c67b-44c0-be61-cf06a4acd695",
   "subject_name": "django/db/models/lookups::Lookup.as_oracle",
   "tags": [
     "entity:method"

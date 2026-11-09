@@ -1,6 +1,6 @@
 # Fact e2ff16ca
 
-Store id: 77103d6f-db14-4933-9107-a0f867488ae4
+Store id: 1d6edad0-9184-48f1-bd64-074a24a958b5
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_attname_column(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1293150+00:00`
+- posted_at: `2026-11-09T23:44:50.4864380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 97,
     "symbol": "CompositePrimaryKey.get_attname_column"
   },
-  "id": "77103d6f-db14-4933-9107-a0f867488ae4",
+  "id": "1d6edad0-9184-48f1-bd64-074a24a958b5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1293150+00:00"
+    "posted_at": "2026-11-09T23:44:50.4864380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cbe92ed1-d88b-4d3f-9452-7b3a63987323",
+  "subject_id": "471783ed-0108-431b-82f9-fe530b36a410",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.get_attname_column",
   "tags": [
     "entity:method"

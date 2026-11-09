@@ -1,11 +1,11 @@
 # django/db/models/base::method_get_order
 
-- Subject: django/db/models/base::method_get_order (id `42a1ffd9-abf6-4402-b327-5d451afd17e7`)
+- Subject: django/db/models/base::method_get_order (id `0e6d830f-951e-4e98-9bf2-50cff895d4fb`)
 - Kind: function
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

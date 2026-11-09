@@ -1,10 +1,10 @@
 # django/urls/__init__
 
-- Subject: django/urls/__init__ (id `8785d8ad-f54c-440a-94f7-3a738605e554`)
+- Subject: django/urls/__init__ (id `4021723d-df0a-472c-9788-bba529656ff3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 249 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

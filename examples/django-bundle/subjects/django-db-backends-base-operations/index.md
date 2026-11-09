@@ -1,10 +1,10 @@
 # django/db/backends/base/operations
 
-- Subject: django/db/backends/base/operations (id `87f2cc14-310e-45ad-812b-f949c4d263a3`)
+- Subject: django/db/backends/base/operations (id `3e5a3905-0819-4bdb-a9be-85178920bd69`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7825 tokens
-- Facts shown: 113 of 118
+- Used: 8128 tokens
+- Facts shown: 118 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - If `inline` is True, append the SQL to a row; otherwise append it to the entire CREATE TABLE or CREATE INDEX statement. """ return "" [aa2c3489]
 - If `reset_sequences` is True, the list includes SQL statements required to reset the sequences. [a5789a1e]
 - If `tzname` is provided, the given value is truncated in a specific timezone. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a date_trunc_sql() " "method." ) [edad0ce8]
+- If `tzname` is provided, the given value is truncated in a specific timezone. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a time_trunc_sql() method" ) [9504c052]
 - If the feature is not supported (or part of it is not supported), raise NotImplementedError. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a regex_lookup() method" ) [f30109fd]
 - Return '' if the backend doesn't support tablespaces. [d7539d0d]
 - Return '' if the backend doesn't support time zones. """ return "" [f61a5310]
@@ -21,21 +22,22 @@
 - Some field types on some backends do not provide data in the correct format, this is the hook for converter functions. """ return [] [2bced14f]
 - The `allow_cascade` argument determines whether truncation may cascade to tables with foreign keys pointing the tables being truncated. PostgreSQL requires a cascade even if these tables are empty. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations must provide an sql_flush() method" ) [16ba309a]
 - The `style` argument is a Style object as returned by either color_style() or no_style() in django.core.management.color. [604b7145]
+- The `style` argument is a Style object as returned by either color_style() or no_style() in django.core.management.color. """ return [] [3ccf947f]
 - The `style` argument is a Style object as returned by either color_style() or no_style() in django.core.management.color. """ return [] # No sequence reset required by default. [21d1cf60]
 - This SQL is executed when a table is created. """ return None [efe791b2]
 - This is used by the 'db' cache backend to determine where to start culling. """ cache_key = self.quote_name("cache_key") return f"SELECT {cache_key} FROM %s ORDER BY {cache_key} LIMIT 1 OFFSET %%s" [0e713cfd]
 - This is used on specific backends to rule out known expressions that have problematic or nonexistent implementations. If the expression has a known problem, the backend should raise NotSupportedError. """ pass [4838c45f]
 - `pk_name` is the name of the primary-key column. """ return cursor.lastrowid [b6784d2f]
-- `sql` is the raw query containing placeholders and `params` is the sequence of parameters. These are used by default, but this method exists for database backends to provide a better implementation according to their own quoting schemes. """ [0880c5f3]
-- return "QUERY = %r - PARAMS = %r" % (sql, u_params) [29e0c269]
 - return lhs_expr, rhs_expr [1849b7cfcb9ddfbd]
 
 ## All facts
 
 - [270d3dc3] This method only depends on the type of the value. It's designed for cases where the target type isn't known, such as .raw() SQL queries. As a consequence it may not work perfectly in all circumstances. """ if isinstance(value, datetime.datetime): # must be before date return self.adapt_datetimefield_value(value) elif isinstance(value, datetime.date): return self.adapt_datefield_value(value) elif isinstance(value, datetime.time): return self.adapt_timefield_value(value) elif isinstance(value, decimal.Decimal): return self.adapt_decimalfield_value(value) else: return value
+- [0880c5f3] `sql` is the raw query containing placeholders and `params` is the sequence of parameters. These are used by default, but this method exists for database backends to provide a better implementation according to their own quoting schemes. """
 - [ee3d2f0f] `value` is an int, containing the looked-up year. If `iso_year` is True, return bounds for ISO-8601 week-numbering years. """ if iso_year: first = datetime.date.fromisocalendar(value, 1, 1) second = datetime.date.fromisocalendar( value + 1, 1, 1 ) - datetime.timedelta(days=1) else: first = datetime.date(value, 1, 1) second = datetime.date(value, 12, 31) first = self.adapt_datefield_value(first) second = self.adapt_datefield_value(second) return [first, second]
 - [bd957945] `value` is an int, containing the looked-up year. If `iso_year` is True, return bounds for ISO-8601 week-numbering years. """ if iso_year: first = datetime.datetime.fromisocalendar(value, 1, 1) second = datetime.datetime.fromisocalendar( value + 1, 1, 1 ) - datetime.timedelta(microseconds=1) else: first = datetime.datetime(value, 1, 1) second = datetime.datetime(value, 12, 31, 23, 59, 59, 999999) if settings.USE_TZ: tz = timezone.get_current_timezone() first = timezone.make_aware(first, tz) second = timezone.make_aware(second, tz) first = self.adapt_datetimefield_value(first) second = self.adapt_datetimefield_value(second) return [first, second]
 - [ba75faec] if isinstance(params, (list, tuple)): u_params = tuple(to_string(val) for val in params) elif params is None: u_params = () else: u_params = {to_string(k): to_string(v) for k, v in params.items()}
+- [29e0c269] return "QUERY = %r - PARAMS = %r" % (sql, u_params)
 - [fbdd7d0c] return self.connection.features.max_query_params // len( list( chain.from_iterable( field.fields if isinstance(field, CompositePrimaryKey) else [field] for field in fields ) ) )
 - [bbe6d27a] # Integer field safe ranges by `internal_type` as documented # in docs/ref/models/fields.txt. integer_field_ranges = { "SmallIntegerField": (-32768, 32767), "IntegerField": (-2147483648, 2147483647), "BigIntegerField": (-9223372036854775808, 9223372036854775807), "PositiveBigIntegerField": (0, 9223372036854775807), "PositiveSmallIntegerField": (0, 32767), "PositiveIntegerField": (0, 2147483647), "SmallAutoField": (-32768, 32767), "AutoField": (-2147483648, 2147483647), "BigAutoField": (-9223372036854775808, 9223372036854775807), } set_operators = { "union": "UNION", "intersection": "INTERSECT", "difference": "EXCEPT", } # Mapping of Field.get_internal_type() (typically the model field's class # name) to the data type to use for the Cast() function, if different from # DatabaseWrapper.data_types. cast_data_types = {} # CharField data type if the max_length argument isn't provided. cast_char_field_without_max_length = None
 - [d1979ab8] # Prefix for EXPLAIN queries, or None EXPLAIN isn't supported. explain_prefix = None
@@ -46,6 +48,7 @@
 - [dd212e01] def __init__(self, connection): self.connection = connection self._cache = None
 - [19635788] def _get_limit_offset_params(self, low_mark, high_mark): offset = low_mark or 0 if high_mark is not None: return (high_mark - offset), offset elif offset: return self.connection.ops.no_limit_value(), offset return None, offset
 - [b0823017] def adapt_datefield_value(self, value): """ Transform a date value to an object compatible with what is expected by the backend driver for date columns. """ if value is None: return None return str(value)
+- [0792b316] def adapt_datetimefield_value(self, value): """ Transform a datetime value to an object compatible with what is expected by the backend driver for datetime columns. """ if value is None: return None return str(value)
 - [60e24c30] def adapt_decimalfield_value(self, value, max_digits=None, decimal_places=None): """ Transform a decimal.Decimal value to an object compatible with what is expected by the backend driver for decimal (numeric) columns. """ return value
 - [8f12fa78] def adapt_durationfield_value(self, value): """ Transform a timedelta value into an object compatible with what is expected by the backend driver for duration columns (by default, an integer of microseconds). """ if value is None: return None return duration_microseconds(value)
 - [ed120879] def adapt_integerfield_value(self, value, internal_type): return value
@@ -69,6 +72,7 @@
 - [3f79bd17] def date_extract_sql(self, lookup_type, sql, params): """ Given a lookup_type of 'year', 'month', or 'day', return the SQL that extracts a value from the given date field field_name. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a date_extract_sql() " "method" )
 - [200dc8e3] def date_trunc_sql(self, lookup_type, sql, params, tzname=None): """ Given a lookup_type of 'year', 'month', or 'day', return the SQL that truncates the given date or datetime field field_name to a date object with only the given specificity.
 - [6d2a01f7] def datetime_cast_date_sql(self, sql, params, tzname): """ Return the SQL to cast a datetime value to date value. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a " "datetime_cast_date_sql() method." )
+- [b9013548] def datetime_cast_time_sql(self, sql, params, tzname): """ Return the SQL to cast a datetime value to time value. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a " "datetime_cast_time_sql() method" )
 - [b95d785d] def datetime_extract_sql(self, lookup_type, sql, params, tzname): """ Given a lookup_type of 'year', 'month', 'day', 'hour', 'minute', or 'second', return the SQL that extracts a value from the given datetime field field_name. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a datetime_extract_sql() " "method" )
 - [5e08dab6] def datetime_trunc_sql(self, lookup_type, sql, params, tzname): """ Given a lookup_type of 'year', 'month', 'day', 'hour', 'minute', or 'second', return the SQL that truncates the given datetime field field_name to a datetime object with only the given specificity. """ raise NotImplementedError( "subclasses of BaseDatabaseOperations may require a datetime_trunc_sql() " "method" )
 - [13cf4a2e] def deferrable_sql(self): """ Return the SQL to make a constraint "initially deferred" during a CREATE TABLE statement. """ return ""
@@ -122,6 +126,7 @@
 - [57c97d14] def window_frame_rows_start_end(self, start=None, end=None): """ Return SQL for start and end points in an OVER clause window frame. """ if isinstance(start, int) and isinstance(end, int) and start > end: raise ValueError("start cannot be greater than end.") if start is not None and not isinstance(start, int): raise ValueError( f"start argument must be an integer, zero, or None, but got '{start}'." ) if end is not None and not isinstance(end, int): raise ValueError( f"end argument must be an integer, zero, or None, but got '{end}'." ) start_ = self.window_frame_value(start) or self.UNBOUNDED_PRECEDING end_ = self.window_frame_value(end) or self.UNBOUNDED_FOLLOWING return start_, end_
 - [774d4e98] def window_frame_value(self, value): if isinstance(value, int): if value == 0: return self.CURRENT_ROW elif value < 0: return "%d %s" % (abs(value), self.PRECEDING) else: return "%d %s" % (value, self.FOLLOWING)
 - [acc5758b] def year_lookup_bounds_for_date_field(self, value, iso_year=False): """ Return a two-elements list with the lower and upper bound to be used with a BETWEEN operator to query a DateField value using a year lookup.
+- [b8a3a7a7] def year_lookup_bounds_for_datetime_field(self, value, iso_year=False): """ Return a two-elements list with the lower and upper bound to be used with a BETWEEN operator to query a DateTimeField value using a year lookup.
 - [0f5484c6] class BaseDatabaseOperations: """ Encapsulate backend-specific differences, such as the way a backend performs ordering or calculates the ID of a recently-inserted row. """
 - [0e222d43] from django.conf import settings from django.db import NotSupportedError, models, transaction from django.db.models import Exists, ExpressionWrapper, Lookup from django.db.models.expressions import Col, RawSQL from django.db.models.fields.composite import CompositePrimaryKey from django.db.models.sql.where import WhereNode from django.utils import timezone from django.utils.duration import duration_microseconds from django.utils.encoding import force_str
 - [0733d274] import datetime import decimal import json from importlib import import_module from itertools import chain

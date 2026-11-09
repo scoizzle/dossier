@@ -1,10 +1,10 @@
 # django/utils/numberformat
 
-- Subject: django/utils/numberformat (id `d5993586-9ceb-40d3-b4f9-4b3cdfdc39b0`)
+- Subject: django/utils/numberformat (id `165eb4fc-781a-4b99-87b2-fee07cd05e43`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 827 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

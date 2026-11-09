@@ -1,6 +1,6 @@
 # Fact 0a95781c
 
-Store id: 786bc85f-8802-4a60-ad51-c9dcd0f74dbe
+Store id: 92c87755-521c-41be-ba0d-41782fabbbe8
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1284060+00:00`
+- posted_at: `2026-11-09T23:44:54.0360960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "OracleHashMixin.as_oracle"
   },
-  "id": "786bc85f-8802-4a60-ad51-c9dcd0f74dbe",
+  "id": "92c87755-521c-41be-ba0d-41782fabbbe8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1284060+00:00"
+    "posted_at": "2026-11-09T23:44:54.0360960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "727f78a6-a3f5-48dc-a7f6-32047018248d",
+  "subject_id": "8eed6c3d-6160-49ca-9c90-c769262d8872",
   "subject_name": "django/db/models/functions/text::OracleHashMixin.as_oracle",
   "tags": [
     "entity:method"

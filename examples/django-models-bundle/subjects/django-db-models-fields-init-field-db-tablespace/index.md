@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.db_tablespace
 
-- Subject: django/db/models/fields/__init__::Field.db_tablespace (id `e6fa5556-3082-488f-bf81-506f94651076`)
+- Subject: django/db/models/fields/__init__::Field.db_tablespace (id `a63fbbab-c3a0-43c7-9120-68e4bb9e8669`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

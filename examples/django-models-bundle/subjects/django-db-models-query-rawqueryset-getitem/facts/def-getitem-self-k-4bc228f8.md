@@ -1,6 +1,6 @@
 # Fact 4bc228f8
 
-Store id: 45420dac-487c-4061-a781-b5d738dc17ca
+Store id: 8d8a0df5-1df5-4282-ac53-86feed1dc5b7
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getitem__(self, k)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7624450+00:00`
+- posted_at: `2026-11-09T23:44:56.2596780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2519,
     "symbol": "RawQuerySet.__getitem__"
   },
-  "id": "45420dac-487c-4061-a781-b5d738dc17ca",
+  "id": "8d8a0df5-1df5-4282-ac53-86feed1dc5b7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7624450+00:00"
+    "posted_at": "2026-11-09T23:44:56.2596780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cffa0e38-35d5-49f8-99bf-c1f609c4fea2",
+  "subject_id": "d9d4b112-4a22-4e9b-8bd2-bb8344095c1a",
   "subject_name": "django/db/models/query::RawQuerySet.__getitem__",
   "tags": [
     "entity:method"

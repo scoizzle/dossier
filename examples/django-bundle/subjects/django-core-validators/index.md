@@ -1,10 +1,10 @@
 # django/core/validators
 
-- Subject: django/core/validators (id `7ff2bdbe-6754-4f05-882a-e489cc091987`)
+- Subject: django/core/validators (id `5b6b1fda-7a1b-45f9-bfb2-9a318f3e364c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5243 tokens
-- Facts shown: 77 of 81
+- Used: 5322 tokens
+- Facts shown: 81 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -47,9 +47,13 @@
 - [cdac3552] def __init__(self, message=None, code=None): if message is not None: self.message = message if code is not None: self.code = code
 - [43c07482] def __init__(self, message=None, code=None, allowlist=None): if message is not None: self.message = message if code is not None: self.code = code if allowlist is not None: self.domain_allowlist = allowlist
 - [e9dd55c8] def __init__(self, schemes=None, **kwargs): super().__init__(**kwargs) if schemes is not None: self.schemes = schemes
+- [6b441737c68e0743-2] def clean(self, x): return len(x)
 - [e1a2a310] def clean(self, x): return x
 - [55fcb990] def compare(self, a, b): offset = 0 if self.offset is None else self.offset return not math.isclose(math.remainder(a - offset, b), 0, abs_tol=1e-9)
 - [724cb3b220e935ff] def compare(self, a, b): return a < b
+- [724cb3b220e935ff-2] def compare(self, a, b): return a < b
+- [eb6adae56d636382] def compare(self, a, b): return a > b
+- [eb6adae56d636382-2] def compare(self, a, b): return a > b
 - [dd866b22] def compare(self, a, b): return a is not b
 - [9a50c45e] def validate_domain_part(self, domain_part): if self.domain_regex.match(domain_part): return True
 - [857d66da] host_re = "(" + hostname_re + domain_re + tld_re + "|localhost)"

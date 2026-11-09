@@ -1,10 +1,10 @@
 # django/db/backends/oracle/client
 
-- Subject: django/db/backends/oracle/client (id `c73cdfd2-ea96-462d-9066-ac017fe7384a`)
+- Subject: django/db/backends/oracle/client (id `687630c6-4e56-4ea9-88d8-e241921dc181`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 224 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

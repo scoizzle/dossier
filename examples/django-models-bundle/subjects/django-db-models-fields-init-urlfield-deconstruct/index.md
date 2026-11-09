@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::URLField.deconstruct
 
-- Subject: django/db/models/fields/__init__::URLField.deconstruct (id `dde8afef-f652-4b82-a832-0e5b7622ff2e`)
+- Subject: django/db/models/fields/__init__::URLField.deconstruct (id `36dd9857-a7cc-48de-8e27-5b036c63d9ab`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

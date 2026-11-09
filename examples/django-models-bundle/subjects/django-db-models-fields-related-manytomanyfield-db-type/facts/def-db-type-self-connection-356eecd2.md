@@ -1,6 +1,6 @@
 # Fact 356eecd2
 
-Store id: 25ec3580-4eb3-4bb7-84b4-ff4ffd3e1338
+Store id: 2b70e6ce-2116-48e0-ac1c-7532f535a06e
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_type(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.9062050+00:00`
+- posted_at: `2026-11-09T23:44:51.6818660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2206,
     "symbol": "ManyToManyField.db_type"
   },
-  "id": "25ec3580-4eb3-4bb7-84b4-ff4ffd3e1338",
+  "id": "2b70e6ce-2116-48e0-ac1c-7532f535a06e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.9062050+00:00"
+    "posted_at": "2026-11-09T23:44:51.6818660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "66350ac1-1e7b-402f-8684-f02197cafa7d",
+  "subject_id": "3bd01aea-ee9a-499a-ae2c-59a2dabbb7e4",
   "subject_name": "django/db/models/fields/related::ManyToManyField.db_type",
   "tags": [
     "entity:method"

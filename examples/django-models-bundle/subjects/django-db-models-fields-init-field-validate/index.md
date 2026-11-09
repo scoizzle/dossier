@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.validate
 
-- Subject: django/db/models/fields/__init__::Field.validate (id `689cad6c-fa28-40e6-8ce4-19fe3bdbea15`)
+- Subject: django/db/models/fields/__init__::Field.validate (id `23ff5448-7788-4463-955f-4fefc61fef3c`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

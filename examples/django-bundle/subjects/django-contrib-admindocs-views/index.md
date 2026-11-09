@@ -1,10 +1,10 @@
 # django/contrib/admindocs/views
 
-- Subject: django/contrib/admindocs/views (id `8c926f73-1590-45d1-8e87-8e6d0fc49cb4`)
+- Subject: django/contrib/admindocs/views (id `2f76e360-29a2-409b-8d49-c8ea09c50ce0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3504 tokens
-- Facts shown: 35 of 36
+- Used: 3743 tokens
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,6 +26,7 @@
 - [9398852f] def get_context_data(self, **kwargs): m_list = [ m._meta for m in apps.get_models() if user_has_model_view_permission(self.request.user, m._meta) ] return super().get_context_data(**{**kwargs, "models": m_list})
 - [e6e7879b] def get_context_data(self, **kwargs): model_name = self.kwargs["model_name"] # Get the model class. try: app_config = apps.get_app_config(self.kwargs["app_label"]) except LookupError: raise Http404(_("App %(app_label)r not found") % self.kwargs) try: model = app_config.get_model(model_name) except LookupError: raise Http404( _("Model %(model_name)r not found in app %(app_label)r") % self.kwargs )
 - [1f227f78] def get_context_data(self, **kwargs): return super().get_context_data( **{ **kwargs, **admin.site.each_context(self.request), } )
+- [d7917881] def get_context_data(self, **kwargs): tags = [] try: engine = Engine.get_default() except ImproperlyConfigured: # Non-trivial TEMPLATES settings aren't supported (#24125). pass else: app_libs = sorted(engine.template_libraries.items()) builtin_libs = [("", lib) for lib in engine.template_builtins] for module_name, library in builtin_libs + app_libs: for tag_name, tag_func in library.tags.items(): title, body, metadata = utils.parse_docstring(tag_func.__doc__) title = title and utils.parse_rst( title, "tag", _("tag:") + tag_name ) body = body and utils.parse_rst(body, "tag", _("tag:") + tag_name) for key in metadata: metadata[key] = utils.parse_rst( metadata[key], "tag", _("tag:") + tag_name ) tag_library = module_name.split(".")[-1] tags.append( { "name": tag_name, "title": title, "body": body, "meta": metadata, "library": tag_library, } ) return super().get_context_data(**{**kwargs, "tags": tags})
 - [3180a523] def get_context_data(self, **kwargs): template = self.kwargs["template"] templates = [] try: default_engine = Engine.get_default() except ImproperlyConfigured: # Non-trivial TEMPLATES settings aren't supported (#24125). pass else: directories = list(default_engine.dirs) for loader in default_engine.template_loaders: if hasattr(loader, "get_dirs"): for dir_ in loader.get_dirs(): if dir_ not in directories: directories.append(dir_) for index, directory in enumerate(directories): template_file = Path(safe_join(directory, template)) if template_file.exists(): template_contents = template_file.read_text() else: template_contents = "" templates.append( { "file": template_file, "exists": template_file.exists(), "contents": template_contents, "order": index, } ) return super().get_context_data( **{ **kwargs, "name": template, "templates": templates, } )
 - [b0f4999b] def get_context_data(self, **kwargs): view = self.kwargs["view"] view_func = self._get_view_func(view) if view_func is None: raise Http404 title, body, metadata = utils.parse_docstring(view_func.__doc__) title = title and utils.parse_rst(title, "view", _("view:") + view) body = body and utils.parse_rst(body, "view", _("view:") + view) for key in metadata: metadata[key] = utils.parse_rst(metadata[key], "model", _("view:") + view) return super().get_context_data( **{ **kwargs, "name": view, "summary": strip_p_tags(title), "body": body, "meta": metadata, } )
 - [a0482e18] def get_context_data(self, **kwargs): views = [] url_resolver = get_resolver(get_urlconf()) try: view_functions = extract_views_from_urlpatterns(url_resolver.url_patterns) except ImproperlyConfigured: view_functions = [] for func, regex, namespace, name in view_functions: views.append( { "full_name": get_view_name(func), "url": simplify_regex(regex), "url_name": ":".join((namespace or []) + (name and [name] or [])), "namespace": ":".join(namespace or []), "name": name, } ) return super().get_context_data(**{**kwargs, "views": views})

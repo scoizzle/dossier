@@ -1,6 +1,6 @@
 # Fact 9dc97428
 
-Store id: 09dd15ef-38b0-484d-9966-8672b43dda3f
+Store id: 82f60278-bf6c-4278-91f6-df38bcf5f257
 
 ## Text
 
@@ -20,7 +20,7 @@ class HasKeyLookup(PostgresOperatorLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8774150+00:00`
+- posted_at: `2026-11-09T23:44:50.9596270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 183,
     "symbol": "HasKeyLookup"
   },
-  "id": "09dd15ef-38b0-484d-9966-8672b43dda3f",
+  "id": "82f60278-bf6c-4278-91f6-df38bcf5f257",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8774150+00:00"
+    "posted_at": "2026-11-09T23:44:50.9596270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "397dd665-22a4-4d45-8e58-5a08e3194b90",
+  "subject_id": "cbdff0ae-c627-49d0-84f6-2d0ba2812d3f",
   "subject_name": "django/db/models/fields/json::HasKeyLookup",
   "tags": [
     "entity:class"

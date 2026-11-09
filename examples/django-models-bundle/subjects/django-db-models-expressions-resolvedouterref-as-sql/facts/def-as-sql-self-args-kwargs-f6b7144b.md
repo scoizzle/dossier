@@ -1,6 +1,6 @@
 # Fact f6b7144b
 
-Store id: 47e3d837-7fda-44fd-949d-19af18204f17
+Store id: aff7d1ba-09d2-44a4-ac3d-a574b3169ef3
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8419060+00:00`
+- posted_at: `2026-11-09T23:44:49.4901430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 957,
     "symbol": "ResolvedOuterRef.as_sql"
   },
-  "id": "47e3d837-7fda-44fd-949d-19af18204f17",
+  "id": "aff7d1ba-09d2-44a4-ac3d-a574b3169ef3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8419060+00:00"
+    "posted_at": "2026-11-09T23:44:49.4901430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "da57416c-c981-409f-834f-06afe7f13e53",
+  "subject_id": "2b51d35f-2f98-4bd9-b2ea-515ce7e57af3",
   "subject_name": "django/db/models/expressions::ResolvedOuterRef.as_sql",
   "tags": [
     "entity:method"

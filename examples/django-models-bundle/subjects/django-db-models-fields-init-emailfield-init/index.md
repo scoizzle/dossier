@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::EmailField.__init__
 
-- Subject: django/db/models/fields/__init__::EmailField.__init__ (id `1cc387a0-3aeb-434a-b3ad-209a9eda7bb1`)
+- Subject: django/db/models/fields/__init__::EmailField.__init__ (id `c29ab3e9-cd87-4aa2-ac66-3341af0b0f18`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

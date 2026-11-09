@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::TruncSecond
 
-- Subject: django/db/models/functions/datetime::TruncSecond (id `fba22b0c-7b38-4f45-9a68-610a75291c8d`)
+- Subject: django/db/models/functions/datetime::TruncSecond (id `4ce3f8a5-53f8-4336-bd94-cd2a86ca5be8`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

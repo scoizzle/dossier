@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.save_form_data
 
-- Subject: django/db/models/fields/related::ManyToManyField.save_form_data (id `f1370e96-9430-496c-b25e-20711db5b817`)
+- Subject: django/db/models/fields/related::ManyToManyField.save_form_data (id `37b2da61-cc98-44ee-8caa-c32c2b100980`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

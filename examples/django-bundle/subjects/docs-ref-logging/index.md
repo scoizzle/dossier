@@ -1,10 +1,10 @@
 # docs/ref/logging
 
-- Subject: docs/ref/logging (id `f5d2dd7a-846c-401d-a7bd-a3be1983c62d`)
+- Subject: docs/ref/logging (id `6b437a72-18a1-4e74-8b2c-cafae2fb38cc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4663 tokens
-- Facts shown: 115 of 118
+- Used: 4741 tokens
+- Facts shown: 118 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -55,6 +55,7 @@
 - [7737f82f] * ``request``: The request object (a :class:`socket.socket`) that generated the logging message.
 - [0f50863a] * ``request``: The request object that generated the logging message.
 - [15519afdcb00292a] * ``status_code``: The HTTP response code associated with the request.
+- [15519afdcb00292a-2] * ``status_code``: The HTTP response code associated with the request.
 - [0bf848a9] .. _default-logging-configuration:
 - [cec061c2] .. _default-logging-definition:
 - [c168a10a] .. _django-contrib-auth-logger:
@@ -104,6 +105,8 @@
 - [cec6e322] Logs the SQL queries that are executed during schema changes to the database by the :doc:`migrations framework </topics/migrations>`. Note that it won't log the queries executed by :class:`~django.db.migrations.operations.RunPython`. Messages to this logger have ``params`` and ``sql`` in their extra context (but unlike ``django.db.backends``, not duration). The values have the same meaning as explained in :ref:`django-db-logger`.
 - [11a0b8f0] Messages relating to the interaction of code with the database. For example, every application-level SQL statement executed by a request is logged at the ``DEBUG`` level to this logger.
 - [7b974f1ed9128450] Messages to this logger have the following extra context:
+- [7b974f1ed9128450-2] Messages to this logger have the following extra context:
+- [7b974f1ed9128450-3] Messages to this logger have the following extra context:
 - [579b55de] Other ``django.security`` loggers not based on ``SuspiciousOperation`` are:
 - [de93e087] Python's own defaults send records of level ``WARNING`` and higher to the console.
 - [2c76f724] See :ref:`configuring-logging` on how to complement or replace this default logging configuration.

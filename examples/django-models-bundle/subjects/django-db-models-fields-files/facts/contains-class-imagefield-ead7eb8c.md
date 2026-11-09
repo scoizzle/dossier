@@ -1,6 +1,6 @@
 # Fact ead7eb8c
 
-Store id: 98d5cce7-d870-4bc6-bce7-b7cada090e4a
+Store id: 261948e9-183a-433b-80cd-6ce2bb8aa8d3
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ImageField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4465340+00:00`
+- posted_at: `2026-11-09T23:44:50.6886790+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "98d5cce7-d870-4bc6-bce7-b7cada090e4a",
+  "id": "261948e9-183a-433b-80cd-6ce2bb8aa8d3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4465340+00:00"
+    "posted_at": "2026-11-09T23:44:50.6886790+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ImageField"
       },
       "rel": "contains",
-      "target": "f61b9ac5-48b4-491d-a661-9d8da6a17d03"
+      "target": "ae1f9363-c9f9-491d-8c13-22fcb734c145"
     }
   ],
   "status": "live",
-  "subject_id": "8d4f06a2-9dbc-43c2-9d3e-963deb8a9e36",
+  "subject_id": "a957c718-7162-4a08-a413-08d802f7b159",
   "subject_name": "django/db/models/fields/files",
   "tags": [
     "entity:class"

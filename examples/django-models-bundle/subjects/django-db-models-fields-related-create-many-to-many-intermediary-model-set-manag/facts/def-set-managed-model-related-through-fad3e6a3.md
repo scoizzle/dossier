@@ -1,6 +1,6 @@
 # Fact fad3e6a3
 
-Store id: 086a644a-7012-447f-8378-37c277edffa3
+Store id: 5a407712-455d-46c8-bc89-7ee11b16f000
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_managed(model, related, through)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8226030+00:00`
+- posted_at: `2026-11-09T23:44:51.6267150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1404,
     "symbol": "create_many_to_many_intermediary_model.set_managed"
   },
-  "id": "086a644a-7012-447f-8378-37c277edffa3",
+  "id": "5a407712-455d-46c8-bc89-7ee11b16f000",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8226030+00:00"
+    "posted_at": "2026-11-09T23:44:51.6267150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e93b65cc-a611-485c-90d5-67dbd4d3e589",
+  "subject_id": "6e6220ff-f207-419f-9248-38479010562a",
   "subject_name": "django/db/models/fields/related::create_many_to_many_intermediary_model.set_managed",
   "tags": [
     "entity:function"

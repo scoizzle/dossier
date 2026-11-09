@@ -1,6 +1,6 @@
 # Fact b72634cd
 
-Store id: 4e178d99-b72d-4980-8746-232108aef745
+Store id: 09508f79-8809-46e8-a814-7b27a494e4d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def __class_getitem__(cls, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7424180+00:00`
+- posted_at: `2026-11-09T23:44:51.5662930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1053,
     "symbol": "ForeignKey.__class_getitem__"
   },
-  "id": "4e178d99-b72d-4980-8746-232108aef745",
+  "id": "09508f79-8809-46e8-a814-7b27a494e4d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7424180+00:00"
+    "posted_at": "2026-11-09T23:44:51.5662930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e72be60-63fa-44da-9d09-98e85cfa6bf0",
+  "subject_id": "03ea3079-815c-4513-a054-483926ce0eeb",
   "subject_name": "django/db/models/fields/related::ForeignKey.__class_getitem__",
   "tags": [
     "entity:method"

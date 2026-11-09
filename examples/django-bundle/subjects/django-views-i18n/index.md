@@ -1,10 +1,10 @@
 # django/views/i18n
 
-- Subject: django/views/i18n (id `648af2f2-b937-4276-8fe5-9f84832d0420`)
+- Subject: django/views/i18n (id `116fc756-68cc-448c-bad9-150b3e955b64`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2069 tokens
-- Facts shown: 27 of 27
+- Facts shown: 27 facts
 - Conflicts: 0
 - Gaps: 0
 

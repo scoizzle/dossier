@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/mixins-multiple-object
 
-- Subject: docs/ref/class-based-views/mixins-multiple-object (id `0cd825ff-9e4e-4d79-b5de-b9d2294b69b4`)
+- Subject: docs/ref/class-based-views/mixins-multiple-object (id `7ebcd219-ade2-4180-a11a-0a84f7fb2f6a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2576 tokens
-- Facts shown: 74 of 76
+- Used: 2694 tokens
+- Facts shown: 76 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -25,14 +25,14 @@
 - Constructed by paginating ``queryset`` into pages of size ``page_size``. If the request contains a ``page`` argument, either as a captured URL argument or as a GET argument, ``object_list`` will correspond to the objects from that page. [42d8c892]
 - Designates the name of the variable to use in the context. [2f289f72e2dfd96d]
 - Get the list of items for this view. This must be an iterable and may be a queryset (in which queryset-specific behavior will be enabled). [d0196f6a]
-- Return the context variable name that will be used to contain the list of data that this view is manipulating. If ``object_list`` is a queryset of Django objects and :attr:`context_object_name` is not set, the context name will be the ``model_name`` of the model that the queryset is composed from, with postfix ``'_list'`` appended. For example, the model ``Article`` would have a context object named ``article_list``. [e3dbc4d5]
+- Return a boolean specifying whether to display the page if no objects are available. If this method returns ``False`` and no objects are available, the view will raise a 404 instead of displaying an empty page. By default, this is ``True``. [87c8ba49]
 - Returns :attr:`ordering` by default. [404481d0]
-- .. code-block:: text [3a9340cd0d877339-17]
+- Returns a 4-tuple containing (``paginator``, ``page``, ``object_list``, ``is_paginated``). [a8c0876e]
+- Returns a list of candidate template names. Returns the following list: [bc607ad2]
 
 ## All facts
 
-- [a8c0876e] Returns a 4-tuple containing (``paginator``, ``page``, ``object_list``, ``is_paginated``).
-- [bc607ad2] Returns a list of candidate template names. Returns the following list:
+- [e3dbc4d5] Return the context variable name that will be used to contain the list of data that this view is manipulating. If ``object_list`` is a queryset of Django objects and :attr:`context_object_name` is not set, the context name will be the ``model_name`` of the model that the queryset is composed from, with postfix ``'_list'`` appended. For example, the model ``Article`` would have a context object named ``article_list``.
 - [0df91948] Returns a string (or iterable of strings) that defines the ordering that will be applied to the ``queryset``.
 - [a6fca086] Returns an instance of the paginator to use for this view. By default, instantiates an instance of :attr:`paginator_class`.
 - [7fd58491] Returns context data for displaying the list of objects.
@@ -41,6 +41,7 @@
 - [dcb92b8c] The suffix to append to the auto-generated candidate template name. Default suffix is ``_list``.
 - [c1442de8] path("objects/page<int:page>/", PaginatedView.as_view()),
 - [08a4ef8c] The paginator class to be used for pagination. By default, :class:`django.core.paginator.Paginator` is used. If the custom paginator class doesn't have the same constructor interface as :class:`django.core.paginator.Paginator`, you will also need to provide an implementation for :meth:`get_paginator`.
+- [3a9340cd0d877339-17] .. code-block:: text
 - [f9349e9ad1d5a49b-2] * :class:`django.views.generic.base.ContextMixin`
 - [663fbf4ea591ec9f] * :class:`~django.views.generic.base.TemplateResponseMixin`
 - [4c49d60f] * Pass the page number via the ``page`` query-string parameter. For example, a URL would look like this:
@@ -48,6 +49,7 @@
 - [5559776d] * ``is_paginated``: A boolean representing whether the results are paginated. Specifically, this is set to ``False`` if no page size has been specified, or if the available objects do not span multiple pages.
 - [626ad2a7] * ``object_list``: The list of objects that this view is displaying. If ``context_object_name`` is specified, that variable will also be set in the context, with the same value as ``object_list``.
 - [22f6d328] * ``page_obj``: An instance of :class:`django.core.paginator.Page`. If the page is not paginated, this context variable will be ``None``.
+- [daa24f0e] * ``paginator``: An instance of :class:`django.core.paginator.Paginator`. If the page is not paginated, this context variable will be ``None``.
 - [ac0dd05fa9a91c22-8] **Context**
 - [f3c346391998d9e9-2] **Extends**
 - [f3c346391998d9e9-3] **Extends**

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.setup_joins.final_transformer
 
-- Subject: django/db/models/sql/query::Query.setup_joins.final_transformer (id `816ad83c-0da9-4472-a92a-2194a96503e4`)
+- Subject: django/db/models/sql/query::Query.setup_joins.final_transformer (id `66b44eb2-d76f-401e-a225-b79d6edfa7d1`)
 - Kind: function
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

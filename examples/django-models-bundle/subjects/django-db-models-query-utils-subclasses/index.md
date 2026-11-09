@@ -1,11 +1,11 @@
 # django/db/models/query_utils::subclasses
 
-- Subject: django/db/models/query_utils::subclasses (id `cc6fbe6b-1af0-4f95-b273-5f0fbc37b665`)
+- Subject: django/db/models/query_utils::subclasses (id `42fb977b-7801-49b0-b1da-827977821190`)
 - Kind: function
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 8ea13605
 
-Store id: 255fbaac-91ca-4674-8909-5ce256e5d4c4
+Store id: 9467465d-c7a3-45f0-b3b5-3537577e8f8c
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_restricted_objects(self, field, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1065120+00:00`
+- posted_at: `2026-11-09T23:44:48.9116760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 180,
     "symbol": "Collector.add_restricted_objects"
   },
-  "id": "255fbaac-91ca-4674-8909-5ce256e5d4c4",
+  "id": "9467465d-c7a3-45f0-b3b5-3537577e8f8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1065120+00:00"
+    "posted_at": "2026-11-09T23:44:48.9116760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7ec22b70-de93-45e4-89ac-9b2efc3a7ce5",
+  "subject_id": "7577deb0-4398-49ef-95d2-dd4aa0bdb7e3",
   "subject_name": "django/db/models/deletion::Collector.add_restricted_objects",
   "tags": [
     "entity:method"

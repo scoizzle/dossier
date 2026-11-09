@@ -1,10 +1,10 @@
 # django/conf/locale/zh_Hant/formats
 
-- Subject: django/conf/locale/zh_Hant/formats (id `00fa311e-c4d9-4561-bfd3-8d6e2d957299`)
+- Subject: django/conf/locale/zh_Hant/formats (id `7dfb2f31-9d60-48e9-a7c8-80ddf9826039`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 402 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

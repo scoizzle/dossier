@@ -1,6 +1,6 @@
 # Fact 02240e7f
 
-Store id: 0255c7e9-48ab-456d-ac52-75ea0e425ea5
+Store id: 76e651d0-b458-4687-821b-b7f237109fae
 
 ## Text
 
@@ -20,7 +20,7 @@ class Field(RegisterLookupMixin)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4116870+00:00`
+- posted_at: `2026-11-09T23:44:49.9527790+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 127,
     "symbol": "Field"
   },
-  "id": "0255c7e9-48ab-456d-ac52-75ea0e425ea5",
+  "id": "76e651d0-b458-4687-821b-b7f237109fae",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4116870+00:00"
+    "posted_at": "2026-11-09T23:44:49.9527790+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d72f2f2e-9b20-4988-ac41-03c7c46f79c5",
+  "subject_id": "13ea5fe5-f7c1-4766-840c-857be074ce31",
   "subject_name": "django/db/models/fields/__init__::Field",
   "tags": [
     "entity:class",

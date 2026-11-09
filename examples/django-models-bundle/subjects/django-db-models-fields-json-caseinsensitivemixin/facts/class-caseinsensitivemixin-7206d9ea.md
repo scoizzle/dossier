@@ -1,6 +1,6 @@
 # Fact 7206d9ea
 
-Store id: 7f08caa3-bbb5-4303-8342-437203f96fee
+Store id: 9b901767-c3b3-4d83-b858-e2de1ab42d20
 
 ## Text
 
@@ -20,7 +20,7 @@ class CaseInsensitiveMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9144400+00:00`
+- posted_at: `2026-11-09T23:44:50.9853120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 294,
     "symbol": "CaseInsensitiveMixin"
   },
-  "id": "7f08caa3-bbb5-4303-8342-437203f96fee",
+  "id": "9b901767-c3b3-4d83-b858-e2de1ab42d20",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9144400+00:00"
+    "posted_at": "2026-11-09T23:44:50.9853120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8dd8f51c-617b-4b41-bea8-7ea6c31229f6",
+  "subject_id": "c73d62b0-35a6-40b3-8aea-c6897768606f",
   "subject_name": "django/db/models/fields/json::CaseInsensitiveMixin",
   "tags": [
     "entity:class"

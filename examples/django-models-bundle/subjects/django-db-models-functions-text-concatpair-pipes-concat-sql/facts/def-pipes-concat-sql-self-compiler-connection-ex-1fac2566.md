@@ -1,6 +1,6 @@
 # Fact 1fac2566
 
-Store id: a7e13b1d-5946-41d8-b5ed-aa0b48eff119
+Store id: df92b605-61ca-460b-bf96-eef418d970a2
 
 ## Text
 
@@ -20,7 +20,7 @@ def pipes_concat_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1657950+00:00`
+- posted_at: `2026-11-09T23:44:54.0658820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 76,
     "symbol": "ConcatPair.pipes_concat_sql"
   },
-  "id": "a7e13b1d-5946-41d8-b5ed-aa0b48eff119",
+  "id": "df92b605-61ca-460b-bf96-eef418d970a2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1657950+00:00"
+    "posted_at": "2026-11-09T23:44:54.0658820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "572e2239-cfed-4267-805d-c219fb0e5b16",
+  "subject_id": "327d6afd-74d5-4e1a-9198-321c3823f064",
   "subject_name": "django/db/models/functions/text::ConcatPair.pipes_concat_sql",
   "tags": [
     "entity:method"

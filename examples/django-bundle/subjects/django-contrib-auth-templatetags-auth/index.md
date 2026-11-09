@@ -1,10 +1,10 @@
 # django/contrib/auth/templatetags/auth
 
-- Subject: django/contrib/auth/templatetags/auth (id `e241b733-374a-484f-b32d-09e81159949b`)
+- Subject: django/contrib/auth/templatetags/auth (id `599f1c4a-d1b0-4195-a3e7-026f84b7e3a8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 239 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

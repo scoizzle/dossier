@@ -1,6 +1,6 @@
 # Fact 186df9b8
 
-Store id: 3241e051-cf9d-42b3-a72b-638ca9a34d1c
+Store id: 4cfc4dbb-8286-476c-985a-e9ef945b5d98
 
 ## Text
 
@@ -20,7 +20,7 @@ def _validate_values_are_expressions(values, method_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6725350+00:00`
+- posted_at: `2026-11-09T23:44:56.1815250+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2346,
     "symbol": "QuerySet._validate_values_are_expressions"
   },
-  "id": "3241e051-cf9d-42b3-a72b-638ca9a34d1c",
+  "id": "4cfc4dbb-8286-476c-985a-e9ef945b5d98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6725350+00:00"
+    "posted_at": "2026-11-09T23:44:56.1815250+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e1f42a2e-98fc-4a11-96df-0cdfba59c9f7",
+  "subject_id": "e2c0a679-020b-4669-bf38-e84e453b4dc3",
   "subject_name": "django/db/models/query::QuerySet._validate_values_are_expressions",
   "tags": [
     "entity:static_method",

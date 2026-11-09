@@ -1,6 +1,6 @@
 # Fact adb917cb
 
-Store id: 32ca6dc5-2fa7-4a50-b935-2a3172f6e682
+Store id: 6622db32-3e52-495b-981b-2ef2edb7ca4c
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, db_collation=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5462170+00:00`
+- posted_at: `2026-11-09T23:44:50.0589300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1247,
     "symbol": "CharField.__init__"
   },
-  "id": "32ca6dc5-2fa7-4a50-b935-2a3172f6e682",
+  "id": "6622db32-3e52-495b-981b-2ef2edb7ca4c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5462170+00:00"
+    "posted_at": "2026-11-09T23:44:50.0589300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f94f5cb9-fe03-4b45-a52f-9f9e1405db6d",
+  "subject_id": "4042b8c3-701e-4906-a2ad-7b5b893c9d81",
   "subject_name": "django/db/models/fields/__init__::CharField.__init__",
   "tags": [
     "entity:method"

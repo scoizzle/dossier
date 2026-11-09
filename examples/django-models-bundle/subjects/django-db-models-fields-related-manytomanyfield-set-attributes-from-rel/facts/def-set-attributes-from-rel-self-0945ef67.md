@@ -1,6 +1,6 @@
 # Fact 0945ef67
 
-Store id: 793bed85-d404-4c45-bac6-4b0aff1822a1
+Store id: b31aeb57-3ec8-4fc4-afe4-45ae5c46f830
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_attributes_from_rel(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8895740+00:00`
+- posted_at: `2026-11-09T23:44:51.6704140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2179,
     "symbol": "ManyToManyField.set_attributes_from_rel"
   },
-  "id": "793bed85-d404-4c45-bac6-4b0aff1822a1",
+  "id": "b31aeb57-3ec8-4fc4-afe4-45ae5c46f830",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8895740+00:00"
+    "posted_at": "2026-11-09T23:44:51.6704140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7e9945e0-1de5-49ec-be86-e013d6efec33",
+  "subject_id": "07758940-1fd8-4423-a0b7-e03742425c76",
   "subject_name": "django/db/models/fields/related::ManyToManyField.set_attributes_from_rel",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/core/cache/backends/memcached
 
-- Subject: django/core/cache/backends/memcached (id `d92525e2-efcc-4cf8-8478-f3876133b7a4`)
+- Subject: django/core/cache/backends/memcached (id `09563dbc-b118-4ef9-b4bf-1c82e47f3342`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1726 tokens
-- Facts shown: 32 of 32
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 

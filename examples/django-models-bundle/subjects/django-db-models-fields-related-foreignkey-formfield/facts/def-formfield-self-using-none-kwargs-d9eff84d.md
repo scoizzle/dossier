@@ -1,6 +1,6 @@
 # Fact d9eff84d
 
-Store id: 283198a8-bdbc-46e1-b13c-09036ee9c240
+Store id: a832e65e-cbd5-46b0-befa-af0bc3d0d5a2
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, *, using=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7773220+00:00`
+- posted_at: `2026-11-09T23:44:51.5993220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1296,
     "symbol": "ForeignKey.formfield"
   },
-  "id": "283198a8-bdbc-46e1-b13c-09036ee9c240",
+  "id": "a832e65e-cbd5-46b0-befa-af0bc3d0d5a2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7773220+00:00"
+    "posted_at": "2026-11-09T23:44:51.5993220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ceddf4d2-5d5c-4467-b77f-c62ea27f8c17",
+  "subject_id": "14f38828-c95f-45a7-885f-7f65a06feb71",
   "subject_name": "django/db/models/fields/related::ForeignKey.formfield",
   "tags": [
     "entity:method"

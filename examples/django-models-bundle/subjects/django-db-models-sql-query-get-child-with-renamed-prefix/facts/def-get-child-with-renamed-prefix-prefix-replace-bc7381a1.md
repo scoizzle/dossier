@@ -1,6 +1,6 @@
 # Fact bc7381a1
 
-Store id: 16a493e3-2816-46e9-abf8-a8f1e40aeb3e
+Store id: b804bf63-2de8-463c-a588-042d97d03211
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_child_with_renamed_prefix(prefix, replacement, child)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.6732260+00:00`
+- posted_at: `2026-11-09T23:44:58.5039710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 105,
     "symbol": "get_child_with_renamed_prefix"
   },
-  "id": "16a493e3-2816-46e9-abf8-a8f1e40aeb3e",
+  "id": "b804bf63-2de8-463c-a588-042d97d03211",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.6732260+00:00"
+    "posted_at": "2026-11-09T23:44:58.5039710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "844225ec-6ae1-44c1-a507-3e47b204b4d5",
+  "subject_id": "4c269dcd-28b5-4922-a433-26e8b41c9389",
   "subject_name": "django/db/models/sql/query::get_child_with_renamed_prefix",
   "tags": [
     "entity:function"

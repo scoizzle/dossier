@@ -1,6 +1,6 @@
 # Fact 701b72704d9d85a3-2
 
-Store id: 81017156-9cb5-419f-889e-3a30e277ccbc
+Store id: d697b1d7-5a52-430a-acfa-ee33059a760b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Empty
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.5084320+00:00`
+- posted_at: `2026-11-09T23:44:58.2955640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "81017156-9cb5-419f-889e-3a30e277ccbc",
+  "id": "d697b1d7-5a52-430a-acfa-ee33059a760b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.5084320+00:00"
+    "posted_at": "2026-11-09T23:44:58.2955640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Empty"
       },
       "rel": "contains",
-      "target": "a8f55ad4-8dd5-48db-936f-8e9d93942961"
+      "target": "e678db37-a16e-4c1a-a8c2-a8100ebe065f"
     }
   ],
   "status": "live",
-  "subject_id": "173565d9-788f-4a55-b66f-e71d8d7b1a33",
+  "subject_id": "a61dfdc2-4877-4b53-a0ac-6fd76c6f4abb",
   "subject_name": "django/db/models/sql/datastructures",
   "tags": [
     "entity:class"

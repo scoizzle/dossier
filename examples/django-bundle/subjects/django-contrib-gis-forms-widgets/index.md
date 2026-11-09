@@ -1,10 +1,10 @@
 # django/contrib/gis/forms/widgets
 
-- Subject: django/contrib/gis/forms/widgets (id `34edb42c-31f3-421c-904e-802add1cc662`)
+- Subject: django/contrib/gis/forms/widgets (id `0b196118-fa84-4176-94a8-1beb384ebca8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 991 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/howto/custom-template-tags
 
-- Subject: docs/howto/custom-template-tags (id `e79d3666-05b2-4823-8e56-d3b06aa61a88`)
+- Subject: docs/howto/custom-template-tags (id `c7981ced-fdac-4ddd-b95f-9a76cea805d2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 15057 tokens
-- Facts shown: 316 of 346
+- Used: 15753 tokens
+- Facts shown: 346 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -32,16 +32,19 @@
 - {% msgbox level="info" %} More information at: <a href="http://othersite.com">Other Site</a>/ {% endmsgbox %} [b7082bf7]
 - # Here, register is a django.template.Library instance, as before @register.inclusion_tag("results.html") def show_results(poll): ... [8e2f0c6c]
 - .. code-block:: html+django [685d15dfb6eb2285-6]
+- .. code-block:: html+django [685d15dfb6eb2285-7]
 - <div class="msgbox error"> <details open> <summary> <strong>Error</strong>: Please read for <i>Important Site</i> </summary> <p> Please fix all errors. Further documentation can be found at <a href="http://example.com">Docs</a>. </p> </details> </div> [ce581276]
-- <p>The time is {% current_time "%Y-%m-%d %I:%M %p" %}.</p> [2b5073e3]
+- Then: [aa043a50]
 
 ## All facts
 
 - [2057be9b] <div class="msgbox info"> <details> <summary> <strong>Info</strong>: Please read for <i>Important Site</i> </summary> <p> More information at: <a href="http://othersite.com">Other Site</a> </p> </details> </div>
+- [2b5073e3] <p>The time is {% current_time "%Y-%m-%d %I:%M %p" %}.</p>
 - [3cb5cbfc] <p>This post was last updated at {% format_time blog_entry.date_updated "%Y-%m-%d %I:%M %p" %}.</p>
 - [383c1753] <ul> <li>First choice</li> <li>Second choice</li> <li>Third choice</li> </ul>
 - [99a99b54] <ul> {% for choice in choices %} <li> {{ choice }} </li> {% endfor %} </ul>
 - [73069cb4] @register.filter @stringfilter def lower(value): return value.lower()
+- [28fc2001] @register.filter def lower(value): return value.lower()
 - [5550b406] @register.filter(expects_localtime=True) def businesshours(value): try: return 9 <= value.hour < 17 except AttributeError: return ""
 - [af216c8e] @register.filter(name="cut") def cut(value, arg): return value.replace(arg, "")
 - [39ac202c] @register.inclusion_tag("link.html", takes_context=True) def jump_link(context): return { "link": context["home_link"], "title": context["home_title"], }
@@ -63,7 +66,6 @@
 - [6aba4908] For more information on the :ttag:`load` tag, read its documentation.
 - [2ccbefad] In older versions of Django, be careful when reusing Django's built-in filters as ``autoescape`` defaults to ``None``. You'll need to pass ``autoescape=True`` to get autoescaping.
 - [9b8013e9] Jump directly to <a href="{{ link }}">{{ title }}</a>.
-- [aa043a50] Then:
 - [c5d69a2e] ``simple_block_tag`` behaves similarly to ``simple_tag`` regarding auto-escaping. For details on escaping and safety, refer to ``simple_tag``. Because the ``content`` argument has already been rendered by Django, it is already escaped.
 - [b02e30e7] class CommentNode(template.Node): def render(self, context): return ""
 - [575fe061] class CurrentTimeNode(template.Node): def __init__(self, format_string): self.format_string = format_string
@@ -85,6 +87,8 @@
 - [e24ed9fe] def show_results(poll): choices = poll.choice_set.all() return {"choices": choices}
 - [0bd380f6] def simpleblocktag_view(request): return render(request, "test.html", context={"site": "Important Site"})
 - [3deaed8dc7b0ec22] from django import template
+- [3deaed8dc7b0ec22-2] from django import template
+- [3deaed8dc7b0ec22-3] from django import template
 - [184adb68] from django import template from django.template.defaultfilters import stringfilter
 - [8fb6bc67] from django import template from django.utils.html import format_html
 - [92288e9d] from django import template from myapp.charts import render_chart
@@ -92,6 +96,8 @@
 - [fcdb468c] from django.template import Context
 - [290c2f3b] from django.template.loader import get_template
 - [2c05df5540b201db] import datetime from django import template
+- [2c05df5540b201db-2] import datetime from django import template
+- [2c05df5540b201db-3] import datetime from django import template
 - [f362afda] import itertools from django import template
 - [90f4387cea1dbdff-2] import re
 - [6df3cb3b] polls/ __init__.py models.py templatetags/ __init__.py poll_extras.py views.py
@@ -108,7 +114,9 @@
 - [3d4c4e5442e939f4] {% block content %}
 - [1bf138ca] {% chart %} digraph G { label = "Chart for {{ request.user }}" A -> {B C} } {% endchart %}
 - [d665f743] {% chart %} digraph G { label = "Chart for {{ request.user }}" A -> {B C} } {% endofchart %}
+- [033588da] {% current_time "%Y-%m-%d %I:%M %p" %}<p>The time is {{ current_time }}.</p>
 - [c3bd3a6e] {% current_time "%Y-%m-%d %I:%M %p" as my_current_time %} <p>The current time is {{ my_current_time }}.</p>
+- [50bfcf74] {% current_time "%Y-%m-%d %I:%M %p" as the_time %} <p>The time is {{ the_time }}.</p>
 - [27937693bf26c47c] {% endblock %}
 - [0a6c70ed0cb3c3fb] {% extends "base.html" %}
 - [097eb6936783c2dc] {% for o in some_list %} <tr class="{% cycle 'row1' 'row2' %}"> ... </tr> {% endfor %}
@@ -116,6 +124,7 @@
 - [bb83f242] {% load poll_extras %}
 - [62c4fefd] {% load testapptags %}
 - [005618072ec479e9] {% my_tag 123 "abcd" book.title warning=message|lower profile=user.profile %}
+- [005618072ec479e9-2] {% my_tag 123 "abcd" book.title warning=message|lower profile=user.profile %}
 - [87b96041] {% show_results poll %}
 - [6a46f0b6] {% upper %}This will appear in uppercase, {{ your_name }}.{% endupper %}
 - [e324ef04] {{ somevariable|cut:"0" }}
@@ -167,6 +176,23 @@
 - [5dbed0de] .. admonition:: Variable scope in context
 - [f1634b861a77cfdb] .. code-block:: html
 - [f1634b861a77cfdb-2] .. code-block:: html
+- [685d15dfb6eb2285-8] .. code-block:: html+django
+- [685d15dfb6eb2285-9] .. code-block:: html+django
+- [685d15dfb6eb2285-10] .. code-block:: html+django
+- [685d15dfb6eb2285-11] .. code-block:: html+django
+- [685d15dfb6eb2285-12] .. code-block:: html+django
+- [685d15dfb6eb2285-13] .. code-block:: html+django
+- [685d15dfb6eb2285-14] .. code-block:: html+django
+- [685d15dfb6eb2285-15] .. code-block:: html+django
+- [685d15dfb6eb2285-16] .. code-block:: html+django
+- [685d15dfb6eb2285-17] .. code-block:: html+django
+- [685d15dfb6eb2285-18] .. code-block:: html+django
+- [685d15dfb6eb2285-19] .. code-block:: html+django
+- [685d15dfb6eb2285-20] .. code-block:: html+django
+- [685d15dfb6eb2285-21] .. code-block:: html+django
+- [685d15dfb6eb2285-22] .. code-block:: html+django
+- [685d15dfb6eb2285-23] .. code-block:: html+django
+- [685d15dfb6eb2285-24] .. code-block:: html+django
 - [338a2db4] .. code-block:: html+django :caption: ``testapp/templates/test.html``
 - [d2229886] .. code-block:: python :caption: ``testapp/templatetags/testapptags.py``
 - [fcc91ef0] .. code-block:: python :caption: ``testapp/views.py``
@@ -174,6 +200,7 @@
 - [b35d0e0d] .. method:: django.template.Library.filter()
 - [44a02404] .. method:: django.template.Library.inclusion_tag()
 - [9a6e8f43] .. method:: django.template.Library.simple_block_tag()
+- [ccfd4ba2] .. method:: django.template.Library.simple_tag()
 - [0651684b] .. method:: django.template.defaultfilters.stringfilter()
 - [63d704bd] .. note:: Notice how we used ``self`` to scope the ``CycleNode`` specific information within the ``render_context``. There may be multiple ``CycleNodes`` in a given template, so we need to be careful not to clobber another node's state information. The easiest way to do this is to always use ``self`` as the key into ``render_context``. If you're keeping track of several state variables, make ``render_context[self]`` a dictionary.
 - [f16440bf] .. note:: The actual implementation of :ttag:`{% comment %}<comment>` is slightly different in that it allows broken template tags to appear between ``{% comment %}`` and ``{% endcomment %}``. It does so by calling ``parser.skip_past('endcomment')`` instead of ``parser.parse(('endcomment',))`` followed by ``parser.delete_first_token()``, thus avoiding the generation of a node list.
@@ -234,6 +261,7 @@
 - [b7758621] If there are other template tags or variables inside the ``content`` block, they will be rendered before being passed to the tag function. In the example above, ``request.user`` will be resolved by the time ``render_chart`` is called.
 - [b471b1e6] If we had neglected to pass in the current ``context.autoescape`` value to our new ``Context`` in this example, the results would have *always* been automatically escaped, which may not be the desired behavior if the template tag is used inside a :ttag:`{% autoescape off %}<autoescape>` block.
 - [dd314713] If you leave off the ``name`` argument, as in the second example above, Django will use the function's name as the filter name.
+- [7071da58] If you leave off the ``name`` argument, as in the second example above, Django will use the function's name as the tag name.
 - [af6f4181] If you need to rename your tag, you can provide a custom name for it::
 - [79d69167] If you write a custom filter that operates on :class:`~datetime.datetime` objects, you'll usually register it with the ``expects_localtime`` flag set to ``True``::
 - [c5a736e1] If you're writing a template filter that only expects a string as the first argument, you should use the decorator ``stringfilter``. This will convert an object to its string value before being passed to your function::
@@ -293,6 +321,7 @@
 - [58f94919] The second step in writing custom tags is to define a ``Node`` subclass that has a ``render()`` method.
 - [ead032fa] The template system works in a two-step process: compiling and rendering. To define a custom template tag, you specify how the compilation works and how the rendering works.
 - [1b8c9b4ee56a5042] Then in the template any number of arguments, separated by spaces, may be passed to the template tag. Like in Python, the values for keyword arguments are set using the equal sign ("``=``") and must be provided after the positional arguments. For example:
+- [1b8c9b4ee56a5042-2] Then in the template any number of arguments, separated by spaces, may be passed to the template tag. Like in Python, the values for keyword arguments are set using the equal sign ("``=``") and must be provided after the positional arguments. For example:
 - [114289fa] Then, any time you want to use that custom tag, load its library and call it without any arguments, like so:
 - [86c0c4f5] There's no limit on how many modules you put in the ``templatetags`` package. Just keep in mind that a :ttag:`{% load %}<load>` statement will load tags/filters for the given Python module name, not the name of the app.
 - [d5722523] These sorts of tags are called "inclusion tags".
@@ -329,3 +358,4 @@
 - [d475ddfa] ``CommentNode.render()`` returns an empty string. Anything between ``{% comment %}`` and ``{% endcomment %}`` is ignored.
 - [dba6cb23] ``inclusion_tag`` functions may accept any number of positional or keyword arguments. For example::
 - [5df2187d] ``parser.parse()`` takes a tuple of names of block tags *to parse until*. It returns an instance of ``django.template.NodeList``, which is a list of all ``Node`` objects that the parser encountered *before* it encountered any of the tags named in the tuple.
+- [ad7468ad] ``simple_tag`` functions may accept any number of positional or keyword arguments. For example::

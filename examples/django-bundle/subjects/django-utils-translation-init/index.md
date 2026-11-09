@@ -1,10 +1,10 @@
 # django/utils/translation/__init__
 
-- Subject: django/utils/translation/__init__ (id `ac513f55-b11c-4a7c-b2d4-6d02f48b3331`)
+- Subject: django/utils/translation/__init__ (id `b8342e8a-79bb-46b2-b243-59240d6d1250`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2377 tokens
-- Facts shown: 51 of 51
+- Facts shown: 51 facts
 - Conflicts: 0
 - Gaps: 0
 

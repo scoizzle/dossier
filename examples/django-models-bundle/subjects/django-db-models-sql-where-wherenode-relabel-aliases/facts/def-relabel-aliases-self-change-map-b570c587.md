@@ -1,6 +1,6 @@
 # Fact b570c587
 
-Store id: d1a17122-acb9-40e1-b2b2-9c8f6b050ecc
+Store id: a1186d2e-d2fb-41be-af49-b02a859e4838
 
 ## Text
 
@@ -20,7 +20,7 @@ def relabel_aliases(self, change_map)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6178000+00:00`
+- posted_at: `2026-11-09T23:44:59.7282100+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 203,
     "symbol": "WhereNode.relabel_aliases"
   },
-  "id": "d1a17122-acb9-40e1-b2b2-9c8f6b050ecc",
+  "id": "a1186d2e-d2fb-41be-af49-b02a859e4838",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6178000+00:00"
+    "posted_at": "2026-11-09T23:44:59.7282100+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "778e8e57-4795-40a2-ad37-a64a279c1928",
+  "subject_id": "b84861da-c01c-41c5-aaa1-12a666a47fca",
   "subject_name": "django/db/models/sql/where::WhereNode.relabel_aliases",
   "tags": [
     "entity:method"

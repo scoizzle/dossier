@@ -1,11 +1,11 @@
 # django/db/models/base::ModelStateFetchModeDescriptor.__get__
 
-- Subject: django/db/models/base::ModelStateFetchModeDescriptor.__get__ (id `651ee63d-b50d-40d8-b1f8-8d728e3e4bbd`)
+- Subject: django/db/models/base::ModelStateFetchModeDescriptor.__get__ (id `b3413f12-a5ec-465a-84d8-a85292f0ba17`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

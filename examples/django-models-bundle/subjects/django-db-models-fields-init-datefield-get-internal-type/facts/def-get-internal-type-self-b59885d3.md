@@ -1,6 +1,6 @@
 # Fact b59885d3
 
-Store id: 858d3289-532c-4d45-8e4b-6f7606d0f8fe
+Store id: 1f00775f-7af5-4bda-8143-6e00495ea5cd
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5806290+00:00`
+- posted_at: `2026-11-09T23:44:50.0896020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1517,
     "symbol": "DateField.get_internal_type"
   },
-  "id": "858d3289-532c-4d45-8e4b-6f7606d0f8fe",
+  "id": "1f00775f-7af5-4bda-8143-6e00495ea5cd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5806290+00:00"
+    "posted_at": "2026-11-09T23:44:50.0896020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "887d4449-8a86-4ddc-a6e5-dc4f46b59f20",
+  "subject_id": "01833b93-c835-4455-8c4e-949260ceda84",
   "subject_name": "django/db/models/fields/__init__::DateField.get_internal_type",
   "tags": [
     "entity:method"

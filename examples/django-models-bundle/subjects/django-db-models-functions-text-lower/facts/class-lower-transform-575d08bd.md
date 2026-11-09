@@ -1,6 +1,6 @@
 # Fact 575d08bd
 
-Store id: 826663c0-21a0-45b1-af50-2f116b4d7479
+Store id: 7285bddc-b908-4c1b-8868-16418c768d66
 
 ## Text
 
@@ -20,7 +20,7 @@ class Lower(Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2056250+00:00`
+- posted_at: `2026-11-09T23:44:54.0990000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 192,
     "symbol": "Lower"
   },
-  "id": "826663c0-21a0-45b1-af50-2f116b4d7479",
+  "id": "7285bddc-b908-4c1b-8868-16418c768d66",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2056250+00:00"
+    "posted_at": "2026-11-09T23:44:54.0990000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d035abb6-8d5a-4baf-b6b3-28348c7daf83",
+  "subject_id": "2a38dbf9-b2ce-4362-9c66-f4f848e0b0ae",
   "subject_name": "django/db/models/functions/text::Lower",
   "tags": [
     "entity:class"

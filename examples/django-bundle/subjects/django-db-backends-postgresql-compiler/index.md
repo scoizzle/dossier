@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/compiler
 
-- Subject: django/db/backends/postgresql/compiler (id `2491984a-42d3-4218-a319-9580226a12e2`)
+- Subject: django/db/backends/postgresql/compiler (id `491aa6c7-0b46-4d2f-8895-b4f0f9207d96`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 564 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

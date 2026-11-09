@@ -1,6 +1,6 @@
 # Fact ca07a7ef
 
-Store id: 3ceb29fb-2fb8-43ad-b3ad-4b838476a347
+Store id: b5cff444-8c1c-475f-93aa-b13a260c8c93
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9547210+00:00`
+- posted_at: `2026-11-09T23:44:53.1180290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 20,
     "symbol": "Cast.as_sqlite"
   },
-  "id": "3ceb29fb-2fb8-43ad-b3ad-4b838476a347",
+  "id": "b5cff444-8c1c-475f-93aa-b13a260c8c93",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9547210+00:00"
+    "posted_at": "2026-11-09T23:44:53.1180290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "82465024-dc7f-4c63-8981-5d26d7a42916",
+  "subject_id": "b327617c-df59-43e9-b15d-6c076ddd022f",
   "subject_name": "django/db/models/functions/comparison::Cast.as_sqlite",
   "tags": [
     "entity:method"

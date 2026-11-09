@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject.deconstruct
 
-- Subject: django/db/models/fields/related::ForeignObject.deconstruct (id `77ca7ce0-7c7e-4012-b3cf-5603aefa9b89`)
+- Subject: django/db/models/fields/related::ForeignObject.deconstruct (id `b417b627-6d75-4258-8c19-c2aee7cd982c`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

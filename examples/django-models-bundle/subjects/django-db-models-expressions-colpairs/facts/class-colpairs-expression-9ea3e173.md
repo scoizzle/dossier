@@ -1,6 +1,6 @@
 # Fact 9ea3e173
 
-Store id: c634686b-efea-4243-ac03-d636fa65baed
+Store id: aaaaaea9-69cb-41fe-99d9-47855466d6c6
 
 ## Text
 
@@ -20,7 +20,7 @@ class ColPairs(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8978980+00:00`
+- posted_at: `2026-11-09T23:44:49.5576320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1390,
     "symbol": "ColPairs"
   },
-  "id": "c634686b-efea-4243-ac03-d636fa65baed",
+  "id": "aaaaaea9-69cb-41fe-99d9-47855466d6c6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8978980+00:00"
+    "posted_at": "2026-11-09T23:44:49.5576320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5e988d55-8960-4295-85b5-ac5aa46b0575",
+  "subject_id": "999cec1f-e5e1-4fcb-91f3-767c95750764",
   "subject_name": "django/db/models/expressions::ColPairs",
   "tags": [
     "entity:class"

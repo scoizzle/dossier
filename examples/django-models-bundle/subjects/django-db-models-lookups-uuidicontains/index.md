@@ -1,11 +1,11 @@
 # django/db/models/lookups::UUIDIContains
 
-- Subject: django/db/models/lookups::UUIDIContains (id `b93fc582-0529-4192-ae39-52d3cc184a6c`)
+- Subject: django/db/models/lookups::UUIDIContains (id `20d7683a-a227-4402-aa18-6861e1ecd3cd`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact c8549477
 
-Store id: d3d26f0a-fd57-4521-8bbc-b7885685aba3
+Store id: c311e3f6-0d64-40a4-8d80-39f6d22b1e38
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6862070+00:00`
+- posted_at: `2026-11-09T23:44:50.1535930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2106,
     "symbol": "FloatField.get_prep_value"
   },
-  "id": "d3d26f0a-fd57-4521-8bbc-b7885685aba3",
+  "id": "c311e3f6-0d64-40a4-8d80-39f6d22b1e38",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6862070+00:00"
+    "posted_at": "2026-11-09T23:44:50.1535930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5507533a-f762-405a-8bc6-6831ebc15fda",
+  "subject_id": "e40d8f7e-5a3b-4a1b-86a4-5dab89357132",
   "subject_name": "django/db/models/fields/__init__::FloatField.get_prep_value",
   "tags": [
     "entity:method"

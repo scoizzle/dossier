@@ -1,11 +1,11 @@
 # django/db/models/sql/query::get_child_with_renamed_prefix
 
-- Subject: django/db/models/sql/query::get_child_with_renamed_prefix (id `844225ec-6ae1-44c1-a507-3e47b204b4d5`)
+- Subject: django/db/models/sql/query::get_child_with_renamed_prefix (id `4c269dcd-28b5-4922-a433-26e8b41c9389`)
 - Kind: function
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

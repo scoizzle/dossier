@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/point
 
-- Subject: django/contrib/gis/geos/point (id `a7274132-65ae-417d-8197-6a608fee0e42`)
+- Subject: django/contrib/gis/geos/point (id `7affb956-a851-4498-a448-59529c710c45`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1256 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

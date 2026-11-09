@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/functions
 
-- Subject: docs/ref/contrib/postgres/functions (id `11e70f6c-a87e-4d7c-9a0d-7c70f064c869`)
+- Subject: docs/ref/contrib/postgres/functions (id `5ac389be-06ca-4c36-bc32-4674279e7764`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 564 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

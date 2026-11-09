@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.is_sliced
 
-- Subject: django/db/models/sql/query::Query.is_sliced (id `52fcbb74-f3f1-4e30-8be1-6c49b98cd161`)
+- Subject: django/db/models/sql/query::Query.is_sliced (id `0062969b-d729-42e5-a305-a410d89f0e50`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

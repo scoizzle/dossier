@@ -1,6 +1,6 @@
 # Fact b10f15ea
 
-Store id: 3c3b1dd5-46f2-42bf-b256-cc9af85f4ba8
+Store id: 5c8b1e10-2ea5-471b-9618-6e80f17151b6
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class InsertQuery
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.4245420+00:00`
+- posted_at: `2026-11-09T23:44:59.4546820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "3c3b1dd5-46f2-42bf-b256-cc9af85f4ba8",
+  "id": "5c8b1e10-2ea5-471b-9618-6e80f17151b6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.4245420+00:00"
+    "posted_at": "2026-11-09T23:44:59.4546820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "InsertQuery"
       },
       "rel": "contains",
-      "target": "083889b7-121a-4705-89b6-e48c3b356aca"
+      "target": "f2134864-8758-4511-88bc-4bf5f56ad259"
     }
   ],
   "status": "live",
-  "subject_id": "8b880d6f-4c88-470e-b44a-994f5797b94a",
+  "subject_id": "f88703af-2f40-495f-90f4-b3d47ecffadf",
   "subject_name": "django/db/models/sql/subqueries",
   "tags": [
     "entity:class"

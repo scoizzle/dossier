@@ -1,6 +1,6 @@
 # Fact 94bce9bd
 
-Store id: 2904cd9e-3e3e-4f7e-80b1-2d4e6217fd7a
+Store id: 7bacdb1c-6c3f-47a1-be64-d7ef24038ee5
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5861390+00:00`
+- posted_at: `2026-11-09T23:44:50.0946530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1576,
     "symbol": "DateField.get_prep_value"
   },
-  "id": "2904cd9e-3e3e-4f7e-80b1-2d4e6217fd7a",
+  "id": "7bacdb1c-6c3f-47a1-be64-d7ef24038ee5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5861390+00:00"
+    "posted_at": "2026-11-09T23:44:50.0946530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b1ad11f7-492d-4978-a77a-4b2090e855a8",
+  "subject_id": "701a8177-5c54-4be7-9ce1-e7c03e1dcc17",
   "subject_name": "django/db/models/fields/__init__::DateField.get_prep_value",
   "tags": [
     "entity:method"

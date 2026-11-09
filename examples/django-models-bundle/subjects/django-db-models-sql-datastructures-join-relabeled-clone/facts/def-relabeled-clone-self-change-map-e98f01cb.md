@@ -1,6 +1,6 @@
 # Fact e98f01cb
 
-Store id: b82ef157-0186-4e8d-94ab-64eb8326fbbe
+Store id: fe4df639-18a0-4a4f-9d37-b75a4653f338
 
 ## Text
 
@@ -20,7 +20,7 @@ def relabeled_clone(self, change_map)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4587570+00:00`
+- posted_at: `2026-11-09T23:44:58.2119610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 135,
     "symbol": "Join.relabeled_clone"
   },
-  "id": "b82ef157-0186-4e8d-94ab-64eb8326fbbe",
+  "id": "fe4df639-18a0-4a4f-9d37-b75a4653f338",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4587570+00:00"
+    "posted_at": "2026-11-09T23:44:58.2119610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b315bc52-0a96-421e-936f-199996fdce51",
+  "subject_id": "e1c81320-a05d-4255-93ba-2edd4fcfe369",
   "subject_name": "django/db/models/sql/datastructures::Join.relabeled_clone",
   "tags": [
     "entity:method"

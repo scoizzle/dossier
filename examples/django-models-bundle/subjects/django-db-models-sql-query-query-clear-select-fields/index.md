@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.clear_select_fields
 
-- Subject: django/db/models/sql/query::Query.clear_select_fields (id `558099b2-3c3e-4615-a0e1-4338d3fa6a75`)
+- Subject: django/db/models/sql/query::Query.clear_select_fields (id `11d06660-e890-4716-a666-feb7b4bff9ef`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

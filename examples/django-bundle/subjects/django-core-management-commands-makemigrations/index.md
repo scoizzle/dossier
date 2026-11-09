@@ -1,10 +1,10 @@
 # django/core/management/commands/makemigrations
 
-- Subject: django/core/management/commands/makemigrations (id `53a3fb99-d4fa-4aa2-9e10-a6aca15ddaef`)
+- Subject: django/core/management/commands/makemigrations (id `73eae716-a276-4c37-b892-c79ce164be69`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4211 tokens
-- Facts shown: 28 of 28
+- Facts shown: 28 facts
 - Conflicts: 0
 - Gaps: 0
 

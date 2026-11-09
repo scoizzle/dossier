@@ -1,11 +1,11 @@
 # django/db/models/lookups::BuiltinLookup.process_lhs
 
-- Subject: django/db/models/lookups::BuiltinLookup.process_lhs (id `f8e95652-8195-4a94-9ffd-920dcd13af47`)
+- Subject: django/db/models/lookups::BuiltinLookup.process_lhs (id `cd5b174b-7a15-4b07-a269-6bdeedf2fffe`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

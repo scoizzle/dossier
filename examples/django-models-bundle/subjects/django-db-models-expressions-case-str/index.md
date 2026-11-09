@@ -1,11 +1,11 @@
 # django/db/models/expressions::Case.__str__
 
-- Subject: django/db/models/expressions::Case.__str__ (id `9b5c80fa-358a-4f60-9a78-409ff7fa1d65`)
+- Subject: django/db/models/expressions::Case.__str__ (id `508d3e0b-870c-4474-a237-f691431817ac`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

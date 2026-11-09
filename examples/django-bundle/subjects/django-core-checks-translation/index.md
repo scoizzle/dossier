@@ -1,10 +1,10 @@
 # django/core/checks/translation
 
-- Subject: django/core/checks/translation (id `80fb9f2a-1e0c-4481-9512-1f5cc7861aa8`)
+- Subject: django/core/checks/translation (id `f3815749-822a-4258-9d96-379ae2130c44`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 476 tokens
-- Facts shown: 9 of 10
+- Used: 558 tokens
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - @register(Tags.translation) def check_language_settings_consistent(app_configs, **kwargs): """Error if language settings are not consistent with each other.""" try: get_supported_language_variant(settings.LANGUAGE_CODE) except LookupError: return [E004] else: return [] [b0aef5f2]
 - @register(Tags.translation) def check_setting_language_code(app_configs, **kwargs): """Error if LANGUAGE_CODE setting is invalid.""" tag = settings.LANGUAGE_CODE if not isinstance(tag, str) or not language_code_re.match(tag): return [Error(E001.msg.format(tag), id=E001.id)] return [] [902dfbf9]
 - @register(Tags.translation) def check_setting_languages(app_configs, **kwargs): """Error if LANGUAGES setting is invalid.""" return [ Error(E002.msg.format(tag), id=E002.id) for tag, _ in settings.LANGUAGES if not isinstance(tag, str) or not language_code_re.match(tag) ] [d6c1f0e2]
+- @register(Tags.translation) def check_setting_languages_bidi(app_configs, **kwargs): """Error if LANGUAGES_BIDI setting is invalid.""" return [ Error(E003.msg.format(tag), id=E003.id) for tag in settings.LANGUAGES_BIDI if not isinstance(tag, str) or not language_code_re.match(tag) ] [5e52dbf9]
 - E001 = Error( "You have provided an invalid value for the LANGUAGE_CODE setting: {!r}.", id="translation.E001", ) [4e144bb3]
 - E002 = Error( "You have provided an invalid language code in the LANGUAGES setting: {!r}.", id="translation.E002", ) [3a0496a9]
 - E003 = Error( "You have provided an invalid language code in the LANGUAGES_BIDI setting: {!r}.", id="translation.E003", ) [c8cc2fa6]

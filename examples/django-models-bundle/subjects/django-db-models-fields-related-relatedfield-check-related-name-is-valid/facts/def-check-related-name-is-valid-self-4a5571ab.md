@@ -1,6 +1,6 @@
 # Fact 4a5571ab
 
-Store id: ab108008-394e-4664-8767-7ec25bd366e7
+Store id: f46eae35-ebdc-4320-a9d6-3764e487be22
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_related_name_is_valid(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6063210+00:00`
+- posted_at: `2026-11-09T23:44:51.4657200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 135,
     "symbol": "RelatedField._check_related_name_is_valid"
   },
-  "id": "ab108008-394e-4664-8767-7ec25bd366e7",
+  "id": "f46eae35-ebdc-4320-a9d6-3764e487be22",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6063210+00:00"
+    "posted_at": "2026-11-09T23:44:51.4657200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4f58d688-8a31-47dc-8746-072deb5db97b",
+  "subject_id": "108c1e1e-7bb7-4e28-908c-73c49dad677b",
   "subject_name": "django/db/models/fields/related::RelatedField._check_related_name_is_valid",
   "tags": [
     "entity:method"

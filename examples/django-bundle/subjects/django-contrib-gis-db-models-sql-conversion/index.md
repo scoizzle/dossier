@@ -1,16 +1,17 @@
 # django/contrib/gis/db/models/sql/conversion
 
-- Subject: django/contrib/gis/db/models/sql/conversion (id `46640867-2fa4-455c-a04a-e1b16e7c7c8b`)
+- Subject: django/contrib/gis/db/models/sql/conversion (id `d5884e4f-0a05-41f1-b82a-472ca1ffef47`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 636 tokens
-- Facts shown: 14 of 15
+- Used: 666 tokens
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Facts
 
 - def __init__(self, geo_field): super().__init__() self.geo_field = geo_field [82d0046d99ea9c75]
+- def __init__(self, geo_field): super().__init__() self.geo_field = geo_field [82d0046d99ea9c75-2]
 - def from_db_value(self, value, expression, connection): if value is None: return # If the database returns a Decimal, convert it to a float as expected # by the Python geometric objects. if isinstance(value, Decimal): value = float(value) # If the units are known, convert value into area measure. area_att = connection.ops.get_area_att_for_field(self.geo_field) return Area(**{area_att: value}) if area_att else value [d4423210]
 - def from_db_value(self, value, expression, connection): if value is None: return distance_att = connection.ops.get_distance_att_for_field(self.geo_field) return Distance(**{distance_att: value}) if distance_att else value [72c57713]
 - def get_db_prep_value(self, value, connection, prepared=False): if not isinstance(value, Distance): return value distance_att = connection.ops.get_distance_att_for_field(self.geo_field) if not distance_att: raise ValueError( "Distance measure is supplied, but units are unknown for result." ) return getattr(value, distance_att) [a5944f9d]

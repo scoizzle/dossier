@@ -1,10 +1,10 @@
 # django/conf/locale/km/formats
 
-- Subject: django/conf/locale/km/formats (id `cba985dd-0393-4e96-a029-3c37e28ca8e6`)
+- Subject: django/conf/locale/km/formats (id `f691ae13-9c10-4afa-9412-3282d846715f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 201 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

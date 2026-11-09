@@ -1,6 +1,6 @@
 # Fact 8712ba47
 
-Store id: 89fb62d2-23e9-4586-8881-391a058f2a11
+Store id: c194448f-bd37-488a-ba56-ffd5a51935d7
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_unique_together(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7668550+00:00`
+- posted_at: `2026-11-09T23:44:48.5516790+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2165,
     "symbol": "Model._check_unique_together"
   },
-  "id": "89fb62d2-23e9-4586-8881-391a058f2a11",
+  "id": "c194448f-bd37-488a-ba56-ffd5a51935d7",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7668550+00:00"
+    "posted_at": "2026-11-09T23:44:48.5516790+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f6a69686-29f2-411e-9289-8482430a6587",
+  "subject_id": "a713e3e7-8a05-47c6-b6ea-df29ad47a394",
   "subject_name": "django/db/models/base::Model._check_unique_together",
   "tags": [
     "entity:class_method",

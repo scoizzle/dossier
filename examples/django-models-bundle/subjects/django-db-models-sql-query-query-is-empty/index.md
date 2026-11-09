@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.is_empty
 
-- Subject: django/db/models/sql/query::Query.is_empty (id `7a089cae-48ad-4243-871d-23baf4ea271e`)
+- Subject: django/db/models/sql/query::Query.is_empty (id `e7a9ab17-ae67-406d-8b11-09df429f503b`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 9ce18be3
 
-Store id: 77b702a2-84ad-4270-82ec-edf5725854b7
+Store id: 3ec0f926-6d72-4cee-bc75-541256e3a3e6
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_next_or_previous_in_order(self, is_next)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7523310+00:00`
+- posted_at: `2026-11-09T23:44:48.5393710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1374,
     "symbol": "Model._get_next_or_previous_in_order"
   },
-  "id": "77b702a2-84ad-4270-82ec-edf5725854b7",
+  "id": "3ec0f926-6d72-4cee-bc75-541256e3a3e6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7523310+00:00"
+    "posted_at": "2026-11-09T23:44:48.5393710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9130121b-0c8c-45cb-8c52-330da1362ede",
+  "subject_id": "9af17b7d-799b-4e89-804b-a7e9f7705853",
   "subject_name": "django/db/models/base::Model._get_next_or_previous_in_order",
   "tags": [
     "entity:method"

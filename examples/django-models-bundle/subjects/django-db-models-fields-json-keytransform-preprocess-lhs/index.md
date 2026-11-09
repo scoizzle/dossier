@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransform.preprocess_lhs
 
-- Subject: django/db/models/fields/json::KeyTransform.preprocess_lhs (id `30a13723-da21-498b-bd00-daea4bf784d9`)
+- Subject: django/db/models/fields/json::KeyTransform.preprocess_lhs (id `63658431-0832-4b42-bedb-61199283a103`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

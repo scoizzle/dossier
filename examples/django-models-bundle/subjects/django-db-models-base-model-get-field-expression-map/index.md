@@ -1,11 +1,11 @@
 # django/db/models/base::Model._get_field_expression_map
 
-- Subject: django/db/models/base::Model._get_field_expression_map (id `fbc7ce2d-0d96-491f-9ba2-8ac421eef14e`)
+- Subject: django/db/models/base::Model._get_field_expression_map (id `3711ea1b-f209-4116-a9e3-73f5ef941734`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 8249d163
 
-Store id: 5e37cf9d-1724-4dc5-b599-2bbdb0ee4a60
+Store id: b563501c-e519-4282-a80c-56edd7896171
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_fallback_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5849650+00:00`
+- posted_at: `2026-11-09T23:44:52.7548300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 156,
     "symbol": "TupleExact.get_fallback_sql"
   },
-  "id": "5e37cf9d-1724-4dc5-b599-2bbdb0ee4a60",
+  "id": "b563501c-e519-4282-a80c-56edd7896171",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5849650+00:00"
+    "posted_at": "2026-11-09T23:44:52.7548300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3b0ad954-acf1-4df9-a741-5d7038e47009",
+  "subject_id": "7955988f-ef91-42c2-85aa-269802c2df68",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleExact.get_fallback_sql",
   "tags": [
     "entity:method"

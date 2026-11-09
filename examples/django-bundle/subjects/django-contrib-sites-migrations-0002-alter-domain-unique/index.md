@@ -1,10 +1,10 @@
 # django/contrib/sites/migrations/0002_alter_domain_unique
 
-- Subject: django/contrib/sites/migrations/0002_alter_domain_unique (id `5d5041c4-b85c-4ee8-9c32-0f731649cd84`)
+- Subject: django/contrib/sites/migrations/0002_alter_domain_unique (id `927c0030-512b-495f-96a0-149c737a8420`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 131 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

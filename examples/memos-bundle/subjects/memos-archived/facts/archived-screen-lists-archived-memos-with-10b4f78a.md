@@ -1,6 +1,6 @@
 # Fact 10b4f78a
 
-Store id: a457cc9c-19c7-44dc-b032-a8eb6a8161ed
+Store id: e572ad7e-a0bd-42d5-bf63-84acca9a9e0e
 
 ## Text
 
@@ -20,7 +20,7 @@ Archived screen lists archived memos with a restore action.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.3369340+00:00`
+- posted_at: `2026-11-09T23:44:32.3313430+00:00`
 
 ## Refs
 
@@ -40,17 +40,17 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a457cc9c-19c7-44dc-b032-a8eb6a8161ed",
+  "id": "e572ad7e-a0bd-42d5-bf63-84acca9a9e0e",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.3369340+00:00"
+    "posted_at": "2026-11-09T23:44:32.3313430+00:00"
   },
   "refs": [],
   "status": "live",
-  "subject_id": "d2f1784a-f170-4d97-8fea-071e84050ad7",
+  "subject_id": "4fe5c8a4-1ad4-48f1-bcf0-1620887e6ab5",
   "subject_name": "Memos/Archived",
   "tags": [],
   "text": "Archived screen lists archived memos with a restore action."

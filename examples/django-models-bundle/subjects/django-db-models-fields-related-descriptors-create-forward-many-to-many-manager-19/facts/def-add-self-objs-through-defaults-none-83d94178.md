@@ -1,6 +1,6 @@
 # Fact 83d94178
 
-Store id: 749332c5-d671-4ea6-80bc-6ff3c99a792d
+Store id: b1543a68-263f-4129-b1f1-00c1719fbc74
 
 ## Text
 
@@ -20,7 +20,7 @@ def add(self, *objs, through_defaults=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.4280240+00:00`
+- posted_at: `2026-11-09T23:44:51.9858820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1323,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.add"
   },
-  "id": "749332c5-d671-4ea6-80bc-6ff3c99a792d",
+  "id": "b1543a68-263f-4129-b1f1-00c1719fbc74",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.4280240+00:00"
+    "posted_at": "2026-11-09T23:44:51.9858820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bd21f562-1e86-497d-b70f-81673c076dc9",
+  "subject_id": "91599cba-4110-4c94-8ba0-bdb1df5733b8",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.add",
   "tags": [
     "entity:method"

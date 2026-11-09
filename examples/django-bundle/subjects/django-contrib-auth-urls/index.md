@@ -1,10 +1,10 @@
 # django/contrib/auth/urls
 
-- Subject: django/contrib/auth/urls (id `31e21bf4-b6e8-42c1-916e-508f434a342f`)
+- Subject: django/contrib/auth/urls (id `c8baa459-3394-48a6-9315-5b4c31bb868a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 288 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

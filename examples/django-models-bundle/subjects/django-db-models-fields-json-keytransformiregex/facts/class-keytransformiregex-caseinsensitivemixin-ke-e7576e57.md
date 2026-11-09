@@ -1,6 +1,6 @@
 # Fact e7576e57
 
-Store id: 1d748825-2097-462e-a370-008cc5d28dc8
+Store id: 4e7aee66-8b2b-4053-9c49-3f047308fcd0
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformIRegex( CaseInsensitiveMixin, KeyTransformTextLookupMixin, loo
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0269620+00:00`
+- posted_at: `2026-11-09T23:44:51.0606580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 714,
     "symbol": "KeyTransformIRegex"
   },
-  "id": "1d748825-2097-462e-a370-008cc5d28dc8",
+  "id": "4e7aee66-8b2b-4053-9c49-3f047308fcd0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0269620+00:00"
+    "posted_at": "2026-11-09T23:44:51.0606580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39d12859-8e7a-4af1-b9d7-e7489dd00ada",
+  "subject_id": "74a1fa7e-d2b6-4eae-9387-a783e65e9872",
   "subject_name": "django/db/models/fields/json::KeyTransformIRegex",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact 4383a6bc
 
-Store id: f619fdbf-cf5b-4582-a3f8-1d9916c5c642
+Store id: a8089b3e-5b18-4bcf-90d5-79ac7b131945
 
 ## Text
 
@@ -20,7 +20,7 @@ class AutoFieldMeta(type)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9099350+00:00`
+- posted_at: `2026-11-09T23:44:50.3279810+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2931,
     "symbol": "AutoFieldMeta"
   },
-  "id": "f619fdbf-cf5b-4582-a3f8-1d9916c5c642",
+  "id": "a8089b3e-5b18-4bcf-90d5-79ac7b131945",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9099350+00:00"
+    "posted_at": "2026-11-09T23:44:50.3279810+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9ea8ce3f-2c2c-425d-9c5d-02e52c5be606",
+  "subject_id": "ff67870e-8c9c-4e09-ad01-fe44d0af1b79",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMeta",
   "tags": [
     "entity:class"

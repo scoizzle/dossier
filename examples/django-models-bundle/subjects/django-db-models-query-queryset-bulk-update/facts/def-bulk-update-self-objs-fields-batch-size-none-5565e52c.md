@@ -1,6 +1,6 @@
 # Fact 5565e52c
 
-Store id: 871c606c-3cb5-42d1-a3ee-0946d711fef0
+Store id: 6291f0b2-1a90-447f-b903-0315c09f25f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def bulk_update(self, objs, fields, batch_size=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4118280+00:00`
+- posted_at: `2026-11-09T23:44:55.9199300+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 991,
     "symbol": "QuerySet.bulk_update"
   },
-  "id": "871c606c-3cb5-42d1-a3ee-0946d711fef0",
+  "id": "6291f0b2-1a90-447f-b903-0315c09f25f0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4118280+00:00"
+    "posted_at": "2026-11-09T23:44:55.9199300+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b14d98f6-2b38-4457-bfbf-33a88e8e01ff",
+  "subject_id": "ff20acd1-5c5e-46fd-8c9e-a95093948a8d",
   "subject_name": "django/db/models/query::QuerySet.bulk_update",
   "tags": [
     "entity:method"

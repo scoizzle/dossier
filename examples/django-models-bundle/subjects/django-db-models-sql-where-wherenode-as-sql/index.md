@@ -1,11 +1,11 @@
 # django/db/models/sql/where::WhereNode.as_sql
 
-- Subject: django/db/models/sql/where::WhereNode.as_sql (id `2fc5434c-0feb-4dd8-81d9-b1985fde0354`)
+- Subject: django/db/models/sql/where::WhereNode.as_sql (id `e602b317-910b-4399-b1fa-f36591fb5e9e`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

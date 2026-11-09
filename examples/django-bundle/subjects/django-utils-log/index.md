@@ -1,10 +1,10 @@
 # django/utils/log
 
-- Subject: django/utils/log (id `83ed2272-df11-4baa-9b77-a2c25cc5086e`)
+- Subject: django/utils/log (id `8892ab39-d0e9-4fee-a106-77921d07262e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2430 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

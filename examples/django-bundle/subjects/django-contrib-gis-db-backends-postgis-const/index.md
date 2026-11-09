@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/const
 
-- Subject: django/contrib/gis/db/backends/postgis/const (id `31f7795f-92e8-43cc-9067-1d457cd54b9b`)
+- Subject: django/contrib/gis/db/backends/postgis/const (id `b1ec9fdc-080a-42d4-b497-d9efab5bddbd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 550 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/datastructures
 
-- Subject: django/utils/datastructures (id `d6ed4b26-2e6c-46d5-99cf-996ddd6d7e38`)
+- Subject: django/utils/datastructures (id `ed8c7cba-4858-426e-a189-55335f2255c2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2821 tokens
-- Facts shown: 63 of 63
+- Facts shown: 63 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/deletion::Collector.can_fast_delete
 
-- Subject: django/db/models/deletion::Collector.can_fast_delete (id `701620ed-8088-4b34-b0d7-04748112e73e`)
+- Subject: django/db/models/deletion::Collector.can_fast_delete (id `062ce0ba-5f65-483e-bcad-baf91ad2be35`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

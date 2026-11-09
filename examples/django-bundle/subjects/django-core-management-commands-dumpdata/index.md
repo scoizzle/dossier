@@ -1,10 +1,10 @@
 # django/core/management/commands/dumpdata
 
-- Subject: django/core/management/commands/dumpdata (id `a104a9cb-b974-4bf0-ad1c-abb8239f67a9`)
+- Subject: django/core/management/commands/dumpdata (id `76170a0e-af47-4c82-9df7-6094ac8e650b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2071 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact b361c1ec
 
-Store id: f3c2c5ca-9b06-40ac-a1cd-13fb7ffda6bd
+Store id: 919c9ae7-b5e3-49e2-b5ba-feb758663a3c
 
 ## Text
 
@@ -20,7 +20,7 @@ class IsNull(BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3898710+00:00`
+- posted_at: `2026-11-09T23:44:55.0410410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 665,
     "symbol": "IsNull"
   },
-  "id": "f3c2c5ca-9b06-40ac-a1cd-13fb7ffda6bd",
+  "id": "919c9ae7-b5e3-49e2-b5ba-feb758663a3c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3898710+00:00"
+    "posted_at": "2026-11-09T23:44:55.0410410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "39137232-a9aa-4690-a0c8-ccb15c89b9b8",
+  "subject_id": "92bb073f-68be-4ddc-8548-f04e05999ada",
   "subject_name": "django/db/models/lookups::IsNull",
   "tags": [
     "entity:class",

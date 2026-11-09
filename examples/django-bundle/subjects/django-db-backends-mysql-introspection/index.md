@@ -1,10 +1,10 @@
 # django/db/backends/mysql/introspection
 
-- Subject: django/db/backends/mysql/introspection (id `6642b580-ba29-4fa2-b183-b56509f85c5b`)
+- Subject: django/db/backends/mysql/introspection (id `cd26869d-5677-449c-842d-c3784ffd4f99`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2808 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

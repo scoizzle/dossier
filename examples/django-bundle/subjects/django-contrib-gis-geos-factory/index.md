@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/factory
 
-- Subject: django/contrib/gis/geos/factory (id `33c8d392-abfb-45ab-b6cb-cbe7876be8e5`)
+- Subject: django/contrib/gis/geos/factory (id `ba6c2e6a-5af5-429d-963d-b910c1e16ecd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 251 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

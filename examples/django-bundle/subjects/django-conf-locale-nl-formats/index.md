@@ -1,10 +1,10 @@
 # django/conf/locale/nl/formats
 
-- Subject: django/conf/locale/nl/formats (id `1fdd6236-fc35-4e25-88ed-071b577862e2`)
+- Subject: django/conf/locale/nl/formats (id `a97b4775-a0e1-4d56-8a89-bfed5ef62380`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 918 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 142151e1
 
-Store id: ee1c6bda-9c1b-40e0-9b7e-43028f6c2a91
+Store id: e8f4903f-d089-4384-a6b1-10a663f0da98
 
 ## Text
 
@@ -20,7 +20,7 @@ def SET_NULL(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0660060+00:00`
+- posted_at: `2026-11-09T23:44:48.9020160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 69,
     "symbol": "SET_NULL"
   },
-  "id": "ee1c6bda-9c1b-40e0-9b7e-43028f6c2a91",
+  "id": "e8f4903f-d089-4384-a6b1-10a663f0da98",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0660060+00:00"
+    "posted_at": "2026-11-09T23:44:48.9020160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b9d74dea-5af7-488f-a989-62154420a23a",
+  "subject_id": "df6ab8b7-a190-40a3-8b19-e53b3db58249",
   "subject_name": "django/db/models/deletion::SET_NULL",
   "tags": [
     "entity:function"

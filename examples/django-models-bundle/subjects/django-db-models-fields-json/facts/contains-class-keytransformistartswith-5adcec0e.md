@@ -1,6 +1,6 @@
 # Fact 5adcec0e
 
-Store id: c1782ac8-f554-49e7-9b33-d8f361b216d9
+Store id: 3d13fba1-5138-4758-9b37-3872d6758cd2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformIStartsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c1782ac8-f554-49e7-9b33-d8f361b216d9",
+  "id": "3d13fba1-5138-4758-9b37-3872d6758cd2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformIStartsWith"
       },
       "rel": "contains",
-      "target": "3820c146-4205-467b-a8ce-da6f989028de"
+      "target": "2515985e-474e-4db7-a9c1-30cd3e9b0c9a"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

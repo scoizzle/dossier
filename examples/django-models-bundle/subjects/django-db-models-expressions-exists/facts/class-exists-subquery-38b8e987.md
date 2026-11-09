@@ -1,6 +1,6 @@
 # Fact 38b8e987
 
-Store id: 40dd8553-c8cd-4986-862c-1e1a44dc6829
+Store id: 32ab36c9-e0c5-4347-8e5d-72100c5d6664
 
 ## Text
 
@@ -20,7 +20,7 @@ class Exists(Subquery)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9774360+00:00`
+- posted_at: `2026-11-09T23:44:49.6466110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1887,
     "symbol": "Exists"
   },
-  "id": "40dd8553-c8cd-4986-862c-1e1a44dc6829",
+  "id": "32ab36c9-e0c5-4347-8e5d-72100c5d6664",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9774360+00:00"
+    "posted_at": "2026-11-09T23:44:49.6466110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba8eeec6-641b-42e6-99b3-24ec37ed299d",
+  "subject_id": "240efa0c-a8ff-40f1-a09b-f7be00f207a2",
   "subject_name": "django/db/models/expressions::Exists",
   "tags": [
     "entity:class"

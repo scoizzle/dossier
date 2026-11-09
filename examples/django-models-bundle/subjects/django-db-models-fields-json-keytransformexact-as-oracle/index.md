@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformExact.as_oracle
 
-- Subject: django/db/models/fields/json::KeyTransformExact.as_oracle (id `3f75713d-4a02-4f8d-91cc-fc01dc0c1ee1`)
+- Subject: django/db/models/fields/json::KeyTransformExact.as_oracle (id `5565682c-87a1-4e9c-bca0-e9af881e341e`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

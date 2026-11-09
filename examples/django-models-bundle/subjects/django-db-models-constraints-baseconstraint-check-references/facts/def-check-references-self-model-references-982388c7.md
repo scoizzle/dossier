@@ -1,6 +1,6 @@
 # Fact 982388c7
 
-Store id: 39ccb05f-c7c5-47df-9884-24051b0f56d3
+Store id: fdf2c824-f22b-4857-92ea-b533552c72a5
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_references(self, model, references)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1567710+00:00`
+- posted_at: `2026-11-09T23:44:48.7755570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 77,
     "symbol": "BaseConstraint._check_references"
   },
-  "id": "39ccb05f-c7c5-47df-9884-24051b0f56d3",
+  "id": "fdf2c824-f22b-4857-92ea-b533552c72a5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1567710+00:00"
+    "posted_at": "2026-11-09T23:44:48.7755570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f5fddef3-6f2e-4c87-af49-fe3e01b2693d",
+  "subject_id": "9e476c8b-fbe5-46cd-a13e-0f0878dc5ffd",
   "subject_name": "django/db/models/constraints::BaseConstraint._check_references",
   "tags": [
     "entity:method"

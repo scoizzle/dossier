@@ -1,6 +1,6 @@
 # Fact 8f4a13b0
 
-Store id: 83daa15d-af18-4dbb-b10f-19daf0a4ed1f
+Store id: 6e3b657d-2e93-4177-b25d-6d0384383231
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_pk_value_on_save(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1409760+00:00`
+- posted_at: `2026-11-09T23:44:50.4943380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 118,
     "symbol": "CompositePrimaryKey.get_pk_value_on_save"
   },
-  "id": "83daa15d-af18-4dbb-b10f-19daf0a4ed1f",
+  "id": "6e3b657d-2e93-4177-b25d-6d0384383231",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1409760+00:00"
+    "posted_at": "2026-11-09T23:44:50.4943380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "40b05822-c3d2-47d9-86b8-bbf7cf58e6ed",
+  "subject_id": "a2f8c435-89f0-4149-9956-cc3248d39975",
   "subject_name": "django/db/models/fields/composite::CompositePrimaryKey.get_pk_value_on_save",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/validators
 
-- Subject: docs/ref/contrib/postgres/validators (id `865c1b74-e655-4190-ba3e-be00807eb7ae`)
+- Subject: docs/ref/contrib/postgres/validators (id `524ad8a4-afee-49ef-849a-11c62e8f8385`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 421 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

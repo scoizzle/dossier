@@ -1,11 +1,11 @@
 # django/db/models/functions/window::DenseRank
 
-- Subject: django/db/models/functions/window::DenseRank (id `c996847d-f8c2-4a7f-8104-5360b8ca13c7`)
+- Subject: django/db/models/functions/window::DenseRank (id `5c94211b-c85f-406d-b048-aeef3463360c`)
 - Kind: class
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

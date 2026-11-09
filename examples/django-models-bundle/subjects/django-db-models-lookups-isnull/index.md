@@ -1,11 +1,11 @@
 # django/db/models/lookups::IsNull
 
-- Subject: django/db/models/lookups::IsNull (id `39137232-a9aa-4690-a0c8-ccb15c89b9b8`)
+- Subject: django/db/models/lookups::IsNull (id `92bb073f-68be-4ddc-8548-f04e05999ada`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

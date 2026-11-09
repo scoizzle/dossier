@@ -1,6 +1,6 @@
 # Fact dcec86e1
 
-Store id: cc16072b-f9bb-4972-bdcf-7af813f25161
+Store id: c669d4f6-ed6b-414d-a382-f803b6556b06
 
 ## Text
 
@@ -20,7 +20,7 @@ async def arefresh_from_db(self, using=None, fields=None, from_queryset=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7389740+00:00`
+- posted_at: `2026-11-09T23:44:48.5320570+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 819,
     "symbol": "Model.arefresh_from_db"
   },
-  "id": "cc16072b-f9bb-4972-bdcf-7af813f25161",
+  "id": "c669d4f6-ed6b-414d-a382-f803b6556b06",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7389740+00:00"
+    "posted_at": "2026-11-09T23:44:48.5320570+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1d34eab0-14a6-44a8-b2de-c8d475f92944",
+  "subject_id": "793fd7e7-44fe-4351-8857-68eb434103b3",
   "subject_name": "django/db/models/base::Model.arefresh_from_db",
   "tags": [
     "entity:method",

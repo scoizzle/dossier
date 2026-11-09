@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::ExtractIsoYear
 
-- Subject: django/db/models/functions/datetime::ExtractIsoYear (id `40b71435-29d2-4c0e-94d1-b5ba46388e31`)
+- Subject: django/db/models/functions/datetime::ExtractIsoYear (id `2cc6a927-42ea-49d3-8797-737b2e0dade3`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

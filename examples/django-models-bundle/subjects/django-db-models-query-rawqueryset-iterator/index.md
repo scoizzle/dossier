@@ -1,11 +1,11 @@
 # django/db/models/query::RawQuerySet.iterator
 
-- Subject: django/db/models/query::RawQuerySet.iterator (id `331ac834-daf5-4f34-bbde-20f5fc84796b`)
+- Subject: django/db/models/query::RawQuerySet.iterator (id `a18c7ac1-970f-4025-b982-44d9b7bdc36b`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

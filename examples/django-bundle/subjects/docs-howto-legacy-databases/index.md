@@ -1,10 +1,10 @@
 # docs/howto/legacy-databases
 
-- Subject: docs/howto/legacy-databases (id `a96e3e43-b94c-4df2-94ff-39fcf4f839f9`)
+- Subject: docs/howto/legacy-databases (id `a91448fb-c28d-40fe-8937-4242bdef5a55`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 987 tokens
-- Facts shown: 26 of 26
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/intro/tutorial04
 
-- Subject: docs/intro/tutorial04 (id `32e130cd-45bc-479c-a5ed-6e84431306cc`)
+- Subject: docs/intro/tutorial04 (id `b58561ca-4ef4-4e31-bc94-a76ad278df4f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4091 tokens
-- Facts shown: 75 of 79
+- Used: 4182 tokens
+- Facts shown: 79 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,6 +31,7 @@
 
 - [c00926fe3424edad-5] from . import views
 - [5fac61bb1ff3fe06] from .models import Choice, Question
+- [5fac61bb1ff3fe06-2] from .models import Choice, Question
 - [a7f0126f] from django.db.models import F from django.http import HttpResponse, HttpResponseRedirect from django.shortcuts import get_object_or_404, render from django.urls import reverse
 - [bb1d04f0] from django.db.models import F from django.http import HttpResponseRedirect from django.shortcuts import get_object_or_404, render from django.urls import reverse from django.views import generic
 - [02eea688fdf57895-2] from django.shortcuts import get_object_or_404, render
@@ -56,7 +57,10 @@
 - [5a286ce802025afd-3] .. code-block:: html+django :caption: ``polls/templates/polls/detail.html``
 - [fab8424b] .. code-block:: html+django :caption: ``polls/templates/polls/results.html``
 - [5c9a4d2d821e33d5-4] .. code-block:: python :caption: ``polls/urls.py``
+- [5c9a4d2d821e33d5-5] .. code-block:: python :caption: ``polls/urls.py``
 - [d59bf1960628576c-8] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-9] .. code-block:: python :caption: ``polls/views.py``
+- [d59bf1960628576c-10] .. code-block:: python :caption: ``polls/views.py``
 - [c111bf0d] ===================================== Writing your first Django app, part 4 =====================================
 - [7972f593] A quick rundown:
 - [4f558dfa] After somebody votes in a question, the ``vote()`` view redirects to the results page for the question. Let's write that view:

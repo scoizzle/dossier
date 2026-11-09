@@ -1,11 +1,11 @@
 # django/db/models/query::prefetch_related_objects
 
-- Subject: django/db/models/query::prefetch_related_objects (id `2815ba7d-055e-43a8-bca8-6a22dd5caa9a`)
+- Subject: django/db/models/query::prefetch_related_objects (id `00fde7da-73d7-4a5b-9959-21f0ee5b7c7d`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

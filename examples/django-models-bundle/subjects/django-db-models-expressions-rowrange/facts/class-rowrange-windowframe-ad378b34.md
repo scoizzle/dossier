@@ -1,6 +1,6 @@
 # Fact ad378b34
 
-Store id: 41713a10-393b-4c77-a8c3-da0b7e6ccf5a
+Store id: 80daace5-b16c-4fb0-95e2-346fb97ca6c1
 
 ## Text
 
@@ -20,7 +20,7 @@ class RowRange(WindowFrame)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0378810+00:00`
+- posted_at: `2026-11-09T23:44:49.6928720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2224,
     "symbol": "RowRange"
   },
-  "id": "41713a10-393b-4c77-a8c3-da0b7e6ccf5a",
+  "id": "80daace5-b16c-4fb0-95e2-346fb97ca6c1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0378810+00:00"
+    "posted_at": "2026-11-09T23:44:49.6928720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "75bdafa9-f8a5-42aa-9e35-26dd885ab8e5",
+  "subject_id": "2eac95b4-17b9-4f91-a0c1-1f33ce9c42ad",
   "subject_name": "django/db/models/expressions::RowRange",
   "tags": [
     "entity:class"

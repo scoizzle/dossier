@@ -1,10 +1,10 @@
 # django/utils/deprecation
 
-- Subject: django/utils/deprecation (id `4c2066af-1574-4a57-9eb5-49d0c0cd12d5`)
+- Subject: django/utils/deprecation (id `e6314e7a-c76c-4a24-b841-c869c6219c79`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4412 tokens
-- Facts shown: 80 of 82
+- Used: 4488 tokens
+- Facts shown: 82 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,21 +16,23 @@
 - # Identify which of the _potentially remappable_ params are # actually _being remapped_ in this particular call. remapped_names = remappable_names[ : num_positional_args - num_positional_params ] conflicts = set(remapped_names) & set(kwargs) if conflicts: # Report duplicate names in the original parameter order. conflicts_str = ", ".join( f"'{name}'" for name in remapped_names if name in conflicts ) raise TypeError( f"{func_name}() got both deprecated positional and keyword " f"argument values for {conflicts_str}." ) [4d0070a6]
 - # Issue the deprecation warning. remapped_names_str = ", ".join(f"'{name}'" for name in remapped_names) warnings.warn( f"Passing positional argument(s) {remapped_names_str} to {func_name}() " "is deprecated. Use keyword arguments instead.", deprecation_warning, skip_file_prefixes=django_file_prefixes(), ) [5d478d52]
 - @functools.wraps(func) async def wrapper(*args, **kwargs): if len(args) > num_positional_params: args, kwargs = remap_deprecated_args(args, kwargs) return await func(*args, **kwargs) [54d3505b]
+- @functools.wraps(func) def wrapper(*args, **kwargs): if len(args) > num_positional_params: args, kwargs = remap_deprecated_args(args, kwargs) return func(*args, **kwargs) [7ded205e]
 - return remaining_args, updated_kwargs [dfce7419]
 - @deprecate_posargs(RemovedInDjangoXXXXWarning, ["option1", "option2"]) def some_func(request, *, new_param=None, option2=True, option1): ... [79e1a977]
 - @deprecate_posargs(RemovedInDjangoXXXXWarning, ["option1", "option2"]) def some_func(request, *, option1, option2=True): ... [ea824181]
 - @deprecate_posargs(RemovedInDjangoXXXXWarning, ["option1", "option2"]) def some_func(request, wrong_new_param=None, *, option1, option2=True): # Broken: existing code may pass a value intended as option1 in the # wrong_new_param position. ... [327bd2a4]
 - def remap_deprecated_args(args, kwargs): """ Move deprecated positional args to kwargs and issue a warning. Return updated (args, kwargs). """ if (num_positional_args := len(args)) > max_positional_args: raise TypeError( f"{func_name}() takes at most {max_positional_args} positional " f"argument(s) (including {num_remappable_args} deprecated) but " f"{num_positional_args} were given." ) [a60ee34f]
 - def some_func(request, *, option1, option2=True): ... [38a0db5f]
+- def some_func(request, option1, option2=True): ... [9ddf405c]
 - else: [6ad07797f4838346-16]
-- for _ in range(skip_frames): frame, level = back(frame, level) [7e8afdaf]
 - if iscoroutinefunction(func): [9b3c6cee9ff9a8ff]
-- if num_by_kind[inspect.Parameter.VAR_POSITIONAL] > 0: raise TypeError( "@deprecate_posargs() cannot be used with variable positional `*args`." ) [7620b418]
 
 ## All facts
 
+- [7e8afdaf] for _ in range(skip_frames): frame, level = back(frame, level)
 - [cde67a7a] for base in inspect.getmro(new_class): class_name = base.__name__ for renamed_method in cls.renamed_methods: old_method_name = renamed_method[0] old_method = base.__dict__.get(old_method_name) new_method_name = renamed_method[1] new_method = base.__dict__.get(new_method_name) deprecation_warning = renamed_method[2] wrapper = warn_about_renamed_method(class_name, *renamed_method)
 - [501dcf8d] func_name = func.__name__ if func_name == "__init__": # In the warning, show "ClassName()" instead of "__init__()". # The class isn't defined yet, but its name is in __qualname__. # Some examples of __qualname__: # - ClassName.__init__ # - Nested.ClassName.__init__ # - MyTests.test_case.<locals>.ClassName.__init__ local_name = func.__qualname__.rsplit("<locals>.", 1)[-1] class_name = local_name.replace(".__init__", "") func_name = class_name
+- [7620b418] if num_by_kind[inspect.Parameter.VAR_POSITIONAL] > 0: raise TypeError( "@deprecate_posargs() cannot be used with variable positional `*args`." )
 - [5a1f36ae] if skip_name_prefixes is not None: while frame and get_fq_name(frame).startswith(skip_name_prefixes): frame, level = back(frame, level)
 - [441b2934] is_internal = frame and get_fq_name(frame).startswith(internal_prefixes) finally: del frame
 - [689e8a55] num_positional_params = ( num_by_kind[inspect.Parameter.POSITIONAL_ONLY] + num_by_kind[inspect.Parameter.POSITIONAL_OR_KEYWORD] ) num_keyword_only_params = num_by_kind[inspect.Parameter.KEYWORD_ONLY] if num_keyword_only_params < 1: raise TypeError( "@deprecate_posargs() requires at least one keyword-only parameter " "(after a `*` entry in the parameters list)." ) if any( name not in params or params[name].kind != inspect.Parameter.KEYWORD_ONLY for name in remappable_names ): raise TypeError( "@deprecate_posargs() requires all remappable_names to be " "keyword-only parameters." )

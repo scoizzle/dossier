@@ -1,6 +1,6 @@
 # Fact 3a3d8fc1
 
-Store id: b5f1538e-e948-4819-9c8a-c2465d2f75cc
+Store id: b27f2b89-d673-424d-9831-a52dec416827
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_immediate_loading(self, field_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1089340+00:00`
+- posted_at: `2026-11-09T23:44:59.0214700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2525,
     "symbol": "Query.add_immediate_loading"
   },
-  "id": "b5f1538e-e948-4819-9c8a-c2465d2f75cc",
+  "id": "b27f2b89-d673-424d-9831-a52dec416827",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1089340+00:00"
+    "posted_at": "2026-11-09T23:44:59.0214700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "850b405e-20c0-495a-910a-d26f01310d17",
+  "subject_id": "e388d65c-2e55-49b2-bcd2-78f60f17c2f5",
   "subject_name": "django/db/models/sql/query::Query.add_immediate_loading",
   "tags": [
     "entity:method"

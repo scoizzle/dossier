@@ -1,6 +1,6 @@
 # Fact 41272639
 
-Store id: e5f1be3c-60ef-4e1b-9c88-67885336c296
+Store id: 49578eae-52c4-48ae-a132-6ab8e71d19a4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_swappable(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7619790+00:00`
+- posted_at: `2026-11-09T23:44:48.5473110+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1895,
     "symbol": "Model._check_swappable"
   },
-  "id": "e5f1be3c-60ef-4e1b-9c88-67885336c296",
+  "id": "49578eae-52c4-48ae-a132-6ab8e71d19a4",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7619790+00:00"
+    "posted_at": "2026-11-09T23:44:48.5473110+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9f121157-2a8a-4574-95c4-05f125acf93d",
+  "subject_id": "d7d7afda-ffa6-4d90-b9fb-9fed722885f5",
   "subject_name": "django/db/models/base::Model._check_swappable",
   "tags": [
     "entity:class_method",

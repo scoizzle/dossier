@@ -1,6 +1,6 @@
 # Fact 29da2456
 
-Store id: a7964f28-c565-4c5e-bfcf-3e57e7e406a3
+Store id: e0df028d-58b9-4c30-ac98-a17cf107edd0
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformFactory
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0416640+00:00`
+- posted_at: `2026-11-09T23:44:51.0723490+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 762,
     "symbol": "KeyTransformFactory"
   },
-  "id": "a7964f28-c565-4c5e-bfcf-3e57e7e406a3",
+  "id": "e0df028d-58b9-4c30-ac98-a17cf107edd0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0416640+00:00"
+    "posted_at": "2026-11-09T23:44:51.0723490+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "71e59806-2d91-4766-82e9-c3a8690437f7",
+  "subject_id": "f0ad09a0-6739-4e7b-8a40-74e1f3473caa",
   "subject_name": "django/db/models/fields/json::KeyTransformFactory",
   "tags": [
     "entity:class"

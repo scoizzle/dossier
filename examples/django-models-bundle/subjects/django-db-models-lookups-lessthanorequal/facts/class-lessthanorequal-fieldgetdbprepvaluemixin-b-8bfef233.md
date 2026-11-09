@@ -1,6 +1,6 @@
 # Fact 8bfef233
 
-Store id: c92f356e-6521-46e3-9aec-9eda425df715
+Store id: 9f6ba542-1682-48d0-9c58-4502652477ea
 
 ## Text
 
@@ -20,7 +20,7 @@ class LessThanOrEqual(FieldGetDbPrepValueMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2820250+00:00`
+- posted_at: `2026-11-09T23:44:54.9721330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 440,
     "symbol": "LessThanOrEqual"
   },
-  "id": "c92f356e-6521-46e3-9aec-9eda425df715",
+  "id": "9f6ba542-1682-48d0-9c58-4502652477ea",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2820250+00:00"
+    "posted_at": "2026-11-09T23:44:54.9721330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4c510d7c-026d-48c1-b6c9-4ad576b1add5",
+  "subject_id": "d30b8c1e-5f60-4b30-8f98-e7102eb2f3c9",
   "subject_name": "django/db/models/lookups::LessThanOrEqual",
   "tags": [
     "entity:class",

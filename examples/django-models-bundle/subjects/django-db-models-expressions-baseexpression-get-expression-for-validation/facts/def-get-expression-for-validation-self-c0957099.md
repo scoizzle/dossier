@@ -1,6 +1,6 @@
 # Fact c0957099
 
-Store id: be8877eb-8c2c-410a-bcf3-7496f75ddd08
+Store id: 1636982d-9cc7-4df7-bd03-2f665062e5ad
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_expression_for_validation(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7963310+00:00`
+- posted_at: `2026-11-09T23:44:49.4145330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 503,
     "symbol": "BaseExpression.get_expression_for_validation"
   },
-  "id": "be8877eb-8c2c-410a-bcf3-7496f75ddd08",
+  "id": "1636982d-9cc7-4df7-bd03-2f665062e5ad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7963310+00:00"
+    "posted_at": "2026-11-09T23:44:49.4145330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2add5068-63c6-4ba6-949b-54149bf944d2",
+  "subject_id": "0fc2958e-8f89-4bd0-b0bf-abe70ac67486",
   "subject_name": "django/db/models/expressions::BaseExpression.get_expression_for_validation",
   "tags": [
     "entity:method"

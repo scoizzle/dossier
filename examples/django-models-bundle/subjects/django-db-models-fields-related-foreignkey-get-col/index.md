@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.get_col
 
-- Subject: django/db/models/fields/related::ForeignKey.get_col (id `124f3a44-27cf-400b-a5ab-bb22b5162b12`)
+- Subject: django/db/models/fields/related::ForeignKey.get_col (id `1091e506-3d0c-4def-865c-864228cb4a02`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

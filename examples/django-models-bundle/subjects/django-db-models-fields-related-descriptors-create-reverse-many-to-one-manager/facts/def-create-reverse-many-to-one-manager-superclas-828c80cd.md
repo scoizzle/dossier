@@ -1,6 +1,6 @@
 # Fact 828c80cd
 
-Store id: b2df627a-dc77-4fb5-8dd0-fcc5d1a3dc64
+Store id: ca36de05-9947-47ed-b7d5-d77026576e16
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_reverse_many_to_one_manager(superclass, rel)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2295680+00:00`
+- posted_at: `2026-11-09T23:44:51.8997770+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 714,
     "symbol": "create_reverse_many_to_one_manager"
   },
-  "id": "b2df627a-dc77-4fb5-8dd0-fcc5d1a3dc64",
+  "id": "ca36de05-9947-47ed-b7d5-d77026576e16",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2295680+00:00"
+    "posted_at": "2026-11-09T23:44:51.8997770+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c0b30863-fa0e-4f20-90d7-c8ed57a7d290",
+  "subject_id": "8444a628-88fe-44aa-b9d4-d83e901a7dc5",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager",
   "tags": [
     "entity:function"

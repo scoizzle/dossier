@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/feeds
 
-- Subject: docs/ref/contrib/gis/feeds (id `a4040a1a-e7a9-48db-b003-8e9593113a1d`)
+- Subject: docs/ref/contrib/gis/feeds (id `e72f5afe-7f07-480b-980c-25ee2a29f772`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 852 tokens
-- Facts shown: 28 of 29
+- Used: 871 tokens
+- Facts shown: 29 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - # Also a function with no arguments def geometry(self): ... [40331300]
 - # And as a function with a single argument def geometry(self, obj): ... [b4494645]
 - def item_geometry(self): ... [e9885865]
+- def item_geometry(self, item): ... [f79ec300]
 - class MyFeed(Feed): # First, as a class attribute. geometry = ... item_geometry = ... [60a5b557]
 - class ZipcodeFeed(Feed): def geometry(self, obj): # Can also return: `obj.poly`, and `obj.poly.centroid`. return obj.poly.extent # tuple like: (X0, Y0, X1, Y1). [e9b95b5a]
 - class ZipcodeFeed(Feed): def item_geometry(self, obj): # Returns the polygon. return obj.poly [a540c0a6]

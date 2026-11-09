@@ -1,6 +1,6 @@
 # Fact 59fccae0
 
-Store id: 674a79d2-bebc-4cfd-9534-32a1917aa899
+Store id: 8aead6fb-04f0-4f11-b03b-3e63487474ba
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUID7(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.4942510+00:00`
+- posted_at: `2026-11-09T23:44:54.3188970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 47,
     "symbol": "UUID7"
   },
-  "id": "674a79d2-bebc-4cfd-9534-32a1917aa899",
+  "id": "8aead6fb-04f0-4f11-b03b-3e63487474ba",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.4942510+00:00"
+    "posted_at": "2026-11-09T23:44:54.3188970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6669c532-3e05-4796-a264-2cf647949a19",
+  "subject_id": "b8f22c93-72fb-4387-b82c-cf8e843bddd0",
   "subject_name": "django/db/models/functions/uuid::UUID7",
   "tags": [
     "entity:class"

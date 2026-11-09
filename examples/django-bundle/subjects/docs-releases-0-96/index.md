@@ -1,10 +1,10 @@
 # docs/releases/0.96
 
-- Subject: docs/releases/0.96 (id `4fba5d02-d79d-452e-9829-b2049178aa73`)
+- Subject: docs/releases/0.96 (id `cc4dffa2-9ef1-47fe-bc1e-faff3f44b0cb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3042 tokens
-- Facts shown: 68 of 69
+- Used: 3075 tokens
+- Facts shown: 69 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,7 @@
 
 - from django import forms # 0.95-style from django import oldforms as forms # 0.96-style [88c57b35]
 - # Find text containing a single backslash MyModel.objects.filter(text__contains="\\") [42711046]
+- # Find text containing a single backslash MyModel.objects.filter(text__contains="\\\\") [2a7ca3f3]
 - DATABASE_ENGINE = "mysql" [d6d388fe]
 - DATABASE_ENGINE = "mysql_old" [a7c8547f]
 - from django.conf.urls.defaults import * [897fa20c28c79ab4]
@@ -30,11 +31,12 @@
 - * The next release after that will completely remove ``django.oldforms``. [e44dd102]
 - * The vestigial ``install`` command has been removed. Use ``syncdb``. [7ca023e6]
 - * There are new ``dumpdata`` and ``loaddata`` commands which, as you might expect, will dump and load data to/from the database. These commands can operate against any of Django's supported serialization formats. [2381cafc]
-- * We've copied the current ``django.forms`` to ``django.oldforms``. This allows you to upgrade your code *now* rather than waiting for the backwards-incompatible change and rushing to fix your code after the fact. Just change your import statements like this:: [0a3b1c19]
+- .. _psyco: https://psyco.sourceforge.net/ [fad3170d]
+- Backslash escaping changed -------------------------- [5a70bf89]
 
 ## All facts
 
-- [fad3170d] .. _psyco: https://psyco.sourceforge.net/
+- [0a3b1c19] * We've copied the current ``django.forms`` to ``django.oldforms``. This allows you to upgrade your code *now* rather than waiting for the backwards-incompatible change and rushing to fix your code after the fact. Just change your import statements like this::
 - [af616bf6] 1. Redirect the output of ``manage.py`` to a file, and edit the generated SQL to use the correct constraint names before executing it.
 - [29d7a687] 2. Examine the output of ``manage.py sqlall`` to see the new-style constraint names, and use that as a guide to rename existing constraints in your database.
 - [bd3c8016] ================================= Django version 0.96 release notes =================================
@@ -42,7 +44,6 @@
 - [4a36e225] A small change, but a very nice one: dedicated views for adding and updating users have been added to the admin interface, so you no longer need to worry about working with hashed passwords in the admin.
 - [342c5fb9] Also, note that some features, like the new ``DATABASE_OPTIONS`` setting (see the :doc:`databases documentation </ref/databases>` for details), are only available on the "mysql" backend, and will not be made available for "mysql_old".
 - [461ebd69] Although the ``newforms`` library will continue to evolve, it's ready for use for most common cases. We recommend that anyone new to form handling skip the old forms system and start with the new.
-- [5a70bf89] Backslash escaping changed --------------------------
 - [463b3b5f48db2249] Backwards-incompatible changes ==============================
 - [e380ae76] Database constraint names changed ---------------------------------
 - [5cba5f23] Django now includes a test framework so you can start transmuting fear into boredom (with apologies to Kent Beck). You can write tests based on :mod:`doctest` or :mod:`unittest` and test your views with a simple test client.

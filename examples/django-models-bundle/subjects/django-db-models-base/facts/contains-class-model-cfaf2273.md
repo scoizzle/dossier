@@ -1,6 +1,6 @@
 # Fact cfaf2273
 
-Store id: 1babc65f-5451-4e14-8d32-faeec55084ec
+Store id: 78f57c55-cbbd-4a78-bb14-db69d20dce33
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Model
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1babc65f-5451-4e14-8d32-faeec55084ec",
+  "id": "78f57c55-cbbd-4a78-bb14-db69d20dce33",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Model"
       },
       "rel": "contains",
-      "target": "0cc632ae-9a4f-44b4-8d9e-e793efefc1ed"
+      "target": "bad1f3c7-f53d-4bb7-ab1a-a9910e2e39ea"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:class"

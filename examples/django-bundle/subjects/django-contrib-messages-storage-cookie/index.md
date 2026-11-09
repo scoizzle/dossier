@@ -1,10 +1,10 @@
 # django/contrib/messages/storage/cookie
 
-- Subject: django/contrib/messages/storage/cookie (id `7538b844-d249-44d1-ad89-512c77569a9c`)
+- Subject: django/contrib/messages/storage/cookie (id `1c5b9bd5-560c-4b37-881f-670c7521cab7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1878 tokens
-- Facts shown: 28 of 30
+- Used: 2014 tokens
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,6 +26,7 @@
 
 ## All facts
 
+- [8ed7f70c] def _encode_parts(self, messages, encode_empty=False): """ Return an encoded version of the serialized messages list which can be stored as plain text.
 - [2a1fdff6] def _get(self, *args, **kwargs): """ Retrieve a list of messages from the messages cookie. If the not_finished sentinel value is found at the end of the message list, remove it and return a result indicating that not all messages were retrieved by this storage. """ data = self.request.COOKIES.get(self.cookie_name) messages = self._decode(data) all_retrieved = not (messages and messages[-1] == self.not_finished) if messages and not all_retrieved: # remove the sentinel value messages.pop() return messages, all_retrieved
 - [b70d3555] def _store(self, messages, response, remove_oldest=True, *args, **kwargs): """ Store the messages to a cookie and return a list of any messages which could not be stored.
 - [f828b030] def _update_cookie(self, encoded_data, response): """ Either set the cookie with the encoded data if there is any data to store, or delete the cookie. """ if encoded_data: response.set_cookie( self.cookie_name, encoded_data, domain=settings.SESSION_COOKIE_DOMAIN, secure=settings.SESSION_COOKIE_SECURE or None, httponly=settings.SESSION_COOKIE_HTTPONLY or None, samesite=settings.SESSION_COOKIE_SAMESITE, ) else: response.delete_cookie( self.cookie_name, domain=settings.SESSION_COOKIE_DOMAIN, samesite=settings.SESSION_COOKIE_SAMESITE, )
@@ -39,5 +40,6 @@
 - [b4b7c6fd] class MessagePartSerializer: def dumps(self, obj): return [ json.dumps( o, separators=(",", ":"), cls=MessageEncoder, ) for o in obj ]
 - [909e33ec] class MessageSerializer: def loads(self, data): return json.loads(data.decode("latin-1"), cls=MessageDecoder)
 - [f84384f5] def bisect_keep_left(a, fn): """ Find the index of the first element from the start of the array that verifies the given condition. The function is applied from the start of the array to the pivot. """ lo = 0 hi = len(a) while lo < hi: mid = (lo + hi) // 2 if fn(a[: mid + 1]): hi = mid else: lo = mid + 1 return lo
+- [c3172be4] def bisect_keep_right(a, fn): """ Find the index of the first element from the end of the array that verifies the given condition. The function is applied from the pivot to the end of array. """ lo = 0 hi = len(a) while lo < hi: mid = (lo + hi) // 2 if fn(a[mid:]): lo = mid + 1 else: hi = mid return lo
 - [9ad6f8d0] from django.conf import settings from django.contrib.messages.storage.base import BaseStorage, Message from django.core import signing from django.http import SimpleCookie from django.utils.safestring import SafeData, mark_safe
 - [fe33723b] import binascii import json

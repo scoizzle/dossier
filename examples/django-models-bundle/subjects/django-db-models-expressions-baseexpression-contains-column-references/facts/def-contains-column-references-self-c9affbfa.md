@@ -1,6 +1,6 @@
 # Fact c9affbfa
 
-Store id: 9c519c60-6b6f-4b41-b4f9-7d1347dcce54
+Store id: bb716e1b-274e-458f-837e-870f762f2262
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_column_references(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7683810+00:00`
+- posted_at: `2026-11-09T23:44:49.3186460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 265,
     "symbol": "BaseExpression.contains_column_references"
   },
-  "id": "9c519c60-6b6f-4b41-b4f9-7d1347dcce54",
+  "id": "bb716e1b-274e-458f-837e-870f762f2262",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7683810+00:00"
+    "posted_at": "2026-11-09T23:44:49.3186460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8099f17e-25c7-4733-8824-d37717aac654",
+  "subject_id": "d9edb332-c879-4fc3-a023-c94264b35f82",
   "subject_name": "django/db/models/expressions::BaseExpression.contains_column_references",
   "tags": [
     "entity:method",

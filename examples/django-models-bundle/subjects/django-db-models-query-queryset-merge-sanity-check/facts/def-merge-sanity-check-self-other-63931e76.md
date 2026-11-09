@@ -1,6 +1,6 @@
 # Fact 63931e76
 
-Store id: 510517d2-1ce1-48d1-aed4-62710c5e2679
+Store id: a376ecff-dbe6-4cd9-94eb-a0e531faa12f
 
 ## Text
 
@@ -20,7 +20,7 @@ def _merge_sanity_check(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6526700+00:00`
+- posted_at: `2026-11-09T23:44:56.1643070+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2305,
     "symbol": "QuerySet._merge_sanity_check"
   },
-  "id": "510517d2-1ce1-48d1-aed4-62710c5e2679",
+  "id": "a376ecff-dbe6-4cd9-94eb-a0e531faa12f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6526700+00:00"
+    "posted_at": "2026-11-09T23:44:56.1643070+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e3e66b3a-1cbe-4dc8-af44-0ced9a405e61",
+  "subject_id": "cbf045e9-c2a5-4656-b5a2-9eeb97e9e9f9",
   "subject_name": "django/db/models/query::QuerySet._merge_sanity_check",
   "tags": [
     "entity:method"

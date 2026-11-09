@@ -1,6 +1,6 @@
 # Fact be379d1f
 
-Store id: 30fa9abd-149b-4688-b3a7-a15f0a3934c2
+Store id: 326f6e03-3b7d-45f8-be09-262bcfb26e52
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4619050+00:00`
+- posted_at: `2026-11-09T23:44:58.2187380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 152,
     "symbol": "Join.identity"
   },
-  "id": "30fa9abd-149b-4688-b3a7-a15f0a3934c2",
+  "id": "326f6e03-3b7d-45f8-be09-262bcfb26e52",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4619050+00:00"
+    "posted_at": "2026-11-09T23:44:58.2187380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7490e80-8d40-4c21-b711-e60da5ed7914",
+  "subject_id": "6f62bbf1-92e7-4d7a-8f98-abbb57a84496",
   "subject_name": "django/db/models/sql/datastructures::Join.identity",
   "tags": [
     "entity:method",

@@ -1,10 +1,10 @@
 # docs/howto/static-files/deployment
 
-- Subject: docs/howto/static-files/deployment (id `7bf9dacc-0fc3-48ff-a625-35b7e40319a1`)
+- Subject: docs/howto/static-files/deployment (id `b22782b2-d4ea-4ade-93d7-31191fcef565`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1689 tokens
-- Facts shown: 33 of 33
+- Facts shown: 33 facts
 - Conflicts: 0
 - Gaps: 0
 

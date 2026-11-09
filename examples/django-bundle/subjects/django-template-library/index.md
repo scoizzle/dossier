@@ -1,10 +1,10 @@
 # django/template/library
 
-- Subject: django/template/library (id `9601d655-dab1-4f48-b8a4-06ebb5d565c3`)
+- Subject: django/template/library (id `c5e63ea8-ddf0-48c6-b811-f1bf24a80b80`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3191 tokens
-- Facts shown: 47 of 55
+- Used: 3566 tokens
+- Facts shown: 55 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -21,18 +21,25 @@
 - @wraps(func) def compile_func(parser, token): bits = token.split_contents()[1:] target_var = None if len(bits) >= 2 and bits[-2] == "as": target_var = bits[-1] bits = bits[:-2] args, kwargs = parse_bits( parser, bits, params, varargs, varkw, defaults, kwonly, kwonly_defaults, function_name, ) return SimpleNode(func, takes_context, args, kwargs, target_var) [a6990e9f]
 - if end_name is None: end_name = f"end{function_name}" [eb1b845a]
 - if takes_context: if len(params) >= 2 and params[1] == "content": del params[1] else: raise TemplateSyntaxError( f"{function_name!r} is decorated with takes_context=True so" " it must have a first argument of 'context' and a second " "argument of 'content'" ) [190cbfa6]
-- return dec elif name is not None and filter_func is None: if callable(name): # @register.filter return self.filter_function(name, **flags) else: # @register.filter('somename') or # @register.filter(name='somename') def dec(func): return self.filter(name, func, **flags) [bfdf6cbe]
-- self.tag(function_name, compile_func) return func [8487bbc1b6694eca]
-- @register.simple_block_tag def hello(content): return 'world' """ [d3d1cf22]
+- if takes_context: if params and params[0] == "context": del params[0] else: raise TemplateSyntaxError( f"{function_name!r} is decorated with takes_context=True so it " "must have a first argument of 'context'" ) [b43b6e8c]
+- if takes_context: if params and params[0] == "context": params = params[1:] else: raise TemplateSyntaxError( f"{function_name!r} is decorated with takes_context=True so it " "must have a first argument of 'context'" ) [7a0ce2f9]
 
 ## All facts
 
+- [bfdf6cbe] return dec elif name is not None and filter_func is None: if callable(name): # @register.filter return self.filter_function(name, **flags) else: # @register.filter('somename') or # @register.filter(name='somename') def dec(func): return self.filter(name, func, **flags)
+- [8487bbc1b6694eca] self.tag(function_name, compile_func) return func
+- [8487bbc1b6694eca-2] self.tag(function_name, compile_func) return func
+- [8487bbc1b6694eca-3] self.tag(function_name, compile_func) return func
 - [7270c4b6] # Restore the "content" argument. # It will move depending on whether takes_context was passed. resolved_args.insert( 1 if self.takes_context else 0, self.nodelist.render(context) )
 - [476d65b2] @register.filter def lower(value): return value.lower() """ if name is None and filter_func is None: # @register.filter() def dec(func): return self.filter_function(func, **flags)
 - [f0e0c4c2] @register.inclusion_tag('results.html') def show_results(poll): choices = poll.choice_set.all() return {'choices': choices} """
+- [d3d1cf22] @register.simple_block_tag def hello(content): return 'world' """
 - [5c0f561c] @register.simple_tag def hello(*args, **kwargs): return 'world' """
 - [121c65e7b30c954c] def dec(func): ( params, varargs, varkw, defaults, kwonly, kwonly_defaults, _, ) = getfullargspec(unwrap(func)) function_name = name or func.__name__
+- [121c65e7b30c954c-2] def dec(func): ( params, varargs, varkw, defaults, kwonly, kwonly_defaults, _, ) = getfullargspec(unwrap(func)) function_name = name or func.__name__
+- [91429e97] def dec(func): nonlocal end_name ( params, varargs, varkw, defaults, kwonly, kwonly_defaults, _, ) = getfullargspec(unwrap(func)) function_name = name or func.__name__
 - [9a127496] if func is None: # @register.simple_block_tag(...) return dec elif callable(func): # @register.simple_block_tag return dec(func) else: raise ValueError("Invalid arguments provided to simple_block_tag")
+- [7bf492c3] if func is None: # @register.simple_tag(...) return dec elif callable(func): # @register.simple_tag return dec(func) else: raise ValueError("Invalid arguments provided to simple_tag")
 - [2cb6c2e3] return dec
 - [53f8c089] return resolved_args, resolved_kwargs
 - [b1f83fc3] t = context.render_context.get(self) if t is None: if isinstance(self.filename, Template): t = self.filename elif isinstance(getattr(self.filename, "template", None), Template): t = self.filename.template elif not isinstance(self.filename, str) and isinstance( self.filename, Iterable ): t = context.template.engine.select_template(self.filename) else: t = context.template.engine.get_template(self.filename) context.render_context[self] = t new_context = context.new(_dict) # Copy across the CSRF token, if present, because inclusion tags are # often used for forms, and we need instructions for using CSRF # protection to be as simple as possible. csrf_token = context.get("csrf_token") if csrf_token is not None: new_context["csrf_token"] = csrf_token return t.render(new_context)
@@ -47,6 +54,7 @@
 - [08e81af7] def render(self, context): """ Render the specified template and context. Cache the template object in render_context to avoid reparsing and loading when used in a for loop. """ resolved_args, resolved_kwargs = self.get_resolved_arguments(context) _dict = self.func(*resolved_args, **resolved_kwargs)
 - [b8f297f1] def render(self, context): resolved_args, resolved_kwargs = self.get_resolved_arguments(context) output = self.func(*resolved_args, **resolved_kwargs) if self.target_var is not None: context[self.target_var] = output return "" if context.autoescape: output = conditional_escape(output) return output
 - [6c4b2b5a] def simple_block_tag(self, func=None, takes_context=None, name=None, end_name=None): """ Register a callable as a compiled block template tag. Example:
+- [360c62d9] def simple_tag(self, func=None, takes_context=None, name=None): """ Register a callable as a compiled template tag. Example:
 - [6dc1afaa] def tag(self, name=None, compile_function=None): if name is None and compile_function is None: # @register.tag() return self.tag_function elif name is not None and compile_function is None: if callable(name): # @register.tag return self.tag_function(name) else: # @register.tag('somename') or @register.tag(name='somename') def dec(func): return self.tag(name, func)
 - [bb45a19e] def tag_function(self, func): self.tags[func.__name__] = func return func
 - [ef4d80ab] class InclusionNode(TagHelperNode): def __init__(self, func, takes_context, args, kwargs, filename): super().__init__(func, takes_context, args, kwargs) self.filename = filename

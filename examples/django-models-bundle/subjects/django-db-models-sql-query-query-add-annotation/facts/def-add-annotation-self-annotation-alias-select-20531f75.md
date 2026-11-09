@@ -1,6 +1,6 @@
 # Fact 20531f75
 
-Store id: f963bd27-2a31-47db-b9c9-6e64a43a07c8
+Store id: 86a02b98-2cfc-4fc6-98ca-98c18ef39939
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_annotation(self, annotation, alias, select=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8877610+00:00`
+- posted_at: `2026-11-09T23:44:58.7817250+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1239,
     "symbol": "Query.add_annotation"
   },
-  "id": "f963bd27-2a31-47db-b9c9-6e64a43a07c8",
+  "id": "86a02b98-2cfc-4fc6-98ca-98c18ef39939",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8877610+00:00"
+    "posted_at": "2026-11-09T23:44:58.7817250+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5555ef76-6cfc-409b-9194-de647284e156",
+  "subject_id": "b11c9c59-dbdb-4151-a550-48673f1b26f9",
   "subject_name": "django/db/models/sql/query::Query.add_annotation",
   "tags": [
     "entity:method"

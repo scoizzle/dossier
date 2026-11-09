@@ -1,6 +1,6 @@
 # Fact f72999a6
 
-Store id: fc7f8a57-aea6-40c9-ad53-f3148e47849f
+Store id: b203d7de-d70d-46e6-905b-31b23be5016a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.9332450+00:00`
+- posted_at: `2026-11-09T23:45:00.0584150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 45,
     "symbol": "create_namedtuple_class.__reduce__"
   },
-  "id": "fc7f8a57-aea6-40c9-ad53-f3148e47849f",
+  "id": "b203d7de-d70d-46e6-905b-31b23be5016a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.9332450+00:00"
+    "posted_at": "2026-11-09T23:45:00.0584150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6ce91142-da3a-4992-9267-53e10966f89e",
+  "subject_id": "db434afe-867f-4053-8700-4d7d07851a9c",
   "subject_name": "django/db/models/utils::create_namedtuple_class.__reduce__",
   "tags": [
     "entity:function"

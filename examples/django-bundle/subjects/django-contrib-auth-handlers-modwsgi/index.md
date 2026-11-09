@@ -1,10 +1,10 @@
 # django/contrib/auth/handlers/modwsgi
 
-- Subject: django/contrib/auth/handlers/modwsgi (id `2cb38770-ca41-4709-8682-b91b14b2e1b8`)
+- Subject: django/contrib/auth/handlers/modwsgi (id `f9fb13e1-1c54-405b-8616-6313011458ff`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 441 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

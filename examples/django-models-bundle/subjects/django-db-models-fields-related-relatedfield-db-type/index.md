@@ -1,11 +1,11 @@
 # django/db/models/fields/related::RelatedField.db_type
 
-- Subject: django/db/models/fields/related::RelatedField.db_type (id `1973e1f2-38dc-48f2-9af6-bb36ee6ce4d9`)
+- Subject: django/db/models/fields/related::RelatedField.db_type (id `aaf52521-9927-4d4f-8789-6eac177a477d`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

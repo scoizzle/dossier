@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/admin_urls
 
-- Subject: django/contrib/admin/templatetags/admin_urls (id `d27da8c5-36a9-4cab-9848-6b3b341dbe2b`)
+- Subject: django/contrib/admin/templatetags/admin_urls (id `531c988d-9380-4097-9c1e-c94ca1fb9198`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 587 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

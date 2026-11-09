@@ -1,10 +1,10 @@
 # django/utils/dateparse
 
-- Subject: django/utils/dateparse (id `0d3b1187-7eda-468e-922c-b7a9212eb9b8`)
+- Subject: django/utils/dateparse (id `5d65ca9f-5b88-480d-bc71-14cc42299f3d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1369 tokens
-- Facts shown: 20 of 21
+- Used: 1399 tokens
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,7 @@
 - [12df6db8] # We're using regular expressions rather than time.strptime because: # - They provide both validation and parsing. # - They're more flexible for datetimes. # - The date/datetime/time constructors produce friendlier error messages.
 - [c96689e3] datetime_re = _lazy_re_compile( r"(?P<year>\d{4})-(?P<month>\d{1,2})-(?P<day>\d{1,2})" r"[T ](?P<hour>\d{1,2}):(?P<minute>\d{1,2})" r"(?::(?P<second>\d{1,2})(?:[.,](?P<microsecond>\d{1,6})\d{0,6})?)?" r"\s*(?P<tzinfo>Z|[+-]\d{2}(?::?\d{2})?)?$" )
 - [26d983ff] def parse_date(value): """Parse a string and return a datetime.date.
+- [af5a25e0] def parse_datetime(value): """Parse a string and return a datetime.datetime.
 - [b6292ee2] def parse_duration(value): """Parse a duration string and return a datetime.timedelta.
 - [e9f06b7f] def parse_time(value): """Parse a string and return a datetime.time.
 - [2ad69ee2] from django.utils.regex_helper import _lazy_re_compile from django.utils.timezone import get_fixed_timezone

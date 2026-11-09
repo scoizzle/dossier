@@ -1,6 +1,6 @@
 # Fact 1d95f6d4
 
-Store id: ae043926-c6cc-42e9-b98f-67395b6f2607
+Store id: 717f05ea-692c-4f63-bc2d-5bba28b1ab01
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Sign
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ae043926-c6cc-42e9-b98f-67395b6f2607",
+  "id": "717f05ea-692c-4f63-bc2d-5bba28b1ab01",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Sign"
       },
       "rel": "contains",
-      "target": "3919d92f-71e3-4aba-8d80-f688cc14d18a"
+      "target": "58570879-1493-46a9-859f-6b8bc748af47"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

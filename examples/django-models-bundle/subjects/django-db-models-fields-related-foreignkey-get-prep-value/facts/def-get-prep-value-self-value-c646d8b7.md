@@ -1,6 +1,6 @@
 # Fact c646d8b7
 
-Store id: 7b0652d9-7004-426d-9158-26657a2f6bdb
+Store id: f177c4b1-e8b5-489b-af86-32483cd5fa8c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7730150+00:00`
+- posted_at: `2026-11-09T23:44:51.5949330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1288,
     "symbol": "ForeignKey.get_prep_value"
   },
-  "id": "7b0652d9-7004-426d-9158-26657a2f6bdb",
+  "id": "f177c4b1-e8b5-489b-af86-32483cd5fa8c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7730150+00:00"
+    "posted_at": "2026-11-09T23:44:51.5949330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5f2d1b61-afde-49cc-9d38-dfcd35f39bbd",
+  "subject_id": "529b2eda-a405-457c-889d-93c8d0ebf28e",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_prep_value",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/functions/text::Left.as_sqlite
 
-- Subject: django/db/models/functions/text::Left.as_sqlite (id `f1beb7b3-d2bb-40fd-b399-752f8ddf3e14`)
+- Subject: django/db/models/functions/text::Left.as_sqlite (id `ef3846ac-4352-41b7-b2ef-110fc15a35ea`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

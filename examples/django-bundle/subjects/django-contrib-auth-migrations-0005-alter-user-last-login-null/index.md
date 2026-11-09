@@ -1,10 +1,10 @@
 # django/contrib/auth/migrations/0005_alter_user_last_login_null
 
-- Subject: django/contrib/auth/migrations/0005_alter_user_last_login_null (id `3da41c82-0e35-4ac7-93a3-f7b75014cf49`)
+- Subject: django/contrib/auth/migrations/0005_alter_user_last_login_null (id `06c75ba7-b241-4267-b907-e04d0a384d7b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 108 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

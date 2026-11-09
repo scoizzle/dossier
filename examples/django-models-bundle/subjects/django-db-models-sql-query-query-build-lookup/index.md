@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.build_lookup
 
-- Subject: django/db/models/sql/query::Query.build_lookup (id `86e0e90a-66df-4e81-a4ac-7e52d32bad58`)
+- Subject: django/db/models/sql/query::Query.build_lookup (id `9b4a0197-fa11-4a76-b59b-392c8dddd7fa`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

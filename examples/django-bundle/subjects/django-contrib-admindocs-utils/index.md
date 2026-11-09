@@ -1,10 +1,10 @@
 # django/contrib/admindocs/utils
 
-- Subject: django/contrib/admindocs/utils (id `bf2c3d07-37c1-442f-a571-e32e44f1b7b2`)
+- Subject: django/contrib/admindocs/utils (id `b5d9e441-c040-496a-bdac-865ec0118e62`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2051 tokens
-- Facts shown: 26 of 26
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 

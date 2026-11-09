@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/geometries
 
-- Subject: django/contrib/gis/gdal/geometries (id `519f31eb-cf90-4d38-b6b6-e7f508fac158`)
+- Subject: django/contrib/gis/gdal/geometries (id `ac57161b-fdaa-4eea-88fd-e0cdda6913aa`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7058 tokens
-- Facts shown: 126 of 131
+- Used: 7313 tokens
+- Facts shown: 131 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -102,6 +102,7 @@
 - [1fa2ce8f] def add(self, geom): "Add the geometry to this Geometry Collection." if isinstance(geom, OGRGeometry): if isinstance(geom, self.__class__): for g in geom: capi.add_geom(self.ptr, g.ptr) else: capi.add_geom(self.ptr, geom.ptr) elif isinstance(geom, str): tmp = OGRGeometry(geom) capi.add_geom(self.ptr, tmp.ptr) else: raise GDALException("Must add an OGRGeometry.")
 - [a806d16e] def close_rings(self): """ If there are any rings within this geometry that have not been closed, this routine will do so by adding the starting point at the end. """ # Closing the open rings. capi.geom_close_rings(self.ptr)
 - [c560406a] def contains(self, other): "Return True if this geometry contains the other." return self._topology(capi.ogr_contains, other)
+- [2c8554de] def crosses(self, other): "Return True if this geometry crosses the other." return self._topology(capi.ogr_crosses, other)
 - [50ec4487] def difference(self, other): """ Return a new geometry consisting of the region which is the difference of this geometry and the other. """ return self._geomgen(capi.geom_diff, other)
 - [7e1d19d4] def disjoint(self, other): "Return True if this geometry and the other are spatially disjoint." return self._topology(capi.ogr_disjoint, other)
 - [928889ae] def equals(self, other): "Return True if this geometry is equivalent to the other." return self._topology(capi.ogr_equals, other)
@@ -109,9 +110,13 @@
 - [88b843db] def get_linear_geometry(self): """Return a linear version of this geometry.""" return OGRGeometry(capi.get_linear_geom(self.ptr, 0, None))
 - [1d846f59] def intersection(self, other): """ Return a new geometry consisting of the region of intersection of this geometry and the other. """ return self._geomgen(capi.geom_intersection, other)
 - [7a8fce0b] def intersects(self, other): "Return True if this geometry intersects with the other." return self._topology(capi.ogr_intersects, other)
+- [6444e7e5] def overlaps(self, other): "Return True if this geometry overlaps the other." return self._topology(capi.ogr_overlaps, other)
 - [1b3dfa0b] def set_3d(self, value): """Set if this geometry has Z coordinates.""" if value is True: capi.set_3d(self.ptr, 1) elif value is False: capi.set_3d(self.ptr, 0) else: raise ValueError(f"Input to 'set_3d' must be a boolean, got '{value!r}'.")
+- [4dda55db] def set_measured(self, value): """Set if this geometry has M coordinates.""" if value is True: capi.set_measured(self.ptr, 1) elif value is False: capi.set_measured(self.ptr, 0) else: raise ValueError( f"Input to 'set_measured' must be a boolean, got '{value!r}'." )
 - [e7202c9f] def sym_difference(self, other): """ Return a new geometry which is the symmetric difference of this geometry and the other. """ return self._geomgen(capi.geom_sym_diff, other)
+- [b7c1b305] def touches(self, other): "Return True if this geometry touches the other." return self._topology(capi.ogr_touches, other)
 - [8977ec75] def transform(self, coord_trans, clone=False): """ Transform this geometry to a different spatial reference system. May take a CoordTransform object, a SpatialReference object, string WKT or PROJ, and/or an integer SRID. By default, return nothing and transform the geometry in-place. However, if the `clone` keyword is set, return a transformed clone of this geometry. """ if clone: klone = self.clone() klone.transform(coord_trans) return klone
+- [384fcc2c] def union(self, other): """ Return a new geometry consisting of the region which is the union of this geometry and the other. """ return self._geomgen(capi.geom_union, other)
 - [a1e51d6b] def within(self, other): "Return True if this geometry is within the other." return self._topology(capi.ogr_within, other)
 - [b0fc5c20] destructor = capi.destroy_geom geos_support = True
 - [0543f419] exterior_ring = shell

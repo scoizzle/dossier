@@ -1,6 +1,6 @@
 # Fact 818e4aa0
 
-Store id: f15ff17c-d89f-4ae0-944a-699d1fd0bb7a
+Store id: ff4025a3-97fa-4d73-b38c-88e4f446cc4b
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer suggests @mentions as the user types a name.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -46,13 +46,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "f15ff17c-d89f-4ae0-944a-699d1fd0bb7a",
+  "id": "ff4025a3-97fa-4d73-b38c-88e4f446cc4b",
   "kind": "element",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [
     {
@@ -64,7 +64,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:composer"

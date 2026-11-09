@@ -1,6 +1,6 @@
 # Fact 2778c0ac
 
-Store id: e537266e-6379-4bab-b10b-fe819463fb2c
+Store id: 420f8351-14f1-4ab4-a693-9d61c41b59e2
 
 ## Text
 
@@ -20,7 +20,7 @@ def promote_joins(self, aliases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8426400+00:00`
+- posted_at: `2026-11-09T23:44:58.7233400+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 934,
     "symbol": "Query.promote_joins"
   },
-  "id": "e537266e-6379-4bab-b10b-fe819463fb2c",
+  "id": "420f8351-14f1-4ab4-a693-9d61c41b59e2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8426400+00:00"
+    "posted_at": "2026-11-09T23:44:58.7233400+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "198c6657-1182-459f-8789-129d7889b41b",
+  "subject_id": "000efb77-45ba-41f8-bda9-7d26455e3404",
   "subject_name": "django/db/models/sql/query::Query.promote_joins",
   "tags": [
     "entity:method"

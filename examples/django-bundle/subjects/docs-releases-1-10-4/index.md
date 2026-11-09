@@ -1,10 +1,10 @@
 # docs/releases/1.10.4
 
-- Subject: docs/releases/1.10.4 (id `4d1b97ac-625c-46c9-a329-db6027ff6758`)
+- Subject: docs/releases/1.10.4 (id `95351035-4a14-4caa-ac29-cc9a5ad2d67a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 376 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

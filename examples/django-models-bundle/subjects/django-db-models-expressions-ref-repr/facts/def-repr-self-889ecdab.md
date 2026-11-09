@@ -1,6 +1,6 @@
 # Fact 889ecdab
 
-Store id: 564054a8-c150-42dc-97ae-3179803af10d
+Store id: 46f6e003-e672-411a-9881-5f4bb76d01c1
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9123200+00:00`
+- posted_at: `2026-11-09T23:44:49.5748600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1457,
     "symbol": "Ref.__repr__"
   },
-  "id": "564054a8-c150-42dc-97ae-3179803af10d",
+  "id": "46f6e003-e672-411a-9881-5f4bb76d01c1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9123200+00:00"
+    "posted_at": "2026-11-09T23:44:49.5748600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0bb29b06-b954-4de9-843f-5a938e36ea0c",
+  "subject_id": "9b1a4a39-d6e3-4de9-9b34-d211177a3e23",
   "subject_name": "django/db/models/expressions::Ref.__repr__",
   "tags": [
     "entity:method"

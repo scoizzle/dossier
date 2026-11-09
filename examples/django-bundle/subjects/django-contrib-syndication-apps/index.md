@@ -1,10 +1,10 @@
 # django/contrib/syndication/apps
 
-- Subject: django/contrib/syndication/apps (id `851f6886-7eab-403a-a01f-4b0cd2cf0610`)
+- Subject: django/contrib/syndication/apps (id `eaa9d307-3982-4a85-adaf-3575ab3f0d52`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 70 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

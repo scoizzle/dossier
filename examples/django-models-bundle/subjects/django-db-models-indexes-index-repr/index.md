@@ -1,11 +1,11 @@
 # django/db/models/indexes::Index.__repr__
 
-- Subject: django/db/models/indexes::Index.__repr__ (id `76ce17a8-ae04-4d09-893f-734a60f9e96e`)
+- Subject: django/db/models/indexes::Index.__repr__ (id `e3ab0452-7dbb-4c4b-ac78-c33c92d5294c`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

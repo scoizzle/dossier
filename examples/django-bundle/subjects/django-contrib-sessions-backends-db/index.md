@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/db
 
-- Subject: django/contrib/sessions/backends/db (id `5345297e-debc-4e29-b283-1cb96c5769f6`)
+- Subject: django/contrib/sessions/backends/db (id `96355557-dedd-417d-84bf-ee99d8d445ea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1461 tokens
-- Facts shown: 24 of 25
+- Used: 1559 tokens
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,7 @@
 
 ## All facts
 
+- [62085e94] def _get_session_from_db(self): try: return self.model.objects.get( session_key=self.session_key, expire_date__gt=timezone.now() ) except (self.model.DoesNotExist, SuspiciousOperation) as e: if isinstance(e, SuspiciousOperation): logger = logging.getLogger("django.security.%s" % e.__class__.__name__) logger.warning(str(e)) self._session_key = None
 - [ce8d5d30] def create_model_instance(self, data): """ Return a new instance of the session model object, which represents the current session state. Intended to be used for saving the session data to the database. """ return self.model( session_key=self._get_or_create_session_key(), session_data=self.encode(data), expire_date=self.get_expiry_date(), )
 - [83b9ecc1] def delete(self, session_key=None): if session_key is None: if self.session_key is None: return session_key = self.session_key try: self.model.objects.get(session_key=session_key).delete() except self.model.DoesNotExist: pass
 - [8b9dc5b8] def exists(self, session_key): return self.model.objects.filter(session_key=session_key).exists()

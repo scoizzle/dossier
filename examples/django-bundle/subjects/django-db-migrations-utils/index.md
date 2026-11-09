@@ -1,10 +1,10 @@
 # django/db/migrations/utils
 
-- Subject: django/db/migrations/utils (id `c19713c1-6b9f-4f6d-922f-40a6d07f03d5`)
+- Subject: django/db/migrations/utils (id `00456f36-ef95-436f-b42a-9946141be29d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1041 tokens
-- Facts shown: 14 of 14
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 

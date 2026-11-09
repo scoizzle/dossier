@@ -1,6 +1,6 @@
 # Fact 3be0cabb
 
-Store id: 7d6dfe4a-c657-4275-9eec-9f6295560347
+Store id: e246072e-67b7-4487-b0aa-b9ab991bafb5
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_cached(self, instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1341720+00:00`
+- posted_at: `2026-11-09T23:44:51.8311620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 166,
     "symbol": "ForwardManyToOneDescriptor.is_cached"
   },
-  "id": "7d6dfe4a-c657-4275-9eec-9f6295560347",
+  "id": "e246072e-67b7-4487-b0aa-b9ab991bafb5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1341720+00:00"
+    "posted_at": "2026-11-09T23:44:51.8311620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "02c60c03-c6d8-4490-90a1-30a659d683e6",
+  "subject_id": "e17c343f-9362-4fab-8443-2696af90e91f",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.is_cached",
   "tags": [
     "entity:method"

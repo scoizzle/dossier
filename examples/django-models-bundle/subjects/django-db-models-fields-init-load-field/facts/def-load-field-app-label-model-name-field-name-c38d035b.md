@@ -1,6 +1,6 @@
 # Fact c38d035b
 
-Store id: 5fdea648-a67d-4cbb-a7c6-d0a2a12cbb37
+Store id: 89589cea-aec8-4d96-aed1-b0521cbd57de
 
 ## Text
 
@@ -20,7 +20,7 @@ def _load_field(app_label, model_name, field_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4076460+00:00`
+- posted_at: `2026-11-09T23:44:49.9492610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 97,
     "symbol": "_load_field"
   },
-  "id": "5fdea648-a67d-4cbb-a7c6-d0a2a12cbb37",
+  "id": "89589cea-aec8-4d96-aed1-b0521cbd57de",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4076460+00:00"
+    "posted_at": "2026-11-09T23:44:49.9492610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "eae9d058-cbeb-4ce2-9b01-dd273caf8911",
+  "subject_id": "6d314da2-7eae-40bd-bb48-dd85dafbfc04",
   "subject_name": "django/db/models/fields/__init__::_load_field",
   "tags": [
     "entity:function"

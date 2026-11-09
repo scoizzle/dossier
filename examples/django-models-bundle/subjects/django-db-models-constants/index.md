@@ -1,10 +1,10 @@
 # django/db/models/constants
 
-- Subject: django/db/models/constants (id `e09e24e8-7b6c-4d57-aa4e-1c80b7e360ba`)
+- Subject: django/db/models/constants (id `c93cf7b5-da09-4399-8290-ad8f629ffaec`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

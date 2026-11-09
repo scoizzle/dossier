@@ -1,6 +1,6 @@
 # Fact 7fba4a6d
 
-Store id: e6929ae1-9925-4db7-b8ba-194bf2ded163
+Store id: 20d7017e-3f59-4669-b015-ebbc993c6bc8
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_max_digits(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6236050+00:00`
+- posted_at: `2026-11-09T23:44:50.1146240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1815,
     "symbol": "DecimalField._check_max_digits"
   },
-  "id": "e6929ae1-9925-4db7-b8ba-194bf2ded163",
+  "id": "20d7017e-3f59-4669-b015-ebbc993c6bc8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6236050+00:00"
+    "posted_at": "2026-11-09T23:44:50.1146240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd006e24-5a84-43c5-bd23-ae3fe45e38dc",
+  "subject_id": "345a1168-62f8-409d-a198-6b00b21b5136",
   "subject_name": "django/db/models/fields/__init__::DecimalField._check_max_digits",
   "tags": [
     "entity:method"

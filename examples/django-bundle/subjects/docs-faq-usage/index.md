@@ -1,10 +1,10 @@
 # docs/faq/usage
 
-- Subject: docs/faq/usage (id `80b9befa-c04b-49a7-afe5-21ca1fd98857`)
+- Subject: docs/faq/usage (id `38f8c99a-3f2f-413f-a4d4-8e3ab09224cd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 931 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

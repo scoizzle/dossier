@@ -1,10 +1,10 @@
 # django/template/loader
 
-- Subject: django/template/loader (id `6b9321c0-2e48-4c98-ac8c-94e1fbca603e`)
+- Subject: django/template/loader (id `700cff66-c186-4399-aa01-501e4a63bb8f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 564 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

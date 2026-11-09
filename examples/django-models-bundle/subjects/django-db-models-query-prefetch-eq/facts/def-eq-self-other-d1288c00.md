@@ -1,6 +1,6 @@
 # Fact d1288c00
 
-Store id: 3176a3d6-0f2b-447b-8dfe-e904a8b852e4
+Store id: aabdd783-3864-4aa7-9312-eaa8f50da576
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8099680+00:00`
+- posted_at: `2026-11-09T23:44:56.3002360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2625,
     "symbol": "Prefetch.__eq__"
   },
-  "id": "3176a3d6-0f2b-447b-8dfe-e904a8b852e4",
+  "id": "aabdd783-3864-4aa7-9312-eaa8f50da576",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8099680+00:00"
+    "posted_at": "2026-11-09T23:44:56.3002360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d21182eb-cbeb-4065-8deb-651446d8ff1f",
+  "subject_id": "dc9e59d3-25b6-4f7f-aee0-8eaf12bd01bc",
   "subject_name": "django/db/models/query::Prefetch.__eq__",
   "tags": [
     "entity:method"

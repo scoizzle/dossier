@@ -1,6 +1,6 @@
 # Fact 5d0b6050
 
-Store id: 014a5aea-0caf-44f5-9df5-f46bc65031b7
+Store id: 9335bf5a-5f13-43b7-824b-a69f76639924
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_connector(cls, connector)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0390460+00:00`
+- posted_at: `2026-11-09T23:44:56.5205590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 68,
     "symbol": "Q._check_connector"
   },
-  "id": "014a5aea-0caf-44f5-9df5-f46bc65031b7",
+  "id": "9335bf5a-5f13-43b7-824b-a69f76639924",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0390460+00:00"
+    "posted_at": "2026-11-09T23:44:56.5205590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "447d1f8a-2172-4e73-9894-cd3aa28346b0",
+  "subject_id": "8d69f036-5727-4599-b443-d6dbe85d417f",
   "subject_name": "django/db/models/query_utils::Q._check_connector",
   "tags": [
     "entity:class_method",

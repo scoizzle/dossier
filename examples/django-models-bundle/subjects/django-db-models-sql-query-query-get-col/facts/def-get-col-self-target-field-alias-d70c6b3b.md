@@ -1,6 +1,6 @@
 # Fact d70c6b3b
 
-Store id: 4791df31-55ac-4d9d-96e1-e4064449cf5b
+Store id: 07bb2a5a-1511-4aea-8215-e4675b16c7a8
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_col(self, target, field, alias)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7888140+00:00`
+- posted_at: `2026-11-09T23:44:58.6478590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 452,
     "symbol": "Query._get_col"
   },
-  "id": "4791df31-55ac-4d9d-96e1-e4064449cf5b",
+  "id": "07bb2a5a-1511-4aea-8215-e4675b16c7a8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7888140+00:00"
+    "posted_at": "2026-11-09T23:44:58.6478590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d6205c47-bc4d-4bb9-aa9f-1489bbd9844c",
+  "subject_id": "8723aa1e-e250-4354-a7c0-a161891c9dad",
   "subject_name": "django/db/models/sql/query::Query._get_col",
   "tags": [
     "entity:method"

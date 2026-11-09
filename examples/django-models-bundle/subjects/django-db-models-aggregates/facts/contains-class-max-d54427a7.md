@@ -1,6 +1,6 @@
 # Fact d54427a7
 
-Store id: 1c389544-7a7f-4ab5-9ccb-e8286c1bd0bf
+Store id: cdd33008-3ba0-4851-861e-036355c5f423
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Max
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1c389544-7a7f-4ab5-9ccb-e8286c1bd0bf",
+  "id": "cdd33008-3ba0-4851-861e-036355c5f423",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Max"
       },
       "rel": "contains",
-      "target": "b53a19bd-8a66-4a2c-8402-92bb3749ef9b"
+      "target": "9ff1ad2e-5d76-4e8b-b5eb-cbbbc42a51de"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

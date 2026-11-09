@@ -1,6 +1,6 @@
 # Fact da7a9bfb
 
-Store id: 94b37523-262f-4131-a40b-9c8b5cf2cc38
+Store id: 9ff28c6c-111e-4d85-8d79-60ead8622175
 
 ## Text
 
@@ -20,7 +20,7 @@ def constraint_sql(self, model, schema_editor)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.2422580+00:00`
+- posted_at: `2026-11-09T23:44:48.7876890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 463,
     "symbol": "UniqueConstraint.constraint_sql"
   },
-  "id": "94b37523-262f-4131-a40b-9c8b5cf2cc38",
+  "id": "9ff28c6c-111e-4d85-8d79-60ead8622175",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.2422580+00:00"
+    "posted_at": "2026-11-09T23:44:48.7876890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9d72fe6f-0d54-4790-8189-5eef7dc364be",
+  "subject_id": "0ba953fe-1dfd-4ee9-acae-afd909d3a7e8",
   "subject_name": "django/db/models/constraints::UniqueConstraint.constraint_sql",
   "tags": [
     "entity:method"

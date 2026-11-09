@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.contribute_to_related_class
 
-- Subject: django/db/models/fields/related::ManyToManyField.contribute_to_related_class (id `1a0e786e-2a46-4a03-a11d-681b19f31e4c`)
+- Subject: django/db/models/fields/related::ManyToManyField.contribute_to_related_class (id `be26506b-f025-44e8-a381-1922494ad51e`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

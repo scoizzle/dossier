@@ -1,10 +1,10 @@
 # django/contrib/sessions/serializers
 
-- Subject: django/contrib/sessions/serializers (id `52216f58-30d7-48d0-9392-19ce979c8321`)
+- Subject: django/contrib/sessions/serializers (id `dad3b548-2fc5-4943-9ebf-55132a949117`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 48 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

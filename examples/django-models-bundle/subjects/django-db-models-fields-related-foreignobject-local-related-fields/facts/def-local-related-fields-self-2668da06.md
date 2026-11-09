@@ -1,6 +1,6 @@
 # Fact 2668da06
 
-Store id: 92fb8c5b-7431-4cb9-a8f8-883edf9aab0b
+Store id: 995cd061-7063-4a8d-a74b-e927bbfc26b5
 
 ## Text
 
@@ -20,7 +20,7 @@ def local_related_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6870260+00:00`
+- posted_at: `2026-11-09T23:44:51.5311020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 814,
     "symbol": "ForeignObject.local_related_fields"
   },
-  "id": "92fb8c5b-7431-4cb9-a8f8-883edf9aab0b",
+  "id": "995cd061-7063-4a8d-a74b-e927bbfc26b5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6870260+00:00"
+    "posted_at": "2026-11-09T23:44:51.5311020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d2ce401b-ee02-443c-956c-e58df5258936",
+  "subject_id": "dd1a668e-c166-444b-95b5-7bbfe56b2f0c",
   "subject_name": "django/db/models/fields/related::ForeignObject.local_related_fields",
   "tags": [
     "entity:method",

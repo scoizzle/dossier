@@ -1,6 +1,6 @@
 # Fact a0baa044
 
-Store id: c2e4be26-17a0-44ab-bfd4-3da594afc223
+Store id: d13d38a3-556e-4e59-ba1f-9f8ccf095bb4
 
 ## Text
 
@@ -20,7 +20,7 @@ def CASCADE(collector, field, sub_objs, using)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0255240+00:00`
+- posted_at: `2026-11-09T23:44:48.8985330+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 22,
     "symbol": "CASCADE"
   },
-  "id": "c2e4be26-17a0-44ab-bfd4-3da594afc223",
+  "id": "d13d38a3-556e-4e59-ba1f-9f8ccf095bb4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0255240+00:00"
+    "posted_at": "2026-11-09T23:44:48.8985330+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a863d2c8-c887-4375-b59c-472b35da8864",
+  "subject_id": "9c959ac2-fcfd-42be-bc19-9ab734ae6a9e",
   "subject_name": "django/db/models/deletion::CASCADE",
   "tags": [
     "entity:function"

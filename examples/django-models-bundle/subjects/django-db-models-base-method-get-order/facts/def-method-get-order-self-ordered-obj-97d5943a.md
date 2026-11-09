@@ -1,6 +1,6 @@
 # Fact 97d5943a
 
-Store id: 466411f1-0c3e-48df-83ea-55d759e70204
+Store id: 68aa866a-4216-495a-a109-75ea15e2da91
 
 ## Text
 
@@ -20,7 +20,7 @@ def method_get_order(self, ordered_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7747650+00:00`
+- posted_at: `2026-11-09T23:44:48.5569810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2541,
     "symbol": "method_get_order"
   },
-  "id": "466411f1-0c3e-48df-83ea-55d759e70204",
+  "id": "68aa866a-4216-495a-a109-75ea15e2da91",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7747650+00:00"
+    "posted_at": "2026-11-09T23:44:48.5569810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "42a1ffd9-abf6-4402-b327-5d451afd17e7",
+  "subject_id": "0e6d830f-951e-4e98-9bf2-50cff895d4fb",
   "subject_name": "django/db/models/base::method_get_order",
   "tags": [
     "entity:function"

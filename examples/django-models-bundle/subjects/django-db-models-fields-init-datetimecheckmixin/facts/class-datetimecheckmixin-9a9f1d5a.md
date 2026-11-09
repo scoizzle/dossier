@@ -1,6 +1,6 @@
 # Fact 9a9f1d5a
 
-Store id: 90fa2c61-7890-46d4-9607-a56131c800ae
+Store id: 91acf2e9-e56d-4cc1-a7fd-f4a7ddac5f8e
 
 ## Text
 
@@ -20,7 +20,7 @@ class DateTimeCheckMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5671650+00:00`
+- posted_at: `2026-11-09T23:44:50.0776430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1391,
     "symbol": "DateTimeCheckMixin"
   },
-  "id": "90fa2c61-7890-46d4-9607-a56131c800ae",
+  "id": "91acf2e9-e56d-4cc1-a7fd-f4a7ddac5f8e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5671650+00:00"
+    "posted_at": "2026-11-09T23:44:50.0776430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0fd54ff3-d3fb-470f-ae1c-3b6bc238c669",
+  "subject_id": "38133423-a078-4114-b7ea-e8c2f48f655e",
   "subject_name": "django/db/models/fields/__init__::DateTimeCheckMixin",
   "tags": [
     "entity:class"

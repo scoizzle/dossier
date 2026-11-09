@@ -1,6 +1,6 @@
 # Fact 83f68e9c
 
-Store id: 4e2e2166-a934-4693-8438-b87e861a2ba8
+Store id: 53235027-6e46-4c57-8c92-40cd6e8aaad5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function model_unpickle
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "4e2e2166-a934-4693-8438-b87e861a2ba8",
+  "id": "53235027-6e46-4c57-8c92-40cd6e8aaad5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "model_unpickle"
       },
       "rel": "contains",
-      "target": "eaa023bd-9df3-481e-a8f3-b764b1520937"
+      "target": "7737a54d-b7db-4c6f-94af-e0070affabdc"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:function"

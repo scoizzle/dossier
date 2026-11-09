@@ -1,6 +1,6 @@
 # Fact 1dbdb6f6
 
-Store id: 47ad4d4e-cfff-4508-98c2-3f8892e9f33d
+Store id: 616063e9-1946-4178-9ec3-c6451de560fb
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression_parameter(self, compiler, connection, sql, param)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9486030+00:00`
+- posted_at: `2026-11-09T23:44:51.0114440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 404,
     "symbol": "JSONIn.resolve_expression_parameter"
   },
-  "id": "47ad4d4e-cfff-4508-98c2-3f8892e9f33d",
+  "id": "616063e9-1946-4178-9ec3-c6451de560fb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9486030+00:00"
+    "posted_at": "2026-11-09T23:44:51.0114440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ef799cd3-f244-4718-aa5c-a19471966bc9",
+  "subject_id": "c4eb6955-d1ab-46a7-87a3-fa6e00544982",
   "subject_name": "django/db/models/fields/json::JSONIn.resolve_expression_parameter",
   "tags": [
     "entity:method"

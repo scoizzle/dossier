@@ -1,11 +1,11 @@
 # django/db/models/lookups::Lookup.set_source_expressions
 
-- Subject: django/db/models/lookups::Lookup.set_source_expressions (id `f21811af-7387-4852-84a1-14df0f8b06f2`)
+- Subject: django/db/models/lookups::Lookup.set_source_expressions (id `fc5e3c18-c45b-4dbb-b50b-3cc7f1a0804f`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

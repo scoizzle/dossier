@@ -1,10 +1,10 @@
 # django/views/generic/__init__
 
-- Subject: django/views/generic/__init__ (id `e0aaac57-f938-4c33-8a34-afa24bd143ac`)
+- Subject: django/views/generic/__init__ (id `13f1a42c-8b8f-4fd1-add7-01ee1db4d9d9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 237 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

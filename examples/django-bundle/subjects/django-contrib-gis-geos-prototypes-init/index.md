@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prototypes/__init__
 
-- Subject: django/contrib/gis/geos/prototypes/__init__ (id `bf5e9396-842d-4875-bce4-83cad8d7bfe1`)
+- Subject: django/contrib/gis/geos/prototypes/__init__ (id `9e1c0db0-e587-4812-8107-ba0c7af4debd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 335 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

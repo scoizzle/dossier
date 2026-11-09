@@ -1,10 +1,10 @@
 # django/contrib/sessions/management/commands/clearsessions
 
-- Subject: django/contrib/sessions/management/commands/clearsessions (id `5e86bc94-3c8f-4237-9ba1-b9753561b8db`)
+- Subject: django/contrib/sessions/management/commands/clearsessions (id `ef6810a2-832f-4aca-a477-ce7bf6d18a35`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 177 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

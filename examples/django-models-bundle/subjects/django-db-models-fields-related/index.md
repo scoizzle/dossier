@@ -1,10 +1,10 @@
 # django/db/models/fields/related
 
-- Subject: django/db/models/fields/related (id `2dd9aa9c-962a-42d5-9466-04fc4602083a`)
+- Subject: django/db/models/fields/related (id `b482f690-f78b-4457-98ca-4cee1c63890e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 154 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/contrib/staticfiles
 
-- Subject: docs/ref/contrib/staticfiles (id `256c33ed-3a49-40e0-b94d-166988d91875`)
+- Subject: docs/ref/contrib/staticfiles (id `3c43e352-98c5-4cd7-8d38-714662d772c0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6885 tokens
-- Facts shown: 161 of 162
+- Used: 6938 tokens
+- Facts shown: 162 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -23,18 +23,19 @@
 - For an introduction to the static files app and some usage examples, see :doc:`/howto/static-files/index`. For guidelines on deploying static files, see :doc:`/howto/static-files/deployment`. [81c08ec1]
 - Ignore files, directories, or paths matching this glob-style pattern. Use multiple times to ignore more. When specifying a path, always use forward slashes, even on Windows. [83e234fc]
 - That's because this view is **grossly inefficient** and probably **insecure**. This is only intended for local development, and should **never be used in production**. [4455cfc6b5776b47]
+- That's because this view is **grossly inefficient** and probably **insecure**. This is only intended for local development, and should **never be used in production**. [4455cfc6b5776b47-2]
 - This helper function will only work if :setting:`DEBUG` is ``True`` and your :setting:`STATIC_URL` setting is neither empty nor a full URL such as ``http://static.example.com/``. [91ae598f]
 - This view will only work if :setting:`DEBUG` is ``True``. [729a497f]
 - To guess the served files' content types, this view relies on the :mod:`mimetypes` module from the Python standard library, which itself relies on the underlying platform's map files. If you find that this view doesn't return proper content types for certain files, it is most likely that the platform's map files are incorrect or need to be updated. This can be achieved, for example, by installing or updating the ``mailcap`` package on a Red Hat distribution, ``mime-support`` on a Debian distribution, or by editing the keys under ``HKEY_CLASSES_ROOT`` in the Windows registry. [29d7606b]
 - When using the optional ``integrity`` attribute within tags like ``<script>`` or ``<link>``, its value should be calculated based on the files as they are served, not as stored in the filesystem. This is particularly important because depending on how static files are collected, their checksum may have changed (for example when using :djadmin:`collectstatic`). At the moment, there is no out-of-the-box tooling available for this. [30550c6b]
-- class MyManifestStaticFilesStorage(ManifestStaticFilesStorage): def __init__(self, *args, **kwargs): manifest_storage = StaticFilesStorage(location=settings.BASE_DIR) super().__init__(*args, manifest_storage=manifest_storage, **kwargs) [8ff8116e]
 - class MyStaticFilesConfig(StaticFilesConfig): ignore_patterns = [...] # your custom ignore list [ca5da922]
+- from django.contrib.staticfiles import finders [a818098c]
 
 ## All facts
 
+- [8ff8116e] class MyManifestStaticFilesStorage(ManifestStaticFilesStorage): def __init__(self, *args, **kwargs): manifest_storage = StaticFilesStorage(location=settings.BASE_DIR) super().__init__(*args, manifest_storage=manifest_storage, **kwargs)
 - [a3facc85] class MyStaticFilesStorage(storage.StaticFilesStorage): def __init__(self, *args, **kwargs): kwargs["file_permissions_mode"] = 0o640 kwargs["directory_permissions_mode"] = 0o760 super().__init__(*args, **kwargs)
 - [6c6b4ede] from django.conf import settings from django.contrib.staticfiles.storage import ( ManifestStaticFilesStorage, StaticFilesStorage, )
-- [a818098c] from django.contrib.staticfiles import finders
 - [dc843de4] from django.contrib.staticfiles import storage
 - [f9181c8d] from django.contrib.staticfiles.apps import StaticFilesConfig
 - [779fa30d] result = finders.find("css/base.css") searched_locations = finders.searched_locations

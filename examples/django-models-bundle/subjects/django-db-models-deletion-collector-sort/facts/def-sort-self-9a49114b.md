@@ -1,6 +1,6 @@
 # Fact 9a49114b
 
-Store id: 37b922d9-a330-455a-940c-6a17e1c37818
+Store id: 0ed96d1a-15d8-4e56-b1f7-da2bb7910a7a
 
 ## Text
 
@@ -20,7 +20,7 @@ def sort(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1251430+00:00`
+- posted_at: `2026-11-09T23:44:48.9167200+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 448,
     "symbol": "Collector.sort"
   },
-  "id": "37b922d9-a330-455a-940c-6a17e1c37818",
+  "id": "0ed96d1a-15d8-4e56-b1f7-da2bb7910a7a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1251430+00:00"
+    "posted_at": "2026-11-09T23:44:48.9167200+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3017656c-8af3-4efd-8ddc-396eaf865305",
+  "subject_id": "b46a4303-71a4-45a9-b9dd-379c5cd6f17f",
   "subject_name": "django/db/models/deletion::Collector.sort",
   "tags": [
     "entity:method"

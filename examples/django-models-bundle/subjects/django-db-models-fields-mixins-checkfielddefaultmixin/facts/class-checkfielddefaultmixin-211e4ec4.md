@@ -1,6 +1,6 @@
 # Fact 211e4ec4
 
-Store id: 7fe30f5d-2064-4bb3-812d-ebf55a0316cd
+Store id: 8c071fdd-cf6a-4e1f-b1c7-0e51ccc21858
 
 ## Text
 
@@ -20,7 +20,7 @@ class CheckFieldDefaultMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.2344910+00:00`
+- posted_at: `2026-11-09T23:44:51.2085010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 37,
     "symbol": "CheckFieldDefaultMixin"
   },
-  "id": "7fe30f5d-2064-4bb3-812d-ebf55a0316cd",
+  "id": "8c071fdd-cf6a-4e1f-b1c7-0e51ccc21858",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.2344910+00:00"
+    "posted_at": "2026-11-09T23:44:51.2085010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f40871a9-4be7-44ab-81aa-ed0e0189065f",
+  "subject_id": "3d3ef6ff-c2ba-4c13-bf74-e7a3e5f61a63",
   "subject_name": "django/db/models/fields/mixins::CheckFieldDefaultMixin",
   "tags": [
     "entity:class"

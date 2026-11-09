@@ -1,6 +1,6 @@
 # Fact fac32472
 
-Store id: 5777e1fd-57dd-42fc-b4d4-c101663b0a9a
+Store id: 43af7deb-226a-4159-ad73-846f25897fdc
 
 ## Text
 
@@ -20,7 +20,7 @@ class Radians(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7353860+00:00`
+- posted_at: `2026-11-09T23:44:53.7461030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 146,
     "symbol": "Radians"
   },
-  "id": "5777e1fd-57dd-42fc-b4d4-c101663b0a9a",
+  "id": "43af7deb-226a-4159-ad73-846f25897fdc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7353860+00:00"
+    "posted_at": "2026-11-09T23:44:53.7461030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "31b70c11-5e13-4042-a48e-da17cd9465f2",
+  "subject_id": "872cf0b8-483e-43e0-83ba-bf8056721935",
   "subject_name": "django/db/models/functions/math::Radians",
   "tags": [
     "entity:class"

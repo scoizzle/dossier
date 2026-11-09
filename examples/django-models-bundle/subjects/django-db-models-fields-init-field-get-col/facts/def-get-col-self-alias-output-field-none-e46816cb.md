@@ -1,6 +1,6 @@
 # Fact e46816cb
 
-Store id: 433ac1b2-a417-4049-8233-81e203d4d59b
+Store id: 45836e10-570b-4ad3-93d2-cae250123773
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_col(self, alias, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4421530+00:00`
+- posted_at: `2026-11-09T23:44:49.9851670+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 574,
     "symbol": "Field.get_col"
   },
-  "id": "433ac1b2-a417-4049-8233-81e203d4d59b",
+  "id": "45836e10-570b-4ad3-93d2-cae250123773",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4421530+00:00"
+    "posted_at": "2026-11-09T23:44:49.9851670+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "380646dd-87e0-4e5e-8e6a-66978935c68f",
+  "subject_id": "53e08d80-f452-4c8e-a39e-711b65810688",
   "subject_name": "django/db/models/fields/__init__::Field.get_col",
   "tags": [
     "entity:method"

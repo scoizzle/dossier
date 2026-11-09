@@ -1,6 +1,6 @@
 # Fact e7a61ebe
 
-Store id: a9b32c20-5d2c-440f-a17a-a42b21f1189e
+Store id: 53f274ea-284d-481e-bbd7-5e35df90d39b
 
 ## Text
 
@@ -20,7 +20,7 @@ def path_infos(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7219420+00:00`
+- posted_at: `2026-11-09T23:44:51.5523400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 907,
     "symbol": "ForeignObject.path_infos"
   },
-  "id": "a9b32c20-5d2c-440f-a17a-a42b21f1189e",
+  "id": "53f274ea-284d-481e-bbd7-5e35df90d39b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7219420+00:00"
+    "posted_at": "2026-11-09T23:44:51.5523400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "58633c2a-a15d-473f-b42d-be018711a603",
+  "subject_id": "2b624bd1-0c02-4da5-a7f7-2f50a3e958e3",
   "subject_name": "django/db/models/fields/related::ForeignObject.path_infos",
   "tags": [
     "entity:method",

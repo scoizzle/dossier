@@ -1,6 +1,6 @@
 # Fact c1563e62
 
-Store id: 6f992d4e-50eb-41df-93cb-a1b169b9db80
+Store id: 0d64e4cc-9ad2-4f42-a9a3-7aeb8ef4c9cc
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_del_batches(self, objs, fields)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1147400+00:00`
+- posted_at: `2026-11-09T23:44:48.9145280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 256,
     "symbol": "Collector.get_del_batches"
   },
-  "id": "6f992d4e-50eb-41df-93cb-a1b169b9db80",
+  "id": "0d64e4cc-9ad2-4f42-a9a3-7aeb8ef4c9cc",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1147400+00:00"
+    "posted_at": "2026-11-09T23:44:48.9145280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5b4a5f59-1df8-4b77-86e5-c6afe645ced0",
+  "subject_id": "7cb2202d-99fe-49d9-a641-d0bd137f2f12",
   "subject_name": "django/db/models/deletion::Collector.get_del_batches",
   "tags": [
     "entity:method"

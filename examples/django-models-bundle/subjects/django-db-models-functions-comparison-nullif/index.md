@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::NullIf
 
-- Subject: django/db/models/functions/comparison::NullIf (id `520d26c5-a175-4c85-9ae6-68001a6d826c`)
+- Subject: django/db/models/functions/comparison::NullIf (id `eca69c14-3318-47ac-ba1a-d4b1988cc6bb`)
 - Kind: class
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.__bool__
 
-- Subject: django/db/models/query::QuerySet.__bool__ (id `00050fc1-1242-446d-aa2c-30fe19af1083`)
+- Subject: django/db/models/query::QuerySet.__bool__ (id `7270a746-ea6b-4f26-83a0-679194acec6f`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/db/backends/oracle/features
 
-- Subject: django/db/backends/oracle/features (id `fe85e0ae-9a79-438b-9a51-f546a7e8d3d3`)
+- Subject: django/db/backends/oracle/features (id `460bc980-047a-42b6-99f7-1ef03195d151`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2224 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

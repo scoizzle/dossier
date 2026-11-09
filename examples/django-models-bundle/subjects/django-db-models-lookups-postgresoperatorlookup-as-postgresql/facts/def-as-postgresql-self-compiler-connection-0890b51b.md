@@ -1,6 +1,6 @@
 # Fact 0890b51b
 
-Store id: e3e9fbf0-f9d1-464f-bf2b-ad0b177aa8f0
+Store id: 564d0002-982e-4c7b-87aa-0f89d0ed5e96
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2478010+00:00`
+- posted_at: `2026-11-09T23:44:54.9496120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 365,
     "symbol": "PostgresOperatorLookup.as_postgresql"
   },
-  "id": "e3e9fbf0-f9d1-464f-bf2b-ad0b177aa8f0",
+  "id": "564d0002-982e-4c7b-87aa-0f89d0ed5e96",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2478010+00:00"
+    "posted_at": "2026-11-09T23:44:54.9496120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e53fe06d-0659-46ce-9b94-0f2d11c86b72",
+  "subject_id": "631c9ba5-b47f-4dfc-b2d5-ae9196ffc577",
   "subject_name": "django/db/models/lookups::PostgresOperatorLookup.as_postgresql",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact b3e617ae
 
-Store id: 2772218f-4ad4-42b3-ab43-50c25b38e48c
+Store id: 2c3e3435-3637-43c3-81b7-bd446a3b039c
 
 ## Text
 
@@ -20,7 +20,7 @@ class HasKeyOrArrayIndex(HasKey)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9095390+00:00`
+- posted_at: `2026-11-09T23:44:50.9814710+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 289,
     "symbol": "HasKeyOrArrayIndex"
   },
-  "id": "2772218f-4ad4-42b3-ab43-50c25b38e48c",
+  "id": "2c3e3435-3637-43c3-81b7-bd446a3b039c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9095390+00:00"
+    "posted_at": "2026-11-09T23:44:50.9814710+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "30f5884b-13ef-4f79-b95e-36086e2bca24",
+  "subject_id": "100a079d-499f-4bff-af8a-f392c449888f",
   "subject_name": "django/db/models/fields/json::HasKeyOrArrayIndex",
   "tags": [
     "entity:class"

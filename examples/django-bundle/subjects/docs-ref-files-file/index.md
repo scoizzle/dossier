@@ -1,10 +1,10 @@
 # docs/ref/files/file
 
-- Subject: docs/ref/files/file (id `b5139991-6df3-4158-87d5-4c3f57c1cb7b`)
+- Subject: docs/ref/files/file (id `aa40ec87-8b9f-4ccf-8ac1-54ffb1f124f0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1812 tokens
-- Facts shown: 57 of 58
+- Used: 1832 tokens
+- Facts shown: 58 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -59,6 +59,7 @@
 - [1db74ab4] .. class:: File(file_object, name=None)
 - [a0a4af24] .. class:: ImageFile(file_object, name=None)
 - [22bd499994c75c8f] .. currentmodule:: django.core.files
+- [22bd499994c75c8f-2] .. currentmodule:: django.core.files
 - [1a221b1e] .. currentmodule:: django.core.files.base
 - [6e009d74] .. currentmodule:: django.core.files.images
 - [22bf3a91] .. method:: File.delete(save=True)

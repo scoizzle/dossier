@@ -1,6 +1,6 @@
 # Fact 231dc24d
 
-Store id: 15f93114-7e29-41af-81ad-f7f148641860
+Store id: 5fedcae2-df93-47c5-ae44-26ea9fa11046
 
 ## Text
 
@@ -20,7 +20,7 @@ class BaseTable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4803010+00:00`
+- posted_at: `2026-11-09T23:44:58.2454170+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 181,
     "symbol": "BaseTable"
   },
-  "id": "15f93114-7e29-41af-81ad-f7f148641860",
+  "id": "5fedcae2-df93-47c5-ae44-26ea9fa11046",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4803010+00:00"
+    "posted_at": "2026-11-09T23:44:58.2454170+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7204d735-d7e3-40bb-9f2b-474f8d4550d4",
+  "subject_id": "a1c0b6a4-3dd1-48f8-9be0-410c3bbb0078",
   "subject_name": "django/db/models/sql/datastructures::BaseTable",
   "tags": [
     "entity:class"

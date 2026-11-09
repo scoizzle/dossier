@@ -1,6 +1,6 @@
 # Fact 2020b68c
 
-Store id: c6326dda-d235-488f-9920-d51e31a89bdc
+Store id: cebbf410-f960-404f-b6dd-b36084ec2d81
 
 ## Text
 
@@ -20,7 +20,7 @@ def _property_names(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0463610+00:00`
+- posted_at: `2026-11-09T23:44:55.5965780+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1000,
     "symbol": "Options._property_names"
   },
-  "id": "c6326dda-d235-488f-9920-d51e31a89bdc",
+  "id": "cebbf410-f960-404f-b6dd-b36084ec2d81",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0463610+00:00"
+    "posted_at": "2026-11-09T23:44:55.5965780+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ed1edc6f-433c-446b-b9c1-0e645696764f",
+  "subject_id": "46fc2948-77fa-4473-9dca-1ed2058bb7fb",
   "subject_name": "django/db/models/options::Options._property_names",
   "tags": [
     "entity:method",

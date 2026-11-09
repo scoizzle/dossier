@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.defer
 
-- Subject: django/db/models/query::QuerySet.defer (id `69b5ba28-6205-4c5e-8656-8eac789ba1cd`)
+- Subject: django/db/models/query::QuerySet.defer (id `102f8208-19f4-4772-a6ac-8e79de75fb2a`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

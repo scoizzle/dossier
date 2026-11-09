@@ -1,6 +1,6 @@
 # Fact 2c40c71b
 
-Store id: 927088d8-d021-40ae-92ea-e5f7b1bc6770
+Store id: 93d0e6ab-0ea5-4f71-8e84-fc81ef20a3da
 
 ## Text
 
@@ -20,7 +20,7 @@ class ContainedBy(FieldGetDbPrepValueMixin, PostgresOperatorLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8725260+00:00`
+- posted_at: `2026-11-09T23:44:50.9564930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 168,
     "symbol": "ContainedBy"
   },
-  "id": "927088d8-d021-40ae-92ea-e5f7b1bc6770",
+  "id": "93d0e6ab-0ea5-4f71-8e84-fc81ef20a3da",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8725260+00:00"
+    "posted_at": "2026-11-09T23:44:50.9564930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e75df377-f49b-4e18-8836-ac52772cc165",
+  "subject_id": "8365e3bd-92b0-4e42-88a0-792b70f8e6b9",
   "subject_name": "django/db/models/fields/json::ContainedBy",
   "tags": [
     "entity:class"

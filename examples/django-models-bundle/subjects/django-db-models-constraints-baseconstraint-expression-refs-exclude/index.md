@@ -1,11 +1,11 @@
 # django/db/models/constraints::BaseConstraint._expression_refs_exclude
 
-- Subject: django/db/models/constraints::BaseConstraint._expression_refs_exclude (id `8a757d10-1348-4f65-83e6-15587224deb1`)
+- Subject: django/db/models/constraints::BaseConstraint._expression_refs_exclude (id `f807e14c-cbc4-4d68-82c0-5507a114afec`)
 - Kind: class_method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

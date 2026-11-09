@@ -1,11 +1,11 @@
 # django/db/models/lookups::PatternLookup
 
-- Subject: django/db/models/lookups::PatternLookup (id `4418826c-473d-4a84-99a9-4ac35f7ce7ab`)
+- Subject: django/db/models/lookups::PatternLookup (id `413afc12-afe1-4de6-a096-e9c0d400591f`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

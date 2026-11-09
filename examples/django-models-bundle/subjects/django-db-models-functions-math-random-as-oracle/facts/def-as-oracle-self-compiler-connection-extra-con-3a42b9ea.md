@@ -1,6 +1,6 @@
 # Fact 3a42b9ea
 
-Store id: 5ca0322e-aff6-46bc-8f05-8323486fd4d3
+Store id: 9a312136-bc95-4a58-9c34-bb8d818d9667
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7480060+00:00`
+- posted_at: `2026-11-09T23:44:53.7544920+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 166,
     "symbol": "Random.as_oracle"
   },
-  "id": "5ca0322e-aff6-46bc-8f05-8323486fd4d3",
+  "id": "9a312136-bc95-4a58-9c34-bb8d818d9667",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7480060+00:00"
+    "posted_at": "2026-11-09T23:44:53.7544920+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3398d792-d938-44eb-973c-8cf2f9cfafb5",
+  "subject_id": "2e6637d9-94c3-46fb-9037-54233f94ad3b",
   "subject_name": "django/db/models/functions/math::Random.as_oracle",
   "tags": [
     "entity:method"

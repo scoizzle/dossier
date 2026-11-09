@@ -1,11 +1,11 @@
 # django/db/models/deletion::DatabaseOnDelete.__str__
 
-- Subject: django/db/models/deletion::DatabaseOnDelete.__str__ (id `963b0e3a-43f9-4182-b633-3e7fd2202971`)
+- Subject: django/db/models/deletion::DatabaseOnDelete.__str__ (id `b2c9b482-5830-43a8-ae6a-59dcb9846706`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

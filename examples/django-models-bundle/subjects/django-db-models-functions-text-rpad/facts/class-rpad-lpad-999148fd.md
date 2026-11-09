@@ -1,6 +1,6 @@
 # Fact 999148fd
 
-Store id: b7d647fa-7a8c-4616-b860-2f225c8721b1
+Store id: 6ca4f4c0-8fdc-48f8-89af-23608c9a9815
 
 ## Text
 
@@ -20,7 +20,7 @@ class RPad(LPad)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2677440+00:00`
+- posted_at: `2026-11-09T23:44:54.1373150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 293,
     "symbol": "RPad"
   },
-  "id": "b7d647fa-7a8c-4616-b860-2f225c8721b1",
+  "id": "6ca4f4c0-8fdc-48f8-89af-23608c9a9815",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2677440+00:00"
+    "posted_at": "2026-11-09T23:44:54.1373150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "00010e17-fe4e-4a1a-8ec5-7dc73f57ff19",
+  "subject_id": "d45daa02-ca54-4d95-9471-1c6042c0ed06",
   "subject_name": "django/db/models/functions/text::RPad",
   "tags": [
     "entity:class"

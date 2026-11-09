@@ -1,10 +1,10 @@
 # django/contrib/postgres/fields/ranges
 
-- Subject: django/contrib/postgres/fields/ranges (id `0fea60ff-4bad-4057-a307-fac11db22923`)
+- Subject: django/contrib/postgres/fields/ranges (id `f3912366-316a-410e-be21-8173e6f6a07d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3096 tokens
-- Facts shown: 60 of 61
+- Used: 3125 tokens
+- Facts shown: 61 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - @model.setter def model(self, model): self.__dict__["model"] = model self.base_field.model = model [5d85b883df2cda2e-2]
 - @property def model(self): try: return self.__dict__["model"] except KeyError: raise AttributeError( "'%s' object has no attribute 'model'" % self.__class__.__name__ ) [e369aa7f9e116693-2]
 - @property def output_field(self): return self.lhs.output_field.base_field [aa8d02fd38786532]
+- @property def output_field(self): return self.lhs.output_field.base_field [aa8d02fd38786532-2]
 - def __init__(self, *args, **kwargs): if "default_bounds" in kwargs: raise TypeError( f"Cannot use 'default_bounds' with {self.__class__.__name__}." ) # Initializing base_field here ensures that its model matches the model # for self. if hasattr(self, "base_field"): self.base_field = self.base_field() super().__init__(*args, **kwargs) [a40f2d6f]
 - def __init__(self, *args, default_bounds=CANONICAL_RANGE_BOUNDS, **kwargs): if default_bounds not in ("[)", "(]", "()", "[]"): raise ValueError("default_bounds must be one of '[)', '(]', '()', or '[]'.") self.default_bounds = default_bounds super().__init__(*args, **kwargs) [1ebd5ca7]
 - def __init__(self, inclusive_lower=True, inclusive_upper=False): self.lower = "[" if inclusive_lower else "(" self.upper = "]" if inclusive_upper else ")" [1618b1f6]
@@ -27,11 +28,12 @@
 - def deconstruct(self): name, path, args, kwargs = super().deconstruct() if self.default_bounds and self.default_bounds != CANONICAL_RANGE_BOUNDS: kwargs["default_bounds"] = self.default_bounds return name, path, args, kwargs [720dfae5]
 - def formfield(self, **kwargs): kwargs.setdefault("default_bounds", self.default_bounds) return super().formfield(**kwargs) [7f85348a]
 - def formfield(self, **kwargs): kwargs.setdefault("form_class", self.form_field) return super().formfield(**kwargs) [821c17c1]
-- def get_placeholder_sql(self, value, compiler, connection): db_type = self.db_type(connection) if hasattr(value, "as_sql"): sql, params = compiler.compile(value) return f"{sql}::{db_type}", params return f"%s::{db_type}", (value,) [2345d4a2368c520e-2]
+- def get_prep_lookup(self): return RangeField().get_prep_value(self.rhs) [9b1f08e6]
+- CANONICAL_RANGE_BOUNDS = "[)" [8cfe962e]
 
 ## All facts
 
-- [9b1f08e6] def get_prep_lookup(self): return RangeField().get_prep_value(self.rhs)
+- [2345d4a2368c520e-2] def get_placeholder_sql(self, value, compiler, connection): db_type = self.db_type(connection) if hasattr(value, "as_sql"): sql, params = compiler.compile(value) return f"{sql}::{db_type}", params return f"%s::{db_type}", (value,)
 - [3d3da6d8] def get_prep_value(self, value): if isinstance(value, (list, tuple)): return self.range_type(value[0], value[1], self.default_bounds) return super().get_prep_value(value)
 - [fc9edefd] def get_prep_value(self, value): if value is None: return None elif isinstance(value, Range): return value elif isinstance(value, (list, tuple)): return self.range_type(value[0], value[1]) return value
 - [683bf800] def process_lhs(self, compiler, connection): lhs, lhs_params = super().process_lhs(compiler, connection) if isinstance(self.lhs.output_field, models.FloatField): lhs = "%s::numeric" % lhs elif isinstance(self.lhs.output_field, models.SmallIntegerField): lhs = "%s::integer" % lhs return lhs, lhs_params
@@ -53,7 +55,6 @@
 - [327cae05] @RangeField.register_lookup class RangeStartsWith(models.Transform): lookup_name = "startswith" function = "lower"
 - [b6e7a4a4] @RangeField.register_lookup class UpperInclusive(models.Transform): lookup_name = "upper_inc" function = "UPPER_INC" output_field = models.BooleanField()
 - [0c4e5339] @RangeField.register_lookup class UpperInfinite(models.Transform): lookup_name = "upper_inf" function = "UPPER_INF" output_field = models.BooleanField()
-- [8cfe962e] CANONICAL_RANGE_BOUNDS = "[)"
 - [411c17fa] DateRangeField.register_lookup(DateTimeRangeContains) DateTimeRangeField.register_lookup(DateTimeRangeContains)
 - [2ab9012d] RangeField.register_lookup(RangeContains) RangeField.register_lookup(lookups.ContainedBy) RangeField.register_lookup(lookups.Overlap)
 - [02f48dd7] __all__ = [ "RangeField", "IntegerRangeField", "BigIntegerRangeField", "DecimalRangeField", "DateTimeRangeField", "DateRangeField", "RangeBoundary", "RangeOperators", ]

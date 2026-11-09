@@ -1,10 +1,10 @@
 # django/db/backends/mysql/base
 
-- Subject: django/db/backends/mysql/base (id `7582c1df-0b23-4349-80f7-b765695f92bf`)
+- Subject: django/db/backends/mysql/base (id `278ddc42-f1b2-461d-9bf6-efecaab16978`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3605 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

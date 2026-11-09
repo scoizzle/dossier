@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_related_selections
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections (id `9f9a5658-fc51-4b77-90e6-83be0a812ab9`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections (id `02952a54-0822-4f54-b41c-40dc3ef8e8dc`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 43 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

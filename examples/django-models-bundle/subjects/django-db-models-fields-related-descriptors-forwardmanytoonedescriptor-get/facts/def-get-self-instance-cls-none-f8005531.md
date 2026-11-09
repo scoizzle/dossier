@@ -1,6 +1,6 @@
 # Fact f8005531
 
-Store id: 1db02de1-8947-46e8-bac8-8391f1f48648
+Store id: e4b81b5f-cd3c-419e-8c14-6e802b2d7ed2
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1564990+00:00`
+- posted_at: `2026-11-09T23:44:51.8495450+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 234,
     "symbol": "ForwardManyToOneDescriptor.__get__"
   },
-  "id": "1db02de1-8947-46e8-bac8-8391f1f48648",
+  "id": "e4b81b5f-cd3c-419e-8c14-6e802b2d7ed2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1564990+00:00"
+    "posted_at": "2026-11-09T23:44:51.8495450+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "26cef91e-e913-4c81-bc3e-8c0ba99c96dd",
+  "subject_id": "7e38f2a7-840d-4d75-bcde-bceba31ac24a",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.__get__",
   "tags": [
     "entity:method"

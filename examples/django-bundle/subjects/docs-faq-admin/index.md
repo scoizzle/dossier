@@ -1,10 +1,10 @@
 # docs/faq/admin
 
-- Subject: docs/faq/admin (id `1a3edef8-8528-4659-a0a3-217f0332cca4`)
+- Subject: docs/faq/admin (id `25656ba8-aa73-40a7-93e3-c4601d403758`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1911 tokens
-- Facts shown: 29 of 29
+- Facts shown: 29 facts
 - Conflicts: 0
 - Gaps: 0
 

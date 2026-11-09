@@ -1,6 +1,6 @@
 # Fact 7fc9172d
 
-Store id: e8b96e36-72b0-4df6-945d-fc37fe9c4b3a
+Store id: 08d789ce-eeb4-49a1-92a8-61b8d6432019
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OracleHashMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e8b96e36-72b0-4df6-945d-fc37fe9c4b3a",
+  "id": "08d789ce-eeb4-49a1-92a8-61b8d6432019",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OracleHashMixin"
       },
       "rel": "contains",
-      "target": "01dae5cb-5216-4d57-943b-32dffd15eb91"
+      "target": "3946a74c-3d49-4e62-a1ab-e7d8f0606f7e"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

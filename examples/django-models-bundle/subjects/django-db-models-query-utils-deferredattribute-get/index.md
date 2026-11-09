@@ -1,11 +1,11 @@
 # django/db/models/query_utils::DeferredAttribute.__get__
 
-- Subject: django/db/models/query_utils::DeferredAttribute.__get__ (id `9947408b-036b-445d-bd11-6e03929f39cd`)
+- Subject: django/db/models/query_utils::DeferredAttribute.__get__ (id `53a6aa07-e7a0-4473-8213-63d68829e9bb`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/utils/regex_helper
 
-- Subject: django/utils/regex_helper (id `ef11aeda-6556-4041-a6c9-d17c3c809593`)
+- Subject: django/utils/regex_helper (id `84a7ff54-a4b9-4c5d-8f3e-d5bb69ca15c8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2630 tokens
-- Facts shown: 28 of 28
+- Facts shown: 28 facts
 - Conflicts: 0
 - Gaps: 0
 

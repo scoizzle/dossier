@@ -1,10 +1,10 @@
 # django/contrib/gis/geometry
 
-- Subject: django/contrib/gis/geometry (id `5a66f285-5682-487d-b175-c90c7827147e`)
+- Subject: django/contrib/gis/geometry (id `1f98dfdf-e931-400e-ac8b-ebb5e6b360dc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 220 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

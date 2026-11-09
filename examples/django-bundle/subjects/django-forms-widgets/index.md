@@ -1,10 +1,10 @@
 # django/forms/widgets
 
-- Subject: django/forms/widgets (id `92ba1db2-cd41-4f58-b893-6739ee79b720`)
+- Subject: django/forms/widgets (id `cf6c26c9-874d-4979-a0f1-8705df8ee141`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 10031 tokens
-- Facts shown: 175 of 180
+- Used: 10232 tokens
+- Facts shown: 180 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -49,6 +49,7 @@
 - [dce37405] You'll probably want to use this class with MultiValueField. """
 - [f28c2508] def __add__(self, other): if not isinstance(other, Media): return NotImplemented combined = Media() combined._css_lists = self._css_lists[:] combined._js_lists = self._js_lists[:] for item in other._css_lists: if item and item not in self._css_lists: combined._css_lists.append(item) for item in other._js_lists: if item and item not in self._js_lists: combined._js_lists.append(item) return combined
 - [5609b8ee] def __deepcopy__(self, memo): obj = copy.copy(self) obj.attrs = self.attrs.copy() memo[id(self)] = obj return obj
+- [57dead3d] def __deepcopy__(self, memo): obj = copy.copy(self) obj.attrs = self.attrs.copy() obj.choices = copy.copy(self.choices) memo[id(self)] = obj return obj
 - [3b6e1f73] def __deepcopy__(self, memo): obj = super().__deepcopy__(memo) obj.widgets = copy.deepcopy(self.widgets) return obj
 - [6ef0018a] def __eq__(self, other): # Compare path and attrs to ensure performant comparison # in Media.merge. return ( self.__class__ is other.__class__ and self._path == other._path and self.attributes == other.attributes ) or (isinstance(other, str) and self._path == other)
 - [7e2f8666] def __getitem__(self, name): """Return a Media object that only contains media of the given type.""" if name in MEDIA_TYPES: return Media(**{str(name): getattr(self, "_" + name)}) raise KeyError('Unknown media type "%s"' % name)
@@ -73,6 +74,7 @@
 - [70b13d28] def __repr__(self): return "Media(css=%r, js=%r)" % (self._css, self._js)
 - [aefa2d75] def __repr__(self): return f"{type(self).__qualname__}({self._path!r})"
 - [49575884271ddde1] def __str__(self): return self.render()
+- [49575884271ddde1-2] def __str__(self): return self.render()
 - [f582673d] def _get_media(self): """ Media for a multiwidget is the combination of all media of the subwidgets. """ media = Media() for w in self.widgets: media += w.media return media
 - [da64cb83] def _render(self, template_name, context, renderer=None): if renderer is None: renderer = get_default_renderer() return mark_safe(renderer.render(template_name, context))
 - [02f291c0] def absolute_path(self, path): """ Given a relative or absolute path to a static asset, return an absolute path. An absolute path will be returned unchanged while a relative path will be passed to django.templatetags.static.static(). """ if path.startswith(("http://", "https://", "/")): return path return static(path)
@@ -126,14 +128,17 @@
 - [c5ecbff4] def value_from_datadict(self, data, files, name): if name not in data: # A missing value means False because HTML form submission does not # send results for unselected checkboxes. return False value = data.get(name) # Translate true and false strings to boolean values. values = {"true": True, "false": False} if isinstance(value, str): value = values.get(value.lower(), value) return bool(value)
 - [55cbd7cf] def value_from_datadict(self, data, files, name): return [ widget.value_from_datadict(data, files, name + widget_name) for widget_name, widget in zip(self.widgets_names, self.widgets) ]
 - [af62755a52859f4d] def value_from_datadict(self, data, files, name): try: getter = data.getlist except AttributeError: getter = data.get return getter(name)
+- [af62755a52859f4d-2] def value_from_datadict(self, data, files, name): try: getter = data.getlist except AttributeError: getter = data.get return getter(name)
 - [c3ce177a] def value_from_datadict(self, data, files, name): upload = super().value_from_datadict(data, files, name) self.checked = self.clear_checkbox_name(name) in data if not self.is_required and CheckboxInput().value_from_datadict( data, files, self.clear_checkbox_name(name) ): if upload: # If the user contradicts themselves (uploads a new file AND # checks the "clear" checkbox), we return a unique marker # object that FileField will turn into a ValidationError. return FILE_INPUT_CONTRADICTION # False signals to clear any existing value, as opposed to just # None return False return upload
 - [851f74bc] def value_from_datadict(self, data, files, name): value = data.get(name) return { True: True, "True": True, "False": False, False: False, "true": True, "false": False, # For backwards compatibility with Django < 2.2. "2": True, "3": False, }.get(value)
 - [3e6407d8] def value_from_datadict(self, data, files, name): y = data.get(self.year_field % name) m = data.get(self.month_field % name) d = data.get(self.day_field % name) if y == m == d == "": return None if y is not None and m is not None and d is not None: input_format = get_format("DATE_INPUT_FORMATS")[0] input_format = formats.sanitize_strftime_format(input_format) try: date_value = datetime.date(int(y), int(m), int(d)) except ValueError: # Return pseudo-ISO dates with zeros for any unselected values, # e.g. '2017-0-23'. return "%s-%s-%s" % (y or 0, m or 0, d or 0) except OverflowError: return "0-0-0" return date_value.strftime(input_format) return data.get(name)
 - [a2d6394e] def value_omitted_from_data(self, data, files, name): # An unselected <select multiple> doesn't appear in POST data, so it's # never known if the value is actually omitted. return False
 - [dac81aef2774d71e] def value_omitted_from_data(self, data, files, name): # HTML checkboxes don't appear in POST data if not checked, so it's # never known if the value is actually omitted. return False
+- [dac81aef2774d71e-2] def value_omitted_from_data(self, data, files, name): # HTML checkboxes don't appear in POST data if not checked, so it's # never known if the value is actually omitted. return False
 - [e721cd6e] def value_omitted_from_data(self, data, files, name): return ( super().value_omitted_from_data(data, files, name) and self.clear_checkbox_name(name) not in data )
 - [08f4ed24] def value_omitted_from_data(self, data, files, name): return all( widget.value_omitted_from_data(data, files, name + widget_name) for widget_name, widget in zip(self.widgets_names, self.widgets) )
 - [9229c1dd] def value_omitted_from_data(self, data, files, name): return name not in data
+- [6097fe48] def value_omitted_from_data(self, data, files, name): return name not in files
 - [5d5782e9] def value_omitted_from_data(self, data, files, name): return not any( ("{}_{}".format(name, interval) in data) for interval in ("year", "month", "day") )
 - [3060c2c8] input_type = None # Subclasses must define this. template_name = "django/forms/widgets/input.html"
 - [b35e416f] media = property(_get_media)

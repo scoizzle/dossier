@@ -1,6 +1,6 @@
 # Fact 8b2399ed
 
-Store id: 7c517140-82b5-4cee-8c1d-e4872d306674
+Store id: 816dd681-2458-4439-92d8-3f30c86f2152
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, sample=False, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5495470+00:00`
+- posted_at: `2026-11-09T23:44:48.4070220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 463,
     "symbol": "Variance.__init__"
   },
-  "id": "7c517140-82b5-4cee-8c1d-e4872d306674",
+  "id": "816dd681-2458-4439-92d8-3f30c86f2152",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5495470+00:00"
+    "posted_at": "2026-11-09T23:44:48.4070220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a8ef4e9-71c8-423f-9e38-3b0dd470b171",
+  "subject_id": "fd139fc6-8d07-4e6d-9614-eff6e2677fd6",
   "subject_name": "django/db/models/aggregates::Variance.__init__",
   "tags": [
     "entity:method"

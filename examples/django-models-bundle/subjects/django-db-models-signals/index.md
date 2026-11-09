@@ -1,10 +1,10 @@
 # django/db/models/signals
 
-- Subject: django/db/models/signals (id `caae093d-2e65-40f1-9798-db10aff0f9e8`)
+- Subject: django/db/models/signals (id `33fd3e73-9894-403b-a8fc-258210bc02ae`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

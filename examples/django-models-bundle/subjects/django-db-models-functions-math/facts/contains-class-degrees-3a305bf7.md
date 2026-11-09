@@ -1,6 +1,6 @@
 # Fact 3a305bf7
 
-Store id: 25bd96dd-c4a3-45fd-894e-85e0259aba49
+Store id: 142af75f-5031-4c1c-a64d-dc7b8e921dae
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Degrees
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "25bd96dd-c4a3-45fd-894e-85e0259aba49",
+  "id": "142af75f-5031-4c1c-a64d-dc7b8e921dae",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Degrees"
       },
       "rel": "contains",
-      "target": "edef03f0-9a3b-451b-b6d3-ac3a1cd33720"
+      "target": "067ce70d-2069-4d5d-84d3-bf30592e3b92"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

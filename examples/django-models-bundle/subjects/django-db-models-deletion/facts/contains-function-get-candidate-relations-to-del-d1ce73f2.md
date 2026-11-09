@@ -1,6 +1,6 @@
 # Fact d1ce73f2
 
-Store id: 21dd9faf-57a8-4deb-afd2-6d405fedd321
+Store id: 6a87169c-d522-41cc-9626-d2a1523bdd3c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_candidate_relations_to_delete
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1285340+00:00`
+- posted_at: `2026-11-09T23:44:48.9179750+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "21dd9faf-57a8-4deb-afd2-6d405fedd321",
+  "id": "6a87169c-d522-41cc-9626-d2a1523bdd3c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1285340+00:00"
+    "posted_at": "2026-11-09T23:44:48.9179750+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_candidate_relations_to_delete"
       },
       "rel": "contains",
-      "target": "005f9048-056e-4164-9d30-ad2bd8ee3506"
+      "target": "7f8a2d4c-190d-450c-8994-cad55519d55c"
     }
   ],
   "status": "live",
-  "subject_id": "c6ec8df1-dcd1-4e95-abda-df3f68ba6875",
+  "subject_id": "64ffe9c5-9ade-4b8f-a82d-b80d0ea921ae",
   "subject_name": "django/db/models/deletion",
   "tags": [
     "entity:function"

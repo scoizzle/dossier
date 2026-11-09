@@ -1,6 +1,6 @@
 # Fact 9b651dce
 
-Store id: 075ea2da-34a0-4d57-a841-19910265ebc8
+Store id: 62c96508-187c-4a70-9588-f8ee03a17573
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9799890+00:00`
+- posted_at: `2026-11-09T23:44:51.0297140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 545,
     "symbol": "KeyTextTransform.as_mysql"
   },
-  "id": "075ea2da-34a0-4d57-a841-19910265ebc8",
+  "id": "62c96508-187c-4a70-9588-f8ee03a17573",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9799890+00:00"
+    "posted_at": "2026-11-09T23:44:51.0297140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c4c7a09e-c605-4fae-b84b-6ac2f1bad91c",
+  "subject_id": "c6d515db-7c9e-4363-af3c-ccd7b25d09b7",
   "subject_name": "django/db/models/fields/json::KeyTextTransform.as_mysql",
   "tags": [
     "entity:method"

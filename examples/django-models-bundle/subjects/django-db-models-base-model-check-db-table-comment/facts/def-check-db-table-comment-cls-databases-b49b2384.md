@@ -1,6 +1,6 @@
 # Fact b49b2384
 
-Store id: 0feb1501-127f-4477-a97a-8aa2d6f5eddc
+Store id: 873cb8a4-79a1-4b39-89cf-50800d0a0897
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_db_table_comment(cls, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7614490+00:00`
+- posted_at: `2026-11-09T23:44:48.5469190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1872,
     "symbol": "Model._check_db_table_comment"
   },
-  "id": "0feb1501-127f-4477-a97a-8aa2d6f5eddc",
+  "id": "873cb8a4-79a1-4b39-89cf-50800d0a0897",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7614490+00:00"
+    "posted_at": "2026-11-09T23:44:48.5469190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7bba7365-c8bd-4a7b-bd5a-a2999c977f33",
+  "subject_id": "6f45f3b2-6656-42c3-9335-ed7716b5f04c",
   "subject_name": "django/db/models/base::Model._check_db_table_comment",
   "tags": [
     "entity:class_method",

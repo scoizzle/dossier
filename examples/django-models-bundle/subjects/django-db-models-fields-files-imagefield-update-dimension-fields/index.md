@@ -1,11 +1,11 @@
 # django/db/models/fields/files::ImageField.update_dimension_fields
 
-- Subject: django/db/models/fields/files::ImageField.update_dimension_fields (id `57cde076-bb2f-4a6c-9450-cb3a2eb55565`)
+- Subject: django/db/models/fields/files::ImageField.update_dimension_fields (id `65eea545-01ce-4e31-8fc7-769a7135dbb8`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

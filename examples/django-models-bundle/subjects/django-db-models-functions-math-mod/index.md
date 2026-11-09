@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Mod
 
-- Subject: django/db/models/functions/math::Mod (id `f7db253c-285e-41ca-b03d-ed9597cb9a91`)
+- Subject: django/db/models/functions/math::Mod (id `48f3d0ca-4f99-4362-a9b3-f96849c0f6ab`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

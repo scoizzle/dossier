@@ -1,10 +1,10 @@
 # docs/howto/mailers-migration
 
-- Subject: docs/howto/mailers-migration (id `88583611-e1d8-4c96-add3-151d853ff565`)
+- Subject: docs/howto/mailers-migration (id `e4654305-ecad-445b-a042-0a5fda05c608`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5713 tokens
-- Facts shown: 117 of 117
+- Facts shown: 117 facts
 - Conflicts: 0
 - Gaps: 0
 

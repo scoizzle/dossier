@@ -1,6 +1,6 @@
 # Fact 93d26cbd
 
-Store id: 6b6d1532-1fa8-4b3e-b279-c74b8aa063e6
+Store id: c9d83e6f-9ac2-4b08-adb6-ca1b445079f5
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5374460+00:00`
+- posted_at: `2026-11-09T23:44:48.3994930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 271,
     "symbol": "BitAggregate.as_oracle"
   },
-  "id": "6b6d1532-1fa8-4b3e-b279-c74b8aa063e6",
+  "id": "c9d83e6f-9ac2-4b08-adb6-ca1b445079f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5374460+00:00"
+    "posted_at": "2026-11-09T23:44:48.3994930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a73b5c9a-6f88-45e7-8613-570ea66591be",
+  "subject_id": "fa80a3f2-c9a4-4a48-b43c-123e1ea610fd",
   "subject_name": "django/db/models/aggregates::BitAggregate.as_oracle",
   "tags": [
     "entity:method"

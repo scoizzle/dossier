@@ -1,6 +1,6 @@
 # Fact b6c070ec
 
-Store id: ba7eacc6-4c3a-4049-a95e-b570b5c9e39f
+Store id: 016cd64d-3b96-4681-bb8e-faad3d7ca655
 
 ## Text
 
@@ -20,7 +20,7 @@ class Sqrt(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7760330+00:00`
+- posted_at: `2026-11-09T23:44:53.7741020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 207,
     "symbol": "Sqrt"
   },
-  "id": "ba7eacc6-4c3a-4049-a95e-b570b5c9e39f",
+  "id": "016cd64d-3b96-4681-bb8e-faad3d7ca655",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7760330+00:00"
+    "posted_at": "2026-11-09T23:44:53.7741020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47248188-936e-4721-a29b-1e88702e39c0",
+  "subject_id": "82509de4-0361-49c1-9d00-6313dbce4f20",
   "subject_name": "django/db/models/functions/math::Sqrt",
   "tags": [
     "entity:class"

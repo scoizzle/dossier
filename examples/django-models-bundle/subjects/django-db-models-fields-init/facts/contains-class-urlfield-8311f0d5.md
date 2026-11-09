@@ -1,6 +1,6 @@
 # Fact 8311f0d5
 
-Store id: 2928ae31-269e-44c7-ba75-78f097bde0bb
+Store id: 350971c0-61f6-488f-8eb8-963db048b27a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class URLField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2928ae31-269e-44c7-ba75-78f097bde0bb",
+  "id": "350971c0-61f6-488f-8eb8-963db048b27a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "URLField"
       },
       "rel": "contains",
-      "target": "e58bdd34-ecd1-47fa-b3b3-b6b96ffc801d"
+      "target": "fb1f2233-938e-446d-937b-90f1b5cd7237"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

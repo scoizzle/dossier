@@ -1,6 +1,6 @@
 # Fact 6c780d82
 
-Store id: 5ffae523-d241-4195-9ab8-00d68a79b147
+Store id: 80efa1d3-b1ea-43dc-87b9-5f702ae4a581
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.2897550+00:00`
+- posted_at: `2026-11-09T23:44:48.7897720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 546,
     "symbol": "UniqueConstraint.__eq__"
   },
-  "id": "5ffae523-d241-4195-9ab8-00d68a79b147",
+  "id": "80efa1d3-b1ea-43dc-87b9-5f702ae4a581",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.2897550+00:00"
+    "posted_at": "2026-11-09T23:44:48.7897720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "91d0552c-cf34-454c-87be-c1d9cd3289a3",
+  "subject_id": "19f86286-261c-4b66-ac04-30f7ab4f1d72",
   "subject_name": "django/db/models/constraints::UniqueConstraint.__eq__",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/core/management/commands/startapp
 
-- Subject: django/core/management/commands/startapp (id `967d160c-f9c5-411d-8724-b95b9401be2f`)
+- Subject: django/core/management/commands/startapp (id `599b31ca-a27c-476c-a927-f6e063b1c1ab`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 143 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

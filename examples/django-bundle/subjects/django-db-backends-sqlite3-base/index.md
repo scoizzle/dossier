@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/base
 
-- Subject: django/db/backends/sqlite3/base (id `79ea414f-02df-4702-addc-f03e27f8b695`)
+- Subject: django/db/backends/sqlite3/base (id `6c67168d-9783-40e7-b69e-fb5f5cc0c51a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3463 tokens
-- Facts shown: 38 of 38
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 

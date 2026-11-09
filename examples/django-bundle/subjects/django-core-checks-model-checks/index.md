@@ -1,10 +1,10 @@
 # django/core/checks/model_checks
 
-- Subject: django/core/checks/model_checks (id `1158b948-85fc-4b38-80e8-2f10c30d308e`)
+- Subject: django/core/checks/model_checks (id `84701e84-4ffa-499b-96c7-a8a6a576514c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1923 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

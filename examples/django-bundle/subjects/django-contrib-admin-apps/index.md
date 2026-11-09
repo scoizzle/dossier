@@ -1,10 +1,10 @@
 # django/contrib/admin/apps
 
-- Subject: django/contrib/admin/apps (id `5cfb8685-245c-4b2d-adfd-2c4a05bf6188`)
+- Subject: django/contrib/admin/apps (id `67be3bfb-84a0-4b30-a425-0e63bdc5f33e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 266 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

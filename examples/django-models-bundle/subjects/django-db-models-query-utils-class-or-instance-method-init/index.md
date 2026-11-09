@@ -1,11 +1,11 @@
 # django/db/models/query_utils::class_or_instance_method.__init__
 
-- Subject: django/db/models/query_utils::class_or_instance_method.__init__ (id `282397de-5a0a-4d83-9260-752da353aecd`)
+- Subject: django/db/models/query_utils::class_or_instance_method.__init__ (id `836fd4e8-ebbc-4aae-8b6a-1468df357537`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

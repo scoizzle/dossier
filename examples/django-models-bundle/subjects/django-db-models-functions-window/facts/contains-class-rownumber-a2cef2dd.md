@@ -1,6 +1,6 @@
 # Fact a2cef2dd
 
-Store id: a35eece0-74a2-4185-800f-965e4ea008f5
+Store id: 479adc60-6173-4032-b5cf-18358226fae3
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RowNumber
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7398280+00:00`
+- posted_at: `2026-11-09T23:44:54.5136690+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a35eece0-74a2-4185-800f-965e4ea008f5",
+  "id": "479adc60-6173-4032-b5cf-18358226fae3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
+    "posted_at": "2026-11-09T23:44:54.5136690+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RowNumber"
       },
       "rel": "contains",
-      "target": "3110707d-1792-4eb7-a722-e156e7403a7f"
+      "target": "85da41c9-2c79-49ec-aaed-de07fb84cb33"
     }
   ],
   "status": "live",
-  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
+  "subject_id": "0980d3e2-fd09-4943-88c2-8f704578a39a",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

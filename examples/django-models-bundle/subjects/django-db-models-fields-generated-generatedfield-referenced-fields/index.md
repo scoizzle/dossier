@@ -1,11 +1,11 @@
 # django/db/models/fields/generated::GeneratedField.referenced_fields
 
-- Subject: django/db/models/fields/generated::GeneratedField.referenced_fields (id `b1f6f930-0a2f-493d-ad70-366d91229fd0`)
+- Subject: django/db/models/fields/generated::GeneratedField.referenced_fields (id `10400777-1d26-4f95-83f2-ccbce95f8038`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

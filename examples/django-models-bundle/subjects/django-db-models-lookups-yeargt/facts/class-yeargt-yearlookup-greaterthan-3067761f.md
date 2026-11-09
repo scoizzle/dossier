@@ -1,6 +1,6 @@
 # Fact 3067761f
 
-Store id: 0b0bbac1-30ca-4b71-b779-63267450f546
+Store id: cad2fba2-4f37-4644-9c40-a4e8db8e1b41
 
 ## Text
 
@@ -20,7 +20,7 @@ class YearGt(YearLookup, GreaterThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4375390+00:00`
+- posted_at: `2026-11-09T23:44:55.0750640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 761,
     "symbol": "YearGt"
   },
-  "id": "0b0bbac1-30ca-4b71-b779-63267450f546",
+  "id": "cad2fba2-4f37-4644-9c40-a4e8db8e1b41",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4375390+00:00"
+    "posted_at": "2026-11-09T23:44:55.0750640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4e54fc69-eb4c-47e2-9eec-a06a781de544",
+  "subject_id": "84633d12-9212-4f58-bb5d-d8b8301944ac",
   "subject_name": "django/db/models/lookups::YearGt",
   "tags": [
     "entity:class"

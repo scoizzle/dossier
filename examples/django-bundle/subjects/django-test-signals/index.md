@@ -1,10 +1,10 @@
 # django/test/signals
 
-- Subject: django/test/signals (id `2e45f565-8a35-4d02-a4fa-b95a46f67346`)
+- Subject: django/test/signals (id `5953c7b8-31f3-48c1-888c-b2ea9cd733f3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2149 tokens
-- Facts shown: 52 of 53
+- Used: 2168 tokens
+- Facts shown: 53 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -29,6 +29,7 @@
 - get_commands.cache_clear() # Rebuild get_app_template_dirs cache. from django.template.utils import get_app_template_dirs [7943fa37]
 - get_default_password_validators.cache_clear() [2342d453]
 - get_default_renderer.cache_clear() [e0569ea4189b07da]
+- get_default_renderer.cache_clear() [e0569ea4189b07da-2]
 - get_finder.cache_clear() [144b8eed]
 - get_finder.cache_clear() # Rebuild management commands cache from django.core.management import get_commands [c438b2dd]
 - serializers._serializers = {} [c516843e]
@@ -39,7 +40,6 @@
 - try: del engines.templates except AttributeError: pass engines._templates = None engines._engines = {} from django.template.engine import Engine [7f15fda1]
 - # Reset the database connections' time zone if setting in {"TIME_ZONE", "USE_TZ"}: for conn in connections.all(initialized_only=True): try: del conn.timezone except AttributeError: pass try: del conn.timezone_name except AttributeError: pass conn.ensure_timezone() [d8cbc03e]
 - if setting in ( "STORAGES", "STATIC_ROOT", "STATIC_URL", ): try: del storages.backends except AttributeError: pass storages._backends = None storages._storages = {} [27471d46]
-- from asgiref.local import Local [6beab4e4549a99b7-2]
 
 ## All facts
 
@@ -62,6 +62,7 @@
 - [d282a656] @receiver(setting_changed) def update_installed_apps(*, setting, **kwargs): if setting == "INSTALLED_APPS": # Rebuild any AppDirectoriesFinder instance. from django.contrib.staticfiles.finders import get_finder
 - [ebae3b9b] @receiver(setting_changed) def update_logging_config(*, setting, **kwargs): if setting in {"LOGGING", "LOGGING_CONFIG"}: configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
 - [d0edb55b] @receiver(setting_changed) def user_model_swapped(*, setting, **kwargs): if setting == "AUTH_USER_MODEL": apps.clear_cache() try: from django.contrib.auth import get_user_model
+- [6beab4e4549a99b7-2] from asgiref.local import Local
 - [a1ad1431] from django.apps import apps from django.conf import settings from django.core.exceptions import ImproperlyConfigured from django.core.signals import setting_changed from django.db import connections, router from django.db.utils import ConnectionRouter from django.dispatch import Signal, receiver from django.utils import timezone from django.utils.formats import FORMAT_SETTINGS, reset_format_cache from django.utils.functional import empty from django.utils.log import configure_logging
 - [b91dc666] import os import time import warnings
 - [d87db186] template_rendered = Signal()

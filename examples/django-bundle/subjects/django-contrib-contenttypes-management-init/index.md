@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/management/__init__
 
-- Subject: django/contrib/contenttypes/management/__init__ (id `b30fa5e9-3fbd-4972-a721-e785ef81482e`)
+- Subject: django/contrib/contenttypes/management/__init__ (id `df0b67a2-b50b-4b52-8c98-4e21232f9d63`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1171 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

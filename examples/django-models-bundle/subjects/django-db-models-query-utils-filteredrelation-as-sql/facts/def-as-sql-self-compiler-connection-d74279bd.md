@@ -1,6 +1,6 @@
 # Fact d74279bd
 
-Store id: c5f3ae5a-882c-4963-be33-944ce166f1b8
+Store id: 5e2ccc8a-496a-407d-a92e-b714aef7a69c
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2238970+00:00`
+- posted_at: `2026-11-09T23:44:56.7684290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 569,
     "symbol": "FilteredRelation.as_sql"
   },
-  "id": "c5f3ae5a-882c-4963-be33-944ce166f1b8",
+  "id": "5e2ccc8a-496a-407d-a92e-b714aef7a69c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2238970+00:00"
+    "posted_at": "2026-11-09T23:44:56.7684290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9343596a-d28c-465c-b79d-12165b6e4739",
+  "subject_id": "2720507e-d0d1-4574-82a9-611c2441f52f",
   "subject_name": "django/db/models/query_utils::FilteredRelation.as_sql",
   "tags": [
     "entity:method"

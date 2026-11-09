@@ -1,10 +1,10 @@
 # django/middleware/csrf
 
-- Subject: django/middleware/csrf (id `62f80ad9-d4b5-4cd7-ae5d-342d85cf65c3`)
+- Subject: django/middleware/csrf (id `2eab72d8-3745-4c79-b488-caf2f1421f68`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4572 tokens
-- Facts shown: 54 of 54
+- Facts shown: 54 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 3b9a14df
 
-Store id: 141ab5cc-99a1-48bd-a497-7baf6eb561c4
+Store id: e92ebd6c-b1bb-46e9-bdc5-39537c555a2c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function cursor_iter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.1168670+00:00`
+- posted_at: `2026-11-09T23:44:57.7715820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "141ab5cc-99a1-48bd-a497-7baf6eb561c4",
+  "id": "e92ebd6c-b1bb-46e9-bdc5-39537c555a2c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.1168670+00:00"
+    "posted_at": "2026-11-09T23:44:57.7715820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "cursor_iter"
       },
       "rel": "contains",
-      "target": "1fd19681-3402-44b7-b123-c8ec1090187c"
+      "target": "89def0e0-3f76-4740-8f18-9ec9f2c96522"
     }
   ],
   "status": "live",
-  "subject_id": "eec456aa-334a-4312-a193-ed044257811d",
+  "subject_id": "d0d15420-734c-41c7-8915-96b8b2169578",
   "subject_name": "django/db/models/sql/compiler",
   "tags": [
     "entity:function"

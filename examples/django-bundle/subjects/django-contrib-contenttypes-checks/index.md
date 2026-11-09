@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/checks
 
-- Subject: django/contrib/contenttypes/checks (id `b813402b-6c1c-40d5-ad01-ca2c374d3f80`)
+- Subject: django/contrib/contenttypes/checks (id `d56a4801-3d25-41a9-ac67-b204b9c61a28`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 300 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

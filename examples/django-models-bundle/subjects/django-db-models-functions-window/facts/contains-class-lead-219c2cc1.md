@@ -1,6 +1,6 @@
 # Fact 219c2cc1
 
-Store id: 7d8ce8fe-d599-4fdc-be21-8e9227d93d44
+Store id: fccdd262-4ce4-4ae3-8a9c-dc51ea9f6713
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Lead
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7398280+00:00`
+- posted_at: `2026-11-09T23:44:54.5136690+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7d8ce8fe-d599-4fdc-be21-8e9227d93d44",
+  "id": "fccdd262-4ce4-4ae3-8a9c-dc51ea9f6713",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
+    "posted_at": "2026-11-09T23:44:54.5136690+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Lead"
       },
       "rel": "contains",
-      "target": "3091f539-9c93-43ac-a5c5-99fc530f9544"
+      "target": "25226143-3f5c-4c72-8248-61731f15b836"
     }
   ],
   "status": "live",
-  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
+  "subject_id": "0980d3e2-fd09-4943-88c2-8f704578a39a",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

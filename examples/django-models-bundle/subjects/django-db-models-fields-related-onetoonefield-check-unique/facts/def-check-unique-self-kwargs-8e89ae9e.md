@@ -1,6 +1,6 @@
 # Fact 8e89ae9e
 
-Store id: 2ec3b68d-9c99-4cee-bc98-821fba7029d8
+Store id: e0cc1abd-e3a0-4473-881b-c2c6d0b0cc85
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_unique(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8174090+00:00`
+- posted_at: `2026-11-09T23:44:51.6229420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1396,
     "symbol": "OneToOneField._check_unique"
   },
-  "id": "2ec3b68d-9c99-4cee-bc98-821fba7029d8",
+  "id": "e0cc1abd-e3a0-4473-881b-c2c6d0b0cc85",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8174090+00:00"
+    "posted_at": "2026-11-09T23:44:51.6229420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2cc4166c-5660-4d81-afa2-92322be5cba2",
+  "subject_id": "07ae10dc-f69d-451e-ba50-99cbe1fadcea",
   "subject_name": "django/db/models/fields/related::OneToOneField._check_unique",
   "tags": [
     "entity:method"

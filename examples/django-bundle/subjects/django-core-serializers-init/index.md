@@ -1,10 +1,10 @@
 # django/core/serializers/__init__
 
-- Subject: django/core/serializers/__init__ (id `f052ffb5-578f-4e61-9419-01db3671fc68`)
+- Subject: django/core/serializers/__init__ (id `7c594e8f-effd-4edf-bf01-e4f9b17ad02f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2204 tokens
-- Facts shown: 38 of 38
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 

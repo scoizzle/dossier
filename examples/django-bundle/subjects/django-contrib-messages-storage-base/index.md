@@ -1,10 +1,10 @@
 # django/contrib/messages/storage/base
 
-- Subject: django/contrib/messages/storage/base (id `1d6ff17c-899f-4581-9fd0-af956043b83e`)
+- Subject: django/contrib/messages/storage/base (id `254da9c0-1ab8-46ca-9a03-0e541961fac3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1606 tokens
-- Facts shown: 34 of 34
+- Facts shown: 34 facts
 - Conflicts: 0
 - Gaps: 0
 

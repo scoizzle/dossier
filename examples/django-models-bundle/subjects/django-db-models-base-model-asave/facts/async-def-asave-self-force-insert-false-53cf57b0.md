@@ -1,6 +1,6 @@
 # Fact 53cf57b0
 
-Store id: d5bab3cb-b48d-4ac7-af6c-e189af5f79f4
+Store id: 95a3424f-6cb3-48d6-b3a4-2ada74bd3555
 
 ## Text
 
@@ -20,7 +20,7 @@ async def asave( self, *, force_insert=False, force_update=False, using=None, up
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7405690+00:00`
+- posted_at: `2026-11-09T23:44:48.5332410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 913,
     "symbol": "Model.asave"
   },
-  "id": "d5bab3cb-b48d-4ac7-af6c-e189af5f79f4",
+  "id": "95a3424f-6cb3-48d6-b3a4-2ada74bd3555",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7405690+00:00"
+    "posted_at": "2026-11-09T23:44:48.5332410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e788437e-5b64-4903-ab2b-8b47c0887ec3",
+  "subject_id": "7e02af50-a2d7-4684-ae70-0cbaec6a6133",
   "subject_name": "django/db/models/base::Model.asave",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact e0d68d0f
 
-Store id: 85e983d6-ed3c-413b-a0c7-14a0dc5b1763
+Store id: 767294b9-af37-48d7-8a02-59bb8588dcc5
 
 ## Text
 
@@ -20,7 +20,7 @@ def _identity(cls, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7996500+00:00`
+- posted_at: `2026-11-09T23:44:49.4242900+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 528,
     "symbol": "Expression._identity"
   },
-  "id": "85e983d6-ed3c-413b-a0c7-14a0dc5b1763",
+  "id": "767294b9-af37-48d7-8a02-59bb8588dcc5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7996500+00:00"
+    "posted_at": "2026-11-09T23:44:49.4242900+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a6155c6b-0859-422a-9bbc-e0bae8a97fbf",
+  "subject_id": "f92deac3-d559-4bc7-bc4a-5f910688cbd2",
   "subject_name": "django/db/models/expressions::Expression._identity",
   "tags": [
     "entity:class_method",

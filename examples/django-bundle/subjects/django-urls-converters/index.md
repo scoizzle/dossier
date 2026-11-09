@@ -1,10 +1,10 @@
 # django/urls/converters
 
-- Subject: django/urls/converters (id `3311120f-4fbd-425c-b133-a05515cb5b90`)
+- Subject: django/urls/converters (id `b7061c50-dd63-4226-ae82-339a0d1716da`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 425 tokens
-- Facts shown: 15 of 18
+- Used: 487 tokens
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,7 +13,10 @@
 - _route_to_regex.cache_clear() [a318c3b9]
 - def to_python(self, value): return int(value) [fed5d990]
 - def to_python(self, value): return uuid.UUID(value) [bb9c7e6b]
+- def to_python(self, value): return value [c4ee35c80c5b41d7-2]
 - def to_url(self, value): return str(value) [a030254e048c5261]
+- def to_url(self, value): return str(value) [a030254e048c5261-2]
+- def to_url(self, value): return value [e8f4c4c4]
 - from django.urls.resolvers import _route_to_regex [379412f2]
 - @functools.cache def get_converters(): return {**DEFAULT_CONVERTERS, **REGISTERED_CONVERTERS} [a42b94b0]
 - DEFAULT_CONVERTERS = { "int": IntConverter(), "path": PathConverter(), "slug": SlugConverter(), "str": StringConverter(), "uuid": UUIDConverter(), } [3a06c475]

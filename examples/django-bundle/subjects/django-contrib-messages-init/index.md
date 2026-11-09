@@ -1,10 +1,10 @@
 # django/contrib/messages/__init__
 
-- Subject: django/contrib/messages/__init__ (id `5a3eedd4-b55c-4961-b63c-bed6a4a7614e`)
+- Subject: django/contrib/messages/__init__ (id `1795fec2-f6d9-430f-935d-2c753e63a2e3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 53 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

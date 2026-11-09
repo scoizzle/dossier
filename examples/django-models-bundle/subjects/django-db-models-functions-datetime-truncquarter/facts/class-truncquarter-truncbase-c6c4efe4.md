@@ -1,6 +1,6 @@
 # Fact c6c4efe4
 
-Store id: d9823e49-2bab-4a44-b716-8853b2026dee
+Store id: 9da36cd4-46e8-4e12-bec5-cea4bc93f621
 
 ## Text
 
@@ -20,7 +20,7 @@ class TruncQuarter(TruncBase)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2761570+00:00`
+- posted_at: `2026-11-09T23:44:53.3967700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 365,
     "symbol": "TruncQuarter"
   },
-  "id": "d9823e49-2bab-4a44-b716-8853b2026dee",
+  "id": "9da36cd4-46e8-4e12-bec5-cea4bc93f621",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2761570+00:00"
+    "posted_at": "2026-11-09T23:44:53.3967700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2f5fff05-2c12-43c7-b20b-12ed46ad1162",
+  "subject_id": "d4e724f9-8d4f-4cf4-aab5-55b8451af961",
   "subject_name": "django/db/models/functions/datetime::TruncQuarter",
   "tags": [
     "entity:class"

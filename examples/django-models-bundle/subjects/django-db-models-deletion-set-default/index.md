@@ -1,11 +1,11 @@
 # django/db/models/deletion::SET_DEFAULT
 
-- Subject: django/db/models/deletion::SET_DEFAULT (id `ce13f4d2-ae51-4e3c-ab02-8ee813e6cc88`)
+- Subject: django/db/models/deletion::SET_DEFAULT (id `f318a3d2-c0d4-497e-93e6-411396a293b8`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

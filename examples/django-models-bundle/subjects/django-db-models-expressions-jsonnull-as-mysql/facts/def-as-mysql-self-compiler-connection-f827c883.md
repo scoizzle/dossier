@@ -1,6 +1,6 @@
 # Fact f827c883
 
-Store id: bd6f62cf-9999-4395-9dbf-06a41f8b8ceb
+Store id: f2d1b88b-0c5c-4d50-b3fe-d41c03222f68
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8697510+00:00`
+- posted_at: `2026-11-09T23:44:49.5362510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1262,
     "symbol": "JSONNull.as_mysql"
   },
-  "id": "bd6f62cf-9999-4395-9dbf-06a41f8b8ceb",
+  "id": "f2d1b88b-0c5c-4d50-b3fe-d41c03222f68",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8697510+00:00"
+    "posted_at": "2026-11-09T23:44:49.5362510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9dd6da34-26c2-4561-b36c-73dc3ce1d133",
+  "subject_id": "4bf2bf17-b132-477f-a90c-d4cff79fca10",
   "subject_name": "django/db/models/expressions::JSONNull.as_mysql",
   "tags": [
     "entity:method"

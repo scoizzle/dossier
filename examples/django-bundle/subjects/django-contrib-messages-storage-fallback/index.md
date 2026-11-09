@@ -1,10 +1,10 @@
 # django/contrib/messages/storage/fallback
 
-- Subject: django/contrib/messages/storage/fallback (id `6a732c24-2651-483e-948d-1d4171c8dc8a`)
+- Subject: django/contrib/messages/storage/fallback (id `90321b63-7a65-458e-84fb-02bdaaa7d533`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 490 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

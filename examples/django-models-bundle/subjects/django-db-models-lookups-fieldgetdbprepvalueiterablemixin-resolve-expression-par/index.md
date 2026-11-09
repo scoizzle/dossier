@@ -1,11 +1,11 @@
 # django/db/models/lookups::FieldGetDbPrepValueIterableMixin.resolve_expression_parameter
 
-- Subject: django/db/models/lookups::FieldGetDbPrepValueIterableMixin.resolve_expression_parameter (id `1c051dac-5314-42ec-b5cd-7434204bcadd`)
+- Subject: django/db/models/lookups::FieldGetDbPrepValueIterableMixin.resolve_expression_parameter (id `e18e06e4-dcd3-4c6a-a015-35079da316c5`)
 - Kind: method
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

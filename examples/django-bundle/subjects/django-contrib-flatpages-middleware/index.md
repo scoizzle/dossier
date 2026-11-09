@@ -1,10 +1,10 @@
 # django/contrib/flatpages/middleware
 
-- Subject: django/contrib/flatpages/middleware (id `0db3b2dc-c5b6-4db2-b7e0-9bd5d0fabc7a`)
+- Subject: django/contrib/flatpages/middleware (id `5f3362f1-9c9a-482a-b195-0e683604a889`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 184 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/spatialite/adapter
 
-- Subject: django/contrib/gis/db/backends/spatialite/adapter (id `36c76f76-2d4f-48bc-aaf5-d8c591bad771`)
+- Subject: django/contrib/gis/db/backends/spatialite/adapter (id `58aab75e-51ad-4e5e-a179-79cabfd3f5f3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 104 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

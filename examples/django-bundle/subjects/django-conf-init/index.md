@@ -1,10 +1,10 @@
 # django/conf/__init__
 
-- Subject: django/conf/__init__ (id `4e744822-70b6-4893-a7f9-7e7e1bb6cf65`)
+- Subject: django/conf/__init__ (id `e2df1612-4802-4eb2-a96f-c8f728ce2e52`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3648 tokens
-- Facts shown: 52 of 53
+- Used: 3667 tokens
+- Facts shown: 53 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,7 @@
 - [cb62a951] self.__dict__[name] = val return val
 - [9374cbb6] self._wrapped = Settings(settings_module)
 - [58642ac69aabc72b] super().__setattr__(name, value)
+- [58642ac69aabc72b-2] super().__setattr__(name, value)
 - [d8fc83bb] tuple_settings = ( "ALLOWED_HOSTS", "INSTALLED_APPS", "TEMPLATE_DIRS", "LOCALE_PATHS", "SECRET_KEY_FALLBACKS", ) self._explicit_settings = set() for setting in dir(mod): if setting.isupper(): setting_value = getattr(mod, setting)
 - [4fd4e1e7] # RemovedInDjango2028Warning. def __dir__(self): attrs = super().__dir__() if hasattr(self._wrapped, "MAILERS"): # When MAILERS is defined, filter out deprecated email # settings that are from the global_settings defaults. attrs = [ name for name in attrs if name not in DEPRECATED_EMAIL_SETTINGS or self._wrapped.is_overridden(name) ] return attrs
 - [af83b407] # SETTINGS_MODULE doesn't make much sense in the manually configured # (standalone) case. SETTINGS_MODULE = None

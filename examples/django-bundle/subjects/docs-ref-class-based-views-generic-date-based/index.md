@@ -1,10 +1,10 @@
 # docs/ref/class-based-views/generic-date-based
 
-- Subject: docs/ref/class-based-views/generic-date-based (id `67684db2-b95f-4072-8dd6-a35a68eff42a`)
+- Subject: docs/ref/class-based-views/generic-date-based (id `267e4305-edf4-41c1-8cf8-e735af6484e7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4958 tokens
-- Facts shown: 138 of 178
+- Used: 6392 tokens
+- Facts shown: 178 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -20,6 +20,8 @@
 - <p> {% if previous_week %} Previous Week: {{ previous_week|date:"W" }} of year {{ previous_week|date:"Y" }} {% endif %} {% if previous_week and next_week %}--{% endif %} {% if next_week %} Next week: {{ next_week|date:"W" }} of year {{ next_week|date:"Y" }} {% endif %} </p> [1cce69a1]
 - <ul> {% for article in latest %} <li>{{ article.pub_date }}: {{ article.title }}</li> {% endfor %} </ul> [7bf6123a]
 - <ul> {% for article in object_list %} <li>{{ article.pub_date|date:"F j, Y" }}: {{ article.title }}</li> {% endfor %} </ul> [02667ed2437ac74a]
+- <ul> {% for article in object_list %} <li>{{ article.pub_date|date:"F j, Y" }}: {{ article.title }}</li> {% endfor %} </ul> [02667ed2437ac74a-2]
+- <ul> {% for article in object_list %} <li>{{ article.pub_date|date:"F j, Y" }}: {{ article.title }}</li> {% endfor %} </ul> [02667ed2437ac74a-3]
 - <ul> {% for date in date_list %} <li>{{ date|date }}</li> {% endfor %} </ul> [eb13a1a1]
 - A boolean specifying whether to retrieve the full list of objects for this year and pass those to the template. If ``True``, the list of objects will be made available to the context. If ``False``, the ``None`` queryset will be used as the object list. By default, this is ``False``. [8bbe3439]
 - Determine if an object list will be returned as part of the context. Returns :attr:`~YearArchiveView.make_object_list` by default. [e4ea6c6b]
@@ -28,13 +30,17 @@
 - class ArticleDayArchiveView(DayArchiveView): queryset = Article.objects.all() date_field = "pub_date" allow_future = True [c6e0431a]
 - class ArticleMonthArchiveView(MonthArchiveView): queryset = Article.objects.all() date_field = "pub_date" allow_future = True [e1638112]
 - class ArticleTodayArchiveView(TodayArchiveView): queryset = Article.objects.all() date_field = "pub_date" allow_future = True [eab25bb2]
-- class ArticleWeekArchiveView(WeekArchiveView): queryset = Article.objects.all() date_field = "pub_date" week_format = "%W" allow_future = True [b98cccf4]
-- class ArticleYearArchiveView(YearArchiveView): queryset = Article.objects.all() date_field = "pub_date" make_object_list = True allow_future = True [f64a00d9]
-- from django.urls import path [c537d1941a7e3025-8]
+- from django.db import models from django.urls import reverse [80b3b4640d5882cf]
 
 ## All facts
 
-- [80b3b4640d5882cf] from django.db import models from django.urls import reverse
+- [b98cccf4] class ArticleWeekArchiveView(WeekArchiveView): queryset = Article.objects.all() date_field = "pub_date" week_format = "%W" allow_future = True
+- [f64a00d9] class ArticleYearArchiveView(YearArchiveView): queryset = Article.objects.all() date_field = "pub_date" make_object_list = True allow_future = True
+- [c537d1941a7e3025-8] from django.urls import path
+- [c537d1941a7e3025-9] from django.urls import path
+- [c537d1941a7e3025-10] from django.urls import path
+- [c537d1941a7e3025-11] from django.urls import path
+- [c537d1941a7e3025-12] from django.urls import path
 - [9939abc0] from django.urls import path from django.views.generic.dates import ArchiveIndexView
 - [c4aeda84] from django.urls import path from django.views.generic.dates import DateDetailView
 - [fdc0f10b] from django.views.generic.dates import DayArchiveView
@@ -43,6 +49,11 @@
 - [13bcdcd4] from django.views.generic.dates import WeekArchiveView
 - [cc1c66bb] from django.views.generic.dates import YearArchiveView
 - [862adf2a1a6d8744] from myapp.models import Article
+- [862adf2a1a6d8744-2] from myapp.models import Article
+- [862adf2a1a6d8744-3] from myapp.models import Article
+- [862adf2a1a6d8744-4] from myapp.models import Article
+- [862adf2a1a6d8744-5] from myapp.models import Article
+- [862adf2a1a6d8744-6] from myapp.models import Article
 - [2a87bd49] from myapp.views import ArticleDayArchiveView
 - [ce867c08] from myapp.views import ArticleMonthArchiveView
 - [7b556d36] from myapp.views import ArticleTodayArchiveView
@@ -62,6 +73,7 @@
 - [8675974d] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseArchiveIndexView` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
 - [281949b6] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseDayArchiveView` * :class:`django.views.generic.dates.YearMixin` * :class:`django.views.generic.dates.MonthMixin` * :class:`django.views.generic.dates.DayMixin` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
 - [9dd9b076] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseMonthArchiveView` * :class:`django.views.generic.dates.YearMixin` * :class:`django.views.generic.dates.MonthMixin` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
+- [d96f7c25] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseTodayArchiveView` * :class:`django.views.generic.dates.BaseDayArchiveView` * :class:`django.views.generic.dates.YearMixin` * :class:`django.views.generic.dates.MonthMixin` * :class:`django.views.generic.dates.DayMixin` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
 - [c41450a5] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseWeekArchiveView` * :class:`django.views.generic.dates.YearMixin` * :class:`django.views.generic.dates.WeekMixin` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
 - [d7a83284] * :class:`django.views.generic.list.MultipleObjectTemplateResponseMixin` * :class:`django.views.generic.base.TemplateResponseMixin` * :class:`django.views.generic.dates.BaseYearArchiveView` * :class:`django.views.generic.dates.YearMixin` * :class:`django.views.generic.dates.BaseDateListView` * :class:`django.views.generic.list.MultipleObjectMixin` * :class:`django.views.generic.dates.DateMixin` * :class:`django.views.generic.base.View`
 - [11e79e50] * Includes the single object associated with the ``model`` specified in the ``DateDetailView``.
@@ -75,10 +87,19 @@
 - [c4855b3d] * Uses a default ``template_name_suffix`` of ``_detail``.
 - [d55cb96d] * ``date_list``: A :meth:`QuerySet <django.db.models.query.QuerySet.dates>` object containing all days that have objects available in the given month, according to ``queryset``, represented as :class:`datetime.datetime` objects, in ascending order.
 - [5eb25341] * ``date_list``: A :meth:`QuerySet <django.db.models.query.QuerySet.dates>` object containing all months that have objects available according to ``queryset``, represented as :class:`datetime.datetime` objects, in ascending order.
+- [4f73e3c7] * ``date_list``: A :meth:`QuerySet <django.db.models.query.QuerySet.dates>` object containing all years that have objects available according to ``queryset``, represented as :class:`datetime.datetime` objects, in descending order.
 - [014e8ffd] * ``day``: A :class:`~datetime.date` object representing the given day.
 - [a923d593] * ``month``: A :class:`~datetime.date` object representing the given month.
 - [140fc954] * ``next_day``: A :class:`~datetime.date` object representing the next day, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [7e671727680f23cc] * ``next_month``: A :class:`~datetime.date` object representing the first day of the next month, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [7e671727680f23cc-2] * ``next_month``: A :class:`~datetime.date` object representing the first day of the next month, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [d2e094f9] * ``next_week``: A :class:`~datetime.date` object representing the first day of the next week, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [4cbc6019] * ``next_year``: A :class:`~datetime.date` object representing the first day of the next year, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [4856aff9] * ``previous_day``: A :class:`~datetime.date` object representing the previous day, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
 - [aee5df1282977045] * ``previous_month``: A :class:`~datetime.date` object representing the first day of the previous month, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [aee5df1282977045-2] * ``previous_month``: A :class:`~datetime.date` object representing the first day of the previous month, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [4563dc8f] * ``previous_week``: A :class:`~datetime.date` object representing the first day of the previous week, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
+- [53729902] * ``previous_year``: A :class:`~datetime.date` object representing the first day of the previous year, according to :attr:`~BaseDateListView.allow_empty` and :attr:`~DateMixin.allow_future`.
 - [7007a10b] * ``week``: A :class:`~datetime.date` object representing the first day of the given week.
 - [d99c1d86] * ``year``: A :class:`~datetime.date` object representing the given year.
 - [32590fb0e4b1f943-3] **Ancestors (MRO)**
@@ -101,7 +122,17 @@
 - [e9efa674] **Example myapp/article_archive_year.html**:
 - [d816c9df9fe3d4e9] **Example myapp/article_detail.html**:
 - [f72889f98a2ac701] **Example myapp/urls.py**::
+- [f72889f98a2ac701-2] **Example myapp/urls.py**::
+- [f72889f98a2ac701-3] **Example myapp/urls.py**::
+- [f72889f98a2ac701-4] **Example myapp/urls.py**::
+- [f72889f98a2ac701-5] **Example myapp/urls.py**::
+- [f72889f98a2ac701-6] **Example myapp/urls.py**::
+- [f72889f98a2ac701-7] **Example myapp/urls.py**::
 - [c53bd2bbe44e70a1] **Example myapp/views.py**::
+- [c53bd2bbe44e70a1-2] **Example myapp/views.py**::
+- [c53bd2bbe44e70a1-3] **Example myapp/views.py**::
+- [c53bd2bbe44e70a1-4] **Example myapp/views.py**::
+- [c53bd2bbe44e70a1-5] **Example myapp/views.py**::
 - [cabf9677d929dff8] **Notes**
 - [cabf9677d929dff8-2] **Notes**
 - [cabf9677d929dff8-3] **Notes**
@@ -119,6 +150,11 @@
 - [bb5ca0ff] .. class:: BaseWeekArchiveView
 - [b6674b05] .. class:: BaseYearArchiveView
 - [685d15dfb6eb2285-45] .. code-block:: html+django
+- [685d15dfb6eb2285-46] .. code-block:: html+django
+- [685d15dfb6eb2285-47] .. code-block:: html+django
+- [685d15dfb6eb2285-48] .. code-block:: html+django
+- [685d15dfb6eb2285-49] .. code-block:: html+django
+- [685d15dfb6eb2285-50] .. code-block:: html+django
 - [8f4144de] .. method:: get_make_object_list()
 - [c7f21172] A day archive page showing all objects for *today*. This is exactly the same as :class:`django.views.generic.dates.DayArchiveView`, except today's date is used instead of the ``year``/``month``/``day`` arguments.
 - [5696fb46] A day archive page showing all objects in a given day. Days in the future throw a 404 error, regardless of whether any objects exist for future days, unless you set ``allow_future`` to ``True``.
@@ -129,6 +165,10 @@
 - [4b6b4831] A yearly archive page showing all available months in a given year. Objects with a date in the *future* are not displayed unless you set ``allow_future`` to ``True``.
 - [1af78a4e] All of the generic views listed above have matching ``Base`` views that only differ in that they do not include the :class:`~django.views.generic.list.MultipleObjectTemplateResponseMixin` (for the archive views) or :class:`~django.views.generic.detail.SingleObjectTemplateResponseMixin` (for the :class:`DateDetailView`):
 - [37a288572f0328d1] In addition to the context provided by :class:`django.views.generic.list.MultipleObjectMixin` (via :class:`django.views.generic.dates.BaseDateListView`), the template's context will be:
+- [37a288572f0328d1-2] In addition to the context provided by :class:`django.views.generic.list.MultipleObjectMixin` (via :class:`django.views.generic.dates.BaseDateListView`), the template's context will be:
+- [db36f372aadb2a82] In addition to the context provided by :class:`~django.views.generic.list.MultipleObjectMixin` (via :class:`~django.views.generic.dates.BaseDateListView`), the template's context will be:
+- [db36f372aadb2a82-2] In addition to the context provided by :class:`~django.views.generic.list.MultipleObjectMixin` (via :class:`~django.views.generic.dates.BaseDateListView`), the template's context will be:
+- [db36f372aadb2a82-3] In addition to the context provided by :class:`~django.views.generic.list.MultipleObjectMixin` (via :class:`~django.views.generic.dates.BaseDateListView`), the template's context will be:
 - [1ff4ea44] In this example, you are outputting the week number. Keep in mind that week numbers computed by the :tfilter:`date` template filter with the ``'W'`` format character are not always the same as those computed by :func:`~time.strftime` and :func:`~time.strptime` with the ``'%W'`` format string. For year 2015, for example, week numbers output by :tfilter:`date` are higher by one compared to those output by :func:`~time.strftime`. There isn't an equivalent for the ``'%U'`` :func:`~time.strftime` format string in :tfilter:`date`. Therefore, you should avoid using :tfilter:`date` to generate URLs for ``WeekArchiveView``.
 - [3a933089] Some of the examples on this page assume that an ``Article`` model has been defined as follows in ``myapp/models.py``::
 - [05724f13] This will output all articles.

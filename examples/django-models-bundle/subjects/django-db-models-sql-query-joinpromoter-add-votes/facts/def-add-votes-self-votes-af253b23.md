@@ -1,6 +1,6 @@
 # Fact af253b23
 
-Store id: 46f8b44c-9f9d-4fc4-8a8a-a6cbe6951db2
+Store id: 74626019-c456-4dba-91b6-f650edf9de64
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_votes(self, votes)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1763150+00:00`
+- posted_at: `2026-11-09T23:44:59.0847120+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2835,
     "symbol": "JoinPromoter.add_votes"
   },
-  "id": "46f8b44c-9f9d-4fc4-8a8a-a6cbe6951db2",
+  "id": "74626019-c456-4dba-91b6-f650edf9de64",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1763150+00:00"
+    "posted_at": "2026-11-09T23:44:59.0847120+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4003dd98-6f07-4827-ad66-1f115471f75d",
+  "subject_id": "1d03c0c6-b63a-42d9-b5cf-122a62e55894",
   "subject_name": "django/db/models/sql/query::JoinPromoter.add_votes",
   "tags": [
     "entity:method"

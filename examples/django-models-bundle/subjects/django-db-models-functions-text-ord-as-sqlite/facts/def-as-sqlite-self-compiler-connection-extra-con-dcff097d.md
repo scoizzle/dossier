@@ -1,6 +1,6 @@
 # Fact dcff097d
 
-Store id: 735307ed-0da9-4fd6-8774-896e3929d23b
+Store id: 07715606-e869-4de3-829f-63e097886715
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2334620+00:00`
+- posted_at: `2026-11-09T23:44:54.1146680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 229,
     "symbol": "Ord.as_sqlite"
   },
-  "id": "735307ed-0da9-4fd6-8774-896e3929d23b",
+  "id": "07715606-e869-4de3-829f-63e097886715",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2334620+00:00"
+    "posted_at": "2026-11-09T23:44:54.1146680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "85535927-3047-4af4-99b7-894c4bc8677a",
+  "subject_id": "5bfdd23e-4188-4fbf-914a-7e68d6f1fc5f",
   "subject_name": "django/db/models/functions/text::Ord.as_sqlite",
   "tags": [
     "entity:method"

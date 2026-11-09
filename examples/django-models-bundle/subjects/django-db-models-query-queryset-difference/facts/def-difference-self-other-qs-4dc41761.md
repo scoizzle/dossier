@@ -1,6 +1,6 @@
 # Fact 4dc41761
 
-Store id: 03cf05b4-9671-4456-80dd-1e9cd4d412af
+Store id: 8a9b05c2-9fd2-40d6-85c5-346f4385eefc
 
 ## Text
 
@@ -20,7 +20,7 @@ def difference(self, *other_qs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5642450+00:00`
+- posted_at: `2026-11-09T23:44:56.0577460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1782,
     "symbol": "QuerySet.difference"
   },
-  "id": "03cf05b4-9671-4456-80dd-1e9cd4d412af",
+  "id": "8a9b05c2-9fd2-40d6-85c5-346f4385eefc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5642450+00:00"
+    "posted_at": "2026-11-09T23:44:56.0577460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "de26b8c4-4523-40f7-8d88-400a87c945f0",
+  "subject_id": "a94e2af5-d060-4086-b111-07479e53830f",
   "subject_name": "django/db/models/query::QuerySet.difference",
   "tags": [
     "entity:method"

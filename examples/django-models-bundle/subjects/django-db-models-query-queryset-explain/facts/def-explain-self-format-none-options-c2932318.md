@@ -1,6 +1,6 @@
 # Fact c2932318
 
-Store id: ccd4c96c-77e6-4613-bf28-8800378f99ef
+Store id: e7281396-3481-408e-901b-99d83bbb7c71
 
 ## Text
 
@@ -20,7 +20,7 @@ def explain(self, *, format=None, **options)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5078680+00:00`
+- posted_at: `2026-11-09T23:44:56.0043000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1518,
     "symbol": "QuerySet.explain"
   },
-  "id": "ccd4c96c-77e6-4613-bf28-8800378f99ef",
+  "id": "e7281396-3481-408e-901b-99d83bbb7c71",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5078680+00:00"
+    "posted_at": "2026-11-09T23:44:56.0043000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cc328a9f-6930-4e39-bd75-8c9546382501",
+  "subject_id": "81bbf936-3f42-4022-94ae-562322deefb7",
   "subject_name": "django/db/models/query::QuerySet.explain",
   "tags": [
     "entity:method"

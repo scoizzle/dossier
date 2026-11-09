@@ -1,10 +1,10 @@
 # docs/ref/clickjacking
 
-- Subject: docs/ref/clickjacking (id `c66bce22-9ef1-4e24-8f82-fdd0f1afd47b`)
+- Subject: docs/ref/clickjacking (id `0d513d8b-8df2-47e9-b23e-d4fd5af780f2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1468 tokens
-- Facts shown: 35 of 35
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 

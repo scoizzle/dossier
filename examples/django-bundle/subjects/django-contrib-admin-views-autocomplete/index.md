@@ -1,10 +1,10 @@
 # django/contrib/admin/views/autocomplete
 
-- Subject: django/contrib/admin/views/autocomplete (id `db9e6610-f916-445f-8145-24fa1667b28d`)
+- Subject: django/contrib/admin/views/autocomplete (id `ead5c992-976f-43cd-bf5e-8374d88924f9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1051 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

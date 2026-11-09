@@ -1,6 +1,6 @@
 # Fact d71331ed
 
-Store id: 50c41e1b-01d5-4d8c-a8f1-9fe139597469
+Store id: 31ab9f55-2470-42a4-93a9-9292775095fe
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_filter(self, filter_lhs, filter_rhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9377510+00:00`
+- posted_at: `2026-11-09T23:44:58.8499110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1659,
     "symbol": "Query.add_filter"
   },
-  "id": "50c41e1b-01d5-4d8c-a8f1-9fe139597469",
+  "id": "31ab9f55-2470-42a4-93a9-9292775095fe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9377510+00:00"
+    "posted_at": "2026-11-09T23:44:58.8499110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "234a5cdf-f2b0-4c6a-b644-0222aceedede",
+  "subject_id": "5a563e76-a6e5-4161-8743-bda4a99b4c1f",
   "subject_name": "django/db/models/sql/query::Query.add_filter",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/expressions::OrderByList.from_param
 
-- Subject: django/db/models/expressions::OrderByList.from_param (id `f900b75d-2213-437b-9f7a-261aaeea3819`)
+- Subject: django/db/models/expressions::OrderByList.from_param (id `f9e0664b-e169-420d-a299-7f5cf310323f`)
 - Kind: class_method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

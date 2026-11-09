@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField._check_ignored_options
 
-- Subject: django/db/models/fields/related::ManyToManyField._check_ignored_options (id `07fa4e3f-7ac3-4fbf-bc01-653b15b3600e`)
+- Subject: django/db/models/fields/related::ManyToManyField._check_ignored_options (id `53171d74-0424-4389-b6d8-3478c89c11d7`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

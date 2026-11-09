@@ -1,11 +1,11 @@
 # django/db/models/expressions::Subquery.copy
 
-- Subject: django/db/models/expressions::Subquery.copy (id `94f46782-6e42-4125-8753-f82e4a5e24cc`)
+- Subject: django/db/models/expressions::Subquery.copy (id `63249cb3-c633-4976-ae2f-27f195bb29c4`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

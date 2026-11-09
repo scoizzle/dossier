@@ -1,6 +1,6 @@
 # Fact 41219c2a
 
-Store id: 8cd8ebde-b494-4d18-a254-873a2523977e
+Store id: 8e62dd0f-2879-458f-9a90-d06117db5056
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerLessThanOrEqual(IntegerFieldOverflow, LessThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3146790+00:00`
+- posted_at: `2026-11-09T23:44:54.9957030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 497,
     "symbol": "IntegerLessThanOrEqual"
   },
-  "id": "8cd8ebde-b494-4d18-a254-873a2523977e",
+  "id": "8e62dd0f-2879-458f-9a90-d06117db5056",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3146790+00:00"
+    "posted_at": "2026-11-09T23:44:54.9957030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1f0431d3-930e-412e-b7a5-841eab03c89e",
+  "subject_id": "c35165a0-d89c-41ba-bc4c-bbed81d3e264",
   "subject_name": "django/db/models/lookups::IntegerLessThanOrEqual",
   "tags": [
     "entity:class",

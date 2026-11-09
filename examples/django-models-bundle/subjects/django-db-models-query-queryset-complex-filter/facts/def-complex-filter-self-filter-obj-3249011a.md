@@ -1,6 +1,6 @@
 # Fact 3249011a
 
-Store id: a6d3e379-08ee-4e94-8fc1-07847a6d0fbe
+Store id: 4cebde62-573d-445f-b093-cdbfa150a58d
 
 ## Text
 
@@ -20,7 +20,7 @@ def complex_filter(self, filter_obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5504750+00:00`
+- posted_at: `2026-11-09T23:44:56.0444190+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1731,
     "symbol": "QuerySet.complex_filter"
   },
-  "id": "a6d3e379-08ee-4e94-8fc1-07847a6d0fbe",
+  "id": "4cebde62-573d-445f-b093-cdbfa150a58d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5504750+00:00"
+    "posted_at": "2026-11-09T23:44:56.0444190+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b57c8c00-fd20-4fcb-81e8-586f1a62e38f",
+  "subject_id": "fb9c7073-a746-43f4-b92a-c96858e8177c",
   "subject_name": "django/db/models/query::QuerySet.complex_filter",
   "tags": [
     "entity:method"

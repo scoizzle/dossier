@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::CharField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::CharField.get_internal_type (id `c5637fdb-d24b-43a3-88e5-aa2acd593103`)
+- Subject: django/db/models/fields/__init__::CharField.get_internal_type (id `fea23731-77f8-4bd8-8f05-200964c65952`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

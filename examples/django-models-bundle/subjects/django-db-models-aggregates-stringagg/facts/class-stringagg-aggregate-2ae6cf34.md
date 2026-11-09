@@ -1,6 +1,6 @@
 # Fact 2ae6cf34
 
-Store id: bd36a600-ffc9-4912-bfe4-c910ec32279f
+Store id: ae6b5818-190d-4894-b7fa-781c14f09c13
 
 ## Text
 
@@ -20,7 +20,7 @@ class StringAgg(Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5463520+00:00`
+- posted_at: `2026-11-09T23:44:48.4045630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 371,
     "symbol": "StringAgg"
   },
-  "id": "bd36a600-ffc9-4912-bfe4-c910ec32279f",
+  "id": "ae6b5818-190d-4894-b7fa-781c14f09c13",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5463520+00:00"
+    "posted_at": "2026-11-09T23:44:48.4045630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bcaaf417-5b29-4378-a770-eecf68af8121",
+  "subject_id": "0c0c09fc-5775-49f0-8a66-5eda3afa4173",
   "subject_name": "django/db/models/aggregates::StringAgg",
   "tags": [
     "entity:class"

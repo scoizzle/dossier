@@ -1,6 +1,6 @@
 # Fact a89a062b
 
-Store id: 6a982760-1960-421b-a10c-a18ef8e8f2b5
+Store id: 22c58dcf-1869-4a20-9586-72d51b3db360
 
 ## Text
 
@@ -20,7 +20,7 @@ def validate_unique(self, exclude=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7545290+00:00`
+- posted_at: `2026-11-09T23:44:48.5412290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1460,
     "symbol": "Model.validate_unique"
   },
-  "id": "6a982760-1960-421b-a10c-a18ef8e8f2b5",
+  "id": "22c58dcf-1869-4a20-9586-72d51b3db360",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7545290+00:00"
+    "posted_at": "2026-11-09T23:44:48.5412290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7365c88e-89e7-414f-b4c9-652a1cb2c654",
+  "subject_id": "0d93eb6a-65b6-4554-bdc5-f849598730ae",
   "subject_name": "django/db/models/base::Model.validate_unique",
   "tags": [
     "entity:method"

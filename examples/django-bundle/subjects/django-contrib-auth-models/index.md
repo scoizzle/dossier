@@ -1,10 +1,10 @@
 # django/contrib/auth/models
 
-- Subject: django/contrib/auth/models (id `687e4eda-e0e6-4033-9113-ace4caf25e7e`)
+- Subject: django/contrib/auth/models (id `28fd1088-b22d-47cd-b8fe-add941651b7c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5186 tokens
-- Facts shown: 102 of 112
+- Used: 5661 tokens
+- Facts shown: 112 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - # Otherwise we need to check the backends. return await _auser_has_perm(self, perm, obj) [c8d67702]
 - - The "add" permission limits the user's ability to view the "add" form and add an object. - The "change" permission limits a user's ability to view the change list, view the "change" form and change an object. - The "delete" permission limits the ability to delete an object. - The "view" permission limits the ability to view an object. [0cdd396d]
 - if extra_fields.get("is_staff") is not True: raise ValueError("Superuser must have is_staff=True.") if extra_fields.get("is_superuser") is not True: raise ValueError("Superuser must have is_superuser=True.") [74057f9f35aa7034]
+- if extra_fields.get("is_staff") is not True: raise ValueError("Superuser must have is_staff=True.") if extra_fields.get("is_superuser") is not True: raise ValueError("Superuser must have is_superuser=True.") [74057f9f35aa7034-2]
 - return _user_has_module_perms(self, app_label) [1a5ceb02]
 - return await _auser_has_module_perms(self, app_label) [67d2cc01]
 - return await self._acreate_user(username, email, password, **extra_fields) [7f67e425]
@@ -29,26 +30,29 @@
 - Permissions are set globally per type of object, not per specific object instance. It is possible to say "Mary may change news stories," but it's not currently possible to say "Mary may change news stories, but only the ones she created herself" or "Mary may only change news stories that have a certain status or publication date." [33bac716]
 - The permission system is used by the Django admin site, but may also be useful in your own code. The Django admin site uses permissions as follows: [aebbe50c]
 - The permissions listed above are automatically created for each model. """ [2e405a71]
-- Username and password are required. Other fields are optional. """ [4eafd2de423f86fc]
-- acreate_superuser.alters_data = True [e548b892]
-- objects = GroupManager() [287a21bf]
 
 ## All facts
 
+- [4eafd2de423f86fc] Username and password are required. Other fields are optional. """
+- [4eafd2de423f86fc-2] Username and password are required. Other fields are optional. """
+- [e548b892] acreate_superuser.alters_data = True
 - [4357d1ab] acreate_user.alters_data = True
 - [5163ae0a] async def _acreate_user(self, username, email, password, **extra_fields): """See _create_user()""" user = self._create_user_object(username, email, password, **extra_fields) await user.asave(using=self._db) return user
 - [f512fb47] async def acreate_superuser( self, username, email=None, password=None, **extra_fields ): extra_fields.setdefault("is_staff", True) extra_fields.setdefault("is_superuser", True)
 - [a1180282] async def acreate_user(self, username, email=None, password=None, **extra_fields): extra_fields.setdefault("is_staff", False) extra_fields.setdefault("is_superuser", False) return await self._acreate_user(username, email, password, **extra_fields)
 - [54b48c546b9fcfb8] async def aget_all_permissions(self, obj=None): return await _auser_get_permissions(self, obj, "all")
+- [54b48c546b9fcfb8-2] async def aget_all_permissions(self, obj=None): return await _auser_get_permissions(self, obj, "all")
 - [746354f4] async def aget_by_natural_key(self, name): return await self.aget(name=name)
 - [62b6230c] async def aget_group_permissions(self, obj=None): """See get_group_permissions()""" return await _auser_get_permissions(self, obj, "group")
 - [79d52dda] async def aget_group_permissions(self, obj=None): return self.get_group_permissions(obj)
+- [4dc40bc2] async def aget_user_permissions(self, obj=None): """See get_user_permissions()""" return await _auser_get_permissions(self, obj, "user")
 - [5a78f9b7] async def aget_user_permissions(self, obj=None): return await _auser_get_permissions(self, obj, "user")
 - [e7640f09] async def ahas_module_perms(self, app_label): """See has_module_perms()""" # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
 - [d6a1df95] async def ahas_module_perms(self, module): return await _auser_has_module_perms(self, module)
 - [de5f995c] async def ahas_perm(self, perm, obj=None): """See has_perm()""" # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
 - [f0e51798] async def ahas_perm(self, perm, obj=None): return await _auser_has_perm(self, perm, obj=obj)
 - [a8a5f86d] async def ahas_perms(self, perm_list, obj=None): """See has_perms()""" if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") for perm in perm_list: if not await self.ahas_perm(perm, obj): return False return True
+- [039fd05b] async def ahas_perms(self, perm_list, obj=None): if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") for perm in perm_list: if not await self.ahas_perm(perm, obj): return False return True
 - [0afb6d10] class Meta(AbstractUser.Meta): swappable = "AUTH_USER_MODEL"
 - [62379663e021eaaf-2] class Meta: abstract = True
 - [06903379] class Meta: verbose_name = _("group") verbose_name_plural = _("groups")
@@ -71,12 +75,15 @@
 - [2ba230f1] def delete(self): raise NotImplementedError( "Django doesn't provide a DB representation for AnonymousUser." )
 - [98ec562b] def email_user(self, subject, message, from_email=None, **kwargs): """Send an email to this user.""" send_mail(subject, message, from_email, [self.email], **kwargs)
 - [121d6dba2565d21a] def get_all_permissions(self, obj=None): return _user_get_permissions(self, obj, "all")
+- [121d6dba2565d21a-2] def get_all_permissions(self, obj=None): return _user_get_permissions(self, obj, "all")
 - [cd46abac] def get_by_natural_key(self, codename, app_label, model): return self.get( codename=codename, content_type=ContentType.objects.db_manager(self.db).get_by_natural_key( app_label, model ), )
 - [fecf669b] def get_by_natural_key(self, name): return self.get(name=name)
 - [2f4b9d76] def get_full_name(self): """ Return the first_name plus the last_name, with a space in between. """ full_name = "%s %s" % (self.first_name, self.last_name) return full_name.strip()
 - [206f03db] def get_group_permissions(self, obj=None): """ Return a list of permission strings that this user has through their groups. Query all available auth backends. If an object is passed in, return only permissions matching this object. """ return _user_get_permissions(self, obj, "group")
 - [cec263a3] def get_group_permissions(self, obj=None): return set()
 - [c1fdc22e] def get_short_name(self): """Return the short name for the user.""" return self.first_name
+- [e44f29f9] def get_user_permissions(self, obj=None): """ Return a list of permission strings that this user has directly. Query all available auth backends. If an object is passed in, return only permissions matching this object. """ return _user_get_permissions(self, obj, "user")
+- [f134fc40] def get_user_permissions(self, obj=None): return _user_get_permissions(self, obj, "user")
 - [c5dbadae] def get_username(self): return self.username
 - [4853e66b] def has_module_perms(self, app_label): """ Return True if the user has any permissions in the given app label. Use similar logic as has_perm(), above. """ # Active superusers have all permissions. if self.is_active and self.is_superuser: return True
 - [ef279d51] def has_module_perms(self, module): return _user_has_module_perms(self, module)
@@ -86,11 +93,14 @@
 - [5b436a4b] def has_perms(self, perm_list, obj=None): if not isinstance(perm_list, Iterable) or isinstance(perm_list, str): raise ValueError("perm_list must be an iterable of permissions.") return all(self.has_perm(perm, obj) for perm in perm_list)
 - [6a2645f7] def natural_key(self): return (self.codename, *self.content_type.natural_key())
 - [9bc9ab29] def natural_key(self): return (self.name,)
+- [1606e7a6] def save(self): raise NotImplementedError( "Django doesn't provide a DB representation for AnonymousUser." )
+- [f0cd87ef] def set_password(self, raw_password): raise NotImplementedError( "Django doesn't provide a DB representation for AnonymousUser." )
 - [1d3494b2] def with_perm( self, perm, is_active=True, include_superusers=True, backend=None, obj=None ): if backend is None: backends = auth.get_backends() if len(backends) == 1: backend = backends[0] else: raise ValueError( "You have multiple authentication backends configured and " "therefore must provide the `backend` argument." ) elif not isinstance(backend, str): raise TypeError( "backend must be a dotted import path string (got %r)." % backend ) else: backend = auth.load_backend(backend) if hasattr(backend, "with_perm"): return backend.with_perm( perm, is_active=is_active, include_superusers=include_superusers, obj=obj, ) return self.none()
 - [5e2d8c6a] is_superuser = models.BooleanField( _("superuser status"), default=False, help_text=_( "Designates that this user has all permissions without " "explicitly assigning them." ), ) groups = models.ManyToManyField( Group, verbose_name=_("groups"), blank=True, help_text=_( "The groups this user belongs to. A user will get all permissions " "granted to each of their groups." ), related_name="user_set", related_query_name="user", ) user_permissions = models.ManyToManyField( Permission, verbose_name=_("user permissions"), blank=True, help_text=_("Specific permissions for this user."), related_name="user_set", related_query_name="user", )
 - [42e34b00] name = models.CharField(_("name"), max_length=150, unique=True) permissions = models.ManyToManyField( Permission, verbose_name=_("permissions"), blank=True, )
 - [04040d22] name = models.CharField(_("name"), max_length=255) content_type = models.ForeignKey( ContentType, models.CASCADE, verbose_name=_("content type"), ) codename = models.CharField(_("codename"), max_length=100)
 - [f336ab7b] natural_key.dependencies = ["contenttypes.contenttype"]
+- [287a21bf] objects = GroupManager()
 - [4f8354ff] objects = PermissionManager()
 - [aa2ab63c] objects = UserManager()
 - [bee62305d24cd880] use_in_migrations = True

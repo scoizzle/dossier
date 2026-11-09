@@ -1,6 +1,6 @@
 # Fact db9c4cbd
 
-Store id: 9c565c6b-79cc-4a80-9433-272477a65daa
+Store id: 1e33cf21-88b8-46e5-8a00-3b003483dfe0
 
 ## Text
 
@@ -20,7 +20,7 @@ def description(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5477270+00:00`
+- posted_at: `2026-11-09T23:44:50.0601170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1253,
     "symbol": "CharField.description"
   },
-  "id": "9c565c6b-79cc-4a80-9433-272477a65daa",
+  "id": "1e33cf21-88b8-46e5-8a00-3b003483dfe0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5477270+00:00"
+    "posted_at": "2026-11-09T23:44:50.0601170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c6006692-615c-45d4-8f08-ffffbcdddf1c",
+  "subject_id": "d6c8b0f2-6508-442b-9fcf-b8412f0a9293",
   "subject_name": "django/db/models/fields/__init__::CharField.description",
   "tags": [
     "entity:method",

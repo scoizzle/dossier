@@ -1,10 +1,10 @@
 # django/core/management/commands/runserver
 
-- Subject: django/core/management/commands/runserver (id `f3e8dcdf-fb4a-4044-aa59-13d62c7441b4`)
+- Subject: django/core/management/commands/runserver (id `b3e3aa67-b376-462b-88d1-96ea80bb83df`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1664 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

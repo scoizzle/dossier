@@ -1,6 +1,6 @@
 # Fact 024d21c3
 
-Store id: 75b3a4f3-62f0-45fe-8d4a-880e9a91d492
+Store id: e0cedfc3-d5f0-4c5e-ad99-0ef0769062bd
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SQLAggregateCompiler
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.1168670+00:00`
+- posted_at: `2026-11-09T23:44:57.7715820+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "75b3a4f3-62f0-45fe-8d4a-880e9a91d492",
+  "id": "e0cedfc3-d5f0-4c5e-ad99-0ef0769062bd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.1168670+00:00"
+    "posted_at": "2026-11-09T23:44:57.7715820+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SQLAggregateCompiler"
       },
       "rel": "contains",
-      "target": "43275326-bdf5-4150-aada-1086d206fcaf"
+      "target": "c0070bb6-854b-4a2c-92bc-6e99e3613292"
     }
   ],
   "status": "live",
-  "subject_id": "eec456aa-334a-4312-a193-ed044257811d",
+  "subject_id": "d0d15420-734c-41c7-8915-96b8b2169578",
   "subject_name": "django/db/models/sql/compiler",
   "tags": [
     "entity:class"

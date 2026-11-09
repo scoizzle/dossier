@@ -1,6 +1,6 @@
 # Fact 825690df
 
-Store id: e5b3da35-15bd-4859-a9e0-e1472e4e72d7
+Store id: 2cbdfc68-f06e-4f37-91ec-4a8a0d5d4319
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class YearGte
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e5b3da35-15bd-4859-a9e0-e1472e4e72d7",
+  "id": "2cbdfc68-f06e-4f37-91ec-4a8a0d5d4319",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "YearGte"
       },
       "rel": "contains",
-      "target": "40534b1d-689d-4e46-9c59-a5291479e974"
+      "target": "5916596f-8f1b-4cfd-a6cf-99e7e0acbc48"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact d02c3103
 
-Store id: 5eb2f33f-d8a2-442d-b511-199b4a2e1af6
+Store id: 1ac5c632-eccc-4912-9e51-87f3f9b4e1f9
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_converters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7941400+00:00`
+- posted_at: `2026-11-09T23:44:51.6105730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1335,
     "symbol": "ForeignKey.get_db_converters"
   },
-  "id": "5eb2f33f-d8a2-442d-b511-199b4a2e1af6",
+  "id": "1ac5c632-eccc-4912-9e51-87f3f9b4e1f9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7941400+00:00"
+    "posted_at": "2026-11-09T23:44:51.6105730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8e57a704-b4e6-45cc-a410-549491cada8e",
+  "subject_id": "a087fbf5-e83c-4566-9d49-b12a4a9998ba",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_db_converters",
   "tags": [
     "entity:method"

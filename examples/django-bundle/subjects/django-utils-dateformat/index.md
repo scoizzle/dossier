@@ -1,10 +1,10 @@
 # django/utils/dateformat
 
-- Subject: django/utils/dateformat (id `f0842643-b8a4-4a86-9240-90dd2bde8c05`)
+- Subject: django/utils/dateformat (id `11310f00-a7eb-48cb-bf0b-f75b1c629cb3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2539 tokens
-- Facts shown: 55 of 58
+- Used: 2650 tokens
+- Facts shown: 58 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -12,6 +12,9 @@
 
 - # `offset` is a datetime.timedelta. For negative values (to the west of # UTC) only days can be negative (days=-1) and seconds are always # positive. # e.g.: UTC-1 -> timedelta(days=-1, seconds=82800, microseconds=0) # Positive offsets have days=0 return offset.days * 86400 + offset.seconds [f3f034f3]
 - If timezone information is not available, return an empty string. """ if not self.timezone: return "" [c354b8c3]
+- If timezone information is not available, return an empty string. """ if self.timezone is None: return "" [ffd12749e3e456a1]
+- If timezone information is not available, return an empty string. """ if self.timezone is None: return "" [ffd12749e3e456a1-2]
+- If timezone information is not available, return an empty string. """ if self.timezone is None: return "" [ffd12749e3e456a1-3]
 - if isinstance(obj, datetime): # Timezone is only supported when formatting datetime objects, not # date objects (timezone information not appropriate), or time # objects (against established django policy). if is_naive(obj): timezone = get_default_timezone() else: timezone = obj.tzinfo if not _datetime_ambiguous_or_imaginary(obj, timezone): self.timezone = timezone [6b1168b1]
 - offset = self.timezone.utcoffset(self.data) [a1b18946]
 - offset = self.timezone.utcoffset(self.data) seconds = offset.days * 86400 + offset.seconds sign = "-" if seconds < 0 else "+" seconds = abs(seconds) return "%s%02d%02d" % (sign, seconds // 3600, (seconds // 60) % 60) [b995ecc1]
@@ -28,10 +31,10 @@
 - def M(self): "Month, textual, 3 letters; e.g. 'Jan'" return MONTHS_3[self.data.month].title() [3af3a4a0]
 - def N(self): "Month abbreviation in Associated Press style. Proprietary extension." return MONTHS_AP[self.data.month] [7a4a68a8]
 - def O(self): # NOQA: E743, E741 """ Difference to Greenwich time in hours; e.g. '+0200', '-0430'. [a2043cc5]
-- def P(self): """ Time, in 12-hour hours, minutes and 'a.m.'/'p.m.', with minutes left off if they're zero and the strings 'midnight' and 'noon' if appropriate. Examples: '1 a.m.', '1:30 p.m.', 'midnight', 'noon', '12:30 p.m.' Proprietary extension. """ if self.data.minute == 0 and self.data.hour == 0: return _("midnight") if self.data.minute == 0 and self.data.hour == 12: return _("noon") return "%s %s" % (self.f(), self.a()) [41571ad5]
 
 ## All facts
 
+- [41571ad5] def P(self): """ Time, in 12-hour hours, minutes and 'a.m.'/'p.m.', with minutes left off if they're zero and the strings 'midnight' and 'noon' if appropriate. Examples: '1 a.m.', '1:30 p.m.', 'midnight', 'noon', '12:30 p.m.' Proprietary extension. """ if self.data.minute == 0 and self.data.hour == 0: return _("midnight") if self.data.minute == 0 and self.data.hour == 12: return _("noon") return "%s %s" % (self.f(), self.a())
 - [a3cd9bbd] def S(self): """ English ordinal suffix for the day of the month, 2 characters; i.e. 'st', 'nd', 'rd' or 'th'. """ if self.data.day in (11, 12, 13): # Special case return "th" last = self.data.day % 10 if last == 1: return "st" if last == 2: return "nd" if last == 3: return "rd" return "th"
 - [e8912055] def T(self): """ Time zone of this machine; e.g. 'EST' or 'MDT'.
 - [26847da2] def U(self): "Seconds since the Unix epoch (January 1 1970 00:00:00 GMT)" value = self.data if not isinstance(value, datetime): value = datetime.combine(value, time.min) return int(value.timestamp())

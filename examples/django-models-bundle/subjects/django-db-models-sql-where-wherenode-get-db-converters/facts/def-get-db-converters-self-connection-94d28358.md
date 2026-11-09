@@ -1,6 +1,6 @@
 # Fact 94d28358
 
-Store id: febd2222-c668-4cfc-b89c-fd3b928fe280
+Store id: 3fb8133f-decb-4a38-b790-4b72c61ad132
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_converters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6936070+00:00`
+- posted_at: `2026-11-09T23:44:59.8104800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 310,
     "symbol": "WhereNode.get_db_converters"
   },
-  "id": "febd2222-c668-4cfc-b89c-fd3b928fe280",
+  "id": "3fb8133f-decb-4a38-b790-4b72c61ad132",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6936070+00:00"
+    "posted_at": "2026-11-09T23:44:59.8104800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "02c796aa-2bac-41e4-8e8a-a26b797990fd",
+  "subject_id": "816054da-2a48-472a-9c7f-7d09fc51599c",
   "subject_name": "django/db/models/sql/where::WhereNode.get_db_converters",
   "tags": [
     "entity:method"

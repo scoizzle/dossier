@@ -1,6 +1,6 @@
 # Fact 5bd6196f
 
-Store id: 59413ca8-562c-4eb8-aaf0-9c5ead6fe5f5
+Store id: 7712d447-fb15-44e6-ae3d-0884bab70ede
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_primary_key(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8952400+00:00`
+- posted_at: `2026-11-09T23:44:50.3161430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2887,
     "symbol": "AutoFieldMixin._check_primary_key"
   },
-  "id": "59413ca8-562c-4eb8-aaf0-9c5ead6fe5f5",
+  "id": "7712d447-fb15-44e6-ae3d-0884bab70ede",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8952400+00:00"
+    "posted_at": "2026-11-09T23:44:50.3161430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b9e47ae0-b3ae-4e62-b5c8-6bc9d019946a",
+  "subject_id": "03900da2-8cf2-44e3-962b-3c65272863ec",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin._check_primary_key",
   "tags": [
     "entity:method"

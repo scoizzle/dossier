@@ -1,10 +1,10 @@
 # django/contrib/staticfiles/utils
 
-- Subject: django/contrib/staticfiles/utils (id `b19e1360-66ff-4a08-a95b-b055ec60e91c`)
+- Subject: django/contrib/staticfiles/utils (id `6b7b6caa-a0e9-4f0c-87f1-d1dcbec28d4f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 517 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

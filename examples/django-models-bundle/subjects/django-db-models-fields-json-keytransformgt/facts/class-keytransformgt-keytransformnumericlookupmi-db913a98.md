@@ -1,6 +1,6 @@
 # Fact db913a98
 
-Store id: 23769036-b02e-42c2-bbc2-8866a78f4d2e
+Store id: 03838dce-4d86-4e64-bd05-809e9c2c48bb
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformGt(KeyTransformNumericLookupMixin, lookups.GreaterThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0377050+00:00`
+- posted_at: `2026-11-09T23:44:51.0692060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 736,
     "symbol": "KeyTransformGt"
   },
-  "id": "23769036-b02e-42c2-bbc2-8866a78f4d2e",
+  "id": "03838dce-4d86-4e64-bd05-809e9c2c48bb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0377050+00:00"
+    "posted_at": "2026-11-09T23:44:51.0692060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7885cab-8a71-4846-9202-7b2649aa6e90",
+  "subject_id": "6fdcfdd4-dc99-4a51-ba52-66b2c48d7bc2",
   "subject_name": "django/db/models/fields/json::KeyTransformGt",
   "tags": [
     "entity:class"

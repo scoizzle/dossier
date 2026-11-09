@@ -1,6 +1,6 @@
 # Fact fa695fbc
 
-Store id: 184a6904-064e-4979-bdfd-5ec878b09bfb
+Store id: 36e9d9d3-990d-49af-b360-5335c67920a4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class RelatedPopulator
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "184a6904-064e-4979-bdfd-5ec878b09bfb",
+  "id": "36e9d9d3-990d-49af-b360-5335c67920a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "RelatedPopulator"
       },
       "rel": "contains",
-      "target": "f1226f55-9700-4f24-977e-417360800dc2"
+      "target": "cfa75ad4-a1bb-44fb-a138-1094c7601312"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

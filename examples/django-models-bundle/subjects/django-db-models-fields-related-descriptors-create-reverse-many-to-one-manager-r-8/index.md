@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aadd
 
-- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aadd (id `33ad331a-1915-4ee2-8205-2011d5235938`)
+- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aadd (id `f86fb44e-c648-463e-9569-f51d9ee705ca`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact df4d005e
 
-Store id: 519f7936-6e39-4597-b5f8-8bdd0961979e
+Store id: 97d2b6e0-5bf1-4536-8b7f-81813e73a21d
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_select_clause(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0390640+00:00`
+- posted_at: `2026-11-09T23:44:58.9562960+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2232,
     "symbol": "Query.clear_select_clause"
   },
-  "id": "519f7936-6e39-4597-b5f8-8bdd0961979e",
+  "id": "97d2b6e0-5bf1-4536-8b7f-81813e73a21d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0390640+00:00"
+    "posted_at": "2026-11-09T23:44:58.9562960+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e69dbcde-7e85-4d6a-b648-b974668dcb1f",
+  "subject_id": "02b6b80e-3c34-4d42-8aa1-ac2d67ab6aca",
   "subject_name": "django/db/models/sql/query::Query.clear_select_clause",
   "tags": [
     "entity:method"

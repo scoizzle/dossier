@@ -1,6 +1,6 @@
 # Fact 1a83f033
 
-Store id: 95f96263-9724-485b-8f3d-a34e321130ec
+Store id: 9b3e2c09-efb6-4f72-88e6-982af219673b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _add_hints(self, **hints)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6644520+00:00`
+- posted_at: `2026-11-09T23:44:56.1743160+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2331,
     "symbol": "QuerySet._add_hints"
   },
-  "id": "95f96263-9724-485b-8f3d-a34e321130ec",
+  "id": "9b3e2c09-efb6-4f72-88e6-982af219673b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6644520+00:00"
+    "posted_at": "2026-11-09T23:44:56.1743160+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6cb8aa18-ec08-402e-b756-4f1bb0f3424f",
+  "subject_id": "41332fe3-6edd-40dc-98dc-5c691923f2fd",
   "subject_name": "django/db/models/query::QuerySet._add_hints",
   "tags": [
     "entity:method"

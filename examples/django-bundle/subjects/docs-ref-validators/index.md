@@ -1,10 +1,10 @@
 # docs/ref/validators
 
-- Subject: docs/ref/validators (id `97863b57-6143-4f03-8bed-aa86eadd7ca1`)
+- Subject: docs/ref/validators (id `d731249b-ac3e-4144-9090-6e87eb1a447d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4172 tokens
-- Facts shown: 114 of 122
+- Used: 4541 tokens
+- Facts shown: 122 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -18,23 +18,25 @@
 - Don't rely on validation of the file extension to determine a file's type. Files can be renamed to have any extension no matter what data they contain. [84227312]
 - The :ref:`regex flags <python:contents-of-module-re>` used when compiling the regular expression string :attr:`regex`. If :attr:`regex` is a pre-compiled regular expression, and :attr:`flags` is overridden, :exc:`TypeError` is raised. Defaults to ``0``. [e875cc24]
 - The error code used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"invalid"``. [36a46f1d7b5b66fb]
+- The error code used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"invalid"``. [36a46f1d7b5b66fb-2]
 - The error code used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"null_characters_not_allowed"``. [9fcc6bc6]
 - The error message used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"Enter a valid email address"``. [4f03403a]
+- The error message used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"Enter a valid value"``. [cb96a9fa]
+- The error message used by :exc:`~django.core.exceptions.ValidationError` if validation fails. Defaults to ``"Null characters are not allowed."``. [e58e7ca0]
 - The match mode for :attr:`regex`. Defaults to ``False``. [4aa171f1]
 - The maximum length of values that could be considered valid. Defaults to 2048 characters. [045c126d]
 - The regular expression pattern to search for within the provided ``value``, using :func:`re.search`. This may be a string or a pre-compiled regular expression created with :func:`re.compile`. Defaults to the empty string, which will be found in every possible ``value``. [d76c22cd]
 - URL/URI scheme list to validate against. If not provided, the default list is ``['http', 'https', 'ftp', 'ftps']``. As a reference, the IANA website provides a full list of `valid URI schemes`_. [fa08574d]
-- - ``'max_digits'`` if the number of digits is larger than ``max_digits``. - ``'max_decimal_places'`` if the number of decimals is larger than ``decimal_places``. - ``'max_whole_digits'`` if the number of whole digits is larger than the difference between ``max_digits`` and ``decimal_places``. [5a7d0f9e]
 - .. attribute:: accept_idna [e7c30b53]
 - .. attribute:: allowlist [4da2850d]
 - .. attribute:: code [45a89107dd5a8d11]
 - .. attribute:: code [45a89107dd5a8d11-2]
-- .. attribute:: code [45a89107dd5a8d11-3]
-- .. attribute:: flags [c13db343]
-- .. warning:: [c54b54cb0805732a-89]
 
 ## All facts
 
+- [5a7d0f9e] - ``'max_digits'`` if the number of digits is larger than ``max_digits``. - ``'max_decimal_places'`` if the number of decimals is larger than ``decimal_places``. - ``'max_whole_digits'`` if the number of whole digits is larger than the difference between ``max_digits`` and ``decimal_places``.
+- [45a89107dd5a8d11-3] .. attribute:: code
+- [c13db343] .. attribute:: flags
 - [dca5ac95] .. attribute:: inverse_match
 - [97f6c5ac0309812d-3] .. attribute:: max_length
 - [a2ccad91f7facea1] .. attribute:: message
@@ -42,10 +44,13 @@
 - [a2ccad91f7facea1-3] .. attribute:: message
 - [37a52266edd51262-2] .. attribute:: regex
 - [68f24f00] .. attribute:: schemes
+- [c54b54cb0805732a-89] .. warning::
 - [9f1966ce] :param message: If not ``None``, overrides :attr:`.message`. :param code: If not ``None``, overrides :attr:`code`.
+- [08eeecea] :param message: If not ``None``, overrides :attr:`.message`. :param code: If not ``None``, overrides :attr:`code`. :param allowlist: If not ``None``, overrides :attr:`allowlist`.
 - [591e0ac7] :param regex: If not ``None``, overrides :attr:`regex`. Can be a regular expression string or a pre-compiled regular expression. :param message: If not ``None``, overrides :attr:`.message`. :param code: If not ``None``, overrides :attr:`code`. :param inverse_match: If not ``None``, overrides :attr:`inverse_match`. :param flags: If not ``None``, overrides :attr:`flags`. In that case, :attr:`regex` must be a regular expression string, or :exc:`TypeError` is raised.
 - [a386c7db] A :class:`DomainNameValidator` instance without any customizations.
 - [ebe86162] A :class:`RegexValidator` instance that ensures a value consists of only Unicode letters, numbers, underscores, or hyphens.
+- [e076aef5] A :class:`RegexValidator` instance that ensures a value consists of only letters, numbers, underscores or hyphens.
 - [08eafab8] A :class:`RegexValidator` instance that ensures a value is a comma-separated list of integers.
 - [86cab147] A :class:`RegexValidator` instance that ensures a value looks like an IPv4 address.
 - [ce28ad23] A :class:`RegexValidator` searches the provided ``value`` for a given regular expression with :func:`re.search`. By default, raises a :exc:`~django.core.exceptions.ValidationError` with :attr:`message` and :attr:`code` if a match **is not** found. Its behavior can be inverted by setting :attr:`inverse_match` to ``True``, in which case the :exc:`~django.core.exceptions.ValidationError` is raised when a match **is** found.
@@ -54,12 +59,15 @@
 - [41408d37] An :class:`EmailValidator` ensures that a value looks like an email address, and raises a :exc:`~django.core.exceptions.ValidationError` with :attr:`message` and :attr:`code` if it doesn't. Values longer than 320 characters are always considered invalid.
 - [d148c1ab] An :class:`EmailValidator` instance without any customizations.
 - [e0878073] In addition to the optional arguments of its parent :class:`RegexValidator` class, ``DomainNameValidator`` accepts an extra optional attribute:
+- [df7060a4] In addition to the optional arguments of its parent :class:`RegexValidator` class, ``URLValidator`` accepts an extra optional attribute:
 - [20e32da4] Loopback addresses and reserved IP spaces are considered valid. Literal IPv6 addresses (:rfc:`3986#section-3.2.2`) and Unicode domains are both supported.
 - [e1e99b01] Raises :exc:`~django.core.exceptions.ValidationError` with the following codes:
 - [5570b1fb] Raises a :exc:`~django.core.exceptions.ValidationError` if ``str(value)`` contains one or more null characters (``'\x00'``).
 - [e053ea63] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'invalid_extension'`` if the extension of ``value.name`` (``value`` is a :class:`~django.core.files.File`) isn't found in ``allowed_extensions``. The extension is compared case-insensitively with ``allowed_extensions``.
 - [5b6e4a84] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'max_length'`` if the length of ``value`` is greater than ``limit_value``, which may be a callable.
+- [ab0fbdd8] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'max_value'`` if ``value`` is greater than ``limit_value``, which may be a callable.
 - [a4284729] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'min_length'`` if the length of ``value`` is less than ``limit_value``, which may be a callable.
+- [4f89a4ea] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'min_value'`` if ``value`` is less than ``limit_value``, which may be a callable.
 - [19bfcfbb] Raises a :exc:`~django.core.exceptions.ValidationError` with a code of ``'step_size'`` if ``value`` is not an integral multiple of ``limit_value``, which can be a float, integer or decimal value or a callable. When ``offset`` is set, the validation occurs against ``limit_value`` plus ``offset``. For example, for ``StepValueValidator(3, offset=1.4)`` valid values include ``1.4``, ``4.4``, ``7.4``, ``10.4``, and so on.
 - [f9d658ba] Returns a :class:`RegexValidator` instance that ensures a string consists of integers separated by ``sep``. It allows negative integers when ``allow_negative`` is ``True``.
 - [5058d80a] Uses Pillow to ensure that ``value.name`` (``value`` is a :class:`~django.core.files.File`) has `a valid image extension <https://pillow.readthedocs.io/en/latest/handbook/image-file-formats.html>`__.

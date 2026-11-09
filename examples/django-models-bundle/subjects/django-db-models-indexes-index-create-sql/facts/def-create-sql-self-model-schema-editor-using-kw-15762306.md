@@ -1,6 +1,6 @@
 # Fact 15762306
 
-Store id: c6b2d4f4-2f8b-455f-997b-d24ba325dc7c
+Store id: 43d8bb21-b790-444f-ae3f-19429b34afbb
 
 ## Text
 
@@ -20,7 +20,7 @@ def create_sql(self, model, schema_editor, using="", **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9145270+00:00`
+- posted_at: `2026-11-09T23:44:54.6792790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 186,
     "symbol": "Index.create_sql"
   },
-  "id": "c6b2d4f4-2f8b-455f-997b-d24ba325dc7c",
+  "id": "43d8bb21-b790-444f-ae3f-19429b34afbb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9145270+00:00"
+    "posted_at": "2026-11-09T23:44:54.6792790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "89095fd8-e215-4427-bfe6-c271e00e0fd2",
+  "subject_id": "4d27843f-7ae7-4c41-8ba6-65c353a96120",
   "subject_name": "django/db/models/indexes::Index.create_sql",
   "tags": [
     "entity:method"

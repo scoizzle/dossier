@@ -1,6 +1,6 @@
 # Fact 0c865974
 
-Store id: 2f1a960a-bd37-4105-8eb9-8e623c9e5993
+Store id: 50e90bfd-58f7-4ffb-bf1f-c34c9b307474
 
 ## Text
 
@@ -20,7 +20,7 @@ def allowed_default(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8202310+00:00`
+- posted_at: `2026-11-09T23:44:49.4507600+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 810,
     "symbol": "CombinedExpression.allowed_default"
   },
-  "id": "2f1a960a-bd37-4105-8eb9-8e623c9e5993",
+  "id": "50e90bfd-58f7-4ffb-bf1f-c34c9b307474",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8202310+00:00"
+    "posted_at": "2026-11-09T23:44:49.4507600+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6e29a94e-06be-41f1-924e-576ef439a2ea",
+  "subject_id": "bbfeeffb-f6b2-4b46-8bb2-b8bd568c99f2",
   "subject_name": "django/db/models/expressions::CombinedExpression.allowed_default",
   "tags": [
     "entity:method",

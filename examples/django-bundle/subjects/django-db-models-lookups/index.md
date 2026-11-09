@@ -1,10 +1,10 @@
 # django/db/models/lookups
 
-- Subject: django/db/models/lookups (id `95dd954d-5a4f-4299-be6e-b270d33336ce`)
+- Subject: django/db/models/lookups (id `a899dbde-c46c-4e67-a9ad-19556a0a502b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6923 tokens
-- Facts shown: 110 of 111
+- Used: 6958 tokens
+- Facts shown: 111 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -51,6 +51,7 @@
 - [b7072a4d15402fa7-2] def get_group_by_cols(self): cols = [] for source in self.get_source_expressions(): cols.extend(source.get_group_by_cols()) return cols
 - [4099b601] def get_prep_lhs(self): if hasattr(self.lhs, "resolve_expression"): return self.lhs return Value(self.lhs)
 - [89c085d594e66e49] def get_prep_lookup(self): from django.db.models.sql.query import Query # avoid circular import
+- [89c085d594e66e49-2] def get_prep_lookup(self): from django.db.models.sql.query import Query # avoid circular import
 - [846ad9a5] def get_prep_lookup(self): if hasattr(self.rhs, "resolve_expression"): return self.rhs # Prevent iterator from being consumed by any(). rhs = list(self.rhs) if isinstance(self.rhs, Iterator) else self.rhs if any(hasattr(value, "resolve_expression") for value in rhs): # Wrap direct values in Value expressions so they are handled by # the database at compilation time, along with other expressions. return ExpressionList( *[ ( value if hasattr(value, "resolve_expression") else Value(value, getattr(self.lhs, "output_field", None)) ) for value in rhs ] ) prepared_values = [] for rhs_value in rhs: if ( self.prepare_rhs and hasattr(self.lhs, "output_field") and hasattr(self.lhs.output_field, "get_prep_value") ): rhs_value = self.lhs.output_field.get_prep_value(rhs_value) prepared_values.append(rhs_value) return prepared_values
 - [d17dd370] def get_prep_lookup(self): if isinstance(self.rhs, float): self.rhs = math.ceil(self.rhs) return super().get_prep_lookup()
 - [56e82f78] def get_prep_lookup(self): if not self.prepare_rhs or hasattr(self.rhs, "resolve_expression"): return self.rhs if hasattr(self.lhs, "output_field"): if hasattr(self.lhs.output_field, "get_prep_value"): return self.lhs.output_field.get_prep_value(self.rhs) elif self.rhs_is_direct_value(): return Value(self.rhs) return self.rhs

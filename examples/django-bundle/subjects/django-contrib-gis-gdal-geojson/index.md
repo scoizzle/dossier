@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/geojson
 
-- Subject: django/contrib/gis/gdal/geojson (id `5af2fff2-f925-4e11-b8eb-fd7d7f29784d`)
+- Subject: django/contrib/gis/gdal/geojson (id `c12c0c78-5fdf-4276-ad2a-6ea1687d2f00`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 994 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

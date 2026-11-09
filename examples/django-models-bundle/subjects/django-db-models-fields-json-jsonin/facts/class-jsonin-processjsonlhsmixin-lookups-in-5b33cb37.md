@@ -1,6 +1,6 @@
 # Fact 5b33cb37
 
-Store id: f0c3bbb9-3b9f-4996-a04c-058043cbb7c9
+Store id: dce0dad0-a3cb-404b-b6c9-26533ccb188e
 
 ## Text
 
@@ -20,7 +20,7 @@ class JSONIn(ProcessJSONLHSMixin, lookups.In)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9453750+00:00`
+- posted_at: `2026-11-09T23:44:51.0098480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 403,
     "symbol": "JSONIn"
   },
-  "id": "f0c3bbb9-3b9f-4996-a04c-058043cbb7c9",
+  "id": "dce0dad0-a3cb-404b-b6c9-26533ccb188e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9453750+00:00"
+    "posted_at": "2026-11-09T23:44:51.0098480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ba4c511b-2e95-488c-9124-3aa732a94870",
+  "subject_id": "af23d653-bc6b-4b38-b0e0-e15d7ac8b277",
   "subject_name": "django/db/models/fields/json::JSONIn",
   "tags": [
     "entity:class"

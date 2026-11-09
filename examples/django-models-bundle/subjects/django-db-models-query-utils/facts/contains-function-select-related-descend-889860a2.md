@@ -1,6 +1,6 @@
 # Fact 889860a2
 
-Store id: 2fb6556c-0d38-4cfa-9f8b-68d7def52091
+Store id: d9e6e118-9ce5-4c06-82cb-09be17cefb87
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function select_related_descend
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.2268070+00:00`
+- posted_at: `2026-11-09T23:44:56.7745430+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2fb6556c-0d38-4cfa-9f8b-68d7def52091",
+  "id": "d9e6e118-9ce5-4c06-82cb-09be17cefb87",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.2268070+00:00"
+    "posted_at": "2026-11-09T23:44:56.7745430+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "select_related_descend"
       },
       "rel": "contains",
-      "target": "3b80e70a-cbe0-4f35-966d-fcf02e30a787"
+      "target": "301a5df9-77e7-463e-9e4a-5ff8c5fceaf9"
     }
   ],
   "status": "live",
-  "subject_id": "c693c97c-c89e-4768-9017-bc6868b175fc",
+  "subject_id": "c4182f55-5c15-42df-8e00-aa953309eedf",
   "subject_name": "django/db/models/query_utils",
   "tags": [
     "entity:function"

@@ -1,6 +1,6 @@
 # Fact 3923e85e
 
-Store id: d3903444-81e8-40fe-ad2b-67f3dc6dcf4e
+Store id: fee8e0d0-7561-455f-86bf-9a5bc7278140
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function get_normalized_value
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.0364670+00:00`
+- posted_at: `2026-11-09T23:44:52.2932700+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d3903444-81e8-40fe-ad2b-67f3dc6dcf4e",
+  "id": "fee8e0d0-7561-455f-86bf-9a5bc7278140",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.0364670+00:00"
+    "posted_at": "2026-11-09T23:44:52.2932700+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "get_normalized_value"
       },
       "rel": "contains",
-      "target": "9ed5cc3b-3c3e-4c7c-ba18-0de299538b1d"
+      "target": "c98947f9-3330-414e-800b-8691e959859d"
     }
   ],
   "status": "live",
-  "subject_id": "d5f2171b-837e-44b2-b714-ab9ab8435437",
+  "subject_id": "0f597f49-94d5-4386-a469-b67705cdc4d9",
   "subject_name": "django/db/models/fields/related_lookups",
   "tags": [
     "entity:function"

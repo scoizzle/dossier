@@ -1,6 +1,6 @@
 # Fact d83cddfc
 
-Store id: 3a1908ea-be2b-4710-a71c-107a1cbcafa2
+Store id: 1a71d2d6-f9a5-4bdb-ab91-da6342925a25
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function subclass_exception
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "3a1908ea-be2b-4710-a71c-107a1cbcafa2",
+  "id": "1a71d2d6-f9a5-4bdb-ab91-da6342925a25",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "subclass_exception"
       },
       "rel": "contains",
-      "target": "d57bf993-aac2-40fd-a059-d70983e50fc7"
+      "target": "9340da12-636e-432e-a41a-f8a7e88df16e"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:function"

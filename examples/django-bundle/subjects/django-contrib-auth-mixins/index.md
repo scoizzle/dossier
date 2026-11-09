@@ -1,10 +1,10 @@
 # django/contrib/auth/mixins
 
-- Subject: django/contrib/auth/mixins (id `5aa82aae-d2dc-4e31-9024-7d8859cff1b2`)
+- Subject: django/contrib/auth/mixins (id `0ab003c2-cb6f-4a5e-a3e8-95872c13a903`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1159 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

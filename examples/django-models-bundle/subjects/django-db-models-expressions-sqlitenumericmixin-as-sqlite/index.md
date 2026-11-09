@@ -1,11 +1,11 @@
 # django/db/models/expressions::SQLiteNumericMixin.as_sqlite
 
-- Subject: django/db/models/expressions::SQLiteNumericMixin.as_sqlite (id `9dc82526-08cd-40cf-aa1e-c6bc3374966c`)
+- Subject: django/db/models/expressions::SQLiteNumericMixin.as_sqlite (id `70528264-9e68-41d9-912e-1f878df648a3`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/expressions::WindowFrameExclusion
 
-- Subject: django/db/models/expressions::WindowFrameExclusion (id `7be0d075-7268-4b93-9fda-fe6d29000ca5`)
+- Subject: django/db/models/expressions::WindowFrameExclusion (id `1f6ffd9d-d0f5-42e6-ab7a-da5606e3fc6b`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

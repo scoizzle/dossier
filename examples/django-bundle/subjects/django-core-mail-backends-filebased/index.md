@@ -1,10 +1,10 @@
 # django/core/mail/backends/filebased
 
-- Subject: django/core/mail/backends/filebased (id `212462d8-f2aa-40b2-a98e-7f30f5a4fbc3`)
+- Subject: django/core/mail/backends/filebased (id `80d2381d-33b8-47ed-8a01-6c1bd64255fc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 783 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

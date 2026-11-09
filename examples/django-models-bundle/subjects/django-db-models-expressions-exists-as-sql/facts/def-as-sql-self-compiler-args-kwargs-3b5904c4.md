@@ -1,6 +1,6 @@
 # Fact 3b5904c4
 
-Store id: 94448916-f39d-4b22-9518-50b2cc3ba3f7
+Store id: 832a5857-4576-4557-8c7a-427e56de6a2d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9831470+00:00`
+- posted_at: `2026-11-09T23:44:49.6503070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1904,
     "symbol": "Exists.as_sql"
   },
-  "id": "94448916-f39d-4b22-9518-50b2cc3ba3f7",
+  "id": "832a5857-4576-4557-8c7a-427e56de6a2d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9831470+00:00"
+    "posted_at": "2026-11-09T23:44:49.6503070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "afb8d233-b0a6-451c-91a9-ff6b55376dbd",
+  "subject_id": "90469c79-39c5-497c-bdee-fd87c696b46e",
   "subject_name": "django/db/models/expressions::Exists.as_sql",
   "tags": [
     "entity:method"

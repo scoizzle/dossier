@@ -1,6 +1,6 @@
 # Fact 7a1e2a90
 
-Store id: fe69d767-c6b9-4084-b776-bc9359d6919f
+Store id: 31f209ad-6691-4a3a-a9e3-f5b21764e2fb
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_managers(cls, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7629150+00:00`
+- posted_at: `2026-11-09T23:44:48.5480840+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1935,
     "symbol": "Model._check_managers"
   },
-  "id": "fe69d767-c6b9-4084-b776-bc9359d6919f",
+  "id": "31f209ad-6691-4a3a-a9e3-f5b21764e2fb",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7629150+00:00"
+    "posted_at": "2026-11-09T23:44:48.5480840+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1686c082-aed6-441d-9833-3b7bab9e2915",
+  "subject_id": "fd207ac4-8687-41c8-868c-6554bf9d145c",
   "subject_name": "django/db/models/base::Model._check_managers",
   "tags": [
     "entity:class_method",

@@ -1,6 +1,6 @@
 # Fact fea91b2b
 
-Store id: 0b4f80f6-7ed9-4e6c-ae22-5341803b890f
+Store id: 5e70e64f-24d6-4d17-b402-13f3b6d807cb
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_over_clause(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7674420+00:00`
+- posted_at: `2026-11-09T23:44:49.3153790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 259,
     "symbol": "BaseExpression.contains_over_clause"
   },
-  "id": "0b4f80f6-7ed9-4e6c-ae22-5341803b890f",
+  "id": "5e70e64f-24d6-4d17-b402-13f3b6d807cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7674420+00:00"
+    "posted_at": "2026-11-09T23:44:49.3153790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7e99dd79-6cb0-4f77-9060-33820c31f765",
+  "subject_id": "8a85a815-2954-47cb-99a1-8f0f4babc089",
   "subject_name": "django/db/models/expressions::BaseExpression.contains_over_clause",
   "tags": [
     "entity:method",

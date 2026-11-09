@@ -1,6 +1,6 @@
 # Fact 644ffe01
 
-Store id: 50b491f9-263b-41ba-aa80-6288f71870d3
+Store id: 5edc6308-4df7-4454-927e-b2f2d0ac9c5b
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression( self, query=None, allow_joins=True, reuse=None, summariz
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7718780+00:00`
+- posted_at: `2026-11-09T23:44:49.3234240+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 279,
     "symbol": "BaseExpression.resolve_expression"
   },
-  "id": "50b491f9-263b-41ba-aa80-6288f71870d3",
+  "id": "5edc6308-4df7-4454-927e-b2f2d0ac9c5b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7718780+00:00"
+    "posted_at": "2026-11-09T23:44:49.3234240+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "574325e1-fdc1-4213-a45c-fd55e01cebf5",
+  "subject_id": "d02579f4-d9bb-406e-a44a-7ddd8673f34c",
   "subject_name": "django/db/models/expressions::BaseExpression.resolve_expression",
   "tags": [
     "entity:method"

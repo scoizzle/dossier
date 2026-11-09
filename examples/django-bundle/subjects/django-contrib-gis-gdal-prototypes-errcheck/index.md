@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/prototypes/errcheck
 
-- Subject: django/contrib/gis/gdal/prototypes/errcheck (id `c0417a0e-e11d-4427-b120-a99055314f6c`)
+- Subject: django/contrib/gis/gdal/prototypes/errcheck (id `60e40aa7-f1a2-4b63-bed4-c83e43d117d7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1085 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

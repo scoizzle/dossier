@@ -1,10 +1,10 @@
 # django/template/response
 
-- Subject: django/template/response (id `205a1af3-b02d-4c2d-869b-cde7cfb35e75`)
+- Subject: django/template/response (id `813c20b2-8fa3-41d7-ae44-4f6df55881e4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1407 tokens
-- Facts shown: 27 of 27
+- Facts shown: 27 facts
 - Conflicts: 0
 - Gaps: 0
 

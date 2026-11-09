@@ -1,10 +1,10 @@
 # docs/ref/contrib/redirects
 
-- Subject: docs/ref/contrib/redirects (id `b6441acf-6ee2-4015-a2fe-465e77813cef`)
+- Subject: docs/ref/contrib/redirects (id `3b6248f9-c004-4284-a474-95a3c7675434`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1383 tokens
-- Facts shown: 30 of 30
+- Facts shown: 30 facts
 - Conflicts: 0
 - Gaps: 0
 

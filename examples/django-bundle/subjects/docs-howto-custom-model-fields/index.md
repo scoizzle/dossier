@@ -1,10 +1,10 @@
 # docs/howto/custom-model-fields
 
-- Subject: docs/howto/custom-model-fields (id `070d6125-feb8-4b15-9062-df00144bca69`)
+- Subject: docs/howto/custom-model-fields (id `d4e126e6-4386-4fad-98c8-66ecb637d676`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 9447 tokens
-- Facts shown: 169 of 182
+- Used: 9750 tokens
+- Facts shown: 182 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,10 +41,15 @@
 - [afa90066] Many of Django's model fields accept options that they don't do anything with. For example, you can pass both :attr:`~django.db.models.Field.editable` and :attr:`~django.db.models.DateField.auto_now` to a :class:`django.db.models.DateField` and it will ignore the :attr:`~django.db.models.Field.editable` parameter (:attr:`~django.db.models.DateField.auto_now` being set implies ``editable=False``). No error is raised in this case.
 - [7fee143a] This behavior simplifies the field classes, because they don't need to check for options that aren't necessary. They pass all the options to the parent class and then don't use them later on. It's up to you whether you want your fields to be more strict about the options they select, or to use the more permissive behavior of the current fields.
 - [3b1d293b] class CommaSepField(models.Field): @property def non_db_attrs(self): return super().non_db_attrs + ("separator",)
+- [db002ca80c243089-2] class CustomCharField(models.CharField): ...
 - [66d005c0] class CustomCharField(models.TextField): ...
 - [8e8a28a1] class CustomTextField(models.TextField): ...
 - [85485b6c] class Hand: """A hand of cards (bridge style)"""
 - [11fef55405ab69e8] class HandField(models.Field): # ...
+- [11fef55405ab69e8-2] class HandField(models.Field): # ...
+- [11fef55405ab69e8-3] class HandField(models.Field): # ...
+- [11fef55405ab69e8-4] class HandField(models.Field): # ...
+- [11fef55405ab69e8-5] class HandField(models.Field): # ...
 - [1d0de7d4] class HandField(models.Field): def __init__(self, *args, **kwargs): kwargs["max_length"] = 104 super().__init__(*args, **kwargs)
 - [7bf9b803] class HandField(models.Field): description = "A hand of cards (bridge style)"
 - [c995f037] class MyDateField(models.Field): def db_type(self, connection): if connection.vendor == "mysql": return "datetime" else: return "timestamp"
@@ -56,6 +61,9 @@
 - [39abfa72] example = MyModel.objects.get(pk=1) print(example.hand.north)
 - [43eff7d9] from django.core.exceptions import ValidationError from django.db import models from django.utils.translation import gettext_lazy as _
 - [4af926756c29efa6] from django.db import models
+- [4af926756c29efa6-2] from django.db import models
+- [4af926756c29efa6-3] from django.db import models
+- [4af926756c29efa6-4] from django.db import models
 - [90f4387cea1dbdff] import re
 - [a6ff8aad] name, path, args, kwargs = my_field_instance.deconstruct() new_instance = MyField(*args, **kwargs) self.assertEqual(my_field_instance.some_attribute, new_instance.some_attribute)
 - [b748c67d] new_hand = Hand(north, east, south, west) example.hand = new_hand example.save()
@@ -99,13 +107,17 @@
 - [e8691e56] Background theory =================
 - [aa607cd1] Changing a custom field's base class ------------------------------------
 - [dbb5910c] Continuing our ongoing example, we can write the :meth:`~Field.formfield` method as::
+- [1c17d042] Converting Python objects to query values ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [46ec62d8] Converting field data for serialization ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [a116c0a5] Converting query values to database values ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- [5049fafa] Converting values to Python objects ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [7c1b4245] Creating custom fields requires a bit of attention to detail. To make things easier to follow, we'll use a consistent example throughout this document: wrapping a Python object representing the deal of cards in a hand of Bridge_. Don't worry, you don't have to know how to play Bridge to follow this example. You only need to know that 52 cards are dealt out equally to four players, who are traditionally called *north*, *east*, *south* and *west*. Our class looks something like this::
 - [a90c6376] Custom database types ~~~~~~~~~~~~~~~~~~~~~
 - [ec1cb3b6] Database storage ----------------
 - [26b47113] Django provides a ``File`` class, which is used as a proxy to the file's contents and operations. This can be subclassed to customize how the file is accessed, and what methods are available. It lives at ``django.db.models.fields.files``, and its default behavior is explained in the :doc:`file documentation </ref/files/file>`.
 - [8d016f71] Django's built-in field types don't cover every possible database column type -- only the common types, such as ``VARCHAR`` and ``INTEGER``. For more obscure column types, such as geographic polygons or even user-created types such as `PostgreSQL custom types`_, you can define your own Django ``Field`` subclasses.
 - [4babe141] Documenting your custom field -----------------------------
+- [9033ad83] Emulating built-in field types ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [248a5d87] Field attributes not affecting database column definition ---------------------------------------------------------
 - [45fc150e] Field deconstruction --------------------
 - [4e3a4ff6] Fields in a model must somehow be converted to fit into an existing database column type. Different databases provide different sets of valid column types, but the rule is still the same: those are the only types you have to work with. Anything you want to store in the database must fit into one of those types.
@@ -152,6 +164,7 @@
 - [b6c744f6] Our ``HandField`` accepts most of the standard field options (see the list below), but we ensure it has a fixed length, since it only needs to hold 52 card values plus their suits; 104 characters in total.
 - [7c8e32bc] Our example object ------------------
 - [caa746d2] Pay extra attention if you set new default values for arguments in the ``Field`` superclass; you want to make sure they're always included, rather than disappearing if they take on the old default value.
+- [e82ac719] Preprocessing values before saving ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [ffb83964] Say you've created a PostgreSQL custom type called ``mytype``. You can subclass ``Field`` and implement the :meth:`~Field.db_type` method, like so::
 - [654f56d6] Since using a database requires conversion in both ways, if you override :meth:`~Field.from_db_value` you also have to override :meth:`~Field.get_prep_value` to convert Python objects back to query values.
 - [fe8ebe62] Some data types (for example, dates) need to be in a specific format before they can be used by a database backend. :meth:`~Field.get_db_prep_value` is the method where those conversions should be made. The specific connection that will be used for the query is passed as the ``connection`` parameter. This allows you to use backend-specific conversion logic if it is required.

@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformIEndsWith
 
-- Subject: django/db/models/fields/json::KeyTransformIEndsWith (id `a0ff1f01-f9a8-48b1-9c20-f572ab437a93`)
+- Subject: django/db/models/fields/json::KeyTransformIEndsWith (id `016812a7-9cb7-46a3-b8bf-ddfa0b2b6e50`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 36 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

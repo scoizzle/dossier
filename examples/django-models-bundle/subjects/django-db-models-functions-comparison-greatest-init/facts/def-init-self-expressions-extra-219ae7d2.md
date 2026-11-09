@@ -1,6 +1,6 @@
 # Fact 219ae7d2
 
-Store id: e26c2d20-95a5-469d-8267-c6df23fe4522
+Store id: 897d0b83-790e-40d6-81ae-52d339bf3126
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *expressions, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9951470+00:00`
+- posted_at: `2026-11-09T23:44:53.1712080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 134,
     "symbol": "Greatest.__init__"
   },
-  "id": "e26c2d20-95a5-469d-8267-c6df23fe4522",
+  "id": "897d0b83-790e-40d6-81ae-52d339bf3126",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9951470+00:00"
+    "posted_at": "2026-11-09T23:44:53.1712080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4649cd44-575a-4e78-a28d-fef6ae7f7818",
+  "subject_id": "ad60aee8-133e-4d4c-b2e2-41756dc7bac5",
   "subject_name": "django/db/models/functions/comparison::Greatest.__init__",
   "tags": [
     "entity:method"

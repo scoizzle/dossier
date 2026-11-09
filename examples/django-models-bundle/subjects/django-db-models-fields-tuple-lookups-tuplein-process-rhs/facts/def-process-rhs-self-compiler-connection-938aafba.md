@@ -1,6 +1,6 @@
 # Fact 938aafba
 
-Store id: 1490cfbd-71c9-4beb-a289-c8544a9c1f2c
+Store id: 8bc5e4b2-9336-4fd7-b386-02a286e596b3
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6364000+00:00`
+- posted_at: `2026-11-09T23:44:52.7994530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 341,
     "symbol": "TupleIn.process_rhs"
   },
-  "id": "1490cfbd-71c9-4beb-a289-c8544a9c1f2c",
+  "id": "8bc5e4b2-9336-4fd7-b386-02a286e596b3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6364000+00:00"
+    "posted_at": "2026-11-09T23:44:52.7994530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5a5c5cec-ed46-421a-ae6c-7cddee019244",
+  "subject_id": "5091947e-4831-48bb-9b9f-4a809e56e9d5",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleIn.process_rhs",
   "tags": [
     "entity:method"

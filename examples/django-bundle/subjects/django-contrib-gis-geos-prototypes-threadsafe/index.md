@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prototypes/threadsafe
 
-- Subject: django/contrib/gis/geos/prototypes/threadsafe (id `26c5190b-21fd-4409-a68e-07e821f6c539`)
+- Subject: django/contrib/gis/geos/prototypes/threadsafe (id `19df936c-f16a-4965-bae5-0805358bed1e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 719 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

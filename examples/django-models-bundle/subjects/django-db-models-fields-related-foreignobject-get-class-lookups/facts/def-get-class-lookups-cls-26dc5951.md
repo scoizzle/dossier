@@ -1,6 +1,6 @@
 # Fact 26dc5951
 
-Store id: 66066587-df19-4734-bd7f-f133804c5037
+Store id: 736fac9c-f067-44cf-938c-10757e4c4363
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_class_lookups(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7321780+00:00`
+- posted_at: `2026-11-09T23:44:51.5579500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 931,
     "symbol": "ForeignObject.get_class_lookups"
   },
-  "id": "66066587-df19-4734-bd7f-f133804c5037",
+  "id": "736fac9c-f067-44cf-938c-10757e4c4363",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7321780+00:00"
+    "posted_at": "2026-11-09T23:44:51.5579500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5823577b-1f38-4afd-a5ce-af8c3825d850",
+  "subject_id": "a61c4906-a72d-4d59-8bb3-fdb9960bac60",
   "subject_name": "django/db/models/fields/related::ForeignObject.get_class_lookups",
   "tags": [
     "entity:class_method",

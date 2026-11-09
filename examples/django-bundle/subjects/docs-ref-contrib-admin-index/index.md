@@ -1,10 +1,10 @@
 # docs/ref/contrib/admin/index
 
-- Subject: docs/ref/contrib/admin/index (id `ab7671a6-d361-4b60-8ed1-56a657475380`)
+- Subject: docs/ref/contrib/admin/index (id `f4051780-60d4-4693-99b0-9f8ea9994b0c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 39942 tokens
-- Facts shown: 930 of 992
+- Used: 42064 tokens
+- Facts shown: 992 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,9 +16,11 @@
 - @admin.display(description="Name") def upper_case_name(self, obj): return f"{obj.first_name} {obj.last_name}".upper() [0147bec2]
 - @admin.display(empty_value="unknown") def birth_date_view(self, obj): return obj.birth_date [17768b06]
 - @admin.display(ordering="author__first_name") def author_first_name(self, obj): return obj.author.first_name [0b121d03]
+- @admin.display(ordering="first_name") def colored_first_name(self): return format_html( '<span style="color: #{};">{}</span>', self.color_code, self.first_name, ) [5e53f0e7]
 - @admin.display(ordering=Concat("first_name", Value(" "), "last_name")) def full_name(self): return self.first_name + " " + self.last_name [a03e3933]
 - @property @admin.display( ordering="last_name", description="Full name of the person", boolean=False, ) def full_name(self): return self.first_name + " " + self.last_name [1e82f480]
 - # description functions like a model field's verbose_name @admin.display(description="Address") def address_report(self, instance): # assuming get_full_address() returns a list of strings # for each line of the address and you want to separate each # line by a linebreak return format_html_join( mark_safe("<br>"), "{}", ((line,) for line in instance.get_full_address()), ) or mark_safe("<span class='errors'>I can't determine this address.</span>") [43ad9f3f]
+- @admin.display(empty_value="???") def view_birth_date(self, obj): return obj.birth_date [21f10bed]
 - Always show facet counts. [253207e2]
 - Never show facet counts. [bec92d80]
 - Show facet counts when the ``_facets`` query string parameter is provided. [eed2e068]
@@ -29,17 +31,19 @@
 - def get_extra(self, request, obj=None, **kwargs): extra = 2 if obj: return extra - obj.binarytree_set.count() return extra [566d65a6]
 - def get_formsets_with_inlines(self, request, obj=None): for inline in self.get_inline_instances(request, obj): # hide MyInline in the add view if not isinstance(inline, MyInline) or obj is not None: yield inline.get_formset(request, obj), inline [b5455bc9]
 - def get_inline_instances(self, request, obj=None): return [inline(self.model, self.admin_site) for inline in self.inlines] [3b0931b8]
-- def get_max_num(self, request, obj=None, **kwargs): max_num = 10 if obj and obj.parent: return max_num - 5 return max_num [4b0fa472]
-- def get_readonly_fields(self, request, obj=None): readonly = super().get_readonly_fields(request, obj) if not request.user.is_superuser: readonly.append("age") # Edits the class attribute. return readonly [48cf1cc5]
+- from django.contrib import admin from myapp.models import Author [bd9b8ca7b5a08d79]
 
 ## All facts
 
+- [4b0fa472] def get_max_num(self, request, obj=None, **kwargs): max_num = 10 if obj and obj.parent: return max_num - 5 return max_num
+- [48cf1cc5] def get_readonly_fields(self, request, obj=None): readonly = super().get_readonly_fields(request, obj) if not request.user.is_superuser: readonly.append("age") # Edits the class attribute. return readonly
 - [2b1f5247] def get_search_results(self, request, queryset, search_term): queryset, may_have_duplicates = super().get_search_results( request, queryset, search_term, ) try: search_term_as_int = int(search_term) except ValueError: pass else: queryset |= self.model.objects.filter(age=search_term_as_int) return queryset, may_have_duplicates
 - [f65ce23e] def my_view(self, request): # ... context = dict( # Include common variables for rendering the admin template. self.admin_site.each_context(request), # Anything else you want in the context... key=value, ) return TemplateResponse(request, "sometemplate.html", context)
 - [8b212d89] from django import forms from django.contrib import admin from myapp.models import Person
-- [bd9b8ca7b5a08d79] from django.contrib import admin from myapp.models import Author
 - [14f7cb2c] { "classes": ["collapse"], }
 - [6be2338d] { "fields": ["first_name", "last_name", "address", "city", "state"], }
+- [a02c233a] { "fields": [("first_name", "last_name"), "address", "city", "state"], }
+- [05dfd074] @admin.display(description="Name") def upper_case_name(obj): return f"{obj.first_name} {obj.last_name}".upper()
 - [071dee4e] @admin.display(ordering="-first_name") def colored_first_name(self): ...
 - [eed2c43e] admin.site.empty_value_display = "(None)"
 - [83f6f27d] class Blog(models.Model): title = models.CharField(max_length=255) author = models.ForeignKey(Person, on_delete=models.CASCADE)
@@ -47,19 +51,26 @@
 - [2aeeadb0] class Person(models.Model): first_name = models.CharField(max_length=50) birthday = models.DateField()
 - [409ba861] class Person(models.Model): first_name = models.CharField(max_length=50) color_code = models.CharField(max_length=6)
 - [6272c218d11324a9] class Person(models.Model): first_name = models.CharField(max_length=50) last_name = models.CharField(max_length=50)
+- [6272c218d11324a9-2] class Person(models.Model): first_name = models.CharField(max_length=50) last_name = models.CharField(max_length=50)
+- [7881d488] class Person(models.Model): first_name = models.CharField(max_length=50) last_name = models.CharField(max_length=50) color_code = models.CharField(max_length=6)
+- [74b333ef] class Person(models.Model): name = models.CharField(max_length=50) birthday = models.DateField()
 - [3ed59355] class PersonAdmin(admin.ModelAdmin): empty_value_display = "unknown"
 - [450ae38c] class PersonAdmin(admin.ModelAdmin): list_display = ["city__name"]
 - [a6e25608] class PersonAdmin(admin.ModelAdmin): list_display = ["first_name", "colored_first_name"]
+- [dc708401] class PersonAdmin(admin.ModelAdmin): list_display = ["first_name", "last_name", "colored_name"]
 - [7ec323bc] class PersonAdmin(admin.ModelAdmin): list_display = ["first_name", "last_name"]
 - [42f8a9b0] class PersonAdmin(admin.ModelAdmin): list_display = ["full_name"]
 - [d29e9ed7] class PersonAdmin(admin.ModelAdmin): list_display = ["name", "birth_date_view"]
 - [30be12f7] class PersonAdmin(admin.ModelAdmin): list_display = ["name", "born_in_fifties"]
 - [fd9fd3da] class PersonAdmin(admin.ModelAdmin): list_display = ["name", "decade_born_in"]
 - [b6a1ebea] class PersonAdmin(admin.ModelAdmin): list_display = ["upper_case_name"]
+- [5d09978a] class PersonAdmin(admin.ModelAdmin): list_display = [upper_case_name]
 - [907d5863] def my_property(self): return self.first_name + " " + self.last_name
 - [13fbe7fc2a5a9c75-10] from django.contrib import admin
 - [bd6fb9934300b6a3] from django.contrib import admin from django.db import models
+- [bd6fb9934300b6a3-2] from django.contrib import admin from django.db import models
 - [6c43c570e872c3a1] from django.contrib import admin from django.db import models from django.utils.html import format_html
+- [6c43c570e872c3a1-2] from django.contrib import admin from django.db import models from django.utils.html import format_html
 - [2a06cf0a] from django.db.models import Value from django.db.models.functions import Concat
 - [705ea37c] full_name = property(my_property)
 - [81ab41eb] list_display = ["__str__", "some_other_field"]
@@ -124,6 +135,7 @@
 - [1926bea8] ``formfield_overrides`` won't let you change the widget on relation fields that have ``raw_id_fields``, ``radio_fields``, or ``autocomplete_fields`` set. That's because ``raw_id_fields``, ``radio_fields``, and ``autocomplete_fields`` imply custom widgets of their own.
 - [cf5fd6ba] ``list_editable`` interacts with a couple of other options in particular ways; you should note the following rules:
 - [581d9c391670b6e7] admin.site.register(Author, AuthorAdmin)
+- [581d9c391670b6e7-2] admin.site.register(Author, AuthorAdmin)
 - [ad031763] class ArticleAdmin(admin.ModelAdmin): def save_formset(self, request, form, formset, change): instances = formset.save(commit=False) for obj in formset.deleted_objects: obj.delete() for instance in instances: instance.user = request.user instance.save() formset.save_m2m()
 - [b4c4307f] class ArticleAdmin(admin.ModelAdmin): def save_model(self, request, obj, form, change): obj.user = request.user super().save_model(request, obj, form, change)
 - [cf0758ba] class ArticleAdmin(admin.ModelAdmin): list_select_related = ["author", "category"]
@@ -138,12 +150,14 @@
 - [d9e9d67c] class AuthorAdmin(admin.ModelAdmin): list_display = ["name", "title", "view_birth_date"]
 - [91c62e9c] class AuthorAdmin(admin.ModelAdmin): pass
 - [b5cdeb1b3245f03b] class BinaryTreeAdmin(admin.TabularInline): model = BinaryTree
+- [b5cdeb1b3245f03b-2] class BinaryTreeAdmin(admin.TabularInline): model = BinaryTree
 - [05703ad1] class BookInline(admin.TabularInline): model = Book
 - [323018a2] class BookInline(admin.TabularInline): model = Book raw_id_fields = ["pages"]
 - [83f71ca7] class ChoiceAdmin(admin.ModelAdmin): autocomplete_fields = ["question"]
 - [0685bf3d] class CountryAdmin(admin.ModelAdmin): form = CountryAdminForm
 - [b82a2589] class CountryAdminForm(forms.ModelForm): def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) self.fields["capital"].queryset = self.instance.cities.all()
 - [38f92183] class FlatPageAdmin(admin.ModelAdmin): fields = ["url", "title", "content"]
+- [ade995f0] class FlatPageAdmin(admin.ModelAdmin): fields = [("url", "title"), "content"]
 - [09f8670d] class FlatPageAdmin(admin.ModelAdmin): fieldsets = [ ( None, { "fields": ["url", "title", "content", "sites"], }, ), ( "Advanced options", { "classes": ["collapse"], "fields": ["registration_required", "template_name"], }, ), ]
 - [3340907f] class Meta: constraints = [ models.UniqueConstraint( fields=["person", "group"], name="unique_person_group" ) ]
 - [9ed83c5b] class MyAdminFormSet(BaseModelFormSet): pass
@@ -151,6 +165,7 @@
 - [92ea6c51] class MyModelAdmin(admin.ModelAdmin): ... # Have facets always shown for this model admin. show_facets = admin.ShowFacets.ALWAYS
 - [95cac741] class MyModelAdmin(admin.ModelAdmin): def formfield_for_choice_field(self, db_field, request, **kwargs): if db_field.name == "status": kwargs["choices"] = [ ("accepted", "Accepted"), ("denied", "Denied"), ] if request.user.is_superuser: kwargs["choices"].append(("ready", "Ready for deployment")) return super().formfield_for_choice_field(db_field, request, **kwargs)
 - [cc114e20] class MyModelAdmin(admin.ModelAdmin): def formfield_for_foreignkey(self, db_field, request, **kwargs): if db_field.name == "car": kwargs["queryset"] = Car.objects.filter(owner=request.user) return super().formfield_for_foreignkey(db_field, request, **kwargs)
+- [fec8f793] class MyModelAdmin(admin.ModelAdmin): def formfield_for_manytomany(self, db_field, request, **kwargs): if db_field.name == "cars": kwargs["queryset"] = Car.objects.filter(owner=request.user) return super().formfield_for_manytomany(db_field, request, **kwargs)
 - [5f9ddb5f] class MyModelAdmin(admin.ModelAdmin): def get_changelist_form(self, request, **kwargs): return MyForm
 - [e52035de] class MyModelAdmin(admin.ModelAdmin): def get_changelist_formset(self, request, **kwargs): kwargs["formset"] = MyAdminFormSet return super().get_changelist_formset(request, **kwargs)
 - [76d6b7c8] class MyModelAdmin(admin.ModelAdmin): def get_form(self, request, obj=None, **kwargs): if request.user.is_superuser: kwargs["form"] = MySuperuserForm return super().get_form(request, obj, **kwargs)
@@ -159,6 +174,7 @@
 - [5165a69f] class MyModelAdmin(admin.ModelAdmin): def get_urls(self): urls = super().get_urls() my_urls = [path("my_view/", self.admin_site.admin_view(self.my_view))] return my_urls + urls
 - [b0b63fcb] class MyModelAdmin(admin.ModelAdmin): formfield_overrides = { models.TextField: {"widget": RichTextEditorWidget}, }
 - [0ba3c271] class MyModelAdmin(admin.ModelAdmin): inlines = [MyInline, SomeOtherInline]
+- [346a3c00] class MyModelAdmin(admin.ModelAdmin): inlines = [MyInline]
 - [22e28b51] class PersonAdmin(admin.ModelAdmin): def get_ordering(self, request): if request.user.is_superuser: return ["name", "rank"] else: return ["name"]
 - [64b614df] class PersonAdmin(admin.ModelAdmin): def get_sortable_by(self, request): return {*self.get_list_display(request)} - {"rank"}
 - [0a0a388d] class PersonAdmin(admin.ModelAdmin): def view_on_site(self, obj): url = reverse("person-detail", kwargs={"slug": obj.slug}) return "https://example.com" + url
@@ -176,12 +192,24 @@
 - [a3f3fdb0] def get_osm_info(self): # ... pass
 - [a0cd595f] def is_published(self, obj): return obj.publish_date is not None
 - [9ee3a9405e27875c-2] from django import forms
+- [13fbe7fc2a5a9c75-11] from django.contrib import admin
+- [13fbe7fc2a5a9c75-12] from django.contrib import admin
+- [13fbe7fc2a5a9c75-13] from django.contrib import admin
+- [13fbe7fc2a5a9c75-14] from django.contrib import admin
+- [13fbe7fc2a5a9c75-15] from django.contrib import admin
+- [13fbe7fc2a5a9c75-16] from django.contrib import admin
+- [13fbe7fc2a5a9c75-17] from django.contrib import admin
+- [87318ab2] from django.contrib import admin from .models import Author
 - [53992449] from django.contrib import admin from .models import Author, Editor, Reader from myproject.admin_site import custom_admin_site
+- [bd6fb9934300b6a3-3] from django.contrib import admin from django.db import models
 - [a28cac8d] from django.contrib import admin from django.template.response import TemplateResponse from django.urls import path
 - [3338fe57] from django.contrib import admin from django.urls import reverse
 - [a07866d1] from django.contrib import admin from django.utils.html import format_html_join from django.utils.safestring import mark_safe
+- [bd9b8ca7b5a08d79-2] from django.contrib import admin from myapp.models import Author
+- [09341078] from django.contrib import admin from myapp.models import Author, Book
 - [447c0eb6] from django.contrib.admin.models import ADDITION, LogEntry
 - [d0ef96b0] from django.contrib.admin.views.decorators import staff_member_required
+- [4af926756c29efa6-11] from django.db import models
 - [b3d7311d] from django.forms import BaseModelFormSet
 - [a350ba89] is_published.boolean = True is_published.admin_order_field = "-publish_date" is_published.short_description = "Is Published?"
 - [f16b1ace] list_display = ["first_name", "last_name"]
@@ -227,15 +255,18 @@
 - [6bc177e5] * The name of a related field, using the ``__`` notation. For example::
 - [3a3121ef] * Usually, elements of ``list_display`` that aren't actual database fields can't be used in sorting (because Django does all the sorting at the database level).
 - [96bf713c] * ``ManyToManyField`` fields aren't supported, because that would entail executing a separate SQL statement for each row in the table. If you want to do this nonetheless, give your model a custom method, and add that method's name to ``list_display``. (See below for more on custom methods in ``list_display``.)
+- [9c9d86a9] * ``app_label``: the application label * ``app_url``: the URL of the application index in the admin * ``has_module_perms``: a boolean indicating if displaying and accessing of the module's index page is permitted for the current user * ``models``: a list of the models available in the application * ``name``: name of the application
 - [d0fa65f8] * ``classes`` A list or tuple containing extra CSS classes to apply to the fieldset. This can include any custom CSS class defined in the project, as well as the CSS class provided by Django: ``collapse``.
 - [1fca0d63] * ``description`` A string of optional extra text to be displayed at the top of each fieldset, under the heading of the fieldset.
 - [70f61aac] * ``fields`` A list or tuple of field names to display in this fieldset. This key is required.
 - [08b985e1] * ``is_popup``: whether the current page is displayed in a popup window * ``is_nav_sidebar_enabled``: :attr:`AdminSite.enable_nav_sidebar` * ``log_entries``: :meth:`.AdminSite.get_log_entries`
+- [699b7829868e2c45-2] * ``model``: the model class * ``object_name``: class name of the model * ``name``: plural name of the model * ``perms``: a ``dict`` tracking ``add``, ``change``, ``delete``, and ``view`` permissions * ``admin_url``: admin changelist URL for the model * ``add_url``: admin URL to add a new model instance
 - [ec93f09d] * ``site_header``: :attr:`AdminSite.site_header` * ``site_title``: :attr:`AdminSite.site_title` * ``site_url``: :attr:`AdminSite.site_url` * ``has_permission``: :meth:`AdminSite.has_permission` * ``available_apps``: a list of applications from the :doc:`application registry </ref/applications/>` available for the current user. Each entry in the list is a dict representing an application with the following keys:
 - [c5e7d7e8] .. admonition:: :class:`~django.contrib.admin.TabularInline` has limited support for ``fieldsets``
 - [5bd73e11] .. admonition:: Do you need a ``ModelAdmin`` object at all?
 - [a785edbf] .. admonition:: Object-level view permissions aren't visibility filters
 - [c84609db45d47a9e] .. admonition:: Omit the ``Meta.model`` attribute
+- [c84609db45d47a9e-2] .. admonition:: Omit the ``Meta.model`` attribute
 - [3336e20b] .. admonition:: Performance considerations for large datasets
 - [01cab3f5] .. admonition:: Performance considerations with facets
 - [792ce23b] .. admonition:: Performance considerations with ordering and sorting
@@ -290,6 +321,7 @@
 - [8289ea83] By default the admin shows all fields as editable. Any fields in this option (which should be a ``list`` or ``tuple``) will display its data as-is and non-editable; they are also excluded from the :class:`~django.forms.ModelForm` used for creating and editing. Note that when specifying :attr:`ModelAdmin.fields` or :attr:`ModelAdmin.fieldsets` the read-only fields must be present to be shown (they are ignored otherwise).
 - [207088d6] By default, Django's admin uses a select-box interface (<select>) for fields that are ``ForeignKey`` or have ``choices`` set. If a field is present in ``radio_fields``, Django will use a radio-button interface instead. Assuming ``group`` is a ``ForeignKey`` on the ``Person`` model::
 - [7aaf26161657e975] By default, Django's admin uses a select-box interface (<select>) for fields that are ``ForeignKey``. Sometimes you don't want to incur the overhead of having to select all the related instances to display in the drop-down.
+- [7aaf26161657e975-2] By default, Django's admin uses a select-box interface (<select>) for fields that are ``ForeignKey``. Sometimes you don't want to incur the overhead of having to select all the related instances to display in the drop-down.
 - [1d4d0cb4] By default, ``lookup_allowed()`` allows access to a model's local fields, field paths used in :attr:`~ModelAdmin.list_filter` (but not paths from :meth:`~ModelAdmin.get_list_filter`), and lookups required for :attr:`~django.db.models.ForeignKey.limit_choices_to` to function correctly in :attr:`~django.contrib.admin.ModelAdmin.raw_id_fields`.
 - [2e17ceac] By default, ``save_as_continue`` is set to ``True``.
 - [7f7e88c0] By default, ``save_as`` is set to ``False``.
@@ -318,6 +350,7 @@
 - [acfcf117f82fd4c9-4] Example::
 - [acfcf117f82fd4c9-5] Example::
 - [f776974203abcf86] For an example see the section :ref:`admin-custom-validation`.
+- [f776974203abcf86-2] For an example see the section :ref:`admin-custom-validation`.
 - [bf4e1659] For example if you wanted to display a particular inline only in the change view, you could override ``get_formsets_with_inlines`` as follows::
 - [6a20fe1d] For example to attach ``request.user`` to the object prior to saving::
 - [56a468c6] For example, if ``search_fields`` is set to ``['first_name', 'last_name', 'age__exact']`` and a user searches for ``john 25``, Django will do the equivalent of this SQL ``WHERE`` clause:
@@ -337,6 +370,7 @@
 - [b1623baf] INSTALLED_APPS = [ # ... "myproject.apps.MyAdminConfig", # replaces 'django.contrib.admin' # ... ]
 - [5324eaf4] If ``readonly_fields`` is used without defining explicit ordering through :attr:`ModelAdmin.fields` or :attr:`ModelAdmin.fieldsets` they will be added last after all editable fields.
 - [7db90e82] If neither ``fields`` nor :attr:`~ModelAdmin.fieldsets` options are present, Django will default to displaying each field that isn't an ``AutoField`` and has ``editable=True``, in a single fieldset, in the same order as the fields are defined in the model, followed by any fields defined in :attr:`~ModelAdmin.readonly_fields`.
+- [f0c06ef3] If neither ``fieldsets`` nor :attr:`~ModelAdmin.fields` options are present, Django will default to displaying each field that isn't an ``AutoField`` and has ``editable=True``, in a single fieldset, in the same order as the fields are defined in the model.
 - [de2b77b6] If the page is cacheable, but you still want the permission check to be performed, you can pass a ``cacheable=True`` argument to ``AdminSite.admin_view()``::
 - [601035b7] If this isn't provided, the Django admin will use the model's default ordering.
 - [8edd70cb] If you don't set ``list_display``, the admin site will display a single column that displays the ``__str__()`` representation of each object.
@@ -373,9 +407,14 @@
 - [45902425] Ordering and pagination of the results are controlled by the related ``ModelAdmin``'s :meth:`~ModelAdmin.get_ordering` and :meth:`~ModelAdmin.get_paginator` methods.
 - [5bb99a2b] Override this method to customize the lookups permitted for your :class:`~django.contrib.admin.ModelAdmin` subclass.
 - [62fdfcce] Override this method to programmatically determine the maximum number of inline forms. For example, this may be based on the model instance (passed as the keyword argument ``obj``)::
+- [ba1c05ae] Override this method to programmatically determine the minimum number of inline forms. For example, this may be based on the model instance (passed as the keyword argument ``obj``).
+- [00347e81] Override this method to programmatically determine the number of extra inline forms. For example, this may be based on the model instance (passed as the keyword argument ``obj``)::
 - [88781f3f] Path to a custom template that will be used by the admin site app index view.
 - [bc0374b9] Path to a custom template that will be used by the admin site login view.
+- [be38edf2] Path to a custom template that will be used by the admin site logout view.
+- [2a4dee24] Path to a custom template that will be used by the admin site main index view.
 - [a7c22473] Path to a custom template that will be used by the admin site password change done view.
+- [e821a9c7] Path to a custom template that will be used by the admin site password change view.
 - [536b3ede] Path to a custom template, used by :meth:`add_view`.
 - [0d0192af] Path to a custom template, used by :meth:`change_view`.
 - [d1917808] Path to a custom template, used by :meth:`changelist_view`.
@@ -428,6 +467,8 @@
 - [f1ca7c78] Should return ``True`` if deleting ``obj`` is permitted, ``False`` otherwise. If ``obj`` is ``None``, should return ``True`` or ``False`` to indicate whether deleting objects of this type is permitted in general (e.g., ``False`` will be interpreted as meaning that the current user is not permitted to delete any object of this type).
 - [0edd6fad] Should return ``True`` if deleting an inline object is permitted, ``False`` otherwise. ``obj`` is the parent object being edited.
 - [bcd29e2d] Should return ``True`` if displaying the module on the admin index page and accessing the module's index page is permitted, ``False`` otherwise. Uses :meth:`User.has_module_perms() <django.contrib.auth.models.User.has_module_perms>` by default. Overriding it does not restrict access to the view, add, change, or delete views, :meth:`~ModelAdmin.has_view_permission`, :meth:`~ModelAdmin.has_add_permission`, :meth:`~ModelAdmin.has_change_permission`, and :meth:`~ModelAdmin.has_delete_permission` should be used for that.
+- [ef38f2a3] Should return ``True`` if editing ``obj`` is permitted, ``False`` otherwise. If ``obj`` is ``None``, should return ``True`` or ``False`` to indicate whether editing of objects of this type is permitted in general (e.g., ``False`` will be interpreted as meaning that the current user is not permitted to edit any object of this type).
+- [089680fe] Should return ``True`` if editing an inline object is permitted, ``False`` otherwise. ``obj`` is the parent object being edited.
 - [9f9d550a] Should return ``True`` if the user is permitted to access the change or history view for ``obj``, and ``False`` otherwise. If obj is ``None``, should return ``True`` or ``False`` to indicate whether viewing of objects of this type is permitted in general (e.g., ``False`` will be interpreted as meaning that the current user is not permitted to view any object of this type).
 - [7ed6327d] Since that's a bit abstract, let's look at a concrete example. The most common use of ``formfield_overrides`` is to add a custom widget for a certain type of field. So, imagine we've written a ``RichTextEditorWidget`` that we'd like to use for large text fields instead of the default ``<textarea>``. Here's how we'd do that::
 - [15650717] Since the Author model only has three fields, ``name``, ``title``, and ``birth_date``, the forms resulting from the above declarations will contain exactly the same fields.
@@ -450,6 +491,7 @@
 - [e5f88c4a] The ``formfield_for_foreignkey`` method on a ``ModelAdmin`` allows you to override the default formfield for a foreign keys field. For example, to return a subset of objects for this foreign key field based on the user::
 - [5f614b87] The ``get_autocomplete_fields()`` method is given the ``HttpRequest`` and is expected to return a ``list`` or ``tuple`` of field names that will be displayed with an autocomplete widget as described above in the :attr:`ModelAdmin.autocomplete_fields` section.
 - [a2802db1] The ``get_exclude`` method is given the ``HttpRequest`` and the ``obj`` being edited (or ``None`` on an add form) and is expected to return a list of fields, as described in :attr:`ModelAdmin.exclude`.
+- [a95507c6] The ``get_fields`` method is given the ``HttpRequest`` and the ``obj`` being edited (or ``None`` on an add form) and is expected to return a list of fields, as described above in the :attr:`ModelAdmin.fields` section.
 - [530327d0] The ``get_fieldsets`` method is given the ``HttpRequest`` and the ``obj`` being edited (or ``None`` on an add form) and is expected to return a list of 2-tuples, in which each 2-tuple represents a ``<fieldset>`` on the admin form page, as described above in the :attr:`ModelAdmin.fieldsets` section.
 - [d189a18d] The ``get_inline_instances`` method is given the ``HttpRequest`` and the ``obj`` being edited (or ``None`` on an add form) and is expected to return a ``list`` or ``tuple`` of :class:`~django.contrib.admin.InlineModelAdmin` objects, as described below in the :class:`~django.contrib.admin.InlineModelAdmin` section. For example, the following would return inlines without the default filtering based on add, change, delete, and view permissions::
 - [81479f4f] The ``get_inlines`` method is given the ``HttpRequest`` and the ``obj`` being edited (or ``None`` on an add form) and is expected to return an iterable of inlines. You can override this method to dynamically add inlines based on the request or model instance instead of specifying them in :attr:`ModelAdmin.inlines`.
@@ -557,7 +599,9 @@
 - [a789bfd2] ``prepopulated_fields`` doesn't accept ``DateTimeField``, ``ForeignKey``, ``OneToOneField``, and ``ManyToManyField`` fields.
 - [214419d8] ``protected`` is a list of strings representing of all the protected related objects that can't be deleted. The list is displayed in the template.
 - [22fa3c467f694750] ``raw_id_fields`` is a list of fields you would like to change into an ``Input`` widget for either a ``ForeignKey`` or ``ManyToManyField``::
+- [22fa3c467f694750-2] ``raw_id_fields`` is a list of fields you would like to change into an ``Input`` widget for either a ``ForeignKey`` or ``ManyToManyField``::
 - [1d7ba868] ``response_add`` is called after the admin form is submitted and just after the object and all the related instances have been created and saved. You can override it to change the default behavior after the object has been created.
+- [c8709626] ``response_change`` is called after the admin form is submitted and just after the object and all the related instances have been saved. You can override it to change the default behavior after the object has been changed.
 - [cb740f4c] ``response_delete`` is called after the object has been deleted. You can override it to change the default behavior after the object has been deleted.
 - [8f94f604] admin.site.register(Group, GroupAdmin)
 - [85b795ba] admin.site.register(Person, PersonAdmin)
@@ -585,17 +629,25 @@
 - [ba5db404] class MyAdminSite(admin.AdminSite): ...
 - [4d0586d2] class MyModelAdmin(admin.ModelAdmin): # A template for a very customized change view: change_form_template = "admin/myapp/extras/openstreetmap_change_form.html"
 - [51e4d4482f9c4808] class Person(models.Model): name = models.CharField(max_length=128)
+- [51e4d4482f9c4808-2] class Person(models.Model): name = models.CharField(max_length=128)
+- [51e4d4482f9c4808-3] class Person(models.Model): name = models.CharField(max_length=128)
 - [ffcce53d] class PersonAdmin(admin.ModelAdmin): inlines = [ FriendshipInline, ]
 - [4f3fc0ed] class PersonAdmin(admin.ModelAdmin): inlines = [MembershipInline]
 - [556fe249] class Product(models.Model): name = models.CharField(max_length=100)
 - [0652d687] class ProductAdmin(admin.ModelAdmin): inlines = [ ImageInline, ]
 - [544a53cd] from .models import MyModel
+- [13fbe7fc2a5a9c75-18] from django.contrib import admin
+- [13fbe7fc2a5a9c75-19] from django.contrib import admin
+- [13fbe7fc2a5a9c75-20] from django.contrib import admin
 - [1304630e] from django.contrib import admin from django.contrib.auth import views as auth_views
 - [80ce1f75] from django.contrib import admin from django.contrib.contenttypes.admin import GenericTabularInline
 - [1f8f9ca1] from django.contrib import admin from myapp.models import Friendship, Person
 - [baca9787] from django.contrib import admin from myapp.models import Group
 - [6c7634aa] from django.contrib.admin.apps import AdminConfig
 - [b69eb8da727ca46d] from django.contrib.contenttypes.fields import GenericForeignKey from django.contrib.contenttypes.models import ContentType from django.db import models
+- [4af926756c29efa6-12] from django.db import models
+- [4af926756c29efa6-13] from django.db import models
+- [4af926756c29efa6-14] from django.db import models
 - [c537d1941a7e3025-15] from django.urls import path
 - [e196bbcd] from myapp.admin import admin_site
 - [bf8b3a2a] from myapp.models import Image, Product
@@ -608,6 +660,7 @@
 - [3b71f343] {% block extrastyle %}{{ block.super }} <style> html[data-theme="light"], :root { --primary: #9774d5; --secondary: #785cab; --link-fg: #7c449b; --link-selected-fg: #8f5bb2; } </style> {% endblock %}
 - [8402d6f6] {% extends "admin/change_form.html" %} {% load i18n admin_urls %} {% block object-tools-items %} <li> <a href="{% url opts|admin_urlname:'history' original.pk|admin_urlquote %}" class="historylink">{% translate "History" %}</a> </li> <li> <a href="mylink/" class="historylink">My Link</a> </li> {% if has_absolute_url %} <li> <a href="{% url 'admin:view_on_site' content_type_id original.pk %}" class="viewsitelink">{% translate "View on site" %}</a> </li> {% endif %} {% endblock %}
 - [63790b47e08119c2] {% extends 'admin/base.html' %}
+- [63790b47e08119c2-2] {% extends 'admin/base.html' %}
 - [ae181178] {% load admin_urls %} <a href="{% url opts|admin_urlname:'add' %}">Add user</a> <a href="{% url opts|admin_urlname:'delete' user.pk %}">Delete this user</a>
 - [4c241e52] actions filters admindocs javascript
 - [4535d305] #. :ref:`Hook the admin's URLs into your URLconf <hooking-adminsite-to-urlconf>`.
@@ -726,6 +779,10 @@
 - [0e88f829] .. class:: apps.AdminConfig
 - [f7e614ec] .. class:: apps.SimpleAdminConfig
 - [23b1c1f9] .. class:: models.LogEntry
+- [685d15dfb6eb2285-58] .. code-block:: html+django
+- [685d15dfb6eb2285-59] .. code-block:: html+django
+- [685d15dfb6eb2285-60] .. code-block:: html+django
+- [685d15dfb6eb2285-61] .. code-block:: html+django
 - [eaf050be34acb41d-15] .. code-block:: pycon
 - [eaf050be34acb41d-16] .. code-block:: pycon
 - [d468e5bd] .. code-block:: python :caption: ``myapp/admin.py``
@@ -769,6 +826,7 @@
 - [90f9e2aa] .. method:: ModelAdmin.formfield_for_manytomany(db_field, request, **kwargs)
 - [78dcc6ff] .. method:: ModelAdmin.get_autocomplete_fields(request)
 - [13533c1e] .. method:: ModelAdmin.get_changeform_initial_data(request)
+- [904b7af6] .. method:: ModelAdmin.get_changelist(request, **kwargs)
 - [5d39823d] .. method:: ModelAdmin.get_changelist_form(request, **kwargs)
 - [759f7879] .. method:: ModelAdmin.get_deleted_objects(objs, request)
 - [fab07f51] .. method:: ModelAdmin.get_exclude(request, obj=None)
@@ -780,11 +838,14 @@
 - [341e675c] .. method:: ModelAdmin.get_inline_instances(request, obj=None)
 - [a26faae0] .. method:: ModelAdmin.get_inlines(request, obj)
 - [2a95c591] .. method:: ModelAdmin.get_list_display(request)
+- [0a1500a6] .. method:: ModelAdmin.get_list_display_links(request, list_display)
 - [efdcefc7] .. method:: ModelAdmin.get_list_filter(request)
 - [ed35c490] .. method:: ModelAdmin.get_list_select_related(request)
 - [6c4bf4d3] .. method:: ModelAdmin.get_ordering(request)
 - [02129575] .. method:: ModelAdmin.get_paginator(request, queryset, per_page, orphans=0, allow_empty_first_page=True)
+- [4b47b702] .. method:: ModelAdmin.get_prepopulated_fields(request, obj=None)
 - [e5d35616] .. method:: ModelAdmin.get_queryset(request)
+- [fd1abfd2] .. method:: ModelAdmin.get_readonly_fields(request, obj=None)
 - [231172f4] .. method:: ModelAdmin.get_search_fields(request)
 - [40f8a227] .. method:: ModelAdmin.get_search_results(request, queryset, search_term)
 - [57a6f4a4] .. method:: ModelAdmin.get_sortable_by(request)
@@ -915,6 +976,7 @@
 - [7dbf438e] To continue the example above, we want to add a new link next to the ``History`` tool for the ``Page`` model. After looking at ``change_form.html`` we determine that we only need to override the ``object-tools-items`` block. Therefore here is our new ``change_form.html`` :
 - [871b1de8] To override an admin template for a specific app, copy and edit the template from the :source:`django/contrib/admin/templates/admin` directory, and save it to one of the directories you just created.
 - [a2435442] Unlike the hook-type ``ModelAdmin`` methods detailed in the previous section, these five methods are in reality designed to be invoked as Django views from the admin application URL dispatching handler to render the pages that deal with model instances CRUD operations. As a result, completely overriding these methods will significantly change the behavior of the admin application.
+- [1fbd31d7] Using generic relations as an inline ------------------------------------
 - [9281aa6c] When an :class:`AdminSite` is deployed, the views provided by that site are accessible using Django's :ref:`URL reversing system <naming-url-patterns>`.
 - [385914b3] When you put ``'django.contrib.admin'`` in your :setting:`INSTALLED_APPS` setting, Django automatically looks for an ``admin`` module in each application and imports it.
 - [fa73a4ac] When you specify an intermediary model using the ``through`` argument to a :class:`~django.db.models.ManyToManyField`, the admin will not display a widget by default. This is because each instance of that intermediary model requires more information than could be displayed in a single widget, and the layout required for multiple widgets will vary depending on the intermediate model.

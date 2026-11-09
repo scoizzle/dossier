@@ -1,11 +1,11 @@
 # django/db/models/base::Model._check_constraints
 
-- Subject: django/db/models/base::Model._check_constraints (id `ea0bd41c-b902-44b7-8b94-a0879b6cb9ff`)
+- Subject: django/db/models/base::Model._check_constraints (id `86492919-c4b4-4411-b0d7-997785b5778a`)
 - Kind: class_method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

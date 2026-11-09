@@ -1,6 +1,6 @@
 # Fact dedd9f9a
 
-Store id: e4fe2807-6e72-4baf-b704-3f53605b29c4
+Store id: b397c07e-3b71-4ab3-9aea-de6a391170cb
 
 ## Text
 
@@ -20,7 +20,7 @@ def pk_fields(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0410660+00:00`
+- posted_at: `2026-11-09T23:44:55.5912730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 992,
     "symbol": "Options.pk_fields"
   },
-  "id": "e4fe2807-6e72-4baf-b704-3f53605b29c4",
+  "id": "b397c07e-3b71-4ab3-9aea-de6a391170cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0410660+00:00"
+    "posted_at": "2026-11-09T23:44:55.5912730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd3572ed-a230-4808-82a1-586b4b4402a6",
+  "subject_id": "ab9ad08d-761f-4661-9ad9-3ee598291a8e",
   "subject_name": "django/db/models/options::Options.pk_fields",
   "tags": [
     "entity:method",

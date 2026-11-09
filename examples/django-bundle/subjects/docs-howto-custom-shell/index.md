@@ -1,10 +1,10 @@
 # docs/howto/custom-shell
 
-- Subject: docs/howto/custom-shell (id `a7240988-51cb-4c35-9705-325d14deb368`)
+- Subject: docs/howto/custom-shell (id `9d330add-37d4-4164-b51c-f67a342dab6f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 886 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

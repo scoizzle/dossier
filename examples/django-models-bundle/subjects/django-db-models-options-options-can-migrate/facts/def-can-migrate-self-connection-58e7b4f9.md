@@ -1,6 +1,6 @@
 # Fact 58e7b4f9
 
-Store id: 6b75fb65-1966-44fc-9fdc-9e7395244d23
+Store id: f31f3ca1-d3b0-4cd8-b6a9-ae6dec882662
 
 ## Text
 
@@ -20,7 +20,7 @@ def can_migrate(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9454120+00:00`
+- posted_at: `2026-11-09T23:44:55.5034450+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 395,
     "symbol": "Options.can_migrate"
   },
-  "id": "6b75fb65-1966-44fc-9fdc-9e7395244d23",
+  "id": "f31f3ca1-d3b0-4cd8-b6a9-ae6dec882662",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9454120+00:00"
+    "posted_at": "2026-11-09T23:44:55.5034450+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ab66adb8-98a0-4294-8107-7946f1d61749",
+  "subject_id": "f9113033-4b6c-45dc-b8c6-01b93e0fc93a",
   "subject_name": "django/db/models/options::Options.can_migrate",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/aggregates::Aggregate.resolve_expression
 
-- Subject: django/db/models/aggregates::Aggregate.resolve_expression (id `b042e221-3dd6-4d2d-82f6-9631f2509e5d`)
+- Subject: django/db/models/aggregates::Aggregate.resolve_expression (id `9a538af8-7e83-4f9a-ae8d-ebdbbf9d1674`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

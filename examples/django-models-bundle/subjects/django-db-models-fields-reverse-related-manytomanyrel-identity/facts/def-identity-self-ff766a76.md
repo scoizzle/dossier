@@ -1,6 +1,6 @@
 # Fact ff766a76
 
-Store id: c6ec6542-b14e-4385-8319-ec5950f029e4
+Store id: a2c821de-ad52-4d1e-86fb-b2c634392b5e
 
 ## Text
 
@@ -20,7 +20,7 @@ def identity(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3526580+00:00`
+- posted_at: `2026-11-09T23:44:52.5302640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 385,
     "symbol": "ManyToManyRel.identity"
   },
-  "id": "c6ec6542-b14e-4385-8319-ec5950f029e4",
+  "id": "a2c821de-ad52-4d1e-86fb-b2c634392b5e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3526580+00:00"
+    "posted_at": "2026-11-09T23:44:52.5302640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "639be30d-ea52-4cce-9849-85cdbfa5ad71",
+  "subject_id": "bc5cc686-f98c-48e5-9f45-606039bfe0a3",
   "subject_name": "django/db/models/fields/reverse_related::ManyToManyRel.identity",
   "tags": [
     "entity:method",

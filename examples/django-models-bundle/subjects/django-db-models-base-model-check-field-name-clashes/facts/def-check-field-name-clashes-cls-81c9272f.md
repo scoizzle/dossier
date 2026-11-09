@@ -1,6 +1,6 @@
 # Fact 81c9272f
 
-Store id: da2e710e-b9b2-43ed-ae80-7b82813fd848
+Store id: 128ca04e-477e-4614-a434-7388e9930bf2
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_field_name_clashes(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7646560+00:00`
+- posted_at: `2026-11-09T23:44:48.5496700+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2010,
     "symbol": "Model._check_field_name_clashes"
   },
-  "id": "da2e710e-b9b2-43ed-ae80-7b82813fd848",
+  "id": "128ca04e-477e-4614-a434-7388e9930bf2",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7646560+00:00"
+    "posted_at": "2026-11-09T23:44:48.5496700+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "14bf6766-2d42-4461-83e5-ed6d910e4397",
+  "subject_id": "4017c5bd-4a5f-478e-92a2-1c453c332396",
   "subject_name": "django/db/models/base::Model._check_field_name_clashes",
   "tags": [
     "entity:class_method",

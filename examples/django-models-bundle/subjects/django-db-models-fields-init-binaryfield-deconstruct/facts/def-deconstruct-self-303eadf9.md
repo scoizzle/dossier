@@ -1,6 +1,6 @@
 # Fact 303eadf9
 
-Store id: f122c7a6-68bf-4f2c-8579-ff5dd85f3636
+Store id: e515848a-0a69-44a0-9d4c-07a92afb399a
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8499640+00:00`
+- posted_at: `2026-11-09T23:44:50.2817760+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2772,
     "symbol": "BinaryField.deconstruct"
   },
-  "id": "f122c7a6-68bf-4f2c-8579-ff5dd85f3636",
+  "id": "e515848a-0a69-44a0-9d4c-07a92afb399a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8499640+00:00"
+    "posted_at": "2026-11-09T23:44:50.2817760+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ddeac3da-c473-48b0-9371-8026ad4fa70d",
+  "subject_id": "5b17782e-6675-48f9-8d6c-b2bc769275e4",
   "subject_name": "django/db/models/fields/__init__::BinaryField.deconstruct",
   "tags": [
     "entity:method"

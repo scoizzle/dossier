@@ -1,6 +1,6 @@
 # Fact bec06289
 
-Store id: 469f2342-3860-465d-9b1e-243800bd3a76
+Store id: 01f1a31d-6e3a-432e-8ae7-7766786efefd
 
 ## Text
 
@@ -20,7 +20,7 @@ def values_list(self, *fields, flat=False, named=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5225250+00:00`
+- posted_at: `2026-11-09T23:44:56.0185280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1565,
     "symbol": "QuerySet.values_list"
   },
-  "id": "469f2342-3860-465d-9b1e-243800bd3a76",
+  "id": "01f1a31d-6e3a-432e-8ae7-7766786efefd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5225250+00:00"
+    "posted_at": "2026-11-09T23:44:56.0185280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4cd18611-5662-410d-9d73-1a7583e12b2a",
+  "subject_id": "6f1bd50d-1eed-401d-acdd-45b1a29cf805",
   "subject_name": "django/db/models/query::QuerySet.values_list",
   "tags": [
     "entity:method"

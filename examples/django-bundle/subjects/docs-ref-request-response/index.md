@@ -1,10 +1,10 @@
 # docs/ref/request-response
 
-- Subject: docs/ref/request-response (id `5420c55a-8391-4d7c-8686-4c7ba7154c07`)
+- Subject: docs/ref/request-response (id `aeb8ee5c-f2a0-4dbf-b2df-c4f06866e907`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 17126 tokens
-- Facts shown: 444 of 458
+- Used: 17679 tokens
+- Facts shown: 458 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -37,6 +37,8 @@
 - [f6482580] >>> request.get_preferred_type(["text/html", "application/json"]) "text/html" >>> request.get_preferred_type(["application/json", "text/plain"]) "application/json" >>> request.get_preferred_type(["application/xml", "text/plain"]) None
 - [1173f992] >>> request.get_signed_cookie("name") 'Tony' >>> request.get_signed_cookie("name", salt="name-salt") 'Tony' # assuming cookie was set using the same salt >>> request.get_signed_cookie("nonexistent-cookie") KeyError: 'nonexistent-cookie' >>> request.get_signed_cookie("nonexistent-cookie", False) False >>> request.get_signed_cookie("cookie-that-was-tampered-with") BadSignature: ... >>> request.get_signed_cookie("name", max_age=60) SignatureExpired: Signature age 1677.3839159 > 60 seconds >>> request.get_signed_cookie("name", False, max_age=60) False
 - [049c037e] >>> request.headers {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6', ...)}
+- [63fcfc2f] >>> request.headers.get("User-Agent") Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) >>> request.headers.get("user-agent") Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)
+- [6e58f049] >>> request.headers["User-Agent"] Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) >>> request.headers["user-agent"] Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6)
 - [3f5bf10b] If a response varies depending on the content of the ``Accept`` header and you are using some form of caching like Django's :mod:`cache middleware <django.middleware.cache>`, you should decorate the view with :func:`vary_on_headers('Accept') <django.views.decorators.vary.vary_on_headers>` so that the responses are properly cached.
 - [8f764f12] In older versions, cookies signed with distinct ``(key, salt)`` pairs that concatenate to the same string could be used interchangeably.
 - [460b6fac] Mixing HTTP and HTTPS on the same site is discouraged, therefore :meth:`~HttpRequest.build_absolute_uri` will always generate an absolute URI with the same scheme the current request has. If you need to redirect users to HTTPS, it's best to let your web server redirect all HTTP traffic to HTTPS.
@@ -120,6 +122,8 @@
 - [a092679b] Acts just like :class:`HttpResponse` but uses a 500 status code.
 - [f957a99e] Acts like :meth:`dict.items` for HTTP headers on the response.
 - [e8053ddf491e1df9] Always ``False``. This method makes an :class:`HttpResponse` instance a stream-like object.
+- [e8053ddf491e1df9-2] Always ``False``. This method makes an :class:`HttpResponse` instance a stream-like object.
+- [7a34fe4f] Always ``True``. This method makes an :class:`HttpResponse` instance a stream-like object.
 - [5bd3f30b] An :class:`HttpResponse` subclass that helps to create a JSON-encoded response. It inherits most behavior from its superclass with a couple differences:
 - [bafaf7b3] An instance of :class:`~django.urls.ResolverMatch` representing the resolved URL. This attribute is only set after URL resolving took place, which means it's available in all views but not in middleware which are executed before URL resolving takes place (you can use it in :meth:`process_view` though).
 - [ee001e51] An iterator of the response content, bytestring encoded according to :attr:`HttpResponse.charset`.
@@ -134,6 +138,7 @@
 - [0865381d] Due to the way cookies work, ``path`` and ``domain`` should be the same values you used in ``set_cookie()`` -- otherwise the cookie may not be deleted.
 - [f5455674] Example: ``"/minfo/music/bands/the_beatles/?print=true"``
 - [58a93b82] Example: ``"/music/bands/the_beatles/"``
+- [eaf159c1] Example: ``"/music/bands/the_beatles/?print=true"``
 - [2894d8ed] Example: ``"127.0.0.1:8000"``
 - [37d79f6d] For example, if the ``WSGIScriptAlias`` for your application is set to ``"/minfo"``, then ``path`` might be ``"/minfo/music/bands/the_beatles/"`` and ``path_info`` would be ``"/music/bands/the_beatles/"``.
 - [bc295f9831206ba3-14] For example:
@@ -158,6 +163,7 @@
 - [68da26c1] Like :class:`HttpResponse`, but uses a 405 status code. The first argument to the constructor is required: a list of permitted methods (e.g. ``['GET', 'POST']``).
 - [1bb60db2] Like :meth:`dict.items`, except this uses the same last-value logic as :meth:`__getitem__` and returns an iterator object instead of a view object. For example:
 - [422ff64f] Like :meth:`dict.setdefault`, except it uses :meth:`__setitem__` internally.
+- [2632b425] Like :meth:`dict.values`, except this uses the same last-value logic as :meth:`__getitem__` and returns an iterator instead of a view object. For example:
 - [b77bcade] Like :meth:`get_full_path`, but uses :attr:`path_info` instead of :attr:`path`.
 - [8a1c6612] Like :meth:`items`, except it includes all values, as a list, for each member of the dictionary. For example:
 - [d0a4be2c] Like :meth:`setdefault`, except it takes a list of values instead of a single value.
@@ -204,8 +210,10 @@
 - [8c21342a] Takes either a ``QueryDict`` or a dictionary. Like :meth:`dict.update`, except it *appends* to the current dictionary items rather than replacing them. For example:
 - [e047f4f0] The :meth:`auser` can be used to access the user in async contexts.
 - [d76169fdaea1a9e3] The :rfc:`HTTP status code <9110#section-15>` for the response.
+- [d76169fdaea1a9e3-2] The :rfc:`HTTP status code <9110#section-15>` for the response.
 - [9bb772ba] The :ttag:`url` template tag will use its value as the ``current_app`` argument to :func:`~django.urls.reverse`.
 - [7222af0ebfe1cd3d] The HTTP reason phrase for the response. It uses the :rfc:`HTTP standard's <9110#section-15.1>` default reason phrases.
+- [7222af0ebfe1cd3d-2] The HTTP reason phrase for the response. It uses the :rfc:`HTTP standard's <9110#section-15.1>` default reason phrases.
 - [48401642] The ``Content-Length`` header is automatically set when it can be guessed from the content of ``open_file``.
 - [5dcad6cc] The ``Content-Type`` header is automatically set when it can be guessed from the ``filename``, or the name of ``open_file``.
 - [1a9404227222af62] The ``encoder``, which defaults to :class:`django.core.serializers.json.DjangoJSONEncoder`, will be used to serialize the data. See :ref:`JSON serialization <serialization-formats-json>` for more details about this serializer.
@@ -227,11 +235,16 @@
 - [17c1d85e] This method is automatically called during the response initialization and set various headers (``Content-Length``, ``Content-Type``, and ``Content-Disposition``) depending on ``open_file``.
 - [c2939384] This method is called at the end of the request directly by the WSGI or ASGI server.
 - [75257b0e3f19f49c] This method makes an :class:`HttpResponse` instance a file-like object.
+- [75257b0e3f19f49c-2] This method makes an :class:`HttpResponse` instance a file-like object.
+- [75257b0e3f19f49c-3] This method makes an :class:`HttpResponse` instance a file-like object.
 - [73f490b3] This will be used as the root URLconf for the current request, overriding the :setting:`ROOT_URLCONF` setting. See :ref:`how-django-processes-a-request` for details.
 - [4f1ea4f4] This will be used instead of :setting:`DEFAULT_EXCEPTION_REPORTER_FILTER` for the current request. See :ref:`custom-error-reports` for details.
+- [59e129fc] This will be used instead of :setting:`DEFAULT_EXCEPTION_REPORTER` for the current request. See :ref:`custom-error-reports` for details.
 - [6b305d71] Under some web server configurations, the portion of the URL after the host name is split up into a script prefix portion and a path info portion. The ``path_info`` attribute always contains the path info portion of the path, no matter what web server is being used. Using this instead of :attr:`~HttpRequest.path` can make your code easier to move between test and deployment servers.
 - [96d3d98b89c1c97d] Unless :attr:`reason_phrase` is explicitly set, modifying the value of ``status_code`` outside the constructor will also modify the value of ``reason_phrase``.
+- [96d3d98b89c1c97d-2] Unless :attr:`reason_phrase` is explicitly set, modifying the value of ``status_code`` outside the constructor will also modify the value of ``reason_phrase``.
 - [d8967ac05f969234] Unless explicitly set, ``reason_phrase`` is determined by the value of :attr:`status_code`.
+- [d8967ac05f969234-2] Unless explicitly set, ``reason_phrase`` is determined by the value of :attr:`status_code`.
 - [6e5d16f5] Use the ``safe`` parameter to pass characters which don't require encoding. For example:
 - [53666873] Uses the same logic as :meth:`__getitem__`, with a hook for returning a default value if the key doesn't exist.
 - [1dd64807] With the exception of ``CONTENT_LENGTH`` and ``CONTENT_TYPE``, as given above, any HTTP headers in the request are converted to ``META`` keys by converting all characters to uppercase, replacing any hyphens with underscores and adding an ``HTTP_`` prefix to the name. So, for example, a header called ``X-Bender`` would be mapped to the ``META`` key ``HTTP_X_BENDER``.
@@ -356,6 +369,7 @@
 - [6697d5ee] .. method:: HttpResponse.readable()
 - [38cf54c5] .. method:: HttpResponse.seekable()
 - [a4588146] .. method:: HttpResponse.set_cookie(key, value='', max_age=None, expires=None, path='/', domain=None, secure=False, httponly=False, samesite=None)
+- [fb74b0eb] .. method:: HttpResponse.set_signed_cookie(key, value, salt='', max_age=None, expires=None, path='/', domain=None, secure=False, httponly=False, samesite=None)
 - [4e01bcd2] .. method:: HttpResponse.setdefault(header, value)
 - [14cf1589] .. method:: HttpResponse.tell()
 - [b5707b67] .. method:: HttpResponse.writable()

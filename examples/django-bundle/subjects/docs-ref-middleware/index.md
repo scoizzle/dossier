@@ -1,10 +1,10 @@
 # docs/ref/middleware
 
-- Subject: docs/ref/middleware (id `d1cf7d78-b223-44e1-a097-37ff466cd1e7`)
+- Subject: docs/ref/middleware (id `490bba26-c946-400e-92b1-c7124165312b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8884 tokens
-- Facts shown: 215 of 220
+- Used: 9016 tokens
+- Facts shown: 220 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -60,9 +60,11 @@
 - [f1d89d85] After ``AuthenticationMiddleware``: uses user object.
 - [bb9752ff] After ``GZipMiddleware`` so it won't calculate an ``ETag`` header on gzipped contents.
 - [456b779d820a6878] After ``SessionMiddleware`` if you're using :setting:`CSRF_USE_SESSIONS`.
+- [456b779d820a6878-2] After ``SessionMiddleware`` if you're using :setting:`CSRF_USE_SESSIONS`.
 - [5b4370e4] After ``SessionMiddleware``: can use session-based storage.
 - [793d5420] After ``SessionMiddleware``: uses session storage.
 - [64a890f830b130f4] After ``UpdateCacheMiddleware``: Modifies ``Vary`` header.
+- [64a890f830b130f4-2] After ``UpdateCacheMiddleware``: Modifies ``Vary`` header.
 - [9577ebd5] After any middleware that modifies the ``Vary`` header: that header is used to pick a value for the cache hash-key.
 - [ce78c248] Before :class:`~django.contrib.auth.middleware.RemoteUserMiddleware`, or any other authentication middleware that may perform a login, and hence rotate the CSRF token, before calling down the middleware chain.
 - [3e5f4e16] Before any middleware that may change or use the response body.
@@ -76,6 +78,7 @@
 - [765611f9] It should go near the top of the list if you're going to turn on the SSL redirect as that avoids running through a bunch of other unnecessary middleware.
 - [0df7570a] One of the topmost, after ``SessionMiddleware`` (uses session data) and ``UpdateCacheMiddleware`` (modifies ``Vary`` header).
 - [37eb178977f07107] Should be near the bottom as it's a last-resort type of middleware.
+- [37eb178977f07107-2] Should be near the bottom as it's a last-resort type of middleware.
 - [4e334a79] The ``django.middleware.security.SecurityMiddleware`` provides several security enhancements to the request/response cycle. Each one can be independently enabled or disabled with a setting.
 - [a8a3ec01] Both of these options are meant to normalize URLs. The philosophy is that each URL should exist in one, and only one, place. Technically a URL ``foo.com/bar`` is distinct from ``foo.com/bar/`` -- a search-engine indexer would treat them as separate URLs -- so it's best practice to normalize URLs.
 - [a7b1fc0b] For example, ``foo.com/bar`` will be redirected to ``foo.com/bar/`` if you don't have a valid URL pattern for ``foo.com/bar`` but *do* have a valid pattern for ``foo.com/bar/``.
@@ -171,11 +174,13 @@
 - [7ae085a2] Cache middleware ----------------
 - [6fb50550] Conditional GET middleware --------------------------
 - [8d74ab31] Content Security Policy middleware ----------------------------------
+- [bec7a272] Cross-Origin Opener Policy ~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [59693e87] Customize the login URL or field name for authenticated views with the :func:`~.django.contrib.auth.decorators.login_required` decorator to set ``login_url`` or ``redirect_field_name`` respectively. For example::
 - [186ab046] Enable the site-wide cache. If these are enabled, each Django-powered page will be cached for as long as the :setting:`CACHE_MIDDLEWARE_SECONDS` setting defines. See the :doc:`cache documentation </topics/cache>`.
 - [32225487] Enable this middleware by adding it to the :setting:`MIDDLEWARE` setting **after** :class:`~django.contrib.auth.middleware.AuthenticationMiddleware`::
 - [a60638eb] For sites that should only be accessed over HTTPS, you can instruct modern browsers to refuse to connect to your domain name via an insecure connection (for a given period of time) by setting the `"Strict-Transport-Security" header`__. This reduces your exposure to some SSL-stripping man-in-the-middle (MITM) attacks.
 - [468ec4a5] GZip middleware ---------------
+- [7a4e4698] HTTP Strict Transport Security ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - [7b1694fa] Here are some hints about the ordering of various Django middleware classes:
 - [579d0de3] If the :setting:`SECURE_SSL_HOST` setting has a value, all redirects will be sent to that host instead of the originally-requested host.
 - [bdedf02f] If the response has an ``ETag`` header, the ETag is made weak to comply with :rfc:`9110#section-8.8.1`.

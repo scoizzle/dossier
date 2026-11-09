@@ -1,6 +1,6 @@
 # Fact 112053ac
 
-Store id: 59a816ef-3445-47ee-876e-6e1d6c5ec8d5
+Store id: 9164defb-c909-4c6c-bf58-b26c107880f5
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9082170+00:00`
+- posted_at: `2026-11-09T23:44:50.3264320+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2927,
     "symbol": "AutoFieldMixin.formfield"
   },
-  "id": "59a816ef-3445-47ee-876e-6e1d6c5ec8d5",
+  "id": "9164defb-c909-4c6c-bf58-b26c107880f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9082170+00:00"
+    "posted_at": "2026-11-09T23:44:50.3264320+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "480ce02f-03a2-46fc-8306-d7a861b37b74",
+  "subject_id": "3f5a35f6-c035-47a7-b120-714175ddbe99",
   "subject_name": "django/db/models/fields/__init__::AutoFieldMixin.formfield",
   "tags": [
     "entity:method"

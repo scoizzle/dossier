@@ -1,6 +1,6 @@
 # Fact d8ea1c18
 
-Store id: 653e400d-dcf6-4a3a-be60-7f86ef6fe9e6
+Store id: b70ac78f-f873-4153-aaaa-b6f66304b4df
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function make_immutable_fields_list
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0597530+00:00`
+- posted_at: `2026-11-09T23:44:55.6096670+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "653e400d-dcf6-4a3a-be60-7f86ef6fe9e6",
+  "id": "b70ac78f-f873-4153-aaaa-b6f66304b4df",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0597530+00:00"
+    "posted_at": "2026-11-09T23:44:55.6096670+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "make_immutable_fields_list"
       },
       "rel": "contains",
-      "target": "10d042b8-1566-4498-91d8-0b2cfb997bd7"
+      "target": "0e14f6ff-d276-47db-897a-506ee37525bc"
     }
   ],
   "status": "live",
-  "subject_id": "5abd8127-25aa-41b5-b865-250ec14238cc",
+  "subject_id": "8ecb41bc-ee7b-4793-ab54-21bb0dbd78cb",
   "subject_name": "django/db/models/options",
   "tags": [
     "entity:function"

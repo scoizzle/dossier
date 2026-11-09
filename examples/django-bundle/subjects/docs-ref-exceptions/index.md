@@ -1,10 +1,10 @@
 # docs/ref/exceptions
 
-- Subject: docs/ref/exceptions (id `732e75f1-e5f8-43bd-ba6a-c933d78e5811`)
+- Subject: docs/ref/exceptions (id `8285ae33-18c5-48a7-a4e3-c3f070c60131`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3864 tokens
-- Facts shown: 117 of 118
+- Used: 3887 tokens
+- Facts shown: 118 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,16 +22,16 @@
 - Raised when a field would be fetched on-demand and the :attr:`~django.db.models.FETCH_RAISE` fetch mode is active. [e1b2c9f1]
 - See :meth:`~django.db.models.Model.save`. [607dc0e0]
 - See :meth:`~django.db.models.query.QuerySet.get`. [32217f6417c5039c]
+- See :meth:`~django.db.models.query.QuerySet.get`. [32217f6417c5039c-2]
 - The :exc:`BadRequest` exception is raised when the request cannot be processed due to a client error. If a ``BadRequest`` exception reaches the ASGI/WSGI handler level it results in a :class:`~django.http.HttpResponseBadRequest`. [a14b751f]
 - The :exc:`FieldError` exception is raised when there is a problem with a model field. This can happen for several reasons: [d6127633]
 - The :exc:`ImproperlyConfigured` exception is raised when Django is somehow improperly configured -- for example, if a value in ``settings.py`` is incorrect or unparseable. [3d995243]
 - The :exc:`MiddlewareNotUsed` exception is raised when a middleware is not used in the server configuration. [98116832]
-- The :exc:`NoReverseMatch` exception is raised by :mod:`django.urls` when a matching URL in your URLconf cannot be identified based on the parameters supplied. [dbc7ccdc]
-- .. currentmodule:: django.db [04523769]
+- The :exc:`PermissionDenied` exception is raised when a user does not have permission to perform the action requested. [1d555299]
 
 ## All facts
 
-- [1d555299] The :exc:`PermissionDenied` exception is raised when a user does not have permission to perform the action requested.
+- [dbc7ccdc] The :exc:`NoReverseMatch` exception is raised by :mod:`django.urls` when a matching URL in your URLconf cannot be identified based on the parameters supplied.
 - [9d540b41] The :exc:`RequestAborted` exception is raised when an HTTP body being read in by the handler is cut off midstream and the client connection closes, or when the client does not send data and hits a timeout where the server closes the connection.
 - [9a549be0] The :exc:`Resolver404` exception is raised by :func:`~django.urls.resolve` if the path passed to ``resolve()`` doesn't map to a view. It's a subclass of :class:`django.http.Http404`.
 - [b4c2c6ae] The :exc:`SuspiciousOperation` exception is raised when a user has performed an operation that should be considered suspicious from a security perspective, such as tampering with a session cookie. Subclasses of ``SuspiciousOperation`` include:
@@ -46,6 +46,7 @@
 - [df800ad4] ``EmptyResultSet`` may be raised during query generation if a query won't return any results. Most Django projects won't encounter this exception, but it might be useful for implementing custom lookups and expressions.
 - [ac8f1bd5] ``FullResultSet`` may be raised during query generation if a query will match everything. Most Django projects won't encounter this exception, but it might be useful for implementing custom lookups and expressions.
 - [279d1463] .. currentmodule:: django.contrib.sessions.exceptions
+- [04523769] .. currentmodule:: django.db
 - [c4af99c4] .. currentmodule:: django.db.transaction
 - [a75f1536] .. currentmodule:: django.http
 - [b14a2a311af32750] .. currentmodule:: django.test

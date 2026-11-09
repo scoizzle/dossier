@@ -1,6 +1,6 @@
 # Fact befef83a
 
-Store id: b682f888-3126-4528-8b83-720547893b21
+Store id: ed417a3d-4a6a-4800-a368-edcbbec4cdcb
 
 ## Text
 
@@ -20,7 +20,7 @@ class Tuple(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5095060+00:00`
+- posted_at: `2026-11-09T23:44:52.6650220+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 27,
     "symbol": "Tuple"
   },
-  "id": "b682f888-3126-4528-8b83-720547893b21",
+  "id": "ed417a3d-4a6a-4800-a368-edcbbec4cdcb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5095060+00:00"
+    "posted_at": "2026-11-09T23:44:52.6650220+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "523631c0-929d-48aa-9285-912e9d4b584c",
+  "subject_id": "e21f25c4-1113-49e9-a60a-b312d4f64d5f",
   "subject_name": "django/db/models/fields/tuple_lookups::Tuple",
   "tags": [
     "entity:class"

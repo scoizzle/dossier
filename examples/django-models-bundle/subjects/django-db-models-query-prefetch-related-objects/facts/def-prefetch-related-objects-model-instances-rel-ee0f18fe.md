@@ -1,6 +1,6 @@
 # Fact ee0f18fe
 
-Store id: 1f92d620-276b-4eb1-b44c-c0d8166dc2a6
+Store id: d5754c02-1b02-4b52-b0af-6c71260c5997
 
 ## Text
 
@@ -20,7 +20,7 @@ def prefetch_related_objects(model_instances, *related_lookups)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8234110+00:00`
+- posted_at: `2026-11-09T23:44:56.3090800+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2646,
     "symbol": "prefetch_related_objects"
   },
-  "id": "1f92d620-276b-4eb1-b44c-c0d8166dc2a6",
+  "id": "d5754c02-1b02-4b52-b0af-6c71260c5997",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8234110+00:00"
+    "posted_at": "2026-11-09T23:44:56.3090800+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2815ba7d-055e-43a8-bca8-6a22dd5caa9a",
+  "subject_id": "00fde7da-73d7-4a5b-9959-21f0ee5b7c7d",
   "subject_name": "django/db/models/query::prefetch_related_objects",
   "tags": [
     "entity:function"

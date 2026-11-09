@@ -1,6 +1,6 @@
 # Fact b81c8272
 
-Store id: d53ff5f9-5eb5-4eea-a814-0f2f713a40d0
+Store id: f1cf299d-9794-4c98-a387-009a1999d35e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FixDurationInputMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.9598930+00:00`
+- posted_at: `2026-11-09T23:44:53.9116400+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d53ff5f9-5eb5-4eea-a814-0f2f713a40d0",
+  "id": "f1cf299d-9794-4c98-a387-009a1999d35e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.9598930+00:00"
+    "posted_at": "2026-11-09T23:44:53.9116400+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FixDurationInputMixin"
       },
       "rel": "contains",
-      "target": "c9a6ef13-e0f5-451a-a0d0-4ee430b1168f"
+      "target": "5d1482f9-393d-47dd-8ca8-70ca9788a68b"
     }
   ],
   "status": "live",
-  "subject_id": "9d365ca6-bc99-4db3-9918-2665c23ee737",
+  "subject_id": "abaaee7e-0ecb-43ef-9594-611678dc1366",
   "subject_name": "django/db/models/functions/mixins",
   "tags": [
     "entity:class"

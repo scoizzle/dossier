@@ -1,6 +1,6 @@
 # Fact 926bdb18
 
-Store id: 67d5ee29-9efc-411a-952c-eb6bc92f1752
+Store id: 918bbff7-11e5-4c2b-9892-0ba4aeef9f06
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_choices( self, include_blank=True, blank_choice=None, limit_choices_to=N
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2904540+00:00`
+- posted_at: `2026-11-09T23:44:52.4815430+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 172,
     "symbol": "ForeignObjectRel.get_choices"
   },
-  "id": "67d5ee29-9efc-411a-952c-eb6bc92f1752",
+  "id": "918bbff7-11e5-4c2b-9892-0ba4aeef9f06",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2904540+00:00"
+    "posted_at": "2026-11-09T23:44:52.4815430+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "88e78b72-b593-45e2-945e-da33148a99f8",
+  "subject_id": "817b331e-f416-47f2-9b4e-0c36340e2432",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.get_choices",
   "tags": [
     "entity:method"

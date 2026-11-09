@@ -1,6 +1,6 @@
 # Fact eb5cd4f3
 
-Store id: fff7b7da-34e1-4d9c-bac2-3e50351bd67d
+Store id: 3870d801-bf36-4d0c-99d7-d17343737dac
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ForeignObjectRel
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3580660+00:00`
+- posted_at: `2026-11-09T23:44:52.5352060+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "fff7b7da-34e1-4d9c-bac2-3e50351bd67d",
+  "id": "3870d801-bf36-4d0c-99d7-d17343737dac",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3580660+00:00"
+    "posted_at": "2026-11-09T23:44:52.5352060+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ForeignObjectRel"
       },
       "rel": "contains",
-      "target": "f1a0c4ff-5e7c-4637-b1b3-d7a9882a754b"
+      "target": "510c9e1c-006d-4641-b50f-538275ae0712"
     }
   ],
   "status": "live",
-  "subject_id": "5aa43ba1-b642-41bc-ace0-777a2d99efeb",
+  "subject_id": "33ef98f6-f27a-4a21-99f3-242030d5c4d2",
   "subject_name": "django/db/models/fields/reverse_related",
   "tags": [
     "entity:class"

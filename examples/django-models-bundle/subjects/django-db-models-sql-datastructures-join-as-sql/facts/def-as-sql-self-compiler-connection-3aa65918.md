@@ -1,6 +1,6 @@
 # Fact 3aa65918
 
-Store id: 386e46ad-33d8-48a9-9b77-0b188a3f9879
+Store id: 2011308c-fc35-4ca5-abb1-2859033c727c
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.4536820+00:00`
+- posted_at: `2026-11-09T23:44:58.2040680+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 76,
     "symbol": "Join.as_sql"
   },
-  "id": "386e46ad-33d8-48a9-9b77-0b188a3f9879",
+  "id": "2011308c-fc35-4ca5-abb1-2859033c727c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.4536820+00:00"
+    "posted_at": "2026-11-09T23:44:58.2040680+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4bece91d-f45e-4e5c-b88f-85677260db88",
+  "subject_id": "f7509e88-31fa-474b-8de4-f64eb0741e96",
   "subject_name": "django/db/models/sql/datastructures::Join.as_sql",
   "tags": [
     "entity:method"

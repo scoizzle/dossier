@@ -1,6 +1,6 @@
 # Fact 79e7f005
 
-Store id: b686ddb0-8618-4a25-957f-8575cc8b1a51
+Store id: e456e67e-cfe9-47dd-9d0b-aa31c48ee32b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _perform_date_checks(self, date_checks)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7562980+00:00`
+- posted_at: `2026-11-09T23:44:48.5425480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1593,
     "symbol": "Model._perform_date_checks"
   },
-  "id": "b686ddb0-8618-4a25-957f-8575cc8b1a51",
+  "id": "e456e67e-cfe9-47dd-9d0b-aa31c48ee32b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7562980+00:00"
+    "posted_at": "2026-11-09T23:44:48.5425480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37a07311-a978-4f72-88ae-37b1ae81a846",
+  "subject_id": "edad8d12-615d-48dc-9e93-f50bc691abc4",
   "subject_name": "django/db/models/base::Model._perform_date_checks",
   "tags": [
     "entity:method"

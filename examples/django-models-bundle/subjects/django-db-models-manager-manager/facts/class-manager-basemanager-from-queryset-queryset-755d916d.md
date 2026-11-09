@@ -1,6 +1,6 @@
 # Fact 755d916d
 
-Store id: daf31b1b-080c-48ad-b8d4-9eec0ca4c80f
+Store id: ee7589ba-8f9a-4a83-ade8-a04626aee3d9
 
 ## Text
 
@@ -20,7 +20,7 @@ class Manager(BaseManager.from_queryset(QuerySet))
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.7131870+00:00`
+- posted_at: `2026-11-09T23:44:55.3111740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 176,
     "symbol": "Manager"
   },
-  "id": "daf31b1b-080c-48ad-b8d4-9eec0ca4c80f",
+  "id": "ee7589ba-8f9a-4a83-ade8-a04626aee3d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.7131870+00:00"
+    "posted_at": "2026-11-09T23:44:55.3111740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7d9971a0-d774-4be1-b3e6-19765fc0dc84",
+  "subject_id": "d7fe8e4c-e577-4ffe-b97f-a2b18b04534f",
   "subject_name": "django/db/models/manager::Manager",
   "tags": [
     "entity:class"

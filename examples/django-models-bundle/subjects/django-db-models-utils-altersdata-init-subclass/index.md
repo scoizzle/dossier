@@ -1,11 +1,11 @@
 # django/db/models/utils::AltersData.__init_subclass__
 
-- Subject: django/db/models/utils::AltersData.__init_subclass__ (id `703735c8-dd48-42c9-bbbd-a0320575bcf8`)
+- Subject: django/db/models/utils::AltersData.__init_subclass__ (id `c23bc138-5b1a-48ae-bfa7-e882616d0189`)
 - Kind: method
 - Parent: [django/db/models/utils](../django-db-models-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

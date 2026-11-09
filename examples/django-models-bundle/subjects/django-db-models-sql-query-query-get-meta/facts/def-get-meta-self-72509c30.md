@@ -1,6 +1,6 @@
 # Fact 72509c30
 
-Store id: 47e8a174-707b-422b-a87c-7934009b8885
+Store id: ea52c275-7e1a-438d-9f91-7cb3d8fe62f0
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_meta(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7739580+00:00`
+- posted_at: `2026-11-09T23:44:58.6232470+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 378,
     "symbol": "Query.get_meta"
   },
-  "id": "47e8a174-707b-422b-a87c-7934009b8885",
+  "id": "ea52c275-7e1a-438d-9f91-7cb3d8fe62f0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7739580+00:00"
+    "posted_at": "2026-11-09T23:44:58.6232470+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c5293b75-cdbe-42ca-b209-a244c7103c70",
+  "subject_id": "9cb7bb78-e288-42b6-b097-19f9c72dd47d",
   "subject_name": "django/db/models/sql/query::Query.get_meta",
   "tags": [
     "entity:method"

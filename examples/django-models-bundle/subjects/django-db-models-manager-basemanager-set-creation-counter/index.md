@@ -1,11 +1,11 @@
 # django/db/models/manager::BaseManager._set_creation_counter
 
-- Subject: django/db/models/manager::BaseManager._set_creation_counter (id `8cdbf012-6aa8-4bc2-a1f7-7bb020257d6c`)
+- Subject: django/db/models/manager::BaseManager._set_creation_counter (id `06b949cd-68d7-4fa4-bd72-4f0f9a4fd76b`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

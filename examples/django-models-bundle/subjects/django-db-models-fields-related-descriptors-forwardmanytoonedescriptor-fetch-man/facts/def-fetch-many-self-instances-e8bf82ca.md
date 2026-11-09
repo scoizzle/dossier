@@ -1,6 +1,6 @@
 # Fact e8bf82ca
 
-Store id: 7654e299-0561-4383-902b-6c1dcbafd324
+Store id: 43942b12-1c2f-482f-b921-157fe558882e
 
 ## Text
 
@@ -20,7 +20,7 @@ def fetch_many(self, instances)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.1621370+00:00`
+- posted_at: `2026-11-09T23:44:51.8533460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 289,
     "symbol": "ForwardManyToOneDescriptor.fetch_many"
   },
-  "id": "7654e299-0561-4383-902b-6c1dcbafd324",
+  "id": "43942b12-1c2f-482f-b921-157fe558882e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.1621370+00:00"
+    "posted_at": "2026-11-09T23:44:51.8533460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "42666671-168b-471e-83a1-16d34abd268f",
+  "subject_id": "08cca143-7547-470c-869a-15b4412173f7",
   "subject_name": "django/db/models/fields/related_descriptors::ForwardManyToOneDescriptor.fetch_many",
   "tags": [
     "entity:method"

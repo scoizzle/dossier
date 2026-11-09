@@ -1,11 +1,11 @@
 # django/db/models/deletion::SET_NULL
 
-- Subject: django/db/models/deletion::SET_NULL (id `b9d74dea-5af7-488f-a989-62154420a23a`)
+- Subject: django/db/models/deletion::SET_NULL (id `df6ab8b7-a190-40a3-8b19-e53b3db58249`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/template/defaultfilters
 
-- Subject: django/template/defaultfilters (id `2fa48431-cac2-4828-91ff-6541a7a97564`)
+- Subject: django/template/defaultfilters (id `fd85a56c-f0fd-4a89-915d-da8ebb984958`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6959 tokens
-- Facts shown: 113 of 118
+- Used: 7312 tokens
+- Facts shown: 118 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -23,16 +23,17 @@
 - * {{ 6666.6666|floatformat:"2g" }} displays "6,666.67" * {{ 10000|floatformat:"g" }} displays "10,000" [b42d5069]
 - * {{ 66666.6666|floatformat:"2" }} displays "66666,67" * {{ 66666.6666|floatformat:"2u" }} displays "66666.67" [199d7821]
 - * {{ num1|floatformat:"-3" }} displays "34.232" * {{ num2|floatformat:"-3" }} displays "34" * {{ num3|floatformat:"-3" }} displays "34.260" [2fe4e8f1]
-- >>> _property_resolver(1)('abc') 'b' >>> _property_resolver('1')('abc') Traceback (most recent call last): ... TypeError: string indices must be integers >>> class Foo: ... a = 42 ... b = 3.14 ... c = 'Hey!' >>> _property_resolver('b')(Foo()) 3.14 """ try: float(arg) except ValueError: if VARIABLE_ATTRIBUTE_SEPARATOR + "_" in arg or arg[0] == "_": raise AttributeError("Access to private variables is forbidden.") parts = arg.split(VARIABLE_ATTRIBUTE_SEPARATOR) [da798ad1]
+- * {{ num1|floatformat:3 }} displays "34.232" * {{ num2|floatformat:3 }} displays "34.000" * {{ num3|floatformat:3 }} displays "34.260" [1c486eb3]
+- @wraps(func) def _dec(first, *args, **kwargs): first = str(first) result = func(first, *args, **kwargs) if isinstance(first, SafeData) and getattr(unwrap(func), "is_safe", False): result = mark_safe(result) return result [4e4bd1a8]
+- If an argument is provided, use that string instead: [9ac1e843]
 
 ## All facts
 
 - [b68a57f4] ========== ====================== ================================== Value Argument Outputs ========== ====================== ================================== ``True`` ``"yeah,no,maybe"`` ``yeah`` ``False`` ``"yeah,no,maybe"`` ``no`` ``None`` ``"yeah,no,maybe"`` ``maybe`` ``None`` ``"yeah,no"`` ``"no"`` (converts None to False if no mapping for None is given. ========== ====================== ================================== """ if arg is None: # Translators: Please do not add spaces around commas. arg = gettext("yes,no,maybe") bits = arg.split(",") if len(bits) < 2: return value # Invalid arg. try: yes, no, maybe = bits except ValueError: # Unpack list of wrong size (no "maybe" value provided). yes, no, maybe = bits[0], bits[1], bits[1] if value is None: return maybe if value: return yes return no
-- [4e4bd1a8] @wraps(func) def _dec(first, *args, **kwargs): first = str(first) result = func(first, *args, **kwargs) if isinstance(first, SafeData) and getattr(unwrap(func), "is_safe", False): result = mark_safe(result) return result
+- [da798ad1] >>> _property_resolver(1)('abc') 'b' >>> _property_resolver('1')('abc') Traceback (most recent call last): ... TypeError: string indices must be integers >>> class Foo: ... a = 42 ... b = 3.14 ... c = 'Hey!' >>> _property_resolver('b')(Foo()) 3.14 """ try: float(arg) except ValueError: if VARIABLE_ATTRIBUTE_SEPARATOR + "_" in arg or arg[0] == "_": raise AttributeError("Access to private variables is forbidden.") parts = arg.split(VARIABLE_ATTRIBUTE_SEPARATOR)
 - [71935d32] Argument: Length to truncate URLs to. """ return mark_safe( _urlize(value, trim_url_limit=int(limit), nofollow=True, autoescape=autoescape) )
 - [6a30711b] Assume the list is in the proper format. For example, if ``var`` contains: ``['States', ['Kansas', ['Lawrence', 'Topeka'], 'Illinois']]``, then ``{{ var|unordered_list }}`` returns::
 - [bc8fff57] For an integer, it's a list of digits. For a string, it's a list of characters. """ return list(value)
-- [9ac1e843] If an argument is provided, use that string instead:
 - [b6a7c45c] If arg has the 'g' suffix, force the result to be grouped by the THOUSAND_SEPARATOR for the active locale. When the active locale is en (English):
 - [e98901df] If arg has the 'u' suffix, force the result to be unlocalized. When the active locale is pl (Polish):
 - [94d42cd0] If arg is negative, display arg number of decimal places -- but only if there are places to be displayed:
@@ -73,7 +74,9 @@
 - [eb96c9a1] @register.filter("phone2numeric", is_safe=True) def phone2numeric_filter(value): """Take a phone number and converts it in to its numerical equivalent.""" return phone2numeric(value)
 - [747f1546] @register.filter("slice", is_safe=True) def slice_filter(value, arg): """ Return a slice of the list using the same syntax as Python's list slicing. """ try: bits = [] for x in str(arg).split(":"): if not x: bits.append(None) else: bits.append(int(x)) return value[slice(*bits)]
 - [a5b8c925] @register.filter("timesince", is_safe=False) def timesince_filter(value, arg=None): """Format a date as the time since that date (i.e. "4 days, 6 hours").""" if not value: return "" try: if arg: return timesince(value, arg) return timesince(value) except (ValueError, TypeError): return ""
+- [c0e934f9] @register.filter("timeuntil", is_safe=False) def timeuntil_filter(value, arg=None): """Format a date as the time until that date (i.e. "4 days, 6 hours").""" if not value: return "" try: return timeuntil(value, arg) except (ValueError, TypeError): return ""
 - [81d38987] @register.filter(expects_localtime=True, is_safe=False) def date(value, arg=None): """Format a date according to the given format.""" if value in (None, ""): return "" try: return formats.date_format(value, arg) except AttributeError: try: return format(value, arg) except AttributeError: return ""
+- [a6e81188] @register.filter(expects_localtime=True, is_safe=False) def time(value, arg=None): """Format a time according to the given format.""" if value in (None, ""): return "" try: return formats.time_format(value, arg) except (AttributeError, TypeError): try: return time_format(value, arg) except (AttributeError, TypeError): return ""
 - [7a5d0779] @register.filter(is_safe=False) @stringfilter def make_list(value): """ Return the value turned into a list.
 - [7d200675] @register.filter(is_safe=False) @stringfilter def upper(value): """Convert a string into all uppercase.""" return value.upper()
 - [53f9f620] @register.filter(is_safe=False) @stringfilter def urlencode(value, safe=None): """ Escape a value for use in a URL.
@@ -97,12 +100,14 @@
 - [82c8c01b] @register.filter(is_safe=True) @stringfilter def ljust(value, arg): """Left-align the value in a field of a given width.""" return value.ljust(int(arg))
 - [877bdb27] @register.filter(is_safe=True) @stringfilter def lower(value): """Convert a string into all lowercase.""" return value.lower()
 - [d69507e0] @register.filter(is_safe=True) @stringfilter def rjust(value, arg): """Right-align the value in a field of a given width.""" return value.rjust(int(arg))
+- [842b459d] @register.filter(is_safe=True) @stringfilter def safe(value): """Mark the value as a string that should not be auto-escaped.""" return mark_safe(value)
 - [c3c92b40] @register.filter(is_safe=True) @stringfilter def slugify(value): """ Convert to ASCII. Convert spaces to hyphens. Remove characters that aren't alphanumerics, underscores, or hyphens. Convert to lowercase. Also strip leading and trailing whitespace. """ return _slugify(value)
 - [e5e18dcf] @register.filter(is_safe=True) @stringfilter def striptags(value): """Strip all [X]HTML tags.""" return strip_tags(value)
 - [75cbc35a] @register.filter(is_safe=True) @stringfilter def title(value): """Convert a string into titlecase.""" t = re.sub("([a-z])'([A-Z])", lambda m: m[0].lower(), value.title()) return re.sub(r"\d([A-Z])", lambda m: m[0].lower(), t)
 - [c14def38] @register.filter(is_safe=True) @stringfilter def truncatechars(value, arg): """Truncate a string after `arg` number of characters.""" try: length = int(arg) except ValueError: # Invalid literal for int(). return value # Fail silently. return Truncator(value).chars(length)
 - [6008c47d] @register.filter(is_safe=True) @stringfilter def truncatechars_html(value, arg): """ Truncate HTML after `arg` number of chars. Preserve newlines in the HTML. """ try: length = int(arg) except ValueError: # invalid literal for int() return value # Fail silently. return Truncator(value).chars(length, html=True)
 - [35097ed3] @register.filter(is_safe=True) @stringfilter def truncatewords(value, arg): """ Truncate a string after `arg` number of words. Remove newlines within the string. """ try: length = int(arg) except ValueError: # Invalid literal for int(). return value # Fail silently. return Truncator(value).words(length, truncate=" …")
+- [66083cdd] @register.filter(is_safe=True) @stringfilter def truncatewords_html(value, arg): """ Truncate HTML after `arg` number of words. Preserve newlines in the HTML. """ try: length = int(arg) except ValueError: # invalid literal for int() return value # Fail silently. return Truncator(value).words(length, html=True, truncate=" …")
 - [b985ea08] @register.filter(is_safe=True) @stringfilter def wordwrap(value, arg): """Wrap words at `arg` line length.""" return wrap(value, int(arg))
 - [0aa58e1f] @register.filter(is_safe=True) def escapeseq(value): """ An "escape" filter for sequences. Mark each element in the sequence, individually, as a string that should be auto-escaped. Return a list with the results. """ return [conditional_escape(obj) for obj in value]
 - [bf48d101] @register.filter(is_safe=True) def filesizeformat(bytes_): """ Format the value like a 'human-readable' file size (i.e. 13 KB, 4.1 MB, 102 bytes, etc.). """ try: bytes_ = int(bytes_) except (TypeError, ValueError, UnicodeDecodeError): value = ngettext("%(size)d byte", "%(size)d bytes", 0) % {"size": 0} return avoid_wrapping(value)

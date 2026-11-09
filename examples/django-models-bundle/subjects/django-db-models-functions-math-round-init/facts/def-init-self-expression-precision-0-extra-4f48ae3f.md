@@ -1,6 +1,6 @@
 # Fact 4f48ae3f
 
-Store id: 4d01f3bb-ac7f-48ae-a144-e9b12323a856
+Store id: 833bf9ec-8652-4cd9-947a-5b3f331c6e8a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, expression, precision=0, **extra)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7609400+00:00`
+- posted_at: `2026-11-09T23:44:53.7636680+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 183,
     "symbol": "Round.__init__"
   },
-  "id": "4d01f3bb-ac7f-48ae-a144-e9b12323a856",
+  "id": "833bf9ec-8652-4cd9-947a-5b3f331c6e8a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7609400+00:00"
+    "posted_at": "2026-11-09T23:44:53.7636680+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7c72c11a-9aab-4eea-b545-83f6faf3de92",
+  "subject_id": "ba005c5a-602b-4c1d-afd3-d72d225caf32",
   "subject_name": "django/db/models/functions/math::Round.__init__",
   "tags": [
     "entity:method"

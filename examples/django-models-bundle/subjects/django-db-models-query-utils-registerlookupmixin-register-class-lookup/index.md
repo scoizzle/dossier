@@ -1,11 +1,11 @@
 # django/db/models/query_utils::RegisterLookupMixin.register_class_lookup
 
-- Subject: django/db/models/query_utils::RegisterLookupMixin.register_class_lookup (id `4cbcc573-075b-40b3-8121-072d61ba50c0`)
+- Subject: django/db/models/query_utils::RegisterLookupMixin.register_class_lookup (id `491619c0-d712-46c7-834a-d7376cb82442`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

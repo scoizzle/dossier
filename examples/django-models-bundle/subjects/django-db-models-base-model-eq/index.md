@@ -1,11 +1,11 @@
 # django/db/models/base::Model.__eq__
 
-- Subject: django/db/models/base::Model.__eq__ (id `5441d95e-dbcd-41d7-978a-f41dc49e6bb6`)
+- Subject: django/db/models/base::Model.__eq__ (id `52eaf21d-2c02-4796-9ef4-ac7aab77c990`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

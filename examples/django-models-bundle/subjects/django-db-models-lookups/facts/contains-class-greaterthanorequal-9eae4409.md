@@ -1,6 +1,6 @@
 # Fact 9eae4409
 
-Store id: 890b6b8b-78c4-41bb-a087-5deeac61fa3d
+Store id: efc4e359-3b98-48e1-b128-dcd763baf50b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class GreaterThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "890b6b8b-78c4-41bb-a087-5deeac61fa3d",
+  "id": "efc4e359-3b98-48e1-b128-dcd763baf50b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "GreaterThanOrEqual"
       },
       "rel": "contains",
-      "target": "a58f8a2c-155a-406e-bf3b-b3c9916d61a2"
+      "target": "871985d4-60df-4014-9f93-b3e6ab07ad3b"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

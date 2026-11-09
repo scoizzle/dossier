@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._add_items
 
-- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._add_items (id `fbaca422-6d93-4f0b-a548-582ac5a9c171`)
+- Subject: django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager._add_items (id `b7dd01a1-0c7b-4c12-915a-f59e4325aa24`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 39 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

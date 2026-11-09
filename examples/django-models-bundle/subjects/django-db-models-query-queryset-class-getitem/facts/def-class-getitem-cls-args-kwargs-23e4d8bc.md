@@ -1,6 +1,6 @@
 # Fact 23e4d8bc
 
-Store id: 8f856176-1ba5-43be-9789-3110eb64155e
+Store id: e7972887-1567-4dad-932d-1356e229ec67
 
 ## Text
 
@@ -20,7 +20,7 @@ def __class_getitem__(cls, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3479070+00:00`
+- posted_at: `2026-11-09T23:44:55.8657170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 527,
     "symbol": "QuerySet.__class_getitem__"
   },
-  "id": "8f856176-1ba5-43be-9789-3110eb64155e",
+  "id": "e7972887-1567-4dad-932d-1356e229ec67",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3479070+00:00"
+    "posted_at": "2026-11-09T23:44:55.8657170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f30c4b4b-c00f-44f4-a165-94c5454c4f77",
+  "subject_id": "7e567a26-8356-4a95-8dcb-3ac9c0ae246a",
   "subject_name": "django/db/models/query::QuerySet.__class_getitem__",
   "tags": [
     "entity:method"

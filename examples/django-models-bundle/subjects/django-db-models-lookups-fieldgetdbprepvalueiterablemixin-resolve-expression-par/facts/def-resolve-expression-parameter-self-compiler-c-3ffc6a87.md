@@ -1,6 +1,6 @@
 # Fact 3ffc6a87
 
-Store id: ea3182fa-f4c2-48b8-8c77-977af95490a9
+Store id: 5232687b-db27-4bbc-9880-247311d24a37
 
 ## Text
 
@@ -20,7 +20,7 @@ def resolve_expression_parameter(self, compiler, connection, sql, param)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2374320+00:00`
+- posted_at: `2026-11-09T23:44:54.9427660+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 336,
     "symbol": "FieldGetDbPrepValueIterableMixin.resolve_expression_parameter"
   },
-  "id": "ea3182fa-f4c2-48b8-8c77-977af95490a9",
+  "id": "5232687b-db27-4bbc-9880-247311d24a37",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2374320+00:00"
+    "posted_at": "2026-11-09T23:44:54.9427660+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1c051dac-5314-42ec-b5cd-7434204bcadd",
+  "subject_id": "e18e06e4-dcd3-4c6a-a015-35079da316c5",
   "subject_name": "django/db/models/lookups::FieldGetDbPrepValueIterableMixin.resolve_expression_parameter",
   "tags": [
     "entity:method"

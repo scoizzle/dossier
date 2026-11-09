@@ -1,11 +1,11 @@
 # django/db/models/fields/generated::GeneratedField.contribute_to_class
 
-- Subject: django/db/models/fields/generated::GeneratedField.contribute_to_class (id `3411e85c-a7df-4936-ac04-1570fa8588bd`)
+- Subject: django/db/models/fields/generated::GeneratedField.contribute_to_class (id `61cbdb81-8438-4743-b5d0-cffd5895f3bb`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateTimeCheckMixin._check_mutually_exclusive_options
 
-- Subject: django/db/models/fields/__init__::DateTimeCheckMixin._check_mutually_exclusive_options (id `cc59191a-72c7-4b21-9153-5c1e1bc435da`)
+- Subject: django/db/models/fields/__init__::DateTimeCheckMixin._check_mutually_exclusive_options (id `2146cf10-7928-4957-907e-7c9824a9e90e`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

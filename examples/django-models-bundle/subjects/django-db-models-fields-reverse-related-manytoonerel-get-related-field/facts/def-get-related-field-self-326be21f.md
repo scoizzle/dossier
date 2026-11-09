@@ -1,6 +1,6 @@
 # Fact 326be21f
 
-Store id: e000c155-13e9-4a66-bdf1-c32a861a50bb
+Store id: df9e4fec-7dc7-49d8-b87d-5a603c0cb179
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3332750+00:00`
+- posted_at: `2026-11-09T23:44:52.5160850+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 298,
     "symbol": "ManyToOneRel.get_related_field"
   },
-  "id": "e000c155-13e9-4a66-bdf1-c32a861a50bb",
+  "id": "df9e4fec-7dc7-49d8-b87d-5a603c0cb179",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3332750+00:00"
+    "posted_at": "2026-11-09T23:44:52.5160850+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "808fbf1b-5077-4d97-8841-924e627aea8c",
+  "subject_id": "20d92744-bde2-477a-a70c-b2c5e442ed75",
   "subject_name": "django/db/models/fields/reverse_related::ManyToOneRel.get_related_field",
   "tags": [
     "entity:method"

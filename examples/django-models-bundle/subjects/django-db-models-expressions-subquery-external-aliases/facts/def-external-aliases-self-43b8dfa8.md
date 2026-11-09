@@ -1,6 +1,6 @@
 # Fact 43b8dfa8
 
-Store id: 78bd8bef-f8fd-4d81-a414-5bb6d6f43e0c
+Store id: 6a4f180e-6913-4bd1-ba96-83481e83d6f5
 
 ## Text
 
@@ -20,7 +20,7 @@ def external_aliases(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9732610+00:00`
+- posted_at: `2026-11-09T23:44:49.6420430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1866,
     "symbol": "Subquery.external_aliases"
   },
-  "id": "78bd8bef-f8fd-4d81-a414-5bb6d6f43e0c",
+  "id": "6a4f180e-6913-4bd1-ba96-83481e83d6f5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9732610+00:00"
+    "posted_at": "2026-11-09T23:44:49.6420430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "acd56895-c568-4b55-9e78-191ab800fdb2",
+  "subject_id": "c97e48c5-9f22-4870-9623-50603bf4c6a4",
   "subject_name": "django/db/models/expressions::Subquery.external_aliases",
   "tags": [
     "entity:method",

@@ -1,6 +1,6 @@
 # Fact c87a5e33
 
-Store id: 087f302c-8d50-4cd2-98e6-64196f1ee283
+Store id: 933f4e83-776c-496e-896d-efc2d508af1d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _relation_tree(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0256570+00:00`
+- posted_at: `2026-11-09T23:44:55.5749930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 848,
     "symbol": "Options._relation_tree"
   },
-  "id": "087f302c-8d50-4cd2-98e6-64196f1ee283",
+  "id": "933f4e83-776c-496e-896d-efc2d508af1d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0256570+00:00"
+    "posted_at": "2026-11-09T23:44:55.5749930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "13cb3004-aaee-4c9a-a14e-94944126ae65",
+  "subject_id": "83ad1c0e-ad00-4e2a-8339-11e817a1f19d",
   "subject_name": "django/db/models/options::Options._relation_tree",
   "tags": [
     "entity:method",

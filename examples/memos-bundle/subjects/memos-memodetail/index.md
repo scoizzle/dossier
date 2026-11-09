@@ -1,11 +1,11 @@
 # Memos/MemoDetail
 
-- Subject: Memos/MemoDetail (id `23a68f36-38ee-45ac-acc4-725c5bfda95a`)
+- Subject: Memos/MemoDetail (id `063b987a-de3a-4a04-8814-0cad1eb233c3`)
 - Kind: screen
 - Parent: [Memos](../memos/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 52 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

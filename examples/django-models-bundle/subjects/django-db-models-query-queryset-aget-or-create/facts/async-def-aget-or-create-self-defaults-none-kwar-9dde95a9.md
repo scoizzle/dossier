@@ -1,6 +1,6 @@
 # Fact 9dde95a9
 
-Store id: b719368b-0e41-430d-86e8-94194a74a587
+Store id: d16cd2f0-5fd0-4071-b680-6afee6305fdc
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aget_or_create(self, defaults=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4208830+00:00`
+- posted_at: `2026-11-09T23:44:55.9275400+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1087,
     "symbol": "QuerySet.aget_or_create"
   },
-  "id": "b719368b-0e41-430d-86e8-94194a74a587",
+  "id": "d16cd2f0-5fd0-4071-b680-6afee6305fdc",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4208830+00:00"
+    "posted_at": "2026-11-09T23:44:55.9275400+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f9a76d00-3b1b-4d8b-8279-5bb48eeed742",
+  "subject_id": "98b1cd79-e509-4bf4-b10e-c168706aeb9b",
   "subject_name": "django/db/models/query::QuerySet.aget_or_create",
   "tags": [
     "entity:method",

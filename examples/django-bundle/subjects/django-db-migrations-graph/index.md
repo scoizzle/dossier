@@ -1,10 +1,10 @@
 # django/db/migrations/graph
 
-- Subject: django/db/migrations/graph (id `2ba2a991-e073-4aa0-84c9-e2a5ac77cd31`)
+- Subject: django/db/migrations/graph (id `5fb9aa5a-4e14-487f-8e8d-563a6981681b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2985 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

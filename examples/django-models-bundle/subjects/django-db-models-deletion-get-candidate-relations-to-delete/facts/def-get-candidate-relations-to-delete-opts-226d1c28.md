@@ -1,6 +1,6 @@
 # Fact 226d1c28
 
-Store id: f6407cf6-6d07-42e6-a980-1f1321fdead5
+Store id: 36d771d8-20a8-4057-b552-5f3ef5b1eae6
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_candidate_relations_to_delete(opts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.0913410+00:00`
+- posted_at: `2026-11-09T23:44:48.9061300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 106,
     "symbol": "get_candidate_relations_to_delete"
   },
-  "id": "f6407cf6-6d07-42e6-a980-1f1321fdead5",
+  "id": "36d771d8-20a8-4057-b552-5f3ef5b1eae6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.0913410+00:00"
+    "posted_at": "2026-11-09T23:44:48.9061300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "005f9048-056e-4164-9d30-ad2bd8ee3506",
+  "subject_id": "7f8a2d4c-190d-450c-8994-cad55519d55c",
   "subject_name": "django/db/models/deletion::get_candidate_relations_to_delete",
   "tags": [
     "entity:function"

@@ -1,11 +1,11 @@
 # django/db/models/expressions::RawSQL.resolve_expression
 
-- Subject: django/db/models/expressions::RawSQL.resolve_expression (id `30b636dd-666e-4baa-9ecc-65c638ac322d`)
+- Subject: django/db/models/expressions::RawSQL.resolve_expression (id `5a0b8ee6-ca5b-4a2d-aaae-fd42b78a17ec`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

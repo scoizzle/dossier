@@ -1,6 +1,6 @@
 # Fact 240e2bd5
 
-Store id: a97840ce-ba3c-440c-87c1-688b37cb55ee
+Store id: 9a841741-05dc-461b-a126-2c425ae863e9
 
 ## Text
 
@@ -20,7 +20,7 @@ def base_table(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7548470+00:00`
+- posted_at: `2026-11-09T23:44:58.5985880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 340,
     "symbol": "Query.base_table"
   },
-  "id": "a97840ce-ba3c-440c-87c1-688b37cb55ee",
+  "id": "9a841741-05dc-461b-a126-2c425ae863e9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7548470+00:00"
+    "posted_at": "2026-11-09T23:44:58.5985880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "599e7858-7d24-439a-bb61-d2105d40b796",
+  "subject_id": "fa5e6747-7345-48dc-b066-b467f97adeab",
   "subject_name": "django/db/models/sql/query::Query.base_table",
   "tags": [
     "entity:method",

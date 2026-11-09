@@ -1,6 +1,6 @@
 # Fact 83ad4936
 
-Store id: a9e27b76-062b-4c96-afa3-1b548fac0138
+Store id: 396dcdfd-1a6e-4ec2-9f18-b2307aa7a5b6
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2820540+00:00`
+- posted_at: `2026-11-09T23:44:52.4733380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 152,
     "symbol": "ForeignObjectRel.__eq__"
   },
-  "id": "a9e27b76-062b-4c96-afa3-1b548fac0138",
+  "id": "396dcdfd-1a6e-4ec2-9f18-b2307aa7a5b6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2820540+00:00"
+    "posted_at": "2026-11-09T23:44:52.4733380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d657b569-c80f-4c01-b689-5b89e7eb2eee",
+  "subject_id": "658d3070-1ede-4104-bf91-fc14ae3cae03",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.__eq__",
   "tags": [
     "entity:method"

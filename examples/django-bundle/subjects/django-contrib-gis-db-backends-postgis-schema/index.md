@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/schema
 
-- Subject: django/contrib/gis/db/backends/postgis/schema (id `32567cb5-0f7f-48dd-b01f-4df66df4af63`)
+- Subject: django/contrib/gis/db/backends/postgis/schema (id `89382ac1-7bcb-4b81-aee0-10b92917a958`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1028 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 0254c816
 
-Store id: aa0b7165-1a48-4a34-8fae-bb5d3632e133
+Store id: df37f454-6619-4c38-8281-4604fd0aa2d9
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_lhs(self, compiler, connection, lhs=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5708380+00:00`
+- posted_at: `2026-11-09T23:44:52.7441090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 101,
     "symbol": "TupleLookupMixin.process_lhs"
   },
-  "id": "aa0b7165-1a48-4a34-8fae-bb5d3632e133",
+  "id": "df37f454-6619-4c38-8281-4604fd0aa2d9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5708380+00:00"
+    "posted_at": "2026-11-09T23:44:52.7441090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a3758572-3874-46f4-a2e4-7571086c896c",
+  "subject_id": "35a4c3b0-62b6-4985-8036-77be122901f6",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleLookupMixin.process_lhs",
   "tags": [
     "entity:method"

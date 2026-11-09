@@ -1,6 +1,6 @@
 # Fact 85bed2f6
 
-Store id: b3bab1ac-1827-49ba-bc57-cf2af0aab55e
+Store id: 5683c056-25fc-4dba-896d-cafe4cc0dd76
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7579360+00:00`
+- posted_at: `2026-11-09T23:44:50.2066370+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2407,
     "symbol": "NullBooleanField.deconstruct"
   },
-  "id": "b3bab1ac-1827-49ba-bc57-cf2af0aab55e",
+  "id": "5683c056-25fc-4dba-896d-cafe4cc0dd76",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7579360+00:00"
+    "posted_at": "2026-11-09T23:44:50.2066370+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78e1bfbf-0e60-4c0a-ae46-086ae79abaae",
+  "subject_id": "09a4188f-c6ce-4b20-89ff-c375508bc5af",
   "subject_name": "django/db/models/fields/__init__::NullBooleanField.deconstruct",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/contrib/auth/management/commands/createsuperuser
 
-- Subject: django/contrib/auth/management/commands/createsuperuser (id `f24e9077-8d42-4bb1-aea3-04848b0fb98a`)
+- Subject: django/contrib/auth/management/commands/createsuperuser (id `ae55319e-2fee-46fd-b095-81cc32cf2c1b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2480 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

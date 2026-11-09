@@ -1,10 +1,10 @@
 # django/core/cache/backends/db
 
-- Subject: django/core/cache/backends/db (id `7c36aea4-40f9-4de3-ad0a-7e8da8f2c28c`)
+- Subject: django/core/cache/backends/db (id `e0bf8647-8745-4ec3-be40-3238a6c9aad7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2193 tokens
-- Facts shown: 33 of 35
+- Used: 2293 tokens
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -14,6 +14,7 @@
 - if result: current_expires = result[1] expression = models.Expression( output_field=models.DateTimeField() ) for converter in connection.ops.get_db_converters( expression ) + expression.get_db_converters(connection): current_expires = converter( current_expires, expression, connection ) [7c97f797]
 - class CacheEntry: _meta = Options(table) [2308df55]
 - db = router.db_for_read(self.cache_model_class) connection = connections[db] quote_name = connection.ops.quote_name [225fc673]
+- db = router.db_for_read(self.cache_model_class) connection = connections[db] quote_name = connection.ops.quote_name table = quote_name(self._table) [92c3066d]
 - db = router.db_for_write(self.cache_model_class) connection = connections[db] quote_name = connection.ops.quote_name table = quote_name(self._table) [78da2588]
 - key_map = { self.make_and_validate_key(key, version=version): key for key in keys } [334dd0b9]
 - now = tz_now().replace(microsecond=0, tzinfo=None) [463d6031]
@@ -21,14 +22,15 @@
 - self.cache_model_class = CacheEntry [44812aaa]
 - with connection.cursor() as cursor: cursor.execute( "DELETE FROM %s WHERE %s IN (%s)" % ( table, quote_name("cache_key"), ", ".join(["%s"] * len(keys)), ), keys, ) return bool(cursor.rowcount) [53b812bd]
 - with connection.cursor() as cursor: cursor.execute( "SELECT %s FROM %s WHERE %s = %%s and %s > %%s" % ( quote_name("cache_key"), quote_name(self._table), quote_name("cache_key"), quote_name("expires"), ), [key, connection.ops.adapt_datetimefield_value(now)], ) return cursor.fetchone() is not None [3e7f01c7]
-- with connection.cursor() as cursor: cursor.execute( "SELECT %s, %s, %s FROM %s WHERE %s IN (%s)" % ( quote_name("cache_key"), quote_name("value"), quote_name("expires"), table, quote_name("cache_key"), ", ".join(["%s"] * len(key_map)), ), list(key_map), ) rows = cursor.fetchall() [79793ef1]
 - This allows cache operations to be controlled by the router """ [10ab3cf4]
+- def _base_delete_many(self, keys): if not keys: return False [e2dcdd74]
+- "Database cache backend." [b264102d]
 
 ## All facts
 
+- [79793ef1] with connection.cursor() as cursor: cursor.execute( "SELECT %s, %s, %s FROM %s WHERE %s IN (%s)" % ( quote_name("cache_key"), quote_name("value"), quote_name("expires"), table, quote_name("cache_key"), ", ".join(["%s"] * len(key_map)), ), list(key_map), ) rows = cursor.fetchall()
 - [c5ee6b50] with connection.cursor() as cursor: cursor.execute("SELECT COUNT(*) FROM %s" % table) num = cursor.fetchone()[0] now = tz_now() now = now.replace(microsecond=0) if timeout is None: exp = datetime.max else: tz = UTC if settings.USE_TZ else None exp = datetime.fromtimestamp(timeout, tz=tz) exp = exp.replace(microsecond=0) if num > self._max_entries: self._cull(db, cursor, now, num) pickled = pickle.dumps(value, self.pickle_protocol) # The DB column is expecting a string, so make sure the value is a # string, not bytes. Refs #19274. b64encoded = base64.b64encode(pickled).decode("latin1") try: # Note: typecasting for datetimes is needed by some 3rd party # database backends. All core backends work without # typecasting, so be careful about changes here - test suite # will NOT pick regressions. with transaction.atomic(using=db): cursor.execute( "SELECT %s, %s FROM %s WHERE %s = %%s" % ( quote_name("cache_key"), quote_name("expires"), table, quote_name("cache_key"), ), [key], ) result = cursor.fetchone()
 - [41183fab] def __init__(self, table): self.db_table = table self.app_label = "django_cache" self.model_name = "cacheentry" self.verbose_name = "cache entry" self.verbose_name_plural = "cache entries" self.object_name = "CacheEntry" self.abstract = False self.managed = True self.proxy = False self.swapped = False
-- [e2dcdd74] def _base_delete_many(self, keys): if not keys: return False
 - [46f8baed] def _base_set(self, mode, key, value, timeout=DEFAULT_TIMEOUT): timeout = self.get_backend_timeout(timeout) db = router.db_for_write(self.cache_model_class) connection = connections[db] quote_name = connection.ops.quote_name table = quote_name(self._table)
 - [bdfa5c72] def _cull(self, db, cursor, now, num): if self._cull_frequency == 0: self.clear() else: connection = connections[db] table = connection.ops.quote_name(self._table) cursor.execute( "DELETE FROM %s WHERE %s < %%s" % ( table, connection.ops.quote_name("expires"), ), [connection.ops.adapt_datetimefield_value(now)], ) deleted_count = cursor.rowcount remaining_num = num - deleted_count if remaining_num > self._max_entries: cull_num = remaining_num // self._cull_frequency cursor.execute( connection.ops.cache_key_culling_sql() % table, [cull_num] ) last_cache_key = cursor.fetchone() if last_cache_key: cursor.execute( "DELETE FROM %s WHERE %s < %%s" % ( table, connection.ops.quote_name("cache_key"), ), [last_cache_key[0]], )
 - [80a8fced] def add(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) return self._base_set("add", key, value, timeout)
@@ -38,9 +40,9 @@
 - [d3c82c78] def get(self, key, default=None, version=None): return self.get_many([key], version).get(key, default)
 - [8b8496de] def get_many(self, keys, version=None): if not keys: return {}
 - [aa34fbf4] def has_key(self, key, version=None): key = self.make_and_validate_key(key, version=version)
+- [14e2c12e] def set(self, key, value, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) self._base_set("set", key, value, timeout)
 - [b2ac8c3e] def touch(self, key, timeout=DEFAULT_TIMEOUT, version=None): key = self.make_and_validate_key(key, version=version) return self._base_set("touch", key, None, timeout)
 - [57716e3f] pickle_protocol = pickle.HIGHEST_PROTOCOL
-- [b264102d] "Database cache backend."
 - [a4d16172] class BaseDatabaseCache(BaseCache): def __init__(self, table, params): super().__init__(params) self._table = table
 - [32fa9207] class DatabaseCache(BaseDatabaseCache): # This class uses cursors provided by the database connection. This means # it reads expiration values as aware or naive datetimes, depending on the # value of USE_TZ and whether the database supports time zones. The ORM's # conversion and adaptation infrastructure is then used to avoid comparing # aware and naive datetimes accidentally.
 - [50af6cdf] class Options: """A class that will quack like a Django model _meta class.

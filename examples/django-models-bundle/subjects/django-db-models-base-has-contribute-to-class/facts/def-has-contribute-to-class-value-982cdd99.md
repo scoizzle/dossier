@@ -1,6 +1,6 @@
 # Fact 982cdd99
 
-Store id: 0af42c6b-5f5d-4930-be76-454d7dae56a6
+Store id: 9fcd734f-270c-4d63-8ba3-b02f2e8213e1
 
 ## Text
 
@@ -20,7 +20,7 @@ def _has_contribute_to_class(value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7252700+00:00`
+- posted_at: `2026-11-09T23:44:48.5193840+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 90,
     "symbol": "_has_contribute_to_class"
   },
-  "id": "0af42c6b-5f5d-4930-be76-454d7dae56a6",
+  "id": "9fcd734f-270c-4d63-8ba3-b02f2e8213e1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7252700+00:00"
+    "posted_at": "2026-11-09T23:44:48.5193840+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ba9d87d-9a51-4e15-ad4c-f63d467e539b",
+  "subject_id": "852befc0-5052-4f6e-92b2-e46d13f5a95f",
   "subject_name": "django/db/models/base::_has_contribute_to_class",
   "tags": [
     "entity:function"

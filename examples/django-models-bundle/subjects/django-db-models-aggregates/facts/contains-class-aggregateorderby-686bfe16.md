@@ -1,6 +1,6 @@
 # Fact 686bfe16
 
-Store id: 08b06eb0-5c8e-4db3-841b-61a9fe39b882
+Store id: e1c89abf-6893-4f19-b5d7-cc567abcdbb2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class AggregateOrderBy
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "08b06eb0-5c8e-4db3-841b-61a9fe39b882",
+  "id": "e1c89abf-6893-4f19-b5d7-cc567abcdbb2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "AggregateOrderBy"
       },
       "rel": "contains",
-      "target": "c3352df0-9c89-44ed-89a2-edd9960a8e20"
+      "target": "f7788bf4-966d-43cc-8faa-76a20ab224e1"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

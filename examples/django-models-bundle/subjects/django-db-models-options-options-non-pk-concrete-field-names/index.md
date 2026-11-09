@@ -1,11 +1,11 @@
 # django/db/models/options::Options._non_pk_concrete_field_names
 
-- Subject: django/db/models/options::Options._non_pk_concrete_field_names (id `0537806b-f0cc-4d2e-bd54-d1d77b358509`)
+- Subject: django/db/models/options::Options._non_pk_concrete_field_names (id `626f4bfa-cade-4770-9a53-52f488e96bcf`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

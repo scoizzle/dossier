@@ -6,8 +6,8 @@ This file lists every subject under `django/contrib/contenttypes/`, one row per 
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 |   django/contrib/contenttypes/admin | subject | 18 | 0 | 0 | 1181 | [subjects/django-contrib-contenttypes-admin/index.md](../subjects/django-contrib-contenttypes-admin/index.md) |
 |   django/contrib/contenttypes/apps | subject | 4 | 0 | 0 | 281 | [subjects/django-contrib-contenttypes-apps/index.md](../subjects/django-contrib-contenttypes-apps/index.md) |
-|   django/contrib/contenttypes/checks | subject | 5 | 0 | 0 | 338 | [subjects/django-contrib-contenttypes-checks/index.md](../subjects/django-contrib-contenttypes-checks/index.md) |
-|   django/contrib/contenttypes/fields | subject | 116 | 0 | 0 | 6489 | [subjects/django-contrib-contenttypes-fields/index.md](../subjects/django-contrib-contenttypes-fields/index.md) |
+|   django/contrib/contenttypes/checks | subject | 5 | 0 | 0 | 339 | [subjects/django-contrib-contenttypes-checks/index.md](../subjects/django-contrib-contenttypes-checks/index.md) |
+|   django/contrib/contenttypes/fields | subject | 116 | 0 | 0 | 6590 | [subjects/django-contrib-contenttypes-fields/index.md](../subjects/django-contrib-contenttypes-fields/index.md) |
 |   django/contrib/contenttypes/forms | subject | 8 | 0 | 0 | 855 | [subjects/django-contrib-contenttypes-forms/index.md](../subjects/django-contrib-contenttypes-forms/index.md) |
 |     django/contrib/contenttypes/management/__init__ | subject | 18 | 0 | 0 | 1124 | [subjects/django-contrib-contenttypes-management-init/index.md](../subjects/django-contrib-contenttypes-management-init/index.md) |
 |       django/contrib/contenttypes/management/commands/remove_stale_contenttypes | subject | 9 | 0 | 0 | 831 | [subjects/django-contrib-contenttypes-management-commands-remove-stale-contenttypes/index.md](../subjects/django-contrib-contenttypes-management-commands-remove-stale-contenttypes/index.md) |
@@ -15,6 +15,6 @@ This file lists every subject under `django/contrib/contenttypes/`, one row per 
 |     django/contrib/contenttypes/migrations/0002_remove_content_type_name | subject | 4 | 0 | 0 | 325 | [subjects/django-contrib-contenttypes-migrations-0002-remove-content-type-name/index.md](../subjects/django-contrib-contenttypes-migrations-0002-remove-content-type-name/index.md) |
 |   django/contrib/contenttypes/models | subject | 22 | 0 | 0 | 1501 | [subjects/django-contrib-contenttypes-models/index.md](../subjects/django-contrib-contenttypes-models/index.md) |
 |   django/contrib/contenttypes/prefetch | subject | 4 | 0 | 0 | 337 | [subjects/django-contrib-contenttypes-prefetch/index.md](../subjects/django-contrib-contenttypes-prefetch/index.md) |
-|   django/contrib/contenttypes/views | subject | 9 | 0 | 0 | 802 | [subjects/django-contrib-contenttypes-views/index.md](../subjects/django-contrib-contenttypes-views/index.md) |
+|   django/contrib/contenttypes/views | subject | 9 | 0 | 0 | 803 | [subjects/django-contrib-contenttypes-views/index.md](../subjects/django-contrib-contenttypes-views/index.md) |
 
 Up: [index/django-contrib.md](django-contrib.md)

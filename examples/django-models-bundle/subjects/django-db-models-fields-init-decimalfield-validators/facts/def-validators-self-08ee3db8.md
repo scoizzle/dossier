@@ -1,6 +1,6 @@
 # Fact 08ee3db8
 
-Store id: 75d1fc15-b619-4e93-9ad8-9225fa771a00
+Store id: 2f4a709d-08bd-45ee-bd05-e83adc5f5d4a
 
 ## Text
 
@@ -20,7 +20,7 @@ def validators(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6277190+00:00`
+- posted_at: `2026-11-09T23:44:50.1171630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1871,
     "symbol": "DecimalField.validators"
   },
-  "id": "75d1fc15-b619-4e93-9ad8-9225fa771a00",
+  "id": "2f4a709d-08bd-45ee-bd05-e83adc5f5d4a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6277190+00:00"
+    "posted_at": "2026-11-09T23:44:50.1171630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8cc1af20-11e9-4542-934d-c5872f557a42",
+  "subject_id": "c74e906b-9575-4c0a-a69a-4fc90e4a9eef",
   "subject_name": "django/db/models/fields/__init__::DecimalField.validators",
   "tags": [
     "entity:method",

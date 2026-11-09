@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransformIsNull.as_oracle
 
-- Subject: django/db/models/fields/json::KeyTransformIsNull.as_oracle (id `f88ae62e-1b34-455a-8fbf-56574edbf1ca`)
+- Subject: django/db/models/fields/json::KeyTransformIsNull.as_oracle (id `33b0c30c-3284-467a-94ca-d883cfd8a23d`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

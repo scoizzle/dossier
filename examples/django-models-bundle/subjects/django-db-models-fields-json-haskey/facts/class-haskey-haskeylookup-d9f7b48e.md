@@ -1,6 +1,6 @@
 # Fact d9f7b48e
 
-Store id: 699a0c65-13e8-4f5c-89e7-655fb6fe2221
+Store id: 1763863b-2170-469b-93a7-9b8d99676e90
 
 ## Text
 
@@ -20,7 +20,7 @@ class HasKey(HasKeyLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8975880+00:00`
+- posted_at: `2026-11-09T23:44:50.9736780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 268,
     "symbol": "HasKey"
   },
-  "id": "699a0c65-13e8-4f5c-89e7-655fb6fe2221",
+  "id": "1763863b-2170-469b-93a7-9b8d99676e90",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8975880+00:00"
+    "posted_at": "2026-11-09T23:44:50.9736780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f73ea2a0-8e99-4a98-9a54-0dd910b6b4b1",
+  "subject_id": "530cd06c-d242-430a-b98b-1ffa62bc30b8",
   "subject_name": "django/db/models/fields/json::HasKey",
   "tags": [
     "entity:class"

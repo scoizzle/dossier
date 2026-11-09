@@ -1,6 +1,6 @@
 # Fact 0a894e7b
 
-Store id: 7d54ba9f-a24b-4c70-ab88-7cefd3910492
+Store id: 5d28ea48-5cd9-4cd2-8d4b-6c9f13652407
 
 ## Text
 
@@ -20,7 +20,7 @@ def __deepcopy__(self, memodict)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4579910+00:00`
+- posted_at: `2026-11-09T23:44:49.9971300+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 745,
     "symbol": "Field.__deepcopy__"
   },
-  "id": "7d54ba9f-a24b-4c70-ab88-7cefd3910492",
+  "id": "5d28ea48-5cd9-4cd2-8d4b-6c9f13652407",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4579910+00:00"
+    "posted_at": "2026-11-09T23:44:49.9971300+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "75afca72-6eff-48df-8896-ee988f7bca06",
+  "subject_id": "d6ff8993-3b4b-401d-98ae-8cea40e42e62",
   "subject_name": "django/db/models/fields/__init__::Field.__deepcopy__",
   "tags": [
     "entity:method"

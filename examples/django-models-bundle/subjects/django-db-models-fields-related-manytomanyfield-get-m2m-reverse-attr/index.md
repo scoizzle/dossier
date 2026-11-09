@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField._get_m2m_reverse_attr
 
-- Subject: django/db/models/fields/related::ManyToManyField._get_m2m_reverse_attr (id `043a5161-2b6c-4344-a336-6a368a787775`)
+- Subject: django/db/models/fields/related::ManyToManyField._get_m2m_reverse_attr (id `e57bbe65-f358-4c05-b9aa-b1e6cbba6ea5`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

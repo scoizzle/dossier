@@ -1,10 +1,10 @@
 # django/core/management/commands/inspectdb
 
-- Subject: django/core/management/commands/inspectdb (id `d38a79f0-d7e5-40f0-a522-7374c57023b6`)
+- Subject: django/core/management/commands/inspectdb (id `748998fe-0222-4681-8553-27ef45ae3e9d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3316 tokens
-- Facts shown: 41 of 41
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 

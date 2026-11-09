@@ -1,6 +1,6 @@
 # Fact b776031f
 
-Store id: 2e0d7229-646e-42c1-b492-f5b474d592f4
+Store id: 05f44473-1fa9-41c4-be0a-73079acd6f1b
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleGreaterThan(TupleLookupMixin, GreaterThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.5972510+00:00`
+- posted_at: `2026-11-09T23:44:52.7636640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 191,
     "symbol": "TupleGreaterThan"
   },
-  "id": "2e0d7229-646e-42c1-b492-f5b474d592f4",
+  "id": "05f44473-1fa9-41c4-be0a-73079acd6f1b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.5972510+00:00"
+    "posted_at": "2026-11-09T23:44:52.7636640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7419c836-04dc-4bfb-b633-18947894b0f8",
+  "subject_id": "03059e68-7800-4f3c-b1b4-7bde999d7460",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleGreaterThan",
   "tags": [
     "entity:class"

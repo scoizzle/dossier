@@ -1,10 +1,10 @@
 # django/db/migrations/exceptions
 
-- Subject: django/db/migrations/exceptions (id `d486c2ae-510e-492a-9fe5-6092627a2df5`)
+- Subject: django/db/migrations/exceptions (id `9ef62541-318a-463d-bb55-f4aa8758c369`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 470 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

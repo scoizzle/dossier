@@ -1,6 +1,6 @@
 # Fact 85189b3e
 
-Store id: 68b14108-27db-4b16-9f28-7252cd6d6859
+Store id: 06988659-d4ae-4c4f-bfc7-b1a2095afa7e
 
 ## Text
 
@@ -20,7 +20,7 @@ class PercentRank(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7301620+00:00`
+- posted_at: `2026-11-09T23:44:54.5045210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 105,
     "symbol": "PercentRank"
   },
-  "id": "68b14108-27db-4b16-9f28-7252cd6d6859",
+  "id": "06988659-d4ae-4c4f-bfc7-b1a2095afa7e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7301620+00:00"
+    "posted_at": "2026-11-09T23:44:54.5045210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f651ef97-c095-4777-86a2-42dab8472206",
+  "subject_id": "c7ad23ec-3dcd-4702-a7e5-fc8255653451",
   "subject_name": "django/db/models/functions/window::PercentRank",
   "tags": [
     "entity:class"

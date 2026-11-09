@@ -1,6 +1,6 @@
 # Fact a35a8fa1
 
-Store id: 1d5718d0-94b6-407b-960b-e75b2e246e91
+Store id: ea5bb093-1dea-4fb1-976f-bb4e87058061
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9986300+00:00`
+- posted_at: `2026-11-09T23:44:53.1754190+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 139,
     "symbol": "Greatest.as_sqlite"
   },
-  "id": "1d5718d0-94b6-407b-960b-e75b2e246e91",
+  "id": "ea5bb093-1dea-4fb1-976f-bb4e87058061",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9986300+00:00"
+    "posted_at": "2026-11-09T23:44:53.1754190+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e3e216fd-a550-47c7-b3a9-a1dc66a39553",
+  "subject_id": "63fd422b-85d5-4e1f-a29a-ab0b1bea8086",
   "subject_name": "django/db/models/functions/comparison::Greatest.as_sqlite",
   "tags": [
     "entity:method"

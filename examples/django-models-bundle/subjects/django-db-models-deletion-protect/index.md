@@ -1,11 +1,11 @@
 # django/db/models/deletion::PROTECT
 
-- Subject: django/db/models/deletion::PROTECT (id `54cfd144-7054-4a4d-8a0c-7c753803e4ed`)
+- Subject: django/db/models/deletion::PROTECT (id `fa59e2eb-4a8d-454c-979b-8e2699123cfc`)
 - Kind: function
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

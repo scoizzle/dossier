@@ -1,10 +1,10 @@
 # django/core/cache/backends/redis
 
-- Subject: django/core/cache/backends/redis (id `85701b77-717f-4827-8083-0902241c7b9a`)
+- Subject: django/core/cache/backends/redis (id `f1aa506a-16a5-401a-b01a-fb81aca99a69`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2200 tokens
-- Facts shown: 45 of 45
+- Facts shown: 45 facts
 - Conflicts: 0
 - Gaps: 0
 

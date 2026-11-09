@@ -1,6 +1,6 @@
 # Fact 6b855dc8
 
-Store id: e941f86f-280e-41fb-af73-11e7f915b774
+Store id: 60462ad1-2f08-4646-b827-cca42954614f
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ResolvedOuterRef
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e941f86f-280e-41fb-af73-11e7f915b774",
+  "id": "60462ad1-2f08-4646-b827-cca42954614f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ResolvedOuterRef"
       },
       "rel": "contains",
-      "target": "a0f4850f-686f-4dc9-9156-7b49df01a1c1"
+      "target": "fbeca020-6313-4159-bcb2-dbf545d5a7f9"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

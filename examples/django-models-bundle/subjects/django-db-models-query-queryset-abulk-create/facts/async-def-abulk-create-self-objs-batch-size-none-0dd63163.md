@@ -1,6 +1,6 @@
 # Fact 0dd63163
 
-Store id: 626bb664-817a-46e8-bd6e-a8ac3156eb70
+Store id: f59eb816-42ba-4a32-b3f1-4f9572ed9a35
 
 ## Text
 
@@ -20,7 +20,7 @@ async def abulk_create( self, objs, batch_size=None, ignore_conflicts=False, upd
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4091360+00:00`
+- posted_at: `2026-11-09T23:44:55.9174060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 971,
     "symbol": "QuerySet.abulk_create"
   },
-  "id": "626bb664-817a-46e8-bd6e-a8ac3156eb70",
+  "id": "f59eb816-42ba-4a32-b3f1-4f9572ed9a35",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4091360+00:00"
+    "posted_at": "2026-11-09T23:44:55.9174060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "950640ac-3364-4765-9d52-c3124a1f3b41",
+  "subject_id": "ccdc5eab-e6e4-416f-84e3-92de5a8e5e69",
   "subject_name": "django/db/models/query::QuerySet.abulk_create",
   "tags": [
     "entity:method",

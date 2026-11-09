@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::MultiJoin
 
-- Subject: django/db/models/sql/datastructures::MultiJoin (id `5fd8ab27-3e8d-4e30-9918-9d57542df189`)
+- Subject: django/db/models/sql/datastructures::MultiJoin (id `daf160c2-5f9b-4ff7-b13b-1dc0f43761a2`)
 - Kind: class
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

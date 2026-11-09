@@ -1,6 +1,6 @@
 # Fact bc16d3ce
 
-Store id: 179ef38a-efc1-4c68-b0b5-24d295171066
+Store id: 0fc9430a-67e4-442c-a76e-59fe11676ef1
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformNumericLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0287030+00:00`
+- posted_at: `2026-11-09T23:44:51.0622780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 720,
     "symbol": "KeyTransformNumericLookupMixin"
   },
-  "id": "179ef38a-efc1-4c68-b0b5-24d295171066",
+  "id": "0fc9430a-67e4-442c-a76e-59fe11676ef1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0287030+00:00"
+    "posted_at": "2026-11-09T23:44:51.0622780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b6e18691-c517-455d-96b2-3c679905c955",
+  "subject_id": "ec396fa9-7ea8-43e3-8767-c34c951390f2",
   "subject_name": "django/db/models/fields/json::KeyTransformNumericLookupMixin",
   "tags": [
     "entity:class"

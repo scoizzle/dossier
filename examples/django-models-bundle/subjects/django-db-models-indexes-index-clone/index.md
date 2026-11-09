@@ -1,11 +1,11 @@
 # django/db/models/indexes::Index.clone
 
-- Subject: django/db/models/indexes::Index.clone (id `2d496ac2-189b-4594-941a-5c140df155e1`)
+- Subject: django/db/models/indexes::Index.clone (id `9019bdc7-bcc6-48ba-8e6c-5224be5c38aa`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

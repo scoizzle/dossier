@@ -1,10 +1,10 @@
 # django/core/handlers/exception
 
-- Subject: django/core/handlers/exception (id `8eca0e63-7668-4a9f-b01f-ccd8c036be1e`)
+- Subject: django/core/handlers/exception (id `23828709-5d40-4e59-bfa5-5b62b10d3758`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1411 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

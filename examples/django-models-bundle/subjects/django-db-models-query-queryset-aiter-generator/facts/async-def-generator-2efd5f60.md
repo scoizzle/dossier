@@ -1,6 +1,6 @@
 # Fact 2efd5f60
 
-Store id: 35d45494-69cf-42a3-96d3-ca01d9cf85c9
+Store id: 24faaab2-6727-4bb6-81cd-1c3ef628ff12
 
 ## Text
 
@@ -20,7 +20,7 @@ async def generator()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3383500+00:00`
+- posted_at: `2026-11-09T23:44:55.8575270+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 479,
     "symbol": "QuerySet.__aiter__.generator"
   },
-  "id": "35d45494-69cf-42a3-96d3-ca01d9cf85c9",
+  "id": "24faaab2-6727-4bb6-81cd-1c3ef628ff12",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3383500+00:00"
+    "posted_at": "2026-11-09T23:44:55.8575270+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "508f2fb1-2962-4241-91f3-a88c735368e4",
+  "subject_id": "6999582b-22fa-440f-9aae-25956644d2f8",
   "subject_name": "django/db/models/query::QuerySet.__aiter__.generator",
   "tags": [
     "entity:async_function",

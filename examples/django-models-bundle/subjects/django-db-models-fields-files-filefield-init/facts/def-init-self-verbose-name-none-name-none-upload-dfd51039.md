@@ -1,6 +1,6 @@
 # Fact dfd51039
 
-Store id: 6d4411f2-d6c1-4c24-9b6c-e9ff90cbb41c
+Store id: 91dcbf50-356c-4788-b173-8dd2d4bce66d
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, verbose_name=None, name=None, upload_to="", storage=None, **
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3891000+00:00`
+- posted_at: `2026-11-09T23:44:50.6501240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 249,
     "symbol": "FileField.__init__"
   },
-  "id": "6d4411f2-d6c1-4c24-9b6c-e9ff90cbb41c",
+  "id": "91dcbf50-356c-4788-b173-8dd2d4bce66d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3891000+00:00"
+    "posted_at": "2026-11-09T23:44:50.6501240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9a5e2545-118a-460f-95b8-60f4be30ef61",
+  "subject_id": "2e36422d-3fd3-450c-8298-43122980c80a",
   "subject_name": "django/db/models/fields/files::FileField.__init__",
   "tags": [
     "entity:method"

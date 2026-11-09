@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.aget
 
-- Subject: django/db/models/query::QuerySet.aget (id `c70be724-64d9-485d-a58e-e8ed5006d6d2`)
+- Subject: django/db/models/query::QuerySet.aget (id `15bc9ff1-d4ae-4267-806f-5feb7ec272fd`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

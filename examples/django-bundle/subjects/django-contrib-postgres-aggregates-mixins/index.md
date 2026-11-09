@@ -1,10 +1,10 @@
 # django/contrib/postgres/aggregates/mixins
 
-- Subject: django/contrib/postgres/aggregates/mixins (id `92558baf-6c73-4ce1-be61-57c62ce44652`)
+- Subject: django/contrib/postgres/aggregates/mixins (id `195dd63e-5aec-4050-832c-3069f1086419`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 162 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

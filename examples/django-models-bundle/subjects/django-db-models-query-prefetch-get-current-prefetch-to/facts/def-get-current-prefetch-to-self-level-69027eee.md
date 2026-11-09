@@ -1,6 +1,6 @@
 # Fact 69027eee
 
-Store id: cb51e933-cac6-4127-af15-d3923904b5a7
+Store id: a761beae-75eb-4d54-a242-5648be0c6c00
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_current_prefetch_to(self, level)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.7984320+00:00`
+- posted_at: `2026-11-09T23:44:56.2901310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2608,
     "symbol": "Prefetch.get_current_prefetch_to"
   },
-  "id": "cb51e933-cac6-4127-af15-d3923904b5a7",
+  "id": "a761beae-75eb-4d54-a242-5648be0c6c00",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.7984320+00:00"
+    "posted_at": "2026-11-09T23:44:56.2901310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ef6f8cd9-480d-47ba-a6f6-263ab0b98369",
+  "subject_id": "53a6b9bd-e539-4843-ba9d-c69f84bb315d",
   "subject_name": "django/db/models/query::Prefetch.get_current_prefetch_to",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 1fe66b7c
 
-Store id: 62b72ab5-0c22-4421-bc0d-a5f2d4000a48
+Store id: c4339de6-3393-48ea-a3f9-274ca9af8dd5
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class StdDev
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "62b72ab5-0c22-4421-bc0d-a5f2d4000a48",
+  "id": "c4339de6-3393-48ea-a3f9-274ca9af8dd5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "StdDev"
       },
       "rel": "contains",
-      "target": "8ce29e24-e789-4658-bd85-9162b146b4e5"
+      "target": "0e905a9f-e5c9-49aa-bb35-55770f792770"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/fields/json::ProcessJSONLHSMixin._process_as_oracle
 
-- Subject: django/db/models/fields/json::ProcessJSONLHSMixin._process_as_oracle (id `d8b58d72-a614-4b40-abde-dff656c555a0`)
+- Subject: django/db/models/fields/json::ProcessJSONLHSMixin._process_as_oracle (id `6520855d-9458-4545-b5ff-a7d4e7cb6426`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 29 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

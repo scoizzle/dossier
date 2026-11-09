@@ -1,10 +1,10 @@
 # docs/intro/index
 
-- Subject: docs/intro/index (id `ef0a8350-5922-463f-9c72-242b32e0bbfe`)
+- Subject: docs/intro/index (id `3fa74fb0-bab6-44e6-81d1-32442015d877`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 413 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

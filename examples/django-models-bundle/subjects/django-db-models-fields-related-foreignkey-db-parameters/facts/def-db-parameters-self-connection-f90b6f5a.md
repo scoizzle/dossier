@@ -1,6 +1,6 @@
 # Fact f90b6f5a
 
-Store id: 4b72280c-1947-44de-b867-9ccec38f4649
+Store id: 7bf72c3a-53c6-4bcb-9887-9e8fae7e30d4
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_parameters(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7879470+00:00`
+- posted_at: `2026-11-09T23:44:51.6072210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1322,
     "symbol": "ForeignKey.db_parameters"
   },
-  "id": "4b72280c-1947-44de-b867-9ccec38f4649",
+  "id": "7bf72c3a-53c6-4bcb-9887-9e8fae7e30d4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7879470+00:00"
+    "posted_at": "2026-11-09T23:44:51.6072210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dccaa7ca-ae8a-4ec0-b978-fc80cfd945dc",
+  "subject_id": "7cfa9c05-6ecd-41f4-b0b3-02a14678090a",
   "subject_name": "django/db/models/fields/related::ForeignKey.db_parameters",
   "tags": [
     "entity:method"

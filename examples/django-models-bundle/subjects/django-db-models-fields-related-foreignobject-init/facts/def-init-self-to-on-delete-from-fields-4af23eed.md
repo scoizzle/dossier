@@ -1,6 +1,6 @@
 # Fact 4af23eed
 
-Store id: c2cfaba5-afa9-416f-b0bf-0da32b751034
+Store id: f8b179e5-a752-4c45-b97f-e1691dd26ad7
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, to, on_delete, from_fields, to_fields, rel=None, related_nam
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6616490+00:00`
+- posted_at: `2026-11-09T23:44:51.5127640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 560,
     "symbol": "ForeignObject.__init__"
   },
-  "id": "c2cfaba5-afa9-416f-b0bf-0da32b751034",
+  "id": "f8b179e5-a752-4c45-b97f-e1691dd26ad7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6616490+00:00"
+    "posted_at": "2026-11-09T23:44:51.5127640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "961c7b9d-1a0d-48c5-8fcb-1883f964c9f5",
+  "subject_id": "369bd632-4375-4e2c-aa77-580765c23f58",
   "subject_name": "django/db/models/fields/related::ForeignObject.__init__",
   "tags": [
     "entity:method"

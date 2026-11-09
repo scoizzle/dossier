@@ -1,10 +1,10 @@
 # django/contrib/admin/helpers
 
-- Subject: django/contrib/admin/helpers (id `0cd12373-7580-45a2-b7d6-b385100f3d68`)
+- Subject: django/contrib/admin/helpers (id `ec2133ae-4991-4de9-9abe-66577e21b1bb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3956 tokens
-- Facts shown: 57 of 57
+- Facts shown: 57 facts
 - Conflicts: 0
 - Gaps: 0
 

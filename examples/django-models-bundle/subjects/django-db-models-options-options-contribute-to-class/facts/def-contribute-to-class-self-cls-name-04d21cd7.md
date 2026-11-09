@@ -1,6 +1,6 @@
 # Fact 04d21cd7
 
-Store id: 5f20373c-128b-47a1-88e4-b3d99583bda6
+Store id: 50e57e2b-264b-4558-83a9-71ec770c4dab
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9034340+00:00`
+- posted_at: `2026-11-09T23:44:55.4690180+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 185,
     "symbol": "Options.contribute_to_class"
   },
-  "id": "5f20373c-128b-47a1-88e4-b3d99583bda6",
+  "id": "50e57e2b-264b-4558-83a9-71ec770c4dab",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9034340+00:00"
+    "posted_at": "2026-11-09T23:44:55.4690180+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47ce758e-d510-458c-ac1b-24442940eef7",
+  "subject_id": "8d303038-cde7-4837-a4a0-58b56f48e009",
   "subject_name": "django/db/models/options::Options.contribute_to_class",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::RawQuery.clone
 
-- Subject: django/db/models/sql/query::RawQuery.clone (id `68be750d-74aa-4577-b174-fd2a3ab908f0`)
+- Subject: django/db/models/sql/query::RawQuery.clone (id `c2b6ec2c-56a8-4b63-a650-1c6534e8b06b`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

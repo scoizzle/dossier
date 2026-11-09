@@ -1,6 +1,6 @@
 # Fact 676b450e
 
-Store id: a96bb515-f6af-480c-aee9-a30934ccdb85
+Store id: e481986d-9c7e-48c2-bbcf-1548d321d19e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function lazy_related_operation
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.9119250+00:00`
+- posted_at: `2026-11-09T23:44:51.6886880+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a96bb515-f6af-480c-aee9-a30934ccdb85",
+  "id": "e481986d-9c7e-48c2-bbcf-1548d321d19e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
+    "posted_at": "2026-11-09T23:44:51.6886880+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "lazy_related_operation"
       },
       "rel": "contains",
-      "target": "52d2c36d-ee25-44b7-861e-005fae0b71e8"
+      "target": "c578eaae-b9fd-4767-ba9d-ed185fa45528"
     }
   ],
   "status": "live",
-  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
+  "subject_id": "b482f690-f78b-4457-98ca-4cee1c63890e",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:function"

@@ -1,10 +1,10 @@
 # django/core/checks/registry
 
-- Subject: django/core/checks/registry (id `205d5e4b-2e7c-425f-a44d-b7f65be59d21`)
+- Subject: django/core/checks/registry (id `ea6757b7-04c6-43fa-9c36-a05b91063c02`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 935 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

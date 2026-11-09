@@ -1,11 +1,11 @@
 # django/db/models/query_utils::RegisterLookupMixin.register_instance_lookup
 
-- Subject: django/db/models/query_utils::RegisterLookupMixin.register_instance_lookup (id `283014f5-a0ca-4d04-a0f9-e0bbd12e39c8`)
+- Subject: django/db/models/query_utils::RegisterLookupMixin.register_instance_lookup (id `fdb74e81-35c7-4a82-a71a-e173f8c8d710`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

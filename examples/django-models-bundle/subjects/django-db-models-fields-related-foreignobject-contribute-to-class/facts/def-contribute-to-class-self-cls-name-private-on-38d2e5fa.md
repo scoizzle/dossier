@@ -1,6 +1,6 @@
 # Fact 38d2e5fa
 
-Store id: fab94a49-a6e1-4c50-8048-d59c54228f9b
+Store id: 3b0a3829-b8d4-4277-bf11-d9c46201adb1
 
 ## Text
 
@@ -20,7 +20,7 @@ def contribute_to_class(self, cls, name, private_only=False, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7341650+00:00`
+- posted_at: `2026-11-09T23:44:51.5595690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 939,
     "symbol": "ForeignObject.contribute_to_class"
   },
-  "id": "fab94a49-a6e1-4c50-8048-d59c54228f9b",
+  "id": "3b0a3829-b8d4-4277-bf11-d9c46201adb1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7341650+00:00"
+    "posted_at": "2026-11-09T23:44:51.5595690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b035025c-2d90-4ce4-bda1-0dd61678596b",
+  "subject_id": "d096af9b-e7dc-4a6a-8b50-e85c5a931c6b",
   "subject_name": "django/db/models/fields/related::ForeignObject.contribute_to_class",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/db/models/fields/reverse_related
 
-- Subject: django/db/models/fields/reverse_related (id `5aa43ba1-b642-41bc-ace0-777a2d99efeb`)
+- Subject: django/db/models/fields/reverse_related (id `33ef98f6-f27a-4a21-99f3-242030d5c4d2`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 72 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

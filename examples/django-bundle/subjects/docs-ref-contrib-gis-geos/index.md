@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/geos
 
-- Subject: docs/ref/contrib/gis/geos (id `4a894bf7-1415-4a7e-8c87-b3565a2692e2`)
+- Subject: docs/ref/contrib/gis/geos (id `6dd1046e-fa61-448a-a1df-0dd719ac9243`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 13354 tokens
-- Facts shown: 389 of 392
+- Used: 13460 tokens
+- Facts shown: 392 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,6 +31,7 @@
 - [d86c4ba6] >>> g = MultiPoint(Point(0, 0), Point(2, 2), Point(1, 1)) >>> print(g) MULTIPOINT (0 0, 2 2, 1 1) >>> g.normalize() >>> print(g) MULTIPOINT (2 2, 1 1, 0 0)
 - [9d1f6b0a] >>> if poly_1.area > poly_2.area: ... pass ...
 - [e4bf355b] >>> ls = LineString(((0, 0), (1, 1))) >>> ls = LineString([Point(0, 0), Point(1, 1)])
+- [8f38e75f] >>> ls = LineString((0, 0), (1, 1)) >>> ls = LineString(Point(0, 0), Point(1, 1))
 - [4dbffe2f] >>> ls = LineString() >>> ls = LineString([])
 - [7e70365a] >>> ls = LinearRing((0, 0), (0, 1), (1, 1), (0, 0))
 - [00a1ff1f] >>> ls1 = LineString((0, 0), (1, 1)) >>> ls2 = LineString((2, 2), (3, 3)) >>> mls = MultiLineString(ls1, ls2) >>> mls = MultiLineString([ls1, ls2])
@@ -138,6 +139,7 @@
 - [1345e535] Constructs a :class:`GEOSGeometry` from the given GML string.
 - [2daaa76b] Converts this geometry to canonical form. If the ``clone`` keyword is set, then the geometry is not modified and a normalized clone of the geometry is returned instead:
 - [f782ebd5] Empty ``LineString`` objects may be instantiated by passing no arguments or an empty sequence. The following are equivalent:
+- [247acbac] Empty ``Point`` objects may be instantiated by passing no arguments or an empty sequence. The following are equivalent:
 - [20ed93bf2591ccc0-14] Example:
 - [20ed93bf2591ccc0-15] Example:
 - [20ed93bf2591ccc0-16] Example:
@@ -158,6 +160,7 @@
 - [2b89fff1] Returns ``True`` if the DE-9IM intersection matrix for the two Geometries is ``T*T******`` (for a point and a curve,a point and an area or a line and an area) ``0********`` (for two curves).
 - [ca23c0ad] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``FF*FF****``.
 - [3a7253c3] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``FT*******``, ``F**T*****`` or ``F***T****``.
+- [76728d1a] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``T*F**F***``.
 - [bc1a10fb] Returns ``True`` if the DE-9IM intersection matrix for the two geometries is ``T*F**FFF*``.
 - [2e5abe38] Returns ``True`` if the elements in the DE-9IM intersection matrix for this geometry and the other matches the given ``pattern`` -- a string of nine characters from the alphabet: {``T``, ``F``, ``*``, ``0``}.
 - [0cfb2ad8] Returns ``True`` if the two geometries are point-wise equivalent by checking that the structure, ordering, and values of all vertices are identical in all dimensions. ``NaN`` values are considered to be equal to other ``NaN`` values. Requires GEOS 3.12.

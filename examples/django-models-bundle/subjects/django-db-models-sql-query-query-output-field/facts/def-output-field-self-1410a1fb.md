@@ -1,6 +1,6 @@
 # Fact 1410a1fb
 
-Store id: ec31190a-47ea-4e02-a74f-bf94c45494e1
+Store id: 6542b46f-b0b4-4b62-afe8-4c5be01bb091
 
 ## Text
 
@@ -20,7 +20,7 @@ def output_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.7508940+00:00`
+- posted_at: `2026-11-09T23:44:58.5932340+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 332,
     "symbol": "Query.output_field"
   },
-  "id": "ec31190a-47ea-4e02-a74f-bf94c45494e1",
+  "id": "6542b46f-b0b4-4b62-afe8-4c5be01bb091",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.7508940+00:00"
+    "posted_at": "2026-11-09T23:44:58.5932340+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ca04ce5c-df69-4ba6-9f50-73703c23254e",
+  "subject_id": "4f97d8fe-6df9-4964-847a-841609b199e2",
   "subject_name": "django/db/models/sql/query::Query.output_field",
   "tags": [
     "entity:method",

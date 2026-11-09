@@ -1,10 +1,10 @@
 # docs/ref/utils
 
-- Subject: docs/ref/utils (id `af18e9c2-0ada-42a6-8e5e-f09698e919ee`)
+- Subject: docs/ref/utils (id `e64077ce-f68c-4947-b4de-7c5694e71cea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 13372 tokens
-- Facts shown: 371 of 388
+- Used: 13904 tokens
+- Facts shown: 388 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,6 +17,7 @@
 - # Which can be rewritten as: @keep_lazy_text def fancy_utility_function(s, *args, **kwargs): ... [5fdf5162]
 - # clear it, requiring re-computation next time it's called person.__dict__.pop("friends", None) [8b99977f]
 - # in the view: if person.friends(): ... [d832c6fd]
+- # in the view: if person.friends: ... [ae2d7e0a]
 - # set a value manually, that will persist on the instance until cleared person.friends = ["Huckleberry Finn", "Tom Sawyer"] [58f187bc]
 - # the model class Person(models.Model): def friends(self): # expensive computation ... return friends [79ef4ca0]
 - * ``categories`` should be a sequence of strings. * ``stylesheets`` should be a sequence of either strings or :class:`Stylesheet` instances. [9ad1b17a]
@@ -34,13 +35,13 @@
 - An optional string which will be used as the ``media`` attribute of the stylesheet. Defaults to ``"screen"``. Use ``media=None`` if you don't want your stylesheet to have a ``media`` attribute. [0b9184df]
 - Any extra keyword arguments you pass to ``__init__`` will be stored in ``self.feed``. [cc7e2a5a]
 - ISO 8601 duration parsing now supports weeks (``PnW``). [273131d4]
-- ISO 8601 years (``Y``) and months (``M``) are unsupported as they cannot be represented by :class:`~datetime.timedelta`. [0c8b014e]
+- Required argument. The URL where the stylesheet is located. [a0fd2532]
 
 ## All facts
 
+- [0c8b014e] ISO 8601 years (``Y``) and months (``M``) are unsupported as they cannot be represented by :class:`~datetime.timedelta`.
 - [7d0c8eb2] Initialize the feed with the given dictionary of metadata, which applies to the entire feed.
 - [1011a5c0] Outputs the feed in the given encoding to ``outfile``, which is a file-like object. Subclasses should override this.
-- [a0fd2532] Required argument. The URL where the stylesheet is located.
 - [73584061] Return extra attributes to place on each item (i.e. item/entry) element.
 - [2362ed7a] Return extra attributes to place on the root (i.e. feed/channel) element. Called from ``write()``.
 - [a648281d] Returns the feed in the given encoding as a string.
@@ -56,6 +57,7 @@
 - [e2148d20c78ef2f1-2] from django.core.exceptions import ValidationError
 - [7f07ce6c] from django.utils.functional import cached_property
 - [bec0cb4c083270c0] from django.utils.functional import keep_lazy, keep_lazy_text
+- [bec0cb4c083270c0-2] from django.utils.functional import keep_lazy, keep_lazy_text
 - [11fc1d3e] from django.utils.module_loading import import_string
 - [e0eae71e] from django.utils.text import format_lazy from django.utils.translation import pgettext_lazy
 - [6efc4730] mark_safe( "%s <b>%s</b> %s" % ( some_html, escape(some_text), escape(some_other_text), ) )
@@ -127,6 +129,7 @@
 - [43da92a6] Determine if the object instance is of a protected type.
 - [3cf0a0b1] Django offers many utility functions (particularly in ``django.utils``) that take a string as their first argument and do something to that string. These functions are used by template filters as well as directly in other code.
 - [2c51d6357c8c8750] Each header is only added if it isn't already set.
+- [2c51d6357c8c8750-2] Each header is only added if it isn't already set.
 - [50a86bb7] Encodes a bytestring to a base64 string for use in URLs, stripping any trailing equal signs.
 - [ce855e70] Escapes all HTML/XML special characters with their Unicode escapes, so value is safe for use with JavaScript. Also wraps the escaped JSON in a ``<script>`` tag. If the ``element_id`` parameter is not ``None``, the ``<script>`` tag is given the passed id. For example:
 - [7d815005] Escapes the unsafe characters from the path portion of a Uniform Resource Identifier (URI).
@@ -147,6 +150,9 @@
 - [4c5910b5] If ``check_path`` is ``True``, the function first checks the requested URL for whether its path begins with a language code listed in the :setting:`LANGUAGES` setting.
 - [fed5e47c] If ``strict`` is ``False`` (the default), a country-specific variant may be returned when neither the language code nor its generic variant is found. For example, if only ``'es-co'`` is in :setting:`LANGUAGES`, that's returned for ``lang_code``\s like ``'es'`` and ``'es-ar'``. Those matches aren't returned if ``strict=True``.
 - [e7f2b095509e968e] If ``strings_only`` is ``True``, don't convert (some) non-string-like objects.
+- [e7f2b095509e968e-2] If ``strings_only`` is ``True``, don't convert (some) non-string-like objects.
+- [e7f2b095509e968e-3] If ``strings_only`` is ``True``, don't convert (some) non-string-like objects.
+- [e7f2b095509e968e-4] If ``strings_only`` is ``True``, don't convert (some) non-string-like objects.
 - [92abd82b] If ``value`` is ``"<b>Joel</b> <button>is</button> a <span>slug</span>"`` the return value will be ``"Joel is a slug"``.
 - [35cf8116] If there is no headerlist stored, the page needs to be rebuilt, so this function returns ``None``.
 - [85cb2ff7] If you are looking for a more robust solution, consider using a third-party HTML sanitizing tool.
@@ -168,29 +174,36 @@
 - [2a073ed5] Or dictionaries can be used for keyword arguments::
 - [8657d79e] Outputs a string in the format ``Wdy, DD Mon YYYY HH:MM:SS GMT``.
 - [3b01a0c0] Parses a string and returns a :class:`datetime.date`.
+- [cc388f78] Parses a string and returns a :class:`datetime.datetime`.
 - [cd5327ee] Parses a string and returns a :class:`datetime.time`.
 - [d6b97033] Parses a string and returns a :class:`datetime.timedelta`.
 - [3385eabd] Raises :exc:`LookupError` if nothing is found.
 - [c15ce1eb] Represents an RSS enclosure
 - [6d81146f] Represents an RSS stylesheet.
 - [c6516117] Returns ``True`` if ``value`` is aware, ``False`` if it is naive. This function assumes that ``value`` is a :class:`~datetime.datetime`.
+- [2e7c5601] Returns ``True`` if ``value`` is naive, ``False`` if it is aware. This function assumes that ``value`` is a :class:`~datetime.datetime`.
 - [aed23dc4] Returns ``lang_code`` if it's in the :setting:`LANGUAGES` setting, possibly selecting a more generic variant. For example, ``'es'`` is returned if ``lang_code`` is ``'es-ar'`` and ``'es'`` is in :setting:`LANGUAGES` but ``'es-ar'`` isn't.
 - [bc0f69c6] Returns a :class:`~datetime.datetime` that represents the current point in time. Exactly what's returned depends on the value of :setting:`USE_TZ`:
 - [ca3ab10b] Returns a :class:`~datetime.tzinfo` instance that represents a time zone with a fixed offset from UTC.
 - [3ddfcde3] Returns a :class:`~datetime.tzinfo` instance that represents the :ref:`current time zone <default-current-time-zone>`.
+- [25786846] Returns a :class:`~datetime.tzinfo` instance that represents the :ref:`default time zone <default-current-time-zone>`.
 - [becea75a] Returns a ``str`` object representing arbitrary object ``s``. Treats bytestrings using the ``encoding`` codec.
 - [0499f8b4] Returns a bytestring version of arbitrary object ``s``, encoded as specified in ``encoding``.
 - [4fe6e05c] Returns a cache key based on the request path. It can be used in the request phase because it pulls the list of headers to take into account from the global path registry and uses those to build a cache key to check against.
 - [8360ad36] Returns a naive :class:`~datetime.datetime` that represents in ``timezone`` the same point in time as ``value``, ``value`` being an aware :class:`~datetime.datetime`. If ``timezone`` is set to ``None``, it defaults to the :ref:`current time zone <default-current-time-zone>`.
 - [6b306fbe] Returns an ASCII string containing the encoded result.
+- [27ad54f6] Returns an aware :class:`~datetime.datetime` that represents the same point in time as ``value`` in ``timezone``, ``value`` being a naive :class:`~datetime.datetime`. If ``timezone`` is set to ``None``, it defaults to the :ref:`current time zone <default-current-time-zone>`.
 - [6f8af153] Returns selected language's BiDi layout:
 - [5f61d7a9] Returns the currently selected language code. Returns ``None`` if translations are temporarily deactivated (by :func:`deactivate_all` or when ``None`` is passed to :func:`override`).
 - [8f97a6a4] Returns the given text with ampersands, quotes and angle brackets encoded for use in HTML. The input is first coerced to a string and the output has :func:`~django.utils.safestring.mark_safe` applied.
 - [f0a26884] Returns the max-age from the response Cache-Control header as an integer (or ``None`` if it wasn't found or wasn't an integer).
 - [c93f2580] Returns the name of the :ref:`current time zone <default-current-time-zone>`.
+- [4ee52d74] Returns the name of the :ref:`default time zone <default-current-time-zone>`.
 - [84accd767ed5e480] Same as the non-lazy versions above, but using lazy execution.
+- [84accd767ed5e480-2] Same as the non-lazy versions above, but using lazy execution.
 - [6569a14c] See :ref:`decorating class based views <decorating-class-based-views>` for example usage.
 - [af60bf4195904d59] See :ref:`lazy translations documentation <lazy-translations>`.
+- [af60bf4195904d59-2] See :ref:`lazy translations documentation <lazy-translations>`.
 - [77a61e50] See `How to make a good ID in Atom <https://web.archive.org/web/20110514113830/http://diveintomark.org/archives/2004/05/28/howto-atom-id>`__.
 - [a2c9d97a] Sets the :ref:`current time zone <default-current-time-zone>`. The ``timezone`` argument must be an instance of a :class:`~datetime.tzinfo` subclass or a time zone name.
 - [10af643b] Similar to :func:`@classmethod <classmethod>`, the ``@classproperty`` decorator converts the result of a method with a single ``cls`` argument into a property that can be accessed directly from the class.
@@ -224,6 +237,7 @@
 - [1a0f8af9] Translates ``message`` and returns it as a string.
 - [66cbbafb] Translates ``message`` given the ``context`` and returns it as a string.
 - [5eb87b19] Translates ``singular`` and ``plural`` and returns the appropriate string based on ``number`` and the ``context``.
+- [a84b59d9] Translates ``singular`` and ``plural`` and returns the appropriate string based on ``number``.
 - [ba1e8844] Tries to remove anything that looks like an HTML tag from the string, that is anything contained within ``<>``.
 - [80f67b13] Turns a Django template into something that is understood by ``xgettext``. It does so by translating the Django translation tags into standard ``gettext`` function invocations.
 - [97c54cde] Turns a language name (en-us) into a locale name (en_US).
@@ -233,6 +247,7 @@
 - [17c6817a] Uses :func:`localtime` to convert an aware :class:`~datetime.datetime` to a :meth:`~datetime.datetime.date` in a different time zone, by default the :ref:`current time zone <default-current-time-zone>`.
 - [cd03ae96] Using this decorator means you can write your function and assume that the input is a proper string, then add support for lazy translation objects at the end.
 - [533befefe94b9886] When ``value`` is omitted, it defaults to :func:`now`.
+- [533befefe94b9886-2] When ``value`` is omitted, it defaults to :func:`now`.
 - [e9421fe9] While ``person.get_friends()`` will recompute the friends on each call, the value of the cached property will persist until you delete it as described above::
 - [0ccdaf10] You can make cached properties of methods. For example, if you had an expensive ``get_friends()`` method and wanted to allow calling it without retrieving the cached value, you could write::
 - [97a0de5c] You should instead use::
@@ -243,6 +258,7 @@
 - [a8c0ea5d] ``lang_code`` has a maximum accepted length of 500 characters. ``False`` is returned if it exceeds this limit, before any language-file lookup.
 - [fb927add] ``offset`` is a :class:`datetime.timedelta` or an integer number of minutes. Use positive values for time zones east of UTC and negative values for west of UTC.
 - [b00b818d2f557164] ``override`` is also usable as a function decorator.
+- [b00b818d2f557164-2] ``override`` is also usable as a function decorator.
 - [3cc81b7e80043ec5-2] is equivalent to::
 - [a784f23b] - They accept strings in ISO 8601 date/time formats (or some close alternatives) and return objects from the corresponding classes in Python's :mod:`datetime` module. - They raise :exc:`ValueError` if their input is well formatted but isn't a valid date or time. - They return ``None`` if it isn't well formatted at all. - They accept up to picosecond resolution in input, but they truncate it to microseconds, since that's what Python supports.
 - [ef6577f6] .. _time-zone-selection-functions:
@@ -334,6 +350,7 @@
 - [911df979] .. function:: sync_only_middleware(middleware)
 - [18c446a9] .. function:: templatize(src)
 - [ace2e450] .. function:: to_locale(language)
+- [558a89f9] .. function:: uri_to_iri(uri)
 - [a22e25b5] .. function:: urlencode(query, doseq=False)
 - [6690cc80] .. function:: urlsafe_base64_encode(s)
 - [f1dda360] .. module:: django.utils :synopsis: Django's built-in utilities.

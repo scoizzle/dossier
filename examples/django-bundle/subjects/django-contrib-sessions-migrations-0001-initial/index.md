@@ -1,10 +1,10 @@
 # django/contrib/sessions/migrations/0001_initial
 
-- Subject: django/contrib/sessions/migrations/0001_initial (id `a25f7217-bd70-437b-91be-545d4e078000`)
+- Subject: django/contrib/sessions/migrations/0001_initial (id `7598e529-89b2-4c5a-a9db-585d3fea69ce`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 201 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

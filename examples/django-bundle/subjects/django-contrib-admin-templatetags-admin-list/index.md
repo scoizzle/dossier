@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/admin_list
 
-- Subject: django/contrib/admin/templatetags/admin_list (id `f1d9a890-7d11-43ad-8b81-62891ddfb77c`)
+- Subject: django/contrib/admin/templatetags/admin_list (id `7a82e47a-dd93-419a-a91c-d0d63d76acb3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4049 tokens
-- Facts shown: 41 of 41
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 

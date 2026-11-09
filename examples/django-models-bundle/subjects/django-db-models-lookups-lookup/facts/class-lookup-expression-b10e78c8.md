@@ -1,6 +1,6 @@
 # Fact b10e78c8
 
-Store id: a36be5b8-dc05-4b4d-b603-31389ccf2b7c
+Store id: 14e0f1b0-6f1d-4b05-ae6f-86761c49917f
 
 ## Text
 
@@ -20,7 +20,7 @@ class Lookup(Expression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1074730+00:00`
+- posted_at: `2026-11-09T23:44:54.8352640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 29,
     "symbol": "Lookup"
   },
-  "id": "a36be5b8-dc05-4b4d-b603-31389ccf2b7c",
+  "id": "14e0f1b0-6f1d-4b05-ae6f-86761c49917f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1074730+00:00"
+    "posted_at": "2026-11-09T23:44:54.8352640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f174502e-3c25-4e5c-a8b5-0f8a64231bc8",
+  "subject_id": "56ca0be3-11b7-46f6-89d7-ca7886943dd1",
   "subject_name": "django/db/models/lookups::Lookup",
   "tags": [
     "entity:class"

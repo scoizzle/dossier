@@ -1,10 +1,10 @@
 # django/db/backends/utils
 
-- Subject: django/db/backends/utils (id `d442ce89-ea54-49bc-9c07-b468173e6557`)
+- Subject: django/db/backends/utils (id `27ffb6f4-56b5-44c0-81bb-16734e008203`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2551 tokens
-- Facts shown: 36 of 37
+- Used: 2598 tokens
+- Facts shown: 37 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -34,6 +34,7 @@
 - [68c59278] def executemany(self, sql, param_list): with self.debug_sql(sql, param_list, many=True): return super().executemany(sql, param_list)
 - [0f4e4ef6] digest = names_digest(name, length=hash_len) return "%s%s%s" % ( '%s"."' % namespace if namespace else "", name[: length - hash_len], digest, )
 - [df9ee2bb] ############################################### # Converters from Python to database (string) # ###############################################
+- [517f02f5] ############################################### # Converters from database (string) to Python # ###############################################
 - [df159afc] @contextmanager def debug_transaction(connection, sql): start = time.monotonic() try: yield finally: if connection.queries_logged: stop = time.monotonic() duration = stop - start connection.queries_log.append( { "sql": "%s" % sql, "time": "%.3f" % duration, } ) logger.debug( "(%.3f) %s; args=%s; alias=%s", duration, sql, None, connection.alias, extra={ "duration": duration, "sql": sql, "alias": connection.alias, }, )
 - [ebc12ca9] class CursorDebugWrapper(CursorWrapper): # XXX callproc isn't instrumented at this time.
 - [da2a0b38] class CursorWrapper: def __init__(self, cursor, db): self.cursor = cursor self.db = db

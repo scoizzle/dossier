@@ -1,6 +1,6 @@
 # Fact 5a4ef1df
 
-Store id: 16249cd4-dc67-4da3-99f8-28092b0e650e
+Store id: ac660cfa-eed7-476a-aadb-7a58bae14bc3
 
 ## Text
 
@@ -20,7 +20,7 @@ def collect_replacements(expressions)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7565240+00:00`
+- posted_at: `2026-11-09T23:44:57.5079990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 699,
     "symbol": "SQLCompiler.get_qualify_sql.collect_replacements"
   },
-  "id": "16249cd4-dc67-4da3-99f8-28092b0e650e",
+  "id": "ac660cfa-eed7-476a-aadb-7a58bae14bc3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7565240+00:00"
+    "posted_at": "2026-11-09T23:44:57.5079990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "521a3a70-a59c-4594-b4cc-2f4263d1cf50",
+  "subject_id": "d39f50cf-e302-424c-8b98-6f949e74fd13",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_qualify_sql.collect_replacements",
   "tags": [
     "entity:function"

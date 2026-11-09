@@ -1,6 +1,6 @@
 # Fact 9accd7c5
 
-Store id: cfe88eaf-c162-45dc-a09a-9e17791e75c3
+Store id: 351135af-095f-4034-b961-28afe81584de
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_field_name(model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8434580+00:00`
+- posted_at: `2026-11-09T23:44:51.6417690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1875,
     "symbol": "ManyToManyField._check_table_uniqueness._get_field_name"
   },
-  "id": "cfe88eaf-c162-45dc-a09a-9e17791e75c3",
+  "id": "351135af-095f-4034-b961-28afe81584de",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8434580+00:00"
+    "posted_at": "2026-11-09T23:44:51.6417690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2fc50378-de84-4628-bb72-adff11603cb4",
+  "subject_id": "eca92524-6d01-4bd9-8e42-f4f077915b23",
   "subject_name": "django/db/models/fields/related::ManyToManyField._check_table_uniqueness._get_field_name",
   "tags": [
     "entity:function"

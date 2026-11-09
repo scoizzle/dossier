@@ -1,6 +1,6 @@
 # Fact e34b025d
 
-Store id: 342f9a0c-f55c-4778-8b88-7619b37238d5
+Store id: abf99a80-47e5-403b-88a7-8164a5ddaf5a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class In
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "342f9a0c-f55c-4778-8b88-7619b37238d5",
+  "id": "abf99a80-47e5-403b-88a7-8164a5ddaf5a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "In"
       },
       "rel": "contains",
-      "target": "ceac0181-8ac9-4ec6-87fb-e7a3b851f91b"
+      "target": "7fae107a-3098-4573-94ef-8b2af994ac60"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

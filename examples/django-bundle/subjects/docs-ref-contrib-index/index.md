@@ -1,10 +1,10 @@
 # docs/ref/contrib/index
 
-- Subject: docs/ref/contrib/index (id `b1d1b6f6-03b9-47fa-81e9-d651efdcfc00`)
+- Subject: docs/ref/contrib/index (id `76b2ea9a-8b51-488f-91f2-8a86362607d8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1306 tokens
-- Facts shown: 47 of 47
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 

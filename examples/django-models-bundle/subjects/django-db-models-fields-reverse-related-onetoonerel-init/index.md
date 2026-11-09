@@ -1,11 +1,11 @@
 # django/db/models/fields/reverse_related::OneToOneRel.__init__
 
-- Subject: django/db/models/fields/reverse_related::OneToOneRel.__init__ (id `cb28bf89-1ca3-4eaa-bfbf-14f85893ee3c`)
+- Subject: django/db/models/fields/reverse_related::OneToOneRel.__init__ (id `c03d2f89-5c3c-4fad-931e-e552cd6e2c45`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 47 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

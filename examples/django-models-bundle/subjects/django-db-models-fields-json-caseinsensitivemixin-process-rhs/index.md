@@ -1,11 +1,11 @@
 # django/db/models/fields/json::CaseInsensitiveMixin.process_rhs
 
-- Subject: django/db/models/fields/json::CaseInsensitiveMixin.process_rhs (id `5731c286-642a-4257-8727-4baef06dd3f8`)
+- Subject: django/db/models/fields/json::CaseInsensitiveMixin.process_rhs (id `2bd45438-38ac-4962-b137-28c77097a4b6`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/db/models/fields/__init__
 
-- Subject: django/db/models/fields/__init__ (id `29a60662-6c79-46a0-bd42-f90eed9c7d70`)
+- Subject: django/db/models/fields/__init__ (id `33b0e427-f796-4783-893b-52c7154949df`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 724 tokens
-- Facts shown: 40 of 40
+- Facts shown: 40 facts
 - Conflicts: 0
 - Gaps: 0
 

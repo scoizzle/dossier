@@ -1,6 +1,6 @@
 # Fact d0480ca6
 
-Store id: 51677878-bdb2-4e6b-b1cc-3f89388cd417
+Store id: 398ced14-2d81-4b00-add9-5474d50d941c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class EmailField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "51677878-bdb2-4e6b-b1cc-3f89388cd417",
+  "id": "398ced14-2d81-4b00-add9-5474d50d941c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "EmailField"
       },
       "rel": "contains",
-      "target": "86349baa-9006-4bc7-8a4c-82406d3e39eb"
+      "target": "f5122cf5-0e4c-47bb-8eae-b2ef65cc2360"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

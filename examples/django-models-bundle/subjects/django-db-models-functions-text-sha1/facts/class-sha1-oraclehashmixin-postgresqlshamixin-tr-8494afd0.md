@@ -1,6 +1,6 @@
 # Fact 8494afd0
 
-Store id: a3462b5f-05c2-4609-b0e7-c47c6660282e
+Store id: cb9ce2d5-e834-46d7-a2d6-fd67c42ca7fe
 
 ## Text
 
@@ -20,7 +20,7 @@ class SHA1(OracleHashMixin, PostgreSQLSHAMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2766150+00:00`
+- posted_at: `2026-11-09T23:44:54.1418240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 302,
     "symbol": "SHA1"
   },
-  "id": "a3462b5f-05c2-4609-b0e7-c47c6660282e",
+  "id": "cb9ce2d5-e834-46d7-a2d6-fd67c42ca7fe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2766150+00:00"
+    "posted_at": "2026-11-09T23:44:54.1418240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "468b0a52-24b4-4117-8216-3824f3aa04ec",
+  "subject_id": "0833e699-e143-42dc-b377-79108f0757a5",
   "subject_name": "django/db/models/functions/text::SHA1",
   "tags": [
     "entity:class"

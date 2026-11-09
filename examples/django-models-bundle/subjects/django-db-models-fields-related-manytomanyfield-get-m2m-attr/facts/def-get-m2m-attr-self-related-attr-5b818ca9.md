@@ -1,6 +1,6 @@
 # Fact 5b818ca9
 
-Store id: 72c3a1a8-30b8-4097-8250-a305d1202948
+Store id: 056ed7b7-4702-4727-b7e2-b6b1665fb580
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_m2m_attr(self, related, attr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8751210+00:00`
+- posted_at: `2026-11-09T23:44:51.6612200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2053,
     "symbol": "ManyToManyField._get_m2m_attr"
   },
-  "id": "72c3a1a8-30b8-4097-8250-a305d1202948",
+  "id": "056ed7b7-4702-4727-b7e2-b6b1665fb580",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8751210+00:00"
+    "posted_at": "2026-11-09T23:44:51.6612200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d798b7b2-24c9-4279-aa99-a33402e60f73",
+  "subject_id": "194cefdf-0141-4811-adc9-1219576299c0",
   "subject_name": "django/db/models/fields/related::ManyToManyField._get_m2m_attr",
   "tags": [
     "entity:method"

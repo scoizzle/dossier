@@ -1,6 +1,6 @@
 # Fact e4e70e74
 
-Store id: 5aca1f56-6f57-4d43-b30b-d0ac7b5d531e
+Store id: 88546a3f-3a5e-4557-aa10-6c0c0d99129c
 
 ## Text
 
@@ -20,7 +20,7 @@ def exclude(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5409550+00:00`
+- posted_at: `2026-11-09T23:44:56.0359680+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1703,
     "symbol": "QuerySet.exclude"
   },
-  "id": "5aca1f56-6f57-4d43-b30b-d0ac7b5d531e",
+  "id": "88546a3f-3a5e-4557-aa10-6c0c0d99129c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5409550+00:00"
+    "posted_at": "2026-11-09T23:44:56.0359680+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5dd3dcf6-8efa-4cd6-82ca-45a441b14e53",
+  "subject_id": "c25ceac6-973c-453c-968b-7fd51410600b",
   "subject_name": "django/db/models/query::QuerySet.exclude",
   "tags": [
     "entity:method"

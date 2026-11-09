@@ -1,6 +1,6 @@
 # Fact ac82f9fa
 
-Store id: e17b9727-c879-4882-842e-8850ed8edbdd
+Store id: 9cc6f372-6de5-410d-9650-26793aa6e177
 
 ## Text
 
@@ -20,7 +20,7 @@ def constrained_target(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.4059520+00:00`
+- posted_at: `2026-11-09T23:44:51.9776830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1261,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.constrained_target"
   },
-  "id": "e17b9727-c879-4882-842e-8850ed8edbdd",
+  "id": "9cc6f372-6de5-410d-9650-26793aa6e177",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.4059520+00:00"
+    "posted_at": "2026-11-09T23:44:51.9776830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "978d933e-423e-4c7b-9645-d6cccf7a5054",
+  "subject_id": "f7e51bfc-4b34-49dd-b103-6d4e6ed5aae4",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.constrained_target",
   "tags": [
     "entity:method",

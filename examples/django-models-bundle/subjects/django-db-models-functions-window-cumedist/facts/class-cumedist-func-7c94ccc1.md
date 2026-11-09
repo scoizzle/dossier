@@ -1,6 +1,6 @@
 # Fact 7c94ccc1
 
-Store id: c36504bd-4d65-4c47-87d4-e0f4f4a6b442
+Store id: 79ce606a-3e14-42c2-8210-1ce3d30471ff
 
 ## Text
 
@@ -20,7 +20,7 @@ class CumeDist(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.6621230+00:00`
+- posted_at: `2026-11-09T23:44:54.4497930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 19,
     "symbol": "CumeDist"
   },
-  "id": "c36504bd-4d65-4c47-87d4-e0f4f4a6b442",
+  "id": "79ce606a-3e14-42c2-8210-1ce3d30471ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.6621230+00:00"
+    "posted_at": "2026-11-09T23:44:54.4497930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cf7b6ed7-5b71-47cf-9a87-1a54091751f8",
+  "subject_id": "5316b53a-0fac-457b-938e-b50b4f9451d3",
   "subject_name": "django/db/models/functions/window::CumeDist",
   "tags": [
     "entity:class"

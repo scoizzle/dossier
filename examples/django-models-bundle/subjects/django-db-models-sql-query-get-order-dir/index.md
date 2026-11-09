@@ -1,11 +1,11 @@
 # django/db/models/sql/query::get_order_dir
 
-- Subject: django/db/models/sql/query::get_order_dir (id `9b68c60a-5243-46f6-84e5-1c303ed401b7`)
+- Subject: django/db/models/sql/query::get_order_dir (id `d5703cb8-6992-45c9-9764-8ce0758c79fe`)
 - Kind: function
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

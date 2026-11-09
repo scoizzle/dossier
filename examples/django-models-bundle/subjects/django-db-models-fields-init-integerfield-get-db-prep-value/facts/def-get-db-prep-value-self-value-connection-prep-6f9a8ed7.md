@@ -1,6 +1,6 @@
 # Fact 6f9a8ed7
 
-Store id: cad588a0-77cb-4610-8554-688788a2eb25
+Store id: f567e41d-7ce0-47c1-9212-e4b6a38f4a4c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7003950+00:00`
+- posted_at: `2026-11-09T23:44:50.1647150+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2213,
     "symbol": "IntegerField.get_db_prep_value"
   },
-  "id": "cad588a0-77cb-4610-8554-688788a2eb25",
+  "id": "f567e41d-7ce0-47c1-9212-e4b6a38f4a4c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7003950+00:00"
+    "posted_at": "2026-11-09T23:44:50.1647150+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8911af3a-5fb2-456d-82ba-6763152ea047",
+  "subject_id": "947d6060-ba9f-4d9a-a0db-c5c60bff4287",
   "subject_name": "django/db/models/fields/__init__::IntegerField.get_db_prep_value",
   "tags": [
     "entity:method"

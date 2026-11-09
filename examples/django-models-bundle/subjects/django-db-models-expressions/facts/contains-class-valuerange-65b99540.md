@@ -1,6 +1,6 @@
 # Fact 65b99540
 
-Store id: 50375244-8444-47b4-841e-0304b6d68d91
+Store id: b8c7daf4-2588-4ca0-a37e-99d8ec56ff7c
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ValueRange
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "50375244-8444-47b4-841e-0304b6d68d91",
+  "id": "b8c7daf4-2588-4ca0-a37e-99d8ec56ff7c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ValueRange"
       },
       "rel": "contains",
-      "target": "d4c4be22-fe0f-4526-92eb-c505a7fe65a9"
+      "target": "3782a047-3050-4473-bd7b-9dcb04dc4f99"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:class"

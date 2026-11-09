@@ -1,6 +1,6 @@
 # Fact 49860d80
 
-Store id: 648e7023-aadc-4fc0-9764-137297e90688
+Store id: 89e0d4e1-10c9-4de9-bc3b-2f810ea0a80a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class EndsWith
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "648e7023-aadc-4fc0-9764-137297e90688",
+  "id": "89e0d4e1-10c9-4de9-bc3b-2f810ea0a80a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "EndsWith"
       },
       "rel": "contains",
-      "target": "9cae3b83-3ae4-4a4a-98f4-67b59bca28f5"
+      "target": "c6312aae-cc4f-4488-9e84-6a5f835ed150"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

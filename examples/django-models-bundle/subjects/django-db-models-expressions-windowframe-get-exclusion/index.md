@@ -1,11 +1,11 @@
 # django/db/models/expressions::WindowFrame.get_exclusion
 
-- Subject: django/db/models/expressions::WindowFrame.get_exclusion (id `cd91fa85-0de4-4b42-9991-afa6933c5754`)
+- Subject: django/db/models/expressions::WindowFrame.get_exclusion (id `316110e3-d7db-4adf-9a2c-2aa51fb65fda`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

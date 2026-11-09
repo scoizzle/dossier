@@ -1,6 +1,6 @@
 # Fact 9520f410
 
-Store id: 7e0ba678-df24-4b10-935a-4656a2c1ce4b
+Store id: 393642a3-b123-412b-a948-8af9d10d3616
 
 ## Text
 
@@ -20,7 +20,7 @@ class Sin(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7727680+00:00`
+- posted_at: `2026-11-09T23:44:53.7719810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 202,
     "symbol": "Sin"
   },
-  "id": "7e0ba678-df24-4b10-935a-4656a2c1ce4b",
+  "id": "393642a3-b123-412b-a948-8af9d10d3616",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7727680+00:00"
+    "posted_at": "2026-11-09T23:44:53.7719810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cd667c30-404d-4691-a67f-284e4c3a5b6d",
+  "subject_id": "f8974367-4b67-47eb-9255-02017c0082b6",
   "subject_name": "django/db/models/functions/math::Sin",
   "tags": [
     "entity:class"

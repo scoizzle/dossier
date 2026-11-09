@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::BaseTable.__init__
 
-- Subject: django/db/models/sql/datastructures::BaseTable.__init__ (id `04c842a6-61b8-4a61-b45c-b7dc91ff82ad`)
+- Subject: django/db/models/sql/datastructures::BaseTable.__init__ (id `7b79f377-d250-42d6-bcbe-55d4666fa633`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

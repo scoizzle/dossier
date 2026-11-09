@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/prototypes/raster
 
-- Subject: django/contrib/gis/gdal/prototypes/raster (id `b3c0e7ef-b8c4-4308-a01e-811d109a4ea5`)
+- Subject: django/contrib/gis/gdal/prototypes/raster (id `f02f4d80-5737-4fe4-93e6-b47f400c8931`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1382 tokens
-- Facts shown: 10 of 10
+- Facts shown: 10 facts
 - Conflicts: 0
 - Gaps: 0
 

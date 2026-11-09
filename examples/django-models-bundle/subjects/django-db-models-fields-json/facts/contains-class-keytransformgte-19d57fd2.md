@@ -1,6 +1,6 @@
 # Fact 19d57fd2
 
-Store id: 13180ae2-5159-4d1d-a3a6-3ac0dfcae6f6
+Store id: 3a1b6680-c358-496c-adf0-a4910c047027
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformGte
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "13180ae2-5159-4d1d-a3a6-3ac0dfcae6f6",
+  "id": "3a1b6680-c358-496c-adf0-a4910c047027",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformGte"
       },
       "rel": "contains",
-      "target": "fba312f7-34c4-4101-bbf9-4c49be8ac12f"
+      "target": "d67961c5-7f9c-41dd-89cb-6d7531eeaab0"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

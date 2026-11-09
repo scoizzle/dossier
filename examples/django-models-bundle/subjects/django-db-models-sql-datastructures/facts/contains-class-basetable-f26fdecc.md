@@ -1,6 +1,6 @@
 # Fact f26fdecc
 
-Store id: 22e807f5-d9ef-42be-9d18-6fb5f731cff2
+Store id: a056f8cc-76ec-455c-9b46-4a060bbd7b3a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class BaseTable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.5084320+00:00`
+- posted_at: `2026-11-09T23:44:58.2955640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "22e807f5-d9ef-42be-9d18-6fb5f731cff2",
+  "id": "a056f8cc-76ec-455c-9b46-4a060bbd7b3a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.5084320+00:00"
+    "posted_at": "2026-11-09T23:44:58.2955640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "BaseTable"
       },
       "rel": "contains",
-      "target": "7204d735-d7e3-40bb-9f2b-474f8d4550d4"
+      "target": "a1c0b6a4-3dd1-48f8-9be0-410c3bbb0078"
     }
   ],
   "status": "live",
-  "subject_id": "173565d9-788f-4a55-b66f-e71d8d7b1a33",
+  "subject_id": "a61dfdc2-4877-4b53-a0ac-6fd76c6f4abb",
   "subject_name": "django/db/models/sql/datastructures",
   "tags": [
     "entity:class"

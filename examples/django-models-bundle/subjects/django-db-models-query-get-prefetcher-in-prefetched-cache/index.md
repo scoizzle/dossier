@@ -1,11 +1,11 @@
 # django/db/models/query::get_prefetcher.in_prefetched_cache
 
-- Subject: django/db/models/query::get_prefetcher.in_prefetched_cache (id `ebc6cbd6-7885-4ac6-9afb-9481117583a7`)
+- Subject: django/db/models/query::get_prefetcher.in_prefetched_cache (id `68ff822e-b1dc-4fc2-9152-785c46395509`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

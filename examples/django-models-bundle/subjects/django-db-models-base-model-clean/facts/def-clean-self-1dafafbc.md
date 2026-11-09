@@ -1,6 +1,6 @@
 # Fact 1dafafbc
 
-Store id: 3960c23b-bbad-4e8d-a37e-3c04f94b58ea
+Store id: 3211cbb7-6fa3-4beb-ad88-4b600eaa5640
 
 ## Text
 
@@ -20,7 +20,7 @@ def clean(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7539880+00:00`
+- posted_at: `2026-11-09T23:44:48.5407300+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1450,
     "symbol": "Model.clean"
   },
-  "id": "3960c23b-bbad-4e8d-a37e-3c04f94b58ea",
+  "id": "3211cbb7-6fa3-4beb-ad88-4b600eaa5640",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7539880+00:00"
+    "posted_at": "2026-11-09T23:44:48.5407300+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b57b4a32-ffbe-4fe3-be15-cff2b7023e03",
+  "subject_id": "7634f2c7-625e-41bd-a3c6-5323df8b3692",
   "subject_name": "django/db/models/base::Model.clean",
   "tags": [
     "entity:method"

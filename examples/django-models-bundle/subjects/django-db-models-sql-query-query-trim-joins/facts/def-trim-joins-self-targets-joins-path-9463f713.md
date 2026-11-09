@@ -1,6 +1,6 @@
 # Fact 9463f713
 
-Store id: 8a5f3718-42ef-43db-9524-91093fb20265
+Store id: f79382ae-fe46-4304-8b58-4b6e98184492
 
 ## Text
 
@@ -20,7 +20,7 @@ def trim_joins(self, targets, joins, path)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.9798660+00:00`
+- posted_at: `2026-11-09T23:44:58.8965030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2007,
     "symbol": "Query.trim_joins"
   },
-  "id": "8a5f3718-42ef-43db-9524-91093fb20265",
+  "id": "f79382ae-fe46-4304-8b58-4b6e98184492",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.9798660+00:00"
+    "posted_at": "2026-11-09T23:44:58.8965030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f97524e2-5c92-4ab5-b7f3-b6196dcce1a2",
+  "subject_id": "7d9fda81-33a2-42c2-a655-cf4cf5d00d67",
   "subject_name": "django/db/models/sql/query::Query.trim_joins",
   "tags": [
     "entity:method"

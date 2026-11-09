@@ -1,6 +1,6 @@
 # Fact 2af70e6a
 
-Store id: 723afa03-1d86-4fa2-b9bc-890326387480
+Store id: 7cc87f75-23c5-41ec-892e-a2f2bbe9c51a
 
 ## Text
 
@@ -20,7 +20,7 @@ class Power(NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7324250+00:00`
+- posted_at: `2026-11-09T23:44:53.7438520+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 141,
     "symbol": "Power"
   },
-  "id": "723afa03-1d86-4fa2-b9bc-890326387480",
+  "id": "7cc87f75-23c5-41ec-892e-a2f2bbe9c51a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7324250+00:00"
+    "posted_at": "2026-11-09T23:44:53.7438520+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "01bcbd09-5b52-46e4-917f-a222bd3e668a",
+  "subject_id": "cde72ab9-4ed3-4b00-b51d-d51429917233",
   "subject_name": "django/db/models/functions/math::Power",
   "tags": [
     "entity:class"

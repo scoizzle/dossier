@@ -1,6 +1,6 @@
 # Fact 793f5388
 
-Store id: 9b8acdcb-2c09-44e5-9c2f-09974bc0c43a
+Store id: 33b79c81-847d-43b1-a6ac-e118e199a68e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function _load_field
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "9b8acdcb-2c09-44e5-9c2f-09974bc0c43a",
+  "id": "33b79c81-847d-43b1-a6ac-e118e199a68e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "_load_field"
       },
       "rel": "contains",
-      "target": "eae9d058-cbeb-4ce2-9b01-dd273caf8911"
+      "target": "6d314da2-7eae-40bd-bb48-dd85dafbfc04"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:function"

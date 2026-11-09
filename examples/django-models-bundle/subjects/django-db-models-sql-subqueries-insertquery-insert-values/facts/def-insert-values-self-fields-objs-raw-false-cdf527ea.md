@@ -1,6 +1,6 @@
 # Fact cdf527ea
 
-Store id: 6b7a7790-1f24-4356-8867-21a0c5b3d14a
+Store id: d0cb29c8-cf13-4912-8def-4b556046e425
 
 ## Text
 
@@ -20,7 +20,7 @@ def insert_values(self, fields, objs, raw=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.4098050+00:00`
+- posted_at: `2026-11-09T23:44:59.4383810+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 161,
     "symbol": "InsertQuery.insert_values"
   },
-  "id": "6b7a7790-1f24-4356-8867-21a0c5b3d14a",
+  "id": "d0cb29c8-cf13-4912-8def-4b556046e425",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.4098050+00:00"
+    "posted_at": "2026-11-09T23:44:59.4383810+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "77495ccb-be33-433b-8312-7bfca918c165",
+  "subject_id": "37dd9b08-5ce4-4ca4-92b9-f64ee1d4cc23",
   "subject_name": "django/db/models/sql/subqueries::InsertQuery.insert_values",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.append_annotation_mask
 
-- Subject: django/db/models/sql/query::Query.append_annotation_mask (id `e617652e-637d-44b6-a71a-3ce0b0fe96e0`)
+- Subject: django/db/models/sql/query::Query.append_annotation_mask (id `ddb379fe-d026-48d7-be4a-3418de13b4f3`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 9abbd0f9
 
-Store id: 446f7e27-5bb1-41d8-b002-eae09335c96b
+Store id: 3ff0f9d3-b3ba-4bd8-9137-ee1c38e73bfb
 
 ## Text
 
@@ -20,7 +20,7 @@ class AltersData
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.9381730+00:00`
+- posted_at: `2026-11-09T23:45:00.0656290+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 55,
     "symbol": "AltersData"
   },
-  "id": "446f7e27-5bb1-41d8-b002-eae09335c96b",
+  "id": "3ff0f9d3-b3ba-4bd8-9137-ee1c38e73bfb",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.9381730+00:00"
+    "posted_at": "2026-11-09T23:45:00.0656290+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "920d5e02-9fef-481f-9e4d-8053ff3c9697",
+  "subject_id": "6d920753-bf18-4a28-9db4-d56db32e88e3",
   "subject_name": "django/db/models/utils::AltersData",
   "tags": [
     "entity:class"

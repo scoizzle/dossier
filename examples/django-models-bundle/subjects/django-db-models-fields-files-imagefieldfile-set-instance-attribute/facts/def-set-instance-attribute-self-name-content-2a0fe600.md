@@ -1,6 +1,6 @@
 # Fact 2a0fe600
 
-Store id: c90843f9-f348-4750-8dfd-30db9a71e6a7
+Store id: e67fb855-8c6d-454c-8529-7471090912be
 
 ## Text
 
@@ -20,7 +20,7 @@ def _set_instance_attribute(self, name, content)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4259590+00:00`
+- posted_at: `2026-11-09T23:44:50.6726930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 407,
     "symbol": "ImageFieldFile._set_instance_attribute"
   },
-  "id": "c90843f9-f348-4750-8dfd-30db9a71e6a7",
+  "id": "e67fb855-8c6d-454c-8529-7471090912be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4259590+00:00"
+    "posted_at": "2026-11-09T23:44:50.6726930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d0f66fd4-5a6d-4eca-9f5b-05fdc20dc7b8",
+  "subject_id": "e34539d5-fa85-408e-8cc0-2d53b32ce21e",
   "subject_name": "django/db/models/fields/files::ImageFieldFile._set_instance_attribute",
   "tags": [
     "entity:method"

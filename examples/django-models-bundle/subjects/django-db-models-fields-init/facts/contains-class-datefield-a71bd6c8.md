@@ -1,6 +1,6 @@
 # Fact a71bd6c8
 
-Store id: b974db24-9b57-4fcd-a589-56b67b2a1a55
+Store id: a0e3b809-157d-411a-ba93-87e050f9b395
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DateField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b974db24-9b57-4fcd-a589-56b67b2a1a55",
+  "id": "a0e3b809-157d-411a-ba93-87e050f9b395",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DateField"
       },
       "rel": "contains",
-      "target": "9dd8f5fe-3091-4c29-8fb5-0853fc83e1ce"
+      "target": "bd533b80-aa55-48b6-9eef-d90e4ae414c1"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

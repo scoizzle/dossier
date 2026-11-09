@@ -1,6 +1,6 @@
 # Fact 1c394c02
 
-Store id: 111bb5b1-a7f6-47fb-b6b3-0f9510b1cbf7
+Store id: 5df43202-8785-4f69-af15-0f89727bed7f
 
 ## Text
 
@@ -20,7 +20,7 @@ class Subquery(BaseExpression, Combinable)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9668700+00:00`
+- posted_at: `2026-11-09T23:44:49.6340480+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1816,
     "symbol": "Subquery"
   },
-  "id": "111bb5b1-a7f6-47fb-b6b3-0f9510b1cbf7",
+  "id": "5df43202-8785-4f69-af15-0f89727bed7f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9668700+00:00"
+    "posted_at": "2026-11-09T23:44:49.6340480+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "63d4e49d-e5ca-4c49-8162-f4530a9d9bf0",
+  "subject_id": "3c6e1344-74dd-4839-95bd-9df832f5241c",
   "subject_name": "django/db/models/expressions::Subquery",
   "tags": [
     "entity:class"

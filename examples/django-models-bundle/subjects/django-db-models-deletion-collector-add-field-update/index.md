@@ -1,11 +1,11 @@
 # django/db/models/deletion::Collector.add_field_update
 
-- Subject: django/db/models/deletion::Collector.add_field_update (id `51c08d33-cec9-4d4f-a3cc-0ecf131dcfac`)
+- Subject: django/db/models/deletion::Collector.add_field_update (id `1b347dce-b87b-4072-a406-1392ec967025`)
 - Kind: method
 - Parent: [django/db/models/deletion](../django-db-models-deletion/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

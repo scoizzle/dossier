@@ -1,6 +1,6 @@
 # Fact 46db89ec
 
-Store id: 3283c8ac-9e9d-464a-a433-45f0476cd451
+Store id: f1dd7530-fd84-400f-b2de-6070cd680567
 
 ## Text
 
@@ -20,7 +20,7 @@ def _clear_ordering_in_combined_queries(self, cloned_query, other_qs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.6863320+00:00`
+- posted_at: `2026-11-09T23:44:56.1944990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2386,
     "symbol": "QuerySet._clear_ordering_in_combined_queries"
   },
-  "id": "3283c8ac-9e9d-464a-a433-45f0476cd451",
+  "id": "f1dd7530-fd84-400f-b2de-6070cd680567",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.6863320+00:00"
+    "posted_at": "2026-11-09T23:44:56.1944990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b3e9f9f1-808c-47a2-8c02-a8720503c08d",
+  "subject_id": "96035527-fec3-413f-a97e-73880ab62de1",
   "subject_name": "django/db/models/query::QuerySet._clear_ordering_in_combined_queries",
   "tags": [
     "entity:method"

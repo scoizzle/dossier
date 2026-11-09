@@ -1,10 +1,10 @@
 # django/forms/forms
 
-- Subject: django/forms/forms (id `a5b24d7b-131f-48ff-9585-1a2db6ce7260`)
+- Subject: django/forms/forms (id `5ef89414-8e60-4f89-b9e1-31384548ff53`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3773 tokens
-- Facts shown: 59 of 59
+- Facts shown: 59 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact ab3deb7c
 
-Store id: 3b2e5c42-bf73-4c9e-a510-6a51a1a9090e
+Store id: cadfcfd0-b3e0-4d8c-af7f-c7dd526b75f4
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6680010+00:00`
+- posted_at: `2026-11-09T23:44:51.5176800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 612,
     "symbol": "ForeignObject.check"
   },
-  "id": "3b2e5c42-bf73-4c9e-a510-6a51a1a9090e",
+  "id": "cadfcfd0-b3e0-4d8c-af7f-c7dd526b75f4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6680010+00:00"
+    "posted_at": "2026-11-09T23:44:51.5176800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c2f1da1a-91ba-447e-b3e7-55690c3f3d82",
+  "subject_id": "c18a649b-56f0-424c-aab4-c6e9435d38f6",
   "subject_name": "django/db/models/fields/related::ForeignObject.check",
   "tags": [
     "entity:method"

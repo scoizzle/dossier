@@ -1,6 +1,6 @@
 # Fact 02e9bff0
 
-Store id: fdba00b4-a5c2-49f4-8bfe-a58c41a38400
+Store id: 3e930d1f-52e6-43d3-be03-de3f0aab645f
 
 ## Text
 
@@ -20,7 +20,7 @@ class TupleGreaterThanOrEqual(TupleLookupMixin, GreaterThanOrEqual)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.6034700+00:00`
+- posted_at: `2026-11-09T23:44:52.7689500+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 219,
     "symbol": "TupleGreaterThanOrEqual"
   },
-  "id": "fdba00b4-a5c2-49f4-8bfe-a58c41a38400",
+  "id": "3e930d1f-52e6-43d3-be03-de3f0aab645f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.6034700+00:00"
+    "posted_at": "2026-11-09T23:44:52.7689500+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8bfa6a4d-a7e3-494a-83cb-381fe18119b2",
+  "subject_id": "c58b07c0-17d0-4514-9749-9984f4cbf762",
   "subject_name": "django/db/models/fields/tuple_lookups::TupleGreaterThanOrEqual",
   "tags": [
     "entity:class"

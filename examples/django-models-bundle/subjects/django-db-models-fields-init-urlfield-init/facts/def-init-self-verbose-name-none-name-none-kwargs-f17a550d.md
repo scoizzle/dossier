@@ -1,6 +1,6 @@
 # Fact f17a550d
 
-Store id: ac4d392d-e8b6-412d-ad5e-52eb3543b55f
+Store id: baef6f4d-ee97-4762-b650-40400f6e33bb
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, verbose_name=None, name=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8340720+00:00`
+- posted_at: `2026-11-09T23:44:50.2698830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2723,
     "symbol": "URLField.__init__"
   },
-  "id": "ac4d392d-e8b6-412d-ad5e-52eb3543b55f",
+  "id": "baef6f4d-ee97-4762-b650-40400f6e33bb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8340720+00:00"
+    "posted_at": "2026-11-09T23:44:50.2698830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "25e65157-489d-43b4-8569-40b61b1ceffc",
+  "subject_id": "f65c8c88-74e9-4f93-8765-6059f35633a2",
   "subject_name": "django/db/models/fields/__init__::URLField.__init__",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/contrib/humanize/templatetags/humanize
 
-- Subject: django/contrib/humanize/templatetags/humanize (id `8cfb6928-a2a3-4553-9d4e-5708a17ae8b3`)
+- Subject: django/contrib/humanize/templatetags/humanize (id `8720415c-14cf-41d9-a473-05dba5a9eaca`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2786 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

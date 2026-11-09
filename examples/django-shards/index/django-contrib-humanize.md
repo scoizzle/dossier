@@ -4,7 +4,6 @@ This file lists every subject under `django/contrib/humanize/`, one row per subj
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/humanize/apps | subject | 2 | 0 | 0 | 1569 | [shards/99.md#django-contrib-humanize-apps](../shards/99.md#django-contrib-humanize-apps) |
-|     django/contrib/humanize/templatetags/humanize | subject | 8 | 0 | 0 | 1569 | [shards/99.md#django-contrib-humanize-templatetags-humanize](../shards/99.md#django-contrib-humanize-templatetags-humanize) |
+|   django/contrib/humanize/apps | subject | 2 | 0 | 0 | 1222 | [shards/74.md#django-contrib-humanize-apps](../shards/74.md#django-contrib-humanize-apps) |
 
 Up: [index/django-contrib.md](django-contrib.md)

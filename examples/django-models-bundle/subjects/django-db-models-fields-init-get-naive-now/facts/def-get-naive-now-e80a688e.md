@@ -1,6 +1,6 @@
 # Fact e80a688e
 
-Store id: ae641ad3-b913-42ad-a57d-4591ca4b635a
+Store id: 8e6dbb44-277e-49d6-9a9f-ffd0b8a47640
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_naive_now()
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5659900+00:00`
+- posted_at: `2026-11-09T23:44:50.0764640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1387,
     "symbol": "_get_naive_now"
   },
-  "id": "ae641ad3-b913-42ad-a57d-4591ca4b635a",
+  "id": "8e6dbb44-277e-49d6-9a9f-ffd0b8a47640",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5659900+00:00"
+    "posted_at": "2026-11-09T23:44:50.0764640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f604c656-bdb3-4c4a-af07-c5e42b5bc07a",
+  "subject_id": "657c4efe-5d50-453e-a669-b62ced6b5105",
   "subject_name": "django/db/models/fields/__init__::_get_naive_now",
   "tags": [
     "entity:function"

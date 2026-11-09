@@ -1,11 +1,11 @@
 # django/db/models/expressions::Combinable.__add__
 
-- Subject: django/db/models/expressions::Combinable.__add__ (id `da9723b2-3b72-447d-9c68-b30970f603c7`)
+- Subject: django/db/models/expressions::Combinable.__add__ (id `36e58756-728d-4425-8a72-dea955429fdd`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

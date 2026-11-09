@@ -1,10 +1,10 @@
 # django/utils/feedgenerator
 
-- Subject: django/utils/feedgenerator (id `d3340fa7-6a77-4f2e-9783-7ea8ea7225b7`)
+- Subject: django/utils/feedgenerator (id `087f30af-b709-455f-957a-b988a426231e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4147 tokens
-- Facts shown: 68 of 71
+- Used: 4303 tokens
+- Facts shown: 71 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - # Author information. if item["author_name"] and item["author_email"]: handler.addQuickElement( "author", "%s (%s)" % (item["author_email"], item["author_name"]) ) elif item["author_email"]: handler.addQuickElement("author", item["author_email"]) elif item["author_name"]: handler.addQuickElement( "dc:creator", item["author_name"], {"xmlns:dc": "http://purl.org/dc/elements/1.1/"}, ) [7fa8494d]
 - # Author information. if item["author_name"] is not None: handler.startElement("author", {}) handler.addQuickElement("name", item["author_name"]) if item["author_email"] is not None: handler.addQuickElement("email", item["author_email"]) if item["author_link"] is not None: handler.addQuickElement("uri", item["author_link"]) handler.endElement("author") [19deca57]
 - # Categories. for cat in item["categories"]: handler.addQuickElement("category", "", {"term": cat}) [a29b261f]
+- # Categories. for cat in item["categories"]: handler.addQuickElement("category", cat) [a86bd679]
 - # Enclosure. if item["enclosures"]: enclosures = list(item["enclosures"]) if len(enclosures) > 1: raise ValueError( "RSS feed items may only have one enclosure, see " "http://www.rssboard.org/rss-profile#element-channel-item-enclosure" ) enclosure = enclosures[0] handler.addQuickElement( "enclosure", "", { "url": enclosure.url, "length": enclosure.length, "type": enclosure.mime_type, }, ) [b9b9e265]
 - # Enclosures. for enclosure in item["enclosures"]: handler.addQuickElement( "link", "", { "rel": "enclosure", "href": enclosure.url, "length": enclosure.length, "type": enclosure.mime_type, }, ) [d5c45748]
 - # Rights. if item["item_copyright"] is not None: handler.addQuickElement("rights", item["item_copyright"]) [131c6720]
@@ -24,13 +25,13 @@
 - def to_stylesheet(s): return s if isinstance(s, Stylesheet) else Stylesheet(s) [5b5914ca]
 - for item in self.items: for date_key in date_keys: item_date = item.get(date_key) if item_date: if latest_date is None or item_date > latest_date: latest_date = item_date [49f6d89c]
 - if item["pubdate"] is not None: handler.addQuickElement("published", rfc3339_date(item["pubdate"])) [53730a8e]
-- return latest_date or datetime.datetime.now(tz=datetime.UTC) [1e23c501]
 
 ## All facts
 
 - [fae73549] if item["pubdate"] is not None: handler.addQuickElement("pubDate", rfc2822_date(item["pubdate"])) if item["comments"] is not None: handler.addQuickElement("comments", item["comments"]) if item["unique_id"] is not None: guid_attrs = {} if isinstance(item.get("unique_id_is_permalink"), bool): guid_attrs["isPermaLink"] = str(item["unique_id_is_permalink"]).lower() handler.addQuickElement("guid", item["unique_id"], guid_attrs) if item["ttl"] is not None: handler.addQuickElement("ttl", item["ttl"])
 - [d3d19134] if item["updateddate"] is not None: handler.addQuickElement("updated", rfc3339_date(item["updateddate"]))
 - [c19254f0] if stylesheets is not None: if isinstance(stylesheets, (Stylesheet, str)): raise TypeError( f"stylesheets should be a list, not {stylesheets.__class__}" ) stylesheets = [to_stylesheet(s) for s in stylesheets]
+- [1e23c501] return latest_date or datetime.datetime.now(tz=datetime.UTC)
 - [6f173ac8] self.feed = { "title": to_str(title), "link": iri_to_uri(link), "description": to_str(description), "language": to_str(language), "author_email": to_str(author_email), "author_name": to_str(author_name), "author_link": iri_to_uri(author_link), "subtitle": to_str(subtitle), "categories": categories or (), "feed_url": iri_to_uri(feed_url), "feed_copyright": to_str(feed_copyright), "id": feed_guid or link, "ttl": to_str(ttl), "stylesheets": stylesheets, **kwargs, } self.items = []
 - [9de9ce95] # The official mimetype for XSLT files is technically # `application/xslt+xml` but as of 2024 almost no browser supports that # (they all expect text/xsl). On top of that, windows seems to assume that # the type for xsl is text/xml. mimetypedb.readfp(StringIO("text/xsl\txsl\ntext/xsl\txslt"))
 - [647636c6] # Using a property to delay the evaluation of self._url as late as possible # in case of a lazy object (like reverse_lazy(...) for example). @property def url(self): return iri_to_uri(self._url)
@@ -45,6 +46,7 @@
 - [82f06558] def add_item_elements(self, handler, item): """ Add elements on each item (i.e. item/entry) element. """ pass
 - [24dedb14] def add_item_elements(self, handler, item): handler.addQuickElement("title", item["title"]) handler.addQuickElement("link", "", {"href": item["link"], "rel": "alternate"})
 - [84849f7cb1e07db7] def add_item_elements(self, handler, item): handler.addQuickElement("title", item["title"]) handler.addQuickElement("link", item["link"]) if item["description"] is not None: handler.addQuickElement("description", item["description"])
+- [84849f7cb1e07db7-2] def add_item_elements(self, handler, item): handler.addQuickElement("title", item["title"]) handler.addQuickElement("link", item["link"]) if item["description"] is not None: handler.addQuickElement("description", item["description"])
 - [833b6242] def add_root_elements(self, handler): """ Add elements in the root (i.e. feed/channel) element. Called from write(). """ pass
 - [abbaea9e] def add_root_elements(self, handler): handler.addQuickElement("title", self.feed["title"]) handler.addQuickElement( "link", "", {"rel": "alternate", "href": self.feed["link"]} ) if self.feed["feed_url"] is not None: handler.addQuickElement( "link", "", {"rel": "self", "href": self.feed["feed_url"]} ) handler.addQuickElement("id", self.feed["id"]) handler.addQuickElement("updated", rfc3339_date(self.latest_post_date())) if self.feed["author_name"] is not None: handler.startElement("author", {}) handler.addQuickElement("name", self.feed["author_name"]) if self.feed["author_email"] is not None: handler.addQuickElement("email", self.feed["author_email"]) if self.feed["author_link"] is not None: handler.addQuickElement("uri", self.feed["author_link"]) handler.endElement("author") if self.feed["subtitle"] is not None: handler.addQuickElement("subtitle", self.feed["subtitle"]) for cat in self.feed["categories"]: handler.addQuickElement("category", "", {"term": cat}) if self.feed["feed_copyright"] is not None: handler.addQuickElement("rights", self.feed["feed_copyright"])
 - [67496c3e] def add_root_elements(self, handler): handler.addQuickElement("title", self.feed["title"]) handler.addQuickElement("link", self.feed["link"]) handler.addQuickElement("description", self.feed["description"]) if self.feed["feed_url"] is not None: handler.addQuickElement( "atom:link", None, {"rel": "self", "href": self.feed["feed_url"]} ) if self.feed["language"] is not None: handler.addQuickElement("language", self.feed["language"]) for cat in self.feed["categories"]: handler.addQuickElement("category", cat) if self.feed["feed_copyright"] is not None: handler.addQuickElement("copyright", self.feed["feed_copyright"]) handler.addQuickElement("lastBuildDate", rfc2822_date(self.latest_post_date())) if self.feed["ttl"] is not None: handler.addQuickElement("ttl", self.feed["ttl"])
@@ -62,6 +64,7 @@
 - [caac78a0] def write(self, outfile, encoding): handler = SimplerXMLGenerator(outfile, encoding, short_empty_elements=True) handler.startDocument() handler.startElement("feed", self.root_attributes()) self.add_root_elements(handler) self.write_items(handler) handler.endElement("feed")
 - [88c5c713] def writeString(self, encoding): """ Return the feed in the given encoding as a string. """ s = StringIO() self.write(s, encoding) return s.getvalue()
 - [56b05e57] def write_items(self, handler): for item in self.items: handler.startElement("entry", self.item_attributes(item)) self.add_item_elements(handler, item) handler.endElement("entry")
+- [363550d9] def write_items(self, handler): for item in self.items: handler.startElement("item", self.item_attributes(item)) self.add_item_elements(handler, item) handler.endElement("item")
 - [980e1bd1] return mimetypedb.guess_type(url)
 - [57ee82a0] """ Syndication feed generation library -- used for generating RSS, etc.
 - [a1b15f6c] # This isolates the decision of what the system default is, so calling code can # do "feedgenerator.DefaultFeed" instead of "feedgenerator.Rss201rev2Feed". DefaultFeed = Rss201rev2Feed

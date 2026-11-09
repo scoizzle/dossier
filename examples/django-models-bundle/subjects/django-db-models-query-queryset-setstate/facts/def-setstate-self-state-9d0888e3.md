@@ -1,6 +1,6 @@
 # Fact 9d0888e3
 
-Store id: 504ec554-dfd6-4e7c-9730-3d72fac8ff5e
+Store id: a64a58a5-2a93-458d-b94d-274b97d00ae1
 
 ## Text
 
@@ -20,7 +20,7 @@ def __setstate__(self, state)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3222570+00:00`
+- posted_at: `2026-11-09T23:44:55.8431440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 429,
     "symbol": "QuerySet.__setstate__"
   },
-  "id": "504ec554-dfd6-4e7c-9730-3d72fac8ff5e",
+  "id": "a64a58a5-2a93-458d-b94d-274b97d00ae1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3222570+00:00"
+    "posted_at": "2026-11-09T23:44:55.8431440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e7b4aed5-6693-4270-9593-1875aa53300b",
+  "subject_id": "f6c44fef-8eab-418a-8f4d-af990b387673",
   "subject_name": "django/db/models/query::QuerySet.__setstate__",
   "tags": [
     "entity:method"

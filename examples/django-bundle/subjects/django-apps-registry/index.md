@@ -1,10 +1,10 @@
 # django/apps/registry
 
-- Subject: django/apps/registry (id `48de01ac-e4ce-4eaf-941c-c69a0369cf96`)
+- Subject: django/apps/registry (id `24108827-5634-461d-a8d3-f73b2384fe65`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4363 tokens
-- Facts shown: 78 of 78
+- Facts shown: 78 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact d205a0f5
 
-Store id: 9f81d8fa-ed25-4678-a642-683cab903f17
+Store id: 590eb407-4eca-4c36-adb2-ec69a884785b
 
 ## Text
 
@@ -20,7 +20,7 @@ class SHA512(MySQLSHA2Mixin, OracleHashMixin, PostgreSQLSHAMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2960180+00:00`
+- posted_at: `2026-11-09T23:44:54.1535530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 325,
     "symbol": "SHA512"
   },
-  "id": "9f81d8fa-ed25-4678-a642-683cab903f17",
+  "id": "590eb407-4eca-4c36-adb2-ec69a884785b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2960180+00:00"
+    "posted_at": "2026-11-09T23:44:54.1535530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b2dc304d-97b9-46ca-b9ba-361ad0fb1df6",
+  "subject_id": "1cb4d043-e173-4479-ab52-99876f2f9a19",
   "subject_name": "django/db/models/functions/text::SHA512",
   "tags": [
     "entity:class"

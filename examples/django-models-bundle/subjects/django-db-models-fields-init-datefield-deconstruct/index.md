@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateField.deconstruct
 
-- Subject: django/db/models/fields/__init__::DateField.deconstruct (id `6f17816f-ec29-486e-80c3-a8dc64b7be81`)
+- Subject: django/db/models/fields/__init__::DateField.deconstruct (id `3ecbfdfd-0376-4075-a1d9-3c8b19e550ea`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

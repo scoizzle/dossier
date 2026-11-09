@@ -1,6 +1,6 @@
 # Fact 2b5c2b56
 
-Store id: c6b7e0c7-dce6-4da2-afd4-2472537f1d9b
+Store id: 03fcbaf6-dd12-4739-a26f-76bea41d1013
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class WhereNode
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.7324610+00:00`
+- posted_at: `2026-11-09T23:44:59.8503870+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "c6b7e0c7-dce6-4da2-afd4-2472537f1d9b",
+  "id": "03fcbaf6-dd12-4739-a26f-76bea41d1013",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.7324610+00:00"
+    "posted_at": "2026-11-09T23:44:59.8503870+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "WhereNode"
       },
       "rel": "contains",
-      "target": "ea288970-4ff6-472d-bb88-cb5179ab8bf4"
+      "target": "65dc3ea2-d5db-4b54-9005-363a5d1415a3"
     }
   ],
   "status": "live",
-  "subject_id": "054a8784-2f6d-4aca-bf87-0be8a185e83b",
+  "subject_id": "c9be0d36-44cc-4f80-84ab-c9048f1df063",
   "subject_name": "django/db/models/sql/where",
   "tags": [
     "entity:class"

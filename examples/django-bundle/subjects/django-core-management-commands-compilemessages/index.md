@@ -1,10 +1,10 @@
 # django/core/management/commands/compilemessages
 
-- Subject: django/core/management/commands/compilemessages (id `871f4d2b-8049-4483-ba14-adcedf1bc44a`)
+- Subject: django/core/management/commands/compilemessages (id `547ef1d8-cf00-4faf-808f-bb7d41a445ea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1462 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

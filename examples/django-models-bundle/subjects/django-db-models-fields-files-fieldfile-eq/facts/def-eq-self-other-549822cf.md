@@ -1,6 +1,6 @@
 # Fact 549822cf
 
-Store id: c21a4079-49df-4cd7-8207-76cf29ebfefc
+Store id: 80b2162e-495e-4af6-b8f4-883bc40bb5dd
 
 ## Text
 
@@ -20,7 +20,7 @@ def __eq__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3371560+00:00`
+- posted_at: `2026-11-09T23:44:50.6144350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 27,
     "symbol": "FieldFile.__eq__"
   },
-  "id": "c21a4079-49df-4cd7-8207-76cf29ebfefc",
+  "id": "80b2162e-495e-4af6-b8f4-883bc40bb5dd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3371560+00:00"
+    "posted_at": "2026-11-09T23:44:50.6144350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5d4b6b0a-b7b2-4ed7-aa5f-09f8d2f73d0a",
+  "subject_id": "1eabea5b-50c7-4a26-80a2-13269e4d532e",
   "subject_name": "django/db/models/fields/files::FieldFile.__eq__",
   "tags": [
     "entity:method"

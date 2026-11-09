@@ -1,10 +1,10 @@
 # docs/ref/models/indexes
 
-- Subject: docs/ref/models/indexes (id `6046f0d4-4042-44e3-a0d1-aeeb97b9fbfd`)
+- Subject: docs/ref/models/indexes (id `439cd764-9fe1-4671-8f1e-c739751a23a9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2621 tokens
-- Facts shown: 71 of 72
+- Used: 2642 tokens
+- Facts shown: 72 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -37,6 +37,7 @@
 - [882bf015] .. admonition:: Referencing built-in indexes
 - [bebd87af] .. admonition:: Restrictions on Oracle
 - [6916dbe8e1a8cc8d] .. admonition:: Restrictions on PostgreSQL
+- [6916dbe8e1a8cc8d-2] .. admonition:: Restrictions on PostgreSQL
 - [819421d9] .. admonition:: Restrictions on SQLite
 - [0eccf1d3] .. attribute:: Index.condition
 - [684ce5ec] .. attribute:: Index.db_tablespace

@@ -1,10 +1,10 @@
 # docs/contents
 
-- Subject: docs/contents (id `0f33ce2d-7bee-4f02-aca7-ce7894865628`)
+- Subject: docs/contents (id `0999f7a4-a64a-4ae2-b967-3fa1211a035a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 165 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

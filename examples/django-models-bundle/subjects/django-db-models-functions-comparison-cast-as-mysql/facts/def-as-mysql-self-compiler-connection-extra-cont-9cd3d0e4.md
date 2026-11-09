@@ -1,6 +1,6 @@
 # Fact 9cd3d0e4
 
-Store id: d26db425-7b39-4437-8116-f92b0f74907c
+Store id: 3fe93b32-ac8d-4adc-b1c6-82e34c901c07
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9572860+00:00`
+- posted_at: `2026-11-09T23:44:53.1228390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 38,
     "symbol": "Cast.as_mysql"
   },
-  "id": "d26db425-7b39-4437-8116-f92b0f74907c",
+  "id": "3fe93b32-ac8d-4adc-b1c6-82e34c901c07",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9572860+00:00"
+    "posted_at": "2026-11-09T23:44:53.1228390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1ebd7863-5035-4051-8d46-7a6461cd21c2",
+  "subject_id": "d36a5bef-e7c7-42f4-af3c-2e28732d4176",
   "subject_name": "django/db/models/functions/comparison::Cast.as_mysql",
   "tags": [
     "entity:method"

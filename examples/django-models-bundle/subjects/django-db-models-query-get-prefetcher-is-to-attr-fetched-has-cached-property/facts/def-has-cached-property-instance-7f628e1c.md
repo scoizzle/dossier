@@ -1,6 +1,6 @@
 # Fact 7f628e1c
 
-Store id: 2f9b3d9e-47f9-43ab-bfef-748521b1e868
+Store id: 147f6f02-0511-495c-94cc-d3d051a7e9df
 
 ## Text
 
@@ -20,7 +20,7 @@ def has_cached_property(instance)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8386940+00:00`
+- posted_at: `2026-11-09T23:44:56.3212080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2826,
     "symbol": "get_prefetcher.is_to_attr_fetched.has_cached_property"
   },
-  "id": "2f9b3d9e-47f9-43ab-bfef-748521b1e868",
+  "id": "147f6f02-0511-495c-94cc-d3d051a7e9df",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8386940+00:00"
+    "posted_at": "2026-11-09T23:44:56.3212080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47d178f6-cfe2-401e-beb5-e70d077d097e",
+  "subject_id": "58b87017-b94f-484c-8623-a133391773f4",
   "subject_name": "django/db/models/query::get_prefetcher.is_to_attr_fetched.has_cached_property",
   "tags": [
     "entity:function"

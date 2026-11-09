@@ -1,16 +1,17 @@
 # django/views/decorators/vary
 
-- Subject: django/views/decorators/vary (id `51212e32-7b52-41a6-a243-cc5310465a57`)
+- Subject: django/views/decorators/vary (id `68488b8d-a8f3-4d3a-8b92-3ac1c91d8740`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 325 tokens
-- Facts shown: 11 of 12
+- Used: 371 tokens
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 
 ## Facts
 
 - async def _view_wrapper(request, *args, **kwargs): response = await func(request, *args, **kwargs) patch_vary_headers(response, headers) return response [2626f7bc]
+- def _view_wrapper(request, *args, **kwargs): response = func(request, *args, **kwargs) patch_vary_headers(response, headers) return response [217d5db1]
 - else: [6ad07797f4838346-28]
 - return wraps(func)(_view_wrapper) [ddabdbea]
 - @vary_on_headers('Cookie', 'Accept-language') def index(request): ... [43d54ee3]

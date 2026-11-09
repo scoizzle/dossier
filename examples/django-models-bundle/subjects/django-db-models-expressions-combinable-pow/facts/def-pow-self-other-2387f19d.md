@@ -1,6 +1,6 @@
 # Fact 2387f19d
 
-Store id: ff0c043c-b7c1-4b53-92f2-660c8f07ae10
+Store id: 6c0b1e3b-3355-4baa-81f7-5812cfe427c4
 
 ## Text
 
@@ -20,7 +20,7 @@ def __pow__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7305180+00:00`
+- posted_at: `2026-11-09T23:44:49.2452470+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 94,
     "symbol": "Combinable.__pow__"
   },
-  "id": "ff0c043c-b7c1-4b53-92f2-660c8f07ae10",
+  "id": "6c0b1e3b-3355-4baa-81f7-5812cfe427c4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7305180+00:00"
+    "posted_at": "2026-11-09T23:44:49.2452470+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2d3fe4c-1a65-43b2-bba0-ef6acb029046",
+  "subject_id": "0133de2c-066b-4fac-98d6-a29210737926",
   "subject_name": "django/db/models/expressions::Combinable.__pow__",
   "tags": [
     "entity:method"

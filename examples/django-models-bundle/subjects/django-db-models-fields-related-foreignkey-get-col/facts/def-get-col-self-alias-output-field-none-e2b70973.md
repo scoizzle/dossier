@@ -1,6 +1,6 @@
 # Fact e2b70973
 
-Store id: 7a0917e4-01a9-43e4-ad91-4fe42123ac04
+Store id: e38c15dc-05da-4933-92c1-9d292e4dc1d6
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_col(self, alias, output_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7967640+00:00`
+- posted_at: `2026-11-09T23:44:51.6122110+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1341,
     "symbol": "ForeignKey.get_col"
   },
-  "id": "7a0917e4-01a9-43e4-ad91-4fe42123ac04",
+  "id": "e38c15dc-05da-4933-92c1-9d292e4dc1d6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7967640+00:00"
+    "posted_at": "2026-11-09T23:44:51.6122110+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "124f3a44-27cf-400b-a5ab-bb22b5162b12",
+  "subject_id": "1091e506-3d0c-4def-865c-864228cb4a02",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_col",
   "tags": [
     "entity:method"

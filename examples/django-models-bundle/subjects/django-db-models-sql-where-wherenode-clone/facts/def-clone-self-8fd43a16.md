@@ -1,6 +1,6 @@
 # Fact 8fd43a16
 
-Store id: adbd29bd-5a49-4e58-8ebb-9bea80cbdf70
+Store id: fed62d02-50e5-45f5-b21f-775a702e3850
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6214740+00:00`
+- posted_at: `2026-11-09T23:44:59.7336210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 217,
     "symbol": "WhereNode.clone"
   },
-  "id": "adbd29bd-5a49-4e58-8ebb-9bea80cbdf70",
+  "id": "fed62d02-50e5-45f5-b21f-775a702e3850",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6214740+00:00"
+    "posted_at": "2026-11-09T23:44:59.7336210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2aca92cb-a5c4-4e23-ad08-93a2dec92a89",
+  "subject_id": "cbe04aa2-60ed-4600-8717-345d94d1073e",
   "subject_name": "django/db/models/sql/where::WhereNode.clone",
   "tags": [
     "entity:method"

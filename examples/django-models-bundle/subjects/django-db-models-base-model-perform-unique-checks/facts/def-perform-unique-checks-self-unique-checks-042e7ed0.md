@@ -1,6 +1,6 @@
 # Fact 042e7ed0
 
-Store id: 70134561-a9c2-49b3-bc96-389d7e3ddff7
+Store id: 36db4cbc-334d-486d-a8c8-78c102e5d340
 
 ## Text
 
@@ -20,7 +20,7 @@ def _perform_unique_checks(self, unique_checks)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7557490+00:00`
+- posted_at: `2026-11-09T23:44:48.5421120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1544,
     "symbol": "Model._perform_unique_checks"
   },
-  "id": "70134561-a9c2-49b3-bc96-389d7e3ddff7",
+  "id": "36db4cbc-334d-486d-a8c8-78c102e5d340",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7557490+00:00"
+    "posted_at": "2026-11-09T23:44:48.5421120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d8deb5d1-abf8-4a27-9110-b2ec717d6969",
+  "subject_id": "5ac27d16-4c0c-4bea-8721-89c9d6947302",
   "subject_name": "django/db/models/base::Model._perform_unique_checks",
   "tags": [
     "entity:method"

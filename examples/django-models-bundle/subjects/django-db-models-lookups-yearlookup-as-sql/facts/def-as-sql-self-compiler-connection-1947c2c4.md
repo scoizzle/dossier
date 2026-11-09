@@ -1,6 +1,6 @@
 # Fact 1947c2c4
 
-Store id: 77fdcbba-e1bc-4ba4-a520-70fece62db0e
+Store id: 914ed37f-293d-46b4-bb7d-26b9ba3d70c8
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4170170+00:00`
+- posted_at: `2026-11-09T23:44:55.0585100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 730,
     "symbol": "YearLookup.as_sql"
   },
-  "id": "77fdcbba-e1bc-4ba4-a520-70fece62db0e",
+  "id": "914ed37f-293d-46b4-bb7d-26b9ba3d70c8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4170170+00:00"
+    "posted_at": "2026-11-09T23:44:55.0585100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cccd9a50-8de9-4e56-8cb1-cb62af2761f9",
+  "subject_id": "6a3f78ff-cda7-48b6-a6f1-39aef8f6f4ef",
   "subject_name": "django/db/models/lookups::YearLookup.as_sql",
   "tags": [
     "entity:method"

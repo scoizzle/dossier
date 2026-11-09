@@ -1,11 +1,11 @@
 # django/db/models/fields/json::JSONExact.process_rhs
 
-- Subject: django/db/models/fields/json::JSONExact.process_rhs (id `921f2f2b-a3fb-4ca7-bf0e-4fd52b678f11`)
+- Subject: django/db/models/fields/json::JSONExact.process_rhs (id `4df10201-ed05-4dc8-850a-f5cce7ecdddc`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

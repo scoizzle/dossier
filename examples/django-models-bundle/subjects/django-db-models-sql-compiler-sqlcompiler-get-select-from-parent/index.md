@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_select_from_parent
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_from_parent (id `c8bf04aa-faa8-43e7-a3e5-1a8395c717c9`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_select_from_parent (id `41ee2ed2-8bfd-4c98-a6e1-63f3e9cbfc4b`)
 - Kind: class_method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

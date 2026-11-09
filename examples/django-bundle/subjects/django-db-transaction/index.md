@@ -1,10 +1,10 @@
 # django/db/transaction
 
-- Subject: django/db/transaction (id `7901b751-6e0a-4060-a0ec-b6272b0ae014`)
+- Subject: django/db/transaction (id `6d6be783-405c-43ef-969a-315a1c58c267`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2943 tokens
-- Facts shown: 47 of 48
+- Used: 2991 tokens
+- Facts shown: 48 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -57,6 +57,7 @@
 - [2216a9f2] def savepoint_commit(sid, using=None): """ Commit the most recent savepoint (if one exists). Do nothing if savepoints are not supported. """ get_connection(using).savepoint_commit(sid)
 - [1cd4fd7f] def savepoint_create(using=None): """ Create a savepoint (if supported and required by the backend) inside the current transaction. Return an identifier for the savepoint that will be used for the subsequent rollback or commit. """ return get_connection(using).savepoint()
 - [edbce7e3] def savepoint_rollback(sid, using=None): """ Roll back the most recent savepoint (if one exists). Do nothing if savepoints are not supported. """ get_connection(using).savepoint_rollback(sid)
+- [e4c44b39] def set_autocommit(autocommit, using=None): """Set the autocommit status of the connection.""" return get_connection(using).set_autocommit(autocommit)
 - [30973345] def set_rollback(rollback, using=None): """ Set or unset the "needs rollback" flag -- for *advanced use* only.
 - [76c69559] from django.db import ( DEFAULT_DB_ALIAS, DatabaseError, Error, ProgrammingError, connections, ) from django.utils.deprecation import RemovedInDjango2028Warning, django_file_prefixes
 - [428c1799] import warnings from contextlib import ContextDecorator, contextmanager

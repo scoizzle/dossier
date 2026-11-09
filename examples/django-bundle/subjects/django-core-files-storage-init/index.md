@@ -1,10 +1,10 @@
 # django/core/files/storage/__init__
 
-- Subject: django/core/files/storage/__init__ (id `44c0ee9e-8359-4ed6-b829-761fc8b339f9`)
+- Subject: django/core/files/storage/__init__ (id `d5a48d91-ad15-406b-a146-18cd1049a042`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 196 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

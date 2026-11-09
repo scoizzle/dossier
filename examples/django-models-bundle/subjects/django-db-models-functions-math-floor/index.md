@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Floor
 
-- Subject: django/db/models/functions/math::Floor (id `40e5f6f8-1bad-426e-8896-138e0461b00e`)
+- Subject: django/db/models/functions/math::Floor (id `00f2d136-812f-476e-adbc-d3729e21f9d7`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

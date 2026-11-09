@@ -1,6 +1,6 @@
 # Fact 4f39702f
 
-Store id: 3cce868f-aef7-4ecf-aaa1-3b12b0713e94
+Store id: 20cd9a8b-5e00-4649-8dda-670466c6f4ec
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2439240+00:00`
+- posted_at: `2026-11-09T23:44:54.1210830+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 246,
     "symbol": "Repeat.as_oracle"
   },
-  "id": "3cce868f-aef7-4ecf-aaa1-3b12b0713e94",
+  "id": "20cd9a8b-5e00-4649-8dda-670466c6f4ec",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2439240+00:00"
+    "posted_at": "2026-11-09T23:44:54.1210830+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "721615b6-de26-45e3-95b0-8c5e3ca3525a",
+  "subject_id": "2bf9cb39-04ec-4853-a959-1e9bedec183a",
   "subject_name": "django/db/models/functions/text::Repeat.as_oracle",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact b5266add
 
-Store id: 4205de84-5056-4327-aac9-995a9fa5db67
+Store id: 33abeedb-8b4c-4ee5-8263-1ebc0c3d38cd
 
 ## Text
 
@@ -20,7 +20,7 @@ def attnames(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1114420+00:00`
+- posted_at: `2026-11-09T23:44:50.4734970+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 27,
     "symbol": "CompositeAttribute.attnames"
   },
-  "id": "4205de84-5056-4327-aac9-995a9fa5db67",
+  "id": "33abeedb-8b4c-4ee5-8263-1ebc0c3d38cd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1114420+00:00"
+    "posted_at": "2026-11-09T23:44:50.4734970+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "201441c4-9223-4ba5-bbc4-57f9d7fefd82",
+  "subject_id": "c1bf29ec-653c-4b70-ace3-39e992147220",
   "subject_name": "django/db/models/fields/composite::CompositeAttribute.attnames",
   "tags": [
     "entity:method",

@@ -1,12 +1,12 @@
 # django/db/models/query::QuerySet.in_bulk.get_obj
 
-- Subject: django/db/models/query::QuerySet.in_bulk.get_obj (id `5bd04412-1786-47f1-a0bf-739a48ed102b`)
+- Subject: django/db/models/query::QuerySet.in_bulk.get_obj (id `b1aa8a7c-59cb-4c68-a98b-a0bef7ff7cfc`)
 - Kind: function
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Aliases: django/db/models/query::QuerySet.in_bulk.get_obj
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 82 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 2
 - Gaps: 0
 

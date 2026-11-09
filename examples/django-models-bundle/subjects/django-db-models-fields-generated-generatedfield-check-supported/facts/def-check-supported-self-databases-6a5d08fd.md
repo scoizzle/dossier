@@ -1,6 +1,6 @@
 # Fact 6a5d08fd
 
-Store id: 05f0ba79-fdf2-467b-9d9a-2814df3f227c
+Store id: 8d938028-dc73-4744-a24d-75dcdf7f71c3
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_supported(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6359640+00:00`
+- posted_at: `2026-11-09T23:44:50.8086880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 121,
     "symbol": "GeneratedField._check_supported"
   },
-  "id": "05f0ba79-fdf2-467b-9d9a-2814df3f227c",
+  "id": "8d938028-dc73-4744-a24d-75dcdf7f71c3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6359640+00:00"
+    "posted_at": "2026-11-09T23:44:50.8086880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b236c3e4-057c-4da1-b2c0-a534e05a6ba7",
+  "subject_id": "011b4732-a1cf-4bef-ab44-e2f48acc9d2f",
   "subject_name": "django/db/models/fields/generated::GeneratedField._check_supported",
   "tags": [
     "entity:method"

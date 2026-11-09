@@ -1,10 +1,10 @@
 # docs/intro/tutorial01
 
-- Subject: docs/intro/tutorial01 (id `1c24b172-6df0-4376-accc-ce108fd9fcbb`)
+- Subject: docs/intro/tutorial01 (id `db66d911-d9c4-40af-acc4-4d83cac57c90`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3435 tokens
-- Facts shown: 88 of 91
+- Used: 3535 tokens
+- Facts shown: 91 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -29,14 +29,16 @@
 - from django.http import HttpResponse [c672e2c6d47dd35c]
 - from django.urls import path [c537d1941a7e3025-2]
 - polls/ __init__.py admin.py apps.py migrations/ __init__.py models.py tests.py urls.py views.py [8193f8ce]
+- polls/ __init__.py admin.py apps.py migrations/ __init__.py models.py tests.py views.py [49dad0cc]
 - urlpatterns = [ path("", views.index, name="index"), ] [9c081e49]
 - urlpatterns = [ path("polls/", include("polls.urls")), path("admin/", admin.site.urls), ] [e920bfe4]
 - |today| - 15:50:53 Django version |version|, using settings 'mysite.settings' Starting development server at http://127.0.0.1:8000/ Quit the server with CONTROL-C. [7feace5d]
-- $ django-admin startproject mysite djangotutorial [67dfad41]
 
 ## All facts
 
+- [67dfad41] $ django-admin startproject mysite djangotutorial
 - [46c9a5006c713d0c] $ python manage.py runserver
+- [46c9a5006c713d0c-2] $ python manage.py runserver
 - [12abaf36] (To serve the site on a different port, see the :djadmin:`runserver` reference.)
 - [48701711] * :file:`manage.py`: A command-line utility that lets you interact with this Django project in various ways. You can read all the details about :file:`manage.py` in :doc:`/ref/django-admin`.
 - [c04d39ba] * :file:`mysite/__init__.py`: An empty file that tells Python that this directory should be considered a Python package. If you're a Python beginner, read :ref:`more about packages <tut-packages>` in the official Python docs.
@@ -44,6 +46,7 @@
 - [55d04ee7] * :file:`mysite/asgi.py`: An entry-point for ASGI-compatible web servers to serve your project. See :doc:`/howto/deployment/asgi/index` for more details.
 - [46cf4fb8] * :file:`mysite/settings.py`: Settings/configuration for this Django project. :doc:`/topics/settings` will tell you all about how settings work.
 - [88259420] * :file:`mysite/urls.py`: The URL declarations for this Django project; a "table of contents" of your Django-powered site. You can read more about URLs in :doc:`/topics/http/urls`.
+- [b2f74206] * :file:`mysite/wsgi.py`: An entry-point for WSGI-compatible web servers to serve your project. See :doc:`/howto/deployment/wsgi/index` for more details.
 - [04fbb5eb] * A public site that lets people view polls and vote in them. * An admin site that lets you add, change, and delete polls.
 - [57c8129f] .. admonition:: Automatic reloading of :djadmin:`runserver`
 - [81543381] .. admonition:: Page not found?

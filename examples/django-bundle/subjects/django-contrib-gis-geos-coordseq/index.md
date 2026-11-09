@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/coordseq
 
-- Subject: django/contrib/gis/geos/coordseq (id `e6664ecf-cbbc-43cf-a4a7-1f18effd2701`)
+- Subject: django/contrib/gis/geos/coordseq (id `08c2e1fa-397c-48f7-be45-3d4e5603319a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2308 tokens
-- Facts shown: 49 of 49
+- Facts shown: 49 facts
 - Conflicts: 0
 - Gaps: 0
 

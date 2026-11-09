@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/prototypes/srs
 
-- Subject: django/contrib/gis/gdal/prototypes/srs (id `03033d37-b8d4-45c6-985e-7c3afa49456a`)
+- Subject: django/contrib/gis/gdal/prototypes/srs (id `decc1c4a-336f-4eda-a970-0958038bdf1a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1080 tokens
-- Facts shown: 15 of 15
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/model-api
 
-- Subject: docs/ref/contrib/gis/model-api (id `285300f5-7171-47f1-99d4-0ca4cc40e0d2`)
+- Subject: docs/ref/contrib/gis/model-api (id `2f008443-4401-4b83-bd50-b8fbd183c7f9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3441 tokens
-- Facts shown: 86 of 86
+- Facts shown: 86 facts
 - Conflicts: 0
 - Gaps: 0
 

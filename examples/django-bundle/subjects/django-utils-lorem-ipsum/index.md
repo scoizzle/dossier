@@ -1,10 +1,10 @@
 # django/utils/lorem_ipsum
 
-- Subject: django/utils/lorem_ipsum (id `3b2d135d-a25e-418b-92de-4be4197509cd`)
+- Subject: django/utils/lorem_ipsum (id `a5bfa876-b8f8-4115-bc62-84c2a02aa5d6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1229 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

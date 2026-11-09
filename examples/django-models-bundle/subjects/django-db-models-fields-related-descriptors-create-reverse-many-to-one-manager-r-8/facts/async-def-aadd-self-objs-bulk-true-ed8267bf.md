@@ -1,6 +1,6 @@
 # Fact ed8267bf
 
-Store id: 6af3a7fd-6e05-417c-8e6a-59c11eb93b52
+Store id: d7b8e234-015d-4d1c-8819-ef8ecfb3de54
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aadd(self, *objs, bulk=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2565620+00:00`
+- posted_at: `2026-11-09T23:44:51.9223820+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 886,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.aadd"
   },
-  "id": "6af3a7fd-6e05-417c-8e6a-59c11eb93b52",
+  "id": "d7b8e234-015d-4d1c-8819-ef8ecfb3de54",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2565620+00:00"
+    "posted_at": "2026-11-09T23:44:51.9223820+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "33ad331a-1915-4ee2-8205-2011d5235938",
+  "subject_id": "f86fb44e-c648-463e-9569-f51d9ee705ca",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.aadd",
   "tags": [
     "entity:method",

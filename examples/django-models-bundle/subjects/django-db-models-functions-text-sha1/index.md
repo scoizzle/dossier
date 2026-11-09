@@ -1,11 +1,11 @@
 # django/db/models/functions/text::SHA1
 
-- Subject: django/db/models/functions/text::SHA1 (id `468b0a52-24b4-4117-8216-3824f3aa04ec`)
+- Subject: django/db/models/functions/text::SHA1 (id `0833e699-e143-42dc-b377-79108f0757a5`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

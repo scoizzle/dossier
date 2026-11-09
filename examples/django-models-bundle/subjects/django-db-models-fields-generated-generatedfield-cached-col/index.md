@@ -1,11 +1,11 @@
 # django/db/models/fields/generated::GeneratedField.cached_col
 
-- Subject: django/db/models/fields/generated::GeneratedField.cached_col (id `e12e5e56-86e8-4af1-aec0-ec45c3d1fc85`)
+- Subject: django/db/models/fields/generated::GeneratedField.cached_col (id `32944863-bd7a-4740-977c-435ab1a89aa0`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

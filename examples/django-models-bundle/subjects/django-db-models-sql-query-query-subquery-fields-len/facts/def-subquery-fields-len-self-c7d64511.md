@@ -1,6 +1,6 @@
 # Fact c7d64511
 
-Store id: efa3f77b-6f96-4fb2-a11d-143cd636bcbe
+Store id: eefed72f-1416-4844-81a2-9c52425d5246
 
 ## Text
 
@@ -20,7 +20,7 @@ def _subquery_fields_len(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8912740+00:00`
+- posted_at: `2026-11-09T23:44:58.7867950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1251,
     "symbol": "Query._subquery_fields_len"
   },
-  "id": "efa3f77b-6f96-4fb2-a11d-143cd636bcbe",
+  "id": "eefed72f-1416-4844-81a2-9c52425d5246",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8912740+00:00"
+    "posted_at": "2026-11-09T23:44:58.7867950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b6b8ed53-b377-4c36-922e-d1a2a3a1d782",
+  "subject_id": "157f7e74-abed-47dd-8396-6b0cc91323ff",
   "subject_name": "django/db/models/sql/query::Query._subquery_fields_len",
   "tags": [
     "entity:method",

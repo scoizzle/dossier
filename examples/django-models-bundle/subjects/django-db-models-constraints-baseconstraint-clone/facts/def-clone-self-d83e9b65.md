@@ -1,6 +1,6 @@
 # Fact d83e9b65
 
-Store id: 615a976b-f6f4-4464-9eea-0c75d9099ae7
+Store id: 76a27148-d963-40c9-999e-718522129d60
 
 ## Text
 
@@ -20,7 +20,7 @@ def clone(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1597030+00:00`
+- posted_at: `2026-11-09T23:44:48.7765530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 130,
     "symbol": "BaseConstraint.clone"
   },
-  "id": "615a976b-f6f4-4464-9eea-0c75d9099ae7",
+  "id": "76a27148-d963-40c9-999e-718522129d60",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1597030+00:00"
+    "posted_at": "2026-11-09T23:44:48.7765530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "88117118-e104-4b54-b2a1-f62fe3ceba07",
+  "subject_id": "a7e4a9a4-5c0f-44b8-b4d5-a766cc3b3e2f",
   "subject_name": "django/db/models/constraints::BaseConstraint.clone",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile._require_file
 
-- Subject: django/db/models/fields/files::FieldFile._require_file (id `05789aea-8dcf-405e-b597-b66048a19bab`)
+- Subject: django/db/models/fields/files::FieldFile._require_file (id `56a7adc9-b5ea-44b3-a798-5708f9b0eed8`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 16268071
 
-Store id: 47471fba-c119-4f17-a569-21158fdaa19e
+Store id: aa82b891-db28-4247-896f-7190a9bba991
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FloatField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "47471fba-c119-4f17-a569-21158fdaa19e",
+  "id": "aa82b891-db28-4247-896f-7190a9bba991",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FloatField"
       },
       "rel": "contains",
-      "target": "1252b3f3-c52d-46c0-acad-69041080cd6f"
+      "target": "3a8e5214-046d-43d9-b6c4-f8005e18e4fa"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

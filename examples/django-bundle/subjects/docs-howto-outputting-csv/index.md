@@ -1,10 +1,10 @@
 # docs/howto/outputting-csv
 
-- Subject: docs/howto/outputting-csv (id `3ca89a04-5e14-47ec-b161-53bde70076e7`)
+- Subject: docs/howto/outputting-csv (id `2b3b800d-57e6-41e4-9845-aedc8048e22d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1834 tokens
-- Facts shown: 40 of 41
+- Used: 1899 tokens
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -20,6 +20,7 @@
 - class Echo: """An object that implements just the write method of the file-like interface. """ [001af536]
 - def some_streaming_csv_view(request): """A view that streams a large CSV file.""" # Generate a sequence of rows. The range is based on the maximum number of # rows that can be handled by a single sheet in most spreadsheet # applications. rows = (["Row {}".format(idx), str(idx)] for idx in range(65536)) pseudo_buffer = Echo() writer = csv.writer(pseudo_buffer) [6ffc90bb]
 - def some_view(request): # Create the HttpResponse object with the appropriate CSV header. response = HttpResponse( content_type="text/csv", headers={"Content-Disposition": 'attachment; filename="somefilename.csv"'}, ) [1ea80e1ba45967d3]
+- def some_view(request): # Create the HttpResponse object with the appropriate CSV header. response = HttpResponse( content_type="text/csv", headers={"Content-Disposition": 'attachment; filename="somefilename.csv"'}, ) [1ea80e1ba45967d3-2]
 - from django.http import HttpResponse from django.template import loader [c5bda1b341cf97d4]
 - from django.http import StreamingHttpResponse [94f974eb]
 - import csv from django.http import HttpResponse [f11bbfa0]
@@ -28,11 +29,11 @@
 - * For each row in your CSV file, call ``writer.writerow``, passing it an :term:`iterable`. [1f846b3d]
 - * The CSV module takes care of quoting for you, so you don't have to worry about escaping strings with quotes or commas in them. Pass ``writerow()`` your raw strings, and it'll do the right thing. [ba67d647]
 - * The response gets a special MIME type, :mimetype:`text/csv`. This tells browsers that the document is a CSV file, rather than an HTML file. If you leave this off, browsers will probably interpret the output as HTML, which will result in ugly, scary gobbledygook in the browser window. [9c652435]
-- * The response gets an additional ``Content-Disposition`` header, which contains the name of the CSV file. This filename is arbitrary; call it whatever you want. It'll be used by browsers in the "Save as..." dialog, etc. [b576e668]
 - .. _streaming-csv-files: [0e730dc1]
 
 ## All facts
 
+- [b576e668] * The response gets an additional ``Content-Disposition`` header, which contains the name of the CSV file. This filename is arbitrary; call it whatever you want. It'll be used by browsers in the "Save as..." dialog, etc.
 - [b622cda7] * You can hook into the CSV-generation API by passing ``response`` as the first argument to ``csv.writer``. The ``csv.writer`` function expects a file-like object, and :class:`~django.http.HttpResponse` objects fit the bill.
 - [685d15dfb6eb2285-25] .. code-block:: html+django
 - [4d87b590] ======================== How to create CSV output ========================

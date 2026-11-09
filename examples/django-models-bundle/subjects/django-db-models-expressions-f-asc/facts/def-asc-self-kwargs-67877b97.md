@@ -1,6 +1,6 @@
 # Fact 67877b97
 
-Store id: 43469f02-9a06-4e47-9638-51770f3ae5b6
+Store id: eb76df52-5cf1-4ded-a873-c8fe96741e15
 
 ## Text
 
@@ -20,7 +20,7 @@ def asc(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8362380+00:00`
+- posted_at: `2026-11-09T23:44:49.4821070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 930,
     "symbol": "F.asc"
   },
-  "id": "43469f02-9a06-4e47-9638-51770f3ae5b6",
+  "id": "eb76df52-5cf1-4ded-a873-c8fe96741e15",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8362380+00:00"
+    "posted_at": "2026-11-09T23:44:49.4821070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1400c272-91a2-4b09-88bb-e4296b329182",
+  "subject_id": "a7174c10-2075-41a5-b0e6-199efb4f3b4c",
   "subject_name": "django/db/models/expressions::F.asc",
   "tags": [
     "entity:method"

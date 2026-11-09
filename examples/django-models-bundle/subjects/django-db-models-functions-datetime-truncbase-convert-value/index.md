@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::TruncBase.convert_value
 
-- Subject: django/db/models/functions/datetime::TruncBase.convert_value (id `e38a36c6-981f-4d6b-94ba-280d02b052fd`)
+- Subject: django/db/models/functions/datetime::TruncBase.convert_value (id `aad8ad9b-6131-47a3-8f6e-27839832b104`)
 - Kind: method
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

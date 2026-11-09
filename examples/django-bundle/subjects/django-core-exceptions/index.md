@@ -1,10 +1,10 @@
 # django/core/exceptions
 
-- Subject: django/core/exceptions (id `aa234d8a-86ef-487f-93a4-73d05f13e9bb`)
+- Subject: django/core/exceptions (id `263256a4-aa47-492b-805c-128ed39120e0`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2020 tokens
-- Facts shown: 64 of 65
+- Used: 2067 tokens
+- Facts shown: 65 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -73,6 +73,7 @@
 - [718e47bf] class SuspiciousOperation(Exception): """The user did something suspicious"""
 - [8877a324] class SynchronousOnlyOperation(Exception): """The user tried to call a sync-only function from an async context."""
 - [16900f64] class TooManyFieldsSent(SuspiciousOperation): """ The number of fields in a GET or POST request exceeded settings.DATA_UPLOAD_MAX_NUMBER_FIELDS. """
+- [32b20cb2] class TooManyFilesSent(SuspiciousOperation): """ The number of fields in a GET or POST request exceeded settings.DATA_UPLOAD_MAX_NUMBER_FILES. """
 - [0de287c6] class ValidationError(Exception): """An error while validating data."""
 - [348102ad] class ViewDoesNotExist(Exception): """The requested view does not exist"""
 - [7c27c9fd099764a6] from django.utils.hashable import make_hashable

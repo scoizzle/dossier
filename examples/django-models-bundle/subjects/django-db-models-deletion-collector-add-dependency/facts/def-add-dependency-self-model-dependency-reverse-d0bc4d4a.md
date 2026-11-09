@@ -1,6 +1,6 @@
 # Fact d0bc4d4a
 
-Store id: 2b34a3a7-50d4-4714-9878-67b8ae7c00d5
+Store id: 6fd3d3aa-fe96-4bd8-bd0a-1942f3a51880
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_dependency(self, model, dependency, reverse_dependency=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1020070+00:00`
+- posted_at: `2026-11-09T23:44:48.9105410+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 165,
     "symbol": "Collector.add_dependency"
   },
-  "id": "2b34a3a7-50d4-4714-9878-67b8ae7c00d5",
+  "id": "6fd3d3aa-fe96-4bd8-bd0a-1942f3a51880",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1020070+00:00"
+    "posted_at": "2026-11-09T23:44:48.9105410+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0f7ea5ff-6030-40a1-b8ba-3c4150a85304",
+  "subject_id": "e5fcd29a-5f43-4cf3-a486-e72326044f59",
   "subject_name": "django/db/models/deletion::Collector.add_dependency",
   "tags": [
     "entity:method"

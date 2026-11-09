@@ -1,6 +1,6 @@
 # Fact 7d5384a1
 
-Store id: 725339ef-91cd-4f5c-9d99-04cc551ba17e
+Store id: 578f2a09-6f6c-42e3-8c82-8411a6677bb3
 
 ## Text
 
@@ -20,7 +20,7 @@ def cursor_iter(cursor, sentinel, col_count, itersize)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.1123740+00:00`
+- posted_at: `2026-11-09T23:44:57.7656030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2276,
     "symbol": "cursor_iter"
   },
-  "id": "725339ef-91cd-4f5c-9d99-04cc551ba17e",
+  "id": "578f2a09-6f6c-42e3-8c82-8411a6677bb3",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.1123740+00:00"
+    "posted_at": "2026-11-09T23:44:57.7656030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1fd19681-3402-44b7-b123-c8ec1090187c",
+  "subject_id": "89def0e0-3f76-4740-8f18-9ec9f2c96522",
   "subject_name": "django/db/models/sql/compiler::cursor_iter",
   "tags": [
     "entity:function"

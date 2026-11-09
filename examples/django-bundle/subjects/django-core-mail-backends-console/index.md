@@ -1,10 +1,10 @@
 # django/core/mail/backends/console
 
-- Subject: django/core/mail/backends/console (id `d34f36ba-f0b4-4b09-ad16-91ac59289adb`)
+- Subject: django/core/mail/backends/console (id `d0360cea-ae69-4d8e-878d-1df27ab47441`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 342 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

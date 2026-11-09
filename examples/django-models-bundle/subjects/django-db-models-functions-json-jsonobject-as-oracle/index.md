@@ -1,11 +1,11 @@
 # django/db/models/functions/json::JSONObject.as_oracle
 
-- Subject: django/db/models/functions/json::JSONObject.as_oracle (id `a5e8d45b-ca9e-4e29-b5ef-e80f1742c19f`)
+- Subject: django/db/models/functions/json::JSONObject.as_oracle (id `c5a4ea70-dc62-4732-8f72-bbf48a80645c`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/query_utils::Q.__hash__
 
-- Subject: django/db/models/query_utils::Q.__hash__ (id `d7337673-67fc-41eb-9557-63f7d93b1ade`)
+- Subject: django/db/models/query_utils::Q.__hash__ (id `aa10b5ef-c4df-426f-93e8-03608b2336a2`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/base/models
 
-- Subject: django/contrib/gis/db/backends/base/models (id `567482cd-5b42-4194-995c-8cbdb535d0f2`)
+- Subject: django/contrib/gis/db/backends/base/models (id `df4d67f9-88b6-4404-ac3b-b6f0c311404c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 909 tokens
-- Facts shown: 20 of 21
+- Used: 942 tokens
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,14 +22,15 @@
 - @property def ellipsoid(self): """ Return a tuple of the ellipsoid parameters: (semimajor axis, semiminor axis, and inverse flattening). """ return self.srs.ellipsoid [d60379e5]
 - @property def geographic(self): "Is this Spatial Reference geographic?" return self.srs.geographic [c3fd783e]
 - @property def linear_name(self): "Return the linear units name." return self.srs.linear_name [376c493e]
+- @property def linear_units(self): "Return the linear units." return self.srs.linear_units [27711506]
 - @property def local(self): "Is this Spatial Reference local?" return self.srs.local [6d2ab5d6]
 - @property def name(self): "Return the projection name." return self.srs.name [a4fd1cf7]
 - @property def projected(self): "Is this Spatial Reference projected?" return self.srs.projected [9b1873da]
 - @property def spheroid(self): "Return the spheroid name for this spatial reference." return self.srs["spheroid"] [3cd9a84c]
 - @property def units(self): "Return a tuple of the units and the name." if self.projected or self.local: return (self.linear_units, self.linear_name) elif self.geographic: return (self.angular_units, self.angular_name) else: return (None, None) [7c889fea]
 - def __str__(self): """ Return the string representation, a 'pretty' OGC WKT. """ return str(self.srs) [3c1e3087]
-- class SpatialRefSysMixin: """ The SpatialRefSysMixin is a class used by the database-dependent SpatialRefSys objects to reduce redundant code. """ [24595224]
+- from django.contrib.gis import gdal from django.utils.functional import cached_property [91ab5492]
 
 ## All facts
 
-- [91ab5492] from django.contrib.gis import gdal from django.utils.functional import cached_property
+- [24595224] class SpatialRefSysMixin: """ The SpatialRefSysMixin is a class used by the database-dependent SpatialRefSys objects to reduce redundant code. """

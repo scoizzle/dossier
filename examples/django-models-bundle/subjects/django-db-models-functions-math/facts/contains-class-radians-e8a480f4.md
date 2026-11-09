@@ -1,6 +1,6 @@
 # Fact e8a480f4
 
-Store id: 0a5f6b49-e4db-46eb-8ea4-b910ff9099e2
+Store id: f547fc32-61fb-4277-8d03-d22ed0519d09
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Radians
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7827000+00:00`
+- posted_at: `2026-11-09T23:44:53.7795160+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0a5f6b49-e4db-46eb-8ea4-b910ff9099e2",
+  "id": "f547fc32-61fb-4277-8d03-d22ed0519d09",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7827000+00:00"
+    "posted_at": "2026-11-09T23:44:53.7795160+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Radians"
       },
       "rel": "contains",
-      "target": "31b70c11-5e13-4042-a48e-da17cd9465f2"
+      "target": "872cf0b8-483e-43e0-83ba-bf8056721935"
     }
   ],
   "status": "live",
-  "subject_id": "83b0e08c-b94a-4c1a-b104-7154d9ba1d11",
+  "subject_id": "a574d944-89dc-455a-aff8-c3b908ba3f8a",
   "subject_name": "django/db/models/functions/math",
   "tags": [
     "entity:class"

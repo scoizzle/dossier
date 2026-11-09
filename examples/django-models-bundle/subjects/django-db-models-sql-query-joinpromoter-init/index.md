@@ -1,11 +1,11 @@
 # django/db/models/sql/query::JoinPromoter.__init__
 
-- Subject: django/db/models/sql/query::JoinPromoter.__init__ (id `a5941a0c-d429-4190-9808-784077b4d917`)
+- Subject: django/db/models/sql/query::JoinPromoter.__init__ (id `8137c772-59d5-40cc-95eb-2339c52d1712`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

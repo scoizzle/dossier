@@ -1,10 +1,10 @@
 # django/template/backends/django
 
-- Subject: django/template/backends/django (id `7f2cc67a-bb7c-4cef-b3c7-c10cbe321295`)
+- Subject: django/template/backends/django (id `2b5e1287-c7e7-4f69-b98a-a9f50886822b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1485 tokens
-- Facts shown: 27 of 27
+- Facts shown: 27 facts
 - Conflicts: 0
 - Gaps: 0
 

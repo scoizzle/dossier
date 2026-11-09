@@ -7,9 +7,9 @@ This file lists every subject under `django/urls/`, one row per subject, grouped
 |   django/urls/__init__ | subject | 2 | 0 | 0 | 299 | [subjects/django-urls-init/index.md](../subjects/django-urls-init/index.md) |
 |   django/urls/base | subject | 24 | 0 | 0 | 1368 | [subjects/django-urls-base/index.md](../subjects/django-urls-base/index.md) |
 |   django/urls/conf | subject | 9 | 0 | 0 | 780 | [subjects/django-urls-conf/index.md](../subjects/django-urls-conf/index.md) |
-|   django/urls/converters | subject | 18 | 0 | 0 | 384 | [subjects/django-urls-converters/index.md](../subjects/django-urls-converters/index.md) |
-|   django/urls/exceptions | subject | 3 | 0 | 0 | 101 | [subjects/django-urls-exceptions/index.md](../subjects/django-urls-exceptions/index.md) |
-|   django/urls/resolvers | subject | 74 | 0 | 0 | 5905 | [subjects/django-urls-resolvers/index.md](../subjects/django-urls-resolvers/index.md) |
+|   django/urls/converters | subject | 18 | 0 | 0 | 429 | [subjects/django-urls-converters/index.md](../subjects/django-urls-converters/index.md) |
+|   django/urls/exceptions | subject | 3 | 0 | 0 | 102 | [subjects/django-urls-exceptions/index.md](../subjects/django-urls-exceptions/index.md) |
+|   django/urls/resolvers | subject | 74 | 0 | 0 | 5996 | [subjects/django-urls-resolvers/index.md](../subjects/django-urls-resolvers/index.md) |
 |   django/urls/utils | subject | 7 | 0 | 0 | 517 | [subjects/django-urls-utils/index.md](../subjects/django-urls-utils/index.md) |
 
 Up: [index/django.md](django.md)

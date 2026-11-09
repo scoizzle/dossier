@@ -1,6 +1,6 @@
 # Fact ee3ad28e
 
-Store id: b707a7d2-03cc-4d7c-b556-41966c7d7e3d
+Store id: 43a08e4a-5ce7-423b-b365-eca5f3c75d3a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDIExact
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b707a7d2-03cc-4d7c-b556-41966c7d7e3d",
+  "id": "43a08e4a-5ce7-423b-b365-eca5f3c75d3a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDIExact"
       },
       "rel": "contains",
-      "target": "3c198ab3-e8d9-4701-bf2a-d0bf6c5fdd78"
+      "target": "ae99aa03-6d42-41bf-a869-bcdad4b0281f"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

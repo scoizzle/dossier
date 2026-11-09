@@ -1,10 +1,10 @@
 # django/db/migrations/recorder
 
-- Subject: django/db/migrations/recorder (id `a5b363c2-0560-4a50-91d0-75fc3f36d594`)
+- Subject: django/db/migrations/recorder (id `53510f63-b65d-4780-a6ea-2337fc110921`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 972 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

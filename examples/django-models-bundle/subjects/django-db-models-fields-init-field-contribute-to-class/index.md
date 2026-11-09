@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.contribute_to_class
 
-- Subject: django/db/models/fields/__init__::Field.contribute_to_class (id `2867de73-cbfd-4e93-9971-221568298dcc`)
+- Subject: django/db/models/fields/__init__::Field.contribute_to_class (id `33dac131-c18e-4eee-883d-ae334f37418f`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

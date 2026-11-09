@@ -1,10 +1,10 @@
 # django/db/backends/mysql/schema
 
-- Subject: django/db/backends/mysql/schema (id `fd1de600-d599-49be-b338-fea8450d454f`)
+- Subject: django/db/backends/mysql/schema (id `539282a8-6356-4b22-a238-c13052cd5f86`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2343 tokens
-- Facts shown: 34 of 34
+- Facts shown: 34 facts
 - Conflicts: 0
 - Gaps: 0
 

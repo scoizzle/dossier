@@ -1,10 +1,10 @@
 # django/views/decorators/csp
 
-- Subject: django/views/decorators/csp (id `ed7f34e8-981a-4b05-a2bd-f5964a167455`)
+- Subject: django/views/decorators/csp (id `8c0e38b9-0d07-41aa-b51a-db43e97db93e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 369 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

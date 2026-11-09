@@ -4,7 +4,7 @@ This file lists every subject under `django/db/models/fetch_modes/`, one row per
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/fetch_modes | subject | 4 | 0 | 0 | 447 | [subjects/django-db-models-fetch-modes/index.md](../subjects/django-db-models-fetch-modes/index.md) |
+| django/db/models/fetch_modes | subject | 4 | 0 | 0 | 448 | [subjects/django-db-models-fetch-modes/index.md](../subjects/django-db-models-fetch-modes/index.md) |
 |   django/db/models/fetch_modes::FetchMode | class | 1 | 0 | 0 | 111 | [subjects/django-db-models-fetch-modes-fetchmode/index.md](../subjects/django-db-models-fetch-modes-fetchmode/index.md) |
 |   django/db/models/fetch_modes::FetchMode.fetch | method | 1 | 0 | 0 | 123 | [subjects/django-db-models-fetch-modes-fetchmode-fetch/index.md](../subjects/django-db-models-fetch-modes-fetchmode-fetch/index.md) |
 |   django/db/models/fetch_modes::FetchOne | class | 1 | 0 | 0 | 115 | [subjects/django-db-models-fetch-modes-fetchone/index.md](../subjects/django-db-models-fetch-modes-fetchone/index.md) |

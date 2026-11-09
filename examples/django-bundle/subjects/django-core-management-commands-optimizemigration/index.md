@@ -1,10 +1,10 @@
 # django/core/management/commands/optimizemigration
 
-- Subject: django/core/management/commands/optimizemigration (id `b64047dc-9da1-4f89-a20f-1d7545fe0d16`)
+- Subject: django/core/management/commands/optimizemigration (id `80aca7d7-adb3-4cb3-aa1f-b4f8baf8306d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1080 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

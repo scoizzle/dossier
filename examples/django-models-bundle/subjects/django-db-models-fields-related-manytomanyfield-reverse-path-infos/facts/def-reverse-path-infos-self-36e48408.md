@@ -1,6 +1,6 @@
 # Fact 36e48408
 
-Store id: d821c920-27d9-4a7c-9b87-7ce19a4b13fd
+Store id: 572ea962-7844-465e-a7a9-8129a51a83e5
 
 ## Text
 
@@ -20,7 +20,7 @@ def reverse_path_infos(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8695590+00:00`
+- posted_at: `2026-11-09T23:44:51.6578460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2036,
     "symbol": "ManyToManyField.reverse_path_infos"
   },
-  "id": "d821c920-27d9-4a7c-9b87-7ce19a4b13fd",
+  "id": "572ea962-7844-465e-a7a9-8129a51a83e5",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8695590+00:00"
+    "posted_at": "2026-11-09T23:44:51.6578460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e8b41972-4371-4b92-a97b-9045b8154df1",
+  "subject_id": "72e9cc3f-d894-4962-92e0-4511f3ecdf91",
   "subject_name": "django/db/models/fields/related::ManyToManyField.reverse_path_infos",
   "tags": [
     "entity:method",

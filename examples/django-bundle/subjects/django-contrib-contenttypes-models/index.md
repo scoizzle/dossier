@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/models
 
-- Subject: django/contrib/contenttypes/models (id `89ed8b75-29e2-4b81-a4e8-05dab66137cc`)
+- Subject: django/contrib/contenttypes/models (id `3131da00-62ea-4d1b-89d6-f17a423760ef`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1587 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

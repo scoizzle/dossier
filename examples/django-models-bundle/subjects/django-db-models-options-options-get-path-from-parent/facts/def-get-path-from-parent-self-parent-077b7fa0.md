@@ -1,6 +1,6 @@
 # Fact 077b7fa0
 
-Store id: 1afa8664-d222-4f30-8626-9e49389fe6ad
+Store id: b537b85a-3cf8-40bd-b180-7729b54ca18f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_path_from_parent(self, parent)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0197560+00:00`
+- posted_at: `2026-11-09T23:44:55.5690500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 786,
     "symbol": "Options.get_path_from_parent"
   },
-  "id": "1afa8664-d222-4f30-8626-9e49389fe6ad",
+  "id": "b537b85a-3cf8-40bd-b180-7729b54ca18f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0197560+00:00"
+    "posted_at": "2026-11-09T23:44:55.5690500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a76275df-914a-4f10-a288-099c8ea7c588",
+  "subject_id": "e42447b5-67e7-4d25-aa9d-7719ea0f4a38",
   "subject_name": "django/db/models/options::Options.get_path_from_parent",
   "tags": [
     "entity:method"

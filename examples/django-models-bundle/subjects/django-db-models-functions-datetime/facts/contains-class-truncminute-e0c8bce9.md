@@ -1,6 +1,6 @@
 # Fact e0c8bce9
 
-Store id: 559bc0ce-af73-4a5d-9a1a-de16668634a2
+Store id: c5c9b579-d44a-411e-b250-5787d6525dd8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncMinute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "559bc0ce-af73-4a5d-9a1a-de16668634a2",
+  "id": "c5c9b579-d44a-411e-b250-5787d6525dd8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncMinute"
       },
       "rel": "contains",
-      "target": "1ee4f9c0-3fdc-41e9-a62c-cff2f1e06e7c"
+      "target": "b6d8542b-ffe7-4aa4-9b45-b850ad03d010"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

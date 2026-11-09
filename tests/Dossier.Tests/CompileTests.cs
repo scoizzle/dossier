@@ -197,6 +197,73 @@ public sealed class CompileTests
         await Assert.That(dossier.Facts.Count(f => f.Text is "one two three" or "three two one")).IsEqualTo(2);
     }
 
+    /// <summary>Three facts with pairwise Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.</summary>
+    private static FactInput[] NearDuplicateCorpus()
+    {
+        var shared = string.Join(' ', Enumerable.Range(1, 20).Select(i => $"t{i}"));
+        return new[]
+        {
+            Fixtures.Fact(shared + " alpha"),
+            Fixtures.Fact(shared + " bravo"),
+            Fixtures.Fact(shared + " charlie"),
+        };
+    }
+
+    [Test]
+    public async Task Compile_CompleteModeDoesNotClusterNearDuplicates()
+    {
+        using var db = new TempDb();
+        var ids = Post(db, "Widget", NearDuplicateCorpus());
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full", Budget = 1_000_000 });
+
+        await Assert.That(dossier.BudgetMode).IsEqualTo("complete");
+        await Assert.That(dossier.Facts.Count).IsEqualTo(3);
+        await Assert.That(dossier.Facts.Select(f => f.Id).OrderBy(f => f, StringComparer.Ordinal)
+            .SequenceEqual(ids.OrderBy(f => f, StringComparer.Ordinal))).IsTrue();
+        foreach (var fact in dossier.Facts)
+        {
+            await Assert.That(fact.Cites!.Count).IsEqualTo(1);
+            await Assert.That(fact.Cites[0]).IsEqualTo(fact.Id);
+        }
+
+        await Assert.That(dossier.Dropped.Count).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Compile_StrictModeStillClustersNearDuplicates()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", NearDuplicateCorpus());
+
+        var dossier = db.Store.Compile(new CompileRequest
+        {
+            Subject = "Widget",
+            Depth = "full",
+            Budget = 1_000_000,
+            BudgetMode = "strict",
+        });
+
+        await Assert.That(dossier.BudgetMode).IsEqualTo("strict");
+        await Assert.That(dossier.Facts.Count).IsEqualTo(1);
+        await Assert.That(dossier.Facts[0].Cites!.Count).IsGreaterThan(1);
+    }
+
+    [Test]
+    public async Task Compile_CompleteModeHeaderReportsNoHoldingBack()
+    {
+        using var db = new TempDb();
+        Post(db, "Widget", Fixtures.Fact("alpha beta gamma delta"), Fixtures.Fact("epsilon zeta eta theta"));
+
+        var outDir = Path.Combine(db.Directory, "bundle");
+        db.Store.Publish(new PublishOptions { Out = outDir });
+        var index = Directory.EnumerateFiles(Path.Combine(outDir, "subjects"), "index.md", SearchOption.AllDirectories).Single();
+        var line = File.ReadAllLines(index).Single(l => l.StartsWith("- Facts shown: ", StringComparison.Ordinal));
+
+        await Assert.That(line).DoesNotContain(" of ");
+        await Assert.That(line).Contains("facts");
+    }
+
     [Test]
     public async Task Budget_DropsOverflowAndRecordsIds()
     {

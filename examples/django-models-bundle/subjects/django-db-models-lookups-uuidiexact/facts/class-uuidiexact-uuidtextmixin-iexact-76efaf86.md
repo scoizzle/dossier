@@ -1,6 +1,6 @@
 # Fact 76efaf86
 
-Store id: e1a9419f-dcf2-4f51-87ab-f2ed184ef315
+Store id: e3872c17-0f37-4e4c-8280-4ddedd1f17a4
 
 ## Text
 
@@ -20,7 +20,7 @@ class UUIDIExact(UUIDTextMixin, IExact)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4721540+00:00`
+- posted_at: `2026-11-09T23:44:55.1055580+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 800,
     "symbol": "UUIDIExact"
   },
-  "id": "e1a9419f-dcf2-4f51-87ab-f2ed184ef315",
+  "id": "e3872c17-0f37-4e4c-8280-4ddedd1f17a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4721540+00:00"
+    "posted_at": "2026-11-09T23:44:55.1055580+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3c198ab3-e8d9-4701-bf2a-d0bf6c5fdd78",
+  "subject_id": "ae99aa03-6d42-41bf-a869-bcdad4b0281f",
   "subject_name": "django/db/models/lookups::UUIDIExact",
   "tags": [
     "entity:class",

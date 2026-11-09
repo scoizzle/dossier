@@ -1,6 +1,6 @@
 # Fact e3031e37
 
-Store id: edcc2ce9-741e-428a-b55a-e880c85153c8
+Store id: fdabfe79-6ce7-4e48-8c13-72870aebd642
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, connector, num_children, negated)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1672060+00:00`
+- posted_at: `2026-11-09T23:44:59.0748530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2814,
     "symbol": "JoinPromoter.__init__"
   },
-  "id": "edcc2ce9-741e-428a-b55a-e880c85153c8",
+  "id": "fdabfe79-6ce7-4e48-8c13-72870aebd642",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1672060+00:00"
+    "posted_at": "2026-11-09T23:44:59.0748530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a5941a0c-d429-4190-9808-784077b4d917",
+  "subject_id": "8137c772-59d5-40cc-95eb-2339c52d1712",
   "subject_name": "django/db/models/sql/query::JoinPromoter.__init__",
   "tags": [
     "entity:method"

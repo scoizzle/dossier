@@ -1,10 +1,10 @@
 # django/contrib/redirects/middleware
 
-- Subject: django/contrib/redirects/middleware (id `cd964ac7-748f-42fd-a8e7-01b7793d8cbb`)
+- Subject: django/contrib/redirects/middleware (id `0b82c15e-6595-4f0d-8d0b-a74f4478fee9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 462 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

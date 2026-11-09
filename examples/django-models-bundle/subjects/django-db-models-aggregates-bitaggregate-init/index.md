@@ -1,11 +1,11 @@
 # django/db/models/aggregates::BitAggregate.__init__
 
-- Subject: django/db/models/aggregates::BitAggregate.__init__ (id `51edaaf4-6ee3-437d-86ea-aab157a30e18`)
+- Subject: django/db/models/aggregates::BitAggregate.__init__ (id `f066613a-20bc-46f4-902c-f474c49994d0`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

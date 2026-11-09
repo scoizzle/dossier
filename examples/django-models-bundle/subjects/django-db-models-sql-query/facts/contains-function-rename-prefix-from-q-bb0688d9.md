@@ -1,6 +1,6 @@
 # Fact bb0688d9
 
-Store id: 77515983-a261-48b7-a7fc-d693ac453939
+Store id: f487c6b3-bdce-4530-a311-7f0bffb92d84
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function rename_prefix_from_q
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1866820+00:00`
+- posted_at: `2026-11-09T23:44:59.0942990+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "77515983-a261-48b7-a7fc-d693ac453939",
+  "id": "f487c6b3-bdce-4530-a311-7f0bffb92d84",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1866820+00:00"
+    "posted_at": "2026-11-09T23:44:59.0942990+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "rename_prefix_from_q"
       },
       "rel": "contains",
-      "target": "65433d24-6ed9-47c0-914b-f58d60a723cc"
+      "target": "cb19d23a-13e2-4009-a4af-d82b44d1ff8b"
     }
   ],
   "status": "live",
-  "subject_id": "896c3d29-801c-41be-9558-1f478fdb752d",
+  "subject_id": "ba44da72-3cad-4dd7-ae2b-7d1f35aaf915",
   "subject_name": "django/db/models/sql/query",
   "tags": [
     "entity:function"

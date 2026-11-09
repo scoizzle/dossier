@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/error
 
-- Subject: django/contrib/gis/gdal/error (id `d557beab-3751-4bf7-911c-d0623b03ff43`)
+- Subject: django/contrib/gis/gdal/error (id `992c1fae-a14b-4f9c-884d-f0fd9279e8aa`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 452 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

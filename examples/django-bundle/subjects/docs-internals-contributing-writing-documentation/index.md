@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-documentation
 
-- Subject: docs/internals/contributing/writing-documentation (id `7c97e2f3-3954-413c-bcc6-7cb844b14e53`)
+- Subject: docs/internals/contributing/writing-documentation (id `e20881a5-bf1a-43e1-b50a-21053cf53f39`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8782 tokens
-- Facts shown: 275 of 278
+- Used: 8852 tokens
+- Facts shown: 278 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,10 +17,12 @@
 - $ SPHINXBUILD=sphinx-autobuild SPHINXOPTS="--open-browser --delay 0" make html [a63f83c4]
 - .. attribute:: my_attribute [8b7b3819]
 - .. method:: my_method(arg1, arg2) [fa0dc2d3]
+- ...\> set SPHINXBUILD=sphinx-autobuild ...\> set SPHINXOPTS=--open-browser --delay 0 ...\> make html [de716192]
 - A brief description of the class. [95e7d4f6]
 - PS> $env:SPHINXBUILD="sphinx-autobuild" PS> $env:SPHINXOPTS="--open-browser --delay 0" PS> make html [c328f478]
 - $ python -m pip install sphinx-autobuild [ac0dc1aa]
 - $ python manage.py shell [dc0da2cbf091829d]
+- $ python manage.py shell [dc0da2cbf091829d-2]
 - $ sphinx-autobuild . _build/html --open-browser --delay 0 [3fb6b913]
 - .. django-admin-option:: --traceback [1a4202265f812714]
 - .. django-admin:: migrate [7fdff13b]
@@ -51,17 +53,18 @@
 - .. code-block:: doscon [423631a5927aaff7-8]
 - .. code-block:: powershell [12e57b89]
 - .. code-block:: shell [8aa7203c166b13be-49]
+- $ python manage.py shell [dc0da2cbf091829d-3]
 - .. _available-settings: [aebef3f1]
 - .. _deprecated-settings: [c0f108d6]
-- .. attribute:: Author.middle_name [fd4045cf]
-- .. class:: Author(first_name, last_name, middle_name=None) [c9bc9dcc]
-- .. code-block:: console [faf6f5a8efbd7831-8]
-- .. console:: [7714e199aac2701e-40]
+- ... [c059dbb7f93ef187-4]
 
 ## All facts
 
+- [fd4045cf] .. attribute:: Author.middle_name
+- [c9bc9dcc] .. class:: Author(first_name, last_name, middle_name=None)
+- [faf6f5a8efbd7831-8] .. code-block:: console
+- [7714e199aac2701e-40] .. console::
 - [00054b8f4c441f62] .. setting:: ADMINS
-- [c059dbb7f93ef187-4] ...
 - [c059dbb7f93ef187-5] ...
 - [c059dbb7f93ef187-6] ...
 - [5dec30ec] ...\> py manage.py shell

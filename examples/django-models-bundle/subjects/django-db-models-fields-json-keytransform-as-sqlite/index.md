@@ -1,11 +1,11 @@
 # django/db/models/fields/json::KeyTransform.as_sqlite
 
-- Subject: django/db/models/fields/json::KeyTransform.as_sqlite (id `0aac16ca-fd86-4131-911f-1e1da6a0d11f`)
+- Subject: django/db/models/fields/json::KeyTransform.as_sqlite (id `7bea25eb-ec2c-4707-9fab-ad928e032fc5`)
 - Kind: method
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

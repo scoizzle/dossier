@@ -1,6 +1,6 @@
 # Fact a89c409f
 
-Store id: 0680d388-71de-4be4-812c-5e68ed0bc685
+Store id: c005b202-05bf-4c16-a569-459194900a1d
 
 ## Text
 
@@ -20,7 +20,7 @@ def save_form_data(self, instance, data)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.8134230+00:00`
+- posted_at: `2026-11-09T23:44:51.6211590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1386,
     "symbol": "OneToOneField.save_form_data"
   },
-  "id": "0680d388-71de-4be4-812c-5e68ed0bc685",
+  "id": "c005b202-05bf-4c16-a569-459194900a1d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.8134230+00:00"
+    "posted_at": "2026-11-09T23:44:51.6211590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2740ae3-d94a-4c76-a9cb-bbe6b7743359",
+  "subject_id": "eece7dde-d76a-4a52-acd1-19c645893f10",
   "subject_name": "django/db/models/fields/related::OneToOneField.save_form_data",
   "tags": [
     "entity:method"

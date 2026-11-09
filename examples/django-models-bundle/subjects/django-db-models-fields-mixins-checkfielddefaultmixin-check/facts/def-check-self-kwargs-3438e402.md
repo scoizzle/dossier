@@ -1,6 +1,6 @@
 # Fact 3438e402
 
-Store id: 3ce5343d-8757-4406-a415-3ddd10f95494
+Store id: b6b24e25-ef16-4e30-8325-ada916749d35
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.2392870+00:00`
+- posted_at: `2026-11-09T23:44:51.2117070+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 62,
     "symbol": "CheckFieldDefaultMixin.check"
   },
-  "id": "3ce5343d-8757-4406-a415-3ddd10f95494",
+  "id": "b6b24e25-ef16-4e30-8325-ada916749d35",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.2392870+00:00"
+    "posted_at": "2026-11-09T23:44:51.2117070+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5b46a1e2-595e-4e61-ae2e-1d0447626303",
+  "subject_id": "2f154a6c-5559-4ddb-980b-80f8631a0a70",
   "subject_name": "django/db/models/fields/mixins::CheckFieldDefaultMixin.check",
   "tags": [
     "entity:method"

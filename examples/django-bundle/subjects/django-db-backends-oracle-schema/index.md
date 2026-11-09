@@ -1,10 +1,10 @@
 # django/db/backends/oracle/schema
 
-- Subject: django/db/backends/oracle/schema (id `1c985d30-2dcc-40dc-bf3c-944f79a79f02`)
+- Subject: django/db/backends/oracle/schema (id `399435f4-a953-493c-9d5a-23afb59803c3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2311 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

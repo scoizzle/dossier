@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/layer
 
-- Subject: django/contrib/gis/gdal/layer (id `0325016e-0552-49a1-9c5b-778b1eef7f8a`)
+- Subject: django/contrib/gis/gdal/layer (id `0339dada-c108-49d0-a006-6da9a47745dd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2064 tokens
-- Facts shown: 26 of 26
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 

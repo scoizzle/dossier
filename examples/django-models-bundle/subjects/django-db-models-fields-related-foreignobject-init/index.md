@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignObject.__init__
 
-- Subject: django/db/models/fields/related::ForeignObject.__init__ (id `961c7b9d-1a0d-48c5-8fcb-1883f964c9f5`)
+- Subject: django/db/models/fields/related::ForeignObject.__init__ (id `369bd632-4375-4e2c-aa77-580765c23f58`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 56 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

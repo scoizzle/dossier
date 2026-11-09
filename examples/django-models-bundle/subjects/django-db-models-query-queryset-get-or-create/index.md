@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.get_or_create
 
-- Subject: django/db/models/query::QuerySet.get_or_create (id `780e5f29-7d6f-4984-974b-6711f15702a4`)
+- Subject: django/db/models/query::QuerySet.get_or_create (id `27bc5a39-b3c1-42d1-a5c8-2712d2ec65f0`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

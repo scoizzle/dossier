@@ -1,6 +1,6 @@
 # Fact 3d0a594b
 
-Store id: a0a5599f-f5d6-4d00-9434-9046c0eec0ec
+Store id: 99f8f0e1-afd7-48b7-aa52-e5e9ef21e2c2
 
 ## Text
 
@@ -20,7 +20,7 @@ def check_and_update_obj(obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2542950+00:00`
+- posted_at: `2026-11-09T23:44:51.9200880+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 852,
     "symbol": "create_reverse_many_to_one_manager.RelatedManager.add.check_and_update_obj"
   },
-  "id": "a0a5599f-f5d6-4d00-9434-9046c0eec0ec",
+  "id": "99f8f0e1-afd7-48b7-aa52-e5e9ef21e2c2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2542950+00:00"
+    "posted_at": "2026-11-09T23:44:51.9200880+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c284109c-dbf3-410b-b68e-0f32e166d93c",
+  "subject_id": "3e3b654d-8d9d-4744-85b6-654272d1f46c",
   "subject_name": "django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager.add.check_and_update_obj",
   "tags": [
     "entity:function"

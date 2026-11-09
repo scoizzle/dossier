@@ -1,6 +1,6 @@
 # Fact 582c60be
 
-Store id: d53f1019-9069-4018-ad3b-53bad379cf39
+Store id: 27ccb26f-9579-4b88-bc98-db28fbbbd787
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TextChoices
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.5153950+00:00`
+- posted_at: `2026-11-09T23:44:49.0496350+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "d53f1019-9069-4018-ad3b-53bad379cf39",
+  "id": "27ccb26f-9579-4b88-bc98-db28fbbbd787",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.5153950+00:00"
+    "posted_at": "2026-11-09T23:44:49.0496350+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TextChoices"
       },
       "rel": "contains",
-      "target": "a9317c21-8a9a-4b39-8b2e-ad93d6751756"
+      "target": "eb02e3fd-9d6f-4233-b14e-81377892d2fc"
     }
   ],
   "status": "live",
-  "subject_id": "54364be7-37e6-46d5-aa55-5d6eed226a31",
+  "subject_id": "ac6e1f16-8862-4f75-b1df-d57266ed28cf",
   "subject_name": "django/db/models/enums",
   "tags": [
     "entity:class"

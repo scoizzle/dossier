@@ -1,6 +1,6 @@
 # Fact a1839bba
 
-Store id: 0b2c2045-2a69-4eec-b3d0-0dd91cccc3e1
+Store id: 36c9af41-41d3-452d-81fd-9e93efce55ad
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6042720+00:00`
+- posted_at: `2026-11-09T23:44:51.4640510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 125,
     "symbol": "RelatedField.check"
   },
-  "id": "0b2c2045-2a69-4eec-b3d0-0dd91cccc3e1",
+  "id": "36c9af41-41d3-452d-81fd-9e93efce55ad",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6042720+00:00"
+    "posted_at": "2026-11-09T23:44:51.4640510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b80f3717-be0a-4c8d-8048-d28f80adc6b6",
+  "subject_id": "c7d33690-d8e4-4326-b866-53dc4aeca347",
   "subject_name": "django/db/models/fields/related::RelatedField.check",
   "tags": [
     "entity:method"

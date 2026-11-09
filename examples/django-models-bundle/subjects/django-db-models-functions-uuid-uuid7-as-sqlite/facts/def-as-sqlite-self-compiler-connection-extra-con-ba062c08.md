@@ -1,6 +1,6 @@
 # Fact ba062c08
 
-Store id: 7763b32e-7901-4146-a66d-a4358268d850
+Store id: df2e227c-10c7-4760-8f4e-5d63c1383284
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.5197400+00:00`
+- posted_at: `2026-11-09T23:44:54.3424030+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 80,
     "symbol": "UUID7.as_sqlite"
   },
-  "id": "7763b32e-7901-4146-a66d-a4358268d850",
+  "id": "df2e227c-10c7-4760-8f4e-5d63c1383284",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.5197400+00:00"
+    "posted_at": "2026-11-09T23:44:54.3424030+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "75c8a058-fea9-4be4-849d-d49670beb678",
+  "subject_id": "1f4b52bd-f3a3-4ed8-9bda-927583eaf228",
   "subject_name": "django/db/models/functions/uuid::UUID7.as_sqlite",
   "tags": [
     "entity:method"

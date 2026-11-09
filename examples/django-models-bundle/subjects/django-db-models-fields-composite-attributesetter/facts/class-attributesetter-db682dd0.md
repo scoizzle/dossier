@@ -1,6 +1,6 @@
 # Fact db682dd0
 
-Store id: 138ceb89-4b2e-4009-b625-a88374f33448
+Store id: 4c94c596-444e-4d52-9f3f-16a56d7ee322
 
 ## Text
 
@@ -20,7 +20,7 @@ class AttributeSetter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.0896680+00:00`
+- posted_at: `2026-11-09T23:44:50.4579870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 18,
     "symbol": "AttributeSetter"
   },
-  "id": "138ceb89-4b2e-4009-b625-a88374f33448",
+  "id": "4c94c596-444e-4d52-9f3f-16a56d7ee322",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.0896680+00:00"
+    "posted_at": "2026-11-09T23:44:50.4579870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e9797aa3-be50-4ca7-87fc-d72772ac4a4a",
+  "subject_id": "f480b8a0-194a-4232-995d-78e4c6d026dd",
   "subject_name": "django/db/models/fields/composite::AttributeSetter",
   "tags": [
     "entity:class"

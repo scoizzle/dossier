@@ -1,6 +1,6 @@
 # Fact f0470d2c
 
-Store id: 3dc08df9-2257-4da0-95b9-8545b74a16c3
+Store id: 3bd077f8-98f6-41aa-a123-68caf61fd624
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelIterable
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "3dc08df9-2257-4da0-95b9-8545b74a16c3",
+  "id": "3bd077f8-98f6-41aa-a123-68caf61fd624",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelIterable"
       },
       "rel": "contains",
-      "target": "88300414-df20-47a9-9118-b1ab140b025d"
+      "target": "b23b4b00-61d3-46c4-918d-a899c21694c0"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

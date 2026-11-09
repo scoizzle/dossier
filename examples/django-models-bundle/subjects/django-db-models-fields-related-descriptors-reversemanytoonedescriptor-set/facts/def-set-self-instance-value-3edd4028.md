@@ -1,6 +1,6 @@
 # Fact 3edd4028
 
-Store id: a474e1ed-c784-45f3-bfdf-db434d6ffd6d
+Store id: 0d791dd6-d5c3-4f4f-8ff0-15af4dbfeae6
 
 ## Text
 
@@ -20,7 +20,7 @@ def __set__(self, instance, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.2273310+00:00`
+- posted_at: `2026-11-09T23:44:51.8979560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 707,
     "symbol": "ReverseManyToOneDescriptor.__set__"
   },
-  "id": "a474e1ed-c784-45f3-bfdf-db434d6ffd6d",
+  "id": "0d791dd6-d5c3-4f4f-8ff0-15af4dbfeae6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.2273310+00:00"
+    "posted_at": "2026-11-09T23:44:51.8979560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ccb4d952-9ae3-4146-bebc-a671ce1f14f5",
+  "subject_id": "dc9e24e4-c879-40ec-8ac3-d2f28e71d6ce",
   "subject_name": "django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor.__set__",
   "tags": [
     "entity:method"

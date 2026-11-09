@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile.path
 
-- Subject: django/db/models/fields/files::FieldFile.path (id `bad36673-c91a-44dc-b5dd-adce2dfa6c18`)
+- Subject: django/db/models/fields/files::FieldFile.path (id `3b6c8957-3ea5-4fc1-8b02-e124165de42a`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 14 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

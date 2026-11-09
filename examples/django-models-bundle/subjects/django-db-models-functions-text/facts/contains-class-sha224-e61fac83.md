@@ -1,6 +1,6 @@
 # Fact e61fac83
 
-Store id: 40af41b8-3d43-47d6-b765-9675fa8bb09e
+Store id: 8af68043-53d7-4835-8831-96f3a01b2b6b
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class SHA224
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "40af41b8-3d43-47d6-b765-9675fa8bb09e",
+  "id": "8af68043-53d7-4835-8831-96f3a01b2b6b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "SHA224"
       },
       "rel": "contains",
-      "target": "f663ac9a-1a4a-4482-a7f0-ffc0cf997051"
+      "target": "cf1e1886-f271-46ea-b151-04a38c7a4744"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

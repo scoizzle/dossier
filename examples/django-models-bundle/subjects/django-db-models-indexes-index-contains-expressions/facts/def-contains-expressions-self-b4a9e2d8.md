@@ -1,6 +1,6 @@
 # Fact b4a9e2d8
 
-Store id: 2c699b2d-cf7e-4de1-9d44-6017ad30afea
+Store id: 4ca35275-d7db-4b51-90d8-bde70030429f
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_expressions(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9027290+00:00`
+- posted_at: `2026-11-09T23:44:54.6686040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 82,
     "symbol": "Index.contains_expressions"
   },
-  "id": "2c699b2d-cf7e-4de1-9d44-6017ad30afea",
+  "id": "4ca35275-d7db-4b51-90d8-bde70030429f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9027290+00:00"
+    "posted_at": "2026-11-09T23:44:54.6686040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b6215f4a-023d-4963-b861-9b6e3e6e567d",
+  "subject_id": "c52c3d87-148a-40cb-a398-4ebd315e88fc",
   "subject_name": "django/db/models/indexes::Index.contains_expressions",
   "tags": [
     "entity:method",

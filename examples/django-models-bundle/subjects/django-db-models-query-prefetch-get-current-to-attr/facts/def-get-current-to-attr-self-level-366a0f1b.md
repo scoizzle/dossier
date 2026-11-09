@@ -1,6 +1,6 @@
 # Fact 366a0f1b
 
-Store id: 7983dd8d-c0e6-46a6-85d3-17a53c0f4b2e
+Store id: e59f5c23-0e7b-46c7-8244-5daa2dc2a218
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_current_to_attr(self, level)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8019770+00:00`
+- posted_at: `2026-11-09T23:44:56.2935380+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2611,
     "symbol": "Prefetch.get_current_to_attr"
   },
-  "id": "7983dd8d-c0e6-46a6-85d3-17a53c0f4b2e",
+  "id": "e59f5c23-0e7b-46c7-8244-5daa2dc2a218",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8019770+00:00"
+    "posted_at": "2026-11-09T23:44:56.2935380+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "59d2d43b-a79a-4a0d-9c3d-080a38846273",
+  "subject_id": "d5354af2-5e10-4ce8-a7a4-f53550c731f8",
   "subject_name": "django/db/models/query::Prefetch.get_current_to_attr",
   "tags": [
     "entity:method"

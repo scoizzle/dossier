@@ -1,11 +1,11 @@
 # django/db/models/lookups::Transform
 
-- Subject: django/db/models/lookups::Transform (id `5185bf0d-262d-4ea4-a3e3-ce4a74effc8f`)
+- Subject: django/db/models/lookups::Transform (id `f5c5dd9a-eb8a-4e3f-bf7e-9fdb4e4b0609`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

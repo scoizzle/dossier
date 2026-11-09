@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter (id `df167ebd-33ff-4e09-a9a9-7f5c8afc3e7a`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter (id `3d402e46-0b30-4b2e-a923-25d082773cb2`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

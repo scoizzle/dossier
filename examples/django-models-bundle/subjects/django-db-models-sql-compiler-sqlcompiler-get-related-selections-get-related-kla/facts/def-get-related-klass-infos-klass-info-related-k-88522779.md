@@ -1,6 +1,6 @@
 # Fact 88522779
 
-Store id: dad0f444-6b39-4ecd-a492-459d986bb207
+Store id: 6c7a3441-3671-40e9-a775-0473703d9732
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_related_klass_infos(klass_info, related_klass_infos)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.8070600+00:00`
+- posted_at: `2026-11-09T23:44:57.5563550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1238,
     "symbol": "SQLCompiler.get_related_selections.get_related_klass_infos"
   },
-  "id": "dad0f444-6b39-4ecd-a492-459d986bb207",
+  "id": "6c7a3441-3671-40e9-a775-0473703d9732",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.8070600+00:00"
+    "posted_at": "2026-11-09T23:44:57.5563550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c261a054-63e0-48ec-9376-f963c5f5f397",
+  "subject_id": "7e1d878e-4054-41a2-9fd7-e88d59a59762",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_related_selections.get_related_klass_infos",
   "tags": [
     "entity:function"

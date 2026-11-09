@@ -1,6 +1,6 @@
 # Fact b6709085
 
-Store id: 3bf98df5-366f-42c8-bfcc-371d5e4e0259
+Store id: 469a3894-6eb1-4775-b58f-cbcaffc47b6d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_relation_model_exists(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6098250+00:00`
+- posted_at: `2026-11-09T23:44:51.4692140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 196,
     "symbol": "RelatedField._check_relation_model_exists"
   },
-  "id": "3bf98df5-366f-42c8-bfcc-371d5e4e0259",
+  "id": "469a3894-6eb1-4775-b58f-cbcaffc47b6d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6098250+00:00"
+    "posted_at": "2026-11-09T23:44:51.4692140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "75d2ac18-a755-4068-b0dc-37484bfda760",
+  "subject_id": "57fe9be3-bb77-4cb4-82a0-03ecf83f7581",
   "subject_name": "django/db/models/fields/related::RelatedField._check_relation_model_exists",
   "tags": [
     "entity:method"

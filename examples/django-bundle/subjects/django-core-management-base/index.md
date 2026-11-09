@@ -1,10 +1,10 @@
 # django/core/management/base
 
-- Subject: django/core/management/base (id `8889f8e6-5eb9-4439-9ed7-adcbb697f945`)
+- Subject: django/core/management/base (id `fc710612-b3d2-462a-b29d-9c2fb5ba1f9f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5807 tokens
-- Facts shown: 90 of 90
+- Facts shown: 90 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/sql/datastructures::Join.as_sql
 
-- Subject: django/db/models/sql/datastructures::Join.as_sql (id `4bece91d-f45e-4e5c-b88f-85677260db88`)
+- Subject: django/db/models/sql/datastructures::Join.as_sql (id `f7509e88-31fa-474b-8de4-f64eb0741e96`)
 - Kind: method
 - Parent: [django/db/models/sql/datastructures](../django-db-models-sql-datastructures/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

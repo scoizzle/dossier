@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/libgeos
 
-- Subject: django/contrib/gis/geos/libgeos (id `1cfb5c71-3dfc-43de-87ce-c8e5bf70af79`)
+- Subject: django/contrib/gis/geos/libgeos (id `3021d529-64a5-4a66-9faf-e4dd567f3768`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1475 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

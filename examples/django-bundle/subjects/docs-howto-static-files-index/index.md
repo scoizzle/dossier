@@ -1,10 +1,10 @@
 # docs/howto/static-files/index
 
-- Subject: docs/howto/static-files/index (id `e68c82bc-1ed5-4bc4-9dd0-1768f0b5cfe4`)
+- Subject: docs/howto/static-files/index (id `5d4f0ef8-67f1-4355-b7b9-27f641c50053`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2274 tokens
-- Facts shown: 54 of 58
+- Used: 2438 tokens
+- Facts shown: 58 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,19 +22,22 @@
 - STATICFILES_DIRS = [ BASE_DIR / "static", "/var/www/static/", ] [f212042c]
 - See :doc:`/howto/static-files/deployment` for proper strategies to serve static files in production environments. [fbe19613]
 - This helper function works only in debug mode and only if the given prefix is local (e.g. ``media/``) and not a URL (e.g. ``http://media.example.com/``). [f7fa9a72]
+- This helper function works only in debug mode and only if the given prefix is local (e.g. ``static/``) and not a URL (e.g. ``http://static.example.com/``). [62d111b1]
 - This method is **grossly inefficient** and probably **insecure**, so it is **unsuitable for production**. [777f6c0f]
 - You can namespace static assets in :setting:`STATICFILES_DIRS` by specifying :ref:`prefixes <staticfiles-dirs-prefixes>`. [4e0e7eda]
 - from django.conf import settings from django.conf.urls.static import static [d990b2b04dc10582]
+- from django.conf import settings from django.conf.urls.static import static [d990b2b04dc10582-2]
 - urlpatterns = [ # ... the rest of your URLconf goes here ... ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) [28a320b8d4af4a29]
+- urlpatterns = [ # ... the rest of your URLconf goes here ... ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) [563ae384]
 - .. _staticfiles-in-templates: [3464bc67]
 - .. code-block:: html+django [685d15dfb6eb2285-26]
 - .. code-block:: shell [8aa7203c166b13be-20]
-- This will copy all files from your static folders into the :setting:`STATIC_ROOT` directory. [0a426dbc]
-- #. In your settings file, define :setting:`STATIC_URL`, for example:: [b3867cb8]
-- #. In your templates, use the :ttag:`static` template tag to build the URL for the given relative path using the configured ``staticfiles`` :setting:`STORAGES` alias. [00ca6e5b]
 
 ## All facts
 
+- [0a426dbc] This will copy all files from your static folders into the :setting:`STATIC_ROOT` directory.
+- [b3867cb8] #. In your settings file, define :setting:`STATIC_URL`, for example::
+- [00ca6e5b] #. In your templates, use the :ttag:`static` template tag to build the URL for the given relative path using the configured ``staticfiles`` :setting:`STORAGES` alias.
 - [10cda8f4] #. Make sure that ``django.contrib.staticfiles`` is included in your :setting:`INSTALLED_APPS`.
 - [b949ab48] #. Run the :djadmin:`collectstatic` management command:
 - [d6cd888c] #. Set the :setting:`STATIC_ROOT` setting to the directory from which you'd like to serve these files, for example::
@@ -63,6 +66,7 @@
 - [2a042191630e69fa-2] Testing =======
 - [ba9e9bac] This document has covered the basics and some common usage patterns. For complete details on all the settings, commands, template tags, and other pieces included in :mod:`django.contrib.staticfiles`, see :doc:`the staticfiles reference </ref/contrib/staticfiles>`.
 - [a0f0f13aa2108a48] This is not suitable for production use! For some common deployment strategies, see :doc:`/howto/static-files/deployment`.
+- [a0f0f13aa2108a48-2] This is not suitable for production use! For some common deployment strategies, see :doc:`/howto/static-files/deployment`.
 - [2ae91668] This page describes how you can serve these static files.
 - [0752ad8a] Websites generally need to serve additional files such as images, JavaScript, or CSS. In Django, we refer to these files as "static files". Django provides :mod:`django.contrib.staticfiles` to help you manage them.
 - [92d441e2] When running tests that use actual HTTP requests instead of the built-in testing client (i.e. when using the built-in :class:`LiveServerTestCase <django.test.LiveServerTestCase>`) the static assets need to be served along the rest of the content so the test environment reproduces the real one as faithfully as possible, but ``LiveServerTestCase`` has only very basic static file-serving functionality: It doesn't know about the finders feature of the ``staticfiles`` application and assumes the static content has already been collected under :setting:`STATIC_ROOT`.

@@ -1,6 +1,6 @@
 # Fact 053edcbb
 
-Store id: 91737648-0c79-425d-8625-c771adbf335b
+Store id: 5497f934-523a-40f7-893f-322f96472589
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.5069130+00:00`
+- posted_at: `2026-11-09T23:44:49.0467910+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 64,
     "symbol": "Choices.__repr__"
   },
-  "id": "91737648-0c79-425d-8625-c771adbf335b",
+  "id": "5497f934-523a-40f7-893f-322f96472589",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.5069130+00:00"
+    "posted_at": "2026-11-09T23:44:49.0467910+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fb66f86e-3223-422f-984e-61c871b0c336",
+  "subject_id": "76976184-abce-4756-a332-7444336de2ce",
   "subject_name": "django/db/models/enums::Choices.__repr__",
   "tags": [
     "entity:method"

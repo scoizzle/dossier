@@ -1,6 +1,6 @@
 # Fact 2db7cc87
 
-Store id: 3754f8ac-d3de-4272-87a4-219281f50ad7
+Store id: 93446bd7-b257-47aa-838f-0144f2e2c889
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_select(self, cols)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0539990+00:00`
+- posted_at: `2026-11-09T23:44:58.9693620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2256,
     "symbol": "Query.set_select"
   },
-  "id": "3754f8ac-d3de-4272-87a4-219281f50ad7",
+  "id": "93446bd7-b257-47aa-838f-0144f2e2c889",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0539990+00:00"
+    "posted_at": "2026-11-09T23:44:58.9693620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dc2e30de-9927-4e44-b413-c07e3676885e",
+  "subject_id": "c0afb839-fe2d-407a-ae0e-efa6345c289c",
   "subject_name": "django/db/models/sql/query::Query.set_select",
   "tags": [
     "entity:method"

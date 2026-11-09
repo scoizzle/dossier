@@ -1,10 +1,10 @@
 # django/contrib/auth/management/__init__
 
-- Subject: django/contrib/auth/management/__init__ (id `015be3e1-1fed-4ef5-ad2b-2fd9b9db899f`)
+- Subject: django/contrib/auth/management/__init__ (id `2550ab61-7145-4cf9-abab-5232371ed729`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2451 tokens
-- Facts shown: 37 of 37
+- Facts shown: 37 facts
 - Conflicts: 0
 - Gaps: 0
 

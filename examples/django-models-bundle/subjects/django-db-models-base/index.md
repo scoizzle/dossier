@@ -1,10 +1,10 @@
 # django/db/models/base
 
-- Subject: django/db/models/base (id `48784eff-2794-4b93-9cfc-4ff4781fa45d`)
+- Subject: django/db/models/base (id `adcf7c5a-348e-4481-9bc5-dcdd17eb19d6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 231 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

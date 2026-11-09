@@ -1,10 +1,10 @@
 # django/core/cache/backends/filebased
 
-- Subject: django/core/cache/backends/filebased (id `98908eb4-13a4-4d29-bf16-e2635cb53f44`)
+- Subject: django/core/cache/backends/filebased (id `fdfdbeef-4d86-49e9-b844-eb45462f67ea`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1303 tokens
-- Facts shown: 19 of 19
+- Facts shown: 19 facts
 - Conflicts: 0
 - Gaps: 0
 

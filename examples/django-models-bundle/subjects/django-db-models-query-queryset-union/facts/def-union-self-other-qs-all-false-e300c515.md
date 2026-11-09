@@ -1,6 +1,6 @@
 # Fact e300c515
 
-Store id: b9e29e9c-d008-442e-a5b1-52fdb13d38a6
+Store id: c5bd0330-f104-4ef6-a8db-b1f538a752d1
 
 ## Text
 
@@ -20,7 +20,7 @@ def union(self, *other_qs, all=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5587430+00:00`
+- posted_at: `2026-11-09T23:44:56.0499530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1760,
     "symbol": "QuerySet.union"
   },
-  "id": "b9e29e9c-d008-442e-a5b1-52fdb13d38a6",
+  "id": "c5bd0330-f104-4ef6-a8db-b1f538a752d1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5587430+00:00"
+    "posted_at": "2026-11-09T23:44:56.0499530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be940036-57b9-4609-ab03-6113713d3282",
+  "subject_id": "7dcbac19-4693-47f4-b1f7-14518116a31d",
   "subject_name": "django/db/models/query::QuerySet.union",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact faf25725
 
-Store id: 576c85bb-3902-488c-b8a7-d75aa16b6112
+Store id: 079ea6b4-d041-4d50-b7a4-6ca5e53567cb
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8435350+00:00`
+- posted_at: `2026-11-09T23:44:50.2782510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2757,
     "symbol": "BinaryField.check"
   },
-  "id": "576c85bb-3902-488c-b8a7-d75aa16b6112",
+  "id": "079ea6b4-d041-4d50-b7a4-6ca5e53567cb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8435350+00:00"
+    "posted_at": "2026-11-09T23:44:50.2782510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2536315a-c95e-4ee6-9419-39d67437ce66",
+  "subject_id": "95ff2632-c607-4d20-aa99-b6d674400748",
   "subject_name": "django/db/models/fields/__init__::BinaryField.check",
   "tags": [
     "entity:method"

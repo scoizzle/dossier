@@ -1,6 +1,6 @@
 # Fact e91b82c0
 
-Store id: 72b0c3ed-1ba2-475a-81d8-1131dba5f86a
+Store id: 922358a3-a40f-41a5-9e63-006173422bb2
 
 ## Text
 
@@ -20,7 +20,7 @@ class Round(FixDecimalInputMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7586310+00:00`
+- posted_at: `2026-11-09T23:44:53.7615160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 178,
     "symbol": "Round"
   },
-  "id": "72b0c3ed-1ba2-475a-81d8-1131dba5f86a",
+  "id": "922358a3-a40f-41a5-9e63-006173422bb2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7586310+00:00"
+    "posted_at": "2026-11-09T23:44:53.7615160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f44a428c-d350-4137-b158-d16059d41648",
+  "subject_id": "52fa71a0-3a1f-44b4-b322-c0da24d91bd1",
   "subject_name": "django/db/models/functions/math::Round",
   "tags": [
     "entity:class"

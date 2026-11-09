@@ -1,11 +1,11 @@
 # django/db/models/signals::ModelSignal.disconnect
 
-- Subject: django/db/models/signals::ModelSignal.disconnect (id `9ca47f7e-3def-46ab-9cd5-603dad44af43`)
+- Subject: django/db/models/signals::ModelSignal.disconnect (id `8b6f7fee-1b10-442d-9831-a26a87383cd7`)
 - Kind: method
 - Parent: [django/db/models/signals](../django-db-models-signals/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 43300b37
 
-Store id: 894e1094-1879-4cc1-b9a3-492d6cff593c
+Store id: 55d475cb-1cd7-481e-9737-537b198feb4c
 
 ## Text
 
@@ -20,7 +20,7 @@ class MD5(OracleHashMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2230520+00:00`
+- posted_at: `2026-11-09T23:44:54.1079230+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 216,
     "symbol": "MD5"
   },
-  "id": "894e1094-1879-4cc1-b9a3-492d6cff593c",
+  "id": "55d475cb-1cd7-481e-9737-537b198feb4c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2230520+00:00"
+    "posted_at": "2026-11-09T23:44:54.1079230+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5876e6bd-41fc-4218-8f75-7c5db0ac7f4d",
+  "subject_id": "5dcd7a98-28e1-4170-8a5b-3bfdd487db0a",
   "subject_name": "django/db/models/functions/text::MD5",
   "tags": [
     "entity:class"

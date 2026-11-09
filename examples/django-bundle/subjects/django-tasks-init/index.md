@@ -1,10 +1,10 @@
 # django/tasks/__init__
 
-- Subject: django/tasks/__init__ (id `7a9c5142-7f10-46dc-ad59-a4401b449f8f`)
+- Subject: django/tasks/__init__ (id `cb9f00bf-5454-484a-b2a1-26da3dccc528`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 332 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

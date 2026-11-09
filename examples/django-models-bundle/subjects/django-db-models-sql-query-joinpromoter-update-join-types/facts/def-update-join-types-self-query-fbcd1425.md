@@ -1,6 +1,6 @@
 # Fact fbcd1425
 
-Store id: c8f4b135-c63d-422d-9569-3e148776e87c
+Store id: 0855bfc1-59e6-4c97-8ac6-752d79759c98
 
 ## Text
 
@@ -20,7 +20,7 @@ def update_join_types(self, query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1813240+00:00`
+- posted_at: `2026-11-09T23:44:59.0890220+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2842,
     "symbol": "JoinPromoter.update_join_types"
   },
-  "id": "c8f4b135-c63d-422d-9569-3e148776e87c",
+  "id": "0855bfc1-59e6-4c97-8ac6-752d79759c98",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1813240+00:00"
+    "posted_at": "2026-11-09T23:44:59.0890220+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7354a3d9-9057-4369-8714-96d73ab02297",
+  "subject_id": "b011a7c9-abd7-48d0-a6e3-6ac6fb15a5d0",
   "subject_name": "django/db/models/sql/query::JoinPromoter.update_join_types",
   "tags": [
     "entity:method"

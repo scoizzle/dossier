@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/gunicorn
 
-- Subject: docs/howto/deployment/wsgi/gunicorn (id `f115a58d-4098-4fdd-869e-a4af8774652e`)
+- Subject: docs/howto/deployment/wsgi/gunicorn (id `09ec43cc-c658-4dc7-9105-b614bd0cabf3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 459 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

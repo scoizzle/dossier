@@ -1,10 +1,10 @@
 # docs/misc/api-stability
 
-- Subject: docs/misc/api-stability (id `b3acefac-a913-4efc-aae6-f91b9e441e82`)
+- Subject: docs/misc/api-stability (id `c3e26cc6-60eb-4748-833d-11e3ac7ccd19`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 966 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

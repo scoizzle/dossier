@@ -1,6 +1,6 @@
 # Fact d2c7707b
 
-Store id: 6cc3b225-c7c6-48a2-ace0-0b0ded60abed
+Store id: d98b04fd-c5fa-4085-b57a-ac7b98ffc69a
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(opts)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1973880+00:00`
+- posted_at: `2026-11-09T23:44:56.7320390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 499,
     "symbol": "check_rel_lookup_compatibility.check"
   },
-  "id": "6cc3b225-c7c6-48a2-ace0-0b0ded60abed",
+  "id": "d98b04fd-c5fa-4085-b57a-ac7b98ffc69a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1973880+00:00"
+    "posted_at": "2026-11-09T23:44:56.7320390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "df8c9839-b0c4-4323-a4ef-eeb2f45516ab",
+  "subject_id": "ea8522e0-751c-4646-93b2-469d9a1b0573",
   "subject_name": "django/db/models/query_utils::check_rel_lookup_compatibility.check",
   "tags": [
     "entity:function"

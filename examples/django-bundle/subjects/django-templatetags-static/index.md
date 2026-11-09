@@ -1,10 +1,10 @@
 # django/templatetags/static
 
-- Subject: django/templatetags/static (id `e9654ae4-9271-4b5e-9b03-44f1c27e51de`)
+- Subject: django/templatetags/static (id `fceba8c5-4c6d-4847-bdc7-b6bcdb1fa2aa`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1273 tokens
-- Facts shown: 35 of 36
+- Used: 1317 tokens
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -41,6 +41,7 @@
 - [4b61e4e2] def render(self, context): prefix = self.handle_simple(self.name) if self.varname is None: return prefix context[self.varname] = prefix return ""
 - [3e8b0074] def render(self, context): url = self.url(context) if context.autoescape: url = conditional_escape(url) if self.varname is None: return url context[self.varname] = url return ""
 - [0b01265a] @register.tag def get_media_prefix(parser, token): """ Populate a template variable with the media prefix, ``settings.MEDIA_URL``.
+- [b1c786bb] @register.tag def get_static_prefix(parser, token): """ Populate a template variable with the static prefix, ``settings.STATIC_URL``.
 - [628c9c66] @register.tag("static") def do_static(parser, token): """ Join the given path with the STATIC_URL setting.
 - [acfdc8be] class PrefixNode(template.Node): def __repr__(self): return "<PrefixNode for %r>" % self.name
 - [fe8d5d14] class StaticNode(template.Node): child_nodelists = ()

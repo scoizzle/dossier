@@ -1,11 +1,11 @@
 # django/db/models/expressions::Value.empty_result_set_value
 
-- Subject: django/db/models/expressions::Value.empty_result_set_value (id `c8f3fc9d-96c6-4214-a266-9ef7655c0496`)
+- Subject: django/db/models/expressions::Value.empty_result_set_value (id `e6618026-4023-48f1-a9b4-51c42508f333`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

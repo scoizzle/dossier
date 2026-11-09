@@ -1,6 +1,6 @@
 # Fact 2994967f
 
-Store id: 51156351-7a23-49c8-8836-ed677c61237a
+Store id: 1e25846d-2ca3-4db2-84be-7132678b0d66
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_mysql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1218870+00:00`
+- posted_at: `2026-11-09T23:44:54.0309290+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 9,
     "symbol": "MySQLSHA2Mixin.as_mysql"
   },
-  "id": "51156351-7a23-49c8-8836-ed677c61237a",
+  "id": "1e25846d-2ca3-4db2-84be-7132678b0d66",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1218870+00:00"
+    "posted_at": "2026-11-09T23:44:54.0309290+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "53fe7188-2762-42ae-8a77-954158b304b1",
+  "subject_id": "169044cc-a750-4733-9f97-0ae77a10b8a8",
   "subject_name": "django/db/models/functions/text::MySQLSHA2Mixin.as_mysql",
   "tags": [
     "entity:method"

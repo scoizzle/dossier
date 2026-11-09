@@ -1,6 +1,6 @@
 # Fact 5534b694
 
-Store id: 33a864ad-4f71-4f3d-8431-064bf870e204
+Store id: 1aa4678f-49fb-4156-98dc-dddceed064e2
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class ModelStateFetchModeDescriptor
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "33a864ad-4f71-4f3d-8431-064bf870e204",
+  "id": "1aa4678f-49fb-4156-98dc-dddceed064e2",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "ModelStateFetchModeDescriptor"
       },
       "rel": "contains",
-      "target": "5d9a19c7-356c-465e-baa5-4fb62fab509e"
+      "target": "982ab37b-e29f-4e6a-8cbb-d8d250787e44"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:class"

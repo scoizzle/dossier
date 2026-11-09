@@ -1,10 +1,10 @@
 # docs/ref/django-admin
 
-- Subject: docs/ref/django-admin (id `5554eb4e-825d-46f9-a6fe-66796cf5f1a3`)
+- Subject: docs/ref/django-admin (id `f06a4333-5ea8-433f-af27-28d2bc6f88d7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 25331 tokens
-- Facts shown: 706 of 758
+- Used: 26752 tokens
+- Facts shown: 758 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -25,6 +25,7 @@
 - ...\> py -m pip install "colorama >= 0.4.6" [b3f064cc05979b4b-2]
 - 1.4.dev17026 1.4a1 1.4 [993b8294]
 - Automatic creation of the destination directory was added. [9409a573c5b0f2bb]
+- Automatic creation of the destination directory was added. [9409a573c5b0f2bb-2]
 - Automatic imports of common utilities, such as ``django.conf.settings``, were added. [8be28e1368108f1c-2]
 - Be aware that not all options set in the :setting:`OPTIONS` part of your database configuration in :setting:`DATABASES` are passed to the command-line client, e.g. ``'isolation_level'``. [8e9867ca]
 - Contents of templates should be carefully inspected before use. [38b48c87]
@@ -33,8 +34,6 @@
 - If you have test classes that cannot be run in parallel, you can use ``SerializeMixin`` to run them sequentially. See :ref:`Enforce running test classes sequentially <topics-testing-enforce-run-sequentially>`. [ac532e50]
 - In addition, to allow Python template files that contain Django template language syntax while also preventing packaging systems from trying to byte-compile invalid ``*.py`` files, template files ending with ``.py-tpl`` will be renamed to ``.py``. [34bc02d6]
 - PATH=path/to/venv/bin django-admin makemigrations [f2c77d8f]
-- django-admin changepassword ringo [e820dc94]
-- .. console:: [7714e199aac2701e-107]
 
 ## All facts
 
@@ -49,6 +48,7 @@
 - [fa54b51f] When the app template files are rendered with the Django template engine (by default all ``*.py`` files), Django will also replace all stray template variables contained. For example, if one of the Python files contains a docstring explaining a particular feature related to template rendering, it might result in an incorrect example.
 - [aed34fc7] When unapplying migrations, all dependent migrations will also be unapplied, regardless of ``<app_label>``. You can use ``--plan`` to check which migrations will be unapplied.
 - [b4e98f10] When using Watchman with a project that includes large non-Python directories like ``node_modules``, it's advisable to ignore this directory for optimal performance. See the `watchman documentation`_ for information on how to do this.
+- [e820dc94] django-admin changepassword ringo
 - [c8c3f53d] django-admin check --database default --database other
 - [96448dae] django-admin check --deploy --settings=production_settings
 - [65a82bce] django-admin check --tag models --tag compatibility
@@ -94,6 +94,7 @@
 - [3b6be9ca] django-admin testserver mydata.json
 - [82689471] export DJANGO_COLORS="error=yellow/blue,blink;notice=magenta"
 - [51a5eaf3] export DJANGO_COLORS="light"
+- [68394b5f] export DJANGO_COLORS="light;error=yellow/blue,blink;notice=magenta"
 - [f7690fe0] from django.db import connection, reset_queries, models from django.conf import settings from django.utils import timezone
 - [e14049df] with open("/path/to/command_output", "w") as f: management.call_command("dumpdata", stdout=f)
 - [1ae1926a] The contents of custom app (or project) templates should always be audited before use: Such templates define code that will become part of your project, and this means that such code will be trusted as much as any app you install, or code you write yourself. Further, even rendering the templates is, effectively, executing code that was provided as input to the management command. The Django template language may provide wide access into the system, so make sure any custom template you use is worthy of your trust.
@@ -149,6 +150,7 @@
 - [8aa7203c166b13be-114] .. code-block:: shell
 - [3a9340cd0d877339-25] .. code-block:: text
 - [3a9340cd0d877339-26] .. code-block:: text
+- [7714e199aac2701e-107] .. console::
 - [7714e199aac2701e-108] .. console::
 - [7714e199aac2701e-109] .. console::
 - [7714e199aac2701e-110] .. console::
@@ -200,31 +202,56 @@
 - [d6b39487] .. django-admin-option:: --admins
 - [35f6a5f2] .. django-admin-option:: --all
 - [71382197d214c27a] .. django-admin-option:: --all, -a
+- [71382197d214c27a-2] .. django-admin-option:: --all, -a
 - [92f39314] .. django-admin-option:: --app APP_LABEL
 - [dd47c662] .. django-admin-option:: --backwards
 - [8a8f7e76] .. django-admin-option:: --buffer, -b
 - [df6ba124e9394eaf] .. django-admin-option:: --check
+- [df6ba124e9394eaf-2] .. django-admin-option:: --check
+- [df6ba124e9394eaf-3] .. django-admin-option:: --check
 - [e35ef55d] .. django-admin-option:: --command COMMAND, -c COMMAND
 - [f4005e2fe4365029] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-2] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-3] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-4] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-5] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-6] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-7] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-8] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-9] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-10] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-11] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-12] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-13] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-14] .. django-admin-option:: --database DATABASE
+- [f4005e2fe4365029-15] .. django-admin-option:: --database DATABASE
 - [10ff39fe] .. django-admin-option:: --debug-mode
 - [8b98f37f] .. django-admin-option:: --debug-sql, -d
 - [09e503bd] .. django-admin-option:: --default MODULE
 - [71387f38] .. django-admin-option:: --deploy
 - [f304196e] .. django-admin-option:: --domain DOMAIN, -d DOMAIN
 - [008690f9ecddc108] .. django-admin-option:: --dry-run
+- [008690f9ecddc108-2] .. django-admin-option:: --dry-run
 - [7f4f7325] .. django-admin-option:: --durations N
 - [02ce8ccb] .. django-admin-option:: --empty
 - [808a373d40a605a0] .. django-admin-option:: --exclude DIRECTORIES, -x DIRECTORIES
+- [808a373d40a605a0-2] .. django-admin-option:: --exclude DIRECTORIES, -x DIRECTORIES
 - [81facfcb04146423] .. django-admin-option:: --exclude EXCLUDE, -e EXCLUDE
+- [81facfcb04146423-2] .. django-admin-option:: --exclude EXCLUDE, -e EXCLUDE
 - [db521c9e6e450676] .. django-admin-option:: --exclude EXCLUDE, -x EXCLUDE
+- [db521c9e6e450676-2] .. django-admin-option:: --exclude EXCLUDE, -x EXCLUDE
 - [59e69d5aa86eeb3f] .. django-admin-option:: --extension EXTENSIONS, -e EXTENSIONS
+- [59e69d5aa86eeb3f-2] .. django-admin-option:: --extension EXTENSIONS, -e EXTENSIONS
+- [59e69d5aa86eeb3f-3] .. django-admin-option:: --extension EXTENSIONS, -e EXTENSIONS
 - [9cbbab49] .. django-admin-option:: --fail-level {CRITICAL,ERROR,WARNING,INFO,DEBUG}
 - [1b702664] .. django-admin-option:: --failfast
 - [15904a12] .. django-admin-option:: --fake
 - [6e4692ad] .. django-admin-option:: --fake-initial
 - [bc84a9fc] .. django-admin-option:: --force-color
 - [c37cce9a7750e79b] .. django-admin-option:: --format FORMAT
+- [c37cce9a7750e79b-2] .. django-admin-option:: --format FORMAT
 - [1b1211d14c815058-2] .. django-admin-option:: --ignore PATTERN, -i PATTERN
+- [1b1211d14c815058-3] .. django-admin-option:: --ignore PATTERN, -i PATTERN
 - [6f510ec3] .. django-admin-option:: --ignorenonexistent, -i
 - [43821246] .. django-admin-option:: --include-partitions
 - [37fe31de] .. django-admin-option:: --include-stale-apps
@@ -237,9 +264,11 @@
 - [2c31ed8e] .. django-admin-option:: --list, -l
 - [c79c3804] .. django-admin-option:: --list-tags
 - [4a636ac1b25404ab] .. django-admin-option:: --locale LOCALE, -l LOCALE
+- [4a636ac1b25404ab-2] .. django-admin-option:: --locale LOCALE, -l LOCALE
 - [a7865321] .. django-admin-option:: --managers
 - [3cc0e84e] .. django-admin-option:: --merge
 - [40383d1e62741b72] .. django-admin-option:: --name FILES, -n FILES
+- [40383d1e62741b72-2] .. django-admin-option:: --name FILES, -n FILES
 - [51ecefbd] .. django-admin-option:: --name NAME, -n NAME
 - [c2491df7] .. django-admin-option:: --natural-foreign
 - [dc949244] .. django-admin-option:: --natural-primary
@@ -247,6 +276,7 @@
 - [e298b5884c94dace-2] .. django-admin-option:: --no-default-ignore
 - [62de80ee] .. django-admin-option:: --no-faulthandler
 - [8677b2779d5513b2] .. django-admin-option:: --no-header
+- [8677b2779d5513b2-2] .. django-admin-option:: --no-header
 - [0c08422fcf6cb441-2] .. django-admin-option:: --no-imports
 - [33da65a3] .. django-admin-option:: --no-location
 - [6c5bb18f] .. django-admin-option:: --no-obsolete
@@ -254,6 +284,12 @@
 - [fa049b5a] .. django-admin-option:: --no-startup
 - [dd5c7b49] .. django-admin-option:: --no-wrap
 - [d24d32e6decd3db1-2] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-3] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-4] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-5] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-6] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-7] .. django-admin-option:: --noinput, --no-input
+- [d24d32e6decd3db1-8] .. django-admin-option:: --noinput, --no-input
 - [1d7d3954] .. django-admin-option:: --noreload
 - [2ef0cd12] .. django-admin-option:: --nothreading
 - [15cd41ed] .. django-admin-option:: --output OUTPUT, -o OUTPUT
@@ -275,6 +311,7 @@
 - [801e9374] .. django-admin-option:: --symlinks, -s
 - [33dd909e] .. django-admin-option:: --tag TAGS, -t TAGS
 - [a1e6271e699a315b] .. django-admin-option:: --template TEMPLATE
+- [a1e6271e699a315b-2] .. django-admin-option:: --template TEMPLATE
 - [dde858a6] .. django-admin-option:: --testrunner TESTRUNNER
 - [79b85126] .. django-admin-option:: --timing
 - [1a4202265f812714-2] .. django-admin-option:: --traceback
@@ -374,6 +411,7 @@
 - [f2500af8] Controls ``#: filename:line`` comment lines in language files. If the option is:
 - [b0e4ab76] Controls the test runner class that is used to execute tests. This value overrides the value provided by the :setting:`TEST_RUNNER` setting.
 - [f518a87e] Creates a Django app directory structure for the given app name in the current directory or the given destination.
+- [2b06f310] Creates a Django project directory structure for the given project name in the current directory or the given destination.
 - [cb3d3ae6] Creates a superuser account (a user who has all permissions). This is useful if you need to create an initial superuser account or if you need to programmatically generate superuser accounts for your site(s).
 - [49c652d3] Creates new migrations based on the changes detected to your models. Migrations, their relationship with apps and more are covered in depth in :doc:`the migrations documentation</topics/migrations>`.
 - [97972c61] Creates the cache tables for use with the database cache backend using the information from your settings file. See :doc:`/topics/cache` for more information.
@@ -459,6 +497,7 @@
 - [da08f80d] If you're using Linux or MacOS and install both :pypi:`pywatchman` and the `Watchman`_ service, kernel signals will be used to autoreload the server (rather than polling file modification timestamps each second). This offers better performance on large projects, reduced response time after code changes, more robust change detection, and a reduction in power usage. Django supports ``pywatchman`` 1.2.0 and higher.
 - [e1866f4d] Ignores directories matching the given :mod:`glob`-style pattern. Use multiple times to ignore more.
 - [50ce61e6] Ignores fields and models that may have been removed since the fixture was originally generated.
+- [67ab00c2] Ignores files or directories matching the given :mod:`glob`-style pattern. Use multiple times to ignore more.
 - [c4f90b2f] In addition, ``manage.py`` is automatically created in each Django project. It does the same thing as ``django-admin`` but also sets the :envvar:`DJANGO_SETTINGS_MODULE` environment variable so that it points to your project's ``settings.py`` file.
 - [49af8caf] In non-interactive mode, the :attr:`~django.contrib.auth.models.CustomUser.USERNAME_FIELD` and required fields (listed in :attr:`~django.contrib.auth.models.CustomUser.REQUIRED_FIELDS`) fall back to ``DJANGO_SUPERUSER_<uppercase_field_name>`` environment variables, unless they are overridden by a command line argument. For example, to provide an ``email`` field, you can use ``DJANGO_SUPERUSER_EMAIL`` environment variable.
 - [20284d09] Includes `fuzzy translations`_ into compiled files.
@@ -470,6 +509,7 @@
 - [ea393ebb] Loading from ``stdin`` is useful with standard input and output redirections. For example:
 - [227ae779] Logging of each request and response of the server is sent to the :ref:`django-server-logger` logger.
 - [2b7f7c15] Mails the email addresses specified in :setting:`ADMINS` using :func:`~django.core.mail.mail_admins`.
+- [b27d3d8e] Mails the email addresses specified in :setting:`MANAGERS` using :func:`~django.core.mail.mail_managers`.
 - [f7a59b52] Makes ``makemigrations`` exit with a non-zero status when model changes without migrations are detected. Implies ``--dry-run``.
 - [e248a2dc] Makes ``migrate`` exit with a non-zero status when unapplied migrations are detected.
 - [1b43e26c] Makes ``optimizemigration`` exit with a non-zero status when a migration can be optimized.
@@ -499,6 +539,7 @@
 - [730d806c] Outputs to standard output all data in the database associated with the named application(s).
 - [3fe16abb] Please also see the :ref:`rendering warning <render_warning>` and :ref:`trusted code warning <trusted_code_warning>` as mentioned for :djadmin:`startapp`.
 - [42a4eb20] Please refer to its :djadmin:`description <collectstatic>` in the :doc:`staticfiles </ref/contrib/staticfiles>` documentation.
+- [796d510e] Please refer to its :djadmin:`description <findstatic>` in the :doc:`staticfiles </ref/contrib/staticfiles>` documentation.
 - [9516f24f] Please refer to its :djadmin:`description <ogrinspect>` in the GeoDjango documentation.
 - [daa00df9] Port 7000 on IP address ``1.2.3.4``:
 - [7ff71e45] Port 7000 on IP address ``127.0.0.1``:
@@ -566,6 +607,7 @@
 - [8442bac8] Specifies the amount of notification and debug information that a command should print to the console.
 - [5546bbf1] Specifies the database for which to generate the SQL. Defaults to ``default``.
 - [21a48116f13c8dfe] Specifies the database for which to print the SQL. Defaults to ``default``.
+- [21a48116f13c8dfe-2] Specifies the database for which to print the SQL. Defaults to ``default``.
 - [2b99890d] Specifies the database from which data will be dumped. Defaults to ``default``.
 - [828595af] Specifies the database in which the cache table(s) will be created. Defaults to ``default``.
 - [cdd5186f] Specifies the database into which the data will be loaded. Defaults to ``default``.
@@ -580,6 +622,7 @@
 - [d53b1b68] Specifies the database to use. Defaults to ``default``.
 - [f30fbc0b] Specifies the domain of the messages files. Supported options are:
 - [db85ecbb1401e897] Specifies the locale(s) to exclude from processing. If not provided, no locales are excluded.
+- [db85ecbb1401e897-2] Specifies the locale(s) to exclude from processing. If not provided, no locales are excluded.
 - [147ed1be] Specifies the locale(s) to process.
 - [b9d86f92] Specifies the locale(s) to process. If not provided, all locales are processed.
 - [6f97fdc2] Specifies the message level that will cause the command to exit with a non-zero status. Default is ``ERROR``.
@@ -589,16 +632,22 @@
 - [29152381] Specifies the settings module to use. The settings module should be in Python package syntax, e.g. ``mysite.settings``. If this isn't provided, ``django-admin`` will use the :envvar:`DJANGO_SETTINGS_MODULE` environment variable.
 - [16aa89e3] Specifies the shell to use. By default, Django will use IPython_ or bpython_ if either is installed. If both are installed, specify which one you want like so:
 - [ff58b948] Specifies which directories in the app template should be excluded, in addition to ``.git`` and ``__pycache__``. If this option is not provided, directories named ``__pycache__`` or starting with ``.`` will be excluded.
+- [1c6acaf1] Specifies which directories in the project template should be excluded, in addition to ``.git`` and ``__pycache__``. If this option is not provided, directories named ``__pycache__`` or starting with ``.`` will be excluded.
 - [8c460cd9] Specifies which file extensions in the app template should be rendered with the template engine. Defaults to ``py``.
+- [25cc5db2] Specifies which file extensions in the project template should be rendered with the template engine. Defaults to ``py``.
 - [88976e06] Specifies which files in the app template (in addition to those matching ``--extension``) should be rendered with the template engine. Defaults to an empty list.
+- [f60d191f] Specifies which files in the project template (in addition to those matching ``--extension``) should be rendered with the template engine. Defaults to an empty list.
 - [b1650713] Squashes the migrations for ``app_label`` up to and including ``migration_name`` down into fewer migrations, if possible. The resulting squashed migrations can live alongside the unsquashed ones safely. For more information, please read :ref:`migration-squashing`.
 - [ac224d66] Starts a lightweight development web server on the local machine. By default, the server runs on port 8000 on the IP address ``127.0.0.1``. You can pass in an IP address and port number explicitly.
 - [142bd1ba] Starts the Python interactive interpreter.
 - [c9c8c363] Stops running tests and reports the failure immediately after a test fails.
 - [73f10392074fb55c] Suppresses all user prompts.
+- [73f10392074fb55c-2] Suppresses all user prompts.
 - [85204bb1a7e83f24] Suppresses all user prompts. A typical prompt is a warning about deleting an existing test database.
+- [85204bb1a7e83f24-2] Suppresses all user prompts. A typical prompt is a warning about deleting an existing test database.
 - [95824f2f] Suppresses all user prompts. An example prompt is asking about removing stale content types.
 - [b14ad044] Suppresses all user prompts. If a suppressed prompt cannot be resolved automatically, the command will exit with error code 1.
+- [f8c0788e] Suppresses all user prompts. If a suppressed prompt cannot be resolved automatically, the command will exit with error code 3.
 - [cfe67046] Suppresses writing '``#: filename:line``’ comment lines in language files. Using this option makes it harder for technically skilled translators to understand each message's context.
 - [8b5c442d] Synchronizes the database state with the current set of models and migrations. Migrations, their relationship with apps and more are covered in depth in :doc:`the migrations documentation</topics/migrations>`.
 - [382e6307] Syntax coloring ---------------
@@ -630,13 +679,16 @@
 - [f1f96666] This command doesn't require configured settings. However, when settings aren't configured, the command can't ignore the :setting:`MEDIA_ROOT` and :setting:`STATIC_ROOT` directories or include :setting:`LOCALE_PATHS`.
 - [61acc4f2] This command is only available if :doc:`GeoDjango </ref/contrib/gis/index>` (``django.contrib.gis``) is installed.
 - [2f417735b158d56e] This command is only available if Django's :doc:`authentication system </topics/auth/index>` (``django.contrib.auth``) is installed.
+- [2f417735b158d56e-2] This command is only available if Django's :doc:`authentication system </topics/auth/index>` (``django.contrib.auth``) is installed.
 - [989b8fb4] This command is only available if Django's :doc:`contenttypes app </ref/contrib/contenttypes>` (:mod:`django.contrib.contenttypes`) is installed.
 - [3070d80aa11120b0] This command is only available if the :doc:`static files application </howto/static-files/index>` (``django.contrib.staticfiles``) is installed.
+- [3070d80aa11120b0-2] This command is only available if the :doc:`static files application </howto/static-files/index>` (``django.contrib.staticfiles``) is installed.
 - [c681d071] This feature isn't available on Windows. It doesn't work with the Oracle database backend either.
 - [4eded95d] This is intended for advanced users to manipulate the current migration state directly if they're manually applying changes; be warned that using ``--fake`` runs the risk of putting the migration state table into a state where manual recovery will be needed to make migrations run correctly.
 - [1532cb9e] This is the default output format.
 - [6894bf9c] This is useful in a number of ways:
 - [7b19c23637506190] This option is ignored by :djadmin:`runserver`.
+- [7b19c23637506190-2] This option is ignored by :djadmin:`runserver`.
 - [f5038ccb] This option is unnecessary in ``manage.py``, because it takes care of setting the Python path for you.
 - [4450178c] This option is unnecessary in ``manage.py``, because it uses ``settings.py`` from the current project by default.
 - [81e79f28] This option requires the third-party ``tblib`` package to display tracebacks correctly:

@@ -1,6 +1,6 @@
 # Fact 643feeb3
 
-Store id: 9d7e3e2c-5ecf-4cbf-a580-da0c6cf53840
+Store id: 5cb71cb5-900a-4df3-9a2c-fa764beee2a0
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8418770+00:00`
+- posted_at: `2026-11-09T23:44:50.2766800+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2751,
     "symbol": "BinaryField.__init__"
   },
-  "id": "9d7e3e2c-5ecf-4cbf-a580-da0c6cf53840",
+  "id": "5cb71cb5-900a-4df3-9a2c-fa764beee2a0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8418770+00:00"
+    "posted_at": "2026-11-09T23:44:50.2766800+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "567500a5-9272-4cd9-93af-7529d01792aa",
+  "subject_id": "a6c643a6-6ba6-4341-bc62-669abea41d1f",
   "subject_name": "django/db/models/fields/__init__::BinaryField.__init__",
   "tags": [
     "entity:method"

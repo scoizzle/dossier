@@ -5,9 +5,9 @@ This file lists every subject under `django/templatetags/`, one row per subject,
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 |   django/templatetags/cache | subject | 13 | 0 | 0 | 811 | [subjects/django-templatetags-cache/index.md](../subjects/django-templatetags-cache/index.md) |
-|   django/templatetags/i18n | subject | 86 | 0 | 0 | 4230 | [subjects/django-templatetags-i18n/index.md](../subjects/django-templatetags-i18n/index.md) |
-|   django/templatetags/l10n | subject | 10 | 0 | 0 | 397 | [subjects/django-templatetags-l10n/index.md](../subjects/django-templatetags-l10n/index.md) |
-|   django/templatetags/static | subject | 36 | 0 | 0 | 1110 | [subjects/django-templatetags-static/index.md](../subjects/django-templatetags-static/index.md) |
+|   django/templatetags/i18n | subject | 86 | 0 | 0 | 4328 | [subjects/django-templatetags-i18n/index.md](../subjects/django-templatetags-i18n/index.md) |
+|   django/templatetags/l10n | subject | 10 | 0 | 0 | 443 | [subjects/django-templatetags-l10n/index.md](../subjects/django-templatetags-l10n/index.md) |
+|   django/templatetags/static | subject | 36 | 0 | 0 | 1146 | [subjects/django-templatetags-static/index.md](../subjects/django-templatetags-static/index.md) |
 |   django/templatetags/tz | subject | 36 | 0 | 0 | 1323 | [subjects/django-templatetags-tz/index.md](../subjects/django-templatetags-tz/index.md) |
 
 Up: [index/django.md](django.md)

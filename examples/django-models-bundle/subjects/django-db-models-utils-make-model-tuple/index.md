@@ -1,11 +1,11 @@
 # django/db/models/utils::make_model_tuple
 
-- Subject: django/db/models/utils::make_model_tuple (id `487d0216-1d46-407a-9a0c-6a5d579493eb`)
+- Subject: django/db/models/utils::make_model_tuple (id `59c9b525-a328-4815-aa3a-c28a74f89192`)
 - Kind: function
 - Parent: [django/db/models/utils](../django-db-models-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

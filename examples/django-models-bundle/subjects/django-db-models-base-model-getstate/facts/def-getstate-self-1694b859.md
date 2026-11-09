@@ -1,6 +1,6 @@
 # Fact 1694b859
 
-Store id: e822763d-fe97-4fd0-82ca-e1185a841af4
+Store id: fddb1321-1ede-41ed-95cf-5f5128a52867
 
 ## Text
 
@@ -20,7 +20,7 @@ def __getstate__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7347820+00:00`
+- posted_at: `2026-11-09T23:44:48.5286040+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 659,
     "symbol": "Model.__getstate__"
   },
-  "id": "e822763d-fe97-4fd0-82ca-e1185a841af4",
+  "id": "fddb1321-1ede-41ed-95cf-5f5128a52867",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7347820+00:00"
+    "posted_at": "2026-11-09T23:44:48.5286040+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f737bb57-df22-4876-8f59-cc164ff3f1ee",
+  "subject_id": "3b8f5517-e895-41fd-af1b-38699a49e682",
   "subject_name": "django/db/models/base::Model.__getstate__",
   "tags": [
     "entity:method"

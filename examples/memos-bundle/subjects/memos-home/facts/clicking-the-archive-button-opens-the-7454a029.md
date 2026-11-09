@@ -1,6 +1,6 @@
 # Fact 7454a029
 
-Store id: 1c69788c-e203-4f36-ac09-26544d61cc7c
+Store id: 0e1aa1f8-822f-488e-ab3f-125ad2c1f995
 
 ## Text
 
@@ -20,7 +20,7 @@ Clicking the archive button opens the archived memos screen.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:46.5621970+00:00`
+- posted_at: `2026-11-09T23:44:32.4257550+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "1c69788c-e203-4f36-ac09-26544d61cc7c",
+  "id": "0e1aa1f8-822f-488e-ab3f-125ad2c1f995",
   "kind": "action",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:46.5621970+00:00"
+    "posted_at": "2026-11-09T23:44:32.4257550+00:00"
   },
   "refs": [
     {
@@ -62,7 +62,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c1a56451-1df8-4cc1-b0d4-80c0e18682e3",
+  "subject_id": "4dc72333-e0bf-4125-bcee-81c96c23bb0b",
   "subject_name": "Memos/Home",
   "tags": [
     "section:actions"

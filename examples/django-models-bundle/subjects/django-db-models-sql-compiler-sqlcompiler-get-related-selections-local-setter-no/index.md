@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter_noop
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter_noop (id `abd23ad3-a75a-4f66-a417-7fa5ca719eca`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.local_setter_noop (id `16bb727c-a7ad-4131-aea8-e108d3e31cab`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

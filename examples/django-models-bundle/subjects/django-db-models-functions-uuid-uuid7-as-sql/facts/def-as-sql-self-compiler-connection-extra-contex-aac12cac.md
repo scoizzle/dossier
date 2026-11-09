@@ -1,6 +1,6 @@
 # Fact aac12cac
 
-Store id: 0adce920-9203-40ef-aa95-ff7b7c266553
+Store id: 6f258e24-d201-4313-b183-8ff6d8494a2c
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.5031020+00:00`
+- posted_at: `2026-11-09T23:44:54.3284360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 60,
     "symbol": "UUID7.as_sql"
   },
-  "id": "0adce920-9203-40ef-aa95-ff7b7c266553",
+  "id": "6f258e24-d201-4313-b183-8ff6d8494a2c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.5031020+00:00"
+    "posted_at": "2026-11-09T23:44:54.3284360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c16c993a-6b68-45bb-a717-9f75f9056277",
+  "subject_id": "f7a4b962-f712-4b49-af65-d4a791bd92c1",
   "subject_name": "django/db/models/functions/uuid::UUID7.as_sql",
   "tags": [
     "entity:method"

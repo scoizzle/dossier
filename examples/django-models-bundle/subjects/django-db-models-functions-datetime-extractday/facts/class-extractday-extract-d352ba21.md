@@ -1,6 +1,6 @@
 # Fact d352ba21
 
-Store id: c41e8334-fd10-456a-b9fc-7ff82cbcf0f3
+Store id: 1619966d-13bc-4739-9288-c303087ffd29
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractDay(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2059620+00:00`
+- posted_at: `2026-11-09T23:44:53.3474100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 138,
     "symbol": "ExtractDay"
   },
-  "id": "c41e8334-fd10-456a-b9fc-7ff82cbcf0f3",
+  "id": "1619966d-13bc-4739-9288-c303087ffd29",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2059620+00:00"
+    "posted_at": "2026-11-09T23:44:53.3474100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f8b1d35e-8ae5-482b-a6be-79658003b736",
+  "subject_id": "d3749f13-658a-46b6-b827-a9d3e646ceb0",
   "subject_name": "django/db/models/functions/datetime::ExtractDay",
   "tags": [
     "entity:class"

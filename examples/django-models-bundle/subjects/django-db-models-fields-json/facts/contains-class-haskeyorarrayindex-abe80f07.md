@@ -1,6 +1,6 @@
 # Fact abe80f07
 
-Store id: e62f2ef8-fa48-491f-a35c-47155fcbf098
+Store id: 3b461ddd-278d-4521-a3e1-d6fda5821441
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class HasKeyOrArrayIndex
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e62f2ef8-fa48-491f-a35c-47155fcbf098",
+  "id": "3b461ddd-278d-4521-a3e1-d6fda5821441",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "HasKeyOrArrayIndex"
       },
       "rel": "contains",
-      "target": "30f5884b-13ef-4f79-b95e-36086e2bca24"
+      "target": "100a079d-499f-4bff-af8a-f392c449888f"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

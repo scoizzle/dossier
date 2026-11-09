@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/operations
 
-- Subject: django/contrib/gis/db/backends/postgis/operations (id `595cfc80-17d5-4ee3-ac82-432999609737`)
+- Subject: django/contrib/gis/db/backends/postgis/operations (id `f9e9595f-84d9-4fc1-aaeb-188972f3aade`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3801 tokens
-- Facts shown: 53 of 56
+- Used: 4003 tokens
+- Facts shown: 56 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -29,6 +29,7 @@
 ## All facts
 
 - [0bc3247e] if isinstance(value, Distance): if geography: dist_param = value.m elif geodetic: if lookup_type == "dwithin": raise ValueError( "Only numeric values of degree units are " "allowed on geographic DWithin queries." ) dist_param = value.m else: dist_param = getattr( value, Distance.unit_attname(f.units_name(self.connection)) ) else: # Assuming the distance is in the units of the field. dist_param = value
+- [658d1d2e] if lookup.band_rhs is not None and rhs_is_raster: if not isinstance(lookup.band_rhs, int): name = lookup.band_rhs.__class__.__name__ raise TypeError(f"Band index must be an integer, but got {name!r}.") if not self.func: raise ValueError( "Band indices are not allowed for this operator, it works on bbox " "only." ) template_params["rhs"] = "%s, %s" % ( template_params["rhs"], lookup.band_rhs, )
 - [18b71fb1] @cached_property def function_names(self): function_names = { "AsWKB": "ST_AsBinary", "AsWKT": "ST_AsText", "BoundingCircle": "ST_MinimumBoundingCircle", "FromWKB": "ST_GeomFromWKB", "FromWKT": "ST_GeomFromText", "NumDimensions": "ST_NDims", "NumPoints": "ST_NPoints", "GeometryType": "GeometryType", } return function_names
 - [436bb4c2] @cached_property def output_field(self): return GeometryField(srid=self.source_expressions[0].field.srid)
 - [3b955447] @cached_property def spatial_version(self): """Determine the version of the PostGIS library.""" # Trying to get the PostGIS version because the function # signatures will depend on the version used. The cost # here is a database query to determine the version, which # can be mitigated by setting `POSTGIS_VERSION` with a 3-tuple # comprising user-supplied values for the major, minor, and # subminor revision of PostGIS. if hasattr(settings, "POSTGIS_VERSION"): version = settings.POSTGIS_VERSION else: # Run a basic query to check the status of the connection so we're # sure we only raise the error below if the problem comes from # PostGIS and not from PostgreSQL itself (see #24862). self._get_postgis_func("version")
@@ -51,6 +52,8 @@
 - [e34f47dd] def postgis_full_version(self): "Return PostGIS version number and compile-time options." return self._get_postgis_func("postgis_full_version")
 - [e928a83d] def postgis_geos_version(self): "Return the version of the GEOS library used with PostGIS." return self._get_postgis_func("postgis_geos_version")
 - [3b75c719] def postgis_lib_version(self): """ Return the version number of the PostGIS library used with PostgreSQL. """ return self._get_postgis_func("postgis_lib_version")
+- [ce31ed27] def postgis_proj_version(self): """Return the version of the PROJ library used with PostGIS.""" return self._get_postgis_func("postgis_proj_version")
+- [5ef4103e] def postgis_version(self): "Return PostGIS version number and compile-time options." return self._get_postgis_func("postgis_version")
 - [88fd8caf] def postgis_version_tuple(self): """ Return the PostGIS version as a tuple (version string, major, minor, subminor). """ version = self.postgis_lib_version() return (version, *get_version_tuple(version))
 - [04a3b7cf] def proj_version_tuple(self): """ Return the version of PROJ used by PostGIS as a tuple of the major, minor, and subminor release numbers. """ proj_regex = re.compile(r"(\d+)\.(\d+)\.(\d+)") proj_ver_str = self.postgis_proj_version() m = proj_regex.search(proj_ver_str) if m: return tuple(map(int, m.groups())) else: raise Exception("Could not determine PROJ version from PostGIS.")
 - [b01ba265] def spatial_aggregate_name(self, agg_name): if agg_name == "Extent3D": return self.extent3d else: return self.geom_func_prefix + agg_name

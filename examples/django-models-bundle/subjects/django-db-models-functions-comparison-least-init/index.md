@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::Least.__init__
 
-- Subject: django/db/models/functions/comparison::Least.__init__ (id `5216265e-1d58-41dc-b378-d06d5c2a476b`)
+- Subject: django/db/models/functions/comparison::Least.__init__ (id `586c7f7e-6dc2-4668-9c60-59d657f5226d`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

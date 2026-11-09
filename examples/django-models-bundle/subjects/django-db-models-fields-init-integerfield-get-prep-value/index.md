@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::IntegerField.get_prep_value
 
-- Subject: django/db/models/fields/__init__::IntegerField.get_prep_value (id `d35d3ccb-81f6-4e98-b5a4-899eb6f3ff7d`)
+- Subject: django/db/models/fields/__init__::IntegerField.get_prep_value (id `a889d280-d5fd-4d75-b456-3eb4d13be739`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 019836a6
 
-Store id: 1e9b291a-06d2-4fec-b260-5f56769ec514
+Store id: 54ce1167-73fb-44d0-8a85-366212fca92e
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2577100+00:00`
+- posted_at: `2026-11-09T23:44:53.3834210+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 258,
     "symbol": "TruncBase.as_sql"
   },
-  "id": "1e9b291a-06d2-4fec-b260-5f56769ec514",
+  "id": "54ce1167-73fb-44d0-8a85-366212fca92e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2577100+00:00"
+    "posted_at": "2026-11-09T23:44:53.3834210+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "79b69ccc-77c9-4780-be13-59302319ce25",
+  "subject_id": "4a0ad56b-acd5-4423-84ca-185f8edb7402",
   "subject_name": "django/db/models/functions/datetime::TruncBase.as_sql",
   "tags": [
     "entity:method"

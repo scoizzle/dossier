@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/prototypes/geom
 
-- Subject: django/contrib/gis/gdal/prototypes/geom (id `315e9f39-eadd-4619-a10f-3608e75cddeb`)
+- Subject: django/contrib/gis/gdal/prototypes/geom (id `4c144e4a-3a31-437a-9787-174fc333145a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1612 tokens
-- Facts shown: 18 of 18
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 

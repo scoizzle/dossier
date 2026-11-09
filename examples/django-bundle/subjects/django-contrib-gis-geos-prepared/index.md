@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prepared
 
-- Subject: django/contrib/gis/geos/prepared (id `b0a0bb6d-d2a5-41c8-a119-b5851a64bb94`)
+- Subject: django/contrib/gis/geos/prepared (id `5b174633-cd35-4cd3-801f-7f35cec69781`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 454 tokens
-- Facts shown: 13 of 14
+- Used: 489 tokens
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - if not isinstance(geom, GEOSGeometry): raise TypeError self.ptr = capi.geos_prepare(geom.ptr) [f29c71c4]
 - def __init__(self, geom): # Keeping a reference to the original geometry object to prevent it # from being garbage collected which could then crash the prepared one # See #21662 self._base_geom = geom from .geometry import GEOSGeometry [7f67ad56]
 - def contains(self, other): return capi.prepared_contains(self.ptr, other.ptr) [3b4cffa2]
+- def contains_properly(self, other): return capi.prepared_contains_properly(self.ptr, other.ptr) [b911c130]
 - def covers(self, other): return capi.prepared_covers(self.ptr, other.ptr) [6d09cd81]
 - def crosses(self, other): return capi.prepared_crosses(self.ptr, other.ptr) [873d8807]
 - def disjoint(self, other): return capi.prepared_disjoint(self.ptr, other.ptr) [84a8262a]

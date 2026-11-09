@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/postgis/models
 
-- Subject: django/contrib/gis/db/backends/postgis/models (id `5caa16b0-8262-457b-a418-27c19d503375`)
+- Subject: django/contrib/gis/db/backends/postgis/models (id `502d9b1a-38dc-481b-9b3c-b33cecb59183`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 543 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

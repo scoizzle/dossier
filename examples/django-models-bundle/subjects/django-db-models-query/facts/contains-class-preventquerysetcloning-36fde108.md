@@ -1,6 +1,6 @@
 # Fact 36fde108
 
-Store id: 0f53f721-e42e-4b2e-87cc-8cb7b27b1cee
+Store id: 0543e1c4-93cf-43bd-aaf4-5495bc39c536
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class PreventQuerySetCloning
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8716240+00:00`
+- posted_at: `2026-11-09T23:44:56.3472900+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0f53f721-e42e-4b2e-87cc-8cb7b27b1cee",
+  "id": "0543e1c4-93cf-43bd-aaf4-5495bc39c536",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8716240+00:00"
+    "posted_at": "2026-11-09T23:44:56.3472900+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "PreventQuerySetCloning"
       },
       "rel": "contains",
-      "target": "e115e634-7fb6-44a8-a762-6f714e648e3d"
+      "target": "f334fbd1-ec31-4d71-beca-22741b63b3c7"
     }
   ],
   "status": "live",
-  "subject_id": "668f5055-eb85-405a-857a-aabb695bad53",
+  "subject_id": "a910a8bf-9a53-4a65-820c-a0b6a0775724",
   "subject_name": "django/db/models/query",
   "tags": [
     "entity:class"

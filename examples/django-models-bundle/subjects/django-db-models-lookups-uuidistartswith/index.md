@@ -1,11 +1,11 @@
 # django/db/models/lookups::UUIDIStartsWith
 
-- Subject: django/db/models/lookups::UUIDIStartsWith (id `656a0a72-7f55-4a68-9fd2-515e9e416694`)
+- Subject: django/db/models/lookups::UUIDIStartsWith (id `bf878196-bb3d-4088-bb21-a6f853302e3f`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 23 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

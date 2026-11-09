@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile.__eq__
 
-- Subject: django/db/models/fields/files::FieldFile.__eq__ (id `5d4b6b0a-b7b2-4ed7-aa5f-09f8d2f73d0a`)
+- Subject: django/db/models/fields/files::FieldFile.__eq__ (id `1eabea5b-50c7-4a26-80a2-13269e4d532e`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

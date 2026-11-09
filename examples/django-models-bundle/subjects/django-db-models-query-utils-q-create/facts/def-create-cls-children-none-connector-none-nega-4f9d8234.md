@@ -1,6 +1,6 @@
 # Fact 4f9d8234
 
-Store id: 445e0fa9-b23e-4307-a356-5d40e1056957
+Store id: 3d6e02ce-d479-4c6b-b0b8-0dbc48398903
 
 ## Text
 
@@ -20,7 +20,7 @@ def create(cls, children=None, connector=None, negated=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.0353580+00:00`
+- posted_at: `2026-11-09T23:44:56.5152990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 63,
     "symbol": "Q.create"
   },
-  "id": "445e0fa9-b23e-4307-a356-5d40e1056957",
+  "id": "3d6e02ce-d479-4c6b-b0b8-0dbc48398903",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.0353580+00:00"
+    "posted_at": "2026-11-09T23:44:56.5152990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5f23357c-e526-4f3c-a5a0-ab83a1aea4d2",
+  "subject_id": "cae5d03e-45d7-4226-9937-354a32c18941",
   "subject_name": "django/db/models/query_utils::Q.create",
   "tags": [
     "entity:class_method",

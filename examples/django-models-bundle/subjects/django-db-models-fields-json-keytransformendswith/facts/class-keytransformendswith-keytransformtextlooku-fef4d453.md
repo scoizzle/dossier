@@ -1,6 +1,6 @@
 # Fact fef4d453
 
-Store id: 100e775f-99db-49c7-8c94-d2383bc68f69
+Store id: 2f72ad75-b58d-4014-8db6-9fbb5e1d9b76
 
 ## Text
 
@@ -20,7 +20,7 @@ class KeyTransformEndsWith(KeyTransformTextLookupMixin, lookups.EndsWith)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0205480+00:00`
+- posted_at: `2026-11-09T23:44:51.0557050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 700,
     "symbol": "KeyTransformEndsWith"
   },
-  "id": "100e775f-99db-49c7-8c94-d2383bc68f69",
+  "id": "2f72ad75-b58d-4014-8db6-9fbb5e1d9b76",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0205480+00:00"
+    "posted_at": "2026-11-09T23:44:51.0557050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c3ea5c1b-c4eb-4f79-9f55-ef41a99a84f6",
+  "subject_id": "56ad9877-f5d1-4284-b355-37f565660dfc",
   "subject_name": "django/db/models/fields/json::KeyTransformEndsWith",
   "tags": [
     "entity:class"

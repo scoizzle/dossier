@@ -1,6 +1,6 @@
 # Fact 34304670
 
-Store id: 28e69023-bc30-4422-9472-07cbbb51592d
+Store id: 558fdc4d-c6c3-4dac-92ba-cfc2fff3e0c6
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_lhs(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9210710+00:00`
+- posted_at: `2026-11-09T23:44:50.9900170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 302,
     "symbol": "CaseInsensitiveMixin.process_lhs"
   },
-  "id": "28e69023-bc30-4422-9472-07cbbb51592d",
+  "id": "558fdc4d-c6c3-4dac-92ba-cfc2fff3e0c6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9210710+00:00"
+    "posted_at": "2026-11-09T23:44:50.9900170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "343bb8d2-5709-4a8c-9934-0a5e884388b7",
+  "subject_id": "4cc39b8e-18c1-4a69-bc8e-7ca4ee18cc6e",
   "subject_name": "django/db/models/fields/json::CaseInsensitiveMixin.process_lhs",
   "tags": [
     "entity:method"

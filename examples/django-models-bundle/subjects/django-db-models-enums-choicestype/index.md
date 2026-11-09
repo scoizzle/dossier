@@ -1,11 +1,11 @@
 # django/db/models/enums::ChoicesType
 
-- Subject: django/db/models/enums::ChoicesType (id `ed5d4360-159a-42e4-bb21-457482721b5f`)
+- Subject: django/db/models/enums::ChoicesType (id `2c1b809e-6d4f-4f09-a6c6-4044409c3534`)
 - Kind: class
 - Parent: [django/db/models/enums](../django-db-models-enums/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 253a5ce0
 
-Store id: c928d017-f0a3-4c26-861e-4294581a7dab
+Store id: 72f4e3b3-edb1-45a1-98e7-ddc6769a75fd
 
 ## Text
 
@@ -20,7 +20,7 @@ def _validate_force_insert(cls, force_insert)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7412110+00:00`
+- posted_at: `2026-11-09T23:44:48.5336480+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 930,
     "symbol": "Model._validate_force_insert"
   },
-  "id": "c928d017-f0a3-4c26-861e-4294581a7dab",
+  "id": "72f4e3b3-edb1-45a1-98e7-ddc6769a75fd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7412110+00:00"
+    "posted_at": "2026-11-09T23:44:48.5336480+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "42653b75-b913-4740-b8d8-a0b2e1ad8377",
+  "subject_id": "d455bfba-67ab-4cb9-953d-967538c9d386",
   "subject_name": "django/db/models/base::Model._validate_force_insert",
   "tags": [
     "entity:class_method",

@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/serializers
 
-- Subject: docs/ref/contrib/gis/serializers (id `cd159573-3ed5-498c-8127-1c893537b6bc`)
+- Subject: docs/ref/contrib/gis/serializers (id `c233d567-1f28-4a73-b4fc-a780c574ed17`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 696 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

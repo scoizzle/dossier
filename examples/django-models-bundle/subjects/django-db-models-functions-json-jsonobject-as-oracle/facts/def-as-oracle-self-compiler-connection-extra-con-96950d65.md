@@ -1,6 +1,6 @@
 # Fact 96950d65
 
-Store id: d9a5d59d-6865-4d4b-8a76-fed6e31b7439
+Store id: 04c1bb0c-de40-41b4-b3be-35fdfcdcb2bf
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.5119240+00:00`
+- posted_at: `2026-11-09T23:44:53.5717960+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 123,
     "symbol": "JSONObject.as_oracle"
   },
-  "id": "d9a5d59d-6865-4d4b-8a76-fed6e31b7439",
+  "id": "04c1bb0c-de40-41b4-b3be-35fdfcdcb2bf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.5119240+00:00"
+    "posted_at": "2026-11-09T23:44:53.5717960+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a5e8d45b-ca9e-4e29-b5ef-e80f1742c19f",
+  "subject_id": "c5a4ea70-dc62-4732-8f72-bbf48a80645c",
   "subject_name": "django/db/models/functions/json::JSONObject.as_oracle",
   "tags": [
     "entity:method"

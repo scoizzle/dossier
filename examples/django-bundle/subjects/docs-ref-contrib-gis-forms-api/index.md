@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/forms-api
 
-- Subject: docs/ref/contrib/gis/forms-api (id `c8d5a729-e05c-467f-8bcf-0ffeca44bdb5`)
+- Subject: docs/ref/contrib/gis/forms-api (id `7b717da9-62db-4f3f-9d95-cbea172173f9`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3029 tokens
-- Facts shown: 100 of 102
+- Used: 3078 tokens
+- Facts shown: 102 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - SECURE_CSP = { "default-src": [CSP.SELF], "script-src": [CSP.SELF, "https://cdn.jsdelivr.net/npm/ol@x.y.z/dist/ol.js"], "style-src": [CSP.SELF, "https://cdn.jsdelivr.net/npm/ol@x.y.z/ol.css"], "img-src": [CSP.SELF, "https://*.earthdata.nasa.gov"], } [e3580fbe]
 - SECURE_CSP = { # other directives "img-src": [CSP.SELF, "https://tile.openstreetmap.org"], } [b8e2ceda]
 - from django.utils.csp import CSP [ac6cbe5b3e28dda2-3]
+- from django.utils.csp import CSP [ac6cbe5b3e28dda2-4]
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-2]
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-3]
 - For example, to allow the default NASA Worldview base layer (replace ``x.y.z`` with the actual version):: [675c7bdf]
@@ -38,14 +39,14 @@
 - .. versionadded:: 6.0 [a1eb26d754a3d60c-4]
 - .. versionchanged:: 6.0 [57739e32d87f6c76-2]
 - A string that specifies the identifier for the default base map layer to be used by the corresponding JavaScript map widget. It is passed as part of the widget options when rendering, allowing the ``MapWidget`` to determine which map tile provider or base layer to initialize (default is ``None``). [444aa566]
-- Increase this value (or set to ``None``) only if you must accept legitimately deep geometries, since doing so reduces protection against fatal errors. [ffb8630a]
+- SRID code used by the map (default is 4326). [af8cedbc]
 
 ## All facts
 
 - [23eb1cec] Boolean value specifying if a textarea input showing the serialized representation of the current geometry is visible, mainly for debugging purposes (default is ``False``).
+- [ffb8630a] Increase this value (or set to ``None``) only if you must accept legitimately deep geometries, since doing so reduces protection against fatal errors.
 - [30d16d02] Indicates if the widget supports edition of 3D data (default is ``False``).
 - [ebc5a8f7] MapWidget.layerBuilder.custom_layer_name = function () { // Return an OpenLayers layer instance. return new ol.layer.Tile({source: new ol.source.<ChosenSource>()}); };
-- [af8cedbc] SRID code used by the map (default is 4326).
 - [9d35b6df] The :class:`OpenLayersWidget` note about using external assets also applies here. See also this `FAQ answer`_ about ``https`` access to map tiles.
 - [ea61a4dc] The OpenGIS geometry type, generally set by the form field.
 - [f61dc2d3] The limit bounds the nesting depth for well-known text (WKT), well-known binary (WKB), and hex-encoded WKB. For GeoJSON, the limit is not applied at all, since GDAL parses that input type instead.
@@ -85,6 +86,7 @@
 - [28d5de5a729e7af3] .. class:: PolygonField
 - [f1e4f19a] .. code-block:: javascript :caption: ``path-to-file.js``
 - [bf478230] .. module:: django.contrib.gis.forms :synopsis: GeoDjango forms API.
+- [0a188aec] .. module:: django.contrib.gis.forms.widgets :synopsis: GeoDjango widgets API.
 - [a1eb26d754a3d60c-5] .. versionadded:: 6.0
 - [72ce2834] =================== GeoDjango Forms API ===================
 - [ecd3d075] Customizing the base layer used in OpenLayers-based widgets -----------------------------------------------------------

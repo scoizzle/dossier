@@ -1,11 +1,11 @@
 # django/db/models/functions/math::ATan
 
-- Subject: django/db/models/functions/math::ATan (id `cb7a0dce-aa3d-43a4-a9f4-f9a776f83b30`)
+- Subject: django/db/models/functions/math::ATan (id `def79775-3929-43a5-97a4-59d2072d0456`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

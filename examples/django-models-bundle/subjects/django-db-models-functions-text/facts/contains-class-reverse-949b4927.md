@@ -1,6 +1,6 @@
 # Fact 949b4927
 
-Store id: 5c60abf1-deba-44c4-b8bc-af43c33a7951
+Store id: 6c9c288f-9e5e-46ca-81ea-f8f4c1e409f8
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Reverse
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.3237530+00:00`
+- posted_at: `2026-11-09T23:44:54.1807220+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "5c60abf1-deba-44c4-b8bc-af43c33a7951",
+  "id": "6c9c288f-9e5e-46ca-81ea-f8f4c1e409f8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.3237530+00:00"
+    "posted_at": "2026-11-09T23:44:54.1807220+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Reverse"
       },
       "rel": "contains",
-      "target": "165ed61c-a426-45f7-a084-5cbc75ebe8b3"
+      "target": "b31ea27d-7388-46df-b4f4-6c261fdcfb1a"
     }
   ],
   "status": "live",
-  "subject_id": "08714e53-0e7d-455c-90e4-6f9bb34964e1",
+  "subject_id": "f23af0b1-3d9b-4f1d-a529-99016102aa2f",
   "subject_name": "django/db/models/functions/text",
   "tags": [
     "entity:class"

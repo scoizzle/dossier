@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prototypes/errcheck
 
-- Subject: django/contrib/gis/geos/prototypes/errcheck (id `e622303c-a772-4e37-9145-7f95b3a61641`)
+- Subject: django/contrib/gis/geos/prototypes/errcheck (id `fd2188cf-b7be-43ff-b952-165282f48968`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 711 tokens
-- Facts shown: 12 of 13
+- Used: 745 tokens
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,6 +19,7 @@
 - def check_minus_one(result, func, cargs): "Error checking on routines that should not return -1." if result == -1: raise GEOSException( 'Error encountered in GEOS C function "%s".' % func.__name__ ) else: return result [dd05613a]
 - def check_predicate(result, func, cargs): "Error checking for unary/binary predicate functions." if result == 1: return True elif result == 0: return False else: raise GEOSException( 'Error encountered on GEOS C predicate function "%s".' % func.__name__ ) [1e9cf0fa]
 - def check_sized_string(result, func, cargs): """ Error checking for routines that return explicitly sized strings. [51ee29a6]
+- def check_string(result, func, cargs): """ Error checking for routines that return strings. [252a9331]
 - def last_arg_byref(args): "Return the last C argument's value by reference." return args[-1]._obj.value [d953004e]
 - from ctypes import c_void_p, string_at [40e1cf854b4083dd-2]
 - from django.contrib.gis.geos.error import GEOSException from django.contrib.gis.geos.libgeos import GEOSFuncFactory [949dc5ce]

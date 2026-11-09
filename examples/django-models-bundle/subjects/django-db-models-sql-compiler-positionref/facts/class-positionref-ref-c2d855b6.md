@@ -1,6 +1,6 @@
 # Fact c2d855b6
 
-Store id: 0260ae6a-a998-4686-aeeb-c4f2a1ef368d
+Store id: fea2fbea-2cae-4e7b-bf0e-c10bb49aea4e
 
 ## Text
 
@@ -20,7 +20,7 @@ class PositionRef(Ref)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.6288360+00:00`
+- posted_at: `2026-11-09T23:44:57.3301950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 33,
     "symbol": "PositionRef"
   },
-  "id": "0260ae6a-a998-4686-aeeb-c4f2a1ef368d",
+  "id": "fea2fbea-2cae-4e7b-bf0e-c10bb49aea4e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.6288360+00:00"
+    "posted_at": "2026-11-09T23:44:57.3301950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5585daa6-dd6d-4327-af26-3594037ecc96",
+  "subject_id": "d1ec44e7-3648-41c3-a4e1-7f12f823e7cb",
   "subject_name": "django/db/models/sql/compiler::PositionRef",
   "tags": [
     "entity:class"

@@ -1,6 +1,6 @@
 # Fact b95ef85d
 
-Store id: 009eb287-a812-492f-b0f5-f464f176726f
+Store id: 8fd8015d-ead8-4db0-8358-28c5198bcdd0
 
 ## Text
 
@@ -20,7 +20,7 @@ def validators(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6969010+00:00`
+- posted_at: `2026-11-09T23:44:50.1622890+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2167,
     "symbol": "IntegerField.validators"
   },
-  "id": "009eb287-a812-492f-b0f5-f464f176726f",
+  "id": "8fd8015d-ead8-4db0-8358-28c5198bcdd0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6969010+00:00"
+    "posted_at": "2026-11-09T23:44:50.1622890+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d849af8c-6f14-4603-84d5-7d47a713867b",
+  "subject_id": "f9cd0f4e-b250-48e3-80b0-f5b79279c4b6",
   "subject_name": "django/db/models/fields/__init__::IntegerField.validators",
   "tags": [
     "entity:method",

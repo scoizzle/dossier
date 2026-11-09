@@ -1,10 +1,10 @@
 # django/db/backends/base/base
 
-- Subject: django/db/backends/base/base (id `94041747-3310-41d7-a091-7e7565e3cf56`)
+- Subject: django/db/backends/base/base (id `c43bbaef-9d8e-46d1-8d17-0102ece4811b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6763 tokens
-- Facts shown: 109 of 112
+- Used: 6864 tokens
+- Facts shown: 112 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -39,6 +39,8 @@
 - [c994821e] self.run_on_commit = []
 - [92accd86] self.savepoint_state += 1 sid = "s%s_x%d" % (tid, self.savepoint_state)
 - [5015598f] self.validate_thread_sharing() self._savepoint(sid)
+- [969ced85] self.validate_thread_sharing() self._savepoint_commit(sid)
+- [11f6d25a] self.validate_thread_sharing() self._savepoint_rollback(sid)
 - [420d75bd] start_transaction_under_autocommit = ( force_begin_transaction_with_broken_autocommit and not autocommit and hasattr(self, "_start_transaction_under_autocommit") )
 - [b22ff4d3] thread_ident = _thread.get_ident() tid = str(thread_ident).replace("-", "")
 - [75c20cdf] # ##### Backend-specific methods for creating connections #####
@@ -80,6 +82,7 @@
 - [6e733661] def _commit(self): if self.connection is not None: with debug_transaction(self, "COMMIT"), self.wrap_database_errors: return self.connection.commit()
 - [4dcf4c2b] def _cursor(self, name=None): self.close_if_health_check_failed() self.ensure_connection() with self.wrap_database_errors: return self._prepare_cursor(self.create_cursor(name))
 - [037b322b] def _prepare_cursor(self, cursor): """ Validate the connection is usable and perform database cursor wrapping. """ self.validate_thread_sharing() if self.queries_logged: wrapped_cursor = self.make_debug_cursor(cursor) else: wrapped_cursor = self.make_cursor(cursor) return wrapped_cursor
+- [566fac9f] def _rollback(self): if self.connection is not None: with debug_transaction(self, "ROLLBACK"), self.wrap_database_errors: return self.connection.rollback()
 - [55e19e56] def _savepoint(self, sid): with self.cursor() as cursor: cursor.execute(self.ops.savepoint_create_sql(sid))
 - [d9001922] def _savepoint_allowed(self): # Savepoints cannot be created outside a transaction return self.features.uses_savepoints and not self.get_autocommit()
 - [8171897f] def _savepoint_commit(self, sid): with self.cursor() as cursor: cursor.execute(self.ops.savepoint_commit_sql(sid))

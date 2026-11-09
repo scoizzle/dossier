@@ -1,6 +1,6 @@
 # Fact 80f52b8f
 
-Store id: 5cdee5dc-b870-4e5b-84b9-1c5de3dc453b
+Store id: 6a5eda60-c1ed-45b3-ad5c-10bb1a02560a
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_direct_rhs_sql(self, connection, rhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.4304360+00:00`
+- posted_at: `2026-11-09T23:44:55.0686750+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 754,
     "symbol": "YearExact.get_direct_rhs_sql"
   },
-  "id": "5cdee5dc-b870-4e5b-84b9-1c5de3dc453b",
+  "id": "6a5eda60-c1ed-45b3-ad5c-10bb1a02560a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.4304360+00:00"
+    "posted_at": "2026-11-09T23:44:55.0686750+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c5bc50bd-a826-49e9-8278-45631a2798bb",
+  "subject_id": "9e881c79-50de-4bcf-9d80-7e0f8f360899",
   "subject_name": "django/db/models/lookups::YearExact.get_direct_rhs_sql",
   "tags": [
     "entity:method"

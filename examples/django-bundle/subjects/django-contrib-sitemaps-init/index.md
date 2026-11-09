@@ -1,10 +1,10 @@
 # django/contrib/sitemaps/__init__
 
-- Subject: django/contrib/sitemaps/__init__ (id `b5c84ca7-678f-47ed-8a55-bd37fba4eab8`)
+- Subject: django/contrib/sitemaps/__init__ (id `041b9558-6c62-4ef1-95d7-36e70c52909e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1610 tokens
-- Facts shown: 32 of 32
+- Facts shown: 32 facts
 - Conflicts: 0
 - Gaps: 0
 

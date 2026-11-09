@@ -1,6 +1,6 @@
 # Fact dd5e1aa9
 
-Store id: 667e76c8-67d4-4408-a5f7-94fa82ce4f8a
+Store id: 25f9007f-7d85-443d-ab1f-b13d6776be84
 
 ## Text
 
@@ -20,7 +20,7 @@ def can_fast_delete(self, objs, from_field=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.1115200+00:00`
+- posted_at: `2026-11-09T23:44:48.9139100+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 210,
     "symbol": "Collector.can_fast_delete"
   },
-  "id": "667e76c8-67d4-4408-a5f7-94fa82ce4f8a",
+  "id": "25f9007f-7d85-443d-ab1f-b13d6776be84",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.1115200+00:00"
+    "posted_at": "2026-11-09T23:44:48.9139100+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "701620ed-8088-4b34-b0d7-04748112e73e",
+  "subject_id": "062ce0ba-5f65-483e-bcad-baf91ad2be35",
   "subject_name": "django/db/models/deletion::Collector.can_fast_delete",
   "tags": [
     "entity:method"

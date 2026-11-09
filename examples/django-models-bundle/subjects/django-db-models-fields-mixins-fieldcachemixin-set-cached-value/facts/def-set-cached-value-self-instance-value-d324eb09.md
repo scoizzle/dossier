@@ -1,6 +1,6 @@
 # Fact d324eb09
 
-Store id: 12a5c3dc-f7a4-4026-b75b-5b909bad833c
+Store id: 1bd02d47-55b2-4b03-a9bb-5d7d84778582
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_cached_value(self, instance, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.2298220+00:00`
+- posted_at: `2026-11-09T23:44:51.2053020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 30,
     "symbol": "FieldCacheMixin.set_cached_value"
   },
-  "id": "12a5c3dc-f7a4-4026-b75b-5b909bad833c",
+  "id": "1bd02d47-55b2-4b03-a9bb-5d7d84778582",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.2298220+00:00"
+    "posted_at": "2026-11-09T23:44:51.2053020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ac878a9c-cb59-4b3c-a215-073fb79dd606",
+  "subject_id": "e0339caa-67f0-4efd-8045-b0f2452d0b2f",
   "subject_name": "django/db/models/fields/mixins::FieldCacheMixin.set_cached_value",
   "tags": [
     "entity:method"

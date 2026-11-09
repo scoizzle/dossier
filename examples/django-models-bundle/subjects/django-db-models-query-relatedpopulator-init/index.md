@@ -1,11 +1,11 @@
 # django/db/models/query::RelatedPopulator.__init__
 
-- Subject: django/db/models/query::RelatedPopulator.__init__ (id `2960bcb1-c1a0-4868-850c-808adba905b3`)
+- Subject: django/db/models/query::RelatedPopulator.__init__ (id `705176b8-b68f-4076-9dbf-26a542b3bb26`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

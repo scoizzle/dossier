@@ -1,11 +1,11 @@
 # django/db/models/lookups::UUIDEndsWith
 
-- Subject: django/db/models/lookups::UUIDEndsWith (id `b487eb1d-1383-48f1-85a5-5e9465ebad46`)
+- Subject: django/db/models/lookups::UUIDEndsWith (id `977451fa-5779-4003-995a-c9b1ff2a1c02`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

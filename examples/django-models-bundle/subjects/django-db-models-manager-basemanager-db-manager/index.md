@@ -1,11 +1,11 @@
 # django/db/models/manager::BaseManager.db_manager
 
-- Subject: django/db/models/manager::BaseManager.db_manager (id `04a57d0c-ed6b-47fa-a376-cb4d953cfb2f`)
+- Subject: django/db/models/manager::BaseManager.db_manager (id `8854f0d3-71ac-48f1-b8a9-1e21fb55cbd0`)
 - Kind: method
 - Parent: [django/db/models/manager](../django-db-models-manager/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

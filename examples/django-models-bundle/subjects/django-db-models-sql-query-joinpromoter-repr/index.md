@@ -1,11 +1,11 @@
 # django/db/models/sql/query::JoinPromoter.__repr__
 
-- Subject: django/db/models/sql/query::JoinPromoter.__repr__ (id `eeebc5fb-499c-45a4-b0f7-8842836ec1bc`)
+- Subject: django/db/models/sql/query::JoinPromoter.__repr__ (id `26c5180a-1c44-480a-8d3e-20d86128f943`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

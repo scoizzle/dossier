@@ -1,10 +1,10 @@
 # docs/ref/applications
 
-- Subject: docs/ref/applications (id `f72825e5-72f4-43aa-814d-59f53681fe09`)
+- Subject: docs/ref/applications (id `5caa88ce-d2a8-4a61-952a-c9f94a975fef`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6785 tokens
-- Facts shown: 162 of 163
+- Used: 6806 tokens
+- Facts shown: 163 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -52,6 +52,7 @@
 - [a1746f1c] It may be ``None`` if the application doesn't contain a ``models`` module. Note that the database related signals such as :data:`~django.db.models.signals.pre_migrate` and :data:`~django.db.models.signals.post_migrate` are only emitted for applications that have a ``models`` module.
 - [79547cf0] It must be called explicitly in other cases, for instance in plain Python scripts.
 - [8c872a9b0696ed60] It must be unique across a Django project.
+- [8c872a9b0696ed60-2] It must be unique across a Django project.
 - [3cf2695e] Module containing the models, e.g. ``<module 'django.contrib.admin.models' from 'django/contrib/admin/models.py'>``.
 - [5333fdf3] Raises :exc:`LookupError` if no such application or model exists. Raises :exc:`ValueError` when called with a single argument that doesn't contain exactly one dot.
 - [3c460eb4] Raises :exc:`LookupError` if no such model exists in this application.

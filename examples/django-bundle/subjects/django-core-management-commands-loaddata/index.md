@@ -1,10 +1,10 @@
 # django/core/management/commands/loaddata
 
-- Subject: django/core/management/commands/loaddata (id `43e1f9d3-bfa6-480a-8a91-3c0570db6c90`)
+- Subject: django/core/management/commands/loaddata (id `4eb867d7-feee-4848-8b1b-e602f649a047`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3448 tokens
-- Facts shown: 47 of 47
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 

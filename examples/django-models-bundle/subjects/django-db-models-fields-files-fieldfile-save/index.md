@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile.save
 
-- Subject: django/db/models/fields/files::FieldFile.save (id `fd2c501d-f9dd-4360-95b5-e2a1d700e319`)
+- Subject: django/db/models/fields/files::FieldFile.save (id `2f033681-92ec-4452-bb2f-94bf5aa6b947`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

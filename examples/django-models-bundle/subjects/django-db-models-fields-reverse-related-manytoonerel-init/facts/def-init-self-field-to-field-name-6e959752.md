@@ -1,6 +1,6 @@
 # Fact 6e959752
 
-Store id: 7339e55c-f745-45f3-9689-bcd79ce76d1c
+Store id: 752865c8-0e27-41d0-92eb-b96bf9305839
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, field, to, field_name, related_name=None, related_query_name
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3223230+00:00`
+- posted_at: `2026-11-09T23:44:52.5078640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 266,
     "symbol": "ManyToOneRel.__init__"
   },
-  "id": "7339e55c-f745-45f3-9689-bcd79ce76d1c",
+  "id": "752865c8-0e27-41d0-92eb-b96bf9305839",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3223230+00:00"
+    "posted_at": "2026-11-09T23:44:52.5078640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0ab53ed3-e57a-4f72-ad0e-805c7a387a49",
+  "subject_id": "9b651e1d-742a-4766-8529-c7eb7ae9b926",
   "subject_name": "django/db/models/fields/reverse_related::ManyToOneRel.__init__",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact f29e6fe4
 
-Store id: f7d10853-2e5c-4e6a-9cb8-b20e1735c922
+Store id: 21cd9c2a-dfaf-40fc-b0dc-b54d4f4f77d1
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.2589090+00:00`
+- posted_at: `2026-11-09T23:44:54.1304060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 264,
     "symbol": "Reverse.as_oracle"
   },
-  "id": "f7d10853-2e5c-4e6a-9cb8-b20e1735c922",
+  "id": "21cd9c2a-dfaf-40fc-b0dc-b54d4f4f77d1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.2589090+00:00"
+    "posted_at": "2026-11-09T23:44:54.1304060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "76d1f59a-92ad-4ca8-b7eb-4313296fb267",
+  "subject_id": "d21c8ecb-4278-4e0d-936f-05a3b1b31648",
   "subject_name": "django/db/models/functions/text::Reverse.as_oracle",
   "tags": [
     "entity:method"

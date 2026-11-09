@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.setup_joins
 
-- Subject: django/db/models/sql/query::Query.setup_joins (id `ec09454e-bf5f-4ace-9dfe-1fd314032498`)
+- Subject: django/db/models/sql/query::Query.setup_joins (id `af1adc92-5a3b-44cb-aad0-5c11edea4b52`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

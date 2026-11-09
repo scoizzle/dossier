@@ -1,11 +1,11 @@
 # django/db/models/expressions::When.get_group_by_cols
 
-- Subject: django/db/models/expressions::When.get_group_by_cols (id `af95854d-db18-4d09-bf6f-39552262c2d1`)
+- Subject: django/db/models/expressions::When.get_group_by_cols (id `db9c11d8-1c9e-4c75-9141-d5d192cfdbd4`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

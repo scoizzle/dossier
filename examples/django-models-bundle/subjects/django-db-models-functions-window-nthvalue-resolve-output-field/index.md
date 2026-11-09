@@ -1,11 +1,11 @@
 # django/db/models/functions/window::NthValue._resolve_output_field
 
-- Subject: django/db/models/functions/window::NthValue._resolve_output_field (id `408470f8-51f3-485a-89a4-6bba9304f154`)
+- Subject: django/db/models/functions/window::NthValue._resolve_output_field (id `3da631a8-2efe-46a9-bf53-3cafc7ea6e5f`)
 - Kind: method
 - Parent: [django/db/models/functions/window](../django-db-models-functions-window/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

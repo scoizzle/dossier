@@ -1,6 +1,6 @@
 # Fact fcfe82dc
 
-Store id: ecc2d032-0184-4c17-baad-7de88efc933d
+Store id: e1181fef-fadb-4848-9a14-2bf7abe2ca6b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_postgresql(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1685670+00:00`
+- posted_at: `2026-11-09T23:44:54.0681350+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 88,
     "symbol": "ConcatPair.as_postgresql"
   },
-  "id": "ecc2d032-0184-4c17-baad-7de88efc933d",
+  "id": "e1181fef-fadb-4848-9a14-2bf7abe2ca6b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1685670+00:00"
+    "posted_at": "2026-11-09T23:44:54.0681350+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3cf10167-a764-436a-9eae-5cf8b4fa9b56",
+  "subject_id": "5515d1a5-c1d7-4cc7-8558-5f9a3e5def1a",
   "subject_name": "django/db/models/functions/text::ConcatPair.as_postgresql",
   "tags": [
     "entity:method"

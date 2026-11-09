@@ -1,10 +1,10 @@
 # django/db/models/functions/json
 
-- Subject: django/db/models/functions/json (id `bf16aec9-4dc4-42aa-b468-28bdd8c0e340`)
+- Subject: django/db/models/functions/json (id `6e8e5e6b-f78c-4df5-b688-7da551c5997d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1063 tokens
-- Facts shown: 17 of 18
+- Used: 1108 tokens
+- Facts shown: 18 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,14 +19,15 @@
 - def as_native(self, compiler, connection, *, returning, **extra_context): # PostgreSQL 16+ and Oracle remove SQL NULL values from the array by # default. Adds the NULL ON NULL clause to keep NULL values in the # array, mapping them to JSON null values, which matches the behavior # of SQLite. null_on_null = "NULL ON NULL" if len(self.get_source_expressions()) > 0 else "" [e9b43738]
 - def as_native(self, compiler, connection, *, returning, **extra_context): return self.as_sql( compiler, connection, arg_joiner=self, template=f"%(function)s(%(expressions)s RETURNING {returning})", **extra_context, ) [29f88813]
 - def as_oracle(self, compiler, connection, **extra_context): return self.as_native(compiler, connection, returning="CLOB", **extra_context) [1f352e3f4d87fe5d]
+- def as_oracle(self, compiler, connection, **extra_context): return self.as_native(compiler, connection, returning="CLOB", **extra_context) [1f352e3f4d87fe5d-2]
 - def as_postgresql(self, compiler, connection, **extra_context): # Casting keys to text is only required when using JSONB_BUILD_OBJECT # or when using JSON_OBJECT on PostgreSQL 16+ with server-side # bindings. This is done in all cases for consistency. copy = self.copy() copy.set_source_expressions( [ Cast(expression, TextField()) if index % 2 == 0 else expression for index, expression in enumerate(copy.get_source_expressions()) ] ) [58682c58]
 - def as_postgresql(self, compiler, connection, **extra_context): # Casting source expressions is only required using JSONB_BUILD_ARRAY # or when using JSON_ARRAY on PostgreSQL 16+ with server-side bindings. # This is done in all cases for consistency. casted_obj = self.copy() casted_obj.set_source_expressions( [ ( # Conditional Cast to avoid unnecessary wrapping. expression if isinstance(expression, Cast) else Cast(expression, expression.output_field) ) for expression in casted_obj.get_source_expressions() ] ) [2808012d]
 - def as_sql(self, compiler, connection, **extra_context): if not connection.features.has_json_object_function: raise NotSupportedError( "JSONObject() is not supported on this database backend." ) return super().as_sql(compiler, connection, **extra_context) [0df22af8]
-- def as_sql(self, compiler, connection, **extra_context): if not connection.features.supports_json_field: raise NotSupportedError( "JSONFields are not supported on this database backend." ) return super().as_sql(compiler, connection, **extra_context) [d365bd3a]
+- class JSONArray(Func): function = "JSON_ARRAY" output_field = JSONField() [b9170ae1]
 
 ## All facts
 
+- [d365bd3a] def as_sql(self, compiler, connection, **extra_context): if not connection.features.supports_json_field: raise NotSupportedError( "JSONFields are not supported on this database backend." ) return super().as_sql(compiler, connection, **extra_context)
 - [2b29c57b] def join(self, args): pairs = zip(args[::2], args[1::2], strict=True) # Wrap 'key' in parentheses in case of postgres cast :: syntax. return ", ".join([f"({key}) VALUE {value}" for key, value in pairs])
-- [b9170ae1] class JSONArray(Func): function = "JSON_ARRAY" output_field = JSONField()
 - [3a7683d4] class JSONObject(Func): function = "JSON_OBJECT" output_field = JSONField()
 - [aded3981] from django.db import NotSupportedError from django.db.models.expressions import Func, Value from django.db.models.fields import TextField from django.db.models.fields.json import JSONField from django.db.models.functions import Cast

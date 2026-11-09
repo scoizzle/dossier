@@ -1,6 +1,6 @@
 # Fact fd38a992
 
-Store id: ab5e268b-cf1c-4f52-9c30-de0b92801f48
+Store id: 75460dd4-7c47-428b-a4dd-3c5c9420b675
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_db_comment(self, databases=None, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4322860+00:00`
+- posted_at: `2026-11-09T23:44:49.9781140+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 473,
     "symbol": "Field._check_db_comment"
   },
-  "id": "ab5e268b-cf1c-4f52-9c30-de0b92801f48",
+  "id": "75460dd4-7c47-428b-a4dd-3c5c9420b675",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4322860+00:00"
+    "posted_at": "2026-11-09T23:44:49.9781140+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0463a9fc-e199-4db8-b1ff-a6a5269285d0",
+  "subject_id": "e02315c3-f3fd-465c-9bb6-8b741f77bed5",
   "subject_name": "django/db/models/fields/__init__::Field._check_db_comment",
   "tags": [
     "entity:method"

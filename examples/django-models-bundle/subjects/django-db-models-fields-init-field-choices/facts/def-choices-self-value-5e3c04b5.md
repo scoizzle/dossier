@@ -1,6 +1,6 @@
 # Fact 5e3c04b5
 
-Store id: 5599a461-ea51-4c68-b6ce-74244df8cd1d
+Store id: 93c13f1b-ec68-4f67-922d-01368164d2be
 
 ## Text
 
@@ -20,7 +20,7 @@ def choices(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4452250+00:00`
+- posted_at: `2026-11-09T23:44:49.9878540+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 587,
     "symbol": "Field.choices"
   },
-  "id": "5599a461-ea51-4c68-b6ce-74244df8cd1d",
+  "id": "93c13f1b-ec68-4f67-922d-01368164d2be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4452250+00:00"
+    "posted_at": "2026-11-09T23:44:49.9878540+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0473ca15-7734-4f01-a92e-ba87d571047b",
+  "subject_id": "9be077cb-e493-4f16-9cde-5d3b7b651a12",
   "subject_name": "django/db/models/fields/__init__::Field.choices",
   "tags": [
     "entity:method",

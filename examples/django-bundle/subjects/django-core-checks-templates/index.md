@@ -1,10 +1,10 @@
 # django/core/checks/templates
 
-- Subject: django/core/checks/templates (id `96d1b12d-7ecc-434b-bc35-b3ac345e71ca`)
+- Subject: django/core/checks/templates (id `aec2ae0e-3a84-4cae-b315-f7888b345e9d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 98 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

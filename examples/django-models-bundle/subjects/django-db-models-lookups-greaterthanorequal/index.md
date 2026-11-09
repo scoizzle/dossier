@@ -1,11 +1,11 @@
 # django/db/models/lookups::GreaterThanOrEqual
 
-- Subject: django/db/models/lookups::GreaterThanOrEqual (id `a58f8a2c-155a-406e-bf3b-b3c9916d61a2`)
+- Subject: django/db/models/lookups::GreaterThanOrEqual (id `871985d4-60df-4014-9f93-b3e6ab07ad3b`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

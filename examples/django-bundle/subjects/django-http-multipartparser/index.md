@@ -1,10 +1,10 @@
 # django/http/multipartparser
 
-- Subject: django/http/multipartparser (id `36c7d9e3-233d-499f-8779-fa4b6067d30f`)
+- Subject: django/http/multipartparser (id `d072ceab-4743-48e0-a8d5-185f2a507143`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 6175 tokens
-- Facts shown: 107 of 110
+- Used: 6232 tokens
+- Facts shown: 110 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -85,6 +85,9 @@
 - [99fd7f50] def __init__(self, stream, boundary): self._stream = stream self._boundary = boundary self._done = False # rollback an additional six bytes because the format is like # this: CRLF<boundary>[--CRLF] self._rollback = len(boundary) + 6
 - [49d638e1] def __iter__(self): boundarystream = InterBoundaryIter(self._stream, self._separator) for sub_stream in boundarystream: # Iterate over each part yield parse_boundary_stream(sub_stream, MAX_TOTAL_HEADER_SIZE)
 - [39fa939991912f8b-2] def __iter__(self): return self
+- [39fa939991912f8b-3] def __iter__(self): return self
+- [39fa939991912f8b-4] def __iter__(self): return self
+- [39fa939991912f8b-5] def __iter__(self): return self
 - [3affb12c] def __next__(self): """ Used when the exact number of bytes to read is unimportant.
 - [b90de6d4] def __next__(self): if self._done: raise StopIteration()
 - [213d8a7a] def __next__(self): try: data = self.flo.read(self.chunk_size) except InputStreamExhausted: raise StopIteration() if data: return data else: raise StopIteration()

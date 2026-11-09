@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet._handle_order_with_respect_to
 
-- Subject: django/db/models/query::QuerySet._handle_order_with_respect_to (id `3b82650b-bbe4-40f6-9c36-4f70bf0cdc1f`)
+- Subject: django/db/models/query::QuerySet._handle_order_with_respect_to (id `633141da-e326-46d9-9277-cb5e097f64f4`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

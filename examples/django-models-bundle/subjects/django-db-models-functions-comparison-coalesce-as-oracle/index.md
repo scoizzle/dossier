@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::Coalesce.as_oracle
 
-- Subject: django/db/models/functions/comparison::Coalesce.as_oracle (id `9a822cb0-e5c9-4812-8ca0-b1bbc660dc14`)
+- Subject: django/db/models/functions/comparison::Coalesce.as_oracle (id `31a29645-ffa5-4a30-b529-f3af3a3eb0c4`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

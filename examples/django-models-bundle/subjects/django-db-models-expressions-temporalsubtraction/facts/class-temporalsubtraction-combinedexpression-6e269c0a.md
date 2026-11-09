@@ -1,6 +1,6 @@
 # Fact 6e269c0a
 
-Store id: 69b6d96c-b151-4aca-8d5f-ea1f0c43c16c
+Store id: 641aaa49-a8d3-45fe-a9de-a2869203782a
 
 ## Text
 
@@ -20,7 +20,7 @@ class TemporalSubtraction(CombinedExpression)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8254450+00:00`
+- posted_at: `2026-11-09T23:44:49.4547240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 866,
     "symbol": "TemporalSubtraction"
   },
-  "id": "69b6d96c-b151-4aca-8d5f-ea1f0c43c16c",
+  "id": "641aaa49-a8d3-45fe-a9de-a2869203782a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8254450+00:00"
+    "posted_at": "2026-11-09T23:44:49.4547240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "2a08169b-51de-45cd-8ee6-67f355aa6f44",
+  "subject_id": "8cba1a18-d4e7-4562-99bf-b09a40606344",
   "subject_name": "django/db/models/expressions::TemporalSubtraction",
   "tags": [
     "entity:class"

@@ -1,11 +1,11 @@
 # django/db/models/expressions::OrderBy.get_group_by_cols
 
-- Subject: django/db/models/expressions::OrderBy.get_group_by_cols (id `96b9f7d4-3a31-4bf6-bccc-d490b8ba0892`)
+- Subject: django/db/models/expressions::OrderBy.get_group_by_cols (id `a1b57540-fe83-4593-8f78-506d9f202d85`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

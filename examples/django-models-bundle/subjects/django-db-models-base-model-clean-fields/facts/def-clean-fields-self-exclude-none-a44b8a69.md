@@ -1,6 +1,6 @@
 # Fact a44b8a69
 
-Store id: a96d79bc-6120-4451-aa05-c0c5d2cb03f2
+Store id: cd2193a9-a66b-4b46-b9a5-0c244e4f5cad
 
 ## Text
 
@@ -20,7 +20,7 @@ def clean_fields(self, exclude=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7594180+00:00`
+- posted_at: `2026-11-09T23:44:48.5452710+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1747,
     "symbol": "Model.clean_fields"
   },
-  "id": "a96d79bc-6120-4451-aa05-c0c5d2cb03f2",
+  "id": "cd2193a9-a66b-4b46-b9a5-0c244e4f5cad",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7594180+00:00"
+    "posted_at": "2026-11-09T23:44:48.5452710+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f97664b8-5749-4055-b5fd-fd9eaee7ac78",
+  "subject_id": "21d3cc9a-bdbe-4835-9fc7-810c16005a7a",
   "subject_name": "django/db/models/base::Model.clean_fields",
   "tags": [
     "entity:method"

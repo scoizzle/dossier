@@ -128,3 +128,13 @@ dos publish --out "${OUT#"$ROOT"/}" --depth full --budget 1200 --facts "$facts_m
 echo "bundle_files=$(find "$OUT" -type f | wc -l | tr -d ' ')"
 echo "bundle_bytes=$(find "$OUT" -type f -exec cat {} + | wc -c | tr -d ' ')"
 echo "bundle_index_bytes=$(wc -c < "$OUT/INDEX.md" | tr -d ' ')"
+# Coverage: every subject page's "Facts shown" numerator, summed. Complete mode lists every fact,
+# so this should equal facts_total; anything less means a page held facts back.
+shown="$(grep -h '^- Facts shown: ' "$OUT"/subjects/*/index.md | sed -E 's/^- Facts shown: ([0-9,]+).*/\1/' | tr -d ',' | awk '{s += $1} END {print s + 0}')"
+echo "facts_shown=$shown"
+echo "facts_coverage=$shown of $total"
+# Largest subject page (bytes and chars/4 token estimate) is the worst single read in the bundle.
+largest="$(find "$OUT/subjects" -name index.md -type f -exec wc -c {} + | grep -v ' total$' | sort -n | tail -1)"
+echo "largest_subject_page_bytes=$(echo "$largest" | awk '{print $1}')"
+echo "largest_subject_page_tokens=$(echo "$largest" | awk '{printf "%d", ($1 + 3) / 4}')"
+echo "largest_subject_page_path=$(echo "$largest" | awk '{print $2}')"

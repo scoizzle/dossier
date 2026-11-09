@@ -1,6 +1,6 @@
 # Fact 0dc66e68
 
-Store id: e57e06a5-d81c-4f32-842f-7520ce6649f4
+Store id: 9f02605a-b2ee-41a1-85d0-bf9b79c16e83
 
 ## Text
 
@@ -20,7 +20,7 @@ def copy(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9628710+00:00`
+- posted_at: `2026-11-09T23:44:49.6289310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1756,
     "symbol": "Case.copy"
   },
-  "id": "e57e06a5-d81c-4f32-842f-7520ce6649f4",
+  "id": "9f02605a-b2ee-41a1-85d0-bf9b79c16e83",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9628710+00:00"
+    "posted_at": "2026-11-09T23:44:49.6289310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7ceef943-14b4-41f9-8d6e-c558c38adbfd",
+  "subject_id": "a2f2899f-431f-45ec-82ee-ab6d92a36116",
   "subject_name": "django/db/models/expressions::Case.copy",
   "tags": [
     "entity:method"

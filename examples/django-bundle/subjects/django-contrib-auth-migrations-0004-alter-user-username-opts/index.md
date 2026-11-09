@@ -1,10 +1,10 @@
 # django/contrib/auth/migrations/0004_alter_user_username_opts
 
-- Subject: django/contrib/auth/migrations/0004_alter_user_username_opts (id `4ce77a49-3257-49b9-b977-56d763a3afbd`)
+- Subject: django/contrib/auth/migrations/0004_alter_user_username_opts (id `af7e0986-2c7c-4b8c-8cde-5aebe2b8bedf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 191 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/functions/json::JSONArray.as_sql
 
-- Subject: django/db/models/functions/json::JSONArray.as_sql (id `a6ced4ea-e89d-4caa-8b40-f79dfcec6753`)
+- Subject: django/db/models/functions/json::JSONArray.as_sql (id `a291fa88-a981-4415-bf6b-20cb5c302e7b`)
 - Kind: method
 - Parent: [django/db/models/functions/json](../django-db-models-functions-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

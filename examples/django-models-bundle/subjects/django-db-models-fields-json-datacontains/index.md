@@ -1,11 +1,11 @@
 # django/db/models/fields/json::DataContains
 
-- Subject: django/db/models/fields/json::DataContains (id `7b0bc489-c840-45fa-8cb0-3cac4764a7b7`)
+- Subject: django/db/models/fields/json::DataContains (id `36ebada6-dfc3-4dff-bd3e-20ce32a0b29e`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::TimeField.value_to_string
 
-- Subject: django/db/models/fields/__init__::TimeField.value_to_string (id `980a0d82-6b5d-4e25-826d-54d8ee8a6942`)
+- Subject: django/db/models/fields/__init__::TimeField.value_to_string (id `d49ac9f2-1629-43d6-9442-c5543c91e96d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

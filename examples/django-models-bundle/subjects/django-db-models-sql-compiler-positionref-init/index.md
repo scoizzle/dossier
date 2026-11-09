@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::PositionRef.__init__
 
-- Subject: django/db/models/sql/compiler::PositionRef.__init__ (id `d6cf566d-7102-465e-8412-4f4c13f59e0a`)
+- Subject: django/db/models/sql/compiler::PositionRef.__init__ (id `a424d868-796b-407a-bb51-cbb68ce0a903`)
 - Kind: method
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

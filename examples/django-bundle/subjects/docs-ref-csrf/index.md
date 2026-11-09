@@ -1,10 +1,10 @@
 # docs/ref/csrf
 
-- Subject: docs/ref/csrf (id `23976bfa-3f8a-47dd-b0da-f884f462e5ff`)
+- Subject: docs/ref/csrf (id `88e1ab62-41b5-438e-b568-42162feaa04c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 3116 tokens
-- Facts shown: 61 of 61
+- Facts shown: 61 facts
 - Conflicts: 0
 - Gaps: 0
 

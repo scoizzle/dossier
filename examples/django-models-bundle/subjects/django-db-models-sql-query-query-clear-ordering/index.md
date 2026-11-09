@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.clear_ordering
 
-- Subject: django/db/models/sql/query::Query.clear_ordering (id `c720569a-4bd4-406f-a16a-ccf7537f0e75`)
+- Subject: django/db/models/sql/query::Query.clear_ordering (id `6978ea6e-94aa-4fe7-be54-1fc691c92c83`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

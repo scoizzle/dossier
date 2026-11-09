@@ -1,6 +1,6 @@
 # Fact dbc8aa51
 
-Store id: 5889baee-5d69-4124-8a0e-c04b99c82fe1
+Store id: e7e80288-033d-47d6-a4e3-d68f902a5bc6
 
 ## Text
 
@@ -20,7 +20,7 @@ class ImageField(FileField)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4314690+00:00`
+- posted_at: `2026-11-09T23:44:50.6757700+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 420,
     "symbol": "ImageField"
   },
-  "id": "5889baee-5d69-4124-8a0e-c04b99c82fe1",
+  "id": "e7e80288-033d-47d6-a4e3-d68f902a5bc6",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4314690+00:00"
+    "posted_at": "2026-11-09T23:44:50.6757700+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f61b9ac5-48b4-491d-a661-9d8da6a17d03",
+  "subject_id": "ae1f9363-c9f9-491d-8c13-22fcb734c145",
   "subject_name": "django/db/models/fields/files::ImageField",
   "tags": [
     "entity:class"

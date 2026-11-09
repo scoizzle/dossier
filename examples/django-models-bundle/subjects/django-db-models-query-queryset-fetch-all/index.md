@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet._fetch_all
 
-- Subject: django/db/models/query::QuerySet._fetch_all (id `07b5330b-a90c-457c-a308-13414c07df36`)
+- Subject: django/db/models/query::QuerySet._fetch_all (id `a29d639f-4ae9-45bc-8b75-b4488051ae08`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

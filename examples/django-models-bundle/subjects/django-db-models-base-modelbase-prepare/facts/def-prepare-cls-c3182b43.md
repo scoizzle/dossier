@@ -1,6 +1,6 @@
 # Fact c3182b43
 
-Store id: 6903433b-a23b-4f59-ae32-7acdb59adbc7
+Store id: dfb8a016-dd60-40e6-9287-3711ead771ee
 
 ## Text
 
@@ -20,7 +20,7 @@ def _prepare(cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7271590+00:00`
+- posted_at: `2026-11-09T23:44:48.5209250+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 398,
     "symbol": "ModelBase._prepare"
   },
-  "id": "6903433b-a23b-4f59-ae32-7acdb59adbc7",
+  "id": "dfb8a016-dd60-40e6-9287-3711ead771ee",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7271590+00:00"
+    "posted_at": "2026-11-09T23:44:48.5209250+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e18b8e7b-df16-420e-959f-eb2e9e441569",
+  "subject_id": "9cb62967-8694-4747-b364-256732b340a9",
   "subject_name": "django/db/models/base::ModelBase._prepare",
   "tags": [
     "entity:method"

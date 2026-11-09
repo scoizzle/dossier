@@ -1,10 +1,10 @@
 # docs/ref/contrib/humanize
 
-- Subject: docs/ref/contrib/humanize (id `12658a3f-227f-4e16-93c8-a32db6ae7a64`)
+- Subject: docs/ref/contrib/humanize (id `4342d6ae-a73e-473b-b999-db0644ff19f4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1544 tokens
-- Facts shown: 41 of 42
+- Used: 1578 tokens
+- Facts shown: 42 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,12 +27,13 @@
 - .. templatefilter:: naturaltime [b989c512]
 - .. templatefilter:: ordinal [a34ddf16]
 - :doc:`/topics/i18n/formatting` will be respected if enabled, e.g. with the ``'de'`` language: [bef8f040cb0ee6d7]
+- :doc:`/topics/i18n/formatting` will be respected if enabled, e.g. with the ``'de'`` language: [bef8f040cb0ee6d7-2]
 - =========================== ``django.contrib.humanize`` =========================== [fbf49b71]
-- A set of Django template filters useful for adding a "human touch" to data. [dde959badf9b03bb]
 - Converts an integer to its ordinal as a string. [cc7ac622]
 
 ## All facts
 
+- [dde959badf9b03bb] A set of Django template filters useful for adding a "human touch" to data.
 - [fe6a8a3f] Converts a large integer (or a string representation of an integer) to a friendly text representation. Translates ``1.0`` as a singular phrase and all other numeric values as plural, this may be incorrect for some languages. Works best for numbers over 1 million.
 - [77aa403c] Converts an integer or float (or a string representation of either) to a string containing commas every three digits.
 - [87c8ee5a] Examples (when 'now' is 17 Feb 2007 16:30:00):

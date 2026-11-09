@@ -1,10 +1,10 @@
 # django/core/files/storage/filesystem
 
-- Subject: django/core/files/storage/filesystem (id `b039e5f9-a7c5-4aa3-a787-2ced040052e5`)
+- Subject: django/core/files/storage/filesystem (id `aa4c1824-c24e-457a-ad88-c96840aeae85`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1878 tokens
-- Facts shown: 30 of 31
+- Used: 1925 tokens
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,14 +19,15 @@
 - @cached_property def base_location(self): return self._value_or_setting(self._location, settings.MEDIA_ROOT) [7a31e0fac4ec8b62]
 - @cached_property def base_url(self): if self._base_url is not None and not self._base_url.endswith("/"): self._base_url += "/" return self._value_or_setting(self._base_url, settings.MEDIA_URL) [b2e1396457fbae67]
 - @cached_property def directory_permissions_mode(self): return self._value_or_setting( self._directory_permissions_mode, settings.FILE_UPLOAD_DIRECTORY_PERMISSIONS ) [f8d33481c24a6fb0]
+- @cached_property def file_permissions_mode(self): return self._value_or_setting( self._file_permissions_mode, settings.FILE_UPLOAD_PERMISSIONS ) [4094fbd72b565b94]
 - @cached_property def location(self): return os.path.abspath(self.base_location) [09859160e487624d]
-- def _datetime_from_timestamp(self, ts): """ If timezone support is enabled, make an aware datetime object in UTC; otherwise make a naive one in the local timezone. """ tz = UTC if settings.USE_TZ else None return datetime.fromtimestamp(ts, tz=tz) [7c83ae20]
+- def _open(self, name, mode="rb"): return File(open(self.path(name), mode)) [eb5a06b0]
 
 ## All facts
 
 - [2e4e54cc] def __init__( self, location=None, base_url=None, file_permissions_mode=None, directory_permissions_mode=None, allow_overwrite=False, ): self._location = location self._base_url = base_url self._file_permissions_mode = file_permissions_mode self._directory_permissions_mode = directory_permissions_mode self._allow_overwrite = allow_overwrite setting_changed.connect(self._clear_cached_properties)
+- [7c83ae20] def _datetime_from_timestamp(self, ts): """ If timezone support is enabled, make an aware datetime object in UTC; otherwise make a naive one in the local timezone. """ tz = UTC if settings.USE_TZ else None return datetime.fromtimestamp(ts, tz=tz)
 - [9a83e9b4] def _ensure_location_group_id(self, full_path): if os.name == "posix": file_gid = os.stat(full_path).st_gid location_gid = os.stat(self.location).st_gid if file_gid != location_gid: try: os.chown(full_path, uid=-1, gid=location_gid) except PermissionError: pass
-- [eb5a06b0] def _open(self, name, mode="rb"): return File(open(self.path(name), mode))
 - [03b72c37] def _save(self, name, content): full_path = self.path(name)
 - [5628fb89] def delete(self, name): if not name: raise ValueError("The name must be given to delete().") name = self.path(name) # If the file or directory exists, delete it from the filesystem. try: if os.path.isdir(name): os.rmdir(name) else: os.remove(name) except FileNotFoundError: # FileNotFoundError is raised if the file or directory was removed # concurrently. pass
 - [09e8e104] def exists(self, name): return os.path.lexists(self.path(name))

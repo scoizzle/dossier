@@ -1,10 +1,10 @@
 # django/core/mail/backends/smtp
 
-- Subject: django/core/mail/backends/smtp (id `05edae64-49de-4159-b1c0-2545e55e6641`)
+- Subject: django/core/mail/backends/smtp (id `726e9299-4ce0-42a6-9f6e-4bbf820cf82a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2133 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

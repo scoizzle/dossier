@@ -1,6 +1,6 @@
 # Fact 87f124b8
 
-Store id: 06c4e69d-dd2a-492f-999d-4046a3fc515f
+Store id: 40792939-f470-4032-9d10-f49e664adb9c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_default(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.7665320+00:00`
+- posted_at: `2026-11-09T23:44:51.5889280+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1266,
     "symbol": "ForeignKey.get_default"
   },
-  "id": "06c4e69d-dd2a-492f-999d-4046a3fc515f",
+  "id": "40792939-f470-4032-9d10-f49e664adb9c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.7665320+00:00"
+    "posted_at": "2026-11-09T23:44:51.5889280+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "389d46a6-9888-413d-8450-218759baaf4b",
+  "subject_id": "bbccc520-60d0-4538-938c-25141539d4db",
   "subject_name": "django/db/models/fields/related::ForeignKey.get_default",
   "tags": [
     "entity:method"

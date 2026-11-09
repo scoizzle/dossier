@@ -1,6 +1,6 @@
 # Fact 59a511e6
 
-Store id: 0cdb7dc2-ad01-44d1-9965-c96989bd8b10
+Store id: 0966af5d-e89e-421f-bb5d-7207a59cede4
 
 ## Text
 
@@ -20,7 +20,7 @@ class Range(FieldGetDbPrepValueIterableMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3798160+00:00`
+- posted_at: `2026-11-09T23:44:55.0362690+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 657,
     "symbol": "Range"
   },
-  "id": "0cdb7dc2-ad01-44d1-9965-c96989bd8b10",
+  "id": "0966af5d-e89e-421f-bb5d-7207a59cede4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3798160+00:00"
+    "posted_at": "2026-11-09T23:44:55.0362690+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a486284c-ca40-47ba-89d5-abf9701a79c8",
+  "subject_id": "d53f6052-1e91-410e-82fe-50727bec8b0d",
   "subject_name": "django/db/models/lookups::Range",
   "tags": [
     "entity:class",

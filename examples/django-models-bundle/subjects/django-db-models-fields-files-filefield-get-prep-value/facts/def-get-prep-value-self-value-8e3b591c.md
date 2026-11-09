@@ -1,6 +1,6 @@
 # Fact 8e3b591c
 
-Store id: e348a06d-54bf-4697-ba2f-35e52d88e557
+Store id: 571f914a-a4be-4306-8357-ca3348db5da1
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4023080+00:00`
+- posted_at: `2026-11-09T23:44:50.6595950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 320,
     "symbol": "FileField.get_prep_value"
   },
-  "id": "e348a06d-54bf-4697-ba2f-35e52d88e557",
+  "id": "571f914a-a4be-4306-8357-ca3348db5da1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4023080+00:00"
+    "posted_at": "2026-11-09T23:44:50.6595950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "352296e2-fdc8-4e9f-bd09-6b00e7ea7e68",
+  "subject_id": "25bfcba9-c3b9-4da5-8171-3701b4a27df2",
   "subject_name": "django/db/models/fields/files::FileField.get_prep_value",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::SmallAutoField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::SmallAutoField.get_internal_type (id `59672894-acf5-441b-82a0-453f73b2bcca`)
+- Subject: django/db/models/fields/__init__::SmallAutoField.get_internal_type (id `61d77d83-f39b-4040-94a0-cf636b5eff80`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

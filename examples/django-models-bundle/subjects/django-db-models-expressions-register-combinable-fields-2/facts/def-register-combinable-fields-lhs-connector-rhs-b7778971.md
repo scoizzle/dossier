@@ -1,6 +1,6 @@
 # Fact b7778971
 
-Store id: 105af16e-ce4b-4ae6-bcec-dd7522ddb7ee
+Store id: 9915fcf8-82c3-4c3a-823a-eae9bb37e44b
 
 ## Text
 
@@ -20,7 +20,7 @@ def register_combinable_fields(lhs, connector, rhs, result)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8049330+00:00`
+- posted_at: `2026-11-09T23:44:49.4289100+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 696,
     "symbol": "register_combinable_fields"
   },
-  "id": "105af16e-ce4b-4ae6-bcec-dd7522ddb7ee",
+  "id": "9915fcf8-82c3-4c3a-823a-eae9bb37e44b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8049330+00:00"
+    "posted_at": "2026-11-09T23:44:49.4289100+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6120bcc0-25d6-46ee-b84e-cadc3ee411d6",
+  "subject_id": "9fa6fe62-cfa4-49d4-8394-4b7c8a958cb3",
   "subject_name": "django/db/models/expressions::register_combinable_fields",
   "tags": [
     "entity:function"

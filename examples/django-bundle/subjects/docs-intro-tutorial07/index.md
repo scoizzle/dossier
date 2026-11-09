@@ -1,10 +1,10 @@
 # docs/intro/tutorial07
 
-- Subject: docs/intro/tutorial07 (id `d0b630dc-c991-429f-b192-3436c2762b6f`)
+- Subject: docs/intro/tutorial07 (id `7ddc0a81-87ef-41b3-8022-f4f7fbfb036f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4824 tokens
-- Facts shown: 103 of 117
+- Used: 5126 tokens
+- Facts shown: 117 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -18,6 +18,8 @@
 - Just like the static files, we *could* have all our templates together, in one big templates directory, and it would work perfectly well. However, templates that belong to a particular application should be placed in that application's template directory (e.g. ``polls/templates``) rather than the project's (``templates``). We'll discuss in more detail in the :doc:`reusable apps tutorial </intro/reusable-apps>` *why* we do this. [3fb1ede1]
 - TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "DIRS": [BASE_DIR / "templates"], "APP_DIRS": True, "OPTIONS": { "context_processors": [ "django.template.context_processors.request", "django.contrib.auth.context_processors.auth", "django.contrib.messages.context_processors.messages", ], }, }, ] [f8a8c46a]
 - admin.site.register(Question, QuestionAdmin) [ed68076a1c9d4412]
+- admin.site.register(Question, QuestionAdmin) [ed68076a1c9d4412-2]
+- admin.site.register(Question, QuestionAdmin) [ed68076a1c9d4412-3]
 - class ChoiceInline(admin.StackedInline): model = Choice extra = 3 [4690fd46]
 - class ChoiceInline(admin.TabularInline): ... [11c0100b]
 - class Question(models.Model): # ... @admin.display( boolean=True, ordering="pub_date", description="Published recently?", ) def was_published_recently(self): now = timezone.now() return now - datetime.timedelta(days=1) <= self.pub_date <= now [4284aaad]
@@ -27,22 +29,34 @@
 - class QuestionAdmin(admin.ModelAdmin): fieldsets = [ (None, {"fields": ["question_text"]}), ("Date information", {"fields": ["pub_date"], "classes": ["collapse"]}), ] inlines = [ChoiceInline] [107d0487]
 - class QuestionAdmin(admin.ModelAdmin): fieldsets = [ (None, {"fields": ["question_text"]}), ("Date information", {"fields": ["pub_date"]}), ] [6d7f0f50]
 - from .models import Choice, Question [5fac61bb1ff3fe06-3]
+- from .models import Choice, Question [5fac61bb1ff3fe06-4]
 - from .models import Question [df692aec3f5cbbed-8]
+- from .models import Question [df692aec3f5cbbed-9]
 - from django.contrib import admin [13fbe7fc2a5a9c75-3]
-- list_filter = ["pub_date"] [491d2dc1]
-- search_fields = ["question_text"] [05f14916]
-- {% block branding %} <div id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></div> {% if user.is_anonymous %} {% include "admin/color_theme_toggle.html" %} {% endif %} {% endblock %} [cffab59e]
-- .. _ref-customizing-your-projects-templates: [037773a9]
-- .. admonition:: Organizing templates [15d0d005]
+- from django.contrib import admin [13fbe7fc2a5a9c75-4]
+- from django.contrib import admin [13fbe7fc2a5a9c75-5]
+- from django.contrib import admin [13fbe7fc2a5a9c75-6]
 
 ## All facts
 
+- [13fbe7fc2a5a9c75-7] from django.contrib import admin
+- [491d2dc1] list_filter = ["pub_date"]
+- [05f14916] search_fields = ["question_text"]
+- [cffab59e] {% block branding %} <div id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></div> {% if user.is_anonymous %} {% include "admin/color_theme_toggle.html" %} {% endif %} {% endblock %}
 - [d20d6183] The following :class:`~django.contrib.admin.ModelAdmin` options allow further customization of change lists: :attr:`~django.contrib.admin.ModelAdmin.list_per_page`, :attr:`~django.contrib.admin.ModelAdmin.search_fields`, :attr:`~django.contrib.admin.ModelAdmin.date_hierarchy`, and :attr:`~django.contrib.admin.ModelAdmin.list_display`.
+- [037773a9] .. _ref-customizing-your-projects-templates:
+- [15d0d005] .. admonition:: Organizing templates
 - [bc5c887c] .. admonition:: Where are the Django source files?
 - [dbb2ef17dd903b2b-8] .. admonition:: Where to get help:
 - [685d15dfb6eb2285-44] .. code-block:: html+django
 - [bf67fa15468f979f-2] .. code-block:: python :caption: ``mysite/settings.py``
 - [20257edb57d397a8-2] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-3] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-4] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-5] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-6] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-7] .. code-block:: python :caption: ``polls/admin.py``
+- [20257edb57d397a8-8] .. code-block:: python :caption: ``polls/admin.py``
 - [ce20b11c82955ef6-5] .. code-block:: python :caption: ``polls/models.py``
 - [9c127d039bb0d767-2] .. image:: _images/admin04t.png :alt: Polls change list page
 - [6699141e] .. image:: _images/admin07.png :alt: Fields have been reordered

@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/base/adapter
 
-- Subject: django/contrib/gis/db/backends/base/adapter (id `004747ca-fdf3-4b31-a1bf-45ab1d2aa21d`)
+- Subject: django/contrib/gis/db/backends/base/adapter (id `3dd0969a-7150-464a-80b2-3a94ffd3f520`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 177 tokens
-- Facts shown: 6 of 6
+- Facts shown: 6 facts
 - Conflicts: 0
 - Gaps: 0
 

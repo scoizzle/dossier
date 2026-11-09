@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/features
 
-- Subject: django/db/backends/postgresql/features (id `d9e8dd9c-ef21-4ca5-b9e7-89011819cbee`)
+- Subject: django/db/backends/postgresql/features (id `595950ab-8f15-4a4d-934b-45c3d9926ab3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1532 tokens
-- Facts shown: 14 of 15
+- Used: 1564 tokens
+- Facts shown: 15 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -19,6 +19,7 @@
 - @cached_property def max_query_params(self): if self.uses_server_side_binding: return 2**16 - 1 return None [9e837703]
 - @cached_property def prohibits_null_characters_in_text_exception(self): if is_psycopg3: return DataError, "PostgreSQL text fields cannot contain NUL (0x00) bytes" else: return ValueError, "A string literal cannot contain NUL (0x00) characters." [823bb2fc]
 - @cached_property def supports_uuid7_function(self): return self.is_postgresql_18 [cbc8dd58]
+- @cached_property def supports_uuid7_function_shift(self): return self.is_postgresql_18 [b4a21f39]
 - @cached_property def uses_server_side_binding(self): options = self.connection.settings_dict["OPTIONS"] return is_psycopg3 and options.get("server_side_binding") is True [2926e72a]
 - supports_unlimited_charfield = True supports_any_value = property(operator.attrgetter("is_postgresql_16")) supports_virtual_generated_columns = property( operator.attrgetter("is_postgresql_18") ) supports_uuid4_function_in_default = property( operator.attrgetter("supports_uuid4_function") ) [4f79a220]
 - import operator [375f25d0b2ee635c-3]

@@ -1,6 +1,6 @@
 # Fact 2e13ad43
 
-Store id: dd84c9c1-f4d9-4e20-9bf8-dbf760e81781
+Store id: 87fbe3ae-db30-4e32-ab0b-25b51e88031a
 
 ## Text
 
@@ -20,7 +20,7 @@ def _get_default_pk_class(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9193000+00:00`
+- posted_at: `2026-11-09T23:44:55.4828940+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 261,
     "symbol": "Options._get_default_pk_class"
   },
-  "id": "dd84c9c1-f4d9-4e20-9bf8-dbf760e81781",
+  "id": "87fbe3ae-db30-4e32-ab0b-25b51e88031a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9193000+00:00"
+    "posted_at": "2026-11-09T23:44:55.4828940+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "78275694-dc18-4bff-a9c5-0c7972207336",
+  "subject_id": "47cc5032-4cfc-4ca5-9c39-0692cf32374d",
   "subject_name": "django/db/models/options::Options._get_default_pk_class",
   "tags": [
     "entity:method"

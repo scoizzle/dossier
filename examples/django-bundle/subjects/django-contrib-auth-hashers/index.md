@@ -1,10 +1,10 @@
 # django/contrib/auth/hashers
 
-- Subject: django/contrib/auth/hashers (id `3cbc1654-6cdc-4e91-a4dc-10c7b743ff53`)
+- Subject: django/contrib/auth/hashers (id `d384851d-66cb-4348-9d94-2a6849e63632`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5748 tokens
-- Facts shown: 94 of 97
+- Used: 5914 tokens
+- Facts shown: 97 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,7 @@
 
 - [0b92d468] Same as encode() but generate a new random salt. If password is None then return a concatenation of UNUSABLE_PASSWORD_PREFIX and a random string, which disallows logins. Additional random string reduces chances of gaining access to staff or superuser accounts. See ticket #20079 for more info. """ if password is None: return UNUSABLE_PASSWORD_PREFIX + get_random_string( UNUSABLE_PASSWORD_SUFFIX_LENGTH ) if not isinstance(password, (bytes, str)): raise TypeError( "Password must be a string or bytes, got %s." % type(password).__qualname__ ) hasher = get_hasher(hasher) salt = salt or hasher.salt() return hasher.encode(password, salt)
 - [c3f1613a] This is considered by many to be the most secure algorithm but you must first install the bcrypt library. Please be warned that this library depends on native C code and might cause portability issues.
+- [5f431924] This is considered by many to be the most secure algorithm but you must first install the bcrypt library. Please be warned that this library depends on native C code and might cause portability issues. """
 - [370df8d3] This is the winner of the Password Hashing Competition 2013-2015 (https://password-hashing.net). It requires the argon2-cffi library which depends on native C code and might cause portability issues. """
 - [956ef050] When creating your own hasher, you need to override algorithm, verify(), encode() and safe_summary().
 - [af36f246] algorithm = "argon2" library = "argon2"
@@ -53,6 +54,7 @@
 - [b405e5ac] def encode(self, password, salt, n=None, r=None, p=None): self._check_encode_args(password, salt) n = n or self.work_factor r = r or self.block_size p = p or self.parallelism hash_ = hashlib.scrypt( password=force_bytes(password), salt=force_bytes(salt), n=n, r=r, p=p, maxmem=self.maxmem, dklen=64, ) hash_ = base64.b64encode(hash_).decode("ascii").strip() return "%s$%d$%s$%d$%d$%s" % (self.algorithm, n, force_str(salt), r, p, hash_)
 - [01151c76] def harden_runtime(self, password, encoded): """ Bridge the runtime gap between the work factor supplied in `encoded` and the work factor suggested by this hasher.
 - [501fae13] def harden_runtime(self, password, encoded): # The runtime for Argon2 is too complicated to implement a sensible # hardening algorithm. pass
+- [cd425906] def harden_runtime(self, password, encoded): # The runtime for Scrypt is too complicated to implement a sensible # hardening algorithm. pass
 - [823fc936] def harden_runtime(self, password, encoded): _, data = encoded.split("$", 1) salt = data[:29] # Length of the salt in bcrypt. rounds = data.split("$")[2] # work factor is logarithmic, adding one doubles the load. diff = 2 ** (self.rounds - int(rounds)) - 1 while diff > 0: self.encode(password, salt.encode("ascii")) diff -= 1
 - [0a0875c9] def harden_runtime(self, password, encoded): decoded = self.decode(encoded) extra_iterations = self.iterations - decoded["iterations"] if extra_iterations > 0: self.encode(password, decoded["salt"], extra_iterations)
 - [69d8c6b0] def harden_runtime(self, password, encoded): pass
@@ -76,6 +78,7 @@
 - [62acb7be] def verify(self, password, encoded): argon2 = self._load_library() algorithm, rest = encoded.split("$", 1) assert algorithm == self.algorithm try: return argon2.PasswordHasher().verify("$" + rest, password) except argon2.exceptions.VerificationError: return False
 - [8e0737fe] def verify(self, password, encoded): decoded = self.decode(encoded) encoded_2 = self.encode( password, decoded["salt"], decoded["work_factor"], decoded["block_size"], decoded["parallelism"], ) return constant_time_compare(encoded, encoded_2)
 - [938d1a3b] def verify(self, password, encoded): decoded = self.decode(encoded) encoded_2 = self.encode(password, decoded["salt"]) return constant_time_compare(encoded, encoded_2)
+- [cee7664a] def verify(self, password, encoded): decoded = self.decode(encoded) encoded_2 = self.encode(password, decoded["salt"], decoded["iterations"]) return constant_time_compare(encoded, encoded_2)
 - [19852325] elif algorithm == "default": return get_hashers()[0]
 - [23a6b90a] else: hashers = get_hashers_by_algorithm() try: return hashers[algorithm] except KeyError: raise ValueError( "Unknown password hashing algorithm '%s'. " "Did you specify it in the PASSWORD_HASHERS " "setting?" % algorithm )
 - [e369c85e] hasher_changed = hasher.algorithm != preferred.algorithm must_update = hasher_changed or preferred.must_update(encoded) is_correct = hasher.verify(password, encoded)

@@ -1,6 +1,6 @@
 # Fact 95fbb408
 
-Store id: df78a5e7-3453-41ea-9327-739881445ca5
+Store id: bfb0e96a-9094-4d24-87ab-b403c32da9b0
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TruncWeek
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.3094010+00:00`
+- posted_at: `2026-11-09T23:44:53.4202890+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "df78a5e7-3453-41ea-9327-739881445ca5",
+  "id": "bfb0e96a-9094-4d24-87ab-b403c32da9b0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.3094010+00:00"
+    "posted_at": "2026-11-09T23:44:53.4202890+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TruncWeek"
       },
       "rel": "contains",
-      "target": "17816aae-c297-4b0f-a2fe-5365dcfabc39"
+      "target": "140643a9-c1f2-49de-b259-b530bc1fc202"
     }
   ],
   "status": "live",
-  "subject_id": "f1548d19-5365-487c-8902-8045f2b05c2e",
+  "subject_id": "5ba59e7e-9eff-4cf9-9a39-0dbc240be1ad",
   "subject_name": "django/db/models/functions/datetime",
   "tags": [
     "entity:class"

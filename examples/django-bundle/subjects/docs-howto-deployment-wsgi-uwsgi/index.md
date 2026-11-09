@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/uwsgi
 
-- Subject: docs/howto/deployment/wsgi/uwsgi (id `fe674188-40b4-4582-8825-da6e02e0e30c`)
+- Subject: docs/howto/deployment/wsgi/uwsgi (id `96a2df1b-fd03-4bed-9a01-035c213c60c4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1361 tokens
-- Facts shown: 35 of 35
+- Facts shown: 35 facts
 - Conflicts: 0
 - Gaps: 0
 

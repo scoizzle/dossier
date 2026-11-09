@@ -1,6 +1,6 @@
 # Fact a5a4a8a8
 
-Store id: 4fb4ffd3-513c-4e6a-8d90-0bcc2ae6b69e
+Store id: 6e403537-2018-4f29-861d-08e4854a0c7e
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_order_by(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7133270+00:00`
+- posted_at: `2026-11-09T23:44:57.4644000+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 498,
     "symbol": "SQLCompiler.get_order_by"
   },
-  "id": "4fb4ffd3-513c-4e6a-8d90-0bcc2ae6b69e",
+  "id": "6e403537-2018-4f29-861d-08e4854a0c7e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7133270+00:00"
+    "posted_at": "2026-11-09T23:44:57.4644000+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "41224297-893e-496b-a493-e13094b41200",
+  "subject_id": "8d96a181-7fd1-46d3-8df5-4f7fcfac0f6f",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_order_by",
   "tags": [
     "entity:method"

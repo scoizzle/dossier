@@ -1,6 +1,6 @@
 # Fact 4d155bbc
 
-Store id: 46df3854-1770-49b0-80de-b26bf6f5fca7
+Store id: 9ab17c9c-c816-4776-a5d5-02c83729b6e7
 
 ## Text
 
@@ -20,7 +20,7 @@ def __reduce__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.2301620+00:00`
+- posted_at: `2026-11-09T23:44:49.8202450+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 57,
     "symbol": "FetchRaise.__reduce__"
   },
-  "id": "46df3854-1770-49b0-80de-b26bf6f5fca7",
+  "id": "9ab17c9c-c816-4776-a5d5-02c83729b6e7",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.2301620+00:00"
+    "posted_at": "2026-11-09T23:44:49.8202450+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5c2514d3-0ca6-4990-b031-85e23800d6e1",
+  "subject_id": "c7be60c9-d0f2-411a-a934-a00e758211fd",
   "subject_name": "django/db/models/fetch_modes::FetchRaise.__reduce__",
   "tags": [
     "entity:method"

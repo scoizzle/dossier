@@ -1,6 +1,6 @@
 # Fact 102758c0
 
-Store id: b4013f0c-5e4b-409f-91c1-ec674c93cb0b
+Store id: 535d813a-30d4-4254-9937-abeb9e586256
 
 ## Text
 
@@ -20,7 +20,7 @@ def _parse_expressions(self, *expressions)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7640140+00:00`
+- posted_at: `2026-11-09T23:44:49.2941100+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 215,
     "symbol": "BaseExpression._parse_expressions"
   },
-  "id": "b4013f0c-5e4b-409f-91c1-ec674c93cb0b",
+  "id": "535d813a-30d4-4254-9937-abeb9e586256",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7640140+00:00"
+    "posted_at": "2026-11-09T23:44:49.2941100+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0de24df0-a9d0-4f47-8083-3083404da11b",
+  "subject_id": "92e60bd0-c1eb-4bdb-8197-6f33152516d7",
   "subject_name": "django/db/models/expressions::BaseExpression._parse_expressions",
   "tags": [
     "entity:method"

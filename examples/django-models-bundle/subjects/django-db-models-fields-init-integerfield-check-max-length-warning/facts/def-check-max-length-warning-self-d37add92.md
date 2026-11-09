@@ -1,6 +1,6 @@
 # Fact d37add92
 
-Store id: 5d777b6a-2193-478d-835d-e922ef37f6a0
+Store id: c7271ae6-f498-4e95-8b13-b974400bbe69
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_max_length_warning(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6950280+00:00`
+- posted_at: `2026-11-09T23:44:50.1610980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2154,
     "symbol": "IntegerField._check_max_length_warning"
   },
-  "id": "5d777b6a-2193-478d-835d-e922ef37f6a0",
+  "id": "c7271ae6-f498-4e95-8b13-b974400bbe69",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6950280+00:00"
+    "posted_at": "2026-11-09T23:44:50.1610980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5553a694-b7e8-4283-85c3-b03448eaa55b",
+  "subject_id": "e8cf3c6c-3f92-4873-952d-9e68eeef6808",
   "subject_name": "django/db/models/fields/__init__::IntegerField._check_max_length_warning",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 3cf0f9e4
 
-Store id: 66df0bd2-8d3f-44fc-ac85-f965a2422f14
+Store id: 20471cc1-cc59-4c30-90d1-89346c3c61fa
 
 ## Text
 
@@ -20,7 +20,7 @@ def value_to_string(self, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6037590+00:00`
+- posted_at: `2026-11-09T23:44:50.1076930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1727,
     "symbol": "DateTimeField.value_to_string"
   },
-  "id": "66df0bd2-8d3f-44fc-ac85-f965a2422f14",
+  "id": "20471cc1-cc59-4c30-90d1-89346c3c61fa",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6037590+00:00"
+    "posted_at": "2026-11-09T23:44:50.1076930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0a540d2b-2666-488e-aaf1-0194187a6243",
+  "subject_id": "e3cb3e7d-a7a5-4595-a117-4958ae491b0e",
   "subject_name": "django/db/models/fields/__init__::DateTimeField.value_to_string",
   "tags": [
     "entity:method"

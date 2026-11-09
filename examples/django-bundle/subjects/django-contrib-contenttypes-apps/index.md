@@ -1,10 +1,10 @@
 # django/contrib/contenttypes/apps
 
-- Subject: django/contrib/contenttypes/apps (id `4e7ace1c-37a6-4da3-937b-3922bf3c150d`)
+- Subject: django/contrib/contenttypes/apps (id `ae120420-a3ab-4030-87a4-dcecb3e7f0ef`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 239 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

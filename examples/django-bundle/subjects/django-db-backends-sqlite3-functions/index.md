@@ -1,10 +1,10 @@
 # django/db/backends/sqlite3/_functions
 
-- Subject: django/db/backends/sqlite3/_functions (id `388eeadc-e481-495b-9c75-4d259e605282`)
+- Subject: django/db/backends/sqlite3/_functions (id `f00d868a-6628-4e25-8f52-80be7b202cad`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3708 tokens
-- Facts shown: 60 of 62
+- Used: 4036 tokens
+- Facts shown: 62 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -32,16 +32,18 @@
 - def _sqlite_cot(x): if x is None: return None return 1 / tan(x) [e98fea83]
 - def _sqlite_date_trunc(lookup_type, dt, tzname, conn_tzname): dt = _sqlite_datetime_parse(dt, tzname, conn_tzname) if dt is None: return None if lookup_type == "year": return f"{dt.year:04d}-01-01" elif lookup_type == "quarter": month_in_quarter = dt.month - (dt.month - 1) % 3 return f"{dt.year:04d}-{month_in_quarter:02d}-01" elif lookup_type == "month": return f"{dt.year:04d}-{dt.month:02d}-01" elif lookup_type == "week": dt -= timedelta(days=dt.weekday()) return f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}" elif lookup_type == "day": return f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}" raise ValueError(f"Unsupported lookup type: {lookup_type!r}") [15af5306]
 - def _sqlite_datetime_cast_date(dt, tzname, conn_tzname): dt = _sqlite_datetime_parse(dt, tzname, conn_tzname) if dt is None: return None return dt.date().isoformat() [1b6f5c08]
+- def _sqlite_datetime_cast_time(dt, tzname, conn_tzname): dt = _sqlite_datetime_parse(dt, tzname, conn_tzname) if dt is None: return None return dt.time().isoformat() [c7342921]
 - def _sqlite_degrees(x): if x is None: return None return degrees(x) [f8bf499d]
 - def _sqlite_exp(x): if x is None: return None return exp(x) [9efe1b33]
-- def _sqlite_floor(x): if x is None: return None return floor(x) [3ae0eed5]
-- def _sqlite_ln(x): if x is None: return None return log(x) [ffa9fced]
 
 ## All facts
 
 - [ff8c18bd] def _sqlite_datetime_extract(lookup_type, dt, tzname=None, conn_tzname=None): dt = _sqlite_datetime_parse(dt, tzname, conn_tzname) if dt is None: return None if lookup_type == "week_day": return (dt.isoweekday() % 7) + 1 elif lookup_type == "iso_week_day": return dt.isoweekday() elif lookup_type == "week": return dt.isocalendar().week elif lookup_type == "quarter": return ceil(dt.month / 3) elif lookup_type == "iso_year": return dt.isocalendar().year else: return getattr(dt, lookup_type)
 - [08cfc95a] def _sqlite_datetime_parse(dt, tzname=None, conn_tzname=None): if dt is None: return None try: dt = typecast_timestamp(dt) except (TypeError, ValueError): return None if conn_tzname: dt = dt.replace(tzinfo=zoneinfo.ZoneInfo(conn_tzname)) if tzname is not None and tzname != conn_tzname: tzname, sign, offset = split_tzname_delta(tzname) if offset: hours, minutes = offset.split(":") offset_delta = timedelta(hours=int(hours), minutes=int(minutes)) dt += offset_delta if sign == "+" else -offset_delta # The tzname may originally be just the offset e.g. "+3:00", # which becomes an empty string after splitting the sign and offset. # In this case, use the conn_tzname as fallback. dt = timezone.localtime(dt, zoneinfo.ZoneInfo(tzname or conn_tzname)) return dt
+- [8267efb1] def _sqlite_datetime_trunc(lookup_type, dt, tzname, conn_tzname): dt = _sqlite_datetime_parse(dt, tzname, conn_tzname) if dt is None: return None if lookup_type == "year": return f"{dt.year:04d}-01-01 00:00:00" elif lookup_type == "quarter": month_in_quarter = dt.month - (dt.month - 1) % 3 return f"{dt.year:04d}-{month_in_quarter:02d}-01 00:00:00" elif lookup_type == "month": return f"{dt.year:04d}-{dt.month:02d}-01 00:00:00" elif lookup_type == "week": dt -= timedelta(days=dt.weekday()) return f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d} 00:00:00" elif lookup_type == "day": return f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d} 00:00:00" elif lookup_type == "hour": return f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d} {dt.hour:02d}:00:00" elif lookup_type == "minute": return ( f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d} " f"{dt.hour:02d}:{dt.minute:02d}:00" ) elif lookup_type == "second": return ( f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d} " f"{dt.hour:02d}:{dt.minute:02d}:{dt.second:02d}" ) raise ValueError(f"Unsupported lookup type: {lookup_type!r}")
+- [3ae0eed5] def _sqlite_floor(x): if x is None: return None return floor(x)
 - [f92ae4a3] def _sqlite_format_dtdelta(connector, lhs, rhs): """ LHS and RHS can be either: - An integer number of microseconds - A string representing a datetime - A scalar value, e.g. float """ if connector is None or lhs is None or rhs is None: return None connector = connector.strip() try: real_lhs = _sqlite_prepare_dtdelta_param(connector, lhs) real_rhs = _sqlite_prepare_dtdelta_param(connector, rhs) except (ValueError, TypeError): return None if connector == "+": # typecast_timestamp() returns a date or a datetime without timezone. # It will be formatted as "%Y-%m-%d" or "%Y-%m-%d %H:%M:%S[.%f]" out = str(real_lhs + real_rhs) elif connector == "-": out = str(real_lhs - real_rhs) elif connector == "*": out = real_lhs * real_rhs else: out = real_lhs / real_rhs return out
+- [ffa9fced] def _sqlite_ln(x): if x is None: return None return log(x)
 - [98116f6c] def _sqlite_log(base, x): if base is None or x is None: return None # Arguments reversed to match SQL standard. return log(x, base)
 - [3d3560db] def _sqlite_lpad(text, length, fill_text): if text is None or length is None or fill_text is None: return None delta = length - len(text) if delta <= 0: return text[:length] return (fill_text * length)[:delta] + text
 - [f763bf02] def _sqlite_md5(text): if text is None: return None return md5(text.encode()).hexdigest()

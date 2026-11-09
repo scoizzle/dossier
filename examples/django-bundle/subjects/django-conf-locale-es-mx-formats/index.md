@@ -1,10 +1,10 @@
 # django/conf/locale/es_MX/formats
 
-- Subject: django/conf/locale/es_MX/formats (id `f073e2a8-3674-4086-9d24-c56ba1b3921c`)
+- Subject: django/conf/locale/es_MX/formats (id `97f4886f-afb2-4951-a2bb-0f282cc587f6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 192 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

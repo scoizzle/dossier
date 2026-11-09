@@ -1,6 +1,6 @@
 # Fact 3fdf03ab
 
-Store id: e7d1160f-423d-454b-8509-5538f4bea5fa
+Store id: 30091218-77f8-4a60-ada5-01d7734c43c6
 
 ## Text
 
@@ -20,7 +20,7 @@ def reverse(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5934560+00:00`
+- posted_at: `2026-11-09T23:44:56.0984230+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1973,
     "symbol": "QuerySet.reverse"
   },
-  "id": "e7d1160f-423d-454b-8509-5538f4bea5fa",
+  "id": "30091218-77f8-4a60-ada5-01d7734c43c6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5934560+00:00"
+    "posted_at": "2026-11-09T23:44:56.0984230+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "be424340-65ca-4185-bc7b-fd3a73eef0af",
+  "subject_id": "1a5c85f6-6101-4036-aab7-533608cc79dd",
   "subject_name": "django/db/models/query::QuerySet.reverse",
   "tags": [
     "entity:method"

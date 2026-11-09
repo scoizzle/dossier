@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/base/features
 
-- Subject: django/contrib/gis/db/backends/base/features (id `03a61787-1f7c-48ad-8868-04f59c209251`)
+- Subject: django/contrib/gis/db/backends/base/features (id `58adb543-51d0-4f99-a509-9931f88512fc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1020 tokens
-- Facts shown: 22 of 23
+- Used: 1058 tokens
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,11 +27,12 @@
 - @property def supports_isvalid_lookup(self): return self.has_IsValid_function [bf37150b]
 - @property def supports_make_line_aggr(self): return models.MakeLine not in self.connection.ops.disallowed_aggregates [9b864c3d]
 - @property def supports_relate_lookup(self): return "relate" in self.connection.ops.gis_operators [13dcf351]
+- @property def supports_union_aggr(self): return models.Union not in self.connection.ops.disallowed_aggregates [ce48679a]
 - class BaseSpatialFeatures: gis_enabled = True [545fbbea]
-- from .operations import BaseSpatialOperations [5a3da30f]
-- from django.contrib.gis.db import models [bf251de1]
 
 ## All facts
 
 - [18ae6101] def __getattr__(self, name): m = re.match(r"has_(\w*)_function$", name) if m: func_name = m[1] if func_name not in BaseSpatialOperations.unsupported_functions: raise ValueError( f"DatabaseFeatures.has_{func_name}_function isn't valid. " f'Is "{func_name}" missing from ' "BaseSpatialOperations.unsupported_functions?" ) return func_name not in self.connection.ops.unsupported_functions raise AttributeError
+- [5a3da30f] from .operations import BaseSpatialOperations
+- [bf251de1] from django.contrib.gis.db import models
 - [dae3b101b4aa9562-3] import re

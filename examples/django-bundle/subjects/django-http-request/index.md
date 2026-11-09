@@ -1,10 +1,10 @@
 # django/http/request
 
-- Subject: django/http/request (id `defbef23-f570-4f64-99f3-ae64ca18e97d`)
+- Subject: django/http/request (id `740b4468-acba-4a9a-83f1-33fe3efe4b44`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7074 tokens
-- Facts shown: 114 of 117
+- Used: 7214 tokens
+- Facts shown: 117 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -51,6 +51,7 @@
 - [a606631b] @classmethod def to_asgi_name(cls, header): return header.replace("-", "_").upper()
 - [1ad7315f] @classmethod def to_asgi_names(cls, headers): return { cls.to_asgi_name(header_name): value for header_name, value in headers.items() }
 - [d2d36bf3] @classmethod def to_wsgi_name(cls, header): header = header.replace("-", "_").upper() if header in cls.UNPREFIXED_HEADERS: return header return f"{cls.HTTP_PREFIX}{header}"
+- [78d304e8] @classmethod def to_wsgi_names(cls, headers): return { cls.to_wsgi_name(header_name): value for header_name, value in headers.items() }
 - [098a197f] @encoding.setter def encoding(self, val): """ Set the encoding used for GET/POST accesses. If the GET or POST dictionary has already been created, remove and recreate it on the next access (so that it is decoded correctly). """ self._encoding = val if hasattr(self, "GET"): del self.GET if hasattr(self, "_post"): del self._post
 - [a697fdc5] @encoding.setter def encoding(self, value): self._encoding = value
 - [461a3a28] @multipart_parser_class.setter def multipart_parser_class(self, multipart_parser_class): if hasattr(self, "_files"): raise RuntimeError( "You cannot set the multipart parser class after the upload has been " "processed." ) self._multipart_parser_class = multipart_parser_class
@@ -99,6 +100,7 @@
 - [a96fe333] def close(self): if hasattr(self, "_files"): for f in chain.from_iterable(list_[1] for list_ in self._files.lists()): f.close()
 - [6a8a38ee] def copy(self): """Return a mutable copy of this object.""" return self.__deepcopy__({})
 - [fe2c698d] def get_full_path(self, force_append_slash=False): return self._get_full_path(self.path, force_append_slash)
+- [a5ce5834] def get_full_path_info(self, force_append_slash=False): return self._get_full_path(self.path_info, force_append_slash)
 - [42bf3076] def get_host(self): """Return the HTTP host using the environment or request headers.""" host = self._get_raw_host()
 - [34ed12d0] def get_port(self): """Return the port number for the request as a string.""" if settings.USE_X_FORWARDED_PORT and "HTTP_X_FORWARDED_PORT" in self.META: port = self.META["HTTP_X_FORWARDED_PORT"] else: port = self.META["SERVER_PORT"] return str(port)
 - [087359dd] def get_preferred_type(self, media_types): """Select the preferred media type from the provided options.""" if not media_types or not self.accepted_types: return None
@@ -109,6 +111,7 @@
 - [6dd0dff0] def pop(self, key, *args): self._assert_mutable() return super().pop(key, *args)
 - [78993061] def popitem(self): self._assert_mutable() return super().popitem()
 - [94103055] def read(self, *args, **kwargs): self._read_started = True try: return self._stream.read(*args, **kwargs) except OSError as e: raise UnreadablePostError(*e.args) from e
+- [5b190036] def readline(self, *args, **kwargs): self._read_started = True try: return self._stream.readline(*args, **kwargs) except OSError as e: raise UnreadablePostError(*e.args) from e
 - [d0d729c7] def readlines(self): return list(self)
 - [0bfd7c82] def setdefault(self, key, default=None): self._assert_mutable() key = bytes_to_text(key, self.encoding) default = bytes_to_text(default, self.encoding) return super().setdefault(key, default)
 - [77ddfc50] def setlist(self, key, list_): self._assert_mutable() key = bytes_to_text(key, self.encoding) list_ = [bytes_to_text(elt, self.encoding) for elt in list_] super().setlist(key, list_)

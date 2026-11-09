@@ -1,6 +1,6 @@
 # Fact 4fcbc8cf
 
-Store id: ef437475-ae56-4f42-9eec-936e30b8ac8c
+Store id: c3c5084f-7c30-4dfa-8f6a-d78269e829ff
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class AggregateFilter
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5507770+00:00`
+- posted_at: `2026-11-09T23:44:48.4077660+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "ef437475-ae56-4f42-9eec-936e30b8ac8c",
+  "id": "c3c5084f-7c30-4dfa-8f6a-d78269e829ff",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5507770+00:00"
+    "posted_at": "2026-11-09T23:44:48.4077660+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "AggregateFilter"
       },
       "rel": "contains",
-      "target": "7f1a263a-5160-425d-8052-61fd06742a0d"
+      "target": "617f5d2e-70e7-4eb8-b594-7a81f42fb146"
     }
   ],
   "status": "live",
-  "subject_id": "b5feecb6-d0e1-4e7f-8b00-717f9dabceb1",
+  "subject_id": "6bc5f39c-532b-45f7-9f53-5325c9016e4d",
   "subject_name": "django/db/models/aggregates",
   "tags": [
     "entity:class"

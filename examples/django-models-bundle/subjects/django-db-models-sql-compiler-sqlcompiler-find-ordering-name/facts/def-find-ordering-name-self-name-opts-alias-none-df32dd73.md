@@ -1,6 +1,6 @@
 # Fact df32dd73
 
-Store id: d9265ca0-d5bc-49e0-b2dc-e073a694fc54
+Store id: d7597e11-07e3-4615-83e7-14366708c23c
 
 ## Text
 
@@ -20,7 +20,7 @@ def find_ordering_name( self, name, opts, alias=None, default_order="ASC", alrea
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7776360+00:00`
+- posted_at: `2026-11-09T23:44:57.5295540+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1079,
     "symbol": "SQLCompiler.find_ordering_name"
   },
-  "id": "d9265ca0-d5bc-49e0-b2dc-e073a694fc54",
+  "id": "d7597e11-07e3-4615-83e7-14366708c23c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7776360+00:00"
+    "posted_at": "2026-11-09T23:44:57.5295540+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0f550190-95d7-48eb-9592-0cf081e3e920",
+  "subject_id": "40513733-5188-44c2-a59f-e7f23e211aa6",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.find_ordering_name",
   "tags": [
     "entity:method"

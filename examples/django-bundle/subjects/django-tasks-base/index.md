@@ -1,10 +1,10 @@
 # django/tasks/base
 
-- Subject: django/tasks/base (id `f94528b1-2ffb-4086-8572-80c1a905bdfc`)
+- Subject: django/tasks/base (id `3020642f-12a7-4a7a-b404-e180129e70a6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2283 tokens
-- Facts shown: 47 of 47
+- Facts shown: 47 facts
 - Conflicts: 0
 - Gaps: 0
 

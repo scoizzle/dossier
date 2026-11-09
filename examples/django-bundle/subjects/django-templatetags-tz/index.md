@@ -1,10 +1,10 @@
 # django/templatetags/tz
 
-- Subject: django/templatetags/tz (id `c99550e6-784f-40ae-9977-07bfc9c50df5`)
+- Subject: django/templatetags/tz (id `339507f3-71cf-491f-9713-1f21ece8c69d`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1505 tokens
-- Facts shown: 36 of 36
+- Facts shown: 36 facts
 - Conflicts: 0
 - Gaps: 0
 

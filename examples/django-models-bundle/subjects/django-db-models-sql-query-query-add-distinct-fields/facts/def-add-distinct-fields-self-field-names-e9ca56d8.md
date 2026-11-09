@@ -1,6 +1,6 @@
 # Fact e9ca56d8
 
-Store id: 170e3231-379e-452b-bb28-7c23f86067b3
+Store id: 5de1a485-70c3-49a3-b416-2d90cacf1c00
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_distinct_fields(self, *field_names)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0588850+00:00`
+- posted_at: `2026-11-09T23:44:58.9732770+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2260,
     "symbol": "Query.add_distinct_fields"
   },
-  "id": "170e3231-379e-452b-bb28-7c23f86067b3",
+  "id": "5de1a485-70c3-49a3-b416-2d90cacf1c00",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0588850+00:00"
+    "posted_at": "2026-11-09T23:44:58.9732770+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5580c57d-9075-4ebf-b59e-ffd02499dd0f",
+  "subject_id": "f74118eb-a7ea-4e28-ae9a-3e16ad89c740",
   "subject_name": "django/db/models/sql/query::Query.add_distinct_fields",
   "tags": [
     "entity:method"

@@ -1,11 +1,11 @@
 # django/db/models/options::Options.setup_pk
 
-- Subject: django/db/models/options::Options.setup_pk (id `eb14266d-d576-4c2d-8e57-da42fc29803a`)
+- Subject: django/db/models/options::Options.setup_pk (id `52574cba-496d-46c5-b41d-4a201da6f328`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

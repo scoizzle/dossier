@@ -1,11 +1,11 @@
 # django/db/models/functions/text::Substr.as_sqlite
 
-- Subject: django/db/models/functions/text::Substr.as_sqlite (id `0f1292fd-6428-4a66-a66a-140f5bfbbd45`)
+- Subject: django/db/models/functions/text::Substr.as_sqlite (id `f030d098-f2ad-4b53-ad24-8921e614080a`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

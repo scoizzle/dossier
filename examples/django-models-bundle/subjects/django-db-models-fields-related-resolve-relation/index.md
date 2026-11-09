@@ -1,11 +1,11 @@
 # django/db/models/fields/related::resolve_relation
 
-- Subject: django/db/models/fields/related::resolve_relation (id `da644160-17e5-4365-8690-70389c43ca34`)
+- Subject: django/db/models/fields/related::resolve_relation (id `ddc8c5c8-6314-40a9-8201-a286fa8bd9bb`)
 - Kind: function
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

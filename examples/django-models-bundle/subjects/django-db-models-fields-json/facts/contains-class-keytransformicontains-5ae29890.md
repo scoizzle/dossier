@@ -1,6 +1,6 @@
 # Fact 5ae29890
 
-Store id: e35b7ac4-03c5-48f8-a858-6edc575866f2
+Store id: 267da039-86d4-484e-836c-ffd693106d2e
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformIContains
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "e35b7ac4-03c5-48f8-a858-6edc575866f2",
+  "id": "267da039-86d4-484e-836c-ffd693106d2e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformIContains"
       },
       "rel": "contains",
-      "target": "d7daed8f-c52b-45cf-a6d9-037efe98bec4"
+      "target": "e9069268-0dd9-44d8-86d5-bf1951b9e8b5"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

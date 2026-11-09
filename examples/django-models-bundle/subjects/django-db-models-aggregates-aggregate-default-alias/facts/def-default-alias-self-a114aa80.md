@@ -1,6 +1,6 @@
 # Fact a114aa80
 
-Store id: 416446e1-979e-4254-8f94-2bd282001779
+Store id: 97fb21d7-a3f3-4aba-af92-43f996991308
 
 ## Text
 
@@ -20,7 +20,7 @@ def default_alias(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5334010+00:00`
+- posted_at: `2026-11-09T23:44:48.3965310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 162,
     "symbol": "Aggregate.default_alias"
   },
-  "id": "416446e1-979e-4254-8f94-2bd282001779",
+  "id": "97fb21d7-a3f3-4aba-af92-43f996991308",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5334010+00:00"
+    "posted_at": "2026-11-09T23:44:48.3965310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fe1c47cb-4823-4923-aaaa-256a5f9c9a15",
+  "subject_id": "c7ed3347-4dd0-4c74-a552-a27c0677cd6b",
   "subject_name": "django/db/models/aggregates::Aggregate.default_alias",
   "tags": [
     "entity:method",

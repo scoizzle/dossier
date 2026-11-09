@@ -1,6 +1,6 @@
 # Fact fd28f6c4
 
-Store id: c7926800-4577-43a6-a905-77b032a70636
+Store id: 909e1700-e91e-4d1d-a6c0-e7076afaeef3
 
 ## Text
 
@@ -20,7 +20,7 @@ class GenericIPAddressField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7304620+00:00`
+- posted_at: `2026-11-09T23:44:50.1873310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2296,
     "symbol": "GenericIPAddressField"
   },
-  "id": "c7926800-4577-43a6-a905-77b032a70636",
+  "id": "909e1700-e91e-4d1d-a6c0-e7076afaeef3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7304620+00:00"
+    "posted_at": "2026-11-09T23:44:50.1873310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c62d5ba8-b30e-4da1-a118-b79a8ef4325e",
+  "subject_id": "99d636e6-1f65-4961-9846-1cb54d23947a",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField",
   "tags": [
     "entity:class"

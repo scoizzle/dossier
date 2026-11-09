@@ -1,6 +1,6 @@
 # Fact 78b8570b
 
-Store id: ace3e655-969b-44ff-b928-9314f01d0422
+Store id: cc880d78-6cf9-4422-91dd-1b00179f54bb
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2963550+00:00`
+- posted_at: `2026-11-09T23:44:53.4112870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 400,
     "symbol": "TruncTime.as_sql"
   },
-  "id": "ace3e655-969b-44ff-b928-9314f01d0422",
+  "id": "cc880d78-6cf9-4422-91dd-1b00179f54bb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2963550+00:00"
+    "posted_at": "2026-11-09T23:44:53.4112870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "66edf587-e14c-4aa4-82c4-77b99aa6a200",
+  "subject_id": "43665afa-278f-40e3-829e-1bd2b20dcf44",
   "subject_name": "django/db/models/functions/datetime::TruncTime.as_sql",
   "tags": [
     "entity:method"

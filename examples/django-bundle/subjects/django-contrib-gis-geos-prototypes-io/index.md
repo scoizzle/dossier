@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/prototypes/io
 
-- Subject: django/contrib/gis/geos/prototypes/io (id `0b77ca7f-f1f7-4028-9a3f-067291cd9c09`)
+- Subject: django/contrib/gis/geos/prototypes/io (id `24712d9b-483c-4e10-abe8-73bec8a7d775`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4781 tokens
-- Facts shown: 76 of 78
+- Used: 4894 tokens
+- Facts shown: 78 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -30,6 +30,7 @@
 - [1bac21bd] # Property for getting/setting the include srid flag. @property def srid(self): return bool(wkb_writer_get_include_srid(self.ptr))
 - [aafd6109] # Property for getting/setting the output dimension. @property def outdim(self): return wkb_writer_get_outdim(self.ptr)
 - [6e498581] @outdim.setter def outdim(self, new_dim): if new_dim not in (2, 3): raise ValueError("WKB output dimension must be 2 or 3") wkb_writer_set_outdim(self.ptr, new_dim)
+- [2bd3104c] @outdim.setter def outdim(self, new_dim): if new_dim not in (2, 3): raise ValueError("WKT output dimension must be 2 or 3") wkt_writer_set_outdim(self.ptr, new_dim)
 - [dadb631b] @precision.setter def precision(self, precision): if (not isinstance(precision, int) or precision < 0) and precision is not None: raise AttributeError( "WKT output rounding precision must be non-negative integer or None." ) if precision != self._precision: self._precision = precision wkt_writer_set_precision(self.ptr, -1 if precision is None else precision)
 - [c9918f1e] @property def outdim(self): return wkt_writer_get_outdim(self.ptr)
 - [ae005998] @property def precision(self): return self._precision
@@ -48,6 +49,7 @@
 - [a699bbb0] def read(self, wkt, max_geom_collections=MAX_GEOM_COLLECTIONS): if not isinstance(wkt, (bytes, str)): raise TypeError(f"'wkt' must be bytes or str (got {wkt!r} instead).") self.limit(wkt, max_geom_collections) return wkt_reader_read(self.ptr, force_bytes(wkt))
 - [3aca35a3] def write(self, geom): "Return the WKB representation of the given geometry." geom = self._handle_empty_point(geom) wkb = wkb_writer_write(self.ptr, geom.ptr, byref(c_size_t())) return memoryview(wkb)
 - [2d3e7138] def write(self, geom): "Return the WKT representation of the given geometry." return wkt_writer_write(self.ptr, geom.ptr)
+- [b003e5bf] def write_hex(self, geom): "Return the HEXEWKB representation of the given geometry." geom = self._handle_empty_point(geom) wkb = wkb_writer_write_hex(self.ptr, geom.ptr, byref(c_size_t())) return wkb
 - [aa219ddf] # ### Base I/O Class ### class IOBase(GEOSBase): "Base class for GEOS I/O objects."
 - [be117e80] # ### Base WKB/WKT Reading and Writing objects ###
 - [aee67af0] # ### The WKB/WKT Reader/Writer structures and pointers ### class WKTReader_st(Structure): pass

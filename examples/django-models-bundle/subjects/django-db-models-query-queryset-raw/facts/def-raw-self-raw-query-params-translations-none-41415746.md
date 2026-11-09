@@ -1,6 +1,6 @@
 # Fact 41415746
 
-Store id: bbdf76fa-89b5-4c56-8a58-093577857b3f
+Store id: 996833f8-b8cc-4f36-8b18-feb556552a87
 
 ## Text
 
@@ -20,7 +20,7 @@ def raw(self, raw_query, params=(), translations=None, using=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5135700+00:00`
+- posted_at: `2026-11-09T23:44:56.0098590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1532,
     "symbol": "QuerySet.raw"
   },
-  "id": "bbdf76fa-89b5-4c56-8a58-093577857b3f",
+  "id": "996833f8-b8cc-4f36-8b18-feb556552a87",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5135700+00:00"
+    "posted_at": "2026-11-09T23:44:56.0098590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "559e16d4-2dd2-44c4-9e95-6ae632a43246",
+  "subject_id": "03d79978-c1fc-4a8c-856f-d12842094044",
   "subject_name": "django/db/models/query::QuerySet.raw",
   "tags": [
     "entity:method"

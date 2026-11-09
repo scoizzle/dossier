@@ -1,10 +1,10 @@
 # docs/releases/1.1
 
-- Subject: docs/releases/1.1 (id `f81c70d3-7820-4d50-a7b9-1ff99187385d`)
+- Subject: docs/releases/1.1 (id `5cf812e2-4089-4b98-bd6c-bd0d217712fa`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5946 tokens
-- Facts shown: 131 of 132
+- Used: 5966 tokens
+- Facts shown: 132 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -51,6 +51,7 @@
 - [0ee73173f492412a-68] .. code-block:: sql
 - [0ee73173f492412a-69] .. code-block:: sql
 - [3a368b18514a814b-16] .. currentmodule:: django.db.models
+- [3a368b18514a814b-17] .. currentmodule:: django.db.models
 - [b14a2a311af32750-2] .. currentmodule:: django.test
 - [98b3f639] ======================== Django 1.1 release notes ========================
 - [b0150d35] A couple of small -- but highly useful -- improvements have been made to the test client:

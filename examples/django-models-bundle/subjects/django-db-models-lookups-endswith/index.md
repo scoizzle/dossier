@@ -1,11 +1,11 @@
 # django/db/models/lookups::EndsWith
 
-- Subject: django/db/models/lookups::EndsWith (id `9cae3b83-3ae4-4a4a-98f4-67b59bca28f5`)
+- Subject: django/db/models/lookups::EndsWith (id `c6312aae-cc4f-4488-9e84-6a5f835ed150`)
 - Kind: class
 - Parent: [django/db/models/lookups](../django-db-models-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

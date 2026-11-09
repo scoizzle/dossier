@@ -1,11 +1,11 @@
 # django/db/models/query_utils::Q.__eq__
 
-- Subject: django/db/models/query_utils::Q.__eq__ (id `b085037b-775c-4143-bca9-b57bf1374e52`)
+- Subject: django/db/models/query_utils::Q.__eq__ (id `80af09e4-ac46-425b-8c3f-f079d5b4081c`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

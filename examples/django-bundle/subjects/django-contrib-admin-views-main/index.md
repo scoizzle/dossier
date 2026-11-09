@@ -1,10 +1,10 @@
 # django/contrib/admin/views/main
 
-- Subject: django/contrib/admin/views/main (id `e808e2ca-91e0-4c3c-a55c-e4e4b5f09fea`)
+- Subject: django/contrib/admin/views/main (id `da6192cb-9fe5-495c-9754-2fdd60d21bdd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 4572 tokens
-- Facts shown: 38 of 38
+- Facts shown: 38 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/contrib/auth/migrations/0003_alter_user_email_max_length
 
-- Subject: django/contrib/auth/migrations/0003_alter_user_email_max_length (id `a0e9a186-9699-46a9-996e-a4ccc97167fa`)
+- Subject: django/contrib/auth/migrations/0003_alter_user_email_max_length (id `48bd5028-9365-4bfe-b4ba-a3ba5bd530a6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 110 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

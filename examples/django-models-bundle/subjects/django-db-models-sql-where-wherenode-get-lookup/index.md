@@ -1,11 +1,11 @@
 # django/db/models/sql/where::WhereNode.get_lookup
 
-- Subject: django/db/models/sql/where::WhereNode.get_lookup (id `8a935d04-4eaa-476b-9daa-09cabc5f0eef`)
+- Subject: django/db/models/sql/where::WhereNode.get_lookup (id `fc565a2a-2c42-4ab1-94f1-cebcda408c34`)
 - Kind: method
 - Parent: [django/db/models/sql/where](../django-db-models-sql-where/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

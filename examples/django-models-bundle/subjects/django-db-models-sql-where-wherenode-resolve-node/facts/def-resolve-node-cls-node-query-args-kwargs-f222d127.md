@@ -1,6 +1,6 @@
 # Fact f222d127
 
-Store id: 4a6063ec-b177-4148-9a96-84aa104f5146
+Store id: f8dcc553-27cd-4748-87be-33f243fe7de9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _resolve_node(cls, node, query, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6701290+00:00`
+- posted_at: `2026-11-09T23:44:59.7826950+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 276,
     "symbol": "WhereNode._resolve_node"
   },
-  "id": "4a6063ec-b177-4148-9a96-84aa104f5146",
+  "id": "f8dcc553-27cd-4748-87be-33f243fe7de9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6701290+00:00"
+    "posted_at": "2026-11-09T23:44:59.7826950+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f18ddb66-1418-41ea-814a-6699c4d0c94e",
+  "subject_id": "35159ee8-8148-45a4-8401-1fc41b940710",
   "subject_name": "django/db/models/sql/where::WhereNode._resolve_node",
   "tags": [
     "entity:class_method",

@@ -1,6 +1,6 @@
 # Fact d9ab4203
 
-Store id: ca7133b2-79fc-4383-aa2e-1d551e2dd3ce
+Store id: e9671333-ab21-4f70-a722-22dcca339720
 
 ## Text
 
@@ -20,7 +20,7 @@ def prepare_value(self, field, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.9551000+00:00`
+- posted_at: `2026-11-09T23:44:57.6603060+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1738,
     "symbol": "SQLInsertCompiler.prepare_value"
   },
-  "id": "ca7133b2-79fc-4383-aa2e-1d551e2dd3ce",
+  "id": "e9671333-ab21-4f70-a722-22dcca339720",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.9551000+00:00"
+    "posted_at": "2026-11-09T23:44:57.6603060+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b151b471-06f8-4c56-8d5b-3caa3acbc204",
+  "subject_id": "6e170d5a-d837-41de-b1a1-22f8ed325973",
   "subject_name": "django/db/models/sql/compiler::SQLInsertCompiler.prepare_value",
   "tags": [
     "entity:method"

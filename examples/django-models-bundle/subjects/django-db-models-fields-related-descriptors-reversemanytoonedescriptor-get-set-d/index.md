@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor._get_set_deprecation_msg_params
 
-- Subject: django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor._get_set_deprecation_msg_params (id `0b9521e0-607b-4c4a-be9a-8777c4b9ca77`)
+- Subject: django/db/models/fields/related_descriptors::ReverseManyToOneDescriptor._get_set_deprecation_msg_params (id `78fd4598-1e6c-4235-83bc-fc752e9ab66e`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

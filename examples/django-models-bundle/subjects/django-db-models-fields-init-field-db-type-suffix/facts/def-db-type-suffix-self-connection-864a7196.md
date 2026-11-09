@@ -1,6 +1,6 @@
 # Fact 864a7196
 
-Store id: d04bec1c-89ca-4acd-8c13-894118266564
+Store id: f77835dc-22ae-4646-a7ee-dd126f5a66be
 
 ## Text
 
@@ -20,7 +20,7 @@ def db_type_suffix(self, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4853700+00:00`
+- posted_at: `2026-11-09T23:44:50.0222560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 956,
     "symbol": "Field.db_type_suffix"
   },
-  "id": "d04bec1c-89ca-4acd-8c13-894118266564",
+  "id": "f77835dc-22ae-4646-a7ee-dd126f5a66be",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4853700+00:00"
+    "posted_at": "2026-11-09T23:44:50.0222560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0e200bed-5bf3-42d1-8232-20925961784d",
+  "subject_id": "23c3b5de-4364-4407-8afd-426d8dcf974e",
   "subject_name": "django/db/models/fields/__init__::Field.db_type_suffix",
   "tags": [
     "entity:method"

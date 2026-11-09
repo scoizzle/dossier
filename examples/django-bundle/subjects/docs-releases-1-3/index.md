@@ -1,10 +1,10 @@
 # docs/releases/1.3
 
-- Subject: docs/releases/1.3 (id `4da91b04-5601-4f78-b1ff-eac46cf87928`)
+- Subject: docs/releases/1.3 (id `64c45386-d5b5-4073-972b-4e548d06cee6`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 11500 tokens
-- Facts shown: 220 of 224
+- Used: 11585 tokens
+- Facts shown: 224 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -78,6 +78,9 @@
 - [47ad2942] .. _using Python's logging facilities: `Logging`_ .. _easy handling of static files: `Extended static files handling`_ .. _the unittest2 library: `unittest2 support`_
 - [7ea3370e] .. _whats-new-1.3:
 - [685d15dfb6eb2285-311] .. code-block:: html+django
+- [685d15dfb6eb2285-312] .. code-block:: html+django
+- [685d15dfb6eb2285-313] .. code-block:: html+django
+- [685d15dfb6eb2285-314] .. code-block:: html+django
 - [eaf050be34acb41d-613] .. code-block:: pycon
 - [eaf050be34acb41d-614] .. code-block:: pycon
 - [eaf050be34acb41d-615] .. code-block:: pycon
@@ -159,6 +162,7 @@
 - [42d55435] In previous versions of Django, it was common to place static assets in :setting:`MEDIA_ROOT` along with user-uploaded files, and serve them both at :setting:`MEDIA_URL`. Part of the purpose of introducing the ``staticfiles`` app is to make it easier to keep static files separate from user-uploaded files. Static assets should now go in ``static/`` subdirectories of your apps or in other static assets directories listed in :setting:`STATICFILES_DIRS`, and will be served at :setting:`STATIC_URL`.
 - [00387cdd] It can sometimes be beneficial to allow decorators or middleware to modify a response *after* it has been constructed by the view. For example, you may want to change the template that is used, or put additional data into the context.
 - [d2d9fa6b] It's easy to update your code to accommodate this change -- just replace all uses of ``XMLField`` with ``TextField``, and remove the ``schema_path`` keyword argument (if it is specified).
+- [48237a22] Loading of *project-level* translations ---------------------------------------
 - [c746d4c6] Localflavor changes -------------------
 - [59c86df6] Logging -------
 - [a960e74a] Most template tags will allow you to pass in either constants or variables as arguments -- for example:

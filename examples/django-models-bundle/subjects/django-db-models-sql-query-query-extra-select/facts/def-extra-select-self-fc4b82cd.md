@@ -1,6 +1,6 @@
 # Fact fc4b82cd
 
-Store id: 4d3111f7-b6a2-4216-81ac-4898c0a3a42d
+Store id: 3041c202-6c8e-45dc-89d6-14b87e82cda0
 
 ## Text
 
@@ -20,7 +20,7 @@ def extra_select(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1410740+00:00`
+- posted_at: `2026-11-09T23:44:59.0493440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2682,
     "symbol": "Query.extra_select"
   },
-  "id": "4d3111f7-b6a2-4216-81ac-4898c0a3a42d",
+  "id": "3041c202-6c8e-45dc-89d6-14b87e82cda0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1410740+00:00"
+    "posted_at": "2026-11-09T23:44:59.0493440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "afe78b88-890b-4390-a4a8-7d4dbc2104b1",
+  "subject_id": "2bf2f5bd-b446-48c4-9ca7-4746cc8ea723",
   "subject_name": "django/db/models/sql/query::Query.extra_select",
   "tags": [
     "entity:method",

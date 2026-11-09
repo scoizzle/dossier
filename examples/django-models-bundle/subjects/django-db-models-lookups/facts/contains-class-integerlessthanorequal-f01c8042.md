@@ -1,6 +1,6 @@
 # Fact f01c8042
 
-Store id: bc8e686c-98ea-44cd-8622-293b2b0acae7
+Store id: 343c4d5f-225e-4476-b15b-a784510b4833
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class IntegerLessThanOrEqual
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.5009330+00:00`
+- posted_at: `2026-11-09T23:44:55.1315130+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "bc8e686c-98ea-44cd-8622-293b2b0acae7",
+  "id": "343c4d5f-225e-4476-b15b-a784510b4833",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.5009330+00:00"
+    "posted_at": "2026-11-09T23:44:55.1315130+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "IntegerLessThanOrEqual"
       },
       "rel": "contains",
-      "target": "1f0431d3-930e-412e-b7a5-841eab03c89e"
+      "target": "c35165a0-d89c-41ba-bc4c-bbed81d3e264"
     }
   ],
   "status": "live",
-  "subject_id": "e7bf7849-709d-446b-ad7a-17abee6ffd25",
+  "subject_id": "08d59620-584d-4fa4-9163-3befcd8a2879",
   "subject_name": "django/db/models/lookups",
   "tags": [
     "entity:class"

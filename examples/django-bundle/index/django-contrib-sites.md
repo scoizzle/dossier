@@ -4,7 +4,7 @@ This file lists every subject under `django/contrib/sites/`, one row per subject
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   django/contrib/sites/admin | subject | 2 | 0 | 0 | 125 | [subjects/django-contrib-sites-admin/index.md](../subjects/django-contrib-sites-admin/index.md) |
+|   django/contrib/sites/admin | subject | 2 | 0 | 0 | 126 | [subjects/django-contrib-sites-admin/index.md](../subjects/django-contrib-sites-admin/index.md) |
 |   django/contrib/sites/apps | subject | 4 | 0 | 0 | 212 | [subjects/django-contrib-sites-apps/index.md](../subjects/django-contrib-sites-apps/index.md) |
 |   django/contrib/sites/checks | subject | 3 | 0 | 0 | 265 | [subjects/django-contrib-sites-checks/index.md](../subjects/django-contrib-sites-checks/index.md) |
 |   django/contrib/sites/management | subject | 6 | 0 | 0 | 435 | [subjects/django-contrib-sites-management/index.md](../subjects/django-contrib-sites-management/index.md) |
@@ -14,6 +14,6 @@ This file lists every subject under `django/contrib/sites/`, one row per subject
 |     django/contrib/sites/migrations/0002_alter_domain_unique | subject | 3 | 0 | 0 | 194 | [subjects/django-contrib-sites-migrations-0002-alter-domain-unique/index.md](../subjects/django-contrib-sites-migrations-0002-alter-domain-unique/index.md) |
 |   django/contrib/sites/models | subject | 19 | 0 | 0 | 896 | [subjects/django-contrib-sites-models/index.md](../subjects/django-contrib-sites-models/index.md) |
 |   django/contrib/sites/requests | subject | 6 | 0 | 0 | 233 | [subjects/django-contrib-sites-requests/index.md](../subjects/django-contrib-sites-requests/index.md) |
-|   django/contrib/sites/shortcuts | subject | 4 | 0 | 0 | 211 | [subjects/django-contrib-sites-shortcuts/index.md](../subjects/django-contrib-sites-shortcuts/index.md) |
+|   django/contrib/sites/shortcuts | subject | 4 | 0 | 0 | 212 | [subjects/django-contrib-sites-shortcuts/index.md](../subjects/django-contrib-sites-shortcuts/index.md) |
 
 Up: [index/django-contrib.md](django-contrib.md)

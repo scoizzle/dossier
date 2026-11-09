@@ -1,10 +1,10 @@
 # docs/intro/tutorial08
 
-- Subject: docs/intro/tutorial08 (id `b159a12d-1d7f-4d48-8895-1ad62175f610`)
+- Subject: docs/intro/tutorial08 (id `ecfddf61-ad52-4589-a5ff-2f6cc7368a9c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1420 tokens
-- Facts shown: 24 of 24
+- Facts shown: 24 facts
 - Conflicts: 0
 - Gaps: 0
 

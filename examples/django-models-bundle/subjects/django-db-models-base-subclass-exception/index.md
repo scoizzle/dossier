@@ -1,11 +1,11 @@
 # django/db/models/base::subclass_exception
 
-- Subject: django/db/models/base::subclass_exception (id `d57bf993-aac2-40fd-a059-d70983e50fc7`)
+- Subject: django/db/models/base::subclass_exception (id `9340da12-636e-432e-a41a-f8a7e88df16e`)
 - Kind: function
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact c2ed3c49
 
-Store id: 6742c81c-8051-4efa-81d5-267fc482c405
+Store id: 3f9b6760-5880-4fe7-9910-f7b4efebf73a
 
 ## Text
 
@@ -20,7 +20,7 @@ class ModelState
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7298830+00:00`
+- posted_at: `2026-11-09T23:44:48.5240390+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 478,
     "symbol": "ModelState"
   },
-  "id": "6742c81c-8051-4efa-81d5-267fc482c405",
+  "id": "3f9b6760-5880-4fe7-9910-f7b4efebf73a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7298830+00:00"
+    "posted_at": "2026-11-09T23:44:48.5240390+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8caa973c-6176-4fb4-8250-833fbfe487e9",
+  "subject_id": "f06cfd3e-1ef3-4573-b6c4-327a9e2eac72",
   "subject_name": "django/db/models/base::ModelState",
   "tags": [
     "entity:class"

@@ -1,10 +1,10 @@
 # django/db/backends/base/creation
 
-- Subject: django/db/backends/base/creation (id `a5c340da-b0fd-41b5-9f1d-7ea7c61393f2`)
+- Subject: django/db/backends/base/creation (id `1febd669-4ab6-41c1-a47a-b0cbdbad6b72`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3781 tokens
-- Facts shown: 48 of 49
+- Used: 3798 tokens
+- Facts shown: 49 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,6 +31,7 @@
 - [e1cfd477] if verbosity >= 1: action = "Destroying" if keepdb: action = "Preserving" self.log( "%s test database for alias %s..." % ( action, self._get_database_display_str(verbosity, test_database_name), ) )
 - [68f17e77] module_or_class_name, _, name_to_mark = test_name.rpartition(".") test_app = test_name.split(".")[0] # Importing a test app that isn't installed raises RuntimeError. if test_app in settings.INSTALLED_APPS: try: test_frame = import_string(module_or_class_name) except ImportError: # import_string() can raise ImportError if a submodule's parent # module hasn't already been imported during test discovery. # This can happen in at least two cases: # 1. When running a subset of tests in a module, the test # runner won't import tests in that module's other # submodules. # 2. When the parallel test runner spawns workers with an empty # import cache. test_to_mark = import_string(test_name) test_frame = sys.modules.get(test_to_mark.__module__) else: test_to_mark = getattr(test_frame, name_to_mark) if skip_reason: setattr(test_frame, name_to_mark, skip(skip_reason)(test_to_mark)) else: setattr(test_frame, name_to_mark, expectedFailure(test_to_mark))
 - [419c4ed0d0ca83a1] return test_database_name
+- [419c4ed0d0ca83a1-2] return test_database_name
 - [cb8e55be] self.connection.close() settings.DATABASES[self.connection.alias]["NAME"] = test_database_name self.connection.settings_dict["NAME"] = test_database_name
 - [5406a05a] test_database_name = self._get_test_db_name()
 - [6a34a60c] try: if self.connection.settings_dict["TEST"]["MIGRATE"] is False: # Disable migrations for all apps. old_migration_modules = settings.MIGRATION_MODULES settings.MIGRATION_MODULES = { app.label: None for app in apps.get_app_configs() } # We report migrate messages at one level lower than that # requested. This ensures we don't get flooded with messages during # testing (unless you really ask to be flooded). call_command( "migrate", verbosity=max(verbosity - 1, 0), interactive=False, database=self.connection.alias, run_syncdb=True, ) finally: if self.connection.settings_dict["TEST"]["MIGRATE"] is False: settings.MIGRATION_MODULES = old_migration_modules

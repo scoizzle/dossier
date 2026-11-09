@@ -1,6 +1,6 @@
 # Fact e1fced85
 
-Store id: f55d9b8e-3beb-4bec-8ace-c739aeaf462a
+Store id: f24a7ff3-4433-4471-bb7b-af1116e0b84f
 
 ## Text
 
@@ -20,7 +20,7 @@ class NegatedExpression(ExpressionWrapper)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9395830+00:00`
+- posted_at: `2026-11-09T23:44:49.6006400+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1584,
     "symbol": "NegatedExpression"
   },
-  "id": "f55d9b8e-3beb-4bec-8ace-c739aeaf462a",
+  "id": "f24a7ff3-4433-4471-bb7b-af1116e0b84f",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9395830+00:00"
+    "posted_at": "2026-11-09T23:44:49.6006400+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "37dc2be2-8f69-401e-b36a-de132796daed",
+  "subject_id": "c4c379a7-d006-4eeb-aa42-abc48f39a2aa",
   "subject_name": "django/db/models/expressions::NegatedExpression",
   "tags": [
     "entity:class"

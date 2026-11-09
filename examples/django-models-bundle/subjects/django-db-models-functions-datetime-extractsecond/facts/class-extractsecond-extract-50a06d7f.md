@@ -1,6 +1,6 @@
 # Fact 50a06d7f
 
-Store id: 0a47428c-b28e-4583-8e6f-488b891a03d5
+Store id: dc0a2e01-81e7-42c6-80f8-13976d312fd4
 
 ## Text
 
@@ -20,7 +20,7 @@ class ExtractSecond(Extract)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.2241030+00:00`
+- posted_at: `2026-11-09T23:44:53.3647460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 179,
     "symbol": "ExtractSecond"
   },
-  "id": "0a47428c-b28e-4583-8e6f-488b891a03d5",
+  "id": "dc0a2e01-81e7-42c6-80f8-13976d312fd4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.2241030+00:00"
+    "posted_at": "2026-11-09T23:44:53.3647460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7a916678-af9b-4e1a-bb6d-1d88ce29f97f",
+  "subject_id": "e83acb46-1ef4-431c-8627-75b55de2bd69",
   "subject_name": "django/db/models/functions/datetime::ExtractSecond",
   "tags": [
     "entity:class"

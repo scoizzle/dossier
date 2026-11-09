@@ -1,10 +1,10 @@
 # django/contrib/flatpages/templatetags/flatpages
 
-- Subject: django/contrib/flatpages/templatetags/flatpages (id `0ac0754f-ec7a-42bc-8116-906d984e04ba`)
+- Subject: django/contrib/flatpages/templatetags/flatpages (id `c5f4649d-ed2e-4ba8-8fc4-14adb596b6cb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 898 tokens
-- Facts shown: 16 of 16
+- Facts shown: 16 facts
 - Conflicts: 0
 - Gaps: 0
 

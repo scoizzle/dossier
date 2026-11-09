@@ -1,10 +1,10 @@
 # docs/internals/contributing/writing-code/working-with-git
 
-- Subject: docs/internals/contributing/writing-code/working-with-git (id `7b024ebf-8be7-4abe-86df-3ad635d5d13e`)
+- Subject: docs/internals/contributing/writing-code/working-with-git (id `44b450bf-1872-4ed1-a118-65c2e82e56b1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4095 tokens
-- Facts shown: 113 of 116
+- Used: 4152 tokens
+- Facts shown: 116 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -21,14 +21,17 @@
 - git commit --amend [3dcd56d8]
 - git commit -m 'Added two more tests for edge cases.' [901a6c9b]
 - git push --force-with-lease origin ticket_xxxxx [774c9596b7c4cca3]
+- git push --force-with-lease origin ticket_xxxxx [774c9596b7c4cca3-2]
 - git push origin ticket_xxxxx [e93558b697b6630c]
 - git rebase -i HEAD~2 [8f459a3da60d768b]
+- git rebase -i HEAD~2 [8f459a3da60d768b-2]
 - git rebase -i HEAD~3 [5c048eec]
 - git rebase -i HEAD~3 # Choose edit, pick, pick for the commits # Now you are able to rework the commit (use git add normally to add changes) # When finished, commit work with "--amend" and continue git commit --amend # Reword the commit message if needed git rebase --continue # The second and third commits should be applied. [a379f55e]
 - git remote add akaariai https://github.com/akaariai/django.git [21f66c0a]
 - git remote add upstream https://github.com/django/django.git git fetch upstream [541f351b]
 - $ git config --global user.name "Your Real Name" $ git config --global user.email "you@email.com" [8f5ff4c4]
 - git fetch upstream git rebase upstream/main [4006260a]
+- git push origin ticket_xxxxx [e93558b697b6630c-2]
 - * Work on GitHub if you can. * Announce your work on the Trac ticket by linking to your GitHub branch. * When you have something ready, make a pull request. * Make your pull requests as good as you can. * When doing fixes to your work, use ``git rebase -i`` to squash the commits. * When upstream has changed, do ``git fetch upstream; git rebase``. [5bcf565d]
 - * commits with one logical change in each, following the :doc:`coding style </internals/contributing/writing-code/coding-style>`, [1a53fb02]
 - * documentation and tests, if needed -- actually tests are always needed, except for documentation changes. [33cca5ea]
@@ -37,13 +40,13 @@
 - .. _editing-commit-messages: [cd404655]
 - .. code-block:: shell [8aa7203c166b13be-29]
 - .. code-block:: shell [8aa7203c166b13be-30]
-- .. code-block:: shell [8aa7203c166b13be-31]
-- .. code-block:: shell [8aa7203c166b13be-32]
-- .. code-block:: shell [8aa7203c166b13be-33]
-- .. code-block:: shell [8aa7203c166b13be-34]
 
 ## All facts
 
+- [8aa7203c166b13be-31] .. code-block:: shell
+- [8aa7203c166b13be-32] .. code-block:: shell
+- [8aa7203c166b13be-33] .. code-block:: shell
+- [8aa7203c166b13be-34] .. code-block:: shell
 - [8aa7203c166b13be-35] .. code-block:: shell
 - [8aa7203c166b13be-36] .. code-block:: shell
 - [8aa7203c166b13be-37] .. code-block:: shell

@@ -1,11 +1,11 @@
 # django/db/models/expressions::CombinedExpression.__init__
 
-- Subject: django/db/models/expressions::CombinedExpression.__init__ (id `b80065aa-559f-4dbc-8a6d-6dab1ea2ab05`)
+- Subject: django/db/models/expressions::CombinedExpression.__init__ (id `828cc3dc-00a0-4f6c-947b-a103b015b1a4`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

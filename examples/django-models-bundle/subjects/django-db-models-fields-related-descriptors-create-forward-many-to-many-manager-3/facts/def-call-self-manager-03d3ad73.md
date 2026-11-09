@@ -1,6 +1,6 @@
 # Fact 03d3ad73
 
-Store id: 8f363a6d-a0ad-448e-b666-b64762972c9a
+Store id: 7c4a6742-24cb-4ea8-b89e-6d717a416e8e
 
 ## Text
 
@@ -20,7 +20,7 @@ def __call__(self, *, manager)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.3589170+00:00`
+- posted_at: `2026-11-09T23:44:51.9645010+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1134,
     "symbol": "create_forward_many_to_many_manager.ManyRelatedManager.__call__"
   },
-  "id": "8f363a6d-a0ad-448e-b666-b64762972c9a",
+  "id": "7c4a6742-24cb-4ea8-b89e-6d717a416e8e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.3589170+00:00"
+    "posted_at": "2026-11-09T23:44:51.9645010+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0589cd8d-705e-48e1-9945-6d397ef052b0",
+  "subject_id": "acbab0c6-9733-4cb9-8ba4-008edf26cfda",
   "subject_name": "django/db/models/fields/related_descriptors::create_forward_many_to_many_manager.ManyRelatedManager.__call__",
   "tags": [
     "entity:method"

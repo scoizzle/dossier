@@ -1,10 +1,10 @@
 # django/core/checks/mail
 
-- Subject: django/core/checks/mail (id `b154cf55-304b-4510-8388-58eaec6b3784`)
+- Subject: django/core/checks/mail (id `05de2c40-ed16-401d-bb21-67c44312481f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 504 tokens
-- Facts shown: 9 of 9
+- Facts shown: 9 facts
 - Conflicts: 0
 - Gaps: 0
 

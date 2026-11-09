@@ -1,10 +1,10 @@
 # django/template/defaulttags
 
-- Subject: django/template/defaulttags (id `3c66f974-2e2e-46b8-add7-dd0fd456bfcc`)
+- Subject: django/template/defaulttags (id `41277dae-6974-4175-b99a-baad3967f984`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 13902 tokens
-- Facts shown: 266 of 268
+- Used: 13948 tokens
+- Facts shown: 268 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -174,6 +174,7 @@
 - [631d713a] def __iter__(self): for _, nodelist in self.conditions_nodelists: yield from nodelist
 - [15ebdb30] def __repr__(self): return "<%s view_name='%s' args=%s kwargs=%s as=%s>" % ( self.__class__.__qualname__, self.view_name, repr(self.args), repr(self.kwargs), repr(self.asvar), )
 - [791ef1e88e5bd5fd] def __repr__(self): return "<%s>" % self.__class__.__name__
+- [791ef1e88e5bd5fd-2] def __repr__(self): return "<%s>" % self.__class__.__name__
 - [0ddf6867] def __repr__(self): reversed_text = " reversed" if self.is_reversed else "" return "<%s: for %s in %s, tail_len: %d%s>" % ( self.__class__.__name__, ", ".join(self.loopvars), self.sequence, len(self.nodelist_loop), reversed_text, )
 - [d416c213] def _get_context_stack_frame(self, context): # The Context object behaves like a stack where each template tag can # create a new scope. Find the place where to store the state to detect # changes. if "forloop" in context: # Ifchanged is bound to the local for loop. # When there is a loop-in-loop, the state is bound to the inner # loop, so it resets when the outer loop continues. return context["forloop"] else: # Using ifchanged outside loops. Effectively this is a no-op # because the state is associated with 'self'. return context.render_context
 - [be9a6b07] def create_var(self, value): return TemplateLiteral(self.template_parser.compile_filter(value), value)
@@ -191,6 +192,7 @@
 - [7d737b03] def render(self, context): old_setting = context.autoescape context.autoescape = self.setting output = self.nodelist.render(context) context.autoescape = old_setting if self.setting: return mark_safe(output) else: return output
 - [a09921ac] def render(self, context): output = self.nodelist.render(context) # Apply filters. with context.push(var=output): return self.filter_expr.resolve(context)
 - [d0b1d128986f1f84] def render(self, context): return ""
+- [d0b1d128986f1f84-2] def render(self, context): return ""
 - [90b5ff5d] def render(self, context): return self.content
 - [826d2405] def render(self, context): return self.mapping.get(self.tagtype, "")
 - [4f4760ea] def render(self, context): return self.nodelist.render(context) if self.inline else ""

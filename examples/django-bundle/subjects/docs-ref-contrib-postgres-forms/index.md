@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/forms
 
-- Subject: docs/ref/contrib/postgres/forms (id `68682638-7a75-417c-bf59-44c78118bb9e`)
+- Subject: docs/ref/contrib/postgres/forms (id `3f65c18b-e5f5-48d8-a7a8-8c4f98adde03`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2316 tokens
-- Facts shown: 71 of 77
+- Used: 2526 tokens
+- Facts shown: 77 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -16,32 +16,38 @@
 - >>> form = NumberListForm({"numbers": "1,2,3"}) >>> form.is_valid() True >>> form.cleaned_data {'numbers': [1, 2, 3]} [0bce2116]
 - >>> form = NumberListForm({"numbers": "1,2,a"}) >>> form.is_valid() False [729f67dd]
 - >>> from django import forms >>> from django.contrib.postgres.forms import SimpleArrayField [49db9a65b62c4b71]
+- >>> from django import forms >>> from django.contrib.postgres.forms import SimpleArrayField [49db9a65b62c4b71-2]
 - SplitArrayField(IntegerField(required=False), size=3, remove_trailing_nulls=False) [f5cf2e1e]
+- SplitArrayField(IntegerField(required=False), size=3, remove_trailing_nulls=True) [d99d6601]
+- SplitArrayField(IntegerField(required=True), size=3, remove_trailing_nulls=False) [2d18c989]
 - SplitArrayField(IntegerField(required=True), size=3, remove_trailing_nulls=True) [22eb472c]
 - The field does not support escaping of the delimiter, so be careful in cases where the delimiter is a valid character in the underlying field. The delimiter does not need to be only one character. [39ea75ea]
 - ["1", "2", "3"] # -> [1, 2, 3] ["1", "2", ""] # -> ValidationError - third entry required. ["1", "", "3"] # -> ValidationError - second entry required. ["", "2", ""] # -> ValidationError - first and third entries required. [ef8a25ae]
 - ["1", "2", "3"] # -> [1, 2, 3] ["1", "2", ""] # -> [1, 2, None] ["1", "", "3"] # -> [1, None, 3] ["", "2", ""] # -> [None, 2, None] [0d520df5]
 - ["1", "2", "3"] # -> [1, 2, 3] ["1", "2", ""] # -> [1, 2] ["1", "", "3"] # -> ValidationError - second entry required. ["", "2", ""] # -> ValidationError - first entry required. [e598ed24]
+- ["1", "2", "3"] # -> [1, 2, 3] ["1", "2", ""] # -> [1, 2] ["1", "", "3"] # -> [1, None, 3] ["", "2", ""] # -> [None, 2] [8db1b9da]
 - .. code-block:: pycon [eaf050be34acb41d-238]
 - .. code-block:: pycon [eaf050be34acb41d-239]
 - .. note:: [942ae6c11625c81c-83]
 - A :class:`~RangeWidget` comprises a 2-tuple of ``base_widget``. [9b458b0e]
 - By default, this is set to ``False``. When ``False``, each value from the repeated fields is stored. When set to ``True``, any trailing values which are blank will be stripped from the result. If the underlying field has ``required=True``, but ``remove_trailing_nulls`` is ``True``, then null values are only allowed at the end, and will be stripped. [f3347c92]
 - It specifies the underlying form field for the array. This is not used to render any HTML, but it is used to process the submitted data and validate it. For example: [45613dae]
-- On occasions it may be useful to require or restrict the keys which are valid for a given field. This can be done using the :class:`~django.contrib.postgres.validators.KeysValidator`. [638388476e77cbba-2]
 - Some examples:: [f2aec5f5]
-- Takes a single "compressed" value of a field, for example a :class:`~django.contrib.postgres.fields.DateRangeField`, and returns a tuple representing a lower and upper bound. [f9dca67e]
 - This is a required argument. [53b65ff014e563d9-2]
-- This is the fixed number of times the underlying field will be used. [497ed292]
 
 ## All facts
 
+- [638388476e77cbba-2] On occasions it may be useful to require or restrict the keys which are valid for a given field. This can be done using the :class:`~django.contrib.postgres.validators.KeysValidator`.
+- [f9dca67e] Takes a single "compressed" value of a field, for example a :class:`~django.contrib.postgres.fields.DateRangeField`, and returns a tuple representing a lower and upper bound.
 - [23d76687] This is a required argument. It specifies the form field to be repeated.
 - [27239e3c] This is an optional argument which defaults to a comma: ``,``. This value is used to split the submitted data. It allows you to chain ``SimpleArrayField`` for multidimensional data:
 - [b38ce6bf] This is an optional argument which validates that the array does not exceed the stated length.
 - [79607f9b] This is an optional argument which validates that the array reaches at least the stated length.
+- [497ed292] This is the fixed number of times the underlying field will be used.
 - [fc3123a6] ``HStoreField`` is not particularly user friendly in most cases, however it is a useful way to format data from a client-side widget for submission to the server.
+- [3139bd74] ``SimpleArrayField`` is not particularly user friendly in most cases, however it is a useful way to format data from a client-side widget for submission to the server.
 - [468dab28d53e1630] .. admonition:: User friendly forms
+- [468dab28d53e1630-2] .. admonition:: User friendly forms
 - [a239bb8c6d3d6d84-4] .. attribute:: base_field
 - [a239bb8c6d3d6d84-5] .. attribute:: base_field
 - [c9108199] .. attribute:: base_widget

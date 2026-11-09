@@ -1,6 +1,6 @@
 # Fact a230945e
 
-Store id: 637fdab2-83ad-4dc8-8c85-68b2ed053098
+Store id: e2bf9550-9c8c-4b6b-8777-99ec45bf6dc3
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection, template=None, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9913030+00:00`
+- posted_at: `2026-11-09T23:44:49.6583510+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1944,
     "symbol": "OrderBy.as_sql"
   },
-  "id": "637fdab2-83ad-4dc8-8c85-68b2ed053098",
+  "id": "e2bf9550-9c8c-4b6b-8777-99ec45bf6dc3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9913030+00:00"
+    "posted_at": "2026-11-09T23:44:49.6583510+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "47c4cf42-82df-48bd-8865-c08547cfc2a3",
+  "subject_id": "707fa47c-902a-4b9a-8e79-21aceaaadafd",
   "subject_name": "django/db/models/expressions::OrderBy.as_sql",
   "tags": [
     "entity:method"

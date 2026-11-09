@@ -1,10 +1,10 @@
 # docs/releases/1.0-porting-guide
 
-- Subject: docs/releases/1.0-porting-guide (id `88aabced-974d-44ef-b735-293fb3bb3c93`)
+- Subject: docs/releases/1.0-porting-guide (id `f138809b-de90-426b-801f-9725047dc00f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 8558 tokens
-- Facts shown: 221 of 226
+- Used: 8673 tokens
+- Facts shown: 226 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,9 +17,11 @@
 - def __unicode__(self): return "%s %s" % (self.first_name, self.last_name) [9d7444ab]
 - $ ./manage.py dumpdata --format=xml <app> > data-dump.xml $ ./manage.py reset <app> $ ./manage.py loaddata data-dump.xml [d1e71e37]
 - $ django-admin.py --settings=foo.bar runserver [76f856cc]
+- $ django-admin.py runserver --settings=foo.bar [c7043dcd]
 - This will be escaped: {{ data }} This will not be escaped: {{ data|safe }} [652a5a76e4b2dc7a-2]
 - def my_view(request): f = request.FILES["file_field_name"] ... [b7b3f7aa]
 - from django.core import management [cc170a2553169bf6]
+- from django.core import management [cc170a2553169bf6-2]
 - management.call_command("flush", verbosity=0, interactive=False) management.call_command("loaddata", "test_data", verbosity=0) [d2043b09]
 - management.flush(verbosity=0, interactive=False) management.load_data(["test_data"], verbosity=0) [3e18977a]
 - {% autoescape off %} ... unescaped template content here ... {% endautoescape %} [251a1f30]
@@ -36,11 +38,11 @@
 - admin.site.register(Parent, ParentAdmin) [6a9b1343]
 - c = Client() c.login("/path/to/login", "myuser", "mypassword") [c5f945f0]
 - class Article(models.Model): title = models.CharField(max_length=100) published = models.DateField(default=datetime.datetime.now) [678e37cf]
-- class Article(models.Model): title = models.CharField(maxlength=100) published = models.DateField(default=LazyDate()) [223830fd]
 - class ModelOne(models.Model): ... [54c45c21]
 
 ## All facts
 
+- [223830fd] class Article(models.Model): title = models.CharField(maxlength=100) published = models.DateField(default=LazyDate())
 - [612affa7] class Author(models.Model): first_name = models.CharField(max_length=30) last_name = models.CharField(max_length=30) slug = models.CharField(max_length=60)
 - [c6691666] class Author(models.Model): first_name = models.CharField(maxlength=30) last_name = models.CharField(maxlength=30) slug = models.CharField(maxlength=60, prepopulate_from=("first_name", "last_name"))
 - [fac558f8] class AuthorAdmin(admin.ModelAdmin): list_display = ["first_name", "last_name"] prepopulated_fields = {"slug": ("first_name", "last_name")}
@@ -50,11 +52,13 @@
 - [c746d3cd] class ModelTwo(models.Model): ...
 - [6311afa8] class ModelTwoAdmin(admin.ModelAdmin): fieldsets = ( ("group1", {"fields": ("foo", "bar"), "classes": "collapse"}), ("group2", {"fields": ("spam", "eggs"), "classes": "collapse wide"}), )
 - [05d2c4dc] class MyModel(models.Model): field_name = models.DecimalField(max_digits=10, decimal_places=3) ...
+- [3c85aac1] class MyModel(models.Model): field_name = models.FloatField(max_digits=10, decimal_places=3) ...
 - [8f00c102] class Parent(models.Model): ...
 - [697fde98] class ParentAdmin(admin.ModelAdmin): model = Parent inlines = [ChildInline]
 - [9ee3a9405e27875c-11] from django import forms
 - [36560f72] from django import newforms as forms
 - [897fa20c28c79ab4-2] from django.conf.urls.defaults import *
+- [897fa20c28c79ab4-3] from django.conf.urls.defaults import *
 - [8abd8e62] from django.contrib import admin from models import Author
 - [d77822b1] from django.test import Client
 - [3668c3f5] from django.utils.translation import ugettext as _
@@ -75,6 +79,7 @@
 - [faf6f5a8efbd7831-18] .. code-block:: console
 - [faf6f5a8efbd7831-19] .. code-block:: console
 - [685d15dfb6eb2285-304] .. code-block:: html+django
+- [685d15dfb6eb2285-305] .. code-block:: html+django
 - [6b4a5e54e001d097-30] .. seealso::
 - [6b4a5e54e001d097-31] .. seealso::
 - [6b4a5e54e001d097-32] .. seealso::

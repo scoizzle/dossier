@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query._gen_col_aliases
 
-- Subject: django/db/models/sql/query::Query._gen_col_aliases (id `a71524ff-be5f-4e7e-9387-80ac9ef7300a`)
+- Subject: django/db/models/sql/query::Query._gen_col_aliases (id `0d0f37dc-b5f4-4490-9c56-297c4b666d2d`)
 - Kind: class_method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

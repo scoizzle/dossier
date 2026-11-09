@@ -1,6 +1,6 @@
 # Fact 728648fa
 
-Store id: b1d2dd3c-be32-4e9f-b623-7596322b35c4
+Store id: 8fac501c-b671-4960-95c2-3c78602f2af0
 
 ## Text
 
@@ -20,7 +20,7 @@ class Exact(FieldGetDbPrepValueMixin, BuiltinLookup)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2510420+00:00`
+- posted_at: `2026-11-09T23:44:54.9518060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 372,
     "symbol": "Exact"
   },
-  "id": "b1d2dd3c-be32-4e9f-b623-7596322b35c4",
+  "id": "8fac501c-b671-4960-95c2-3c78602f2af0",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2510420+00:00"
+    "posted_at": "2026-11-09T23:44:54.9518060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "07a86a88-c8a3-48fa-a8fe-319d121d41be",
+  "subject_id": "32683582-eff6-47cc-a6cf-a40c76366db5",
   "subject_name": "django/db/models/lookups::Exact",
   "tags": [
     "entity:class",

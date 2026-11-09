@@ -1,6 +1,6 @@
 # Fact 0abe84c4
 
-Store id: 05f74987-8b6d-42ec-902f-ccac7679212e
+Store id: 8f65c6c7-f0c2-4e9c-a4e0-c3e3e237dd0e
 
 ## Text
 
@@ -20,7 +20,7 @@ def add_select_col(self, col, name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0493370+00:00`
+- posted_at: `2026-11-09T23:44:58.9656310+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2251,
     "symbol": "Query.add_select_col"
   },
-  "id": "05f74987-8b6d-42ec-902f-ccac7679212e",
+  "id": "8f65c6c7-f0c2-4e9c-a4e0-c3e3e237dd0e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0493370+00:00"
+    "posted_at": "2026-11-09T23:44:58.9656310+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8da973ec-adec-42fe-8e9a-ba978eaf60c9",
+  "subject_id": "ab9f8632-40a2-4ce8-987f-6e88e9d1163a",
   "subject_name": "django/db/models/sql/query::Query.add_select_col",
   "tags": [
     "entity:method"

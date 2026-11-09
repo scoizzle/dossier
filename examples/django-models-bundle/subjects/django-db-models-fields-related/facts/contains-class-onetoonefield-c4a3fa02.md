@@ -1,6 +1,6 @@
 # Fact c4a3fa02
 
-Store id: b4b41098-18ef-4ab7-b4b4-70aaf7d375b6
+Store id: c5138a86-e096-4651-a6b4-d45565c3bae1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OneToOneField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.9119250+00:00`
+- posted_at: `2026-11-09T23:44:51.6886880+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "b4b41098-18ef-4ab7-b4b4-70aaf7d375b6",
+  "id": "c5138a86-e096-4651-a6b4-d45565c3bae1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.9119250+00:00"
+    "posted_at": "2026-11-09T23:44:51.6886880+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OneToOneField"
       },
       "rel": "contains",
-      "target": "4c1565a5-e2f3-4fc2-b4f0-ffaa30e720a4"
+      "target": "e45ee9fe-339b-437b-a415-f8d9b53be8ed"
     }
   ],
   "status": "live",
-  "subject_id": "2dd9aa9c-962a-42d5-9466-04fc4602083a",
+  "subject_id": "b482f690-f78b-4457-98ca-4cee1c63890e",
   "subject_name": "django/db/models/fields/related",
   "tags": [
     "entity:class"

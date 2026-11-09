@@ -1,6 +1,6 @@
 # Fact e40094a4
 
-Store id: 5773410c-27ae-489d-b1e6-69bc8082cd81
+Store id: 22003b1d-5fd6-4c47-b949-5252db35fbbd
 
 ## Text
 
@@ -20,7 +20,7 @@ class Variance(NumericOutputFieldMixin, Aggregate)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5490960+00:00`
+- posted_at: `2026-11-09T23:44:48.4066120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 459,
     "symbol": "Variance"
   },
-  "id": "5773410c-27ae-489d-b1e6-69bc8082cd81",
+  "id": "22003b1d-5fd6-4c47-b949-5252db35fbbd",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5490960+00:00"
+    "posted_at": "2026-11-09T23:44:48.4066120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "810cdaa4-e71d-4b52-b72c-e1420fc4d236",
+  "subject_id": "8ed729f4-8e86-46fe-8ae6-d849ffc68bf5",
   "subject_name": "django/db/models/aggregates::Variance",
   "tags": [
     "entity:class"

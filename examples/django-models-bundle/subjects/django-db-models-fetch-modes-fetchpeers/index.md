@@ -1,11 +1,11 @@
 # django/db/models/fetch_modes::FetchPeers
 
-- Subject: django/db/models/fetch_modes::FetchPeers (id `cd72d1f5-6ea5-475b-beb5-f2f102350e1b`)
+- Subject: django/db/models/fetch_modes::FetchPeers (id `780864d2-9273-4ee7-b3f0-dae3fd60b3c5`)
 - Kind: class
 - Parent: [django/db/models/fetch_modes](../django-db-models-fetch-modes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

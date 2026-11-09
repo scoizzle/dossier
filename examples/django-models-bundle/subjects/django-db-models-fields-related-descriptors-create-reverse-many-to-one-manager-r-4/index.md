@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._apply_rel_filters
 
-- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._apply_rel_filters (id `d78a60cc-cb88-4341-a08e-8c9f21aec75e`)
+- Subject: django/db/models/fields/related_descriptors::create_reverse_many_to_one_manager.RelatedManager._apply_rel_filters (id `418372fe-ca3b-4a21-a7b7-0e77761968bc`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

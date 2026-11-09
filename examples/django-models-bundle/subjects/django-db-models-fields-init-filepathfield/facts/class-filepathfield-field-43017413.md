@@ -1,6 +1,6 @@
 # Fact 43017413
 
-Store id: a5394930-0cea-4e0a-b642-cf7659e5391e
+Store id: 01f9d689-d4df-41b9-9cb5-4c6f37cc8b3c
 
 ## Text
 
@@ -20,7 +20,7 @@ class FilePathField(Field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6683180+00:00`
+- posted_at: `2026-11-09T23:44:50.1422850+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2023,
     "symbol": "FilePathField"
   },
-  "id": "a5394930-0cea-4e0a-b642-cf7659e5391e",
+  "id": "01f9d689-d4df-41b9-9cb5-4c6f37cc8b3c",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6683180+00:00"
+    "posted_at": "2026-11-09T23:44:50.1422850+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0e66669d-f7ba-49bc-933a-5951b9f1096f",
+  "subject_id": "a0e26988-f0e6-4940-bfee-7f98c8ba7dad",
   "subject_name": "django/db/models/fields/__init__::FilePathField",
   "tags": [
     "entity:class"

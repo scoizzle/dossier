@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::CharField.formfield
 
-- Subject: django/db/models/fields/__init__::CharField.formfield (id `82a233f3-9a5c-44d0-be8b-239cffae7be2`)
+- Subject: django/db/models/fields/__init__::CharField.formfield (id `12891308-9074-4bfd-b9a9-c19dc916859d`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

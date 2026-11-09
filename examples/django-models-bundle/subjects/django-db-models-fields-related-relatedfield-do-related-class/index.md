@@ -1,11 +1,11 @@
 # django/db/models/fields/related::RelatedField.do_related_class
 
-- Subject: django/db/models/fields/related::RelatedField.do_related_class (id `4860f9e8-1892-4a1e-98a8-6a12326e7440`)
+- Subject: django/db/models/fields/related::RelatedField.do_related_class (id `edc11031-4145-47c7-85c0-d7b1a9ee4643`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/internals/contributing/sprint-quickstart
 
-- Subject: docs/internals/contributing/sprint-quickstart (id `be6f049c-6fb0-471c-9027-1bd93cdcf314`)
+- Subject: docs/internals/contributing/sprint-quickstart (id `ded75be5-9d31-44c9-8e61-9425a2dbebcf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2449 tokens
-- Facts shown: 59 of 59
+- Facts shown: 59 facts
 - Conflicts: 0
 - Gaps: 0
 

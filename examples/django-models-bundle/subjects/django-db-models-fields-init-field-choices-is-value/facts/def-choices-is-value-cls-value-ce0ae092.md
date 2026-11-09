@@ -1,6 +1,6 @@
 # Fact ce0ae092
 
-Store id: 5f34351e-73cb-4969-9516-7626d8fcbf75
+Store id: b2fc4cfc-e21b-463b-aca2-2a9b1105129b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _choices_is_value(cls, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4274840+00:00`
+- posted_at: `2026-11-09T23:44:49.9716430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 346,
     "symbol": "Field._choices_is_value"
   },
-  "id": "5f34351e-73cb-4969-9516-7626d8fcbf75",
+  "id": "b2fc4cfc-e21b-463b-aca2-2a9b1105129b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4274840+00:00"
+    "posted_at": "2026-11-09T23:44:49.9716430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "6d1d76e7-226a-4c5d-b7ce-d20c12639fec",
+  "subject_id": "d80cefa3-28b8-42fd-aeba-837f6c174d2e",
   "subject_name": "django/db/models/fields/__init__::Field._choices_is_value",
   "tags": [
     "entity:class_method",

@@ -1,6 +1,6 @@
 # Fact 8b2e63c3
 
-Store id: 7b5859c9-9330-40e3-9678-7354a022c2bc
+Store id: b0549b17-a4c0-4bff-98e0-d1b58f4e97fb
 
 ## Text
 
@@ -20,7 +20,7 @@ async def afirst(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.4527140+00:00`
+- posted_at: `2026-11-09T23:44:55.9550050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1231,
     "symbol": "QuerySet.afirst"
   },
-  "id": "7b5859c9-9330-40e3-9678-7354a022c2bc",
+  "id": "b0549b17-a4c0-4bff-98e0-d1b58f4e97fb",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.4527140+00:00"
+    "posted_at": "2026-11-09T23:44:55.9550050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ad828f93-7164-45bf-8ac0-ac143b0514fa",
+  "subject_id": "7e1b6978-9c30-44ef-a361-35692403325f",
   "subject_name": "django/db/models/query::QuerySet.afirst",
   "tags": [
     "entity:method",

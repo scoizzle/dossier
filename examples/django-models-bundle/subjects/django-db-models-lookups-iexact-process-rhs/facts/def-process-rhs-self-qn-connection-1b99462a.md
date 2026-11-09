@@ -1,6 +1,6 @@
 # Fact 1b99462a
 
-Store id: 77c3dfac-686e-4c50-ae29-a05c69b4e993
+Store id: 817061ee-11a6-4d1d-911d-ef1cd56f5992
 
 ## Text
 
@@ -20,7 +20,7 @@ def process_rhs(self, qn, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2630100+00:00`
+- posted_at: `2026-11-09T23:44:54.9623980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 418,
     "symbol": "IExact.process_rhs"
   },
-  "id": "77c3dfac-686e-4c50-ae29-a05c69b4e993",
+  "id": "817061ee-11a6-4d1d-911d-ef1cd56f5992",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2630100+00:00"
+    "posted_at": "2026-11-09T23:44:54.9623980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c9298c1e-85e4-42cb-bccc-e7830af141c5",
+  "subject_id": "fbd98957-5088-4610-a876-2dfa2f525e44",
   "subject_name": "django/db/models/lookups::IExact.process_rhs",
   "tags": [
     "entity:method"

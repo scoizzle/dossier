@@ -1,6 +1,6 @@
 # Fact 0c1f2443
 
-Store id: 2aef2993-fb74-4783-9be3-41720365df94
+Store id: b51750a8-8f25-4daf-8b1b-f40b2d2d2137
 
 ## Text
 
@@ -20,7 +20,7 @@ class IntegerLessThan(IntegerFieldOverflow, IntegerFieldFloatRounding, LessThan)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.3120370+00:00`
+- posted_at: `2026-11-09T23:44:54.9934170+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 492,
     "symbol": "IntegerLessThan"
   },
-  "id": "2aef2993-fb74-4783-9be3-41720365df94",
+  "id": "b51750a8-8f25-4daf-8b1b-f40b2d2d2137",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.3120370+00:00"
+    "posted_at": "2026-11-09T23:44:54.9934170+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5f7f2c33-4957-47fb-be16-0ef541ea0b0d",
+  "subject_id": "0d472b02-6cc9-40d2-a106-863ee86cf821",
   "subject_name": "django/db/models/lookups::IntegerLessThan",
   "tags": [
     "entity:class",

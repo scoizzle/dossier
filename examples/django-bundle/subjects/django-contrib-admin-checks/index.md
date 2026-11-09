@@ -1,10 +1,10 @@
 # django/contrib/admin/checks
 
-- Subject: django/contrib/admin/checks (id `b64d3cf9-e5dd-4dfb-ab8b-d2d73bac314c`)
+- Subject: django/contrib/admin/checks (id `76b72c79-3b24-4940-88ff-0083ea715802`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 9521 tokens
-- Facts shown: 104 of 108
+- Used: 9911 tokens
+- Facts shown: 108 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -28,6 +28,8 @@
 - [628ec41a] if not isinstance(fieldset, (list, tuple)): return must_be("a list or tuple", option=label, obj=obj, id="admin.E008") elif len(fieldset) != 2: return must_be("of length 2", option=label, obj=obj, id="admin.E009") elif not isinstance(fieldset[1], dict): return must_be( "a dictionary", option="%s[1]" % label, obj=obj, id="admin.E010" ) elif "fields" not in fieldset[1]: return [ checks.Error( "The value of '%s[1]' must contain the key 'fields'." % label, obj=obj.__class__, id="admin.E011", ) ] elif not isinstance(fieldset[1]["fields"], (list, tuple)): return must_be( "a list or tuple", option="%s[1]['fields']" % label, obj=obj, id="admin.E008", )
 - [6eb882f4] if not isinstance(obj.extra, int): return must_be("an integer", option="extra", obj=obj, id="admin.E203") else: return []
 - [9e8066bb] if not isinstance(obj.inlines, (list, tuple)): return must_be( "a list or tuple", option="inlines", obj=obj, id="admin.E103" ) else: return list( chain.from_iterable( self._check_inlines_item(obj, item, "inlines[%d]" % index) for index, item in enumerate(obj.inlines) ) )
+- [a0c746ec] if not isinstance(obj.list_display, (list, tuple)): return must_be( "a list or tuple", option="list_display", obj=obj, id="admin.E107" ) else: return list( chain.from_iterable( self._check_list_display_item(obj, item, "list_display[%d]" % index) for index, item in enumerate(obj.list_display) ) )
+- [1dce06ad] if not isinstance(obj.list_editable, (list, tuple)): return must_be( "a list or tuple", option="list_editable", obj=obj, id="admin.E120" ) else: return list( chain.from_iterable( self._check_list_editable_item( obj, item, "list_editable[%d]" % index ) for index, item in enumerate(obj.list_editable) ) )
 - [33a9f426] if not isinstance(obj.list_max_show_all, int): return must_be( "an integer", option="list_max_show_all", obj=obj, id="admin.E119" ) else: return []
 - [695dd818] if not isinstance(obj.list_per_page, int): return must_be( "an integer", option="list_per_page", obj=obj, id="admin.E118" ) else: return []
 - [6687e5e1] if not isinstance(obj.list_select_related, (bool, list, tuple)): return must_be( # RemovedInDjango2028Warning: replace with: # "a tuple, list, or False", # and also update docs/ref/checks.txt. "a boolean, tuple or list", option="list_select_related", obj=obj, id="admin.E117", ) else: return []
@@ -45,6 +47,7 @@
 - [d20b89b8] if obj.list_display_links is None: return [] elif not isinstance(obj.list_display_links, (list, tuple)): return must_be( "a list, a tuple, or None", option="list_display_links", obj=obj, id="admin.E110", ) # Check only if ModelAdmin.get_list_display() isn't overridden. elif obj.get_list_display.__func__ is ModelAdmin.get_list_display: return list( chain.from_iterable( self._check_list_display_links_item( obj, field_name, "list_display_links[%d]" % index ) for index, field_name in enumerate(obj.list_display_links) ) ) return []
 - [4238e537] if obj.max_num is None: return [] elif not isinstance(obj.max_num, int): return must_be("an integer", option="max_num", obj=obj, id="admin.E204") else: return []
 - [c4a8f8fb] if obj.min_num is None: return [] elif not isinstance(obj.min_num, int): return must_be("an integer", option="min_num", obj=obj, id="admin.E205") else: return []
+- [a3201962] if obj.readonly_fields == (): return [] elif not isinstance(obj.readonly_fields, (list, tuple)): return must_be( "a list or tuple", option="readonly_fields", obj=obj, id="admin.E034" ) else: return list( chain.from_iterable( self._check_readonly_fields_item( obj, field_name, "readonly_fields[%d]" % index ) for index, field_name in enumerate(obj.readonly_fields) ) )
 - [8e11ce1c] if val not in (HORIZONTAL, VERTICAL): return [ checks.Error( "The value of '%s' must be either admin.HORIZONTAL or " "admin.VERTICAL." % label, obj=obj.__class__, id="admin.E024", ) ] else: return []
 - [bd4827b8] return list( chain.from_iterable( self._check_field_spec(obj, field_name, "fields") for field_name in obj.fields ) )
 - [c0416717] try: field = obj.model._meta.get_field(field_name) except FieldDoesNotExist: return refer_to_missing_field( field=field_name, option=label, obj=obj, id="admin.E002" ) else: # Using attname is not supported. if field.name != field_name: return refer_to_missing_field( field=field_name, option=label, obj=obj, id="admin.E002", ) if not field.many_to_many and not isinstance(field, models.ForeignKey): return must_be( "a foreign key or a many-to-many field", option=label, obj=obj, id="admin.E003", ) else: return []
@@ -67,6 +70,7 @@
 - [40123973] def _check_fieldsets_item(self, obj, fieldset, label, seen_fields): """Check an item of `fieldsets`, i.e. check that this is a pair of a set name and a dictionary containing "fields" key."""
 - [c0dea25c] def _check_filter_horizontal(self, obj): """Check that filter_horizontal is a sequence of field names.""" if not isinstance(obj.filter_horizontal, (list, tuple)): return must_be( "a list or tuple", option="filter_horizontal", obj=obj, id="admin.E018" ) else: return list( chain.from_iterable( self._check_filter_item( obj, field_name, "filter_horizontal[%d]" % index ) for index, field_name in enumerate(obj.filter_horizontal) ) )
 - [8fd2ad33] def _check_filter_item(self, obj, field_name, label): """Check one item of `filter_vertical` or `filter_horizontal`, i.e. check that given field exists and is a ManyToManyField."""
+- [51ab50ca] def _check_filter_vertical(self, obj): """Check that filter_vertical is a sequence of field names.""" if not isinstance(obj.filter_vertical, (list, tuple)): return must_be( "a list or tuple", option="filter_vertical", obj=obj, id="admin.E017" ) else: return list( chain.from_iterable( self._check_filter_item( obj, field_name, "filter_vertical[%d]" % index ) for index, field_name in enumerate(obj.filter_vertical) ) )
 - [34b8016d] def _check_form(self, obj): """Check that form subclasses BaseModelForm.""" if not _issubclass(obj.form, BaseModelForm): return must_inherit_from( parent="BaseModelForm", option="form", obj=obj, id="admin.E016" ) else: return []
 - [54edd3f5] def _check_formset(self, obj): """Check formset is a subclass of BaseModelFormSet."""
 - [5705d504] def _check_inlines(self, obj): """Check all inline model admin classes."""

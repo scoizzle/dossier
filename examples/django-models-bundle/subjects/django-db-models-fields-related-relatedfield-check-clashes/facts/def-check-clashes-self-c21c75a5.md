@@ -1,6 +1,6 @@
 # Fact c21c75a5
 
-Store id: 5a42093c-7fe6-4bfd-8cea-ff4ec17e646d
+Store id: 66f0cc7c-c9e3-4cf2-953c-43d0a5c832e9
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_clashes(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6135100+00:00`
+- posted_at: `2026-11-09T23:44:51.4727530+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 237,
     "symbol": "RelatedField._check_clashes"
   },
-  "id": "5a42093c-7fe6-4bfd-8cea-ff4ec17e646d",
+  "id": "66f0cc7c-c9e3-4cf2-953c-43d0a5c832e9",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6135100+00:00"
+    "posted_at": "2026-11-09T23:44:51.4727530+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "57a087d0-056b-4a7f-afa5-802cd308914f",
+  "subject_id": "ca054bbf-1f1d-4241-a241-206af3689d15",
   "subject_name": "django/db/models/fields/related::RelatedField._check_clashes",
   "tags": [
     "entity:method"

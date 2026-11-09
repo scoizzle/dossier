@@ -1,6 +1,6 @@
 # Fact 52e2fcaa
 
-Store id: c2c52c7e-7b94-4fa3-8a04-3051d766c1ec
+Store id: 669d966e-49d7-4a0a-9558-fc7ab3318a8a
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_over_clause(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6558750+00:00`
+- posted_at: `2026-11-09T23:44:59.7687870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 262,
     "symbol": "WhereNode.contains_over_clause"
   },
-  "id": "c2c52c7e-7b94-4fa3-8a04-3051d766c1ec",
+  "id": "669d966e-49d7-4a0a-9558-fc7ab3318a8a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6558750+00:00"
+    "posted_at": "2026-11-09T23:44:59.7687870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "46503c96-2522-43dc-b002-7b03101ee462",
+  "subject_id": "b4cfc1c3-fd86-4687-9413-a1266da3a0bb",
   "subject_name": "django/db/models/sql/where::WhereNode.contains_over_clause",
   "tags": [
     "entity:method",

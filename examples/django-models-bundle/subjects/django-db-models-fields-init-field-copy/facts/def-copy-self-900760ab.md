@@ -1,6 +1,6 @@
 # Fact 900760ab
 
-Store id: 2e29f32c-7d2a-4c27-a695-3440da892a20
+Store id: ae327a2d-7e35-488b-966a-c580519d7e76
 
 ## Text
 
@@ -20,7 +20,7 @@ def __copy__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4592320+00:00`
+- posted_at: `2026-11-09T23:44:49.9990060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 756,
     "symbol": "Field.__copy__"
   },
-  "id": "2e29f32c-7d2a-4c27-a695-3440da892a20",
+  "id": "ae327a2d-7e35-488b-966a-c580519d7e76",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4592320+00:00"
+    "posted_at": "2026-11-09T23:44:49.9990060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "735a5a2f-95c8-425f-b5a6-46ac8e9f0a2e",
+  "subject_id": "09ae523f-4420-4990-82dc-40b986dae89c",
   "subject_name": "django/db/models/fields/__init__::Field.__copy__",
   "tags": [
     "entity:method"

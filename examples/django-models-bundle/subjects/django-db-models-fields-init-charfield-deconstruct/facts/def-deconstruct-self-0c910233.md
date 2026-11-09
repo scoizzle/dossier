@@ -1,6 +1,6 @@
 # Fact 0c910233
 
-Store id: cea613ee-fa6f-40bd-a769-939d6cd79d49
+Store id: 4f4f4e0d-11c4-473d-ad5d-b69c10751214
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.5614680+00:00`
+- posted_at: `2026-11-09T23:44:50.0720080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1353,
     "symbol": "CharField.deconstruct"
   },
-  "id": "cea613ee-fa6f-40bd-a769-939d6cd79d49",
+  "id": "4f4f4e0d-11c4-473d-ad5d-b69c10751214",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.5614680+00:00"
+    "posted_at": "2026-11-09T23:44:50.0720080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e5a559b8-d10c-42bf-8da1-b86774b7e7d8",
+  "subject_id": "0d236653-3f55-41d1-b94c-16140107c7d8",
   "subject_name": "django/db/models/fields/__init__::CharField.deconstruct",
   "tags": [
     "entity:method"

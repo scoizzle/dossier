@@ -1,10 +1,10 @@
 # docs/ref/paginator
 
-- Subject: docs/ref/paginator (id `4b13b108-14b7-49e3-9a93-56be778a5756`)
+- Subject: docs/ref/paginator (id `16a000f7-3972-412b-8c8b-98782f66f246`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3491 tokens
-- Facts shown: 100 of 101
+- Used: 3528 tokens
+- Facts shown: 101 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -82,6 +82,7 @@
 - [ed57e436] .. class:: AsyncPage(object_list, number, paginator)
 - [71a90290] .. class:: AsyncPaginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
 - [ead27381] .. class:: Page(object_list, number, paginator)
+- [ecdeadeb] .. class:: Paginator(object_list, per_page, orphans=0, allow_empty_first_page=True, error_messages=None)
 - [f770e73a] .. exception:: EmptyPage
 - [13e861d5] .. exception:: InvalidPage
 - [8e0d0f1d] .. exception:: PageNotAnInteger

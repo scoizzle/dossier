@@ -1,6 +1,6 @@
 # Fact f9516d6e
 
-Store id: 9be634f2-054e-4319-812d-f8805e342e0a
+Store id: c6b30878-2cb5-4b27-b595-a83779466730
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3830500+00:00`
+- posted_at: `2026-11-09T23:44:50.6458870+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 174,
     "symbol": "FileDescriptor.__get__"
   },
-  "id": "9be634f2-054e-4319-812d-f8805e342e0a",
+  "id": "c6b30878-2cb5-4b27-b595-a83779466730",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3830500+00:00"
+    "posted_at": "2026-11-09T23:44:50.6458870+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "acc2a418-4eb2-4862-9760-f4a2ea9cd423",
+  "subject_id": "621f1f54-e110-4515-bd9d-c5a34c85b384",
   "subject_name": "django/db/models/fields/files::FileDescriptor.__get__",
   "tags": [
     "entity:method"

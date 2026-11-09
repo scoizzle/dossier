@@ -1,11 +1,11 @@
 # django/db/models/base::Model.arefresh_from_db
 
-- Subject: django/db/models/base::Model.arefresh_from_db (id `1d34eab0-14a6-44a8-b2de-c8d475f92944`)
+- Subject: django/db/models/base::Model.arefresh_from_db (id `793fd7e7-44fe-4351-8857-68eb434103b3`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 30 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.has_limit_one
 
-- Subject: django/db/models/sql/query::Query.has_limit_one (id `c7024668-85be-414c-aec4-336b8c5d3018`)
+- Subject: django/db/models/sql/query::Query.has_limit_one (id `5fce396d-5eba-4b31-92d6-53cb4b8fb004`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

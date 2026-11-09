@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/__init__
 
-- Subject: django/contrib/gis/gdal/__init__ (id `669d5dcd-a2e8-4b9b-beef-41c46eaf4527`)
+- Subject: django/contrib/gis/gdal/__init__ (id `8505c38a-2f04-4ae9-8f3d-e021b63c8c7f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 549 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/install/geolibs
 
-- Subject: docs/ref/contrib/gis/install/geolibs (id `9dbd7f4a-f303-4c00-80f4-2a360229a7d2`)
+- Subject: docs/ref/contrib/gis/install/geolibs (id `1f8580e2-db15-4a7c-8579-880c36baabe1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3077 tokens
-- Facts shown: 93 of 95
+- Used: 3185 tokens
+- Facts shown: 95 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -15,6 +15,7 @@
 - $ cd geos-X.Y.Z $ mkdir build $ cd build [8878087e]
 - $ cd proj-X.Y.Z $ mkdir build $ cd build [e687c231]
 - $ cmake -DCMAKE_BUILD_TYPE=Release .. $ cmake --build . $ sudo cmake --build . --target install [a4433d9dcd5dc0e0]
+- $ cmake -DCMAKE_BUILD_TYPE=Release .. $ cmake --build . $ sudo cmake --build . --target install [a4433d9dcd5dc0e0-2]
 - $ cmake .. $ cmake --build . $ sudo cmake --build . --target install [8a53ab59]
 - $ sudo apt-get install binutils libproj-dev gdal-bin [cdd94c41]
 - $ tar xzf proj-X.Y.Z.tar.gz $ cd proj-X.Y.Z/data $ tar xzf ../../proj-data-X.Y.tar.gz $ cd ../.. [827a3b3c]
@@ -33,11 +34,11 @@
 - .. Libs release dates: GEOS 3.10.0 2021-10-20 GEOS 3.11.0 2022-07-01 GEOS 3.12.0 2023-06-27 GEOS 3.13.0 2024-09-06 GEOS 3.14.0 2025-08-21 GDAL 3.3.0 2021-05-03 GDAL 3.4.0 2021-11-04 GDAL 3.5.0 2022-05-13 GDAL 3.6.0 2022-11-03 GDAL 3.7.0 2023-05-10 GDAL 3.8.0 2023-11-13 GDAL 3.9.0 2024-05-10 GDAL 3.10.0 2024-11-06 GDAL 3.11.0 2025-05-09 GDAL 3.12.0 2025-11-07 GDAL 3.13.0 2026-05-08 PostGIS 3.2.0 2021-12-18 PostGIS 3.3.0 2022-08-27 PostGIS 3.4.0 2023-08-15 PostGIS 3.5.0 2024-09-25 PostGIS 3.6.0 2025-09-02 PROJ 9.0.0 2022-03-01 PROJ 8.0.0 2021-03-01 PROJ 8.0.0 2021-03-01 PROJ 7.0.0 2020-02-25 PROJ 6.0.0 2019-02-26 SpatiaLite 4.3.0 2015-09-07 SpatiaLite 5.0.0 2020-08-23 SpatiaLite 5.1.0 2023-08-04 [67319ab3]
 - .. _PROJ RFC-7: https://proj.org/community/rfc/rfc-7.html#rfc7 .. _build requirements: https://proj.org/install.html#build-requirements [805d4182]
 - .. _PROJ: https://proj.org/ __ https://postgis.net/ __ https://www.gaia-gis.it/gaia-sins/ [7174b26d]
-- .. _Xcode: https://developer.apple.com/xcode/ [11da3fa0]
-- .. _build_from_source: [44bcb7ba]
 
 ## All facts
 
+- [11da3fa0] .. _Xcode: https://developer.apple.com/xcode/
+- [44bcb7ba] .. _build_from_source:
 - [4a0b3345] .. _gdalbuild:
 - [3e08085d] .. _gdallibrarypath:
 - [87acd429] .. _gdaltrouble:
@@ -86,6 +87,7 @@
 - [aa916f35] If using a binary package of GEOS (e.g., on Ubuntu), you may need to :ref:`binutils`.
 - [7bcb4842] If you have any problems, please see the troubleshooting section below for suggestions and solutions.
 - [bd8932f6] If your GDAL library is in a non-standard location, or you don't want to modify the system's library path then the :setting:`GDAL_LIBRARY_PATH` setting may be added to your Django settings file with the full path to the GDAL library. For example:
+- [2cb5ae74] If your GEOS library is in a non-standard location, or you don't want to modify the system's library path then the :setting:`GEOS_LIBRARY_PATH` setting may be added to your Django settings file with the full path to the GEOS C library. For example:
 - [f8012547] Next, untar the source code archive, and extract the datum shifting files in the ``data`` subdirectory. This must be done *prior* to configuration:
 - [dc912279] Note that older or more recent versions of these libraries *may* also work totally fine with GeoDjango. Your mileage may vary.
 - [9271b09b] On Debian/Ubuntu, you are advised to install the following packages which will install, directly or by dependency, the required geospatial libraries:

@@ -1,11 +1,11 @@
 # django/db/models/fields/related_lookups::RelatedGreaterThan
 
-- Subject: django/db/models/fields/related_lookups::RelatedGreaterThan (id `5486fc1a-09ee-4e46-a380-36777da5b627`)
+- Subject: django/db/models/fields/related_lookups::RelatedGreaterThan (id `0edd486d-1572-468f-91d8-a850104ba0f0`)
 - Kind: class
 - Parent: [django/db/models/fields/related_lookups](../django-db-models-fields-related-lookups/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::return_None
 
-- Subject: django/db/models/fields/__init__::return_None (id `20a8667a-0c3e-41af-b36a-1f633bdced87`)
+- Subject: django/db/models/fields/__init__::return_None (id `15c7c04e-5990-409f-a6cf-810ac1ae4e1a`)
 - Kind: function
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

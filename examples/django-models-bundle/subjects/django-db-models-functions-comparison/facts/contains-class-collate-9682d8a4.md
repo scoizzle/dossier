@@ -1,6 +1,6 @@
 # Fact 9682d8a4
 
-Store id: aec012f8-264f-499b-b2cc-ad4fdc6cff20
+Store id: 0393aeeb-9f1d-41f3-8408-79b126658ae1
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Collate
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0159390+00:00`
+- posted_at: `2026-11-09T23:44:53.1901490+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "aec012f8-264f-499b-b2cc-ad4fdc6cff20",
+  "id": "0393aeeb-9f1d-41f3-8408-79b126658ae1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0159390+00:00"
+    "posted_at": "2026-11-09T23:44:53.1901490+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Collate"
       },
       "rel": "contains",
-      "target": "f7b7ad14-a5b6-4a97-8427-1bfd9e27c8ba"
+      "target": "11f5a4ba-61b7-4c53-b74a-0368ccf6b9bd"
     }
   ],
   "status": "live",
-  "subject_id": "f413cc9f-0314-4d47-88d5-686eaa21e619",
+  "subject_id": "b144e176-2f68-4d7b-9b17-76f2684f59e8",
   "subject_name": "django/db/models/functions/comparison",
   "tags": [
     "entity:class"

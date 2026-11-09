@@ -1,6 +1,6 @@
 # Fact 4db6958d
 
-Store id: fc75951f-e737-4963-82a2-0814215fbb3d
+Store id: 6c7cf76c-9a2b-4e16-b4f5-fb0162ebbb57
 
 ## Text
 
@@ -20,7 +20,7 @@ def __str__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0301500+00:00`
+- posted_at: `2026-11-09T23:44:49.6900130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2195,
     "symbol": "WindowFrame.__str__"
   },
-  "id": "fc75951f-e737-4963-82a2-0814215fbb3d",
+  "id": "6c7cf76c-9a2b-4e16-b4f5-fb0162ebbb57",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0301500+00:00"
+    "posted_at": "2026-11-09T23:44:49.6900130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b3ff496f-a3dd-4dd6-8c4a-121e3d786bf3",
+  "subject_id": "17f4f96d-4490-47d4-af16-d1f732e93689",
   "subject_name": "django/db/models/expressions::WindowFrame.__str__",
   "tags": [
     "entity:method"

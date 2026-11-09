@@ -1,6 +1,6 @@
 # Fact 2e9c5a20
 
-Store id: a2e175c6-fb77-4660-b8ca-d13ecf50c9aa
+Store id: a089e5b2-f6b6-4fcf-8a7c-a52a0d28a819
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class OneToOneRel
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.3580660+00:00`
+- posted_at: `2026-11-09T23:44:52.5352060+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "a2e175c6-fb77-4660-b8ca-d13ecf50c9aa",
+  "id": "a089e5b2-f6b6-4fcf-8a7c-a52a0d28a819",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.3580660+00:00"
+    "posted_at": "2026-11-09T23:44:52.5352060+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "OneToOneRel"
       },
       "rel": "contains",
-      "target": "200cf0f5-e28e-4024-86f4-d8fb8a364cea"
+      "target": "15d31121-d3a7-4ee4-9fa2-1fa469f4b265"
     }
   ],
   "status": "live",
-  "subject_id": "5aa43ba1-b642-41bc-ace0-777a2d99efeb",
+  "subject_id": "33ef98f6-f27a-4a21-99f3-242030d5c4d2",
   "subject_name": "django/db/models/fields/reverse_related",
   "tags": [
     "entity:class"

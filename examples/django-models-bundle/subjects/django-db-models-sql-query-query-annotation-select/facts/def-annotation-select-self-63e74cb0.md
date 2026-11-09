@@ -1,6 +1,6 @@
 # Fact 63e74cb0
 
-Store id: 14f06c53-d841-4bd1-9025-bd09813ef07f
+Store id: a0d2d82e-b23f-47c6-9eac-49522ad3bf2e
 
 ## Text
 
@@ -20,7 +20,7 @@ def annotation_select(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1362770+00:00`
+- posted_at: `2026-11-09T23:44:59.0446890+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2662,
     "symbol": "Query.annotation_select"
   },
-  "id": "14f06c53-d841-4bd1-9025-bd09813ef07f",
+  "id": "a0d2d82e-b23f-47c6-9eac-49522ad3bf2e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1362770+00:00"
+    "posted_at": "2026-11-09T23:44:59.0446890+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "28f2d905-9fff-44b0-b97b-0f6d1748f7cc",
+  "subject_id": "19cb5d4b-a482-4166-bd60-8645954cab8e",
   "subject_name": "django/db/models/sql/query::Query.annotation_select",
   "tags": [
     "entity:method",

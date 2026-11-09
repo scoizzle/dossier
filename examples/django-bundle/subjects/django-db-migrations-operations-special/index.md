@@ -1,10 +1,10 @@
 # django/db/migrations/operations/special
 
-- Subject: django/db/migrations/operations/special (id `f774f24c-238b-44da-9bc1-421893679160`)
+- Subject: django/db/migrations/operations/special (id `887c529a-9f14-4bba-8efa-a70c298c9835`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1833 tokens
-- Facts shown: 29 of 31
+- Used: 1964 tokens
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,7 @@
 
 ## All facts
 
+- [7ca536d1] def database_backwards(self, app_label, schema_editor, from_state, to_state): if self.reverse_sql is None: raise NotImplementedError("You cannot reverse this operation") if router.allow_migrate( schema_editor.connection.alias, app_label, **self.hints ): self._run_sql(schema_editor, self.reverse_sql)
 - [95e10629] def database_forwards(self, app_label, schema_editor, from_state, to_state): # RunPython has access to all models. Ensure that all models are # reloaded in case any are delayed. from_state.clear_delayed_apps_cache() if router.allow_migrate( schema_editor.connection.alias, app_label, **self.hints ): # We now execute the Python code in a context that contains a # 'models' object, representing the versioned models as an app # registry. We could try to override the global cache, but then # people will still use direct imports, so we go with a # documentation approach instead. self.code(from_state.apps, schema_editor)
 - [e914f19f] def database_forwards(self, app_label, schema_editor, from_state, to_state): # We calculate state separately in here since our state functions # aren't useful for database_operation in self.database_operations: to_state = from_state.clone() database_operation.state_forwards(app_label, to_state) database_operation.database_forwards( app_label, schema_editor, from_state, to_state ) from_state = to_state
 - [d8260372] def database_forwards(self, app_label, schema_editor, from_state, to_state): if router.allow_migrate( schema_editor.connection.alias, app_label, **self.hints ): self._run_sql(schema_editor, self.sql)
@@ -37,6 +38,7 @@
 - [f86b4d01] def describe(self): return "Raw SQL operation"
 - [45cc1569] def state_forwards(self, app_label, state): # RunPython objects have no state effect. To add some, combine this # with SeparateDatabaseAndState. pass
 - [bf67145ce4fffac3] def state_forwards(self, app_label, state): for state_operation in self.state_operations: state_operation.state_forwards(app_label, state)
+- [bf67145ce4fffac3-2] def state_forwards(self, app_label, state): for state_operation in self.state_operations: state_operation.state_forwards(app_label, state)
 - [ac0c71b7] class RunPython(Operation): """ Run Python code in a context suitable for doing versioned ORM operations. """
 - [d2a74363] class RunSQL(Operation): """ Run some raw SQL. A reverse SQL statement may be provided.
 - [f9aabd04] class SeparateDatabaseAndState(Operation): """ Take two lists of operations - ones that will be used for the database, and ones that will be used for the state change. This allows operations that don't support state change to have it applied, or have operations that affect the state or not the database, or so on. """

@@ -1,6 +1,6 @@
 # Fact 05597025
 
-Store id: b8772471-be74-46c0-b5de-aaf3332a8ed5
+Store id: 787cda45-9973-4d11-9c1c-e6f0c61f9d1d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _set_file(self, file)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.3513750+00:00`
+- posted_at: `2026-11-09T23:44:50.6216790+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 56,
     "symbol": "FieldFile._set_file"
   },
-  "id": "b8772471-be74-46c0-b5de-aaf3332a8ed5",
+  "id": "787cda45-9973-4d11-9c1c-e6f0c61f9d1d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.3513750+00:00"
+    "posted_at": "2026-11-09T23:44:50.6216790+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ddb4e594-1de8-49b5-b88f-f0f93298db7e",
+  "subject_id": "9b73c31a-6724-4851-9d0c-7cc56364fc43",
   "subject_name": "django/db/models/fields/files::FieldFile._set_file",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 0d0a7309
 
-Store id: 5bc1dffb-eddd-4946-a7bc-612a006b6a75
+Store id: 8c02f390-5e15-43d6-8378-6bfeee6f9a71
 
 ## Text
 
@@ -20,7 +20,7 @@ def _empty(of_cls)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4089350+00:00`
+- posted_at: `2026-11-09T23:44:49.9504240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 117,
     "symbol": "_empty"
   },
-  "id": "5bc1dffb-eddd-4946-a7bc-612a006b6a75",
+  "id": "8c02f390-5e15-43d6-8378-6bfeee6f9a71",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4089350+00:00"
+    "posted_at": "2026-11-09T23:44:49.9504240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "44c6a437-037c-4693-896f-4da6eda54377",
+  "subject_id": "d5c8b0a8-71b8-4c5c-8f89-49172e7a7c61",
   "subject_name": "django/db/models/fields/__init__::_empty",
   "tags": [
     "entity:function"

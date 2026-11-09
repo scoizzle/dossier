@@ -1,11 +1,11 @@
 # django/db/models/functions/text::ConcatPair
 
-- Subject: django/db/models/functions/text::ConcatPair (id `df6facfb-ff43-4b1a-9d4f-82b22ed3eaba`)
+- Subject: django/db/models/functions/text::ConcatPair (id `7b1b84a8-a012-4803-bafd-f795a8e04c40`)
 - Kind: class
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

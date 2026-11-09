@@ -1,10 +1,10 @@
 # docs/ref/templates/api
 
-- Subject: docs/ref/templates/api (id `2c3842e6-c847-440f-815a-281befc4868e`)
+- Subject: docs/ref/templates/api (id `2d6e80aa-070f-4933-95d4-53a010c43bd8`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 12586 tokens
-- Facts shown: 305 of 318
+- Used: 12940 tokens
+- Facts shown: 318 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -13,6 +13,7 @@
 - Engine( builtins=["myapp.builtins"], ) [4821f47d]
 - Engine( libraries={ "myapp_tags": "path.to.myapp.tags", "admin.urls": "django.contrib.admin.templatetags.admin_urls", }, ) [b27d6a6f]
 - Only set it to ``False`` if you're rendering non-HTML templates! [15bf49650ff6b391]
+- Only set it to ``False`` if you're rendering non-HTML templates! [15bf49650ff6b391-2]
 - :class:`django.template.loaders.cached.Loader` requires all of its wrapped loaders to set this attribute, typically by instantiating the ``Origin`` with ``loader=self``. [5c892d3a]
 - >>> context = Context({"my_name": "Adrian"}) >>> template.render(context) "My name is Adrian." [861f2b08]
 - >>> context = Context({"my_name": "Dolores"}) >>> template.render(context) "My name is Dolores." [6135090e]
@@ -22,22 +23,23 @@
 - For example, the filesystem loader may receive ``'index.html'`` as a ``template_name`` argument. This method would yield origins for the full path of ``index.html`` as it appears in each template directory the loader looks at. [e6f80f44]
 - INSTALLED_APPS = ["myproject.polls", "myproject.music"] [43c98a11]
 - If the template is instantiated directly rather than through a template loader, this is ``None``. [8f846ca16d3a65ec]
+- If the template is instantiated directly rather than through a template loader, this is ``None``. [8f846ca16d3a65ec-2]
 - If the template is instantiated directly rather than through a template loader, this is a string value of ``<unknown_source>``. [fdda5382]
 - In general, it is enough to define :meth:`get_template_sources` and :meth:`get_contents` for custom template loaders. ``get_template()`` will usually not need to be overridden. [74d05251]
 - Returns a ``Template`` object for a given ``template_name`` by looping through results from :meth:`get_template_sources` and calling :meth:`get_contents`. This returns the first matching template. If no template is found, :exc:`~django.template.TemplateDoesNotExist` is raised. [dd089e08]
 - Returns the contents for a template given a :class:`~django.template.base.Origin` instance. [4f5c430f]
 - TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "APP_DIRS": True, } ] [4cf67aa3]
-- TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "DIRS": [BASE_DIR / "templates"], "OPTIONS": { "loaders": [ ( "django.template.loaders.cached.Loader", [ "django.template.loaders.filesystem.Loader", "django.template.loaders.app_directories.Loader", "path.to.custom.Loader", ], ), ], }, } ] [b63576a8]
 - TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "DIRS": [BASE_DIR / "templates"], } ] [d9f75540]
+- The relative path to the template as passed into the template loader. [6682267e]
 
 ## All facts
 
+- [b63576a8] TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "DIRS": [BASE_DIR / "templates"], "OPTIONS": { "loaders": [ ( "django.template.loaders.cached.Loader", [ "django.template.loaders.filesystem.Loader", "django.template.loaders.app_directories.Loader", "path.to.custom.Loader", ], ), ], }, } ]
 - [d154b641] TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "OPTIONS": { "loaders": [ ( "django.template.loaders.filesystem.Loader", [BASE_DIR / "templates"], ), ], }, } ]
 - [146dfc0c] TEMPLATES = [ { "BACKEND": "django.template.backends.django.DjangoTemplates", "OPTIONS": { "loaders": [ ( "django.template.loaders.locmem.Loader", { "index.html": "content here", }, ), ], }, } ]
 - [a2b7e667] The method doesn't need to verify that the template exists at a given path, but it should ensure the path is valid. For instance, the filesystem loader makes sure the path lies under a valid template directory.
 - [cf699e04] The optional ``skip`` argument is a list of origins to ignore when extending templates. This allow templates to extend other templates of the same name. It also used to avoid recursion errors.
 - [3e01d1b3] The path to the template as returned by the template loader. For loaders that read from the file system, this is the full path to the template.
-- [6682267e] The relative path to the template as passed into the template loader.
 - [0765460f] The template loader instance that constructed this ``Origin``.
 - [40132f9b] This is where a filesystem loader would read contents from the filesystem, or a database loader would read from the database. If a matching template doesn't exist, this should raise a :exc:`~django.template.TemplateDoesNotExist` error.
 - [18836416] from django.template import RequestContext
@@ -50,10 +52,14 @@
 - [22acd32e] I will now delete this valuable data. {{ data.delete }}
 - [9c7e27cd] It defaults to ``'utf-8'``.
 - [c41e7d3c76cf30ad] It defaults to ``False``.
+- [c41e7d3c76cf30ad-2] It defaults to ``False``.
 - [b51f7b866a15b887] It defaults to ``None``.
+- [b51f7b866a15b887-2] It defaults to ``None``.
 - [5fecfc476221cc40] It defaults to ``True``.
+- [5fecfc476221cc40-2] It defaults to ``True``.
 - [2b380d1e] It defaults to a list containing:
 - [90e1c2de3cec758e] It defaults to an empty list.
+- [90e1c2de3cec758e-2] It defaults to an empty list.
 - [abf776db] It defaults to the empty string.
 - [192a4e8d] Libraries can be loaded by passing the corresponding dictionary key to the :ttag:`{% load %}<load>` tag.
 - [5596c6ae] See :class:`~django.template.RequestContext` for more information.
@@ -68,6 +74,7 @@
 - [093a6f80] * ``/path/to/myproject/polls/templates/`` * ``/path/to/myproject/music/templates/``
 - [1f47997f] * ``app_dirs`` only affects the default value of ``loaders``. See below.
 - [624b90ab50807ee5] * ``autoescape`` controls whether HTML autoescaping is enabled.
+- [624b90ab50807ee5-2] * ``autoescape`` controls whether HTML autoescaping is enabled.
 - [cf410000] * ``context_processors`` is a list of dotted Python paths to callables that are used to populate the context when a template is rendered with a request. These callables take a request object as their argument and return a :class:`dict` of items to be merged into the context.
 - [d05efffe] * ``debug`` is a boolean that turns on/off template debug mode. If it is ``True``, the template engine will store additional debug information which can be used to display a detailed report for any exception raised during template rendering.
 - [c581f5a8] * ``dirs`` is a list of directories where the engine should look for template source files. It is used to configure :class:`filesystem.Loader <django.template.loaders.filesystem.Loader>`.
@@ -90,6 +97,7 @@
 - [6cab8987] >>> c = Context() >>> c["foo"] = "first level" >>> c.update({"bar": "second level"}) {'bar': 'second level'} >>> c.flatten() {'True': True, 'None': None, 'foo': 'first level', 'False': False, 'bar': 'second level'}
 - [e4f119c9] >>> c = Context() >>> c["foo"] = "first level" >>> c.update({"foo": "updated"}) {'foo': 'updated'} >>> c["foo"] 'updated' >>> c.pop() {'foo': 'updated'} >>> c["foo"] 'first level'
 - [a6bedde5] >>> c = Context() >>> c["foo"] = "first level" >>> with c.push(): ... c["foo"] = "second level" ... c["foo"] ... 'second level' >>> c["foo"] 'first level'
+- [945ddc97] >>> c = Context() >>> c["foo"] = "first level" >>> with c.push(foo="second level"): ... c["foo"] ... 'second level' >>> c["foo"] 'first level'
 - [0ade6755] >>> c = Context() >>> c["foo"] = "first level" >>> with c.update({"foo": "second level"}): ... c["foo"] ... 'second level' >>> c["foo"] 'first level'
 - [a7715b9d] >>> c1 = Context() >>> c1["foo"] = "first level" >>> c1["bar"] = "second level" >>> c2 = Context() >>> c2.update({"bar": "second level", "foo": "first level"}) {'foo': 'first level', 'bar': 'second level'} >>> c1 == c2 True
 - [7fcb0356] >>> class PersonClass2: ... def name(self): ... return "Samantha" ... >>> t = Template("My name is {{ person.name }}.") >>> t.render(Context({"person": PersonClass2})) "My name is Samantha."
@@ -188,6 +196,8 @@
 - [8a457acc] .. class:: cached.Loader
 - [90ea4847] .. class:: filesystem.Loader
 - [a38c56c0] .. class:: locmem.Loader
+- [685d15dfb6eb2285-85] .. code-block:: html+django
+- [685d15dfb6eb2285-86] .. code-block:: html+django
 - [eaf050be34acb41d-585] .. code-block:: pycon
 - [eaf050be34acb41d-586] .. code-block:: pycon
 - [eaf050be34acb41d-587] .. code-block:: pycon
@@ -254,11 +264,14 @@
 - [a07a9ff6] If ``string_if_invalid`` contains a ``'%s'``, the format marker will be replaced with the name of the invalid variable.
 - [df292555] If any part of the variable is callable, the template system will try calling it. Example:
 - [0e79b7ba] If this processor is enabled, every ``RequestContext`` will contain a variable ``MEDIA_URL``, providing the value of the :setting:`MEDIA_URL` setting.
+- [d5afbc2b] If this processor is enabled, every ``RequestContext`` will contain a variable ``STATIC_URL``, providing the value of the :setting:`STATIC_URL` setting.
 - [953d2cd9] If this processor is enabled, every ``RequestContext`` will contain a variable ``TIME_ZONE``, providing the name of the currently active time zone.
 - [0db9ddcc] If this processor is enabled, every ``RequestContext`` will contain a variable ``csp_nonce``, providing a securely generated, request-specific nonce suitable for use under a Content Security Policy. See :ref:`CSP nonce usage <csp-nonce>` for details.
 - [50cecfcc] If this processor is enabled, every ``RequestContext`` will contain a variable ``request``, which is the current :class:`~django.http.HttpRequest`.
 - [67d5b6da37976b23] If this processor is enabled, every ``RequestContext`` will contain these variables:
+- [67d5b6da37976b23-2] If this processor is enabled, every ``RequestContext`` will contain these variables:
 - [29bcaf15] If this processor is enabled, every ``RequestContext`` will contain these two variables -- but only if your :setting:`DEBUG` setting is set to ``True`` and the request's IP address (``request.META['REMOTE_ADDR']``) is in the :setting:`INTERNAL_IPS` setting:
+- [0b2722cf] If this processor is enabled, every ``RequestContext`` will contain these two variables:
 - [cc93477c] If you are using the :class:`~django.template.backends.django.DjangoTemplates` backend, this probably isn't the documentation you're looking for. An instance of the ``Engine`` class described below is accessible using the ``engine`` attribute of that backend and any attribute defaults mentioned below are overridden by what's passed by :class:`~django.template.backends.django.DjangoTemplates`.
 - [7ff5bd9c] If you need to use strings with these sequences, store them in template variables or use a custom template tag or filter to workaround the limitation.
 - [42cd713b] In a Django project where the :setting:`TEMPLATES` setting defines a :class:`~django.template.backends.django.DjangoTemplates` engine, it's possible to instantiate a :class:`Template` directly. If more than one :class:`~django.template.backends.django.DjangoTemplates` engine is defined, the first one will be used.

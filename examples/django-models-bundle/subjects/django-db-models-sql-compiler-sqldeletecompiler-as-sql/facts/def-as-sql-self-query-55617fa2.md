@@ -1,6 +1,6 @@
 # Fact 55617fa2
 
-Store id: bef89e3d-b549-4108-8f4a-97112c3c744a
+Store id: 15dd5eeb-586f-4e3e-970e-968bf1845671
 
 ## Text
 
@@ -20,7 +20,7 @@ def _as_sql(self, query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0356270+00:00`
+- posted_at: `2026-11-09T23:44:57.7103430+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2018,
     "symbol": "SQLDeleteCompiler._as_sql"
   },
-  "id": "bef89e3d-b549-4108-8f4a-97112c3c744a",
+  "id": "15dd5eeb-586f-4e3e-970e-968bf1845671",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0356270+00:00"
+    "posted_at": "2026-11-09T23:44:57.7103430+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "93b2d7ad-2930-4155-9a95-e61f832e4385",
+  "subject_id": "769903fc-2ee0-4d8a-b975-1376e6b3802e",
   "subject_name": "django/db/models/sql/compiler::SQLDeleteCompiler._as_sql",
   "tags": [
     "entity:method"

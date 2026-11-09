@@ -1,6 +1,6 @@
 # Fact 2f8ca840
 
-Store id: f7709f53-cfaa-4644-9868-49f0adf3e226
+Store id: 052f48da-b82d-4fc2-bf2a-9b9bbe8a8f91
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, field)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1080190+00:00`
+- posted_at: `2026-11-09T23:44:56.6079590+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 256,
     "symbol": "DeferredAttribute.__init__"
   },
-  "id": "f7709f53-cfaa-4644-9868-49f0adf3e226",
+  "id": "052f48da-b82d-4fc2-bf2a-9b9bbe8a8f91",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1080190+00:00"
+    "posted_at": "2026-11-09T23:44:56.6079590+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "e581c108-4f1a-4a44-857a-f8c4020265be",
+  "subject_id": "4bc4a22c-61bd-46fa-851b-ea26ce3ecf96",
   "subject_name": "django/db/models/query_utils::DeferredAttribute.__init__",
   "tags": [
     "entity:method"

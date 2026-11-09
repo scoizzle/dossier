@@ -1,10 +1,10 @@
 # docs/glossary
 
-- Subject: docs/glossary (id `23c33da2-d07c-40c6-aacd-474c378f657d`)
+- Subject: docs/glossary (id `5bad641c-b6c2-4c55-815c-ac3df2638f3e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 734 tokens
-- Facts shown: 24 of 25
+- Used: 752 tokens
+- Facts shown: 25 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -15,6 +15,7 @@
 - See :class:`property`. [30537a80]
 - See :doc:`/topics/class-based-views/index`. [a1bbd32d]
 - See :doc:`/topics/db/models`. [966a6a22f6682ba6]
+- See :doc:`/topics/db/models`. [966a6a22f6682ba6-2]
 - See :doc:`/topics/db/queries`. [9f810118]
 - See :doc:`/topics/templates`. [e14cb994]
 - See :ref:`the FAQ entry <faq-mtv>`. [fffcf935]

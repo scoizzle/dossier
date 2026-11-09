@@ -1,6 +1,6 @@
 # Fact 957de2d4
 
-Store id: 8e3a5ea5-b18c-450a-b332-54343b874b76
+Store id: 7e2843a8-f7b2-4b8a-ba4d-eb70f50cc327
 
 ## Text
 
@@ -20,7 +20,7 @@ def target_field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2272520+00:00`
+- posted_at: `2026-11-09T23:44:52.4295720+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 77,
     "symbol": "ForeignObjectRel.target_field"
   },
-  "id": "8e3a5ea5-b18c-450a-b332-54343b874b76",
+  "id": "7e2843a8-f7b2-4b8a-ba4d-eb70f50cc327",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2272520+00:00"
+    "posted_at": "2026-11-09T23:44:52.4295720+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "353aaec9-6337-48f5-bb8e-b993c8f5fc84",
+  "subject_id": "bffe3487-8dcd-4a91-8475-58de2f1cf255",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.target_field",
   "tags": [
     "entity:method",

@@ -1,10 +1,10 @@
 # docs/ref/tasks
 
-- Subject: docs/ref/tasks (id `7d7d4e94-7580-4cf9-b6a0-0e27ecc4b0a2`)
+- Subject: docs/ref/tasks (id `77079f3d-f396-4207-be19-dd12e4dc5b9b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5173 tokens
-- Facts shown: 173 of 174
+- Used: 5213 tokens
+- Facts shown: 174 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -125,6 +125,7 @@
 - [0caa3949] Contains context for the running :class:`Task`. Context only passed to a ``Task`` if it was defined with ``takes_context=True``.
 - [cd4dab69] Contains information about the error raised during the execution of a ``Task``.
 - [3eb0c0fa] Custom Task backends may define a custom ``task_class`` that accepts additional arguments. These can be passed through the ``@task`` decorator::
+- [f259e795] If the defined ``Task`` is not valid according to the backend, :exc:`~django.tasks.exceptions.InvalidTask` is raised.
 - [c3e4e08d] Raised by :meth:`~django.tasks.Task.get_result` when the provided ``result_id`` is for a different Task than the current Task.
 - [3b047703] Raised by :meth:`~django.tasks.backends.base.BaseTaskBackend.get_result` when the provided ``result_id`` does not exist.
 - [f7805b53] Raised when the :class:`.Task` attempting to be enqueued is invalid.

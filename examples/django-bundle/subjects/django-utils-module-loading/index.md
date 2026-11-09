@@ -1,10 +1,10 @@
 # django/utils/module_loading
 
-- Subject: django/utils/module_loading (id `ff1de8a1-7163-41f3-9959-ef36a89fe6d4`)
+- Subject: django/utils/module_loading (id `f1788793-667e-4a5d-96f2-cd85df881eb4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 930 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # docs/ref/models/options
 
-- Subject: docs/ref/models/options (id `987cb75d-0baf-462d-bca5-1f07c0f1c231`)
+- Subject: docs/ref/models/options (id `639ad02b-969d-4375-92a2-7df756f75fed`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 5782 tokens
-- Facts shown: 159 of 164
+- Used: 5913 tokens
+- Facts shown: 164 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,8 @@
 - class Question(models.Model): text = models.TextField() # ... [4d2cc5bf]
 - db_table = "music_album" [4d2ccc88]
 - from django.db import models [4af926756c29efa6-31]
+- from django.db import models [4af926756c29efa6-32]
+- from django.db import models [4af926756c29efa6-33]
 - from django.db.models import F [a345df786882bc74-5]
 - ordering = ["-order_date"] [3e9aa1a3]
 - ordering = ["-pub_date", "author"] [74c188fb]
@@ -35,22 +37,24 @@
 - ordering = [F("author").asc(nulls_last=True)] [cd0ba4f4]
 - permissions = [("can_deliver_pizzas", "Can deliver pizzas")] [96425558]
 - unique_together = ["driver", "restaurant"] [bf8d7f60]
+- unique_together = [["driver", "restaurant"]] [ca7b17f7]
 - verbose_name = "pizza" [f0527518]
 - verbose_name_plural = "stories" [062ffedf]
 - If you need to change this default behavior, create the intermediary table as an explicit model (with ``managed`` set as needed) and use the :attr:`ManyToManyField.through` attribute to make the relation use your custom model. [9920accf]
 - db_table = '"name_left_in_lowercase"' [dc7700e9]
-- #. Adding an automatic primary key field to the model if you don't declare it. To avoid confusion for later code readers, it's recommended to specify all the columns from the database table you are modeling when using unmanaged models. [29171453]
 - .. admonition:: Use :class:`.UniqueConstraint` with the :attr:`~Options.constraints` option instead. [ca4fedf5]
+- .. code-block:: pycon [eaf050be34acb41d-469]
 
 ## All facts
 
+- [29171453] #. Adding an automatic primary key field to the model if you don't declare it. To avoid confusion for later code readers, it's recommended to specify all the columns from the database table you are modeling when using unmanaged models.
 - [e19c2753] #. If a model with ``managed=False`` contains a :class:`~django.db.models.ManyToManyField` that points to another unmanaged model, then the intermediate table for the many-to-many join will also not be created. However, the intermediary table between one managed and one unmanaged model *will* be created.
-- [eaf050be34acb41d-469] .. code-block:: pycon
 - [eaf050be34acb41d-470] .. code-block:: pycon
 - [eaf050be34acb41d-471] .. code-block:: pycon
 - [088c309e] A :class:`~django.db.models.ManyToManyField` cannot be included in ``unique_together``. (It's not clear what that would even mean!) If you need to validate uniqueness related to a :class:`~django.db.models.ManyToManyField`, try using a signal or an explicit :attr:`through <ManyToManyField.through>` model.
 - [f07e155e] A human-readable name for the object, singular::
 - [7f617abe] A list of :doc:`constraints </ref/models/constraints>` that you want to define on the model::
+- [ef28eb82] A list of :doc:`indexes </ref/models/indexes>` that you want to define on the model::
 - [e4ef1453] As the reverse name for a field should be unique, be careful if you intend to subclass your model. To work around name collisions, part of the name should contain ``'%(app_label)s'`` and ``'%(model_name)s'``, which are replaced respectively by the name of the application the model is in, and the name of the model, both lowercased. See the paragraph on :ref:`related names for abstract models <abstract-related-name>`.
 - [bdddea1a] Because ``order_with_respect_to`` adds a new database column, be sure to make and apply the appropriate migrations if you add or change ``order_with_respect_to`` after your initial :djadmin:`migrate`.
 - [e9fec9c1] Defaults to ``('add', 'change', 'delete', 'view')``. You may customize this list, for example, by setting this to an empty list if your app doesn't require any of the default permissions. It must be specified on the model before the model is created by :djadmin:`migrate` in order to prevent any omitted permissions from being created.
@@ -102,6 +106,7 @@
 - [0f290df9] Usually there is no need to set this attribute. The default is ``False``.
 - [00011aa1] When ``order_with_respect_to`` is set, two additional methods are provided to retrieve and to set the order of the related objects: ``get_RELATED_order()`` and ``set_RELATED_order()``, where ``RELATED`` is the lowercased model name. For example, assuming that a ``Question`` object has multiple related ``Answer`` objects, the list returned contains the primary keys of the related ``Answer`` objects:
 - [43de47fd] You can also use :doc:`query expressions </ref/models/expressions>`. To order by ``author`` ascending and make null values sort last, use this::
+- [59240a74] class Answer(models.Model): question = models.ForeignKey(Question, on_delete=models.CASCADE) answer = models.TextField()
 - [8aea328a] In order to meet the 30-char limitation Oracle has on table names, and match the usual conventions for Oracle databases, Django may shorten table names and turn them all-uppercase. To prevent such transformations, use a quoted name as the value for ``db_table``::
 - [03bbd140] Such quoted names can also be used with Django's other supported database backends; except for Oracle, however, the quotes have no effect. See the :ref:`Oracle notes <oracle-notes>` for more details.
 - [6044f01a] .. _table-names:

@@ -1,10 +1,10 @@
 # django/test/__init__
 
-- Subject: django/test/__init__ (id `e7d306f6-5e9c-4cf9-bae2-aa1facf7cad5`)
+- Subject: django/test/__init__ (id `353647de-8568-43bc-9f4b-b493d7c4b6f1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 211 tokens
-- Facts shown: 3 of 3
+- Facts shown: 3 facts
 - Conflicts: 0
 - Gaps: 0
 

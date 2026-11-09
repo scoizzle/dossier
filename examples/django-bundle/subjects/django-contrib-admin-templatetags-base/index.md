@@ -1,10 +1,10 @@
 # django/contrib/admin/templatetags/base
 
-- Subject: django/contrib/admin/templatetags/base (id `b3bf7181-5c07-446a-8b08-781f20a649b3`)
+- Subject: django/contrib/admin/templatetags/base (id `c6f38522-e6dc-4a3f-9f22-6f22ec13400c`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 395 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

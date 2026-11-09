@@ -1,10 +1,10 @@
 # docs/ref/templates/language
 
-- Subject: docs/ref/templates/language (id `2956b67b-25c5-45b1-a8f7-fecd04274f9c`)
+- Subject: docs/ref/templates/language (id `e05cf200-092a-47c4-8f55-f3ee49a34e19`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 9452 tokens
-- Facts shown: 234 of 275
+- Used: 10256 tokens
+- Facts shown: 275 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -27,6 +27,12 @@
 - {% translate "Title" as title %} {% block content %}{{ title }}{% endblock %} [a028e626]
 - * Dictionary lookup * Attribute or method lookup * Numeric index lookup [41b10868]
 - .. code-block:: html+django [685d15dfb6eb2285-265]
+- .. code-block:: html+django [685d15dfb6eb2285-266]
+- .. code-block:: html+django [685d15dfb6eb2285-267]
+- .. code-block:: html+django [685d15dfb6eb2285-268]
+- .. code-block:: html+django [685d15dfb6eb2285-269]
+- .. code-block:: html+django [685d15dfb6eb2285-270]
+- .. code-block:: html+django [685d15dfb6eb2285-271]
 - :doc:`The Templates Reference </ref/templates/index>` Covers built-in tags, built-in filters, using an alternative template language, and more. [a275e2aa]
 - <!DOCTYPE html> <html lang="en"> <head> <link rel="stylesheet" href="style.css"> <title>My amazing blog</title> </head> [f4052435]
 - <!DOCTYPE html> <html lang="en"> <head> <link rel="stylesheet" href="style.css"> <title>{% block title %}My amazing site{% endblock %}</title> </head> [1a22eba3]
@@ -35,15 +41,16 @@
 - <body> <div id="sidebar"> {% block sidebar %} <ul> <li><a href="/">Home</a></li> <li><a href="/blog/">Blog</a></li> </ul> {% endblock %} </div> [5e1adff0]
 - <h1>This &amp; that</h1> <b>Hello!</b> [7f51462c]
 - <script>alert('hello')</script> [d3d26f19]
-- Auto-escaping is on by default. Hello {{ name }} [7cfb4de6]
-- Because dictionary lookup happens first, that behavior kicks in and provides a default value instead of using the intended ``.items()`` method. In this case, consider converting to a dictionary first. [70308324]
-- Hello, <b>username [26a824f9]
-- Hello, {{ name }} [e0618213]
 
 ## All facts
 
+- [7cfb4de6] Auto-escaping is on by default. Hello {{ name }}
+- [70308324] Because dictionary lookup happens first, that behavior kicks in and provides a default value instead of using the intended ``.items()`` method. In this case, consider converting to a dictionary first.
 - [024e35fea9218591] Django's admin interface can include a complete reference of all template tags and filters available for a given site. See :doc:`/ref/contrib/admin/admindocs`.
+- [024e35fea9218591-2] Django's admin interface can include a complete reference of all template tags and filters available for a given site. See :doc:`/ref/contrib/admin/admindocs`.
+- [26a824f9] Hello, <b>username
 - [ae21a9e6] Hello, <script>alert('hello')</script>
+- [e0618213] Hello, {{ name }}
 - [419a933961c34d87-2] If ``value`` is 123456789, the output would be ``117.7 MB``.
 - [f806d6e3] If ``value`` is ``['a', 'b', 'c', 'd']``, the output will be ``4``.
 - [e4e899d7] If ``value`` isn't provided or is empty, the above will display "``nothing``".
@@ -93,6 +100,9 @@
 - [3a13c3db] {{ data|default:"This is a string literal." }}
 - [1738875e] {{ task.comment_set.all.count }}
 - [00c8858c] {{ task.foo }}
+- [685d15dfb6eb2285-272] .. code-block:: html+django
+- [685d15dfb6eb2285-273] .. code-block:: html+django
+- [685d15dfb6eb2285-274] .. code-block:: html+django
 - [4d174882] In larger templates, this technique helps you see which ``{% block %}`` tags are being closed.
 - [8487877f] * :ttag:`{% block %}<block>` tags are evaluated first. That's why the content of a block is always overridden, regardless of the truthiness of surrounding tags. For example, this template will *always* override the content of the ``title`` block:
 - [599677a0] * By using the same template name as you are inheriting from, :ttag:`{% extends %}<extends>` can be used to inherit a template at the same time as overriding it. Combined with ``{{ block.super }}``, this can be a powerful way to make small customizations. See :ref:`extending_an_overridden_template` in the *Overriding templates* How-to for a full example.
@@ -122,7 +132,36 @@
 - [50bed6e0d454902f-5] .. admonition:: Philosophy
 - [50bed6e0d454902f-6] .. admonition:: Philosophy
 - [f1634b861a77cfdb-20] .. code-block:: html
+- [685d15dfb6eb2285-275] .. code-block:: html+django
+- [685d15dfb6eb2285-276] .. code-block:: html+django
+- [685d15dfb6eb2285-277] .. code-block:: html+django
+- [685d15dfb6eb2285-278] .. code-block:: html+django
+- [685d15dfb6eb2285-279] .. code-block:: html+django
+- [685d15dfb6eb2285-280] .. code-block:: html+django
+- [685d15dfb6eb2285-281] .. code-block:: html+django
+- [685d15dfb6eb2285-282] .. code-block:: html+django
+- [685d15dfb6eb2285-283] .. code-block:: html+django
+- [685d15dfb6eb2285-284] .. code-block:: html+django
+- [685d15dfb6eb2285-285] .. code-block:: html+django
+- [685d15dfb6eb2285-286] .. code-block:: html+django
+- [685d15dfb6eb2285-287] .. code-block:: html+django
+- [685d15dfb6eb2285-288] .. code-block:: html+django
+- [685d15dfb6eb2285-289] .. code-block:: html+django
+- [685d15dfb6eb2285-290] .. code-block:: html+django
+- [685d15dfb6eb2285-291] .. code-block:: html+django
+- [685d15dfb6eb2285-292] .. code-block:: html+django
+- [685d15dfb6eb2285-293] .. code-block:: html+django
+- [685d15dfb6eb2285-294] .. code-block:: html+django
+- [685d15dfb6eb2285-295] .. code-block:: html+django
+- [685d15dfb6eb2285-296] .. code-block:: html+django
+- [685d15dfb6eb2285-297] .. code-block:: html+django
+- [685d15dfb6eb2285-298] .. code-block:: html+django
+- [685d15dfb6eb2285-299] .. code-block:: html+django
+- [685d15dfb6eb2285-300] .. code-block:: html+django
+- [685d15dfb6eb2285-301] .. code-block:: html+django
+- [685d15dfb6eb2285-302] .. code-block:: html+django
 - [ba063aebe37527ec] .. code-block:: html+django :caption: ``authors.html``
+- [ba063aebe37527ec-2] .. code-block:: html+django :caption: ``authors.html``
 - [78682175] .. code-block:: html+django :caption: ``base.html``
 - [3ad6730c] .. code-block:: html+django :caption: ``child.html``
 - [6e5c274d] .. code-block:: html+django :caption: ``template.html``
@@ -205,6 +244,7 @@
 - [599487cd] Similarly, what if the name contained a ``'<'`` symbol, like this?
 - [b366b6e6] Some filters take arguments. A filter argument looks like this: ``{{ bio|truncatewords:30 }}``. This will display the first 30 words of the ``bio`` variable.
 - [7c1eadd7] Some tags require beginning and ending tags (i.e. ``{% tag %} ... tag contents ... {% endtag %}``).
+- [f218f579] String literals and automatic escaping --------------------------------------
 - [32cce9a4ed33af09-2] Tags ====
 - [dfc7a76d] Tags look like this: ``{% tag %}``. Tags are more complex than variables: Some create text in the output, some control flow by performing loops or logic, and some load external information into the template to be used by later variables.
 - [d1d2d63f] Template fragments defined with :ttag:`partialdef` can be accessed directly via template loading or inclusion using the ``template.html#partial_name`` syntax.
@@ -245,5 +285,6 @@
 - [381ef10b] With this name value, the template would be rendered as:
 - [949b4c20] You can also access methods you've explicitly defined on your own models:
 - [2ef9086c] You can also create your own custom template filters; see :doc:`/howto/custom-template-tags`.
+- [3e0822a3] You can also create your own custom template tags; see :doc:`/howto/custom-template-tags`.
 - [390a2eba] You can modify variables for display by using **filters**.
 - [5c14562b] You can use as many levels of inheritance as needed. One common way of using inheritance is the following three-level approach:

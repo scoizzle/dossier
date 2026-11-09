@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::ManyToManyDescriptor.__init__
 
-- Subject: django/db/models/fields/related_descriptors::ManyToManyDescriptor.__init__ (id `619f7339-a994-4c2f-9203-c286d9919876`)
+- Subject: django/db/models/fields/related_descriptors::ManyToManyDescriptor.__init__ (id `b73fa989-37b7-4879-9c1a-6f6116d1b8f9`)
 - Kind: method
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

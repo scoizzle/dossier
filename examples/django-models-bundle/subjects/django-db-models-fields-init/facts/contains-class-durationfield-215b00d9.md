@@ -1,6 +1,6 @@
 # Fact 215b00d9
 
-Store id: 675e0568-993f-4670-8d68-ff47aa7d9bc9
+Store id: 3002f25a-78d7-41e7-a5a9-be6067c63379
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class DurationField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "675e0568-993f-4670-8d68-ff47aa7d9bc9",
+  "id": "3002f25a-78d7-41e7-a5a9-be6067c63379",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "DurationField"
       },
       "rel": "contains",
-      "target": "4aa473b5-a84c-40dd-b33e-b9584200a499"
+      "target": "d6b01c6c-d1b4-4748-8499-fad34125a060"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

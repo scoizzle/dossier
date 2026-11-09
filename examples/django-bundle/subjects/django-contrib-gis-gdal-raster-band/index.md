@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/raster/band
 
-- Subject: django/contrib/gis/gdal/raster/band (id `bee9aa49-0bf9-46f2-8e23-e59a6fb5e1ec`)
+- Subject: django/contrib/gis/gdal/raster/band (id `b8465f53-60e4-43d3-a343-5cb366382758`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2035 tokens
-- Facts shown: 41 of 41
+- Facts shown: 41 facts
 - Conflicts: 0
 - Gaps: 0
 

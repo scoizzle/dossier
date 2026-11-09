@@ -1,10 +1,10 @@
 # django/contrib/gis/gdal/envelope
 
-- Subject: django/contrib/gis/gdal/envelope (id `8a6cebbe-fe5f-46c5-9206-9861f97d8f3b`)
+- Subject: django/contrib/gis/gdal/envelope (id `48c2ffc9-3e78-450b-8b65-a6bd7c2966e3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1579 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

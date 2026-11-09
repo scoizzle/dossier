@@ -1,6 +1,6 @@
 # Fact 3f658467
 
-Store id: d5775041-476c-4158-8f7f-01f1ab7bd709
+Store id: 4c2bf2ca-159c-450b-abf7-511e4b5fb58f
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7158200+00:00`
+- posted_at: `2026-11-09T23:44:50.1776160+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2261,
     "symbol": "SmallIntegerField.get_internal_type"
   },
-  "id": "d5775041-476c-4158-8f7f-01f1ab7bd709",
+  "id": "4c2bf2ca-159c-450b-abf7-511e4b5fb58f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7158200+00:00"
+    "posted_at": "2026-11-09T23:44:50.1776160+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "587f66a5-bef0-4b18-bcc3-d76cac016119",
+  "subject_id": "0a025912-8e4f-4b49-a6e2-c69ec7eda71f",
   "subject_name": "django/db/models/fields/__init__::SmallIntegerField.get_internal_type",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 0657f198
 
-Store id: bedf391b-daa4-428f-929b-f73435f49181
+Store id: aff78fc5-cfa1-49e7-9a0d-761151f6c3d0
 
 ## Text
 
@@ -20,7 +20,7 @@ def _set_creation_counter(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.6930100+00:00`
+- posted_at: `2026-11-09T23:44:55.2918080+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 128,
     "symbol": "BaseManager._set_creation_counter"
   },
-  "id": "bedf391b-daa4-428f-929b-f73435f49181",
+  "id": "aff78fc5-cfa1-49e7-9a0d-761151f6c3d0",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.6930100+00:00"
+    "posted_at": "2026-11-09T23:44:55.2918080+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8cdbf012-6aa8-4bc2-a1f7-7bb020257d6c",
+  "subject_id": "06b949cd-68d7-4fa4-bd72-4f0f9a4fd76b",
   "subject_name": "django/db/models/manager::BaseManager._set_creation_counter",
   "tags": [
     "entity:method"

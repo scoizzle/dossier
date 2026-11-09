@@ -1,6 +1,6 @@
 # Fact 3cbac58d
 
-Store id: d9fcdaad-2f1a-4a86-9f2b-6cf4a9b96910
+Store id: c321b957-41ef-491b-814c-45a379c7a85e
 
 ## Text
 
@@ -20,7 +20,7 @@ def filter(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.5369730+00:00`
+- posted_at: `2026-11-09T23:44:56.0323450+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1695,
     "symbol": "QuerySet.filter"
   },
-  "id": "d9fcdaad-2f1a-4a86-9f2b-6cf4a9b96910",
+  "id": "c321b957-41ef-491b-814c-45a379c7a85e",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.5369730+00:00"
+    "posted_at": "2026-11-09T23:44:56.0323450+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "8b11ab23-8178-47c3-b246-c39f45cf661c",
+  "subject_id": "2fbbe56e-5e0d-4d09-8cb5-870c83ce7573",
   "subject_name": "django/db/models/query::QuerySet.filter",
   "tags": [
     "entity:method"

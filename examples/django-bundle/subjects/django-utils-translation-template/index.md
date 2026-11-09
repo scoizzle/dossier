@@ -1,10 +1,10 @@
 # django/utils/translation/template
 
-- Subject: django/utils/translation/template (id `a474edca-9290-471c-b6f3-4e224bf65e1a`)
+- Subject: django/utils/translation/template (id `d1bc24b8-fe3e-4552-beac-0fd3c4fced41`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1715 tokens
-- Facts shown: 11 of 11
+- Facts shown: 11 facts
 - Conflicts: 0
 - Gaps: 0
 

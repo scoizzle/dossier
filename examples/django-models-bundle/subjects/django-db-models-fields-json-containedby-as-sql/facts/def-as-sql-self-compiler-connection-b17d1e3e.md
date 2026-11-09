@@ -1,6 +1,6 @@
 # Fact b17d1e3e
 
-Store id: cc175876-70e4-4f3d-9da0-6e9c8cec0946
+Store id: 4a1a1d2b-5564-4935-a496-c1793a0f57cf
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.8751000+00:00`
+- posted_at: `2026-11-09T23:44:50.9580630+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 172,
     "symbol": "ContainedBy.as_sql"
   },
-  "id": "cc175876-70e4-4f3d-9da0-6e9c8cec0946",
+  "id": "4a1a1d2b-5564-4935-a496-c1793a0f57cf",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.8751000+00:00"
+    "posted_at": "2026-11-09T23:44:50.9580630+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1e762c58-dccc-4e33-8561-627a6fda1356",
+  "subject_id": "6085835b-62f3-4e68-88db-d45780ae3dfb",
   "subject_name": "django/db/models/fields/json::ContainedBy.as_sql",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # docs/intro/contributing
 
-- Subject: docs/intro/contributing (id `ca951195-dd18-4a99-ad3c-721e1770d703`)
+- Subject: docs/intro/contributing (id `0d9664d9-2976-44d9-89f0-4b74146c3d21`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 7461 tokens
-- Facts shown: 169 of 170
+- Used: 7480 tokens
+- Facts shown: 170 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -61,6 +61,7 @@
 - [28f76d0c] .. _intro-contributing-install-local-copy:
 - [79fee087] .. admonition:: But this testing thing looks kinda hard...
 - [2d9866bfadae9fc2] .. admonition:: For Windows users
+- [2d9866bfadae9fc2-2] .. admonition:: For Windows users
 - [10f252c6] .. admonition:: Low bandwidth connection?
 - [7b76700c] .. admonition:: Ticket #99999 -- Allow making toast
 - [dbb2ef17dd903b2b] .. admonition:: Where to get help:

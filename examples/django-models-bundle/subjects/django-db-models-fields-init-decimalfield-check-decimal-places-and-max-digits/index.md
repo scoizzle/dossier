@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DecimalField._check_decimal_places_and_max_digits
 
-- Subject: django/db/models/fields/__init__::DecimalField._check_decimal_places_and_max_digits (id `6c43fe2c-293a-47b2-9fc1-bd9e5802450c`)
+- Subject: django/db/models/fields/__init__::DecimalField._check_decimal_places_and_max_digits (id `eb22dcd3-4d45-42a6-a5aa-05d5e7196dbe`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

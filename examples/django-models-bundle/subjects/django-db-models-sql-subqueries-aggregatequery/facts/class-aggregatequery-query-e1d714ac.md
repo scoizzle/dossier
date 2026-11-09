@@ -1,6 +1,6 @@
 # Fact e1d714ac
 
-Store id: bf427d44-252f-4d03-92dc-9e8eb006b693
+Store id: e10383ea-cdba-400e-8513-58cb7fd8e92d
 
 ## Text
 
@@ -20,7 +20,7 @@ class AggregateQuery(Query)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.4135270+00:00`
+- posted_at: `2026-11-09T23:44:59.4431660+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 167,
     "symbol": "AggregateQuery"
   },
-  "id": "bf427d44-252f-4d03-92dc-9e8eb006b693",
+  "id": "e10383ea-cdba-400e-8513-58cb7fd8e92d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.4135270+00:00"
+    "posted_at": "2026-11-09T23:44:59.4431660+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4d6d5249-5aa1-4ef9-85b0-71bad5d44ab4",
+  "subject_id": "447a0ff2-75f7-45bb-829b-2daa53fc1b96",
   "subject_name": "django/db/models/sql/subqueries::AggregateQuery",
   "tags": [
     "entity:class"

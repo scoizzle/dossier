@@ -1,10 +1,10 @@
 # django/middleware/http
 
-- Subject: django/middleware/http (id `0ebc2b0f-9aa9-41d4-96ff-adc30aca3d8d`)
+- Subject: django/middleware/http (id `239d2bb6-3600-49dc-bddf-7f627c5d80cd`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 417 tokens
-- Facts shown: 8 of 8
+- Facts shown: 8 facts
 - Conflicts: 0
 - Gaps: 0
 

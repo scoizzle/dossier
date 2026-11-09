@@ -1,6 +1,6 @@
 # Fact 68cccceb
 
-Store id: f44555bb-c167-4a9c-8682-290650f922d2
+Store id: d011b579-7470-4673-9751-5069664f96e6
 
 ## Text
 
@@ -20,7 +20,7 @@ def split_having_qualify(self, negated=False, must_group_by=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.5799200+00:00`
+- posted_at: `2026-11-09T23:44:59.6779030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 40,
     "symbol": "WhereNode.split_having_qualify"
   },
-  "id": "f44555bb-c167-4a9c-8682-290650f922d2",
+  "id": "d011b579-7470-4673-9751-5069664f96e6",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.5799200+00:00"
+    "posted_at": "2026-11-09T23:44:59.6779030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "77edf1b7-8c24-45b9-b2d0-ec0bfda89b90",
+  "subject_id": "b13a0d54-0399-49d0-9bd7-0c107f8754c3",
   "subject_name": "django/db/models/sql/where::WhereNode.split_having_qualify",
   "tags": [
     "entity:method"

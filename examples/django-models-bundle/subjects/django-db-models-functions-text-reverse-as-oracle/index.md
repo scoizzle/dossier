@@ -1,11 +1,11 @@
 # django/db/models/functions/text::Reverse.as_oracle
 
-- Subject: django/db/models/functions/text::Reverse.as_oracle (id `76d1f59a-92ad-4ca8-b7eb-4313296fb267`)
+- Subject: django/db/models/functions/text::Reverse.as_oracle (id `d21c8ecb-4278-4e0d-936f-05a3b1b31648`)
 - Kind: method
 - Parent: [django/db/models/functions/text](../django-db-models-functions-text/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

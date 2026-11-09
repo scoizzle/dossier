@@ -1,11 +1,11 @@
 # django/db/models/functions/math::Abs
 
-- Subject: django/db/models/functions/math::Abs (id `40103c85-aa92-45a2-b8ed-e5ff265fc7cc`)
+- Subject: django/db/models/functions/math::Abs (id `fab0a7ed-588b-435c-8587-6ed42694e9aa`)
 - Kind: class
 - Parent: [django/db/models/functions/math](../django-db-models-functions-math/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

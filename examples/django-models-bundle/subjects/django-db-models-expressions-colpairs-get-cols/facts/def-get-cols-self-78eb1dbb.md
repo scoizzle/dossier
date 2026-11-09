@@ -1,6 +1,6 @@
 # Fact 78eb1dbb
 
-Store id: 78090cf3-6c9f-4ba1-8479-e82c581ccd84
+Store id: 8400c680-d86f-42ef-84b2-cfa82ab49ed1
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_cols(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9034050+00:00`
+- posted_at: `2026-11-09T23:44:49.5635060+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1409,
     "symbol": "ColPairs.get_cols"
   },
-  "id": "78090cf3-6c9f-4ba1-8479-e82c581ccd84",
+  "id": "8400c680-d86f-42ef-84b2-cfa82ab49ed1",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9034050+00:00"
+    "posted_at": "2026-11-09T23:44:49.5635060+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "20ea3a77-7c0b-47db-9b10-6d03fc9ff0d0",
+  "subject_id": "4a071bf6-0418-47fc-a181-e4d7cf74440b",
   "subject_name": "django/db/models/expressions::ColPairs.get_cols",
   "tags": [
     "entity:method"

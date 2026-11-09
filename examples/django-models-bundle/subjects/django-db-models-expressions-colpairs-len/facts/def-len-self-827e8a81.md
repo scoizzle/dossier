@@ -1,6 +1,6 @@
 # Fact 827e8a81
 
-Store id: c2ae1aa5-1915-43da-ba1d-dd2de1ca3578
+Store id: 2dbace7b-c07c-4004-965c-fbd47a571173
 
 ## Text
 
@@ -20,7 +20,7 @@ def __len__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9001400+00:00`
+- posted_at: `2026-11-09T23:44:49.5602390+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1397,
     "symbol": "ColPairs.__len__"
   },
-  "id": "c2ae1aa5-1915-43da-ba1d-dd2de1ca3578",
+  "id": "2dbace7b-c07c-4004-965c-fbd47a571173",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9001400+00:00"
+    "posted_at": "2026-11-09T23:44:49.5602390+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c25154a7-d061-4d12-a36e-14513debbf54",
+  "subject_id": "494d44d8-df2b-451a-b23b-d9bf7e738e66",
   "subject_name": "django/db/models/expressions::ColPairs.__len__",
   "tags": [
     "entity:method"

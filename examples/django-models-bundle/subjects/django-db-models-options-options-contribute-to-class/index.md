@@ -1,11 +1,11 @@
 # django/db/models/options::Options.contribute_to_class
 
-- Subject: django/db/models/options::Options.contribute_to_class (id `47ce758e-d510-458c-ac1b-24442940eef7`)
+- Subject: django/db/models/options::Options.contribute_to_class (id `8d303038-cde7-4837-a4a0-58b56f48e009`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

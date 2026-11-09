@@ -1,6 +1,6 @@
 # Fact 49d8600f
 
-Store id: 5e32b44e-2d09-4dce-9877-8beb59eb090c
+Store id: e6bcc528-7574-45c9-bf4d-0de789b97915
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_value(self, value)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6984630+00:00`
+- posted_at: `2026-11-09T23:44:50.1634610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2202,
     "symbol": "IntegerField.get_prep_value"
   },
-  "id": "5e32b44e-2d09-4dce-9877-8beb59eb090c",
+  "id": "e6bcc528-7574-45c9-bf4d-0de789b97915",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6984630+00:00"
+    "posted_at": "2026-11-09T23:44:50.1634610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d35d3ccb-81f6-4e98-b5a4-899eb6f3ff7d",
+  "subject_id": "a889d280-d5fd-4d75-b456-3eb4d13be739",
   "subject_name": "django/db/models/fields/__init__::IntegerField.get_prep_value",
   "tags": [
     "entity:method"

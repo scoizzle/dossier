@@ -1,6 +1,6 @@
 # Fact dd409fa0
 
-Store id: 0c262acf-4b2b-4f80-8bce-1c4fe60a052e
+Store id: 89294a07-d206-44d1-b59d-d5c01d845150
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class Ntile
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7398280+00:00`
+- posted_at: `2026-11-09T23:44:54.5136690+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "0c262acf-4b2b-4f80-8bce-1c4fe60a052e",
+  "id": "89294a07-d206-44d1-b59d-d5c01d845150",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
+    "posted_at": "2026-11-09T23:44:54.5136690+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "Ntile"
       },
       "rel": "contains",
-      "target": "774184e5-0ada-48df-b112-4a0787803dac"
+      "target": "7723333e-34e3-414d-a0e6-830fb7a676e1"
     }
   ],
   "status": "live",
-  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
+  "subject_id": "0980d3e2-fd09-4943-88c2-8f704578a39a",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

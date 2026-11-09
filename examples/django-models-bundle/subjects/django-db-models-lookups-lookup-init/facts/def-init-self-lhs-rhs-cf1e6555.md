@@ -1,6 +1,6 @@
 # Fact cf1e6555
 
-Store id: f8073491-ce98-4d52-9854-2b716d0562d8
+Store id: fe65d4b5-273a-4bcf-a955-5bee72e5268a
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__(self, lhs, rhs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.1197790+00:00`
+- posted_at: `2026-11-09T23:44:54.8448610+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 34,
     "symbol": "Lookup.__init__"
   },
-  "id": "f8073491-ce98-4d52-9854-2b716d0562d8",
+  "id": "fe65d4b5-273a-4bcf-a955-5bee72e5268a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.1197790+00:00"
+    "posted_at": "2026-11-09T23:44:54.8448610+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "5b019733-6d5a-4664-b2b6-2cd70afdaf69",
+  "subject_id": "4952ec9d-17bf-43df-8826-46a3a3d803a5",
   "subject_name": "django/db/models/lookups::Lookup.__init__",
   "tags": [
     "entity:method"

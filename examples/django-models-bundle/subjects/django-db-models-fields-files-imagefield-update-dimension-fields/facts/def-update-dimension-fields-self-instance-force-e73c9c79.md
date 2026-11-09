@@ -1,6 +1,6 @@
 # Fact e73c9c79
 
-Store id: c119d481-90e6-43e8-91db-bcb928f1f047
+Store id: fb64c8a3-df43-47f3-94bd-fb1e07d26689
 
 ## Text
 
@@ -20,7 +20,7 @@ def update_dimension_fields(self, instance, force=False, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.4419490+00:00`
+- posted_at: `2026-11-09T23:44:50.6849350+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 478,
     "symbol": "ImageField.update_dimension_fields"
   },
-  "id": "c119d481-90e6-43e8-91db-bcb928f1f047",
+  "id": "fb64c8a3-df43-47f3-94bd-fb1e07d26689",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.4419490+00:00"
+    "posted_at": "2026-11-09T23:44:50.6849350+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "57cde076-bb2f-4a6c-9450-cb3a2eb55565",
+  "subject_id": "65eea545-01ce-4e31-8fc7-769a7135dbb8",
   "subject_name": "django/db/models/fields/files::ImageField.update_dimension_fields",
   "tags": [
     "entity:method"

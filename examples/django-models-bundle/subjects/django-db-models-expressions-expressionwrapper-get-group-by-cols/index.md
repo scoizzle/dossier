@@ -1,11 +1,11 @@
 # django/db/models/expressions::ExpressionWrapper.get_group_by_cols
 
-- Subject: django/db/models/expressions::ExpressionWrapper.get_group_by_cols (id `3d05ba36-d7dd-4076-a36f-1d1485d8cac4`)
+- Subject: django/db/models/expressions::ExpressionWrapper.get_group_by_cols (id `6f375443-edaa-43ff-bb2b-bb8579c0c5d9`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

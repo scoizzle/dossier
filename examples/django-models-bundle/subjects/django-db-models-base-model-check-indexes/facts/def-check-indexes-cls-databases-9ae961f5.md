@@ -1,6 +1,6 @@
 # Fact 9ae961f5
 
-Store id: 11c45636-9ef2-4ff4-9041-b3cde31708eb
+Store id: 0254359b-d4ed-4b0d-8b71-31968a9c60c3
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_indexes(cls, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7673530+00:00`
+- posted_at: `2026-11-09T23:44:48.5520980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2195,
     "symbol": "Model._check_indexes"
   },
-  "id": "11c45636-9ef2-4ff4-9041-b3cde31708eb",
+  "id": "0254359b-d4ed-4b0d-8b71-31968a9c60c3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7673530+00:00"
+    "posted_at": "2026-11-09T23:44:48.5520980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3ff667d6-f6b3-46f2-a1db-c36c849c3c2a",
+  "subject_id": "d4d8eed7-e4f1-4feb-ab7a-32f59428fe69",
   "subject_name": "django/db/models/base::Model._check_indexes",
   "tags": [
     "entity:class_method",

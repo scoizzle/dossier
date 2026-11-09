@@ -1,6 +1,6 @@
 # Fact 0b373380
 
-Store id: 1d509b7a-03ce-4545-8420-fd88a6cdf3bc
+Store id: 021cb3e4-cb71-4264-9694-5c0a7f24bc53
 
 ## Text
 
@@ -20,7 +20,7 @@ def coalesce(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.1735460+00:00`
+- posted_at: `2026-11-09T23:44:54.0725460+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 112,
     "symbol": "ConcatPair.coalesce"
   },
-  "id": "1d509b7a-03ce-4545-8420-fd88a6cdf3bc",
+  "id": "021cb3e4-cb71-4264-9694-5c0a7f24bc53",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.1735460+00:00"
+    "posted_at": "2026-11-09T23:44:54.0725460+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "ae146bb4-0ac6-4ebc-b063-567c85e2a89d",
+  "subject_id": "89e1d15f-0c8d-46a2-92cf-9eac62d58d91",
   "subject_name": "django/db/models/functions/text::ConcatPair.coalesce",
   "tags": [
     "entity:method"

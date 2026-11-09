@@ -1,6 +1,6 @@
 # Fact cb3d00ad
 
-Store id: 12b91067-a462-4e52-b33d-469d7f2ce985
+Store id: 15d0f42d-7526-4f0d-a8cd-9fb3c15924e5
 
 ## Text
 
@@ -20,7 +20,7 @@ def clear_ordering(self, force=False, clear_default=True)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.0772260+00:00`
+- posted_at: `2026-11-09T23:44:58.9905220+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2390,
     "symbol": "Query.clear_ordering"
   },
-  "id": "12b91067-a462-4e52-b33d-469d7f2ce985",
+  "id": "15d0f42d-7526-4f0d-a8cd-9fb3c15924e5",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.0772260+00:00"
+    "posted_at": "2026-11-09T23:44:58.9905220+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c720569a-4bd4-406f-a16a-ccf7537f0e75",
+  "subject_id": "6978ea6e-94aa-4fe7-be54-1fc691c92c83",
   "subject_name": "django/db/models/sql/query::Query.clear_ordering",
   "tags": [
     "entity:method"

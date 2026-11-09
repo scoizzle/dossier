@@ -1,10 +1,10 @@
 # django/contrib/admin/actions
 
-- Subject: django/contrib/admin/actions (id `01f7a202-afd2-43cb-9de9-185b3ca0c23e`)
+- Subject: django/contrib/admin/actions (id `e9d0272a-2da8-4652-a386-40a1584e4d5e`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 815 tokens
-- Facts shown: 12 of 12
+- Facts shown: 12 facts
 - Conflicts: 0
 - Gaps: 0
 

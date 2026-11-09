@@ -1,6 +1,6 @@
 # Fact 6e9cb35b
 
-Store id: bb69eb79-608e-4959-aae9-57ccda318301
+Store id: 593638fa-4a91-407d-a806-8f3fa1d0cd02
 
 ## Text
 
@@ -20,7 +20,7 @@ class RegisterLookupMixin
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.1376360+00:00`
+- posted_at: `2026-11-09T23:44:56.6560780+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 336,
     "symbol": "RegisterLookupMixin"
   },
-  "id": "bb69eb79-608e-4959-aae9-57ccda318301",
+  "id": "593638fa-4a91-407d-a806-8f3fa1d0cd02",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.1376360+00:00"
+    "posted_at": "2026-11-09T23:44:56.6560780+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "033860c2-1637-4c49-bfb5-f25c56f6be1f",
+  "subject_id": "60ddf1f3-fc66-4696-8791-16248cd26cb5",
   "subject_name": "django/db/models/query_utils::RegisterLookupMixin",
   "tags": [
     "entity:class"

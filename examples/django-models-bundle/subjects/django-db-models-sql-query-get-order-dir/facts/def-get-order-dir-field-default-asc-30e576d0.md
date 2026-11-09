@@ -1,6 +1,6 @@
 # Fact 30e576d0
 
-Store id: 1c364f05-49a4-4f4e-95a1-88268015ae23
+Store id: 97a303f8-9dc3-48d4-9bda-a8fe6679f96a
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_order_dir(field, default="ASC")
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.1571650+00:00`
+- posted_at: `2026-11-09T23:44:59.0654020+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2794,
     "symbol": "get_order_dir"
   },
-  "id": "1c364f05-49a4-4f4e-95a1-88268015ae23",
+  "id": "97a303f8-9dc3-48d4-9bda-a8fe6679f96a",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.1571650+00:00"
+    "posted_at": "2026-11-09T23:44:59.0654020+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9b68c60a-5243-46f6-84e5-1c303ed401b7",
+  "subject_id": "d5703cb8-6992-45c9-9764-8ce0758c79fe",
   "subject_name": "django/db/models/sql/query::get_order_dir",
   "tags": [
     "entity:function"

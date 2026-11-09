@@ -1,6 +1,6 @@
 # Fact c1716ad2
 
-Store id: 5188257c-741f-4027-9187-ca92c1d2060c
+Store id: 768094e1-78a6-43b6-b646-71f06295f08c
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_parent_list(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0095850+00:00`
+- posted_at: `2026-11-09T23:44:55.5603160+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 727,
     "symbol": "Options.get_parent_list"
   },
-  "id": "5188257c-741f-4027-9187-ca92c1d2060c",
+  "id": "768094e1-78a6-43b6-b646-71f06295f08c",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0095850+00:00"
+    "posted_at": "2026-11-09T23:44:55.5603160+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "94404673-2ee9-489a-af75-bb6b927bb724",
+  "subject_id": "2581c27b-05cc-4e75-bd71-9616fa99365d",
   "subject_name": "django/db/models/options::Options.get_parent_list",
   "tags": [
     "entity:method"

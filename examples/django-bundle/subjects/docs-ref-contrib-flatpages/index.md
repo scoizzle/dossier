@@ -1,10 +1,10 @@
 # docs/ref/contrib/flatpages
 
-- Subject: docs/ref/contrib/flatpages (id `a408144a-3844-473a-8f95-ed72f10576cf`)
+- Subject: docs/ref/contrib/flatpages (id `5bf40dc1-2aa6-4525-b9a4-a0f5befb0d85`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4536 tokens
-- Facts shown: 114 of 121
+- Used: 4684 tokens
+- Facts shown: 121 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -47,11 +47,14 @@
 - [1cfc84be] The middleware will only add a trailing slash and redirect (by looking at the :setting:`APPEND_SLASH` setting) if the resulting URL refers to a valid flatpage. Redirects are permanent (301 status code).
 - [cd5c9082] from django.contrib import admin from django.contrib.flatpages.admin import FlatPageAdmin from django.contrib.flatpages.models import FlatPage from django.utils.translation import gettext_lazy as _
 - [56bfdb07e34bb2a1] from django.contrib.flatpages import views
+- [56bfdb07e34bb2a1-2] from django.contrib.flatpages import views
 - [bc4ae10a] from django.contrib.flatpages.sitemaps import FlatPageSitemap from django.contrib.sitemaps.views import sitemap from django.urls import path
 - [e54c142b] urlpatterns += [ path("about-us/", views.flatpage, kwargs={"url": "/about-us/"}, name="about"), path("license/", views.flatpage, kwargs={"url": "/license/"}, name="license"), ]
 - [9ad22ded] urlpatterns = [ # ... # the sitemap path( "sitemap.xml", sitemap, {"sitemaps": {"flatpages": FlatPageSitemap}}, name="django.contrib.sitemaps.views.sitemap", ), ]
 - [2a61d97969e83c2a] urlpatterns = [ path("pages/", include("django.contrib.flatpages.urls")), ]
+- [2a61d97969e83c2a-2] urlpatterns = [ path("pages/", include("django.contrib.flatpages.urls")), ]
 - [f5f0d954] {% get_flatpages '/about/' as about_pages %} {% get_flatpages about_prefix as about_pages %} {% get_flatpages '/about/' for someuser as about_pages %}
+- [8463b03e] {% get_flatpages for someuser as about_pages %}
 - [fd30cf3c] {% load flatpages %} {% get_flatpages as flatpages %} <ul> {% for page in flatpages %} <li><a href="{{ page.url }}">{{ page.title }}</a></li> {% endfor %} </ul>
 - [9ca8f647] Also make sure you've correctly set :setting:`SITE_ID` to the ID of the site the settings file represents. This will usually be ``1`` (i.e. ``SITE_ID = 1``), but if you're using the sites framework to manage multiple sites, it could be the ID of a different site.
 - [a6d6ee15] Because the ``FlatpageFallbackMiddleware`` is applied only after URL resolution has failed and produced a 404, the response it returns will not apply any :ref:`view middleware <view-middleware>` methods. Only requests which are successfully routed to a view via normal URL resolution apply view middleware.
@@ -63,7 +66,11 @@
 - [e1b82724] .. class:: FlatpageFallbackMiddleware
 - [473267ef] .. class:: models.FlatPage
 - [75c8ea879f4a56ca] .. class:: models.FlatPage :noindex:
+- [75c8ea879f4a56ca-2] .. class:: models.FlatPage :noindex:
 - [685d15dfb6eb2285-63] .. code-block:: html+django
+- [685d15dfb6eb2285-64] .. code-block:: html+django
+- [685d15dfb6eb2285-65] .. code-block:: html+django
+- [685d15dfb6eb2285-66] .. code-block:: html+django
 - [6a94ebf9] .. currentmodule:: django.contrib.flatpages
 - [51d68996] .. currentmodule:: django.contrib.flatpages.middleware
 - [3e146637] .. currentmodule:: django.contrib.flatpages.models

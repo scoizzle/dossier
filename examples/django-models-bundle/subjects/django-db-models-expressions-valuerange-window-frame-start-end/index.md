@@ -1,11 +1,11 @@
 # django/db/models/expressions::ValueRange.window_frame_start_end
 
-- Subject: django/db/models/expressions::ValueRange.window_frame_start_end (id `58d84a31-c73b-47b3-8410-ac12b675c56d`)
+- Subject: django/db/models/expressions::ValueRange.window_frame_start_end (id `d50f8d29-0137-4944-8df4-3adfa3630718`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

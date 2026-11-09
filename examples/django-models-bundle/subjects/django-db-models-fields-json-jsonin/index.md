@@ -1,11 +1,11 @@
 # django/db/models/fields/json::JSONIn
 
-- Subject: django/db/models/fields/json::JSONIn (id `ba4c511b-2e95-488c-9124-3aa732a94870`)
+- Subject: django/db/models/fields/json::JSONIn (id `af23d653-bc6b-4b38-b0e0-e15d7ac8b277`)
 - Kind: class
 - Parent: [django/db/models/fields/json](../django-db-models-fields-json/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::Field.rel_db_type
 
-- Subject: django/db/models/fields/__init__::Field.rel_db_type (id `b30dfcea-41f6-48f1-954b-84b9600f30c9`)
+- Subject: django/db/models/fields/__init__::Field.rel_db_type (id `d29877a1-023b-4bce-b3ea-0e67034750ca`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

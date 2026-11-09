@@ -1,6 +1,6 @@
 # Fact 9d8a22ba
 
-Store id: 18f6589a-8100-4b5c-a297-50d0cdcab125
+Store id: 7a972ea6-80a9-4b16-b83e-3867bbadb271
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prefetcher(instance, through_attr, to_attr)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8307770+00:00`
+- posted_at: `2026-11-09T23:44:56.3150500+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2809,
     "symbol": "get_prefetcher"
   },
-  "id": "18f6589a-8100-4b5c-a297-50d0cdcab125",
+  "id": "7a972ea6-80a9-4b16-b83e-3867bbadb271",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8307770+00:00"
+    "posted_at": "2026-11-09T23:44:56.3150500+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a19762e1-80cd-47e7-b70e-c16b635fcb61",
+  "subject_id": "2c836d2c-fb9e-499d-83e8-6ad825277d8f",
   "subject_name": "django/db/models/query::get_prefetcher",
   "tags": [
     "entity:function"

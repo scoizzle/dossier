@@ -4,19 +4,19 @@ This file lists every subject under `docs/intro/`, one row per subject, grouped 
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-|   docs/intro/contributing | subject | 170 | 0 | 0 | 6369 | [subjects/docs-intro-contributing/index.md](../subjects/docs-intro-contributing/index.md) |
-|   docs/intro/index | subject | 9 | 0 | 0 | 415 | [subjects/docs-intro-index/index.md](../subjects/docs-intro-index/index.md) |
+|   docs/intro/contributing | subject | 170 | 0 | 0 | 6383 | [subjects/docs-intro-contributing/index.md](../subjects/docs-intro-contributing/index.md) |
+|   docs/intro/index | subject | 9 | 0 | 0 | 416 | [subjects/docs-intro-index/index.md](../subjects/docs-intro-index/index.md) |
 |   docs/intro/install | subject | 25 | 0 | 0 | 841 | [subjects/docs-intro-install/index.md](../subjects/docs-intro-install/index.md) |
-|   docs/intro/overview | subject | 92 | 0 | 0 | 3373 | [subjects/docs-intro-overview/index.md](../subjects/docs-intro-overview/index.md) |
+|   docs/intro/overview | subject | 92 | 0 | 0 | 3460 | [subjects/docs-intro-overview/index.md](../subjects/docs-intro-overview/index.md) |
 |   docs/intro/reusable-apps | subject | 84 | 0 | 0 | 3583 | [subjects/docs-intro-reusable-apps/index.md](../subjects/docs-intro-reusable-apps/index.md) |
-|   docs/intro/tutorial01 | subject | 91 | 0 | 0 | 2905 | [subjects/docs-intro-tutorial01/index.md](../subjects/docs-intro-tutorial01/index.md) |
-|   docs/intro/tutorial02 | subject | 171 | 0 | 0 | 6291 | [subjects/docs-intro-tutorial02/index.md](../subjects/docs-intro-tutorial02/index.md) |
-|   docs/intro/tutorial03 | subject | 129 | 0 | 0 | 4576 | [subjects/docs-intro-tutorial03/index.md](../subjects/docs-intro-tutorial03/index.md) |
-|   docs/intro/tutorial04 | subject | 79 | 0 | 0 | 3634 | [subjects/docs-intro-tutorial04/index.md](../subjects/docs-intro-tutorial04/index.md) |
-|   docs/intro/tutorial05 | subject | 173 | 0 | 0 | 7225 | [subjects/docs-intro-tutorial05/index.md](../subjects/docs-intro-tutorial05/index.md) |
-|   docs/intro/tutorial06 | subject | 36 | 0 | 0 | 1525 | [subjects/docs-intro-tutorial06/index.md](../subjects/docs-intro-tutorial06/index.md) |
-|   docs/intro/tutorial07 | subject | 117 | 0 | 0 | 4164 | [subjects/docs-intro-tutorial07/index.md](../subjects/docs-intro-tutorial07/index.md) |
+|   docs/intro/tutorial01 | subject | 91 | 0 | 0 | 2985 | [subjects/docs-intro-tutorial01/index.md](../subjects/docs-intro-tutorial01/index.md) |
+|   docs/intro/tutorial02 | subject | 171 | 0 | 0 | 6341 | [subjects/docs-intro-tutorial02/index.md](../subjects/docs-intro-tutorial02/index.md) |
+|   docs/intro/tutorial03 | subject | 129 | 0 | 0 | 4892 | [subjects/docs-intro-tutorial03/index.md](../subjects/docs-intro-tutorial03/index.md) |
+|   docs/intro/tutorial04 | subject | 79 | 0 | 0 | 3705 | [subjects/docs-intro-tutorial04/index.md](../subjects/docs-intro-tutorial04/index.md) |
+|   docs/intro/tutorial05 | subject | 173 | 0 | 0 | 7369 | [subjects/docs-intro-tutorial05/index.md](../subjects/docs-intro-tutorial05/index.md) |
+|   docs/intro/tutorial06 | subject | 36 | 0 | 0 | 1547 | [subjects/docs-intro-tutorial06/index.md](../subjects/docs-intro-tutorial06/index.md) |
+|   docs/intro/tutorial07 | subject | 117 | 0 | 0 | 4394 | [subjects/docs-intro-tutorial07/index.md](../subjects/docs-intro-tutorial07/index.md) |
 |   docs/intro/tutorial08 | subject | 24 | 0 | 0 | 1323 | [subjects/docs-intro-tutorial08/index.md](../subjects/docs-intro-tutorial08/index.md) |
-|   docs/intro/whatsnext | subject | 65 | 0 | 0 | 2505 | [subjects/docs-intro-whatsnext/index.md](../subjects/docs-intro-whatsnext/index.md) |
+|   docs/intro/whatsnext | subject | 65 | 0 | 0 | 2517 | [subjects/docs-intro-whatsnext/index.md](../subjects/docs-intro-whatsnext/index.md) |
 
 Up: [index/docs.md](docs.md)

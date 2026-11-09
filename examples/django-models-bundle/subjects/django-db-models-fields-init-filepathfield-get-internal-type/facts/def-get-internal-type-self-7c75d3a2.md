@@ -1,6 +1,6 @@
 # Fact 7c75d3a2
 
-Store id: d6995d04-3e75-4250-afee-7343f8c9678a
+Store id: 5ba1e3de-067e-469f-a8e0-b55fce8ceca8
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_internal_type(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6827060+00:00`
+- posted_at: `2026-11-09T23:44:50.1512130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2095,
     "symbol": "FilePathField.get_internal_type"
   },
-  "id": "d6995d04-3e75-4250-afee-7343f8c9678a",
+  "id": "5ba1e3de-067e-469f-a8e0-b55fce8ceca8",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6827060+00:00"
+    "posted_at": "2026-11-09T23:44:50.1512130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "01b42494-22a9-4e81-b116-76ee1d0cc9dc",
+  "subject_id": "2e02928d-e010-4a96-a6c9-5a7f2f3e8051",
   "subject_name": "django/db/models/fields/__init__::FilePathField.get_internal_type",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact d12448f8
 
-Store id: 7fb5ee7e-6646-4df8-96a4-e315baf0829d
+Store id: 3fe127cb-c4cc-419e-99b3-06e9738d2095
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class UUIDField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "7fb5ee7e-6646-4df8-96a4-e315baf0829d",
+  "id": "3fe127cb-c4cc-419e-99b3-06e9738d2095",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "UUIDField"
       },
       "rel": "contains",
-      "target": "77a83a23-475c-4970-89ba-db99b0b4ed4d"
+      "target": "935acc5d-4f26-4206-8da5-1cd89b37e211"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

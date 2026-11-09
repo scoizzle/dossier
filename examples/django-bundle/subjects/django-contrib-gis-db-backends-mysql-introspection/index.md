@@ -1,10 +1,10 @@
 # django/contrib/gis/db/backends/mysql/introspection
 
-- Subject: django/contrib/gis/db/backends/mysql/introspection (id `1131eae5-7fa3-41bb-bf1d-d91db1952e57`)
+- Subject: django/contrib/gis/db/backends/mysql/introspection (id `958c0ccf-b446-4b76-b5bf-2052081e4345`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 384 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

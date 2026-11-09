@@ -1,11 +1,11 @@
 # django/db/models/sql/query::Query.clear_deferred_loading
 
-- Subject: django/db/models/sql/query::Query.clear_deferred_loading (id `694ebf12-d5c0-4406-ade4-e5f9355b73fe`)
+- Subject: django/db/models/sql/query::Query.clear_deferred_loading (id `0f5aa791-aa12-42c1-8094-72e1ae963bf7`)
 - Kind: method
 - Parent: [django/db/models/sql/query](../django-db-models-sql-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

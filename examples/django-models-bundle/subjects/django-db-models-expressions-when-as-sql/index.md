@@ -1,11 +1,11 @@
 # django/db/models/expressions::When.as_sql
 
-- Subject: django/db/models/expressions::When.as_sql (id `174545f0-bba0-49ee-b0c4-7f9657c007d8`)
+- Subject: django/db/models/expressions::When.as_sql (id `9e5edb7b-ff6e-4c7b-be10-13707465641b`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 28 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

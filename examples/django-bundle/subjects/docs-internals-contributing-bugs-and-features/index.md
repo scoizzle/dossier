@@ -1,10 +1,10 @@
 # docs/internals/contributing/bugs-and-features
 
-- Subject: docs/internals/contributing/bugs-and-features (id `e85e6f77-64b5-4961-8646-770d174aca65`)
+- Subject: docs/internals/contributing/bugs-and-features (id `637fc4fb-a216-45bc-aaec-badd97616146`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3152 tokens
-- Facts shown: 67 of 68
+- Used: 3174 tokens
+- Facts shown: 68 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -56,6 +56,7 @@
 - [b78bf640] Before reporting a bug on the `ticket tracker <https://code.djangoproject.com/>`_ consider these points:
 - [eeab0aeb] Before testing a pre-release, it is important that your project is running smoothly on the latest stable release of Django. That way, any regressions can be attributed to the pre-release. See the :doc:`/howto/upgrade-version` guide for instructions on getting up to date.
 - [5e19b4b0] How to test pre-release versions of Django ==========================================
+- [78133de2] How we make decisions =====================
 - [8c953522] If you discover a bug, please report it via the `Django issue tracker <https://code.djangoproject.com/>`_ so it can be fixed before the final release. When creating the ticket, be sure to set the Django version field to the exact pre-release version you are testing.
 - [68f42a13] If you suspect a regression, it's helpful to report the specific commit that caused it. See :ref:`bisecting-a-regression` for instructions.
 - [ad1a1732] If your bug impacts anything visual in nature, there are a few additional guidelines to follow:

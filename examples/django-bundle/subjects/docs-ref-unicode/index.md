@@ -1,10 +1,10 @@
 # docs/ref/unicode
 
-- Subject: docs/ref/unicode (id `6749154c-5784-4e10-a725-61272fad5de6`)
+- Subject: docs/ref/unicode (id `0a8eb303-fc3f-4460-ad73-f7e097dddcd7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 4762 tokens
-- Facts shown: 90 of 91
+- Used: 4783 tokens
+- Facts shown: 91 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -96,6 +96,7 @@
 - [738cb51e] This function returns a correctly encoded URL even if ``self.location`` is something like "Jack visited Paris & Orléans". (In fact, the ``iri_to_uri()`` call isn't strictly necessary in the above example, because all the non-ASCII characters would have been removed in quoting in the first line.)
 - [bf50d9ad] This should output "UTF-8".
 - [f7ddb347] Translated strings ------------------
+- [a8fac198] URI and IRI handling ~~~~~~~~~~~~~~~~~~~~
 - [f67a5f91] URLs can only contain ASCII characters. If you're constructing a URL from pieces of data that might be non-ASCII, be careful to encode the results in a way that is suitable for a URL. The :func:`~django.urls.reverse` function handles this for you automatically.
 - [ffc6f5ed] Use strings when creating templates manually::
 - [443312f8] Useful utility functions ------------------------

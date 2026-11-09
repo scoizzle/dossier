@@ -1,10 +1,10 @@
 # django/db/models/enums
 
-- Subject: django/db/models/enums (id `54364be7-37e6-46d5-aa55-5d6eed226a31`)
+- Subject: django/db/models/enums (id `ac6e1f16-8862-4f75-b1df-d57266ed28cf`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 68 tokens
-- Facts shown: 4 of 4
+- Facts shown: 4 facts
 - Conflicts: 0
 - Gaps: 0
 

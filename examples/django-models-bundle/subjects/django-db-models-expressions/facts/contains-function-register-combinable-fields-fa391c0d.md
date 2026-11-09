@@ -1,6 +1,6 @@
 # Fact fa391c0d
 
-Store id: 2acf63d4-fa21-4db9-8907-bd6614ab03ab
+Store id: ee3154e0-fec3-4c83-bace-18e6ecffdb08
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function register_combinable_fields
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.0452560+00:00`
+- posted_at: `2026-11-09T23:44:49.6980740+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2acf63d4-fa21-4db9-8907-bd6614ab03ab",
+  "id": "ee3154e0-fec3-4c83-bace-18e6ecffdb08",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.0452560+00:00"
+    "posted_at": "2026-11-09T23:44:49.6980740+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "register_combinable_fields"
       },
       "rel": "contains",
-      "target": "6120bcc0-25d6-46ee-b84e-cadc3ee411d6"
+      "target": "9fa6fe62-cfa4-49d4-8394-4b7c8a958cb3"
     }
   ],
   "status": "live",
-  "subject_id": "191e4ce1-7784-4937-a266-0e0cfc932363",
+  "subject_id": "28327a89-66c3-4156-a323-5c05be9f6cae",
   "subject_name": "django/db/models/expressions",
   "tags": [
     "entity:function"

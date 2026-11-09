@@ -1,10 +1,10 @@
 # docs/howto/deployment/wsgi/granian
 
-- Subject: docs/howto/deployment/wsgi/granian (id `7b06de27-b1ea-42dd-9e22-9bddb11dd1e5`)
+- Subject: docs/howto/deployment/wsgi/granian (id `596fb0a2-8271-4534-ac9b-1f72330836db`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 427 tokens
-- Facts shown: 14 of 14
+- Facts shown: 14 facts
 - Conflicts: 0
 - Gaps: 0
 

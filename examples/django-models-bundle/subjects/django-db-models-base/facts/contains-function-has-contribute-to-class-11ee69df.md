@@ -1,6 +1,6 @@
 # Fact 11ee69df
 
-Store id: 245a89ae-5cc7-4580-b445-e19ace2a3c19
+Store id: bc2dccaa-6ae9-48b1-a07b-d8aad5e63104
 
 ## Text
 
@@ -20,7 +20,7 @@ contains function _has_contribute_to_class
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7768270+00:00`
+- posted_at: `2026-11-09T23:44:48.5582640+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "245a89ae-5cc7-4580-b445-e19ace2a3c19",
+  "id": "bc2dccaa-6ae9-48b1-a07b-d8aad5e63104",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7768270+00:00"
+    "posted_at": "2026-11-09T23:44:48.5582640+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "_has_contribute_to_class"
       },
       "rel": "contains",
-      "target": "1ba9d87d-9a51-4e15-ad4c-f63d467e539b"
+      "target": "852befc0-5052-4f6e-92b2-e46d13f5a95f"
     }
   ],
   "status": "live",
-  "subject_id": "48784eff-2794-4b93-9cfc-4ff4781fa45d",
+  "subject_id": "adcf7c5a-348e-4481-9bc5-dcdd17eb19d6",
   "subject_name": "django/db/models/base",
   "tags": [
     "entity:function"

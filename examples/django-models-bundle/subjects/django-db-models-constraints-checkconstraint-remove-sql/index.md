@@ -1,11 +1,11 @@
 # django/db/models/constraints::CheckConstraint.remove_sql
 
-- Subject: django/db/models/constraints::CheckConstraint.remove_sql (id `a5ae139a-56c4-4e02-bc21-60f3c0b72258`)
+- Subject: django/db/models/constraints::CheckConstraint.remove_sql (id `17ed127f-d0fe-4763-9de8-feee99629452`)
 - Kind: method
 - Parent: [django/db/models/constraints](../django-db-models-constraints/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 21 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

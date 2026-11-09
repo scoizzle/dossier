@@ -1,10 +1,10 @@
 # django/contrib/sessions/backends/cached_db
 
-- Subject: django/contrib/sessions/backends/cached_db (id `1e42f270-5279-4b1f-8ae6-c3ec99622ea6`)
+- Subject: django/contrib/sessions/backends/cached_db (id `269a31ae-26fd-468c-9fec-dd0175e81dd1`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1010 tokens
-- Facts shown: 22 of 22
+- Facts shown: 22 facts
 - Conflicts: 0
 - Gaps: 0
 

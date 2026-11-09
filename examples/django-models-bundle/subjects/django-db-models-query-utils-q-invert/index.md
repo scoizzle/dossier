@@ -1,11 +1,11 @@
 # django/db/models/query_utils::Q.__invert__
 
-- Subject: django/db/models/query_utils::Q.__invert__ (id `c0e35c9a-4f86-41f8-b1dc-f3d5e4c5d1f8`)
+- Subject: django/db/models/query_utils::Q.__invert__ (id `d53c1d83-fa07-4f30-a032-e4f0972fd6b8`)
 - Kind: method
 - Parent: [django/db/models/query_utils](../django-db-models-query-utils/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

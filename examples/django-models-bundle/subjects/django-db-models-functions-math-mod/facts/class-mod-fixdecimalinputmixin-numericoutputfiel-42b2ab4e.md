@@ -1,6 +1,6 @@
 # Fact 42b2ab4e
 
-Store id: 6dbcd874-2b79-422e-b79a-82567614b565
+Store id: bc048a8c-981d-4537-bcda-dc355547c461
 
 ## Text
 
@@ -20,7 +20,7 @@ class Mod(FixDecimalInputMixin, NumericOutputFieldMixin, Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.7240530+00:00`
+- posted_at: `2026-11-09T23:44:53.7372530+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 126,
     "symbol": "Mod"
   },
-  "id": "6dbcd874-2b79-422e-b79a-82567614b565",
+  "id": "bc048a8c-981d-4537-bcda-dc355547c461",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.7240530+00:00"
+    "posted_at": "2026-11-09T23:44:53.7372530+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f7db253c-285e-41ca-b03d-ed9597cb9a91",
+  "subject_id": "48f3d0ca-4f99-4362-a9b3-f96849c0f6ab",
   "subject_name": "django/db/models/functions/math::Mod",
   "tags": [
     "entity:class"

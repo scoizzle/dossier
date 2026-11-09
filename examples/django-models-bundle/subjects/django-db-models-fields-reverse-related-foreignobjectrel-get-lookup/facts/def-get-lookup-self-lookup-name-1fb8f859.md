@@ -1,6 +1,6 @@
 # Fact 1fb8f859
 
-Store id: 96b950a3-b080-4468-977a-2f90bccf2d42
+Store id: 7a7b121c-0ff4-49a6-8587-3b9276894048
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_lookup(self, lookup_name)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.2581470+00:00`
+- posted_at: `2026-11-09T23:44:52.4563420+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 115,
     "symbol": "ForeignObjectRel.get_lookup"
   },
-  "id": "96b950a3-b080-4468-977a-2f90bccf2d42",
+  "id": "7a7b121c-0ff4-49a6-8587-3b9276894048",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.2581470+00:00"
+    "posted_at": "2026-11-09T23:44:52.4563420+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "71a18b9f-43a7-40e2-a81d-20185cd1ded2",
+  "subject_id": "ea4d8068-88cf-45ef-ac8b-fd8beac9711d",
   "subject_name": "django/db/models/fields/reverse_related::ForeignObjectRel.get_lookup",
   "tags": [
     "entity:method"

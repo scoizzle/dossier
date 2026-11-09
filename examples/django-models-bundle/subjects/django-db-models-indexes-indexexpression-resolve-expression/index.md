@@ -1,11 +1,11 @@
 # django/db/models/indexes::IndexExpression.resolve_expression
 
-- Subject: django/db/models/indexes::IndexExpression.resolve_expression (id `012938f2-21a6-439a-9f48-478c9ee5c4eb`)
+- Subject: django/db/models/indexes::IndexExpression.resolve_expression (id `b9936f0b-aab3-46d2-a9ee-94c7b8198ee1`)
 - Kind: method
 - Parent: [django/db/models/indexes](../django-db-models-indexes/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

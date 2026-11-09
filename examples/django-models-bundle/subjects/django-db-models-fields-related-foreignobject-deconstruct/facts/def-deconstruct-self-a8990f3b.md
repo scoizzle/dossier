@@ -1,6 +1,6 @@
 # Fact a8990f3b
 
-Store id: e0a4c695-92f4-4577-9f5a-4f8903434ec3
+Store id: 357e0bb0-0812-45c1-8d9e-0c5028e047f9
 
 ## Text
 
@@ -20,7 +20,7 @@ def deconstruct(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.6782170+00:00`
+- posted_at: `2026-11-09T23:44:51.5241560+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 747,
     "symbol": "ForeignObject.deconstruct"
   },
-  "id": "e0a4c695-92f4-4577-9f5a-4f8903434ec3",
+  "id": "357e0bb0-0812-45c1-8d9e-0c5028e047f9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.6782170+00:00"
+    "posted_at": "2026-11-09T23:44:51.5241560+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "77ca7ce0-7c7e-4012-b3cf-5603aefa9b89",
+  "subject_id": "b417b627-6d75-4258-8c19-c2aee7cd982c",
   "subject_name": "django/db/models/fields/related::ForeignObject.deconstruct",
   "tags": [
     "entity:method"

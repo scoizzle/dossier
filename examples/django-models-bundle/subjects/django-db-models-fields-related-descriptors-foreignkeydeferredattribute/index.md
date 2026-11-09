@@ -1,11 +1,11 @@
 # django/db/models/fields/related_descriptors::ForeignKeyDeferredAttribute
 
-- Subject: django/db/models/fields/related_descriptors::ForeignKeyDeferredAttribute (id `31428215-6b37-4931-84de-b634a12070f4`)
+- Subject: django/db/models/fields/related_descriptors::ForeignKeyDeferredAttribute (id `4cb24a19-0805-4510-8588-ddb104d5ad7d`)
 - Kind: class
 - Parent: [django/db/models/fields/related_descriptors](../django-db-models-fields-related-descriptors/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 24 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ForeignKey.cast_db_type
 
-- Subject: django/db/models/fields/related::ForeignKey.cast_db_type (id `4796ba86-7b92-45b3-8444-bc7fc164a885`)
+- Subject: django/db/models/fields/related::ForeignKey.cast_db_type (id `b5648bff-f8f3-4225-9f9d-e0c4981c938e`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/functions/comparison::Collate.as_sql
 
-- Subject: django/db/models/functions/comparison::Collate.as_sql (id `048e56b0-59d8-4b49-8d21-e1cff7f79d28`)
+- Subject: django/db/models/functions/comparison::Collate.as_sql (id `f902a1f9-fbdc-4575-b4ae-781c87984002`)
 - Kind: method
 - Parent: [django/db/models/functions/comparison](../django-db-models-functions-comparison/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

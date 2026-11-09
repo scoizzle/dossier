@@ -1,10 +1,10 @@
 # docs/internals/organization
 
-- Subject: docs/internals/organization (id `c06eb855-5969-4b73-b963-5b3de99c8ad0`)
+- Subject: docs/internals/organization (id `7b3a4581-16e6-4a70-9bd7-fb765b3c1c54`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3483 tokens
-- Facts shown: 59 of 65
+- Used: 3937 tokens
+- Facts shown: 65 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -20,8 +20,10 @@
 
 - [2bf70598] - A person must not simultaneously serve as a member of the steering council. If a Merger is elected to the steering council, they shall cease to be a Merger immediately upon taking up membership in the steering council. - A person may serve in the roles of Releaser and Merger simultaneously.
 - [384e2df7dbad7f16] - Any member in good standing of an appropriate discussion venue, or the Django Software Foundation board acting with the input of the DSF's Fellowship committee, may suggest a person for consideration. - The steering council considers the suggestions put forth, and then any member of the steering council formally nominates a candidate for the role. - The steering council votes on nominees.
+- [384e2df7dbad7f16-2] - Any member in good standing of an appropriate discussion venue, or the Django Software Foundation board acting with the input of the DSF's Fellowship committee, may suggest a person for consideration. - The steering council considers the suggestions put forth, and then any member of the steering council formally nominates a candidate for the role. - The steering council votes on nominees.
 - [f65a27d5] - Becoming disqualified due to actions taken by the Code of Conduct committee of the Django Software Foundation. - A vote of the steering council.
 - [a0a43ecf] - Becoming disqualified due to actions taken by the Code of Conduct committee of the Django Software Foundation. - Determining that they did not possess the qualifications of a member of the steering council. This determination must be made jointly by the other members of the steering council, and the `DSF Board`_. A valid determination of ineligibility requires that all other members of the steering council and all members of the DSF Board vote who can vote on the issue (the affected person, if a DSF Board member, must not vote) vote "yes" on a motion that the person in question is ineligible.
+- [c60bd9cc] - Becoming disqualified due to election to the steering council. - Becoming disqualified due to actions taken by the Code of Conduct committee of the Django Software Foundation. - A vote of the steering council.
 - [15f02a2e] - Driving the development of the Django web framework, - Fostering the ecosystem of Django-related software, - Leading the Django community in accordance with the values described in the `Django Code of Conduct`_.
 - [d59d61a8] - Initiating discussion of a minor change in the appropriate venue, and request that other Mergers refrain from merging it while discussion proceeds. - Requesting a vote of the steering council regarding any minor change if, in the Merger's opinion, discussion has failed to reach a consensus. - Requesting a vote of the steering council when a `major change`_ (significant enough to require the use of the `DEP process`_) reaches one of its implementation milestones and is intended to merge.
 - [962f3178] - Making a binding decision regarding any question of a technical change to Django. - Vetoing the merging of any particular piece of code into Django or ordering the reversion of any particular merge or commit. - Announcing calls for proposals and ideas for the future technical direction of Django. - Selecting and removing mergers and releasers. - Participating in the removal of members of the steering council, when deemed appropriate. - Calling elections of the steering council outside of those which are automatically triggered, at times when the steering council deems an election is appropriate. - Participating in modifying Django's governance (see :ref:`organization-change`). - Declining to vote on a matter the steering council feels is unripe for a binding decision, or which the steering council feels is outside the scope of its powers. - Taking charge of the governance of other technical teams within the Django open-source project, and governing those teams accordingly.
@@ -43,6 +45,7 @@
 - [b123ceb3] Changes to this document require the use of the `DEP process`_, with modifications described in `DEP 0010`_.
 - [f0db3a02] Changing the organization =========================
 - [1a9357f9] It's not a requirement that a Merger is also a Django Fellow, but the Django Software Foundation has the power to use funding of Fellow positions as a way to make the role of Merger sustainable.
+- [712d6eba] It's not a requirement that a Releaser is also a Django Fellow, but the Django Software Foundation has the power to use funding of Fellow positions as a way to make the role of Releaser sustainable.
 - [6176ab66d1a56080] Membership ----------
 - [6176ab66d1a56080-2] Membership ----------
 - [6176ab66d1a56080-3] Membership ----------
@@ -57,6 +60,7 @@
 - [14b328b945583ada-3] Prerogatives ------------
 - [d35e656d] Principles ==========
 - [dd3e12f0] Releasers =========
+- [acf59762] Releasers may resign their role at any time, but should endeavor to provide some advance notice in order to allow the selection of a replacement. Termination of the contract of a Django Fellow by the Django Software Foundation temporarily suspends that person's Releaser role until such time as the steering council can vote on their nomination.
 - [85ccbdb2] Releasers_ :doc:`build Django releases </internals/howto-release-django>` and upload them to the :pypi:`Python Package Index <Django>` and to the `djangoproject.com`_ website.
 - [e6eb3b48] Releasers_ are a small set of people who have the authority to upload packaged releases of Django to the :pypi:`Python Package Index <Django>` and to the `djangoproject.com`_ website.
 - [2e17bc4dc6a60e7d] Role ----
@@ -67,8 +71,10 @@
 - [9f9804fe] The Django Project isn't a legal entity. The `Django Software Foundation`_, a non-profit organization, handles financial and legal matters related to the Django Project. Other than that, the Django Software Foundation lets the Django Project manage the development of the Django framework, its ecosystem and its community.
 - [6f855269] The following restrictions apply to the role of Merger:
 - [9442e6ed5801515b] The selection process, when a vacancy occurs or when the steering council deems it necessary to select additional persons for such a role, occur as follows:
+- [9442e6ed5801515b-2] The selection process, when a vacancy occurs or when the steering council deems it necessary to select additional persons for such a role, occur as follows:
 - [cc0f85a9] The steering council holds the following prerogatives:
 - [52a884a5] The steering council is a group of experienced contributors who:
 - [e2a184aa] Their main concern is to maintain the quality and stability of the Django Web Framework.
 - [c04730be] `The steering council`_ is an elected group of five experienced contributors who demonstrate:
 - [c73ef1e8] `The steering council`_ selects Mergers_ as necessary to maintain their number at a minimum of three, in order to spread the workload and avoid over-burdening or burning out any individual Merger. There is no upper limit to the number of Mergers.
+- [87141e58] `The steering council`_ selects Releasers_ as necessary to maintain their number at a minimum of three, in order to spread the workload and avoid over-burdening or burning out any individual Releaser. There is no upper limit to the number of Releasers.

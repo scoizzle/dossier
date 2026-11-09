@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/install/postgis
 
-- Subject: docs/ref/contrib/gis/install/postgis (id `44541607-1c87-4f5d-ae39-4d3351423da7`)
+- Subject: docs/ref/contrib/gis/install/postgis (id `1fbc53f8-fb5d-4a6f-a57b-b60017581496`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 943 tokens
-- Facts shown: 21 of 21
+- Facts shown: 21 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact d59fab60
 
-Store id: 8efd6dc5-9121-43f4-a84a-ac191c1f1ec7
+Store id: ee1334e5-4667-449e-9f55-56ac8aa5b83d
 
 ## Text
 
@@ -20,7 +20,7 @@ class Aggregate(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.5314070+00:00`
+- posted_at: `2026-11-09T23:44:48.3946740+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 75,
     "symbol": "Aggregate"
   },
-  "id": "8efd6dc5-9121-43f4-a84a-ac191c1f1ec7",
+  "id": "ee1334e5-4667-449e-9f55-56ac8aa5b83d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.5314070+00:00"
+    "posted_at": "2026-11-09T23:44:48.3946740+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "575226a6-1aaa-407b-b3c9-d38b1b99ced5",
+  "subject_id": "db2f9529-8cb4-4fb7-9a86-4f8a6fc61c3b",
   "subject_name": "django/db/models/aggregates::Aggregate",
   "tags": [
     "entity:class"

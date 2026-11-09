@@ -1,6 +1,6 @@
 # Fact bd5a4916
 
-Store id: b31d12e3-7c6a-41c8-8dbc-47a0084cdf82
+Store id: c167b4e0-641e-41d2-a0ec-18e5f947d53d
 
 ## Text
 
@@ -20,7 +20,7 @@ def _format_names(self, objs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9063500+00:00`
+- posted_at: `2026-11-09T23:44:55.4718690+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 251,
     "symbol": "Options._format_names"
   },
-  "id": "b31d12e3-7c6a-41c8-8dbc-47a0084cdf82",
+  "id": "c167b4e0-641e-41d2-a0ec-18e5f947d53d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9063500+00:00"
+    "posted_at": "2026-11-09T23:44:55.4718690+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "347c1577-5603-443e-9502-e25a0b0da15c",
+  "subject_id": "6f9aeec9-c4ce-445f-8d8b-635bc8105b78",
   "subject_name": "django/db/models/options::Options._format_names",
   "tags": [
     "entity:method"

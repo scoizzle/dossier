@@ -1,6 +1,6 @@
 # Fact b5d4f81e
 
-Store id: fac02254-3efb-4cb2-850e-0b36963d1b3e
+Store id: a3443076-12df-45ed-b647-c54a4cb33b8b
 
 ## Text
 
@@ -20,7 +20,7 @@ def _process_as_oracle(self, sql, params, connection, key_transforms=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.9383360+00:00`
+- posted_at: `2026-11-09T23:44:51.0046620+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 363,
     "symbol": "ProcessJSONLHSMixin._process_as_oracle"
   },
-  "id": "fac02254-3efb-4cb2-850e-0b36963d1b3e",
+  "id": "a3443076-12df-45ed-b647-c54a4cb33b8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.9383360+00:00"
+    "posted_at": "2026-11-09T23:44:51.0046620+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d8b58d72-a614-4b40-abde-dff656c555a0",
+  "subject_id": "6520855d-9458-4545-b5ff-a7d4e7cb6426",
   "subject_name": "django/db/models/fields/json::ProcessJSONLHSMixin._process_as_oracle",
   "tags": [
     "entity:method"

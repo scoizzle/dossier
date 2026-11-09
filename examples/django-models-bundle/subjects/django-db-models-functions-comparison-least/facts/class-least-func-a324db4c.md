@@ -1,6 +1,6 @@
 # Fact a324db4c
 
-Store id: 2d89fca8-3c57-4b1c-92de-a49aaa925a91
+Store id: 76f24d45-9138-4b8c-825f-dbd336b72550
 
 ## Text
 
@@ -20,7 +20,7 @@ class Least(Func)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.0010260+00:00`
+- posted_at: `2026-11-09T23:44:53.1788760+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 144,
     "symbol": "Least"
   },
-  "id": "2d89fca8-3c57-4b1c-92de-a49aaa925a91",
+  "id": "76f24d45-9138-4b8c-825f-dbd336b72550",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.0010260+00:00"
+    "posted_at": "2026-11-09T23:44:53.1788760+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dfe791e7-d5d7-4e64-904c-de79b3de536d",
+  "subject_id": "5f335c5d-566f-4211-ab0a-22b3d20a48c9",
   "subject_name": "django/db/models/functions/comparison::Least",
   "tags": [
     "entity:class"

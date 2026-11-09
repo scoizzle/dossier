@@ -1,6 +1,6 @@
 # Fact ecde740b
 
-Store id: f4cc58d1-d678-494f-b584-f4c7b04a21d1
+Store id: fe17f2c2-ef79-45b2-8158-3d22e41c3c24
 
 ## Text
 
@@ -20,7 +20,7 @@ def normalize_prefetch_lookups(lookups, prefix=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8174960+00:00`
+- posted_at: `2026-11-09T23:44:56.3062200+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2634,
     "symbol": "normalize_prefetch_lookups"
   },
-  "id": "f4cc58d1-d678-494f-b584-f4c7b04a21d1",
+  "id": "fe17f2c2-ef79-45b2-8158-3d22e41c3c24",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8174960+00:00"
+    "posted_at": "2026-11-09T23:44:56.3062200+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a2bdfef4-4beb-49dd-93e4-97e9093e8100",
+  "subject_id": "002a95f2-43ba-4c75-92f6-67dfa9ec69d1",
   "subject_name": "django/db/models/query::normalize_prefetch_lookups",
   "tags": [
     "entity:function"

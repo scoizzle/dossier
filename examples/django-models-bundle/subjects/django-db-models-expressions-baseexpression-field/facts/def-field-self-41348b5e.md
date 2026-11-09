@@ -1,6 +1,6 @@
 # Fact 41348b5e
 
-Store id: c287f817-37a6-4100-910c-004a8277d35f
+Store id: db22e3e6-4a1e-4005-8f97-7fc6281e9664
 
 ## Text
 
@@ -20,7 +20,7 @@ def field(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7754170+00:00`
+- posted_at: `2026-11-09T23:44:49.3296730+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 321,
     "symbol": "BaseExpression.field"
   },
-  "id": "c287f817-37a6-4100-910c-004a8277d35f",
+  "id": "db22e3e6-4a1e-4005-8f97-7fc6281e9664",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7754170+00:00"
+    "posted_at": "2026-11-09T23:44:49.3296730+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "410c227a-6389-4239-b122-d8b0bf7af11a",
+  "subject_id": "2d0892e3-c0da-40ce-ae47-815a62db326e",
   "subject_name": "django/db/models/expressions::BaseExpression.field",
   "tags": [
     "entity:method",

@@ -1,11 +1,11 @@
 # Memos/SignIn
 
-- Subject: Memos/SignIn (id `1c1c65bb-c6ad-42b1-93b8-09fdb4f636e6`)
+- Subject: Memos/SignIn (id `bdd99e93-78b3-4047-b1cb-10c8998cf5af`)
 - Kind: screen
 - Parent: [Memos](../memos/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 54 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

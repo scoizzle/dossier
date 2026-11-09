@@ -1,10 +1,10 @@
 # django/contrib/admin/forms
 
-- Subject: django/contrib/admin/forms (id `339022d6-6304-49e9-8623-5635839a99ae`)
+- Subject: django/contrib/admin/forms (id `2b3b4a39-f633-478b-b8fd-71c8e703a0e3`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 264 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

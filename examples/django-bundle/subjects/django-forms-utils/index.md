@@ -1,10 +1,10 @@
 # django/forms/utils
 
-- Subject: django/forms/utils (id `451c4419-797a-4d25-b35b-ed530504923e`)
+- Subject: django/forms/utils (id `d2af7ce7-5908-486b-96e1-8db3321c111b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2083 tokens
-- Facts shown: 43 of 44
+- Used: 2124 tokens
+- Facts shown: 44 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -31,10 +31,11 @@
 - def as_text(self): return self.render(self.template_name_text) [699bb2c3]
 - def as_ul(self): """Render as <li> elements excluding the surrounding <ul> tag.""" return self.render(self.template_name_ul) [636b65b0]
 - def as_ul(self): return self.render(self.template_name_ul) [44bbd853]
-- def copy(self): copy = super().copy() copy.error_class = self.error_class copy.renderer = self.renderer return copy [be1a91e3]
+- def as_widget(self): raise NotImplementedError( "Subclasses of RenderableFieldMixin must provide an as_widget() method." ) [f2acef77]
 
 ## All facts
 
+- [be1a91e3] def copy(self): copy = super().copy() copy.error_class = self.error_class copy.renderer = self.renderer return copy
 - [0fa32ed5] def get_context(self): return { "errors": self, "error_class": self.error_class, }
 - [72d74876] def get_context(self): return { "errors": self.items(), "error_class": "errorlist", }
 - [8180cb00] def get_json_data(self, escape_html=False): errors = [] for error in self.as_data(): message = next(iter(error)) errors.append( { "message": escape(message) if escape_html else message, "code": error.code or "", } ) return errors

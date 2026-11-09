@@ -1,10 +1,10 @@
 # docs/ref/contrib/postgres/constraints
 
-- Subject: docs/ref/contrib/postgres/constraints (id `48f5ea14-d073-4583-a70b-70bb9a067167`)
+- Subject: docs/ref/contrib/postgres/constraints (id `c5cc9492-200f-486e-a2d5-5fc096c366af`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2313 tokens
-- Facts shown: 57 of 58
+- Used: 2375 tokens
+- Facts shown: 58 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -26,12 +26,12 @@
 - expressions = [ ("timespan", RangeOperators.ADJACENT_TO), (F("room"), RangeOperators.EQUAL), ] [a4162cbf]
 - expressions = [ (OpClass("circle", name="circle_ops"), RangeOperators.OVERLAPS), ] [029b0e97]
 - from django.contrib.postgres.constraints import ExclusionConstraint from django.contrib.postgres.fields import ( DateTimeRangeField, RangeBoundary, RangeOperators, ) from django.db import models from django.db.models import Func, Q [c6c70398]
-- from django.contrib.postgres.constraints import ExclusionConstraint from django.contrib.postgres.fields import RangeOperators from django.db.models import Deferrable [e4b07dc7]
+- from django.contrib.postgres.constraints import ExclusionConstraint from django.contrib.postgres.fields import DateTimeRangeField, RangeOperators from django.db import models from django.db.models import Q [4412cc7b]
 - .. _operator class: https://www.postgresql.org/docs/current/indexes-opclass.html [952439a6d5e41ed0]
-- .. warning:: [c54b54cb0805732a-26]
 
 ## All facts
 
+- [e4b07dc7] from django.contrib.postgres.constraints import ExclusionConstraint from django.contrib.postgres.fields import RangeOperators from django.db.models import Deferrable
 - [7cebeece] .. admonition:: Restrictions on operators.
 - [e4585dd8] .. attribute:: ExclusionConstraint.condition
 - [0adcd9a1] .. attribute:: ExclusionConstraint.deferrable
@@ -43,6 +43,7 @@
 - [b33dc312] .. class:: ExclusionConstraint(*, name, expressions, index_type=None, condition=None, deferrable=None, include=None, violation_error_code=None, violation_error_message=None)
 - [defb2007] .. module:: django.contrib.postgres.constraints :synopsis: PostgreSQL specific database constraint
 - [2a966a198e13032b-8] .. versionchanged:: 6.1
+- [c54b54cb0805732a-26] .. warning::
 - [b780d249] ======================================== PostgreSQL specific database constraints ========================================
 - [7c195c95] A :class:`~django.db.models.Q` object that specifies the condition to restrict a constraint to a subset of rows. For example, ``condition=Q(cancelled=False)``.
 - [2059e630] A list or tuple of the names of the fields to be included in the covering exclusion constraint as non-key columns. This allows index-only scans to be used for queries that select only included fields (:attr:`~ExclusionConstraint.include`) and filter only by indexed fields (:attr:`~ExclusionConstraint.expressions`).

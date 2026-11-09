@@ -1,6 +1,6 @@
 # Fact dd3a5c64
 
-Store id: f6faa05e-972c-496f-a1a4-668db4aefcc3
+Store id: 7597f037-d8a7-47d1-9bbd-51df7efd7b27
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_db_prep_value(self, value, connection, prepared=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7464070+00:00`
+- posted_at: `2026-11-09T23:44:50.1986190+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2361,
     "symbol": "GenericIPAddressField.get_db_prep_value"
   },
-  "id": "f6faa05e-972c-496f-a1a4-668db4aefcc3",
+  "id": "7597f037-d8a7-47d1-9bbd-51df7efd7b27",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7464070+00:00"
+    "posted_at": "2026-11-09T23:44:50.1986190+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c8a7ddd6-cb5c-4f59-803f-75972a8beb54",
+  "subject_id": "0c989791-fd4d-471c-b07a-e0a53ef74566",
   "subject_name": "django/db/models/fields/__init__::GenericIPAddressField.get_db_prep_value",
   "tags": [
     "entity:method"

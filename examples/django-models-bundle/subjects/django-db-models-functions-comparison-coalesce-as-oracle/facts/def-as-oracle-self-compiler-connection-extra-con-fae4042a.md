@@ -1,6 +1,6 @@
 # Fact fae4042a
 
-Store id: 13de06d4-8792-4935-bf47-14147c6553ac
+Store id: 0d0d2f69-0f38-4348-a433-4087d357cd1d
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_oracle(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:00.9829200+00:00`
+- posted_at: `2026-11-09T23:44:53.1514120+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 88,
     "symbol": "Coalesce.as_oracle"
   },
-  "id": "13de06d4-8792-4935-bf47-14147c6553ac",
+  "id": "0d0d2f69-0f38-4348-a433-4087d357cd1d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:00.9829200+00:00"
+    "posted_at": "2026-11-09T23:44:53.1514120+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "9a822cb0-e5c9-4812-8ca0-b1bbc660dc14",
+  "subject_id": "31a29645-ffa5-4a30-b529-f3af3a3eb0c4",
   "subject_name": "django/db/models/functions/comparison::Coalesce.as_oracle",
   "tags": [
     "entity:method"

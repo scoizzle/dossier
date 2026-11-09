@@ -1,6 +1,6 @@
 # Fact 4314c3aa
 
-Store id: cf3a1120-af89-4931-a305-f1d8f8d03807
+Store id: a35235b3-d352-44ae-af63-06968937331d
 
 ## Text
 
@@ -20,7 +20,7 @@ def set_name_with_model(self, model)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9402020+00:00`
+- posted_at: `2026-11-09T23:44:54.7026580+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 250,
     "symbol": "Index.set_name_with_model"
   },
-  "id": "cf3a1120-af89-4931-a305-f1d8f8d03807",
+  "id": "a35235b3-d352-44ae-af63-06968937331d",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9402020+00:00"
+    "posted_at": "2026-11-09T23:44:54.7026580+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "184f43c1-ad3c-4744-8a5a-a26f0c0dcfe8",
+  "subject_id": "a1044d71-abad-4ce0-9e4b-5e1ccc01e1c1",
   "subject_name": "django/db/models/indexes::Index.set_name_with_model",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # docs/internals/contributing/triaging-tickets
 
-- Subject: docs/internals/contributing/triaging-tickets (id `e5d43a38-958e-4960-a679-a85ac0dd5322`)
+- Subject: docs/internals/contributing/triaging-tickets (id `51677be1-4d77-4656-8877-d49ad931f126`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 7808 tokens
-- Facts shown: 164 of 164
+- Facts shown: 164 facts
 - Conflicts: 0
 - Gaps: 0
 

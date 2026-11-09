@@ -1,6 +1,6 @@
 # Fact deab228e
 
-Store id: 5d00e80e-bc73-44aa-b640-6ad6b87c0d38
+Store id: c182455a-489d-45e2-b3f4-694457cc9e77
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sqlite(self, compiler, connection, **extra_context)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.9645770+00:00`
+- posted_at: `2026-11-09T23:44:54.7207040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 389,
     "symbol": "IndexExpression.as_sqlite"
   },
-  "id": "5d00e80e-bc73-44aa-b640-6ad6b87c0d38",
+  "id": "c182455a-489d-45e2-b3f4-694457cc9e77",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.9645770+00:00"
+    "posted_at": "2026-11-09T23:44:54.7207040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3f3f05ae-63eb-4af0-945f-1512aba4c05c",
+  "subject_id": "85d3f703-b3a6-4460-8230-fade04484465",
   "subject_name": "django/db/models/indexes::IndexExpression.as_sqlite",
   "tags": [
     "entity:method"

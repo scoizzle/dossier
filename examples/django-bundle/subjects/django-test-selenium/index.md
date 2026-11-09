@@ -1,10 +1,10 @@
 # django/test/selenium
 
-- Subject: django/test/selenium (id `2a419c92-503a-4ff5-bdc7-64a48ef5644f`)
+- Subject: django/test/selenium (id `d8703f11-e385-4d6d-b465-881ec4e6dee5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2430 tokens
-- Facts shown: 38 of 39
+- Used: 2472 tokens
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,15 +22,17 @@
 - @classmethod def _quit_selenium(cls): # quit() the WebDriver before attempting to terminate and join the # single-threaded LiveServerThread to avoid a dead lock if the browser # kept a connection alive. if hasattr(cls, "selenium"): cls.selenium.quit() [ac251a72]
 - @classmethod def get_capability(cls, browser): from selenium.webdriver.common.desired_capabilities import DesiredCapabilities [00bfb50e]
 - @classmethod def import_options(cls, browser): return import_string("selenium.webdriver.%s.options.Options" % browser) [b508e0f3]
+- @classmethod def import_webdriver(cls, browser): return import_string("selenium.webdriver.%s.webdriver.WebDriver" % browser) [d13dd4fa]
 - @classmethod def setUpClass(cls): cls.selenium = cls.create_webdriver() cls.selenium.implicitly_wait(cls.implicit_wait) super().setUpClass() cls.addClassCleanup(cls._quit_selenium) [19f30b20]
 - @classproperty def allowed_host(cls): return cls.external_host or cls.host [4adf4303]
 - @classproperty def live_server_url(cls): return "http://%s:%s" % (cls.external_host or cls.host, cls.server_thread.port) [dcc9f52a]
 - @contextmanager def dark(self): # Navigate to a page before executing a script. self.selenium.get(self.live_server_url) self.selenium.execute_script("localStorage.setItem('theme', 'dark');") with self.desktop_size(): try: yield finally: self.selenium.execute_script("localStorage.removeItem('theme');") [af860c16]
 - @contextmanager def desktop_size(self): with ChangeWindowSize(1280, 720, self.selenium): yield [d407c8dd]
-- @contextmanager def disable_implicit_wait(self): """Disable the default implicit wait.""" self.selenium.implicitly_wait(0) try: yield finally: self.selenium.implicitly_wait(self.implicit_wait) [68dd95f3]
+- return wrapper [656124d6f08b58d6-2]
 
 ## All facts
 
+- [68dd95f3] @contextmanager def disable_implicit_wait(self): """Disable the default implicit wait.""" self.selenium.implicitly_wait(0) try: yield finally: self.selenium.implicitly_wait(self.implicit_wait)
 - [89afe0a2] @contextmanager def high_contrast(self): self.set_emulated_media(features=[{"name": "forced-colors", "value": "active"}]) with self.desktop_size(): try: yield finally: self.set_emulated_media( features=[{"name": "forced-colors", "value": "none"}] )
 - [4945b865] @contextmanager def mobile_size(self): with ChangeWindowSize(360, 800, self.selenium): yield
 - [97734b7f] @contextmanager def rtl(self): with self.desktop_size(): with override_settings(LANGUAGE_CODE=settings.LANGUAGES_BIDI[-1]): yield
@@ -44,7 +46,6 @@
 - [86b30d02] def set_emulated_media(self, *, media=None, features=None): if self.browser not in {"chrome", "edge"}: self.skipTest( "Emulation.setEmulatedMedia is only supported on Chromium and " "Chrome-based browsers. See https://chromedevtools.github.io/devtools-" "protocol/1-3/Emulation/#method-setEmulatedMedia for more details." ) params = {} if media is not None: params["media"] = media if features is not None: params["features"] = features
 - [3bd1ce5d] def take_screenshot(self, name): if not self.screenshots: return test = getattr(self, self._testMethodName) filename = f"{test._screenshot_name}--{name}--{test._screenshot_case}.png" path = Path.cwd() / "screenshots" / filename path.parent.mkdir(exist_ok=True, parents=True) self.selenium.save_screenshot(path)
 - [b539c617] def wrapper(func): func._screenshot_cases = method_names setattr(func, "tags", {"screenshot"}.union(getattr(func, "tags", set()))) return func
-- [656124d6f08b58d6-2] return wrapper
 - [d40a8535] @tag("selenium") class SeleniumTestCase(LiveServerTestCase, metaclass=SeleniumTestCaseBase): implicit_wait = 10 external_host = None screenshots = False
 - [b8c9a494] class ChangeWindowSize: def __init__(self, width, height, selenium): self.selenium = selenium self.new_size = (width, height)
 - [cd649220] class SeleniumTestCaseBase(type(LiveServerTestCase)): # List of browsers to dynamically create test classes for. browsers = [] # A selenium hub URL to test against. selenium_hub = None # The external host Selenium Hub can reach. external_host = None # Sentinel value to differentiate browser-specific instances. browser = None # Run browsers in headless mode. headless = False

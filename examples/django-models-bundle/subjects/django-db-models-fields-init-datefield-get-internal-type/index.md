@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateField.get_internal_type
 
-- Subject: django/db/models/fields/__init__::DateField.get_internal_type (id `887d4449-8a86-4ddc-a6e5-dc4f46b59f20`)
+- Subject: django/db/models/fields/__init__::DateField.get_internal_type (id `01833b93-c835-4455-8c4e-949260ceda84`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

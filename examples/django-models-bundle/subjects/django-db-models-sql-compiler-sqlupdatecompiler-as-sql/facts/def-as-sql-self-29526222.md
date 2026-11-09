@@ -1,6 +1,6 @@
 # Fact 29526222
 
-Store id: 3dedac2e-5608-47dc-aa40-1f286a6e978f
+Store id: f0d48ebd-590b-409f-97c7-ac4fabf27457
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0709550+00:00`
+- posted_at: `2026-11-09T23:44:57.7249020+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 2055,
     "symbol": "SQLUpdateCompiler.as_sql"
   },
-  "id": "3dedac2e-5608-47dc-aa40-1f286a6e978f",
+  "id": "f0d48ebd-590b-409f-97c7-ac4fabf27457",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0709550+00:00"
+    "posted_at": "2026-11-09T23:44:57.7249020+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "621a5b72-1dd9-46c5-980b-b3e1ecbe3a15",
+  "subject_id": "d9cdf803-8007-453c-9c46-4991287f6872",
   "subject_name": "django/db/models/sql/compiler::SQLUpdateCompiler.as_sql",
   "tags": [
     "entity:method"

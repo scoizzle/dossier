@@ -1,11 +1,11 @@
 # django/db/models/base::Model.prepare_database_save
 
-- Subject: django/db/models/base::Model.prepare_database_save (id `50347feb-83c8-4098-9498-8401524c42de`)
+- Subject: django/db/models/base::Model.prepare_database_save (id `c1029cb4-d6ef-4b2e-9a3a-5e75759c3ded`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

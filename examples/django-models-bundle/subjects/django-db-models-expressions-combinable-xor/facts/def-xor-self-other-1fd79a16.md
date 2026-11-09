@@ -1,6 +1,6 @@
 # Fact 1fd79a16
 
-Store id: 98afd001-141f-42ec-84c3-c74f0a4c5857
+Store id: 4296ed58-e427-4789-b56a-228bb210a6a9
 
 ## Text
 
@@ -20,7 +20,7 @@ def __xor__(self, other)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7357980+00:00`
+- posted_at: `2026-11-09T23:44:49.2490440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 113,
     "symbol": "Combinable.__xor__"
   },
-  "id": "98afd001-141f-42ec-84c3-c74f0a4c5857",
+  "id": "4296ed58-e427-4789-b56a-228bb210a6a9",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7357980+00:00"
+    "posted_at": "2026-11-09T23:44:49.2490440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "4a293659-e938-4409-b233-2a48ba53d7a9",
+  "subject_id": "67f7b65e-a2ef-4611-ab68-890201eaca24",
   "subject_name": "django/db/models/expressions::Combinable.__xor__",
   "tags": [
     "entity:method"

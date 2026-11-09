@@ -1,6 +1,6 @@
 # Fact 73ec3b17
 
-Store id: 6460d5e4-6dec-4ee3-9bc0-86819174a90b
+Store id: 836f485f-4ed4-4b10-b692-c5d4a5f3518a
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class KeyTransformRegex
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:58.0480240+00:00`
+- posted_at: `2026-11-09T23:44:51.0769520+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "6460d5e4-6dec-4ee3-9bc0-86819174a90b",
+  "id": "836f485f-4ed4-4b10-b692-c5d4a5f3518a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:58.0480240+00:00"
+    "posted_at": "2026-11-09T23:44:51.0769520+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "KeyTransformRegex"
       },
       "rel": "contains",
-      "target": "0a0718b2-7821-4f4a-8ae9-545aa9dcd8d0"
+      "target": "e16bee8e-b162-4491-b093-e7901e6e8670"
     }
   ],
   "status": "live",
-  "subject_id": "d7c21811-3589-45c9-bd5d-3d65ba6227de",
+  "subject_id": "fa67266b-c3d1-46c4-89d8-c39e71d018cd",
   "subject_name": "django/db/models/fields/json",
   "tags": [
     "entity:class"

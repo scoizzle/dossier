@@ -1,6 +1,6 @@
 # Fact 2a98ade8
 
-Store id: 2ab05512-32c8-4199-bf6f-18eb78dd48ab
+Store id: 42a256bf-899d-401b-940d-d64ea49191ef
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class FirstValue
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:02.7398280+00:00`
+- posted_at: `2026-11-09T23:44:54.5136690+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "2ab05512-32c8-4199-bf6f-18eb78dd48ab",
+  "id": "42a256bf-899d-401b-940d-d64ea49191ef",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:02.7398280+00:00"
+    "posted_at": "2026-11-09T23:44:54.5136690+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "FirstValue"
       },
       "rel": "contains",
-      "target": "dd3831d4-294c-4e92-98e7-cb19a939f791"
+      "target": "fe988372-17a1-44dc-94e8-07a03cf8e564"
     }
   ],
   "status": "live",
-  "subject_id": "dbb59911-85bd-4c94-870c-c24e475e86fd",
+  "subject_id": "0980d3e2-fd09-4943-88c2-8f704578a39a",
   "subject_name": "django/db/models/functions/window",
   "tags": [
     "entity:class"

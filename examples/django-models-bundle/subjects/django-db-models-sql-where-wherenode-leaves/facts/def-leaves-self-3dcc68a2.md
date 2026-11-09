@@ -1,6 +1,6 @@
 # Fact 3dcc68a2
 
-Store id: edba7e6e-fdc1-43b6-af71-21fad134f269
+Store id: 4d1e701b-716b-47c3-b77c-52e5d2503c34
 
 ## Text
 
@@ -20,7 +20,7 @@ def leaves(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.7021850+00:00`
+- posted_at: `2026-11-09T23:44:59.8201000+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 316,
     "symbol": "WhereNode.leaves"
   },
-  "id": "edba7e6e-fdc1-43b6-af71-21fad134f269",
+  "id": "4d1e701b-716b-47c3-b77c-52e5d2503c34",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.7021850+00:00"
+    "posted_at": "2026-11-09T23:44:59.8201000+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "56bef735-ca4d-44d2-a402-6fc74c6e4b6a",
+  "subject_id": "08b4bb30-e800-4985-911c-c95d7344f4b9",
   "subject_name": "django/db/models/sql/where::WhereNode.leaves",
   "tags": [
     "entity:method"

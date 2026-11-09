@@ -1,10 +1,10 @@
 # docs/ref/contrib/gis/install/spatialite
 
-- Subject: docs/ref/contrib/gis/install/spatialite (id `bc7e025d-b558-4406-9ab6-237b18745d98`)
+- Subject: docs/ref/contrib/gis/install/spatialite (id `e9c69979-71e5-4bb0-939a-97b8d95c7ebc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1319 tokens
-- Facts shown: 46 of 46
+- Facts shown: 46 facts
 - Conflicts: 0
 - Gaps: 0
 

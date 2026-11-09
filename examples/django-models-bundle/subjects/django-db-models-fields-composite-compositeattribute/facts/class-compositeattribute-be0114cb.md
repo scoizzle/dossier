@@ -1,6 +1,6 @@
 # Fact be0114cb
 
-Store id: c52800a0-8ad9-4e2d-b415-63f74a9426c9
+Store id: e59788ba-ea54-402f-8d8d-2a6d4c81872b
 
 ## Text
 
@@ -20,7 +20,7 @@ class CompositeAttribute
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.1059660+00:00`
+- posted_at: `2026-11-09T23:44:50.4706080+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 23,
     "symbol": "CompositeAttribute"
   },
-  "id": "c52800a0-8ad9-4e2d-b415-63f74a9426c9",
+  "id": "e59788ba-ea54-402f-8d8d-2a6d4c81872b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.1059660+00:00"
+    "posted_at": "2026-11-09T23:44:50.4706080+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f09abc9a-4173-4d00-aa28-19dc705ec3b0",
+  "subject_id": "9c35b70c-0455-4804-81de-88ac760f5c3c",
   "subject_name": "django/db/models/fields/composite::CompositeAttribute",
   "tags": [
     "entity:class"

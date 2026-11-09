@@ -1,6 +1,6 @@
 # Fact 0eb0c30b
 
-Store id: c44b6fec-35e9-4c2e-9de3-90ef6a7c0428
+Store id: 7ec27275-b9f8-4d7b-812a-ce7b8823055b
 
 ## Text
 
@@ -20,7 +20,7 @@ def as_sql(self, compiler, connection)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:59.9795040+00:00`
+- posted_at: `2026-11-09T23:44:52.2462770+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 86,
     "symbol": "RelatedIn.as_sql"
   },
-  "id": "c44b6fec-35e9-4c2e-9de3-90ef6a7c0428",
+  "id": "7ec27275-b9f8-4d7b-812a-ce7b8823055b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:59.9795040+00:00"
+    "posted_at": "2026-11-09T23:44:52.2462770+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "b5a799cb-d9df-4aff-8cec-52b5abd71d8f",
+  "subject_id": "bf842fe4-7e65-4aa5-899e-e7c1d758e38c",
   "subject_name": "django/db/models/fields/related_lookups::RelatedIn.as_sql",
   "tags": [
     "entity:method"

@@ -1,6 +1,6 @@
 # Fact 4c00806e
 
-Store id: 177d584a-b4d0-414c-87bd-aca10cad30bc
+Store id: 902adc63-4bc9-4246-a0eb-6bbbaa5003a4
 
 ## Text
 
@@ -20,7 +20,7 @@ contains class TextField
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.9379270+00:00`
+- posted_at: `2026-11-09T23:44:50.3490680+00:00`
 
 ## Refs
 
@@ -45,13 +45,13 @@ None.
 {
   "attachments": [],
   "confidence": 1,
-  "id": "177d584a-b4d0-414c-87bd-aca10cad30bc",
+  "id": "902adc63-4bc9-4246-a0eb-6bbbaa5003a4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.9379270+00:00"
+    "posted_at": "2026-11-09T23:44:50.3490680+00:00"
   },
   "refs": [
     {
@@ -62,11 +62,11 @@ None.
         "symbol": "TextField"
       },
       "rel": "contains",
-      "target": "7a0c4c34-ea50-4dea-a384-624939481b43"
+      "target": "e26468f2-4084-4093-baf5-9c7b8bbfafbe"
     }
   ],
   "status": "live",
-  "subject_id": "29a60662-6c79-46a0-bd42-f90eed9c7d70",
+  "subject_id": "33b0e427-f796-4783-893b-52c7154949df",
   "subject_name": "django/db/models/fields/__init__",
   "tags": [
     "entity:class"

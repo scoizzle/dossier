@@ -1,10 +1,10 @@
 # django/db/backends/base/client
 
-- Subject: django/db/backends/base/client (id `9f56d7b8-045a-49fc-b914-753b999bca6f`)
+- Subject: django/db/backends/base/client (id `c31069b7-6ee5-45f6-b24a-cef754ef9f97`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 284 tokens
-- Facts shown: 7 of 7
+- Facts shown: 7 facts
 - Conflicts: 0
 - Gaps: 0
 

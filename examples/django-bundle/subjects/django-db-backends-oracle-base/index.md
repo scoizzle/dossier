@@ -1,10 +1,10 @@
 # django/db/backends/oracle/base
 
-- Subject: django/db/backends/oracle/base (id `223e7c4f-76d6-4f38-95b0-6e79865f99b0`)
+- Subject: django/db/backends/oracle/base (id `c0a0809d-198f-487f-909f-e7e2187b532a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 5962 tokens
-- Facts shown: 66 of 66
+- Facts shown: 66 facts
 - Conflicts: 0
 - Gaps: 0
 

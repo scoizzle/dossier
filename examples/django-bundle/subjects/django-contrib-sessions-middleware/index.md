@@ -1,10 +1,10 @@
 # django/contrib/sessions/middleware
 
-- Subject: django/contrib/sessions/middleware (id `39d84334-589f-41ab-8c83-dffb2ce83aac`)
+- Subject: django/contrib/sessions/middleware (id `336b0d19-cacf-40a0-b9ad-33da87d9576b`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 732 tokens
-- Facts shown: 5 of 5
+- Facts shown: 5 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 32b2f396
 
-Store id: 0d31396d-5f39-49fb-936a-7f0d7ee0b6f4
+Store id: ffb74d8e-dc2a-4ef5-bd57-0bdf413f0167
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_default_columns( self, select_mask, start_alias=None, opts=None, from_pa
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.7680760+00:00`
+- posted_at: `2026-11-09T23:44:57.5180030+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1002,
     "symbol": "SQLCompiler.get_default_columns"
   },
-  "id": "0d31396d-5f39-49fb-936a-7f0d7ee0b6f4",
+  "id": "ffb74d8e-dc2a-4ef5-bd57-0bdf413f0167",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.7680760+00:00"
+    "posted_at": "2026-11-09T23:44:57.5180030+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "01e45370-9b4e-4393-8967-4605bf5163e5",
+  "subject_id": "e945fcff-d0f1-4530-ada8-b9871675c784",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.get_default_columns",
   "tags": [
     "entity:method"

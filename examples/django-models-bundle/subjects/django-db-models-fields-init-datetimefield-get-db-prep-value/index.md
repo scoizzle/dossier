@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::DateTimeField.get_db_prep_value
 
-- Subject: django/db/models/fields/__init__::DateTimeField.get_db_prep_value (id `1ffad754-157e-42bc-afb4-67ebe99afe2d`)
+- Subject: django/db/models/fields/__init__::DateTimeField.get_db_prep_value (id `eae93ca4-82ab-4b40-bfa8-b1ee86f836cd`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 26 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

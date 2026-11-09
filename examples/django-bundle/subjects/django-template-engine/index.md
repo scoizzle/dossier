@@ -1,10 +1,10 @@
 # django/template/engine
 
-- Subject: django/template/engine (id `7149c556-14f6-4939-bb1a-e11fb31bf693`)
+- Subject: django/template/engine (id `59432a09-9f3a-41a1-afd1-cf0aa432ee67`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1934 tokens
-- Facts shown: 28 of 28
+- Facts shown: 28 facts
 - Conflicts: 0
 - Gaps: 0
 

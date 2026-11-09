@@ -1,10 +1,10 @@
 # django/contrib/gis/measure
 
-- Subject: django/contrib/gis/measure (id `3f8b37de-1331-4c71-8cde-f44f5e2a3834`)
+- Subject: django/contrib/gis/measure (id `b082978e-6937-4104-aacd-e0d9a487006f`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 2752 tokens
-- Facts shown: 38 of 39
+- Used: 2852 tokens
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -36,6 +36,7 @@
 - [b84a233c] def __str__(self): return "%s %s" % (getattr(self, self._default_unit), self._default_unit)
 - [3bacd03e] def __sub__(self, other): if isinstance(other, self.__class__): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard - other.standard)}, ) else: raise TypeError( "%(class)s must be subtracted from %(class)s" % {"class": pretty_name(self)} )
 - [21c5301d] def __truediv__(self, other): if isinstance(other, NUMERIC_TYPES): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard / other)}, ) else: raise TypeError( "%(class)s must be divided by a number" % {"class": pretty_name(self)} )
+- [fd0d25e5] def __truediv__(self, other): if isinstance(other, self.__class__): return self.standard / other.standard if isinstance(other, NUMERIC_TYPES): return self.__class__( default_unit=self._default_unit, **{self.STANDARD_UNIT: (self.standard / other)}, ) else: raise TypeError( "%(class)s must be divided with number or %(class)s" % {"class": pretty_name(self)} )
 - [140a8dfe] def _get_standard(self): return getattr(self, self.STANDARD_UNIT)
 - [d52bedba] def _set_standard(self, value): setattr(self, self.STANDARD_UNIT, value)
 - [6f2f22ba] def default_units(self, kwargs): """ Return the unit value and the default units specified from the given keyword arguments dictionary. """ val = 0.0 default_unit = self.STANDARD_UNIT for unit, value in kwargs.items(): if not isinstance(value, float): value = float(value) if unit in self.UNITS: val += self.UNITS[unit] * value default_unit = unit elif unit in self.ALIAS: u = self.ALIAS[unit] val += self.UNITS[u] * value default_unit = u else: lower = unit.lower() if lower in self.UNITS: val += self.UNITS[lower] * value default_unit = lower elif lower in self.LALIAS: u = self.LALIAS[lower] val += self.UNITS[u] * value default_unit = u else: raise AttributeError("Unknown unit type: %s" % unit) return val, default_unit

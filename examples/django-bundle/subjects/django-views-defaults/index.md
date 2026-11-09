@@ -1,10 +1,10 @@
 # django/views/defaults
 
-- Subject: django/views/defaults (id `4fdbec5a-b600-4d3a-8473-8753350d4948`)
+- Subject: django/views/defaults (id `f933b74a-67d3-4a0c-ae98-859c515967fb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1133 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

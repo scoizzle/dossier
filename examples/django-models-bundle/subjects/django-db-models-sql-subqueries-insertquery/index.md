@@ -1,11 +1,11 @@
 # django/db/models/sql/subqueries::InsertQuery
 
-- Subject: django/db/models/sql/subqueries::InsertQuery (id `083889b7-121a-4705-89b6-e48c3b356aca`)
+- Subject: django/db/models/sql/subqueries::InsertQuery (id `f2134864-8758-4511-88bc-4bf5f56ad259`)
 - Kind: class
 - Parent: [django/db/models/sql/subqueries](../django-db-models-sql-subqueries/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

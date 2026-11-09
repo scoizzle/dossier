@@ -1,10 +1,10 @@
 # django/test/runner
 
-- Subject: django/test/runner (id `28ef3c5e-9fdc-4798-bdde-94ca31c15f4e`)
+- Subject: django/test/runner (id `c651187c-f55b-4a28-bc79-9190ef2afbf5`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 10568 tokens
-- Facts shown: 165 of 165
+- Facts shown: 165 facts
 - Conflicts: 0
 - Gaps: 0
 

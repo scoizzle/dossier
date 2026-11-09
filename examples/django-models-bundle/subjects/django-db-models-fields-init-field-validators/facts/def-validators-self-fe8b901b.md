@@ -1,6 +1,6 @@
 # Fact fe8b901b
 
-Store id: 66eb43d8-f95e-42ea-b74e-363ddbd66163
+Store id: c845d83f-d2f0-412b-aef5-855bc35fd341
 
 ## Text
 
@@ -20,7 +20,7 @@ def validators(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.4664580+00:00`
+- posted_at: `2026-11-09T23:44:50.0061460+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 814,
     "symbol": "Field.validators"
   },
-  "id": "66eb43d8-f95e-42ea-b74e-363ddbd66163",
+  "id": "c845d83f-d2f0-412b-aef5-855bc35fd341",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.4664580+00:00"
+    "posted_at": "2026-11-09T23:44:50.0061460+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "64eb587c-7822-4903-8745-edfee9eecfac",
+  "subject_id": "7b41c1d9-d92e-426b-bd65-18fd755a0380",
   "subject_name": "django/db/models/fields/__init__::Field.validators",
   "tags": [
     "entity:method",

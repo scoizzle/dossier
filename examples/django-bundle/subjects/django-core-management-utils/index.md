@@ -1,10 +1,10 @@
 # django/core/management/utils
 
-- Subject: django/core/management/utils (id `fbdfdb73-0dec-4321-be8b-8c654413a1c3`)
+- Subject: django/core/management/utils (id `e4a60bca-3c15-459c-84bc-e6a8d2acc12a`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1395 tokens
-- Facts shown: 20 of 20
+- Facts shown: 20 facts
 - Conflicts: 0
 - Gaps: 0
 

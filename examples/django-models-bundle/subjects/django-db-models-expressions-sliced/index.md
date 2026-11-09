@@ -1,11 +1,11 @@
 # django/db/models/expressions::Sliced
 
-- Subject: django/db/models/expressions::Sliced (id `49e6800a-ad67-4a20-a553-d6c677271c76`)
+- Subject: django/db/models/expressions::Sliced (id `cfc4e692-118d-4554-b4e1-5c433871d35b`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 15 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

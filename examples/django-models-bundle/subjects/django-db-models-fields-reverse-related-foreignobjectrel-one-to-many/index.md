@@ -1,11 +1,11 @@
 # django/db/models/fields/reverse_related::ForeignObjectRel.one_to_many
 
-- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.one_to_many (id `67f3dd30-5411-45d4-8b10-b126be6b1337`)
+- Subject: django/db/models/fields/reverse_related::ForeignObjectRel.one_to_many (id `a553ec16-1c05-453e-a18c-81c549b86b24`)
 - Kind: method
 - Parent: [django/db/models/fields/reverse_related](../django-db-models-fields-reverse-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

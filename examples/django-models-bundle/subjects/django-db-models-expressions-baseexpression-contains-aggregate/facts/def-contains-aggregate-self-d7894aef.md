@@ -1,6 +1,6 @@
 # Fact d7894aef
 
-Store id: 636fde50-d2e3-4dd2-a9b5-8733f70a9348
+Store id: c7e318c7-6369-4cd2-b04c-040112cf1b1a
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_aggregate(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.7666390+00:00`
+- posted_at: `2026-11-09T23:44:49.3134240+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 253,
     "symbol": "BaseExpression.contains_aggregate"
   },
-  "id": "636fde50-d2e3-4dd2-a9b5-8733f70a9348",
+  "id": "c7e318c7-6369-4cd2-b04c-040112cf1b1a",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.7666390+00:00"
+    "posted_at": "2026-11-09T23:44:49.3134240+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "bb9438b0-541d-4ec2-92fc-1e177f1c2b35",
+  "subject_id": "9d273a8f-d302-43a4-87e5-b30923eb08be",
   "subject_name": "django/db/models/expressions::BaseExpression.contains_aggregate",
   "tags": [
     "entity:method",

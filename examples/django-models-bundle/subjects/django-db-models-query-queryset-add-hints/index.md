@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet._add_hints
 
-- Subject: django/db/models/query::QuerySet._add_hints (id `6cb8aa18-ec08-402e-b756-4f1bb0f3424f`)
+- Subject: django/db/models/query::QuerySet._add_hints (id `41332fe3-6edd-40dc-98dc-5c691923f2fd`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

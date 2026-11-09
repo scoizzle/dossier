@@ -1,11 +1,11 @@
 # django/db/models/aggregates::AggregateOrderBy.as_sql
 
-- Subject: django/db/models/aggregates::AggregateOrderBy.as_sql (id `1ce48e4b-fc55-4cc3-8fc9-da6929c6abb7`)
+- Subject: django/db/models/aggregates::AggregateOrderBy.as_sql (id `fca2979f-2d99-4517-81e3-a1ff1ba1afd4`)
 - Kind: method
 - Parent: [django/db/models/aggregates](../django-db-models-aggregates/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

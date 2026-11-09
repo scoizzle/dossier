@@ -1,6 +1,6 @@
 # Fact e721dfca
 
-Store id: 44abeaa5-c265-4149-912e-c5965edc379a
+Store id: 5abbac21-8bf0-44f8-88c1-c7d27f28bfec
 
 ## Text
 
@@ -20,7 +20,7 @@ def __get__(self, instance, cls=None)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:53.7295080+00:00`
+- posted_at: `2026-11-09T23:44:48.5236640+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 471,
     "symbol": "ModelStateFetchModeDescriptor.__get__"
   },
-  "id": "44abeaa5-c265-4149-912e-c5965edc379a",
+  "id": "5abbac21-8bf0-44f8-88c1-c7d27f28bfec",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:53.7295080+00:00"
+    "posted_at": "2026-11-09T23:44:48.5236640+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "651ee63d-b50d-40d8-b1f8-8d728e3e4bbd",
+  "subject_id": "b3413f12-a5ec-465a-84d8-a85292f0ba17",
   "subject_name": "django/db/models/base::ModelStateFetchModeDescriptor.__get__",
   "tags": [
     "entity:method"

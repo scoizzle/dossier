@@ -1,6 +1,6 @@
 # Fact 68102043
 
-Store id: b104d4f6-51f8-4301-ab8e-a13e8799fc12
+Store id: e6012e34-0068-42af-a235-a9da4c4ec239
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_expressions(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:54.1386610+00:00`
+- posted_at: `2026-11-09T23:44:48.7712050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 39,
     "symbol": "BaseConstraint.contains_expressions"
   },
-  "id": "b104d4f6-51f8-4301-ab8e-a13e8799fc12",
+  "id": "e6012e34-0068-42af-a235-a9da4c4ec239",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:54.1386610+00:00"
+    "posted_at": "2026-11-09T23:44:48.7712050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "66edfb75-d8ff-4ae2-8ae0-f8dde90ffff6",
+  "subject_id": "119e6391-9c47-4a4d-a98d-c60d27c23cdb",
   "subject_name": "django/db/models/constraints::BaseConstraint.contains_expressions",
   "tags": [
     "entity:method",

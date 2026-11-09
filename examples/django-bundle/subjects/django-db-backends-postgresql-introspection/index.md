@@ -1,10 +1,10 @@
 # django/db/backends/postgresql/introspection
 
-- Subject: django/db/backends/postgresql/introspection (id `1ee2bf7a-a6ee-4e73-a05b-d4f39bd97e38`)
+- Subject: django/db/backends/postgresql/introspection (id `5ddbe8e3-fc6c-4ede-8540-45632cae1146`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 2323 tokens
-- Facts shown: 13 of 13
+- Facts shown: 13 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/expressions::Value
 
-- Subject: django/db/models/expressions::Value (id `63b92ec8-f38e-42eb-8465-d9e5c50a6849`)
+- Subject: django/db/models/expressions::Value (id `5472c9f1-d91a-40b7-9017-348e4914581b`)
 - Kind: class
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

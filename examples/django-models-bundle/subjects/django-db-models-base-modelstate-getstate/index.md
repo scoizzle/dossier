@@ -1,11 +1,11 @@
 # django/db/models/base::ModelState.__getstate__
 
-- Subject: django/db/models/base::ModelState.__getstate__ (id `3bdc4e43-f566-4f5c-a406-81b0036339d1`)
+- Subject: django/db/models/base::ModelState.__getstate__ (id `a78514d6-86de-4ddc-b00d-52f11bf23007`)
 - Kind: method
 - Parent: [django/db/models/base](../django-db-models-base/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 3c206cbb
 
-Store id: 19ec5ec5-73ce-40f9-9940-f46c98a37b40
+Store id: 4914ac50-26c3-45f6-b291-99a581f15d9d
 
 ## Text
 
@@ -20,7 +20,7 @@ def check(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:57.6324480+00:00`
+- posted_at: `2026-11-09T23:44:50.8072720+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 79,
     "symbol": "GeneratedField.check"
   },
-  "id": "19ec5ec5-73ce-40f9-9940-f46c98a37b40",
+  "id": "4914ac50-26c3-45f6-b291-99a581f15d9d",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:57.6324480+00:00"
+    "posted_at": "2026-11-09T23:44:50.8072720+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3f427a66-2e11-48ca-9879-817455c411b6",
+  "subject_id": "5464aa35-779b-416d-9c71-c1bf9c4c510e",
   "subject_name": "django/db/models/fields/generated::GeneratedField.check",
   "tags": [
     "entity:method"

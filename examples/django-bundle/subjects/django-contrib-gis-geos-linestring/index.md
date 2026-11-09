@@ -1,10 +1,10 @@
 # django/contrib/gis/geos/linestring
 
-- Subject: django/contrib/gis/geos/linestring (id `e23cacee-5f6e-47c8-b0c0-2ebde8a9cef7`)
+- Subject: django/contrib/gis/geos/linestring (id `73440d03-1320-453f-a3b8-6400986af6bc`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1549 tokens
-- Facts shown: 31 of 31
+- Facts shown: 31 facts
 - Conflicts: 0
 - Gaps: 0
 

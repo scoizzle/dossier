@@ -1,10 +1,10 @@
 # docs/ref/models/meta
 
-- Subject: docs/ref/models/meta (id `c2db8264-d370-4c8e-bcfd-006762e594a4`)
+- Subject: docs/ref/models/meta (id `be78b287-8c61-44f3-abf4-4d78ab01ecd4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1799 tokens
-- Facts shown: 39 of 39
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 

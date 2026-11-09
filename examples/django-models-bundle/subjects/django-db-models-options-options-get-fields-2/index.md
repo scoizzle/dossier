@@ -1,11 +1,11 @@
 # django/db/models/options::Options.get_fields
 
-- Subject: django/db/models/options::Options.get_fields (id `6193e0fd-431f-4546-a738-9c6906e44507`)
+- Subject: django/db/models/options::Options.get_fields (id `35bf64aa-e0eb-437f-9a04-122cd937d02f`)
 - Kind: method
 - Parent: [django/db/models/options](../django-db-models-options/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 27 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

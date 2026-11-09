@@ -1,11 +1,11 @@
 # django/db/models/functions/datetime::TruncMonth
 
-- Subject: django/db/models/functions/datetime::TruncMonth (id `a5e08da6-46c3-4987-a73f-fb1aa46d7acc`)
+- Subject: django/db/models/functions/datetime::TruncMonth (id `ba875969-379e-4a0b-9a70-b0f84fae48b2`)
 - Kind: class
 - Parent: [django/db/models/functions/datetime](../django-db-models-functions-datetime/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

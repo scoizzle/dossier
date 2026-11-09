@@ -5,21 +5,21 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/django-shards --profile profiles/copilot-studio.json --respect-limits`
-- Generated at: `2026-11-09T22:55:55Z`
+- Generated at: `2026-11-09T23:50:22Z`
 - Scope: every subject
-- Budget per subject: 1200 tokens, depth full
-- Layout: shard mode (`--respect-limits`), 399 documents under `shards/<n>.md`; subjects are anchors inside them
+- Budget per subject: 1200 tokens (complete mode: the highlight threshold, every fact is listed), depth full
+- Layout: shard mode (`--respect-limits`), 193 documents under `shards/<n>.md`; subjects are anchors inside them
 - Fact files: omitted in shard mode; bracketed fact keys are plain citations
 - Assets: omitted in shard mode; attachments are listed by sha256 with no link
 - The timestamp is kept as-is while the bundle's content is unchanged, so republishing identical inputs rewrites nothing.
 
 ## Totals
 
-- Subjects: 1080
-- Facts: 12526
+- Subjects: 548
+- Facts: 3701
 - Conflicts: 0
 - Gaps: 0
-- Subject file tokens, all subjects: 657499
+- Subject file tokens, all subjects: 220420
 
 ## How to read it
 

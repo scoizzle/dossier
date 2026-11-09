@@ -1,11 +1,11 @@
 # django/db/models/fields/__init__::AutoField.rel_db_type
 
-- Subject: django/db/models/fields/__init__::AutoField.rel_db_type (id `55409afe-e30c-473d-b960-2adbbcef8d93`)
+- Subject: django/db/models/fields/__init__::AutoField.rel_db_type (id `69a1a46b-a44f-47e5-b84d-b9f14575101f`)
 - Kind: method
 - Parent: [django/db/models/fields/__init__](../django-db-models-fields-init/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

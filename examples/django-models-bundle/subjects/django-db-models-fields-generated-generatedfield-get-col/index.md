@@ -1,11 +1,11 @@
 # django/db/models/fields/generated::GeneratedField.get_col
 
-- Subject: django/db/models/fields/generated::GeneratedField.get_col (id `c511d35b-13bd-4247-93e5-d1e86e8671fc`)
+- Subject: django/db/models/fields/generated::GeneratedField.get_col (id `959bfd09-4597-4e78-a596-f87e12309e61`)
 - Kind: method
 - Parent: [django/db/models/fields/generated](../django-db-models-fields-generated/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 22 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,6 +1,6 @@
 # Fact 512309f0
 
-Store id: 05792f3f-393d-44d2-ade9-9c10e5d970b9
+Store id: 91b403b7-edde-4ec8-ac9b-5ce81d181c7f
 
 ## Text
 
@@ -20,7 +20,7 @@ def __repr__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.8106580+00:00`
+- posted_at: `2026-11-09T23:44:49.4344930+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 735,
     "symbol": "CombinedExpression.__repr__"
   },
-  "id": "05792f3f-393d-44d2-ade9-9c10e5d970b9",
+  "id": "91b403b7-edde-4ec8-ac9b-5ce81d181c7f",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.8106580+00:00"
+    "posted_at": "2026-11-09T23:44:49.4344930+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "389bb506-6732-49e0-87f1-c3ca16d981d7",
+  "subject_id": "31134b0a-896d-4fa9-b4f4-2cae91ed7200",
   "subject_name": "django/db/models/expressions::CombinedExpression.__repr__",
   "tags": [
     "entity:method"

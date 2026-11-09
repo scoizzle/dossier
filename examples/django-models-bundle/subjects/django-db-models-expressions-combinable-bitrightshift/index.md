@@ -1,11 +1,11 @@
 # django/db/models/expressions::Combinable.bitrightshift
 
-- Subject: django/db/models/expressions::Combinable.bitrightshift (id `3f7ac6c2-19c8-4e34-aa3f-84fc782ec690`)
+- Subject: django/db/models/expressions::Combinable.bitrightshift (id `5eab9b20-8ab1-41c8-b7d0-599c17bfcc9a`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

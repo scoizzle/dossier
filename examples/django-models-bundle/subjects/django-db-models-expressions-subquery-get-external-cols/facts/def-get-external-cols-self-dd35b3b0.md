@@ -1,6 +1,6 @@
 # Fact dd35b3b0
 
-Store id: 13d18fbe-9d34-4d30-97c9-279be0aa9b23
+Store id: a8a39c19-2731-4d96-aa59-d9d02d469ef4
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_external_cols(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:55.9742230+00:00`
+- posted_at: `2026-11-09T23:44:49.6431260+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1870,
     "symbol": "Subquery.get_external_cols"
   },
-  "id": "13d18fbe-9d34-4d30-97c9-279be0aa9b23",
+  "id": "a8a39c19-2731-4d96-aa59-d9d02d469ef4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:55.9742230+00:00"
+    "posted_at": "2026-11-09T23:44:49.6431260+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "a7112896-160e-49cc-a6a0-d4662546b586",
+  "subject_id": "8aeb5255-c0ef-44c9-a578-92da49111c23",
   "subject_name": "django/db/models/expressions::Subquery.get_external_cols",
   "tags": [
     "entity:method"

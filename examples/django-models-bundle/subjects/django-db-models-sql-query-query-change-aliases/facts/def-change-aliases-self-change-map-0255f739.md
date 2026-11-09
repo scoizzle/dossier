@@ -1,6 +1,6 @@
 # Fact 0255f739
 
-Store id: 24dea3bd-2f0e-4fd6-aade-496fe22d472a
+Store id: 0b88a21b-348a-4e2a-854b-f012508c5a4b
 
 ## Text
 
@@ -20,7 +20,7 @@ def change_aliases(self, change_map)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.8541810+00:00`
+- posted_at: `2026-11-09T23:44:58.7386040+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 1000,
     "symbol": "Query.change_aliases"
   },
-  "id": "24dea3bd-2f0e-4fd6-aade-496fe22d472a",
+  "id": "0b88a21b-348a-4e2a-854b-f012508c5a4b",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.8541810+00:00"
+    "posted_at": "2026-11-09T23:44:58.7386040+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "dcf3ca1c-b6f8-4eab-9b39-542992b55f20",
+  "subject_id": "67849b01-6d9f-4731-a668-2f2e42c2bcd2",
   "subject_name": "django/db/models/sql/query::Query.change_aliases",
   "tags": [
     "entity:method"

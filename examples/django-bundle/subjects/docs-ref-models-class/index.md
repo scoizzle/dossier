@@ -1,10 +1,10 @@
 # docs/ref/models/class
 
-- Subject: docs/ref/models/class (id `c56b481e-785d-481f-b6e1-ace8ab310abc`)
+- Subject: docs/ref/models/class (id `290e20a3-eeaa-46c6-863f-bdc136c363f7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 934 tokens
-- Facts shown: 23 of 23
+- Facts shown: 23 facts
 - Conflicts: 0
 - Gaps: 0
 

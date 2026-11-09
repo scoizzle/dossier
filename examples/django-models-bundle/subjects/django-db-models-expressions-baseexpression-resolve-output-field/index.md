@@ -1,11 +1,11 @@
 # django/db/models/expressions::BaseExpression._resolve_output_field
 
-- Subject: django/db/models/expressions::BaseExpression._resolve_output_field (id `ae5154d2-0cc5-4e95-a963-dfb7cc50d4d7`)
+- Subject: django/db/models/expressions::BaseExpression._resolve_output_field (id `10622d7d-04ae-4465-bb8e-f4c13128dbcc`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 19 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

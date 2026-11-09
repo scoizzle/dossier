@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.annotate
 
-- Subject: django/db/models/query::QuerySet.annotate (id `e4895a69-a968-4a34-9928-5adc5777e0f2`)
+- Subject: django/db/models/query::QuerySet.annotate (id `d54eb467-6060-441f-bfc4-367fe25696a3`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

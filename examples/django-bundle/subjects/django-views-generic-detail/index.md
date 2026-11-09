@@ -1,10 +1,10 @@
 # django/views/generic/detail
 
-- Subject: django/views/generic/detail (id `7f481dce-3847-4714-8ec6-6296ccfbd14c`)
+- Subject: django/views/generic/detail (id `b69773f5-b2aa-4393-a42c-d7b3198fbcf4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 1617 tokens
-- Facts shown: 26 of 26
+- Facts shown: 26 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/expressions::_resolve_combined_type
 
-- Subject: django/db/models/expressions::_resolve_combined_type (id `bd79456f-d7bb-49dd-8783-e3c6bd27ecd5`)
+- Subject: django/db/models/expressions::_resolve_combined_type (id `0f50ca20-65bd-44b7-8b38-1bb0625c8b9f`)
 - Kind: function
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

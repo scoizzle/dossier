@@ -1,6 +1,6 @@
 # Fact e6be2031
 
-Store id: fe56acfc-b806-456e-ad44-be12a2c821a1
+Store id: eb2f5422-4cd7-4557-955f-bc1249458eb4
 
 ## Text
 
@@ -20,7 +20,7 @@ def _contains_aggregate(cls, obj)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:07.6406310+00:00`
+- posted_at: `2026-11-09T23:44:59.7549090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 246,
     "symbol": "WhereNode._contains_aggregate"
   },
-  "id": "fe56acfc-b806-456e-ad44-be12a2c821a1",
+  "id": "eb2f5422-4cd7-4557-955f-bc1249458eb4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:07.6406310+00:00"
+    "posted_at": "2026-11-09T23:44:59.7549090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "d44394e5-3eea-4161-8018-a1840c76b15d",
+  "subject_id": "ec31846d-182b-4ae3-b4c3-85b2d21e6a8c",
   "subject_name": "django/db/models/sql/where::WhereNode._contains_aggregate",
   "tags": [
     "entity:class_method",

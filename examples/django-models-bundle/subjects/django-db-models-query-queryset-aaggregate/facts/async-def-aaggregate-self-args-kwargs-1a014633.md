@@ -1,6 +1,6 @@
 # Fact 1a014633
 
-Store id: ebf73fba-0e4c-44f5-a8c0-63bce03b2dd3
+Store id: 756797d2-fdf4-4c1a-99cd-58a8f0ccbef3
 
 ## Text
 
@@ -20,7 +20,7 @@ async def aaggregate(self, *args, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3728620+00:00`
+- posted_at: `2026-11-09T23:44:55.8862550+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 679,
     "symbol": "QuerySet.aaggregate"
   },
-  "id": "ebf73fba-0e4c-44f5-a8c0-63bce03b2dd3",
+  "id": "756797d2-fdf4-4c1a-99cd-58a8f0ccbef3",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3728620+00:00"
+    "posted_at": "2026-11-09T23:44:55.8862550+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "1775ede2-89a5-4294-9684-bdb66aa440a8",
+  "subject_id": "f296459f-78fc-4903-9a07-17ea3e9b9a47",
   "subject_name": "django/db/models/query::QuerySet.aaggregate",
   "tags": [
     "entity:method",

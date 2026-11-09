@@ -1,6 +1,6 @@
 # Fact d166e144
 
-Store id: c5a63069-1176-4a4d-a151-342e02e73ba1
+Store id: af9ca6ff-a93f-4c2a-8390-33b91b0e2198
 
 ## Text
 
@@ -20,7 +20,7 @@ def contains_self_reference_subquery(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:06.0278470+00:00`
+- posted_at: `2026-11-09T23:44:57.7055020+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2009,
     "symbol": "SQLDeleteCompiler.contains_self_reference_subquery"
   },
-  "id": "c5a63069-1176-4a4d-a151-342e02e73ba1",
+  "id": "af9ca6ff-a93f-4c2a-8390-33b91b0e2198",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:06.0278470+00:00"
+    "posted_at": "2026-11-09T23:44:57.7055020+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "3222b545-de37-4dfa-a51b-5670d1c23add",
+  "subject_id": "89b3fd2a-6023-4442-8a34-5bb2ab5b349c",
   "subject_name": "django/db/models/sql/compiler::SQLDeleteCompiler.contains_self_reference_subquery",
   "tags": [
     "entity:method",

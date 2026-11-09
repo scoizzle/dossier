@@ -1,6 +1,6 @@
 # Fact 7f757b07
 
-Store id: 5b2fdf58-6adf-439b-8bd0-d3363035848d
+Store id: b483e709-ef36-4809-8da5-04b52a5cdf9e
 
 ## Text
 
@@ -20,7 +20,7 @@ def __init__( self, *args, max_length=50, db_index=True, allow_unicode=False, **
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.7841200+00:00`
+- posted_at: `2026-11-09T23:44:50.2275280+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2491,
     "symbol": "SlugField.__init__"
   },
-  "id": "5b2fdf58-6adf-439b-8bd0-d3363035848d",
+  "id": "b483e709-ef36-4809-8da5-04b52a5cdf9e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.7841200+00:00"
+    "posted_at": "2026-11-09T23:44:50.2275280+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "cc46d9dc-e30d-49cd-97b3-fd7d8d85b2d0",
+  "subject_id": "6bc73aa4-80d7-4785-991a-dc59636a16f7",
   "subject_name": "django/db/models/fields/__init__::SlugField.__init__",
   "tags": [
     "entity:method"

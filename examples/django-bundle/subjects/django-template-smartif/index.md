@@ -1,10 +1,10 @@
 # django/template/smartif
 
-- Subject: django/template/smartif (id `98025caa-5f67-400f-bbc4-b33f0737e281`)
+- Subject: django/template/smartif (id `e914ff3e-7279-4b6d-b615-69bd37f25beb`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 1707 tokens
-- Facts shown: 38 of 39
+- Used: 1727 tokens
+- Facts shown: 39 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -17,6 +17,7 @@
 - self.tokens = mapped_tokens self.pos = 0 self.current_token = self.next_token() [76beb34a]
 - # IfParser uses Literal in create_var, but TemplateIfParser overrides # create_var so that a proper implementation that actually resolves # variables, filters etc. is used. id = "literal" lbp = 0 [e72da232]
 - class Operator(TokenBase): lbp = bp [96c4466c957b9f82]
+- class Operator(TokenBase): lbp = bp [96c4466c957b9f82-2]
 - def __init__(self, tokens): # Turn 'is','not' and 'not','in' into single tokens. num_tokens = len(tokens) mapped_tokens = [] i = 0 while i < num_tokens: token = tokens[i] if token == "is" and i + 1 < num_tokens and tokens[i + 1] == "not": token = "is not" i += 1 # skip 'not' elif token == "not" and i + 1 < num_tokens and tokens[i + 1] == "in": token = "not in" i += 1 # skip 'in' mapped_tokens.append(self.translate_token(token)) i += 1 [67c12b3d]
 - def __init__(self, value): self.value = value [865ca027]
 - def __repr__(self): out = [str(x) for x in [self.id, self.first, self.second] if x is not None] return "(" + " ".join(out) + ")" [050ca164]
@@ -31,13 +32,13 @@
 - def nud(self, parser): # Null denotation - called in prefix context raise parser.error_class( "Not expecting '%s' in this position in if tag." % self.id ) [45fefc41]
 - def nud(self, parser): raise parser.error_class("Unexpected end of expression in if tag.") [838e89de]
 - def nud(self, parser): return self [281a83d3]
-- return Operator [eee486165265df42]
 
 ## All facts
 
 - [cff74de9] def parse(self): retval = self.expression() # Check that we have exhausted all the tokens if self.current_token is not EndToken: raise self.error_class( "Unused '%s' at end of if expression." % self.current_token.display() ) return retval
 - [22a0781d] def translate_token(self, token): try: op = OPERATORS[token] except (KeyError, TypeError): return self.create_var(token) else: return op()
 - [04e4f4df] id = None # node/token type name value = None # used by literals first = second = None # used by tree nodes
+- [eee486165265df42] return Operator
 - [eee486165265df42-2] return Operator
 - [694aed02] """ Parser and utilities for the smart 'if' tag """
 - [7f01343b] # Assign 'id' to each: def _init_operators(): for key, op in OPERATORS.items(): op.id = key

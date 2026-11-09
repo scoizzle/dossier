@@ -1,6 +1,6 @@
 # Fact 2432f45b
 
-Store id: dcdc0d49-dbf2-438c-8f9c-9362d6963917
+Store id: 2c14d700-0b73-4b42-b846-a1a8314467ed
 
 ## Text
 
@@ -20,7 +20,7 @@ def all_parents(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.0067080+00:00`
+- posted_at: `2026-11-09T23:44:55.5574420+00:00`
 
 ## Data
 
@@ -77,7 +77,7 @@ None.
     "start_line": 714,
     "symbol": "Options.all_parents"
   },
-  "id": "dcdc0d49-dbf2-438c-8f9c-9362d6963917",
+  "id": "2c14d700-0b73-4b42-b846-a1a8314467ed",
   "items": [
     {
       "locator": {
@@ -91,7 +91,7 @@ None.
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.0067080+00:00"
+    "posted_at": "2026-11-09T23:44:55.5574420+00:00"
   },
   "refs": [
     {
@@ -107,7 +107,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "0e53c959-7640-41b6-84f3-738249cac694",
+  "subject_id": "875fe346-5229-49ca-992b-2b311020e9dc",
   "subject_name": "django/db/models/options::Options.all_parents",
   "tags": [
     "entity:method",

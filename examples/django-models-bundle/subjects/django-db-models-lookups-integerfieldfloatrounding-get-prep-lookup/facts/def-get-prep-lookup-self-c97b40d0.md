@@ -1,6 +1,6 @@
 # Fact c97b40d0
 
-Store id: caad5886-bfd0-443d-a2b6-141a9b3b4446
+Store id: 536b2286-5ce3-4388-8ea8-175cef7f4f6b
 
 ## Text
 
@@ -20,7 +20,7 @@ def get_prep_lookup(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.2951340+00:00`
+- posted_at: `2026-11-09T23:44:54.9823040+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 469,
     "symbol": "IntegerFieldFloatRounding.get_prep_lookup"
   },
-  "id": "caad5886-bfd0-443d-a2b6-141a9b3b4446",
+  "id": "536b2286-5ce3-4388-8ea8-175cef7f4f6b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.2951340+00:00"
+    "posted_at": "2026-11-09T23:44:54.9823040+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "aa5c73cc-4149-4229-9e56-9dddfa0aab31",
+  "subject_id": "e8783ae4-4350-46a3-afee-c189e26c9354",
   "subject_name": "django/db/models/lookups::IntegerFieldFloatRounding.get_prep_lookup",
   "tags": [
     "entity:method"

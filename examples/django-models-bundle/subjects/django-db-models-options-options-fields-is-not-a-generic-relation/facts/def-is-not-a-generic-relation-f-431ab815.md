@@ -1,6 +1,6 @@
 # Fact 431ab815
 
-Store id: a007e2fd-92eb-4399-8f54-8dffd24f7052
+Store id: bbfccf1a-160d-4c7e-b7d8-cd3b4eb237e4
 
 ## Text
 
@@ -20,7 +20,7 @@ def is_not_a_generic_relation(f)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:03.9756830+00:00`
+- posted_at: `2026-11-09T23:44:55.5294980+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 552,
     "symbol": "Options.fields.is_not_a_generic_relation"
   },
-  "id": "a007e2fd-92eb-4399-8f54-8dffd24f7052",
+  "id": "bbfccf1a-160d-4c7e-b7d8-cd3b4eb237e4",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:03.9756830+00:00"
+    "posted_at": "2026-11-09T23:44:55.5294980+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "01900ade-9ebe-4244-8935-e1311f40ea62",
+  "subject_id": "9f38be58-7d6b-4804-9083-cb8d41cf71be",
   "subject_name": "django/db/models/options::Options.fields.is_not_a_generic_relation",
   "tags": [
     "entity:function"

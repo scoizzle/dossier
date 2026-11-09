@@ -1,11 +1,11 @@
 # django/db/models/sql/compiler::SQLCompiler.get_related_selections.remote_setter
 
-- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.remote_setter (id `06d6a3fa-e3dd-49ac-8c93-573f17f65459`)
+- Subject: django/db/models/sql/compiler::SQLCompiler.get_related_selections.remote_setter (id `408a201d-f160-4365-a148-f997c3eb10cd`)
 - Kind: function
 - Parent: [django/db/models/sql/compiler](../django-db-models-sql-compiler/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 20 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

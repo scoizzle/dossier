@@ -1,10 +1,10 @@
 # django/contrib/redirects/admin
 
-- Subject: django/contrib/redirects/admin (id `edb4e905-fc9d-47c6-a209-940971cd1f7b`)
+- Subject: django/contrib/redirects/admin (id `d6cde4ef-ca86-4a6e-8b9d-ac1d30526cd7`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 85 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

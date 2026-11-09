@@ -1,6 +1,6 @@
 # Fact 0c1fc37f
 
-Store id: 0006d479-eb95-427e-a43c-923bb7ce3c75
+Store id: 636c4df5-fdce-4c36-b8d8-f7e7f2dcc555
 
 ## Text
 
@@ -20,7 +20,7 @@ def __hash__(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.8134210+00:00`
+- posted_at: `2026-11-09T23:44:56.3031360+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2630,
     "symbol": "Prefetch.__hash__"
   },
-  "id": "0006d479-eb95-427e-a43c-923bb7ce3c75",
+  "id": "636c4df5-fdce-4c36-b8d8-f7e7f2dcc555",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.8134210+00:00"
+    "posted_at": "2026-11-09T23:44:56.3031360+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "fad5f3e7-d454-4885-9832-c9b5760dcfb5",
+  "subject_id": "17584b86-9984-4088-bfa1-d08d767454ef",
   "subject_name": "django/db/models/query::Prefetch.__hash__",
   "tags": [
     "entity:method"

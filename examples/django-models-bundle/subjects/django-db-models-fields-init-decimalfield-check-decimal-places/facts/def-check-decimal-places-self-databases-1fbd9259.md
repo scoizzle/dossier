@@ -1,6 +1,6 @@
 # Fact 1fbd9259
 
-Store id: 960151f2-a816-4e58-9b3b-0ba2a3f2af2e
+Store id: a9eb3254-54e9-4e37-9e9d-bda29288ea35
 
 ## Text
 
@@ -20,7 +20,7 @@ def _check_decimal_places(self, databases)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.6208730+00:00`
+- posted_at: `2026-11-09T23:44:50.1135050+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 1772,
     "symbol": "DecimalField._check_decimal_places"
   },
-  "id": "960151f2-a816-4e58-9b3b-0ba2a3f2af2e",
+  "id": "a9eb3254-54e9-4e37-9e9d-bda29288ea35",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.6208730+00:00"
+    "posted_at": "2026-11-09T23:44:50.1135050+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "c657f4bd-5f21-455a-9804-6b2dcecaf15c",
+  "subject_id": "ea546814-7d12-49ee-8ef5-ad12db05b212",
   "subject_name": "django/db/models/fields/__init__::DecimalField._check_decimal_places",
   "tags": [
     "entity:method"

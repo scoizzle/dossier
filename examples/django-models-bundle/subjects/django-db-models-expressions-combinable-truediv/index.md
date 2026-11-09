@@ -1,11 +1,11 @@
 # django/db/models/expressions::Combinable.__truediv__
 
-- Subject: django/db/models/expressions::Combinable.__truediv__ (id `9330ea14-67fa-48c1-bf6a-4d7e6e279c0e`)
+- Subject: django/db/models/expressions::Combinable.__truediv__ (id `95a727af-db2f-402d-8cce-1e7dcaefcb3f`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 18 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

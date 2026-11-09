@@ -1,11 +1,11 @@
 # django/db/models/expressions::Combinable.__rpow__
 
-- Subject: django/db/models/expressions::Combinable.__rpow__ (id `8ac59a7a-5d10-49dc-8348-700db05fac9a`)
+- Subject: django/db/models/expressions::Combinable.__rpow__ (id `04c7b16c-e2e6-4b90-a81d-594d1de9dc84`)
 - Kind: method
 - Parent: [django/db/models/expressions](../django-db-models-expressions/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 17 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

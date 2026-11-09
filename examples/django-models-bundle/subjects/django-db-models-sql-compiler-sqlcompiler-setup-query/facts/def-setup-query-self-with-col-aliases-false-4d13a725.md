@@ -1,6 +1,6 @@
 # Fact 4d13a725
 
-Store id: bf813975-c24e-42f4-b4ef-6b48cafe4fec
+Store id: a6e20b6b-e7ba-418c-8bdb-a52c4dc86a67
 
 ## Text
 
@@ -20,7 +20,7 @@ def setup_query(self, with_col_aliases=False)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:05.6662250+00:00`
+- posted_at: `2026-11-09T23:44:57.3918440+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "SQLCompiler.setup_query"
   },
-  "id": "bf813975-c24e-42f4-b4ef-6b48cafe4fec",
+  "id": "a6e20b6b-e7ba-418c-8bdb-a52c4dc86a67",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:05.6662250+00:00"
+    "posted_at": "2026-11-09T23:44:57.3918440+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "f2075a66-26ad-431e-bc13-487c51b47b6c",
+  "subject_id": "9ead1a14-1fec-4e70-966f-973f69bbd399",
   "subject_name": "django/db/models/sql/compiler::SQLCompiler.setup_query",
   "tags": [
     "entity:method"

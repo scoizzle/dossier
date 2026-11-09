@@ -1,6 +1,6 @@
 # Fact eb7103c8
 
-Store id: ab029b95-6bf8-4a00-9db4-ec084c32a172
+Store id: 41e4c756-c346-445b-a8fc-6bfcfb966a8b
 
 ## Text
 
@@ -20,7 +20,7 @@ def formfield(self, **kwargs)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:31:56.8057690+00:00`
+- posted_at: `2026-11-09T23:44:50.2462990+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 2577,
     "symbol": "TextField.formfield"
   },
-  "id": "ab029b95-6bf8-4a00-9db4-ec084c32a172",
+  "id": "41e4c756-c346-445b-a8fc-6bfcfb966a8b",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:31:56.8057690+00:00"
+    "posted_at": "2026-11-09T23:44:50.2462990+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "958700b8-7396-49bc-bd44-8ffa6932c44e",
+  "subject_id": "97790ad2-0680-4dc6-b1a5-06abd50f32e6",
   "subject_name": "django/db/models/fields/__init__::TextField.formfield",
   "tags": [
     "entity:method"

@@ -1,10 +1,10 @@
 # django/db/backends/dummy/features
 
-- Subject: django/db/backends/dummy/features (id `4864eca4-143c-44fc-8476-2adae0af839d`)
+- Subject: django/db/backends/dummy/features (id `9178df9f-c922-469c-b23a-153c3e3a99e4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 64 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

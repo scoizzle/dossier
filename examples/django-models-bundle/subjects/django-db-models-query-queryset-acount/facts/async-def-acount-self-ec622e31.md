@@ -1,6 +1,6 @@
 # Fact ec622e31
 
-Store id: 5c5aeea3-9a17-410b-a7c7-776c82a3d306
+Store id: ca016810-e6db-4aaa-bc90-53596ae40afe
 
 ## Text
 
@@ -20,7 +20,7 @@ async def acount(self)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:04.3792160+00:00`
+- posted_at: `2026-11-09T23:44:55.8915090+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 695,
     "symbol": "QuerySet.acount"
   },
-  "id": "5c5aeea3-9a17-410b-a7c7-776c82a3d306",
+  "id": "ca016810-e6db-4aaa-bc90-53596ae40afe",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:04.3792160+00:00"
+    "posted_at": "2026-11-09T23:44:55.8915090+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "7fbeca2d-2396-48e1-8182-c2248b5ab543",
+  "subject_id": "c3e55664-8900-430d-a7d2-0d0f6465893d",
   "subject_name": "django/db/models/query::QuerySet.acount",
   "tags": [
     "entity:method",

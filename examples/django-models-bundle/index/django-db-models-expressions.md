@@ -4,7 +4,7 @@ This file lists every subject under `django/db/models/expressions/` as folders a
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| django/db/models/expressions | subject | 38 | 0 | 0 | 9110 | [subjects/django-db-models-expressions/index.md](../subjects/django-db-models-expressions/index.md) |
+| django/db/models/expressions | subject | 38 | 0 | 0 | 9140 | [subjects/django-db-models-expressions/index.md](../subjects/django-db-models-expressions/index.md) |
 | part-1/ | group | 100 | 0 | 0 | 5953 | [index/django-db-models-expressions-part-1.md](django-db-models-expressions-part-1.md) |
 | part-2/ | group | 104 | 0 | 0 | 5978 | [index/django-db-models-expressions-part-2.md](django-db-models-expressions-part-2.md) |
 | part-3/ | group | 73 | 0 | 0 | 4288 | [index/django-db-models-expressions-part-3.md](django-db-models-expressions-part-3.md) |

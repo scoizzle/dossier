@@ -1,11 +1,11 @@
 # django/db/models/query::QuerySet.ain_bulk
 
-- Subject: django/db/models/query::QuerySet.ain_bulk (id `efedba42-0340-4b09-b2e3-e73c190a403a`)
+- Subject: django/db/models/query::QuerySet.ain_bulk (id `cdc6c052-e2c0-4fa3-aea2-969788994c73`)
 - Kind: method
 - Parent: [django/db/models/query](../django-db-models-query/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 25 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

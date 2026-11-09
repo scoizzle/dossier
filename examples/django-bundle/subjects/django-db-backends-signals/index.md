@@ -1,10 +1,10 @@
 # django/db/backends/signals
 
-- Subject: django/db/backends/signals (id `f77ccc03-514a-483e-bd97-6063429d08f8`)
+- Subject: django/db/backends/signals (id `ab82fa7a-a7fe-4189-9437-eec4f084b656`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 37 tokens
-- Facts shown: 2 of 2
+- Facts shown: 2 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,11 +1,11 @@
 # django/db/models/fields/files::FieldFile._del_file
 
-- Subject: django/db/models/fields/files::FieldFile._del_file (id `513943a1-90dd-494e-89af-9c8752fc48e4`)
+- Subject: django/db/models/fields/files::FieldFile._del_file (id `e965f5ae-5577-4bfd-8f97-95015e3f1e41`)
 - Kind: method
 - Parent: [django/db/models/fields/files](../django-db-models-fields-files/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

@@ -1,10 +1,10 @@
 # django/db/models/aggregates
 
-- Subject: django/db/models/aggregates (id `1566c7c0-52ef-4279-903a-eea620989bba`)
+- Subject: django/db/models/aggregates (id `68bf33b8-a344-4b80-857e-126f5ff032e4`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3678 tokens
-- Facts shown: 65 of 67
+- Used: 3750 tokens
+- Facts shown: 67 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -22,21 +22,23 @@
 - return result [e6d2cf0b52c4ebca-3]
 - return self.as_sql( compiler, connection, function="LISTAGG", template=template, **extra_context, ) [fcc3bc66]
 - return self.as_sql( compiler, connection, template=template, **extra_context, ) [cdc1b33f]
+- return self.as_sql(compiler, connection, **extra_context) [be6cc015]
 - return sql, (*params, *delimiter_params) [e44039ce]
 - return super().as_sql(compiler, connection, **extra_context) [1a0b46f5a52f62b5]
 - self.distinct = distinct self.filter = None if filter is None else AggregateFilter(filter) self.default = default self.order_by = AggregateOrderBy.from_param( f"{self.__class__.__name__}.order_by", order_by ) super().__init__(*expressions, **extra) [bd67815d]
 - sql, params = c.as_sql(compiler, connection, **extra_context) [dba3bd09]
 - template = "%(function)s(%(distinct)s%(expressions)s%(order_by)s%(delimiter)s)" extra_context["template"] = template [9702c69b]
-- @property def condition(self): return self.source_expressions[0] [300a9477]
 
 ## All facts
 
+- [300a9477] @property def condition(self): return self.source_expressions[0]
 - [d967df7d] @property def default_alias(self): expressions = [ expr for expr in self.get_source_expressions() if expr is not None ] if len(expressions) == 1 and hasattr(expressions[0], "name"): return "%s__%s" % (expressions[0].name, self.name.lower()) raise TypeError("Complex expressions require an alias")
 - [c8af8336] def __init__( self, *expressions, distinct=False, filter=None, default=None, order_by=None, **extra, ): if distinct and not self.allow_distinct: raise TypeError("%s does not allow distinct." % self.__class__.__name__) if order_by and not self.allow_order_by: raise TypeError("%s does not allow order_by." % self.__class__.__name__) if default is not None and self.empty_result_set_value is not None: raise TypeError(f"{self.__class__.__name__} does not allow default.")
 - [1efd6084] def __init__(self, expression, **extra): super().__init__(expression, **extra) # self.default is reset in Aggregate.resolve_expression(). Store the # information for the later check in as_sql(). self._has_default = self.default is not None
 - [007d83d9] def __init__(self, expression, delimiter, **extra): self.delimiter = StringAggDelimiter(delimiter) super().__init__(expression, self.delimiter, **extra)
 - [364bcda3] def __init__(self, expression, filter=None, **extra): if expression == "*": expression = Star() if isinstance(expression, Star) and filter is not None: raise ValueError("Star cannot be used with filter. Please specify a field.") super().__init__(expression, filter=filter, **extra)
 - [5c8652b8] def __init__(self, expression, sample=False, **extra): self.function = "STDDEV_SAMP" if sample else "STDDEV_POP" super().__init__(expression, **extra)
+- [31df3f4f] def __init__(self, expression, sample=False, **extra): self.function = "VAR_SAMP" if sample else "VAR_POP" super().__init__(expression, **extra)
 - [52bd520a] def __init__(self, value): self.value = value super().__init__(value)
 - [fb8ef8318565966b] def __str__(self): return self.arg_joiner.join(str(arg) for arg in self.source_expressions)
 - [36179838] def _get_repr_options(self): options = super()._get_repr_options() if self.distinct: options["distinct"] = self.distinct if self.filter: options["filter"] = self.filter if self.order_by: options["order_by"] = self.order_by return options

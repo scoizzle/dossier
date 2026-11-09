@@ -1,10 +1,10 @@
 # docs/ref/template-response
 
-- Subject: docs/ref/template-response (id `fd627b1f-ad3d-4f30-b51d-2bedc390dff4`)
+- Subject: docs/ref/template-response (id `f48edf88-4b01-4d4b-bfed-6e54dc2b6989`)
 - Kind: subject
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
-- Used: 3133 tokens
-- Facts shown: 76 of 85
+- Used: 3518 tokens
+- Facts shown: 85 facts
 - Conflicts: 0
 - Gaps: 0
 
@@ -20,6 +20,7 @@
 - If the :class:`~django.template.response.SimpleTemplateResponse` has already been rendered, the callback will be invoked immediately. [d92519da]
 - If the callback returns a value that is not ``None``, this will be used as the response instead of the original response object (and will be passed to the next post rendering callback etc.) [4f38e5c2]
 - Instantiates a :class:`~django.template.response.SimpleTemplateResponse` object with the given template, context, content type, HTTP status, and charset. [cd29e7df]
+- Instantiates a :class:`~django.template.response.TemplateResponse` object with the given request, template, context, content type, HTTP status, and charset. [ad417ab4]
 - Override this method in order to customize template loading. [3ba636c8]
 - Override this method in order to customize the context. [2e8f92c6]
 - Preprocesses context data that will be used for rendering a template. Accepts a :class:`dict` of context data. By default, returns the same :class:`dict`. [d552c3ef]
@@ -30,23 +31,31 @@
 - The current rendered value of the response content, using the current template and context data. [bdb12898]
 - The name of the template to be rendered. Accepts a backend-dependent template object (such as those returned by :func:`~django.template.loader.get_template`), the name of a template, or a list of template names. [f2a9dfbe]
 - When called, callbacks will be passed a single argument -- the rendered :class:`~django.template.response.SimpleTemplateResponse` instance. [34977662]
-- ``TemplateResponse`` is a subclass of :class:`~django.template.response.SimpleTemplateResponse` that knows about the current :class:`~django.http.HttpRequest`. [a2cd9ffb]
 
 ## All facts
 
+- [a2cd9ffb] ``TemplateResponse`` is a subclass of :class:`~django.template.response.SimpleTemplateResponse` that knows about the current :class:`~django.http.HttpRequest`.
 - [3286d326fe78ee1b] ``charset`` The charset in which the response will be encoded. If not given it will be extracted from ``content_type``, and if that is unsuccessful, the :setting:`DEFAULT_CHARSET` setting will be used.
+- [3286d326fe78ee1b-2] ``charset`` The charset in which the response will be encoded. If not given it will be extracted from ``content_type``, and if that is unsuccessful, the :setting:`DEFAULT_CHARSET` setting will be used.
 - [1f2656517290407d] ``content_type`` The value included in the HTTP ``Content-Type`` header, including the MIME type specification and the character set encoding. If ``content_type`` is specified, then its value is used. Otherwise, ``'text/html'`` is used.
+- [1f2656517290407d-2] ``content_type`` The value included in the HTTP ``Content-Type`` header, including the MIME type specification and the character set encoding. If ``content_type`` is specified, then its value is used. Otherwise, ``'text/html'`` is used.
 - [7275f4d1c0f68aeb] ``context`` A :class:`dict` of values to add to the template context. By default, this is an empty dictionary.
+- [7275f4d1c0f68aeb-2] ``context`` A :class:`dict` of values to add to the template context. By default, this is an empty dictionary.
 - [9df2acb40e4691bd] ``headers`` A :class:`dict` of HTTP headers to add to the response.
+- [9df2acb40e4691bd-2] ``headers`` A :class:`dict` of HTTP headers to add to the response.
 - [065efea1] ``render()`` will only have an effect the first time it is called. On subsequent calls, it will return the result obtained from the first call.
 - [dccf414a] ``request`` An :class:`~django.http.HttpRequest` instance.
 - [2f600077f2180b9f] ``status`` The HTTP status code for the response.
+- [2f600077f2180b9f-2] ``status`` The HTTP status code for the response.
 - [b7cc75c3c75f83d3] ``template`` A backend-dependent template object (such as those returned by :func:`~django.template.loader.get_template`), the name of a template, or a list of template names.
+- [b7cc75c3c75f83d3-2] ``template`` A backend-dependent template object (such as those returned by :func:`~django.template.loader.get_template`), the name of a template, or a list of template names.
 - [60e85ba2b5411ec8] ``using`` The :setting:`NAME <TEMPLATES-NAME>` of a template engine to use for loading the template.
+- [60e85ba2b5411ec8-2] ``using`` The :setting:`NAME <TEMPLATES-NAME>` of a template engine to use for loading the template.
 - [88a2cf1e] def blog_index(request): return TemplateResponse( request, "entry_list.html", {"entries": Entry.objects.all()} )
 - [b0dab9fb] def my_render_callback(response): # Do content-sensitive processing do_post_processing()
 - [7d5f58c6] def my_view(request): # Create a response response = TemplateResponse(request, "mytemplate.html", {}) # Register the callback response.add_post_render_callback(my_render_callback) # Return the response return response
 - [ac4cbee2e748370f] from django.template.response import TemplateResponse
+- [ac4cbee2e748370f-2] from django.template.response import TemplateResponse
 - [db84992b] * After passing through template response middleware, but before passing through response middleware.
 - [3a0764aa] * When the ``TemplateResponse`` instance is explicitly rendered, using the :meth:`SimpleTemplateResponse.render` method.
 - [b230c892] * When the content of the response is explicitly set by assigning ``response.content``.

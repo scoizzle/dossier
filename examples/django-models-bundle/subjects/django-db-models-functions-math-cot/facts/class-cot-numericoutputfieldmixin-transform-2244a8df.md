@@ -1,6 +1,6 @@
 # Fact 2244a8df
 
-Store id: 8a9bed92-947f-4f30-b2df-0ff6a2eb0548
+Store id: cafd0eee-dc4d-42cd-93f6-0f737e49662e
 
 ## Text
 
@@ -20,7 +20,7 @@ class Cot(NumericOutputFieldMixin, Transform)
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T23:32:01.6987730+00:00`
+- posted_at: `2026-11-09T23:44:53.7159130+00:00`
 
 ## Data
 
@@ -64,13 +64,13 @@ None.
     "start_line": 74,
     "symbol": "Cot"
   },
-  "id": "8a9bed92-947f-4f30-b2df-0ff6a2eb0548",
+  "id": "cafd0eee-dc4d-42cd-93f6-0f737e49662e",
   "kind": "code",
   "provenance": {
     "actor": "dossier-cli",
     "actor_type": "tool",
     "channel": "cli",
-    "posted_at": "2026-11-09T23:32:01.6987730+00:00"
+    "posted_at": "2026-11-09T23:44:53.7159130+00:00"
   },
   "refs": [
     {
@@ -86,7 +86,7 @@ None.
     }
   ],
   "status": "live",
-  "subject_id": "74fb9943-e366-43bf-97e0-662923bba7aa",
+  "subject_id": "d4053fd0-f0a3-4dbd-8236-8e791fca88d2",
   "subject_name": "django/db/models/functions/math::Cot",
   "tags": [
     "entity:class"

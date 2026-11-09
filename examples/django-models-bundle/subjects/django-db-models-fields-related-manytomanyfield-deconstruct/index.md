@@ -1,11 +1,11 @@
 # django/db/models/fields/related::ManyToManyField.deconstruct
 
-- Subject: django/db/models/fields/related::ManyToManyField.deconstruct (id `70baa3ab-bccb-4643-9f96-cb41144a3bd4`)
+- Subject: django/db/models/fields/related::ManyToManyField.deconstruct (id `14725f75-5d0a-4778-8b13-4d28d1c4d5b9`)
 - Kind: method
 - Parent: [django/db/models/fields/related](../django-db-models-fields-related/index.md)
 - Budget: 1200 tokens (highlight threshold; every fact is listed)
 - Used: 16 tokens
-- Facts shown: 1 of 1
+- Facts shown: 1 facts
 - Conflicts: 0
 - Gaps: 0
 

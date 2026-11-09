@@ -189,6 +189,29 @@ try
             return 0;
         }
 
+        case "mcp":
+        {
+            // stdout carries protocol messages only.
+            new McpServer(new DossierStore()).Run(Console.In, Console.Out);
+            return 0;
+        }
+
+        case "serve":
+        {
+            var port = ParseInt(ValueAfter(args, "--port"), "--port") ?? 8787;
+            using var server = new WebServer(new DossierStore(), port);
+            server.Start();
+            Console.Error.WriteLine($"listening on http://127.0.0.1:{port}/");
+            using var stop = new ManualResetEventSlim();
+            Console.CancelKeyPress += (_, e) =>
+            {
+                e.Cancel = true;
+                stop.Set();
+            };
+            stop.Wait();
+            return 0;
+        }
+
         default:
             Console.Error.WriteLine(usage);
             return 1;

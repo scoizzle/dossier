@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|post --file <path>|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...>";
 
 if (args.Length == 0)
 {
@@ -42,6 +42,43 @@ try
                 Console.Error.WriteLine(JsonSerializer.Serialize(error, JsonCodec.Options));
             }
 
+            return 0;
+        }
+
+        case "dump":
+        {
+            var source = ValueAfter(args, "--source");
+            var subject = ValueAfter(args, "--subject");
+            if (source is null || subject is null)
+            {
+                Console.Error.WriteLine("dump requires --source <path> and --subject <name>");
+                return 1;
+            }
+
+            var dumpRequest = new DumpRequest
+            {
+                Source = source,
+                Subject = subject,
+                Kind = ValueAfter(args, "--kind"),
+                Split = ValueAfter(args, "--split"),
+                Tags = ValuesAfter(args, "--tag"),
+            };
+
+            var dumpResponse = new DossierStore().Dump(dumpRequest);
+            Console.WriteLine(JsonSerializer.Serialize(dumpResponse, JsonCodec.Options));
+            return 0;
+        }
+
+        case "correlate":
+        {
+            var correlateRequest = new CorrelateRequest
+            {
+                Subject = ValueAfter(args, "--subject"),
+                Matchers = ValuesAfter(args, "--matcher"),
+            };
+
+            var correlateResponse = new DossierStore().Correlate(correlateRequest);
+            Console.WriteLine(JsonSerializer.Serialize(correlateResponse, JsonCodec.Options));
             return 0;
         }
 

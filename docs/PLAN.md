@@ -165,6 +165,17 @@ targets, which for fact-to-fact refs are random ids, so placed first it reintrod
 dependence (found by `Reproducible_SelectionAcrossIndependentStores`). It is now the last
 disambiguator.
 
+Within one store, selection is id-independent and byte-stable: `Reproducible_SelectionAcrossIndependentStores`
+and `Reproducible_RepeatedCompileIsByteIdentical` hold that half. The remaining cross-machine
+dependence is recency: the recency term is derived from `created_at`, a wall-clock value set by
+whichever machine posted the fact, so two stores holding the same logical facts posted hours
+apart can rank differently at the default weight. Setting `rank.recency` to 0 removes the term
+and is the reproducible mode; `Reproducible_WithRecencyDisabled_IgnoresWallClock` proves it by
+compiling the same 40 logical facts with `created_at` offset six hours between two stores and
+getting identical facts, dropped facts and `used_tokens`. `Recency_DefaultStillAffectsOrdering`
+proves the other half: at the default weight, two otherwise-identical candidates differing only
+in `created_at` rank the newer one first, so the mode is a deliberate choice and not a dead term.
+
 Measured with `bash scripts/scaling.sh` (synthetic distinct facts on one subject, budget
 1200, depth full, markdown, chars/4; two consecutive runs printed identical values):
 

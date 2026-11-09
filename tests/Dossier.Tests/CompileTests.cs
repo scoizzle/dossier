@@ -742,6 +742,24 @@ public sealed class CompileTests
         return db;
     }
 
+    /// <summary>Posts the 40 logical facts in the given order, giving logical fact i a distinct created_at of At(offsetMinutes + i), so two stores can hold the same logical facts six hours apart yet in the same relative order.</summary>
+    private static TempDb BuildStaggeredLogicalStore(IEnumerable<int> order, int offsetMinutes)
+    {
+        var db = new TempDb();
+        var indices = order.ToList();
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", indices.Select(LogicalFact).ToArray()));
+        for (var j = 0; j < indices.Count; j++)
+        {
+            Exec(
+                db,
+                "UPDATE facts SET created_at = $c WHERE id = $id",
+                ("$c", At(offsetMinutes + indices[j])),
+                ("$id", posted.Response.Facts[j].Id));
+        }
+
+        return db;
+    }
+
     private static string TextOf(TempDb db, string id) => db.Store.Show(id)!.Fact.Text ?? string.Empty;
 
     private static CompileRequest ReproRequest() => new()
@@ -788,6 +806,54 @@ public sealed class CompileTests
 
         await Assert.That(runs[1]).IsEqualTo(runs[0]);
         await Assert.That(runs[2]).IsEqualTo(runs[0]);
+    }
+
+    [Test]
+    public async Task Reproducible_WithRecencyDisabled_IgnoresWallClock()
+    {
+        // Same 40 logical facts, same relative created_at order, but store B's wall clock is six
+        // hours later and its insertion order differs. With recency weighted 0 the differing
+        // created_at cannot move any score, so both stores must agree exactly.
+        using var a = BuildStaggeredLogicalStore(Enumerable.Range(0, LogicalFactCount), 0);
+        using var b = BuildStaggeredLogicalStore(
+            Enumerable.Range(0, HubCount).Reverse().Concat(Enumerable.Range(HubCount, LogicalFactCount - HubCount).Reverse()),
+            360);
+
+        var request = ReproRequest();
+        request.Rank = new RankOptions { Recency = 0 };
+
+        var left = a.Store.Compile(request);
+        var right = b.Store.Compile(request);
+
+        var leftFacts = left.Facts.Select(f => f.Text).ToList();
+        var rightFacts = right.Facts.Select(f => f.Text).ToList();
+        var leftDropped = left.Dropped.Select(id => TextOf(a, id)).ToList();
+        var rightDropped = right.Dropped.Select(id => TextOf(b, id)).ToList();
+
+        await Assert.That(leftDropped.Count).IsGreaterThan(0);
+        await Assert.That(rightFacts.SequenceEqual(leftFacts)).IsTrue();
+        await Assert.That(rightDropped.SequenceEqual(leftDropped)).IsTrue();
+        await Assert.That(right.UsedTokens).IsEqualTo(left.UsedTokens);
+    }
+
+    [Test]
+    public async Task Recency_DefaultStillAffectsOrdering()
+    {
+        using var db = new TempDb();
+        // Two otherwise-identical candidates (equal confidence, no refs, no needs, both short so
+        // they never dedupe) that differ only in created_at. Text order would put the older one
+        // first, so the default weight is what promotes the newer one.
+        var ids = Post(db, "Widget", Fixtures.Fact("alpha older"), Fixtures.Fact("zulu newer"));
+        SetCreated(db, ids[0], 0);
+        SetCreated(db, ids[1], 100);
+
+        var defaultOrder = db.Store.Compile(Full()).Facts.Select(f => f.Id).ToList();
+        await Assert.That(defaultOrder[0]).IsEqualTo(ids[1]);
+
+        var flat = Full();
+        flat.Rank = new RankOptions { Recency = 0 };
+        var flatOrder = db.Store.Compile(flat).Facts.Select(f => f.Id).ToList();
+        await Assert.That(flatOrder[0]).IsEqualTo(ids[0]);
     }
 
     [Test]

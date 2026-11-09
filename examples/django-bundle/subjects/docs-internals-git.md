@@ -1,6 +1,6 @@
 # docs/internals/git
 
-- Subject: docs/internals/git (id `9d539bab-915a-43fc-be0a-ad88f7d40c60`)
+- Subject: docs/internals/git (id `62a66751-5c3e-4706-9b4d-ecd017d8bb93`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

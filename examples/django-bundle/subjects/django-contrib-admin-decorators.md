@@ -1,6 +1,6 @@
 # django/contrib/admin/decorators
 
-- Subject: django/contrib/admin/decorators (id `99be3555-2f55-4ba9-8e7e-4ab517c91f52`)
+- Subject: django/contrib/admin/decorators (id `22749486-3870-4977-b2ce-523cdcd11ee1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

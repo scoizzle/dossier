@@ -1,6 +1,6 @@
 # docs/ref/templates/language
 
-- Subject: docs/ref/templates/language (id `04bdf23b-c6c1-4833-b3d3-1b2546f2fbee`)
+- Subject: docs/ref/templates/language (id `684cbbde-629f-4113-9233-402be5f7d13f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

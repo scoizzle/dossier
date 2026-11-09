@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets]>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --depth --facts --assets --index-max-tokens]>";
 
 if (args.Length == 0)
 {
@@ -196,7 +196,7 @@ try
             var outDir = ValueAfter(args, "--out");
             if (outDir is null)
             {
-                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--depth index|full] [--facts detail|none] [--assets detail|none]");
+                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--depth index|full] [--facts detail|none] [--assets detail|none] [--index-max-tokens n]");
                 return 1;
             }
 
@@ -208,6 +208,7 @@ try
                 Depth = ValueAfter(args, "--depth") ?? "full",
                 Facts = ValueAfter(args, "--facts") ?? "detail",
                 Assets = ValueAfter(args, "--assets") ?? "detail",
+                IndexMaxTokens = ParseInt(ValueAfter(args, "--index-max-tokens"), "--index-max-tokens") ?? DossierStore.DefaultIndexMaxTokens,
                 CommandLine = "dossier " + string.Join(' ', args.Select(a => a.Length > 0 && a.All(c => !char.IsWhiteSpace(c) && c != '\'') ? a : "'" + a.Replace("'", "'\\''") + "'")),
             };
 

@@ -1,6 +1,6 @@
 # django/contrib/flatpages/urls
 
-- Subject: django/contrib/flatpages/urls (id `6b9f56c6-a3e5-4490-8465-425ca12a1766`)
+- Subject: django/contrib/flatpages/urls (id `979fe438-519e-4904-8563-4bcbc51a5823`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 65 tokens

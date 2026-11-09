@@ -1,6 +1,6 @@
 # django/contrib/sessions/exceptions
 
-- Subject: django/contrib/sessions/exceptions (id `d898f077-3ab9-43b2-88a2-a4bea60efdb4`)
+- Subject: django/contrib/sessions/exceptions (id `b5538a7b-072c-4c53-a7a6-4275921f9dbf`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 156 tokens

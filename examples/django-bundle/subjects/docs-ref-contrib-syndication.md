@@ -1,6 +1,6 @@
 # docs/ref/contrib/syndication
 
-- Subject: docs/ref/contrib/syndication (id `f029a297-8116-41f1-bce5-b4b9a321a6b9`)
+- Subject: docs/ref/contrib/syndication (id `93c989b2-4f41-4b70-b444-bfaff988bdfa`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

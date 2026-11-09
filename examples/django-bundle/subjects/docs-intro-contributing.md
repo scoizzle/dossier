@@ -1,6 +1,6 @@
 # docs/intro/contributing
 
-- Subject: docs/intro/contributing (id `85a19f7e-8cc6-4751-9b4a-e0090a5544c9`)
+- Subject: docs/intro/contributing (id `bd336157-93a9-45f7-95c7-e880e8d7f605`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

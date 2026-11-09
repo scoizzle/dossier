@@ -1,6 +1,6 @@
 # docs/misc/api-stability
 
-- Subject: docs/misc/api-stability (id `09c33ff9-66a2-4c39-839d-c35ee7e0505a`)
+- Subject: docs/misc/api-stability (id `521221bb-ff0d-4cc3-81cd-3cf06d966d25`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

@@ -1,6 +1,6 @@
 # django/contrib/flatpages/models
 
-- Subject: django/contrib/flatpages/models (id `33ba32b5-0a12-447f-89b8-68653818c6c2`)
+- Subject: django/contrib/flatpages/models (id `82a95c26-82f4-4aaa-8264-7009ed82c6e0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 430 tokens

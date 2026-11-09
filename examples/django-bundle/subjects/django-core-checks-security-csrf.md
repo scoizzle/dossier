@@ -1,6 +1,6 @@
 # django/core/checks/security/csrf
 
-- Subject: django/core/checks/security/csrf (id `aec976ed-bf8a-4986-976b-0755878f68f9`)
+- Subject: django/core/checks/security/csrf (id `26c3bb00-95da-4949-b621-b8482c3ea70b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 538 tokens

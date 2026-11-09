@@ -1,6 +1,6 @@
 # django/db/backends/postgresql/introspection
 
-- Subject: django/db/backends/postgresql/introspection (id `ffaf8880-24c5-4601-8252-297c4c843c3b`)
+- Subject: django/db/backends/postgresql/introspection (id `42d9c00c-efd6-42cd-b105-15baa512b7b5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 884 tokens

@@ -1,6 +1,6 @@
 # django/contrib/redirects/middleware
 
-- Subject: django/contrib/redirects/middleware (id `23522783-6e93-46df-9d25-163305ab92bc`)
+- Subject: django/contrib/redirects/middleware (id `fdffb706-c607-4daa-8c37-90206aa51ada`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 462 tokens

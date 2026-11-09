@@ -1,6 +1,6 @@
 # django/views/decorators/clickjacking
 
-- Subject: django/views/decorators/clickjacking (id `9d6681c1-1d55-4343-a0ba-548f681b02e0`)
+- Subject: django/views/decorators/clickjacking (id `f2e089d8-3605-4ade-988b-2f1a26613e1d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 450 tokens

@@ -1,6 +1,6 @@
 # docs/ref/csrf
 
-- Subject: docs/ref/csrf (id `1a4969f0-dac1-4e46-b62d-aa97da6d0b9f`)
+- Subject: docs/ref/csrf (id `7c59c500-65d4-4032-99c3-d952d46dfd3d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

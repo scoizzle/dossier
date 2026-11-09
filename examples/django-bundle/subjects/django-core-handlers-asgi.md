@@ -1,6 +1,6 @@
 # django/core/handlers/asgi
 
-- Subject: django/core/handlers/asgi (id `3de33e47-a56b-4232-b118-a21d4f2285d8`)
+- Subject: django/core/handlers/asgi (id `3735b6ee-f719-4a52-a448-79f769a08b74`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

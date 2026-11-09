@@ -1,6 +1,6 @@
 # docs/internals/howto-release-django
 
-- Subject: docs/internals/howto-release-django (id `528adb73-5f1c-4a63-8e26-fadcba94e6c6`)
+- Subject: docs/internals/howto-release-django (id `4e9a4240-5da6-4f21-ae71-5813c508f699`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

@@ -1,6 +1,6 @@
 # Fact f503b480
 
-Store id: 41ed62e3-ccc9-413f-ade4-9a06f1de1217
+Store id: 021fb0cc-238c-4e97-a66d-5e5e5753fe16
 
 ## Text
 
@@ -20,7 +20,7 @@ Home memo list renders cards newest first in a single column.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

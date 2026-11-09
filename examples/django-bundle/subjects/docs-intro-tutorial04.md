@@ -1,6 +1,6 @@
 # docs/intro/tutorial04
 
-- Subject: docs/intro/tutorial04 (id `bf78755e-abd4-4062-b377-56c3aaa496d0`)
+- Subject: docs/intro/tutorial04 (id `0bc58073-8120-4284-8aaf-4dd58492466f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

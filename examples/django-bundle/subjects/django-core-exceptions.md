@@ -1,6 +1,6 @@
 # django/core/exceptions
 
-- Subject: django/core/exceptions (id `c645d1f5-e757-405b-9006-d363ce992fd1`)
+- Subject: django/core/exceptions (id `162ed57a-c0b3-487c-9479-f40a292c431c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

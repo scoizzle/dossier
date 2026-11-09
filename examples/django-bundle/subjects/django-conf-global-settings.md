@@ -1,6 +1,6 @@
 # django/conf/global_settings
 
-- Subject: django/conf/global_settings (id `99fef25c-f840-4360-8bfd-2b6558180514`)
+- Subject: django/conf/global_settings (id `e82065af-2cf4-4a6e-b35d-168a0014e6de`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

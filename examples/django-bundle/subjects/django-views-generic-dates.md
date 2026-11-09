@@ -1,6 +1,6 @@
 # django/views/generic/dates
 
-- Subject: django/views/generic/dates (id `3af6c06d-dfbd-4095-915a-baf703cfe361`)
+- Subject: django/views/generic/dates (id `19eac67c-a4a1-45e6-b2a9-8f8111726b02`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

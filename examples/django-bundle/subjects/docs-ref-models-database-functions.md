@@ -1,6 +1,6 @@
 # docs/ref/models/database-functions
 
-- Subject: docs/ref/models/database-functions (id `fad63a9e-ac42-42d7-bea9-ff24c3f491b9`)
+- Subject: docs/ref/models/database-functions (id `f54b7047-86c0-4010-8ed0-495a16843bac`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

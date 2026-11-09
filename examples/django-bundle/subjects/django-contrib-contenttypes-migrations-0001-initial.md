@@ -1,6 +1,6 @@
 # django/contrib/contenttypes/migrations/0001_initial
 
-- Subject: django/contrib/contenttypes/migrations/0001_initial (id `4bbf8617-0ebd-4e3a-8757-8e5d78df8d84`)
+- Subject: django/contrib/contenttypes/migrations/0001_initial (id `6d2b6fe6-659c-4932-b7b7-e89802f04b46`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 244 tokens

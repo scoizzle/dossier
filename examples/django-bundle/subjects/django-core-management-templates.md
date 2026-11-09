@@ -1,6 +1,6 @@
 # django/core/management/templates
 
-- Subject: django/core/management/templates (id `0d7145d4-07da-4510-a5de-4cca6bf7f0f7`)
+- Subject: django/core/management/templates (id `5f14b3b8-a9a4-4da2-97fe-54338e7b2c79`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

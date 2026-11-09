@@ -1,6 +1,6 @@
 # docs/internals/contributing/sprint-quickstart
 
-- Subject: docs/internals/contributing/sprint-quickstart (id `72d8c169-f3d6-427c-86b2-7e77666718ab`)
+- Subject: docs/internals/contributing/sprint-quickstart (id `17206d1c-21f2-43ef-8e68-9c21c31f95fd`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

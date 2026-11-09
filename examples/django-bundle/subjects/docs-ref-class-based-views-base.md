@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/base
 
-- Subject: docs/ref/class-based-views/base (id `03acafa3-b8b8-4bcb-b28a-c3f6be4a1f38`)
+- Subject: docs/ref/class-based-views/base (id `23e6094e-3e0b-46bd-b82b-ad3039ef7de2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

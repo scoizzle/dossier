@@ -1,6 +1,6 @@
 # django/contrib/auth/mixins
 
-- Subject: django/contrib/auth/mixins (id `5debda66-71ca-47f2-809f-9a6be118ca99`)
+- Subject: django/contrib/auth/mixins (id `ae26766d-b401-4ace-80e6-5fe892c5c24e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

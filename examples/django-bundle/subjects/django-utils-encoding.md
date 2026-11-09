@@ -1,6 +1,6 @@
 # django/utils/encoding
 
-- Subject: django/utils/encoding (id `1b025b0e-52b1-4cf1-aad4-c3d9befe4f99`)
+- Subject: django/utils/encoding (id `608f29d4-491a-4f4d-acfd-88c9ca6beb89`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

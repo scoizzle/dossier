@@ -1,6 +1,6 @@
 # django/db/models/signals
 
-- Subject: django/db/models/signals (id `dbea350b-5440-4183-9f3b-8f511ffdc828`)
+- Subject: django/db/models/signals (id `bc0928a0-b4f6-4c27-a1d2-5d9f327aa206`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 483 tokens

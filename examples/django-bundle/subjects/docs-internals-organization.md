@@ -1,6 +1,6 @@
 # docs/internals/organization
 
-- Subject: docs/internals/organization (id `c33cc2a7-203c-4815-9ed6-badd0145017d`)
+- Subject: docs/internals/organization (id `74416738-24bf-4ea2-9986-c90ad5ca8af9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

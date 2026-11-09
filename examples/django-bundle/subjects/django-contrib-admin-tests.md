@@ -1,6 +1,6 @@
 # django/contrib/admin/tests
 
-- Subject: django/contrib/admin/tests (id `4e80669f-624d-4554-ad4a-6390ff8181c5`)
+- Subject: django/contrib/admin/tests (id `830770d1-d8ab-458d-a348-4aaf4e46442f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

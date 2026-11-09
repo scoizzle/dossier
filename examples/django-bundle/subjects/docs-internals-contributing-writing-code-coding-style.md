@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-code/coding-style
 
-- Subject: docs/internals/contributing/writing-code/coding-style (id `167c77a6-c868-4661-977d-2edb58105f16`)
+- Subject: docs/internals/contributing/writing-code/coding-style (id `bfde0bf8-eac5-48fb-908c-af5eed05383a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

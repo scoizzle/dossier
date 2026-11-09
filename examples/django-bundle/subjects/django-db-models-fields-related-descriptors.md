@@ -1,6 +1,6 @@
 # django/db/models/fields/related_descriptors
 
-- Subject: django/db/models/fields/related_descriptors (id `226bd35f-2639-4e75-bf61-1e9b12c592b9`)
+- Subject: django/db/models/fields/related_descriptors (id `0ccd23cf-ce76-4499-9f97-4c4fc2967651`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

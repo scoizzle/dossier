@@ -5,7 +5,7 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 ## How it was generated
 
 - Command: `dossier publish --out examples/django-bundle --depth full --budget 1200 --facts none`
-- Generated at: `2026-11-09T21:41:33Z`
+- Generated at: `2026-11-09T21:52:29Z`
 - Scope: every subject
 - Budget per subject: 1200 tokens, depth full
 - Fact files: omitted (`--facts none`)
@@ -22,9 +22,9 @@ This is a Dossier bundle: an export of a fact store as plain markdown files, so 
 
 ## How to read it
 
-Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md
+Drill-down path: README.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md
 
-1. [INDEX.md](INDEX.md) lists every subject with its fact, conflict and gap counts and the token cost of its file.
+1. [INDEX.md](INDEX.md) lists every subject, or, in a large bundle, the top-level groups, with fact, conflict and gap counts and the token cost of each row's file. A `group` row links to a deeper `index/<group>.md`; each index file is capped at 6000 tokens.
 2. `subjects/<slug>.md` is the compiled dossier for one subject; each claim ends in its bracketed fact key.
 3. `facts/<slug>-<key>.md` holds one fact in full: text, provenance, data, refs and the facts that reference it.
 4. [conflicts.md](conflicts.md) and [gaps.md](gaps.md) collect the disagreements and the unmet needs across subjects.

@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/generic-display
 
-- Subject: docs/ref/class-based-views/generic-display (id `df8f5caf-e141-4f17-a939-aecaf6cbaed6`)
+- Subject: docs/ref/class-based-views/generic-display (id `ece55d3e-956b-421e-ba78-f486aca9f3df`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

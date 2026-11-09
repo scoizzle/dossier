@@ -1,6 +1,6 @@
 # django/core/checks/model_checks
 
-- Subject: django/core/checks/model_checks (id `741c1e7a-6a45-4092-bb4e-43bc436950f8`)
+- Subject: django/core/checks/model_checks (id `9935b81c-4dcc-4bf6-9a0c-bbee9f8880b7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 867 tokens

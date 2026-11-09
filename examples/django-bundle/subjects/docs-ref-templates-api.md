@@ -1,6 +1,6 @@
 # docs/ref/templates/api
 
-- Subject: docs/ref/templates/api (id `5f85971e-2632-4b23-b2e1-1c11ae8e9564`)
+- Subject: docs/ref/templates/api (id `fcf6e807-62f9-4680-8986-97304873f500`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

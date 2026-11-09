@@ -1,6 +1,6 @@
 # django/contrib/contenttypes/management/__init__
 
-- Subject: django/contrib/contenttypes/management/__init__ (id `1bf2fba9-befd-4a32-8351-1bd28a256300`)
+- Subject: django/contrib/contenttypes/management/__init__ (id `bc37d35e-e5f6-4f42-9556-8e38a0342f64`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 877 tokens

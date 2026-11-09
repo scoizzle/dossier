@@ -1,6 +1,6 @@
 # django/contrib/admin/views/decorators
 
-- Subject: django/contrib/admin/views/decorators (id `faa01a17-945a-47c2-aac1-9e5a737499b2`)
+- Subject: django/contrib/admin/views/decorators (id `cfa9ce94-50d7-4c75-8e9f-3a4dcd93e9b0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 164 tokens

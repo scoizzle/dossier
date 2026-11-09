@@ -1,6 +1,6 @@
 # django/core/checks/registry
 
-- Subject: django/core/checks/registry (id `8a5da555-25bf-4e2a-9ea2-52c4cd1ba53f`)
+- Subject: django/core/checks/registry (id `921438c3-18ea-4ee9-9da1-b04909ac08c3`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

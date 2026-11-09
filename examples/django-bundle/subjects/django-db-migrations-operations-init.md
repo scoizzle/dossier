@@ -1,6 +1,6 @@
 # django/db/migrations/operations/__init__
 
-- Subject: django/db/migrations/operations/__init__ (id `edad38f6-a1a7-4d30-b81e-bcf526e4b196`)
+- Subject: django/db/migrations/operations/__init__ (id `e5d6d422-3189-48a1-b6a5-0c77609b7d81`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 234 tokens

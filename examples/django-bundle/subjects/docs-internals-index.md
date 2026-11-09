@@ -1,6 +1,6 @@
 # docs/internals/index
 
-- Subject: docs/internals/index (id `c77840d2-78ae-4841-87dc-159cc021e60d`)
+- Subject: docs/internals/index (id `7d827207-a65e-481c-a8b7-b255ca4a77fb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 126 tokens

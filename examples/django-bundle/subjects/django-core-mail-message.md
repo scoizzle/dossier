@@ -1,6 +1,6 @@
 # django/core/mail/message
 
-- Subject: django/core/mail/message (id `ada10ff2-d08d-401b-a734-928f54630f47`)
+- Subject: django/core/mail/message (id `2eb1db21-13fd-4259-9c51-9bdf40afe88e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

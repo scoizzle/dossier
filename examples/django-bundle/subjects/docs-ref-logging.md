@@ -1,6 +1,6 @@
 # docs/ref/logging
 
-- Subject: docs/ref/logging (id `daac4db7-74e6-4182-8bac-3857ed5959ab`)
+- Subject: docs/ref/logging (id `8138c6d0-cff5-44b4-bde0-44c610822804`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

@@ -1,6 +1,6 @@
 # docs/ref/contrib/redirects
 
-- Subject: docs/ref/contrib/redirects (id `0dfc1907-b867-4e9b-b7c6-f9338a0cdc85`)
+- Subject: docs/ref/contrib/redirects (id `7e80eaac-595b-41b1-b58a-b7ef6f03b0f4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

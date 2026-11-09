@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/generic-editing
 
-- Subject: docs/ref/class-based-views/generic-editing (id `28d0a285-ef89-4f2e-9608-452fe1b8ddc0`)
+- Subject: docs/ref/class-based-views/generic-editing (id `b9a99f6a-d1fa-4c26-9735-d174326014d9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

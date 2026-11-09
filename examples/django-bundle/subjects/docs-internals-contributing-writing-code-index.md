@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-code/index
 
-- Subject: docs/internals/contributing/writing-code/index (id `56e7eedf-c136-40ba-8f56-237e40d4fff2`)
+- Subject: docs/internals/contributing/writing-code/index (id `04da8a73-8fd6-4187-9ad2-a4aab37f17e0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 587 tokens

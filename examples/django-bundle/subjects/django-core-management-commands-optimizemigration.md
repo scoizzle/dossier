@@ -1,6 +1,6 @@
 # django/core/management/commands/optimizemigration
 
-- Subject: django/core/management/commands/optimizemigration (id `2f8eeb8a-4bd8-486a-b466-915754672cef`)
+- Subject: django/core/management/commands/optimizemigration (id `8919389c-5ada-45a5-8690-6c0bcd239f34`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

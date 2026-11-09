@@ -1,6 +1,6 @@
 # Fact 9695673b
 
-Store id: b6c83740-6d0e-42ed-bdc9-f2ab21c2894f
+Store id: 27d53ab6-083a-41e5-a29c-ab0ab9118229
 
 ## Text
 
@@ -20,7 +20,7 @@ Home sidebar links to Explore, Archived, and Settings.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

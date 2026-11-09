@@ -1,6 +1,6 @@
 # django/core/files/__init__
 
-- Subject: django/core/files/__init__ (id `63f32775-43a0-43a0-897e-54fb88c6bc72`)
+- Subject: django/core/files/__init__ (id `96137f3c-4e62-4162-ac04-6e67ebbc4404`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 36 tokens

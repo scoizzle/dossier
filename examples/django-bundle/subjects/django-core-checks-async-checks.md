@@ -1,6 +1,6 @@
 # django/core/checks/async_checks
 
-- Subject: django/core/checks/async_checks (id `a95d7126-17c8-46db-92b1-57c1338dd5e1`)
+- Subject: django/core/checks/async_checks (id `19ffa416-111d-41bc-9abb-7c6b4415908a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 135 tokens

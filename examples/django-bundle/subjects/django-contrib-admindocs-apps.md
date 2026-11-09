@@ -1,6 +1,6 @@
 # django/contrib/admindocs/apps
 
-- Subject: django/contrib/admindocs/apps (id `033202ce-0118-4ec1-9154-a7017d843ccf`)
+- Subject: django/contrib/admindocs/apps (id `c18c07da-75e0-4bcc-971c-5ee6a3cfde32`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 73 tokens

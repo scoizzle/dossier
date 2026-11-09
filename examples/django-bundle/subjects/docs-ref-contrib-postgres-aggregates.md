@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/aggregates
 
-- Subject: docs/ref/contrib/postgres/aggregates (id `a7d0aa81-1129-4b0c-8152-59697460abd4`)
+- Subject: docs/ref/contrib/postgres/aggregates (id `faf8260a-7c98-4431-9f44-dd607d06f523`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

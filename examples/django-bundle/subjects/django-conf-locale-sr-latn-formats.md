@@ -1,6 +1,6 @@
 # django/conf/locale/sr_Latn/formats
 
-- Subject: django/conf/locale/sr_Latn/formats (id `61f6577b-1a01-41f6-bb83-c29d24452588`)
+- Subject: django/conf/locale/sr_Latn/formats (id `99f55c15-4645-4a45-a935-afca4f12b5ec`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 425 tokens

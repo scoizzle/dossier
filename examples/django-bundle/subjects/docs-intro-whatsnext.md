@@ -1,6 +1,6 @@
 # docs/intro/whatsnext
 
-- Subject: docs/intro/whatsnext (id `f8696876-518f-481f-824d-eb87178766dd`)
+- Subject: docs/intro/whatsnext (id `c6f36502-7615-4623-811d-6bbd977d7dc4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

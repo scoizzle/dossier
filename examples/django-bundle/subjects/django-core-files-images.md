@@ -1,6 +1,6 @@
 # django/core/files/images
 
-- Subject: django/core/files/images (id `26eec7db-059a-4a24-bc47-16e404ba242a`)
+- Subject: django/core/files/images (id `8bf9c8f3-5762-47bc-af21-58bdcbfb5b68`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 595 tokens

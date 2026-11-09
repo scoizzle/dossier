@@ -1,6 +1,6 @@
 # docs/internals/contributing/accessibility
 
-- Subject: docs/internals/contributing/accessibility (id `2a7437b9-b5ce-45a7-8010-2a140785957d`)
+- Subject: docs/internals/contributing/accessibility (id `03cf3d10-cce1-4e1d-965c-8b8822f82f1f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

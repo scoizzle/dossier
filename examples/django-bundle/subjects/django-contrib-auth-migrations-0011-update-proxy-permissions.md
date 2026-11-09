@@ -1,6 +1,6 @@
 # django/contrib/auth/migrations/0011_update_proxy_permissions
 
-- Subject: django/contrib/auth/migrations/0011_update_proxy_permissions (id `458fbc1e-ce04-4f7d-90f2-a4bf4abc8cd7`)
+- Subject: django/contrib/auth/migrations/0011_update_proxy_permissions (id `4dd90c0d-f20c-4fdd-bf61-bc2d149cdc0a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 682 tokens

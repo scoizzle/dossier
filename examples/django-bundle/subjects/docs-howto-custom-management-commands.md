@@ -1,6 +1,6 @@
 # docs/howto/custom-management-commands
 
-- Subject: docs/howto/custom-management-commands (id `120ec6e2-f816-4e91-8cef-e33820db6080`)
+- Subject: docs/howto/custom-management-commands (id `af705eb5-6f8e-4495-8c6b-0bd9268b3ba9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

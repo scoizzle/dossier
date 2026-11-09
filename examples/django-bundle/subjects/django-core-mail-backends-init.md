@@ -1,6 +1,6 @@
 # django/core/mail/backends/__init__
 
-- Subject: django/core/mail/backends/__init__ (id `50fb136b-8a4f-471b-b65b-1b1ce2cfa033`)
+- Subject: django/core/mail/backends/__init__ (id `f2c2ca0d-10e8-4d75-bfa5-a0ed11ffc7e5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 20 tokens

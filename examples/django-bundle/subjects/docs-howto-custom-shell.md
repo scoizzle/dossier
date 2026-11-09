@@ -1,6 +1,6 @@
 # docs/howto/custom-shell
 
-- Subject: docs/howto/custom-shell (id `8beb8fdd-ba27-41c0-a75d-618da20a0c45`)
+- Subject: docs/howto/custom-shell (id `9ea136a6-ae79-4969-adac-9362adfe192f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

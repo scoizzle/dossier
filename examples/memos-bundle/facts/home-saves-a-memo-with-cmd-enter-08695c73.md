@@ -1,6 +1,6 @@
 # Fact 08695c73
 
-Store id: 93190145-30d8-465d-8fac-00d12c3b5dea
+Store id: 1f76ac11-a86e-45ae-831c-a067a4ac9476
 
 ## Text
 
@@ -20,7 +20,7 @@ Home saves a memo with Cmd+Enter on macOS.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Data
 

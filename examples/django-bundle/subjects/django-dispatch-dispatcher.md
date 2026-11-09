@@ -1,6 +1,6 @@
 # django/dispatch/dispatcher
 
-- Subject: django/dispatch/dispatcher (id `4d112cf2-d46a-4233-b563-7ccb49afefd7`)
+- Subject: django/dispatch/dispatcher (id `2cfb600c-23cf-4a9b-97d8-4ae1b883fb23`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

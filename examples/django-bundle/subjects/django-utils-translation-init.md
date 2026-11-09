@@ -1,6 +1,6 @@
 # django/utils/translation/__init__
 
-- Subject: django/utils/translation/__init__ (id `9fb04c3f-51c8-41ab-a644-c1bcbadf9194`)
+- Subject: django/utils/translation/__init__ (id `139c803d-f7cb-4444-963b-52549542a1d9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 887 tokens

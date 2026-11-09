@@ -1,6 +1,6 @@
 # django/core/checks/templates
 
-- Subject: django/core/checks/templates (id `120b1db4-e0dd-4d5f-8c77-6d54ac9d970f`)
+- Subject: django/core/checks/templates (id `fa56e053-84ad-4e62-982b-302384392791`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 98 tokens

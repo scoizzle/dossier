@@ -1,6 +1,6 @@
 # django/utils/_os
 
-- Subject: django/utils/_os (id `1e86b9ec-bf40-440e-94b0-f5ae4b3fdbee`)
+- Subject: django/utils/_os (id `c72bb5fb-8c37-4e2c-bc57-4c4b8ec5557c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 879 tokens

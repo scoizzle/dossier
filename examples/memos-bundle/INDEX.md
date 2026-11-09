@@ -1,6 +1,6 @@
 # Index
 
-One row per subject, parents before children. The subject cell is the subject's own name; a subject is indented two spaces per ancestor level, so its position shows its depth. `tokens` is the estimated cost (chars/4, rounded up) of reading that subject's file. Pick the row you need and read only that file.
+This file lists every subject in the bundle, one row per subject, grouped by the `/`-separated segments of its name. The subject cell is the subject's own name; a subject is indented two spaces per level of its name path below this file's scope, so its position shows its depth. `tokens` is the estimated cost (chars/4, rounded up) of reading that row's file. Pick the row you need and read only that file.
 
 | subject | kind | facts | conflicts | gaps | tokens | file |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
@@ -17,6 +17,8 @@ One row per subject, parents before children. The subject cell is the subject's 
 - Conflicts: 3
 - Gaps: 0
 - Subject file tokens, all subjects: 1558
+- Index files: 1
+- Largest index file, tokens: 312
 
 ## Subjects with conflicts
 

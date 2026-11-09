@@ -1,6 +1,6 @@
 # django/utils/translation/trans_null
 
-- Subject: django/utils/translation/trans_null (id `f13b8f45-78d7-4f94-b7a2-e14419e15c7e`)
+- Subject: django/utils/translation/trans_null (id `f6a0eceb-e274-4d9d-b405-988009fd7cf7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 475 tokens

@@ -1,6 +1,6 @@
 # django/tasks/exceptions
 
-- Subject: django/tasks/exceptions (id `bade0784-1e40-4316-9b8d-254eff9cbba0`)
+- Subject: django/tasks/exceptions (id `7531886e-dd5c-4d39-9bf3-ce721e7cd478`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 189 tokens

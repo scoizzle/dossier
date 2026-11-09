@@ -1,6 +1,6 @@
 # docs/ref/templates/index
 
-- Subject: docs/ref/templates/index (id `13f56510-eecb-44f7-b1fc-08cb716cd832`)
+- Subject: docs/ref/templates/index (id `144e693d-76e7-441c-9e0c-07b00750cc02`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 238 tokens

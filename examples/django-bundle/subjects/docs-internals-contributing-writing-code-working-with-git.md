@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-code/working-with-git
 
-- Subject: docs/internals/contributing/writing-code/working-with-git (id `f2216a68-4d2d-49a0-82e5-7e9dfa1909eb`)
+- Subject: docs/internals/contributing/writing-code/working-with-git (id `1960e62e-76c0-48d3-9de0-259ba3796726`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

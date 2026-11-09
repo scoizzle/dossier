@@ -1,6 +1,6 @@
 # django/views/__init__
 
-- Subject: django/views/__init__ (id `16004eb4-47df-4ee9-8c0e-b98eb7c2b5bf`)
+- Subject: django/views/__init__ (id `16f89a2b-3a3e-47f5-870f-246fac397c3b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 36 tokens

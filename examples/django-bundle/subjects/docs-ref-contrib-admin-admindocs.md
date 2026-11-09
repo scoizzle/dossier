@@ -1,6 +1,6 @@
 # docs/ref/contrib/admin/admindocs
 
-- Subject: docs/ref/contrib/admin/admindocs (id `c0459d80-bd12-4dd8-aa6d-f69068be699f`)
+- Subject: docs/ref/contrib/admin/admindocs (id `ea7a850d-7afb-4dcc-896f-9f0bd6e9620c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

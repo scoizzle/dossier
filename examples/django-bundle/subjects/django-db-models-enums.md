@@ -1,6 +1,6 @@
 # django/db/models/enums
 
-- Subject: django/db/models/enums (id `cbf7cc60-34a7-4a7c-8c7b-bf29d1aaf48d`)
+- Subject: django/db/models/enums (id `640f5704-b03f-4145-a3bd-619b629b780e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 668 tokens

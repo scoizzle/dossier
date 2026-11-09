@@ -1,6 +1,6 @@
 # django/contrib/sessions/migrations/0001_initial
 
-- Subject: django/contrib/sessions/migrations/0001_initial (id `c39c324a-9868-4cea-a233-98aa293f2bd0`)
+- Subject: django/contrib/sessions/migrations/0001_initial (id `dc573908-34a7-4fbf-9ad7-75730803c2ac`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 201 tokens

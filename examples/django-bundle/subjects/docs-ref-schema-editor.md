@@ -1,6 +1,6 @@
 # docs/ref/schema-editor
 
-- Subject: docs/ref/schema-editor (id `389baf5b-74ae-4fc3-86c6-fc1c3f093259`)
+- Subject: docs/ref/schema-editor (id `5a228183-e68f-4fb7-bba5-e9019035f95c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

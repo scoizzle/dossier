@@ -1,6 +1,6 @@
 # django/core/serializers/xml_serializer
 
-- Subject: django/core/serializers/xml_serializer (id `c0c93fd1-18af-48eb-958e-41435e79278c`)
+- Subject: django/core/serializers/xml_serializer (id `824348c3-a66a-44f2-b0eb-9329d0a41ecc`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

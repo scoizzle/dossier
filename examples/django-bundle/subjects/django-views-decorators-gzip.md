@@ -1,6 +1,6 @@
 # django/views/decorators/gzip
 
-- Subject: django/views/decorators/gzip (id `f568a34e-5d1d-477e-ba53-f239eaeb3dfc`)
+- Subject: django/views/decorators/gzip (id `0952270c-afbc-4f46-a5df-0b1a07a6349e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 85 tokens

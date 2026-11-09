@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/views
 
-- Subject: django/contrib/staticfiles/views (id `98b459f9-620d-4dca-9899-99ed56ae1512`)
+- Subject: django/contrib/staticfiles/views (id `f3caf1aa-3928-4806-a13b-80e382b0f962`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 394 tokens

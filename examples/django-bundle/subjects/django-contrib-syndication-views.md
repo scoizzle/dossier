@@ -1,6 +1,6 @@
 # django/contrib/syndication/views
 
-- Subject: django/contrib/syndication/views (id `1a1d5f98-1c3c-4dc4-b431-d167362ec474`)
+- Subject: django/contrib/syndication/views (id `364ff7b1-711f-44eb-aa11-18c4bff2a64b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

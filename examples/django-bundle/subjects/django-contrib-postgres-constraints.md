@@ -1,6 +1,6 @@
 # django/contrib/postgres/constraints
 
-- Subject: django/contrib/postgres/constraints (id `bb393144-3c67-43b2-b6dd-8e6f7200bd18`)
+- Subject: django/contrib/postgres/constraints (id `066c8fd6-4bb0-4af1-87c9-0babb89a31e6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-code/submitting-patches
 
-- Subject: docs/internals/contributing/writing-code/submitting-patches (id `5bff180a-fdc1-43b6-8902-68e9cf0a6a4e`)
+- Subject: docs/internals/contributing/writing-code/submitting-patches (id `c822d6da-1ceb-455f-82bf-42a18ef73b56`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

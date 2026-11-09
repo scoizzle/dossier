@@ -1,6 +1,6 @@
 # docs/howto/csp
 
-- Subject: docs/howto/csp (id `52df5c8e-75b0-408a-a558-fe05dae470f8`)
+- Subject: docs/howto/csp (id `25ea9675-fc97-424a-b538-e70613cd38d1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

@@ -1,6 +1,6 @@
 # django/dispatch/__init__
 
-- Subject: django/dispatch/__init__ (id `d964ea24-fc64-48af-830f-4edf7b738073`)
+- Subject: django/dispatch/__init__ (id `5922e5a1-abf3-4ecc-8470-5fb020754a12`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 113 tokens

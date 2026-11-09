@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-code/javascript
 
-- Subject: docs/internals/contributing/writing-code/javascript (id `57b39a87-6f71-4360-8167-ea203d2cd1f4`)
+- Subject: docs/internals/contributing/writing-code/javascript (id `c907b8fb-7784-481b-a2ba-3e355d8a7cbb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

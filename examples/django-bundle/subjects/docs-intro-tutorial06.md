@@ -1,6 +1,6 @@
 # docs/intro/tutorial06
 
-- Subject: docs/intro/tutorial06 (id `6eb6444b-0e67-41d8-9163-11e4fec91958`)
+- Subject: docs/intro/tutorial06 (id `b5586e79-bfed-420e-954b-694c569b5e11`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

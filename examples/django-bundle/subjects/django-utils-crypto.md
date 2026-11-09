@@ -1,6 +1,6 @@
 # django/utils/crypto
 
-- Subject: django/utils/crypto (id `f06ab973-d6d9-4225-aed5-c050e95affa4`)
+- Subject: django/utils/crypto (id `af2ad525-fb04-4c39-ae0e-c312effdafad`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

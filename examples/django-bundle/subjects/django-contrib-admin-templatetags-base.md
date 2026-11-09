@@ -1,6 +1,6 @@
 # django/contrib/admin/templatetags/base
 
-- Subject: django/contrib/admin/templatetags/base (id `9076b34f-2e76-48a4-912b-14769dd7ab72`)
+- Subject: django/contrib/admin/templatetags/base (id `1e95d322-8dc4-4ba9-84f1-57c920c4dce5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 395 tokens

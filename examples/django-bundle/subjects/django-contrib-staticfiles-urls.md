@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/urls
 
-- Subject: django/contrib/staticfiles/urls (id `ac045356-39b1-4430-aa34-434d6b9a9d29`)
+- Subject: django/contrib/staticfiles/urls (id `4fc5a6ae-2913-4883-b04a-abee1879b938`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 157 tokens

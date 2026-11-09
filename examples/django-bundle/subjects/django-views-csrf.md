@@ -1,6 +1,6 @@
 # django/views/csrf
 
-- Subject: django/views/csrf (id `77d206eb-732a-4783-a212-5562b3fcba15`)
+- Subject: django/views/csrf (id `7a55b84d-f22b-41ed-8d5f-8a1d33bcbd39`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 801 tokens

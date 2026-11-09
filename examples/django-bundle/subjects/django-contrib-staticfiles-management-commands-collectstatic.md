@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/management/commands/collectstatic
 
-- Subject: django/contrib/staticfiles/management/commands/collectstatic (id `e5c2e6cd-0227-45ad-86f4-d5bed2cf3e84`)
+- Subject: django/contrib/staticfiles/management/commands/collectstatic (id `41e41bf2-3f46-4de3-af10-ba6d7f7aeb19`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

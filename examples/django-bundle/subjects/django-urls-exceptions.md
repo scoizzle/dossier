@@ -1,6 +1,6 @@
 # django/urls/exceptions
 
-- Subject: django/urls/exceptions (id `f9fa53ad-e931-47e4-b707-e1886c5cd00c`)
+- Subject: django/urls/exceptions (id `8a90cfa3-f3de-4a01-8b99-8bba67b63477`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 58 tokens

@@ -1,6 +1,6 @@
 # django/db/migrations/operations/special
 
-- Subject: django/db/migrations/operations/special (id `af356212-a0d7-4e60-9eff-c33b2b5b3697`)
+- Subject: django/db/migrations/operations/special (id `99924c21-39f6-4e68-a1fa-0a40c9fce725`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

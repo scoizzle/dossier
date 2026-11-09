@@ -1,6 +1,6 @@
 # docs/howto/static-files/deployment
 
-- Subject: docs/howto/static-files/deployment (id `b369dcc0-3d54-41b5-b081-068a62c5c357`)
+- Subject: docs/howto/static-files/deployment (id `8c794b28-0c99-48da-b430-95a9c84c1a26`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 875 tokens

@@ -1,6 +1,6 @@
 # django/contrib/admin/options
 
-- Subject: django/contrib/admin/options (id `0355a423-4b81-4bcc-8211-d7b2cd57c90b`)
+- Subject: django/contrib/admin/options (id `c5e6c1dc-c276-4484-937b-006489790111`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/mixins-editing
 
-- Subject: docs/ref/class-based-views/mixins-editing (id `26c2224d-50f0-4429-8fb6-89b126d4a4e4`)
+- Subject: docs/ref/class-based-views/mixins-editing (id `36bf5b6c-9341-448e-a1e1-320ccb92e2cb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

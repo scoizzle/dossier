@@ -1,6 +1,6 @@
 # django/db/migrations/executor
 
-- Subject: django/db/migrations/executor (id `c8462165-afa0-449c-8d0e-73e9daf7cde8`)
+- Subject: django/db/migrations/executor (id `f9d0fed9-bfe1-4827-ae86-3497e8c53915`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

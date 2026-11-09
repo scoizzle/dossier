@@ -1,6 +1,6 @@
 # docs/howto/index
 
-- Subject: docs/howto/index (id `94f86825-316e-4148-9b00-7a5fb78f1005`)
+- Subject: docs/howto/index (id `25986218-b9f7-4f87-90e8-ac2eb9be702f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 500 tokens

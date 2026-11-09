@@ -1,6 +1,6 @@
 # docs/ref/contrib/staticfiles
 
-- Subject: docs/ref/contrib/staticfiles (id `0ebaa6ca-3bb0-4d75-9501-0dfdbd69d725`)
+- Subject: docs/ref/contrib/staticfiles (id `a5b49777-a813-42d5-9b27-f5fa8933efaf`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

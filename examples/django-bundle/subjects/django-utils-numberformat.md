@@ -1,6 +1,6 @@
 # django/utils/numberformat
 
-- Subject: django/utils/numberformat (id `394f1d58-63ba-48dc-aa97-1f50bcd255c9`)
+- Subject: django/utils/numberformat (id `a0f7a02c-47d4-4893-aaa6-4bac911b2270`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 827 tokens

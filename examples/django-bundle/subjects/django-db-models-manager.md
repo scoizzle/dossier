@@ -1,6 +1,6 @@
 # django/db/models/manager
 
-- Subject: django/db/models/manager (id `44c04b73-5250-4786-b390-83d47f11f7cb`)
+- Subject: django/db/models/manager (id `1a5e0d8f-784c-499d-8cc7-8f5895fdb205`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

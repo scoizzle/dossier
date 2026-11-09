@@ -1,6 +1,6 @@
 # django/templatetags/static
 
-- Subject: django/templatetags/static (id `01373654-46cf-4189-8923-4e59cdf33098`)
+- Subject: django/templatetags/static (id `50fc5000-b25d-4fa8-9564-cbfbaf413ecb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

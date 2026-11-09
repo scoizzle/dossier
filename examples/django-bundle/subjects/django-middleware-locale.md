@@ -1,6 +1,6 @@
 # django/middleware/locale
 
-- Subject: django/middleware/locale (id `4100962d-a110-487b-82cd-5c32f19a1e3a`)
+- Subject: django/middleware/locale (id `e1110b13-ec84-4d4f-9737-f4331782d557`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 772 tokens

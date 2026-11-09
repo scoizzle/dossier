@@ -1,6 +1,6 @@
 # django/db/models/utils
 
-- Subject: django/db/models/utils (id `9d98a613-5a9e-4de8-ad4f-0756d7243b07`)
+- Subject: django/db/models/utils (id `b111e71b-0098-4602-8744-7a9e025bb6f9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 660 tokens

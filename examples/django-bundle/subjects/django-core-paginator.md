@@ -1,6 +1,6 @@
 # django/core/paginator
 
-- Subject: django/core/paginator (id `90f840af-d0b4-485e-9d03-8c37a5d0e45b`)
+- Subject: django/core/paginator (id `a43c144a-a344-4593-8855-519e96a5ad40`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

@@ -1,6 +1,6 @@
 # django/middleware/gzip
 
-- Subject: django/middleware/gzip (id `de892de2-7885-426f-9938-fa3cf08fe758`)
+- Subject: django/middleware/gzip (id `caa30a85-a8d4-49e7-af12-fa6284799ae3`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 638 tokens

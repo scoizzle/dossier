@@ -1,6 +1,6 @@
 # django/utils/functional
 
-- Subject: django/utils/functional (id `4da2c6a3-5096-4c42-9a20-c1553a26692f`)
+- Subject: django/utils/functional (id `38566217-91f6-4d3e-bbdb-03e9c57c9cf0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

@@ -1,6 +1,6 @@
 # django/core/mail/exceptions
 
-- Subject: django/core/mail/exceptions (id `04780a58-6620-4a88-a0aa-1dad463d9cf4`)
+- Subject: django/core/mail/exceptions (id `62fc757a-4480-41c5-96df-168170d1e98c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 187 tokens

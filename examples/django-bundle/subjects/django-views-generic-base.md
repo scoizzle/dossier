@@ -1,6 +1,6 @@
 # django/views/generic/base
 
-- Subject: django/views/generic/base (id `50937869-c3ac-4670-8252-76467e4f09dc`)
+- Subject: django/views/generic/base (id `bd841500-3814-4f2b-9dd7-3af17a1784ee`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

@@ -1,6 +1,6 @@
 # django/contrib/contenttypes/views
 
-- Subject: django/contrib/contenttypes/views (id `fb5ef994-3098-43d3-97b6-897066bdc7d3`)
+- Subject: django/contrib/contenttypes/views (id `a52599f4-bc9f-4ffc-b87c-b8c500be0664`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 797 tokens

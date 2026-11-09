@@ -1,6 +1,6 @@
 # docs/ref/template-response
 
-- Subject: docs/ref/template-response (id `cb8989b5-f115-42bc-ada0-6890b1391d8a`)
+- Subject: docs/ref/template-response (id `50a555e4-0bec-407d-aca7-063f1bccecb6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

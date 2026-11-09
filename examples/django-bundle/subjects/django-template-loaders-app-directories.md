@@ -1,6 +1,6 @@
 # django/template/loaders/app_directories
 
-- Subject: django/template/loaders/app_directories (id `0bea9b07-0f09-463a-b47e-0b66ae9c160a`)
+- Subject: django/template/loaders/app_directories (id `3af582c8-de50-4324-a166-435d67312889`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 116 tokens

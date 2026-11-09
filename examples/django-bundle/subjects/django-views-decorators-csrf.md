@@ -1,6 +1,6 @@
 # django/views/decorators/csrf
 
-- Subject: django/views/decorators/csrf (id `44411ec0-75b7-4ec1-9257-4c9852be6f7d`)
+- Subject: django/views/decorators/csrf (id `11ceece9-5a22-4907-af78-cefc1ae64770`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 712 tokens

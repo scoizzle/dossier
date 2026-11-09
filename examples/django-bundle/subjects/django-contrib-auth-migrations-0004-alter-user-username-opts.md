@@ -1,6 +1,6 @@
 # django/contrib/auth/migrations/0004_alter_user_username_opts
 
-- Subject: django/contrib/auth/migrations/0004_alter_user_username_opts (id `8bc33914-f7d8-44ef-866c-08d40da4974e`)
+- Subject: django/contrib/auth/migrations/0004_alter_user_username_opts (id `3d5bfa40-5582-4684-b004-929f093555d0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 191 tokens

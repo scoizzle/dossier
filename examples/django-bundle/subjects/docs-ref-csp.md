@@ -1,6 +1,6 @@
 # docs/ref/csp
 
-- Subject: docs/ref/csp (id `f2e16dbe-2d51-4aa5-a8b0-b734c5195fdd`)
+- Subject: docs/ref/csp (id `11c97ce5-b9f1-4cb0-a043-7ca232e1ee99`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

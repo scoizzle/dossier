@@ -1,6 +1,6 @@
 # django/template/loaders/base
 
-- Subject: django/template/loaders/base (id `eb89f038-f548-47fa-9c82-04432d558025`)
+- Subject: django/template/loaders/base (id `cc073e26-2e6b-488b-8a22-374e6b871086`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 381 tokens

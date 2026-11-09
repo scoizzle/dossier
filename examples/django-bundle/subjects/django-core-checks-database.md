@@ -1,6 +1,6 @@
 # django/core/checks/database
 
-- Subject: django/core/checks/database (id `9d294127-2ad7-4a9e-951b-b83aa350307c`)
+- Subject: django/core/checks/database (id `40e5685a-2588-430e-917b-d3f035190a97`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 106 tokens

@@ -1,6 +1,6 @@
 # django/template/context_processors
 
-- Subject: django/template/context_processors (id `e0ee5168-cea1-4127-9cf7-161842242d31`)
+- Subject: django/template/context_processors (id `5b8dcc44-ab44-4a76-ad29-0dcfa2b3c0e5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 761 tokens

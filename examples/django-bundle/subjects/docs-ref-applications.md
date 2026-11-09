@@ -1,6 +1,6 @@
 # docs/ref/applications
 
-- Subject: docs/ref/applications (id `deb6aecb-000c-4ec4-929e-5d0a10bb6ccc`)
+- Subject: docs/ref/applications (id `b92dee09-40fc-465e-bcc6-1bb848bb6bf5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

@@ -1,6 +1,6 @@
 # django/urls/resolvers
 
-- Subject: django/urls/resolvers (id `0a77a75b-0988-4683-83cf-65e4b123562b`)
+- Subject: django/urls/resolvers (id `bce2b2d3-ab9c-43d9-9cdb-fffb9c685834`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

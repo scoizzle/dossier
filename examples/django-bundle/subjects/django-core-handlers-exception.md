@@ -1,6 +1,6 @@
 # django/core/handlers/exception
 
-- Subject: django/core/handlers/exception (id `dc48039f-1bd3-413d-b6aa-cd46b0d0f5b5`)
+- Subject: django/core/handlers/exception (id `6cf5fcd3-43be-479d-a8af-d86faee01588`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

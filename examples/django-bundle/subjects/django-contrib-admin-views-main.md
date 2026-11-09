@@ -1,6 +1,6 @@
 # django/contrib/admin/views/main
 
-- Subject: django/contrib/admin/views/main (id `a56cf7f0-176b-4360-b9df-f9a445d3daf9`)
+- Subject: django/contrib/admin/views/main (id `e5e0f514-7ef8-4e91-98aa-3850778b38d5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

@@ -1,6 +1,6 @@
 # django/db/migrations/optimizer
 
-- Subject: django/db/migrations/optimizer (id `0f3336cf-8c1f-419f-9464-db98422a5438`)
+- Subject: django/db/migrations/optimizer (id `683d02df-a2f4-4853-9d6b-7432f9851f82`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 681 tokens

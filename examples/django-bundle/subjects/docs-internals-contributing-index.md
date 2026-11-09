@@ -1,6 +1,6 @@
 # docs/internals/contributing/index
 
-- Subject: docs/internals/contributing/index (id `e106c4c4-63fd-4c2d-a0b8-fffb3725cd7d`)
+- Subject: docs/internals/contributing/index (id `7e4b6287-cb52-4c7c-93f4-5345bfae4665`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

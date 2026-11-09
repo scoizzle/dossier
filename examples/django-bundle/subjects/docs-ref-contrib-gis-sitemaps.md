@@ -1,6 +1,6 @@
 # docs/ref/contrib/gis/sitemaps
 
-- Subject: docs/ref/contrib/gis/sitemaps (id `1c13b246-d111-4d80-98f1-38aff00a7e2b`)
+- Subject: docs/ref/contrib/gis/sitemaps (id `c80e1c13-53a8-4383-81f1-c26ba01ed233`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 178 tokens

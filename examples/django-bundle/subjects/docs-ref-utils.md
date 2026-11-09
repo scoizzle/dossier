@@ -1,6 +1,6 @@
 # docs/ref/utils
 
-- Subject: docs/ref/utils (id `f230b611-5227-4ced-8e5e-ce45bb178d90`)
+- Subject: docs/ref/utils (id `75e59a13-cda3-469d-b8bd-7a44949c0903`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

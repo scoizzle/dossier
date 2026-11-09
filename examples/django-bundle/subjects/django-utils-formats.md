@@ -1,6 +1,6 @@
 # django/utils/formats
 
-- Subject: django/utils/formats (id `7a1b499a-b4c5-4626-9b80-e5c4be51d822`)
+- Subject: django/utils/formats (id `ee248072-1f4c-4da6-9d91-9d0039894eab`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 887 tokens

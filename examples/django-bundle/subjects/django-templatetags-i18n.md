@@ -1,6 +1,6 @@
 # django/templatetags/i18n
 
-- Subject: django/templatetags/i18n (id `5c469399-43ac-4099-89d2-8cbf78157703`)
+- Subject: django/templatetags/i18n (id `b58122c5-7b2c-4dcb-b906-bbe6eded283a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

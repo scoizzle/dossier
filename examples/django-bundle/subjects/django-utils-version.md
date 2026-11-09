@@ -1,6 +1,6 @@
 # django/utils/version
 
-- Subject: django/utils/version (id `dd98d9b3-7719-4af8-9f90-d63080596882`)
+- Subject: django/utils/version (id `f279e456-ce95-40d1-8f00-ea43d7aac787`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 877 tokens

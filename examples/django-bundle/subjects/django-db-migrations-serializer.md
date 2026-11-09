@@ -1,6 +1,6 @@
 # django/db/migrations/serializer
 
-- Subject: django/db/migrations/serializer (id `2e818fa5-bc46-4d2f-9e70-a7c4cab9afb0`)
+- Subject: django/db/migrations/serializer (id `3f40224e-1236-4c0e-9fdc-5e862d5d9408`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 879 tokens

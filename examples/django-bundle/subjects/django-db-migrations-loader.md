@@ -1,6 +1,6 @@
 # django/db/migrations/loader
 
-- Subject: django/db/migrations/loader (id `2d96ec89-0161-4b7f-95de-72ecacbe56f7`)
+- Subject: django/db/migrations/loader (id `56209b1b-2947-42e4-8833-b67544f07083`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

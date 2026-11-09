@@ -1,6 +1,6 @@
 # docs/faq/general
 
-- Subject: docs/faq/general (id `93ed6dba-aadb-444e-b364-c135fd8b8d3f`)
+- Subject: docs/faq/general (id `95fa9050-7d86-449c-b2f4-3004697b5187`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

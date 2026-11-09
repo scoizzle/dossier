@@ -1,6 +1,6 @@
 # docs/ref/models/indexes
 
-- Subject: docs/ref/models/indexes (id `e9c81b50-da86-4bcc-84e8-28ff94a95c88`)
+- Subject: docs/ref/models/indexes (id `96b1b9cd-1ab9-438a-899d-412f4503c6ea`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

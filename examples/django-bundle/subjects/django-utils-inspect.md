@@ -1,6 +1,6 @@
 # django/utils/inspect
 
-- Subject: django/utils/inspect (id `a541fcea-61fb-4e2d-89d0-96ed3e68ccc4`)
+- Subject: django/utils/inspect (id `c49fc184-1a0a-4f16-90b3-58346fc4e7cb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

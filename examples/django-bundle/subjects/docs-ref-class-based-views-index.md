@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/index
 
-- Subject: docs/ref/class-based-views/index (id `0d070330-474f-4a3a-bd10-5c523058d7f1`)
+- Subject: docs/ref/class-based-views/index (id `3b2ffc5e-2b25-4c35-a427-02e1a3da39d2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 720 tokens

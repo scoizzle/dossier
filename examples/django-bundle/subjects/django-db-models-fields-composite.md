@@ -1,6 +1,6 @@
 # django/db/models/fields/composite
 
-- Subject: django/db/models/fields/composite (id `e71bc486-a7ea-456e-a75f-06d9a0f00507`)
+- Subject: django/db/models/fields/composite (id `e38ab280-f1bf-475d-aa44-ed80f0089489`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

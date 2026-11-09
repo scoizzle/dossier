@@ -1,6 +1,6 @@
 # django/contrib/admin/checks
 
-- Subject: django/contrib/admin/checks (id `1e15d0e5-9d8c-4677-9ab2-97939fdaf761`)
+- Subject: django/contrib/admin/checks (id `737769f8-22c0-4cc9-ae4a-30eadd1a3b91`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 884 tokens

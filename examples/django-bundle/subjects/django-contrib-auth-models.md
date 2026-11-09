@@ -1,6 +1,6 @@
 # django/contrib/auth/models
 
-- Subject: django/contrib/auth/models (id `f13785e4-f0fb-44eb-8948-90506644d314`)
+- Subject: django/contrib/auth/models (id `24e34c88-6919-401c-ac64-3cd8991a4737`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

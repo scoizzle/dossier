@@ -1,6 +1,6 @@
 # django/db/backends/oracle/introspection
 
-- Subject: django/db/backends/oracle/introspection (id `964315a2-842d-4829-bf0f-5a54f2286dc8`)
+- Subject: django/db/backends/oracle/introspection (id `ab323064-01a5-48db-95e8-a3d8fb487171`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

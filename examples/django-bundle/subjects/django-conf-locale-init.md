@@ -1,6 +1,6 @@
 # django/conf/locale/__init__
 
-- Subject: django/conf/locale/__init__ (id `52a2b709-ee23-4fac-8586-d0620aba9c46`)
+- Subject: django/conf/locale/__init__ (id `f53f195b-744b-4bb8-a3b7-c7375576d532`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 104 tokens

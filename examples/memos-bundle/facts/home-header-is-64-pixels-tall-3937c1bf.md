@@ -1,6 +1,6 @@
 # Fact 3937c1bf
 
-Store id: 4551dbc0-5b86-42da-82e2-52e4e4e0c8d5
+Store id: 9230fbbb-a499-4bc1-b81f-099379ffa1aa
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header is 64 pixels tall in the first audit and shows the workspace name.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Data
 

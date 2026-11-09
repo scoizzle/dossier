@@ -1,6 +1,6 @@
 # django/db/migrations/recorder
 
-- Subject: django/db/migrations/recorder (id `8f3c703f-43c8-4d18-b4bc-d0acf9745b93`)
+- Subject: django/db/migrations/recorder (id `f6665330-450f-480f-bcd7-18f6a95105ac`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

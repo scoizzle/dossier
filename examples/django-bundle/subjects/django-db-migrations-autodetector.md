@@ -1,6 +1,6 @@
 # django/db/migrations/autodetector
 
-- Subject: django/db/migrations/autodetector (id `ef5dfec2-bccf-402e-a746-88f91b492ae0`)
+- Subject: django/db/migrations/autodetector (id `2d1ddc20-7863-432d-ad09-45543a3789c8`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

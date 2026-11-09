@@ -1,6 +1,6 @@
 # Fact e41afa29
 
-Store id: c1fb0f18-8bab-43ae-a8e8-05bda3aeabb7
+Store id: beca118f-cea3-4084-8de3-5dbb10096056
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer previews an attached image before the memo is saved.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

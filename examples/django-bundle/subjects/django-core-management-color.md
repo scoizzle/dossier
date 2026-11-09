@@ -1,6 +1,6 @@
 # django/core/management/color
 
-- Subject: django/core/management/color (id `847edcf4-29b3-4b37-84d3-eba3fa77604c`)
+- Subject: django/core/management/color (id `434da617-decb-46bf-ab80-c33027c4f938`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 877 tokens

@@ -1,6 +1,6 @@
 # django/__main__
 
-- Subject: django/__main__ (id `1174cbcf-2efa-48b6-8e59-0ed54470c9f5`)
+- Subject: django/__main__ (id `52b8b425-c54e-479e-a04b-8ff09ab5253e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 94 tokens

@@ -1,6 +1,6 @@
 # django/conf/locale/sq/formats
 
-- Subject: django/conf/locale/sq/formats (id `d78c3eaa-a364-42ea-bc74-eaad00255300`)
+- Subject: django/conf/locale/sq/formats (id `d8caa1f3-55f2-470a-b71a-80e18f0d1209`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 193 tokens

@@ -1,6 +1,6 @@
 # django/utils/module_loading
 
-- Subject: django/utils/module_loading (id `d1e9a803-116a-4c84-8639-76bbf4af8b28`)
+- Subject: django/utils/module_loading (id `a87583fe-c527-46bf-aed1-e26e9d447f0c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

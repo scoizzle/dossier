@@ -1,6 +1,6 @@
 # django/test/signals
 
-- Subject: django/test/signals (id `aab6c7a1-d1df-4f47-ba3d-faa354a34dc1`)
+- Subject: django/test/signals (id `2447b789-02a3-4c61-b8c2-d002470a327f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

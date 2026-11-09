@@ -1,6 +1,6 @@
 # django/core/mail/backends/console
 
-- Subject: django/core/mail/backends/console (id `07b9eee0-8e34-4b7b-b685-bfdc4c68cc71`)
+- Subject: django/core/mail/backends/console (id `fd0dbd4d-bdab-4666-a2cd-edd3f7597867`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 342 tokens

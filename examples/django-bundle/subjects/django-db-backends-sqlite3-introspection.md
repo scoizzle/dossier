@@ -1,6 +1,6 @@
 # django/db/backends/sqlite3/introspection
 
-- Subject: django/db/backends/sqlite3/introspection (id `62c09111-a679-4dff-af25-089abccbc793`)
+- Subject: django/db/backends/sqlite3/introspection (id `c5327a84-e04d-4da1-b96b-ad5323fb42ab`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

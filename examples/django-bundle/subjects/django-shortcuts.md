@@ -1,6 +1,6 @@
 # django/shortcuts
 
-- Subject: django/shortcuts (id `1e3b2c6c-5526-48dd-92d0-19d60a6707b5`)
+- Subject: django/shortcuts (id `b84ab779-8e9a-405b-867c-39a0b3ed3644`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 882 tokens

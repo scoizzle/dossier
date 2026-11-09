@@ -1,6 +1,6 @@
 # django/apps/config
 
-- Subject: django/apps/config (id `1a314687-5900-40e5-bad3-b9137c2e0fac`)
+- Subject: django/apps/config (id `8e49dcfa-8b88-4577-80de-ed25a5f3301a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

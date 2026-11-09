@@ -1,6 +1,6 @@
 # django/contrib/sites/shortcuts
 
-- Subject: django/contrib/sites/shortcuts (id `76dbea89-f6f5-494a-ad6c-3611248827b7`)
+- Subject: django/contrib/sites/shortcuts (id `06f88773-a00b-4df8-b209-2b126f074dc2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 170 tokens

@@ -1,6 +1,6 @@
 # docs/howto/error-reporting
 
-- Subject: docs/howto/error-reporting (id `000f46dd-8022-4fa7-a5b9-afae485c11d5`)
+- Subject: docs/howto/error-reporting (id `d2cd1052-0df1-4477-b41d-5b3611f9210d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

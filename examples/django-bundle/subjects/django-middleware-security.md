@@ -1,6 +1,6 @@
 # django/middleware/security
 
-- Subject: django/middleware/security (id `5af77fd1-03b1-4647-b79b-33a78ebb9277`)
+- Subject: django/middleware/security (id `ac25b973-05c2-488c-b894-3cba108c06be`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 584 tokens

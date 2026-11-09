@@ -1,6 +1,6 @@
 # django/conf/urls/i18n
 
-- Subject: django/conf/urls/i18n (id `917a804b-53f4-4161-8802-41078139673c`)
+- Subject: django/conf/urls/i18n (id `543ef773-21cd-4e7f-b063-7013864f69c1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 307 tokens

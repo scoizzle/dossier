@@ -1,6 +1,6 @@
 # docs/ref/clickjacking
 
-- Subject: docs/ref/clickjacking (id `0ec4fa4e-723a-49d0-ab96-4dd61bbed808`)
+- Subject: docs/ref/clickjacking (id `3dc4d353-777e-49b7-8782-9ff21fdfbd27`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

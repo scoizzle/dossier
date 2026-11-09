@@ -1,6 +1,6 @@
 # django/db/models/fields/mixins
 
-- Subject: django/db/models/fields/mixins (id `ef7e22a0-dec1-4cef-8e6c-c899af9acb6d`)
+- Subject: django/db/models/fields/mixins (id `7bcaeaf9-7389-4ddb-b71b-39ba016b3fe0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 485 tokens

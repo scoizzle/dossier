@@ -1,6 +1,6 @@
 # docs/ref/contrib/admin/index
 
-- Subject: docs/ref/contrib/admin/index (id `9303b5bc-bd0c-4957-b35e-9adf4951735d`)
+- Subject: docs/ref/contrib/admin/index (id `5e5942af-7430-4305-ae65-92142bf84bed`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

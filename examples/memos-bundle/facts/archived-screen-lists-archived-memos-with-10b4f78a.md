@@ -1,6 +1,6 @@
 # Fact 10b4f78a
 
-Store id: ff954b3b-c31f-4db9-859e-aae97377fba2
+Store id: fd0da744-a5d8-4067-bdac-aa0f1e10e037
 
 ## Text
 
@@ -20,7 +20,7 @@ Archived screen lists archived memos with a restore action.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.2034630+00:00`
+- posted_at: `2026-11-09T21:52:53.2146030+00:00`
 
 ## Refs
 

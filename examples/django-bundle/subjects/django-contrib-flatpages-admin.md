@@ -1,6 +1,6 @@
 # django/contrib/flatpages/admin
 
-- Subject: django/contrib/flatpages/admin (id `2109312a-dd18-43b4-9206-14528b186a3f`)
+- Subject: django/contrib/flatpages/admin (id `ba3b7546-2423-4f10-915e-c9090c6e1394`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 167 tokens

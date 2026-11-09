@@ -1,6 +1,6 @@
 # django/conf/urls/__init__
 
-- Subject: django/conf/urls/__init__ (id `77d44eab-dce2-41b7-a7a5-61f0782c8f26`)
+- Subject: django/conf/urls/__init__ (id `319c137c-46ca-48f1-87bf-63bd7c4b3e7b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 104 tokens

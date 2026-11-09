@@ -1,6 +1,6 @@
 # django/utils/duration
 
-- Subject: django/utils/duration (id `5a72d3d7-0e00-4a99-ae45-245a702ba90f`)
+- Subject: django/utils/duration (id `05cf67b1-0744-4d3d-a9fa-898a7d1f9cf5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 388 tokens

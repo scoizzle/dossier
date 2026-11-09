@@ -1,6 +1,6 @@
 # django/conf/locale/tk/formats
 
-- Subject: django/conf/locale/tk/formats (id `bb3f630c-9d85-464d-b646-1b926db4400c`)
+- Subject: django/conf/locale/tk/formats (id `f6d04484-538e-4430-9e41-85c60637eb80`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 297 tokens

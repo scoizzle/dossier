@@ -1,6 +1,6 @@
 # docs/howto/static-files/index
 
-- Subject: docs/howto/static-files/index (id `a5a57856-60af-4953-81d5-ab745e18aeb2`)
+- Subject: docs/howto/static-files/index (id `63aa3e6f-b671-4a42-afae-82a01e101c84`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

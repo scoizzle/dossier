@@ -1,6 +1,6 @@
 # docs/ref/models/class
 
-- Subject: docs/ref/models/class (id `a93914d4-2bdd-4c31-8613-fc2e6440cc4c`)
+- Subject: docs/ref/models/class (id `2187bada-7cee-4c5f-8ddc-d39ddf10cf11`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

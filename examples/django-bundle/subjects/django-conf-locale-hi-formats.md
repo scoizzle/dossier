@@ -1,6 +1,6 @@
 # django/conf/locale/hi/formats
 
-- Subject: django/conf/locale/hi/formats (id `624219e5-b737-4a69-9615-65c6edb61ffb`)
+- Subject: django/conf/locale/hi/formats (id `280f1048-f6b8-4595-b556-e540f4359ae2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 192 tokens

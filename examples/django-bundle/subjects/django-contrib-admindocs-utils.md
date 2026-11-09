@@ -1,6 +1,6 @@
 # django/contrib/admindocs/utils
 
-- Subject: django/contrib/admindocs/utils (id `9b58ee39-3f1e-4387-9a10-89ce2990d2e0`)
+- Subject: django/contrib/admindocs/utils (id `c55f7a65-581c-4e2c-ab2a-8fa9b4244fea`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 883 tokens

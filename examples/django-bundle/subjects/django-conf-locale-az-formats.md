@@ -1,6 +1,6 @@
 # django/conf/locale/az/formats
 
-- Subject: django/conf/locale/az/formats (id `0da85c20-94c5-4863-b8aa-3193a0360eb3`)
+- Subject: django/conf/locale/az/formats (id `d8ba8f94-19ec-4bff-b62e-696bde712116`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 282 tokens

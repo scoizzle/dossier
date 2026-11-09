@@ -1,6 +1,6 @@
 # django/contrib/messages/views
 
-- Subject: django/contrib/messages/views (id `3bbf98ea-736d-4363-ad3a-8a1647b45265`)
+- Subject: django/contrib/messages/views (id `ce1fa146-6c94-4737-bef9-88887f4b6a26`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 165 tokens

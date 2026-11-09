@@ -1,6 +1,6 @@
 # django/contrib/sites/apps
 
-- Subject: django/contrib/sites/apps (id `5622d54d-7f0c-4d57-83f0-0bc1899d8bc8`)
+- Subject: django/contrib/sites/apps (id `28ab5e24-3031-4f52-a350-4808fcaabac9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 175 tokens

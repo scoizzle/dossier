@@ -1,6 +1,6 @@
 # django/contrib/gis/sitemaps/views
 
-- Subject: django/contrib/gis/sitemaps/views (id `8cdd1875-d0e8-4560-8db2-bc6201f55fed`)
+- Subject: django/contrib/gis/sitemaps/views (id `a6c26683-01dc-48e0-aa81-fc9192a4f6a5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 581 tokens

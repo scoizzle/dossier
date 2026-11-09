@@ -1,6 +1,6 @@
 # django/core/management/commands/makemigrations
 
-- Subject: django/core/management/commands/makemigrations (id `55179c0e-1086-4966-86d6-10d76eac1a40`)
+- Subject: django/core/management/commands/makemigrations (id `91f27563-fceb-4fe9-9b94-218c6fd1f74c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

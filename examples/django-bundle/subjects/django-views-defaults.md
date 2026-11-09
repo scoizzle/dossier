@@ -1,6 +1,6 @@
 # django/views/defaults
 
-- Subject: django/views/defaults (id `5e72b600-65d7-4dca-8cb8-956a4d9ee5ca`)
+- Subject: django/views/defaults (id `62288850-5da2-49f3-bfd5-19ac8f25a620`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

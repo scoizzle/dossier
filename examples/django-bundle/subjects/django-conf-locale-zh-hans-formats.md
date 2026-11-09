@@ -1,6 +1,6 @@
 # django/conf/locale/zh_Hans/formats
 
-- Subject: django/conf/locale/zh_Hans/formats (id `74883ac7-b620-4bf8-b8ed-6df8c8a69e2f`)
+- Subject: django/conf/locale/zh_Hans/formats (id `299cb3fc-a6ae-477a-a9d9-0f914d3f1df5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 402 tokens

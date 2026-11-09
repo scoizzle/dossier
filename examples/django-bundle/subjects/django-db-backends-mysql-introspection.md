@@ -1,6 +1,6 @@
 # django/db/backends/mysql/introspection
 
-- Subject: django/db/backends/mysql/introspection (id `83d08d50-ee46-4f5a-91d5-19c06212ff40`)
+- Subject: django/db/backends/mysql/introspection (id `e5a2bfab-b109-48f3-9941-def38d0a7ae3`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 855 tokens

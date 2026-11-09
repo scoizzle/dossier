@@ -1,6 +1,6 @@
 # django/utils/deprecation
 
-- Subject: django/utils/deprecation (id `077ea393-6178-4fd3-a7b0-03121eb724d1`)
+- Subject: django/utils/deprecation (id `b4a759cf-16b8-4303-a746-e7ddecaa7a03`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

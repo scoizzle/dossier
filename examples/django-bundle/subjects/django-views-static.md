@@ -1,6 +1,6 @@
 # django/views/static
 
-- Subject: django/views/static (id `b20c0839-3577-4cd7-8d36-03f03e7158c1`)
+- Subject: django/views/static (id `2b16b1f9-f5ae-416c-ba89-16d09c24a87e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

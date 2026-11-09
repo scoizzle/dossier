@@ -1,6 +1,6 @@
 # docs/ref/middleware
 
-- Subject: docs/ref/middleware (id `38eefc3c-cb7e-4edb-91c5-862d9f9a8a2f`)
+- Subject: docs/ref/middleware (id `00a1c405-5430-439a-b042-3eb0fdca7163`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

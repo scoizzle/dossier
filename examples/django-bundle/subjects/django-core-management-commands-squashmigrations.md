@@ -1,6 +1,6 @@
 # django/core/management/commands/squashmigrations
 
-- Subject: django/core/management/commands/squashmigrations (id `3dc632a2-5518-47f4-9b84-ee980ebec3eb`)
+- Subject: django/core/management/commands/squashmigrations (id `4587ee23-b164-4ca4-bda9-8b6f292cfd3e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

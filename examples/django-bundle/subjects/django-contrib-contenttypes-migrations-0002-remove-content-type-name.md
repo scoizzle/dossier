@@ -1,6 +1,6 @@
 # django/contrib/contenttypes/migrations/0002_remove_content_type_name
 
-- Subject: django/contrib/contenttypes/migrations/0002_remove_content_type_name (id `69ad0a8f-621c-48e2-8990-6949e493cf8b`)
+- Subject: django/contrib/contenttypes/migrations/0002_remove_content_type_name (id `1c511174-c281-428b-a44c-83c2b2086c6d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 263 tokens

@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/lookups
 
-- Subject: docs/ref/contrib/postgres/lookups (id `a830656a-975b-495f-b8ad-c14a77572087`)
+- Subject: docs/ref/contrib/postgres/lookups (id `b78ba15d-5f9a-4969-a500-3c8c96d1a8b7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

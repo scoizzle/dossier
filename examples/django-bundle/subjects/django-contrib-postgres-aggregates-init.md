@@ -1,6 +1,6 @@
 # django/contrib/postgres/aggregates/__init__
 
-- Subject: django/contrib/postgres/aggregates/__init__ (id `9a6925b1-3265-464e-9e54-fcab02e76b3a`)
+- Subject: django/contrib/postgres/aggregates/__init__ (id `5edaf4ce-73fd-44c1-9fd2-634feadcff0a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 26 tokens

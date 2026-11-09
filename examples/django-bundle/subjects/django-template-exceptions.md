@@ -1,6 +1,6 @@
 # django/template/exceptions
 
-- Subject: django/template/exceptions (id `73b0b09d-737e-448b-b5c5-9e0d78aa0a9e`)
+- Subject: django/template/exceptions (id `e241f052-036c-4610-b8ec-3286696b6e8b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 374 tokens

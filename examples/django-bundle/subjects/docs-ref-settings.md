@@ -1,6 +1,6 @@
 # docs/ref/settings
 
-- Subject: docs/ref/settings (id `cc69c9e2-6924-44bf-9076-59483e5e53e9`)
+- Subject: docs/ref/settings (id `29c11b06-9402-459f-8f6f-83026be6b84b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

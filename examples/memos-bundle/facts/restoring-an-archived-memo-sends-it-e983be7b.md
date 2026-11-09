@@ -1,6 +1,6 @@
 # Fact e983be7b
 
-Store id: f5a78816-a9a8-4a8a-bede-0d6aa0b4bfd8
+Store id: a1cf25ed-d517-4095-87d7-0bff4f8466d6
 
 ## Text
 
@@ -20,7 +20,7 @@ Restoring an archived memo sends it back to the home list.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.2034630+00:00`
+- posted_at: `2026-11-09T21:52:53.2146030+00:00`
 
 ## Refs
 

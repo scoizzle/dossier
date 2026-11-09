@@ -1,6 +1,6 @@
 # docs/howto/logging
 
-- Subject: docs/howto/logging (id `d88691cb-fbe4-41a2-b5d9-b18baa6f2f23`)
+- Subject: docs/howto/logging (id `11bc2002-6783-4820-be8a-29fadcfce096`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

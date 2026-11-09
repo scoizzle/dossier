@@ -1,6 +1,6 @@
 # django/db/backends/mysql/schema
 
-- Subject: django/db/backends/mysql/schema (id `51475817-b5f6-4231-9880-bb43934dcde6`)
+- Subject: django/db/backends/mysql/schema (id `e2702a7d-2a29-408f-b387-eb81aa08f544`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

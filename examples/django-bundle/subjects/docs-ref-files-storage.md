@@ -1,6 +1,6 @@
 # docs/ref/files/storage
 
-- Subject: docs/ref/files/storage (id `d1bd9e60-6721-4b99-8b81-0d18fdac3cb3`)
+- Subject: docs/ref/files/storage (id `03bb352c-1899-4c69-9910-1101ccbc5d0b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

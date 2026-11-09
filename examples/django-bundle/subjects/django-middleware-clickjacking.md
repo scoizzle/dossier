@@ -1,6 +1,6 @@
 # django/middleware/clickjacking
 
-- Subject: django/middleware/clickjacking (id `916f8e83-3544-4fa6-b0b9-0ba44583cf45`)
+- Subject: django/middleware/clickjacking (id `10125b0d-935f-4459-9444-77b76b7d480f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 493 tokens

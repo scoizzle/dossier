@@ -1,6 +1,6 @@
 # Fact 0a03e359
 
-Store id: 3b867f75-3baf-4561-8df3-76a96ba3ae52
+Store id: bdbfd371-93c3-4493-acd3-2abeb3603638
 
 ## Text
 
@@ -20,7 +20,7 @@ Home header contains a search field that filters memos as you type.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

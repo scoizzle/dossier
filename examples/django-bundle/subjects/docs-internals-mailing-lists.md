@@ -1,6 +1,6 @@
 # docs/internals/mailing-lists
 
-- Subject: docs/internals/mailing-lists (id `03431687-7445-419c-bf5d-2453b3d6f1c6`)
+- Subject: docs/internals/mailing-lists (id `48c5caf4-7286-4633-8864-a079dbae5e27`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

@@ -1,6 +1,6 @@
 # django/core/serializers/python
 
-- Subject: django/core/serializers/python (id `3a29524f-dc9f-42dc-9e8f-ed77b7234929`)
+- Subject: django/core/serializers/python (id `73cdded8-b93c-4cec-883a-b08a534d9fb1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

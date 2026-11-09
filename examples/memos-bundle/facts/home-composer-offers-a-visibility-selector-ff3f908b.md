@@ -1,6 +1,6 @@
 # Fact ff3f908b
 
-Store id: ad01d386-4961-46e0-9b08-73a388a7fb52
+Store id: d5f1808d-9f14-4e57-905c-dd2d99ad1c9b
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer offers a visibility selector for public, private, and protected me
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

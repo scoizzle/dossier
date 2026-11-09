@@ -1,6 +1,6 @@
 # django/contrib/admin/migrations/0002_logentry_remove_auto_add
 
-- Subject: django/contrib/admin/migrations/0002_logentry_remove_auto_add (id `5e493d4f-f027-4a80-bfac-009a87242591`)
+- Subject: django/contrib/admin/migrations/0002_logentry_remove_auto_add (id `a8217556-8783-4886-9793-a5c9e5c6d515`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 134 tokens

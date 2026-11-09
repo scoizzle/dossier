@@ -1,6 +1,6 @@
 # docs/ref/checks
 
-- Subject: docs/ref/checks (id `40705cc1-b2e4-4bfb-9e8b-baa57727add8`)
+- Subject: docs/ref/checks (id `6b15dd93-3959-4f93-a269-238c7a3212dc`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

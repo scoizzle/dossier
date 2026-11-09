@@ -1,6 +1,6 @@
 # docs/ref/models/relations
 
-- Subject: docs/ref/models/relations (id `ef3b87c3-a9f2-491d-9bb6-d95f4bf2c14c`)
+- Subject: docs/ref/models/relations (id `d535d4d2-f8e8-4d4f-8077-a9b4ebae45a3`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

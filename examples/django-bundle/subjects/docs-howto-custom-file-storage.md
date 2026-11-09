@@ -1,6 +1,6 @@
 # docs/howto/custom-file-storage
 
-- Subject: docs/howto/custom-file-storage (id `e68cd75f-c1f0-4021-9709-6257d37394c2`)
+- Subject: docs/howto/custom-file-storage (id `006f51f6-2ecb-45a5-836a-f6c707a0ac93`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 879 tokens

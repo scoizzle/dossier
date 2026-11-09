@@ -1,6 +1,6 @@
 # docs/releases/1.11.25
 
-- Subject: docs/releases/1.11.25 (id `430b4457-2c16-4b7d-9886-0e1aba782b3f`)
+- Subject: docs/releases/1.11.25 (id `bce95ef6-3924-41f7-b5c1-7e2141941301`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 147 tokens

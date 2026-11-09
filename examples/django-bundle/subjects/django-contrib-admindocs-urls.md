@@ -1,6 +1,6 @@
 # django/contrib/admindocs/urls
 
-- Subject: django/contrib/admindocs/urls (id `a5102836-a304-4e03-81fc-a93eb084c564`)
+- Subject: django/contrib/admindocs/urls (id `db08ff71-fecb-46f2-afbc-157ae51a5502`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 276 tokens

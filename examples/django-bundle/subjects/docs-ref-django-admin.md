@@ -1,6 +1,6 @@
 # docs/ref/django-admin
 
-- Subject: docs/ref/django-admin (id `80e33b69-49b5-4d35-af4c-f1933bb4b6de`)
+- Subject: docs/ref/django-admin (id `a704f1d8-0a1c-4352-9656-be868f780741`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

@@ -1,6 +1,6 @@
 # docs/glossary
 
-- Subject: docs/glossary (id `5f1aa495-0425-411b-acd0-d08cd7f314b8`)
+- Subject: docs/glossary (id `1a746e2f-fee9-48f4-a5c8-532a962bebc7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 734 tokens

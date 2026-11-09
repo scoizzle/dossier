@@ -1,6 +1,6 @@
 # django/core/management/utils
 
-- Subject: django/core/management/utils (id `92d6713f-1c3a-4447-b689-e3fdbeefb5e0`)
+- Subject: django/core/management/utils (id `d06503cb-08f7-4d32-9fb3-7a05bdd41b27`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 885 tokens

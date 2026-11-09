@@ -1,6 +1,6 @@
 # docs/ref/paginator
 
-- Subject: docs/ref/paginator (id `0f863bce-09e1-4ff1-9397-f4b2bc3f04a2`)
+- Subject: docs/ref/paginator (id `de5d132f-6524-4a75-9816-8f48860783fe`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

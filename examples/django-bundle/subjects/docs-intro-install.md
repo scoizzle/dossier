@@ -1,6 +1,6 @@
 # docs/intro/install
 
-- Subject: docs/intro/install (id `23c160f4-5e61-457f-b2d9-3cecd71c4bd5`)
+- Subject: docs/intro/install (id `47bd4e85-55bf-4150-8f02-5778815b4c73`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

@@ -1,6 +1,6 @@
 # docs/ref/contrib/auth
 
-- Subject: docs/ref/contrib/auth (id `3a5f9a92-af75-4359-814e-8a3bd2b6cbec`)
+- Subject: docs/ref/contrib/auth (id `6cfc7511-feb9-45f0-86c8-4e74eeff62a9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

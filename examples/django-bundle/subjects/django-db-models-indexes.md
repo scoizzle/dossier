@@ -1,6 +1,6 @@
 # django/db/models/indexes
 
-- Subject: django/db/models/indexes (id `e8aa936f-55d2-4a08-a297-844b9539e2df`)
+- Subject: django/db/models/indexes (id `db4b7937-2d02-4970-854c-d03acc0a52e9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

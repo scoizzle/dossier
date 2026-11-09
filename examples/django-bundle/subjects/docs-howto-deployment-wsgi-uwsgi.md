@@ -1,6 +1,6 @@
 # docs/howto/deployment/wsgi/uwsgi
 
-- Subject: docs/howto/deployment/wsgi/uwsgi (id `1ef94f54-25f4-47ac-9ce6-b6054ad56d59`)
+- Subject: docs/howto/deployment/wsgi/uwsgi (id `e8ce4ebd-56fb-40fc-8e52-b8bfa7be0d9e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

@@ -1,6 +1,6 @@
 # django/db/backends/base/introspection
 
-- Subject: django/db/backends/base/introspection (id `e185e145-fe88-4a9d-85d9-a666d05021e5`)
+- Subject: django/db/backends/base/introspection (id `6692af10-39fc-4bf4-8fcd-440d0bfe8680`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

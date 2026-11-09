@@ -1,6 +1,6 @@
 # docs/faq/admin
 
-- Subject: docs/faq/admin (id `65f2df6e-267b-47dc-8f7e-4a2e7057e502`)
+- Subject: docs/faq/admin (id `2b3cce9f-9b75-475c-9e8e-d0d315dd07c6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

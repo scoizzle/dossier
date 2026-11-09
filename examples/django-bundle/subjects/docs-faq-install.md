@@ -1,6 +1,6 @@
 # docs/faq/install
 
-- Subject: docs/faq/install (id `518f0baf-9629-4936-8623-58388dd51969`)
+- Subject: docs/faq/install (id `6c8323a6-6682-4a0c-83a5-fd636c5f6743`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

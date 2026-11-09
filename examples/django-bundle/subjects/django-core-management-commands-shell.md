@@ -1,6 +1,6 @@
 # django/core/management/commands/shell
 
-- Subject: django/core/management/commands/shell (id `80bb8684-e358-4209-b2ab-8ba39c051351`)
+- Subject: django/core/management/commands/shell (id `dd5ad518-b4ef-41f1-98ad-e49a1d36ca3e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

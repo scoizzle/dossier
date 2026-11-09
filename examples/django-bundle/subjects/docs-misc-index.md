@@ -1,6 +1,6 @@
 # docs/misc/index
 
-- Subject: docs/misc/index (id `e2cb524b-8c85-44e9-a223-2ff64384bbf2`)
+- Subject: docs/misc/index (id `7044e9c1-286b-4661-b73a-58dabde33274`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 124 tokens

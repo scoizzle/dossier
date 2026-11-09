@@ -1,6 +1,6 @@
 # django/contrib/auth/management/__init__
 
-- Subject: django/contrib/auth/management/__init__ (id `66511bb3-a325-4ac9-b164-510bff714e64`)
+- Subject: django/contrib/auth/management/__init__ (id `0574d3d8-3b7c-4924-b02a-55daf54bc4a5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

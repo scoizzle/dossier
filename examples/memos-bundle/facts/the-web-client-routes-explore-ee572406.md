@@ -1,6 +1,6 @@
 # Fact ee572406
 
-Store id: 813f35ef-e59b-4092-b06c-2715a9a58c46
+Store id: 1facd4d3-e180-4d0b-9624-1b421acd7250
 
 ## Text
 
@@ -20,7 +20,7 @@ The web client routes /, /explore, /archived, /settings, and /m/:id.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:28.9082860+00:00`
+- posted_at: `2026-11-09T21:52:52.9119340+00:00`
 
 ## Refs
 

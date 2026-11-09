@@ -1,6 +1,6 @@
 # django/views/generic/edit
 
-- Subject: django/views/generic/edit (id `eaca8f1f-4a4c-4259-b54a-261dfb874999`)
+- Subject: django/views/generic/edit (id `c6dea942-66e1-4ae3-aa1a-1951e28ec3ec`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

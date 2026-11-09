@@ -1,6 +1,6 @@
 # docs/internals/contributing/committing-code
 
-- Subject: docs/internals/contributing/committing-code (id `4cc316ed-1140-4f9e-9942-8647272ec5f1`)
+- Subject: docs/internals/contributing/committing-code (id `0d3ed4ca-3a8c-4963-b03e-0956f84b9135`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

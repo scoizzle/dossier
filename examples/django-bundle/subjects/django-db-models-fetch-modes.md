@@ -1,6 +1,6 @@
 # django/db/models/fetch_modes
 
-- Subject: django/db/models/fetch_modes (id `85edbbb8-5532-4e86-bdf5-e83be30f9fd1`)
+- Subject: django/db/models/fetch_modes (id `435eaa04-e88a-4364-bc34-1a330100e48a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 441 tokens

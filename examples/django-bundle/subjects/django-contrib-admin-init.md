@@ -1,6 +1,6 @@
 # django/contrib/admin/__init__
 
-- Subject: django/contrib/admin/__init__ (id `82cec955-94fa-45af-9914-cabcb267565c`)
+- Subject: django/contrib/admin/__init__ (id `02267cb8-139d-4c66-b158-e76a9e57216e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 307 tokens

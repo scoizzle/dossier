@@ -1,6 +1,6 @@
 # django/contrib/gis/db/models/lookups
 
-- Subject: django/contrib/gis/db/models/lookups (id `4a81b9b4-5f70-426e-80ab-58b512f81714`)
+- Subject: django/contrib/gis/db/models/lookups (id `982d9849-ab4d-4e46-a01b-bf196d14576d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

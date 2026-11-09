@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/testing
 
-- Subject: django/contrib/staticfiles/testing (id `582839d7-19fb-48ad-93ab-5980fb652125`)
+- Subject: django/contrib/staticfiles/testing (id `b1a79487-cae8-4472-b99f-4e7112373a71`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 140 tokens

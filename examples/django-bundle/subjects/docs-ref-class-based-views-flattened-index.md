@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/flattened-index
 
-- Subject: docs/ref/class-based-views/flattened-index (id `1759eb00-7532-4b4f-9190-b606b3282487`)
+- Subject: docs/ref/class-based-views/flattened-index (id `11531490-c9cc-4e3c-ac3e-0686189901b3`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

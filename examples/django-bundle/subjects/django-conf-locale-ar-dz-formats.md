@@ -1,6 +1,6 @@
 # django/conf/locale/ar_DZ/formats
 
-- Subject: django/conf/locale/ar_DZ/formats (id `3050f2a9-ac1f-4eab-a143-e1467ad98831`)
+- Subject: django/conf/locale/ar_DZ/formats (id `25db2643-6b9e-4a61-b082-9eda500b6a1c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 240 tokens

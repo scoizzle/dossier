@@ -1,6 +1,6 @@
 # django/utils/decorators
 
-- Subject: django/utils/decorators (id `b2916e7d-bf05-41b9-82c4-c58ff78ba600`)
+- Subject: django/utils/decorators (id `64e45b19-5b39-44a8-8f19-a2d7f84bddff`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 886 tokens

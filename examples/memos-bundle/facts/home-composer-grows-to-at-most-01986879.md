@@ -1,6 +1,6 @@
 # Fact 01986879
 
-Store id: 14530d07-108e-4b16-9f17-4a8731bcf605
+Store id: 9768b644-7028-431f-ba20-f559fac536df
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer grows to at most 6 rows before it scrolls.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Data
 

@@ -1,6 +1,6 @@
 # django/contrib/gis/serializers/geojson
 
-- Subject: django/contrib/gis/serializers/geojson (id `60bf6d30-16bc-4f9c-a618-72375e5f5d5b`)
+- Subject: django/contrib/gis/serializers/geojson (id `460243f8-35a6-4c62-be8a-15987044311d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 668 tokens

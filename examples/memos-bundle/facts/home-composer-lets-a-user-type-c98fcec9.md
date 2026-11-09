@@ -1,6 +1,6 @@
 # Fact c98fcec9
 
-Store id: 0292a614-5313-48ee-8594-02c927572320
+Store id: 3b3cd879-5780-4ca7-a37e-9a6f99aff0e9
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer lets a user type a memo, attach media, and choose visibility.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

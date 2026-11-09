@@ -1,6 +1,6 @@
 # django/contrib/admin/models
 
-- Subject: django/contrib/admin/models (id `7b7a44c9-8f34-4617-8b05-37d111fa4f45`)
+- Subject: django/contrib/admin/models (id `90f57a52-c38c-4b2c-9319-4f3f963282a4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

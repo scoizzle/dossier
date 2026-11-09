@@ -1,6 +1,6 @@
 # django/contrib/syndication/apps
 
-- Subject: django/contrib/syndication/apps (id `e366b81d-186b-443d-94c0-d5b80a538578`)
+- Subject: django/contrib/syndication/apps (id `8e089e5a-9a62-482f-88d7-51c1f00d62d5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 70 tokens

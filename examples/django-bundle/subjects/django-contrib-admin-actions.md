@@ -1,6 +1,6 @@
 # django/contrib/admin/actions
 
-- Subject: django/contrib/admin/actions (id `26ec479a-b04a-44c9-acc8-20c0a12bff28`)
+- Subject: django/contrib/admin/actions (id `d98536fa-eceb-4192-a1c3-0de7e044ce4f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 815 tokens

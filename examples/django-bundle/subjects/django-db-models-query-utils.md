@@ -1,6 +1,6 @@
 # django/db/models/query_utils
 
-- Subject: django/db/models/query_utils (id `bb60833d-f464-450f-a175-b1379c609211`)
+- Subject: django/db/models/query_utils (id `d9534ab8-9470-4c14-a315-133f3f19caca`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 882 tokens

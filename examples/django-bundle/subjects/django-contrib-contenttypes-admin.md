@@ -1,6 +1,6 @@
 # django/contrib/contenttypes/admin
 
-- Subject: django/contrib/contenttypes/admin (id `e3abbd5c-dd8f-4e95-bda5-4e686df4ffc6`)
+- Subject: django/contrib/contenttypes/admin (id `b3f3115b-4843-4c7f-a3c6-395256fe44f5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 833 tokens

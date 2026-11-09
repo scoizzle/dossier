@@ -1,6 +1,6 @@
 # django/contrib/flatpages/views
 
-- Subject: django/contrib/flatpages/views (id `d966d18d-3691-494d-aef8-e80f587658f6`)
+- Subject: django/contrib/flatpages/views (id `f8b8f584-4c45-43d7-b440-078fed94ad6c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 715 tokens

@@ -1,6 +1,6 @@
 # django/db/migrations/writer
 
-- Subject: django/db/migrations/writer (id `a55d1629-fb84-4776-8696-fc45f2f6d34f`)
+- Subject: django/db/migrations/writer (id `175bf95f-cd28-404e-a34c-f0ecc59e5a91`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

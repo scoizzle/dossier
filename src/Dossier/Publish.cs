@@ -29,6 +29,9 @@ public sealed class PublishOptions
     /// </summary>
     public string Assets { get; set; } = "detail";
 
+    /// <summary>Token cap (chars/4, rounded up) for each generated index file; larger folders are split into index/ files.</summary>
+    public int IndexMaxTokens { get; set; } = DossierStore.DefaultIndexMaxTokens;
+
     /// <summary>Exact command line recorded in README.md; synthesized from the options when null.</summary>
     public string? CommandLine { get; set; }
 
@@ -57,6 +60,8 @@ public sealed class PublishResult
 
 public sealed partial class DossierStore
 {
+    public const int DefaultIndexMaxTokens = 6000;
+
     private const string BundleManifest = "manifest.json";
     private const int BundleKeyLength = 8;
     private const int MaxFactSlugLength = 48;
@@ -142,6 +147,11 @@ public sealed partial class DossierStore
             throw new DossierRequestException("invalid_budget", "budget must be zero or greater");
         }
 
+        if (options.IndexMaxTokens < 1)
+        {
+            throw new DossierRequestException("invalid_index_max_tokens", "index-max-tokens must be 1 or greater");
+        }
+
         var detail = options.Facts == "detail";
         var assetsDetail = options.Assets == "detail";
         var outDir = Path.GetFullPath(options.Out);
@@ -166,7 +176,7 @@ public sealed partial class DossierStore
         }
 
         // Tree order, display paths and slugs: all derived from subject content.
-        var (ordered, paths, depths) = TreeOrder(subjects);
+        var (ordered, paths, _) = TreeOrder(subjects);
         var slugs = AssignSlugs(ordered);
         var subjectById = ordered.ToDictionary(s => s.Id, StringComparer.Ordinal);
         var subjectOrder = ordered.Select((s, i) => (s.Id, i)).ToDictionary(t => t.Id, t => t.i, StringComparer.Ordinal);
@@ -304,8 +314,14 @@ public sealed partial class DossierStore
 
         files["conflicts.md"] = RenderConflictsFile(ordered, dossiers, slugs, id => FactRef(id, string.Empty));
         files["gaps.md"] = RenderGapsFile(ordered, dossiers, slugs);
-        files["INDEX.md"] = RenderIndexFile(ordered, depths, dossiers, slugs, factsBySubject, subjectTokens);
-        files["AGENTS.md"] = RenderAgentsFile(detail);
+        var (indexFiles, indexWarnings) = BuildIndexFiles(ordered, dossiers, slugs, factsBySubject, subjectTokens, options.IndexMaxTokens);
+        foreach (var (indexPath, indexContent) in indexFiles)
+        {
+            files[indexPath] = indexContent;
+        }
+
+        warnings.AddRange(indexWarnings);
+        files["AGENTS.md"] = RenderAgentsFile(detail, options.IndexMaxTokens);
 
         var commandLine = options.CommandLine ?? SynthesizeCommandLine(options);
         var totalFacts = facts.Count;
@@ -341,7 +357,7 @@ public sealed partial class DossierStore
         var tokens = files.ToDictionary(kv => kv.Key, kv => EstimateTokens(kv.Value), StringComparer.Ordinal);
         files[BundleManifest] = BuildManifest(
             options, scopeRootId, bundleHash, ordered, slugs, paths, subjectTokens, facts, tokens,
-            files.Keys.Concat(assetSources.Keys).ToList(), detail, assetMap.Values);
+            files.Keys.Concat(assetSources.Keys).ToList(), detail, assetMap.Values, indexFiles.Keys.ToList());
 
         var result = WriteBundle(outDir, files, assetSources, previous?.Files ?? new List<string>(), ordered.Count, totalFacts);
         result.Warnings = warnings;
@@ -1074,69 +1090,336 @@ public sealed partial class DossierStore
         return b.ToString();
     }
 
-    private static string RenderIndexFile(
+    // ---- tiered index ----------------------------------------------------------------------
+
+    /// <summary>A folder in the name tree: subjects are grouped by their name split on '/'.</summary>
+    private sealed class IndexNode
+    {
+        public string Segment = string.Empty;
+        public IndexNode? Parent;
+        public int Depth;
+        public List<string> Path = new();
+        public List<PubSubject> Own = new();
+        public List<IndexNode> Children = new();
+        public string FileSlug = string.Empty;
+        public int Facts;
+        public int Conflicts;
+        public int Gaps;
+
+        public bool IsLeaf => Children.Count == 0;
+
+        public string FilePath => Parent is null ? "INDEX.md" : $"index/{FileSlug}.md";
+    }
+
+    private static List<string> IndexSegments(string name)
+    {
+        var segments = name.Split('/').Select(Inline).Where(p => p.Length > 0).ToList();
+        if (segments.Count == 0)
+        {
+            var whole = Inline(name);
+            segments.Add(whole.Length > 0 ? whole : "(unnamed)");
+        }
+
+        return segments;
+    }
+
+    /// <summary>
+    /// INDEX.md plus index/&lt;path&gt;.md files. A folder becomes one index file when its rendered table
+    /// fits <paramref name="cap"/> tokens; otherwise its file lists its subfolders as group rows (each
+    /// with its own index file, recursively) and its leaves as subject rows. Pure function of the inputs.
+    /// </summary>
+    private static (Dictionary<string, string> Files, List<string> Warnings) BuildIndexFiles(
         List<PubSubject> ordered,
-        Dictionary<string, int> depths,
         Dictionary<string, CompiledDossier> dossiers,
         Dictionary<string, string> slugs,
         Dictionary<string, int> factsBySubject,
-        Dictionary<string, int> subjectTokens)
+        Dictionary<string, int> subjectTokens,
+        int cap)
     {
-        var b = new StringBuilder();
-        b.Append("# Index\n\n");
-        b.Append("One row per subject, parents before children. The subject cell is the subject's own name; ")
-            .Append("a subject is indented two spaces per ancestor level, so its position shows its depth. ")
-            .Append("`tokens` is the estimated cost (chars/4, rounded up) of reading that subject's file. ")
-            .Append("Pick the row you need and read only that file.\n\n");
-        b.Append("| subject | kind | facts | conflicts | gaps | tokens | file |\n");
-        b.Append("| --- | --- | ---: | ---: | ---: | ---: | --- |\n");
+        var root = new IndexNode();
+        var lookup = new Dictionary<(IndexNode, string), IndexNode>();
         foreach (var subject in ordered)
         {
-            var dossier = dossiers[subject.Id];
-            var file = $"subjects/{slugs[subject.Id]}.md";
-            var indent = new string(' ', depths[subject.Id] * 2);
-            b.Append("| ").Append(indent).Append(Cell(subject.Name))
-                .Append(" | ").Append(Cell(subject.Kind))
-                .Append(" | ").Append(factsBySubject.GetValueOrDefault(subject.Id).ToString(CultureInfo.InvariantCulture))
-                .Append(" | ").Append(dossier.Conflicts.Count.ToString(CultureInfo.InvariantCulture))
-                .Append(" | ").Append(dossier.Gaps.Count.ToString(CultureInfo.InvariantCulture))
-                .Append(" | ").Append(subjectTokens[subject.Id].ToString(CultureInfo.InvariantCulture))
-                .Append(" | [").Append(file).Append("](").Append(file).Append(") |\n");
-        }
-
-        b.Append("\n## Totals\n\n");
-        b.Append("- Subjects: ").Append(ordered.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
-        b.Append("- Facts: ").Append(factsBySubject.Values.Sum().ToString(CultureInfo.InvariantCulture)).Append('\n');
-        b.Append("- Conflicts: ").Append(dossiers.Values.Sum(d => d.Conflicts.Count).ToString(CultureInfo.InvariantCulture)).Append('\n');
-        b.Append("- Gaps: ").Append(dossiers.Values.Sum(d => d.Gaps.Count).ToString(CultureInfo.InvariantCulture)).Append('\n');
-        b.Append("- Subject file tokens, all subjects: ").Append(subjectTokens.Values.Sum().ToString(CultureInfo.InvariantCulture)).Append('\n');
-
-        b.Append("\n## Subjects with conflicts\n\n");
-        var withConflicts = ordered.Where(s => dossiers[s.Id].Conflicts.Count > 0).ToList();
-        if (withConflicts.Count == 0)
-        {
-            b.Append("None. See [conflicts.md](conflicts.md).\n");
-        }
-        else
-        {
-            foreach (var subject in withConflicts)
+            var node = root;
+            foreach (var segment in IndexSegments(subject.Name))
             {
-                var file = $"subjects/{slugs[subject.Id]}.md";
-                b.Append("- [").Append(Inline(subject.Name)).Append("](").Append(file).Append("): ")
-                    .Append(dossiers[subject.Id].Conflicts.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
+                if (!lookup.TryGetValue((node, segment), out var child))
+                {
+                    child = new IndexNode { Segment = segment, Parent = node, Depth = node.Depth + 1, Path = node.Path.Append(segment).ToList() };
+                    lookup[(node, segment)] = child;
+                    node.Children.Add(child);
+                }
+
+                node = child;
+            }
+
+            node.Own.Add(subject);
+        }
+
+        void Finish(IndexNode n)
+        {
+            n.Children = n.Children
+                .OrderBy(c => Names.Normalize(c.Segment), StringComparer.Ordinal)
+                .ThenBy(c => c.Segment, StringComparer.Ordinal)
+                .ToList();
+            foreach (var c in n.Children)
+            {
+                Finish(c);
+            }
+
+            n.Facts = n.Own.Sum(s => factsBySubject.GetValueOrDefault(s.Id)) + n.Children.Sum(c => c.Facts);
+            n.Conflicts = n.Own.Sum(s => dossiers[s.Id].Conflicts.Count) + n.Children.Sum(c => c.Conflicts);
+            n.Gaps = n.Own.Sum(s => dossiers[s.Id].Gaps.Count) + n.Children.Sum(c => c.Gaps);
+        }
+
+        Finish(root);
+
+        var taken = new HashSet<string>(StringComparer.Ordinal);
+        void AssignSlugs(IndexNode n)
+        {
+            foreach (var c in n.Children.Where(c => !c.IsLeaf))
+            {
+                var baseSlug = Slugify(string.Join('/', c.Path));
+                var candidate = baseSlug;
+                var i = 2;
+                while (!taken.Add(candidate))
+                {
+                    candidate = baseSlug + "-" + i.ToString(CultureInfo.InvariantCulture);
+                    i++;
+                }
+
+                c.FileSlug = candidate;
+                AssignSlugs(c);
             }
         }
 
-        return b.ToString();
+        AssignSlugs(root);
+
+        var files = new Dictionary<string, string>(StringComparer.Ordinal);
+        var tokens = new Dictionary<string, int>(StringComparer.Ordinal);
+        var warnings = new List<string>();
+        var totalSubjects = ordered.Count;
+        var totalFacts = factsBySubject.Values.Sum();
+        var totalConflicts = ordered.Sum(s => dossiers[s.Id].Conflicts.Count);
+        var totalGaps = ordered.Sum(s => dossiers[s.Id].Gaps.Count);
+        var totalSubjectTokens = subjectTokens.Values.Sum();
+
+        string Render(IndexNode node, bool full, (int Count, int Largest)? stats)
+        {
+            var isRoot = node.Parent is null;
+            var prefix = isRoot ? string.Empty : "../";
+            var baseDepth = Math.Max(node.Depth, 1);
+            var b = new StringBuilder();
+
+            if (isRoot)
+            {
+                b.Append("# Index\n\n");
+            }
+            else
+            {
+                b.Append("# Index: ").Append(Inline(string.Join('/', node.Path))).Append("/\n\n");
+            }
+
+            var scope = isRoot ? "every subject in the bundle" : "every subject under `" + Inline(string.Join('/', node.Path)) + "/`";
+            if (full)
+            {
+                b.Append("This file lists ").Append(scope).Append(", one row per subject, grouped by the `/`-separated segments of its name. ")
+                    .Append("The subject cell is the subject's own name; a subject is indented two spaces per level of its name path below this file's scope, so its position shows its depth. ")
+                    .Append("`tokens` is the estimated cost (chars/4, rounded up) of reading that row's file. ")
+                    .Append("Pick the row you need and read only that file.\n\n");
+            }
+            else
+            {
+                b.Append("This file lists ").Append(scope).Append(" as folders and subjects: a row of kind `group` is a folder, and its file column links to another index file under `index/` that lists what is inside; any other row is a subject whose file column links to its `subjects/` file. ")
+                    .Append("Counts on a group row cover everything inside it. `tokens` is the estimated cost (chars/4, rounded up) of reading that row's file. ")
+                    .Append("Open the group that matches what you need and repeat until you reach a subject row.\n\n");
+            }
+
+            b.Append("| subject | kind | facts | conflicts | gaps | tokens | file |\n");
+            b.Append("| --- | --- | ---: | ---: | ---: | ---: | --- |\n");
+
+            void SubjectRow(PubSubject subject, int ownerDepth)
+            {
+                var dossier = dossiers[subject.Id];
+                var file = $"subjects/{slugs[subject.Id]}.md";
+                b.Append("| ").Append(new string(' ', Math.Max(0, ownerDepth - baseDepth) * 2)).Append(Cell(subject.Name))
+                    .Append(" | ").Append(Cell(subject.Kind))
+                    .Append(" | ").Append(factsBySubject.GetValueOrDefault(subject.Id).ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(dossier.Conflicts.Count.ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(dossier.Gaps.Count.ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(subjectTokens[subject.Id].ToString(CultureInfo.InvariantCulture))
+                    .Append(" | [").Append(file).Append("](").Append(prefix).Append(file).Append(") |\n");
+            }
+
+            void GroupRow(IndexNode group)
+            {
+                var target = isRoot ? group.FilePath : group.FileSlug + ".md";
+                b.Append("| ").Append(Cell(group.Segment)).Append('/')
+                    .Append(" | group")
+                    .Append(" | ").Append(group.Facts.ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(group.Conflicts.ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(group.Gaps.ToString(CultureInfo.InvariantCulture))
+                    .Append(" | ").Append(tokens[group.FilePath].ToString(CultureInfo.InvariantCulture))
+                    .Append(" | [").Append(group.FilePath).Append("](").Append(target).Append(") |\n");
+            }
+
+            if (full)
+            {
+                void Walk(IndexNode n)
+                {
+                    foreach (var subject in n.Own)
+                    {
+                        SubjectRow(subject, n.Depth);
+                    }
+
+                    foreach (var c in n.Children)
+                    {
+                        Walk(c);
+                    }
+                }
+
+                Walk(node);
+            }
+            else
+            {
+                // A group file is flat: every row is an immediate child, so none is indented.
+                foreach (var subject in node.Own)
+                {
+                    SubjectRow(subject, baseDepth);
+                }
+
+                foreach (var c in node.Children)
+                {
+                    if (c.IsLeaf)
+                    {
+                        foreach (var subject in c.Own)
+                        {
+                            SubjectRow(subject, baseDepth);
+                        }
+                    }
+                    else
+                    {
+                        GroupRow(c);
+                    }
+                }
+            }
+
+            if (!isRoot)
+            {
+                var up = node.Parent!;
+                var upTarget = up.Parent is null ? "../INDEX.md" : up.FileSlug + ".md";
+                b.Append("\nUp: [").Append(up.FilePath).Append("](").Append(upTarget).Append(")\n");
+                return b.ToString();
+            }
+
+            b.Append("\n## Totals\n\n");
+            b.Append("- Subjects: ").Append(totalSubjects.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Facts: ").Append(totalFacts.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Conflicts: ").Append(totalConflicts.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Gaps: ").Append(totalGaps.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Subject file tokens, all subjects: ").Append(totalSubjectTokens.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Index files: ").Append(stats!.Value.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
+            b.Append("- Largest index file, tokens: ").Append(stats.Value.Largest.ToString(CultureInfo.InvariantCulture)).Append('\n');
+
+            b.Append("\n## Subjects with conflicts\n\n");
+            var withConflicts = ordered.Where(s => dossiers[s.Id].Conflicts.Count > 0).ToList();
+            if (withConflicts.Count == 0)
+            {
+                b.Append("None. See [conflicts.md](conflicts.md).\n");
+            }
+            else if (!full)
+            {
+                b.Append(withConflicts.Count.ToString(CultureInfo.InvariantCulture)).Append(" subjects have conflicts; see [conflicts.md](conflicts.md).\n");
+            }
+            else
+            {
+                foreach (var subject in withConflicts)
+                {
+                    var file = $"subjects/{slugs[subject.Id]}.md";
+                    b.Append("- [").Append(Inline(subject.Name)).Append("](").Append(file).Append("): ")
+                        .Append(dossiers[subject.Id].Conflicts.Count.ToString(CultureInfo.InvariantCulture)).Append('\n');
+                }
+            }
+
+            return b.ToString();
+        }
+
+        void Put(IndexNode n, string content)
+        {
+            var t = EstimateTokens(content);
+            files[n.FilePath] = content;
+            tokens[n.FilePath] = t;
+            if (t > cap)
+            {
+                warnings.Add($"warning: index file {n.FilePath} is {t} tokens, over --index-max-tokens {cap}; it cannot be split further");
+            }
+        }
+
+        void Emit(IndexNode n)
+        {
+            var full = Render(n, true, null);
+            if (EstimateTokens(full) <= cap || !n.Children.Any(c => !c.IsLeaf))
+            {
+                Put(n, full);
+                return;
+            }
+
+            foreach (var c in n.Children.Where(c => !c.IsLeaf))
+            {
+                Emit(c);
+            }
+
+            Put(n, Render(n, false, null));
+        }
+
+        // The root states the file count and the largest file, and its own size is part of both, so
+        // render until the stated largest value is stable.
+        string RenderRoot(bool full, int count, int othersMax)
+        {
+            var largest = othersMax;
+            var text = Render(root, full, (count, largest));
+            for (var i = 0; i < 6; i++)
+            {
+                var next = Math.Max(othersMax, EstimateTokens(text));
+                if (next == largest)
+                {
+                    break;
+                }
+
+                largest = next;
+                text = Render(root, full, (count, largest));
+            }
+
+            return text;
+        }
+
+        var single = RenderRoot(true, 1, 0);
+        if (EstimateTokens(single) <= cap || !root.Children.Any(c => !c.IsLeaf))
+        {
+            Put(root, single);
+        }
+        else
+        {
+            foreach (var c in root.Children.Where(c => !c.IsLeaf))
+            {
+                Emit(c);
+            }
+
+            Put(root, RenderRoot(false, tokens.Count + 1, tokens.Count == 0 ? 0 : tokens.Values.Max()));
+        }
+
+        return (files, warnings);
     }
 
-    private static string RenderAgentsFile(bool detail)
+    private static string RenderAgentsFile(bool detail, int indexMaxTokens)
     {
         var b = new StringBuilder();
         b.Append("# AGENTS.md\n\n");
         b.Append("This directory is a Dossier bundle: a read-only, self-describing export of a fact store as markdown files, built so an agent with no tool access can answer from it.\n\n");
         b.Append("Start here: [INDEX.md](INDEX.md)\n\n");
-        b.Append("Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md\n\n");
+        b.Append("Drill-down path: AGENTS.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md\n\n");
+        b.Append("In an index file a row of kind `group` is a folder, not a subject: its file column links to another index file under `index/` that lists what is inside. Open the group that matches your question and repeat until a row links to `subjects/`. A bundle with many subjects is split this way on purpose, so every index file stays under ")
+            .Append(indexMaxTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens; a row being a folder is normal. A small bundle has only INDEX.md, where every row is a subject.\n\n");
         if (detail)
         {
             b.Append("Every claim ends in a bracketed fact key, like `[3fa9c1d2]`. That key resolves to a file under `facts/`: `facts/<slug>-<key>.md`, where `<slug>` is the first words of the fact text and `<key>` is the same 8-character key (a few more characters only if two keys collide). In subject files the bracketed key is already a link to that file, and the file carries the fact's store id on a `Store id:` line.\n\n");
@@ -1189,8 +1472,8 @@ public sealed partial class DossierStore
         b.Append("- Subject file tokens, all subjects: ").Append(tokens.ToString(CultureInfo.InvariantCulture)).Append("\n\n");
 
         b.Append("## How to read it\n\n");
-        b.Append("Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md\n\n");
-        b.Append("1. [INDEX.md](INDEX.md) lists every subject with its fact, conflict and gap counts and the token cost of its file.\n");
+        b.Append("Drill-down path: README.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md\n\n");
+        b.Append("1. [INDEX.md](INDEX.md) lists every subject, or, in a large bundle, the top-level groups, with fact, conflict and gap counts and the token cost of each row's file. A `group` row links to a deeper `index/<group>.md`; each index file is capped at ").Append(options.IndexMaxTokens.ToString(CultureInfo.InvariantCulture)).Append(" tokens.\n");
         b.Append("2. `subjects/<slug>.md` is the compiled dossier for one subject; each claim ends in its bracketed fact key.\n");
         b.Append("3. `facts/<slug>-<key>.md` holds one fact in full: text, provenance, data, refs and the facts that reference it.\n");
         b.Append("4. [conflicts.md](conflicts.md) and [gaps.md](gaps.md) collect the disagreements and the unmet needs across subjects.\n");
@@ -1216,7 +1499,7 @@ public sealed partial class DossierStore
             line += " --subject " + options.Subject;
         }
 
-        return line + " --budget " + options.Budget.ToString(CultureInfo.InvariantCulture) + " --depth " + options.Depth + " --facts " + options.Facts + " --assets " + options.Assets;
+        return line + " --budget " + options.Budget.ToString(CultureInfo.InvariantCulture) + " --depth " + options.Depth + " --facts " + options.Facts + " --assets " + options.Assets + " --index-max-tokens " + options.IndexMaxTokens.ToString(CultureInfo.InvariantCulture);
     }
 
     // ---- manifest and writing --------------------------------------------------------------
@@ -1233,8 +1516,15 @@ public sealed partial class DossierStore
         Dictionary<string, int> tokens,
         List<string> generatedFiles,
         bool detail,
-        IEnumerable<PubAsset> assets)
+        IEnumerable<PubAsset> assets,
+        List<string> indexPaths)
     {
+        var indexEntries = new Dictionary<string, object?>();
+        foreach (var path in indexPaths)
+        {
+            indexEntries[path] = tokens[path];
+        }
+
         var assetEntries = new Dictionary<string, object?>();
         foreach (var asset in assets)
         {
@@ -1291,12 +1581,14 @@ public sealed partial class DossierStore
             ["facts"] = factMap,
             ["files"] = allFiles,
             ["format"] = 1,
+            ["index_files"] = indexEntries,
             ["options"] = new Dictionary<string, object?>
             {
                 ["assets"] = options.Assets,
                 ["budget"] = options.Budget,
                 ["depth"] = options.Depth,
                 ["facts"] = options.Facts,
+                ["index_max_tokens"] = options.IndexMaxTokens,
                 ["subject"] = options.Subject,
                 ["subject_id"] = scopeRootId,
             },
@@ -1427,7 +1719,7 @@ public sealed partial class DossierStore
         return parts.Length switch
         {
             1 => relative is "AGENTS.md" or "README.md" or "INDEX.md" or "conflicts.md" or "gaps.md" or BundleManifest,
-            2 => parts[0] is "subjects" or "facts" && parts[1].EndsWith(".md", StringComparison.Ordinal) && parts[1].Length > 3,
+            2 => parts[0] is "subjects" or "facts" or "index" && parts[1].EndsWith(".md", StringComparison.Ordinal) && parts[1].Length > 3,
             3 => AssetPathRegex.IsMatch(relative),
             _ => false,
         };
@@ -1527,7 +1819,7 @@ public sealed partial class DossierStore
             }
         }
 
-        foreach (var directory in new[] { "subjects", "facts", "assets" })
+        foreach (var directory in new[] { "subjects", "facts", "index", "assets" })
         {
             var full = Path.Combine(outDir, directory);
             if (Directory.Exists(full) && !Directory.EnumerateFileSystemEntries(full).Any())

@@ -1,6 +1,6 @@
 # Memos/Home
 
-- Subject: Memos/Home (id `0886bc9a-28dd-48f3-9dc2-bc752fd1c609`)
+- Subject: Memos/Home (id `c1484453-bc2a-4568-a0e0-587f2d944b8d`)
 - Kind: screen
 - Parent: [Memos](memos.md)
 - Aliases: Home

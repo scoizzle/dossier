@@ -1,6 +1,6 @@
 # Memos/Archived
 
-- Subject: Memos/Archived (id `5bfcba81-ec28-4d93-b0c6-ef51591bd40e`)
+- Subject: Memos/Archived (id `09539ef3-b8d3-46b6-9e73-928b25a4636f`)
 - Kind: screen
 - Parent: [Memos](memos.md)
 - Budget: 1200 tokens

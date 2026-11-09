@@ -1,6 +1,6 @@
 # django/contrib/postgres/fields/citext
 
-- Subject: django/contrib/postgres/fields/citext (id `09768815-92c0-4877-8b61-5ebeb3fe3424`)
+- Subject: django/contrib/postgres/fields/citext (id `0ce51c3a-67f0-410e-8cb8-a6a7a7c01004`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 319 tokens

@@ -1,6 +1,6 @@
 # django/contrib/flatpages/migrations/0001_initial
 
-- Subject: django/contrib/flatpages/migrations/0001_initial (id `25e845e7-b65f-4004-addd-2c4704c12313`)
+- Subject: django/contrib/flatpages/migrations/0001_initial (id `e0060ed0-0fc4-4319-9180-8012e755a029`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 350 tokens

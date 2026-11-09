@@ -1,6 +1,6 @@
 # django/db/backends/oracle/schema
 
-- Subject: django/db/backends/oracle/schema (id `16d08652-a6f8-45c1-be2f-a2b3bb8669f8`)
+- Subject: django/db/backends/oracle/schema (id `10efdb80-4923-46c6-a319-4bee6c7a3a3c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

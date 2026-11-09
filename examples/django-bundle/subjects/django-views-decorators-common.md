@@ -1,6 +1,6 @@
 # django/views/decorators/common
 
-- Subject: django/views/decorators/common (id `a1bda910-9dce-4c64-884c-e2ff79f12759`)
+- Subject: django/views/decorators/common (id `82728a2d-99fb-490d-bce3-a12ea7d250d9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 256 tokens

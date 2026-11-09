@@ -1,6 +1,6 @@
 # docs/ref/views
 
-- Subject: docs/ref/views (id `f79c9a5c-fb35-4461-9922-29d7930622be`)
+- Subject: docs/ref/views (id `f4692145-c70b-4468-9051-a03ad1e0701a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

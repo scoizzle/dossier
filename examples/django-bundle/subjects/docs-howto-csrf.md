@@ -1,6 +1,6 @@
 # docs/howto/csrf
 
-- Subject: docs/howto/csrf (id `be4aa7c2-a8d8-466f-b5d2-e9245f7789ae`)
+- Subject: docs/howto/csrf (id `5b9cd821-2e6d-479a-9f45-779438c23c13`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

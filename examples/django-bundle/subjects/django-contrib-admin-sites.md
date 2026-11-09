@@ -1,6 +1,6 @@
 # django/contrib/admin/sites
 
-- Subject: django/contrib/admin/sites (id `cbd439e4-ce1d-4e88-892c-acec5253edc2`)
+- Subject: django/contrib/admin/sites (id `edc6a8cb-a7fb-44ed-aeb6-5fbc3f79ea33`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

@@ -1,6 +1,6 @@
 # django/utils/feedgenerator
 
-- Subject: django/utils/feedgenerator (id `067711c9-8427-4b43-ab27-f36d44d4970e`)
+- Subject: django/utils/feedgenerator (id `1d88d3d1-7895-4999-bbdc-be97c4db221d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

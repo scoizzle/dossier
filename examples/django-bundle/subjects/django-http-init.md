@@ -1,6 +1,6 @@
 # django/http/__init__
 
-- Subject: django/http/__init__ (id `5f90fc3b-60e4-495b-baa8-df5d310053ef`)
+- Subject: django/http/__init__ (id `0913dd25-4799-48ba-b7a8-5d8fe1f393e6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 277 tokens

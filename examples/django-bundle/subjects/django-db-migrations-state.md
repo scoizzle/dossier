@@ -1,6 +1,6 @@
 # django/db/migrations/state
 
-- Subject: django/db/migrations/state (id `180db911-6545-4c90-b417-ab514b4c1e61`)
+- Subject: django/db/migrations/state (id `055f174f-cff0-4338-beb7-645f999d8f09`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

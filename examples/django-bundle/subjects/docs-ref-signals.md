@@ -1,6 +1,6 @@
 # docs/ref/signals
 
-- Subject: docs/ref/signals (id `ce4feb19-7a3d-4397-833f-c73d1d718668`)
+- Subject: docs/ref/signals (id `cc59e319-8e47-43f1-a5fe-474e74d4b633`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

@@ -1,6 +1,6 @@
 # docs/howto/legacy-databases
 
-- Subject: docs/howto/legacy-databases (id `45cc4b0b-8aad-4f89-8c7e-e27bc43ad8c2`)
+- Subject: docs/howto/legacy-databases (id `f5bf1631-bcfe-4c50-b95f-06af25c1066b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 854 tokens

@@ -1,6 +1,6 @@
 # django/core/cache/__init__
 
-- Subject: django/core/cache/__init__ (id `c5e8a661-ec01-4a37-b0ed-05a07e67b06d`)
+- Subject: django/core/cache/__init__ (id `395f5129-1e38-409f-bf9d-80c19451575f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 574 tokens

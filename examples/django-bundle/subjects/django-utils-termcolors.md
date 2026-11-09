@@ -1,6 +1,6 @@
 # django/utils/termcolors
 
-- Subject: django/utils/termcolors (id `a4f772f8-3fa8-4610-ac7a-27d555f5b4e7`)
+- Subject: django/utils/termcolors (id `5a14db92-8d65-4c3e-b351-1e3b4e3ec84e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

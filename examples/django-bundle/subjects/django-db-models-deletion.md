@@ -1,6 +1,6 @@
 # django/db/models/deletion
 
-- Subject: django/db/models/deletion (id `9f399c16-1738-4755-ae48-fed8027fd7c3`)
+- Subject: django/db/models/deletion (id `3a29d0d8-ea8d-42c6-bc7d-af9319837fab`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

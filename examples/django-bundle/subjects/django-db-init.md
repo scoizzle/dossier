@@ -1,6 +1,6 @@
 # django/db/__init__
 
-- Subject: django/db/__init__ (id `aaf636e8-63c8-42bb-913b-9daf466851d5`)
+- Subject: django/db/__init__ (id `d7e2d2c8-92e1-484f-8488-6f1f0c57f24e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 440 tokens

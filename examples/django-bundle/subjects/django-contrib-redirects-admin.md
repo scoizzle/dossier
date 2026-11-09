@@ -1,6 +1,6 @@
 # django/contrib/redirects/admin
 
-- Subject: django/contrib/redirects/admin (id `d6bc4073-711b-4e42-be38-2512071def2c`)
+- Subject: django/contrib/redirects/admin (id `90cecd7a-1032-4e58-8429-17f18e2fd03e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 85 tokens

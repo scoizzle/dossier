@@ -1,6 +1,6 @@
 # django/contrib/admindocs/views
 
-- Subject: django/contrib/admindocs/views (id `a01c5464-7865-4a47-84b6-14267226c1d6`)
+- Subject: django/contrib/admindocs/views (id `d7720c24-f677-4660-b365-acc7d46ed785`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

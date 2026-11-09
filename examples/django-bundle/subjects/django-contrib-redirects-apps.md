@@ -1,6 +1,6 @@
 # django/contrib/redirects/apps
 
-- Subject: django/contrib/redirects/apps (id `c809f2e4-1bd3-4da9-a753-0bb837267aaa`)
+- Subject: django/contrib/redirects/apps (id `9fce4690-d3c1-4995-9d21-7b80be902da1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 81 tokens

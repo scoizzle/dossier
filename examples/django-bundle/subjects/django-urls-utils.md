@@ -1,6 +1,6 @@
 # django/urls/utils
 
-- Subject: django/urls/utils (id `a7dad23f-8dfe-409f-8e43-a0edba625b41`)
+- Subject: django/urls/utils (id `72592834-f74c-460f-9f9a-01ab2fd13975`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 506 tokens

@@ -1,6 +1,6 @@
 # django/conf/urls/static
 
-- Subject: django/conf/urls/static (id `239c802d-451c-4d5f-a6c0-767c839a7307`)
+- Subject: django/conf/urls/static (id `82d7aa22-75de-4ce8-94e4-f5158cd7cebb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 254 tokens

@@ -1,6 +1,6 @@
 # django/contrib/humanize/apps
 
-- Subject: django/contrib/humanize/apps (id `c855586f-b5bb-4c84-96b9-7ac3f3c8f098`)
+- Subject: django/contrib/humanize/apps (id `778bba04-7058-457e-8290-0eee325b2df0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 67 tokens

@@ -1,6 +1,6 @@
 # docs/ref/contrib/gis/install/spatialite
 
-- Subject: docs/ref/contrib/gis/install/spatialite (id `480c4556-b402-494d-a77b-0a383412d502`)
+- Subject: docs/ref/contrib/gis/install/spatialite (id `471516c2-2d4c-4d66-aa94-8e2b0746a5c4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

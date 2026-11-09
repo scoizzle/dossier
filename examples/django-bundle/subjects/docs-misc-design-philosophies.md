@@ -1,6 +1,6 @@
 # docs/misc/design-philosophies
 
-- Subject: docs/misc/design-philosophies (id `c2656834-5e7e-48da-b9ed-09567642e265`)
+- Subject: docs/misc/design-philosophies (id `10570bad-3954-43e3-a96a-d35c7b3dc2a4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

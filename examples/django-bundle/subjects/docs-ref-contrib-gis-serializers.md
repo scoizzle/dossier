@@ -1,6 +1,6 @@
 # docs/ref/contrib/gis/serializers
 
-- Subject: docs/ref/contrib/gis/serializers (id `13f9d892-e259-4708-b40d-7fb0c15ccb60`)
+- Subject: docs/ref/contrib/gis/serializers (id `e1d8d8ec-325c-4d98-8c5c-e83c25cc7b33`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 696 tokens

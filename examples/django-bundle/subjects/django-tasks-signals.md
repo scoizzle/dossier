@@ -1,6 +1,6 @@
 # django/tasks/signals
 
-- Subject: django/tasks/signals (id `a9c399c1-1576-4e69-a295-c830bbeec5a4`)
+- Subject: django/tasks/signals (id `1aef2862-fa44-4c59-8a2b-07c5585efb1f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 475 tokens

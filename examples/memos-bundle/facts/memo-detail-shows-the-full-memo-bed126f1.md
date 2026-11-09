@@ -1,6 +1,6 @@
 # Fact bed126f1
 
-Store id: c9946da9-54d5-4471-bffc-cda2380351d9
+Store id: 174237bf-9bc6-402d-bd0a-19938e8c4448
 
 ## Text
 
@@ -20,7 +20,7 @@ Memo detail shows the full memo text, its timestamp, and its tags.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.1097470+00:00`
+- posted_at: `2026-11-09T21:52:53.1122690+00:00`
 
 ## Refs
 

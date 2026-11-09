@@ -1,6 +1,6 @@
 # docs/ref/exceptions
 
-- Subject: docs/ref/exceptions (id `ecb259f9-de35-48cd-b8f5-7f013ff32b0c`)
+- Subject: docs/ref/exceptions (id `95537649-fdd6-4cdf-a545-6f193d311ec0`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

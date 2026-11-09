@@ -1,6 +1,6 @@
 # django/contrib/auth/admin
 
-- Subject: django/contrib/auth/admin (id `d7fe4dae-9b9c-41dc-be7f-6e83e5917b08`)
+- Subject: django/contrib/auth/admin (id `8ea10711-a154-4ca3-8c9f-001ea71cc28e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

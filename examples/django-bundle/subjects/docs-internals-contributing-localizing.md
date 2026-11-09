@@ -1,6 +1,6 @@
 # docs/internals/contributing/localizing
 
-- Subject: docs/internals/contributing/localizing (id `067b48f4-d390-4638-b52b-b7767ad8c089`)
+- Subject: docs/internals/contributing/localizing (id `7b8abd1f-9043-494c-824a-38dc4427ca20`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 884 tokens

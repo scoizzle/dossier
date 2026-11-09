@@ -1,6 +1,6 @@
 # django/core/signals
 
-- Subject: django/core/signals (id `4efc4724-1d60-4776-8933-43342fcdf7b1`)
+- Subject: django/core/signals (id `b7e83789-5673-418b-87f7-955a340842c6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 58 tokens

@@ -1,6 +1,6 @@
 # django/views/decorators/csp
 
-- Subject: django/views/decorators/csp (id `6389e460-e85a-4d5c-b089-874f4a867601`)
+- Subject: django/views/decorators/csp (id `7db135cc-afd6-48f4-b3b1-8b7807f8486a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 369 tokens

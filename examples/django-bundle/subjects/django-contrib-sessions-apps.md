@@ -1,6 +1,6 @@
 # django/contrib/sessions/apps
 
-- Subject: django/contrib/sessions/apps (id `ad68d2bd-b9e1-48d3-8681-dfd3dd2465e5`)
+- Subject: django/contrib/sessions/apps (id `563a4372-ca6f-443e-bb22-5f0f88556292`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 67 tokens

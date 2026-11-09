@@ -1,6 +1,6 @@
 # django/views/i18n
 
-- Subject: django/views/i18n (id `2e0d5512-e82e-45cc-93ee-37af4f7db131`)
+- Subject: django/views/i18n (id `bf16c110-b5fc-4cd6-92ba-5b21523328db`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

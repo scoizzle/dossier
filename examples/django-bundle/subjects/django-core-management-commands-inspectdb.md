@@ -1,6 +1,6 @@
 # django/core/management/commands/inspectdb
 
-- Subject: django/core/management/commands/inspectdb (id `69f4f5c4-3e00-445a-8200-7d7fc6006903`)
+- Subject: django/core/management/commands/inspectdb (id `48d62656-0b5e-49aa-9591-e1d6a4a2fc72`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

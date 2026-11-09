@@ -1,6 +1,6 @@
 # django/apps/registry
 
-- Subject: django/apps/registry (id `12390cea-dd54-40cf-bb3d-6ba9d26471ef`)
+- Subject: django/apps/registry (id `ac850f90-d80d-438d-a0ec-cd15afa9f4fa`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

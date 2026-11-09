@@ -1,6 +1,6 @@
 # django/core/mail/deprecation
 
-- Subject: django/core/mail/deprecation (id `ceab680d-a825-4852-b1e3-e7b91df58b49`)
+- Subject: django/core/mail/deprecation (id `9aeea299-0e89-4c20-8d92-5d9bc6da8a68`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 545 tokens

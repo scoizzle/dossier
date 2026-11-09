@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/search
 
-- Subject: docs/ref/contrib/postgres/search (id `c2a7ecc9-bedc-4936-a180-359f7c51786f`)
+- Subject: docs/ref/contrib/postgres/search (id `adcbb209-2f7a-4a8f-823f-fe963109bb09`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

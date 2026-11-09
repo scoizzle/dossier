@@ -1,6 +1,6 @@
 # django/contrib/gis/management/commands/inspectdb
 
-- Subject: django/contrib/gis/management/commands/inspectdb (id `4ffdc644-eb28-4aac-ace7-e21ab4d57754`)
+- Subject: django/contrib/gis/management/commands/inspectdb (id `80d7a327-ca3f-4e12-b843-1f9237e173fb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 189 tokens

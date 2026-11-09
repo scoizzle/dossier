@@ -1,6 +1,6 @@
 # django/core/management/commands/dbshell
 
-- Subject: django/core/management/commands/dbshell (id `4ecc0ef2-297c-4462-ac7e-093f0ee75225`)
+- Subject: django/core/management/commands/dbshell (id `dba0b809-1f4b-47d8-97f2-49a97d01c5bb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 394 tokens

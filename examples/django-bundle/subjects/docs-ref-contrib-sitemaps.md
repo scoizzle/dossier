@@ -1,6 +1,6 @@
 # docs/ref/contrib/sitemaps
 
-- Subject: docs/ref/contrib/sitemaps (id `a96454b1-d599-4853-9bb6-9c6cf6b0b93c`)
+- Subject: docs/ref/contrib/sitemaps (id `36f5c544-2fe3-4221-b3ae-4b364b31a500`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

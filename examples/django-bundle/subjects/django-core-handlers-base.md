@@ -1,6 +1,6 @@
 # django/core/handlers/base
 
-- Subject: django/core/handlers/base (id `79a20b16-e138-4fd4-863f-c0df703bb690`)
+- Subject: django/core/handlers/base (id `ab96bd2f-0308-4163-b13a-0fb744580f0b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 891 tokens

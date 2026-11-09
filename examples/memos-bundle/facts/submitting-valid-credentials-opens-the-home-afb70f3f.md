@@ -1,6 +1,6 @@
 # Fact afb70f3f
 
-Store id: 835ddf63-5ad3-48ab-9cb2-c4e3e035b799
+Store id: 503d2c8f-5f72-4e39-ae68-6837a0f9f01d
 
 ## Text
 
@@ -20,7 +20,7 @@ Submitting valid credentials opens the home screen.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.0126580+00:00`
+- posted_at: `2026-11-09T21:52:53.0121090+00:00`
 
 ## Refs
 

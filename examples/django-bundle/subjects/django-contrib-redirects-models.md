@@ -1,6 +1,6 @@
 # django/contrib/redirects/models
 
-- Subject: django/contrib/redirects/models (id `c829a7ba-c4cb-4ae9-811d-de8bb9189857`)
+- Subject: django/contrib/redirects/models (id `0e914e98-7ab9-4a89-aeb4-e354aec4d440`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 260 tokens

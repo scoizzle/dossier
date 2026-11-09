@@ -1,6 +1,6 @@
 # django/db/models/sql/constants
 
-- Subject: django/db/models/sql/constants (id `6b17c976-d953-4a52-a1d6-70c56d6bff4b`)
+- Subject: django/db/models/sql/constants (id `9080ccd8-d61b-42d8-9929-f4c36e5f34a5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 210 tokens

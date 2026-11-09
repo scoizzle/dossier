@@ -1,6 +1,6 @@
 # django/db/models/functions/window
 
-- Subject: django/db/models/functions/window (id `86d43710-0be2-400f-a9a5-698ffdf9724b`)
+- Subject: django/db/models/functions/window (id `2393f70c-b109-478d-840b-99c904284708`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 744 tokens

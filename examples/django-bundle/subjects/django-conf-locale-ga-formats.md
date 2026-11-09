@@ -1,6 +1,6 @@
 # django/conf/locale/ga/formats
 
-- Subject: django/conf/locale/ga/formats (id `25e849af-bba5-4fdf-9d24-9c8a9fa3350a`)
+- Subject: django/conf/locale/ga/formats (id `2d5cb197-c272-4856-b253-0e660780ada4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 191 tokens

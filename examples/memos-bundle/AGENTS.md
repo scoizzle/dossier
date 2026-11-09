@@ -4,7 +4,9 @@ This directory is a Dossier bundle: a read-only, self-describing export of a fac
 
 Start here: [INDEX.md](INDEX.md)
 
-Drill-down path: README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md
+Drill-down path: AGENTS.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md
+
+In an index file a row of kind `group` is a folder, not a subject: its file column links to another index file under `index/` that lists what is inside. Open the group that matches your question and repeat until a row links to `subjects/`. A bundle with many subjects is split this way on purpose, so every index file stays under 6000 tokens; a row being a folder is normal. A small bundle has only INDEX.md, where every row is a subject.
 
 Every claim ends in a bracketed fact key, like `[3fa9c1d2]`. That key resolves to a file under `facts/`: `facts/<slug>-<key>.md`, where `<slug>` is the first words of the fact text and `<key>` is the same 8-character key (a few more characters only if two keys collide). In subject files the bracketed key is already a link to that file, and the file carries the fact's store id on a `Store id:` line.
 

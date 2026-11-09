@@ -1,6 +1,6 @@
 # django/core/management/__init__
 
-- Subject: django/core/management/__init__ (id `a9100d21-f4aa-41b8-9008-9faa27075678`)
+- Subject: django/core/management/__init__ (id `2686a7aa-88ed-4a71-bb8b-d697b702db5e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

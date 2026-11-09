@@ -126,7 +126,7 @@ public sealed class PublishTests
         {
             "Dossier bundle",
             "Start here: [INDEX.md]",
-            "README.md -> INDEX.md -> subjects/<slug>.md -> facts/<slug>-<key>.md",
+            "AGENTS.md -> INDEX.md -> index/<group>.md (repeat while the row is a group) -> subjects/<slug>.md -> facts/<slug>-<key>.md",
             "bracketed fact key",
             "resolves to a file under `facts/`",
             "token estimate",
@@ -780,5 +780,188 @@ public sealed class PublishTests
         await Assert.That(a[0]).IsEqualTo($"assets/home/{shotOne.Sha[..8]}-home-page.png");
         await Assert.That(b.SequenceEqual(a)).IsTrue();
         await Assert.That(File.ReadAllBytes(Path.Combine(Out(one), a[0])).SequenceEqual(File.ReadAllBytes(Path.Combine(Out(two), b[0])))).IsTrue();
+    }
+
+    // ---- tiered index ----------------------------------------------------------------------
+
+    private static void SeedTree(TempDb db, int areas, int itemsPerArea)
+    {
+        for (var a = 0; a < areas; a++)
+        {
+            for (var i = 0; i < itemsPerArea; i++)
+            {
+                db.Store.PostFacts(Fixtures.Post($"area-{a:00}/item-{i:00}", Fixtures.Fact($"Item {i} of area {a} does something.")));
+            }
+        }
+    }
+
+    private static Dictionary<string, string> IndexFiles(Dictionary<string, string> files) =>
+        files.Where(kv => kv.Key == "INDEX.md" || kv.Key.StartsWith("index/", StringComparison.Ordinal))
+            .ToDictionary(kv => kv.Key, kv => kv.Value, StringComparer.Ordinal);
+
+    [Test]
+    public async Task Publish_IndexRespectsTokenCap()
+    {
+        using var db = new TempDb();
+        SeedTree(db, 20, 20);
+
+        // The single flat index would be far over the cap.
+        var cap = 1500;
+        db.Store.Publish(Options(db, o => o.IndexMaxTokens = 1_000_000));
+        var single = File.ReadAllText(Path.Combine(Out(db), "INDEX.md"));
+        await Assert.That(DossierStore.EstimateTokens(single)).IsGreaterThan(cap);
+
+        db.Store.Publish(Options(db, o => o.IndexMaxTokens = cap));
+        var indexes = IndexFiles(ReadAll(Out(db)));
+        await Assert.That(indexes.Count).IsGreaterThan(1);
+        foreach (var (path, content) in indexes)
+        {
+            await Assert.That(DossierStore.EstimateTokens(content)).IsLessThanOrEqualTo(cap);
+        }
+
+        var root = indexes["INDEX.md"];
+        await Assert.That(root).Contains($"- Index files: {indexes.Count}");
+        var largest = indexes.Values.Max(DossierStore.EstimateTokens);
+        await Assert.That(root).Contains($"- Largest index file, tokens: {largest}");
+    }
+
+    [Test]
+    public async Task Publish_IndexIsDeterministic()
+    {
+        using var one = new TempDb();
+        using var two = new TempDb();
+        SeedTree(one, 12, 12);
+        SeedTree(two, 12, 12);
+
+        one.Store.Publish(Options(one, o => o.IndexMaxTokens = 800));
+        two.Store.Publish(Options(two, o => o.IndexMaxTokens = 800));
+        one.Store.Publish(Options(one, o => o.IndexMaxTokens = 800));
+
+        var a = IndexFiles(ReadAll(Out(one)));
+        var b = IndexFiles(ReadAll(Out(two)));
+        await Assert.That(a.Count).IsGreaterThan(1);
+        await Assert.That(a.Keys.OrderBy(k => k, StringComparer.Ordinal).SequenceEqual(b.Keys.OrderBy(k => k, StringComparer.Ordinal))).IsTrue();
+        foreach (var (path, content) in a)
+        {
+            await Assert.That(b[path]).IsEqualTo(content);
+        }
+    }
+
+    [Test]
+    public async Task Publish_IndexLinksResolveAndReachEverySubject()
+    {
+        using var db = new TempDb();
+        SeedTree(db, 15, 15);
+        db.Store.PostFacts(Fixtures.Post("Top Level", Fixtures.Fact("Lives at the root.")));
+        db.Store.Publish(Options(db, o => o.IndexMaxTokens = 700));
+        var files = ReadAll(Out(db));
+
+        var link = new Regex(@"\]\(([^)]+)\)", RegexOptions.Compiled);
+        string Resolve(string from, string target)
+        {
+            var dir = from.Contains('/') ? from[..from.LastIndexOf('/')] : string.Empty;
+            return Path.GetFullPath(Path.Combine("/r", dir, target))[3..];
+        }
+
+        // Every link in every index file exists.
+        foreach (var (path, content) in IndexFiles(files))
+        {
+            foreach (Match m in link.Matches(content))
+            {
+                var target = m.Groups[1].Value;
+                if (target.EndsWith(".md", StringComparison.Ordinal) && !target.StartsWith("http", StringComparison.Ordinal))
+                {
+                    await Assert.That(files.ContainsKey(Resolve(path, target))).IsTrue();
+                }
+            }
+        }
+
+        // Follow only group rows from INDEX.md; collect subject files reached.
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        var reached = new HashSet<string>(StringComparer.Ordinal);
+        var queue = new Queue<string>();
+        queue.Enqueue("INDEX.md");
+        while (queue.Count > 0)
+        {
+            var current = queue.Dequeue();
+            if (!seen.Add(current))
+            {
+                continue;
+            }
+
+            foreach (var row in files[current].Split('\n').Where(l => l.StartsWith("| ", StringComparison.Ordinal) && !l.StartsWith("| ---", StringComparison.Ordinal) && !l.StartsWith("| subject", StringComparison.Ordinal)))
+            {
+                var cells = row.Split('|');
+                var target = link.Match(cells[^2]).Groups[1].Value;
+                var resolved = Resolve(current, target);
+                if (cells[2].Trim() == "group")
+                {
+                    queue.Enqueue(resolved);
+                }
+                else
+                {
+                    reached.Add(resolved);
+                }
+            }
+        }
+
+        var subjectFiles = files.Keys.Where(k => k.StartsWith("subjects/", StringComparison.Ordinal)).ToHashSet(StringComparer.Ordinal);
+        await Assert.That(subjectFiles.Count).IsEqualTo(15 * 15 + 1);
+        await Assert.That(reached.SetEquals(subjectFiles)).IsTrue();
+        await Assert.That(seen.Count).IsEqualTo(IndexFiles(files).Count);
+    }
+
+    [Test]
+    public async Task Publish_IndexShowsGroupsWhenTooLarge()
+    {
+        using var db = new TempDb();
+        for (var g = 0; g < 4; g++)
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                db.Store.PostFacts(Fixtures.Post($"big/g{g}/leaf-{i}", Fixtures.Fact($"Leaf {i} in g{g} does something.")));
+            }
+        }
+
+        db.Store.PostFacts(Fixtures.Post("small/only", Fixtures.Fact("A small group.")));
+        db.Store.Publish(Options(db, o => o.IndexMaxTokens = 700));
+        var files = ReadAll(Out(db));
+
+        var big = files["index/big.md"];
+        await Assert.That(big).Contains("| g0/ | group |");
+        await Assert.That(big).Contains("(big-g0.md)");
+        await Assert.That(big.Contains("](../subjects/", StringComparison.Ordinal)).IsFalse();
+        await Assert.That(files["index/big-g0.md"]).Contains("](../subjects/big-g0-leaf-0.md)");
+        await Assert.That(files["index/big-g0.md"]).Contains("Up: [index/big.md](big.md)");
+
+        var root = files["INDEX.md"];
+        await Assert.That(root).Contains("](index/big.md)");
+        await Assert.That(root).Contains("](index/small.md)");
+
+        var manifest = JsonDocument.Parse(files["manifest.json"]).RootElement.GetProperty("index_files");
+        await Assert.That(manifest.GetProperty("index/big.md").GetInt32()).IsEqualTo(DossierStore.EstimateTokens(big));
+        await Assert.That(manifest.EnumerateObject().Count()).IsEqualTo(IndexFiles(files).Count);
+    }
+
+    [Test]
+    public async Task Publish_AgentsMdDescribesTieredIndex()
+    {
+        using var db = new TempDb();
+        Seed(db);
+        db.Store.Publish(Options(db));
+        var agents = File.ReadAllText(Path.Combine(Out(db), "AGENTS.md"));
+
+        await Assert.That(agents).Contains("index/<group>.md (repeat while the row is a group)");
+        await Assert.That(agents).Contains("index/");
+        await Assert.That(agents).Contains("a row being a folder is normal");
+    }
+
+    [Test]
+    public async Task Publish_SmallBundleHasOnlyRootIndex()
+    {
+        using var db = new TempDb();
+        Seed(db);
+        db.Store.Publish(Options(db));
+        await Assert.That(IndexFiles(ReadAll(Out(db))).Count).IsEqualTo(1);
     }
 }

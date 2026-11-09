@@ -1,6 +1,6 @@
 # django/contrib/auth/management/commands/createsuperuser
 
-- Subject: django/contrib/auth/management/commands/createsuperuser (id `69a672c1-e12b-43d8-9a48-564ca524d788`)
+- Subject: django/contrib/auth/management/commands/createsuperuser (id `65e526fb-639b-4d8b-86d0-551108b3b25a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

@@ -1,6 +1,6 @@
 # docs/ref/files/index
 
-- Subject: docs/ref/files/index (id `523afe14-fb8a-4d17-90b5-e6b3281f0b0c`)
+- Subject: docs/ref/files/index (id `9297bc40-31d6-49bc-961d-cdaff581f767`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 81 tokens

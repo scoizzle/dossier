@@ -1,6 +1,6 @@
 # django/views/decorators/vary
 
-- Subject: django/views/decorators/vary (id `14cfd7ee-fb25-4f07-b22a-5234dffe6d14`)
+- Subject: django/views/decorators/vary (id `98ab68c5-e602-48c1-8298-f248acc4ddb1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 325 tokens

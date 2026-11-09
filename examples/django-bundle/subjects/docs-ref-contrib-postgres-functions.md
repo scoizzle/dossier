@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/functions
 
-- Subject: docs/ref/contrib/postgres/functions (id `ff049e83-2ee5-4f09-a9bf-59e56b5167cf`)
+- Subject: docs/ref/contrib/postgres/functions (id `a58fb971-6915-4e16-b80f-8d7f75e1325f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 564 tokens

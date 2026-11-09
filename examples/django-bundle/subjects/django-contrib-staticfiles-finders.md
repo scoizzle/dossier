@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/finders
 
-- Subject: django/contrib/staticfiles/finders (id `48f5a8bf-585c-4d93-9766-90dbd07823e8`)
+- Subject: django/contrib/staticfiles/finders (id `d3b26a01-d3ad-4776-82f6-74c248d6d0e2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 887 tokens

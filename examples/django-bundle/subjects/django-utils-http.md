@@ -1,6 +1,6 @@
 # django/utils/http
 
-- Subject: django/utils/http (id `aaf0fc4c-dbbe-4f2e-b9e7-0de29395d516`)
+- Subject: django/utils/http (id `b0832399-23af-4c8a-b34b-f70d1d444c13`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 879 tokens

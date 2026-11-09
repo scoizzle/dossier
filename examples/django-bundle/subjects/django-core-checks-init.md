@@ -1,6 +1,6 @@
 # django/core/checks/__init__
 
-- Subject: django/core/checks/__init__ (id `38ce805a-aea0-4c91-aa99-86e873f95319`)
+- Subject: django/core/checks/__init__ (id `52b533c2-6c6b-4c7e-b18d-7aaa256716f2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 326 tokens

@@ -1,6 +1,6 @@
 # django/db/models/fields/generated
 
-- Subject: django/db/models/fields/generated (id `f0838b58-08a0-4a5e-97cd-759f37edd11f`)
+- Subject: django/db/models/fields/generated (id `849c5b54-0d96-4593-95f0-aece64f0bbad`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

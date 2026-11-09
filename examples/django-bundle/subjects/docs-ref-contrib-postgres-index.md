@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/index
 
-- Subject: docs/ref/contrib/postgres/index (id `6ce13afd-11b2-43b8-b3bd-e801c9691686`)
+- Subject: docs/ref/contrib/postgres/index (id `608f07b2-ae4e-46ed-97d9-b607efd39cee`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 407 tokens

@@ -1,6 +1,6 @@
 # django/core/mail/handler
 
-- Subject: django/core/mail/handler (id `f867d754-0bef-456d-a3f7-0ce45cb4bf46`)
+- Subject: django/core/mail/handler (id `f0a77f6b-7c5c-44d7-a2f6-07d4cd8ac16d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 734 tokens

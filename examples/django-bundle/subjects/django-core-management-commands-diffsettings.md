@@ -1,6 +1,6 @@
 # django/core/management/commands/diffsettings
 
-- Subject: django/core/management/commands/diffsettings (id `12b107df-8990-4004-9daf-24b8440ad670`)
+- Subject: django/core/management/commands/diffsettings (id `01cee20d-cc35-47df-b3d2-de2dcbbe38a7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 778 tokens

@@ -1,6 +1,6 @@
 # django/db/models/functions/math
 
-- Subject: django/db/models/functions/math (id `a57b9e1e-1ce1-40cf-8790-e98819224773`)
+- Subject: django/db/models/functions/math (id `ebe82619-ddd8-4922-b3c3-db5c2f62c8af`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

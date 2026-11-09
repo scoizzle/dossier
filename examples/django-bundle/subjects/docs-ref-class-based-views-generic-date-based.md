@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/generic-date-based
 
-- Subject: docs/ref/class-based-views/generic-date-based (id `0ec8d4d1-d7ee-4a48-8159-d0e7cdf788a4`)
+- Subject: docs/ref/class-based-views/generic-date-based (id `42c617fe-b29f-4da0-8719-07c09aafbab2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

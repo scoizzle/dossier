@@ -1,6 +1,6 @@
 # django/views/generic/list
 
-- Subject: django/views/generic/list (id `c417cb68-7f13-4de1-acee-012a2dc3ab53`)
+- Subject: django/views/generic/list (id `dad42f4b-dcd2-42ff-a72d-851fe4e68cc7`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

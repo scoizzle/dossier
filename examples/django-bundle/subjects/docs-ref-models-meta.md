@@ -1,6 +1,6 @@
 # docs/ref/models/meta
 
-- Subject: docs/ref/models/meta (id `7ab9e017-5798-4cc8-92fc-7f8872f47cb0`)
+- Subject: docs/ref/models/meta (id `ef4efb3c-ae1b-4765-8da7-3f51f154292f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

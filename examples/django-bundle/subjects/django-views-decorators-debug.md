@@ -1,6 +1,6 @@
 # django/views/decorators/debug
 
-- Subject: django/views/decorators/debug (id `bf4d7ac6-e1a0-40d2-9087-8b572b6f830c`)
+- Subject: django/views/decorators/debug (id `eaa18bc1-8350-449f-8a2b-a05052d00f6f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

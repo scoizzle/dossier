@@ -1,6 +1,6 @@
 # django/views/decorators/cache
 
-- Subject: django/views/decorators/cache (id `3237d892-9550-41ad-8018-85a48fe43b0a`)
+- Subject: django/views/decorators/cache (id `c4d49898-565b-4f6e-9f4d-6552ee99386b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 668 tokens

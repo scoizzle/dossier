@@ -1,6 +1,6 @@
 # django/contrib/admin/exceptions
 
-- Subject: django/contrib/admin/exceptions (id `91f4d281-8607-452d-90ce-7f45cd55ce2c`)
+- Subject: django/contrib/admin/exceptions (id `4d5b1cdf-c282-4850-8c46-b40e94a3a3d5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 211 tokens

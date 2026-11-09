@@ -1,6 +1,6 @@
 # django/conf/locale/gd/formats
 
-- Subject: django/conf/locale/gd/formats (id `153a17b5-bd5b-497e-adf3-e67b5fcea95e`)
+- Subject: django/conf/locale/gd/formats (id `ea7e27a0-fcd0-41f2-ab65-e4c79da77426`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 199 tokens

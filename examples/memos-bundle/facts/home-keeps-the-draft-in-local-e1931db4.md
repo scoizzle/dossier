@@ -1,6 +1,6 @@
 # Fact e1931db4
 
-Store id: d588543a-0f3b-4f6f-81f0-5ca0a8830e10
+Store id: df39969d-85dd-430b-bec2-71b62a1be852
 
 ## Text
 
@@ -20,7 +20,7 @@ Home keeps the draft in local storage after a reload.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

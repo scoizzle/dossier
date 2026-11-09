@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/storage
 
-- Subject: django/contrib/staticfiles/storage (id `2fb2d5e4-5294-4ae0-a32b-b2c8842627c8`)
+- Subject: django/contrib/staticfiles/storage (id `45488d24-b28e-4c1a-b1be-3610edc39f65`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

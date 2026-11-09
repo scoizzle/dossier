@@ -1,6 +1,6 @@
 # docs/howto/outputting-pdf
 
-- Subject: docs/howto/outputting-pdf (id `8999f878-f02e-4246-9bfe-20c401e1ead9`)
+- Subject: docs/howto/outputting-pdf (id `6448815d-5872-41ba-9d57-588218dd87f5`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 884 tokens

@@ -1,6 +1,6 @@
 # docs/ref/templates/builtins
 
-- Subject: docs/ref/templates/builtins (id `b2376507-8955-400e-9d40-01d62364cc93`)
+- Subject: docs/ref/templates/builtins (id `c9b15193-f2a7-464f-894c-91c54df086bc`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

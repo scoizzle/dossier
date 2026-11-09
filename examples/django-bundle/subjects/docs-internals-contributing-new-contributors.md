@@ -1,6 +1,6 @@
 # docs/internals/contributing/new-contributors
 
-- Subject: docs/internals/contributing/new-contributors (id `515c424f-bbea-4f41-a292-7fee05a2fe17`)
+- Subject: docs/internals/contributing/new-contributors (id `f08992d6-02c8-42e3-8a83-6fd2a8ca6942`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 897 tokens

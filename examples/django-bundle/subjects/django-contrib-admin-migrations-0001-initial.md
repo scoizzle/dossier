@@ -1,6 +1,6 @@
 # django/contrib/admin/migrations/0001_initial
 
-- Subject: django/contrib/admin/migrations/0001_initial (id `e8a97dd2-9c91-4768-8668-ee90aca6fd91`)
+- Subject: django/contrib/admin/migrations/0001_initial (id `154c57ec-913d-4573-b2dc-301cf4b0c806`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 371 tokens

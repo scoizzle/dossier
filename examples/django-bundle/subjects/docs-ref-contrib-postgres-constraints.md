@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/constraints
 
-- Subject: docs/ref/contrib/postgres/constraints (id `a7b65718-bcb0-49d8-ac52-4419dc2c6908`)
+- Subject: docs/ref/contrib/postgres/constraints (id `26e2c833-343d-4b7f-92c6-04d8a9fdc115`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

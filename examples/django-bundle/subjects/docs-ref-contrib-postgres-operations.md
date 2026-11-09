@@ -1,6 +1,6 @@
 # docs/ref/contrib/postgres/operations
 
-- Subject: docs/ref/contrib/postgres/operations (id `2060db46-cd89-4352-ae79-02ab41fa4a48`)
+- Subject: docs/ref/contrib/postgres/operations (id `ec9b1012-15d9-4808-b9ee-b5e64ab4ad5f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

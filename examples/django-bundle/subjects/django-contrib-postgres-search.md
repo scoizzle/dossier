@@ -1,6 +1,6 @@
 # django/contrib/postgres/search
 
-- Subject: django/contrib/postgres/search (id `445f3ca8-b26b-4677-b6fc-14738add79e1`)
+- Subject: django/contrib/postgres/search (id `940c6704-d139-4853-96bb-a5955e24bfac`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

@@ -1,6 +1,6 @@
 # docs/ref/class-based-views/mixins-multiple-object
 
-- Subject: docs/ref/class-based-views/mixins-multiple-object (id `fac134e7-527f-48f5-be29-e522a541c609`)
+- Subject: docs/ref/class-based-views/mixins-multiple-object (id `c196809d-fc38-4a9f-a207-d6d340773943`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 896 tokens

@@ -1,6 +1,6 @@
 # django/utils/csp
 
-- Subject: django/utils/csp (id `bbb4ba87-0f6b-4a23-a7c7-ae3fc1373554`)
+- Subject: django/utils/csp (id `a6f23251-8e20-4ae6-ab28-0a83f7415c9b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 894 tokens

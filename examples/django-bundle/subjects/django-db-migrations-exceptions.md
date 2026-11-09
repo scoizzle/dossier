@@ -1,6 +1,6 @@
 # django/db/migrations/exceptions
 
-- Subject: django/db/migrations/exceptions (id `5c7442f5-eca9-4856-8eab-ebdaed129944`)
+- Subject: django/db/migrations/exceptions (id `ee947a9b-5988-4bae-951c-ae1834bbbe8e`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 470 tokens

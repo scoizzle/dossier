@@ -1,6 +1,6 @@
 # docs/internals/security
 
-- Subject: docs/internals/security (id `c97efb39-066d-4cd2-917c-4db4fe544169`)
+- Subject: docs/internals/security (id `f4314cac-b097-4e5f-85f6-251e1084bd81`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

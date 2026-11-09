@@ -1,6 +1,6 @@
 # django/contrib/sites/checks
 
-- Subject: django/contrib/sites/checks (id `af1bae81-0f2c-444e-8870-716452e4894c`)
+- Subject: django/contrib/sites/checks (id `ffcb46a5-bc78-4b15-a4c5-c369c97af5ec`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 219 tokens

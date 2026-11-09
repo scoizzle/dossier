@@ -1,6 +1,6 @@
 # docs/ref/contrib/flatpages
 
-- Subject: docs/ref/contrib/flatpages (id `9ea03f02-088f-4bec-bbe3-f2dda7d2205b`)
+- Subject: docs/ref/contrib/flatpages (id `93850351-2c1b-48f7-9e71-c118cfa9c48a`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

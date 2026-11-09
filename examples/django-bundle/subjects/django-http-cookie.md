@@ -1,6 +1,6 @@
 # django/http/cookie
 
-- Subject: django/http/cookie (id `8218f969-98f8-42d9-9588-f60bd8427441`)
+- Subject: django/http/cookie (id `d863ec4a-1653-4235-87df-003d9ff17b27`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 169 tokens

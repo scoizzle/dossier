@@ -1,6 +1,6 @@
 # django/contrib/postgres/aggregates/statistics
 
-- Subject: django/contrib/postgres/aggregates/statistics (id `d138cf02-f4ef-4ed7-8047-73ba7e499323`)
+- Subject: django/contrib/postgres/aggregates/statistics (id `3b81ce12-cc50-47f0-8682-f0e58264f1c2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 490 tokens

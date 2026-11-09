@@ -1,6 +1,6 @@
 # django/core/checks/mail
 
-- Subject: django/core/checks/mail (id `b63cb850-7553-45cd-bfba-43c8b152bc25`)
+- Subject: django/core/checks/mail (id `0732ae3b-81e3-4d67-9a23-4adc7f6abd7f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 504 tokens

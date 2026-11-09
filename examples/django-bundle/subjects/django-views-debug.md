@@ -1,6 +1,6 @@
 # django/views/debug
 
-- Subject: django/views/debug (id `6c890684-fda6-4248-8dd8-db75c546c840`)
+- Subject: django/views/debug (id `e91d0732-5810-444d-aa1c-de98eeef0509`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 895 tokens

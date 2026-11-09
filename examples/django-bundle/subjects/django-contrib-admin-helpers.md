@@ -1,6 +1,6 @@
 # django/contrib/admin/helpers
 
-- Subject: django/contrib/admin/helpers (id `b1684946-eb45-42ff-b822-770ad26a0a81`)
+- Subject: django/contrib/admin/helpers (id `b0070aa5-cc24-49a1-a42b-cdd2639eb754`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

@@ -1,6 +1,6 @@
 # django/core/management/sql
 
-- Subject: django/core/management/sql (id `af88f01c-cc88-4d16-b170-9050e2d25f2c`)
+- Subject: django/core/management/sql (id `25be518f-0d6a-461d-9a13-71ceaa4db2c1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 274 tokens

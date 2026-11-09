@@ -1,6 +1,6 @@
 # django/views/decorators/http
 
-- Subject: django/views/decorators/http (id `37d7e81e-a5cc-4b05-be20-e708fdd6a55f`)
+- Subject: django/views/decorators/http (id `000c7f24-91b7-48df-8669-2e0276a7fb44`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

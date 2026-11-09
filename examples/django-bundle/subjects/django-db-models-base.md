@@ -1,6 +1,6 @@
 # django/db/models/base
 
-- Subject: django/db/models/base (id `51957820-0dba-4b21-b4a3-158e09679436`)
+- Subject: django/db/models/base (id `29e6d210-faf0-4722-93c2-2e5862429c86`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 899 tokens

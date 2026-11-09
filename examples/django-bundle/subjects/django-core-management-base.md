@@ -1,6 +1,6 @@
 # django/core/management/base
 
-- Subject: django/core/management/base (id `6da298d3-8829-4ddb-b23c-e8cd67575664`)
+- Subject: django/core/management/base (id `3c73551c-f3c1-4b9b-bebd-d33d24973b4c`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

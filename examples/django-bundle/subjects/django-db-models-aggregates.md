@@ -1,6 +1,6 @@
 # django/db/models/aggregates
 
-- Subject: django/db/models/aggregates (id `1a3b2ace-8d59-4888-a84c-dbe177cd079d`)
+- Subject: django/db/models/aggregates (id `bb3351e7-6d8a-4319-82c7-729965938ae4`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 884 tokens

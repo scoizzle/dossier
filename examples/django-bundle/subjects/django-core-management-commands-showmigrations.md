@@ -1,6 +1,6 @@
 # django/core/management/commands/showmigrations
 
-- Subject: django/core/management/commands/showmigrations (id `ced33596-1b2e-4ee1-a35a-c692c0e4d8da`)
+- Subject: django/core/management/commands/showmigrations (id `701fbaf5-9bc9-43aa-a873-c5382c93ba47`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

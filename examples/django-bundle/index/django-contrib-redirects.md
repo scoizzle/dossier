@@ -1,0 +1,14 @@
+# Index: django/contrib/redirects/
+
+This file lists every subject under `django/contrib/redirects/`, one row per subject, grouped by the `/`-separated segments of its name. The subject cell is the subject's own name; a subject is indented two spaces per level of its name path below this file's scope, so its position shows its depth. `tokens` is the estimated cost (chars/4, rounded up) of reading that row's file. Pick the row you need and read only that file.
+
+| subject | kind | facts | conflicts | gaps | tokens | file |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+|   django/contrib/redirects/admin | subject | 2 | 0 | 0 | 129 | [subjects/django-contrib-redirects-admin.md](../subjects/django-contrib-redirects-admin.md) |
+|   django/contrib/redirects/apps | subject | 2 | 0 | 0 | 127 | [subjects/django-contrib-redirects-apps.md](../subjects/django-contrib-redirects-apps.md) |
+|   django/contrib/redirects/middleware | subject | 7 | 0 | 0 | 471 | [subjects/django-contrib-redirects-middleware.md](../subjects/django-contrib-redirects-middleware.md) |
+|     django/contrib/redirects/migrations/0001_initial | subject | 3 | 0 | 0 | 336 | [subjects/django-contrib-redirects-migrations-0001-initial.md](../subjects/django-contrib-redirects-migrations-0001-initial.md) |
+|     django/contrib/redirects/migrations/0002_alter_redirect_new_path_help_text | subject | 3 | 0 | 0 | 199 | [subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text.md](../subjects/django-contrib-redirects-migrations-0002-alter-redirect-new-path-help-text.md) |
+|   django/contrib/redirects/models | subject | 4 | 0 | 0 | 289 | [subjects/django-contrib-redirects-models.md](../subjects/django-contrib-redirects-models.md) |
+
+Up: [index/django-contrib.md](django-contrib.md)

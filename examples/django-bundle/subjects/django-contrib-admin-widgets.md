@@ -1,6 +1,6 @@
 # django/contrib/admin/widgets
 
-- Subject: django/contrib/admin/widgets (id `71e67893-ff07-4e2e-8c25-b3ae62dc8088`)
+- Subject: django/contrib/admin/widgets (id `66c5497d-fe46-4487-9571-088d41a140f2`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 885 tokens

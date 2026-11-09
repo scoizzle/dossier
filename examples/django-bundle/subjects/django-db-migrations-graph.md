@@ -1,6 +1,6 @@
 # django/db/migrations/graph
 
-- Subject: django/db/migrations/graph (id `423d3550-f67c-440a-96c9-cd49bd7bb1f1`)
+- Subject: django/db/migrations/graph (id `725bf73a-c75c-4545-84d0-4ef4f2fe5462`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 889 tokens

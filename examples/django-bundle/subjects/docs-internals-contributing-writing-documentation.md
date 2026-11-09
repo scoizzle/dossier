@@ -1,6 +1,6 @@
 # docs/internals/contributing/writing-documentation
 
-- Subject: docs/internals/contributing/writing-documentation (id `d02a38e1-7e0e-4ec0-8658-20ebc5a23bc7`)
+- Subject: docs/internals/contributing/writing-documentation (id `1133e720-c50a-4192-84fe-a909995098b6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 892 tokens

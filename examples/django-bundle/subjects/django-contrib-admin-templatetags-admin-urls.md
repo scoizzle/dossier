@@ -1,6 +1,6 @@
 # django/contrib/admin/templatetags/admin_urls
 
-- Subject: django/contrib/admin/templatetags/admin_urls (id `afe94977-f151-4e6b-85ea-70f2f5800cf5`)
+- Subject: django/contrib/admin/templatetags/admin_urls (id `15356a15-cb0e-409f-aa93-66fce1b7a920`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 587 tokens

@@ -1,6 +1,6 @@
 # django/templatetags/l10n
 
-- Subject: django/templatetags/l10n (id `392e37b3-9d3c-4040-8aec-eafb0560fb3c`)
+- Subject: django/templatetags/l10n (id `1c9c2434-e6e0-4f30-916a-6ab3d3b963ab`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 389 tokens

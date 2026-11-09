@@ -1,6 +1,6 @@
 # django/core/files/utils
 
-- Subject: django/core/files/utils (id `f8fbd2eb-173d-4d36-988f-5b6860f9694c`)
+- Subject: django/core/files/utils (id `f2992de7-8dcd-4792-8feb-2b977f79b7a9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 686 tokens

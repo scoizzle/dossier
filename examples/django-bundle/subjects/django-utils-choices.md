@@ -1,6 +1,6 @@
 # django/utils/choices
 
-- Subject: django/utils/choices (id `8205b15a-57ee-4ca0-9daf-0525d1a1f377`)
+- Subject: django/utils/choices (id `aba3b963-39b2-46bd-9151-9f1c873cb74f`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 890 tokens

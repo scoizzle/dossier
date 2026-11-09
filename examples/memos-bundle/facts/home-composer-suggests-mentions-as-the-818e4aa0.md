@@ -1,6 +1,6 @@
 # Fact 818e4aa0
 
-Store id: 5cfc8d9d-1f0e-4cb0-84b7-1fb53edec719
+Store id: 14d0225f-2a38-4c7a-a4a9-1e6815ba7de7
 
 ## Text
 
@@ -20,7 +20,7 @@ Home composer suggests @mentions as the user types a name.
 - actor: `dossier-cli`
 - actor_type: `tool`
 - channel: `cli`
-- posted_at: `2026-11-09T21:31:29.3042220+00:00`
+- posted_at: `2026-11-09T21:52:53.3156420+00:00`
 
 ## Refs
 

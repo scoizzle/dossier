@@ -1,6 +1,6 @@
 # django/urls/conf
 
-- Subject: django/urls/conf (id `e4e485df-facb-46d9-8b2f-0ef061b062c6`)
+- Subject: django/urls/conf (id `b95eeac8-ed89-4d99-80f6-31494bfc367b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 781 tokens

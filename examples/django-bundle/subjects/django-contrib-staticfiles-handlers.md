@@ -1,6 +1,6 @@
 # django/contrib/staticfiles/handlers
 
-- Subject: django/contrib/staticfiles/handlers (id `fb1667af-5928-4e4c-980f-0ab43ff27cb7`)
+- Subject: django/contrib/staticfiles/handlers (id `b374ec2a-a8c3-46ac-b040-de360dad3783`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 888 tokens

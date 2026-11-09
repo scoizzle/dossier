@@ -1,6 +1,6 @@
 # django/test/client
 
-- Subject: django/test/client (id `4c6b77bc-1f35-4281-acbb-8fb54d471531`)
+- Subject: django/test/client (id `8e2c0d17-3996-41bd-a07c-a894c92ce925`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

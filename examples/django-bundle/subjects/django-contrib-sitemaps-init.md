@@ -1,6 +1,6 @@
 # django/contrib/sitemaps/__init__
 
-- Subject: django/contrib/sitemaps/__init__ (id `565945fe-4c14-4ba2-8e88-3b58a9121d60`)
+- Subject: django/contrib/sitemaps/__init__ (id `623f43e5-ac25-4332-84af-eb8a16b6cf62`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 882 tokens

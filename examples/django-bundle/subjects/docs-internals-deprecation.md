@@ -1,6 +1,6 @@
 # docs/internals/deprecation
 
-- Subject: docs/internals/deprecation (id `a6595278-8d4c-4335-834e-a4cf8de7441d`)
+- Subject: docs/internals/deprecation (id `49916015-d549-45d8-9b51-7649aafd92cb`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 898 tokens

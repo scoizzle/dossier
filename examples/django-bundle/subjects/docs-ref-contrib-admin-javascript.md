@@ -1,6 +1,6 @@
 # docs/ref/contrib/admin/javascript
 
-- Subject: docs/ref/contrib/admin/javascript (id `b8adb9ac-49be-40c6-baca-d9486363eb5b`)
+- Subject: docs/ref/contrib/admin/javascript (id `7d6cdbc2-a7c1-4d56-a65b-c5e8346fce47`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 766 tokens

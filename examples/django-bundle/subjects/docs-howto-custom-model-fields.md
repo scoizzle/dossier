@@ -1,6 +1,6 @@
 # docs/howto/custom-model-fields
 
-- Subject: docs/howto/custom-model-fields (id `c826cc3c-55b9-4a3c-848c-e72d1daaa09c`)
+- Subject: docs/howto/custom-model-fields (id `49c46d97-716e-4b0d-aff0-503b343b15aa`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 893 tokens

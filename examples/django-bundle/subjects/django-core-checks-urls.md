@@ -1,6 +1,6 @@
 # django/core/checks/urls
 
-- Subject: django/core/checks/urls (id `7425afe5-7c4a-4b13-b165-88bf8e12d65a`)
+- Subject: django/core/checks/urls (id `d897a53f-36ac-4152-adaa-3700f3e488e6`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 883 tokens

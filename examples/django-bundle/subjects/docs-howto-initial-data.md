@@ -1,6 +1,6 @@
 # docs/howto/initial-data
 
-- Subject: docs/howto/initial-data (id `35e8c532-d8a9-4675-9a4b-c555f3c89bb6`)
+- Subject: docs/howto/initial-data (id `e7cb8b52-3dd3-4a45-af6a-bd6f9117391d`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 874 tokens

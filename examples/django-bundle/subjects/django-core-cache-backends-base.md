@@ -1,6 +1,6 @@
 # django/core/cache/backends/base
 
-- Subject: django/core/cache/backends/base (id `f53ae637-8547-407f-82e6-884776bd83e2`)
+- Subject: django/core/cache/backends/base (id `6cdddfad-b0f5-47be-841c-20016130b9e1`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 900 tokens

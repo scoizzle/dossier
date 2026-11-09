@@ -1,6 +1,6 @@
 # docs/releases/1.6.6
 
-- Subject: docs/releases/1.6.6 (id `d575e328-25eb-4533-ad68-a498a05638f2`)
+- Subject: docs/releases/1.6.6 (id `7a1f85ce-062d-45e1-abb6-b5c1d248bf1b`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 887 tokens

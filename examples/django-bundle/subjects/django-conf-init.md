@@ -1,6 +1,6 @@
 # django/conf/__init__
 
-- Subject: django/conf/__init__ (id `54b7fe03-2636-421e-bcce-04ca08dc609a`)
+- Subject: django/conf/__init__ (id `14429723-cde1-441a-8e75-156e546c7bba`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 885 tokens

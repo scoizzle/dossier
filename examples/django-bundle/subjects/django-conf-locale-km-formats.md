@@ -1,6 +1,6 @@
 # django/conf/locale/km/formats
 
-- Subject: django/conf/locale/km/formats (id `ac227732-a1fb-4d0a-89a1-e42de67047d9`)
+- Subject: django/conf/locale/km/formats (id `c7384792-fd2d-49ee-9f6c-49b7b486f6e9`)
 - Kind: subject
 - Budget: 1200 tokens
 - Used: 201 tokens

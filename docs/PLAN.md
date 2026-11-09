@@ -95,40 +95,56 @@ Shapes in `contract/ops.schema.json`.
 ## Evaluation
 
 - Two domains: (1) Memos UI crawl (multi-modal, attested); (2) a repo module (Poly's native material).
-- Three arms: A raw dump, B compiled dossier at <=25% tokens, C no context.
-- Primary: B >= 90% of A's accuracy at <=25% of A's tokens.
+- **Baseline: primary sources.** The alternative to Dossier is an agent opening the original artifacts itself: the git files and screenshots the facts were captured from. Search JSON and plain fact lines are not baselines; they are the product's own output, already compressed by capture.
+- Arms: **C** primary sources (git files at the pinned rev plus screenshots at pixels/750), **A** `search` JSON, **A2** plain fact lines, **B** compiled dossier.
+- Two-stage decomposition:
+  1. **Stage one, capture:** primary artifact to cited fact (C to A2). Unmeasured before this run.
+  2. **Stage two, compile:** fact set to budgeted dossier (A2 to B).
+- The previous run measured only stage two (A/B and A2/B). At 24 facts stage two is a net loss: B is 708 tokens against 371 for A2 (190.8%), because citations cost tokens and every fact is relevant.
 - Secondary: citation precision >= 95% on 20 spot-checked claims; unsupported-claim rate 0; reverse-impact recall on the code domain; compile p95 < 1s at 20 facts.
-- Report the estimator used for token counts.
+- Report the estimator used for token counts: chars/4 for text, pixels/750 for images. Also report the number of distinct primary artifacts, which is the number of read operations before an agent can answer.
 
 ### Measured results
 
-Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts), on a clean
-temp DB. Token counts use the chars/4 estimator (`ceil(chars / 4)`).
+Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts), clean temp
+DB, `bash scripts/eval.sh`. Arm C fetches from raw.githubusercontent.com (network
+only for this measurement; failures print SKIPPED and exit 0).
 
-| Arm | Context | Chars | Tokens (chars/4) | Facts |
+**Arm C is incomplete and only a lower bound.** The pinned rev `e4f3fb2` does not
+exist in usememos/memos (404 on every path; the seed rev is a placeholder), and
+three of the four seeded paths (`AppHeader.tsx`, `MemoEditor.tsx`, `MemoList.tsx`)
+do not exist at `main` or at any tag checked (v0.19.0 to v0.31.0). Run with
+`EVAL_PRIMARY_REV=main`, only `web/src/pages/Home.tsx` could be fetched. The seed
+paths and the real repo disagree, so stage one cannot be fully measured until the
+seed cites real artifacts.
+
+| Arm | Context | Chars | Tokens | Facts |
 | --- | --- | --- | --- | --- |
+| C | primary sources: 1 of 4 files (`Home.tsx` at `main`, 3945 chars, 987 tokens) + 3 declared screenshots at 1440x900 (5184 tokens) | 3945 + images | 6171 (lower bound) | n/a |
 | A | `search` JSON, limit 100 | 5902 | 1476 | 24 |
-| A2 | same facts as bare text, one line each, no ids or tags | 1483 | 371 | 24 |
-| B | compiled dossier, budget 1200, depth full, markdown | 2830 | 708 | 24 |
+| A2 | same facts as bare text | 1483 | 371 | 24 |
+| B | compiled dossier, budget 1200, full, markdown | 2830 | 708 | 24 |
 
-Accuracy: two independent agents, one given only arm A and one given only arm B,
-each with the ten questions in `scripts/eval/questions.json`, both scored 10/10.
-Both answered all three contradiction questions as a conflict with both values,
-and both answered both unanswerable questions `UNANSWERABLE`.
+Ratios: B/C 0.11, B/A 0.48, B/A2 1.91. Arm C needs 7 distinct primary artifacts
+(4 files + 3 screenshots), so an agent performs 7 read operations before answering;
+the Dossier arms need 1. The screenshot count and 1440x900 size are declared in
+`scripts/eval/sources.json`, not measured (the seeded PNG is a 1x1 placeholder),
+and they supply 84 percent of arm C's tokens. With the pinned rev, offline, or
+without the missing files, arm C is 5184 tokens (screenshots only) and the script
+prints a WARNING that B/C is not valid.
 
-Outcome: the dossier matched the raw context on accuracy at 2.08x compression
-against the JSON baseline (A/B). Against the plain-text baseline it does not
-compress: A2 is 371 tokens and B is 708, so B is 190.8% of A2 (ratio A2/B 0.52).
-The plain-text baseline is smaller than the dossier because citations cost
-tokens, and the 25 percent target is **not** met. This is expected at 24 facts:
-every fact is relevant to some question, so there is nothing to cut. Compression
-can only be expected to matter as the fact count grows.
+Accuracy (unchanged): two agents given only arm A or only arm B scored 10/10 on
+the ten questions in `scripts/eval/questions.json`, including all three
+contradiction questions and both unanswerable ones. No agent has yet answered from
+arm C.
 
-This does **not** prove the hypothesis. The hypothesis is untested at the scale
-where it could hold, because a small corpus of all-relevant facts leaves a
-budgeted compiler nothing to select away. The next experiment is a subject with
-200 or more facts, where a fixed token budget forces selection and a raw dump
-cannot fit.
+Outcome: on tokens, B is smaller than C, at 0.11 of the lower bound, so B beats C
+by at least 8.7x. That is stage one at work, and it is driven by the declared
+screenshots, not by the source files. Stage two (A2 to B) is a net loss at 24
+facts. The honest reading is that capture carries the compression and compile
+currently adds cost, and C's accuracy is unmeasured. The hypothesis still needs a
+subject with real, resolvable citations and 200 or more facts, where a fixed token
+budget forces selection.
 
 ## Path to Poly
 

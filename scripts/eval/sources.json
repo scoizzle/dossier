@@ -1,0 +1,17 @@
+{
+  "_comment": "Primary artifacts an agent must read to answer the ten Memos/Home questions without Dossier. git_paths is generated from scripts/seed/*.json (kind=git refs); regenerate with the jq command in scripts/eval.sh. Screenshot dimensions are DECLARED, not measured: the seeded PNG is a 1x1 placeholder, so this stands in for the real Home screenshots the facts were captured from.",
+  "repo": "usememos/memos",
+  "rev": "e4f3fb2",
+  "git_paths": [
+    "web/src/components/AppHeader.tsx",
+    "web/src/components/MemoEditor.tsx",
+    "web/src/components/MemoList.tsx",
+    "web/src/pages/Home.tsx"
+  ],
+  "screenshots": {
+    "count": 3,
+    "width": 1440,
+    "height": 900,
+    "note": "Declared: header audit 1, header audit 2, composer attachment preview. Cost = count * width * height / 750."
+  }
+}

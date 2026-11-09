@@ -20,5 +20,10 @@ evaluation harness:
 bash scripts/eval.sh
 ```
 
-The current measured result is 10/10 accuracy at 2.08x compression against the
-JSON baseline; compression is not yet demonstrated against a plain-text baseline.
+The baseline is primary sources: the original git files and screenshots an agent
+would read without Dossier (arm C). Search JSON and plain fact lines are the
+product's own output, not baselines. On the current run the dossier is 708 tokens
+against at least 6171 for primary sources (a lower bound: three seeded paths do
+not resolve upstream, and the screenshot size is declared), while the compile
+stage alone is a net loss against plain fact lines at 24 facts. See
+`docs/PLAN.md#evaluation`.

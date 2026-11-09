@@ -1,0 +1,18 @@
+# django/core/mail/backends/console
+
+- Subject: django/core/mail/backends/console (id `07b9eee0-8e34-4b7b-b685-bfdc4c68cc71`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 342 tokens
+- Facts shown: 6 of 6
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- def send_messages(self, email_messages): """Write all messages to the stream in a thread-safe way.""" if not email_messages: return msg_count = 0 with self._lock: try: stream_created = self.open() for message in email_messages: self.write_message(message) self.stream.flush() # flush after each message msg_count += 1 if stream_created: self.close() except Exception: if not self.fail_silently: raise return msg_count [e3aa758d]
+- def write_message(self, message): msg = message.message() msg_data = msg.as_bytes() charset = ( msg.get_charset().get_output_charset() if msg.get_charset() else "utf-8" ) msg_data = msg_data.decode(charset) self.stream.write("%s\n" % msg_data) self.stream.write("-" * 79) self.stream.write("\n") [2f719f0f]
+- """ Email backend that writes messages to console instead of sending them. """ [903be03b]
+- class EmailBackend(BaseEmailBackend): def __init__(self, fail_silently=False, **kwargs): self.stream = kwargs.pop("stream", sys.stdout) self._lock = threading.RLock() super().__init__(**kwargs) self.fail_silently = fail_silently [6c4488d3]
+- from django.core.mail.backends.base import BaseEmailBackend [d74effabf6033594]
+- import sys import threading [c4f7ba94]

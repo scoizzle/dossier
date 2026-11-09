@@ -1,0 +1,30 @@
+# django/contrib/gis/db/backends/oracle/schema
+
+- Subject: django/contrib/gis/db/backends/oracle/schema (id `12b71a71-a653-4555-9467-7bd67c4014a3`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 864 tokens
+- Facts shown: 14 of 17
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- old_field_spatial_index = ( isinstance(old_field, GeometryField) and old_field.spatial_index ) new_field_spatial_index = ( isinstance(new_field, GeometryField) and new_field.spatial_index ) if not old_field_spatial_index and new_field_spatial_index: self.execute(self._create_spatial_index_sql(model, new_field)) elif old_field_spatial_index and not new_field_spatial_index: self.execute(self._delete_spatial_index_sql(model, old_field)) [862d666ad92a57c8]
+- def __init__(self, *args, **kwargs): super().__init__(*args, **kwargs) self.geometry_sql = [] [b31812f819c2e248]
+- def _alter_field( self, model, old_field, new_field, old_type, new_type, old_db_params, new_db_params, strict=False, ): super()._alter_field( model, old_field, new_field, old_type, new_type, old_db_params, new_db_params, strict=strict, ) [9da03683feff56c8-2]
+- def _create_spatial_index_name(self, model, field): # Oracle doesn't allow object names > 30 characters. Use this scheme # instead of self._create_index_name() for backwards compatibility. return truncate_name( "%s_%s_id" % (strip_quotes(model._meta.db_table), field.column), 30 ) [d20b7a7c]
+- def _create_spatial_index_sql(self, model, field): index_name = self._create_spatial_index_name(model, field) return self.sql_add_spatial_index % { "index": self.quote_name(index_name), "table": self.quote_name(model._meta.db_table), "column": self.quote_name(field.column), } [da462ebe]
+- def _delete_spatial_index_sql(self, model, field): index_name = self._create_spatial_index_name(model, field) return self._delete_index_sql(model, index_name) [8e630324c6c67db3-2]
+- def _field_indexes_sql(self, model, field): if isinstance(field, GeometryField) and field.spatial_index: return [self._create_spatial_index_sql(model, field)] return super()._field_indexes_sql(model, field) [ed914524]
+- def add_field(self, model, field): super().add_field(model, field) self.run_geometry_sql() [8b70f3bb]
+- def column_sql(self, model, field, include_default=False): column_sql = super().column_sql(model, field, include_default) if isinstance(field, GeometryField): self.geometry_sql.append( self.sql_add_geometry_metadata % { "table": self.geo_quote_name(model._meta.db_table), "column": self.geo_quote_name(field.column), "dim0": field._extent[0], "dim1": field._extent[1], "dim2": field._extent[2], "dim3": field._extent[3], "tolerance": field._tolerance, "srid": field.srid, } ) return column_sql [a264a24a]
+- def create_model(self, model): super().create_model(model) self.run_geometry_sql() [535ef687]
+- def delete_model(self, model): super().delete_model(model) self.execute( self.sql_clear_geometry_table_metadata % { "table": self.geo_quote_name(model._meta.db_table), } ) [edf98205]
+- def geo_quote_name(self, name): return self.connection.ops.geo_quote_name(name) [97ded5e0e226ebb7]
+- def quote_value(self, value): if isinstance(value, self.connection.ops.Adapter): return super().quote_value(str(value)) return super().quote_value(value) [8fbcaa3b12036b9f-2]
+- def run_geometry_sql(self): for sql in self.geometry_sql: self.execute(sql) self.geometry_sql = [] [bbba3c02]
+
+## Beyond the budget
+
+3 more facts did not fit in the budget: [19902b2e] [30674805] [3c93f775]

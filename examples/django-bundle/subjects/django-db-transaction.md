@@ -1,0 +1,21 @@
+# django/db/transaction
+
+- Subject: django/db/transaction (id `e2fd60d1-181d-4bd6-8d00-cf8a7882f428`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 899 tokens
+- Facts shown: 5 of 48
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- elif exc_type is None and not connection.needs_rollback: if connection.in_atomic_block: # Release savepoint if there is one if sid is not None: try: connection.savepoint_commit(sid) except DatabaseError: try: connection.savepoint_rollback(sid) # The savepoint won't be reused. Release it to # minimize overhead for the database server. connection.savepoint_commit(sid) except Error: # If rolling back to a savepoint fails, mark # for rollback at a higher level and avoid # shadowing the original exception. connection.needs_rollback = True raise else: # Commit transaction try: connection.commit() except DatabaseError: try: connection.rollback() except Error: # An error during rollback means that something # went wrong with the connection. Drop it. connection.close() raise else: # This flag will be set to True again if there isn't a # savepoint allowing to perform the rollback at this level. connection.needs_rollback = False if connection.in_atomic_block: # Roll back to savepoint if there is one, mark for rollback # otherwise. if sid is None: connection.needs_rollback = True else: try: connection.savepoint_rollback(sid) # The savepoint won't be reused. Release it to # minimize overhead for the database server. connection.savepoint_commit(sid) except Error: # If rolling back to a savepoint fails, mark for # rollback at a higher level and avoid shadowing # the original exception. connection.needs_rollback = True else: # Roll back transaction try: connection.rollback() except Error: # An error during rollback means that something # went wrong with the connection. Drop it. connection.close() [778bf758]
+- connection = get_connection(using) if connection.get_autocommit(): yield else: with transaction.atomic(using=using, savepoint=False): yield [c8526cb8]
+- finally: # Outermost block exit when autocommit was enabled. if not connection.in_atomic_block: if connection.closed_in_transaction: connection.connection = None else: connection.set_autocommit(True) # Outermost block exit when autocommit was disabled. elif not connection.savepoint_ids and not connection.commit_on_exit: if connection.closed_in_transaction: connection.connection = None else: connection.in_atomic_block = False [ca9ad323]
+- if ( self.durable and connection.atomic_blocks and not connection.atomic_blocks[-1]._from_testcase ): raise RuntimeError( "A durable atomic block cannot be nested within another " "atomic block." ) if not connection.in_atomic_block: # Reset state when entering an outermost atomic block. connection.commit_on_exit = True connection.needs_rollback = False if not connection.get_autocommit(): # Pretend we're already in an atomic block to bypass the code # that disables autocommit to enter a transaction, and make a # note to deal with this case in __exit__. connection.in_atomic_block = True connection.commit_on_exit = False [eef40554]
+- if connection.in_atomic_block: # We're already in a transaction; create a savepoint, unless we # were told not to or we're already waiting for a rollback. The # second condition avoids creating useless savepoints and prevents # overwriting needs_rollback until the rollback is performed. if self.savepoint and not connection.needs_rollback: sid = connection.savepoint() connection.savepoint_ids.append(sid) else: connection.savepoint_ids.append(None) else: connection.set_autocommit( False, force_begin_transaction_with_broken_autocommit=True ) connection.in_atomic_block = True [b210551c]
+
+## Beyond the budget
+
+42 more facts did not fit in the budget: [ec9142ba] [55561368] [29da6881] [905e9d4e] [f002eab6] [34d7bd46] [869963ca] [f1d3e200] [90ea28a0] [738c729e] [72c47d5c] [cdec0692] [b1ea25f4] [cff84c1e] [85aa285c] [5d4c31f4] [8e8e6a5c] [f48e3bc5] [597cfbbf] [329dafb9] [7655780f0d17b825-49] [f53a8ae2] [3183709b] [3488b3de] [f630a85a] [20392263] [18f970ee] [db339ea0] [55273ce0] [d2da8c39] [051af0ee] [1ce7d11a] [5c8f63f5] [fdac6fbd] [832d2adb] [56adb1ea] [2216a9f2] [1cd4fd7f] [edbce7e3] [30973345] [76c69559] [428c1799]

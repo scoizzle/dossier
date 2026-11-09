@@ -1,0 +1,17 @@
+# docs/ref/contrib/gis/utils
+
+- Subject: docs/ref/contrib/gis/utils (id `f2cf3f85-3142-4515-a823-a382a4b470d3`)
+- Kind: subject
+- Budget: 1200 tokens
+- Used: 137 tokens
+- Facts shown: 5 of 5
+- Conflicts: 0
+- Gaps: 0
+
+## Facts
+
+- layermapping ogrinspect serializers [a7dfdb16]
+- .. module:: django.contrib.gis.utils :synopsis: GeoDjango's collection of utilities. [e0116d2a]
+- .. toctree:: :maxdepth: 2 [13f532897bf9e689-10]
+- =================== GeoDjango Utilities =================== [1783b8bb]
+- The :mod:`django.contrib.gis.utils` module contains various utilities that are useful in creating geospatial web applications. [5c0ecce0]

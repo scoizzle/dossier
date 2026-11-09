@@ -202,6 +202,31 @@ Measured with `bash scripts/scaling.sh` (synthetic distinct facts on one subject
 The dossier cost is flat (892 tokens, under 1200) while plain facts grow linearly; the
 ratio is a consequence of the bound, not the claim. Guarded by `Budget_IsBoundedAsCorpusGrows`.
 
+### Scale test
+
+`bash scripts/scale-test.sh` ingests django/django tag `6.1.3` (fetched from codeload into `$TMPDIR`, never vendored) through `dossier dump --split paragraph` (kind `doc` for `docs/**/*.txt`, `code` for `django/**/*.py`), stopping at 50,000 facts, then measures and publishes. Run on dotnet 10.0.403 at repo sha `4a386d9`, one machine, one run; absolute times are indicative.
+
+| Measurement | Value |
+| --- | --- |
+| Files listed (docs `*.txt`, django `*.py`, top-level `*.md`) | 1588 |
+| Files consumed / facts | 1230 / 50,013 (overshoots the limit by one file) |
+| Subjects created (files that yielded at least one fact) | 1080 |
+| Ingest wall clock / mean per file | 155.9 s / 126.7 ms |
+| DB size / blobs | 82.9 MB / 9.8 MB in 1078 files |
+| Compile latency, 20 seeded subjects (depth full, budget 1200, json) | p50 96 ms, p95 128 ms (range 90-150) |
+| Compile of the largest subject (`docs/ref/models/querysets`, 1339 facts) | 284 ms, 866 tokens, 10 facts emitted, 1242 dropped |
+| Conflicts across all 1080 subjects | 0 |
+| Fact files a detail publish would write | 50,013 (over the 5000 cap, so published `--facts none`) |
+| Bundle | 1086 files, 3,657,881 bytes, no fact files; `INDEX.md` 166,690 bytes |
+
+Ten slowest files were all under 0.65 s, mostly `docs/ref/contrib/gis/*` and `docs/ref/forms/*` (e.g. `geoquerysets.txt` 0.625 s for 336 facts); the 0.4 s outlier `forms/index.txt` made only 4 facts, so it is noise, not size.
+
+- What worked: the whole path (dump, compile, publish) handled 50k facts to completion (the script does not tally per-chunk `skipped`/`errors`, so those counts were not recorded), and every sampled compile stayed within budget (largest subject 866 of 1200 tokens with 99% of its facts dropped), consistent with the boundedness claim above. Publish time was not measured separately (the whole script took 4m34s).
+- What was slow: ingest, at about 3.1 ms per fact, and almost entirely a per-file process cost (each dump is a fresh `dotnet` start plus a sqlite open; compile has a ~90 ms floor that is mostly runtime startup, not work). Reading all 1080 subjects for the conflict total took roughly two minutes.
+- What was surprising: `publish --facts detail` writes a file for every live fact (50,013), not only the ones that survive the budget, so the bundle size is governed by corpus size, not by the token budget. Also the per-subject dossier for a paragraph-split reference page is a sample of ~10 paragraphs from 1300, so the selection signal is thin without keys or tags.
+- What breaks: the conflict check is vacuous here (0 conflicts) because paragraphs carry no keys; a corpus without keyed claims cannot exercise conflict detection at this size. A 50k-file bundle, and a 167 KB `INDEX.md` (about 42k tokens by chars/4), already exceeds what an agent can read in one go, so the drill-down depends on grep rather than reading.
+- What I would change: add a batch dump (many files in one process/transaction) so ingest is not bound by process startup; let `--facts detail` follow the budget or take a per-subject cap; paginate or shard `INDEX.md` by top-level directory; derive keys or tags from headings so paragraph facts can conflict and rank meaningfully; and add a corpus-level subject count and conflict total to the tool so they need not be summed by compiling each subject.
+
 ## Path to Poly
 
 - The contract is the deliverable; the C# implementation is a reference implementation.

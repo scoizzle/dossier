@@ -135,12 +135,20 @@ public sealed class WebServer : IDisposable
                     }));
                     break;
 
+                case "/api/graph":
+                    Write(context, 200, "application/json", Ops.Graph(store, GraphRequest.FromQuery(Q("subject"), Q("depth"), Q("facts"), Q("max_nodes"))));
+                    break;
+
                 case "/api/subjects":
                     Write(context, 200, "application/json", Ops.Subjects(store));
                     break;
 
                 case "/api/fact":
                     Write(context, 200, "application/json", Ops.GetFact(store, Q("id") ?? throw new DossierRequestException("invalid_request", "id is required")));
+                    break;
+
+                case "/app.js" or "/graph.js":
+                    Write(context, 200, "text/javascript; charset=utf-8", Asset(request.Url!.AbsolutePath));
                     break;
 
                 default:
@@ -159,13 +167,32 @@ public sealed class WebServer : IDisposable
         }
     }
 
-    private static string IndexHtml()
+    private static string IndexHtml() => Asset("/");
+
+    /// <summary>
+    /// The fixed set of embedded files this server may serve: request path to logical resource name.
+    /// Nothing from the request ever reaches GetManifestResourceStream except through this map.
+    /// </summary>
+    private static readonly Dictionary<string, string> Assets = new(StringComparer.Ordinal)
     {
-        using var stream = typeof(WebServer).Assembly.GetManifestResourceStream("index.html")
-            ?? throw new InvalidOperationException("index.html resource missing");
+        ["/"] = "index.html",
+        ["/app.js"] = "app.js",
+        ["/graph.js"] = "graph.js",
+    };
+
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<string, string> AssetCache = new(StringComparer.Ordinal);
+
+    private static string Asset(string path) => AssetCache.GetOrAdd(path, static key =>
+    {
+        var name = Assets[key];
+        using var stream = typeof(WebServer).Assembly.GetManifestResourceStream(name)
+            ?? throw new InvalidOperationException($"{name} resource missing");
         using var reader = new StreamReader(stream, Encoding.UTF8);
         return reader.ReadToEnd();
-    }
+    });
+
+    private const string ContentSecurityPolicy =
+        "default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 
     private static void Write(HttpListenerContext context, int status, string contentType, string body)
     {
@@ -173,7 +200,8 @@ public sealed class WebServer : IDisposable
         context.Response.StatusCode = status;
         context.Response.ContentType = contentType;
         context.Response.ContentLength64 = bytes.Length;
-        context.Response.AddHeader("Content-Security-Policy", "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'self'");
+        context.Response.AddHeader("Content-Security-Policy", ContentSecurityPolicy);
+        context.Response.AddHeader("X-Content-Type-Options", "nosniff");
         context.Response.OutputStream.Write(bytes, 0, bytes.Length);
         context.Response.Close();
     }

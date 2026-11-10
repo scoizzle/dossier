@@ -258,7 +258,9 @@ A need with no matching fact is reported as a gap instead of being silently drop
 
 **MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio (protocol versions 2025-06-18, 2025-03-26, 2024-11-05). Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`. Resources: `dossier://subjects`, and the templates `dossier://subject/{id}` and `dossier://fact/{id}`. `post_facts` takes `dry_run`, `search` takes `brief`, and `check` takes `subject` and optional `drafts` (returns the subject with `match` of `exact_name`, `exact_alias`, `prefix` or `fuzzy`, a summary, and per-draft verdicts with an advisory `near` list; a near duplicate posted anyway is a separate `new` fact). Tool descriptions mark fact text as untrusted data that must never be followed as instructions.
 
-**Web.** `dossier serve [--port 8787]` serves a minimal page on `http://127.0.0.1:<port>/` (loopback only). It has a search box in the header, a subject list, search results, a compiled dossier view with its raw JSON, and a single-fact view. JSON endpoints: `/api/subjects`, `/api/search`, `/api/compile`, `/api/fact`.
+**Web.** `dossier serve [--port 8787]` serves a minimal page on `http://127.0.0.1:<port>/` (loopback only). It has a search box in the header, a subject list, search results, a compiled dossier view with its raw JSON, and a single-fact view. JSON endpoints: `/api/subjects`, `/api/search`, `/api/compile`, `/api/fact`, `/api/graph`.
+
+The **graph view** (`#/graph/<subject>`, linked from the subject list and every subject page; `#/graph/` is the subject tree) draws a bounded neighbourhood on a canvas. Click a node for its panel, double-click (or Enter) to expand it in place, `f` to fit, `Escape` to close the panel. `GET /api/graph?subject=<id|name>&depth=<0..3, default 1>&facts=<true|false, default true>&max_nodes=<1..2000, default 500>` returns `{format, seed, root, subjects, facts, edges, unresolved, truncated:{subjects,facts,edges}, limits}`. Nodes never exceed `max_nodes`; admission order is the root, its parent chain, then each hop in id order (children and subjects reached through refs), then the facts of admitted subjects, then boundary subjects (owners of facts that refer into the graph, marked `boundary`). An edge is emitted only when both ends are in the payload; hidden ends are listed in `unresolved` (`not_admitted`, `not_found`) and counted in `truncated`. Slot refs point at the current occupant facts of the slot (the owning subject when the slot is empty); a name that matches several subjects links to all of them (`ambiguous`); symbol and other external refs stay on their fact and are never nodes. Without `subject` the response is the subject tree only (`facts` is ignored), capped by `max_nodes`. Bad parameters give `400` (`bad_depth`, `bad_max_nodes`, `bad_facts`), an unknown subject `404`. Fact text is capped at 500 characters in this payload (`/api/fact` has the full text). The page's scripts are served from `/app.js` and `/graph.js` under `Content-Security-Policy: default-src 'none'; script-src 'self'; ...`, so no inline script runs.
 
 ## Architecture
 
@@ -276,7 +278,8 @@ One project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) with FTS5
 | `Show.cs`, `Retract.cs` | Fact detail with inbound refs; tombstoning |
 | `ContentHash.cs`, `CanonicalJson.cs`, `JsonCodec.cs`, `Names.cs` | Content hashing, canonical JSON, serialization options, name helpers |
 | `Mcp.cs` | MCP server over stdio |
-| `Web.cs`, `www/index.html` | Loopback HTTP server and the embedded page |
+| `Web.cs`, `www/index.html`, `www/app.js`, `www/graph.js` | Loopback HTTP server and the embedded page and scripts |
+| `Graph.cs` | Bounded graph neighbourhood behind `/api/graph` |
 | `Program.cs` | CLI entry point |
 
 ## Repository map

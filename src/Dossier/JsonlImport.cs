@@ -57,8 +57,7 @@ public sealed partial class DossierStore
 
         try
         {
-            using var stream = OpenRegularFile(path, BundleManifest, 4096);
-            using var document = JsonDocument.Parse(stream);
+            using var document = ReadManifestDocument(path);
             return document.RootElement.ValueKind == JsonValueKind.Object
                 && document.RootElement.TryGetProperty("format", out var format)
                 && format.ValueKind == JsonValueKind.String
@@ -84,18 +83,43 @@ public sealed partial class DossierStore
     /// or device from a regular file without opening it, and opening a FIFO blocks, so on Unix the file is opened
     /// non-blocking and must be seekable: pipes, sockets and ttys are not. The caller has already rejected links.
     /// </summary>
-    private static FileStream OpenRegularFile(string path, string label, int bufferSize)
+    internal static FileStream OpenRegularFile(string path, string label, int bufferSize)
     {
         if (OperatingSystem.IsWindows())
         {
             return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, FileOptions.SequentialScan);
         }
 
-        var nonBlocking = OperatingSystem.IsMacOS() || OperatingSystem.IsFreeBSD() ? 0x4 : 0x800;
-        var fd = Posix.Open(path, nonBlocking);
+        // O_RDONLY is 0. Values per <fcntl.h>: macOS O_NONBLOCK 0x4, O_NOFOLLOW 0x100, O_CLOEXEC 0x1000000; FreeBSD 0x4, 0x100, 0x100000;
+        // Linux asm-generic/fcntl.h O_NONBLOCK 04000 (0x800), O_CLOEXEC 02000000 (0x80000), and O_NOFOLLOW 0400000 (0x20000)
+        // on x86 but 0100000 (0x8000) on arm/arm64 and the generic ABI.
+        int flags;
+        if (OperatingSystem.IsMacOS())
+        {
+            flags = 0x4 | 0x100 | 0x1000000;
+        }
+        else if (OperatingSystem.IsFreeBSD())
+        {
+            flags = 0x4 | 0x100 | 0x100000;
+        }
+        else
+        {
+            var x86 = RuntimeInformation.ProcessArchitecture is Architecture.X64 or Architecture.X86;
+            flags = 0x800 | 0x80000 | (x86 ? 0x20000 : 0x8000);
+        }
+
+        var fd = Posix.Open(path, flags);
         if (fd < 0)
         {
-            throw new DossierRequestException("import_file_missing", $"{label} could not be opened (errno {Marshal.GetLastPInvokeError()})");
+            var errno = Marshal.GetLastPInvokeError();
+            var eloop = OperatingSystem.IsLinux() ? 40 : 62;
+            throw errno switch
+            {
+                2 or 20 => new DossierRequestException("import_file_missing", $"{label} is not in the bundle (errno {errno})"),
+                _ when errno == eloop || errno == 31 => new DossierRequestException("import_unsafe_path", $"{label} is a symbolic link; refusing to read it (errno {errno})"),
+                1 or 13 => new DossierRequestException("import_unreadable_file", $"{label} could not be read: permission denied (errno {errno})"),
+                _ => new DossierRequestException("import_not_regular_file", $"{label} could not be opened as a regular file (errno {errno})"),
+            };
         }
 
         var handle = new SafeFileHandle((IntPtr)fd, ownsHandle: true);
@@ -115,6 +139,69 @@ public sealed partial class DossierStore
             handle.Dispose();
             throw new DossierRequestException("import_not_regular_file", $"{label} is not a regular file (a directory or device); refusing to read it");
         }
+        catch
+        {
+            handle.Dispose();
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Reads at most <paramref name="limit"/> bytes of <paramref name="input"/>, never until EOF: when one more byte is
+    /// still available the stream is longer than promised and <c>null</c> is returned. A seekable device that reports
+    /// Length 0 (/dev/zero) therefore yields an empty buffer or null, never an unbounded read.
+    /// </summary>
+    internal static byte[]? ReadAtMost(Stream input, long limit)
+    {
+        var buffer = new byte[(int)Math.Min(limit, Array.MaxLength)];
+        var filled = 0;
+        while (filled < buffer.Length)
+        {
+            var read = input.Read(buffer, filled, buffer.Length - filled);
+            if (read <= 0)
+            {
+                Array.Resize(ref buffer, filled);
+                return buffer;
+            }
+
+            filled += read;
+        }
+
+        return input.ReadByte() >= 0 ? null : buffer;
+    }
+
+    /// <summary>Copies at most <paramref name="limit"/> bytes to <paramref name="output"/> and the hash; false when more data was still available.</summary>
+    internal static bool CopyAtMost(Stream input, Stream output, IncrementalHash hash, long limit)
+    {
+        var chunk = new byte[ImportChunkBytes];
+        long copied = 0;
+        while (copied < limit)
+        {
+            var read = input.Read(chunk, 0, (int)Math.Min(chunk.Length, limit - copied));
+            if (read <= 0)
+            {
+                return true;
+            }
+
+            hash.AppendData(chunk, 0, read);
+            output.Write(chunk, 0, read);
+            copied += read;
+        }
+
+        return input.ReadByte() < 0;
+    }
+
+    /// <summary>Parses manifest.json after reading at most min(handle length, 64 MiB) bytes of it.</summary>
+    private static JsonDocument ReadManifestDocument(string path)
+    {
+        using var stream = OpenRegularFile(path, BundleManifest, 4096);
+        var bytes = ReadAtMost(stream, Math.Min(stream.Length, ImportManifestMaxBytes));
+        if (bytes is null)
+        {
+            throw new DossierRequestException("import_unsafe_path", "manifest.json is too large to read, or longer than its file size says");
+        }
+
+        return JsonDocument.Parse(bytes);
     }
 
     private ImportResult ImportJsonl(string root, ImportOptions options)
@@ -131,8 +218,7 @@ public sealed partial class DossierStore
         JsonDocument manifest;
         try
         {
-            using var manifestStream = OpenRegularFile(manifestInfo.FullName, BundleManifest, 4096);
-            manifest = JsonDocument.Parse(manifestStream);
+            manifest = ReadManifestDocument(manifestInfo.FullName);
         }
         catch (JsonException exception)
         {
@@ -198,7 +284,7 @@ public sealed partial class DossierStore
                 }
             }
 
-            RejectUnlistedAssets(root, listedAssets);
+            var hiddenSkips = RejectUnlistedAssets(root, listedAssets);
 
             var stats = new Dictionary<string, (long Bytes, long Lines, string Sha)>(StringComparer.Ordinal);
             foreach (var property in statsElement.EnumerateObject())
@@ -234,6 +320,7 @@ public sealed partial class DossierStore
             var byId = new Dictionary<string, ImportRecord>(StringComparer.Ordinal);
             var assets = new Dictionary<string, JsonlAsset>(StringComparer.Ordinal);
             var result = new ImportResult();
+            result.Skipped.AddRange(hiddenSkips);
             long order = 0;
 
             foreach (var name in dataFiles.OrderBy(n => fileNumbers[n]))
@@ -332,7 +419,9 @@ public sealed partial class DossierStore
                                     Path = Str("path"),
                                     Bytes = e.TryGetProperty("bytes", out var b) && b.ValueKind == JsonValueKind.Number && b.TryGetInt64(out var n) ? n : -1,
                                     Mime = Str("mime"),
-                                    DataSha = d.ValueKind == JsonValueKind.String ? Convert.ToHexString(SHA256.HashData(Utf8NoBom.GetBytes(d.GetString()!))) : null,
+                                    // Hash the raw UTF-8 token straight out of the parsed line: no UTF-16 string, no re-encoding. An escaped and an
+                                    // unescaped spelling of the same data compare unequal, which fails closed.
+                                    DataSha = d.ValueKind == JsonValueKind.String ? Convert.ToHexString(SHA256.HashData(JsonMarshal.GetRawUtf8Value(d))) : null,
                                 };
                                 if (!assets.TryGetValue(sha, out var firstAsset))
                                 {
@@ -390,18 +479,30 @@ public sealed partial class DossierStore
     }
 
     /// <summary>Every file under assets/ must be listed in manifest.json, like every dossier-NNNN.jsonl; links are never followed.</summary>
-    private static void RejectUnlistedAssets(string root, HashSet<string> listedAssets)
+    private static List<ImportSkip> RejectUnlistedAssets(string root, HashSet<string> listedAssets)
     {
+        var skipped = new List<ImportSkip>();
         var assets = new DirectoryInfo(Path.Combine(root, "assets"));
         if (assets.Exists && !IsLink(assets))
         {
             Walk(assets);
         }
 
+        return skipped;
+
         void Walk(DirectoryInfo directory)
         {
-            foreach (var entry in directory.EnumerateFileSystemInfos("*", new EnumerationOptions { AttributesToSkip = FileAttributes.System }))
+            foreach (var entry in directory.EnumerateFileSystemInfos("*", new EnumerationOptions { AttributesToSkip = 0 }))
             {
+                // Hidden entries (dot-files on Unix, Hidden or System on Windows: .DS_Store, Thumbs.db) are OS litter, not bundle
+                // content: skipped and reported, never read, never descended into. Links are still never followed.
+                var relativeName = Path.GetRelativePath(root, entry.FullName).Replace('\\', '/');
+                if ((entry.Attributes & (FileAttributes.Hidden | FileAttributes.System)) != 0 && !listedAssets.Contains(relativeName))
+                {
+                    skipped.Add(new ImportSkip(relativeName, "hidden_file_ignored: a hidden or system file under assets/ is not part of the bundle; not read"));
+                    continue;
+                }
+
                 if (entry is DirectoryInfo child && !IsLink(child))
                 {
                     Walk(child);
@@ -593,12 +694,10 @@ public sealed partial class DossierStore
             using (var input = OpenRegularFile(full, path, ImportChunkBytes))
             using (var output = new FileStream(temporary, FileMode.CreateNew, FileAccess.Write, FileShare.None))
             {
-                var chunk = new byte[ImportChunkBytes];
-                int read;
-                while ((read = input.Read(chunk, 0, chunk.Length)) > 0)
+                var limit = asset.Bytes >= 0 ? asset.Bytes : input.Length;
+                if (!CopyAtMost(input, output, hash, limit))
                 {
-                    hash.AppendData(chunk, 0, read);
-                    output.Write(chunk, 0, read);
+                    return (false, $"{path} holds more than the {limit} bytes it should; not read further");
                 }
             }
 

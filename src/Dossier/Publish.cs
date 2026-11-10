@@ -84,7 +84,7 @@ public sealed class PublishOptions
     /// JSONL only: the largest single in-memory buffer (a data file or an embedded asset line) publish will build.
     /// 0 (default) means the runtime's array limit; a smaller value exists so tests can reach the failure with small data.
     /// </summary>
-    public long MemoryCeilingBytes { get; set; }
+    internal long MemoryCeilingBytes { get; set; }
 }
 
 public sealed class PublishResult

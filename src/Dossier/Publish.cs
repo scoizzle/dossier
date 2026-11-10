@@ -2644,9 +2644,11 @@ public sealed partial class DossierStore
         var parts = relative.Split('/');
         return parts.Length switch
         {
-            1 => relative is "AGENTS.md" or "README.md" or "INDEX.md" or "conflicts.md" or "gaps.md" or BundleManifest,
-            // index/<group>.md; subjects/<slug>.md and facts/<file>.md are the pre-graph layout.
-            2 => parts[0] is "subjects" or "facts" or "index" or "shards" && parts[1].EndsWith(".md", StringComparison.Ordinal) && parts[1].Length > 3,
+            1 => relative is "AGENTS.md" or "README.md" or "INDEX.md" or "conflicts.md" or "gaps.md" or BundleManifest
+                || JsonlDataFileRegex.IsMatch(relative),
+            // index/<group>.md; subjects/<slug>.md and facts/<file>.md are the pre-graph layout; assets/<sha256>[.ext] is a JSONL asset file.
+            2 => parts[0] is "subjects" or "facts" or "index" or "shards" && parts[1].EndsWith(".md", StringComparison.Ordinal) && parts[1].Length > 3
+                || JsonlAssetPathRegex.IsMatch(relative),
             3 => LegacyAssetPathRegex.IsMatch(relative) || SubjectIndexPathRegex.IsMatch(relative),
             4 => FactPathRegex.IsMatch(relative) || AssetPathRegex.IsMatch(relative),
             _ => false,
@@ -2691,6 +2693,15 @@ public sealed partial class DossierStore
                 && !previous.Contains(relative)
                 && File.Exists(full)
                 && File.ReadAllText(full, Utf8NoBom) != content)
+            {
+                foreign.Add(relative);
+            }
+        }
+
+        foreach (var (relative, content) in binary)
+        {
+            var full = Path.Combine(outDir, relative);
+            if (!previous.Contains(relative) && File.Exists(full) && !File.ReadAllBytes(full).AsSpan().SequenceEqual(content))
             {
                 foreign.Add(relative);
             }

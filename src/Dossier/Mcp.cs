@@ -79,6 +79,9 @@ public static class Ops
             : throw new DossierRequestException("fact_not_found", $"fact not found: {id}");
 
     public static string Subjects(DossierStore store) => Serialize(store.ListSubjects());
+
+    /// <summary>Bounded graph neighbourhood. Transport-neutral; served by the web UI only (no MCP tool).</summary>
+    public static string Graph(DossierStore store, GraphRequest request) => Serialize(store.Graph(request));
 }
 
 /// <summary>

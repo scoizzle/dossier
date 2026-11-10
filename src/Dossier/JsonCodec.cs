@@ -127,6 +127,7 @@ internal sealed record ProvenanceStamp(string Actor, string ActorType, string Ch
 [JsonSerializable(typeof(PublishSummary))]
 [JsonSerializable(typeof(ImportSummary))]
 [JsonSerializable(typeof(ProvenanceStamp))]
+[JsonSerializable(typeof(GraphResponse))]
 internal sealed partial class DossierJsonContext : JsonSerializerContext
 {
 }

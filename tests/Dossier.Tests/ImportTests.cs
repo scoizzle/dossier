@@ -286,7 +286,7 @@ public sealed class ImportTests
         PublishTo(a, "bundle");
         var bundle = Path.Combine(a.Directory, "bundle");
         var victim = Directory.EnumerateFiles(bundle, "*.md", SearchOption.AllDirectories)
-            .Where(p => p.Contains("/facts/", StringComparison.Ordinal) && File.ReadAllText(p).Contains("The target fact."))
+            .Where(p => BundlePaths.ToBundle(p).Contains("/facts/", StringComparison.Ordinal) && File.ReadAllText(p).Contains("The target fact."))
             .Single();
         var content = File.ReadAllText(victim);
         File.WriteAllText(victim, content[..content.LastIndexOf("\n## Machine record", StringComparison.Ordinal)] + "\n");

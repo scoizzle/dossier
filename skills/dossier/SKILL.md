@@ -32,7 +32,7 @@ Dossier is a local fact store. You post small claims about a subject as you lear
 
 **One claim per fact.** A fact is one statement a reader could confirm or refute on its own. A pasted paragraph bundles many claims, ranks and truncates as one unit, cannot be superseded when one claim changes, and defeats duplicate search. Split it before posting, or use `dossier dump --split` for source files.
 
-**Declare refs or the graph is a cloud.** Facts without refs are isolated points. A dump-only corpus of 50,021 facts produced zero edges, because file refs from dumped chunks cannot resolve to nodes. Compile can only follow, rank and traverse what you linked, so add `refs` when you post. Run `dossier correlate` to propose more, but it writes nothing; you still post them.
+**Declare refs or the graph is a cloud.** Facts without refs are isolated points. A dump-only corpus of 50,013 facts produced zero edges, because file refs from dumped chunks cannot resolve to nodes. Compile can only follow, rank and traverse what you linked, so add `refs` when you post. Run `dossier correlate` to propose more, but it writes nothing; you still post them.
 
 **Give stable facts a key.** Set `key` on any fact that describes a durable attribute, for example `composerMaxRows`. Posting again with the same subject, kind and key returns `replaced` and supersedes the old fact. Without a key, a revisit creates a duplicate that stays live.
 

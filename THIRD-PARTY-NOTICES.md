@@ -239,3 +239,9 @@ licensed under the Apache License, Version 2.0, reproduced below. The packages s
 
 The SQLite source code is in the public domain. No license text is required to accompany
 redistribution. See <https://www.sqlite.org/copyright.html>.
+
+## Example bundles (repository only, not in release archives)
+
+The committed bundles under `examples/` quote text from Django (BSD-3-Clause) and Memos
+(MIT). They are not shipped in release archives, but their upstream notices are recorded
+in [`examples/NOTICE.md`](examples/NOTICE.md).

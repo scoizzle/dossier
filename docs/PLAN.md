@@ -4,9 +4,9 @@
 
 **Hypothesis:** a compiled, cited dossier beats a raw dump at equal token budget on agent tasks.
 
-**Kill criterion:** if the dossier does not reach >=90% of raw-dump task accuracy at <=25% of the tokens across both eval domains, the concept fails and Poly should not absorb it.
+**Kill criterion:** if the dossier does not reach >=90% of raw-dump task accuracy at <=25% of the tokens across both eval domains, the concept fails and a host platform should not absorb it.
 
-This is a POC with a planned integration into Poly. Poly is the target, never a dependency. **Falsification test:** if Dossier ever needs a Poly type (Domain, AnalysisResult, Session), the abstraction failed.
+This is a POC with a planned integration into a host platform. The host platform is the target, never a dependency. **Falsification test:** if Dossier ever needs a host-platform type (Domain, AnalysisResult, Session), the abstraction failed.
 
 ## What this is (three verbs)
 
@@ -21,7 +21,7 @@ Three verbs: **dump**, **correlate**, **retrieve**.
 - No models and no network in the core.
 - No second query engine; no consumer-specific fact shape; domain templates live outside the core.
 - No EF Core, DI container, NuGet packages, or layered production architecture.
-- No reference to Poly or any other repo.
+- No reference to the host platform or any other repo.
 - Not a vector store; no similarity-derived edges.
 
 ## Domain model
@@ -92,7 +92,7 @@ Invariants:
 - `--respect-limits` (requires `--profile`) packs the per-subject pages, in the deterministic tree order, into at most `max_files` documents `shards/<n>.md`: close a shard once it reaches `max(min_file_bytes, ceil(total / max_files) + header)` bytes, never exceed `max_file_bytes`, fold a short tail into the previous shard. A shard has front matter (`fact_files: absent`), a table of contents and one anchored section (`<a id="<slug>">`) per subject. Index, conflicts and gaps links become `shards/<n>.md#<slug>`. No subject directories, fact files or assets are written. A subject page larger than `max_file_bytes` fails the publish before any write, naming the subject and size.
 - Invariants kept: output is a pure function of store content, options and profile (no map-order dependence); the manifest lists every generated file and gains `shards` (bytes and subject slugs per shard); republish removes stale files by the same manifest rule. Import is not supported for a shard bundle (no fact files).
 - **Format gap, stated not fixed:** consumers like Copilot Studio accept doc/docx/xls/xlsx/ppt/pptx/pdf, while a bundle is markdown. No converter ships, so the `allowed_extensions` row FAILs against `copilot-studio.json` in both modes. Sharding addresses the file cap and the size floor only.
-- Demo: `scripts/publish-profile-demo.sh` synthesises 1080 subjects from the committed `examples/django-bundle` manifest (no re-ingest) and writes `examples/django-shards` (399 shards, 5867 to 9368 bytes each).
+- Demo: `scripts/publish-profile-demo.sh` synthesises 1080 subjects from the committed `examples/django-bundle` manifest (no re-ingest) and writes `examples/django-shards` (193 shards, 4104 to 7551 bytes each).
 
 ### import (the inverse of publish)
 
@@ -115,7 +115,7 @@ Invariants:
 
 - C#, net10.0, ONE project `src/Dossier/Dossier.csproj`, `dotnet run`.
 - SQLite (WAL) + FTS5, raw ADO.NET. Attachments as files in `blobs/<sha256>`.
-- No EF Core, no DI container, no NuGet packages, no Poly reference.
+- No EF Core, no DI container, no NuGet packages, no reference to the host platform.
 - Core operations are pure functions over a Store abstraction, so storage/transport/domain stay out of the core.
 - Tests: TUnit 1.81.10 running on Microsoft.Testing.Platform.
 - `global.json` sets `test.runner = Microsoft.Testing.Platform`; the .NET 10 SDK requires it for `dotnet test`.
@@ -127,7 +127,7 @@ Invariants:
 
 ## Evaluation
 
-- Two domains: (1) Memos UI crawl (multi-modal, attested); (2) a repo module (Poly's native material).
+- Two domains: (1) Memos UI crawl (multi-modal, attested); (2) a repo module (the host platform's native material).
 - **Baseline: primary sources.** The alternative to Dossier is an agent opening the original artifacts itself: the git files and screenshots the facts were captured from. Search JSON and plain fact lines are not baselines; they are the product's own output, already compressed by capture.
 - Arms: **C** primary sources (git files at the pinned rev plus screenshots at pixels/750), **A** `search` JSON, **A2** plain fact lines, **B** compiled dossier.
 - Two-stage decomposition:
@@ -250,12 +250,12 @@ Ten slowest files were all under 0.65 s, mostly `docs/ref/contrib/gis/*` and `do
 - What breaks: the conflict check is vacuous here (0 conflicts) because paragraphs carry no keys; a corpus without keyed claims cannot exercise conflict detection at this size. A 50k-file bundle, and a 167 KB `INDEX.md` (about 42k tokens by chars/4), already exceeds what an agent can read in one go, so the drill-down depends on grep rather than reading.
 - What I would change: add a batch dump (many files in one process/transaction) so ingest is not bound by process startup; let `--facts detail` follow the budget or take a per-subject cap; paginate or shard `INDEX.md` by top-level directory; derive keys or tags from headings so paragraph facts can conflict and rank meaningfully; and add a corpus-level subject count and conflict total to the tool so they need not be summed by compiling each subject.
 
-## Path to Poly
+## Integration path
 
 - The contract is the deliverable; the C# implementation is a reference implementation.
-- Zero project references to Poly. If a Poly type is ever required, the abstraction failed.
-- Frozen core, mirroring Poly's: no second query engine, no consumer-specific fact shape, domain templates live outside the core.
-- Integration seam: Store interface (sqlite now, Poly persistence later); transports call the same core functions.
+- Zero project references to the host platform. If a host-platform type is ever required, the abstraction failed.
+- Frozen core, mirroring the host platform's: no second query engine, no consumer-specific fact shape, domain templates live outside the core.
+- Integration seam: Store interface (sqlite now, host-platform persistence later); transports call the same core functions.
 
 ## Risks and foot-guns
 

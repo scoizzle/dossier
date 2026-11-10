@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/jsonl-record.schema.json",
+  "title": "JSONL record",
+  "description": "One line of a dossier-NNNN.jsonl data file written by `dossier publish --format jsonl`. A typed record discriminated by `type`: subject, fact or asset. The subject and fact definitions take every property schema from subject.schema.json and fact.schema.json by reference (the base contracts are unchanged, so their additionalProperties:false cannot be wrapped by allOf and the property lists are repeated here; a test keeps them in step) and add the JSONL-only fields. A subject's `parent` is omitted when the parent is outside the bundle (e.g. a scoped publish).",
+  "oneOf": [
+    { "$ref": "#/$defs/SubjectRecord" },
+    { "$ref": "#/$defs/FactRecord" },
+    { "$ref": "#/$defs/AssetRecord" }
+  ],
+  "$defs": {
+    "Sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "SubjectRecord": {
+      "title": "Subject record",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "id", "name", "kind", "aliases", "path"],
+      "properties": {
+        "type": { "const": "subject" },
+        "id": { "$ref": "subject.schema.json#/properties/id" },
+        "name": { "$ref": "subject.schema.json#/properties/name" },
+        "kind": { "$ref": "subject.schema.json#/properties/kind" },
+        "parent": { "$ref": "subject.schema.json#/properties/parent" },
+        "aliases": { "$ref": "subject.schema.json#/properties/aliases" },
+        "pin": { "$ref": "subject.schema.json#/properties/pin" },
+        "path": { "type": "string", "minLength": 1, "description": "The subject's tree path (slug path) in the bundle." }
+      }
+    },
+    "FactRecord": {
+      "title": "Fact record",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "id", "subject_id", "subject_name", "bundle_key", "kind", "text", "tags", "confidence", "status", "provenance", "content_hash"],
+      "properties": {
+        "type": { "const": "fact" },
+        "id": { "$ref": "fact.schema.json#/properties/id" },
+        "subject_id": { "$ref": "fact.schema.json#/properties/subject_id" },
+        "subject_name": { "type": "string", "minLength": 1 },
+        "bundle_key": { "type": "string", "minLength": 1, "description": "The content-addressed key the markdown bundle names this fact by." },
+        "kind": { "$ref": "fact.schema.json#/properties/kind" },
+        "key": { "$ref": "fact.schema.json#/properties/key" },
+        "text": { "$ref": "fact.schema.json#/properties/text" },
+        "data": { "$ref": "fact.schema.json#/properties/data" },
+        "items": { "$ref": "fact.schema.json#/properties/items" },
+        "tags": { "$ref": "fact.schema.json#/properties/tags" },
+        "confidence": { "$ref": "fact.schema.json#/properties/confidence" },
+        "status": { "$ref": "fact.schema.json#/properties/status" },
+        "provenance": { "$ref": "fact.schema.json#/properties/provenance" },
+        "content_hash": { "$ref": "fact.schema.json#/properties/content_hash" },
+        "refs": { "$ref": "fact.schema.json#/properties/refs" },
+        "attachments": { "$ref": "fact.schema.json#/properties/attachments" }
+      }
+    },
+    "AssetRecord": {
+      "title": "Asset record",
+      "description": "One attachment blob, once per sha256: embedded as base64, written to assets/, or reported missing (fail-open: the blob was not in the store).",
+      "oneOf": [
+        { "$ref": "#/$defs/AssetEmbedded" },
+        { "$ref": "#/$defs/AssetFile" },
+        { "$ref": "#/$defs/AssetMissing" }
+      ]
+    },
+    "AssetEmbedded": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "sha256", "mime", "filename", "bytes", "encoding", "data"],
+      "properties": {
+        "type": { "const": "asset" },
+        "sha256": { "$ref": "#/$defs/Sha256" },
+        "mime": { "$ref": "fact.schema.json#/$defs/Attachment/properties/mime" },
+        "filename": { "$ref": "fact.schema.json#/$defs/Attachment/properties/filename" },
+        "bytes": { "$ref": "fact.schema.json#/$defs/Attachment/properties/bytes" },
+        "encoding": { "const": "base64" },
+        "data": { "type": "string", "pattern": "^[A-Za-z0-9+/]*={0,2}$", "description": "Standard base64 of the blob; its sha256 must equal `sha256`." }
+      }
+    },
+    "AssetFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "sha256", "mime", "filename", "bytes", "path"],
+      "properties": {
+        "type": { "const": "asset" },
+        "sha256": { "$ref": "#/$defs/Sha256" },
+        "mime": { "$ref": "fact.schema.json#/$defs/Attachment/properties/mime" },
+        "filename": { "$ref": "fact.schema.json#/$defs/Attachment/properties/filename" },
+        "bytes": { "$ref": "fact.schema.json#/$defs/Attachment/properties/bytes" },
+        "path": { "type": "string", "pattern": "^assets/[0-9a-f]{64}(\\.[a-z0-9]+)?$" }
+      }
+    },
+    "AssetMissing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "sha256", "mime", "filename", "bytes", "missing"],
+      "properties": {
+        "type": { "const": "asset" },
+        "sha256": { "$ref": "#/$defs/Sha256" },
+        "mime": { "$ref": "fact.schema.json#/$defs/Attachment/properties/mime" },
+        "filename": { "$ref": "fact.schema.json#/$defs/Attachment/properties/filename" },
+        "bytes": { "$ref": "fact.schema.json#/$defs/Attachment/properties/bytes" },
+        "missing": { "const": true }
+      }
+    }
+  }
+}

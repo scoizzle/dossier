@@ -1,0 +1,213 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  # Dry run: builds, smoke-tests and uploads the archives as workflow artifacts. Never creates a release.
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DOTNET_NOLOGO: "1"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  verify:
+    name: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    env:
+      TAG: ${{ github.ref_name }}
+      EVENT_NAME: ${{ github.event_name }}
+      RUN_NUMBER: ${{ github.run_number }}
+    steps:
+      # fetch-depth 0 also fetches origin/main; credentials are not persisted, so a later fetch would fail.
+      - name: Check out full history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      # This ancestry check keeps accidental tags off side branches. It is not a control against
+      # someone who can already push to main: they can land a commit there and tag it.
+      - name: Require the tagged commit to be on main
+        if: env.EVENT_NAME == 'push'
+        run: |
+          git rev-parse --verify --quiet origin/main >/dev/null
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::$GITHUB_SHA is not reachable from origin/main"
+            exit 1
+          fi
+
+      - name: Validate tag and compute version
+        id: version
+        run: |
+          if [ "$EVENT_NAME" = "push" ]; then
+            if ! printf '%s' "$TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$'; then
+              echo "::error::tag '$TAG' is not vMAJOR.MINOR.PATCH[-prerelease]"
+              exit 1
+            fi
+            version="${TAG#v}"
+          else
+            version="0.0.0-dev.${RUN_NUMBER}"
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "version: $version"
+
+  build:
+    name: build (${{ matrix.rid }})
+    needs: verify
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rid: linux-x64
+            os: ubuntu-22.04
+            exe: Dossier
+            ext: tar.gz
+          - rid: win-x64
+            os: windows-2025
+            exe: Dossier.exe
+            ext: zip
+          - rid: osx-arm64
+            os: macos-15
+            exe: Dossier
+            ext: tar.gz
+    env:
+      RID: ${{ matrix.rid }}
+      EXE: ${{ matrix.exe }}
+      EXT: ${{ matrix.ext }}
+      VERSION: ${{ needs.verify.outputs.version }}
+    steps:
+      - name: Keep LF line endings on Windows
+        if: runner.os == 'Windows'
+        run: git config --global core.autocrlf false
+
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: dotnet --info
+        run: dotnet --info
+
+      # NuGet audit uses the live advisory feed, so a release can fail without a code change.
+      # Moderate/high/critical advisories fail; NU1900 (feed unreachable) stays a warning so a
+      # NuGet outage does not block a release. The project, not the solution, is restored.
+      - name: Restore
+        run: dotnet restore src/Dossier/Dossier.csproj -r "$RID" -p:PublishAot=true -p:NuGetAuditLevel=moderate "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
+
+      - name: Publish (Native AOT)
+        run: dotnet publish src/Dossier/Dossier.csproj -c Release -r "$RID" -p:PublishAot=true -p:Version="$VERSION" --no-restore -o "out/$RID" 2>&1 | tee publish.log
+
+      - name: Fail on trim and AOT warnings
+        run: |
+          if grep -E "warning (IL|ILC)[0-9]+" publish.log; then
+            echo "::error::Native AOT publish produced IL/ILC warnings"
+            exit 1
+          fi
+
+      - name: Check glibc baseline (<= 2.35)
+        if: runner.os == 'Linux'
+        run: |
+          max=$(for f in "out/$RID/$EXE" "out/$RID"/*.so; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
+          echo "max GLIBC symbol version required: ${max:-none}"
+          if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" 2.35 | sort -V | tail -n 1)" != "2.35" ]; then
+            echo "::error::binary requires glibc $max, above the 2.35 baseline"
+            exit 1
+          fi
+
+      - name: Smoke test
+        run: scripts/smoke-aot.sh "out/$RID/$EXE" "$VERSION"
+
+      - name: Package
+        run: |
+          stage="stage/$RID"
+          mkdir -p "$stage" dist
+          case "$EXE" in
+            *.exe) bin=dossier.exe ;;
+            *) bin=dossier ;;
+          esac
+          cp "out/$RID/$EXE" "$stage/$bin"
+          # The native SQLite library must stay beside the binary.
+          found=0
+          for lib in "out/$RID"/libe_sqlite3.* "out/$RID"/e_sqlite3.*; do
+            if [ -f "$lib" ]; then
+              cp "$lib" "$stage/"
+              found=1
+            fi
+          done
+          if [ "$found" -ne 1 ]; then
+            echo "::error::native sqlite library not found in out/$RID"
+            exit 1
+          fi
+          cp README.md "$stage/README.md"
+          archive="dossier-$VERSION-$RID.$EXT"
+          if [ "$EXT" = "zip" ]; then
+            (cd "$stage" && 7z a -tzip "../../dist/$archive" ./*)
+          else
+            (cd "$stage" && tar -czf "../../dist/$archive" ./*)
+          fi
+          ls -l dist
+
+      - name: Upload archive
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dossier-${{ matrix.rid }}
+          path: dist/dossier-*-${{ matrix.rid }}.*
+          retention-days: 7
+          if-no-files-found: error
+
+  release:
+    name: release
+    needs: build
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write # gh release create / edit; the only job that can write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      TAG: ${{ github.ref_name }}
+    steps:
+      - name: Download archives
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: dossier-*
+          merge-multiple: true
+          path: dist
+
+      - name: Create the release
+        working-directory: dist
+        run: |
+          sha256sum dossier-* > SHA256SUMS
+          cat SHA256SUMS
+          flags=(--draft --verify-tag --generate-notes --title "$TAG")
+          case "$TAG" in
+            *-*) flags+=(--prerelease) ;;
+          esac
+          gh release create "$TAG" "${flags[@]}" dossier-* SHA256SUMS
+          gh release edit "$TAG" --draft=false

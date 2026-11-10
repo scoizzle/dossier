@@ -1,0 +1,12 @@
+title = "dossier gitleaks config"
+
+[extend]
+useDefault = true
+
+# Blanket suppression: examples/ is NOT secret-scanned. It holds generated bundles
+# built from third-party source (for example a Django corpus) that produce a very
+# large number of false positives and make a full-history scan too slow for CI.
+# Everything outside examples/ is scanned over full history.
+[[allowlists]]
+description = "generated example bundles"
+paths = ['''^examples/''']

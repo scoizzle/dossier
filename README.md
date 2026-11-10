@@ -298,6 +298,34 @@ src/Dossier/       the reference implementation
 tests/Dossier.Tests/  155 TUnit tests
 ```
 
+## Releases
+
+To cut a release, tag a commit that is on `main` and push the tag:
+
+```sh
+git tag v1.2.3
+git push origin v1.2.3
+```
+
+The tag must look like `vMAJOR.MINOR.PATCH` with an optional prerelease suffix (`v1.2.3-rc.1`; a suffix marks the GitHub release as a prerelease). The release workflow builds Native AOT binaries, smoke-tests each one, and publishes a GitHub release with these assets:
+
+- `dossier-<version>-linux-x64.tar.gz`
+- `dossier-<version>-osx-arm64.tar.gz`
+- `dossier-<version>-win-x64.zip`
+- `SHA256SUMS`
+
+Each archive holds the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, and this README. Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory:
+
+```sh
+sha256sum -c --ignore-missing SHA256SUMS      # Linux
+shasum -a 256 -c --ignore-missing SHA256SUMS  # macOS
+```
+
+Platform notes:
+
+- Linux binaries are built on Ubuntu 22.04 and need glibc 2.35 or newer and `libicu`.
+- macOS binaries are unsigned. If Gatekeeper blocks the binary, remove the quarantine flag: `xattr -d com.apple.quarantine dossier`.
+
 ## Reproducing the evaluation
 
 ```sh

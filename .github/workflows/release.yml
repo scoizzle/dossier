@@ -186,6 +186,32 @@ jobs:
             exit 1
           fi
           cp README.md "$stage/README.md"
+          # The MIT license and third-party notices must travel with every binary.
+          for doc in LICENSE THIRD-PARTY-NOTICES.md; do
+            if [ ! -f "$doc" ]; then
+              echo "::error::$doc not found in the repository root"
+              exit 1
+            fi
+            cp "$doc" "$stage/$doc"
+          done
+          # The .NET runtime is compiled into the binary and carries notices for libraries it links statically.
+          # Locate the Native AOT runtime pack that restore resolved (version from project.assets.json).
+          assets=src/Dossier/obj/project.assets.json
+          pack_version="$(grep -E -A1 '"name": "Microsoft\.NETCore\.App\.Runtime\.NativeAOT\.'"$RID"'"' "$assets" | sed -n 's/.*"version": "\[\([^],]*\).*/\1/p' | head -n 1 || true)"
+          if [ -z "$pack_version" ]; then
+            echo "::error::Microsoft.NETCore.App.Runtime.NativeAOT.$RID version not found in $assets"
+            exit 1
+          fi
+          packages="${NUGET_PACKAGES:-$HOME/.nuget/packages}"
+          if command -v cygpath >/dev/null 2>&1; then
+            packages="$(cygpath -u "$packages")"
+          fi
+          runtime_notices="$packages/microsoft.netcore.app.runtime.nativeaot.$RID/$pack_version/THIRD-PARTY-NOTICES.TXT"
+          if [ ! -f "$runtime_notices" ]; then
+            echo "::error::.NET runtime third-party notices not found at $runtime_notices"
+            exit 1
+          fi
+          cp "$runtime_notices" "$stage/dotnet-runtime-THIRD-PARTY-NOTICES.TXT"
           archive="dossier-$VERSION-$RID.$EXT"
           if [ "$EXT" = "zip" ]; then
             (cd "$stage" && 7z a -tzip "../../dist/$archive" ./*)

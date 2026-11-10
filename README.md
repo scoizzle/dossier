@@ -314,7 +314,7 @@ The tag must look like `vMAJOR.MINOR.PATCH` with an optional prerelease suffix (
 - `dossier-<version>-win-x64.zip`
 - `SHA256SUMS`
 
-Each archive holds the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, and this README. Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory:
+Each archive holds the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory:
 
 ```sh
 sha256sum -c --ignore-missing SHA256SUMS      # Linux
@@ -360,3 +360,7 @@ Five foot-guns shaped the design; each is a decision, not an accident.
 **Conflicts are exempt from the budget.** The budget bounds the fact content; conflicts and gaps are never charged against it. A dossier whose conflicts alone exceed the budget overruns it, because a dossier that hides a contradiction to save tokens is worse than one that is over budget.
 
 **Dossier facts never feed back in.** Compile skips the reserved kind `dossier` when it loads candidates, so a fact of that kind can never appear in a compiled dossier's output. Compiling is a read: the result is returned to the caller and is not itself written as a fact.
+
+## License
+
+MIT, see [LICENSE](LICENSE). Third-party notices are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and are included in every release archive.

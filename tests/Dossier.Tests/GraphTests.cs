@@ -297,6 +297,216 @@ public sealed class GraphTests
         await Assert.That(Graph(store, GraphRequest.FromQuery("s-root", "2", "0", "7")).GetProperty("limits").GetProperty("max_nodes").GetInt32()).IsEqualTo(7);
     }
 
+    private static GraphSeed.Ref FactRef(string target, string rel = "mentions") => new(rel, "fact", target, "observed");
+
+    // ---- R3: bounded boundary queries ----------------------------------------------------------
+
+    [Test]
+    public async Task Graph_BoundaryQueriesAreBoundedByTheCapAndTheAdmittedSlots()
+    {
+        using var db = new TempDb();
+        using (var bulk = new GraphSeed.Bulk(db.Store))
+        {
+            bulk.Subject("s-root", "Acme")
+                .AddFact("f-pop", "s-root", "popular fact", "2026-01-01T00:00:01Z");
+            bulk.Slot("s-root", "k1", "f-pop");
+            for (var i = 1; i <= 60; i++)
+            {
+                var id = $"r-{i:D3}";
+                bulk.Subject(id, "Referrer " + id)
+                    .AddFact("fr-" + id, id, "refers", "2026-01-01T00:00:02Z", FactRef("f-pop"));
+            }
+
+            // Slot refs that point at keys nobody in the graph occupies: a bounded query must not read them.
+            for (var i = 0; i < 600; i++)
+            {
+                bulk.AddFact($"fu-{i:D4}", "r-001", "unrelated slot ref", "2026-01-01T00:00:03Z", new GraphSeed.Ref("mentions", "slot", $"Acme#unrelated{i}", "observed"));
+            }
+
+            bulk.AddFact("fs-003", "r-003", "slot ref", "2026-01-01T00:00:04Z", new GraphSeed.Ref("mentions", "slot", "Acme#k1", "observed"));
+        }
+
+        var probes = new Dictionary<string, int>();
+        db.Store.GraphRowProbe = (name, rows) => probes[name] = probes.GetValueOrDefault(name) + rows;
+        var g = Graph(db.Store, Request("s-root", depth: 0, maxNodes: 20));
+        var slotRows = probes.GetValueOrDefault("inbound_slot", int.MaxValue);
+
+        // Root and its one fact, then boundary subjects in id order up to the cap.
+        var expected = "s-root," + string.Join(",", Enumerable.Range(1, 18).Select(i => $"r-{i:D3}"));
+        await Assert.That(string.Join(",", Ids(g, "subjects"))).IsEqualTo(expected);
+        await Assert.That(Nodes(g)).IsEqualTo(20);
+        await Assert.That(g.GetProperty("truncated").GetProperty("subjects").GetInt32()).IsEqualTo(42);
+        await Assert.That(g.GetProperty("truncated").GetProperty("edges").GetInt32()).IsEqualTo(42);
+        var inbound = Edges(g, "inbound");
+        await Assert.That(inbound.Count).IsEqualTo(19);
+        await Assert.That(inbound.Count(e => e.TryGetProperty("slot", out var slot) && slot.ValueKind == JsonValueKind.String && e.GetProperty("to").GetString() == "r-003")).IsEqualTo(1);
+        await Assert.That(Ops.Graph(db.Store, Request("s-root", depth: 0, maxNodes: 20))).IsEqualTo(Ops.Graph(db.Store, Request("s-root", depth: 0, maxNodes: 20)));
+
+        // The slot query reads only slot refs whose key an admitted fact occupies (1 of the 601), not every slot ref.
+        await Assert.That(slotRows).IsLessThanOrEqualTo(1);
+    }
+
+    // ---- R5: unresolved accounting -------------------------------------------------------------
+
+    [Test]
+    public async Task Graph_HiddenInboundEdgesAreReportedAsNotAdmitted()
+    {
+        var (db, store) = Seeded();
+        using var keepAlive = db;
+        var g = Graph(store, Request(maxNodes: 12));
+
+        await Assert.That(Ids(g, "subjects").Contains("s-far")).IsFalse();
+        // f-web-1 > f-lib-1 (outgoing) plus the two hidden inbound edges of s-far.
+        await Assert.That(g.GetProperty("truncated").GetProperty("edges").GetInt32()).IsEqualTo(3);
+        var entries = g.GetProperty("unresolved").EnumerateArray()
+            .Where(u => u.GetProperty("from").GetString() == "f-far-1")
+            .Select(u => string.Join("|", u.GetProperty("rel").GetString(), u.GetProperty("kind").GetString(), u.GetProperty("target").GetString(), u.GetProperty("reason").GetString()))
+            .OrderBy(x => x, StringComparer.Ordinal)
+            .ToList();
+        await Assert.That(string.Join(",", entries)).IsEqualTo("confirms|fact|f-core-1|not_admitted,mentions|slot|Core#owner|not_admitted");
+    }
+
+    [Test]
+    public async Task Graph_HiddenFactOfAnAdmittedSubjectReferringToAnAdmittedFactIsCounted()
+    {
+        using var db = new TempDb();
+        using (var bulk = new GraphSeed.Bulk(db.Store))
+        {
+            bulk.Subject("s-a", "Alpha")
+                .AddFact("fa-1", "s-a", "first", "2026-01-01T00:00:01Z")
+                .AddFact("fa-2", "s-a", "second, hidden by the cap", "2026-01-01T00:00:02Z", FactRef("fa-1", "supports"));
+        }
+
+        var g = Graph(db.Store, Request("s-a", depth: 0, maxNodes: 2));
+        await Assert.That(string.Join(",", Ids(g, "facts"))).IsEqualTo("fa-1");
+        await Assert.That(g.GetProperty("truncated").GetProperty("facts").GetInt32()).IsEqualTo(1);
+        await Assert.That(g.GetProperty("truncated").GetProperty("edges").GetInt32()).IsEqualTo(1);
+        var entry = g.GetProperty("unresolved").EnumerateArray().Single();
+        await Assert.That(entry.GetProperty("from").GetString()).IsEqualTo("fa-2");
+        await Assert.That(entry.GetProperty("target").GetString()).IsEqualTo("fa-1");
+        await Assert.That(entry.GetProperty("reason").GetString()).IsEqualTo("not_admitted");
+    }
+
+    [Test]
+    public async Task Graph_UnresolvedIsCappedWithAnExplicitCount()
+    {
+        using var db = new TempDb();
+        using (var bulk = new GraphSeed.Bulk(db.Store))
+        {
+            bulk.Subject("s-a", "Alpha")
+                .AddFact("fa-1", "s-a", "many dangling refs", "2026-01-01T00:00:01Z", Enumerable.Range(0, 2100).Select(i => FactRef($"ghost-{i:D4}")).ToArray());
+        }
+
+        var g = Graph(db.Store, Request("s-a", depth: 0));
+        await Assert.That(g.GetProperty("unresolved").GetArrayLength()).IsEqualTo(2000);
+        await Assert.That(g.GetProperty("truncated").GetProperty("unresolved").GetInt32()).IsEqualTo(100);
+        await Assert.That(g.GetProperty("truncated").GetProperty("edges").GetInt32()).IsEqualTo(0);
+
+        // Below the cap nothing is dropped.
+        var small = Graph(Seeded().Store, Request());
+        await Assert.That(small.GetProperty("truncated").GetProperty("unresolved").GetInt32()).IsEqualTo(0);
+    }
+
+    // ---- R6: facts parameter ----------------------------------------------------------------------
+
+    [Test]
+    public async Task Graph_FactsParameterIsCaseInsensitive()
+    {
+        foreach (var yes in new[] { "true", "True", "TRUE", "1" })
+        {
+            await Assert.That(GraphRequest.FromQuery(null, null, yes, null).Facts).IsTrue();
+        }
+
+        foreach (var no in new[] { "false", "False", "FALSE", "0" })
+        {
+            await Assert.That(GraphRequest.FromQuery(null, null, no, null).Facts).IsFalse();
+        }
+
+        foreach (var bad in new[] { "", "yes", "2", "tru", " true", "true " })
+        {
+            var thrown = Assert.Throws<DossierRequestException>(() => GraphRequest.FromQuery(null, null, bad, null));
+            await Assert.That(thrown.Code).IsEqualTo("bad_facts");
+        }
+    }
+
+    // ---- R7: text cap ------------------------------------------------------------------------------
+
+    [Test]
+    public async Task Graph_TextCapEndsWithAMarkerAndNeverSplitsASurrogatePair()
+    {
+        using var db = new TempDb();
+        using (var bulk = new GraphSeed.Bulk(db.Store))
+        {
+            bulk.Subject("s-a", "Alpha")
+                .AddFact("f-exact", "s-a", new string('a', 500), "2026-01-01T00:00:01Z")
+                .AddFact("f-long", "s-a", new string('a', 501), "2026-01-01T00:00:02Z")
+                .AddFact("f-pair", "s-a", new string('a', 498) + "\U0001F600" + new string('b', 20), "2026-01-01T00:00:03Z")
+                .AddFact("f-pair2", "s-a", new string('a', 497) + "\U0001F600" + new string('b', 20), "2026-01-01T00:00:04Z");
+        }
+
+        var g = Graph(db.Store, Request("s-a", depth: 0));
+        string Text(string id) => g.GetProperty("facts").EnumerateArray().Single(f => f.GetProperty("id").GetString() == id).GetProperty("text").GetString()!;
+
+        await Assert.That(Text("f-exact")).IsEqualTo(new string('a', 500));
+        await Assert.That(Text("f-long")).IsEqualTo(new string('a', 499) + "\u2026");
+        // The pair straddles the cut: it is dropped whole, never half kept.
+        await Assert.That(Text("f-pair")).IsEqualTo(new string('a', 498) + "\u2026");
+        await Assert.That(Text("f-pair2")).IsEqualTo(new string('a', 497) + "\U0001F600" + "\u2026");
+        foreach (var id in new[] { "f-long", "f-pair", "f-pair2" })
+        {
+            var text = Text(id);
+            await Assert.That(text.Length).IsLessThanOrEqualTo(500);
+            await Assert.That(text.EndsWith('\u2026')).IsTrue();
+            await Assert.That(text.Where((c, i) => char.IsHighSurrogate(c) && (i + 1 >= text.Length || !char.IsLowSurrogate(text[i + 1]))).Any()).IsFalse();
+        }
+    }
+
+    // ---- R8: cycles ----------------------------------------------------------------------------------
+
+    [Test]
+    public async Task Graph_ParentCyclesTerminateDeterministically()
+    {
+        using var db = new TempDb();
+        using (var bulk = new GraphSeed.Bulk(db.Store))
+        {
+            bulk.Subject("s-a", "Alpha", "s-b")
+                .Subject("s-b", "Beta", "s-a")
+                .Subject("s-c", "Gamma", "s-a")
+                .AddFact("f-a", "s-a", "a fact", "2026-01-01T00:00:01Z");
+        }
+
+        foreach (var depth in new[] { 0, 1, 2, 3 })
+        {
+            var g = Graph(db.Store, Request("s-a", depth: depth));
+            var subjects = Ids(g, "subjects");
+            await Assert.That(subjects.Count).IsEqualTo(subjects.Distinct().Count());
+            await Assert.That(Ids(g, "facts")).IsEquivalentTo(new[] { "f-a" });
+            await Assert.That(subjects.First()).IsEqualTo("s-a");
+            await Assert.That(subjects.Contains("s-b")).IsTrue();
+            await Assert.That(Ops.Graph(db.Store, Request("s-a", depth: depth))).IsEqualTo(Ops.Graph(db.Store, Request("s-a", depth: depth)));
+        }
+
+        await Assert.That(string.Join(",", Ids(Graph(db.Store, Request("s-b", depth: 1)), "subjects"))).IsEqualTo("s-b,s-a");
+        // The parent chain is admitted but not expanded, so s-c (a child of s-a) is not reached from s-b.
+        await Assert.That(string.Join(",", Ids(Graph(db.Store, Request("s-b", depth: 3)), "subjects"))).IsEqualTo("s-b,s-a");
+
+        // Tree mode: a cycle has no root, so it is unreachable; it is counted as hidden, not looped over.
+        var tree = Graph(db.Store, Request(subject: null));
+        await Assert.That(tree.GetProperty("subjects").GetArrayLength()).IsEqualTo(0);
+        await Assert.That(tree.GetProperty("truncated").GetProperty("subjects").GetInt32()).IsEqualTo(3);
+        await Assert.That(Ops.Graph(db.Store, Request(subject: null))).IsEqualTo(Ops.Graph(db.Store, Request(subject: null)));
+
+        // With a real root next to the cycle only the root tree is drawn.
+        using (var bulk2 = new GraphSeed.Bulk(db.Store))
+        {
+            bulk2.Subject("s-r", "Root").Subject("s-k", "Kid", "s-r");
+        }
+
+        var mixed = Graph(db.Store, Request(subject: null));
+        await Assert.That(string.Join(",", Ids(mixed, "subjects"))).IsEqualTo("s-r,s-k");
+        await Assert.That(mixed.GetProperty("truncated").GetProperty("subjects").GetInt32()).IsEqualTo(3);
+    }
+
     /// <summary>
     /// Keeps tests/Dossier.Tests/fixtures/graph-api.json honest: it must equal the API output for the seeded
     /// store byte for byte. scripts/graph-smoke.mjs renders this exact file. To regenerate after an intended

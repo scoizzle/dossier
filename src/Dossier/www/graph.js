@@ -46,6 +46,9 @@
       });
     };
     var maxNodes = options.maxNodes || 500;
+    // The view's own parameters; an expansion asks for the same depth and facts setting.
+    var viewDepth = Number.isInteger(options.depth) && options.depth >= 0 && options.depth <= 3 ? options.depth : 1;
+    var viewFacts = options.facts === false || options.facts === 'false' ? 'false' : 'true';
     var reduced = !!(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
     var dpr = win.devicePixelRatio || 1;
 
@@ -82,7 +85,9 @@
     var edgeKeys = {};
     var hueCount = 0;
     var rootKey = null;
-    var lastTruncated = { subjects: 0, facts: 0, edges: 0 };
+    // Hidden counts seen so far: the largest per category across the initial load and every merge, so a
+    // later clean expansion never hides truncation that still applies. A new mount (new root) starts at 0.
+    var truncatedSeen = { subjects: 0, facts: 0, edges: 0 };
     var destroyed = false;
 
     function place(n, rand, anchor, disc) {
@@ -144,7 +149,12 @@
       for (i = 0; i < nodes.length; i++) {
         if (nodes[i].type === 'fact') nodes[i].r = 3.5 + 1.2 * Math.sqrt(nodes[i].deg);
       }
-      lastTruncated = payload.truncated || { subjects: 0, facts: 0, edges: 0 };
+      var t = payload.truncated || {};
+      truncatedSeen = {
+        subjects: Math.max(truncatedSeen.subjects, Number(t.subjects) || 0),
+        facts: Math.max(truncatedSeen.facts, Number(t.facts) || 0),
+        edges: Math.max(truncatedSeen.edges, Number(t.edges) || 0),
+      };
       if (!rootKey && payload.root) rootKey = nodeKey('subject', payload.root);
       return added;
     }
@@ -154,11 +164,11 @@
       var factCount = 0;
       for (var i = 0; i < nodes.length; i++) { if (nodes[i].type === 'subject') subjectCount++; else factCount++; }
       counts.textContent = subjectCount + ' subjects, ' + factCount + ' facts, ' + edges.length + ' refs';
-      var hidden = (Number(lastTruncated.subjects) || 0) + (Number(lastTruncated.facts) || 0) + (Number(lastTruncated.edges) || 0);
+      var hidden = truncatedSeen.subjects + truncatedSeen.facts + truncatedSeen.edges;
       if (hidden > 0) {
         banner.hidden = false;
-        banner.textContent = hidden + ' hidden (' + (Number(lastTruncated.subjects) || 0) + ' subjects, ' +
-          (Number(lastTruncated.facts) || 0) + ' facts, ' + (Number(lastTruncated.edges) || 0) + ' refs). Double-click a node to expand it.';
+        banner.textContent = hidden + ' hidden (' + truncatedSeen.subjects + ' subjects, ' +
+          truncatedSeen.facts + ' facts, ' + truncatedSeen.edges + ' refs). Double-click a node to expand it.';
       } else {
         banner.hidden = true;
         banner.textContent = '';
@@ -580,8 +590,15 @@
     });
 
     fitButton.addEventListener('click', function () { fit(); schedule(); });
+    // Keys typed into a control belong to that control: no shortcut fires from an input, a select, a button
+    // or a link, nor from editable content. Escape still closes the panel from a button or link.
     function onKey(ev) {
       if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+      var t = ev.target || doc.activeElement;
+      var tag = t && t.tagName ? String(t.tagName).toUpperCase() : '';
+      var editable = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || !!(t && t.isContentEditable);
+      if (editable) return;
+      if ((tag === 'BUTTON' || tag === 'A') && ev.key !== 'Escape') return;
       if (ev.key === 'Escape') closePanel();
       else if (ev.key === 'f' || ev.key === 'F') { fit(); schedule(); }
       else if ((ev.key === 'Enter' || ev.key === 'e' || ev.key === 'E') && selected) expand(selected);
@@ -592,7 +609,7 @@
 
     // ---- fetching -------------------------------------------------------------------------
     function url(subject) {
-      return '/api/graph?subject=' + encodeURIComponent(subject) + '&depth=1&facts=true&max_nodes=' + maxNodes;
+      return '/api/graph?subject=' + encodeURIComponent(subject) + '&depth=' + viewDepth + '&facts=' + viewFacts + '&max_nodes=' + maxNodes;
     }
 
     function expand(nd) {

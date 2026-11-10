@@ -7,7 +7,7 @@ namespace Dossier;
 
 /// <summary>
 /// graph request: a bounded neighbourhood (or, without a subject, the subject tree) of the store.
-/// Defaults: depth 1, facts true, max_nodes 500.
+/// Defaults: depth 1, facts true, max_nodes 500. facts accepts true, false, 1 or 0 in any letter case.
 /// </summary>
 public sealed class GraphRequest
 {
@@ -37,12 +37,11 @@ public sealed class GraphRequest
         bool? parsedFacts = null;
         if (facts is not null)
         {
-            parsedFacts = facts switch
-            {
-                "true" or "1" => true,
-                "false" or "0" => false,
-                _ => throw new DossierRequestException("bad_facts", "facts must be true, false, 1 or 0"),
-            };
+            parsedFacts = facts.Equals("true", StringComparison.OrdinalIgnoreCase) || facts == "1"
+                ? true
+                : facts.Equals("false", StringComparison.OrdinalIgnoreCase) || facts == "0"
+                    ? false
+                    : throw new DossierRequestException("bad_facts", "facts must be true, false, 1 or 0");
         }
 
         int? parsedMax = null;
@@ -100,18 +99,31 @@ public sealed record GraphEdge(
     string? Slot,
     bool? Ambiguous);
 
-/// <summary>An internal ref whose target is not in the payload. Reason: not_admitted or not_found.</summary>
+/// <summary>
+/// An internal ref whose target is not in the payload; From is the fact that carries the ref. Reason: not_admitted
+/// (the target exists but was not admitted, including a hidden referrer of an admitted fact) or not_found.
+/// </summary>
 public sealed record GraphHidden(string From, string Rel, string Kind, string Target, string Reason);
 
-public sealed record GraphTruncated(int Subjects, int Facts, int Edges);
+/// <summary>
+/// What the payload leaves out: subjects and facts not admitted, refs (edges) whose far end is not in the payload,
+/// and unresolved entries dropped once the unresolved list reached its cap of 2000.
+/// </summary>
+public sealed record GraphTruncated(int Subjects, int Facts, int Edges, int Unresolved);
 
 public sealed record GraphLimits(int MaxNodes, int Depth);
 
 public sealed partial class DossierStore
 {
+    /// <summary>Fact text longer than this many UTF-16 units is cut so that the result, marker included, is at most this long.</summary>
     private const int GraphTextCap = 500;
+
+    private const string GraphTextMarker = "\u2026";
     private const int GraphUnresolvedCap = 2000;
     private const int GraphBatchSize = 400;
+
+    /// <summary>Test seam: called as (query name, rows read) for the boundary queries of a graph request.</summary>
+    public Action<string, int>? GraphRowProbe { get; set; }
 
     /// <summary>
     /// A bounded, deterministic neighbourhood of a subject (or the subject tree when no subject is
@@ -133,7 +145,7 @@ public sealed partial class DossierStore
         }
 
         using var connection = OpenConnection();
-        return new GraphBuilder(connection, depth, withFacts, maxNodes).Build(request.Subject);
+        return new GraphBuilder(connection, depth, withFacts, maxNodes, GraphRowProbe).Build(request.Subject);
     }
 
     private sealed class GraphBuilder
@@ -176,9 +188,13 @@ public sealed partial class DossierStore
         private readonly HashSet<string> admittedFactIds = new(StringComparer.Ordinal);
         private int hiddenFacts;
         private int hiddenEdges;
+        private int droppedUnresolved;
 
-        public GraphBuilder(SqliteConnection connection, int depth, bool withFacts, int maxNodes)
+        private readonly Action<string, int>? probe;
+
+        public GraphBuilder(SqliteConnection connection, int depth, bool withFacts, int maxNodes, Action<string, int>? probe)
         {
+            this.probe = probe;
             this.connection = connection;
             this.depth = depth;
             this.withFacts = withFacts;
@@ -221,6 +237,7 @@ public sealed partial class DossierStore
 
             BuildRefEdges(edges, unresolved);
             BuildInboundEdges(edges);
+            AppendHiddenInbound(unresolved);
 
             var subjectNodes = subjectOrder
                 .Select(id => new GraphSubject(
@@ -256,7 +273,7 @@ public sealed partial class DossierStore
                 factNodes,
                 edges,
                 unresolved,
-                new GraphTruncated(hiddenSubjectCount, hiddenFacts, hiddenEdges),
+                new GraphTruncated(hiddenSubjectCount, hiddenFacts, hiddenEdges, droppedUnresolved),
                 new GraphLimits(maxNodes, depth));
         }
 
@@ -273,8 +290,14 @@ public sealed partial class DossierStore
                 return text;
             }
 
-            var length = char.IsHighSurrogate(text[GraphTextCap - 1]) ? GraphTextCap - 1 : GraphTextCap;
-            return text[..length];
+            // The marker is one UTF-16 unit; a surrogate pair that straddles the cut is dropped whole.
+            var length = GraphTextCap - GraphTextMarker.Length;
+            if (char.IsHighSurrogate(text[length - 1]))
+            {
+                length--;
+            }
+
+            return text[..length] + GraphTextMarker;
         }
 
         private static bool IsInternalKind(string kind) => kind is "fact" or "subject" or "slot";
@@ -660,7 +683,34 @@ public sealed partial class DossierStore
         }
 
         private readonly List<Inbound> inbound = new();
+        private readonly List<GraphHidden> hiddenInbound = new();
+        private int hiddenInboundTotal;
 
+        /// <summary>One referrer row: the deduplicated edge it makes, the referrer fact and the ref's raw target.</summary>
+        private sealed record InboundRow(Inbound Edge, string FactId, string RefTarget);
+
+        private static string JsonArray(IEnumerable<string> values)
+        {
+            using var stream = new MemoryStream();
+            using (var writer = new System.Text.Json.Utf8JsonWriter(stream))
+            {
+                writer.WriteStartArray();
+                foreach (var value in values)
+                {
+                    writer.WriteStringValue(value);
+                }
+
+                writer.WriteEndArray();
+            }
+
+            return Encoding.UTF8.GetString(stream.ToArray());
+        }
+
+        /// <summary>
+        /// Boundary subjects: owners of facts that refer to an admitted fact (directly or through the slot it occupies).
+        /// Only the (max_nodes - used) lowest-id candidates are kept; the rest are counted as hidden and their rows are
+        /// not retained. Referrers that are hidden facts of admitted subjects are counted as hidden edges too.
+        /// </summary>
         private void AdmitBoundary()
         {
             if (admittedFacts.Count == 0)
@@ -668,28 +718,129 @@ public sealed partial class DossierStore
                 return;
             }
 
-            var found = new List<Inbound>();
-            foreach (var chunk in admittedFacts.Select(f => f.Id).Chunk(GraphBatchSize))
+            var capacity = Math.Max(0, maxNodes - Used);
+            var kept = new SortedSet<string>(StringComparer.Ordinal);
+            var keptRows = new Dictionary<string, List<InboundRow>>(StringComparer.Ordinal);
+            var overflow = new HashSet<string>(StringComparer.Ordinal);
+            string? groupSubject = null;
+            var groupKeys = new HashSet<string>(StringComparer.Ordinal);
+
+            void Hide(InboundRow row)
             {
-                using var command = connection.CreateCommand();
-                command.CommandText =
-                    "SELECT r.target, f.subject_id, r.rel, r.basis FROM refs r JOIN facts f ON f.id = r.fact_id WHERE r.kind = 'fact' AND r.target IN ("
-                    + Placeholders(command, chunk) + ") ORDER BY r.target, f.subject_id, r.rel, r.basis, f.id, r.seq";
-                using var reader = command.ExecuteReader();
-                while (reader.Read())
+                hiddenEdges++;
+                hiddenInboundTotal++;
+                if (hiddenInbound.Count < GraphUnresolvedCap)
                 {
-                    found.Add(new Inbound(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), "fact", null));
+                    hiddenInbound.Add(new GraphHidden(row.FactId, row.Edge.Rel, row.Edge.Kind, row.RefTarget, "not_admitted"));
                 }
             }
 
-            using (var command = Command(
-                connection,
-                null,
-                "SELECT r.target, f.subject_id, r.rel, r.basis FROM refs r JOIN facts f ON f.id = r.fact_id WHERE r.kind = 'slot' ORDER BY f.id, r.seq"))
-            using (var reader = command.ExecuteReader())
+            // Rows arrive ordered by referrer subject, so one group is one subject and its dedupe set stays small.
+            void Consider(InboundRow row)
             {
+                var item = row.Edge;
+                if (item.Subject != groupSubject)
+                {
+                    groupSubject = item.Subject;
+                    groupKeys.Clear();
+                }
+
+                if (!subjects.ContainsKey(item.Subject))
+                {
+                    return;
+                }
+
+                if (admittedSubjects.Contains(item.Subject))
+                {
+                    // An admitted referrer fact already shows its own edge; a hidden one is a hidden edge.
+                    if (!admittedFactIds.Contains(row.FactId) && groupKeys.Add(string.Join('\u001f', row.FactId, item.TargetFact, item.Rel, item.Basis, item.Kind, item.Slot ?? string.Empty)))
+                    {
+                        Hide(row);
+                    }
+
+                    return;
+                }
+
+                if (!groupKeys.Add(string.Join('\u001f', item.TargetFact, item.Rel, item.Basis, item.Kind, item.Slot ?? string.Empty)))
+                {
+                    return;
+                }
+
+                if (kept.Contains(item.Subject))
+                {
+                    keptRows[item.Subject].Add(row);
+                }
+                else if (overflow.Contains(item.Subject))
+                {
+                    Hide(row);
+                }
+                else if (kept.Count < capacity)
+                {
+                    kept.Add(item.Subject);
+                    keptRows[item.Subject] = new List<InboundRow> { row };
+                }
+                else if (kept.Count > 0 && string.CompareOrdinal(item.Subject, kept.Max) < 0)
+                {
+                    var evicted = kept.Max!;
+                    kept.Remove(evicted);
+                    foreach (var dropped in keptRows[evicted])
+                    {
+                        Hide(dropped);
+                    }
+
+                    keptRows.Remove(evicted);
+                    overflow.Add(evicted);
+                    kept.Add(item.Subject);
+                    keptRows[item.Subject] = new List<InboundRow> { row };
+                }
+                else
+                {
+                    overflow.Add(item.Subject);
+                    Hide(row);
+                }
+            }
+
+            var rows = 0;
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText =
+                    "SELECT r.target, f.subject_id, r.rel, r.basis, f.id FROM refs r JOIN facts f ON f.id = r.fact_id "
+                    + "WHERE r.kind = 'fact' AND r.target IN (SELECT value FROM json_each($ids)) "
+                    + "ORDER BY f.subject_id, r.target, r.rel, r.basis, f.id, r.seq";
+                Bind(command, "$ids", JsonArray(admittedFacts.Select(f => f.Id)));
+                using var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
+                    rows++;
+                    var target = reader.GetString(0);
+                    Consider(new InboundRow(new Inbound(target, reader.GetString(1), reader.GetString(2), reader.GetString(3), "fact", null), reader.GetString(4), target));
+                }
+            }
+
+            probe?.Invoke("inbound_fact", rows);
+
+            // Slot refs reach an admitted fact only through a slot it occupies, so read only refs naming such a key.
+            groupSubject = null;
+            groupKeys.Clear();
+            rows = 0;
+            var occupiedKeys = slots
+                .Where(entry => entry.Value.Any(admittedFactIds.Contains))
+                .Select(entry => entry.Key.Key)
+                .Distinct(StringComparer.Ordinal)
+                .OrderBy(key => key, StringComparer.Ordinal)
+                .ToList();
+            if (occupiedKeys.Count > 0)
+            {
+                using var command = connection.CreateCommand();
+                command.CommandText =
+                    "SELECT r.target, f.subject_id, r.rel, r.basis, f.id FROM refs r JOIN facts f ON f.id = r.fact_id "
+                    + "WHERE r.kind = 'slot' AND instr(r.target, '#') > 1 AND substr(r.target, instr(r.target, '#') + 1) IN (SELECT value FROM json_each($keys)) "
+                    + "ORDER BY f.subject_id, r.target, r.rel, r.basis, f.id, r.seq";
+                Bind(command, "$keys", JsonArray(occupiedKeys));
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    rows++;
                     var target = reader.GetString(0);
                     if (SplitSlot(target) is not { } split)
                     {
@@ -702,23 +853,17 @@ public sealed partial class DossierStore
                         {
                             if (admittedFactIds.Contains(occupant))
                             {
-                                found.Add(new Inbound(occupant, reader.GetString(1), reader.GetString(2), reader.GetString(3), "slot", split.Key));
+                                Consider(new InboundRow(new Inbound(occupant, reader.GetString(1), reader.GetString(2), reader.GetString(3), "slot", split.Key), reader.GetString(4), target));
                             }
                         }
                     }
                 }
             }
 
-            var candidates = new SortedSet<string>(StringComparer.Ordinal);
-            foreach (var item in found)
-            {
-                if (!admittedSubjects.Contains(item.Subject) && subjects.ContainsKey(item.Subject))
-                {
-                    candidates.Add(item.Subject);
-                }
-            }
+            probe?.Invoke("inbound_slot", rows);
 
-            foreach (var id in candidates)
+            hiddenSubjects.UnionWith(overflow);
+            foreach (var id in kept)
             {
                 if (AdmitSubject(id))
                 {
@@ -730,13 +875,37 @@ public sealed partial class DossierStore
                 }
             }
 
-            inbound.AddRange(found
+            inbound.AddRange(kept
+                .Where(boundarySubjects.Contains)
+                .SelectMany(id => keptRows[id])
+                .Select(row => row.Edge)
                 .OrderBy(i => i.TargetFact, StringComparer.Ordinal)
                 .ThenBy(i => i.Subject, StringComparer.Ordinal)
                 .ThenBy(i => i.Rel, StringComparer.Ordinal)
                 .ThenBy(i => i.Basis, StringComparer.Ordinal)
                 .ThenBy(i => i.Kind, StringComparer.Ordinal)
                 .ThenBy(i => i.Slot, StringComparer.Ordinal));
+        }
+
+        private void AppendHiddenInbound(List<GraphHidden> unresolved)
+        {
+            var appended = 0;
+            foreach (var entry in hiddenInbound
+                .OrderBy(h => h.From, StringComparer.Ordinal)
+                .ThenBy(h => h.Rel, StringComparer.Ordinal)
+                .ThenBy(h => h.Kind, StringComparer.Ordinal)
+                .ThenBy(h => h.Target, StringComparer.Ordinal))
+            {
+                if (unresolved.Count >= GraphUnresolvedCap)
+                {
+                    break;
+                }
+
+                unresolved.Add(entry);
+                appended++;
+            }
+
+            droppedUnresolved += hiddenInboundTotal - appended;
         }
 
         // ---- edges ----------------------------------------------------------------------------
@@ -763,6 +932,10 @@ public sealed partial class DossierStore
                 if (unresolved.Count < GraphUnresolvedCap)
                 {
                     unresolved.Add(new GraphHidden(fact.Id, reference.Rel, reference.Kind, reference.Target, reason));
+                }
+                else
+                {
+                    droppedUnresolved++;
                 }
             }
 
@@ -885,26 +1058,14 @@ public sealed partial class DossierStore
 
         private void BuildInboundEdges(List<GraphEdge> edges)
         {
+            // Every kept row belongs to a boundary subject; the edge points from the admitted fact to it.
             var seen = new HashSet<string>(StringComparer.Ordinal);
             foreach (var item in inbound)
             {
                 var key = string.Join('\u001f', item.TargetFact, item.Subject, item.Rel, item.Basis, item.Kind, item.Slot ?? string.Empty);
-                if (!seen.Add(key))
+                if (seen.Add(key))
                 {
-                    continue;
-                }
-
-                if (admittedSubjects.Contains(item.Subject))
-                {
-                    // A fact of an admitted subject: its own fact edge (when admitted) already shows it.
-                    if (boundarySubjects.Contains(item.Subject))
-                    {
-                        edges.Add(new GraphEdge("fact", item.TargetFact, "subject", item.Subject, item.Rel, item.Basis, "inbound", item.Slot, null));
-                    }
-                }
-                else if (subjects.ContainsKey(item.Subject))
-                {
-                    hiddenEdges++;
+                    edges.Add(new GraphEdge("fact", item.TargetFact, "subject", item.Subject, item.Rel, item.Basis, "inbound", item.Slot, null));
                 }
             }
         }

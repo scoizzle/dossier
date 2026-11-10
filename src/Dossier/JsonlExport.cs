@@ -137,6 +137,7 @@ public sealed partial class DossierStore
         var maxFileBytes = StricterLimit(options.MaxFileBytes, enforce ? profile!.MaxFileBytes : 0);
         var maxTotalBytes = StricterLimit(options.MaxTotalBytes, enforce ? profile!.MaxTotalBytes : 0);
         var mode = options.Assets;
+        var ceiling = options.MemoryCeilingBytes > 0 ? Math.Min(options.MemoryCeilingBytes, Array.MaxLength) : Array.MaxLength;
 
         var inBundle = ordered.Select(s => s.Id).ToHashSet(StringComparer.Ordinal);
         var factsBySubject = facts.ToLookup(f => f.SubjectId, StringComparer.Ordinal);
@@ -202,6 +203,13 @@ public sealed partial class DossierStore
                         throw new DossierRequestException(
                             "record_exceeds_max_file_bytes",
                             Fail($"asset {attachment.Sha256} (\"{Inline(attachment.Filename)}\") needs at least {base64Length + 1} bytes embedded, more than the {maxFileBytes}-byte file limit; use --assets files or --assets none"));
+                    }
+
+                    if (base64Length + 1 > ceiling)
+                    {
+                        throw new DossierRequestException(
+                            "bundle_too_large_for_memory",
+                            Fail($"asset {attachment.Sha256} (\"{Inline(attachment.Filename)}\") would be {base64Length + 1} bytes as one embedded line, more than the {ceiling}-byte in-memory limit; use --assets files or --assets none"));
                     }
 
                     var blob = File.ReadAllBytes(source);
@@ -270,6 +278,16 @@ public sealed partial class DossierStore
         if (current is not null)
         {
             dataFiles[^1] = dataFiles[^1] with { Bytes = currentBytes };
+        }
+
+        foreach (var file in dataFiles)
+        {
+            if (file.Bytes > ceiling)
+            {
+                throw new DossierRequestException(
+                    "bundle_too_large_for_memory",
+                    Fail($"{file.Name} would be {file.Bytes} bytes, more than the {ceiling}-byte in-memory limit; set --max-file-bytes to split the bundle, or use --assets files or --assets none"));
+            }
         }
 
         var fileCount = dataFiles.Count + assetFiles.Count;

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using TUnit.Assertions;
 using TUnit.Assertions.Extensions;
 using TUnit.Core;
@@ -440,5 +441,82 @@ public sealed class PostFactsTests
         await Assert.That(dry.Response.Facts[0].Status).IsEqualTo("new");
         await Assert.That(real.Response.Facts[0].Status).IsEqualTo("new");
         await Assert.That(Counts(db.Store)[1]).IsEqualTo(1);
+    }
+
+    private const string Sym = "django.db.models.QuerySet.filter@e4f3fb2d2d11";
+
+    private static List<RefInput> SymRef(string target = Sym, string rel = "mentions", string basis = "derived") =>
+        new() { Fixtures.Ref(target, basis: basis, kind: "symbol", rel: rel) };
+
+    [Test]
+    public async Task SymbolRef_RequiresRevision()
+    {
+        using var db = new TempDb();
+        foreach (var bad in new[] { "django.db.models.QuerySet.filter", "django.db.models.QuerySet.filter@", "@abc" })
+        {
+            var real = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("x " + bad, refs: SymRef(bad))));
+            var dryRequest = Fixtures.Post("Widget", Fixtures.Fact("x " + bad, refs: SymRef(bad)));
+            dryRequest.DryRun = true;
+            var dry = db.Store.PostFacts(dryRequest);
+            var check = db.Store.Check(new CheckRequest { Subject = "Widget", Drafts = new List<FactInput> { Fixtures.Fact("x " + bad, refs: SymRef(bad)) } });
+
+            await Assert.That(real.Errors.Single().Code).IsEqualTo("symbol_target_requires_revision");
+            await Assert.That(real.Errors.Single().Message).Contains(bad);
+            await Assert.That(dry.Errors.Single().Code).IsEqualTo("symbol_target_requires_revision");
+            await Assert.That(check.Drafts!.Single().Status).IsEqualTo("error");
+            await Assert.That(check.Drafts!.Single().Error!.Code).IsEqualTo("symbol_target_requires_revision");
+        }
+    }
+
+    [Test]
+    public async Task SymbolRef_AcceptsQualifiedNameAtRevision()
+    {
+        using var db = new TempDb();
+        var target = "pkg.mod:Cls.method(int, str)@e4f3fb2d2d11aa22bb33cc44dd55ee66ff778899";
+        var result = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("cites", refs: SymRef(target))));
+        await Assert.That(result.Errors.Count).IsEqualTo(0);
+
+        using var connection = db.Store.OpenConnection();
+        var stored = Fixtures.Scalar(connection, "SELECT target FROM refs WHERE kind = 'symbol'");
+        await Assert.That(stored).IsEqualTo(target);
+    }
+
+    [Test]
+    public async Task SymbolRef_RefuteEdgeIsSupported()
+    {
+        using var db = new TempDb();
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("runtime shows filter is not called", refs: SymRef(rel: "refutes", basis: "observed"))));
+        await Assert.That(posted.Errors.Count).IsEqualTo(0);
+        var id = posted.Response.Facts.Single().Id;
+
+        var hit = db.Store.Search(new SearchRequest { RefTarget = Sym, Direction = "in" });
+        await Assert.That(hit.Hits.Select(h => h.Id).ToList()).IsEquivalentTo(new[] { id });
+
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts WHERE id = $id", ("$id", id))).IsEqualTo(1);
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts WHERE id = $t", ("$t", Sym))).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task SymbolRef_PublishesAsTextNotLink()
+    {
+        using var db = new TempDb();
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("cites", refs: new List<RefInput>
+        {
+            new() { Rel = "mentions", Kind = "symbol", Target = Sym, Basis = "derived", Rev = "e4f3fb2d2d11" },
+        })));
+        var id = posted.Response.Facts.Single().Id;
+        var outDir = Path.Combine(db.Directory, "bundle");
+        db.Store.Publish(new PublishOptions { Out = outDir });
+
+        var manifest = JsonDocument.Parse(File.ReadAllText(Path.Combine(outDir, "manifest.json"))).RootElement.GetProperty("facts");
+        var path = manifest.EnumerateObject().Single(p => p.Value.GetProperty("id").GetString() == id).Value.GetProperty("path").GetString()!;
+        var text = File.ReadAllText(Path.Combine(outDir, path));
+
+        await Assert.That(text).Contains(Sym);
+        await Assert.That(text).Contains("kind: symbol");
+        await Assert.That(text).Contains("rev: ");
+        await Assert.That(text.Contains("[" + Sym + "]") || text.Contains("](" + Sym)).IsFalse();
+        await Assert.That(text).Contains("`" + Sym + "`");
     }
 }

@@ -342,4 +342,46 @@ public sealed class SearchTests
         var page2 = db.Store.SearchBrief(new SearchRequest { Subject = "Widget", Limit = 2, Brief = true, Cursor = brief.Next });
         await Assert.That(page2.Hits.Count).IsEqualTo(2);
     }
+
+    private const string Sym = "django.db.models.QuerySet.filter@e4f3fb2d2d11";
+
+    private static List<RefInput> SymRef(string target = Sym, string rel = "mentions", string basis = "derived") =>
+        new() { Fixtures.Ref(target, basis: basis, kind: "symbol", rel: rel) };
+
+    [Test]
+    public async Task SymbolRef_ReverseLookupFindsEvidence()
+    {
+        using var db = new TempDb();
+        var a = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("first citation", refs: SymRef())));
+        var b = db.Store.PostFacts(Fixtures.Post("Gadget", Fixtures.Fact("second citation", refs: SymRef())));
+        db.Store.PostFacts(Fixtures.Post("Gadget", Fixtures.Fact("other rev", refs: SymRef("django.db.models.QuerySet.filter@0000000"))));
+
+        var hits = db.Store.Search(new SearchRequest { RefTarget = Sym, Direction = "in" });
+        await Assert.That(hits.Hits.Select(h => h.Id).ToList())
+            .IsEquivalentTo(new[] { a.Response.Facts.Single().Id, b.Response.Facts.Single().Id });
+
+        var caught = Assert.Throws<DossierRequestException>(() => db.Store.Search(new SearchRequest { RefTarget = Sym, Direction = "out" }));
+        await Assert.That(caught.Code).IsEqualTo("ref_target_not_internal");
+    }
+
+    [Test]
+    public async Task SymbolRef_DoesNotAffectCentralityOrRanking()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("alpha widget fact", key: "a"),
+            Fixtures.Fact("beta widget fact", key: "b"),
+            Fixtures.Fact("gamma widget fact", key: "c")));
+
+        List<(string Id, double? Score)> Ranked() =>
+            db.Store.Compile(new CompileRequest { Subject = "Widget", Budget = 5000 }).Facts.Select(f => (f.Id, f.Score)).ToList();
+
+        var before = Ranked();
+        db.Store.PostFacts(Fixtures.Post("Elsewhere", Fixtures.Fact("cites a symbol", refs: SymRef()), Fixtures.Fact("cites it too", refs: SymRef())));
+        var after = Ranked();
+
+        await Assert.That(after.Select(r => r.Id).ToList()).IsEquivalentTo(before.Select(r => r.Id).ToList());
+        await Assert.That(after.Select(r => r.Score).ToList()).IsEquivalentTo(before.Select(r => r.Score).ToList());
+    }
 }

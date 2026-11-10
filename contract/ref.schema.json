@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dossier.local/contract/ref.schema.json",
   "title": "Ref",
-  "description": "The only edge. Carried by a fact. INTERNAL kinds are exactly fact|slot|subject; every other kind is EXTERNAL and has freshness (rev, snapshot, snapshot_hash, etag, verified_at, valid). For kind=slot, target is \"<subjectIdOrName>#<key>\". Effective chain confidence = MIN over refs.",
+  "description": "The only edge. Carried by a fact. INTERNAL kinds are exactly fact|slot|subject; every other kind is EXTERNAL and has freshness (rev, snapshot, snapshot_hash, etag, verified_at, valid). For kind=slot, target is \"<subjectIdOrName>#<key>\". kind=symbol is EXTERNAL and names a symbol in an external analysis: target is \"<qualified-name>@<revision>\" (e.g. django.db.models.QuerySet.filter@e4f3fb2d2d11); the qualified name may contain dots, colons and parentheses, the revision is everything after the LAST @ and must be non-empty, otherwise the write is rejected with symbol_target_requires_revision. A symbol ref is never resolved to a node and adds no internal edge. basis=observed is a runtime or human observation; basis=derived is a citation of an analyzer's output, not an assertion of the referencing fact. If an observation disagrees with the analysis, post it with rel=refutes against the symbol ref. Effective chain confidence = MIN over refs.",
   "type": "object",
   "additionalProperties": false,
   "required": ["rel", "kind", "target", "basis"],
@@ -12,7 +12,7 @@
       "enum": ["about", "mentions", "contains", "supersedes", "contradicts", "supports", "derived_from", "leads_to", "confirms", "refutes"]
     },
     "kind": { "type": "string", "minLength": 1, "description": "Open string. fact|slot|subject are internal; all others external." },
-    "target": { "type": "string", "minLength": 1, "description": "kind=slot: \"<subjectIdOrName>#<key>\"; otherwise an opaque normalized string." },
+    "target": { "type": "string", "minLength": 1, "description": "kind=slot: \"<subjectIdOrName>#<key>\"; kind=symbol: \"<qualified-name>@<revision>\" (revision required); otherwise an opaque normalized string." },
     "locator": { "$ref": "#/$defs/Locator" },
     "basis": { "type": "string", "enum": ["observed", "derived", "inferred"] },
     "confidence": { "type": "number", "minimum": 0, "maximum": 1 },

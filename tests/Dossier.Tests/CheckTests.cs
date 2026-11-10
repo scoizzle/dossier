@@ -271,4 +271,20 @@ public sealed class CheckTests
 
         throw new FileNotFoundException($"could not find {relative}");
     }
+
+    private const string Sym = "django.db.models.QuerySet.filter@e4f3fb2d2d11";
+
+    private static List<RefInput> SymRef(string target = Sym, string rel = "mentions", string basis = "derived") =>
+        new() { Fixtures.Ref(target, basis: basis, kind: "symbol", rel: rel) };
+
+    [Test]
+    public async Task SymbolRef_DraftCitingSameSymbolIsNewNotDeduped()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("first citation", refs: SymRef())));
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("second citation", refs: SymRef())));
+
+        var result = db.Store.Check(Req("Widget", Fixtures.Fact("third citation", refs: SymRef())));
+        await Assert.That(result.Drafts!.Single().Status).IsEqualTo("new");
+    }
 }

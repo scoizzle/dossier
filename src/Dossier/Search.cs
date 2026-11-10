@@ -442,6 +442,14 @@ public sealed partial class DossierStore
             return new List<string> { refTarget };
         }
 
+        // A symbol target ("<qualified-name>@<revision>") is external evidence, never a node.
+        if (IsSymbolTarget(connection, refTarget))
+        {
+            throw new DossierRequestException(
+                "ref_target_not_internal",
+                $"ref_target \"{refTarget}\" is not a fact id or slot target");
+        }
+
         var hash = refTarget.IndexOf('#');
         if (hash > 0)
         {
@@ -456,6 +464,13 @@ public sealed partial class DossierStore
         }
 
         return new List<string>();
+    }
+
+    private static bool IsSymbolTarget(SqliteConnection connection, string target)
+    {
+        using var command = Command(connection, null, "SELECT 1 FROM refs WHERE kind = 'symbol' AND target = $target LIMIT 1");
+        Bind(command, "$target", target);
+        return command.ExecuteScalar() is not null;
     }
 
     /// <summary>Resolve a slot target "&lt;subjectIdOrName&gt;#&lt;key&gt;" to every fact currently in that slot.</summary>

@@ -167,6 +167,23 @@ public sealed partial class DossierStore
                 return (resolved, new PostError(index, "missing_basis", $"fact[{index}] ref[{refIndex}] is missing basis"));
             }
 
+            // kind=symbol names a symbol in an external analysis: "<qualified-name>@<revision>", the
+            // revision being everything after the LAST '@'. Fail closed without a pinned revision.
+            if (string.Equals(reference.Kind, "symbol", StringComparison.Ordinal))
+            {
+                var at = reference.Target!.LastIndexOf('@');
+                if (at <= 0 || at == reference.Target.Length - 1 || string.IsNullOrWhiteSpace(reference.Target[(at + 1)..]))
+                {
+                    return (resolved, new PostError(
+                        index,
+                        "symbol_target_requires_revision",
+                        $"fact[{index}] ref[{refIndex}] kind symbol target \"{reference.Target}\" must be \"<qualified-name>@<revision>\" with a non-empty revision"));
+                }
+
+                resolved.Add(reference);
+                continue;
+            }
+
             // kind=slot targets are opaque and stored verbatim; local_id resolution applies
             // only to internal fact references.
             if (!string.Equals(reference.Kind, "slot", StringComparison.Ordinal) && reference.Target!.StartsWith('@'))

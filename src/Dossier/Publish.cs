@@ -399,6 +399,9 @@ public sealed partial class DossierStore
                     return ResolveSubjectRef(reference.Target) is { } subject
                         ? $"[{Inline(subject.Name)}]({RelativeLink(from, SubjectIndexPath(slugs[subject.Id]))})"
                         : CodeSpan(reference.Target);
+                case "symbol":
+                    // A symbol in an external analysis: plain text, verbatim; never a link, subject or file.
+                    return CodeSpan(reference.Target);
                 default:
                     return ExternalLink(reference.Target) ?? CodeSpan(reference.Target);
             }
@@ -2194,7 +2197,7 @@ public sealed partial class DossierStore
         if (detail)
         {
             b.Append("Every claim ends in a bracketed fact key, like `[3fa9c1d2]`. That key resolves to a file in the facts directory of the subject it belongs to: `subjects/<slug>/facts/<words>-<key>.md`, where `<words>` is the first words of the fact text and `<key>` is the same 8-character key (a few more characters only if two keys collide). In a subject's index.md the bracketed key is already a link to that file, and the file carries the fact's store id on a `Store id:` line.\n\n");
-            b.Append("A fact file links onward to the facts and subjects it depends on: each ref of kind `fact`, `slot` or `subject` is a link to the target's fact file or subject index.md (a `slot` ref links to the fact that currently occupies the slot, or says `unresolved slot` when none does), `http(s)` targets are plain links, and a `Referenced by` list links back to the facts that point at it. The bundle is a graph to walk: follow those links instead of searching, and read only the files on the path to your answer.\n\n");
+            b.Append("A fact file links onward to the facts and subjects it depends on: each ref of kind `fact`, `slot` or `subject` is a link to the target's fact file or subject index.md (a `slot` ref links to the fact that currently occupies the slot, or says `unresolved slot` when none does), `http(s)` targets are plain links, a `symbol` ref (`<qualified-name>@<revision>`, a citation of an external analysis) is shown as plain text with the target verbatim and any `rev` on its own line, and a `Referenced by` list links back to the facts that point at it. The bundle is a graph to walk: follow those links instead of searching, and read only the files on the path to your answer.\n\n");
         }
         else
         {

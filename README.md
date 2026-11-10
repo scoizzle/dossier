@@ -45,6 +45,7 @@ Invariants:
 - Facts are immutable. Correction is a new fact that supersedes the old one by declared key (`subject`, `kind`, `key`).
 - Refs are the only edge. There are no similarity-derived edges.
 - Every ref carries a basis of `observed`, `derived` or `inferred`.
+- Ref kind `symbol` cites a symbol in an external static analysis. It is external (never a node, never an internal edge, no effect on centrality or ranking). Its target is `<qualified-name>@<revision>`, for example `django.db.models.QuerySet.filter@e4f3fb2d2d11`: the qualified name may contain dots, colons and parentheses, and the revision is everything after the last `@` and must be non-empty. A target without a revision is rejected with `symbol_target_requires_revision`, identically in `post`, `post --dry-run` and `check --drafts`. Basis `observed` is a runtime or human observation; basis `derived` is a citation of an analyzer's output, not an assertion of the referencing fact. If an observation disagrees with the analysis, post it with rel `refutes` against the symbol ref. `search --ref-target '<qualified>@<rev>' --direction in` returns every fact citing the symbol; `--direction out` still rejects it as external. Publish renders it as plain text, not a link.
 - Status is derived, never stored authority.
 - Fact text has a soft limit of 240 characters and is never truncated.
 - Writes fail closed (the item is rejected with a reason); compile fails open (last good dossier plus a degraded marker).

@@ -63,7 +63,12 @@ jobs:
         run: dotnet build Dossier.sln -c Release --no-restore
 
       - name: Test
-        run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 210
+        run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 233
+
+      # The graph page script runs under a stub DOM against the committed API fixture (Node ships on the runner image).
+      - name: Graph page smoke test
+        if: runner.os == 'Linux'
+        run: node --version && node scripts/graph-smoke.mjs
 
   aot-smoke:
     name: aot-smoke (${{ matrix.rid }})

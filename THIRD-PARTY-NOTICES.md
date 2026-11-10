@@ -242,6 +242,6 @@ redistribution. See <https://www.sqlite.org/copyright.html>.
 
 ## Example bundles (repository only, not in release archives)
 
-The committed bundles under `examples/` quote text from Django (BSD-3-Clause) and Memos
-(MIT). They are not shipped in release archives, but their upstream notices are recorded
-in [`examples/NOTICE.md`](examples/NOTICE.md).
+The committed Memos bundle under `examples/memos-bundle` quotes text from Memos (MIT).
+It is not shipped in release archives, but its upstream notice is recorded in
+[`examples/NOTICE.md`](examples/NOTICE.md).

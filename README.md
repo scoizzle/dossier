@@ -212,7 +212,7 @@ dotnet src/Dossier/bin/Release/net10.0/Dossier.dll publish --out out --profile p
 
 **`--respect-limits`** (requires `--profile`) writes shards instead of the subject tree. Subjects are taken in the bundle's deterministic tree order and packed into `shards/<n>.md`, at most `max_files` documents, each at least `min_file_bytes` where the corpus allows (a corpus smaller than the floor yields one short shard and the table says FAIL) and never above `max_file_bytes`. Each shard opens with front matter (`shard`, `of`, `subjects`, `fact_files: absent`), a table of contents of its subjects, then one section per subject whose anchor is the subject's slug (`<a id="<slug>"></a>`). Every index row, and the links in `conflicts.md` and `gaps.md`, point at `shards/<n>.md#<slug>`; parent and child links inside a shard are `#<slug>` or `<n>.md#<slug>`. Subject directories, fact files and assets are **not** written: fact keys are plain citations and attachments are listed by sha256. Shard boundaries depend only on subject content, so the same store and profile give identical bytes. If one subject's page cannot fit `max_file_bytes`, publish fails before writing and names the subject and its size.
 
-`bash scripts/publish-profile-demo.sh` rebuilds a 1080-subject Django-shaped corpus from the committed `examples/django-bundle` manifest (no re-ingest), prints the table before and after, and writes `examples/django-shards/` (399 shards of 5867 to 9368 bytes). Against `copilot-studio.json` the shard bundle passes `max_files`, `min_file_bytes`, `max_file_bytes`, `max_total_bytes` and `max_path_depth`.
+`bash scripts/publish-profile-demo.sh` rebuilds a 1080-subject Django-shaped corpus from the committed `examples/django-bundle` manifest (no re-ingest), prints the table before and after, and writes `examples/django-shards/` (193 shards of 4104 to 7551 bytes). Against `copilot-studio.json` the shard bundle passes `max_files`, `min_file_bytes`, `max_file_bytes`, `max_total_bytes` and `max_path_depth`.
 
 **The format gap.** Copilot Studio uploads accept doc, docx, xls, xlsx, ppt, pptx and pdf. The bundle is markdown, and no converter ships here, so the `allowed_extensions` row **FAILs** against `copilot-studio.json` even in shard mode (`unsupported: md (markdown)`). Sharding fixes the file cap and the size floor; converting the shards to a supported format (for example with pandoc) is a step you run before uploading. The profile reports the gap; it does not hide it.
 
@@ -285,17 +285,23 @@ One project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) with FTS5
 README.md          this file
 Dossier.sln        solution (src project plus tests)
 global.json        pins the Microsoft.Testing.Platform test runner
+SECURITY.md        security policy: how to report a vulnerability
+LICENSE            MIT license for Dossier
+THIRD-PARTY-NOTICES.md  notices for components shipped in release archives
+.github/           CI (ci.yml) and the tag-triggered AOT release workflow (release.yml)
 assets/            icon
 contract/          JSON Schemas: subject, fact, ref, ops, dossier (the normative shapes)
 docs/PLAN.md       hypothesis, kill criterion, invariants, measured results
 examples/          memos-bundle/, django-bundle/, django-models-bundle/, django-shards/: committed publish outputs
 profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
-scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
+scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, scale-test.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
+scripts/dump-code-demo.sh  demo: dump a source file into linked facts
+scripts/smoke-aot.sh       smoke-test a published Native AOT binary
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 skills/dossier/    SKILL.md: how an agent uses Dossier well (the loop, rules, commands)
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  155 TUnit tests
+tests/Dossier.Tests/  210 TUnit tests
 ```
 
 ## Releases
@@ -335,11 +341,11 @@ bash scripts/scaling.sh      # the N=50/200/1000 bounded-cost table
 bash scripts/verify-refs.sh  # fails unless every seeded git ref resolves with HTTP 200
 ```
 
-All scripts need bash, `jq` and a Release build. `dotnet test` runs the 129 tests.
+All scripts need bash, `jq` and a Release build. `dotnet test` runs the 210 tests.
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 129 passing tests; the seeded Memos demo; the evaluation harness.
+Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 210 passing tests; the seeded Memos demo; the evaluation harness.
 
 Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 

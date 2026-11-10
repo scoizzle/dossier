@@ -63,7 +63,7 @@ public static class Ops
     public static string Search(DossierStore store, SearchRequest request) =>
         request.Brief ? Serialize(store.SearchBrief(request)) : Serialize(store.Search(request));
 
-    public static string ResolveSubject(DossierStore store, string? q) => Serialize(store.ResolveSubjects(q));
+    public static string Check(DossierStore store, CheckRequest request) => Serialize(store.Check(request));
 
     public static string Compile(DossierStore store, CompileRequest request)
     {
@@ -211,8 +211,8 @@ public sealed class McpServer
             """{"type":"object","properties":{"subject":{"type":"string"},"matchers":{"type":"array","items":{"type":"string"}}}}"""),
         new("search", "Search facts by text and filters, including reverse-impact via ref_target. " + Untrusted,
             """{"type":"object","properties":{"q":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"key":{"type":"string"},"tag":{"type":"string"},"actor":{"type":"string"},"status":{"type":"string"},"since":{"type":"string"},"ref_target":{"type":"string"},"direction":{"type":"string","enum":["in","out"]},"limit":{"type":"integer"},"cursor":{"type":"string"},"brief":{"type":"boolean"}}}"""),
-        new("resolve_subject", "Resolve a subject name to canonical subjects (exact_name, exact_alias, prefix, fuzzy), best first. " + Untrusted,
-            """{"type":"object","properties":{"q":{"type":"string"}},"required":["q"]}"""),
+        new("check", "Resolve a subject, summarise what is already known (counts, conflicts, top facts), and optionally judge draft facts: each draft gets the verdict a real post would give (new, deduped, replaced) plus an advisory near list of similar existing fact ids. Writes nothing. " + Untrusted,
+            """{"type":"object","properties":{"subject":{"type":"string"},"drafts":{"type":"array","items":{"type":"object"}},"limit":{"type":"integer"}},"required":["subject"]}"""),
         new("get_fact", "Fetch one fact with its refs, attachments and inbound referencing facts. " + Untrusted,
             """{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}"""),
         new("compile_dossier", "Compile a budgeted, ranked dossier for a subject. " + Untrusted,
@@ -256,9 +256,7 @@ public sealed class McpServer
                 "post_facts" => PostFacts(Ops.Parse<PostFactsRequest>(arguments)),
                 "correlate" => Ops.Serialize(store.Correlate(Ops.Parse<CorrelateRequest>(arguments))),
                 "search" => Ops.Search(store, Ops.Parse<SearchRequest>(arguments)),
-                "resolve_subject" => Ops.ResolveSubject(
-                    store,
-                    Ops.Parse<ResolveArgs>(arguments).Q ?? throw new DossierRequestException("invalid_request", "resolve_subject requires q")),
+                "check" => Ops.Check(store, Ops.Parse<CheckRequest>(arguments)),
                 "get_fact" => Ops.GetFact(
                     store,
                     Ops.Parse<FactIdArgs>(arguments).Id ?? throw new DossierRequestException("invalid_request", "get_fact requires id")),
@@ -274,11 +272,6 @@ public sealed class McpServer
         {
             return ToolResult(Ops.Serialize(new { error = new { code = "invalid_request", message = exception.Message } }), isError: true);
         }
-    }
-
-    private sealed class ResolveArgs
-    {
-        public string? Q { get; set; }
     }
 
     private sealed class FactIdArgs

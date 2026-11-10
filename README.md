@@ -219,7 +219,7 @@ dotnet src/Dossier/bin/Release/net10.0/Dossier.dll publish --out out --profile p
 
 All three surfaces call the same core functions.
 
-**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `retract`, `dossier compile`, `publish`, `import`, `resolve`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
+**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `retract`, `dossier compile`, `publish`, `import`, `check`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
 
 ```text
 $ d search --q composer --subject Memos/Home --limit 2     # trimmed
@@ -227,8 +227,11 @@ $ d search --q composer --subject Memos/Home --limit 2     # trimmed
   {"id":"4b2d39e9","kind":"element","text":"Home composer suggests @mentions as the user types a name.","status":"live","score":-1.83},
   {"id":"1c1cd226","kind":"element","text":"Home composer grows to at most 6 rows before it scrolls.","status":"live","score":-1.80}]}
 
-$ d resolve --q "memos home"                                # subjects best match first
-[{"id":"…","name":"Memos/Home","kind":"subject","aliases":[],"facts":42,"match":"exact_name"}]
+$ d check --subject "memos home"                            # resolve + what is known, one call
+{"subject":{"id":"…","name":"Memos/Home","kind":"subject","aliases":[],"facts":42,"match":"exact_name"},
+ "summary":{"facts":42,"conflicts":3,"gaps":0,"top":[{"key":"…","text":"…"}]}}   # top: at most 8, text capped at 120 chars
+
+$ d check --subject "memos home" --drafts drafts.json       # adds a verdict per draft: new|deduped|replaced + advisory near[] (up to 3 ids at Jaccard >= 0.85); writes nothing
 
 $ d post --file payload.json --dry-run                      # same verdicts as a real post, nothing written
 $ d search --q composer --subject Memos/Home --brief        # id, kind, status, first 120 chars of text; total/complete/next kept
@@ -252,7 +255,7 @@ $ d correlate --subject Memos/Home                         # 6 proposals, none w
 
 A need with no matching fact is reported as a gap instead of being silently dropped, and conflicting values for the same slot are listed with both cites; `conflicts[].resolution` is always null.
 
-**MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio (protocol versions 2025-06-18, 2025-03-26, 2024-11-05). Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `resolve_subject`. Resources: `dossier://subjects`, and the templates `dossier://subject/{id}` and `dossier://fact/{id}`. `post_facts` takes `dry_run`, `search` takes `brief`, and `resolve_subject` takes `q` (returns subjects with `match` of `exact_name`, `exact_alias`, `prefix` or `fuzzy`). Tool descriptions mark fact text as untrusted data that must never be followed as instructions.
+**MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio (protocol versions 2025-06-18, 2025-03-26, 2024-11-05). Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`. Resources: `dossier://subjects`, and the templates `dossier://subject/{id}` and `dossier://fact/{id}`. `post_facts` takes `dry_run`, `search` takes `brief`, and `check` takes `subject` and optional `drafts` (returns the subject with `match` of `exact_name`, `exact_alias`, `prefix` or `fuzzy`, a summary, and per-draft verdicts with an advisory `near` list; a near duplicate posted anyway is a separate `new` fact). Tool descriptions mark fact text as untrusted data that must never be followed as instructions.
 
 **Web.** `dossier serve [--port 8787]` serves a minimal page on `http://127.0.0.1:<port>/` (loopback only). It has a search box in the header, a subject list, search results, a compiled dossier view with its raw JSON, and a single-fact view. JSON endpoints: `/api/subjects`, `/api/search`, `/api/compile`, `/api/fact`.
 

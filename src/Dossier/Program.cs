@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|resolve --q <text>|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -132,16 +132,25 @@ try
             return 0;
         }
 
-        case "resolve":
+        case "check":
         {
-            var q = ValueAfter(args, "--q");
-            if (q is null)
+            var subject = ValueAfter(args, "--subject");
+            if (subject is null)
             {
-                Console.Error.WriteLine("resolve requires --q <text>");
+                Console.Error.WriteLine("check requires --subject <text>");
                 return 1;
             }
 
-            Console.WriteLine(Ops.ResolveSubject(new DossierStore(), q));
+            var draftsPath = ValueAfter(args, "--drafts");
+            var checkRequest = new CheckRequest
+            {
+                Subject = subject,
+                Limit = ParseLimit(ValueAfter(args, "--limit")),
+                Drafts = draftsPath is null
+                    ? null
+                    : DossierStore.ParseDrafts(draftsPath == "-" ? Console.In.ReadToEnd() : File.ReadAllText(draftsPath)),
+            };
+            Console.WriteLine(Ops.Check(new DossierStore(), checkRequest));
             return 0;
         }
 

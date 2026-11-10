@@ -162,4 +162,29 @@ step "import (into a second, fresh database)"
 DOSSIER_DB="$TMP_NATIVE/second.db" run import --from "$TMP_NATIVE/bundle"
 expect_match '"facts":[1-9]' "import (no facts imported)"
 
+step "publish --format jsonl (assets embedded)"
+run publish --out "$TMP_NATIVE/jl" --format jsonl --assets embed
+expect_match '"facts":[1-9]' "publish jsonl (no facts written)"
+if [ ! -f "$TMP/jl/manifest.json" ]; then
+  fail "publish jsonl: manifest.json missing from the bundle"
+fi
+if ! grep -q '"format": "dossier-jsonl/1"' "$TMP/jl/manifest.json"; then
+  fail "publish jsonl: manifest.json is not a dossier-jsonl/1 manifest"
+fi
+jsonl_files=0
+for f in "$TMP"/jl/dossier-*.jsonl; do
+  if [ -f "$f" ]; then
+    jsonl_files=$((jsonl_files + 1))
+  fi
+done
+if [ "$jsonl_files" -eq 0 ]; then
+  fail "publish jsonl: no dossier-*.jsonl data file in the bundle"
+fi
+
+step "import jsonl (into another fresh database)"
+DOSSIER_DB="$TMP_NATIVE/third.db" run import --from "$TMP_NATIVE/jl"
+expect_match '"facts":[1-9]' "import jsonl (no facts imported)"
+DOSSIER_DB="$TMP_NATIVE/third.db" run search --q "$TOKEN" --subject "$SUBJECT"
+expect_contains "$TOKEN" "search after jsonl import"
+
 printf '\nSMOKE OK: %s (%s)\n' "$BIN" "$expected"

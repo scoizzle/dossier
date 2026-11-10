@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dossier.local/contract/jsonl-manifest.schema.json",
+  "title": "JSONL bundle manifest",
+  "description": "manifest.json of a bundle written by `dossier publish --format jsonl`. `files` lists every file of the bundle (data files, assets and manifest.json) in ordinal order; `file_stats` covers the data files only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "files", "file_stats", "counts", "assets", "options", "bundle_hash"],
+  "properties": {
+    "format": { "const": "dossier-jsonl/1" },
+    "files": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/FileName" },
+      "description": "Sorted (ordinal), unique."
+    },
+    "file_stats": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/DataFileName" },
+      "additionalProperties": { "$ref": "#/$defs/FileStat" }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjects", "facts", "assets"],
+      "properties": {
+        "subjects": { "type": "integer", "minimum": 0 },
+        "facts": { "type": "integer", "minimum": 0 },
+        "assets": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/Sha256" },
+      "additionalProperties": { "$ref": "#/$defs/AssetEntry" }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assets", "max_file_bytes", "max_files", "max_total_bytes", "subject", "subject_id"],
+      "properties": {
+        "assets": { "enum": ["embed", "files", "none"] },
+        "max_file_bytes": { "type": "integer", "minimum": 0 },
+        "max_files": { "type": "integer", "minimum": 0 },
+        "max_total_bytes": { "type": "integer", "minimum": 0 },
+        "subject": { "type": ["string", "null"] },
+        "subject_id": { "type": ["string", "null"] },
+        "profile": { "type": "string", "minLength": 1 },
+        "respect_limits": { "type": "boolean" }
+      }
+    },
+    "bundle_hash": { "$ref": "#/$defs/Sha256" }
+  },
+  "$defs": {
+    "Sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "DataFileName": { "type": "string", "pattern": "^dossier-[0-9]{4,}\\.jsonl$" },
+    "FileName": {
+      "type": "string",
+      "pattern": "^(manifest\\.json|dossier-[0-9]{4,}\\.jsonl|assets/[0-9a-f]{64}(\\.[a-z0-9]+)?)$"
+    },
+    "FileStat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bytes", "lines", "sha256"],
+      "properties": {
+        "bytes": { "type": "integer", "minimum": 0 },
+        "lines": { "type": "integer", "minimum": 0 },
+        "sha256": { "$ref": "#/$defs/Sha256" }
+      }
+    },
+    "AssetEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bytes", "mime", "missing"],
+      "properties": {
+        "bytes": { "type": "integer", "minimum": 0 },
+        "mime": { "type": "string", "minLength": 1 },
+        "missing": { "type": "boolean" }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {

@@ -283,6 +283,7 @@ profiles/          consumer quota profiles for publish --profile (copilot-studio
 scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
+skills/dossier/    SKILL.md: how an agent uses Dossier well (the loop, rules, commands)
 src/Dossier/       the reference implementation
 tests/Dossier.Tests/  155 TUnit tests
 ```

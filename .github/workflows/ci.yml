@@ -66,14 +66,24 @@ jobs:
         run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 210
 
   aot-smoke:
-    name: aot-smoke (linux-x64)
-    runs-on: ubuntu-22.04
+    name: aot-smoke (${{ matrix.rid }})
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     permissions:
       contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rid: linux-x64
+            os: ubuntu-24.04
+          - rid: linux-arm64
+            os: ubuntu-24.04-arm
     env:
-      RID: linux-x64
+      RID: ${{ matrix.rid }}
       VERSION: 0.0.0-ci.${{ github.run_number }}
+      # Highest glibc symbol version the binaries may require. The runners are Ubuntu 24.04 (glibc 2.39).
+      GLIBC_MAX: '2.39'
     steps:
       - name: Check out
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -87,6 +97,14 @@ jobs:
 
       - name: dotnet --info
         run: dotnet --info
+
+      # Read-only: records the machine architecture and the native toolchain the runner image provides.
+      - name: Linux toolchain preflight
+        run: |
+          uname -m
+          clang --version | sed -n 1p
+          objcopy --version | sed -n 1p
+          ldd --version | sed -n 1p
 
       # Same audit gate as build-test; the project (not the solution) is restored for the AOT runtime.
       - name: Restore
@@ -116,7 +134,7 @@ jobs:
             exit 1
           fi
 
-      - name: Check glibc baseline (<= 2.35)
+      - name: Check glibc baseline (<= ${{ env.GLIBC_MAX }})
         run: |
           shopt -s nullglob
           libs=("out/$RID"/*.so)
@@ -126,8 +144,25 @@ jobs:
           fi
           max=$(for f in "out/$RID/Dossier" "${libs[@]}"; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
           echo "max GLIBC symbol version required: ${max:-none}"
-          if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" 2.35 | sort -V | tail -n 1)" != "2.35" ]; then
-            echo "::error::binary requires glibc $max, above the 2.35 baseline"
+          if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" "$GLIBC_MAX" | sort -V | tail -n 1)" != "$GLIBC_MAX" ]; then
+            echo "::error::binary requires glibc $max, above the $GLIBC_MAX baseline"
+            exit 1
+          fi
+
+      - name: Check binary architecture
+        run: |
+          case "$RID" in
+            linux-arm64) want='AArch64' ;;
+            linux-x64) want='Advanced Micro Devices X86-64' ;;
+            *)
+              echo "::error::no expected ELF machine for RID $RID"
+              exit 1
+              ;;
+          esac
+          machine="$(readelf -h "out/$RID/Dossier" | sed -n 's/^ *Machine: *//p')"
+          echo "ELF machine: ${machine:-none} (expected: $want)"
+          if [ "$machine" != "$want" ]; then
+            echo "::error::out/$RID/Dossier is '$machine', expected '$want'"
             exit 1
           fi
 

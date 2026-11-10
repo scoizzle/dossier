@@ -316,20 +316,33 @@ git push origin v1.2.3
 The tag must look like `vMAJOR.MINOR.PATCH` with an optional prerelease suffix (`v1.2.3-rc.1`; a suffix marks the GitHub release as a prerelease). The release workflow builds Native AOT binaries, smoke-tests each one, and publishes a GitHub release with these assets:
 
 - `dossier-<version>-linux-x64.tar.gz`
+- `dossier-<version>-linux-arm64.tar.gz`
 - `dossier-<version>-osx-arm64.tar.gz`
 - `dossier-<version>-win-x64.zip`
 - `SHA256SUMS`
 
-Each archive holds the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory:
+Pick the archive that matches your machine:
+
+| Archive | Machines |
+| --- | --- |
+| `linux-x64` | Intel/AMD 64-bit Linux |
+| `linux-arm64` | 64-bit ARM Linux, for example Linux VMs on Apple Silicon (Parallels, UTM), AWS Graviton, Raspberry Pi 4/5, on a distribution that meets the glibc requirement below |
+| `osx-arm64` | Apple Silicon Macs |
+| `win-x64` | Windows x64, and Windows 11 on ARM through its x64 emulation |
+
+On Linux, `uname -m` tells you which one: `x86_64` means `linux-x64`, `aarch64` means `linux-arm64`. `cannot execute binary file: Exec format error` means you downloaded the wrong architecture.
+
+Each archive extracts into a single directory, `dossier-<version>-<rid>/`, containing the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory, then extract:
 
 ```sh
 sha256sum -c --ignore-missing SHA256SUMS      # Linux
 shasum -a 256 -c --ignore-missing SHA256SUMS  # macOS
+tar -xzf dossier-<version>-linux-arm64.tar.gz && cd dossier-<version>-linux-arm64
 ```
 
 Platform notes:
 
-- Linux binaries are built on Ubuntu 22.04 and need glibc 2.35 or newer, `libicu`, and OpenSSL (`libssl3` or `libssl1.1`).
+- Linux binaries are built and tested on Ubuntu 24.04 (glibc 2.39), and the release workflow fails if a binary requires a glibc symbol version above 2.39. That is a ceiling on what the build may require, not a measured minimum: the 0.1.0-rc.1 `linux-x64` build, made on Ubuntu 22.04, was measured at glibc 2.34. They also need `libicu` and OpenSSL (`libssl3`).
 - macOS binaries are unsigned. If Gatekeeper blocks the binary, remove the quarantine flag from the whole extracted directory (it also lands on `libe_sqlite3.dylib`): `xattr -dr com.apple.quarantine <extracted dir>`.
 
 ## Reproducing the evaluation

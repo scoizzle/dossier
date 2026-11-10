@@ -173,21 +173,16 @@ public sealed partial class DossierStore
         if (entity is not null)
         {
             factTags.AddRange(entity.Tags);
-            data = JsonSerializer.SerializeToElement(new Dictionary<string, object>
-            {
-                ["symbol"] = entity.Symbol,
-                ["entity_kind"] = entity.Kind,
-                ["parent"] = entity.Parent,
-                ["start_line"] = chunk.StartLine,
-                ["end_line"] = chunk.EndLine,
-            });
-            locator = JsonSerializer.SerializeToElement(
-                new Dictionary<string, object>
-                {
-                    ["line"] = chunk.StartLine,
-                    ["selector"] = $"L{chunk.StartLine}-L{chunk.EndLine}",
-                    ["symbol"] = entity.Symbol,
-                });
+            data = JsonCodec.Object(
+                ("symbol", entity.Symbol),
+                ("entity_kind", entity.Kind),
+                ("parent", entity.Parent),
+                ("start_line", chunk.StartLine),
+                ("end_line", chunk.EndLine));
+            locator = JsonCodec.Object(
+                ("line", chunk.StartLine),
+                ("selector", $"L{chunk.StartLine}-L{chunk.EndLine}"),
+                ("symbol", entity.Symbol));
             if (entity.Docstring is not null)
             {
                 items = new List<ItemInput>
@@ -195,7 +190,7 @@ public sealed partial class DossierStore
                     new()
                     {
                         Text = entity.Docstring,
-                        Locator = JsonSerializer.SerializeToElement(new Dictionary<string, object> { ["line"] = entity.DocLine }),
+                        Locator = JsonCodec.Object(("line", entity.DocLine)),
                     },
                 };
             }
@@ -310,11 +305,9 @@ public sealed partial class DossierStore
                             Kind = "subject",
                             Target = result.Response.Subject.Id,
                             Basis = ObservedBasis,
-                            Locator = JsonSerializer.SerializeToElement(new Dictionary<string, object>
-                            {
-                                ["line"] = chunk.StartLine,
-                                ["symbol"] = entity.Symbol,
-                            }),
+                            Locator = JsonCodec.Object(
+                                ("line", chunk.StartLine),
+                                ("symbol", entity.Symbol)),
                         },
                     },
                 });
@@ -468,15 +461,7 @@ public sealed partial class DossierStore
     /// 1-based and machine-readable without widening the contract.
     /// </summary>
     private static JsonElement LineRangeLocator(int startLine, int endLine) =>
-        JsonSerializer.SerializeToElement(
-            new LineRangeLocatorValue { Line = startLine, Selector = $"L{startLine}-L{endLine}" },
-            JsonCodec.Options);
-
-    private sealed class LineRangeLocatorValue
-    {
-        public int Line { get; set; }
-        public string Selector { get; set; } = string.Empty;
-    }
+        JsonCodec.Object(("line", startLine), ("selector", $"L{startLine}-L{endLine}"));
 
     private sealed record Chunk(string Text, int StartLine, int EndLine, CodeEntity? Entity = null);
 

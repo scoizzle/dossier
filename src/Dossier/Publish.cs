@@ -87,12 +87,12 @@ public sealed partial class DossierStore
 
     private static readonly UTF8Encoding Utf8NoBom = new(false);
 
-    private static readonly JsonSerializerOptions DataJson = new()
+    private static readonly DataJsonContext DataJson = new(new JsonSerializerOptions
     {
         WriteIndented = true,
         NewLine = "\n",
         Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    };
+    });
 
     private sealed record PubSubject(string Id, string Name, string Kind, string? ParentId, List<string> Aliases, JsonElement? Pin = null);
 
@@ -836,7 +836,7 @@ public sealed partial class DossierStore
                     }
 
                     first = false;
-                    b.Append(JsonSerializer.Serialize(property.Name)).Append(':');
+                    b.Append(JsonCodec.Quote(property.Name)).Append(':');
                     WriteCanonicalJson(b, property.Value);
                 }
 
@@ -859,7 +859,7 @@ public sealed partial class DossierStore
                 b.Append(']');
                 break;
             case JsonValueKind.String:
-                b.Append(JsonSerializer.Serialize(element.GetString()));
+                b.Append(JsonCodec.Quote(element.GetString()));
                 break;
             default:
                 b.Append(element.GetRawText());
@@ -1233,7 +1233,7 @@ public sealed partial class DossierStore
         if (fact.Data is { } data)
         {
             b.Append("\n## Data\n\n");
-            b.Append(Fence(JsonSerializer.Serialize(data, DataJson), "json"));
+            b.Append(Fence(JsonSerializer.Serialize(data, DataJson.JsonElement), "json"));
         }
 
         b.Append("\n## Refs\n\n");
@@ -1265,7 +1265,7 @@ public sealed partial class DossierStore
         if (fact.Items is { } items)
         {
             b.Append("\n## Items\n\n");
-            b.Append(Fence(JsonSerializer.Serialize(items, DataJson), "json"));
+            b.Append(Fence(JsonSerializer.Serialize(items, DataJson.JsonElement), "json"));
         }
 
         if (fact.Attachments.Count > 0)

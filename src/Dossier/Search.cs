@@ -549,7 +549,7 @@ public sealed partial class DossierStore
 
     private static string EncodeCursor(string createdAt, string id, double? score)
     {
-        var json = JsonSerializer.Serialize(new CursorState { C = createdAt, I = id, S = score });
+        var json = JsonSerializer.Serialize(new CursorState { C = createdAt, I = id, S = score }, PlainJsonContext.Default.CursorState);
         return Convert.ToBase64String(Encoding.UTF8.GetBytes(json))
             .TrimEnd('=')
             .Replace('+', '-')
@@ -568,7 +568,7 @@ public sealed partial class DossierStore
                 _ => padded,
             };
 
-            var state = JsonSerializer.Deserialize<CursorState>(Encoding.UTF8.GetString(Convert.FromBase64String(padded)));
+            var state = JsonSerializer.Deserialize(Encoding.UTF8.GetString(Convert.FromBase64String(padded)), PlainJsonContext.Default.CursorState);
             if (state is null || string.IsNullOrEmpty(state.C) || string.IsNullOrEmpty(state.I))
             {
                 throw new DossierRequestException("invalid_cursor", "cursor is not a value returned by search");
@@ -586,7 +586,7 @@ public sealed partial class DossierStore
         }
     }
 
-    private sealed class CursorState
+    internal sealed class CursorState
     {
         public string C { get; set; } = string.Empty;
         public string I { get; set; } = string.Empty;

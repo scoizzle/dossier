@@ -245,10 +245,10 @@ public sealed partial class DossierStore
             }
 
             var merged = MergeAliases(row.Aliases, requestedAliases, input.Name);
-            var mergedJson = JsonSerializer.Serialize(merged);
+            var mergedJson = JsonCodec.SerializeStrings(merged);
             var parent = input.Parent ?? row.ParentId;
 
-            if (mergedJson != JsonSerializer.Serialize(row.Aliases) || parent != row.ParentId)
+            if (mergedJson != JsonCodec.SerializeStrings(row.Aliases) || parent != row.ParentId)
             {
                 using var update = Command(connection, transaction, "UPDATE subjects SET aliases = $aliases, parent_id = $parent WHERE id = $id");
                 Bind(update, "$aliases", mergedJson);
@@ -318,7 +318,7 @@ public sealed partial class DossierStore
         Bind(command, "$name", name);
         Bind(command, "$kind", kind);
         Bind(command, "$parent", parentId);
-        Bind(command, "$aliases", JsonSerializer.Serialize(normalizedAliases));
+        Bind(command, "$aliases", JsonCodec.SerializeStrings(normalizedAliases));
         Bind(command, "$created", createdAt);
         command.ExecuteNonQuery();
     }
@@ -361,7 +361,7 @@ public sealed partial class DossierStore
     {
         try
         {
-            return JsonSerializer.Deserialize<List<string>>(json) ?? new List<string>();
+            return JsonCodec.DeserializeStrings(json) ?? new List<string>();
         }
         catch (JsonException)
         {
@@ -460,16 +460,8 @@ public sealed partial class DossierStore
         var id = Guid.NewGuid().ToString("D");
         var tags = fact.Tags ?? new List<string>();
         var data = fact.Data.HasValue ? CanonicalJson.Write(fact.Data.Value) : null;
-        var items = fact.Items is { Count: > 0 } ? JsonSerializer.Serialize(fact.Items, JsonCodec.Options) : null;
-        var provenance = JsonSerializer.Serialize(
-            new Dictionary<string, object?>
-            {
-                ["actor"] = "dossier-cli",
-                ["actor_type"] = "tool",
-                ["channel"] = "cli",
-                ["posted_at"] = createdAt,
-            },
-            JsonCodec.Options);
+        var items = fact.Items is { Count: > 0 } ? JsonCodec.Serialize(fact.Items) : null;
+        var provenance = JsonCodec.Serialize(new ProvenanceStamp("dossier-cli", "tool", "cli", createdAt));
 
         using (var command = Command(
             connection,
@@ -486,7 +478,7 @@ public sealed partial class DossierStore
             Bind(command, "$text", fact.Text);
             Bind(command, "$data", data);
             Bind(command, "$items", items);
-            Bind(command, "$tags", JsonSerializer.Serialize(tags));
+            Bind(command, "$tags", JsonCodec.SerializeStrings(tags));
             Bind(command, "$confidence", fact.Confidence ?? 1.0);
             Bind(command, "$provenance", provenance);
             Bind(command, "$hash", contentHash);

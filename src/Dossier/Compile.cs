@@ -399,7 +399,7 @@ public sealed partial class DossierStore
         };
     }
 
-    private static string Serialize<T>(T value) => JsonSerializer.Serialize(value, JsonCodec.Options);
+    private static string Serialize<T>(T value) => JsonCodec.Serialize(value);
 
     private static DossierSubject ResolveCompileSubject(SqliteConnection connection, string value)
     {
@@ -418,7 +418,7 @@ public sealed partial class DossierStore
         DossierPin? pin = null;
         if (!reader.IsDBNull(5))
         {
-            pin = JsonSerializer.Deserialize<DossierPin>(reader.GetString(5), JsonCodec.Options);
+            pin = JsonCodec.Deserialize<DossierPin>(reader.GetString(5));
         }
 
         return new DossierSubject

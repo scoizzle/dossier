@@ -209,6 +209,6 @@ public sealed partial class DossierStore
             throw new ArgumentException("drafts must be a JSON array of facts or an object with a facts array");
         }
 
-        return JsonSerializer.Deserialize<List<FactInput>>(element.GetRawText(), JsonCodec.Options) ?? new List<FactInput>();
+        return JsonCodec.Deserialize<List<FactInput>>(element.GetRawText()) ?? new List<FactInput>();
     }
 }

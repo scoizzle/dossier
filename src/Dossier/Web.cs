@@ -69,7 +69,7 @@ public sealed class WebServer : IDisposable
             }
             catch (Exception exception)
             {
-                Write(context, 500, "application/json", Ops.Serialize(new { error = new { code = "internal", message = exception.Message } }));
+                Write(context, 500, "application/json", Ops.Serialize(ErrorEnvelope.Of("internal", exception.Message)));
             }
         }
     }
@@ -79,7 +79,7 @@ public sealed class WebServer : IDisposable
         var request = context.Request;
         if (request.HttpMethod != "GET")
         {
-            Write(context, 405, "application/json", Ops.Serialize(new { error = new { code = "read_only", message = "GET only" } }));
+            Write(context, 405, "application/json", Ops.Serialize(ErrorEnvelope.Of("read_only", "GET only")));
             return;
         }
 
@@ -115,7 +115,7 @@ public sealed class WebServer : IDisposable
                 case "/api/compile":
                     if (Q("subject") is not { } subject)
                     {
-                        Write(context, 400, "application/json", Ops.Serialize(new { error = new { code = "invalid_request", message = "subject is required" } }));
+                        Write(context, 400, "application/json", Ops.Serialize(ErrorEnvelope.Of("invalid_request", "subject is required")));
                         break;
                     }
 
@@ -144,18 +144,18 @@ public sealed class WebServer : IDisposable
                     break;
 
                 default:
-                    Write(context, 404, "application/json", Ops.Serialize(new { error = new { code = "not_found", message = "not found" } }));
+                    Write(context, 404, "application/json", Ops.Serialize(ErrorEnvelope.Of("not_found", "not found")));
                     break;
             }
         }
         catch (DossierRequestException exception)
         {
             var status = exception.Code is "subject_not_found" or "fact_not_found" ? 404 : 400;
-            Write(context, status, "application/json", Ops.Serialize(new { error = new { code = exception.Code, message = exception.Message } }));
+            Write(context, status, "application/json", Ops.Serialize(ErrorEnvelope.Of(exception.Code, exception.Message)));
         }
         catch (FormatException exception)
         {
-            Write(context, 400, "application/json", Ops.Serialize(new { error = new { code = "invalid_request", message = exception.Message } }));
+            Write(context, 400, "application/json", Ops.Serialize(ErrorEnvelope.Of("invalid_request", exception.Message)));
         }
     }
 

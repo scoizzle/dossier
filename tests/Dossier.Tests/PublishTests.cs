@@ -79,11 +79,7 @@ public sealed class PublishTests
         path.StartsWith("subjects/", StringComparison.Ordinal) && path.EndsWith("/index.md", StringComparison.Ordinal);
 
     /// <summary>Resolves a relative link written in the bundle file <paramref name="from"/> to a bundle-relative path.</summary>
-    private static string Resolve(string from, string target)
-    {
-        var dir = from.Contains('/') ? from[..from.LastIndexOf('/')] : string.Empty;
-        return Path.GetFullPath(Path.Combine("/r", dir, target))[3..];
-    }
+    private static string Resolve(string from, string target) => BundlePaths.Resolve(from, target);
 
     private static string FileName(string path) => path[(path.LastIndexOf('/') + 1)..];
 

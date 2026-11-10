@@ -75,5 +75,4 @@ Three resources: `dossier://subjects`, `dossier://subject/{id}`, `dossier://fact
 ## Where to read more
 
 - [`contract/`](../../contract/) holds the normative JSON Schemas for subject, fact, ref, ops and dossier.
-- [`docs/PLAN.md`](../../docs/PLAN.md) holds the hypothesis, invariants and measured results.
 - [`README.md`](../../README.md) holds the model, budget modes, conflicts and the full CLI reference.

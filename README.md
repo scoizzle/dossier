@@ -88,7 +88,7 @@ A related test, `Recency_DefaultStillAffectsOrdering`, shows the default recency
 
 ## Measured results
 
-Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts) with `bash scripts/eval.sh`, per `docs/PLAN.md`. The baseline is primary sources: the original git files and screenshots an agent would otherwise read. Token estimator: chars/4 for text, pixels/750 for images.
+Measured 2026-11-09 on the seeded subject `Memos/Home` (24 live facts) with `bash scripts/eval.sh`. The baseline is primary sources: the original git files and screenshots an agent would otherwise read. Token estimator: chars/4 for text, pixels/750 for images.
 
 | Arm | Context | Tokens |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ Accuracy: two independent agents, one given only arm A and one given only arm B,
 - No agent has answered from arm C, so primary-source accuracy is unmeasured. The 10/10 result covers arms A and B only.
 - The default `rank.recency` term is derived from wall-clock `created_at` and can rank differently across machines. `rank.recency=0` is the reproducible mode.
 
-The kill criterion in `docs/PLAN.md` (at least 90% of raw-dump accuracy at no more than 25% of the tokens across both eval domains) is not yet established: only one domain has been measured.
+The project's success bar (at least 90% of raw-dump accuracy at no more than 25% of the tokens across both eval domains) is not yet established: only one domain has been measured.
 
 ## Quick start
 
@@ -314,12 +314,12 @@ README.md          this file
 Dossier.sln        solution (src project plus tests)
 global.json        pins the Microsoft.Testing.Platform test runner
 SECURITY.md        security policy: how to report a vulnerability
+CONTRIBUTING.md    how to build, test and propose changes
 LICENSE            MIT license for Dossier
 THIRD-PARTY-NOTICES.md  notices for components shipped in release archives
-.github/           CI (ci.yml) and the tag-triggered AOT release workflow (release.yml)
+.github/           CI (ci.yml), the tag-triggered AOT release workflow (release.yml), issue forms and the pull request template
 assets/            icon
 contract/          JSON Schemas: subject, fact, ref, ops, dossier (the normative shapes)
-docs/PLAN.md       hypothesis, kill criterion, invariants, measured results
 examples/          memos-bundle/ (committed publish output), NOTICE.md (upstream licenses)
 profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
 scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, scale-test.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
@@ -329,7 +329,7 @@ scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 skills/dossier/    SKILL.md: how an agent uses Dossier well (the loop, rules, commands)
 src/Dossier/       the reference implementation
-tests/Dossier.Tests/  210 TUnit tests
+tests/Dossier.Tests/  TUnit tests
 ```
 
 ## Releases
@@ -382,13 +382,13 @@ bash scripts/scaling.sh      # the N=50/200/1000 bounded-cost table
 bash scripts/verify-refs.sh  # fails unless every seeded git ref resolves with HTTP 200
 ```
 
-All scripts need bash, `jq` and a Release build. `dotnet test` runs the 210 tests.
+All scripts need bash, `jq` and a Release build. `dotnet test` runs the test suite.
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; 210 passing tests; the seeded Memos demo; the evaluation harness.
+Done: dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; the test suite; the seeded Memos demo; the evaluation harness.
 
-Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
+Not built yet: reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 
 ## Contract and implementation
 
@@ -411,3 +411,5 @@ Five foot-guns shaped the design; each is a decision, not an accident.
 ## License
 
 MIT, see [LICENSE](LICENSE). Third-party notices are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) and are included in every release archive.
+
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).

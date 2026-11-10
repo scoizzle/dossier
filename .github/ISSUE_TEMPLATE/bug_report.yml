@@ -1,0 +1,41 @@
+name: Bug report
+description: Report something that is broken or behaves unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not report security vulnerabilities here. See the [security policy](https://github.com/scoizzle/dossier/security/policy) instead.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands or a minimal input that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-actual
+    attributes:
+      label: Expected and actual behavior
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Output of `dossier --version`, or the commit you built.
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or output
+      description: Remove anything private before pasting.
+      render: shell

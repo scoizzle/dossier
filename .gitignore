@@ -9,3 +9,8 @@ TestResults/
 /stage/
 /dist/
 /publish.log
+
+# Generated demo outputs (scripts/scale-test.sh, scripts/dump-code-demo.sh, scripts/publish-profile-demo.sh); not committed.
+/examples/django-bundle/
+/examples/django-models-bundle/
+/examples/django-shards/

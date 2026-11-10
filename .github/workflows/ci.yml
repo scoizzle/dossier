@@ -193,7 +193,6 @@ jobs:
           echo "${GITLEAKS_SHA256}  $RUNNER_TEMP/gitleaks.tar.gz" | sha256sum -c -
           tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
 
-      # Full history is scanned, except examples/ (see .gitleaks.toml): those generated
-      # fixtures are an accepted, visible gap in secret scanning, not scanned at all.
+      # Full history is scanned with gitleaks' default rules (no allowlist).
       - name: Scan git history
         run: '"$RUNNER_TEMP/gitleaks" git --redact --no-banner -v --exit-code 1 .'

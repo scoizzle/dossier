@@ -139,6 +139,15 @@ public sealed class JsonlRound2Tests
     // ---- F3: hidden files under assets/ ----------------------------------------------------------
 
     [Test]
+    public async Task IsHiddenEntry_TreatsDotFilesAsHiddenOnEveryPlatform()
+    {
+        await Assert.That(DossierStore.IsHiddenEntry(".DS_Store", FileAttributes.Normal)).IsTrue();
+        await Assert.That(DossierStore.IsHiddenEntry("a.bin", FileAttributes.Normal)).IsFalse();
+        await Assert.That(DossierStore.IsHiddenEntry("x", FileAttributes.Hidden)).IsTrue();
+        await Assert.That(DossierStore.IsHiddenEntry("x", FileAttributes.System)).IsTrue();
+    }
+
+    [Test]
     public async Task Import_HiddenFileUnderAssetsIsSkippedAndReported()
     {
         using var a = new TempDb();

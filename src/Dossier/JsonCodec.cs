@@ -89,7 +89,7 @@ internal sealed record ErrorBody(string Code, string Message);
 internal sealed record RetractedOutput(string Id, string Status);
 
 /// <summary>publish's CLI summary line.</summary>
-internal sealed record PublishSummary(string Out, int Files, int Written, int Subjects, int Facts, List<string> Removed);
+internal sealed record PublishSummary(string Out, int Files, int Written, int Subjects, int Facts, List<string> Removed, string? Format = null, int? Assets = null);
 
 /// <summary>import's CLI summary line.</summary>
 internal sealed record ImportSummary(int Subjects, int Facts, int Refs, int Attachments, int Blobs, List<ImportSkip> Skipped);

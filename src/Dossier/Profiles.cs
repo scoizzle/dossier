@@ -140,12 +140,15 @@ public sealed class ComplianceReport
     /// <summary>What was measured, e.g. "shards/ (12 files)".</summary>
     public string Scope { get; init; } = string.Empty;
 
+    /// <summary>"markdown" (default) or "jsonl": names the bundle format in the extension-gap note.</summary>
+    public string Format { get; init; } = "markdown";
+
     public List<ComplianceRow> Rows { get; init; } = new();
 
     public bool Passed => Rows.All(r => r.Pass);
 
     /// <summary>Evaluates <paramref name="files"/> (bundle-relative path, byte size) against the profile.</summary>
-    public static ComplianceReport Evaluate(PublishProfile profile, IReadOnlyDictionary<string, long> files, string scope)
+    public static ComplianceReport Evaluate(PublishProfile profile, IReadOnlyDictionary<string, long> files, string scope, string format = "markdown")
     {
         var rows = new List<ComplianceRow>();
         var count = files.Count;
@@ -186,7 +189,7 @@ public sealed class ComplianceReport
 
         rows.Add(new ComplianceRow("max_path_depth", Limit(profile.MaxPathDepth), Num(depth), profile.MaxPathDepth == 0 || depth <= profile.MaxPathDepth));
 
-        return new ComplianceReport { Profile = profile, Scope = scope, Rows = rows };
+        return new ComplianceReport { Profile = profile, Scope = scope, Format = format, Rows = rows };
     }
 
     private static string Label(string extension) => extension switch
@@ -228,7 +231,7 @@ public sealed class ComplianceReport
         b.Append("overall: ").Append(Passed ? "PASS" : "FAIL").Append('\n');
         if (Rows.Any(r => r.Limit == "allowed_extensions" && !r.Pass))
         {
-            b.Append("format gap: this bundle is markdown and no converter is bundled, so the extension check is reported, not fixed; convert the files before uploading to this consumer.\n");
+            b.Append("format gap: this bundle is ").Append(Format).Append(" and no converter is bundled, so the extension check is reported, not fixed; convert the files before uploading to this consumer.\n");
         }
 
         if (Profile.Note.Length > 0)

@@ -51,7 +51,7 @@ public sealed partial class DossierStore
 /// Transport-neutral entry points. Both the MCP server and the web UI go through these, and
 /// each one is a thin call into the same DossierStore method the CLI calls.
 /// </summary>
-internal static class Ops
+public static class Ops
 {
     public static string Serialize<T>(T value) => JsonSerializer.Serialize(value, JsonCodec.Options);
 
@@ -60,7 +60,10 @@ internal static class Ops
             ? JsonSerializer.Deserialize<T>(element.GetRawText(), JsonCodec.Options) ?? new T()
             : new T();
 
-    public static string Search(DossierStore store, SearchRequest request) => Serialize(store.Search(request));
+    public static string Search(DossierStore store, SearchRequest request) =>
+        request.Brief ? Serialize(store.SearchBrief(request)) : Serialize(store.Search(request));
+
+    public static string ResolveSubject(DossierStore store, string? q) => Serialize(store.ResolveSubjects(q));
 
     public static string Compile(DossierStore store, CompileRequest request)
     {
@@ -203,11 +206,13 @@ public sealed class McpServer
         new("dump", "Chunk a file or directory into facts for one subject, deduping repeats. " + Untrusted,
             """{"type":"object","properties":{"source":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"split":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}}},"required":["source","subject"]}"""),
         new("post_facts", "Post a batch of facts (with refs and attachments) for a subject. " + Untrusted,
-            """{"type":"object","properties":{"subject":{"type":"object"},"facts":{"type":"array","items":{"type":"object"}}},"required":["subject","facts"]}"""),
+            """{"type":"object","properties":{"subject":{"type":"object"},"facts":{"type":"array","items":{"type":"object"}},"dry_run":{"type":"boolean"}},"required":["subject","facts"]}"""),
         new("correlate", "Propose derived refs between facts; nothing is written. " + Untrusted,
             """{"type":"object","properties":{"subject":{"type":"string"},"matchers":{"type":"array","items":{"type":"string"}}}}"""),
         new("search", "Search facts by text and filters, including reverse-impact via ref_target. " + Untrusted,
-            """{"type":"object","properties":{"q":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"key":{"type":"string"},"tag":{"type":"string"},"actor":{"type":"string"},"status":{"type":"string"},"since":{"type":"string"},"ref_target":{"type":"string"},"direction":{"type":"string","enum":["in","out"]},"limit":{"type":"integer"},"cursor":{"type":"string"}}}"""),
+            """{"type":"object","properties":{"q":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"key":{"type":"string"},"tag":{"type":"string"},"actor":{"type":"string"},"status":{"type":"string"},"since":{"type":"string"},"ref_target":{"type":"string"},"direction":{"type":"string","enum":["in","out"]},"limit":{"type":"integer"},"cursor":{"type":"string"},"brief":{"type":"boolean"}}}"""),
+        new("resolve_subject", "Resolve a subject name to canonical subjects (exact_name, exact_alias, prefix, fuzzy), best first. " + Untrusted,
+            """{"type":"object","properties":{"q":{"type":"string"}},"required":["q"]}"""),
         new("get_fact", "Fetch one fact with its refs, attachments and inbound referencing facts. " + Untrusted,
             """{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}"""),
         new("compile_dossier", "Compile a budgeted, ranked dossier for a subject. " + Untrusted,
@@ -251,6 +256,9 @@ public sealed class McpServer
                 "post_facts" => PostFacts(Ops.Parse<PostFactsRequest>(arguments)),
                 "correlate" => Ops.Serialize(store.Correlate(Ops.Parse<CorrelateRequest>(arguments))),
                 "search" => Ops.Search(store, Ops.Parse<SearchRequest>(arguments)),
+                "resolve_subject" => Ops.ResolveSubject(
+                    store,
+                    Ops.Parse<ResolveArgs>(arguments).Q ?? throw new DossierRequestException("invalid_request", "resolve_subject requires q")),
                 "get_fact" => Ops.GetFact(
                     store,
                     Ops.Parse<FactIdArgs>(arguments).Id ?? throw new DossierRequestException("invalid_request", "get_fact requires id")),
@@ -266,6 +274,11 @@ public sealed class McpServer
         {
             return ToolResult(Ops.Serialize(new { error = new { code = "invalid_request", message = exception.Message } }), isError: true);
         }
+    }
+
+    private sealed class ResolveArgs
+    {
+        public string? Q { get; set; }
     }
 
     private sealed class FactIdArgs

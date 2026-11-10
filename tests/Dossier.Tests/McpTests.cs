@@ -92,10 +92,12 @@ public sealed class McpTests
             var list = await child.Call("tools/list");
             var names = list.GetProperty("result").GetProperty("tools").EnumerateArray()
                 .Select(tool => tool.GetProperty("name").GetString()).ToList();
-            foreach (var expected in new[] { "dump", "post_facts", "correlate", "search", "get_fact", "compile_dossier" })
+            foreach (var expected in new[] { "dump", "post_facts", "correlate", "search", "get_fact", "compile_dossier", "resolve_subject" })
             {
                 await Assert.That(names.Contains(expected)).IsTrue();
             }
+
+            await Assert.That(names.Count).IsEqualTo(7);
 
             foreach (var tool in list.GetProperty("result").GetProperty("tools").EnumerateArray())
             {
@@ -181,5 +183,41 @@ public sealed class McpTests
             JsonSerializer.Serialize(new { jsonrpc = "2.0", id = 3, method = "resources/read", @params = new { uri = "dossier://subject/" + subjectId } }))!.ToJsonString()).RootElement;
         var text = read.GetProperty("result").GetProperty("contents")[0].GetProperty("text").GetString()!;
         await Assert.That(JsonDocument.Parse(text).RootElement.GetProperty("subject").GetProperty("id").GetString()).IsEqualTo(subjectId);
+    }
+
+    [Test]
+    public async Task Mcp_ResolveSubjectToolIsListedAndCallable()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("body")));
+        var server = new McpServer(db.Store);
+
+        var list = JsonDocument.Parse(server.Handle("""{"jsonrpc":"2.0","id":1,"method":"tools/list"}""")!.ToJsonString()).RootElement;
+        var tools = list.GetProperty("result").GetProperty("tools").EnumerateArray().ToList();
+        await Assert.That(tools.Count).IsEqualTo(7);
+        var tool = tools.Single(t => t.GetProperty("name").GetString() == "resolve_subject");
+        await Assert.That(tool.GetProperty("description").GetString()!.Contains("untrusted data")).IsTrue();
+
+        var reply = JsonDocument.Parse(server.Handle(JsonSerializer.Serialize(new
+        {
+            jsonrpc = "2.0",
+            id = 2,
+            method = "tools/call",
+            @params = new { name = "resolve_subject", arguments = new { q = "widget" } },
+        }))!.ToJsonString()).RootElement;
+        var text = reply.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!;
+        var matches = JsonDocument.Parse(text).RootElement;
+        await Assert.That(matches[0].GetProperty("match").GetString()).IsEqualTo("exact_name");
+        await Assert.That(matches[0].GetProperty("name").GetString()).IsEqualTo("Widget");
+
+        var dry = JsonDocument.Parse(server.Handle(JsonSerializer.Serialize(new
+        {
+            jsonrpc = "2.0",
+            id = 3,
+            method = "tools/call",
+            @params = new { name = "post_facts", arguments = new { dry_run = true, subject = new { name = "Widget" }, facts = new[] { new { kind = "note", text = "fresh" } } } },
+        }))!.ToJsonString()).RootElement;
+        await Assert.That(dry.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!.Contains("\"new\"")).IsTrue();
+        await Assert.That(db.Store.Search(new SearchRequest { Q = "fresh" }).Total).IsEqualTo(0);
     }
 }

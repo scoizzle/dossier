@@ -25,7 +25,8 @@ Dossier is a local fact store. You post small claims about a subject as you lear
 2. **Post one claim per fact as you learn it.** Call `dossier post --file <path>` (MCP `post_facts`) with a subject and a batch of facts. Post while exploring, not in one batch at the end.
 3. **Declare refs at post time.** Put `refs` on each fact: `fact`, `slot` or `subject` for internal links, and an external kind (such as a file or URL) with `locator`, `rev` and `snapshot` for sources. Refs are the only edges.
 4. **Search before adding a near-identical fact.** Call `dossier search --q "<words>" --subject <name>` (MCP `search`). If the claim exists, do not post it again. If it changed, repost with the same `key` so it replaces.
-5. **Compile or publish when asked.** Call `dossier compile --subject <name>` (MCP `compile_dossier`) for an in-context dossier, or `dossier publish --out <dir>` for a markdown bundle.
+5. **Resolve and dry-run before posting.** Call `dossier resolve --q "<name>"` (MCP `resolve_subject`) to find the canonical subject name, then `dossier post --file <path> --dry-run` (MCP `post_facts` with `dry_run` true) to learn whether each fact is `new`, `deduped`, `near_duplicate` or `replaced`, and only then post for real. This is cheaper than searching: a dry run is the same decision a real post makes, with no write, and it answers "would this duplicate?" without returning up to 20 full facts. Use `dossier search --brief` (MCP `search` with `brief` true) when you only need to know whether something exists.
+6. **Compile or publish when asked.** Call `dossier compile --subject <name>` (MCP `compile_dossier`) for an in-context dossier, or `dossier publish --out <dir>` for a markdown bundle.
 
 ## Rules the schema cannot enforce
 
@@ -51,9 +52,10 @@ Run as `dossier <verb>`; this table is the verb list, not the flag reference.
 | --- | --- |
 | `dossier init` | Create the store in the current directory. |
 | `dossier dump` | Chunk a file or directory into facts for one subject (`--source`, `--subject`, `--split code`, `--entity-subjects`). |
-| `dossier post` | Post a batch of facts with refs from a JSON file (`--file`, or `-` for stdin). |
+| `dossier post` | Post a batch of facts with refs from a JSON file (`--file`, or `-` for stdin); `--dry-run` reports the verdicts and writes nothing. |
 | `dossier correlate` | Propose derived refs between facts; writes nothing. |
-| `dossier search` | Find facts by text and filters, including reverse impact (`--ref-target --direction in`). |
+| `dossier resolve` | Resolve a subject name to canonical subjects (`--q`); matches are `exact_name`, `exact_alias`, `prefix` or `fuzzy`. |
+| `dossier search` | Find facts by text and filters, including reverse impact (`--ref-target --direction in`); `--brief` returns one line per hit. |
 | `dossier show` | Print one fact with its refs, attachments and inbound referrers. |
 | `dossier retract` | Retract a fact by id. |
 | `dossier compile` | Compile a ranked dossier for a subject (`--budget-mode complete\|strict`). |
@@ -64,7 +66,7 @@ Run as `dossier <verb>`; this table is the verb list, not the flag reference.
 
 ## MCP tools
 
-Six tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`.
+Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `resolve_subject`.
 
 Three resources: `dossier://subjects`, `dossier://subject/{id}`, `dossier://fact/{id}`.
 

@@ -298,4 +298,87 @@ public sealed class SearchTests
 
         await Assert.That(shown).IsNull();
     }
+
+    [Test]
+    public async Task SearchBrief_ReturnsOneLinePerHitWithNoExtraFields()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("alpha " + new string('x', 300), tags: new List<string> { "t" }),
+            Fixtures.Fact("alpha short")));
+
+        var json = Ops.Search(db.Store, new SearchRequest { Q = "alpha", Brief = true });
+        var root = System.Text.Json.JsonDocument.Parse(json).RootElement;
+        var hits = root.GetProperty("hits").EnumerateArray().ToList();
+
+        await Assert.That(hits.Count).IsEqualTo(2);
+        foreach (var hit in hits)
+        {
+            var names = hit.EnumerateObject().Select(p => p.Name).OrderBy(n => n).ToList();
+            await Assert.That(names).IsEquivalentTo(new[] { "id", "kind", "status", "text" });
+            await Assert.That(hit.GetProperty("text").GetString()!.Length <= 121).IsTrue();
+        }
+
+        var longHit = hits.Single(h => h.GetProperty("text").GetString()!.EndsWith('…'));
+        await Assert.That(longHit.GetProperty("text").GetString()!.Length).IsEqualTo(121);
+    }
+
+    [Test]
+    public async Task SearchBrief_KeepsTotalAndCursor()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Enumerable.Range(0, 5).Select(i => Fixtures.Fact($"note number {i}")).ToArray()));
+
+        var full = db.Store.Search(new SearchRequest { Subject = "Widget", Limit = 2 });
+        var brief = db.Store.SearchBrief(new SearchRequest { Subject = "Widget", Limit = 2, Brief = true });
+
+        await Assert.That(brief.Total).IsEqualTo(full.Total);
+        await Assert.That(brief.Complete).IsEqualTo(full.Complete);
+        await Assert.That(brief.Next).IsEqualTo(full.Next);
+        await Assert.That(brief.Next).IsNotNull();
+        await Assert.That(brief.Hits.Select(h => h.Id).ToList()).IsEquivalentTo(full.Hits.Select(h => h.Id).ToList());
+
+        var page2 = db.Store.SearchBrief(new SearchRequest { Subject = "Widget", Limit = 2, Brief = true, Cursor = brief.Next });
+        await Assert.That(page2.Hits.Count).IsEqualTo(2);
+    }
+
+    [Test]
+    public async Task Resolve_MatchesNameAliasPrefixAndFuzzy()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(new PostFactsRequest { Subject = new SubjectInput { Name = "Billing", Aliases = new List<string> { "Invoices" } }, Facts = { Fixtures.Fact("a") } });
+        db.Store.PostFacts(new PostFactsRequest { Subject = new SubjectInput { Name = "Payments", Aliases = new List<string> { "Billing Core" } }, Facts = { Fixtures.Fact("b") } });
+        db.Store.PostFacts(new PostFactsRequest { Subject = new SubjectInput { Name = "Billing Gateway" }, Facts = { Fixtures.Fact("c") } });
+        db.Store.PostFacts(new PostFactsRequest { Subject = new SubjectInput { Name = "Biling" }, Facts = { Fixtures.Fact("d") } });
+        db.Store.PostFacts(new PostFactsRequest { Subject = new SubjectInput { Name = "Unrelated" }, Facts = { Fixtures.Fact("e") } });
+
+        var result = db.Store.ResolveSubjects("  BILLING ");
+        var labels = result.Select(m => (m.Name, m.Match)).ToList();
+
+        await Assert.That(labels).IsEquivalentTo(new[]
+        {
+            ("Billing", "exact_name"),
+            ("Billing Gateway", "prefix"),
+            ("Payments", "prefix"),
+            ("Biling", "fuzzy"),
+        });
+        await Assert.That(result.Select(m => m.Match).ToList()).IsEquivalentTo(new[] { "exact_name", "prefix", "prefix", "fuzzy" });
+        await Assert.That(result[0].Facts).IsEqualTo(1);
+        await Assert.That(result[0].Aliases.Contains("Invoices")).IsTrue();
+
+        var alias = db.Store.ResolveSubjects("invoices");
+        await Assert.That(alias.Single().Match).IsEqualTo("exact_alias");
+    }
+
+    [Test]
+    public async Task Resolve_NoMatchReturnsEmptyListWithoutError()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("a")));
+
+        await Assert.That(db.Store.ResolveSubjects("zzzzzzzzzz").Count).IsEqualTo(0);
+        await Assert.That(db.Store.ResolveSubjects("").Count).IsEqualTo(0);
+        await Assert.That(Ops.ResolveSubject(db.Store, "zzzzzzzzzz")).IsEqualTo("[]");
+    }
 }

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path>|correlate [--subject]|search [--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|resolve --q <text>|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -32,6 +32,11 @@ try
             {
                 Console.Error.WriteLine("invalid post_facts request");
                 return 1;
+            }
+
+            if (args.Contains("--dry-run"))
+            {
+                request.DryRun = true;
             }
 
             var store = new DossierStore();
@@ -119,11 +124,24 @@ try
                 Direction = ValueAfter(args, "--direction"),
                 Cursor = ValueAfter(args, "--cursor"),
                 Limit = ParseLimit(ValueAfter(args, "--limit")),
+                Brief = args.Contains("--brief"),
             };
 
             var store = new DossierStore();
-            var response = store.Search(request);
-            Console.WriteLine(JsonSerializer.Serialize(response, JsonCodec.Options));
+            Console.WriteLine(Ops.Search(store, request));
+            return 0;
+        }
+
+        case "resolve":
+        {
+            var q = ValueAfter(args, "--q");
+            if (q is null)
+            {
+                Console.Error.WriteLine("resolve requires --q <text>");
+                return 1;
+            }
+
+            Console.WriteLine(Ops.ResolveSubject(new DossierStore(), q));
             return 0;
         }
 

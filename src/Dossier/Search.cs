@@ -206,6 +206,111 @@ public sealed partial class DossierStore
         };
     }
 
+    /// <summary>search with brief=true: same query, total/complete/next, one short line per hit.</summary>
+    public BriefSearchResponse SearchBrief(SearchRequest request)
+    {
+        var full = Search(request);
+        return new BriefSearchResponse
+        {
+            Hits = full.Hits.Select(hit => new BriefHit
+            {
+                Id = hit.Id,
+                Kind = hit.Kind,
+                Status = hit.Status,
+                Text = hit.Text.Length > BriefTextLength ? hit.Text[..BriefTextLength] + "…" : hit.Text,
+            }).ToList(),
+            Total = full.Total,
+            Complete = full.Complete,
+            Refine = full.Refine,
+            Next = full.Next,
+        };
+    }
+
+    private const int BriefTextLength = 120;
+
+    /// <summary>
+    /// resolve. Subjects matching q after casefold and whitespace collapse, best first:
+    /// exact_name, exact_alias, prefix (name or alias starts with q), fuzzy (substring, or
+    /// edit distance within a third of the length). No match is an empty list.
+    /// </summary>
+    public List<SubjectMatch> ResolveSubjects(string? q)
+    {
+        var wanted = Names.Normalize(q);
+        var matches = new List<(int Rank, SubjectMatch Match)>();
+        if (wanted.Length == 0)
+        {
+            return new List<SubjectMatch>();
+        }
+
+        foreach (var subject in ListSubjects())
+        {
+            var name = Names.Normalize(subject.Name);
+            var aliases = subject.Aliases.Select(Names.Normalize).Where(a => a.Length > 0).ToList();
+            var (rank, label) =
+                name == wanted ? (0, "exact_name")
+                : aliases.Contains(wanted) ? (1, "exact_alias")
+                : name.StartsWith(wanted, StringComparison.Ordinal) || aliases.Any(a => a.StartsWith(wanted, StringComparison.Ordinal)) ? (2, "prefix")
+                : IsFuzzy(wanted, name) || aliases.Any(a => IsFuzzy(wanted, a)) ? (3, "fuzzy")
+                : (-1, string.Empty);
+            if (rank < 0)
+            {
+                continue;
+            }
+
+            matches.Add((rank, new SubjectMatch
+            {
+                Id = subject.Id,
+                Name = subject.Name,
+                Kind = subject.Kind,
+                Aliases = subject.Aliases,
+                Facts = subject.Facts,
+                Match = label,
+            }));
+        }
+
+        return matches
+            .OrderBy(m => m.Rank)
+            .ThenBy(m => m.Match.Name, StringComparer.Ordinal)
+            .ThenBy(m => m.Match.Id, StringComparer.Ordinal)
+            .Select(m => m.Match)
+            .ToList();
+    }
+
+    private static bool IsFuzzy(string wanted, string candidate)
+    {
+        if (wanted.Length >= 3 && candidate.Contains(wanted, StringComparison.Ordinal))
+        {
+            return true;
+        }
+
+        var allowed = Math.Max(1, Math.Max(wanted.Length, candidate.Length) / 3);
+        if (Math.Abs(wanted.Length - candidate.Length) > allowed)
+        {
+            return false;
+        }
+
+        var previous = new int[candidate.Length + 1];
+        var current = new int[candidate.Length + 1];
+        for (var j = 0; j <= candidate.Length; j++)
+        {
+            previous[j] = j;
+        }
+
+        for (var i = 1; i <= wanted.Length; i++)
+        {
+            current[0] = i;
+            for (var j = 1; j <= candidate.Length; j++)
+            {
+                var cost = wanted[i - 1] == candidate[j - 1] ? 0 : 1;
+                current[j] = Math.Min(Math.Min(current[j - 1] + 1, previous[j] + 1), previous[j - 1] + cost);
+            }
+
+            (previous, current) = (current, previous);
+        }
+
+        return previous[candidate.Length] <= allowed;
+    }
+
     private static SearchResponse EmptyResponse() => new()
     {
         Hits = new List<FactView>(),

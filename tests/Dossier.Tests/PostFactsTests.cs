@@ -345,4 +345,100 @@ public sealed class PostFactsTests
         using var connection = db.Store.OpenConnection();
         await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM refs WHERE fact_id = $id", ("$id", id))).IsEqualTo(2);
     }
+
+    private static long[] Counts(DossierStore store)
+    {
+        using var connection = store.OpenConnection();
+        return new[]
+        {
+            Fixtures.Count(connection, "SELECT COUNT(*) FROM subjects"),
+            Fixtures.Count(connection, "SELECT COUNT(*) FROM facts"),
+            Fixtures.Count(connection, "SELECT COUNT(*) FROM refs"),
+            Fixtures.Count(connection, "SELECT COUNT(*) FROM slots"),
+            Fixtures.Count(connection, "SELECT COUNT(*) FROM facts_fts"),
+        };
+    }
+
+    [Test]
+    public async Task DryRun_ReturnsSameVerdictsAsRealPost()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("existing plain", key: null), Fixtures.Fact("old keyed", key: "k1")));
+
+        PostFactsRequest Build(bool dry)
+        {
+            var request = Fixtures.Post(
+                "Widget",
+                Fixtures.Fact("brand new fact"),
+                Fixtures.Fact("existing plain"),
+                Fixtures.Fact("new keyed value", key: "k1"));
+            request.DryRun = dry;
+            return request;
+        }
+
+        var dry = db.Store.PostFacts(Build(true));
+        var real = db.Store.PostFacts(Build(false));
+
+        await Assert.That(dry.Response.Facts.Select(f => f.Status).ToList())
+            .IsEquivalentTo(new[] { "new", "deduped", "replaced" });
+        await Assert.That(dry.Response.Facts.Select(f => f.Status).ToList())
+            .IsEquivalentTo(real.Response.Facts.Select(f => f.Status).ToList());
+        await Assert.That(dry.Response.Facts[1].Id).IsEqualTo(real.Response.Facts[1].Id);
+        await Assert.That(dry.Response.Facts[2].Replaced).IsEqualTo(real.Response.Facts[2].Replaced);
+    }
+
+    [Test]
+    public async Task DryRun_WritesNothing()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("existing", key: "k1")));
+        var before = Counts(db.Store);
+
+        var request = Fixtures.Post(
+            "Brand New Subject",
+            Fixtures.Fact("one", key: "a", refs: new List<RefInput> { Fixtures.Ref("src/x.cs", kind: "file") }),
+            Fixtures.Fact("two", attachments: new List<AttachmentInput> { new() { Sha256 = new string('a', 64), Filename = "f", Mime = "text/plain" } }));
+        request.DryRun = true;
+        request.Facts.Add(Fixtures.Fact("three", key: "k1"));
+        var result = db.Store.PostFacts(request);
+
+        await Assert.That(result.Response.Facts.Count).IsEqualTo(3);
+        await Assert.That(result.Response.Subject.Created).IsTrue();
+        await Assert.That(Counts(db.Store)).IsEquivalentTo(before);
+        await Assert.That(Directory.Exists(db.Store.BlobRoot) && Directory.GetFiles(db.Store.BlobRoot).Length > 0).IsFalse();
+    }
+
+    [Test]
+    public async Task DryRun_RejectsInvalidPayloadLikeRealPost()
+    {
+        using var db = new TempDb();
+        var badRef = new List<RefInput> { Fixtures.Ref("src/x.cs", basis: null, kind: "file") };
+
+        var dryRequest = Fixtures.Post("Widget", Fixtures.Fact("x", refs: badRef));
+        dryRequest.DryRun = true;
+        var dry = db.Store.PostFacts(dryRequest);
+        var real = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("x", refs: badRef)));
+        await Assert.That(dry.Errors.Single().Code).IsEqualTo("missing_basis");
+        await Assert.That(dry.Errors.Single().Code).IsEqualTo(real.Errors.Single().Code);
+
+        PostFactsRequest Unknown(bool d) => new() { Subject = new SubjectInput { Id = "no-such-subject" }, Facts = { Fixtures.Fact("x") }, DryRun = d };
+        var dryEx = Assert.Throws<DossierRequestException>(() => db.Store.PostFacts(Unknown(true)));
+        var realEx = Assert.Throws<DossierRequestException>(() => db.Store.PostFacts(Unknown(false)));
+        await Assert.That(dryEx.Code).IsEqualTo("subject_not_found");
+        await Assert.That(dryEx.Code).IsEqualTo(realEx.Code);
+    }
+
+    [Test]
+    public async Task DryRun_ThenRealPostStillCreatesTheFactsAsNew()
+    {
+        using var db = new TempDb();
+        var dryRequest = Fixtures.Post("Fresh", Fixtures.Fact("only once", key: "k"));
+        dryRequest.DryRun = true;
+        var dry = db.Store.PostFacts(dryRequest);
+        var real = db.Store.PostFacts(Fixtures.Post("Fresh", Fixtures.Fact("only once", key: "k")));
+
+        await Assert.That(dry.Response.Facts[0].Status).IsEqualTo("new");
+        await Assert.That(real.Response.Facts[0].Status).IsEqualTo("new");
+        await Assert.That(Counts(db.Store)[1]).IsEqualTo(1);
+    }
 }

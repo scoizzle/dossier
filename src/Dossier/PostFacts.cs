@@ -101,7 +101,16 @@ public sealed partial class DossierStore
             RegisterLocalId(localIds, fact.LocalId, newId);
         }
 
-        transaction.Commit();
+        if (request.DryRun)
+        {
+            // Same decisions, nothing kept: the transaction (subject, facts, refs, FTS, slots) is
+            // rolled back. PostFacts writes no blob files, so there is nothing else to undo.
+            transaction.Rollback();
+        }
+        else
+        {
+            transaction.Commit();
+        }
 
         var response = new PostFactsResponse
         {

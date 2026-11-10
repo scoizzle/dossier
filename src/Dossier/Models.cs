@@ -8,6 +8,8 @@ public sealed class PostFactsRequest
     public string? IdempotencyKey { get; set; }
     public SubjectInput? Subject { get; set; }
     public List<string>? Redact { get; set; }
+    /// <summary>Run the full resolution path and roll back: nothing is written.</summary>
+    public bool DryRun { get; set; }
     public List<FactInput> Facts { get; set; } = new();
 }
 
@@ -130,6 +132,35 @@ public sealed class SearchRequest
     public string? Direction { get; set; }
     public int? Limit { get; set; }
     public string? Cursor { get; set; }
+    /// <summary>One line per hit (id, kind, status, text prefix); served by SearchBrief.</summary>
+    public bool Brief { get; set; }
+}
+
+public sealed class BriefHit
+{
+    public string Id { get; set; } = string.Empty;
+    public string Kind { get; set; } = string.Empty;
+    public string Status { get; set; } = string.Empty;
+    public string Text { get; set; } = string.Empty;
+}
+
+public sealed class BriefSearchResponse
+{
+    public List<BriefHit> Hits { get; set; } = new();
+    public int Total { get; set; }
+    public bool Complete { get; set; }
+    public string? Refine { get; set; }
+    public string? Next { get; set; }
+}
+
+public sealed class SubjectMatch
+{
+    public string Id { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Kind { get; set; } = string.Empty;
+    public List<string> Aliases { get; set; } = new();
+    public long Facts { get; set; }
+    public string Match { get; set; } = string.Empty;
 }
 
 public sealed class SearchResponse

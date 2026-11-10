@@ -323,8 +323,8 @@ shasum -a 256 -c --ignore-missing SHA256SUMS  # macOS
 
 Platform notes:
 
-- Linux binaries are built on Ubuntu 22.04 and need glibc 2.35 or newer and `libicu`.
-- macOS binaries are unsigned. If Gatekeeper blocks the binary, remove the quarantine flag: `xattr -d com.apple.quarantine dossier`.
+- Linux binaries are built on Ubuntu 22.04 and need glibc 2.35 or newer, `libicu`, and OpenSSL (`libssl3` or `libssl1.1`).
+- macOS binaries are unsigned. If Gatekeeper blocks the binary, remove the quarantine flag from the whole extracted directory (it also lands on `libe_sqlite3.dylib`): `xattr -dr com.apple.quarantine <extracted dir>`.
 
 ## Reproducing the evaluation
 

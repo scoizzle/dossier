@@ -63,7 +63,7 @@ jobs:
         run: dotnet build Dossier.sln -c Release --no-restore
 
       - name: Test
-        run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 198
+        run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 210
 
   aot-smoke:
     name: aot-smoke (linux-x64)
@@ -92,6 +92,20 @@ jobs:
       - name: Restore
         run: dotnet restore src/Dossier/Dossier.csproj -r "$RID" -p:PublishAot=true -p:NuGetAuditLevel=moderate "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
 
+      # Records which ILCompiler and runtime packs were resolved, so a rolling 10.0.x bump is visible in the log.
+      - name: Log resolved AOT toolchain versions
+        run: |
+          assets=src/Dossier/obj/project.assets.json
+          ilc="$(grep -Eo '"(runtime\.[^"/]+\.)?Microsoft\.DotNet\.ILCompiler/[^"]+"' "$assets" | sort -u)"
+          if [ -z "$ilc" ]; then
+            echo "::error::Microsoft.DotNet.ILCompiler not found in $assets"
+            exit 1
+          fi
+          echo "ILCompiler packages:"
+          printf '%s\n' "$ilc"
+          echo "runtime packs:"
+          grep -E -A1 '"name": "Microsoft\.NETCore\.App\.Runtime(\.NativeAOT)?\.[^"]+"' "$assets" | grep -v '^--' || true
+
       - name: Publish (Native AOT)
         run: dotnet publish src/Dossier/Dossier.csproj -c Release -r "$RID" -p:PublishAot=true -p:Version="$VERSION" --no-restore -o "out/$RID" 2>&1 | tee publish.log
 
@@ -104,7 +118,13 @@ jobs:
 
       - name: Check glibc baseline (<= 2.35)
         run: |
-          max=$(for f in "out/$RID/Dossier" "out/$RID"/*.so; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
+          shopt -s nullglob
+          libs=("out/$RID"/*.so)
+          if [ "${#libs[@]}" -eq 0 ]; then
+            echo "::error::no native .so found beside the binary in out/$RID"
+            exit 1
+          fi
+          max=$(for f in "out/$RID/Dossier" "${libs[@]}"; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
           echo "max GLIBC symbol version required: ${max:-none}"
           if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" 2.35 | sort -V | tail -n 1)" != "2.35" ]; then
             echo "::error::binary requires glibc $max, above the 2.35 baseline"
@@ -121,6 +141,8 @@ jobs:
     permissions:
       contents: read
     env:
+      # Dependabot cannot update a curl pin. To bump gitleaks by hand: take the linux_x64 sha256
+      # from the new release's gitleaks_<version>_checksums.txt and update both variables together.
       GITLEAKS_VERSION: 8.30.1
       GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
     steps:

@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <EmbeddedResource Include="www\index.html" LogicalName="index.html" />
+    <EmbeddedResource Include="www\app.js" LogicalName="app.js" />
+    <EmbeddedResource Include="www\graph.js" LogicalName="graph.js" />
   </ItemGroup>
 
   <ItemGroup>

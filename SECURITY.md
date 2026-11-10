@@ -6,7 +6,7 @@ Only the latest release and the current `main` branch receive security fixes.
 
 ## Reporting a vulnerability
 
-Report vulnerabilities privately to the maintainer through GitHub. Do not open a public issue or pull request that describes the problem.
+Report vulnerabilities privately: contact the repository owner directly, using the contact details on their GitHub profile. Collaborators may also message the maintainer directly. Never open a public issue or pull request that describes the problem.
 
 Please include:
 

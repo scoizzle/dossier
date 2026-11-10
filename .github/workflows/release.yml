@@ -23,6 +23,8 @@ defaults:
 jobs:
   verify:
     name: verify
+    # Deleting a v* tag also triggers a push event; there is nothing to build then.
+    if: github.event.deleted != true
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
@@ -119,6 +121,20 @@ jobs:
       - name: Restore
         run: dotnet restore src/Dossier/Dossier.csproj -r "$RID" -p:PublishAot=true -p:NuGetAuditLevel=moderate "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
 
+      # Records which ILCompiler and runtime packs were resolved, so a rolling 10.0.x bump is visible in the log.
+      - name: Log resolved AOT toolchain versions
+        run: |
+          assets=src/Dossier/obj/project.assets.json
+          ilc="$(grep -Eo '"(runtime\.[^"/]+\.)?Microsoft\.DotNet\.ILCompiler/[^"]+"' "$assets" | sort -u)"
+          if [ -z "$ilc" ]; then
+            echo "::error::Microsoft.DotNet.ILCompiler not found in $assets"
+            exit 1
+          fi
+          echo "ILCompiler packages:"
+          printf '%s\n' "$ilc"
+          echo "runtime packs:"
+          grep -E -A1 '"name": "Microsoft\.NETCore\.App\.Runtime(\.NativeAOT)?\.[^"]+"' "$assets" | grep -v '^--' || true
+
       - name: Publish (Native AOT)
         run: dotnet publish src/Dossier/Dossier.csproj -c Release -r "$RID" -p:PublishAot=true -p:Version="$VERSION" --no-restore -o "out/$RID" 2>&1 | tee publish.log
 
@@ -132,7 +148,13 @@ jobs:
       - name: Check glibc baseline (<= 2.35)
         if: runner.os == 'Linux'
         run: |
-          max=$(for f in "out/$RID/$EXE" "out/$RID"/*.so; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
+          shopt -s nullglob
+          libs=("out/$RID"/*.so)
+          if [ "${#libs[@]}" -eq 0 ]; then
+            echo "::error::no native .so found beside the binary in out/$RID"
+            exit 1
+          fi
+          max=$(for f in "out/$RID/$EXE" "${libs[@]}"; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
           echo "max GLIBC symbol version required: ${max:-none}"
           if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" 2.35 | sort -V | tail -n 1)" != "2.35" ]; then
             echo "::error::binary requires glibc $max, above the 2.35 baseline"
@@ -167,8 +189,17 @@ jobs:
           archive="dossier-$VERSION-$RID.$EXT"
           if [ "$EXT" = "zip" ]; then
             (cd "$stage" && 7z a -tzip "../../dist/$archive" ./*)
+            listing="$(7z l "dist/$archive")"
           else
-            (cd "$stage" && tar -czf "../../dist/$archive" ./*)
+            # COPYFILE_DISABLE stops macOS bsdtar from adding AppleDouble (._*) entries.
+            (cd "$stage" && COPYFILE_DISABLE=1 tar -czf "../../dist/$archive" ./*)
+            listing="$(tar -tzvf "dist/$archive")"
+          fi
+          echo "archive contents:"
+          printf '%s\n' "$listing"
+          if printf '%s\n' "$listing" | grep -Eq '(^|[[:space:]/])\._'; then
+            echo "::error::archive contains AppleDouble (._) entries"
+            exit 1
           fi
           ls -l dist
 
@@ -209,5 +240,23 @@ jobs:
           case "$TAG" in
             *-*) flags+=(--prerelease) ;;
           esac
+          # Re-runs are idempotent: a leftover draft is replaced (the tag stays), a published release is never touched.
+          rc=0
+          state="$(gh release view "$TAG" --json isDraft --jq .isDraft 2>"$RUNNER_TEMP/gh-view.err")" || rc=$?
+          if [ "$rc" -eq 0 ]; then
+            if [ "$state" = "true" ]; then
+              echo "replacing leftover draft release $TAG"
+              gh release delete "$TAG" --yes
+            else
+              echo "::error::release $TAG is already published; refusing to modify it"
+              exit 1
+            fi
+          elif grep -qi 'not found' "$RUNNER_TEMP/gh-view.err"; then
+            echo "no existing release for $TAG"
+          else
+            cat "$RUNNER_TEMP/gh-view.err" >&2
+            echo "::error::could not look up release $TAG"
+            exit 1
+          fi
           gh release create "$TAG" "${flags[@]}" dossier-* SHA256SUMS
           gh release edit "$TAG" --draft=false

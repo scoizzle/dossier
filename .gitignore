@@ -5,3 +5,7 @@ obj/
 *.db-shm
 blobs/
 TestResults/
+/out/
+/stage/
+/dist/
+/publish.log

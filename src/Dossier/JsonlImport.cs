@@ -3,6 +3,8 @@ using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
 namespace Dossier;
 
@@ -30,6 +32,12 @@ public sealed partial class DossierStore
         public bool Missing;
         public bool HasData;
         public string? Path;
+        public long Bytes;
+        public string? Mime;
+        public string? DataSha;
+
+        public bool SameRecordAs(JsonlAsset other) =>
+            Missing == other.Missing && HasData == other.HasData && Path == other.Path && Bytes == other.Bytes && Mime == other.Mime && DataSha == other.DataSha;
     }
 
     /// <summary>The manifest's "format" when it is a string (a JSONL bundle); null for markdown bundles (number or absent) and unreadable manifests.</summary>
@@ -42,9 +50,15 @@ public sealed partial class DossierStore
             return null;
         }
 
+        if (IsLink(info))
+        {
+            throw new DossierRequestException("import_unsafe_path", "manifest.json is a symbolic link; refusing to read it");
+        }
+
         try
         {
-            using var document = JsonDocument.Parse(File.ReadAllBytes(path));
+            using var stream = OpenRegularFile(path, BundleManifest, 4096);
+            using var document = JsonDocument.Parse(stream);
             return document.RootElement.ValueKind == JsonValueKind.Object
                 && document.RootElement.TryGetProperty("format", out var format)
                 && format.ValueKind == JsonValueKind.String
@@ -58,6 +72,50 @@ public sealed partial class DossierStore
     }
 
     private static bool IsLink(FileSystemInfo info) => info.LinkTarget is not null || (info.Attributes & FileAttributes.ReparsePoint) != 0;
+
+    private static partial class Posix
+    {
+        [LibraryImport("libc", EntryPoint = "open", StringMarshalling = StringMarshalling.Utf8, SetLastError = true)]
+        internal static partial int Open(string path, int flags);
+    }
+
+    /// <summary>
+    /// Opens <paramref name="path"/> for reading only when it is a regular file. No managed API tells a named pipe
+    /// or device from a regular file without opening it, and opening a FIFO blocks, so on Unix the file is opened
+    /// non-blocking and must be seekable: pipes, sockets and ttys are not. The caller has already rejected links.
+    /// </summary>
+    private static FileStream OpenRegularFile(string path, string label, int bufferSize)
+    {
+        if (OperatingSystem.IsWindows())
+        {
+            return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, FileOptions.SequentialScan);
+        }
+
+        var nonBlocking = OperatingSystem.IsMacOS() || OperatingSystem.IsFreeBSD() ? 0x4 : 0x800;
+        var fd = Posix.Open(path, nonBlocking);
+        if (fd < 0)
+        {
+            throw new DossierRequestException("import_file_missing", $"{label} could not be opened (errno {Marshal.GetLastPInvokeError()})");
+        }
+
+        var handle = new SafeFileHandle((IntPtr)fd, ownsHandle: true);
+        try
+        {
+            var stream = new FileStream(handle, FileAccess.Read, bufferSize, isAsync: false);
+            if (!stream.CanSeek)
+            {
+                stream.Dispose();
+                throw new DossierRequestException("import_not_regular_file", $"{label} is not a regular file (a named pipe, socket or device); refusing to read it");
+            }
+
+            return stream;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            handle.Dispose();
+            throw new DossierRequestException("import_not_regular_file", $"{label} is not a regular file (a directory or device); refusing to read it");
+        }
+    }
 
     private ImportResult ImportJsonl(string root, ImportOptions options)
     {
@@ -73,7 +131,8 @@ public sealed partial class DossierStore
         JsonDocument manifest;
         try
         {
-            manifest = JsonDocument.Parse(File.ReadAllBytes(manifestInfo.FullName));
+            using var manifestStream = OpenRegularFile(manifestInfo.FullName, BundleManifest, 4096);
+            manifest = JsonDocument.Parse(manifestStream);
         }
         catch (JsonException exception)
         {
@@ -91,6 +150,8 @@ public sealed partial class DossierStore
             }
 
             var dataFiles = new List<string>();
+            var fileNumbers = new Dictionary<string, long>(StringComparer.Ordinal);
+            var usedNumbers = new HashSet<long>();
             var listedAssets = new HashSet<string>(StringComparer.Ordinal);
             foreach (var entry in filesElement.EnumerateArray())
             {
@@ -102,11 +163,25 @@ public sealed partial class DossierStore
 
                 if (JsonlDataFileRegex.IsMatch(name))
                 {
+                    if (!long.TryParse(name.AsSpan(8, name.Length - 14), NumberStyles.None, CultureInfo.InvariantCulture, out var number))
+                    {
+                        throw new DossierRequestException("import_bad_manifest", $"manifest.json lists {name}, whose file number is too large");
+                    }
+
+                    if (fileNumbers.ContainsKey(name) || !usedNumbers.Add(number))
+                    {
+                        throw new DossierRequestException("import_bad_manifest", $"manifest.json lists {name} more than once (or two names with the same file number)");
+                    }
+
+                    fileNumbers[name] = number;
                     dataFiles.Add(name);
                 }
                 else if (JsonlAssetPathRegex.IsMatch(name))
                 {
-                    listedAssets.Add(name);
+                    if (!listedAssets.Add(name))
+                    {
+                        throw new DossierRequestException("import_bad_manifest", $"manifest.json lists {name} more than once");
+                    }
                 }
                 else
                 {
@@ -122,6 +197,8 @@ public sealed partial class DossierStore
                     throw new DossierRequestException("import_unlisted_file", $"{onDisk} is in the bundle directory but not listed in manifest.json; refusing to import a partly listed bundle");
                 }
             }
+
+            RejectUnlistedAssets(root, listedAssets);
 
             var stats = new Dictionary<string, (long Bytes, long Lines, string Sha)>(StringComparer.Ordinal);
             foreach (var property in statsElement.EnumerateObject())
@@ -159,7 +236,7 @@ public sealed partial class DossierStore
             var result = new ImportResult();
             long order = 0;
 
-            foreach (var name in dataFiles.OrderBy(n => long.Parse(n[8..^6], CultureInfo.InvariantCulture)))
+            foreach (var name in dataFiles.OrderBy(n => fileNumbers[n]))
             {
                 ReadJsonlFile(root, name, stats[name], maxLine, (lineNumber, offset, line) =>
                 {
@@ -243,19 +320,29 @@ public sealed partial class DossierStore
                                     return;
                                 }
 
-                                if (!assets.ContainsKey(sha))
+                                var candidate = new JsonlAsset
                                 {
-                                    assets[sha] = new JsonlAsset
-                                    {
-                                        Sha = sha,
-                                        File = name,
-                                        Line = lineNumber,
-                                        Offset = offset,
-                                        Length = line.Length,
-                                        Missing = e.TryGetProperty("missing", out var m) && m.ValueKind == JsonValueKind.True,
-                                        HasData = e.TryGetProperty("data", out var d) && d.ValueKind == JsonValueKind.String,
-                                        Path = Str("path"),
-                                    };
+                                    Sha = sha,
+                                    File = name,
+                                    Line = lineNumber,
+                                    Offset = offset,
+                                    Length = line.Length,
+                                    Missing = e.TryGetProperty("missing", out var m) && m.ValueKind == JsonValueKind.True,
+                                    HasData = e.TryGetProperty("data", out var d) && d.ValueKind == JsonValueKind.String,
+                                    Path = Str("path"),
+                                    Bytes = e.TryGetProperty("bytes", out var b) && b.ValueKind == JsonValueKind.Number && b.TryGetInt64(out var n) ? n : -1,
+                                    Mime = Str("mime"),
+                                    DataSha = d.ValueKind == JsonValueKind.String ? Convert.ToHexString(SHA256.HashData(Utf8NoBom.GetBytes(d.GetString()!))) : null,
+                                };
+                                if (!assets.TryGetValue(sha, out var firstAsset))
+                                {
+                                    assets[sha] = candidate;
+                                }
+                                else if (!firstAsset.SameRecordAs(candidate))
+                                {
+                                    throw new DossierRequestException(
+                                        "import_bad_record",
+                                        $"{where} repeats asset {sha} with a different path, bytes, mime, data or missing flag than its first record at {firstAsset.File}:{firstAsset.Line}");
                                 }
 
                                 return;
@@ -302,6 +389,34 @@ public sealed partial class DossierStore
         }
     }
 
+    /// <summary>Every file under assets/ must be listed in manifest.json, like every dossier-NNNN.jsonl; links are never followed.</summary>
+    private static void RejectUnlistedAssets(string root, HashSet<string> listedAssets)
+    {
+        var assets = new DirectoryInfo(Path.Combine(root, "assets"));
+        if (assets.Exists && !IsLink(assets))
+        {
+            Walk(assets);
+        }
+
+        void Walk(DirectoryInfo directory)
+        {
+            foreach (var entry in directory.EnumerateFileSystemInfos("*", new EnumerationOptions { AttributesToSkip = FileAttributes.System }))
+            {
+                if (entry is DirectoryInfo child && !IsLink(child))
+                {
+                    Walk(child);
+                    continue;
+                }
+
+                var relative = Path.GetRelativePath(root, entry.FullName).Replace('\\', '/');
+                if (!listedAssets.Contains(relative))
+                {
+                    throw new DossierRequestException("import_unlisted_file", $"{relative} is in the bundle directory but not listed in manifest.json; refusing to import a partly listed bundle");
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// Streams one data file, verifying bytes, lines and sha256 against <paramref name="stats"/>, and hands each
     /// line (without its '\n') to <paramref name="onLine"/> with its 1-based number and byte offset. A line longer
@@ -325,12 +440,12 @@ public sealed partial class DossierStore
             throw new DossierRequestException("import_unsafe_path", $"{name} is a symbolic link or reparse point; refusing to read it");
         }
 
+        using var stream = OpenRegularFile(info.FullName, name, ImportChunkBytes);
         if (info.Length != stats.Bytes)
         {
             throw new DossierRequestException("import_file_mismatch", $"{name} is {info.Length} bytes but file_stats says {stats.Bytes}");
         }
 
-        using var stream = new FileStream(info.FullName, FileMode.Open, FileAccess.Read, FileShare.Read, ImportChunkBytes, FileOptions.SequentialScan);
         using var hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
         var chunk = new byte[ImportChunkBytes];
         var buffer = new byte[4096];
@@ -341,6 +456,11 @@ public sealed partial class DossierStore
         int read;
         while ((read = stream.Read(chunk, 0, chunk.Length)) > 0)
         {
+            if (chunkBase + read > stats.Bytes)
+            {
+                throw new DossierRequestException("import_file_mismatch", $"{name} holds more than the {stats.Bytes} bytes file_stats says; stopped reading");
+            }
+
             hash.AppendData(chunk, 0, read);
             var position = 0;
             while (position < read)
@@ -470,7 +590,7 @@ public sealed partial class DossierStore
         try
         {
             using var hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
-            using (var input = new FileStream(full, FileMode.Open, FileAccess.Read, FileShare.Read, ImportChunkBytes, FileOptions.SequentialScan))
+            using (var input = OpenRegularFile(full, path, ImportChunkBytes))
             using (var output = new FileStream(temporary, FileMode.CreateNew, FileAccess.Write, FileShare.None))
             {
                 var chunk = new byte[ImportChunkBytes];
@@ -494,6 +614,10 @@ public sealed partial class DossierStore
 
             return (true, string.Empty);
         }
+        catch (DossierRequestException exception) when (exception.Code == "import_not_regular_file")
+        {
+            return (false, $"asset file {path} is not a regular file; not read");
+        }
         finally
         {
             if (File.Exists(temporary))
@@ -509,11 +633,11 @@ public sealed partial class DossierStore
         var line = new byte[asset.Length];
         try
         {
-            using var stream = new FileStream(Path.Combine(root, asset.File), FileMode.Open, FileAccess.Read, FileShare.Read);
+            using var stream = OpenRegularFile(Path.Combine(root, asset.File), asset.File, 4096);
             stream.Seek(asset.Offset, SeekOrigin.Begin);
             stream.ReadExactly(line, 0, line.Length);
         }
-        catch (IOException exception)
+        catch (Exception exception) when (exception is IOException or DossierRequestException)
         {
             return (false, $"asset line {asset.File}:{asset.Line} could not be re-read: {exception.Message}");
         }
@@ -605,9 +729,28 @@ public sealed partial class DossierStore
 
         if (!File.Exists(target))
         {
+            // Temp file then move, like RestoreFileBlob: a crash never leaves a truncated content-addressed blob.
             Directory.CreateDirectory(BlobRoot);
-            using var output = new FileStream(target, FileMode.Create, FileAccess.Write, FileShare.None);
-            output.Write(content);
+            var temporary = target + ".import-" + Guid.NewGuid().ToString("N");
+            try
+            {
+                using (var output = new FileStream(temporary, FileMode.CreateNew, FileAccess.Write, FileShare.None))
+                {
+                    output.Write(content);
+                }
+
+                if (!File.Exists(target))
+                {
+                    File.Move(temporary, target);
+                }
+            }
+            finally
+            {
+                if (File.Exists(temporary))
+                {
+                    File.Delete(temporary);
+                }
+            }
         }
 
         return (true, string.Empty);

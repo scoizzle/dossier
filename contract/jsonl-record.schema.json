@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dossier.local/contract/jsonl-record.schema.json",
   "title": "JSONL record",
-  "description": "One line of a dossier-NNNN.jsonl data file written by `dossier publish --format jsonl`. A typed record discriminated by `type`: subject, fact or asset. The subject and fact definitions take every property schema from subject.schema.json and fact.schema.json by reference (the base contracts are unchanged, so their additionalProperties:false cannot be wrapped by allOf and the property lists are repeated here; a test keeps them in step) and add the JSONL-only fields. A subject's `parent` is omitted when the parent is outside the bundle (e.g. a scoped publish).",
+  "description": "One line of a dossier-NNNN.jsonl data file written by `dossier publish --format jsonl`. A typed record discriminated by `type`: subject, fact or asset. The subject and fact definitions take every property schema from subject.schema.json and fact.schema.json by reference (the base contracts are unchanged, so their additionalProperties:false cannot be wrapped by allOf and the property lists are repeated here; a test keeps them in step) and add the JSONL-only fields. A subject's `parent` is omitted when the parent is outside the bundle (e.g. a scoped publish). Known limitation: publish does not re-validate stored refs, so a fact whose refs carry `rel` or `locator` keys that ref.schema.json rejects is exported successfully but its line will not validate against this schema.",
   "oneOf": [
     { "$ref": "#/$defs/SubjectRecord" },
     { "$ref": "#/$defs/FactRecord" },

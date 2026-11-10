@@ -72,6 +72,10 @@ public sealed partial class DossierStore
 
     private static bool IsLink(FileSystemInfo info) => info.LinkTarget is not null || (info.Attributes & FileAttributes.ReparsePoint) != 0;
 
+    /// <summary>An entry is hidden when its name starts with '.' (every OS) or its attributes are Hidden or System.</summary>
+    internal static bool IsHiddenEntry(string name, FileAttributes attributes) =>
+        name.StartsWith('.') || (attributes & (FileAttributes.Hidden | FileAttributes.System)) != 0;
+
     private static partial class Posix
     {
         [LibraryImport("libc", EntryPoint = "open", StringMarshalling = StringMarshalling.Utf8, SetLastError = true)]
@@ -496,10 +500,11 @@ public sealed partial class DossierStore
         {
             foreach (var entry in directory.EnumerateFileSystemInfos("*", new EnumerationOptions { AttributesToSkip = 0 }))
             {
-                // Hidden entries (dot-files on Unix, Hidden or System on Windows: .DS_Store, Thumbs.db) are OS litter, not bundle
-                // content: skipped and reported, never read, never descended into. Links are still never followed.
+                // Hidden entries (a name starting with '.' on every OS, or Hidden/System on Windows: .DS_Store,
+                // Thumbs.db) are OS litter, not bundle content: skipped and reported, never read, never descended
+                // into. Links are still never followed.
                 var relativeName = Path.GetRelativePath(root, entry.FullName).Replace('\\', '/');
-                if ((entry.Attributes & (FileAttributes.Hidden | FileAttributes.System)) != 0 && !listedAssets.Contains(relativeName))
+                if (IsHiddenEntry(entry.Name, entry.Attributes) && !listedAssets.Contains(relativeName))
                 {
                     skipped.Add(new ImportSkip(relativeName, "hidden_file_ignored: a hidden or system file under assets/ is not part of the bundle; not read"));
                     continue;

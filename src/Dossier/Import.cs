@@ -151,7 +151,7 @@ public sealed partial class DossierStore
             Bind(command, "$name", subject.Name);
             Bind(command, "$kind", subject.Kind);
             Bind(command, "$parent", subject.ParentId);
-            Bind(command, "$aliases", JsonSerializer.Serialize(subject.Aliases));
+            Bind(command, "$aliases", JsonCodec.SerializeStrings(subject.Aliases));
             Bind(command, "$pin", subject.Pin);
             Bind(command, "$created", createdAt);
             command.ExecuteNonQuery();
@@ -188,7 +188,7 @@ public sealed partial class DossierStore
                 Bind(command, "$text", record.Text);
                 Bind(command, "$data", record.Data is { } data ? CanonicalJson.Write(data) : null);
                 Bind(command, "$items", record.Items is { } items ? ItemsColumn(items) : null);
-                Bind(command, "$tags", JsonSerializer.Serialize(record.Tags));
+                Bind(command, "$tags", JsonCodec.SerializeStrings(record.Tags));
                 Bind(command, "$confidence", record.Confidence);
                 Bind(command, "$status", record.Status);
                 Bind(command, "$provenance", CanonicalJson.Write(record.Provenance));
@@ -291,8 +291,8 @@ public sealed partial class DossierStore
     /// </summary>
     private static string ItemsColumn(JsonElement items)
     {
-        var parsed = items.Deserialize<List<ItemInput>>(JsonCodec.Options) ?? new List<ItemInput>();
-        return JsonSerializer.Serialize(parsed, JsonCodec.Options);
+        var parsed = JsonCodec.Deserialize<List<ItemInput>>(items.GetRawText()) ?? new List<ItemInput>();
+        return JsonCodec.Serialize(parsed);
     }
 
     private bool RestoreBlob(string root, ImportRecord record, AttachmentRecord attachment, out string reason)

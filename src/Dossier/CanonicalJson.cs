@@ -31,7 +31,7 @@ public static class CanonicalJson
                     }
 
                     first = false;
-                    sb.Append(JsonSerializer.Serialize(property.Name));
+                    sb.Append(JsonCodec.Quote(property.Name));
                     sb.Append(':');
                     Append(sb, property.Value);
                 }
@@ -56,7 +56,7 @@ public static class CanonicalJson
                 break;
 
             case JsonValueKind.String:
-                sb.Append(JsonSerializer.Serialize(element.GetString()));
+                sb.Append(JsonCodec.Quote(element.GetString()));
                 break;
 
             case JsonValueKind.Number:

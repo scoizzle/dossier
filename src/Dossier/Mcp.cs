@@ -53,11 +53,11 @@ public sealed partial class DossierStore
 /// </summary>
 public static class Ops
 {
-    public static string Serialize<T>(T value) => JsonSerializer.Serialize(value, JsonCodec.Options);
+    public static string Serialize<T>(T value) => JsonCodec.Serialize(value);
 
     public static T Parse<T>(JsonElement? arguments) where T : new() =>
         arguments is { ValueKind: JsonValueKind.Object } element
-            ? JsonSerializer.Deserialize<T>(element.GetRawText(), JsonCodec.Options) ?? new T()
+            ? JsonCodec.Deserialize<T>(element.GetRawText()) ?? new T()
             : new T();
 
     public static string Search(DossierStore store, SearchRequest request) =>
@@ -194,7 +194,7 @@ public sealed class McpServer
                 ["tools"] = new JsonObject(),
                 ["resources"] = new JsonObject(),
             },
-            ["serverInfo"] = new JsonObject { ["name"] = "dossier", ["version"] = "0.1.0" },
+            ["serverInfo"] = new JsonObject { ["name"] = "dossier", ["version"] = AppVersion.Current },
             ["instructions"] = Untrusted,
         };
     }
@@ -224,12 +224,13 @@ public sealed class McpServer
         var tools = new JsonArray();
         foreach (var tool in ToolDefs)
         {
-            tools.Add(new JsonObject
+            JsonNode entry = new JsonObject
             {
                 ["name"] = tool.Name,
                 ["description"] = tool.Description,
                 ["inputSchema"] = JsonNode.Parse(tool.Schema),
-            });
+            };
+            tools.Add(entry);
         }
 
         return tools;
@@ -245,7 +246,7 @@ public sealed class McpServer
         }
 
         JsonElement? arguments = parameters["arguments"] is { } node
-            ? JsonSerializer.Deserialize<JsonElement>(node.ToJsonString())
+            ? JsonDocument.Parse(node.ToJsonString()).RootElement.Clone()
             : null;
 
         try
@@ -266,15 +267,15 @@ public sealed class McpServer
         }
         catch (DossierRequestException exception)
         {
-            return ToolResult(Ops.Serialize(new { error = new { code = exception.Code, message = exception.Message } }), isError: true);
+            return ToolResult(Ops.Serialize(ErrorEnvelope.Of(exception.Code, exception.Message)), isError: true);
         }
         catch (Exception exception) when (exception is ArgumentException or JsonException or InvalidOperationException or IOException)
         {
-            return ToolResult(Ops.Serialize(new { error = new { code = "invalid_request", message = exception.Message } }), isError: true);
+            return ToolResult(Ops.Serialize(ErrorEnvelope.Of("invalid_request", exception.Message)), isError: true);
         }
     }
 
-    private sealed class FactIdArgs
+    internal sealed class FactIdArgs
     {
         public string? Id { get; set; }
     }
@@ -282,7 +283,7 @@ public sealed class McpServer
     private string PostFacts(PostFactsRequest request)
     {
         var result = store.PostFacts(request);
-        return Ops.Serialize(new { response = result.Response, errors = result.Errors });
+        return Ops.Serialize(result);
     }
 
     private static JsonObject ToolResult(string text, bool isError) => new()

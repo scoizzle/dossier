@@ -1,7 +1,6 @@
-using System.Text.Json;
 using Dossier;
 
-const string usage = "usage: dossier <init|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -17,6 +16,11 @@ try
             _ = new DossierStore();
             return 0;
 
+        case "version":
+        case "--version":
+            Console.Out.Write(AppVersion.Current + "\n");
+            return 0;
+
         case "post":
         {
             var file = ValueAfter(args, "--file");
@@ -27,7 +31,7 @@ try
             }
 
             var json = file == "-" ? Console.In.ReadToEnd() : File.ReadAllText(file);
-            var request = JsonSerializer.Deserialize<PostFactsRequest>(json, JsonCodec.Options);
+            var request = JsonCodec.Deserialize<PostFactsRequest>(json);
             if (request is null)
             {
                 Console.Error.WriteLine("invalid post_facts request");
@@ -41,10 +45,10 @@ try
 
             var store = new DossierStore();
             var result = store.PostFacts(request);
-            Console.WriteLine(JsonSerializer.Serialize(result.Response, JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(result.Response));
             foreach (var error in result.Errors)
             {
-                Console.Error.WriteLine(JsonSerializer.Serialize(error, JsonCodec.Options));
+                Console.Error.WriteLine(JsonCodec.Serialize(error));
             }
 
             return 0;
@@ -71,7 +75,7 @@ try
             };
 
             var dumpResponse = new DossierStore().Dump(dumpRequest);
-            Console.WriteLine(JsonSerializer.Serialize(dumpResponse, JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(dumpResponse));
             return 0;
         }
 
@@ -84,7 +88,7 @@ try
             };
 
             var correlateResponse = new DossierStore().Correlate(correlateRequest);
-            Console.WriteLine(JsonSerializer.Serialize(correlateResponse, JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(correlateResponse));
             return 0;
         }
 
@@ -104,7 +108,7 @@ try
                 return 1;
             }
 
-            Console.WriteLine(JsonSerializer.Serialize(new { id = result.Id, status = "retracted" }, JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(new RetractedOutput(result.Id, "retracted")));
             return 0;
         }
 
@@ -170,7 +174,7 @@ try
                 return 1;
             }
 
-            Console.WriteLine(JsonSerializer.Serialize(show, JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(show));
             return 0;
         }
 
@@ -216,7 +220,7 @@ try
             Console.Error.WriteLine($"used_tokens: {dossier.UsedTokens}");
             Console.WriteLine(format == "markdown"
                 ? DossierStore.RenderMarkdown(dossier).TrimEnd('\n')
-                : JsonSerializer.Serialize(dossier, JsonCodec.Options));
+                : JsonCodec.Serialize(dossier));
             return 0;
         }
 
@@ -250,9 +254,8 @@ try
                 Console.Error.WriteLine(warning);
             }
 
-            Console.WriteLine(JsonSerializer.Serialize(
-                new { published.Out, files = published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed },
-                JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(
+                new PublishSummary(published.Out, published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed)));
             if (published.Compliance is { } compliance)
             {
                 Console.WriteLine(compliance.Render().TrimEnd('\n'));
@@ -271,17 +274,8 @@ try
             }
 
             var imported = new DossierStore(ValueAfter(args, "--db")).Import(new ImportOptions { From = from });
-            Console.WriteLine(JsonSerializer.Serialize(
-                new
-                {
-                    imported.Subjects,
-                    imported.Facts,
-                    imported.Refs,
-                    imported.Attachments,
-                    imported.Blobs,
-                    imported.Skipped,
-                },
-                JsonCodec.Options));
+            Console.WriteLine(JsonCodec.Serialize(
+                new ImportSummary(imported.Subjects, imported.Facts, imported.Refs, imported.Attachments, imported.Blobs, imported.Skipped)));
             return 0;
         }
 

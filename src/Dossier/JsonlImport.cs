@@ -45,14 +45,14 @@ public sealed partial class DossierStore
     {
         var path = Path.Combine(root, BundleManifest);
         var info = new FileInfo(path);
-        if (!info.Exists || info.Length > ImportManifestMaxBytes)
-        {
-            return null;
-        }
-
         if (IsLink(info))
         {
             throw new DossierRequestException("import_unsafe_path", "manifest.json is a symbolic link; refusing to read it");
+        }
+
+        if (!info.Exists || info.Length > ImportManifestMaxBytes)
+        {
+            return null;
         }
 
         try
@@ -83,6 +83,21 @@ public sealed partial class DossierStore
     /// or device from a regular file without opening it, and opening a FIFO blocks, so on Unix the file is opened
     /// non-blocking and must be seekable: pipes, sockets and ttys are not. The caller has already rejected links.
     /// </summary>
+    /// <summary>
+    /// open(2) flags O_RDONLY (0) | O_NONBLOCK | O_NOFOLLOW | O_CLOEXEC for a known (OS, architecture) pair; anything else
+    /// fails closed instead of guessing, because a wrong bit here silently opens FIFOs blocking or follows links.
+    /// Values per each OS's &lt;fcntl.h&gt;: Linux O_NONBLOCK 0x800 and O_CLOEXEC 0x80000 everywhere, O_NOFOLLOW 0x20000 on the
+    /// x86 and generic-asm architectures listed and 0x8000 on arm, arm64 and powerpc.
+    /// </summary>
+    internal static int UnixOpenFlags(string os, Architecture architecture) => (os, architecture) switch
+    {
+        ("macos", _) => 0x4 | 0x100 | 0x1000000,
+        ("freebsd", _) => 0x4 | 0x100 | 0x100000,
+        ("linux", Architecture.X64 or Architecture.X86 or Architecture.RiscV64 or Architecture.LoongArch64 or Architecture.S390x) => 0x800 | 0x20000 | 0x80000,
+        ("linux", Architecture.Arm64 or Architecture.Arm or Architecture.Armv6 or Architecture.Ppc64le) => 0x800 | 0x8000 | 0x80000,
+        _ => throw new DossierRequestException("import_unsupported_platform", $"opening bundle files safely is not supported on {os}/{architecture}"),
+    };
+
     internal static FileStream OpenRegularFile(string path, string label, int bufferSize)
     {
         if (OperatingSystem.IsWindows())
@@ -90,23 +105,7 @@ public sealed partial class DossierStore
             return new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, bufferSize, FileOptions.SequentialScan);
         }
 
-        // O_RDONLY is 0. Values per <fcntl.h>: macOS O_NONBLOCK 0x4, O_NOFOLLOW 0x100, O_CLOEXEC 0x1000000; FreeBSD 0x4, 0x100, 0x100000;
-        // Linux asm-generic/fcntl.h O_NONBLOCK 04000 (0x800), O_CLOEXEC 02000000 (0x80000), and O_NOFOLLOW 0400000 (0x20000)
-        // on x86 but 0100000 (0x8000) on arm/arm64 and the generic ABI.
-        int flags;
-        if (OperatingSystem.IsMacOS())
-        {
-            flags = 0x4 | 0x100 | 0x1000000;
-        }
-        else if (OperatingSystem.IsFreeBSD())
-        {
-            flags = 0x4 | 0x100 | 0x100000;
-        }
-        else
-        {
-            var x86 = RuntimeInformation.ProcessArchitecture is Architecture.X64 or Architecture.X86;
-            flags = 0x800 | 0x80000 | (x86 ? 0x20000 : 0x8000);
-        }
+        var flags = UnixOpenFlags(OperatingSystem.IsMacOS() ? "macos" : OperatingSystem.IsFreeBSD() ? "freebsd" : OperatingSystem.IsLinux() || OperatingSystem.IsAndroid() ? "linux" : "other", RuntimeInformation.ProcessArchitecture);
 
         var fd = Posix.Open(path, flags);
         if (fd < 0)
@@ -171,6 +170,9 @@ public sealed partial class DossierStore
     }
 
     /// <summary>Copies at most <paramref name="limit"/> bytes to <paramref name="output"/> and the hash; false when more data was still available.</summary>
+    /// <summary>How many bytes of an asset file to copy: the declared size, never more than the opened handle says it holds (a negative declaration means "unknown").</summary>
+    internal static long AssetCopyLimit(long declared, long handleLength) => Math.Min(declared >= 0 ? declared : long.MaxValue, handleLength);
+
     internal static bool CopyAtMost(Stream input, Stream output, IncrementalHash hash, long limit)
     {
         var chunk = new byte[ImportChunkBytes];
@@ -694,7 +696,8 @@ public sealed partial class DossierStore
             using (var input = OpenRegularFile(full, path, ImportChunkBytes))
             using (var output = new FileStream(temporary, FileMode.CreateNew, FileAccess.Write, FileShare.None))
             {
-                var limit = asset.Bytes >= 0 ? asset.Bytes : input.Length;
+                // A handle that holds less than the record declares yields a short copy; the sha256 check below then skips it with a reason.
+                var limit = AssetCopyLimit(asset.Bytes, input.Length);
                 if (!CopyAtMost(input, output, hash, limit))
                 {
                     return (false, $"{path} holds more than the {limit} bytes it should; not read further");

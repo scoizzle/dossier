@@ -99,7 +99,9 @@ public sealed class JsonlRound2Tests
         await Assert.That(string.Join("; ", result.Skipped.Select(x => x.Reason))).IsEqualTo(string.Empty);
         await Assert.That(result.Blobs).IsEqualTo(1);
         Console.WriteLine($"import allocated {allocated} bytes for a {lineLength}-byte asset line ({(double)allocated / lineLength:F2}x)");
-        await Assert.That(allocated).IsLessThan((long)(lineLength * 5.5));
+        // Worst case of the power-of-two buffer growth: the line buffer (1x), the decoded-text growth (up to 2x) and the decoded bytes' doubling
+        // peak (up to ~3x) sum below 6x; 6.5x leaves headroom for fixed overhead without hiding a regression to full-string copies.
+        await Assert.That(allocated).IsLessThan((long)(lineLength * 6.5));
     }
 
     // ---- F2: bounded readers ---------------------------------------------------------------------

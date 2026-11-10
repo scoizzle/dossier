@@ -1,6 +1,6 @@
 using Dossier;
 
-const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--format md|jsonl] [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --max-files --max-file-bytes --max-total-bytes --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -229,20 +229,60 @@ try
             var outDir = ValueAfter(args, "--out");
             if (outDir is null)
             {
-                Console.Error.WriteLine("usage: dossier publish --out <dir> [--subject <s>] [--budget n] [--budget-mode complete|strict] [--depth index|full] [--facts detail|none] [--assets detail|none] [--index-max-tokens n] [--profile <path>] [--respect-limits]");
+                Console.Error.WriteLine("usage: dossier publish --out <dir> [--format md|jsonl] [--subject <s>] [--budget n] [--budget-mode complete|strict] [--depth index|full] [--facts detail|none] [--assets detail|none (md) | embed|files|none (jsonl)] [--index-max-tokens n] [--max-files n] [--max-file-bytes n] [--max-total-bytes n] [--profile <path>] [--respect-limits]  (--max-* are jsonl only; --budget, --budget-mode, --depth, --facts and --index-max-tokens are md only)");
+                return 1;
+            }
+
+            var format = ValueAfter(args, "--format") ?? "md";
+            if (format is not ("md" or "jsonl"))
+            {
+                Console.Error.WriteLine($"--format must be md|jsonl, got \"{format}\"");
+                return 1;
+            }
+
+            var jsonlFormat = format == "jsonl";
+            bool Passed(string flag) => args.Skip(1).Contains(flag);
+            foreach (var flag in new[] { "--budget", "--budget-mode", "--depth", "--facts", "--index-max-tokens" })
+            {
+                if (jsonlFormat && Passed(flag))
+                {
+                    Console.Error.WriteLine($"{flag} is a markdown-only option and cannot be used with --format jsonl");
+                    return 1;
+                }
+            }
+
+            foreach (var flag in new[] { "--max-files", "--max-file-bytes", "--max-total-bytes" })
+            {
+                if (!jsonlFormat && Passed(flag))
+                {
+                    Console.Error.WriteLine($"{flag} requires --format jsonl");
+                    return 1;
+                }
+            }
+
+            var assets = ValueAfter(args, "--assets") ?? (jsonlFormat ? "files" : "detail");
+            if (jsonlFormat ? assets is not ("embed" or "files" or "none") : assets is not ("detail" or "none"))
+            {
+                Console.Error.WriteLine(jsonlFormat
+                    ? $"--assets must be embed|files|none with --format jsonl, got \"{assets}\""
+                    : $"--assets must be detail|none with --format md, got \"{assets}\"");
                 return 1;
             }
 
             var publishOptions = new PublishOptions
             {
                 Out = outDir,
+                Format = format,
                 Subject = ValueAfter(args, "--subject"),
                 Budget = ParseInt(ValueAfter(args, "--budget"), "--budget") ?? DossierStore.DefaultBudgetTokens,
                 Depth = ValueAfter(args, "--depth") ?? "full",
                 BudgetMode = ValueAfter(args, "--budget-mode") ?? DossierStore.BudgetModeComplete,
                 Facts = ValueAfter(args, "--facts") ?? "detail",
-                Assets = ValueAfter(args, "--assets") ?? "detail",
+                Assets = assets,
                 IndexMaxTokens = ParseInt(ValueAfter(args, "--index-max-tokens"), "--index-max-tokens") ?? DossierStore.DefaultIndexMaxTokens,
+                MaxFiles = ParseLong(ValueAfter(args, "--max-files"), "--max-files") ?? 0,
+                MaxFileBytes = ParseLong(ValueAfter(args, "--max-file-bytes"), "--max-file-bytes") ?? 0,
+                MaxTotalBytes = ParseLong(ValueAfter(args, "--max-total-bytes"), "--max-total-bytes") ?? 0,
                 ProfilePath = ValueAfter(args, "--profile"),
                 RespectLimits = args.Contains("--respect-limits"),
                 CommandLine = "dossier " + string.Join(' ', args.Select(a => a.Length > 0 && a.All(c => !char.IsWhiteSpace(c) && c != '\'') ? a : "'" + a.Replace("'", "'\\''") + "'")),
@@ -255,7 +295,7 @@ try
             }
 
             Console.WriteLine(JsonCodec.Serialize(
-                new PublishSummary(published.Out, published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed)));
+                new PublishSummary(published.Out, published.Files.Count, published.Written, published.Subjects, published.Facts, published.Removed, jsonlFormat ? "jsonl" : null, jsonlFormat ? published.Assets : null)));
             if (published.Compliance is { } compliance)
             {
                 Console.WriteLine(compliance.Render().TrimEnd('\n'));
@@ -350,6 +390,21 @@ static int? ParseInt(string? value, string flag)
     if (!int.TryParse(value, out var number))
     {
         throw new ArgumentException($"{flag} must be an integer, got \"{value}\"");
+    }
+
+    return number;
+}
+
+static long? ParseLong(string? value, string flag)
+{
+    if (value is null)
+    {
+        return null;
+    }
+
+    if (!long.TryParse(value, System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out var number))
+    {
+        throw new ArgumentException($"{flag} must be a non-negative integer number of bytes or files (plain digits, no K/M suffix; 0 is unlimited), got \"{value}\"");
     }
 
     return number;

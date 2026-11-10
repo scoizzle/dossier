@@ -28,10 +28,33 @@ public sealed class PublishOptions
     public string Facts { get; set; } = "detail";
 
     /// <summary>
-    /// "detail" (default) copies every attachment's bytes to subjects/&lt;slug&gt;/assets/ and links it;
+    /// Markdown: "detail" (default) copies every attachment's bytes to subjects/&lt;slug&gt;/assets/ and links it;
     /// "none" omits the assets directories and lists attachments by sha256 with no link.
+    /// JSONL: "files" (default) copies the bytes to assets/&lt;sha256&gt;.&lt;ext&gt;, "embed" inlines them as base64
+    /// asset lines, "none" writes no asset records (the fact lines keep the attachment metadata).
     /// </summary>
-    public string Assets { get; set; } = "detail";
+    public string Assets
+    {
+        get => _assets ?? (Format == FormatJsonl ? "files" : "detail");
+        set => _assets = value;
+    }
+
+    private string? _assets;
+
+    public const string FormatMarkdown = "md";
+    public const string FormatJsonl = "jsonl";
+
+    /// <summary>"md" (default) writes the markdown bundle; "jsonl" writes dossier-NNNN.jsonl data files plus manifest.json.</summary>
+    public string Format { get; set; } = FormatMarkdown;
+
+    /// <summary>JSONL only: at most this many data files (.jsonl plus asset files; manifest.json is not counted). 0 is unlimited.</summary>
+    public long MaxFiles { get; set; }
+
+    /// <summary>JSONL only: no data file (or asset file) may exceed this many bytes. 0 is unlimited.</summary>
+    public long MaxFileBytes { get; set; }
+
+    /// <summary>JSONL only: all data files together may not exceed this many bytes. 0 is unlimited.</summary>
+    public long MaxTotalBytes { get; set; }
 
     /// <summary>Token cap (chars/4, rounded up) for each generated index file; larger folders are split into index/ files.</summary>
     public int IndexMaxTokens { get; set; } = DossierStore.DefaultIndexMaxTokens;
@@ -66,6 +89,9 @@ public sealed class PublishResult
     public List<string> Removed { get; set; } = new();
     public int Subjects { get; set; }
     public int Facts { get; set; }
+
+    /// <summary>JSONL only: the number of distinct asset records written.</summary>
+    public int Assets { get; set; }
 
     /// <summary>One line per missing blob (fail-open: the bundle is still written).</summary>
     public List<string> Warnings { get; set; } = new();
@@ -149,31 +175,52 @@ public sealed partial class DossierStore
             throw new DossierRequestException("invalid_out", "publish requires an output directory");
         }
 
-        if (options.Depth is not ("index" or "full"))
+        var jsonl = options.Format == PublishOptions.FormatJsonl;
+        if (options.Format is not (PublishOptions.FormatMarkdown or PublishOptions.FormatJsonl))
         {
-            throw new DossierRequestException("invalid_depth", $"depth must be \"index\" or \"full\", got \"{options.Depth}\"");
+            throw new DossierRequestException("invalid_format", $"format must be \"md\" or \"jsonl\", got \"{options.Format}\"");
         }
 
-        options.BudgetMode = ResolveBudgetMode(options.BudgetMode);
-
-        if (options.Facts is not ("detail" or "none"))
+        if (jsonl)
         {
-            throw new DossierRequestException("invalid_facts", $"facts must be \"detail\" or \"none\", got \"{options.Facts}\"");
+            if (options.Assets is not ("embed" or "files" or "none"))
+            {
+                throw new DossierRequestException("invalid_assets", $"assets must be \"embed\", \"files\" or \"none\" with --format jsonl, got \"{options.Assets}\"");
+            }
+
+            if (options.MaxFiles < 0 || options.MaxFileBytes < 0 || options.MaxTotalBytes < 0)
+            {
+                throw new DossierRequestException("invalid_limit", "max-files, max-file-bytes and max-total-bytes must be zero (unlimited) or greater");
+            }
         }
-
-        if (options.Assets is not ("detail" or "none"))
+        else
         {
-            throw new DossierRequestException("invalid_assets", $"assets must be \"detail\" or \"none\", got \"{options.Assets}\"");
-        }
+            if (options.Depth is not ("index" or "full"))
+            {
+                throw new DossierRequestException("invalid_depth", $"depth must be \"index\" or \"full\", got \"{options.Depth}\"");
+            }
 
-        if (options.Budget < 0)
-        {
-            throw new DossierRequestException("invalid_budget", "budget must be zero or greater");
-        }
+            options.BudgetMode = ResolveBudgetMode(options.BudgetMode);
 
-        if (options.IndexMaxTokens < 1)
-        {
-            throw new DossierRequestException("invalid_index_max_tokens", "index-max-tokens must be 1 or greater");
+            if (options.Facts is not ("detail" or "none"))
+            {
+                throw new DossierRequestException("invalid_facts", $"facts must be \"detail\" or \"none\", got \"{options.Facts}\"");
+            }
+
+            if (options.Assets is not ("detail" or "none"))
+            {
+                throw new DossierRequestException("invalid_assets", $"assets must be \"detail\" or \"none\", got \"{options.Assets}\"");
+            }
+
+            if (options.Budget < 0)
+            {
+                throw new DossierRequestException("invalid_budget", "budget must be zero or greater");
+            }
+
+            if (options.IndexMaxTokens < 1)
+            {
+                throw new DossierRequestException("invalid_index_max_tokens", "index-max-tokens must be 1 or greater");
+            }
         }
 
         // Load the profile before touching the store or the output directory, so a bad file fails first.
@@ -183,7 +230,7 @@ public sealed partial class DossierStore
             throw new DossierRequestException("invalid_profile", "--respect-limits requires --profile <path>");
         }
 
-        var sharded = options.RespectLimits;
+        var sharded = options.RespectLimits && !jsonl;
 
         // Shard mode writes no fact files and no assets: a shard is a self-contained document.
         var detail = !sharded && options.Facts == "detail";
@@ -259,6 +306,11 @@ public sealed partial class DossierStore
         }
 
         AssignBundleKeys(facts, slugs, options.BundleHash ?? DefaultBundleHash);
+
+        if (jsonl)
+        {
+            return PublishJsonl(options, profile, outDir, ordered, paths, facts, scopeRootId);
+        }
 
         // Attachments: resolve names and blobs. Fail-open: a missing blob never stops the publish.
         var assetSources = new SortedDictionary<string, string>(StringComparer.Ordinal);
@@ -964,11 +1016,7 @@ public sealed partial class DossierStore
         baseName = baseName[(baseName.LastIndexOf('/') + 1)..];
         var dot = baseName.LastIndexOf('.');
         var stem = dot >= 0 ? baseName[..dot] : baseName;
-        var ext = dot >= 0 ? new string(baseName[(dot + 1)..].ToLowerInvariant().Where(c => c is (>= 'a' and <= 'z') or (>= '0' and <= '9')).ToArray()) : string.Empty;
-        if (ext.Length == 0)
-        {
-            ext = ExtensionForMime(attachment.Mime);
-        }
+        var ext = AssetExtension(attachment);
 
         var slug = SlugCore(stem, MaxAssetStemLength);
         if (slug.Length == 0)
@@ -983,6 +1031,16 @@ public sealed partial class DossierStore
         }
 
         return $"{sha8}-{slug}.{ext}";
+    }
+
+    /// <summary>The file name's extension lowercased (letters and digits only), else derived from the mime type, else "bin".</summary>
+    private static string AssetExtension(AttachmentRecord attachment)
+    {
+        var baseName = attachment.Filename.Replace('\\', '/');
+        baseName = baseName[(baseName.LastIndexOf('/') + 1)..];
+        var dot = baseName.LastIndexOf('.');
+        var ext = dot >= 0 ? new string(baseName[(dot + 1)..].ToLowerInvariant().Where(c => c is (>= 'a' and <= 'z') or (>= '0' and <= '9')).ToArray()) : string.Empty;
+        return ext.Length == 0 ? ExtensionForMime(attachment.Mime) : ext;
     }
 
     private static string ExtensionForMime(string mime)
@@ -1310,10 +1368,10 @@ public sealed partial class DossierStore
     /// The canonical record of a fact: contract field names, keys sorted at every level, nulls
     /// omitted, ref targets exactly as stored (a fact ref carries the original fact id, not the bundle key).
     /// </summary>
-    private static string MachineRecordJson(PubFact fact, PubSubject subject)
+    private static string MachineRecordJson(PubFact fact, PubSubject subject, bool indented = true, bool jsonlRecord = false)
     {
         using var stream = new MemoryStream();
-        using (var w = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = true, NewLine = "\n", Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping }))
+        using (var w = new Utf8JsonWriter(stream, new JsonWriterOptions { Indented = indented, NewLine = "\n", Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping }))
         {
             w.WriteStartObject();
             w.WriteStartArray("attachments");
@@ -1334,7 +1392,17 @@ public sealed partial class DossierStore
             }
 
             w.WriteEndArray();
+            if (jsonlRecord)
+            {
+                w.WriteString("bundle_key", fact.BundleKey);
+            }
+
             w.WriteNumber("confidence", fact.Confidence);
+            if (jsonlRecord)
+            {
+                w.WriteString("content_hash", fact.ContentHash);
+            }
+
             if (fact.Data is { } data)
             {
                 w.WritePropertyName("data");
@@ -1424,6 +1492,11 @@ public sealed partial class DossierStore
 
             w.WriteEndArray();
             w.WriteString("text", fact.Text);
+            if (jsonlRecord)
+            {
+                w.WriteString("type", "fact");
+            }
+
             w.WriteEndObject();
         }
 
@@ -2583,14 +2656,29 @@ public sealed partial class DossierStore
     private static bool SameBytes(string a, string b) =>
         new FileInfo(a).Length == new FileInfo(b).Length && File.ReadAllBytes(a).AsSpan().SequenceEqual(File.ReadAllBytes(b));
 
+    private static int WriteTextIfChanged(string outDir, string relative, string content)
+    {
+        var full = Path.Combine(outDir, relative);
+        Directory.CreateDirectory(Path.GetDirectoryName(full)!);
+        if (File.Exists(full) && File.ReadAllText(full, Utf8NoBom) == content)
+        {
+            return 0;
+        }
+
+        File.WriteAllText(full, content, Utf8NoBom);
+        return 1;
+    }
+
     private static PublishResult WriteBundle(
         string outDir,
         SortedDictionary<string, string> files,
         SortedDictionary<string, string> assets,
         List<string> previousFiles,
         int subjects,
-        int facts)
+        int facts,
+        SortedDictionary<string, byte[]>? binary = null)
     {
+        binary ??= new SortedDictionary<string, byte[]>(StringComparer.Ordinal);
         var previous = previousFiles.Where(IsBundlePath).ToHashSet(StringComparer.Ordinal);
 
         // Refuse before writing anything if a generated path is already taken by a file this
@@ -2626,14 +2714,19 @@ public sealed partial class DossierStore
 
         Directory.CreateDirectory(outDir);
         var written = 0;
-        // Manifest last, so an interrupted run never claims files that were not written.
-        foreach (var (relative, content) in files.Where(kv => kv.Key != BundleManifest).Append(new KeyValuePair<string, string>(BundleManifest, files[BundleManifest])))
+        foreach (var (relative, content) in files.Where(kv => kv.Key != BundleManifest))
+        {
+            written += WriteTextIfChanged(outDir, relative, content);
+        }
+
+        // Binary files (JSONL data) are compared and written as bytes, never through a text decode.
+        foreach (var (relative, content) in binary)
         {
             var full = Path.Combine(outDir, relative);
             Directory.CreateDirectory(Path.GetDirectoryName(full)!);
-            if (!File.Exists(full) || File.ReadAllText(full, Utf8NoBom) != content)
+            if (!File.Exists(full) || !File.ReadAllBytes(full).AsSpan().SequenceEqual(content))
             {
-                File.WriteAllText(full, content, Utf8NoBom);
+                File.WriteAllBytes(full, content);
                 written++;
             }
         }
@@ -2650,8 +2743,14 @@ public sealed partial class DossierStore
             }
         }
 
+        // Manifest last, so an interrupted run never claims files that were not written.
+        if (files.TryGetValue(BundleManifest, out var manifestContent))
+        {
+            written += WriteTextIfChanged(outDir, BundleManifest, manifestContent);
+        }
+
         var removed = new List<string>();
-        foreach (var relative in previous.Where(p => !files.ContainsKey(p) && !assets.ContainsKey(p)).OrderBy(p => p, StringComparer.Ordinal))
+        foreach (var relative in previous.Where(p => !files.ContainsKey(p) && !binary.ContainsKey(p) && !assets.ContainsKey(p)).OrderBy(p => p, StringComparer.Ordinal))
         {
             var full = Path.Combine(outDir, relative);
             if (File.Exists(full))
@@ -2680,7 +2779,7 @@ public sealed partial class DossierStore
         return new PublishResult
         {
             Out = outDir,
-            Files = files.Keys.Concat(assets.Keys).OrderBy(p => p, StringComparer.Ordinal).ToList(),
+            Files = files.Keys.Concat(binary.Keys).Concat(assets.Keys).OrderBy(p => p, StringComparer.Ordinal).ToList(),
             Written = written,
             Removed = removed,
             Subjects = subjects,

@@ -404,10 +404,134 @@ async function xssScenario(reduce) {
   instance.destroy();
 }
 
+// ---- scenario: the truncation banner accumulates across merges (R1) ---------------------------
+async function bannerAccumulationScenario() {
+  const check = (cond, msg) => ok(cond, '[banner] ' + msg);
+  const truncated = clone(fixture);
+  truncated.truncated = { subjects: 3, facts: 4, edges: 2 };
+  const env = makeEnv(true);
+  const { host, instance } = await env.mount(truncated.root, () => truncated);
+  const banner = host.byClass('g-banner')[0];
+  check(banner.textContent.startsWith('9 hidden (3 subjects, 4 facts, 2 refs)'), 'initial banner "' + banner.textContent + '"');
+
+  const extension = clone(fixture);
+  extension.truncated = { subjects: 5, facts: 2, edges: 1 };
+  instance.merge(extension, 'subject:' + fixture.root);
+  check(banner.hidden === false && banner.textContent.startsWith('11 hidden (5 subjects, 4 facts, 2 refs)'), 'merge takes the larger count per category: "' + banner.textContent + '"');
+
+  const clean = clone(fixture);
+  clean.truncated = { subjects: 0, facts: 0, edges: 0 };
+  instance.merge(clean, 'subject:' + fixture.root);
+  check(banner.hidden === false && banner.textContent.startsWith('11 hidden (5 subjects, 4 facts, 2 refs)'), 'a clean merge does not hide earlier truncation: "' + banner.textContent + '"');
+
+  // Navigating to a new root is a fresh mount: nothing is carried over.
+  const env2 = makeEnv(true);
+  const next = await env2.mount(fixture.root, () => clean);
+  check(next.host.byClass('g-banner')[0].hidden === true, 'a fresh mount (new root) starts with no truncation');
+  instance.destroy(); next.instance.destroy();
+}
+
+// ---- scenario: keys typed in controls are not shortcuts (R2) ----------------------------------
+async function keyFocusScenario() {
+  const check = (cond, msg) => ok(cond, '[keys] ' + msg);
+  const env = makeEnv(true);
+  const { host, instance, urls } = await env.mount(fixture.root, () => fixture);
+  const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
+  const press = (k, target) => (env.docListeners.keydown || []).forEach((fn) => fn(target ? { key: k, target } : { key: k }));
+  const view = () => [instance.view.scale, instance.view.tx, instance.view.ty].join();
+  const canvas = host.byTag('canvas')[0];
+
+  instance.select('subject:s-core'); // a node is selected, so Enter / e would expand it
+  const base = urls.length;
+  canvas.fire('wheel', { deltaY: -400, clientX: 100, clientY: 100 });
+  const zoomed = view();
+
+  for (const tag of ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A']) {
+    const target = new env.El(tag);
+    press('e', target); press('E', target); press('Enter', target); press('f', target); press('F', target);
+    await settle();
+    check(urls.length === base && view() === zoomed, tag + ' target: e / Enter / f do nothing (fetches ' + (urls.length - base) + ')');
+  }
+  const editable = new env.El('div');
+  editable.isContentEditable = true;
+  press('e', editable); press('f', editable);
+  await settle();
+  check(urls.length === base && view() === zoomed, 'contentEditable target: e / f do nothing');
+
+  // Focus-based detection, for events that carry no target.
+  const input = new env.El('input');
+  env.state.activeElement = input;
+  press('e'); press('f');
+  await settle();
+  check(urls.length === base && view() === zoomed, 'focus in an <input> (no event target): e / f do nothing');
+  env.state.activeElement = null;
+
+  press('f', canvas);
+  check(view() !== zoomed, 'f on the canvas still fits the view');
+  press('e', canvas);
+  await settle();
+  check(urls.length === base + 1, "e on the canvas still expands the selected node (" + (urls.length - base) + " fetch)");
+  press('Enter', canvas);
+  await settle();
+  check(urls.length === base + 2, 'Enter on the canvas still expands the selected node');
+  press('Escape', canvas);
+  check(host.byTag('aside')[0].hidden === true, 'Escape on the canvas still closes the panel');
+  instance.destroy();
+}
+
+// ---- scenario: expansion carries the view's depth and facts (R4) ------------------------------
+async function expandParamsScenario() {
+  const check = (cond, msg) => ok(cond, '[params] ' + msg);
+  const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
+  const env = makeEnv(true);
+  const { instance, urls } = await env.mount(fixture.root, () => fixture, { depth: 2, facts: false });
+  check(urls[0] === '/api/graph?subject=s-root&depth=2&facts=false&max_nodes=500', 'initial request carries the view params: ' + urls[0]);
+  await instance.expand(instance.nodes.find((n) => n.key === 'subject:s-core'));
+  await settle();
+  check(urls[1] === '/api/graph?subject=s-core&depth=2&facts=false&max_nodes=500', 'expansion carries depth=2&facts=false: ' + urls[1]);
+  instance.destroy();
+
+  const env2 = makeEnv(true);
+  const plain = await env2.mount(fixture.root, () => fixture);
+  await plain.instance.expand(plain.instance.nodes.find((n) => n.key === 'subject:s-core'));
+  check(plain.urls[1] === '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500', 'defaults stay depth=1&facts=true: ' + plain.urls[1]);
+  plain.instance.destroy();
+}
+
+// ---- scenario: the committed fixture carries hostile strings through real API output ----------
+async function fixtureXssScenario(reduce) {
+  const tag = '[fixture-xss ' + (reduce ? 'reduced' : 'animated') + '] ';
+  const check = (cond, msg) => ok(cond, tag + msg);
+  const strings = [];
+  (function walk(v) { if (typeof v === 'string') strings.push(v); else if (v && typeof v === 'object') Object.values(v).forEach(walk); })(fixture);
+  check(EVIL.every((e) => strings.some((t) => t.includes(e))), 'the fixture really contains all three hostile strings');
+  const env = makeEnv(reduce);
+  const { host, instance } = await env.mount(fixture.root, () => fixture);
+  if (!reduce) env.runFrames(50);
+  const panel = host.byTag('aside')[0];
+  let shown = '';
+  for (const n of instance.nodes) {
+    instance.select(n.key);
+    shown += panel.textContent + '\n';
+    for (const a of panel.byTag('a')) check(HREF_OK.test(a.getAttribute('href')), 'link "' + a.getAttribute('href') + '" is a fixed-prefix id link');
+  }
+  check(EVIL.every((e) => shown.includes(e)), 'every hostile string is shown literally as panel text');
+  const unexpected = env.created.filter((e) => !ALLOWED_TAGS.has(e.tagName)).map((e) => e.tagName);
+  check(unexpected.length === 0, 'no unexpected element nodes created' + (unexpected.length ? ': ' + unexpected.join() : ''));
+  check(env.violations.length === 0, 'no markup/href/src/on* assignment or fetch from fixture data' + brief(env.violations));
+  check(env.navigation.length === 0, 'no navigation from fixture data' + brief(env.navigation));
+  instance.destroy();
+}
+
 await interactionScenario('reduced-motion', true);
 await interactionScenario('animated', false);
 await mergeScenario();
 await truncationScenario();
+await bannerAccumulationScenario();
+await keyFocusScenario();
+await expandParamsScenario();
+await fixtureXssScenario(true);
+await fixtureXssScenario(false);
 await xssScenario(true);
 await xssScenario(false);
 

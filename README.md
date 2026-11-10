@@ -109,7 +109,7 @@ Accuracy: two independent agents, one given only arm A and one given only arm B,
 - No agent has answered from arm C, so primary-source accuracy is unmeasured. The 10/10 result covers arms A and B only.
 - The default `rank.recency` term is derived from wall-clock `created_at` and can rank differently across machines. `rank.recency=0` is the reproducible mode.
 
-The kill criterion (at least 90% of raw-dump accuracy at no more than 25% of the tokens across both eval domains) is not yet established: only one domain has been measured.
+The project's success bar (at least 90% of raw-dump accuracy at no more than 25% of the tokens across both eval domains) is not yet established: only one domain has been measured.
 
 ## Quick start
 
@@ -386,9 +386,9 @@ All scripts need bash, `jq` and a Release build. `dotnet test` runs the test sui
 
 ## Status
 
-Done (Gate A): dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; the test suite; the seeded Memos demo; the evaluation harness.
+Done: dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; the test suite; the seeded Memos demo; the evaluation harness.
 
-Not done (Gate B, not built): reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
+Not built yet: reverify, follow in compile, trust-gated supersede, computed contested and stale status, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 
 ## Contract and implementation
 

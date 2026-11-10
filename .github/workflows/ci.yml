@@ -1,0 +1,142 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  DOTNET_NOLOGO: "1"
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-test:
+    name: build-test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        # Pull requests get the fast Linux leg only; main and manual runs get all three.
+        os: ${{ fromJSON(github.event_name == 'pull_request' && '["ubuntu-24.04"]' || '["ubuntu-24.04","macos-15","windows-2025"]') }}
+    steps:
+      - name: Keep LF line endings on Windows
+        if: runner.os == 'Windows'
+        run: git config --global core.autocrlf false
+
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: dotnet --info
+        run: dotnet --info
+
+      # NuGet audit uses the live advisory feed, so main can go red without a code change.
+      # Moderate (NU1902), high (NU1903) and critical (NU1904) advisories fail the build.
+      # NU1900 (the advisory feed could not be fetched) is deliberately left as a warning:
+      # failing closed would turn every NuGet outage into a red build, and the next
+      # successful run audits again.
+      - name: Restore
+        run: dotnet restore Dossier.sln -p:NuGetAuditLevel=moderate "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
+
+      - name: Build
+        run: dotnet build Dossier.sln -c Release --no-restore
+
+      - name: Test
+        run: dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 198
+
+  aot-smoke:
+    name: aot-smoke (linux-x64)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      RID: linux-x64
+      VERSION: 0.0.0-ci.${{ github.run_number }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: dotnet --info
+        run: dotnet --info
+
+      # Same audit gate as build-test; the project (not the solution) is restored for the AOT runtime.
+      - name: Restore
+        run: dotnet restore src/Dossier/Dossier.csproj -r "$RID" -p:PublishAot=true -p:NuGetAuditLevel=moderate "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
+
+      - name: Publish (Native AOT)
+        run: dotnet publish src/Dossier/Dossier.csproj -c Release -r "$RID" -p:PublishAot=true -p:Version="$VERSION" --no-restore -o "out/$RID" 2>&1 | tee publish.log
+
+      - name: Fail on trim and AOT warnings
+        run: |
+          if grep -E "warning (IL|ILC)[0-9]+" publish.log; then
+            echo "::error::Native AOT publish produced IL/ILC warnings"
+            exit 1
+          fi
+
+      - name: Check glibc baseline (<= 2.35)
+        run: |
+          max=$(for f in "out/$RID/Dossier" "out/$RID"/*.so; do objdump -T "$f"; done | grep -o 'GLIBC_[0-9.]*' | sed 's/GLIBC_//' | sort -uV | tail -n 1)
+          echo "max GLIBC symbol version required: ${max:-none}"
+          if [ -z "$max" ] || [ "$(printf '%s\n%s\n' "$max" 2.35 | sort -V | tail -n 1)" != "2.35" ]; then
+            echo "::error::binary requires glibc $max, above the 2.35 baseline"
+            exit 1
+          fi
+
+      - name: Smoke test
+        run: scripts/smoke-aot.sh "out/$RID/Dossier" "$VERSION"
+
+  secret-scan:
+    name: secret-scan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - name: Check out full history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Install gitleaks (pinned, checksum-verified)
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/gitleaks.tar.gz" "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  $RUNNER_TEMP/gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
+
+      # Full history is scanned, except examples/ (see .gitleaks.toml): those generated
+      # fixtures are an accepted, visible gap in secret scanning, not scanned at all.
+      - name: Scan git history
+        run: '"$RUNNER_TEMP/gitleaks" git --redact --no-banner -v --exit-code 1 .'

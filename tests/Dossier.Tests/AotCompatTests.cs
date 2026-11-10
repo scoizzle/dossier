@@ -47,6 +47,25 @@ public sealed class AotCompatTests
     }
 
     [Test]
+    public async Task Graph_SerializesWithSnakeCaseSourceGeneratedMetadata()
+    {
+        using var db = new TempDb();
+        GraphSeed.Populate(db.Store);
+        var request = new GraphRequest { Subject = GraphSeed.Root, Depth = 2 };
+        var json = Ops.Graph(db.Store, request);
+
+        await Assert.That(json).IsEqualTo(Json(db.Store.Graph(request)));
+        foreach (var name in new[] { "\"format\":1", "\"max_nodes\":500", "\"from_kind\":", "\"to_kind\":", "\"truncated\":{\"subjects\":" })
+        {
+            await Assert.That(json.Contains(name)).IsTrue();
+        }
+
+        // WhenWritingNull: absent optional fields are omitted, not null.
+        await Assert.That(json.Contains("\"ambiguous\":null")).IsFalse();
+        await Assert.That(json.Contains("\"boundary\":null")).IsFalse();
+    }
+
+    [Test]
     public async Task Version_CommandsPrintInformationalVersionAndNothingElse()
     {
         var expected = ExpectedVersion();

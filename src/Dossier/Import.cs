@@ -10,6 +10,9 @@ public sealed class ImportOptions
 {
     /// <summary>Bundle directory (the --out of a publish run).</summary>
     public string From { get; set; } = string.Empty;
+
+    /// <summary>JSONL bundles: longest single line import will buffer, in bytes. 0 (default) allows the largest embedded asset record.</summary>
+    public long MaxLineBytes { get; set; }
 }
 
 /// <summary>What import restored, and every record it could not restore, with the reason.</summary>
@@ -33,6 +36,10 @@ public sealed partial class DossierStore
     private sealed class ImportRecord
     {
         public string Path = string.Empty;
+
+        /// <summary>JSONL: position in the bundle, so equal timestamps keep file order. Markdown records leave it 0 and fall back to Path.</summary>
+        public long Order;
+
         public string SubjectDir = string.Empty;
         public string Id = string.Empty;
         public string SubjectId = string.Empty;
@@ -69,6 +76,13 @@ public sealed partial class DossierStore
         if (!Directory.Exists(root))
         {
             throw new DossierRequestException("bundle_not_found", $"bundle directory \"{options.From}\" does not exist");
+        }
+
+        if (ReadBundleFormat(root) is { } bundleFormat)
+        {
+            return bundleFormat == JsonlFormatId
+                ? ImportJsonl(root, options)
+                : throw new DossierRequestException("unsupported_bundle_format", $"manifest.json declares format \"{bundleFormat}\"; this version imports markdown bundles and \"{JsonlFormatId}\" only");
         }
 
         var result = new ImportResult();
@@ -113,6 +127,27 @@ public sealed partial class DossierStore
                 "no fact file carries a readable machine record; re-publish the bundle with this version using --facts detail");
         }
 
+        return CommitImport(
+            result,
+            records,
+            ReadImportSubjects(root, records),
+            (record, attachment) =>
+            {
+                var restored = RestoreBlob(root, record, attachment, out var reason);
+                return (restored, reason);
+            });
+    }
+
+    /// <summary>
+    /// Inserts the parsed subjects and facts (with refs and attachment rows) in one transaction and restores
+    /// blobs through <paramref name="restoreBlob"/>; shared by the markdown and JSONL importers.
+    /// </summary>
+    private ImportResult CommitImport(
+        ImportResult result,
+        List<ImportRecord> records,
+        Dictionary<string, ImportSubject> subjects,
+        Func<ImportRecord, AttachmentRecord, (bool Restored, string Reason)> restoreBlob)
+    {
         // The live slot of a (subject, kind, key) holds at most one fact.
         var slots = new Dictionary<(string Subject, string Kind, string Key), ImportRecord>();
         foreach (var record in records.Where(r => r.Key is not null && r.Status is not ("superseded" or "retracted")))
@@ -128,7 +163,6 @@ public sealed partial class DossierStore
             slots[slot] = record;
         }
 
-        var subjects = ReadImportSubjects(root, records);
         var createdAt = Timestamp();
 
         using var connection = OpenConnection();
@@ -159,7 +193,7 @@ public sealed partial class DossierStore
         }
 
         var blobs = new HashSet<string>(StringComparer.Ordinal);
-        foreach (var record in records.OrderBy(r => PostedAt(r) ?? createdAt, StringComparer.Ordinal).ThenBy(r => r.Path, StringComparer.Ordinal))
+        foreach (var record in records.OrderBy(r => PostedAt(r) ?? createdAt, StringComparer.Ordinal).ThenBy(r => r.Order).ThenBy(r => r.Path, StringComparer.Ordinal))
         {
             using (var exists = Command(connection, transaction, "SELECT COUNT(*) FROM facts WHERE id = $id"))
             {
@@ -258,7 +292,8 @@ public sealed partial class DossierStore
                 command.ExecuteNonQuery();
                 result.Attachments++;
 
-                if (RestoreBlob(root, record, attachment, out var reason))
+                var (restored, reason) = restoreBlob(record, attachment);
+                if (restored)
                 {
                     if (blobs.Add(attachment.Sha256))
                     {
@@ -407,98 +442,104 @@ public sealed partial class DossierStore
                 return (null, "machine record is not a json object");
             }
 
-            string? Str(JsonElement from, string name) => from.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
-            JsonElement? Raw(JsonElement from, string name) => from.TryGetProperty(name, out var v) && v.ValueKind != JsonValueKind.Null ? v.Clone() : null;
-
-            var id = Str(e, "id");
-            var subjectId = Str(e, "subject_id");
-            var kind = Str(e, "kind");
-            var status = Str(e, "status");
-            if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(subjectId) || string.IsNullOrEmpty(kind) || string.IsNullOrEmpty(status)
-                || !e.TryGetProperty("text", out var text) || text.ValueKind != JsonValueKind.String)
-            {
-                return (null, "machine record lacks id, subject_id, kind, status or text");
-            }
-
-            var record = new ImportRecord
-            {
-                Path = path,
-                SubjectDir = path[..path.LastIndexOf("/facts/", StringComparison.Ordinal)],
-                Id = id,
-                SubjectId = subjectId,
-                SubjectName = Str(e, "subject_name") ?? subjectId,
-                Key = Str(e, "key"),
-                Kind = kind,
-                Text = text.GetString()!,
-                Data = Raw(e, "data"),
-                Items = Raw(e, "items"),
-                Confidence = e.TryGetProperty("confidence", out var c) && c.ValueKind == JsonValueKind.Number ? c.GetDouble() : 1.0,
-                Status = status,
-                Provenance = Raw(e, "provenance") ?? JsonDocument.Parse("{}").RootElement.Clone(),
-            };
-
-            if (e.TryGetProperty("tags", out var tags) && tags.ValueKind == JsonValueKind.Array)
-            {
-                record.Tags = tags.EnumerateArray().Where(t => t.ValueKind == JsonValueKind.String).Select(t => t.GetString()!).ToList();
-            }
-
-            if (e.TryGetProperty("refs", out var refs) && refs.ValueKind == JsonValueKind.Array)
-            {
-                foreach (var r in refs.EnumerateArray())
-                {
-                    var rel = Str(r, "rel");
-                    var rkind = Str(r, "kind");
-                    var target = Str(r, "target");
-                    var basis = Str(r, "basis");
-                    if (rel is null || rkind is null || target is null || basis is null)
-                    {
-                        return (null, "a ref lacks rel, kind, target or basis");
-                    }
-
-                    record.Refs.Add(new RefRecord
-                    {
-                        Rel = rel,
-                        Kind = rkind,
-                        Target = target,
-                        Basis = basis,
-                        Locator = Raw(r, "locator"),
-                        Confidence = r.TryGetProperty("confidence", out var rc) && rc.ValueKind == JsonValueKind.Number ? rc.GetDouble() : null,
-                        Rev = Str(r, "rev"),
-                        Snapshot = Str(r, "snapshot"),
-                        SnapshotHash = Str(r, "snapshot_hash"),
-                        Etag = Str(r, "etag"),
-                        VerifiedAt = Str(r, "verified_at"),
-                        Valid = r.TryGetProperty("valid", out var rv) && rv.ValueKind is JsonValueKind.True or JsonValueKind.False ? rv.GetBoolean() : null,
-                    });
-                }
-            }
-
-            if (e.TryGetProperty("attachments", out var attachments) && attachments.ValueKind == JsonValueKind.Array)
-            {
-                foreach (var a in attachments.EnumerateArray())
-                {
-                    var sha = Str(a, "sha256");
-                    if (sha is null)
-                    {
-                        return (null, "an attachment lacks sha256");
-                    }
-
-                    record.Attachments.Add(new AttachmentRecord
-                    {
-                        Sha256 = sha,
-                        Filename = Str(a, "filename") ?? string.Empty,
-                        Mime = Str(a, "mime") ?? string.Empty,
-                        Bytes = a.TryGetProperty("bytes", out var b) && b.ValueKind == JsonValueKind.Number ? b.GetInt64() : 0,
-                        Perceptual = Raw(a, "perceptual"),
-                    });
-                }
-            }
-
-            return (record, null);
+            return ParseImportRecordElement(path, path[..path.LastIndexOf("/facts/", StringComparison.Ordinal)], e);
         }
         catch (JsonException exception)
         {
             return (null, "machine record is not valid json: " + exception.Message);
         }
+    }
+
+    /// <summary>One fact record (the machine record of a markdown fact file, or a JSONL fact line) as an import row.</summary>
+    private static (ImportRecord? Record, string? Error) ParseImportRecordElement(string path, string subjectDir, JsonElement e)
+    {
+        string? Str(JsonElement from, string name) => from.TryGetProperty(name, out var v) && v.ValueKind == JsonValueKind.String ? v.GetString() : null;
+        JsonElement? Raw(JsonElement from, string name) => from.TryGetProperty(name, out var v) && v.ValueKind != JsonValueKind.Null ? v.Clone() : null;
+
+        var id = Str(e, "id");
+        var subjectId = Str(e, "subject_id");
+        var kind = Str(e, "kind");
+        var status = Str(e, "status");
+        if (string.IsNullOrEmpty(id) || string.IsNullOrEmpty(subjectId) || string.IsNullOrEmpty(kind) || string.IsNullOrEmpty(status)
+            || !e.TryGetProperty("text", out var text) || text.ValueKind != JsonValueKind.String)
+        {
+            return (null, "machine record lacks id, subject_id, kind, status or text");
+        }
+
+        var record = new ImportRecord
+        {
+            Path = path,
+            SubjectDir = subjectDir,
+            Id = id,
+            SubjectId = subjectId,
+            SubjectName = Str(e, "subject_name") ?? subjectId,
+            Key = Str(e, "key"),
+            Kind = kind,
+            Text = text.GetString()!,
+            Data = Raw(e, "data"),
+            Items = Raw(e, "items"),
+            Confidence = e.TryGetProperty("confidence", out var c) && c.ValueKind == JsonValueKind.Number ? c.GetDouble() : 1.0,
+            Status = status,
+            Provenance = Raw(e, "provenance") ?? JsonDocument.Parse("{}").RootElement.Clone(),
+        };
+
+        if (e.TryGetProperty("tags", out var tags) && tags.ValueKind == JsonValueKind.Array)
+        {
+            record.Tags = tags.EnumerateArray().Where(t => t.ValueKind == JsonValueKind.String).Select(t => t.GetString()!).ToList();
+        }
+
+        if (e.TryGetProperty("refs", out var refs) && refs.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var r in refs.EnumerateArray())
+            {
+                var rel = Str(r, "rel");
+                var rkind = Str(r, "kind");
+                var target = Str(r, "target");
+                var basis = Str(r, "basis");
+                if (rel is null || rkind is null || target is null || basis is null)
+                {
+                    return (null, "a ref lacks rel, kind, target or basis");
+                }
+
+                record.Refs.Add(new RefRecord
+                {
+                    Rel = rel,
+                    Kind = rkind,
+                    Target = target,
+                    Basis = basis,
+                    Locator = Raw(r, "locator"),
+                    Confidence = r.TryGetProperty("confidence", out var rc) && rc.ValueKind == JsonValueKind.Number ? rc.GetDouble() : null,
+                    Rev = Str(r, "rev"),
+                    Snapshot = Str(r, "snapshot"),
+                    SnapshotHash = Str(r, "snapshot_hash"),
+                    Etag = Str(r, "etag"),
+                    VerifiedAt = Str(r, "verified_at"),
+                    Valid = r.TryGetProperty("valid", out var rv) && rv.ValueKind is JsonValueKind.True or JsonValueKind.False ? rv.GetBoolean() : null,
+                });
+            }
+        }
+
+        if (e.TryGetProperty("attachments", out var attachments) && attachments.ValueKind == JsonValueKind.Array)
+        {
+            foreach (var a in attachments.EnumerateArray())
+            {
+                var sha = Str(a, "sha256");
+                if (sha is null)
+                {
+                    return (null, "an attachment lacks sha256");
+                }
+
+                record.Attachments.Add(new AttachmentRecord
+                {
+                    Sha256 = sha,
+                    Filename = Str(a, "filename") ?? string.Empty,
+                    Mime = Str(a, "mime") ?? string.Empty,
+                    Bytes = a.TryGetProperty("bytes", out var b) && b.ValueKind == JsonValueKind.Number ? b.GetInt64() : 0,
+                    Perceptual = Raw(a, "perceptual"),
+                });
+            }
+        }
+
+        return (record, null);
     }
 }

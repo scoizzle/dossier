@@ -13,7 +13,7 @@ public sealed partial class DossierStore
     public const string JsonlFormatId = "dossier-jsonl/1";
 
     /// <summary>Largest single attachment publish will inline as base64 (and import will accept inline).</summary>
-    internal const long MaxEmbedAssetBytes = 256L * 1024 * 1024;
+    public const long MaxEmbedAssetBytes = 256L * 1024 * 1024;
 
     private static readonly Regex JsonlDataFileRegex = new("^dossier-[0-9]{4,}\\.jsonl$", RegexOptions.Compiled);
     private static readonly Regex JsonlAssetPathRegex = new("^assets/[0-9a-f]{64}(\\.[a-z0-9]+)?$", RegexOptions.Compiled);

@@ -209,8 +209,10 @@ public sealed class AotCompatTests
         var correlate = new CorrelateResponse { Proposed = new List<CorrelationProposal> { new() { FactId = "f", Ref = new RefInput { Rel = "r", Seq = 2 } } }, Truncated = true };
         await Assert.That(Json(correlate)).IsEqualTo("""{"proposed":[{"fact_id":"f","ref":{"rel":"r","seq":2}}],"truncated":true}""");
 
+        // entity_subjects was removed from the contract; an old client that still sends it is ignored.
         var dumpRequest = Parse<DumpRequest>("""{"source":"p","subject":"s","entity_subjects":true,"tags":["t"]}""");
-        await Assert.That(dumpRequest.EntitySubjects).IsTrue();
+        await Assert.That(dumpRequest.Source).IsEqualTo("p");
+        await Assert.That(dumpRequest.Tags![0]).IsEqualTo("t");
         var search = Parse<SearchRequest>("""{"q":"a","ref_target":"x","limit":3,"brief":true}""");
         await Assert.That(search.RefTarget).IsEqualTo("x");
         await Assert.That(search.Brief).IsTrue();
@@ -274,12 +276,22 @@ public sealed class AotCompatTests
         using var db = new TempDb();
         var file = Path.Combine(db.Directory, "sample.py");
         File.WriteAllText(file, "def top(a, b):\n    \"\"\"Doc.\"\"\"\n    return a\n");
-        var response = db.Store.Dump(new DumpRequest { Source = file, Subject = "Code/Sample", Split = "code", EntitySubjects = true });
-        await Assert.That(response.Created.Count).IsGreaterThan(0);
+        var response = db.Store.Dump(new DumpRequest { Source = file, Subject = "Code/Sample", Split = "none" });
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+
+        // The snake_case data-key coverage moved here: dump no longer writes data, so post a fact with it.
+        var posted = db.Store.PostFacts(Fixtures.Post("Code/Sample", new FactInput
+        {
+            Kind = "note",
+            Text = "snake case data",
+            Data = JsonDocument.Parse("""{"start_line":1,"end_line":3,"entity_kind":"function","symbol":"top"}""").RootElement.Clone(),
+        }));
+        var dataShow = JsonDocument.Parse(JsonSerializer.Serialize(db.Store.Show(posted.Response.Facts[0].Id)!, JsonCodec.Options)).RootElement;
+        var data = dataShow.GetProperty("fact").GetProperty("data");
+        await Assert.That(string.Join(",", data.EnumerateObject().Select(p => p.Name))).IsEqualTo("end_line,entity_kind,start_line,symbol");
+
         var show = db.Store.Show(response.Created[0])!;
         var fact = JsonDocument.Parse(JsonSerializer.Serialize(show, JsonCodec.Options)).RootElement;
-        var data = fact.GetProperty("fact").GetProperty("data");
-        await Assert.That(string.Join(",", data.EnumerateObject().Select(p => p.Name))).IsEqualTo("end_line,entity_kind,parent,start_line,symbol");
         var locator = fact.GetProperty("refs")[0].GetProperty("locator");
         await Assert.That(locator.GetProperty("selector").GetString()!.StartsWith("L1-L", StringComparison.Ordinal)).IsTrue();
         var provenance = fact.GetProperty("fact").GetProperty("provenance").GetRawText();

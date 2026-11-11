@@ -24,7 +24,7 @@ One project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) with FTS5
 
 ```text
 README.md          the entry point
-docs/              reference docs: concepts, cli, publish, evaluation, install, releasing, architecture
+docs/              reference docs: concepts, cli, publish, evaluation, ingestion, install, releasing, architecture
 Dossier.sln        solution (src project plus tests)
 global.json        pins the Microsoft.Testing.Platform test runner
 SECURITY.md        security policy: how to report a vulnerability

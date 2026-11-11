@@ -97,6 +97,7 @@ Also: `show`, `retract`, `import`, `mcp`, `serve`. Full reference: [cli](https:/
 | [cli](https://github.com/scoizzle/dossier/blob/main/docs/cli.md) | Verbs, code split, CLI examples, MCP server, web UI and `/api/graph` |
 | [publish](https://github.com/scoizzle/dossier/blob/main/docs/publish.md) | Markdown and JSONL bundles, import, profiles and shards |
 | [evaluation](https://github.com/scoizzle/dossier/blob/main/docs/evaluation.md) | Measured results, what they do not prove, reproducing them |
+| [ingestion](https://github.com/scoizzle/dossier/blob/main/docs/ingestion.md) | The plan for structured code ingestion: outline contract, providers, bulk ingest, citable bundles |
 | [install](https://github.com/scoizzle/dossier/blob/main/docs/install.md) | Release archives, platform notes, verification |
 | [architecture](https://github.com/scoizzle/dossier/blob/main/docs/architecture.md) | Source files and the repository map |
 | [releasing](https://github.com/scoizzle/dossier/blob/main/docs/releasing.md) | Cutting a release (maintainers) |

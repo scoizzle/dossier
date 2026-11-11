@@ -569,10 +569,17 @@ async function ownerLinkScenario() {
   const segments = segmentsOf(env.calls);
   const edgePairs = new Set();
   for (const ed of instance.edges) edgePairs.add(segKey([ed.a.x, ed.a.y], [ed.b.x, ed.b.y]));
-  const edgeSegments = segments.filter((s) => edgePairs.has(segKey(s.from, s.to)));
+  const isEdge = (s) => edgePairs.has(segKey(s.from, s.to));
+  const edgeSegments = segments.filter(isEdge);
+  check(instance.edges.length > 0, 'the fixture really has payload edges to stroke (' + instance.edges.length + ')');
   check(edgeSegments.length >= instance.edges.length, 'every payload edge is stroked (' + edgeSegments.length + '/' + instance.edges.length + ')');
-  const faintest = edgeSegments.length ? Math.min(...edgeSegments.map((s) => s.alpha)) : 1;
-  const faint = (s) => s.alpha < faintest;
+  // Owner links are fainter than the payload edges, and the payload edges are never fainter than the
+  // 0.5 the contains edges are drawn at. Both bounds are fixed: a min() over the edges found would
+  // fall back to 1 (or to a fainter mutant) and let any alpha pass.
+  const OWNER_ALPHA_MAX = 0.5;
+  const faint = (s) => s.alpha < OWNER_ALPHA_MAX;
+  check(edgeSegments.length > 0 && edgeSegments.every((s) => s.alpha >= OWNER_ALPHA_MAX),
+    'payload edges are stroked at >= ' + OWNER_ALPHA_MAX + ' alpha (faintest ' + (edgeSegments.length ? Math.min(...edgeSegments.map((s) => s.alpha)) : 'none') + ')');
 
   const unmatched = anchored.filter((n) => !segments.some((s) => near(s.from, [n.x, n.y]) && near(s.to, [n.anchor.x, n.anchor.y]) && faint(s)));
   check(unmatched.length === 0, 'every fact strokes a faint segment to its owner, ending at the subject' + brief(unmatched.map((n) => n.id)));
@@ -589,7 +596,18 @@ async function ownerLinkScenario() {
   const orphan = instance.nodes.find((n) => n.key === 'fact:f-orphan');
   check(!!orphan && orphan.anchor === null, 'a fact whose subject is not in the graph has no anchor');
   instance.select('subject:' + fixture.root);
-  check(!segmentsOf(env.calls).some((s) => near(s.from, [orphan.x, orphan.y])), 'a fact with no owner draws no owner link');
+  // The select() must repaint. Without this, an empty calls[] (no redraw after merge/select) would
+  // satisfy "no line at the orphan" for the wrong reason, so assert the frame really drew the
+  // graph: segments were stroked, the payload edges came back, and a known owner link is in it.
+  const frame = segmentsOf(env.calls);
+  const frameKeys = new Set(frame.map((s) => segKey(s.from, s.to)));
+  const missingEdges = [...edgePairs].filter((k) => !frameKeys.has(k));
+  check(frame.length > 0 && missingEdges.length === 0,
+    'select() repainted the whole graph (' + frame.length + ' segments, all ' + edgePairs.size + ' payload edges; missing ' + missingEdges.length + ')');
+  const known = anchored[0];
+  check(!!known && frame.some((s) => near(s.from, [known.x, known.y]) && near(s.to, [known.anchor.x, known.anchor.y]) && faint(s)),
+    'the repaint still strokes a known owner link (fact ' + (known && known.id) + ')');
+  check(!frame.some((s) => near(s.from, [orphan.x, orphan.y])), 'a fact with no owner draws no owner link');
   instance.destroy();
 }
 

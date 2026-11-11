@@ -115,25 +115,59 @@ public sealed class CliArgTests
         documented.AddRange(Regex.Matches(program, @"""usage: (.*?)""").Select(m => m.Groups[1].Value));
         await Assert.That(documented.Count).IsGreaterThan(1);
 
-        var checkedFlags = 0;
-        foreach (var text in documented)
-        {
-            foreach (var (verb, flag) in VerbFlags(text))
-            {
-                using var db = new TempDb();
-                var args = verb.Split(' ').Concat([flag, "x"]).ToArray();
-                var (_, _, stderr) = await Run(db.DbPath, string.Empty, args);
-                if (stderr.Contains("unknown option", StringComparison.Ordinal) ||
-                    stderr.Contains("requires a value", StringComparison.Ordinal))
-                {
-                    throw new Exception($"{string.Join(' ', args)} was rejected: {stderr.Trim()}");
-                }
+        // The const usage literal is also matched by the usage-line regex, so dedupe the pairs
+        // before counting: a duplicated pair is not a covered pair.
+        var pairs = documented.SelectMany(VerbFlags).Distinct().ToList();
 
-                checkedFlags++;
+        // Exactly the flags written in brackets or piped together ("[--dry-run]",
+        // "[--brief|--q]", "[--drafts <file|->]"): the old token regex dropped every one, so
+        // these assertions are what makes the extraction fail loudly on a regression.
+        (string Verb, string Flag)[] required =
+        [
+            ("post", "--dry-run"),
+            ("dump", "--source"),
+            ("correlate", "--subject"),
+            ("correlate", "--matcher"),
+            ("check", "--subject"),
+            ("check", "--drafts"),
+            ("check", "--limit"),
+            ("search", "--q"),
+            ("search", "--brief"),
+            ("search", "--limit"),
+            ("dossier compile", "--budget"),
+            ("dossier compile", "--budget-mode"),
+            ("dossier compile", "--format"),
+            ("dossier compile", "--descendants"),
+            ("publish", "--out"),
+            ("publish", "--format"),
+            ("publish", "--subject"),
+            ("publish", "--facts"),
+            ("publish", "--assets"),
+            ("publish", "--respect-limits"),
+            ("import", "--from"),
+            ("import", "--db"),
+        ];
+        var missing = required
+            .Where(pair => !pairs.Contains(pair))
+            .Select(pair => $"{pair.Verb} {pair.Flag}")
+            .ToList();
+        await Assert.That(string.Join(", ", missing)).IsEqualTo(string.Empty);
+
+        // 43 distinct (verb, flag) pairs are documented today; falling to the floor means the
+        // extraction regressed, not that the docs shrank.
+        await Assert.That(pairs.Count).IsGreaterThan(40);
+
+        foreach (var (verb, flag) in pairs)
+        {
+            using var db = new TempDb();
+            var args = verb.Split(' ').Concat([flag, "x"]).ToArray();
+            var (_, _, stderr) = await Run(db.DbPath, string.Empty, args);
+            if (stderr.Contains("unknown option", StringComparison.Ordinal) ||
+                stderr.Contains("requires a value", StringComparison.Ordinal))
+            {
+                throw new Exception($"{string.Join(' ', args)} was rejected: {stderr.Trim()}");
             }
         }
-
-        await Assert.That(checkedFlags).IsGreaterThan(20);
     }
 
     [Test]
@@ -146,6 +180,8 @@ public sealed class CliArgTests
         var source = Path.Combine(db.Directory, "doc.md");
         await File.WriteAllTextAsync(source, "# Title\n\nbody\n");
         var outDir = Path.Combine(db.Directory, "bundle");
+        var drafts = Path.Combine(db.Directory, "drafts.json");
+        await File.WriteAllTextAsync(drafts, "[]");
 
         var runs = new (string[] Args, string Stdin)[]
         {
@@ -156,6 +192,8 @@ public sealed class CliArgTests
             (["dossier", "compile", "--subject", "Widget", "--budget", "200", "--budget-mode", "strict", "--depth", "full", "--format", "markdown", "--need", "x", "--descendants", "--order", "rank", "--recency", "0.5"], ""),
             (["publish", "--profile", RepoFilePath("profiles/copilot-studio.json"), "--respect-limits", "--out", outDir], ""),
             (["check", "--subject", "Widget"], ""),
+            // --drafts and --limit are the bracketed check flags; --drafts must accept a path.
+            (["check", "--subject", "Widget", "--drafts", drafts, "--limit", "5"], ""),
             (["dump", "--source", source, "--subject", "Widget", "--split", "heading", "--tag", "t", "--kind", "note", "--entity-subjects"], ""),
             (["correlate", "--subject", "Widget", "--matcher", "same_ref"], ""),
             (["import", "--from", outDir, "--db", Path.Combine(db.Directory, "import", "dossier.db")], ""),
@@ -201,7 +239,10 @@ public sealed class CliArgTests
 
         foreach (var segment in SplitTopLevel(text))
         {
-            var tokens = segment.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            // Bracket, paren, comma and pipe characters delimit alternatives inside a group
+            // ("[--dry-run]", "[--brief|--q]", "[--format md|jsonl]"), so they separate tokens
+            // too: "[--limit" and "--respect-limits]" are the flags --limit and --respect-limits.
+            var tokens = Regex.Split(segment, @"[\s\[\]()|,]+").Where(t => t.Length > 0).ToArray();
             if (tokens.Length == 0)
             {
                 continue;

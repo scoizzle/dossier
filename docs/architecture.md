@@ -9,7 +9,7 @@ One project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) with FTS5
 | `Models.cs` | Request, response and domain types |
 | `Store.cs` | `DossierStore`: the SQLite connection, schema and FTS5 index |
 | `PostFacts.cs` | Writes: resolution order (declared supersede, hash dedupe, insert), refs, attachments |
-| `Dump.cs` | Deterministic ingest, the markdown splitter and the Python code splitter |
+| `Dump.cs` | Deterministic ingest, and the markdown heading splitter |
 | `Correlate.cs` | The `same_ref` and `shared_tag` matchers |
 | `Search.cs` | Search, filters, reverse `ref_target` lookup |
 | `Compile.cs` | Ranking, budgeted selection, conflicts, gaps, markdown rendering |
@@ -37,7 +37,6 @@ contract/          JSON Schemas: subject, fact, ref, ops, dossier (the normative
 examples/          memos-bundle/ (committed publish output), NOTICE.md (upstream licenses)
 profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
 scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, scale-test.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
-scripts/dump-code-demo.sh  demo: dump a source file into linked facts
 scripts/smoke-aot.sh       smoke-test a published Native AOT binary
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output

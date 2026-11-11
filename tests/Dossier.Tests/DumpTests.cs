@@ -83,24 +83,6 @@ public sealed class DumpTests
     }
 
     [Test]
-    public async Task Dump_SplitsOnParagraphs()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "notes.txt", "para one\nline two\n\npara three\n\n\npara four");
-
-        var response = db.Store.Dump(Request(source, "paragraph"));
-
-        await Assert.That(response.Created.Count).IsEqualTo(3);
-        var texts = response.Created.Select(id => FactText(db, id)).ToList();
-        await Assert.That(texts.SequenceEqual(new[]
-        {
-            "para one\nline two",
-            "para three",
-            "para four",
-        })).IsTrue();
-    }
-
-    [Test]
     public async Task Dump_StoresRawBlobBeforeParsing()
     {
         using var db = new TempDb();
@@ -122,9 +104,9 @@ public sealed class DumpTests
     public async Task Dump_SkipsTooShortChunks()
     {
         using var db = new TempDb();
-        var source = WriteSource(db, "notes.txt", "ok paragraph\n\nab\n\nanother ok");
+        var source = WriteSource(db, "notes.md", "# ok heading\nok body\n#\n# another\nok body");
 
-        var response = db.Store.Dump(Request(source, "paragraph"));
+        var response = db.Store.Dump(Request(source, "heading"));
 
         await Assert.That(response.Created.Count).IsEqualTo(2);
         await Assert.That(response.Skipped.Count).IsEqualTo(1);
@@ -176,274 +158,8 @@ public sealed class DumpTests
         await Assert.That(text.Length).IsEqualTo(1000);
     }
 
-    private const string SamplePython = """"
-        """Module docstring that is not an entity."""
-        import os
-
-
-        def top(a, b):
-            """Add things.
-
-            Second paragraph is ignored.
-            """
-            return a + b
-
-
-        class Widget(Base):
-            """A widget."""
-
-            x = 1
-
-            def first(self):
-                return 1
-
-            def second(self):
-                def helper():
-                    return 2
-                return helper()
-
-            async def third(self):
-                return 3
-
-
-        async def runner():
-            pass
-        """";
-
-    private static DumpRequest CodeRequest(string source, bool entitySubjects = false) => new()
-    {
-        Source = source,
-        Subject = "mod",
-        Split = "code",
-        EntitySubjects = entitySubjects ? true : null,
-    };
-
-    private static System.Text.Json.JsonElement FactData(TempDb db, string id) => db.Store.Show(id)!.Fact.Data!.Value;
-
     [Test]
-    public async Task CodeSplit_EmitsOneFactPerEntity()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "mod.py", SamplePython);
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        var texts = response.Created.Select(id => FactText(db, id)).ToList();
-        await Assert.That(texts.SequenceEqual(new[]
-        {
-            "def top(a, b)",
-            "class Widget(Base)",
-            "def first(self)",
-            "def second(self)",
-            "def helper()",
-            "async def third(self)",
-            "async def runner()",
-        })).IsTrue();
-        await Assert.That(response.Errors.Count).IsEqualTo(0);
-    }
-
-    [Test]
-    public async Task CodeSplit_NestsMethodsUnderClass()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "klass.py", "class K:\n    def a(self):\n        pass\n\n    def b(self):\n        pass\n\n    def c(self):\n        pass\n");
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        await Assert.That(response.Created.Count).IsEqualTo(4);
-        var data = response.Created.Select(id => FactData(db, id)).ToList();
-        await Assert.That(data[0].GetProperty("parent").GetString()).IsEqualTo("klass");
-        await Assert.That(data[0].GetProperty("symbol").GetString()).IsEqualTo("K");
-        for (var index = 1; index <= 3; index++)
-        {
-            await Assert.That(data[index].GetProperty("parent").GetString()).IsEqualTo("K");
-            await Assert.That(data[index].GetProperty("entity_kind").GetString()).IsEqualTo("method");
-        }
-
-        await Assert.That(data[2].GetProperty("symbol").GetString()).IsEqualTo("K.b");
-    }
-
-    [Test]
-    public async Task CodeSplit_ExtractsSignatureDocstringAndLocator()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "mod.py", SamplePython);
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        var show = db.Store.Show(response.Created[0])!;
-        await Assert.That(show.Fact.Text).IsEqualTo("def top(a, b)");
-        await Assert.That(show.Fact.Tags!.Contains("entity:function")).IsTrue();
-        var data = show.Fact.Data!.Value;
-        await Assert.That(data.GetProperty("symbol").GetString()).IsEqualTo("top");
-        await Assert.That(data.GetProperty("entity_kind").GetString()).IsEqualTo("function");
-        await Assert.That(data.GetProperty("start_line").GetInt32()).IsEqualTo(5);
-        await Assert.That(data.GetProperty("end_line").GetInt32()).IsEqualTo(10);
-
-        var items = show.Fact.Items!.Value;
-        await Assert.That(items.GetArrayLength()).IsEqualTo(1);
-        await Assert.That(items[0].GetProperty("text").GetString()).IsEqualTo("Add things.");
-
-        var locator = show.Refs.Single().Locator!.Value;
-        await Assert.That(locator.GetProperty("line").GetInt32()).IsEqualTo(5);
-        await Assert.That(locator.GetProperty("symbol").GetString()).IsEqualTo("top");
-        await Assert.That(locator.GetProperty("selector").GetString()).IsEqualTo("L5-L10");
-    }
-
-    [Test]
-    public async Task CodeSplit_HandlesDecoratorsAndMultiLineSignatures()
-    {
-        using var db = new TempDb();
-        var longParams = string.Join(", ", Enumerable.Range(0, 60).Select(i => $"argument_{i}"));
-        var content =
-            "class C:\n" +
-            "    @staticmethod\n" +
-            "    def s(x):\n" +
-            "        return x\n" +
-            "\n" +
-            "    @classmethod\n" +
-            "    @other.deco(1, 2)\n" +
-            "    def c(cls):\n" +
-            "        return cls\n" +
-            "\n" +
-            "    def multi(\n" +
-            "        self,\n" +
-            "        a: int,\n" +
-            "        b: str = \"x:y\",\n" +
-            "    ) -> int:\n" +
-            "        text = \"\"\"\n" +
-            "def fake(): pass\n" +
-            "\"\"\"\n" +
-            "        return 1\n" +
-            "\n" +
-            $"    def wide(self, {longParams}):\n" +
-            "        pass\n";
-        var source = WriteSource(db, "deco.py", content);
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        await Assert.That(response.Created.Count).IsEqualTo(5);
-        var shows = response.Created.Select(id => db.Store.Show(id)!).ToList();
-        await Assert.That(shows[1].Fact.Data!.Value.GetProperty("entity_kind").GetString()).IsEqualTo("static_method");
-        await Assert.That(shows[1].Fact.Tags!.Contains("decorator:staticmethod")).IsTrue();
-        await Assert.That(shows[1].Fact.Data!.Value.GetProperty("start_line").GetInt32()).IsEqualTo(2);
-        await Assert.That(shows[2].Fact.Data!.Value.GetProperty("entity_kind").GetString()).IsEqualTo("class_method");
-        await Assert.That(shows[2].Fact.Tags!.Contains("decorator:classmethod")).IsTrue();
-        await Assert.That(shows[2].Fact.Tags!.Contains("decorator:other.deco")).IsTrue();
-        await Assert.That(shows[3].Fact.Text).IsEqualTo("def multi( self, a: int, b: str = \"x:y\", ) -> int");
-        await Assert.That(shows[3].Fact.Data!.Value.GetProperty("start_line").GetInt32()).IsEqualTo(11);
-        await Assert.That(shows[3].Fact.Data!.Value.GetProperty("end_line").GetInt32()).IsEqualTo(19);
-
-        var wide = shows[4].Fact;
-        await Assert.That(wide.Text!.Length).IsLessThanOrEqualTo(240);
-        await Assert.That(wide.Text.EndsWith('\u2026')).IsTrue();
-        await Assert.That(wide.Tags!.Contains("signature_truncated")).IsTrue();
-        await Assert.That(shows[3].Fact.Tags!.Contains("signature_truncated")).IsFalse();
-    }
-
-    [Test]
-    public async Task CodeSplit_NonPythonFallsBackToParagraph()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "notes.txt", "def not_python():\n    pass\n\nsecond paragraph");
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        await Assert.That(response.Created.Count).IsEqualTo(2);
-        await Assert.That(FactText(db, response.Created[0])).IsEqualTo("def not_python():\n    pass");
-        await Assert.That(response.Errors.Count).IsEqualTo(1);
-        await Assert.That(response.Errors[0].Contains("split_fallback")).IsTrue();
-    }
-
-    [Test]
-    public async Task EntitySubjects_CreateChildSubjectsWithParentAndContainsFact()
-    {
-        using var db = new TempDb();
-        var source = WriteSource(db, "mod.py", SamplePython);
-
-        var response = db.Store.Dump(CodeRequest(source, entitySubjects: true));
-
-        // 7 entity facts + 3 contains facts (top, Widget, runner).
-        await Assert.That(response.Errors.Count).IsEqualTo(0);
-        await Assert.That(response.Created.Count).IsEqualTo(10);
-
-        using var connection = db.Store.OpenConnection();
-        using var command = connection.CreateCommand();
-        command.CommandText = "SELECT id, name, kind, parent_id FROM subjects ORDER BY name";
-        var subjects = new List<(string Id, string Name, string Kind, string? Parent)>();
-        using (var reader = command.ExecuteReader())
-        {
-            while (reader.Read())
-            {
-                subjects.Add((reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.IsDBNull(3) ? null : reader.GetString(3)));
-            }
-        }
-
-        var module = subjects.Single(s => s.Name == "mod");
-        await Assert.That(subjects.Count).IsEqualTo(8);
-        var second = subjects.Single(s => s.Name == "mod::Widget.second");
-        await Assert.That(second.Kind).IsEqualTo("method");
-        await Assert.That(second.Parent).IsEqualTo(module.Id);
-        await Assert.That(subjects.Single(s => s.Name == "mod::Widget").Kind).IsEqualTo("class");
-        await Assert.That(subjects.Single(s => s.Name == "mod::runner").Kind).IsEqualTo("async_function");
-
-        var moduleFacts = db.Store.Search(new SearchRequest { Subject = module.Id, Limit = 50 }).Hits;
-        await Assert.That(moduleFacts.Count).IsEqualTo(3);
-        var texts = moduleFacts.Select(h => h.Text).OrderBy(t => t, StringComparer.Ordinal).ToList();
-        await Assert.That(texts.SequenceEqual(new[] { "contains async_function runner", "contains class Widget", "contains function top" })).IsTrue();
-        var widgetId = subjects.Single(s => s.Name == "mod::Widget").Id;
-        var widgetEdge = db.Store.Show(moduleFacts.Single(h => h.Text == "contains class Widget").Id)!.Refs.Single();
-        await Assert.That(widgetEdge.Rel).IsEqualTo("contains");
-        await Assert.That(widgetEdge.Kind).IsEqualTo("subject");
-        await Assert.That(widgetEdge.Target).IsEqualTo(widgetId);
-
-        var widgetFacts = db.Store.Search(new SearchRequest { Subject = widgetId, Limit = 50 }).Hits;
-        await Assert.That(widgetFacts.Count).IsEqualTo(1);
-        await Assert.That(widgetFacts[0].Text).IsEqualTo("class Widget(Base)");
-    }
-
-    [Test]
-    public async Task CodeSplit_IsDeterministicAcrossRuns()
-    {
-        using var first = new TempDb();
-        using var second = new TempDb();
-        var sourceA = WriteSource(first, "mod.py", SamplePython);
-        var sourceB = WriteSource(second, "mod.py", SamplePython);
-
-        var a = first.Store.Dump(CodeRequest(sourceA));
-        var b = second.Store.Dump(CodeRequest(sourceB));
-        var again = first.Store.Dump(CodeRequest(sourceA));
-
-        string Signature(TempDb db, string id)
-        {
-            var fact = db.Store.Show(id)!.Fact;
-            return fact.Text + "|" + fact.Data!.Value.GetRawText();
-        }
-
-        await Assert.That(a.Created.Select(id => Signature(first, id)).SequenceEqual(b.Created.Select(id => Signature(second, id)))).IsTrue();
-        await Assert.That(again.Created.Count).IsEqualTo(0);
-        await Assert.That(again.Deduped.SequenceEqual(a.Created)).IsTrue();
-    }
-
-    [Test]
-    public async Task CodeSplit_IgnoresDefinitionsInsideStringsAndComments()
-    {
-        using var db = new TempDb();
-        var content = "# def commented(): pass\nTEXT = \"\"\"\ndef in_string(): pass\nclass Nope: pass\n\"\"\"\n\ndef real(x):\n    \'\'\'One-line doc.\'\'\'\n    return x\n";
-        var source = WriteSource(db, "str.py", content);
-
-        var response = db.Store.Dump(CodeRequest(source));
-
-        await Assert.That(response.Created.Count).IsEqualTo(1);
-        var show = db.Store.Show(response.Created[0])!;
-        await Assert.That(show.Fact.Text).IsEqualTo("def real(x)");
-        await Assert.That(show.Fact.Data!.Value.GetProperty("start_line").GetInt32()).IsEqualTo(7);
-        await Assert.That(show.Fact.Data!.Value.GetProperty("end_line").GetInt32()).IsEqualTo(9);
-        await Assert.That(show.Fact.Items!.Value[0].GetProperty("text").GetString()).IsEqualTo("One-line doc.");
-    }
-
-    [Test]
-    public async Task CodeSplit_IsAcceptedByContractSchema()
+    public async Task ContractSchema_SplitEnumIsHeadingFileNone_AndEntitySubjectsIsAbsent()
     {
         var path = RepoFilePath(Path.Combine("contract", "ops.schema.json"));
         using var schema = JsonDocument.Parse(File.ReadAllText(path));
@@ -452,12 +168,176 @@ public sealed class DumpTests
         var split = dump.GetProperty("split").GetProperty("enum").EnumerateArray()
             .Select(value => value.GetString())
             .ToList();
-        await Assert.That(split.Contains("code")).IsTrue();
+        await Assert.That(split.SequenceEqual(new[] { "heading", "file", "none" })).IsTrue();
+        await Assert.That(dump.TryGetProperty("entity_subjects", out _)).IsFalse();
+    }
 
-        var entitySubjects = dump.GetProperty("entity_subjects");
-        await Assert.That(entitySubjects.GetProperty("type").GetString()).IsEqualTo("boolean");
-        await Assert.That(entitySubjects.TryGetProperty("default", out var fallback) && fallback.ValueKind == JsonValueKind.False).IsTrue();
-        await Assert.That(entitySubjects.GetProperty("description").GetString()).Contains("default false");
+    [Test]
+    public async Task InvalidSplit_WritesNoBlob()
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n");
+
+        var response = db.Store.Dump(Request(source, "paragraph"));
+
+        var root = db.Store.BlobRoot;
+        await Assert.That(!Directory.Exists(root) || !Directory.EnumerateFileSystemEntries(root).Any()).IsTrue();
+        await Assert.That(response.Errors.Count).IsEqualTo(1);
+        await Assert.That(response.Errors[0]).IsEqualTo("invalid_split: split must be heading, file, or none, got \"paragraph\"");
+        await Assert.That(response.Created.Count).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task MissingSource_WithInvalidSplit_ReportsReadFailed()
+    {
+        // Characterization: green on arrival. Pins precedence: read_failed before invalid_split.
+        using var db = new TempDb();
+        var missing = Path.Combine(Path.GetDirectoryName(WriteSource(db, "x.py", "x"))!, "does-not-exist.py");
+
+        var response = db.Store.Dump(Request(missing, "paragraph"));
+
+        await Assert.That(response.Errors.Count).IsEqualTo(1);
+        await Assert.That(response.Errors[0].StartsWith("read_failed:", StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    public async Task SplitFile_Markdown_IsOneChunkWithWholeFileSelector()
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var source = WriteSource(db, "doc.md", "# One\nalpha\n## Two\nbeta\n");
+
+        var response = db.Store.Dump(Request(source, "file"));
+
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+        var shown = db.Store.Show(response.Created[0])!;
+        await Assert.That(shown.Fact.Text!.Contains("# One", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(shown.Fact.Text!.Contains("## Two", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(shown.Refs.Single().Locator!.Value.GetRawText().Contains("L1-L4", StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    [Arguments("notes.txt")]
+    [Arguments("mod.py")]
+    public async Task NoSplit_NonMarkdown_IsOneWholeFileChunk(string name)
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var source = WriteSource(db, name, "# not a heading\nline two\nline three\n");
+
+        var response = db.Store.Dump(Request(source));
+
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+        var shown = db.Store.Show(response.Created[0])!;
+        await Assert.That(shown.Refs.Single().Locator!.Value.GetRawText().Contains("L1-L3", StringComparison.Ordinal)).IsTrue();
+    }
+
+    private const string InvalidSplitMessage = "invalid_split: split must be heading, file, or none";
+
+    [Test]
+    [Arguments("paragraph")]
+    [Arguments("code")]
+    public async Task RemovedSplit_IsRejectedAsInvalidSplit_Library(string split)
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n\nsecond paragraph\n");
+
+        var response = db.Store.Dump(Request(source, split));
+
+        await Assert.That(response.Created.Count).IsEqualTo(0);
+        await Assert.That(response.Errors.Count).IsEqualTo(1);
+        await Assert.That(response.Errors[0].StartsWith(InvalidSplitMessage, StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    [Arguments("paragraph")]
+    [Arguments("code")]
+    public async Task RemovedSplit_IsRejectedAsInvalidSplit_Mcp(string split)
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n\nsecond paragraph\n");
+        var arguments = JsonSerializer.Serialize(new { source, subject = "Widget", split });
+        var reply = new McpServer(db.Store).Handle(
+            "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"tools/call\",\"params\":{\"name\":\"dump\",\"arguments\":" + arguments + "}}")!;
+        var text = JsonDocument.Parse(reply.ToJsonString()).RootElement
+            .GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!;
+        var manifest = JsonDocument.Parse(text).RootElement;
+
+        await Assert.That(manifest.GetProperty("created").GetArrayLength()).IsEqualTo(0);
+        var error = manifest.GetProperty("errors")[0].GetString()!;
+        await Assert.That(error.StartsWith(InvalidSplitMessage, StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    [Arguments("paragraph")]
+    [Arguments("code")]
+    public async Task RemovedSplit_IsRejectedAsInvalidSplit_Cli(string split)
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n\nsecond paragraph\n");
+
+        var (_, output) = await RunCli(db, "dump", "--source", source, "--subject", "Widget", "--split", split);
+
+        var manifest = JsonDocument.Parse(output).RootElement;
+        await Assert.That(manifest.GetProperty("created").GetArrayLength()).IsEqualTo(0);
+        var error = manifest.GetProperty("errors")[0].GetString()!;
+        await Assert.That(error.StartsWith(InvalidSplitMessage, StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    public async Task EntitySubjects_IsIgnored_Library()
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n\nsecond paragraph\n");
+        var request = JsonSerializer.Deserialize<DumpRequest>(
+            JsonSerializer.Serialize(new { source, subject = "Widget", entity_subjects = true }), JsonCodec.Options)!;
+
+        var response = db.Store.Dump(request);
+
+        await Assert.That(response.Errors.Count).IsEqualTo(0);
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+        await Assert.That(SubjectCount(db)).IsEqualTo(1);
+    }
+
+    [Test]
+    public async Task EntitySubjects_FlagIsIgnored_Cli()
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n\nsecond paragraph\n");
+
+        var (exit, output) = await RunCli(db, "dump", "--source", source, "--subject", "Widget", "--entity-subjects");
+
+        await Assert.That(exit).IsEqualTo(0);
+        var manifest = JsonDocument.Parse(output).RootElement;
+        await Assert.That(manifest.GetProperty("errors").GetArrayLength()).IsEqualTo(0);
+        await Assert.That(manifest.GetProperty("created").GetArrayLength()).IsEqualTo(1);
+        await Assert.That(SubjectCount(db)).IsEqualTo(1);
+    }
+
+    private static long SubjectCount(TempDb db)
+    {
+        using var connection = db.Store.OpenConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT COUNT(*) FROM subjects";
+        return (long)command.ExecuteScalar()!;
+    }
+
+    private static async Task<(int Exit, string Out)> RunCli(TempDb db, params string[] args)
+    {
+        var info = new System.Diagnostics.ProcessStartInfo("dotnet") { RedirectStandardOutput = true, RedirectStandardError = true, UseShellExecute = false };
+        info.ArgumentList.Add(Path.Combine(AppContext.BaseDirectory, "Dossier.dll"));
+        foreach (var arg in args)
+        {
+            info.ArgumentList.Add(arg);
+        }
+
+        info.Environment["DOSSIER_DB"] = db.DbPath;
+        using var process = System.Diagnostics.Process.Start(info)!;
+        var stdout = process.StandardOutput.ReadToEndAsync();
+        var stderr = process.StandardError.ReadToEndAsync();
+        await process.WaitForExitAsync();
+        _ = await stderr;
+        return (process.ExitCode, await stdout);
     }
 
     private static string RepoFilePath(string relative)

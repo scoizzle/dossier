@@ -65,7 +65,7 @@ while IFS= read -r rel; do
   esac
   subj="${rel%.*}"
   t0="$(now)"
-  out="$(dos dump --source "$SRC/$rel" --subject "$subj" --split paragraph --kind "$kind")"
+  out="$(dos dump --source "$SRC/$rel" --subject "$subj" --kind "$kind")"
   t1="$(now)"
   n="$(printf '%s' "$out" | jq '.created | length')"
   total=$((total + n))

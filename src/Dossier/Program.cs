@@ -1,6 +1,6 @@
 using Dossier;
 
-const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject]|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--format md|jsonl] [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --max-files --max-file-bytes --max-total-bytes --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject <name>] [--matcher <name>]...|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--format md|jsonl] [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --max-files --max-file-bytes --max-total-bytes --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -70,7 +70,6 @@ try
                 Subject = subject,
                 Kind = ValueAfter(args, "--kind"),
                 Split = ValueAfter(args, "--split"),
-                EntitySubjects = args.Contains("--entity-subjects") ? true : null,
                 Tags = ValuesAfter(args, "--tag"),
             };
 

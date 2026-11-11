@@ -89,6 +89,13 @@
     // later clean expansion never hides truncation that still applies. A new mount (new root) starts at 0.
     var truncatedSeen = { subjects: 0, facts: 0, edges: 0 };
     var destroyed = false;
+    // Subjects the user expanded. A refresh re-fetches the root and each of them, so the view keeps
+    // following the store without a new mount.
+    var expandedList = [];
+    var selectedChanged = false;
+
+    // Radius follows the subject's fact count; a refresh recomputes it whenever it adopts new data.
+    function subjectRadius(s) { return 8 + 2.5 * Math.sqrt(Math.max(0, Number(s.facts) || 0)); }
 
     function place(n, rand, anchor, disc) {
       var a = rand() * Math.PI * 2;
@@ -102,8 +109,10 @@
       nodes.push(n);
     }
 
-    // Adds what is new, keeps every existing node (and its position), refreshes degrees.
-    function merge(payload, anchorKey) {
+    // Adds what is new, keeps every existing node (and its position), refreshes degrees. Incoming data is
+    // adopted in place: a refresh never removes anything (a retracted fact shows through its status). A
+    // boundary subject is a stub, so it never replaces the fuller record already held for that subject.
+    function merge(payload, anchorKey, nearParent) {
       var rand = mulberry32(parseInt(payload.seed, 16) || 1);
       var anchor = anchorKey ? nodeByKey[anchorKey] || null : null;
       var added = [];
@@ -114,19 +123,32 @@
       for (i = 0; i < subs.length; i++) {
         var s = subs[i];
         var sk = nodeKey('subject', s.id);
-        if (nodeByKey[sk]) {
-          if (!s.boundary && nodeByKey[sk].data.boundary) nodeByKey[sk].data = s;
+        var held = nodeByKey[sk];
+        if (held) {
+          if (!s.boundary) {
+            held.data = s;
+            held.r = subjectRadius(s);
+            if (held === selected) selectedChanged = true;
+          }
           continue;
         }
-        var sn = { type: 'subject', id: s.id, key: sk, data: s, hue: (hueCount++ * 47) % 360, deg: 0, anchor: null, r: 8 + 2.5 * Math.sqrt(Math.max(0, Number(s.facts) || 0)) };
+        var sn = { type: 'subject', id: s.id, key: sk, data: s, hue: (hueCount++ * 47) % 360, deg: 0, anchor: null, r: subjectRadius(s) };
         nodeByKey[sk] = sn;
-        place(sn, rand, anchor, disc);
+        // A refreshed root anchors a new subject next to its parent, so the layout grows where it belongs.
+        var near = nearParent && s.parent ? nodeByKey[nodeKey('subject', s.parent)] || null : null;
+        var at = near || anchor;
+        place(sn, rand, at, at ? 70 : disc);
         added.push(sn);
       }
       for (i = 0; i < facts.length; i++) {
         var f = facts[i];
         var fk = nodeKey('fact', f.id);
-        if (nodeByKey[fk]) continue;
+        var known = nodeByKey[fk];
+        if (known) {
+          known.data = f;
+          if (known === selected) selectedChanged = true;
+          continue;
+        }
         var owner = nodeByKey[nodeKey('subject', f.subject)];
         var fn = { type: 'fact', id: f.id, key: fk, data: f, hue: owner ? owner.hue : 0, deg: 0, anchor: owner || null, r: 4 };
         nodeByKey[fk] = fn;
@@ -156,6 +178,11 @@
         edges: Math.max(truncatedSeen.edges, Number(t.edges) || 0),
       };
       if (!rootKey && payload.root) rootKey = nodeKey('subject', payload.root);
+      // The open panel is rebuilt only when its node's data moved on, and quietly: no focus grab, no resize.
+      if (selectedChanged) {
+        selectedChanged = false;
+        if (selected) renderPanel(selected, true);
+      }
       return added;
     }
 
@@ -180,6 +207,9 @@
     var alpha = 1;
     var ticks = 0;
     var maxTicks = 300;
+    // True while a restart() is settling: that settle releases the holds it was started with, so a
+    // nothing-added merge must leave them alone instead of clearing them early.
+    var layoutPending = false;
 
     function tick() {
       var n = nodes.length;
@@ -250,7 +280,7 @@
       }
       alpha *= 0.985;
       ticks++;
-      if (ticks >= maxTicks || alpha < 0.01) releaseHolds();
+      if (ticks >= maxTicks || alpha < 0.01) { layoutPending = false; releaseHolds(); }
     }
 
     function releaseHolds() {
@@ -394,6 +424,7 @@
     function restart(ticksToRun) {
       alpha = Math.max(alpha, 0.6);
       ticks = 0;
+      layoutPending = true;
       if (reduced) {
         while (settling()) tick();
         draw();
@@ -457,8 +488,11 @@
       return list;
     }
 
-    function showPanel(nd) {
-      selected = nd;
+    // Builds the panel for `nd`. `quiet` is the refresh path: the node's data moved on underneath the
+    // reader, so the text is replaced without moving focus out of the panel, without a resize and without
+    // touching the view.
+    function renderPanel(nd, quiet) {
+      var hadFocus = !!(quiet && doc.activeElement && panel.contains(doc.activeElement));
       panel.textContent = '';
       panel.hidden = false;
       var close = el('button', 'Close', panel);
@@ -513,9 +547,19 @@
       }
       // The rebuild above dropped focus; park it on the heading so keyboard users keep their place.
       heading.setAttribute('tabindex', '-1');
+      if (quiet) {
+        // Only a reader who was already in the panel stays there: a refresh never steals focus.
+        if (hadFocus) heading.focus();
+        return;
+      }
       heading.focus();
       resize();
       schedule();
+    }
+
+    function showPanel(nd) {
+      selected = nd;
+      renderPanel(nd, false);
     }
 
     function closePanel() {
@@ -635,35 +679,185 @@
         if (destroyed) return;
         for (var k = 0; k < nodes.length; k++) nodes[k].hold = true; // existing nodes stay where they are
         var added = merge(payload, nd.key);
+        remember(subject);
         status.textContent = '';
         refreshHeader();
         if (added.length) restart(20);
-        else { releaseHolds(); schedule(); }
+        else {
+          if (!layoutPending) releaseHolds();
+          schedule();
+        }
       }).catch(function (err) {
         status.textContent = 'error: ' + cap(err && err.message, 200);
       });
     }
 
-    var ready = fetchJson(url(rootId)).then(function (payload) {
-      if (destroyed) return;
-      merge(payload, null);
-      refreshHeader();
-      resize();
-      if (reduced) {
-        while (settling()) tick();
-        fit();
-        draw();
-      } else {
-        for (var i = 0; i < 60; i++) tick();
-        fit();
-        schedule();
+    // ---- refresh: the loaded graph follows the store (S4) ---------------------------------
+    var refreshing = false;
+    var dirty = false;
+
+    function expandedIds() {
+      var out = [];
+      for (var k = 0; k < expandedList.length; k++) out.push(expandedList[k]);
+      return out;
+    }
+
+    function remember(subject) {
+      if (typeof subject !== 'string' || !ID_RE.test(subject)) return;
+      if (expandedList.indexOf(subject) < 0) expandedList.push(subject);
+    }
+
+    // Re-fetch the root and every expanded neighbourhood and merge them in place. Existing nodes are held
+    // and nothing is removed, so positions, selection and zoom survive; only newly seen nodes are placed.
+    function refresh() {
+      if (destroyed) return Promise.resolve();
+      if (refreshing) { dirty = true; return Promise.resolve(); }
+      refreshing = true;
+      var queue = expandedIds();
+      var added = [];
+      var k;
+      for (k = 0; k < nodes.length; k++) nodes[k].hold = true; // as expand does
+
+      // One failing subject (a 404 after a retraction, say) must not abort the rest of the refresh.
+      function chain(i) {
+        if (destroyed || i >= queue.length) return Promise.resolve();
+        var subject = queue[i];
+        return fetchJson(url(subject)).then(function (payload) {
+          if (!destroyed) added = added.concat(merge(payload, nodeKey('subject', subject), true));
+        }).catch(function () { /* that subject is gone: keep the nodes we have and go on */ })
+          .then(function () { return chain(i + 1); });
       }
-    }).catch(function (err) {
-      status.textContent = 'error: ' + cap(err && err.message, 200);
-    });
+
+      // The finally: `refreshing` is cleared and the holds released on every path, success or failure.
+      function finish() {
+        refreshing = false;
+        if (destroyed) return;
+        refreshHeader();
+        if (added.length) restart(20);
+        else {
+          // An expansion may be mid-settle; its last tick releases every hold, so do not clear them here.
+          if (!layoutPending) releaseHolds();
+          schedule();
+        }
+        if (dirty) { dirty = false; return refresh(); }
+      }
+
+      var work = fetchJson(url(rootId)).then(function (payload) {
+        if (destroyed) return;
+        added = added.concat(merge(payload, null, true));
+        return chain(0);
+      }).catch(function () { /* a transient refresh error is not a status line: the channel retries */ });
+      return work.then(finish, finish);
+    }
+
+    // ---- live channel: EventSource on /api/events, polling /api/revision as the fallback (S5) -----
+    var revisionSeen = -1; // the last revision this view has adopted
+    var stream = null;
+    var pollTimer = 0;
+    var liveTimer = 0;
+    var DEBOUNCE_MS = 250;
+    var POLL_MS = 1000;
+
+    function stopStream() {
+      var s = stream;
+      if (!s) return;
+      stream = null;
+      s.onerror = null;
+      if (typeof s.close === 'function') s.close();
+    }
+
+    // Trailing debounce: a burst of revisions costs one refresh.
+    function scheduleRefresh() {
+      if (destroyed) return;
+      if (typeof win.setTimeout !== 'function') { refresh(); return; }
+      if (liveTimer && typeof win.clearTimeout === 'function') win.clearTimeout(liveTimer);
+      liveTimer = win.setTimeout(function () {
+        liveTimer = 0;
+        if (!destroyed) refresh();
+      }, DEBOUNCE_MS);
+    }
+
+    function onRevision(n) {
+      if (destroyed || !Number.isFinite(n)) return;
+      if (n < revisionSeen) { revisionSeen = n; scheduleRefresh(); return; } // the store was replaced: adopt and reload
+      if (n === revisionSeen) return;
+      revisionSeen = n;
+      scheduleRefresh();
+    }
+
+    function poll() {
+      if (destroyed) return;
+      fetchJson('/api/revision').then(function (body) {
+        if (destroyed) return;
+        onRevision(Number.isFinite(body && body.revision) ? body.revision : NaN);
+      }).catch(function () { /* the next tick retries */ });
+    }
+
+    function startPolling() {
+      if (destroyed || pollTimer) return;
+      stopStream();
+      if (typeof win.setInterval !== 'function') return;
+      pollTimer = win.setInterval(poll, POLL_MS);
+    }
+
+    function listen() {
+      if (destroyed) return;
+      if (typeof win.EventSource !== 'function') { startPolling(); return; }
+      var es;
+      try {
+        es = new win.EventSource('/api/events');
+      } catch (err) {
+        startPolling(); // no stream available: the revision poll still keeps the view current
+        return;
+      }
+      stream = es;
+      es.addEventListener('revision', function (ev) { onRevision(parseInt(ev && ev.data, 10)); });
+      es.onerror = function () {
+        if (destroyed) return;
+        if (es.readyState === 2) startPolling(); // CLOSED (e.g. 503 busy): fall back to polling
+      };
+    }
+
+    function initialLoad() {
+      return fetchJson(url(rootId)).then(function (payload) {
+        if (destroyed) return;
+        merge(payload, null);
+        refreshHeader();
+        resize();
+        if (reduced) {
+          while (settling()) tick();
+          fit();
+          draw();
+        } else {
+          for (var i = 0; i < 60; i++) tick();
+          fit();
+          schedule();
+        }
+      }).catch(function (err) {
+        status.textContent = 'error: ' + cap(err && err.message, 200);
+      });
+    }
+
+    // The baseline costs one request before the graph. Without EventSource and without a timer there is
+    // nothing to listen with, so such a host keeps its single request.
+    var ready;
+    if (typeof win.EventSource === 'function' || typeof win.setInterval === 'function') {
+      ready = fetchJson('/api/revision').then(function (body) {
+        revisionSeen = Number.isFinite(body && body.revision) ? body.revision : -1;
+      }).catch(function () { revisionSeen = -1; })
+        .then(initialLoad)
+        .then(function () { listen(); }); // listen even if the first load failed: refresh must still work
+    } else {
+      ready = initialLoad();
+    }
 
     function destroy() {
       destroyed = true;
+      stopStream();
+      if (liveTimer && typeof win.clearTimeout === 'function') win.clearTimeout(liveTimer);
+      liveTimer = 0;
+      if (pollTimer && typeof win.clearInterval === 'function') win.clearInterval(pollTimer);
+      pollTimer = 0;
       doc.removeEventListener('keydown', onKey);
       win.removeEventListener('resize', onResize);
       if (rafHandle && win.cancelAnimationFrame) win.cancelAnimationFrame(rafHandle);
@@ -674,6 +868,7 @@
       destroy: destroy,
       merge: function (payload, anchorKey) { var added = merge(payload, anchorKey || null); refreshHeader(); return added; },
       expand: expand,
+      refresh: refresh,
       select: function (key) { var nd = nodeByKey[key]; if (nd) focusNode(nd); },
       nodes: nodes,
       edges: edges,

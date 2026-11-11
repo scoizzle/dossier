@@ -31,7 +31,10 @@ function ok(cond, msg) {
 const clone = (v) => JSON.parse(JSON.stringify(v));
 const brief = (list) => (list.length ? ': ' + list.length + ' e.g. ' + list.slice(0, 2).join('; ') : '');
 
-function makeEnv(reduce) {
+// `live` installs the fake clock (and, for 'event', the EventSource stub) the live-update scenarios need.
+// Passing nothing leaves the window without timers or EventSource, exactly like the earlier scenarios, so
+// graph.js keeps its single graph request and their url indices stay valid.
+function makeEnv(reduce, live) {
   const state = { activeElement: null };
   const violations = []; // anything that could turn data into markup, links or navigation
   const created = [];
@@ -143,6 +146,42 @@ function makeEnv(reduce) {
   };
   Object.defineProperty(window, 'location', { get: () => locationProxy, set: (v) => navigation.push('window.location=' + v) });
 
+  // A manual clock on absolute time: nothing fires until advance() is called, so debounce and poll
+  // windows are exact even across several calls.
+  const clock = { seq: 0, now: 0, timers: [] };
+  const eventSources = [];
+  function advance(ms) {
+    const until = clock.now + ms;
+    for (let guard = 0; guard < 1000; guard++) {
+      const due = clock.timers.filter((t) => t.at <= until).sort((a, b) => a.at - b.at)[0];
+      if (!due) break;
+      clock.now = due.at;
+      if (due.every) due.at += due.every; else clock.timers = clock.timers.filter((t) => t !== due);
+      due.fn();
+    }
+    clock.now = until;
+  }
+  if (live) {
+    window.setTimeout = (fn, ms) => { const id = ++clock.seq; clock.timers.push({ id, fn, at: clock.now + (ms || 0) }); return id; };
+    window.clearTimeout = (id) => { clock.timers = clock.timers.filter((t) => t.id !== id); };
+    window.setInterval = (fn, ms) => { const id = ++clock.seq; clock.timers.push({ id, fn, at: clock.now + (ms || 1), every: ms || 1 }); return id; };
+    window.clearInterval = (id) => { clock.timers = clock.timers.filter((t) => t.id !== id); };
+    if (live === 'event') {
+      function EventSource(url) {
+        this.url = url;
+        this.readyState = 0;
+        this.closed = false;
+        this.listeners = {};
+        eventSources.push(this);
+      }
+      EventSource.prototype.addEventListener = function (t, fn) { (this.listeners[t] ||= []).push(fn); };
+      EventSource.prototype.close = function () { this.readyState = 2; this.closed = true; };
+      EventSource.prototype.emit = function (t, data) { (this.listeners[t] || []).slice().forEach((fn) => fn({ type: t, data })); };
+      EventSource.prototype.fail = function () { this.readyState = 2; if (this.onerror) this.onerror({ type: 'error' }); };
+      window.EventSource = EventSource;
+    }
+  }
+
   const sandbox = { window, document, Math, Infinity, parseInt, String, Number, Object, Array, JSON };
   vm.createContext(sandbox);
   try {
@@ -171,7 +210,7 @@ function makeEnv(reduce) {
     return { host, instance, urls };
   }
 
-  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, calls, runFrames, counters, mount, window };
+  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, calls, runFrames, counters, mount, window, clock, eventSources, advance };
 }
 
 const ids = (list) => list.map((n) => n.id);
@@ -611,6 +650,290 @@ async function ownerLinkScenario() {
   instance.destroy();
 }
 
+// ---- scenario: an in-place refresh adopts new data and adds what is new (S4) ------------------
+const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
+const ROOT_URL = '/api/graph?subject=s-root&depth=1&facts=true&max_nodes=500';
+
+async function liveRefreshScenario() {
+  const check = (cond, msg) => ok(cond, '[refresh] ' + msg);
+  const env = makeEnv(true);
+  let payload = clone(fixture);
+  const { host, instance, urls } = await env.mount(fixture.root, () => payload);
+  const panel = host.byTag('aside')[0];
+  const core = () => instance.nodes.find((n) => n.key === 'subject:s-core');
+  const fact2 = () => instance.nodes.find((n) => n.key === 'fact:f-root-2');
+  const view = () => [instance.view.scale, instance.view.tx, instance.view.ty].join();
+
+  const r0 = core().r;
+  await instance.expand(core());
+  check(urls[1] === '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500', 'expand fetched s-core: ' + urls[1]);
+  instance.select('subject:s-core');
+  const heading0 = panel.byTag('h2')[0];
+  check(env.state.activeElement === heading0, 'the subject panel heading holds focus before the refresh');
+
+  const positions = new Map(instance.nodes.map((n) => [n.key, [n.x, n.y]]));
+  const view0 = view();
+  const edges0 = instance.edges.length;
+
+  // The store moves on: s-core gains facts, a root fact is retracted, a new root fact appears.
+  payload = clone(fixture);
+  payload.subjects.find((s) => s.id === 's-core').facts = 5;
+  payload.subjects.find((s) => s.id === 's-root').facts = 3;
+  payload.facts.find((f) => f.id === 'f-root-1').status = 'retracted';
+  payload.facts.find((f) => f.id === 'f-root-2').status = 'stale';
+  payload.facts.push({ id: 'f-root-3', subject: 's-root', kind: 'note', text: 'fresh fact', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+  payload.subjects.push({ id: 's-fresh', name: 'Fresh', kind: 'module', parent: 's-core', facts: 0 });
+
+  const base = urls.length;
+  await instance.refresh();
+  await settle();
+  check(urls.length === base + 2 && urls[base] === ROOT_URL &&
+    urls[base + 1] === '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500',
+    'refresh fetched the root then each expanded subject: ' + urls.slice(base).join(' | '));
+  check([...positions].every(([k, xy]) => { const nd = instance.nodes.find((x) => x.key === k); return nd && nd.x === xy[0] && nd.y === xy[1]; }),
+    'refresh keeps every existing node position');
+  check(core().data.facts === 5, 'the subject data is adopted (facts = ' + core().data.facts + ')');
+  check(core().r > r0, 'the subject radius is recomputed from the adopted data (' + r0 + ' -> ' + core().r + ')');
+  check(fact2().data.status === 'stale', 'a fact record is taken from the refresh (status ' + fact2().data.status + ')');
+  check(!!instance.nodes.find((n) => n.key === 'fact:f-root-3'), 'a new fact from the refresh is added');
+  const fresh = instance.nodes.find((n) => n.key === 'subject:s-fresh');
+  const near = fresh ? Math.round(Math.hypot(fresh.x - core().x, fresh.y - core().y)) : NaN;
+  check(!!fresh && near <= 120, 'a new subject lands next to its parent (' + near + 'px from s-core)');
+  check(view() === view0, 'refresh leaves scale/tx/ty untouched (' + view() + ')');
+  check(panel.hidden === false && panel.byTag('h2')[0] && panel.byTag('h2')[0].textContent === heading0.textContent,
+    'the same subject stays open');
+  check(panel.byTag('dd').map((d) => d.textContent).includes('5'), 'the open panel shows the new fact count: ' + panel.byTag('dd').map((d) => d.textContent).join(','));
+  check(env.state.activeElement === panel.byTag('h2')[0], 'the panel heading keeps focus (no focus jump)');
+
+  const nodes1 = instance.nodes.length;
+  const base2 = urls.length;
+  await instance.refresh();
+  await settle();
+  check(urls.length === base2 + 2, 'a second refresh fetches the same pair (' + (urls.length - base2) + ')');
+  check(instance.nodes.length === nodes1 && instance.edges.length === edges0, 'identical data adds nothing (' + instance.nodes.length + ' nodes, ' + instance.edges.length + ' refs)');
+  check(instance.nodes.every((n) => n.hold === false), 'no node is left held after a no-op refresh');
+  check(view() === view0, 'the view still matches after the second refresh');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  instance.destroy();
+}
+
+// ---- scenario: one failing subject does not abort the rest of a refresh ----------------------
+async function refreshFailureScenario() {
+  const check = (cond, msg) => ok(cond, '[refresh-fail] ' + msg);
+  const env = makeEnv(true);
+  const urls = [];
+  let payload = clone(fixture);
+  let failCore = false;
+  let failOther = false;
+  const go = (u) => {
+    urls.push(u);
+    if (failCore && u.includes('subject=s-core')) return Promise.reject(new Error('gone'));
+    if (failOther && u.includes('subject=s-other')) return Promise.reject(new Error('expand failed'));
+    if (u.includes('subject=s-web')) return Promise.resolve(clone(wide));
+    return Promise.resolve(clone(payload));
+  };
+  const wide = clone(fixture);
+  wide.facts.push({ id: 'f-web-2', subject: 's-web', kind: 'note', text: 'wide fact', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+
+  const host = new env.El('div');
+  const instance = env.window.DossierGraph.mount(host, fixture.root, { fetchJson: go });
+  await instance.ready;
+  const status = host.byClass('g-status')[0];
+  const byKey = (k) => instance.nodes.find((n) => n.key === k);
+
+  await instance.expand(byKey('subject:s-core'));
+  await instance.expand(byKey('subject:s-web'));
+  failOther = true;
+  await instance.expand(byKey('subject:s-other'));
+  await settle();
+  check(status.textContent === 'error: expand failed', 'the failing expansion left its status line: "' + status.textContent + '"');
+  check(instance.nodes.every((n) => n.hold === false), 'the failing expansion released its holds');
+
+  failCore = true;
+  const base = urls.length;
+  await instance.refresh();
+  await settle();
+  check(urls.slice(base).join(' | ') === [ROOT_URL,
+    '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500',
+    '/api/graph?subject=s-web&depth=1&facts=true&max_nodes=500'].join(' | '),
+    'a refresh fetches the root then both expanded subjects: ' + urls.slice(base).join(' | '));
+  check(!!byKey('fact:f-web-2'), 'the remaining subject merged even though s-core failed');
+  check(status.textContent === 'error: expand failed', 'a failed refresh does not overwrite the status line: "' + status.textContent + '"');
+  check(instance.nodes.every((n) => n.hold === false), 'a failed refresh releases every hold');
+
+  failCore = false;
+  payload = clone(fixture);
+  payload.facts.push({ id: 'f-root-9', subject: 's-root', kind: 'note', text: 'later', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+  const later = urls.length;
+  await instance.refresh();
+  await settle();
+  check(urls.length === later + 3, 'refreshing is cleared, so a later refresh runs again (' + (urls.length - later) + ' fetches)');
+  check(!!byKey('fact:f-root-9'), 'the later refresh merged');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  instance.destroy();
+}
+
+// ---- scenario: the EventSource channel drives the refresh (S5) -------------------------------
+async function liveStreamScenario() {
+  const check = (cond, msg) => ok(cond, '[live] ' + msg);
+  const env = makeEnv(true, 'event');
+  let revision = 5;
+  let payload = clone(fixture);
+  const { host, instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : payload));
+  const panel = host.byTag('aside')[0];
+  const view = () => [instance.view.scale, instance.view.tx, instance.view.ty].join();
+
+  check(urls[0] === '/api/revision' && urls[1] === ROOT_URL, 'baseline request, then the graph: ' + urls.join(' | '));
+  check(env.eventSources.length === 1 && env.eventSources[0].url === '/api/events', 'one EventSource on /api/events');
+  const es = env.eventSources[0];
+  instance.select('subject:s-root');
+  const positions = new Map(instance.nodes.map((n) => [n.key, [n.x, n.y]]));
+  const view0 = view();
+
+  let n = urls.length;
+  es.emit('revision', '5');
+  env.advance(1000);
+  await settle();
+  check(urls.length === n, 'an event equal to the baseline fetches nothing (' + (urls.length - n) + ')');
+
+  payload = clone(fixture);
+  payload.facts.find((f) => f.id === 'f-root-2').status = 'retracted';
+  es.emit('revision', '6');
+  env.advance(200);
+  await settle();
+  check(urls.length === n, 'the debounce has not fired at 200ms');
+  env.advance(50);
+  await settle();
+  check(urls.length === n + 1 && urls[n] === ROOT_URL, 'a bumped revision refreshes once after the 250ms debounce: ' + urls.slice(n).join(' | '));
+  check(instance.nodes.find((x) => x.key === 'fact:f-root-2').data.status === 'retracted', 'the live data is adopted');
+  check([...positions].every(([k, xy]) => { const nd = instance.nodes.find((x) => x.key === k); return nd.x === xy[0] && nd.y === xy[1]; }),
+    'positions survive the live refresh');
+  check(view() === view0, 'zoom survives the live refresh (' + view() + ')');
+  check(panel.hidden === false && panel.byTag('h2')[0].textContent === 'Acme', 'the open panel is kept');
+
+  n = urls.length;
+  es.emit('revision', '7');
+  env.advance(100);
+  await settle();
+  es.emit('revision', '8');
+  env.advance(250);
+  await settle();
+  check(urls.length === n + 1, 'two events inside the window coalesce into one refresh (' + (urls.length - n) + ')');
+
+  instance.destroy();
+  check(es.closed === true, 'destroy() closes the stream');
+  n = urls.length;
+  es.emit('revision', '9');
+  env.advance(1000);
+  await settle();
+  check(urls.length === n, 'no fetch follows an event after destroy (' + (urls.length - n) + ')');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+}
+
+// ---- scenario: a refresh asked for mid-flight coalesces into one more pass -------------------
+async function refreshDirtyScenario() {
+  const check = (cond, msg) => ok(cond, '[refresh-dirty] ' + msg);
+  const env = makeEnv(true);
+  const urls = [];
+  let gate = null;
+  const instance = env.window.DossierGraph.mount(new env.El('div'), fixture.root, {
+    fetchJson: (u) => {
+      urls.push(u);
+      if (gate && u === ROOT_URL) { const p = gate; gate = null; return p; }
+      return Promise.resolve(clone(fixture));
+    },
+  });
+  await instance.ready;
+  const base = urls.length;
+  let release = () => {};
+  gate = new Promise((resolve) => { release = () => resolve(clone(fixture)); });
+  const first = instance.refresh();
+  instance.refresh(); // arrives while the first is in flight: only marks it dirty
+  await settle();
+  check(urls.length === base + 1, 'a refresh started mid-flight fetches nothing itself (' + (urls.length - base) + ')');
+  release();
+  await first;
+  await settle();
+  check(urls.length === base + 2 && urls[base + 1] === ROOT_URL, 'the dirty flag runs exactly one more pass: ' + (urls.length - base) + ' fetches');
+  instance.destroy();
+}
+
+// ---- scenario: destroy() before the first fetch settles starts nothing ----------------------
+async function destroyBeforeReadyScenario() {
+  const check = (cond, msg) => ok(cond, '[destroy] ' + msg);
+  const env = makeEnv(true, 'event');
+  const urls = [];
+  const host = new env.El('div');
+  const instance = env.window.DossierGraph.mount(host, fixture.root, {
+    fetchJson: (u) => { urls.push(u); return Promise.resolve(clone(u === '/api/revision' ? { revision: 2 } : fixture)); },
+  });
+  instance.destroy();
+  await instance.ready;
+  await settle();
+  check(env.eventSources.length === 0, 'no EventSource is constructed after destroy() (' + env.eventSources.length + ')');
+  check(env.clock.timers.length === 0, 'no timer or interval is armed after destroy() (' + env.clock.timers.length + ')');
+  check(urls.length === 2, 'only the baseline and graph requests were issued: ' + urls.join(' | '));
+  check(instance.nodes.length === 0, 'nothing was merged after destroy()');
+  env.advance(2000);
+  await settle();
+  check(env.clock.timers.length === 0 && urls.length === 2, 'nothing fires later');
+  instance.destroy();
+}
+
+// ---- scenario: a refused stream falls back to polling ---------------------------------------
+async function eventSourceClosedScenario() {
+  const check = (cond, msg) => ok(cond, '[stream-closed] ' + msg);
+  const env = makeEnv(true, 'event');
+  let revision = 4;
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : fixture));
+  const es = env.eventSources[0];
+  check(!!es && env.eventSources.length === 1, 'the stream is open');
+  const base = urls.length;
+  es.fail();
+  check(es.closed === true, 'a stream that reaches CLOSED is closed by the client');
+  check(env.clock.timers.length === 1, 'the polling fallback is armed (' + env.clock.timers.length + ')');
+
+  revision = 7;
+  env.advance(1000);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === '/api/revision', 'the fallback polls /api/revision: ' + urls.slice(base).join(' | '));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 2 && urls[base + 1] === ROOT_URL, 'a bumped polled revision refreshes once: ' + urls.slice(base).join(' | '));
+  env.advance(1000);
+  await settle();
+  check(urls.length === base + 3, 'polling keeps one interval and an unchanged revision does not refresh');
+
+  instance.destroy();
+  check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
+}
+
+// ---- scenario: without EventSource the baseline poll drives the refresh ---------------------
+async function pollingFallbackScenario() {
+  const check = (cond, msg) => ok(cond, '[poll] ' + msg);
+  const env = makeEnv(true, 'poll');
+  let revision = 1;
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : fixture));
+  check(env.eventSources.length === 0, 'no EventSource without the constructor');
+  check(urls[0] === '/api/revision' && urls[1] === ROOT_URL, 'baseline request, then the graph: ' + urls.join(' | '));
+  check(env.clock.timers.length === 1, 'one poll interval is armed (' + env.clock.timers.length + ')');
+
+  const base = urls.length;
+  env.advance(1000);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === '/api/revision', 'a tick fetches /api/revision');
+  revision = 2;
+  env.advance(1000);
+  await settle();
+  check(urls[base + 1] === '/api/revision', 'the next tick sees the bumped revision: ' + urls.slice(base).join(' | '));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 3 && urls[base + 2] === ROOT_URL, 'the bump triggers exactly one refresh: ' + urls.slice(base).join(' | '));
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  instance.destroy();
+  check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
+}
+
 await interactionScenario('reduced-motion', true);
 await interactionScenario('animated', false);
 await ownerLinkScenario();
@@ -623,6 +946,19 @@ await fixtureXssScenario(true);
 await fixtureXssScenario(false);
 await xssScenario(true);
 await xssScenario(false);
+
+// The live-update scenarios report a throw as a failure so one broken expectation does not hide the rest.
+for (const [name, fn] of [
+  ['live-refresh', liveRefreshScenario],
+  ['refresh-fail', refreshFailureScenario],
+  ['refresh-dirty', refreshDirtyScenario],
+  ['live-stream', liveStreamScenario],
+  ['destroy-before-ready', destroyBeforeReadyScenario],
+  ['stream-closed', eventSourceClosedScenario],
+  ['polling', pollingFallbackScenario],
+]) {
+  try { await fn(); } catch (err) { failed++; console.error('FAIL [' + name + '] threw: ' + ((err && err.message) || err)); }
+}
 
 if (failed) { console.error(failed + ' check(s) failed'); process.exit(1); }
 console.log('graph smoke: all checks passed');

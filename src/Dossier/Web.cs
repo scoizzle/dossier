@@ -1,7 +1,10 @@
+using System.Collections.Concurrent;
+using System.Globalization;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
+using Microsoft.Data.Sqlite;
 
 namespace Dossier;
 
@@ -14,13 +17,41 @@ namespace Dossier;
 /// </summary>
 public sealed class WebServer : IDisposable
 {
+    /// <summary>Concurrent event streams per server; the next one gets <c>503 busy</c>.</summary>
+    private const int MaxEventStreams = 8;
+
+    private static readonly TimeSpan DefaultRevisionPollInterval = TimeSpan.FromMilliseconds(500);
+    private static readonly TimeSpan KeepaliveInterval = TimeSpan.FromSeconds(5);
+
+    /// <summary>The SSE preamble: EventSource reconnects after one second.</summary>
+    private static readonly byte[] RetryFrame = Encoding.UTF8.GetBytes("retry: 1000\n\n");
+
+    /// <summary>A comment line long enough to keep idle proxies from closing the stream.</summary>
+    private static readonly byte[] KeepaliveFrame = Encoding.UTF8.GetBytes(": keepalive " + new string(' ', 1024) + "\n\n");
+
     private readonly DossierStore store;
     private readonly HttpListener listener = new();
-    private Task? loop;
+    private readonly TimeSpan revisionPollInterval;
+    private readonly CancellationTokenSource shutdown = new();
+    private readonly ConcurrentDictionary<Task, byte> handlers = new();
 
-    public WebServer(DossierStore store, int port)
+    private readonly object revisionLock = new();
+    private long revision;
+    private TaskCompletionSource revisionChanged = NewSignal();
+
+    private Task? loop;
+    private Task? poller;
+    private int openStreams;
+    private int stopped;
+
+    /// <param name="revisionPollInterval">
+    /// How often the background poller reads <see cref="DossierStore.Revision"/>. Short values keep tests
+    /// fast; the default is what a person running <c>dossier serve</c> gets.
+    /// </param>
+    public WebServer(DossierStore store, int port, TimeSpan? revisionPollInterval = null)
     {
         this.store = store;
+        this.revisionPollInterval = revisionPollInterval ?? DefaultRevisionPollInterval;
         Port = port;
         listener.Prefixes.Add($"http://127.0.0.1:{port}/");
         if (ShouldAddLocalhostPrefix(ResolveLocalhost(), CanBind))
@@ -144,15 +175,37 @@ public sealed class WebServer : IDisposable
 
     public void Start()
     {
+        // Read once here so a stream opened before the first poll already has a truthful baseline.
+        revision = ReadRevision();
         listener.Start();
         loop = Task.Run(Loop);
+        poller = Task.Run(PollRevisionAsync);
     }
 
     public void Stop()
     {
-        if (listener.IsListening)
+        if (Interlocked.Exchange(ref stopped, 1) != 0)
         {
-            listener.Stop();
+            return;
+        }
+
+        try
+        {
+            shutdown.Cancel();
+        }
+        catch (ObjectDisposedException)
+        {
+        }
+
+        try
+        {
+            if (listener.IsListening)
+            {
+                listener.Stop();
+            }
+        }
+        catch (ObjectDisposedException)
+        {
         }
 
         try
@@ -163,11 +216,41 @@ public sealed class WebServer : IDisposable
         {
         }
 
-        listener.Close();
+        var running = handlers.Keys.ToArray();
+        if (running.Length > 0)
+        {
+            try
+            {
+                Task.WaitAll(running, TimeSpan.FromSeconds(2));
+            }
+            catch (AggregateException)
+            {
+            }
+        }
+
+        try
+        {
+            poller?.Wait(TimeSpan.FromSeconds(2));
+        }
+        catch (AggregateException)
+        {
+        }
+
+        try
+        {
+            listener.Close();
+        }
+        catch (ObjectDisposedException)
+        {
+        }
     }
 
     public void Dispose() => Stop();
 
+    /// <summary>
+    /// Accepts one context at a time but never runs a handler on this loop: each context is dispatched and
+    /// tracked before the next accept, so an open event stream cannot starve other requests.
+    /// </summary>
     private async Task Loop()
     {
         while (listener.IsListening)
@@ -175,25 +258,46 @@ public sealed class WebServer : IDisposable
             HttpListenerContext context;
             try
             {
-                context = await listener.GetContextAsync();
+                context = await listener.GetContextAsync().ConfigureAwait(false);
             }
             catch (Exception exception) when (exception is HttpListenerException or ObjectDisposedException or InvalidOperationException)
             {
                 return;
             }
 
+            var handler = Task.Run(() => HandleTrackedAsync(context));
+            handlers[handler] = 0;
+            _ = handler.ContinueWith(
+                static (task, state) => ((ConcurrentDictionary<Task, byte>)state!).TryRemove(task, out _),
+                handlers,
+                CancellationToken.None,
+                TaskContinuationOptions.ExecuteSynchronously,
+                TaskScheduler.Default);
+        }
+    }
+
+    /// <summary>No exception escapes a handler: a failed request still gets an answer, or is aborted.</summary>
+    private async Task HandleTrackedAsync(HttpListenerContext context)
+    {
+        try
+        {
+            await HandleAsync(context).ConfigureAwait(false);
+        }
+        catch (Exception exception)
+        {
             try
             {
-                Handle(context);
-            }
-            catch (Exception exception)
-            {
                 Write(context, 500, "application/json", Ops.Serialize(ErrorEnvelope.Of("internal", exception.Message)));
+            }
+            catch (Exception writeException) when (writeException is IOException or HttpListenerException or ObjectDisposedException or InvalidOperationException or SocketException)
+            {
+                // The response had already started (a stream) or the peer is gone: drop the connection.
+                TryAbort(context.Response);
             }
         }
     }
 
-    private void Handle(HttpListenerContext context)
+    private async Task HandleAsync(HttpListenerContext context)
     {
         var request = context.Request;
         if (!IsLoopbackHost(request.Headers["Host"], Port))
@@ -217,6 +321,14 @@ public sealed class WebServer : IDisposable
             {
                 case "/":
                     Write(context, 200, "text/html; charset=utf-8", IndexHtml());
+                    break;
+
+                case "/api/revision":
+                    Write(context, 200, "application/json", Ops.Serialize(new RevisionResponse(store.Revision())));
+                    break;
+
+                case "/api/events":
+                    await StreamEventsAsync(context).ConfigureAwait(false);
                     break;
 
                 case "/api/search":
@@ -289,6 +401,169 @@ public sealed class WebServer : IDisposable
         catch (FormatException exception)
         {
             Write(context, 400, "application/json", Ops.Serialize(ErrorEnvelope.Of("invalid_request", exception.Message)));
+        }
+    }
+
+    /// <summary>
+    /// Server-Sent Events: a baseline <c>revision</c> event, then one per observed change, and a comment
+    /// keepalive while idle. The stream never blocks the accept loop and ends quietly on any write failure.
+    /// </summary>
+    private async Task StreamEventsAsync(HttpListenerContext context)
+    {
+        if (Interlocked.Increment(ref openStreams) > MaxEventStreams)
+        {
+            // The refused request never held a slot, so the counter stays balanced.
+            Interlocked.Decrement(ref openStreams);
+            Write(context, 503, "application/json", Ops.Serialize(ErrorEnvelope.Of("busy", $"at most {MaxEventStreams} live event streams")));
+            return;
+        }
+
+        try
+        {
+            var response = context.Response;
+            response.StatusCode = 200;
+            response.ContentType = "text/event-stream; charset=utf-8";
+            response.SendChunked = true;
+            response.KeepAlive = true;
+            response.AddHeader("Cache-Control", "no-store");
+            response.AddHeader("Content-Security-Policy", ContentSecurityPolicy);
+            response.AddHeader("X-Content-Type-Options", "nosniff");
+
+            var token = shutdown.Token;
+            var output = response.OutputStream;
+
+            // Latest value and its signal are read together, so a change between the read and the await
+            // completes the task already in hand instead of being lost.
+            long sent;
+            Task changed;
+            lock (revisionLock)
+            {
+                sent = revision;
+                changed = revisionChanged.Task;
+            }
+
+            await output.WriteAsync(RetryFrame, token).ConfigureAwait(false);
+            await output.FlushAsync(token).ConfigureAwait(false);
+            await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
+
+            while (!token.IsCancellationRequested)
+            {
+                try
+                {
+                    await changed.WaitAsync(KeepaliveInterval, token).ConfigureAwait(false);
+                }
+                catch (TimeoutException)
+                {
+                    await output.WriteAsync(KeepaliveFrame, token).ConfigureAwait(false);
+                    await output.FlushAsync(token).ConfigureAwait(false);
+                    continue;
+                }
+
+                long current;
+                lock (revisionLock)
+                {
+                    current = revision;
+                    changed = revisionChanged.Task;
+                }
+
+                // A replaced store restarts the counter, so inequality is the test, not growth.
+                if (current != sent)
+                {
+                    sent = current;
+                    await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
+                }
+            }
+        }
+        catch (OperationCanceledException)
+        {
+            TryAbort(context.Response);
+        }
+        catch (Exception exception) when (exception is IOException or HttpListenerException or ObjectDisposedException or InvalidOperationException or SocketException)
+        {
+            TryAbort(context.Response);
+        }
+        finally
+        {
+            Interlocked.Decrement(ref openStreams);
+        }
+    }
+
+    private static async Task WriteRevisionAsync(Stream output, long value, CancellationToken token)
+    {
+        var frame = Encoding.UTF8.GetBytes($"event: revision\ndata: {value.ToString(CultureInfo.InvariantCulture)}\n\n");
+        await output.WriteAsync(frame, token).ConfigureAwait(false);
+        await output.FlushAsync(token).ConfigureAwait(false);
+    }
+
+    private static void TryAbort(HttpListenerResponse response)
+    {
+        try
+        {
+            response.Abort();
+        }
+        catch (Exception exception) when (exception is ObjectDisposedException or InvalidOperationException or HttpListenerException)
+        {
+        }
+    }
+
+    private static TaskCompletionSource NewSignal() => new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+    /// <summary>
+    /// Polls the durable revision counter and wakes every open stream on a change. A locked or missing
+    /// database is not fatal: the next tick retries.
+    /// </summary>
+    private async Task PollRevisionAsync()
+    {
+        var token = shutdown.Token;
+        while (!token.IsCancellationRequested)
+        {
+            try
+            {
+                await Task.Delay(revisionPollInterval, token).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException)
+            {
+                return;
+            }
+
+            long value;
+            try
+            {
+                value = store.Revision();
+            }
+            catch (SqliteException)
+            {
+                continue;
+            }
+            catch (ObjectDisposedException)
+            {
+                return;
+            }
+
+            TaskCompletionSource? signal = null;
+            lock (revisionLock)
+            {
+                if (value != revision)
+                {
+                    revision = value;
+                    signal = revisionChanged;
+                    revisionChanged = NewSignal();
+                }
+            }
+
+            signal?.TrySetResult();
+        }
+    }
+
+    private long ReadRevision()
+    {
+        try
+        {
+            return store.Revision();
+        }
+        catch (Exception exception) when (exception is SqliteException or ObjectDisposedException)
+        {
+            return 0;
         }
     }
 

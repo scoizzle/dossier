@@ -15,7 +15,7 @@ public sealed class WebTests
         using var db = new TempDb();
         var factId = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha web fact"))).Response.Facts[0].Id;
 
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         try
         {
             using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
@@ -44,7 +44,7 @@ public sealed class WebTests
         using var db = new TempDb();
         db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha web fact")));
 
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         await Assert.That(server.Port).IsGreaterThan(0);
         try
         {
@@ -81,7 +81,7 @@ public sealed class WebTests
         using var db = new TempDb();
         GraphSeed.Populate(db.Store);
 
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         try
         {
             using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
@@ -128,12 +128,12 @@ public sealed class WebTests
         using var db = new TempDb();
         GraphSeed.Populate(db.Store);
 
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         try
         {
             using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
 
-            foreach (var path in new[] { "", "app.js", "graph.js", "api/graph?subject=s-root", "api/graph?depth=9", "api/graph?subject=nobody", "nothing-here" })
+            foreach (var path in new[] { "", "app.js", "graph.js", "api/revision", "api/graph?subject=s-root", "api/graph?depth=9", "api/graph?subject=nobody", "nothing-here" })
             {
                 var response = await http.GetAsync(path);
                 var csp = response.Headers.GetValues("Content-Security-Policy").Single();
@@ -177,7 +177,7 @@ public sealed class WebTests
     public async Task Web_ServesLocalhostByName()
     {
         using var db = new TempDb();
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         try
         {
             using var http = new HttpClient();
@@ -195,7 +195,7 @@ public sealed class WebTests
     public async Task Web_ForeignHostIsNeverServed()
     {
         using var db = new TempDb();
-        using var server = await StartServerAsync(db.Store);
+        using var server = await TestServers.StartAsync(db.Store);
         try
         {
             using var http = new HttpClient();
@@ -315,7 +315,7 @@ public sealed class WebTests
     public async Task Web_PortInUseStillThrows()
     {
         using var db = new TempDb();
-        using var first = await StartServerAsync(db.Store);
+        using var first = await TestServers.StartAsync(db.Store);
         try
         {
             using var second = new WebServer(db.Store, first.Port);
@@ -335,37 +335,5 @@ public sealed class WebTests
         {
             first.Stop();
         }
-    }
-
-    /// <summary>
-    /// Starts a web server on a fresh random port. The previous pattern reserved an ephemeral
-    /// port with a TcpListener, released it, then bound the same number, so another process could
-    /// claim the port in the gap. Here the port is bound directly and a failed bind is retried on
-    /// a new port, bounded and without sleeps. The range avoids the OS ephemeral range used by
-    /// outgoing test connections.
-    /// </summary>
-    private static Task<WebServer> StartServerAsync(DossierStore store)
-    {
-        const int FirstPort = 20_000;
-        const int LastPortExclusive = 32_000;
-        const int Attempts = 50;
-
-        for (var attempt = 0; attempt < Attempts; attempt++)
-        {
-            var server = new WebServer(store, Random.Shared.Next(FirstPort, LastPortExclusive));
-            try
-            {
-                server.Start();
-            }
-            catch (Exception exception) when (exception is HttpListenerException or SocketException)
-            {
-                server.Dispose();
-                continue;
-            }
-
-            return Task.FromResult(server);
-        }
-
-        throw new InvalidOperationException($"could not bind a loopback port after {Attempts} attempts");
     }
 }

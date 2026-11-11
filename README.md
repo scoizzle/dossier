@@ -360,13 +360,16 @@ Pick the archive that matches your machine:
 
 On Linux, `uname -m` tells you which one: `x86_64` means `linux-x64`, `aarch64` means `linux-arm64`. `cannot execute binary file: Exec format error` means you downloaded the wrong architecture.
 
-Each archive extracts into a single directory, `dossier-<version>-<rid>/`, containing the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory, then extract:
+Each archive extracts into a single directory, `dossier-<version>-<rid>/`, containing the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory and, optionally, check its build provenance, then extract:
 
 ```sh
 sha256sum -c --ignore-missing SHA256SUMS      # Linux
 shasum -a 256 -c --ignore-missing SHA256SUMS  # macOS
+gh attestation verify dossier-<version>-linux-arm64.tar.gz --repo scoizzle/dossier  # build provenance
 tar -xzf dossier-<version>-linux-arm64.tar.gz && cd dossier-<version>-linux-arm64
 ```
+
+Each archive carries a GitHub artifact attestation proving it was built by this repository's release workflow from the tagged commit (releases published before attestations were added have none). `gh attestation verify` needs GitHub CLI 2.49 or later; use the `.zip` name for `win-x64`. `SHA256SUMS` itself is not attested; the attestations cover the four archives.
 
 Platform notes:
 

@@ -3,6 +3,7 @@
 Release archives, platform notes and verification. Back to the [README](../README.md). Maintainers cutting a release: [releasing](releasing.md).
 
 ## Choosing and verifying an archive
+
 Pick the archive that matches your machine:
 
 | Archive | Machines |
@@ -14,7 +15,7 @@ Pick the archive that matches your machine:
 
 On Linux, `uname -m` tells you which one: `x86_64` means `linux-x64`, `aarch64` means `linux-arm64`. `cannot execute binary file: Exec format error` means you downloaded the wrong architecture.
 
-Each archive extracts into a single directory, `dossier-<version>-<rid>/`, containing the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, this README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory and, optionally, check its build provenance, then extract:
+Each archive extracts into a single directory, `dossier-<version>-<rid>/`, containing the `dossier` binary (`dossier.exe` on Windows), the native SQLite library, the README, `LICENSE`, `THIRD-PARTY-NOTICES.md`, and `dotnet-runtime-THIRD-PARTY-NOTICES.TXT` (the .NET runtime's own notices). Keep the native SQLite library beside the binary; the binary does not run without it. Verify a download against `SHA256SUMS` in the same directory and, optionally, check its build provenance, then extract:
 
 ```sh
 sha256sum -c --ignore-missing SHA256SUMS      # Linux

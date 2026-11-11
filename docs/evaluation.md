@@ -26,6 +26,7 @@ Accuracy: two independent agents, one given only arm A and one given only arm B,
 - The default `rank.recency` term is derived from wall-clock `created_at` and can rank differently across machines. `rank.recency=0` is the reproducible mode.
 
 The project's success bar (at least 90% of raw-dump accuracy at no more than 25% of the tokens across both eval domains) is not yet established: only one domain has been measured.
+
 ## Reproducing the evaluation
 
 ```sh

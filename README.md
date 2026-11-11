@@ -19,15 +19,19 @@ The expensive reading happens once, when facts are captured. Facts are linked by
 
 ## Quick start
 
-**Release binary.** Download the archive for your machine from the [releases page](https://github.com/scoizzle/dossier/releases) (`linux-x64`, `linux-arm64`, `osx-arm64`, `win-x64`), then verify and extract:
+**Release binary.** Download the archive for your machine and `SHA256SUMS` from the same [release](https://github.com/scoizzle/dossier/releases) (`linux-x64`, `linux-arm64`, `osx-arm64`, `win-x64`), then verify and extract (`win-x64` ships as a `.zip`; extract it with your usual tool):
 
 ```sh
 shasum -a 256 -c --ignore-missing SHA256SUMS   # Linux: sha256sum -c --ignore-missing SHA256SUMS
-gh attestation verify dossier-<version>-<rid>.tar.gz --repo scoizzle/dossier   # optional build provenance
-tar -xzf dossier-<version>-<rid>.tar.gz && cd dossier-<version>-<rid>
+gh attestation verify <archive> --repo scoizzle/dossier   # optional build provenance
+tar -xzf <archive> && cd dossier-<version>-<rid>   # for the .tar.gz archives
 export DOSSIER_DB=./dossier.db
 ./dossier init   # Windows: dossier.exe init
+./dossier dump --source README.md --subject Demo
+./dossier dossier compile --subject Demo --format markdown
 ```
+
+The first run prints a created/deduped manifest, and the compile prints a cited dossier with `used_tokens` above a `# Demo` heading.
 
 macOS binaries are unsigned: if Gatekeeper blocks them, run `xattr -dr com.apple.quarantine <extracted dir>`. Platform requirements and details: [install](https://github.com/scoizzle/dossier/blob/main/docs/install.md). Next: [The core loop](#the-core-loop) below shows what to do with the store.
 
@@ -50,12 +54,14 @@ used_tokens: 709
 
 ## Conflicts
 
-- composerMaxRows: 12 [8a8aa039-f1a3-4e35-be48-441ff1c368d5]; 6 [1c1cd226-3817-4475-b274-37e4e77473ae]
+- composerMaxRows: 12 [8a8aa039-...]; 6 [1c1cd226-...]
 - headerHeight: 64 [80899598-...]; 72 [3340714d-...]
 - saveShortcut: "Cmd+Enter" [55e5a8f6-...]; "Ctrl+Enter" [b70c6049-...]
 ```
 
 ## The core loop
+
+The examples below write `dossier`; prefix it with `./` when it is the extracted binary and not on your `PATH`.
 
 - `dossier dump --source <path> --subject <name>` ingests raw material deterministically into facts (idempotent).
 - `dossier post --file <request.json>` writes structured facts with declared refs.
@@ -80,7 +86,7 @@ Also: `show`, `retract`, `import`, `mcp`, `serve`. Full reference: [cli](https:/
 - Refs are the only edge; similarity never creates one.
 - Facts are immutable; correction is a new fact that supersedes the old one.
 - Conflicts and gaps are surfaced in every dossier, never hidden to save tokens.
-- Strict budget mode is bounded: cost stays at or below the budget however large the corpus grows. The default `complete` mode is not bounded.
+- Strict budget mode is bounded: cost stays at or below the budget however large the corpus grows (the bound covers fact content; conflicts and gaps are never charged against it, so they are never hidden). The default `complete` mode is not bounded.
 - Writes fail closed (the item is rejected with a reason); compile fails open (last good dossier plus a degraded marker).
 
 ## Documentation

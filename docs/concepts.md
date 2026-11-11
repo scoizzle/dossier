@@ -39,6 +39,7 @@ Invariants:
 - Writes fail closed (the item is rejected with a reason); compile fails open (last good dossier plus a degraded marker).
 
 The normative shapes are the JSON Schemas in `contract/` (`subject`, `fact`, `ref`, `ops`, `dossier`).
+
 ## Budget modes
 
 `compile` and `publish` take `--budget-mode complete|strict` (JSON: `budget_mode`).
@@ -47,6 +48,7 @@ The normative shapes are the JSON Schemas in `contract/` (`subject`, `fact`, `re
 - **strict**: near-duplicates still cluster into one representative whose `cites` list the collapsed fact ids, then the facts are cut to the budget and the remainder is listed in `dropped`. Only strict mode gives the bounded-cost guarantee below.
 
 Conflicts and gaps behave the same in both modes. An invalid value exits non-zero and names the accepted values.
+
 ## The guarantee (strict mode)
 
 In strict mode, for a given subject and budget, the compiled dossier costs at most the budget regardless of how large the corpus grows. In complete mode (the default) there is no such bound. This boundedness, not any single compression ratio, is the claim worth relying on, and `scripts/scaling.sh` and the eval pass `--budget-mode strict` explicitly.

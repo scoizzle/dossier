@@ -11,6 +11,7 @@ Reference for the three surfaces over the same core functions: the CLI verbs, th
 **correlate** proposes refs between facts using deterministic matchers (`same_ref`, `shared_tag`): `dossier correlate [--subject <name>]`. Proposals carry basis `derived`, are returned and never written, and are never asserted as truth.
 
 **retrieve** finds facts or compiles a dossier. `dossier search` takes text and filters, including reverse-impact lookup with `--ref-target`. `dossier dossier compile --subject <name> --budget <n>` compiles the cited, budgeted dossier.
+
 ## Quick start in full
 
 Needs the .NET 10 SDK, and `jq` and bash for the seed script.
@@ -43,8 +44,6 @@ used_tokens: 709
 ```
 
 The seed script prints `subjects_created=5` and `facts_created=32`.
-
-
 
 ## Surfaces
 

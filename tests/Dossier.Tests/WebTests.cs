@@ -219,10 +219,62 @@ public sealed class WebTests
             ("localhost:8787", true), ("LOCALHOST:8787", true), ("localhost", true), ("127.0.0.1:8787", true),
             ("[::1]:8787", true), (null, true), ("", true),
             ("127.0.0.1:9999", false), ("evil.test:8787", false), ("127.0.0.1.evil.test:8787", false), ("localhost.evil.test:8787", false),
+
+            // Edge cases, pinning current behaviour. A trailing dot is not the name "localhost"
+            // and the guard compares names ordinally, so both reject: false.
+            ("localhost.", false), ("127.0.0.1.", false),
+            // An empty port is not the serve port: false.
+            ("localhost:", false),
+            // Whitespace is neither trimmed from the name nor accepted around the port: false, false.
+            (" localhost:8787", false), ("localhost:8787 ", false),
+            // Userinfo leaves the name "user@localhost", which is not a loopback name: false.
+            ("user@localhost:8787", false),
+            // A loopback name with no port is accepted: true.
+            ("127.0.0.1", true),
+            // The bracketed form with no port is accepted: true.
+            ("[::1]", true),
+            // An unterminated bracket is never a loopback form: false.
+            ("[::1", false),
+            // Only the compressed spelling is recognised; the expanded address is not: false.
+            ("[0:0:0:0:0:0:0:1]:8787", false),
         ];
         foreach (var (host, ok) in cases)
         {
-            await Assert.That(WebServer.IsLoopbackHost(host, 8787)).IsEqualTo(ok);
+            await Assert.That(WebServer.IsLoopbackHost(host, 8787)).IsEqualTo(ok).Because($"host '{host}' guard result");
+        }
+    }
+
+    [Test]
+    public async Task ShouldAddLocalhostPrefix_OnlyWhenEveryAddressIsLoopbackAndTheFirstBinds()
+    {
+        static Func<IPAddress, bool> Binds(params IPAddress[] bindable) => address => bindable.Contains(address);
+
+        IPAddress v4 = IPAddress.Loopback;
+        IPAddress v6 = IPAddress.IPv6Loopback;
+        IPAddress external = IPAddress.Parse("192.0.2.10");
+        IPAddress linkLocal = IPAddress.Parse("fe80::1");
+
+        (string Name, IPAddress[] Addresses, Func<IPAddress, bool> CanBind, bool Expected)[] cases =
+        [
+            // Every resolved address is loopback and the first is bindable: serve the name.
+            ("v4 loopback only", [v4], Binds(v4), true),
+            ("both loopbacks", [v6, v4], Binds(v6, v4), true),
+            // Only the first address is registered, so a later one that cannot be bound (a leftover
+            // ::1 on a host with IPv6 disabled) must not stop the localhost prefix: true.
+            ("first binds, later does not", [v4, v6], Binds(v4), true),
+            // Any non-loopback resolution makes the name unsafe: false.
+            ("non-loopback first", [external, v4], Binds(external, v4), false),
+            ("non-loopback last", [v4, external], Binds(v4, external), false),
+            ("link-local v6", [v6, linkLocal], Binds(v6, linkLocal), false),
+            // DNS failed and resolved nothing: false.
+            ("empty", [], Binds(), false),
+            // The first address cannot be bound, so registering its prefix would throw on Start: false.
+            ("first does not bind", [v6], Binds(), false),
+        ];
+
+        foreach (var (name, addresses, canBind, expected) in cases)
+        {
+            await Assert.That(WebServer.ShouldAddLocalhostPrefix(addresses, canBind)).IsEqualTo(expected).Because(name);
         }
     }
 

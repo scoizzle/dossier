@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 
@@ -6,10 +7,10 @@ namespace Dossier;
 
 /// <summary>
 /// Minimal read-only web UI and JSON API, bound to loopback only (127.0.0.1, plus the
-/// <c>localhost</c> name when every address it resolves to is loopback). The managed
-/// HttpListener rejects bracketed IPv6 prefixes, so <c>[::1]</c> is reached through the
-/// <c>localhost</c> prefix where that resolves to ::1. Every endpoint calls the same core entry
-/// points as the CLI and MCP transports.
+/// <c>localhost</c> name when every address it resolves to is loopback and the first of them can be
+/// bound). The managed HttpListener rejects bracketed IPv6 prefixes, so <c>[::1]</c> is reached
+/// through the <c>localhost</c> prefix where that resolves to ::1. Every endpoint calls the same
+/// core entry points as the CLI and MCP transports.
 /// </summary>
 public sealed class WebServer : IDisposable
 {
@@ -22,26 +23,54 @@ public sealed class WebServer : IDisposable
         this.store = store;
         Port = port;
         listener.Prefixes.Add($"http://127.0.0.1:{port}/");
-        if (LocalhostIsLoopbackOnly())
+        if (ShouldAddLocalhostPrefix(ResolveLocalhost(), CanBind))
         {
             listener.Prefixes.Add($"http://localhost:{port}/");
         }
         else
         {
-            Console.Error.WriteLine("warning: 'localhost' resolves to a non-loopback address; serving 127.0.0.1 only");
+            Console.Error.WriteLine("warning: 'localhost' is not served (it does not resolve solely to bindable loopback addresses); serving 127.0.0.1 only");
         }
     }
 
-    private static bool LocalhostIsLoopbackOnly()
+    private static IPAddress[] ResolveLocalhost()
     {
         try
         {
-            var addresses = Dns.GetHostAddresses("localhost");
-            return addresses.Length > 0 && addresses.All(IPAddress.IsLoopback);
+            return Dns.GetHostAddresses("localhost");
         }
-        catch (Exception exception) when (exception is System.Net.Sockets.SocketException or ArgumentException)
+        catch (Exception exception) when (exception is SocketException or ArgumentException)
+        {
+            return [];
+        }
+    }
+
+    /// <summary>
+    /// Registers the <c>localhost</c> prefix only when the name is safe and usable: it resolved to at
+    /// least one address, every address is loopback, and the first address (the one the prefix binds)
+    /// can actually be listened on. On a host where localhost resolves to ::1 first but IPv6 loopback
+    /// cannot be bound, registering the prefix would make <see cref="Start"/> throw; skipping it keeps
+    /// 127.0.0.1 serving.
+    /// </summary>
+    internal static bool ShouldAddLocalhostPrefix(IPAddress[] addresses, Func<IPAddress, bool> canBind) =>
+        addresses.Length > 0 && addresses.All(IPAddress.IsLoopback) && canBind(addresses[0]);
+
+    /// <summary>Binds a throwaway socket to the address on an ephemeral port to see if it is usable.</summary>
+    private static bool CanBind(IPAddress address)
+    {
+        var socket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+        try
+        {
+            socket.Bind(new IPEndPoint(address, 0));
+            return true;
+        }
+        catch (SocketException)
         {
             return false;
+        }
+        finally
+        {
+            socket.Dispose();
         }
     }
 

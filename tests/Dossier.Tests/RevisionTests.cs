@@ -97,6 +97,65 @@ public sealed class RevisionTests
     }
 
     [Test]
+    public async Task Revision_DoesNotBumpOnRepeatedRetract()
+    {
+        using var db = new TempDb();
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("body")));
+        var id = posted.Response.Facts[0].Id;
+
+        var first = db.Store.Retract(id);
+        var r1 = db.Store.Revision();
+
+        // A second retract writes nothing: the row is already a tombstone, so no trigger fires.
+        var second = db.Store.Retract(id);
+
+        await Assert.That(db.Store.Revision()).IsEqualTo(r1);
+        await Assert.That(second).IsEqualTo(first);
+        await Assert.That(second.Found).IsTrue();
+        await Assert.That(second.Id).IsEqualTo(id);
+    }
+
+    [Test]
+    public async Task Revision_ConcurrentUpgradeIsSafe()
+    {
+        using var db = new TempDb();
+        foreach (var table in Tables)
+        {
+            foreach (var op in new[] { "insert", "update", "delete" })
+            {
+                Exec(db.Store, $"DROP TRIGGER trg_{table}_{op}");
+            }
+        }
+
+        Exec(db.Store, "DELETE FROM meta WHERE key = 'revision'");
+
+        var opened = new DossierStore?[4];
+        Exception? failure = null;
+        try
+        {
+            Parallel.For(0, opened.Length, i => opened[i] = new DossierStore(db.DbPath));
+        }
+        catch (Exception exception)
+        {
+            failure = exception;
+        }
+        finally
+        {
+            foreach (var store in opened)
+            {
+                if (store is not null)
+                {
+                    TempDb.ClearPool(store);
+                }
+            }
+        }
+
+        await Assert.That(failure).IsNull();
+        await Assert.That(Count(db.Store, "SELECT COUNT(*) FROM sqlite_master WHERE type='trigger' AND name LIKE 'trg_%'")).IsEqualTo(12);
+        await Assert.That(db.Store.Revision()).IsEqualTo(0L);
+    }
+
+    [Test]
     public async Task Revision_UnchangedByReads()
     {
         using var db = new TempDb();

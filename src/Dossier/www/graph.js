@@ -109,6 +109,13 @@
       nodes.push(n);
     }
 
+    // Adopts a record a refresh re-delivered. Every fetched node comes back on every refresh, so the
+    // open panel must follow a record that really moved on, not the mere presence of one.
+    function adopt(nd, data) {
+      if (nd === selected && JSON.stringify(nd.data) !== JSON.stringify(data)) selectedChanged = true;
+      nd.data = data;
+    }
+
     // Adds what is new, keeps every existing node (and its position), refreshes degrees. Incoming data is
     // adopted in place: a refresh never removes anything (a retracted fact shows through its status). A
     // boundary subject is a stub, so it never replaces the fuller record already held for that subject.
@@ -126,9 +133,8 @@
         var held = nodeByKey[sk];
         if (held) {
           if (!s.boundary) {
-            held.data = s;
+            adopt(held, s);
             held.r = subjectRadius(s);
-            if (held === selected) selectedChanged = true;
           }
           continue;
         }
@@ -145,8 +151,7 @@
         var fk = nodeKey('fact', f.id);
         var known = nodeByKey[fk];
         if (known) {
-          known.data = f;
-          if (known === selected) selectedChanged = true;
+          adopt(known, f);
           continue;
         }
         var owner = nodeByKey[nodeKey('subject', f.subject)];
@@ -165,6 +170,8 @@
         if (!from || !to) continue;
         edgeKeys[ek] = true;
         edges.push({ a: from, b: to, e: e });
+        // A new reference changes what the open panel lists, so that alone is a rebuild.
+        if (from === selected || to === selected) selectedChanged = true;
       }
       for (i = 0; i < nodes.length; i++) nodes[i].deg = 0;
       for (i = 0; i < edges.length; i++) { edges[i].a.deg++; edges[i].b.deg++; }
@@ -488,11 +495,33 @@
       return list;
     }
 
+    // The control a quiet rebuild has to put focus back on: same tag and same target, so a reader who
+    // was on a link keeps their place instead of being moved to the heading.
+    function focusKey(node) {
+      if (!node || !node.tagName || typeof node.getAttribute !== 'function') return null;
+      var target = node.getAttribute('data-target');
+      if (target) return node.tagName + '|' + target;
+      var href = node.getAttribute('href');
+      if (href) return node.tagName + '|' + href;
+      return null;
+    }
+
+    function findByKey(node, key) {
+      var kids = node.children || [];
+      for (var k = 0; k < kids.length; k++) {
+        if (focusKey(kids[k]) === key) return kids[k];
+        var deep = findByKey(kids[k], key);
+        if (deep) return deep;
+      }
+      return null;
+    }
+
     // Builds the panel for `nd`. `quiet` is the refresh path: the node's data moved on underneath the
     // reader, so the text is replaced without moving focus out of the panel, without a resize and without
     // touching the view.
     function renderPanel(nd, quiet) {
-      var hadFocus = !!(quiet && doc.activeElement && panel.contains(doc.activeElement));
+      var from = quiet && doc.activeElement && panel.contains(doc.activeElement) ? doc.activeElement : null;
+      var key = from ? focusKey(from) : null;
       panel.textContent = '';
       panel.hidden = false;
       var close = el('button', 'Close', panel);
@@ -545,11 +574,12 @@
         list = refList(nd, false);
         if (!list.firstChild) el('li', 'none', list);
       }
-      // The rebuild above dropped focus; park it on the heading so keyboard users keep their place.
+      // The rebuild above dropped focus; put it back where the reader had it.
       heading.setAttribute('tabindex', '-1');
       if (quiet) {
-        // Only a reader who was already in the panel stays there: a refresh never steals focus.
-        if (hadFocus) heading.focus();
+        // Only a reader who was already in the panel stays there: a refresh never steals focus, and it
+        // moves the reader onto the equivalent control (the rebuilt one) when there is one.
+        if (from) ((key && findByKey(panel, key)) || heading).focus();
         return;
       }
       heading.focus();
@@ -715,6 +745,8 @@
       refreshing = true;
       var queue = expandedIds();
       var added = [];
+      var hadNodes = nodes.length > 0;
+      var rootOk = false;
       var k;
       for (k = 0; k < nodes.length; k++) nodes[k].hold = true; // as expand does
 
@@ -732,6 +764,13 @@
       function finish() {
         refreshing = false;
         if (destroyed) return;
+        // A refresh that recovered from a failed initial load replaces that error line with the graph:
+        // nothing was ever laid out, so size the stage and fit what arrived.
+        if (rootOk && !hadNodes && nodes.length) {
+          status.textContent = '';
+          resize();
+          fit();
+        }
         refreshHeader();
         if (added.length) restart(20);
         else {
@@ -744,6 +783,7 @@
 
       var work = fetchJson(url(rootId)).then(function (payload) {
         if (destroyed) return;
+        rootOk = true;
         added = added.concat(merge(payload, null, true));
         return chain(0);
       }).catch(function () { /* a transient refresh error is not a status line: the channel retries */ });

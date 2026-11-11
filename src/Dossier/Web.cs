@@ -173,6 +173,12 @@ public sealed class WebServer : IDisposable
 
     public int Port { get; }
 
+    /// <summary>
+    /// Test seam: the counter read behind the poller. A reader that throws is how a test proves the
+    /// poll loop survives an exception it does not name.
+    /// </summary>
+    internal Func<long>? RevisionReader { get; set; }
+
     public void Start()
     {
         // Read once here so a stream opened before the first poll already has a truthful baseline.
@@ -510,7 +516,8 @@ public sealed class WebServer : IDisposable
 
     /// <summary>
     /// Polls the durable revision counter and wakes every open stream on a change. A locked or missing
-    /// database is not fatal: the next tick retries.
+    /// database is not fatal: the next tick retries. Any other failure is not fatal either, or one bad
+    /// read would silently end live updates for the whole session.
     /// </summary>
     private async Task PollRevisionAsync()
     {
@@ -529,15 +536,15 @@ public sealed class WebServer : IDisposable
             long value;
             try
             {
-                value = store.Revision();
-            }
-            catch (SqliteException)
-            {
-                continue;
+                value = RevisionReader is { } reader ? reader() : store.Revision();
             }
             catch (ObjectDisposedException)
             {
                 return;
+            }
+            catch (Exception)
+            {
+                continue;
             }
 
             TaskCompletionSource? signal = null;

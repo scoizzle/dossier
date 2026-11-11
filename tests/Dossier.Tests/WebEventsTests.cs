@@ -271,6 +271,50 @@ public sealed class WebEventsTests
     }
 
     [Test]
+    public async Task Web_Events_PollerSurvivesANonSqliteFailure()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha")));
+        using var server = await TestServers.StartAsync(db.Store, PollInterval);
+        try
+        {
+            using var http = Client(server);
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+
+            using var response = await http.GetAsync("api/events", HttpCompletionOption.ResponseHeadersRead, cts.Token);
+            await Assert.That((int)response.StatusCode).IsEqualTo(200);
+            using var stream = await response.Content.ReadAsStreamAsync(cts.Token);
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+
+            var (_, baseline) = await ReadEventsAsync(reader, 1, cts.Token);
+            var start = ParseRevision(baseline[0]);
+            await Assert.That(start).IsEqualTo(db.Store.Revision());
+
+            // The poller's next tick throws something it does not name; the tick after that sees a bump.
+            // A poll loop that dies on the first exception never emits again.
+            var injected = start + 5;
+            var ticks = 0;
+            server.RevisionReader = () =>
+            {
+                if (Interlocked.Increment(ref ticks) == 1)
+                {
+                    throw new InvalidOperationException("injected counter failure");
+                }
+
+                return injected;
+            };
+
+            var (_, later) = await ReadEventsAsync(reader, 1, cts.Token);
+            await Assert.That(ParseRevision(later[0])).IsEqualTo(injected);
+            await Assert.That(ticks).IsGreaterThanOrEqualTo(2);
+        }
+        finally
+        {
+            server.Stop();
+        }
+    }
+
+    [Test]
     public async Task Web_Stop_IsIdempotent()
     {
         using var db = new TempDb();

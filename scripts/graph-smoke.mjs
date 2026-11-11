@@ -773,6 +773,78 @@ async function refreshFailureScenario() {
   instance.destroy();
 }
 
+// ---- scenario: an identical refresh leaves the open panel alone, focus included (F1) --------
+async function quietPanelScenario() {
+  const check = (cond, msg) => ok(cond, '[quiet-panel] ' + msg);
+  const env = makeEnv(true);
+  let payload = clone(fixture);
+  const { host, instance } = await env.mount(fixture.root, () => payload);
+  const panel = host.byTag('aside')[0];
+
+  instance.select('fact:f-root-2');
+  const heading = panel.byTag('h2')[0];
+  const link = panel.byTag('a')[0];
+  check(!!link && link.getAttribute('href') === '#/fact/f-root-2', 'the control under test is the fact link');
+  link.focus();
+  check(env.state.activeElement === link, 'the fact link holds focus before the refresh');
+
+  // The same data comes back: the panel is not rebuilt, so its DOM and the focus stay put.
+  await instance.refresh();
+  await settle();
+  check(panel.byTag('h2')[0] === heading, 'an identical refresh leaves the panel DOM in place');
+  check(env.state.activeElement === link, 'focus stays on the panel link');
+
+  // A changed record does rebuild the panel, and focus lands on the same control, not the heading.
+  payload = clone(fixture);
+  payload.facts.find((f) => f.id === 'f-root-2').status = 'stale';
+  await instance.refresh();
+  await settle();
+  const rebuilt = panel.byTag('a')[0];
+  check(panel.byTag('h2')[0] !== heading, 'changed data rebuilds the panel');
+  check(panel.byTag('dd').map((d) => d.textContent).includes('stale'), 'the rebuilt panel shows the new status');
+  check(!!rebuilt && rebuilt !== link && rebuilt.getAttribute('href') === '#/fact/f-root-2',
+    'the rebuilt panel offers the same link again');
+  check(env.state.activeElement === rebuilt, 'focus returns to the equivalent link, not the heading');
+
+  // A new edge touching the selected node changes what the panel lists: rebuild it there too.
+  payload = clone(fixture);
+  payload.facts.find((f) => f.id === 'f-root-2').status = 'stale';
+  payload.edges.push({ from_kind: 'fact', from: 'f-root-2', to_kind: 'subject', to: 's-other', rel: 'about', basis: 'observed', kind: 'subject' });
+  await instance.refresh();
+  await settle();
+  check(panel.textContent.includes('about'), 'a new edge touching the selected node rebuilds the panel');
+  const current = panel.byTag('a')[0];
+  check(!!current && current.getAttribute('href') === '#/fact/f-root-2' && env.state.activeElement === current,
+    'focus is still on the equivalent link after the edge rebuild');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation');
+  instance.destroy();
+}
+
+// ---- scenario: a good refresh clears a failed initial load and fits (F4) ---------------------
+async function recoveredLoadScenario() {
+  const check = (cond, msg) => ok(cond, '[load-fail] ' + msg);
+  const env = makeEnv(true);
+  const host = new env.El('div');
+  let fail = true;
+  const instance = env.window.DossierGraph.mount(host, fixture.root, {
+    fetchJson: () => (fail ? Promise.reject(new Error('boom')) : Promise.resolve(clone(fixture))),
+  });
+  await instance.ready;
+  const status = host.byClass('g-status')[0];
+  check(status.textContent === 'error: boom', 'the failed initial load leaves its error: "' + status.textContent + '"');
+  check(instance.nodes.length === 0, 'nothing was merged from a failed initial load');
+
+  fail = false;
+  await instance.refresh();
+  await settle();
+  check(instance.nodes.length > 0, 'the later refresh merged the graph (' + instance.nodes.length + ' nodes)');
+  check(status.textContent === '', 'the successful refresh clears the error line: "' + status.textContent + '"');
+  check(instance.view.scale > 0.1 && (instance.view.scale !== 1 || instance.view.tx !== 0),
+    'the recovered graph is fitted into a sized view (' + instance.view.scale + ',' + instance.view.tx + ')');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation');
+  instance.destroy();
+}
+
 // ---- scenario: the EventSource channel drives the refresh (S5) -------------------------------
 async function liveStreamScenario() {
   const check = (cond, msg) => ok(cond, '[live] ' + msg);
@@ -950,6 +1022,8 @@ await xssScenario(false);
 // The live-update scenarios report a throw as a failure so one broken expectation does not hide the rest.
 for (const [name, fn] of [
   ['live-refresh', liveRefreshScenario],
+  ['quiet-panel', quietPanelScenario],
+  ['load-fail', recoveredLoadScenario],
   ['refresh-fail', refreshFailureScenario],
   ['refresh-dirty', refreshDirtyScenario],
   ['live-stream', liveStreamScenario],

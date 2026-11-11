@@ -419,7 +419,12 @@ public sealed partial class DossierStore
         string factId,
         string status)
     {
-        using var command = Command(connection, transaction, "UPDATE facts SET status = $status WHERE id = $id");
+        // The guard keeps a no-op status write from firing trg_facts_update: a body that already says
+        // what the slot says must not bump the revision.
+        using var command = Command(
+            connection,
+            transaction,
+            "UPDATE facts SET status = $status WHERE id = $id AND status != $status");
         Bind(command, "$status", status);
         Bind(command, "$id", factId);
         command.ExecuteNonQuery();

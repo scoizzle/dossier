@@ -183,8 +183,21 @@ public sealed class DumpTests
         var root = db.Store.BlobRoot;
         await Assert.That(!Directory.Exists(root) || !Directory.EnumerateFileSystemEntries(root).Any()).IsTrue();
         await Assert.That(response.Errors.Count).IsEqualTo(1);
-        await Assert.That(response.Errors[0].StartsWith("invalid_split:", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(response.Errors[0]).IsEqualTo("invalid_split: split must be heading, file, or none, got \"paragraph\"");
         await Assert.That(response.Created.Count).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task MissingSource_WithInvalidSplit_ReportsReadFailed()
+    {
+        // Characterization: green on arrival. Pins precedence: read_failed before invalid_split.
+        using var db = new TempDb();
+        var missing = Path.Combine(Path.GetDirectoryName(WriteSource(db, "x.py", "x"))!, "does-not-exist.py");
+
+        var response = db.Store.Dump(Request(missing, "paragraph"));
+
+        await Assert.That(response.Errors.Count).IsEqualTo(1);
+        await Assert.That(response.Errors[0].StartsWith("read_failed:", StringComparison.Ordinal)).IsTrue();
     }
 
     [Test]

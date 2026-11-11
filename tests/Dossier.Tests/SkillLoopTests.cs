@@ -88,9 +88,16 @@ public sealed class SkillLoopTests
         PostSymbol(db, unit, "Unit.cs::Tagged",
             Fixtures.Fact("one", key: "t1", tags: new List<string> { "shared" }),
             Fixtures.Fact("two", key: "t2", tags: new List<string> { "shared" }));
+        // Distinct locators: same_ref must still pair them (it ignores the locator).
         PostSymbol(db, unit, "Unit.cs::Plain",
-            Symbol("p1", "plain one"),
-            Symbol("p2", "plain two"));
+            Fixtures.Fact("plain one", key: "p1", refs: new List<RefInput>
+            {
+                new() { Rel = "derived_from", Kind = "file", Target = "src/Unit.cs", Basis = "observed", Rev = "abc123", Locator = Fixtures.Json("{\"line\":1}") },
+            }),
+            Fixtures.Fact("plain two", key: "p2", refs: new List<RefInput>
+            {
+                new() { Rel = "derived_from", Kind = "file", Target = "src/Unit.cs", Basis = "observed", Rev = "abc123", Locator = Fixtures.Json("{\"line\":99}") },
+            }));
 
         var tagged = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::Tagged", Matchers = new List<string> { "shared_tag" } });
         var plainTag = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::Plain", Matchers = new List<string> { "shared_tag" } });
@@ -99,5 +106,28 @@ public sealed class SkillLoopTests
         await Assert.That(tagged.Proposed.Count).IsGreaterThan(0);
         await Assert.That(plainTag.Proposed.Count).IsEqualTo(0);
         await Assert.That(plainRef.Proposed.Count).IsGreaterThan(0);
+    }
+
+    [Test]
+    public async Task ShowTakesFactId_SubjectNameComesFromCheckById()
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var unit = db.Store.PostFacts(Fixtures.Post("Unit.cs")).Response.Subject.Id;
+        var post = db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "Unit.cs::A", Kind = "symbol", Parent = unit },
+            Facts = { Symbol("a.role", "A parses the input") },
+        }).Response;
+        var subjectId = post.Subject.Id;
+        var factId = post.Facts[0].Id;
+
+        var shown = db.Store.Show(factId)!;
+        var json = System.Text.Json.JsonSerializer.Serialize(shown, JsonCodec.Options);
+        await Assert.That(json.Contains("Unit.cs::A", StringComparison.Ordinal)).IsFalse();
+
+        var check = db.Store.Check(new CheckRequest { Subject = subjectId });
+        await Assert.That(check.Subject!.Name).IsEqualTo("Unit.cs::A");
+        await Assert.That(check.Subject!.Match).IsEqualTo("exact_id");
     }
 }

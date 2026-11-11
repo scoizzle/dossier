@@ -207,7 +207,7 @@ public sealed class McpServer
     private static readonly ToolDef[] ToolDefs =
     [
         new("dump", "Chunk a file into facts for one subject, deduping repeats. " + Untrusted,
-            """{"type":"object","properties":{"source":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"split":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}}},"required":["source","subject"]}"""),
+            """{"type":"object","properties":{"source":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"split":{"type":"string","enum":["heading","file","none"]},"tags":{"type":"array","items":{"type":"string"}}},"required":["source","subject"]}"""),
         new("post_facts", "Post a batch of facts (with refs and attachments) for a subject. " + Untrusted,
             """{"type":"object","properties":{"subject":{"type":"object"},"facts":{"type":"array","items":{"type":"object"}},"dry_run":{"type":"boolean"}},"required":["subject","facts"]}"""),
         new("correlate", "Propose derived refs between facts; nothing is written. " + Untrusted,

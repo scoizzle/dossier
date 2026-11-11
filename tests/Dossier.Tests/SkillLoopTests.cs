@@ -48,4 +48,56 @@ public sealed class SkillLoopTests
         var check = db.Store.Check(new CheckRequest { Subject = "Unit.cs::A" });
         await Assert.That(check.Subject!.Match).IsEqualTo("exact_name");
     }
+
+    private static string PostSymbol(TempDb db, string unit, string name, params FactInput[] facts) =>
+        db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = name, Kind = "symbol", Parent = unit },
+            Facts = facts.ToList(),
+        }).Response.Subject.Id;
+
+    [Test]
+    public async Task SubjectScopedCorrelate_ProposesOnlyWithinThatSubject()
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var unit = db.Store.PostFacts(Fixtures.Post("Unit.cs")).Response.Subject.Id;
+        var a = db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "Unit.cs::A", Kind = "symbol", Parent = unit },
+            Facts = { Symbol("a.one", "A parses"), Symbol("a.two", "A validates") },
+        }).Response.Facts.Select(f => f.Id).ToHashSet();
+        db.Store.PostFacts(new PostFactsRequest
+        {
+            Subject = new SubjectInput { Name = "Unit.cs::B", Kind = "symbol", Parent = unit },
+            Facts = { Symbol("b.one", "B renders") },
+        });
+
+        var response = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::A" });
+
+        await Assert.That(response.Proposed.Count).IsGreaterThan(0);
+        await Assert.That(response.Proposed.All(p => a.Contains(p.FactId) && a.Contains(p.Ref.Target!))).IsTrue();
+    }
+
+    [Test]
+    public async Task SharedTagMatcher_NeedsSharedTags_SameRefIgnoresThem()
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var unit = db.Store.PostFacts(Fixtures.Post("Unit.cs")).Response.Subject.Id;
+        PostSymbol(db, unit, "Unit.cs::Tagged",
+            Fixtures.Fact("one", key: "t1", tags: new List<string> { "shared" }),
+            Fixtures.Fact("two", key: "t2", tags: new List<string> { "shared" }));
+        PostSymbol(db, unit, "Unit.cs::Plain",
+            Symbol("p1", "plain one"),
+            Symbol("p2", "plain two"));
+
+        var tagged = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::Tagged", Matchers = new List<string> { "shared_tag" } });
+        var plainTag = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::Plain", Matchers = new List<string> { "shared_tag" } });
+        var plainRef = db.Store.Correlate(new CorrelateRequest { Subject = "Unit.cs::Plain", Matchers = new List<string> { "same_ref" } });
+
+        await Assert.That(tagged.Proposed.Count).IsGreaterThan(0);
+        await Assert.That(plainTag.Proposed.Count).IsEqualTo(0);
+        await Assert.That(plainRef.Proposed.Count).IsGreaterThan(0);
+    }
 }

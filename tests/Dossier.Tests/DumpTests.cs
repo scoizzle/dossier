@@ -172,6 +172,53 @@ public sealed class DumpTests
         await Assert.That(dump.TryGetProperty("entity_subjects", out _)).IsFalse();
     }
 
+    [Test]
+    public async Task InvalidSplit_WritesNoBlob()
+    {
+        using var db = new TempDb();
+        var source = WriteSource(db, "mod.py", "def f():\n    pass\n");
+
+        var response = db.Store.Dump(Request(source, "paragraph"));
+
+        var root = db.Store.BlobRoot;
+        await Assert.That(!Directory.Exists(root) || !Directory.EnumerateFileSystemEntries(root).Any()).IsTrue();
+        await Assert.That(response.Errors.Count).IsEqualTo(1);
+        await Assert.That(response.Errors[0].StartsWith("invalid_split:", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(response.Created.Count).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task SplitFile_Markdown_IsOneChunkWithWholeFileSelector()
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var source = WriteSource(db, "doc.md", "# One\nalpha\n## Two\nbeta\n");
+
+        var response = db.Store.Dump(Request(source, "file"));
+
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+        var shown = db.Store.Show(response.Created[0])!;
+        await Assert.That(shown.Fact.Text!.Contains("# One", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(shown.Fact.Text!.Contains("## Two", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(shown.Refs.Single().Locator!.Value.GetRawText().Contains("L1-L4", StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
+    [Arguments("notes.txt")]
+    [Arguments("mod.py")]
+    public async Task NoSplit_NonMarkdown_IsOneWholeFileChunk(string name)
+    {
+        // Characterization: green on arrival.
+        using var db = new TempDb();
+        var source = WriteSource(db, name, "# not a heading\nline two\nline three\n");
+
+        var response = db.Store.Dump(Request(source));
+
+        await Assert.That(response.Created.Count).IsEqualTo(1);
+        var shown = db.Store.Show(response.Created[0])!;
+        await Assert.That(shown.Refs.Single().Locator!.Value.GetRawText().Contains("L1-L3", StringComparison.Ordinal)).IsTrue();
+    }
+
     private const string InvalidSplitMessage = "invalid_split: split must be heading, file, or none";
 
     [Test]

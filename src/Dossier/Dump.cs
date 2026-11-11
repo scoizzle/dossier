@@ -43,7 +43,8 @@ public sealed partial class DossierStore
 
     /// <summary>
     /// dump. Reads the raw source once, hashes the bytes with sha256, and writes
-    /// blobs/&lt;sha256&gt; BEFORE parsing. The splitter (heading, file, none) is
+    /// blobs/&lt;sha256&gt; BEFORE parsing, but only after the split is validated (an
+    /// invalid split writes no blob; an unreadable source still reports read_failed first). The splitter (heading, file, none) is
     /// deterministic over the bytes plus options, every emitted chunk becomes a fact with one
     /// derived_from file ref carrying its line range, and a chunk trimmed shorter than 3
     /// characters is reported in skipped rather than posted. Posting goes through post_facts,
@@ -75,6 +76,16 @@ public sealed partial class DossierStore
         catch (Exception exception) when (exception is IOException or UnauthorizedAccessException or ArgumentException or NotSupportedException)
         {
             response.Errors.Add($"read_failed: {exception.Message}");
+            return response;
+        }
+
+        try
+        {
+            ValidateSplit(split);
+        }
+        catch (DossierRequestException exception)
+        {
+            response.Errors.Add($"{exception.Code}: {exception.Message}");
             return response;
         }
 
@@ -230,11 +241,21 @@ public sealed partial class DossierStore
             "heading" => SplitHeading(lines),
             "file" => new List<Chunk> { new(normalized, 1, LastContentLine(lines)) },
             "none" => new List<Chunk> { new(normalized, 1, LastContentLine(lines)) },
-            _ => throw new DossierRequestException(
-                "invalid_split",
-                $"split must be heading, file, or none, got \"{split}\""),
+            _ => throw InvalidSplit(split),
         };
     }
+
+    private static void ValidateSplit(string split)
+    {
+        if (split is not ("heading" or "file" or "none"))
+        {
+            throw InvalidSplit(split);
+        }
+    }
+
+    private static DossierRequestException InvalidSplit(string split) => new(
+        "invalid_split",
+        $"split must be heading, file, or none, got \"{split}\"");
 
     /// <summary>Heading split: a chunk starts at line 1 (preamble) or at any line starting with '#'.</summary>
     private static List<Chunk> SplitHeading(string[] lines)

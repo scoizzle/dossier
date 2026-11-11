@@ -6,7 +6,7 @@ Reference for the three surfaces over the same core functions: the CLI verbs, th
 
 **dump** ingests raw material deterministically into facts: `dossier dump --source <path> --subject <name>`. The input is stored as a content-addressed blob, split by markdown headings (`--split heading`, the default for `.md` and `.markdown`) or kept whole as one fact (`--split file` or `none`, the default for everything else). Any other `--split` value is rejected with `invalid_split` in the manifest's `errors`. The result is a manifest of created, deduped and skipped items. Running it twice is idempotent. Structured facts with declared refs go in through `dossier post --file <request.json>`.
 
-**correlate** proposes refs between facts using deterministic matchers (`same_ref`, `shared_tag`): `dossier correlate [--subject <name>]`. Proposals carry basis `derived`, are returned and never written, and are never asserted as truth.
+**correlate** proposes refs between facts using deterministic matchers (`same_ref`, `shared_tag`): `dossier correlate [--subject <name>] [--matcher <same_ref|shared_tag>]...`; `--matcher` is repeatable and limits which matchers run (an unknown name is rejected with `invalid_matcher`). Proposals carry basis `derived`, are returned and never written, and are never asserted as truth.
 
 **retrieve** finds facts or compiles a dossier. `dossier search` takes text and filters, including reverse-impact lookup with `--ref-target`. `dossier dossier compile --subject <name> --budget <n>` compiles the cited, budgeted dossier.
 

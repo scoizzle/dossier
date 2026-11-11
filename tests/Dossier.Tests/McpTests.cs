@@ -186,6 +186,21 @@ public sealed class McpTests
     }
 
     [Test]
+    public async Task Mcp_DumpToolAdvertisesSplitEnum()
+    {
+        using var db = new TempDb();
+        var server = new McpServer(db.Store);
+
+        var list = JsonDocument.Parse(server.Handle("""{"jsonrpc":"2.0","id":1,"method":"tools/list"}""")!.ToJsonString()).RootElement;
+        var tool = list.GetProperty("result").GetProperty("tools").EnumerateArray()
+            .Single(t => t.GetProperty("name").GetString() == "dump");
+        var split = tool.GetProperty("inputSchema").GetProperty("properties").GetProperty("split");
+        var values = split.GetProperty("enum").EnumerateArray().Select(e => e.GetString()).ToList();
+
+        await Assert.That(values.SequenceEqual(new[] { "heading", "file", "none" })).IsTrue();
+    }
+
+    [Test]
     public async Task Mcp_CheckToolIsListedAndCallable()
     {
         using var db = new TempDb();

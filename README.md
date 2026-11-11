@@ -1,4 +1,4 @@
-<img src="assets/icon.svg" width="64" height="64" alt="">
+<img src="https://raw.githubusercontent.com/scoizzle/dossier/main/assets/icon.svg" width="64" height="64" alt="">
 
 # Dossier
 
@@ -25,9 +25,11 @@ The expensive reading happens once, when facts are captured. Facts are linked by
 shasum -a 256 -c --ignore-missing SHA256SUMS   # Linux: sha256sum -c --ignore-missing SHA256SUMS
 gh attestation verify dossier-<version>-<rid>.tar.gz --repo scoizzle/dossier   # optional build provenance
 tar -xzf dossier-<version>-<rid>.tar.gz && cd dossier-<version>-<rid>
+export DOSSIER_DB=./dossier.db
+./dossier init   # Windows: dossier.exe init
 ```
 
-macOS binaries are unsigned: if Gatekeeper blocks them, run `xattr -dr com.apple.quarantine <extracted dir>`. Platform requirements and details: [install](https://github.com/scoizzle/dossier/blob/main/docs/install.md).
+macOS binaries are unsigned: if Gatekeeper blocks them, run `xattr -dr com.apple.quarantine <extracted dir>`. Platform requirements and details: [install](https://github.com/scoizzle/dossier/blob/main/docs/install.md). Next: [The core loop](#the-core-loop) below shows what to do with the store.
 
 **From source.** Needs the .NET 10 SDK, and `jq` and bash for the seed script.
 
@@ -48,6 +50,7 @@ used_tokens: 709
 
 ## Conflicts
 
+- composerMaxRows: 12 [8a8aa039-f1a3-4e35-be48-441ff1c368d5]; 6 [1c1cd226-3817-4475-b274-37e4e77473ae]
 - headerHeight: 64 [80899598-...]; 72 [3340714d-...]
 - saveShortcut: "Cmd+Enter" [55e5a8f6-...]; "Ctrl+Enter" [b70c6049-...]
 ```

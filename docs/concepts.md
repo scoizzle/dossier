@@ -71,9 +71,11 @@ Four tests in `tests/Dossier.Tests/CompileTests.cs` back the bounded, reproducib
 - `Reproducible_WithRecencyDisabled_IgnoresWallClock`: with `rank.recency=0`, the same 40 logical facts posted six hours apart compile to identical facts, dropped facts and `used_tokens`.
 
 A related test, `Recency_DefaultStillAffectsOrdering`, shows the default recency term is live and not a dead weight.
+
 ## Contract and implementation
 
 The JSON Schemas in `contract/` are the normative shapes; the C# in this repository is a reference implementation of them. Nothing in the core is specific to any consumer, so another implementation of the same contract would interoperate.
+
 ## Design notes
 
 Five foot-guns shaped the design; each is a decision, not an accident.

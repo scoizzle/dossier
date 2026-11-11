@@ -26,6 +26,38 @@ public sealed class StoreSchemaTests
     }
 
     [Test]
+    public async Task Schema_CreatesRevisionTriggersAndSeedRow()
+    {
+        using var db = new TempDb();
+        using var connection = db.Store.OpenConnection();
+
+        var expected = new List<string>();
+        foreach (var table in new[] { "facts", "subjects", "refs", "slots" })
+        {
+            foreach (var op in new[] { "insert", "update", "delete" })
+            {
+                expected.Add($"trg_{table}_{op}");
+            }
+        }
+
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT name FROM sqlite_master WHERE type = 'trigger' AND name LIKE 'trg_%' ORDER BY name";
+        var actual = new List<string>();
+        using (var reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                actual.Add(reader.GetString(0));
+            }
+        }
+
+        expected.Sort(StringComparer.Ordinal);
+        await Assert.That(actual.Count).IsEqualTo(12);
+        await Assert.That(string.Join(",", actual)).IsEqualTo(string.Join(",", expected));
+        await Assert.That((string?)Fixtures.Scalar(connection, "SELECT value FROM meta WHERE key = 'revision'")).IsEqualTo("0");
+    }
+
+    [Test]
     public async Task Schema_EnablesWal()
     {
         using var db = new TempDb();

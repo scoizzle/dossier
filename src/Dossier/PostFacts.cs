@@ -248,7 +248,12 @@ public sealed partial class DossierStore
             var mergedJson = JsonCodec.SerializeStrings(merged);
             var parent = input.Parent ?? row.ParentId;
 
-            if (mergedJson != JsonCodec.SerializeStrings(row.Aliases) || parent != row.ParentId)
+            // An alias that is only the subject's own name carries no information; writing it
+            // would be a no-op rewrite that bumps meta.revision on an identical repost.
+            string[] Informative(IEnumerable<string> aliases) =>
+                aliases.Where(alias => Names.Normalize(alias) != Names.Normalize(row.Name)).ToArray();
+
+            if (!Informative(merged).SequenceEqual(Informative(row.Aliases), StringComparer.Ordinal) || parent != row.ParentId)
             {
                 using var update = Command(connection, transaction, "UPDATE subjects SET aliases = $aliases, parent_id = $parent WHERE id = $id");
                 Bind(update, "$aliases", mergedJson);

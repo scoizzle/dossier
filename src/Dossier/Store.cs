@@ -107,8 +107,56 @@ public sealed partial class DossierStore
     {
         using var connection = OpenConnection();
         using var command = connection.CreateCommand();
-        command.CommandText = Schema;
+        command.CommandText = Schema + RevisionTriggers();
         command.ExecuteNonQuery();
+
+        // Seed only when missing so an existing store is never reset and a plain
+        // construction stays read-only once the schema is current.
+        using var probe = connection.CreateCommand();
+        probe.CommandText = "SELECT COUNT(*) FROM meta WHERE key = 'revision'";
+        if (Convert.ToInt64(probe.ExecuteScalar(), System.Globalization.CultureInfo.InvariantCulture) == 0)
+        {
+            using var seed = connection.CreateCommand();
+            seed.CommandText = "INSERT OR IGNORE INTO meta(key, value) VALUES('revision', '0')";
+            seed.ExecuteNonQuery();
+        }
+    }
+
+    /// <summary>
+    /// Durable cross-process change counter (meta.revision), bumped by triggers on every
+    /// write to facts, subjects, refs and slots. 0 when the row is absent.
+    /// </summary>
+    public long Revision()
+    {
+        using var connection = OpenConnection();
+        using var command = connection.CreateCommand();
+        command.CommandText = "SELECT value FROM meta WHERE key = 'revision'";
+        return command.ExecuteScalar() is string text
+            && long.TryParse(text, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out var value)
+            ? value
+            : 0;
+    }
+
+    private static string RevisionTriggers()
+    {
+        var builder = new System.Text.StringBuilder();
+        foreach (var table in new[] { "facts", "subjects", "refs", "slots" })
+        {
+            foreach (var (name, op) in new[] { ("insert", "INSERT"), ("update", "UPDATE"), ("delete", "DELETE") })
+            {
+                builder.Append($"""
+
+                    CREATE TRIGGER IF NOT EXISTS trg_{table}_{name} AFTER {op} ON {table} FOR EACH ROW
+                    BEGIN
+                        INSERT INTO meta(key, value) SELECT 'revision', '0' WHERE NOT EXISTS (SELECT 1 FROM meta WHERE key = 'revision');
+                        UPDATE meta SET value = CAST(CAST(value AS INTEGER) + 1 AS TEXT) WHERE key = 'revision';
+                    END;
+
+                    """);
+            }
+        }
+
+        return builder.ToString();
     }
 
     /// <summary>Opens a connection configured for WAL and a busy timeout.</summary>

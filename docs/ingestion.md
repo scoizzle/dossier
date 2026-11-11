@@ -4,7 +4,7 @@ Plan for making dossier ingest whole code repositories as symbol-level facts wit
 
 ## Why
 
-An evaluation in an isolated environment ingested this repository with dump. Its findings:
+An external evaluation in an isolated environment ingested this repository with dump. Its findings, reported on 2026-11-11 and not reproduced in this repository:
 
 1. Paragraph splitting of src/Dossier/Compile.cs produced 105 facts from one file (one chunk skipped as too short). A C# symbol splitter (types, methods, properties, XML summaries, source spans) is needed; code split is Python-only today (`docs/cli.md:9`, `src/Dossier/Dump.cs:517-525`).
 2. Bulk ingestion needed an external loop of 104 dump processes; dump reads one file (`src/Dossier/Dump.cs:75`, `File.ReadAllBytes`) and has no `--source-root`, globs or run report (`src/Dossier/Program.cs:57-78`). The MCP dump tool claims "file or directory" (`src/Dossier/Mcp.cs:209`), which is wrong.
@@ -16,13 +16,13 @@ What worked and must not regress: bundle navigation, token estimates, line-level
 
 ## Principle: dossier owns the seam
 
-Dossier defines a language-neutral outline contract and an outline-provider interface. Built-in providers ship in dossier; external providers run as a separate process speaking a documented protocol. No story depends on another project's code, package or API. Rationale: an external grammar/LSP toolkit (Poly) was evaluated as a provider; it has a cheap pattern-table grammar engine but is about to be heavily refactored, so dossier will not build on it now. It can plug in later through the external-provider protocol (story 6) with no dossier change.
+Dossier defines a language-neutral outline contract and an outline-provider interface. Built-in providers ship in dossier; external providers run as a separate process speaking a documented protocol. Dossier takes no dependency on Poly, and no dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; story 3's `Microsoft.CodeAnalysis.CSharp` (syntax API only) is the one named exception, pending the dependency decision in [Open questions](#open-questions). Rationale: an external grammar/LSP toolkit (Poly) was evaluated as a provider; it has a cheap pattern-table grammar engine but is about to be heavily refactored, so dossier will not build on it now. It can plug in later through the external-provider protocol (story 6) with no dossier change.
 
 ## Outline contract (summary; story 1 specifies it)
 
 An outline node: `name`, `qualified_name`, `kind` (open string: namespace, class, struct, interface, enum, record, method, constructor, property, field, event, function, ...), `start_line`, `end_line` (1-based inclusive), optional `start_col`/`end_col`, optional `signature` (one line), optional `doc` (first paragraph of the doc comment), `children`.
 
-Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, data = `{symbol, entity_kind, parent, start_line, end_line}`, items = doc, plus a `symbol` ref whose target is `"<qualified-name>@<revision>"` (`contract/ref.schema.json:5`), and locator `{line, selector "L<start>-L<end>"}` (`src/Dossier/Dump.cs:463-464`). `--entity-subjects` keeps working (`src/Dossier/Dump.cs:255-329`).
+Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, data = `{symbol, entity_kind, parent, start_line, end_line}`, items = doc, and the entity locator `{line, selector "L<start>-L<end>", symbol}` built at `src/Dossier/Dump.cs:182-185` (`LineRangeLocator` at `src/Dossier/Dump.cs:463-464` is the simpler helper paragraph chunks use). Today `BuildFact` emits only one ref, `derived_from` to the source file (`src/Dossier/Dump.cs:206-216`). The `symbol` ref whose target is `"<qualified-name>@<revision>"` (`contract/ref.schema.json:5`) does not exist yet: story 1 specifies it and story 3 emits it. `--entity-subjects` keeps working (`src/Dossier/Dump.cs:255-329`).
 
 ## Stories
 
@@ -31,7 +31,7 @@ Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, d
 | 0 | Correct the MCP dump description to "file" (or land with story 4) | T0 | none | `Mcp.cs:209` text matches behaviour; `dotnet test` green |
 | 1 | Outline contract: `contract/outline.schema.json` plus docs; decide Locator end-line and the qualified-name format for overloads | T2 (public contract) | none | Schema committed, validated in tests, `docs/cli.md` updated |
 | 2 | Provider interface; move the existing Python scanner behind it with no behaviour change | T1 | 1 | Existing `DumpTests` pass unchanged |
-| 3 | C# provider using Roslyn syntax trees only | T2 (new dependency, contract output) | 2 | One fact per type and member on `src/Dossier/Compile.cs`, pinned by a test |
+| 3 | C# provider using Roslyn syntax trees only | T2 (new dependency, contract output) | 2 | One fact per type and member on `src/Dossier/Compile.cs`, both fallback cases pinned by tests |
 | 4 | Bulk ingest: `--source-root`, globs, run report, classification tags | T2 (CLI/MCP contract) | none | Ingesting this repo is one command; the report is reproducible |
 | 5 | Resolvable citations in published bundles | T2 (publish output contract) | 1 | Zero relative links leave the bundle; a test pins the rewrite |
 | 6 | External outline provider protocol | T2 (process execution, contract) | 1, 2 | A test provider round-trips; failures fall back and report |
@@ -57,15 +57,15 @@ Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, d
 
 **Scope.** Define a language-neutral outline-provider interface and move the existing Python scanner (`ScanPython`, `src/Dossier/Dump.cs:718`) behind it with no behaviour change.
 
-**Done when.** The existing code-split tests (`tests/Dossier.Tests/DumpTests.cs:224-267`) pass unchanged. Proved by `dotnet test`.
+**Done when.** The existing code-split tests — the `CodeSplit_*` tests in `tests/Dossier.Tests/DumpTests.cs:224-461` — pass unchanged. Proved by `dotnet test`.
 
 **Out of scope.** New languages; changing the fact shape Python produces.
 
 ### 3. C# provider
 
-**Scope.** A C# provider built on Roslyn syntax trees only (`Microsoft.CodeAnalysis.CSharp`, no project load, no restore, no semantic model): namespaces, types, members, XML `<summary>`, spans; partial and nested types; file-scoped namespaces. It fails soft to paragraph with `warning: split_fallback` on a parse failure. The new package dependency needs the supply-chain review the CI policy applies.
+**Scope.** A C# provider built on Roslyn syntax trees only (`Microsoft.CodeAnalysis.CSharp`, no project load, no restore, no semantic model): namespaces, types, members, XML `<summary>`, spans; partial and nested types; file-scoped namespaces. Roslyn always returns a tree, so the fallback trigger is not a parse failure: fall back to paragraph with `warning: split_fallback` when the file is not valid UTF-8 or the tree has no type or member declarations. A file with syntax errors is still outlined from the recovered tree, and its fact records that the tree had diagnostics (for example a `data.parse_errors` count; whether that field exists, and its name, is a story 1 decision). The repository has no package allowlist today; story 3 includes a dependency review (licence, size, transitive packages) recorded in the PR.
 
-**Done when.** `dump --split code` on `src/Dossier/Compile.cs` yields one fact per type and member with correct line ranges and summaries, and a test pins it. Proved by `dotnet test`.
+**Done when.** `dump --split code` on `src/Dossier/Compile.cs` yields one fact per type and member with correct line ranges and summaries, a test pins it, and tests pin both fallback cases (non-UTF-8, no declarations). Proved by `dotnet test`.
 
 **Out of scope.** Semantic analysis, project or solution loading, other languages.
 
@@ -73,7 +73,7 @@ Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, d
 
 **Scope.** `dump --source-root <dir>` with `--include`/`--exclude` globs, per-glob split rules, an optional manifest file carrying the same, deterministic order, a JSON run report (files seen, ingested, skipped with reason, facts, errors), and a classification tag (test, fixture, demo, generated) so callers can exclude or separate them. It uses the providers from stories 2 and 3 when they are present, and the MCP dump tool then accepts a directory honestly.
 
-**Done when.** Ingesting this repository is one command, the report is reproducible across runs, and the 104-process loop in `scripts/dump-code-demo.sh` can be replaced. Proved by running `dossier dump --source-root . --subject dossier-repo` twice and comparing the two reports.
+**Done when.** Ingesting this repository is one `dossier dump --source-root . --subject dossier-repo` command, a test pins the run report (counts and skipped reasons) and that two runs produce the same report, and `scripts/dump-code-demo.sh`'s per-file loop is replaced by one call. Proved by running that command twice on this repository and comparing the two reports.
 
 **Out of scope.** Deleting `scripts/dump-code-demo.sh`; parallel ingestion of one tree.
 
@@ -103,11 +103,11 @@ Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, d
 
 ## Order
 
-Story 0 any time. 1 then 2 then 3. 4 and 5 can run beside 1 to 3. 6 after 2. 7 after 3 and 4. Suggest landing 1, 2, 3 and 4 first: they remove the two biggest pains from the evaluation.
+Story 0 any time. 1 then 2 then 3. 4 can run beside 1 to 3; 5 after 1. 6 after 2. 7 after 3 and 4. Suggest landing 1, 2, 3 and 4 first: they remove the two biggest pains from the evaluation.
 
 ## Non-goals
 
-- No dependency on Poly or any other external language toolkit.
+- No dependency on Poly, and no dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; `Microsoft.CodeAnalysis.CSharp` (story 3, syntax API only) is the one exception, pending the dependency decision.
 - No LSP server or client inside dossier.
 - No semantic analysis (references, types, call graphs).
 - No incremental parsing.
@@ -119,7 +119,8 @@ Story 0 any time. 1 then 2 then 3. 4 and 5 can run beside 1 to 3. 6 after 2. 7 a
 - Qualified-name format and overload disambiguation.
 - Where the revision comes from outside git.
 - Whether classification tags are facts' tags or a separate field.
-- Roslyn package size and the supply-chain allowlist.
+- Roslyn package size (the repository has no package allowlist today).
+- Approve `Microsoft.CodeAnalysis.CSharp` as a dependency.
 - Whether bulk ingest should run providers in-process in parallel.
 
 ## Revisit Poly when

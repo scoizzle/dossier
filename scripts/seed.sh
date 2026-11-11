@@ -31,6 +31,41 @@ record() {
 
 dotnet "$DLL" init >/dev/null
 
+# The seed declares one screenshot attachment (the "shot" fact in memos.json) but posting stores no
+# bytes. Place it content-addressed at blobs/<sha256> next to the database, so publish copies it into
+# subjects/<slug>/assets/ instead of warning "missing blob" and dropping the bytes.
+BLOBS="$(dirname "$DOSSIER_DB")/blobs"
+SHOT="$ROOT/scripts/seed/shot-1x1.png"
+DECLARED_SHA="$(jq -r 'first(.facts[].attachments[]?.sha256) // empty' "$ROOT/scripts/seed/memos.json")"
+if [ -z "$DECLARED_SHA" ]; then
+  echo "scripts/seed/memos.json declares no attachment sha256" >&2
+  exit 1
+fi
+
+if command -v shasum >/dev/null 2>&1; then
+  sha256_of() { shasum -a 256 "$1" | cut -d' ' -f1; }
+elif command -v sha256sum >/dev/null 2>&1; then
+  sha256_of() { sha256sum "$1" | cut -d' ' -f1; }
+else
+  echo "need shasum or sha256sum to verify the seed attachment" >&2
+  exit 1
+fi
+
+actual_sha="$(sha256_of "$SHOT")"
+if [ "$actual_sha" != "$DECLARED_SHA" ]; then
+  echo "seed attachment drift: $SHOT hashes to $actual_sha but memos.json declares $DECLARED_SHA" >&2
+  exit 1
+fi
+
+mkdir -p "$BLOBS"
+cp "$SHOT" "$BLOBS/$DECLARED_SHA"
+
+stored_sha="$(sha256_of "$BLOBS/$DECLARED_SHA")"
+if [ "$stored_sha" != "$DECLARED_SHA" ]; then
+  echo "seed blob drift: $BLOBS/$DECLARED_SHA hashes to $stored_sha but memos.json declares $DECLARED_SHA" >&2
+  exit 1
+fi
+
 root_out="$(dotnet "$DLL" post --file "$ROOT/scripts/seed/memos-root.json")"
 root_id="$(printf '%s' "$root_out" | jq -r '.subject.id')"
 if [ -z "$root_id" ] || [ "$root_id" = "null" ]; then

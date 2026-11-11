@@ -1,6 +1,6 @@
 # Epic: structured code ingestion
 
-Plan for making dossier ingest whole code repositories as symbol-level facts with resolvable citations. Status: proposed, 2026-11-11. Back to the [README](../README.md).
+Plan for making dossier ingest whole code repositories as symbol-level facts with resolvable citations. Status: proposed, 2026-11-11. Back to the [README](../README.md). Tracking issue: [#14](https://github.com/scoizzle/dossier/issues/14).
 
 ## Why
 
@@ -16,7 +16,7 @@ What worked and must not regress: bundle navigation, token estimates, line-level
 
 ## Principle: dossier owns the seam
 
-Dossier defines a language-neutral outline contract and an outline-provider interface. Built-in providers ship in dossier; external providers run as a separate process speaking a documented protocol. Dossier takes no dependency on Poly, and no dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; story 3's `Microsoft.CodeAnalysis.CSharp` (syntax API only) is the one named exception, pending the dependency decision in [Open questions](#open-questions). Rationale: an external grammar/LSP toolkit (Poly) was evaluated as a provider; it has a cheap pattern-table grammar engine but is about to be heavily refactored, so dossier will not build on it now. It can plug in later through the external-provider protocol (story 6) with no dossier change.
+Dossier defines a language-neutral outline contract and an outline-provider interface. Built-in providers ship in dossier; external providers run as a separate process speaking a documented protocol. Dossier takes no dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; story 3's `Microsoft.CodeAnalysis.CSharp` (syntax API only) is the one named exception, pending the dependency decision in [Open questions](#open-questions). External outline providers (for example an LSP bridge) run as a separate process through the story 6 protocol, so a provider can be swapped without a dossier change.
 
 ## Outline contract (summary; story 1 specifies it)
 
@@ -87,11 +87,11 @@ Mapping onto existing facts (`src/Dossier/Dump.cs:165-218`): text = signature, d
 
 ### 6. External outline provider protocol
 
-**Scope.** Dossier spawns a configured command, sends file paths and content, and reads outline JSON per the story 1 schema. Timeouts, size limits, a non-zero exit or invalid JSON fall back to paragraph with a warning. The command is never run unless configured. An LSP documentSymbol bridge and a future Poly provider live outside dossier behind this protocol.
+**Scope.** Dossier spawns a configured command, sends file paths and content, and reads outline JSON per the story 1 schema. Timeouts, size limits, a non-zero exit or invalid JSON fall back to paragraph with a warning. The command is never run unless configured. An LSP documentSymbol bridge or any other external outline provider lives outside dossier behind this protocol.
 
 **Done when.** A test provider script round-trips, and the failure cases fall back and report. Proved by `dotnet test`.
 
-**Out of scope.** Shipping an LSP bridge or a Poly provider inside dossier.
+**Out of scope.** Shipping an LSP bridge or any external outline provider inside dossier.
 
 ### 7. Task-oriented evaluation
 
@@ -107,7 +107,7 @@ Story 0 any time. 1 then 2 then 3. 4 can run beside 1 to 3; 5 after 1. 6 after 2
 
 ## Non-goals
 
-- No dependency on Poly, and no dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; `Microsoft.CodeAnalysis.CSharp` (story 3, syntax API only) is the one exception, pending the dependency decision.
+- No dependency on any language toolkit that is not stable and released. Built-in providers may use stable, released packages; `Microsoft.CodeAnalysis.CSharp` (story 3, syntax API only) is the one exception, pending the dependency decision.
 - No LSP server or client inside dossier.
 - No semantic analysis (references, types, call graphs).
 - No incremental parsing.
@@ -122,7 +122,3 @@ Story 0 any time. 1 then 2 then 3. 4 can run beside 1 to 3; 5 after 1. 6 after 2
 - Roslyn package size (the repository has no package allowlist today).
 - Approve `Microsoft.CodeAnalysis.CSharp` as a dependency.
 - Whether bulk ingest should run providers in-process in parallel.
-
-## Revisit Poly when
-
-Its refactor has landed and it exposes a stable way to produce an outline (name, kind, range, children, doc) from a grammar plus a batch CLI; then it implements story 6's protocol as an external provider. As context only, with no line refs: evaluated 2026-11-11, Poly's LSP then served `.poly` files only and its grammar engine was not wired to its LSP or analysis.

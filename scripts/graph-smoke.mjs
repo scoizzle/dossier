@@ -86,10 +86,27 @@ function makeEnv(reduce) {
     byTag(tg) { return this.all((c) => c.tagName === tg.toUpperCase()); }
   }
 
+  // The canvas stub records the transform history and every stroked segment, with the paint state
+  // (alpha, style, width) it was stroked under, so the drawing itself can be asserted on.
   const transforms = [];
-  const ctx = new Proxy({ setTransform: (...a) => transforms.push(a) }, {
-    get: (t, k) => (k in t ? t[k] : () => {}),
-    set: () => true,
+  const calls = [];
+  const paint = { lineWidth: 1, globalAlpha: 1, strokeStyle: '#000', fillStyle: '#000', font: '10px system-ui', textAlign: 'start', textBaseline: 'alphabetic' };
+  let ops = [];
+  const recorder = {
+    setTransform: (...a) => transforms.push(a),
+    beginPath: () => { ops = []; },
+    moveTo: (x, y) => { ops.push(['moveTo', x, y]); },
+    lineTo: (x, y) => { ops.push(['lineTo', x, y]); },
+    stroke: () => {
+      const path = ops.length >= 2 && ops[0][0] === 'moveTo' && ops[1][0] === 'lineTo'
+        ? { from: [ops[0][1], ops[0][2]], to: [ops[1][1], ops[1][2]] }
+        : { from: null, to: null };
+      calls.push({ ...path, alpha: paint.globalAlpha, lineWidth: paint.lineWidth, style: paint.strokeStyle });
+    },
+  };
+  const ctx = new Proxy(recorder, {
+    get: (t, k) => (k in t ? t[k] : (k in paint ? paint[k] : () => {})),
+    set: (t, k, v) => { paint[k] = v; return true; },
   });
 
   const docListeners = {};
@@ -154,7 +171,7 @@ function makeEnv(reduce) {
     return { host, instance, urls };
   }
 
-  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, runFrames, counters, mount, window };
+  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, calls, runFrames, counters, mount, window };
 }
 
 const ids = (list) => list.map((n) => n.id);
@@ -523,8 +540,62 @@ async function fixtureXssScenario(reduce) {
   instance.destroy();
 }
 
+// ---- scenario: each fact is drawn attached to its owning subject ------------------------------
+async function ownerLinkScenario() {
+  const tag = '[owner-links] ';
+  const check = (cond, msg) => ok(cond, tag + msg);
+  const near = (a, b) => Math.abs(a[0] - b[0]) < 1e-9 && Math.abs(a[1] - b[1]) < 1e-9;
+  const segKey = (a, b) => a[0] + ',' + a[1] + '>' + b[0] + ',' + b[1];
+  const segmentsOf = (calls) => calls.filter((c) => c.from && c.to);
+
+  const env = makeEnv(true);
+  const { host, instance } = await env.mount(fixture.root, () => fixture);
+  const counts = host.byClass('g-counts')[0];
+
+  // The owner link is drawn, never merged: counts, the edge list and the degrees stay as they were.
+  check(counts.textContent === fixture.subjects.length + ' subjects, ' + fixture.facts.length + ' facts, ' + fixture.edges.length + ' refs',
+    'header refs count is still the payload edge count ("' + counts.textContent + '")');
+  check(instance.edges.length === fixture.edges.length, 'owner links are not pushed into edges[] (' + instance.edges.length + ' edges)');
+  check(instance.nodes.every((n) => n.type !== 'fact' || n.r === 3.5 + 1.2 * Math.sqrt(n.deg)),
+    'fact radius still comes from the ref count alone (an owner link adds no degree)');
+
+  const subjectIdOf = (n) => { const f = fixture.facts.find((x) => 'fact:' + x.id === n.key); return f ? f.subject : null; };
+  const subjectIds = new Set(fixture.subjects.map((s) => s.id));
+  const owned = instance.nodes.filter((n) => n.type === 'fact' && subjectIds.has(subjectIdOf(n)));
+  const anchored = instance.nodes.filter((n) => n.type === 'fact' && n.anchor);
+  check(owned.length > 0 && anchored.length === owned.length,
+    'every fact whose subject is in the graph resolves its owner (' + anchored.length + '/' + owned.length + ')');
+
+  const segments = segmentsOf(env.calls);
+  const edgePairs = new Set();
+  for (const ed of instance.edges) edgePairs.add(segKey([ed.a.x, ed.a.y], [ed.b.x, ed.b.y]));
+  const edgeSegments = segments.filter((s) => edgePairs.has(segKey(s.from, s.to)));
+  check(edgeSegments.length >= instance.edges.length, 'every payload edge is stroked (' + edgeSegments.length + '/' + instance.edges.length + ')');
+  const faintest = edgeSegments.length ? Math.min(...edgeSegments.map((s) => s.alpha)) : 1;
+  const faint = (s) => s.alpha < faintest;
+
+  const unmatched = anchored.filter((n) => !segments.some((s) => near(s.from, [n.x, n.y]) && near(s.to, [n.anchor.x, n.anchor.y]) && faint(s)));
+  check(unmatched.length === 0, 'every fact strokes a faint segment to its owner, ending at the subject' + brief(unmatched.map((n) => n.id)));
+  const misplaced = anchored.filter((n) => segments.some((s) => near(s.from, [n.x, n.y]) && faint(s) && !near(s.to, [n.anchor.x, n.anchor.y])));
+  check(misplaced.length === 0, 'no fact strokes an owner segment to anywhere but its subject' + brief(misplaced.map((n) => n.id)));
+
+  // A fact whose subject is not in the graph has no owner, so it gets no line at all.
+  env.calls.length = 0;
+  instance.merge({
+    format: 1, seed: '0badf00d', root: fixture.root, subjects: [],
+    facts: [{ id: 'f-orphan', subject: 's-absent', kind: 'note', status: 'live', confidence: 0.5, tags: [], text: 'orphan', unresolved: [] }],
+    edges: [], truncated: { subjects: 0, facts: 0, edges: 0 },
+  }, null);
+  const orphan = instance.nodes.find((n) => n.key === 'fact:f-orphan');
+  check(!!orphan && orphan.anchor === null, 'a fact whose subject is not in the graph has no anchor');
+  instance.select('subject:' + fixture.root);
+  check(!segmentsOf(env.calls).some((s) => near(s.from, [orphan.x, orphan.y])), 'a fact with no owner draws no owner link');
+  instance.destroy();
+}
+
 await interactionScenario('reduced-motion', true);
 await interactionScenario('animated', false);
+await ownerLinkScenario();
 await mergeScenario();
 await truncationScenario();
 await bannerAccumulationScenario();

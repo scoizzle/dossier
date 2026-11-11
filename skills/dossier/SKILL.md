@@ -17,7 +17,7 @@ Dossier is a local fact store. You post small claims about a subject as you lear
 
 - Scratch notes for the current task only. Keep those in your context.
 - You need to change the system rather than describe it. Dossier records claims, it does not enforce them.
-- You want to store whole documents verbatim as one entry. Use `dossier dump` (headings or the whole file) to preserve raw bytes, or do not store them.
+- You want to store whole documents verbatim as a substitute for claims. `dossier dump` keeps raw bytes as a single fact (or one per heading for markdown); it is not a claim. If you use it in the loop, dump to a separate subject such as `"<unit>/raw"` so the whole-file fact stays out of the unit's dossier.
 
 ## The loop
 
@@ -32,14 +32,14 @@ Dossier is a local fact store. You post small claims about a subject as you lear
 
 Use this loop to document one unit (a file, document, schema or config) as a tree of symbol subjects. It is progressive and iterative: start at the top level and go deeper only where a symbol warrants it. It works the same for code, prose and configuration.
 
-1. **Create the containing unit as a subject.** Call `dossier post --file <request.json>` (MCP `post_facts`) with `{"subject":{"name":"<unit>","kind":"file"},"facts":[]}` and read `subject.id` from the response. `dossier dump --source <path> --subject "<unit>"` is optional and only preserves the raw bytes (default split); it extracts nothing.
+1. **Create the containing unit as a subject.** Call `dossier post --file <request.json>` (MCP `post_facts`) with `{"subject":{"name":"<unit>","kind":"file"},"facts":[]}` and read `subject.id` from the response. `dossier dump --source <path> --subject "<unit>/raw"` is optional and only preserves the raw bytes on a separate subject, keeping the whole-file fact out of the unit's dossier; it extracts nothing.
 2. **Read the unit and identify its semantic symbols**, appropriate to the content: for code, types, functions and modules; for prose, sections, defined terms and decisions; for config or schema, keys and entities. Start with the top level.
 3. **Name every symbol subject `<unit>::<qualname>`**, globally unique (include the signature to tell overloads apart). Names match case-insensitively across the whole store, and re-posting an existing name with a different `parent` moves that subject, so a name collision with another unit silently re-parents it.
-4. **Look it up before creating.** Run `dossier check --subject "<unit>::<qualname>"` (MCP `check`) and treat the symbol as existing only if `match` is `exact_name`; `prefix` and `fuzzy` matches are different subjects. Listing the children of a parent is not available; `dossier://subjects` (MCP resource) lists every subject and is an unbounded last resort.
+4. **Look it up before creating.** Run `dossier check --subject "<unit>::<qualname>"` (MCP `check`) and treat the symbol as existing if `match` is `exact_name` or `exact_alias` (posting a name bound to an alias reuses that subject); `prefix` and `fuzzy` matches are different subjects. There is no bare child-subject roster, but `dossier dossier compile --subject "<unit>" --descendants` returns the facts of the whole subtree; `dossier://subjects` (MCP resource) lists every subject and is the unbounded fallback.
 5. **Create the missing symbol subjects with `parent` set to the unit's subject id** (an id, not a name): `{"subject":{"name":"<unit>::<qualname>","kind":"<kind>","parent":"<unit id>"},"facts":[...]}`.
-6. **Post one-claim facts per symbol.** Give each a stable `key` (a repost then returns `replaced`, not a duplicate), a `derived_from` ref of kind `file` with a `locator` carrying `line`, and `rev` pinned to a commit or version. Link symbols to each other with refs of kind `subject` whose `target` is the qualified name or id. Use kind `symbol` only for an external analyzer's symbols.
-7. **Run `dossier correlate --subject "<unit>"`** (MCP `correlate`) to propose links. Expect noise when facts share the same `derived_from` file; confirm a proposal by reposting the keyed fact with the added ref, since correlate writes nothing.
-8. **Check, then iterate breadth-first.** Run `dossier check --subject "<unit>"`, queue the symbols the new facts mention, and repeat from step 3 for each. Stop on an explicit budget you set up front, or when a pass discovers no new symbols. To resume across sessions, post a fact of kind `todo` with a tag (find it with `dossier search --kind todo --tag <tag>`) listing the queued symbols, and `dossier retract <id>` it when done.
+6. **Post one-claim facts per symbol.** Give each a stable `key` (a repost then returns `replaced`, not a duplicate), a `derived_from` ref of kind `file` with a `locator` carrying `line`, and `rev` pinned to a commit or version. Link symbols to each other with refs of kind `subject` whose `target` is the qualified name or id; every ref needs `rel` (for example `mentions`) and `basis` (for example `observed`). Use kind `symbol` only for an external analyzer's symbols.
+7. **Run `dossier correlate --subject "<symbol>"`** (MCP `correlate`) per symbol subject to propose links. `--subject` covers only that subject's own facts (not its children, and the unit itself has none), so the unit name finds nothing; without `--subject` correlate runs store-wide, which finds cross-symbol links but is noisier. Expect noise when facts share the same `derived_from` file; confirm a proposal by reposting the keyed fact with the added ref, since correlate writes nothing.
+8. **Review the tree, then iterate breadth-first.** Run `dossier dossier compile --subject "<unit>" --descendants --depth index` (MCP `compile_dossier`) to see the unit's subtree, and queue the symbols the facts newly mention. `dossier check --subject "<symbol>"` stays the per-symbol existence test. Repeat from step 3 for each queued symbol. Stop on an explicit budget you set up front, or when a pass discovers no new symbols. To resume across sessions, post a fact of kind `todo` with a tag (find it with `dossier search --kind todo --tag <tag>`) listing the queued symbols, and `dossier retract <id>` it when done.
 
 ## Rules the schema cannot enforce
 
@@ -66,7 +66,7 @@ Run as `dossier <verb>`; this table is the verb list, not the flag reference.
 | Command | Purpose |
 | --- | --- |
 | `dossier init` | Create the store in the current directory. |
-| `dossier dump` | Chunk one file into facts for one subject (`--source`, `--subject`, `--split heading|file|none`); preserves raw bytes, does not extract symbols. |
+| `dossier dump` | Chunk one file into facts for one subject (`--source`, `--subject`, `--split heading\|file\|none`); preserves raw bytes, does not extract symbols. |
 | `dossier post` | Post a batch of facts with refs from a JSON file (`--file`, or `-` for stdin); `--dry-run` reports the verdicts and writes nothing. |
 | `dossier correlate` | Propose derived refs between facts; writes nothing. |
 | `dossier check` | Resolve a subject, summarise what is known, and judge draft facts without writing (`--subject`, `--drafts`, `--limit`); near duplicates are an advisory `near` list. |

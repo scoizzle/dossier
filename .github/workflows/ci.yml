@@ -22,6 +22,21 @@ defaults:
     shell: bash
 
 jobs:
+  # Dependency review covers direct NuGet references and GitHub Actions versions;
+  # NuGet audit on restore (build-test) covers transitive packages.
+  dependency-review:
+    name: dependency-review
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Review dependency changes
+        uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+        with:
+          fail-on-severity: moderate
+
   build-test:
     name: build-test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -31,8 +46,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Pull requests get the fast Linux leg only; main and manual runs get all three.
-        os: ${{ fromJSON(github.event_name == 'pull_request' && '["ubuntu-24.04"]' || '["ubuntu-24.04","macos-15","windows-2025"]') }}
+        # All three OSes on every event; only the Linux leg is a required check.
+        os: [ubuntu-24.04, macos-15, windows-2025]
     steps:
       - name: Keep LF line endings on Windows
         if: runner.os == 'Windows'

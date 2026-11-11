@@ -368,6 +368,14 @@ shasum -a 256 -c --ignore-missing SHA256SUMS  # macOS
 tar -xzf dossier-<version>-linux-arm64.tar.gz && cd dossier-<version>-linux-arm64
 ```
 
+Releases built by the current workflow also carry a GitHub artifact attestation for each archive. Verify a downloaded archive before extracting it (`.zip` for `win-x64`):
+
+```sh
+gh attestation verify dossier-<version>-<rid>.tar.gz --repo scoizzle/dossier
+```
+
+This needs GitHub CLI 2.49 or later. `SHA256SUMS` itself is not attested; the attestations cover the four archives.
+
 Platform notes:
 
 - Linux binaries are built and tested on Ubuntu 24.04, on both x64 and arm64 runners. They need glibc 2.34 or newer — the release workflow measures the highest glibc symbol version that `linux-x64` and `linux-arm64` require on every release, and fails any build that would need more than 2.39 — plus `libicu` and OpenSSL (`libssl3`). Distributions at or above 2.34 include Ubuntu 22.04 or newer, Debian 12 or newer, Fedora 35 or newer, RHEL 9 / Rocky 9 / Alma 9 or newer, and Amazon Linux 2023; older ones such as Ubuntu 20.04 and Debian 11 are not supported.

@@ -5,8 +5,11 @@ using System.Text;
 namespace Dossier;
 
 /// <summary>
-/// Minimal read-only web UI and JSON API, bound to 127.0.0.1 only. Every endpoint calls the
-/// same core entry points as the CLI and MCP transports.
+/// Minimal read-only web UI and JSON API, bound to loopback only (127.0.0.1, plus the
+/// <c>localhost</c> name when every address it resolves to is loopback). The managed
+/// HttpListener rejects bracketed IPv6 prefixes, so <c>[::1]</c> is reached through the
+/// <c>localhost</c> prefix where that resolves to ::1. Every endpoint calls the same core entry
+/// points as the CLI and MCP transports.
 /// </summary>
 public sealed class WebServer : IDisposable
 {
@@ -19,6 +22,81 @@ public sealed class WebServer : IDisposable
         this.store = store;
         Port = port;
         listener.Prefixes.Add($"http://127.0.0.1:{port}/");
+        if (LocalhostIsLoopbackOnly())
+        {
+            listener.Prefixes.Add($"http://localhost:{port}/");
+        }
+        else
+        {
+            Console.Error.WriteLine("warning: 'localhost' resolves to a non-loopback address; serving 127.0.0.1 only");
+        }
+    }
+
+    private static bool LocalhostIsLoopbackOnly()
+    {
+        try
+        {
+            var addresses = Dns.GetHostAddresses("localhost");
+            return addresses.Length > 0 && addresses.All(IPAddress.IsLoopback);
+        }
+        catch (Exception exception) when (exception is System.Net.Sockets.SocketException or ArgumentException)
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Defense in depth only. The real DNS-rebinding protection is that no wildcard (+ or *) prefix
+    /// is ever registered: HttpListener matches the Host header against the registered loopback
+    /// prefixes and answers anything else itself. This checks the raw Host header: loopback name
+    /// (localhost, 127.0.0.1, [::1]) with the serve port or no port. A missing Host (HTTP/1.0) is
+    /// accepted because the sockets are loopback-bound.
+    /// </summary>
+    internal static bool IsLoopbackHost(string? hostHeader, int port)
+    {
+        if (string.IsNullOrEmpty(hostHeader))
+        {
+            return true;
+        }
+
+        string name = hostHeader;
+        string? portText = null;
+        if (hostHeader.StartsWith('['))
+        {
+            var close = hostHeader.IndexOf(']');
+            if (close < 0)
+            {
+                return false;
+            }
+
+            name = hostHeader[..(close + 1)];
+            var rest = hostHeader[(close + 1)..];
+            if (rest.Length > 0)
+            {
+                if (rest[0] != ':')
+                {
+                    return false;
+                }
+
+                portText = rest[1..];
+            }
+        }
+        else
+        {
+            var colon = hostHeader.IndexOf(':');
+            if (colon >= 0)
+            {
+                name = hostHeader[..colon];
+                portText = hostHeader[(colon + 1)..];
+            }
+        }
+
+        if (portText is not null && !(int.TryParse(portText, System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out var parsed) && parsed == port))
+        {
+            return false;
+        }
+
+        return name.Equals("localhost", StringComparison.OrdinalIgnoreCase) || name == "127.0.0.1" || name == "[::1]";
     }
 
     public int Port { get; }
@@ -77,6 +155,12 @@ public sealed class WebServer : IDisposable
     private void Handle(HttpListenerContext context)
     {
         var request = context.Request;
+        if (!IsLoopbackHost(request.Headers["Host"], Port))
+        {
+            Write(context, 421, "application/json", Ops.Serialize(ErrorEnvelope.Of("invalid_host", "host not allowed")));
+            return;
+        }
+
         if (request.HttpMethod != "GET")
         {
             Write(context, 405, "application/json", Ops.Serialize(ErrorEnvelope.Of("read_only", "GET only")));

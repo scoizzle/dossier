@@ -173,6 +173,85 @@ public sealed class WebTests
         }
     }
 
+    [Test]
+    public async Task Web_ServesLocalhostByName()
+    {
+        using var db = new TempDb();
+        using var server = await StartServerAsync(db.Store);
+        try
+        {
+            using var http = new HttpClient();
+            var response = await http.GetAsync($"http://localhost:{server.Port}/");
+            await Assert.That((int)response.StatusCode).IsEqualTo(200);
+            await Assert.That((await response.Content.ReadAsStringAsync()).Contains("<html")).IsTrue();
+        }
+        finally
+        {
+            server.Stop();
+        }
+    }
+
+    [Test]
+    public async Task Web_ForeignHostIsNeverServed()
+    {
+        using var db = new TempDb();
+        using var server = await StartServerAsync(db.Store);
+        try
+        {
+            using var http = new HttpClient();
+            using var request = new HttpRequestMessage(HttpMethod.Get, $"http://127.0.0.1:{server.Port}/");
+            request.Headers.Host = $"evil.test:{server.Port}";
+            var response = await http.SendAsync(request);
+            await Assert.That((int)response.StatusCode).IsNotEqualTo(200);
+            await Assert.That((await response.Content.ReadAsStringAsync()).Contains("<html")).IsFalse();
+        }
+        finally
+        {
+            server.Stop();
+        }
+    }
+
+    [Test]
+    public async Task HostGuard_AllowsOnlyLoopbackNamesAndTheServePort()
+    {
+        (string? Host, bool Ok)[] cases =
+        [
+            ("localhost:8787", true), ("LOCALHOST:8787", true), ("localhost", true), ("127.0.0.1:8787", true),
+            ("[::1]:8787", true), (null, true), ("", true),
+            ("127.0.0.1:9999", false), ("evil.test:8787", false), ("127.0.0.1.evil.test:8787", false), ("localhost.evil.test:8787", false),
+        ];
+        foreach (var (host, ok) in cases)
+        {
+            await Assert.That(WebServer.IsLoopbackHost(host, 8787)).IsEqualTo(ok);
+        }
+    }
+
+    [Test]
+    public async Task Web_PortInUseStillThrows()
+    {
+        using var db = new TempDb();
+        using var first = await StartServerAsync(db.Store);
+        try
+        {
+            using var second = new WebServer(db.Store, first.Port);
+            Exception? caught = null;
+            try
+            {
+                second.Start();
+            }
+            catch (Exception exception)
+            {
+                caught = exception;
+            }
+
+            await Assert.That(caught is HttpListenerException or SocketException).IsTrue();
+        }
+        finally
+        {
+            first.Stop();
+        }
+    }
+
     /// <summary>
     /// Starts a web server on a fresh random port. The previous pattern reserved an ephemeral
     /// port with a TcpListener, released it, then bound the same number, so another process could

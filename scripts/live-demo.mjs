@@ -44,7 +44,7 @@ function positiveInt(raw, flag) {
 }
 
 function parseArgs(argv) {
-  const options = { agents: 4, facts: 100, db: null, port: 8787, keep: false, rate: 0 };
+  const options = { agents: 4, facts: 100, db: null, port: 8787, keep: false, rate: 0, killAgentAfter: null };
   for (let index = 0; index < argv.length; index++) {
     const arg = argv[index];
     const next = () => {
@@ -56,9 +56,11 @@ function parseArgs(argv) {
       case '--agents': options.agents = positiveInt(next(), arg); break;
       case '--facts': options.facts = positiveInt(next(), arg); break;
       case '--db': options.db = path.resolve(next()); break;
-      case '--port': port = positiveInt(next(), arg); break;
+      case '--port': options.port = positiveInt(next(), arg); break;
       case '--rate': options.rate = Number(next()); if (!(options.rate >= 0)) fail('--rate must be >= 0'); break;
       case '--keep': options.keep = true; break;
+      // Hidden debug hook: kill agent-0's child mid-call to prove a dead child fails fast.
+      case '--kill-agent-after': options.killAgentAfter = positiveInt(next(), arg); break;
       case '--help': case '-h': usage(0); break;
       default: fail(`unknown argument: ${arg}`);
     }
@@ -162,6 +164,7 @@ class McpAgent {
     this.nextId = 1;
     this.pending = new Map();
     this.stderr = '';
+    this.dead = null;
     this.stats = { ok: 0, busy: 0, other: 0 };
     this.child = spawn(spec.command, [...spec.prefix, 'mcp'], {
       env: { ...process.env, DOSSIER_DB: dbPath },
@@ -170,6 +173,10 @@ class McpAgent {
     this.child.stdin.on('error', () => {});
     this.child.stderr.setEncoding('utf8');
     this.child.stderr.on('data', (chunk) => { this.stderr = (this.stderr + chunk).slice(-2000); });
+    // A dead child must not leave its callers waiting out the 60 s call timeout, and a spawn
+    // failure must not take the process down with it: fail everything in flight instead.
+    this.child.on('exit', (code, signal) => this.die(`mcp child exited (code=${code}, signal=${signal ?? 'none'})`));
+    this.child.on('error', (error) => this.die(`mcp child error: ${error.message}`));
     this.lines = readline.createInterface({ input: this.child.stdout });
     this.lines.on('line', (line) => {
       if (!line.trim()) return;
@@ -187,7 +194,27 @@ class McpAgent {
     });
   }
 
+  /** Marks the agent dead, counts one error and rejects its in-flight calls right away. */
+  die(reason) {
+    if (this.dead) return;
+    this.dead = reason;
+    this.stats.other++;
+    if (!this.failure) this.failure = reason;
+    const waiters = [...this.pending.values()];
+    this.pending.clear();
+    for (const waiter of waiters) {
+      const error = new Error(reason);
+      error.fatal = true;
+      waiter.reject(error);
+    }
+  }
+
   call(method, params, timeout = 60_000) {
+    if (this.dead) {
+      const error = new Error(this.dead);
+      error.fatal = true;
+      return Promise.reject(error);
+    }
     const id = this.nextId++;
     return new Promise((resolve, reject) => {
       const timer = setTimeout(() => {
@@ -243,6 +270,15 @@ function formatLatency(samples) {
   const p50 = percentile(samples, 0.5);
   const p95 = percentile(samples, 0.95);
   return `n=${samples.length} p50=${p50.toFixed(1)}ms p95=${p95.toFixed(1)}ms max=${Math.max(...samples).toFixed(1)}ms`;
+}
+
+/** Counts one failed call against its agent; a dead child already counted itself in die(). */
+function recordError(agent, error) {
+  const message = String(error.message ?? error);
+  if (error.fatal) return;
+  if (/busy|locked/i.test(message)) agent.stats.busy++;
+  else agent.stats.other++;
+  if (!agent.failure) agent.failure = message;
 }
 
 async function main() {
@@ -345,13 +381,27 @@ async function main() {
       try {
         await agent.initialize();
       } catch (error) {
-        agent.stats.other++;
-        agent.failure = `initialize: ${error.message}`;
+        recordError(agent, error);
+        agent.failure ??= `initialize: ${error.message}`;
         return;
       }
 
       let previous = rootFact;
       for (let i = 0; i < options.facts; i++) {
+        // A child that died stops writing at once instead of timing out call after call.
+        if (agent.dead) break;
+
+        if (options.killAgentAfter !== null && index === 0 && i === options.killAgentAfter) {
+          // Debug: kill the child with a call in flight, so the run must end promptly with a
+          // rejection rather than stalling on the 60 s call timeout.
+          const doomed = agent.postFacts('live-demo/doomed', [{ kind: 'note', text: 'doomed' }]).then(
+            () => 'call resolved before the kill',
+            (error) => `call rejected: ${error.message}`);
+          agent.child.kill('SIGKILL');
+          console.log(`live-demo: debug --kill-agent-after ${options.killAgentAfter}: ${await doomed}`);
+          break;
+        }
+
         const shared = i % 3 === 0;
         const subject = shared ? 'live-demo/shared' : `live-demo/agent-${index}`;
         const refs = [{ rel: 'mentions', kind: 'fact', target: rootFact, basis: 'observed' }];
@@ -368,10 +418,7 @@ async function main() {
           const fact = result.response?.facts?.[0];
           if (fact?.id) previous = fact.id;
         } catch (error) {
-          const message = String(error.message ?? error);
-          if (/busy|locked/i.test(message)) agent.stats.busy++;
-          else agent.stats.other++;
-          if (!agent.failure) agent.failure = message;
+          recordError(agent, error);
         }
 
         if (options.rate > 0) await sleep(1000 / options.rate);
@@ -397,9 +444,14 @@ async function main() {
     const revisionReply = await httpRequest(port, '/api/revision');
     const finalRevision = JSON.parse(revisionReply.body).revision;
 
+    // The stream may still owe a frame for the last write: give it a short grace window.
+    for (let attempt = 0; attempt < 30 && revisions.last !== finalRevision; attempt++) await sleep(100);
+
     const busy = agents.reduce((sum, agent) => sum + agent.stats.busy, 0);
     const other = agents.reduce((sum, agent) => sum + agent.stats.other, 0);
     const errors = busy + other;
+    const graphFailures = (graph.duringStatusFailures ?? 0) + (graph.afterStatusFailures ?? 0);
+    const streamBehind = revisions.last !== finalRevision;
     const seconds = wallMs / 1000;
 
     console.log('summary');
@@ -416,6 +468,12 @@ async function main() {
     console.log(`  graph after        ${formatLatency(graph.after)}${graph.afterStatusFailures ? ` status-failures=${graph.afterStatusFailures}` : ''}`);
     console.log(`  final revision     ${finalRevision}`);
 
+    const failures = [];
+    if (errors > 0) failures.push(`${errors} write error(s)`);
+    if (graphFailures > 0) failures.push(`${graphFailures} graph status failure(s)`);
+    if (streamBehind) failures.push(`sse is behind: last data=${revisions.last}, final revision=${finalRevision}`);
+    if (failures.length > 0) console.log(`  failed             ${failures.join('; ')}`);
+
     if (options.keep) {
       console.log('');
       console.log(`live-demo: server left running at http://127.0.0.1:${port}/#/graph/${rootSubject}`);
@@ -425,7 +483,7 @@ async function main() {
     }
 
     cleanup();
-    process.exit(errors === 0 ? 0 : 1);
+    process.exit(failures.length === 0 ? 0 : 1);
   } catch (error) {
     console.error(`live-demo: ${error.message}`);
     cleanup();

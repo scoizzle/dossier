@@ -44,12 +44,15 @@ public sealed class MultiWriterTests
         const int perWriter = 50;
         var before = db.Store.Revision();
         var errors = new ConcurrentQueue<Exception>();
+        // Each writer's store is opened before the barrier: connection setup is not the overlap
+        // the barrier exists to create.
+        var stores = Enumerable.Range(0, writers).Select(_ => new DossierStore(db.DbPath)).ToArray();
 
         var tasks = StartTogether(writers, writer =>
         {
             try
             {
-                var store = new DossierStore(db.DbPath);
+                var store = stores[writer];
                 for (var index = 0; index < perWriter; index++)
                 {
                     // Two subjects are shared by every writer; the third is the writer's own.
@@ -74,7 +77,8 @@ public sealed class MultiWriterTests
 
         var subjects = Fixtures.Count(connection, "SELECT COUNT(*) FROM subjects");
         await Assert.That(subjects).IsEqualTo(6);
-        await Assert.That(db.Store.Revision()).IsGreaterThan(before);
+        // Every accepted fact insert fires trg_facts_insert, so the counter moves at least once per fact.
+        await Assert.That(db.Store.Revision()).IsGreaterThanOrEqualTo(before + (writers * perWriter));
     }
 
     [Test]
@@ -84,6 +88,7 @@ public sealed class MultiWriterTests
         const int writers = 8;
         const int rounds = 20;
         var errors = new ConcurrentQueue<Exception>();
+        var stores = Enumerable.Range(0, writers).Select(_ => new DossierStore(db.DbPath)).ToArray();
 
         for (var round = 0; round < rounds; round++)
         {
@@ -92,7 +97,7 @@ public sealed class MultiWriterTests
             {
                 try
                 {
-                    var store = new DossierStore(db.DbPath);
+                    var store = stores[writer];
                     store.PostFacts(Fixtures.Post("Dedupe/Round", Fixtures.Fact(text)));
                 }
                 catch (Exception exception)
@@ -119,44 +124,67 @@ public sealed class MultiWriterTests
     {
         using var db = new TempDb();
         const int writers = 4;
+        const int rounds = 10;
         var errors = new ConcurrentQueue<Exception>();
-
-        var tasks = StartTogether(writers, writer =>
-        {
-            try
-            {
-                var store = new DossierStore(db.DbPath);
-                store.PostFacts(Fixtures.Post("Slot/Subject", Fixtures.Fact($"slot-value-{writer}", key: "status")));
-            }
-            catch (Exception exception)
-            {
-                errors.Enqueue(exception);
-            }
-        });
-        await Task.WhenAll(tasks);
-
-        await Assert.That(Describe(errors)).IsEqualTo(string.Empty);
-
+        var stores = Enumerable.Range(0, writers).Select(_ => new DossierStore(db.DbPath)).ToArray();
         using var connection = db.Store.OpenConnection();
-        var slotFact = Fixtures.Scalar(
-            connection,
-            "SELECT fact_id FROM slots WHERE subject_id = (SELECT id FROM subjects WHERE name = 'Slot/Subject') AND kind = 'note' AND key = 'status'");
-        await Assert.That(slotFact is string).IsTrue();
 
-        // Single-writer semantics: the newest post owns the slot and the replaced fact is superseded.
-        var live = Fixtures.Count(
-            connection,
-            "SELECT COUNT(*) FROM facts WHERE kind = 'note' AND key = 'status' AND status = 'live'");
-        var superseded = Fixtures.Count(
-            connection,
-            "SELECT COUNT(*) FROM facts WHERE kind = 'note' AND key = 'status' AND status = 'superseded'");
-        var slotLive = Fixtures.Count(
-            connection,
-            "SELECT COUNT(*) FROM facts WHERE id = $id AND status = 'live'",
-            ("$id", slotFact));
-        await Assert.That(live).IsEqualTo(1);
-        await Assert.That(slotLive).IsEqualTo(1);
-        await Assert.That(live + superseded).IsEqualTo(writers);
+        for (var round = 0; round < rounds; round++)
+        {
+            // A fresh subject and key each round, so every round starts with exactly one empty slot.
+            var subject = $"Slot/Subject/{round:00}";
+            var key = $"status-{round:00}";
+            var statuses = new ConcurrentQueue<string>();
+
+            var tasks = StartTogether(writers, writer =>
+            {
+                try
+                {
+                    var result = stores[writer].PostFacts(Fixtures.Post(subject, Fixtures.Fact($"slot-value-{writer}", key: key)));
+                    statuses.Enqueue(result.Response.Facts[0].Status);
+                }
+                catch (Exception exception)
+                {
+                    errors.Enqueue(exception);
+                }
+            });
+            await Task.WhenAll(tasks);
+
+            await Assert.That($"round {round}: {Describe(errors)}").IsEqualTo($"round {round}: ");
+
+            var slotFact = Fixtures.Scalar(
+                connection,
+                "SELECT fact_id FROM slots WHERE subject_id = (SELECT id FROM subjects WHERE name = $subject) AND kind = 'note' AND key = $key",
+                ("$subject", subject),
+                ("$key", key));
+            await Assert.That(slotFact is string).IsTrue();
+
+            // Single-writer semantics: the newest post owns the slot and the replaced fact is superseded.
+            var live = Fixtures.Count(
+                connection,
+                "SELECT COUNT(*) FROM facts WHERE subject_id = (SELECT id FROM subjects WHERE name = $subject) AND kind = 'note' AND key = $key AND status = 'live'",
+                ("$subject", subject),
+                ("$key", key));
+            var superseded = Fixtures.Count(
+                connection,
+                "SELECT COUNT(*) FROM facts WHERE subject_id = (SELECT id FROM subjects WHERE name = $subject) AND kind = 'note' AND key = $key AND status = 'superseded'",
+                ("$subject", subject),
+                ("$key", key));
+            var slotLive = Fixtures.Count(
+                connection,
+                "SELECT COUNT(*) FROM facts WHERE id = $id AND status = 'live'",
+                ("$id", slotFact));
+            await Assert.That(live).IsEqualTo(1);
+            await Assert.That(slotLive).IsEqualTo(1);
+            await Assert.That(live + superseded).IsEqualTo(writers);
+
+            // The first writer to reach the empty slot creates it; every later writer replaces it.
+            var posted = statuses.ToArray();
+            await Assert.That($"round {round}: new={posted.Count(status => status == "new")}")
+                .IsEqualTo($"round {round}: new=1");
+            await Assert.That($"round {round}: replaced={posted.Count(status => status == "replaced")}")
+                .IsEqualTo($"round {round}: replaced={writers - 1}");
+        }
     }
 
     [Test]
@@ -196,11 +224,12 @@ public sealed class MultiWriterTests
             }
 
             var errors = new ConcurrentQueue<Exception>();
+            var stores = Enumerable.Range(0, writers).Select(_ => new DossierStore(db.DbPath)).ToArray();
             var tasks = StartTogether(writers, writer =>
             {
                 try
                 {
-                    var store = new DossierStore(db.DbPath);
+                    var store = stores[writer];
                     for (var index = 0; index < perWriter; index++)
                     {
                         store.PostFacts(Fixtures.Post("Stream/Writers", Fixtures.Fact($"stream-w{writer}-{index:00}")));
@@ -213,15 +242,23 @@ public sealed class MultiWriterTests
             });
 
             var writersDone = Task.WhenAll(tasks);
-            var samples = new List<Task<int>> { SampleGraph() };
+            // One graph request in flight at a time: the sampler must not build a backlog.
+            var samples = new List<Task<int>>();
+            var inFlight = SampleGraph();
             while (!writersDone.IsCompleted)
             {
-                samples.Add(SampleGraph());
+                if (inFlight.IsCompleted)
+                {
+                    samples.Add(inFlight);
+                    inFlight = SampleGraph();
+                }
+
                 await Task.Delay(10, cts.Token);
             }
 
             await writersDone;
             await Assert.That(Describe(errors)).IsEqualTo(string.Empty);
+            samples.Add(inFlight);
 
             foreach (var sample in samples)
             {

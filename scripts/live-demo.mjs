@@ -138,24 +138,108 @@ function httpRequest(port, pathname, timeout = 10_000) {
   });
 }
 
-function openRevisionStream(port) {
-  const state = { events: 0, last: 0, closed: false };
-  const request = http.get({ host: '127.0.0.1', port, path: '/api/events', timeout: 0 }, (response) => {
+/**
+ * Reads /api/events from `since`, counting revision frames, change frames, change rows, resets and
+ * the actors named by fact-insert rows. A stream that is not a 200 text/event-stream is a run
+ * failure, not a quiet no-op: without it the demo has no live evidence at all.
+ */
+function openRevisionStream(port, since) {
+  const state = {
+    events: 0,
+    changeFrames: 0,
+    changeRows: 0,
+    resets: 0,
+    last: 0,
+    actors: new Set(),
+    closed: false,
+    failure: null,
+  };
+  const path = Number.isFinite(since) ? `/api/events?since=${since}` : '/api/events';
+  const request = http.get({ host: '127.0.0.1', port, path, timeout: 0 }, (response) => {
+    const type = String(response.headers['content-type'] ?? '');
+    if (response.statusCode !== 200 || !/text\/event-stream/i.test(type)) {
+      state.failure = `event stream answered ${response.statusCode} ${type || '(no content-type)'}`;
+      response.resume();
+      return;
+    }
+
     const lines = readline.createInterface({ input: response });
+    let event = '';
+    let data = [];
+    const dispatch = () => {
+      const payload = data.join('\n');
+      if (event === 'revision') {
+        const value = Number(payload.trim());
+        if (Number.isFinite(value)) {
+          state.events++;
+          state.last = value;
+        }
+      } else if (event === 'changes') {
+        state.changeFrames++;
+        try {
+          const page = JSON.parse(payload);
+          const rows = Array.isArray(page?.changes) ? page.changes : [];
+          state.changeRows += rows.length;
+          for (const row of rows) {
+            if (typeof row?.actor === 'string' && row.actor) state.actors.add(row.actor);
+          }
+          if (Number.isFinite(page?.to)) state.last = Math.max(state.last, page.to);
+        } catch {
+          // A frame we cannot parse is still a frame; the final journal read has the truth.
+        }
+      } else if (event === 'reset') {
+        state.resets++;
+        const value = Number(payload.trim());
+        if (Number.isFinite(value)) state.last = value;
+      }
+      event = '';
+      data = [];
+    };
+
     lines.on('line', (line) => {
-      if (!line.startsWith('data:')) return;
-      const value = Number(line.slice(5).trim());
-      if (!Number.isFinite(value)) return;
-      state.events++;
-      state.last = value;
+      if (line === '') { dispatch(); return; }
+      if (line.startsWith(':')) return; // keepalive comment
+      const colon = line.indexOf(':');
+      const field = colon < 0 ? line : line.slice(0, colon);
+      let value = colon < 0 ? '' : line.slice(colon + 1);
+      if (value.startsWith(' ')) value = value.slice(1);
+      if (field === 'event') event = value;
+      else if (field === 'data') data.push(value);
     });
   });
-  request.on('error', () => {});
+  request.on('error', (error) => {
+    if (!state.closed) state.failure ??= `event stream failed: ${error.message}`;
+  });
   state.close = () => {
     state.closed = true;
     request.destroy();
   };
   return state;
+}
+
+/**
+ * Pages the journal from `since` and returns the rows behind the run plus every actor they name.
+ * This is the identity check's own evidence: the stream is best effort, the journal is not.
+ */
+async function readJournalWindow(port, since) {
+  const actors = new Set();
+  let rows = 0;
+  let cursor = since;
+  let pages = 0;
+  while (pages++ < 40) {
+    const reply = await httpRequest(port, `/api/changes?since=${cursor}&limit=500`);
+    if (reply.status !== 200) throw new Error(`/api/changes answered ${reply.status}`);
+    const body = JSON.parse(reply.body);
+    if (body.reset) break;
+    const changes = Array.isArray(body.changes) ? body.changes : [];
+    rows += changes.length;
+    for (const row of changes) {
+      if (typeof row?.actor === 'string' && row.actor) actors.add(row.actor);
+    }
+    cursor = Number(body.next);
+    if (!body.truncated || changes.length === 0 || !Number.isFinite(cursor)) break;
+  }
+  return { rows, actors };
 }
 
 class McpAgent {
@@ -233,7 +317,8 @@ class McpAgent {
     await this.call('initialize', {
       protocolVersion: '2025-06-18',
       capabilities: {},
-      clientInfo: { name: 'live-demo', version: '1' },
+      // The client's own label becomes the provenance actor on every fact it posts (identity S6).
+      clientInfo: { name: this.name, version: '1' },
     });
   }
 
@@ -352,21 +437,32 @@ async function main() {
     const rootFact = seeded.response.facts[0].id;
     const rootSubject = seeded.response.subject.id;
 
+    // Everything the run produces sits above this seq, so the stream and the journal read below
+    // describe the agents only and the seeder's own writes cannot count as an extra actor.
+    const baseRevision = JSON.parse((await httpRequest(port, '/api/revision')).body).revision;
+
     console.log(`url      http://127.0.0.1:${port}/#/graph/${rootSubject}`);
     console.log(`agents   ${options.agents} x ${options.facts} facts${options.rate > 0 ? ` at ${options.rate}/s each` : ' unthrottled'}`);
     console.log('');
 
-    revisions = openRevisionStream(port);
+    revisions = openRevisionStream(port, baseRevision);
 
     const graphUrl = `/api/graph?subject=${encodeURIComponent(rootSubject)}&depth=1&facts=true&max_nodes=500`;
     const graph = { during: [], after: [] };
+    // A 25 ms sampler must never stack requests: over a slow server a new one would start while the
+    // last is still in flight and the latency numbers would describe a queue, not the server.
+    let sampling = false;
     const sample = async () => {
+      if (sampling) return;
+      sampling = true;
       try {
         const reply = await httpRequest(port, graphUrl);
         graph.during.push(reply.ms);
         if (reply.status !== 200) graph.duringStatusFailures = (graph.duringStatusFailures ?? 0) + 1;
       } catch {
         graph.duringStatusFailures = (graph.duringStatusFailures ?? 0) + 1;
+      } finally {
+        sampling = false;
       }
     };
     sampler = setInterval(sample, 25);
@@ -454,6 +550,18 @@ async function main() {
     const streamBehind = revisions.last !== finalRevision;
     const seconds = wallMs / 1000;
 
+    // The journal is the identity check's own evidence: the stream is best effort, this is not.
+    let journal = { rows: 0, actors: new Set() };
+    let journalError = null;
+    try {
+      journal = await readJournalWindow(port, baseRevision);
+    } catch (error) {
+      journalError = error.message;
+    }
+    // Union both sources: a reset can cost the stream rows, and the read can fail.
+    const actors = [...new Set([...journal.actors, ...revisions.actors])].sort();
+    const rowsPerFact = posted > 0 ? journal.rows / posted : 0;
+
     console.log('summary');
     console.log(`  facts posted       ${posted} (+1 seed, ${options.agents * options.facts} attempted)`);
     console.log(`  wall time          ${seconds.toFixed(2)} s`);
@@ -464,6 +572,9 @@ async function main() {
       console.log(`    ${agent.name} ok=${agent.stats.ok} busy=${agent.stats.busy} other=${agent.stats.other}${detail}`);
     }
     console.log(`  sse revisions      ${revisions.events} events, ${(revisions.events / seconds).toFixed(1)}/s, last data=${revisions.last}`);
+    console.log(`  sse changes        ${revisions.changeFrames} frames, ${revisions.changeRows} rows, ${revisions.resets} reset(s)`);
+    console.log(`  actors             ${actors.length} distinct (${actors.join(', ') || 'none'}), expected ${options.agents}`);
+    console.log(`  journal            ${journal.rows} rows behind the run, ${rowsPerFact.toFixed(2)} rows per posted fact`);
     console.log(`  graph during       ${formatLatency(graph.during)}${graph.duringStatusFailures ? ` status-failures=${graph.duringStatusFailures}` : ''}`);
     console.log(`  graph after        ${formatLatency(graph.after)}${graph.afterStatusFailures ? ` status-failures=${graph.afterStatusFailures}` : ''}`);
     console.log(`  final revision     ${finalRevision}`);
@@ -472,6 +583,11 @@ async function main() {
     if (errors > 0) failures.push(`${errors} write error(s)`);
     if (graphFailures > 0) failures.push(`${graphFailures} graph status failure(s)`);
     if (streamBehind) failures.push(`sse is behind: last data=${revisions.last}, final revision=${finalRevision}`);
+    if (revisions.failure) failures.push(revisions.failure);
+    if (journalError) failures.push(`journal read failed: ${journalError}`);
+    if (actors.length < options.agents) {
+      failures.push(`identity regression: ${actors.length} distinct actor(s) (${actors.join(', ') || 'none'}) for ${options.agents} agent(s); each mcp child should send clientInfo.name`);
+    }
     if (failures.length > 0) console.log(`  failed             ${failures.join('; ')}`);
 
     if (options.keep) {

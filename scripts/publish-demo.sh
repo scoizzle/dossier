@@ -15,14 +15,16 @@ TMP="$(mktemp -d "${TMPDIR:-/tmp}/dossier-publish.XXXXXX")"
 export DOSSIER_DB="$TMP/dossier.db"
 trap 'rm -rf "$TMP"' EXIT
 
-bash "$ROOT/scripts/seed.sh" >/dev/null 2>&1
-
-# The seed records one screenshot attachment but posting does not store bytes; place the blob
-# (content-addressed at blobs/<sha256> next to the database) so publish can copy it into subjects/<slug>/assets/.
-SHOT="$ROOT/scripts/seed/shot-1x1.png"
-SHA="$(shasum -a 256 "$SHOT" | cut -d' ' -f1)"
-mkdir -p "$TMP/blobs"
-cp "$SHOT" "$TMP/blobs/$SHA"
+# seed.sh is quiet on success, but its failure output is the only clue when the seed attachment
+# drifts or a tool is missing, so keep it aside and replay it on stderr when the seed fails.
+seed_log="$TMP/seed.log"
+seed_status=0
+bash "$ROOT/scripts/seed.sh" >"$seed_log" 2>&1 || seed_status=$?
+if [ "$seed_status" -ne 0 ]; then
+  echo "scripts/seed.sh failed (exit $seed_status); its output follows:" >&2
+  cat "$seed_log" >&2
+  exit "$seed_status"
+fi
 
 # Run from the repo root with a relative --out so the README's recorded command is portable.
 cd "$ROOT"

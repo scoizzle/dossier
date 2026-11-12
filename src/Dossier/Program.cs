@@ -10,6 +10,14 @@ if (args.Length == 0)
 
 try
 {
+    // Reject unknown options and valueless options before the switch: no store is opened,
+    // no file is read and nothing is written for a typo.
+    if (VerbSpec(args) is { } spec && ValidationError(args, spec) is { } argumentError)
+    {
+        Console.Error.WriteLine(argumentError);
+        return 1;
+    }
+
     switch (args[0])
     {
         case "init":
@@ -422,4 +430,130 @@ static int? ParseLimit(string? value)
     }
 
     return limit;
+}
+
+// Per-verb option table: value-taking flags, boolean flags, and the index where flags may start
+// (2 for `dossier compile`, whose sub-verb is args[1]). A verb missing from the table is not
+// validated, so init/version/mcp keep their exact behaviour. Every other token is a positional
+// (the `compile` sub-verb, a `show`/`retract` id) and is left alone.
+static (string[] ValueFlags, string[] BooleanFlags, int Start)? VerbSpec(string[] arguments) => arguments[0] switch
+{
+    "post" => (["--file"], ["--dry-run"], 1),
+    "dump" => (["--source", "--subject", "--kind", "--split", "--tag"], ["--entity-subjects"], 1),
+    "correlate" => (["--subject", "--matcher"], [], 1),
+    "search" => ([
+        "--q", "--subject", "--kind", "--key", "--tag", "--actor", "--status", "--since",
+        "--ref-target", "--direction", "--cursor", "--limit"], ["--brief"], 1),
+    "check" => (["--subject", "--drafts", "--limit"], [], 1),
+    "show" => ([], [], 1),
+    "retract" => ([], [], 1),
+    "dossier" => arguments.Length >= 2 && arguments[1] == "compile"
+        ? ([
+            "--subject", "--format", "--budget", "--budget-mode", "--depth", "--order", "--need",
+            "--recency"], ["--descendants"], 2)
+        : null,
+    "publish" => ([
+        "--out", "--format", "--subject", "--budget", "--budget-mode", "--depth", "--facts",
+        "--assets", "--index-max-tokens", "--max-files", "--max-file-bytes", "--max-total-bytes",
+        "--profile"], ["--respect-limits"], 1),
+    "import" => (["--from", "--db"], [], 1),
+    "serve" => (["--port"], [], 1),
+    _ => null,
+};
+
+static string? ValidationError(string[] arguments, (string[] ValueFlags, string[] BooleanFlags, int Start) spec)
+{
+    var known = new HashSet<string>(spec.ValueFlags, StringComparer.Ordinal);
+    known.UnionWith(spec.BooleanFlags);
+    for (var i = spec.Start; i < arguments.Length; i++)
+    {
+        var token = arguments[i];
+        if (!token.StartsWith("--", StringComparison.Ordinal) || token.Length == 2)
+        {
+            continue;
+        }
+
+        if (spec.ValueFlags.Contains(token, StringComparer.Ordinal))
+        {
+            // A value that starts with "--" and is not a flag of this verb stays a value.
+            if (i + 1 >= arguments.Length || known.Contains(arguments[i + 1]))
+            {
+                return $"{token} requires a value";
+            }
+
+            i++;
+            continue;
+        }
+
+        if (spec.BooleanFlags.Contains(token, StringComparer.Ordinal))
+        {
+            continue;
+        }
+
+        var suggestion = ClosestFlag(token, known);
+        return suggestion is null
+            ? $"unknown option \"{token}\""
+            : $"unknown option \"{token}\" (did you mean {suggestion}?)";
+    }
+
+    return null;
+}
+
+static string? ClosestFlag(string unknown, IEnumerable<string> flags)
+{
+    string? closest = null;
+    var closestDistance = int.MaxValue;
+    foreach (var flag in flags)
+    {
+        var distance = FlagDistance(unknown, flag);
+        if (distance > 2)
+        {
+            continue;
+        }
+
+        if (distance < closestDistance || (distance == closestDistance && string.CompareOrdinal(flag, closest) < 0))
+        {
+            closest = flag;
+            closestDistance = distance;
+        }
+    }
+
+    return closest;
+}
+
+// Distance to the whole flag or to any hyphen-aligned suffix, so a dropped qualifier
+// (--mode for --budget-mode) still points at the flag it belongs to.
+static int FlagDistance(string unknown, string known)
+{
+    var distance = EditDistance(unknown, known);
+    for (var index = known.IndexOf('-', 2); index >= 0; index = known.IndexOf('-', index + 1))
+    {
+        distance = Math.Min(distance, EditDistance(unknown, known[index..]));
+    }
+
+    return distance;
+}
+
+static int EditDistance(string left, string right)
+{
+    var previous = new int[right.Length + 1];
+    var current = new int[right.Length + 1];
+    for (var j = 0; j <= right.Length; j++)
+    {
+        previous[j] = j;
+    }
+
+    for (var i = 1; i <= left.Length; i++)
+    {
+        current[0] = i;
+        for (var j = 1; j <= right.Length; j++)
+        {
+            var cost = left[i - 1] == right[j - 1] ? 0 : 1;
+            current[j] = Math.Min(Math.Min(previous[j] + 1, current[j - 1] + 1), previous[j - 1] + cost);
+        }
+
+        (previous, current) = (current, previous);
+    }
+
+    return previous[right.Length];
 }

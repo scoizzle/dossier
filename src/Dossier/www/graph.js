@@ -302,6 +302,21 @@
       var inv = 1 / view.scale;
       var k;
       ctx.lineWidth = inv;
+      // Implicit owner links: a fact is drawn faintly to the subject that owns it, so a fact with no refs of
+      // its own is still visibly attached. These live only in the paint pass: not in edges[], so the header
+      // counts, edgeKeys, degrees and hit-testing are untouched. A fact whose subject is not in the graph has
+      // anchor null and draws nothing.
+      for (k = 0; k < nodes.length; k++) {
+        var owned = nodes[k];
+        if (owned.type !== 'fact' || !owned.anchor) continue;
+        ctx.strokeStyle = hsl(owned.hue, 35, 60, 1);
+        ctx.globalAlpha = 0.25;
+        ctx.beginPath();
+        ctx.moveTo(owned.x, owned.y);
+        ctx.lineTo(owned.anchor.x, owned.anchor.y);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
       for (k = 0; k < edges.length; k++) {
         var ed = edges[k];
         ctx.strokeStyle = BASIS[ed.e.basis] || '#9aa0a6';

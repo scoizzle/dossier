@@ -66,6 +66,8 @@
     var counts = el('span', '', bar, 'g-counts');
     var fitButton = el('button', 'Fit', bar);
     fitButton.type = 'button';
+    // The activity strip sits directly under the bar; feed.js fills it when that script is loaded.
+    var feedHost = win.DossierFeed && typeof win.DossierFeed.mount === 'function' ? el('div', null, host, 'g-feed') : null;
     var banner = el('div', '', host, 'g-banner');
     banner.hidden = true;
     var status = el('div', '', host, 'g-status');
@@ -93,6 +95,12 @@
     // following the store without a new mount.
     var expandedList = [];
     var selectedChanged = false;
+
+    // One feed per tab: this view owns the only EventSource, so it owns the activity strip too.
+    var feed = null;
+    if (feedHost) {
+      feed = win.DossierFeed.mount(feedHost, { onSelect: selectTarget, now: options.now });
+    }
 
     // Radius follows the subject's fact count; a refresh recomputes it whenever it adopts new data.
     function subjectRadius(s) { return 8 + 2.5 * Math.sqrt(Math.max(0, Number(s.facts) || 0)); }
@@ -544,6 +552,26 @@
     function focusNode(nd) {
       showPanel(nd);
       centre(nd);
+    }
+
+    // A feed row opens what it names. A row that removed its target is a no-op (the node is gone, and a
+    // stale click must not throw); an unloaded subject is expanded first and selected when it lands.
+    function selectTarget(row) {
+      if (!row || typeof row !== 'object' || destroyed) return;
+      var status = row.fact_status === undefined || row.fact_status === null ? '' : String(row.fact_status);
+      if (row.op === 'delete' || status === 'retracted') return;
+      var factId = typeof row.fact_id === 'string' && row.fact_id ? row.fact_id : null;
+      var subjectId = typeof row.subject_id === 'string' && row.subject_id ? row.subject_id : null;
+      var target = factId ? nodeByKey[nodeKey('fact', factId)] : (subjectId ? nodeByKey[nodeKey('subject', subjectId)] : null);
+      if (target) { focusNode(target); return; }
+      if (!subjectId || !ID_RE.test(subjectId)) return;
+      var owner = nodeByKey[nodeKey('subject', subjectId)];
+      if (owner) { focusNode(owner); return; }
+      expand({ type: 'subject', id: subjectId }).then(function () {
+        if (destroyed) return;
+        var fresh = nodeByKey[nodeKey('subject', subjectId)];
+        if (fresh) focusNode(fresh);
+      });
     }
 
     // A node reference is a focus button; the id is shown as text.
@@ -1002,25 +1030,45 @@
     function applyFrame(frame) {
       if (!frame || typeof frame !== 'object') return;
       var rows = Array.isArray(frame.changes) ? frame.changes : [];
+      var applied = [];
       var to = Number(frame.to);
       for (var k = 0; k < rows.length; k++) {
         var seq = Number(rows[k] && rows[k].seq);
         if (!Number.isFinite(seq) || seq <= lastSeen) continue;
         lastSeen = seq;
         pendingRows.push(rows[k]);
+        applied.push(rows[k]);
       }
       if (Number.isFinite(to)) { if (to > lastSeen) lastSeen = to; }
       else {
         var nx = Number(frame.next);
         if (Number.isFinite(nx) && nx > lastSeen) lastSeen = nx;
       }
+      if (feed && applied.length) feed.ingest(applied);
+    }
+
+    // A reset refills the feed's history from one request, so a reader who opens the strip after a
+    // discontinuity still sees what happened.
+    function refillFeed() {
+      if (!feed) return Promise.resolve();
+      feed.reset();
+      return fetchJson('/api/changes?last=50').then(function (body) {
+        if (destroyed || liveStopped || !feed) return;
+        if (body && Array.isArray(body.changes)) feed.ingest(body.changes);
+      }).catch(function () { /* the next batch still lands */ });
+    }
+
+    // A discontinuity: the view refetches everything through the same gate, and the feed refills once.
+    function afterReset(n) {
+      if (Number.isFinite(n)) lastSeen = n;
+      pendingRows = [];
+      if (feed) refillFeed();
+      refresh();
     }
 
     function onReset(n) {
       if (destroyed || liveStopped) return;
-      if (Number.isFinite(n)) lastSeen = n;
-      pendingRows = [];
-      refresh(); // a reset is a full refresh through the same gate
+      afterReset(n);
     }
 
     function onChanges(ev) {
@@ -1048,10 +1096,7 @@
       fetchJson(target).then(function (body) {
         if (destroyed || liveStopped || !body || typeof body !== 'object') return;
         if (body.reset) {
-          var nx = Number(body.next);
-          if (Number.isFinite(nx)) lastSeen = nx;
-          pendingRows = [];
-          refresh();
+          afterReset(Number(body.next));
           return;
         }
         applyFrame(body);
@@ -1105,22 +1150,33 @@
       });
     }
 
+    // The strip's history: one request, and only when feed.js is loaded. It resolves before the stream
+    // opens, so the feed's watermark already covers what it rendered.
+    var history = feed
+      ? fetchJson('/api/changes?last=50').then(function (body) {
+        if (!destroyed && feed && body && Array.isArray(body.changes)) feed.ingest(body.changes);
+      }).catch(function () { /* the stream still fills the feed */ })
+      : Promise.resolve();
+
     // The baseline costs one request before the graph. Without EventSource and without a timer there is
     // nothing to listen with, so such a host keeps its single request.
     var ready;
     if (typeof win.EventSource === 'function' || typeof win.setInterval === 'function') {
-      ready = fetchJson('/api/revision').then(function (body) {
-        lastSeen = Number.isFinite(body && body.revision) ? body.revision : -1;
-      }).catch(function () { lastSeen = -1; })
+      ready = history.then(function () {
+        return fetchJson('/api/revision').then(function (body) {
+          lastSeen = Number.isFinite(body && body.revision) ? body.revision : -1;
+        }).catch(function () { lastSeen = -1; });
+      })
         .then(initialLoad)
         .then(function () { listen(); }); // listen even if the first load failed: refresh must still work
     } else {
-      ready = initialLoad();
+      ready = history.then(initialLoad);
     }
 
     function destroy() {
       destroyed = true;
       stopStream();
+      if (feed) { feed.destroy(); feed = null; }
       if (flushTimer && typeof win.clearTimeout === 'function') win.clearTimeout(flushTimer);
       flushTimer = 0;
       if (pollTimer && typeof win.clearInterval === 'function') win.clearInterval(pollTimer);

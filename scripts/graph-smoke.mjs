@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-// Smoke test for src/Dossier/www/graph.js. Runs the exact script bytes in a vm context with a minimal
-// DOM/canvas stub, feeds it the committed API fixture (tests/Dossier.Tests/fixtures/graph-api.json, kept
-// byte-identical to the real /api/graph output by a .NET test) plus a truncated variant and an XSS payload,
-// and checks rendering, focus/zoom/keyboard behaviour, merge, the truncation banner and that untrusted
-// text never becomes markup, a link target or a navigation.
-// GRAPH_JS may point at an alternative script (used to prove the checks fail on unsafe code).
+// Smoke test for src/Dossier/www/graph.js and src/Dossier/www/feed.js. Runs the exact script bytes in a vm
+// context with a minimal DOM/canvas stub, feeds it the committed API fixture
+// (tests/Dossier.Tests/fixtures/graph-api.json, kept byte-identical to the real /api/graph output by a
+// .NET test) plus a truncated variant and an XSS payload, and checks rendering, focus/zoom/keyboard
+// behaviour, merge, the truncation banner, the live channel, the activity feed, and that untrusted text
+// never becomes markup, a link target or a navigation.
+// GRAPH_JS (FEED_JS) may point at an alternative script (used to prove the checks fail on unsafe code).
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -13,6 +14,14 @@ import vm from 'node:vm';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(here, '..');
 const source = readFileSync(process.env.GRAPH_JS || path.join(root, 'src', 'Dossier', 'www', 'graph.js'), 'utf8');
+// feed.js is loaded into the same context only for the feed scenarios; the others keep the window that
+// graph.js saw before S6, so their request indices stay valid.
+let feedSource = '';
+try {
+  feedSource = readFileSync(process.env.FEED_JS || path.join(root, 'src', 'Dossier', 'www', 'feed.js'), 'utf8');
+} catch (err) {
+  console.error('note: feed.js is not readable (' + err.message + ')');
+}
 const fixtureText = readFileSync(process.env.GRAPH_FIXTURE || path.join(root, 'tests', 'Dossier.Tests', 'fixtures', 'graph-api.json'), 'utf8');
 const fixture = JSON.parse(fixtureText);
 
@@ -33,8 +42,9 @@ const brief = (list) => (list.length ? ': ' + list.length + ' e.g. ' + list.slic
 
 // `live` installs the fake clock (and, for 'event', the EventSource stub) the live-update scenarios need.
 // Passing nothing leaves the window without timers or EventSource, exactly like the earlier scenarios, so
-// graph.js keeps its single graph request and their url indices stay valid.
-function makeEnv(reduce, live) {
+// graph.js keeps its single graph request and their url indices stay valid. `withFeed` loads feed.js in
+// the same context, which is what makes DossierGraph mount the activity strip.
+function makeEnv(reduce, live, withFeed) {
   const state = { activeElement: null };
   const violations = []; // anything that could turn data into markup, links or navigation
   const created = [];
@@ -190,6 +200,14 @@ function makeEnv(reduce, live) {
     console.error('FAIL graph.js threw while bootstrapping: ' + err.message);
     process.exit(1);
   }
+  if (withFeed) {
+    try {
+      vm.runInContext(feedSource, sandbox, { filename: 'feed.js' });
+    } catch (err) {
+      console.error('FAIL feed.js threw while bootstrapping: ' + err.message);
+      process.exit(1);
+    }
+  }
 
   const runFrames = (limit) => {
     let n = 0;
@@ -210,7 +228,19 @@ function makeEnv(reduce, live) {
     return { host, instance, urls };
   }
 
-  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, calls, runFrames, counters, mount, window, clock, eventSources, advance };
+  // Mounts DossierFeed on a bare host: the feed's own behaviour needs no canvas and no graph.
+  function mountFeed(options = {}) {
+    const host = new El('div');
+    const selected = [];
+    const api = sandbox.window.DossierFeed.mount(host, {
+      onSelect: (r) => selected.push(r),
+      now: () => 1000,
+      ...options,
+    });
+    return { host, feed: api, selected };
+  }
+
+  return { El, state, violations, created, navigation, docListeners, winListeners, transforms, calls, runFrames, counters, mount, mountFeed, window, clock, eventSources, advance };
 }
 
 const ids = (list) => list.map((n) => n.id);
@@ -1365,7 +1395,250 @@ async function pollingChangesScenario() {
   check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
 }
 
-await interactionScenario('reduced-motion', true);
+// ---- S6 activity feed: bounded, text-only rows rendered from the journal ---------------------
+const FEED_TAGS = new Set(['DIV', 'SPAN', 'BUTTON', 'UL', 'LI']);
+const feedLines = (host) => (host.byClass('g-feed-list')[0] || { byTag: () => [] }).byTag('li').map((li) => (li.byClass('f-line')[0] || {}).textContent);
+
+async function feedRenderScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-render] ' + msg);
+  const env = makeEnv(true, undefined, true);
+  const { host, feed } = env.mountFeed();
+  const lines = () => feedLines(host);
+
+  feed.ingest([
+    row(1, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-1', fact_kind: 'note', fact_status: 'live', text: 'first fact', actor: 'agent-3' }),
+    row(2, 'subjects', 'insert', { subject_id: 's-new', subject_name: 'New subject' }),
+    row(3, 'facts', 'update', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-old', fact_status: 'retracted', text: 'old fact' }),
+  ]);
+  check(lines().length === 3, 'three changes render three rows (' + lines().length + ')');
+  check(lines()[2] === 'agent-3 added first fact to Acme', 'a fact insert names the actor, the snippet and the subject: "' + lines()[2] + '"');
+  check(lines()[1] === 'new subject New subject', 'a subject insert reads "new subject <name>": "' + lines()[1] + '"');
+  check(lines()[0].indexOf('old fact') >= 0 && lines()[0].indexOf('retracted') >= 0 && lines()[0].indexOf('Acme') >= 0,
+    'a retraction names the snippet and the subject: "' + lines()[0] + '"');
+  check(host.byClass('g-feed-list')[0].byTag('li').every((li) => li.byClass('f-time')[0] && li.byClass('f-time')[0].textContent.length > 0),
+    'every row carries a relative-time line');
+
+  const toggle = host.byClass('g-feed-toggle')[0];
+  const list = host.byClass('g-feed-list')[0];
+  check(!!toggle && toggle.getAttribute('aria-expanded') === 'true', 'the strip starts expanded');
+  toggle.fire('click');
+  check(toggle.getAttribute('aria-expanded') === 'false' && list.hidden === true, 'collapsing sets aria-expanded=false and hides the log');
+  toggle.fire('click');
+  check(toggle.getAttribute('aria-expanded') === 'true' && list.hidden === false, 'expanding restores the log');
+
+  // Refs of a batch fold into their fact's line, not one row each.
+  feed.ingest([
+    row(4, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4', fact_status: 'live', text: 'linked fact', actor: 'agent-1' }),
+    row(5, 'refs', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4' }),
+    row(6, 'slots', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4' }),
+  ]);
+  check(lines()[0] === 'agent-1 added linked fact to Acme +2 refs', 'refs and slots fold into the fact line: "' + lines()[0] + '"');
+  check(lines().filter((l) => l.indexOf('+2 refs') >= 0).length === 1, 'one folded refs line, not one per ref row');
+
+  // A supersede status update folded into its own insert (same batch) leaves one line.
+  const before = lines().length;
+  feed.ingest([
+    row(7, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-7', fact_status: 'live', text: 'superseded fact', actor: 'agent-2' }),
+    row(8, 'facts', 'update', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-7', fact_status: 'superseded', text: 'superseded fact', actor: null }),
+  ]);
+  check(lines().length === before + 1, 'a supersede update folds into its insert (' + (lines().length - before) + ' new row)');
+  check(lines()[0].indexOf('superseded fact') >= 0 && lines()[0].indexOf('agent-2 added') === 0, 'the folded line is the insert: "' + lines()[0] + '"');
+
+  // Bounded to 80 rows, newest first.
+  const burst = [];
+  for (let i = 0; i < 200; i++) {
+    burst.push(row(100 + i, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-b' + i, fact_status: 'live', text: 'burst ' + i, actor: 'agent-9' }));
+  }
+  feed.ingest(burst);
+  check(lines().length === 80, 'the feed is bounded to 80 rows (' + lines().length + ')');
+  check(lines()[0].indexOf('burst 199') >= 0, 'the newest burst row is first: "' + lines()[0] + '"');
+  check(lines()[79].indexOf('burst 120') >= 0, 'the oldest kept row is the 80th newest: "' + lines()[79] + '"');
+
+  const count = lines().length;
+  feed.ingest([row(299, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-dup', fact_status: 'live', text: 'redelivered', actor: 'agent-9' })]);
+  check(lines().length === count, 'a redelivered seq is dropped (still ' + lines().length + ')');
+
+  check(env.violations.length === 0, 'no markup/href/fetch violations' + brief(env.violations));
+  feed.destroy();
+}
+
+async function feedActorScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-actor] ' + msg);
+  const env = makeEnv(true, undefined, true);
+  const { host, feed } = env.mountFeed();
+  feed.ingest([
+    row(1, 'facts', 'update', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-1', fact_status: 'retracted', text: 'stale fact', actor: null }),
+    row(2, 'facts', 'delete', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-2', text: 'gone fact', actor: null }),
+    row(3, 'subjects', 'insert', { subject_id: 's-z', subject_name: 'Zeta', actor: null }),
+  ]);
+  const text = host.textContent;
+  check(text.indexOf('stale fact') >= 0 && text.indexOf('retracted') >= 0, 'a status update names the fact and its status');
+  check(text.indexOf('gone fact') >= 0 && text.indexOf('deleted') >= 0, 'a delete names the fact');
+  check(text.indexOf('new subject Zeta') >= 0, 'a subject row needs no actor');
+  check(text.indexOf('null') < 0 && text.indexOf('undefined') < 0, 'no null/undefined leaks into the feed: "' + text + '"');
+  check(host.byTag('li').every((li) => li.textContent.indexOf('added') < 0), 'no "added" wording without an actor');
+  feed.destroy();
+}
+
+async function feedXssScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-xss] ' + msg);
+  const env = makeEnv(true, undefined, true);
+  const { host, feed } = env.mountFeed();
+  const [img, js, script] = EVIL;
+  feed.ingest([
+    row(1, 'facts', 'insert', { subject_id: 's-evil', subject_name: img, fact_id: 'f-evil', fact_status: 'live', text: img + ' ' + js, actor: script }),
+    row(2, 'subjects', 'insert', { subject_id: 's-evil-2', subject_name: script }),
+  ]);
+  const text = host.textContent;
+  check(text.indexOf(img) >= 0 && text.indexOf(js) >= 0 && text.indexOf(script) >= 0, 'hostile strings reach the DOM as text');
+  check(!env.created.some((e) => /^(IMG|SCRIPT|IFRAME)$/.test(e.tagName)), 'no img/script/iframe element exists');
+  const unexpected = env.created.filter((e) => !FEED_TAGS.has(e.tagName)).map((e) => e.tagName);
+  check(unexpected.length === 0, 'the feed creates only its own elements' + (unexpected.length ? ': ' + unexpected.join() : ''));
+  check(env.violations.length === 0, 'no innerHTML/href/src/on*/style assignment' + brief(env.violations));
+  const list = host.byClass('g-feed-list')[0];
+  check(list.getAttribute('role') === 'log' && list.getAttribute('aria-live') === null, 'the log is role=log with no aria-live');
+  feed.destroy();
+}
+
+async function feedClickScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-click] ' + msg);
+  const env = makeEnv(true, 'event', true);
+  const payload = clone(fixture);
+  const ghost = {
+    format: 1, seed: 'ghost', root: 's-ghost',
+    subjects: [{ id: 's-ghost', name: 'Ghost', kind: 'module', parent: null, facts: 0 }],
+    facts: [], edges: [], unresolved: [], truncated: { subjects: 0, facts: 0, edges: 0 }, limits: { max_nodes: 500, depth: 1 },
+  };
+  const { host, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 1 };
+    if (u.indexOf('/api/changes') === 0) return { from: 0, to: 0, next: 0, truncated: false, reset: false, changes: [] };
+    if (u.indexOf('subject=s-ghost') > 0) return clone(ghost);
+    return clone(payload);
+  });
+  const strip = host.byClass('g-feed')[0];
+  check(!!strip && host.children.indexOf(strip) === host.children.findIndex((c) => c.className === 'g-bar') + 1,
+    'the feed strip sits directly under the g-bar');
+  const list = () => strip.byClass('g-feed-list')[0];
+  const panel = host.byTag('aside')[0];
+  const es = env.eventSources[0];
+
+  es.emit('changes', JSON.stringify({
+    from: 2, to: 2, next: 2, truncated: false, reset: false, changes: [
+      row(2, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-root-1', fact_status: 'live', text: 'first root fact', actor: 'agent-3' }),
+    ],
+  }));
+  check(list().byTag('li').length === 1, 'an SSE batch lands in the feed (' + list().byTag('li').length + ')');
+  list().byTag('li')[0].byTag('button')[0].fire('click');
+  check(panel.hidden === false && panel.byTag('h2')[0] && panel.byTag('h2')[0].textContent === 'Fact f-root-1',
+    'a row for a loaded node opens that node: ' + (panel.byTag('h2')[0] || {}).textContent);
+
+  const base = urls.length;
+  es.emit('changes', JSON.stringify({
+    from: 3, to: 3, next: 3, truncated: false, reset: false, changes: [
+      row(3, 'subjects', 'insert', { subject_id: 's-ghost', subject_name: 'Ghost' }),
+    ],
+  }));
+  const ghostRow = list().byTag('li').find((li) => li.textContent.indexOf('Ghost') >= 0);
+  check(!!ghostRow, 'the subject row renders');
+  ghostRow.byTag('button')[0].fire('click');
+  await settle();
+  await settle();
+  check(urls[base] === '/api/graph?subject=s-ghost&depth=1&facts=true&max_nodes=500',
+    'an unloaded subject is expanded first: ' + urls.slice(base).join(' | '));
+  check(panel.byTag('h2')[0] && panel.byTag('h2')[0].textContent === 'Ghost', 'then the expanded subject is selected');
+
+  // A row whose target was retracted is a no-op, and never an error.
+  const heading = panel.byTag('h2')[0].textContent;
+  es.emit('changes', JSON.stringify({
+    from: 4, to: 4, next: 4, truncated: false, reset: false, changes: [
+      row(4, 'facts', 'update', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-gone', fact_status: 'retracted', text: 'gone fact', actor: null }),
+    ],
+  }));
+  const goneRow = list().byTag('li').find((li) => li.textContent.indexOf('gone fact') >= 0);
+  goneRow.byTag('button')[0].fire('click');
+  await settle();
+  check(panel.byTag('h2')[0].textContent === heading, 'a retracted target keeps the panel as it was');
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  env.eventSources[0].close();
+}
+
+async function feedResetScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-reset] ' + msg);
+  const env = makeEnv(true, 'event', true);
+  const history = {
+    from: 9, to: 10, next: 10, truncated: false, reset: false, changes: [
+      row(9, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-9', fact_status: 'live', text: 'old one', actor: 'agent-1' }),
+      row(10, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-10', fact_status: 'live', text: 'old two', actor: 'agent-1' }),
+    ],
+  };
+  let page = history;
+  const { host, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 10 };
+    if (u.indexOf('/api/changes') === 0) return clone(page);
+    return clone(fixture);
+  });
+  const list = () => host.byClass('g-feed-list')[0];
+  check(list().byTag('li').length === 2, 'history renders on mount (' + list().byTag('li').length + ')');
+
+  page = {
+    from: 19, to: 20, next: 20, truncated: false, reset: false, changes: [
+      row(20, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-new', fact_status: 'live', text: 'after reset', actor: 'agent-7' }),
+    ],
+  };
+  const before = urls.filter((u) => u === '/api/changes?last=50').length;
+  env.eventSources[0].emit('reset', '20');
+  await settle();
+  await settle();
+  const after = urls.filter((u) => u === '/api/changes?last=50').length;
+  check(after === before + 1, 'a reset refills from exactly one ?last=50 (' + (after - before) + ')');
+  check(list().byTag('li').length === 1 && list().byTag('li')[0].textContent.indexOf('after reset') >= 0,
+    'the feed is emptied and refilled: ' + list().byTag('li').map((li) => li.textContent).join(' | '));
+  env.eventSources[0].close();
+}
+
+async function feedHistoryScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-history] ' + msg);
+  const env = makeEnv(true, 'event', true);
+  const { host, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 3 };
+    if (u === '/api/changes?last=50') {
+      return {
+        from: 1, to: 2, next: 2, truncated: false, reset: false, changes: [
+          row(1, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-1', fact_status: 'live', text: 'history one', actor: 'agent-1' }),
+          row(2, 'subjects', 'insert', { subject_id: 's-h', subject_name: 'History subject' }),
+        ],
+      };
+    }
+    return clone(fixture);
+  });
+  check(urls.filter((u) => u === '/api/changes?last=50').length === 1, 'one history request on mount: ' + urls.join(' | '));
+  check(host.byClass('g-feed-list')[0].byTag('li').length === 2, 'the history renders into the feed');
+  env.eventSources[0].close();
+
+  // Without feed.js the graph is exactly as it was: no strip and no history request.
+  const plain = makeEnv(true, 'event');
+  const m = await plain.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 3 } : clone(fixture)));
+  check(m.host.byClass('g-feed').length === 0, 'without feed.js no feed strip exists');
+  check(m.urls.every((u) => u.indexOf('/api/changes') !== 0), 'without feed.js no history is requested: ' + m.urls.join(' | '));
+  plain.eventSources[0].close();
+}
+
+async function feedTimersScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-timers] ' + msg);
+  const quiet = makeEnv(true, undefined, true);
+  const q = quiet.mountFeed();
+  q.feed.ingest([row(1, 'facts', 'insert', { subject_id: 's', subject_name: 'S', fact_id: 'f', fact_status: 'live', text: 'quiet host', actor: 'agent-1' })]);
+  check(q.host.byTag('li').length === 1, 'a host without setInterval still renders (no crash)');
+  q.feed.destroy();
+
+  const timed = makeEnv(true, 'poll', true);
+  const t = timed.mountFeed();
+  check(timed.clock.timers.length === 1, 'one 10s refresh timer is armed (' + timed.clock.timers.length + ')');
+  t.feed.destroy();
+  check(timed.clock.timers.length === 0, 'destroy() clears the interval (' + timed.clock.timers.length + ')');
+}
+
+
 await interactionScenario('animated', false);
 await ownerLinkScenario();
 await mergeScenario();
@@ -1398,6 +1671,13 @@ for (const [name, fn] of [
   ['stream-closed', eventSourceClosedScenario],
   ['polling', pollingFallbackScenario],
   ['poll-changes', pollingChangesScenario],
+  ['feed-render', feedRenderScenario],
+  ['feed-actor', feedActorScenario],
+  ['feed-xss', feedXssScenario],
+  ['feed-click', feedClickScenario],
+  ['feed-reset', feedResetScenario],
+  ['feed-history', feedHistoryScenario],
+  ['feed-timers', feedTimersScenario],
 ]) {
   try { await fn(); } catch (err) { failed++; console.error('FAIL [' + name + '] threw: ' + ((err && err.message) || err)); }
 }

@@ -406,7 +406,7 @@ public sealed class WebServer : IDisposable
                     Write(context, 200, "application/json", Ops.GetFact(store, Q("id") ?? throw new DossierRequestException("invalid_request", "id is required")));
                     break;
 
-                case "/app.js" or "/graph.js":
+                case "/app.js" or "/graph.js" or "/feed.js":
                     Write(context, 200, "text/javascript; charset=utf-8", Asset(request.Url!.AbsolutePath));
                     break;
 
@@ -737,6 +737,7 @@ public sealed class WebServer : IDisposable
         ["/"] = "index.html",
         ["/app.js"] = "app.js",
         ["/graph.js"] = "graph.js",
+        ["/feed.js"] = "feed.js",
     };
 
     private static readonly System.Collections.Concurrent.ConcurrentDictionary<string, string> AssetCache = new(StringComparer.Ordinal);

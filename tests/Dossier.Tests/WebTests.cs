@@ -133,7 +133,7 @@ public sealed class WebTests
         {
             using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
 
-            foreach (var path in new[] { "", "app.js", "graph.js", "api/revision", "api/graph?subject=s-root", "api/graph?depth=9", "api/graph?subject=nobody", "nothing-here" })
+            foreach (var path in new[] { "", "app.js", "graph.js", "feed.js", "api/revision", "api/graph?subject=s-root", "api/graph?depth=9", "api/graph?subject=nobody", "nothing-here" })
             {
                 var response = await http.GetAsync(path);
                 var csp = response.Headers.GetValues("Content-Security-Policy").Single();
@@ -141,7 +141,7 @@ public sealed class WebTests
                 await Assert.That(response.Headers.GetValues("X-Content-Type-Options").Single()).IsEqualTo("nosniff");
             }
 
-            foreach (var path in new[] { "app.js", "graph.js" })
+            foreach (var path in new[] { "app.js", "graph.js", "feed.js" })
             {
                 var response = await http.GetAsync(path);
                 await Assert.That((int)response.StatusCode).IsEqualTo(200);
@@ -151,11 +151,14 @@ public sealed class WebTests
 
             var graphJs = await http.GetStringAsync("graph.js");
             await Assert.That(graphJs.Contains("DossierGraph")).IsTrue();
+            var feedJs = await http.GetStringAsync("feed.js");
+            await Assert.That(feedJs.Contains("DossierFeed")).IsTrue();
 
             var index = await http.GetAsync("");
             var html = await index.Content.ReadAsStringAsync();
             await Assert.That(html.Contains("src=\"/app.js\"")).IsTrue();
             await Assert.That(html.Contains("src=\"/graph.js\"")).IsTrue();
+            await Assert.That(html.Contains("src=\"/feed.js\"")).IsTrue();
             // No inline script survives: every <script> carries a src.
             await Assert.That(System.Text.RegularExpressions.Regex.IsMatch(html, "<script(?![^>]*\\ssrc=)")).IsFalse();
 

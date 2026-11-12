@@ -25,6 +25,19 @@
   .g-stage canvas { width: 100%; height: 100%; display: block; cursor: grab; }
   .g-panel { width: 320px; overflow: auto; border: 1px solid #ddd; padding: 8px; }
   .g-panel pre { white-space: pre-wrap; }
+  .g-feed { border: 1px solid #ddd; margin-bottom: 8px; font-size: 12px; }
+  .g-feed-head { padding: 4px 8px; background: #fafafa; border-bottom: 1px solid #eee; }
+  .g-feed-toggle { font-size: 12px; }
+  .g-feed-list { list-style: none; margin: 0; padding: 0; max-height: 120px; overflow: auto; }
+  .g-feed-list li { padding: 2px 8px; border-top: 1px solid #f1f1f1; }
+  .g-feed .f-line { background: none; border: 0; padding: 0; font: inherit; color: #05c; text-align: left; cursor: pointer; }
+  .g-feed .f-line:hover { text-decoration: underline; }
+  .g-feed .f-time { color: #888; margin-left: 8px; }
+  .g-feed .f-empty { padding: 4px 8px; color: #888; }
+  @media (prefers-reduced-motion: no-preference) {
+    .g-feed .f-new { animation: f-in .35s ease-out; }
+    @keyframes f-in { from { background: #fff4d6; } to { background: transparent; } }
+  }
 </style>
 </head>
 <body>
@@ -33,6 +46,7 @@
   <input id="q" type="search" placeholder="search facts" autofocus>
 </header>
 <main id="main"></main>
+<script src="/feed.js"></script>
 <script src="/graph.js"></script>
 <script src="/app.js"></script>
 </body>

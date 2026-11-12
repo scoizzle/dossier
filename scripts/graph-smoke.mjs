@@ -654,6 +654,15 @@ async function ownerLinkScenario() {
 const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
 const ROOT_URL = '/api/graph?subject=s-root&depth=1&facts=true&max_nodes=500';
 
+// One row of the /api/changes journal, exactly as the server sends it, and one changes frame.
+const row = (seq, tbl, op, extra = {}) => ({
+  seq, tbl, op,
+  subject_id: null, subject_name: null, fact_id: null, fact_kind: null, fact_status: null,
+  text: null, actor: null, at: '2026-11-11T00:00:00Z',
+  ...extra,
+});
+const frame = (from, to, changes) => JSON.stringify({ from, to, next: to, truncated: false, reset: false, changes });
+
 async function liveRefreshScenario() {
   const check = (cond, msg) => ok(cond, '[refresh] ' + msg);
   const env = makeEnv(true);
@@ -690,8 +699,12 @@ async function liveRefreshScenario() {
   check(urls.length === base + 2 && urls[base] === ROOT_URL &&
     urls[base + 1] === '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500',
     'refresh fetched the root then each expanded subject: ' + urls.slice(base).join(' | '));
-  check([...positions].every(([k, xy]) => { const nd = instance.nodes.find((x) => x.key === k); return nd && nd.x === xy[0] && nd.y === xy[1]; }),
-    'refresh keeps every existing node position');
+  // The retracted fact is now removed by the contract, so only the nodes that remain keep their place.
+  check(!instance.nodes.find((n) => n.key === 'fact:f-root-1'), 'a fact that arrives retracted is dropped by the refresh');
+  check([...positions].every(([k, xy]) => {
+    const nd = instance.nodes.find((x) => x.key === k);
+    return !nd || (nd.x === xy[0] && nd.y === xy[1]);
+  }), 'refresh keeps every remaining node position');
   check(core().data.facts === 5, 'the subject data is adopted (facts = ' + core().data.facts + ')');
   check(core().r > r0, 'the subject radius is recomputed from the adopted data (' + r0 + ' -> ' + core().r + ')');
   check(fact2().data.status === 'stale', 'a fact record is taken from the refresh (status ' + fact2().data.status + ')');
@@ -706,11 +719,13 @@ async function liveRefreshScenario() {
   check(env.state.activeElement === panel.byTag('h2')[0], 'the panel heading keeps focus (no focus jump)');
 
   const nodes1 = instance.nodes.length;
+  const edges1 = instance.edges.length; // the retraction above removed f-root-1 and its refs
+  check(edges1 < edges0, 'the retracted fact took its refs with it (' + edges0 + ' -> ' + edges1 + ')');
   const base2 = urls.length;
   await instance.refresh();
   await settle();
   check(urls.length === base2 + 2, 'a second refresh fetches the same pair (' + (urls.length - base2) + ')');
-  check(instance.nodes.length === nodes1 && instance.edges.length === edges0, 'identical data adds nothing (' + instance.nodes.length + ' nodes, ' + instance.edges.length + ' refs)');
+  check(instance.nodes.length === nodes1 && instance.edges.length === edges1, 'identical data adds nothing (' + instance.nodes.length + ' nodes, ' + instance.edges.length + ' refs)');
   check(instance.nodes.every((n) => n.hold === false), 'no node is left held after a no-op refresh');
   check(view() === view0, 'the view still matches after the second refresh');
   check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
@@ -845,61 +860,131 @@ async function recoveredLoadScenario() {
   instance.destroy();
 }
 
-// ---- scenario: the EventSource channel drives the refresh (S5) -------------------------------
+// ---- scenario: the EventSource delta channel drives the refresh (S5) -------------------------
+// The `revision` frame is gone from this client: it carries no delta, so every change arrives in a
+// `changes` frame and every discontinuity in a `reset`. Coalescing is now over delta frames.
 async function liveStreamScenario() {
   const check = (cond, msg) => ok(cond, '[live] ' + msg);
   const env = makeEnv(true, 'event');
-  let revision = 5;
-  let payload = clone(fixture);
-  const { host, instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : payload));
+  const payload = clone(fixture);
+  const { host, instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
   const panel = host.byTag('aside')[0];
   const view = () => [instance.view.scale, instance.view.tx, instance.view.ty].join();
 
   check(urls[0] === '/api/revision' && urls[1] === ROOT_URL, 'baseline request, then the graph: ' + urls.join(' | '));
-  check(env.eventSources.length === 1 && env.eventSources[0].url === '/api/events', 'one EventSource on /api/events');
+  check(env.eventSources.length === 1 && env.eventSources[0].url === '/api/events?since=5',
+    'one EventSource resumed at the baseline: ' + (env.eventSources[0] || {}).url);
   const es = env.eventSources[0];
   instance.select('subject:s-root');
   const positions = new Map(instance.nodes.map((n) => [n.key, [n.x, n.y]]));
   const view0 = view();
 
   let n = urls.length;
-  es.emit('revision', '5');
+  es.emit('changes', JSON.stringify({ from: 6, to: 6, next: 6, truncated: false, changes: [] }));
   env.advance(1000);
   await settle();
-  check(urls.length === n, 'an event equal to the baseline fetches nothing (' + (urls.length - n) + ')');
+  check(urls.length === n, 'an empty changes page fetches nothing (' + (urls.length - n) + ')');
 
-  payload = clone(fixture);
+  // The store retracts a root fact: the delta removes the node, not just its colour.
   payload.facts.find((f) => f.id === 'f-root-2').status = 'retracted';
-  es.emit('revision', '6');
+  es.emit('changes', frame(7, 7, [row(7, 'facts', 'update', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-root-2', fact_status: 'retracted', text: 'second root fact' })]));
   env.advance(200);
   await settle();
   check(urls.length === n, 'the debounce has not fired at 200ms');
   env.advance(50);
   await settle();
-  check(urls.length === n + 1 && urls[n] === ROOT_URL, 'a bumped revision refreshes once after the 250ms debounce: ' + urls.slice(n).join(' | '));
-  check(instance.nodes.find((x) => x.key === 'fact:f-root-2').data.status === 'retracted', 'the live data is adopted');
-  check([...positions].every(([k, xy]) => { const nd = instance.nodes.find((x) => x.key === k); return nd.x === xy[0] && nd.y === xy[1]; }),
-    'positions survive the live refresh');
-  check(view() === view0, 'zoom survives the live refresh (' + view() + ')');
+  check(!instance.nodes.find((x) => x.key === 'fact:f-root-2'), 'a retracted fact leaves the graph on the delta');
+  check([...positions].every(([k, xy]) => {
+    const nd = instance.nodes.find((x) => x.key === k);
+    return !nd || (nd.x === xy[0] && nd.y === xy[1]);
+  }), 'positions of the nodes that remain survive the live delta');
+  check(view() === view0, 'zoom survives the live delta (' + view() + ')');
   check(panel.hidden === false && panel.byTag('h2')[0].textContent === 'Acme', 'the open panel is kept');
 
   n = urls.length;
-  es.emit('revision', '7');
+  es.emit('changes', frame(8, 8, [row(8, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'one' })]));
   env.advance(100);
   await settle();
-  es.emit('revision', '8');
+  es.emit('changes', frame(9, 9, [row(9, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-10', fact_status: 'live', text: 'two' })]));
   env.advance(250);
   await settle();
-  check(urls.length === n + 1, 'two events inside the window coalesce into one refresh (' + (urls.length - n) + ')');
+  check(urls.length === n + 1 && urls[n] === ROOT_URL, 'two frames inside the window coalesce into one refresh: ' + urls.slice(n).join(' | '));
 
   instance.destroy();
   check(es.closed === true, 'destroy() closes the stream');
   n = urls.length;
-  es.emit('revision', '9');
+  es.emit('changes', frame(10, 10, [row(10, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-11', fact_status: 'live' })]));
   env.advance(1000);
   await settle();
-  check(urls.length === n, 'no fetch follows an event after destroy (' + (urls.length - n) + ')');
+  check(urls.length === n, 'no fetch follows a frame after destroy (' + (urls.length - n) + ')');
   check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+}
+
+// ---- scenario: a delta is classified into the smallest refresh that can be correct (S5) -----
+async function targetedRefreshScenario() {
+  const check = (cond, msg) => ok(cond, '[targeted] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const coreUrl = '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500';
+
+  let base = urls.length;
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'insert', { subject_id: 's-zzz', fact_id: 'f-zzz', fact_status: 'live', text: 'unseen' })]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base, 'a change for a subject this view never fetched fetches nothing (' + (urls.length - base) + ')');
+
+  es.emit('changes', frame(7, 7, [row(7, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new root fact' })]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === ROOT_URL, 'a change owned by the root refetches the root alone: ' + urls.slice(base).join(' | '));
+
+  await instance.expand(instance.nodes.find((n) => n.key === 'subject:s-core'));
+  await settle();
+  check(urls[urls.length - 1] === coreUrl, 'expanding s-core fetched it once');
+  base = urls.length;
+  es.emit('changes', frame(8, 8, [row(8, 'facts', 'update', { subject_id: 's-core', fact_id: 'f-core-1', fact_status: 'live', text: 'core fact' })]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === coreUrl, 'a change owned by an expanded subject refetches only it: ' + urls.slice(base).join(' | '));
+  instance.destroy();
+}
+
+// ---- scenario: a visible non-root neighbour costs a full refresh (S5) -----------------------
+async function neighbourChangeScenario() {
+  const check = (cond, msg) => ok(cond, '[neighbour] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const coreUrl = '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500';
+  await instance.expand(instance.nodes.find((n) => n.key === 'subject:s-core'));
+  await settle();
+  check(!!instance.nodes.find((n) => n.key === 'subject:s-web'), 's-web is visible but is not a fetch root');
+
+  const base = urls.length;
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'insert', { subject_id: 's-web', fact_id: 'f-web-9', fact_status: 'live', text: 'neighbour fact' })]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 2 && urls[base] === ROOT_URL && urls[base + 1] === coreUrl,
+    'a change for a visible non-root neighbour refreshes root + expanded: ' + urls.slice(base).join(' | '));
+  instance.destroy();
+}
+
+// ---- scenario: a refs row owned by an unseen subject refetches the root (S5) ----------------
+async function inboundRefScenario() {
+  const check = (cond, msg) => ok(cond, '[inbound] ' + msg);
+  const env = makeEnv(true, 'event');
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(fixture)));
+  const es = env.eventSources[0];
+  const base = urls.length;
+  es.emit('changes', frame(6, 6, [row(6, 'refs', 'insert', { subject_id: 's-unseen', fact_id: 'f-ghost', fact_kind: 'note', text: 'ghost' })]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === ROOT_URL,
+    'a refs row owned by an unseen subject refetches the root: ' + urls.slice(base).join(' | '));
+  instance.destroy();
 }
 
 // ---- scenario: a refresh asked for mid-flight coalesces into one more pass -------------------
@@ -930,6 +1015,218 @@ async function refreshDirtyScenario() {
   instance.destroy();
 }
 
+// ---- scenario: a delta removes what the store removed (S5) ---------------------------------
+async function liveRemovalScenario() {
+  const check = (cond, msg) => ok(cond, '[removal] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const { host, instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const counts = host.byClass('g-counts')[0];
+  const panel = host.byTag('aside')[0];
+  const canvas = host.byTag('canvas')[0];
+  const byKey = (k) => instance.nodes.find((n) => n.key === k);
+  const header = () => {
+    const s = instance.nodes.filter((n) => n.type === 'subject').length;
+    return s + ' subjects, ' + (instance.nodes.length - s) + ' facts, ' + instance.edges.length + ' refs';
+  };
+  const degrees = () => instance.nodes.map((n) => n.key + ':' + n.deg).join('|');
+
+  // A retracted fact: the node, its refs and its degrees go, and the panel showing it closes.
+  instance.select('fact:f-root-1');
+  check(panel.hidden === false, 'the fact that is about to be retracted is open in the panel');
+  const degBefore = degrees();
+  const factsBefore = instance.nodes.length;
+  payload.facts.find((f) => f.id === 'f-root-1').status = 'retracted';
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'update', { subject_id: 's-root', fact_id: 'f-root-1', fact_status: 'retracted', text: 'root fact with every kind of ref' })]));
+  env.advance(250);
+  await settle();
+  check(!byKey('fact:f-root-1'), 'the retracted fact leaves the graph');
+  check(instance.edges.every((e) => e.a.key !== 'fact:f-root-1' && e.b.key !== 'fact:f-root-1'), 'its refs leave with it');
+  check(degrees() !== degBefore && instance.nodes.every((n) => Number.isFinite(n.deg)), 'degrees are recomputed after the removal');
+  check(instance.nodes.length === factsBefore - 1, 'only the removed node left (' + instance.nodes.length + ')');
+  check(counts.textContent === header(), 'the header count follows the removal: "' + counts.textContent + '"');
+  check(panel.hidden === true, 'the panel of the removed node is closed');
+
+  // A deleted subject: the node, its facts and every edge touching it go.
+  payload.subjects = payload.subjects.filter((s) => s.id !== 's-core');
+  payload.facts = payload.facts.filter((f) => f.subject !== 's-core');
+  payload.edges = payload.edges.filter((e) => e.from !== 's-core' && e.to !== 's-core');
+  es.emit('changes', frame(7, 7, [row(7, 'subjects', 'delete', { subject_id: 's-core', subject_name: 'Core' })]));
+  env.advance(250);
+  await settle();
+  check(!byKey('subject:s-core') && !byKey('fact:f-core-1') && !byKey('fact:f-core-2'),
+    'the deleted subject and its facts leave the graph');
+  check(instance.edges.every((e) => e.a.key !== 'subject:s-core' && e.b.key !== 'subject:s-core'),
+    'no edge points at the deleted subject');
+  check(counts.textContent === header(), 'the header count follows the deletion: "' + counts.textContent + '"');
+
+  // No later payload can bring the retracted fact back: refresh, expand and reset all go through merge().
+  await instance.refresh();
+  await settle();
+  check(!byKey('fact:f-root-1'), 'a later refresh does not re-add the retracted fact');
+  await instance.expand(byKey('subject:s-web'));
+  await settle();
+  check(!byKey('fact:f-root-1'), 'a later expansion does not re-add the retracted fact');
+  es.emit('reset', '9');
+  await settle();
+  check(!byKey('fact:f-root-1'), 'a reset does not re-add the retracted fact');
+  check(instance.lastSeen === 9, 'the reset moved the watermark (' + instance.lastSeen + ')');
+
+  // Dragging: dropping the node under the pointer must not leave a stuck drag behind.
+  const dragNode = byKey('fact:f-root-2');
+  const v = instance.view;
+  const view0 = [v.scale, v.tx, v.ty].join();
+  canvas.fire('pointerdown', { clientX: dragNode.x * v.scale + v.tx, clientY: dragNode.y * v.scale + v.ty, pointerId: 1 });
+  check(canvas.style.cursor === 'grabbing', 'the canvas is grabbing while a node is dragged');
+  es.emit('changes', frame(10, 10, [row(10, 'facts', 'delete', { subject_id: 's-root', fact_id: 'f-root-2' })]));
+  env.advance(250);
+  await settle();
+  check(!byKey('fact:f-root-2'), 'the dragged node is dropped by the delta');
+  check(canvas.style.cursor === 'grab', 'dropping the dragged node releases the drag (' + canvas.style.cursor + ')');
+  canvas.fire('pointermove', { clientX: 300, clientY: 300, pointerId: 1 });
+  check([v.scale, v.tx, v.ty].join() === view0, 'a move after the drop does not pan the view');
+
+  // Deleting the root itself stops the view following the store, instead of refetching a gone root.
+  const status = host.byClass('g-status')[0];
+  es.emit('changes', frame(11, 11, [row(11, 'subjects', 'delete', { subject_id: 's-root', subject_name: 'Acme' })]));
+  env.advance(250);
+  await settle();
+  check(!byKey('subject:s-root'), 'the deleted root leaves the graph');
+  check(status.textContent.indexOf('root') >= 0, 'a deleted root says so: "' + status.textContent + '"');
+  const after = urls.length;
+  es.emit('changes', frame(12, 12, [row(12, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-12', fact_status: 'live' })]));
+  env.advance(1000);
+  await settle();
+  check(urls.length === after, 'live refresh is stopped once the root is gone (' + (urls.length - after) + ')');
+  check(es.closed === true, 'the stream is closed with the root gone');
+
+  check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  instance.destroy();
+}
+
+// ---- scenario: a flush that drops a node wins over an older refresh in flight (S5) ---------
+async function singleFlightScenario() {
+  const check = (cond, msg) => ok(cond, '[single-flight] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const urls = [];
+  let gate = null;
+  const instance = env.window.DossierGraph.mount(new env.El('div'), fixture.root, {
+    fetchJson: (u) => {
+      urls.push(u);
+      if (u === '/api/revision') return Promise.resolve({ revision: 5 });
+      if (gate && u === ROOT_URL) { const p = gate; gate = null; return p; }
+      return Promise.resolve(clone(payload));
+    },
+  });
+  await instance.ready;
+  const es = env.eventSources[0];
+  const byKey = (k) => instance.nodes.find((n) => n.key === k);
+  check(!!byKey('fact:f-root-2'), 'the fact is present before the race');
+
+  let release = () => {};
+  gate = new Promise((resolve) => { release = () => resolve(clone(payload)); });
+  const stale = instance.refresh(); // in flight, and its payload still carries the fact
+  await settle();
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'delete', { subject_id: 's-root', fact_id: 'f-root-2' })]));
+  env.advance(250);
+  await settle();
+  check(!!byKey('fact:f-root-2'), 'the delete waits behind the in-flight refresh (nothing dropped yet)');
+  release();
+  await stale;
+  await settle();
+  check(!byKey('fact:f-root-2'), 'the flush after the stale refresh drops the node it re-added');
+  check(instance.edges.every((e) => e.a.key !== 'fact:f-root-2' && e.b.key !== 'fact:f-root-2'),
+    'the dropped node left no edge behind');
+  instance.destroy();
+}
+
+// ---- scenario: nodes a delta adds glow, then the glow decays to zero (S5) -------------------
+async function highlightScenario() {
+  const check = (cond, msg) => ok(cond, '[highlight] ' + msg);
+  const env = makeEnv(false, 'event');
+  const payload = clone(fixture);
+  const { instance } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  env.runFrames(400);
+  payload.facts.push({ id: 'f-root-9', subject: 's-root', kind: 'note', text: 'fresh', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'fresh' })]));
+  env.advance(250);
+  await settle();
+  const nd = instance.nodes.find((n) => n.key === 'fact:f-root-9');
+  check(!!nd, 'the delta added the new fact');
+  check(!!nd && nd.glow > 0, 'the added node starts glowing (' + (nd ? nd.glow : 'missing') + ')');
+  const start = nd.glow;
+  env.runFrames(5);
+  check(nd.glow > 0 && nd.glow < start, 'the glow decays frame by frame (' + start + ' -> ' + nd.glow + ')');
+  env.runFrames(60);
+  check(nd.glow === 0, 'the glow reaches zero (' + nd.glow + ')');
+  instance.destroy();
+
+  // Reduced motion: no ring at all.
+  const env2 = makeEnv(true, 'event');
+  const payload2 = clone(fixture);
+  const m2 = await env2.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload2)));
+  payload2.facts.push({ id: 'f-root-9', subject: 's-root', kind: 'note', text: 'fresh', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+  env2.eventSources[0].emit('changes', frame(6, 6, [row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'fresh' })]));
+  env2.advance(250);
+  await settle();
+  const nd2 = m2.instance.nodes.find((n) => n.key === 'fact:f-root-9');
+  check(!!nd2 && !(nd2.glow > 0), 'reduced motion never glows');
+  m2.instance.destroy();
+}
+
+// ---- scenario: a reset frame is one full refresh from a new watermark (S5) -----------------
+async function resetScenario() {
+  const check = (cond, msg) => ok(cond, '[reset] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  payload.facts.push({ id: 'f-root-9', subject: 's-root', kind: 'note', text: 'while away', status: 'live', confidence: 0.5, tags: [], unresolved: [] });
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const base = urls.length;
+  es.emit('reset', '9');
+  await settle();
+  check(urls.length === base + 1 && urls[base] === ROOT_URL, 'a reset does one full refresh: ' + urls.slice(base).join(' | '));
+  check(instance.lastSeen === 9, 'the watermark adopts the reset revision (' + instance.lastSeen + ')');
+  check(!!instance.nodes.find((n) => n.key === 'fact:f-root-9'), 'the reset merged what changed while away');
+  instance.destroy();
+}
+
+// ---- scenario: rows at or below the watermark are never applied twice (S5) -----------------
+async function dedupeScenario() {
+  const check = (cond, msg) => ok(cond, '[dedupe] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const batch = frame(6, 6, [row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new' })]);
+
+  let base = urls.length;
+  es.emit('changes', batch);
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 1 && instance.lastSeen === 6,
+    'the first delivery is applied (watermark ' + instance.lastSeen + ')');
+
+  base = urls.length;
+  es.emit('changes', batch);
+  env.advance(250);
+  await settle();
+  check(urls.length === base, 'a redelivered batch is dropped (' + (urls.length - base) + ' fetches)');
+
+  es.emit('changes', frame(6, 7, [
+    row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live' }),
+    row(7, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-10', fact_status: 'live' }),
+  ]));
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 1 && instance.lastSeen === 7,
+    'a batch with one new row applies it once and moves the watermark (' + instance.lastSeen + ')');
+  instance.destroy();
+}
+
 // ---- scenario: destroy() before the first fetch settles starts nothing ----------------------
 async function destroyBeforeReadyScenario() {
   const check = (cond, msg) => ok(cond, '[destroy] ' + msg);
@@ -952,12 +1249,17 @@ async function destroyBeforeReadyScenario() {
   instance.destroy();
 }
 
-// ---- scenario: a refused stream falls back to polling ---------------------------------------
+// ---- scenario: a refused stream falls back to the changes poll ------------------------------
 async function eventSourceClosedScenario() {
   const check = (cond, msg) => ok(cond, '[stream-closed] ' + msg);
   const env = makeEnv(true, 'event');
-  let revision = 4;
-  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : fixture));
+  const payload = clone(fixture);
+  let changes = { from: 4, to: 4, next: 4, truncated: false, reset: false, changes: [] };
+  const { instance, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 4 };
+    if (u.indexOf('/api/changes') === 0) return clone(changes);
+    return clone(payload);
+  });
   const es = env.eventSources[0];
   check(!!es && env.eventSources.length === 1, 'the stream is open');
   const base = urls.length;
@@ -965,43 +1267,100 @@ async function eventSourceClosedScenario() {
   check(es.closed === true, 'a stream that reaches CLOSED is closed by the client');
   check(env.clock.timers.length === 1, 'the polling fallback is armed (' + env.clock.timers.length + ')');
 
-  revision = 7;
+  changes = { from: 5, to: 5, next: 5, truncated: false, reset: false, changes: [row(5, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new' })] };
   env.advance(1000);
   await settle();
-  check(urls.length === base + 1 && urls[base] === '/api/revision', 'the fallback polls /api/revision: ' + urls.slice(base).join(' | '));
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=4&limit=200',
+    'the fallback polls /api/changes from the watermark: ' + urls.slice(base).join(' | '));
   env.advance(250);
   await settle();
-  check(urls.length === base + 2 && urls[base + 1] === ROOT_URL, 'a bumped polled revision refreshes once: ' + urls.slice(base).join(' | '));
+  check(urls.length === base + 2 && urls[base + 1] === ROOT_URL, 'a polled row refreshes once: ' + urls.slice(base).join(' | '));
   env.advance(1000);
   await settle();
-  check(urls.length === base + 3, 'polling keeps one interval and an unchanged revision does not refresh');
+  check(urls.length === base + 3, 'polling keeps one interval and an empty page does not refresh');
 
   instance.destroy();
   check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
 }
 
-// ---- scenario: without EventSource the baseline poll drives the refresh ---------------------
+// ---- scenario: without EventSource the changes poll drives the refresh ----------------------
 async function pollingFallbackScenario() {
   const check = (cond, msg) => ok(cond, '[poll] ' + msg);
   const env = makeEnv(true, 'poll');
-  let revision = 1;
-  const { instance, urls } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision } : fixture));
+  const payload = clone(fixture);
+  const coreUrl = '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500';
+  let changes = { from: 1, to: 1, next: 1, truncated: false, reset: false, changes: [] };
+  const { instance, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 1 };
+    if (u.indexOf('/api/changes') === 0) return clone(changes);
+    return clone(payload);
+  });
   check(env.eventSources.length === 0, 'no EventSource without the constructor');
   check(urls[0] === '/api/revision' && urls[1] === ROOT_URL, 'baseline request, then the graph: ' + urls.join(' | '));
   check(env.clock.timers.length === 1, 'one poll interval is armed (' + env.clock.timers.length + ')');
+  await instance.expand(instance.nodes.find((n) => n.key === 'subject:s-core'));
+  await settle();
 
   const base = urls.length;
   env.advance(1000);
   await settle();
-  check(urls.length === base + 1 && urls[base] === '/api/revision', 'a tick fetches /api/revision');
-  revision = 2;
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=1&limit=200',
+    'a tick polls the changes feed from the baseline: ' + urls.slice(base).join(' | '));
+
+  // The polled rows go through the same classification as the stream: an expanded subject alone.
+  changes = { from: 2, to: 2, next: 2, truncated: false, reset: false, changes: [row(2, 'facts', 'insert', { subject_id: 's-core', fact_id: 'f-core-9', fact_status: 'live', text: 'polled' })] };
   env.advance(1000);
   await settle();
-  check(urls[base + 1] === '/api/revision', 'the next tick sees the bumped revision: ' + urls.slice(base).join(' | '));
+  check(urls[base + 1] === '/api/changes?since=1&limit=200', 'the next tick still asks from the watermark: ' + urls.slice(base).join(' | '));
   env.advance(250);
   await settle();
-  check(urls.length === base + 3 && urls[base + 2] === ROOT_URL, 'the bump triggers exactly one refresh: ' + urls.slice(base).join(' | '));
+  check(urls.length === base + 3 && urls[base + 2] === coreUrl,
+    'a polled row for an expanded subject refetches only it: ' + urls.slice(base).join(' | '));
   check(env.violations.length === 0 && env.navigation.length === 0, 'no violations or navigation' + brief(env.violations.concat(env.navigation)));
+  instance.destroy();
+  check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
+}
+
+// ---- scenario: the poll's reset flag is a full refresh from its next cursor (S5) ------------
+async function pollingChangesScenario() {
+  const check = (cond, msg) => ok(cond, '[poll-changes] ' + msg);
+  const env = makeEnv(true, 'poll');
+  const payload = clone(fixture);
+  let changes = { from: 5, to: 5, next: 5, truncated: false, reset: false, changes: [] };
+  const { instance, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 5 };
+    if (u.indexOf('/api/changes') === 0) return clone(changes);
+    return clone(payload);
+  });
+  check(urls[0] === '/api/revision' && urls[1] === ROOT_URL, 'baseline request, then the graph: ' + urls.join(' | '));
+
+  let base = urls.length;
+  env.advance(1000);
+  await settle();
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=5&limit=200',
+    'the first poll asks from the baseline: ' + urls.slice(base).join(' | '));
+
+  changes = { from: 6, to: 6, next: 6, truncated: false, reset: false, changes: [row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new' })] };
+  env.advance(1000);
+  await settle();
+  env.advance(250);
+  await settle();
+  check(urls.length === base + 3 && urls[base + 2] === ROOT_URL,
+    'the polled row refreshes its owner: ' + urls.slice(base).join(' | '));
+  check(instance.lastSeen === 6, 'the watermark follows the batch (' + instance.lastSeen + ')');
+
+  base = urls.length;
+  changes = { from: 9, to: 9, next: 9, truncated: false, reset: true, changes: [] };
+  env.advance(1000);
+  await settle();
+  check(urls.length === base + 2 && urls[base].indexOf('/api/changes?since=6') === 0 && urls[base + 1] === ROOT_URL,
+    'reset:true does a full refresh: ' + urls.slice(base).join(' | '));
+  check(instance.lastSeen === 9, 'the watermark adopts the reset next (' + instance.lastSeen + ')');
+  changes = { from: 9, to: 9, next: 9, truncated: false, reset: false, changes: [] };
+  env.advance(1000);
+  await settle();
+  check(urls[urls.length - 1] === '/api/changes?since=9&limit=200',
+    'polling resumes from the reset watermark: ' + urls[urls.length - 1]);
   instance.destroy();
   check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
 }
@@ -1027,9 +1386,18 @@ for (const [name, fn] of [
   ['refresh-fail', refreshFailureScenario],
   ['refresh-dirty', refreshDirtyScenario],
   ['live-stream', liveStreamScenario],
+  ['targeted-refresh', targetedRefreshScenario],
+  ['neighbour-change', neighbourChangeScenario],
+  ['inbound-ref', inboundRefScenario],
+  ['live-removal', liveRemovalScenario],
+  ['single-flight', singleFlightScenario],
+  ['highlight', highlightScenario],
+  ['reset', resetScenario],
+  ['dedupe', dedupeScenario],
   ['destroy-before-ready', destroyBeforeReadyScenario],
   ['stream-closed', eventSourceClosedScenario],
   ['polling', pollingFallbackScenario],
+  ['poll-changes', pollingChangesScenario],
 ]) {
   try { await fn(); } catch (err) { failed++; console.error('FAIL [' + name + '] threw: ' + ((err && err.message) || err)); }
 }

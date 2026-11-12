@@ -116,9 +116,14 @@
       nd.data = data;
     }
 
+    function edgeKey(e) {
+      return [e.from_kind, e.from, e.to_kind, e.to, e.rel, e.basis, e.kind, e.slot || ''].join('\u001f');
+    }
+
     // Adds what is new, keeps every existing node (and its position), refreshes degrees. Incoming data is
-    // adopted in place: a refresh never removes anything (a retracted fact shows through its status). A
-    // boundary subject is a stub, so it never replaces the fuller record already held for that subject.
+    // adopted in place. A retracted fact is never held: a held one is dropped, a new one is refused, so a
+    // later refresh, expansion or reset that still carries it cannot bring it back. Superseded facts stay.
+    // A boundary subject is a stub, so it never replaces the fuller record already held for that subject.
     function merge(payload, anchorKey, nearParent) {
       var rand = mulberry32(parseInt(payload.seed, 16) || 1);
       var anchor = anchorKey ? nodeByKey[anchorKey] || null : null;
@@ -148,6 +153,8 @@
       }
       for (i = 0; i < facts.length; i++) {
         var f = facts[i];
+        if (!f || !f.id) continue;
+        if (f.status === 'retracted') { drop(nodeKey('fact', f.id)); continue; }
         var fk = nodeKey('fact', f.id);
         var known = nodeByKey[fk];
         if (known) {
@@ -163,7 +170,7 @@
       var es = payload.edges || [];
       for (i = 0; i < es.length; i++) {
         var e = es[i];
-        var ek = [e.from_kind, e.from, e.to_kind, e.to, e.rel, e.basis, e.kind, e.slot || ''].join('\u001f');
+        var ek = edgeKey(e);
         if (edgeKeys[ek]) continue;
         var from = nodeByKey[nodeKey(e.from_kind, e.from)];
         var to = nodeByKey[nodeKey(e.to_kind, e.to)];
@@ -207,6 +214,62 @@
         banner.hidden = true;
         banner.textContent = '';
       }
+    }
+
+    // Removes one node and everything that only existed because of it: its edges (and their keys), its
+    // place in the expansion set, the open panel and an in-progress drag. A dropped subject takes its
+    // anchored facts with it. Every delta removal goes through here, and only here.
+    function drop(key) {
+      var nd = nodeByKey[key];
+      if (!nd) return false;
+      var i;
+      if (nd.type === 'subject') {
+        var orphans = [];
+        for (i = 0; i < nodes.length; i++) {
+          if (nodes[i].type === 'fact' && nodes[i].anchor === nd) orphans.push(nodes[i].key);
+        }
+        for (i = 0; i < orphans.length; i++) dropNode(orphans[i]);
+        if (nodeByKey[key] !== nd) return true; // already gone with the subject
+      }
+      return dropNode(key);
+    }
+
+    function dropNode(key) {
+      var nd = nodeByKey[key];
+      if (!nd) return false;
+      var i;
+      for (i = nodes.length - 1; i >= 0; i--) if (nodes[i] === nd) nodes.splice(i, 1);
+      delete nodeByKey[key];
+      for (i = edges.length - 1; i >= 0; i--) {
+        if (edges[i].a === nd || edges[i].b === nd) {
+          delete edgeKeys[edgeKey(edges[i].e)];
+          edges.splice(i, 1);
+        }
+      }
+      if (nd.type === 'subject') {
+        var at = expandedList.indexOf(nd.id);
+        if (at >= 0) expandedList.splice(at, 1);
+      }
+      if (selected === nd) closePanel();
+      if (drag && drag.node === nd) {
+        if (drag.id !== undefined && canvas.hasPointerCapture(drag.id)) canvas.releasePointerCapture(drag.id);
+        drag = null;
+        canvas.style.cursor = 'grab';
+      }
+      if (nd.key === rootKey) {
+        // Nothing can be refreshed against a root the store no longer has: say so and go quiet.
+        rootKey = null;
+        status.textContent = 'the graph root was removed; live updates stopped';
+        stopLive();
+      }
+      for (i = 0; i < nodes.length; i++) nodes[i].deg = 0;
+      for (i = 0; i < edges.length; i++) { edges[i].a.deg++; edges[i].b.deg++; }
+      for (i = 0; i < nodes.length; i++) {
+        if (nodes[i].type === 'fact') nodes[i].r = 3.5 + 1.2 * Math.sqrt(nodes[i].deg);
+      }
+      refreshHeader();
+      schedule();
+      return true;
     }
 
     // ---- layout ---------------------------------------------------------------------------
@@ -391,6 +454,17 @@
           ctx.strokeStyle = '#ffffff';
           ctx.stroke();
         }
+        // A node a delta flush added: one ring expanding and fading out. Canvas only, never a DOM node.
+        if (nd.glow > 0) {
+          var gp = (GLOW_FRAMES - nd.glow) / GLOW_FRAMES;
+          ctx.beginPath();
+          ctx.arc(nd.x, nd.y, nd.r + (4 + 12 * gp) * inv, 0, Math.PI * 2);
+          ctx.globalAlpha = 0.85 * (1 - gp);
+          ctx.lineWidth = 2 * inv;
+          ctx.strokeStyle = '#ffd479';
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
       }
       ctx.fillStyle = '#e6edf5';
       ctx.textAlign = 'center';
@@ -417,6 +491,18 @@
       rafHandle = win.requestAnimationFrame(frame);
     }
 
+    // Highlight decay: one glow counter per newly added node, spent one frame at a time.
+    function decayGlow() {
+      var left = false;
+      for (var k = 0; k < nodes.length; k++) {
+        if (nodes[k].glow > 0) {
+          nodes[k].glow--;
+          if (nodes[k].glow > 0) left = true;
+        }
+      }
+      return left;
+    }
+
     function frame() {
       pending = false;
       if (destroyed) return;
@@ -425,7 +511,8 @@
       }
       if (!settling() && !touched) { touched = true; fit(); }
       draw();
-      if (settling()) schedule();
+      var glowing = decayGlow();
+      if (settling() || glowing) schedule();
     }
 
     function restart(ticksToRun) {
@@ -625,7 +712,7 @@
       var p = local(ev);
       touched = true;
       var nd = hit(p[0], p[1]);
-      drag = { node: nd, x: p[0], y: p[1], moved: 0 };
+      drag = { node: nd, x: p[0], y: p[1], moved: 0, id: ev.pointerId };
       canvas.setPointerCapture(ev.pointerId);
       canvas.style.cursor = 'grabbing';
     });
@@ -722,9 +809,11 @@
       });
     }
 
-    // ---- refresh: the loaded graph follows the store (S4) ---------------------------------
+    // ---- refresh: the loaded graph follows the store (S4/S5) ------------------------------
     var refreshing = false;
     var dirty = false;
+    var pendingRows = []; // delta rows waiting for the debounced flush
+    var pendingFull = false;
 
     function expandedIds() {
       var out = [];
@@ -737,25 +826,47 @@
       if (expandedList.indexOf(subject) < 0) expandedList.push(subject);
     }
 
-    // Re-fetch the root and every expanded neighbourhood and merge them in place. Existing nodes are held
-    // and nothing is removed, so positions, selection and zoom survive; only newly seen nodes are placed.
-    function refresh() {
-      if (destroyed) return Promise.resolve();
+    // The one gate every refresh and every delta flush goes through. A request that arrives while one is
+    // in flight only marks it dirty; the stale response is then followed by one more pass that applies
+    // whatever the flush learned, so a stale refresh can never leave a dropped node behind.
+    function pump() {
+      if (destroyed || liveStopped) return Promise.resolve();
       if (refreshing) { dirty = true; return Promise.resolve(); }
+      if (!pendingFull && !pendingRows.length) return Promise.resolve();
       refreshing = true;
-      var queue = expandedIds();
+      var full = pendingFull;
+      var rows = pendingRows; // kept even on a full refresh: merge() cannot remove, so deletes must still run
+      var fromDelta = rows.length > 0;
+      pendingFull = false;
+      pendingRows = [];
       var added = [];
       var hadNodes = nodes.length > 0;
       var rootOk = false;
+      var wanted = [];
+      var wantRoot = false;
+      var handled = [];
       var k;
+
+      // Removals first, then classification: a delete (or a fact that arrives retracted) is applied even
+      // when another row in the same batch asks for a full refresh.
+      for (k = 0; k < rows.length; k++) handled[k] = applyRemoval(rows[k]);
+      for (k = 0; k < rows.length && !liveStopped && !full; k++) {
+        if (handled[k]) continue;
+        var cls = classify(rows[k]);
+        if (!cls) continue;
+        if (cls.full) { full = true; break; }
+        if (cls.subject === rootId) wantRoot = true;
+        else if (wanted.indexOf(cls.subject) < 0) wanted.push(cls.subject);
+      }
+      if (full) { wanted = expandedIds(); wantRoot = true; }
       for (k = 0; k < nodes.length; k++) nodes[k].hold = true; // as expand does
 
       // One failing subject (a 404 after a retraction, say) must not abort the rest of the refresh.
       function chain(i) {
-        if (destroyed || i >= queue.length) return Promise.resolve();
-        var subject = queue[i];
+        if (destroyed || liveStopped || i >= wanted.length) return Promise.resolve();
+        var subject = wanted[i];
         return fetchJson(url(subject)).then(function (payload) {
-          if (!destroyed) added = added.concat(merge(payload, nodeKey('subject', subject), true));
+          if (!destroyed && !liveStopped) added = added.concat(merge(payload, nodeKey('subject', subject), true));
         }).catch(function () { /* that subject is gone: keep the nodes we have and go on */ })
           .then(function () { return chain(i + 1); });
       }
@@ -763,13 +874,23 @@
       // The finally: `refreshing` is cleared and the holds released on every path, success or failure.
       function finish() {
         refreshing = false;
-        if (destroyed) return;
+        if (destroyed) return Promise.resolve();
+        if (liveStopped) {
+          releaseHolds();
+          pendingRows = [];
+          pendingFull = false;
+          dirty = false;
+          return Promise.resolve();
+        }
         // A refresh that recovered from a failed initial load replaces that error line with the graph:
         // nothing was ever laid out, so size the stage and fit what arrived.
         if (rootOk && !hadNodes && nodes.length) {
           status.textContent = '';
           resize();
           fit();
+        }
+        if (fromDelta && added.length && !reduced) {
+          for (var a = 0; a < added.length; a++) added[a].glow = GLOW_FRAMES;
         }
         refreshHeader();
         if (added.length) restart(20);
@@ -778,25 +899,71 @@
           if (!layoutPending) releaseHolds();
           schedule();
         }
-        if (dirty) { dirty = false; return refresh(); }
+        if (dirty || pendingFull || pendingRows.length) { dirty = false; return pump(); }
+        return Promise.resolve();
       }
 
-      var work = fetchJson(url(rootId)).then(function (payload) {
-        if (destroyed) return;
-        rootOk = true;
-        added = added.concat(merge(payload, null, true));
-        return chain(0);
-      }).catch(function () { /* a transient refresh error is not a status line: the channel retries */ });
-      return work.then(finish, finish);
+      var work = Promise.resolve();
+      if (wantRoot) {
+        work = fetchJson(url(rootId)).then(function (payload) {
+          if (destroyed || liveStopped) return;
+          rootOk = true;
+          added = added.concat(merge(payload, null, true));
+        }).catch(function () { /* a transient refresh error is not a status line: the channel retries */ });
+      }
+      return work.then(chain.bind(null, 0)).then(finish, finish);
     }
 
-    // ---- live channel: EventSource on /api/events, polling /api/revision as the fallback (S5) -----
-    var revisionSeen = -1; // the last revision this view has adopted
+    // Re-fetch the root and every expanded neighbourhood and merge them in place. Existing nodes are held
+    // so positions, selection and zoom survive; only newly seen nodes are placed.
+    function refresh() {
+      if (destroyed || liveStopped) return Promise.resolve();
+      pendingFull = true;
+      return pump();
+    }
+
+    // The removal rule of the contract, applied before classification. A delete row, or a fact row that
+    // arrives retracted, removes the node it names when the view holds it.
+    function applyRemoval(row) {
+      if (!row || typeof row !== 'object') return false;
+      if (row.tbl === 'facts' && typeof row.fact_id === 'string' &&
+        (row.op === 'delete' || row.fact_status === 'retracted')) {
+        return drop(nodeKey('fact', row.fact_id));
+      }
+      if (row.tbl === 'subjects' && row.op === 'delete' && typeof row.subject_id === 'string') {
+        return drop(nodeKey('subject', row.subject_id));
+      }
+      return false;
+    }
+
+    // What one changed row is worth. A row that names no subject, or touches the subject table, can move
+    // the graph's shape, so only a full refresh is safe. A row owned by a subject this view fetches is
+    // refetched alone; one owned by a visible neighbour (a depth-1 stub, say) is not fetched by itself, so
+    // the whole view refreshes. A refs row owned by a subject that is not on screen may add an inbound
+    // edge to the root, so the root is refetched.
+    function classify(row) {
+      if (!row || typeof row !== 'object') return null;
+      if (row.tbl === 'subjects' || row.subject_id === null || row.subject_id === undefined) return { full: true };
+      var sid = row.subject_id;
+      if (typeof sid !== 'string' || !ID_RE.test(sid)) return { full: true };
+      if (sid === rootId || expandedList.indexOf(sid) >= 0) return { subject: sid };
+      if (nodeByKey[nodeKey('subject', sid)]) return { full: true };
+      if (row.tbl === 'refs') return { subject: rootId };
+      return null;
+    }
+
+    // ---- live channel: SSE deltas on /api/events, /api/changes polling as the fallback (S5) ------
+    // `revision` frames carry no delta, so they are ignored: every change arrives in a `changes` frame
+    // and every discontinuity in a `reset` frame. `lastSeen` is the seq watermark: rows at or below it
+    // were already applied.
+    var lastSeen = -1;
     var stream = null;
     var pollTimer = 0;
-    var liveTimer = 0;
+    var flushTimer = 0;
+    var liveStopped = false;
     var DEBOUNCE_MS = 250;
     var POLL_MS = 1000;
+    var GLOW_FRAMES = 18;
 
     function stopStream() {
       var s = stream;
@@ -806,52 +973,112 @@
       if (typeof s.close === 'function') s.close();
     }
 
-    // Trailing debounce: a burst of revisions costs one refresh.
-    function scheduleRefresh() {
-      if (destroyed) return;
-      if (typeof win.setTimeout !== 'function') { refresh(); return; }
-      if (liveTimer && typeof win.clearTimeout === 'function') win.clearTimeout(liveTimer);
-      liveTimer = win.setTimeout(function () {
-        liveTimer = 0;
-        if (!destroyed) refresh();
+    // The root is gone: nothing can be refreshed against it, so the view stops following the store.
+    function stopLive() {
+      liveStopped = true;
+      stopStream();
+      if (flushTimer && typeof win.clearTimeout === 'function') win.clearTimeout(flushTimer);
+      flushTimer = 0;
+      if (pollTimer && typeof win.clearInterval === 'function') win.clearInterval(pollTimer);
+      pollTimer = 0;
+      pendingRows = [];
+      pendingFull = false;
+      dirty = false;
+    }
+
+    // Trailing debounce: a burst of rows costs one flush, and that flush goes through pump().
+    function scheduleFlush() {
+      if (destroyed || liveStopped) return;
+      if (typeof win.setTimeout !== 'function') { pump(); return; }
+      if (flushTimer && typeof win.clearTimeout === 'function') win.clearTimeout(flushTimer);
+      flushTimer = win.setTimeout(function () {
+        flushTimer = 0;
+        if (!destroyed) pump();
       }, DEBOUNCE_MS);
     }
 
-    function onRevision(n) {
-      if (destroyed || !Number.isFinite(n)) return;
-      if (n < revisionSeen) { revisionSeen = n; scheduleRefresh(); return; } // the store was replaced: adopt and reload
-      if (n === revisionSeen) return;
-      revisionSeen = n;
-      scheduleRefresh();
+    // One batch: rows at or below the watermark are a redelivery and are dropped here, then the
+    // watermark moves to the batch's last seq.
+    function applyFrame(frame) {
+      if (!frame || typeof frame !== 'object') return;
+      var rows = Array.isArray(frame.changes) ? frame.changes : [];
+      var to = Number(frame.to);
+      for (var k = 0; k < rows.length; k++) {
+        var seq = Number(rows[k] && rows[k].seq);
+        if (!Number.isFinite(seq) || seq <= lastSeen) continue;
+        lastSeen = seq;
+        pendingRows.push(rows[k]);
+      }
+      if (Number.isFinite(to)) { if (to > lastSeen) lastSeen = to; }
+      else {
+        var nx = Number(frame.next);
+        if (Number.isFinite(nx) && nx > lastSeen) lastSeen = nx;
+      }
     }
 
-    function poll() {
-      if (destroyed) return;
-      fetchJson('/api/revision').then(function (body) {
-        if (destroyed) return;
-        onRevision(Number.isFinite(body && body.revision) ? body.revision : NaN);
+    function onReset(n) {
+      if (destroyed || liveStopped) return;
+      if (Number.isFinite(n)) lastSeen = n;
+      pendingRows = [];
+      refresh(); // a reset is a full refresh through the same gate
+    }
+
+    function onChanges(ev) {
+      if (destroyed || liveStopped) return;
+      var frame;
+      try {
+        frame = typeof (ev && ev.data) === 'string' ? JSON.parse(ev.data) : (ev && ev.data);
+      } catch (err) { return; }
+      if (!frame || typeof frame !== 'object') return;
+      if (frame.reset) { onReset(Number(frame.next)); return; }
+      applyFrame(frame);
+      scheduleFlush();
+    }
+
+    function onResetEvent(ev) {
+      var n = parseInt(ev && ev.data, 10);
+      onReset(Number.isFinite(n) ? n : lastSeen);
+    }
+
+    function pollChanges() {
+      if (destroyed || liveStopped) return;
+      var target = lastSeen >= 0
+        ? '/api/changes?since=' + lastSeen + '&limit=200'
+        : '/api/changes?last=200';
+      fetchJson(target).then(function (body) {
+        if (destroyed || liveStopped || !body || typeof body !== 'object') return;
+        if (body.reset) {
+          var nx = Number(body.next);
+          if (Number.isFinite(nx)) lastSeen = nx;
+          pendingRows = [];
+          refresh();
+          return;
+        }
+        applyFrame(body);
+        scheduleFlush();
       }).catch(function () { /* the next tick retries */ });
     }
 
     function startPolling() {
-      if (destroyed || pollTimer) return;
+      if (destroyed || liveStopped || pollTimer) return;
       stopStream();
       if (typeof win.setInterval !== 'function') return;
-      pollTimer = win.setInterval(poll, POLL_MS);
+      pollTimer = win.setInterval(pollChanges, POLL_MS);
     }
 
     function listen() {
-      if (destroyed) return;
+      if (destroyed || liveStopped) return;
       if (typeof win.EventSource !== 'function') { startPolling(); return; }
       var es;
       try {
-        es = new win.EventSource('/api/events');
+        es = new win.EventSource('/api/events' + (lastSeen >= 0 ? '?since=' + lastSeen : ''));
       } catch (err) {
-        startPolling(); // no stream available: the revision poll still keeps the view current
+        startPolling(); // no stream available: the changes poll still keeps the view current
         return;
       }
       stream = es;
-      es.addEventListener('revision', function (ev) { onRevision(parseInt(ev && ev.data, 10)); });
+      es.addEventListener('changes', onChanges);
+      es.addEventListener('reset', onResetEvent);
       es.onerror = function () {
         if (destroyed) return;
         if (es.readyState === 2) startPolling(); // CLOSED (e.g. 503 busy): fall back to polling
@@ -883,8 +1110,8 @@
     var ready;
     if (typeof win.EventSource === 'function' || typeof win.setInterval === 'function') {
       ready = fetchJson('/api/revision').then(function (body) {
-        revisionSeen = Number.isFinite(body && body.revision) ? body.revision : -1;
-      }).catch(function () { revisionSeen = -1; })
+        lastSeen = Number.isFinite(body && body.revision) ? body.revision : -1;
+      }).catch(function () { lastSeen = -1; })
         .then(initialLoad)
         .then(function () { listen(); }); // listen even if the first load failed: refresh must still work
     } else {
@@ -894,8 +1121,8 @@
     function destroy() {
       destroyed = true;
       stopStream();
-      if (liveTimer && typeof win.clearTimeout === 'function') win.clearTimeout(liveTimer);
-      liveTimer = 0;
+      if (flushTimer && typeof win.clearTimeout === 'function') win.clearTimeout(flushTimer);
+      flushTimer = 0;
       if (pollTimer && typeof win.clearInterval === 'function') win.clearInterval(pollTimer);
       pollTimer = 0;
       doc.removeEventListener('keydown', onKey);
@@ -909,6 +1136,8 @@
       merge: function (payload, anchorKey) { var added = merge(payload, anchorKey || null); refreshHeader(); return added; },
       expand: expand,
       refresh: refresh,
+      // The seq watermark the next poll asks from (read-only; tests and diagnostics use it).
+      get lastSeen() { return lastSeen; },
       select: function (key) { var nd = nodeByKey[key]; if (nd) focusNode(nd); },
       nodes: nodes,
       edges: edges,

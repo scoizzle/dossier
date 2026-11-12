@@ -78,6 +78,15 @@ public sealed partial class DossierStore
             value TEXT NOT NULL
         );
 
+        CREATE TABLE IF NOT EXISTS changes (
+            seq INTEGER NOT NULL PRIMARY KEY,
+            tbl TEXT NOT NULL,
+            op TEXT NOT NULL,
+            subject_id TEXT,
+            fact_id TEXT,
+            created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ', 'now'))
+        );
+
         CREATE INDEX IF NOT EXISTS idx_refs_target ON refs(target);
         CREATE INDEX IF NOT EXISTS idx_refs_fact_id ON refs(fact_id);
         CREATE INDEX IF NOT EXISTS idx_facts_subject_id ON facts(subject_id);
@@ -106,20 +115,90 @@ public sealed partial class DossierStore
     public void Initialize()
     {
         using var connection = OpenConnection();
-        using var command = connection.CreateCommand();
-        command.CommandText = Schema + RevisionTriggers();
-        command.ExecuteNonQuery();
-
-        // Seed only when missing so an existing store is never reset and a plain
-        // construction stays read-only once the schema is current.
-        using var probe = connection.CreateCommand();
-        probe.CommandText = "SELECT COUNT(*) FROM meta WHERE key = 'revision'";
-        if (Convert.ToInt64(probe.ExecuteScalar(), System.Globalization.CultureInfo.InvariantCulture) == 0)
+        using (var schema = connection.CreateCommand())
         {
-            using var seed = connection.CreateCommand();
-            seed.CommandText = "INSERT OR IGNORE INTO meta(key, value) VALUES('revision', '0')";
-            seed.ExecuteNonQuery();
+            // CREATE ... IF NOT EXISTS on an existing object takes no write lock.
+            schema.CommandText = Schema;
+            schema.ExecuteNonQuery();
         }
+
+        // A current database is detected by a read; construction then writes nothing.
+        if (RevisionSchemaIsCurrent(connection))
+        {
+            return;
+        }
+
+        // Otherwise take the write lock first (a raw BEGIN IMMEDIATE, not a deferred transaction) and
+        // re-check inside it, so concurrent constructions upgrade exactly once and none can interleave
+        // with a half-replaced trigger set.
+        Run(connection, "BEGIN IMMEDIATE");
+        try
+        {
+            if (!RevisionSchemaIsCurrent(connection))
+            {
+                Run(connection, DropRevisionTriggers() + RevisionTriggers());
+
+                // Seed only when missing, from the journal head, so an existing store is never reset and a
+                // deleted counter can never reissue a seq the journal already holds.
+                Run(connection, "INSERT OR IGNORE INTO meta(key, value) SELECT 'revision', CAST(COALESCE((SELECT MAX(seq) FROM changes), 0) AS TEXT)");
+            }
+
+            Run(connection, "COMMIT");
+        }
+        catch
+        {
+            try
+            {
+                Run(connection, "ROLLBACK");
+            }
+            catch (SqliteException)
+            {
+                // The transaction may already be gone; the original failure is the one to report.
+            }
+
+            throw;
+        }
+    }
+
+    private static readonly (string Table, string Name, string Op)[] TriggerSpecs = BuildTriggerSpecs();
+
+    private static (string, string, string)[] BuildTriggerSpecs()
+    {
+        var specs = new List<(string, string, string)>();
+        foreach (var table in new[] { "facts", "subjects", "refs", "slots" })
+        {
+            foreach (var (name, op) in new[] { ("insert", "INSERT"), ("update", "UPDATE"), ("delete", "DELETE") })
+            {
+                specs.Add((table, name, op));
+            }
+        }
+
+        return specs.ToArray();
+    }
+
+    private static void Run(SqliteConnection connection, string sql)
+    {
+        using var command = connection.CreateCommand();
+        command.CommandText = sql;
+        command.ExecuteNonQuery();
+    }
+
+    /// <summary>
+    /// True when all twelve revision triggers exist with journal-writing bodies and the revision
+    /// counter row is present.
+    /// </summary>
+    private static bool RevisionSchemaIsCurrent(SqliteConnection connection)
+    {
+        using var triggers = connection.CreateCommand();
+        triggers.CommandText = "SELECT COUNT(*) FROM sqlite_master WHERE type = 'trigger' AND name LIKE 'trg\\_%' ESCAPE '\\' AND sql LIKE '%INSERT INTO changes%'";
+        if (Convert.ToInt64(triggers.ExecuteScalar(), System.Globalization.CultureInfo.InvariantCulture) != TriggerSpecs.Length)
+        {
+            return false;
+        }
+
+        using var meta = connection.CreateCommand();
+        meta.CommandText = "SELECT COUNT(*) FROM meta WHERE key = 'revision'";
+        return Convert.ToInt64(meta.ExecuteScalar(), System.Globalization.CultureInfo.InvariantCulture) > 0;
     }
 
     /// <summary>
@@ -137,23 +216,47 @@ public sealed partial class DossierStore
             : 0;
     }
 
+    private static string DropRevisionTriggers()
+    {
+        var builder = new System.Text.StringBuilder();
+        foreach (var (table, name, _) in TriggerSpecs)
+        {
+            builder.Append($"DROP TRIGGER IF EXISTS trg_{table}_{name};\n");
+        }
+
+        return builder.ToString();
+    }
+
+    /// <summary>
+    /// One trigger per table and operation. Each bumps meta.revision and journals the row write under
+    /// that same number (seq == revision), so the counter and the journal commit or roll back together.
+    /// A missing counter row is re-seeded from the journal head, never from 0, so a deleted row cannot
+    /// reissue a seq the journal already holds.
+    /// </summary>
     private static string RevisionTriggers()
     {
         var builder = new System.Text.StringBuilder();
-        foreach (var table in new[] { "facts", "subjects", "refs", "slots" })
+        foreach (var (table, name, op) in TriggerSpecs)
         {
-            foreach (var (name, op) in new[] { ("insert", "INSERT"), ("update", "UPDATE"), ("delete", "DELETE") })
+            var row = name == "delete" ? "OLD" : "NEW";
+            var (subject, fact) = table switch
             {
-                builder.Append($"""
+                "facts" => ($"{row}.subject_id", $"{row}.id"),
+                "subjects" => ($"{row}.id", "NULL"),
+                "refs" => ($"(SELECT subject_id FROM facts WHERE id = {row}.fact_id)", $"{row}.fact_id"),
+                _ => ($"{row}.subject_id", $"{row}.fact_id"),
+            };
 
-                    CREATE TRIGGER IF NOT EXISTS trg_{table}_{name} AFTER {op} ON {table} FOR EACH ROW
-                    BEGIN
-                        INSERT INTO meta(key, value) SELECT 'revision', '0' WHERE NOT EXISTS (SELECT 1 FROM meta WHERE key = 'revision');
-                        UPDATE meta SET value = CAST(CAST(value AS INTEGER) + 1 AS TEXT) WHERE key = 'revision';
-                    END;
+            builder.Append($"""
 
-                    """);
-            }
+                CREATE TRIGGER trg_{table}_{name} AFTER {op} ON {table} FOR EACH ROW
+                BEGIN
+                    INSERT INTO meta(key, value) SELECT 'revision', CAST(COALESCE((SELECT MAX(seq) FROM changes), 0) AS TEXT) WHERE NOT EXISTS (SELECT 1 FROM meta WHERE key = 'revision');
+                    UPDATE meta SET value = CAST(CAST(value AS INTEGER) + 1 AS TEXT) WHERE key = 'revision';
+                    INSERT INTO changes(seq, tbl, op, subject_id, fact_id, created_at) SELECT CAST(value AS INTEGER), '{table}', '{name}', {subject}, {fact}, strftime('%Y-%m-%dT%H:%M:%fZ', 'now') FROM meta WHERE key = 'revision';
+                END;
+
+                """);
         }
 
         return builder.ToString();

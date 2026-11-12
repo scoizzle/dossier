@@ -337,6 +337,10 @@ public sealed class WebServer : IDisposable
                     await StreamEventsAsync(context).ConfigureAwait(false);
                     break;
 
+                case "/api/changes":
+                    Write(context, 200, "application/json", Ops.Serialize(ReadChangesPage(Q("since"), Q("limit"), Q("last"))));
+                    break;
+
                 case "/api/search":
                     Write(context, 200, "application/json", Ops.Search(store, new SearchRequest
                     {
@@ -408,6 +412,45 @@ public sealed class WebServer : IDisposable
         {
             Write(context, 400, "application/json", Ops.Serialize(ErrorEnvelope.Of("invalid_request", exception.Message)));
         }
+    }
+
+    /// <summary>
+    /// <c>GET /api/changes</c>: <c>?since=N&amp;limit=L</c> (limit defaults to 100, clamped to 1..500) or
+    /// <c>?last=L</c> (the newest L rows). Anything unparseable is a 400 invalid_request.
+    /// </summary>
+    private ChangesPage ReadChangesPage(string? since, string? limit, string? last)
+    {
+        var style = System.Globalization.NumberStyles.Integer;
+        var culture = System.Globalization.CultureInfo.InvariantCulture;
+
+        int? count = null;
+        if (limit is not null)
+        {
+            if (!int.TryParse(limit, style, culture, out var parsed))
+            {
+                throw new DossierRequestException("invalid_request", "limit must be an integer");
+            }
+
+            count = parsed;
+        }
+
+        if (last is not null)
+        {
+            if (!int.TryParse(last, style, culture, out var newest))
+            {
+                throw new DossierRequestException("invalid_request", "last must be an integer");
+            }
+
+            return store.ReadChangesLast(newest);
+        }
+
+        long cursor = 0;
+        if (since is not null && (!long.TryParse(since, style, culture, out cursor) || cursor < 0))
+        {
+            throw new DossierRequestException("invalid_request", "since must be a non-negative integer");
+        }
+
+        return store.ReadChanges(cursor, count ?? 100);
     }
 
     /// <summary>

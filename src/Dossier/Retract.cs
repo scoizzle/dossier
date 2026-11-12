@@ -61,6 +61,7 @@ public sealed partial class DossierStore
             }
         }
 
+        PruneChanges(connection, transaction);
         transaction.Commit();
 
         foreach (var sha in shas)

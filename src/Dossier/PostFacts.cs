@@ -109,6 +109,7 @@ public sealed partial class DossierStore
         }
         else
         {
+            PruneChanges(connection, transaction);
             transaction.Commit();
         }
 

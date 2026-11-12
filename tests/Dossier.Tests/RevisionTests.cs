@@ -127,9 +127,25 @@ public sealed class RevisionTests
             }
         }
 
+        // A legacy-only database: the pre-journal twelve triggers and no changes table.
+        foreach (var table in Tables)
+        {
+            foreach (var (name, op) in new[] { ("insert", "INSERT"), ("update", "UPDATE"), ("delete", "DELETE") })
+            {
+                Exec(db.Store, $"""
+                    CREATE TRIGGER trg_{table}_{name} AFTER {op} ON {table} FOR EACH ROW
+                    BEGIN
+                        INSERT INTO meta(key, value) SELECT 'revision', '0' WHERE NOT EXISTS (SELECT 1 FROM meta WHERE key = 'revision');
+                        UPDATE meta SET value = CAST(CAST(value AS INTEGER) + 1 AS TEXT) WHERE key = 'revision';
+                    END;
+                    """);
+            }
+        }
+
+        Exec(db.Store, "DROP TABLE changes");
         Exec(db.Store, "DELETE FROM meta WHERE key = 'revision'");
 
-        var opened = new DossierStore?[4];
+        var opened = new DossierStore?[8];
         Exception? failure = null;
         try
         {
@@ -153,6 +169,8 @@ public sealed class RevisionTests
         await Assert.That(failure).IsNull();
         await Assert.That(Count(db.Store, "SELECT COUNT(*) FROM sqlite_master WHERE type='trigger' AND name LIKE 'trg_%'")).IsEqualTo(12);
         await Assert.That(db.Store.Revision()).IsEqualTo(0L);
+        await Assert.That(Count(db.Store, "SELECT COUNT(*) FROM sqlite_master WHERE type='trigger' AND name LIKE 'trg_%' AND sql LIKE '%INSERT INTO changes%'")).IsEqualTo(12);
+        await Assert.That(Count(db.Store, "SELECT COUNT(*) FROM changes")).IsEqualTo(0);
     }
 
     [Test]

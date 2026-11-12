@@ -70,6 +70,7 @@
     var reduced = !!(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
     var rows = []; // newest first
+    var factIndex = {}; // fact_id -> the newest rendered row that names it
     var lastSeen = -1;
     var collapsed = false;
     var destroyed = false;
@@ -81,7 +82,8 @@
     toggle.type = 'button';
     toggle.setAttribute('aria-expanded', 'true');
     var list = el('ul', null, host, 'g-feed-list');
-    list.setAttribute('role', 'log'); // a log region, deliberately without aria-live: it must not interrupt
+    list.setAttribute('role', 'log'); // a log region
+    list.setAttribute('aria-live', 'off'); // ...but role="log" is implicitly polite, so say off explicitly: a batch must not interrupt
     var empty = el('div', 'no changes yet', host, 'f-empty');
 
     function el(tag, value, parent, cls) {
@@ -92,16 +94,64 @@
       return node;
     }
 
-    // The list is rebuilt from the model on every change (bounded to 80 rows, so this is cheap) and the
-    // click handler is a closure over that row: nothing a batch carries becomes markup or a URL.
-    function render() {
+    // The wording of a row is its base plus the refs folded into it, so a later ref batch can update the
+    // same element in place instead of adding a row.
+    function lineText(entry) {
+      return entry.base + (entry.refs ? ' +' + entry.refs + ' refs' : '');
+    }
+
+    function setLine(entry) {
+      entry.text = lineText(entry);
+      if (entry.line) entry.line.textContent = entry.text;
+    }
+
+    function attach(entry, at) {
+      setLine(entry);
+      var li = el('li', null, null, entry.fresh && !reduced ? 'f-row f-new' : 'f-row');
+      entry.fresh = false;
+      var line = el('button', entry.text, li, 'f-line');
+      line.type = 'button';
+      if (entry.row && onSelect) {
+        (function (row) {
+          line.addEventListener('click', function () { onSelect(row); });
+        })(entry.row);
+      }
+      entry.time = el('span', ago(at, entry.at), li, 'f-time');
+      entry.li = li;
+      entry.line = line;
+      rows.unshift(entry);
+      list.insertBefore(li, list.firstChild);
+      if (entry.factId) factIndex[entry.factId] = entry;
+      return entry;
+    }
+
+    // Oldest rows fall off the tail, so a focused row inside the 80 survives every change.
+    function trim() {
+      while (rows.length > MAX_ROWS) {
+        var old = rows.pop();
+        if (old.li && old.li.parentNode === list) list.removeChild(old.li);
+        old.li = null; old.line = null; old.time = null;
+        if (old.factId && factIndex[old.factId] === old) delete factIndex[old.factId];
+      }
+    }
+
+    function paint() {
+      empty.hidden = rows.length > 0;
+      list.hidden = collapsed;
+    }
+
+    // Full build from the model: only mount and reset use it. Every change after that is incremental, so a
+    // focused row button is never destroyed by an ingest.
+    function renderAll() {
       if (destroyed) return;
       list.textContent = '';
+      factIndex = {};
       var at = now();
       for (var k = 0; k < rows.length; k++) {
         var entry = rows[k];
-        var li = el('li', null, list, entry.fresh && !reduced ? 'f-row f-new' : 'f-row');
-        entry.fresh = false;
+        entry.li = null; entry.line = null; entry.time = null;
+        setLine(entry);
+        var li = el('li', null, list, 'f-row'); // the f-new class belongs to the batch that added it
         var line = el('button', entry.text, li, 'f-line');
         line.type = 'button';
         if (entry.row && onSelect) {
@@ -109,10 +159,30 @@
             line.addEventListener('click', function () { onSelect(row); });
           })(entry.row);
         }
-        el('span', ago(at, entry.at), li, 'f-time');
+        entry.time = el('span', ago(at, entry.at), li, 'f-time');
+        entry.li = li;
+        entry.line = line;
+        if (entry.factId) factIndex[entry.factId] = entry;
       }
-      empty.hidden = rows.length > 0;
-      list.hidden = collapsed;
+      paint();
+    }
+
+    // The tick touches only the relative times: nothing is rebuilt, so focus, a click in flight and the
+    // element identity of every row survive it.
+    function tick() {
+      if (destroyed) return;
+      var at = now();
+      for (var k = 0; k < rows.length; k++) {
+        var entry = rows[k];
+        if (entry.time) entry.time.textContent = ago(at, entry.at);
+      }
+      paint();
+    }
+
+    function entryForFact(id) {
+      var entry = factIndex[id];
+      if (entry && rows.indexOf(entry) < 0) { delete factIndex[id]; entry = null; }
+      return entry || null;
     }
 
     // One batch: rows at or below the watermark are a redelivery. Refs and slots of the batch belong to
@@ -145,40 +215,52 @@
         var item = accepted[k].row;
         if (item.tbl === 'refs' || item.tbl === 'slots') continue;
         if (item.tbl === 'facts' && item.op === 'update' && text(item.fact_status) === 'superseded' && inserts[text(item.fact_id)]) continue;
-        var entry = { seq: accepted[k].seq, row: item, text: lineFor(item), at: item.at, fresh: true, refs: 0 };
+        var entry = {
+          seq: accepted[k].seq, row: item, base: lineFor(item), refs: 0, text: '', at: item.at, fresh: true,
+          factId: item.tbl === 'facts' ? text(item.fact_id) : '', li: null, line: null, time: null,
+        };
+        setLine(entry);
         lines.push(entry);
-        if (item.tbl === 'facts' && text(item.fact_id)) byFact[text(item.fact_id)] = entry;
+        if (entry.factId) byFact[entry.factId] = entry;
       }
 
-      // Refs of this batch fold into the fact line they name; refs whose fact is not in the batch are
-      // one aggregate line so a wide ref update cannot flood the strip.
+      // Refs of this batch fold into the fact line they name — the batch's own line, or one already on
+      // screen, updated in place. Refs whose fact is nowhere are one aggregate line, so a wide ref update
+      // cannot flood the strip.
       var loose = 0;
       var looseWhere = '';
+      var touched = [];
       for (k = 0; k < accepted.length; k++) {
         var ref = accepted[k].row;
         if (ref.tbl !== 'refs' && ref.tbl !== 'slots') continue;
-        var target = byFact[text(ref.fact_id)];
-        if (target) target.refs++;
-        else { loose++; if (!looseWhere) looseWhere = place(ref); }
+        var fid = text(ref.fact_id);
+        var target = (fid && byFact[fid]) || (fid ? entryForFact(fid) : null);
+        if (target) {
+          target.refs++;
+          if (touched.indexOf(target) < 0) touched.push(target);
+        } else { loose++; if (!looseWhere) looseWhere = place(ref); }
       }
-      for (k = 0; k < lines.length; k++) {
-        if (lines[k].refs) lines[k].text += ' +' + lines[k].refs + ' refs';
-      }
+      for (k = 0; k < touched.length; k++) setLine(touched[k]); // in place when the row is already rendered
       if (loose) {
-        lines.push({ seq: lastSeen, row: null, text: '+' + loose + ' refs in ' + (looseWhere || 'the graph'), at: undefined, fresh: true, refs: 0 });
+        lines.push({
+          seq: lastSeen, row: null, base: '+' + loose + ' refs in ' + (looseWhere || 'the graph'), refs: 0, text: '',
+          at: undefined, fresh: true, factId: '', li: null, line: null, time: null,
+        });
       }
 
-      // Ascending seq, pushed to the front: the newest row ends up first.
-      for (k = 0; k < lines.length; k++) rows.unshift(lines[k]);
-      while (rows.length > MAX_ROWS) rows.pop();
-      render();
+      // Ascending seq, each prepended: the newest row ends up first. Existing rows keep their elements.
+      var at = now();
+      for (k = 0; k < lines.length; k++) attach(lines[k], at);
+      trim();
+      paint();
     }
 
     function reset() {
       if (destroyed) return;
       rows = [];
+      factIndex = {};
       lastSeen = -1;
-      render();
+      renderAll();
     }
 
     function destroy() {
@@ -193,9 +275,9 @@
       list.hidden = collapsed;
     });
 
-    render();
+    renderAll();
     // The times go stale in place: re-render on a slow tick, and only where the host has a timer.
-    if (typeof win.setInterval === 'function') timer = win.setInterval(render, TICK_MS);
+    if (typeof win.setInterval === 'function') timer = win.setInterval(tick, TICK_MS);
 
     return { ingest: ingest, reset: reset, destroy: destroy };
   }

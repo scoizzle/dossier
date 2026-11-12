@@ -63,12 +63,14 @@ function makeEnv(reduce, live, withFeed) {
       this.type = '';
       this.width = 0;
       this.height = 0;
+      this.parentNode = null;
       created.push(this);
     }
     get textContent() { return this._text + this.children.map((c) => c.textContent).join(''); }
     set textContent(v) {
       if (state.activeElement && this.contains(state.activeElement)) state.activeElement = null; // removed node loses focus
       this._text = String(v);
+      for (const c of this.children) c.parentNode = null;
       this.children = [];
     }
     set innerHTML(v) { violations.push('innerHTML=' + String(v).slice(0, 60)); }
@@ -78,7 +80,26 @@ function makeEnv(reduce, live, withFeed) {
     set src(v) { violations.push('src property=' + String(v).slice(0, 60)); }
     contains(n) { return n === this || this.children.some((c) => c.contains(n)); }
     focus() { state.activeElement = this; }
-    appendChild(c) { this.children.push(c); return c; }
+    appendChild(c) { this.children.push(c); c.parentNode = this; return c; }
+    // Incremental rendering needs the two operations the browser gives a list: insert before a sibling and
+    // remove one. Removing the subtree that holds focus blurs it, exactly as the browser does.
+    get firstChild() { return this.children.length ? this.children[0] : null; }
+    insertBefore(n, ref) {
+      if (ref === null || ref === undefined) return this.appendChild(n);
+      const at = this.children.indexOf(ref);
+      if (at < 0) throw new Error('insertBefore: reference is not a child');
+      this.children.splice(at, 0, n);
+      n.parentNode = this;
+      return n;
+    }
+    removeChild(c) {
+      const at = this.children.indexOf(c);
+      if (at < 0) throw new Error('removeChild: not a child');
+      if (state.activeElement && c.contains(state.activeElement)) state.activeElement = null;
+      this.children.splice(at, 1);
+      c.parentNode = null;
+      return c;
+    }
     setAttribute(k, v) {
       this.attrs[k] = String(v);
       if (k === 'href' && !HREF_OK.test(String(v))) violations.push('href attribute=' + v);
@@ -1300,7 +1321,7 @@ async function eventSourceClosedScenario() {
   changes = { from: 5, to: 5, next: 5, truncated: false, reset: false, changes: [row(5, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new' })] };
   env.advance(1000);
   await settle();
-  check(urls.length === base + 1 && urls[base] === '/api/changes?since=4&limit=200',
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=4&limit=500',
     'the fallback polls /api/changes from the watermark: ' + urls.slice(base).join(' | '));
   env.advance(250);
   await settle();
@@ -1334,14 +1355,14 @@ async function pollingFallbackScenario() {
   const base = urls.length;
   env.advance(1000);
   await settle();
-  check(urls.length === base + 1 && urls[base] === '/api/changes?since=1&limit=200',
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=1&limit=500',
     'a tick polls the changes feed from the baseline: ' + urls.slice(base).join(' | '));
 
   // The polled rows go through the same classification as the stream: an expanded subject alone.
   changes = { from: 2, to: 2, next: 2, truncated: false, reset: false, changes: [row(2, 'facts', 'insert', { subject_id: 's-core', fact_id: 'f-core-9', fact_status: 'live', text: 'polled' })] };
   env.advance(1000);
   await settle();
-  check(urls[base + 1] === '/api/changes?since=1&limit=200', 'the next tick still asks from the watermark: ' + urls.slice(base).join(' | '));
+  check(urls[base + 1] === '/api/changes?since=1&limit=500', 'the next tick still asks from the watermark: ' + urls.slice(base).join(' | '));
   env.advance(250);
   await settle();
   check(urls.length === base + 3 && urls[base + 2] === coreUrl,
@@ -1367,7 +1388,7 @@ async function pollingChangesScenario() {
   let base = urls.length;
   env.advance(1000);
   await settle();
-  check(urls.length === base + 1 && urls[base] === '/api/changes?since=5&limit=200',
+  check(urls.length === base + 1 && urls[base] === '/api/changes?since=5&limit=500',
     'the first poll asks from the baseline: ' + urls.slice(base).join(' | '));
 
   changes = { from: 6, to: 6, next: 6, truncated: false, reset: false, changes: [row(6, 'facts', 'insert', { subject_id: 's-root', fact_id: 'f-root-9', fact_status: 'live', text: 'new' })] };
@@ -1389,7 +1410,7 @@ async function pollingChangesScenario() {
   changes = { from: 9, to: 9, next: 9, truncated: false, reset: false, changes: [] };
   env.advance(1000);
   await settle();
-  check(urls[urls.length - 1] === '/api/changes?since=9&limit=200',
+  check(urls[urls.length - 1] === '/api/changes?since=9&limit=500',
     'polling resumes from the reset watermark: ' + urls[urls.length - 1]);
   instance.destroy();
   check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
@@ -1496,7 +1517,9 @@ async function feedXssScenario() {
   check(unexpected.length === 0, 'the feed creates only its own elements' + (unexpected.length ? ': ' + unexpected.join() : ''));
   check(env.violations.length === 0, 'no innerHTML/href/src/on*/style assignment' + brief(env.violations));
   const list = host.byClass('g-feed-list')[0];
-  check(list.getAttribute('role') === 'log' && list.getAttribute('aria-live') === null, 'the log is role=log with no aria-live');
+  // role="log" is implicitly polite: the strip must say "off" explicitly, or every batch chatters to a
+  // screen reader.
+  check(list.getAttribute('role') === 'log' && list.getAttribute('aria-live') === 'off', 'the log is role=log with aria-live="off"');
   feed.destroy();
 }
 
@@ -1638,6 +1661,170 @@ async function feedTimersScenario() {
   check(timed.clock.timers.length === 0, 'destroy() clears the interval (' + timed.clock.timers.length + ')');
 }
 
+// ---- S6 feed: a row keeps its DOM identity across a tick and an ingest -----------------------
+// Rebuilding the list on every change destroys a focused row (focus falls to body) and loses a click that
+// straddles the rebuild, so the strip renders incrementally: new rows prepended, old rows trimmed, times
+// updated in place.
+async function feedFocusSurvivesTickScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-focus] ' + msg);
+  const env = makeEnv(true, 'poll', true);
+  const { host, feed } = env.mountFeed();
+  feed.ingest([
+    row(1, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-1', fact_status: 'live', text: 'first fact', actor: 'agent-3' }),
+  ]);
+  const list = host.byClass('g-feed-list')[0];
+  const button = list.byTag('li')[0].byTag('button')[0];
+  button.focus();
+  check(env.state.activeElement === button, 'the row button takes focus');
+
+  env.advance(10000); // the strip's own 10s tick
+  check(env.state.activeElement === button, 'the 10s tick leaves focus on the row button');
+  check(list.byTag('button').indexOf(button) >= 0, 'the tick keeps the focused row in the list');
+
+  feed.ingest([
+    row(2, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-2', fact_status: 'live', text: 'second fact', actor: 'agent-4' }),
+  ]);
+  check(env.state.activeElement === button, 'an ingest leaves focus on the same row button');
+  check(list.byTag('button').indexOf(button) >= 0, 'the focused row survives the ingest');
+  check(list.byTag('li').length === 2 && list.byTag('button')[0] !== button, 'the new row is prepended above it');
+  feed.destroy();
+}
+
+async function feedAriaScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-aria] ' + msg);
+  const env = makeEnv(true, undefined, true);
+  const { host, feed } = env.mountFeed();
+  const list = host.byClass('g-feed-list')[0];
+  check(list.getAttribute('role') === 'log', 'the strip is a log region');
+  check(list.getAttribute('aria-live') === 'off', 'aria-live is explicitly off, not the log default');
+  feed.destroy();
+}
+
+async function feedIdentityScenario() {
+  const check = (cond, msg) => ok(cond, '[feed-identity] ' + msg);
+  const env = makeEnv(true, 'poll', true);
+  const { host, feed } = env.mountFeed();
+  feed.ingest([
+    row(1, 'facts', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4', fact_status: 'live', text: 'linked fact', actor: 'agent-1' }),
+    row(2, 'refs', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4' }),
+  ]);
+  const list = host.byClass('g-feed-list')[0];
+  const li = list.byTag('li')[0];
+  const button = li.byTag('button')[0];
+  check(button.textContent === 'agent-1 added linked fact to Acme +1 refs', 'the ref folds into the fact line: "' + button.textContent + '"');
+
+  // A ref batch that names a fact already on screen folds into that line instead of a row of its own.
+  feed.ingest([row(3, 'slots', 'insert', { subject_id: 's-root', subject_name: 'Acme', fact_id: 'f-4' })]);
+  check(list.byTag('li').length === 1, 'a later ref batch adds no row (' + list.byTag('li').length + ')');
+  check(list.byTag('li')[0] === li && list.byTag('li')[0].byTag('button')[0] === button,
+    'the folded update keeps the element identity');
+  check(button.textContent === 'agent-1 added linked fact to Acme +2 refs', 'the folded count updates in place: "' + button.textContent + '"');
+  feed.destroy();
+}
+
+// ---- S5 polling: a truncated page keeps polling immediately, not at the next tick ------------
+// /api/changes caps a page at 500 rows. A truncated page means there is still backlog, so the next page is
+// due now: waiting for the interval lets a busy store outrun the tab's retention window.
+async function pollingCatchUpScenario() {
+  const check = (cond, msg) => ok(cond, '[poll-catch-up] ' + msg);
+  const env = makeEnv(true, 'poll');
+  const payload = clone(fixture);
+  const pages = [
+    { from: 2, to: 2, next: 2, truncated: true, reset: false, changes: [row(2, 'facts', 'insert', { subject_id: 's-unseen', fact_id: 'f-p1', fact_status: 'live', text: 'page one' })] },
+    { from: 3, to: 3, next: 3, truncated: false, reset: false, changes: [row(3, 'facts', 'insert', { subject_id: 's-unseen', fact_id: 'f-p2', fact_status: 'live', text: 'page two' })] },
+  ];
+  let served = 0;
+  const asked = [];
+  const { instance, urls } = await env.mount(fixture.root, (u) => {
+    if (u === '/api/revision') return { revision: 1 };
+    if (u.indexOf('/api/changes') === 0) {
+      asked.push(u);
+      const page = pages[Math.min(served, pages.length - 1)];
+      served++;
+      return clone(page);
+    }
+    return clone(payload);
+  });
+  check(env.clock.timers.length === 1, 'one poll interval is armed');
+  const base = urls.length;
+  env.advance(1000); // one tick, no further time
+  await settle();
+  await settle();
+  const polled = urls.slice(base).filter((u) => u.indexOf('/api/changes') === 0);
+  check(polled.length === 2, 'a truncated page polls again inside the same tick (' + polled.length + ' requests)');
+  check(polled[0] === '/api/changes?since=1&limit=500', 'the first page asks from the watermark: ' + polled[0]);
+  check(polled[1] === '/api/changes?since=2&limit=500', 'the follow-up asks from the page cursor, not the interval: ' + polled[1]);
+  check(instance.lastSeen === 3, 'both pages are applied through the frame gate (' + instance.lastSeen + ')');
+  check(asked.length === 2, 'a complete page ends the catch-up (' + asked.length + ')');
+  instance.destroy();
+  check(env.clock.timers.length === 0, 'destroy() clears the poll interval');
+}
+
+// ---- S5 a stale expansion payload cannot resurrect a fact a delta removed ---------------------
+// expand() fetches outside the single-flight gate, so its response can resolve after a retraction's delta.
+// The removal is authoritative: a payload that was issued before a removal may not re-add what it names.
+async function staleExpandScenario() {
+  const check = (cond, msg) => ok(cond, '[stale-expand] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture);
+  const urls = [];
+  let gate = null;
+  const instance = env.window.DossierGraph.mount(new env.El('div'), fixture.root, {
+    fetchJson: (u) => {
+      urls.push(u);
+      if (u === '/api/revision') return Promise.resolve({ revision: 5 });
+      if (gate && u.indexOf('subject=s-core') > 0) { const p = gate; gate = null; return p; }
+      return Promise.resolve(clone(payload));
+    },
+  });
+  await instance.ready;
+  const es = env.eventSources[0];
+  const byKey = (k) => instance.nodes.find((n) => n.key === k);
+  const core = byKey('subject:s-core');
+  check(!!core && !!byKey('fact:f-core-2'), 'the subject and its fact are on screen before the expansion');
+
+  // The expansion is issued now: its payload still carries f-core-2 as live.
+  let release = () => {};
+  gate = new Promise((resolve) => { release = () => resolve(clone(payload)); });
+  const expanding = instance.expand(core);
+  await settle();
+
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'update', { subject_id: 's-core', fact_id: 'f-core-2', fact_status: 'retracted', text: 'core fact two' })]));
+  env.advance(250);
+  await settle();
+  check(!byKey('fact:f-core-2'), 'the retraction applies without waiting for the stale expansion');
+
+  release();
+  await expanding;
+  await settle();
+  check(!byKey('fact:f-core-2'), 'a stale expansion payload does not resurrect the retracted fact');
+  check(instance.edges.every((e) => e.a.key !== 'fact:f-core-2' && e.b.key !== 'fact:f-core-2'),
+    'no edge is left pointing at it');
+  instance.destroy();
+}
+
+// ---- S5 a reset does not discard a delete that was still waiting for its flush ----------------
+// afterReset() drops the debounce queue. A delete in that queue is the only record that the node is gone,
+// and the refetch that follows can still carry it live, so the removal has to be applied first.
+async function resetPendingRemovalScenario() {
+  const check = (cond, msg) => ok(cond, '[reset-pending] ' + msg);
+  const env = makeEnv(true, 'event');
+  const payload = clone(fixture); // the server has not caught up: this still carries f-root-1 as live
+  const { instance } = await env.mount(fixture.root, (u) => (u === '/api/revision' ? { revision: 5 } : clone(payload)));
+  const es = env.eventSources[0];
+  const byKey = (k) => instance.nodes.find((n) => n.key === k);
+  check(!!byKey('fact:f-root-1'), 'the fact is on screen before the delete');
+
+  es.emit('changes', frame(6, 6, [row(6, 'facts', 'delete', { subject_id: 's-root', fact_id: 'f-root-1', text: 'root fact with every kind of ref' })]));
+  es.emit('reset', '9'); // lands before the debounced flush
+  await settle();
+  env.advance(250);
+  await settle();
+  check(!byKey('fact:f-root-1'), 'a reset keeps the queued delete: the fact stays gone');
+  check(instance.lastSeen === 9, 'the reset still moves the watermark (' + instance.lastSeen + ')');
+  instance.destroy();
+}
+
 
 await interactionScenario('animated', false);
 await ownerLinkScenario();
@@ -1671,6 +1858,9 @@ for (const [name, fn] of [
   ['stream-closed', eventSourceClosedScenario],
   ['polling', pollingFallbackScenario],
   ['poll-changes', pollingChangesScenario],
+  ['poll-catch-up', pollingCatchUpScenario],
+  ['stale-expand', staleExpandScenario],
+  ['reset-pending', resetPendingRemovalScenario],
   ['feed-render', feedRenderScenario],
   ['feed-actor', feedActorScenario],
   ['feed-xss', feedXssScenario],
@@ -1678,6 +1868,9 @@ for (const [name, fn] of [
   ['feed-reset', feedResetScenario],
   ['feed-history', feedHistoryScenario],
   ['feed-timers', feedTimersScenario],
+  ['feed-focus', feedFocusSurvivesTickScenario],
+  ['feed-aria', feedAriaScenario],
+  ['feed-identity', feedIdentityScenario],
 ]) {
   try { await fn(); } catch (err) { failed++; console.error('FAIL [' + name + '] threw: ' + ((err && err.message) || err)); }
 }

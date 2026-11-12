@@ -85,6 +85,10 @@
     var nodeByKey = {};
     var edges = [];
     var edgeKeys = {};
+    // Node keys a delta removed, with the seq that removed them. A removal is authoritative for the mount:
+    // merge() refuses these keys, so a payload that was issued before the removal (an expansion or refresh
+    // still in flight) cannot put the node back. Only a later delta showing the key live clears it.
+    var removedKeys = {};
     var hueCount = 0;
     var rootKey = null;
     // Hidden counts seen so far: the largest per category across the initial load and every merge, so a
@@ -143,6 +147,7 @@
       for (i = 0; i < subs.length; i++) {
         var s = subs[i];
         var sk = nodeKey('subject', s.id);
+        if (removedKeys[sk] !== undefined) continue; // a delta removed it: no later payload re-adds it
         var held = nodeByKey[sk];
         if (held) {
           if (!s.boundary) {
@@ -164,6 +169,7 @@
         if (!f || !f.id) continue;
         if (f.status === 'retracted') { drop(nodeKey('fact', f.id)); continue; }
         var fk = nodeKey('fact', f.id);
+        if (removedKeys[fk] !== undefined) continue; // a delta removed it: no later payload re-adds it
         var known = nodeByKey[fk];
         if (known) {
           adopt(known, f);
@@ -226,8 +232,10 @@
 
     // Removes one node and everything that only existed because of it: its edges (and their keys), its
     // place in the expansion set, the open panel and an in-progress drag. A dropped subject takes its
-    // anchored facts with it. Every delta removal goes through here, and only here.
-    function drop(key) {
+    // anchored facts with it. Every delta removal goes through here, and only here. `seq` is the delta's
+    // seq: a removal names the key it removed so no stale payload can re-add it (merge's own retracted-fact
+    // drop passes none, because a payload has no seq and a later payload may legitimately restore it).
+    function drop(key, seq) {
       var nd = nodeByKey[key];
       if (!nd) return false;
       var i;
@@ -236,18 +244,19 @@
         for (i = 0; i < nodes.length; i++) {
           if (nodes[i].type === 'fact' && nodes[i].anchor === nd) orphans.push(nodes[i].key);
         }
-        for (i = 0; i < orphans.length; i++) dropNode(orphans[i]);
+        for (i = 0; i < orphans.length; i++) dropNode(orphans[i], seq);
         if (nodeByKey[key] !== nd) return true; // already gone with the subject
       }
-      return dropNode(key);
+      return dropNode(key, seq);
     }
 
-    function dropNode(key) {
+    function dropNode(key, seq) {
       var nd = nodeByKey[key];
       if (!nd) return false;
       var i;
       for (i = nodes.length - 1; i >= 0; i--) if (nodes[i] === nd) nodes.splice(i, 1);
       delete nodeByKey[key];
+      if (seq !== undefined && Number.isFinite(Number(seq))) removedKeys[key] = Number(seq);
       for (i = edges.length - 1; i >= 0; i--) {
         if (edges[i].a === nd || edges[i].b === nd) {
           delete edgeKeys[edgeKey(edges[i].e)];
@@ -877,7 +886,10 @@
 
       // Removals first, then classification: a delete (or a fact that arrives retracted) is applied even
       // when another row in the same batch asks for a full refresh.
-      for (k = 0; k < rows.length; k++) handled[k] = applyRemoval(rows[k]);
+      for (k = 0; k < rows.length; k++) {
+        handled[k] = applyRemoval(rows[k]);
+        if (!handled[k]) restore(rows[k]);
+      }
       for (k = 0; k < rows.length && !liveStopped && !full; k++) {
         if (handled[k]) continue;
         var cls = classify(rows[k]);
@@ -951,17 +963,30 @@
     }
 
     // The removal rule of the contract, applied before classification. A delete row, or a fact row that
-    // arrives retracted, removes the node it names when the view holds it.
+    // arrives retracted, removes the node it names when the view holds it — and fixes the key as removed
+    // even when it does not hold it yet, so a payload already in flight cannot add it afterwards.
     function applyRemoval(row) {
       if (!row || typeof row !== 'object') return false;
+      var key = null;
       if (row.tbl === 'facts' && typeof row.fact_id === 'string' &&
-        (row.op === 'delete' || row.fact_status === 'retracted')) {
-        return drop(nodeKey('fact', row.fact_id));
-      }
-      if (row.tbl === 'subjects' && row.op === 'delete' && typeof row.subject_id === 'string') {
-        return drop(nodeKey('subject', row.subject_id));
-      }
-      return false;
+        (row.op === 'delete' || row.fact_status === 'retracted')) key = nodeKey('fact', row.fact_id);
+      else if (row.tbl === 'subjects' && row.op === 'delete' && typeof row.subject_id === 'string') key = nodeKey('subject', row.subject_id);
+      if (!key) return false;
+      var removed = drop(key, row.seq);
+      if (removedKeys[key] === undefined) removedKeys[key] = Number.isFinite(Number(row.seq)) ? Number(row.seq) : -1;
+      return removed;
+    }
+
+    // The only ordering fact a delta carries is its seq, so a live row for a key a delta removed is a
+    // restore: it lifts the refusal. Rows arrive ascending, so one pass in row order is the last word.
+    function restore(row) {
+      if (!row || typeof row !== 'object' || row.op === 'delete') return;
+      var key = '';
+      if (row.tbl === 'facts' && typeof row.fact_id === 'string' && row.fact_status !== 'retracted') key = nodeKey('fact', row.fact_id);
+      else if (row.tbl === 'subjects' && typeof row.subject_id === 'string') key = nodeKey('subject', row.subject_id);
+      if (!key || removedKeys[key] === undefined) return;
+      var seq = Number(row.seq);
+      if (!Number.isFinite(seq) || seq > removedKeys[key]) delete removedKeys[key];
     }
 
     // What one changed row is worth. A row that names no subject, or touches the subject table, can move
@@ -987,10 +1012,13 @@
     var lastSeen = -1;
     var stream = null;
     var pollTimer = 0;
+    var pollBusy = false;
     var flushTimer = 0;
     var liveStopped = false;
     var DEBOUNCE_MS = 250;
     var POLL_MS = 1000;
+    var POLL_LIMIT = 500; // the most rows one page carries
+    var POLL_PAGES = 10; // a backlog deeper than this waits for the next tick instead of starving the view
     var GLOW_FRAMES = 18;
 
     function stopStream() {
@@ -1058,10 +1086,14 @@
       }).catch(function () { /* the next batch still lands */ });
     }
 
-    // A discontinuity: the view refetches everything through the same gate, and the feed refills once.
+    // A discontinuity: the view refetches everything through the same gate, and the feed refills once. A
+    // delete still queued for its debounce is applied first: the refetch can carry the node live, and that
+    // buffered row is the only record that it is gone.
     function afterReset(n) {
       if (Number.isFinite(n)) lastSeen = n;
+      var queued = pendingRows;
       pendingRows = [];
+      for (var k = 0; k < queued.length; k++) applyRemoval(queued[k]);
       if (feed) refillFeed();
       refresh();
     }
@@ -1089,11 +1121,22 @@
     }
 
     function pollChanges() {
-      if (destroyed || liveStopped) return;
+      if (destroyed || liveStopped || pollBusy) return;
+      pollBusy = true;
+      var done = function () { pollBusy = false; };
+      pollPage(0).then(done, done); // a failed page is not a status line: the next tick retries
+    }
+
+    // One page of the changes feed. `truncated` means the page was cut at the limit and there is backlog, so
+    // the next page is due now, not at the next tick: a 1s poll of 500 rows cannot keep up with a store
+    // writing faster than that, and a polled tab would then fall out of retention under load. Every page
+    // goes through applyFrame, so its rows land in the same gate and classification as the stream's.
+    function pollPage(page) {
+      if (destroyed || liveStopped) return Promise.resolve();
       var target = lastSeen >= 0
-        ? '/api/changes?since=' + lastSeen + '&limit=200'
-        : '/api/changes?last=200';
-      fetchJson(target).then(function (body) {
+        ? '/api/changes?since=' + lastSeen + '&limit=' + POLL_LIMIT
+        : '/api/changes?last=' + POLL_LIMIT;
+      return fetchJson(target).then(function (body) {
         if (destroyed || liveStopped || !body || typeof body !== 'object') return;
         if (body.reset) {
           afterReset(Number(body.next));
@@ -1101,7 +1144,8 @@
         }
         applyFrame(body);
         scheduleFlush();
-      }).catch(function () { /* the next tick retries */ });
+        if (body.truncated && page + 1 < POLL_PAGES) return pollPage(page + 1);
+      });
     }
 
     function startPolling() {

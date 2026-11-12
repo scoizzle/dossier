@@ -279,6 +279,39 @@ public sealed class WebTests
     }
 
     [Test]
+    public async Task CanBind_ReturnsFalseWhenSocketCreationThrows()
+    {
+        static Socket Throws(IPAddress _) => throw new SocketException((int)SocketError.AddressFamilyNotSupported);
+
+        // On a host where localhost resolves to ::1 but IPv6 sockets cannot be created, the Socket
+        // constructor throws. The probe must answer false instead of letting that escape
+        // ShouldAddLocalhostPrefix and the WebServer constructor.
+        await Assert.That(WebServer.CanBind(IPAddress.IPv6Loopback, Throws)).IsFalse();
+    }
+
+    [Test]
+    public async Task CanBind_ReturnsFalseWhenFactoryThrowsPlatformNotSupported()
+    {
+        static Socket Throws(IPAddress _) => throw new PlatformNotSupportedException("IPv6 is not enabled");
+
+        await Assert.That(WebServer.CanBind(IPAddress.IPv6Loopback, Throws)).IsFalse();
+    }
+
+    [Test]
+    public async Task CanBind_ReturnsFalseWhenFactoryThrowsNotSupported()
+    {
+        static Socket Throws(IPAddress _) => throw new NotSupportedException("address family unavailable");
+
+        await Assert.That(WebServer.CanBind(IPAddress.IPv6Loopback, Throws)).IsFalse();
+    }
+
+    [Test]
+    public async Task CanBind_ReturnsTrueForBindableLoopback()
+    {
+        await Assert.That(WebServer.CanBind(IPAddress.Loopback, static address => new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp))).IsTrue();
+    }
+
+    [Test]
     public async Task Web_PortInUseStillThrows()
     {
         using var db = new TempDb();

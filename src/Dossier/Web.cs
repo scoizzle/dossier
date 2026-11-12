@@ -56,21 +56,33 @@ public sealed class WebServer : IDisposable
         addresses.Length > 0 && addresses.All(IPAddress.IsLoopback) && canBind(addresses[0]);
 
     /// <summary>Binds a throwaway socket to the address on an ephemeral port to see if it is usable.</summary>
-    private static bool CanBind(IPAddress address)
+    private static bool CanBind(IPAddress address) => CanBind(address, CreateSocket);
+
+    /// <summary>The production socket factory: one TCP socket for the address's own family.</summary>
+    private static Socket CreateSocket(IPAddress address) => new(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
+    /// <summary>
+    /// Both the socket creation and the bind sit inside the try: on a host where <c>localhost</c>
+    /// resolves to ::1 but IPv6 sockets cannot be created, the constructor itself throws. Any
+    /// socket-level failure means the address is not usable, so the probe answers false instead of
+    /// letting the exception escape <see cref="ShouldAddLocalhostPrefix"/> and the constructor.
+    /// </summary>
+    internal static bool CanBind(IPAddress address, Func<IPAddress, Socket> createSocket)
     {
-        var socket = new Socket(address.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+        Socket? socket = null;
         try
         {
+            socket = createSocket(address);
             socket.Bind(new IPEndPoint(address, 0));
             return true;
         }
-        catch (SocketException)
+        catch (Exception exception) when (exception is SocketException or PlatformNotSupportedException or NotSupportedException)
         {
             return false;
         }
         finally
         {
-            socket.Dispose();
+            socket?.Dispose();
         }
     }
 

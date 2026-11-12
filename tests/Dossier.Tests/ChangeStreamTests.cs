@@ -330,14 +330,56 @@ public sealed class ChangeStreamTests
         var second = await ReadFramesAsync(reader, 1, cts.Token);
         await Assert.That(second[0].Name).IsEqualTo("revision");
 
-        // An empty page must not move the journal cursor: a real write still arrives in full.
-        server.RevisionReader = () => db.Store.Revision();
+        // An empty page must not move the journal cursor: a real write still arrives in full. The real
+        // reader goes back only after the commit, or a tick landing between the two would report the
+        // pre-write revision and swallow the frame this test waits for.
         db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("beta")));
+        server.RevisionReader = () => db.Store.Revision();
         var after = await ReadFramesAsync(reader, 2, cts.Token);
         await Assert.That(after[0].Name).IsEqualTo("revision");
         await Assert.That(after[1].Name).IsEqualTo("changes");
         await Assert.That(after[1].Body.GetProperty("from").GetInt64()).IsEqualTo(from);
         await Assert.That(after[1].Body.GetProperty("changes")[0].GetProperty("text").GetString()).IsEqualTo("beta");
+    }
+
+    [Test]
+    public async Task Stream_RetriesAFailedJournalReadWithoutANewWrite()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("alpha")));
+        using var server = await TestServers.StartAsync(db.Store, PollInterval);
+        server.KeepaliveInterval = TimeSpan.FromMilliseconds(100);
+        using var http = Client(server);
+        using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
+
+        // The first page that carries rows is the write's page, and reading it throws once. Nothing is
+        // written afterwards, so only a keepalive tick can retry the read that failed.
+        var failed = 0;
+        server.ChangesReader = (since, limit) =>
+        {
+            var page = db.Store.ReadChanges(since, limit);
+            return page.Changes.Count > 0 && Interlocked.Exchange(ref failed, 1) == 0
+                ? throw new SqliteException("injected journal failure", 5)
+                : page;
+        };
+
+        using var response = await http.GetAsync("api/events", HttpCompletionOption.ResponseHeadersRead, cts.Token);
+        using var reader = new StreamReader(await response.Content.ReadAsStreamAsync(cts.Token), Encoding.UTF8);
+
+        var baseline = await ReadFramesAsync(reader, 1, cts.Token);
+        await Assert.That(baseline[0].Name).IsEqualTo("revision");
+        var from = Long(string.Join("\n", baseline[0].Data));
+
+        db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("beta")));
+
+        // The write's revision frame arrives, then its journal read fails. No second write happens:
+        // the retry has to come from the keepalive tick, well inside two intervals.
+        var frames = await ReadFramesAsync(reader, 2, cts.Token).WaitAsync(TimeSpan.FromSeconds(2), cts.Token);
+        await Assert.That(frames[0].Name).IsEqualTo("revision");
+        await Assert.That(frames[1].Name).IsEqualTo("changes");
+        await Assert.That(frames[1].Body.GetProperty("from").GetInt64()).IsEqualTo(from);
+        await Assert.That(frames[1].Body.GetProperty("changes")[0].GetProperty("text").GetString()).IsEqualTo("beta");
+        await Assert.That(Volatile.Read(ref failed)).IsEqualTo(1);
     }
 
     [Test]

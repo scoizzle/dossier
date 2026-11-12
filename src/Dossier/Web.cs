@@ -27,7 +27,7 @@ public sealed class WebServer : IDisposable
     private const int ChangeDrainCap = 5000;
 
     private static readonly TimeSpan DefaultRevisionPollInterval = TimeSpan.FromMilliseconds(500);
-    private static readonly TimeSpan KeepaliveInterval = TimeSpan.FromSeconds(5);
+    private static readonly TimeSpan DefaultKeepaliveInterval = TimeSpan.FromSeconds(5);
 
     /// <summary>The SSE preamble: EventSource reconnects after one second.</summary>
     private static readonly byte[] RetryFrame = Encoding.UTF8.GetBytes("retry: 1000\n\n");
@@ -190,6 +190,13 @@ public sealed class WebServer : IDisposable
     /// failing journal read skips one tick instead of ending the stream.
     /// </summary>
     internal Func<long, int, ChangesPage>? ChangesReader { get; set; }
+
+    /// <summary>
+    /// How long an idle stream waits before writing a keepalive comment (and retrying a journal read
+    /// that failed). Short values keep tests fast; the default is what a person running
+    /// <c>dossier serve</c> gets.
+    /// </summary>
+    internal TimeSpan KeepaliveInterval { get; set; } = DefaultKeepaliveInterval;
 
     public void Start()
     {
@@ -509,10 +516,14 @@ public sealed class WebServer : IDisposable
             // journal has been delivered. They only meet by accident: the journal is the resume point.
             var journal = ReadResumePoint(context.Request, sent);
 
+            // A journal read that failed leaves rows undelivered with no revision change to announce
+            // them, so the stream retries on every wake and on every keepalive until it succeeds.
+            var journalBehind = false;
+
             await output.WriteAsync(RetryFrame, token).ConfigureAwait(false);
             await output.FlushAsync(token).ConfigureAwait(false);
             await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
-            journal = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
+            (journal, journalBehind) = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
 
             while (!token.IsCancellationRequested)
             {
@@ -524,6 +535,11 @@ public sealed class WebServer : IDisposable
                 {
                     await output.WriteAsync(KeepaliveFrame, token).ConfigureAwait(false);
                     await output.FlushAsync(token).ConfigureAwait(false);
+                    if (journalBehind)
+                    {
+                        (journal, journalBehind) = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
+                    }
+
                     continue;
                 }
 
@@ -535,11 +551,16 @@ public sealed class WebServer : IDisposable
                 }
 
                 // A replaced store restarts the counter, so inequality is the test, not growth.
-                if (current != sent)
+                var advanced = current != sent;
+                if (advanced)
                 {
                     sent = current;
                     await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
-                    journal = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
+                }
+
+                if (advanced || journalBehind)
+                {
+                    (journal, journalBehind) = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
                 }
             }
         }
@@ -558,8 +579,9 @@ public sealed class WebServer : IDisposable
     }
 
     /// <summary>
-    /// The journal cursor a stream starts from: <c>Last-Event-ID</c> wins over <c>?since=</c>, and
-    /// neither means "from now" (the revision at connect), so a fresh stream replays nothing.
+    /// The journal cursor a stream starts from: <c>Last-Event-ID</c> wins over <c>?since=</c>, and neither
+    /// means the revision the server last polled, which can be up to one poll interval old, so a fresh
+    /// stream may replay rows written in that window.
     /// </summary>
     private static long ReadResumePoint(HttpListenerRequest request, long current)
     {
@@ -579,10 +601,11 @@ public sealed class WebServer : IDisposable
     /// Delivers the journal behind <paramref name="journal"/> as <c>changes</c> frames of at most
     /// <see cref="ChangePageSize"/> rows, up to <see cref="ChangeDrainCap"/> rows per tick. More still
     /// pending, or a resume point outside the retained window, becomes one <c>reset</c> and the cursor
-    /// jumps to the revision the frame names. A failing read skips the tick; it never ends the stream.
+    /// jumps to the revision the frame names. A failing read skips the tick; it never ends the stream, and
+    /// the caller retries it without waiting for a new write.
     /// </summary>
-    /// <returns>The new journal cursor.</returns>
-    private async Task<long> DrainChangesAsync(Stream output, long revision, long journal, CancellationToken token)
+    /// <returns>The new journal cursor, and whether a read failed so rows are still undelivered.</returns>
+    private async Task<(long Journal, bool Behind)> DrainChangesAsync(Stream output, long revision, long journal, CancellationToken token)
     {
         var drained = 0;
         while (drained < ChangeDrainCap)
@@ -594,19 +617,19 @@ public sealed class WebServer : IDisposable
             }
             catch (Exception)
             {
-                // A locked or missing database is a skipped tick, not a dead stream: the next wake retries.
-                return journal;
+                // A locked or missing database is a skipped tick, not a dead stream: the caller retries.
+                return (journal, true);
             }
 
             if (page.Reset)
             {
                 await WriteResetAsync(output, revision, token).ConfigureAwait(false);
-                return revision;
+                return (revision, false);
             }
 
             if (page.Changes.Count == 0)
             {
-                return journal;
+                return (journal, false);
             }
 
             await WriteChangesAsync(output, page, token).ConfigureAwait(false);
@@ -615,17 +638,17 @@ public sealed class WebServer : IDisposable
 
             if (!page.Truncated)
             {
-                return journal;
+                return (journal, false);
             }
 
             if (drained >= ChangeDrainCap)
             {
                 await WriteResetAsync(output, revision, token).ConfigureAwait(false);
-                return revision;
+                return (revision, false);
             }
         }
 
-        return journal;
+        return (journal, false);
     }
 
     private static async Task WriteRevisionAsync(Stream output, long value, CancellationToken token)

@@ -456,6 +456,109 @@ public sealed class ChangeLogTests
         await Assert.That(page.Changes.Where(row => row.Actor is not null).Count()).IsEqualTo(1);
     }
 
+    /// <summary>Takes the WAL write lock on <paramref name="holder"/>, so a reader that takes one waits it out.</summary>
+    private static void HoldWriteLock(SqliteConnection holder)
+    {
+        using var begin = holder.CreateCommand();
+        begin.CommandText = "BEGIN IMMEDIATE";
+        begin.ExecuteNonQuery();
+    }
+
+    private static void ReleaseWriteLock(SqliteConnection holder)
+    {
+        using var rollback = holder.CreateCommand();
+        rollback.CommandText = "ROLLBACK";
+        rollback.ExecuteNonQuery();
+    }
+
+    [Test]
+    public async Task ChangesQuery_ReadChangesDoesNotWaitForAWriter()
+    {
+        using var db = new TempDb();
+        for (var index = 1; index <= 3; index++)
+        {
+            RawSubject(db.Store, $"s{index}");
+        }
+
+        // BEGIN IMMEDIATE holds the write lock. A read transaction has no business taking it: the
+        // default (immediate) does, waits out the 5s busy timeout and then throws.
+        using var holder = db.Store.OpenConnection();
+        HoldWriteLock(holder);
+        try
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var page = db.Store.ReadChanges(0, 10);
+            watch.Stop();
+
+            await Assert.That(watch.Elapsed).IsLessThan(TimeSpan.FromSeconds(1));
+            await Assert.That(page.Changes.Count).IsEqualTo(3);
+            await Assert.That(page.Next).IsEqualTo(3L);
+            await Assert.That(page.Reset).IsFalse();
+        }
+        finally
+        {
+            ReleaseWriteLock(holder);
+        }
+    }
+
+    [Test]
+    public async Task ChangesQuery_ReadChangesLastDoesNotWaitForAWriter()
+    {
+        using var db = new TempDb();
+        for (var index = 1; index <= 3; index++)
+        {
+            RawSubject(db.Store, $"s{index}");
+        }
+
+        using var holder = db.Store.OpenConnection();
+        HoldWriteLock(holder);
+        try
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var page = db.Store.ReadChangesLast(2);
+            watch.Stop();
+
+            await Assert.That(watch.Elapsed).IsLessThan(TimeSpan.FromSeconds(1));
+            await Assert.That(page.Changes.Select(row => row.Seq).ToArray()).IsEquivalentTo(new long[] { 2, 3 });
+            await Assert.That(page.Next).IsEqualTo(3L);
+        }
+        finally
+        {
+            ReleaseWriteLock(holder);
+        }
+    }
+
+    [Test]
+    public async Task ChangesEndpoint_ServesWhileAWriterHoldsTheLock()
+    {
+        using var db = new TempDb();
+        for (var index = 1; index <= 2; index++)
+        {
+            RawSubject(db.Store, $"s{index}");
+        }
+
+        using var server = await TestServers.StartAsync(db.Store);
+        using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
+
+        using var holder = db.Store.OpenConnection();
+        HoldWriteLock(holder);
+        try
+        {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var response = await http.GetAsync("/api/changes?since=0&limit=10");
+            watch.Stop();
+
+            await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.OK);
+            await Assert.That(watch.Elapsed).IsLessThan(TimeSpan.FromSeconds(2));
+            using var document = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
+            await Assert.That(document.RootElement.GetProperty("changes").GetArrayLength()).IsEqualTo(2);
+        }
+        finally
+        {
+            ReleaseWriteLock(holder);
+        }
+    }
+
     [Test]
     public async Task ChangesEndpoint_ServesPagesAndRejectsBadInput()
     {

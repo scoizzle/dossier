@@ -74,13 +74,14 @@ public sealed partial class DossierStore
 
     /// <summary>
     /// Journal rows with <c>seq &gt; since</c>, oldest first, at most <paramref name="limit"/>. The head, the
-    /// oldest retained seq and the rows are read in one transaction, so they describe one snapshot.
+    /// oldest retained seq and the rows are read in one deferred transaction, so they describe one snapshot
+    /// and the read never takes the write lock.
     /// </summary>
     public ChangesPage ReadChanges(long since, int limit)
     {
         limit = Math.Clamp(limit, 1, 500);
         using var connection = OpenConnection();
-        using var transaction = connection.BeginTransaction();
+        using var transaction = connection.BeginTransaction(deferred: true);
         var (head, oldest) = ReadWindow(connection, transaction);
 
         if (since > head || since < oldest - 1)
@@ -93,12 +94,15 @@ public sealed partial class DossierStore
         return new ChangesPage(since, next, next, rows.Count > 0 && next < head, false, rows);
     }
 
-    /// <summary>The newest <paramref name="limit"/> rows, oldest first; <c>Next</c> is the head.</summary>
+    /// <summary>
+    /// The newest <paramref name="limit"/> rows, oldest first; <c>Next</c> is the head. Reads in one
+    /// deferred transaction, so it is a WAL snapshot read and never takes the write lock.
+    /// </summary>
     public ChangesPage ReadChangesLast(int limit)
     {
         limit = Math.Clamp(limit, 1, 500);
         using var connection = OpenConnection();
-        using var transaction = connection.BeginTransaction();
+        using var transaction = connection.BeginTransaction(deferred: true);
         var (head, oldest) = ReadWindow(connection, transaction);
 
         var rows = ReadRows(

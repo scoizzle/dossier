@@ -326,7 +326,7 @@ public sealed class WebEventsTests
         await Task.CompletedTask;
     }
 
-    private sealed record SseEvent(string? Name, List<string> Data);
+    private sealed record SseEvent(string? Name, string? Id, List<string> Data);
 
     private static long ParseRevision(SseEvent @event) =>
         long.Parse(string.Join("\n", @event.Data), NumberStyles.Integer, CultureInfo.InvariantCulture);
@@ -345,6 +345,7 @@ public sealed class WebEventsTests
         var preamble = new List<string>();
         var events = new List<SseEvent>();
         string? name = null;
+        string? id = null;
         var data = new List<string>();
 
         while (events.Count < wanted)
@@ -365,8 +366,9 @@ public sealed class WebEventsTests
             {
                 if (name is not null || data.Count > 0)
                 {
-                    events.Add(new SseEvent(name, data));
+                    events.Add(new SseEvent(name, id, data));
                     name = null;
+                    id = null;
                     data = new List<string>();
                 }
 
@@ -380,6 +382,9 @@ public sealed class WebEventsTests
             {
                 case "event":
                     name = value;
+                    break;
+                case "id":
+                    id = value;
                     break;
                 case "data":
                     data.Add(value);

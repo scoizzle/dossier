@@ -328,8 +328,9 @@ try
 
         case "mcp":
         {
-            // stdout carries protocol messages only.
-            new McpServer(new DossierStore()).Run(Console.In, Console.Out);
+            // stdout carries protocol messages only. DOSSIER_AGENT names the writer when the client
+            // sends no clientInfo.name; McpServer sanitizes it with the same rules either way.
+            new McpServer(new DossierStore(), Environment.GetEnvironmentVariable("DOSSIER_AGENT")).Run(Console.In, Console.Out);
             return 0;
         }
 

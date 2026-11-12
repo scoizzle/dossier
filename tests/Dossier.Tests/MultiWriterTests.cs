@@ -280,12 +280,15 @@ public sealed class MultiWriterTests
 
     /// <summary>
     /// Reads SSE frames until the revision payload equals <paramref name="expected"/>, or one frame
-    /// when <paramref name="expected"/> is null. Comments and the retry preamble are skipped.
+    /// when <paramref name="expected"/> is null. Comments and the retry preamble are skipped, and so is
+    /// every non-revision frame: the live channel also carries <c>changes</c> and <c>reset</c> events
+    /// whose <c>data</c> is JSON, not a counter.
     /// </summary>
     private static async Task<long> ReadRevisionAsync(StreamReader reader, long? expected, TimeSpan cap, CancellationToken token)
     {
         var stopwatch = Stopwatch.StartNew();
         var data = new List<string>();
+        string? name = null;
 
         while (true)
         {
@@ -297,7 +300,11 @@ public sealed class MultiWriterTests
 
             if (line.Length != 0)
             {
-                if (line.StartsWith("data:", StringComparison.Ordinal))
+                if (line.StartsWith("event:", StringComparison.Ordinal))
+                {
+                    name = line[6..].Trim();
+                }
+                else if (line.StartsWith("data:", StringComparison.Ordinal))
                 {
                     data.Add(line[5..].Trim());
                 }
@@ -305,13 +312,16 @@ public sealed class MultiWriterTests
                 continue;
             }
 
-            if (data.Count == 0)
+            if (data.Count == 0 || name != "revision")
             {
+                data.Clear();
+                name = null;
                 continue;
             }
 
             var revision = long.Parse(string.Join("\n", data), NumberStyles.Integer, CultureInfo.InvariantCulture);
             data.Clear();
+            name = null;
             if (expected is null || revision == expected || stopwatch.Elapsed > cap)
             {
                 return revision;

@@ -20,6 +20,12 @@ public sealed class WebServer : IDisposable
     /// <summary>Concurrent event streams per server; the next one gets <c>503 busy</c>.</summary>
     private const int MaxEventStreams = 8;
 
+    /// <summary>Journal rows per <c>changes</c> frame.</summary>
+    private const int ChangePageSize = 200;
+
+    /// <summary>Journal rows one tick may deliver before the client is told to reset instead.</summary>
+    private const int ChangeDrainCap = 5000;
+
     private static readonly TimeSpan DefaultRevisionPollInterval = TimeSpan.FromMilliseconds(500);
     private static readonly TimeSpan KeepaliveInterval = TimeSpan.FromSeconds(5);
 
@@ -178,6 +184,12 @@ public sealed class WebServer : IDisposable
     /// poll loop survives an exception it does not name.
     /// </summary>
     internal Func<long>? RevisionReader { get; set; }
+
+    /// <summary>
+    /// Test seam: the journal read behind an event stream. A reader that throws is how a test proves a
+    /// failing journal read skips one tick instead of ending the stream.
+    /// </summary>
+    internal Func<long, int, ChangesPage>? ChangesReader { get; set; }
 
     public void Start()
     {
@@ -454,8 +466,10 @@ public sealed class WebServer : IDisposable
     }
 
     /// <summary>
-    /// Server-Sent Events: a baseline <c>revision</c> event, then one per observed change, and a comment
-    /// keepalive while idle. The stream never blocks the accept loop and ends quietly on any write failure.
+    /// Server-Sent Events: a baseline <c>revision</c> event, then the journal pages behind it as
+    /// <c>changes</c> events (each carrying its own <c>id</c> so a reconnect resumes), a <c>reset</c>
+    /// when the resume point fell out of retention, and a comment keepalive while idle. The stream never
+    /// blocks the accept loop and ends quietly on any write failure.
     /// </summary>
     private async Task StreamEventsAsync(HttpListenerContext context)
     {
@@ -491,9 +505,14 @@ public sealed class WebServer : IDisposable
                 changed = revisionChanged.Task;
             }
 
+            // Two watermarks: `sent` is what the revision frame last said, `journal` is how far the
+            // journal has been delivered. They only meet by accident: the journal is the resume point.
+            var journal = ReadResumePoint(context.Request, sent);
+
             await output.WriteAsync(RetryFrame, token).ConfigureAwait(false);
             await output.FlushAsync(token).ConfigureAwait(false);
             await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
+            journal = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
 
             while (!token.IsCancellationRequested)
             {
@@ -520,6 +539,7 @@ public sealed class WebServer : IDisposable
                 {
                     sent = current;
                     await WriteRevisionAsync(output, sent, token).ConfigureAwait(false);
+                    journal = await DrainChangesAsync(output, sent, journal, token).ConfigureAwait(false);
                 }
             }
         }
@@ -537,9 +557,98 @@ public sealed class WebServer : IDisposable
         }
     }
 
+    /// <summary>
+    /// The journal cursor a stream starts from: <c>Last-Event-ID</c> wins over <c>?since=</c>, and
+    /// neither means "from now" (the revision at connect), so a fresh stream replays nothing.
+    /// </summary>
+    private static long ReadResumePoint(HttpListenerRequest request, long current)
+    {
+        var style = NumberStyles.Integer;
+        var culture = CultureInfo.InvariantCulture;
+        var header = request.Headers["Last-Event-ID"];
+        if (long.TryParse(header, style, culture, out var resumed) && resumed >= 0)
+        {
+            return resumed;
+        }
+
+        var since = request.QueryString["since"];
+        return long.TryParse(since, style, culture, out var fromQuery) && fromQuery >= 0 ? fromQuery : current;
+    }
+
+    /// <summary>
+    /// Delivers the journal behind <paramref name="journal"/> as <c>changes</c> frames of at most
+    /// <see cref="ChangePageSize"/> rows, up to <see cref="ChangeDrainCap"/> rows per tick. More still
+    /// pending, or a resume point outside the retained window, becomes one <c>reset</c> and the cursor
+    /// jumps to the revision the frame names. A failing read skips the tick; it never ends the stream.
+    /// </summary>
+    /// <returns>The new journal cursor.</returns>
+    private async Task<long> DrainChangesAsync(Stream output, long revision, long journal, CancellationToken token)
+    {
+        var drained = 0;
+        while (drained < ChangeDrainCap)
+        {
+            ChangesPage page;
+            try
+            {
+                page = ChangesReader is { } reader ? reader(journal, ChangePageSize) : store.ReadChanges(journal, ChangePageSize);
+            }
+            catch (Exception)
+            {
+                // A locked or missing database is a skipped tick, not a dead stream: the next wake retries.
+                return journal;
+            }
+
+            if (page.Reset)
+            {
+                await WriteResetAsync(output, revision, token).ConfigureAwait(false);
+                return revision;
+            }
+
+            if (page.Changes.Count == 0)
+            {
+                return journal;
+            }
+
+            await WriteChangesAsync(output, page, token).ConfigureAwait(false);
+            journal = page.Next;
+            drained += page.Changes.Count;
+
+            if (!page.Truncated)
+            {
+                return journal;
+            }
+
+            if (drained >= ChangeDrainCap)
+            {
+                await WriteResetAsync(output, revision, token).ConfigureAwait(false);
+                return revision;
+            }
+        }
+
+        return journal;
+    }
+
     private static async Task WriteRevisionAsync(Stream output, long value, CancellationToken token)
     {
         var frame = Encoding.UTF8.GetBytes($"event: revision\ndata: {value.ToString(CultureInfo.InvariantCulture)}\n\n");
+        await output.WriteAsync(frame, token).ConfigureAwait(false);
+        await output.FlushAsync(token).ConfigureAwait(false);
+    }
+
+    /// <summary>One journal page. The <c>id</c> is the cursor to resume from, so a reconnect never repeats it.</summary>
+    private static async Task WriteChangesAsync(Stream output, ChangesPage page, CancellationToken token)
+    {
+        var cursor = page.Next.ToString(CultureInfo.InvariantCulture);
+        var frame = Encoding.UTF8.GetBytes($"id: {cursor}\nevent: changes\ndata: {Ops.Serialize(page)}\n\n");
+        await output.WriteAsync(frame, token).ConfigureAwait(false);
+        await output.FlushAsync(token).ConfigureAwait(false);
+    }
+
+    /// <summary>Refetch everything: the resume point is meaningless, so the frame id and payload are the revision.</summary>
+    private static async Task WriteResetAsync(Stream output, long revision, CancellationToken token)
+    {
+        var value = revision.ToString(CultureInfo.InvariantCulture);
+        var frame = Encoding.UTF8.GetBytes($"id: {value}\nevent: reset\ndata: {value}\n\n");
         await output.WriteAsync(frame, token).ConfigureAwait(false);
         await output.FlushAsync(token).ConfigureAwait(false);
     }

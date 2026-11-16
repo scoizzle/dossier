@@ -268,6 +268,15 @@ public sealed class WebServer : IDisposable
         catch (ObjectDisposedException)
         {
         }
+        catch (HttpListenerException)
+        {
+            // Stop() above already removed every prefix and closed its endpoints. Close() walks the
+            // prefixes again, and HttpEndPointManager.RemovePrefixInternal opens a fresh endpoint
+            // socket for each just to remove a prefix that is no longer registered; on a port that a
+            // lingering TIME_WAIT connection (or another process) still holds, that bind fails with
+            // "Address already in use". Nothing is left to release at this point, so the throw on a
+            // listener that is already stopped is swallowed rather than surfacing from Dispose().
+        }
     }
 
     public void Dispose() => Stop();

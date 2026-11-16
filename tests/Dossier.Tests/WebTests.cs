@@ -315,6 +315,23 @@ public sealed class WebTests
     }
 
     [Test]
+    public async Task Web_StopWithoutStartDoesNotThrow()
+    {
+        using var db = new TempDb();
+
+        // A port another socket holds, so no HttpListener endpoint could bind it.
+        using var holder = new TcpListener(IPAddress.Loopback, 0);
+        holder.Start();
+        var port = ((IPEndPoint)holder.LocalEndpoint).Port;
+
+        using var server = new WebServer(db.Store, port);
+        server.Stop();
+        server.Stop();
+
+        await Assert.That(server.Port).IsEqualTo(port);
+    }
+
+    [Test]
     public async Task Web_PortInUseStillThrows()
     {
         using var db = new TempDb();

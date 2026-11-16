@@ -85,6 +85,9 @@ internal sealed record ErrorEnvelope(ErrorBody Error)
 
 internal sealed record ErrorBody(string Code, string Message);
 
+/// <summary>The live channel's polled value: <c>GET /api/revision</c>.</summary>
+public sealed record RevisionResponse(long Revision);
+
 /// <summary>retract's CLI output.</summary>
 internal sealed record RetractedOutput(string Id, string Status);
 
@@ -123,11 +126,13 @@ internal sealed record ProvenanceStamp(string Actor, string ActorType, string Ch
 [JsonSerializable(typeof(List<ItemInput>))]
 [JsonSerializable(typeof(McpServer.FactIdArgs))]
 [JsonSerializable(typeof(ErrorEnvelope))]
+[JsonSerializable(typeof(RevisionResponse))]
 [JsonSerializable(typeof(RetractedOutput))]
 [JsonSerializable(typeof(PublishSummary))]
 [JsonSerializable(typeof(ImportSummary))]
 [JsonSerializable(typeof(ProvenanceStamp))]
 [JsonSerializable(typeof(GraphResponse))]
+[JsonSerializable(typeof(ChangesPage))]
 internal sealed partial class DossierJsonContext : JsonSerializerContext
 {
 }

@@ -27,7 +27,12 @@ public sealed partial class DossierStore
             rowId = (long)found;
         }
 
-        using (var tombstone = Command(connection, transaction, "UPDATE facts SET status = 'retracted', text = NULL, data = NULL WHERE id = $id"))
+        // A second retract of the same fact writes nothing: the WHERE guard keeps an all-equal UPDATE
+        // from firing trg_facts_update and bumping the revision for a no-op.
+        using (var tombstone = Command(
+            connection,
+            transaction,
+            "UPDATE facts SET status = 'retracted', text = NULL, data = NULL WHERE id = $id AND (status != 'retracted' OR text IS NOT NULL OR data IS NOT NULL)"))
         {
             Bind(tombstone, "$id", id);
             tombstone.ExecuteNonQuery();
@@ -56,6 +61,7 @@ public sealed partial class DossierStore
             }
         }
 
+        PruneChanges(connection, transaction);
         transaction.Commit();
 
         foreach (var sha in shas)

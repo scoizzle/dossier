@@ -3,6 +3,16 @@ using Microsoft.Data.Sqlite;
 
 namespace Dossier;
 
+/// <summary>
+/// Who is writing. Recorded in each inserted fact's provenance only: it is an unauthenticated label,
+/// it never reaches <c>content_hash</c>, and it never changes dedupe.
+/// </summary>
+internal readonly record struct WriterIdentity(string Actor, string Channel, string ActorType)
+{
+    /// <summary>The CLI, MCP default and every pre-identity caller.</summary>
+    public static WriterIdentity Cli { get; } = new("dossier-cli", "cli", "tool");
+}
+
 public sealed partial class DossierStore
 {
     private static readonly List<RefInput> NoRefs = new();
@@ -13,7 +23,13 @@ public sealed partial class DossierStore
     /// subject/kind/key and content_hash =&gt; "deduped"; (c) insert =&gt; "new".
     /// An invalid item is rejected with a named error and the rest of the batch commits.
     /// </summary>
-    public PostResult PostFacts(PostFactsRequest request)
+    public PostResult PostFacts(PostFactsRequest request) => PostFacts(request, WriterIdentity.Cli);
+
+    /// <summary>
+    /// post_facts for a named writer (MCP passes the client identity). Same rules; only the
+    /// provenance stamp differs, so dedupe and content_hash are unchanged.
+    /// </summary>
+    internal PostResult PostFacts(PostFactsRequest request, WriterIdentity identity)
     {
         if (request.Subject is null)
         {
@@ -75,7 +91,7 @@ public sealed partial class DossierStore
 
             if (replacedId is not null)
             {
-                var id = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt);
+                var id = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt, identity);
                 PointSlotAt(connection, transaction, subject.Id, fact.Kind, fact.Key!, id);
                 SetFactStatus(connection, transaction, replacedId, "superseded");
                 results.Add(new FactResult { Id = id, Status = "replaced", Replaced = replacedId });
@@ -91,7 +107,7 @@ public sealed partial class DossierStore
                 continue;
             }
 
-            var newId = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt);
+            var newId = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt, identity);
             if (fact.Key is not null)
             {
                 PointSlotAt(connection, transaction, subject.Id, fact.Kind, fact.Key, newId);
@@ -109,6 +125,7 @@ public sealed partial class DossierStore
         }
         else
         {
+            PruneChanges(connection, transaction);
             transaction.Commit();
         }
 
@@ -248,7 +265,12 @@ public sealed partial class DossierStore
             var mergedJson = JsonCodec.SerializeStrings(merged);
             var parent = input.Parent ?? row.ParentId;
 
-            if (mergedJson != JsonCodec.SerializeStrings(row.Aliases) || parent != row.ParentId)
+            // An alias that is only the subject's own name carries no information; writing it
+            // would be a no-op rewrite that bumps meta.revision on an identical repost.
+            string[] Informative(IEnumerable<string> aliases) =>
+                aliases.Where(alias => Names.Normalize(alias) != Names.Normalize(row.Name)).ToArray();
+
+            if (!Informative(merged).SequenceEqual(Informative(row.Aliases), StringComparer.Ordinal) || parent != row.ParentId)
             {
                 using var update = Command(connection, transaction, "UPDATE subjects SET aliases = $aliases, parent_id = $parent WHERE id = $id");
                 Bind(update, "$aliases", mergedJson);
@@ -414,7 +436,12 @@ public sealed partial class DossierStore
         string factId,
         string status)
     {
-        using var command = Command(connection, transaction, "UPDATE facts SET status = $status WHERE id = $id");
+        // The guard keeps a no-op status write from firing trg_facts_update: a body that already says
+        // what the slot says must not bump the revision.
+        using var command = Command(
+            connection,
+            transaction,
+            "UPDATE facts SET status = $status WHERE id = $id AND status != $status");
         Bind(command, "$status", status);
         Bind(command, "$id", factId);
         command.ExecuteNonQuery();
@@ -455,13 +482,14 @@ public sealed partial class DossierStore
         FactInput fact,
         IReadOnlyList<RefInput> refs,
         string contentHash,
-        string createdAt)
+        string createdAt,
+        WriterIdentity identity)
     {
         var id = Guid.NewGuid().ToString("D");
         var tags = fact.Tags ?? new List<string>();
         var data = fact.Data.HasValue ? CanonicalJson.Write(fact.Data.Value) : null;
         var items = fact.Items is { Count: > 0 } ? JsonCodec.Serialize(fact.Items) : null;
-        var provenance = JsonCodec.Serialize(new ProvenanceStamp("dossier-cli", "tool", "cli", createdAt));
+        var provenance = JsonCodec.Serialize(new ProvenanceStamp(identity.Actor, identity.ActorType, identity.Channel, createdAt));
 
         using (var command = Command(
             connection,

@@ -13,7 +13,7 @@ public sealed class McpTests
         private readonly Process process;
         private int nextId = 1;
 
-        public McpChild(string dbPath)
+        public McpChild(string dbPath, string? agent = null)
         {
             var info = new ProcessStartInfo("dotnet")
             {
@@ -25,9 +25,34 @@ public sealed class McpTests
             info.ArgumentList.Add(Path.Combine(AppContext.BaseDirectory, "Dossier.dll"));
             info.ArgumentList.Add("mcp");
             info.Environment["DOSSIER_DB"] = dbPath;
+            if (agent is not null)
+            {
+                info.Environment["DOSSIER_AGENT"] = agent;
+            }
+
             process = Process.Start(info)!;
             process.ErrorDataReceived += (_, _) => { };
             process.BeginErrorReadLine();
+        }
+
+        /// <summary>initialize with a client-supplied name, or with none when <paramref name="name"/> is null.</summary>
+        public Task<JsonElement> Initialize(string? name) => name is null
+            ? CallRaw("initialize", """{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"version":"0"}}""")
+            : Call("initialize", new { protocolVersion = "2025-06-18", capabilities = new { }, clientInfo = new { name, version = "0" } });
+
+        public async Task<JsonElement> CallRaw(string method, string parameters)
+        {
+            var id = nextId++;
+            await process.StandardInput.WriteLineAsync($$"""{"jsonrpc":"2.0","id":{{id}},"method":"{{method}}","params":{{parameters}}}""");
+            await process.StandardInput.FlushAsync();
+            var line = await process.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(60));
+            var reply = JsonDocument.Parse(line ?? throw new InvalidOperationException("server closed stdout")).RootElement.Clone();
+            if (reply.GetProperty("id").GetInt32() != id)
+            {
+                throw new InvalidOperationException("mismatched response id");
+            }
+
+            return reply;
         }
 
         public async Task<JsonElement> Call(string method, object? parameters = null)
@@ -241,5 +266,154 @@ public sealed class McpTests
         }))!.ToJsonString()).RootElement;
         await Assert.That(dry.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!.Contains("\"new\"")).IsTrue();
         await Assert.That(db.Store.Search(new SearchRequest { Q = "fresh" }).Total).IsEqualTo(0);
+    }
+
+    /// <summary>The fact's provenance stamp, straight from the row the writer committed.</summary>
+    private static JsonElement Provenance(DossierStore store, string factId)
+    {
+        using var connection = store.OpenConnection();
+        var raw = (string?)Fixtures.Scalar(connection, "SELECT provenance FROM facts WHERE id = $id", ("$id", factId));
+        return JsonDocument.Parse(raw!).RootElement.Clone();
+    }
+
+    private static string PostInProcess(McpServer server, string text)
+    {
+        var reply = JsonDocument.Parse(server.Handle(JsonSerializer.Serialize(new
+        {
+            jsonrpc = "2.0",
+            id = 9,
+            method = "tools/call",
+            @params = new { name = "post_facts", arguments = new { subject = new { name = "Widget" }, facts = new[] { new { kind = "note", text } } } },
+        }))!.ToJsonString()).RootElement;
+        var payload = JsonDocument.Parse(
+            reply.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!).RootElement;
+        return payload.GetProperty("response").GetProperty("facts")[0].GetProperty("id").GetString()!;
+    }
+
+    /// <summary>An initialize request with a client-supplied name, or with none when it is null.</summary>
+    private static string Initialize(string? name) => name is null
+        ? """{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"version":"0"}}}"""
+        : JsonSerializer.Serialize(new
+        {
+            jsonrpc = "2.0",
+            id = 1,
+            method = "initialize",
+            @params = new { protocolVersion = "2025-06-18", capabilities = new { }, clientInfo = new { name, version = "0" } },
+        });
+
+    [Test]
+    public async Task Mcp_ClientInfoNameLandsInProvenance()
+    {
+        using var db = new TempDb();
+        var zero = new McpServer(db.Store);
+        var one = new McpServer(db.Store);
+
+        // Each server names itself once, at initialize, exactly as a real client does.
+        await Assert.That(zero.Handle(Initialize("agent-0"))!.ContainsKey("result")).IsTrue();
+        await Assert.That(one.Handle(Initialize("agent-1"))!.ContainsKey("result")).IsTrue();
+
+        var fromZero = Provenance(db.Store, PostInProcess(zero, "fact from agent zero"));
+        var fromOne = Provenance(db.Store, PostInProcess(one, "fact from agent one"));
+
+        await Assert.That(fromZero.GetProperty("actor").GetString()).IsEqualTo("agent-0");
+        await Assert.That(fromZero.GetProperty("channel").GetString()).IsEqualTo("mcp");
+        await Assert.That(fromZero.GetProperty("actor_type").GetString()).IsEqualTo("agent");
+        await Assert.That(fromOne.GetProperty("actor").GetString()).IsEqualTo("agent-1");
+        await Assert.That(fromOne.GetProperty("channel").GetString()).IsEqualTo("mcp");
+        await Assert.That(fromOne.GetProperty("actor_type").GetString()).IsEqualTo("agent");
+    }
+
+    [Test]
+    public async Task Mcp_ClientInfoNameIsSanitized()
+    {
+        using var db = new TempDb();
+
+        // A bidi override and a control character are not a name; they become one '-'.
+        var hostile = new McpServer(db.Store);
+        var hostileInit = hostile.Handle(Initialize("\u202Eevil\u0007agent"));
+        await Assert.That(hostileInit!.ContainsKey("result")).IsTrue();
+        var hostileActor = Provenance(db.Store, PostInProcess(hostile, "hostile name")).GetProperty("actor").GetString();
+        await Assert.That(hostileActor).IsEqualTo("evil-agent");
+
+        // An overlong name is capped, and every character left is from the allowlist.
+        var longName = new string('a', 200);
+        var longServer = new McpServer(db.Store);
+        await Assert.That(longServer.Handle(Initialize(longName))!.ContainsKey("result")).IsTrue();
+        var longActor = Provenance(db.Store, PostInProcess(longServer, "long name")).GetProperty("actor").GetString()!;
+        await Assert.That(longActor.Length).IsEqualTo(64);
+        await Assert.That(longActor).IsEqualTo(new string('a', 64));
+
+        // A non-string name does not fail initialize, and it is not a name: the default is used.
+        var numeric = new McpServer(db.Store);
+        var numericInit = numeric.Handle("""{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"clientInfo":{"name":42}}}""");
+        await Assert.That(numericInit!.ContainsKey("result")).IsTrue();
+        await Assert.That(Provenance(db.Store, PostInProcess(numeric, "numeric name")).GetProperty("actor").GetString())
+            .IsEqualTo("mcp-client");
+    }
+
+    [Test]
+    public async Task Mcp_DossierAgentEnvIsTheFallback()
+    {
+        using var db = new TempDb();
+
+        // The env var names the writer when initialize carries no clientInfo.name.
+        var plain = new McpChild(db.DbPath, agent: "env-agent");
+        try
+        {
+            await plain.Initialize(name: null);
+            var call = await plain.Call("tools/call", new
+            {
+                name = "post_facts",
+                arguments = new { subject = new { name = "Widget" }, facts = new[] { new { kind = "note", text = "from env" } } },
+            });
+            var payload = JsonDocument.Parse(
+                call.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!).RootElement;
+            var id = payload.GetProperty("response").GetProperty("facts")[0].GetProperty("id").GetString()!;
+            await Assert.That(Provenance(db.Store, id).GetProperty("actor").GetString()).IsEqualTo("env-agent");
+        }
+        finally
+        {
+            plain.Dispose();
+        }
+
+        // clientInfo.name wins over the environment.
+        var named = new McpChild(db.DbPath, agent: "env-agent");
+        try
+        {
+            await named.Initialize("client-agent");
+            var call = await named.Call("tools/call", new
+            {
+                name = "post_facts",
+                arguments = new { subject = new { name = "Widget" }, facts = new[] { new { kind = "note", text = "from client" } } },
+            });
+            var payload = JsonDocument.Parse(
+                call.GetProperty("result").GetProperty("content")[0].GetProperty("text").GetString()!).RootElement;
+            var id = payload.GetProperty("response").GetProperty("facts")[0].GetProperty("id").GetString()!;
+            await Assert.That(Provenance(db.Store, id).GetProperty("actor").GetString()).IsEqualTo("client-agent");
+        }
+        finally
+        {
+            named.Dispose();
+        }
+    }
+
+    [Test]
+    public async Task Mcp_IdenticalPostsFromTwoAgentsStillDedupe()
+    {
+        using var db = new TempDb();
+        var zero = new McpServer(db.Store);
+        var one = new McpServer(db.Store);
+        zero.Handle(Initialize("agent-0"));
+        one.Handle(Initialize("agent-1"));
+
+        const string Text = "the same fact from both";
+        var first = PostInProcess(zero, Text);
+        var second = PostInProcess(one, Text);
+
+        // Provenance is not in content_hash, so the second write dedupes onto the first fact.
+        await Assert.That(second).IsEqualTo(first);
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts WHERE text = $text", ("$text", Text))).IsEqualTo(1);
+        await Assert.That(Provenance(db.Store, first).GetProperty("actor").GetString()).IsEqualTo("agent-0");
     }
 }

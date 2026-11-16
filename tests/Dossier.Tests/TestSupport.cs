@@ -1,3 +1,5 @@
+using System.Net;
+using System.Net.Sockets;
 using System.Text.Json;
 using Microsoft.Data.Sqlite;
 
@@ -110,5 +112,40 @@ internal static class Fixtures
         }
 
         return command.ExecuteScalar();
+    }
+}
+
+internal static class TestServers
+{
+    /// <summary>
+    /// Starts a web server on a fresh random port. The previous pattern reserved an ephemeral
+    /// port with a TcpListener, released it, then bound the same number, so another process could
+    /// claim the port in the gap. Here the port is bound directly and a failed bind is retried on
+    /// a new port, bounded and without sleeps. The range avoids the OS ephemeral range used by
+    /// outgoing test connections.
+    /// </summary>
+    public static Task<WebServer> StartAsync(DossierStore store, TimeSpan? revisionPollInterval = null)
+    {
+        const int FirstPort = 20_000;
+        const int LastPortExclusive = 32_000;
+        const int Attempts = 50;
+
+        for (var attempt = 0; attempt < Attempts; attempt++)
+        {
+            var server = new WebServer(store, Random.Shared.Next(FirstPort, LastPortExclusive), revisionPollInterval);
+            try
+            {
+                server.Start();
+            }
+            catch (Exception exception) when (exception is HttpListenerException or SocketException)
+            {
+                server.Dispose();
+                continue;
+            }
+
+            return Task.FromResult(server);
+        }
+
+        throw new InvalidOperationException($"could not bind a loopback port after {Attempts} attempts");
     }
 }

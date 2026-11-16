@@ -21,6 +21,25 @@ public sealed class ChangeStreamTests
     private static HttpClient Client(WebServer server) =>
         new() { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
 
+    /// <summary>
+    /// Waits until <paramref name="condition"/> holds. The stream flushes its baseline frame before it
+    /// reads the journal, so a client can hold that frame while the read it is about to prove has not
+    /// happened yet; polling here replaces a sample that raced the handler on a slower runner.
+    /// </summary>
+    private static async Task WaitUntilAsync(Func<bool> condition, CancellationToken token)
+    {
+        var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(5);
+        while (!condition())
+        {
+            if (DateTime.UtcNow >= deadline)
+            {
+                throw new TimeoutException("condition did not hold within 5s");
+            }
+
+            await Task.Delay(10, token);
+        }
+    }
+
     private sealed record SseFrame(string? Name, string? Id, List<string> Data)
     {
         public JsonElement Body => JsonDocument.Parse(string.Join("\n", Data)).RootElement;
@@ -403,6 +422,9 @@ public sealed class ChangeStreamTests
 
         var baseline = await ReadFramesAsync(reader, 1, cts.Token);
         await Assert.That(baseline[0].Name).IsEqualTo("revision");
+        // The baseline frame is flushed before the handler reads the journal, so wait for the read
+        // that throws rather than sampling it the instant the frame arrives.
+        await WaitUntilAsync(() => Volatile.Read(ref calls) >= 1, cts.Token);
         await Assert.That(Volatile.Read(ref calls)).IsGreaterThanOrEqualTo(1);
 
         // The next tick reads the journal again and delivers the write, so the handler survived.

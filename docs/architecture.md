@@ -37,6 +37,7 @@ contract/          JSON Schemas: subject, fact, ref, ops, dossier (the normative
 examples/          memos-bundle/ (committed publish output), NOTICE.md (upstream licenses)
 profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
 scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, scale-test.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
+scripts/wikipedia-demo.mjs live demo: post Wikipedia articles as subjects, facts and refs
 scripts/smoke-aot.sh       smoke-test a published Native AOT binary
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output

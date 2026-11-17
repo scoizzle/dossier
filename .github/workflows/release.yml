@@ -320,7 +320,7 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: nupkg-${{ matrix.rid }}
-          path: dist-nupkg/Dossier.Cli.${{ matrix.rid }}.*.nupkg
+          path: dist-nupkg/Poly.Dossier.${{ matrix.rid }}.*.nupkg
           retention-days: 7
           if-no-files-found: error
 
@@ -496,7 +496,7 @@ jobs:
           fi
           rm -rf "$tool"
           mkdir -p "$tool"
-          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli
+          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Poly.Dossier
           bin=""
           # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
           for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
@@ -513,9 +513,9 @@ jobs:
             echo "::error::installed tool reports '$got', expected '$VERSION'"
             exit 1
           fi
-          manifest="$tool/.store/dossier.cli/$VERSION/project.assets.ridpackage.json"
-          if ! grep -q "dossier.cli.$RID/$VERSION" "$manifest"; then
-            echo "::error::install did not select dossier.cli.$RID/$VERSION"
+          manifest="$tool/.store/poly.dossier/$VERSION/project.assets.ridpackage.json"
+          if ! grep -q "poly.dossier.$RID/$VERSION" "$manifest"; then
+            echo "::error::install did not select poly.dossier.$RID/$VERSION"
             cat "$manifest"
             exit 1
           fi
@@ -542,7 +542,7 @@ jobs:
       - name: Run the tool through dnx
         shell: bash
         run: |
-          out="$(dotnet dnx Dossier.Cli --yes --version "$VERSION" --configfile nuget.smoke.config -- version)"
+          out="$(dotnet dnx Poly.Dossier --yes --version "$VERSION" --configfile nuget.smoke.config -- version)"
           printf '%s\n' "$out"
           if ! printf '%s\n' "$out" | grep -qx "$VERSION"; then
             echo "::error::dnx did not report '$VERSION'"
@@ -573,15 +573,15 @@ jobs:
       # All six packages must be here: four RID packages, the any fallback and the pointer.
       - name: Check the package set
         run: |
-          count="$(find feed -maxdepth 1 -name 'Dossier.Cli.*.nupkg' | wc -l | tr -d ' ')"
+          count="$(find feed -maxdepth 1 -name 'Poly.Dossier.*.nupkg' | wc -l | tr -d ' ')"
           echo "$count packages:"
           ls -l feed
           if [ "$count" -ne 6 ]; then
             echo "::error::expected 6 tool packages, found $count"
             exit 1
           fi
-          if [ ! -f "feed/Dossier.Cli.$VERSION.nupkg" ]; then
-            echo "::error::pointer package feed/Dossier.Cli.$VERSION.nupkg is missing"
+          if [ ! -f "feed/Poly.Dossier.$VERSION.nupkg" ]; then
+            echo "::error::pointer package feed/Poly.Dossier.$VERSION.nupkg is missing"
             exit 1
           fi
 
@@ -599,7 +599,7 @@ jobs:
           NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
         run: |
           source=https://api.nuget.org/v3/index.json
-          pointer="feed/Dossier.Cli.$VERSION.nupkg"
+          pointer="feed/Poly.Dossier.$VERSION.nupkg"
           for pkg in feed/*.nupkg; do
             if [ "$pkg" = "$pointer" ]; then
               continue
@@ -652,10 +652,10 @@ jobs:
       - name: Install from nuget.org
         shell: bash
         run: |
-          dotnet tool uninstall -g Dossier.Cli >/dev/null 2>&1 || true
+          dotnet tool uninstall -g Poly.Dossier >/dev/null 2>&1 || true
           ok=0
           for attempt in $(seq 1 20); do
-            if dotnet tool install -g Dossier.Cli --no-http-cache --version "$VERSION"; then
+            if dotnet tool install -g Poly.Dossier --no-http-cache --version "$VERSION"; then
               ok=1
               break
             fi
@@ -663,7 +663,7 @@ jobs:
             sleep 30
           done
           if [ "$ok" -ne 1 ]; then
-            echo "::error::Dossier.Cli $VERSION is not installable from nuget.org"
+            echo "::error::Poly.Dossier $VERSION is not installable from nuget.org"
             exit 1
           fi
           bin="$HOME/.dotnet/tools/dossier"
@@ -685,7 +685,7 @@ jobs:
       - name: Run the published tool through dnx
         shell: bash
         run: |
-          out="$(dotnet dnx Dossier.Cli --yes --no-http-cache --version "$VERSION" -- version)"
+          out="$(dotnet dnx Poly.Dossier --yes --no-http-cache --version "$VERSION" -- version)"
           printf '%s\n' "$out"
           if ! printf '%s\n' "$out" | grep -qx "$VERSION"; then
             echo "::error::dnx did not report '$VERSION'"

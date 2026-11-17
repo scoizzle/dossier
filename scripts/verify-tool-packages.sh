@@ -78,15 +78,15 @@ extract_and_check_versions() {
 }
 
 # 1. Every expected package exists and carries the release version, without debug symbols.
-extract_and_check_versions "Dossier.Cli"
-extract_and_check_versions "Dossier.Cli.$RID"
-extract_and_check_versions "Dossier.Cli.any"
+extract_and_check_versions "Poly.Dossier"
+extract_and_check_versions "Poly.Dossier.$RID"
+extract_and_check_versions "Poly.Dossier.any"
 
 # 2. Package types: the pointer is DotnetTool + McpServer; the implementation packages are
 #    DotnetToolRidPackage and must not be discoverable as tools or MCP servers themselves.
-pointer="$TMP/Dossier.Cli"
-rid_dir="$TMP/Dossier.Cli.$RID"
-any_dir="$TMP/Dossier.Cli.any"
+pointer="$TMP/Poly.Dossier"
+rid_dir="$TMP/Poly.Dossier.$RID"
+any_dir="$TMP/Poly.Dossier.any"
 
 [ "$(package_type "$pointer")" = "$(printf 'DotnetTool\nMcpServer\n')" ] \
   || fail "pointer package types are '$(package_type "$pointer" | tr '\n' ' ')', expected DotnetTool and McpServer"
@@ -114,7 +114,7 @@ done
 settings="$pointer/tools/any/any/DotnetToolSettings.xml"
 grep -q '<Command Name="dossier"' "$settings" || fail "tool command is not 'dossier'"
 ids="$(sed -n 's/.*Id="\([^"]*\)".*/\1/p' "$settings" | LC_ALL=C sort | tr '\n' ' ')"
-expected_ids="$(printf 'Dossier.Cli.any\nDossier.Cli.linux-arm64\nDossier.Cli.linux-x64\nDossier.Cli.osx-arm64\nDossier.Cli.win-x64\n' | LC_ALL=C sort | tr '\n' ' ')"
+expected_ids="$(printf 'Poly.Dossier.any\nPoly.Dossier.linux-arm64\nPoly.Dossier.linux-x64\nPoly.Dossier.osx-arm64\nPoly.Dossier.win-x64\n' | LC_ALL=C sort | tr '\n' ' ')"
 [ "$ids" = "$expected_ids" ] || fail "pointer settings list '$ids', expected '$expected_ids'"
 
 # 5. The MCP manifest is valid JSON, names the package, and matches the package version.
@@ -128,7 +128,7 @@ if command -v node >/dev/null 2>&1; then
     if (d.version !== v) errors.push(`top-level version ${d.version} != ${v}`);
     const p = (d.packages || [])[0] || {};
     if (p.version !== v) errors.push(`package version ${p.version} != ${v}`);
-    if (p.identifier !== "Dossier.Cli") errors.push(`identifier ${p.identifier} != Dossier.Cli`);
+    if (p.identifier !== "Poly.Dossier") errors.push(`identifier ${p.identifier} != Poly.Dossier`);
     if (!p.transport || p.transport.type !== "stdio") errors.push("transport is not stdio");
     if (errors.length) { console.error(errors.join("; ")); process.exit(1); }
   ' "$manifest" "$VERSION" || fail "MCP manifest is invalid or out of date"
@@ -143,8 +143,8 @@ if doc.get("version") != v:
     problems.append(f"top-level version {doc.get('version')} != {v}")
 if package.get("version") != v:
     problems.append(f"package version {package.get('version')} != {v}")
-if package.get("identifier") != "Dossier.Cli":
-    problems.append(f"identifier {package.get('identifier')} != Dossier.Cli")
+if package.get("identifier") != "Poly.Dossier":
+    problems.append(f"identifier {package.get('identifier')} != Poly.Dossier")
 if (package.get("transport") or {}).get("type") != "stdio":
     problems.append("transport is not stdio")
 if problems:
@@ -155,4 +155,4 @@ else
   fail "need node or python3 to validate the MCP manifest"
 fi
 
-printf 'VERIFY OK: Dossier.Cli %s with %s and any packages in %s\n' "$VERSION" "$RID" "$FEED"
+printf 'VERIFY OK: Poly.Dossier %s with %s and any packages in %s\n' "$VERSION" "$RID" "$FEED"

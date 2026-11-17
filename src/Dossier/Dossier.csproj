@@ -16,11 +16,11 @@
   </PropertyGroup>
 
   <!-- .NET tool package (dotnet tool install / dnx). The command stays `dossier`; the package id is
-       Dossier.Cli because Dossier is taken on nuget.org. See docs/releasing.md. -->
+       Poly.Dossier because Dossier is taken on nuget.org. See docs/releasing.md. -->
   <PropertyGroup>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>dossier</ToolCommandName>
-    <PackageId>Dossier.Cli</PackageId>
+    <PackageId>Poly.Dossier</PackageId>
     <!-- nuget.org lists the pointer package as an MCP server; the metadata is .mcp/server.json. -->
     <PackageType>McpServer</PackageType>
     <!-- Native AOT package per platform, plus a framework-dependent `any` fallback. Each RID package is

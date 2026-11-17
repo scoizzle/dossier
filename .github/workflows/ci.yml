@@ -265,7 +265,7 @@ jobs:
       - name: Verify the packages
         run: scripts/verify-tool-packages.sh feed "$VERSION" "$RID"
 
-      # Dossier.Cli resolves only from the local feed; the apphost pack the shim needs may come
+      # Poly.Dossier resolves only from the local feed; the apphost pack the shim needs may come
       # from nuget.org. See scripts/tool-smoke-nuget.config.
       - name: Write the smoke-test NuGet.config
         shell: bash
@@ -285,7 +285,7 @@ jobs:
           fi
           rm -rf "$tool"
           mkdir -p "$tool"
-          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli
+          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Poly.Dossier
           bin=""
           # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
           for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
@@ -303,9 +303,9 @@ jobs:
             exit 1
           fi
           # The RID package served the install, not the pointer package's placeholder.
-          manifest="$tool/.store/dossier.cli/$VERSION/project.assets.ridpackage.json"
-          if ! grep -q "dossier.cli.$RID/$VERSION" "$manifest"; then
-            echo "::error::install did not select dossier.cli.$RID/$VERSION"
+          manifest="$tool/.store/poly.dossier/$VERSION/project.assets.ridpackage.json"
+          if ! grep -q "poly.dossier.$RID/$VERSION" "$manifest"; then
+            echo "::error::install did not select poly.dossier.$RID/$VERSION"
             cat "$manifest"
             exit 1
           fi
@@ -332,7 +332,7 @@ jobs:
       - name: Run the tool through dnx
         shell: bash
         run: |
-          out="$(dotnet dnx Dossier.Cli --yes --version "$VERSION" --configfile nuget.smoke.config -- version)"
+          out="$(dotnet dnx Poly.Dossier --yes --version "$VERSION" --configfile nuget.smoke.config -- version)"
           printf '%s\n' "$out"
           if ! printf '%s\n' "$out" | grep -qx "$VERSION"; then
             echo "::error::dnx did not report '$VERSION'"
@@ -351,9 +351,9 @@ jobs:
           fi
           rm -rf "$tool"
           mkdir -p "$tool"
-          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli.any
+          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Poly.Dossier.any
           "$tool/dossier" version
-          grep -q "dossier.cli.any/$VERSION" "$tool/.store/dossier.cli.any/$VERSION/project.assets.json"
+          grep -q "poly.dossier.any/$VERSION" "$tool/.store/poly.dossier.any/$VERSION/project.assets.json"
 
   secret-scan:
     name: secret-scan

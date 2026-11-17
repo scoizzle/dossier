@@ -23,16 +23,16 @@ The tag must look like `vMAJOR.MINOR.PATCH` with an optional prerelease suffix (
 
 ## .NET tool packages
 
-The same binaries are published to nuget.org as the .NET tool `Dossier.Cli` (the command is `dossier`). The package id is not `Dossier` because that id is taken on nuget.org. The layout is the .NET 10 RID-specific tool format (`src/Dossier/Dossier.csproj` sets `ToolPackageRuntimeIdentifiers`):
+The same binaries are published to nuget.org as the .NET tool `Poly.Dossier` (the command is `dossier`). The package id is not `Dossier` because that id is taken on nuget.org. The layout is the .NET 10 RID-specific tool format (`src/Dossier/Dossier.csproj` sets `ToolPackageRuntimeIdentifiers`):
 
 | Package | Contents | Built by |
 | --- | --- | --- |
-| `Dossier.Cli.<version>.nupkg` | pointer: tool settings listing the five package ids below, `README.md`, `icon.png`, `.mcp/server.json`. No code. | `dotnet pack` (no `-r`) |
-| `Dossier.Cli.win-x64.<version>.nupkg` | Native AOT `Dossier.exe` + native SQLite | `dotnet pack -r win-x64 -p:PublishAot=true` on Windows |
-| `Dossier.Cli.linux-x64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r linux-x64 -p:PublishAot=true` on Linux x64 |
-| `Dossier.Cli.linux-arm64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r linux-arm64 -p:PublishAot=true` on Linux arm64 |
-| `Dossier.Cli.osx-arm64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r osx-arm64 -p:PublishAot=true` on macOS arm64 |
-| `Dossier.Cli.any.<version>.nupkg` | framework-dependent IL + every RID's native SQLite | `dotnet pack -r any -p:PublishAot=false` |
+| `Poly.Dossier.<version>.nupkg` | pointer: tool settings listing the five package ids below, `README.md`, `icon.png`, `.mcp/server.json`. No code. | `dotnet pack` (no `-r`) |
+| `Poly.Dossier.win-x64.<version>.nupkg` | Native AOT `Dossier.exe` + native SQLite | `dotnet pack -r win-x64 -p:PublishAot=true` on Windows |
+| `Poly.Dossier.linux-x64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r linux-x64 -p:PublishAot=true` on Linux x64 |
+| `Poly.Dossier.linux-arm64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r linux-arm64 -p:PublishAot=true` on Linux arm64 |
+| `Poly.Dossier.osx-arm64.<version>.nupkg` | Native AOT `Dossier` + native SQLite | `dotnet pack -r osx-arm64 -p:PublishAot=true` on macOS arm64 |
+| `Poly.Dossier.any.<version>.nupkg` | framework-dependent IL + every RID's native SQLite | `dotnet pack -r any -p:PublishAot=false` |
 
 Rules that matter:
 
@@ -72,8 +72,8 @@ One-time owner setup on nuget.org:
 
 1. Create the account that owns the packages and set its profile name; store it as the repository secret `NUGET_USER`.
 2. Add a **Trusted Publishing** policy for this repository and the `release.yml` workflow (`scoizzle/dossier`, workflow `release.yml`, no environment unless one is added to the job). The policy is what lets `NuGet/login` mint a key.
-3. Reserve the `Dossier.Cli` prefix so nobody can publish a `Dossier.Cli.*` package id ahead of the RID packages.
+3. Reserve the `Poly.Dossier` prefix so nobody can publish a `Poly.Dossier.*` package id ahead of the RID packages.
 
-The first publish of a new major or package-id change should be a pre-release (`v0.2.0-rc.1`): verify the published install first, then tag the final release. `verify-published` re-runs `dotnet tool install -g Dossier.Cli --version <version>` and `dnx Dossier.Cli --version <version> -- version` on Windows x64, Linux x64, Linux arm64 and macOS arm64 after a tag, retrying while nuget.org indexes. That job is the evidence for the release's done-when line; it only exists once a tag has been pushed, so a dry run cannot prove it.
+The first publish of a new major or package-id change should be a pre-release (`v0.2.0-rc.1`): verify the published install first, then tag the final release. `verify-published` re-runs `dotnet tool install -g Poly.Dossier --version <version>` and `dnx Poly.Dossier --version <version> -- version` on Windows x64, Linux x64, Linux arm64 and macOS arm64 after a tag, retrying while nuget.org indexes. That job is the evidence for the release's done-when line; it only exists once a tag has been pushed, so a dry run cannot prove it.
 
 The GitHub release and the nuget.org push are independent jobs: a failed push leaves the archives published on GitHub but the tool unavailable. Re-running the workflow for the same tag is the fix (`--skip-duplicate` makes the packages that did land a no-op); do not delete or move the tag.

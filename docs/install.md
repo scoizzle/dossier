@@ -4,19 +4,19 @@ Release archives, the .NET tool package, platform notes and verification. Back t
 
 ## Install as a .NET tool
 
-The tool package id is `Dossier.Cli` (plain `Dossier` is taken on nuget.org); the command it installs is `dossier`.
+The tool package id is `Poly.Dossier` (plain `Dossier` is taken on nuget.org); the command it installs is `dossier`.
 
 ```sh
-dotnet tool install -g Dossier.Cli   # add --version <version> to pin one, or --prerelease for a pre-release
+dotnet tool install -g Poly.Dossier   # add --version <version> to pin one, or --prerelease for a pre-release
 dossier version
-dotnet tool update -g Dossier.Cli    # later
+dotnet tool update -g Poly.Dossier    # later
 ```
 
 Without installing, `dnx` runs it from nuget.org in one gesture (it needs the .NET 10 SDK, which ships `dnx`):
 
 ```sh
-dnx Dossier.Cli -- version
-dnx Dossier.Cli -- help
+dnx Poly.Dossier -- version
+dnx Poly.Dossier -- help
 ```
 
 The package is RID-specific: the .NET CLI downloads the Native AOT build for `win-x64`, `linux-x64`, `linux-arm64` or `osx-arm64`. On any other platform (for example `osx-x64` or `win-arm64`) it downloads the framework-dependent `any` fallback, which needs the .NET 10 runtime installed. An install needs network access to nuget.org for the package and, the first time, for the .NET apphost pack the command shim is built from.
@@ -24,12 +24,12 @@ The package is RID-specific: the .NET CLI downloads the Native AOT build for `wi
 MCP clients start the server like this (stdio JSON-RPC):
 
 ```json
-{"command": "dnx", "args": ["Dossier.Cli", "--yes", "--", "mcp"]}
+{"command": "dnx", "args": ["Poly.Dossier", "--yes", "--", "mcp"]}
 ```
 
 An installed tool works the same: `{"command": "dossier", "args": ["mcp"]}`. `DOSSIER_DB` selects the store (default `./dossier.db`) and `DOSSIER_AGENT` names the writer when the client sends no `clientInfo.name`; both are optional and documented in [cli](cli.md). nuget.org lists the package's `.mcp/server.json` under its "MCP Server" tab.
 
-Versions are published in a fixed order — the four RID packages and `any` first, the pointer package last — because the pointer is what `dotnet tool install` resolves. If an install says the package cannot be found just after a release, nuget.org is still indexing it; retry in a few minutes. A pre-release version is never picked up by a plain `dotnet tool install -g Dossier.Cli`; name it with `--version` (or add `--prerelease`).
+Versions are published in a fixed order — the four RID packages and `any` first, the pointer package last — because the pointer is what `dotnet tool install` resolves. If an install says the package cannot be found just after a release, nuget.org is still indexing it; retry in a few minutes. A pre-release version is never picked up by a plain `dotnet tool install -g Poly.Dossier`; name it with `--version` (or add `--prerelease`).
 
 ## Choosing and verifying an archive
 

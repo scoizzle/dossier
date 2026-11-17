@@ -497,8 +497,15 @@ jobs:
           rm -rf "$tool"
           mkdir -p "$tool"
           dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli
-          bin="$tool/dossier"
-          if [ -f "$tool/dossier.exe" ]; then bin="$tool/dossier.exe"; fi
+          bin=""
+          for candidate in "$tool/dossier" "$tool/dossier.exe"; do
+            if [ -f "$candidate" ]; then bin="$candidate"; fi
+          done
+          if [ -z "$bin" ]; then
+            echo "::error::no dossier shim was created in $tool"
+            ls -l "$tool" || true
+            exit 1
+          fi
           got="$("$bin" version)"
           echo "installed tool version: $got"
           if [ "$got" != "$VERSION" ]; then
@@ -519,8 +526,15 @@ jobs:
           if command -v cygpath >/dev/null 2>&1; then
             tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
           fi
-          bin="$tool/dossier"
-          if [ -f "$tool/dossier.exe" ]; then bin="$tool/dossier.exe"; fi
+          bin=""
+          for candidate in "$tool/dossier" "$tool/dossier.exe"; do
+            if [ -f "$candidate" ]; then bin="$candidate"; fi
+          done
+          if [ -z "$bin" ]; then
+            echo "::error::no dossier shim was created in $tool"
+            ls -l "$tool" || true
+            exit 1
+          fi
           scripts/smoke-aot.sh "$bin" "$VERSION"
 
       - name: Run the tool through dnx

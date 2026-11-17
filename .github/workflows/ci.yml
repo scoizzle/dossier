@@ -280,6 +280,9 @@ jobs:
         shell: bash
         run: |
           tool="$RUNNER_TEMP/dossier-tool"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
+          fi
           rm -rf "$tool"
           mkdir -p "$tool"
           dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli
@@ -303,6 +306,9 @@ jobs:
         shell: bash
         run: |
           tool="$RUNNER_TEMP/dossier-tool"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
+          fi
           bin="$tool/dossier"
           if [ -f "$tool/dossier.exe" ]; then bin="$tool/dossier.exe"; fi
           scripts/smoke-aot.sh "$bin" "$VERSION"
@@ -324,6 +330,9 @@ jobs:
         shell: bash
         run: |
           tool="$RUNNER_TEMP/dossier-tool-any"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool-any"
+          fi
           rm -rf "$tool"
           mkdir -p "$tool"
           dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli.any

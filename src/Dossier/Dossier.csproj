@@ -15,6 +15,30 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <!-- .NET tool package (dotnet tool install / dnx). The command stays `dossier`; the package id is
+       Poly.Dossier because Dossier is taken on nuget.org. See docs/releasing.md. -->
+  <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>dossier</ToolCommandName>
+    <PackageId>Poly.Dossier</PackageId>
+    <!-- nuget.org lists the pointer package as an MCP server; the metadata is .mcp/server.json. -->
+    <PackageType>McpServer</PackageType>
+    <!-- Native AOT package per platform, plus a framework-dependent `any` fallback. Each RID package is
+         packed on a matching runner with `dotnet pack -r <rid> -p:PublishAot=true`; `any` with
+         `-p:PublishAot=false`; the pointer package with plain `dotnet pack` (still -p:PublishAot=true so
+         the SDK does not try to pack the RIDs itself). -->
+    <ToolPackageRuntimeIdentifiers>win-x64;linux-x64;linux-arm64;osx-arm64;any</ToolPackageRuntimeIdentifiers>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <Authors>scoizzle</Authors>
+    <Description>A context builder for agents and humans that turns scattered observations about a subject into a small, cited, budgeted dossier.</Description>
+    <PackageTags>dossier;context;agents;mcp;model-context-protocol;cli;dotnet-tool</PackageTags>
+    <PackageProjectUrl>https://github.com/scoizzle/dossier</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/scoizzle/dossier</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(PublishAot)'=='true'">
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
   </PropertyGroup>
@@ -33,5 +57,63 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.14" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\icon.png" Pack="true" PackagePath="\" />
+    <!-- The MIT license and third-party notices must travel with every binary, as in the archives. -->
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\..\THIRD-PARTY-NOTICES.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- A Native AOT package statically links the .NET runtime, whose notices the archive path also
+       ships. The runtime pack version is the one restore resolved for this RID. -->
+  <Target Name="IncludeRuntimeNotices" AfterTargets="PackTool" Condition="'$(RuntimeIdentifier)' != '' and '$(RuntimeIdentifier)' != 'any' and '$(PublishAot)' == 'true'">
+    <PropertyGroup>
+      <_RuntimePackName>Microsoft.NETCore.App.Runtime.NativeAOT.$(RuntimeIdentifier)</_RuntimePackName>
+      <_AssetsJson>$([System.IO.File]::ReadAllText('$(ProjectAssetsFile)'))</_AssetsJson>
+      <_RuntimePackPattern>"name": "$(_RuntimePackName)",\s*"version": "\[([^,\]]+)</_RuntimePackPattern>
+      <_RuntimePackVersion>$([System.Text.RegularExpressions.Regex]::Match('$(_AssetsJson)', '$(_RuntimePackPattern)').Groups[1].Value)</_RuntimePackVersion>
+      <_RuntimeNotices>$([MSBuild]::EnsureTrailingSlash('$(NuGetPackageRoot)'))microsoft.netcore.app.runtime.nativeaot.$(RuntimeIdentifier)/$(_RuntimePackVersion)/THIRD-PARTY-NOTICES.TXT</_RuntimeNotices>
+    </PropertyGroup>
+    <Error Condition="'$(_RuntimePackVersion)' == '' or !Exists('$(_RuntimeNotices)')" Text="could not find the .NET runtime third-party notices at $(_RuntimeNotices); restore -r $(RuntimeIdentifier) -p:PublishAot=true first" />
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(_RuntimeNotices)">
+        <PackagePath>dotnet-runtime-THIRD-PARTY-NOTICES.TXT</PackagePath>
+      </TfmSpecificPackageFile>
+    </ItemGroup>
+  </Target>
+
+  <!-- Native AOT leaves a macOS .dSYM bundle (a .pdb on Windows) in the publish directory. The tool
+       package carries only what runs, so those are dropped from the RID package before it is written. -->
+  <Target Name="ExcludeToolPackageSymbols" AfterTargets="PackTool">
+    <ItemGroup>
+      <TfmSpecificPackageFile Remove="$(PublishDir)**/*.dSYM/**/*" />
+      <TfmSpecificPackageFile Remove="$(PublishDir)**/*.pdb" />
+    </ItemGroup>
+  </Target>
+
+  <!-- The MCP server manifest must carry the package version, so it is generated at pack time from the
+       committed template (src/Dossier/.mcp/server.json, which documents the shipped shape). It goes into
+       the top-level pointer package only: that is the package nuget.org lists as an MCP server.
+       BeforePack runs before GenerateNuspec, whose _GetPackageFiles collects the None item. -->
+  <PropertyGroup>
+    <BeforePack>$(BeforePack);GenerateMcpServerManifest</BeforePack>
+  </PropertyGroup>
+
+  <Target Name="GenerateMcpServerManifest" Condition="'$(RuntimeIdentifier)' == ''">
+    <PropertyGroup>
+      <_McpServerTemplate>$([System.IO.File]::ReadAllText('$(MSBuildProjectDirectory)/.mcp/server.json'))</_McpServerTemplate>
+      <_McpServerManifest>$([System.Text.RegularExpressions.Regex]::Replace($(_McpServerTemplate), '"version"\s*:\s*"[^"]*"', '"version": "$(Version)"'))</_McpServerManifest>
+      <!-- Lines is an item list, so a raw semicolon in the JSON would split it; escape it. -->
+      <_McpServerManifestDir>$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)/$(IntermediateOutputPath)mcp'))</_McpServerManifestDir>
+    </PropertyGroup>
+    <MakeDir Directories="$(_McpServerManifestDir)" />
+    <!-- Escape, because Lines is an item list: an unescaped semicolon in the JSON would split the line. -->
+    <WriteLinesToFile File="$(_McpServerManifestDir)/server.json" Lines="$([MSBuild]::Escape($(_McpServerManifest)))" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <ItemGroup>
+      <None Include="$(_McpServerManifestDir)/server.json" Pack="true" PackagePath=".mcp/" />
+    </ItemGroup>
+  </Target>
 
 </Project>

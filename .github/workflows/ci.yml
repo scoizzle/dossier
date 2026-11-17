@@ -189,6 +189,172 @@ jobs:
       - name: Smoke test
         run: scripts/smoke-aot.sh "out/$RID/Dossier" "$VERSION"
 
+  # Proves the .NET tool packages are installable before anything is pushed to nuget.org: the
+  # pointer package, this runner's Native AOT RID package and the framework-dependent any
+  # fallback are packed into a folder feed, verified, installed with `dotnet tool install` and
+  # smoke-tested, then run through `dnx`. Every RID must pass.
+  tool-package:
+    name: tool-package (${{ matrix.rid }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - rid: linux-x64
+            os: ubuntu-24.04
+          - rid: linux-arm64
+            os: ubuntu-24.04-arm
+          - rid: win-x64
+            os: windows-2025
+          - rid: osx-arm64
+            os: macos-15
+    env:
+      RID: ${{ matrix.rid }}
+      VERSION: 0.0.0-ci.${{ github.run_number }}
+      PROJ: src/Dossier/Dossier.csproj
+      AUDIT: -p:NuGetAuditLevel=moderate -p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904
+    steps:
+      - name: Keep LF line endings on Windows
+        if: runner.os == 'Windows'
+        run: git config --global core.autocrlf false
+
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: dotnet --info
+        run: dotnet --info
+
+      # The pointer package must be packed with PublishAot=true even though it ships no code:
+      # otherwise the SDK tries to pack every RID itself, as non-AOT packages.
+      - name: Restore (pointer)
+        run: dotnet restore "$PROJ" -p:PublishAot=true $AUDIT
+
+      - name: Pack the pointer package
+        run: dotnet pack "$PROJ" -c Release -p:PublishAot=true -p:Version="$VERSION" --no-restore -o feed
+
+      - name: Restore (any fallback)
+        run: dotnet restore "$PROJ" -r any -p:PublishAot=false $AUDIT
+
+      - name: Pack the any fallback (framework-dependent)
+        run: dotnet pack "$PROJ" -c Release -r any -p:PublishAot=false -p:Version="$VERSION" --no-restore -o feed
+
+      - name: Restore (${{ matrix.rid }})
+        run: dotnet restore "$PROJ" -r "$RID" -p:PublishAot=true $AUDIT
+
+      - name: Pack the ${{ matrix.rid }} package (Native AOT)
+        run: dotnet pack "$PROJ" -c Release -r "$RID" -p:PublishAot=true -p:Version="$VERSION" --no-restore -o feed 2>&1 | tee pack-tool.log
+
+      - name: Fail on trim and AOT warnings
+        run: |
+          if grep -E "warning (IL|ILC)[0-9]+" pack-tool.log; then
+            echo "::error::Native AOT pack produced IL/ILC warnings"
+            exit 1
+          fi
+
+      # Package types, versions, the MCP manifest, the command settings and no debug symbols.
+      - name: Verify the packages
+        run: scripts/verify-tool-packages.sh feed "$VERSION" "$RID"
+
+      # Poly.Dossier resolves only from the local feed; the apphost pack the shim needs may come
+      # from nuget.org. See scripts/tool-smoke-nuget.config.
+      - name: Write the smoke-test NuGet.config
+        shell: bash
+        run: |
+          feed="$PWD/feed"
+          if command -v cygpath >/dev/null 2>&1; then
+            feed="$(cygpath -m "$feed")"
+          fi
+          sed "s#__FEED__#$feed#" scripts/tool-smoke-nuget.config > nuget.smoke.config
+
+      - name: Install from the local feed
+        shell: bash
+        run: |
+          tool="$RUNNER_TEMP/dossier-tool"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
+          fi
+          rm -rf "$tool"
+          mkdir -p "$tool"
+          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Poly.Dossier
+          bin=""
+          # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
+          for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
+            if [ -f "$candidate" ]; then bin="$candidate"; fi
+          done
+          if [ -z "$bin" ]; then
+            echo "::error::no dossier shim was created in $tool"
+            ls -l "$tool" || true
+            exit 1
+          fi
+          got="$("$bin" version)"
+          echo "installed tool version: $got"
+          if [ "$got" != "$VERSION" ]; then
+            echo "::error::installed tool reports '$got', expected '$VERSION'"
+            exit 1
+          fi
+          # The RID package served the install, not the pointer package's placeholder.
+          manifest="$tool/.store/poly.dossier/$VERSION/project.assets.ridpackage.json"
+          if ! grep -q "poly.dossier.$RID/$VERSION" "$manifest"; then
+            echo "::error::install did not select poly.dossier.$RID/$VERSION"
+            cat "$manifest"
+            exit 1
+          fi
+
+      - name: Smoke test the installed tool
+        shell: bash
+        run: |
+          tool="$RUNNER_TEMP/dossier-tool"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
+          fi
+          bin=""
+          # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
+          for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
+            if [ -f "$candidate" ]; then bin="$candidate"; fi
+          done
+          if [ -z "$bin" ]; then
+            echo "::error::no dossier shim was created in $tool"
+            ls -l "$tool" || true
+            exit 1
+          fi
+          scripts/smoke-aot.sh "$bin" "$VERSION"
+
+      - name: Run the tool through dnx
+        shell: bash
+        run: |
+          out="$(dotnet dnx Poly.Dossier --yes --version "$VERSION" --configfile nuget.smoke.config -- version)"
+          printf '%s\n' "$out"
+          if ! printf '%s\n' "$out" | grep -qx "$VERSION"; then
+            echo "::error::dnx did not report '$VERSION'"
+            exit 1
+          fi
+
+      # The any package is the fallback a platform outside the four RIDs gets. Installing it
+      # directly is the only way to exercise it on a runner that has a RID package.
+      - name: Install and run the any fallback
+        if: matrix.rid == 'linux-x64'
+        shell: bash
+        run: |
+          tool="$RUNNER_TEMP/dossier-tool-any"
+          if command -v cygpath >/dev/null 2>&1; then
+            tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool-any"
+          fi
+          rm -rf "$tool"
+          mkdir -p "$tool"
+          dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Poly.Dossier.any
+          "$tool/dossier" version
+          grep -q "poly.dossier.any/$VERSION" "$tool/.store/poly.dossier.any/$VERSION/project.assets.json"
+
   secret-scan:
     name: secret-scan
     runs-on: ubuntu-24.04

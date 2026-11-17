@@ -102,6 +102,45 @@ public sealed class ChangeStreamTests
     private static long Long(string? text) =>
         long.Parse(text ?? throw new InvalidOperationException("missing value"), NumberStyles.Integer, CultureInfo.InvariantCulture);
 
+    /// <summary>
+    /// Reads until the next <c>changes</c> frame, returning the <c>revision</c> frames that arrived
+    /// first. A revision with no changes is allowed by the contract: an empty tick, or a journal read
+    /// retried on a later tick, sends <c>revision</c> alone, so a caller must not index by position.
+    /// The skipped frames are capped and checked, so a stream stuck on revisions fails loudly instead
+    /// of consuming the caller's timeout, and two consecutive frames with the same value fail too.
+    /// </summary>
+    private static async Task<(List<SseFrame> Revisions, SseFrame Changes)> ReadChangesAsync(
+        StreamReader reader, CancellationToken token)
+    {
+        var revisions = new List<SseFrame>();
+        while (true)
+        {
+            var frame = (await ReadFramesAsync(reader, 1, token))[0];
+            if (frame.Name == "changes")
+            {
+                return (revisions, frame);
+            }
+
+            if (frame.Name != "revision")
+            {
+                throw new InvalidOperationException($"expected a revision or changes frame, got '{frame.Name ?? "(none)"}'");
+            }
+
+            if (revisions.Count == 4)
+            {
+                throw new InvalidOperationException("more than 4 revision frames arrived before a changes frame");
+            }
+
+            var value = Long(string.Join("\n", frame.Data));
+            if (revisions.Count > 0 && value == Long(string.Join("\n", revisions[^1].Data)))
+            {
+                throw new InvalidOperationException($"the revision frame repeated the value {value}");
+            }
+
+            revisions.Add(frame);
+        }
+    }
+
     [Test]
     public async Task Stream_SendsChangesAfterTheRevision()
     {
@@ -121,17 +160,17 @@ public sealed class ChangeStreamTests
 
         db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("beta")));
 
-        // The revision frame is always first, then the journal page behind it.
-        var frames = await ReadFramesAsync(reader, 2, cts.Token);
-        await Assert.That(frames[0].Name).IsEqualTo("revision");
-        await Assert.That(frames[1].Name).IsEqualTo("changes");
+        // The revision frame names the new cursor before the journal page behind it; a revision with
+        // no page is allowed, so read to the page and assert the last revision names it.
+        var (revisions, frames) = await ReadChangesAsync(reader, cts.Token);
+        await Assert.That(revisions.Count > 0).IsTrue();
 
-        var body = frames[1].Body;
+        var body = frames.Body;
         var next = body.GetProperty("next").GetInt64();
         await Assert.That(body.GetProperty("from").GetInt64()).IsEqualTo(from);
         await Assert.That(body.GetProperty("to").GetInt64()).IsEqualTo(next);
-        await Assert.That(Long(frames[1].Id)).IsEqualTo(next);
-        await Assert.That(Long(string.Join("\n", frames[0].Data))).IsEqualTo(next);
+        await Assert.That(Long(frames.Id)).IsEqualTo(next);
+        await Assert.That(Long(string.Join("\n", revisions[^1].Data))).IsEqualTo(next);
 
         var changes = body.GetProperty("changes");
         await Assert.That(changes.GetArrayLength()).IsEqualTo(1);
@@ -159,8 +198,10 @@ public sealed class ChangeStreamTests
             using var reader = new StreamReader(await first.Content.ReadAsStreamAsync(cts.Token), Encoding.UTF8);
             await ReadFramesAsync(reader, 1, cts.Token);
             db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("delta")));
-            var frames = await ReadFramesAsync(reader, 2, cts.Token);
-            cursor = Long(frames[1].Id);
+            // A retried journal read can deliver the page before the revision frame that names it,
+            // so the cursor comes from the page itself; its id and the revision check below pin it.
+            var (_, deltaFrame) = await ReadChangesAsync(reader, cts.Token);
+            cursor = Long(deltaFrame.Id);
             await Assert.That(cursor).IsEqualTo(db.Store.Revision());
         }
 
@@ -183,14 +224,15 @@ public sealed class ChangeStreamTests
         }
 
         db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("epsilon")));
-        var next = await ReadFramesAsync(resumed, 2, cts.Token);
-        await Assert.That(next[1].Name).IsEqualTo("changes");
-        var body = next[1].Body;
+        // The revision frame that names this cursor is not guaranteed here: the page can also be
+        // delivered by a keepalive retry. The page's from/seq/id assertions below carry the contract.
+        var (_, next) = await ReadChangesAsync(resumed, cts.Token);
+        var body = next.Body;
         await Assert.That(body.GetProperty("from").GetInt64()).IsEqualTo(cursor);
         await Assert.That(body.GetProperty("changes").GetArrayLength()).IsEqualTo(1);
         await Assert.That(body.GetProperty("changes")[0].GetProperty("seq").GetInt64()).IsEqualTo(cursor + 1);
         await Assert.That(body.GetProperty("changes")[0].GetProperty("text").GetString()).IsEqualTo("epsilon");
-        await Assert.That(Long(next[1].Id)).IsEqualTo(cursor + 1);
+        await Assert.That(Long(next.Id)).IsEqualTo(cursor + 1);
     }
 
     [Test]

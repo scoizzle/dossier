@@ -1,0 +1,40 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.scoizzle/dossier",
+  "description": "Cited, budgeted context dossiers for agents: dump, search, compile and publish one store.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/scoizzle/dossier",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "nuget",
+      "identifier": "Dossier.Cli",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "command"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "DOSSIER_DB",
+          "description": "Path to the SQLite store the server reads and writes. Defaults to ./dossier.db.",
+          "isRequired": false
+        },
+        {
+          "name": "DOSSIER_AGENT",
+          "description": "Agent label recorded as the writer when the client sends no clientInfo name.",
+          "isRequired": false
+        }
+      ]
+    }
+  ]
+}

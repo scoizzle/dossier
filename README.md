@@ -19,6 +19,19 @@ The expensive reading happens once, when facts are captured. Facts are linked by
 
 ## Quick start
 
+**.NET tool.** With the .NET 10 SDK installed:
+
+```sh
+dotnet tool install -g Dossier.Cli   # the command is `dossier`
+dossier version
+```
+
+Or run it without installing: `dnx Dossier.Cli -- version`. The package ships a Native AOT binary for `win-x64`, `linux-x64`, `linux-arm64` and `osx-arm64`; other platforms get a framework-dependent fallback that needs the .NET 10 runtime. MCP clients can point at it directly:
+
+```json
+{"command": "dnx", "args": ["Dossier.Cli", "--yes", "--", "mcp"]}
+```
+
 **Release binary.** Download the archive for your machine and `SHA256SUMS` from the same [release](https://github.com/scoizzle/dossier/releases) (`linux-x64`, `linux-arm64`, `osx-arm64`, `win-x64`), then verify and extract (`win-x64` ships as a `.zip`; extract it with your usual tool):
 
 ```sh

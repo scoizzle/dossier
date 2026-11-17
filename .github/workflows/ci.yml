@@ -287,7 +287,8 @@ jobs:
           mkdir -p "$tool"
           dotnet tool install --tool-path "$tool" --configfile nuget.smoke.config --version "$VERSION" Dossier.Cli
           bin=""
-          for candidate in "$tool/dossier" "$tool/dossier.exe"; do
+          # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
+          for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
             if [ -f "$candidate" ]; then bin="$candidate"; fi
           done
           if [ -z "$bin" ]; then
@@ -317,7 +318,8 @@ jobs:
             tool="$(cygpath -u "$RUNNER_TEMP")/dossier-tool"
           fi
           bin=""
-          for candidate in "$tool/dossier" "$tool/dossier.exe"; do
+          # dotnet creates a .cmd shim for a .NET tool on Windows, and a plain shim elsewhere.
+          for candidate in "$tool/dossier" "$tool/dossier.exe" "$tool/dossier.cmd"; do
             if [ -f "$candidate" ]; then bin="$candidate"; fi
           done
           if [ -z "$bin" ]; then

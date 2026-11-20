@@ -378,12 +378,12 @@ public sealed partial class DossierStore
     }
 
     /// <summary>Subject ids whose id equals the value exactly, or whose name/alias matches casefolded.</summary>
-    private static List<string> ResolveSubjectIds(SqliteConnection connection, string value)
+    private static List<string> ResolveSubjectIds(SqliteConnection connection, string value, SqliteTransaction? transaction = null)
     {
         var wanted = Names.Normalize(value);
         var ids = new List<string>();
 
-        using var command = Command(connection, null, "SELECT id, name, aliases FROM subjects");
+        using var command = Command(connection, transaction, "SELECT id, name, aliases FROM subjects");
         using var reader = command.ExecuteReader();
         while (reader.Read())
         {

@@ -109,6 +109,16 @@ run show "$FACT_ID"
 expect_contains "$FACT_ID" "show"
 expect_contains "posted fact" "show"
 
+step "verify"
+run verify "$FACT_ID" --require-current
+expect_contains '"current":true' "verify"
+expect_contains '"status":"live"' "verify"
+
+step "changes"
+run changes --last 1
+expect_match '"next":[1-9]' "changes (no cursor)"
+expect_match '"changes":\[\{' "changes (no rows)"
+
 step "compile (json)"
 run dossier compile --subject "$SUBJECT" --depth full
 expect_contains "$TOKEN" "compile json"
@@ -123,6 +133,8 @@ step "mcp session"
   printf '%s\n' '{"jsonrpc":"2.0","method":"notifications/initialized"}'
   printf '%s\n' '{"jsonrpc":"2.0","id":2,"method":"tools/list"}'
   printf '%s\n' "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/call\",\"params\":{\"name\":\"search\",\"arguments\":{\"q\":\"$TOKEN\"}}}"
+  printf '%s\n' "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"tools/call\",\"params\":{\"name\":\"verify_facts\",\"arguments\":{\"ids\":[\"$FACT_ID\"]}}}"
+  printf '%s\n' '{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"changes","arguments":{"last":1}}}'
 } >"$TMP/mcp-in.jsonl"
 rc=0
 "$BIN" mcp <"$TMP/mcp-in.jsonl" >"$TMP/mcp-out.jsonl" 2>"$TMP/stderr" || rc=$?
@@ -140,6 +152,13 @@ if ! grep -q '"result"' "$TMP/mcp-out.txt"; then
 fi
 if ! grep -q "$TOKEN" "$TMP/mcp-out.txt"; then
   fail "mcp tools/call search did not return the dumped fact"
+fi
+# A tool result is JSON inside a JSON string, so its quotes arrive as \u0022.
+if ! grep -Fq 'current\u0022:true' "$TMP/mcp-out.txt"; then
+  fail "mcp tools/call verify_facts did not report the posted fact as current"
+fi
+if ! grep -Fq 'truncated\u0022:' "$TMP/mcp-out.txt"; then
+  fail "mcp tools/call changes did not return a journal page"
 fi
 
 step "publish"

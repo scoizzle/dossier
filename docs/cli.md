@@ -10,7 +10,7 @@ To correct a fact, post the right claim with a ref `{"rel":"supersedes","kind":"
 
 **correlate** proposes refs between facts using deterministic matchers (`same_ref`, `shared_tag`): `dossier correlate [--subject <name>] [--matcher <same_ref|shared_tag>]...`; `--matcher` is repeatable and limits which matchers run (an unknown name is rejected with `invalid_matcher`). Proposals carry basis `derived`, are returned and never written, and are never asserted as truth.
 
-**retrieve** finds facts or compiles a dossier. `dossier search` takes text and filters, including reverse-impact lookup with `--ref-target`. `--q` is an FTS5 query, and a plain term FTS5 would misread as syntax (`Self-taught`, `us-east-1`, `Unit.cs::Parse`) is quoted for you and searched as a phrase; FTS5 syntax still works (`"a phrase"`, `AND`, `OR`, `NOT`, `prefix*`, `tags:ui`). `dossier dossier compile --subject <name> --budget <n>` compiles the cited, budgeted dossier.
+**retrieve** finds facts or compiles a dossier. `dossier search` takes text and filters, including reverse-impact lookup with `--ref-target`. Each hit's `status` is derived (`live`, `stale`, `contested`; see [derived status](concepts.md#derived-status)), and `--status` filters by it, so `--status live` leaves out a fact that is stale or contested. `--q` is an FTS5 query, and a plain term FTS5 would misread as syntax (`Self-taught`, `us-east-1`, `Unit.cs::Parse`) is quoted for you and searched as a phrase; FTS5 syntax still works (`"a phrase"`, `AND`, `OR`, `NOT`, `prefix*`, `tags:ui`). `dossier dossier compile --subject <name> --budget <n>` compiles the cited, budgeted dossier.
 
 ## Quick start in full
 

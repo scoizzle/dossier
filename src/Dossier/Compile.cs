@@ -21,6 +21,14 @@ public sealed class CompileRequest
 
     /// <summary>"complete" (default) emits every fact; "strict" cuts to the budget and lists the rest in dropped.</summary>
     public string? BudgetMode { get; set; }
+
+    /// <summary>
+    /// For a caller that renders the facts itself and prints no status note (publish): leave <c>why</c>
+    /// off the facts, so the token counts and the budget fill are those of the plain lines it writes.
+    /// Not part of the contract and never read from a request body.
+    /// </summary>
+    [JsonIgnore]
+    internal bool OmitStatusNotes { get; set; }
 }
 
 public sealed class RankOptions
@@ -130,8 +138,31 @@ public sealed partial class DossierStore
     /// the serialized FactView for json, or the single rendered markdown line for markdown.
     /// </summary>
     public static int EstimateFactTokens(FactView fact, string format) => format == "markdown"
-        ? EstimateTokens("- " + OneLine(fact.Text, int.MaxValue) + " [" + fact.Id + "]\n")
+        ? EstimateTokens("- " + OneLine(fact.Text, int.MaxValue) + " [" + fact.Id + "]" + StatusNote(fact) + "\n")
         : EstimateTokens(Serialize(fact));
+
+    /// <summary>
+    /// The mark a stale or contested fact carries on its markdown line, empty for any other fact:
+    /// " (stale: X was superseded by Y)" or " (contested: refuted by Z)". The ids are written bare, not in
+    /// brackets, so a bracketed id in a dossier is always the citation of an emitted fact.
+    /// </summary>
+    public static string StatusNote(FactView fact)
+    {
+        if (fact.Why is not { Count: > 0 } || fact.Status is not (StatusStale or StatusContested))
+        {
+            return string.Empty;
+        }
+
+        var parts = fact.Why.Select(reason => reason.Rel switch
+        {
+            "derived_from" when reason.State == StatusSuperseded && reason.ReplacedBy is not null => $"{reason.Fact} was superseded by {reason.ReplacedBy}",
+            "derived_from" when reason.State == StatusStale => $"{reason.Fact} is stale",
+            "derived_from" => $"{reason.Fact} was {reason.State}",
+            "refutes" => $"refuted by {reason.Fact}",
+            _ => $"contradicts {reason.Fact}",
+        });
+        return " (" + fact.Status + ": " + string.Join("; ", parts) + ")";
+    }
 
     /// <summary>Estimated tokens of a whole dossier as the caller receives it in the requested format.</summary>
     public static int EstimateRenderedTokens(CompiledDossier dossier, string format) => format == "markdown"
@@ -171,6 +202,11 @@ public sealed partial class DossierStore
         public string CreatedAt = string.Empty;
         public DateTimeOffset CreatedTime;
         public int Inbound;
+
+        /// <summary>Derived status; <see cref="Status"/> stays the stored lifecycle that conflicts and near-duplicate checks read.</summary>
+        public string Derived = StatusLive;
+        public List<StatusReason>? Why;
+        public bool Stale;
         public double Relevance;
         public double Explicitness;
         public double Score;
@@ -179,7 +215,8 @@ public sealed partial class DossierStore
     }
 
     /// <summary>
-    /// Total order over candidates that never consults the random fact id: score descending, then
+    /// Total order over candidates that never consults the random fact id: current facts before stale
+    /// ones (staleness is a property of the store's refs, not of ids), then score descending, then
     /// key (when present), kind, text and finally content_hash ascending. content_hash comes last
     /// because it folds in resolved ref targets, which for fact-to-fact refs are random ids; placed
     /// earlier it would reintroduce id dependence. Two stores holding the same logical
@@ -194,7 +231,15 @@ public sealed partial class DossierStore
                 return 0;
             }
 
-            var byScore = y!.Score.CompareTo(x!.Score);
+            // A stale fact was built on an input that has changed, so it never outranks a current one,
+            // and strict mode never spends budget on it while a current fact is waiting.
+            var byCurrency = x!.Stale.CompareTo(y!.Stale);
+            if (byCurrency != 0)
+            {
+                return byCurrency;
+            }
+
+            var byScore = y.Score.CompareTo(x.Score);
             if (byScore != 0)
             {
                 return byScore;
@@ -254,6 +299,7 @@ public sealed partial class DossierStore
         var format = request.Format ?? "json";
 
         using var connection = OpenConnection();
+        using var snapshot = new ReadSnapshot(connection);
         var subject = ResolveCompileSubject(connection, request.Subject);
         var subjectIds = new List<string> { subject.Id };
         if (request.Descendants == true)
@@ -273,6 +319,14 @@ public sealed partial class DossierStore
         var conflicts = FindConflicts(candidates, subject.Id);
 
         var views = representatives.ToDictionary(c => c.Id, ToDossierView, StringComparer.Ordinal);
+        if (request.OmitStatusNotes)
+        {
+            foreach (var view in views.Values)
+            {
+                view.Why = null;
+            }
+        }
+
         var emitted = new List<Candidate>();
 
         if (depth == "index")
@@ -317,6 +371,8 @@ public sealed partial class DossierStore
     /// The budget fill, shared by strict compile and the complete-mode highlights. Returns the indexes of
     /// the items that fit, in input order. full: greedy 75 percent slice, a fact that does not fit is skipped.
     /// index: cap min(budget, 300) on fact content, at most 8 facts, at least 3.
+    /// Once a fact that is not stale has been left out for size, no stale fact is taken: budget a current
+    /// fact could not use is not spent on one built on a changed input.
     /// </summary>
     private static List<int> SelectWithinBudget(
         IReadOnlyList<FactView> items, string depth, int budget, Func<FactView, int> fullCost, Func<FactView, int> indexCost)
@@ -326,13 +382,24 @@ public sealed partial class DossierStore
         {
             var factSlice = (int)Math.Floor(budget * 0.75);
             var running = 0;
+            var currentLeftOut = false;
             for (var i = 0; i < items.Count; i++)
             {
+                var stale = items[i].Status == StatusStale;
+                if (stale && currentLeftOut)
+                {
+                    continue;
+                }
+
                 var cost = fullCost(items[i]);
                 if (running + cost <= factSlice)
                 {
                     running += cost;
                     chosen.Add(i);
+                }
+                else if (!stale)
+                {
+                    currentLeftOut = true;
                 }
             }
 
@@ -344,6 +411,7 @@ public sealed partial class DossierStore
         var cap = Math.Min(budget, IndexTokenCap);
         var floor = Math.Min(IndexMinFacts, items.Count);
         var factTokens = 0;
+        var leftOut = false;
         for (var i = 0; i < items.Count; i++)
         {
             if (chosen.Count >= IndexMaxFacts)
@@ -351,11 +419,21 @@ public sealed partial class DossierStore
                 break;
             }
 
+            var stale = items[i].Status == StatusStale;
+            if (stale && leftOut)
+            {
+                continue;
+            }
+
             var cost = indexCost(items[i]);
             if (chosen.Count < floor || factTokens + cost <= cap)
             {
                 chosen.Add(i);
                 factTokens += cost;
+            }
+            else if (!stale)
+            {
+                leftOut = true;
             }
         }
 
@@ -531,6 +609,18 @@ public sealed partial class DossierStore
             candidate.TextTokens = Tokenize(candidate.Text).ToHashSet(StringComparer.Ordinal);
         }
 
+        // Derived status, from the same reader verify uses. Only a fact that carries or receives a
+        // currency ref can be stale or contested, so the others cost nothing beyond one lookup.
+        var currency = new CurrencyReader(connection, null);
+        var involved = currency.Involved(candidates.Select(c => c.Id).ToList());
+        foreach (var candidate in candidates.Where(c => involved.Contains(c.Id)))
+        {
+            var described = currency.Describe(candidate.Id);
+            candidate.Derived = described.Status;
+            candidate.Why = described.Why;
+            candidate.Stale = described.Status == StatusStale;
+        }
+
         return candidates;
     }
 
@@ -617,7 +707,9 @@ public sealed partial class DossierStore
                     continue;
                 }
 
-                if (Jaccard(head.TextTokens, other.TextTokens) >= DedupeThreshold)
+                // A current line never absorbs a stale fact, or the reverse: its cites would then name a
+                // fact of the other kind as if it said the same thing.
+                if (head.Stale == other.Stale && Jaccard(head.TextTokens, other.TextTokens) >= DedupeThreshold)
                 {
                     collapsed.Add(other.Id);
                     head.Collapsed.Add(other.Id);
@@ -653,9 +745,10 @@ public sealed partial class DossierStore
             Text = candidate.Text,
             Tags = candidate.Tags,
             Confidence = candidate.Confidence,
-            Status = candidate.Status,
+            Status = candidate.Derived,
             Section = section,
             Cites = cites,
+            Why = candidate.Why,
         };
     }
 
@@ -827,7 +920,7 @@ public sealed partial class DossierStore
         {
             foreach (var fact in dossier.Facts)
             {
-                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append("]\n");
+                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append(']').Append(StatusNote(fact)).Append('\n');
             }
         }
         else
@@ -841,7 +934,7 @@ public sealed partial class DossierStore
             foreach (var index in highlights)
             {
                 var fact = dossier.Facts[index];
-                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append("]\n");
+                builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append(']').Append(StatusNote(fact)).Append('\n');
             }
 
             builder.Append("\n## All facts\n\n");
@@ -850,7 +943,7 @@ public sealed partial class DossierStore
                 if (!highlights.Contains(i))
                 {
                     var fact = dossier.Facts[i];
-                    builder.Append("- [").Append(fact.Id).Append("] ").Append(OneLine(fact.Text, int.MaxValue)).Append('\n');
+                    builder.Append("- [").Append(fact.Id).Append("] ").Append(OneLine(fact.Text, int.MaxValue)).Append(StatusNote(fact)).Append('\n');
                 }
             }
         }

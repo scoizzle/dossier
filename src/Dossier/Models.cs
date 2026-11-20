@@ -188,6 +188,9 @@ public sealed class FactView
     public double? Score { get; set; }
     public string? Section { get; set; }
     public List<string>? Cites { get; set; }
+
+    /// <summary>Dossier only, and only when <see cref="Status"/> is stale or contested: the refs that make it so.</summary>
+    public List<StatusReason>? Why { get; set; }
 }
 
 /// <summary>show result: one fact with its refs, attachments, and inbound referencing facts.</summary>
@@ -214,6 +217,12 @@ public sealed class FactRecord
     public JsonElement? Provenance { get; set; }
     public string ContentHash { get; set; } = string.Empty;
     public string CreatedAt { get; set; } = string.Empty;
+
+    /// <summary>Superseded only: the live fact that took its place.</summary>
+    public string? ReplacedBy { get; set; }
+
+    /// <summary>Stale and contested only: the refs that make it so.</summary>
+    public List<StatusReason>? Why { get; set; }
 }
 
 public sealed class RefRecord

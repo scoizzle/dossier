@@ -53,6 +53,9 @@ public sealed class JsonlSchemaTests
 
     private static bool Valid(string schemaFile, JsonElement instance) => Errors(schemaFile, instance).Length == 0;
 
+    /// <summary>Validates an instance against a whole contract file. Empty when valid.</summary>
+    internal static string ErrorsAgainstDocument(string schemaFile, JsonElement instance) => Errors(schemaFile, instance);
+
     /// <summary>
     /// Validates an instance against one <c>$defs</c> entry of a contract file, for the contracts that are
     /// a set of shapes (ops.schema.json) rather than one document shape. Empty when valid.

@@ -79,6 +79,31 @@ public sealed class OpsContractTests
     }
 
     [Test]
+    public async Task CompiledDossierAndSearchHits_MatchTheContract_WithStaleAndContestedFacts()
+    {
+        using var db = new TempDb();
+        var input = PostOne(db, "Widget", Fixtures.Fact("input one", key: "input"));
+        PostOne(db, "Widget", Fixtures.Fact("derived", refs: new List<RefInput> { Fixtures.Ref(input, basis: "derived", rel: "derived_from") }));
+        PostOne(db, "Widget", Fixtures.Fact("input two", key: "input"));
+        var claim = PostOne(db, "Widget", Fixtures.Fact("a claim"));
+        PostOne(db, "Widget", Fixtures.Fact("an objection", refs: new List<RefInput> { Fixtures.Ref(claim, rel: "refutes") }));
+
+        var dossier = db.Store.Compile(new CompileRequest { Subject = "Widget", Depth = "full" });
+        await Assert.That(dossier.Facts.Select(fact => fact.Status).ToHashSet().SetEquals(new[] { "live", "stale", "contested" })).IsTrue();
+        await Assert.That(dossier.Facts.Count(fact => fact.Why is not null)).IsEqualTo(2);
+        await Assert.That(JsonlSchemaTests.ErrorsAgainstDocument("dossier.schema.json", Emitted(dossier))).IsEqualTo(string.Empty);
+
+        var search = db.Store.Search(new SearchRequest { Subject = "Widget" });
+        await Assert.That(search.Hits.Select(hit => hit.Status).ToHashSet().SetEquals(new[] { "live", "stale", "contested" })).IsTrue();
+        await Assert.That(Errors("SearchResponse", Emitted(search))).IsEqualTo(string.Empty);
+        await Assert.That(Errors("SearchRequest", Emitted(new SearchRequest { Subject = "Widget", Status = "stale" }))).IsEqualTo(string.Empty);
+
+        // And the dossier contract is not vacuous about the new field.
+        var broken = JsonDocument.Parse(JsonSerializer.Serialize(dossier, JsonCodec.Options).Replace("\"rel\":\"derived_from\"", "\"rel\":\"because\"", StringComparison.Ordinal)).RootElement.Clone();
+        await Assert.That(JsonlSchemaTests.ErrorsAgainstDocument("dossier.schema.json", broken)).Contains("not in enum");
+    }
+
+    [Test]
     public async Task TheValidationIsNotVacuous_AWrongShapeIsRejected()
     {
         JsonElement Parse(string json) => JsonDocument.Parse(json).RootElement.Clone();

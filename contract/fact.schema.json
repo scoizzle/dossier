@@ -27,7 +27,7 @@
       "title": "Status",
       "type": "string",
       "enum": ["live", "superseded", "contested", "retracted", "stale"],
-      "description": "Derived, never authoritative. A stored fact holds only the lifecycle values live, superseded and retracted; stale and contested are derived from refs at read time and reported by verify_facts (ops.schema.json#/$defs/VerifiedFact)."
+      "description": "Derived, never authoritative. A stored fact holds only the lifecycle values live, superseded and retracted; stale and contested are derived from refs at read time and reported by every read of a fact: search hits, compiled dossiers, show and verify_facts (the rules are in ops.schema.json#/$defs/VerifiedFact). Published bundles, the change journal and the graph view carry the stored status."
     },
     "Item": {
       "title": "Item",

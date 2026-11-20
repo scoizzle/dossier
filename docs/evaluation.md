@@ -39,7 +39,7 @@ Each experiment answers one failure mode of memory shared by several agents (the
 | Provenance | writer identity preserved at every hop | 50/50 | [0.929, 1.000] |
 | Contradiction | both contradictory writes admitted (near-identical prose, different value) | 200/200 | [0.981, 1.000] |
 | Contradiction | conflict surfaced in the compiled dossier, citing both facts | 200/200 | [0.981, 1.000] |
-| Contradiction | declared dispute (`contradicts`): `verify` reports both facts contested | 100/100 | [0.963, 1.000] |
+| Contradiction | declared dispute (`contradicts`): `verify` and search report both facts contested | 100/100 | [0.963, 1.000] |
 | Supersession | exactly one live value per slot after two writers (half of them concurrent) | 200/200 | [0.981, 1.000] |
 | Supersession | more than one live row read for a slot | 0/200 | [0.000, 0.019] |
 | Supersession | superseded fact returned by default search or compile | 0/200 | [0.000, 0.019] |
@@ -49,6 +49,8 @@ Each experiment answers one failure mode of memory shared by several agents (the
 | Correction | correction naming a fact that is not in the store is rejected | 100/100 | [0.963, 1.000] |
 | Derivation currency | descendant of a changed input verifies stale, with the right input named | 120/120 | [0.969, 1.000] |
 | Derivation currency | fact derived from a corrected claim verifies stale, naming the correction | 100/100 | [0.963, 1.000] |
+| Derivation currency | search, compile and `get_fact` all report that descendant stale | 120/120 | [0.969, 1.000] |
+| Derivation currency | stale descendant returned by `search --status live` | 0/120 | [0.000, 0.031] |
 | Derivation currency | false stale after a same-claim repost (control) | 0/30 | [0.000, 0.114] |
 | Revocation | retracted fact, or its text, returned by search or compile | 0/20 | [0.000, 0.161] |
 | Revocation | tombstone kept for audit (id and writer, no text) | 20/20 | [0.839, 1.000] |
@@ -57,9 +59,8 @@ Each experiment answers one failure mode of memory shared by several agents (the
 
 Latency on one Apple-silicon laptop, one local SQLite file: `get_fact` per hop p50 0.3 ms, p95 below 1 ms (n=200, three runs); write-to-visible window p50 0.3 ms, p95 below 1 ms (n=20, three runs), which is one `changes` round trip, measured by polling each fact at once and one at a time from the moment its write returned.
 
-Two rows are reported, not asserted:
+One row is reported, not asserted:
 
-- **The baseline `verify` replaces.** The 120 stale descendants all still read `live` by their own stored status (120/120), because a fact's row is never rewritten when its input changes. A check of the fact itself misses every one of them.
 - **A known gap.** When two agents write different values to the same slot, the later write supersedes the earlier and the overwritten value is never surfaced as a conflict (0/200). It stays in history, and `verify` names what replaced it, but nothing flags that two agents disagreed.
 
 **What this does not prove.**

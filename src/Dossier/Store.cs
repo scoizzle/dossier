@@ -89,7 +89,10 @@ public sealed partial class DossierStore
 
         CREATE INDEX IF NOT EXISTS idx_refs_target ON refs(target);
         CREATE INDEX IF NOT EXISTS idx_refs_fact_id ON refs(fact_id);
+        CREATE INDEX IF NOT EXISTS idx_refs_currency ON refs(rel, target, fact_id, seq)
+            WHERE kind = 'fact' AND rel IN ('derived_from', 'refutes', 'contradicts', 'supersedes');
         CREATE INDEX IF NOT EXISTS idx_facts_subject_id ON facts(subject_id);
+        CREATE INDEX IF NOT EXISTS idx_facts_slot ON facts(subject_id, kind, key) WHERE key IS NOT NULL;
         CREATE INDEX IF NOT EXISTS idx_facts_content_hash ON facts(content_hash);
         """;
 
@@ -271,6 +274,36 @@ public sealed partial class DossierStore
         pragma.CommandText = "PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; PRAGMA foreign_keys=ON;";
         pragma.ExecuteNonQuery();
         return connection;
+    }
+
+    /// <summary>
+    /// One read snapshot for everything a read does on a connection: a deferred transaction opened with
+    /// plain SQL (as <see cref="Initialize"/> opens its write lock), so commands on the connection need no
+    /// transaction object. A read that derives status makes several queries, and without this each would
+    /// see its own snapshot, so a concurrent write could make a filter and the labels on its hits disagree.
+    /// It never takes the write lock; disposing it ends the snapshot.
+    /// </summary>
+    internal sealed class ReadSnapshot : IDisposable
+    {
+        private readonly SqliteConnection connection;
+
+        public ReadSnapshot(SqliteConnection connection)
+        {
+            this.connection = connection;
+            Run(connection, "BEGIN DEFERRED");
+        }
+
+        public void Dispose()
+        {
+            try
+            {
+                Run(connection, "ROLLBACK");
+            }
+            catch (SqliteException)
+            {
+                // Nothing was written, so there is nothing to lose if the transaction is already gone.
+            }
+        }
     }
 
     internal static SqliteCommand Command(SqliteConnection connection, SqliteTransaction? transaction, string sql)

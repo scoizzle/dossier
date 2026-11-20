@@ -117,12 +117,12 @@ public sealed class McpTests
             var list = await child.Call("tools/list");
             var names = list.GetProperty("result").GetProperty("tools").EnumerateArray()
                 .Select(tool => tool.GetProperty("name").GetString()).ToList();
-            foreach (var expected in new[] { "dump", "post_facts", "correlate", "search", "get_fact", "compile_dossier", "check" })
+            foreach (var expected in new[] { "dump", "post_facts", "correlate", "search", "get_fact", "compile_dossier", "check", "verify_facts", "changes" })
             {
                 await Assert.That(names.Contains(expected)).IsTrue();
             }
 
-            await Assert.That(names.Count).IsEqualTo(7);
+            await Assert.That(names.Count).IsEqualTo(9);
 
             foreach (var tool in list.GetProperty("result").GetProperty("tools").EnumerateArray())
             {
@@ -234,7 +234,7 @@ public sealed class McpTests
 
         var list = JsonDocument.Parse(server.Handle("""{"jsonrpc":"2.0","id":1,"method":"tools/list"}""")!.ToJsonString()).RootElement;
         var tools = list.GetProperty("result").GetProperty("tools").EnumerateArray().ToList();
-        await Assert.That(tools.Count).IsEqualTo(7);
+        await Assert.That(tools.Count).IsEqualTo(9);
         var tool = tools.Single(t => t.GetProperty("name").GetString() == "check");
         await Assert.That(tool.GetProperty("description").GetString()!.Contains("untrusted data")).IsTrue();
 

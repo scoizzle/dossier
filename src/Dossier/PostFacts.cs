@@ -89,6 +89,16 @@ public sealed partial class DossierStore
                 ? null
                 : FindSlotFactId(connection, transaction, subject.Id, fact.Kind, fact.Key);
 
+            if (replacedId is not null && SlotOccupantIsIdentical(connection, transaction, replacedId, fact, resolvedRefs, hash))
+            {
+                // A keyed repost that changes nothing is a no-op, not a supersede: no new row, no
+                // status flip, no revision bump. Any difference, including one the hash ignores
+                // (tags, confidence, items, ref freshness, attachments), still replaces below.
+                results.Add(new FactResult { Id = replacedId, Status = "deduped", DuplicateOf = replacedId });
+                RegisterLocalId(localIds, fact.LocalId, replacedId);
+                continue;
+            }
+
             if (replacedId is not null)
             {
                 var id = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt, identity);
@@ -445,6 +455,103 @@ public sealed partial class DossierStore
         Bind(command, "$status", status);
         Bind(command, "$id", factId);
         command.ExecuteNonQuery();
+    }
+
+    /// <summary>
+    /// True when the fact a slot names already says everything <paramref name="fact"/> says: the same
+    /// content hash (text, data, each ref's rel, kind, target and locator) and the same value in every
+    /// field the hash leaves out (tags, confidence, items, each ref's basis, confidence, seq and
+    /// freshness fields, and the attachments). The comparison is on the stored encodings, so it is
+    /// exactly "a repost would write the same row".
+    /// </summary>
+    private static bool SlotOccupantIsIdentical(
+        SqliteConnection connection,
+        SqliteTransaction transaction,
+        string occupantId,
+        FactInput fact,
+        IReadOnlyList<RefInput> refs,
+        string contentHash)
+    {
+        using (var command = Command(
+            connection,
+            transaction,
+            "SELECT content_hash, status, tags, confidence, items FROM facts WHERE id = $id"))
+        {
+            Bind(command, "$id", occupantId);
+            using var reader = command.ExecuteReader();
+            if (!reader.Read()
+                || reader.GetString(0) != contentHash
+                || reader.GetString(1) != "live"
+                || reader.GetString(2) != JsonCodec.SerializeStrings(fact.Tags ?? new List<string>())
+                || reader.GetDouble(3) != (fact.Confidence ?? 1.0)
+                || (reader.IsDBNull(4) ? null : reader.GetString(4)) != (fact.Items is { Count: > 0 } ? JsonCodec.Serialize(fact.Items) : null))
+            {
+                return false;
+            }
+        }
+
+        static string? Canonical(JsonElement? value) => value.HasValue ? CanonicalJson.Write(value.Value) : null;
+
+        var storedRefs = ReadRefs(connection, occupantId, transaction);
+        if (storedRefs.Count != refs.Count)
+        {
+            return false;
+        }
+
+        // Stored refs come back in seq order; an input ref without a seq is stored at its index.
+        var wantedRefs = refs.Select((reference, index) => (Ref: reference, Seq: reference.Seq ?? index)).OrderBy(pair => pair.Seq).ToList();
+        for (var index = 0; index < storedRefs.Count; index++)
+        {
+            var stored = storedRefs[index];
+            var (wanted, seq) = wantedRefs[index];
+            if (stored.Seq != seq
+                || stored.Rel != wanted.Rel
+                || stored.Kind != wanted.Kind
+                || stored.Target != wanted.Target
+                || Canonical(stored.Locator) != Canonical(wanted.Locator)
+                || stored.Basis != wanted.Basis
+                || stored.Confidence != wanted.Confidence
+                || stored.Rev != wanted.Rev
+                || stored.Snapshot != wanted.Snapshot
+                || stored.SnapshotHash != wanted.SnapshotHash
+                || stored.Etag != wanted.Etag
+                || stored.VerifiedAt != wanted.VerifiedAt
+                || stored.Valid != wanted.Valid)
+            {
+                return false;
+            }
+        }
+
+        // Same rows InsertFact would write: an attachment without a sha256 is skipped, and a repeated
+        // sha256 keeps its last entry (INSERT OR REPLACE).
+        var wantedAttachments = new SortedDictionary<string, AttachmentInput>(StringComparer.Ordinal);
+        foreach (var attachment in fact.Attachments ?? new List<AttachmentInput>())
+        {
+            if (!string.IsNullOrWhiteSpace(attachment.Sha256))
+            {
+                wantedAttachments[attachment.Sha256] = attachment;
+            }
+        }
+
+        var storedAttachments = ReadAttachments(connection, occupantId, transaction);
+        if (storedAttachments.Count != wantedAttachments.Count)
+        {
+            return false;
+        }
+
+        foreach (var stored in storedAttachments)
+        {
+            if (!wantedAttachments.TryGetValue(stored.Sha256, out var wanted)
+                || stored.Filename != (wanted.Filename ?? string.Empty)
+                || stored.Mime != (wanted.Mime ?? string.Empty)
+                || stored.Bytes != wanted.Bytes
+                || Canonical(stored.Perceptual) != Canonical(wanted.Perceptual))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private static string? FindLiveFactByHash(

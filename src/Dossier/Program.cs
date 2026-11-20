@@ -1,6 +1,6 @@
 using Dossier;
 
-const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject <name>] [--matcher <name>]...|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|retract <id>|dossier compile --subject ...|publish --out <dir> [--format md|jsonl] [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --max-files --max-file-bytes --max-total-bytes --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
+const string usage = "usage: dossier <init|version|dump --source <path> --subject <name>|post --file <path> [--dry-run]|correlate [--subject <name>] [--matcher <name>]...|check --subject <text> [--drafts <file|->] [--limit <n>]|search [--brief|--q|--subject|--tag|--kind|--status|--ref-target|--direction|--limit ...]|show <factId>|verify <factId>... [--require-current]|retract <id>|changes [--since <n>|--last <n>] [--limit <n>] [--subject <name>]|dossier compile --subject ...|publish --out <dir> [--format md|jsonl] [--subject --budget --budget-mode --depth --facts --assets --index-max-tokens --max-files --max-file-bytes --max-total-bytes --profile --respect-limits]|import --from <dir> [--db <path>]|mcp|serve>";
 
 if (args.Length == 0)
 {
@@ -162,6 +162,42 @@ try
                     : DossierStore.ParseDrafts(draftsPath == "-" ? Console.In.ReadToEnd() : File.ReadAllText(draftsPath)),
             };
             Console.WriteLine(Ops.Check(new DossierStore(), checkRequest));
+            return 0;
+        }
+
+        case "verify":
+        {
+            var verifyIds = args.Skip(1).Where(arg => !arg.StartsWith("--", StringComparison.Ordinal)).ToList();
+            if (verifyIds.Count == 0)
+            {
+                Console.Error.WriteLine("verify requires at least one <factId>");
+                return 1;
+            }
+
+            var verified = new DossierStore().Verify(new VerifyRequest { Ids = verifyIds });
+            Console.WriteLine(JsonCodec.Serialize(verified));
+
+            // The answer is always printed. --require-current makes the command a gate: a cited fact
+            // that is not live fails it, so `dossier verify --require-current <ids> && <act>` stops.
+            if (args.Contains("--require-current") && !verified.Current)
+            {
+                Console.Error.WriteLine("not current: " + string.Join(", ", verified.Facts.Where(fact => !fact.Current).Select(fact => $"{fact.Id} ({fact.Status})")));
+                return 1;
+            }
+
+            return 0;
+        }
+
+        case "changes":
+        {
+            var changesRequest = new ChangesRequest
+            {
+                Since = ParseCursor(ValueAfter(args, "--since"), "--since"),
+                Last = ParseInt(ValueAfter(args, "--last"), "--last"),
+                Limit = ParseLimit(ValueAfter(args, "--limit")),
+                Subject = ValueAfter(args, "--subject"),
+            };
+            Console.WriteLine(Ops.Changes(new DossierStore(), changesRequest));
             return 0;
         }
 
@@ -418,6 +454,21 @@ static long? ParseLong(string? value, string flag)
     return number;
 }
 
+static long? ParseCursor(string? value, string flag)
+{
+    if (value is null)
+    {
+        return null;
+    }
+
+    if (!long.TryParse(value, System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out var number))
+    {
+        throw new ArgumentException($"{flag} must be a non-negative integer, got \"{value}\"");
+    }
+
+    return number;
+}
+
 static int? ParseLimit(string? value)
 {
     if (value is null)
@@ -446,6 +497,8 @@ static (string[] ValueFlags, string[] BooleanFlags, int Start)? VerbSpec(string[
         "--q", "--subject", "--kind", "--key", "--tag", "--actor", "--status", "--since",
         "--ref-target", "--direction", "--cursor", "--limit"], ["--brief"], 1),
     "check" => (["--subject", "--drafts", "--limit"], [], 1),
+    "changes" => (["--since", "--last", "--limit", "--subject"], [], 1),
+    "verify" => ([], ["--require-current"], 1),
     "show" => ([], [], 1),
     "retract" => ([], [], 1),
     "dossier" => arguments.Length >= 2 && arguments[1] == "compile"

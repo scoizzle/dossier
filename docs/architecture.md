@@ -14,6 +14,8 @@ One product project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) w
 | `Search.cs` | Search, filters, reverse `ref_target` lookup |
 | `Compile.cs` | Ranking, budgeted selection, conflicts, gaps, markdown rendering |
 | `Show.cs`, `Retract.cs` | Fact detail with inbound refs; tombstoning |
+| `Verify.cs` | Derived status (stale, contested) and the cite check behind `verify` |
+| `Changes.cs` | The change journal: paging from a cursor, the subject filter, retention |
 | `ContentHash.cs`, `CanonicalJson.cs`, `JsonCodec.cs`, `Names.cs` | Content hashing, canonical JSON, serialization options, name helpers |
 | `Mcp.cs` | MCP server over stdio |
 | `Web.cs`, `www/index.html`, `www/app.js`, `www/graph.js` | Loopback HTTP server and the embedded page and scripts |
@@ -24,7 +26,7 @@ One product project, `src/Dossier/Dossier.csproj`: C# on net10.0, SQLite (WAL) w
 
 ```text
 README.md          the entry point
-docs/              reference docs: concepts, cli, publish, evaluation, install, releasing, architecture
+docs/              reference docs: concepts, cli, multi-agent, publish, evaluation, install, releasing, architecture
 Dossier.sln        solution (src project, tests and the tools demo)
 global.json        pins the Microsoft.Testing.Platform test runner
 SECURITY.md        security policy: how to report a vulnerability
@@ -38,6 +40,7 @@ examples/          memos-bundle/ (committed publish output), NOTICE.md (upstream
 profiles/          consumer quota profiles for publish --profile (copilot-studio.json, generic-large.json)
 scripts/           seed.sh, e2e.sh, eval.sh, scaling.sh, scale-test.sh, verify-refs.sh, publish-demo.sh, publish-profile-demo.sh
 scripts/smoke-aot.sh       smoke-test a published Native AOT binary
+scripts/fleet-eval.mjs     fleet evaluation: several MCP agents on one store, one experiment per failure mode
 scripts/seed/      the Memos demo corpus and a notes.md for dump
 scripts/eval/      questions.json, sources.json; artifacts/ is git-ignored output
 skills/dossier/    SKILL.md: how an agent uses Dossier well (the loop, rules, commands)

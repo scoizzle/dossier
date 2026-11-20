@@ -24,8 +24,23 @@ public sealed record ChangeRow(
 /// </summary>
 public sealed record ChangesPage(long From, long To, long Next, bool Truncated, bool Reset, List<ChangeRow> Changes);
 
+/// <summary>
+/// changes request, shared by the MCP tool and the CLI verb: rows after <c>Since</c> (default 0), or the
+/// newest <c>Last</c> rows when that is given (it wins), optionally for one subject.
+/// </summary>
+public sealed class ChangesRequest
+{
+    public long? Since { get; set; }
+    public int? Last { get; set; }
+    public int? Limit { get; set; }
+    public string? Subject { get; set; }
+}
+
 public sealed partial class DossierStore
 {
+    /// <summary>Rows per page when a changes request names no limit; the same default <c>/api/changes</c> uses.</summary>
+    public const int DefaultChangesLimit = 100;
+
     /// <summary>Journal rows kept after pruning.</summary>
     internal const int ChangeRetention = 100_000;
 
@@ -75,43 +90,103 @@ public sealed partial class DossierStore
     /// <summary>
     /// Journal rows with <c>seq &gt; since</c>, oldest first, at most <paramref name="limit"/>. The head, the
     /// oldest retained seq and the rows are read in one deferred transaction, so they describe one snapshot
-    /// and the read never takes the write lock.
+    /// and the read never takes the write lock. With <paramref name="subject"/> (an id, name or alias) only
+    /// that subject's rows are returned, and a page that is not truncated moves <c>Next</c> to the head:
+    /// nothing of the subject is left behind it, so the cursor may skip other subjects' rows.
     /// </summary>
-    public ChangesPage ReadChanges(long since, int limit)
+    public ChangesPage ReadChanges(long since, int limit, string? subject = null)
     {
         limit = Math.Clamp(limit, 1, 500);
         using var connection = OpenConnection();
         using var transaction = connection.BeginTransaction(deferred: true);
         var (head, oldest) = ReadWindow(connection, transaction);
+        var filter = SubjectFilter(connection, transaction, subject);
 
         if (since > head || since < oldest - 1)
         {
             return new ChangesPage(since, head, head, false, true, new List<ChangeRow>());
         }
 
-        var rows = ReadRows(connection, transaction, $"SELECT {ChangeColumns} {ChangeFrom} WHERE c.seq > $since ORDER BY c.seq LIMIT $limit", ("$since", since), ("$limit", limit));
-        var next = rows.Count > 0 ? rows[^1].Seq : head;
-        return new ChangesPage(since, next, next, rows.Count > 0 && next < head, false, rows);
+        if (filter is null)
+        {
+            var rows = ReadRows(connection, transaction, $"SELECT {ChangeColumns} {ChangeFrom} WHERE c.seq > $since ORDER BY c.seq LIMIT $limit", ("$since", since), ("$limit", limit));
+            var next = rows.Count > 0 ? rows[^1].Seq : head;
+            return new ChangesPage(since, next, next, rows.Count > 0 && next < head, false, rows);
+        }
+
+        // One row past the page says whether the subject has more; without it the page ends at the head.
+        var matched = ReadRows(
+            connection,
+            transaction,
+            $"SELECT {ChangeColumns} {ChangeFrom} WHERE c.seq > $since AND {filter.Value.Sql} ORDER BY c.seq LIMIT $limit",
+            [("$since", since), ("$limit", limit + 1), .. filter.Value.Parameters]);
+        var truncated = matched.Count > limit;
+        if (truncated)
+        {
+            matched.RemoveAt(matched.Count - 1);
+        }
+
+        var cursor = truncated ? matched[^1].Seq : head;
+        return new ChangesPage(since, cursor, cursor, truncated, false, matched);
     }
 
     /// <summary>
     /// The newest <paramref name="limit"/> rows, oldest first; <c>Next</c> is the head. Reads in one
-    /// deferred transaction, so it is a WAL snapshot read and never takes the write lock.
+    /// deferred transaction, so it is a WAL snapshot read and never takes the write lock. With
+    /// <paramref name="subject"/> the rows are that subject's newest.
     /// </summary>
-    public ChangesPage ReadChangesLast(int limit)
+    public ChangesPage ReadChangesLast(int limit, string? subject = null)
     {
         limit = Math.Clamp(limit, 1, 500);
         using var connection = OpenConnection();
         using var transaction = connection.BeginTransaction(deferred: true);
         var (head, oldest) = ReadWindow(connection, transaction);
+        var filter = SubjectFilter(connection, transaction, subject);
 
-        var rows = ReadRows(
+        if (filter is null)
+        {
+            var rows = ReadRows(
+                connection,
+                transaction,
+                $"SELECT * FROM (SELECT {ChangeColumns} {ChangeFrom} ORDER BY c.seq DESC LIMIT $limit) ORDER BY 1",
+                ("$limit", limit));
+            var from = rows.Count > 0 ? rows[0].Seq - 1 : head;
+            return new ChangesPage(from, head, head, rows.Count > 0 && rows[0].Seq > oldest, false, rows);
+        }
+
+        var matched = ReadRows(
             connection,
             transaction,
-            $"SELECT * FROM (SELECT {ChangeColumns} {ChangeFrom} ORDER BY c.seq DESC LIMIT $limit) ORDER BY 1",
-            ("$limit", limit));
-        var from = rows.Count > 0 ? rows[0].Seq - 1 : head;
-        return new ChangesPage(from, head, head, rows.Count > 0 && rows[0].Seq > oldest, false, rows);
+            $"SELECT * FROM (SELECT {ChangeColumns} {ChangeFrom} WHERE {filter.Value.Sql} ORDER BY c.seq DESC LIMIT $limit) ORDER BY 1",
+            [("$limit", limit + 1), .. filter.Value.Parameters]);
+        var older = matched.Count > limit;
+        if (older)
+        {
+            matched.RemoveAt(0);
+        }
+
+        return new ChangesPage(matched.Count > 0 ? matched[0].Seq - 1 : head, head, head, older, false, matched);
+    }
+
+    /// <summary>
+    /// The SQL condition and parameters that keep one subject's journal rows, or null for no filter.
+    /// A subject that resolves to nothing is rejected: a typo must not read as "nothing changed".
+    /// </summary>
+    private static (string Sql, (string Name, object Value)[] Parameters)? SubjectFilter(SqliteConnection connection, SqliteTransaction transaction, string? subject)
+    {
+        if (subject is null)
+        {
+            return null;
+        }
+
+        var ids = ResolveSubjectIds(connection, subject, transaction);
+        if (ids.Count == 0)
+        {
+            throw new DossierRequestException("subject_not_found", $"subject \"{subject}\" was not found");
+        }
+
+        var parameters = ids.Select((id, index) => ($"$subject{index}", (object)id)).ToArray();
+        return ($"c.subject_id IN ({string.Join(", ", parameters.Select(p => p.Item1))})", parameters);
     }
 
     private static (long Head, long Oldest) ReadWindow(SqliteConnection connection, SqliteTransaction transaction)

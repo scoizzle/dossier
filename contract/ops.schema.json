@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dossier.local/contract/ops.schema.json",
   "title": "Dossier operations",
-  "description": "Request/response shapes for dump, post_facts, correlate, search, compile_dossier. Core is pure functions over a Store; transports call the same functions.",
+  "description": "Request/response shapes for dump, post_facts, correlate, search, compile_dossier, verify_facts, changes. Core is pure functions over a Store; transports call the same functions.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -10,7 +10,9 @@
     "post_facts": { "$ref": "#/$defs/Op_post_facts" },
     "correlate": { "$ref": "#/$defs/Op_correlate" },
     "search": { "$ref": "#/$defs/Op_search" },
-    "compile_dossier": { "$ref": "#/$defs/Op_compile_dossier" }
+    "compile_dossier": { "$ref": "#/$defs/Op_compile_dossier" },
+    "verify_facts": { "$ref": "#/$defs/Op_verify_facts" },
+    "changes": { "$ref": "#/$defs/Op_changes" }
   },
   "$defs": {
     "Op_dump": {
@@ -56,6 +58,25 @@
       "properties": {
         "request": { "$ref": "#/$defs/CompileRequest" },
         "response": { "$ref": "dossier.schema.json" }
+      }
+    },
+
+    "Op_verify_facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/VerifyRequest" },
+        "response": { "$ref": "#/$defs/VerifyResponse" }
+      }
+    },
+    "Op_changes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["request", "response"],
+      "properties": {
+        "request": { "$ref": "#/$defs/ChangesRequest" },
+        "response": { "$ref": "#/$defs/ChangesPage" }
       }
     },
 
@@ -280,6 +301,105 @@
           }
         },
         "format": { "type": "string", "enum": ["json", "markdown"] }
+      }
+    },
+
+    "VerifyRequest": {
+      "title": "verify_facts request",
+      "description": "The fact ids a plan, summary or answer cites. Repeated ids are answered once.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ids"],
+      "properties": {
+        "ids": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1, "maxItems": 200 }
+      }
+    },
+    "VerifyResponse": {
+      "title": "verify_facts response",
+      "description": "Derived status of each requested fact, read in one snapshot; nothing is written. current is true only when every fact is live.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["revision", "current", "facts"],
+      "properties": {
+        "revision": { "type": "integer", "minimum": 0, "description": "The store revision the answer was read at." },
+        "current": { "type": "boolean" },
+        "facts": { "type": "array", "items": { "$ref": "#/$defs/VerifiedFact" }, "description": "One entry per distinct requested id, in request order." }
+      }
+    },
+    "VerifiedFact": {
+      "title": "VerifiedFact",
+      "description": "status precedence: retracted, superseded (both stored), then stale, then contested, else live. unknown is an id the store does not hold. stale: a live fact with a derived_from ref of kind fact to a fact that was retracted, was superseded by a different claim (a different content_hash), or is itself stale. contested: a live, non-stale fact that a live, non-stale fact refutes or contradicts (ref of kind fact), or that itself contradicts one. Slot refs and external refs never make a fact stale or contested.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "status", "current"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "subject_id": { "type": "string", "minLength": 1, "description": "Absent when status is unknown." },
+        "status": { "type": "string", "enum": ["live", "superseded", "retracted", "stale", "contested", "unknown"] },
+        "current": { "type": "boolean", "description": "True only when status is live." },
+        "replaced_by": { "type": "string", "minLength": 1, "description": "status=superseded only: the fact its slot holds now, which may be several reposts later. Absent when that slot was cleared by a retraction." },
+        "why": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/StatusReason" }, "description": "status=stale or contested only." }
+      }
+    },
+    "StatusReason": {
+      "title": "StatusReason",
+      "description": "rel=derived_from: fact is an input that changed, state says how, and replaced_by names the fact that replaced a superseded input. rel=refutes|contradicts: fact is the other party of the dispute.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rel", "fact"],
+      "properties": {
+        "rel": { "type": "string", "enum": ["derived_from", "refutes", "contradicts"] },
+        "fact": { "type": "string", "minLength": 1 },
+        "state": { "type": "string", "enum": ["superseded", "retracted", "stale"], "description": "rel=derived_from only." },
+        "replaced_by": { "type": "string", "minLength": 1, "description": "rel=derived_from with state=superseded only." }
+      }
+    },
+
+    "ChangesRequest": {
+      "title": "changes request",
+      "description": "Rows written after since (default 0), oldest first, at most limit; or the newest last rows when last is given (it wins). subject (id, name or alias) keeps one subject's rows; an unknown subject is rejected with subject_not_found.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "since": { "type": "integer", "minimum": 0 },
+        "last": { "type": "integer", "minimum": 1, "description": "At most 500; a larger value is clamped." },
+        "limit": { "type": "integer", "minimum": 1, "default": 100, "description": "At most 500; a larger value is clamped." },
+        "subject": { "type": "string", "minLength": 1 }
+      }
+    },
+    "ChangesPage": {
+      "title": "changes response",
+      "description": "A page of the change journal. Pass next back as since. reset true means the cursor is ahead of the head or behind the retained window: re-read everything. The journal records row writes only, so a fact that became stale or contested through another fact's write has no row of its own.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "next", "truncated", "reset", "changes"],
+      "properties": {
+        "from": { "type": "integer", "minimum": 0 },
+        "to": { "type": "integer", "minimum": 0 },
+        "next": { "type": "integer", "minimum": 0, "description": "With a subject filter and truncated false this is the head, so the cursor skips other subjects' rows." },
+        "truncated": { "type": "boolean", "description": "More matching rows exist past next (since), or before the page (last)." },
+        "reset": { "type": "boolean" },
+        "changes": { "type": "array", "items": { "$ref": "#/$defs/ChangeRow" } }
+      }
+    },
+    "ChangeRow": {
+      "title": "ChangeRow",
+      "description": "One row write to facts, subjects, refs or slots. The fact fields describe the fact as it is now, not as it was at seq.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["seq", "tbl", "op", "subject_id", "subject_name", "fact_id", "fact_kind", "fact_status", "text", "actor", "at"],
+      "properties": {
+        "seq": { "type": "integer", "minimum": 1, "description": "The revision the write committed under." },
+        "tbl": { "type": "string", "enum": ["facts", "subjects", "refs", "slots"] },
+        "op": { "type": "string", "enum": ["insert", "update", "delete"] },
+        "subject_id": { "type": ["string", "null"] },
+        "subject_name": { "type": ["string", "null"] },
+        "fact_id": { "type": ["string", "null"] },
+        "fact_kind": { "type": ["string", "null"] },
+        "fact_status": { "type": ["string", "null"], "description": "Stored status: live, superseded or retracted." },
+        "text": { "type": ["string", "null"], "description": "Fact text cut to 160 characters. Untrusted data." },
+        "actor": { "type": ["string", "null"], "description": "Set only on a fact insert: that fact's provenance actor, an unauthenticated label." },
+        "at": { "type": "string", "description": "ISO 8601 UTC." }
       }
     }
   }

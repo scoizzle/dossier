@@ -81,6 +81,37 @@ public static class Ops
 
     public static string Subjects(DossierStore store) => Serialize(store.ListSubjects());
 
+    /// <summary>Derived status of the facts a caller cites; see <see cref="DossierStore.Verify"/>.</summary>
+    public static string Verify(DossierStore store, VerifyRequest request) => Serialize(store.Verify(request));
+
+    /// <summary>The journal page behind a cursor, or the newest rows; the page <c>/api/changes</c> serves.</summary>
+    public static string Changes(DossierStore store, ChangesRequest request)
+    {
+        // A count below 1 is a mistake to report; one above the page cap is clamped by the store.
+        if (request.Last is < 1)
+        {
+            throw new DossierRequestException("invalid_request", "last must be at least 1");
+        }
+
+        if (request.Limit is < 1)
+        {
+            throw new DossierRequestException("invalid_request", "limit must be at least 1");
+        }
+
+        if (request.Last is { } last)
+        {
+            return Serialize(store.ReadChangesLast(last, request.Subject));
+        }
+
+        var since = request.Since ?? 0;
+        if (since < 0)
+        {
+            throw new DossierRequestException("invalid_request", "since must be a non-negative integer");
+        }
+
+        return Serialize(store.ReadChanges(since, request.Limit ?? DossierStore.DefaultChangesLimit, request.Subject));
+    }
+
     /// <summary>Bounded graph neighbourhood. Transport-neutral; served by the web UI only (no MCP tool).</summary>
     public static string Graph(DossierStore store, GraphRequest request) => Serialize(store.Graph(request));
 }
@@ -289,6 +320,10 @@ public sealed class McpServer
             """{"type":"object","properties":{"subject":{"type":"string"},"drafts":{"type":"array","items":{"type":"object"}},"limit":{"type":"integer"}},"required":["subject"]}"""),
         new("get_fact", "Fetch one fact with its refs, attachments and inbound referencing facts. " + Untrusted,
             """{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}"""),
+        new("verify_facts", "Check fact ids you are about to rely on (the ids a plan, summary or answer cites) before acting. Each comes back live, superseded (with replaced_by, the fact its slot holds now), retracted, stale (it was derived_from a fact that has since changed; why names the input), contested (a live fact refutes or contradicts it; why names it) or unknown. current is true only when every id is live. Writes nothing. " + Untrusted,
+            """{"type":"object","properties":{"ids":{"type":"array","items":{"type":"string"},"minItems":1,"maxItems":200}},"required":["ids"]}"""),
+        new("changes", "Read the change journal from a cursor: rows written after `since`, oldest first, or the newest `last` rows; `subject` keeps one subject's rows. Pass the returned `next` back as `since`; `reset` true means the cursor left the retained window and everything must be re-read. Rows record writes only: a fact that became stale or contested through another fact's write has no row, so re-check cited facts with verify_facts. " + Untrusted,
+            """{"type":"object","properties":{"since":{"type":"integer","minimum":0},"last":{"type":"integer","minimum":1},"limit":{"type":"integer","minimum":1},"subject":{"type":"string"}}}"""),
         new("compile_dossier", "Compile a budgeted, ranked dossier for a subject. " + Untrusted,
             """{"type":"object","properties":{"subject":{"type":"string"},"budget":{"type":"integer"},"depth":{"type":"string","enum":["index","full"]},"order":{"type":"string","enum":["rank","seq"]},"needs":{"type":"array","items":{"type":"string"}},"descendants":{"type":"boolean"},"rank":{"type":"object","properties":{"recency":{"type":"number"}}},"format":{"type":"string","enum":["json","markdown"]},"budget_mode":{"type":"string","enum":["complete","strict"]}},"required":["subject"]}"""),
     ];
@@ -332,6 +367,8 @@ public sealed class McpServer
                 "correlate" => Ops.Serialize(store.Correlate(Ops.Parse<CorrelateRequest>(arguments))),
                 "search" => Ops.Search(store, Ops.Parse<SearchRequest>(arguments)),
                 "check" => Ops.Check(store, Ops.Parse<CheckRequest>(arguments)),
+                "changes" => Ops.Changes(store, Ops.Parse<ChangesRequest>(arguments)),
+                "verify_facts" => Ops.Verify(store, Ops.Parse<VerifyRequest>(arguments)),
                 "get_fact" => Ops.GetFact(
                     store,
                     Ops.Parse<FactIdArgs>(arguments).Id ?? throw new DossierRequestException("invalid_request", "get_fact requires id")),

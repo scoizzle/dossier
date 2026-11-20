@@ -109,7 +109,7 @@ public sealed partial class DossierStore
         {
             join = "JOIN facts_fts ON facts_fts.rowid = f.rowid";
             conditions.Add("facts_fts MATCH $q");
-            parameters["$q"] = request.Q;
+            parameters["$q"] = LiteralizeQuery(request.Q);
             scoreExpression = "bm25(facts_fts, 10.0, 3.0)";
         }
 
@@ -205,6 +205,107 @@ public sealed partial class DossierStore
                 : EncodeCursor(page[^1].CreatedAt, page[^1].Id, page[^1].Score),
         };
     }
+
+    /// <summary>
+    /// Makes a plain-text q mean what it says. FTS5 reads a bare term containing '-', ':', '.', '/' and
+    /// the like as syntax ("Self-taught" becomes column "taught"), so such a term is wrapped in double
+    /// quotes, which FTS5 then tokenizes as a phrase. Everything that already is FTS5 syntax is passed
+    /// through untouched: quoted strings, parentheses, AND/OR/NOT/NEAR, a trailing '*', the '^', '+'
+    /// and ',' operators, and a "text:" or "tags:" column filter (its value is quoted when it needs it).
+    /// </summary>
+    internal static string LiteralizeQuery(string q)
+    {
+        var builder = new StringBuilder(q.Length + 8);
+        var index = 0;
+        while (index < q.Length)
+        {
+            var current = q[index];
+            if (char.IsWhiteSpace(current) || current is '(' or ')')
+            {
+                builder.Append(current);
+                index++;
+                continue;
+            }
+
+            if (current == '"')
+            {
+                // A quoted string is copied as written, including a doubled quote inside it. One that
+                // never closes is left for FTS5 to reject.
+                var end = index + 1;
+                while (end < q.Length && (q[end] != '"' || (end + 1 < q.Length && q[end + 1] == '"')))
+                {
+                    end += q[end] == '"' ? 2 : 1;
+                }
+
+                end = Math.Min(end + 1, q.Length);
+                builder.Append(q, index, end - index);
+                index = end;
+                continue;
+            }
+
+            var start = index;
+            while (index < q.Length && !char.IsWhiteSpace(q[index]) && q[index] is not ('(' or ')' or '"'))
+            {
+                index++;
+            }
+
+            AppendTerm(builder, q.AsSpan(start, index - start));
+        }
+
+        return builder.ToString();
+    }
+
+    private static void AppendTerm(StringBuilder builder, ReadOnlySpan<char> term)
+    {
+        foreach (var column in FtsColumns)
+        {
+            if (term.Length > column.Length && term[column.Length] == ':' && term.StartsWith(column, StringComparison.OrdinalIgnoreCase))
+            {
+                builder.Append(term[..(column.Length + 1)]);
+                term = term[(column.Length + 1)..];
+                break;
+            }
+        }
+
+        var prefix = term.Length > 1 && term[^1] == '*';
+        if (prefix)
+        {
+            term = term[..^1];
+        }
+
+        // Quote only a term that mixes word characters with something FTS5 would parse: a term made of
+        // word characters and operator characters alone is already what FTS5 expects (or its own error).
+        var hasWord = false;
+        var hasOther = false;
+        foreach (var value in term)
+        {
+            if (char.IsLetterOrDigit(value) || value == '_' || value >= 0x80)
+            {
+                hasWord = true;
+            }
+            else if (value is not ('^' or '+' or ',' or '*'))
+            {
+                hasOther = true;
+            }
+        }
+
+        if (hasWord && hasOther)
+        {
+            builder.Append('"').Append(term).Append('"');
+        }
+        else
+        {
+            builder.Append(term);
+        }
+
+        if (prefix)
+        {
+            builder.Append('*');
+        }
+    }
+
+    /// <summary>The columns of facts_fts, the only names a column filter may use.</summary>
+    private static readonly string[] FtsColumns = ["text", "tags"];
 
     /// <summary>search with brief=true: same query, total/complete/next, one short line per hit.</summary>
     public BriefSearchResponse SearchBrief(SearchRequest request)
@@ -378,12 +479,12 @@ public sealed partial class DossierStore
     }
 
     /// <summary>Subject ids whose id equals the value exactly, or whose name/alias matches casefolded.</summary>
-    private static List<string> ResolveSubjectIds(SqliteConnection connection, string value)
+    private static List<string> ResolveSubjectIds(SqliteConnection connection, string value, SqliteTransaction? transaction = null)
     {
         var wanted = Names.Normalize(value);
         var ids = new List<string>();
 
-        using var command = Command(connection, null, "SELECT id, name, aliases FROM subjects");
+        using var command = Command(connection, transaction, "SELECT id, name, aliases FROM subjects");
         using var reader = command.ExecuteReader();
         while (reader.Read())
         {

@@ -223,7 +223,7 @@ public sealed class CheckTests
         var names = list.GetProperty("result").GetProperty("tools").EnumerateArray().Select(t => t.GetProperty("name").GetString()).ToList();
         await Assert.That(names.Contains("check")).IsTrue();
         await Assert.That(names.Contains("resolve_subject")).IsFalse();
-        await Assert.That(names.Count).IsEqualTo(7);
+        await Assert.That(names.Count).IsEqualTo(9);
     }
 
     [Test]

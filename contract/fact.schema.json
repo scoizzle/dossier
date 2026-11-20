@@ -10,7 +10,7 @@
     "id": { "type": "string", "minLength": 1 },
     "subject_id": { "type": "string", "minLength": 1 },
     "kind": { "type": "string", "minLength": 1 },
-    "key": { "type": "string", "minLength": 1, "description": "Declared slot. Unique per (subject_id, kind, key) among live facts." },
+    "key": { "type": "string", "minLength": 1, "description": "Declared slot. Unique per (subject_id, kind, key) among live facts. A keyed repost supersedes the fact in the slot, unless it is identical in every field, which is deduped." },
     "text": { "type": "string" },
     "data": { "description": "Optional structured payload (any JSON value). Presence makes the fact conflict-eligible." },
     "items": { "type": "array", "items": { "$ref": "#/$defs/Item" }, "description": "Optional compound sub-assertions; allowed on any fact." },
@@ -27,7 +27,7 @@
       "title": "Status",
       "type": "string",
       "enum": ["live", "superseded", "contested", "retracted", "stale"],
-      "description": "Derived, never authoritative."
+      "description": "Derived, never authoritative. A stored fact holds only the lifecycle values live, superseded and retracted; stale and contested are derived from refs at read time and reported by verify_facts (ops.schema.json#/$defs/VerifiedFact)."
     },
     "Item": {
       "title": "Item",

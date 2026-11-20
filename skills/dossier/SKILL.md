@@ -28,6 +28,17 @@ Dossier is a local fact store. You post small claims about a subject as you lear
 5. **Resolve and check in one call.** Call `dossier check --subject "<name>" [--drafts <file|->]` (MCP `check`). It resolves the canonical subject (`match` is `exact_id`, `exact_name`, `exact_alias`, `prefix` or `fuzzy`), summarises what is already known (fact and conflict counts plus the top claims), and, when you pass drafts, returns the verdict a real post would give each one: `new`, `deduped` or `replaced`. `check` also reports `near`, an advisory list of up to 3 existing fact ids that are at least 85 percent similar to the draft; it never changes the status, and posting such a draft anyway creates a separate fact. Review the near list, repost with the same `key` if you mean to update, and only then post for real. `check` writes nothing. Use `dossier search --brief` (MCP `search` with `brief` true) when you only need to know whether something exists; `dossier post --dry-run` remains for a full post preview. `match` settles identity: only `exact_id`, `exact_name` and `exact_alias` mean the subject you named, so a different spelling or separator (for example `memos home` for `Memos/Home`) resolves only as `prefix` or `fuzzy` and is a different subject to post against; use the returned `name`.
 6. **Compile or publish when asked.** Call `dossier dossier compile --subject <name>` (MCP `compile_dossier`) for an in-context dossier, or `dossier publish --out <dir>` for a markdown bundle.
 
+## Share a store with other agents
+
+Use these steps when other agents or sessions write to the same store. They add to the loop above.
+
+1. **Take a cursor before you read.** Call `dossier changes --last 1` (MCP `changes` with `last: 1`) and keep `next`.
+2. **Name your inputs when you post a conclusion.** Give a fact that you derived from other facts a `derived_from` ref of kind `fact` to each of them, by id. When you disagree with a fact, post what you observed with a `refutes` or `contradicts` ref of kind `fact` to it; do not overwrite it.
+3. **Verify the facts you cite before you act on them.** Call `dossier verify <id>...` (MCP `verify_facts`) with the ids your plan, summary or answer relies on. Each comes back `live`, `superseded` (with `replaced_by`), `retracted`, `stale` (an input it was derived from has changed; `why` names it), `contested` (a live fact disputes it; `why` names it) or `unknown`. Act only when `current` is true. Otherwise read the replacement or the objection and redo the step. In a script, `dossier verify --require-current <ids>` exits 1 unless every id is live.
+4. **Catch up from the cursor.** Call `dossier changes --since <cursor> --subject <name>` (MCP `changes`) to list what was written since, and keep the new `next`. `reset: true` means the cursor is too old: read the subject again from scratch. The journal lists writes only. A fact that went stale because its input changed has no row of its own, so after any change to a subject you depend on, run step 3 again.
+
+Search, compile and `show` print a fact's stored status, so a stale or contested fact still reads `live` there; only `verify` reports those two. The actor on a fact is the name its writer sent, not proof of who wrote it. Every agent on a store can read and supersede everything in it.
+
 ## Document a source (any content type)
 
 Use this loop to document one unit (a file, document, schema or config) as a tree of symbol subjects. It is progressive and iterative: start at the top level and go deeper only where a symbol warrants it. It works the same for code, prose and configuration.
@@ -47,7 +58,9 @@ Use this loop to document one unit (a file, document, schema or config) as a tre
 
 **Declare refs or the graph is a cloud.** Facts without refs are isolated points. A corpus built only from dumped chunks (a measured run of 50,013 facts) produced zero edges, because file refs from dumped chunks cannot resolve to nodes. Compile can only follow, rank and traverse what you linked, so add `refs` when you post. Run `dossier correlate` to propose more, but it writes nothing; you still post them.
 
-**Give stable facts a key.** Set `key` on any fact that describes a durable attribute, for example `composerMaxRows`. Posting again with the same subject, kind and key returns `replaced` and supersedes the old fact. Without a key, a revisit creates a duplicate that stays live.
+**Give stable facts a key.** Set `key` on any fact that describes a durable attribute, for example `composerMaxRows`. Posting again with the same subject, kind and key returns `replaced` and supersedes the old fact; a repost that is identical in every field returns `deduped` and writes nothing, so agents that post the same keyed claim converge on one row. Without a key, a revisit creates a duplicate that stays live.
+
+**Link a conclusion to its inputs by fact id.** `verify` can only tell you a conclusion is stale if the fact declares what it was built on: a `derived_from` ref of kind `fact` per input. A ref of kind `slot` follows whatever the slot holds now, so it cannot show that the value you used has been replaced, and a conclusion with no `derived_from` ref is never reported stale.
 
 **Put comparable values in `data`.** Conflicts fire only on structured data, never on prose. If two facts disagree about a value, put the value in `data` under a shared `key` so compile and `conflicts.md` can surface it. A number stated only in `text` will never conflict.
 
@@ -72,6 +85,8 @@ Run as `dossier <verb>`; this table is the verb list, not the flag reference.
 | `dossier check` | Resolve a subject, summarise what is known, and judge draft facts without writing (`--subject`, `--drafts`, `--limit`); near duplicates are an advisory `near` list. |
 | `dossier search` | Find facts by text and filters, including reverse impact (`--ref-target --direction in`); `--brief` returns one line per hit. |
 | `dossier show` | Print one fact with its refs, attachments and inbound referrers. |
+| `dossier verify` | Report whether the facts you cite are still live, and why not (`--require-current` exits 1 unless all are). |
+| `dossier changes` | Read the change journal from a cursor (`--since`, `--last`, `--limit`, `--subject`). |
 | `dossier retract` | Retract a fact by id. |
 | `dossier dossier compile` | Compile a ranked dossier for a subject (`--budget-mode complete\|strict`). |
 | `dossier publish` | Write a markdown bundle (`--out`, `--budget-mode`, `--profile`, `--respect-limits`). |
@@ -81,11 +96,12 @@ Run as `dossier <verb>`; this table is the verb list, not the flag reference.
 
 ## MCP tools
 
-Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`.
+Nine tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`, `verify_facts`, `changes`.
 
 Three resources: `dossier://subjects`, `dossier://subject/{id}`, `dossier://fact/{id}`.
 
 ## Where to read more
 
 - [`contract/`](../../contract/) holds the normative JSON Schemas for subject, fact, ref, ops and dossier.
-- [`docs/concepts.md`](../../docs/concepts.md) holds the model, budget modes and conflicts; [`docs/cli.md`](../../docs/cli.md) the full CLI reference.
+- [`docs/concepts.md`](../../docs/concepts.md) holds the model, derived status, budget modes and conflicts; [`docs/cli.md`](../../docs/cli.md) the full CLI reference.
+- [`docs/multi-agent.md`](../../docs/multi-agent.md) holds what a shared store guarantees and what it does not.

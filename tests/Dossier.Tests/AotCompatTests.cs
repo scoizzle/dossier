@@ -198,6 +198,38 @@ public sealed class AotCompatTests
     }
 
     [Test]
+    public async Task Shape_VerifyAndChangesTypes()
+    {
+        var verify = new VerifyResponse
+        {
+            Revision = 7,
+            Facts = new List<VerifiedFact>
+            {
+                new() { Id = "a", SubjectId = "s", Status = "live", Current = true },
+                new() { Id = "b", SubjectId = "s", Status = "superseded", ReplacedBy = "c" },
+                new()
+                {
+                    Id = "d", SubjectId = "s", Status = "stale",
+                    Why = new List<StatusReason> { new() { Rel = "derived_from", Fact = "b", State = "superseded", ReplacedBy = "c" } },
+                },
+                new() { Id = "e", SubjectId = "s", Status = "contested", Why = new List<StatusReason> { new() { Rel = "refutes", Fact = "f" } } },
+                new() { Id = "z", Status = "unknown" },
+            },
+        };
+        await Assert.That(Json(verify)).IsEqualTo(
+            """{"revision":7,"current":false,"facts":[{"id":"a","subject_id":"s","status":"live","current":true},{"id":"b","subject_id":"s","status":"superseded","current":false,"replaced_by":"c"},{"id":"d","subject_id":"s","status":"stale","current":false,"why":[{"rel":"derived_from","fact":"b","state":"superseded","replaced_by":"c"}]},{"id":"e","subject_id":"s","status":"contested","current":false,"why":[{"rel":"refutes","fact":"f"}]},{"id":"z","status":"unknown","current":false}]}""");
+
+        var verifyRequest = Parse<VerifyRequest>("""{"ids":["a","b"]}""");
+        await Assert.That(verifyRequest.Ids.SequenceEqual(new[] { "a", "b" })).IsTrue();
+
+        var changesRequest = Parse<ChangesRequest>("""{"since":12,"last":3,"limit":50,"subject":"Widget"}""");
+        await Assert.That(changesRequest.Since).IsEqualTo(12);
+        await Assert.That(changesRequest.Last).IsEqualTo(3);
+        await Assert.That(changesRequest.Limit).IsEqualTo(50);
+        await Assert.That(changesRequest.Subject).IsEqualTo("Widget");
+    }
+
+    [Test]
     public async Task Shape_DumpCorrelateAndRequestTypes()
     {
         var dump = new DumpResponse

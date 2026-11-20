@@ -16,6 +16,7 @@ public sealed partial class DossierStore
         List<AttachmentRecord> attachments;
 
         using (var connection = OpenConnection())
+        using (new ReadSnapshot(connection))
         {
             using (var command = Command(
                 connection,
@@ -52,6 +53,12 @@ public sealed partial class DossierStore
 
             refs = ReadRefs(connection, id);
             attachments = ReadAttachments(connection, id);
+
+            // The same derivation verify uses: the row's own status is only its lifecycle.
+            var derived = new CurrencyReader(connection, null).Describe(id);
+            fact.Status = derived.Status;
+            fact.ReplacedBy = derived.ReplacedBy;
+            fact.Why = derived.Why;
         }
 
         var inbound = Search(new SearchRequest { RefTarget = id, Direction = "in", Limit = MaxLimit }).Hits;

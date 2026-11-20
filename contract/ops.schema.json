@@ -249,13 +249,14 @@
         "key": { "type": "string", "minLength": 1 },
         "tag": { "type": "string", "minLength": 1 },
         "actor": { "type": "string", "minLength": 1 },
-        "status": { "$ref": "fact.schema.json#/$defs/Status" },
+        "status": { "$ref": "fact.schema.json#/$defs/Status", "description": "Filters by derived status: live excludes a stored-live fact that is stale or contested, and stale or contested returns exactly those. Without it, superseded and retracted facts are left out and everything else is returned." },
         "since": { "type": "string", "format": "date-time" },
         "q": { "type": "string" },
         "ref_target": { "type": "string", "minLength": 1 },
         "direction": { "type": "string", "enum": ["in", "out"] },
         "limit": { "type": "integer", "minimum": 1, "default": 20 },
-        "cursor": { "type": "string" }
+        "cursor": { "type": "string" },
+        "brief": { "type": "boolean", "description": "One short line per hit (id, kind, status, the first 120 characters of text) in place of full FactViews." }
       }
     },
     "SearchResponse": {

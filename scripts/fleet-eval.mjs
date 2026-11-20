@@ -326,12 +326,14 @@ async function main() {
     if (!concurrent) {
       pairs.sequential++;
       const verified = await reader.tool('verify_facts', { ids: [one.id, two.id] });
-      if (verified.facts.every((fact) => fact.status === 'contested') && verified.current === false) pairs.contested++;
+      const hits = (await reader.tool('search', { subject, limit: 10 })).hits;
+      if (verified.facts.every((fact) => fact.status === 'contested') && verified.current === false
+        && [one.id, two.id].every((id) => hits.find((hit) => hit.id === id)?.status === 'contested')) pairs.contested++;
     }
   });
   rate('contradiction', 'both contradictory writes admitted (no dedup rejection)', pairs.admitted, pairs.total, 1);
   rate('contradiction', 'conflict surfaced in the compiled dossier, citing both facts', pairs.surfaced, pairs.total, 1);
-  rate('contradiction', 'declared dispute: verify reports both facts contested', pairs.contested, pairs.sequential, 1);
+  rate('contradiction', 'declared dispute: verify and search report both facts contested', pairs.contested, pairs.sequential, 1);
 
   // ---- 3. Supersession: two agents write the same slot; exactly one value may be live. ----
   const slots = { total: 0, oneLive: 0, staleRead: 0, revokedReturned: 0, successorNamed: 0, surfacedAsConflict: 0 };
@@ -368,7 +370,7 @@ async function main() {
   rate('supersession', 'overwritten value surfaced as a conflict (known gap)', slots.surfacedAsConflict, slots.total, null);
 
   // ---- 4. Derivation currency: change a chain's root; every descendant must verify stale. ----
-  const currency = { descendants: 0, stale: 0, reasonRight: 0, storedLive: 0, roots: 0, rootRight: 0, controls: 0, falseStale: 0 };
+  const currency = { descendants: 0, stale: 0, reasonRight: 0, readStale: 0, liveFilter: 0, roots: 0, rootRight: 0, controls: 0, falseStale: 0 };
   await inBatches(chains.length, 8, async (index) => {
     const chain = chains[index];
     const [root, ...descendants] = chain.ids;
@@ -398,16 +400,26 @@ async function main() {
       const reason = fact?.why?.[0];
       const input = chain.ids[step];
       if (reason?.rel === 'derived_from' && reason.fact === input && reason.state === (step === 0 ? 'superseded' : 'stale')) currency.reasonRight++;
-      // What a check of the fact's own stored status says: the row was never rewritten.
-      if ((await reader.tool('get_fact', { id: descendants[step] })).fact.status === 'live') currency.storedLive++;
+    }
+
+    // Every read surface must say what verify says: an agent that only searched or compiled has to
+    // see the label too, and a filter for live facts must not hand it a stale one.
+    const hits = (await reader.tool('search', { subject: chain.subject, limit: 50 })).hits;
+    const dossier = await reader.tool('compile_dossier', { subject: chain.subject, depth: 'full' });
+    const liveOnly = (await reader.tool('search', { subject: chain.subject, status: 'live', limit: 50 })).hits;
+    for (const id of descendants) {
+      const shown = (await reader.tool('get_fact', { id })).fact;
+      const compiled = dossier.facts.find((fact) => fact.id === id);
+      if (hits.find((hit) => hit.id === id)?.status === 'stale' && compiled?.status === 'stale' && compiled.why?.length > 0 && shown.status === 'stale') currency.readStale++;
+      if (liveOnly.some((hit) => hit.id === id)) currency.liveFilter++;
     }
   });
   rate('derivation currency', 'descendant of a changed input verifies stale', currency.stale, currency.descendants, 1);
   rate('derivation currency', 'why names the direct input and its state', currency.reasonRight, currency.descendants, 1);
   rate('derivation currency', 'changed root verifies superseded with its replacement', currency.rootRight, currency.roots, 1);
   rate('derivation currency', 'false stale after a same-claim repost (control)', currency.falseStale, currency.controls, 0);
-  // Not an expectation: this is the baseline a check of the fact's own row gives.
-  rate('derivation currency', 'same descendants by stored status alone still read live', currency.storedLive, currency.descendants, null);
+  rate('derivation currency', 'search, compile and get_fact all report the descendant stale', currency.readStale, currency.descendants, 1);
+  rate('derivation currency', 'stale descendant returned by search --status live', currency.liveFilter, currency.descendants, 0);
 
   // ---- 5. Correction: one agent's unkeyed claim is corrected by another with a supersedes ref. ----
   const corrections = { total: 0, applied: 0, leak: 0, named: 0, staleNamed: 0, authors: 0, rejected: 0 };

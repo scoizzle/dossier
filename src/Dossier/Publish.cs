@@ -493,6 +493,9 @@ public sealed partial class DossierStore
                 Depth = options.Depth,
                 BudgetMode = options.BudgetMode,
                 Format = "markdown",
+
+                // A page prints the stored status and no status note, so it is charged for plain lines.
+                OmitStatusNotes = true,
             });
             if (!sharded)
             {

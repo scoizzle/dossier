@@ -34,7 +34,7 @@ Invariants:
 - Refs are the only edge. There are no similarity-derived edges.
 - Every ref carries a basis of `observed`, `derived` or `inferred`.
 - Ref kind `symbol` cites a symbol in an external static analysis. It is external (never a node, never an internal edge, no effect on centrality or ranking). Its target is `<qualified-name>@<revision>`, for example `django.db.models.QuerySet.filter@e4f3fb2d2d11`: the qualified name may contain dots, colons and parentheses, and the revision is everything after the last `@` and must be non-empty. A target without a revision is rejected with `symbol_target_requires_revision`, identically in `post`, `post --dry-run` and `check --drafts`. Basis `observed` is a runtime or human observation; basis `derived` is a citation of an analyzer's output, not an assertion of the referencing fact. If an observation disagrees with the analysis, post it with rel `refutes` against the symbol ref. `search --ref-target '<qualified>@<rev>' --direction in` returns every fact citing the symbol; `--direction out` still rejects it as external. Publish renders it as plain text, not a link.
-- Status is derived, never stored authority. A stored fact holds only its lifecycle (live, superseded, retracted); stale and contested are derived from refs when asked (see [Derived status](#derived-status)).
+- Status is derived, never stored authority. A stored fact holds only its lifecycle (live, superseded, retracted); stale and contested are derived from refs every time a fact is read (see [Derived status](#derived-status)).
 - Fact text has a soft limit of 240 characters and is never truncated.
 - Writes fail closed (the item is rejected with a reason); compile fails open (last good dossier plus a degraded marker).
 
@@ -59,7 +59,7 @@ A store written before corrections took effect may hold `supersedes` refs whose 
 
 ## Derived status
 
-A stored fact is `live`, `superseded` (a keyed repost or a `supersedes` ref replaced it) or `retracted`. Two more statuses are derived from refs at read time and never written, so they cannot drift from the refs that cause them. `dossier verify <id>...` (MCP `verify_facts`) reports them; search, compile and `show` still print the stored status.
+A stored fact is `live`, `superseded` (a keyed repost or a `supersedes` ref replaced it) or `retracted`. Two more statuses are derived from refs at read time and never written, so they cannot drift from the refs that cause them. Every read of a fact reports them, from one shared derivation: a search hit, a compiled dossier, `show` and `dossier verify <id>...` (MCP `verify_facts`) always agree.
 
 | Status | Meaning |
 | --- | --- |
@@ -75,6 +75,15 @@ Three rules keep the label honest:
 - **A dispute lasts as long as the objection stands.** Retract or supersede the refuting fact, or let it go stale, and the fact it disputed is live again.
 
 Data conflicts (two live facts whose `data` disagree) are reported in every dossier's conflicts, not as a status: a conflict slot is a bare field name across the whole subject, so unrelated facts can share one.
+
+Where the status shows:
+
+- **Search.** Each hit carries its derived status, and `--status` filters by it: `live` leaves out a fact that is stale or contested, and `stale` or `contested` returns exactly those, with exact totals and paging. With no `--status`, superseded and retracted facts are left out and everything else is returned, labelled.
+- **Compile.** Each fact carries its status, and a stale or contested fact carries `why`. Every stale fact ranks after every fact that is not stale, and once strict mode has left a current fact out for size it takes no stale fact, so budget is never spent on a stale fact while a current one is waiting. In markdown a stale or contested line ends with the reason, for example `(stale: <input id> was superseded by <new id>)`; those ids are written bare, so a bracketed id is always the citation of an emitted fact.
+- **`show`.** The fact's status, with `replaced_by` or `why`.
+- **Stored status only.** A published bundle, the change journal and the graph view carry the stored lifecycle. A bundle holds live facts only, so a superseded input is not in it and a fact that was stale reads live once imported elsewhere.
+
+Reading a fact that carries or receives no such ref costs one indexed lookup per page or subject. A filter on `live`, `stale` or `contested` classifies every fact in the store that has one; one measurement on a laptop took about 0.3 s for 5,000 of them. Each search, compile and `show` reads from a single snapshot, so a write that lands while it runs cannot make a filter and the labels on its hits disagree.
 
 ## Budget modes
 

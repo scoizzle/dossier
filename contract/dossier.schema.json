@@ -13,7 +13,7 @@
     "budget_mode": { "type": "string", "enum": ["complete", "strict"], "description": "complete (default): every fact is emitted and budget_tokens is only the highlight threshold; used_tokens may exceed it and dropped is empty. strict: facts are cut to the budget and the rest is listed in dropped." },
     "budget_tokens": { "type": "integer", "minimum": 0 },
     "used_tokens": { "type": "integer", "minimum": 0 },
-    "facts": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "FactViews with section and cites populated." },
+    "facts": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "FactViews with section and cites populated. Rank order puts every stale fact after every fact that is not stale." },
     "linked": { "type": "array", "items": { "$ref": "#/$defs/FactView" }, "description": "From follow; separate budget slice (~25%)." },
     "conflicts": {
       "type": "array",
@@ -66,7 +66,7 @@
   "$defs": {
     "FactView": {
       "title": "FactView",
-      "description": "One object used by BOTH search hits and dossier facts. Optional fields are null when not applicable.",
+      "description": "One object used by BOTH search hits and dossier facts. Optional fields are null when not applicable. status is the derived status (see ops.schema.json#/$defs/VerifiedFact): a stored-live fact reads stale or contested when its refs make it so.",
       "type": "object",
       "additionalProperties": false,
       "required": ["id", "subject_id", "kind", "text", "tags", "confidence", "status"],
@@ -80,7 +80,8 @@
         "status": { "$ref": "fact.schema.json#/$defs/Status" },
         "score": { "type": ["number", "null"], "description": "Search only." },
         "section": { "type": ["string", "null"], "description": "Dossier only." },
-        "cites": { "type": ["array", "null"], "items": { "type": "string" }, "description": "Dossier only. Fact ids." }
+        "cites": { "type": ["array", "null"], "items": { "type": "string" }, "description": "Dossier only. Fact ids." },
+        "why": { "type": ["array", "null"], "items": { "$ref": "ops.schema.json#/$defs/StatusReason" }, "description": "Dossier only, and only when status is stale or contested: the refs that make it so." }
       }
     }
   }

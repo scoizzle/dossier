@@ -88,7 +88,7 @@ Also: `show`, `retract`, `import`, `mcp`, `serve`. Full reference: [cli](https:/
 
 - Refs are the only edge; similarity never creates one.
 - Facts are immutable; correction is a new fact that supersedes the old one, by key or by a `supersedes` ref to its id.
-- Superseded and retracted facts are left out of search and compile by default, and `verify` reports a fact derived from a changed one as stale.
+- Superseded and retracted facts are left out of search and compile by default, and a fact derived from a changed one reads `stale` wherever it is read.
 - Conflicts and gaps are surfaced in every dossier, never hidden to save tokens.
 - Strict budget mode is bounded: cost stays at or below the budget however large the corpus grows (the bound covers fact content; conflicts and gaps are never charged against it, so they are never hidden). The default `complete` mode is not bounded.
 - Writes fail closed (the item is rejected with a reason); compile fails open (last good dossier plus a degraded marker).
@@ -108,9 +108,9 @@ Also: `show`, `retract`, `import`, `mcp`, `serve`. Full reference: [cli](https:/
 
 ## Status
 
-Done: dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; `verify` with derived stale and contested status; correction by `supersedes` ref; the change journal over MCP and the CLI; the test suite; the seeded Memos demo; the evaluation harness and the fleet evaluation.
+Done: dump, post with declared refs, the two matchers, reverse `ref_target` search, search, compile, MCP, minimal web; stale and contested status derived on every read (search, compile, `show`, `verify`); correction by `supersedes` ref; the change journal over MCP and the CLI; the test suite; the seeded Memos demo; the evaluation harness and the fleet evaluation.
 
-Not built yet: reverify, follow in compile, trust-gated supersede, stale and contested status on search and compile output (`verify` reports them today), scoped access, a record of who else posted a deduped fact, a re-dump that does not revive a corrected claim, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
+Not built yet: reverify, follow in compile, trust-gated supersede, stale and contested status in published bundles and the graph view, scoped access, a record of who else posted a deduped fact, a re-dump that does not revive a corrected claim, dump adapters. Also open: selection accuracy at scale, a second evaluation domain (a repo module), and primary-source accuracy (arm C).
 
 ## Contributing, security, license
 

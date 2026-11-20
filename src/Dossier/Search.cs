@@ -6,6 +6,9 @@ namespace Dossier;
 
 public sealed partial class DossierStore
 {
+    /// <summary>Test seam: runs inside a filtered search, after the derived set is read and before the page is.</summary>
+    internal Action? SearchProbe { get; set; }
+
     private const int DefaultLimit = 20;
     private const int MaxLimit = 100;
 
@@ -32,6 +35,7 @@ public sealed partial class DossierStore
         var parameters = new Dictionary<string, object?>(StringComparer.Ordinal);
 
         using var connection = OpenConnection();
+        using var snapshot = new ReadSnapshot(connection);
 
         if (request.Subject is not null)
         {
@@ -68,7 +72,27 @@ public sealed partial class DossierStore
             parameters["$actor"] = request.Actor;
         }
 
-        if (request.Status is not null)
+        var currency = new CurrencyReader(connection, null);
+        if (request.Status is StatusLive or StatusStale or StatusContested)
+        {
+            // These three are derived, so the filter is too: a stored-live fact that is stale or
+            // contested is not live. The derived ids go into the query itself, which keeps the count
+            // and the keyset paging exact.
+            var derived = currency.NonLive();
+            SearchProbe?.Invoke();
+            conditions.Add("f.status NOT IN ('superseded', 'retracted')");
+            if (request.Status == StatusLive)
+            {
+                conditions.Add("f.id NOT IN (SELECT value FROM json_each($derived))");
+                parameters["$derived"] = JsonCodec.SerializeStrings(derived.Select(entry => entry.Id).ToList());
+            }
+            else
+            {
+                conditions.Add("f.id IN (SELECT value FROM json_each($derived))");
+                parameters["$derived"] = JsonCodec.SerializeStrings(derived.Where(entry => entry.Status == request.Status).Select(entry => entry.Id).ToList());
+            }
+        }
+        else if (request.Status is not null)
         {
             conditions.Add("f.status = $status");
             parameters["$status"] = request.Status;
@@ -192,6 +216,16 @@ public sealed partial class DossierStore
         }
 
         var hits = page.Select(row => row.ToView()).ToList();
+        var involved = currency.Involved(hits.Select(hit => hit.Id).ToList());
+        foreach (var hit in hits)
+        {
+            // A hit reports its derived status. One with no currency ref is its lifecycle, read as live
+            // unless it is superseded or retracted, which is what a filter on those asked for.
+            hit.Status = hit.Status is StatusSuperseded or StatusRetracted ? hit.Status
+                : involved.Contains(hit.Id) ? currency.Describe(hit.Id).Status
+                : StatusLive;
+        }
+
         var complete = total <= hits.Count;
 
         return new SearchResponse

@@ -95,6 +95,7 @@ public sealed partial class DossierStore
         if (response.Subject is not null)
         {
             using var connection = OpenConnection();
+            using var snapshot = new ReadSnapshot(connection);
             candidates = LoadCandidates(connection, new List<string> { response.Subject.Id });
             ScoreCandidates(connection, candidates, new List<string>(), DefaultRecencyWeight);
             var ranked = candidates.OrderBy(c => c, RankComparer).ToList();

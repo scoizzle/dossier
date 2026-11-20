@@ -219,6 +219,14 @@ public sealed class AotCompatTests
         await Assert.That(Json(verify)).IsEqualTo(
             """{"revision":7,"current":false,"facts":[{"id":"a","subject_id":"s","status":"live","current":true},{"id":"b","subject_id":"s","status":"superseded","current":false,"replaced_by":"c"},{"id":"d","subject_id":"s","status":"stale","current":false,"why":[{"rel":"derived_from","fact":"b","state":"superseded","replaced_by":"c"}]},{"id":"e","subject_id":"s","status":"contested","current":false,"why":[{"rel":"refutes","fact":"f"}]},{"id":"z","status":"unknown","current":false}]}""");
 
+        // The same reasons ride on a compiled fact and on show.
+        var view = new FactView { Id = "d", SubjectId = "s", Kind = "k", Text = "t", Status = "stale", Why = new List<StatusReason> { new() { Rel = "derived_from", Fact = "b", State = "stale" } } };
+        await Assert.That(Json(view)).IsEqualTo(
+            """{"id":"d","subject_id":"s","kind":"k","text":"t","tags":[],"confidence":0,"status":"stale","why":[{"rel":"derived_from","fact":"b","state":"stale"}]}""");
+        var record = new FactRecord { Id = "b", SubjectId = "s", Kind = "k", Status = "superseded", ContentHash = "h", CreatedAt = "c", ReplacedBy = "c2" };
+        await Assert.That(Json(record)).IsEqualTo(
+            """{"id":"b","subject_id":"s","kind":"k","tags":[],"confidence":0,"status":"superseded","content_hash":"h","created_at":"c","replaced_by":"c2"}""");
+
         var verifyRequest = Parse<VerifyRequest>("""{"ids":["a","b"]}""");
         await Assert.That(verifyRequest.Ids.SequenceEqual(new[] { "a", "b" })).IsTrue();
 

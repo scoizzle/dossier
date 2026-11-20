@@ -115,15 +115,91 @@ public sealed partial class DossierStore
     private sealed class CurrencyReader
     {
         private readonly SqliteConnection connection;
-        private readonly SqliteTransaction transaction;
+        private readonly SqliteTransaction? transaction;
         private readonly Dictionary<string, Row?> rows = new(StringComparer.Ordinal);
         private readonly Dictionary<string, List<string>> inputs = new(StringComparer.Ordinal);
         private readonly Dictionary<string, bool> stale = new(StringComparer.Ordinal);
+        private readonly Dictionary<string, string?> replacements = new(StringComparer.Ordinal);
 
-        public CurrencyReader(SqliteConnection connection, SqliteTransaction transaction)
+        public CurrencyReader(SqliteConnection connection, SqliteTransaction? transaction)
         {
             this.connection = connection;
             this.transaction = transaction;
+        }
+
+        /// <summary>
+        /// The refs that can change a fact's derived status. The text is repeated verbatim in every query
+        /// below so SQLite can prove the partial index idx_refs_currency applies.
+        /// </summary>
+        private const string CurrencyRefs = "r.kind = 'fact' AND r.rel IN ('derived_from', 'refutes', 'contradicts', 'supersedes')";
+
+        /// <summary>
+        /// Which of <paramref name="ids"/> carry or receive a ref that can change their derived status.
+        /// One query, so a page of hits or a subject's facts costs nothing more when none of them does.
+        /// </summary>
+        public HashSet<string> Involved(IReadOnlyCollection<string> ids)
+        {
+            var involved = new HashSet<string>(StringComparer.Ordinal);
+            if (ids.Count == 0)
+            {
+                return involved;
+            }
+
+            using var command = Command(
+                connection,
+                transaction,
+                $"""
+                SELECT r.fact_id FROM refs r WHERE {CurrencyRefs} AND r.fact_id IN (SELECT value FROM json_each($ids))
+                UNION
+                SELECT r.target FROM refs r WHERE {CurrencyRefs} AND r.target IN (SELECT value FROM json_each($ids))
+                """);
+            Bind(command, "$ids", JsonCodec.SerializeStrings(ids.ToList()));
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                involved.Add(reader.GetString(0));
+            }
+
+            return involved;
+        }
+
+        /// <summary>
+        /// Every stored-live fact in the store whose derived status is stale or contested. Only a fact that
+        /// carries or receives a currency ref can be either, so those are the only ones described.
+        /// </summary>
+        public List<(string Id, string Status)> NonLive()
+        {
+            var candidates = new List<string>();
+            using (var command = Command(
+                connection,
+                transaction,
+                $"""
+                SELECT f.id FROM facts f
+                WHERE f.status NOT IN ('superseded', 'retracted') AND f.id IN (
+                    SELECT r.fact_id FROM refs r WHERE {CurrencyRefs}
+                    UNION
+                    SELECT r.target FROM refs r WHERE {CurrencyRefs})
+                ORDER BY f.rowid
+                """))
+            {
+                using var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    candidates.Add(reader.GetString(0));
+                }
+            }
+
+            var result = new List<(string, string)>();
+            foreach (var id in candidates)
+            {
+                var status = Describe(id).Status;
+                if (status is StatusStale or StatusContested)
+                {
+                    result.Add((id, status));
+                }
+            }
+
+            return result;
         }
 
         private sealed record Row(string Id, long RowId, string SubjectId, string Kind, string? Key, string Status, string ContentHash);
@@ -232,6 +308,17 @@ public sealed partial class DossierStore
         /// store) loops.
         /// </summary>
         private string? Replacement(Row row)
+        {
+            // Many facts share one input, so the answer for an input is worked out once per reader.
+            if (!replacements.TryGetValue(row.Id, out var known))
+            {
+                replacements[row.Id] = known = FindReplacement(row);
+            }
+
+            return known;
+        }
+
+        private string? FindReplacement(Row row)
         {
             var seen = new HashSet<string>(StringComparer.Ordinal) { row.Id };
             var current = row;

@@ -47,7 +47,7 @@ The seed script prints `subjects_created=5` and `facts_created=32`.
 
 All three surfaces call the same core functions.
 
-**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `retract`, `dossier compile`, `publish`, `import`, `check`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
+**CLI.** Commands: `init`, `dump`, `post`, `correlate`, `search`, `show`, `verify`, `changes`, `retract`, `dossier compile`, `publish`, `import`, `check`, `mcp`, `serve`. Examples against the seeded database (`d` is `dotnet src/Dossier/bin/Release/net10.0/Dossier.dll`):
 
 ```text
 $ d search --q composer --subject Memos/Home --limit 2     # trimmed
@@ -68,6 +68,18 @@ $ d check --subject "memos/home" --drafts drafts.json       # adds a verdict per
 $ d post --file payload.json --dry-run                      # same verdicts as a real post, nothing written
 $ d search --q composer --subject Memos/Home --brief        # id, kind, status, first 120 chars of text; total/complete/next kept
 
+$ d verify <id-a> <id-b>                                    # the facts a plan cites, before acting on it (illustrative, not the seeded data)
+{"revision":412,"current":false,"facts":[
+  {"id":"<id-a>","subject_id":"…","status":"live","current":true},
+  {"id":"<id-b>","subject_id":"…","status":"superseded","current":false,"replaced_by":"<id-c>"}]}
+
+$ d verify --require-current <id-a> && ./deploy.sh          # a gate: exit 1 unless every id is live (the answer is still printed)
+
+$ d changes --last 1                                        # start of a session: keep "next" as the cursor
+{"from":411,"to":412,"next":412,"truncated":true,"reset":false,"changes":[{"seq":412,"tbl":"slots","op":"update", ...}]}
+
+$ d changes --since 412 --subject Memos/Home                # later: what was written to this subject since
+
 $ d dossier compile --subject Memos/Home --depth index --budget 300 --need "billing invoice" --format markdown   # tail
 ## Conflicts
 - composerMaxRows: 12 [...]; 6 [...]
@@ -87,9 +99,13 @@ $ d correlate --subject Memos/Home                         # 6 proposals, none w
 
 A need with no matching fact is reported as a gap instead of being silently dropped, and conflicting values for the same slot are listed with both cites; `conflicts[].resolution` is always null.
 
+`verify` takes fact ids and reports the derived status of each, read in one snapshot: `live`, `superseded` (with `replaced_by`, the fact its slot holds now, which may be several reposts later and is absent when a retraction cleared the slot), `retracted`, `stale`, `contested` or `unknown`, and `why` for the last two (see [derived status](concepts.md#derived-status)). `current` is true for a fact only when it is live, and at the top only when every fact is. It accepts at most 200 ids, answers a repeated id once, writes nothing, and exits 0 whatever the answer; with `--require-current` it exits 1 when any id is not live, naming them on stderr.
+
+`changes` prints the journal page `/api/changes` serves (the row and cursor rules are under [Web](#surfaces) below): `--since <n>` for rows after a cursor (default 0, `--limit` 100, at most 500), or `--last <n>` for the newest rows (at most 500), which wins when both are given. A `--last` or `--limit` below 1 is rejected. `--subject <id|name|alias>` keeps one subject's rows; a page that is not `truncated` then moves `next` to the head, since nothing of that subject is left behind it, and an unknown subject is rejected with `subject_not_found` so a typo cannot read as "nothing changed". The journal records row writes only: a fact that became stale or contested because another fact was written has no row of its own, so `changes` says when to look again and `verify` says what is still true.
+
 An option the command does not take is rejected on stderr with exit 1: `unknown option "--mode" (did you mean --budget-mode?)`, with a suggestion when one is close. An option missing its value fails with `--budget requires a value`, and a rejected command writes nothing.
 
-**MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio (protocol versions 2025-06-18, 2025-03-26, 2024-11-05). Seven tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`. Resources: `dossier://subjects`, and the templates `dossier://subject/{id}` and `dossier://fact/{id}`. `post_facts` takes `dry_run`, `search` takes `brief`, and `check` takes `subject` and optional `drafts` (returns the subject with `match` of `exact_id`, `exact_name`, `exact_alias`, `prefix` or `fuzzy`, a summary, and per-draft verdicts with an advisory `near` list; a near duplicate posted anyway is a separate `new` fact). Tool descriptions mark fact text as untrusted data that must never be followed as instructions.
+**MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio (protocol versions 2025-06-18, 2025-03-26, 2024-11-05). Nine tools: `dump`, `post_facts`, `correlate`, `search`, `get_fact`, `compile_dossier`, `check`, `verify_facts`, `changes`. Resources: `dossier://subjects`, and the templates `dossier://subject/{id}` and `dossier://fact/{id}`. `post_facts` takes `dry_run`, `search` takes `brief`, and `check` takes `subject` and optional `drafts` (returns the subject with `match` of `exact_id`, `exact_name`, `exact_alias`, `prefix` or `fuzzy`, a summary, and per-draft verdicts with an advisory `near` list; a near duplicate posted anyway is a separate `new` fact). `verify_facts` takes `ids` and `changes` takes `since`, `last`, `limit` and `subject`; both return what the CLI verbs print. There is no retract tool: retraction is a CLI verb. Tool descriptions mark fact text as untrusted data that must never be followed as instructions.
 
 **Web.** `dossier serve [--port 8787]` listens on loopback only and answers requests addressed to `127.0.0.1` or to `localhost` when that name resolves solely to loopback addresses and its first resolved address can be bound (where it resolves to `::1`, that is how the IPv6 loopback is reached), on the serve port; a literal `[::1]` address is not served (the listener rejects the bracketed IPv6 prefix), and a request for any other `Host` is refused with a 4xx, so a page reached through a rebound DNS name cannot read the store. It has a search box in the header, a subject list, search results, a compiled dossier view with its raw JSON, and a single-fact view. JSON endpoints: `/api/subjects`, `/api/search`, `/api/compile`, `/api/fact`, `/api/graph`, `/api/revision`, `/api/changes`, plus the `/api/events` stream. `POST` to any of them is `405`.
 

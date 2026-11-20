@@ -310,7 +310,7 @@ public sealed class McpServer
     [
         new("dump", "Chunk a file into facts for one subject, deduping repeats. " + Untrusted,
             """{"type":"object","properties":{"source":{"type":"string"},"subject":{"type":"string"},"kind":{"type":"string"},"split":{"type":"string","enum":["heading","file","none"]},"tags":{"type":"array","items":{"type":"string"}}},"required":["source","subject"]}"""),
-        new("post_facts", "Post a batch of facts (with refs and attachments) for a subject. " + Untrusted,
+        new("post_facts", "Post a batch of facts (with refs and attachments) for a subject. To correct a fact, post the right claim with a ref {rel: supersedes, kind: fact, target: <its id>}: the old fact is kept as history and no longer returned by search or compile. " + Untrusted,
             """{"type":"object","properties":{"subject":{"type":"object"},"facts":{"type":"array","items":{"type":"object"}},"dry_run":{"type":"boolean"}},"required":["subject","facts"]}"""),
         new("correlate", "Propose derived refs between facts; nothing is written. " + Untrusted,
             """{"type":"object","properties":{"subject":{"type":"string"},"matchers":{"type":"array","items":{"type":"string"}}}}"""),
@@ -320,7 +320,7 @@ public sealed class McpServer
             """{"type":"object","properties":{"subject":{"type":"string"},"drafts":{"type":"array","items":{"type":"object"}},"limit":{"type":"integer"}},"required":["subject"]}"""),
         new("get_fact", "Fetch one fact with its refs, attachments and inbound referencing facts. " + Untrusted,
             """{"type":"object","properties":{"id":{"type":"string"}},"required":["id"]}"""),
-        new("verify_facts", "Check fact ids you are about to rely on (the ids a plan, summary or answer cites) before acting. Each comes back live, superseded (with replaced_by, the fact its slot holds now), retracted, stale (it was derived_from a fact that has since changed; why names the input), contested (a live fact refutes or contradicts it; why names it) or unknown. current is true only when every id is live. Writes nothing. " + Untrusted,
+        new("verify_facts", "Check fact ids you are about to rely on (the ids a plan, summary or answer cites) before acting. Each comes back live, superseded (with replaced_by, the live fact that took its place), retracted, stale (it was derived_from a fact that has since changed; why names the input), contested (a live fact refutes or contradicts it; why names it) or unknown. current is true only when every id is live. Writes nothing. " + Untrusted,
             """{"type":"object","properties":{"ids":{"type":"array","items":{"type":"string"},"minItems":1,"maxItems":200}},"required":["ids"]}"""),
         new("changes", "Read the change journal from a cursor: rows written after `since`, oldest first, or the newest `last` rows; `subject` keeps one subject's rows. Pass the returned `next` back as `since`; `reset` true means the cursor left the retained window and everything must be re-read. Rows record writes only: a fact that became stale or contested through another fact's write has no row, so re-check cited facts with verify_facts. " + Untrusted,
             """{"type":"object","properties":{"since":{"type":"integer","minimum":0},"last":{"type":"integer","minimum":1},"limit":{"type":"integer","minimum":1},"subject":{"type":"string"}}}"""),

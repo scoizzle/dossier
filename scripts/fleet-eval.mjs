@@ -2,7 +2,7 @@
 // Fleet evaluation: several real `dossier mcp` processes share one database, and the script
 // measures what a shared store owes the agents that use it. One experiment per failure mode of
 // shared agent memory (contradiction persistence, stale propagation, provenance collapse), plus
-// revocation enforcement, derivation currency and idempotent convergence. Everything is
+// revocation enforcement, correction by ref, derivation currency and idempotent convergence. Everything is
 // deterministic: no model is called, so this measures the mechanism, not what an agent does
 // with it. No dependencies, Node 18+.
 //
@@ -409,7 +409,48 @@ async function main() {
   // Not an expectation: this is the baseline a check of the fact's own row gives.
   rate('derivation currency', 'same descendants by stored status alone still read live', currency.storedLive, currency.descendants, null);
 
-  // ---- 5. Revocation: a retracted fact must not come back through search or compile. ----
+  // ---- 5. Correction: one agent's unkeyed claim is corrected by another with a supersedes ref. ----
+  const corrections = { total: 0, applied: 0, leak: 0, named: 0, staleNamed: 0, authors: 0, rejected: 0 };
+  await inBatches(options.facts, 8, async (index) => {
+    const subject = `fleet-eval/correction-${index}`;
+    const author = writer(index);
+    const corrector = writer(index + 1);
+    const old = await author.post(subject, { kind: 'note', text: `Release ${index} shipped on day ${1 + (index % 27)}.`, tags: ['fleet-eval'] });
+    const plan = await writer(index + 2).post(subject, { kind: 'note', text: `Announce release ${index} the day after it ships.`, tags: ['fleet-eval'], refs: [derivedFrom(old.id)] });
+    const fixed = await corrector.post(subject, {
+      kind: 'note', text: `Release ${index} shipped on day ${2 + (index % 27)}, not the day before.`, tags: ['fleet-eval'],
+      refs: [{ rel: 'supersedes', kind: 'fact', target: old.id, basis: 'observed' }],
+    });
+
+    corrections.total++;
+    const verified = await reader.tool('verify_facts', { ids: [old.id, plan.id, fixed.id] });
+    const [was, built, now] = verified.facts;
+    if (was.status === 'superseded' && now.status === 'live') corrections.applied++;
+    if (was.replaced_by === fixed.id) corrections.named++;
+    const reason = built.why?.[0];
+    if (built.status === 'stale' && reason?.fact === old.id && reason.state === 'superseded' && reason.replaced_by === fixed.id) corrections.staleNamed++;
+    const hits = (await reader.tool('search', { subject, limit: 50 })).hits;
+    const dossier = await reader.tool('compile_dossier', { subject, depth: 'full' });
+    if (hits.some((hit) => hit.id === old.id) || dossier.facts.some((fact) => fact.id === old.id)) corrections.leak++;
+    const history = await reader.tool('get_fact', { id: old.id });
+    const current = await reader.tool('get_fact', { id: fixed.id });
+    if (history.fact.text && history.fact.provenance?.actor === author.name && current.fact.provenance?.actor === corrector.name) corrections.authors++;
+
+    // A correction that names no fact in the store must be refused, not stored and ignored.
+    const refused = await corrector.tool('post_facts', {
+      subject: { name: subject },
+      facts: [{ kind: 'note', text: `A correction of release ${index} with a mistyped id.`, refs: [{ rel: 'supersedes', kind: 'fact', target: `missing-${index}`, basis: 'observed' }] }],
+    });
+    if (refused.errors?.[0]?.code === 'supersedes_target_not_found' && refused.response.facts.length === 0) corrections.rejected++;
+  });
+  rate('correction', 'supersedes ref from another agent takes effect', corrections.applied, corrections.total, 1);
+  rate('correction', 'verify names the correction as the replacement', corrections.named, corrections.total, 1);
+  rate('correction', 'derived fact verifies stale, naming the correction', corrections.staleNamed, corrections.total, 1);
+  rate('correction', 'corrected fact returned by default search or compile', corrections.leak, corrections.total, 0);
+  rate('correction', 'history kept: old text and both writers on record', corrections.authors, corrections.total, 1);
+  rate('correction', 'correction naming a missing fact is rejected', corrections.rejected, corrections.total, 1);
+
+  // ---- 6. Revocation: a retracted fact must not come back through search or compile. ----
   const revoked = { total: 0, searchLeak: 0, compileLeak: 0, auditKept: 0, verified: 0 };
   const revocationSubject = 'fleet-eval/revocation';
   const tokens = [];
@@ -435,7 +476,7 @@ async function main() {
   rate('revocation', 'tombstone kept for audit (id, writer, no text)', revoked.auditKept, revoked.total, 1);
   rate('revocation', 'verify reports it retracted', revoked.verified, revoked.total, 1);
 
-  // ---- 6. Propagation: one agent writes, another reads the journal from its cursor. ----
+  // ---- 7. Propagation: one agent writes, another reads the journal from its cursor. ----
   const propagationSubject = 'fleet-eval/propagation';
   await writer(0).post(propagationSubject, { kind: 'note', text: 'Propagation baseline.', tags: ['fleet-eval'] });
   let cursor = (await reader.tool('changes', { last: 1 })).next;
@@ -469,7 +510,7 @@ async function main() {
   rate('propagation', 'journal row names the writing agent', actorRight, options.probes, 1);
   latency('propagation', 'write-to-visible window (ms, one changes round trip)', windows);
 
-  // ---- 7. Convergence: every agent posts the same keyed fact at once. ----
+  // ---- 8. Convergence: every agent posts the same keyed fact at once. ----
   const convergence = { total: 0, oneRow: 0, quiet: 0 };
   for (let index = 0; index < options.probes; index++) {
     const subject = `fleet-eval/convergence-${index}`;

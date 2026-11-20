@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dossier.local/contract/fact.schema.json",
   "title": "Fact",
-  "description": "Immutable assertion about a subject. Correction = a new fact with rel=supersedes. status is derived, never authoritative. kind is an open string; reserved value: \"dossier\". text soft limit 240 chars, warn above 280, never truncate.",
+  "description": "Immutable assertion about a subject. Correction = a new fact with rel=supersedes (kind=fact, target = the id of the fact it replaces), or a repost under the same key. status is derived, never authoritative. kind is an open string; reserved value: \"dossier\". text soft limit 240 chars, warn above 280, never truncate.",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "subject_id", "kind", "text", "tags", "confidence", "status", "provenance", "content_hash"],

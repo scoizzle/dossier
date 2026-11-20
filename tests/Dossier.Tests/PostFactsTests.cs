@@ -68,6 +68,104 @@ public sealed class PostFactsTests
     }
 
     [Test]
+    public async Task KeyedRepost_IdenticalInEveryField_DedupesAndKeepsTheId()
+    {
+        using var db = new TempDb();
+
+        PostFactsRequest Build() => Fixtures.Post(
+            "Widget",
+            Fixtures.Fact(
+                "version one",
+                key: "state",
+                data: Fixtures.Json("{\"rows\":12}"),
+                tags: new List<string> { "ui" },
+                refs: new List<RefInput> { Fixtures.Ref("https://example.test/x", rev: "rev-1") }));
+
+        var first = db.Store.PostFacts(Build());
+        var revision = db.Store.Revision();
+        var second = db.Store.PostFacts(Build());
+
+        var firstId = first.Response.Facts[0].Id;
+        await Assert.That(second.Response.Facts[0].Status).IsEqualTo("deduped");
+        await Assert.That(second.Response.Facts[0].Id).IsEqualTo(firstId);
+        await Assert.That(second.Response.Facts[0].DuplicateOf).IsEqualTo(firstId);
+        await Assert.That(second.Response.Facts[0].Replaced).IsNull();
+
+        // Nothing was written: one row, still live, the slot still names it, the revision did not move.
+        using var connection = db.Store.OpenConnection();
+        await Assert.That(Fixtures.Count(connection, "SELECT COUNT(*) FROM facts")).IsEqualTo(1);
+        await Assert.That((string?)Fixtures.Scalar(connection, "SELECT status FROM facts WHERE id = $id", ("$id", firstId)))
+            .IsEqualTo("live");
+        await Assert.That((string?)Fixtures.Scalar(connection, "SELECT fact_id FROM slots WHERE key = 'state'"))
+            .IsEqualTo(firstId);
+        await Assert.That(db.Store.Revision()).IsEqualTo(revision);
+    }
+
+    [Test]
+    [Arguments("tags")]
+    [Arguments("confidence")]
+    [Arguments("rev")]
+    [Arguments("basis")]
+    [Arguments("items")]
+    [Arguments("seq")]
+    [Arguments("valid")]
+    [Arguments("snapshot")]
+    [Arguments("ref-confidence")]
+    [Arguments("attachment")]
+    public async Task KeyedRepost_ThatChangesAFieldOutsideTheHash_StillReplaces(string changed)
+    {
+        using var db = new TempDb();
+
+        FactInput Build(bool second) => new()
+        {
+            Kind = "note",
+            Key = "state",
+            Text = "version one",
+            Tags = new List<string> { second && changed == "tags" ? "reviewed" : "ui" },
+            Confidence = second && changed == "confidence" ? 0.4 : 0.9,
+            Items = new List<ItemInput> { new() { Text = second && changed == "items" ? "second item" : "first item" } },
+            Refs = new List<RefInput>
+            {
+                new()
+                {
+                    Rel = "mentions",
+                    Kind = "url",
+                    Target = "https://example.test/x",
+                    Basis = second && changed == "basis" ? "derived" : "observed",
+                    Rev = second && changed == "rev" ? "rev-2" : "rev-1",
+                    Seq = second && changed == "seq" ? 7 : null,
+                    Valid = second && changed == "valid" ? false : true,
+                    Snapshot = second && changed == "snapshot" ? "snapshots/2.html" : "snapshots/1.html",
+                    Confidence = second && changed == "ref-confidence" ? 0.5 : 0.8,
+                },
+            },
+            Attachments = new List<AttachmentInput>
+            {
+                new()
+                {
+                    Sha256 = new string('a', 64),
+                    Filename = second && changed == "attachment" ? "after.png" : "before.png",
+                    Mime = "image/png",
+                    Bytes = 4,
+                },
+            },
+        };
+
+        var first = db.Store.PostFacts(Fixtures.Post("Widget", Build(false)));
+
+        // Control: the same fact again changes nothing, so the replace below is caused by the one field.
+        var same = db.Store.PostFacts(Fixtures.Post("Widget", Build(false)));
+        await Assert.That(same.Response.Facts[0].Status).IsEqualTo("deduped");
+
+        var second = db.Store.PostFacts(Fixtures.Post("Widget", Build(true)));
+
+        // The content hash covers text, data and each ref's rel, kind, target and locator only, so each of
+        // these reposts hashes the same as the original. A keyed repost is how such a field is updated, so it must not dedupe.
+        await Assert.That(second.Response.Facts[0].Status).IsEqualTo("replaced");
+        await Assert.That(second.Response.Facts[0].Replaced).IsEqualTo(first.Response.Facts[0].Id);
+    }
+
+    [Test]
     public async Task ContentHash_ExcludesRevAndOtherFreshnessFields()
     {
         using var db = new TempDb();

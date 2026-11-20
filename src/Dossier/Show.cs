@@ -65,12 +65,12 @@ public sealed partial class DossierStore
         };
     }
 
-    private static List<RefRecord> ReadRefs(SqliteConnection connection, string id)
+    private static List<RefRecord> ReadRefs(SqliteConnection connection, string id, SqliteTransaction? transaction = null)
     {
         var refs = new List<RefRecord>();
         using var command = Command(
             connection,
-            null,
+            transaction,
             """
             SELECT rel, kind, target, locator, basis, confidence, seq, rev, snapshot, snapshot_hash, etag, verified_at, valid
             FROM refs WHERE fact_id = $id ORDER BY seq
@@ -100,12 +100,12 @@ public sealed partial class DossierStore
         return refs;
     }
 
-    private static List<AttachmentRecord> ReadAttachments(SqliteConnection connection, string id)
+    private static List<AttachmentRecord> ReadAttachments(SqliteConnection connection, string id, SqliteTransaction? transaction = null)
     {
         var attachments = new List<AttachmentRecord>();
         using var command = Command(
             connection,
-            null,
+            transaction,
             "SELECT sha256, filename, mime, bytes, perceptual FROM attachments WHERE fact_id = $id ORDER BY sha256");
         Bind(command, "$id", id);
         using var reader = command.ExecuteReader();

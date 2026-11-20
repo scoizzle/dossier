@@ -47,7 +47,7 @@ These are real gaps. None of them is hidden by the features above.
 - **Old `supersedes` refs.** A store written before corrections took effect may hold such refs with their targets still live. Nothing repairs them on upgrade; posting the correction again applies it.
 - **A write is committed belief.** There is no staging, quarantine or review state; `post --dry-run` and `check --drafts` preview a write and that is all. *MemTX* (arXiv:2607.23929) and *TARL* (arXiv:2608.03699) argue for staged writes.
 - **Time.** There is no valid-time on a fact and no "as of" read; the store knows when a fact was posted and whether it has been superseded, in the manner of transaction time only (compare the bi-temporal model in *Zep*, arXiv:2501.13956).
-- **Retraction over MCP.** Retract is a CLI verb. An agent corrects a keyed fact by reposting it.
+- **Retraction over MCP.** Retract is a CLI verb. Over MCP an agent corrects a fact by reposting its key or by a `supersedes` ref; it cannot remove one.
 - **What an agent does with a label.** *STALE* (arXiv:2605.06527) reports a wide gap between retrieving updated evidence and acting on it. A correct `stale` label is necessary and does not make an agent heed it; the `--require-current` gate exists for that reason.
 
 ## Design choices that follow from this

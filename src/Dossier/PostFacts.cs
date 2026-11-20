@@ -19,8 +19,9 @@ public sealed partial class DossierStore
 
     /// <summary>
     /// post_facts. Resolution order, per fact: (a) keyed slot exists =&gt; insert, repoint
-    /// the slot, supersede the old fact, "replaced"; (b) live fact with the same
-    /// subject/kind/key and content_hash =&gt; "deduped"; (c) insert =&gt; "new".
+    /// the slot, supersede the old fact, "replaced" (or "deduped" when the repost is identical);
+    /// (b) live fact with the same subject/kind/key and content_hash =&gt; "deduped"; (c) insert =&gt;
+    /// "new". Whatever the verdict, each <c>supersedes</c> ref of kind fact then supersedes its target.
     /// An invalid item is rejected with a named error and the rest of the batch commits.
     /// </summary>
     public PostResult PostFacts(PostFactsRequest request) => PostFacts(request, WriterIdentity.Cli);
@@ -81,6 +82,17 @@ public sealed partial class DossierStore
                 continue;
             }
 
+            // A correction must name a fact that exists: a mistyped id would otherwise be stored and
+            // do nothing. Checked before anything is written for this item.
+            if (MissingSupersedesTarget(connection, transaction, resolvedRefs) is { } missing)
+            {
+                errors.Add(new PostError(
+                    index,
+                    "supersedes_target_not_found",
+                    $"fact[{index}] supersedes \"{missing}\", which is not a fact in this store"));
+                continue;
+            }
+
             // Hash the resolved refs: an "@x" target must hash as the fact id it points at, so a
             // repost (local id) and a direct-GUID post of the same edge agree on content_hash.
             var hash = ContentHash.Compute(fact.Text, fact.Data, resolvedRefs);
@@ -94,6 +106,7 @@ public sealed partial class DossierStore
                 // A keyed repost that changes nothing is a no-op, not a supersede: no new row, no
                 // status flip, no revision bump. Any difference, including one the hash ignores
                 // (tags, confidence, items, ref freshness, attachments), still replaces below.
+                ApplySupersedes(connection, transaction, replacedId, resolvedRefs);
                 results.Add(new FactResult { Id = replacedId, Status = "deduped", DuplicateOf = replacedId });
                 RegisterLocalId(localIds, fact.LocalId, replacedId);
                 continue;
@@ -104,6 +117,7 @@ public sealed partial class DossierStore
                 var id = InsertFact(connection, transaction, subject.Id, fact, resolvedRefs, hash, createdAt, identity);
                 PointSlotAt(connection, transaction, subject.Id, fact.Kind, fact.Key!, id);
                 SetFactStatus(connection, transaction, replacedId, "superseded");
+                ApplySupersedes(connection, transaction, id, resolvedRefs);
                 results.Add(new FactResult { Id = id, Status = "replaced", Replaced = replacedId });
                 RegisterLocalId(localIds, fact.LocalId, id);
                 continue;
@@ -112,6 +126,7 @@ public sealed partial class DossierStore
             var duplicateId = FindLiveFactByHash(connection, transaction, subject.Id, fact.Kind, fact.Key, hash);
             if (duplicateId is not null)
             {
+                ApplySupersedes(connection, transaction, duplicateId, resolvedRefs);
                 results.Add(new FactResult { Id = duplicateId, Status = "deduped", DuplicateOf = duplicateId });
                 RegisterLocalId(localIds, fact.LocalId, duplicateId);
                 continue;
@@ -123,6 +138,7 @@ public sealed partial class DossierStore
                 PointSlotAt(connection, transaction, subject.Id, fact.Kind, fact.Key, newId);
             }
 
+            ApplySupersedes(connection, transaction, newId, resolvedRefs);
             results.Add(new FactResult { Id = newId, Status = "new" });
             RegisterLocalId(localIds, fact.LocalId, newId);
         }
@@ -152,6 +168,64 @@ public sealed partial class DossierStore
         };
 
         return new PostResult(response, errors);
+    }
+
+    /// <summary>A ref corrects a fact when it is <c>rel: supersedes</c> with <c>kind: fact</c>; any other kind is stored and inert.</summary>
+    private static bool IsCorrection(RefInput reference) =>
+        string.Equals(reference.Rel, "supersedes", StringComparison.Ordinal) && string.Equals(reference.Kind, "fact", StringComparison.Ordinal);
+
+    /// <summary>The first correction target that is not a fact in the store, or null when all exist.</summary>
+    private static string? MissingSupersedesTarget(SqliteConnection connection, SqliteTransaction transaction, IReadOnlyList<RefInput> refs)
+    {
+        foreach (var reference in refs.Where(IsCorrection))
+        {
+            using var command = Command(connection, transaction, "SELECT 1 FROM facts WHERE id = $id");
+            Bind(command, "$id", reference.Target);
+            if (command.ExecuteScalar() is null)
+            {
+                return reference.Target;
+            }
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Correction by ref: each fact that <paramref name="factId"/> supersedes and that is still live
+    /// becomes superseded, and a slot that named it is emptied (as retract does), so a slot never
+    /// points at a superseded fact. A target that is already superseded or retracted is left alone,
+    /// so this writes only when a correction actually takes effect. It also runs for a deduped post:
+    /// reposting a correction applies it if its target is live, which is how a ref stored before
+    /// corrections took effect is brought into force.
+    /// </summary>
+    private static void ApplySupersedes(SqliteConnection connection, SqliteTransaction transaction, string factId, IReadOnlyList<RefInput> refs)
+    {
+        foreach (var reference in refs.Where(IsCorrection))
+        {
+            if (string.Equals(reference.Target, factId, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            int flipped;
+            using (var update = Command(
+                connection,
+                transaction,
+                "UPDATE facts SET status = 'superseded' WHERE id = $id AND status NOT IN ('superseded', 'retracted')"))
+            {
+                Bind(update, "$id", reference.Target);
+                flipped = update.ExecuteNonQuery();
+            }
+
+            if (flipped == 0)
+            {
+                continue;
+            }
+
+            using var slot = Command(connection, transaction, "DELETE FROM slots WHERE fact_id = $id");
+            Bind(slot, "$id", reference.Target);
+            slot.ExecuteNonQuery();
+        }
     }
 
     private static void RegisterLocalId(Dictionary<string, string> localIds, string? localId, string factId)

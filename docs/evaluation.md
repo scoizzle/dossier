@@ -43,7 +43,12 @@ Each experiment answers one failure mode of memory shared by several agents (the
 | Supersession | exactly one live value per slot after two writers (half of them concurrent) | 200/200 | [0.981, 1.000] |
 | Supersession | more than one live row read for a slot | 0/200 | [0.000, 0.019] |
 | Supersession | superseded fact returned by default search or compile | 0/200 | [0.000, 0.019] |
+| Correction | another agent's `supersedes` ref takes effect, and `verify` names it as the replacement | 100/100 | [0.963, 1.000] |
+| Correction | corrected fact returned by default search or compile | 0/100 | [0.000, 0.037] |
+| Correction | old text and both writers still on record | 100/100 | [0.963, 1.000] |
+| Correction | correction naming a fact that is not in the store is rejected | 100/100 | [0.963, 1.000] |
 | Derivation currency | descendant of a changed input verifies stale, with the right input named | 120/120 | [0.969, 1.000] |
+| Derivation currency | fact derived from a corrected claim verifies stale, naming the correction | 100/100 | [0.963, 1.000] |
 | Derivation currency | false stale after a same-claim repost (control) | 0/30 | [0.000, 0.114] |
 | Revocation | retracted fact, or its text, returned by search or compile | 0/20 | [0.000, 0.161] |
 | Revocation | tombstone kept for audit (id and writer, no text) | 20/20 | [0.839, 1.000] |

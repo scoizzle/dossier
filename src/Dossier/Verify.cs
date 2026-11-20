@@ -30,7 +30,10 @@ public sealed class VerifiedFact
     public string Status { get; set; } = string.Empty;
     public bool Current { get; set; }
 
-    /// <summary>Superseded only: the fact the slot holds now, which may be several reposts later.</summary>
+    /// <summary>
+    /// Superseded only: the live fact at the end of its chain of successors (keyed reposts and
+    /// corrections by ref), which may be several steps later. Absent when the chain ends in a retraction.
+    /// </summary>
     public string? ReplacedBy { get; set; }
 
     /// <summary>Stale and contested only: the refs that make it so.</summary>
@@ -68,8 +71,8 @@ public sealed partial class DossierStore
     /// refs and never written:
     /// <list type="bullet">
     /// <item>stale: a live fact with a <c>derived_from</c> ref to a fact that was retracted, was superseded
-    /// by a different claim, or is itself stale. An input superseded by a repost of the same claim (same
-    /// content hash) has not changed.</item>
+    /// by a different claim (a keyed repost or a correction by <c>supersedes</c> ref), or is itself stale.
+    /// An input superseded by a repost of the same claim (same content hash) has not changed.</item>
     /// <item>contested: a live fact that is not stale and that a live, non-stale fact refutes or
     /// contradicts, or that itself contradicts one.</item>
     /// </list>
@@ -123,7 +126,7 @@ public sealed partial class DossierStore
             this.transaction = transaction;
         }
 
-        private sealed record Row(string Id, string SubjectId, string Kind, string? Key, string Status, string ContentHash);
+        private sealed record Row(string Id, long RowId, string SubjectId, string Kind, string? Key, string Status, string ContentHash);
 
         /// <summary>What happened to a fact as an input: null when the claim it made still stands.</summary>
         private sealed record Change(string State, string? ReplacedBy);
@@ -146,7 +149,7 @@ public sealed partial class DossierStore
             if (row.Status == StatusSuperseded)
             {
                 fact.Status = StatusSuperseded;
-                fact.ReplacedBy = Occupant(row);
+                fact.ReplacedBy = Replacement(row);
                 return fact;
             }
 
@@ -178,34 +181,77 @@ public sealed partial class DossierStore
                 return cached;
             }
 
-            using var command = Command(connection, transaction, "SELECT id, subject_id, kind, key, status, content_hash FROM facts WHERE id = $id");
+            using var command = Command(connection, transaction, "SELECT id, rowid, subject_id, kind, key, status, content_hash FROM facts WHERE id = $id");
             Bind(command, "$id", id);
             using var reader = command.ExecuteReader();
             Row? row = reader.Read()
                 ? new Row(
                     reader.GetString(0),
-                    reader.GetString(1),
+                    reader.GetInt64(1),
                     reader.GetString(2),
-                    reader.IsDBNull(3) ? null : reader.GetString(3),
-                    reader.GetString(4),
-                    reader.GetString(5))
+                    reader.GetString(3),
+                    reader.IsDBNull(4) ? null : reader.GetString(4),
+                    reader.GetString(5),
+                    reader.GetString(6))
                 : null;
             rows[id] = row;
             return row;
         }
 
         /// <summary>
-        /// The fact the row's slot holds now; null for an unkeyed fact, a cleared slot, or a slot that
-        /// (in a hand-edited store) still names the row itself.
+        /// The fact that took a fact's place: the earliest written of the next fact posted to the same
+        /// slot (a keyed repost writes no ref) and the facts that carry a <c>supersedes</c> ref to it.
+        /// Whichever was written first is the one that found it live. Read from the facts themselves,
+        /// not from the slot table, which a correction or a retraction empties.
         /// </summary>
-        private string? Occupant(Row row) =>
-            row.Key is not null && FindSlotFactId(connection, transaction, row.SubjectId, row.Kind, row.Key) is { } occupant && occupant != row.Id
-                ? occupant
-                : null;
+        private string? Successor(Row row)
+        {
+            using var command = Command(
+                connection,
+                transaction,
+                """
+                SELECT id FROM (
+                    SELECT f.id AS id, f.rowid AS position FROM facts f
+                    WHERE $key IS NOT NULL AND f.subject_id = $subject AND f.kind = $kind AND f.key = $key AND f.rowid > $rowid
+                    UNION
+                    SELECT f.id AS id, f.rowid AS position FROM refs r JOIN facts f ON f.id = r.fact_id
+                    WHERE r.target = $id AND r.rel = 'supersedes' AND r.kind = 'fact' AND f.id <> $id
+                ) ORDER BY position LIMIT 1
+                """);
+            Bind(command, "$id", row.Id);
+            Bind(command, "$rowid", row.RowId);
+            Bind(command, "$subject", row.SubjectId);
+            Bind(command, "$kind", row.Kind);
+            Bind(command, "$key", row.Key);
+            return command.ExecuteScalar() as string;
+        }
 
         /// <summary>
-        /// Retracted, or superseded by a different claim. A fact superseded by a repost of the same claim
-        /// (same content hash, so the same text, data and refs) still says what its dependents relied on.
+        /// The live fact at the end of a superseded fact's chain of successors, which may be several
+        /// reposts or corrections later; null when the chain ends in a retraction or (in a hand-edited
+        /// store) loops.
+        /// </summary>
+        private string? Replacement(Row row)
+        {
+            var seen = new HashSet<string>(StringComparer.Ordinal) { row.Id };
+            var current = row;
+            while (Successor(current) is { } next && seen.Add(next) && Read(next) is { } successor)
+            {
+                if (successor.Status is not (StatusSuperseded or StatusRetracted))
+                {
+                    return successor.Id;
+                }
+
+                current = successor;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Retracted, or superseded by a different claim. A fact whose replacement makes the same claim
+        /// (same content hash, so the same text, data and refs) still says what its dependents relied on;
+        /// a correction by ref never does, because its hash covers its <c>supersedes</c> ref.
         /// </summary>
         private Change? Changed(Row row)
         {
@@ -219,13 +265,13 @@ public sealed partial class DossierStore
                 return null;
             }
 
-            var occupant = Occupant(row);
-            if (occupant is not null && Read(occupant) is { } current && current.ContentHash == row.ContentHash)
+            var replacement = Replacement(row);
+            if (replacement is not null && Read(replacement) is { } current && current.ContentHash == row.ContentHash)
             {
                 return null;
             }
 
-            return new Change(StatusSuperseded, occupant);
+            return new Change(StatusSuperseded, replacement);
         }
 
         /// <summary>The facts a fact names as <c>derived_from</c> inputs, in ref order, each once.</summary>

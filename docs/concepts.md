@@ -30,7 +30,7 @@ The expensive reading happens once, when facts are captured, and every fact keep
 
 Invariants:
 
-- Facts are immutable. Correction is a new fact that supersedes the old one by declared key (`subject`, `kind`, `key`).
+- Facts are immutable. Correction is a new fact that supersedes the old one, either by declared key (`subject`, `kind`, `key`) or by a `supersedes` ref of kind `fact` to its id (see [Correction](#correction)).
 - Refs are the only edge. There are no similarity-derived edges.
 - Every ref carries a basis of `observed`, `derived` or `inferred`.
 - Ref kind `symbol` cites a symbol in an external static analysis. It is external (never a node, never an internal edge, no effect on centrality or ranking). Its target is `<qualified-name>@<revision>`, for example `django.db.models.QuerySet.filter@e4f3fb2d2d11`: the qualified name may contain dots, colons and parentheses, and the revision is everything after the last `@` and must be non-empty. A target without a revision is rejected with `symbol_target_requires_revision`, identically in `post`, `post --dry-run` and `check --drafts`. Basis `observed` is a runtime or human observation; basis `derived` is a citation of an analyzer's output, not an assertion of the referencing fact. If an observation disagrees with the analysis, post it with rel `refutes` against the symbol ref. `search --ref-target '<qualified>@<rev>' --direction in` returns every fact citing the symbol; `--direction out` still rejects it as external. Publish renders it as plain text, not a link.
@@ -40,20 +40,37 @@ Invariants:
 
 The normative shapes are the JSON Schemas in `contract/` (`subject`, `fact`, `ref`, `ops`, `dossier`).
 
+## Correction
+
+There are two ways to replace a fact, and both keep the old row as history.
+
+- **By key.** A post with the same subject, kind and key replaces the fact in that slot. Use it for an attribute you expect to change.
+- **By ref.** A post that carries `{"rel": "supersedes", "kind": "fact", "target": "<id>"}` replaces that fact, keyed or not, on any subject. Use it to correct a claim that has no key, or one another writer posted. If the target held a slot, the slot is emptied, so a slot never points at a superseded fact.
+
+Either way the old fact becomes `superseded`: it keeps its id, text and writer, `show` still returns it, and search and compile leave it out. `verify` on the old id returns `replaced_by`, the live fact at the end of its chain of successors.
+
+Three limits, stated plainly:
+
+- A `supersedes` ref must name a fact in the store, or the item is rejected with `supersedes_target_not_found`. A target that is already superseded or retracted is left as it is. A `supersedes` ref of any other kind (`slot`, a URL, a symbol) is stored and has no effect.
+- Any writer can correct any fact, over MCP as well as the CLI. There is no trust check: see [multi-agent](multi-agent.md#not-covered).
+- A corrected claim comes back if its source is dumped again. Dedupe compares a post with live facts only, so re-running `dossier dump` on an unchanged file creates the claim anew, under a new id, next to its correction. Correct the source first, or correct the new copy by its id.
+
+A store written before corrections took effect may hold `supersedes` refs whose targets are still live. Nothing rewrites them on upgrade. Posting such a correction again returns `deduped` and applies it.
+
 ## Derived status
 
-A stored fact is `live`, `superseded` (a keyed repost replaced it) or `retracted`. Two more statuses are derived from refs at read time and never written, so they cannot drift from the refs that cause them. `dossier verify <id>...` (MCP `verify_facts`) reports them; search, compile and `show` still print the stored status.
+A stored fact is `live`, `superseded` (a keyed repost or a `supersedes` ref replaced it) or `retracted`. Two more statuses are derived from refs at read time and never written, so they cannot drift from the refs that cause them. `dossier verify <id>...` (MCP `verify_facts`) reports them; search, compile and `show` still print the stored status.
 
 | Status | Meaning |
 | --- | --- |
 | `stale` | A live fact with a `derived_from` ref of kind `fact` to a fact that was retracted, was superseded by a different claim, or is itself stale. Staleness is transitive and a derivation cycle terminates. |
 | `contested` | A live fact that is not stale and that a live, non-stale fact refutes or contradicts (a ref of kind `fact`), or that itself carries `contradicts` to one. `contradicts` marks both facts; `refutes` marks only its target. |
 
-Precedence is `retracted`, `superseded`, `stale`, `contested`, `live`; an id the store does not hold is `unknown`. Each stale or contested answer carries `why`: the input that changed and how, or the other party of the dispute.
+Precedence is `retracted`, `superseded`, `stale`, `contested`, `live`; an id the store does not hold is `unknown`. A superseded answer carries `replaced_by`, and each stale or contested answer carries `why`: the input that changed and how, or the other party of the dispute.
 
 Three rules keep the label honest:
 
-- **A different claim, not a different row.** An input superseded by a repost with the same content hash (the same text, data and refs, say a tag-only repost) has not changed, so nothing derived from it goes stale.
+- **A different claim, not a different row.** An input superseded by a repost with the same content hash (the same text, data and refs, say a tag-only repost) has not changed, so nothing derived from it goes stale. A correction by ref always counts as a change.
 - **Exact inputs only.** A ref of kind `slot` follows whatever the slot holds now, so it names no exact input and never makes a fact stale or contested. Declare `derived_from` and `refutes` against a fact id. External refs (files, URLs, symbols) are outside this: checking them is reverify, which is not built.
 - **A dispute lasts as long as the objection stands.** Retract or supersede the refuting fact, or let it go stale, and the fact it disputed is live again.
 
@@ -105,7 +122,7 @@ Five foot-guns shaped the design; each is a decision, not an accident.
 
 **Similarity never makes an edge.** Similarity is only a retrieval and ranking signal; the only edge is a ref carried by a fact, with an explicit basis. The graph therefore cannot fill with hallucinated links, because a relationship has to be declared to exist.
 
-**Dedupe never merges silently.** Every write reports what it did: `new`, `deduped` with the existing fact id, or `replaced` with the id it superseded. Content-hash dedupe is scoped to one subject and never merges across subjects or declared keys, and correction is a new superseding fact, so every merge stays traceable. A keyed repost that is identical in every field is `deduped` and writes nothing, so several agents posting the same keyed fact converge on one row; a repost that changes anything, including a field the hash leaves out (tags, confidence, items, a ref's `rev` or `basis`, attachments), is `replaced`.
+**Dedupe never merges silently.** Every write reports what it did: `new`, `deduped` with the existing fact id, or `replaced` with the id it superseded. Content-hash dedupe is scoped to one subject and never merges across subjects or declared keys, and correction is a new superseding fact, so every merge stays traceable. A keyed repost that is identical in every field is `deduped` and writes nothing, so several agents posting the same keyed fact converge on one row (the one exception is a deduped post whose `supersedes` ref still has a live target, which is applied: see [Correction](#correction)); a repost that changes anything, including a field the hash leaves out (tags, confidence, items, a ref's `rev` or `basis`, attachments), is `replaced`.
 
 **Conflicts are exempt from the budget.** The budget bounds the fact content; conflicts and gaps are never charged against it. A dossier whose conflicts alone exceed the budget overruns it, because a dossier that hides a contradiction to save tokens is worse than one that is over budget.
 

@@ -1,0 +1,538 @@
+{
+ "agent": "swarm-tests-jsonl-a",
+ "slice": "tests-jsonl-a",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/JsonlPublishTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlPublishTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "jsonl-exports-only-live-facts-drops-superseded-text",
+     "text": "Jsonl_ExportsOnlyLiveFacts omits the superseded text claiming the header is 60 pixels and keeps the text claiming 64 pixels.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "The header is 60 pixels tall."
+     ]
+    },
+    {
+     "key": "jsonl-embed-writes-base64-asset-line-encoding",
+     "text": "Jsonl_EmbedWritesBase64AssetLine expects encoding base64, no path property on the asset line and no assets directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "GetProperty(\"encoding\").GetString()).IsEqualTo(\"base64\")"
+     ]
+    },
+    {
+     "key": "jsonl-default-assets-mode-is-files-writes-blob",
+     "text": "Jsonl_DefaultAssetsModeIsFiles asserts that publishing with no options writes the blob file under the assets directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "File.Exists(Path.Combine(Jsonl.Out(db), \"assets\""
+     ]
+    },
+    {
+     "key": "jsonl-missing-blob-emits-missing-asset-line-and-warning",
+     "text": "When the blob is deleted before publish, the asset line has missing true, no data and no path, and result.Warnings names the sha.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "GetProperty(\"missing\").GetBoolean()).IsTrue()"
+     ]
+    },
+    {
+     "key": "jsonl-duplicate-attachments-emit-one-asset-line-count",
+     "text": "Two facts attached to the same blob produce exactly one asset line in the published bundle.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Count(t => t == \"asset\")).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "jsonl-is-byte-identical-across-runs-and-bundle-hash-length",
+     "text": "Two publishes of the same store produce identical files and a bundle_hash of 64 characters in the manifest.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "await Assert.That(hash!.Length).IsEqualTo(64);"
+     ]
+    },
+    {
+     "key": "jsonl-is-byte-identical-across-runs-and-bundle-hash-changes",
+     "text": "Publishing again after a new fact is posted changes the manifest bundle_hash.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "GetProperty(\"bundle_hash\").GetString()).IsNotEqualTo(hash)"
+     ]
+    },
+    {
+     "key": "jsonl-escapes-line-separators-escaped-and-restored",
+     "text": "Jsonl_EscapesLineSeparators asserts U+2028, U+2029 and U+0085 are escaped in the data file and restored in the parsed fact text.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "fact.GetProperty(\"text\").GetString()).IsEqualTo"
+     ]
+    },
+    {
+     "key": "jsonl-subject-scope-omits-parent-outside-the-bundle",
+     "text": "A subject scoped publish whose parent lies outside the bundle omits parent from the subject line and records the subject option in the manifest.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "subject.TryGetProperty(\"parent\", out _)).IsFalse()"
+     ]
+    },
+    {
+     "key": "packing-record-larger-than-max-file-bytes-fails-closed",
+     "text": "A record larger than max file bytes fails with code record_exceeds_max_file_bytes and writes nothing.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "o.MaxFileBytes = lines.Max() - 1; }, name: \"big\""
+     ]
+    },
+    {
+     "key": "limits-max-files-counts-data-files-and-not-the-manifest-code",
+     "text": "Exceeding max files fails with code max_files_exceeded and the message mentions manifest.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "IsEqualTo(\"max_files_exceeded\")"
+     ]
+    },
+    {
+     "key": "profile-alone-only-reports-and-respect-limits-enforces-row",
+     "text": "With a profile alone the max_file_bytes row fails, and adding respect limits makes that row pass and records respect_limits true in the manifest.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Rows.Single(r => r.Limit == \"max_file_bytes\").Pass).IsFalse()"
+     ]
+    },
+    {
+     "key": "jsonl-writes-lines-and-manifest-record-order",
+     "text": "Jsonl_WritesSubjectFactAssetLinesAndManifest expects the record types in the order subject,fact,subject,fact,asset,fact,fact.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "subject,fact,subject,fact,asset,fact,fact"
+     ]
+    },
+    {
+     "key": "jsonl-writes-lines-and-manifest-file-stats-lines",
+     "text": "In Jsonl_WritesSubjectFactAssetLinesAndManifest the manifest file_stats entry for dossier-0001.jsonl reports 7 lines.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "GetProperty(\"lines\").GetInt32()).IsEqualTo(7)"
+     ]
+    },
+    {
+     "key": "jsonl-assets-none-keeps-attachment-metadata-sha",
+     "text": "With assets none no asset line is written, but the behavior fact still carries the attachment sha256.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "pointer.GetProperty(\"attachments\")[0].GetProperty(\"sha256\")"
+     ]
+    },
+    {
+     "key": "packing-exact-fit-vs-one-byte-less",
+     "text": "A max file bytes value equal to the total line bytes keeps one data file, while one byte less splits the bundle so the second file is dossier-0002.jsonl.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "await Assert.That(files[1]).IsEqualTo(\"dossier-0002.jsonl\");"
+     ]
+    },
+    {
+     "key": "packing-embedded-asset-too-large-message",
+     "text": "An embedded asset too large for max file bytes fails with record_exceeds_max_file_bytes and the message names the sha and --assets files.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "exception.Message.Contains(\"asset \" + big.Sha"
+     ]
+    },
+    {
+     "key": "limits-max-total-bytes-exact-boundary-code",
+     "text": "A total byte count one below the limit fails with code max_total_bytes_exceeded and nothing is written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "IsEqualTo(\"max_total_bytes_exceeded\")"
+     ]
+    },
+    {
+     "key": "limits-asset-files-count-against-total",
+     "text": "An asset file larger than max file bytes fails with record_exceeds_max_file_bytes and the message names assets/.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "exception.Message.Contains(\"assets/\""
+     ]
+    },
+    {
+     "key": "profile-tighter-limit-not-enforced-without-flag",
+     "text": "A tighter profile limit is not enforced without respect limits even when a larger max file bytes flag is passed, so the publish keeps one data file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Jsonl.DataFiles(Jsonl.Out(db, \"noenforce\")).Count).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "profile-allowed-extensions-miss-fails-closed",
+     "text": "Under respect limits an allowed_extensions miss fails closed with code profile_extension_not_allowed and writes nothing.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "IsEqualTo(\"profile_extension_not_allowed\")"
+     ]
+    },
+    {
+     "key": "profile-min-file-bytes-is-report-only",
+     "text": "A min_file_bytes profile miss is report only: the row fails but the publish still writes one data file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Rows.Single(r => r.Limit == \"min_file_bytes\").Pass).IsFalse()"
+     ]
+    },
+    {
+     "key": "profile-respect-limits-still-requires-a-profile",
+     "text": "Respect limits without a profile path fails with code invalid_profile.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "IsEqualTo(\"invalid_profile\")"
+     ]
+    },
+    {
+     "key": "markdown-is-unchanged-by-the-format-option",
+     "text": "Markdown publishing ignores the format option: the manifest format is the integer 1 and no file name ends with .jsonl.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "manifest.GetProperty(\"format\").GetInt32()).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "validation-assets-allowed-set-differs-per-format-codes",
+     "text": "An unknown format fails with invalid_format and a negative max files fails with invalid_limit.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "IsEqualTo(\"invalid_limit\")"
+     ]
+    },
+    {
+     "key": "cli-jsonl-publish-writes-bundle-and-prints-summary",
+     "text": "The jsonl CLI publish exits 0 and the manifest options record max_file_bytes 5000000.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "GetProperty(\"max_file_bytes\").GetInt64()).IsEqualTo(5000000L)"
+     ]
+    },
+    {
+     "key": "cli-rejects-markdown-only-flags-with-jsonl",
+     "text": "Passing budget, budget-mode, depth, facts or index-max-tokens with format jsonl exits 1 and names markdown on stderr.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "stderr.Contains(flag, StringComparison.Ordinal) && stderr.Contains(\"markdown\""
+     ]
+    },
+    {
+     "key": "cli-validates-assets-format-and-limit-flags-message",
+     "text": "An assets value outside the format's allowed set errors with embed|files|none for jsonl and detail|none for markdown.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Contains(\"embed|files|none\""
+     ]
+    },
+    {
+     "key": "helper-types-maps-records-to-type",
+     "text": "The Types helper maps Jsonl.Records of a directory to the type string of each record.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Jsonl.Records(dir).Select(r => r.GetProperty(\"type\")"
+     ]
+    },
+    {
+     "key": "helper-packingstore-measures-line-bytes",
+     "text": "PackingStore publishes a probe bundle and measures each line as its UTF-8 byte count plus one, so a later limit can be exact.",
+     "at": [
+      "tests/Dossier.Tests/JsonlPublishTests.cs",
+      "Select(l => Jsonl.Utf8.GetByteCount(l) + 1)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlImportTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlImportTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "helper-factrows-projects-facts-columns",
+     "text": "FactRows selects id, subject_id, kind, key, text, data, items, tags, confidence, status, provenance and content_hash from facts ordered by id.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "SELECT id, subject_id, kind, key, text, data, items, tags, confidence, status, provenance, content_hash FROM facts ORDER BY id"
+     ]
+    },
+    {
+     "key": "helper-refrows-projects-refs-columns",
+     "text": "RefRows selects the refs table columns from fact_id onward and orders the rows by fact_id then seq.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "SELECT fact_id, seq, rel, kind, target, basis, confidence, rev, locator"
+     ]
+    },
+    {
+     "key": "helper-subjectrows-projects-subjects-columns",
+     "text": "SubjectRows selects id, name, kind, parent_id, aliases and pin from subjects ordered by id.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "SELECT id, name, kind, parent_id, aliases, pin FROM subjects ORDER BY id"
+     ]
+    },
+    {
+     "key": "helper-tamper-refreshes-manifest-file-stats",
+     "text": "Tamper rewrites dossier-0001.jsonl and, unless told otherwise, rewrites the manifest file_stats bytes, lines and sha256 to match.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "stat[\"sha256\"] = Sha(bytes);"
+     ]
+    },
+    {
+     "key": "helper-editmanifest-writes-back-manifest",
+     "text": "EditManifest parses manifest.json, applies the edit and writes the manifest back with Jsonl.Utf8.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "edit(manifest);"
+     ]
+    },
+    {
+     "key": "helper-line-selects-nth-record-of-a-type",
+     "text": "The Line helper selects the nth line of dossier-0001.jsonl whose text contains the quoted type field.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "SkipLast(1).Where(l => l.Contains($\"\\\"type\\\":\\\"{type}\\\"\")).ElementAt(index);"
+     ]
+    },
+    {
+     "key": "helper-sha-returns-lowercase-hex",
+     "text": "The Sha helper returns the SHA256 of the bytes as a lowercase hex string.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant()"
+     ]
+    },
+    {
+     "key": "roundtrip-restores-counts",
+     "text": "RoundTrip_RestoresFactsRefsSubjectsAndCompileSearchOutput expects 2 subjects, 4 refs and 1 attachment from the import.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "await Assert.That(result.Subjects).IsEqualTo(2);"
+     ]
+    },
+    {
+     "key": "roundtrip-restores-assets-none-skip-reason",
+     "text": "In assets none mode the imported store gets no blob and the import reports one skip whose reason contains absent.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "result.Skipped[0].Reason.Contains(\"absent\""
+     ]
+    },
+    {
+     "key": "roundtrip-restores-republish-is-byte-identical",
+     "text": "Republishing the imported store reproduces the exported dossier-0001.jsonl byte for byte.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "File.ReadAllBytes(Path.Combine(bundle, \"dossier-0001.jsonl\"))"
+     ]
+    },
+    {
+     "key": "roundtrip-markdown-republish-facts-and-index-match",
+     "text": "RoundTrip_MarkdownRepublishOfImportedStoreMatches compares the fact files and index.md of the original and imported stores as equal text.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Encoding.UTF8.GetString(content)).IsEqualTo(Encoding.UTF8.GetString(fromB[name]))"
+     ]
+    },
+    {
+     "key": "roundtrip-subject-scope-outside-parent-is-null",
+     "text": "An imported subject whose parent was outside the bundle has a null parent_id in the target store.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "SELECT parent_id FROM subjects WHERE id = $i"
+     ]
+    },
+    {
+     "key": "roundtrip-multifile-imports-in-order",
+     "text": "Publishing with max file bytes 1400 yields more than two data files, and importing them reports 4 facts and 1 blob.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Count).IsGreaterThan(2)"
+     ]
+    },
+    {
+     "key": "import-unicode-separators-survive-round-trip",
+     "text": "Import_UnicodeSeparatorsSurvive expects the imported fact rows to equal the source fact rows exactly.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "await Assert.That(FactRows(b.Store).SequenceEqual(FactRows(a.Store))).IsTrue();"
+     ]
+    },
+    {
+     "key": "reject-unlisted-data-file",
+     "text": "A copied extra data file is rejected with import_unlisted_file and leaves the target store with 0 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "IsEqualTo(\"import_unlisted_file\")"
+     ]
+    },
+    {
+     "key": "reject-listed-file-missing-or-without-stats",
+     "text": "A listed data file absent from file_stats fails with import_file_mismatch, and a listed file missing on disk fails with import_file_missing.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "m[\"file_stats\"]!.AsObject().Remove(\"dossier-0001.jsonl\")"
+     ]
+    },
+    {
+     "key": "reject-stats-mismatch-same-length-edit",
+     "text": "A same-length content edit is caught by the sha256 check and reported as import_file_mismatch.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "sha.Code).IsEqualTo(\"import_file_mismatch\")"
+     ]
+    },
+    {
+     "key": "reject-line-without-terminating-newline",
+     "text": "Stripping the final newline of a data file fails with import_file_mismatch even when the refreshed stats match it.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Tamper(dir, t => t.TrimEnd"
+     ]
+    },
+    {
+     "key": "reject-unknown-format-and-unknown-listed-files",
+     "text": "Manifest format dossier-jsonl/99 fails with unsupported_bundle_format, and adding ../../etc/hosts to files fails with import_unlisted_file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "m[\"format\"] = \"dossier-jsonl/99\""
+     ]
+    },
+    {
+     "key": "reject-symlinked-data-file",
+     "text": "A data file replaced by a symbolic link is rejected with import_unsafe_path and imports no facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "IsEqualTo(\"import_unsafe_path\")"
+     ]
+    },
+    {
+     "key": "reject-oversize-line",
+     "text": "Importing with MaxLineBytes 300 fails with import_line_too_long and the message names the file and its position.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "MaxLineBytes = 300"
+     ]
+    },
+    {
+     "key": "reject-invalid-json-and-duplicate-ids",
+     "text": "Appending a non-JSON line fails with import_bad_record, and appending a duplicate fact line fails with import_duplicate_id.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "IsEqualTo(\"import_bad_record\")"
+     ]
+    },
+    {
+     "key": "import-unknown-record-type-skipped-with-reason",
+     "text": "An unknown record type future is skipped with that name in the reason, and the import still reports 4 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "s.Reason.Contains(\"future\""
+     ]
+    },
+    {
+     "key": "import-fact-without-required-fields-skipped",
+     "text": "A fact line carrying only id and type is skipped with a reason containing lacks, and the import still reports 4 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "s.Reason.Contains(\"lacks\""
+     ]
+    },
+    {
+     "key": "asset-path-traversal-never-read",
+     "text": "A path traversal asset path that hashes correctly is still skipped with a path reason and no blob is written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "result.Skipped[0].Reason.Contains(\"path\""
+     ]
+    },
+    {
+     "key": "asset-path-must-match-generated-pattern",
+     "text": "An asset path inside the bundle that is not the generated name is skipped even when its bytes hash correctly.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "File.Exists(Path.Combine(b.Store.BlobRoot, shot.Sha))).IsFalse()"
+     ]
+    },
+    {
+     "key": "asset-embedded-sha-mismatch-skipped",
+     "text": "Replacing the embedded base64 with other bytes of equal length skips the asset for sha256 mismatch while 4 facts import.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "await Assert.That(other.Length).IsEqualTo(good.Length);"
+     ]
+    },
+    {
+     "key": "asset-bad-base64-and-oversize-skipped",
+     "text": "Truncated or padded base64, a wrong encoding, non-base64 data and a declared size over MaxEmbedAssetBytes are each skipped with a matching reason.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "MaxEmbedAssetBytes + 1"
+     ]
+    },
+    {
+     "key": "asset-non-hex-sha-never-a-blob-name",
+     "text": "Replacing the sha with ../../evil leaves the blob root empty and creates no evil file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Directory.EnumerateFileSystemEntries(tampered.Store.BlobRoot)"
+     ]
+    },
+    {
+     "key": "asset-missing-at-publish-skipped-with-reason",
+     "text": "A blob missing at publish time is skipped with a reason containing missing while 4 facts and 1 attachment still import.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "result.Attachments).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "import-existing-markdown-bundle-still-imports",
+     "text": "Importing a bundle published in the markdown format still reports 4 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "await Assert.That(result.Facts).IsEqualTo(4);"
+     ]
+    },
+    {
+     "key": "cli-import-reads-a-jsonl-bundle",
+     "text": "The CLI import of a jsonl publish exits 0 and prints a summary containing facts 4.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "Regex.IsMatch(stdout, \"\\\"facts\\\":4\")"
+     ]
+    },
+    {
+     "key": "asset-symlinked-file-rejected",
+     "text": "A symlinked asset file is skipped with a reason containing symbolic link and no blob is written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "result.Skipped[0].Reason.Contains(\"symbolic link\""
+     ]
+    },
+    {
+     "key": "asset-files-mode-hash-mismatch-skipped",
+     "text": "Tampered asset file bytes in files mode are skipped with a sha256 reason and no blob is written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlImportTests.cs",
+      "result.Skipped.Single().Reason.Contains(\"sha256\""
+     ]
+    }
+   ]
+  }
+ ]
+}

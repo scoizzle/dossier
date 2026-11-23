@@ -1,0 +1,665 @@
+{
+ "agent": "swarm-src-store",
+ "slice": "src-store",
+ "subjects": [
+  {
+   "name": "src/Dossier/Store.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "Store.cs"
+   ],
+   "facts": [
+    {
+     "key": "db-path-fallback",
+     "text": "The DossierStore constructor takes dbPath, else the DOSSIER_DB environment variable, else ./dossier.db.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "Environment.GetEnvironmentVariable(\"DOSSIER_DB\")"
+     ]
+    },
+    {
+     "key": "blob-root-beside-db",
+     "text": "BlobRoot is the blobs directory beside the resolved database file.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "BlobRoot = Path.Combine(directory"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.OpenConnection",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "foreign-keys-pragma",
+     "text": "Every OpenConnection sets PRAGMA foreign_keys=ON alongside journal_mode=WAL and busy_timeout=5000.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "PRAGMA busy_timeout=5000; PRAGMA foreign_keys=ON;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::Initialize",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "read-before-write",
+     "text": "Initialize returns without writing when RevisionSchemaIsCurrent already reports a current schema.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "if (RevisionSchemaIsCurrent(connection))"
+     ]
+    },
+    {
+     "key": "begin-immediate",
+     "text": "Initialize takes its write lock with a raw BEGIN IMMEDIATE rather than a deferred transaction.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "Run(connection, \"BEGIN IMMEDIATE\");"
+     ]
+    },
+    {
+     "key": "recheck-inside-lock",
+     "text": "Inside the write lock Initialize re-checks RevisionSchemaIsCurrent before dropping and recreating the triggers.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "if (!RevisionSchemaIsCurrent(connection))"
+     ]
+    },
+    {
+     "key": "seed-from-journal-head",
+     "text": "The revision counter is seeded with INSERT OR IGNORE from the maximum changes seq, so a deleted row cannot reissue a seq.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "INSERT OR IGNORE INTO meta(key, value) SELECT"
+     ]
+    },
+    {
+     "key": "rollback-swallows",
+     "text": "A failure inside the write lock rolls back, and a SqliteException from that rollback is swallowed so the original failure is thrown.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "catch (SqliteException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::RevisionSchemaIsCurrent",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "trigger-count-matches",
+     "text": "RevisionSchemaIsCurrent requires the trigger count to equal TriggerSpecs.Length before it reports a current schema.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "!= TriggerSpecs.Length"
+     ]
+    },
+    {
+     "key": "journal-body-check",
+     "text": "It counts only triggers whose stored sql contains INSERT INTO changes, so a half-replaced trigger set is detected.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "AND sql LIKE '%INSERT INTO changes%'"
+     ]
+    },
+    {
+     "key": "revision-row-check",
+     "text": "The schema counts as current only when a meta row with key revision exists as well.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "SELECT COUNT(*) FROM meta WHERE key = 'revision'"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Revision",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "unparsable-value-zero",
+     "text": "Revision falls back to 0 when the meta value is present but is not a parseable integer.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "command.ExecuteScalar() is string text"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::RevisionTriggers",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "one-per-spec",
+     "text": "RevisionTriggers builds one trigger for every table and operation pair in TriggerSpecs.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "foreach (var (table, name, op) in TriggerSpecs)"
+     ]
+    },
+    {
+     "key": "old-versus-new",
+     "text": "A delete trigger reads the OLD row while insert and update triggers read the NEW row.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "var row = name == \"delete\""
+     ]
+    },
+    {
+     "key": "refs-subject-subquery",
+     "text": "For refs the trigger derives subject_id with a subquery on facts and takes fact_id from the ref.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "SELECT subject_id FROM facts WHERE id ="
+     ]
+    },
+    {
+     "key": "seq-equals-revision",
+     "text": "Each trigger bumps meta.revision and then journals the row under that same number, so the journal seq equals the revision.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "INSERT INTO changes(seq, tbl, op"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::ReadSnapshot",
+   "kind": "type",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "deferred-begin",
+     "text": "The ReadSnapshot constructor opens the snapshot with BEGIN DEFERRED, never taking the write lock.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "Run(connection, \"BEGIN DEFERRED\");"
+     ]
+    },
+    {
+     "key": "dispose-rolls-back",
+     "text": "ReadSnapshot.Dispose ends the snapshot with ROLLBACK and swallows a SqliteException because nothing was written.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "Run(connection, \"ROLLBACK\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::Command",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "assigns-transaction",
+     "text": "Command assigns the supplied SqliteTransaction to the new command before setting its text.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "command.Transaction = transaction;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::Bind",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "null-becomes-dbnull",
+     "text": "Bind converts a null value to DBNull.Value before adding the parameter.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "command.Parameters.AddWithValue(name, value ?? DBNull.Value);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Store.cs::Timestamp",
+   "kind": "method",
+   "parent": "src/Dossier/Store.cs",
+   "facts": [
+    {
+     "key": "round-trip-format",
+     "text": "Timestamp formats DateTimeOffset.UtcNow in UTC with the round-trip format specifier O.",
+     "at": [
+      "src/Dossier/Store.cs",
+      "DateTimeOffset.UtcNow.ToString(\"O\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Dump",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "skipped-reason-too-short",
+     "text": "A chunk the trim leaves short is skipped with reason too_short and a locator for its line range.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "Reason = \"too_short\""
+     ]
+    },
+    {
+     "key": "missing-source-code",
+     "text": "Dump throws DossierRequestException missing_source when Source is blank.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "throw new DossierRequestException(\"missing_source\""
+     ]
+    },
+    {
+     "key": "missing-subject-code",
+     "text": "Dump throws DossierRequestException missing_subject when Subject is blank.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "throw new DossierRequestException(\"missing_subject\""
+     ]
+    },
+    {
+     "key": "blob-written-once",
+     "text": "The blob file is written only when blobs/<sha256> is not already on disk.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "if (!File.Exists(blobPath))"
+     ]
+    },
+    {
+     "key": "blob-failed-error",
+     "text": "A failed blob write adds blob_failed to Errors and returns before any decoding.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "response.Errors.Add($\"blob_failed"
+     ]
+    },
+    {
+     "key": "parse-failed-after-blob",
+     "text": "Malformed UTF-8 is reported as parse_failed after the blob has already been written.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "response.Errors.Add($\"parse_failed"
+     ]
+    },
+    {
+     "key": "default-kind-note",
+     "text": "An absent or blank Kind defaults to the constant DefaultFactKind.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "string.IsNullOrWhiteSpace(request.Kind)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::DefaultSplit",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "markdown-extension-rule",
+     "text": "DefaultSplit chooses heading for .md and .markdown files and none for every other extension.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "extension.Equals(\".markdown\", StringComparison.OrdinalIgnoreCase)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::Split",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "normalize-newlines",
+     "text": "Split rewrites CRLF and a lone CR to a newline before splitting the text into lines.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "text.Replace(\"\\r\\n\", \"\\n\")"
+     ]
+    },
+    {
+     "key": "file-and-none-one-chunk",
+     "text": "The file and none splits each return one chunk running from line 1 through LastContentLine.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "\"file\" => new List<Chunk>"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::SplitHeading",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "hash-starts-chunk",
+     "text": "A line whose first character is a hash starts a new heading chunk.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "lines[index][0] == '#'"
+     ]
+    },
+    {
+     "key": "preamble-start",
+     "text": "Before any heading, the first non-blank line starts the chunk as preamble.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "else if (start < 0 && !string.IsNullOrWhiteSpace(lines[index]))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::AddChunk",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "trim-blank-edges",
+     "text": "AddChunk trims blank leading and trailing lines and drops the chunk when nothing remains.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "while (start <= end && string.IsNullOrWhiteSpace(lines[start]))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::LineRangeLocator",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "selector-format",
+     "text": "LineRangeLocator sends the range as line equal to start plus a selector of the form Lstart-Lend.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "(\"selector\", $\"L{startLine}-L{endLine}\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::AccountPosted",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "status-new-versus-deduped",
+     "text": "AccountPosted records the fact id under Created when the status is new and under Deduped otherwise.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "if (fact.Status == \"new\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dump.cs::BuildFact",
+   "kind": "method",
+   "parent": "DossierStore.Dump",
+   "facts": [
+    {
+     "key": "derived-from-basis",
+     "text": "The derived_from ref BuildFact attaches uses kind file and basis observed.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "Basis = ObservedBasis"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Correlate",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "invalid-matcher-code",
+     "text": "Correlate throws invalid_matcher when a requested matcher is neither same_ref nor shared_tag.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "\"invalid_matcher\","
+     ]
+    },
+    {
+     "key": "default-matchers",
+     "text": "Correlate defaults to the same_ref and shared_tag matchers when Matchers is empty.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "new List<string> { \"same_ref\", \"shared_tag\" }"
+     ]
+    },
+    {
+     "key": "unknown-subject-empty",
+     "text": "Correlate returns an empty response when a named Subject resolves to no ids.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "if (subjectIds.Count == 0)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Correlate.cs::AddSameRefPairs",
+   "kind": "method",
+   "parent": "DossierStore.Correlate",
+   "facts": [
+    {
+     "key": "normalize-kind-target",
+     "text": "AddSameRefPairs normalizes every ref kind and target with Names.Normalize before grouping.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "var kind = Names.Normalize(reader.GetString(1));"
+     ]
+    },
+    {
+     "key": "one-id-per-group",
+     "text": "AddSameRefPairs stores at most one fact id per normalized kind and target group.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "if (!factIds.Contains(factId, StringComparer.Ordinal))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Correlate.cs::AppendSubjectFilter",
+   "kind": "method",
+   "parent": "DossierStore.Correlate",
+   "facts": [
+    {
+     "key": "numbered-subject-parameters",
+     "text": "AppendSubjectFilter binds one $subject parameter per subject id and appends a subject_id IN filter.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "var name = \"$subject\" + index;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Profiles.cs::PublishProfile.Load",
+   "kind": "method",
+   "parent": "Profiles.cs::PublishProfile",
+   "facts": [
+    {
+     "key": "profile-not-found",
+     "text": "Load throws invalid_profile when the path is blank or the file does not exist.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "profile file not found"
+     ]
+    },
+    {
+     "key": "invalid-json",
+     "text": "Load throws invalid_profile when the profile text is not valid JSON.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "is not valid JSON"
+     ]
+    },
+    {
+     "key": "root-must-be-object",
+     "text": "Load requires the JSON root to be an object.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "document.RootElement.ValueKind != JsonValueKind.Object"
+     ]
+    },
+    {
+     "key": "unknown-key-rejected",
+     "text": "An unrecognized key is rejected with invalid_profile naming the field.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      ": unknown field"
+     ]
+    },
+    {
+     "key": "numeric-field-type",
+     "text": "A numeric field must be a non-negative integer or invalid_profile names the field.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "property.Value.TryGetInt64(out var value) && value >= 0"
+     ]
+    },
+    {
+     "key": "min-exceeds-max",
+     "text": "Load rejects a min_file_bytes greater than max_file_bytes when the max limit is positive.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "if (profile.MaxFileBytes > 0 && profile.MinFileBytes > profile.MaxFileBytes)"
+     ]
+    },
+    {
+     "key": "extensions-normalized",
+     "text": "Allowed extensions are lowercased with any leading dot trimmed, and an empty value is rejected.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "item.GetString()!.TrimStart('.')"
+     ]
+    },
+    {
+     "key": "name-defaults-to-filename",
+     "text": "When name is absent the profile name defaults to the file name without its extension.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "Path.GetFileNameWithoutExtension(path)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "ComplianceReport.Evaluate",
+   "kind": "method",
+   "parent": "src/Dossier/Profiles.cs",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "row-order",
+     "text": "Evaluate appends rows in order max_files, min_file_bytes, max_file_bytes, max_total_bytes, allowed_extensions, max_path_depth.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "new ComplianceRow(\"max_files\""
+     ]
+    },
+    {
+     "key": "zero-renders-unbounded",
+     "text": "A limit of 0 is rendered as unbounded in the allowed column.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "value == 0 ? \"unbounded\""
+     ]
+    },
+    {
+     "key": "depth-segments",
+     "text": "Path depth counts the slash-separated segments of each bundle-relative path and takes the maximum.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "p.Split('/').Length"
+     ]
+    },
+    {
+     "key": "empty-file-set",
+     "text": "An empty file set reports the smallest size, largest size and depth as 0.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "files.Count == 0 ? 0"
+     ]
+    },
+    {
+     "key": "extension-labels",
+     "text": "The extension row labels md as md (markdown) and a missing extension as (none).",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "\"md\" => \"md (markdown)\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Profiles.cs::ComplianceReport",
+   "kind": "type",
+   "parent": "src/Dossier/Profiles.cs",
+   "aliases": [
+    "ComplianceReport"
+   ],
+   "facts": [
+    {
+     "key": "passed-all-rows",
+     "text": "Passed is true only when every row passes.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "Rows.All(r => r.Pass)"
+     ]
+    },
+    {
+     "key": "format-gap-note",
+     "text": "Render appends a format gap note when the allowed_extensions row failed.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "Rows.Any(r => r.Limit == \"allowed_extensions\" && !r.Pass)"
+     ]
+    },
+    {
+     "key": "note-line",
+     "text": "Render appends the profile note as a line when Note is non-empty.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "if (Profile.Note.Length > 0)"
+     ]
+    },
+    {
+     "key": "header-source-retrieved",
+     "text": "Render prints the profile name and, when SourceUrl is set, the source and retrieved values in parentheses.",
+     "at": [
+      "src/Dossier/Profiles.cs",
+      "b.Append(\" (source \").Append(Profile.SourceUrl)"
+     ]
+    }
+   ]
+  }
+ ]
+}

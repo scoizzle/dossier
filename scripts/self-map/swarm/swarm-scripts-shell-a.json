@@ -1,0 +1,840 @@
+{
+ "agent": "swarm-scripts-shell-a",
+ "slice": "scripts-shell-a",
+ "subjects": [
+  {
+   "name": "scripts/smoke-aot.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "smoke-aot.sh"
+   ],
+   "facts": [
+    {
+     "key": "usage-two-args",
+     "text": "The script exits 2 with a usage line on stderr when it is not given exactly two arguments.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "usage: $0 <binary> <expected-version>"
+     ]
+    },
+    {
+     "key": "missing-binary-exit-2",
+     "text": "It exits 2 when the first argument is not an existing file and names the missing binary.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "smoke: binary not found:"
+     ]
+    },
+    {
+     "key": "bin-absolute",
+     "text": "BIN is turned into an absolute path by joining the absolute dirname with the basename.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "pwd)/$(basename \"$bin_in\")"
+     ]
+    },
+    {
+     "key": "tmp-dir-trap",
+     "text": "The temporary directory is created with mktemp and removed by an EXIT trap.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "dossier-smoke.XXXXXX"
+     ]
+    },
+    {
+     "key": "cygpath-native-path",
+     "text": "When cygpath is on PATH the temp directory is converted with cygpath -m so native Windows binaries get a Windows path.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "TMP_NATIVE=\"$(cygpath -m \"$TMP\")\""
+     ]
+    },
+    {
+     "key": "db-in-tmp",
+     "text": "DOSSIER_DB is exported as smoke.db inside that temporary directory.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "export DOSSIER_DB=\"$TMP_NATIVE/smoke.db\""
+     ]
+    },
+    {
+     "key": "marker-token",
+     "text": "The marker token that the script dumps and then searches for is zyxwvquartz.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "TOKEN=\"zyxwvquartz\""
+     ]
+    },
+    {
+     "key": "smoke-subject",
+     "text": "Every verb in the smoke test is scoped to the subject Smoke/Aot.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "SUBJECT=\"Smoke/Aot\""
+     ]
+    },
+    {
+     "key": "run-strips-cr",
+     "text": "run captures stdout, strips carriage returns, and prints the output back out.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "OUT=\"$(printf '%s' \"$OUT\" | tr -d"
+     ]
+    },
+    {
+     "key": "run-fails-nonzero",
+     "text": "A non-zero exit makes run print the captured output, dump stderr, and fail with the exit code.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "'$*' exited $rc"
+     ]
+    },
+    {
+     "key": "fail-exit-1",
+     "text": "fail prints SMOKE FAILED to stderr and exits 1.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "SMOKE FAILED: %s"
+     ]
+    },
+    {
+     "key": "expect-contains-literal",
+     "text": "expect_contains fails with a message when the captured output lacks the given literal string.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "output does not contain"
+     ]
+    },
+    {
+     "key": "expect-match-regex",
+     "text": "expect_match treats its argument as an extended regular expression and tests it with grep -Eq.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "grep -Eq \"$1\""
+     ]
+    },
+    {
+     "key": "version-exact-match",
+     "text": "The version step fails unless the binary output equals the expected version string exactly.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "fail \"version is"
+     ]
+    },
+    {
+     "key": "dump-note-marker",
+     "text": "The dump step writes a note file containing the marker and dumps it with --source and --subject.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "The %s marker proves dump and search work."
+     ]
+    },
+    {
+     "key": "dump-created-list",
+     "text": "After dump the output must contain a created entry, which is checked with a regular expression.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"created\":\\[\"[^\"]+\""
+     ]
+    },
+    {
+     "key": "search-step",
+     "text": "The search step searches for the marker token restricted to the smoke subject.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "run search --q \"$TOKEN\" --subject \"$SUBJECT\""
+     ]
+    },
+    {
+     "key": "check-exact-name",
+     "text": "The check step requires the match field to be exact_name and at least one summarised fact.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"match\":\"exact_name\""
+     ]
+    },
+    {
+     "key": "post-status-new",
+     "text": "The post step posts a note fact under the smoke subject and requires the status new.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"status\":\"new\""
+     ]
+    },
+    {
+     "key": "post-fact-id",
+     "text": "The new fact id is extracted from the post output with sed, and an empty id fails the run.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "could not read the new fact id"
+     ]
+    },
+    {
+     "key": "verify-step",
+     "text": "The verify step runs with --require-current and requires current true and status live.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"current\":true"
+     ]
+    },
+    {
+     "key": "changes-step",
+     "text": "The changes step runs changes --last 1 and requires a non-zero next cursor plus a change row.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"next\":[1-9]"
+     ]
+    },
+    {
+     "key": "compile-json-marker",
+     "text": "A compile at depth full must include the marker token in its JSON output.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "compile json"
+     ]
+    },
+    {
+     "key": "compile-markdown-marker",
+     "text": "A second compile run with --format markdown must also contain the marker token.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "--format markdown"
+     ]
+    },
+    {
+     "key": "mcp-jsonl-session",
+     "text": "The mcp step pipes a JSONL session that starts with initialize and notifications/initialized into the binary.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "notifications/initialized"
+     ]
+    },
+    {
+     "key": "mcp-error-fails",
+     "text": "The mcp session fails if the output contains an error field or lacks a result field.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "mcp session returned an error"
+     ]
+    },
+    {
+     "key": "mcp-verify-current",
+     "text": "The mcp step fails when verify_facts does not report the posted fact as current.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "verify_facts did not report the posted fact as current"
+     ]
+    },
+    {
+     "key": "publish-manifest",
+     "text": "The publish step fails when manifest.json is missing from the bundle or when no fact markdown file was written.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "publish: manifest.json missing from the bundle"
+     ]
+    },
+    {
+     "key": "import-second-db",
+     "text": "The markdown bundle is imported into a second fresh database whose path is second.db.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "import (into a second, fresh database)"
+     ]
+    },
+    {
+     "key": "publish-jsonl-format",
+     "text": "The jsonl publish must write a manifest that declares the format dossier-jsonl/1.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "\"format\": \"dossier-jsonl/1\""
+     ]
+    },
+    {
+     "key": "import-jsonl-search",
+     "text": "After importing the jsonl bundle into a third database the script searches for the marker again.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "import jsonl (into another fresh database)"
+     ]
+    },
+    {
+     "key": "smoke-ok-line",
+     "text": "On success the script prints SMOKE OK with the binary path and the expected version.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "SMOKE OK: %s (%s)"
+     ]
+    },
+    {
+     "key": "show-step",
+     "text": "The show step requires both the fact id and the phrase posted fact in the output.",
+     "at": [
+      "scripts/smoke-aot.sh",
+      "expect_contains \"posted fact\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/scale-test.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "scale-test.sh"
+   ],
+   "facts": [
+    {
+     "key": "tag-default",
+     "text": "The Django tag defaults to 6.1.3 and can be overridden through the TAG environment variable.",
+     "at": [
+      "scripts/scale-test.sh",
+      "TAG=\"${TAG:-6.1.3}\""
+     ]
+    },
+    {
+     "key": "fact-limit-default",
+     "text": "The fact limit defaults to 50000 and is read from FACT_LIMIT.",
+     "at": [
+      "scripts/scale-test.sh",
+      "FACT_LIMIT=\"${FACT_LIMIT:-50000}\""
+     ]
+    },
+    {
+     "key": "seed-default",
+     "text": "The compile sample seed defaults to 42 through SEED.",
+     "at": [
+      "scripts/scale-test.sh",
+      "SEED=\"${SEED:-42}\""
+     ]
+    },
+    {
+     "key": "sample-default",
+     "text": "The number of subjects sampled for compile latency defaults to 20 through SAMPLE.",
+     "at": [
+      "scripts/scale-test.sh",
+      "SAMPLE=\"${SAMPLE:-20}\""
+     ]
+    },
+    {
+     "key": "fact-file-cap-default",
+     "text": "The fact file cap defaults to 5000 and is read from FACT_FILE_CAP.",
+     "at": [
+      "scripts/scale-test.sh",
+      "FACT_FILE_CAP=\"${FACT_FILE_CAP:-5000}\""
+     ]
+    },
+    {
+     "key": "dll-path",
+     "text": "The script runs the Release build of Dossier.dll under src/Dossier/bin/Release/net10.0.",
+     "at": [
+      "scripts/scale-test.sh",
+      "DLL=\"$ROOT/src/Dossier/bin/Release/net10.0/Dossier.dll\""
+     ]
+    },
+    {
+     "key": "out-default",
+     "text": "The bundle is written to examples/django-bundle unless a first argument overrides it.",
+     "at": [
+      "scripts/scale-test.sh",
+      "OUT=\"${1:-$ROOT/examples/django-bundle}\""
+     ]
+    },
+    {
+     "key": "work-dir",
+     "text": "Raw timing files live in WORK, a mktemp directory under TMPDIR.",
+     "at": [
+      "scripts/scale-test.sh",
+      "dossier-scale.XXXXXX"
+     ]
+    },
+    {
+     "key": "timestamp-helper",
+     "text": "now prints wall-clock seconds with millisecond precision using perl Time::HiRes.",
+     "at": [
+      "scripts/scale-test.sh",
+      "perl -MTime::HiRes=time"
+     ]
+    },
+    {
+     "key": "fetch-once",
+     "text": "The tarball is downloaded with curl only when the extracted django directory does not exist yet.",
+     "at": [
+      "scripts/scale-test.sh",
+      "curl -fsSL \"https://codeload.github.com/django/django/tar.gz/refs/tags/$TAG\""
+     ]
+    },
+    {
+     "key": "file-list-sort",
+     "text": "The file list combines docs txt files, django py files and top-level md files, sorted under the C locale.",
+     "at": [
+      "scripts/scale-test.sh",
+      "LC_ALL=C sort"
+     ]
+    },
+    {
+     "key": "files-total",
+     "text": "files_total is printed as the line count of the generated files list.",
+     "at": [
+      "scripts/scale-test.sh",
+      "echo \"files_total=$(wc -l < \"$WORK/files.txt\" | tr -d ' ')\""
+     ]
+    },
+    {
+     "key": "ingest-stop",
+     "text": "The ingest loop stops as soon as the accumulated fact total reaches FACT_LIMIT.",
+     "at": [
+      "scripts/scale-test.sh",
+      "[ \"$total\" -ge \"$FACT_LIMIT\" ] && break"
+     ]
+    },
+    {
+     "key": "kind-by-extension",
+     "text": "Files ending in .py are dumped with --kind code and everything else with --kind doc.",
+     "at": [
+      "scripts/scale-test.sh",
+      "*.py) kind=code ;;"
+     ]
+    },
+    {
+     "key": "subject-per-file",
+     "text": "The subject for each file is its relative path with the extension stripped.",
+     "at": [
+      "scripts/scale-test.sh",
+      "subj=\"${rel%.*}\""
+     ]
+    },
+    {
+     "key": "created-count",
+     "text": "The number of created facts per file is read with jq from the created array.",
+     "at": [
+      "scripts/scale-test.sh",
+      "jq '.created | length'"
+     ]
+    },
+    {
+     "key": "mean-ms-per-file",
+     "text": "mean_ms_per_file divides ingest seconds by files consumed and multiplies the result by 1000.",
+     "at": [
+      "scripts/scale-test.sh",
+      "echo \"mean_ms_per_file="
+     ]
+    },
+    {
+     "key": "db-bytes-portable",
+     "text": "db_bytes reads the database size with stat -f %z on BSD and falls back to stat -c %s on GNU.",
+     "at": [
+      "scripts/scale-test.sh",
+      "stat -f %z \"$DOSSIER_DB\""
+     ]
+    },
+    {
+     "key": "slowest-ten",
+     "text": "The ten slowest files are printed from the timing table sorted by its first column in reverse numeric order.",
+     "at": [
+      "scripts/scale-test.sh",
+      "sort -t$'\\t' -k1,1nr"
+     ]
+    },
+    {
+     "key": "compile-budget",
+     "text": "Each sampled compile uses budget 1200 with budget-mode strict and format json.",
+     "at": [
+      "scripts/scale-test.sh",
+      "--depth full --budget 1200 --budget-mode strict --format json"
+     ]
+    },
+    {
+     "key": "compile-percentiles",
+     "text": "compile_p50_ms and compile_p95_ms are nearest-rank values over the sorted millisecond list.",
+     "at": [
+      "scripts/scale-test.sh",
+      "compile_p50_ms=%s\\ncompile_p95_ms=%s"
+     ]
+    },
+    {
+     "key": "conflicts-total",
+     "text": "conflicts_total accumulates the length of the conflicts array across every subject that has facts.",
+     "at": [
+      "scripts/scale-test.sh",
+      "conflicts=$((conflicts + c))"
+     ]
+    },
+    {
+     "key": "publish-probe",
+     "text": "A probe publish with --facts detail counts the fact files a detail publish would write.",
+     "at": [
+      "scripts/scale-test.sh",
+      "--facts detail"
+     ]
+    },
+    {
+     "key": "facts-mode-cap",
+     "text": "When the counted fact files exceed FACT_FILE_CAP the real publish uses --facts none instead of detail.",
+     "at": [
+      "scripts/scale-test.sh",
+      "if [ \"$would\" -gt \"$FACT_FILE_CAP\" ]; then facts_mode=none"
+     ]
+    },
+    {
+     "key": "bundle-bytes",
+     "text": "bundle_bytes sums the size of every file in the bundle with cat and wc -c.",
+     "at": [
+      "scripts/scale-test.sh",
+      "echo \"bundle_bytes=$(find \"$OUT\" -type f -exec cat {} + | wc -c | tr -d ' ')\""
+     ]
+    },
+    {
+     "key": "facts-shown",
+     "text": "facts_shown sums the Facts shown numerators from every subject index page in the bundle.",
+     "at": [
+      "scripts/scale-test.sh",
+      "- Facts shown: "
+     ]
+    },
+    {
+     "key": "largest-page-tokens",
+     "text": "largest_subject_page_tokens estimates tokens as page bytes plus 3 divided by 4.",
+     "at": [
+      "scripts/scale-test.sh",
+      "largest_subject_page_tokens="
+     ]
+    },
+    {
+     "key": "sample-seeded",
+     "text": "The compile sample picks subjects with a fixed-seed random value and sorts them by that value.",
+     "at": [
+      "scripts/scale-test.sh",
+      "BEGIN{srand(seed)}"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/eval.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "eval.sh"
+   ],
+   "facts": [
+    {
+     "key": "abort-on-error",
+     "text": "The eval script aborts on errors and unset variables because it sets -euo pipefail.",
+     "at": [
+      "scripts/eval.sh",
+      "set -euo pipefail"
+     ]
+    },
+    {
+     "key": "missing-dll",
+     "text": "It exits 1 with a build hint when the Release Dossier.dll is missing.",
+     "at": [
+      "scripts/eval.sh",
+      "missing $DLL; build it with"
+     ]
+    },
+    {
+     "key": "artifacts-dir",
+     "text": "The artifacts directory defaults to scripts/eval/artifacts and can be changed with EVAL_OUT.",
+     "at": [
+      "scripts/eval.sh",
+      "OUT=\"${EVAL_OUT:-$ROOT/scripts/eval/artifacts}\""
+     ]
+    },
+    {
+     "key": "eval-subject",
+     "text": "The measured subject is Memos/Home for every arm.",
+     "at": [
+      "scripts/eval.sh",
+      "SUBJECT=\"Memos/Home\""
+     ]
+    },
+    {
+     "key": "eval-temp-db",
+     "text": "A single temporary database is exported as DOSSIER_DB for the whole run.",
+     "at": [
+      "scripts/eval.sh",
+      "export DOSSIER_DB=\"$TMP/dossier.db\""
+     ]
+    },
+    {
+     "key": "seed-first",
+     "text": "The harness seeds a clean database by running scripts/seed.sh before measuring anything.",
+     "at": [
+      "scripts/eval.sh",
+      "bash \"$ROOT/scripts/seed.sh\" >/dev/null"
+     ]
+    },
+    {
+     "key": "arm-a-search",
+     "text": "Arm A writes the result of search at limit 100 for the subject to arm-a.json.",
+     "at": [
+      "scripts/eval.sh",
+      "search --subject \"$SUBJECT\" --limit 100"
+     ]
+    },
+    {
+     "key": "arm-a2-bare-lines",
+     "text": "Arm A2 reduces the same facts to one bare text line each with jq .hits[].text and drops ids and tags.",
+     "at": [
+      "scripts/eval.sh",
+      "jq -r '.hits[].text'"
+     ]
+    },
+    {
+     "key": "primary-paths-from-refs",
+     "text": "Arm C file paths come from git kind refs in the seed JSON files, deduplicated with sort -u.",
+     "at": [
+      "scripts/eval.sh",
+      "select(.kind == \"git\")"
+     ]
+    },
+    {
+     "key": "primary-cache-name",
+     "text": "Each fetched primary file is cached under primary as its path with slashes replaced plus the revision.",
+     "at": [
+      "scripts/eval.sh",
+      "printf '%s' \"$rel\" | tr"
+     ]
+    },
+    {
+     "key": "primary-fetch-timeout",
+     "text": "Each primary file is fetched from raw.githubusercontent.com with a 20 second curl timeout.",
+     "at": [
+      "scripts/eval.sh",
+      "curl -fsSL -m 20 -o \"$cache.tmp\""
+     ]
+    },
+    {
+     "key": "fetch-fail-soft",
+     "text": "A failed fetch prints a SKIPPED line and does not abort the run.",
+     "at": [
+      "scripts/eval.sh",
+      "fetch failed at rev $C_REV"
+     ]
+    },
+    {
+     "key": "file-tokens",
+     "text": "Per-file tokens are estimated as the character count plus 3 divided by 4.",
+     "at": [
+      "scripts/eval.sh",
+      "ft=$(( (fc + 3) / 4 ))"
+     ]
+    },
+    {
+     "key": "screenshot-tokens",
+     "text": "Screenshot tokens are shot count times width times height divided by 750.",
+     "at": [
+      "scripts/eval.sh",
+      "shot_tokens=$(( shots * sw * sh_ / 750 ))"
+     ]
+    },
+    {
+     "key": "arm-c-artifacts",
+     "text": "The arm C artifact count adds the fetched file count and the declared screenshot count.",
+     "at": [
+      "scripts/eval.sh",
+      "c_artifacts=$(( c_files + shots ))"
+     ]
+    },
+    {
+     "key": "arm-b-compile",
+     "text": "Arm B compiles the subject at budget 1200 with strict budget mode, depth full and markdown format.",
+     "at": [
+      "scripts/eval.sh",
+      "--budget 1200 --budget-mode strict --depth full --format markdown"
+     ]
+    },
+    {
+     "key": "ratio-inf",
+     "text": "ratio_ab prints inf instead of dividing when arm B has zero tokens.",
+     "at": [
+      "scripts/eval.sh",
+      "if (b == 0) { print \"inf\" }"
+     ]
+    },
+    {
+     "key": "b-facts-count",
+     "text": "b_facts counts dash-prefixed lines in arm-b.md until the first heading.",
+     "at": [
+      "scripts/eval.sh",
+      "b_facts=\"$(awk"
+     ]
+    },
+    {
+     "key": "question-total",
+     "text": "q_total counts the id fields in questions.json with grep -c.",
+     "at": [
+      "scripts/eval.sh",
+      "q_total=\"$(grep -c"
+     ]
+    },
+    {
+     "key": "unanswerable-count",
+     "text": "q_unanswerable counts questions whose supporting_fragments array is empty.",
+     "at": [
+      "scripts/eval.sh",
+      "\"supporting_fragments\": \\[\\]"
+     ]
+    },
+    {
+     "key": "arm-c-warning",
+     "text": "The script warns that the B/C ratio is not valid when fewer primary files were fetched than planned.",
+     "at": [
+      "scripts/eval.sh",
+      "WARNING: arm C incomplete"
+     ]
+    },
+    {
+     "key": "summary-table",
+     "text": "The output ends with a markdown table of tokens per arm plus the B/C, B/A and B/A2 ratios.",
+     "at": [
+      "scripts/eval.sh",
+      "| Arm | Context | Tokens |"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/eval/questions.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "questions.json"
+   ],
+   "facts": [
+    {
+     "key": "questions-subject",
+     "text": "The questions target the subject Memos/Home.",
+     "at": [
+      "scripts/eval/questions.json",
+      "\"subject\": \"Memos/Home\""
+     ]
+    },
+    {
+     "key": "questions-estimator",
+     "text": "The declared estimator is chars/4 computed as ceil(length / 4).",
+     "at": [
+      "scripts/eval/questions.json",
+      "\"estimator\": \"chars/4 (ceil(length / 4))\""
+     ]
+    },
+    {
+     "key": "q-header-height",
+     "text": "The q-header-height question expects a conflict between 64 and 72 pixels.",
+     "at": [
+      "scripts/eval/questions.json",
+      "\"id\": \"q-header-height\""
+     ]
+    },
+    {
+     "key": "q-composer-rows",
+     "text": "The q-composer-rows question expects a conflict between 6 rows and 12 rows.",
+     "at": [
+      "scripts/eval/questions.json",
+      "one records 6 rows and another records 12 rows."
+     ]
+    },
+    {
+     "key": "q-save-shortcut",
+     "text": "The q-save-shortcut question expects a conflict between Cmd+Enter on macOS and Ctrl+Enter elsewhere.",
+     "at": [
+      "scripts/eval/questions.json",
+      "Cmd+Enter on macOS versus Ctrl+Enter"
+     ]
+    },
+    {
+     "key": "q-composer-purpose",
+     "text": "The q-composer-purpose answer is typing a memo, attaching media and choosing visibility.",
+     "at": [
+      "scripts/eval/questions.json",
+      "Type a memo, attach media, and choose visibility."
+     ]
+    },
+    {
+     "key": "q-list-order",
+     "text": "The q-list-order answer is newest first in a single column.",
+     "at": [
+      "scripts/eval/questions.json",
+      "Newest first, in a single column."
+     ]
+    },
+    {
+     "key": "q-offline-sync",
+     "text": "The q-offline-sync question is expected to be unanswerable because no offline sync behaviour is recorded.",
+     "at": [
+      "scripts/eval/questions.json",
+      "no offline sync behaviour"
+     ]
+    },
+    {
+     "key": "q-billing-invoice",
+     "text": "The q-billing-invoice question is expected to be unanswerable because no billing or invoice screen is recorded.",
+     "at": [
+      "scripts/eval/questions.json",
+      "no billing or invoice screen"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/eval/sources.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "sources.json"
+   ],
+   "facts": [
+    {
+     "key": "primary-repo",
+     "text": "The primary sources come from the usememos/memos repository.",
+     "at": [
+      "scripts/eval/sources.json",
+      "\"repo\": \"usememos/memos\""
+     ]
+    },
+    {
+     "key": "git-paths-listed",
+     "text": "The four primary source files are listed under git_paths and generated from the seed refs.",
+     "at": [
+      "scripts/eval/sources.json",
+      "\"git_paths\": ["
+     ]
+    },
+    {
+     "key": "refs-checked",
+     "text": "The comment says the generated git_paths list is checked by scripts/verify-refs.sh.",
+     "at": [
+      "scripts/eval/sources.json",
+      "check it with scripts/verify-refs.sh"
+     ]
+    },
+    {
+     "key": "screenshot-dimensions",
+     "text": "Arm C declares three screenshots at 1440 by 900 pixels.",
+     "at": [
+      "scripts/eval/sources.json",
+      "\"width\": 1440"
+     ]
+    },
+    {
+     "key": "screenshot-cost",
+     "text": "The declared screenshot cost is count times width times height divided by 750.",
+     "at": [
+      "scripts/eval/sources.json",
+      "Cost = count * width * height / 750."
+     ]
+    },
+    {
+     "key": "screenshot-placeholder",
+     "text": "The screenshot dimensions are declared because the seeded PNG is a 1x1 placeholder.",
+     "at": [
+      "scripts/eval/sources.json",
+      "the seeded PNG is a 1x1 placeholder"
+     ]
+    }
+   ]
+  }
+ ]
+}

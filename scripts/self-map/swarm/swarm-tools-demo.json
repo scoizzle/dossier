@@ -1,0 +1,756 @@
+{
+ "agent": "swarm-tools-demo",
+ "slice": "tools-demo",
+ "subjects": [
+  {
+   "name": "tools/Dossier.WikipediaDemo/Program.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "main-utf8",
+     "text": "Main sets Console.OutputEncoding to a UTF8Encoding without a BOM and swallows any exception from that assignment.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "Console.OutputEncoding = new UTF8Encoding(false);"
+     ]
+    },
+    {
+     "key": "cancel-key-130",
+     "text": "The Console.CancelKeyPress handler sets eventArgs.Cancel to true, calls StopServer and exits with code 130.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "eventArgs.Cancel = true;"
+     ]
+    },
+    {
+     "key": "sigterm-143",
+     "text": "On non-Windows hosts the PosixSignal.SIGTERM registration sets context.Cancel, calls StopServer and exits with code 143.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "sigterm = PosixSignalRegistration.Create(PosixSignal.SIGTERM, context =>"
+     ]
+    },
+    {
+     "key": "fresh-sidecars",
+     "text": "When --fresh is set the demo deletes the database file plus the -wal and -shm sidecars, ignoring IOException.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "foreach (var suffix in new[] { \"\", \"-wal\", \"-shm\" })"
+     ]
+    },
+    {
+     "key": "dry-run-plan",
+     "text": "When --dry-run is set Main writes the plan with PrintDryRun and returns 0 before any post.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "PrintDryRun(config, dbFile, articles, selected, rootPayload);"
+     ]
+    },
+    {
+     "key": "invalid-json",
+     "text": "Post throws DemoFailure with the label and the text post returned invalid JSON when stdout is not a JsonObject.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "post returned invalid JSON"
+     ]
+    },
+    {
+     "key": "tally-statuses",
+     "text": "Post counts the response statuses new, deduped and replaced on the Tally it is given.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "case \"new\": tally.NewFacts += 1; break;"
+     ]
+    },
+    {
+     "key": "exit-code-2",
+     "text": "A DemoFailure or any other exception makes Main log it, stop the server and return exit code 2.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "catch (DemoFailure failure)"
+     ]
+    },
+    {
+     "key": "stopserver-sigterm",
+     "text": "StopServer signals the non-Windows server process with Native.SendSignal and Native.Sigterm, waits 5000 milliseconds, then calls Kill if it is still running.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "server.WaitForExit(5000);"
+     ]
+    },
+    {
+     "key": "reuse-server-busy",
+     "text": "When the configured port is already listening and --reuse-server is absent, the demo serves on the first free port found from config.Port plus 1.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "serverPort = await ServerControl.FreePortAsync(config.Port + 1);"
+     ]
+    },
+    {
+     "key": "graph-404-warning",
+     "text": "A 404 from GraphStatusAsync makes the demo warn that the build does not serve /api/graph.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "if (await ServerControl.GraphStatusAsync(serverPort) == 404)"
+     ]
+    },
+    {
+     "key": "post-interval",
+     "text": "Articles are posted in order with a Task.Delay of config.IntervalMs between consecutive articles, but not after the last one.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "await Task.Delay(Js.Delay(config.IntervalMs));"
+     ]
+    },
+    {
+     "key": "should-hold",
+     "text": "The demo holds on Timeout.Infinite only when serve is enabled, --exit-after is absent, and either --hold is set or stdin is not redirected.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "var shouldHold = !options.NoServe && !options.ExitAfter && (options.Hold || !Console.IsInputRedirected);"
+     ]
+    },
+    {
+     "key": "post-stderr-warn",
+     "text": "Post logs any non-empty stderr from the dossier post call as a warning before parsing stdout.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "DemoLog.Warn($\"{label}: {stderr.Trim()}\");"
+     ]
+    },
+    {
+     "key": "create-db-directory",
+     "text": "Main creates the parent directory of the database path before initializing anything.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "Directory.CreateDirectory(Path.GetDirectoryName(dbFile)!);"
+     ]
+    },
+    {
+     "key": "root-id-required",
+     "text": "Main throws DemoFailure naming config.RootName when the root post response carries no subject id.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "throw new DemoFailure($\"{config.RootName}: post response had no subject id\");"
+     ]
+    },
+    {
+     "key": "init-before-serve",
+     "text": "Main runs dossier init through RunOrFail before it tries to start or reuse the server.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "dossier.RunOrFail([\"init\"]);"
+     ]
+    },
+    {
+     "key": "serve-exit-warning",
+     "text": "When dossier serve exits and the demo is not stopping, the exit callback warns that the UI is no longer available.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "DemoLog.Warn($\"dossier serve exited ({exitCode}); the UI is no longer available\");"
+     ]
+    },
+    {
+     "key": "graph-url-log",
+     "text": "The demo logs a graph URL built from the loopback port and the encoded root subject id.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "DemoLog.Line($\"graph   http://127.0.0.1:{serverPort}/#/graph/{Js.EncodeUriComponent(rootId)}\");"
+     ]
+    },
+    {
+     "key": "dry-run-footer",
+     "text": "PrintDryRun finishes with a line reporting planned posts of 1 root plus the article count and stating that nothing was written.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Program.cs",
+      "Console.Out.Write($\"planned posts: 1 root + {articles.Count} articles; wrote nothing\\n\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "DemoOptions.cs"
+   ],
+   "facts": [
+    {
+     "key": "flag-list",
+     "text": "DemoOptions.Flags lists the value-less options help, dry-run, no-serve, exit-after, hold, reuse-server and fresh.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "private static readonly string[] Flags = [\"help\", \"dry-run\", \"no-serve\", \"exit-after\", \"hold\", \"reuse-server\", \"fresh\"];"
+     ]
+    },
+    {
+     "key": "default-seeds",
+     "text": "The default seeds are Apollo 11, Apollo program, Saturn V and NASA.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "private static readonly string[] DefaultSeeds = [\"Apollo 11\", \"Apollo program\", \"Saturn V\", \"NASA\"];"
+     ]
+    },
+    {
+     "key": "port-default",
+     "text": "The port defaults to 8787 and is validated between 1 and 65535.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "Port: Integer(\"port\", 8787, 1, 65535),"
+     ]
+    },
+    {
+     "key": "db-default",
+     "text": "The database falls back to the DOSSIER_DB environment variable and then to ./dossier-demo.db.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "Db: Value(\"db\") ?? Environment.GetEnvironmentVariable(\"DOSSIER_DB\") ?? \"./dossier-demo.db\","
+     ]
+    },
+    {
+     "key": "fresh-refuses",
+     "text": "BuildConfig throws DemoFailure telling the user to pass a demo database with --db when --fresh would delete ./dossier.db.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "--fresh refuses to delete ./dossier.db; pass a demo database with --db"
+     ]
+    },
+    {
+     "key": "integer-validation",
+     "text": "Integer throws DemoFailure when the value is not a finite whole number inside the allowed range.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "throw new DemoFailure($\"--{name} must be an integer between {min}{(max is null ? \"\" : $\" and {max}\")}\");"
+     ]
+    },
+    {
+     "key": "seeds-split",
+     "text": "BuildConfig splits each seed value on commas, trims each piece and removes empty entries.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      ".SelectMany(value => value.Split(','))"
+     ]
+    },
+    {
+     "key": "non-flag-rejected",
+     "text": "Parse throws DemoFailure for any argument that does not start with two dashes.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "if (!token.StartsWith(\"--\", StringComparison.Ordinal))"
+     ]
+    },
+    {
+     "key": "missing-value",
+     "text": "Parse throws DemoFailure when an option has no following token or its next token itself starts with two dashes.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "throw new DemoFailure($\"--{key} needs a value\");"
+     ]
+    },
+    {
+     "key": "size-defaults",
+     "text": "The defaults are 10 max subjects, 4 facts per subject, 8 refs per subject and a 2.5 second interval.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+      "IntervalMs: Seconds(\"interval\", 2.5) * 1000,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "WikipediaClient.cs"
+   ],
+   "facts": [
+    {
+     "key": "user-agent",
+     "text": "WikipediaClient sends a User-Agent of DossierDemo/1.0 that names the demo repository.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "private const string UserAgent = \"DossierDemo/1.0 (https://github.com/scoizzle/dossier; live demo script)\";"
+     ]
+    },
+    {
+     "key": "http-timeout",
+     "text": "The Wikipedia HttpClient is created with a 20 second timeout.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "_http = new HttpClient { Timeout = TimeSpan.FromSeconds(20) };"
+     ]
+    },
+    {
+     "key": "api-delay",
+     "text": "QueryAsync sleeps the unused part of ApiDelayMs since the previous call before sending a request.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "await Task.Delay(Js.Delay(_config.ApiDelayMs - sinceLast));"
+     ]
+    },
+    {
+     "key": "http-error",
+     "text": "QueryAsync throws InvalidOperationException with the HTTP status code and reason phrase when the response is not successful.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "throw new InvalidOperationException($\"Wikipedia API {(int)response.StatusCode} {response.ReasonPhrase}\");"
+     ]
+    },
+    {
+     "key": "api-error-body",
+     "text": "QueryAsync throws InvalidOperationException containing the Wikipedia error code and info when the body has an error object.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "throw new InvalidOperationException($\"Wikipedia API {error[\"code\"]}: {error[\"info\"]}\".Trim());"
+     ]
+    },
+    {
+     "key": "namespace-filter",
+     "text": "FetchArticleAsync skips parse links whose namespace ns is not 0.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "if (item[\"ns\"]?.GetValue<int>() != 0)"
+     ]
+    },
+    {
+     "key": "skip-title",
+     "text": "The SkipTitle regex drops titles containing (identifier) or (disambiguation) and titles starting Portal:, Special:, Help:, File: or Category:.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "[GeneratedRegex(@\"(\\((identifier|disambiguation)\\)|^Portal:|^Special:|^Help:|^File:|^Category:)\", RegexOptions.IgnoreCase)]"
+     ]
+    },
+    {
+     "key": "candidate-order",
+     "text": "CollectArticlesAsync orders the wikilink candidates by descending frequency of appearance across the fetched seeds.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "var candidates = frequencyOrder.OrderByDescending(title => frequency[title]).ToList();"
+     ]
+    },
+    {
+     "key": "no-seeds-fetched",
+     "text": "CollectArticlesAsync throws DemoFailure when no seed produced an article.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "throw new DemoFailure(\"none of the seed articles could be fetched\");"
+     ]
+    },
+    {
+     "key": "missing-seed-warn",
+     "text": "A seed that resolves to no page is skipped with a warning naming the seed rather than failing the run.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "DemoLog.Warn($\"no Wikipedia article for \\\"{seed}\\\"\");"
+     ]
+    },
+    {
+     "key": "article-url",
+     "text": "FetchArticleAsync builds the article URL from the lang subdomain and the page title with spaces replaced by underscores.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "$\"https://{_config.Lang}.wikipedia.org/wiki/{Js.EncodeUriComponent(pageTitle.Replace(' ', '_'))}\""
+     ]
+    },
+    {
+     "key": "delay-clamp",
+     "text": "Js.Delay returns a one millisecond TimeSpan when the requested delay exceeds int.MaxValue.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "TimeSpan.FromMilliseconds(milliseconds > int.MaxValue ? 1 : milliseconds);"
+     ]
+    },
+    {
+     "key": "fetch-extract-params",
+     "text": "FetchArticleAsync requests prop extracts with explaintext 1, exsectionformat plain and exlimit 1 for the title.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "Pair(\"prop\", \"extracts\"),"
+     ]
+    },
+    {
+     "key": "parse-lead-section",
+     "text": "FetchArticleAsync requests links from section 0 so only lead-section wikilinks are collected.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "Pair(\"section\", \"0\"),"
+     ]
+    },
+    {
+     "key": "encode-uri-component",
+     "text": "Js.EncodeUriComponent restores the exclamation mark, apostrophe, parentheses, asterisk and tilde that Uri.EscapeDataString would escape.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "Uri.EscapeDataString(value)"
+     ]
+    },
+    {
+     "key": "query-base-params",
+     "text": "QueryAsync always sends action query, format json, formatversion 2 and redirects 1 in the request.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "[\"formatversion\"] = \"2\","
+     ]
+    },
+    {
+     "key": "missing-page-null",
+     "text": "FetchArticleAsync returns null when the pages array is empty or the first page is marked missing.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "page[\"missing\"]?.GetValue<bool>() == true"
+     ]
+    },
+    {
+     "key": "skip-nonexistent-link",
+     "text": "FetchArticleAsync skips a parse link whose exists flag is false.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "if (item[\"exists\"]?.GetValue<bool>() == false)"
+     ]
+    },
+    {
+     "key": "dedupe-links",
+     "text": "FetchArticleAsync adds a link only when the seen set accepts it, so repeated titles appear once.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "if (!string.IsNullOrEmpty(link) && seen.Add(link))"
+     ]
+    },
+    {
+     "key": "dedupe-seed-title",
+     "text": "CollectArticlesAsync records a seed only when its article Title is new to the chosen dictionary.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+      "if (chosen.TryAdd(article.Title, article))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/Payloads.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "Payloads.cs"
+   ],
+   "facts": [
+    {
+     "key": "min-paragraph",
+     "text": "Payloads requires a paragraph to be at least 80 characters long before it becomes a fact.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "private const int MinParagraph = 80;"
+     ]
+    },
+    {
+     "key": "sentence-end-filter",
+     "text": "ParagraphsOf keeps only paragraphs that end with a period, exclamation mark or question mark.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      ".Where(paragraph => paragraph.Length >= MinParagraph && SentenceEnd().IsMatch(paragraph))"
+     ]
+    },
+    {
+     "key": "clean-paragraph",
+     "text": "CleanParagraph removes bracketed citation markers and collapses all whitespace to single spaces before trimming.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "Whitespace().Replace(CitationMarker().Replace(text, \"\"), \" \").Trim();"
+     ]
+    },
+    {
+     "key": "summary-clamp",
+     "text": "The summary fact text is clamped to 600 characters.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"text\"] = Clamp(summary, 600),"
+     ]
+    },
+    {
+     "key": "paragraph-clamp",
+     "text": "Each paragraph fact text is clamped to 500 characters.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"text\"] = Clamp(paragraph, 500),"
+     ]
+    },
+    {
+     "key": "paragraph-limit",
+     "text": "Paragraph facts skip the first paragraph and take at most FactsPerSubject entries.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "foreach (var paragraph in paragraphs.Skip(1).Take(config.FactsPerSubject))"
+     ]
+    },
+    {
+     "key": "url-ref",
+     "text": "UrlRef builds a derived_from ref of kind url with basis observed and verified_at set to the article FetchedAt.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"rel\"] = \"derived_from\","
+     ]
+    },
+    {
+     "key": "tags",
+     "text": "Tags returns source:wikipedia and lang:{lang} for the configured language.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "private static JsonArray Tags(string lang) => [\"source:wikipedia\", $\"lang:{lang}\"];"
+     ]
+    },
+    {
+     "key": "links-fact-tag",
+     "text": "The links fact is added only when at least one selected link target exists, and its tags gain section:links.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "linkTags.Add(\"section:links\");"
+     ]
+    },
+    {
+     "key": "links-fact-text",
+     "text": "The links fact names the first 5 targets and appends a count of the rest when more remain.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "var more = targets.Count > 5 ? $\" and {targets.Count - 5} more\" : \"\";"
+     ]
+    },
+    {
+     "key": "root-collection",
+     "text": "RootPayload posts the root subject with kind collection and the alias wikipedia-demo.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"aliases\"] = new JsonArray(\"wikipedia-demo\"),"
+     ]
+    },
+    {
+     "key": "root-contains-refs",
+     "text": "RootPayload gives each fetched article a contains ref of kind subject with basis observed.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"rel\"] = \"contains\","
+     ]
+    },
+    {
+     "key": "summary-fallback",
+     "text": "When an article has no paragraphs, the summary fact text is a generated sentence saying it has no plain-text summary.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      ": $\"{article.Title} has no plain-text summary in the Wikipedia extract for this article.\";"
+     ]
+    },
+    {
+     "key": "clamp-sentence",
+     "text": "Clamp cuts at the last sentence boundary when it falls past 0.4 of max, otherwise trims trailing whitespace, and appends an ellipsis.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "var body = stop > max * 0.4 ? cut[..(stop + 1)] : cut.TrimEnd();"
+     ]
+    },
+    {
+     "key": "aliases-underscores",
+     "text": "ArticlePayload adds one alias made from the article title with spaces replaced by underscores.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "subject[\"aliases\"] = new JsonArray(article.Title.Replace(' ', '_'));"
+     ]
+    },
+    {
+     "key": "optional-parent",
+     "text": "ArticlePayload sets the subject parent only when parentId is not null.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "if (parentId is not null)"
+     ]
+    },
+    {
+     "key": "summary-about-ref",
+     "text": "The summary fact carries an about ref of kind subject to the article title beside the URL ref.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"rel\"] = \"about\","
+     ]
+    },
+    {
+     "key": "link-ref-basis",
+     "text": "Each mention ref uses the basis derived rather than observed.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Payloads.cs",
+      "[\"basis\"] = \"derived\","
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/DossierCli.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "DossierCli.cs"
+   ],
+   "facts": [
+    {
+     "key": "resolve-order",
+     "text": "DossierCli.Resolve checks the --bin option, then DOSSIER_BIN, then DOSSIER_DLL, then a Release and Debug net10.0 build.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "var bin = binOption ?? Environment.GetEnvironmentVariable(\"DOSSIER_BIN\");"
+     ]
+    },
+    {
+     "key": "no-build-error",
+     "text": "Resolve throws DemoFailure telling the user to run dotnet build -c Release or set DOSSIER_BIN when no build is found.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "throw new DemoFailure(\"no Dossier build found; run `dotnet build -c Release` or set DOSSIER_BIN\");"
+     ]
+    },
+    {
+     "key": "repo-root-detect",
+     "text": "FindRepoRoot walks up from AppContext.BaseDirectory and the current directory looking for Dossier.sln.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "foreach (var start in new[] { AppContext.BaseDirectory, Directory.GetCurrentDirectory() })"
+     ]
+    },
+    {
+     "key": "child-env-db",
+     "text": "Run sets the child process environment variable DOSSIER_DB to the demo database path.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "startInfo.Environment[\"DOSSIER_DB\"] = db;"
+     ]
+    },
+    {
+     "key": "run-or-fail-message",
+     "text": "RunOrFail throws DemoFailure naming the first argument and the exit code, preferring stderr over stdout for the detail.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "throw new DemoFailure($\"{args[0]} failed (exit {exitCode}): {detail}\");"
+     ]
+    },
+    {
+     "key": "serve-stderr-inherited",
+     "text": "SpawnServe redirects the serve stdout but not the stderr so the server's own logs stay visible.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "RedirectStandardError = false,"
+     ]
+    },
+    {
+     "key": "serve-exit-callback",
+     "text": "SpawnServe raises the onExit callback with the process exit code when dossier serve exits.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "process.Exited += (_, _) => onExit(process.ExitCode);"
+     ]
+    },
+    {
+     "key": "stdin-optional",
+     "text": "Run redirects standard input only when stdin text is supplied.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DossierCli.cs",
+      "RedirectStandardInput = stdin is not null,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/ServerControl.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "ServerControl.cs"
+   ],
+   "facts": [
+    {
+     "key": "listen-timeout",
+     "text": "IsListeningAsync gives the TCP connect to 127.0.0.1 a 500 millisecond cancellation timeout and returns false on any failure.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/ServerControl.cs",
+      "using var timeout = new CancellationTokenSource(TimeSpan.FromMilliseconds(500));"
+     ]
+    },
+    {
+     "key": "free-port-scan",
+     "text": "FreePortAsync returns the first port that is not listening in the 25 ports starting at the given port, or throws DemoFailure.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/ServerControl.cs",
+      "for (var port = start; port < start + 25; port++)"
+     ]
+    },
+    {
+     "key": "wait-for-server",
+     "text": "WaitForServerAsync polls /api/subjects every 150 milliseconds and fails after 15 seconds if the server never answers.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/ServerControl.cs",
+      "var deadline = DateTime.UtcNow.AddSeconds(15);"
+     ]
+    },
+    {
+     "key": "graph-status-minus-one",
+     "text": "GraphStatusAsync returns the /api/graph status code, or -1 when the request itself throws.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/ServerControl.cs",
+      "using var response = await http.GetAsync($\"http://127.0.0.1:{port}/api/graph\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/DemoLog.cs",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "DemoLog.cs"
+   ],
+   "facts": [
+    {
+     "key": "line-prefix",
+     "text": "DemoLog.Line prefixes each message with the elapsed stopwatch time formatted as [+N.Ns].",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoLog.cs",
+      "Console.Out.Write($\"[+{Clock.Elapsed.TotalSeconds:F1}s] {message}\\n\");"
+     ]
+    },
+    {
+     "key": "warn-prefix",
+     "text": "DemoLog.Warn writes the message to standard error prefixed with warning:.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/DemoLog.cs",
+      "public static void Warn(string message) => Console.Error.Write($\"warning: {message}\\n\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tools/Dossier.WikipediaDemo/Dossier.WikipediaDemo.csproj",
+   "kind": "file",
+   "parent": "Dossier/Tools",
+   "aliases": [
+    "Dossier.WikipediaDemo.csproj"
+   ],
+   "facts": [
+    {
+     "key": "target-framework",
+     "text": "The demo project targets net10.0 and is marked not packable.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Dossier.WikipediaDemo.csproj",
+      "<TargetFramework>net10.0</TargetFramework>"
+     ]
+    },
+    {
+     "key": "nullable-implicit-usings",
+     "text": "The project enables Nullable and ImplicitUsings.",
+     "at": [
+      "tools/Dossier.WikipediaDemo/Dossier.WikipediaDemo.csproj",
+      "<Nullable>enable</Nullable>"
+     ]
+    }
+   ]
+  }
+ ]
+}

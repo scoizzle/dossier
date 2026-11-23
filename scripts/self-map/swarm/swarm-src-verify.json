@@ -1,0 +1,640 @@
+{
+ "agent": "swarm-src-verify",
+ "slice": "src-verify",
+ "subjects": [
+  {
+   "name": "DossierStore.Verify",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "verify.dedupe-ordinal",
+     "text": "Verify trims each requested id, drops blanks and de-duplicates with StringComparer.Ordinal before it counts them.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      ".Distinct(StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "verify.no-ids-error",
+     "text": "Verify throws DossierRequestException with code invalid_request when no non-blank id is supplied.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "verify requires at least one fact id"
+     ]
+    },
+    {
+     "key": "verify.too-many-error",
+     "text": "Verify throws invalid_request when the de-duplicated id count exceeds MaxVerifyIds, and the message names the maximum and the count received.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "verify accepts at most {MaxVerifyIds} fact ids, got {ids.Count}"
+     ]
+    },
+    {
+     "key": "verify.snapshot-revision",
+     "text": "Verify reads Revision with HeadRevision inside the same deferred transaction that describes the facts.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "Revision = HeadRevision(connection, transaction),"
+     ]
+    },
+    {
+     "key": "verify.request-order",
+     "text": "Verify describes the ids in request order after trimming and de-duplicating them.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "var facts = ids.Select(reader.Describe).ToList();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Verify.cs::CurrencyReader",
+   "kind": "type",
+   "parent": "src/Dossier/Verify.cs",
+   "facts": [
+    {
+     "key": "reader.caches",
+     "text": "CurrencyReader caches each row, each fact inputs, each staleness verdict and each replacement for the lifetime of the reader.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "private readonly Dictionary<string, bool> stale"
+     ]
+    },
+    {
+     "key": "reader.currency-refs",
+     "text": "CurrencyRefs limits currency queries to kind fact and the rels derived_from, refutes, contradicts and supersedes.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "r.rel IN ('derived_from', 'refutes', 'contradicts', 'supersedes')"
+     ]
+    },
+    {
+     "key": "reader.involved-query",
+     "text": "Involved returns ids that carry a currency ref or are its target, using one query that expands the id list with json_each.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "AND r.fact_id IN (SELECT value FROM json_each($ids))"
+     ]
+    },
+    {
+     "key": "reader.nonlive-candidates",
+     "text": "NonLive walks facts whose status is neither superseded nor retracted and that carry or receive a currency ref, in rowid order.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "WHERE f.status NOT IN ('superseded', 'retracted') AND f.id IN ("
+     ]
+    },
+    {
+     "key": "reader.nonlive-filter",
+     "text": "NonLive keeps a candidate only when Describe reports stale or contested.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "if (status is StatusStale or StatusContested)"
+     ]
+    },
+    {
+     "key": "describe.current-live-only",
+     "text": "Describe sets Current true only on the live branch, so stale, contested, superseded, retracted and unknown results leave it false.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "fact.Current = true;"
+     ]
+    },
+    {
+     "key": "successor-earliest",
+     "text": "Successor takes the earliest-written candidate among the next fact with the same subject, kind and key and the facts carrying a supersedes ref.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "WHERE $key IS NOT NULL AND f.subject_id = $subject AND f.kind = $kind AND f.key = $key AND f.rowid > $rowid"
+     ]
+    },
+    {
+     "key": "replacement-cached",
+     "text": "Replacement caches its answer per input id, so many dependents sharing one input compute the chain walk once.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "replacements[row.Id] = known = FindReplacement(row);"
+     ]
+    },
+    {
+     "key": "replacement-loop-guard",
+     "text": "FindReplacement tracks visited ids in a seen set, so a successor loop in a hand-edited store ends with null instead of spinning.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "var seen = new HashSet<string>(StringComparer.Ordinal) { row.Id };"
+     ]
+    },
+    {
+     "key": "changed-retracted",
+     "text": "Changed reports a retracted input with State retracted and no ReplacedBy.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "return new Change(StatusRetracted, null);"
+     ]
+    },
+    {
+     "key": "inputs-seq-order",
+     "text": "Inputs reads derived_from refs of kind fact in seq order and drops a repeated target while keeping its first position.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "rel = 'derived_from' AND kind = 'fact' ORDER BY seq"
+     ]
+    },
+    {
+     "key": "isstale-stop-at-change",
+     "text": "IsStale stops its ancestry walk at a changed input because what that input derived from no longer matters to its dependents.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "A changed input ends the walk"
+     ]
+    },
+    {
+     "key": "isstale-fixed-point",
+     "text": "IsStale settles the collected ancestry as a fixed point, so a derivation cycle terminates and every member gets the same verdict.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "for (var progressed = true; progressed;)"
+     ]
+    },
+    {
+     "key": "stalereasons-missing-input",
+     "text": "StaleReasons skips a derived_from input the store does not hold, treating it as unchecked rather than as evidence of change.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "An input this store does not hold cannot be checked"
+     ]
+    },
+    {
+     "key": "stalereasons-stale-state",
+     "text": "When an input is itself stale, StaleReasons records a derived_from reason with State set to StatusStale.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "State = StatusStale"
+     ]
+    },
+    {
+     "key": "stands-live-not-stale",
+     "text": "Stands counts a party only while its stored status is neither superseded nor retracted and it is not stale.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "row.Status is not (StatusSuperseded or StatusRetracted) && !IsStale(id)"
+     ]
+    },
+    {
+     "key": "contested-order",
+     "text": "ContestedReasons orders inbound parties by created_at, then the fact rowid, then the ref seq.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "ORDER BY f.created_at, f.rowid, r.seq"
+     ]
+    },
+    {
+     "key": "contested-outbound",
+     "text": "ContestedReasons adds outbound parties only for a contradicts ref, never for an outbound refutes, and skips a fact ref to itself.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "r.rel = 'contradicts' AND r.target <> $id"
+     ]
+    },
+    {
+     "key": "contested-dedupe",
+     "text": "ContestedReasons adds a party once per rel and fact pair, so a repeated dispute yields one reason.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "!reasons.Any(reason => reason.Rel == rel && reason.Fact == other)"
+     ]
+    },
+    {
+     "key": "successor-from-facts",
+     "text": "Successor finds the next fact by rowid rather than reading the slot table, which a correction or a retraction empties.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "not from the slot table, which a correction or a retraction empties"
+     ]
+    },
+    {
+     "key": "replacement-first-live",
+     "text": "FindReplacement stops at the first successor whose status is neither superseded nor retracted and returns its id.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "if (successor.Status is not (StatusSuperseded or StatusRetracted))"
+     ]
+    },
+    {
+     "key": "changed-different-hash",
+     "text": "Changed reports a superseded input whose replacement has a different content hash with State superseded and the replacement id.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "return new Change(StatusSuperseded, replacement);"
+     ]
+    },
+    {
+     "key": "isstale-caches-ancestry",
+     "text": "IsStale stores the verdict for every fact it walked, so a later question about a shared ancestor does not walk it again.",
+     "at": [
+      "src/Dossier/Verify.cs",
+      "stale[fact] = verdict.Contains(fact);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Changes.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "Changes.cs"
+   ],
+   "facts": [
+    {
+     "key": "changecolumns.text-truncated",
+     "text": "ChangeColumns returns only the first 160 characters of a fact text with substr.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "substr(f.text, 1, 160)"
+     ]
+    },
+    {
+     "key": "changecolumns.actor-case",
+     "text": "ChangeColumns fills Actor from provenance actor only when the row is a facts insert and its provenance is valid JSON.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "CASE WHEN c.tbl = 'facts' AND c.op = 'insert' AND json_valid(f.provenance) THEN json_extract(f.provenance, '$.actor') END"
+     ]
+    },
+    {
+     "key": "changecolumns.left-join",
+     "text": "ChangeFrom joins facts and subjects with LEFT JOIN, so a journal row survives a fact or subject it can no longer resolve.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "FROM changes c LEFT JOIN facts f ON f.id = c.fact_id LEFT JOIN subjects s ON s.id = c.subject_id"
+     ]
+    },
+    {
+     "key": "change-row-json-never",
+     "text": "Every nullable ChangeRow column is marked JsonIgnore Never, so it serializes as an explicit null instead of being omitted.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "[property: JsonIgnore(Condition = JsonIgnoreCondition.Never)] string? SubjectId,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ReadChanges",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "readchanges.reset-window",
+     "text": "ReadChanges returns an empty page with Reset true when since is ahead of the head or below the oldest retained seq minus one.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "if (since > head || since < oldest - 1)"
+     ]
+    },
+    {
+     "key": "readchanges.next-last-seq",
+     "text": "Without a subject filter ReadChanges sets Next to the last returned seq, or the head when no row came back.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "var next = rows.Count > 0 ? rows[^1].Seq : head;"
+     ]
+    },
+    {
+     "key": "readchanges.subject-extra-row",
+     "text": "With a subject filter ReadChanges queries limit plus one row so the extra row can say whether more of the subject remains.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "[(\"$since\", since), (\"$limit\", limit + 1), .. filter.Value.Parameters]);"
+     ]
+    },
+    {
+     "key": "readchanges.subject-cursor-head",
+     "text": "ReadChanges sets the cursor to the head for a subject page that is not truncated, so the cursor may skip other subjects rows.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "var cursor = truncated ? matched[^1].Seq : head;"
+     ]
+    },
+    {
+     "key": "readchanges.limit-clamp",
+     "text": "ReadChanges clamps the requested limit into the range 1 to 500 before querying.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "limit = Math.Clamp(limit, 1, 500);"
+     ]
+    },
+    {
+     "key": "readchanges.truncated-no-subject",
+     "text": "ReadChanges without a subject marks the page Truncated when the last returned seq is below the head.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "rows.Count > 0 && next < head"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ReadChangesLast",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "readchangeslast.truncated-oldest",
+     "text": "ReadChangesLast reports Truncated when the oldest returned seq is greater than the oldest retained seq.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "rows.Count > 0 && rows[0].Seq > oldest"
+     ]
+    },
+    {
+     "key": "readchangeslast.subject-extra-row",
+     "text": "ReadChangesLast with a subject asks for limit plus one row and drops the oldest when an extra row came back.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "[(\"$limit\", limit + 1), .. filter.Value.Parameters]);"
+     ]
+    },
+    {
+     "key": "readchangeslast.limit-clamp",
+     "text": "ReadChangesLast clamps the requested limit into the range 1 to 500 before querying.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "limit = Math.Clamp(limit, 1, 500);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Changes.cs::SubjectFilter",
+   "kind": "method",
+   "parent": "src/Dossier/Changes.cs",
+   "facts": [
+    {
+     "key": "subjectfilter.unknown-subject",
+     "text": "SubjectFilter throws DossierRequestException with code subject_not_found when the subject resolves to no subject id, so a typo cannot read as nothing changed.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "subject_not_found"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Changes.cs::ReadWindow",
+   "kind": "method",
+   "parent": "src/Dossier/Changes.cs",
+   "facts": [
+    {
+     "key": "readwindow.empty-journal",
+     "text": "ReadWindow reports the oldest seq as the head plus one when the changes table holds no row.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "var oldest = command.ExecuteScalar() is long min ? min : head + 1;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Show",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "show.snapshot-read",
+     "text": "Show reads the fact, its refs and its attachments inside one ReadSnapshot before it derives status and searches inbound.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "using (new ReadSnapshot(connection))"
+     ]
+    },
+    {
+     "key": "show.derived-status",
+     "text": "Show overwrites the stored status with the derived Status and copies ReplacedBy and Why from the same derivation.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "fact.Status = derived.Status;"
+     ]
+    },
+    {
+     "key": "show.inbound-search",
+     "text": "Show builds Inbound by calling Search with RefTarget set to the id, Direction in and Limit MaxLimit.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "var inbound = Search(new SearchRequest { RefTarget = id, Direction = \"in\", Limit = MaxLimit }).Hits;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Show.cs::ReadRefs",
+   "kind": "method",
+   "parent": "src/Dossier/Show.cs",
+   "facts": [
+    {
+     "key": "readrefs.seq-order",
+     "text": "ReadRefs returns a fact refs ordered by seq.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "FROM refs WHERE fact_id = $id ORDER BY seq"
+     ]
+    },
+    {
+     "key": "readrefs.valid-nullable",
+     "text": "ReadRefs maps a NULL valid column to null and otherwise to a bool that is false for zero.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "Valid = reader.IsDBNull(12) ? null : reader.GetInt64(12) != 0,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Show.cs::ReadAttachments",
+   "kind": "method",
+   "parent": "src/Dossier/Show.cs",
+   "facts": [
+    {
+     "key": "readattachments.sha-order",
+     "text": "ReadAttachments returns a fact attachments ordered by sha256.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "FROM attachments WHERE fact_id = $id ORDER BY sha256"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Show.cs::ParseJson",
+   "kind": "method",
+   "parent": "src/Dossier/Show.cs",
+   "facts": [
+    {
+     "key": "parsejson.null-on-invalid",
+     "text": "ParseJson returns null for empty text and for JSON that fails to parse, rather than throwing.",
+     "at": [
+      "src/Dossier/Show.cs",
+      "catch (JsonException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Retract",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "retract.unknown-id",
+     "text": "Retract returns RetractResult with success false for an id the facts table does not hold, before any write.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "return new RetractResult(false, id);"
+     ]
+    },
+    {
+     "key": "retract.idempotent-guard",
+     "text": "Retract guards its UPDATE with status, text and data checks so a second retract of the same fact writes nothing and cannot bump the revision.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "AND (status != 'retracted' OR text IS NOT NULL OR data IS NOT NULL)"
+     ]
+    },
+    {
+     "key": "retract.fts-by-rowid",
+     "text": "Retract deletes the facts_fts row by the rowid it looked up from facts before the tombstone update.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "DELETE FROM facts_fts WHERE rowid = $rowid"
+     ]
+    },
+    {
+     "key": "retract.slot-deleted",
+     "text": "Retract deletes the fact slots row so the slot the fact occupied is cleared.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "DELETE FROM slots WHERE fact_id = $id"
+     ]
+    },
+    {
+     "key": "retract.distinct-shas",
+     "text": "Retract collects the distinct sha256 values of the fact attachments before it decides which blobs to delete.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "SELECT DISTINCT sha256 FROM attachments WHERE fact_id = $id"
+     ]
+    },
+    {
+     "key": "retract.commit-before-blobs",
+     "text": "Retract commits its transaction before it deletes any attachment blob, and skips a blob file that no longer exists.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "transaction.Commit();"
+     ]
+    },
+    {
+     "key": "retract.prunes-in-transaction",
+     "text": "Retract prunes the change journal inside its write transaction, before the commit.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "PruneChanges(connection, transaction);"
+     ]
+    },
+    {
+     "key": "retract.blob-path",
+     "text": "Retract looks for the attachment blob at the path BlobRoot joined with the sha256 name.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "var blob = Path.Combine(BlobRoot, sha);"
+     ]
+    },
+    {
+     "key": "retract.write-transaction",
+     "text": "Retract opens a plain write transaction rather than a deferred one.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "using var transaction = connection.BeginTransaction();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Retract.cs::CountLiveFactsForSha",
+   "kind": "method",
+   "parent": "src/Dossier/Retract.cs",
+   "facts": [
+    {
+     "key": "countlive.own-connection",
+     "text": "CountLiveFactsForSha opens its own connection and counts attachments rows joined to facts whose status is live.",
+     "at": [
+      "src/Dossier/Retract.cs",
+      "WHERE a.sha256 = $sha AND f.status = 'live'"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.PruneChanges",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "prune.slack-threshold",
+     "text": "PruneChanges returns without deleting while the oldest seq is at least retention plus slack behind the head.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "min >= head - retention - slack"
+     ]
+    },
+    {
+     "key": "prune.cut-at-retention",
+     "text": "When it does run, PruneChanges deletes journal rows with seq at or below the head minus retention.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "DELETE FROM changes WHERE seq <= $cut"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.HeadRevision",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "head-revision-parse",
+     "text": "HeadRevision parses meta revision with NumberStyles.Integer and the invariant culture, and returns 0 when the text is not a number.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "long.TryParse(text, NumberStyles.Integer, CultureInfo.InvariantCulture, out var value)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Changes.cs::ReadRows",
+   "kind": "method",
+   "parent": "src/Dossier/Changes.cs",
+   "facts": [
+    {
+     "key": "readrows.stringify",
+     "text": "ReadRows reads a NULL column as null and converts every other value to a string with the invariant culture.",
+     "at": [
+      "src/Dossier/Changes.cs",
+      "Convert.ToString(reader.GetValue(index), CultureInfo.InvariantCulture);"
+     ]
+    }
+   ]
+  }
+ ]
+}

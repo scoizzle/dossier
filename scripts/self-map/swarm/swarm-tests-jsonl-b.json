@@ -1,0 +1,580 @@
+{
+ "agent": "swarm-tests-jsonl-b",
+ "slice": "tests-jsonl-b",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/JsonlSchemaTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlSchemaTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "schemas-repofile-walks-up",
+     "text": "RepoFile walks parent directories from AppContext.BaseDirectory and throws FileNotFoundException when the relative path is not found.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "could not find"
+     ]
+    },
+    {
+     "key": "schemas-doc-caches-contracts",
+     "text": "Doc loads each contract file once and caches it in the static Documents dictionary that uses StringComparer.Ordinal.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Dictionary<string, JsonElement> Documents"
+     ]
+    },
+    {
+     "key": "schemas-validator-rejects-unknown-keyword",
+     "text": "The validator throws NotSupportedException for a keyword outside the Annotations set, naming the keyword and the schema file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "validator does not implement keyword"
+     ]
+    },
+    {
+     "key": "schemas-validator-rejects-boolean-schema",
+     "text": "Validate throws NotSupportedException when a schema node is not a JSON object, because the contracts use no boolean schemas.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "boolean schemas are not used by the contracts"
+     ]
+    },
+    {
+     "key": "schemas-oneof-requires-one-branch",
+     "text": "The oneOf handler records an error when the instance does not match exactly one branch, and appends each failing branch's errors.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "oneOf branches"
+     ]
+    },
+    {
+     "key": "schemas-resolve-splits-on-hash",
+     "text": "Resolve splits a reference at the first hash, keeps the file part, and walks the pointer segments through the loaded document.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "reference.IndexOf('#', StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "schemas-typematches-integer",
+     "text": "TypeMatches counts a JSON number as integer only when TryGetInt64 succeeds on it.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "value.TryGetInt64(out _)"
+     ]
+    },
+    {
+     "key": "schemas-errorsagainstdefinition-defs",
+     "text": "ErrorsAgainstDefinition validates an instance against one named entry of a contract's $defs, for shape-set files such as ops.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "GetProperty(\"$defs\").GetProperty(definition)"
+     ]
+    },
+    {
+     "key": "schemas-accept-emitted-record-types",
+     "text": "Schemas_AcceptEmittedLinesAndManifest demands the record types fact and subject in mode none, and adds asset for embed and files.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "new[] { \"fact\", \"subject\" }"
+     ]
+    },
+    {
+     "key": "schemas-assertbundlevalid-manifest",
+     "text": "AssertBundleValid throws on the first record that fails jsonl-record.schema.json, requires at least one record, then requires a manifest with no errors.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Assert.That(lines).IsGreaterThan(0)"
+     ]
+    },
+    {
+     "key": "schemas-missing-asset-and-scoped-root",
+     "text": "Schemas_AcceptMissingAssetAndScopedSubjectWithoutParent deletes the blob, then requires a record carrying missing and a subject record without parent.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "TryGetProperty(\"missing\", out _)"
+     ]
+    },
+    {
+     "key": "schemas-manifest-profile-option",
+     "text": "Schemas_AcceptManifestWithProfileOptions requires the manifest options to contain profile and the manifest to validate when RespectLimits is set.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "manifest.GetProperty(\"options\")"
+     ]
+    },
+    {
+     "key": "schemas-reject-confidence-above-one",
+     "text": "Schemas_RejectMalformedRecords asserts a fact record whose confidence is 1.5 fails jsonl-record.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "m[\"confidence\"] = Parse(\"1.5\")"
+     ]
+    },
+    {
+     "key": "schemas-reject-asset-path-traversal",
+     "text": "A hand-built asset record whose path is ../assets/a.png is rejected by jsonl-record.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Valid(\"jsonl-record.schema.json\", fileAsset)"
+     ]
+    },
+    {
+     "key": "schemas-reject-manifest-format-two",
+     "text": "A manifest whose format is dossier-jsonl/2 is rejected by jsonl-manifest.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "dossier-jsonl/2"
+     ]
+    },
+    {
+     "key": "schemas-record-oneof-three-branches",
+     "text": "Schemas_ParseAndTrackTheBaseContracts requires the record schema to expose 3 oneOf branches and the listed $defs names.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      ".GetArrayLength()).IsEqualTo(3)"
+     ]
+    },
+    {
+     "key": "schemas-subjectrecord-adds-path-and-type",
+     "text": "SubjectRecord's properties and required lists equal subject.schema.json's lists plus path and type.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Concat(new[] { \"path\", \"type\" })"
+     ]
+    },
+    {
+     "key": "schemas-factrecord-adds-three-names",
+     "text": "FactRecord's properties and required lists equal fact.schema.json's lists plus bundle_key, subject_name and type.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Concat(new[] { \"bundle_key\", \"subject_name\", \"type\" })"
+     ]
+    },
+    {
+     "key": "schemas-inherited-properties-ref-base",
+     "text": "Every inherited property in SubjectRecord and FactRecord must reference the base contract's property of the same name.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "#/properties/{property.Name}"
+     ]
+    },
+    {
+     "key": "schemas-asset-variants-closed",
+     "text": "AssetEmbedded, AssetFile and AssetMissing each set additionalProperties to the JSON false value.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      ".GetProperty(\"additionalProperties\").ValueKind"
+     ]
+    },
+    {
+     "key": "schemas-manifest-format-const",
+     "text": "The manifest schema pins format to the const dossier-jsonl/1 and sets additionalProperties to false.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "GetProperty(\"const\").GetString()).IsEqualTo(\"dossier-jsonl/1\")"
+     ]
+    },
+    {
+     "key": "schemas-asset-missing-required",
+     "text": "AssetMissing requires bytes, filename, mime, missing, sha256 and type.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Required(defs.GetProperty(\"AssetMissing\"))"
+     ]
+    },
+    {
+     "key": "schemas-manifest-required-list",
+     "text": "The manifest schema requires assets, bundle_hash, counts, file_stats, files, format and options.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "Required(manifest)).IsEquivalentTo"
+     ]
+    },
+    {
+     "key": "schemas-reject-manifest-missing-bundle-hash",
+     "text": "A manifest with the bundle_hash property removed is rejected by jsonl-manifest.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/JsonlSchemaTests.cs",
+      "m.Remove(\"bundle_hash\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlHardeningTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlHardeningTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "hardening-requireunix-skips-windows",
+     "text": "RequireUnix skips every hardening test on Windows because named pipes and /dev/zero symlinks are Unix-only.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "named pipes and /dev/zero symlinks are Unix-only"
+     ]
+    },
+    {
+     "key": "hardening-mkfifo-shells-out",
+     "text": "Mkfifo starts the external mkfifo process and throws InvalidOperationException when that process exits nonzero.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "mkfifo failed"
+     ]
+    },
+    {
+     "key": "hardening-importfails-five-second-timeout",
+     "text": "ImportFails runs the import on a background task and throws TimeoutException when it has not returned within 5 seconds.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "TimeSpan.FromSeconds(5)"
+     ]
+    },
+    {
+     "key": "hardening-tamper-updates-file-stats",
+     "text": "Tamper rewrites dossier-0001.jsonl and updates its file_stats entry with the new bytes, line count and sha256.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "text.Count(c => c == '\\n')"
+     ]
+    },
+    {
+     "key": "import-fifomanifestfailsfast-code",
+     "text": "Import_FifoManifestFailsFast replaces manifest.json with a FIFO and expects ImportFails to return code import_not_regular_file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "IsEqualTo(\"import_not_regular_file\")"
+     ]
+    },
+    {
+     "key": "import-fifodatafilefailsfast-zero-facts",
+     "text": "Import_FifoDataFileFailsFast turns dossier-0001.jsonl into a FIFO and expects import_not_regular_file with 0 rows left in the facts table.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "FactCount(b.Store)).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "import-manifestsymlinkedtodevzerofailsfast-code",
+     "text": "Import_ManifestSymlinkedToDevZeroFailsFast links manifest.json to /dev/zero and expects code import_unsafe_path.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Link(Path.Combine(dir, \"manifest.json\"), \"/dev/zero\")"
+     ]
+    },
+    {
+     "key": "import-fifoassetfileisskippednotread-skip",
+     "text": "Import_FifoAssetFileIsSkippedNotRead expects Blobs to be 0 and the single skipped reason to mention regular file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Reason.Contains(\"regular file\""
+     ]
+    },
+    {
+     "key": "import-symlinkedmanifestisrejected-code",
+     "text": "Import_SymlinkedManifestIsRejected moves the manifest out and links it back, expecting import_unsafe_path and 0 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "IsEqualTo(\"import_unsafe_path\")"
+     ]
+    },
+    {
+     "key": "import-symlinkedassetsdirectoryisnotfollowed-skip",
+     "text": "Import_SymlinkedAssetsDirectoryIsNotFollowed expects Blobs to be 0 and the skipped reason to mention symbolic link.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Reason.Contains(\"symbolic link\""
+     ]
+    },
+    {
+     "key": "import-symlinkedassetsdirectoryisnotfollowed-empty-blobroot",
+     "text": "Import_SymlinkedAssetsDirectoryIsNotFollowed also requires the destination BlobRoot to hold no entries at all.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Directory.Exists(b.Store.BlobRoot)"
+     ]
+    },
+    {
+     "key": "import-embeddeddatawithjsonescapesisskipped-escapes",
+     "text": "Import_EmbeddedDataWithJsonEscapesIsSkipped rewrites the first base64 character as a JSON escape and expects a skipped reason containing escapes.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Reason.Contains(\"escapes\""
+     ]
+    },
+    {
+     "key": "import-datafilenumberthatoverflowsisabadmanifest-code",
+     "text": "Import_DataFileNumberThatOverflowsIsABadManifest adds dossier-99999999999999999999.jsonl and expects import_bad_manifest.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "dossier-99999999999999999999.jsonl"
+     ]
+    },
+    {
+     "key": "import-duplicatenamesinmanifestfilesareabadmanifest-code",
+     "text": "Import_DuplicateNamesInManifestFilesAreABadManifest adds dossier-0001.jsonl to files twice, expecting import_bad_manifest and 0 facts.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "AsArray().Add(\"dossier-0001.jsonl\")"
+     ]
+    },
+    {
+     "key": "import-embeddedbloblandswithouttemporaryfiles-single-entry",
+     "text": "Import_EmbeddedBlobLandsWithoutTemporaryFiles expects Blobs of 1 and exactly one entry in BlobRoot named after the sha.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "names[0]).IsEqualTo(shot.Sha)"
+     ]
+    },
+    {
+     "key": "import-unlistedfileunderassetsisrejected-code",
+     "text": "Import_UnlistedFileUnderAssetsIsRejected writes a stray 64 character png under assets and expects import_unlisted_file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "new string('b', 64)"
+     ]
+    },
+    {
+     "key": "import-duplicateassetrecordsmustagree-identical-accepted",
+     "text": "Import_DuplicateAssetRecordsMustAgree accepts an identical duplicate asset line and reports Blobs of 1.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "accepted.Blobs).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "import-duplicateassetrecordsmustagree-mime-conflict",
+     "text": "A duplicate asset line with image/jpeg in place of image/png is rejected as import_bad_record whose message contains the sha.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "IsEqualTo(\"import_bad_record\")"
+     ]
+    },
+    {
+     "key": "publish-filebeyondthememoryceilingfailsclosed-code",
+     "text": "Publish_FileBeyondTheMemoryCeilingFailsClosed sets MemoryCeilingBytes to 400 and expects bundle_too_large_for_memory with no output directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "MemoryCeilingBytes = 400"
+     ]
+    },
+    {
+     "key": "publish-embeddedassetbeyondthememoryceilingfailsclosed-code",
+     "text": "Publish_EmbeddedAssetBeyondTheMemoryCeilingFailsClosed sets an embed ceiling of 40 and expects bundle_too_large_for_memory with nothing written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "MemoryCeilingBytes = 40"
+     ]
+    },
+    {
+     "key": "republish-failingalimit-nothing-written",
+     "text": "Republish_FailingALimitLeavesEveryOldFileUntouched expects a MaxFileBytes of 50 to fail with a message containing nothing was written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "nothing was written"
+     ]
+    },
+    {
+     "key": "republish-failingalimit-bytes-identical",
+     "text": "Republish_FailingALimitLeavesEveryOldFileUntouched also compares every file present before the failed publish for byte equality afterwards.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "after[name].AsSpan().SequenceEqual(bytes)"
+     ]
+    },
+    {
+     "key": "import-embeddedbloblandswithouttemporaryfiles-bytes",
+     "text": "Import_EmbeddedBlobLandsWithoutTemporaryFiles also compares the stored blob bytes with the seeded bytes.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "File.ReadAllBytes(Path.Combine(b.Store.BlobRoot, shot.Sha))"
+     ]
+    },
+    {
+     "key": "hardening-link-skips-when-windows-refuses",
+     "text": "Link creates a symbolic link and calls Skip.Test when Windows refuses it with UnauthorizedAccessException or IOException.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "UnauthorizedAccessException or IOException"
+     ]
+    },
+    {
+     "key": "hardening-published-returns-out-dir",
+     "text": "Published seeds the database, publishes with the given assets mode and returns the output directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "Jsonl.Publish(a, o => o.Assets = assets)"
+     ]
+    },
+    {
+     "key": "hardening-editmanifest-writes-back",
+     "text": "EditManifest parses manifest.json, applies the edit and writes it back encoded with Jsonl.Utf8.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "manifest.ToJsonString(), Jsonl.Utf8"
+     ]
+    },
+    {
+     "key": "hardening-factcount-counts-facts",
+     "text": "FactCount opens a connection and counts the rows of the facts table with a scalar query.",
+     "at": [
+      "tests/Dossier.Tests/JsonlHardeningTests.cs",
+      "SELECT COUNT(*) FROM facts"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlBundleWriteTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "md-publish-pins-clock-and-command-line",
+     "text": "The Md helper publishes with assets no override, a fixed 2026 clock and the command line dossier publish --out out.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "dossier publish --out out"
+     ]
+    },
+    {
+     "key": "republish-leavesidenticalbytesalone-no-write",
+     "text": "Republish_LeavesIdenticalBytesAlone expects the first publish to write something and the second to write 0 files.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "second.Written).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "republish-leavesidenticalbytesalone-keeps-timestamp",
+     "text": "Republish_LeavesIdenticalBytesAlone also requires dossier-0001.jsonl to keep its last write timestamp and zero removals.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "GetLastWriteTimeUtc(Path.Combine(dir, \"dossier-0001.jsonl\"))).IsEqualTo(stamp)"
+     ]
+    },
+    {
+     "key": "prune-markdownthenjsonl-keeps-foreign-file",
+     "text": "Prune_MarkdownThenJsonlRemovesMarkdownFilesAndKeepsForeignOnes keeps notes.txt while deleting every markdown file and the subjects directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "remaining.Contains(\"notes.txt\")"
+     ]
+    },
+    {
+     "key": "prune-markdownthenjsonl-removed-count",
+     "text": "Prune_MarkdownThenJsonlRemovesMarkdownFilesAndKeepsForeignOnes expects more than 5 removals and a rewritten manifest with format dossier-jsonl/1.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "Removed.Count).IsGreaterThan(5)"
+     ]
+    },
+    {
+     "key": "prune-jsonthenmarkdown-assets-removed",
+     "text": "Prune_JsonlThenMarkdownRemovesDataFilesAndAssetsAndEmptyDirectories records the data file and assets/sha png in Removed and leaves no assets directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "result.Removed.Contains($\"assets/{shot.Sha}.png\")"
+     ]
+    },
+    {
+     "key": "prune-jsonthenmarkdown-manifest-format-int",
+     "text": "After the markdown publish the manifest format reads as the integer 1, unlike the republish test that compares the string.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "GetProperty(\"format\").GetInt32()).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "prune-jsonlrepublishwithfewerfiles-removes-extra",
+     "text": "Prune_JsonlRepublishWithFewerFilesRemovesTheExtraOnes publishes with MaxFileBytes 1400 then with assets none, expecting a single data file.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "o.MaxFileBytes = 1400"
+     ]
+    },
+    {
+     "key": "prune-jsonlrepublishwithfewerfiles-removed-names",
+     "text": "The second publish removes dossier-0002.jsonl and the asset png, as Prune_JsonlRepublishWithFewerFilesRemovesTheExtraOnes asserts by name.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "result.Removed.Contains(\"dossier-0002.jsonl\")"
+     ]
+    },
+    {
+     "key": "foreign-datafilewithdifferentbytes-refused",
+     "text": "Foreign_DataFileWithDifferentBytesIsRefusedAndNothingIsWritten expects publish_conflict and leaves the foreign dossier-0001.jsonl bytes untouched.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "IsEqualTo(\"publish_conflict\")"
+     ]
+    },
+    {
+     "key": "foreign-datafilewithdifferentbytes-nothing-else-written",
+     "text": "Foreign_DataFileWithDifferentBytesIsRefusedAndNothingIsWritten also requires that no manifest.json or assets directory appears.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "File.Exists(Path.Combine(dir, \"manifest.json\"))).IsFalse()"
+     ]
+    },
+    {
+     "key": "foreign-assetfilewithdifferentbytes-refused",
+     "text": "Foreign_AssetFileWithDifferentBytesIsRefused expects publish_conflict naming the assets png and no dossier-0001.jsonl written.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "File.Exists(Path.Combine(dir, \"dossier-0001.jsonl\"))).IsFalse()"
+     ]
+    },
+    {
+     "key": "foreign-assetfilewithdifferentbytes-same-bytes-accepted",
+     "text": "After Foreign_AssetFileWithDifferentBytesIsRefused writes the real blob bytes over the asset, a repeat publish succeeds without error.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "File.WriteAllBytes(Path.Combine(dir, \"assets\", shot.Sha + \".png\"), shot.Bytes)"
+     ]
+    },
+    {
+     "key": "foreign-unlistedlookalike-not-pruned",
+     "text": "Foreign_UnlistedLookalikeIsNeitherOverwrittenNorPruned expects dossier-0009.jsonl, absent from the previous manifest, to keep the text mine.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "IsEqualTo(\"mine\\n\")"
+     ]
+    },
+    {
+     "key": "manifest-traversal-entries-never-deleted",
+     "text": "Manifest_ExistingManifestIsOverwrittenAndTraversalEntriesAreNeverDeleted lists ../victim.txt, /etc/hosts and assets/ZZ.png and leaves victim.txt holding keep.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "assets/ZZ.png\\\"]}"
+     ]
+    },
+    {
+     "key": "manifest-existing-manifest-overwritten",
+     "text": "Manifest_ExistingManifestIsOverwrittenAndTraversalEntriesAreNeverDeleted then requires the manifest to be replaced with format dossier-jsonl/1.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "IsEqualTo(\"dossier-jsonl/1\")"
+     ]
+    },
+    {
+     "key": "writebundle-doesnotdecodedatafiles-bom-conflict",
+     "text": "WriteBundle_DoesNotDecodeDataFilesAsText prepends the three UTF-8 BOM bytes to a generated data file and expects publish_conflict.",
+     "at": [
+      "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+      "new byte[] { 0xEF, 0xBB, 0xBF }"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,568 @@
+{
+ "agent": "swarm-contract-b",
+ "slice": "contract-b",
+ "subjects": [
+  {
+   "name": "contract/fact.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "fact.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "required-list",
+     "text": "A Fact requires id, subject_id, kind, text, tags, confidence, status, provenance and content_hash.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"provenance\", \"content_hash\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Fact"
+      }
+     ]
+    },
+    {
+     "key": "key-unique-slot",
+     "text": "A Fact key declares a slot that is unique per subject_id, kind and key among live facts.",
+     "at": [
+      "contract/fact.schema.json",
+      "Unique per (subject_id, kind, key) among live facts"
+     ]
+    },
+    {
+     "key": "text-soft-limit",
+     "text": "Fact text has a soft limit of 240 chars, warns above 280, and is never truncated.",
+     "at": [
+      "contract/fact.schema.json",
+      "warn above 280"
+     ]
+    },
+    {
+     "key": "data-conflict-eligible",
+     "text": "A Fact data payload may hold any JSON value, and its presence makes the fact conflict-eligible.",
+     "at": [
+      "contract/fact.schema.json",
+      "Presence makes the fact conflict-eligible"
+     ]
+    },
+    {
+     "key": "stored-status-values",
+     "text": "A stored fact holds only the lifecycle values live, superseded and retracted.",
+     "at": [
+      "contract/fact.schema.json",
+      "A stored fact holds only the lifecycle values live, superseded and retracted"
+     ]
+    },
+    {
+     "key": "attachment-on-disk",
+     "text": "An Attachment is a file on disk at blobs/<sha256> and is never kept in the DB.",
+     "at": [
+      "contract/fact.schema.json",
+      "File on disk (blobs/<sha256>), never in the DB"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Attachment"
+      }
+     ]
+    },
+    {
+     "key": "items-any-fact",
+     "text": "Fact items is an optional array of Item objects and is allowed on any fact.",
+     "at": [
+      "contract/fact.schema.json",
+      "allowed on any fact"
+     ]
+    },
+    {
+     "key": "confidence-range",
+     "text": "Fact confidence is a number with minimum 0 and maximum 1.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"confidence\": { \"type\": \"number\", \"minimum\": 0, \"maximum\": 1 }"
+     ]
+    },
+    {
+     "key": "content-hash-pattern",
+     "text": "The Fact content_hash pattern requires 64 lowercase hex characters.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"pattern\": \"^[0-9a-f]{64}$\""
+     ]
+    },
+    {
+     "key": "derived-at-read",
+     "text": "Stale and contested are derived from refs at read time and are never stored.",
+     "at": [
+      "contract/fact.schema.json",
+      "stale and contested are derived from refs at read time"
+     ]
+    },
+    {
+     "key": "published-stored-status",
+     "text": "Published bundles, the change journal and the graph view carry the stored status.",
+     "at": [
+      "contract/fact.schema.json",
+      "the graph view carry the stored status"
+     ]
+    },
+    {
+     "key": "attachment-perceptual",
+     "text": "An Attachment perceptual object requires algo and value and allows no other properties.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"required\": [\"algo\", \"value\"]"
+     ]
+    },
+    {
+     "key": "provenance-origin",
+     "text": "Provenance origin is an optional string, unlike actor and channel which are required.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"origin\": { \"type\": \"string\" }"
+     ]
+    },
+    {
+     "key": "attachment-bytes",
+     "text": "Attachment bytes is an integer with minimum 0.",
+     "at": [
+      "contract/fact.schema.json",
+      "\"bytes\": { \"type\": \"integer\", \"minimum\": 0 }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "contract/ref.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "ref.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "required-four",
+     "text": "A Ref requires rel, kind, target and basis.",
+     "at": [
+      "contract/ref.schema.json",
+      "\"required\": [\"rel\", \"kind\", \"target\", \"basis\"]"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Ref"
+      }
+     ]
+    },
+    {
+     "key": "internal-kind-set",
+     "text": "Ref kind is an open string where fact, slot and subject are internal and every other kind is external.",
+     "at": [
+      "contract/ref.schema.json",
+      "fact|slot|subject are internal; all others external"
+     ]
+    },
+    {
+     "key": "seq-ordering",
+     "text": "Ref seq is an integer that orders a ref within a chain.",
+     "at": [
+      "contract/ref.schema.json",
+      "Ordering within a chain"
+     ]
+    },
+    {
+     "key": "bbox-four-numbers",
+     "text": "Locator bbox is an array of exactly 4 numbers, described as [x, y, w, h].",
+     "at": [
+      "contract/ref.schema.json",
+      "\"maxItems\": 4"
+     ]
+    },
+    {
+     "key": "locator-line-min",
+     "text": "Locator line is an integer with minimum 1.",
+     "at": [
+      "contract/ref.schema.json",
+      "\"line\": { \"type\": \"integer\", \"minimum\": 1 }"
+     ]
+    },
+    {
+     "key": "symbol-revision-required",
+     "text": "A symbol ref whose target has no revision is rejected with symbol_target_requires_revision.",
+     "at": [
+      "contract/ref.schema.json",
+      "symbol_target_requires_revision"
+     ]
+    },
+    {
+     "key": "verified-at-format",
+     "text": "Ref verified_at is a string in date-time format.",
+     "at": [
+      "contract/ref.schema.json",
+      "\"verified_at\": { \"type\": \"string\", \"format\": \"date-time\" }"
+     ]
+    },
+    {
+     "key": "target-slot-form",
+     "text": "For kind=slot the target is written as subjectIdOrName, then #, then the key.",
+     "at": [
+      "contract/ref.schema.json",
+      "<subjectIdOrName>#<key>"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "contract/subject.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "subject.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "parent-is-subject-id",
+     "text": "A Subject parent is the subject id of the parent subject.",
+     "at": [
+      "contract/subject.schema.json",
+      "Subject id of the parent subject"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Subject"
+      }
+     ]
+    },
+    {
+     "key": "aliases-array",
+     "text": "Subject aliases is an array of strings.",
+     "at": [
+      "contract/subject.schema.json",
+      "\"aliases\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } }"
+     ]
+    },
+    {
+     "key": "pin-fields-min",
+     "text": "Pin repo and rev are each strings with minLength 1.",
+     "at": [
+      "contract/subject.schema.json",
+      "\"repo\": { \"type\": \"string\", \"minLength\": 1 }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "contract/dossier.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "dossier.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "required-list",
+     "text": "A Dossier requires subject, depth, needs, budget_tokens, used_tokens, facts, linked, conflicts, gaps, dropped and self_check.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"gaps\", \"dropped\", \"self_check\""
+     ]
+    },
+    {
+     "key": "complete-mode",
+     "text": "In complete mode every fact is emitted and budget_tokens is only the highlight threshold, so used_tokens may exceed it.",
+     "at": [
+      "contract/dossier.schema.json",
+      "budget_tokens is only the highlight threshold"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Budget modes"
+      }
+     ]
+    },
+    {
+     "key": "stale-rank-last",
+     "text": "Rank order puts every stale fact after every fact that is not stale.",
+     "at": [
+      "contract/dossier.schema.json",
+      "every stale fact after every fact that is not stale"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Ranking"
+      }
+     ]
+    },
+    {
+     "key": "strict-mode",
+     "text": "In strict mode facts are cut to the budget and the rest is listed in dropped.",
+     "at": [
+      "contract/dossier.schema.json",
+      "facts are cut to the budget"
+     ]
+    },
+    {
+     "key": "linked-slice",
+     "text": "linked is built from follow and gets a separate budget slice of roughly 25%.",
+     "at": [
+      "contract/dossier.schema.json",
+      "separate budget slice (~25%)"
+     ]
+    },
+    {
+     "key": "conflicts-resolution-null",
+     "text": "Each conflicts entry requires field, values and resolution, and resolution is typed null.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"resolution\": { \"type\": \"null\" }"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Conflicts and gaps"
+      }
+     ]
+    },
+    {
+     "key": "gaps-entry",
+     "text": "Each gaps entry requires need and reason, both strings.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"required\": [\"need\", \"reason\"]"
+     ]
+    },
+    {
+     "key": "factview-shared-object",
+     "text": "FactView is one object used by both search hits and dossier facts, with optional fields null when not applicable.",
+     "at": [
+      "contract/dossier.schema.json",
+      "One object used by BOTH search hits and dossier facts"
+     ]
+    },
+    {
+     "key": "factview-why",
+     "text": "FactView why appears only when status is stale or contested and lists the refs that make it so.",
+     "at": [
+      "contract/dossier.schema.json",
+      "only when status is stale or contested"
+     ]
+    },
+    {
+     "key": "factview-required",
+     "text": "A FactView requires id, subject_id, kind, text, tags, confidence and status.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"required\": [\"id\", \"subject_id\", \"kind\", \"text\", \"tags\", \"confidence\", \"status\"]"
+     ]
+    },
+    {
+     "key": "needs-array",
+     "text": "Dossier needs is an array of strings.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"needs\": { \"type\": \"array\""
+     ]
+    },
+    {
+     "key": "self-check-fields",
+     "text": "self_check requires uncited_claims and conflicts_surfaced.",
+     "at": [
+      "contract/dossier.schema.json",
+      "\"required\": [\"uncited_claims\", \"conflicts_surfaced\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "contract/jsonl-manifest.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "jsonl-manifest.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "format-const",
+     "text": "The manifest format is the constant dossier-jsonl/1.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"format\": { \"const\": \"dossier-jsonl/1\" }"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/publish"
+      }
+     ]
+    },
+    {
+     "key": "files-sorted",
+     "text": "Manifest files is an array of file names that is sorted ordinally and unique.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "Sorted (ordinal), unique"
+     ]
+    },
+    {
+     "key": "counts-required",
+     "text": "Manifest counts requires subjects, facts and assets.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"required\": [\"subjects\", \"facts\", \"assets\"]"
+     ]
+    },
+    {
+     "key": "options-required",
+     "text": "Manifest options requires assets, max_file_bytes, max_files, max_total_bytes, subject and subject_id.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"required\": [\"assets\", \"max_file_bytes\", \"max_files\", \"max_total_bytes\", \"subject\", \"subject_id\"]"
+     ]
+    },
+    {
+     "key": "options-assets-enum",
+     "text": "Manifest options assets is one of embed, files or none.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"assets\": { \"enum\": [\"embed\", \"files\", \"none\"] }"
+     ]
+    },
+    {
+     "key": "options-profile",
+     "text": "Manifest options profile is a string with minLength 1.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"profile\": { \"type\": \"string\", \"minLength\": 1 }"
+     ]
+    },
+    {
+     "key": "file-name-pattern",
+     "text": "A manifest FileName is manifest.json, a dossier-NNNN.jsonl file or an assets path holding a sha256.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"FileName\": {"
+     ]
+    },
+    {
+     "key": "bundle-hash-ref",
+     "text": "bundle_hash references the Sha256 definition.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"bundle_hash\": { \"$ref\": \"#/$defs/Sha256\" }"
+     ]
+    },
+    {
+     "key": "assets-map-entry",
+     "text": "Manifest assets maps each sha256 to an AssetEntry object.",
+     "at": [
+      "contract/jsonl-manifest.schema.json",
+      "\"additionalProperties\": { \"$ref\": \"#/$defs/AssetEntry\" }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "contract/jsonl-record.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "jsonl-record.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "record-oneof",
+     "text": "A JSONL record line is one of SubjectRecord, FactRecord or AssetRecord.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "\"$ref\": \"#/$defs/SubjectRecord\""
+     ]
+    },
+    {
+     "key": "subjectrecord-path",
+     "text": "SubjectRecord path is the subject's tree path, the slug path, in the bundle.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "The subject's tree path (slug path) in the bundle"
+     ]
+    },
+    {
+     "key": "bundle-key",
+     "text": "bundle_key is the content-addressed key the markdown bundle names this fact by.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "The content-addressed key the markdown bundle names this fact by"
+     ]
+    },
+    {
+     "key": "asset-once-per-sha",
+     "text": "Each attachment blob appears once per sha256, either embedded as base64, written to assets/ or reported missing.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "embedded as base64, written to assets/, or reported missing"
+     ]
+    },
+    {
+     "key": "asset-missing-const",
+     "text": "AssetMissing missing is the constant true.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "\"missing\": { \"const\": true }"
+     ]
+    },
+    {
+     "key": "sha256-pattern",
+     "text": "The JSONL record Sha256 definition is a string matching the pattern of 64 lowercase hex characters.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "\"Sha256\": { \"type\": \"string\""
+     ]
+    },
+    {
+     "key": "factrecord-subject-name",
+     "text": "FactRecord subject_name is a string with minLength 1.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "\"subject_name\": { \"type\": \"string\", \"minLength\": 1 }"
+     ]
+    },
+    {
+     "key": "asset-file-path",
+     "text": "AssetFile path matches assets/ then 64 hex characters and an optional lowercase extension.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "^assets/[0-9a-f]{64}"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/publish"
+      }
+     ]
+    },
+    {
+     "key": "asset-embedded-data",
+     "text": "AssetEmbedded data is standard base64 of the blob and its sha256 must equal the record sha256.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "Standard base64 of the blob"
+     ]
+    },
+    {
+     "key": "asset-embedded-encoding",
+     "text": "AssetEmbedded encoding is the constant base64.",
+     "at": [
+      "contract/jsonl-record.schema.json",
+      "\"encoding\": { \"const\": \"base64\" }"
+     ]
+    }
+   ]
+  }
+ ]
+}

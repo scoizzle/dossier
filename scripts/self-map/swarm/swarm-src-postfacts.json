@@ -1,0 +1,541 @@
+{
+ "agent": "swarm-src-postfacts",
+ "slice": "src-postfacts",
+ "subjects": [
+  {
+   "name": "DossierStore.PostFacts",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "null-subject-rejected",
+     "text": "PostFacts throws ArgumentException when request.Subject is null, before the connection and transaction are opened for the batch.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "post_facts request requires a subject"
+     ]
+    },
+    {
+     "key": "null-item-error",
+     "text": "An item that is null adds a PostError with code missing_fact and the message fact[index] is null, then the loop moves to the next item.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_fact"
+     ]
+    },
+    {
+     "key": "missing-kind-error",
+     "text": "A fact whose Kind is null or whitespace is rejected with error code missing_kind before the text and local_id checks run.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_kind"
+     ]
+    },
+    {
+     "key": "missing-text-error",
+     "text": "A fact whose Text is null is rejected with error code missing_text and the item is skipped.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_text"
+     ]
+    },
+    {
+     "key": "duplicate-local-id",
+     "text": "A local_id repeated inside the same batch is rejected with duplicate_local_id and the later item is skipped.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "duplicate_local_id"
+     ]
+    },
+    {
+     "key": "supersedes-target-precheck",
+     "text": "MissingSupersedesTarget queries the facts table for each supersedes ref of kind fact and rejects the item as supersedes_target_not_found when one is absent.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "supersedes_target_not_found"
+     ]
+    },
+    {
+     "key": "hash-resolved-refs",
+     "text": "The content hash is computed with ContentHash.Compute over the already resolved refs, so a ref written as @x hashes as the fact id it points at.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "var hash = ContentHash.Compute(fact.Text, fact.Data, resolvedRefs);"
+     ]
+    },
+    {
+     "key": "keyed-identical-noop",
+     "text": "When a keyed slot exists and SlotOccupantIsIdentical is true the result is deduped, DuplicateOf is the existing id, and no new fact row is written.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "DuplicateOf = replacedId"
+     ]
+    },
+    {
+     "key": "replaced-order",
+     "text": "On the replaced path the code inserts the new fact, repoints the slot with PointSlotAt, then sets the old fact status to superseded.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "PointSlotAt(connection, transaction, subject.Id, fact.Kind, fact.Key!, id)"
+     ]
+    },
+    {
+     "key": "live-hash-lookup",
+     "text": "FindLiveFactByHash selects the first live fact matching subject, kind, key and content_hash, ordered by rowid with LIMIT 1.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "ORDER BY rowid"
+     ]
+    },
+    {
+     "key": "dry-run-rollback",
+     "text": "With DryRun set the transaction is rolled back, so the subject, facts, refs and slot writes are all discarded.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "transaction.Rollback()"
+     ]
+    },
+    {
+     "key": "prune-only-on-commit",
+     "text": "PruneChanges runs only on the commit path, immediately before transaction.Commit().",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "PruneChanges(connection, transaction)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::InsertFact",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "live-defaults",
+     "text": "InsertFact writes status live, defaults confidence to 1.0 when absent, and stamps provenance from the writer identity and createdAt.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "fact.Confidence ?? 1.0"
+     ]
+    },
+    {
+     "key": "fts-row",
+     "text": "InsertFact adds a facts_fts row keyed by last_insert_rowid() with the fact text and its tags joined by a space.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "INSERT INTO facts_fts(rowid, text, tags)"
+     ]
+    },
+    {
+     "key": "refs-seq-default",
+     "text": "Each ref is inserted with seq taken from reference.Seq, falling back to its position in the resolved list.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "reference.Seq ?? sequence"
+     ]
+    },
+    {
+     "key": "attachments-skip-and-replace",
+     "text": "InsertFact skips an attachment whose Sha256 is null or whitespace, and INSERT OR REPLACE means a repeated sha256 keeps its last entry.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "INSERT OR REPLACE INTO attachments"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "ContentHash.cs::ContentHash",
+   "kind": "type",
+   "parent": "src/Dossier/ContentHash.cs",
+   "aliases": [
+    "ContentHash"
+   ],
+   "facts": [
+    {
+     "key": "input-layout",
+     "text": "Compute builds the hash input as normalized text, a newline, the canonical JSON of data when data is present, then a newline.",
+     "at": [
+      "src/Dossier/ContentHash.cs",
+      "sb.Append(CanonicalJson.Write(data.Value));"
+     ]
+    },
+    {
+     "key": "ref-line-format",
+     "text": "Each ref line is formatted from rel, kind, target and LocatorMin, then the lines are ordered with StringComparer.Ordinal before joining.",
+     "at": [
+      "src/Dossier/ContentHash.cs",
+      "{r.Rel ?? string.Empty}|{r.Kind ?? string.Empty}"
+     ]
+    },
+    {
+     "key": "digest",
+     "text": "The final digest is SHA256 over the UTF8 bytes of that string, converted to hex and lowercased.",
+     "at": [
+      "src/Dossier/ContentHash.cs",
+      "Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant()"
+     ]
+    },
+    {
+     "key": "locator-empty",
+     "text": "LocatorMin returns an empty string when the locator has no value, otherwise CanonicalJson.Write of the locator.",
+     "at": [
+      "src/Dossier/ContentHash.cs",
+      "locator.HasValue ? CanonicalJson.Write(locator.Value) : string.Empty"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "CanonicalJson.cs::CanonicalJson",
+   "kind": "type",
+   "parent": "src/Dossier/CanonicalJson.cs",
+   "aliases": [
+    "CanonicalJson"
+   ],
+   "facts": [
+    {
+     "key": "write-builder",
+     "text": "Write creates a StringBuilder, appends the element recursively, and returns the built string.",
+     "at": [
+      "src/Dossier/CanonicalJson.cs",
+      "Append(sb, element);"
+     ]
+    },
+    {
+     "key": "sorted-keys",
+     "text": "Object properties are enumerated in ordinal name order, with a comma written before every property after the first.",
+     "at": [
+      "src/Dossier/CanonicalJson.cs",
+      "element.EnumerateObject().OrderBy(p => p.Name, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "raw-numbers",
+     "text": "A number value is written with GetRawText so its original formatting is preserved.",
+     "at": [
+      "src/Dossier/CanonicalJson.cs",
+      "sb.Append(element.GetRawText());"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Names.Normalize",
+   "kind": "method",
+   "parent": "src/Dossier/Names.cs",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "empty-guard",
+     "text": "Names.Normalize returns the empty string when the value is null or whitespace, before any lowercasing.",
+     "at": [
+      "src/Dossier/Names.cs",
+      "if (string.IsNullOrWhiteSpace(value))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/PostFacts.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "PostFacts.cs"
+   ],
+   "facts": [
+    {
+     "key": "norefs-shared-empty",
+     "text": "PostFacts.cs declares NoRefs as one shared empty List of RefInput, used when a fact carries no refs.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "private static readonly List<RefInput> NoRefs = new();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::ApplySupersedes",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "skip-closed-target",
+     "text": "ApplySupersedes only updates a target row whose status is not superseded or retracted, so an already closed target writes nothing.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "AND status NOT IN ('superseded', 'retracted')"
+     ]
+    },
+    {
+     "key": "no-flip-skips-slot",
+     "text": "When that update changes no row, ApplySupersedes continues and leaves the target's slot row untouched.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "if (flipped == 0)"
+     ]
+    },
+    {
+     "key": "self-skip",
+     "text": "A correction ref whose target equals the fact being written is skipped, so a fact cannot supersede itself.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "string.Equals(reference.Target, factId, StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "slot-delete-on-flip",
+     "text": "Once a target flips to superseded, ApplySupersedes deletes every slots row whose fact_id is that target.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "DELETE FROM slots WHERE fact_id = $id"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::ResolveRefs",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "missing-rel-first",
+     "text": "A ref whose Rel is null or whitespace is rejected as missing_rel before Kind, Target and Basis are checked.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "if (string.IsNullOrWhiteSpace(reference.Rel))"
+     ]
+    },
+    {
+     "key": "missing-ref-kind",
+     "text": "A ref whose Kind is empty is rejected as missing_ref_kind, a code distinct from the fact-level missing_kind.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_ref_kind"
+     ]
+    },
+    {
+     "key": "missing-target",
+     "text": "A ref whose Target is empty is rejected as missing_target.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_target"
+     ]
+    },
+    {
+     "key": "missing-basis",
+     "text": "A ref whose Basis is empty is rejected as missing_basis.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "missing_basis"
+     ]
+    },
+    {
+     "key": "symbol-revision-last-at",
+     "text": "For kind symbol the revision is everything after the last @, and a target with nothing after that @ is rejected as symbol_target_requires_revision.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "symbol_target_requires_revision"
+     ]
+    },
+    {
+     "key": "local-id-resolution",
+     "text": "A target starting with @ is replaced by the earlier fact id registered under that local_id, and an unknown local_id yields unresolved_local_id.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "unresolved_local_id"
+     ]
+    },
+    {
+     "key": "slot-target-verbatim",
+     "text": "A ref of kind slot bypasses the @ local_id rewrite and is stored with its target verbatim.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "reference.Target!.StartsWith('@')"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::UpsertSubject",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "unknown-id-fails-closed",
+     "text": "When an id is supplied without a name and no subject has that id, UpsertSubject throws DossierRequestException with code subject_not_found rather than creating a subject.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "subject_not_found"
+     ]
+    },
+    {
+     "key": "match-name-or-alias",
+     "text": "An existing subject is matched when its normalized name or any normalized alias equals the normalized requested name.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "Names.Normalize(row.Name) != wanted"
+     ]
+    },
+    {
+     "key": "update-only-when-differs",
+     "text": "The subjects row is updated only when the informative aliases or the parent differ, so an identical repost does not bump the revision.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "Informative(merged).SequenceEqual(Informative(row.Aliases), StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "alias-equal-name-not-informative",
+     "text": "An alias equal to the subject's own name is not informative and is excluded from that comparison.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "aliases.Where(alias => Names.Normalize(alias) != Names.Normalize(row.Name)).ToArray();"
+     ]
+    },
+    {
+     "key": "new-subject-guid",
+     "text": "A new subject gets a Guid formatted D as its id and the requested name trimmed before insertion.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "Guid.NewGuid().ToString(\"D\")"
+     ]
+    },
+    {
+     "key": "read-subjects-order",
+     "text": "ReadSubjects returns subjects ordered by created_at then id, so the first matching row wins.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "ORDER BY created_at, id"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::SlotOccupantIsIdentical",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "compares-hash-and-live",
+     "text": "SlotOccupantIsIdentical compares content_hash, requires the occupant status to be live, and compares the serialized tags, confidence and items.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "SELECT content_hash, status, tags, confidence, items FROM facts WHERE id = $id"
+     ]
+    },
+    {
+     "key": "ref-freshness-fields",
+     "text": "Ref comparison also covers basis, confidence, rev, snapshot, snapshot_hash, etag, verified_at and valid, which the hash ignores.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "stored.Rev != wanted.Rev"
+     ]
+    },
+    {
+     "key": "ref-seq-defaults",
+     "text": "An input ref without a seq is compared at its index, and the wanted refs are sorted by that effective seq.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "reference.Seq ?? index"
+     ]
+    },
+    {
+     "key": "attachment-compare",
+     "text": "Attachments are compared by sha256 key, filename, mime, bytes and perceptual, and a differing count short-circuits to false.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "wantedAttachments.TryGetValue(stored.Sha256, out var wanted)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::SetFactStatus",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "noop-guard",
+     "text": "SetFactStatus adds status != $status to the update so a no-op write does not fire trg_facts_update.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "UPDATE facts SET status = $status WHERE id = $id AND status != $status"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::PointSlotAt",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "slot-upsert",
+     "text": "PointSlotAt upserts on the slots key subject_id, kind and key, overwriting fact_id with excluded.fact_id.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "ON CONFLICT(subject_id, kind, key) DO UPDATE SET fact_id = excluded.fact_id"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::FindSlotFactId",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "slot-read",
+     "text": "FindSlotFactId reads fact_id from slots by subject_id, kind and key and returns null when no row matches.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "SELECT fact_id FROM slots WHERE subject_id = $subject AND kind = $kind AND key = $key"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::MergeAliases",
+   "kind": "method",
+   "parent": "src/Dossier/PostFacts.cs",
+   "facts": [
+    {
+     "key": "dedupe-normalized",
+     "text": "MergeAliases dedupes by normalized alias using an ordinal HashSet and appends the subject name last.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "if (seen.Add(normalized))"
+     ]
+    },
+    {
+     "key": "keeps-first-spelling",
+     "text": "MergeAliases keeps the trimmed original spelling of the first alias seen for each normalized form and drops empty aliases.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "result.Add(value!.Trim());"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "PostFacts.cs::WriterIdentity",
+   "kind": "type",
+   "parent": "src/Dossier/PostFacts.cs",
+   "aliases": [
+    "WriterIdentity"
+   ],
+   "facts": [
+    {
+     "key": "cli-default-identity",
+     "text": "WriterIdentity.Cli is the default writer with actor dossier-cli, channel cli and actor type tool.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "new(\"dossier-cli\", \"cli\", \"tool\")"
+     ]
+    }
+   ]
+  }
+ ]
+}

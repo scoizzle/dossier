@@ -1,0 +1,586 @@
+{
+ "agent": "swarm-src-publish-1",
+ "slice": "src-publish-1",
+ "subjects": [
+  {
+   "name": "DossierStore.Publish",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "invalid-out",
+     "text": "Publish throws invalid_out when the Out option is null or whitespace.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "publish requires an output directory"
+     ]
+    },
+    {
+     "key": "invalid-format",
+     "text": "Publish throws invalid_format unless Format is md or jsonl.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "options.Format is not (PublishOptions.FormatMarkdown or PublishOptions.FormatJsonl)"
+     ]
+    },
+    {
+     "key": "jsonl-assets-validation",
+     "text": "With jsonl format Publish raises invalid_assets unless Assets is embed, files or none.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "with --format jsonl"
+     ]
+    },
+    {
+     "key": "invalid-limit",
+     "text": "In jsonl format a negative MaxFiles, MaxFileBytes or MaxTotalBytes raises invalid_limit.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "max-files, max-file-bytes and max-total-bytes must be zero (unlimited) or greater"
+     ]
+    },
+    {
+     "key": "invalid-depth",
+     "text": "In markdown format Publish raises invalid_depth when Depth is not index or full.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "options.Depth is not (\"index\" or \"full\")"
+     ]
+    },
+    {
+     "key": "invalid-facts",
+     "text": "In markdown format Publish raises invalid_facts when Facts is not detail or none.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "options.Facts is not (\"detail\" or \"none\")"
+     ]
+    },
+    {
+     "key": "invalid-budget",
+     "text": "In markdown format a negative Budget raises invalid_budget.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "budget must be zero or greater"
+     ]
+    },
+    {
+     "key": "invalid-index-max-tokens",
+     "text": "In markdown format Publish raises invalid_index_max_tokens when IndexMaxTokens is below 1.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "index-max-tokens must be 1 or greater"
+     ]
+    },
+    {
+     "key": "invalid-profile",
+     "text": "Setting RespectLimits without a ProfilePath raises invalid_profile.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "--respect-limits requires --profile <path>"
+     ]
+    },
+    {
+     "key": "profile-load-order",
+     "text": "Publish loads the profile before opening the store or the output directory, so a bad profile file fails first.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Load the profile before touching the store or the output directory"
+     ]
+    },
+    {
+     "key": "drop-empty-subjects",
+     "text": "A subject with no live fact and no descendant holding one gets no bundle directory.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "A subject with no live fact and no descendant holding one"
+     ]
+    },
+    {
+     "key": "keep-ancestors",
+     "text": "Ancestors of a kept subject stay in the bundle even with no fact of their own, and the scope root always stays.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "the tree runs through them, and the scope root always stays"
+     ]
+    },
+    {
+     "key": "slots-query",
+     "text": "Publish loads slot occupants from the slots table ordered by kind then fact_id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "SELECT subject_id, key, fact_id FROM slots ORDER BY kind, fact_id"
+     ]
+    },
+    {
+     "key": "shard-no-detail",
+     "text": "Shard mode writes no fact files and no assets because each shard is a self-contained document.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Shard mode writes no fact files and no assets: a shard is a self-contained document."
+     ]
+    },
+    {
+     "key": "fact-order",
+     "text": "Facts are ordered by subject tree position first, then key, kind, text, ContentHash and id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "subjectOrder[f.SubjectId]"
+     ]
+    },
+    {
+     "key": "missing-blob-warning",
+     "text": "A missing attachment blob adds a warning naming the sha256 and the subject, and the publish continues.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "published without its bytes"
+     ]
+    },
+    {
+     "key": "compliance-excludes-manifest",
+     "text": "The compliance report measures every generated file and asset but excludes the bundle manifest.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "kv.Key != BundleManifest"
+     ]
+    },
+    {
+     "key": "shard-compliance-scope",
+     "text": "In shard mode only files under shards/ are measured and manifest.json is named a navigation aid.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "are navigation aids and not counted"
+     ]
+    },
+    {
+     "key": "hash-placeholder",
+     "text": "The bundle hash is computed while README.md still holds its generated-at placeholder.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "holding its placeholder"
+     ]
+    },
+    {
+     "key": "timestamp-reuse",
+     "text": "When the previous manifest hash matches the new one, Publish reuses the stored timestamp instead of reading the clock.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "previous.Value.Hash == bundleHash && ReadPreviousTimestamp"
+     ]
+    },
+    {
+     "key": "readme-command",
+     "text": "README.md records the supplied CommandLine, or a command line synthesized from the options when it is null.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "options.CommandLine ?? SynthesizeCommandLine(options)"
+     ]
+    },
+    {
+     "key": "omit-status-notes",
+     "text": "Each subject page is compiled with OmitStatusNotes set, so it prints the stored status and is charged for plain lines.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "OmitStatusNotes = true"
+     ]
+    },
+    {
+     "key": "asset-hex-check",
+     "text": "In markdown detail mode an attachment whose sha256 fails the hex pattern is treated as missing.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Sha256Hex.IsMatch(attachment.Sha256) ? Path.Combine(BlobRoot"
+     ]
+    },
+    {
+     "key": "asset-bytes-from-disk",
+     "text": "When the attachment file exists, the published byte count comes from the file on disk rather than the stored record.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "bytes = new FileInfo(source!).Length;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Publish.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "Publish.cs"
+   ],
+   "facts": [
+    {
+     "key": "const-max-slug-length",
+     "text": "Subject directory slugs are capped at 80 characters.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "MaxSlugLength = 80"
+     ]
+    },
+    {
+     "key": "const-max-fact-slug-length",
+     "text": "Fact file name stems are capped at 48 characters.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "MaxFactSlugLength = 48"
+     ]
+    },
+    {
+     "key": "const-bundle-key-length",
+     "text": "Bundle keys start as the first 8 hex characters of the digest.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "BundleKeyLength = 8"
+     ]
+    },
+    {
+     "key": "legacy-asset-layout",
+     "text": "LegacyAssetPathRegex matches the old assets directory layout so a republish can still clean those files up.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Layouts earlier versions wrote."
+     ]
+    },
+    {
+     "key": "timestamp-placeholder",
+     "text": "README.md is first built with the TimestampPlaceholder text so the README does not affect the bundle hash.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "TimestampPlaceholder = \"@@GENERATED_AT@@\""
+     ]
+    },
+    {
+     "key": "no-write-unchanged",
+     "text": "Publish rewrites a generated file only when its bytes change.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "only rewritten when their bytes change"
+     ]
+    },
+    {
+     "key": "const-max-asset-stem",
+     "text": "Attachment file name stems are capped at 40 characters.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "MaxAssetStemLength = 40"
+     ]
+    },
+    {
+     "key": "sha256-regex",
+     "text": "Sha256Hex matches a lowercase 64-character hex blob hash.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "^[0-9a-f]{64}$"
+     ]
+    },
+    {
+     "key": "agents-file",
+     "text": "The generated AGENTS.md receives the detail flag, IndexMaxTokens and the shard flag.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "RenderAgentsFile(detail, options.IndexMaxTokens, sharded)"
+     ]
+    },
+    {
+     "key": "asset-path-regex",
+     "text": "AssetPathRegex matches subjects/<slug>/assets/<name>.<ext> paths used to classify generated files.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "AssetPathRegex = new("
+     ]
+    },
+    {
+     "key": "pub-asset-name",
+     "text": "A published attachment whose blob is missing or not linked has no assets file written for it.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "An attachment as published: Name is the file under subjects/"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::PublishOptions",
+   "kind": "type",
+   "parent": "src/Dossier/Publish.cs",
+   "aliases": [
+    "PublishOptions"
+   ],
+   "facts": [
+    {
+     "key": "assets-default",
+     "text": "Assets defaults to files in jsonl format and to detail in markdown format.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "_assets ?? (Format == FormatJsonl ? \"files\" : \"detail\")"
+     ]
+    },
+    {
+     "key": "budget-default",
+     "text": "Budget defaults to DossierStore.DefaultBudgetTokens.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "DossierStore.DefaultBudgetTokens"
+     ]
+    },
+    {
+     "key": "format-default",
+     "text": "Format defaults to the md constant.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "public string Format { get; set; } = FormatMarkdown;"
+     ]
+    },
+    {
+     "key": "depth-default",
+     "text": "PublishOptions.Depth defaults to full.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "public string Depth { get; set; } = \"full\";"
+     ]
+    },
+    {
+     "key": "facts-default",
+     "text": "PublishOptions.Facts defaults to detail, which writes one file per fact.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "public string Facts { get; set; } = \"detail\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::LoadPubSubjects",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "query-order",
+     "text": "LoadPubSubjects reads subjects with the id, name, kind, parent_id, aliases and pin columns, ordered by id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "SELECT id, name, kind, parent_id, aliases, pin FROM subjects ORDER BY id"
+     ]
+    },
+    {
+     "key": "null-parent",
+     "text": "A subject row whose parent_id is NULL becomes a PubSubject with a null ParentId.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "reader.IsDBNull(3) ? null : reader.GetString(3)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::LoadPubFacts",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "skip-dead-facts",
+     "text": "LoadPubFacts skips facts whose status is superseded or retracted and facts of kind dossier.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "WHERE status NOT IN ('superseded', 'retracted') AND kind <> 'dossier'"
+     ]
+    },
+    {
+     "key": "subject-filter",
+     "text": "Facts whose subject is outside the selected set are skipped rather than filtered in SQL.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (!subjectIds.Contains(subjectId))"
+     ]
+    },
+    {
+     "key": "refs-attachments",
+     "text": "After reading the fact rows, LoadPubFacts loads each fact's refs and attachments by fact id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "fact.Refs = ReadRefs(connection, fact.Id);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::SubtreeOf",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "breadth-first",
+     "text": "SubtreeOf walks parent links breadth first from the root id and returns the root plus every descendant found.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "s.ParentId is not null && frontier.Contains(s.ParentId)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::TreeOrder",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "root-definition",
+     "text": "TreeOrder treats a subject as a root when it has no ParentId or its parent is not in the loaded set.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "s.ParentId is null || !ids.Contains(s.ParentId)"
+     ]
+    },
+    {
+     "key": "display-path",
+     "text": "TreeOrder builds each subject's display path by joining ancestor names with a slash surrounded by spaces.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "parentPath + \" / \" + Inline(subject.Name)"
+     ]
+    },
+    {
+     "key": "sibling-sort",
+     "text": "Siblings are sorted by normalized name, then name, kind, joined aliases and id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      ".OrderBy(s => Names.Normalize(s.Name), StringComparer.Ordinal)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::SlugCore",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "charset",
+     "text": "SlugCore keeps only lowercase ASCII letters and digits, collapsing each run of other characters into one hyphen.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (ch is (>= 'a' and <= 'z') or (>= '0' and <= '9'))"
+     ]
+    },
+    {
+     "key": "truncate",
+     "text": "When a slug exceeds the maximum, SlugCore truncates it and trims trailing hyphens.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "slug = slug[..maxLength].TrimEnd('-');"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::Slugify",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "empty-fallback",
+     "text": "Slugify returns subject when a name produces an empty slug.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "slug.Length == 0 ? \"subject\" : slug"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::AssignSlugs",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "collision-numbering",
+     "text": "AssignSlugs gives colliding subjects the base slug for the first in tree order and -2, -3 for the rest.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "the first keeps the base slug"
+     ]
+    },
+    {
+     "key": "skip-taken",
+     "text": "AssignSlugs increments the numeric suffix until it finds a slug not already taken.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "while (!taken.Add(candidate))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::DefaultBundleHash",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "sha256-lower",
+     "text": "DefaultBundleHash returns the lowercase hex SHA-256 digest of the key input.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Convert.ToHexString(SHA256.HashData(Utf8NoBom.GetBytes(input))).ToLowerInvariant()"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::BundleKeyInput",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "input-order",
+     "text": "BundleKeyInput joins normalized text, key, kind and canonical data with unit separators.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(Inline(fact.Text))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::WriteCanonicalJson",
+   "kind": "method",
+   "parent": "DossierStore.Publish",
+   "facts": [
+    {
+     "key": "sort-properties",
+     "text": "WriteCanonicalJson writes object properties in ordinal order of their names.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "element.EnumerateObject().OrderBy(p => p.Name, StringComparer.Ordinal)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::PublishResult",
+   "kind": "type",
+   "parent": "src/Dossier/Publish.cs",
+   "aliases": [
+    "PublishResult"
+   ],
+   "facts": [
+    {
+     "key": "warnings-fail-open",
+     "text": "PublishResult.Warnings holds one line per missing blob and the bundle is still written.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "fail-open: the bundle is still written"
+     ]
+    },
+    {
+     "key": "assets-count",
+     "text": "PublishResult.Assets counts distinct asset records and is set only for jsonl output.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "the number of distinct asset records written"
+     ]
+    }
+   ]
+  }
+ ]
+}

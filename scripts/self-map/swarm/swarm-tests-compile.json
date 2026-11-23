@@ -1,0 +1,464 @@
+{
+ "agent": "swarm-tests-compile",
+ "slice": "tests-compile",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/CompileTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "CompileTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "compile_isdeterministic-needs-alpha-missing",
+     "text": "Compile_IsDeterministic sets Needs to alpha and missing thing, then asserts the second serialized Compile output equals the first.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "request.Needs = new List<string> { \"alpha\", \"missing thing\" };"
+     ]
+    },
+    {
+     "key": "candidate-set-excludessupersededandretracted-set-equality",
+     "text": "CandidateSet_ExcludesSupersededAndRetracted asserts the emitted fact set equals ids 0, 3 and 4, so superseded and retracted facts are excluded while contested and stale stay.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "emitted.SetEquals(new[] { ids[0], ids[3], ids[4] })"
+     ]
+    },
+    {
+     "key": "candidate-set-excludesdossierkind-only-normal-fact",
+     "text": "CandidateSet_ExcludesDossierKind sets one fact's kind to dossier and asserts Compile emits only the remaining normal fact.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "UPDATE facts SET kind = 'dossier'"
+     ]
+    },
+    {
+     "key": "descendants-includeschildfactstodepth3-four-taken",
+     "text": "Descendants_IncludesChildFactsToDepth3 builds levels 1 through 4 under Root and asserts the emitted set is the first 4 fact ids, excluding factIds[4].",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(with.SetEquals(factIds.Take(4))).IsTrue();"
+     ]
+    },
+    {
+     "key": "ranking-confidenceandcentralityorderfacts-centrality-first",
+     "text": "Ranking_ConfidenceAndCentralityOrderFacts gives ids[2] two inbound refs so centrality lifts it above the confidence 1.0 fact, ordering ids[2], ids[1], ids[0].",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "order.SequenceEqual(new[] { ids[2], ids[1], ids[0] })"
+     ]
+    },
+    {
+     "key": "recencyweight-zeroremovesrecencyeffect-opposite-firsts",
+     "text": "RecencyWeight_ZeroRemovesRecencyEffect ranks the older fact first with Recency 0 and the newer fact first with Recency 1.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "zero.Rank = new RankOptions { Recency = 0 };"
+     ]
+    },
+    {
+     "key": "dedupe-clustersatjaccardthresholdandkeepscites-thresholds",
+     "text": "Dedupe_ClustersAtJaccardThresholdAndKeepsCites makes ids[0] collapse into ids[1] at Jaccard 17/20 and keeps ids[2] separate at 17/23.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(head.Cites![0]).IsEqualTo(ids[1]);"
+     ]
+    },
+    {
+     "key": "dedupe-clustersatjaccardthresholdandkeepscites-short-facts",
+     "text": "Dedupe_ClustersAtJaccardThresholdAndKeepsCites asserts two identical short facts stay separate because facts under 4 tokens are never clustered.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "dossier.Facts.Count(f => f.Text is \"one two three\" or \"three two one\")"
+     ]
+    },
+    {
+     "key": "compile-completemodedoesnotclusternear-duplicates-complete-3",
+     "text": "Compile_CompleteModeDoesNotClusterNearDuplicates omits BudgetMode with Budget 1_000_000 and gets budget mode complete with 3 facts and 0 dropped.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.BudgetMode).IsEqualTo(\"complete\");"
+     ]
+    },
+    {
+     "key": "compile-strictmodestillclustersnear-duplicates-single-fact",
+     "text": "Compile_StrictModeStillClustersNearDuplicates with BudgetMode strict keeps a single fact whose Cites count is greater than 1.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Facts[0].Cites!.Count).IsGreaterThan(1);"
+     ]
+    },
+    {
+     "key": "compile-completemodeheaderreportsnoholdingback-no-of",
+     "text": "Compile_CompleteModeHeaderReportsNoHoldingBack reads the single Facts shown line from a published subjects index.md and asserts it does not contain the word of.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(line).DoesNotContain(\" of \");"
+     ]
+    },
+    {
+     "key": "budget-dropsoverflowandrecordsids-tight-two",
+     "text": "Budget_DropsOverflowAndRecordsIds derives a tight budget from 2 facts' tokens and asserts ids[0] and ids[1] are emitted with ids[2] recorded in Dropped.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "tight.Facts.Select(f => f.Id).SequenceEqual(new[] { ids[0], ids[1] })"
+     ]
+    },
+    {
+     "key": "conflicts-exemptfrombudgetandexceedslice-four-zero",
+     "text": "Conflicts_ExemptFromBudgetAndExceedSlice compiles at budget 20 and asserts 4 conflicts with 0 facts while UsedTokens exceeds BudgetTokens.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Conflicts.Count).IsEqualTo(4);"
+     ]
+    },
+    {
+     "key": "gap-emittedforunmetneed-no-fact",
+     "text": "Gap_EmittedForUnmetNeed asks for the need deployment pipeline and asserts one gap with reason no fact.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Gaps[0].Reason).IsEqualTo(\"no fact\");"
+     ]
+    },
+    {
+     "key": "need-coveredbytokensintextortags-only-backend-gap",
+     "text": "Need_CoveredByTokensInTextOrTags leaves only backend as a gap because Renders the CHARTS matches text and frontend matches a tag.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "dossier.Gaps.Select(g => g.Need).SequenceEqual(new[] { \"backend\" })"
+     ]
+    },
+    {
+     "key": "indexdepth-under300tokens-300-and-8",
+     "text": "IndexDepth_Under300Tokens compiles 20 long facts and asserts summed index fact tokens stay at or below 300 with at most 8 facts.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(factTokens).IsLessThanOrEqualTo(300);"
+     ]
+    },
+    {
+     "key": "packing-skipsover-sizedcandidate-skip-first",
+     "text": "Packing_SkipsOversizedCandidateAndEmitsLaterSmallerOnes drops the oversized ids[0] and still emits ids[1] and ids[2] within the tight slice.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "tight.Facts.Select(f => f.Id).SequenceEqual(new[] { ids[1], ids[2] })"
+     ]
+    },
+    {
+     "key": "packing-stops-smallest-candidate-two",
+     "text": "Packing_StopsWhenRemainingBudgetCannotFitSmallestCandidate ranks 5 equal-confidence facts, emits the first 2 and asserts 3 are dropped.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(tight.Dropped.Count).IsEqualTo(3);"
+     ]
+    },
+    {
+     "key": "packing-dropped-ranked-no-duplicates",
+     "text": "Packing_DroppedHasNoDuplicatesAndIsRankOrdered asserts Dropped has no ordinal duplicates and appears in rank order.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "tight.Dropped.Distinct(StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "conflict-same-path-cfg-port-null",
+     "text": "Conflict_FromSamePathDifferentValues asserts the single conflict field is cfg.port and its Resolution is null.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(conflict.Field).IsEqualTo(\"cfg.port\");"
+     ]
+    },
+    {
+     "key": "budget-ismeasuredinrenderedform-markdown-more",
+     "text": "Budget_IsMeasuredInRenderedForm compiles the same 1200 budget as json and markdown and asserts markdown emits more facts at lower UsedTokens.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(markdownDossier.Facts.Count).IsGreaterThan(jsonDossier.Facts.Count);"
+     ]
+    },
+    {
+     "key": "markdown-stayswithinbudget-floor-75-percent",
+     "text": "Markdown_StaysWithinBudget keeps fact tokens at or below 0.75 of the 200 budget and asserts UsedTokens within 200.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(factTokens).IsLessThanOrEqualTo((int)Math.Floor(budget * 0.75));"
+     ]
+    },
+    {
+     "key": "indexdepth-usesrenderedcost-300",
+     "text": "IndexDepth_UsesRenderedCost compiles with Format markdown and asserts both the rendered markdown estimate and EstimateRenderedTokens are at most 300.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(DossierStore.EstimateRenderedTokens(dossier, \"markdown\")).IsLessThanOrEqualTo(300);"
+     ]
+    },
+    {
+     "key": "index-emitsfactsevenwhenconflictsfilltheenvelope-3",
+     "text": "Index_EmitsFactsEvenWhenConflictsFillTheEnvelope asserts 3 conflicts and at least 3 facts even when the index conflicts fill the envelope.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Facts.Count).IsGreaterThanOrEqualTo(3);"
+     ]
+    },
+    {
+     "key": "index-jsonandmarkdownbothreturnfacts-counts",
+     "text": "Index_JsonAndMarkdownBothReturnFacts asserts markdown index facts count is at least the json count and both are greater than 0.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(markdown.Facts.Count).IsGreaterThanOrEqualTo(json.Facts.Count);"
+     ]
+    },
+    {
+     "key": "index-hardcapofeightstillholds-8",
+     "text": "Index_HardCapOfEightStillHolds posts 20 facts and asserts both json and markdown emit exactly 8 facts within 300 index tokens.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(json.Facts.Count).IsEqualTo(8);"
+     ]
+    },
+    {
+     "key": "seqorder-ischronological-seq-order",
+     "text": "SeqOrder_IsChronological sets Order to seq and expects created_at minutes 10, 20, 30 to win over confidence.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "request.Order = \"seq\";"
+     ]
+    },
+    {
+     "key": "uncitedclaims-iszero-cites-start",
+     "text": "UncitedClaims_IsZero asserts every emitted fact Cites starts with its own id and SelfCheck.UncitedClaims is 0.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.SelfCheck.UncitedClaims).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "markdown-containseveryfactid-headings",
+     "text": "Markdown_ContainsEveryFactId asserts the markdown starts with the Widget heading, contains every fact id in brackets, and has Conflicts and Gaps sections.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(markdown.Contains($\"[{fact.Id}]\")).IsTrue();"
+     ]
+    },
+    {
+     "key": "relevance-bm25ranksmatchingneedfirst-position",
+     "text": "Relevance_Bm25RanksMatchingNeedFirst makes the need-matching fact the oldest and asserts the deployment pipeline need moves it to position 1.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(order[0]).IsEqualTo(ids[0]);"
+     ]
+    },
+    {
+     "key": "relevance-absentwhennorelevance-flat-text-order",
+     "text": "Relevance_AbsentWhenNoRelevance with empty Needs and equal confidence 0.5 asserts newest-first order, then with Recency 0 the order follows fact text.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(ranked.SequenceEqual(new[] { ids[2], ids[1], ids[0] })).IsTrue();"
+     ]
+    },
+    {
+     "key": "descendants-cycleinparentsdoesnothang-5-seconds",
+     "text": "Descendants_CycleInParentsDoesNotHang closes an A to B to A parent cycle and asserts Compile finishes under 5 seconds with 2 facts.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(stopwatch.Elapsed < TimeSpan.FromSeconds(5)).IsTrue();"
+     ]
+    },
+    {
+     "key": "reproducible-selectionacrossindependentstores-equal-texts",
+     "text": "Reproducible_SelectionAcrossIndependentStores builds two stores with opposite insertion order and asserts equal fact texts, dropped texts and UsedTokens though fact ids differ.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(right.UsedTokens).IsEqualTo(left.UsedTokens);"
+     ]
+    },
+    {
+     "key": "reproducible-repeatedcompileisbyteidentical-3-runs",
+     "text": "Reproducible_RepeatedCompileIsByteIdentical serializes 3 Compile runs and asserts runs[1] and runs[2] both equal runs[0].",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(runs[1]).IsEqualTo(runs[0]);"
+     ]
+    },
+    {
+     "key": "reproducible-withrecencydisabled-ignoreswallclock-360",
+     "text": "Reproducible_WithRecencyDisabled_IgnoresWallClock offsets store B's clock by 360 minutes and asserts equal fact and dropped text with Recency 0.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "request.Rank = new RankOptions { Recency = 0 };"
+     ]
+    },
+    {
+     "key": "recency-defaultstillaffectsordering-newer-first",
+     "text": "Recency_DefaultStillAffectsOrdering asserts the newer zulu fact ranks first by default and the older alpha fact first when Recency is 0.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "flat.Rank = new RankOptions { Recency = 0 };"
+     ]
+    },
+    {
+     "key": "budget-isboundedascorpusgrows-1200",
+     "text": "Budget_IsBoundedAsCorpusGrows compiles corpora of 50, 200 and 1000 facts at budget 1200 markdown and asserts UsedTokens stays within 1200.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.UsedTokens).IsLessThanOrEqualTo(1200);"
+     ]
+    },
+    {
+     "key": "compile-completemodeemitseveryfact-200",
+     "text": "Compile_CompleteModeEmitsEveryFact leaves BudgetMode unset so 200 facts are emitted as complete with 0 dropped and UsedTokens above 300.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Facts.Count).IsEqualTo(200);"
+     ]
+    },
+    {
+     "key": "compile-strictmodestilldrops-sum-200",
+     "text": "Compile_StrictModeStillDrops with BudgetMode strict asserts fewer than 200 facts, some dropped, and facts plus dropped equal 200.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Assert.That(dossier.Facts.Count + dossier.Dropped.Count).IsEqualTo(200);"
+     ]
+    },
+    {
+     "key": "compile-completemarkdownhashighlightsthenallfacts-order",
+     "text": "Compile_CompleteMarkdownHasHighlightsThenAllFacts asserts the All facts heading follows Highlights and each posted fact id appears exactly 1 time.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(all).IsGreaterThan(highlights);"
+     ]
+    },
+    {
+     "key": "compile-completemarkdownwithinbudget-headings-absent",
+     "text": "Compile_CompleteMarkdownWithinBudgetIsOneFactsList compiles one fact with no budget and asserts neither the Highlights nor the All facts heading appears.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(markdown).DoesNotContain(\"## Highlights\");"
+     ]
+    },
+    {
+     "key": "compile-completemodeisstilldeterministic-concat",
+     "text": "Compile_CompleteModeIsStillDeterministic concatenates rendered markdown with the serialized dossier from two compiles and asserts they match.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "await Assert.That(second).IsEqualTo(first);"
+     ]
+    },
+    {
+     "key": "compile-invalidbudgetmoderejected-both-words",
+     "text": "Compile_InvalidBudgetModeRejected expects a DossierRequestException whose message contains complete and strict for BudgetMode bogus.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "var ex = Assert.Throws<DossierRequestException>(() => db.Store.Compile(new CompileRequest { Subject = \"Widget\", BudgetMode = \"bogus\" }));"
+     ]
+    },
+    {
+     "key": "helper-exec-clearpool",
+     "text": "The Exec helper opens a store connection, executes the SQL with named parameters, then calls SqliteConnection.ClearPool.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "SqliteConnection.ClearPool(connection);"
+     ]
+    },
+    {
+     "key": "helper-setcreated-update",
+     "text": "SetCreated writes an At-formatted timestamp into the facts created_at column for one id.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Exec(db, \"UPDATE facts SET created_at = $c WHERE id = $id\", (\"$c\", At(minutes)), (\"$id\", id));"
+     ]
+    },
+    {
+     "key": "helper-full-defaults",
+     "text": "Full builds a CompileRequest for subject Widget with Depth full and BudgetMode strict, plus an optional budget.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "new() { Subject = subject, Depth = \"full\", Budget = budget, BudgetMode = \"strict\" };"
+     ]
+    },
+    {
+     "key": "helper-post-returns-ids",
+     "text": "The Post helper calls PostFacts with Fixtures.Post and returns the posted fact ids.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "db.Store.PostFacts(Fixtures.Post(subject, facts)).Response.Facts.Select(f => f.Id).ToList();"
+     ]
+    },
+    {
+     "key": "helper-nearduplicatecorpus-jaccard",
+     "text": "NearDuplicateCorpus builds three facts sharing 20 tokens so each pair has Jaccard about 0.91.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "<summary>Three facts with pairwise Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.</summary>"
+     ]
+    },
+    {
+     "key": "helper-logicalfact-shape",
+     "text": "LogicalFact gives facts below HubCount a local h id and attaches a ref only when the index is at or above HubCount and not divisible by 3.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "var localId = i < HubCount ? $\"h{i}\" : null;"
+     ]
+    },
+    {
+     "key": "helper-buildlogicalstore-ties",
+     "text": "BuildLogicalStore posts 40 logical facts in the given order, then sets every created_at to At(0) so recency is equal.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Exec(db, \"UPDATE facts SET created_at = $c\", (\"$c\", At(0)));"
+     ]
+    },
+    {
+     "key": "helper-buildstaggeredlogicalstore-offset",
+     "text": "BuildStaggeredLogicalStore gives logical fact i created_at At(offsetMinutes + i) after posting the facts in the given order.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "(\"$c\", At(offsetMinutes + indices[j])),"
+     ]
+    },
+    {
+     "key": "helper-textof-show",
+     "text": "TextOf returns the Fact.Text of one id through db.Store.Show.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "private static string TextOf(TempDb db, string id) => db.Store.Show(id)!.Fact.Text ?? string.Empty;"
+     ]
+    },
+    {
+     "key": "helper-reprorequest-needs",
+     "text": "ReproRequest compiles Widget at strict budget mode with full depth and json format, and Needs aspect7 and detail12.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "Needs = new List<string> { \"aspect7\", \"detail12\" },"
+     ]
+    },
+    {
+     "key": "helper-constants-40-10",
+     "text": "LogicalFactCount is declared as 40 and HubCount as 10 for the reproducibility helpers.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "private const int LogicalFactCount = 40;"
+     ]
+    },
+    {
+     "key": "helper-corpus200-shape",
+     "text": "Corpus200 creates 200 facts whose text carries D4 zero-padded index tokens.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "private static FactInput[] Corpus200() => Enumerable.Range(0, 200)"
+     ]
+    },
+    {
+     "key": "helper-at-offset-format",
+     "text": "The At helper builds a DateTimeOffset at 2026 with all time parts 0 and a zero offset, adds the given minutes, and formats it with the O specifier.",
+     "at": [
+      "tests/Dossier.Tests/CompileTests.cs",
+      "private static string At(int minutes) => new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero).AddMinutes(minutes).ToString(\"O\");"
+     ]
+    }
+   ]
+  }
+ ]
+}

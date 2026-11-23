@@ -1,0 +1,782 @@
+{
+ "agent": "swarm-scripts-graph-smoke-2",
+ "slice": "scripts-graph-smoke-2",
+ "subjects": [
+  {
+   "name": "scripts/graph-smoke.mjs::targetedRefreshScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "unseen-subject-no-fetch",
+     "text": "targetedRefreshScenario asserts a change for a subject the view never fetched triggers no fetch at all.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a change for a subject this view never fetched fetches nothing"
+     ]
+    },
+    {
+     "key": "root-change-root-only",
+     "text": "targetedRefreshScenario asserts a change owned by the root refetches the root alone.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a change owned by the root refetches the root alone"
+     ]
+    },
+    {
+     "key": "expanded-change-only-it",
+     "text": "targetedRefreshScenario expands s-core and then asserts a change owned by it refetches only that subject.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a change owned by an expanded subject refetches only it"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::neighbourChangeScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "neighbour-full-refresh",
+     "text": "neighbourChangeScenario asserts a change for a visible non-root neighbour refreshes the root plus the expanded subject.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a change for a visible non-root neighbour refreshes root + expanded"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::inboundRefScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "refs-row-unseen-root",
+     "text": "inboundRefScenario asserts a refs row owned by an unseen subject refetches the root.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a refs row owned by an unseen subject refetches the root"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::refreshDirtyScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "midflight-marks-dirty",
+     "text": "refreshDirtyScenario asserts a refresh started while another is in flight fetches nothing itself and only marks the instance dirty.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a refresh started mid-flight fetches nothing itself"
+     ]
+    },
+    {
+     "key": "dirty-one-more-pass",
+     "text": "refreshDirtyScenario asserts the dirty flag then runs exactly one more pass after the first refresh resolves.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the dirty flag runs exactly one more pass"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::liveRemovalScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "retracted-node-refs",
+     "text": "liveRemovalScenario asserts the retracted fact leaves the graph and its refs leave with it.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "its refs leave with it"
+     ]
+    },
+    {
+     "key": "retracted-closes-panel",
+     "text": "liveRemovalScenario asserts the panel of a node removed by a delta is closed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the panel of the removed node is closed"
+     ]
+    },
+    {
+     "key": "delete-no-edge",
+     "text": "liveRemovalScenario asserts no edge points at a deleted subject after the delta is applied.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no edge points at the deleted subject"
+     ]
+    },
+    {
+     "key": "drop-releases-drag",
+     "text": "liveRemovalScenario asserts dropping the node being dragged releases the drag and the canvas cursor returns to grab.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "dropping the dragged node releases the drag"
+     ]
+    },
+    {
+     "key": "deleted-root-stops-live",
+     "text": "liveRemovalScenario asserts live refresh is stopped once the root itself is deleted, and the stream is closed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "live refresh is stopped once the root is gone"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::singleFlightScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "flush-beats-stale-refresh",
+     "text": "singleFlightScenario asserts a flush that drops a node wins over an older refresh still in flight.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a flush that drops a node wins over an older refresh in flight"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::highlightScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "glow-reaches-zero",
+     "text": "highlightScenario asserts the glow of a node added by a delta decays frame by frame until it reaches zero.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the glow reaches zero"
+     ]
+    },
+    {
+     "key": "reduced-motion-no-glow",
+     "text": "highlightScenario asserts reduced motion never gives an added node a glow above zero.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "reduced motion never glows"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::resetScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "reset-one-full-refresh",
+     "text": "resetScenario asserts a reset frame does one full refresh and adopts the reset revision as lastSeen.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a reset does one full refresh"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::dedupeScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "redelivered-batch-dropped",
+     "text": "dedupeScenario asserts a redelivered changes batch is dropped with no fetch.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a redelivered batch is dropped"
+     ]
+    },
+    {
+     "key": "one-new-row-once",
+     "text": "dedupeScenario asserts a batch holding one already-seen row and one new row applies the new row once and moves the watermark.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a batch with one new row applies it once and moves the watermark"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::destroyBeforeReadyScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "destroy-no-eventsource",
+     "text": "destroyBeforeReadyScenario asserts no EventSource is constructed when destroy() runs before the first fetch settles.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no EventSource is constructed after destroy()"
+     ]
+    },
+    {
+     "key": "destroy-no-timer",
+     "text": "destroyBeforeReadyScenario asserts no timer or interval is armed after destroy() and nothing fires later.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no timer or interval is armed after destroy()"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::eventSourceClosedScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "closed-client-side",
+     "text": "eventSourceClosedScenario asserts a stream that reaches CLOSED is closed by the client and the polling fallback is armed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a stream that reaches CLOSED is closed by the client"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::pollingFallbackScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "baseline-then-graph",
+     "text": "pollingFallbackScenario asserts that without an EventSource constructor the mount asks the revision baseline and then the graph, then arms one poll interval.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no EventSource without the constructor"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::pollingChangesScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "poll-reset-full-refresh",
+     "text": "pollingChangesScenario asserts a polled page with reset true does a full refresh and the watermark adopts its next cursor.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "reset:true does a full refresh"
+     ]
+    },
+    {
+     "key": "watermark-follows-batch",
+     "text": "pollingChangesScenario asserts the watermark follows the batch of a polled page.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the watermark follows the batch"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedRenderScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "fact-insert-line",
+     "text": "feedRenderScenario asserts a fact insert renders as one line naming the actor, the snippet and the subject.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a fact insert names the actor, the snippet and the subject"
+     ]
+    },
+    {
+     "key": "every-row-relative-time",
+     "text": "feedRenderScenario asserts every feed row carries a relative-time line with non-empty text.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "every row carries a relative-time line"
+     ]
+    },
+    {
+     "key": "strip-starts-expanded",
+     "text": "feedRenderScenario asserts the feed strip starts expanded with aria-expanded true.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the strip starts expanded"
+     ]
+    },
+    {
+     "key": "collapse-hides-log",
+     "text": "feedRenderScenario asserts collapsing the strip sets aria-expanded false and hides the log.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "collapsing sets aria-expanded=false and hides the log"
+     ]
+    },
+    {
+     "key": "refs-slots-fold",
+     "text": "feedRenderScenario asserts refs and slots rows fold into the line of their fact instead of one row each.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "refs and slots fold into the fact line"
+     ]
+    },
+    {
+     "key": "supersede-folds",
+     "text": "feedRenderScenario asserts a supersede status update folds into its own insert, adding one row.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a supersede update folds into its insert"
+     ]
+    },
+    {
+     "key": "bounded-80",
+     "text": "feedRenderScenario asserts the feed is bounded to 80 rows, newest first.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the feed is bounded to 80 rows"
+     ]
+    },
+    {
+     "key": "redelivered-seq-dropped",
+     "text": "feedRenderScenario asserts a redelivered seq adds no feed row.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a redelivered seq is dropped"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedActorScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "delete-names-fact",
+     "text": "feedActorScenario asserts a fact delete row names the fact and the word deleted.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a delete names the fact"
+     ]
+    },
+    {
+     "key": "no-null-leak",
+     "text": "feedActorScenario asserts no null or undefined text leaks into the feed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no null/undefined leaks into the feed"
+     ]
+    },
+    {
+     "key": "no-added-without-actor",
+     "text": "feedActorScenario asserts no row says added when the change has no actor.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "wording without an actor"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedXssScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "hostile-as-text",
+     "text": "feedXssScenario asserts hostile strings reach the DOM as text, not as markup.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "hostile strings reach the DOM as text"
+     ]
+    },
+    {
+     "key": "only-own-elements",
+     "text": "feedXssScenario asserts the feed creates only the tags listed in FEED_TAGS, which are DIV, SPAN, BUTTON, UL and LI.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "const FEED_TAGS = new Set"
+     ]
+    },
+    {
+     "key": "log-aria-off",
+     "text": "feedXssScenario asserts the feed list is role log with aria-live set explicitly to off.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the log is role=log with aria-live=\"off\""
+     ]
+    },
+    {
+     "key": "unexpected-tags-empty",
+     "text": "feedXssScenario collects every created element whose tagName is not in FEED_TAGS and asserts that list is empty.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "env.created.filter((e) => !FEED_TAGS.has(e.tagName))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedClickScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "strip-under-bar",
+     "text": "feedClickScenario asserts the feed strip sits directly under the g-bar child of the host.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the feed strip sits directly under the g-bar"
+     ]
+    },
+    {
+     "key": "row-opens-node",
+     "text": "feedClickScenario asserts clicking a feed row for a loaded fact opens that fact in the panel.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a row for a loaded node opens that node"
+     ]
+    },
+    {
+     "key": "unloaded-expand-first",
+     "text": "feedClickScenario asserts an unloaded subject is expanded first and then selected in the panel.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "an unloaded subject is expanded first"
+     ]
+    },
+    {
+     "key": "retracted-target-noop",
+     "text": "feedClickScenario asserts a row whose target was retracted leaves the panel as it was.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a retracted target keeps the panel as it was"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedResetScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "reset-one-last-50",
+     "text": "feedResetScenario asserts a reset refills the feed from exactly one request for /api/changes with last=50.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a reset refills from exactly one ?last=50"
+     ]
+    },
+    {
+     "key": "feed-emptied-refilled",
+     "text": "feedResetScenario asserts the reset empties the feed and refills it with the new page only.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the feed is emptied and refilled"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedHistoryScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "one-history-request",
+     "text": "feedHistoryScenario asserts the feed issues exactly one request for /api/changes with last=50 on mount.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "one history request on mount"
+     ]
+    },
+    {
+     "key": "no-feed-js-no-strip",
+     "text": "feedHistoryScenario asserts without feed.js no feed strip exists in the graph.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "without feed.js no feed strip exists"
+     ]
+    },
+    {
+     "key": "no-feed-js-no-history",
+     "text": "feedHistoryScenario asserts without feed.js no history URL is requested.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "without feed.js no history is requested"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedTimersScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "host-without-setinterval",
+     "text": "feedTimersScenario asserts a host without setInterval still renders a row without crashing.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a host without setInterval still renders"
+     ]
+    },
+    {
+     "key": "ten-second-timer",
+     "text": "feedTimersScenario asserts one 10s refresh timer is armed on a host that has setInterval.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "one 10s refresh timer is armed"
+     ]
+    },
+    {
+     "key": "destroy-clears-timer",
+     "text": "feedTimersScenario asserts destroy on the feed clears its 10s interval.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "destroy() clears the interval ("
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedFocusSurvivesTickScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "tick-keeps-focus",
+     "text": "feedFocusSurvivesTickScenario asserts the 10s tick leaves focus on the row button it was on.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the 10s tick leaves focus on the row button"
+     ]
+    },
+    {
+     "key": "ingest-keeps-focus",
+     "text": "feedFocusSurvivesTickScenario asserts an ingest leaves focus on the same row button.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "an ingest leaves focus on the same row button"
+     ]
+    },
+    {
+     "key": "new-row-prepended",
+     "text": "feedFocusSurvivesTickScenario asserts a new row is prepended above the focused row.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the new row is prepended above it"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedAriaScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "log-region",
+     "text": "feedAriaScenario asserts the feed strip is a log region.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the strip is a log region"
+     ]
+    },
+    {
+     "key": "aria-explicit-off",
+     "text": "feedAriaScenario asserts aria-live is explicitly off rather than the log default.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "aria-live is explicitly off, not the log default"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::feedIdentityScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "ref-folds-line",
+     "text": "feedIdentityScenario asserts a ref batch folds into the fact line as a refs suffix.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the ref folds into the fact line"
+     ]
+    },
+    {
+     "key": "later-ref-no-row",
+     "text": "feedIdentityScenario asserts a later ref batch for a fact already on screen adds no row.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a later ref batch adds no row"
+     ]
+    },
+    {
+     "key": "fold-keeps-identity",
+     "text": "feedIdentityScenario asserts the folded update keeps the element identity of the row.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the folded update keeps the element identity"
+     ]
+    },
+    {
+     "key": "fold-count-in-place",
+     "text": "feedIdentityScenario asserts the folded ref count updates in place on the existing button.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the folded count updates in place"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::pollingCatchUpScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "truncated-same-tick",
+     "text": "pollingCatchUpScenario asserts a truncated page polls again inside the same tick rather than waiting for the interval.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a truncated page polls again inside the same tick"
+     ]
+    },
+    {
+     "key": "cursor-not-interval",
+     "text": "pollingCatchUpScenario asserts the follow-up page asks from the page cursor, not from the interval.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the follow-up asks from the page cursor, not the interval"
+     ]
+    },
+    {
+     "key": "complete-ends-catchup",
+     "text": "pollingCatchUpScenario asserts a complete page ends the catch-up with no further request.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a complete page ends the catch-up"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::staleExpandScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "expand-outside-gate",
+     "text": "staleExpandScenario relies on expand() fetching outside the single-flight gate, so its response can resolve after a retraction delta.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "expand() fetches outside the single-flight gate"
+     ]
+    },
+    {
+     "key": "stale-cannot-resurrect",
+     "text": "staleExpandScenario asserts a stale expansion payload does not resurrect the retracted fact.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a stale expansion payload does not resurrect the retracted fact"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::resetPendingRemovalScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "afterreset-drops-queue",
+     "text": "resetPendingRemovalScenario notes that afterReset() drops the debounce queue, so a queued delete must be applied before the refetch.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "afterReset() drops the debounce queue"
+     ]
+    },
+    {
+     "key": "reset-keeps-delete",
+     "text": "resetPendingRemovalScenario asserts a reset keeps the queued delete so the fact stays gone.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a reset keeps the queued delete"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "graph-smoke.mjs"
+   ],
+   "facts": [
+    {
+     "key": "success-line",
+     "text": "When every check passes the script prints graph smoke: all checks passed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "graph smoke: all checks passed"
+     ]
+    },
+    {
+     "key": "runner-throw-is-failure",
+     "text": "The live-update scenarios run in a try/catch that reports a throw as FAIL and increments failed rather than aborting the run.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "console.error('FAIL [' + name + '] threw"
+     ]
+    },
+    {
+     "key": "runner-exit-1",
+     "text": "When failed is nonzero the script prints a check(s) failed line and calls process.exit(1).",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(s) failed"
+     ]
+    },
+    {
+     "key": "livestream-no-fire-before-window",
+     "text": "The live-stream scenario asserts the refresh debounce has not fired at 200ms after a changes frame.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the debounce has not fired at 200ms"
+     ]
+    },
+    {
+     "key": "livestream-positions-survive",
+     "text": "The live-stream scenario asserts the positions of the nodes that remain survive the live delta.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "positions of the nodes that remain survive the live delta"
+     ]
+    },
+    {
+     "key": "livestream-two-frames-coalesce",
+     "text": "The live-stream scenario asserts two frames inside the window coalesce into one refresh.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "two frames inside the window coalesce into one refresh"
+     ]
+    }
+   ]
+  }
+ ]
+}

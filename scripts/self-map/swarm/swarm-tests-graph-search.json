@@ -1,0 +1,494 @@
+{
+ "agent": "swarm-tests-graph-search",
+ "slice": "tests-graph-search",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/GraphTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "GraphTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "graph-shapeanddefaults-defaults",
+     "text": "A default graph reports format 1, root s-root, an 8-character seed, max_nodes 500 and depth 1.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "GetProperty(\"max_nodes\").GetInt32()).IsEqualTo(500)"
+     ]
+    },
+    {
+     "key": "graph-shapeanddefaults-hop-order",
+     "text": "Hop 1 subjects come in ordinal id order as s-root, s-core, s-other, s-sh1, s-sh2 and s-web, with the boundary subject s-far last.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "\"s-root,s-core,s-other,s-sh1,s-sh2,s-web,s-far\""
+     ]
+    },
+    {
+     "key": "graph-depthcontrolstheneneighbourhood-zero",
+     "text": "At depth zero the graph lists only s-root as a subject and still reports at least one truncated edge.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(string.Join(\",\", Ids(zero, \"subjects\"))).IsEqualTo(\"s-root\");"
+     ]
+    },
+    {
+     "key": "graph-depthcontrolstheneneighbourhood-two",
+     "text": "At depth 2 both s-lib and f-lib-1 are admitted and the f-web-1 to f-lib-1 ref becomes a fact edge.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "Ids(two, \"subjects\").Contains(\"s-lib\")).IsTrue()"
+     ]
+    },
+    {
+     "key": "graph-factstoggle-contains-only",
+     "text": "With facts false the graph holds no facts, keeps only contains edges and lists the subjects s-root, s-core and s-web.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(string.Join(\",\", Ids(g, \"subjects\"))).IsEqualTo(\"s-root,s-core,s-web\");"
+     ]
+    },
+    {
+     "key": "graph-maxnodesisexactanddeterministic-node-count",
+     "text": "The full seeded graph has 13 nodes and every maxNodes value from 1 upward yields exactly the smaller of max and total.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(Nodes(g)).IsEqualTo(Math.Min(max, total));"
+     ]
+    },
+    {
+     "key": "graph-maxnodesisexactanddeterministic-tight",
+     "text": "With maxNodes 4 the subjects are s-root, s-core, s-other and s-sh1, no facts are admitted and truncated subjects exceeds zero.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(string.Join(\",\", Ids(tight, \"subjects\"))).IsEqualTo(\"s-root,s-core,s-other,s-sh1\");"
+     ]
+    },
+    {
+     "key": "graph-parentchainisclampedbythecap-clamped",
+     "text": "A depth-0 request on s-lib returns s-lib, s-core and s-root, and with maxNodes 2 it clamps to s-lib and s-core with truncated subjects 1.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(string.Join(\",\", Ids(clamped, \"subjects\"))).IsEqualTo(\"s-lib,s-core\");"
+     ]
+    },
+    {
+     "key": "graph-boundarysubjectsareadmittedlastandmarked-inbound",
+     "text": "The boundary subject s-far is last in the subject list, is the only subject carrying boundary, and its inbound edges come from f-core-1 and f-core-2.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "f-core-1>s-far:confirms,f-core-2>s-far:mentions"
+     ]
+    },
+    {
+     "key": "graph-boundarysubjectsareadmittedlastandmarked-cap",
+     "text": "With maxNodes 12 the subject s-far is hidden, the graph holds 12 nodes and truncated subjects is 1.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(Nodes(capped)).IsEqualTo(12);"
+     ]
+    },
+    {
+     "key": "graph-ambiguousnamelinkseverymatch-shared",
+     "text": "A mentions of the duplicated name Shared links both s-sh1 and s-sh2, and both edges carry ambiguous true.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(string.Join(\",\", shared.Select(e => e.GetProperty(\"to\").GetString()))).IsEqualTo(\"s-sh1,s-sh2\");"
+     ]
+    },
+    {
+     "key": "graph-resolvestherootbynameandalias-folded",
+     "text": "The root resolves from the name Acme and, after case and whitespace are folded, from the alias Acme Docs to s-root.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "Graph(store, Request(\"  acme   docs \"))"
+     ]
+    },
+    {
+     "key": "graph-withoutasubjectisthesubjecttree-truncation",
+     "text": "With no subject the tree mode returns a null root, 100 subjects, no facts and truncated subjects 200.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "GetProperty(\"truncated\").GetProperty(\"subjects\").GetInt32()).IsEqualTo(200)"
+     ]
+    },
+    {
+     "key": "graph-seeddependsonlyontherequestparameters-stable",
+     "text": "The seed is unchanged when a new fact is posted and changes for depth 2, maxNodes 50 or facts false.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "Graph(store, Request()).GetProperty(\"seed\").GetString()).IsEqualTo(seed)"
+     ]
+    },
+    {
+     "key": "graph-rejectsbadparameterswithnamedcodes-codes",
+     "text": "Depth 4 and -1 are rejected as bad_depth, maxNodes 0 and 2001 as bad_max_nodes, and the unknown subject nobody as subject_not_found.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "Request(depth: 4)), \"bad_depth\""
+     ]
+    },
+    {
+     "key": "graph-rejectsbadparameterswithnamedcodes-fromquery",
+     "text": "Within FromQuery the facts value maybe is rejected as bad_facts and the max_nodes value lots as bad_max_nodes.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "null, \"maybe\", null)), \"bad_facts\""
+     ]
+    },
+    {
+     "key": "graph-slotrefs-owner-fallback",
+     "text": "A slot ref to the occupied key owner resolves to fact f-core-2, while the empty key on Web falls back to subject s-web.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "occupied.GetProperty(\"to\").GetString()).IsEqualTo(\"f-core-2\")"
+     ]
+    },
+    {
+     "key": "graph-externalrefs-unresolved",
+     "text": "The external symbol ref stays on fact f-root-1 as unresolved and the unknown target f-ghost is reported with reason not_found.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "ghost.GetProperty(\"reason\").GetString()).IsEqualTo(\"not_found\")"
+     ]
+    },
+    {
+     "key": "graph-boundaryqueries-cap",
+     "text": "In the bounded boundary query a cap of 20 nodes admits s-root and 18 referrers, and truncated subjects and edges are both 42.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "GetProperty(\"truncated\").GetProperty(\"subjects\").GetInt32()).IsEqualTo(42)"
+     ]
+    },
+    {
+     "key": "graph-boundaryqueries-probe",
+     "text": "The inbound_slot row probe reads at most one row because the slot query only reads keys an admitted fact occupies.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(slotRows).IsLessThanOrEqualTo(1);"
+     ]
+    },
+    {
+     "key": "graph-hiddeninboundedges-not-admitted",
+     "text": "At maxNodes 12 the hidden f-far-1 refs are reported as confirms and mentions with reason not_admitted, and truncated edges is 3.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "confirms|fact|f-core-1|not_admitted,mentions|slot|Core#owner|not_admitted"
+     ]
+    },
+    {
+     "key": "graph-hiddenfact-counted",
+     "text": "With maxNodes 2 on s-a only fa-1 is admitted, truncated facts and edges are each 1, and the hidden fa-2 to fa-1 ref is not_admitted.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(g.GetProperty(\"truncated\").GetProperty(\"facts\").GetInt32()).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "graph-unresolved-capped",
+     "text": "A fact with 2100 dangling refs yields 2000 unresolved entries and truncated unresolved 100, with no truncated edges.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(g.GetProperty(\"unresolved\").GetArrayLength()).IsEqualTo(2000);"
+     ]
+    },
+    {
+     "key": "graph-factsparameter-case-insensitive",
+     "text": "The facts parameter accepts true, True, TRUE and 1 as true and false, False, FALSE and 0 as false, rejecting yes, 2, tru and padded values as bad_facts.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "foreach (var bad in new[] { \"\", \"yes\", \"2\", \"tru\", \" true\", \"true \" })"
+     ]
+    },
+    {
+     "key": "graph-textcap-marker",
+     "text": "A 500-character text is unchanged while 501 characters keeps 499 and adds an ellipsis, and a surrogate pair on the cut is dropped whole.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(Text(\"f-long\")).IsEqualTo(new string('a', 499) + \"\\u2026\");"
+     ]
+    },
+    {
+     "key": "graph-parentcycles-parent-chain",
+     "text": "From s-b the parent chain admits s-a but does not expand it, so s-c stays unreachable even at depth 3.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "Request(\"s-b\", depth: 3)), \"subjects\")))"
+     ]
+    },
+    {
+     "key": "graph-parentcycles-tree-mode",
+     "text": "In tree mode a cycle has no root, so no subject is drawn and truncated subjects is 3.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(tree.GetProperty(\"truncated\").GetProperty(\"subjects\").GetInt32()).IsEqualTo(3);"
+     ]
+    },
+    {
+     "key": "graph-fixture-matches-the-api",
+     "text": "The committed fixture graph-api.json must equal the depth-2 API output byte for byte, and DOSSIER_UPDATE_FIXTURES=1 rewrites it.",
+     "at": [
+      "tests/Dossier.Tests/GraphTests.cs",
+      "await Assert.That(await File.ReadAllTextAsync(path)).IsEqualTo(actual);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/GraphSeed.cs",
+   "kind": "file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "GraphSeed.cs"
+   ],
+   "facts": [
+    {
+     "key": "populate-slot-row",
+     "text": "GraphSeed seeds one slot row that points the note key owner of s-core at fact f-core-2.",
+     "at": [
+      "tests/Dossier.Tests/GraphSeed.cs",
+      "VALUES('s-core', 'note', 'owner', 'f-core-2')"
+     ]
+    },
+    {
+     "key": "populate-reverse-order",
+     "text": "Populate takes a reverse flag and inserts the subjects and facts in the opposite order so insert order cannot change the output.",
+     "at": [
+      "tests/Dossier.Tests/GraphSeed.cs",
+      "foreach (var subject in reverse ? Subjects.Reverse() : Subjects)"
+     ]
+    },
+    {
+     "key": "populate-tree-shape",
+     "text": "PopulateTree makes the first 20 subjects roots and gives each later subject a parent indexed by (i - 20) divided by 3.",
+     "at": [
+      "tests/Dossier.Tests/GraphSeed.cs",
+      "var parent = i < 20 ? null : $\"t-{(i - 20) / 3:D5}\";"
+     ]
+    },
+    {
+     "key": "hostile-strings-carried",
+     "text": "GraphSeed carries the hostile strings EvilImg, EvilJs and EvilScript through the fixture so the page harness proves they only ever reach the output as text.",
+     "at": [
+      "tests/Dossier.Tests/GraphSeed.cs",
+      "public const string EvilImg = \"<img src=x onerror=alert(1)>\";"
+     ]
+    },
+    {
+     "key": "bulk-shared-transaction",
+     "text": "GraphSeed.Bulk is a throwaway writer that shares one connection and transaction and commits them in Dispose.",
+     "at": [
+      "tests/Dossier.Tests/GraphSeed.cs",
+      "public void Dispose()"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SearchTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SearchTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "ftsmatch-returnstextandtaghits-both",
+     "text": "A search for alpha returns 2 hits and includes both the fact with alpha in its text and the fact carrying alpha only as a tag.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Total).IsEqualTo(2);"
+     ]
+    },
+    {
+     "key": "bm25-weightstextabovetags-order",
+     "text": "A text hit scores below a tag-only hit for the same term and ranks first, because text weight 10 beats tag weight 3.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(textHit.Score!.Value < tagHit.Score!.Value).IsTrue();"
+     ]
+    },
+    {
+     "key": "subjectfilter-matchesaliascasefold-both",
+     "text": "A subject filter of MEMOS ui and one of memos each match the single fact by name casefold and by alias.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "Search(new SearchRequest { Subject = \"  MEMOS   ui \" })"
+     ]
+    },
+    {
+     "key": "reftarget-in-findsreferencingfacts-pointer",
+     "text": "Direction in on a fact ref target returns only the pointer fact that references the target, not the target itself.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Hits[0].Id).IsEqualTo(pointerId);"
+     ]
+    },
+    {
+     "key": "reftarget-out-findsreferencedfacts-target",
+     "text": "Direction out on the pointer fact returns the single fact that it references.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Hits[0].Id).IsEqualTo(targetId);"
+     ]
+    },
+    {
+     "key": "reftarget-out-rejectsexternaltarget-code",
+     "text": "A ref target that is an external URL is rejected with the code ref_target_not_internal.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(caught!.Code).IsEqualTo(\"ref_target_not_internal\");"
+     ]
+    },
+    {
+     "key": "superseded-excludedbydefault-old",
+     "text": "Posting two facts under the key state leaves the first out of default search results while the second is returned.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(ids.Contains(oldId)).IsFalse();"
+     ]
+    },
+    {
+     "key": "statusfilter-returnsonlythatstatus-split",
+     "text": "Status superseded returns only the older fact and status live returns only the newer one.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(superseded.Hits.Count).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "limitandcursor-pagewithoutoverlap-five",
+     "text": "Paging five facts with limit 2 through the cursor yields five distinct ids and a final Complete true.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(seen.Count).IsEqualTo(5);"
+     ]
+    },
+    {
+     "key": "totalisprelimit-values",
+     "text": "With limit 2 over five facts the response has 2 hits, a Total of 5 and Complete false.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Total).IsEqualTo(5);"
+     ]
+    },
+    {
+     "key": "completefalsewhentruncated-refine",
+     "text": "A limit of 1 over three facts is incomplete, offers a Next cursor and a Refine text that mentions subject.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Refine!.Contains(\"subject\", StringComparison.Ordinal)).IsTrue();"
+     ]
+    },
+    {
+     "key": "factview-search-scores-null-fields",
+     "text": "A search hit carrying a query score has a null Section and a null Cites.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(result.Hits[0].Section).IsNull();"
+     ]
+    },
+    {
+     "key": "search-defaultexcludesretracted-kept",
+     "text": "After a Retract the retracted fact is absent from default search results while the kept fact is present.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(ids.Contains(retractedId)).IsFalse();"
+     ]
+    },
+    {
+     "key": "show-returnsrefsattachmentsandinbound-pointer",
+     "text": "Show on the pointer fact returns one ref to the target and one attachment whose Sha256 is the fixture sha.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(pointer.Attachments.Count).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "show-unknownidreturnsnull-null",
+     "text": "Show of an unknown fact id returns null.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(shown).IsNull();"
+     ]
+    },
+    {
+     "key": "searchbrief-onelineperhit-fields",
+     "text": "A brief hit exposes exactly id, kind, status and text, and the long text is cut to 121 characters ending in an ellipsis.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(longHit.GetProperty(\"text\").GetString()!.Length).IsEqualTo(121);"
+     ]
+    },
+    {
+     "key": "searchbrief-keepstotalandcursor-page",
+     "text": "A brief search keeps the same Total, Complete and Next as the full search, and the second page returns 2 hits.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(brief.Next).IsEqualTo(full.Next);"
+     ]
+    },
+    {
+     "key": "symbolref-reverselookup-symbol",
+     "text": "Direction in on a symbol target returns both facts citing that symbol, while direction out is rejected with ref_target_not_internal.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "var caught = Assert.Throws<DossierRequestException>(() => db.Store.Search(new SearchRequest { RefTarget = Sym, Direction = \"out\" }));"
+     ]
+    },
+    {
+     "key": "symbolref-doesnotaffect-ranking",
+     "text": "Posting facts in another subject that cite a symbol leaves the compiled fact ids and their scores unchanged.",
+     "at": [
+      "tests/Dossier.Tests/SearchTests.cs",
+      "await Assert.That(after.Select(r => r.Id).ToList()).IsEquivalentTo(before.Select(r => r.Id).ToList());"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SearchLiteralTermTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "atermfts5wouldmisread-exactlyone",
+     "text": "Each plain-text argument pair expects exactly one hit whose text equals the expected string.",
+     "at": [
+      "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+      "await Assert.That(texts.Count).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "fts5syntax-stillworks-operators",
+     "text": "Real FTS5 syntax still works: alpha OR gamma yields 2 hits and alpha NOT beta yields 0.",
+     "at": [
+      "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+      "await Assert.That(Texts(db, \"alpha OR gamma\").Count).IsEqualTo(2);"
+     ]
+    },
+    {
+     "key": "aquerythatisstillinvalid-unbalanced",
+     "text": "A query with an unbalanced quote is reported as invalid_query.",
+     "at": [
+      "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+      "await Assert.That(code).IsEqualTo(\"invalid_query\");"
+     ]
+    },
+    {
+     "key": "atermfts5wouldmisread-tag-filter",
+     "text": "The tag filter query tags:ui-kit returns exactly one expected hit, the fact tagged ui-kit.",
+     "at": [
+      "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+      "[Arguments(\"tags:ui-kit\", \"alpha and beta together\")]"
+     ]
+    }
+   ]
+  }
+ ]
+}

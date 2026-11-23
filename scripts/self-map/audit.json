@@ -1,0 +1,1118 @@
+{
+ "taken_at": "2026-11-20",
+ "method": "a fixed hash-ordered sample of every agent (agent.mjs sample), read by the author next to the cited lines",
+ "facts": [
+  {
+   "agent": "swarm-ci",
+   "subject": ".github/dependabot.yml",
+   "key": "weekly-limit",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-ci",
+   "subject": ".github/workflows/ci.yml",
+   "key": "setup-dotnet-version",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-ci",
+   "subject": ".github/workflows/ci.yml",
+   "key": "test-minimum-expected",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-ci",
+   "subject": ".github/workflows/release.yml",
+   "key": "release-refuses-published",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-a",
+   "subject": "contract/ops.schema.json",
+   "key": "changespage-next-subject-filter",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-a",
+   "subject": "contract/ops.schema.json",
+   "key": "postfacts-redact",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-a",
+   "subject": "contract/ops.schema.json",
+   "key": "searchrequest-since",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-a",
+   "subject": "contract/ops.schema.json",
+   "key": "searchrequest-status-default",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-b",
+   "subject": "contract/dossier.schema.json",
+   "key": "conflicts-resolution-null",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-b",
+   "subject": "contract/fact.schema.json",
+   "key": "provenance-origin",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-b",
+   "subject": "contract/jsonl-manifest.schema.json",
+   "key": "bundle-hash-ref",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-contract-b",
+   "subject": "contract/subject.schema.json",
+   "key": "aliases-array",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-guides",
+   "subject": "docs/architecture.md",
+   "key": "only-dependency",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-guides",
+   "subject": "docs/multi-agent.md",
+   "key": "journal-no-stale-row",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-guides",
+   "subject": "README.md",
+   "key": "not-built-yet",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-guides",
+   "subject": "SECURITY.md",
+   "key": "report-contents",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-reference",
+   "subject": "docs/install.md",
+   "key": "macos-quarantine",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-reference",
+   "subject": "docs/install.md",
+   "key": "ubuntu-2004-unsupported",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-reference",
+   "subject": "Dossier/CLI/publish",
+   "key": "missing-blob-fail-open",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-docs-reference",
+   "subject": "Dossier/CLI/publish",
+   "key": "shard-contents",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-repo-misc",
+   "subject": "examples/memos-bundle/README.md",
+   "key": "missing-blob-entry",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-repo-misc",
+   "subject": "src/Dossier/Dossier.csproj",
+   "key": "allow-unsafe-blocks",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-repo-misc",
+   "subject": "src/Dossier/Dossier.csproj",
+   "key": "output-type",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-repo-misc",
+   "subject": "src/Dossier/Dossier.csproj",
+   "key": "target-framework",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-1",
+   "subject": "scripts/graph-smoke.mjs",
+   "key": "bootstrap-exit",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-1",
+   "subject": "scripts/graph-smoke.mjs",
+   "key": "graph-source-env",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-1",
+   "subject": "scripts/graph-smoke.mjs",
+   "key": "refresh-adopts-fact-count",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-1",
+   "subject": "scripts/graph-smoke.mjs",
+   "key": "subject-panel-links",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-2",
+   "subject": "scripts/graph-smoke.mjs::feedFocusSurvivesTickScenario",
+   "key": "ingest-keeps-focus",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-2",
+   "subject": "scripts/graph-smoke.mjs::feedXssScenario",
+   "key": "only-own-elements",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-2",
+   "subject": "scripts/graph-smoke.mjs::pollingFallbackScenario",
+   "key": "baseline-then-graph",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-graph-smoke-2",
+   "subject": "scripts/graph-smoke.mjs",
+   "key": "livestream-positions-survive",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-node",
+   "subject": "scripts/fleet-eval.mjs",
+   "key": "derived-from-ref",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-node",
+   "subject": "scripts/fleet-eval.mjs",
+   "key": "revocation-token",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-node",
+   "subject": "scripts/live-demo.mjs",
+   "key": "debug-fallback",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-node",
+   "subject": "scripts/live-demo.mjs",
+   "key": "graph-url",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-a",
+   "subject": "scripts/eval/sources.json",
+   "key": "git-paths-listed",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-a",
+   "subject": "scripts/scale-test.sh",
+   "key": "facts-mode-cap",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-a",
+   "subject": "scripts/scale-test.sh",
+   "key": "work-dir",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-a",
+   "subject": "scripts/smoke-aot.sh",
+   "key": "compile-markdown-marker",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-b",
+   "subject": "scripts/e2e.sh",
+   "key": "seeds-via-seed-script",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-b",
+   "subject": "scripts/seed.sh",
+   "key": "default-db",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-b",
+   "subject": "scripts/verify-refs.sh",
+   "key": "repo-split",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-scripts-shell-b",
+   "subject": "scripts/verify-refs.sh",
+   "key": "url-shape",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-compile",
+   "subject": "Compile.cs::CompileRequest",
+   "key": "request.omit.status.notes.jsonignore",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-compile",
+   "subject": "Compile.cs::ScoreCandidates",
+   "key": "score.single.timestamp.recency",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-compile",
+   "subject": "Compile.cs::ToDossierView",
+   "key": "view.section.tag",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-compile",
+   "subject": "src/Dossier/Compile.cs",
+   "key": "const.index.token.cap",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-export-import",
+   "subject": "Import.cs::CommitImport",
+   "key": "fact-exists",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-export-import",
+   "subject": "Import.cs::CommitImport",
+   "key": "single-transaction",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-export-import",
+   "subject": "Import.cs::RestoreBlob",
+   "key": "sha-format",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-export-import",
+   "subject": "JsonlExport.cs::PublishJsonl",
+   "key": "newline-no-bom",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-graph",
+   "subject": "src/Dossier/Graph.cs::GraphBuilder.AdmitNeighbourhood",
+   "key": "parent-chain-first",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-graph",
+   "subject": "src/Dossier/Graph.cs::GraphBuilder.Build",
+   "key": "contains-requires-admitted-parent",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-graph",
+   "subject": "src/Dossier/Graph.cs::GraphBuilder.Build",
+   "key": "facts-default-true",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-graph",
+   "subject": "src/Dossier/Graph.cs::GraphBuilder.BuildRefEdges",
+   "key": "subject-multi-ambiguous",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-jsonl-import",
+   "subject": "src/Dossier/JsonlImport.cs::ImportJsonl",
+   "key": "asset-no-sha",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-jsonl-import",
+   "subject": "src/Dossier/JsonlImport.cs::RejectUnlistedAssets",
+   "key": "unlisted-asset-fail",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-jsonl-import",
+   "subject": "src/Dossier/JsonlImport.cs::RestoreEmbeddedBlob",
+   "key": "escapes-rejected",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-jsonl-import",
+   "subject": "src/Dossier/JsonlImport.cs::RestoreFileBlob",
+   "key": "not-regular",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-mcp",
+   "subject": "Dossier/MCP/server",
+   "key": "serverinfo-version",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-mcp",
+   "subject": "JsonCodec.cs::ProvenanceStamp",
+   "key": "field-order",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-mcp",
+   "subject": "Models.cs::FactView",
+   "key": "why-stale-only",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-mcp",
+   "subject": "Models.cs::PostFactsRequest",
+   "key": "idempotency-and-redact",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "CanonicalJson.cs::CanonicalJson",
+   "key": "raw-numbers",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "ContentHash.cs::ContentHash",
+   "key": "digest",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "PostFacts.cs::MergeAliases",
+   "key": "dedupe-normalized",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "PostFacts.cs::MergeAliases",
+   "key": "keeps-first-spelling",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "PostFacts.cs::ResolveRefs",
+   "key": "symbol-revision-last-at",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-postfacts",
+   "subject": "PostFacts.cs::WriterIdentity",
+   "key": "cli-default-identity",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Dossier/CLI/dossier compile",
+   "key": "stderr-token-report",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Dossier/CLI/mcp",
+   "key": "dossier-agent-env",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Dossier/CLI/retract",
+   "key": "not-found-exit",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Dossier/CLI/search",
+   "key": "renders-in-ops",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Program.cs::ClosestFlag",
+   "key": "tie-break",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Program.cs::ParseInt",
+   "key": "throws-argument-exception",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "Program.cs::VerbSpec",
+   "key": "spec-shape",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-program",
+   "subject": "src/Dossier/Program.cs",
+   "key": "unknown-verb-usage",
+   "verdict": "corrected",
+   "note": "The claim is true of the default arm at line 389, but the cited phrase first occurs at line 7, the no-arguments case, so the ref points at the wrong line."
+  },
+  {
+   "agent": "swarm-src-publish-1",
+   "subject": "DossierStore.Publish",
+   "key": "invalid-depth",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-1",
+   "subject": "DossierStore.Publish",
+   "key": "invalid-limit",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-1",
+   "subject": "Publish.cs::TreeOrder",
+   "key": "sibling-sort",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-1",
+   "subject": "src/Dossier/Publish.cs",
+   "key": "sha256-regex",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-2",
+   "subject": "Publish.cs::BuildShards",
+   "key": "exceeds-error",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-2",
+   "subject": "Publish.cs::RenderGapsFile",
+   "key": "no-gaps-line",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-2",
+   "subject": "Publish.cs::RenderSubjectFile",
+   "key": "gap-line",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-2",
+   "subject": "Publish.cs::ShardSet",
+   "key": "record-fields",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-3",
+   "subject": "Publish.cs::BuildIndexFiles",
+   "key": "flat-group-rows",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-3",
+   "subject": "Publish.cs::BuildIndexFiles",
+   "key": "no-conflicts-line",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-3",
+   "subject": "Publish.cs::HashFiles",
+   "key": "hash-input-format",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-publish-3",
+   "subject": "Publish.cs::WriteBundle",
+   "key": "foreign-conflict",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-search",
+   "subject": "DossierStore.ParseDrafts",
+   "key": "shape-check",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-search",
+   "subject": "DossierStore.Search",
+   "key": "q-bm25-weights",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-search",
+   "subject": "src/Dossier/Check.cs",
+   "key": "near-threshold-value",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-search",
+   "subject": "src/Dossier/Search.cs::IsFuzzy",
+   "key": "fuzzy-rule",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-store",
+   "subject": "Profiles.cs::ComplianceReport",
+   "key": "note-line",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-store",
+   "subject": "Store.cs::Initialize",
+   "key": "seed-from-journal-head",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-store",
+   "subject": "Store.cs::RevisionTriggers",
+   "key": "refs-subject-subquery",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-store",
+   "subject": "Store.cs::Timestamp",
+   "key": "round-trip-format",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "DossierStore.ReadChangesLast",
+   "key": "readchangeslast.subject-extra-row",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "Show.cs::ParseJson",
+   "key": "parsejson.null-on-invalid",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "src/Dossier/Changes.cs",
+   "key": "change-row-json-never",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "src/Dossier/Changes.cs",
+   "key": "changecolumns.actor-case",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "src/Dossier/Changes.cs",
+   "key": "changecolumns.left-join",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-verify",
+   "subject": "Verify.cs::CurrencyReader",
+   "key": "changed-retracted",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-web",
+   "subject": "src/Dossier/Web.cs::PollRevisionAsync",
+   "key": "disposed-ends-other-skips",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-web",
+   "subject": "src/Dossier/Web.cs::PollRevisionAsync",
+   "key": "signal-only-on-change",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-web",
+   "subject": "src/Dossier/Web.cs::ReadResumePoint",
+   "key": "default-is-polled-revision",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-src-web",
+   "subject": "src/Dossier/Web.cs::ResolveLocalhost",
+   "key": "empty-on-socket-or-argument",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-cli",
+   "subject": "tests/Dossier.Tests/AotCompatTests.cs",
+   "key": "graph-serializes-max-nodes-and-omits-nulls",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-cli",
+   "subject": "tests/Dossier.Tests/CliArgTests.cs",
+   "key": "every-usage-flag-is-accepted-pair-count-over-40",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-cli",
+   "subject": "tests/Dossier.Tests/SkillLoopTests.cs",
+   "key": "symbol-loop-correlate-scope-descendants-and-check-zero",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-cli",
+   "subject": "tests/Dossier.Tests/SkillTests.cs",
+   "key": "skill-file-is-valid-and-commands-exist-name",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-compile",
+   "subject": "tests/Dossier.Tests/CompileTests.cs",
+   "key": "compile_isdeterministic-needs-alpha-missing",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-compile",
+   "subject": "tests/Dossier.Tests/CompileTests.cs",
+   "key": "helper-buildstaggeredlogicalstore-offset",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-compile",
+   "subject": "tests/Dossier.Tests/CompileTests.cs",
+   "key": "helper-exec-clearpool",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-compile",
+   "subject": "tests/Dossier.Tests/CompileTests.cs",
+   "key": "reproducible-selectionacrossindependentstores-equal-texts",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-graph-search",
+   "subject": "tests/Dossier.Tests/SearchLiteralTermTests.cs",
+   "key": "atermfts5wouldmisread-tag-filter",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-graph-search",
+   "subject": "tests/Dossier.Tests/SearchTests.cs",
+   "key": "ftsmatch-returnstextandtaghits-both",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-graph-search",
+   "subject": "tests/Dossier.Tests/SearchTests.cs",
+   "key": "searchbrief-keepstotalandcursor-page",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-graph-search",
+   "subject": "tests/Dossier.Tests/SearchTests.cs",
+   "key": "superseded-excludedbydefault-old",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-ingest",
+   "subject": "tests/Dossier.Tests/CheckTests.cs",
+   "key": "check-summary-has-counts-and-at-most-eight-claims",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-ingest",
+   "subject": "tests/Dossier.Tests/DumpTests.cs",
+   "key": "contract-schema-no-entity-subjects",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-ingest",
+   "subject": "tests/Dossier.Tests/DumpTests.cs",
+   "key": "dump-manifest-accounts-for-every-chunk-skip-accounting",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-ingest",
+   "subject": "tests/Dossier.Tests/DumpTests.cs",
+   "key": "removed-split-is-rejected-as-invalid-split-library",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-journal",
+   "subject": "tests/Dossier.Tests/ChangeLogTests.cs::CreateLegacyTriggers",
+   "key": "createlegacytriggers-revision-only",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-journal",
+   "subject": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "key": "stream-drains-contiguous-cursors",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-journal",
+   "subject": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "key": "stream-retention-reset-cursor",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-journal",
+   "subject": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "key": "stream-since-replays-range",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-a",
+   "subject": "tests/Dossier.Tests/JsonlImportTests.cs",
+   "key": "helper-subjectrows-projects-subjects-columns",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-a",
+   "subject": "tests/Dossier.Tests/JsonlImportTests.cs",
+   "key": "helper-tamper-refreshes-manifest-file-stats",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-a",
+   "subject": "tests/Dossier.Tests/JsonlImportTests.cs",
+   "key": "reject-oversize-line",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-a",
+   "subject": "tests/Dossier.Tests/JsonlPublishTests.cs",
+   "key": "jsonl-writes-lines-and-manifest-file-stats-lines",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-b",
+   "subject": "tests/Dossier.Tests/JsonlBundleWriteTests.cs",
+   "key": "prune-jsonlrepublishwithfewerfiles-removed-names",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-b",
+   "subject": "tests/Dossier.Tests/JsonlHardeningTests.cs",
+   "key": "hardening-mkfifo-shells-out",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-b",
+   "subject": "tests/Dossier.Tests/JsonlSchemaTests.cs",
+   "key": "schemas-accept-emitted-record-types",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-b",
+   "subject": "tests/Dossier.Tests/JsonlSchemaTests.cs",
+   "key": "schemas-asset-variants-closed",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-c",
+   "subject": "tests/Dossier.Tests/BundlePaths.cs",
+   "key": "bundlepaths.tobundle-replaces-backslash",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-c",
+   "subject": "tests/Dossier.Tests/BundlePathsTests.cs",
+   "key": "resolve-yields-slash.three-up-case",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-c",
+   "subject": "tests/Dossier.Tests/ImportTests.cs",
+   "key": "roundtrip-publish-import.strips-generated-at",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-jsonl-c",
+   "subject": "tests/Dossier.Tests/ImportTests.cs",
+   "key": "test.import-restores-attachments.counts-and-metadata",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-post",
+   "subject": "tests/Dossier.Tests/PostFactsTests.cs",
+   "key": "dry-run-writes-nothing-no-blob-files",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-post",
+   "subject": "tests/Dossier.Tests/PostFactsTests.cs",
+   "key": "unresolvable-local-id-rejects-item-batch-commits-code",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-post",
+   "subject": "tests/Dossier.Tests/SupersedesRefTests.cs",
+   "key": "mcp-correction-provenance-actors",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-post",
+   "subject": "tests/Dossier.Tests/SupersedesRefTests.cs",
+   "key": "reposted-correction-applies-when-live",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-1",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "helper-seedtree-posts-area-item-subjects",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-1",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "publish-is-byte-identical-second-run-writes-zero",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-1",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "publish-key-collision-twin-keys-widen-to-twelve",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-1",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "publish-republish-index-shows-four",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-2",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "test.publish-profilereportflags-maxfiles",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-2",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "test.publish-slotrefresolves-after-supersede",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-2",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "test.publish-smallbundlehasrootindex",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-publish-2",
+   "subject": "tests/Dossier.Tests/PublishTests.cs",
+   "key": "test.publish-unresolvedslot-stays-text",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-status",
+   "subject": "tests/Dossier.Tests/DerivedStatusTests.cs",
+   "key": "statuses-projects-hits",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-status",
+   "subject": "tests/Dossier.Tests/VerifyTests.cs",
+   "key": "missing-target-ref-is-not-stale",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-status",
+   "subject": "tests/Dossier.Tests/VerifyTests.cs",
+   "key": "repost-same-claim-stays-live",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-status",
+   "subject": "tests/Dossier.Tests/VerifyTests.cs",
+   "key": "stale-wins-over-contested",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-web",
+   "subject": "tests/Dossier.Tests/McpTests.cs",
+   "key": "helper-poster-in-process",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-web",
+   "subject": "tests/Dossier.Tests/McpTests.cs",
+   "key": "mcp-getfacttoolmatchescore-shows-same-json",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-web",
+   "subject": "tests/Dossier.Tests/McpTests.cs",
+   "key": "mcp-initializethenlisttoolsthencallsearch-nine-tools",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-web",
+   "subject": "tests/Dossier.Tests/WebTests.cs",
+   "key": "web-graph-apianderrors-depth-400",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-writers",
+   "subject": "tests/Dossier.Tests/ChangesToolTests.cs",
+   "key": "subjectfilter-returnsonlythat-next-is-head",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-writers",
+   "subject": "tests/Dossier.Tests/MultiWriterTests.cs",
+   "key": "writers-identicalfact-same-text-each-round",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-writers",
+   "subject": "tests/Dossier.Tests/MultiWriterTests.cs",
+   "key": "writers-samekeyslot-one-new-rest-replaced",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tests-writers",
+   "subject": "tests/Dossier.Tests/MultiWriterTests.cs",
+   "key": "writers-whilestreaming-stream-final-revision",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tools-demo",
+   "subject": "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+   "key": "flag-list",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tools-demo",
+   "subject": "tools/Dossier.WikipediaDemo/Program.cs",
+   "key": "dry-run-plan",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tools-demo",
+   "subject": "tools/Dossier.WikipediaDemo/ServerControl.cs",
+   "key": "free-port-scan",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-tools-demo",
+   "subject": "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+   "key": "delay-clamp",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-1",
+   "subject": "src/Dossier/www/graph.js::drop",
+   "key": "subject-drops-anchored-facts",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-1",
+   "subject": "src/Dossier/www/graph.js::merge",
+   "key": "drop-retracted-facts",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-1",
+   "subject": "src/Dossier/www/graph.js::mount",
+   "key": "el-text-content",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-1",
+   "subject": "src/Dossier/www/graph.js::mount",
+   "key": "max-nodes-default-500",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-2",
+   "subject": "src/Dossier/www/graph.js::onChanges",
+   "key": "bad-json-ignored",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-2",
+   "subject": "src/Dossier/www/graph.js::pump",
+   "key": "removals-first",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-2",
+   "subject": "src/Dossier/www/graph.js::renderPanel",
+   "key": "boundary-row",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-graph-2",
+   "subject": "src/Dossier/www/graph.js::stopLive",
+   "key": "halt-everything",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/app.js::fact",
+   "key": "ref-meta",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js::attach",
+   "key": "prepends-row",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js::mount",
+   "key": "now-option",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js",
+   "key": "ago-just-now",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js",
+   "key": "ago-seconds",
+   "verdict": "corrected",
+   "note": "The claim says anything under 60 seconds reads as seconds ago, but line 55 returns just now below 5 seconds."
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js",
+   "key": "ago-unparseable",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js",
+   "key": "line-subject-insert",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/feed.js",
+   "key": "snippet-collapse",
+   "verdict": "held"
+  },
+  {
+   "agent": "swarm-www-page",
+   "subject": "src/Dossier/www/index.html",
+   "key": "stage-background",
+   "verdict": "held"
+  }
+ ]
+}

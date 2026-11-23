@@ -1,0 +1,723 @@
+{
+ "agent": "swarm-scripts-graph-smoke-1",
+ "slice": "scripts-graph-smoke-1",
+ "subjects": [
+  {
+   "name": "scripts/graph-smoke.mjs",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "graph-smoke.mjs"
+   ],
+   "facts": [
+    {
+     "key": "graph-source-env",
+     "text": "When GRAPH_JS is set it replaces the default graph.js path, which resolves under root as src/Dossier/www/graph.js.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "readFileSync(process.env.GRAPH_JS || path.join(root, 'src', 'Dossier', 'www', 'graph.js'), 'utf8')"
+     ]
+    },
+    {
+     "key": "feed-source-env",
+     "text": "FEED_JS replaces the default feed.js path, which resolves under root as src/Dossier/www/feed.js.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "feedSource = readFileSync(process.env.FEED_JS || path.join(root, 'src', 'Dossier', 'www', 'feed.js'), 'utf8')"
+     ]
+    },
+    {
+     "key": "feed-read-note",
+     "text": "A feed.js that cannot be read prints a note saying feed.js is not readable with the error message and leaves feedSource empty.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "note: feed.js is not readable"
+     ]
+    },
+    {
+     "key": "fixture-env",
+     "text": "GRAPH_FIXTURE replaces the default fixture path tests/Dossier.Tests/fixtures/graph-api.json.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "process.env.GRAPH_FIXTURE || path.join(root, 'tests', 'Dossier.Tests', 'fixtures', 'graph-api.json')"
+     ]
+    },
+    {
+     "key": "viewport-size",
+     "text": "The stub viewport constants are W = 800 and H = 600.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "const W = 800;"
+     ]
+    },
+    {
+     "key": "href-allowlist",
+     "text": "HREF_OK accepts only an href of the form #/subject, #/fact or #/graph followed by an id of letters, digits, underscore, percent or hyphen.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "const HREF_OK = /^#\\/(subject|fact|graph)\\/[A-Za-z0-9_%-]+$/;"
+     ]
+    },
+    {
+     "key": "innerhtml-violation",
+     "text": "The El innerHTML setter records a violation named innerHTML instead of storing markup.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "set innerHTML(v) { violations.push('innerHTML='"
+     ]
+    },
+    {
+     "key": "href-attr-violation",
+     "text": "setAttribute records an href attribute violation when the href fails the HREF_OK pattern.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "if (k === 'href' && !HREF_OK.test(String(v))) violations.push('href attribute=' + v);"
+     ]
+    },
+    {
+     "key": "attr-blocklist",
+     "text": "setAttribute flags any attribute whose name starts with on, plus src, srcdoc and style.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "if (/^on/i.test(k) || k === 'src' || k === 'srcdoc' || k === 'style') violations.push('attribute ' + k + '=' + v);"
+     ]
+    },
+    {
+     "key": "document-write-violation",
+     "text": "document.write pushes a document.write entry onto the violations list.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "write: (v) => violations.push('document.write ' + v),"
+     ]
+    },
+    {
+     "key": "window-fetch-violation",
+     "text": "The stubbed window.fetch records a violation reading window.fetch called and returns a rejected promise.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "violations.push('window.fetch called')"
+     ]
+    },
+    {
+     "key": "location-navigation",
+     "text": "Assigning window.location pushes a window.location= entry onto the navigation list.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "set: (v) => navigation.push('window.location=' + v)"
+     ]
+    },
+    {
+     "key": "raf-reduced-motion",
+     "text": "When reduce is true requestAnimationFrame runs the callback immediately instead of queueing a frame.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "requestAnimationFrame: reduce ? (fn) => fn() :"
+     ]
+    },
+    {
+     "key": "timer-registration",
+     "text": "Each setTimeout registers on the manual clock with an id from clock.seq and fires only when advance reaches it.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "window.setTimeout = (fn, ms) => { const id = ++clock.seq;"
+     ]
+    },
+    {
+     "key": "eventsource-live-event",
+     "text": "The EventSource stub is installed only when live is the string event.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "if (live === 'event') {"
+     ]
+    },
+    {
+     "key": "advance-guard",
+     "text": "advance runs at most 1000 timer-firing iterations before it sets the clock to the target time.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "for (let guard = 0; guard < 1000; guard++) {"
+     ]
+    },
+    {
+     "key": "sandbox-globals",
+     "text": "The vm sandbox exposes window, document, Math, Infinity, parseInt, String, Number, Object, Array and JSON.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "const sandbox = { window, document, Math, Infinity, parseInt, String, Number, Object, Array, JSON };"
+     ]
+    },
+    {
+     "key": "bootstrap-exit",
+     "text": "A graph.js bootstrap throw prints FAIL graph.js threw while bootstrapping and calls process.exit with status 1.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "FAIL graph.js threw while bootstrapping"
+     ]
+    },
+    {
+     "key": "feed-same-context",
+     "text": "feed.js is executed in the same vm context as graph.js only when withFeed is true.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "vm.runInContext(feedSource, sandbox, { filename: 'feed.js' });"
+     ]
+    },
+    {
+     "key": "mount-fetchjson",
+     "text": "mount supplies a fetchJson that records each requested URL and resolves a clone of respond(url).",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "fetchJson: (url) => { urls.push(url); return Promise.resolve(clone(respond(url))); },"
+     ]
+    },
+    {
+     "key": "mountfeed-now",
+     "text": "mountFeed gives DossierFeed a now function that returns 1000.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "now: () => 1000,"
+     ]
+    },
+    {
+     "key": "counts-format",
+     "text": "The counts line must read the fixture subject count, fact count and edge count in that order, ending in refs.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "counts.textContent === fixture.subjects.length + ' subjects, ' + fixture.facts.length + ' facts, ' + expectedRefs + ' refs'"
+     ]
+    },
+    {
+     "key": "banner-hidden-rule",
+     "text": "The banner is asserted hidden exactly when the fixture truncated subjects, facts and edges sum to 0.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "banner.hidden === (hiddenSum === 0)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "focus-heading-tabindex",
+     "text": "After a node click the panel heading must hold focus and carry tabindex -1.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "headingEl().getAttribute('tabindex') === '-1'"
+     ]
+    },
+    {
+     "key": "ref-button-type",
+     "text": "A ref control must be a BUTTON element whose type is button.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "btn.tagName === 'BUTTON' && btn.type === 'button'"
+     ]
+    },
+    {
+     "key": "ref-aria-label",
+     "text": "The ref button aria-label must equal Open, then the target node type, then the target id.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "btn.getAttribute('aria-label') === 'Open ' + targetNode.type + ' ' + target"
+     ]
+    },
+    {
+     "key": "panel-anchor-allowlist",
+     "text": "Every anchor in the panel must carry a href that passes the HREF_OK test.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "panel.byTag('a').every((a) => HREF_OK.test(a.getAttribute('href')))"
+     ]
+    },
+    {
+     "key": "external-ref-plain",
+     "text": "An external ref must render as plain text containing django.db.models.QuerySet.filter@e4f3fb2d2d11 with no button inside its list item.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "django.db.models.QuerySet.filter@e4f3fb2d2d11"
+     ]
+    },
+    {
+     "key": "ambiguous-edges-two",
+     "text": "Both ambiguous subject edges must be labelled, which the check asserts as ambiguous.length === 2.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "ambiguous.length === 2"
+     ]
+    },
+    {
+     "key": "subject-panel-links",
+     "text": "The root subject panel must link to #/subject/s-root and #/graph/s-root in that order.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'#/subject/s-root,#/graph/s-root'"
+     ]
+    },
+    {
+     "key": "destroy-listeners",
+     "text": "destroy must leave no keydown listener on the document and no resize listener on the window.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "(env.docListeners.keydown || []).length === 0 && (env.winListeners.resize || []).length === 0"
+     ]
+    },
+    {
+     "key": "merge-adds-new",
+     "text": "merge must return only the new nodes, asserted as s-new1,s-new2.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "ids(added).join() === 's-new1,s-new2'"
+     ]
+    },
+    {
+     "key": "merge-banner-eight",
+     "text": "After the merge scenario's extension the truncation banner must start with 8 hidden.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "banner.textContent.startsWith('8 hidden')"
+     ]
+    },
+    {
+     "key": "expand-request-url",
+     "text": "A double-click on the s-lib node must fetch /api/graph?subject=s-lib&depth=1&facts=true&max_nodes=500.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "c.urls[1] === '/api/graph?subject=s-lib&depth=1&facts=true&max_nodes=500'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "truncation-banner-nine",
+     "text": "A fixture truncated to 3 subjects, 4 facts and 2 edges must produce a banner starting with 9 hidden (3 subjects, 4 facts, 2 refs).",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "banner.textContent.startsWith('9 hidden (3 subjects, 4 facts, 2 refs)')"
+     ]
+    },
+    {
+     "key": "banner-larger-per-category",
+     "text": "A merge takes the larger count per category, so the banner starts with 11 hidden (5 subjects, 4 facts, 2 refs).",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "banner.textContent.startsWith('11 hidden (5 subjects, 4 facts, 2 refs)')"
+     ]
+    },
+    {
+     "key": "long-name-cap",
+     "text": "A subject name of 5000 characters must be capped so the panel heading text is at most 120 characters.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "panel.byTag('h2')[0].textContent.length <= 120"
+     ]
+    },
+    {
+     "key": "key-focus-targets",
+     "text": "Keys typed with a target of INPUT, TEXTAREA, SELECT, BUTTON or A must neither expand nor fit the view.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "for (const tag of ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A']) {"
+     ]
+    },
+    {
+     "key": "expand-carries-view-params",
+     "text": "Mounted with depth 2 and facts false, the initial request must be /api/graph?subject=s-root&depth=2&facts=false&max_nodes=500.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "urls[0] === '/api/graph?subject=s-root&depth=2&facts=false&max_nodes=500'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "expand-default-params",
+     "text": "With no options the expansion request defaults to /api/graph?subject=s-core&depth=1&facts=true&max_nodes=500.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "plain.urls[1] === '/api/graph?subject=s-core&depth=1&facts=true&max_nodes=500'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "fact-radius-formula",
+     "text": "A fact node radius must equal 3.5 plus 1.2 times the square root of its degree.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "n.r === 3.5 + 1.2 * Math.sqrt(n.deg)"
+     ]
+    },
+    {
+     "key": "owner-alpha-threshold",
+     "text": "OWNER_ALPHA_MAX is 0.5 and every stroked payload edge must have an alpha at or above it.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "edgeSegments.every((s) => s.alpha >= OWNER_ALPHA_MAX)"
+     ]
+    },
+    {
+     "key": "root-url-constant",
+     "text": "ROOT_URL is the fixed root request /api/graph?subject=s-root&depth=1&facts=true&max_nodes=500.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "const ROOT_URL = '/api/graph?subject=s-root&depth=1&facts=true&max_nodes=500';"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "journal-row-timestamp",
+     "text": "The row helper defaults the journal change timestamp to 2026-11-11T00:00:00Z.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "at: '2026-11-11T00:00:00Z'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Change journal"
+      }
+     ]
+    },
+    {
+     "key": "refresh-root-then-expanded",
+     "text": "A refresh must fetch the root and then each expanded subject, which the fixture case asserts as two requests.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "urls.length === base + 2 && urls[base] === ROOT_URL"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "refresh-drops-retracted",
+     "text": "A fact that arrives retracted is dropped by the refresh rather than added to the graph.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'a fact that arrives retracted is dropped by the refresh'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "brief-helper-format",
+     "text": "brief appends a colon, the list length and the first two items when the list is non-empty.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "(list.length ? ': ' + list.length + ' e.g. ' + list.slice(0, 2).join('; ') : '')"
+     ]
+    },
+    {
+     "key": "ok-prints-pass-fail",
+     "text": "ok prints PASS for a true condition and FAIL otherwise, and only a FAIL increments the failed counter.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "if (cond) console.log('PASS ' + msg);"
+     ]
+    },
+    {
+     "key": "rect-uses-viewport",
+     "text": "Every stub element reports a bounding rect of left 0, top 0, width W and height H.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "getBoundingClientRect() { return { left: 0, top: 0, width: W, height: H }; }"
+     ]
+    },
+    {
+     "key": "runframes-returns-count",
+     "text": "runFrames runs queued animation callbacks up to its limit and returns how many it ran.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "while (rafQueue.length && n < limit) { rafQueue.shift()(); n++; counters.frames++; }"
+     ]
+    },
+    {
+     "key": "interaction-uses-fixture",
+     "text": "The interaction scenario mounts with the committed fixture as the only response.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "await env.mount(fixture.root, () => fixture)"
+     ]
+    },
+    {
+     "key": "openwhere-scan-grid",
+     "text": "openWhere scans canvas points from x and y of 10 upward in steps of 6 until a click opens the panel.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "for (let y = 10; y < H; y += 6) {"
+     ]
+    },
+    {
+     "key": "escape-closes-panel",
+     "text": "The interaction scenario asserts that Escape closes the panel.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(panel.hidden === true, 'Escape closes the panel')"
+     ]
+    },
+    {
+     "key": "drove-thirty-frames",
+     "text": "After a ref click the animated scenario must drive at least 30 animation frames.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(ran >= 30, 'drove ' + ran + ' rAF frames after the ref click (>= 30)')"
+     ]
+    },
+    {
+     "key": "navigation-proxy-clean",
+     "text": "The interaction scenario requires the navigation proxy to record nothing.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(env.navigation.length === 0, 'navigation proxy clean'"
+     ]
+    },
+    {
+     "key": "xss-runs-fifty-frames",
+     "text": "The xss scenario runs 50 animation frames when it is not the reduced variant.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "if (!reduce) env.runFrames(50);"
+     ]
+    },
+    {
+     "key": "xss-text-literal",
+     "text": "The xss scenario asserts that the fact text, rel and slot key all appear literally in panel text.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(panel.textContent.includes(img) && panel.textContent.includes(js) && panel.textContent.includes(script)"
+     ]
+    },
+    {
+     "key": "xss-bad-id-no-links",
+     "text": "A subject whose id fails the id check must produce no anchors at all in the panel.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'a subject whose id fails the id check gets no links at all'"
+     ]
+    },
+    {
+     "key": "xss-no-raw-elements",
+     "text": "The xss scenario asserts that no IMG, SCRIPT or IFRAME element exists in the created nodes.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(!env.created.some((e) => /^(IMG|SCRIPT|IFRAME)$/.test(e.tagName))"
+     ]
+    },
+    {
+     "key": "fresh-mount-no-truncation",
+     "text": "A fresh mount on a new root starts with the banner hidden even after earlier truncation.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'a fresh mount (new root) starts with no truncation'"
+     ]
+    },
+    {
+     "key": "contenteditable-not-shortcut",
+     "text": "A contentEditable target must not expand or fit when e or f is typed.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'contentEditable target: e / f do nothing'"
+     ]
+    },
+    {
+     "key": "focus-input-not-shortcut",
+     "text": "With focus in an input and no event target, e and f must do nothing.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'focus in an <input> (no event target): e / f do nothing'"
+     ]
+    },
+    {
+     "key": "fixture-has-hostile-strings",
+     "text": "The fixture-xss scenario first verifies that the fixture contains all three hostile strings.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'the fixture really contains all three hostile strings'"
+     ]
+    },
+    {
+     "key": "owner-links-not-in-edges",
+     "text": "Owner links are drawn but never pushed into the edges array, so its length stays the payload edge count.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(instance.edges.length === fixture.edges.length, 'owner links are not pushed into edges[] ("
+     ]
+    },
+    {
+     "key": "orphan-fact-no-anchor",
+     "text": "A merged fact whose subject is not in the graph must have a null anchor.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(!!orphan && orphan.anchor === null, 'a fact whose subject is not in the graph has no anchor')"
+     ]
+    },
+    {
+     "key": "orphan-draws-no-line",
+     "text": "After the repaint a fact with no owner must draw no owner link.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'a fact with no owner draws no owner link'"
+     ]
+    },
+    {
+     "key": "failed-load-error-line",
+     "text": "A failed initial load leaves error: boom in the status line.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(status.textContent === 'error: boom'"
+     ]
+    },
+    {
+     "key": "failed-load-no-nodes",
+     "text": "A failed initial load merges nothing, so the node count stays 0.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(instance.nodes.length === 0, 'nothing was merged from a failed initial load')"
+     ]
+    },
+    {
+     "key": "recovered-fit-above-tenth",
+     "text": "A successful refresh must fit the recovered graph to a scale above 0.1.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "instance.view.scale > 0.1"
+     ]
+    },
+    {
+     "key": "keys-selects-before-probe",
+     "text": "The key-focus scenario selects subject:s-core first so that e or Enter would expand it.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "// a node is selected, so Enter / e would expand it"
+     ]
+    },
+    {
+     "key": "f-on-canvas-fits",
+     "text": "With the canvas as target, typing f must still fit the view.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "f on the canvas still fits the view"
+     ]
+    },
+    {
+     "key": "e-on-canvas-expands",
+     "text": "With the canvas as target, typing e must still expand the selected node and issue one fetch.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "e on the canvas still expands the selected node ("
+     ]
+    },
+    {
+     "key": "refresh-keeps-heading-focus",
+     "text": "The live-refresh scenario requires the subject panel heading to hold focus before the refresh.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the subject panel heading holds focus before the refresh"
+     ]
+    },
+    {
+     "key": "refresh-adopts-fact-count",
+     "text": "After a refresh the adopted subject data must report core facts = 5.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "check(core().data.facts === 5"
+     ]
+    },
+    {
+     "key": "refresh-keeps-view",
+     "text": "A refresh must leave the view scale, tx and ty untouched.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "refresh leaves scale/tx/ty untouched"
+     ]
+    },
+    {
+     "key": "no-op-refresh-releases-holds",
+     "text": "After a no-op refresh no node may be left held.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "no node is left held after a no-op refresh"
+     ]
+    },
+    {
+     "key": "refresh-merges-despite-failure",
+     "text": "A refresh still merges the remaining subjects when the s-core fetch fails.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "the remaining subject merged even though s-core failed"
+     ]
+    },
+    {
+     "key": "failed-refresh-keeps-status",
+     "text": "A failed refresh must not overwrite the status line left by the earlier failed expansion.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "a failed refresh does not overwrite the status line"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/graph-smoke.mjs::liveStreamScenario",
+   "kind": "function",
+   "parent": "scripts/graph-smoke.mjs",
+   "facts": [
+    {
+     "key": "live-baseline-then-eventsource",
+     "text": "After the baseline revision request the client opens one EventSource at /api/events?since=5.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "env.eventSources[0].url === '/api/events?since=5'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "live-empty-page-no-fetch",
+     "text": "An empty changes page must fetch nothing, which the check asserts as an unchanged url count.",
+     "at": [
+      "scripts/graph-smoke.mjs",
+      "'an empty changes page fetches nothing (' + (urls.length - n) + ')'"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

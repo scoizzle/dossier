@@ -1,0 +1,736 @@
+{
+ "agent": "swarm-src-web",
+ "slice": "src-web",
+ "subjects": [
+  {
+   "name": "Web.cs::WebServer",
+   "kind": "type",
+   "parent": "src/Dossier/Web.cs",
+   "aliases": [
+    "WebServer"
+   ],
+   "facts": [
+    {
+     "key": "max-event-streams",
+     "text": "MaxEventStreams is 8; a stream that pushes the open count past it is refused with a busy error.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private const int MaxEventStreams = 8;"
+     ]
+    },
+    {
+     "key": "change-page-size",
+     "text": "Journal pages requested by DrainChangesAsync hold at most ChangePageSize rows, which is 200.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private const int ChangePageSize = 200;"
+     ]
+    },
+    {
+     "key": "change-drain-cap",
+     "text": "One stream tick may deliver at most ChangeDrainCap rows, which is 5000, before the client is told to reset.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private const int ChangeDrainCap = 5000;"
+     ]
+    },
+    {
+     "key": "default-revision-poll",
+     "text": "DefaultRevisionPollInterval is 500 milliseconds and applies when the constructor receives no poll interval.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static readonly TimeSpan DefaultRevisionPollInterval = TimeSpan.FromMilliseconds(500);"
+     ]
+    },
+    {
+     "key": "default-keepalive",
+     "text": "DefaultKeepaliveInterval is 5 seconds, the value KeepaliveInterval starts from for an idle event stream.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static readonly TimeSpan DefaultKeepaliveInterval = TimeSpan.FromSeconds(5);"
+     ]
+    },
+    {
+     "key": "retry-frame",
+     "text": "RetryFrame sends retry: 1000 so an EventSource client reconnects after one second.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static readonly byte[] RetryFrame = Encoding.UTF8.GetBytes(\"retry: 1000\\n\\n\");"
+     ]
+    },
+    {
+     "key": "keepalive-frame",
+     "text": "KeepaliveFrame is a comment line padded with 1024 spaces so an idle proxy does not close the stream.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static readonly byte[] KeepaliveFrame"
+     ]
+    },
+    {
+     "key": "ctor-127-prefix",
+     "text": "The constructor always registers the 127.0.0.1 prefix for the serve port, so that address is served even when localhost is not.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "listener.Prefixes.Add($\"http://127.0.0.1:{port}/\");"
+     ]
+    },
+    {
+     "key": "ctor-localhost-warning",
+     "text": "When ShouldAddLocalhostPrefix returns false the constructor writes a warning to stderr and registers only 127.0.0.1.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Console.Error.WriteLine(\"warning: 'localhost' is not served"
+     ]
+    },
+    {
+     "key": "stop-idempotent",
+     "text": "Stop returns immediately on a second call because Interlocked.Exchange on stopped already returned 1.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (Interlocked.Exchange(ref stopped, 1) != 0)"
+     ]
+    },
+    {
+     "key": "stop-loop-wait",
+     "text": "Stop waits at most 5 seconds for the accept loop before it moves on to the handlers.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "loop?.Wait(TimeSpan.FromSeconds(5));"
+     ]
+    },
+    {
+     "key": "stop-handlers-wait",
+     "text": "Stop gives running handlers 2 seconds through Task.WaitAll before it waits for the poller.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Task.WaitAll(running, TimeSpan.FromSeconds(2));"
+     ]
+    },
+    {
+     "key": "loop-dispatch",
+     "text": "Loop starts each handler with Task.Run and records the task in handlers so Stop can wait for it.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "var handler = Task.Run(() => HandleTrackedAsync(context));"
+     ]
+    },
+    {
+     "key": "handler-500-internal",
+     "text": "A handler that throws writes a 500 JSON envelope with code internal and the exception message.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Write(context, 500, \"application/json\", Ops.Serialize(ErrorEnvelope.Of(\"internal\", exception.Message)));"
+     ]
+    },
+    {
+     "key": "invalid-host-421",
+     "text": "A Host header that fails IsLoopbackHost gets a 421 response with code invalid_host and message host not allowed.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Write(context, 421, \"application/json\", Ops.Serialize(ErrorEnvelope.Of(\"invalid_host\", \"host not allowed\")));"
+     ]
+    },
+    {
+     "key": "non-get-405",
+     "text": "Any method other than GET gets a 405 response with code read_only and message GET only.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Write(context, 405, \"application/json\", Ops.Serialize(ErrorEnvelope.Of(\"read_only\", \"GET only\")));"
+     ]
+    },
+    {
+     "key": "request-exception-status",
+     "text": "A DossierRequestException maps to 404 for subject_not_found or fact_not_found and to 400 for every other code.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "var status = exception.Code is \"subject_not_found\" or \"fact_not_found\" ? 404 : 400;"
+     ]
+    },
+    {
+     "key": "format-exception-400",
+     "text": "A FormatException raised while reading a query value is answered with 400 and code invalid_request.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Write(context, 400, \"application/json\", Ops.Serialize(ErrorEnvelope.Of(\"invalid_request\", exception.Message)));"
+     ]
+    },
+    {
+     "key": "search-limit-parse",
+     "text": "The /api/search route parses limit with int.Parse, so a non-numeric limit falls through to the FormatException handler.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Limit = Q(\"limit\") is { } limit ? int.Parse(limit) : null,"
+     ]
+    },
+    {
+     "key": "compile-subject-required",
+     "text": "GET /api/compile without a subject is answered with 400 and code invalid_request with message subject is required.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "\"invalid_request\", \"subject is required\""
+     ]
+    },
+    {
+     "key": "compile-markdown",
+     "text": "GET /api/compile serves text/markdown; charset=utf-8 when format equals markdown, and JSON otherwise.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Q(\"format\") == \"markdown\" ? \"text/markdown; charset=utf-8\""
+     ]
+    },
+    {
+     "key": "compile-descendants",
+     "text": "descendants is passed as true only when the query value is true or 1, and stays null for any other value.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Descendants = Q(\"descendants\") is \"true\" or \"1\" ? true : null,"
+     ]
+    },
+    {
+     "key": "compile-need-multi",
+     "text": "The need query parameter is read with query.GetValues so one request can pass several needs.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Needs = query.GetValues(\"need\")?.ToList(),"
+     ]
+    },
+    {
+     "key": "compile-recency",
+     "text": "recency is parsed with double.Parse under InvariantCulture and becomes the Recency value of RankOptions.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Recency = double.Parse(recency, System.Globalization.CultureInfo.InvariantCulture)"
+     ]
+    },
+    {
+     "key": "graph-from-query",
+     "text": "GET /api/graph builds its request with GraphRequest.FromQuery from subject, depth, facts and max_nodes.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Ops.Graph(store, GraphRequest.FromQuery(Q(\"subject\"), Q(\"depth\"), Q(\"facts\"), Q(\"max_nodes\")))"
+     ]
+    },
+    {
+     "key": "fact-id-required",
+     "text": "GET /api/fact without an id throws DossierRequestException with code invalid_request and message id is required.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Q(\"id\") ?? throw new DossierRequestException(\"invalid_request\", \"id is required\")"
+     ]
+    },
+    {
+     "key": "unknown-path-404",
+     "text": "Any path the switch does not match is answered with 404 and code not_found.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "ErrorEnvelope.Of(\"not_found\", \"not found\")"
+     ]
+    },
+    {
+     "key": "write-response-headers",
+     "text": "Write sets ContentLength64, adds Content-Security-Policy and X-Content-Type-Options nosniff, then closes the response.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "context.Response.ContentLength64 = bytes.Length;"
+     ]
+    },
+    {
+     "key": "start-reads-revision-first",
+     "text": "Start reads the store revision once before listener.Start so a stream opened before the first poll has a baseline.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "revision = ReadRevision();"
+     ]
+    },
+    {
+     "key": "stop-poller-wait",
+     "text": "Stop waits at most 2 seconds for the poller task after the handlers.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "poller?.Wait(TimeSpan.FromSeconds(2));"
+     ]
+    },
+    {
+     "key": "stop-swallows-close-error",
+     "text": "Stop swallows an HttpListenerException from listener.Close when the port is still held, so Dispose does not throw.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (HttpListenerException)"
+     ]
+    },
+    {
+     "key": "refused-stream-refunds-slot",
+     "text": "A stream over the MaxEventStreams cap decrements openStreams before writing the busy response so the counter stays balanced.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (Interlocked.Increment(ref openStreams) > MaxEventStreams)"
+     ]
+    },
+    {
+     "key": "preamble-then-revision",
+     "text": "The stream writes RetryFrame, then the revision frame, then drains the journal before its wait loop.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "await output.WriteAsync(RetryFrame, token).ConfigureAwait(false);"
+     ]
+    },
+    {
+     "key": "index-route",
+     "text": "GET / is answered with IndexHtml under content type text/html; charset=utf-8.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Write(context, 200, \"text/html; charset=utf-8\", IndexHtml());"
+     ]
+    },
+    {
+     "key": "revision-route",
+     "text": "GET /api/revision serializes a RevisionResponse built from the store's current revision.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Ops.Serialize(new RevisionResponse(store.Revision()))"
+     ]
+    },
+    {
+     "key": "subjects-route",
+     "text": "GET /api/subjects answers with the result of Ops.Subjects for the store.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Ops.Subjects(store)"
+     ]
+    },
+    {
+     "key": "content-security-policy",
+     "text": "ContentSecurityPolicy starts with default-src 'none' and ends with frame-ancestors 'none'.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "\"default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'\""
+     ]
+    },
+    {
+     "key": "localhost-prefix-condition",
+     "text": "The localhost prefix is added only when ShouldAddLocalhostPrefix returns true for the resolved addresses and CanBind.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (ShouldAddLocalhostPrefix(ResolveLocalhost(), CanBind))"
+     ]
+    },
+    {
+     "key": "changes-route-params",
+     "text": "GET /api/changes is served by ReadChangesPage from the since, limit and last query parameters.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "Ops.Serialize(ReadChangesPage(Q(\"since\"), Q(\"limit\"), Q(\"last\")))"
+     ]
+    },
+    {
+     "key": "empty-query-is-null",
+     "text": "The query helper Q returns null when a parameter is missing or empty, so an empty value never reaches a parser.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "string? Q(string name) => string.IsNullOrEmpty(query[name]) ? null : query[name];"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::ResolveLocalhost",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "empty-on-socket-or-argument",
+     "text": "ResolveLocalhost returns an empty address array when Dns.GetHostAddresses throws SocketException or ArgumentException.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception exception) when (exception is SocketException or ArgumentException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::CanBind",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "ephemeral-port-probe",
+     "text": "CanBind proves an address usable by binding a throwaway socket to port 0 on that address.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "socket.Bind(new IPEndPoint(address, 0));"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::ReadChangesPage",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "limit-default-100",
+     "text": "When limit is absent ReadChangesPage asks the store for 100 journal rows.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "return store.ReadChanges(cursor, count ?? 100);"
+     ]
+    },
+    {
+     "key": "last-precedence",
+     "text": "When last is given ReadChangesPage returns store.ReadChangesLast and never applies limit.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "return store.ReadChangesLast(newest);"
+     ]
+    },
+    {
+     "key": "since-non-negative",
+     "text": "A since value that is negative or unparseable is rejected as invalid_request with message since must be a non-negative integer.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (since is not null && (!long.TryParse(since, style, culture, out cursor) || cursor < 0))"
+     ]
+    },
+    {
+     "key": "limit-not-integer",
+     "text": "A limit that is not an integer is rejected as invalid_request with message limit must be an integer.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "throw new DossierRequestException(\"invalid_request\", \"limit must be an integer\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::StreamEventsAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "busy-503",
+     "text": "A stream refused by the cap gets 503 with code busy and a message naming MaxEventStreams.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "ErrorEnvelope.Of(\"busy\", $\"at most {MaxEventStreams} live event streams\")"
+     ]
+    },
+    {
+     "key": "sse-response-headers",
+     "text": "The event stream sets ContentType text/event-stream, SendChunked and KeepAlive true, and Cache-Control no-store.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "response.ContentType = \"text/event-stream; charset=utf-8\";"
+     ]
+    },
+    {
+     "key": "keepalive-retries-drain",
+     "text": "On an idle timeout the stream writes KeepaliveFrame and, when journalBehind is set, retries DrainChangesAsync.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "await output.WriteAsync(KeepaliveFrame, token).ConfigureAwait(false);"
+     ]
+    },
+    {
+     "key": "write-errors-abort",
+     "text": "The stream catches IO, listener, disposed, invalid-operation and socket errors and aborts the response instead of writing an error frame.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception exception) when (exception is IOException or HttpListenerException or ObjectDisposedException or InvalidOperationException or SocketException)"
+     ]
+    },
+    {
+     "key": "wait-uses-keepalive",
+     "text": "The wait between wakes uses KeepaliveInterval as its timeout, and a timeout is what triggers a keepalive write.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "await changed.WaitAsync(KeepaliveInterval, token).ConfigureAwait(false);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::DrainChangesAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "failure-sets-behind",
+     "text": "A journal read that throws returns the cursor unchanged with Behind true so the caller retries without ending the stream.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "page = ChangesReader is { } reader ? reader(journal, ChangePageSize) : store.ReadChanges(journal, ChangePageSize);"
+     ]
+    },
+    {
+     "key": "reset-jumps-cursor",
+     "text": "A page whose Reset flag is set writes one reset frame and returns the revision as the new cursor.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (page.Reset)"
+     ]
+    },
+    {
+     "key": "truncated-at-cap-resets",
+     "text": "A page still Truncated after the tick drained ChangeDrainCap rows makes the stream write a reset instead of continuing.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (drained >= ChangeDrainCap)"
+     ]
+    },
+    {
+     "key": "empty-page-ends-tick",
+     "text": "An empty journal page returns the cursor with Behind false and writes no frame.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (page.Changes.Count == 0)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::WriteChangesAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "frame-id-next",
+     "text": "Each changes frame carries id equal to page.Next so a reconnect resumes after the delivered page.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "$\"id: {cursor}\\nevent: changes\\ndata: {Ops.Serialize(page)}\\n\\n\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::WriteResetAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "reset-id-equals-data",
+     "text": "The reset frame uses the revision string as both its id and its data.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "$\"id: {value}\\nevent: reset\\ndata: {value}\\n\\n\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::ReadResumePoint",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "last-event-id-wins",
+     "text": "ReadResumePoint prefers the Last-Event-ID header over the since query parameter.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "var header = request.Headers[\"Last-Event-ID\"];"
+     ]
+    },
+    {
+     "key": "invalid-header-falls-through",
+     "text": "A Last-Event-ID that is negative or unparseable falls through to the since parameter instead of being used.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (long.TryParse(header, style, culture, out var resumed) && resumed >= 0)"
+     ]
+    },
+    {
+     "key": "default-is-polled-revision",
+     "text": "With neither Last-Event-ID nor since, the resume point is the revision the server last polled.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "return long.TryParse(since, style, culture, out var fromQuery) && fromQuery >= 0 ? fromQuery : current;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::PollRevisionAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "disposed-ends-other-skips",
+     "text": "A revision read that throws ObjectDisposedException ends the poller, while any other exception skips the tick.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "value = RevisionReader is { } reader ? reader() : store.Revision();"
+     ]
+    },
+    {
+     "key": "signal-only-on-change",
+     "text": "The poller swaps revisionChanged only when the read value differs from revision.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (value != revision)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::ReadRevision",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "zero-on-store-failure",
+     "text": "ReadRevision returns 0 when the store throws SqliteException or ObjectDisposedException.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception exception) when (exception is SqliteException or ObjectDisposedException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::Asset",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "fixed-map-only",
+     "text": "Asset resolves a request path only through the fixed Assets map before reading an embedded resource.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static readonly Dictionary<string, string> Assets = new(StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "missing-resource-throws",
+     "text": "A missing embedded resource makes Asset throw InvalidOperationException naming the resource.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "?? throw new InvalidOperationException($\"{name} resource missing\");"
+     ]
+    },
+    {
+     "key": "asset-cache",
+     "text": "AssetCache keeps the text on its first read, so each embedded file is loaded from the assembly once.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "private static string Asset(string path) => AssetCache.GetOrAdd(path, static key =>"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::TryAbort",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "abort-swallows",
+     "text": "TryAbort swallows ObjectDisposedException, InvalidOperationException and HttpListenerException from response.Abort.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception exception) when (exception is ObjectDisposedException or InvalidOperationException or HttpListenerException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "WebServer.IsLoopbackHost",
+   "kind": "method",
+   "parent": "src/Dossier/Web.cs",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "bracket-needs-close",
+     "text": "A bracketed Host header with no closing bracket is rejected as false.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "var close = hostHeader.IndexOf(']');"
+     ]
+    },
+    {
+     "key": "port-strict-parse",
+     "text": "The Host port is parsed with NumberStyles.None, so a sign or surrounding whitespace makes the host invalid.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "if (portText is not null && !(int.TryParse(portText, System.Globalization.NumberStyles.None, System.Globalization.CultureInfo.InvariantCulture, out var parsed) && parsed == port))"
+     ]
+    },
+    {
+     "key": "name-ordinal-ignore-case",
+     "text": "The host name is compared with StringComparison.OrdinalIgnoreCase, so letter case in the name does not matter.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "return name.Equals(\"localhost\", StringComparison.OrdinalIgnoreCase) || name == \"127.0.0.1\" || name == \"[::1]\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::Loop",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "loop-exit-exceptions",
+     "text": "Loop returns when GetContextAsync throws HttpListenerException, ObjectDisposedException or InvalidOperationException.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception exception) when (exception is HttpListenerException or ObjectDisposedException or InvalidOperationException)"
+     ]
+    },
+    {
+     "key": "handler-removed-on-completion",
+     "text": "Loop removes a finished handler from handlers in a ContinueWith continuation that runs on the default scheduler.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "_ = handler.ContinueWith("
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::HandleTrackedAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "failed-write-aborts",
+     "text": "A failure while writing the 500 envelope is caught for IO, listener, socket and disposed errors and the response is aborted.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "catch (Exception writeException) when (writeException is IOException or HttpListenerException or ObjectDisposedException or InvalidOperationException or SocketException)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::WriteRevisionAsync",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "revision-frame-shape",
+     "text": "The revision frame names event revision and prints the value with CultureInfo.InvariantCulture as its data line.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "$\"event: revision\\ndata: {value.ToString(CultureInfo.InvariantCulture)}\\n\\n\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Web.cs::Write",
+   "kind": "method",
+   "parent": "Web.cs::WebServer",
+   "facts": [
+    {
+     "key": "body-utf8",
+     "text": "Write encodes the response body as UTF-8 bytes before writing and closing.",
+     "at": [
+      "src/Dossier/Web.cs",
+      "var bytes = Encoding.UTF8.GetBytes(body);"
+     ]
+    }
+   ]
+  }
+ ]
+}

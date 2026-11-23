@@ -1,0 +1,716 @@
+{
+ "agent": "swarm-ci",
+ "slice": "ci",
+ "subjects": [
+  {
+   "name": ".github/workflows/ci.yml",
+   "kind": "workflow",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "ci.yml"
+   ],
+   "facts": [
+    {
+     "key": "triggers-events",
+     "text": "CI runs on push and pull_request events targeting main, plus workflow_dispatch.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "workflow_dispatch:"
+     ]
+    },
+    {
+     "key": "permissions-empty",
+     "text": "The workflow declares an empty top-level permissions mapping, so each job grants its own scopes.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "permissions: {}"
+     ]
+    },
+    {
+     "key": "concurrency-cancel-pr",
+     "text": "Concurrency is grouped by workflow and ref, and cancel-in-progress is true only for pull_request events.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "cancel-in-progress: ${{ github.event_name == 'pull_request' }}"
+     ]
+    },
+    {
+     "key": "dependency-review-pr-only",
+     "text": "Job dependency-review runs only for pull_request events, on ubuntu-24.04, with a 10-minute timeout.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "if: github.event_name == 'pull_request'"
+     ]
+    },
+    {
+     "key": "dependency-review-severity",
+     "text": "The Review dependency changes step calls actions/dependency-review-action with fail-on-severity set to moderate.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "fail-on-severity: moderate"
+     ]
+    },
+    {
+     "key": "build-test-matrix",
+     "text": "Job build-test runs on ubuntu-24.04, macos-15 and windows-2025 with fail-fast disabled.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "os: [ubuntu-24.04, macos-15, windows-2025]"
+     ]
+    },
+    {
+     "key": "build-test-timeout",
+     "text": "Job build-test has a 30-minute timeout and requests only contents read permission.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "timeout-minutes: 30"
+     ]
+    },
+    {
+     "key": "autocrlf-windows",
+     "text": "On Windows the first step sets core.autocrlf to false globally so line endings stay LF.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "git config --global core.autocrlf false"
+     ]
+    },
+    {
+     "key": "checkout-pinned",
+     "text": "Check out uses actions/checkout pinned to v7.0.1 with persist-credentials set to false.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "persist-credentials: false"
+     ]
+    },
+    {
+     "key": "setup-dotnet-version",
+     "text": "Set up .NET installs dotnet-version 10.0.x.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "dotnet-version: 10.0.x"
+     ]
+    },
+    {
+     "key": "restore-audit-gate",
+     "text": "Restore passes NuGetAuditLevel moderate and turns NU1902, NU1903 and NU1904 warnings into errors.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "-p:WarningsAsErrors=NU1902%3BNU1903%3BNU1904"
+     ]
+    },
+    {
+     "key": "build-command",
+     "text": "Build runs dotnet build on Dossier.sln in Release with --no-restore.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "dotnet build Dossier.sln -c Release --no-restore"
+     ]
+    },
+    {
+     "key": "test-minimum-expected",
+     "text": "Test runs dotnet test on Dossier.sln in Release with --no-build and --minimum-expected-tests 330.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "dotnet test --solution Dossier.sln -c Release --no-build --minimum-expected-tests 330"
+     ]
+    },
+    {
+     "key": "graph-smoke-linux-only",
+     "text": "Graph page smoke test runs node scripts/graph-smoke.mjs only when runner.os is Linux.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "node scripts/graph-smoke.mjs"
+     ]
+    },
+    {
+     "key": "aot-matrix-rids",
+     "text": "Job aot-smoke covers linux-x64 on ubuntu-24.04 and linux-arm64 on ubuntu-24.04-arm.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "rid: linux-arm64"
+     ]
+    },
+    {
+     "key": "aot-version-shape",
+     "text": "aot-smoke sets VERSION to 0.0.0-ci followed by github.run_number.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "VERSION: 0.0.0-ci.${{ github.run_number }}"
+     ]
+    },
+    {
+     "key": "glibc-max-baseline",
+     "text": "aot-smoke pins GLIBC_MAX to 2.39 because the runners are Ubuntu 24.04.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "GLIBC_MAX: '2.39'"
+     ]
+    },
+    {
+     "key": "ilc-missing-fails",
+     "text": "Log resolved AOT toolchain versions fails when Microsoft.DotNet.ILCompiler is absent from project.assets.json.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "Microsoft.DotNet.ILCompiler not found in $assets"
+     ]
+    },
+    {
+     "key": "trim-warning-gate",
+     "text": "Fail on trim and AOT warnings exits with an error when publish.log contains a warning whose code starts with IL.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "if grep -E \"warning (IL|ILC)[0-9]+\" publish.log; then"
+     ]
+    },
+    {
+     "key": "missing-so-fails",
+     "text": "Check glibc baseline fails when no native .so file sits beside the binary in out.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "no native .so found beside the binary in out/$RID"
+     ]
+    },
+    {
+     "key": "arch-expectation",
+     "text": "Check binary architecture expects the ELF machine AArch64 for linux-arm64 and Advanced Micro Devices X86-64 for linux-x64.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "linux-arm64) want='AArch64' ;;"
+     ]
+    },
+    {
+     "key": "secret-scan-pin",
+     "text": "secret-scan pins GITLEAKS_VERSION to 8.30.1 and verifies the downloaded tarball with sha256sum -c.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "GITLEAKS_VERSION: 8.30.1"
+     ]
+    },
+    {
+     "key": "secret-scan-fetch-depth",
+     "text": "Check out full history sets fetch-depth to 0 so gitleaks sees the whole repository history.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "fetch-depth: 0"
+     ]
+    },
+    {
+     "key": "gitleaks-invocation",
+     "text": "Scan git history runs gitleaks git with --redact --no-banner -v and --exit-code 1.",
+     "at": [
+      ".github/workflows/ci.yml",
+      "git --redact --no-banner -v --exit-code 1 ."
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/workflows/release.yml",
+   "kind": "workflow",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "release.yml"
+   ],
+   "facts": [
+    {
+     "key": "concurrency-no-cancel",
+     "text": "Release concurrency group is release- plus the ref, and cancel-in-progress is false so a run is never cancelled.",
+     "at": [
+      ".github/workflows/release.yml",
+      "cancel-in-progress: false"
+     ]
+    },
+    {
+     "key": "verify-ancestry-main",
+     "text": "Require the tagged commit to be on main runs only for push events and fails if the tagged commit is not an ancestor of origin/main.",
+     "at": [
+      ".github/workflows/release.yml",
+      "if: env.EVENT_NAME == 'push'"
+     ]
+    },
+    {
+     "key": "verify-version-dev",
+     "text": "On a non-push event, Validate tag and compute version produces 0.0.0-dev followed by the run number.",
+     "at": [
+      ".github/workflows/release.yml",
+      "version=\"0.0.0-dev.${RUN_NUMBER}\""
+     ]
+    },
+    {
+     "key": "verify-tag-regex",
+     "text": "Validate tag and compute version rejects a tag that does not match vMAJOR.MINOR.PATCH with an optional prerelease suffix.",
+     "at": [
+      ".github/workflows/release.yml",
+      "is not vMAJOR.MINOR.PATCH[-prerelease]"
+     ]
+    },
+    {
+     "key": "build-timeout-permissions",
+     "text": "Job build has a 45-minute timeout and grants id-token write plus attestations write in addition to contents read.",
+     "at": [
+      ".github/workflows/release.yml",
+      "attestations: write # store build provenance attestations"
+     ]
+    },
+    {
+     "key": "build-needs-verify",
+     "text": "Job build depends on verify and reads VERSION from the verify job output.",
+     "at": [
+      ".github/workflows/release.yml",
+      "needs: verify"
+     ]
+    },
+    {
+     "key": "build-windows-autocrlf",
+     "text": "On Windows the first build step sets core.autocrlf to false before checking out.",
+     "at": [
+      ".github/workflows/release.yml",
+      "git config --global core.autocrlf false"
+     ]
+    },
+    {
+     "key": "publish-aot-release",
+     "text": "Publish (Native AOT) runs dotnet publish for src/Dossier/Dossier.csproj with the RID and the version from verify.",
+     "at": [
+      ".github/workflows/release.yml",
+      "Publish (Native AOT)"
+     ]
+    },
+    {
+     "key": "smoke-aot-script",
+     "text": "Smoke test runs scripts/smoke-aot.sh with the built executable path and the version.",
+     "at": [
+      ".github/workflows/release.yml",
+      "scripts/smoke-aot.sh \"out/$RID/$EXE\" \"$VERSION\""
+     ]
+    },
+    {
+     "key": "package-top-dir",
+     "text": "Package stages the archive under a top-level directory named dossier- followed by the version and the RID.",
+     "at": [
+      ".github/workflows/release.yml",
+      "top=\"dossier-$VERSION-$RID\""
+     ]
+    },
+    {
+     "key": "package-sqlite-required",
+     "text": "Package fails when neither libe_sqlite3 nor e_sqlite3 is found in the publish output, because the native library must stay beside the binary.",
+     "at": [
+      ".github/workflows/release.yml",
+      "native sqlite library not found in out/$RID"
+     ]
+    },
+    {
+     "key": "package-docs-required",
+     "text": "Package fails if LICENSE or THIRD-PARTY-NOTICES.md is missing from the repository root, since both must ship with every binary.",
+     "at": [
+      ".github/workflows/release.yml",
+      "$doc not found in the repository root"
+     ]
+    },
+    {
+     "key": "package-runtime-notices",
+     "text": "Package copies the NativeAOT runtime pack THIRD-PARTY-NOTICES.TXT into the stage as dotnet-runtime-THIRD-PARTY-NOTICES.TXT.",
+     "at": [
+      ".github/workflows/release.yml",
+      "cp \"$runtime_notices\" \"$stage/dotnet-runtime-THIRD-PARTY-NOTICES.TXT\""
+     ]
+    },
+    {
+     "key": "package-tar-copyfile",
+     "text": "For tar archives Package sets COPYFILE_DISABLE to stop macOS bsdtar adding AppleDouble entries.",
+     "at": [
+      ".github/workflows/release.yml",
+      "COPYFILE_DISABLE=1 tar -czf"
+     ]
+    },
+    {
+     "key": "archive-exact-contents",
+     "text": "Verify archive contents fails unless the archive holds exactly the expected entries, rejecting AppleDouble entries and anything outside the folder.",
+     "at": [
+      ".github/workflows/release.yml",
+      "does not hold exactly the expected entries"
+     ]
+    },
+    {
+     "key": "attest-tag-only",
+     "text": "Attest build provenance uses actions/attest pinned to v4.2.2 and runs only for push events whose ref starts with refs/tags/v.",
+     "at": [
+      ".github/workflows/release.yml",
+      "if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')"
+     ]
+    },
+    {
+     "key": "upload-artifact-retention",
+     "text": "Upload archive uses actions/upload-artifact with retention-days 7 and if-no-files-found set to error.",
+     "at": [
+      ".github/workflows/release.yml",
+      "if-no-files-found: error"
+     ]
+    },
+    {
+     "key": "release-job-gated",
+     "text": "Job release needs build and runs only for a tag push, matching the ref prefix refs/tags/v.",
+     "at": [
+      ".github/workflows/release.yml",
+      "if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')"
+     ]
+    },
+    {
+     "key": "release-permissions-write",
+     "text": "Job release is the only job granted contents write, for gh release create and edit.",
+     "at": [
+      ".github/workflows/release.yml",
+      "contents: write # gh release create / edit; the only job that can write"
+     ]
+    },
+    {
+     "key": "release-sha256sums",
+     "text": "Create the release writes SHA256SUMS by running sha256sum over the downloaded dossier archives.",
+     "at": [
+      ".github/workflows/release.yml",
+      "sha256sum dossier-* > SHA256SUMS"
+     ]
+    },
+    {
+     "key": "release-prerelease-hyphen",
+     "text": "Create the release adds the --prerelease flag when the tag contains a hyphen.",
+     "at": [
+      ".github/workflows/release.yml",
+      "*-*) flags+=(--prerelease) ;;"
+     ]
+    },
+    {
+     "key": "release-refuses-published",
+     "text": "Create the release refuses to modify an existing published release and exits with an error.",
+     "at": [
+      ".github/workflows/release.yml",
+      "is already published; refusing to modify it"
+     ]
+    },
+    {
+     "key": "release-replaces-draft",
+     "text": "Create the release deletes a leftover draft release for the tag before creating it again.",
+     "at": [
+      ".github/workflows/release.yml",
+      "replacing leftover draft release $TAG"
+     ]
+    },
+    {
+     "key": "release-undrafts",
+     "text": "Create the release finishes by running gh release edit with --draft=false.",
+     "at": [
+      ".github/workflows/release.yml",
+      "gh release edit \"$TAG\" --draft=false"
+     ]
+    },
+    {
+     "key": "triggers-tags",
+     "text": "Release runs on push of tags starting with the letter v, and on workflow_dispatch as a dry run that never creates a release.",
+     "at": [
+      ".github/workflows/release.yml",
+      "tags: [\"v*\"]"
+     ]
+    },
+    {
+     "key": "verify-skip-deleted",
+     "text": "Job verify is skipped when github.event.deleted is true, because deleting a version tag also fires a push event.",
+     "at": [
+      ".github/workflows/release.yml",
+      "if: github.event.deleted != true"
+     ]
+    },
+    {
+     "key": "build-matrix-rids",
+     "text": "Job build produces linux-x64, linux-arm64, win-x64 and osx-arm64 archives, using zip only for win-x64.",
+     "at": [
+      ".github/workflows/release.yml",
+      "rid: osx-arm64"
+     ]
+    },
+    {
+     "key": "download-artifact-merge",
+     "text": "Download archives uses actions/download-artifact with the dossier- prefix pattern and merge-multiple true into dist.",
+     "at": [
+      ".github/workflows/release.yml",
+      "merge-multiple: true"
+     ]
+    },
+    {
+     "key": "verify-output-version",
+     "text": "Job verify exposes the computed version as an output taken from its version step.",
+     "at": [
+      ".github/workflows/release.yml",
+      "version: ${{ steps.version.outputs.version }}"
+     ]
+    },
+    {
+     "key": "verify-timeout",
+     "text": "Job verify has a 10-minute timeout and requests only contents read permission.",
+     "at": [
+      ".github/workflows/release.yml",
+      "timeout-minutes: 10"
+     ]
+    },
+    {
+     "key": "verify-tag-pattern",
+     "text": "Validate tag and compute version rejects a tag that fails the grep pattern before it strips the leading v.",
+     "at": [
+      ".github/workflows/release.yml",
+      "printf '%s' \"$TAG\" | grep -Eq"
+     ]
+    },
+    {
+     "key": "build-restore-project",
+     "text": "Restore in release targets src/Dossier/Dossier.csproj with the RID and PublishAot true rather than the solution.",
+     "at": [
+      ".github/workflows/release.yml",
+      "dotnet restore src/Dossier/Dossier.csproj -r \"$RID\" -p:PublishAot=true"
+     ]
+    },
+    {
+     "key": "build-version-env",
+     "text": "Job build takes VERSION from the verify job output and passes it to the publish step.",
+     "at": [
+      ".github/workflows/release.yml",
+      "VERSION: ${{ needs.verify.outputs.version }}"
+     ]
+    },
+    {
+     "key": "build-glibc-linux-only",
+     "text": "Check glibc baseline in release runs only on Linux and fails when the binary needs a symbol version above 2.39.",
+     "at": [
+      ".github/workflows/release.yml",
+      "GLIBC_MAX: '2.39'"
+     ]
+    },
+    {
+     "key": "build-arch-linux-only",
+     "text": "Check binary architecture guards against a binary built for the wrong architecture, which would otherwise pass the other checks on its own runner type.",
+     "at": [
+      ".github/workflows/release.yml",
+      "A binary built for the wrong architecture would still pass the checks above on its own runner type."
+     ]
+    },
+    {
+     "key": "attest-subject-path",
+     "text": "Attest build provenance signs the dist archives whose names match the dossier prefix and the matrix rid.",
+     "at": [
+      ".github/workflows/release.yml",
+      "subject-path: dist/dossier-"
+     ]
+    },
+    {
+     "key": "upload-artifact-name",
+     "text": "Upload archive names each artifact dossier- followed by the matrix rid.",
+     "at": [
+      ".github/workflows/release.yml",
+      "name: dossier-${{ matrix.rid }}"
+     ]
+    },
+    {
+     "key": "release-needs-build",
+     "text": "Job release depends on every build matrix leg succeeding.",
+     "at": [
+      ".github/workflows/release.yml",
+      "needs: build"
+     ]
+    },
+    {
+     "key": "release-timeout",
+     "text": "Job release has a 15-minute timeout.",
+     "at": [
+      ".github/workflows/release.yml",
+      "timeout-minutes: 15"
+     ]
+    },
+    {
+     "key": "release-gh-token",
+     "text": "Create the release authenticates gh through GH_TOKEN set to the workflow token.",
+     "at": [
+      ".github/workflows/release.yml",
+      "GH_TOKEN: ${{ github.token }}"
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/dependabot.yml",
+   "kind": "file",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "dependabot.yml"
+   ],
+   "facts": [
+    {
+     "key": "two-ecosystems",
+     "text": "dependabot.yml uses config version 2 and defines updates for the nuget and github-actions ecosystems.",
+     "at": [
+      ".github/dependabot.yml",
+      "package-ecosystem: nuget"
+     ]
+    },
+    {
+     "key": "weekly-limit",
+     "text": "Both ecosystems check weekly with an open-pull-requests-limit of 5.",
+     "at": [
+      ".github/dependabot.yml",
+      "open-pull-requests-limit: 5"
+     ]
+    },
+    {
+     "key": "cooldown-days",
+     "text": "Each ecosystem sets a cooldown default-days of 7 before an update is proposed.",
+     "at": [
+      ".github/dependabot.yml",
+      "default-days: 7"
+     ]
+    },
+    {
+     "key": "grouped-minor-patch",
+     "text": "Groups nuget-minor-patch and actions-minor-patch collect minor and patch updates together.",
+     "at": [
+      ".github/dependabot.yml",
+      "update-types: [minor, patch]"
+     ]
+    },
+    {
+     "key": "root-directory",
+     "text": "Both ecosystems scan the repository root because directory is set to slash.",
+     "at": [
+      ".github/dependabot.yml",
+      "directory: /"
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/ISSUE_TEMPLATE/bug_report.yml",
+   "kind": "file",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "bug_report.yml"
+   ],
+   "facts": [
+    {
+     "key": "bug-label",
+     "text": "The bug report template applies the bug label to every issue it creates.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "labels: [bug]"
+     ]
+    },
+    {
+     "key": "required-fields",
+     "text": "The Description and Steps to reproduce textareas are marked required.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "required: true"
+     ]
+    },
+    {
+     "key": "version-field",
+     "text": "The Version or commit input asks for the output of dossier --version or the commit that was built.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "Output of `dossier --version`, or the commit you built."
+     ]
+    },
+    {
+     "key": "logs-shell-render",
+     "text": "The Logs or output textarea sets render to shell so pasted output is formatted as a shell block.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "render: shell"
+     ]
+    },
+    {
+     "key": "security-redirect",
+     "text": "The template's markdown body tells reporters not to file security vulnerabilities as issues and links the security policy.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "Please do not report security vulnerabilities here"
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/ISSUE_TEMPLATE/config.yml",
+   "kind": "file",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "config.yml"
+   ],
+   "facts": [
+    {
+     "key": "blank-issues-disabled",
+     "text": "The issue chooser disables blank issues by setting blank_issues_enabled to false.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/config.yml",
+      "blank_issues_enabled: false"
+     ]
+    },
+    {
+     "key": "security-contact-link",
+     "text": "A contact link named Report a security vulnerability points to the repository security policy and asks for private reports.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/config.yml",
+      "about: Please report vulnerabilities privately; do not open a public issue."
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/ISSUE_TEMPLATE/feature_request.yml",
+   "kind": "file",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "feature_request.yml"
+   ],
+   "facts": [
+    {
+     "key": "enhancement-label",
+     "text": "The feature request template applies the enhancement label.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "labels: [enhancement]"
+     ]
+    },
+    {
+     "key": "required-problem-proposal",
+     "text": "The Problem and Proposal textareas are required, while Alternatives considered is not.",
+     "at": [
+      ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "id: alternatives"
+     ]
+    }
+   ]
+  },
+  {
+   "name": ".github/PULL_REQUEST_TEMPLATE.md",
+   "kind": "file",
+   "parent": "Dossier/CI",
+   "aliases": [
+    "PULL_REQUEST_TEMPLATE.md"
+   ],
+   "facts": [
+    {
+     "key": "checklist-items",
+     "text": "The pull request checklist asks for tests, a passing local build, docs updates, and no secrets or personal data.",
+     "at": [
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      "Tests added or updated for behaviour changes"
+     ]
+    },
+    {
+     "key": "sections",
+     "text": "The template has Summary, Linked issue and Checklist sections.",
+     "at": [
+      ".github/PULL_REQUEST_TEMPLATE.md",
+      "## Linked issue"
+     ]
+    }
+   ]
+  }
+ ]
+}

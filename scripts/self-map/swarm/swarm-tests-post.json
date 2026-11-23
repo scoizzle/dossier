@@ -1,0 +1,594 @@
+{
+ "agent": "swarm-tests-post",
+ "slice": "tests-post",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/PostFactsTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "PostFactsTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "insert-persistsfactwithlivestatusandhash-hash-length-64",
+     "text": "Insert_PersistsFactWithLiveStatusAndHash asserts the content_hash column is 64 characters long for the inserted fact.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(hash!.Length).IsEqualTo(64);"
+     ]
+    },
+    {
+     "key": "contentdedupe-returns-the-same-id-deduped-with-duplicateof",
+     "text": "ContentDedupe_ReturnsTheSameId expects the second identical post to report status deduped with DuplicateOf pointing at the first fact id.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Facts[0].Status).IsEqualTo(\"deduped\");"
+     ]
+    },
+    {
+     "key": "keyedrepost-identical-in-every-field-revision-unchanged",
+     "text": "KeyedRepost_IdenticalInEveryField_DedupesAndKeepsTheId checks that a fully identical keyed repost leaves the store Revision unchanged.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(revision);"
+     ]
+    },
+    {
+     "key": "keyedrepost-changes-field-outside-hash-attachment-filename",
+     "text": "KeyedRepost_ThatChangesAFieldOutsideTheHash_StillReplaces expects replaced when only the attachment filename in the request changes.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Facts[0].Status).IsEqualTo(\"replaced\");"
+     ]
+    },
+    {
+     "key": "longtext-400-chars-survives-intact-no-ellipsis",
+     "text": "LongText_400Chars_SurvivesIntact asserts the stored 400 character text equals the input and does not end with three dots.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(stored).IsEqualTo(text);"
+     ]
+    },
+    {
+     "key": "subjectcreated-is-true-only-on-first-insert-second-false",
+     "text": "SubjectCreated_IsTrueOnlyOnFirstInsert expects Subject Created true on the first post of a name and false on the second for the same id.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Subject.Created).IsFalse();"
+     ]
+    },
+    {
+     "key": "aliascasefold-upsert-matches-padded-name-and-alias",
+     "text": "AliasCasefold_UpsertMatchesNameAndAlias matches both a padded mixed case name and the alias MEMOS to the same Memos UI subject.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "var byName = db.Store.PostFacts(Fixtures.Post(\"  memos   ui \", Fixtures.Fact(\"two\")));"
+     ]
+    },
+    {
+     "key": "subject-unknownid-is-rejected-and-not-created-code",
+     "text": "Subject_UnknownId_IsRejectedAndNotCreated expects code subject_not_found and leaves no rows in either subjects or facts.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(caught!.Code).IsEqualTo(\"subject_not_found\");"
+     ]
+    },
+    {
+     "key": "batch-repost-dedupes-with-local-ids-at-x-ref",
+     "text": "Batch_Repost_Dedupes_WithLocalIds posts a second fact whose ref targets @x and on repost both facts return deduped with the original ids.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "Fixtures.Fact(\"the second fact\", refs: new List<RefInput> { Fixtures.Ref(\"@x\") }));"
+     ]
+    },
+    {
+     "key": "unresolvable-local-id-rejects-item-batch-commits-code",
+     "text": "UnresolvableLocalId_RejectsTheItemAndTheBatchStillCommits reports an unresolved_local_id error and still commits the sibling fact as new.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(result.Errors[0].Code).IsEqualTo(\"unresolved_local_id\");"
+     ]
+    },
+    {
+     "key": "missing-basis-rejects-item-batch-commits-code",
+     "text": "MissingBasis_RejectsTheItemAndTheBatchStillCommits rejects a ref with a null basis as missing_basis while the other fact lands as new.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(result.Errors[0].Code).IsEqualTo(\"missing_basis\");"
+     ]
+    },
+    {
+     "key": "slot-target-is-stored-verbatim-and-not-resolved-literal",
+     "text": "SlotTarget_IsStoredVerbatimAndNotResolved keeps the slot kind ref target as the literal @x text instead of resolving it.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "Fixtures.Fact(\"slot holder\", refs: new List<RefInput> { Fixtures.Ref(\"@x\", kind: \"slot\", rel: \"about\") })"
+     ]
+    },
+    {
+     "key": "dry-run-returns-same-verdicts-as-real-post-statuses",
+     "text": "DryRun_ReturnsSameVerdictsAsRealPost expects the dry run to return the statuses new, deduped and replaced exactly as the real post does.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      ".IsEquivalentTo(new[] { \"new\", \"deduped\", \"replaced\" });"
+     ]
+    },
+    {
+     "key": "dry-run-writes-nothing-row-counts-equal",
+     "text": "DryRun_WritesNothing compares subject, facts, refs, slots and facts_fts row counts before and after the dry run and expects them equal.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(Counts(db.Store)).IsEquivalentTo(before);"
+     ]
+    },
+    {
+     "key": "dry-run-writes-nothing-no-blob-files",
+     "text": "DryRun_WritesNothing also asserts the blob root holds no files after the dry run.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(Directory.Exists(db.Store.BlobRoot) && Directory.GetFiles(db.Store.BlobRoot).Length > 0).IsFalse();"
+     ]
+    },
+    {
+     "key": "dry-run-rejects-invalid-payload-like-real-post-code",
+     "text": "DryRun_RejectsInvalidPayloadLikeRealPost expects the same DossierRequestException code subject_not_found from both the dry run and the real post.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(dryEx.Code).IsEqualTo(realEx.Code);"
+     ]
+    },
+    {
+     "key": "insert-persists-response-new-row-live",
+     "text": "Insert_PersistsFactWithLiveStatusAndHash reports status new in the response while the facts row for that id stores status live.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(fact.Status).IsEqualTo(\"new\");"
+     ]
+    },
+    {
+     "key": "keysupersede-replaced-names-old-id",
+     "text": "KeySupersede_ReturnsReplacedAndFlipsTheOldStatus expects the second post at key state to report replaced and name the first fact id as Replaced.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Facts[0].Status).IsEqualTo(\"replaced\");"
+     ]
+    },
+    {
+     "key": "keysupersede-slot-row-names-new-id",
+     "text": "KeySupersede_ReturnsReplacedAndFlipsTheOldStatus requires the slots row for kind note and key state to name the new fact id.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "SELECT fact_id FROM slots WHERE subject_id = $s AND kind = 'note' AND key = 'state'"
+     ]
+    },
+    {
+     "key": "contenthash-rev-change-still-dedupes",
+     "text": "ContentHash_ExcludesRevAndOtherFreshnessFields expects refs whose rev changes from rev-1 to rev-2 to still dedupe onto the same fact.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Facts[0].Id).IsEqualTo(first.Response.Facts[0].Id);"
+     ]
+    },
+    {
+     "key": "dryrun-then-real-post-both-new",
+     "text": "DryRun_ThenRealPostStillCreatesTheFactsAsNew shows a dry run then a real post of the same keyed fact both report new, leaving 1 fact row.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(Counts(db.Store)[1]).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "symbolref-requires-revision-all-three",
+     "text": "SymbolRef_RequiresRevision expects the real post, the dry run and the Check drafts to all report symbol_target_requires_revision.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(real.Errors.Single().Code).IsEqualTo(\"symbol_target_requires_revision\");"
+     ]
+    },
+    {
+     "key": "symbolref-accepts-qualified-target",
+     "text": "SymbolRef_AcceptsQualifiedNameAtRevision accepts a target of the form pkg.mod:Cls.method(int, str) with an @ revision and stores it verbatim.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(stored).IsEqualTo(target);"
+     ]
+    },
+    {
+     "key": "symbolref-refute-edge-search-in",
+     "text": "SymbolRef_RefuteEdgeIsSupported finds the refutes fact by searching with RefTarget and Direction in.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "var hit = db.Store.Search(new SearchRequest { RefTarget = Sym, Direction = \"in\" });"
+     ]
+    },
+    {
+     "key": "symbolref-publishes-as-text",
+     "text": "SymbolRef_PublishesAsTextNotLink asserts the published markdown contains kind: symbol and wraps the target in backticks rather than a link.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(text).Contains(\"`\" + Sym + \"`\");"
+     ]
+    },
+    {
+     "key": "helper-counts-order",
+     "text": "The Counts helper returns subject, fact, ref, slot and facts_fts row counts for the store in that order.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "Fixtures.Count(connection, \"SELECT COUNT(*) FROM facts_fts\"),"
+     ]
+    },
+    {
+     "key": "keyedrepost-identical-replaced-is-null",
+     "text": "KeyedRepost_IdenticalInEveryField_DedupesAndKeepsTheId expects the deduped response to leave Replaced null.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(second.Response.Facts[0].Replaced).IsNull();"
+     ]
+    },
+    {
+     "key": "keyedrepost-outside-hash-identical-control",
+     "text": "KeyedRepost_ThatChangesAFieldOutsideTheHash_StillReplaces first reposts the unchanged fact and requires deduped as a control.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(same.Response.Facts[0].Status).IsEqualTo(\"deduped\");"
+     ]
+    },
+    {
+     "key": "subject-may-be-supplied-by-id-reuses",
+     "text": "Subject_MayBeSuppliedById reuses an existing subject by id and reports Subject Created false.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(reused.Response.Subject.Created).IsFalse();"
+     ]
+    },
+    {
+     "key": "directguid-dedupes-against-local-id",
+     "text": "DirectGuidTarget_Dedupes_AgainstLocalIdFact shows a ref carrying the resolved guid dedupes onto the fact posted with localId x, leaving 2 rows.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(direct.Response.Facts[0].Status).IsEqualTo(\"deduped\");"
+     ]
+    },
+    {
+     "key": "ref-persisted-one-row-per-ref",
+     "text": "Ref_IsPersistedOneRowPerRefWithSequence stores a fact carrying two refs as 2 rows in refs.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(Fixtures.Count(connection, \"SELECT COUNT(*) FROM refs WHERE fact_id = $id\", (\"$id\", id))).IsEqualTo(2);"
+     ]
+    },
+    {
+     "key": "dryrun-same-verdicts-ids-match",
+     "text": "DryRun_ReturnsSameVerdictsAsRealPost also expects the deduped fact id and the replaced id to match between the dry and real runs.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(dry.Response.Facts[2].Replaced).IsEqualTo(real.Response.Facts[2].Replaced);"
+     ]
+    },
+    {
+     "key": "dryrun-writesnothing-three-facts-created",
+     "text": "DryRun_WritesNothing expects 3 facts back and Subject Created true for a subject that does not exist yet.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(result.Response.Subject.Created).IsTrue();"
+     ]
+    },
+    {
+     "key": "symbolref-refute-not-a-fact-row",
+     "text": "SymbolRef_RefuteEdgeIsSupported also asserts the symbol target is never inserted as a fact id.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(Fixtures.Count(connection, \"SELECT COUNT(*) FROM facts WHERE id = $t\", (\"$t\", Sym))).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "symbolref-publishes-rev-field",
+     "text": "SymbolRef_PublishesAsTextNotLink also requires the published fact card to contain rev: for the symbol ref.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "await Assert.That(text).Contains(\"rev: \");"
+     ]
+    },
+    {
+     "key": "localid-resolves-within-the-same-batch",
+     "text": "LocalId_ResolvesWithinTheSameBatch resolves a ref of @x inside the batch and writes the first fact id as the refs target.",
+     "at": [
+      "tests/Dossier.Tests/PostFactsTests.cs",
+      "SELECT target FROM refs WHERE fact_id = $id"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SupersedesRefTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SupersedesRefTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "helper-supersedes-builds-refs",
+     "text": "The Supersedes helper builds one ref per id with rel supersedes.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "ids.Select(id => Fixtures.Ref(id, rel: \"supersedes\")).ToList();"
+     ]
+    },
+    {
+     "key": "anunkeyed-fact-old-kept-hid-from-search",
+     "text": "AnUnkeyedFact_IsCorrectedByASupersedesRef keeps the old row readable through Show while a Q search for 2009 returns no hits.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Q = \"2009\" }).Total).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "anunkeyed-fact-verify-replacedby",
+     "text": "AnUnkeyedFact_IsCorrectedByASupersedesRef expects Verify to report superseded with ReplacedBy set to the correction id.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(verified.ReplacedBy).IsEqualTo(correction.Id);"
+     ]
+    },
+    {
+     "key": "chain-names-live-fact",
+     "text": "ACorrectionChain_NamesTheFactThatIsLiveNow expects both earlier version facts to report ReplacedBy equal to the third fact.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Verify(db, second).ReplacedBy).IsEqualTo(third);"
+     ]
+    },
+    {
+     "key": "keyed-chain-derived-goes-stale",
+     "text": "AKeyedChainEndedByACorrection_StillResolves_AndWhatWasDerivedFromItGoesStale marks the derived fact stale with Why naming the superseded keyed fact.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(stale.Status).IsEqualTo(\"stale\");"
+     ]
+    },
+    {
+     "key": "correcting-keyed-fact-empties-slot",
+     "text": "CorrectingAKeyedFact_EmptiesItsSlot_SoALaterKeyedPostIsNew asserts no slots row names the corrected fact and the later keyed post is new.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Fixtures.Count(connection, \"SELECT COUNT(*) FROM slots WHERE fact_id = $id\", (\"$id\", keyed))).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "supersedes-missing-fact-error-index",
+     "text": "ASupersedesRefToAMissingFact_IsRejected_AndNothingIsWritten puts the error at index 0 with code supersedes_target_not_found.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(result.Errors[0].Code).IsEqualTo(\"supersedes_target_not_found\");"
+     ]
+    },
+    {
+     "key": "correction-names-earlier-batch-fact",
+     "text": "ACorrectionMayNameAFactPostedEarlierInTheSameBatch resolves a ref to @draft and ends with the first fact superseded and the second live.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(StoredStatus(db, result.Response.Facts[0].Id)).IsEqualTo(\"superseded\");"
+     ]
+    },
+    {
+     "key": "already-superseded-or-retracted-left",
+     "text": "ATargetThatIsAlreadySupersededOrRetracted leaves a retracted target retracted and keeps the keyed replacement k2 as the answer for k1.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Verify(db, k1).ReplacedBy).IsEqualTo(k2);"
+     ]
+    },
+    {
+     "key": "batch-key-then-ref-no-failure",
+     "text": "ABatchThatReplacesAFactByKeyAndThenByRef expects the keyed item replaced and the note superseding the same old fact to post as new.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(result.Response.Facts[1].Status).IsEqualTo(\"new\");"
+     ]
+    },
+    {
+     "key": "correction-targets-other-subject",
+     "text": "ACorrectionMayTargetAFactOnAnotherSubject lets a fact on Beta supersede one on Alpha so compiling Alpha returns no facts.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Compile(new CompileRequest { Subject = \"Alpha\", Depth = \"full\" }).Facts.Count).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "only-fact-kind-supersedes",
+     "text": "OnlyARefOfKindFact_Supersedes stores a supersedes ref of kind slot, symbol or url with no error and leaves the keyed fact live.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(StoredStatus(db, keyed)).IsEqualTo(\"live\");"
+     ]
+    },
+    {
+     "key": "dryrun-and-check-drafts-verdict",
+     "text": "DryRunAndCheckDrafts_GiveTheRealVerdict_AndWriteNothing gets a new verdict and a supersedes_target_not_found error from both the dry run and Check.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(result.Errors.Single().Code).IsEqualTo(\"supersedes_target_not_found\");"
+     ]
+    },
+    {
+     "key": "reposted-correction-applies-when-live",
+     "text": "RepostingACorrection_AppliesItWhenItsTargetIsStillLive re-marks the old fact live by hand, then the repost reports deduped and flips it back to superseded.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(again.Status).IsEqualTo(\"deduped\");"
+     ]
+    },
+    {
+     "key": "conflict-disappears-after-supersede",
+     "text": "AConflict_Disappears_WhenOneSideSupersedesTheOther starts with a conflict on two headerHeight values and ends with none after a supersedes ref.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Compile(new CompileRequest { Subject = \"Widget\" }).Conflicts.Count).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "journal-records-status-flip",
+     "text": "TheJournal_RecordsTheStatusFlipOfTheCorrectedFact expects a facts insert for the correction and a facts update with FactStatus superseded for the old id.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "row.FactStatus == \"superseded\""
+     ]
+    },
+    {
+     "key": "publish-import-carries-correction",
+     "text": "PublishAndImport_CarryTheCorrection_AndLeaveTheOldFactBehind finds one imported hit reading version two while the old id verifies as unknown in the target store.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(target.Store.Verify(new VerifyRequest { Ids = { old } }).Facts.Single().Status).IsEqualTo(\"unknown\");"
+     ]
+    },
+    {
+     "key": "issue25-redump-brings-claim-back",
+     "text": "KnownGap_Issue25_ReDumpingAnUnchangedSourceBringsACorrectedClaimBack pins that a re-dump of the same source creates another fact, making the search total 2.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Subject = \"Service\" }).Total).IsEqualTo(2);"
+     ]
+    },
+    {
+     "key": "mcp-correction-verified",
+     "text": "AnAgentCorrectsAnotherAgentsFact_OverMcp verifies over MCP that the old fact is superseded and replaced_by names the correction.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(verified.GetProperty(\"replaced_by\").GetString()).IsEqualTo(correction);"
+     ]
+    },
+    {
+     "key": "mcp-correction-provenance-actors",
+     "text": "AnAgentCorrectsAnotherAgentsFact_OverMcp keeps actor agent-a on the old fact and agent-b on the correction.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(oldActor).IsEqualTo(\"agent-a\");"
+     ]
+    },
+    {
+     "key": "helper-postone-returns-first-id",
+     "text": "PostOne posts one fact and returns the id of the first fact in the response.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "db.Store.PostFacts(Fixtures.Post(subject, fact)).Response.Facts[0].Id;"
+     ]
+    },
+    {
+     "key": "helper-storedstatus-reads-column",
+     "text": "StoredStatus reads the status column of one facts row through a store connection.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "return (string?)Fixtures.Scalar(connection, \"SELECT status FROM facts WHERE id = $id\", (\"$id\", id));"
+     ]
+    },
+    {
+     "key": "unkeyed-correction-bumps-revision",
+     "text": "AnUnkeyedFact_IsCorrectedByASupersedesRef asserts the store revision is greater after the correction than before it.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Revision()).IsGreaterThan(revision);"
+     ]
+    },
+    {
+     "key": "chain-last-fact-is-live",
+     "text": "ACorrectionChain_NamesTheFactThatIsLiveNow expects the third fact to verify as live.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Verify(db, third).Status).IsEqualTo(\"live\");"
+     ]
+    },
+    {
+     "key": "keyed-chain-both-keyed-facts-replaced",
+     "text": "AKeyedChainEndedByACorrection_StillResolves_AndWhatWasDerivedFromItGoesStale has the correction replace both keyed facts although the keyed repost wrote no ref.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Verify(db, k2).ReplacedBy).IsEqualTo(correction);"
+     ]
+    },
+    {
+     "key": "correcting-keyed-replacedby-is-correction",
+     "text": "CorrectingAKeyedFact_EmptiesItsSlot_SoALaterKeyedPostIsNew expects ReplacedBy on the corrected fact to name the correction, not the later keyed post.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(Verify(db, keyed).ReplacedBy).IsEqualTo(correction);"
+     ]
+    },
+    {
+     "key": "supersedes-missing-fact-not-searchable",
+     "text": "ASupersedesRefToAMissingFact_IsRejected_AndNothingIsWritten leaves the mistyped claim unsearchable while the unrelated fact commits.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Q = \"mistyped\" }).Total).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "only-fact-kind-accepts-slot-symbol-url",
+     "text": "OnlyARefOfKindFact_Supersedes runs a supersedes ref of kind slot, symbol or url and expects no errors.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "Fixtures.Fact(\"a note\", refs: new List<RefInput> { Fixtures.Ref(target, kind: kind, rel: \"supersedes\") })"
+     ]
+    },
+    {
+     "key": "dryrun-and-check-drafts-revision-unchanged",
+     "text": "DryRunAndCheckDrafts_GiveTheRealVerdict_AndWriteNothing leaves the old fact live and the store revision unchanged.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(revision);"
+     ]
+    },
+    {
+     "key": "reposted-correction-second-write-is-noop",
+     "text": "RepostingACorrection_AppliesItWhenItsTargetIsStillLive reposts once more after it took effect and expects the store revision to stay put.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(revision);"
+     ]
+    },
+    {
+     "key": "conflict-check-summary-falls-to-zero",
+     "text": "AConflict_Disappears_WhenOneSideSupersedesTheOther expects Check Summary Conflicts to fall to 0 after the supersedes ref.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Check(new CheckRequest { Subject = \"Widget\" }).Summary.Conflicts).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "journal-correction-insert-row",
+     "text": "TheJournal_RecordsTheStatusFlipOfTheCorrectedFact expects a facts insert row naming the correction id.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(rows.Any(row => row.Tbl == \"facts\" && row.Op == \"insert\" && row.FactId == correction)).IsTrue();"
+     ]
+    },
+    {
+     "key": "publish-import-correction-current-in-source",
+     "text": "PublishAndImport_CarryTheCorrection_AndLeaveTheOldFactBehind still verifies the correction as Current true in the source store.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Verify(new VerifyRequest { Ids = { correction } }).Current).IsTrue();"
+     ]
+    },
+    {
+     "key": "issue25-total-before-redump",
+     "text": "KnownGap_Issue25_ReDumpingAnUnchangedSourceBringsACorrectedClaimBack starts with a search total of 1 for the subject before the re-dump.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Subject = \"Service\" }).Total).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "keyed-chain-why-state-and-replacedby",
+     "text": "AKeyedChainEndedByACorrection_StillResolves_AndWhatWasDerivedFromItGoesStale records the stale reason state as superseded and its ReplacedBy as the correction.",
+     "at": [
+      "tests/Dossier.Tests/SupersedesRefTests.cs",
+      "await Assert.That(stale.Why!.Single().ReplacedBy).IsEqualTo(correction);"
+     ]
+    }
+   ]
+  }
+ ]
+}

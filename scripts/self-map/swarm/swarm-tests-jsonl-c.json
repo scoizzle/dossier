@@ -1,0 +1,706 @@
+{
+ "agent": "swarm-tests-jsonl-c",
+ "slice": "tests-jsonl-c",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/BundlePaths.cs",
+   "kind": "file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "BundlePaths.cs"
+   ],
+   "facts": [
+    {
+     "key": "bundlepaths.tobundle-replaces-backslash",
+     "text": "BundlePaths.ToBundle converts a path to bundle form by replacing the backslash character with a forward slash.",
+     "at": [
+      "tests/Dossier.Tests/BundlePaths.cs",
+      "path.Replace('\\\\', '/')"
+     ]
+    },
+    {
+     "key": "bundlepaths.resolve-seeds-from-parent-parts",
+     "text": "BundlePaths.Resolve seeds its segment list with every part of the from path except the last one.",
+     "at": [
+      "tests/Dossier.Tests/BundlePaths.cs",
+      "fromParts.Take(fromParts.Length - 1)"
+     ]
+    },
+    {
+     "key": "bundlepaths.resolve-skips-empty-and-dot",
+     "text": "BundlePaths.Resolve skips a target part that is empty or a single dot.",
+     "at": [
+      "tests/Dossier.Tests/BundlePaths.cs",
+      "part is \"\" or \".\""
+     ]
+    },
+    {
+     "key": "bundlepaths.resolve-pops-on-dotdot",
+     "text": "BundlePaths.Resolve removes the last kept segment for a .. part only while segments remain.",
+     "at": [
+      "tests/Dossier.Tests/BundlePaths.cs",
+      "if (segments.Count > 0)"
+     ]
+    },
+    {
+     "key": "bundlepaths.resolve-excess-dotdot-dropped",
+     "text": "BundlePaths.Resolve silently drops a .. part that has no earlier segment to remove, so a link above the bundle root cannot escape it.",
+     "at": [
+      "tests/Dossier.Tests/BundlePaths.cs",
+      "if (part == \"..\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/BundlePathsTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "BundlePathsTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "test.to-bundle-converts-windows-separators.login-path",
+     "text": "ToBundle_ConvertsWindowsSeparators asserts subjects\\login\\facts\\a.md becomes subjects/login/facts/a.md.",
+     "at": [
+      "tests/Dossier.Tests/BundlePathsTests.cs",
+      "BundlePaths.ToBundle(\"subjects\\\\login\\\\facts\\\\a.md\")"
+     ]
+    },
+    {
+     "key": "resolve-yields-slash.one-up-case",
+     "text": "Resolve_YieldsSlashJoinedBundleRelativePath expects the target ../shards/1.md#a from index/1.md to resolve to shards/1.md#a.",
+     "at": [
+      "tests/Dossier.Tests/BundlePathsTests.cs",
+      "[Arguments(\"index/1.md\", \"../shards/1.md#a\", \"shards/1.md#a\")"
+     ]
+    },
+    {
+     "key": "resolve-yields-slash.windows-case",
+     "text": "Resolve_YieldsSlashJoinedBundleRelativePath expects subjects\\s\\index.md with target facts\\f.md to resolve to subjects/s/facts/f.md.",
+     "at": [
+      "tests/Dossier.Tests/BundlePathsTests.cs",
+      "\"subjects\\\\s\\\\index.md\", \"facts\\\\f.md\""
+     ]
+    },
+    {
+     "key": "resolve-yields-slash.three-up-case",
+     "text": "Resolve_YieldsSlashJoinedBundleRelativePath expects ../../t/facts/g.md from subjects/s/facts/f.md to resolve to subjects/t/facts/g.md.",
+     "at": [
+      "tests/Dossier.Tests/BundlePathsTests.cs",
+      "\"../../t/facts/g.md\", \"subjects/t/facts/g.md\""
+     ]
+    },
+    {
+     "key": "resolve-yields-slash.dot-slash-case",
+     "text": "Resolve_YieldsSlashJoinedBundleRelativePath expects a target of ./c.md from a/b.md to resolve to a/c.md.",
+     "at": [
+      "tests/Dossier.Tests/BundlePathsTests.cs",
+      "[Arguments(\"a/b.md\", \"./c.md\", \"a/c.md\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlTestSupport.cs",
+   "kind": "file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlTestSupport.cs"
+   ],
+   "facts": [
+    {
+     "key": "jsonl.writeblob-names-blob-by-sha",
+     "text": "Jsonl.WriteBlob hashes the UTF-8 bytes with SHA256 and writes them under Store.BlobRoot named by the lower-case hex string.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "var sha = Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant()"
+     ]
+    },
+    {
+     "key": "jsonl.seed-my-app-aliases",
+     "text": "Jsonl.Seed posts a subject My App of kind app with aliases the app and myapp.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "Aliases = new List<string> { \"the app\", \"myapp\" }"
+     ]
+    },
+    {
+     "key": "jsonl.seed-sets-pin-json",
+     "text": "Jsonl.Seed writes the pin JSON with repo https://example.test/app.git and rev abc123 using a raw UPDATE subjects statement.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "UPDATE subjects SET pin ="
+     ]
+    },
+    {
+     "key": "jsonl.seed-supersedes-first-header",
+     "text": "Jsonl.Seed posts header-a as 60 pixels tall and then as 64 pixels tall, so the first value is superseded.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "The header is 64 pixels tall."
+     ]
+    },
+    {
+     "key": "jsonl.seed-ref-kinds",
+     "text": "Jsonl.Seed attaches refs with rel supports for a fact, defines for a slot, about for a subject and see for a url.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "new() { Rel = \"supports\", Kind = \"fact\""
+     ]
+    },
+    {
+     "key": "jsonl.seed-attachment-metadata",
+     "text": "Jsonl.Seed attaches shots/Home Screen.PNG as image/png with perceptual hash algo phash and value ff00.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "Filename = \"shots/Home Screen.PNG\""
+     ]
+    },
+    {
+     "key": "jsonl.records-drops-last-split-line",
+     "text": "Jsonl.Records splits each data file on newline and drops the last element before parsing every remaining line as JSON.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "Split('\\n').SkipLast(1)"
+     ]
+    },
+    {
+     "key": "jsonl.fails-throws-when-nothing-throws",
+     "text": "Jsonl.Fails throws InvalidOperationException with the message expected a DossierRequestException when the action does not throw.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "throw new InvalidOperationException(\"expected a DossierRequestException\")"
+     ]
+    },
+    {
+     "key": "jsonl.cli-sets-dossier-db",
+     "text": "Jsonl.Cli runs Dossier.dll under dotnet and sets the DOSSIER_DB environment variable when a database path is given.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "info.Environment[\"DOSSIER_DB\"] = dbPath"
+     ]
+    },
+    {
+     "key": "jsonl.manifest-parses-manifest-json",
+     "text": "Jsonl.Manifest parses manifest.json from the bundle directory into a cloned JsonElement.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "Path.Combine(dir, \"manifest.json\"), Utf8"
+     ]
+    },
+    {
+     "key": "jsonl.publish-defaults",
+     "text": "Jsonl.Publish defaults the publish format to jsonl and sets Now to a fixed DateTimeOffset of 2026, 1, 2, 3, 4, 5 with TimeSpan.Zero.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "new DateTimeOffset(2026, 1, 2, 3, 4, 5, TimeSpan.Zero)"
+     ]
+    },
+    {
+     "key": "jsonl.datafiles-sorted-by-name",
+     "text": "Jsonl.DataFiles enumerates dossier data files by pattern and returns their file names ordered with StringComparer.Ordinal.",
+     "at": [
+      "tests/Dossier.Tests/JsonlTestSupport.cs",
+      "Directory.EnumerateFiles(dir, \"dossier-*.jsonl\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ImportTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "ImportTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "test.import-restores-ids-texts-and-refs.live-facts-only",
+     "text": "Import_RestoresIdsTextsAndRefs compares the imported rows against the source rows after excluding facts whose status is superseded or retracted.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "f.Status is not (\"superseded\" or \"retracted\")"
+     ]
+    },
+    {
+     "key": "test.import-restores-ids-texts-and-refs.no-skips",
+     "text": "Import_RestoresIdsTextsAndRefs asserts that the import reports 0 skipped entries and that result.Refs is 4.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(result.Refs).IsEqualTo(4)"
+     ]
+    },
+    {
+     "key": "test.import-restores-ids-texts-and-refs.fact-ref-keeps-id",
+     "text": "Import_RestoresIdsTextsAndRefs asserts the supports fact ref points at the target fact's original id rather than the bundle key.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "r.StartsWith(pointer.Id + \"|0|supports|fact|\" + target.Id + \"|\")"
+     ]
+    },
+    {
+     "key": "test.import-restores-attachments.blob-keyed-by-sha",
+     "text": "Import_RestoresAttachments checks that the blob file exists at BlobRoot keyed by the shot sha and that its SHA256 hex equals that sha.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "var blob = Path.Combine(b.Store.BlobRoot, shot.Sha);"
+     ]
+    },
+    {
+     "key": "test.import-restores-attachments.counts-and-metadata",
+     "text": "Import_RestoresAttachments asserts result.Attachments is 1 and result.Blobs is 1 and the attachments row keeps filename, mime and perceptual metadata.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(result.Attachments).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "test.import-fails-closed-on-duplicate-live-slot.forged-id",
+     "text": "Import_FailsClosedOnDuplicateLiveSlot forges a second fact file with id 00000000-0000-0000-0000-000000000001 and expects code import_slot_conflict naming both ids.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(ex.Code).IsEqualTo(\"import_slot_conflict\")"
+     ]
+    },
+    {
+     "key": "test.import-rejects-bundle-without-fact-files.error-and-hint",
+     "text": "Import_RejectsBundleWithoutFactFiles publishes with facts set to none and expects code bundle_has_no_facts with a message mentioning --facts detail.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(ex.Code).IsEqualTo(\"bundle_has_no_facts\")"
+     ]
+    },
+    {
+     "key": "importtests.facts-query",
+     "text": "ImportTests.Facts reads id, subject_id, kind, key, text and status from the facts table ordered by id.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "SELECT id, subject_id, kind, key, text, status FROM facts ORDER BY id"
+     ]
+    },
+    {
+     "key": "importtests.refs-query",
+     "text": "ImportTests.Refs joins every selected refs column with a pipe and renders a NULL value as a tilde.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "rows.Add(string.Join(\"|\", Enumerable.Range(0, reader.FieldCount)"
+     ]
+    },
+    {
+     "key": "importtests.fails-wraps-missing-exception",
+     "text": "ImportTests.Fails throws InvalidOperationException with a message saying it expected the import to fail when no DossierRequestException is raised.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "throw new InvalidOperationException(\"expected the import to fail with a DossierRequestException\")"
+     ]
+    },
+    {
+     "key": "import-restores.aliases-pin-slot",
+     "text": "Import_RestoresIdsTextsAndRefs asserts 2 subjects, aliases the app and myapp, a pin containing abc123 and 1 slot row.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Fixtures.Count(connection, \"SELECT COUNT(*) FROM slots\")).IsEqualTo(1L)"
+     ]
+    },
+    {
+     "key": "roundtrip-publish-import.byte-for-byte",
+     "text": "RoundTrip_PublishImportPublishIsIdentical imports a bundle into a fresh database, republishes it, and compares every file byte for byte except README.md.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "if (path == \"README.md\")"
+     ]
+    },
+    {
+     "key": "roundtrip-publish-import.strips-generated-at",
+     "text": "RoundTrip_PublishImportPublishIsIdentical compares README.md only after StripGeneratedAt replaces the Generated at line with a placeholder X.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "StripGeneratedAt(second[path])"
+     ]
+    },
+    {
+     "key": "duplicate-slot.atomic-failure",
+     "text": "Import_FailsClosedOnDuplicateLiveSlot asserts the failed import leaves 0 facts and 0 subjects behind.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(Fixtures.Count(connection, \"SELECT COUNT(*) FROM facts\")).IsEqualTo(0L)"
+     ]
+    },
+    {
+     "key": "skips-machine-record.truncated-file",
+     "text": "Import_SkipsFactFileWithoutMachineRecordAndSaysWhy truncates a fact file at its Machine record heading and expects 1 skipped entry whose reason mentions Machine record.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "content[..content.LastIndexOf(\"\\n## Machine record\", StringComparison.Ordinal)]"
+     ]
+    },
+    {
+     "key": "skips-machine-record.fact-count",
+     "text": "Import_SkipsFactFileWithoutMachineRecordAndSaysWhy expects result.Facts to be one less than the source live fact count.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(result.Facts).IsEqualTo(Facts(a.Store).Count(f => f.Status == \"live\") - 1)"
+     ]
+    },
+    {
+     "key": "import-restores.sequence-equal",
+     "text": "Import_RestoresIdsTextsAndRefs asserts that the restored fact rows are sequence equal to the filtered source rows.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(restored.SequenceEqual(source)).IsTrue()"
+     ]
+    },
+    {
+     "key": "roundtrip-publish-import.same-paths",
+     "text": "RoundTrip_PublishImportPublishIsIdentical asserts that both bundles expose the same relative paths in ordinal order.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "second.Keys.OrderBy(k => k, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "roundtrip-publish-import.more-than-ten-files",
+     "text": "RoundTrip_PublishImportPublishIsIdentical asserts the first bundle holds more than 10 files before comparing contents.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "Assert.That(first.Count > 10).IsTrue()"
+     ]
+    },
+    {
+     "key": "publishto.command-line",
+     "text": "ImportTests.PublishTo stamps every publish with the command line dossier publish --out bundle.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "private const string CommandLine = \"dossier publish --out bundle\""
+     ]
+    },
+    {
+     "key": "seed.screenshot-blob",
+     "text": "ImportTests.Seed stores the screenshot bytes under BlobRoot by their lower-case SHA256 and reuses that sha in the attachment.",
+     "at": [
+      "tests/Dossier.Tests/ImportTests.cs",
+      "var shot = WriteBlob(db, \"screenshot bytes for the round trip\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlRound2Tests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlRound2Tests.cs"
+   ],
+   "facts": [
+    {
+     "key": "requiringunix.skips-on-windows",
+     "text": "JsonlRound2Tests.RequireUnix marks the running test skipped with the reason Unix-only when the host is Windows.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Skip.Test(\"Unix-only\");"
+     ]
+    },
+    {
+     "key": "endlessstream.guard-at-1gib",
+     "text": "JsonlRound2Tests.EndlessStream throws InvalidOperationException once it has served past 1 GiB, with a message saying the reader is unbounded.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "read past 1 GiB: the reader is unbounded"
+     ]
+    },
+    {
+     "key": "sha.lowercase-hex",
+     "text": "JsonlRound2Tests.Sha returns the lower-case hex SHA256 of the supplied bytes.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "private static string Sha(byte[] bytes)"
+     ]
+    },
+    {
+     "key": "large-embedded-asset.rewrites-record",
+     "text": "Import_LargeEmbeddedAssetStaysWithinAllocationBudget replaces the asset record with 8 times 1024 times 1024 random bytes and fixes the manifest file_stats bytes and sha256.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "var big = new byte[8 * 1024 * 1024];"
+     ]
+    },
+    {
+     "key": "large-embedded-asset.allocation-budget",
+     "text": "Import_LargeEmbeddedAssetStaysWithinAllocationBudget asserts that the import allocates less than 6.5 times the longest asset line length.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(allocated).IsLessThan((long)(lineLength * 6.5))"
+     ]
+    },
+    {
+     "key": "read-at-most.endless-stream-null",
+     "text": "ReadAtMost_StopsOnAnEndlessStream expects DossierStore.ReadAtMost to return null and the stream to serve fewer than 8192 bytes.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(endless.Served).IsLessThan(8192)"
+     ]
+    },
+    {
+     "key": "copy-at-most.stops-at-limit",
+     "text": "CopyAtMost_StopsAtTheDeclaredBytes expects CopyAtMost to return false and write 100_000 bytes while the endless stream serves fewer than 300_000.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(endless.Served).IsLessThan(300_000)"
+     ]
+    },
+    {
+     "key": "copy-at-most.exact-length-complete",
+     "text": "CopyAtMost_StopsAtTheDeclaredBytes expects a stream of exactly 500 bytes with a limit of 500 to return true and copy 500 bytes.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "new MemoryStream(new byte[500])"
+     ]
+    },
+    {
+     "key": "is-hidden-entry.dotfile-hidden",
+     "text": "IsHiddenEntry_TreatsDotFilesAsHiddenOnEveryPlatform expects .DS_Store to be hidden and a.bin not hidden under FileAttributes.Normal.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(DossierStore.IsHiddenEntry(\".DS_Store\", FileAttributes.Normal)).IsTrue()"
+     ]
+    },
+    {
+     "key": "is-hidden-entry.attributes-hidden",
+     "text": "IsHiddenEntry_TreatsDotFilesAsHiddenOnEveryPlatform expects both the Hidden and the System file attribute to mark an entry hidden.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(DossierStore.IsHiddenEntry(\"x\", FileAttributes.System)).IsTrue()"
+     ]
+    },
+    {
+     "key": "hidden-file-under-assets.skipped-and-reported",
+     "text": "Import_HiddenFileUnderAssetsIsSkippedAndReported adds assets/.DS_Store after publish and expects 1 blob and a hidden_file_ignored skip reason ending in .DS_Store.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "hidden_file_ignored"
+     ]
+    },
+    {
+     "key": "non-hidden-unlisted.still-fails",
+     "text": "Import_NonHiddenUnlistedFileStillFails adds assets/stray.png and expects code import_unlisted_file to be raised.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(exception.Code).IsEqualTo(\"import_unlisted_file\")"
+     ]
+    },
+    {
+     "key": "open-regular-file.missing-code",
+     "text": "OpenRegularFile_MapsErrnoToAccurateCodes expects a missing path to raise the code import_file_missing.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(missing.Code).IsEqualTo(\"import_file_missing\")"
+     ]
+    },
+    {
+     "key": "open-regular-file.symlink-code",
+     "text": "OpenRegularFile_MapsErrnoToAccurateCodes expects a symbolic link to a regular file to raise import_unsafe_path.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(loop.Code).IsEqualTo(\"import_unsafe_path\")"
+     ]
+    },
+    {
+     "key": "open-regular-file.length-one",
+     "text": "OpenRegularFile_MapsErrnoToAccurateCodes expects opening a real file holding one byte to report a Length of 1.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(ok.Length).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "open-regular-file.unreadable-code",
+     "text": "OpenRegularFile_MapsErrnoToAccurateCodes expects a file with mode None to raise import_unreadable_file when the user is not root.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "Assert.That(denied.Code).IsEqualTo(\"import_unreadable_file\")"
+     ]
+    },
+    {
+     "key": "large-embedded-asset.warm-import-first",
+     "text": "Import_LargeEmbeddedAssetStaysWithinAllocationBudget runs one import into a discarded TempDb before measuring bytes allocated on the current thread.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "var before = GC.GetAllocatedBytesForCurrentThread();"
+     ]
+    },
+    {
+     "key": "large-embedded-asset.no-skips-one-blob",
+     "text": "Import_LargeEmbeddedAssetStaysWithinAllocationBudget asserts the joined skip reasons are empty and result.Blobs is 1.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "result.Skipped.Select(x => x.Reason))).IsEqualTo(string.Empty)"
+     ]
+    },
+    {
+     "key": "read-at-most.second-limit-1000",
+     "text": "ReadAtMost_StopsOnAnEndlessStream repeats the check with a limit of 1000 and still expects null and fewer than 8192 bytes served.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound2Tests.cs",
+      "DossierStore.ReadAtMost(more, 1000)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/JsonlRound3Tests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "JsonlRound3Tests.cs"
+   ],
+   "facts": [
+    {
+     "key": "asset-copy-limit.zero-length-handle",
+     "text": "AssetCopyLimit_NeverExceedsWhatTheHandleHolds expects a handle of length 0 to yield a copy limit of 0 when the declared size is 1_000_000_000_000.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "DossierStore.AssetCopyLimit(1_000_000_000_000, 0)"
+     ]
+    },
+    {
+     "key": "asset-copy-limit.takes-smaller",
+     "text": "AssetCopyLimit_NeverExceedsWhatTheHandleHolds expects AssetCopyLimit(10, 100) to be 10 and AssetCopyLimit(100, 10) to be 10.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "DossierStore.AssetCopyLimit(10, 100)"
+     ]
+    },
+    {
+     "key": "asset-copy-limit.negative-declared",
+     "text": "AssetCopyLimit_NeverExceedsWhatTheHandleHolds expects a declared size of -1 with a handle length of 5 to yield 5.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "DossierStore.AssetCopyLimit(-1, 5)"
+     ]
+    },
+    {
+     "key": "copy-at-most-zero-length-handle.nothing-copied",
+     "text": "CopyAtMost_WithAssetCopyLimitStopsOnZeroLengthEndlessHandle expects nothing copied, the handle serving less than 1L << 20, and CopyAtMost to report false.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "Assert.That(input.Served).IsLessThan(1L << 20)"
+     ]
+    },
+    {
+     "key": "empty-declared-huge.rewrites-bytes",
+     "text": "Import_AssetFileEmptyButDeclaredHugeIsSkippedPromptlyWithoutTempFile empties the single asset file and rewrites its bytes value to 1000000000000.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "\\\"bytes\\\":1000000000000"
+     ]
+    },
+    {
+     "key": "empty-declared-huge.timeout-guard",
+     "text": "Import_AssetFileEmptyButDeclaredHugeIsSkippedPromptlyWithoutTempFile throws TimeoutException when the import does not return within 10 seconds.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "throw new TimeoutException(\"import did not return promptly\")"
+     ]
+    },
+    {
+     "key": "empty-declared-huge.no-blobs-written",
+     "text": "Import_AssetFileEmptyButDeclaredHugeIsSkippedPromptlyWithoutTempFile expects 0 blobs, at least 1 skipped entry and no files left under the blobs directory.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "Assert.That(task.Result.Blobs).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "unix-open-flags.macos-row",
+     "text": "UnixOpenFlags_ExplicitTableRows expects macos with Arm64 or X64 to resolve to 0x1000104.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"macos\", Architecture.Arm64, 0x1000104)]"
+     ]
+    },
+    {
+     "key": "unix-open-flags.freebsd-row",
+     "text": "UnixOpenFlags_ExplicitTableRows expects freebsd with X64 or Arm64 to resolve to 0x100104.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"freebsd\", Architecture.X64, 0x100104)]"
+     ]
+    },
+    {
+     "key": "unix-open-flags.linux-x64-row",
+     "text": "UnixOpenFlags_ExplicitTableRows expects linux with X64 to resolve to 0x80000 | 0x20000 | 0x800.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"linux\", Architecture.X64, 0x80000 | 0x20000 | 0x800)]"
+     ]
+    },
+    {
+     "key": "unix-open-flags.linux-arm64-row",
+     "text": "UnixOpenFlags_ExplicitTableRows expects linux with Arm64 to resolve to 0x80000 | 0x8000 | 0x800.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"linux\", Architecture.Arm64, 0x80000 | 0x8000 | 0x800)]"
+     ]
+    },
+    {
+     "key": "unix-open-flags.unknown-fails-closed",
+     "text": "UnixOpenFlags_UnknownPlatformFailsClosed expects ios, illumos, other and an empty os string all to raise import_unsupported_platform.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "Assert.That(exception.Code).IsEqualTo(\"import_unsupported_platform\")"
+     ]
+    },
+    {
+     "key": "unix-open-flags.unknown-architectures",
+     "text": "UnixOpenFlags_UnknownPlatformFailsClosed counts linux with Architecture.Wasm and with Ppc64le + 99 as unsupported.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"linux\", Architecture.Ppc64le + 99)]"
+     ]
+    },
+    {
+     "key": "unix-open-flags.current-host",
+     "text": "UnixOpenFlags_CurrentHostResolvesToItsRow requires a nonzero intersection of the flags with 0x4 or 0x800 and, on macOS, flags equal to 0x1000104.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "Assert.That(flags & 0x4 | flags & 0x800).IsNotEqualTo(0)"
+     ]
+    },
+    {
+     "key": "manifest-symlink.huge-target-refused",
+     "text": "Import_ManifestSymlinkToHugeFileIsRefusedRegardlessOfSize symlinks manifest.json to a 65 times 1024 times 1024 byte file and expects import_unsafe_path.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "Assert.That(exception.Code).IsEqualTo(\"import_unsafe_path\")"
+     ]
+    },
+    {
+     "key": "manifest-symlink.jsonl-and-md",
+     "text": "Import_ManifestSymlinkToHugeFileIsRefusedRegardlessOfSize runs the same refusal check once for the jsonl format and once for md.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "[Arguments(\"md\")]"
+     ]
+    },
+    {
+     "key": "endless-zero-length.guard-message",
+     "text": "JsonlRound3Tests.EndlessZeroLengthStream throws InvalidOperationException past 1 GiB with a message saying the copy limit ignored the handle length.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "read past 1 GiB: the copy limit ignored the handle length"
+     ]
+    },
+    {
+     "key": "unix-open-flags.current-host-os-choice",
+     "text": "UnixOpenFlags_CurrentHostResolvesToItsRow picks macos, freebsd or linux from OperatingSystem before resolving flags for the process architecture.",
+     "at": [
+      "tests/Dossier.Tests/JsonlRound3Tests.cs",
+      "var os = OperatingSystem.IsMacOS() ? \"macos\""
+     ]
+    }
+   ]
+  }
+ ]
+}

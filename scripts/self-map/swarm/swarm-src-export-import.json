@@ -1,0 +1,696 @@
+{
+ "agent": "swarm-src-export-import",
+ "slice": "src-export-import",
+ "subjects": [
+  {
+   "name": "JsonlExport.cs::PublishJsonl",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlExport.cs",
+   "facts": [
+    {
+     "key": "data-file-name-regex",
+     "text": "A JSONL data file name must match dossier-NNNN.jsonl with at least four digits, per the JsonlDataFileRegex pattern.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "dossier-[0-9]{4,}"
+     ]
+    },
+    {
+     "key": "asset-path-regex",
+     "text": "An asset path written into a bundle must be assets/ plus 64 lowercase hex characters and an optional extension.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "assets/[0-9a-f]{64}"
+     ]
+    },
+    {
+     "key": "separator-escape",
+     "text": "Every JSONL line escapes U+2028, U+2029 and U+0085 because those characters split lines in several readers.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "split lines in several readers"
+     ]
+    },
+    {
+     "key": "newline-no-bom",
+     "text": "Each line is encoded as UTF-8 without a BOM and ends with one appended newline byte.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "bytes[^1] = (byte)"
+     ]
+    },
+    {
+     "key": "stricter-limit",
+     "text": "StricterLimit keeps the smaller of the flag and profile values, and uses the non-zero one when the other is zero.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "StricterLimit(long flag, long profile)"
+     ]
+    },
+    {
+     "key": "fail-suffix",
+     "text": "Every limit error message is built through Fail, which appends the words nothing was written.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "message + \"; nothing was written\""
+     ]
+    },
+    {
+     "key": "memory-ceiling-default",
+     "text": "Without a MemoryCeilingBytes setting, the in-memory ceiling falls back to Array.MaxLength.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "options.MemoryCeilingBytes > 0 ? Math.Min(options.MemoryCeilingBytes, Array.MaxLength)"
+     ]
+    },
+    {
+     "key": "subject-parent-in-bundle",
+     "text": "A subject record carries parent only when the parent subject is itself part of the same bundle.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "subject.ParentId is not null && inBundle.Contains(subject.ParentId)"
+     ]
+    },
+    {
+     "key": "subject-pin-object",
+     "text": "A subject pin is written only when it is an object whose repo and rev members are both strings.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "subject.Pin is { ValueKind: JsonValueKind.Object }"
+     ]
+    },
+    {
+     "key": "assets-none",
+     "text": "With the assets mode set to none, publish writes no asset records and no asset files.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "if (mode == \"none\")"
+     ]
+    },
+    {
+     "key": "asset-dedupe",
+     "text": "Attachments are deduplicated by sha256, so a blob shared by two facts is emitted only once.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "if (!seenAssets.Add(attachment.Sha256))"
+     ]
+    },
+    {
+     "key": "missing-blob",
+     "text": "A blob absent from the store produces a warning and an asset record marked missing, and publish continues.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "warning: missing blob"
+     ]
+    },
+    {
+     "key": "embed-too-large",
+     "text": "Embedding an asset larger than MaxEmbedAssetBytes raises asset_too_large_to_embed.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "if (length > MaxEmbedAssetBytes)"
+     ]
+    },
+    {
+     "key": "profile-jsonl-extension",
+     "text": "Profile extension checking always includes jsonl, then adds each asset file's extension.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "new SortedSet<string>(StringComparer.Ordinal) { \"jsonl\" }"
+     ]
+    },
+    {
+     "key": "profile-extension-error",
+     "text": "A profile that forbids an extension the bundle needs raises profile_extension_not_allowed.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "\"profile_extension_not_allowed\""
+     ]
+    },
+    {
+     "key": "greedy-packing",
+     "text": "Data files are packed greedily in record order, and a record is never split across files.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "Greedy packing in record order"
+     ]
+    },
+    {
+     "key": "record-exceeds",
+     "text": "A single record larger than the file limit raises record_exceeds_max_file_bytes instead of being split.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "\"record_exceeds_max_file_bytes\""
+     ]
+    },
+    {
+     "key": "max-files",
+     "text": "max_files_exceeded fires when data files plus asset files exceed the limit, with manifest.json not counted.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "manifest.json is not counted"
+     ]
+    },
+    {
+     "key": "max-total",
+     "text": "max_total_bytes_exceeded compares the total bytes of data and asset files against the limit.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "more than the {maxTotalBytes}-byte limit"
+     ]
+    },
+    {
+     "key": "base64-size",
+     "text": "An embedded asset line is refused when its base64 length plus one newline byte exceeds the file limit.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "base64Length + 1 > maxFileBytes"
+     ]
+    },
+    {
+     "key": "data-file-memory",
+     "text": "A data file whose packed bytes exceed the in-memory ceiling raises bundle_too_large_for_memory.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "\"bundle_too_large_for_memory\""
+     ]
+    },
+    {
+     "key": "data-file-naming",
+     "text": "Each data file is named dossier-NNNN.jsonl from a D4 padded counter rendered in the invariant culture.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "ToString(\"D4\", CultureInfo.InvariantCulture)"
+     ]
+    },
+    {
+     "key": "bundle-hash",
+     "text": "The bundle hash hashes each file name and its sha256, then each asset path and its sha256, in sorted order.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "var hashInput = new StringBuilder();"
+     ]
+    },
+    {
+     "key": "file-stats",
+     "text": "Each file_stats entry records bytes, lines and sha256 for one emitted data file.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "[\"lines\"] = stat.Lines"
+     ]
+    },
+    {
+     "key": "manifest-files",
+     "text": "The manifest files list holds the data files, the asset paths and manifest.json, sorted ordinally.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "stats.Keys.Concat(assetFilePaths).Append(BundleManifest)"
+     ]
+    },
+    {
+     "key": "manifest-newlines",
+     "text": "The manifest is indented and written with newline separators rather than the platform default.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "NewLine = \"\\n\""
+     ]
+    },
+    {
+     "key": "asset-file-too-big",
+     "text": "An asset file whose size exceeds the file limit also raises record_exceeds_max_file_bytes.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "if (maxFileBytes > 0 && file.Bytes > maxFileBytes)"
+     ]
+    },
+    {
+     "key": "export-live-facts",
+     "text": "PublishJsonl exports subjects and live facts only; superseded, retracted and dossier-kind facts are left out.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "facts are not exported"
+     ]
+    },
+    {
+     "key": "previous-manifest",
+     "text": "The previous manifest's file list is passed to WriteBundle, which removes the files it names.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "previous?.Files ?? new List<string>()"
+     ]
+    },
+    {
+     "key": "subject-aliases",
+     "text": "A subject record always writes an aliases array, even when the subject carries no aliases.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "WriteStartArray(\"aliases\")"
+     ]
+    },
+    {
+     "key": "asset-line-base64",
+     "text": "An embedded asset record carries a data field and an encoding field set to base64.",
+     "at": [
+      "src/Dossier/JsonlExport.cs",
+      "w.WriteString(\"encoding\", \"base64\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Import",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "invalid-from",
+     "text": "Import rejects a blank From directory with invalid_from before it opens any store connection.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"invalid_from\""
+     ]
+    },
+    {
+     "key": "bundle-not-found",
+     "text": "A From path that is not an existing directory raises bundle_not_found.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"bundle_not_found\""
+     ]
+    },
+    {
+     "key": "unsupported-format",
+     "text": "A manifest format other than markdown or JsonlFormatId raises unsupported_bundle_format.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"unsupported_bundle_format\""
+     ]
+    },
+    {
+     "key": "fact-file-enumeration",
+     "text": "The markdown reader enumerates every .md file below the bundle root and keeps those matching FactPathRegex.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "Directory.EnumerateFiles(root, \"*.md\", SearchOption.AllDirectories)"
+     ]
+    },
+    {
+     "key": "no-facts-error",
+     "text": "A markdown bundle with no fact files raises bundle_has_no_facts, whose message names the --facts detail requirement.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"bundle_has_no_facts\""
+     ]
+    },
+    {
+     "key": "skipped-records",
+     "text": "A markdown fact file whose machine record cannot be parsed is skipped and recorded, not fatal.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "result.Skipped.Add(new ImportSkip(path, error!));"
+     ]
+    },
+    {
+     "key": "duplicate-id",
+     "text": "Two fact files claiming the same fact id raise import_duplicate_id, naming both paths.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"import_duplicate_id\""
+     ]
+    },
+    {
+     "key": "no-records",
+     "text": "When no fact file yields a readable machine record, import raises bundle_has_no_records.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"bundle_has_no_records\""
+     ]
+    },
+    {
+     "key": "parsed-records-order",
+     "text": "Markdown fact files are ordered ordinally by their bundle-relative path before parsing.",
+     "at": [
+      "src/Dossier/Import.cs",
+      ".OrderBy(p => p, StringComparer.Ordinal)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Import.cs::CommitImport",
+   "kind": "method",
+   "parent": "src/Dossier/Import.cs",
+   "facts": [
+    {
+     "key": "slot-conflict",
+     "text": "Two live facts claiming the same subject, kind and key raise import_slot_conflict before any row is inserted.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"import_slot_conflict\""
+     ]
+    },
+    {
+     "key": "live-slot-records",
+     "text": "Only records that carry a key and whose status is neither superseded nor retracted take part in the slot check.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "r.Status is not (\"superseded\" or \"retracted\")"
+     ]
+    },
+    {
+     "key": "subject-exists",
+     "text": "A subject id already present in the store raises import_subject_exists, whose message asks for an empty database.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"import_subject_exists\""
+     ]
+    },
+    {
+     "key": "fact-exists",
+     "text": "A fact id already present in the store raises import_fact_exists.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "\"import_fact_exists\""
+     ]
+    },
+    {
+     "key": "fact-insert-order",
+     "text": "Facts are inserted ordered by posted_at, then by bundle order, then by path.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "records.OrderBy(r => PostedAt(r) ?? createdAt, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "content-hash-recomputed",
+     "text": "The content hash is recomputed on import from text, data and the ref inputs instead of being read from the bundle.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "ContentHash.Compute(record.Text, record.Data, refInputs)"
+     ]
+    },
+    {
+     "key": "fts-tags",
+     "text": "The facts_fts row joins the fact tags with single spaces for its tags column.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "string.Join(' ', record.Tags)"
+     ]
+    },
+    {
+     "key": "point-slot",
+     "text": "The live slot is pointed at the fact only for keyed records that are neither superseded nor retracted.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "PointSlotAt(connection, transaction, record.SubjectId"
+     ]
+    },
+    {
+     "key": "refs-seq",
+     "text": "Refs are inserted with a seq counter that starts at zero and follows record order.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "for (var seq = 0; seq < record.Refs.Count; seq++)"
+     ]
+    },
+    {
+     "key": "attachment-replace",
+     "text": "Attachment rows are written with INSERT OR REPLACE, keyed on fact id and sha256.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "INSERT OR REPLACE INTO attachments"
+     ]
+    },
+    {
+     "key": "distinct-blobs",
+     "text": "Blobs are counted once per distinct sha256, even when several attachments share the same bytes.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "if (blobs.Add(attachment.Sha256))"
+     ]
+    },
+    {
+     "key": "prune-changes",
+     "text": "PruneChanges runs inside the import transaction immediately before the commit.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "PruneChanges(connection, transaction);"
+     ]
+    },
+    {
+     "key": "single-transaction",
+     "text": "Subject, fact, ref and attachment rows all commit in one transaction, so a failure leaves the store untouched.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "using var transaction = connection.BeginTransaction();"
+     ]
+    },
+    {
+     "key": "items-column",
+     "text": "Items are round-tripped through ItemInput so a republish prints them identically.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "JsonCodec.Deserialize<List<ItemInput>>(items.GetRawText())"
+     ]
+    },
+    {
+     "key": "posted-at",
+     "text": "PostedAt returns the provenance posted_at string, or null when provenance is not an object.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "private static string? PostedAt(ImportRecord record)"
+     ]
+    },
+    {
+     "key": "skipped-attachment",
+     "text": "An attachment whose blob cannot be restored is recorded as a skip naming the attachment sha256 and the reason.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "new ImportSkip(record.Path, $\"attachment"
+     ]
+    },
+    {
+     "key": "subject-insert-order",
+     "text": "Subjects are inserted in ordinal order of their id, inside the same transaction that inserts the facts.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "subjects.Values.OrderBy(s => s.Id, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "ref-valid-null",
+     "text": "A ref whose valid field is missing is stored as null, while true and false become one and zero.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "reference.Valid is { } valid ? (valid ? 1 : 0) : null"
+     ]
+    },
+    {
+     "key": "attachment-count",
+     "text": "ImportResult counts one attachment per row written, while blobs counts only distinct sha256 values.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "result.Attachments++;"
+     ]
+    },
+    {
+     "key": "slot-check-before-connect",
+     "text": "The slot check walks every record before the connection is opened, so a conflict touches no database.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "var slots = new Dictionary<(string Subject, string Kind, string Key), ImportRecord>();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Import.cs::RestoreBlob",
+   "kind": "method",
+   "parent": "src/Dossier/Import.cs",
+   "facts": [
+    {
+     "key": "sha-format",
+     "text": "RestoreBlob refuses a sha256 that is not 64 lowercase hex characters and returns a skip reason instead.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "sha256 is not 64 lowercase hex characters"
+     ]
+    },
+    {
+     "key": "asset-source",
+     "text": "The blob source path is the record's subject directory plus assets/ and the attachment's asset file name.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "record.SubjectDir + \"/assets/\" + AssetFileName(attachment)"
+     ]
+    },
+    {
+     "key": "missing-bytes",
+     "text": "When the bytes are absent, the store keeps the attachment row without its blob and reports a skip.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "the store keeps the attachment row without its blob"
+     ]
+    },
+    {
+     "key": "hash-mismatch",
+     "text": "Bytes that do not hash to the recorded sha256 are not restored and are reported as a skip.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "Equals(attachment.Sha256, StringComparison.OrdinalIgnoreCase)"
+     ]
+    },
+    {
+     "key": "existing-blob",
+     "text": "An existing blob file under BlobRoot is left untouched rather than rewritten.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "if (!File.Exists(target))"
+     ]
+    },
+    {
+     "key": "create-blob-dir",
+     "text": "The blob directory is created only when a blob is about to be written.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "Directory.CreateDirectory(BlobRoot);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Import.cs::ReadImportSubjects",
+   "kind": "method",
+   "parent": "src/Dossier/Import.cs",
+   "facts": [
+    {
+     "key": "defaults",
+     "text": "A manifest subject entry defaults its name to the map key and its kind to subject when they are omitted.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "Text(\"kind\") ?? \"subject\""
+     ]
+    },
+    {
+     "key": "fallback-subject",
+     "text": "A subject known only from a fact record gets kind subject, no parent, no aliases and no pin.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "record.SubjectName, \"subject\", null"
+     ]
+    },
+    {
+     "key": "unreadable-manifest",
+     "text": "A manifest that cannot be parsed as JSON is ignored; only the subjects the fact records name are then used.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "An unreadable manifest only costs the subject metadata"
+     ]
+    },
+    {
+     "key": "pin-object",
+     "text": "A manifest pin is kept only when it is a JSON object, and it is stored as canonical JSON.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "p.ValueKind == JsonValueKind.Object"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Import.cs::ParseImportRecord",
+   "kind": "method",
+   "parent": "src/Dossier/Import.cs",
+   "facts": [
+    {
+     "key": "heading",
+     "text": "ParseImportRecord searches for the last Machine record heading before splitting the remainder into lines.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "+ MachineRecordHeading +"
+     ]
+    },
+    {
+     "key": "no-section",
+     "text": "A file with no Machine record section is skipped with a message saying the bundle predates machine records.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "the bundle predates machine records"
+     ]
+    },
+    {
+     "key": "empty-section",
+     "text": "A machine record section that holds no lines is skipped with the message machine record section is empty.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record section is empty"
+     ]
+    },
+    {
+     "key": "no-fence",
+     "text": "A machine record section whose first line is not a json code fence is skipped.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record has no json code fence"
+     ]
+    },
+    {
+     "key": "unclosed-fence",
+     "text": "A json fence that is never closed ends the record with the message machine record code fence is not closed.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record code fence is not closed"
+     ]
+    },
+    {
+     "key": "not-object",
+     "text": "A machine record whose JSON root is not an object is skipped.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record is not a json object"
+     ]
+    },
+    {
+     "key": "invalid-json",
+     "text": "Invalid JSON in a machine record is skipped, and the parser message is appended to the skip reason.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record is not valid json: "
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Import.cs::ParseImportRecordElement",
+   "kind": "method",
+   "parent": "src/Dossier/Import.cs",
+   "facts": [
+    {
+     "key": "required-fields",
+     "text": "A record missing id, subject_id, kind, status or a string text is skipped with that reason.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "machine record lacks id, subject_id, kind, status or text"
+     ]
+    },
+    {
+     "key": "confidence-default",
+     "text": "A confidence that is missing or not a number defaults to 1.0.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "Confidence = e.TryGetProperty(\"confidence\""
+     ]
+    },
+    {
+     "key": "provenance-default",
+     "text": "A record with no provenance field gets an empty JSON object instead.",
+     "at": [
+      "src/Dossier/Import.cs",
+      "JsonDocument.Parse(\"{}\")"
+     ]
+    }
+   ]
+  }
+ ]
+}

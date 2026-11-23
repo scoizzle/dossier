@@ -1,0 +1,562 @@
+{
+ "agent": "swarm-tests-publish-2",
+ "slice": "tests-publish-2",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "PublishTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "test.publish-indexisdeterministic-two-stores",
+     "text": "Test Publish_IndexIsDeterministic seeds the same 12 by 12 tree into two databases, publishes both at IndexMaxTokens 800, and asserts matching index file names with identical content.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "SeedTree(one, 12, 12);"
+     ]
+    },
+    {
+     "key": "test.publish-indexisdeterministic-republish",
+     "text": "Test Publish_IndexIsDeterministic publishes twice into the same store before comparing, so a repeated publish must leave the index files unchanged.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "one.Store.Publish(Options(one, o => o.IndexMaxTokens = 800));"
+     ]
+    },
+    {
+     "key": "test.publish-indexlinksresolve-root-subject",
+     "text": "Test Publish_IndexLinksResolveAndReachEverySubject posts a root subject named Top Level and publishes with IndexMaxTokens 700 before checking links.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "db.Store.PostFacts(Fixtures.Post(\"Top Level\", Fixtures.Fact(\"Lives at the root.\")));"
+     ]
+    },
+    {
+     "key": "test.publish-indexlinksresolve-every-link-exists",
+     "text": "Test Publish_IndexLinksResolveAndReachEverySubject asserts every non-http link ending in .md inside each index file resolves to a file that the bundle contains.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files.ContainsKey(Resolve(path, target))).IsTrue();"
+     ]
+    },
+    {
+     "key": "test.publish-indexshowsgroups-tiers",
+     "text": "Test Publish_IndexShowsGroupsWhenTooLarge posts four groups of ten leaves and asserts index/big.md holds a group row and links to big-g0.md rather than to subject directories.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(big).Contains(\"| g0/ | group |\");"
+     ]
+    },
+    {
+     "key": "test.publish-indexshowsgroups-manifest",
+     "text": "Test Publish_IndexShowsGroupsWhenTooLarge asserts the manifest index_files value for index/big.md equals EstimateTokens of that file's content.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(manifest.GetProperty(\"index/big.md\").GetInt32()).IsEqualTo(DossierStore.EstimateTokens(big));"
+     ]
+    },
+    {
+     "key": "test.publish-indexshowsgroups-subject-drilldown",
+     "text": "Test Publish_IndexShowsGroupsWhenTooLarge asserts the group page big-g0.md links down to a subject index and back up with Up: to big.md.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files[\"index/big-g0.md\"]).Contains(\"Up: [index/big.md](big.md)\");"
+     ]
+    },
+    {
+     "key": "test.publish-agentsmddescribestieredindex",
+     "text": "Test Publish_AgentsMdDescribesTieredIndex asserts the written AGENTS.md repeats while the row is a group and states that a row being a folder is normal.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(agents).Contains(\"index/<group>.md (repeat while the row is a group)\");"
+     ]
+    },
+    {
+     "key": "test.publish-smallbundlehasrootindex",
+     "text": "Test Publish_SmallBundleHasOnlyRootIndex asserts a default publish of the seeded tree writes exactly 1 index file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(IndexFiles(ReadAll(Out(db))).Count).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "test.publish-eachfactlivesundersubject",
+     "text": "Test Publish_EachFactLivesUnderItsSubject posts three facts to Trio and asserts all 3 fact paths start with subjects/trio/facts/ while no top-level facts directory exists.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(path).StartsWith(\"subjects/trio/facts/\");"
+     ]
+    },
+    {
+     "key": "test.publish-factreflinksresolve-same-and-cross",
+     "text": "Test Publish_FactRefLinksResolve asserts an in-subject ref links by bare file name while a cross-subject ref climbs ../../beta-subject/facts/ to reach the far fact file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "- target: [{farKey}](../../beta-subject/facts/{FileName(farPath)})"
+     ]
+    },
+    {
+     "key": "test.publish-factreflinksresolve-backlink",
+     "text": "Test Publish_FactRefLinksResolve asserts the far fact file links back to the pointer fact annotated with note and rel: depends_on.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "(note, rel: depends_on)"
+     ]
+    },
+    {
+     "key": "test.publish-slotrefresolveslivetarget",
+     "text": "Test Publish_SlotRefResolvesToLiveFact asserts a Config#theme slot ref renders a link to the fact occupying that slot, and that occupant notes rel: reads.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(TargetLine(files[readerPath], \"Config#theme\")).Contains($\"[{darkKey}](../../config/facts/{FileName(darkPath)})\");"
+     ]
+    },
+    {
+     "key": "test.publish-slotrefresolves-after-supersede",
+     "text": "Test Publish_SlotRefResolvesToLiveFact replaces the slot occupant, republishes, and asserts the reader link points at the new head while the old fact file is gone.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files.ContainsKey(darkPath)).IsFalse();"
+     ]
+    },
+    {
+     "key": "test.publish-subjectreflinks-index",
+     "text": "Test Publish_SubjectRefLinksToSubjectIndex asserts subject refs given by id and by lower-case name both render links ending in ../../team-atlas/index.md and ../../team-atlas-docs/index.md.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(TargetLine(fact, \"Team Atlas](\")).Contains(\"[Team Atlas](../../team-atlas/index.md)\");"
+     ]
+    },
+    {
+     "key": "test.publish-subjectreflinks-parent",
+     "text": "Test Publish_SubjectRefLinksToSubjectIndex asserts the child subject index names its parent on a Parent line linking to ../team-atlas/index.md.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "- Parent: [Team Atlas](../team-atlas/index.md)"
+     ]
+    },
+    {
+     "key": "test.publish-unresolvedslot-stays-text",
+     "text": "Test Publish_UnresolvedSlotStaysText asserts each unresolvable slot target renders as unresolved slot text with the target quoted and no link markup.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(line).Contains(\"unresolved slot\");"
+     ]
+    },
+    {
+     "key": "test.publish-indexlinksresolve-subject-count",
+     "text": "Test Publish_IndexLinksResolveAndReachEverySubject asserts the subject index count equals 15 times 15 plus 1 and that following only group rows from INDEX.md reaches exactly those files.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(subjectFiles.Count).IsEqualTo(15 * 15 + 1);"
+     ]
+    },
+    {
+     "key": "test.publish-externalrefs-http-only",
+     "text": "Test Publish_ExternalRefsStayTextExceptHttpLinks asserts only the http ref becomes a link, using an angle-bracketed destination, while the file and git refs stay plain target lines.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(TargetLine(fact, \"example.com\")).Contains(\"(<https://example.com/spec?a=1&b=(2)>)\");"
+     ]
+    },
+    {
+     "key": "test.publish-everyinternallink-fact-count",
+     "text": "Test Publish_EveryInternalLinkResolves asserts for both budgets that the number of fact files equals factIds.Count plus 1.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files.Keys.Count(IsFactFile)).IsEqualTo(factIds.Count + 1);"
+     ]
+    },
+    {
+     "key": "test.publish-everyinternallink-link-families",
+     "text": "Test Publish_EveryInternalLinkResolves runs the publish at budgets 1200 and 60 and asserts the fact files contain slot links, an unresolved slot, index.md links and asset links.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "foreach (var budget in new[] { 1200, 60 })"
+     ]
+    },
+    {
+     "key": "test.publish-everyinternallink-corpus",
+     "text": "Test Publish_EveryInternalLinkResolves builds a Pkg root with 6 module subjects, each holding 4 class subjects that carry fact, slot, subject, unresolved, http and file refs.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var module = db.Store.PostFacts(new PostFactsRequest"
+     ]
+    },
+    {
+     "key": "test.publish-subjectdirremoved",
+     "text": "Test Publish_SubjectDirectoryIsRemovedWhenSubjectIsGone retracts every doomed fact and asserts the subjects/doomed directory is gone, its index.md is in Removed, and a foreign notes.txt survives.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(result.Removed.Contains(\"subjects/doomed/index.md\")).IsTrue();"
+     ]
+    },
+    {
+     "key": "test.publish-subjectdirremoved-index-clean",
+     "text": "Test Publish_SubjectDirectoryIsRemovedWhenSubjectIsGone asserts the republished INDEX.md no longer contains the word Doomed.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files[\"INDEX.md\"]).DoesNotContain(\"Doomed\");"
+     ]
+    },
+    {
+     "key": "test.publish-emitsmachinerecord-data",
+     "text": "Test Publish_EmitsMachineRecord asserts the record data is canonicalized so the posted keys come out sorted with a 1.50 value preserved.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(CanonicalJson.Write(record.GetProperty(\"data\"))).IsEqualTo(\"{\\\"a\\\":1.50,\\\"b\\\":2}\");"
+     ]
+    },
+    {
+     "key": "test.publish-emitsmachinerecord-ref-fields",
+     "text": "Test Publish_EmitsMachineRecord asserts the single ref keeps target, rel supports, kind fact, basis observed, confidence 0.7 and rev r1 but omits etag.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(reference.TryGetProperty(\"etag\", out _)).IsFalse();"
+     ]
+    },
+    {
+     "key": "test.publish-emitsmachinerecord-actor",
+     "text": "Test Publish_EmitsMachineRecord asserts the record provenance actor is dossier-cli and that the prose keeps the bundle key instead of the store id.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(record.GetProperty(\"provenance\").GetProperty(\"actor\").GetString()).IsEqualTo(\"dossier-cli\");"
+     ]
+    },
+    {
+     "key": "test.publish-emitsmachinerecord-tags",
+     "text": "Test Publish_EmitsMachineRecord asserts a fact posted without data has no data property in the record and carries its tag x.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(plainRecord.TryGetProperty(\"data\", out _)).IsFalse();"
+     ]
+    },
+    {
+     "key": "test.publish-profilereportflags-maxfiles",
+     "text": "Test Publish_ProfileReportFlagsViolations publishes 1200 modules against profiles/copilot-studio.json and asserts the max_files row fails with an allowed value of 500.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files.Allowed).IsEqualTo(\"500\");"
+     ]
+    },
+    {
+     "key": "test.publish-profilereportflags-render",
+     "text": "Test Publish_ProfileReportFlagsViolations asserts the rendered report contains FAIL and md (markdown) and that the normal bundle is written without any shards path.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(text).Contains(\"md (markdown)\");"
+     ]
+    },
+    {
+     "key": "test.publish-respectlimitsshards-count",
+     "text": "Test Publish_RespectLimitsShardsUnderFileCap asserts at most 50 shard files exist and every shard text is at least 4096 bytes.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(shards.Count).IsLessThanOrEqualTo(50);"
+     ]
+    },
+    {
+     "key": "test.publish-respectlimitsshards-subjects",
+     "text": "Test Publish_RespectLimitsShardsUnderFileCap asserts the manifest shard entries sum to 1200 subjects and that no subjects/ path is written.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(inShards).IsEqualTo(1200);"
+     ]
+    },
+    {
+     "key": "test.publish-shardlinksuseanchors-rows",
+     "text": "Test Publish_ShardLinksUseAnchors asserts every shard link row matches shards/N.md#anchor form and that the named anchor element exists inside that shard file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(files[shard]).Contains(\"<a id=\\\"\" + match.Groups[3].Value + \"\\\"></a>\");"
+     ]
+    },
+    {
+     "key": "test.publish-shardlinksuseanchors-counts",
+     "text": "Test Publish_ShardLinksUseAnchors asserts the index files hold 150 shard rows with 150 distinct anchors.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(rows).IsEqualTo(150);"
+     ]
+    },
+    {
+     "key": "test.publish-shardlinksuseanchors-internal",
+     "text": "Test Publish_ShardLinksUseAnchors asserts links inside a shard resolve to anchors that exist, treating an empty shard number as the current file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var target = link.Groups[1].Value.Length == 0 ? path : \"shards/\" + link.Groups[1].Value + \".md\";"
+     ]
+    },
+    {
+     "key": "test.publish-shardmodeisdeterministic-rewrite",
+     "text": "Test Publish_ShardModeIsDeterministic asserts republishing into the same directory reports Written equal to 0.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(again.Written).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "test.publish-shardfailclosed",
+     "text": "Test Publish_ShardFailsClosedOnOversizedSubject asserts the error names django/contrib/app00/module0000 and max_file_bytes 64 and that no output directory is created.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(error.Message).Contains(\"max_file_bytes 64\");"
+     ]
+    },
+    {
+     "key": "test.publish-profilerejectsmalformed-unknown",
+     "text": "Test Publish_ProfileRejectsMalformedFile asserts a profile with an unknown key max_filez is rejected with that key named in the message.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(unknownError.Message).Contains(\"max_filez\");"
+     ]
+    },
+    {
+     "key": "test.publish-profilerejectsmalformed-json",
+     "text": "Test Publish_ProfileRejectsMalformedFile asserts a truncated profile reports not valid JSON and that no output directory exists afterwards.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(brokenError.Message).Contains(\"not valid JSON\");"
+     ]
+    },
+    {
+     "key": "test.publish-profilerejectsmalformed-types",
+     "text": "Test Publish_ProfileRejectsMalformedFile asserts a string max_files and a string allowed_extensions are each rejected with the offending key named.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(extensionError.Message).Contains(\"allowed_extensions\");"
+     ]
+    },
+    {
+     "key": "test.publish-genericprofile-markdown",
+     "text": "Test Publish_GenericProfileAcceptsMarkdown asserts profiles/generic-large.json reports allowed_extensions allowed of md and passes as a whole.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(extensions.Allowed).IsEqualTo(\"md\");"
+     ]
+    },
+    {
+     "key": "test.publish-respectlimitsrequiresprofile",
+     "text": "Test Publish_RespectLimitsRequiresProfile asserts RespectLimits with no profile throws an error naming --profile and writes no output directory.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(error.Message).Contains(\"--profile\");"
+     ]
+    },
+    {
+     "key": "test.publish-shardopenswithcontents-front-matter",
+     "text": "Test Publish_ShardOpensWithContentsAndStatesFactFilesAbsent asserts shards/1.md opens with shard: 1 and carries fact_files: absent in its front matter.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(front).Contains(\"fact_files: absent\");"
+     ]
+    },
+    {
+     "key": "test.publish-shardopenswithcontents-anchors",
+     "text": "Test Publish_ShardOpensWithContentsAndStatesFactFilesAbsent asserts every Contents anchor exists in the shard and that anchor count matches section count.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(sectionCount).IsEqualTo(anchors.Count);"
+     ]
+    },
+    {
+     "key": "test.publish-shardopenswithcontents-nofacts",
+     "text": "Test Publish_ShardOpensWithContentsAndStatesFactFilesAbsent asserts no /facts/ path survives in the shard, so citations stay plain keys.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(shard).DoesNotContain(\"/facts/\");"
+     ]
+    },
+    {
+     "key": "test.publish-defaultstocomplete",
+     "text": "Test Publish_DefaultsToComplete asserts a default publish of 200 facts writes all of them to the subject page with Facts shown: 200 facts and no Beyond the budget text.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(page).Contains(\"- Facts shown: 200 facts\");"
+     ]
+    },
+    {
+     "key": "test.publish-defaultstocomplete-manifest",
+     "text": "Test Publish_DefaultsToComplete asserts the manifest options budget_mode value is complete.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(manifest.GetProperty(\"budget_mode\").GetString()).IsEqualTo(\"complete\");"
+     ]
+    },
+    {
+     "key": "test.publish-strictmode",
+     "text": "Test Publish_StrictModeCutsToBudget asserts strict mode at budget 300 drops the full Facts shown line and adds Beyond the budget.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(page).Contains(\"Beyond the budget\");"
+     ]
+    },
+    {
+     "key": "test.publish-indextokenestimate",
+     "text": "Test Publish_IndexTokenEstimateCoversCompletePage asserts the token estimate of the whole subject page exceeds 300 and equals the INDEX.md row cell at index 6.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(DossierStore.EstimateTokens(page)).IsGreaterThan(300);"
+     ]
+    },
+    {
+     "key": "test.publish-invalidbudgetmode",
+     "text": "Test Publish_InvalidBudgetModeRejected asserts BudgetMode nope throws DossierRequestException whose message contains strict.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(ex.Message).Contains(\"strict\");"
+     ]
+    },
+    {
+     "key": "test.publish-shardmodeisdeterministic-same",
+     "text": "Test Publish_ShardModeIsDeterministic publishes into two output directories and asserts the shard name lists match and every shard file is identical.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      ".SequenceEqual(shards)).IsTrue();"
+     ]
+    },
+    {
+     "key": "test.publish-everyinternallink-options",
+     "text": "Test Publish_EveryInternalLinkResolves publishes each pass with IndexMaxTokens 700 and a budget taken from the pair 1200 and 60.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "o.IndexMaxTokens = 700;"
+     ]
+    },
+    {
+     "key": "test.publish-profilereportflags-min-bytes",
+     "text": "Test Publish_ProfileReportFlagsViolations asserts the min_file_bytes row fails and that the report Passed value is false.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(report.Passed).IsFalse();"
+     ]
+    },
+    {
+     "key": "test.publish-profilereportflags-extensions",
+     "text": "Test Publish_ProfileReportFlagsViolations asserts the allowed_extensions row fails and that its actual value contains markdown.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(extensions.Actual).Contains(\"markdown\");"
+     ]
+    },
+    {
+     "key": "test.publish-emitsmachinerecord-fence",
+     "text": "Test Publish_EmitsMachineRecord asserts the pointer fact file ends with a closing code fence after the machine record block.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(pointer.TrimEnd('\\n').EndsWith(\"```\")).IsTrue();"
+     ]
+    },
+    {
+     "key": "test.publish-shardopenswithcontents-toc-links",
+     "text": "Test Publish_ShardOpensWithContentsAndStatesFactFilesAbsent asserts each Contents entry links to a hash anchor that the shard defines.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var anchors = Regex.Matches(contents, @\"\\(#([a-z0-9-]+)\\)\").Select(m => m.Groups[1].Value).ToList();"
+     ]
+    },
+    {
+     "key": "test.publish-indexlinksresolve-visited-indexes",
+     "text": "Test Publish_IndexLinksResolveAndReachEverySubject asserts the set of index files visited while following group rows equals the number of index files written.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "await Assert.That(seen.Count).IsEqualTo(IndexFiles(files).Count);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::TargetLine",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "targetline-match",
+     "text": "TargetLine returns the single fact-file line beginning with two spaces, a dash and target: that contains the given needle.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "factFile.Split('\\n').Single(l => l.StartsWith(\"  - target: \", StringComparison.Ordinal) && l.Contains(needle, StringComparison.Ordinal));"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::MachineRecordOf",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "machinerecordof-block",
+     "text": "MachineRecordOf parses the JSON lines after the last Machine record heading, skipping the first and last fence lines.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var heading = \"\\n## Machine record\\n\\n\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::TightProfile",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "tightprofile-values",
+     "text": "TightProfile is a profile literal with max_files 50, min_file_bytes 4096, allowed_extensions pdf only, max_total_bytes 0 and max_path_depth 10.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "private const string TightProfile = "
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::Rejected",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "rejected-throws",
+     "text": "Rejected returns the caught DossierRequestException and throws InvalidOperationException when the action succeeds instead.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "throw new InvalidOperationException(\"expected a DossierRequestException, but the call succeeded\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::RepoFile",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "repofile-climb",
+     "text": "RepoFile climbs parent directories from AppContext.BaseDirectory until one holds a profiles directory, then joins the relative path onto it.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "while (dir is not null && !Directory.Exists(Path.Combine(dir.FullName, \"profiles\")))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs::SeedMany",
+   "kind": "method",
+   "parent": "tests/Dossier.Tests/PublishTests.cs",
+   "facts": [
+    {
+     "key": "seedmany-shape",
+     "text": "SeedMany builds each subject name from django/contrib/app plus the index divided by 40, and posts 3 facts whose overview string is padded with 120 x characters.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var module = $\"django/contrib/app{i / 40:D2}/module{i:D4}\";"
+     ]
+    }
+   ]
+  }
+ ]
+}

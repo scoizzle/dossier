@@ -1,0 +1,509 @@
+{
+  "taken_at": "2026-11-20",
+  "issues": [
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-10T17:59:25Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 5,
+      "state": "OPEN",
+      "title": "Publish Dossier as a .NET tool (dotnet tool install / dnx)",
+      "url": "https://github.com/scoizzle/dossier/issues/5"
+    },
+    {
+      "closedAt": "2026-11-11T15:28:30Z",
+      "createdAt": "2026-11-10T17:59:31Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 6,
+      "state": "CLOSED",
+      "title": "Turn on repository protections once the repo is public",
+      "url": "https://github.com/scoizzle/dossier/issues/6"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:22:23Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 14,
+      "state": "OPEN",
+      "title": "Epic: structured code ingestion",
+      "url": "https://github.com/scoizzle/dossier/issues/14"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:07Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 15,
+      "state": "OPEN",
+      "title": "Ingestion 0: Correct the MCP dump description",
+      "url": "https://github.com/scoizzle/dossier/issues/15"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:10Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 16,
+      "state": "OPEN",
+      "title": "Ingestion 1: Outline contract",
+      "url": "https://github.com/scoizzle/dossier/issues/16"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:13Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 17,
+      "state": "OPEN",
+      "title": "Ingestion 2: Provider interface",
+      "url": "https://github.com/scoizzle/dossier/issues/17"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:16Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 18,
+      "state": "OPEN",
+      "title": "Ingestion 3: C# provider",
+      "url": "https://github.com/scoizzle/dossier/issues/18"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:18Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 19,
+      "state": "OPEN",
+      "title": "Ingestion 4: Bulk ingest",
+      "url": "https://github.com/scoizzle/dossier/issues/19"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:21Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 20,
+      "state": "OPEN",
+      "title": "Ingestion 5: Resolvable citations in published bundles",
+      "url": "https://github.com/scoizzle/dossier/issues/20"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:23Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 21,
+      "state": "OPEN",
+      "title": "Ingestion 6: External outline provider protocol",
+      "url": "https://github.com/scoizzle/dossier/issues/21"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-11T17:28:25Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 22,
+      "state": "OPEN",
+      "title": "Ingestion 7: Task-oriented evaluation",
+      "url": "https://github.com/scoizzle/dossier/issues/22"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:11:28Z",
+      "labels": [],
+      "number": 25,
+      "state": "OPEN",
+      "title": "Feature: correct a fact in place (supersede by id with a new claim)",
+      "url": "https://github.com/scoizzle/dossier/issues/25"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:11Z",
+      "labels": [],
+      "number": 26,
+      "state": "OPEN",
+      "title": "`search` treats hyphenated terms as FTS5 column syntax",
+      "url": "https://github.com/scoizzle/dossier/issues/26"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:12Z",
+      "labels": [],
+      "number": 27,
+      "state": "OPEN",
+      "title": "Unknown CLI options are silently ignored",
+      "url": "https://github.com/scoizzle/dossier/issues/27"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:13Z",
+      "labels": [],
+      "number": 28,
+      "state": "OPEN",
+      "title": "Reposting identical keyed facts supersedes instead of deduping",
+      "url": "https://github.com/scoizzle/dossier/issues/28"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:15Z",
+      "labels": [],
+      "number": 29,
+      "state": "OPEN",
+      "title": "Conflict slots are bare data field names across the whole subject",
+      "url": "https://github.com/scoizzle/dossier/issues/29"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:17Z",
+      "labels": [],
+      "number": 30,
+      "state": "OPEN",
+      "title": "`--budget` does not cap output in the default `complete` mode",
+      "url": "https://github.com/scoizzle/dossier/issues/30"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:18Z",
+      "labels": [],
+      "number": 31,
+      "state": "OPEN",
+      "title": "Default compile depth and ranking produce a weak brief",
+      "url": "https://github.com/scoizzle/dossier/issues/31"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:19Z",
+      "labels": [],
+      "number": 32,
+      "state": "OPEN",
+      "title": "`correlate` hits the 200-proposal cap immediately",
+      "url": "https://github.com/scoizzle/dossier/issues/32"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:21Z",
+      "labels": [],
+      "number": 33,
+      "state": "OPEN",
+      "title": "`gh attestation verify` returns 404 for release archives",
+      "url": "https://github.com/scoizzle/dossier/issues/33"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-14T19:12:22Z",
+      "labels": [],
+      "number": 34,
+      "state": "OPEN",
+      "title": "Docs and CLI output mismatches",
+      "url": "https://github.com/scoizzle/dossier/issues/34"
+    },
+    {
+      "closedAt": null,
+      "createdAt": "2026-11-16T18:44:52Z",
+      "labels": [
+        {
+          "id": "LA_kwDOVodTuc8AAAADB-gKcQ",
+          "name": "enhancement",
+          "description": "New feature or request",
+          "color": "a2eeef"
+        }
+      ],
+      "number": 38,
+      "state": "OPEN",
+      "title": "Replace the HttpListener web server with ASP.NET Core minimal APIs",
+      "url": "https://github.com/scoizzle/dossier/issues/38"
+    }
+  ],
+  "pulls": [
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T15:29:56Z",
+      "headRefName": "ci/github-actions-and-security",
+      "mergedAt": "2026-11-10T15:32:20Z",
+      "number": 1,
+      "state": "MERGED",
+      "title": "CI, repo security and Native AOT release builds",
+      "url": "https://github.com/scoizzle/dossier/pull/1"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T15:35:40Z",
+      "headRefName": "dependabot/nuget/src/Dossier/nuget-minor-patch-d85968326b",
+      "mergedAt": "2026-11-10T16:15:50Z",
+      "number": 2,
+      "state": "MERGED",
+      "title": "Bump the nuget-minor-patch group with 1 update",
+      "url": "https://github.com/scoizzle/dossier/pull/2"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T15:46:06Z",
+      "headRefName": "fix/windows-test-paths",
+      "mergedAt": "2026-11-10T15:51:29Z",
+      "number": 3,
+      "state": "MERGED",
+      "title": "Fix Windows-only test path handling",
+      "url": "https://github.com/scoizzle/dossier/pull/3"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T16:49:44Z",
+      "headRefName": "ci/linux-arm64",
+      "mergedAt": "2026-11-10T17:25:36Z",
+      "number": 4,
+      "state": "MERGED",
+      "title": "Add linux-arm64 release build; move Linux legs to Ubuntu 24.04; archive into a folder",
+      "url": "https://github.com/scoizzle/dossier/pull/4"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T18:12:11Z",
+      "headRefName": "chore/drop-django-examples",
+      "mergedAt": "2026-11-10T18:14:03Z",
+      "number": 7,
+      "state": "MERGED",
+      "title": "Remove committed Django example bundles and the gitleaks examples/ allowlist",
+      "url": "https://github.com/scoizzle/dossier/pull/7"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T19:00:05Z",
+      "headRefName": "feat/serve-graph",
+      "mergedAt": "2026-11-10T19:12:31Z",
+      "number": 8,
+      "state": "MERGED",
+      "title": "serve: interactive, bounded graph view (/api/graph) with stricter CSP",
+      "url": "https://github.com/scoizzle/dossier/pull/8"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T19:25:45Z",
+      "headRefName": "feat/publish-jsonl",
+      "mergedAt": "2026-11-10T19:50:50Z",
+      "number": 9,
+      "state": "MERGED",
+      "title": "publish: JSONL output mode with limits, base64 assets and hardened import",
+      "url": "https://github.com/scoizzle/dossier/pull/9"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-10T20:39:35Z",
+      "headRefName": "chore/public-release-readiness",
+      "mergedAt": "2026-11-10T20:42:02Z",
+      "number": 10,
+      "state": "MERGED",
+      "title": "docs: prepare repo for public release (remove PLAN.md and test counts, add contributing and issue templates)",
+      "url": "https://github.com/scoizzle/dossier/pull/10"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-11T15:22:49Z",
+      "headRefName": "ci/issue-6-supply-chain",
+      "mergedAt": "2026-11-11T15:28:29Z",
+      "number": 11,
+      "state": "MERGED",
+      "title": "ci: dependency review, release attestations, full PR OS matrix (#6)",
+      "url": "https://github.com/scoizzle/dossier/pull/11"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-11T15:50:35Z",
+      "headRefName": "docs/rewrite-readme-intro",
+      "mergedAt": "2026-11-11T15:58:38Z",
+      "number": 12,
+      "state": "MERGED",
+      "title": "docs: split README into a short entry point with reference pages under docs/",
+      "url": "https://github.com/scoizzle/dossier/pull/12"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-11T17:19:34Z",
+      "headRefName": "feat/semantic-symbol-doc-loop",
+      "mergedAt": "2026-11-11T17:32:54Z",
+      "number": 13,
+      "state": "MERGED",
+      "title": "dump: drop paragraph/code split; add a symbol-first documentation loop",
+      "url": "https://github.com/scoizzle/dossier/pull/13"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-11T17:33:13Z",
+      "headRefName": "feat/lsp-structured-ingestion",
+      "mergedAt": null,
+      "number": 23,
+      "state": "OPEN",
+      "title": "docs: structured code ingestion epic",
+      "url": "https://github.com/scoizzle/dossier/pull/23"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-11T22:42:57Z",
+      "headRefName": "chore/live-demo-serve-preview",
+      "mergedAt": "2026-11-12T02:41:54Z",
+      "number": 24,
+      "state": "MERGED",
+      "title": "graph: draw fact-to-subject owner links and make the smoke checks non-vacuous",
+      "url": "https://github.com/scoizzle/dossier/pull/24"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-16T16:42:22Z",
+      "headRefName": "feat/live-wikipedia-demo",
+      "mergedAt": "2026-11-17T02:29:10Z",
+      "number": 35,
+      "state": "MERGED",
+      "title": "demo: add a paced Wikipedia script for a live graph demo",
+      "url": "https://github.com/scoizzle/dossier/pull/35"
+    },
+    {
+      "baseRefName": "feat/live-wikipedia-demo",
+      "createdAt": "2026-11-16T17:52:55Z",
+      "headRefName": "refactor/port-script-to-csharp",
+      "mergedAt": "2026-11-16T17:58:20Z",
+      "number": 36,
+      "state": "MERGED",
+      "title": "demo: port the Wikipedia live demo script to a C# tool",
+      "url": "https://github.com/scoizzle/dossier/pull/36"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-16T18:39:15Z",
+      "headRefName": "chore/merge-realtime-graph",
+      "mergedAt": "2026-11-16T18:48:20Z",
+      "number": 37,
+      "state": "MERGED",
+      "title": "feat(changes): S1–S7 change journal, /api/changes, SSE stream and a live graph feed",
+      "url": "https://github.com/scoizzle/dossier/pull/37"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-17T02:16:04Z",
+      "headRefName": "dependabot/nuget/tests/Dossier.Tests/nuget-minor-patch-4de7cef6f3",
+      "mergedAt": "2026-11-17T02:28:57Z",
+      "number": 39,
+      "state": "MERGED",
+      "title": "Bump the nuget-minor-patch group with 1 update",
+      "url": "https://github.com/scoizzle/dossier/pull/39"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-17T20:25:21Z",
+      "headRefName": "docs/plan-epic-14-subissues",
+      "mergedAt": null,
+      "number": 40,
+      "state": "OPEN",
+      "title": "docs: plan the epic 14 ingestion sub-issues",
+      "url": "https://github.com/scoizzle/dossier/pull/40"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-17T20:39:56Z",
+      "headRefName": "feat/issue-5-complete",
+      "mergedAt": null,
+      "number": 41,
+      "state": "OPEN",
+      "title": "publish: ship Dossier as the Poly.Dossier .NET tool (#5)",
+      "url": "https://github.com/scoizzle/dossier/pull/41"
+    },
+    {
+      "baseRefName": "main",
+      "createdAt": "2026-11-20T21:40:47Z",
+      "headRefName": "feat/multi-agent-knowledge-hub",
+      "mergedAt": null,
+      "number": 42,
+      "state": "OPEN",
+      "title": "Multi-agent store: cite check, change feed for agents, idempotent keyed reposts, fleet evaluation",
+      "url": "https://github.com/scoizzle/dossier/pull/42"
+    },
+    {
+      "baseRefName": "feat/multi-agent-knowledge-hub",
+      "createdAt": "2026-11-20T22:01:18Z",
+      "headRefName": "feat/supersedes-refs",
+      "mergedAt": null,
+      "number": 43,
+      "state": "OPEN",
+      "title": "Correct a fact by id: supersedes refs take effect (part of #25)",
+      "url": "https://github.com/scoizzle/dossier/pull/43"
+    },
+    {
+      "baseRefName": "feat/supersedes-refs",
+      "createdAt": "2026-11-20T22:15:50Z",
+      "headRefName": "feat/derived-status",
+      "mergedAt": null,
+      "number": 44,
+      "state": "OPEN",
+      "title": "Stale and contested status on every read: search, compile and show",
+      "url": "https://github.com/scoizzle/dossier/pull/44"
+    }
+  ]
+}

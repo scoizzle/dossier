@@ -1,0 +1,588 @@
+{
+ "agent": "swarm-tests-cli",
+ "slice": "tests-cli",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/CliArgTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "CliArgTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "missing-option-value-is-rejected-requires-a-value",
+     "text": "Both a --format with no value and a --budget followed directly by --format exit nonzero with empty stdout and stderr containing requires a value.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "requires a value"
+     ]
+    },
+    {
+     "key": "dry-run-typo-does-not-write-fact-count-zero",
+     "text": "post with --dryrun, alone or beside a valid --dry-run, exits nonzero with unknown option and leaves the facts count at 0.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "FactCount(db)"
+     ]
+    },
+    {
+     "key": "every-usage-flag-is-accepted-pair-count-over-40",
+     "text": "EveryUsageFlagIsAccepted fails if the distinct documented verb and flag pair count is not greater than 40.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "IsGreaterThan(40)"
+     ]
+    },
+    {
+     "key": "every-usage-flag-is-accepted-runs-each-pair-with-x",
+     "text": "Each extracted verb and flag pair is run with the dummy value x and fails the test on unknown option or requires a value.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "Concat([flag, \"x\"])"
+     ]
+    },
+    {
+     "key": "every-in-repo-caller-flag-set-is-accepted-serve-port",
+     "text": "serve with --port not-a-port exits nonzero and stderr contains --port must be an integer.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "--port must be an integer"
+     ]
+    },
+    {
+     "key": "every-in-repo-caller-flag-set-is-accepted-stdin-post",
+     "text": "The caller flag sets include post --file - which reads the request body from stdin.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "[\"post\", \"--file\", \"-\"]"
+     ]
+    },
+    {
+     "key": "cliargtests-run-helper-sets-dossier-db",
+     "text": "Run starts dotnet with Dossier.dll, sets DOSSIER_DB to the temp database path, writes stdin and returns exit code, stdout and stderr.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "Environment[\"DOSSIER_DB\"]"
+     ]
+    },
+    {
+     "key": "cliargtests-verbflags-strips-parentheticals",
+     "text": "VerbFlags strips parenthetical prose from a usage string before splitting it into verb and flag tokens.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "Parenthetical prose"
+     ]
+    },
+    {
+     "key": "cliargtests-splittoplevel-splits-top-level-pipes",
+     "text": "SplitTopLevel tracks bracket and angle depth so it splits a usage string only on a top-level pipe.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "case '|' when depth == 0:"
+     ]
+    },
+    {
+     "key": "unknown-option-is-rejected-budget-mode",
+     "text": "compile given --mode instead of --budget-mode exits nonzero with empty stdout and stderr that suggests --budget-mode.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "--budget-mode"
+     ]
+    },
+    {
+     "key": "cliargtests-factcount-counts-facts-table",
+     "text": "FactCount opens a store connection and counts the rows in the facts table.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "SELECT COUNT(*) FROM facts"
+     ]
+    },
+    {
+     "key": "cliargtests-run-helper-sets-working-directory",
+     "text": "Run sets the child process working directory to the folder that holds the temp database.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "WorkingDirectory = Path.GetDirectoryName(dbPath)!"
+     ]
+    },
+    {
+     "key": "cliargtests-repofilepath-walks-parents",
+     "text": "RepoFilePath walks up from AppContext.BaseDirectory to find a repository file and throws FileNotFoundException naming the path otherwise.",
+     "at": [
+      "tests/Dossier.Tests/CliArgTests.cs",
+      "could not find"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/AotCompatTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "AotCompatTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "graph-serializes-matches-store-graph-via-json-codec",
+     "text": "Ops.Graph output equals JsonSerializer.Serialize of the store graph for the same request, both using JsonCodec.Options.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "Json(db.Store.Graph(request))"
+     ]
+    },
+    {
+     "key": "graph-serializes-max-nodes-and-omits-nulls",
+     "text": "The graph JSON contains max_nodes 500 and format 1, and never writes a null ambiguous or boundary field.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "max_nodes\\\":500"
+     ]
+    },
+    {
+     "key": "version-mcp-server-info-matches-command-expected-version",
+     "text": "The MCP initialize reply's serverInfo version is asserted equal to ExpectedVersion.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "IsEqualTo(ExpectedVersion())"
+     ]
+    },
+    {
+     "key": "version-usage-text-lists-version",
+     "text": "With no arguments the CLI exits 1 and its stderr usage text lists init and version among the verbs.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "stderr.Contains(\"<init|version|\""
+     ]
+    },
+    {
+     "key": "shape-post-result-and-responses-duplicate-of",
+     "text": "A fact deduped against another serializes duplicate_of naming the original fact id.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "DuplicateOf = \"f1\""
+     ]
+    },
+    {
+     "key": "shape-post-result-and-responses-errors-envelope",
+     "text": "PostResult wraps response and errors, and each error serializes its index, code and message.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"code\":\"bad\",\"message\":\"msg\""
+     ]
+    },
+    {
+     "key": "version-commands-print-version-and-nothing-else",
+     "text": "Both the version command and --version exit 0 with stdout exactly the informational version plus a newline and empty stderr.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "{ \"version\", \"--version\" }"
+     ]
+    },
+    {
+     "key": "shape-post-facts-request-snake-case-round-trip",
+     "text": "The parser accepts an upper-case IDEMPOTENCY_KEY and re-serializes it as idempotency_key with dry_run still true.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "request.IdempotencyKey"
+     ]
+    },
+    {
+     "key": "shape-post-facts-request-round-trips-ref-fields",
+     "text": "The round-trip preserves ref fields snapshot_hash, verified_at and etag and the attachment perceptual object.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "snapshot_hash"
+     ]
+    },
+    {
+     "key": "shape-search-brief-check-lists-brief-complete-false",
+     "text": "BriefSearchResponse defaults complete to false and still serializes total 1 and refine r.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"complete\":false"
+     ]
+    },
+    {
+     "key": "shape-search-brief-check-lists-conflicts-gaps-zero",
+     "text": "CheckSummary always emits conflicts 0 and gaps 0 even when the CheckResponse never sets them.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"conflicts\":0,\"gaps\":0"
+     ]
+    },
+    {
+     "key": "shape-compiled-dossier-keeps-explicit-null-resolution",
+     "text": "A compiled conflict with no resolution set serializes resolution as null rather than omitting the field.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"resolution\":null"
+     ]
+    },
+    {
+     "key": "shape-compiled-dossier-request-budget-mode",
+     "text": "CompileRequest reads budget_mode and rank recency and keeps an unknown follow object as raw JSON.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "request.BudgetMode"
+     ]
+    },
+    {
+     "key": "shape-show-result-with-json-element-fields-inbound",
+     "text": "ShowResult always writes an empty inbound array and keeps JsonElement data and items verbatim.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"inbound\":[]"
+     ]
+    },
+    {
+     "key": "shape-verify-and-changes-types-current-false",
+     "text": "VerifyResponse writes current false at the top level and on each fact unless the fact is current.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"revision\":7,\"current\":false"
+     ]
+    },
+    {
+     "key": "shape-verify-and-changes-types-changes-request",
+     "text": "ChangesRequest parses since 12, last 3, limit 50 and subject Widget from JSON.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "changesRequest = Parse<ChangesRequest>"
+     ]
+    },
+    {
+     "key": "shape-dump-correlate-and-request-types-entity-subjects",
+     "text": "DumpRequest ignores the removed entity_subjects field while still reading source and tags.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "entity_subjects"
+     ]
+    },
+    {
+     "key": "shape-dump-correlate-and-request-types-empty-arrays",
+     "text": "DumpResponse always emits deduped and errors as empty arrays when nothing was deduped or failed.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"deduped\":[]"
+     ]
+    },
+    {
+     "key": "shape-cli-summary-publish-keys",
+     "text": "The publish summary uses keys out, files, written, subjects, facts and removed in that order.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"out,files,written,subjects,facts,removed\""
+     ]
+    },
+    {
+     "key": "shape-cli-summary-fact-not-found",
+     "text": "get_fact with an unknown id answers error code fact_not_found and message fact not found: nope.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "fact_not_found"
+     ]
+    },
+    {
+     "key": "shape-search-cursor-upper-case-property-names",
+     "text": "The search next cursor decodes to JSON whose only property names are C, I and S.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "IsEqualTo(\"C,I,S\")"
+     ]
+    },
+    {
+     "key": "shape-dump-stores-snake-case-data-and-locators-count",
+     "text": "Dumping a small Python file with Split none creates exactly 1 fact.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "response.Created.Count).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "shape-dump-stores-snake-case-data-and-locators-selector",
+     "text": "The dumped fact's first ref locator has a selector that starts with L1-L.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "StartsWith(\"L1-L\""
+     ]
+    },
+    {
+     "key": "shape-dump-stores-snake-case-data-and-locators-provenance",
+     "text": "A fact posted through the CLI carries provenance actor dossier-cli, actor_type tool and channel cli.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"actor\":\"dossier-cli\""
+     ]
+    },
+    {
+     "key": "shape-dump-stores-snake-case-data-and-locators-data-order",
+     "text": "Data keys on a shown fact serialize in sorted order as end_line, entity_kind, start_line and symbol.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "\"end_line,entity_kind,start_line,symbol\""
+     ]
+    },
+    {
+     "key": "aotcompat-json-helper-uses-json-codec-options",
+     "text": "The Json helper serializes any value with JsonCodec.Options.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "JsonSerializer.Serialize(value, JsonCodec.Options)"
+     ]
+    },
+    {
+     "key": "aotcompat-parse-helper-uses-json-codec-options",
+     "text": "The Parse helper deserializes JSON into a type using JsonCodec.Options.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "JsonSerializer.Deserialize<T>(json, JsonCodec.Options)"
+     ]
+    },
+    {
+     "key": "aotcompat-run-helper-sets-dossier-db",
+     "text": "Run starts Dossier.dll with dotnet, exports DOSSIER_DB only when a path is given and captures stdout and stderr.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "info.Environment[\"DOSSIER_DB\"] = dbPath;"
+     ]
+    },
+    {
+     "key": "aotcompat-expected-version-cuts-at-plus",
+     "text": "ExpectedVersion reads the assembly informational version attribute and cuts the value at the first plus character.",
+     "at": [
+      "tests/Dossier.Tests/AotCompatTests.cs",
+      "return plus < 0 ? value : value[..plus];"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/OpsContractTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "OpsContractTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "verify-response-matches-contract-for-every-status",
+     "text": "The verify case covers superseded, stale, contested, live, retracted and unknown and validates VerifyResponse and VerifyRequest.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "new[] { \"superseded\", \"stale\""
+     ]
+    },
+    {
+     "key": "changes-page-matches-contract-for-every-page-kind",
+     "text": "A changes page read past the current revision comes back with Reset true.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "pages[^1].Reset).IsTrue()"
+     ]
+    },
+    {
+     "key": "compiled-dossier-and-search-hits-match-contract-why",
+     "text": "A compiled dossier over live, stale and contested facts passes dossier.schema.json and exactly 2 facts carry Why.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "fact.Why is not null"
+     ]
+    },
+    {
+     "key": "validation-is-not-vacuous-wrong-shape-status",
+     "text": "A VerifyResponse status of fresh is rejected with not in enum.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "Contains(\"not in enum\")"
+     ]
+    },
+    {
+     "key": "validation-is-not-vacuous-wrong-shape-current",
+     "text": "A VerifyResponse with no current field is rejected and the error names current.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "Errors(\"VerifyResponse\", Parse("
+     ]
+    },
+    {
+     "key": "opscontract-postone-returns-first-fact-id",
+     "text": "PostOne posts one fact to a subject and returns the first fact id from the response.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "db.Store.PostFacts(Fixtures.Post(subject, fact)).Response.Facts[0].Id"
+     ]
+    },
+    {
+     "key": "opscontract-errors-validates-against-ops-schema",
+     "text": "The Errors helper validates an emitted value against a named definition in ops.schema.json.",
+     "at": [
+      "tests/Dossier.Tests/OpsContractTests.cs",
+      "ErrorsAgainstDefinition(\"ops.schema.json\", definition, instance)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/DocsTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "DocsTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "check-example-matches-the-resolve-ladder-both-spellings",
+     "text": "docs/cli.md must document both memos/home and memos home, and each shown facts count and match label must equal what Check returns.",
+     "at": [
+      "tests/Dossier.Tests/DocsTests.cs",
+      "Contains(\"memos home\")"
+     ]
+    },
+    {
+     "key": "docstests-blockafter-stops-at-blank-or-prompt",
+     "text": "BlockAfter collects the doc lines after an example until a blank line or the next shell prompt.",
+     "at": [
+      "tests/Dossier.Tests/DocsTests.cs",
+      "line.Length == 0 || line.StartsWith(\"$ \""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SkillTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SkillTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "skill-file-is-valid-and-commands-exist-name",
+     "text": "SKILL.md frontmatter must define name as dossier and every dossier verb it quotes must appear in the Program.cs usage string.",
+     "at": [
+      "tests/Dossier.Tests/SkillTests.cs",
+      "IsEqualTo(\"dossier\")"
+     ]
+    },
+    {
+     "key": "skill-file-mentions-the-three-hard-findings-rules",
+     "text": "The rules section between Rules the schema cannot enforce and Commands must mention zero edges, data and key.",
+     "at": [
+      "tests/Dossier.Tests/SkillTests.cs",
+      "Contains(\"zero edges\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SkillLoopTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SkillLoopTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "symbol-loop-correlate-scope-descendants-and-check-zero",
+     "text": "Correlate scoped to Unit.cs proposes 0 while the store-wide correlate pairs the two child facts.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "scoped.Proposed.Count).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "symbol-loop-check-symbol-subject-exact-name",
+     "text": "Check on the symbol subject Unit.cs::A reports Match exact_name.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "IsEqualTo(\"exact_name\")"
+     ]
+    },
+    {
+     "key": "subject-scoped-correlate-proposes-only-within-that-subject",
+     "text": "A subject-scoped correlate proposes only pairs whose fact and ref target both belong to the scoped subject.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "a.Contains(p.Ref.Target!)"
+     ]
+    },
+    {
+     "key": "shared-tag-matcher-tags-vs-same-ref",
+     "text": "shared_tag pairs two facts that share a tag and finds nothing for untagged facts, while same_ref still pairs facts whose only difference is the locator line.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "plainRef.Proposed.Count).IsGreaterThan(0)"
+     ]
+    },
+    {
+     "key": "show-takes-fact-id-subject-name-comes-from-check-by-id",
+     "text": "Show by fact id omits the subject name from its JSON, and check by subject id reports Match exact_id.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "json.Contains(\"Unit.cs::A\", StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "skillloop-postsymbol-returns-subject-id",
+     "text": "PostSymbol posts a symbol subject under a parent unit and returns the new subject id.",
+     "at": [
+      "tests/Dossier.Tests/SkillLoopTests.cs",
+      "private static string PostSymbol"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/SeedTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "SeedTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "seed-script-stores-the-declared-attachment-blob-hash",
+     "text": "The seed image's SHA256 and byte length equal the sha256 and bytes declared in scripts/seed/memos.json.",
+     "at": [
+      "tests/Dossier.Tests/SeedTests.cs",
+      "SHA256.HashData(bytes)"
+     ]
+    },
+    {
+     "key": "seed-script-stores-the-declared-attachment-blob-copy",
+     "text": "scripts/seed.sh copies the shot into the database blobs directory and computes its hash with shasum -a 256 or sha256sum.",
+     "at": [
+      "tests/Dossier.Tests/SeedTests.cs",
+      "shasum -a 256"
+     ]
+    },
+    {
+     "key": "seeded-data-publishes-with-no-missing-blob-warning",
+     "text": "Publishing the seeded database returns 0 warnings, a single assets file named from the first 8 hash characters whose bytes equal the image.",
+     "at": [
+      "tests/Dossier.Tests/SeedTests.cs",
+      "result.Warnings.Count).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "seedtests-declaredattachment-reads-first-attachment",
+     "text": "DeclaredAttachment returns the first attachment's sha256, filename and bytes from scripts/seed/memos.json and throws when none exists.",
+     "at": [
+      "tests/Dossier.Tests/SeedTests.cs",
+      "return new Declared("
+     ]
+    },
+    {
+     "key": "seedtests-readrequest-deserializes-post-request",
+     "text": "ReadRequest deserializes a seed JSON file with JsonCodec and throws when it is not a post_facts request.",
+     "at": [
+      "tests/Dossier.Tests/SeedTests.cs",
+      "JsonCodec.Deserialize<PostFactsRequest>"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1071 @@
+{
+ "agent": "swarm-www-graph-2",
+ "slice": "www-graph-2",
+ "subjects": [
+  {
+   "name": "src/Dossier/www/graph.js::focusKey",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "target-identity",
+     "text": "focusKey returns the element's tag name joined with its data-target by a pipe, so a rebuilt control with the same target is found again.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "return node.tagName + '|' + target"
+     ]
+    },
+    {
+     "key": "href-fallback",
+     "text": "When data-target is absent focusKey falls back to href, giving links a comparable identity across a quiet rebuild.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (href) return node.tagName + '|' + href"
+     ]
+    },
+    {
+     "key": "target-read-first",
+     "text": "focusKey reads data-target first and only then looks at href, so a control's target wins over any href it carries.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var target = node.getAttribute('data-target');"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::findByKey",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "depth-first",
+     "text": "findByKey walks each child depth-first and returns the first descendant whose focusKey equals the requested key, or null.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "function findByKey(node, key)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::renderPanel",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "quiet-focus-source",
+     "text": "renderPanel takes its focus source from doc.activeElement only when quiet is set and that element sits inside the panel.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "quiet && doc.activeElement && panel.contains(doc.activeElement)"
+     ]
+    },
+    {
+     "key": "close-button",
+     "text": "Every renderPanel begins by clearing the panel, unhiding it, and adding a Close button with id g-close.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "'button', 'Close', panel"
+     ]
+    },
+    {
+     "key": "fact-heading",
+     "text": "The fact panel heading is the word Fact followed by cap(fd.id, 64).",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "heading = el('h2', 'Fact ' + cap(fd.id, 64), panel);"
+     ]
+    },
+    {
+     "key": "subject-facts-row",
+     "text": "For a subject node the facts row shows String(Number(sd.facts) || 0), so a missing or bad count renders as 0.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "row(dl, 'facts', String(Number(sd.facts) || 0))"
+     ]
+    },
+    {
+     "key": "boundary-row",
+     "text": "A subject whose boundary flag is set gets a boundary row reading a fact of this subject refers into the graph.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "a fact of this subject refers into the graph"
+     ]
+    },
+    {
+     "key": "fact-rows",
+     "text": "The fact panel shows subject, kind, status and confidence rows, each value passed through cap with its own limit.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "row(dl, 'confidence', String(Number(fd.confidence)))"
+     ]
+    },
+    {
+     "key": "tags-join",
+     "text": "Tags in the fact panel are each capped at 40 and joined with a comma and space, or shown as none when empty.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "fd.tags && fd.tags.length"
+     ]
+    },
+    {
+     "key": "text-capped",
+     "text": "The fact text is rendered in a pre element capped at 2000 characters.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "el('pre', cap(fd.text, 2000), panel)"
+     ]
+    },
+    {
+     "key": "external-refs",
+     "text": "Refs listed in fd.unresolved are added to the Refs out list and each one is marked (external).",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var external = fd.unresolved || [];"
+     ]
+    },
+    {
+     "key": "quiet-focus-restore",
+     "text": "A quiet renderPanel restores focus only for a reader already in the panel, targeting the matching rebuilt control via findByKey or the heading.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "findByKey(panel, key)"
+     ]
+    },
+    {
+     "key": "loud-focus",
+     "text": "A non-quiet renderPanel focuses the heading and then calls resize and schedule.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "heading.focus();"
+     ]
+    },
+    {
+     "key": "referenced-by-none",
+     "text": "Referenced-by lists come from refList with outgoing false, and an empty list gets one item reading none.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "list = refList(nd, false);"
+     ]
+    },
+    {
+     "key": "subject-links",
+     "text": "A subject panel adds Open subject and Graph from here links, separated by a pipe, both built through hashLink.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "appendLink(actions, 'Open subject', hashLink('subject', sd.id));"
+     ]
+    },
+    {
+     "key": "fact-link",
+     "text": "A fact panel adds an Open fact link built by hashLink and a section headed Refs out.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "appendLink(links, 'Open fact', hashLink('fact', fd.id));"
+     ]
+    },
+    {
+     "key": "heading-tabindex",
+     "text": "The panel heading gets tabindex -1 so the code can place focus on it after a rebuild.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "heading.setAttribute('tabindex', '-1');"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::closePanel",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "close-handler",
+     "text": "closePanel is bound as the click handler of the Close button that renderPanel creates.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "close.addEventListener('click', closePanel);"
+     ]
+    },
+    {
+     "key": "clears-selection",
+     "text": "closePanel sets selected to null, hides the panel, clears its text, then calls resize and schedule.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "function closePanel() {"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::hit",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "topmost-world",
+     "text": "hit converts the pointer to world coordinates and searches nodes from the last so the topmost one wins, using radius plus 3 divided by view.scale.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var rr = nd.r + 3 / view.scale;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::expand",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "subject-source",
+     "text": "expand derives the subject from the node id for subjects or from data.subject for facts, and returns early unless ID_RE accepts it.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "nd.type === 'subject' ? nd.id : nd.data.subject"
+     ]
+    },
+    {
+     "key": "loading-status",
+     "text": "expand sets the status text to the loading marker while its fetch is outstanding, then clears it on success.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "status.textContent = 'loading…';"
+     ]
+    },
+    {
+     "key": "error-status",
+     "text": "A failed expand writes cap(err.message, 200) to the status line prefixed with error:.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "cap(err && err.message, 200)"
+     ]
+    },
+    {
+     "key": "restart-20",
+     "text": "expand restarts the layout with 20 ticks when merge added nodes, otherwise releases holds if no layout is pending.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (added.length) restart(20);"
+     ]
+    },
+    {
+     "key": "remembers-subject",
+     "text": "After a merge expand records the fetched subject with remember so later refreshes include it.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "remember(subject);"
+     ]
+    },
+    {
+     "key": "holds-before-merge",
+     "text": "Before merging an expansion expand marks every existing node as held so their positions survive.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "for (var k = 0; k < nodes.length; k++) nodes[k].hold = true;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::endDrag",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "click-threshold",
+     "text": "endDrag opens the panel for the pressed node only when the accumulated movement is at most 4 pixels.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (done.node && done.moved <= 4) showPanel(done.node);"
+     ]
+    },
+    {
+     "key": "release-capture",
+     "text": "endDrag releases the pointer capture only when the canvas still holds it, and sets the cursor back to grab.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "canvas.hasPointerCapture(ev.pointerId)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::onKey",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "modifiers-ignored",
+     "text": "onKey ignores any key event carrying ctrlKey, metaKey or altKey, so browser and OS shortcuts are left alone.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (ev.ctrlKey || ev.metaKey || ev.altKey) return;"
+     ]
+    },
+    {
+     "key": "editable-ignored",
+     "text": "Keys typed into INPUT, TEXTAREA, SELECT or editable content never reach the graph shortcuts.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT'"
+     ]
+    },
+    {
+     "key": "button-link-except-escape",
+     "text": "From a button or link onKey acts only on Escape, which closes the panel.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if ((tag === 'BUTTON' || tag === 'A') && ev.key !== 'Escape') return;"
+     ]
+    },
+    {
+     "key": "fit-key",
+     "text": "Pressing f or F fits the graph to the stage and schedules a redraw.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "else if (ev.key === 'f' || ev.key === 'F')"
+     ]
+    },
+    {
+     "key": "expand-key",
+     "text": "Pressing Enter, e or E expands the node that is currently selected, when one is.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "ev.key === 'Enter' || ev.key === 'e' || ev.key === 'E'"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::url",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "graph-request",
+     "text": "url builds the graph request as /api/graph with the subject URL-encoded plus depth, facts and max_nodes values.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "encodeURIComponent(subject) + '&depth=' + viewDepth"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::pump",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "single-flight",
+     "text": "pump returns at once and sets dirty when a refresh is already running, so only one request is in flight.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (refreshing) { dirty = true; return Promise.resolve(); }"
+     ]
+    },
+    {
+     "key": "removals-first",
+     "text": "pump applies removals from every queued delta row before it classifies any of them.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "handled[k] = applyRemoval(rows[k]);"
+     ]
+    },
+    {
+     "key": "dirty-repump",
+     "text": "When dirty, pendingFull or pendingRows remain at the end, pump clears dirty and calls itself again.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (dirty || pendingFull || pendingRows.length) { dirty = false; return pump(); }"
+     ]
+    },
+    {
+     "key": "finish-both",
+     "text": "pump passes finish as both the success and the failure handler of the fetch chain.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "then(finish, finish)"
+     ]
+    },
+    {
+     "key": "restore-unhandled",
+     "text": "A queued row that pump did not handle as a removal is passed to restore so a live row can lift it.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (!handled[k]) restore(rows[k]);"
+     ]
+    },
+    {
+     "key": "stop-at-full",
+     "text": "pump stops classifying rows at the first row that asks for a full refresh.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (cls.full) { full = true; break; }"
+     ]
+    },
+    {
+     "key": "full-refetch",
+     "text": "A full refresh refetches the root and every subject in the expanded set.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (full) { wanted = expandedIds(); wantRoot = true; }"
+     ]
+    },
+    {
+     "key": "subject-failure-tolerated",
+     "text": "A subject fetch that fails is swallowed so one missing subject does not abort the rest of the refresh.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "that subject is gone: keep the nodes we have and go on"
+     ]
+    },
+    {
+     "key": "gate-reopens",
+     "text": "finish clears refreshing before it tests destroyed, so the refresh gate reopens on every path.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "      refreshing = false;"
+     ]
+    },
+    {
+     "key": "recovered-initial-load",
+     "text": "finish treats a refresh that recovered the initial load as a first layout, clearing the error and then resizing and fitting.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (rootOk && !hadNodes && nodes.length) {"
+     ]
+    },
+    {
+     "key": "delta-glow",
+     "text": "Nodes added by a delta flush receive GLOW_FRAMES of glow so each one flashes once.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "for (var a = 0; a < added.length; a++) added[a].glow = GLOW_FRAMES;"
+     ]
+    },
+    {
+     "key": "holds-left-to-settle",
+     "text": "finish leaves holds in place while a layout is still pending, because the settle releases them.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "its last tick releases every hold"
+     ]
+    },
+    {
+     "key": "stops-when-dead",
+     "text": "pump refuses to run once the view is destroyed or live updates have stopped.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (destroyed || liveStopped) return Promise.resolve();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::applyRemoval",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "retracted-fact",
+     "text": "applyRemoval treats a facts row as a removal when its op is delete or its fact_status is retracted.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "row.op === 'delete' || row.fact_status === 'retracted'"
+     ]
+    },
+    {
+     "key": "seq-recorded",
+     "text": "applyRemoval records the removed key with the row's seq, or -1 when that seq is not finite.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "Number.isFinite(Number(row.seq))"
+     ]
+    },
+    {
+     "key": "needs-string-id",
+     "text": "applyRemoval builds a key only when the row carries a string fact_id or subject_id.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (row.tbl === 'facts' && typeof row.fact_id === 'string' &&"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::restore",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "lifts-refusal",
+     "text": "restore clears a removed key only when the row's seq is finite and greater than the seq that removed it.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (!Number.isFinite(seq) || seq > removedKeys[key]) delete removedKeys[key];"
+     ]
+    },
+    {
+     "key": "delete-ignored",
+     "text": "restore returns immediately for a row whose op is delete.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "row.op === 'delete') return;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::classify",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "full-for-subjects",
+     "text": "classify asks for a full refresh for any row touching the subjects table or naming no subject_id.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (row.tbl === 'subjects' || row.subject_id === null || row.subject_id === undefined) return { full: true };"
+     ]
+    },
+    {
+     "key": "refs-refetch-root",
+     "text": "A refs row whose subject is not on screen makes classify refetch the root, since it may add an inbound edge.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (row.tbl === 'refs') return { subject: rootId };"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::applyFrame",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "drop-redelivery",
+     "text": "applyFrame drops every change whose seq is not finite or is at or below lastSeen, treating it as a redelivery.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (!Number.isFinite(seq) || seq <= lastSeen) continue;"
+     ]
+    },
+    {
+     "key": "watermark-to",
+     "text": "After the rows, applyFrame raises lastSeen to the frame's to value, or else to its next value.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (Number.isFinite(to)) { if (to > lastSeen) lastSeen = to; }"
+     ]
+    },
+    {
+     "key": "feed-ingest",
+     "text": "applyFrame passes the rows it accepted to the activity feed with feed.ingest.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (feed && applied.length) feed.ingest(applied);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::pointerdown",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "drag-record",
+     "text": "pointerdown records the hit node, the pointer position, a zero movement counter and the pointerId in drag, then captures the pointer.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "drag = { node: nd, x: p[0], y: p[1], moved: 0, id: ev.pointerId };"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::pointermove",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "movement-accumulates",
+     "text": "pointermove adds the absolute horizontal and vertical change to drag.moved before applying the delta to the node or the view.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "drag.moved += Math.abs(dx) + Math.abs(dy);"
+     ]
+    },
+    {
+     "key": "pin-after-4",
+     "text": "Dragging a node beyond 4 pixels pins it and raises alpha to at least 0.3 unless motion is reduced.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (drag.moved > 4) {"
+     ]
+    },
+    {
+     "key": "pan-view",
+     "text": "Dragging empty space pans the view by adding the pointer delta to view.tx and view.ty.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "view.tx += dx;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::wheel",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "zoom-factor",
+     "text": "The wheel handler zooms by exp of minus deltaY times 0.0015 and clamps the scale between 0.02 and 8.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "Math.min(8, Math.max(0.02, view.scale * factor))"
+     ]
+    },
+    {
+     "key": "zoom-anchor",
+     "text": "The wheel handler keeps the point under the cursor fixed by adjusting the view translation before setting the scale.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "view.tx = p[0] - (p[0] - view.tx) * real;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::dblclick",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "expand-node",
+     "text": "A double click on a node found by hit calls expand for that node.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (nd) expand(nd);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::stopStream",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "close-stream",
+     "text": "stopStream clears its stored stream, detaches onerror, and calls close when the object provides one.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (typeof s.close === 'function') s.close();"
+     ]
+    },
+    {
+     "key": "noop-without-stream",
+     "text": "stopStream returns at once when no stream is stored.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (!s) return;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::stopLive",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "halt-everything",
+     "text": "stopLive sets liveStopped, stops the stream, clears both timers, and discards pending rows and flags.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "function stopLive() {"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::scheduleFlush",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "debounced-pump",
+     "text": "scheduleFlush replaces any pending flush timer with a new timeout of DEBOUNCE_MS that calls pump.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "flushTimer = win.setTimeout(function () {"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::refillFeed",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "feed-history",
+     "text": "refillFeed resets the feed and reloads its history from /api/changes?last=50.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "fetchJson('/api/changes?last=50')"
+     ]
+    },
+    {
+     "key": "ingest-history",
+     "text": "refillFeed ingests the fetched changes only when the body carries a changes array and a feed still exists.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (body && Array.isArray(body.changes)) feed.ingest(body.changes);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::afterReset",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "apply-queued-removals",
+     "text": "afterReset applies removals for rows still queued for the debounce before it calls refresh.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "for (var k = 0; k < queued.length; k++) applyRemoval(queued[k]);"
+     ]
+    },
+    {
+     "key": "watermark-reset",
+     "text": "afterReset sets lastSeen to the reset number when it is finite, before refilling the feed and refreshing.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (Number.isFinite(n)) lastSeen = n;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::onChanges",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "reset-frame",
+     "text": "onChanges treats a frame whose reset member is set as a discontinuity and routes it to onReset.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (frame.reset) { onReset(Number(frame.next)); return; }"
+     ]
+    },
+    {
+     "key": "bad-json-ignored",
+     "text": "onChanges returns without a frame when parsing ev.data as JSON throws.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "} catch (err) { return; }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::onResetEvent",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "parse-integer",
+     "text": "onResetEvent parses the event data as an integer and falls back to lastSeen when that is not finite.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var n = parseInt(ev && ev.data, 10);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::pollChanges",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "poll-busy",
+     "text": "pollChanges returns early while pollBusy is set, and pollPage clears that flag on both success and failure.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (destroyed || liveStopped || pollBusy) return;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::pollPage",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "since-or-last",
+     "text": "pollPage requests /api/changes with since and limit once lastSeen is non-negative, and with last and limit before that.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "'/api/changes?since=' + lastSeen + '&limit=' + POLL_LIMIT"
+     ]
+    },
+    {
+     "key": "truncated-next",
+     "text": "When a page reports truncated, pollPage fetches the next page immediately while page plus one stays below POLL_PAGES.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (body.truncated && page + 1 < POLL_PAGES) return pollPage(page + 1);"
+     ]
+    },
+    {
+     "key": "page-through-gate",
+     "text": "pollPage sends every page through applyFrame and then schedules a flush.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "applyFrame(body);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::startPolling",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "poll-timer",
+     "text": "startPolling stops any stream and installs a poll timer that calls pollChanges every POLL_MS.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "pollTimer = win.setInterval(pollChanges, POLL_MS);"
+     ]
+    },
+    {
+     "key": "idempotent",
+     "text": "startPolling returns without action when a poll timer is already installed.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (destroyed || liveStopped || pollTimer) return;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::listen",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "no-eventsource",
+     "text": "listen falls back to startPolling when the window provides no EventSource constructor.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (typeof win.EventSource !== 'function') { startPolling(); return; }"
+     ]
+    },
+    {
+     "key": "events-url",
+     "text": "listen opens /api/events and appends a since query value when lastSeen is non-negative.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "new win.EventSource('/api/events'"
+     ]
+    },
+    {
+     "key": "closed-fallback",
+     "text": "The stream's onerror starts polling when the EventSource readyState is 2, the closed state.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (es.readyState === 2) startPolling();"
+     ]
+    },
+    {
+     "key": "event-handlers",
+     "text": "listen registers onChanges for changes events and onResetEvent for reset events.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "es.addEventListener('changes', onChanges);"
+     ]
+    },
+    {
+     "key": "listen-after-failure",
+     "text": "listen is called after initialLoad even when that load failed, so refresh still works.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "then(function () { listen(); })"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::initialLoad",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "load-root",
+     "text": "initialLoad fetches the graph for rootId, merges the payload, refreshes the header and resizes the stage.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "return fetchJson(url(rootId)).then(function (payload) {"
+     ]
+    },
+    {
+     "key": "reduced-path",
+     "text": "With reduced motion initialLoad settles the layout with tick calls, fits, and draws once.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "        if (reduced) {"
+     ]
+    },
+    {
+     "key": "sixty-ticks",
+     "text": "With motion allowed initialLoad runs 60 layout ticks before fitting and scheduling the animation loop.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "for (var i = 0; i < 60; i++) tick();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::destroy",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "remove-listeners",
+     "text": "destroy removes the keydown and resize listeners that mount added to the document and window.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "doc.removeEventListener('keydown', onKey);"
+     ]
+    },
+    {
+     "key": "cancel-frame",
+     "text": "destroy cancels a pending animation frame when rafHandle holds one.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (rafHandle && win.cancelAnimationFrame) win.cancelAnimationFrame(rafHandle);"
+     ]
+    },
+    {
+     "key": "feed-teardown",
+     "text": "destroy calls feed.destroy and clears the feed reference when a feed was mounted.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (feed) { feed.destroy(); feed = null; }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "graph.js"
+   ],
+   "facts": [
+    {
+     "key": "lastseen-getter",
+     "text": "The mount result exposes lastSeen through a getter described as read-only for tests and diagnostics.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "get lastSeen() { return lastSeen; }"
+     ]
+    },
+    {
+     "key": "history-only-with-feed",
+     "text": "The feed history is requested only when a feed is mounted, otherwise history resolves immediately.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var history = feed"
+     ]
+    },
+    {
+     "key": "revision-baseline",
+     "text": "The revision baseline is fetched only when EventSource or setInterval exists on the window.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "if (typeof win.EventSource === 'function' || typeof win.setInterval === 'function') {"
+     ]
+    },
+    {
+     "key": "merge-wrapper",
+     "text": "The returned merge wrapper substitutes null for a missing anchorKey, refreshes the header and returns the added nodes.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "merge: function (payload, anchorKey) { var added = merge(payload, anchorKey || null); refreshHeader(); return added; },"
+     ]
+    },
+    {
+     "key": "window-export",
+     "text": "The module assigns DossierGraph, holding mount and ID_RE, onto window.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "window.DossierGraph = { mount: mount, ID_RE: ID_RE };"
+     ]
+    },
+    {
+     "key": "fit-button",
+     "text": "Clicking the Fit button calls fit and then schedule.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "fitButton.addEventListener('click', function () { fit(); schedule(); });"
+     ]
+    },
+    {
+     "key": "public-surface",
+     "text": "The returned object exposes expand and refresh so the page can drive the mounted view.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "expand: expand,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::local",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "canvas-coords",
+     "text": "local turns a pointer event into canvas coordinates by subtracting the canvas rectangle's left and top from clientX and clientY.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "var r = canvas.getBoundingClientRect();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/graph.js::showPanel",
+   "kind": "function",
+   "parent": "src/Dossier/www/graph.js",
+   "facts": [
+    {
+     "key": "select-and-render",
+     "text": "showPanel stores the node as selected and renders the panel in non-quiet mode.",
+     "at": [
+      "src/Dossier/www/graph.js",
+      "selected = nd;"
+     ]
+    }
+   ]
+  }
+ ]
+}

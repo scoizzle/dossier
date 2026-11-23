@@ -1,0 +1,464 @@
+{
+ "agent": "swarm-tests-publish-1",
+ "slice": "tests-publish-1",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/PublishTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "PublishTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "helper-seed-posts-conflicting-header-facts",
+     "text": "Seed posts the Home Screen facts header-a and header-b whose headerHeight data disagree at 64 and 72.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "The header is 72 pixels tall."
+     ]
+    },
+    {
+     "key": "helper-seed-returns-pointer-and-target-ids",
+     "text": "Seed returns PointerId from ids[3] and TargetId from ids[2] of the posted Home Screen fact ids.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "ids[3], ids[2]"
+     ]
+    },
+    {
+     "key": "helper-seed-pointer-ref-rev-abc123",
+     "text": "The pointer fact carries a supports ref with basis observed, confidence 0.9 and rev abc123.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Rev = \"abc123\""
+     ]
+    },
+    {
+     "key": "helper-readall-normalizes-paths",
+     "text": "ReadAll reads every file under the output directory recursively and keys each by its relative path with forward slashes.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "SearchOption.AllDirectories"
+     ]
+    },
+    {
+     "key": "helper-factof-finds-manifest-entry-by-id",
+     "text": "FactOf selects the single manifest facts entry whose id string equals the requested fact id and returns its key and path.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "p.Value.GetProperty(\"id\").GetString() == id"
+     ]
+    },
+    {
+     "key": "helper-isfactfile-matches-subjects-facts",
+     "text": "IsFactFile counts a path only when it starts with subjects/ and also contains /facts/.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "path.Contains(\"/facts/\", StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "publish-writes-full-layout-seven-fact-files",
+     "text": "Publish_WritesFullLayout asserts the bundle holds 7 fact files and that the result Files count equals the on-disk file count.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "files.Keys.Count(k => IsFactFile(k))).IsEqualTo(7)"
+     ]
+    },
+    {
+     "key": "publish-is-byte-identical-second-run-writes-zero",
+     "text": "Publishing an unchanged store a second time with a later clock writes 0 files and leaves every file byte-identical.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "second.Written).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "publish-agents-md-orders-untrusted-warning",
+     "text": "The AGENTS.md order check requires the phrase untrusted data to appear before never follow it as instructions.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "\"untrusted data\","
+     ]
+    },
+    {
+     "key": "publish-index-table-header-columns",
+     "text": "The INDEX.md subject table header names the columns subject, kind, facts, conflicts, gaps, tokens and file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "| subject | kind | facts | conflicts | gaps | tokens | file |"
+     ]
+    },
+    {
+     "key": "publish-subject-file-budget-conflicts-gaps",
+     "text": "The published Home Screen subject file reports Budget: 1200 tokens, Conflicts: 1 and Gaps: 0.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "- Budget: 1200 tokens"
+     ]
+    },
+    {
+     "key": "publish-fact-file-provenance-actor-lines",
+     "text": "A published fact file shows actor dossier-cli, actor_type tool and channel cli in its provenance lines.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "- actor: `dossier-cli`"
+     ]
+    },
+    {
+     "key": "publish-fact-file-inbound-referenced-by",
+     "text": "A fact file that another fact points at gains a Referenced by section listing the pointer fact as a link.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "## Referenced by"
+     ]
+    },
+    {
+     "key": "publish-manifest-options-budget-depth-facts",
+     "text": "The manifest options object records budget 1200, depth full and facts detail.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "GetProperty(\"budget\").GetInt32()).IsEqualTo(1200)"
+     ]
+    },
+    {
+     "key": "publish-manifest-omits-timestamp",
+     "text": "The written manifest.json must not contain the publish clock date 2026-01-02.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "DoesNotContain(\"2026-01-02\")"
+     ]
+    },
+    {
+     "key": "publish-republish-preserves-foreign-files",
+     "text": "Republishing after a retract keeps the foreign files notes.txt and subjects/mine.md with their original contents.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "File.ReadAllText(foreign)).IsEqualTo(\"keep me\")"
+     ]
+    },
+    {
+     "key": "publish-republish-index-shows-four",
+     "text": "After the long fact is retracted, the republished INDEX.md contains the cell | 4 | for the Home Screen fact count.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Contains(\"| 4 |\")"
+     ]
+    },
+    {
+     "key": "publish-subject-filter-one-subject",
+     "text": "Publishing with Subject set to Home Screen yields 1 subject and omits the my-app and settings-screen index files.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "filtered.Subjects).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "publish-subject-filter-parent-includes-three",
+     "text": "Publishing with Subject set to My App yields 3 subjects.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "wide.Subjects).IsEqualTo(3)"
+     ]
+    },
+    {
+     "key": "helper-options-pins-clock",
+     "text": "Options builds PublishOptions whose Now delegate always returns one fixed date and time, so published timestamps are stable.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "new DateTimeOffset(2026, 1, 2, 3, 4, 5"
+     ]
+    },
+    {
+     "key": "helper-writeblob-hashes-and-stores",
+     "text": "WriteBlob hashes the UTF-8 bytes with SHA256 and writes them under BlobRoot using the lower-case hex digest as the file name.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant()"
+     ]
+    },
+    {
+     "key": "helper-seedtree-posts-area-item-subjects",
+     "text": "SeedTree posts one subject per cell named area-00/item-00 style with a single fact each.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "$\"area-{a:00}/item-{i:00}\""
+     ]
+    },
+    {
+     "key": "helper-indexfiles-selects-root-and-index-dir",
+     "text": "IndexFiles keeps only the INDEX.md key and keys that start with index/.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "kv.Key.StartsWith(\"index/\", StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "publish-key-collision-twin-keys-widen-to-twelve",
+     "text": "Publish_KeyCollisionWidensDeterministically forces two twin keys to collide and expects both file keys to be 12 characters starting deadbeef.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "key.Length).IsEqualTo(12)"
+     ]
+    },
+    {
+     "key": "publish-key-collision-plain-key-stays-eight",
+     "text": "A fact whose key does not collide keeps an 8-character key suffix in its published file name.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Length..^3].Length).IsEqualTo(8)"
+     ]
+    },
+    {
+     "key": "publish-fact-file-keeps-store-id-line",
+     "text": "Every published fact file contains exactly one Store id line whose value is the full store fact id.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "lines.Count).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "publish-asset-name-uses-sha-prefix-and-slug",
+     "text": "A png attached as shots/Login Screen.PNG publishes under subjects/login/assets/ with the first 8 hash characters and the slug login-screen.png.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "subjects/login/assets/{one.Sha[..8]}-login-screen.png"
+     ]
+    },
+    {
+     "key": "publish-asset-write-has-zero-warnings",
+     "text": "Publishing a bundle whose blobs all exist reports 0 warnings and records the asset in the manifest with missing false.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "result.Warnings.Count).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "publish-fact-file-asset-link-is-parent-relative",
+     "text": "A fact file with an attachment links its asset with a leading ../assets/ prefix and the resolved path exists.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "links[0]).StartsWith(\"../assets/\")"
+     ]
+    },
+    {
+     "key": "publish-subject-asset-line-shows-mime-and-bytes",
+     "text": "The subject asset line reads image/png, 5 bytes, from a link to the fact that carries the attachment.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "(image/png, 5 bytes, from ["
+     ]
+    },
+    {
+     "key": "publish-missing-blob-warns-once",
+     "text": "When a blob file is deleted, publish returns 1 warning containing the missing sha256.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "result.Warnings.Count).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "publish-missing-blob-marks-subject-and-fact",
+     "text": "The subject index and the fact file both contain MISSING followed by the missing sha, and no asset file is written for it.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Contains(\"MISSING \" + gone.Sha)"
+     ]
+    },
+    {
+     "key": "publish-assets-none-has-no-directory",
+     "text": "With Assets set to none the bundle has no assets directory, no asset files and an empty manifest assets object.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Directory.Exists(Path.Combine(Out(db), \"assets\"))).IsFalse()"
+     ]
+    },
+    {
+     "key": "publish-assets-none-keeps-sha-in-subject-text",
+     "text": "With assets off the subject file still prints the sha and mime but contains no assets/ path.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "DoesNotContain(\"assets/\")"
+     ]
+    },
+    {
+     "key": "publish-retract-removes-asset-and-keeps-foreign",
+     "text": "Retracting the only fact with an asset removes that asset file and reports it in Removed while the foreign mine.txt survives.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "result.Removed.Contains($\"subjects/login/assets/{one.Sha[..8]}-a.png\")"
+     ]
+    },
+    {
+     "key": "publish-asset-names-match-across-stores",
+     "text": "Two separate stores given identical bytes and the filename Home Page.png publish the same single asset path.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "subjects/home/assets/{shotOne.Sha[..8]}-home-page.png"
+     ]
+    },
+    {
+     "key": "publish-flat-index-exceeds-token-cap",
+     "text": "With the index token cap lifted, the single flat INDEX.md is estimated at more than 1500 tokens.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "EstimateTokens(single)).IsGreaterThan(cap)"
+     ]
+    },
+    {
+     "key": "publish-every-index-file-under-token-cap",
+     "text": "With IndexMaxTokens set to the cap, every index file is estimated at or under 1500 tokens.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "EstimateTokens(content)).IsLessThanOrEqualTo(cap)"
+     ]
+    },
+    {
+     "key": "publish-entity-subjects-tier-without-warnings",
+     "text": "Publishing 300 subjects named pkg/models::Entity plus a number, under a 1200 token cap, yields more than 1 index file and 0 warnings.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "indexes.Count).IsGreaterThan(1)"
+     ]
+    },
+    {
+     "key": "publish-never-truncates-long-fact",
+     "text": "At depth index the published long fact file still contains all of LongText rather than a shortened version.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "files[longPath]).Contains(LongText)"
+     ]
+    },
+    {
+     "key": "publish-index-indents-child-two-spaces",
+     "text": "In INDEX.md a direct child of the root subject is indented two spaces while a root subject starts at column zero.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "childCell.StartsWith(\"  \""
+     ]
+    },
+    {
+     "key": "publish-slug-collision-suffix-2",
+     "text": "Subjects named Same Name! and same-name publish to the sibling paths same-name and same-name-2.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "subjects/same-name-2/index.md"
+     ]
+    },
+    {
+     "key": "publish-slugify-drops-accents-and-punctuation",
+     "text": "DossierStore.Slugify turns the accented name into h-llo-world and gives subject for a name of only punctuation.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "DossierStore.Slugify(\"  Héllo / World!! \")"
+     ]
+    },
+    {
+     "key": "publish-bundle-stable-twelve-fact-files",
+     "text": "Publish_BundleIsStableAcrossIndependentSeeds compares 12 fact files across two stores after removing Store id lines and replacing guids.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "a.Count).IsEqualTo(12)"
+     ]
+    },
+    {
+     "key": "publish-citation-labels-are-eight-char-keys",
+     "text": "Every fact link in a subject index has an 8-character label that is not a guid and matches the fact file name.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Groups[1].Value.Length).IsEqualTo(8)"
+     ]
+    },
+    {
+     "key": "publish-manifest-sections-sorted-ordinal",
+     "text": "The manifest top-level keys, the subjects, facts, tokens and options names, and the files array are each checked for ordinal sort order.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "keys.OrderBy(k => k, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "publish-root-index-reports-largest-file",
+     "text": "When the index is split, the root INDEX.md states its index file count and the token count of the largest index file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Largest index file, tokens: {largest}"
+     ]
+    },
+    {
+     "key": "publish-full-layout-required-root-files",
+     "text": "Publish_WritesFullLayout requires AGENTS.md, README.md, INDEX.md, manifest.json, conflicts.md and gaps.md at the bundle root.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "foreach (var required in new[] { \"AGENTS.md\", \"README.md\", \"INDEX.md\", \"manifest.json\", \"conflicts.md\", \"gaps.md\" })"
+     ]
+    },
+    {
+     "key": "publish-index-token-cell-matches-subject-file",
+     "text": "Each subject row in INDEX.md carries the token estimate that DossierStore.EstimateTokens returns for that subject's index file.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "var tokens = DossierStore.EstimateTokens(files[path]).ToString();"
+     ]
+    },
+    {
+     "key": "publish-index-cap-test-seeds-twenty-by-twenty",
+     "text": "The token cap test seeds a 20 by 20 tree of subjects with SeedTree.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "SeedTree(db, 20, 20);"
+     ]
+    },
+    {
+     "key": "publish-split-index-token-limit",
+     "text": "Once the cap is applied the test requires more than one index file and checks the root reports the index file count.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "- Index files: {indexes.Count}"
+     ]
+    },
+    {
+     "key": "publish-subject-file-links-each-fact-id",
+     "text": "Every Home Screen fact id appears in its subject file as a link whose target path lies under subjects/home-screen/.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "Contains($\"[{key}]({path[\"subjects/home-screen/\".Length..]})\")"
+     ]
+    },
+    {
+     "key": "publish-conflict-fact-embeds-json-data",
+     "text": "The fact file with the conflicting headerHeight data embeds it in a fenced json block as headerHeight 64.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "\\\"headerHeight\\\": 64"
+     ]
+    },
+    {
+     "key": "publish-facts-none-mentions-flag-in-agents-md",
+     "text": "With Facts set to none no fact file is written and AGENTS.md still mentions the --facts none option.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "files[\"AGENTS.md\"]).Contains(\"--facts none\")"
+     ]
+    },
+    {
+     "key": "publish-subject-filter-keeps-five-fact-files",
+     "text": "Publishing scoped to Home Screen leaves 5 fact files in the bundle.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "files.Keys.Count(k => IsFactFile(k))).IsEqualTo(5)"
+     ]
+    },
+    {
+     "key": "publish-manifest-subject-slug-and-path",
+     "text": "The manifest maps the Home Screen subject id to slug home-screen and path subjects/home-screen/index.md.",
+     "at": [
+      "tests/Dossier.Tests/PublishTests.cs",
+      "home.GetProperty(\"path\").GetString()).IsEqualTo(\"subjects/home-screen/index.md\")"
+     ]
+    }
+   ]
+  }
+ ]
+}

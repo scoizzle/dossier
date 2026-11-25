@@ -500,14 +500,15 @@ public sealed class JsonlSchemaTests
 
         var fact = Doc("fact.schema.json");
         var factDef = defs.GetProperty("FactRecord");
-        // A published record carries the stored status only, never the fields a read derives from refs.
-        var factReadTimeOnly = new[] { "replaced_by", "why" };
+        // A published record carries the stored status only, never the fields a read derives from refs,
+        // and no clock, so it leaves out the store's insertion time a read reports.
+        var factReadTimeOnly = new[] { "created_at", "replaced_by", "why" };
         await Assert.That(Names(factDef.GetProperty("properties")))
             .IsEquivalentTo(Names(fact.GetProperty("properties")).Except(factReadTimeOnly).Concat(new[] { "bundle_key", "subject_name", "type" }).OrderBy(n => n, StringComparer.Ordinal).ToArray());
         await Assert.That(Required(factDef)).IsEquivalentTo(Required(fact).Concat(new[] { "bundle_key", "subject_name", "type" }).OrderBy(n => n, StringComparer.Ordinal).ToArray());
 
         // Every inherited property must point at the base contract's property of the same name. The
-        // read-time fields a read of a fact derives (replaced_by and why) are not part of a published
+        // read-time fields of a fact (created_at, replaced_by and why) are not part of a published
         // record, which carries the stored status only, so the fact record must leave them out.
         foreach (var (def, baseFile, baseSchema, readTimeOnly) in new[]
         {

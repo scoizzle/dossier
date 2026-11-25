@@ -27,10 +27,9 @@ public sealed class FactContractTests
     }
 
     /// <summary>
-    /// The fact object a read returns, held to contract/fact.schema.json. show also returns the store's
-    /// insertion clock, <c>created_at</c>, which no bundle record carries, so the Fact contract leaves it
-    /// out. The fact must add exactly that one clock to the contract's properties, which is asserted here
-    /// so the exclusion cannot hide other drift.
+    /// The fact object a read returns, exactly as show serializes it, held to contract/fact.schema.json.
+    /// Every property it carries, the store's insertion clock <c>created_at</c> included, must be one the
+    /// contract declares, so no field of a real read can drift out of the contract unnoticed.
     /// </summary>
     private static async Task<JsonElement> ContractFact(TempDb db, string id)
     {
@@ -45,9 +44,8 @@ public sealed class FactContractTests
         var extra = fact.Select(pair => pair.Key)
             .Where(name => !declared.Contains(name))
             .OrderBy(name => name, StringComparer.Ordinal);
-        await Assert.That(string.Join(",", extra)).IsEqualTo("created_at");
+        await Assert.That(string.Join(",", extra)).IsEqualTo(string.Empty);
 
-        fact.Remove("created_at");
         return JsonDocument.Parse(fact.ToJsonString()).RootElement.Clone();
     }
 
@@ -107,7 +105,6 @@ public sealed class FactContractTests
         var stale = await PostStaleAsync(db);
 
         var fact = JsonNode.Parse(JsonSerializer.Serialize(db.Store.Show(stale), JsonCodec.Options))!["fact"]!.AsObject();
-        fact.Remove("created_at");
         fact["why"]![0]!["rel"] = "because";
 
         var errors = Errors(JsonDocument.Parse(fact.ToJsonString()).RootElement.Clone());

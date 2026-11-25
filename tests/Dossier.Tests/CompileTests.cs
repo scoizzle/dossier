@@ -197,6 +197,33 @@ public sealed class CompileTests
         await Assert.That(dossier.Facts.Count(f => f.Text is "one two three" or "three two one")).IsEqualTo(2);
     }
 
+    [Test]
+    public async Task Compile_StrictDedupeKeepsContestedAndLiveNearDuplicatesApart()
+    {
+        using var db = new TempDb();
+        // 20 shared tokens plus one each: Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.
+        var shared = string.Join(' ', Enumerable.Range(1, 20).Select(i => $"d{i}"));
+        var live = Post(db, "Widget", Fixtures.Fact(shared + " alpha"))[0];
+        var contested = Post(db, "Widget", Fixtures.Fact(shared + " bravo"))[0];
+        var refuter = Post(
+            db,
+            "Widget",
+            Fixtures.Fact("an independent objection", refs: new List<RefInput> { Fixtures.Ref(contested, rel: "refutes") }))[0];
+
+        var dossier = db.Store.Compile(Full(budget: 1_000_000));
+        var lines = DossierStore.RenderMarkdown(dossier).Split('\n');
+
+        // A contested fact and a live near-duplicate are different derived statuses: neither may
+        // collapse into the other and hide its dispute behind a shared line.
+        await Assert.That(dossier.Facts.Any(f => f.Id == live)).IsTrue();
+        await Assert.That(dossier.Facts.Any(f => f.Id == contested)).IsTrue();
+        var liveLine = lines.Single(line => line.Contains("[" + live + "]", StringComparison.Ordinal));
+        var contestedLine = lines.Single(line => line.Contains("[" + contested + "]", StringComparison.Ordinal));
+        await Assert.That(liveLine.Contains("contested:", StringComparison.Ordinal)).IsFalse();
+        await Assert.That(contestedLine.Contains("contested:", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(contestedLine.Contains(refuter, StringComparison.Ordinal)).IsTrue();
+    }
+
     /// <summary>Three facts with pairwise Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.</summary>
     private static FactInput[] NearDuplicateCorpus()
     {

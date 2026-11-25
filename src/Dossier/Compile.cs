@@ -707,9 +707,10 @@ public sealed partial class DossierStore
                     continue;
                 }
 
-                // A current line never absorbs a stale fact, or the reverse: its cites would then name a
-                // fact of the other kind as if it said the same thing.
-                if (head.Stale == other.Stale && Jaccard(head.TextTokens, other.TextTokens) >= DedupeThreshold)
+                // Only facts with the same derived status may cluster: a live line never absorbs a
+                // stale or contested one, or the reverse, because its cites would then name a fact of
+                // another status as if it said the same thing and hide that status from the reader.
+                if (head.Derived == other.Derived && Jaccard(head.TextTokens, other.TextTokens) >= DedupeThreshold)
                 {
                     collapsed.Add(other.Id);
                     head.Collapsed.Add(other.Id);

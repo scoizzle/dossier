@@ -1,0 +1,852 @@
+{
+ "agent": "swarm-src-compile",
+ "slice": "src-compile",
+ "subjects": [
+  {
+   "name": "DossierStore.Compile",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "compile.depth.validation",
+     "text": "Compile defaults depth to index and raises DossierRequestException with code invalid_depth for any value other than index or full.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "invalid_depth"
+     ]
+    },
+    {
+     "key": "compile.order.validation",
+     "text": "Compile defaults order to rank and raises invalid_order when order is neither rank nor seq.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "invalid_order"
+     ]
+    },
+    {
+     "key": "compile.budget.validation",
+     "text": "Compile raises invalid_budget when the requested budget is negative and uses DefaultBudgetTokens when budget is omitted.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "invalid_budget"
+     ]
+    },
+    {
+     "key": "compile.recency.validation",
+     "text": "Compile raises invalid_recency unless rank.recency is between 0 and 1, defaulting it to DefaultRecencyWeight.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "invalid_recency"
+     ]
+    },
+    {
+     "key": "compile.complete.skips.dedupe",
+     "text": "In complete mode Compile skips Dedupe, so every ranked candidate is emitted as its own entry, while strict mode clusters first.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "Complete mode never clusters"
+     ]
+    },
+    {
+     "key": "compile.seq.order",
+     "text": "When order is seq, Compile re-sorts the emitted facts by CreatedAt and then by the rank comparer after budget selection.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "OrderBy(c => c.CreatedAt"
+     ]
+    },
+    {
+     "key": "compile.used.tokens",
+     "text": "Compile sets UsedTokens to the sum of the fact, conflict and gap token estimates in the requested format.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "dossier.UsedTokens ="
+     ]
+    },
+    {
+     "key": "compile.index.truncation",
+     "text": "For index depth Compile rewrites each view text through OneLine with IndexLineLength before budgeting.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "views[candidate.Id].Text = OneLine(candidate.Text, IndexLineLength)"
+     ]
+    },
+    {
+     "key": "compile.budget.highlight.only",
+     "text": "In complete mode the budget is only the highlight threshold, because Compile emits every representative in rank order.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "The budget is only the highlight threshold."
+     ]
+    },
+    {
+     "key": "compile.gaps.from.emitted",
+     "text": "Compile computes gaps with FindGaps over the emitted facts, not over every ranked candidate.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var gaps = FindGaps(needs, emitted);"
+     ]
+    },
+    {
+     "key": "compile.conflicts.from.candidates",
+     "text": "Compile finds conflicts from all candidates before any budget selection, so a dropped fact still contributes a conflict value.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var conflicts = FindConflicts(candidates, subject.Id);"
+     ]
+    },
+    {
+     "key": "compile.omit.status.notes",
+     "text": "When OmitStatusNotes is set Compile nulls each view's Why, which removes the status note from the rendered line.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "view.Why = null;"
+     ]
+    },
+    {
+     "key": "compile.format.default",
+     "text": "Compile treats an omitted format as json.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var format = request.Format ?? \"json\";"
+     ]
+    },
+    {
+     "key": "compile.descendants.opt.in",
+     "text": "Compile adds descendant subject ids only when request.Descendants is true.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (request.Descendants == true)"
+     ]
+    },
+    {
+     "key": "compile.read.snapshot",
+     "text": "Compile opens a ReadSnapshot before resolving the subject, so ranking reads one consistent store view.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "using var snapshot = new ReadSnapshot(connection);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::RankOrder",
+   "kind": "type",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "rankorder.compare.order",
+     "text": "RankOrder compares the stale flag first, then score descending, then key, kind, text and content_hash last, so random ids never reach the order.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var byCurrency = x!.Stale.CompareTo(y!.Stale);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::SelectWithinBudget",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "select.index.cap",
+     "text": "In index depth SelectWithinBudget caps fact content at the smaller of budget and IndexTokenCap and takes the first IndexMinFacts facts regardless of cost.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var cap = Math.Min(budget, IndexTokenCap);"
+     ]
+    },
+    {
+     "key": "select.index.max",
+     "text": "SelectWithinBudget stops adding facts once IndexMaxFacts have been chosen.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (chosen.Count >= IndexMaxFacts)"
+     ]
+    },
+    {
+     "key": "select.stale.after.left.out",
+     "text": "After a current fact is left out for size, SelectWithinBudget skips every later stale fact.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (stale && currentLeftOut)"
+     ]
+    },
+    {
+     "key": "select.full.slice",
+     "text": "In full depth SelectWithinBudget fills a greedy slice of 0.75 of the budget and skips any fact whose cost would exceed that slice.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var factSlice = (int)Math.Floor(budget * 0.75);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::Dedupe",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "dedupe.jaccard.threshold",
+     "text": "Dedupe makes each not-yet-collapsed fact a representative and absorbs later facts whose token-set Jaccard similarity reaches DedupeThreshold.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "0.85. Short facts never cluster."
+     ]
+    },
+    {
+     "key": "dedupe.stale.pairing",
+     "text": "Dedupe merges two facts only when both are stale or both are current, never one of each kind.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (head.Stale == other.Stale && Jaccard"
+     ]
+    },
+    {
+     "key": "dedupe.min.tokens",
+     "text": "Facts whose TextTokens count is below DedupeMinTokens are never clustered by Dedupe.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "other.TextTokens.Count < DedupeMinTokens"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::LoadCandidates",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "load.filters.status.kind",
+     "text": "LoadCandidates excludes facts whose status is superseded or retracted and any fact whose kind is dossier.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "AND f.status NOT IN ('superseded', 'retracted')"
+     ]
+    },
+    {
+     "key": "load.inbound.count",
+     "text": "LoadCandidates derives each candidate's Inbound from the number of refs rows whose target is that fact id.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "WHERE r.target = f.id"
+     ]
+    },
+    {
+     "key": "load.stable.order",
+     "text": "LoadCandidates reads facts ordered by key, kind, text, content_hash and id, fixing the input order before ranking.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "ORDER BY f.key, f.kind, f.text, f.content_hash, f.id"
+     ]
+    },
+    {
+     "key": "load.explicitness.default",
+     "text": "LoadCandidates defaults a candidate's Explicitness to 0.25 when no ref points at that fact.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "Explicitness = reader.IsDBNull(12) ? 0.25 : reader.GetDouble(12),"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::ScoreCandidates",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "score.relevance.bm25",
+     "text": "ScoreCandidates computes relevance from bm25 over facts_fts with weight 10 for text and 3 for tags, clamped at zero and divided by the maximum.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "bm25(facts_fts, 10.0, 3.0)"
+     ]
+    },
+    {
+     "key": "score.formula",
+     "text": "ScoreCandidates sums 2.0 relevance, 1.0 centrality, 1.0 confidence, the recency weight times recency, and 0.5 explicitness into the score.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "candidate.Score = 2.0 * candidate.Relevance"
+     ]
+    },
+    {
+     "key": "score.single.timestamp.recency",
+     "text": "When every candidate shares one CreatedTime, ScoreCandidates gives each candidate a recency of 1.0.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var recency = span > 0"
+     ]
+    },
+    {
+     "key": "score.bm25.gated.on.terms",
+     "text": "ScoreCandidates queries facts_fts only when the needs yield at least one token; otherwise relevance stays zero.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (terms.Count > 0)"
+     ]
+    },
+    {
+     "key": "score.centrality.max",
+     "text": "ScoreCandidates sets centrality to the candidate's inbound count divided by the largest inbound count, or 0 when that largest count is 0.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var centrality = maxInbound > 0 ? (double)candidate.Inbound / maxInbound : 0;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::FindConflicts",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "conflicts.live.subject.only",
+     "text": "FindConflicts only reads facts on the requested subject itself whose stored status is live.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "c.SubjectId == subjectId && c.Status == \"live\""
+     ]
+    },
+    {
+     "key": "conflicts.two.values",
+     "text": "FindConflicts reports a flattened field only when at least two distinct facts and two distinct raw values disagree.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (distinctFacts < 2 || distinctValues < 2)"
+     ]
+    },
+    {
+     "key": "conflicts.flatten.paths",
+     "text": "Flatten gives each array item a path built from the parent path, a dot and its zero-based index.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "prefix + \".\" + index++"
+     ]
+    },
+    {
+     "key": "conflicts.skip.non.object",
+     "text": "FindConflicts skips a candidate whose data JSON root is not an object.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (document.RootElement.ValueKind != JsonValueKind.Object)"
+     ]
+    },
+    {
+     "key": "conflicts.value.order",
+     "text": "FindConflicts orders each conflict's values by the rank comparer over the facts that supplied them.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "OrderBy(e => e.Source, RankComparer)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::FindGaps",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "gaps.no.single.fact",
+     "text": "FindGaps adds a gap with reason no fact when no single selected fact holds all of a need's tokens across its text, tags and kind.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (!factTokens.Any(set => tokens.All(set.Contains)))"
+     ]
+    },
+    {
+     "key": "gaps.need.tokens",
+     "text": "NeedTokens keeps only tokens of at least 3 characters that are not in Stopwords.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "t.Length >= 3 && !Stopwords.Contains(t)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::DescendantIds",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "descendants.depth.walk",
+     "text": "DescendantIds walks the subject tree breadth-first for at most MaxDescendantDepth levels below the root and skips ids already seen.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "level < MaxDescendantDepth"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::ResolveCompileSubject",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "resolve.exact.id.wins",
+     "text": "When several subjects match, ResolveCompileSubject prefers an exact id match over name and alias matches, and otherwise takes the first ordinally sorted id.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "An exact id match wins over name/alias matches."
+     ]
+    },
+    {
+     "key": "resolve.subject.not.found",
+     "text": "ResolveCompileSubject raises subject_not_found when the subject string resolves to no id.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "subject_not_found"
+     ]
+    },
+    {
+     "key": "resolve.pin.column",
+     "text": "ResolveCompileSubject deserializes the subject pin from the pin column of the subjects row.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "pin = JsonCodec.Deserialize<DossierPin>"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::BuildDossier",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "build.dropped.empty",
+     "text": "BuildDossier leaves Dropped empty for index depth or complete mode and otherwise lists the ids of ranked facts that were not emitted.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "Dropped = depth == \"index\" || budgetMode == BudgetModeComplete"
+     ]
+    },
+    {
+     "key": "build.selfcheck",
+     "text": "BuildDossier fills SelfCheck with the count of facts that lack cites and the number of conflicts, and leaves Linked empty.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "UncitedClaims = facts.Count(f => f.Cites is null || f.Cites.Count == 0),"
+     ]
+    },
+    {
+     "key": "build.degraded.unset",
+     "text": "BuildDossier does not assign Degraded, so a compiled dossier carries a null Degraded.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "return new CompiledDossier"
+     ]
+    },
+    {
+     "key": "build.facts.order",
+     "text": "BuildDossier maps the emitted candidates through the cached views, so Facts follows the emitted order rather than the ranked order.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "var facts = emitted.Select(c => views[c.Id]).ToList();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.RenderMarkdown",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "render.highlights.sections",
+     "text": "RenderMarkdown writes a Highlights section and then an All facts section only when HighlightIndexes returns a non-null set.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "## Highlights"
+     ]
+    },
+    {
+     "key": "render.none.fit",
+     "text": "When the highlight set is empty RenderMarkdown writes the line None fit the budget.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "None fit the budget."
+     ]
+    },
+    {
+     "key": "render.all.facts.id.first",
+     "text": "In the All facts section RenderMarkdown puts the bracketed fact id before the text, while highlight lines put it after.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "builder.Append(\"- [\")"
+     ]
+    },
+    {
+     "key": "render.conflicts.section",
+     "text": "RenderMarkdown writes a Conflicts section only when the dossier has conflicts, one line per field with raw JSON values and bracketed fact ids.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "## Conflicts"
+     ]
+    },
+    {
+     "key": "render.gaps.section",
+     "text": "RenderMarkdown writes a Gaps section only when the dossier has gaps, one line per gap as need then reason.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "builder.Append(\"\\n## Gaps"
+     ]
+    },
+    {
+     "key": "render.no.truncation",
+     "text": "RenderMarkdown calls OneLine with int.MaxValue, so fact text is whitespace-collapsed but never truncated.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "OneLine(fact.Text, int.MaxValue)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.HighlightIndexes",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "highlight.markdown.estimators",
+     "text": "HighlightIndexes measures budget cost with the markdown estimators regardless of the request format.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "EstimateFactTokens(f, \"markdown\")"
+     ]
+    },
+    {
+     "key": "highlight.empty.facts",
+     "text": "HighlightIndexes returns null when the dossier has no facts or is not in complete mode.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "dossier.BudgetMode != BudgetModeComplete || dossier.Facts.Count == 0"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::OneLine",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "oneline.collapse.truncate",
+     "text": "OneLine collapses every run of whitespace to one space, then cuts text longer than max to max minus three characters and appends three dots.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "line[..(max - 3)] + \"...\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::Tokenize",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "tokenize.lower.split",
+     "text": "Tokenize lowercases the value and yields runs of letters and digits, splitting at every other character.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "char.IsLetterOrDigit(character)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::ToDossierView",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "view.section.tag",
+     "text": "ToDossierView takes the section from the first section tag with a non-empty suffix and falls back to the fact kind.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "t.StartsWith(\"section:\""
+     ]
+    },
+    {
+     "key": "view.cites.collapsed",
+     "text": "ToDossierView puts the fact's own id first in Cites and appends every id collapsed into it.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "cites.AddRange(candidate.Collapsed);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Compile.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "Compile.cs"
+   ],
+   "facts": [
+    {
+     "key": "const.index.token.cap",
+     "text": "The private constant IndexTokenCap bounds index-depth fact content at 300 tokens.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "IndexTokenCap = 300"
+     ]
+    },
+    {
+     "key": "const.index.max.facts",
+     "text": "The private constant IndexMaxFacts caps an index-depth dossier at 8 facts.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "IndexMaxFacts = 8"
+     ]
+    },
+    {
+     "key": "const.index.min.facts",
+     "text": "The private constant IndexMinFacts keeps at least 3 facts in an index-depth dossier even when they exceed the cap.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "IndexMinFacts = 3"
+     ]
+    },
+    {
+     "key": "const.index.line.length",
+     "text": "The private constant IndexLineLength truncates each index-depth fact line at 120 characters.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "IndexLineLength = 120"
+     ]
+    },
+    {
+     "key": "const.max.descendant.depth",
+     "text": "The private constant MaxDescendantDepth limits a descendants compile to 3 levels below the subject.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "MaxDescendantDepth = 3"
+     ]
+    },
+    {
+     "key": "const.dedupe.threshold",
+     "text": "The private constant DedupeThreshold sets the near-duplicate Jaccard similarity at 0.85.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "DedupeThreshold = 0.85"
+     ]
+    },
+    {
+     "key": "const.dedupe.min.tokens",
+     "text": "The private constant DedupeMinTokens excludes facts with fewer than 4 distinct tokens from clustering.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "DedupeMinTokens = 4"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.EstimateFactTokens",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "estimatefact.markdown.line",
+     "text": "For markdown, EstimateFactTokens measures the whole line it will emit: dash, one-lined text, bracketed id, status note and newline.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "EstimateTokens(\"- \" + OneLine(fact.Text, int.MaxValue) + \" [\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.StatusNote",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "statusnote.requires.why",
+     "text": "StatusNote returns the empty string unless the fact is stale or contested and carries at least one Why reason.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "if (fact.Why is not { Count: > 0 }"
+     ]
+    },
+    {
+     "key": "statusnote.refutes",
+     "text": "StatusNote renders a refutes reason as refuted by the fact id that refutes it.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "\"refutes\" =>"
+     ]
+    },
+    {
+     "key": "statusnote.superseded",
+     "text": "StatusNote renders a derived_from reason with state superseded as the fact id followed by was superseded by the replacing id.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "\"derived_from\" when reason.State == StatusSuperseded"
+     ]
+    },
+    {
+     "key": "statusnote.other.relation",
+     "text": "StatusNote writes any ref relation other than derived_from and refutes as contradicts followed by the fact id.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "_ => $\"contradicts"
+     ]
+    },
+    {
+     "key": "statusnote.join.reasons",
+     "text": "StatusNote joins several reasons with a semicolon and a space inside one pair of parentheses after the status name.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "string.Join(\"; \", parts)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.EstimateIndexFactTokens",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "estimateindex.json.text.only",
+     "text": "For json, EstimateIndexFactTokens charges only the fact text, not the serialized envelope or per-fact scaffolding.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "EstimateTokens(fact.Text);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::Candidate",
+   "kind": "type",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "candidate.derived.default",
+     "text": "A Candidate starts with Derived set to StatusLive while Status keeps the stored lifecycle value that dedupe and conflict checks read.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "public string Derived = StatusLive;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::CompiledDossier",
+   "kind": "type",
+   "parent": "src/Dossier/Compile.cs",
+   "aliases": [
+    "CompiledDossier"
+   ],
+   "facts": [
+    {
+     "key": "compiled.defaults",
+     "text": "A CompiledDossier starts with Depth set to index and BudgetMode set to complete.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "public string Depth { get; set; } = \"index\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.EstimateRenderedTokens",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "estimatrendered.format.split",
+     "text": "For markdown EstimateRenderedTokens measures the whole RenderMarkdown string, and for json it measures the serialized dossier.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "EstimateTokens(RenderMarkdown(dossier))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ResolveBudgetMode",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "budgetmode.error.code",
+     "text": "ResolveBudgetMode raises DossierRequestException with code invalid_budget_mode for any value other than complete or strict.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "invalid_budget_mode"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::CompileRequest",
+   "kind": "type",
+   "parent": "src/Dossier/Compile.cs",
+   "aliases": [
+    "CompileRequest"
+   ],
+   "facts": [
+    {
+     "key": "request.omit.status.notes.jsonignore",
+     "text": "OmitStatusNotes is internal and marked JsonIgnore, so a request body can never set it and only publish uses it.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "internal bool OmitStatusNotes { get; set; }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::Jaccard",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "jaccard.empty.union",
+     "text": "Jaccard returns 0 when the union of the two token sets is empty.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "return union == 0 ? 0 : (double)intersection / union;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Compile.cs::EstimateConflictTokens",
+   "kind": "method",
+   "parent": "DossierStore.Compile",
+   "facts": [
+    {
+     "key": "estimateconflict.markdown",
+     "text": "For markdown EstimateConflictTokens measures the field, every raw value with its bracketed fact id joined by semicolons, and a newline.",
+     "at": [
+      "src/Dossier/Compile.cs",
+      "EstimateTokens(\"- \" + conflict.Field + \": \" + string.Join(\"; \", conflict.Values.Select(v => $\"{v.Value.GetRawText()} [{v.Fact}]\")) + \"\\n\")"
+     ]
+    }
+   ]
+  }
+ ]
+}

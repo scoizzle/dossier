@@ -1,0 +1,112 @@
+{
+  "subjects": [
+    {
+      "name": "Dossier/Multi-agent",
+      "kind": "topic",
+      "parent": "Dossier",
+      "facts": [
+        { "key": "premise", "text": "A store shared by several agents has to say who wrote a fact, whether it is still the current claim, whether anyone disputes it, whether its inputs changed, and what others wrote meanwhile.", "at": ["docs/multi-agent.md", "A store shared by several agents has to answer questions"] },
+        { "key": "loop.1-cursor", "text": "Shared-store loop step 1: take a change cursor before reading, so the cursor is never ahead of what was read.", "at": ["docs/multi-agent.md", "1. **Take a cursor.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/changes" }] },
+        { "key": "loop.2-orient", "text": "Shared-store loop step 2: orient with check and compile, and keep the fact ids relied on.", "at": ["docs/multi-agent.md", "2. **Orient.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/check" }, { "rel": "about", "subject": "Dossier/CLI/dossier compile" }] },
+        { "key": "loop.3-post", "text": "Shared-store loop step 3: post conclusions with derived_from refs to their exact inputs, dispute with refutes or contradicts, and correct a wrong fact with a supersedes ref.", "at": ["docs/multi-agent.md", "3. **Post with your inputs declared.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/post" }, { "rel": "about", "subject": "Dossier/Concepts/Correction" }] },
+        { "key": "loop.4-verify", "text": "Shared-store loop step 4: verify the cited fact ids before acting, and act only when current is true.", "at": ["docs/multi-agent.md", "4. **Verify before you act.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/verify" }] },
+        { "key": "loop.5-catch-up", "text": "Shared-store loop step 5: catch up from the cursor with changes --since, and re-read everything when reset is true.", "at": ["docs/multi-agent.md", "5. **Catch up from the cursor.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/changes" }] },
+        { "key": "journal-vs-verify", "text": "The journal and verify do different jobs: changes says when to look again, and verify says what is still true.", "at": ["docs/multi-agent.md", "`changes` says when to look again; `verify` says what is still true."], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Change journal" }] },
+        { "key": "per-agent-process", "text": "Each agent runs its own dossier mcp process against the shared SQLite file; there is no central server holding the agents' connections.", "at": ["scripts/fleet-eval.mjs", "several real `dossier mcp` processes share one database"] },
+        { "key": "design.derived", "text": "Design choice: stale and contested are computed from refs when asked, because a stored label would need every write to rewrite its dependents and would drift the first time one was missed.", "at": ["docs/multi-agent.md", "- **Derived, never stored.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Derived status" }] },
+        { "key": "design.surface", "text": "Design choice: a changed input makes its dependents stale but does not hide or remove them, because the old claim is often the context a reader needs.", "at": ["docs/multi-agent.md", "- **Surface, do not delete.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/When Should LLM Agents Forget" }] },
+        { "key": "design.report", "text": "Design choice: Dossier never picks the winner of a conflict or a dispute; it names both sides and leaves the decision to whoever can check the source.", "at": ["docs/multi-agent.md", "- **Report, do not resolve.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Conflicts and gaps" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Multi-agent/Failure modes",
+      "kind": "topic",
+      "parent": "Dossier/Multi-agent",
+      "facts": [
+        { "key": "provenance-collapse", "text": "Provenance collapse (a retrieved fact cannot be traced to its writer or source) is answered by keeping actor, channel and time on every fact and a basis on every ref.", "at": ["docs/multi-agent.md", "| **Provenance collapse**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Governed Shared Memory" }, { "rel": "about", "subject": "Dossier/Concepts/Provenance and agent identity" }] },
+        { "key": "contradiction-persistence", "text": "Contradiction persistence is answered by exact-hash dedupe, which never swallows a contradicting write, by listing disagreeing data as conflicts, and by contested status for a declared dispute.", "at": ["docs/multi-agent.md", "| **Contradiction persistence**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Governed Shared Memory" }, { "rel": "about", "subject": "Dossier/Concepts/Dedupe and content hash" }] },
+        { "key": "revoked-still-authoritative", "text": "Revoked-but-still-authoritative is answered by leaving superseded and retracted facts out of search and compile, so they are never ranked, while history stays readable with show.", "at": ["docs/multi-agent.md", "| **Revoked but still authoritative**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Revoked but Still Authoritative" }, { "rel": "about", "subject": "Dossier/Concepts/Status lifecycle" }] },
+        { "key": "ghost-memory", "text": "Ghost memory (old and current values unmarked side by side) is answered by one live value per slot and by correction by ref, with verify naming what replaced an old id.", "at": ["docs/multi-agent.md", "| **Ghost memory**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/A-TMA" }, { "rel": "about", "subject": "Dossier/Research/TEPA" }, { "rel": "about", "subject": "Dossier/Concepts/Correction" }] },
+        { "key": "stale-derivations", "text": "Stale derivations (acting on a plan built from an input that changed) are answered by derived_from refs to exact inputs, which every read walks to report stale transitively.", "at": ["docs/multi-agent.md", "| **Stale derivations**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Fresh Memory, Stale Plans" }, { "rel": "about", "subject": "Dossier/Concepts/Derived status" }] },
+        { "key": "stale-propagation", "text": "Stale propagation is answered by one store, where a committed write is visible to the next read, and by a journal cursor with a per-subject filter and an explicit reset.", "at": ["docs/multi-agent.md", "| **Stale propagation**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Multi-Agent Memory from a Computer Architecture Perspective" }, { "rel": "about", "subject": "Dossier/Concepts/Change journal" }] },
+        { "key": "write-time-distillation", "text": "Loss from write-time distillation is avoided by running no model at write time: facts are stored as posted and a dossier is compiled at read time for the subject and budget asked.", "at": ["docs/multi-agent.md", "| **Write-time distillation loses"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Mem++" }, { "rel": "about", "subject": "Dossier/Research/JitMem" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Multi-agent/Not covered",
+      "kind": "topic",
+      "parent": "Dossier/Multi-agent",
+      "facts": [
+        { "key": "scoped-access", "text": "Gap: there are no scopes, tenants or authentication; every agent that can open the store reads all of it, and isolation today is one database file per trust boundary.", "at": ["docs/multi-agent.md", "- **Scoped access.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Governed Shared Memory" }] },
+        { "key": "identity-label", "text": "Gap: the actor on a fact is whatever name the client sent; it is preserved exactly, is not proof, and nothing may be gated on it.", "at": ["docs/multi-agent.md", "- **Identity is a label.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Provenance and agent identity" }] },
+        { "key": "any-writer-supersedes", "text": "Gap: any writer can supersede any fact by key or by ref, over MCP as well as the CLI, and an overwritten value is not flagged as a disagreement.", "at": ["docs/multi-agent.md", "- **Any writer can supersede any fact.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Securing LLM-Agent Long-Term Memory Against Poisoning" }, { "rel": "about", "subject": "Dossier/Research/MAPLE-Guard" }] },
+        { "key": "echo", "text": "Gap: when a second agent posts an identical fact the write is deduped and that agent is not recorded, so the store cannot say how many agents asserted a claim or whether they were independent.", "at": ["docs/multi-agent.md", "- **Echo is not corroboration.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/GovMem" }, { "rel": "about", "subject": "Dossier/Research/CPB" }] },
+        { "key": "status-outside-reads", "text": "Gap: a published bundle, the change journal and the graph view carry the stored status, and staleness does not survive publish and import because the changed input is not in the bundle.", "at": ["docs/multi-agent.md", "- **Status outside the store's own reads.**"] },
+        { "key": "redump", "text": "Gap: dumping an unchanged source again creates a corrected claim anew next to its correction; a test pins this as a known gap of issue #25.", "at": ["docs/multi-agent.md", "- **A re-dump revives a corrected claim.**"], "refs": [{ "rel": "about", "subject": "tests/Dossier.Tests/SupersedesRefTests.cs" }, { "rel": "about", "subject": "Dossier/Concepts/Correction" }] },
+        { "key": "old-supersedes-refs", "text": "Gap: a store written before corrections took effect may hold supersedes refs whose targets are still live; nothing repairs them on upgrade, and posting the correction again applies it.", "at": ["docs/multi-agent.md", "- **Old `supersedes` refs.**"] },
+        { "key": "committed-belief", "text": "Gap: a write is committed belief; there is no staging, quarantine or review state, only post --dry-run and check --drafts to preview a write.", "at": ["docs/multi-agent.md", "- **A write is committed belief.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/MemTX" }, { "rel": "about", "subject": "Dossier/Research/TARL" }] },
+        { "key": "time", "text": "Gap: there is no valid-time on a fact and no as-of read; the store knows only when a fact was posted and whether it has been superseded.", "at": ["docs/multi-agent.md", "- **Time.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/Zep" }] },
+        { "key": "mcp-retract", "text": "Gap: retract is a CLI verb; over MCP an agent can correct a fact by key or by ref but cannot remove one.", "at": ["docs/multi-agent.md", "- **Retraction over MCP.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/retract" }] },
+        { "key": "acting-on-labels", "text": "Gap: a correct stale label does not make an agent heed it; that is why the --require-current gate exists.", "at": ["docs/multi-agent.md", "- **What an agent does with a label.**"], "refs": [{ "rel": "about", "subject": "Dossier/Research/STALE" }, { "rel": "about", "subject": "Dossier/CLI/verify" }] }
+      ]
+    },
+    { "name": "Dossier/Research", "kind": "area", "parent": "Dossier" },
+    { "name": "Dossier/Research/Governed Shared Memory", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2606.24535"], "facts": [
+      { "key": "cited-for", "text": "Governed Shared Memory for Multi-Agent LLM Systems (arXiv:2606.24535) is cited for the failure modes of shared agent memory, including a dedup gate pre-empting its contradiction detector.", "at": ["docs/multi-agent.md", "*Governed Shared Memory for Multi-Agent LLM Systems* (arXiv:2606.24535)"], "data": { "arxiv": "2606.24535" } }
+    ] },
+    { "name": "Dossier/Research/Revoked but Still Authoritative", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2609.08258"], "facts": [
+      { "key": "cited-for", "text": "Revoked but Still Authoritative (arXiv:2609.08258) is cited for the failure where a superseded fact is marked but still returned and outranks its replacement.", "at": ["docs/multi-agent.md", "*Revoked but Still Authoritative* (arXiv:2609.08258)"], "data": { "arxiv": "2609.08258" } }
+    ] },
+    { "name": "Dossier/Research/A-TMA", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2607.01935"], "facts": [
+      { "key": "cited-for", "text": "A-TMA (arXiv:2607.01935) is cited for ghost memory: old and current values of the same thing sitting in a store with nothing telling them apart.", "at": ["docs/multi-agent.md", "*A-TMA* (arXiv:2607.01935)"], "data": { "arxiv": "2607.01935" } }
+    ] },
+    { "name": "Dossier/Research/TEPA", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2608.07429"], "facts": [
+      { "key": "cited-for", "text": "TEPA (arXiv:2608.07429) is cited alongside A-TMA for the ghost-memory failure.", "at": ["docs/multi-agent.md", "*TEPA* (arXiv:2608.07429)"], "data": { "arxiv": "2608.07429" } }
+    ] },
+    { "name": "Dossier/Research/Fresh Memory, Stale Plans", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2609.03340", "Planfence"], "facts": [
+      { "key": "cited-for", "text": "Fresh Memory, Stale Plans (arXiv:2609.03340) is cited for stale derivations: an agent holds the latest input yet acts on a plan built from an older one, which a freshness check misses.", "at": ["docs/multi-agent.md", "*Fresh Memory, Stale Plans* (arXiv:2609.03340)"], "data": { "arxiv": "2609.03340" } }
+    ] },
+    { "name": "Dossier/Research/Multi-Agent Memory from a Computer Architecture Perspective", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2603.10062"], "facts": [
+      { "key": "cited-for", "text": "Multi-Agent Memory from a Computer Architecture Perspective (arXiv:2603.10062) is cited for stale propagation: one agent's update not being seen by another.", "at": ["docs/multi-agent.md", "*Multi-Agent Memory from a Computer Architecture Perspective* (arXiv:2603.10062)"], "data": { "arxiv": "2603.10062" } }
+    ] },
+    { "name": "Dossier/Research/Mem++", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2610.02002"], "facts": [
+      { "key": "cited-for", "text": "Mem++ (arXiv:2610.02002) is cited for the loss that write-time distillation causes when a later question needs what was dropped.", "at": ["docs/multi-agent.md", "*Mem++* (arXiv:2610.02002)"], "data": { "arxiv": "2610.02002" } }
+    ] },
+    { "name": "Dossier/Research/JitMem", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2609.27334"], "facts": [
+      { "key": "cited-for", "text": "JitMem (arXiv:2609.27334) is cited with Mem++ for curating at read time instead of write time.", "at": ["docs/multi-agent.md", "*JitMem* (arXiv:2609.27334)"], "data": { "arxiv": "2609.27334" } }
+    ] },
+    { "name": "Dossier/Research/Securing LLM-Agent Long-Term Memory Against Poisoning", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2606.24322"], "facts": [
+      { "key": "cited-for", "text": "Securing LLM-Agent Long-Term Memory Against Poisoning (arXiv:2606.24322) is cited for the argument that authority has to be bound to a write's origin.", "at": ["docs/multi-agent.md", "arXiv:2606.24322"], "data": { "arxiv": "2606.24322" } }
+    ] },
+    { "name": "Dossier/Research/MAPLE-Guard", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2608.00426"], "facts": [
+      { "key": "cited-for", "text": "MAPLE-Guard (arXiv:2608.00426) is cited for the argument that risky writes to shared memory need quarantine.", "at": ["docs/multi-agent.md", "*MAPLE-Guard*, arXiv:2608.00426"], "data": { "arxiv": "2608.00426" } }
+    ] },
+    { "name": "Dossier/Research/GovMem", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2607.02579"], "facts": [
+      { "key": "cited-for", "text": "GovMem (arXiv:2607.02579) is cited for the finding that copies and paraphrases look like independent evidence in shared memory.", "at": ["docs/multi-agent.md", "*GovMem* (arXiv:2607.02579)"], "data": { "arxiv": "2607.02579" } }
+    ] },
+    { "name": "Dossier/Research/CPB", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2609.30813"], "facts": [
+      { "key": "cited-for", "text": "CPB (arXiv:2609.30813) is cited for the finding that admission into shared memory cannot be made sound without lineage.", "at": ["docs/multi-agent.md", "*CPB* (arXiv:2609.30813)"], "data": { "arxiv": "2609.30813" } }
+    ] },
+    { "name": "Dossier/Research/MemTX", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2607.23929"], "facts": [
+      { "key": "cited-for", "text": "MemTX (arXiv:2607.23929) is cited as arguing for staged writes to agent memory.", "at": ["docs/multi-agent.md", "*MemTX* (arXiv:2607.23929)"], "data": { "arxiv": "2607.23929" } }
+    ] },
+    { "name": "Dossier/Research/TARL", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2608.03699"], "facts": [
+      { "key": "cited-for", "text": "TARL (arXiv:2608.03699) is cited with MemTX as arguing for staged writes.", "at": ["docs/multi-agent.md", "*TARL* (arXiv:2608.03699)"], "data": { "arxiv": "2608.03699" } }
+    ] },
+    { "name": "Dossier/Research/Zep", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2501.13956"], "facts": [
+      { "key": "cited-for", "text": "Zep (arXiv:2501.13956) is cited for its bi-temporal model, against which Dossier has transaction time only.", "at": ["docs/multi-agent.md", "*Zep*, arXiv:2501.13956"], "data": { "arxiv": "2501.13956" } }
+    ] },
+    { "name": "Dossier/Research/STALE", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2605.06527"], "facts": [
+      { "key": "cited-for", "text": "STALE (arXiv:2605.06527) is cited for the wide gap between an agent retrieving updated evidence and acting on it.", "at": ["docs/multi-agent.md", "*STALE* (arXiv:2605.06527)"], "data": { "arxiv": "2605.06527" } }
+    ] },
+    { "name": "Dossier/Research/When Should LLM Agents Forget", "kind": "paper", "parent": "Dossier/Research", "aliases": ["arXiv:2611.17338"], "facts": [
+      { "key": "cited-for", "text": "When Should LLM Agents Forget? (arXiv:2611.17338) is cited for the finding that hard-filtering facts classified as stale can reduce accuracy when the classification is wrong.", "at": ["docs/multi-agent.md", "*When Should LLM Agents Forget?*, arXiv:2611.17338"], "data": { "arxiv": "2611.17338" } }
+    ] },
+    {
+      "name": "Dossier/Research",
+      "facts": [
+        { "key": "unverified-here", "text": "The papers are cited by title and arXiv id as the multi-agent guide states them; this map records what Dossier cites each for, not an independent reading of the papers.", "at": ["docs/multi-agent.md", "Recent work on agent memory names the ways"], "confidence": 0.6 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1016 @@
+{
+ "agent": "swarm-tests-web",
+ "slice": "tests-web",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/WebTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "WebTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "web-factsubjectsanderrors-missing-fact-404",
+     "text": "Web_FactSubjectsAndErrors requests api/fact with the id missing and asserts the response status is 404.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "api/fact?id=missing"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-factsubjectsanderrors-compile-statuses",
+     "text": "The same test gets 400 from api/compile with no subject and 404 from api/compile with subject Nobody.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "api/compile?subject=Nobody"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-factsubjectsanderrors-post-405",
+     "text": "Web_FactSubjectsAndErrors posts to api/search and asserts the status is 405.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "http.PostAsync(\"api/search\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-servessearchjsonandindex-search-json",
+     "text": "api/search with q alpha returns application/json and a payload whose total is 1.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "api/search?q=alpha"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-servessearchjsonandindex-index-html",
+     "text": "The empty path is served as text/html and its body contains the opening html tag.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "MediaType).IsEqualTo(\"text/html\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-graph-apianderrors-depth-400",
+     "text": "api/graph answers depth=4 with status 400 and an error code of bad_depth.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "?subject=s-root&depth=4"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "web-graph-apianderrors-max-nodes-400",
+     "text": "max_nodes=0 and max_nodes=2001 each return status 400 with error code bad_max_nodes.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "?subject=s-root&max_nodes=0"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "web-graph-apianderrors-tree-shape",
+     "text": "A graph request with facts=true and max_nodes=3 yields 3 subjects and 0 facts in the body.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "api/graph?facts=true&max_nodes=3"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "web-assets-csp-on-every-response",
+     "text": "Every path in the asset check, including the 404 nothing-here path, carries the single ExpectedCsp value.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "Headers.GetValues(\"Content-Security-Policy\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-assets-nosniff",
+     "text": "Those same responses send X-Content-Type-Options with the value nosniff.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "\"X-Content-Type-Options\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-assets-javascript-content-type",
+     "text": "app.js, graph.js and feed.js are served as text/javascript; charset=utf-8 with bodies longer than 100 characters.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "text/javascript; charset=utf-8"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-assets-whitelist-only",
+     "text": "Paths index.html, APP.JS, graph.js.map, www/app.js and Dossier.dll are all answered with 404.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "\"www/app.js\", \"Dossier.dll\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "hostguard-rejects-other-port",
+     "text": "WebServer.IsLoopbackHost accepts localhost:8787 for serve port 8787 but rejects 127.0.0.1:9999.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "(\"127.0.0.1:9999\", false)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "hostguard-rejects-trailing-dot",
+     "text": "The guard rejects localhost. with a trailing dot, since a trailing dot is not the name localhost.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "(\"localhost.\", false)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "shouldaddlocalhostprefix-rule",
+     "text": "ShouldAddLocalhostPrefix is true only when every resolved address is loopback and the first address can be bound.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "WebServer.ShouldAddLocalhostPrefix(addresses, canBind)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "shouldaddlocalhostprefix-empty-resolution",
+     "text": "An empty resolution and a first address that cannot bind both make ShouldAddLocalhostPrefix return false.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "(\"empty\", [], Binds(), false)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "canbind-socketexception-becomes-false",
+     "text": "CanBind returns false when constructing the Socket throws SocketException with AddressFamilyNotSupported.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "SocketError.AddressFamilyNotSupported"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "canbind-unsupported-exceptions-become-false",
+     "text": "CanBind also answers false when the socket factory throws PlatformNotSupportedException or NotSupportedException.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "PlatformNotSupportedException(\"IPv6 is not enabled\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-stopwithoutstart-twice",
+     "text": "Web_StopWithoutStartDoesNotThrow calls Stop twice on a port held by a TcpListener and asserts Port equals that port.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "new TcpListener(IPAddress.Loopback, 0)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "web-portinuse-throws",
+     "text": "Web_PortInUseStillThrows expects a second Start on an occupied port to throw HttpListenerException or SocketException.",
+     "at": [
+      "tests/Dossier.Tests/WebTests.cs",
+      "caught is HttpListenerException or SocketException"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/WebEventsTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "WebEventsTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "web-revisionendpointreportsstorerevision-matches-store",
+     "text": "Web_RevisionEndpointReportsStoreRevision reads api/revision as application/json and asserts its revision equals the store Revision.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "GetProperty(\"revision\").GetInt64()"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-revisionendpointreportsstorerevision-grows",
+     "text": "After a second DossierStore on the same file posts a fact, api/revision reports a revision greater than the first read.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "second.PostFacts(Fixtures.Post(\"Widget\", Fixtures.Fact(\"beta\")));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-revisionendpointreportsstorerevision-post-405",
+     "text": "A POST to api/revision is answered with status 405.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "http.PostAsync(\"api/revision\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-sendsbaselineeventimmediately-headers",
+     "text": "api/events answers 200 as text/event-stream with charset utf-8, Cache-Control no-store, the ExpectedCsp value and nosniff.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "MediaType).IsEqualTo(\"text/event-stream\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-sendsbaselineeventimmediately-retry-preamble",
+     "text": "The first event on the stream is named revision, its data parses to the store revision, and the preamble holds retry: 1000.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "preamble.Contains(\"retry: 1000\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-emitsafterwrite-from-second-store",
+     "text": "The baseline event's revision equals the store revision, and the event after the second store writes carries a larger revision.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "var next = ParseRevision(later[0]);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-streamdoesnotblockother-endpoints",
+     "text": "While an api/events stream stays open, api/subjects and api/graph?subject=s-root both still answer 200.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "var subjects = await http.GetAsync(\"api/subjects\", cts.Token);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-dispose-ends-open-streams-timing",
+     "text": "Web_Dispose_EndsOpenStreams asserts Dispose wins against a 3 second delay and finishes in less than 3 seconds.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "await Assert.That(stopwatch.Elapsed).IsLessThan(TimeSpan.FromSeconds(3));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-dispose-ends-open-streams-drain",
+     "text": "After Dispose the reading side must reach end-of-stream or a clean disconnect within 2 seconds instead of hanging.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "var finished = await Task.WhenAny(drain, Task.Delay(TimeSpan.FromSeconds(2), cts.Token));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-rejectsstreamsbeyondthecap-busy",
+     "text": "Once MaxEventStreams api/events streams are open, the next request returns 503 with error code busy.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "await Assert.That((int)busy.StatusCode).IsEqualTo(503);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-rejectsstreamsbeyondthecap-reopen",
+     "text": "Disposing one open stream and posting nudge facts lets a fresh api/events request eventually reach status 200.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "db.Store.PostFacts(Fixtures.Post(\"Widget\", Fixtures.Fact(\"nudge \" + nudges)));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-pollersurvivesanon-sqlite-failure-inject",
+     "text": "Web_Events_PollerSurvivesANonSqliteFailure injects an InvalidOperationException on the first RevisionReader tick, then returns the start revision plus 5.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "throw new InvalidOperationException(\"injected counter failure\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-events-pollersurvivesanonqlitefailure-asserts",
+     "text": "The test asserts the next streamed revision equals the injected value and that at least 2 ticks ran.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "await Assert.That(ticks).IsGreaterThanOrEqualTo(2);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "web-stop-isidempotent-twice",
+     "text": "Web_Stop_IsIdempotent calls Stop twice and Dispose twice on the same server without asserting an error.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "server.Dispose();"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "const-maxeventstreams-eight",
+     "text": "WebEventsTests pins MaxEventStreams to 8, matching the contract of eight concurrent streams and then 503 busy.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "private const int MaxEventStreams = 8;"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "const-pollinterval-twenty-ms",
+     "text": "The event tests start the server with a PollInterval of 20 milliseconds so polling ticks quickly.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "TimeSpan.FromMilliseconds(20)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "helper-client-loopback-base-address",
+     "text": "Client builds an HttpClient whose base address is the server's port on 127.0.0.1.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "new() { BaseAddress = new Uri($\"http://127.0.0.1:{server.Port}/\") };"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "helper-parserevision-invariant",
+     "text": "ParseRevision joins the event's data lines with a newline and parses them with InvariantCulture.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "long.Parse(string.Join(\"\\n\", @event.Data), NumberStyles.Integer, CultureInfo.InvariantCulture);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "helper-readeventsasync-preamble",
+     "text": "ReadEventsAsync collects comment and retry lines into a preamble list and keeps reading until it has the wanted count of events.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "while (events.Count < wanted)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "helper-readeventsasync-truncated-stream",
+     "text": "When the stream ends before the wanted events arrive, ReadEventsAsync throws InvalidOperationException naming the counts seen.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "throw new InvalidOperationException($\"the event stream ended after {events.Count} of {wanted} events\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    },
+    {
+     "key": "sse-event-shape",
+     "text": "The SseEvent record that ReadEventsAsync produces holds a Name, an Id and a Data list of strings.",
+     "at": [
+      "tests/Dossier.Tests/WebEventsTests.cs",
+      "private sealed record SseEvent(string? Name, string? Id, List<string> Data);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/events stream"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/McpTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "McpTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "mcp-initializethenlisttoolsthencallsearch-handshake",
+     "text": "initialize over the child process answers protocolVersion 2025-06-18 and a serverInfo name of dossier.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "IsEqualTo(\"dossier\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-initializethenlisttoolsthencallsearch-nine-tools",
+     "text": "tools/list returns 9 tools and the test checks dump, post_facts, correlate, search, get_fact, compile_dossier, check, verify_facts and changes are among them.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(names.Count).IsEqualTo(9);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-initializethenlisttoolsthencallsearch-search-call",
+     "text": "A tools/call of search with q alpha returns isError false and a payload with total 1 whose first hit text is the posted fact.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "payload.GetProperty(\"total\").GetInt32()).IsEqualTo(1)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/search"
+      }
+     ]
+    },
+    {
+     "key": "mcp-getfacttoolmatchescore-shows-same-json",
+     "text": "Mcp_GetFactToolMatchesCoreShow asserts the get_fact content text equals the serialized output of the store Show method.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(text).IsEqualTo(JsonSerializer.Serialize(db.Store.Show(factId), JsonCodec.Options));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/get_fact"
+      }
+     ]
+    },
+    {
+     "key": "mcp-errorsandnotifications-notification-is-null",
+     "text": "Handle returns null for the notifications/initialized notification, which carries no id.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "\"method\":\"notifications/initialized\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-errorsandnotifications-unknown-method",
+     "text": "An unknown method named nope produces a JSON-RPC error with code -32601.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "IsEqualTo(-32601)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-errorsandnotifications-missing-fact",
+     "text": "Calling get_fact with the id nope returns a result whose isError is true rather than a JSON-RPC error.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "\"arguments\":{\"id\":\"nope\"}"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/get_fact"
+      }
+     ]
+    },
+    {
+     "key": "mcp-errorsandnotifications-parse-error",
+     "text": "Handle on the text not json returns a JSON-RPC error with code -32700.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "IsEqualTo(-32700)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-resourceslistincludes-subjects-uri",
+     "text": "resources/list includes a resource uri of dossier://subjects.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "resources.Contains(\"dossier://subjects\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-resourceslistincludes-fact-template",
+     "text": "resources/templates/list advertises the uriTemplate dossier://fact/{id} alongside dossier://subject/{id}.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "uris.Contains(\"dossier://fact/{id}\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-resourceslistincludes-read-subject",
+     "text": "resources/read of dossier://subject/ plus the subject id returns contents whose parsed subject id matches.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "uri = \"dossier://subject/\" + subjectId"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-dumptooladvertisessplitenum-values",
+     "text": "The dump tool inputSchema declares a split enum of heading, file and none in that order.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "values.SequenceEqual(new[] { \"heading\", \"file\", \"none\" })"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/dump"
+      }
+     ]
+    },
+    {
+     "key": "mcp-checktoolislistedandcallable-count",
+     "text": "Mcp_CheckToolIsListedAndCallable asserts tools/list returns 9 tools.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(tools.Count).IsEqualTo(9);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/check"
+      }
+     ]
+    },
+    {
+     "key": "mcp-checktoolislistedandcallable-result",
+     "text": "A check call on subject widget with one fresh note draft reports match exact_name, draft status new, and a search for fresh still totals 0.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "GetProperty(\"drafts\")[0].GetProperty(\"status\").GetString()).IsEqualTo(\"new\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/check"
+      }
+     ]
+    },
+    {
+     "key": "mcp-postfactsdryrunstillwritesnothing",
+     "text": "post_facts with dry_run true returns text containing new while a search for fresh still totals 0.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "dry.GetProperty(\"result\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/post_facts"
+      }
+     ]
+    },
+    {
+     "key": "mcp-clientinfonamelandsinprovenance-stamp",
+     "text": "A server initialized with the name agent-0 stamps posted facts with actor agent-0, channel mcp and actor_type agent.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(fromZero.GetProperty(\"actor\").GetString()).IsEqualTo(\"agent-0\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-clientinfonameissanitized-bidi",
+     "text": "A client name holding a bidi override, evil and a control character becomes the actor evil-agent.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(hostileActor).IsEqualTo(\"evil-agent\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-clientinfonameissanitized-length-cap",
+     "text": "A name of 200 a characters is stored as an actor of 64 characters, all a.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(longActor.Length).IsEqualTo(64);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-clientinfonameissanitized-non-string",
+     "text": "A numeric clientInfo.name does not fail initialize, and the actor falls back to mcp-client.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "IsEqualTo(\"mcp-client\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-dossieragentenvisfallback-env-value",
+     "text": "With DOSSIER_AGENT set to env-agent and no clientInfo.name sent, posted facts carry actor env-agent.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(Provenance(db.Store, id).GetProperty(\"actor\").GetString()).IsEqualTo(\"env-agent\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-dossieragentenvisfallback-client-wins",
+     "text": "When initialize supplies client-agent, that name overrides the DOSSIER_AGENT value in the provenance actor.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "IsEqualTo(\"client-agent\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "mcp-identicalpostsfromtwoagents-dedupe",
+     "text": "Posting the same fact text from two servers returns the same fact id and leaves a single row for that text.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(second).IsEqualTo(first);"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Dedupe and content hash"
+      }
+     ]
+    },
+    {
+     "key": "mcp-identicalpostsfromtwoagents-keeps-first-actor",
+     "text": "The deduped fact keeps the provenance of the first writer, actor agent-0.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "await Assert.That(Provenance(db.Store, first).GetProperty(\"actor\").GetString()).IsEqualTo(\"agent-0\");"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "helper-mcpchild-process-start",
+     "text": "McpChild starts dotnet with Dossier.dll and the mcp argument, setting DOSSIER_DB and optionally DOSSIER_AGENT in the environment.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "info.ArgumentList.Add(Path.Combine(AppContext.BaseDirectory, \"Dossier.dll\"));"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "helper-call-raw-timeout",
+     "text": "CallRaw writes one JSON-RPC line and waits up to 60 seconds for the reply line.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(60))"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "helper-initialize-omits-name",
+     "text": "The Initialize helper sends clientInfo with only a version when the supplied name is null.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "CallRaw(\"initialize\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "helper-provenance-reads-column",
+     "text": "The Provenance helper reads the provenance column of the facts row with a scalar query.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "\"SELECT provenance FROM facts WHERE id = $id\""
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "helper-poster-in-process",
+     "text": "PostInProcess sends a post_facts call for a Widget note and returns the first new fact id from the response.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "name = \"post_facts\", arguments = new { subject = new { name = \"Widget\" }"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/post_facts"
+      }
+     ]
+    },
+    {
+     "key": "mcp-initialize-tools-list-untrusted-descriptions",
+     "text": "Every tool description returned by tools/list contains the phrase untrusted data.",
+     "at": [
+      "tests/Dossier.Tests/McpTests.cs",
+      "tool.GetProperty(\"description\").GetString()!.Contains(\"untrusted data\")"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

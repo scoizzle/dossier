@@ -197,6 +197,33 @@ public sealed class CompileTests
         await Assert.That(dossier.Facts.Count(f => f.Text is "one two three" or "three two one")).IsEqualTo(2);
     }
 
+    [Test]
+    public async Task Compile_StrictDedupeKeepsContestedAndLiveNearDuplicatesApart()
+    {
+        using var db = new TempDb();
+        // 20 shared tokens plus one each: Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.
+        var shared = string.Join(' ', Enumerable.Range(1, 20).Select(i => $"d{i}"));
+        var live = Post(db, "Widget", Fixtures.Fact(shared + " alpha"))[0];
+        var contested = Post(db, "Widget", Fixtures.Fact(shared + " bravo"))[0];
+        var refuter = Post(
+            db,
+            "Widget",
+            Fixtures.Fact("an independent objection", refs: new List<RefInput> { Fixtures.Ref(contested, rel: "refutes") }))[0];
+
+        var dossier = db.Store.Compile(Full(budget: 1_000_000));
+        var lines = DossierStore.RenderMarkdown(dossier).Split('\n');
+
+        // A contested fact and a live near-duplicate are different derived statuses: neither may
+        // collapse into the other and hide its dispute behind a shared line.
+        await Assert.That(dossier.Facts.Any(f => f.Id == live)).IsTrue();
+        await Assert.That(dossier.Facts.Any(f => f.Id == contested)).IsTrue();
+        var liveLine = lines.Single(line => line.Contains("[" + live + "]", StringComparison.Ordinal));
+        var contestedLine = lines.Single(line => line.Contains("[" + contested + "]", StringComparison.Ordinal));
+        await Assert.That(liveLine.Contains("contested:", StringComparison.Ordinal)).IsFalse();
+        await Assert.That(contestedLine.Contains("contested:", StringComparison.Ordinal)).IsTrue();
+        await Assert.That(contestedLine.Contains(refuter, StringComparison.Ordinal)).IsTrue();
+    }
+
     /// <summary>Three facts with pairwise Jaccard 20/22 (~0.91), above the 0.85 cluster threshold.</summary>
     private static FactInput[] NearDuplicateCorpus()
     {
@@ -643,6 +670,51 @@ public sealed class CompileTests
         var order = db.Store.Compile(request).Facts.Select(f => f.Id).ToList();
 
         await Assert.That(order.SequenceEqual(new[] { ids[1], ids[2], ids[0] })).IsTrue();
+    }
+
+    [Test]
+    public async Task Compile_SeqCompleteHighlightsPreferCurrentOverEarlierStale()
+    {
+        using var db = new TempDb();
+        var input = Post(db, "Widget", Fixtures.Fact("input one", key: "input"))[0];
+        var stale = Post(
+            db,
+            "Widget",
+            Fixtures.Fact(
+                "stale conclusion about the old input",
+                refs: new List<RefInput> { Fixtures.Ref(input, basis: "derived", rel: "derived_from") }))[0];
+        var live = Post(db, "Widget", Fixtures.Fact("current observation stands on its own"))[0];
+        Post(db, "Widget", Fixtures.Fact("input two", key: "input"));
+        // With order=seq the older stale fact sorts ahead of the newer current fact.
+        SetCreated(db, stale, 10);
+        SetCreated(db, live, 20);
+
+        var everything = db.Store.Compile(new CompileRequest
+        {
+            Subject = "Widget", Depth = "full", Order = "seq", Format = "markdown", Budget = 1_000_000,
+        });
+        var staleCost = DossierStore.EstimateFactTokens(everything.Facts.Single(f => f.Id == stale), "markdown");
+        var budget = (int)Math.Ceiling(staleCost / 0.75);
+
+        var dossier = db.Store.Compile(new CompileRequest
+        {
+            Subject = "Widget", Depth = "full", Order = "seq", Format = "markdown", Budget = budget,
+        });
+        var highlights = DossierStore.HighlightIndexes(dossier);
+
+        // The budget fits the stale line if taken first, so a display-order pick spends it on the
+        // stale fact and leaves the current one out of the highlights.
+        await Assert.That(highlights).IsNotNull();
+        var highlighted = highlights!.Select(index => dossier.Facts[index].Id).ToList();
+        await Assert.That(highlighted.Contains(live)).IsTrue();
+        await Assert.That(highlighted.Contains(stale)).IsFalse();
+
+        var lines = DossierStore.RenderMarkdown(dossier).Split('\n');
+        var liveLine = lines.Single(line => line.Contains("[" + live + "]", StringComparison.Ordinal));
+        var staleLine = lines.Single(line => line.Contains("[" + stale + "]", StringComparison.Ordinal));
+        await Assert.That(liveLine.StartsWith("- ", StringComparison.Ordinal) && !liveLine.StartsWith("- [", StringComparison.Ordinal)).IsTrue();
+        // The stale fact is still listed under All facts, never ahead of the current highlight.
+        await Assert.That(staleLine.StartsWith("- [", StringComparison.Ordinal)).IsTrue();
     }
 
     [Test]

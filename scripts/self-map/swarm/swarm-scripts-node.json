@@ -1,0 +1,674 @@
+{
+ "agent": "swarm-scripts-node",
+ "slice": "scripts-node",
+ "subjects": [
+  {
+   "name": "scripts/fleet-eval.mjs",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "fleet-eval.mjs"
+   ],
+   "facts": [
+    {
+     "key": "options-defaults",
+     "text": "parseArgs defaults to agents 4, chains 50, facts 100 and probes 20, with seed 1 and no json path.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "agents: 4, chains: 50, facts: 100"
+     ]
+    },
+    {
+     "key": "agents-minimum",
+     "text": "The --agents option requires an integer of at least 3, so a fleet run always has three or more writer processes.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "options.agents = positive(3)"
+     ]
+    },
+    {
+     "key": "fail-exit-2",
+     "text": "fail writes fleet-eval: plus the message to stderr, runs the cleanup hook, then exits with code 2.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "fleet-eval: ${message}"
+     ]
+    },
+    {
+     "key": "no-release-build",
+     "text": "When the Release build is absent and DOSSIER_BIN is unset, the script fails with a message to build Release or set DOSSIER_BIN.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "no Release build; run"
+     ]
+    },
+    {
+     "key": "dll-spec-dotnet",
+     "text": "A .dll spec labels the binary through path.relative(repoRoot, file) and runs it as an argument to dotnet.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "path.relative(repoRoot, file)"
+     ]
+    },
+    {
+     "key": "prng-mulberry32",
+     "text": "prng is a deterministic mulberry32 generator, so one seed reproduces the same plan.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "Deterministic PRNG (mulberry32), so a seed reproduces the plan"
+     ]
+    },
+    {
+     "key": "agent-spawn-mcp",
+     "text": "Each Agent spawns the binary with mcp as its subcommand and DOSSIER_DB set to the shared database path.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "spawn(spec.command, [...spec.prefix, 'mcp']"
+     ]
+    },
+    {
+     "key": "rpc-timeout",
+     "text": "rpc rejects a call that gets no answer within 60_000 ms, reporting the agent name and method as timed out.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "method} timed out"
+     ]
+    },
+    {
+     "key": "initialize-identity",
+     "text": "initialize sends protocolVersion 2025-06-18 and sets clientInfo name to the agent label, which becomes the provenance actor.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "protocolVersion: '2025-06-18'"
+     ]
+    },
+    {
+     "key": "wilson-interval",
+     "text": "wilson returns a 95% Wilson score interval using a z value of 1.959964.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const z = 1.959964;"
+     ]
+    },
+    {
+     "key": "rate-null-reported",
+     "text": "A rate row with an expected value of null is marked ok and is never pushed into failures.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "expected === null || (n > 0 && value === expected)"
+     ]
+    },
+    {
+     "key": "chain-step-keys",
+     "text": "Each provenance chain posts four facts keyed observation, hypothesis, mitigation and verification, one per step.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const STEPS = ['observation', 'hypothesis', 'mitigation', 'verification']"
+     ]
+    },
+    {
+     "key": "chain-writer-rotation",
+     "text": "Each chain step is posted by writer(index + step), so consecutive steps come from different agents.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const author = writer(index + step);"
+     ]
+    },
+    {
+     "key": "contradiction-ref",
+     "text": "In the sequential contradiction case the second writer adds a contradicts ref with basis observed pointing at the first fact.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "rel: 'contradicts'"
+     ]
+    },
+    {
+     "key": "contradiction-admitted",
+     "text": "A contradictory pair counts as admitted only when both posts return status new and the two ids differ.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "one.status === 'new' && two.status === 'new'"
+     ]
+    },
+    {
+     "key": "supersession-values",
+     "text": "Supersession claims use the key timeoutSeconds with values 10 plus index mod 50 and 100 plus index mod 50.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const values = [10 + (index % 50), 100 + (index % 50)];"
+     ]
+    },
+    {
+     "key": "supersession-one-live",
+     "text": "A supersession slot counts only when live.length is 1 and superseded.length is 1 among the two posted facts.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "live.length === 1 && superseded.length === 1"
+     ]
+    },
+    {
+     "key": "successor-named",
+     "text": "The successor check requires the superseded fact's replaced_by field to equal the live fact's id.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "superseded[0].replaced_by === live[0].id"
+     ]
+    },
+    {
+     "key": "control-every-fifth",
+     "text": "Every fifth chain is a control that reposts the same claim with an extra reviewed tag instead of a changed level.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const control = index % 5 === 4;"
+     ]
+    },
+    {
+     "key": "stale-reason-shape",
+     "text": "A descendant's why entry must name derived_from the direct input, with state superseded at the first step and stale after it.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "reason?.rel === 'derived_from'"
+     ]
+    },
+    {
+     "key": "correction-missing-target",
+     "text": "A correction whose supersedes target is missing must fail with code supersedes_target_not_found and store no facts.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "supersedes_target_not_found"
+     ]
+    },
+    {
+     "key": "walk-guard-10",
+     "text": "Chain completeness walks from the newest fact with cursor && guard < 10, following derived_from refs and reading each through get_fact.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "cursor && guard < 10"
+     ]
+    },
+    {
+     "key": "cli-retract-only",
+     "text": "The cli helper runs the dossier CLI on the same database for retract, the one verb MCP does not offer.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "for the one verb MCP does not offer (retract)"
+     ]
+    },
+    {
+     "key": "cli-throws-nonzero",
+     "text": "cli throws when the spawned dossier command exits with a status other than 0, including its stderr in the message.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "if (run.status !== 0)"
+     ]
+    },
+    {
+     "key": "temp-dir",
+     "text": "The run creates its temporary directory with the prefix dossier-fleet-eval- and removes it during cleanup.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "dossier-fleet-eval-"
+     ]
+    },
+    {
+     "key": "sigint-130",
+     "text": "On SIGINT the script runs cleanup and exits with code 130.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "process.on('SIGINT'"
+     ]
+    },
+    {
+     "key": "batch-grouping",
+     "text": "inBatches starts at most size jobs at once with Math.min(size, count - start) and awaits each group before the next.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "Math.min(size, count - start)"
+     ]
+    },
+    {
+     "key": "derived-from-ref",
+     "text": "derivedFrom builds a ref with rel derived_from, kind fact, basis derived and the target id.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "rel: 'derived_from', kind: 'fact', target: id, basis: 'derived'"
+     ]
+    },
+    {
+     "key": "revocation-token",
+     "text": "Each revocation probe posts a marker token built from quartz, the seed, the probe index and zebra.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "quartz${options.seed}x${index}zebra"
+     ]
+    },
+    {
+     "key": "revocation-tombstone",
+     "text": "A retracted fact must return status retracted with no text and a provenance actor for the audit tombstone.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "shown.fact.status === 'retracted'"
+     ]
+    },
+    {
+     "key": "propagation-start",
+     "text": "Propagation takes its starting cursor from the next field of a changes call with last 1.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "await reader.tool('changes', { last: 1 })"
+     ]
+    },
+    {
+     "key": "convergence-shape",
+     "text": "Convergence passes only when the ids collapse to one, fresh is 1 and deduped equals writers.length - 1.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "deduped === writers.length - 1"
+     ]
+    },
+    {
+     "key": "convergence-journal",
+     "text": "The convergence journal check requires exactly one facts row in the changes page for the subject.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "filter((change) => change.tbl === 'facts').length === 1"
+     ]
+    },
+    {
+     "key": "json-out",
+     "text": "With --json the script writes an object holding options, binary, seconds, revision, rows and failures.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "JSON.stringify({ options, binary: spec.label"
+     ]
+    },
+    {
+     "key": "failures-exit-1",
+     "text": "When any expectation fails the script prints each FAILED line to stderr and exits with code 1.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "for (const failure of failures) console.error"
+     ]
+    },
+    {
+     "key": "latency-row",
+     "text": "A latency row is recorded with expected null and ok true because it has no pass or fail threshold.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "expected: null, ok: true"
+     ]
+    },
+    {
+     "key": "scope-note",
+     "text": "The report closes with a note that scoped access is not measured because every agent on a store reads all of it.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "not measured: scoped access"
+     ]
+    },
+    {
+     "key": "live-filter-empty",
+     "text": "The derivation currency check requires search with status live to return none of the stale descendants.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "liveOnly.some((hit) => hit.id === id)"
+     ]
+    },
+    {
+     "key": "percentile-empty",
+     "text": "percentile returns null for an empty sample list and otherwise the nearest-rank element of the sorted copy.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "if (samples.length === 0) return null;"
+     ]
+    },
+    {
+     "key": "rate-failure-text",
+     "text": "A failed rate adds a failure string naming the experiment, the metric, k over n and the expected value.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "${experiment}: ${metric} = ${k}/${n}, expected ${expected}"
+     ]
+    },
+    {
+     "key": "writer-naming",
+     "text": "Writer agents are named agent- plus their index, and a separate reader agent is created after all of them.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "new Agent(spec, dbPath, `agent-${index}`)"
+     ]
+    },
+    {
+     "key": "writer-wraps",
+     "text": "writer maps any index onto the writers array with modulo arithmetic so it always returns a writer.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "const writer = (index) => writers["
+     ]
+    },
+    {
+     "key": "conflict-region",
+     "text": "A conflict counts as surfaced only when its field is region and its values cite both posted facts.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "entry.field === 'region'"
+     ]
+    },
+    {
+     "key": "root-superseded",
+     "text": "The changed root must verify as superseded with replaced_by equal to the newly posted revision.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "byId.get(root)?.replaced_by === revised.id"
+     ]
+    },
+    {
+     "key": "final-revision",
+     "text": "After the run the script reads the final revision from a changes call with last 1.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "await reader.tool('changes', { last: 1 })).next"
+     ]
+    },
+    {
+     "key": "help-exit",
+     "text": "The --help flag prints the usage line and exits with code 0.",
+     "at": [
+      "scripts/fleet-eval.mjs",
+      "console.log('usage: node scripts/fleet-eval.mjs"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/live-demo.mjs",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "live-demo.mjs"
+   ],
+   "facts": [
+    {
+     "key": "defaults",
+     "text": "parseArgs defaults to agents 4, facts 100, port 8787, keep false and rate 0.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "port: 8787, keep: false, rate: 0"
+     ]
+    },
+    {
+     "key": "build-on-missing",
+     "text": "Without a Release build and without DOSSIER_NO_BUILD=1, locateDossier builds Dossier.csproj with dotnet build and -c Release.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "DOSSIER_NO_BUILD !== '1'"
+     ]
+    },
+    {
+     "key": "debug-fallback",
+     "text": "If the Release build is still missing, locateDossier falls back to the Debug build after printing a notice.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "no Release build, using the Debug build"
+     ]
+    },
+    {
+     "key": "pick-port",
+     "text": "pickPort scans up to 50 ports from the requested one and fails when none can be bound.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "for (let port = start; port < start + attempts; port++)"
+     ]
+    },
+    {
+     "key": "sse-failure",
+     "text": "openRevisionStream records a run failure when the answer is not 200 with a text/event-stream content type.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "response.statusCode !== 200"
+     ]
+    },
+    {
+     "key": "journal-pages",
+     "text": "readJournalWindow pages /api/changes with limit 500 for at most 40 pages and stops early on a reset.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "while (pages++ < 40)"
+     ]
+    },
+    {
+     "key": "call-timeout",
+     "text": "McpAgent.call defaults to a 60_000 ms timeout and reports mcp plus the method name when it expires.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "call(method, params, timeout = 60_000)"
+     ]
+    },
+    {
+     "key": "die-rejects",
+     "text": "die marks the agent dead, counts one error and rejects every in-flight call with a fatal error.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "error.fatal = true"
+     ]
+    },
+    {
+     "key": "kill-agent-hook",
+     "text": "The --kill-agent-after option is a hidden debug hook that kills agent-0's child mid-call.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "killAgentAfter = positiveInt(next(), arg)"
+     ]
+    },
+    {
+     "key": "spawn-mcp",
+     "text": "McpAgent spawns the binary with mcp as the subcommand and sets DOSSIER_DB to the database path.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "spawn(spec.command, [...spec.prefix, 'mcp']"
+     ]
+    },
+    {
+     "key": "record-error",
+     "text": "recordError counts a failed call as busy when its message matches busy or locked, and as other otherwise.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "/busy|locked/i.test(message)"
+     ]
+    },
+    {
+     "key": "server-spawn",
+     "text": "The server child is spawned as serve with --port and DOSSIER_DB set to the same database.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "spawn(spec.command, [...spec.prefix, 'serve', '--port', String(port)]"
+     ]
+    },
+    {
+     "key": "readiness-loop",
+     "text": "The script probes /api/revision up to 150 times, sleeping 100 ms between attempts, before failing that serve did not answer.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "attempt < 150"
+     ]
+    },
+    {
+     "key": "base-revision",
+     "text": "baseRevision is read from /api/revision so the seeder's own writes sit below the stream and journal window.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "const baseRevision = JSON.parse"
+     ]
+    },
+    {
+     "key": "graph-url",
+     "text": "The graph sampler calls /api/graph with the root subject, depth=1, facts=true and max_nodes=500.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "max_nodes=500"
+     ]
+    },
+    {
+     "key": "sampler-25ms",
+     "text": "The graph sampler runs every 25 ms and skips a tick while a previous request is still in flight.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "sampler = setInterval(sample, 25);"
+     ]
+    },
+    {
+     "key": "shared-subject",
+     "text": "Every third fact is posted to live-demo/shared and the others to live-demo/agent- plus the agent index.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "const shared = i % 3 === 0;"
+     ]
+    },
+    {
+     "key": "ref-chain",
+     "text": "Every fact refs the root fact with mentions, and once previous moves off the root it also refs previous with follows.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "rel: 'follows', kind: 'fact', target: previous"
+     ]
+    },
+    {
+     "key": "rate-sleep",
+     "text": "When --rate is above zero each agent sleeps 1000 / rate milliseconds after every post.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "await sleep(1000 / options.rate)"
+     ]
+    },
+    {
+     "key": "after-samples",
+     "text": "After the writers finish the script takes 10 more graph samples for the after section.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "for (let i = 0; i < 10; i++)"
+     ]
+    },
+    {
+     "key": "settle-700",
+     "text": "The script sleeps 700 ms before reading the final revision so the server's 500 ms poll can deliver the last write.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "await sleep(700);"
+     ]
+    },
+    {
+     "key": "stream-grace",
+     "text": "The script retries up to 30 times with 100 ms sleeps for the stream's last revision to reach the final revision.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "attempt < 30 && revisions.last !== finalRevision"
+     ]
+    },
+    {
+     "key": "failures-list",
+     "text": "A write error, graph status failure, stream behind, stream failure or journal read error each adds an entry to the failures list.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "if (errors > 0) failures.push"
+     ]
+    },
+    {
+     "key": "identity-check",
+     "text": "Fewer distinct actors than requested agents pushes an identity regression failure naming each actor that was seen.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "identity regression"
+     ]
+    },
+    {
+     "key": "keep-mode",
+     "text": "With --keep the script leaves the server running, prints the graph URL and waits forever.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "server left running at"
+     ]
+    },
+    {
+     "key": "exit-code",
+     "text": "The script exits with code 0 when failures is empty and with code 1 otherwise.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "process.exit(failures.length === 0 ? 0 : 1)"
+     ]
+    },
+    {
+     "key": "sigint",
+     "text": "On SIGINT the demo prints live-demo: stopping, runs cleanup and exits with code 0.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "live-demo: stopping"
+     ]
+    },
+    {
+     "key": "http-timeout",
+     "text": "httpRequest defaults to a 10_000 ms timeout and destroys the request with a message naming that timeout.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "function httpRequest(port, pathname, timeout = 10_000)"
+     ]
+    },
+    {
+     "key": "seed-fact",
+     "text": "A separate seed agent posts one note under live-demo/root and the script keeps both its fact id and subject id.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "postFacts('live-demo/root'"
+     ]
+    },
+    {
+     "key": "usage-code",
+     "text": "usage prints to stdout for code 0 and to stderr otherwise, then exits with that code.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "const out = code === 0 ? console.log : console.error;"
+     ]
+    },
+    {
+     "key": "positive-int",
+     "text": "positiveInt fails when the value is not an integer or is below 1, naming the flag in the message.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "if (!Number.isInteger(value) || value < 1) fail"
+     ]
+    },
+    {
+     "key": "canbind",
+     "text": "canBind listens on 127.0.0.1 and resolves false as soon as the probe server raises an error.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "probe.listen(port, '127.0.0.1');"
+     ]
+    },
+    {
+     "key": "journal-throws",
+     "text": "readJournalWindow throws when /api/changes answers with a status other than 200.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "throw new Error(`/api/changes answered ${reply.status}`)"
+     ]
+    },
+    {
+     "key": "actor-union",
+     "text": "The reported actor list is the sorted union of the journal actors and the stream actors.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "const actors = [...new Set([...journal.actors, ...revisions.actors])].sort();"
+     ]
+    },
+    {
+     "key": "rows-per-fact",
+     "text": "The summary reports journal rows divided by posted facts as rows per posted fact.",
+     "at": [
+      "scripts/live-demo.mjs",
+      "const rowsPerFact = posted > 0 ? journal.rows / posted : 0;"
+     ]
+    }
+   ]
+  }
+ ]
+}

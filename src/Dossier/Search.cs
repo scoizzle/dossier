@@ -9,6 +9,9 @@ public sealed partial class DossierStore
     /// <summary>Test seam: runs inside a filtered search, after the derived set is read and before the page is.</summary>
     internal Action? SearchProbe { get; set; }
 
+    /// <summary>Test seam: the fact ids a status filter is about to derive a status for.</summary>
+    internal Action<IReadOnlyList<string>>? StatusDerivationProbe { get; set; }
+
     private const int DefaultLimit = 20;
     private const int MaxLimit = 100;
 
@@ -77,8 +80,20 @@ public sealed partial class DossierStore
         {
             // These three are derived, so the filter is too: a stored-live fact that is stale or
             // contested is not live. The derived ids go into the query itself, which keeps the count
-            // and the keyset paging exact.
-            var derived = currency.NonLive();
+            // and the keyset paging exact. Only a row the other filters already admit can reach the
+            // page, so only those are described: the cost follows the result, not the store.
+            var candidates = NonLiveCandidates(connection, conditions, parameters);
+            StatusDerivationProbe?.Invoke(candidates);
+            var derived = new List<(string Id, string Status)>(candidates.Count);
+            foreach (var id in candidates)
+            {
+                var status = currency.Describe(id).Status;
+                if (status is StatusStale or StatusContested)
+                {
+                    derived.Add((id, status));
+                }
+            }
+
             SearchProbe?.Invoke();
             conditions.Add("f.status NOT IN ('superseded', 'retracted')");
             if (request.Status == StatusLive)
@@ -240,12 +255,48 @@ public sealed partial class DossierStore
         };
     }
 
+    /// <summary>The refs that can change a fact's derived status, matching CurrencyReader's predicate.</summary>
+    private const string StatusCurrencyRefs = "r.kind = 'fact' AND r.rel IN ('derived_from', 'refutes', 'contradicts', 'supersedes')";
+
+    /// <summary>
+    /// The rows a status filter has to describe: those the other filters admit that carry or receive a
+    /// currency ref. A row outside them cannot be on the page, so deriving its status would only cost
+    /// time that grows with the store.
+    /// </summary>
+    private static List<string> NonLiveCandidates(
+        SqliteConnection connection,
+        IReadOnlyList<string> conditions,
+        IReadOnlyDictionary<string, object?> parameters)
+    {
+        var sql = new StringBuilder();
+        sql.Append("SELECT f.id FROM facts f WHERE f.status NOT IN ('superseded', 'retracted') AND f.id IN (");
+        sql.Append("SELECT r.fact_id FROM refs r WHERE ").Append(StatusCurrencyRefs);
+        sql.Append(" UNION SELECT r.target FROM refs r WHERE ").Append(StatusCurrencyRefs).Append(')');
+        if (conditions.Count > 0)
+        {
+            sql.Append(" AND ").Append(string.Join(" AND ", conditions));
+        }
+
+        sql.Append(" ORDER BY f.rowid");
+
+        var candidates = new List<string>();
+        using var command = Command(connection, null, sql.ToString());
+        BindAll(command, parameters);
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            candidates.Add(reader.GetString(0));
+        }
+
+        return candidates;
+    }
+
     /// <summary>
     /// Makes a plain-text q mean what it says. FTS5 reads a bare term containing '-', ':', '.', '/' and
     /// the like as syntax ("Self-taught" becomes column "taught"), so such a term is wrapped in double
     /// quotes, which FTS5 then tokenizes as a phrase. Everything that already is FTS5 syntax is passed
-    /// through untouched: quoted strings, parentheses, AND/OR/NOT/NEAR, a trailing '*', the '^', '+'
-    /// and ',' operators, and a "text:" or "tags:" column filter (its value is quoted when it needs it).
+    /// through untouched: quoted strings, parentheses, AND/OR/NOT/NEAR, a trailing '*', a leading '^',
+    /// and a "text:" or "tags:" column filter (its value is quoted when it needs it).
     /// </summary>
     internal static string LiteralizeQuery(string q)
     {
@@ -307,13 +358,16 @@ public sealed partial class DossierStore
             term = term[..^1];
         }
 
-        // Quote only a term that mixes word characters with something FTS5 would parse: a term made of
-        // word characters and operator characters alone is already what FTS5 expects (or its own error).
+        // Quote a term that mixes word characters with something FTS5 would parse, and one whose
+        // operator characters are not where FTS5 requires them: '^' only leads a term, '*' only
+        // trails one, and '+' or ',' inside a word are literal text, not syntax.
         var hasWord = false;
         var hasOther = false;
-        foreach (var value in term)
+        var misplaced = false;
+        for (var index = 0; index < term.Length; index++)
         {
-            if (char.IsLetterOrDigit(value) || value == '_' || value >= 0x80)
+            var value = term[index];
+            if (IsWordCharacter(value))
             {
                 hasWord = true;
             }
@@ -321,9 +375,14 @@ public sealed partial class DossierStore
             {
                 hasOther = true;
             }
+
+            misplaced = misplaced
+                || (value == '^' && index > 0)
+                || (value == '*' && index < term.Length - 1)
+                || ((value is '+' or ',') && index > 0 && IsWordCharacter(term[index - 1]));
         }
 
-        if (hasWord && hasOther)
+        if (misplaced || (hasWord && hasOther))
         {
             builder.Append('"').Append(term).Append('"');
         }
@@ -337,6 +396,9 @@ public sealed partial class DossierStore
             builder.Append('*');
         }
     }
+
+    private static bool IsWordCharacter(char value) =>
+        char.IsLetterOrDigit(value) || value == '_' || value >= 0x80;
 
     /// <summary>The columns of facts_fts, the only names a column filter may use.</summary>
     private static readonly string[] FtsColumns = ["text", "tags"];

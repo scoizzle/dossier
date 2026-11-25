@@ -1,0 +1,137 @@
+{
+  "subjects": [
+    {
+      "name": "Dossier/CLI",
+      "facts": [
+        { "key": "three-verbs", "text": "The CLI is organised around three verbs of work: dump ingests, correlate proposes refs, and retrieve (search and compile) reads.", "at": ["docs/cli.md", "## Three verbs"] },
+        { "key": "unknown-options", "text": "An option a command does not take is rejected on stderr with exit 1, with a suggestion when a known flag is close, and a rejected command writes nothing.", "at": ["docs/cli.md", "An option the command does not take is rejected on stderr with exit 1"], "refs": [{ "rel": "about", "subject": "tests/Dossier.Tests/CliArgTests.cs" }] },
+        { "key": "exit-codes", "text": "CLI commands exit 0 on success and 1 on any error; verify --require-current also exits 1 when a cited fact is not live.", "at": ["docs/cli.md", "with `--require-current` it exits 1 when any id is not live"] }
+      ]
+    },
+    { "name": "Dossier/CLI/init", "facts": [{ "key": "does", "text": "init creates the store by constructing a DossierStore, which creates the schema on first use.", "at": ["src/Dossier/Program.cs", "_ = new DossierStore();"], "refs": [{ "rel": "about", "subject": "DossierStore" }, { "rel": "about", "subject": "src/Dossier/Store.cs" }] }] },
+    { "name": "Dossier/CLI/dump", "facts": [
+      { "key": "does", "text": "dump ingests one file deterministically into facts for one subject: the input is stored as a content-addressed blob and split by markdown heading or kept whole.", "at": ["docs/cli.md", "**dump** ingests raw material deterministically"], "refs": [{ "rel": "about", "subject": "DossierStore.Dump" }, { "rel": "about", "subject": "src/Dossier/Dump.cs" }, { "rel": "about", "subject": "Dossier/MCP/dump" }] },
+      { "key": "idempotent", "text": "Running dump twice on the same file is idempotent: the second run creates nothing and reports every chunk as deduped.", "at": ["docs/cli.md", "Running it twice is idempotent."], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Dedupe and content hash" }] },
+      { "key": "not-claims", "text": "dump only preserves raw bytes by heading or whole file; it does not extract claims or symbols, so the skill says to dump to a separate raw subject.", "at": ["skills/dossier/SKILL.md", "it does not extract claims or symbols"] }
+    ] },
+    { "name": "Dossier/CLI/post", "facts": [
+      { "key": "does", "text": "post writes a batch of structured facts with declared refs for one subject from a JSON request file, or from stdin when the file is a hyphen.", "at": ["docs/cli.md", "Structured facts with declared refs go in through `dossier post --file <request.json>`"], "refs": [{ "rel": "about", "subject": "DossierStore.PostFacts" }, { "rel": "about", "subject": "src/Dossier/PostFacts.cs" }, { "rel": "about", "subject": "Dossier/MCP/post_facts" }] },
+      { "key": "dry-run", "text": "post --dry-run runs the full resolution path, reports the same verdicts a real post would give, and writes nothing.", "at": ["docs/cli.md", "same verdicts as a real post, nothing written"] },
+      { "key": "partial-commit", "text": "An invalid item in a batch is rejected with a named error on stderr and the rest of the batch still commits.", "at": ["src/Dossier/PostFacts.cs", "An invalid item is rejected with a named error and the rest of the batch commits."] }
+    ] },
+    { "name": "Dossier/CLI/correlate", "facts": [
+      { "key": "does", "text": "correlate proposes refs between facts using two deterministic matchers, same_ref and shared_tag.", "at": ["docs/cli.md", "**correlate** proposes refs between facts using deterministic matchers"], "refs": [{ "rel": "about", "subject": "DossierStore.Correlate" }, { "rel": "about", "subject": "src/Dossier/Correlate.cs" }, { "rel": "about", "subject": "Dossier/MCP/correlate" }] },
+      { "key": "never-writes", "text": "Correlate proposals carry basis derived, are returned and never written, and are never asserted as truth.", "at": ["docs/cli.md", "Proposals carry basis `derived`, are returned and never written"] },
+      { "key": "cap", "text": "The same_ref matcher ignores the locator, so facts sharing one file ref pair all-to-all and a store-wide run hits the 200-proposal cap at about 15 such facts.", "at": ["skills/dossier/SKILL.md", "a store-wide run hits the 200-proposal cap"], "data": { "proposal_cap": 200 } }
+    ] },
+    { "name": "Dossier/CLI/check", "facts": [
+      { "key": "does", "text": "check resolves a subject, summarises what is already known (fact and conflict counts plus the top claims), and can judge draft facts without writing.", "at": ["skills/dossier/SKILL.md", "5. **Resolve and check in one call.**"], "refs": [{ "rel": "about", "subject": "DossierStore.Check" }, { "rel": "about", "subject": "src/Dossier/Check.cs" }, { "rel": "about", "subject": "Dossier/MCP/check" }] },
+      { "key": "top", "text": "check's summary lists at most 8 top facts with text capped at 120 characters.", "at": ["docs/cli.md", "top: at most 8, text capped at 120 chars"], "data": { "top": 8, "top_text": 120 } }
+    ] },
+    { "name": "Dossier/CLI/search", "facts": [
+      { "key": "does", "text": "search finds facts by text and filters, including reverse-impact lookup of the facts that carry a ref to a given target.", "at": ["docs/cli.md", "`dossier search` takes text and filters"], "refs": [{ "rel": "about", "subject": "DossierStore.Search" }, { "rel": "about", "subject": "src/Dossier/Search.cs" }, { "rel": "about", "subject": "Dossier/MCP/search" }] },
+      { "key": "literal-terms", "text": "A plain query term that FTS5 would misread as syntax, such as Self-taught or us-east-1, is quoted and searched as a phrase, while real FTS5 syntax still works.", "at": ["docs/cli.md", "`--q` is an FTS5 query"], "refs": [{ "rel": "about", "subject": "DossierStore.LiteralizeQuery" }, { "rel": "about", "subject": "tests/Dossier.Tests/SearchLiteralTermTests.cs" }] },
+      { "key": "limits", "text": "search returns 20 hits by default and at most 100, with total, complete and a next cursor for keyset paging.", "at": [["src/Dossier/Search.cs", "private const int DefaultLimit = 20;"], ["src/Dossier/Search.cs", "private const int MaxLimit = 100;"]], "data": { "default_limit": 20, "max_limit": 100 } },
+      { "key": "brief", "text": "search --brief returns one short line per hit: id, kind, status and the first 120 characters of text.", "at": ["docs/cli.md", "id, kind, status, first 120 chars of text"], "refs": [{ "rel": "about", "subject": "DossierStore.SearchBrief" }] }
+    ] },
+    { "name": "Dossier/CLI/show", "facts": [
+      { "key": "does", "text": "show prints one fact with its refs, attachments and the inbound facts that reference it.", "at": ["skills/dossier/SKILL.md", "Print one fact with its refs, attachments and inbound referrers."], "refs": [{ "rel": "about", "subject": "DossierStore.Show" }, { "rel": "about", "subject": "src/Dossier/Show.cs" }, { "rel": "about", "subject": "Dossier/MCP/get_fact" }] }
+    ] },
+    { "name": "Dossier/CLI/verify", "facts": [
+      { "key": "does", "text": "verify takes fact ids and reports the derived status of each, read in one snapshot: live, superseded, retracted, stale, contested or unknown, with the reason.", "at": ["docs/cli.md", "`verify` takes fact ids and reports the derived status of each"], "refs": [{ "rel": "about", "subject": "DossierStore.Verify" }, { "rel": "about", "subject": "src/Dossier/Verify.cs" }, { "rel": "about", "subject": "Dossier/MCP/verify_facts" }, { "rel": "about", "subject": "Dossier/Concepts/Derived status" }] },
+      { "key": "limits", "text": "verify accepts at most 200 ids, answers a repeated id once and writes nothing.", "at": ["src/Dossier/Verify.cs", "public const int MaxVerifyIds = 200;"], "data": { "max_ids": 200 } },
+      { "key": "gate", "text": "verify --require-current exits 1 unless every id is live, so it can gate a script; the answer is still printed.", "at": ["src/Dossier/Program.cs", "--require-current makes the command a gate"] }
+    ] },
+    { "name": "Dossier/CLI/changes", "facts": [
+      { "key": "does", "text": "changes prints the journal page that /api/changes serves: rows after a cursor, or the newest rows, optionally for one subject.", "at": ["docs/cli.md", "`changes` prints the journal page `/api/changes` serves"], "refs": [{ "rel": "about", "subject": "DossierStore.ReadChanges" }, { "rel": "about", "subject": "DossierStore.ReadChangesLast" }, { "rel": "about", "subject": "Dossier/MCP/changes" }, { "rel": "about", "subject": "Dossier/Concepts/Change journal" }] },
+      { "key": "limits", "text": "A changes page holds 100 rows by default and at most 500, and a last or limit below 1 is rejected.", "at": [["src/Dossier/Changes.cs", "public const int DefaultChangesLimit = 100;"], ["src/Dossier/Mcp.cs", "\"last must be at least 1\""]], "data": { "default_limit": 100, "max_limit": 500 } }
+    ] },
+    { "name": "Dossier/CLI/retract", "facts": [
+      { "key": "does", "text": "retract tombstones one fact by id.", "at": ["skills/dossier/SKILL.md", "| `dossier retract` | Retract a fact by id. |"], "refs": [{ "rel": "about", "subject": "DossierStore.Retract" }, { "rel": "about", "subject": "src/Dossier/Retract.cs" }] },
+      { "key": "cli-only", "text": "There is no retract tool over MCP: retraction is a CLI verb only.", "at": ["docs/cli.md", "There is no retract tool: retraction is a CLI verb."], "refs": [{ "rel": "about", "subject": "Dossier/MCP" }] }
+    ] },
+    { "name": "Dossier/CLI/dossier compile", "facts": [
+      { "key": "does", "text": "dossier compile compiles the cited, budgeted dossier for one subject, as JSON or markdown.", "at": ["docs/cli.md", "compiles the cited, budgeted dossier"], "refs": [{ "rel": "about", "subject": "DossierStore.Compile" }, { "rel": "about", "subject": "src/Dossier/Compile.cs" }, { "rel": "about", "subject": "Dossier/MCP/compile_dossier" }, { "rel": "about", "subject": "Dossier/Concepts/Budget modes" }] },
+      { "key": "descendants", "text": "With --descendants a compile covers the subject's subtree, stopping 3 levels below it.", "at": ["src/Dossier/Compile.cs", "private const int MaxDescendantDepth = 3;"], "data": { "max_descendant_depth": 3 } },
+      { "key": "cites", "text": "Every emitted fact in a markdown dossier ends with its fact id in brackets, so every line is cited.", "at": ["src/Dossier/Compile.cs", "every emitted fact id appears in brackets"], "refs": [{ "rel": "about", "subject": "DossierStore.RenderMarkdown" }] }
+    ] },
+    { "name": "Dossier/CLI/publish", "facts": [
+      { "key": "does", "text": "publish exports the store as a self-describing bundle an agent can read from a repository with no MCP server, daemon or network.", "at": ["docs/publish.md", "exports the store as a self-describing bundle of markdown files"], "refs": [{ "rel": "about", "subject": "DossierStore.Publish" }, { "rel": "about", "subject": "src/Dossier/Publish.cs" }] },
+      { "key": "formats", "text": "publish writes a markdown bundle by default, or a line-oriented JSONL data bundle with --format jsonl.", "at": ["docs/publish.md", "`--format md` (the default) writes the markdown bundle"], "refs": [{ "rel": "about", "subject": "src/Dossier/JsonlExport.cs" }, { "rel": "about", "subject": "contract/jsonl-record.schema.json" }] },
+      { "key": "live-only", "text": "A bundle holds live facts only: superseded and retracted facts and facts of kind dossier are not published.", "at": ["docs/publish.md", "superseded, retracted and kind `dossier` facts are not"] },
+      { "key": "deterministic", "text": "Identical inputs produce byte-identical bundle files and unchanged files are not rewritten.", "at": ["docs/publish.md", "- **Idempotent and repo-safe.**"] },
+      { "key": "content-addressed", "text": "A published fact file is named from the fact's content, not its random store id, so re-importing the same facts gives the same file names.", "at": ["docs/publish.md", "- **Content-addressed fact files.**"] },
+      { "key": "profiles", "text": "A profile is a small JSON file of a consumer's limits; publish checks the bundle against it and with --respect-limits repacks it into shards.", "at": ["docs/publish.md", "A **profile** is a small JSON file of limits"], "refs": [{ "rel": "about", "subject": "src/Dossier/Profiles.cs" }] }
+    ] },
+    { "name": "Dossier/CLI/import", "facts": [
+      { "key": "does", "text": "import rebuilds a store from a markdown or JSONL bundle and picks the reader itself.", "at": ["docs/publish.md", "accepts a markdown bundle or a JSONL bundle"], "refs": [{ "rel": "about", "subject": "DossierStore.Import" }, { "rel": "about", "subject": "src/Dossier/Import.cs" }, { "rel": "about", "subject": "src/Dossier/JsonlImport.cs" }] },
+      { "key": "empty-only", "text": "import only works into an empty database: a subject or fact that already exists fails the import.", "at": ["src/Dossier/Import.cs", "already exists in the store; import into an empty database"] },
+      { "key": "untrusted-bundle", "text": "The JSONL reader treats a bundle as untrusted: it reads only files the manifest lists and verifies each data file's bytes, lines and sha256 before committing anything.", "at": ["docs/publish.md", "The JSONL reader treats the bundle as untrusted"] },
+      { "key": "round-trip", "text": "Round tripping needs a bundle published with fact files; only what a bundle holds is restored, so superseded and retracted facts are not imported.", "at": ["docs/publish.md", "**Round tripping requires `--facts detail` (the default).**"] }
+    ] },
+    { "name": "Dossier/CLI/mcp", "facts": [
+      { "key": "does", "text": "mcp serves newline-delimited JSON-RPC 2.0 over stdio; only protocol messages are written to stdout.", "at": ["docs/cli.md", "**MCP.** `dossier mcp` serves newline-delimited JSON-RPC over stdio"], "refs": [{ "rel": "about", "subject": "Dossier/MCP/server" }, { "rel": "about", "subject": "src/Dossier/Mcp.cs" }] }
+    ] },
+    { "name": "Dossier/CLI/serve", "facts": [
+      { "key": "does", "text": "serve starts the loopback web UI, on port 8787 unless --port says otherwise.", "at": ["docs/cli.md", "**Web.** `dossier serve [--port 8787]` listens on loopback only"], "data": { "default_port": 8787 }, "refs": [{ "rel": "about", "subject": "Dossier/Web/server" }, { "rel": "about", "subject": "src/Dossier/Web.cs" }] }
+    ] },
+    { "name": "Dossier/CLI/version", "facts": [
+      { "key": "does", "text": "version, also spelled --version, prints the product version and nothing else.", "at": ["src/Dossier/Program.cs", "case \"--version\":"], "refs": [{ "rel": "about", "subject": "src/Dossier/AppVersion.cs" }] }
+    ] },
+    {
+      "name": "Dossier/MCP",
+      "facts": [
+        { "key": "same-core", "text": "Each MCP tool is a thin call into the same DossierStore method the CLI calls, through the transport-neutral Ops class.", "at": ["src/Dossier/Mcp.cs", "Transport-neutral entry points."], "refs": [{ "rel": "about", "subject": "DossierStore" }] },
+        { "key": "no-push", "text": "The server only answers calls: it implements no subscriptions, sampling or elicitation, so it cannot push a request to an agent.", "at": ["src/Dossier/Mcp.cs", "Hand-rolled: initialize, ping,"] },
+        { "key": "tool-errors", "text": "A failed tool call returns isError true with an envelope holding a stable machine-readable code and a message.", "at": ["src/Dossier/Mcp.cs", "return ToolResult(Ops.Serialize(ErrorEnvelope.Of(exception.Code, exception.Message)), isError: true);"], "refs": [{ "rel": "about", "subject": "Dossier/Errors" }] }
+      ]
+    },
+    { "name": "Dossier/MCP/dump", "facts": [{ "key": "cli", "text": "The MCP tool dump is the CLI verb dump.", "at": ["src/Dossier/Mcp.cs", "\"dump\" => Ops.Serialize(store.Dump("], "refs": [{ "rel": "about", "subject": "Dossier/CLI/dump" }] }] },
+    { "name": "Dossier/MCP/post_facts", "facts": [{ "key": "cli", "text": "The MCP tool post_facts is the CLI verb post, and stamps each fact with the calling client's identity.", "at": ["src/Dossier/Mcp.cs", "var result = store.PostFacts(request, Identity);"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/post" }, { "rel": "about", "subject": "Dossier/Concepts/Provenance and agent identity" }] }] },
+    { "name": "Dossier/MCP/correlate", "facts": [{ "key": "cli", "text": "The MCP tool correlate is the CLI verb correlate.", "at": ["src/Dossier/Mcp.cs", "\"correlate\" => Ops.Serialize(store.Correlate("], "refs": [{ "rel": "about", "subject": "Dossier/CLI/correlate" }] }] },
+    { "name": "Dossier/MCP/search", "facts": [{ "key": "cli", "text": "The MCP tool search is the CLI verb search, with brief as an argument.", "at": ["src/Dossier/Mcp.cs", "\"search\" => Ops.Search(store,"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/search" }] }] },
+    { "name": "Dossier/MCP/check", "facts": [{ "key": "cli", "text": "The MCP tool check is the CLI verb check, taking drafts as an array.", "at": ["src/Dossier/Mcp.cs", "\"check\" => Ops.Check(store,"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/check" }] }] },
+    { "name": "Dossier/MCP/get_fact", "facts": [{ "key": "cli", "text": "The MCP tool get_fact is the CLI verb show.", "at": ["src/Dossier/Mcp.cs", "\"get_fact\" => Ops.GetFact("], "refs": [{ "rel": "about", "subject": "Dossier/CLI/show" }] }] },
+    { "name": "Dossier/MCP/verify_facts", "facts": [{ "key": "cli", "text": "The MCP tool verify_facts is the CLI verb verify.", "at": ["src/Dossier/Mcp.cs", "\"verify_facts\" => Ops.Verify(store,"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/verify" }] }] },
+    { "name": "Dossier/MCP/changes", "facts": [{ "key": "cli", "text": "The MCP tool changes is the CLI verb changes.", "at": ["src/Dossier/Mcp.cs", "\"changes\" => Ops.Changes(store,"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/changes" }] }] },
+    { "name": "Dossier/MCP/compile_dossier", "facts": [{ "key": "cli", "text": "The MCP tool compile_dossier is the CLI verb dossier compile.", "at": ["src/Dossier/Mcp.cs", "_ => Ops.Compile(store, Ops.Parse<CompileRequest>(arguments)),"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/dossier compile" }] }] },
+    {
+      "name": "Dossier/Web/server",
+      "kind": "component",
+      "parent": "Dossier/Web",
+      "facts": [
+        { "key": "loopback", "text": "The web server listens on loopback only and refuses a request for any other Host with a 4xx, so a page reached through a rebound DNS name cannot read the store.", "at": ["docs/cli.md", "a request for any other `Host` is refused with a 4xx"], "refs": [{ "rel": "about", "subject": "src/Dossier/Web.cs" }, { "rel": "about", "subject": "tests/Dossier.Tests/WebTests.cs" }] },
+        { "key": "endpoints", "text": "The JSON endpoints are /api/subjects, /api/search, /api/compile, /api/fact, /api/graph, /api/revision and /api/changes, plus the /api/events stream.", "at": ["docs/cli.md", "JSON endpoints: `/api/subjects`"], "data": { "endpoints": ["/api/subjects", "/api/search", "/api/compile", "/api/fact", "/api/graph", "/api/revision", "/api/changes", "/api/events"] } },
+        { "key": "read-only", "text": "The web surface is read-only: a POST to any endpoint is answered 405.", "at": ["docs/cli.md", "`POST` to any of them is `405`"] },
+        { "key": "csp", "text": "The page's scripts are served as files under a Content-Security-Policy that allows no inline script.", "at": ["docs/cli.md", "so no inline script runs"] },
+        { "key": "no-auth", "text": "The loopback web UI has no login.", "at": ["docs/multi-agent.md", "the loopback web UI has no login"], "refs": [{ "rel": "about", "subject": "Dossier/Multi-agent/Not covered" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Web/events stream",
+      "kind": "component",
+      "parent": "Dossier/Web",
+      "facts": [
+        { "key": "does", "text": "/api/events is a Server-Sent Events stream: a baseline revision, then the journal as changes frames, and a reset when the resume point fell out of retention.", "at": ["docs/cli.md", "`GET /api/events` is a Server-Sent Events stream"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Change journal" }, { "rel": "about", "subject": "tests/Dossier.Tests/WebEventsTests.cs" }, { "rel": "about", "subject": "tests/Dossier.Tests/ChangeStreamTests.cs" }] },
+        { "key": "poll", "text": "The stream polls the revision every 500 ms and sends changes frames of at most 200 rows, draining up to 5,000 rows per tick.", "at": ["docs/cli.md", "a page of at most 200 rows, up to 5,000 rows drained per tick"], "data": { "poll_ms": 500, "page_rows": 200, "rows_per_tick": 5000 } },
+        { "key": "resume", "text": "A reconnecting client resumes from Last-Event-ID, which wins over ?since=N.", "at": ["docs/cli.md", "Resume: `Last-Event-ID`"] },
+        { "key": "capacity", "text": "Eight event streams run concurrently and the ninth gets 503 busy.", "at": ["docs/cli.md", "Eight streams run concurrently"], "data": { "max_streams": 8 } },
+        { "key": "keepalive", "text": "While idle the stream writes a keepalive comment every five seconds.", "at": ["docs/cli.md", "comment every five seconds"], "data": { "keepalive_seconds": 5 } }
+      ]
+    },
+    {
+      "name": "Dossier/Web/graph view",
+      "kind": "component",
+      "parent": "Dossier/Web",
+      "facts": [
+        { "key": "does", "text": "The graph view draws a bounded neighbourhood of a subject on a canvas and can expand a node in place.", "at": ["docs/cli.md", "The **graph view** (`#/graph/<subject>`"], "refs": [{ "rel": "about", "subject": "src/Dossier/www/graph.js" }, { "rel": "about", "subject": "DossierStore.Graph" }, { "rel": "about", "subject": "src/Dossier/Graph.cs" }] },
+        { "key": "bounds", "text": "/api/graph takes depth 0 to 3 (default 1) and max_nodes 1 to 2000 (default 500), and nodes never exceed max_nodes.", "at": ["docs/cli.md", "Nodes never exceed `max_nodes`"], "data": { "max_depth": 3, "default_depth": 1, "default_max_nodes": 500, "max_nodes": 2000 } },
+        { "key": "edges", "text": "A graph edge is emitted only when both ends are in the payload; hidden ends are reported in unresolved and counted in truncated, not drawn.", "at": ["docs/cli.md", "Edges: an edge is emitted only when both ends are in the payload."] },
+        { "key": "externals", "text": "Symbol and other external refs stay on their fact in the graph and are never nodes.", "at": ["docs/cli.md", "Symbol and other external refs stay on their fact"] },
+        { "key": "live", "text": "The graph view is live: it listens on /api/events and re-fetches just the subject a change row names, falling back to polling /api/changes every second.", "at": ["docs/cli.md", "The view is live."] },
+        { "key": "activity-feed", "text": "The activity feed under the graph bar shows one line per journal row and keeps the newest 80, every value rendered as text.", "at": ["docs/cli.md", "It keeps the newest 80 rows"], "data": { "feed_rows": 80 }, "refs": [{ "rel": "about", "subject": "src/Dossier/www/feed.js" }] },
+        { "key": "stored-status", "text": "The graph view shows a fact's stored status, so a stale or contested fact reads live there.", "at": ["docs/multi-agent.md", "the change journal and the graph view carry the stored status"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Derived status" }] }
+      ]
+    }
+  ]
+}

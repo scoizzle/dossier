@@ -1,0 +1,787 @@
+{
+ "agent": "swarm-src-graph",
+ "slice": "src-graph",
+ "subjects": [
+  {
+   "name": "GraphRequest.FromQuery",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "depth-parse-no-range",
+     "text": "FromQuery raises bad_depth for a non-integer depth but performs no range check, although the message names 0 to 3.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "depth must be an integer from 0 to 3"
+     ]
+    },
+    {
+     "key": "bounds-at-build",
+     "text": "The depth and max_nodes range checks run when the graph is built, not while the query is parsed.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (maxNodes < 1 || maxNodes > GraphRequest.MaxNodesLimit)"
+     ]
+    },
+    {
+     "key": "facts-values",
+     "text": "facts is true for the case-insensitive word true or the exact string 1, and false for false or 0.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "facts.Equals(\"true\", StringComparison.OrdinalIgnoreCase) || facts == \"1\""
+     ]
+    },
+    {
+     "key": "bad-facts-message",
+     "text": "An unrecognized facts value raises bad_facts with the message facts must be true, false, 1 or 0.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "facts must be true, false, 1 or 0"
+     ]
+    },
+    {
+     "key": "bad-max-nodes-message",
+     "text": "A non-integer max_nodes raises bad_max_nodes naming the range that ends at MaxNodesLimit.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "bad_max_nodes"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.Build",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "subject-not-found",
+     "text": "An unknown subject raises subject_not_found before any neighbourhood walk starts.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "throw new DossierRequestException(\"subject_not_found\""
+     ]
+    },
+    {
+     "key": "exact-id-wins",
+     "text": "An exact subject id match wins over name and alias matches, as in compile.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "matches.Contains(subject, StringComparer.Ordinal) ? subject : matches[0]"
+     ]
+    },
+    {
+     "key": "contains-requires-admitted-parent",
+     "text": "A contains edge is emitted only when the child subject's parent is itself admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (parent is not null && admittedSubjects.Contains(parent))"
+     ]
+    },
+    {
+     "key": "seed-hash-inputs",
+     "text": "The seed is the first eight lowercase hex characters of a SHA-256 over the root, depth, facts flag and maxNodes.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "SHA256.HashData(Encoding.UTF8.GetBytes(text))"
+     ]
+    },
+    {
+     "key": "truncated-subject-count",
+     "text": "The truncated subject count is the number of hidden subjects that were not admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var hiddenSubjectCount = hiddenSubjects.Count(id => !admittedSubjects.Contains(id));"
+     ]
+    },
+    {
+     "key": "contains-basis",
+     "text": "A parent to child subject edge uses kind contains and basis structure.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "\"contains\", \"structure\", \"contains\""
+     ]
+    },
+    {
+     "key": "facts-default-true",
+     "text": "When the request leaves facts unset, the builder treats it as true.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var withFacts = request.Facts ?? true;"
+     ]
+    },
+    {
+     "key": "format-one",
+     "text": "The response format field is 1.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "return new GraphResponse("
+     ]
+    },
+    {
+     "key": "limits-echo",
+     "text": "The limits echo the effective maxNodes and depth used for the request.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "new GraphLimits(maxNodes, depth));"
+     ]
+    },
+    {
+     "key": "fact-text-capped",
+     "text": "Each fact node carries text passed through Cap, so long text is shortened.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "Cap(f.Text),"
+     ]
+    },
+    {
+     "key": "fact-external-refs-only",
+     "text": "A fact node keeps only non-internal refs in its unresolved list.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "Where(r => !IsInternalKind(r.Kind))"
+     ]
+    },
+    {
+     "key": "subject-boundary-flag",
+     "text": "A subject node's Boundary flag is true only for boundary subjects and null otherwise.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "boundarySubjects.Contains(id) ? true : null)"
+     ]
+    },
+    {
+     "key": "edge-passes-order",
+     "text": "Ref edges, then inbound edges, then hidden inbound entries are appended after the contains edges.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "BuildRefEdges(edges, unresolved);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.Cap",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "short-text-unchanged",
+     "text": "Text of at most GraphTextCap UTF-16 units is returned unchanged.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (text is null || text.Length <= GraphTextCap)"
+     ]
+    },
+    {
+     "key": "surrogate-dropped",
+     "text": "A surrogate pair that straddles the cut is dropped whole so the marker never splits it.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "// The marker is one UTF-16 unit; a surrogate pair that straddles the cut is dropped whole."
+     ]
+    },
+    {
+     "key": "marker-ellipsis",
+     "text": "The cut text is terminated with a single U+2026 character held in GraphTextMarker.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private const string GraphTextMarker = \"\\u2026\";"
+     ]
+    },
+    {
+     "key": "cut-length-minus-marker",
+     "text": "Long text is cut to GraphTextCap minus the marker length before the marker is appended.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var length = GraphTextCap - GraphTextMarker.Length;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.LoadSubjects",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "subjects-one-query",
+     "text": "All subjects are preloaded by one query ordered by id, together with their aliases.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "SELECT id, name, kind, parent_id, aliases FROM subjects ORDER BY id"
+     ]
+    },
+    {
+     "key": "children-ordinal-order",
+     "text": "The children map is filled by walking the subjects in ordinal id order.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "foreach (var row in subjects.Values.OrderBy(s => s.Id, StringComparer.Ordinal))"
+     ]
+    },
+    {
+     "key": "slot-preload-query",
+     "text": "Slots are preloaded with a single query ordered by subject_id, key and fact_id, and only when facts are included.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "SELECT subject_id, key, fact_id FROM slots ORDER BY subject_id, key, fact_id"
+     ]
+    },
+    {
+     "key": "fact-counts-query",
+     "text": "Per-subject fact counts come from one count query grouped by subject_id.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "SELECT subject_id, COUNT(*) FROM facts GROUP BY subject_id ORDER BY subject_id"
+     ]
+    },
+    {
+     "key": "alias-id-dedupe",
+     "text": "A subject id is recorded once per normalized name even when its name and an alias normalize alike.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (!ids.Contains(row.Id, StringComparer.Ordinal))"
+     ]
+    },
+    {
+     "key": "empty-name-skipped",
+     "text": "A name that normalizes to an empty string is skipped and never indexed.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (normalized.Length == 0)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.ResolveSubjects",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "name-alias-normalized",
+     "text": "Names and aliases are normalized through Names.Normalize and unioned with an exact id match.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (normalized.Length > 0 && byName.TryGetValue(normalized, out var ids))"
+     ]
+    },
+    {
+     "key": "matches-ordinal",
+     "text": "Matches are collected in an ordinal sorted set, so results come back in id order.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var found = new SortedSet<string>(StringComparer.Ordinal);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.AdmitSubject",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "admit-refuses-at-cap",
+     "text": "Admission fails without adding anything once Used reaches maxNodes or the id is already admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (Used >= maxNodes || !admittedSubjects.Add(id))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.AdmitTree",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "tree-roots",
+     "text": "Tree roots are subjects whose parent is null or whose parent id is absent from subjects.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "Where(s => s.Parent is null || !subjects.ContainsKey(s.Parent))"
+     ]
+    },
+    {
+     "key": "parent-cycle-hidden",
+     "text": "Subjects unreachable from a root because of a parent cycle are still counted as hidden.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "Subjects unreachable from a root (a parent cycle) are not in the tree; they still count as hidden."
+     ]
+    },
+    {
+     "key": "level-sorted",
+     "text": "The next tree level is gathered in a sorted set, so each level is ordinal by id.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var next = new SortedSet<string>(StringComparer.Ordinal);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.AdmitNeighbourhood",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "parent-chain-first",
+     "text": "The root's parent chain is admitted nearest first before the hop loop runs.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "// The parent chain, nearest first; clamped by the cap."
+     ]
+    },
+    {
+     "key": "hop-loop-bounds",
+     "text": "Hops run from 1 through depth and stop early when the frontier empties or the node budget is spent.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "for (var hop = 1; hop <= depth && frontier.Count > 0 && Used < maxNodes; hop++)"
+     ]
+    },
+    {
+     "key": "fact-admission-cap",
+     "text": "Once Used reaches maxNodes, further facts are not admitted and each increments hiddenFacts.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (Used < maxNodes)"
+     ]
+    },
+    {
+     "key": "fact-ref-reaches-owner",
+     "text": "A fact ref reaches the subject that owns its target fact, or nothing when the target is unknown.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "return factOwners.GetValueOrDefault(reference.Target) is { } owner ? new[] { owner } : Array.Empty<string>();"
+     ]
+    },
+    {
+     "key": "boundary-skipped-without-facts",
+     "text": "Boundary admission does nothing when no fact was admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (admittedFacts.Count == 0)"
+     ]
+    },
+    {
+     "key": "hop-candidates-sorted",
+     "text": "Candidates within a hop are collected in an ordinal sorted set before any admission.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var candidates = new SortedSet<string>(StringComparer.Ordinal);"
+     ]
+    },
+    {
+     "key": "hop-child-and-ref",
+     "text": "Each hop adds child subjects and every subject reached by a fact ref to one candidate set.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "candidates.Add(reached);"
+     ]
+    },
+    {
+     "key": "boundary-last",
+     "text": "Boundary subjects are admitted last, after every fact of the neighbourhood.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "AdmitBoundary();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.AdmitBoundary",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "capacity-minus-used",
+     "text": "Boundary capacity is maxNodes minus the nodes already used, clamped at zero.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var capacity = Math.Max(0, maxNodes - Used);"
+     ]
+    },
+    {
+     "key": "lower-id-evicts",
+     "text": "When boundary capacity is full, a lower-id subject evicts the current highest kept id.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "else if (kept.Count > 0 && string.CompareOrdinal(item.Subject, kept.Max) < 0)"
+     ]
+    },
+    {
+     "key": "probe-inbound-fact",
+     "text": "After the fact-referrer query the row probe is called with inbound_fact and the row count.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "probe?.Invoke(\"inbound_fact\", rows);"
+     ]
+    },
+    {
+     "key": "occupied-slot-keys",
+     "text": "Slot referrers are considered only for keys that an admitted fact occupies.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "entry.Value.Any(admittedFactIds.Contains)"
+     ]
+    },
+    {
+     "key": "slot-hash-filter",
+     "text": "The slot referrer query keeps only targets with a '#' after the first character.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "instr(r.target, '#') > 1"
+     ]
+    },
+    {
+     "key": "inbound-order",
+     "text": "Inbound edges are sorted by target fact, subject, relation, basis, kind and slot.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      ".OrderBy(i => i.TargetFact, StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "overflow-hidden",
+     "text": "Boundary subjects that did not fit are added to the hidden subject set.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "hiddenSubjects.UnionWith(overflow);"
+     ]
+    },
+    {
+     "key": "rows-grouped-by-subject",
+     "text": "Referrer rows arrive ordered by referrer subject, so the dedupe set covers a single subject.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "// Rows arrive ordered by referrer subject, so one group is one subject and its dedupe set stays small."
+     ]
+    },
+    {
+     "key": "unknown-referrer-skipped",
+     "text": "A referrer whose subject id is not in subjects is ignored by the boundary pass.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (!subjects.ContainsKey(item.Subject))"
+     ]
+    },
+    {
+     "key": "hidden-reason-not-admitted",
+     "text": "A referrer row that does not fit is recorded as unresolved with reason not_admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "hiddenInbound.Add(new GraphHidden(row.FactId, row.Edge.Rel, row.Edge.Kind, row.RefTarget, \"not_admitted\"));"
+     ]
+    },
+    {
+     "key": "probe-inbound-slot",
+     "text": "After the slot-referrer query the row probe is called with inbound_slot and the row count.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "probe?.Invoke(\"inbound_slot\", rows);"
+     ]
+    },
+    {
+     "key": "json-each-admitted",
+     "text": "The fact-referrer query matches admitted fact ids through json_each over a bound JSON array.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "WHERE r.kind = 'fact' AND r.target IN (SELECT value FROM json_each($ids))"
+     ]
+    },
+    {
+     "key": "referrer-row-order",
+     "text": "The fact-referrer query orders rows by subject, target, relation, basis, fact id and seq.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "ORDER BY f.subject_id, r.target, r.rel, r.basis, f.id, r.seq"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.AppendHiddenInbound",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "cap-drop-counted",
+     "text": "Hidden inbound entries stop at GraphUnresolvedCap and the rest are counted in droppedUnresolved.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (unresolved.Count >= GraphUnresolvedCap)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.BuildRefEdges",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "unknown-fact-not-found",
+     "text": "A fact ref whose target has no owning fact is hidden as not_found rather than not_admitted.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "factOwners.GetValueOrDefault(reference.Target) is null ? \"not_found\" : \"not_admitted\""
+     ]
+    },
+    {
+     "key": "ref-edge-dedupe",
+     "text": "Ref edges are deduplicated on from kind, from, to kind, to, relation, basis, kind and slot.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (seen.Add(string.Join('\\u001f', edge.FromKind, edge.From, edge.ToKind, edge.To, edge.Rel, edge.Basis, edge.Kind, edge.Slot ?? string.Empty)))"
+     ]
+    },
+    {
+     "key": "slot-dispatches",
+     "text": "A slot ref is handed to EmitSlot rather than resolved inline.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "EmitSlot(fact, reference, Emit, Hide);"
+     ]
+    },
+    {
+     "key": "subject-multi-ambiguous",
+     "text": "A subject ref that names several subjects marks each emitted edge as ambiguous.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "reference.Rel, reference.Basis, \"subject\", null, matches.Count > 1 ? true : null)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.EmitSlot",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "empty-slot-to-subject",
+     "text": "An empty slot emits an edge to the owning subject instead of a fact.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "// An empty slot falls back to the owning subject."
+     ]
+    },
+    {
+     "key": "one-edge-per-occupant",
+     "text": "A non-empty slot emits one edge for each admitted occupant.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "// One edge per current occupant, as the store's ResolveSlotTarget resolves the target."
+     ]
+    },
+    {
+     "key": "ambiguous-flag",
+     "text": "A slot whose subject part names several subjects marks its edges as ambiguous.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "bool? ambiguous = matches.Count > 1 ? true : null;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.BuildInboundEdges",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "inbound-edge-shape",
+     "text": "An inbound edge points from the admitted fact to the boundary subject with kind inbound.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "\"inbound\", item.Slot, null"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.SplitSlot",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "hash-not-at-edges",
+     "text": "SplitSlot requires the first '#' to be neither the first character nor the last.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (hash <= 0 || hash == target.Length - 1)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.EnsureOwners",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "null-owner-cached",
+     "text": "A fact id with no matching row is cached with a null owner so it is not queried again.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "factOwners.TryAdd(id, null);"
+     ]
+    },
+    {
+     "key": "owner-query-order",
+     "text": "Owner lookups are batched per chunk and ordered by id.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "SELECT id, subject_id FROM facts WHERE id IN ("
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.IsInternalKind",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "internal-three-kinds",
+     "text": "Only fact, subject and slot ref kinds are internal; every other kind becomes a GraphExternalRef on its fact.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private static bool IsInternalKind(string kind) => kind is \"fact\" or \"subject\" or \"slot\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.LoadFacts",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "load-orders",
+     "text": "Facts load ordered by subject_id, created_at and id, and each fact's refs by seq.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "ORDER BY subject_id, created_at, id"
+     ]
+    },
+    {
+     "key": "batch-chunks",
+     "text": "Fact rows are fetched for at most GraphBatchSize subject ids per query.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "foreach (var chunk in wanted.Chunk(GraphBatchSize))"
+     ]
+    },
+    {
+     "key": "refs-filtered-by-loaded",
+     "text": "A ref is attached only when its fact id is among the rows loaded for the chunk.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (byId.TryGetValue(refReader.GetString(0), out var fact))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "text-cap-value",
+     "text": "GraphTextCap is 500 UTF-16 units, the length above which fact text is cut.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private const int GraphTextCap = 500;"
+     ]
+    },
+    {
+     "key": "unresolved-cap-value",
+     "text": "GraphUnresolvedCap is 2000, the cap on unresolved entries in the payload.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private const int GraphUnresolvedCap = 2000;"
+     ]
+    },
+    {
+     "key": "batch-size-value",
+     "text": "GraphBatchSize is 400, the chunk size for fact and owner queries.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private const int GraphBatchSize = 400;"
+     ]
+    },
+    {
+     "key": "row-probe-seam",
+     "text": "GraphRowProbe is a test seam called with a query name and the rows read.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "public Action<string, int>? GraphRowProbe { get; set; }"
+     ]
+    },
+    {
+     "key": "used-counts-subjects-and-facts",
+     "text": "Subjects and facts are counted together against maxNodes, so each admitted fact costs one node.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "private int Used => subjectOrder.Count + admittedFacts.Count;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Graph",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "depth-range-rejected",
+     "text": "A depth outside the descendant range is rejected with bad_depth before the store is opened.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (depth < 0 || depth > MaxDescendantDepth)"
+     ]
+    },
+    {
+     "key": "max-nodes-range-rejected",
+     "text": "A max_nodes outside the range from 1 to MaxNodesLimit is rejected before the store is opened.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "if (maxNodes < 1 || maxNodes > GraphRequest.MaxNodesLimit)"
+     ]
+    },
+    {
+     "key": "opens-then-builder",
+     "text": "The method opens one connection and hands the request to a GraphBuilder together with the row probe.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "return new GraphBuilder(connection, depth, withFacts, maxNodes, GraphRowProbe).Build(request.Subject);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Graph.cs::GraphBuilder.Placeholders",
+   "kind": "method",
+   "parent": "src/Dossier/Graph.cs",
+   "facts": [
+    {
+     "key": "named-parameters",
+     "text": "Each value is bound to a generated parameter named p plus its index, and the names are joined for the SQL list.",
+     "at": [
+      "src/Dossier/Graph.cs",
+      "var name = \"$p\" + index++.ToString(CultureInfo.InvariantCulture);"
+     ]
+    }
+   ]
+  }
+ ]
+}

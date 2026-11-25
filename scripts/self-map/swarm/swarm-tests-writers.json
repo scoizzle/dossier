@@ -1,0 +1,432 @@
+{
+ "agent": "swarm-tests-writers",
+ "slice": "tests-writers",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/ChangesToolTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "ChangesToolTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "subjectfilter-returnsonlythat-counts-inserts",
+     "text": "ReadChanges(0, 100, \"alpha\") over two Alpha and two Beta facts keeps only Alpha rows and reports exactly 2 facts inserts.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "page.Changes.Count(row => row.Tbl == \"facts\" && row.Op == \"insert\""
+     ]
+    },
+    {
+     "key": "subjectfilter-returnsonlythat-next-is-head",
+     "text": "The filtered page has Truncated false and Next equal to Revision(), and reading again from Next returns 0 changes.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "page.Next).IsEqualTo(db.Store.Revision())"
+     ]
+    },
+    {
+     "key": "subjectfilter-pageseveryrow-page-size-two",
+     "text": "Paging Alpha in pages of 2 until Truncated is false reproduces the guard-limited full read sequence exactly and ends at Revision().",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "seen.SequenceEqual(expected)"
+     ]
+    },
+    {
+     "key": "subjectfilter-last-newest-row-of-subject",
+     "text": "ReadChangesLast(1, \"Alpha\") gives one row with Text alpha two, Truncated true and Next equal to Revision().",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "page.Changes[0].Text).IsEqualTo(\"alpha two\")"
+     ]
+    },
+    {
+     "key": "subjectfilter-unknownsubject-fails-closed",
+     "text": "Reading the subject no such subject throws DossierRequestException whose Code is subject_not_found rather than an empty page.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "thrown!.Code).IsEqualTo(\"subject_not_found\")"
+     ]
+    },
+    {
+     "key": "unfiltered-null-subject-json-identical",
+     "text": "Serializing ReadChanges(0, 3) and ReadChanges(0, 3, null) with JsonCodec.Options produces identical JSON.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "withNull).IsEqualTo(plain)"
+     ]
+    },
+    {
+     "key": "mcp-changes-listed-untrusted-data",
+     "text": "The tools/list entry named changes has a description that contains the phrase untrusted data.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      ".Contains(\"untrusted data\")"
+     ]
+    },
+    {
+     "key": "mcp-changes-serves-store-json",
+     "text": "A changes call with since 0, limit 100 and subject Alpha returns the same text the store's ReadChanges page serializes.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "result.GetProperty(\"content\")[0].GetProperty(\"text\")"
+     ]
+    },
+    {
+     "key": "mcp-changes-negative-cursor-invalid-request",
+     "text": "A changes call with since -1 returns isError true and error code invalid_request.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "Payload(negative).GetProperty(\"error\").GetProperty(\"code\")"
+     ]
+    },
+    {
+     "key": "mcp-changes-unknown-subject-code",
+     "text": "A changes call with since 0 and subject nope returns isError true and code subject_not_found.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "Payload(unknown).GetProperty(\"error\").GetProperty(\"code\")"
+     ]
+    },
+    {
+     "key": "changestool-nonpositive-rejected-over-mcp",
+     "text": "Changes calls with last 0, last -3, limit 0 or limit -1 each return invalid_request over MCP.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "new { last = 0 }, new { last = -3 }"
+     ]
+    },
+    {
+     "key": "changestool-nonpositive-rejected-over-cli",
+     "text": "The CLI exits 1 with empty stdout and stderr containing at least 1 for changes --last 0, --last -1 and --limit 0.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "await Assert.That(stderr).Contains(\"at least 1\")"
+     ]
+    },
+    {
+     "key": "mcp-changes-cursor-ahead-reports-reset",
+     "text": "A changes call with since Revision() + 50 returns reset true, 0 changes, and next equal to Revision().",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "page.GetProperty(\"reset\").GetBoolean()"
+     ]
+    },
+    {
+     "key": "cli-changes-prints-filtered-page",
+     "text": "dossier changes --since 0 --subject Alpha exits 0 and prints only rows whose subject_name is Alpha.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "row.GetProperty(\"subject_name\").GetString() == \"Alpha\""
+     ]
+    },
+    {
+     "key": "cli-changes-bad-cursor-and-typo",
+     "text": "dossier changes --since soon exits 1 with empty stdout and stderr mentioning --since, and --sinse reports unknown option.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "typoErr).Contains(\"unknown option \\\"--sinse\\\"\")"
+     ]
+    },
+    {
+     "key": "helper-calltool-jsonrpc-tools-call",
+     "text": "CallTool sends a tools/call JSON-RPC request with id 1 and returns the cloned result element of the reply.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "method = \"tools/call\""
+     ]
+    },
+    {
+     "key": "helper-payload-parses-content-text",
+     "text": "Payload parses the text of content[0] as JSON and returns its root element.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "GetProperty(\"text\").GetString()"
+     ]
+    },
+    {
+     "key": "helper-run-launches-dossier-dll",
+     "text": "Run starts dotnet with the Dossier.dll from AppContext.BaseDirectory and sets DOSSIER_DB to the database path.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "info.Environment[\"DOSSIER_DB\"] = dbPath;"
+     ]
+    },
+    {
+     "key": "helper-run-returns-exit-and-output",
+     "text": "Run returns the process exit code together with the captured stdout and stderr after the process exits.",
+     "at": [
+      "tests/Dossier.Tests/ChangesToolTests.cs",
+      "return (process.ExitCode, await stdout, await stderr);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/RevisionTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "RevisionTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "revision-bumpsonrawsql-all-writes",
+     "text": "Each raw SQL insert, update and delete on facts, and then PostFacts and Retract, raises Revision() above its previous value.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "await Assert.That(r3).IsGreaterThan(r2)"
+     ]
+    },
+    {
+     "key": "revision-bumpsonrawsql-insert-columns",
+     "text": "The raw insert names id, subject_id, kind, status, provenance, content_hash and created_at explicitly.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "INSERT INTO facts(id, subject_id, kind, status, provenance, content_hash, created_at)"
+     ]
+    },
+    {
+     "key": "revision-upgrades-existing-db-recreates-triggers",
+     "text": "After every trg_ trigger and the meta revision row are dropped, reopening the store recreates 12 triggers and Revision() is 0.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "WHERE type='trigger' AND name LIKE 'trg_%'\")).IsEqualTo(12)"
+     ]
+    },
+    {
+     "key": "revision-upgrades-existing-db-counts-changes",
+     "text": "One subjects insert and two updates raise Revision() to 3 after the upgrade, and a second reopen keeps that value.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "await Assert.That(n).IsEqualTo(3L)"
+     ]
+    },
+    {
+     "key": "revision-doesnotbumponidenticalrepost",
+     "text": "Posting the same body under Widget a second time leaves Revision() equal to the value before the second post.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(before)"
+     ]
+    },
+    {
+     "key": "revision-doesnotbumponrepeatedretract",
+     "text": "A second Retract of the same id leaves Revision() unchanged and returns the same result with Found true and that id.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "await Assert.That(second).IsEqualTo(first)"
+     ]
+    },
+    {
+     "key": "revision-concurrentupgrade-parallel-open",
+     "text": "Opening 8 DossierStore instances with Parallel.For against the legacy database raises no exception and leaves 12 triggers.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "Parallel.For(0, opened.Length, i => opened[i] = new DossierStore(db.DbPath))"
+     ]
+    },
+    {
+     "key": "revision-concurrentupgrade-journal-triggers",
+     "text": "All 12 triggers then contain INSERT INTO changes and the changes table holds 0 rows.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "AND sql LIKE '%INSERT INTO changes%'\")).IsEqualTo(12)"
+     ]
+    },
+    {
+     "key": "revision-unchangedbyreads",
+     "text": "Search, Correlate with shared_tag and Ops.Graph on a Widget subject leave Revision() equal to the value before them.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(before)"
+     ]
+    },
+    {
+     "key": "helper-exec-runs-raw-sql",
+     "text": "Exec runs a statement on a fresh store.OpenConnection(), and Count returns Fixtures.Count over another new connection.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "command.ExecuteNonQuery();"
+     ]
+    },
+    {
+     "key": "helper-tables-four-names",
+     "text": "The Tables field the trigger loops iterate over holds facts, subjects, refs and slots.",
+     "at": [
+      "tests/Dossier.Tests/RevisionTests.cs",
+      "private static readonly string[] Tables"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/StoreSchemaTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "StoreSchemaTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "schema-tables-exist-once",
+     "text": "On first use sqlite_master holds exactly one row for each of subjects, slots, facts, refs, attachments, facts_fts and meta.",
+     "at": [
+      "tests/Dossier.Tests/StoreSchemaTests.cs",
+      "new[] { \"subjects\", \"slots\", \"facts\", \"refs\", \"attachments\", \"facts_fts\", \"meta\" }"
+     ]
+    },
+    {
+     "key": "schema-indexes-exist-once",
+     "text": "The indexes idx_refs_target, idx_refs_fact_id, idx_facts_subject_id and idx_facts_content_hash each exist exactly once.",
+     "at": [
+      "tests/Dossier.Tests/StoreSchemaTests.cs",
+      "new[] { \"idx_refs_target\", \"idx_refs_fact_id\", \"idx_facts_subject_id\", \"idx_facts_content_hash\" }"
+     ]
+    },
+    {
+     "key": "schema-trigger-names-and-seed",
+     "text": "The trigger names are trg_{table}_{op} for facts, subjects, refs and slots across insert, update and delete, giving 12 triggers and a meta revision of 0.",
+     "at": [
+      "tests/Dossier.Tests/StoreSchemaTests.cs",
+      "await Assert.That(actual.Count).IsEqualTo(12)"
+     ]
+    },
+    {
+     "key": "schema-enables-wal",
+     "text": "A store created through TempDb reports PRAGMA journal_mode as wal.",
+     "at": [
+      "tests/Dossier.Tests/StoreSchemaTests.cs",
+      "await Assert.That((string?)Fixtures.Scalar(connection, \"PRAGMA journal_mode\")).IsEqualTo(\"wal\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/MultiWriterTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "MultiWriterTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "writers-identicalfact-same-text-each-round",
+     "text": "Each of the 8 writers posts the same text under Dedupe/Round in each of 20 rounds.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "store.PostFacts(Fixtures.Post(\"Dedupe/Round\", Fixtures.Fact(text)))"
+     ]
+    },
+    {
+     "key": "writers-samekeyslot-live-and-superseded",
+     "text": "Each round leaves exactly 1 live fact for the slot and live plus superseded equal to writers.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "await Assert.That(live + superseded).IsEqualTo(writers)"
+     ]
+    },
+    {
+     "key": "writers-samekeyslot-one-new-rest-replaced",
+     "text": "Each round reports exactly one new status and writers - 1 replaced statuses.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "IsEqualTo($\"round {round}: new=1\")"
+     ]
+    },
+    {
+     "key": "writers-whilestreaming-graph-sampler",
+     "text": "A sampler calls api/graph?depth=1&facts=true&max_nodes=500 while the writers run, and every sampled status must be 200.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "graphStatuses.Enqueue((int)reply.StatusCode)"
+     ]
+    },
+    {
+     "key": "writers-whilestreaming-stream-final-revision",
+     "text": "The reader waits until the SSE revision frame equals the store's final revision, after a baseline event proves the stream is live.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "var delivered = await ReadRevisionAsync(reader, expected: final, TimeSpan.FromSeconds(5), cts.Token);"
+     ]
+    },
+    {
+     "key": "helper-starttogether-barrier",
+     "text": "StartTogether releases the writers together through a Barrier so their transactions overlap, using TaskCreationOptions.LongRunning.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "var gate = new Barrier(writers);"
+     ]
+    },
+    {
+     "key": "helper-readrevision-skips-other-events",
+     "text": "ReadRevisionAsync skips comments and any frame whose event name is not revision, because the stream also carries changes and reset events.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "if (data.Count == 0 || name != \"revision\")"
+     ]
+    },
+    {
+     "key": "writers-distinctfacts-total-and-distinct",
+     "text": "Both the count of facts with text like w%-fact-% and the distinct text count of those rows equal writers times perWriter.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "await Assert.That(total).IsEqualTo(writers * perWriter)"
+     ]
+    },
+    {
+     "key": "writers-distinctfacts-revision-floor",
+     "text": "Revision() must be at least before plus writers times perWriter, because every accepted fact insert fires trg_facts_insert.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "await Assert.That(db.Store.Revision()).IsGreaterThanOrEqualTo(before + (writers * perWriter))"
+     ]
+    },
+    {
+     "key": "writers-identicalfact-final-row-count",
+     "text": "The facts table count after all rounds equals rounds, so dedupe leaves a single row per round.",
+     "at": [
+      "tests/Dossier.Tests/MultiWriterTests.cs",
+      "await Assert.That(Fixtures.Count(final, \"SELECT COUNT(*) FROM facts\")).IsEqualTo(rounds)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ConcurrencyTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "ConcurrencyTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "separatestores-concurrent-write-loop",
+     "text": "Sixteen workers each create 25 TempDb stores, post one fact and require the facts count to be 1 with exactly one id.",
+     "at": [
+      "tests/Dossier.Tests/ConcurrencyTests.cs",
+      "if (count != 1 || ids.Count != 1)"
+     ]
+    },
+    {
+     "key": "separatestores-avoids-clearallpools",
+     "text": "The test avoids a process-wide SqliteConnection.ClearAllPools because it disposes pooled native handles that other stores are acquiring.",
+     "at": [
+      "tests/Dossier.Tests/ConcurrencyTests.cs",
+      "SqliteConnection.ClearAllPools() in this path disposes pooled native"
+     ]
+    },
+    {
+     "key": "separatestores-all-tasks-succeed",
+     "text": "After Task.WhenAll every worker task must report IsCompletedSuccessfully.",
+     "at": [
+      "tests/Dossier.Tests/ConcurrencyTests.cs",
+      "await Assert.That(tasks.All(t => t.IsCompletedSuccessfully)).IsTrue()"
+     ]
+    }
+   ]
+  }
+ ]
+}

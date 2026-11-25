@@ -1,0 +1,826 @@
+{
+ "agent": "swarm-docs-reference",
+ "slice": "docs-reference",
+ "subjects": [
+  {
+   "name": "Dossier/CLI/dump",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier dump"
+   ],
+   "facts": [
+    {
+     "key": "split-invalid-value",
+     "text": "A dump split value other than heading, file or none is rejected with invalid_split, recorded in the manifest errors.",
+     "at": [
+      "docs/cli.md",
+      "Any other `--split` value is rejected"
+     ]
+    },
+    {
+     "key": "redump-revives-corrected",
+     "text": "A re-dump of an unchanged source brings a corrected claim back.",
+     "at": [
+      "docs/cli.md",
+      "a re-dump of an unchanged source brings a corrected claim back"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/post",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier post"
+   ],
+   "facts": [
+    {
+     "key": "supersedes-target-must-exist",
+     "text": "A supersedes ref must name a target that exists, or the post fails with supersedes_target_not_found.",
+     "at": [
+      "docs/cli.md",
+      "The target must exist"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/correlate",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier correlate"
+   ],
+   "facts": [
+    {
+     "key": "invalid-matcher",
+     "text": "An unknown matcher name given to correlate is rejected with invalid_matcher.",
+     "at": [
+      "docs/cli.md",
+      "an unknown name is rejected with"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/search",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier search"
+   ],
+   "facts": [
+    {
+     "key": "status-filter-derived",
+     "text": "In search, --status live leaves out a fact that is stale or contested.",
+     "at": [
+      "docs/cli.md",
+      "leaves out a fact that is stale or contested"
+     ]
+    },
+    {
+     "key": "q-fts5-syntax",
+     "text": "The search --q option takes an FTS5 query, and FTS5 syntax still works.",
+     "at": [
+      "docs/cli.md",
+      "FTS5 syntax still works"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/check",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier check"
+   ],
+   "facts": [
+    {
+     "key": "drafts-verdicts",
+     "text": "With --drafts, check adds a verdict per draft and an advisory near list of up to 3 ids at Jaccard 0.85 or higher, writing nothing.",
+     "at": [
+      "docs/cli.md",
+      "adds a verdict per draft"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/verify",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier verify"
+   ],
+   "facts": [
+    {
+     "key": "superseded-replaced-by",
+     "text": "For a superseded fact, verify reports replaced_by, which is absent when the chain ends in a retraction.",
+     "at": [
+      "docs/cli.md",
+      "absent when that chain ends in a retraction"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/publish",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier publish"
+   ],
+   "facts": [
+    {
+     "key": "assets-modes",
+     "text": "Markdown publish takes --assets detail or none, while JSONL publish takes embed, files or none.",
+     "at": [
+      "docs/publish.md",
+      "takes `detail|none` for markdown"
+     ]
+    },
+    {
+     "key": "budget-defaults",
+     "text": "Markdown publish defaults to a budget of 1200 and depth full, with budget-mode complete.",
+     "at": [
+      "docs/publish.md",
+      "defaults 1200 and `full`"
+     ]
+    },
+    {
+     "key": "slug-rules",
+     "text": "A subject slug is capped at 80 characters, and a colliding slug gets a -2 or -3 suffix in tree order.",
+     "at": [
+      "docs/publish.md",
+      "capped at 80 characters"
+     ]
+    },
+    {
+     "key": "fact-key-content",
+     "text": "A fact file key is the first 8 hex characters of a SHA-256 of the normalized text, declared key, kind and canonical data.",
+     "at": [
+      "docs/publish.md",
+      "the first 8 hex characters of the SHA-256"
+     ]
+    },
+    {
+     "key": "missing-blob-fail-open",
+     "text": "A missing blob still lets publish write the markdown, renders the entry as MISSING, warns on stderr and exits 0.",
+     "at": [
+      "docs/publish.md",
+      "publish still writes the markdown"
+     ]
+    },
+    {
+     "key": "jsonl-markdown-only-options",
+     "text": "Markdown-only options --facts, --budget, --budget-mode, --depth and --index-max-tokens are rejected with --format jsonl.",
+     "at": [
+      "docs/publish.md",
+      "are markdown-only and rejected with"
+     ]
+    },
+    {
+     "key": "embed-size-cap",
+     "text": "A blob over 256 MiB cannot be embedded and fails the publish.",
+     "at": [
+      "docs/publish.md",
+      "cannot be embedded and fails the publish"
+     ]
+    },
+    {
+     "key": "memory-error",
+     "text": "Publish fails with bundle_too_large_for_memory, writing nothing, when one data file would exceed about 2 GiB.",
+     "at": [
+      "docs/publish.md",
+      "would exceed the runtime's array limit"
+     ]
+    },
+    {
+     "key": "machine-record",
+     "text": "Every fact file ends with a Machine record heading and one fenced json block holding the canonical record.",
+     "at": [
+      "docs/publish.md",
+      "ends with a `## Machine record` heading"
+     ]
+    },
+    {
+     "key": "max-files-counts",
+     "text": "The --max-files limit counts the .jsonl files plus asset files and not manifest.json, and 0 means unbounded.",
+     "at": [
+      "docs/publish.md",
+      "counts the `.jsonl` files plus asset files"
+     ]
+    },
+    {
+     "key": "profile-unknown-key",
+     "text": "An unknown profile key or a wrongly typed field makes publish exit non-zero naming the field.",
+     "at": [
+      "docs/publish.md",
+      "An unknown key or a wrongly typed field"
+     ]
+    },
+    {
+     "key": "copilot-quotas",
+     "text": "Microsoft Copilot Studio accepts 500 uploaded files per agent and degrades to document-level citations under about 4 KB.",
+     "at": [
+      "docs/publish.md",
+      "accepts 500 uploaded files per agent"
+     ]
+    },
+    {
+     "key": "profile-zero-unbounded",
+     "text": "In a profile, 0 means unbounded, and an absent allowed_extensions accepts any file type.",
+     "at": [
+      "docs/publish.md",
+      "`0` means unbounded"
+     ]
+    },
+    {
+     "key": "shard-contents",
+     "text": "Shard mode writes no subject directories, fact files or assets, and attachments are listed by sha256.",
+     "at": [
+      "docs/publish.md",
+      "attachments are listed by sha256"
+     ]
+    },
+    {
+     "key": "shard-front-matter",
+     "text": "Each shard opens with front matter naming shard, of, subjects and a fact_files value of absent.",
+     "at": [
+      "docs/publish.md",
+      "fact_files: absent"
+     ]
+    },
+    {
+     "key": "fail-closed-memory-first",
+     "text": "Everything is built and measured in memory first, so a limit breach exits non-zero before anything is written.",
+     "at": [
+      "docs/publish.md",
+      "Everything is built and measured in memory first"
+     ]
+    },
+    {
+     "key": "readme-timestamp",
+     "text": "Publish keeps the README timestamp while the rest of the bundle is unchanged.",
+     "at": [
+      "docs/publish.md",
+      "The README timestamp is kept while the rest of the bundle is unchanged"
+     ]
+    },
+    {
+     "key": "prune-only-generated",
+     "text": "Files listed by a previous manifest but no longer produced are removed, while any other file in the directory is never deleted.",
+     "at": [
+      "docs/publish.md",
+      "any other file in the directory is never deleted"
+     ]
+    },
+    {
+     "key": "report-only-limits",
+     "text": "max_path_depth and min_file_bytes are report-only, so --respect-limits does not enforce them.",
+     "at": [
+      "docs/publish.md",
+      "does not enforce them"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/import",
+   "kind": "cli-verb",
+   "parent": "Dossier/CLI",
+   "aliases": [
+    "dossier import"
+   ],
+   "facts": [
+    {
+     "key": "unlisted-asset",
+     "text": "import rejects any file under assets that the manifest does not list, with import_unlisted_file.",
+     "at": [
+      "docs/publish.md",
+      "rejects any file under `assets/` the manifest does not list"
+     ]
+    },
+    {
+     "key": "manifest-read-cap",
+     "text": "The JSONL import reads manifest.json for at most its reported size, capped at 64 MiB.",
+     "at": [
+      "docs/publish.md",
+      "is read for at most its reported size"
+     ]
+    },
+    {
+     "key": "refuses-symlink",
+     "text": "import refuses a symbolic link or a non-regular file before opening it, with import_not_regular_file or import_unsafe_path.",
+     "at": [
+      "docs/publish.md",
+      "refuses a symbolic link or a non-regular file"
+     ]
+    },
+    {
+     "key": "bad-data-file-name",
+     "text": "A duplicated or unparsable data file name is rejected with import_bad_manifest.",
+     "at": [
+      "docs/publish.md",
+      "a duplicated or unparsable data file name"
+     ]
+    },
+    {
+     "key": "conflicting-asset-records",
+     "text": "Two asset records for one sha256 that disagree on path, bytes, mime or data are rejected with import_bad_record.",
+     "at": [
+      "docs/publish.md",
+      "two asset records for one `sha256` that disagree"
+     ]
+    },
+    {
+     "key": "open-flags",
+     "text": "import opens bundle files with explicit per-platform open flags for macOS, FreeBSD and Linux.",
+     "at": [
+      "docs/publish.md",
+      "explicit per-platform `open(2)` flags"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "docs/install.md",
+   "kind": "doc",
+   "parent": "Dossier/Docs",
+   "aliases": [
+    "install.md"
+   ],
+   "facts": [
+    {
+     "key": "linux-glibc",
+     "text": "The linux-x64 archive needs Intel or AMD 64-bit Linux with glibc 2.34 or newer.",
+     "at": [
+      "docs/install.md",
+      "Intel/AMD 64-bit Linux with glibc 2.34+"
+     ]
+    },
+    {
+     "key": "uname-arm64",
+     "text": "On Linux, uname -m printing aarch64 means linux-arm64 is the matching archive.",
+     "at": [
+      "docs/install.md",
+      "means `linux-arm64`"
+     ]
+    },
+    {
+     "key": "native-sqlite-required",
+     "text": "The dossier binary does not run without the native SQLite library kept beside it.",
+     "at": [
+      "docs/install.md",
+      "the binary does not run without it"
+     ]
+    },
+    {
+     "key": "gh-cli-version",
+     "text": "gh attestation verify needs GitHub CLI 2.49 or later, and SHA256SUMS itself is not attested.",
+     "at": [
+      "docs/install.md",
+      "needs GitHub CLI 2.49 or later"
+     ]
+    },
+    {
+     "key": "glibc-ceiling",
+     "text": "The release workflow fails any Linux build that would need a glibc symbol version above 2.39.",
+     "at": [
+      "docs/install.md",
+      "fails any build that would need more than 2.39"
+     ]
+    },
+    {
+     "key": "macos-quarantine",
+     "text": "macOS binaries are unsigned, and a Gatekeeper block is cleared with xattr -dr com.apple.quarantine.",
+     "at": [
+      "docs/install.md",
+      "macOS binaries are unsigned"
+     ]
+    },
+    {
+     "key": "osx-arm64-target",
+     "text": "The osx-arm64 archive is for Apple Silicon Macs.",
+     "at": [
+      "docs/install.md",
+      "Apple Silicon Macs"
+     ]
+    },
+    {
+     "key": "win-x64-target",
+     "text": "The win-x64 archive covers Windows x64, and Windows 11 on ARM runs it through built-in x64 emulation.",
+     "at": [
+      "docs/install.md",
+      "through built-in x64 emulation"
+     ]
+    },
+    {
+     "key": "archive-directory",
+     "text": "Each archive extracts into a single directory named dossier-<version>-<rid>.",
+     "at": [
+      "docs/install.md",
+      "extracts into a single directory"
+     ]
+    },
+    {
+     "key": "macos-checksum-command",
+     "text": "On macOS, shasum -a 256 -c --ignore-missing SHA256SUMS verifies a download.",
+     "at": [
+      "docs/install.md",
+      "shasum -a 256 -c --ignore-missing SHA256SUMS"
+     ]
+    },
+    {
+     "key": "attestation-coverage",
+     "text": "The attestations cover the four archives, and releases published before attestations were added have none.",
+     "at": [
+      "docs/install.md",
+      "the attestations cover the four archives"
+     ]
+    },
+    {
+     "key": "linux-libraries",
+     "text": "Linux binaries need libicu and OpenSSL libssl3 as well as glibc 2.34 or newer.",
+     "at": [
+      "docs/install.md",
+      "plus `libicu` and OpenSSL"
+     ]
+    },
+    {
+     "key": "ubuntu-2004-unsupported",
+     "text": "Ubuntu 20.04 and Debian 11 are not supported because they predate glibc 2.34.",
+     "at": [
+      "docs/install.md",
+      "Ubuntu 20.04 and Debian 11 are not supported"
+     ]
+    },
+    {
+     "key": "linux-arm64-ci",
+     "text": "The linux-arm64 archive is tested on GitHub's Ubuntu 24.04 arm64 runners.",
+     "at": [
+      "docs/install.md",
+      "Ubuntu 24.04 arm64 runners"
+     ]
+    },
+    {
+     "key": "archive-contents",
+     "text": "An extracted archive also holds the README, LICENSE and THIRD-PARTY-NOTICES.md files.",
+     "at": [
+      "docs/install.md",
+      "the README, `LICENSE`"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "docs/releasing.md",
+   "kind": "doc",
+   "parent": "Dossier/Docs",
+   "aliases": [
+    "releasing.md"
+   ],
+   "facts": [
+    {
+     "key": "tag-shape",
+     "text": "A release tag must be on main and look like vMAJOR.MINOR.PATCH, with an optional prerelease suffix such as v1.2.3-rc.1.",
+     "at": [
+      "docs/releasing.md",
+      "The tag must look like"
+     ]
+    },
+    {
+     "key": "prerelease-suffix",
+     "text": "A prerelease suffix on a release tag marks the GitHub release as a prerelease.",
+     "at": [
+      "docs/releasing.md",
+      "a suffix marks the GitHub release as a prerelease"
+     ]
+    },
+    {
+     "key": "workflow-builds-aot",
+     "text": "The release workflow builds Native AOT binaries, smoke-tests each one and publishes a GitHub release with the archives and SHA256SUMS.",
+     "at": [
+      "docs/releasing.md",
+      "builds Native AOT binaries, smoke-tests each one"
+     ]
+    },
+    {
+     "key": "release-assets",
+     "text": "A release publishes the four archives plus SHA256SUMS, with the Windows asset named dossier-<version>-win-x64.zip.",
+     "at": [
+      "docs/releasing.md",
+      "`dossier-<version>-win-x64.zip`"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "docs/cli.md",
+   "kind": "doc",
+   "parent": "Dossier/Docs",
+   "aliases": [
+    "cli.md"
+   ],
+   "facts": [
+    {
+     "key": "quick-start-needs",
+     "text": "The quick start needs the .NET 10 SDK plus jq and bash for the seed script.",
+     "at": [
+      "docs/cli.md",
+      "Needs the .NET 10 SDK"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/dossier compile"
+      }
+     ]
+    },
+    {
+     "key": "seed-script-counts",
+     "text": "The seed script prints subjects_created=5 and facts_created=32.",
+     "at": [
+      "docs/cli.md",
+      "The seed script prints"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/init"
+      }
+     ]
+    },
+    {
+     "key": "changes-since-defaults",
+     "text": "changes --since defaults to 0 and --limit to 100, and a page holds at most 500 rows.",
+     "at": [
+      "docs/cli.md",
+      "for rows after a cursor (default 0"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/changes"
+      }
+     ]
+    },
+    {
+     "key": "changes-last-wins",
+     "text": "When changes is given both --since and --last, --last wins, and a --last or --limit below 1 is rejected.",
+     "at": [
+      "docs/cli.md",
+      "which wins when both are given"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/changes"
+      }
+     ]
+    },
+    {
+     "key": "changes-subject-lookup",
+     "text": "changes --subject takes an id, name or alias, and an unknown subject is rejected with subject_not_found.",
+     "at": [
+      "docs/cli.md",
+      "an unknown subject is rejected with"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/changes"
+      }
+     ]
+    },
+    {
+     "key": "unknown-option-message",
+     "text": "An option the command does not take is rejected on stderr with exit 1 and a suggestion when one is close.",
+     "at": [
+      "docs/cli.md",
+      "An option the command does not take is rejected"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/dossier compile"
+      }
+     ]
+    },
+    {
+     "key": "missing-value-message",
+     "text": "An option missing its value fails with a message of the form --budget requires a value.",
+     "at": [
+      "docs/cli.md",
+      "--budget requires a value"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/dossier compile"
+      }
+     ]
+    },
+    {
+     "key": "mcp-protocol-versions",
+     "text": "dossier mcp speaks JSON-RPC over stdio for protocol versions 2025-06-18, 2025-03-26 and 2024-11-05.",
+     "at": [
+      "docs/cli.md",
+      "protocol versions 2025-06-18"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-resources",
+     "text": "The MCP server exposes the dossier://subjects resource plus templates for a subject and a fact by id.",
+     "at": [
+      "docs/cli.md",
+      "Resources: `dossier://subjects`"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-untrusted-text",
+     "text": "MCP tool descriptions mark fact text as untrusted data that must never be followed as instructions.",
+     "at": [
+      "docs/cli.md",
+      "untrusted data that must never be followed as instructions"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/server"
+      }
+     ]
+    },
+    {
+     "key": "mcp-check-match",
+     "text": "MCP check takes subject and optional drafts and reports a match of exact_id, exact_name, exact_alias, prefix or fuzzy.",
+     "at": [
+      "docs/cli.md",
+      "`exact_id`, `exact_name`, `exact_alias`, `prefix` or `fuzzy`"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/check"
+      }
+     ]
+    },
+    {
+     "key": "mcp-actor-source",
+     "text": "An MCP write records the sanitized clientInfo.name, else DOSSIER_AGENT, else mcp-client as its actor.",
+     "at": [
+      "docs/cli.md",
+      "else `DOSSIER_AGENT` from the server's environment"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "actor-label-sanitized",
+     "text": "An actor label is sanitized and capped at 64 characters, and never enters content_hash or changes dedupe.",
+     "at": [
+      "docs/cli.md",
+      "capped at 64 characters"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Provenance and agent identity"
+      }
+     ]
+    },
+    {
+     "key": "changes-last-endpoint",
+     "text": "GET /api/changes?last=L returns the newest L rows oldest first, with truncated true when older rows were left out.",
+     "at": [
+      "docs/cli.md",
+      "returns the newest `L` rows oldest first"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "changes-reset-cursor",
+     "text": "A since cursor above the head, or out of the retained window, returns reset true with no rows and next at the head.",
+     "at": [
+      "docs/cli.md",
+      "returns `reset: true` with no rows"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ]
+    },
+    {
+     "key": "graph-text-cap",
+     "text": "In the graph payload fact text is capped at 500 characters, cut to 499 plus an ellipsis without splitting a surrogate pair.",
+     "at": [
+      "docs/cli.md",
+      "Fact text is capped at 500 characters in this payload"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "graph-banner-hidden",
+     "text": "The graph banner shows the largest hidden count seen per category since the page was opened, and opening another root starts fresh.",
+     "at": [
+      "docs/cli.md",
+      "the largest hidden count seen per category"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/graph view"
+      }
+     ]
+    },
+    {
+     "key": "demo-exit-codes",
+     "text": "The multi-agent demo exits 0 when nothing failed, 1 on a run failure and 2 on a usage or setup error.",
+     "at": [
+      "docs/cli.md",
+      "when nothing failed, `1` on a run failure"
+     ]
+    },
+    {
+     "key": "demo-no-build",
+     "text": "The multi-agent demo refuses to build when DOSSIER_NO_BUILD=1 is set.",
+     "at": [
+      "docs/cli.md",
+      "`DOSSIER_NO_BUILD=1` refuses"
+     ]
+    },
+    {
+     "key": "demo-port",
+     "text": "The demo starts its server at port 8787 and moves to the next free port when that one is taken.",
+     "at": [
+      "docs/cli.md",
+      "starts at 8787 and moves to the next free port"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/Web/server",
+   "kind": "component",
+   "parent": "Dossier/Web",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "literal-ipv6-not-served",
+     "text": "The web listener does not serve a literal [::1] address.",
+     "at": [
+      "docs/cli.md",
+      "address is not served"
+     ]
+    },
+    {
+     "key": "revision-endpoint",
+     "text": "GET /api/revision returns the revision from the store's durable meta.revision counter.",
+     "at": [
+      "docs/cli.md",
+      "durable `meta.revision` counter"
+     ]
+    },
+    {
+     "key": "revision-scope",
+     "text": "The revision counter counts row writes to facts, subjects, refs and slots, so a deduped re-post leaves it unchanged.",
+     "at": [
+      "docs/cli.md",
+      "counts row writes to facts, subjects, refs and slots"
+     ]
+    }
+   ]
+  }
+ ]
+}

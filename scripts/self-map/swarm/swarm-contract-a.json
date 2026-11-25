@@ -1,0 +1,600 @@
+{
+ "agent": "swarm-contract-a",
+ "slice": "contract-a",
+ "subjects": [
+  {
+   "name": "contract/ops.schema.json",
+   "kind": "schema",
+   "parent": "Dossier/Contract",
+   "aliases": [
+    "ops.schema.json"
+   ],
+   "facts": [
+    {
+     "key": "dumprequest-source",
+     "text": "DumpRequest.source is a string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"source\": { \"type\": \"string\", \"minLength\": 1 }"
+     ]
+    },
+    {
+     "key": "dumprequest-required",
+     "text": "DumpRequest requires source and subject, while kind is optional.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"source\", \"subject\"],"
+     ]
+    },
+    {
+     "key": "dumpresponse-created",
+     "text": "DumpResponse.created is an array of strings described as Fact ids.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"created\": { \"type\": \"array\", \"items\": { \"type\": \"string\" }, \"description\": \"Fact ids.\" },"
+     ]
+    },
+    {
+     "key": "dumpresponse-skipped",
+     "text": "Each DumpResponse.skipped item requires locator and reason and allows no other property.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"locator\", \"reason\"],"
+     ]
+    },
+    {
+     "key": "dumpresponse-errors",
+     "text": "DumpResponse.errors is an array of strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"errors\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } }"
+     ]
+    },
+    {
+     "key": "subjectinput-aliases",
+     "text": "The SubjectInput name branch allows kind, parent and aliases, with aliases an array of strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"aliases\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } }"
+     ]
+    },
+    {
+     "key": "factinput-required",
+     "text": "FactInput requires kind and text.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"kind\", \"text\"],"
+     ]
+    },
+    {
+     "key": "factinput-confidence",
+     "text": "FactInput.confidence is a number with minimum 0 and maximum 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"confidence\": { \"type\": \"number\", \"minimum\": 0, \"maximum\": 1 },"
+     ]
+    },
+    {
+     "key": "factinput-data",
+     "text": "FactInput.data is unconstrained except for a description saying it may be any JSON value.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"data\": { \"description\": \"Any JSON value.\" },"
+     ]
+    },
+    {
+     "key": "postfacts-idempotency-key",
+     "text": "PostFactsRequest.idempotency_key is an optional string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"idempotency_key\": { \"type\": \"string\", \"minLength\": 1 },"
+     ]
+    },
+    {
+     "key": "postfacts-redact",
+     "text": "PostFactsRequest.redact is an array of strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"redact\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },"
+     ]
+    },
+    {
+     "key": "postfactsresponse-subject-required",
+     "text": "A PostFactsResponse subject object requires id, name and created.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"id\", \"name\", \"created\"],"
+     ]
+    },
+    {
+     "key": "postfactsresponse-fact-required",
+     "text": "Each PostFactsResponse facts entry requires id and status and allows no other property.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"id\", \"status\"],"
+     ]
+    },
+    {
+     "key": "postfactsresponse-replaced",
+     "text": "The replaced field carries the id of the fact replaced when status is replaced.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"replaced\": { \"type\": \"string\", \"description\": \"Id of the fact replaced (status=replaced).\" },"
+     ]
+    },
+    {
+     "key": "postfactsresponse-duplicate-of",
+     "text": "The duplicate_of field names the existing fact for a deduped or near_duplicate status.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"duplicate_of\": { \"type\": \"string\", \"description\": \"Id of the existing fact (deduped / near_duplicate).\" }"
+     ]
+    },
+    {
+     "key": "correlaterequest-matchers",
+     "text": "CorrelateRequest.matchers items are limited to the enum values same_ref and shared_tag.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"matchers\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"enum\": [\"same_ref\", \"shared_tag\"] } }"
+     ]
+    },
+    {
+     "key": "correlateresponse-deterministic",
+     "text": "CorrelateResponse promises deterministic matchers only, with proposed refs carrying basis derived and never asserted.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"Deterministic matchers only. Proposed refs carry basis \\\"derived\\\" and are never asserted.\","
+     ]
+    },
+    {
+     "key": "correlateresponse-proposed",
+     "text": "Each CorrelateResponse proposed entry requires fact_id and ref.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"fact_id\", \"ref\"],"
+     ]
+    },
+    {
+     "key": "correlaterequest-subject",
+     "text": "CorrelateRequest.subject is a string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"subject\": { \"type\": \"string\", \"minLength\": 1 },"
+     ]
+    },
+    {
+     "key": "subjectinput-id-branch",
+     "text": "The second SubjectInput branch requires id and allows no other property.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"id\"],"
+     ]
+    },
+    {
+     "key": "searchrequest-status-filter",
+     "text": "SearchRequest.status filters by derived status, where live excludes a stored-live fact that is stale or contested.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"Filters by derived status:"
+     ]
+    },
+    {
+     "key": "searchrequest-status-default",
+     "text": "Without a status filter, SearchRequest leaves out superseded and retracted facts and returns everything else.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"Filters by derived status:"
+     ]
+    },
+    {
+     "key": "searchrequest-since",
+     "text": "SearchRequest.since is a string with date-time format.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"since\": { \"type\": \"string\", \"format\": \"date-time\" },"
+     ]
+    },
+    {
+     "key": "searchrequest-limit",
+     "text": "SearchRequest.limit is an integer with minimum 1 and default 20.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"limit\": { \"type\": \"integer\", \"minimum\": 1, \"default\": 20 },"
+     ]
+    },
+    {
+     "key": "searchrequest-brief",
+     "text": "SearchRequest.brief replaces full FactViews with one short line per hit holding the first 120 characters of text.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"brief\": { \"type\": \"boolean\", \"description\": \"One short line per hit"
+     ]
+    },
+    {
+     "key": "searchresponse-total",
+     "text": "SearchResponse.total is an integer with minimum 0.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"total\": { \"type\": \"integer\", \"minimum\": 0 },"
+     ]
+    },
+    {
+     "key": "searchresponse-refine-next",
+     "text": "SearchResponse.refine and next are optional strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"refine\": { \"type\": \"string\" },"
+     ]
+    },
+    {
+     "key": "compilerequest-required",
+     "text": "CompileRequest requires subject.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"required\": [\"subject\"],"
+     ]
+    },
+    {
+     "key": "compilerequest-budget",
+     "text": "CompileRequest.budget is the highlight threshold in complete mode and a hard cutoff in strict mode.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"budget\": { \"type\": \"integer\", \"minimum\": 0,"
+     ]
+    },
+    {
+     "key": "compilerequest-budget-mode-desc",
+     "text": "CompileRequest.budget_mode complete emits every fact, while strict cuts to the budget and lists the rest in dropped.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"complete emits every fact; strict cuts to the budget and lists the rest in dropped."
+     ]
+    },
+    {
+     "key": "compilerequest-rank-recency",
+     "text": "CompileRequest.rank.recency is a number with minimum 0 and maximum 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"recency\": { \"type\": \"number\", \"minimum\": 0, \"maximum\": 1 }"
+     ]
+    },
+    {
+     "key": "compilerequest-follow-hops",
+     "text": "CompileRequest.follow.hops is an integer limited to the enum values 1 and 2.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"hops\": { \"type\": \"integer\", \"enum\": [1, 2] }"
+     ]
+    },
+    {
+     "key": "verifyrequest-ids",
+     "text": "VerifyRequest.ids is an array of strings with minItems 1 and maxItems 200.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"ids\": { \"type\": \"array\", \"items\": { \"type\": \"string\", \"minLength\": 1 }, \"minItems\": 1, \"maxItems\": 200 }"
+     ]
+    },
+    {
+     "key": "verifyrequest-description",
+     "text": "VerifyRequest describes ids as the fact ids a plan, summary or answer cites and answers repeated ids once.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"The fact ids a plan, summary or answer cites. Repeated ids are answered once.\","
+     ]
+    },
+    {
+     "key": "verifyresponse-revision",
+     "text": "VerifyResponse.revision is the store revision the answer was read at.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"revision\": { \"type\": \"integer\", \"minimum\": 0, \"description\": \"The store revision the answer was read at.\" },"
+     ]
+    },
+    {
+     "key": "verifyresponse-facts-order",
+     "text": "VerifyResponse.facts holds one entry per distinct requested id, in request order.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"One entry per distinct requested id, in request order.\""
+     ]
+    },
+    {
+     "key": "verifiedfact-precedence",
+     "text": "VerifiedFact status precedence is retracted, superseded, then stale, then contested, else live.",
+     "at": [
+      "contract/ops.schema.json",
+      "status precedence: retracted, superseded (both stored), then stale, then contested, else live"
+     ]
+    },
+    {
+     "key": "verifiedfact-stale",
+     "text": "A VerifiedFact is stale when a derived_from ref of kind fact points at a fact that was retracted, superseded by a different content_hash, or itself stale.",
+     "at": [
+      "contract/ops.schema.json",
+      "stale: a live fact with a derived_from ref of kind fact to a fact that was retracted"
+     ]
+    },
+    {
+     "key": "verifiedfact-current",
+     "text": "VerifiedFact.current is true only when status is live.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"current\": { \"type\": \"boolean\", \"description\": \"True only when status is live.\" },"
+     ]
+    },
+    {
+     "key": "verifiedfact-why",
+     "text": "VerifiedFact.why is a non-empty array of StatusReason present only for status stale or contested.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"description\": \"status=stale or contested only.\""
+     ]
+    },
+    {
+     "key": "statusreason-state",
+     "text": "StatusReason.state applies only when rel is derived_from.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"state\": { \"type\": \"string\", \"enum\": [\"superseded\", \"retracted\", \"stale\"], \"description\": \"rel=derived_from only.\" }"
+     ]
+    },
+    {
+     "key": "changesrequest-order",
+     "text": "ChangesRequest returns rows after since, default 0, oldest first, at most limit.",
+     "at": [
+      "contract/ops.schema.json",
+      "Rows written after since (default 0), oldest first, at most limit"
+     ]
+    },
+    {
+     "key": "changesrequest-last-wins",
+     "text": "ChangesRequest.last, when given, wins over since and returns the newest rows.",
+     "at": [
+      "contract/ops.schema.json",
+      "or the newest last rows when last is given (it wins)"
+     ]
+    },
+    {
+     "key": "changesrequest-subject-not-found",
+     "text": "ChangesRequest rejects an unknown subject with subject_not_found.",
+     "at": [
+      "contract/ops.schema.json",
+      "an unknown subject is rejected with subject_not_found"
+     ]
+    },
+    {
+     "key": "changesrequest-last-clamp",
+     "text": "ChangesRequest.last is clamped when larger than 500.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"last\": { \"type\": \"integer\", \"minimum\": 1, \"description\": \"At most 500; a larger value is clamped.\" }"
+     ]
+    },
+    {
+     "key": "changesrequest-limit",
+     "text": "ChangesRequest.limit defaults to 100 and is clamped when larger than 500.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"limit\": { \"type\": \"integer\", \"minimum\": 1, \"default\": 100,"
+     ]
+    },
+    {
+     "key": "changespage-next-as-since",
+     "text": "ChangesPage tells the caller to pass next back as since.",
+     "at": [
+      "contract/ops.schema.json",
+      "Pass next back as since."
+     ]
+    },
+    {
+     "key": "changespage-reset",
+     "text": "ChangesPage.reset true means the cursor is ahead of the head or behind the retained window, so everything must be re-read.",
+     "at": [
+      "contract/ops.schema.json",
+      "reset true means the cursor is ahead of the head or behind the retained window"
+     ]
+    },
+    {
+     "key": "changespage-journal-scope",
+     "text": "The change journal records row writes only, so a fact that became stale through another fact's write has no row of its own.",
+     "at": [
+      "contract/ops.schema.json",
+      "The journal records row writes only"
+     ]
+    },
+    {
+     "key": "changespage-next-subject-filter",
+     "text": "With a subject filter and truncated false, ChangesPage.next is the head, so the cursor skips other subjects' rows.",
+     "at": [
+      "contract/ops.schema.json",
+      "With a subject filter and truncated false this is the head"
+     ]
+    },
+    {
+     "key": "changespage-truncated",
+     "text": "ChangesPage.truncated says more matching rows exist past next, or before the page when last is used.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"truncated\": { \"type\": \"boolean\", \"description\": \"More matching rows exist past next (since), or before the page (last).\" }"
+     ]
+    },
+    {
+     "key": "changerow-description",
+     "text": "A ChangeRow is one row write to facts, subjects, refs or slots, and its fact fields describe the fact as it now is.",
+     "at": [
+      "contract/ops.schema.json",
+      "One row write to facts, subjects, refs or slots."
+     ]
+    },
+    {
+     "key": "changerow-seq",
+     "text": "ChangeRow.seq is the revision the write committed under.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"seq\": { \"type\": \"integer\", \"minimum\": 1, \"description\": \"The revision the write committed under.\" }"
+     ]
+    },
+    {
+     "key": "changerow-fact-status",
+     "text": "ChangeRow.fact_status carries the stored status live, superseded or retracted.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"fact_status\": { \"type\": [\"string\", \"null\"], \"description\": \"Stored status: live, superseded or retracted.\" }"
+     ]
+    },
+    {
+     "key": "changerow-text",
+     "text": "ChangeRow.text is the fact text cut to 160 characters and is untrusted data.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"text\": { \"type\": [\"string\", \"null\"], \"description\": \"Fact text cut to 160 characters. Untrusted data.\" }"
+     ]
+    },
+    {
+     "key": "changerow-actor",
+     "text": "ChangeRow.actor is set only on a fact insert and is an unauthenticated label.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"actor\": { \"type\": [\"string\", \"null\"], \"description\": \"Set only on a fact insert"
+     ]
+    },
+    {
+     "key": "changerow-at",
+     "text": "ChangeRow.at is an ISO 8601 UTC string.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"at\": { \"type\": \"string\", \"description\": \"ISO 8601 UTC.\" }"
+     ]
+    },
+    {
+     "key": "changerow-nullable-fields",
+     "text": "ChangeRow subject_id, subject_name, fact_id and fact_kind are each a string or null.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"subject_id\": { \"type\": [\"string\", \"null\"] },"
+     ]
+    },
+    {
+     "key": "changespage-fields",
+     "text": "ChangesPage.from and to are integers with minimum 0, and next is an integer with minimum 0.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"from\": { \"type\": \"integer\", \"minimum\": 0 },"
+     ]
+    },
+    {
+     "key": "factinput-key",
+     "text": "FactInput.key is a string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"key\": { \"type\": \"string\", \"minLength\": 1 },"
+     ]
+    },
+    {
+     "key": "factinput-local-id",
+     "text": "FactInput.local_id is a string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"local_id\": { \"type\": \"string\", \"minLength\": 1 },"
+     ]
+    },
+    {
+     "key": "factinput-items",
+     "text": "FactInput.items is an array of Item objects from fact.schema.json.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"items\": { \"type\": \"array\", \"items\": { \"$ref\": \"fact.schema.json#/$defs/Item\" } },"
+     ]
+    },
+    {
+     "key": "factinput-refs",
+     "text": "FactInput.refs is an array of ref.schema.json objects.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"refs\": { \"type\": \"array\", \"items\": { \"$ref\": \"ref.schema.json\" } },"
+     ]
+    },
+    {
+     "key": "factinput-attachments",
+     "text": "FactInput.attachments is an array of Attachment objects from fact.schema.json.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"attachments\": { \"type\": \"array\", \"items\": { \"$ref\": \"fact.schema.json#/$defs/Attachment\" } }"
+     ]
+    },
+    {
+     "key": "postfactsrequest-facts",
+     "text": "PostFactsRequest.facts is an array of FactInput objects.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"facts\": { \"type\": \"array\", \"items\": { \"$ref\": \"#/$defs/FactInput\" } }"
+     ]
+    },
+    {
+     "key": "postfactsresponse-subject-parent",
+     "text": "A PostFactsResponse subject may carry an optional parent string.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"parent\": { \"type\": \"string\", \"minLength\": 1 }"
+     ]
+    },
+    {
+     "key": "searchrequest-q",
+     "text": "SearchRequest.q is a string with no further constraint.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"q\": { \"type\": \"string\" },"
+     ]
+    },
+    {
+     "key": "searchrequest-ref-target",
+     "text": "SearchRequest.ref_target is a string with minLength 1.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"ref_target\": { \"type\": \"string\", \"minLength\": 1 },"
+     ]
+    },
+    {
+     "key": "searchresponse-hits",
+     "text": "SearchResponse.hits is an array of FactView objects from dossier.schema.json.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"hits\": { \"type\": \"array\", \"items\": { \"$ref\": \"dossier.schema.json#/$defs/FactView\" } },"
+     ]
+    },
+    {
+     "key": "compilerequest-descendants",
+     "text": "CompileRequest.descendants is a boolean.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"descendants\": { \"type\": \"boolean\" },"
+     ]
+    },
+    {
+     "key": "compilerequest-needs",
+     "text": "CompileRequest.needs is an array of strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"needs\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },"
+     ]
+    },
+    {
+     "key": "compilerequest-follow-rels",
+     "text": "CompileRequest.follow.rels is an array of strings.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"rels\": { \"type\": \"array\", \"items\": { \"type\": \"string\" } },"
+     ]
+    },
+    {
+     "key": "compilerequest-response",
+     "text": "Op_compile_dossier points its response at the dossier.schema.json document itself.",
+     "at": [
+      "contract/ops.schema.json",
+      "\"response\": { \"$ref\": \"dossier.schema.json\" }"
+     ]
+    }
+   ]
+  }
+ ]
+}

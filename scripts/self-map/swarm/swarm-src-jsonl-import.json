@@ -1,0 +1,737 @@
+{
+ "agent": "swarm-src-jsonl-import",
+ "slice": "src-jsonl-import",
+ "subjects": [
+  {
+   "name": "src/Dossier/JsonlImport.cs::ReadBundleFormat",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "format-string-only",
+     "text": "ReadBundleFormat returns the format only when the manifest's format property is a JSON string, and null when it is a number or absent.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "document.RootElement.ValueKind == JsonValueKind.Object"
+     ]
+    },
+    {
+     "key": "json-error-null",
+     "text": "ReadBundleFormat catches a JsonException and returns null, so an unparseable manifest reads as a markdown bundle instead of failing.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "(JsonException)"
+     ]
+    },
+    {
+     "key": "manifest-link",
+     "text": "ReadBundleFormat raises import_unsafe_path, rather than returning null, when manifest.json is a symbolic link.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "manifest.json is a symbolic link; refusing to read it"
+     ]
+    },
+    {
+     "key": "absent-or-large-null",
+     "text": "ReadBundleFormat returns null when the manifest is absent or longer than ImportManifestMaxBytes.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (!info.Exists || info.Length > ImportManifestMaxBytes)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::RejectUnlistedAssets",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "hidden-ignored",
+     "text": "A hidden entry under assets/ that the manifest does not list is skipped as hidden_file_ignored and its subtree is never walked.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "IsHiddenEntry(entry.Name, entry.Attributes) && !listedAssets.Contains(relativeName)"
+     ]
+    },
+    {
+     "key": "assets-only-when-dir",
+     "text": "RejectUnlistedAssets walks the assets directory only when it exists and is not a link.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (assets.Exists && !IsLink(assets))"
+     ]
+    },
+    {
+     "key": "unlisted-asset-fail",
+     "text": "A non-hidden entry under assets/ that the manifest does not list raises import_unlisted_file.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "{relative} is in the bundle directory but not listed"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::OpenRegularFile",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "windows-path",
+     "text": "OpenRegularFile on Windows opens with FileShare.Read and FileOptions.SequentialScan instead of calling Posix.Open.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "FileShare.Read, bufferSize, FileOptions.SequentialScan"
+     ]
+    },
+    {
+     "key": "errno-missing",
+     "text": "OpenRegularFile maps open errno 2 and 20 to import_file_missing.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "2 or 20 => new DossierRequestException"
+     ]
+    },
+    {
+     "key": "errno-unsafe",
+     "text": "OpenRegularFile maps errno 40 on Linux and 62 elsewhere, plus errno 31, to import_unsafe_path.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "errno == eloop || errno == 31"
+     ]
+    },
+    {
+     "key": "not-seekable",
+     "text": "OpenRegularFile disposes the stream and raises import_not_regular_file when the opened handle cannot seek.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (!stream.CanSeek)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::ReadManifestDocument",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "read-cap",
+     "text": "ReadManifestDocument reads at most the smaller of the stream length and ImportManifestMaxBytes before parsing.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "ReadAtMost(stream, Math.Min(stream.Length, ImportManifestMaxBytes))"
+     ]
+    },
+    {
+     "key": "null-too-large",
+     "text": "When ReadAtMost returns null, ReadManifestDocument raises import_unsafe_path for a manifest too large or longer than its file size says.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "manifest.json is too large to read"
+     ]
+    },
+    {
+     "key": "manifest-buffer",
+     "text": "ReadManifestDocument opens the manifest through OpenRegularFile with a 4096-byte buffer.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "OpenRegularFile(path, BundleManifest, 4096)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::ReadJsonlFile",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "no-final-newline",
+     "text": "ReadJsonlFile raises import_file_mismatch when the data file does not end with a newline.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "{name} does not end with a newline"
+     ]
+    },
+    {
+     "key": "line-cap",
+     "text": "ReadJsonlFile raises import_line_too_long before buffering a line that exceeds maxLine bytes.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is longer than the {maxLine}-byte line limit"
+     ]
+    },
+    {
+     "key": "buffer-doubling",
+     "text": "The line buffer doubles on growth but is capped at maxLine rather than at the doubled size.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "Array.Resize(ref buffer, (int)Math.Min(maxLine"
+     ]
+    },
+    {
+     "key": "missing-file",
+     "text": "ReadJsonlFile raises import_file_missing when the manifest lists a data file that is not in the bundle.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "manifest.json lists {name} but the file is not in the bundle"
+     ]
+    },
+    {
+     "key": "link-file",
+     "text": "ReadJsonlFile raises import_unsafe_path for a data file that is a symbolic link or reparse point.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is a symbolic link or reparse point; refusing to read it"
+     ]
+    },
+    {
+     "key": "length-mismatch",
+     "text": "ReadJsonlFile raises import_file_mismatch when the file length on disk differs from the bytes file_stats declares.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is {info.Length} bytes but file_stats says"
+     ]
+    },
+    {
+     "key": "extra-bytes",
+     "text": "ReadJsonlFile raises import_file_mismatch as soon as the stream holds more bytes than file_stats declares.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "holds more than the {stats.Bytes} bytes file_stats says; stopped reading"
+     ]
+    },
+    {
+     "key": "count-mismatch",
+     "text": "ReadJsonlFile raises import_file_mismatch when the final byte or line count differs from file_stats.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "holds {chunkBase} bytes in {lineNumber} lines but file_stats says"
+     ]
+    },
+    {
+     "key": "sha-mismatch",
+     "text": "ReadJsonlFile hashes the whole stream and raises import_file_mismatch when the hex digest differs from file_stats.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "sha256 {actual} does not match file_stats"
+     ]
+    },
+    {
+     "key": "line-offset",
+     "text": "After each newline, lineStart is set to the chunk base plus the position just past that newline.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "lineStart = chunkBase + position;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::ImportJsonl",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "requires-files-and-stats",
+     "text": "ImportJsonl raises import_bad_manifest unless the manifest root has a files array and a file_stats object.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "manifest.json lacks the"
+     ]
+    },
+    {
+     "key": "number-parse",
+     "text": "ImportJsonl parses a data file's number from its name after skipping 8 characters and dropping the last 14.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "name.AsSpan(8, name.Length - 14)"
+     ]
+    },
+    {
+     "key": "order-by-number",
+     "text": "Data files are read ordered by their parsed file number, not by their order in the manifest.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "dataFiles.OrderBy(n => fileNumbers[n])"
+     ]
+    },
+    {
+     "key": "bad-record-type",
+     "text": "A line that is not a JSON object with a string type raises import_bad_record.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is not a JSON object with a string"
+     ]
+    },
+    {
+     "key": "no-records",
+     "text": "ImportJsonl raises bundle_has_no_records when the bundle yielded no readable fact lines.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "the JSONL bundle holds no readable fact lines"
+     ]
+    },
+    {
+     "key": "duplicate-number",
+     "text": "Two manifest names with the same parsed file number raise import_bad_manifest.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "more than once (or two names with the same file number)"
+     ]
+    },
+    {
+     "key": "unknown-name",
+     "text": "A manifest files entry that is neither a data file name nor an asset path raises import_unlisted_file.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "which is not a file name a JSONL bundle can contain"
+     ]
+    },
+    {
+     "key": "unlisted-on-disk",
+     "text": "A dossier jsonl file present in the bundle directory but absent from the manifest raises import_unlisted_file.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "{onDisk} is in the bundle directory"
+     ]
+    },
+    {
+     "key": "stats-for-non-data",
+     "text": "A file_stats entry naming something the manifest does not list as a data file raises import_file_mismatch.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "which manifest.json does not list as a data file"
+     ]
+    },
+    {
+     "key": "stats-shape",
+     "text": "A file_stats entry needs non-negative bytes and lines plus a 64-character lowercase sha256, or import_file_mismatch is raised.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "lacks bytes, lines or a 64-character lowercase sha256"
+     ]
+    },
+    {
+     "key": "stats-missing",
+     "text": "A listed data file with no file_stats entry raises import_file_mismatch.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "but file_stats has no bytes/lines/sha256 for it"
+     ]
+    },
+    {
+     "key": "empty-line",
+     "text": "An empty line in a data file raises import_bad_record.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is an empty line"
+     ]
+    },
+    {
+     "key": "subject-skip",
+     "text": "A subject line without a non-empty id or name is skipped with the reason that it lacks id or name.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "subject line lacks id or name"
+     ]
+    },
+    {
+     "key": "subject-duplicate",
+     "text": "A subject id that appears on two subject lines raises import_duplicate_id.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "subject id {id} appears twice"
+     ]
+    },
+    {
+     "key": "subject-kind-default",
+     "text": "A subject line without a kind gets the kind subject.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "Str(\"kind\") ?? \"subject\""
+     ]
+    },
+    {
+     "key": "fact-duplicate",
+     "text": "A fact id claimed by two fact lines raises import_duplicate_id naming both locations.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is claimed by two fact lines"
+     ]
+    },
+    {
+     "key": "fact-order",
+     "text": "Each accepted fact line gets an Order value from a counter incremented as lines are read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "record.Order = order++;"
+     ]
+    },
+    {
+     "key": "asset-no-sha",
+     "text": "An asset line without a sha256 is skipped rather than treated as an error.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "asset line lacks sha256"
+     ]
+    },
+    {
+     "key": "asset-conflict",
+     "text": "An asset record repeating a sha256 with a different path, bytes, mime, data or missing flag raises import_bad_record.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "repeats asset {sha} with a different path"
+     ]
+    },
+    {
+     "key": "unknown-type-skip",
+     "text": "A record whose type is not subject, fact or asset is skipped with an unknown record type skip.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "unknown record type"
+     ]
+    },
+    {
+     "key": "implicit-subject",
+     "text": "A subject id referenced by a fact but never declared gets created with kind subject and no parent.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "new ImportSubject(record.SubjectId, record.SubjectName, \"subject\", null"
+     ]
+    },
+    {
+     "key": "blob-once",
+     "text": "Blob restore runs at most once per sha256 because outcomes are memoized in a done dictionary.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (done.TryGetValue(attachment.Sha256, out var known))"
+     ]
+    },
+    {
+     "key": "maxline-source",
+     "text": "The line limit comes from the MaxLineBytes option when it is positive, otherwise from DefaultImportMaxLineBytes.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "options.MaxLineBytes > 0 ? options.MaxLineBytes : DefaultImportMaxLineBytes"
+     ]
+    },
+    {
+     "key": "manifest-guard",
+     "text": "ImportJsonl raises import_unsafe_path when the manifest is a symbolic link or larger than ImportManifestMaxBytes.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "manifest.json is a symbolic link or too large to read"
+     ]
+    },
+    {
+     "key": "identical-asset-ok",
+     "text": "A repeated asset record is accepted when its path, bytes, mime, data and missing flag all match the first record for that sha256.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "else if (!firstAsset.SameRecordAs(candidate))"
+     ]
+    },
+    {
+     "key": "subject-pin",
+     "text": "A subject line's pin object is stored as canonical JSON produced by CanonicalJson.Write.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "CanonicalJson.Write(p)"
+     ]
+    },
+    {
+     "key": "subject-aliases",
+     "text": "Aliases are collected only from array elements that are strings; other element kinds are ignored.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "a.EnumerateArray().Where(x => x.ValueKind == JsonValueKind.String)"
+     ]
+    },
+    {
+     "key": "manifest-self-entry",
+     "text": "A files entry naming manifest.json itself is skipped instead of treated as a data file or asset.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (name == BundleManifest)"
+     ]
+    },
+    {
+     "key": "hidden-skips-seeded",
+     "text": "Hidden-file skips collected from assets/ are added to the import result's skip list before any data file is read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "result.Skipped.AddRange(hiddenSkips);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::RestoreJsonlBlob",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "bad-sha-reason",
+     "text": "RestoreJsonlBlob refuses a sha256 that is not 64 lowercase hex characters and reports that as the skip reason.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "sha256 is not 64 lowercase hex characters"
+     ]
+    },
+    {
+     "key": "absent-bytes",
+     "text": "An attachment whose bytes have no asset record is not restored, and the attachment row is kept without its blob.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "bytes absent from the bundle"
+     ]
+    },
+    {
+     "key": "missing-flag",
+     "text": "An asset record flagged missing yields no blob and the skip reason says the blob was missing at publish time.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "the blob was missing when the bundle was published"
+     ]
+    },
+    {
+     "key": "target-name",
+     "text": "A restored blob is written to BlobRoot joined with the sha256, not to the recorded asset path.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "var target = Path.Combine(BlobRoot, sha);"
+     ]
+    },
+    {
+     "key": "embedded-first",
+     "text": "An asset record carrying embedded data is restored from the jsonl line before any file path is considered.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "return RestoreEmbeddedBlob(root, asset, target);"
+     ]
+    },
+    {
+     "key": "neither-source",
+     "text": "An asset record with neither embedded data nor a path is skipped with a reason naming both.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "asset record carries neither embedded data nor a path"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::RestoreFileBlob",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "exact-path",
+     "text": "RestoreFileBlob accepts only a path equal to assets/ plus the asset's own sha256, optionally followed by one extension.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "var expectedStem = \"assets/\" + asset.Sha;"
+     ]
+    },
+    {
+     "key": "unlisted-path",
+     "text": "A path that is not among the manifest's listed files is skipped rather than read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "is not listed in manifest.json files; not read"
+     ]
+    },
+    {
+     "key": "outside-root",
+     "text": "A path whose full form escapes the bundle root is skipped rather than read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "resolves outside the bundle; not read"
+     ]
+    },
+    {
+     "key": "link-asset",
+     "text": "An asset file or its directory that is a symbolic link or reparse point is skipped, not read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "asset file {path} is a symbolic link or reparse point; not read"
+     ]
+    },
+    {
+     "key": "move-if-absent",
+     "text": "A freshly copied blob is moved into place only when no blob already exists at the target.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (!File.Exists(target))"
+     ]
+    },
+    {
+     "key": "extra-data",
+     "text": "When the asset file holds more than the copy limit, RestoreFileBlob skips it with a reason naming that limit.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "holds more than the {limit} bytes it should; not read further"
+     ]
+    },
+    {
+     "key": "not-regular",
+     "text": "An import_not_regular_file failure while opening an asset file becomes a skip reason rather than an import error.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "when (exception.Code == \"import_not_regular_file\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::RestoreEmbeddedBlob",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "reread-line",
+     "text": "RestoreEmbeddedBlob re-opens the data file and seeks to the byte offset pass 1 recorded for the asset line.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "stream.Seek(asset.Offset, SeekOrigin.Begin);"
+     ]
+    },
+    {
+     "key": "base64-only",
+     "text": "An embedded asset whose encoding is not base64 is skipped with the observed encoding in the reason.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (encoding != \"base64\")"
+     ]
+    },
+    {
+     "key": "size-limit",
+     "text": "An embedded asset whose declared size is negative or above MaxEmbedAssetBytes is not decoded.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "declared > MaxEmbedAssetBytes"
+     ]
+    },
+    {
+     "key": "escapes-rejected",
+     "text": "Embedded data that contains JSON escapes is refused, as is a line with no data property.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "if (dataStart < 0 || escaped)"
+     ]
+    },
+    {
+     "key": "length-check",
+     "text": "The base64 payload length must match the padded encoding of the declared byte count, else the data is not decoded.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "dataLength != expected"
+     ]
+    },
+    {
+     "key": "content-hash",
+     "text": "After decoding, the sha256 of the content must equal the recorded sha256 or the blob is not restored.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "SHA256.HashData(content)).Equals(asset.Sha"
+     ]
+    },
+    {
+     "key": "temp-then-move",
+     "text": "An embedded blob goes to a temporary file and is moved into place so a crash cannot leave a truncated content-addressed blob.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "a crash never leaves a truncated content-addressed blob"
+     ]
+    },
+    {
+     "key": "reread-failure",
+     "text": "A failure while re-reading the asset line is reported as a skip reason that includes the file and line.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "could not be re-read"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ReadAtMost",
+   "kind": "method",
+   "parent": "DossierStore",
+   "facts": [
+    {
+     "key": "buffer-allocation",
+     "text": "ReadAtMost sizes its buffer as min of the limit and Array.MaxLength so an extreme limit cannot overflow the array size.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "new byte[(int)Math.Min(limit, Array.MaxLength)]"
+     ]
+    },
+    {
+     "key": "shrink-on-eof",
+     "text": "When the stream ends before the buffer fills, ReadAtMost resizes the array down to the bytes actually read.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "Array.Resize(ref buffer, filled);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.UnixOpenFlags",
+   "kind": "method",
+   "parent": "DossierStore",
+   "facts": [
+    {
+     "key": "linux-arm-group",
+     "text": "UnixOpenFlags puts linux Arm64, Arm, Armv6 and Ppc64le in one group with a different O_NOFOLLOW bit than the x86-style group.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "Architecture.Arm64 or Architecture.Arm or Architecture.Armv6 or Architecture.Ppc64le"
+     ]
+    },
+    {
+     "key": "unsupported-platform",
+     "text": "An unrecognised os and architecture pair throws import_unsupported_platform instead of guessing flag values.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "import_unsupported_platform"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/JsonlImport.cs::CopyAtMost",
+   "kind": "method",
+   "parent": "src/Dossier/JsonlImport.cs",
+   "facts": [
+    {
+     "key": "one-byte-probe",
+     "text": "CopyAtMost reports whether more input remained by reading one further byte after the copy limit is reached.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "return input.ReadByte() < 0;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.AssetCopyLimit",
+   "kind": "method",
+   "parent": "DossierStore",
+   "facts": [
+    {
+     "key": "negative-means-unknown",
+     "text": "AssetCopyLimit treats a negative declared size as unknown and still never copies past the opened handle length.",
+     "at": [
+      "src/Dossier/JsonlImport.cs",
+      "Math.Min(declared >= 0 ? declared : long.MaxValue, handleLength)"
+     ]
+    }
+   ]
+  }
+ ]
+}

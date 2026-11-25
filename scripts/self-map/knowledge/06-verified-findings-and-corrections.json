@@ -1,0 +1,681 @@
+{
+ "subjects": [
+  {
+   "name": "Dossier/Findings",
+   "facts": [
+    {
+     "key": "notices-version-behind",
+     "text": "THIRD-PARTY-NOTICES.md lists Microsoft.Data.Sqlite at 10.0.12 while Dossier.csproj references 10.0.14; the notices say their versions are those resolved when the archives were built.",
+     "at": [
+      [
+       "THIRD-PARTY-NOTICES.md",
+       "Microsoft.Data.Sqlite, Microsoft.Data.Sqlite.Core (10.0.12)"
+      ],
+      [
+       "src/Dossier/Dossier.csproj",
+       "Include=\"Microsoft.Data.Sqlite\" Version=\"10.0.14\""
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "THIRD-PARTY-NOTICES.md"
+      },
+      {
+       "rel": "about",
+       "subject": "src/Dossier/Dossier.csproj"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/Dependencies"
+      }
+     ],
+     "tags": [
+      "docs-vs-code",
+      "reported-by:swarm-repo-misc"
+     ],
+     "data": {
+      "sqlite_in_notices": "10.0.12",
+      "sqlite_in_csproj": "10.0.14"
+     }
+    },
+    {
+     "key": "readme-token-sample",
+     "text": "The README sample compile output shows used_tokens 709 while the evaluation table reports the same compiled dossier at 708 tokens.",
+     "at": [
+      [
+       "README.md",
+       "used_tokens: 709"
+      ],
+      [
+       "docs/evaluation.md",
+       "| B: compiled dossier |"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "README.md"
+      },
+      {
+       "rel": "about",
+       "subject": "docs/evaluation.md"
+      },
+      {
+       "rel": "about",
+       "fact": [
+        "Dossier/Evaluation",
+        "token.arm-b"
+       ]
+      }
+     ],
+     "tags": [
+      "docs-vs-docs",
+      "reported-by:swarm-docs-guides"
+     ]
+    },
+    {
+     "key": "check-gaps-always-zero",
+     "text": "check always reports gaps as 0: the summary assigns the constant 0 to Gaps, while Conflicts is computed from the facts.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Gaps = 0,"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.Check"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/check"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Conflicts and gaps"
+      }
+     ],
+     "tags": [
+      "contract-vs-code",
+      "reported-by:swarm-src-search"
+     ]
+    },
+    {
+     "key": "changes-limit-zero-differs",
+     "text": "Ops.Changes, which MCP and the CLI call, rejects a limit below 1, while /api/changes?limit=0 answers 200 because the web path hands the value to the store, which clamps it.",
+     "at": [
+      [
+       "src/Dossier/Mcp.cs",
+       "\"limit must be at least 1\""
+      ],
+      [
+       "tests/Dossier.Tests/ChangeLogTests.cs",
+       "/api/changes?since=0&limit=0"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/changes"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/changes"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      }
+     ],
+     "tags": [
+      "surface-vs-surface",
+      "reported-by:swarm-tests-journal"
+     ]
+    },
+    {
+     "key": "agents-md-drill-down-path",
+     "text": "The generated AGENTS.md drill-down line names a fact file subjects/<slug>/facts/<key>.md, while fact files are written as <words>-<key>.md, as the same text says a few lines later.",
+     "at": [
+      [
+       "src/Dossier/Publish.cs",
+       "subjects/<slug>/index.md -> subjects/<slug>/facts/<key>.md"
+      ],
+      [
+       "src/Dossier/Publish.cs",
+       "subjects/<slug>/facts/<words>-<key>.md`, where `<words>`"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/publish"
+      },
+      {
+       "rel": "about",
+       "subject": "src/Dossier/Publish.cs"
+      }
+     ],
+     "tags": [
+      "docs-vs-code",
+      "reported-by:swarm-src-publish-3"
+     ]
+    },
+    {
+     "key": "free-port-comment-off-by-one",
+     "text": "The Wikipedia demo comment says FreePortAsync scans up to 25 ports ahead, and the loop stops before start plus 25, so it tries the start port and the 24 after it.",
+     "at": [
+      [
+       "tools/Dossier.WikipediaDemo/ServerControl.cs",
+       "up to 25 ahead"
+      ],
+      [
+       "tools/Dossier.WikipediaDemo/ServerControl.cs",
+       "for (var port = start; port < start + 25; port++)"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "tools/Dossier.WikipediaDemo/ServerControl.cs"
+      }
+     ],
+     "tags": [
+      "comment-vs-code",
+      "reported-by:swarm-tools-demo"
+     ]
+    },
+    {
+     "key": "test-comment-eleven",
+     "text": "A DerivedStatusTests comment says the budget fits only some of the eleven live-or-stale lines, while the setup above it posts six stale conclusions and six live observations.",
+     "at": [
+      [
+       "tests/Dossier.Tests/DerivedStatusTests.cs",
+       "fits only some of the eleven live-or-stale lines"
+      ],
+      [
+       "tests/Dossier.Tests/DerivedStatusTests.cs",
+       "for (var index = 0; index < 6; index++)"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "tests/Dossier.Tests/DerivedStatusTests.cs"
+      }
+     ],
+     "tags": [
+      "comment-vs-code",
+      "reported-by:swarm-tests-status"
+     ]
+    },
+    {
+     "key": "eval-git-paths-unread",
+     "text": "sources.json says git_paths is generated from the seed files, and no script reads git_paths: eval.sh derives the same paths again from scripts/seed/*.json.",
+     "at": [
+      [
+       "scripts/eval/sources.json",
+       "git_paths is generated from"
+      ],
+      [
+       "scripts/eval.sh",
+       "paths=\"$(jq -r '.facts[]?.refs[]?"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "scripts/eval.sh"
+      },
+      {
+       "rel": "about",
+       "subject": "scripts/eval/sources.json"
+      }
+     ],
+     "tags": [
+      "docs-vs-code",
+      "observed-by:grep",
+      "reported-by:swarm-scripts-shell-a"
+     ],
+     "confidence": 0.9
+    },
+    {
+     "key": "scale-test-step-numbering",
+     "text": "The step comments in scale-test.sh run 1 to 4 and then 6 to 9; there is no step 5.",
+     "at": [
+      [
+       "scripts/scale-test.sh",
+       "# 4. Ingest."
+      ],
+      [
+       "scripts/scale-test.sh",
+       "# 6. Compile latency"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "scripts/scale-test.sh"
+      }
+     ],
+     "tags": [
+      "comment-vs-code",
+      "reported-by:swarm-scripts-shell-a"
+     ]
+    },
+    {
+     "key": "text-limit-not-enforced",
+     "text": "fact.schema.json says to warn above 280 characters of text, and the source has no length check at all: a 404-character fact posts as new with no warning.",
+     "at": [
+      "contract/fact.schema.json",
+      "warn above 280"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Fact"
+      },
+      {
+       "rel": "about",
+       "subject": "DossierStore.PostFacts"
+      },
+      {
+       "rel": "about",
+       "subject": "contract/fact.schema.json"
+      }
+     ],
+     "tags": [
+      "contract-vs-code",
+      "observed-by:grep",
+      "observed-by:probe",
+      "reported-by:swarm-contract-b"
+     ],
+     "confidence": 0.9
+    },
+    {
+     "key": "show-inbound-second-read",
+     "text": "show reads the fact, its refs, attachments and derived status inside one snapshot, then finds inbound facts with a separate Search call after that snapshot has closed, so the inbound list can reflect a later write.",
+     "at": [
+      [
+       "src/Dossier/Show.cs",
+       "using (new ReadSnapshot(connection))"
+      ],
+      [
+       "src/Dossier/Show.cs",
+       "var inbound = Search(new SearchRequest { RefTarget = id, Direction = \"in\", Limit = MaxLimit }).Hits;"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "refutes",
+       "fact": [
+        "Dossier/Concepts/Derived status",
+        "one-snapshot"
+       ],
+       "basis": "observed"
+      },
+      {
+       "rel": "about",
+       "subject": "DossierStore.Show"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/show"
+      }
+     ],
+     "tags": [
+      "docs-vs-code",
+      "reported-by:swarm-src-verify"
+     ],
+     "confidence": 0.9
+    },
+    {
+     "key": "app-js-json-before-ok",
+     "text": "The page api helper parses the response body as JSON before it checks r.ok, so an error response that is not JSON surfaces as a parse error, not as the status text.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const body = await r.json();"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "src/Dossier/www/app.js"
+      }
+     ],
+     "tags": [
+      "code-smell",
+      "reported-by:swarm-www-page"
+     ],
+     "confidence": 0.85
+    },
+    {
+     "key": "search-any-sqlite-error-is-invalid-query",
+     "text": "When a q is present, search reports any SqliteException raised while it reads rows as invalid_query, whether or not FTS5 syntax caused it.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "catch (SqliteException exception) when (scoreExpression is not null)"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.Search"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/Errors"
+      }
+     ],
+     "tags": [
+      "code-smell",
+      "reported-by:swarm-src-search"
+     ],
+     "confidence": 0.85
+    },
+    {
+     "key": "host-guard-comment-ordinal",
+     "text": "A WebTests comment says the host guard compares names ordinally, while the guard matches localhost with OrdinalIgnoreCase and the same test accepts LOCALHOST:8787.",
+     "at": [
+      [
+       "tests/Dossier.Tests/WebTests.cs",
+       "the guard compares names ordinally"
+      ],
+      [
+       "src/Dossier/Web.cs",
+       "name.Equals(\"localhost\", StringComparison.OrdinalIgnoreCase)"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Web/server"
+      },
+      {
+       "rel": "about",
+       "subject": "tests/Dossier.Tests/WebTests.cs"
+      }
+     ],
+     "tags": [
+      "comment-vs-code",
+      "reported-by:swarm-tests-web"
+     ]
+    },
+    {
+     "key": "publish-demo-quiet",
+     "text": "publish-demo.sh says seed.sh is quiet on success, while seed.sh runs under set -x and so traces every command to stderr.",
+     "at": [
+      [
+       "scripts/publish-demo.sh",
+       "seed.sh is quiet on success"
+      ],
+      [
+       "scripts/seed.sh",
+       "set -x"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "scripts/publish-demo.sh"
+      },
+      {
+       "rel": "about",
+       "subject": "scripts/seed.sh"
+      }
+     ],
+     "tags": [
+      "comment-vs-code",
+      "reported-by:swarm-scripts-shell-b"
+     ],
+     "confidence": 0.8
+    },
+    {
+     "key": "swarm-reports",
+     "text": "The findings tagged reported-by were first raised by a delegated agent in its final report and were then confirmed by the author at the cited lines; reports the author could not confirm are not recorded.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Gaps = 0,"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/Self-map"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/dump",
+   "facts": [
+    {
+     "key": "entity-subjects-ignored",
+     "text": "dump still accepts the --entity-subjects switch and ignores it; entity_subjects was removed from the contract and a client that still sends it is tolerated.",
+     "at": [
+      [
+       "src/Dossier/Program.cs",
+       "[\"--entity-subjects\"]"
+      ],
+      [
+       "tests/Dossier.Tests/AotCompatTests.cs",
+       "entity_subjects was removed from the contract"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "tests/Dossier.Tests/CliArgTests.cs"
+      }
+     ]
+    },
+    {
+     "key": "file-ref-as-given",
+     "text": "dump stores the source path exactly as it was given as the target of each chunk's file ref, with no revision, so an absolute or temporary path is recorded as-is.",
+     "at": [
+      "src/Dossier/Dump.cs",
+      "Target = source,"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.Dump"
+      },
+      {
+       "rel": "about",
+       "subject": "Dossier/Concepts/Ref"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/correlate",
+   "facts": [
+    {
+     "key": "empty-matchers-default",
+     "text": "An absent or empty matchers list runs both matchers, so a caller cannot ask correlate for none.",
+     "at": [
+      "src/Dossier/Correlate.cs",
+      "var matchers = request.Matchers is { Count: > 0 }"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.Correlate"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/Concepts/Correction",
+   "facts": [
+    {
+     "key": "already-revoked-target",
+     "text": "A supersedes ref whose target is already superseded or retracted is accepted and changes nothing.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "A target that is already superseded or retracted is left alone"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.PostFacts"
+      }
+     ]
+    },
+    {
+     "key": "self-target-skipped",
+     "text": "A supersedes ref that names the fact carrying it is skipped, so a fact cannot supersede itself.",
+     "at": [
+      "src/Dossier/PostFacts.cs",
+      "if (string.Equals(reference.Target, factId, StringComparison.Ordinal))"
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.PostFacts"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/post",
+   "facts": [
+    {
+     "key": "dry-run-created",
+     "text": "A dry run that would create a subject reports created true, although the subject is rolled back with everything else; a test pins this.",
+     "at": [
+      [
+       "src/Dossier/PostFacts.cs",
+       "transaction.Rollback();"
+      ],
+      [
+       "tests/Dossier.Tests/PostFactsTests.cs",
+       "await Assert.That(result.Response.Subject.Created).IsTrue();"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "DossierStore.PostFacts"
+      },
+      {
+       "rel": "about",
+       "subject": "tests/Dossier.Tests/PostFactsTests.cs"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/MCP",
+   "facts": [
+    {
+     "key": "dispatch-default-arm",
+     "text": "The tool dispatch switch ends in a default arm that runs compile_dossier; an unknown tool name is rejected before the switch with -32602.",
+     "at": [
+      [
+       "src/Dossier/Mcp.cs",
+       "_ => Ops.Compile(store, Ops.Parse<CompileRequest>(arguments)),"
+      ],
+      [
+       "src/Dossier/Mcp.cs",
+       "if (ToolDefs.All(tool => tool.Name != name))"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/MCP/compile_dossier"
+      },
+      {
+       "rel": "about",
+       "subject": "src/Dossier/Mcp.cs"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Dossier/CLI/publish",
+   "facts": [
+    {
+     "key": "manifest-format-ids",
+     "text": "A markdown bundle manifest declares format as the number 1, and a JSONL bundle manifest declares it as the string dossier-jsonl/1.",
+     "at": [
+      [
+       "examples/memos-bundle/manifest.json",
+       "\"format\": 1,"
+      ],
+      [
+       "src/Dossier/JsonlExport.cs",
+       "public const string JsonlFormatId = \"dossier-jsonl/1\";"
+      ]
+     ],
+     "refs": [
+      {
+       "rel": "about",
+       "subject": "Dossier/CLI/import"
+      },
+      {
+       "rel": "about",
+       "subject": "contract/jsonl-manifest.schema.json"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "ago-seconds.corrected",
+     "text": "ago returns just now below 5 seconds, and the rounded seconds followed by s ago from 5 up to 59 seconds.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (secs < 60) return secs + 's ago';"
+     ],
+     "refs": [
+      {
+       "rel": "supersedes",
+       "fact": [
+        "src/Dossier/www/feed.js",
+        "ago-seconds"
+       ],
+       "basis": "observed"
+      }
+     ],
+     "tags": [
+      "audit-correction"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Program.cs",
+   "facts": [
+    {
+     "key": "unknown-verb-usage.corrected",
+     "text": "An unrecognised verb falls to the default arm of the verb switch, which prints the usage line on stderr and returns 1.",
+     "at": [
+      "src/Dossier/Program.cs",
+      "default:"
+     ],
+     "refs": [
+      {
+       "rel": "supersedes",
+       "fact": [
+        "src/Dossier/Program.cs",
+        "unknown-verb-usage"
+       ],
+       "basis": "observed"
+      }
+     ],
+     "tags": [
+      "audit-correction"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,809 @@
+{
+ "agent": "swarm-www-page",
+ "slice": "www-page",
+ "subjects": [
+  {
+   "name": "src/Dossier/www/feed.js",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "feed.js"
+   ],
+   "facts": [
+    {
+     "key": "max-rows",
+     "text": "The live feed caps its strip at MAX_ROWS of 80 rows, and trim pops the oldest rows past that cap.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var MAX_ROWS = 80;"
+     ]
+    },
+    {
+     "key": "snippet-max",
+     "text": "SNIPPET_MAX is 90, and snippet replaces a longer value with a cut copy ending in a single ellipsis character.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var SNIPPET_MAX = 90;"
+     ]
+    },
+    {
+     "key": "tick-ms",
+     "text": "TICK_MS is 10000, the interval at which mount re-renders the relative times of the feed rows.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var TICK_MS = 10000;"
+     ]
+    },
+    {
+     "key": "text-coerce",
+     "text": "text returns an empty string for undefined or null and String of the value for everything else.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return value === undefined || value === null ? '' : String(value);"
+     ]
+    },
+    {
+     "key": "snippet-collapse",
+     "text": "snippet collapses every run of whitespace to one space and trims both ends before it measures the length.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var s = text(value).replace(/\\s+/g, ' ').trim();"
+     ]
+    },
+    {
+     "key": "snippet-empty",
+     "text": "snippet returns the literal (empty) when the collapsed text is falsy.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return s || '(empty)';"
+     ]
+    },
+    {
+     "key": "place-fallback",
+     "text": "place falls back to the subject_id and then to the constant the graph when a row has no subject_name.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return id || 'the graph';"
+     ]
+    },
+    {
+     "key": "line-subject-insert",
+     "text": "lineFor renders a subjects insert as new subject followed by the name, the id or (unnamed subject).",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (row.op === 'insert') return 'new subject ' + name;"
+     ]
+    },
+    {
+     "key": "line-fact-insert-actor",
+     "text": "For a facts insert lineFor prefixes the snippet with the actor and the word added only when row.actor is non-empty.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return who ? who + ' added ' + what + ' to ' + where : 'new fact ' + what + ' in ' + where;"
+     ]
+    },
+    {
+     "key": "line-fact-delete",
+     "text": "A facts delete renders as the snippet, the word deleted and in, then the place.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (row.op === 'delete') return what + ' deleted in ' + where;"
+     ]
+    },
+    {
+     "key": "line-other-table",
+     "text": "For any other table lineFor falls back to the table name, the op name and in the place.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return (text(row.tbl) || 'change') + ' ' + (text(row.op) || 'changed') + ' in ' + where;"
+     ]
+    },
+    {
+     "key": "ago-just-now",
+     "text": "ago returns just now when the elapsed time is under 5 seconds.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (secs < 5) return 'just now';"
+     ]
+    },
+    {
+     "key": "ago-seconds",
+     "text": "ago rounds the elapsed time to whole seconds and appends s ago for anything under 60 seconds.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (secs < 60) return secs + 's ago';"
+     ]
+    },
+    {
+     "key": "ago-unparseable",
+     "text": "ago returns an empty string when Date.parse fails on the timestamp, which it tests with isFinite.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (!isFinite(then)) return '';"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::mount",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "reduced-motion",
+     "text": "mount sets reduced from matchMedia on the prefers-reduced-motion: reduce query, which skips the new-row animation.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var reduced = !!(win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);"
+     ]
+    },
+    {
+     "key": "aria-live-off",
+     "text": "The feed list gets role log and an explicit aria-live of off so one batch of rows does not interrupt a screen reader.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "list.setAttribute('aria-live', 'off');"
+     ]
+    },
+    {
+     "key": "interval-guard",
+     "text": "mount starts setInterval(tick, TICK_MS) only when window.setInterval is a function.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (typeof win.setInterval === 'function') timer = win.setInterval(tick, TICK_MS);"
+     ]
+    },
+    {
+     "key": "returns-api",
+     "text": "mount returns an object that exposes ingest, reset and destroy.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return { ingest: ingest, reset: reset, destroy: destroy };"
+     ]
+    },
+    {
+     "key": "toggle-collapsed",
+     "text": "The Activity toggle button flips collapsed and mirrors the new state in aria-expanded.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "toggle.setAttribute('aria-expanded', collapsed ? 'false' : 'true');"
+     ]
+    },
+    {
+     "key": "host-cleared",
+     "text": "mount starts by emptying the host element with host.textContent.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "host.textContent = '';"
+     ]
+    },
+    {
+     "key": "now-option",
+     "text": "mount takes an optional now function from options, defaulting to Date.now.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var now = typeof options.now === 'function' ? options.now : function () { return Date.now(); };"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::ingest",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "seq-watermark",
+     "text": "ingest skips any change whose seq is not finite or is not greater than lastSeen, treating it as a redelivery.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (!isFinite(seq) || seq <= lastSeen) continue;"
+     ]
+    },
+    {
+     "key": "sorts-by-seq",
+     "text": "ingest sorts the accepted changes by seq ascending before it builds any line.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "accepted.sort(function (a, b) { return a.seq - b.seq; });"
+     ]
+    },
+    {
+     "key": "advances-lastseen",
+     "text": "ingest advances lastSeen to the seq of the final change in the sorted batch.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "lastSeen = accepted[accepted.length - 1].seq;"
+     ]
+    },
+    {
+     "key": "skips-refs-slots",
+     "text": "ingest skips refs and slots rows when it builds one line per change.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (item.tbl === 'refs' || item.tbl === 'slots') continue;"
+     ]
+    },
+    {
+     "key": "folds-superseded",
+     "text": "ingest drops a facts update whose fact_status is superseded when the same batch inserted that fact.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (item.tbl === 'facts' && item.op === 'update' && text(item.fact_status) === 'superseded' && inserts[text(item.fact_id)]) continue;"
+     ]
+    },
+    {
+     "key": "loose-ref-line",
+     "text": "Refs that name no fact on screen collapse into one line reading plus the count and refs in the place.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "base: '+' + loose + ' refs in ' + (looseWhere || 'the graph'), refs: 0, text: '',"
+     ]
+    },
+    {
+     "key": "ascending-attach",
+     "text": "ingest attaches the new lines in ascending seq order, so the newest row ends up first.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "for (k = 0; k < lines.length; k++) attach(lines[k], at);"
+     ]
+    },
+    {
+     "key": "empty-batch-return",
+     "text": "ingest returns without touching the DOM when no change survives the watermark check.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (!accepted.length) return;"
+     ]
+    },
+    {
+     "key": "refs-increment",
+     "text": "A ref that names a fact line already on screen increments that line's refs count instead of adding a row.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "target.refs++;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::attach",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "fresh-class",
+     "text": "attach gives a row the f-row class and adds f-new only when the entry is fresh and motion is allowed.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var li = el('li', null, null, entry.fresh && !reduced ? 'f-row f-new' : 'f-row');"
+     ]
+    },
+    {
+     "key": "prepends-row",
+     "text": "attach prepends the new li ahead of list.firstChild.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "list.insertBefore(li, list.firstChild);"
+     ]
+    },
+    {
+     "key": "indexes-fact",
+     "text": "attach records the entry in factIndex under its factId when the entry has one.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (entry.factId) factIndex[entry.factId] = entry;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::trim",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "drops-index-entry",
+     "text": "trim deletes the factIndex entry of a dropped row only when the index still points at that same entry.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (old.factId && factIndex[old.factId] === old) delete factIndex[old.factId];"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::renderAll",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "rebuild-drops-fresh",
+     "text": "renderAll rebuilds every row with the f-row class and never re-adds f-new.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "var li = el('li', null, list, 'f-row'); // the f-new class belongs to the batch that added it"
+     ]
+    },
+    {
+     "key": "stops-after-destroy",
+     "text": "renderAll returns immediately once destroyed is set.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (destroyed) return;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::tick",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "times-only",
+     "text": "tick rewrites only the time span text of each row and rebuilds nothing else.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (entry.time) entry.time.textContent = ago(at, entry.at);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::reset",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "clears-watermark",
+     "text": "reset empties rows, clears factIndex and sets lastSeen back to -1.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "lastSeen = -1;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::destroy",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "clears-interval",
+     "text": "destroy sets destroyed and clears the stored timer through win.clearInterval.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (timer && typeof win.clearInterval === 'function') win.clearInterval(timer);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "app.js"
+   ],
+   "facts": [
+    {
+     "key": "el-text-content",
+     "text": "el writes the text prop through textContent and passes every other prop to setAttribute.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (k === \"text\") node.textContent = props[k]; else node.setAttribute(k, props[k]);"
+     ]
+    },
+    {
+     "key": "api-throws",
+     "text": "api parses the response body as JSON first and throws the body error message, or r.statusText, when r.ok is false.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (!r.ok) throw new Error(body.error ? body.error.message : r.statusText);"
+     ]
+    },
+    {
+     "key": "clear-main",
+     "text": "clear replaces the children of main through main.replaceChildren.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "function clear(...kids) { main.replaceChildren(...kids); }"
+     ]
+    },
+    {
+     "key": "factrow-link",
+     "text": "factRow links the fact id to the #/fact/ route with the id passed through encodeURIComponent.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "link(f.id, \"#/fact/\" + encodeURIComponent(f.id), \"id\"),"
+     ]
+    },
+    {
+     "key": "home-endpoint",
+     "text": "home loads its subject list from the /api/subjects endpoint.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const subjects = await api(\"/api/subjects\");"
+     ]
+    },
+    {
+     "key": "search-endpoint",
+     "text": "search requests /api/search with the q parameter passed through encodeURIComponent.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const res = await api(\"/api/search?q=\" + encodeURIComponent(q));"
+     ]
+    },
+    {
+     "key": "subject-endpoint",
+     "text": "subject requests /api/compile with the subject id passed through encodeURIComponent.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const d = await api(\"/api/compile?subject=\" + encodeURIComponent(id));"
+     ]
+    },
+    {
+     "key": "enter-search",
+     "text": "A keydown of Enter in the search box with a non-empty trimmed value sets the hash to #/search/ plus the encoded query.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (e.key === \"Enter\" && box.value.trim()) location.hash = \"#/search/\" + encodeURIComponent(box.value.trim());"
+     ]
+    },
+    {
+     "key": "subject-gaps-note",
+     "text": "subject appends a note paragraph with the gaps JSON only when d.gaps is non-empty.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (d.gaps && d.gaps.length) nodes.push(el(\"p\", { class: \"note\", text: \"gaps: \" + JSON.stringify(d.gaps) }));"
+     ]
+    },
+    {
+     "key": "subject-raw-json",
+     "text": "subject ends the page with a Raw heading and the whole response through JSON.stringify with an indent of 2 spaces.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "nodes.push(el(\"h2\", { text: \"Raw\" }), el(\"pre\", { text: JSON.stringify(d, null, 2) }));"
+     ]
+    },
+    {
+     "key": "home-graph-link",
+     "text": "home offers a Graph (subject tree) link that points at the #/graph/ route.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "clear(el(\"h2\", { text: \"Subjects\" }), el(\"p\", null, link(\"Graph (subject tree)\", \"#/graph/\")), list);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::fact",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "fact-endpoint",
+     "text": "fact requests /api/fact with the id passed through encodeURIComponent.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const s = await api(\"/api/fact?id=\" + encodeURIComponent(id));"
+     ]
+    },
+    {
+     "key": "ref-meta",
+     "text": "Each ref line shows the rel, the kind and the basis of that reference inside parentheses.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "el(\"span\", { text: r.rel + \" (\" + r.kind + \", \" + r.basis + \") \" }),"
+     ]
+    },
+    {
+     "key": "ref-link-only-fact",
+     "text": "Only a ref whose kind is fact becomes a link; every other ref target renders as a plain id span.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "r.kind === \"fact\" ? link(r.target, \"#/fact/\" + encodeURIComponent(r.target), \"id\") : el(\"span\", { class: \"id\", text: r.target })));"
+     ]
+    },
+    {
+     "key": "refs-heading-count",
+     "text": "fact writes the length of s.refs into the Refs heading and the length of s.inbound into the Inbound heading.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "el(\"h2\", { text: \"Refs (\" + s.refs.length + \")\" }), refs,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::graphView",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "mounts-graph",
+     "text": "graphView mounts window.DossierGraph into a fresh div and returns graph.ready.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "graph = window.DossierGraph.mount(host, id);"
+     ]
+    },
+    {
+     "key": "heading-choice",
+     "text": "graphView titles the page Graph when an id is given and Subject tree when it is not.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "clear(el(\"h2\", { text: id ? \"Graph\" : \"Subject tree\" }), host);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::route",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "destroys-graph",
+     "text": "route destroys an existing graph and clears the reference before it reads the location hash.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (graph) { graph.destroy(); graph = null; }"
+     ]
+    },
+    {
+     "key": "decodes-arg",
+     "text": "route splits the hash on slashes and decodes the joined remainder with decodeURIComponent.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const arg = parts[1] ? decodeURIComponent(parts.slice(1).join(\"/\")) : \"\";"
+     ]
+    },
+    {
+     "key": "dispatch-table",
+     "text": "route dispatches a first part of subject, fact, graph or search to that view and falls back to home for anything else.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "if (parts[0] === \"subject\" && arg) await subject(arg);"
+     ]
+    },
+    {
+     "key": "error-paragraph",
+     "text": "route catches a failed view and replaces the page with an error paragraph holding e.message.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "clear(el(\"p\", { text: \"error: \" + e.message }));"
+     ]
+    },
+    {
+     "key": "hashchange",
+     "text": "The window hashchange event is wired to route.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "window.addEventListener(\"hashchange\", route);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/index.html",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "index.html"
+   ],
+   "facts": [
+    {
+     "key": "script-order",
+     "text": "index.html loads /feed.js first, then /graph.js, then /app.js at the end of the body.",
+     "at": [
+      "src/Dossier/www/index.html",
+      "<script src=\"/feed.js\"></script>"
+     ]
+    },
+    {
+     "key": "search-input-attrs",
+     "text": "The header search box is id q with type search, the placeholder search facts and autofocus.",
+     "at": [
+      "src/Dossier/www/index.html",
+      "<input id=\"q\" type=\"search\" placeholder=\"search facts\" autofocus>"
+     ]
+    },
+    {
+     "key": "feed-line-reset",
+     "text": "The g-feed f-line rule strips the button background and border and inherits the surrounding font.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".g-feed .f-line { background: none; border: 0; padding: 0; font: inherit; color: #05c; text-align: left; cursor: pointer; }"
+     ]
+    },
+    {
+     "key": "feed-animation",
+     "text": "The f-in animation of .35s is applied to f-new only under prefers-reduced-motion: no-preference.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".g-feed .f-new { animation: f-in .35s ease-out; }"
+     ]
+    },
+    {
+     "key": "feed-list-scroll",
+     "text": "The g-feed-list rule caps the list at max-height 120px and turns on overflow auto.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".g-feed-list { list-style: none; margin: 0; padding: 0; max-height: 120px; overflow: auto; }"
+     ]
+    },
+    {
+     "key": "panel-width",
+     "text": "The g-panel rule fixes the side panel at 320px wide and gives it overflow auto.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".g-panel { width: 320px; overflow: auto; border: 1px solid #ddd; padding: 8px; }"
+     ]
+    },
+    {
+     "key": "stage-background",
+     "text": "The g-stage rule takes the leftover flex space and paints it with the dark background #0e1116.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".g-stage { flex: 1; min-width: 0; background: #0e1116; }"
+     ]
+    },
+    {
+     "key": "main-width",
+     "text": "main is padded by 16px and capped at a max-width of 960px with auto side margins.",
+     "at": [
+      "src/Dossier/www/index.html",
+      "main { padding: 16px; max-width: 960px; margin: 0 auto; }"
+     ]
+    },
+    {
+     "key": "header-colors",
+     "text": "The header bar paints a #222 background with #eee text and the dossier link in #9cf.",
+     "at": [
+      "src/Dossier/www/index.html",
+      "header { padding: 10px 16px; background: #222; color: #eee; display: flex; gap: 12px; align-items: center; }"
+     ]
+    },
+    {
+     "key": "status-badge",
+     "text": "The status badge is inline-block with a border radius of 8px and a 12px font on a #e8e8e8 background.",
+     "at": [
+      "src/Dossier/www/index.html",
+      ".status { display: inline-block; padding: 0 6px; border-radius: 8px; background: #e8e8e8; font-size: 12px; margin-left: 6px; }"
+     ]
+    },
+    {
+     "key": "document-title",
+     "text": "index.html sets the document title to the single word dossier.",
+     "at": [
+      "src/Dossier/www/index.html",
+      "<title>dossier</title>"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::entryForFact",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "prunes-stale-index",
+     "text": "entryForFact returns the indexed entry only while that entry is still present in rows, and deletes the index entry when it is not.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (entry && rows.indexOf(entry) < 0) { delete factIndex[id]; entry = null; }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::lineText",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "appends-ref-count",
+     "text": "lineText appends a plus sign and the ref count and the word refs to the base only when entry.refs is non-zero.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "return entry.base + (entry.refs ? ' +' + entry.refs + ' refs' : '');"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::setLine",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "stores-and-writes",
+     "text": "setLine stores lineText on entry.text and writes that string to entry.line when the element exists.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "entry.text = lineText(entry);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::paint",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "hides-empty-and-list",
+     "text": "paint hides the empty message as soon as rows exist and hides the list while the strip is collapsed.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "empty.hidden = rows.length > 0;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/feed.js::el",
+   "kind": "function",
+   "parent": "src/Dossier/www/feed.js",
+   "facts": [
+    {
+     "key": "text-content-only",
+     "text": "The inner el helper assigns its value through textContent only when the value is neither undefined nor null.",
+     "at": [
+      "src/Dossier/www/feed.js",
+      "if (value !== undefined && value !== null) node.textContent = value;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::home",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "subject-row-note",
+     "text": "home shows each subject as a name link, a note holding its kind and fact count, and a graph link.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "el(\"span\", { class: \"note\", text: \" \" + s.kind + \", \" + s.facts + \" facts \" }),"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::subject",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "titles-with-name",
+     "text": "subject titles the page Dossier plus the subject name, falling back to the id when d.subject is missing.",
+     "at": [
+      "src/Dossier/www/app.js",
+      "const nodes = [el(\"h2\", { text: \"Dossier: \" + (d.subject ? d.subject.name : id) }),"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/www/app.js::search",
+   "kind": "function",
+   "parent": "src/Dossier/www/app.js",
+   "facts": [
+    {
+     "key": "results-heading",
+     "text": "search writes the query and res.total into the Results for heading above the hit rows.",
+     "at": [
+      "src/Dossier/www/app.js",
+      " + res.total + "
+     ]
+    }
+   ]
+  }
+ ]
+}

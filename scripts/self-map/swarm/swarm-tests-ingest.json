@@ -1,0 +1,504 @@
+{
+ "agent": "swarm-tests-ingest",
+ "slice": "tests-ingest",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/DumpTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "DumpTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "dump-manifest-accounts-for-every-chunk-skip-accounting",
+     "text": "Dump_ManifestAccountsForEveryChunk expects created 2 plus skipped 1 to account for all 3 chunks, with the single skip reason too_short.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "IsEqualTo(\"too_short\")"
+     ]
+    },
+    {
+     "key": "dump-manifest-accounts-for-every-chunk-bare-hash-skipped",
+     "text": "The Dump_ManifestAccountsForEveryChunk fixture comment records that the bare hash heading chunk is skipped, not lost.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "The bare \"#\" is skipped, not lost."
+     ]
+    },
+    {
+     "key": "dump-is-idempotent-second-run-all-deduped",
+     "text": "Dump_IsIdempotent_SecondRunAllDeduped creates 0 facts and dedupes 2 ids on the second run, and those ids equal the first run's created ids.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "second.Deduped.Count"
+     ]
+    },
+    {
+     "key": "dump-splits-on-headings-default",
+     "text": "Dump_SplitsOnHeadings passes no split option and still creates 3 chunks because .md defaults to heading.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "No split option: .md defaults to heading."
+     ]
+    },
+    {
+     "key": "dump-stores-raw-blob-before-parsing-blob-name",
+     "text": "Dump_StoresRawBlobBeforeParsing still writes the raw blob under the lower-case hex SHA256 of the bytes and returns 0 created with at least one error.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "Path.Combine(db.Store.BlobRoot, sha256)"
+     ]
+    },
+    {
+     "key": "dump-skips-too-short-chunks-locator",
+     "text": "The skipped too_short chunk in Dump_SkipsTooShortChunks carries a locator with line 3 and selector L3-L3.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "IsEqualTo(\"L3-L3\")"
+     ]
+    },
+    {
+     "key": "dump-skips-too-short-chunks-counts",
+     "text": "Dump_SkipsTooShortChunks creates 2 chunks and skips 1 with reason too_short.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "response.Skipped.Count).IsEqualTo(1)"
+     ]
+    },
+    {
+     "key": "dump-every-fact-has-file-ref-with-line-range-fields",
+     "text": "Dump_EveryFactHasFileRefWithLineRange asserts each fact's single ref has rel derived_from, kind file, basis observed and locator L1-L2 or L3-L4.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "reference.Rel).IsEqualTo(\"derived_from\")"
+     ]
+    },
+    {
+     "key": "dump-truncation-never-happens-length",
+     "text": "Dump_TruncationNeverHappens stores a 1000-character single chunk with text length exactly 1000.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "text.Length).IsEqualTo(1000)"
+     ]
+    },
+    {
+     "key": "contract-schema-split-enum",
+     "text": "ContractSchema_SplitEnumIsHeadingFileNone_AndEntitySubjectsIsAbsent asserts the DumpRequest split enum in contract/ops.schema.json is heading, file, none.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "new[] { \"heading\", \"file\", \"none\" }"
+     ]
+    },
+    {
+     "key": "contract-schema-no-entity-subjects",
+     "text": "The same schema test requires DumpRequest to have no entity_subjects property.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "dump.TryGetProperty(\"entity_subjects\", out _)"
+     ]
+    },
+    {
+     "key": "invalid-split-writes-no-blob-message",
+     "text": "Dump with split paragraph returns one error reading invalid_split: split must be heading, file, or none, got paragraph, and creates 0 facts.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "invalid_split: split must be heading"
+     ]
+    },
+    {
+     "key": "missing-source-with-invalid-split-reports-read-failed",
+     "text": "MissingSource_WithInvalidSplit_ReportsReadFailed pins that reading precedes split validation, so a missing source reports read_failed rather than invalid_split.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "StartsWith(\"read_failed:\", StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "split-file-markdown-is-one-chunk-with-whole-file-selector",
+     "text": "With split file, a markdown document becomes 1 chunk holding both headings and a locator selector of L1-L4.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "GetRawText().Contains(\"L1-L4\""
+     ]
+    },
+    {
+     "key": "no-split-non-markdown-is-one-whole-file-chunk",
+     "text": "NoSplit_NonMarkdown_IsOneWholeFileChunk runs with notes.txt and mod.py and expects 1 chunk whose locator contains L1-L3.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "GetRawText().Contains(\"L1-L3\""
+     ]
+    },
+    {
+     "key": "removed-split-is-rejected-as-invalid-split-library",
+     "text": "RemovedSplit_IsRejectedAsInvalidSplit_Library feeds split paragraph and code and expects 0 created and 1 error beginning invalid_split.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "StartsWith(InvalidSplitMessage"
+     ]
+    },
+    {
+     "key": "removed-split-is-rejected-as-invalid-split-mcp",
+     "text": "RemovedSplit_IsRejectedAsInvalidSplit_Mcp calls the dump tool through McpServer and expects an empty created array plus one error starting invalid_split.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "manifest.GetProperty(\"created\").GetArrayLength()"
+     ]
+    },
+    {
+     "key": "removed-split-is-rejected-as-invalid-split-cli",
+     "text": "RemovedSplit_IsRejectedAsInvalidSplit_Cli runs dump with --split paragraph or code and parses a manifest with no created facts and an invalid_split error.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "\"--split\", split"
+     ]
+    },
+    {
+     "key": "entity-subjects-is-ignored-library",
+     "text": "EntitySubjects_IsIgnored_Library deserializes a request with entity_subjects true and still creates 1 fact, 0 errors and 1 subject.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "entity_subjects = true"
+     ]
+    },
+    {
+     "key": "entity-subjects-flag-is-ignored-cli",
+     "text": "The dump CLI accepts --entity-subjects, exits 0, and still reports 0 errors, 1 created and 1 subject.",
+     "at": [
+      "tests/Dossier.Tests/DumpTests.cs",
+      "\"--entity-subjects\""
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/CheckTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "CheckTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "check-resolves-name-alias-prefix-and-fuzzy-exact",
+     "text": "Check_ResolvesNameAliasPrefixAndFuzzy gets match exact_name with 1 fact and alias Invoices for the input BILLING with surrounding spaces.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "exact.Subject.Aliases.Contains(\"Invoices\")"
+     ]
+    },
+    {
+     "key": "check-resolves-name-alias-prefix-and-fuzzy-others",
+     "text": "Check_ResolvesNameAliasPrefixAndFuzzy expects the other candidates to match in the order prefix, prefix, fuzzy.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "exact.Others!.Select(m => m.Match).ToList()"
+     ]
+    },
+    {
+     "key": "check-resolves-name-alias-prefix-and-fuzzy-alias",
+     "text": "A lookup of the lower-case alias invoices resolves to subject Billing with match exact_alias.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "IsEqualTo(\"exact_alias\")"
+     ]
+    },
+    {
+     "key": "check-no-match-returns-null-subject-and-zero-summary",
+     "text": "Check_NoMatchReturnsNullSubjectAndZeroSummary gets a null subject, 0 summary facts and null drafts for the name zzzzzzzzzz.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "result.Subject).IsNull()"
+     ]
+    },
+    {
+     "key": "check-summary-has-counts-and-at-most-eight-claims",
+     "text": "A subject with 12 long claims and 2 conflicting owner values yields summary counts of 14 facts, 1 conflict and 8 top claims capped at 120 characters.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "top.Text.Length).IsLessThanOrEqualTo(120)"
+     ]
+    },
+    {
+     "key": "check-no-drafts-writes-nothing",
+     "text": "Check_NoDraftsWritesNothing runs two checks, one for a real subject and one for nothing like it, and asserts every counted table is unchanged.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "Counts(db.Store)).IsEquivalentTo(before)"
+     ]
+    },
+    {
+     "key": "check-drafts-also-write-nothing",
+     "text": "Check_DraftsAlsoWriteNothing passes draft facts, including one reusing key k, and asserts all five table counts are unchanged.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "db.Store.Check(Req(\"Widget\", Fixtures.Fact(\"fresh\"), Fixtures.Fact(\"body2\", key: \"k\")))"
+     ]
+    },
+    {
+     "key": "check-draft-verdicts-match-real-post",
+     "text": "Check_DraftVerdictsMatchRealPost expects draft statuses new, deduped, replaced and the same DuplicateOf and Replaced values as a real post.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "new[] { \"new\", \"deduped\", \"replaced\" }"
+     ]
+    },
+    {
+     "key": "check-reports-near-but-still-posts-separately",
+     "text": "Check_ReportsNearButStillPostsSeparately posts a near-duplicate as new with a different id, leaving 2 live facts.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "status = 'live'"
+     ]
+    },
+    {
+     "key": "check-near-excludes-already-reported-duplicates",
+     "text": "A draft identical to a posted fact is deduped with DuplicateOf set to the existing id and an empty Near list.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "verdict.Near.Count).IsEqualTo(0)"
+     ]
+    },
+    {
+     "key": "check-fails-closed-like-post-ref-error",
+     "text": "Check_FailsClosedLikePost marks a draft whose ref has a null basis as error code missing_basis while the good draft stays new.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "missing_basis"
+     ]
+    },
+    {
+     "key": "check-fails-closed-like-post-unknown-subject",
+     "text": "Check_FailsClosedLikePost expects a check against an unknown subject to throw DossierRequestException with code subject_not_found and leave 1 subject.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "IsEqualTo(\"subject_not_found\")"
+     ]
+    },
+    {
+     "key": "check-resolves-subject-by-id",
+     "text": "Check_ResolvesSubjectById checks that checking by the posted subject id returns the subject name Widget.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "result.Subject!.Name).IsEqualTo(\"Widget\")"
+     ]
+    },
+    {
+     "key": "check-replaces-resolve",
+     "text": "Check_ReplacesResolve asserts the resolve CLI exits nonzero, that the tool list has check but not resolve_subject, and that 9 tools are listed.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "names.Count).IsEqualTo(9)"
+     ]
+    },
+    {
+     "key": "check-cli-accepts-drafts-file-and-prints-verdicts",
+     "text": "The check CLI with --subject widget and --drafts exits 0 and prints status deduped for the matching draft and new for the other.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "drafts[0].GetProperty(\"status\")"
+     ]
+    },
+    {
+     "key": "skill-does-not-claim-near-duplicate-status",
+     "text": "Skill_DoesNotClaimNearDuplicateStatus asserts skills/dossier/SKILL.md never contains the word near_duplicate.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "text.Contains(\"near_duplicate\", StringComparison.Ordinal)"
+     ]
+    },
+    {
+     "key": "symbol-ref-draft-citing-same-symbol-is-new-not-deduped",
+     "text": "SymbolRef_DraftCitingSameSymbolIsNewNotDeduped expects a third draft citing the same symbol ref as two posted facts to still be new.",
+     "at": [
+      "tests/Dossier.Tests/CheckTests.cs",
+      "result.Drafts!.Single().Status).IsEqualTo(\"new\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/TestSupport.cs",
+   "kind": "file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "TestSupport.cs"
+   ],
+   "facts": [
+    {
+     "key": "tempdb-directory",
+     "text": "TempDb puts its database directory under Path.GetTempPath() in a dossier-tests folder named with the N format of a new Guid.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "Path.Combine(Path.GetTempPath(), \"dossier-tests\""
+     ]
+    },
+    {
+     "key": "tempdb-dispose",
+     "text": "TempDb.Dispose clears only its store's connection pool, then deletes the directory recursively and swallows IOException.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "catch (IOException)"
+     ]
+    },
+    {
+     "key": "clearpool-scope",
+     "text": "TempDb.ClearPool calls SqliteConnection.ClearPool on the store's own connection because ClearAllPools is process-wide and caused intermittent ObjectDisposedException.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "SqliteConnection.ClearPool(connection)"
+     ]
+    },
+    {
+     "key": "fixtures-fact-defaults",
+     "text": "Fixtures.Fact sets Kind to note and passes key, localId, refs, data, tags and attachments straight through from its parameters.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "Kind = \"note\""
+     ]
+    },
+    {
+     "key": "fixtures-ref-defaults",
+     "text": "Fixtures.Ref defaults basis to observed, kind to fact and rel to mentions.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "string? basis = \"observed\""
+     ]
+    },
+    {
+     "key": "fixtures-count-binds-parameters",
+     "text": "Fixtures.Count and Fixtures.Scalar bind each named parameter with AddWithValue, mapping a null value to DBNull.Value.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "command.Parameters.AddWithValue(name, value ?? DBNull.Value)"
+     ]
+    },
+    {
+     "key": "testservers-retries-bind",
+     "text": "TestServers.StartAsync picks a random port between 20_000 and LastPortExclusive and retries a failed bind up to 50 attempts.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "var server = new WebServer(store, Random.Shared.Next(FirstPort, LastPortExclusive), revisionPollInterval);"
+     ]
+    },
+    {
+     "key": "testservers-retry-exceptions",
+     "text": "TestServers.StartAsync retries only on HttpListenerException or SocketException and otherwise lets the exception escape after disposing the server.",
+     "at": [
+      "tests/Dossier.Tests/TestSupport.cs",
+      "exception is HttpListenerException or SocketException"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/CorrelateTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "CorrelateTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "correlate-same-ref-proposes-shape",
+     "text": "Correlate_SameRef_Proposes expects 2 proposals, one in each direction, each with rel mentions, kind fact and basis derived.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "proposal.Ref.Rel).IsEqualTo(\"mentions\")"
+     ]
+    },
+    {
+     "key": "correlate-same-ref-proposes-both-directions",
+     "text": "Correlate_SameRef_Proposes posts two facts sharing the url https://example.test/x and expects both id orderings among the proposals.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "pairs.Contains((ids[0], ids[1]))"
+     ]
+    },
+    {
+     "key": "correlate-shared-tag-proposes",
+     "text": "Correlate_SharedTag_Proposes posts two facts tagged alpha and gets 2 proposals covering both directions.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "response.Proposed.Count).IsEqualTo(2)"
+     ]
+    },
+    {
+     "key": "correlate-never-emits-observed-basis",
+     "text": "Correlate_NeverEmitsObservedBasis runs correlate with no matchers and asserts every proposal basis is derived, never observed.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "proposal.Ref.Basis).IsEqualTo(\"derived\")"
+     ]
+    },
+    {
+     "key": "correlate-writes-nothing",
+     "text": "Correlate_WritesNothing asserts a correlate call returns proposals while the facts and refs table counts stay the same.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "response.Proposed.Count).IsGreaterThan(0)"
+     ]
+    },
+    {
+     "key": "correlate-is-deterministic",
+     "text": "Correlate_IsDeterministic serializes two correlate responses and asserts the second string equals the first.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "second).IsEqualTo(first)"
+     ]
+    },
+    {
+     "key": "correlate-caps-at-200",
+     "text": "Correlate_CapsAt200 posts 21 facts tagged bulk and expects 200 proposals with Truncated true, ordered by FactId then Target.",
+     "at": [
+      "tests/Dossier.Tests/CorrelateTests.cs",
+      "response.Proposed.Count).IsEqualTo(200)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/RetractTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "RetractTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "retract-tombstones-fact-and-clears-the-fts-row-status",
+     "text": "Retract_TombstonesFactAndClearsTheFtsRow asserts the retracted row has status retracted with null text and data while keeping content_hash, provenance and created_at.",
+     "at": [
+      "tests/Dossier.Tests/RetractTests.cs",
+      "status = 'retracted' AND text IS NULL"
+     ]
+    },
+    {
+     "key": "retract-tombstones-fact-and-clears-the-fts-row-fts",
+     "text": "Retract_TombstonesFactAndClearsTheFtsRow sees the facts_fts count drop from 1 to 0 and the attachment blob removed from disk.",
+     "at": [
+      "tests/Dossier.Tests/RetractTests.cs",
+      "SELECT COUNT(*) FROM facts_fts"
+     ]
+    },
+    {
+     "key": "retract-keeps-blob-referenced-by-another-live-fact",
+     "text": "Retract_KeepsBlobReferencedByAnotherLiveFact keeps the shared blob until both facts holding it are retracted.",
+     "at": [
+      "tests/Dossier.Tests/RetractTests.cs",
+      "File.Exists(blob)).IsTrue()"
+     ]
+    },
+    {
+     "key": "retract-unknown-id-reports-not-found",
+     "text": "Retract_UnknownIdReportsNotFound calls retract with does-not-exist and expects Found to be false.",
+     "at": [
+      "tests/Dossier.Tests/RetractTests.cs",
+      "result.Found).IsFalse()"
+     ]
+    }
+   ]
+  }
+ ]
+}

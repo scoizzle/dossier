@@ -1,0 +1,692 @@
+{
+ "agent": "swarm-scripts-shell-b",
+ "slice": "scripts-shell-b",
+ "subjects": [
+  {
+   "name": "scripts/e2e.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "e2e.sh"
+   ],
+   "facts": [
+    {
+     "key": "shell-options",
+     "text": "e2e.sh enables the set -euo pipefail shell options before it starts tracing every command with set -x.",
+     "at": [
+      "scripts/e2e.sh",
+      "set -euo pipefail"
+     ]
+    },
+    {
+     "key": "dll-path",
+     "text": "e2e.sh expects the Release build at src/Dossier/bin/Release/net10.0/Dossier.dll under the repo root.",
+     "at": [
+      "scripts/e2e.sh",
+      "Release/net10.0/Dossier.dll"
+     ]
+    },
+    {
+     "key": "missing-dll",
+     "text": "e2e.sh exits 1 with a dotnet build hint when the Release Dossier.dll is absent.",
+     "at": [
+      "scripts/e2e.sh",
+      "missing $DLL; build it with"
+     ]
+    },
+    {
+     "key": "temp-db",
+     "text": "e2e.sh makes a temp directory, exports DOSSIER_DB to dossier.db inside it, and deletes that directory on EXIT.",
+     "at": [
+      "scripts/e2e.sh",
+      "dossier-e2e.XXXXXX"
+     ]
+    },
+    {
+     "key": "seeds-via-seed-script",
+     "text": "e2e.sh runs scripts/seed.sh and scrapes the subjects_created and facts_created values out of its stdout.",
+     "at": [
+      "scripts/e2e.sh",
+      "bash \"$ROOT/scripts/seed.sh\""
+     ]
+    },
+    {
+     "key": "descendants-guard",
+     "text": "e2e.sh exits 1 when the --descendants compile emits no more facts than the plain compile.",
+     "at": [
+      "scripts/e2e.sh",
+      "must exceed plain compile"
+     ]
+    },
+    {
+     "key": "search-total",
+     "text": "e2e.sh searches Memos/Home for composer with --limit 100 and echoes the total it parses from the JSON.",
+     "at": [
+      "scripts/e2e.sh",
+      "--q \"composer\" --limit 100"
+     ]
+    },
+    {
+     "key": "markdown-compile",
+     "text": "e2e.sh compiles Memos/Home at depth full in markdown and prints the whole document.",
+     "at": [
+      "scripts/e2e.sh",
+      "--depth full --format markdown"
+     ]
+    },
+    {
+     "key": "conflicts-section",
+     "text": "e2e.sh prints the compiled markdown from the Conflicts heading onward to show the seeded contradictions.",
+     "at": [
+      "scripts/e2e.sh",
+      "sed -n '/^## Conflicts/,$p'"
+     ]
+    },
+    {
+     "key": "gaps-section",
+     "text": "e2e.sh compiles Memos/Home markdown with --need billing invoice and --need webhook signature, then prints the Gaps section.",
+     "at": [
+      "scripts/e2e.sh",
+      "--need \"webhook signature\""
+     ]
+    },
+    {
+     "key": "double-dump",
+     "text": "e2e.sh dumps scripts/seed/notes.md twice with --split heading and echoes created and deduped counts from both responses.",
+     "at": [
+      "scripts/e2e.sh",
+      "--split heading"
+     ]
+    },
+    {
+     "key": "correlate-count",
+     "text": "e2e.sh counts correlate proposals by grepping the JSON output for every fact_id occurrence.",
+     "at": [
+      "scripts/e2e.sh",
+      "grep -o '\"fact_id\"'"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/e2e.sh::count_json_array",
+   "kind": "function",
+   "parent": "scripts/e2e.sh",
+   "facts": [
+    {
+     "key": "comma-count",
+     "text": "count_json_array increments its counter once for every comma it strips from the array body.",
+     "at": [
+      "scripts/e2e.sh",
+      "while [ \"${rest#*,}\" != \"$rest\" ]"
+     ]
+    },
+    {
+     "key": "empty-array",
+     "text": "count_json_array returns 0 when the array body is the empty string after its brackets are stripped.",
+     "at": [
+      "scripts/e2e.sh",
+      "if [ -z \"$arr\" ]; then"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/e2e.sh::array_field",
+   "kind": "function",
+   "parent": "scripts/e2e.sh",
+   "facts": [
+    {
+     "key": "sed-extract",
+     "text": "array_field pulls the first compact array value for a named field out of one-line JSON with sed.",
+     "at": [
+      "scripts/e2e.sh",
+      "array_field() {"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "seed.sh"
+   ],
+   "facts": [
+    {
+     "key": "default-db",
+     "text": "seed.sh defaults DOSSIER_DB to dossier.db at the repo root when the variable is unset.",
+     "at": [
+      "scripts/seed.sh",
+      "DOSSIER_DB:-$ROOT/dossier.db"
+     ]
+    },
+    {
+     "key": "init-first",
+     "text": "seed.sh runs dotnet init against the resolved DLL before posting any file.",
+     "at": [
+      "scripts/seed.sh",
+      "dotnet \"$DLL\" init"
+     ]
+    },
+    {
+     "key": "declared-sha",
+     "text": "seed.sh reads the first attachment sha256 from memos.json and exits 1 when none is declared.",
+     "at": [
+      "scripts/seed.sh",
+      "first(.facts[].attachments[]?.sha256)"
+     ]
+    },
+    {
+     "key": "hash-tool",
+     "text": "seed.sh hashes with shasum -a 256 when present, else sha256sum, and exits 1 when neither exists.",
+     "at": [
+      "scripts/seed.sh",
+      "shasum -a 256"
+     ]
+    },
+    {
+     "key": "attachment-drift",
+     "text": "seed.sh exits 1 when the shot PNG hashes to a value other than the declared sha256.",
+     "at": [
+      "scripts/seed.sh",
+      "seed attachment drift"
+     ]
+    },
+    {
+     "key": "blob-copy",
+     "text": "seed.sh copies the shot PNG to blobs/<declared sha256> next to the database before posting.",
+     "at": [
+      "scripts/seed.sh",
+      "cp \"$SHOT\" \"$BLOBS/$DECLARED_SHA\""
+     ]
+    },
+    {
+     "key": "blob-drift",
+     "text": "seed.sh rehashes the stored blob and exits 1 when it does not match the declared sha256.",
+     "at": [
+      "scripts/seed.sh",
+      "seed blob drift"
+     ]
+    },
+    {
+     "key": "root-post",
+     "text": "seed.sh posts memos-root.json and exits 1 when the response carries no subject id.",
+     "at": [
+      "scripts/seed.sh",
+      "seed root post returned no subject id"
+     ]
+    },
+    {
+     "key": "child-parent",
+     "text": "seed.sh rewrites each child file's subject.parent to the root id with jq and posts it through stdin.",
+     "at": [
+      "scripts/seed.sh",
+      "'.subject.parent = $parent'"
+     ]
+    },
+    {
+     "key": "record-counts",
+     "text": "seed.sh's record helper counts created subjects and facts whose status is new, then prints both counts to stderr.",
+     "at": [
+      "scripts/seed.sh",
+      "posted %s: subjects_created=%s facts_new=%s"
+     ]
+    },
+    {
+     "key": "final-counts",
+     "text": "seed.sh prints subjects_created and facts_created as its two stdout summary lines.",
+     "at": [
+      "scripts/seed.sh",
+      "printf 'subjects_created=%d"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/publish-demo.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "publish-demo.sh"
+   ],
+   "facts": [
+    {
+     "key": "seed-failure-replay",
+     "text": "publish-demo.sh exits with seed.sh's own status after replaying the captured seed log on stderr.",
+     "at": [
+      "scripts/publish-demo.sh",
+      "scripts/seed.sh failed (exit $seed_status)"
+     ]
+    },
+    {
+     "key": "relative-out",
+     "text": "publish-demo.sh changes to the repo root and publishes a relative --out so the recorded command stays portable.",
+     "at": [
+      "scripts/publish-demo.sh",
+      "publish --out \"$REL_OUT\""
+     ]
+    },
+    {
+     "key": "bundle-totals",
+     "text": "publish-demo.sh prints files and bytes by counting every file in the output bundle and concatenating them.",
+     "at": [
+      "scripts/publish-demo.sh",
+      "find \"$OUT\" -type f -exec cat {} +"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/publish-profile-demo.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "publish-profile-demo.sh"
+   ],
+   "facts": [
+    {
+     "key": "profile",
+     "text": "publish-profile-demo.sh publishes against profiles/copilot-studio.json as its consumer profile.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "PROFILE=\"profiles/copilot-studio.json\""
+     ]
+    },
+    {
+     "key": "default-out",
+     "text": "publish-profile-demo.sh takes the output directory as its first argument, defaulting to examples/django-shards.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "examples/django-shards"
+     ]
+    },
+    {
+     "key": "source-guard",
+     "text": "publish-profile-demo.sh exits 1 when the source bundle lacks manifest.json or a subjects directory.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "needs manifest.json and subjects/"
+     ]
+    },
+    {
+     "key": "facts-awk",
+     "text": "publish-profile-demo.sh takes the dash bullets under the Facts heading of each subject's index.md as its fact lines.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "/^## Facts/ { on = 1; next }"
+     ]
+    },
+    {
+     "key": "parallel-post",
+     "text": "publish-profile-demo.sh posts the per-subject JSON files four at a time with xargs -P 4.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "xargs -0 -P 4"
+     ]
+    },
+    {
+     "key": "before-after",
+     "text": "publish-profile-demo.sh prints the profile table for a plain bundle and then for the --respect-limits shards.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "--respect-limits"
+     ]
+    },
+    {
+     "key": "shard-sizes",
+     "text": "publish-profile-demo.sh reports files, bytes, shards, smallest_shard_bytes and largest_shard_bytes for the output.",
+     "at": [
+      "scripts/publish-profile-demo.sh",
+      "smallest_shard_bytes"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/verify-refs.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "verify-refs.sh"
+   ],
+   "facts": [
+    {
+     "key": "repo-split",
+     "text": "verify-refs.sh splits each target into an owner/repo prefix and the remaining file path.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "repo=\"$(printf '%s' \"$full\" | cut -d/ -f1-2)\""
+     ]
+    },
+    {
+     "key": "url-shape",
+     "text": "verify-refs.sh builds the fetch URL as raw.githubusercontent.com with the repo, rev and relative path segments.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "https://raw.githubusercontent.com/$repo/$rev/$rel"
+     ]
+    },
+    {
+     "key": "curl-timeout",
+     "text": "verify-refs.sh fetches each URL with curl, a 30 second timeout, and reads back http_code and size_download.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "curl -sS -m 30"
+     ]
+    },
+    {
+     "key": "transport-error",
+     "text": "verify-refs.sh records a curl transport error as status 000 with zero bytes.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "|| curl_out=\"000 0\""
+     ]
+    },
+    {
+     "key": "non-200",
+     "text": "verify-refs.sh zeroes the byte count and increments fail whenever the status is not 200.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "[ \"$status\" != \"200\" ]"
+     ]
+    },
+    {
+     "key": "per-ref-line",
+     "text": "verify-refs.sh prints status, the first 10 characters of rev, bytes and path for every ref it tries.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "status=%s rev=%s bytes=%s path=%s"
+     ]
+    },
+    {
+     "key": "resolved-list",
+     "text": "verify-refs.sh appends the full target to the resolved file only when the fetch returned 200.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "printf '%s\\n' \"$full\" >> \"$TMP/resolved\""
+     ]
+    },
+    {
+     "key": "fail-exit",
+     "text": "verify-refs.sh exits 1 when any git ref failed to resolve.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "git ref(s) did not resolve"
+     ]
+    },
+    {
+     "key": "collect-refs",
+     "text": "verify-refs.sh collects the target and rev of every git ref in the seed JSON files and reduces them with sort -u.",
+     "at": [
+      "scripts/verify-refs.sh",
+      ".facts[]?.refs[]? | select(.kind == \"git\")"
+     ]
+    },
+    {
+     "key": "no-refs",
+     "text": "verify-refs.sh exits 1 when it finds no git refs in the seed JSON files.",
+     "at": [
+      "scripts/verify-refs.sh",
+      "no git refs found"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/scaling.sh",
+   "kind": "script",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "scaling.sh"
+   ],
+   "facts": [
+    {
+     "key": "subject",
+     "text": "scaling.sh posts every synthetic fact to the single subject Scaling/Corpus.",
+     "at": [
+      "scripts/scaling.sh",
+      "SUBJECT=\"Scaling/Corpus\""
+     ]
+    },
+    {
+     "key": "corpus-sizes",
+     "text": "scaling.sh builds corpora of 50, 200 and 1000 facts, one database per size in the temp directory.",
+     "at": [
+      "scripts/scaling.sh",
+      "for n in 50 200 1000"
+     ]
+    },
+    {
+     "key": "settings-line",
+     "text": "scaling.sh prints a settings line naming budget, strict mode, full depth, markdown format and the chars/4 estimator.",
+     "at": [
+      "scripts/scaling.sh",
+      "budget=%s mode=strict depth=full format=markdown estimator=chars/4"
+     ]
+    },
+    {
+     "key": "fact-text",
+     "text": "scaling.sh generates each fact text from a zero-padded index repeated across the alpha, beta, gamma and delta words.",
+     "at": [
+      "scripts/scaling.sh",
+      "entry \\($p) alpha\\($p) beta\\($p) gamma\\($p) delta\\($p)"
+     ]
+    },
+    {
+     "key": "token-math",
+     "text": "scaling.sh estimates tokens by adding 3 to the character count and dividing by 4.",
+     "at": [
+      "scripts/scaling.sh",
+      "plain_tokens=$(( (plain_chars + 3) / 4 ))"
+     ]
+    },
+    {
+     "key": "emitted-count",
+     "text": "scaling.sh counts emitted facts by tallying dash lines up to the first level-two heading of the compiled file.",
+     "at": [
+      "scripts/scaling.sh",
+      "/^## / { exit } /^- / { c++ }"
+     ]
+    },
+    {
+     "key": "budget",
+     "text": "scaling.sh compiles each corpus with --budget 1200 in strict budget mode at full depth.",
+     "at": [
+      "scripts/scaling.sh",
+      "--budget \"$BUDGET\" --budget-mode strict"
+     ]
+    },
+    {
+     "key": "ratio-na",
+     "text": "scaling.sh prints n/a for the ratio when the dossier token count is zero.",
+     "at": [
+      "scripts/scaling.sh",
+      "if (d == 0) { print \"n/a\" }"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/memos.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "memos.json"
+   ],
+   "facts": [
+    {
+     "key": "home-subject",
+     "text": "memos.json posts its facts to the subject Memos/Home with kind screen and the alias Home.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"name\": \"Memos/Home\""
+     ]
+    },
+    {
+     "key": "header-64",
+     "text": "memos.json's first audit fact gives the Home header a headerHeight of 64 pixels.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"data\": {\"headerHeight\": 64}"
+     ]
+    },
+    {
+     "key": "header-72",
+     "text": "memos.json's second audit fact gives the same Home header a headerHeight of 72 pixels.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"data\": {\"headerHeight\": 72}"
+     ]
+    },
+    {
+     "key": "composer-rows",
+     "text": "memos.json states composerMaxRows 6 for the Home composer in one fact and composerMaxRows 12 in the next.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"data\": {\"composerMaxRows\": 12}"
+     ]
+    },
+    {
+     "key": "shortcuts",
+     "text": "memos.json records a saveShortcut of Cmd+Enter on macOS and Ctrl+Enter on Windows and Linux.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"saveShortcut\": \"Cmd+Enter\""
+     ]
+    },
+    {
+     "key": "local-id-refs",
+     "text": "memos.json's list fact carries two fact refs whose targets are the local ids at-sign hdr and at-sign cmp.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"target\": \"@hdr\""
+     ]
+    },
+    {
+     "key": "leads-to",
+     "text": "memos.json links Home to Memos/MemoDetail with a leads_to subject ref and to Memos/Archived the same way.",
+     "at": [
+      "scripts/seed/memos.json",
+      "\"target\": \"Memos/MemoDetail\""
+     ]
+    },
+    {
+     "key": "asset-sha",
+     "text": "memos.json's shot fact declares a 70-byte image/png attachment whose sha256 starts 938cef59.",
+     "at": [
+      "scripts/seed/memos.json",
+      "938cef59266aa6f120e5a8d896dce5b7b4bede6719bd464f7999e1edd548b3b5"
+     ]
+    },
+    {
+     "key": "git-rev",
+     "text": "memos.json's git refs pin rev e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1.",
+     "at": [
+      "scripts/seed/memos.json",
+      "e4f3fb2d2d114f6eaea6ec75a10b0a274f57a8a1"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/memos-root.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "memos-root.json"
+   ],
+   "facts": [
+    {
+     "key": "root-subject",
+     "text": "memos-root.json declares the Memos subject with kind app and the alias Memos App.",
+     "at": [
+      "scripts/seed/memos-root.json",
+      "\"aliases\": [\"Memos App\"]"
+     ]
+    },
+    {
+     "key": "routes",
+     "text": "memos-root.json's route fact lists the web client routes /, /explore, /archived, /settings and /m/:id.",
+     "at": [
+      "scripts/seed/memos-root.json",
+      "The web client routes /, /explore, /archived, /settings, and /m/:id."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/memos-signin.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "memos-signin.json"
+   ],
+   "facts": [
+    {
+     "key": "signin-element",
+     "text": "memos-signin.json's element fact describes a username field, a password field and a submit button.",
+     "at": [
+      "scripts/seed/memos-signin.json",
+      "Sign in screen has a username field"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/memos-memodetail.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "memos-memodetail.json"
+   ],
+   "facts": [
+    {
+     "key": "delete-action",
+     "text": "memos-memodetail.json says the delete action removes the memo only after a confirmation.",
+     "at": [
+      "scripts/seed/memos-memodetail.json",
+      "The delete action removes the memo after a confirmation."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/memos-archived.json",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "memos-archived.json"
+   ],
+   "facts": [
+    {
+     "key": "restore",
+     "text": "memos-archived.json says the archived screen's restore action sends a memo back to the home list.",
+     "at": [
+      "scripts/seed/memos-archived.json",
+      "Restoring an archived memo sends it back to the home list."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "scripts/seed/notes.md",
+   "kind": "file",
+   "parent": "Dossier/Scripts",
+   "aliases": [
+    "notes.md"
+   ],
+   "facts": [
+    {
+     "key": "home-section",
+     "text": "notes.md's Home screen section says that screen hosts the composer, the memo list and the header.",
+     "at": [
+      "scripts/seed/notes.md",
+      "The home screen hosts the composer, the memo list, and the header."
+     ]
+    }
+   ]
+  }
+ ]
+}

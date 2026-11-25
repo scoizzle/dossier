@@ -1,0 +1,414 @@
+{
+ "rev": "ccf4fd5767aa56ad677eb8ef7f6808c2ed5106bb",
+ "model": "opencode-go/deepseek-v4.1-flash",
+ "variant": "low",
+ "slices": {
+  "src-publish-1": {
+   "title": "Publish.cs, first third",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Publish.cs:1-940"
+   ]
+  },
+  "src-publish-2": {
+   "title": "Publish.cs, middle third",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Publish.cs:941-1880"
+   ]
+  },
+  "src-publish-3": {
+   "title": "Publish.cs, last third",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Publish.cs:1881-2809"
+   ]
+  },
+  "src-graph": {
+   "title": "Graph.cs: the bounded graph neighbourhood",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Graph.cs"
+   ]
+  },
+  "src-compile": {
+   "title": "Compile.cs: ranking, budget, conflicts, markdown",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Compile.cs"
+   ]
+  },
+  "src-jsonl-import": {
+   "title": "JsonlImport.cs: the untrusted JSONL bundle reader",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/JsonlImport.cs"
+   ]
+  },
+  "src-export-import": {
+   "title": "JsonlExport.cs and Import.cs",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/JsonlExport.cs",
+    "src/Dossier/Import.cs"
+   ]
+  },
+  "src-web": {
+   "title": "Web.cs: the loopback HTTP server and event stream",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Web.cs"
+   ]
+  },
+  "src-postfacts": {
+   "title": "PostFacts.cs and the hashing helpers",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/PostFacts.cs",
+    "src/Dossier/ContentHash.cs",
+    "src/Dossier/CanonicalJson.cs",
+    "src/Dossier/Names.cs"
+   ]
+  },
+  "src-search": {
+   "title": "Search.cs and Check.cs",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Search.cs",
+    "src/Dossier/Check.cs"
+   ]
+  },
+  "src-program": {
+   "title": "Program.cs: the CLI entry point",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Program.cs",
+    "src/Dossier/AppVersion.cs"
+   ]
+  },
+  "src-mcp": {
+   "title": "Mcp.cs, Models.cs and JsonCodec.cs",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Mcp.cs",
+    "src/Dossier/Models.cs",
+    "src/Dossier/JsonCodec.cs"
+   ]
+  },
+  "src-verify": {
+   "title": "Verify.cs, Changes.cs, Show.cs and Retract.cs",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Verify.cs",
+    "src/Dossier/Changes.cs",
+    "src/Dossier/Show.cs",
+    "src/Dossier/Retract.cs"
+   ]
+  },
+  "src-store": {
+   "title": "Store.cs, Dump.cs, Correlate.cs and Profiles.cs",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "src/Dossier/Store.cs",
+    "src/Dossier/Dump.cs",
+    "src/Dossier/Correlate.cs",
+    "src/Dossier/Profiles.cs"
+   ]
+  },
+  "www-graph-1": {
+   "title": "graph.js, first half",
+   "focus": "What the page code does: each function's job, the endpoints it calls, constants and limits, how it handles errors and live updates, and how untrusted text is rendered. One behaviour per fact; create <file>::<functionName> subjects for functions.",
+   "files": [
+    "src/Dossier/www/graph.js:1-625"
+   ]
+  },
+  "www-graph-2": {
+   "title": "graph.js, second half",
+   "focus": "What the page code does: each function's job, the endpoints it calls, constants and limits, how it handles errors and live updates, and how untrusted text is rendered. One behaviour per fact; create <file>::<functionName> subjects for functions.",
+   "files": [
+    "src/Dossier/www/graph.js:626-1249"
+   ]
+  },
+  "www-page": {
+   "title": "feed.js, app.js and index.html",
+   "focus": "What the page code does: each function's job, the endpoints it calls, constants and limits, how it handles errors and live updates, and how untrusted text is rendered. One behaviour per fact; create <file>::<functionName> subjects for functions.",
+   "files": [
+    "src/Dossier/www/feed.js",
+    "src/Dossier/www/app.js",
+    "src/Dossier/www/index.html"
+   ]
+  },
+  "tests-publish-1": {
+   "title": "PublishTests.cs, first half",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/PublishTests.cs:1-870"
+   ]
+  },
+  "tests-publish-2": {
+   "title": "PublishTests.cs, second half",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/PublishTests.cs:871-1735"
+   ]
+  },
+  "tests-compile": {
+   "title": "CompileTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/CompileTests.cs"
+   ]
+  },
+  "tests-jsonl-a": {
+   "title": "JsonlPublishTests.cs and JsonlImportTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/JsonlPublishTests.cs",
+    "tests/Dossier.Tests/JsonlImportTests.cs"
+   ]
+  },
+  "tests-jsonl-b": {
+   "title": "JsonlSchemaTests.cs, JsonlHardeningTests.cs and JsonlBundleWriteTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/JsonlSchemaTests.cs",
+    "tests/Dossier.Tests/JsonlHardeningTests.cs",
+    "tests/Dossier.Tests/JsonlBundleWriteTests.cs"
+   ]
+  },
+  "tests-jsonl-c": {
+   "title": "JSONL round tests, import tests and bundle paths",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/JsonlRound2Tests.cs",
+    "tests/Dossier.Tests/JsonlRound3Tests.cs",
+    "tests/Dossier.Tests/JsonlTestSupport.cs",
+    "tests/Dossier.Tests/ImportTests.cs",
+    "tests/Dossier.Tests/BundlePathsTests.cs",
+    "tests/Dossier.Tests/BundlePaths.cs"
+   ]
+  },
+  "tests-post": {
+   "title": "PostFactsTests.cs and SupersedesRefTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/PostFactsTests.cs",
+    "tests/Dossier.Tests/SupersedesRefTests.cs"
+   ]
+  },
+  "tests-status": {
+   "title": "DerivedStatusTests.cs and VerifyTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/DerivedStatusTests.cs",
+    "tests/Dossier.Tests/VerifyTests.cs"
+   ]
+  },
+  "tests-journal": {
+   "title": "ChangeLogTests.cs and ChangeStreamTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/ChangeLogTests.cs",
+    "tests/Dossier.Tests/ChangeStreamTests.cs"
+   ]
+  },
+  "tests-writers": {
+   "title": "Changes tool, revision, multi-writer, concurrency and schema tests",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/ChangesToolTests.cs",
+    "tests/Dossier.Tests/RevisionTests.cs",
+    "tests/Dossier.Tests/MultiWriterTests.cs",
+    "tests/Dossier.Tests/ConcurrencyTests.cs",
+    "tests/Dossier.Tests/StoreSchemaTests.cs"
+   ]
+  },
+  "tests-web": {
+   "title": "WebTests.cs, WebEventsTests.cs and McpTests.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/WebTests.cs",
+    "tests/Dossier.Tests/WebEventsTests.cs",
+    "tests/Dossier.Tests/McpTests.cs"
+   ]
+  },
+  "tests-graph-search": {
+   "title": "GraphTests.cs, GraphSeed.cs and the search tests",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/GraphTests.cs",
+    "tests/Dossier.Tests/GraphSeed.cs",
+    "tests/Dossier.Tests/SearchTests.cs",
+    "tests/Dossier.Tests/SearchLiteralTermTests.cs"
+   ]
+  },
+  "tests-cli": {
+   "title": "CLI argument, AOT, contract, docs, skill and seed tests",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/CliArgTests.cs",
+    "tests/Dossier.Tests/AotCompatTests.cs",
+    "tests/Dossier.Tests/OpsContractTests.cs",
+    "tests/Dossier.Tests/DocsTests.cs",
+    "tests/Dossier.Tests/SkillTests.cs",
+    "tests/Dossier.Tests/SkillLoopTests.cs",
+    "tests/Dossier.Tests/SeedTests.cs"
+   ]
+  },
+  "tests-ingest": {
+   "title": "Dump, check, correlate and retract tests, and TestSupport.cs",
+   "focus": "What each test proves: the setup in a few words and the exact outcome it asserts (values, counts, statuses, error codes). At most two facts per test, on the test file subject, with a key that starts with the test's name in lower-case-with-hyphens. Also record what the shared helpers in the file do.",
+   "files": [
+    "tests/Dossier.Tests/DumpTests.cs",
+    "tests/Dossier.Tests/CheckTests.cs",
+    "tests/Dossier.Tests/CorrelateTests.cs",
+    "tests/Dossier.Tests/RetractTests.cs",
+    "tests/Dossier.Tests/TestSupport.cs"
+   ]
+  },
+  "scripts-graph-smoke-1": {
+   "title": "graph-smoke.mjs, first half",
+   "focus": "What each script does, step by step: its arguments and environment variables, the commands it runs, what it checks and when it fails, its exit codes and what it prints or writes. One step or rule per fact.",
+   "files": [
+    "scripts/graph-smoke.mjs:1-940"
+   ]
+  },
+  "scripts-graph-smoke-2": {
+   "title": "graph-smoke.mjs, second half",
+   "focus": "What each script does, step by step: its arguments and environment variables, the commands it runs, what it checks and when it fails, its exit codes and what it prints or writes. One step or rule per fact.",
+   "files": [
+    "scripts/graph-smoke.mjs:941-1879"
+   ]
+  },
+  "scripts-node": {
+   "title": "fleet-eval.mjs and live-demo.mjs",
+   "focus": "What each script does, step by step: its arguments and environment variables, the commands it runs, what it checks and when it fails, its exit codes and what it prints or writes. One step or rule per fact.",
+   "files": [
+    "scripts/fleet-eval.mjs",
+    "scripts/live-demo.mjs"
+   ]
+  },
+  "scripts-shell-a": {
+   "title": "smoke-aot.sh, scale-test.sh, eval.sh and the eval inputs",
+   "focus": "What each script does, step by step: its arguments and environment variables, the commands it runs, what it checks and when it fails, its exit codes and what it prints or writes. One step or rule per fact.",
+   "files": [
+    "scripts/smoke-aot.sh",
+    "scripts/scale-test.sh",
+    "scripts/eval.sh",
+    "scripts/eval/questions.json",
+    "scripts/eval/sources.json"
+   ]
+  },
+  "scripts-shell-b": {
+   "title": "e2e, seed, publish demos, verify-refs, scaling and the seed data",
+   "focus": "What each script does, step by step: its arguments and environment variables, the commands it runs, what it checks and when it fails, its exit codes and what it prints or writes. One step or rule per fact.",
+   "files": [
+    "scripts/e2e.sh",
+    "scripts/seed.sh",
+    "scripts/publish-profile-demo.sh",
+    "scripts/verify-refs.sh",
+    "scripts/scaling.sh",
+    "scripts/publish-demo.sh",
+    "scripts/seed/memos.json",
+    "scripts/seed/memos-root.json",
+    "scripts/seed/memos-archived.json",
+    "scripts/seed/memos-memodetail.json",
+    "scripts/seed/memos-signin.json",
+    "scripts/seed/notes.md"
+   ]
+  },
+  "ci": {
+   "title": "GitHub workflows, dependabot and templates",
+   "focus": "Each job and step: triggers, runner and matrix, the exact commands, versions pinned, permissions, conditions, artifacts, and what makes the job fail. One rule per fact.",
+   "files": [
+    ".github/workflows/ci.yml",
+    ".github/workflows/release.yml",
+    ".github/dependabot.yml",
+    ".github/ISSUE_TEMPLATE/bug_report.yml",
+    ".github/ISSUE_TEMPLATE/config.yml",
+    ".github/ISSUE_TEMPLATE/feature_request.yml",
+    ".github/PULL_REQUEST_TEMPLATE.md"
+   ]
+  },
+  "docs-reference": {
+   "title": "cli.md, publish.md, install.md and releasing.md",
+   "focus": "Claims in the prose that are not recorded yet: rules, limits, defaults, commands, caveats, and what is said to be unsupported. One claim per fact. Skip anything the brief shows as already recorded.",
+   "files": [
+    "docs/cli.md",
+    "docs/publish.md",
+    "docs/install.md",
+    "docs/releasing.md"
+   ]
+  },
+  "docs-guides": {
+   "title": "README, CONTRIBUTING, SECURITY, concepts, architecture, multi-agent, evaluation and the skill",
+   "focus": "Claims in the prose that are not recorded yet: rules, limits, defaults, commands, caveats, and what is said to be unsupported. One claim per fact. Skip anything the brief shows as already recorded.",
+   "files": [
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "docs/concepts.md",
+    "docs/architecture.md",
+    "docs/multi-agent.md",
+    "docs/evaluation.md",
+    "skills/dossier/SKILL.md"
+   ]
+  },
+  "contract-a": {
+   "title": "ops.schema.json",
+   "focus": "Each property of each shape: its type, whether it is required, its constraints and enum values, and what its description promises. One property or rule per fact.",
+   "files": [
+    "contract/ops.schema.json"
+   ]
+  },
+  "contract-b": {
+   "title": "The fact, ref, subject, dossier and JSONL schemas",
+   "focus": "Each property of each shape: its type, whether it is required, its constraints and enum values, and what its description promises. One property or rule per fact.",
+   "files": [
+    "contract/fact.schema.json",
+    "contract/ref.schema.json",
+    "contract/subject.schema.json",
+    "contract/dossier.schema.json",
+    "contract/jsonl-record.schema.json",
+    "contract/jsonl-manifest.schema.json"
+   ]
+  },
+  "tools-demo": {
+   "title": "The Wikipedia demo tool",
+   "focus": "What the code does that a reader cannot tell from a name: the order of steps, limits and constants, each error code and when it is raised, which SQL tables are read or written, edge cases handled, and what is deliberately not done. One behaviour per fact. Put a fact on the most specific subject (a method or type); for a private method or helper with no subject, create one named <file>::<Name>.",
+   "files": [
+    "tools/Dossier.WikipediaDemo/Program.cs",
+    "tools/Dossier.WikipediaDemo/DemoOptions.cs",
+    "tools/Dossier.WikipediaDemo/WikipediaClient.cs",
+    "tools/Dossier.WikipediaDemo/Payloads.cs",
+    "tools/Dossier.WikipediaDemo/DossierCli.cs",
+    "tools/Dossier.WikipediaDemo/ServerControl.cs",
+    "tools/Dossier.WikipediaDemo/DemoLog.cs",
+    "tools/Dossier.WikipediaDemo/Dossier.WikipediaDemo.csproj"
+   ]
+  },
+  "repo-misc": {
+   "title": "Project files, licences, profiles and the example bundle",
+   "focus": "What each file is for and the concrete facts in it: versions, names, licences, settings, limits, counts. One fact per setting or statement.",
+   "files": [
+    "Dossier.sln",
+    "global.json",
+    "src/Dossier/Dossier.csproj",
+    "tests/Dossier.Tests/Dossier.Tests.csproj",
+    ".gitignore",
+    ".gitattributes",
+    "LICENSE",
+    "THIRD-PARTY-NOTICES.md",
+    "examples/NOTICE.md",
+    "examples/memos-bundle/README.md",
+    "examples/memos-bundle/AGENTS.md",
+    "examples/memos-bundle/INDEX.md",
+    "examples/memos-bundle/conflicts.md",
+    "examples/memos-bundle/gaps.md",
+    "examples/memos-bundle/manifest.json",
+    "profiles/copilot-studio.json",
+    "profiles/generic-large.json"
+   ]
+  }
+ }
+}

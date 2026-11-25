@@ -1,0 +1,620 @@
+{
+ "agent": "swarm-tests-journal",
+ "slice": "tests-journal",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "ChangeLogTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "changelog-recordseveryrowwrite-sequence",
+     "text": "ChangeLog_RecordsEveryRowWrite replays a scripted insert, update and delete sequence and asserts each journal row Seq equals start plus its index plus one.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(journal[index].Seq).IsEqualTo(start + index + 1);"
+     ]
+    },
+    {
+     "key": "changelog-recordseveryrowwrite-head-seq",
+     "text": "ChangeLog_RecordsEveryRowWrite asserts the largest changes seq equals the store revision after the scripted writes.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "SELECT MAX(seq) FROM changes\")).IsEqualTo(db.Store.Revision());"
+     ]
+    },
+    {
+     "key": "changelog-onerowperrowwrite-four-inserts",
+     "text": "ChangeLog_OneRowPerRowWrite asserts one posted fact carrying a ref journals inserts on facts, refs, slots and subjects and on nothing else.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "IsEqualTo(\"facts:insert,refs:insert,slots:insert,subjects:insert\");"
+     ]
+    },
+    {
+     "key": "changelog-onerowperrowwrite-null-fact-id",
+     "text": "ChangeLog_OneRowPerRowWrite checks the subjects change row names the subject while its fact_id stays null.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "tbl = 'subjects' AND fact_id IS NULL AND subject_id = $subject"
+     ]
+    },
+    {
+     "key": "changelog-upgrades-twelve-triggers",
+     "text": "ChangeLog_UpgradesAnExistingTwelveTriggerDatabase asserts the reopened store has 12 trg_ triggers that all insert into changes.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "name LIKE 'trg_%' AND sql LIKE '%INSERT INTO changes%'\")).IsEqualTo(12);"
+     ]
+    },
+    {
+     "key": "changelog-upgrades-keeps-revision",
+     "text": "ChangeLog_UpgradesAnExistingTwelveTriggerDatabase asserts the upgrade leaves the revision alone and the next update lands at revision plus one.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(journal[0].Seq).IsEqualTo(revision + 1);"
+     ]
+    },
+    {
+     "key": "changelog-prerevision-reports-zero",
+     "text": "ChangeLog_UpgradesAPreRevisionDatabase deletes the revision meta row and asserts the reopened store reports revision 0 with 12 journal-writing triggers.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(upgraded.Revision()).IsEqualTo(0L);"
+     ]
+    },
+    {
+     "key": "changelog-prerevision-first-seq-one",
+     "text": "ChangeLog_UpgradesAPreRevisionDatabase asserts the first subject written after the upgrade lands at seq 1 with revision 1.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(journal[0].Seq).IsEqualTo(1L);"
+     ]
+    },
+    {
+     "key": "changelog-construction-takes-no-lock",
+     "text": "ChangeLog_ConstructionLeavesACurrentDatabaseAlone reopens the store while a write lock is held and asserts the construction takes under 3 seconds.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(watch.Elapsed).IsLessThan(TimeSpan.FromSeconds(3));"
+     ]
+    },
+    {
+     "key": "changelog-construction-writes-nothing",
+     "text": "ChangeLog_ConstructionLeavesACurrentDatabaseAlone asserts reopening leaves the trigger SQL, the revision, the change count and schema_version unchanged.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(Count(again, \"PRAGMA schema_version\")).IsEqualTo(schemaVersion);"
+     ]
+    },
+    {
+     "key": "changelog-seed-after-meta-deleted",
+     "text": "ChangeLog_SeedAfterMetaRowDeletedDoesNotCollide deletes the revision meta row and asserts the next subject still gets max plus one as its seq.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "SELECT MAX(seq) FROM changes\")).IsEqualTo(max + 1);"
+     ]
+    },
+    {
+     "key": "changelog-prunes-amortized-slack",
+     "text": "ChangeLog_PrunesAmortized shows pruning with retention 10 and slack 5 at head 14 leaves all 30 rows in place.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(Total()).IsEqualTo(30L);"
+     ]
+    },
+    {
+     "key": "changelog-prunes-amortized-window",
+     "text": "ChangeLog_PrunesAmortized asserts pruning at head 30 leaves 10 rows whose oldest seq is 21.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(Min()).IsEqualTo(21L);"
+     ]
+    },
+    {
+     "key": "changelog-concurrent-writers-gated",
+     "text": "ChangeLog_ConcurrentWritersProduceContiguousUniqueSeqs starts 8 writers that each post 50 facts after a Barrier gate.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "var tasks = Enumerable.Range(0, writers).Select(writer => Task.Factory.StartNew("
+     ]
+    },
+    {
+     "key": "changelog-concurrent-writers-distinct",
+     "text": "ChangeLog_ConcurrentWritersProduceContiguousUniqueSeqs asserts the collected seqs are distinct, begin at start plus one and run to the final revision.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(seqs.Distinct().Count()).IsEqualTo(seqs.Count);"
+     ]
+    },
+    {
+     "key": "changesquery-pages-truncated-page",
+     "text": "ChangesQuery_PagesAndResets reads since 0 with limit 2 and asserts a truncated page whose from is 0 and whose next is 2.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(first.Next).IsEqualTo(2L);"
+     ]
+    },
+    {
+     "key": "changesquery-pages-ahead-resets",
+     "text": "ChangesQuery_PagesAndResets asserts a read since 6 against a head of 5 sets reset with next 5 and no rows.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(ahead.Reset).IsTrue();"
+     ]
+    },
+    {
+     "key": "changesquery-upgraded-empty-journal",
+     "text": "ChangesQuery_UpgradedDatabaseWithEmptyJournalResetsOnlyBelowRevision empties the journal at revision 4 and asserts since 0 resets while since 4 does not.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(stale.Reset).IsTrue();"
+     ]
+    },
+    {
+     "key": "changesquery-joins-truncated-text",
+     "text": "ChangesQuery_JoinsFactFieldsAndActorOnlyForFactInserts posts text of 400 characters and asserts the insert row exposes 160 of them plus actor agent-7.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(factInsert.Text!.Length).IsEqualTo(160);"
+     ]
+    },
+    {
+     "key": "changesquery-joins-update-row",
+     "text": "ChangesQuery_JoinsFactFieldsAndActorOnlyForFactInserts asserts the facts update row has a null actor and the status superseded.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(factUpdate.Actor).IsNull();"
+     ]
+    },
+    {
+     "key": "changesquery-readchanges-under-lock",
+     "text": "ChangesQuery_ReadChangesDoesNotWaitForAWriter holds BEGIN IMMEDIATE and asserts ReadChanges still returns 3 rows within 1 second.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(page.Changes.Count).IsEqualTo(3);"
+     ]
+    },
+    {
+     "key": "changesquery-readchangeslast-under-lock",
+     "text": "ChangesQuery_ReadChangesLastDoesNotWaitForAWriter holds a write lock and asserts ReadChangesLast returns seqs 2 and 3 within 1 second.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(page.Changes.Select(row => row.Seq).ToArray()).IsEquivalentTo(new long[] { 2, 3 });"
+     ]
+    },
+    {
+     "key": "changesendpoint-serves-under-lock",
+     "text": "ChangesEndpoint_ServesWhileAWriterHoldsTheLock fetches /api/changes?since=0&limit=10 under a held write lock and asserts OK within 2 seconds with 2 changes.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(watch.Elapsed).IsLessThan(TimeSpan.FromSeconds(2));"
+     ]
+    },
+    {
+     "key": "changesendpoint-page-envelope",
+     "text": "ChangesEndpoint_ServesPagesAndRejectsBadInput asserts the JSON page reports from 0, to 2, next 2, truncated true and reset false.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(root.GetProperty(\"next\").GetInt64()).IsEqualTo(2L);"
+     ]
+    },
+    {
+     "key": "changesendpoint-row-fields",
+     "text": "ChangesEndpoint_ServesPagesAndRejectsBadInput asserts the first row has subject_id s1 and subject_name n-s1 with fact_id null.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(row.GetProperty(\"subject_name\").GetString()).IsEqualTo(\"n-s1\");"
+     ]
+    },
+    {
+     "key": "changesendpoint-last-query",
+     "text": "ChangesEndpoint_ServesPagesAndRejectsBadInput asserts the last=1 query answers OK with next 3 and a single change row.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(lastDocument.RootElement.GetProperty(\"changes\").GetArrayLength()).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "changesendpoint-limit-clamped",
+     "text": "ChangesEndpoint_ServesPagesAndRejectsBadInput asserts limit 100000 and limit 0 are clamped rather than rejected, both answering OK.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "var clamped = await http.GetAsync(\"/api/changes?since=0&limit=100000\");"
+     ]
+    },
+    {
+     "key": "changesendpoint-bad-input",
+     "text": "ChangesEndpoint_ServesPagesAndRejectsBadInput asserts malformed since, limit and last values get BadRequest containing invalid_request, while a POST gets MethodNotAllowed.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.BadRequest);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::DropTriggers",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "droptriggers-all-pairs",
+     "text": "DropTriggers drops the trg_ table and operation trigger pairs for every entry in Tables and Ops.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "Exec(store, $\"DROP TRIGGER IF EXISTS trg_{table}_{op}\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::CreateLegacyTriggers",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "createlegacytriggers-revision-only",
+     "text": "CreateLegacyTriggers installs the pre-journal trigger body that only seeds and increments the revision meta row.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "INSERT INTO meta(key, value) SELECT 'revision', '0' WHERE NOT EXISTS"
+     ]
+    },
+    {
+     "key": "createlegacytriggers-copied",
+     "text": "CreateLegacyTriggers exists so the upgrade test does not depend on production code, per its doc comment.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "The pre-journal trigger body, copied here so the upgrade test does not depend on production code."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::Journal",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "journal-selects-ordered",
+     "text": "Journal reads seq, tbl and op from changes ordered by seq into a list of tuples.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "command.CommandText = \"SELECT seq, tbl, op FROM changes ORDER BY seq\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::TriggerSql",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "triggersql-concatenates",
+     "text": "TriggerSql concatenates the name and sql of every trg_ trigger in sqlite_master, ordered by name.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "SELECT group_concat(name || ':' || sql, char(10)) FROM (SELECT name, sql FROM sqlite_master"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "ChangeStreamTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "stream-sendschanges-first-id-null",
+     "text": "Stream_SendsChangesAfterTheRevision reads a first frame named revision whose SSE id is null.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(baseline[0].Id).IsNull();"
+     ]
+    },
+    {
+     "key": "stream-sendschanges-frame-cursor",
+     "text": "Stream_SendsChangesAfterTheRevision asserts a changes frame carries the next cursor as its SSE id and the new fact text beta.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(Long(frames[1].Id)).IsEqualTo(next);"
+     ]
+    },
+    {
+     "key": "stream-sendschanges-fact-payload",
+     "text": "Stream_SendsChangesAfterTheRevision expects the change row to name actor dossier-cli on the facts insert.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(change.GetProperty(\"actor\").GetString()).IsEqualTo(\"dossier-cli\");"
+     ]
+    },
+    {
+     "key": "stream-resumes-header-wins",
+     "text": "Stream_ResumesFromLastEventId reconnects with since=0 and a Last-Event-ID header to prove the header wins over the query.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "request.Headers.TryAddWithoutValidation(\"Last-Event-ID\", cursor.ToString(CultureInfo.InvariantCulture));"
+     ]
+    },
+    {
+     "key": "stream-resumes-first-new-seq",
+     "text": "Stream_ResumesFromLastEventId asserts the resumed changes frame starts at the cursor and its first seq is cursor plus one.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(body.GetProperty(\"from\").GetInt64()).IsEqualTo(cursor);"
+     ]
+    },
+    {
+     "key": "stream-since-replays-range",
+     "text": "Stream_SinceReplaysHistory connects with since=0 and no later write, then asserts the replay runs from 0 to the head revision.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(body.GetProperty(\"to\").GetInt64()).IsEqualTo(head);"
+     ]
+    },
+    {
+     "key": "stream-since-replays-order",
+     "text": "Stream_SinceReplaysHistory asserts the replayed rows carry the texts alpha, beta and gamma in that order.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      ".SequenceEqual(new List<string?> { \"alpha\", \"beta\", \"gamma\" })).IsTrue();"
+     ]
+    },
+    {
+     "key": "stream-drains-page-sizes",
+     "text": "Stream_DrainsBeyondOnePage posts 450 facts in one transaction and asserts changes pages of 200, 200 and 50 rows.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "sizes.SequenceEqual(new[] { 200, 200, 50 })"
+     ]
+    },
+    {
+     "key": "stream-drains-contiguous-cursors",
+     "text": "Stream_DrainsBeyondOnePage asserts each changes frame starts at the previous cursor and the last cursor is baseline plus 450.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(cursor).IsEqualTo(baseline + 450);"
+     ]
+    },
+    {
+     "key": "stream-retention-sends-reset",
+     "text": "Stream_ResetsWhenThePointFellOutOfRetention prunes with retention 5 and slack 1, then asserts the second frame is a reset.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(frames[1].Name).IsEqualTo(\"reset\");"
+     ]
+    },
+    {
+     "key": "stream-retention-reset-cursor",
+     "text": "Stream_ResetsWhenThePointFellOutOfRetention asserts the reset frame data equals the store revision the first frame reported.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(Long(string.Join(\"\\n\", frames[1].Data))).IsEqualTo(revision);"
+     ]
+    },
+    {
+     "key": "stream-drain-cap-resets",
+     "text": "Stream_ResetsBeyondTheDrainCap posts 5001 facts and asserts 25 changes pages of 200 rows end in a reset frame.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(pages.All(frame => frame.Body.GetProperty(\"changes\").GetArrayLength() == 200)).IsTrue();"
+     ]
+    },
+    {
+     "key": "stream-empty-tick-no-changes",
+     "text": "Stream_EmptyTickSendsNoChangesFrame injects a revision past the journal and asserts the tick sends a revision frame and no changes frame.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(bumped[0].Name).IsEqualTo(\"revision\");"
+     ]
+    },
+    {
+     "key": "stream-empty-tick-keeps-cursor",
+     "text": "Stream_EmptyTickSendsNoChangesFrame asserts an empty page leaves the journal cursor fixed so the next real write is delivered from it.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(after[1].Body.GetProperty(\"from\").GetInt64()).IsEqualTo(from);"
+     ]
+    },
+    {
+     "key": "stream-retry-via-keepalive",
+     "text": "Stream_RetriesAFailedJournalReadWithoutANewWrite injects one SqliteException with code 5 and relies on a 100 millisecond keepalive to retry the read.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "? throw new SqliteException(\"injected journal failure\", 5)"
+     ]
+    },
+    {
+     "key": "stream-retry-failed-once",
+     "text": "Stream_RetriesAFailedJournalReadWithoutANewWrite asserts the injected read failed exactly once while the retry still delivers the page.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(Volatile.Read(ref failed)).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "stream-survives-read-failure",
+     "text": "Stream_SurvivesJournalReadFailure makes the first journal read throw and asserts a later tick still delivers the beta write.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "await Assert.That(frames[1].Body.GetProperty(\"changes\")[0].GetProperty(\"text\").GetString()).IsEqualTo(\"beta\");"
+     ]
+    },
+    {
+     "key": "pollinterval-twenty-ms",
+     "text": "PollInterval fixes the stream tests' server poll at 20 milliseconds.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "private static readonly TimeSpan PollInterval = TimeSpan.FromMilliseconds(20);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs::WaitUntilAsync",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "facts": [
+    {
+     "key": "waituntil-five-second-deadline",
+     "text": "WaitUntilAsync polls its condition every 10 milliseconds and throws a TimeoutException once 5 seconds have passed.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(5);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs::ReadFramesAsync",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "facts": [
+    {
+     "key": "readframes-line-timeout",
+     "text": "ReadFramesAsync reads each line under a 20 second timeout and throws when the stream ends short of the wanted frames.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "var line = await reader.ReadLineAsync(token).AsTask().WaitAsync(TimeSpan.FromSeconds(20), token);"
+     ]
+    },
+    {
+     "key": "readframes-skips-comments",
+     "text": "ReadFramesAsync skips SSE comment lines, which start with a colon, and closes a frame on a blank line.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "if (line.StartsWith(':'))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs::SseFrame",
+   "kind": "type",
+   "parent": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "facts": [
+    {
+     "key": "sseframe-body-json",
+     "text": "The SseFrame Body property joins its data lines with newlines and parses the result as JSON.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "public JsonElement Body => JsonDocument.Parse(string.Join(\"\\n\", Data)).RootElement;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs::Long",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "facts": [
+    {
+     "key": "long-invariant-parse",
+     "text": "Long parses an SSE value as an invariant-culture integer and throws when the value is missing.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "long.Parse(text ?? throw new InvalidOperationException(\"missing value\"), NumberStyles.Integer, CultureInfo.InvariantCulture);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeStreamTests.cs::Client",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeStreamTests.cs",
+   "facts": [
+    {
+     "key": "client-loopback-base",
+     "text": "Client builds an HttpClient pointed at http://127.0.0.1 on the running server's port.",
+     "at": [
+      "tests/Dossier.Tests/ChangeStreamTests.cs",
+      "new() { BaseAddress = new Uri($\"http://127.0.0.1:{server.Port}/\") };"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::Exec",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "exec-run-nonquery",
+     "text": "Exec opens a store connection and runs the given SQL through ExecuteNonQuery.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "command.ExecuteNonQuery();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::Count",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "count-delegates-fixtures",
+     "text": "Count opens a store connection and delegates the scalar query to Fixtures.Count.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "return Fixtures.Count(connection, sql);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::RawSubject",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "rawsubject-fixed-name",
+     "text": "RawSubject inserts a subjects row whose name is n- prefixed with the id and whose kind is k.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "INSERT INTO subjects(id, name, kind, created_at) VALUES('{id}','n-{id}','k','t')"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::HoldWriteLock",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "holdwritelock-begin-immediate",
+     "text": "HoldWriteLock takes the write lock by running BEGIN IMMEDIATE on the supplied connection.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "begin.CommandText = \"BEGIN IMMEDIATE\";"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/ChangeLogTests.cs::ReleaseWriteLock",
+   "kind": "function",
+   "parent": "tests/Dossier.Tests/ChangeLogTests.cs",
+   "facts": [
+    {
+     "key": "releasewritelock-rollback",
+     "text": "ReleaseWriteLock rolls the held transaction back with ROLLBACK.",
+     "at": [
+      "tests/Dossier.Tests/ChangeLogTests.cs",
+      "rollback.CommandText = \"ROLLBACK\";"
+     ]
+    }
+   ]
+  }
+ ]
+}

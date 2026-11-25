@@ -93,6 +93,9 @@ public sealed class FactResult
     public string Status { get; set; } = string.Empty;
     public string? Replaced { get; set; }
     public string? DuplicateOf { get; set; }
+
+    /// <summary>Ids of live facts this post superseded through a <c>supersedes</c> ref; null when none did.</summary>
+    public List<string>? Superseded { get; set; }
 }
 
 /// <summary>An item the write path rejected; the rest of the batch still commits.</summary>

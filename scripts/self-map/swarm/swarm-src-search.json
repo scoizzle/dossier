@@ -1,0 +1,596 @@
+{
+ "agent": "swarm-src-search",
+ "slice": "src-search",
+ "subjects": [
+  {
+   "name": "DossierStore.Search",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "limit-clamp",
+     "text": "search clamps the limit into 1 through 100, defaulting to 20 when the request omits it.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "Math.Clamp(request.Limit ?? DefaultLimit, 1, MaxLimit)"
+     ]
+    },
+    {
+     "key": "invalid-direction",
+     "text": "A direction other than in or out raises invalid_direction before any SQL runs.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (direction is not null && direction is not (\"in\" or \"out\"))"
+     ]
+    },
+    {
+     "key": "empty-subject-ids",
+     "text": "A subject filter that resolves to no subject ids returns an empty response instead of raising an error.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "return EmptyResponse();"
+     ]
+    },
+    {
+     "key": "tag-json-each",
+     "text": "The tag filter matches a fact when its tags JSON array contains the value, using json_each.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "EXISTS (SELECT 1 FROM json_each(f.tags) je WHERE je.value = $tag)"
+     ]
+    },
+    {
+     "key": "since-julianday",
+     "text": "The since filter compares julianday of created_at against julianday of the since value.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "julianday(f.created_at) >= julianday($since)"
+     ]
+    },
+    {
+     "key": "ref-target-reverse",
+     "text": "With ref_target and no out direction, the filter requires a refs row of the fact whose target equals the value.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "EXISTS (SELECT 1 FROM refs r WHERE r.fact_id = f.id AND r.target = $refTarget)"
+     ]
+    },
+    {
+     "key": "q-bm25-weights",
+     "text": "A non-blank q joins facts_fts, adds a MATCH condition and scores with bm25 weights 10 for text and 3 for tags.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "bm25(facts_fts, 10.0, 3.0)"
+     ]
+    },
+    {
+     "key": "invalid-query",
+     "text": "A SqliteException raised during a q search becomes invalid_query with a message saying q is not a valid FTS5 query.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "q is not a valid FTS5 query"
+     ]
+    },
+    {
+     "key": "total-count",
+     "text": "total is a COUNT over the inner query with the cursor condition applied, counted before the page limit.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "SELECT COUNT(*) FROM ({inner}) t{outerWhere}"
+     ]
+    },
+    {
+     "key": "complete-meaning",
+     "text": "complete is true when total is less than or equal to the number of hits returned on the page.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "var complete = total <= hits.Count;"
+     ]
+    },
+    {
+     "key": "next-cursor",
+     "text": "Next is null when the page is complete or empty, otherwise it encodes the last row's created_at, id and score.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "EncodeCursor(page[^1].CreatedAt, page[^1].Id, page[^1].Score)"
+     ]
+    },
+    {
+     "key": "derived-hit-status",
+     "text": "A hit involved in a currency ref reports its derived status; otherwise it is live unless stored superseded or retracted.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "hit.Status is StatusSuperseded or StatusRetracted ? hit.Status"
+     ]
+    },
+    {
+     "key": "cursor-no-score",
+     "text": "A cursor without a score, replayed against a q search, raises invalid_cursor.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "cursor is not a search cursor for a q search"
+     ]
+    },
+    {
+     "key": "order-by-score",
+     "text": "Hits order by score, created_at and id when q is present, and by created_at and id otherwise.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "t.score ASC, t.created_at ASC, t.id ASC"
+     ]
+    },
+    {
+     "key": "cursor-keyset-score",
+     "text": "A page after a q cursor keeps rows whose score is greater, or equal with a later created_at or id.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "(t.score > $cursorScore OR (t.score = $cursorScore AND "
+     ]
+    },
+    {
+     "key": "actor-filter",
+     "text": "An actor filter compares json_extract of the provenance actor against the value for exact equality.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "json_extract(f.provenance, '$.actor') = $actor"
+     ]
+    },
+    {
+     "key": "derived-membership",
+     "text": "A live or stale status filter adds a json_each membership test over the derived ids, which the count reuses.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "f.id NOT IN (SELECT value FROM json_each($derived))"
+     ]
+    },
+    {
+     "key": "derived-status-match",
+     "text": "A stale or contested filter keeps only derived entries whose status equals the requested status.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "derived.Where(entry => entry.Status == request.Status)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.LiteralizeQuery",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "unterminated-quote",
+     "text": "An unterminated quoted string in q is copied through unchanged for FTS5 to reject.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "never closes is left for FTS5 to reject"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::AppendTerm",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "column-filter-kept",
+     "text": "AppendTerm keeps a leading text: or tags: column filter unquoted and quotes only the value after it.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "term[column.Length] == ':' && term.StartsWith(column"
+     ]
+    },
+    {
+     "key": "trailing-star",
+     "text": "A single trailing asterisk is removed before the term is quoted and appended again afterwards.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "var prefix = term.Length > 1 && term[^1] == '*';"
+     ]
+    },
+    {
+     "key": "quote-mixed-term",
+     "text": "A term is quoted only when it mixes a word character with a character FTS5 would parse.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (hasWord && hasOther)"
+     ]
+    },
+    {
+     "key": "word-chars",
+     "text": "AppendTerm counts letters, digits, underscore and any character at or above 0x80 as word characters.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (char.IsLetterOrDigit(value) || value == '_' || value >= 0x80)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.SearchBrief",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "brief-truncate",
+     "text": "SearchBrief cuts text longer than 120 characters and appends an ellipsis character.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "hit.Text.Length > BriefTextLength"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ResolveSubjects",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "empty-q",
+     "text": "ResolveSubjects returns an empty list when q normalises to an empty string.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (wanted.Length == 0)"
+     ]
+    },
+    {
+     "key": "rank-order",
+     "text": "Matches are ranked exact_name, exact_alias, prefix then fuzzy, tie-broken by name then id.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "name == wanted ? (0, \"exact_name\")"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::ResolveOutgoingSeeds",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "symbol-not-internal",
+     "text": "A ref_target that appears as a symbol ref raises ref_target_not_internal instead of resolving to facts.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (IsSymbolTarget(connection, refTarget))"
+     ]
+    },
+    {
+     "key": "external-rejected",
+     "text": "An external-looking ref_target raises ref_target_not_internal rather than returning an empty list.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (LooksExternal(refTarget))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::ResolveSlotTarget",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "split-at-hash",
+     "text": "A slot target splits at the first # into subject and key and returns that slot's fact ids ordered by fact id.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "SELECT fact_id FROM slots WHERE subject_id = $subject AND key = $key ORDER BY fact_id"
+     ]
+    },
+    {
+     "key": "malformed-target",
+     "text": "A slot target with no subject part before the #, or with nothing after it, resolves to no fact ids.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (hash <= 0 || hash == target.Length - 1)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::RefineHint",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "all-set-message",
+     "text": "RefineHint says add a more specific q when every filter it checks is already set.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "add a more specific q"
+     ]
+    },
+    {
+     "key": "unused-list",
+     "text": "RefineHint only reports subject, kind, tag, status, q and ref_target as filters that could be narrowed.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "unused.Add(\"subject\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::EncodeCursor",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "base64url",
+     "text": "EncodeCursor base64-encodes the cursor JSON, trims the = padding and maps plus and slash to dash and underscore.",
+     "at": [
+      "src/Dossier/Search.cs",
+      ".TrimEnd('=')"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::DecodeCursor",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "empty-parts",
+     "text": "DecodeCursor raises invalid_cursor when the decoded state is null or its created_at or id part is empty.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (state is null || string.IsNullOrEmpty(state.C) || string.IsNullOrEmpty(state.I))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::LooksExternal",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "uri-scheme",
+     "text": "LooksExternal treats a target containing a :// separator, or starting with a URI scheme, as external.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "if (target.Contains(\"://\", StringComparison.Ordinal))"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::ResolveSubjectIds",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "id-or-normalized",
+     "text": "ResolveSubjectIds matches a subject id by ordinal equality, or a name or alias by normalized equality.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "string.Equals(id, value, StringComparison.Ordinal)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::IsFuzzy",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "fuzzy-rule",
+     "text": "A candidate is fuzzy when a q of at least 3 characters is a substring, or the edit distance is within a third of the longer length.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "wanted.Length >= 3 && candidate.Contains(wanted"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.Check",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "invalid-request",
+     "text": "Check raises invalid_request when the subject normalises to an empty string.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "if (Names.Normalize(text).Length == 0)"
+     ]
+    },
+    {
+     "key": "exact-id-first",
+     "text": "An exact subject id match is removed from the resolved matches and inserted at the front.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "matches.RemoveAll(m => m.Id == exactId.Id);"
+     ]
+    },
+    {
+     "key": "guid-fail-closed",
+     "text": "A GUID-shaped subject with no matches raises subject_not_found instead of creating a subject.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "if (matches.Count == 0 && looksLikeId)"
+     ]
+    },
+    {
+     "key": "others-limit",
+     "text": "Others is filled only when the limit exceeds 1, taking the matches after the first up to limit minus one.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "var limit = request.Limit ?? 1;"
+     ]
+    },
+    {
+     "key": "summary-top",
+     "text": "The summary Top list takes the best-ranked candidates, labelling each with its key or id and one-line text.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "ranked.Take(CheckTopCount)"
+     ]
+    },
+    {
+     "key": "score-recency",
+     "text": "Check scores the candidates with an empty tag list and the default recency weight before ranking them.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "ScoreCandidates(connection, candidates, new List<string>(), DefaultRecencyWeight);"
+     ]
+    },
+    {
+     "key": "summary-facts",
+     "text": "The summary Facts count is the number of loaded candidates and Conflicts is the FindConflicts count.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Conflicts = FindConflicts(candidates, response.Subject.Id).Count,"
+     ]
+    },
+    {
+     "key": "exact-id-label",
+     "text": "A subject matched by its exact id is labelled exact_id.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Match = \"exact_id\","
+     ]
+    },
+    {
+     "key": "drafts-by-name",
+     "text": "Drafts are judged against the subject text when no subject match was found.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Subject = subject is not null ? new SubjectInput { Id = subject.Id } : new SubjectInput { Name = subjectText },"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Check.cs::JudgeDrafts",
+   "kind": "method",
+   "parent": "src/Dossier/Check.cs",
+   "facts": [
+    {
+     "key": "dry-run-post",
+     "text": "JudgeDrafts calls PostFacts with DryRun true so each verdict is what a real post would produce.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "DryRun = true,"
+     ]
+    },
+    {
+     "key": "error-skips-result",
+     "text": "A draft with a post error gets status error carrying the PostError, and no result is dequeued for it.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "Status = \"error\", Error = error"
+     ]
+    },
+    {
+     "key": "near-filters",
+     "text": "Near keeps only live candidates that are not the duplicate-of or replaced id and score at least CheckNearThreshold.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "p.Similarity >= CheckNearThreshold"
+     ]
+    },
+    {
+     "key": "near-order",
+     "text": "Near is ordered by descending similarity then id and cut to CheckNearCount entries.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "OrderByDescending(p => p.Similarity)"
+     ]
+    },
+    {
+     "key": "near-needs-tokens",
+     "text": "Near is left empty when the draft text tokenises to no tokens.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "if (tokens.Count > 0)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "DossierStore.ParseDrafts",
+   "kind": "method",
+   "parent": "DossierStore",
+   "aliases": [],
+   "facts": [
+    {
+     "key": "shape-check",
+     "text": "ParseDrafts accepts an object with a facts property or a bare JSON array and throws ArgumentException otherwise.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "if (element.ValueKind != JsonValueKind.Array)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Check.cs",
+   "kind": "file",
+   "parent": "Dossier/Source",
+   "aliases": [
+    "Check.cs"
+   ],
+   "facts": [
+    {
+     "key": "near-threshold-value",
+     "text": "CheckNearThreshold, the similarity a near candidate must reach, is 0.85.",
+     "at": [
+      "src/Dossier/Check.cs",
+      "private const double CheckNearThreshold = 0.85;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::EmptyResponse",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "empty-hits",
+     "text": "EmptyResponse returns an empty hit list.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "Hits = new List<FactView>(),"
+     ]
+    },
+    {
+     "key": "empty-complete",
+     "text": "EmptyResponse marks the response complete even though it carries no hits.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "Complete = true,"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "src/Dossier/Search.cs::ResolveOutgoingFacts",
+   "kind": "method",
+   "parent": "src/Dossier/Search.cs",
+   "facts": [
+    {
+     "key": "refs-by-seq",
+     "text": "The outgoing lookup reads a seed's refs rows ordered by seq.",
+     "at": [
+      "src/Dossier/Search.cs",
+      "SELECT kind, target FROM refs WHERE fact_id = $seed ORDER BY seq"
+     ]
+    }
+   ]
+  }
+ ]
+}

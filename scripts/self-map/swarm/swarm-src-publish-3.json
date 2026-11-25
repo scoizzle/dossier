@@ -1,0 +1,665 @@
+{
+ "agent": "swarm-src-publish-3",
+ "slice": "src-publish-3",
+ "subjects": [
+  {
+   "name": "Publish.cs::BuildIndexFiles",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "child-order",
+     "text": "BuildIndexFiles orders each node's children by Names.Normalize of the segment and then by the segment, both ordinal.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "OrderBy(c => Names.Normalize(c.Segment), StringComparer.Ordinal)"
+     ]
+    },
+    {
+     "key": "conflict-gap-rollup",
+     "text": "A node's Conflicts and Gaps are the sum over its own subjects plus its children's totals, computed in the local Finish walk.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "dossiers[s.Id].Conflicts.Count) + n.Children.Sum(c => c.Conflicts"
+     ]
+    },
+    {
+     "key": "slug-collision-suffix",
+     "text": "A group slug that is already taken is retried with a -2, -3 suffix until the slug is unique.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "candidate = baseSlug + \"-\" + i.ToString(CultureInfo.InvariantCulture)"
+     ]
+    },
+    {
+     "key": "cap-warning",
+     "text": "Put records a warning that an index file over --index-max-tokens cannot be split further.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "it cannot be split further"
+     ]
+    },
+    {
+     "key": "part-folders",
+     "text": "BucketLeaves packs leaf children into synthetic folders named part-1, part-2 and so on, one index file per part.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var segment = \"part-\" + (buckets.Count + 1)"
+     ]
+    },
+    {
+     "key": "bucket-empty-return",
+     "text": "BucketLeaves returns without doing anything when the node has no leaf children.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (leaves.Count == 0)"
+     ]
+    },
+    {
+     "key": "emit-split",
+     "text": "Emit writes the full render when it fits the cap and otherwise emits non-leaf children first, then writes a flat render.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (EstimateTokens(full) <= cap)"
+     ]
+    },
+    {
+     "key": "root-stabilize",
+     "text": "RenderRoot re-renders the root at most 6 times so the largest-index token figure it states is stable.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var next = Math.Max(othersMax, EstimateTokens(text));"
+     ]
+    },
+    {
+     "key": "root-heading",
+     "text": "The root index opens with the heading Index, while any other index file is titled Index: followed by its path.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(\"# Index: \")"
+     ]
+    },
+    {
+     "key": "table-columns",
+     "text": "Every index file writes one table whose columns are subject, kind, facts, conflicts, gaps, tokens and file.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(\"| subject | kind | facts | conflicts | gaps | tokens | file |\\n\");"
+     ]
+    },
+    {
+     "key": "token-estimate",
+     "text": "A row's tokens cell is the chars/4, rounded-up estimate of the cost of reading that row's file.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "the estimated cost (chars/4, rounded up)"
+     ]
+    },
+    {
+     "key": "group-row-link",
+     "text": "A group row links to the child's FilePath at the root and to the child slug plus .md inside a sub-index.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var target = isRoot ? group.FilePath : group.FileSlug + \".md\";"
+     ]
+    },
+    {
+     "key": "root-totals",
+     "text": "Only the root index ends with a Totals section listing subjects, facts, conflicts, gaps, subject-file tokens and the count and largest size of index files.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(\"## Totals\\n\\n\");"
+     ]
+    },
+    {
+     "key": "up-link",
+     "text": "A non-root index ends with an Up link to its parent file, or to ../INDEX.md when the parent is the root.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var upTarget = up.Parent is null ? \"../INDEX.md\" : up.FileSlug + \".md\";"
+     ]
+    },
+    {
+     "key": "totals-subject-tokens",
+     "text": "The root Totals subject-file token line is fed from subjectTokens summed over every subject, not the row estimates.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var totalSubjectTokens = subjectTokens.Values.Sum();"
+     ]
+    },
+    {
+     "key": "no-conflicts-line",
+     "text": "The no-conflicts fallback in the root index says None and links to conflicts.md instead of listing subjects.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(\"None. See [conflicts.md](conflicts.md).\\n\");"
+     ]
+    },
+    {
+     "key": "flat-group-rows",
+     "text": "A group index file is flat, so its own subject rows and its leaf children's rows are all written without indentation.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "// A group file is flat: every row is an immediate child, so none is indented."
+     ]
+    },
+    {
+     "key": "bucket-rollback",
+     "text": "When a child would push a part over the cap, BucketLeaves removes it from that part and starts a fresh part with it.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "// This child pushes the file over the cap: start a new part with it."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::RenderAgentsFile",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "shard-bundle-shape",
+     "text": "In shard mode RenderAgentsFile says the bundle was published in shard mode and has no subjects directories, fact files or asset files.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "This bundle was published in shard mode (`--respect-limits`)."
+     ]
+    },
+    {
+     "key": "nonshard-drilldown",
+     "text": "The non-shard AGENTS.md gives the drill-down path as AGENTS.md, INDEX.md, index groups, subjects slug index.md, then a fact file.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "subjects/<slug>/index.md -> subjects/<slug>/facts/<key>.md"
+     ]
+    },
+    {
+     "key": "start-here",
+     "text": "RenderAgentsFile always points the reader to INDEX.md as the starting file.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "b.Append(\"Start here: [INDEX.md](INDEX.md)\\n\\n\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::BuildReadme",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "timestamp-kept",
+     "text": "The README says the timestamp is kept as-is while the content is unchanged, so republishing identical inputs rewrites nothing.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "so republishing identical inputs rewrites nothing"
+     ]
+    },
+    {
+     "key": "budget-mode-line",
+     "text": "The README budget line describes complete mode as the highlight threshold with every fact listed and strict mode as a hard cutoff.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "strict mode: a hard cutoff"
+     ]
+    },
+    {
+     "key": "asset-naming",
+     "text": "An asset file name uses the first 8 hex characters of sha256 and a slugified stem of at most 40 characters.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "the first 8 hex characters of the blob's sha256"
+     ]
+    },
+    {
+     "key": "slug-limit",
+     "text": "A subject directory name is at most 80 characters and becomes subject when lowercasing and trimming leave nothing.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "at most 80 characters; `subject` if nothing is left"
+     ]
+    },
+    {
+     "key": "scope-line",
+     "text": "When a scope name is given the README describes it as that subject and its descendants.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "subject \" + CodeSpan(Inline(scopeName)) + \" and its descendants"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::BuildManifest",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "format-version",
+     "text": "The manifest root object carries a format field set to 1.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "[\"format\"] = 1,"
+     ]
+    },
+    {
+     "key": "options-block",
+     "text": "The manifest options object records assets, budget, budget_mode, depth, facts, index_max_tokens, subject and subject_id.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "[\"index_max_tokens\"] = options.IndexMaxTokens,"
+     ]
+    },
+    {
+     "key": "missing-asset-entry",
+     "text": "A missing asset records only missing true and sha256, with no bytes or mime keys.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "? new Dictionary<string, object?> { [\"missing\"] = true, [\"sha256\"] = asset.Sha }"
+     ]
+    },
+    {
+     "key": "subject-pin",
+     "text": "A subject's pin is written only when the pin is an object holding both a string repo and a string rev.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "&& pin.TryGetProperty(\"repo\", out var pinRepo) && pinRepo.ValueKind == JsonValueKind.String"
+     ]
+    },
+    {
+     "key": "subject-path-shard",
+     "text": "In shard mode a subject path is shards followed by its shard number and the subject slug as an anchor.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "$\"shards/{shardSet.ShardOf[subject.Id].ToString(CultureInfo.InvariantCulture)}.md#{slugs[subject.Id]}\""
+     ]
+    },
+    {
+     "key": "subject-parent",
+     "text": "A subject entry gains a parent key only when the parent id is non-null and has a slug in the map.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (subject.ParentId is not null && slugs.ContainsKey(subject.ParentId))"
+     ]
+    },
+    {
+     "key": "files-list",
+     "text": "The manifest file list appends BundleManifest to the generated files, removes duplicates and sorts ordinal.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var allFiles = generatedFiles.Append(BundleManifest).Distinct(StringComparer.Ordinal).OrderBy(p => p, StringComparer.Ordinal).ToList();"
+     ]
+    },
+    {
+     "key": "profile-options",
+     "text": "When a profile is present the options object gains profile as its name and respect_limits as whether a shard set exists.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "optionMap[\"respect_limits\"] = shardSet is not null;"
+     ]
+    },
+    {
+     "key": "shard-map",
+     "text": "The shards map is keyed shards/<n>.md starting at 1 and holds each shard's byte count and subject slugs.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var path = $\"shards/{(i + 1).ToString(CultureInfo.InvariantCulture)}.md\";"
+     ]
+    },
+    {
+     "key": "trailing-newline",
+     "text": "BuildManifest returns the JSON text with one trailing newline appended.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "return Utf8NoBom.GetString(stream.ToArray()) + \"\\n\";"
+     ]
+    },
+    {
+     "key": "index-entry-tokens",
+     "text": "Each index path in the manifest is mapped to its token estimate from the tokens dictionary.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "indexEntries[path] = tokens[path];"
+     ]
+    },
+    {
+     "key": "fact-map-entries",
+     "text": "Each manifest fact entry holds its id, its path and the slug of its subject.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "[\"subject_slug\"] = slugs[fact.SubjectId],"
+     ]
+    },
+    {
+     "key": "shard-bytes",
+     "text": "Each shard entry's bytes value is the UTF-8 byte count of that shard's text.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "[\"bytes\"] = (long)Utf8NoBom.GetByteCount(shardSet.Files[path]),"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::WriteSorted",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "sorted-keys",
+     "text": "WriteSorted writes object keys ordered by ordinal string comparison, which makes the manifest output stable.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "foreach (var key in map.Keys.OrderBy(k => k, StringComparer.Ordinal))"
+     ]
+    },
+    {
+     "key": "unsupported-value",
+     "text": "WriteSorted throws InvalidOperationException naming an unsupported manifest value for any other type.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "throw new InvalidOperationException($\"unsupported manifest value {value.GetType()}\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::HashFiles",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "hash-input-format",
+     "text": "HashFiles feeds each path, its content length and its content, each followed by a NUL byte, into the hash.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "builder.Append(path).Append('\\0').Append(content.Length.ToString(CultureInfo.InvariantCulture))"
+     ]
+    },
+    {
+     "key": "asset-hash-input",
+     "text": "Each asset contributes the literal asset, its path, its sha and either missing or present to the hash input.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "builder.Append(\"asset\\0\").Append(asset.Path).Append('\\0').Append(asset.Sha)"
+     ]
+    },
+    {
+     "key": "lowercase-hex",
+     "text": "The bundle hash is the SHA256 digest rendered as lowercase hex.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "return Convert.ToHexString(SHA256.HashData(Utf8NoBom.GetBytes(builder.ToString()))).ToLowerInvariant();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::ReadPreviousManifest",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "absent-null",
+     "text": "ReadPreviousManifest returns null when manifest.json does not exist in the output directory.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (!File.Exists(path))"
+     ]
+    },
+    {
+     "key": "parse-failure-null",
+     "text": "ReadPreviousManifest returns null when the previous manifest fails to parse as JSON.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "catch (JsonException)"
+     ]
+    },
+    {
+     "key": "reads-hash-and-files",
+     "text": "ReadPreviousManifest returns the bundle_hash string and every string entry of the files array.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var hash = root.TryGetProperty(\"bundle_hash\", out var h) && h.ValueKind == JsonValueKind.String ? h.GetString()! : string.Empty;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::ReadPreviousTimestamp",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "regex-on-readme",
+     "text": "ReadPreviousTimestamp reads README.md and extracts the Generated at value with a multiline anchored regex.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var match = Regex.Match(File.ReadAllText(path, Utf8NoBom), @\"^- Generated at: `(\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\dZ)`$\", RegexOptions.Multiline);"
+     ]
+    },
+    {
+     "key": "missing-readme-null",
+     "text": "ReadPreviousTimestamp returns null when README.md is absent from the output directory.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var path = Path.Combine(outDir, \"README.md\");"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::SynthesizeCommandLine",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "always-options",
+     "text": "SynthesizeCommandLine always includes budget, budget-mode, depth, facts, assets and index-max-tokens after the out path.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "line += \" --budget \" + options.Budget.ToString(CultureInfo.InvariantCulture) + \" --budget-mode \" + options.BudgetMode"
+     ]
+    },
+    {
+     "key": "respect-limits-last",
+     "text": "The respect-limits flag is appended last, and only when the options set it.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "return options.RespectLimits ? line + \" --respect-limits\" : line;"
+     ]
+    },
+    {
+     "key": "subject-flag",
+     "text": "The synthesized command line puts the subject flag and its value before the budget options.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "line += \" --subject \" + options.Subject;"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::IsBundlePath",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "rejects-traversal",
+     "text": "IsBundlePath rejects an empty path, any path containing two dots or a backslash, and any path starting with a slash.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (relative.Length == 0 || relative.Contains(\"..\", StringComparison.Ordinal) || relative.Contains('\\\\') || relative.StartsWith('/'))"
+     ]
+    },
+    {
+     "key": "depth-one",
+     "text": "At depth one IsBundlePath accepts the five top-level markdown names, the manifest name, or a JSONL data file.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "|| JsonlDataFileRegex.IsMatch(relative),"
+     ]
+    },
+    {
+     "key": "depth-two",
+     "text": "At depth two IsBundlePath accepts subjects, facts, index or shards followed by an md name longer than three characters, or a JSONL asset path.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "2 => parts[0] is \"subjects\" or \"facts\" or \"index\" or \"shards\" && parts[1].EndsWith(\".md\", StringComparison.Ordinal) && parts[1].Length > 3"
+     ]
+    },
+    {
+     "key": "depth-four",
+     "text": "At depth four IsBundlePath accepts a fact path or an asset path matched by the compiled regexes.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "4 => FactPathRegex.IsMatch(relative) || AssetPathRegex.IsMatch(relative),"
+     ]
+    },
+    {
+     "key": "depth-three",
+     "text": "At depth three IsBundlePath accepts a legacy asset path or a subject index path.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "3 => LegacyAssetPathRegex.IsMatch(relative) || SubjectIndexPathRegex.IsMatch(relative),"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::WriteTextIfChanged",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "returns-zero-unchanged",
+     "text": "WriteTextIfChanged returns 0 and writes nothing when the existing file already holds the same text.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (File.Exists(full) && File.ReadAllText(full, Utf8NoBom) == content)"
+     ]
+    },
+    {
+     "key": "returns-one-written",
+     "text": "WriteTextIfChanged returns 1 after writing the file with UTF-8 without a BOM.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "File.WriteAllText(full, content, Utf8NoBom);"
+     ]
+    },
+    {
+     "key": "creates-directory",
+     "text": "WriteTextIfChanged creates the file's parent directory before comparing or writing.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Directory.CreateDirectory(Path.GetDirectoryName(full)!);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::WriteBundle",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "foreign-conflict",
+     "text": "WriteBundle throws a DossierRequestException with code publish_conflict before writing anything when a generated path holds a file the bundle never produced.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "\"publish_conflict\","
+     ]
+    },
+    {
+     "key": "manifest-exempt",
+     "text": "The manifest path is exempt from the foreign-file check, so a hand-edited manifest.json is allowed to be replaced.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (relative != BundleManifest"
+     ]
+    },
+    {
+     "key": "conflict-message",
+     "text": "The publish_conflict message lists the clashing paths and advises moving them or choosing another out directory.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "\"; move them or choose another --out\""
+     ]
+    },
+    {
+     "key": "binary-bytes-compare",
+     "text": "Binary JSONL files are compared and written as bytes and never through a text decode.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "// Binary files (JSONL data) are compared and written as bytes, never through a text decode."
+     ]
+    },
+    {
+     "key": "manifest-last",
+     "text": "The manifest is written last so an interrupted run never claims files that were not written.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "// Manifest last, so an interrupted run never claims files that were not written."
+     ]
+    },
+    {
+     "key": "remove-stale",
+     "text": "Files listed by the previous manifest but not produced this time are deleted in ordinal path order.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "foreach (var relative in previous.Where(p => !files.ContainsKey(p) && !binary.ContainsKey(p) && !assets.ContainsKey(p)).OrderBy(p => p, StringComparer.Ordinal))"
+     ]
+    },
+    {
+     "key": "prune-empty-dirs",
+     "text": "After deleting stale files WriteBundle deletes each emptied directory and walks up, stopping at the output directory itself.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "&& directory.Length > outDir.Length"
+     ]
+    },
+    {
+     "key": "result-file-list",
+     "text": "PublishResult files are the text, binary and asset keys combined and sorted ordinal.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "Files = files.Keys.Concat(binary.Keys).Concat(assets.Keys).OrderBy(p => p, StringComparer.Ordinal).ToList(),"
+     ]
+    },
+    {
+     "key": "asset-copy-only-changed",
+     "text": "An asset file is re-copied only when it is absent or its bytes differ from the blob.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "if (!File.Exists(full) || !SameBytes(full, source))"
+     ]
+    },
+    {
+     "key": "previous-bundle-paths",
+     "text": "WriteBundle filters the previous manifest's file list through IsBundlePath before pruning.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "var previous = previousFiles.Where(IsBundlePath).ToHashSet(StringComparer.Ordinal);"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Publish.cs::SameBytes",
+   "kind": "method",
+   "parent": "src/Dossier/Publish.cs",
+   "facts": [
+    {
+     "key": "length-first",
+     "text": "SameBytes compares the two file lengths first and returns false without reading bytes when they differ.",
+     "at": [
+      "src/Dossier/Publish.cs",
+      "new FileInfo(a).Length == new FileInfo(b).Length && File.ReadAllBytes(a).AsSpan().SequenceEqual(File.ReadAllBytes(b));"
+     ]
+    }
+   ]
+  }
+ ]
+}

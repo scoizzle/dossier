@@ -366,7 +366,7 @@ public sealed class WebServer : IDisposable
                     break;
 
                 case "/api/changes":
-                    Write(context, 200, "application/json", Ops.Serialize(ReadChangesPage(Q("since"), Q("limit"), Q("last"))));
+                    Write(context, 200, "application/json", ReadChangesPage(Q("since"), Q("limit"), Q("last"), Q("subject")));
                     break;
 
                 case "/api/search":
@@ -444,9 +444,11 @@ public sealed class WebServer : IDisposable
 
     /// <summary>
     /// <c>GET /api/changes</c>: <c>?since=N&amp;limit=L</c> (limit defaults to 100, clamped to 1..500) or
-    /// <c>?last=L</c> (the newest L rows). Anything unparseable is a 400 invalid_request.
+    /// <c>?last=L</c> (the newest L rows), optionally narrowed to one <c>subject</c>. It builds the same
+    /// <see cref="ChangesRequest"/> <see cref="Ops.Changes"/> serves over MCP and the CLI, so both
+    /// transports agree on what is valid; anything unparseable is a 400 invalid_request.
     /// </summary>
-    private ChangesPage ReadChangesPage(string? since, string? limit, string? last)
+    private string ReadChangesPage(string? since, string? limit, string? last, string? subject)
     {
         var style = System.Globalization.NumberStyles.Integer;
         var culture = System.Globalization.CultureInfo.InvariantCulture;
@@ -462,23 +464,29 @@ public sealed class WebServer : IDisposable
             count = parsed;
         }
 
+        int? newest = null;
         if (last is not null)
         {
-            if (!int.TryParse(last, style, culture, out var newest))
+            if (!int.TryParse(last, style, culture, out var parsed))
             {
                 throw new DossierRequestException("invalid_request", "last must be an integer");
             }
 
-            return store.ReadChangesLast(newest);
+            newest = parsed;
         }
 
-        long cursor = 0;
-        if (since is not null && (!long.TryParse(since, style, culture, out cursor) || cursor < 0))
+        long? cursor = null;
+        if (since is not null)
         {
-            throw new DossierRequestException("invalid_request", "since must be a non-negative integer");
+            if (!long.TryParse(since, style, culture, out var parsed))
+            {
+                throw new DossierRequestException("invalid_request", "since must be a non-negative integer");
+            }
+
+            cursor = parsed;
         }
 
-        return store.ReadChanges(cursor, count ?? 100);
+        return Ops.Changes(store, new ChangesRequest { Since = cursor, Last = newest, Limit = count, Subject = subject });
     }
 
     /// <summary>

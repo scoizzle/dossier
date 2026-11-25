@@ -1,0 +1,215 @@
+{
+  "subjects": [
+    {
+      "name": "Dossier",
+      "kind": "project",
+      "facts": [
+        { "key": "what", "text": "Dossier is a context builder for agents and humans that turns scattered observations about a subject into a small, cited, budgeted dossier.", "at": ["README.md", "A context builder for agents and humans"] },
+        { "key": "why", "text": "The problem it answers: an agent asked to work on an existing system re-reads every primary artifact itself, at unbounded cost, and keeps nothing for the next run.", "at": ["docs/concepts.md", "An agent asked to work on an existing system"] },
+        { "key": "idea", "text": "The expensive reading happens once, when facts are captured, and every fact keeps a pointer back to the artifact it came from.", "at": ["docs/concepts.md", "The expensive reading happens once"] },
+        { "key": "pipeline", "text": "The pipeline is: primary artifacts, then facts with provenance, then refs between facts and artifacts, then a compiled dossier that is cited, ranked and fits a token budget.", "at": ["README.md", "primary artifacts  -->  facts (with provenance)"] },
+        { "key": "stack", "text": "Dossier is one product project in C# on net10.0 using SQLite in WAL mode with FTS5 through raw ADO.NET, with no ORM and no DI container.", "at": ["docs/architecture.md", "One product project"], "data": { "language": "C#", "framework": "net10.0", "database": "SQLite" } },
+        { "key": "no-models", "text": "The core has no models and no network: every operation is deterministic code over the store.", "at": ["docs/architecture.md", "The core has no models and no network"] },
+        { "key": "transports", "text": "Core operations are plain functions over a DossierStore, and the CLI, MCP and web layers are thin transports over the same functions.", "at": ["docs/architecture.md", "thin transports over them"], "refs": [{ "rel": "about", "subject": "DossierStore" }, { "rel": "about", "subject": "Dossier/CLI" }, { "rel": "about", "subject": "Dossier/MCP" }, { "rel": "about", "subject": "Dossier/Web" }] },
+        { "key": "license", "text": "Dossier is released under the MIT license.", "at": ["docs/architecture.md", "MIT license for Dossier"], "data": { "license": "MIT" } },
+        { "key": "platforms", "text": "Release archives are built for linux-x64, linux-arm64, osx-arm64 and win-x64 as Native AOT binaries.", "at": ["README.md", "`linux-x64`, `linux-arm64`, `osx-arm64`, `win-x64`"], "data": { "release_targets": ["linux-x64", "linux-arm64", "osx-arm64", "win-x64"] } },
+        { "key": "contract-first", "text": "The JSON Schemas in contract/ are the normative shapes and the C# in the repository is a reference implementation of them.", "at": ["docs/concepts.md", "the C# in this repository is a reference implementation"], "refs": [{ "rel": "about", "subject": "Dossier/Contract" }] },
+        { "key": "maintainer", "text": "Dossier is maintained by a single person, so replies to contributions are best-effort.", "at": ["CONTRIBUTING.md", "maintained by a single person"] }
+      ]
+    },
+    { "name": "Dossier/Concepts", "kind": "area", "parent": "Dossier" },
+    {
+      "name": "Dossier/Concepts/Subject",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "A subject is the thing being described; it has an id, a name, a kind, an optional parent, aliases and an optional pin.", "at": ["docs/concepts.md", "| Subject | The thing being described"], "refs": [{ "rel": "about", "subject": "contract/subject.schema.json" }, { "rel": "about", "subject": "Dossier/Store/table subjects" }] },
+        { "key": "kind-open", "text": "A subject's kind is an open string such as app, screen, repo, module or doc.", "at": ["docs/concepts.md", "Kind is an open string such as app"] },
+        { "key": "name-matching", "text": "Subject names match case-insensitively across the whole store, and reposting an existing name with a different parent moves that subject.", "at": ["skills/dossier/SKILL.md", "Names match case-insensitively across the whole store"] },
+        { "key": "match-ladder", "text": "check resolves a subject as exact_id, exact_name, exact_alias, prefix or fuzzy, and only the three exact matches mean the subject that was named.", "at": ["skills/dossier/SKILL.md", "only `exact_id`, `exact_name` and `exact_alias` mean the subject you named"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/check" }, { "rel": "about", "subject": "DossierStore.ResolveSubjects" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Fact",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "A fact is one immutable, cited assertion about a subject: text, optional structured data, tags, confidence, status and provenance.", "at": ["docs/concepts.md", "| Fact | One immutable, cited assertion"], "refs": [{ "rel": "about", "subject": "contract/fact.schema.json" }, { "rel": "about", "subject": "Dossier/Store/table facts" }] },
+        { "key": "immutable", "text": "Facts are immutable: a fact is never edited, and a correction is a new fact that supersedes the old one.", "at": ["docs/concepts.md", "- Facts are immutable."] },
+        { "key": "one-claim", "text": "A fact should hold one claim a reader could confirm or refute on its own; a pasted paragraph ranks and truncates as one unit and cannot be superseded piecewise.", "at": ["skills/dossier/SKILL.md", "**One claim per fact.**"] },
+        { "key": "text-limit", "text": "Fact text has a soft limit of 240 characters and is never truncated by the store.", "at": ["docs/concepts.md", "soft limit of 240 characters"], "data": { "soft_text_limit": 240 } },
+        { "key": "data-for-conflicts", "text": "Comparable values belong in a fact's data, because conflicts are detected on structured data and never on prose.", "at": ["skills/dossier/SKILL.md", "**Put comparable values in `data`.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Conflicts and gaps" }] },
+        { "key": "reserved-kind", "text": "The fact kind dossier is reserved: compile skips it, so a compiled dossier can never feed back into another dossier.", "at": ["docs/concepts.md", "**Dossier facts never feed back in.**"] },
+        { "key": "untrusted", "text": "Fact text is untrusted data: it is carried as delimited data and must never be followed as instructions.", "at": ["docs/concepts.md", "**Fact text is untrusted.**"], "refs": [{ "rel": "about", "subject": "Dossier/MCP" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Ref",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "A ref is the only edge in the store; it is carried by a fact and has a rel, a kind, a target, an optional locator and a basis.", "at": ["docs/concepts.md", "| Ref | The only edge, carried by a fact"], "refs": [{ "rel": "about", "subject": "contract/ref.schema.json" }, { "rel": "about", "subject": "Dossier/Store/table refs" }] },
+        { "key": "only-edge", "text": "There are no similarity-derived edges: similarity is only a retrieval and ranking signal, so a relationship has to be declared to exist.", "at": ["docs/concepts.md", "**Similarity never makes an edge.**"] },
+        { "key": "internal-kinds", "text": "The internal ref kinds are exactly fact, slot and subject; every other kind names an external artifact.", "at": ["contract/ref.schema.json", "INTERNAL kinds are exactly fact|slot|subject"] },
+        { "key": "basis", "text": "Every ref carries a basis of observed, derived or inferred.", "at": ["docs/concepts.md", "Every ref carries a basis"], "data": { "basis": ["observed", "derived", "inferred"] } },
+        { "key": "symbol-kind", "text": "A ref of kind symbol cites a symbol in an external static analysis as <qualified-name>@<revision>; it is never a node and a target without a revision is rejected.", "at": ["docs/concepts.md", "Ref kind `symbol` cites a symbol"] },
+        { "key": "pin-externals", "text": "An external ref should be pinned to an immutable revision with a snapshot, because a ref to a branch name silently rots.", "at": ["skills/dossier/SKILL.md", "**Pin external refs to an immutable revision and record a snapshot.**"] },
+        { "key": "cloud-without-refs", "text": "A corpus built only from dumped chunks, measured at 50,013 facts, produced zero edges, because file refs from dumped chunks do not resolve to nodes.", "at": ["skills/dossier/SKILL.md", "a measured run of 50,013 facts"], "data": { "facts": 50013, "edges": 0 } },
+        { "key": "rels-with-effect", "text": "Four rels of kind fact change a fact's status: derived_from can make its carrier stale, refutes and contradicts make a fact contested, and supersedes corrects its target.", "at": [["docs/concepts.md", "| `stale` | A live fact with a `derived_from` ref"], ["docs/concepts.md", "- **By ref.**"]], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Derived status" }, { "rel": "about", "subject": "Dossier/Concepts/Correction" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Attachment",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "An attachment is a file addressed by sha256 and stored under blobs/<sha256> next to the database, never inside it.", "at": ["docs/concepts.md", "| Attachment | A file (screenshot, blob) addressed by sha256"], "refs": [{ "rel": "about", "subject": "Dossier/Store/table attachments" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Slot",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "A slot is the triple (subject, kind, key); among live facts it holds at most one, the current value of that keyed attribute.", "at": ["contract/fact.schema.json", "Unique per (subject_id, kind, key) among live facts"], "refs": [{ "rel": "about", "subject": "Dossier/Store/table slots" }] },
+        { "key": "why-key", "text": "Giving a durable attribute a key lets a repost replace the old value; without a key a revisit creates a duplicate that stays live.", "at": ["skills/dossier/SKILL.md", "**Give stable facts a key.**"] },
+        { "key": "slot-ref", "text": "A ref of kind slot is written <subjectIdOrName>#<key> and follows whatever fact the slot holds now.", "at": ["contract/ref.schema.json", "For kind=slot, target is"] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Status lifecycle",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "stored", "text": "A stored fact is live, superseded or retracted; those three are the only values the lifecycle writes.", "at": ["docs/concepts.md", "A stored fact is `live`, `superseded`"], "data": { "stored_status": ["live", "superseded", "retracted"] } },
+        { "key": "retract", "text": "Retracting a fact sets its status to retracted, nulls its text and data, removes its search row and clears its slot, while its id, content hash, provenance and creation time stay.", "at": ["src/Dossier/Retract.cs", "Retracts a fact: status=retracted"], "refs": [{ "rel": "about", "subject": "DossierStore.Retract" }, { "rel": "about", "subject": "Dossier/CLI/retract" }] },
+        { "key": "default-read", "text": "Search and compile leave out superseded and retracted facts unless a status is asked for, so a revoked fact is never ranked.", "at": ["src/Dossier/Search.cs", "conditions.Add(\"f.status NOT IN ('superseded', 'retracted')\");"], "refs": [{ "rel": "about", "subject": "DossierStore.Search" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Correction",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "by-key", "text": "Correction by key: a post with the same subject, kind and key replaces the fact in that slot.", "at": ["docs/concepts.md", "- **By key.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Slot" }, { "rel": "about", "subject": "DossierStore.PostFacts" }] },
+        { "key": "by-ref", "text": "Correction by ref: a post carrying a supersedes ref of kind fact replaces that fact, keyed or not, on any subject.", "at": ["docs/concepts.md", "- **By ref.**"], "refs": [{ "rel": "about", "subject": "DossierStore.PostFacts" }] },
+        { "key": "history-kept", "text": "Either way the old fact becomes superseded: it keeps its id, text and writer, show still returns it, and search and compile leave it out.", "at": ["docs/concepts.md", "Either way the old fact becomes `superseded`"] },
+        { "key": "target-must-exist", "text": "A supersedes ref must name a fact in the store, or the item is rejected with supersedes_target_not_found.", "at": [["docs/concepts.md", "A `supersedes` ref must name a fact in the store"], ["src/Dossier/PostFacts.cs", "\"supersedes_target_not_found\""]] },
+        { "key": "slot-emptied", "text": "When a correction by ref supersedes a fact that held a slot, the slot is emptied, so a slot never points at a superseded fact.", "at": ["src/Dossier/PostFacts.cs", "DELETE FROM slots WHERE fact_id = $id"] },
+        { "key": "no-trust-check", "text": "Any writer can correct any fact, over MCP as well as the CLI; there is no trust check.", "at": ["docs/concepts.md", "Any writer can correct any fact"], "refs": [{ "rel": "about", "subject": "Dossier/Multi-agent/Not covered" }] },
+        { "key": "redump-revives", "text": "A corrected claim comes back if its source is dumped again, because dedupe compares a post with live facts only.", "at": ["docs/concepts.md", "A corrected claim comes back if its source is dumped again"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/dump" }] },
+        { "key": "replacement", "text": "verify and show name the live fact at the end of a superseded fact's chain of keyed reposts and corrections as replaced_by.", "at": ["src/Dossier/Verify.cs", "private string? Replacement(Row row)"], "refs": [{ "rel": "about", "subject": "DossierStore.Verify" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Derived status",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "never-stored", "text": "stale and contested are derived from refs at read time and never written, so they cannot drift from the refs that cause them.", "at": ["docs/concepts.md", "never written, so they cannot drift"] },
+        { "key": "stale", "text": "A live fact is stale when it has a derived_from ref of kind fact to a fact that was retracted, was superseded by a different claim, or is itself stale.", "at": ["docs/concepts.md", "| `stale` | A live fact with a `derived_from` ref"] },
+        { "key": "contested", "text": "A live, non-stale fact is contested when a live, non-stale fact refutes or contradicts it by a ref of kind fact, or when it carries contradicts to one.", "at": ["docs/concepts.md", "| `contested` | A live fact that is not stale"] },
+        { "key": "precedence", "text": "Status precedence is retracted, superseded, stale, contested, live, and an id the store does not hold is unknown.", "at": ["docs/concepts.md", "Precedence is `retracted`, `superseded`, `stale`, `contested`, `live`"], "data": { "precedence": ["retracted", "superseded", "stale", "contested", "live"] } },
+        { "key": "same-claim", "text": "An input superseded by a repost with the same content hash has not changed, so nothing derived from it goes stale.", "at": ["docs/concepts.md", "- **A different claim, not a different row.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Dedupe and content hash" }] },
+        { "key": "exact-inputs", "text": "Only refs of kind fact carry staleness or a dispute; a slot ref follows whatever the slot holds, so it names no exact input.", "at": ["docs/concepts.md", "- **Exact inputs only.**"] },
+        { "key": "dispute-ends", "text": "A dispute lasts only while the objection stands: retract or supersede the refuting fact, or let it go stale, and the disputed fact is live again.", "at": ["docs/concepts.md", "- **A dispute lasts as long as the objection stands.**"] },
+        { "key": "one-derivation", "text": "A search hit, a compiled dossier, show and verify all report the derived status from one shared reader, so they always agree.", "at": [["docs/concepts.md", "from one shared derivation"], ["src/Dossier/Verify.cs", "private sealed class CurrencyReader"]], "refs": [{ "rel": "about", "subject": "DossierStore.Verify" }, { "rel": "about", "subject": "DossierStore.Search" }, { "rel": "about", "subject": "DossierStore.Compile" }, { "rel": "about", "subject": "DossierStore.Show" }] },
+        { "key": "status-filter", "text": "search --status filters by derived status: live leaves out stale and contested facts, and stale or contested returns exactly those with exact totals and paging.", "at": ["docs/concepts.md", "- **Search.** Each hit carries its derived status"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/search" }] },
+        { "key": "stale-ranks-last", "text": "In a compiled dossier every stale fact ranks after every fact that is not stale, and strict mode takes no stale fact once a current one was left out for size.", "at": ["docs/concepts.md", "- **Compile.** Each fact carries its status"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Ranking" }] },
+        { "key": "stored-elsewhere", "text": "A published bundle, the change journal and the graph view carry the stored status only, so a stale fact reads live there.", "at": ["docs/concepts.md", "- **Stored status only.**"], "refs": [{ "rel": "about", "subject": "Dossier/CLI/publish" }] },
+        { "key": "one-snapshot", "text": "Each search, compile and show reads from a single snapshot, so a write that lands while it runs cannot make a filter and the labels on its hits disagree.", "at": [["docs/concepts.md", "reads from a single snapshot"], ["src/Dossier/Store.cs", "internal sealed class ReadSnapshot"]] },
+        { "key": "cost", "text": "A filter on live, stale or contested classifies every fact that has a currency ref; one laptop measurement took about 0.3 seconds for 5,000 of them.", "at": ["docs/concepts.md", "about 0.3 s for 5,000"], "data": { "seconds": 0.3, "facts": 5000 }, "confidence": 0.7 },
+        { "key": "conflicts-not-status", "text": "Data conflicts are reported in every dossier's conflicts and are not a status, because a conflict slot is a bare field name across the whole subject.", "at": ["docs/concepts.md", "Data conflicts (two live facts whose `data` disagree)"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Conflicts and gaps" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Dedupe and content hash",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "verdicts", "text": "Every write reports what it did: new, deduped with the existing fact id, or replaced with the id it superseded.", "at": ["docs/concepts.md", "**Dedupe never merges silently.**"], "data": { "verdicts": ["new", "deduped", "replaced"] } },
+        { "key": "hash-inputs", "text": "The content hash is sha256 over the whitespace-normalized text, the canonical JSON of data, and one sorted line per ref made of rel, kind, target and locator.", "at": ["src/Dossier/ContentHash.cs", "{r.Rel ?? string.Empty}|{r.Kind ?? string.Empty}|{r.Target ?? string.Empty}|{LocatorMin(r.Locator)}"], "refs": [{ "rel": "about", "subject": "src/Dossier/ContentHash.cs" }] },
+        { "key": "hash-excludes", "text": "Freshness metadata on a ref (rev, snapshot, snapshot_hash, etag, verified_at) and its seq, basis, confidence and valid are left out of the content hash.", "at": ["src/Dossier/ContentHash.cs", "are deliberately absent, so freshness metadata never"] },
+        { "key": "scope", "text": "Content-hash dedupe is scoped to one subject and never merges across subjects or declared keys.", "at": ["docs/concepts.md", "scoped to one subject and never merges across subjects"] },
+        { "key": "identical-keyed-repost", "text": "A keyed repost that is identical in every stored field is deduped and writes nothing, so several agents posting the same keyed fact converge on one row.", "at": [["docs/concepts.md", "A keyed repost that is identical in every field is `deduped`"], ["src/Dossier/PostFacts.cs", "private static bool SlotOccupantIsIdentical"]], "refs": [{ "rel": "about", "subject": "DossierStore.PostFacts" }] },
+        { "key": "near-duplicates", "text": "A near duplicate is only advised: check reports up to 3 existing facts at least 85 percent similar to a draft, and posting it anyway creates a separate new fact.", "at": ["skills/dossier/SKILL.md", "an advisory list of up to 3 existing fact ids that are at least 85 percent similar"], "data": { "near_threshold": 0.85, "near_max": 3 }, "refs": [{ "rel": "about", "subject": "DossierStore.Check" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Provenance and agent identity",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "stamp", "text": "Every fact records its actor, actor type, channel and posting time in its provenance.", "at": ["contract/fact.schema.json", "\"required\": [\"actor\", \"actor_type\", \"channel\", \"posted_at\"]"] },
+        { "key": "mcp-actor", "text": "A fact written over MCP takes its actor from the client's clientInfo.name, else the DOSSIER_AGENT environment variable, else mcp-client, with channel mcp and actor type agent.", "at": [["docs/cli.md", "**Agent identity.**"], ["src/Dossier/Mcp.cs", "private WriterIdentity Identity =>"]], "refs": [{ "rel": "about", "subject": "Dossier/MCP/server" }] },
+        { "key": "cli-actor", "text": "The CLI, and every caller that names no identity, writes as actor dossier-cli with channel cli and actor type tool.", "at": ["src/Dossier/PostFacts.cs", "new(\"dossier-cli\", \"cli\", \"tool\")"] },
+        { "key": "label-only", "text": "The actor is an unauthenticated label that describes the writer; it is not proof of who wrote a fact, never enters the content hash and never changes dedupe.", "at": ["docs/cli.md", "It is an unauthenticated label"] },
+        { "key": "sanitized", "text": "An agent label is sanitized before it is stored: characters outside a small safe set become one hyphen, runs collapse, and the result is trimmed and capped at 64 characters.", "at": ["src/Dossier/Mcp.cs", "internal const int MaxAgentNameLength = 64;"], "data": { "max_agent_name_length": 64 }, "refs": [{ "rel": "about", "subject": "McpServer.SanitizeAgentName" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Budget modes",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "complete", "text": "In complete mode, the default, no fact is omitted: the budget is only the highlight threshold and used_tokens may exceed it.", "at": ["docs/concepts.md", "- **complete** (the default): no fact is omitted."] },
+        { "key": "strict", "text": "In strict mode near-duplicates cluster into one representative, the facts are cut to the budget, and the remainder is listed in dropped.", "at": ["docs/concepts.md", "- **strict**: near-duplicates still cluster"] },
+        { "key": "bounded", "text": "Only strict mode is bounded: for a given subject and budget the compiled dossier costs at most the budget however large the corpus grows.", "at": ["docs/concepts.md", "In strict mode, for a given subject and budget"] },
+        { "key": "exempt", "text": "Conflicts and gaps are never charged against the budget, so a dossier whose conflicts alone exceed it overruns it and hides nothing.", "at": ["docs/concepts.md", "**Conflicts are exempt from the budget.**"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Conflicts and gaps" }] },
+        { "key": "default-budget", "text": "The default budget is 1200 tokens, and tokens are estimated as characters divided by four.", "at": [["src/Dossier/Compile.cs", "public const int DefaultBudgetTokens = 1200;"], ["src/Dossier/Compile.cs", "Token estimator: ceil(length / 4)."]], "data": { "default_budget_tokens": 1200 } },
+        { "key": "full-slice", "text": "At full depth the strict fill is greedy over 75 percent of the budget, and a fact that does not fit is skipped.", "at": ["src/Dossier/Compile.cs", "var factSlice = (int)Math.Floor(budget * 0.75);"], "data": { "fact_slice": 0.75 } },
+        { "key": "index-depth", "text": "At index depth a dossier takes at most 8 facts and at least 3, under a cap of the smaller of the budget and 300 tokens of fact content.", "at": ["src/Dossier/Compile.cs", "index: cap min(budget, 300) on fact content, at most 8 facts, at least 3."], "data": { "index_max_facts": 8, "index_min_facts": 3, "index_token_cap": 300 } }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Ranking",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "score", "text": "A candidate's score is 2.0 times relevance plus centrality plus confidence plus the recency weight times recency plus 0.5 times explicitness.", "at": ["src/Dossier/Compile.cs", "candidate.Score = 2.0 * candidate.Relevance"], "refs": [{ "rel": "about", "subject": "DossierStore.Compile" }] },
+        { "key": "relevance", "text": "Relevance is the bm25 match of the caller's needs against fact text (weight 10) and tags (weight 3), normalized by the best match.", "at": ["src/Dossier/Compile.cs", "relevance: bm25 (text weight 10, tags 3)"] },
+        { "key": "recency-default", "text": "The default recency weight is 0.2; it is derived from wall-clock creation time, so rank.recency=0 is the reproducible mode.", "at": [["src/Dossier/Compile.cs", "public const double DefaultRecencyWeight = 0.2;"], ["docs/evaluation.md", "`rank.recency=0` is the reproducible mode"]], "data": { "default_recency_weight": 0.2 } },
+        { "key": "id-independent", "text": "The rank order never consults the random fact id, so two stores holding the same logical facts rank, select and drop identically.", "at": ["src/Dossier/Compile.cs", "rank, select and drop identically whatever ids they assigned"] },
+        { "key": "deterministic", "text": "Ranking is arithmetic and SQL only: identical store state and request give identical output.", "at": ["src/Dossier/Compile.cs", "Ranking is arithmetic and SQL only"] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Conflicts and gaps",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "conflict", "text": "A conflict is two or more live facts on the same subject whose data objects hold different values at the same flattened path.", "at": ["src/Dossier/Compile.cs", "Conflicts over live facts on the subject itself whose data is a JSON object."] },
+        { "key": "no-resolution", "text": "Dossier never resolves a conflict: both values are listed with their fact ids and resolution is always null.", "at": ["docs/cli.md", "`conflicts[].resolution` is always null"] },
+        { "key": "gap", "text": "A need with no matching fact is reported as a gap instead of being silently dropped.", "at": ["docs/cli.md", "A need with no matching fact is reported as a gap"] },
+        { "key": "always-surfaced", "text": "Conflicts and gaps are surfaced in every dossier and never hidden to save tokens.", "at": ["README.md", "Conflicts and gaps are surfaced in every dossier"] }
+      ]
+    },
+    {
+      "name": "Dossier/Concepts/Change journal",
+      "kind": "concept",
+      "parent": "Dossier/Concepts",
+      "facts": [
+        { "key": "definition", "text": "The change journal has one row per row write to facts, subjects, refs and slots, each written under the same number as meta.revision.", "at": ["docs/cli.md", "The journal has one row per row write"], "refs": [{ "rel": "about", "subject": "Dossier/Store/table changes" }, { "rel": "about", "subject": "src/Dossier/Changes.cs" }] },
+        { "key": "cursor", "text": "A reader follows the journal with a cursor: it passes the last next value back as since, and reset true means the cursor left the retained window and everything must be re-read.", "at": ["docs/cli.md", "`GET /api/changes?since=N&limit=L` returns"], "refs": [{ "rel": "about", "subject": "DossierStore.ReadChanges" }] },
+        { "key": "retention", "text": "The journal keeps 100,000 rows plus 1,000 of slack, pruned by writers inside their own transaction.", "at": [["src/Dossier/Changes.cs", "internal const int ChangeRetention = 100_000;"], ["src/Dossier/Changes.cs", "internal const int PruneSlack = 1_000;"]], "data": { "retention_rows": 100000, "prune_slack": 1000 } },
+        { "key": "subject-filter", "text": "The journal can be read for one subject; a page that is not truncated then moves the cursor to the head, and an unknown subject is rejected so a typo cannot read as nothing changed.", "at": ["src/Dossier/Changes.cs", "private static (string Sql, (string Name, object Value)[] Parameters)? SubjectFilter"] },
+        { "key": "writes-only", "text": "The journal records row writes only, so a fact that became stale or contested through another fact's write has no row of its own.", "at": ["docs/multi-agent.md", "It has no row for a fact that became stale"] },
+        { "key": "revision-signal", "text": "meta.revision counts row writes, so a deduped repost and every read leave it unchanged; it is a change signal to compare for inequality, never for magnitude.", "at": ["docs/cli.md", "Treat it as a change signal only"], "refs": [{ "rel": "about", "subject": "DossierStore.Revision" }] }
+      ]
+    },
+    {
+      "name": "Dossier/Guarantees",
+      "kind": "topic",
+      "parent": "Dossier",
+      "facts": [
+        { "key": "refs-only-edge", "text": "Guarantee: refs are the only edge; similarity never creates one.", "at": ["README.md", "- Refs are the only edge; similarity never creates one."], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Ref" }] },
+        { "key": "immutable-facts", "text": "Guarantee: facts are immutable; correction is a new fact that supersedes the old one, by key or by a supersedes ref to its id.", "at": ["README.md", "- Facts are immutable; correction is a new fact"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Correction" }] },
+        { "key": "revoked-left-out", "text": "Guarantee: superseded and retracted facts are left out of search and compile by default, and a fact derived from a changed one reads stale wherever it is read.", "at": ["README.md", "- Superseded and retracted facts are left out"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Derived status" }] },
+        { "key": "conflicts-surfaced", "text": "Guarantee: conflicts and gaps are surfaced in every dossier, never hidden to save tokens.", "at": ["README.md", "- Conflicts and gaps are surfaced in every dossier"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Conflicts and gaps" }] },
+        { "key": "strict-bounded", "text": "Guarantee: strict budget mode is bounded, so cost stays at or below the budget however large the corpus grows; the default complete mode is not bounded.", "at": ["README.md", "- Strict budget mode is bounded"], "refs": [{ "rel": "about", "subject": "Dossier/Concepts/Budget modes" }] },
+        { "key": "fail-closed-open", "text": "Guarantee: writes fail closed, rejecting the item with a reason, and compile fails open, returning the last good dossier plus a degraded marker.", "at": ["README.md", "- Writes fail closed"] },
+        { "key": "bounded-evidence", "text": "The bounded-cost claim is backed by four tests in CompileTests.cs and by scripts/scaling.sh, which printed identical values on two consecutive runs.", "at": ["docs/concepts.md", "Four tests in `tests/Dossier.Tests/CompileTests.cs` back"], "refs": [{ "rel": "about", "subject": "tests/Dossier.Tests/CompileTests.cs" }, { "rel": "about", "subject": "scripts/scaling.sh" }, { "rel": "derived_from", "fact": ["Dossier/Guarantees", "strict-bounded"] }] }
+      ]
+    }
+  ]
+}

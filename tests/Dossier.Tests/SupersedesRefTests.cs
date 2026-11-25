@@ -269,6 +269,74 @@ public sealed class SupersedesRefTests
     }
 
     [Test]
+    public async Task ADedupedRepostThatCorrectsALiveFact_ReportsWhatItSuperseded()
+    {
+        using var db = new TempDb();
+        var old = PostOne(db, "Widget", Fixtures.Fact("version one"));
+        PostOne(db, "Widget", Fixtures.Fact("version two", refs: Supersedes(old)));
+
+        // A store written before corrections took effect holds the ref with its target still live.
+        using (var connection = db.Store.OpenConnection())
+        {
+            using var command = connection.CreateCommand();
+            command.CommandText = "UPDATE facts SET status = 'live' WHERE id = $id";
+            command.Parameters.AddWithValue("$id", old);
+            command.ExecuteNonQuery();
+        }
+
+        // The repost is byte-for-byte the stored correction, so it is deduped, but it still flips the
+        // live target: the answer says so instead of only "deduped".
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("version two", refs: Supersedes(old))));
+        var again = posted.Response.Facts[0];
+
+        await Assert.That(again.Status).IsEqualTo("deduped");
+        await Assert.That(again.Superseded).IsNotNull();
+        await Assert.That(again.Superseded!.SequenceEqual(new[] { old })).IsTrue();
+        await Assert.That(StoredStatus(db, old)).IsEqualTo("superseded");
+
+        var emitted = JsonDocument.Parse(JsonSerializer.Serialize(posted.Response, JsonCodec.Options)).RootElement;
+        await Assert.That(emitted.GetProperty("facts")[0].GetProperty("superseded")[0].GetString()).IsEqualTo(old);
+        await Assert.That(JsonlSchemaTests.ErrorsAgainstDefinition("ops.schema.json", "PostFactsResponse", emitted.Clone())).IsEqualTo(string.Empty);
+    }
+
+    [Test]
+    public async Task ANewFactWithASupersedesRef_ReportsWhatItSuperseded()
+    {
+        using var db = new TempDb();
+        var old = PostOne(db, "Widget", Fixtures.Fact("version one"));
+
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("version two", refs: Supersedes(old))));
+        var correction = posted.Response.Facts[0];
+
+        await Assert.That(correction.Status).IsEqualTo("new");
+        await Assert.That(correction.Superseded).IsNotNull();
+        await Assert.That(correction.Superseded!.SequenceEqual(new[] { old })).IsTrue();
+        await Assert.That(StoredStatus(db, old)).IsEqualTo("superseded");
+    }
+
+    [Test]
+    public async Task ASupersedesRefThatDoesNothing_ReportsNoSupersededIds()
+    {
+        using var db = new TempDb();
+        var k1 = PostOne(db, "Widget", Fixtures.Fact("version one", key: "state"));
+        PostOne(db, "Widget", Fixtures.Fact("version two", key: "state"));
+        var gone = PostOne(db, "Widget", Fixtures.Fact("withdrawn"));
+        db.Store.Retract(gone);
+
+        // Both targets are already out of play, so the ref is inert and the result names nothing.
+        var posted = db.Store.PostFacts(Fixtures.Post("Widget", Fixtures.Fact("a late correction of both", refs: Supersedes(k1, gone))));
+        var late = posted.Response.Facts[0];
+
+        await Assert.That(late.Status).IsEqualTo("new");
+        await Assert.That(late.Superseded).IsNull();
+
+        // And the field is left out of the JSON, not written as an empty array.
+        var emitted = JsonDocument.Parse(JsonSerializer.Serialize(posted.Response, JsonCodec.Options)).RootElement;
+        await Assert.That(emitted.GetProperty("facts")[0].TryGetProperty("superseded", out _)).IsFalse();
+        await Assert.That(JsonlSchemaTests.ErrorsAgainstDefinition("ops.schema.json", "PostFactsResponse", emitted.Clone())).IsEqualTo(string.Empty);
+    }
+
+    [Test]
     public async Task AConflict_Disappears_WhenOneSideSupersedesTheOther()
     {
         using var db = new TempDb();

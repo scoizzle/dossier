@@ -25,8 +25,9 @@ public sealed record ChangeRow(
 public sealed record ChangesPage(long From, long To, long Next, bool Truncated, bool Reset, List<ChangeRow> Changes);
 
 /// <summary>
-/// changes request, shared by the MCP tool and the CLI verb: rows after <c>Since</c> (default 0), or the
-/// newest <c>Last</c> rows when that is given (it wins), optionally for one subject.
+/// changes request, shared by the MCP tool, the CLI verb and the page <c>/api/changes</c> serves: rows
+/// after <c>Since</c> (default 0), or the newest <c>Last</c> rows when that is given (it wins),
+/// optionally for one subject.
 /// </summary>
 public sealed class ChangesRequest
 {
@@ -133,7 +134,8 @@ public sealed partial class DossierStore
     /// <summary>
     /// The newest <paramref name="limit"/> rows, oldest first; <c>Next</c> is the head. Reads in one
     /// deferred transaction, so it is a WAL snapshot read and never takes the write lock. With
-    /// <paramref name="subject"/> the rows are that subject's newest.
+    /// <paramref name="subject"/> the rows are that subject's newest, and <c>Truncated</c> is also true
+    /// when the journal was pruned: rows of that subject may then sit below the retained window.
     /// </summary>
     public ChangesPage ReadChangesLast(int limit, string? subject = null)
     {
@@ -165,7 +167,10 @@ public sealed partial class DossierStore
             matched.RemoveAt(0);
         }
 
-        return new ChangesPage(matched.Count > 0 ? matched[0].Seq - 1 : head, head, head, older, false, matched);
+        // The journal is pruned, so the subject's rows may have been cut below the retained window: a
+        // page holding every row left of the subject is still not its complete history.
+        var mayHaveOlder = matched.Count > 0 && oldest > 1;
+        return new ChangesPage(matched.Count > 0 ? matched[0].Seq - 1 : head, head, head, older || mayHaveOlder, false, matched);
     }
 
     /// <summary>

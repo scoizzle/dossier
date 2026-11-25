@@ -1,0 +1,458 @@
+{
+ "agent": "swarm-tests-status",
+ "slice": "tests-status",
+ "subjects": [
+  {
+   "name": "tests/Dossier.Tests/DerivedStatusTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "DerivedStatusTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "seed-returns-world-ids",
+     "text": "The Seed helper posts six Widget facts and returns a World record carrying the input, revised, stale, claim, refuter and plain fact ids.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "return new World(input, revised, stale, claim, refuter, plain);"
+     ]
+    },
+    {
+     "key": "statuses-projects-hits",
+     "text": "The Statuses helper projects search hits into a dictionary from each hit id to that hit's status string.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "response.Hits.ToDictionary(hit => hit.Id, hit => hit.Status);"
+     ]
+    },
+    {
+     "key": "searchhits-returns-five-hits",
+     "text": "A Search over the seeded Widget subject returns 5 hits, with the stale fact stale, the claim contested, and the superseded input absent.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(statuses.Count).IsEqualTo(5);"
+     ]
+    },
+    {
+     "key": "searchhits-brief-keeps-status",
+     "text": "SearchBrief with Brief set returns the same stale and contested statuses on its hits.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "var brief = db.Store.SearchBrief(new SearchRequest { Subject = \"Widget\", Brief = true });"
+     ]
+    },
+    {
+     "key": "statusfilter-live-total-three",
+     "text": "A Search with Status live over the seeded subject reports Total 3 and includes only live hits.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(live.Total).IsEqualTo(3);"
+     ]
+    },
+    {
+     "key": "statusfilter-combines-with-query",
+     "text": "The status filter combines with a text query: Q delivery with Status stale returns 1 hit and with Status live returns 0.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Q = \"delivery\", Status = \"live\" }).Total).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "statusfilter-keeps-paging-honest",
+     "text": "A stale filter paged at Limit 2 walks the 5 stale ids in order and reports Total 5 with Complete false.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(db.Store.Search(new SearchRequest { Status = \"stale\", Limit = 2 }).Total).IsEqualTo(5);"
+     ]
+    },
+    {
+     "key": "dataconflict-both-live-one-conflict",
+     "text": "Two facts declaring headerHeight 64 and 72 both stay live while Compile reports 1 conflict.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(db.Store.Compile(new CompileRequest { Subject = \"Widget\" }).Conflicts.Count).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "dataconflict-survives-dispute",
+     "text": "A refutes ref makes the first data fact contested, yet the conflict still lists both facts and Check counts 1 conflict.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(dossier.Conflicts[0].Values.Select(value => value.Fact).ToHashSet().SetEquals(new[] { first, second })).IsTrue();"
+     ]
+    },
+    {
+     "key": "compile-ranks-stale-last",
+     "text": "Compile for the seeded subject with Recency 0 returns 5 facts and places the stale fact last despite the need matching it best.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(dossier.Facts[^1].Id).IsEqualTo(world.Stale);"
+     ]
+    },
+    {
+     "key": "compile-why-names-input",
+     "text": "The stale fact's single why entry carries Rel derived_from, State superseded and ReplacedBy the revised fact id.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(stale.Why!.Single().ReplacedBy).IsEqualTo(world.Revised);"
+     ]
+    },
+    {
+     "key": "strictbudget-emits-before-stale",
+     "text": "Under BudgetMode strict with Budget 260, some facts are emitted and some dropped, and no stale fact is emitted while a live one was dropped.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(droppedLive == 0 || emittedStale == 0).IsTrue();"
+     ]
+    },
+    {
+     "key": "markdown-stale-line-cites-why",
+     "text": "The rendered markdown line for the stale fact contains stale: plus both the input and revised fact ids.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(staleLine).Contains(\"stale:\");"
+     ]
+    },
+    {
+     "key": "markdown-usedtokens-is-line-sum",
+     "text": "UsedTokens equals the sum of EstimateFactTokens over every emitted fact in markdown format, status marks included.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(dossier.UsedTokens).IsEqualTo(expected);"
+     ]
+    },
+    {
+     "key": "show-stale-has-no-replacement",
+     "text": "Show on the stale fact reports status stale with a null ReplacedBy, while the superseded input names the revised fact.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(stale.Fact.ReplacedBy).IsNull();"
+     ]
+    },
+    {
+     "key": "show-json-omits-empty-keys",
+     "text": "Serializing a plain Show result omits the why and replaced_by keys entirely.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(json.Contains(\"\\\"replaced_by\\\"\", StringComparison.Ordinal)).IsFalse();"
+     ]
+    },
+    {
+     "key": "everyreadsurface-sees-every-status",
+     "text": "Verify across the Tangle fixture yields every one of live, superseded, retracted, stale and contested.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(verified.Values.ToHashSet().SetEquals(new[] { \"live\", \"superseded\", \"retracted\", \"stale\", \"contested\" })).IsTrue();"
+     ]
+    },
+    {
+     "key": "compile-reproducible-four-facts",
+     "text": "Repeated compiles of one request serialize identically, and the result holds 4 facts ending with stale lines.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(left.Count).IsEqualTo(4);"
+     ]
+    },
+    {
+     "key": "strictclustering-keeps-stale-apart",
+     "text": "In strict clustering the live near-duplicate of a stale fact does not cite it, and the stale fact stays in the dossier.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(liveView.Cites!.Contains(stale)).IsFalse();"
+     ]
+    },
+    {
+     "key": "storedstatus-outside-lifecycle-reads-live",
+     "text": "A facts row hand-updated to status stale still reads live in Show and in a Search with Status live.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(db.Store.Show(id)!.Fact.Status).IsEqualTo(\"live\");"
+     ]
+    },
+    {
+     "key": "publishimport-bundle-holds-live-only",
+     "text": "After importing a bundle, no facts row holds a status other than live and the fact that was stale arrives reading live.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(Fixtures.Count(connection, \"SELECT COUNT(*) FROM facts WHERE status NOT IN ('live')\")).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "writeduringsearch-answers-one-snapshot",
+     "text": "The search probe fires 1 time and the page excludes the id posted while the search was running.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(writes).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "strictbudget-never-substitutes-stale",
+     "text": "With Budget 80 the oversized live fact and the tiny stale fact are both dropped, while the revised input is emitted.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(emitted.Contains(tinyStale)).IsFalse();"
+     ]
+    },
+    {
+     "key": "publishprints-no-status-note",
+     "text": "A published index page carries no stale or contested status note and charges only the plain line token total.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(page.Contains(\"(stale:\", StringComparison.Ordinal)).IsFalse();"
+     ]
+    },
+    {
+     "key": "currency-index-exists",
+     "text": "The store schema creates the indexes idx_refs_currency and idx_facts_slot.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "name = 'idx_refs_currency'"
+     ]
+    },
+    {
+     "key": "manyfacts-bound-is-linear",
+     "text": "With 2000 derived conclusions the stale filter totals 2000, and Compile lists every live fact before any stale one.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(dossier.Facts.Take(Count + 1).All(fact => fact.Status == \"live\")).IsTrue();"
+     ]
+    },
+    {
+     "key": "statusfilter-superseded-single-hit",
+     "text": "A Status superseded filter over the seeded subject returns only the superseded input fact, with status superseded.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(superseded.Hits.Single().Id).IsEqualTo(world.Input);"
+     ]
+    },
+    {
+     "key": "show-contested-lists-refuter-inbound",
+     "text": "Show on the contested claim lists the refuter as its single inbound fact.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(contested.Inbound.Single().Id).IsEqualTo(world.Refuter);"
+     ]
+    },
+    {
+     "key": "everyreadsurface-hides-superseded-and-retracted",
+     "text": "Superseded and retracted facts are absent from both Search and Compile results, while the other statuses agree with Verify.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(compiled.ContainsKey(id)).IsFalse();"
+     ]
+    },
+    {
+     "key": "writeduringsearch-later-search-sees-write",
+     "text": "The search after the write finds the derived fact and the late conclusion both stale.",
+     "at": [
+      "tests/Dossier.Tests/DerivedStatusTests.cs",
+      "await Assert.That(after.Hits.Any(hit => hit.Id == late)).IsTrue();"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "tests/Dossier.Tests/VerifyTests.cs",
+   "kind": "test-file",
+   "parent": "Dossier/Tests",
+   "aliases": [
+    "VerifyTests.cs"
+   ],
+   "facts": [
+    {
+     "key": "livefact-carries-revision",
+     "text": "A live fact verifies as Current while the response Revision equals the store revision.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(response.Revision).IsEqualTo(db.Store.Revision());"
+     ]
+    },
+    {
+     "key": "superseded-names-newest-not-successor",
+     "text": "When a keyed fact is posted again, each earlier version is superseded and names the newest post as ReplacedBy.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(response.Facts[1].ReplacedBy).IsEqualTo(third);"
+     ]
+    },
+    {
+     "key": "superseded-successor-retracted-no-replacement",
+     "text": "A superseded fact whose successor was retracted reports a null ReplacedBy, and the successor reads retracted.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(old.ReplacedBy).IsNull();"
+     ]
+    },
+    {
+     "key": "unknownid-reported-not-thrown",
+     "text": "An unknown id is reported with status unknown and a null SubjectId rather than thrown, and Current becomes false.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(response.Facts[1].Status).IsEqualTo(\"unknown\");"
+     ]
+    },
+    {
+     "key": "derived-stale-why-shape",
+     "text": "A derived fact whose input was superseded by a different claim reports why rel derived_from and state superseded.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(fact.Why[0].State).IsEqualTo(\"superseded\");"
+     ]
+    },
+    {
+     "key": "staleness-transitive-names-direct-input",
+     "text": "Staleness reaches the leaf transitively, and the leaf's why names its direct input with state stale and a null ReplacedBy.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(leaf.Why!.Single().Fact).IsEqualTo(mitigation);"
+     ]
+    },
+    {
+     "key": "repost-same-claim-stays-live",
+     "text": "A tag-only repost returns status replaced while the derived fact stays live with no why.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(retagged.Response.Facts[0].Status).IsEqualTo(\"replaced\");"
+     ]
+    },
+    {
+     "key": "derived-stale-when-input-retracted",
+     "text": "Retracting an input makes its derived fact stale with why state retracted and a null ReplacedBy.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(fact.Why!.Single().State).IsEqualTo(\"retracted\");"
+     ]
+    },
+    {
+     "key": "only-derived-from-refs-carry-staleness",
+     "text": "A mention or a supports ref to a superseded fact leaves the referring fact live.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(One(db, support).Status).IsEqualTo(\"live\");"
+     ]
+    },
+    {
+     "key": "cycle-terminates-both-stale",
+     "text": "A hand-inserted derived_from cycle terminates, and both members read stale whichever order they are asked in.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(backward.Facts.All(f => f.Status == \"stale\")).IsTrue();"
+     ]
+    },
+    {
+     "key": "missing-target-ref-is-not-stale",
+     "text": "A derived_from ref to a fact id absent from the store leaves the fact live with no why.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(fact.Why).IsNull();"
+     ]
+    },
+    {
+     "key": "refuted-contested-refuter-live",
+     "text": "A refuted fact is contested with why rel refutes naming the refuter, while the refuter itself stays live.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(response.Facts[0].Why!.Single().Fact).IsEqualTo(refuter);"
+     ]
+    },
+    {
+     "key": "contradicts-is-symmetric",
+     "text": "A contradicts ref marks both facts contested, each fact's why naming the other.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(response.Facts[1].Why!.Single().Fact).IsEqualTo(first);"
+     ]
+    },
+    {
+     "key": "dispute-ends-with-refuter",
+     "text": "A dispute ends when the refuter is retracted, when a keyed objection is reposted without the ref, or when the refuter's derived input changes.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "PostOne(db, \"Widget\", Fixtures.Fact(\"a different measurement\", key: \"measurement\"));"
+     ]
+    },
+    {
+     "key": "stale-wins-over-contested",
+     "text": "Stale outranks contested, and a fresh post on the same key turns the derived fact superseded with a null why.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(superseded.Why).IsNull();"
+     ]
+    },
+    {
+     "key": "stored-status-via-exec-reads-live",
+     "text": "Exec sets a facts row status to stale through raw SQL, after which Verify still reads that fact as live.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "Exec(db, \"UPDATE facts SET status = 'stale' WHERE id = $id\", (\"$id\", id));"
+     ]
+    },
+    {
+     "key": "verify-writes-nothing",
+     "text": "Verify of one id repeated returns a single fact and leaves the store revision unchanged.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(db.Store.Revision()).IsEqualTo(revision);"
+     ]
+    },
+    {
+     "key": "verify-rejects-bad-requests",
+     "text": "Verify throws invalid_request for an empty request, a blank id, or more than MaxVerifyIds ids.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(Code(new VerifyRequest())).IsEqualTo(\"invalid_request\");"
+     ]
+    },
+    {
+     "key": "mcp-tool-listed-with-ids-required",
+     "text": "The listed verify_facts tool has ids as its first required field and a description mentioning untrusted data.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(tool.GetProperty(\"inputSchema\").GetProperty(\"required\")[0].GetString()).IsEqualTo(\"ids\");"
+     ]
+    },
+    {
+     "key": "mcp-empty-ids-is-an-error",
+     "text": "A verify_facts call with an empty ids array answers isError true and text containing invalid_request.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(empty.GetProperty(\"isError\").GetBoolean()).IsTrue();"
+     ]
+    },
+    {
+     "key": "cli-verify-require-current-live",
+     "text": "CLI verify with --require-current on a live fact exits 0 and prints JSON whose current is true.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(liveExit).IsEqualTo(0);"
+     ]
+    },
+    {
+     "key": "cli-verify-require-current-gates",
+     "text": "CLI verify with --require-current on a stale fact exits 1 and writes not current to stderr.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(gateExit).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "cli-verify-unknown-option",
+     "text": "A misspelled option --require-curent makes CLI verify exit 1 with an unknown option error.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "await Assert.That(typoExit).IsEqualTo(1);"
+     ]
+    },
+    {
+     "key": "run-helper-launches-dossier-dll",
+     "text": "The Run helper starts Dossier.dll with DOSSIER_DB set to the database path and returns exit code, stdout and stderr.",
+     "at": [
+      "tests/Dossier.Tests/VerifyTests.cs",
+      "info.Environment[\"DOSSIER_DB\"] = dbPath;"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -17,6 +17,8 @@
     "tags": { "type": "array", "items": { "type": "string" } },
     "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
     "status": { "$ref": "#/$defs/Status" },
+    "replaced_by": { "type": "string", "minLength": 1, "description": "status=superseded only: the live fact at the end of its chain of successors (keyed reposts and corrections by supersedes ref), which may be several steps later. Absent when the chain ends in a retraction." },
+    "why": { "type": "array", "minItems": 1, "items": { "$ref": "ops.schema.json#/$defs/StatusReason" }, "description": "status=stale or contested only: the refs that make it so, in the same StatusReason shape verify_facts reports." },
     "provenance": { "$ref": "#/$defs/Provenance" },
     "content_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 over normalized text + canonical JSON of data + sorted refs (kind,target,locator). Excludes rev, snapshot, etag, verified_at." },
     "refs": { "type": "array", "items": { "$ref": "ref.schema.json" } },

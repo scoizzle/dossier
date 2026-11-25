@@ -56,6 +56,9 @@ public sealed class JsonlSchemaTests
     /// <summary>Validates an instance against a whole contract file. Empty when valid.</summary>
     internal static string ErrorsAgainstDocument(string schemaFile, JsonElement instance) => Errors(schemaFile, instance);
 
+    /// <summary>The contract document itself, for tests that hold another surface to it.</summary>
+    internal static JsonElement ContractDocument(string schemaFile) => Doc(schemaFile);
+
     /// <summary>
     /// Validates an instance against one <c>$defs</c> entry of a contract file, for the contracts that are
     /// a set of shapes (ops.schema.json) rather than one document shape. Empty when valid.
@@ -497,15 +500,29 @@ public sealed class JsonlSchemaTests
 
         var fact = Doc("fact.schema.json");
         var factDef = defs.GetProperty("FactRecord");
+        // A published record carries the stored status only, never the fields a read derives from refs.
+        var factReadTimeOnly = new[] { "replaced_by", "why" };
         await Assert.That(Names(factDef.GetProperty("properties")))
-            .IsEquivalentTo(Names(fact.GetProperty("properties")).Concat(new[] { "bundle_key", "subject_name", "type" }).OrderBy(n => n, StringComparer.Ordinal).ToArray());
+            .IsEquivalentTo(Names(fact.GetProperty("properties")).Except(factReadTimeOnly).Concat(new[] { "bundle_key", "subject_name", "type" }).OrderBy(n => n, StringComparer.Ordinal).ToArray());
         await Assert.That(Required(factDef)).IsEquivalentTo(Required(fact).Concat(new[] { "bundle_key", "subject_name", "type" }).OrderBy(n => n, StringComparer.Ordinal).ToArray());
 
-        // Every inherited property must point at the base contract's property of the same name.
-        foreach (var (def, baseFile, baseSchema) in new[] { (subjectDef, "subject.schema.json", subject), (factDef, "fact.schema.json", fact) })
+        // Every inherited property must point at the base contract's property of the same name. The
+        // read-time fields a read of a fact derives (replaced_by and why) are not part of a published
+        // record, which carries the stored status only, so the fact record must leave them out.
+        foreach (var (def, baseFile, baseSchema, readTimeOnly) in new[]
+        {
+            (subjectDef, "subject.schema.json", subject, Array.Empty<string>()),
+            (factDef, "fact.schema.json", fact, factReadTimeOnly),
+        })
         {
             foreach (var property in baseSchema.GetProperty("properties").EnumerateObject())
             {
+                if (readTimeOnly.Contains(property.Name, StringComparer.Ordinal))
+                {
+                    await Assert.That(Names(def.GetProperty("properties")).Contains(property.Name)).IsFalse();
+                    continue;
+                }
+
                 var reference = def.GetProperty("properties").GetProperty(property.Name).GetProperty("$ref").GetString();
                 await Assert.That(reference).IsEqualTo($"{baseFile}#/properties/{property.Name}");
             }

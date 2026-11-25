@@ -55,7 +55,7 @@ Three limits, stated plainly:
 - Any writer can correct any fact, over MCP as well as the CLI. There is no trust check: see [multi-agent](multi-agent.md#not-covered).
 - A corrected claim comes back if its source is dumped again. Dedupe compares a post with live facts only, so re-running `dossier dump` on an unchanged file creates the claim anew, under a new id, next to its correction. Correct the source first, or correct the new copy by its id.
 
-A store written before corrections took effect may hold `supersedes` refs whose targets are still live. Nothing rewrites them on upgrade. Posting such a correction again returns `deduped` and applies it.
+A store written before corrections took effect may hold `supersedes` refs whose targets are still live. Nothing rewrites them on upgrade. Posting such a correction again returns `deduped` and applies it, naming the ids it flipped in `superseded`.
 
 ## Derived status
 
@@ -131,7 +131,7 @@ Five foot-guns shaped the design; each is a decision, not an accident.
 
 **Similarity never makes an edge.** Similarity is only a retrieval and ranking signal; the only edge is a ref carried by a fact, with an explicit basis. The graph therefore cannot fill with hallucinated links, because a relationship has to be declared to exist.
 
-**Dedupe never merges silently.** Every write reports what it did: `new`, `deduped` with the existing fact id, or `replaced` with the id it superseded. Content-hash dedupe is scoped to one subject and never merges across subjects or declared keys, and correction is a new superseding fact, so every merge stays traceable. A keyed repost that is identical in every field is `deduped` and writes nothing, so several agents posting the same keyed fact converge on one row (the one exception is a deduped post whose `supersedes` ref still has a live target, which is applied: see [Correction](#correction)); a repost that changes anything, including a field the hash leaves out (tags, confidence, items, a ref's `rev` or `basis`, attachments), is `replaced`.
+**Dedupe never merges silently.** Every write reports what it did: `new`, `deduped` with the existing fact id, or `replaced` with the id it superseded. Content-hash dedupe is scoped to one subject and never merges across subjects or declared keys, and correction is a new superseding fact, so every merge stays traceable. A keyed repost that is identical in every field is `deduped` and writes nothing, so several agents posting the same keyed fact converge on one row (the one exception is a deduped post whose `supersedes` ref still has a live target, which is applied: see [Correction](#correction)); a repost that changes anything, including a field the hash leaves out (tags, confidence, items, a ref's `rev` or `basis`, attachments), is `replaced`. Whichever the status, a post that flips a live target through a `supersedes` ref also reports those ids in `superseded`, so a deduped post never hides a correction it just applied.
 
 **Conflicts are exempt from the budget.** The budget bounds the fact content; conflicts and gaps are never charged against it. A dossier whose conflicts alone exceed the budget overruns it, because a dossier that hides a contradiction to save tokens is worse than one that is over budget.
 

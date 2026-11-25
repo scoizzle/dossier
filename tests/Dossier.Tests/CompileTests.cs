@@ -646,6 +646,51 @@ public sealed class CompileTests
     }
 
     [Test]
+    public async Task Compile_SeqCompleteHighlightsPreferCurrentOverEarlierStale()
+    {
+        using var db = new TempDb();
+        var input = Post(db, "Widget", Fixtures.Fact("input one", key: "input"))[0];
+        var stale = Post(
+            db,
+            "Widget",
+            Fixtures.Fact(
+                "stale conclusion about the old input",
+                refs: new List<RefInput> { Fixtures.Ref(input, basis: "derived", rel: "derived_from") }))[0];
+        var live = Post(db, "Widget", Fixtures.Fact("current observation stands on its own"))[0];
+        Post(db, "Widget", Fixtures.Fact("input two", key: "input"));
+        // With order=seq the older stale fact sorts ahead of the newer current fact.
+        SetCreated(db, stale, 10);
+        SetCreated(db, live, 20);
+
+        var everything = db.Store.Compile(new CompileRequest
+        {
+            Subject = "Widget", Depth = "full", Order = "seq", Format = "markdown", Budget = 1_000_000,
+        });
+        var staleCost = DossierStore.EstimateFactTokens(everything.Facts.Single(f => f.Id == stale), "markdown");
+        var budget = (int)Math.Ceiling(staleCost / 0.75);
+
+        var dossier = db.Store.Compile(new CompileRequest
+        {
+            Subject = "Widget", Depth = "full", Order = "seq", Format = "markdown", Budget = budget,
+        });
+        var highlights = DossierStore.HighlightIndexes(dossier);
+
+        // The budget fits the stale line if taken first, so a display-order pick spends it on the
+        // stale fact and leaves the current one out of the highlights.
+        await Assert.That(highlights).IsNotNull();
+        var highlighted = highlights!.Select(index => dossier.Facts[index].Id).ToList();
+        await Assert.That(highlighted.Contains(live)).IsTrue();
+        await Assert.That(highlighted.Contains(stale)).IsFalse();
+
+        var lines = DossierStore.RenderMarkdown(dossier).Split('\n');
+        var liveLine = lines.Single(line => line.Contains("[" + live + "]", StringComparison.Ordinal));
+        var staleLine = lines.Single(line => line.Contains("[" + stale + "]", StringComparison.Ordinal));
+        await Assert.That(liveLine.StartsWith("- ", StringComparison.Ordinal) && !liveLine.StartsWith("- [", StringComparison.Ordinal)).IsTrue();
+        // The stale fact is still listed under All facts, never ahead of the current highlight.
+        await Assert.That(staleLine.StartsWith("- [", StringComparison.Ordinal)).IsTrue();
+    }
+
+    [Test]
     public async Task UncitedClaims_IsZero()
     {
         using var db = new TempDb();

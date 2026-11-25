@@ -904,9 +904,19 @@ public sealed partial class DossierStore
             return null;
         }
 
+        // Display order can be chronology (order=seq), so a stale fact may come before a current one.
+        // The budget only holds back stale facts when they are offered after every current fact, so
+        // pick in rank order (stale last, display order otherwise), then map back to display indexes.
+        var rankOrder = Enumerable.Range(0, dossier.Facts.Count)
+            .OrderBy(index => dossier.Facts[index].Status == StatusStale)
+            .ThenBy(index => index)
+            .ToList();
         var chosen = SelectWithinBudget(
-            dossier.Facts, dossier.Depth, dossier.BudgetTokens, f => EstimateFactTokens(f, "markdown"), f => EstimateIndexFactTokens(f, "markdown"));
-        return chosen.Count == dossier.Facts.Count ? null : chosen.ToHashSet();
+            rankOrder.Select(index => dossier.Facts[index]).ToList(), dossier.Depth, dossier.BudgetTokens,
+            f => EstimateFactTokens(f, "markdown"), f => EstimateIndexFactTokens(f, "markdown"));
+        return chosen.Count == dossier.Facts.Count
+            ? null
+            : chosen.Select(index => rankOrder[index]).ToHashSet();
     }
 
     /// <summary>Markdown rendering of a compiled dossier; every emitted fact id appears in brackets.</summary>
@@ -931,7 +941,7 @@ public sealed partial class DossierStore
                 builder.Append("None fit the budget.\n");
             }
 
-            foreach (var index in highlights)
+            foreach (var index in highlights.Order())
             {
                 var fact = dossier.Facts[index];
                 builder.Append("- ").Append(OneLine(fact.Text, int.MaxValue)).Append(" [").Append(fact.Id).Append(']').Append(StatusNote(fact)).Append('\n');

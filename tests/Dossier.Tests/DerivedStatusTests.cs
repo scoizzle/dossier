@@ -118,6 +118,43 @@ public sealed class DerivedStatusTests
     }
 
     [Test]
+    public async Task StatusFilter_DerivesOnlyTheCandidatesTheOtherFiltersAdmit()
+    {
+        using var db = new TempDb();
+
+        // Subject Y carries many facts whose status has to be derived; subject X carries three.
+        var yInput = PostOne(db, "Y", Fixtures.Fact("y input", key: "input"));
+        db.Store.PostFacts(Fixtures.Post(
+            "Y",
+            Enumerable.Range(0, 25)
+                .Select(index => Fixtures.Fact($"y conclusion {index}", refs: DerivedFrom(yInput)))
+                .ToArray()));
+        PostOne(db, "Y", Fixtures.Fact("y input revised", key: "input"));
+
+        var xInput = PostOne(db, "X", Fixtures.Fact("x input", key: "input"));
+        var xConclusions = Enumerable.Range(0, 3)
+            .Select(index => PostOne(db, "X", Fixtures.Fact($"x conclusion {index}", refs: DerivedFrom(xInput))))
+            .ToList();
+        var xRevised = PostOne(db, "X", Fixtures.Fact("x input revised", key: "input"));
+
+        var derived = new List<string>();
+        db.Store.StatusDerivationProbe = ids => derived.AddRange(ids);
+        var live = db.Store.Search(new SearchRequest { Subject = "X", Status = "live" });
+        db.Store.StatusDerivationProbe = null;
+
+        // The search may only derive the status of rows its subject filter admits, not every fact
+        // in the store that carries a currency ref.
+        await Assert.That(derived.ToHashSet().SetEquals(xConclusions)).IsTrue();
+
+        // And the filter still answers correctly: the three conclusions are stale, the revised
+        // input is the one live fact.
+        await Assert.That(live.Total).IsEqualTo(1);
+        await Assert.That(live.Hits.Single().Id).IsEqualTo(xRevised);
+        await Assert.That(live.Hits.Single().Status).IsEqualTo("live");
+        await Assert.That(db.Store.Search(new SearchRequest { Subject = "X", Status = "stale" }).Hits.Select(hit => hit.Id).ToHashSet().SetEquals(xConclusions)).IsTrue();
+    }
+
+    [Test]
     public async Task ADataConflict_IsNotAStatus_AndStaysListedWhenAPartyIsContested()
     {
         using var db = new TempDb();

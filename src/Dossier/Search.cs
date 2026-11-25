@@ -9,6 +9,9 @@ public sealed partial class DossierStore
     /// <summary>Test seam: runs inside a filtered search, after the derived set is read and before the page is.</summary>
     internal Action? SearchProbe { get; set; }
 
+    /// <summary>Test seam: the fact ids a status filter is about to derive a status for.</summary>
+    internal Action<IReadOnlyList<string>>? StatusDerivationProbe { get; set; }
+
     private const int DefaultLimit = 20;
     private const int MaxLimit = 100;
 
@@ -77,8 +80,20 @@ public sealed partial class DossierStore
         {
             // These three are derived, so the filter is too: a stored-live fact that is stale or
             // contested is not live. The derived ids go into the query itself, which keeps the count
-            // and the keyset paging exact.
-            var derived = currency.NonLive();
+            // and the keyset paging exact. Only a row the other filters already admit can reach the
+            // page, so only those are described: the cost follows the result, not the store.
+            var candidates = NonLiveCandidates(connection, conditions, parameters);
+            StatusDerivationProbe?.Invoke(candidates);
+            var derived = new List<(string Id, string Status)>(candidates.Count);
+            foreach (var id in candidates)
+            {
+                var status = currency.Describe(id).Status;
+                if (status is StatusStale or StatusContested)
+                {
+                    derived.Add((id, status));
+                }
+            }
+
             SearchProbe?.Invoke();
             conditions.Add("f.status NOT IN ('superseded', 'retracted')");
             if (request.Status == StatusLive)
@@ -238,6 +253,42 @@ public sealed partial class DossierStore
                 ? null
                 : EncodeCursor(page[^1].CreatedAt, page[^1].Id, page[^1].Score),
         };
+    }
+
+    /// <summary>The refs that can change a fact's derived status, matching CurrencyReader's predicate.</summary>
+    private const string StatusCurrencyRefs = "r.kind = 'fact' AND r.rel IN ('derived_from', 'refutes', 'contradicts', 'supersedes')";
+
+    /// <summary>
+    /// The rows a status filter has to describe: those the other filters admit that carry or receive a
+    /// currency ref. A row outside them cannot be on the page, so deriving its status would only cost
+    /// time that grows with the store.
+    /// </summary>
+    private static List<string> NonLiveCandidates(
+        SqliteConnection connection,
+        IReadOnlyList<string> conditions,
+        IReadOnlyDictionary<string, object?> parameters)
+    {
+        var sql = new StringBuilder();
+        sql.Append("SELECT f.id FROM facts f WHERE f.status NOT IN ('superseded', 'retracted') AND f.id IN (");
+        sql.Append("SELECT r.fact_id FROM refs r WHERE ").Append(StatusCurrencyRefs);
+        sql.Append(" UNION SELECT r.target FROM refs r WHERE ").Append(StatusCurrencyRefs).Append(')');
+        if (conditions.Count > 0)
+        {
+            sql.Append(" AND ").Append(string.Join(" AND ", conditions));
+        }
+
+        sql.Append(" ORDER BY f.rowid");
+
+        var candidates = new List<string>();
+        using var command = Command(connection, null, sql.ToString());
+        BindAll(command, parameters);
+        using var reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+            candidates.Add(reader.GetString(0));
+        }
+
+        return candidates;
     }
 
     /// <summary>

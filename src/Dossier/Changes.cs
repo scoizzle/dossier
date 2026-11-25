@@ -25,8 +25,9 @@ public sealed record ChangeRow(
 public sealed record ChangesPage(long From, long To, long Next, bool Truncated, bool Reset, List<ChangeRow> Changes);
 
 /// <summary>
-/// changes request, shared by the MCP tool and the CLI verb: rows after <c>Since</c> (default 0), or the
-/// newest <c>Last</c> rows when that is given (it wins), optionally for one subject.
+/// changes request, shared by the MCP tool, the CLI verb and the page <c>/api/changes</c> serves: rows
+/// after <c>Since</c> (default 0), or the newest <c>Last</c> rows when that is given (it wins),
+/// optionally for one subject.
 /// </summary>
 public sealed class ChangesRequest
 {

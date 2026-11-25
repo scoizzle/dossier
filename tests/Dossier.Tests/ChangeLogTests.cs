@@ -598,13 +598,11 @@ public sealed class ChangeLogTests
         await Assert.That(lastDocument.RootElement.GetProperty("next").GetInt64()).IsEqualTo(3L);
         await Assert.That(lastDocument.RootElement.GetProperty("changes").GetArrayLength()).IsEqualTo(1);
 
-        // limit is clamped, not rejected.
+        // limit is clamped above the page cap, but a count below 1 is a mistake, as over MCP.
         var clamped = await http.GetAsync("/api/changes?since=0&limit=100000");
         await Assert.That(clamped.StatusCode).IsEqualTo(HttpStatusCode.OK);
-        var zero = await http.GetAsync("/api/changes?since=0&limit=0");
-        await Assert.That(zero.StatusCode).IsEqualTo(HttpStatusCode.OK);
 
-        foreach (var bad in new[] { "since=abc", "since=99999999999999999999", "limit=x", "last=abc", "since=-1" })
+        foreach (var bad in new[] { "since=abc", "since=99999999999999999999", "limit=x", "last=abc", "since=-1", "last=0", "last=-1", "since=0&limit=0", "since=0&limit=-1" })
         {
             var response = await http.GetAsync($"/api/changes?{bad}");
             await Assert.That(response.StatusCode).IsEqualTo(HttpStatusCode.BadRequest);
@@ -613,5 +611,33 @@ public sealed class ChangeLogTests
 
         var post = await http.PostAsync("/api/changes?since=0", new StringContent(string.Empty));
         await Assert.That(post.StatusCode).IsEqualTo(HttpStatusCode.MethodNotAllowed);
+    }
+
+    [Test]
+    public async Task ChangesEndpoint_FiltersBySubject()
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post("Alpha", Fixtures.Fact("alpha one")));
+        db.Store.PostFacts(Fixtures.Post("Beta", Fixtures.Fact("beta one")));
+        db.Store.PostFacts(Fixtures.Post("Alpha", Fixtures.Fact("alpha two")));
+
+        using var server = await TestServers.StartAsync(db.Store);
+        using var http = new HttpClient { BaseAddress = new Uri($"http://127.0.0.1:{server.Port}/") };
+
+        var filtered = await http.GetAsync("/api/changes?since=0&limit=100&subject=Alpha");
+        await Assert.That(filtered.StatusCode).IsEqualTo(HttpStatusCode.OK);
+        using var document = JsonDocument.Parse(await filtered.Content.ReadAsStringAsync());
+        var rows = document.RootElement.GetProperty("changes");
+        await Assert.That(rows.GetArrayLength()).IsGreaterThan(0);
+        await Assert.That(rows.EnumerateArray().All(row => row.GetProperty("subject_name").GetString() == "Alpha")).IsTrue();
+
+        var newest = await http.GetAsync("/api/changes?last=500&subject=Alpha");
+        await Assert.That(newest.StatusCode).IsEqualTo(HttpStatusCode.OK);
+        using var newestDocument = JsonDocument.Parse(await newest.Content.ReadAsStringAsync());
+        await Assert.That(newestDocument.RootElement.GetProperty("changes").EnumerateArray().All(row => row.GetProperty("subject_name").GetString() == "Alpha")).IsTrue();
+
+        var unknown = await http.GetAsync("/api/changes?since=0&subject=nope");
+        await Assert.That(unknown.StatusCode).IsEqualTo(HttpStatusCode.NotFound);
+        await Assert.That(await unknown.Content.ReadAsStringAsync()).Contains("subject_not_found");
     }
 }

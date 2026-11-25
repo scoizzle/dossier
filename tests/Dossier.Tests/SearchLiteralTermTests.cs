@@ -51,6 +51,27 @@ public sealed class SearchLiteralTermTests
     }
 
     [Test]
+    [Arguments("C++", "Uses C++ for the parser")]
+    [Arguments("a*b", "glob a*b matches every file")]
+    [Arguments("*foo", "*foo is not a glob here")]
+    [Arguments("x^2", "x^2 means squared")]
+    public async Task OperatorCharacters_AreSearchedAsWritten(string q, string expected)
+    {
+        using var db = new TempDb();
+        db.Store.PostFacts(Fixtures.Post(
+            "Widget",
+            Fixtures.Fact("Uses C++ for the parser"),
+            Fixtures.Fact("glob a*b matches every file"),
+            Fixtures.Fact("*foo is not a glob here"),
+            Fixtures.Fact("x^2 means squared")));
+
+        var texts = Texts(db, q);
+
+        await Assert.That(texts.Count).IsEqualTo(1);
+        await Assert.That(texts[0]).IsEqualTo(expected);
+    }
+
+    [Test]
     public async Task Fts5Syntax_StillWorks()
     {
         using var db = Seeded();
@@ -60,6 +81,7 @@ public sealed class SearchLiteralTermTests
         await Assert.That(Texts(db, "alpha NOT beta").Count).IsEqualTo(0);
         await Assert.That(Texts(db, "\"taught by a mentor\"").Single()).IsEqualTo("Was taught by a mentor, not self study");
         await Assert.That(Texts(db, "ment*").Single()).IsEqualTo("Was taught by a mentor, not self study");
+        await Assert.That(Texts(db, "^gamma").Single()).IsEqualTo("gamma alone");
         await Assert.That(Texts(db, "tags:ui").Count).IsEqualTo(2);
         await Assert.That(Texts(db, "text:gamma").Single()).IsEqualTo("gamma alone");
         await Assert.That(Texts(db, "(alpha OR gamma) NOT beta").Single()).IsEqualTo("gamma alone");

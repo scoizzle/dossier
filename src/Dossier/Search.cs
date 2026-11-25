@@ -295,8 +295,8 @@ public sealed partial class DossierStore
     /// Makes a plain-text q mean what it says. FTS5 reads a bare term containing '-', ':', '.', '/' and
     /// the like as syntax ("Self-taught" becomes column "taught"), so such a term is wrapped in double
     /// quotes, which FTS5 then tokenizes as a phrase. Everything that already is FTS5 syntax is passed
-    /// through untouched: quoted strings, parentheses, AND/OR/NOT/NEAR, a trailing '*', the '^', '+'
-    /// and ',' operators, and a "text:" or "tags:" column filter (its value is quoted when it needs it).
+    /// through untouched: quoted strings, parentheses, AND/OR/NOT/NEAR, a trailing '*', a leading '^',
+    /// and a "text:" or "tags:" column filter (its value is quoted when it needs it).
     /// </summary>
     internal static string LiteralizeQuery(string q)
     {
@@ -358,13 +358,16 @@ public sealed partial class DossierStore
             term = term[..^1];
         }
 
-        // Quote only a term that mixes word characters with something FTS5 would parse: a term made of
-        // word characters and operator characters alone is already what FTS5 expects (or its own error).
+        // Quote a term that mixes word characters with something FTS5 would parse, and one whose
+        // operator characters are not where FTS5 requires them: '^' only leads a term, '*' only
+        // trails one, and '+' or ',' inside a word are literal text, not syntax.
         var hasWord = false;
         var hasOther = false;
-        foreach (var value in term)
+        var misplaced = false;
+        for (var index = 0; index < term.Length; index++)
         {
-            if (char.IsLetterOrDigit(value) || value == '_' || value >= 0x80)
+            var value = term[index];
+            if (IsWordCharacter(value))
             {
                 hasWord = true;
             }
@@ -372,9 +375,14 @@ public sealed partial class DossierStore
             {
                 hasOther = true;
             }
+
+            misplaced = misplaced
+                || (value == '^' && index > 0)
+                || (value == '*' && index < term.Length - 1)
+                || ((value is '+' or ',') && index > 0 && IsWordCharacter(term[index - 1]));
         }
 
-        if (hasWord && hasOther)
+        if (misplaced || (hasWord && hasOther))
         {
             builder.Append('"').Append(term).Append('"');
         }
@@ -388,6 +396,9 @@ public sealed partial class DossierStore
             builder.Append('*');
         }
     }
+
+    private static bool IsWordCharacter(char value) =>
+        char.IsLetterOrDigit(value) || value == '_' || value >= 0x80;
 
     /// <summary>The columns of facts_fts, the only names a column filter may use.</summary>
     private static readonly string[] FtsColumns = ["text", "tags"];

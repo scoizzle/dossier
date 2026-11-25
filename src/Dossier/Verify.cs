@@ -324,7 +324,15 @@ public sealed partial class DossierStore
             var current = row;
             while (Successor(current) is { } next && seen.Add(next) && Read(next) is { } successor)
             {
-                if (successor.Status is not (StatusSuperseded or StatusRetracted))
+                // A retraction ends the chain: whatever later fact now holds the emptied slot is a new
+                // claim, not this fact's replacement.
+                if (successor.Status == StatusRetracted)
+                {
+                    return null;
+                }
+
+                // Only a superseded successor has a successor of its own to follow.
+                if (successor.Status != StatusSuperseded)
                 {
                     return successor.Id;
                 }

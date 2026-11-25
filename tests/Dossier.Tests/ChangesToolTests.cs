@@ -95,6 +95,40 @@ public sealed class ChangesToolTests
     }
 
     [Test]
+    public async Task SubjectFilter_Last_ReportsTruncatedWhenTheJournalWasPruned()
+    {
+        using var db = new TempDb();
+        for (var index = 0; index < 20; index++)
+        {
+            db.Store.PostFacts(Fixtures.Post("Alpha", Fixtures.Fact($"alpha {index}")));
+            db.Store.PostFacts(Fixtures.Post("Beta", Fixtures.Fact($"beta {index}")));
+        }
+
+        long AlphaRows()
+        {
+            using var connection = db.Store.OpenConnection();
+            return Fixtures.Count(connection, "SELECT COUNT(*) FROM changes c JOIN subjects s ON s.id = c.subject_id WHERE s.name = 'Alpha'");
+        }
+
+        var before = AlphaRows();
+        using (var connection = db.Store.OpenConnection())
+        {
+            // Keep the newest ten rows; Alpha wrote before and after that cut.
+            DossierStore.PruneChanges(connection, null, db.Store.Revision(), retention: 10, slack: 1);
+        }
+
+        var after = AlphaRows();
+        await Assert.That(after).IsGreaterThan(0);
+        await Assert.That(after).IsLessThan(before);
+
+        var page = db.Store.ReadChangesLast(500, "Alpha");
+
+        await Assert.That(page.Changes.All(row => row.SubjectName == "Alpha")).IsTrue();
+        await Assert.That(page.Changes.Count).IsEqualTo((int)after);
+        await Assert.That(page.Truncated).IsTrue();
+    }
+
+    [Test]
     public async Task SubjectFilter_UnknownSubject_FailsClosed()
     {
         using var db = new TempDb();
